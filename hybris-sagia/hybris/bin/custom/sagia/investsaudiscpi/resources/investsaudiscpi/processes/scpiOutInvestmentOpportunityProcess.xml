@@ -1,0 +1,24 @@
+<process xmlns="http://www.hybris.de/xsd/processdefinition" start="workFlowApprovalValidation" name="scpiOutInvestmentOpportunityProcess"
+		 processClass="com.investsaudi.model.scpi.outbound.process.ScpiOutInvestmentOpportunityProcessModel" onError="error">
+
+	<action id="workFlowApprovalValidation" bean="workFlowApprovalValidationAction">
+		<transition name="OK" to="sendInvestmentOpportunity"/>
+		<transition name="NOK" to="rejected"/>
+		<transition name="WAIT" to="waitForApproval"/>
+	</action>
+
+	<wait id="waitForApproval" then="workFlowApprovalValidation" prependProcessCode="true">
+		<event>SagiaOpportunityApproval</event>
+	</wait>
+
+	<action id="sendInvestmentOpportunity" bean="sendInvestmentOpportunityToScpiAction">
+		<transition name="OK" to="success"/>
+		<transition name="NOK" to="error"/>
+	</action>
+
+	<end id="error" state="ERROR">Something went wrong while sending InvestmentOpportunity to SCPI.</end>
+	<end id="failed" state="FAILED">Process failed while sending InvestmentOpportunity to SCPI.</end>
+	<end id="success" state="SUCCEEDED">InvestmentOpportunity sent successfully to SCPI.</end>
+	<end id="rejected" state="SUCCEEDED">InvestmentOpportunity is rejected by WOAG.</end>
+
+</process>

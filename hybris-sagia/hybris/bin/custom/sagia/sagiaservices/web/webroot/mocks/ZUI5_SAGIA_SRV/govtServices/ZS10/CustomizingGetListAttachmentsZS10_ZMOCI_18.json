@@ -1,0 +1,126 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          1",
+        "FieldSubtype": "",
+        "Description": "Copy Of Power Of Attorney",
+        "Dockey_ID": "1122",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          2",
+        "FieldSubtype": "",
+        "Description": "Main Commercial Register",
+        "Dockey_ID": "1140",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%203')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%203')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          3",
+        "FieldSubtype": "",
+        "Description": "Copy of valid SAGIA license",
+        "Dockey_ID": "1356",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%204')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%204')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          4",
+        "FieldSubtype": "",
+        "Description": "Last financial statement",
+        "Dockey_ID": "1357",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%205')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%205')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          5",
+        "FieldSubtype": "",
+        "Description": "Fill & sign CR renewal form",
+        "Dockey_ID": "1358",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%206')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%206')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          6",
+        "FieldSubtype": "",
+        "Description": "Copy of the chamber of commerce certificate",
+        "Dockey_ID": "1359",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%207')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%207')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          7",
+        "FieldSubtype": "",
+        "Description": "General Manager ID",
+        "Dockey_ID": "1367",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%208')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%208')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          8",
+        "FieldSubtype": "",
+        "Description": "Final industrial license",
+        "Dockey_ID": "1368",
+        "LongDescr": "",
+        "OptionalAttach": "X"
+      }
+    ]
+  }
+}

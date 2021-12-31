@@ -1,0 +1,95 @@
+$page = news-brf-expands-saudi-arabia-operations
+$template = portalGlobalTemplate
+$name = BRF EXPANDS SAUDI ARABIA OPERATIONS WITH SAR 29.7 MILLION INVESTMENT IN FOOD PRODUCTION SECTOR
+$titleEn = $name
+$titleAr = BRF EXPANDS SAUDI ARABIA OPERATIONS WITH SAR 29.7 MILLION INVESTMENT IN FOOD PRODUCTION SECTOR
+$shortDescEn = On 7th May 2020, Brazilian food company BRF announced that it had signed an agreement to acquire a food processing plant in Dammam,
+$shortDescAr =  On 7th May 2020, Brazilian food company BRF announced that it had signed an agreement to acquire a food processing plant in Dammam,
+$pagelabel = /news/brf-expands-saudi-arabia-operations-with-sar-297-million-investment-in-food-production-sector
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; img_9207   ; img_9207.jpg				; $siteResource/img_9207.jpg                                        ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias            ; $contentCV; ; ; ;
+                            ; media-container-$page   ; img_9207 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ;  img_9207              ; img_9207                ; $shortDescEn                   ; $shortDescAr                   ; link-$page       ;                                 ; 07.05.2020 00:00:00                       ;                          ;media-container-$page  ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<div class='row' style='font-size: 13px;'>
+<div class='col-lg-12 col-md-12 col-sm-12 pb-5 news-contents' style='font-size: 13px;'>
+<p style='font-size: 13px;'>On 7<sup>th</sup> May 2020, Brazilian food company BRF announced that it had signed an agreement to acquire a food processing plant in Dammam, Saudi Arabia with an initial investment of SAR 29.7 million. Building on existing plans to expand the company&rsquo;s local production capacity in the Kingdom, this new agreement follows an initial Memorandum of Understanding (MOU) signed in October 2019.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>The first deal signed between the Ministry of Investment of Saudi Arabia (MISA) and BRF, which took place during the 2019 edition of the Future Investment Initiative, set out the company&rsquo;s planned US$ 120 million investment in the construction of a new food processing plant in Saudi Arabia. BRF&rsquo;s investment is expected to create approximately 500 job opportunities in addition to the possibility of exporting to nearby countries, in line with Saudi Arabia&rsquo;s plans to increase employment, boost emerging sectors, and improve quality of life in line the Vision 2030.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Following the conclusion of this second investment, subject to certain regulatory approvals, BRF plans to invest an additional US$7.2 million in expanding the existing processing plant&rsquo;s installed capacity by 400% more than its current production volume.</p>
+<p style='font-size: 13px;'><em>&nbsp;</em></p>
+<p style='font-size: 13px;'><em>&nbsp;</em></p>
+<p style='font-size: 13px;'>Inward investment into Saudi Arabia saw strong growth in the first three months of this year. In its latest Investment Highlights report, MISA reported that 348 new licenses were granted to international companies allowing them to operate in the Saudi market.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>This marks a 19% annual increase compared to the same period in 2019 and a 20% quarter-on-quarter increase from the final three months of 2019, despite month-to-month growth slowing in March as global markets reacted to the impact of the COVID-19 pandemic.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Saudi government entities have implemented numerous stimulus packages and funding relief programs for the private sector aimed at helping the Kingdom&rsquo;s local and international businesses, and citizens and residents, to mitigate both the immediate and long-term impacts of COVID-19.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>MISA supports investors in addressing the challenges to their continuity of business during the pandemic and helps them to access the specific support programs available through its COVID-19 Response Center (MCRC). The MCRC was recently recognized among global responses to COVID-19 as an example of Investment Promotion Agency (IPA) best practice in UNCTAD&rsquo;s World Investment Report 2020.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Businesses are encouraged to get in touch with the MCRC through either WhatsApp (+9661120358880) or by email (InvestorCare@MISA.gov.sa). MISA representatives are also reachable through the Ministry&rsquo;s social media channels.</p>
+</div>
+</div> "
+							   
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page      ;                          ; "<div class='row' style='font-size: 13px;'>
+<div class='col-lg-12 col-md-12 col-sm-12 pb-5 news-contents' style='font-size: 13px;'>
+<p style='font-size: 13px;'>On 7<sup>th</sup> May 2020, Brazilian food company BRF announced that it had signed an agreement to acquire a food processing plant in Dammam, Saudi Arabia with an initial investment of SAR 29.7 million. Building on existing plans to expand the company&rsquo;s local production capacity in the Kingdom, this new agreement follows an initial Memorandum of Understanding (MOU) signed in October 2019.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>The first deal signed between the Ministry of Investment of Saudi Arabia (MISA) and BRF, which took place during the 2019 edition of the Future Investment Initiative, set out the company&rsquo;s planned US$ 120 million investment in the construction of a new food processing plant in Saudi Arabia. BRF&rsquo;s investment is expected to create approximately 500 job opportunities in addition to the possibility of exporting to nearby countries, in line with Saudi Arabia&rsquo;s plans to increase employment, boost emerging sectors, and improve quality of life in line the Vision 2030.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Following the conclusion of this second investment, subject to certain regulatory approvals, BRF plans to invest an additional US$7.2 million in expanding the existing processing plant&rsquo;s installed capacity by 400% more than its current production volume.</p>
+<p style='font-size: 13px;'><em>&nbsp;</em></p>
+<p style='font-size: 13px;'><em>&nbsp;</em></p>
+<p style='font-size: 13px;'>Inward investment into Saudi Arabia saw strong growth in the first three months of this year. In its latest Investment Highlights report, MISA reported that 348 new licenses were granted to international companies allowing them to operate in the Saudi market.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>This marks a 19% annual increase compared to the same period in 2019 and a 20% quarter-on-quarter increase from the final three months of 2019, despite month-to-month growth slowing in March as global markets reacted to the impact of the COVID-19 pandemic.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Saudi government entities have implemented numerous stimulus packages and funding relief programs for the private sector aimed at helping the Kingdom&rsquo;s local and international businesses, and citizens and residents, to mitigate both the immediate and long-term impacts of COVID-19.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>MISA supports investors in addressing the challenges to their continuity of business during the pandemic and helps them to access the specific support programs available through its COVID-19 Response Center (MCRC). The MCRC was recently recognized among global responses to COVID-19 as an example of Investment Promotion Agency (IPA) best practice in UNCTAD&rsquo;s World Investment Report 2020.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Businesses are encouraged to get in touch with the MCRC through either WhatsApp (+9661120358880) or by email (InvestorCare@MISA.gov.sa). MISA representatives are also reachable through the Ministry&rsquo;s social media channels.</p>
+</div>
+</div> "
+							   
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template       ; $pagelabel                     ; false ;         ;                          ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page                ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

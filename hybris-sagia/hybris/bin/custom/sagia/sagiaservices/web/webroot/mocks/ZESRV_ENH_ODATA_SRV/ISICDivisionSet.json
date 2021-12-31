@@ -1,0 +1,1488 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "A",
+        "Isicid": "01",
+        "DescriptionEn": "Crop And Animal Production, Hunting And Related Service Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "A",
+        "Isicid": "02",
+        "DescriptionEn": "Forestry And Woodcutting",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "A",
+        "Isicid": "03",
+        "DescriptionEn": "Fishing And Aquaculture",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "B",
+        "Isicid": "07",
+        "DescriptionEn": "Mining Of Metal Ores",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "B",
+        "Isicid": "08",
+        "DescriptionEn": "Other Mining And Quarrying Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "B",
+        "Isicid": "09",
+        "DescriptionEn": "Mining Support Services",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "10",
+        "DescriptionEn": "Manufacture Of Food Products",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "11",
+        "DescriptionEn": "Manufacture Of Beverages",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "13",
+        "DescriptionEn": "Manufacture Of Textiles",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "14",
+        "DescriptionEn": "Manufacture Of Wearing Apparel",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "15",
+        "DescriptionEn": "Manufacture Of Leather Products And Related Products",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "16",
+        "DescriptionEn": "Manufacture Of Woods, Wood Products And Cork Except Furniture, Kinds Of Straw And Curling Materials",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "17",
+        "DescriptionEn": "Manufacture Of Paper And Paper Products",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "18",
+        "DescriptionEn": "Printing And Reproduction Of Registered Media Materials",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "19",
+        "DescriptionEn": "Manufacture Of Coke And Refined Petroleum Products",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "20",
+        "DescriptionEn": "Manufacture Of Chemicals And Chemical Products",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "21",
+        "DescriptionEn": "Manufacture Of Pharmaceutics And Basic Pharmaceutical Products",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "22",
+        "DescriptionEn": "Manufacture Of Rubber Products And Plastics",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "23",
+        "DescriptionEn": "Manufacture Of Non-Metallic Products",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "24",
+        "DescriptionEn": "Manufacture Of Basic Metals",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "25",
+        "DescriptionEn": "Manufacture Of Fabricated Metal Products (Except Machinery And Equipment)",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "26",
+        "DescriptionEn": "Manufacture Of Computer, Electronic And Optical Products",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "27",
+        "DescriptionEn": "Manufacture Of Electrical Devices",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "28",
+        "DescriptionEn": "Manufacture Of Equipment And Not Elsewhere Classified Products",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "29",
+        "DescriptionEn": "Manufacture Of Motor Vehicles, Trailers And Semi- Trailers",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "30",
+        "DescriptionEn": "Manufacture Of Other Transport Equipment",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "31",
+        "DescriptionEn": "Manufacture Of Furniture",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "32",
+        "DescriptionEn": "Other Manufacturing Industries",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "C",
+        "Isicid": "33",
+        "DescriptionEn": "Repair And Installation Of Machinery And Equipment",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "D",
+        "Isicid": "35",
+        "DescriptionEn": "Electricity, Gas, Steam And Air Conditioning",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "E",
+        "Isicid": "36",
+        "DescriptionEn": "Water Collection, Treatment And Supply",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "E",
+        "Isicid": "37",
+        "DescriptionEn": "Sewage",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "E",
+        "Isicid": "38",
+        "DescriptionEn": "Waste Collection, Treatment & Disposal Activities; Materials Recovery",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "E",
+        "Isicid": "39",
+        "DescriptionEn": "Remediation Activities And Other Waste Management Services",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "F",
+        "Isicid": "41",
+        "DescriptionEn": "Construction Of Buildings",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "F",
+        "Isicid": "42",
+        "DescriptionEn": "Civil Engineering",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "F",
+        "Isicid": "43",
+        "DescriptionEn": "Specialized Construction Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "G",
+        "Isicid": "45",
+        "DescriptionEn": "Wholesale And Retail Trade And Repair Of Motor Vehicles And Motorcycles",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "G",
+        "Isicid": "46",
+        "DescriptionEn": "Wholesale Trade, Except Of Motor Vehicles And Motorcycles",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "G",
+        "Isicid": "47",
+        "DescriptionEn": "Retail Trade, Except Of Motor Vehicles And Motorcycles",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "H",
+        "Isicid": "49",
+        "DescriptionEn": "Land Transport And Transport Via Pipelines",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "H",
+        "Isicid": "50",
+        "DescriptionEn": "Water Transport",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "H",
+        "Isicid": "51",
+        "DescriptionEn": "Air Transport",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "H",
+        "Isicid": "52",
+        "DescriptionEn": "Warehousing And Support Activities For Transportation",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "I",
+        "Isicid": "55",
+        "DescriptionEn": "Accommodation",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "I",
+        "Isicid": "56",
+        "DescriptionEn": "Food And Beverage Service Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "J",
+        "Isicid": "58",
+        "DescriptionEn": "Publishing Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "J",
+        "Isicid": "59",
+        "DescriptionEn": "Motion Picture, Video And Television Program Production Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "J",
+        "Isicid": "60",
+        "DescriptionEn": "Programming And Broadcasting Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "J",
+        "Isicid": "61",
+        "DescriptionEn": "Telecommunications",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "J",
+        "Isicid": "62",
+        "DescriptionEn": "Computer Programming, Consultancy And Related Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "J",
+        "Isicid": "63",
+        "DescriptionEn": "Information Service Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "K",
+        "Isicid": "64",
+        "DescriptionEn": "Financial Service Activities, Except Insurance And Pension Funding",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "K",
+        "Isicid": "65",
+        "DescriptionEn": "Insurance, Reinsurance And Pension Funding, Except Compulsory Social Security",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "K",
+        "Isicid": "66",
+        "DescriptionEn": "Activities Auxiliary To Financial Services And Insurance Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "L",
+        "Isicid": "68",
+        "DescriptionEn": "Real Estate Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "M",
+        "Isicid": "69",
+        "DescriptionEn": "Legal And Accounting Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "M",
+        "Isicid": "70",
+        "DescriptionEn": "Activities Of Head Offices; Management Consultancy Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "M",
+        "Isicid": "71",
+        "DescriptionEn": "Architectural And Engineering Activities; Technical Testing And Analysis",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "M",
+        "Isicid": "72",
+        "DescriptionEn": "Scientific Research And Development",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "M",
+        "Isicid": "73",
+        "DescriptionEn": "Advertising And Market Research",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "M",
+        "Isicid": "74",
+        "DescriptionEn": "Other Professional, Scientific And Technical Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "M",
+        "Isicid": "75",
+        "DescriptionEn": "Veterinary Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "N",
+        "Isicid": "77",
+        "DescriptionEn": "Rental And Leasing Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "N",
+        "Isicid": "78",
+        "DescriptionEn": "Employment Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "N",
+        "Isicid": "79",
+        "DescriptionEn": "Travel Agency, Tour Operator, Reservation Service And Related Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "N",
+        "Isicid": "81",
+        "DescriptionEn": "Services To Buildings And Landscape Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "N",
+        "Isicid": "82",
+        "DescriptionEn": "Office Administrative, Office Support And Other Business Support Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "O",
+        "Isicid": "84",
+        "DescriptionEn": "Public Administration And Defense; Compulsory Social Security",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "P",
+        "Isicid": "85",
+        "DescriptionEn": "Education",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "Q",
+        "Isicid": "86",
+        "DescriptionEn": "Human Health",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "Q",
+        "Isicid": "87",
+        "DescriptionEn": "Residential Care Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "Q",
+        "Isicid": "88",
+        "DescriptionEn": "Social Work Activities Without Accommodation For The Elderly And Disabled",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "R",
+        "Isicid": "90",
+        "DescriptionEn": "Creative, Arts And Entertainment Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "R",
+        "Isicid": "91",
+        "DescriptionEn": "Libraries, Archives, Museums And Other Cultural Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "R",
+        "Isicid": "93",
+        "DescriptionEn": "Sports Activities And Amusement And Recreation Activities",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "S",
+        "Isicid": "95",
+        "DescriptionEn": "Repair Of Computers And Personal And Household Goods",
+        "DescriptionAr": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/ISICDivisionSet(Lang='',Userid='',Investorid='')",
+          "type": "ZESRV_ENH_ODATA_SRV.ISICDivision"
+        },
+        "Lang": "",
+        "Userid": "",
+        "Investorid": "",
+        "Bpid": "",
+        "Lictype": "",
+        "Lictypetext": "",
+        "Srid": "",
+        "Licactivity": "",
+        "Inputid": "S",
+        "Isicid": "96",
+        "DescriptionEn": "Other Personal Service Activities",
+        "DescriptionAr": ""
+      }
+    ]
+  }
+}

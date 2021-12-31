@@ -1,0 +1,82 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]         								; realFileName             					                ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]			; mime[default = 'image/jpeg']	; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; investment-guide-bannerimage.png 							; investment-guide-bannerimage.png 			                ; $siteResource/investment-guide-bannerimage.png 	 								  	; image/png						;										   ; ""  ;
+					; business-day.png 											; business-day.png 							                ; $siteResource/business-day.png 					 								    ; image/png						;										   ; ""  ;
+					; documents.png 											; documents.png 							                ; $siteResource/documents.png 					 								  		; image/png						;										   ; ""  ;
+						
+					; business-day-ar.png										; business-day-ar.png						                ; $siteResource/business-day-ar.png 					 								; image/png						;										   ; ""  ;
+					; documents-ar.png   										; documents-ar.png   						                ; $siteResource/documents-ar.png   				 								  		; image/png						;										   ; ""  ;
+											
+					; type-of-businesses-background.png 						; type-of-businesses-background.png 		                ; $siteResource/type-of-businesses-background.png 	 								  	; image/png						;										   ; ""  ;
+					; foreign-company-branch.svg 								; foreign-company-branch.svg 				                ; $siteResource/foreign-company-branch.svg 			 								  	; image/svg+xml					;										   ; ""  ;
+					; joint-stock-company.svg 									; joint-stock-company.svg 					                ; $siteResource/joint-stock-company.svg 				 								; image/svg+xml					;										   ; ""  ;
+					; limited-liability-company.svg 							; limited-liability-company.svg 			                ; $siteResource/limited-liability-company.svg 		 								  	; image/svg+xml					;										   ; ""  ;
+					; limited-liability-personcompany.svg 						; limited-liability-personcompany.svg 		                ; $siteResource/limited-liability-personcompany.svg 	 								; image/svg+xml					;										   ; ""  ;
+					; solidarity-professional-company.svg 						; solidarity-professional-company.svg 		                ; $siteResource/solidarity-professional-company.svg 	 								; image/svg+xml					;										   ; ""  ;
+											
+					; agricultura-llicense.png 									; agricultura-llicense.png 									; $siteResource/agricultura-llicense.png 					 							; image/png						;										   ; ""  ;
+					; audiovisual-media-license.png 							; audiovisual-media-license.png 							; $siteResource/audiovisual-media-license.png 										  	; image/png						;										   ; ""  ;
+					; commercial-license.png 									; commercial-license.png 									; $siteResource/commercial-license.png 												  	; image/png						;										   ; ""  ;
+					; consulting-license-engineering-offices.png 				; consulting-license-engineering-offices.png				; $siteResource/consulting-license-engineering-offices.png							  	; image/png						;										   ; ""  ;
+					; consulting-license-technical-offices.png 					; consulting-license-technical-offices.png 					; $siteResource/consulting-license-technical-offices.png 	 							; image/png						;										   ; ""  ;
+					; entrepreneur-license.png 									; entrepreneur-license.png 									; $siteResource/entrepreneur-license.png 					 							; image/png						;										   ; ""  ;
+					; license-for-ascientific-office.png 						; license-for-ascientific-office.png 						; $siteResource/license-for-ascientific-office.png 									  	; image/png						;										   ; ""  ;
+					; license-forserving-agents-services.png 					; license-forserving-agents-services.png 					; $siteResource/license-forserving-agents-services.png 								  	; image/png						;										   ; ""  ;
+					; lndustrial-license.png 									; lndustrial-license.png 									; $siteResource/lndustrial-license.png 												  	; image/png						;										   ; ""  ;
+					; mining-license.png 										; mining-license.png 										; $siteResource/mining-license.png 													  	; image/png						;										   ; ""  ;
+					; printing-publishing-license.png 							; printing-publishing-license.png 							; $siteResource/printing-publishing-license.png 			 							; image/png						;										   ; ""  ;
+					; professional-license-Saudi-shareholder.png 				; professional-license-Saudi-shareholder.png				; $siteResource/professional-license-Saudi-shareholder.png							  	; image/png						;										   ; ""  ;
+					; province-real-estate-image.png							; province-real-estate-image.png							; $siteResource/province-real-estate-image.png											; image/png						;										   ; ""  ;
+					; services-license.png 										; services-license.png 										; $siteResource/services-license.png 						 							; image/png						;										   ; ""  ;
+					; transport-license.png 									; transport-license.png 									; $siteResource/transport-license.png 												  	; image/png						;										   ; ""  ;
+						
+					; 1.png														; 1.png														; $siteResource/1.png						 								  			; image/png						;										   ; ""  ;
+					; 2.png 													; 2.png 													; $siteResource/2.png 												  					; image/png						;										   ; ""  ;
+						
+					; 2-documents.png 											; 2-documents.png 											; $siteResource/2-documents.png 												  		; image/png						;										   ; ""  ;					
+					; 2-documents-ar.png 										; 2-documents-ar.png 										; $siteResource/2-documents-ar.png 												  		; image/png						;										   ; ""  ;					
+					; 2-documents-1.png									    	; 2-documents-1.png									     	; $siteResource/2-documents-1.png								 	 					; image/png						;										   ; ""  ;
+						
+					; gcam-logo.png                                 	    	; gcam-logo.png                                 	     	; $siteResource/gcam-logo.png                                 	 						; image/png						;										   ; ""  ;
+					; ministry-of-foregin-affairs-logo.png          	    	; ministry-of-foregin-affairs-logo.png          	     	; $siteResource/ministry-of-foregin-affairs-logo.png          							; image/png						;										   ; ""  ;
+					; ministry-of-investment-logo1.png              	    	; ministry-of-investment-logo1.png              	     	; $siteResource/ministry-of-investment-logo1.png              							; image/png						;										   ; ""  ;
+					; ministry-of-investment-logo2.png     				    	; ministry-of-investment-logo2.png     				     	; $siteResource/ministry-of-investment-logo2.png     									; image/png						;										   ; ""  ;
+					; ministry-of-municipal-reral-affairs-logo1.png		    	; ministry-of-municipal-reral-affairs-logo1.png		     	; $siteResource/ministry-of-municipal-reral-affairs-logo1.png							; image/png						;										   ; ""  ;
+					; ministry-of-municipal-reral-affairs-logo2.png		    	; ministry-of-municipal-reral-affairs-logo2.png		     	; $siteResource/ministry-of-municipal-reral-affairs-logo2.png		 					; image/png						;										   ; ""  ;
+					; additional-doc-background-image.jpg		    			; additional-doc-background-image.jpg		     			; $siteResource/additional-doc-background-image.jpg		 								; image/png						;										   ; ""  ;
+				    ; public-buses-or-metros-license.png                    	; public-buses-or-metros-license.png                        ; $siteResource/public-buses-or-metros-license.png                               		; image/png						;										   ; ""  ;
+					; entrepreneurship-license.png              		    	; entrepreneurship-license.png              		     	; $siteResource/entrepreneurship-license.png                							; image/png						;										   ; ""  ;
+					; consulting-license-for-engineering-offices.png	    	; consulting-license-for-engineering-offices.png		    ; $siteResource/consulting-license-for-engineering-offices.png							; image/png						;										   ; ""  ;	
+											
+					; investor-journey-01.png 	                            	; investor-journey-01.png	     	                        ; $siteResource/investor-journey-01.png						  							; image/png						;										   ; ""  ;
+					; investor-journey-02.png 	                            	; investor-journey-02.png	     	                        ; $siteResource/investor-journey-02.png						  							; image/png						;										   ; ""  ;
+					; investor-journey-03.png	                            	; investor-journey-03.png	     	                        ; $siteResource/investor-journey-03.png							  						; image/png						;										   ; ""  ;
+					; investor-journey-04.png		                        	; investor-journey-04.png	     	                        ; $siteResource/investor-journey-04.png							  						; image/png						;										   ; ""  ;
+					; investor-journey-05.png		                        	; investor-journey-05.png	     	                        ; $siteResource/investor-journey-05.png	 								  				; image/png						;										   ; ""  ;
+					
+					; investor-journey-ar-01.png 	                            ; investor-journey-ar-01.png	     	                    ; $siteResource/investor-journey-ar-01.png						  						; image/png						;										   ; ""  ;
+					; investor-journey-ar-02.png 	                            ; investor-journey-ar-02.png	     	                    ; $siteResource/investor-journey-ar-02.png						  						; image/png						;										   ; ""  ;
+					; investor-journey-ar-03.png	                            ; investor-journey-ar-03.png	     	                    ; $siteResource/investor-journey-ar-03.png							  					; image/png						;										   ; ""  ;
+					; investor-journey-ar-04.png		                        ; investor-journey-ar-04.png	     	                    ; $siteResource/investor-journey-ar-04.png							  					; image/png						;										   ; ""  ;
+					; investor-journey-ar-05.png		                        ; investor-journey-ar-05.png	     	                    ; $siteResource/investor-journey-ar-05.png	 								  			; image/png						;										   ; ""  ;
+										
+					; ministry-of-investment-logo-2.png	    					; ministry-of-investment-logo-2.png 	     				; $siteResource/ministry-of-investment-logo-2.png 							  			; image/png						;										   ; ""  ;
+					; ministry-of-commerce-industry-ministry-justice-logo.png	; ministry-of-commerce-industry-ministry-justice-logo.png 	; $siteResource/ministry-of-commerce-industry-ministry-justice-logo.png 				; image/png						;										   ; ""  ;
+					; ministry-of-commerce-and-industry.png		    			; ministry-of-commerce-and-industry.png		     			; $siteResource/ministry-of-commerce-and-industry.png									; image/png						;										   ; ""  ;
+					; general-authority-zakat-tax.png	    					; general-authority-zakat-tax.png		     				; $siteResource/general-authority-zakat-tax.png								  			; image/png						;										   ; ""  ;
+					; general-organization-for-social-insurance.png	    		; general-organization-for-social-insurance.png		     	; $siteResource/general-organization-for-social-insurance.png		 					; image/png						;										   ; ""  ;
+					; human-resources-and-social-development.png	    		; human-resources-and-social-development.png		     	; $siteResource/human-resources-and-social-development.png		 						; image/png						;										   ; ""  ;

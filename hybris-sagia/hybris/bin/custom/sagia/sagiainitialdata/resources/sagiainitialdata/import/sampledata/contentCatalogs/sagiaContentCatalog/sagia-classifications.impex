@@ -1,0 +1,10 @@
+$langen=en
+$langar=ar
+
+INSERT_UPDATE SagiaClassification; code[unique = true]; name[lang=$langen]; value[lang=$langen];    value[lang=$langar];
+                                    ; 50                    ;   A+                  ; Strategic     ; استراتيجي
+                                    ; 40                    ;   A                   ; Premium       ; متميزة
+                                    ; 30                    ;   B                   ; Advanced      ; متقدمة
+                                    ; 20                    ;   C                   ; Limited       ; محدودة
+                                    ; 10                    ;   I                   ; Innovation    ; ريادي
+

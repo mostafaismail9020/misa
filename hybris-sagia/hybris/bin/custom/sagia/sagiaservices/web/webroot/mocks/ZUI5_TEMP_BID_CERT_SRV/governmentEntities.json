@@ -1,0 +1,226 @@
+{
+    "d": {
+        "results": [
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOC')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOC')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOC",
+                "Ctext": "",
+                "Gtext": "Ministry of Commerce and Investment"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOCI')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOCI')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOCI",
+                "Ctext": "",
+                "Gtext": "Ministry of Communication and Information Technology"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOA')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOA')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOA",
+                "Ctext": "",
+                "Gtext": "Ministry of Agriculture"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOFA')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOFA')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOFA",
+                "Ctext": "",
+                "Gtext": "Ministry of Foreign Affairs"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOE')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOE')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOE",
+                "Ctext": "",
+                "Gtext": "Ministry of Education"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOJ')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOJ')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOJ",
+                "Ctext": "",
+                "Gtext": "Ministry of Justice"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOH')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOH')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOH",
+                "Ctext": "",
+                "Gtext": "Ministry of Health"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MODF')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MODF')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MODF",
+                "Ctext": "",
+                "Gtext": "Ministry of Defense &  Aviation"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOHA')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOHA')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOHA",
+                "Ctext": "",
+                "Gtext": "Ministry of Haj and Umrah"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOEP')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOEP')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOEP",
+                "Ctext": "",
+                "Gtext": "Ministry of Economy and Planning"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOL')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOL')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOL",
+                "Ctext": "",
+                "Gtext": "Ministry of Labor"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOT')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOT')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOT",
+                "Ctext": "",
+                "Gtext": "Ministry of Transportation"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOF')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOF')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOF",
+                "Ctext": "",
+                "Gtext": "Ministry of Finance"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOI')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOI')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOI",
+                "Ctext": "",
+                "Gtext": "Ministry of Interior"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOPM')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOPM')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOPM",
+                "Ctext": "",
+                "Gtext": "Ministry of Energy, Industry and Mineral"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOEW')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOEW')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOEW",
+                "Ctext": "",
+                "Gtext": "Ministry of Agriculture and Water"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOSA')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MOSA')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MOSA",
+                "Ctext": "",
+                "Gtext": "Ministry of Social Affairs"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MONG')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='MONG')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "MONG",
+                "Ctext": "",
+                "Gtext": "Ministry of National Guard"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='SWCC')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='SWCC')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "SWCC",
+                "Ctext": "",
+                "Gtext": "Saline Water Conversion Corporation"
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='OTH')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='',Gentity='OTH')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "",
+                "Gentity": "OTH",
+                "Ctext": "",
+                "Gtext": "Others"
+            }
+        ]
+    }
+}

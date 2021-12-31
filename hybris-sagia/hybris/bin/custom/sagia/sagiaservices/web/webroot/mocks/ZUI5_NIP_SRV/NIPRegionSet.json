@@ -1,0 +1,188 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='10')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='10')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "10",
+        "REGION_TEXT": "Riyadh",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='11')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='11')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "11",
+        "REGION_TEXT": "Makkah",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='12')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='12')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "REGION_TEXT": "Eastern Province",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='13')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='13')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "13",
+        "REGION_TEXT": "Madinah",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='14')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='14')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "14",
+        "REGION_TEXT": "Hail",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='15')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='15')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "15",
+        "REGION_TEXT": "Tabuk",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='16')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='16')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "16",
+        "REGION_TEXT": "Asir",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='17')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='17')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "17",
+        "REGION_TEXT": "Jizan",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='18')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='18')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "18",
+        "REGION_TEXT": "Najran",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='19')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='19')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "19",
+        "REGION_TEXT": "Economic Cities",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='20')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='20')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "20",
+        "REGION_TEXT": "Northern Borders",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='21')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='21')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "21",
+        "REGION_TEXT": "Bahah",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='22')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='22')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "22",
+        "REGION_TEXT": "Qasim",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='23')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPRegionSet(LANGUAGE='E',REGION='23')",
+          "type": "ZUI5_NIP_SRV.NIPRegion"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "23",
+        "REGION_TEXT": "Jawf",
+        "SUCCESS": "X",
+        "ERROR": ""
+      }
+    ]
+  }
+}

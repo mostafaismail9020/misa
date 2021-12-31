@@ -1,0 +1,326 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+
+INSERT_UPDATE SectorFactsFiguresComponent; uid[unique = true] 					; name               							; figures[lang = en] 		; unit[lang = en]	; facts[lang = en]                                    												; $contentCV[unique = true];
+                                         ; chemicals-facts-001 					; Chemicals Facts 1 							; 170     					; BN  				; operating revenues of the Chemicals sector for 2016 												;
+                                         ; chemicals-facts-002 					; Chemicals Facts 2 							; 5       					; %           		; production capacity growth for Chemicals for 2016   												;
+                                         ; chemicals-facts-003 					; Chemicals Facts 3 							; 97,267  					; KT          		; chemical production capacity in KSA for 2017        												;
+			
+                                         ; real-estate-facts-001 				; Real Estate Facts 1 							; 70     					; % 		        ; home ownership target by 2030                       												;
+                                         ; real-estate-facts-002 				; Real Estate Facts 2 							; 1.2      					; BN m²             ; built-up area expected to be developed by 2030      												;
+                                         ; real-estate-facts-003 				; Real Estate Facts 3 							; 1.5  	    				; M          		; housing units to be built by 2030                   												;
+                                         ; real-estate-facts-005 				; Real Estate Facts 5 							; 50        				; %                 ; of new units built using new technology      														;
+                                         ; real-estate-facts-006 				; Real Estate Facts 6 							; 70 		    			; %       		    ; Home ownership target by 2030                   													;
+			
+                                         ; mining-metals-facts-001 				; Mining and Metals Facts 1 					; $1.3      				; TRN		    	; mineral resources potential value                   												;
+                                         ; mining-metals-facts-002 				; Mining and Metals Facts 2 					; $75       				; BN           		; GDP contribution by 2035     				                        								;
+                                         ; mining-metals-facts-003 				; Mining and Metals Facts 3 					; 4th 	 	    			;          		    ; largest importer of mineral products globally                     								;
+                                         ; mining-metals-facts-004 				; Mining and Metals Facts 4 	    			; 48     					; 		            ; minerals identified in the Kingdom                          	    								;
+                                         ; mining-metals-facts-005 				; Mining and Metals Facts 5 					; $11.5     				; BN           		; imports by 2035, down from $19 billion                            								;
+																							
+                                         ; transport-logistics-facts-001 		; Transport & Logistics Facts 1 				; $26       				; BN		        ; annual growth forecast prior to 2030                   		    								;
+                                         ; transport-logistics-facts-002 		; Transport & Logistics Facts 2 				; $30       				; BN                ; public sector investments expected over the next decade           								;
+                                         ; transport-logistics-facts-003 		; Transport & Logistics Facts 3 				; $18  	    				; BN         		; total market size                                                 								;
+                                         ; transport-logistics-facts-004 		; Transport & Logistics Facts 4 				; 12     					; %		            ; CAGR by 2030                         	                            								;
+																							
+										 ; education-facts-001 					; Education Facts 1 							; $49.5     				; BN		        ; spending on education                 		                     								;
+                                         ; education-facts-002 					; Education Facts 2 							;  5        				; %                 ; increase in private education since 2013                          								;
+																							
+                                         ; innovation-facts-001 				; Innovation and Enterpreneurship Facts 1		; 29       					; %   		        ; SME contribution to GDP in 2020 from 20% in 2016                   								;
+                                         ; innovation-facts-002 				; Innovation and Enterpreneurship Facts 2 		; 35       					; %                 ; targeted SME contribution to GDP by 2030                            								;
+                                         ; innovation-facts-003 				; Innovation and Enterpreneurship Facts 3 		; 65 	    				; %            		; growth in the Saudi venture capital ecosystem Y-o-Y from 2016 to 2021     						;
+																							
+										 ; financial-facts-001 		            ; Financial Facts 1 							; $1.3      				; TRN		        ; estimated total credit demand by 2030                  		    								;
+                                         ; financial-facts-002 					; Financial Facts 2 							; 20       	    			; %                 ; increase in the share of MSME financing by banks by 2030           								;
+                                         ; financial-facts-003 					; Financial Facts 3 							; 70 	    				; %        		    ; share of non-cash transactions by 2030                                    						;
+                                         ; financial-facts-004 					; Financial Facts 4 							; 53    					; %		            ; increase in the share of capital markets assets by 2030                   						;
+													
+                                         ; tourism-facts-001 		            ; Tourism Facts 1 								; 100     					; M	        		; local and international tourists per year by 2030                         						;
+                                         ; tourism-facts-002 					; Tourism Facts 2 								; 10      	    			; %                 ; sector contribution to GDP by 2030, from 3% today         		       							;
+                                         ; tourism-facts-003 					; Tourism Facts 3 								; $19.3 	    			; BN        		; in total tourist receipts from inbound and domestic visits in 2019       							;
+                                         ; tourism-facts-004 					; Tourism Facts 4 								; $519    	    			; 		            ; average tourist spend in 2019                                             						;
+																							
+                                         ; culture-entertainment-facts-001 		; Culture and Entertainment Facts 1 	    	; $57     					; BN        		; investment requirement to build entertainment infrastructure by 2030     							;
+                                         ; culture-entertainment-facts-002 	    ; Culture and Entertainment Facts 2 			; 11      	    			;                   ; entertainment seasons launched across the Kingdom       		           							;
+                                         ; culture-entertainment-facts-003 		; Culture and Entertainment Facts 3 			; 2,500  	    			;        		    ; number of entertainment activities and events in the last five years     							;
+                                         ; culture-entertainment-facts-004 	    ; Culture and Entertainment Facts 4 			; 26,000     				; 		            ; events days in the last five years                                       							;
+                                         ; culture-entertainment-facts-005 		; Culture and Entertainment Facts 5 			; 155     					;        		    ; entertainment destinations in the last five years                       							;
+                                         ; culture-entertainment-facts-006 	    ; Culture and Entertainment Facts 6	        	; 75      	    			; MN                ; visitors in the last five years         		                           							;
+													
+                                         ; sports-facts-001 		            ; Sports Facts 1 								; $320     					; M	        		; private sector investment committed through clubs’ sponsorships until 2023                        ;
+                                         ; sports-facts-002 					; Sports Facts 2 								; $670     	    			; M                 ; committed to support sports clubs in achieving financial maturity and privatization         		;
+													
+                                         ; medical-technologies-facts-001 		; Medical Technologies Facts 1 			    	; 100     					; %	        		; of the population will be covered by the unified digital medical records system by 2025           ;
+                                         ; medical-technologies-facts-002 	    ; Medical Technologies Facts 2 					; $5.4     	    			; BN                ; medical technology market size in 2021       		       							                ;
+                                         ; medical-technologies-facts-003 		; Medical Technologies Facts 3 			    	; 49	        			; %        		    ; of MEA market share in medical technology     							                        ;
+													
+                                         ; medical-services-facts-001 			; Medical Services Facts 1 			    		; 88     					; %	        		; of the population, including those in rural areas, will be covered by medical health services by 2025 ;
+                                         ; medical-services-facts-002 	    	; Medical Services Facts 2 						; 5.8    	    			; %                 ; CAGR healthcare services sector growth from 2017 to 2029    		       							  ;
+                                         ; medical-services-facts-003 			; Medical Services Facts 3 			    		; 7	            			; %        		    ; increase in elderly people by 2030  							                                      ;
+													
+                                         ; pharmacuticals-facts-001 			; Pharmacuticals Facts 1 			    		; $8.5     					; BN       		    ; pharmaceutical market size                                                                          ;
+                                         ; pharmacuticals-facts-002 	    	; Pharmacuticals Facts 2 						; 37	        			; %                 ; of MENA market share in pharmaceuticals    		       							                  ;
+																							
+										 ; automotives-facts-001 				; Automotives Facts 1 			    			; $17    					; BN       		    ; automotive market sales value in 2019                                                               ;
+                                         ; automotives-facts-002 	    		; Automotives Facts 2 						    ; 537,000 	    			;                   ; vehicles sold in 2019   		       							                                      ;
+                                         ; automotives-facts-003	    		; Automotives Facts 3							; 45.3	        			; M                 ; vehicles expected on Saudi roads by 2030  		       							                  ;
+													
+                                         ; food-processing-facts-001 			; Food Processing Facts 1 			    		; $42     					; BN       		    ; food and beverage market size and expected to grow at 3% per year over the next five years          ;
+                                         ; food-processing-facts-002 	    	; Food Processing Facts 2 						; 85	        			; %                 ; food processing localization target rate by 2030   		       							          ;
+													
+										 ; industrial-spareparts-facts-001 		; Industrial & Spare Parts Facts 1 				; $400     					; BN       		    ; in the pipeline to be spent on the IKTVA program by Saudi Aramco by 2030                            ;
+                                         ; industrial-spareparts-facts-002 	    ; Industrial & Spare Parts Facts 2 				; $13	        			; BN                ; total import of energy wires in the MENA  		       							                  ;
+			
+                                         ; digital-content-facts-001 			; Digital Content Facts 1 			    		; $2.5   					; BN       		    ; in expected gaming market size by 2030                                                              ;
+                                         ; digital-content-facts-002 	    	; Digital Content Facts 2 						; 73	        			; %                 ; social media penetration    		       							                                  ;
+                                         ; digital-content-facts-003	    	; Digital Content Facts 3						; 24            			; %                 ; year-on-year increase in time spent on gaming in the MENA region in 2020, compared to an 11% increase globally;
+													
+										 ; digital-infrastructure-facts-001 	; Digital Infrastructure Facts 1 				; $18    					; BN		        ; investments to build a nationwide network of large-scale data centers                               ;
+                                         ; digital-infrastructure-facts-002 	; Digital Infrastructure Facts 2 				; $2.5          			; BN                ; allocated to build digital infrastructure needed for industry 4.0   								  ;
+                                         ; digital-infrastructure-facts-003 	; Digital Infrastructure Facts 3 				; 9th  	        			;          		    ; for IPV6 Penetration globally in 2021                   											  ;
+                                         ; digital-infrastructure-facts-004 	; Digital Infrastructure Facts 4 				; 7th    					; 		            ; for mobile internet speed in Q2 2021                          									  ;
+                                         ; digital-infrastructure-facts-005 	; Digital Infrastructure Facts 5 				; 3rd     	    			;                   ; world wide for 5G speeds in April 2021    								                          ;
+                                         ; digital-infrastructure-facts-006 	; Digital Infrastructure Facts 6 				; 34 		    			; %    		        ; 5G network coverage across the Kingdom in 2020            										  ;
+													
+										 ; technology-platforms-facts-001 	    ; Technology & Platforms Facts 1 				; $13    					; BN		        ; e-commerce market size in 2021, a 45% share of the GCC market                                        ;
+                                         ; technology-platforms-facts-002 		; Technology & Platforms Facts 2 				; 32            			; %                 ; growth of the e-commerce market from 2015 to 2020   								  				   ;
+                                         ; technology-platforms-facts-003 		; Technology & Platforms Facts 3 				; $33  	    				; BN          		; expected FinTech transactions value by 2023                   									   ;
+                                         ; technology-platforms-facts-004 		; Technology & Platforms Facts 4 				; $20    					; BN 		        ; data and AI investments by 2030                         									  		   ;
+                                         ; technology-platforms-facts-005 		; Technology & Platforms Facts 5 				; 300     	    			;                   ; dedicated data and AI startups to be established by 2030   								           ;
+                                         ; technology-platforms-facts-006 		; Technology & Platforms Facts 6 				; 22	        			; %    		        ; increase on expected cloud computing spending by 2024, reaching $6 billion         				   ;
+			
+                                         ; conventional-energy-facts-001 		; Conventional Energy Facts 1 			    	; 2nd   					;       		    ; country worldwide for the energy consumption per capita                                              ;
+                                         ; conventional-energy-facts-002 	    ; Conventional Energy Facts 2 					; 11th	        			;                   ; country worldwide in annual electricity production   		       							           ;
+													
+										 ; renewable-energy-facts-001 		    ; Renewable Energy Facts 1 			    		; 6th   					;       		    ; country worldwide for solar energy potential                                                         ;
+                                         ; renewable-energy-facts-002 	        ; Renewable Energy Facts 2 						; 13th	        			;                   ; country worldwide for onshore wind energy potential	       							               ;
+													
+										 ; energy-saving-facts-001 				; Energy Saving Facts 1 			    		; 260,000    				;       		    ; governmental buildings that need retrofitting for energy efficiency                                  ;
+                                         ; energy-saving-facts-002 	    		; Energy Saving Facts 2 						; 3M+	            		;                 ; street light poles that need retrofitting for energy efficiency   		       		               ;
+													
+										 ; water-facts-001 						; Water Facts 1 								; ~$67  					; BN		        ; estimated capital investments in water and sanitation projects by 2025                                ;
+                                         ; water-facts-002 						; Water Facts 2 								; 5.5        				; m3                ; per day of additional desalination capacity estimated by 2026  								  		;
+                                         ; water-facts-003 						; Water Facts 3 								; 90  	   					; %         		; of water needs to be supplied through desalination by 2030                  							;
+                                         ; water-facts-004 						; Water Facts 4 								; ~3,000     				; km		        ; of additional water transmission lines estimated by 2025                         						;
+                                         ; water-facts-005 						; Water Facts 5 								; 15     	    			; %                 ; targeted reduction of water leakages by 2030    								                        ;
+                                         ; water-facts-006 						; Water Facts 6 								; 95		    			; %+    		    ; targeted increase in sewage network coverage by 2030           										;
+                                         ; water-facts-007 		    			; Water Facts 7 			    				; 5.5   					; M m3       		; per day of additional sewage treatment capacity estimated by 2030 to achieve 100% treatment           ;
+                                         ; water-facts-008 	        			; Water Facts 8 								; 90	        			; %                 ; water reuse targeted by 2040	       							                                        ;
+													
+										 ; waste-management-facts-001 			; Waste Management Facts 1 	    				; 82     					; %       			; of total waste estimated to be diverted from landfill by 2035, with higher targets for specific regions and waste streams ;
+                                         ; waste-management-facts-002 	    	; Waste Management Facts 2 						; 81      	    			; %                 ; of municipal solid waste recycled, with the remainder for waste-to-energy by 2035       		       ;
+                                         ; waste-management-facts-003 			; Waste Management Facts 3 						; 57 	    				; %      		    ; of construction & demolition waste diverted from landfill by 2035     							   ;
+                                         ; waste-management-facts-004 	    	; Waste Management Facts 4 						; 85     					; %		            ; of industrial hazardous waste diverted from landfill by 2035                                         ;
+			
+                                         ; aerospace-defense-facts-001 		    ; Aero Space and Defense Facts 1 				; 50     					; % 		        ; localization target by 2030, up from 8% in 2020                       								;
+                                         ; aerospace-defense-facts-002 		    ; Aero Space and Defense Facts 2 				; 100      					; %                 ; foreign ownership allowed      												                        ;
+                                         ; aerospace-defense-facts-003 		    ; Aero Space and Defense Facts 3 				; 6  	    				; th          		; largest military spender around the world in 2020                 									;
+                                         
+										 
+
+INSERT_UPDATE Category; code[unique = true] 		; sectorFactsFigures(uid, $contentCV)                         																																								; $catalogVersion ;                                                                                               
+                      ; chemicals           		; chemicals-facts-001,chemicals-facts-002,chemicals-facts-003 																																								;                 ;
+					  ; real-estate                 ; real-estate-facts-001,real-estate-facts-002,real-estate-facts-003,real-estate-facts-005,real-estate-facts-006          																				;                 ;
+					  ; mining-metals               ; mining-metals-facts-001,mining-metals-facts-002 ,mining-metals-facts-003,mining-metals-facts-004,mining-metals-facts-005                     																				;                 ;
+					  ; transport-logistics         ; transport-logistics-facts-001,transport-logistics-facts-002,transport-logistics-facts-003 ,transport-logistics-facts-004                    																				;                 ;
+					  ; education                   ; education-facts-001,education-facts-002                                                                                                       																			;                 ;
+					  ; innovation                  ; innovation-facts-001,innovation-facts-002,innovation-facts-003                                                                                																			;                 ;
+					  ; financial                   ; financial-facts-001,financial-facts-002,financial-facts-003,financial-facts-004                                                             																				;                 ;
+
+					  ; conventional-energy         ; conventional-energy-facts-001,conventional-energy-facts-002                                                                                                                                                               ;                 ;  
+					  ; renewable-energy            ; renewable-energy-facts-001,renewable-energy-facts-002                                                                                                                                                                     ;                 ;
+					  ; energy-saving               ; energy-saving-facts-001,energy-saving-facts-002                                                                                                                                                   ;                 ;
+
+					  ; water                       ; water-facts-001,water-facts-002,water-facts-003,water-facts-004,water-facts-005,water-facts-006,water-facts-007,water-facts-008                                                                                         	;                 ;
+					  ; waste-management            ; waste-management-facts-001,waste-management-facts-002,waste-management-facts-003,waste-management-facts-004                                                                                                               ;                 ;
+
+					  ; tourism                     ; tourism-facts-001,tourism-facts-002,tourism-facts-003,tourism-facts-004                                                                      																				;                 ;
+					  ; culture-entertainment       ; culture-entertainment-facts-001,culture-entertainment-facts-002,culture-entertainment-facts-003,culture-entertainment-facts-004,culture-entertainment-facts-005,culture-entertainment-facts-006                       	;                 ;
+					  ; sports                      ; sports-facts-001,sports-facts-002                                                                                                                                                                                         ;                 ;
+
+					  ; medical-technologies        ; medical-technologies-facts-001,medical-technologies-facts-002,medical-technologies-facts-003 	                                                                                                                            ;                 ;
+					  ; medical-services            ; medical-services-facts-001,medical-services-facts-002,medical-services-facts-003                                                                                                                                          ;                 ;
+					  ; pharmacuticals              ; pharmacuticals-facts-001,pharmacuticals-facts-002                                                                                                                                                                       	;                 ;
+
+					  ; automotives                 ; automotives-facts-001,automotives-facts-002 ,automotives-facts-003																																	                    ;                 ;
+					  ; food-processing             ; food-processing-facts-001,food-processing-facts-002                                                                                                                                                                       ;                 ;
+					  ; industrial-spareparts       ; industrial-spareparts-facts-001,industrial-spareparts-facts-002                                                                                                                                                           ;                 ;
+
+					  ; digital-content             ; digital-content-facts-001,digital-content-facts-002,digital-content-facts-003	                                                                                                                                        ;                 ; 
+					  ; digital-infrastructure      ; digital-infrastructure-facts-001,digital-infrastructure-facts-002,digital-infrastructure-facts-003,digital-infrastructure-facts-004,digital-infrastructure-facts-005,digital-infrastructure-facts-006		                ;                 ;                   																																																														
+					  ; technology-platforms        ; technology-platforms-facts-001,technology-platforms-facts-002,technology-platforms-facts-003,technology-platforms-facts-004,technology-platforms-facts-005,technology-platforms-facts-006                                 ;                 ; 
+                      
+                      ; aerospace-defense           ; aerospace-defense-facts-001,aerospace-defense-facts-002,aerospace-defense-facts-003
+					  
+					  				  
+INSERT_UPDATE SectorKeyDetailsComponent	; $contentCV[unique = true]	; uid[unique = true]			; name                                ; sectorFactsFiguresList(uid, $contentCV)							; bulletPoints [lang = en]                                    
+										;                           ; conventional-energy-key-001   ; Conventional Energy key details     ; conventional-energy-facts-001,conventional-energy-facts-002 	; "
+<p>Large and growing market demand for energy</p>
+<p>Robust infrastructure and foundation</p>
+<p>Strong commitment to localization and private sector engagement</p>";
+                                   
+										;                           ; renewable-energy-key-001		; Renewable Energy key details        ; renewable-energy-facts-001,renewable-energy-facts-002          	;"
+<p>Limitless solar and wind energy endowment</p>									 
+<p>Large unsaturated regional market</p>
+<p>Advanced knowledge-based market</p>
+<p>Investor centric ecosystem</p>";
+     
+										;                          ; energy-saving-key-001          ; Energy Saving key details           ; energy-saving-facts-001,energy-saving-facts-002                 ; "
+<p>One of the countries with largest energy consumption with increasing electricity tariffs</p>
+<p>Strong government commitment to the growth of the energy savings industry</p>
+<p>Advanced knowledge-based market</p>
+<p>Tarshid established to promote energy conservation in public buildings</p>";
+
+										;                          ; water-key-001    			    ; Water key details                   ; water-facts-001,water-facts-002                           		; "
+<p>Large and growing market demand for water</p>
+<p>Global leader in desalination</p>
+<p>Strong commitment to develop infrastructure beyond desalination</p>
+<p>Ambitions to further anchor water capabilities and expertise locally</p>";
+
+										;						   ; waste-management-key-001 		; Waste Management key details 		  ; waste-management-facts-001,waste-management-facts-002           ; "
+<p>Large and growing need for a robust, nation-wide waste management system</p>
+<p>Clear government commitment to unlock the sector’s full potential</p>
+<p>Ambitious sustainability targets to address consumer-driven waste</p>";
+ 
+                                        ; 							; tourism-key-001		        ; Tourism key details 			 	  ; tourism-facts-001,tourism-facts-002                             ; "
+<p>New, unexplored global tourist destination</p>
+<p>Diverse tourism infrastructure projects with high international standards</p>
+<p>Exclusive destinations on the world tourism map</p>
+<p>Rich ancient cultural heritage and breathtaking iconic sights</p>";
+                                   
+										;							; culture-entertainment-key-001	; Culture and Entertainment key details  ; culture-entertainment-facts-001,culture-entertainment-facts-002    ;"
+<p>Ambitious vision to enrich the lives of citizens and residents</p>
+<p>Offering enormous opportunities</p>
+<p>Exclusive destinations on the world tourism map</p>
+<p>Strong government backing to unlock the sector’s business potential</p>";
+   									                								   
+                             			;							; sports-key-001	  			; Sports key details 					; sports-facts-001,sports-facts-002                                 ;"
+<p>Ambition to become the ideal destination for major international sporting events</p>
+<p>Government commitment to grow the sector</p>";
+   									                								   
+										; 							; medical-technologies-key-001	; Medical Technologies key details  	; medical-technologies-facts-001,medical-technologies-facts-002    ;"
+<p>Rising prevalence of chronic and infectious diseases driving demand</p>
+<p>Untapped potential for localization</p>
+<p>The region’s emerging medical technology hub</p>
+<p>A well-established regulator ensuring ease of doing business</p>";
+    									     
+										; 							; medical-services-key-001	   	; Medical Services key details 		    ; medical-services-facts-001,medical-services-facts-002    			;"									
+<p>Sizeable market with untapped potential and significant growth ahead</p>
+<p>Rising prevalence of chronic conditions related to age, lifestyle, and genetic makeup</p>
+<p>Strong government commitment and ambitious targets to develop the sector</p>
+<p>Unique investments enablers </p>";
+
+										; 							; pharmacuticals-key-001	  	; Pharmacuticals key details 			; pharmacuticals-facts-001,pharmacuticals-facts-002                  ;"
+<p>Pharmaceuticals market is set to skyrocket in the near future</p>
+<p>Upcoming biotechnology and biopharmaceutical hub of the MENA region</p>
+<p>Government commitment to unlock the sector</p>";
+    									     										 
+										; 							; automotives-key-001	  		; Automotives key details 				; automotives-facts-001,automotives-facts-002	                     ;"
+<p>The regions’ most attractive manufacturing hub</p>";
+
+										; 							; food-processing-key-001	  	; Food Processing key details 			; food-processing-facts-001,food-processing-facts-002                ;"
+<p>Large and growing local and regional markets</p>
+<p>Unique dates endowment making it a suitable base for exports</p>
+<p>An ocean of fish guaranteeing big catches</p>
+<p>Well-developed ecosystem and superior supply-chain management</p>";
+  
+										; 							; industrial-spareparts-key-001	; Industrial & Spare Parts key details 	; industrial-spareparts-facts-001,industrial-spareparts-facts-002	;"
+<p>Rapid growth in tandem with other booming industries and value chains</p>
+<p>Localization programs enabling easier access to opportunities and ease of doing business</p>
+<p>Industrial cities offering investors highly competitive prices</p>";
+ 
+										; 							; digital-content-key-001		; Digital Content key details 		 	; digital-content-facts-001,digital-content-facts-002	;"
+<p>Gaming</p>
+<P>One of the fastest growing gaming markets globally</p>
+<P>Widespread adoption of new technologies driving the gaming market</p>
+<P>Video content</p>
+<P>Demand for VOD platforms is on the rise</p>
+<P>Sizable video market that is set to expand further</p>
+<P>Audio content</p>
+<P>Digital audio is replacing traditional audio</p>
+<P>Regional market size for local content in Arabic</p>
+<P>Digital advertising
+<P>High market potential for digital advertising</p>
+<P>Among the world’s highest online engagement times</p>";
+
+										; 							; digital-infrastructure-key-001; Digital Infrastructure key details 	; digital-infrastructure-facts-001,digital-infrastructure-facts-002	;"
+<p>Data centers</p>
+<p>Large market demand for data center capacity</p>
+<p>Strong commitment to a booming data center market</p>
+<p>Telecommunications</p>
+<p>A large market demand requiring a large supply</p>
+<p>Long-term investments that are already paying off</p>
+<p>Excellent quality and wide coverage ensuring access for all</p>
+<p>World-class regulator ensuring continuous excellence</p>
+<p>Digital, tech-savvy and connected talent pool</p>
+<p>Smart Cities</p>
+<p>Plans to develop several world-class smart cities</p>
+<p>Strong government support and funding</p>
+<p>Industry 4.0</p>
+<p>1. Ambitious plans to convert factories to digital and interconnected</p>
+<p>2. Increasing industry 4.0 awareness driving demand</p>";
+
+										; 							; technology-platforms-key-001	; Technology & Platforms key details 	; technology-platforms-facts-001,technology-platforms-facts-002 	;"
+<p>Artificial Intelligence</p>
+<p>Actionable data and AI strategy that is already bearing fruit</p>
+<p>Commitment to local talent training in data and AI</p>
+<p>Ambitious investment targets</p>
+<p>E-commerce</p>
+<p>Region’s largest and most lucrative e-commerce market</p>
+<p>Attractive e-commerce investment destination</p>
+<p>Big multinationals have already chosen Saudi Arabia</p>
+<p>Cloud computing</p>
+<p>Emerging leader in cloud services</p>
+<p>Modern regulatory framework</p>
+<p>FinTech</p>
+<p>Rapid growth of local FinTech services demand</p>
+<p>Growing number of FinTech players leveraging the local investment ecosystem</p>";
+
+										;                           ; education-key-001   ; Education key details     ; education-facts-001,education-facts-002 	; "
+<p>Largest education market in the GCC expected to grow further</p>
+<p>Large untapped potential in the Saudi private education market</p>
+<p>Government commitment to support the growing education market</p>";
+
+										;                           ; innovation-key-001   ; Innovation key details     ; innovation-facts-001,innovation-facts-002 	; "
+<p>A rapidly growing ecosystem</p>
+<p>Enabling the future of entrepreneurship</p>
+<p>Government support and commitment to entrepreneurship</p>";
+
+
+INSERT_UPDATE Category; code[unique = true] ; sectorKeyDetails(uid, $contentCV)				; $catalogVersion	;                                                                                                   
+					  ; conventional-energy				; conventional-energy-key-001		;					;
+					  ; renewable-energy				; renewable-energy-key-001			;					;
+					  ; energy-saving					; energy-saving-key-001				;					;
+					  
+					  ; water                       	; water-key-001						;					;
+					  ; waste-management            	; waste-management-key-001			;					;
+
+					  ; tourism                 	    ; tourism-key-001					;					;
+					  ; culture-entertainment 	      	; culture-entertainment-key-001		;					;
+					  ; sports                  	    ; sports-key-001					;					;
+
+					  ; medical-technologies  		    ; medical-technologies-key-001		;					;
+					  ; medical-services      	        ; medical-services-key-001			;					;
+					  ; pharmacuticals          	    ; pharmacuticals-key-001			;					;
+
+					  ; automotives           		    ; automotives-key-001				;					;
+					  ; food-processing         	    ; food-processing-key-001			;					;
+					  ; industrial-spareparts       	; industrial-spareparts-key-001		;					;
+
+					  ; digital-content             	; digital-content-key-001			;					;
+					  ; digital-infrastructure      	; digital-infrastructure-key-001	;					;
+					  ; technology-platforms        	; technology-platforms-key-001		;					;
+                      
+					  ; education                       ; education-key-001                 ;                   ;
+					  ; innovation                      ; innovation-key-001                ;                   ;

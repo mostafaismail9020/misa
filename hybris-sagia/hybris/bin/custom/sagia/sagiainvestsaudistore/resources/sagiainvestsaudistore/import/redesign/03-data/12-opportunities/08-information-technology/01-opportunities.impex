@@ -1,0 +1,23 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$classCatalogVersion = catalogVersion(catalog(id[default='sagiaClassification']), version[default='1.0'])
+
+####
+INSERT_UPDATE OpportunityProduct; code[unique = true]                                           ; name [lang = en]                                                   ; name [lang = ar]                                                              ; featured ; supercategories(code, $catalogVersion) ; approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; 3D-PRINTING-for-Industrial-Automotive-Health-care-Aerospace   ; 3D PRINTING for Industrial , Automotive , Health care, Aerospace   ; 3D PRINTING for Industrial , Automotive , Health care, Aerospace              ; false    ; information-technology                 ;                                           ;						;"Invest Saudi,3D PRINTING for Industrial , Automotive , Health care, Aerospace - Information and Technology,Information and Technology,"
+                                ; AI-POWERED-Capacity-Planning                                  ; AI POWERED Capacity Planning                                       ; AI POWERED Capacity Planning              								     ; false    ; information-technology        		 ;                                           ;						;"Invest Saudi,AI POWERED Capacity Planning - Information and Technology,Information and Technology,"
+	                            ; AI-POWERED-MEDICAL-IMAGING                                    ; AI POWERED MEDICAL IMAGING                    					 ; AI POWERED MEDICAL IMAGING 													 ; false    ; information-technology     			 ;        									 ;					    ;"Invest Saudi,AI POWERED MEDICAL IMAGING - Information and Technology,Information and Technology,"
+								; Automated-Customer-Support                                    ; Automated Customer Support              							 ; Automated Customer Support              										 ; false    ; information-technology         		 ;                                           ;						;"Invest Saudi, Automated Customer Support - Information and Technology,Information and Technology,"
+								; EDGE-COMPUTING                                                ; EDGE COMPUTING    												 ; EDGE COMPUTING  																 ; false    ; information-technology         		 ;                                           ;						;"Invest Saudi,EDGE COMPUTING - Information and Technology,Information and Technology,"
+								; Localize-Commercial-Drones-Manufacturing                      ; Localize Commercial Drones Manufacturing    						 ; Localize Commercial Drones Manufacturing  								     ; false    ; information-technology  				 ;   										 ;						;"Invest Saudi,Localize Commercial Drones - Information and Technology,Information and Technology,"
+								; Manufacturing-Optimization-Quality-Control    				; Manufacturing Optimization & Quality Control  					 ; Manufacturing Optimization & Quality Control 								 ; false    ; information-technology  				 ;   										 ;						;"Invest Saudi,Manufacturing Optimization & Quality Control - Information and Technology,Information and Technology,"
+								; ML-POWERED-LIFESTYLE-AND-WELL-BEING 							; ML POWERED LIFESTYLE AND WELL-BEING 								 ; ML POWERED LIFESTYLE AND WELL-BEING 											 ; false    ; information-technology  			     ;   										 ;						;"Invest Saudi,ML POWERED LIFESTYLE AND WELL-BEING - Information and Technology,Information and Technology,"
+
+
+
+
+
+
+							
+								
+								             

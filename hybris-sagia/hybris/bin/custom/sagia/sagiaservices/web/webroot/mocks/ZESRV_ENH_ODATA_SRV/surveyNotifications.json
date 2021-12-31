@@ -1,0 +1,141 @@
+{
+	"d": {
+		"results": [
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000430',NotificationType='SY')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000430',NotificationType='SY')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000430",
+				"NotificationType": "SY",
+				"NotificationPriority": "O",
+				"ExpiryDate": null,
+				"NotificationText": "Please complete the Survey for request 20000430",
+				"CreatedBy": "Survey Notification",
+				"CreatedOn": null
+			},
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000286',NotificationType='SY')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000286',NotificationType='SY')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000286",
+				"NotificationType": "SY",
+				"NotificationPriority": "O",
+				"ExpiryDate": null,
+				"NotificationText": "Please complete the Survey for request 20000286",
+				"CreatedBy": "Survey Notification",
+				"CreatedOn": null
+			},
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000251',NotificationType='SY')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000251',NotificationType='SY')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000251",
+				"NotificationType": "SY",
+				"NotificationPriority": "O",
+				"ExpiryDate": null,
+				"NotificationText": "Please complete the Survey for request 20000251",
+				"CreatedBy": "Survey Notification",
+				"CreatedOn": null
+			},
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000252',NotificationType='SY')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000252',NotificationType='SY')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000252",
+				"NotificationType": "SY",
+				"NotificationPriority": "O",
+				"ExpiryDate": null,
+				"NotificationText": "Please complete the Survey for request 20000252",
+				"CreatedBy": "Survey Notification",
+				"CreatedOn": null
+			},
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000253',NotificationType='SY')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000253',NotificationType='SY')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000253",
+				"NotificationType": "SY",
+				"NotificationPriority": "O",
+				"ExpiryDate": null,
+				"NotificationText": "Please complete the Survey for request 20000253",
+				"CreatedBy": "Survey Notification",
+				"CreatedOn": null
+			},
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000254',NotificationType='SY')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000254',NotificationType='SY')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000254",
+				"NotificationType": "SY",
+				"NotificationPriority": "O",
+				"ExpiryDate": null,
+				"NotificationText": "Please complete the Survey for request 20000254",
+				"CreatedBy": "Survey Notification",
+				"CreatedOn": null
+			},
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000255',NotificationType='SY')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000255',NotificationType='SY')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000255",
+				"NotificationType": "SY",
+				"NotificationPriority": "O",
+				"ExpiryDate": null,
+				"NotificationText": "Please complete the Survey for request 20000255",
+				"CreatedBy": "Survey Notification",
+				"CreatedOn": null
+			},
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000256',NotificationType='SY')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000256',NotificationType='SY')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000256",
+				"NotificationType": "SY",
+				"NotificationPriority": "O",
+				"ExpiryDate": null,
+				"NotificationText": "Please complete the Survey for request 20000256",
+				"CreatedBy": "Survey Notification",
+				"CreatedOn": null
+			},
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000262',NotificationType='SY')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000262',NotificationType='SY')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "SAGIA_ESRV_CUSTOMER_SATISFACTION-1-20000262",
+				"NotificationType": "SY",
+				"NotificationPriority": "O",
+				"ExpiryDate": null,
+				"NotificationText": "Please complete the Survey for request 20000262",
+				"CreatedBy": "Survey Notification",
+				"CreatedOn": null
+			}
+		]
+	}
+}

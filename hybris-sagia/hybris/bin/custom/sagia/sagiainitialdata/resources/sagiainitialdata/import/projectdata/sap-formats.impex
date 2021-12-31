@@ -1,0 +1,3 @@
+INSERT_UPDATE SagiaDateFormat ; langCode[unique = true] ; datePattern ; dateTimePattern  ; timePattern ; uiTimePattern ; uiDatePattern ; uiTimePatternUmm ; uiDatePatternUmm ; description
+                              ; en                      ; dd MM yyyy  ; dd MM yyyy HH:mm ; HH mm       ; H:i           ; M d, Y        ; H:i              ; M dd, yyyy        ; English Version
+                              ; ar                      ; dd MM yyyy  ; dd MM yyyy HH:mm ; HH mm       ; H:i           ; m d, Y        ; H:i              ; mm dd, yyyy        ; Arabic Version

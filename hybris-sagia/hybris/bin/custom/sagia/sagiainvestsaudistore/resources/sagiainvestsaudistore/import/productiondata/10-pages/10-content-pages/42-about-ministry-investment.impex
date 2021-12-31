@@ -1,0 +1,81 @@
+$page = ministry-investments
+$template = portalGlobalTemplate
+$pageName = Ministry Of Investment
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /about/ministry-of-investment
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Ministry Of Investment ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                              ; name                                               ; &componentRef                                   ; $contentCV[unique = true]; description[lang = en]; description[lang = ar];
+                                                  ; generic-paragraph-ministry-of-investment ; Ministry Of Investment Generic Paragraph Component ; generic-paragraph-ministry-of-investment ;                          ; "
+<section class='container mb-5 general-info'>
+   <div class='umb-grid'>
+      <div class='grid-section'>
+         <div >
+            <div class='container'>
+               <div class='row clearfix'>
+                  <div class='col-md-12 column'>
+                     <div >
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>The ongoing transformation of Saudi Arabia under the Vision 2030 plan is unlocking new opportunities at an unprecedented pace. The Ministry of Investment of Saudi Arabia  (MISA) is facilitating access to these opportunities by developing a vibrant cross-government investment ecosystem<strong>, </strong>while supporting businesses throughout their investment journey.</p>
+                        <p>&nbsp;</p>
+                        <p>Through a network of dynamic business centers across the Kingdom, MISA partners with local and international businesses of all scales and sizes—from startups to blue chip multinationals—to help make investing in the Kingdom as streamlined and simple as possible.</p>
+                        <p>&nbsp;</p>
+                        <p>MISA takes a lead role in improving Saudi Arabia’s overall business environment, commissioning multiple market intelligence studies every year and developing local opportunities for joint ventures.</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <div class='col-md-8 d-flex justify-content-end'><a rel='noopener' href='https://misa.gov.sa/en/' target='_blank'> <button class='button btn btn-contact btn-green pl-5 pr-5 m-0 text-uppercase'>Visit Ministry of Investment website <i class='fa fa-long-arrow-right'></i> </button></a> <span> </span> <span> </span></div>
+                        <p>&nbsp;</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+"                                                                                                                                                                                                                                                             ; "
+<section class='container mb-5 general-info'>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div >
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div >
+                <p style='direction: rtl;'>تعيش المملكة العربية السعودية في ظل رؤية 2030 عصراً ذهبيا يوفر فرصًا استثمارية غير مسبوقة، وتسعى وزارة الاستثمار في ظل ازدياد هذه الفرص الاستثمارية إلى تمكين المستثمرين من الوصول إليها؛ إذ تحرص الوزارة عبر مقرها الرئيس ومراكزها الموزعة في أنحاء المملكة، على تقديم أكبر قدر ممكن من التسهيلات والمرونة في إجراءات التراخيص وخدمة المستثمرين، وذلك عبر توفير ممثلين من الجهات الحكومية ذات العلاقة لتخليص الإجراءات المطلوبة، إضافة إلى تقديم الدعم للمستثمرين أثناء جميع مراحل عملهم، من التأسيس حتى بدء ممارسة الأعمال.</p>
+                <p style='direction: rtl;'>&nbsp;</p>
+                <p style='direction: rtl;'>وتقدم وزارة الاستثمار  عبر مراكز علاقات المستثمرين في الرياض وجدة والدمام والجبيل والمدينة المنورة؛ خدمات مرنة ومتطورة للشركات المحلية والدولية سواءً من الشركات الناشئة أو الكبرى؛ من أجل تحقيق بيئة استثمارية تتميز بالكفاءة العالية وسهولة ممارسة الأعمال.</p>
+                <p style='direction: rtl;'>&nbsp;</p>
+                <p style='direction: rtl;'>كما تتولى وزارة الاستثمار القيادة في تطوير البيئة الاستثمارية في المملكة، إذ تجري دراسات مستمرة للسوق السعودي، إضافة إلى عملها في حصر وتطوير الفرص الاستثمارية وتحفيز الاستثمار المحلي، وجذب الاستثمارات الأجنبية عبر تسليط الضوء على المقدرات الهائلة والفرص الواعدة التي تمتلكها المملكة العربية السعودية.  </p>
+                <p style='text-align: right;'>&nbsp;</p>
+                <div class='col-md-8 d-flex justify-content-end'><a style='direction: rtl;' rel='noopener' href='https://misa.gov.sa/ar/' target='_blank'> <button class='button btn btn-contact btn-green pl-5 pr-5 m-0 text-uppercase'>زيارة موقع وزارة الاستثمار <i class='fa fa-long-arrow-left'></i> </button></a> <span style='direction: rtl;'> </span> <span style='direction: rtl;'> </span></div>
+                <p style='direction: rtl;'>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+"
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef)                    ; $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; generic-paragraph-ministry-of-investment ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;                                                      ;

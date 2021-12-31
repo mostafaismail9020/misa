@@ -1,0 +1,8 @@
+$sagiaTutorial = tutorial(code)
+
+#$targetType = SagiaTutorial
+#REMOVE $targetType[batchmode = true]; itemtype(code)[unique = true]
+#                                    ; $targetType
+#$targetType = SagiaTutorialStep
+#REMOVE $targetType[batchmode = true]; itemtype(code)[unique = true]
+#                                    ; $targetType

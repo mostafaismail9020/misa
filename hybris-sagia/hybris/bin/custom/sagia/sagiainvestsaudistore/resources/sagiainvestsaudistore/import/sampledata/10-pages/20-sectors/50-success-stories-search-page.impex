@@ -1,0 +1,32 @@
+$page = sample-success-stories-search-page
+$template = portalProductSearchTemplate
+$pageName = Success Stories
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /sectors-opportunities/success-stories
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ; $pagelabel ; false   ;
+
+INSERT_UPDATE InvestSaudiSuccessStorySearchBarComponent; uid[unique = true]                        ; name                              ; &componentRef                             ; $contentCV[unique = true]
+                                                       ; sample-success-story-search-bar-component ; Success Story SearchBar Component ; sample-success-story-search-bar-component ;
+
+INSERT_UPDATE InvestSaudiSuccessStorySearchResultComponent; uid[unique = true]                           ; name                                  ; &componentRef                                ; $contentCV[unique = true]
+                                                          ; sample-success-story-search-result-component ; Success Story Search Result Component ; sample-success-story-search-result-component ;
+
+INSERT_UPDATE ContentSlot; uid[unique = true]       ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; sample-success-story-search-bar-component,sample-success-story-search-result-component
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]       ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMainSlot-$page ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+

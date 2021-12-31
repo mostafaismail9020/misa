@@ -1,0 +1,90 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "18",
+        "RegionDesc": "Najran",
+        "CityCode": "18000149",
+        "CityDesc": "Najran"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "18",
+        "RegionDesc": "Najran",
+        "CityCode": "18000150",
+        "CityDesc": "Sharurah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "18",
+        "RegionDesc": "Najran",
+        "CityCode": "18000151",
+        "CityDesc": "Hboona"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "18",
+        "RegionDesc": "Najran",
+        "CityCode": "18000152",
+        "CityDesc": "Bader Ganoub"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "18",
+        "RegionDesc": "Najran",
+        "CityCode": "18000153",
+        "CityDesc": "Yadamah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "18",
+        "RegionDesc": "Najran",
+        "CityCode": "18000154",
+        "CityDesc": "Thar"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "18",
+        "RegionDesc": "Najran",
+        "CityCode": "18000155",
+        "CityDesc": "khbash"
+      }
+    ]
+  }
+}

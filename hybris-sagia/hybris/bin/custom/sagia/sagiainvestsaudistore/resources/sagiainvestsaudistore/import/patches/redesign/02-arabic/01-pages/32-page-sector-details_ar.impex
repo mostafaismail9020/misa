@@ -1,0 +1,32 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalSectorDetailsTemplate
+$page = sector-details
+$pageName = Sector Details
+$pageTitleAr = $pageName
+$pageLabel = /sector-details
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]		  ; $contentCV[unique = true]  ; linkName  [lang = ar] ;
+                              ; sector-explore-all-link   ;                            ; اكتشف المزيد          ;
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]     		; name    									; title[lang = ar]			; &componentRef 					; $contentCV[unique = true] ;
+                                                       ; sector-featured-opportunities	; Sector Featured Opportunities Component 	; Featured Opportunities 	; sector-featured-opportunities 	;							;
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = ar]; description[lang = ar]; keywords[lang = en]                      ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleAr    ; $pageName             ; Invest Saudi,Invest Saudi - About,About, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true] ; $contentCV; &componentRef	;title[lang = ar]
+                                           ; contact-form 		;           ; contact-form	;تواصل مع خبير قطاع {sector-opportunity} 

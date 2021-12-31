@@ -1,0 +1,45 @@
+#### Impex For SHIC ####
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails ;$contentCV[unique = true];uid[unique = true]		;keyValue[lang = en]  	 ;keyName[lang = en];
+                              ;        					;shic-key-1           	;200        			 ;Event attendees ;
+							  ;	  						;shic-key-2          	;200      		 		 ;Booth Attendees ;
+
+
+INSERT_UPDATE Media; code[unique = true]            			     ; realFileName                    	 		;@media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]				; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;Shic-banner-image.jpg			      		 	 ; Shic-banner-image.jpg					; $siteResource/SHIC-banner-image.jpg                                     					; image/jpg                   ;                                          ; ""     ;
+                   ;Shic-thumbnail-image.jpg		 		 	 	 ; Shic-thumbnail-image.jpg  	    	    ; $siteResource/SHIC-Thumbnail-image.jpg                                          		    ; image/jpg                   ;                                          ; ""     ;
+                   ;event-gallary-image.png          				 ; event-gallary-image.png         			; $siteResource/event-gallary-image.png                                              		; image/png                   ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]				; $medias					  ; $contentCV; 
+                            ; media-container-shic   				; event-gallary-image.png     ;           ; 				   
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true] ;eventUrl(uid, $contentCV)		;eventLocation[lang = en]	;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss];eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+										;						  ;event-shic         ;									;"Riyadh"   			    ;20.01.2020 00:00:00                              ;21.01.2020 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true] ;eventName[lang = en]				;eventShortInformation[lang = en] ;
+										;						  ;event-shic         ;SHIC                             ;The Ministry of Investment is participating in the INVEST SAUDI pavilion alongside the tourism sector highlighting the investment opportunities across the Kingdom;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventKeyDetails(uid, $contentCV);
+										;						  ;event-shic 		 ;shic-key-1,shic-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventBannerImage(code, $contentCV);eventThumbnailImage(code, $contentCV);eventGalleryImages(qualifier, $contentCV);
+										;						  ;event-shic 		 ;Shic-banner-image.jpg  			;Shic-thumbnail-image.jpg			  ;media-container-shic ;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventFullDescription[lang = en];
+										;						  ;event-shic        ;								;
+

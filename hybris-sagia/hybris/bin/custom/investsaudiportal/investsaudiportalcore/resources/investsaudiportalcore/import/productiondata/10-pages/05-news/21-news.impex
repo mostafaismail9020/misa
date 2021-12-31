@@ -1,0 +1,81 @@
+$page = news-real-estate-in-saudi-arabia
+$template = portalGlobalTemplate
+$name = REAL ESTATE IN SAUDI ARABIA – GROWING DEMAND, EXPANDING OPPORTUNITY
+$titleEn = $name
+$titleAr = هيئة الاستثمار في دبي لحضور المعرض العقاري العالمي سيتي سكيب
+$shortDescEn = This week, a delegation from SAGIA will be in Dubai to participate in Cityscape Global
+$shortDescAr = تشارك الهيئة في المعرض العقاري العالمي ممثلة بقطاع الإسكان تحت هوية استثمر في
+$pagelabel = /news/real-estate-in-saudi-arabia-growing-demand-expanding-opportunity
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; adam2401           ; adam2401.jpg ; $siteResource/adam2401.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; adam2401 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; adam2401                          ; adam2401                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 25.09.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<p>This week, a delegation from SAGIA will be in Dubai to participate in Cityscape Global &ndash; one of the world&rsquo;s leading real estate investment and development events. We will be there to meet with investors from around the world and discuss the opportunities available in Saudi Arabia &ndash; and we have already seen considerable interest.</p>
+<p>&nbsp;</p>
+<p>The real estate market in Saudi Arabia is changing rapidly. Demand for housing is rising as a consequence of a large, growing population and this is expected to continue in the coming years. The growth in the market is being further supported by recent reforms aimed at enhancing access to mortgage finance. At the same time, the government is undertaking a number of initiatives to increase the role of the private sector in meeting this demand.</p>
+<p>&nbsp;</p>
+<p>The demand for housing in Saudi Arabia is significant. The Kingdom is home to 21 million Saudis &ndash; to put this in a regional context, the combined national population of the other GCC countries is 7 million. Moreover, two thirds of Saudis are under the of 34 and population growth is anticipated to outpace global averages over the next decade &ndash; which is likely to underpin significant demand in the decades to come. Saudi Arabia also has a large middle class, with 68% of the population classed as middle income and an average monthly wage of $2,690.</p>
+<p>&nbsp;</p>
+<p>Historically, much of this demand has been met by local developers and the public sector. However, recent reforms &ndash; undertaken as part of the broader economic transformation envisaged in Saudi Arabia&rsquo;s Vision 2030 &ndash; are changing that picture, with the private sector and international investors having a much larger role to play.</p>
+<p>&nbsp;</p>
+<p>The reason for these reforms is clear when you look at the ambitions that the Ministry of Housing has set out. It aims to increase home ownership from a baseline 47% to 60% by next year and 70% by 2030 &ndash; requiring the creation of an additional 1.2 million homes. While the government will still have a role to play, it is clear that in order to reach these goals it will be vital to enable to tap into the capacity and expertise of the private sector.</p>
+<p>&nbsp;</p>
+<p>Indeed, accessing the innovation and expertise of international investors are key elements of Saudi Arabia&rsquo;s plans for the real estate sector. Currently, the sector has focused on traditional delivery methods &ndash; however, the scale of our ambitions means we need to be able to build more quickly, at a higher quality and at a lower cost. This means adopting new 2D and 3D building systems that can accelerate the development of new projects.</p>
+<p>&nbsp;</p>
+<p>The government has introduced a range of financial and non-financial incentives to support new technological developments &ndash; including matchmaking, business support and loans with preferred terms.</p>
+<p>&nbsp;</p>
+<p>These efforts to support international investment in the real estate sector reflect broader reforms across the economy. It is still early days in the reform program, but the initial evidence suggests that the changes taking place have succeeded in attracting the attention of the world&rsquo;s investors.</p>
+<p>&nbsp;</p>
+<p>For example, in the second quarter of 2019, the Saudi Arabian General Investment Authority (SAGIA) issued nearly 300 new foreign investor licenses. That is the equivalent of five new licenses a day and more than double the number issued in the same period the year before. It also meant that the number of licenses had grown for the fourth quarter in a row.</p>
+<p>&nbsp;</p>
+<p>Likewise, alongside growth in the number of companies establishing in Saudi Arabia, the level of foreign direct investment has also grown &ndash; in 2018 it was 127% higher than in 2017.</p>
+<p>&nbsp;</p>
+<p>We are very excited about the potential for the real estate sector to play a major role in that growth in the years to come. If you are interested in being a part of it, we look forward to hearing from you and discussing how we can help you &ndash; whether this week at Cityscape Global or in the months to come.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>تشارك الهيئة العامة للاستثمار في معرض سيتي سكيب العالمي؛ المقام في مدينة دبي خلال الفترة من 25 وحتى 27 سبتمبر 2019، إذ يتضمن المعرض مؤتمرًا يستضيف قادة الأعمال في المجال العقاري، ومحللي السوق العقاري والمبتكرين والخبراء لمناقشة أهم التغيرات بالمنطقة من حيث التقنيات العقارية والاستدامة وأنماط المستهلكين، إضافة إلى سوق الاستثمار العقاري واتجاهات العمارة والتصميم، كما يتضمن المعرض حوارات بين المهندسين والمتخصصين في المجال العقاري لمناقشة اتجاه السوق وأهم التحديات الطارئة فيه.</p>
+<p>وتأتي أهمية مشاركة الهيئة ممثلة بقطاع الإسكان تحت هوية استثمر في السعودية؛ ضمن سعي الهيئة في جذب الاستثمارات الأجنبية للقطاع العقاري والتعريف بالخدمات التي تقدمها للمستثمرين، وزيادة مساهمة القطاع الخاص في برنامج الإسكان والمشاريع الكبرى مثل نيوم والقدية والبحر الأحمر، إضافة إلى دعم الشراكات بين المستثمر الأجنبي والمستثمر المحلي في المملكة. حيث يشهد السوق العقاري السعودي تغيرات كبيرة، تتمثل في زيادة الطلب على الإسكان بشكل مستمر، حيث أن عدد الوحدات السكنية المتوقع الطلب عليها يصل حوالي مليون ومئتي ألف وحدة سكنية بحلول عام 2030، ووفقًا لذلك تهدف حكومة المملكة إلى مواكبة هذا الطلب عبر تقديم عدد من الإصلاحات التي تمكن من الحصول على تمويل للقروض العقارية، إضافة إلى تقديم منتجات وزارة الإسكان والشراكات المنعقدة بين القطاع العام والقطاع الخاص.</p>
+<p>يذكر أن الهيئة تشارك عبر جناح استثمر في السعودية، الذي يضم عددًا من الجهات الحكومية والخاصة مثل أمانة المدينة المنورة ومدينة المعرفة الاقتصادية ومدينة الملك عبد الله الاقتصادية، إضافة إلى برامج وزارة الإسكان مثل تقنية البناء ووافي وشراكات، وأخيرًا شركة المزيني العقارية -مطور مشروع بوابة الشرق في الرياض والجوهرة رزيدينس في جدة-.</p>
+<p>وفي إطار الجهود الموحدة بين القطاعين الحكومي والخاص؛ فقد قطعت المملكة شوطًا على صعيد إيجاد بيئة استثمارية أكثر جذبًا وأكثر سهولة لممارسة الأعمال، فقد شهد قطاع البناء في الربع الثاني من عام 2019 إصدار 61 رخصة، كما بلغت نسبة الإصلاحات الاقتصادية 55% من أصل ما يزيد عن 300 إصلاح اقتصادي خاضعة للإصلاح، كان من ضمنها التملك الأجنبي الكامل في عدد من القطاعات الاستثمارية الاستراتيجية في المملكة، إضافة إلى اعتماد إجراءات أسرع وأقل تعقيدًا لتسجيل الأعمال، بما في ذلك إصدار تأشيرات العمل في 24 ساعة وإصدار التراخيص في وقت أقل من 24 ساعة، وتطوير البنية التحتية القانونية عبر تطبيق نظام الإفلاس الجديد، وإنشاء مركز تحكيم تجاري ومحاكم تجارية متخصصة، إضافة إلى تعزيز الحماية القانونية لصغار المساهمين.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>وفي سياق هذه الإصلاحات، حظيت المملكة بإشادة دولية؛ حيث حققت المرتبة الرابعة ضمن مجموعة العشرين وفقًا لتقرير سهولة ممارسة الأعمال الصادر من البنك الدولي، إضافة إلى ذلك؛ فقد صُنفت المملكة بين أفضل 40 اقتصادًا في العالم حسب تقرير التنافسية العالمي الصادر من المنتدى الاقتصادي العالمي.</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

@@ -1,0 +1,193 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+      },
+        "Key": "A",
+        "Amanah": "AL-HASA CITY",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "ASIR PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "BAHAH PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "EASTERN PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "ECONOMIC CITY",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "HAIL PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "JAWF PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "JEDDAH CITY",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "JIZAN PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "MADINAH PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "MAKKAH PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "NAJRAN PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "NORTHERN BORDERS PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "QASIM PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "RIYADH PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "TABUK PROVINCE",
+        "ChamberId": "",
+        "Chamber": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtDropdowns('A')",
+          "type": "ZUI5_SAGIA_SRV.GovtDropdown"
+        },
+        "Key": "A",
+        "Amanah": "TAIF CITY",
+        "ChamberId": "",
+        "Chamber": ""
+      }
+    ]
+  }
+}

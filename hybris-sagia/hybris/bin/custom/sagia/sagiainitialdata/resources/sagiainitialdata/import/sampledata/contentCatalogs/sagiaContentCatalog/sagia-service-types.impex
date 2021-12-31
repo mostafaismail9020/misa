@@ -1,0 +1,124 @@
+
+# The service type table contains all SAP CRM process type codes that are supported for e-services. In Hybris these codes
+# are named service type codes. A service request is always associated with a service type.
+#
+# The overview-relevant flag indicates whether an associated service request is considered for service request overview
+# components (e.g. overall history of service requests).
+#
+# The category-consideration flag indicates whether the categories of service types further filter associated service
+# requests for service request overview components. If the category-consideration flag of a service type is true then
+# an associated service request is only considered for service request overview components if all categories that are
+# associated with the service request are also maintained in the service type category table (see below).
+# Note: if the category-consideration flag of a service type is true, but an associated service request has no categories
+# then this service request is not considered for service request overview components.
+# Note: the category-consideration flag is only taken into account if the overview-relevant flag is true.
+#
+# The service type table provides further language-dependent name(s) for service types.
+INSERT_UPDATE ServiceType; code[unique = true]; overviewRelevant[default = false]; categoryConsideration[default = false]; name[lang = EN]                    ; name[lang = AR]
+                         ; ZAPP               ;                                  ;                                       ; "Online Appointments"              ; "مواعيد أونلاين/ المواعيد"
+                         ; ZCLU               ;                                  ;                                       ; "Classification Upgrade"           ; "ترقية التصنيف"
+                         ; ZRES               ; true                             ; true                                  ; "Real Estate Service"              ; "خدمات العقار"
+                         ; ZRVR               ;                                  ;                                       ; "Enquiries & Complaints"           ; "الاستفسارات والشكاوي"
+                         ; ZS10               ; true                             ; true                                  ; "Government Service"               ; "الخدمات الحكومية"
+                         ; ZS11               ; true                             ; false                                 ; "Financial Statement"              ; "القوائم المالية"
+                         ; ZS12               ;                                  ;                                       ; "Surveys"                          ; "استبيان/ استبيانات"
+                         ; ZS13               ; true                             ; true                                  ; "Special Service"                  ; "الخدمات الخاصة"
+                         ; ZS14               ;                                  ;                                       ; "Government Documents Update"      ; "تحديث المستندات الحكومية"
+                         ; ZS15               ; true                             ; true                                  ; "Follow-up Service"                ; "خدمات المتابعة"
+                         ; ZS16               ;                                  ;                                       ; "New License"                      ; "ترخيص جديد"
+                         ; ZS17               ;                                  ;                                       ; "National Investor Request"        ; "طلب المستثمر الوطني"
+                         ; ZS20               ; true                             ; false                                 ; "Rules & Regulations Consultation" ; "استشارات اللوائح والأنظمة"
+                         ; ZS21               ; true                             ; true                                  ; "Decision Execusion"               ; "تنفيذ القرارات"
+                         ; ZSR1               ; true                             ; false                                 ; "Investor Information Update"      ; "تحديث بيانات المستثمر"
+                         ; ZSR4               ; true                             ; false                                 ; "License Renewal"                  ; "تجديد الترخيص"
+                         ; ZSR5               ; true                             ; false                                 ; "License Amendment"                ; "تعديل الترخيص"
+                         ; ZSR6               ; true                             ; false                                 ; "License Cancellation"             ; "الغاء الترخيص"
+                         ; ZSR7               ; true                             ; false                                 ; "Convert to National Service"      ; "خدمة التحويل إلى وطني"
+# License replacement service type is no longer supported as e-service
+# Obsolete for e-services; ZSR8               ; true                             ; false                                 ; "License Replacement"              ; "استبدال الترخيص"
+                         ; ZSR9               ; true                             ; false                                 ; "Cancellation Support Letter"      ; "إفادة بغرض الإلغاء"
+                         ; ZSRF               ;                                  ;                                       ; "Follow-up Visit Request"          ; "طلب زيارة متابعة"
+                         ; ZSVR               ; true                             ; false                                 ; "Supporting Visit Request"         ; "طلب زيارة مساندة"
+                         ; ZTBC               ;                                  ; false                                 ; "Bidding Certificate"              ; "شهادة مزايدة"
+
+# The service type category table contains the e-services' relevant category hierarchies of service types.
+#
+# Each category has a unique code which is actually the same as the corresponding SAP CRM category code (for a process type).
+# A category is further associated with a service type and has a level. A level-1 category has no parent category.
+# Categories on level 2,3 or 4 have parent categories.
+# "Leaf" categories (i.e. lowest-level ones) in a category hierarchy have no sub-categories, however all others have.
+# The service type category table provides further language-dependent name(s) for service type categories.
+INSERT_UPDATE ServiceTypeCategory; code[unique = true]; name[lang = EN]                                       ; name[lang = AR]                                            ; serviceType(code); level; parentCategory(code)
+# Categories for ZRES (Real Estate Service)
+                                 ; BUY                ; "Buying Real Estate"                                  ; "شراء عقار"                                                ; ZRES             ; 1    ;
+                                 ; SELL               ; "Selling Real Estate"                                 ; "بيع عقار"                                                 ; ZRES             ; 1    ;
+# Categories for ZS10 (Government Service)
+                                 ; ZMOCI              ; "Ministry of Commerce and Industry"                   ; "وزارة التجارة والصناعة"                                   ; ZS10             ; 1    ;
+                                 ; ZMOCI_02           ; "Issuance of a New CR for Establishment"              ; "اصدار سجل تجاري للمؤسسات"                                 ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_03           ; "Replacement of Company's damaged CR"                 ; "بدل تالف سجل تجاري للشركات"                               ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_04           ; "Replacement of  Est.'s Damaged CR"                   ; "بدل تالف سجل تجاري للمؤسسات"                              ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_05           ; "Replacement of Company's Lost CR"                    ; "بدل فاقد سجل تجاري للشركات"                               ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_07           ; "Registration of a new Est.'s branch"                 ; "تسجيل فرع مؤسسة"                                          ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_08           ; "Amendment of a Company's Commercial Register"        ; "تعديل السجل التجاري للشركات"                              ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_09           ; "Amendment of an Establishment's CR"                  ; "تعديل السجل التجاري للمؤسسات"                             ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_10           ; "Changing the Company's Address"                      ; "تعديل عنوان شركة"                                         ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_11           ; "Changing the Establishment's address"                ; "تعديل عنوان مؤسسة"                                        ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_15           ; "Study of a New Company's Memorandum of Association"  ; "دراسة عقد تأسيس"                                          ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_16           ; "Partners Resolution amending an Article of the MOA"  ; "تعديل بند من بنود عقد التأسيس"                            ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_17           ; "Issuance of a New CR for the Comp"                   ; "اصدار سجل تجاري للشركات"                                  ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_18           ; "Renewal of Company's Commercial Register"            ; "تجديد السجل التجاري للشركات"                              ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_19           ; "Renewal of Est.'s Commercial Register"               ; "تجديد سجل تجاري للمؤسسات"                                 ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_20           ; "Converting an Establishment into a Company"          ; "تحويل مؤسسة الى شركة "                                    ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOCI_21           ; "Registration of a limited liability company branch"  ; "تسجيل فرع شركة ذات مسؤولية محدودة"                        ; ZS10             ; 2    ; ZMOCI
+                                 ; ZMOL               ; "Ministry of Labor"                                   ; "مكتب العمل"                                               ; ZS10             ; 1    ;
+                                 ; ZMOL_03            ; "Transfer of an Expatriate's Services"                ; "نقل خدمات الأجنبي"                                         ; ZS10             ; 2    ; ZMOL
+# Obsolete for e-services        ; ZMOL_07            ; "Cancellation of Visas"                               ; "إلغاء التأشيرات"                                               ; ZS10             ; 2    ; ZMOL
+# Obsolete for e-services        ; ZMOL_08            ; "Amendment of Professions"                            ; "تعديل المهن"                                                ; ZS10             ; 2    ; ZMOL
+# Obsolete for e-services        ; ZMOL_10            ; "Recruitment of Drivers and Housemaids"               ; "استقدام السائقين والخدم"                                       ; ZS10             ; 2    ; ZMOL
+                                 ; ZMOL_11            ; "Data Updating"                                       ; "تحديث بيانات"                                             ; ZS10             ; 2    ; ZMOL
+                                 ; ZMOIR              ; "Ministry of Interior / Recruitment"                  ; "وزارة الداخلية / التوظيف"                                 ; ZS10             ; 1    ;
+                                 ; ZMOIR_01           ; "Recruitment for investors Families"                  ; "إستقدام عائلة المستثمر"                                   ; ZS10             ; 2    ; ZMOIR
+                                 ; ZMOIR_02           ; "Recruitment for(GM, ER, legal, council, Accountant)" ; "إستقدام ( مدير عام , مهندس ، مستشار ، قانوني  ، محاسب ) " ; ZS10             ; 2    ; ZMOIR
+                                 ; ZMOIP              ; "Ministry of Interior / Passport"                     ; "وزارة الداخلية/ الجوازات"                                 ; ZS10             ; 1    ;
+                                 ; ZMOIP_01           ; "Issuance New IQAMA"                                  ; "اصدار إقامة جديدة"                                        ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_02           ; "Renewal IQAMA"                                       ; "تجديد الإقامة"                                             ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_03           ; "Exit and Entry VISA"                                 ; "تأشيرة خروج وعودة"                                        ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_05           ; "Transfer Information"                                ; "نقل المعلومات"                                            ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_06           ; "Transfer KAFALA for(special Driver , House Keeper)"  ; "نقل كفالة (سائق خاص، خادمة)"                              ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_07           ; "Issuance IQAMA for(Special driver , House Keeper)"   ; "اصدار إقامة (سائق خاص، خادمة)"                            ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_08           ; "Adding Son or daughter"                              ; "اضافة ابن أو ابنة"                                        ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_09           ; "Replacement of IQAMA"                                ; "استبدال إقامة"                                            ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_10           ; "Exit and Entry VISA for families"                    ; "تأشيرة خروج وعودة للعوائل/ للمرافقين"                     ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_11           ; "Cancellation of Exit and Entry Visa"                 ; "إلغاء تأشيرة خروج وعودة"                                  ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_12           ; "Extension Visa"                                      ; "تمديد التأشيرة"                                           ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_13           ; "Data modification"                                   ; "تعديل البيانات"                                           ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_14           ; "Amendment indefinitely"                              ; "التعديل إلى أجل غير مسمى"                                 ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_15           ; "Separation son or daughter with separate IQAMA"      ; "فصل الابن او الابنة بإقامة مستقلة"                          ; ZS10             ; 2    ; ZMOIP
+# Obsolete for e-services        ; ZMOIP_16           ; "Print Request"                                       ; "طلب برنت"                                                  ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_17           ; "Replacement of Passport"                             ; "بدل فاقد لجواز السفر "                                    ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_18           ; "Cancellation IQAMA for leaving without return"       ; "الغاء الإقامة "                                            ; ZS10             ; 2    ; ZMOIP
+# Obsolete for e-services        ; ZMOIP_20           ; "Business Travel Visas Extension"                     ; "تأشيرة رحلة عمل متعددة"                                       ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_21           ; "Wavier of Son or daughter"                           ; "فصل الابن او الابنة"                                        ; ZS10             ; 2    ; ZMOIP
+                                 ; ZMOIP_23           ; "Transfer KAFALA for GM of Branch of foreigner comp"  ; "نقل كفالة المدير العام لفرع الشركة الأجنبية "              ; ZS10             ; 2    ; ZMOIP
+# Categories for ZS11 (Financial Statement) are not maintained as e-service does not distinguish categories for this service type
+# Categories for ZS13 (Special Service)
+                                 ; ZSPLJAWA           ; "Special Passport Service"                            ; "خدمات الجوازات الخاصة"                                    ; ZS13             ; 1    ;
+                                 ; ZSPLJAWA01         ; "Exit Re-Entry Visa Application"                      ; "طلب تأشيرة خروج وعودة"                                    ; ZS13             ; 2    ; ZSPLJAWA
+                                 ; ZSPLJAWA02         ; "Renewal of Iqama Application"                        ; "طلب تجديد الإقامة"                                         ; ZS13             ; 2    ; ZSPLJAWA
+                                 ; ZSPLJAWA03         ; "Transfer of Iqama Application"                       ; "طلب نقل كفالة"                                            ; ZS13             ; 2    ; ZSPLJAWA
+                                 ; ZSPLJAWA04         ; "Final Exit Visa Application"                         ; "طلب تأشيرة خروج نهائي"                                    ; ZS13             ; 2    ; ZSPLJAWA
+# Categories for ZS15 (Follow-up Service)
+                                 ; ZFLUP_ONLINE       ; "Follow-up Online"                                    ; "المتابعة أونلاين"                                          ; ZS15             ; 1    ;
+                                 ; ZFLUP_02           ; "Violation Reply"                                     ; "الرد على المخالفات"                                       ; ZS15             ; 2    ; ZFLUP_ONLINE
+                                 ; ZFLUP_03           ; "Warning Period Extension"                            ; "تمديد مهلة الإنذار"                                        ; ZS15             ; 2    ; ZFLUP_ONLINE
+# Categories for ZS20 (Rules & Regulations Consultation) are not maintained as e-service does not distinguish categories for this service type
+# Categories for ZS21 (Decision Execusion)
+                                 ; Z_ONLINE           ; "Reopen Facility"                                     ; "إعادة فتح المنشاة"                                        ; ZS21             ; 1    ;
+# Categories for ZSR1 (Investor Information Update) are not maintained as e-service does not distinguish categories for this service type
+# Categories for ZSR4 (License Renewal) are not maintained as e-service does not distinguish categories for this service type
+# Categories for ZSR5 (License Amendment) are not maintained as e-service does not distinguish categories for this service type
+# Categories for ZSR6 (License Cancellation) are not maintained as e-service does not distinguish categories for this service type
+# Categories for ZSR7 (Convert to National Service) are not maintained as e-service does not distinguish categories for this service type
+# Categories for ZSR8 (License Replacement) are not maintained as e-service does not distinguish categories for this service type
+# Categories for ZSR9 (Cancellation Support Letter) are not maintained as e-service does not distinguish categories for this service type
+# Categories for ZSVR (Supporting Visit Request) are not maintained as e-service does not distinguish categories for this service type

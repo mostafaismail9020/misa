@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<project name="junitinit">
+	<description>
+		Fix for PLA-9860, junit init now has the same behaviour than regular init.
+		@author adrien.missemer
+	</description>
+	
+    <import file="${platformhome}/resources/ant/antmacros.xml" />
+
+	 <!-- fix for PLA-9860 -->
+   <target name="junitinit" description="Initializes JUnit tenant">
+       <sequential>
+           <echo message="Compiling Ant Performable..."/>
+           <mkdir dir="${BUILD_HOME}/resources/ant/bin"/>
+       	<javac srcdir="${BUILD_HOME}/src"
+                  destdir="${BUILD_HOME}/resources/ant/bin" compiler="modern"
+                  debug="on" includeantruntime="false">
+               <classpath>
+                   <fileset dir="${platformhome}/bootstrap/bin">
+                       <include name="ybootstrap.jar"/>
+                   </fileset>
+                   <fileset dir="${platformhome}/ext/core/lib">
+                       <include name="*.jar"/>
+                   </fileset>
+                   <fileset dir="${platformhome}/ext/core/bin">
+                       <include name="*.jar"/>
+                   </fileset>
+                   <fileset dir="${platformhome}/tomcat/lib">
+                       <include name="*.jar"/>
+                   </fileset>
+               </classpath>
+           </javac>
+           <echo message="Compiling Ant Performable...Done"/>
+
+       	<foreachext>
+				<do>
+					<callback extname="@{extname}" target="before_initialize" />
+				</do>
+			</foreachext>
+			<yrun failonerror="true" additionalclasspath="${BUILD_HOME}/resources/ant/bin">
+				de.hybris.ant.taskdefs.AntPerformable p = new com.hybris.ps.common.ant.FixedInitPlatformAntPerformableImpl("junit");
+					p.doPerform(); 
+					de.hybris.platform.util.RedeployUtilities.shutdown();
+				</yrun>
+
+			<foreachext>
+				<do>
+					<callback extname="@{extname}" target="after_initialize" />
+				</do>
+			</foreachext>
+
+       </sequential>
+   </target>
+
+</project>

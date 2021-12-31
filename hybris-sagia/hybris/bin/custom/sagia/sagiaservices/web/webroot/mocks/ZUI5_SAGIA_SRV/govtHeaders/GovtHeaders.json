@@ -1,0 +1,28 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtHeaders('613392')",
+      "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtHeaders('613392')",
+      "type": "ZUI5_SAGIA_SRV.GovtHeader"
+    },
+    "Entity": "613392",
+    "Status": "Verified",
+    "StatusCode": "N",
+    "CrNo": "4030282913",
+    "GosiNo": "",
+    "ZakatNo": "3001624729",
+    "MolNo": "1-132038",
+    "MomraYesNo": "Y",
+    "ShopLicNo": "67146",
+    "Amanah": "RIYADH PROVINCE",
+    "Return": "",
+    "Note": "",
+    "Success": "",
+    "ServiceID": "",
+    "GovtBranchSet": {
+        "__deferred": {
+        "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtHeaders('613392')/GovtBranchSet"
+      }
+    }
+  }
+}

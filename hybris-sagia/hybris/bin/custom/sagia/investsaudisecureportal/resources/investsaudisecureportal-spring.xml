@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean id="secureCustomerPortalCoreDataImportedEventListener" parent="abstractCoreDataImportedEventListener">
+		<property name="supportedChannels">
+			<list value-type="de.hybris.platform.commerceservices.enums.SiteChannel">
+				<value>B2B</value>
+			</list>
+		</property>
+		<property name="addonExtensionMetadata">
+			<bean class="de.hybris.platform.addonsupport.data.AddonExtensionMetadata">
+				<property name="baseExtensionName" value="investsaudisecureportal" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="investsaudisecureportalSampleDataEventListener" parent="abstractGenericAddOnSampleDataEventListener"  >
+		<property name="extensionName" value="investsaudisecureportal" />
+	</bean>
+	
+	<bean id="investSaudi2FactorAuthEmailEventListner" class="com.investsaudi.event.InvestSaudi2FactorAuthEmailEventListner" parent="abstractAcceleratorSiteEventListener">
+        <property name="modelService" ref="modelService"/>
+        <property name="businessProcessService" ref="businessProcessService"/>
+    </bean>
+    
+    <bean id="emailInvestSaudi2FactorAuthProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+        <property name="resource" value="classpath:/investsaudisecureportal/processes/emailInvestSaudi2FactorAuthProcess.xml"/>
+    </bean>
+    
+    <bean id="generateInvestSaudi2FactorAuthEmail" parent="abstractGenerateEmailAction">
+        <property name="frontendTemplateName" value="InvestSaudi2FactorAuthTemplate"/>
+    </bean>
+    
+    <bean id="investSaudi2FactorAuthEmailContext" class="com.investsaudi.email.context.InvestSaudi2FactorAuthEmailContext" parent="abstractEmailContext" scope="prototype" />
+
+	<!--
+		The EmailContext class to use when generating emails 
+	-->
+	<bean id="b2bRegistrationEmailContext" class="com.investsaudi.email.context.B2BRegistrationEmailContext" parent="abstractEmailContext" scope="prototype"/>
+	<bean id="b2bRegistrationApprovedEmailContext" class="com.investsaudi.email.context.B2BRegistrationApprovedEmailContext" parent="b2bRegistrationEmailContext" scope="prototype"/>
+	<bean id="b2bRegistrationRejectedEmailContext" class="com.investsaudi.email.context.B2BRegistrationRejectedEmailContext" parent="b2bRegistrationEmailContext" scope="prototype"/>							
+	
+	<!--  
+		The process actions to generate the different emails. The frontendTemplateName property refers to the name of the email template 
+		as defined within the email-context.impex file  
+	-->
+    <bean id="b2bRegistrationPendingApprovalGenerateEmailAction" 
+    		class="com.investsaudi.email.process.actions.RegistrationPendingApprovalGenerateEmailAction" 
+    		parent="abstractGenerateEmailAction">
+   		<property name="frontendTemplateName" value="RegistrationPendingApprovalEmailTemplate"/>
+   		<property name="registrationService" ref="b2bRegistrationService"/>
+   	</bean>
+   	
+    <bean id="b2bRegistrationReceivedGenerateEmailAction" parent="abstractGenerateEmailAction">
+    	<property name="frontendTemplateName" value="RegistrationReceivedEmailTemplate"/>
+   	</bean>
+   	
+    <bean id="b2bRegistrationApprovedGenerateEmailAction" parent="abstractGenerateEmailAction">
+    	<property name="frontendTemplateName" value="RegistrationApprovedEmailTemplate"/>
+   	</bean>
+   	
+    <bean id="b2bRegistrationRejectedGenerateEmailAction" parent="abstractGenerateEmailAction">
+    	<property name="frontendTemplateName" value="RegistrationRejectedEmailTemplate"/>
+   	</bean>   	   	
+	
+	<bean id="b2bRegistrationApprovedCleanupAction" class="com.investsaudi.email.process.actions.RegistrationCleanupAction" parent="abstractAction">
+		<property name="modelService" ref="modelService"/> 
+	</bean>
+	
+	<bean id="b2bRegistrationRejectedCleanupAction" class="com.investsaudi.email.process.actions.RegistrationCleanupAction">
+		<property name="modelService" ref="modelService"/>
+		<property name="deleteCustomer" value="true"/>
+	</bean>	
+	
+   	<!-- 
+   		Process definitions
+   	 -->	
+	<bean id="b2bRegistrationPendingApprovingEmailProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/registrationPendingApprovalEmailProcess.xml"/>
+	</bean>
+	
+	<bean id="b2bRegistrationReceivedEmailProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/registrationReceivedEmailProcess.xml"/>
+	</bean>
+	
+	<bean id="b2bRegistrationApprovedEmailProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/registrationApprovedEmailProcess.xml"/>
+	</bean>
+	
+	<bean id="b2bRegistrationRejectedEmailProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/registrationRejectedEmailProcess.xml"/>
+	</bean>
+
+	<!-- For userGroup update emails - starts -->
+	<bean id="customerUserGroupUpdateEmailContext" class="com.investsaudi.email.context.CustomerUserGroupUpdateEmailContext" parent="abstractEmailContext" scope="prototype" />
+
+	<bean id="customerUserGroupUpdateEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="customerUsergroupUpdateTemplate"/>
+	</bean>
+	<bean id="customerUserGroupUpdateEmailProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/customerUserGroupUpdateEmailProcess.xml"/>
+	</bean>
+	<!-- For userGroup update emails- ends -->
+
+	<!-- For OpportunityId created emails - starts -->
+	<bean id="opportunityCreatedEmailContext" class="com.investsaudi.email.context.OpportunityCreatedEmailContext" parent="abstractEmailContext" scope="prototype" />
+
+	<bean id="opportunityCreatedEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="pportunityCreatedTemplate"/>
+	</bean>
+	<bean id="opportunityCreatedEmailProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+	<property name="resource" value="classpath:/investsaudisecureportal/processes/opportunityCreatedEmailProcess.xml"/>
+</bean>
+	<!-- For userGroup update emails- ends -->
+
+
+	<!-- For OpportunityId update emails - starts -->
+	<bean id="opportunityUpdatedEmailContext" class="com.investsaudi.email.context.OpportunityUpdatedEmailContext" parent="abstractEmailContext" scope="prototype" />
+
+	<bean id="opportunityUpdatedEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="opportunityUpdatedTemplate"/>
+	</bean>
+	<bean id="opportunityUpdatedEmailProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/opportunityUpdatedEmailProcess.xml"/>
+	</bean>
+	<!-- For OpportunityId update emails- ends -->
+
+
+	<!-- For user created emails - starts -->
+	<bean id="userCreatedEmailContext" class="com.investsaudi.email.context.UserCreatedEmailContext" parent="abstractEmailContext" scope="prototype" />
+
+	<bean id="userCreatedEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="userCreatedTemplate"/>
+	</bean>
+	<bean id="userCreatedEmailProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/userCreatedEmailProcess.xml"/>
+	</bean>
+
+	<!-- For userGroup created emails- ends -->
+
+	<!-- For userGroup created approver emails- starts -->
+	<bean id="opportunityCreatedApproverEmailContext" class="com.investsaudi.email.context.OpportunityCreatedApproverEmailContext" parent="abstractEmailContext" scope="prototype" />
+
+	<bean id="opportunityCreatedApproverEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="opportunityCreatedApproverTemplate"/>
+	</bean>
+	<bean id="opportunityCreatedApproverEmailProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+	<property name="resource" value="classpath:/investsaudisecureportal/processes/opportunityCreatedApproverEmailProcess.xml"/>
+	</bean>
+
+	<!-- For userGroup created approver emails- starts -->
+	<!-- 
+		Workflows specific beans called by each automated-action (to send emails)
+	 -->	
+	<bean id="b2bAbstractAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.AbstractAutomatedWorkflowTemplateJob" abstract="true">
+		<property name="businessProcessService" ref="businessProcessService"/>
+		<property name="modelService" ref="modelService"/>
+		<property name="workflowAttachmentService" ref="workflowAttachmentService"/>
+		<property name="userService" ref="userService"/>				
+	</bean>
+	
+	<bean id="b2bSendEmailAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.SendEmailAutomatedWorkflowTemplateJob" abstract="true" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>
+	
+	<bean id="b2bRegistrationPendingApprovalSendEmailAutomatedWorkflowTemplateJob" parent="b2bSendEmailAutomatedWorkflowTemplateJob">
+		<property name="processDefinitionName" value="b2bRegistrationPendingApprovalEmailProcess"/>
+	</bean>
+
+	<bean id="b2bRegistrationReceivedSendEmailAutomatedWorkflowTemplateJob" parent="b2bSendEmailAutomatedWorkflowTemplateJob">
+		<property name="processDefinitionName" value="b2bRegistrationReceivedEmailProcess"/>
+	</bean>
+
+	<bean id="b2bRegistrationApprovedSendEmailAutomatedWorkflowTemplateJob"
+		parent="b2bSendEmailAutomatedWorkflowTemplateJob"
+		class="com.investsaudi.workflows.actions.SendApprovedEmailAutomatedWorkflowTemplateJob">
+		<property name="secureTokenService" ref="secureTokenService" />
+		<property name="processDefinitionName" value="b2bRegistrationApprovedEmailProcess" />
+	</bean>
+
+	<bean id="b2bRegistrationRejectedSendEmailAutomatedWorkflowTemplateJob"
+		parent="b2bSendEmailAutomatedWorkflowTemplateJob"
+		class="com.investsaudi.workflows.actions.SendRejectedEmailAutomatedWorkflowTemplateJob">
+		<property name="processDefinitionName" value="b2bRegistrationRejectedEmailProcess" />
+	</bean>			
+
+	<bean id="b2bRegistrationApprovedAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.RegistrationApprovedAutomatedWorkflowTemplateJob" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>
+			
+	<bean id="b2bRegistrationRejectedAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.RegistrationRejectedAutomatedWorkflowTemplateJob" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>	
+		
+	<!-- 
+		Facades 
+	-->
+	<bean id="b2bRegistrationFacade" class="com.investsaudi.facades.impl.DefaultB2BRegistrationFacade">
+		<property name="cmsSiteService" ref="cmsSiteService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="modelService" ref="modelService"/>
+		<property name="baseStoreService" ref="baseStoreService"/>
+		<property name="userService" ref="userService"/>
+		<property name="workflowTemplateService" ref="workflowTemplateService"/>		
+		<property name="b2bRegistrationWorkflowFacade" ref="b2bRegistrationWorkflowFacade"/>
+		<property name="sagiaCountryService" ref="sagiaCountryService"/>
+		<property name="sagiaSectorService" ref="sagiaSectorService"/>
+	</bean>	
+	
+	<bean id="b2bRegistrationWorkflowFacade" class="com.investsaudi.facades.impl.DefautB2BRegistrationWorkflowFacade">
+		<property name="workflowService" ref="newestWorkflowService"/>
+		<property name="workflowProcessingService" ref="workflowProcessingService"/>
+		<property name="userService" ref="userService"/>
+		<property name="modelService" ref="modelService"/>
+	</bean>	
+	
+	<bean id="InvestSaudiContactFacade" class="com.investsaudi.facades.impl.DefaultInvestSaudiContactFacade">
+	</bean>	
+	
+	<!-- 
+		Services 
+	-->
+	<bean id="b2bRegistrationService" class="com.investsaudi.services.impl.DefaultB2BRegistrationService">
+		<property name="registrationDao" ref="b2bRegistrationDao"/>	
+		<property name="emailService" ref="emailService"/>		
+	</bean>
+	<bean id="sagiaB2BUnitService" class="com.investsaudi.services.impl.DefaultSagiaB2BUnitService">
+	</bean>
+	
+	<bean id="investsaudiContactService" class="com.investsaudi.services.impl.DefaultInvestsaudiContactService">
+	</bean>
+	
+	
+	<!-- 
+		Daos 
+	-->
+	<bean id="b2bRegistrationDao" class="com.investsaudi.dao.impl.DefaultB2BRegistrationDao">
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>		
+	<bean id="sagiaB2BUnitDao" class="com.investsaudi.dao.impl.DefaultSagiaB2BUnitDao">
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>	
+	<bean id="investSaudiContactDao" class="com.investsaudi.dao.impl.DefaultInvestSaudiContactDao">
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>	
+	<bean id="investSaudiContactDepartmentDao" class="com.investsaudi.dao.impl.DefaultInvestSaudiContactDepartmentDao">
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>		
+
+    <bean id="cmsSecurePortalRestrictionEvaluator" class="com.investsaudi.services.evaluator.impl.CMSSecurePortalRestrictionEvaluator"
+          scope="tenant">
+        <property name="cmsSiteService" ref="cmsSiteService"/>
+    </bean>
+
+    <bean id="cmsSecurePortalRestrictionEvaluatorMapping" class="de.hybris.platform.cms2.servicelayer.services.evaluator.CMSRestrictionEvaluatorMapping"
+          scope="tenant">
+        <property name="restrictionTypeCode" value="CMSSecurePortalRestriction" />
+        <property name="restrictionEvaluator" ref="cmsSecurePortalRestrictionEvaluator" />
+    </bean>
+
+    <bean id="cmsSecurePortalRestrictionDynamicDescription" class="com.investsaudi.model.restrictions.CMSSecurePortalDynamicDescription" />
+
+  
+	<bean id="sagiaB2BUnitPopulator" class="com.investsaudi.facades.populators.SagiaB2BUnitPopulator" >
+	</bean>
+	<bean id="sagiaB2BProductPopulator" class="com.investsaudi.facades.populators.SagiaB2BProductPopulator" >
+	</bean>
+	
+	<bean id="investSaudiContactPopulator" class="com.investsaudi.facades.populators.InvestSaudiContactPopulator" >
+	</bean>
+	
+	<alias name="mediaConverter" alias="mediaConverter"/>
+	<bean id="mediaConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.cmsfacades.data.MediaData"/>
+		<property name="populators">
+			<list>
+				<ref bean="mediaDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+   <alias name="defaultSagiaB2BUnitConverter" alias="sagiaB2BUnitConverter"/>
+	<bean id="defaultSagiaB2BUnitConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.investsaudi.data.SagiaB2BUnitData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaB2BUnitPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultInvestSaudiContactConverter" alias="investSaudiContactConverter"/>
+	<bean id="defaultInvestSaudiContactConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.investsaudi.data.InvestSaudiContactData"/>
+		<property name="populators">
+			<list>
+				<ref bean="investSaudiContactPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+  
+    <bean parent="modifyPopulatorList">
+        <property name="list" ref="productConverter"/>
+        <property name="add"  ref="sagiaB2BProductPopulator"/>
+    </bean>
+
+	<bean id="b2bInformationCompleteAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.ticket.InformationCompleteAutomatedWorkflowTemplateJob" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>
+
+	<bean id="b2bInformationIncompleteAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.ticket.InformationIncompleteAutomatedWorkflowTemplateJob" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>
+
+	<bean id="b2bValidOpportunityAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.ticket.ValidOpportunityAutomatedWorkflowTemplateJob" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>
+
+	<bean id="b2bInvalidOpportunityAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.ticket.InvalidOpportunityAutomatedWorkflowTemplateJob" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>
+
+	<bean id="b2bApproveOpportunityAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.ticket.ApproveOpportunityAutomatedWorkflowTemplateJob" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>
+
+	<bean id="b2bRejectOpportunityAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.ticket.RejectOpportunityAutomatedWorkflowTemplateJob" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>
+
+	<bean id="b2bApprovedByMarketingOpportunityAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.ticket.ApprovedByMarketingAutomatedWorkflowTemplateJob" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>
+
+	<bean id="b2bPublishToInvestSaudiOpportunityAutomatedWorkflowTemplateJob" class="com.investsaudi.workflows.actions.ticket.PublishToInvestSaudiAutomatedWorkflowTemplateJob" parent="b2bAbstractAutomatedWorkflowTemplateJob"/>
+
+
+	<bean id="opportunityUserEmailProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/opportunityUserEmailProcess.xml"/>
+	</bean>
+
+	<bean id="opportunityUserEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="OpportunityUserEmailTemplate"/>
+	</bean>
+
+	<bean id="opportunityUserEmailContext" class="com.investsaudi.email.context.OpportunityUserEmailContext" parent="abstractEmailContext" scope="prototype" />
+
+</beans>

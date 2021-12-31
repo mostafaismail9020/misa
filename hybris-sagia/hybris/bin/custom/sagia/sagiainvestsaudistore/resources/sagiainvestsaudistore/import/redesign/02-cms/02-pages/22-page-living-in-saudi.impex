@@ -1,0 +1,109 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalGlobalTemplate
+$page = living-in-saudi
+$pageName = Living in Saudi 
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pageLabel = /livingInSaudi
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Invest Saudi - Living,Saudi, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+############# MEDIA AND COMPONENTS START ######################
+
+
+INSERT_UPDATE Media	; code[unique = true]         				; realFileName             					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; livinginsaudi-bannerimage.png 			; livinginsaudi-bannerimage.png				; $siteResource/livinginsaudi-bannerimage.png 								  ; image/png						;										   ; ""  ;
+					; healthcare-backgroundimage.png 			; healthcare-backgroundimage.png			; $siteResource/healthcare-backgroundimage.png 								  ;	image/png						;										   ; ""  ;
+					; education-backgroundimage.png 			; education-backgroundimage.png				; $siteResource/education-backgroundimage.png								  ;	image/png						;										   ; ""  ;
+					; leisure-backgroundimage.png  				; leisure-backgroundimage.png				; $siteResource/leisure-backgroundimage.png 								  ;	image/png						;										   ; ""  ;
+					; digitalInfrastructure-backgroundimage.png	; digitalInfrastructure-backgroundimage.png	; $siteResource/digitalInfrastructure-backgroundimage.png 					  ;	image/png						;										   ; ""  ;
+					; livinginsaudi-backgroundimage.png			; livinginsaudi-backgroundimage.png			; $siteResource/livinginsaudi-backgroundimage.png 							  ;	image/png						;										   ; ""  ;
+					; healthcareicon.png			            ; healthcareicon.png						; $siteResource/healthcareicon.png 											  ;	image/png						;										   ; ""  ;
+					; educationicon.png			                ; educationicon.png							; $siteResource/educationicon.png 											  ;	image/png						;										   ; ""  ;
+					; leisureicon.png					        ; leisureicon.png							; $siteResource/leisureicon.png 											  ;	image/png						;										   ; ""  ;
+					; digitalinfrastructureicon.png	            ; digitalinfrastructureicon.png				; $siteResource/digitalinfrastructureicon.png								  ;	image/png						;										   ; ""  ;
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]		; name; descriptionText[lang = ar]	 ; descriptionText[lang = en];descriptionText2 [lang = en]	; buttonText[lang = en]  						  ; buttonText[lang = ar]   ; image(code, $contentCV)         ; buttonURL(&linkRef)     ; link   ; &componentRef ; $contentCV[unique = true]
+										; livinginsaudi-banner-1    ; Living in saudi banner 			 ; 							 ; LIVING IN SAUDI				; The new global hotspot to live, work and play;  ;						 	; livinginsaudi-bannerimage.png   ; 						; true   ; livinginsaudi-banner-1  ; 
+
+INSERT_UPDATE BreadcrumbComponent;uid[unique=true];&componentRef;$contentCV[unique=true]
+;livinginsaudi-breadcrumb ; livinginsaudi-breadcrumb
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];&componentRef
+;;livinginsaudi-paragraph;"Saudi Arabia is embarking upon an historic social, cultural and economic transformation to ensure long-term prosperity for all. An ambitious nation with a rich culture and history is ready to welcome investors and their families.";livinginsaudi-paragraph
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true] 			  ; name 							  ; simpleCMSComponents(&componentRef); &componentRef; $contentCV[unique = true]
+										; livinginsaudi-banner-container  ; Living in saudi banner Container  ; livinginsaudi-banner-1 			  ; livinginsaudi-banner-container  ;
+
+INSERT_UPDATE LivingInSaudiAchievement;id[unique = true];header[lang = en]; description[lang = en] ;  &achievementRef
+###Health Care
+;health1;1st;Across the Arab World and 21st globally in the world Happens index in 2021;health1
+;health2;20M;users of Tawakkalna COVID-19 contact tracing app;health2
+;health3;2;out of top 5 hospitals in the Middle East;health3
+;health4;100+;hospitals in Riyadh city;health4
+
+###Education
+;education1;1st;world’s largest all-female university;education1
+;education2;19.2%;Education is highest single budget outlay in 2021;education2
+;education3;39;colleges and universities in Riyadh city;education3
+;education4;36,461;educational institutions in Saudi Arabia;education4
+
+###Leisure
+;leisure1;11;Saudi Seasons events with over 30 million participants;leisure1
+;leisure2;23%;Mass participation in sports activities in 2019, up from 13% in 2015;leisure2
+;leisure3;$64;billion allocated to arts, tourism & entertainment over the next 10 years;leisure3
+;leisure4;28;Themed rides and attractions in the 32 hectares Six Flags Qiddiya entertainment and sports destination set to open in 2023;leisure4
+
+###Digital infrastructure 
+;digital1;1st;Digital riser among the G20 countries in 2020;digital1
+;digital2;7th;in the world for mobile internet speed in Q2 2021;digital2
+;digital3;47%;5G network coverage;digital3
+;digital4;95.7%;Internet usage penetration, versus 53.6% globally;digital4
+
+
+INSERT_UPDATE InvestSaudiLivingInSaudiComponent; uid[unique = true];achievements(key,value(&achievementRef))[map-delimiter=|]; name; imageIcon(code, $contentCV);backgroundImage(code, $contentCV); headerText[lang = en]; description[lang = en]  ; bannerImage(code, $contentCV); alignmentLeft ;  &componentRef ; $contentCV[unique = true]
+; HealthAchievementComponent ; 1->health1 | 2->health2 | 3 -> health3 | 4 -> health4;Health Achievement in saudi ; healthcareicon.png;livinginsaudi-backgroundimage.png; HEALTHCARE; A modern state of the art healthcare system providing all citizens, residents and visitors access to high-quality health services ;healthcare-backgroundimage.png;true;HealthAchievementComponent
+; EducationAchievementComponent ; 1->education1 | 2->education2 | 3 -> education3 | 4 -> education4;Education Achievement in saudi ; educationicon.png ; livinginsaudi-backgroundimage.png ; EDUCATION; A modern education system that values and promotes diversity, critical thinking and innovation for all students;education-backgroundimage.png;false;EducationAchievementComponent
+; LeisureAchievementComponent ;1->leisure1 | 2->leisure2 | 3 -> leisure3 | 4 -> leisure4; Leisure Achievement in saudi ; leisureicon.png ; livinginsaudi-backgroundimage.png ; LEISURE; Exclusive and world-class leisure events all year round providing a wide range of activities suited to every age group;leisure-backgroundimage.png;true;LeisureAchievementComponent
+; DigitalInfrastructureAchievementComponent ;1->digital1 | 2->digital2 | 3 -> digital3 | 4 -> digital4; Digital Infrastructure Achievement in saudi;digitalinfrastructureicon.png ; livinginsaudi-backgroundimage.png; DIGITAL INFRASTRUCTURE;   A thriving ecosystem connecting todays needs and tomorrow's ambitions towards becoming a truly digital nation;digitalInfrastructure-backgroundimage.png ;false;DigitalInfrastructureAchievementComponent
+
+INSERT_UPDATE InvestSaudiLivingInSaudiComponentContainer; uid[unique = true]; name ; title[lang = en]; simpleCMSComponents(&componentRef); &componentRef ; $contentCV[unique = true]
+ ; living-in-saudi-achievement-container; Living in saudi content component container ; LIVING IN SAUDI COMPONENT CONTAINER;LeisureAchievementComponent,DigitalInfrastructureAchievementComponent,EducationAchievementComponent,HealthAchievementComponent; living-in-saudi-achievement-container;
+
+
+
+
+############# MEDIA AND COMPONENTS END ######################
+
+                                      
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef); $contentCV;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; livinginsaudi-banner-container,livinginsaudi-breadcrumb,livinginsaudi-paragraph,living-in-saudi-achievement-container ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;  ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+ 
+                                             
+                   

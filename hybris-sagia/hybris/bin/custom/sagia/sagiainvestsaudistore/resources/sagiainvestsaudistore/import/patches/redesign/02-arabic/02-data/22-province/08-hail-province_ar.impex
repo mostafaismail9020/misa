@@ -1,0 +1,147 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleAr = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 ; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+			  
+					   ; hail-banner-image.png           			 ; hail-banner-image.png    						; $siteResource/hail-banner-image.png                                        			  ;                 image/png                ;                                          ; ""     ;
+					   ; hail-map.png                      		 	 ; hail-map.png              						; $siteResource/hail-map.png                                                  			  ;                 image/png                ;                                          ; ""     ;
+					   ; hail-agricultures.png	                     ; hail-agricultures.png	             			    ; $siteResource/hail-agricultures.png	                                                 ;                 image/png                ;                                          ; ""     ;
+					   ; hail-food-processings.png                    ; hail-food-processings.png             			; $siteResource/hail-food-processings.png                                                 ;                 image/png                ;                                          ; ""     ;
+					   ; hail-tradings.png	                         ; hail-tradings.png	                 			    ; $siteResource/hail-tradings.png	                                                      ;                 image/png                ;                                          ; ""     ;
+					   ; hail-minings.png	                         ; hail-minings.png	                     			; $siteResource/hail-minings.png	                                                          ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-technologys.png		                 ; hail-technologys.png		             			; $siteResource/hail-technologys.png		                                                  ;                 image/png                ;                                          ; ""     ;   											   
+					   ; hail-touris.png		                     ; hail-touris.png		                   		; $siteResource/hail-touris.png		                                                  ;                 image/png                ;                                          ; ""     ;   
+					   
+					   
+					   
+					   ; hail-population.png        		    		 ; hail-population.png        					; $siteResource/hail-population.png        		                                 		  ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-airport.png    				    		 ; hail-airport.png    							; $siteResource/hail-airport.png    				                                		  ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-private-sector-employees.png          ; hail-private-sector-employees.png			; $siteResource/hail-private-sector-employees.png                                      	  ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-dams.png              		  		 ; hail-dams.png              					; $siteResource/hail-dams.png              		                               		  ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-active-factories.png  		          ; hail-active-factories.png  		   			; $siteResource/hail-active-factories.png  		                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-hotels.png        			          ; hail-hotels.png        			  			; $siteResource/hail-hotels.png        			                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-chambers-of-commerce.png 	          ; hail-chambers-of-commerce.png 	          	; $siteResource/hail-chambers-of-commerce.png 	                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-roads-length.png                      ; hail-roads-length.png                        ; $siteResource/hail-roads-length.png                                                     ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-industrial-city.png      	          ; hail-industrial-city.png      				; $siteResource/hail-industrial-city.png      	                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-hospitals.png				     	 ; hail-hospitals.png							; $siteResource/hail-hospitals.png				                                  		  ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-sport-city.png           	       	 ; hail-sport-city.png           			    ; $siteResource/hail-sport-city.png           	                                    	  ;                 image/png                ;                                          ; ""     ;   					
+					   ; hail-towns.png                 	          ; hail-towns.png                 	            ; $siteResource/hail-towns.png                 	                                         ;                 image/png                ;                                          ; ""     ;   
+					   
+
+					   
+					   ; hail-central-location.png                     ; hail-central-location.png                     		; $siteResource/hail-central-location.png                                                   ;                 image/png                ;                                          ; ""     ;   
+					   ; hail-fresh-ground-water-resources.png         ; hail-fresh-ground-water-resources.png            	; $siteResource/hail-fresh-ground-water-resources.png                                       ;                 image/png                ;                                          ; ""     ;   	
+					   ; hail-high-food-production-capacity.png        ; hail-high-food-production-capacity.png             ; $siteResource/hail-high-food-production-capacity.png                                      ;                 image/png                ;                                          ; ""     ;   	
+					   ; hail-solar-energypotential.png                ; hail-solar-energypotential.png                     ; $siteResource/hail-solar-energypotential.png                                              ;                 image/png                ;                                          ; ""     ;   	
+					   ; hail-road-infrastructure.png                  ; hail-road-infrastructure.png                   	; $siteResource/hail-road-infrastructure.png                                                ;                 image/png                ;                                          ; ""     ;   	
+					   ; hail-tourisms.png                              ; hail-tourisms.png                               	; $siteResource/hail-tourisms.png                                                            ;                 image/png                ;                                          ; ""     ;   	
+								
+								
+					   ; hail-investments.png                           ; hail-investments.png                     			; $siteResource/hail-investments.png                                                          ;                 image/png                ;                                          ; ""     ;   	
+					   ; hail-investment.png	                        ; hail-investment.png	                    		; $siteResource/hail-investment.png	                                                          ;                 image/png                ;                                          ; ""     ;   	
+					   
+					
+					
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=ar]			; bannerText[lang=ar]																																						 ; bannerImage (code, $contentCV)	; keyFactsHeader [lang = ar]		 ; keyStrengthsHeader [lang = ar] 	 ; opportunitiesHeader [lang = ar]		
+							   ; hail		 		;				; منطقة حائل					; 							; hail-banner-image.png			; اهم المعلومات والأرقام	 			 ; المزايا المناطقية		 			 ; فرص استثمارية																																																									
+	
+	
+	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 	;  $contentCV  ; headerText[lang = ar]    ; imageIcon  (code, $contentCV)     	; &componentRef
+											    ; hail-agricultures		; 			   ; الزراعة 			  ; hail-agricultures.png				; hail-agricultures		
+                                                ; hail-food-processings	;              ;  الصناعات الغذائية		  ; hail-food-processings.png		    ; hail-food-processings	
+                                                ; hail-tradings	 		;              ; التجارة	           	  ; hail-tradings.png	           		; hail-tradings	 		
+                                                ; hail-minings	 		;              ; التعدين	           		  ; hail-minings.png	           			; hail-minings	 		
+                                                ; hail-technologys		;              ; التكنولوجيا		          ; hail-technologys.png		           	; hail-technologys		
+												; hail-touris		 	;              ; السياحة		          ; hail-touris.png		           		; hail-touris		 	
+
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = ar] ; value[lang = ar] 
+										; hail-strategic-population		;			   ; 731,147		; التعداد السكاني
+										; hail-strategic-landmass		;			   ; 120,000 كم2	; المساحة
+	 
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]				; $contentCV   	; sectorHeader	[lang = ar]	; backgroundImage (code, $contentCV)   			; sectors(&componentRef) 													        ; longDescription[lang = ar]																																																																																																																																																																																															; localizedStats (uid, $contentCV)   					 ; &componentRef
+												 ; hail-strategic-component		;          		; القطاعات الاستراتيجية			; hail-map.png				; hail-agricultures, hail-food-processings, hail-tradings, hail-minings, hail-technologys,hail-touris	; تتميّز منطقة حائل بكرم ضيافة أهلها وبأسواقها المفتوحة. إن طبيعة أرضها وموقعها الجغرافي جعلا منها منطقة زراعية بامتياز. غالبًا ما يقترن اسم المنطقة مع فرادة جبالها وتضاريسها إذ تضم حائل موقعين تاريخيين مدرجين على قائمة اليونيسكو للتراث العالمي وهما جبل أم سنمان وموقع النقوش الصخرية في الشويمس. يوجد في منطقة حائل بنية تحتية مواتية للأعمال إذ تتوفر فيها شبكة كهرباء ممتازة ومؤسسات التعليم العالي ونظام بيئي يدعم الشركات المحلية. تماشيًا مع رؤية 2030، تقوم حائل بعدة مشاريع تنموية مثل إنشاء مرافق عامة وتطوير البنية التحتية، فضلًا عن عدة مشاريع أخرى تعزز السياحة من خلال تنمية رأس المال البشري ووضع استراتيجيات جديدة لجذب السياح.يستفيد سكان حائل من الخدمات التعليمية لعدد من الجامعات محلية والخدمات الطبية التي تقدمها 13 مستشفى، بالإضافة الى شبكة سكك حديدية سريعة ترتبط حائل بمنطقتي الجوف والقصيم. 	; hail-strategic-population,hail-strategic-landmass 	 ;  hail-strategic-component                                                                
+                                                                               
+	
+###########################################################
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]		; $contentCV ; imageIcon (code, $contentCV) 			; headerText[lang = ar]		   ;  text[lang = ar]										; &componentRef
+									   ; hail-keyfacts1	     	;			 ; hail-population.png        				; 731,147 	                   ;  التعداد السكاني											; hail-keyfacts1	
+									   ; hail-keyfacts2       	;            ; hail-airport.png    						; 1		                   	   ;  عدد المطارات المحلية           					; hail-keyfacts2 
+									   ; hail-keyfacts3         ;            ; hail-private-sector-employees.png      	; 140,712		               ;  اجمالي المشتغلين 				                ; hail-keyfacts3 
+									   ; hail-keyfacts4         ;            ; hail-dams.png              				; 46			               ;  عدد السدود                                                   ; hail-keyfacts4 
+									   ; hail-keyfacts5         ;            ; hail-active-factories.png  				; 83		                   ;  عدد المصانع المنتجة في الربع الثالث 2021					        ; hail-keyfacts5 
+									   ; hail-keyfacts6         ;            ; hail-hotels.png        					; 7		                   	   ;  عدد الفنادق 									            ; hail-keyfacts6 
+									   ; hail-keyfacts7         ;            ; hail-chambers-of-commerce.png 			; 1			                   ;  عدد الغرف التجارية 					                ; hail-keyfacts7 
+									   ; hail-keyfacts8         ;            ; hail-roads-length.png             		; 4,520			               ;  مجموع أطوال الطرق -كم 						                    ; hail-keyfacts8 
+									   ; hail-keyfacts9         ;            ; hail-industrial-city.png      			; 1	                   	   	   ;  عدد المدن الصناعية                                        ; hail-keyfacts9 
+									   ; hail-keyfacts10        ;            ; hail-hospitals.png						; 13			               ;  عدد المستشفيات  بمجموع : 1,855 سرير			                    ; hail-keyfacts10
+									   ; hail-keyfacts11        ;            ; hail-sport-city.png           			; 1			               	   ;  عدد المدن الرياضية  					                        ; hail-keyfacts11
+									   ; hail-keyfacts12        ;            ; hail-towns.png                 			; 9		                   	   ;  عدد المحافظات في المنطقة							                        ; hail-keyfacts12
+											   
+									   
+									   
+									   
+									 
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]					  ; $contentCV      ; image (code, $contentCV)					              ; text[lang=ar]				                         ;&componentRef
+                                                                                                                                                                                                                    
+										   ; hail-key-strength1                   ;                 ; hail-central-location.png                               ; موقع مركزي                               ; hail-key-strength1
+                                           ; hail-key-strength2                   ;                 ; hail-fresh-ground-water-resources.png                   ; موارد المياه الجوفية                     ; hail-key-strength2
+                                           ; hail-key-strength3                   ;                 ; hail-high-food-production-capacity.png                  ; طاقة إنتاجية عالية للصناعة الغذائية                   ; hail-key-strength3
+                                           ; hail-key-strength4                   ;                 ; hail-solar-energypotential.png                          ; إمكانات في مجال الطاقة الشمسية                          ; hail-key-strength4
+                                           ; hail-key-strength5                   ;                 ; hail-road-infrastructure.png                            ; البنية التحتية لشبكة الطرقات                             ; hail-key-strength5
+		                                   ; hail-key-strength6                   ;                 ; hail-tourisms.png                                       ; السياحة                     					; hail-key-strength6
+	
+	
+#####################################################	
+	
+	
+INSERT_UPDATE ProvinceInvestmentOpportunitiesComponent	; uid[unique=true]		      	  ; $contentCV	  ; iconImage	(code, $contentCV)					         ; headerText[lang = ar]	                                     							; text[lang = ar]																									; &componentRef
+													                                                                                                                                                        
+														; hail-investment1			      ;               ; hail-investments.png                                         ; فرص استثمار                                                     						; عديدة بقيمة تتراوح بين 10.6 و12 مليون دولار لتطوير الحدائق النباتية												; hail-investment1 
+														; hail-investment2			      ;               ; hail-investment.png				                             ;  فرص استثمار 				                                     					; عديدة في مجالات الإرث الثقافي والرياضة والنقل																		; hail-investment2
+														
+	
+	
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																									; keyStrengths(&componentRef) 																												  ; investmentOpportunities(&componentRef)
+							   ; hail		 		;				    ;  hail-strategic-component  				 ; hail-keyfacts1,hail-keyfacts2 ,hail-keyfacts3 ,hail-keyfacts4 ,hail-keyfacts5 ,hail-keyfacts6, hail-keyfacts7 ,hail-keyfacts8 ,hail-keyfacts9 ,hail-keyfacts10,hail-keyfacts11,hail-keyfacts12    ; hail-key-strength1,hail-key-strength2,hail-key-strength3,hail-key-strength4,hail-key-strength5,hail-key-strength6   ;	hail-investment1,hail-investment2
+	
+	
+

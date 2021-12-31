@@ -1,0 +1,40 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/ISIC_detailsSet('B')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/ISIC_detailsSet('B')",
+          "type": "ZQEEMAH2_EXT_SRV.ISIC_details"
+        },
+        "Q2sectionno": "B",
+        "Q2sectiondesc": "Mining and quarrying",
+        "Q2divisionno": "",
+        "Q2divisiondesc": "",
+        "Q2activityno": "",
+        "Q2activitydesc": "",
+        "Q2complimentaryno": "",
+        "Q2complimentarydesc": "",
+        "Q2licno": "",
+        "Q2licdesc": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/ISIC_detailsSet('C')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/ISIC_detailsSet('C')",
+          "type": "ZQEEMAH2_EXT_SRV.ISIC_details"
+        },
+        "Q2sectionno": "C",
+        "Q2sectiondesc": "Manufacturing",
+        "Q2divisionno": "",
+        "Q2divisiondesc": "",
+        "Q2activityno": "",
+        "Q2activitydesc": "",
+        "Q2complimentaryno": "",
+        "Q2complimentarydesc": "",
+        "Q2licno": "",
+        "Q2licdesc": ""
+      }
+    ]
+  }
+}

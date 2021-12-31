@@ -1,0 +1,46 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalResourceTemplate
+$page = resources
+$pageName = Resources
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pageLabel = /mediaCenter/resources
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+#$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE BreadcrumbComponent; uid[unique=true]			; &componentRef			; $contentCV[unique=true];
+								 ; mediacenter-breadcrumb	; mediacenter-breadcrumb;						 ;
+								 ; resources-breadcrumb 	; resources-breadcrumb	;						 ;
+
+
+INSERT_UPDATE PortalResourceCarouselComponent; uid[unique = true]   			; $contentCV[unique = true] ; &componentRef
+											 ; portalResorcesCarouselComponent	; 							; portalResorcesCarouselComponent
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)		; $contentCV	;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ; portalResorcesCarouselComponent  ;				;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; 						       		;				;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                             		;				;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+

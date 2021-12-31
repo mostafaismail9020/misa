@@ -1,0 +1,48 @@
+$page = sample-videos
+$template = portalGlobalTemplate
+$pageName = Videos
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /videos
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en] ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Videos ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+INSERT_UPDATE Media; code[unique = true]; realfilename                                               ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/svg+xml']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; sample-image-1.svg ; news-holder.svg                                            ; $siteResource/news-holder.svg                                               ; image/svg+xml                  ;                                          ; ""     ;
+                   ; sample-video-1     ; shell-overseas-services-ltd-multitude-of-opportunities.mp4 ; $siteResource/shell-overseas-services-ltd-multitude-of-opportunities.mp4    ; video/mp4                      ;                                          ; ""     ;
+                   ; sample-video-2     ; shell-overseas-services-ltd-multitude-of-opportunities.mp4 ; $siteResource/shell-overseas-services-ltd-multitude-of-opportunities.mp4    ; video/mp4                      ;                                          ; ""     ;
+                   ; sample-video-3     ; shell-overseas-services-ltd-multitude-of-opportunities.mp4 ; $siteResource/shell-overseas-services-ltd-multitude-of-opportunities.mp4    ; video/mp4                      ;                                          ; ""     ;
+                   ; sample-video-4     ; shell-overseas-services-ltd-multitude-of-opportunities.mp4 ; $siteResource/shell-overseas-services-ltd-multitude-of-opportunities.mp4    ; video/mp4                      ;                                          ; ""     ;
+                   ; sample-video-5     ; shell-overseas-services-ltd-multitude-of-opportunities.mp4 ; $siteResource/shell-overseas-services-ltd-multitude-of-opportunities.mp4    ; video/mp4                      ;                                          ; ""     ;
+                   ; sample-video-6     ; shell-overseas-services-ltd-multitude-of-opportunities.mp4 ; $siteResource/shell-overseas-services-ltd-multitude-of-opportunities.mp4    ; video/mp4                      ;                                          ; ""     ;
+                   ; sample-video-7     ; shell-overseas-services-ltd-multitude-of-opportunities.mp4 ; $siteResource/shell-overseas-services-ltd-multitude-of-opportunities.mp4    ; video/mp4                      ;                                          ; ""     ;
+
+INSERT_UPDATE InvestSaudiVideoComponent; uid[unique = true]       ; name                     ; &componentRef            ; descriptionText[lang = en]                             ; descriptionText[lang = ar]; video(code, $contentCV); poster(code, $contentCV); videoLink(&linkRef); $contentCV[unique = true];
+                                       ; sample-video-component-1 ; Sample Video Component 1 ; sample-video-component-1 ; shell-overseas-services-ltd-multitude-of-opportunities ;                           ; sample-video-1         ; sample-image-1.svg      ;                    ;
+                                       ; sample-video-component-2 ; Sample Video Component 2 ; sample-video-component-2 ; global-think-group-entrepreneurship-license            ;                           ; sample-video-2         ; sample-image-1.svg      ;                    ;
+                                       ; sample-video-component-3 ; Sample Video Component 3 ; sample-video-component-3 ; nmc-warm-friendly-people                               ;                           ; sample-video-3         ; sample-image-1.svg      ;                    ;
+                                       ; sample-video-component-4 ; Sample Video Component 4 ; sample-video-component-4 ; freesenius-mindset-change                              ;                           ; sample-video-4         ; sample-image-1.svg      ;                    ;
+                                       ; sample-video-component-5 ; Sample Video Component 5 ; sample-video-component-5 ; freesenius-building-on-saudi-employees                 ;                           ; sample-video-5         ; sample-image-1.svg      ;                    ;
+                                       ; sample-video-component-6 ; Sample Video Component 6 ; sample-video-component-6 ; city-school-unbelievable                               ;                           ; sample-video-6         ; sample-image-1.svg      ;                    ;
+                                       ; sample-video-component-7 ; Sample Video Component 7 ; sample-video-component-7 ; accel-the-amount-of-change                             ;                           ; sample-video-7         ; sample-image-1.svg      ;                    ;
+
+INSERT_UPDATE InvestSaudiVideoContainer; uid[unique = true]     ; name                   ; simpleCMSComponents(&componentRef)                                                                                                                                             ; &componentRef          ; $contentCV[unique = true];
+                                       ; sample-video-container ; Sample Video Container ; sample-video-component-1,sample-video-component-2,sample-video-component-3,sample-video-component-4,sample-video-component-5,sample-video-component-6,sample-video-component-7 ; sample-video-container ;                          ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; sample-video-container
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+

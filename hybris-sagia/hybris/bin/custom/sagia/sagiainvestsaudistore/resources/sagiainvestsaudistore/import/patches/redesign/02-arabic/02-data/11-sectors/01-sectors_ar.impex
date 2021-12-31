@@ -1,0 +1,57 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+    
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$siteUid = sagia
+$mediafolder = portal-media
+
+INSERT_UPDATE Category	; code[unique = true]     		     ; name [lang = ar]                                     ; seoKeywords[lang = ar]     ; $catalogVersion ;
+						; energy                  		     ; الطاقة                                               ;                            ;                                                    
+						; conventional-energy     		     ; الطاقة التقليدية                                     ;                            ;                                                
+						; renewable-energy        		     ; الطاقة المتجددة                                      ;                            ;                                                  
+						; energy-saving       			 	 ; توفير الطاقة                                         ;                            ;                                              
+																																				
+						; environment-services			     ; الخدمات البيئية				                        ;							 ;
+						; water                   		     ; المياه                                               ;                            ;                                                        
+						; waste-management        		     ; إدارة النفايات                                       ;                            ;                                                             
+																																				
+						; industrial-manufacturing		     ; الصناعة والتصنيع                                     ;                            ;
+						; automotives             		     ; صناعة السيارات                                       ;                            ;                                                   
+						; food-processing         		     ; الزراعة والصناعات الغذائية                           ;                            ;                                                     
+					    ; industrial-spareparts   		     ; المعدات الصناعية وقطع الغيار                         ;                            ;                                          
+																																				
+						; healthcare-life-sciences           ; الرعاية الصحية وعلوم الحياة                          ;                            ;                                                                                               
+						; medical-services        		     ; الخدمات الطبية                                       ;                            ;                                                     
+						; medical-technologies    		     ; التكنولوجيا الطبية                                   ;                            ;                                              
+						; pharmacuticals          		     ; الأدوية والتكنولوجيا الحيوية                          ;                            ;                               
+																																				
+						; chemicals               		     ; الكيماويات                                           ;         					 ;                                    
+						; real-estate             		     ; العقارات                                             ;                            ;                                                                                                          
+						; financial               		     ; الخدمات المالية                                      ;                            ;                                                                                                      
+						; transport-logistics                ; النقل والخدمات اللوجستية                             ;                            ;                                                                                                
+						; mining-metals           		     ; التعدين والمعادن                                     ;                            ;                                                                                                        
+																																				
+						; tourism-culture-entertainment      ; السياحة وجودة الحياة                                 ;                            ;                                                                                                                                                                                                                                                               
+						; tourism                 		     ; السياحة                                              ;                            ;                                                                                                                                                                                                                                                                           
+						; culture-entertainment   		     ; الثقافة والترفيه                                     ;                            ;                                                                                                                                                                                                                                                             
+						; sports                  		     ; الرياضة                                              ;                            ;                                                                                                                                                                                                                                                                         
+																																				
+						; information-technology             ; المعلومات وتقنية الاتصالات                             ;                            ;                           
+						; digital-content         		     ; المحتوى الرقمي                                       ;                            ;                                                                                        
+						; digital-infrastructure  		     ; البنية التحتية الرقمية                               ;                            ;                                                                                        
+						; technology-platforms    		     ; التكنولوجيا والمنصات                                 ;                            ;                                                                                        
+																																				
+#New sector                                                                                                                                      
+                        ; human-capital-innovation           ; رأس المال البشري والابتكار                            ;                            ;
+						; education               		     ; التعليم                                              ;                            ;                                                                                                         
+						; innovation              		     ; الابتكار وريادة الأعمال                                ;                            ;                                                                                    
+																																				
+						; aerospace-defense                  ; الطيران والدفاع                                      ;                            ; 
+
+                        

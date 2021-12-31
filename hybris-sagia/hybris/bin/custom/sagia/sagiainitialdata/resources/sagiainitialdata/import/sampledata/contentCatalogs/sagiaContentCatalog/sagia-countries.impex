@@ -1,0 +1,246 @@
+##  Countries IMPEX ##
+$langen = en
+$langar = ar
+
+
+INSERT_UPDATE SagiaCountry; code[unique = true]; name[lang = $langen]; name[lang = $langar]                  ; phoneprefix[lang = $langen]; blacklisted
+                          ; AD                 ; Andorra             ; أندورا                                ; 376                        ; FALSE
+                          ; AE                 ; Utd. Arab Emir.     ; الإمارات العربية المتحدة              ; 971                        ; FALSE
+                          ; AF                 ; Afghanistan         ; أفغانستان                             ; 93                         ; TRUE
+                          ; AG                 ; Antigua/Barbuda     ; أنتيغوا/باربودا                       ; 1809                       ; FALSE
+                          ; AI                 ; Anguilla            ; أنغيلا                                ; 1809                       ; FALSE
+                          ; AL                 ; Albania             ; ألبانيا                               ; 355                        ; FALSE
+                          ; AM                 ; Armenia             ; أرمينيا                               ; 374                        ; FALSE
+                          ; AN                 ; Dutch Antilles      ; جزر الأنتيل الهولندية                 ; 599                        ; FALSE
+                          ; AO                 ; Angola              ; أنغولا                                ; 244                        ; FALSE
+                          ; AQ                 ; Antarctica          ; أنتاركتيكا                            ; 672                        ; FALSE
+                          ; AR                 ; Argentina           ; الأرجنتين                             ; 54                         ; FALSE
+                          ; AS                 ; American Samoa      ; ساموا الأمريكية                       ; 684                        ; FALSE
+                          ; AT                 ; Austria             ; النمسا                                ; 43                         ; FALSE
+                          ; AU                 ; Australia           ; أستراليا                              ; 61                         ; FALSE
+                          ; AW                 ; Aruba               ; أروبا                                 ; 297                        ; FALSE
+                          ; AZ                 ; Azerbaijan          ; أذربيجان                              ; 994                        ; FALSE
+                          ; BA                 ; Bosnia/Herz.        ; البوسنة والهرسك                       ; 387                        ; FALSE
+                          ; BB                 ; Barbados            ; باربادوس                              ; 1809                       ; FALSE
+                          ; BD                 ; Bangladesh          ; بنجلاديش                              ; 880                        ; FALSE
+                          ; BE                 ; Belgium             ; بلجيكا                                ; 32                         ; FALSE
+                          ; BF                 ; Burkina Faso        ; بوركينا فاسو                          ; 226                        ; FALSE
+                          ; BG                 ; Bulgaria            ; بلغاريا                               ; 359                        ; FALSE
+                          ; BH                 ; Bahrain             ; البحرين                               ; 973                        ; FALSE
+                          ; BI                 ; Burundi             ; بوروندي                               ; 257                        ; FALSE
+                          ; BJ                 ; Benin               ; بنين                                  ; 229                        ; FALSE
+                          ; BM                 ; Bermuda             ; برمودا                                ; 1809                       ; FALSE
+                          ; BN                 ; Brunei Daruss.      ; بروناي دار السلام                     ; 673                        ; FALSE
+                          ; BO                 ; Bolivia             ; بوليفيا                               ; 591                        ; FALSE
+                          ; BR                 ; Brazil              ; البرازيل                              ; 55                         ; FALSE
+                          ; BS                 ; Bahamas             ; الباهاما                              ; 1809                       ; FALSE
+                          ; BT                 ; Bhutan              ; بوتان                                 ; 975                        ; FALSE
+                          ; BV                 ; Bouvet Islands      ; جزر بوفيت                             ; 55                         ; FALSE
+                          ; BW                 ; Botswana            ; بوتسوانا                              ; 267                        ; FALSE
+                          ; BY                 ; Belarus             ; روسيا البيضاء                         ; 375                        ; FALSE
+                          ; BZ                 ; Belize              ; بليز                                  ; 501                        ; FALSE
+                          ; CA                 ; Canada              ; كندا                                  ; 1                          ; FALSE
+                          ; CC                 ; Coconut Islands     ; جزر الكوكنت                           ; 672                        ; FALSE
+                          ; CD                 ; Dem. Rep. Congo     ; الكونغو                               ; 243                        ; FALSE
+                          ; CF                 ; Ce. African. Re     ; جمهورية أفريقيا الوسطى                ; 236                        ; FALSE
+                          ; CG                 ; Rep. of Congo       ; جمهورية الكونغو                       ; 242                        ; FALSE
+                          ; CH                 ; Switzerland         ; سويسرا                                ; 41                         ; FALSE
+                          ; CI                 ; Cote d'Ivoire       ; ساحل العاج                            ; 225                        ; FALSE
+                          ; CK                 ; Cook Islands        ; جزر الكوك                             ; 682                        ; FALSE
+                          ; CL                 ; Chile               ; شيلي                                  ; 56                         ; FALSE
+                          ; CM                 ; Cameroon            ; الكاميرون                             ; 237                        ; FALSE
+                          ; CN                 ; China               ; الصين                                 ; 86                         ; FALSE
+                          ; CO                 ; Colombia            ; كولومبيا                              ; 57                         ; FALSE
+                          ; CR                 ; Costa Rica          ; كوستاريكا                             ; 506                        ; FALSE
+                          ; CS                 ; Serbia/Monten.      ; صربيا ومونتينيجرو                     ; 381                        ; FALSE
+                          ; CU                 ; Cuba                ; كوبا                                  ; 53                         ; FALSE
+                          ; CV                 ; Cape Verde          ; الرأس الأخضر                          ; 238                        ; FALSE
+                          ; CX                 ; Christmas Isl.      ; جزيرة كريستماس                        ; 61                         ; FALSE
+                          ; CY                 ; Cyprus              ; قبرص                                  ; 357                        ; FALSE
+                          ; CZ                 ; Czech Republic      ; جمهورية التشيك                        ; 420                        ; FALSE
+                          ; DE                 ; Germany             ; ألمانيا                               ; 49                         ; FALSE
+                          ; DJ                 ; Djibouti            ; جيبوتي                                ; 253                        ; FALSE
+                          ; DK                 ; Denmark             ; الدانمارك                             ; 45                         ; FALSE
+                          ; DM                 ; Dominica            ; الدومينيكا                            ; 1809                       ; FALSE
+                          ; DO                 ; Dominican Rep.      ; الجمهورية الدومينيكية                 ; 1809                       ; FALSE
+                          ; DZ                 ; Algeria             ; الجزائر                               ; 213                        ; FALSE
+                          ; EC                 ; Ecuador             ; الإكوادور                             ; 593                        ; FALSE
+                          ; EE                 ; Estonia             ; إيستونيا                              ; 372                        ; FALSE
+                          ; EG                 ; Egypt               ; مصر                                   ; 20                         ; FALSE
+                          ; EH                 ; West Sahara         ; الصحراء الغربية                       ; 212                        ; FALSE
+                          ; ER                 ; Eritrea             ; إريتريا                               ; 291                        ; FALSE
+                          ; ES                 ; Spain               ; إسبانيا                               ; 34                         ; FALSE
+                          ; ET                 ; Ethiopia            ; أثيوبيا                               ; 251                        ; FALSE
+                          ; FI                 ; Finland             ; فنلندا                                ; 358                        ; FALSE
+                          ; FJ                 ; Fiji                ; فيجي                                  ; 679                        ; FALSE
+                          ; FK                 ; Falkland Island     ; جزر الفوكلاند                         ; 500                        ; FALSE
+                          ; FM                 ; Micronesia          ; ميكرونيزيا                            ; 691                        ; FALSE
+                          ; FO                 ; Faroe Islands       ; جزر الفارو                            ; 298                        ; FALSE
+                          ; FR                 ; France              ; فرنسا                                 ; 33                         ; FALSE
+                          ; GA                 ; Gabon               ; الجابون                               ; 241                        ; FALSE
+                          ; GB                 ; United Kingdom      ; المملكة المتحدة                       ; 44                         ; FALSE
+                          ; GD                 ; Grenada             ; جرانادا                               ; 1809                       ; FALSE
+                          ; GE                 ; Georgia             ; جورجيا                                ; 995                        ; FALSE
+                          ; GF                 ; French Guiana       ; جويانا الفرنسية                       ; 594                        ; FALSE
+                          ; GG                 ; Guernsey            ; جرونسيه                               ; 44                         ; FALSE
+                          ; GH                 ; Ghana               ; غانا                                  ; 233                        ; FALSE
+                          ; GI                 ; Gibraltar           ; جبل طارق                              ; 350                        ; FALSE
+                          ; GL                 ; Greenland           ; غرينلاند                              ; 299                        ; FALSE
+                          ; GM                 ; Gambia              ; غامبيا                                ; 220                        ; FALSE
+                          ; GN                 ; Guinea              ; غينيا                                 ; 224                        ; FALSE
+                          ; GP                 ; Guadeloupe          ; غواديلوب                              ; 590                        ; FALSE
+                          ; GQ                 ; Equatorial Guin     ; جمهورية غينيا الاستوائية              ; 240                        ; FALSE
+                          ; GR                 ; Greece              ; اليونان                               ; 30                         ; FALSE
+                          ; GS                 ; S. Sandwich Is.     ; جورجيا الجنوبية وجزر ساندويش الجنوبية ; 500                        ; FALSE
+                          ; GT                 ; Guatemala           ; غواتيمالا                             ; 502                        ; FALSE
+                          ; GU                 ; Guam                ; جوام                                  ; 671                        ; FALSE
+                          ; GW                 ; Guinea - Bissau     ; غينيا بيساو                           ; 245                        ; FALSE
+                          ; GY                 ; Guyana              ; جويانا                                ; 592                        ; FALSE
+                          ; HK                 ; Hong Kong           ; هونج كونج                             ; 852                        ; FALSE
+                          ; HN                 ; Honduras            ; هندوراس                               ; 504                        ; FALSE
+                          ; HR                 ; Croatia             ; كرواتيا                               ; 385                        ; FALSE
+                          ; HT                 ; Haiti               ; هاييتي                                ; 509                        ; FALSE
+                          ; HU                 ; Hungary             ; المجر                                 ; 36                         ; FALSE
+                          ; ID                 ; Indonesia           ; إندونيسيا                             ; 62                         ; FALSE
+                          ; IE                 ; Ireland             ; آيرلندا                               ; 353                        ; FALSE
+                          ; IM                 ; Isle of Man         ; آيل اوف مان                           ; 44                         ; FALSE
+                          ; IN                 ; India               ; الهند                                 ; 91                         ; FALSE
+                          ; IQ                 ; Iraq                ; العراق                                ; 964                        ; TRUE
+                          ; IR                 ; Iran                ; إيران                                 ; 98                         ; TRUE
+                          ; IS                 ; Iceland             ; آيسلندا                               ; 354                        ; FALSE
+                          ; IT                 ; Italy               ; إيطاليا                               ; 39                         ; FALSE
+                          ; JI                 ; Jersey              ; جيرسي                                 ; 44                         ; FALSE
+                          ; JM                 ; Jamaica             ; جامايكا                               ; 1809                       ; FALSE
+                          ; JO                 ; Jordan              ; الأردن                                ; 962                        ; FALSE
+                          ; JP                 ; Japan               ; اليابان                               ; 81                         ; FALSE
+                          ; KE                 ; Kenya               ; كينيا                                 ; 254                        ; FALSE
+                          ; KG                 ; Kyrgyzstan          ; قيرغيستان                             ; 7                          ; FALSE
+                          ; KH                 ; Cambodia            ; كمبوديا                               ; 855                        ; FALSE
+                          ; KI                 ; Kiribati            ; كيريباتي                              ; 686                        ; FALSE
+                          ; KM                 ; Comoros             ; جزر القمر                             ; 269                        ; FALSE
+                          ; KN                 ; St Kitts/Nevis      ; اتحاد سانت كتس ونفس                   ; 1809                       ; FALSE
+                          ; KP                 ; North Korea         ; كوريا الشمالية                        ; 850                        ; FALSE
+                          ; KR                 ; South Korea         ; كوريا الجنوبية                        ; 82                         ; FALSE
+                          ; KW                 ; Kuwait              ; الكويت                                ; 965                        ; FALSE
+                          ; KY                 ; Cayman Islands      ; جزر الكايمان                          ; 1809                       ; FALSE
+                          ; KZ                 ; Kazakhstan          ; كازاخستان                             ; 7                          ; FALSE
+                          ; LA                 ; Laos                ; لاوس                                  ; 856                        ; FALSE
+                          ; LB                 ; Lebanon             ; لبنان                                 ; 961                        ; FALSE
+                          ; LC                 ; St. Lucia           ; سانت لوشيا                            ; 1809                       ; FALSE
+                          ; LI                 ; Liechtenstein       ; ليختنشتاين                            ; 41                         ; FALSE
+                          ; LK                 ; Sri Lanka           ; سريلانكا                              ; 94                         ; FALSE
+                          ; LR                 ; Liberia             ; جمهورية ليبيريا                       ; 231                        ; FALSE
+                          ; LS                 ; Lesotho             ; ليسوتو                                ; 266                        ; FALSE
+                          ; LT                 ; Lithuania           ; ليتوانيا                              ; 370                        ; FALSE
+                          ; LU                 ; Luxembourg          ; لوكسمبورغ                             ; 352                        ; FALSE
+                          ; LV                 ; Latvia              ; لاتفيا                                ; 371                        ; FALSE
+                          ; LY                 ; Libya               ; ليبيا                                 ; 218                        ; TRUE
+                          ; MA                 ; Morocco             ; المغرب                                ; 212                        ; FALSE
+                          ; MC                 ; Monaco              ; موناكو                                ; 377                        ; FALSE
+                          ; MD                 ; Moldova             ; مولدوفا                               ; 373                        ; FALSE
+                          ; MG                 ; Madagascar          ; مدغشقر                                ; 261                        ; FALSE
+                          ; MH                 ; Marshall Island     ; جمهورية جزر مارشال                    ; 692                        ; FALSE
+                          ; MK                 ; Macedonia           ; مقدونيا                               ; 389                        ; FALSE
+                          ; ML                 ; Mali                ; مالي                                  ; 223                        ; FALSE
+                          ; MM                 ; Burma               ; بورما                                 ; 95                         ; FALSE
+                          ; MN                 ; Mongolia            ; منغوليا                               ; 976                        ; FALSE
+                          ; MO                 ; Macau               ; ماكاو                                 ; 853                        ; FALSE
+                          ; MP                 ; N.Mariana Isla.     ; جزر ماريانا الشمالية                  ; 670                        ; FALSE
+                          ; MQ                 ; Martinique          ; جزر المارتينيك                        ; 596                        ; FALSE
+                          ; MR                 ; Mauretania          ; موريتانيا                             ; 222                        ; FALSE
+                          ; MS                 ; Montserrat          ; مونتسرات                              ; 1809                       ; FALSE
+                          ; MT                 ; Malta               ; مالطا                                 ; 356                        ; FALSE
+                          ; MU                 ; Mauritius           ; موريشيوس                              ; 230                        ; FALSE
+                          ; MV                 ; Maldives            ; جزر المالديف                          ; 960                        ; FALSE
+                          ; MW                 ; Malawi              ; ملاوي                                 ; 265                        ; FALSE
+                          ; MX                 ; Mexico              ; المكسيك                               ; 52                         ; FALSE
+                          ; MY                 ; Malaysia            ; ماليزيا                               ; 60                         ; FALSE
+                          ; MZ                 ; Mozambique          ; موزمبيق                               ; 258                        ; FALSE
+                          ; NA                 ; Namibia             ; ناميبيا                               ; 264                        ; FALSE
+                          ; NC                 ; New Caledonia       ; كاليدونيا الجديدة                     ; 687                        ; FALSE
+                          ; NE                 ; Niger               ; النيجر                                ; 227                        ; FALSE
+                          ; NF                 ; Norfolk Islands     ; جزر نورفوك                            ; 6723                       ; FALSE
+                          ; NG                 ; Nigeria             ; نيجيريا                               ; 234                        ; FALSE
+                          ; NI                 ; Nicaragua           ; نيكاراجوا                             ; 505                        ; FALSE
+                          ; NL                 ; Netherlands         ; هولندا                                ; 31                         ; FALSE
+                          ; NO                 ; Norway              ; النرويج                               ; 47                         ; FALSE
+                          ; NP                 ; Nepal               ; نيبال                                 ; 977                        ; FALSE
+                          ; NR                 ; Nauru               ; ناورو                                 ; 674                        ; FALSE
+                          ; NU                 ; Niue                ; نيو                                   ; 683                        ; FALSE
+                          ; NZ                 ; New Zealand         ; نيوزيلندا                             ; 64                         ; FALSE
+                          ; OM                 ; Oman                ; عُمان                                 ; 968                        ; FALSE
+                          ; PA                 ; Panama              ; بنما                                  ; 507                        ; FALSE
+                          ; PE                 ; Peru                ; بيرو                                  ; 51                         ; FALSE
+                          ; PF                 ; Fren. Polynesia     ; بولينيزيا الفرنسية                    ; 689                        ; FALSE
+                          ; PG                 ; Papua N. Guinea     ; بابا جيني الجديدة                     ; 675                        ; FALSE
+                          ; PH                 ; Philippines         ; الفيليبين                             ; 63                         ; FALSE
+                          ; PK                 ; Pakistan            ; باكستان                               ; 92                         ; FALSE
+                          ; PL                 ; Poland              ; بولندا                                ; 48                         ; FALSE
+                          ; PM                 ; St.Pier Miquel.     ; سانت بيير ومكيلي                      ; 508                        ; FALSE
+                          ; PN                 ; Pitcairn Island     ; جزر بتكيرن                            ; 64                         ; FALSE
+                          ; PR                 ; Puerto Rico         ; بورتو ريكو                            ; 1809                       ; FALSE
+                          ; PS                 ; Palestine           ; فلسطين                                ; 970                        ; FALSE
+                          ; PT                 ; Portugal            ; البرتغال                              ; 351                        ; FALSE
+                          ; PW                 ; Palau               ; بالاو                                 ; 680                        ; FALSE
+                          ; PY                 ; Paraguay            ; باراغواي                              ; 595                        ; FALSE
+                          ; QA                 ; Qatar               ; قطر                                   ; 974                        ; FALSE
+                          ; RE                 ; Reunion             ; ريونيون                               ; 262                        ; FALSE
+                          ; RO                 ; Romania             ; رومانيا                               ; 40                         ; FALSE
+                          ; RU                 ; Russian Fed.        ; الاتحاد الروسي                        ; 7                          ; FALSE
+                          ; RW                 ; Rwanda              ; رواندا                                ; 250                        ; FALSE
+                          ; SA                 ; Saudi Arabia        ; المملكة العربية السعودية              ; 966                        ; FALSE
+                          ; SB                 ; Solomon Islands     ; جزر سولومون                           ; 677                        ; FALSE
+                          ; SC                 ; Seychelles          ; سيشل                                  ; 248                        ; FALSE
+                          ; SD                 ; Sudan               ; السودان                               ; 249                        ; FALSE
+                          ; SE                 ; Sweden              ; السويد                                ; 46                         ; FALSE
+                          ; SG                 ; Singapore           ; سنغافورة                              ; 65                         ; FALSE
+                          ; SH                 ; Saint Helena        ; سانت هيلينا                           ; 290                        ; FALSE
+                          ; SI                 ; Slovenia            ; سلوفينيا                              ; 386                        ; FALSE
+                          ; SJ                 ; Svalbard            ; سفالبارد                              ; 47                         ; FALSE
+                          ; SK                 ; Slovakia            ; سلوفاكيا                              ; 421                        ; FALSE
+                          ; SL                 ; Sierra Leone        ; سيراليون                              ; 232                        ; FALSE
+                          ; SM                 ; San Marino          ; سان مارينو                            ; 378                        ; FALSE
+                          ; SN                 ; Senegal             ; السنغال                               ; 221                        ; FALSE
+                          ; SO                 ; Somalia             ; الصومال                               ; 252                        ; FALSE
+                          ; SR                 ; Suriname            ; سورينام                               ; 597                        ; FALSE
+                          ; SS                 ; South Sudan         ; سودان الجنوب                          ; 211                        ; FALSE
+                          ; ST                 ; S.Tome Principe     ; جمهورية ساوتومي وبرنسب الديمقراطية    ; 239                        ; FALSE
+                          ; SV                 ; El Salvador         ; السلفادور                             ; 503                        ; FALSE
+                          ; SY                 ; Syria               ; سوريا                                 ; 963                        ; TRUE
+                          ; SZ                 ; Swaziland           ; سوازيلند                              ; 268                        ; FALSE
+                          ; TC                 ; Turkish Caicos      ; الجزر التركية والكايكوس               ; 1809                       ; FALSE
+                          ; TD                 ; Chad                ; تشاد                                  ; 235                        ; TRUE
+                          ; TF                 ; French S.Terr.      ; أرض فرنسا الجنوب                      ; 262                        ; FALSE
+                          ; TG                 ; Togo                ; توجو                                  ; 228                        ; FALSE
+                          ; TH                 ; Thailand            ; تايلاند                               ; 66                         ; TRUE
+                          ; TJ                 ; Tajikistan          ; طاجكستان                              ; 7                          ; FALSE
+                          ; TK                 ; Tokelau Islands     ; جزر توكيلو                            ; 690                        ; FALSE
+                          ; TM                 ; Turkmenistan        ; تركمانستان                            ; 7                          ; FALSE
+                          ; TN                 ; Tunisia             ; تونس                                  ; 216                        ; FALSE
+                          ; TO                 ; Tonga               ; تونجا                                 ; 676                        ; FALSE
+                          ; TP                 ; East Timor          ; تيمور الشرقية                         ; 670                        ; FALSE
+                          ; TR                 ; Turkey              ; تركيا                                 ; 90                         ; FALSE
+                          ; TT                 ; Trinidad Tobago     ; جمهورية ترينيداد وتوباغو              ; 1809                       ; FALSE
+                          ; TV                 ; Tuvalu              ; توفالو                                ; 688                        ; FALSE
+                          ; TW                 ; Taiwan              ; تايوان                                ; 886                        ; FALSE
+                          ; TZ                 ; Tanzania            ; تنزانيا                               ; 255                        ; FALSE
+                          ; UA                 ; Ukraine             ; أوكرانيا                              ; 38                         ; FALSE
+                          ; UG                 ; Uganda              ; أوغندا                                ; 256                        ; FALSE
+                          ; US                 ; USA                 ; الولايات المتحدة الأمريكية            ; 1                          ; FALSE
+                          ; UY                 ; Uruguay             ; أورجواي                               ; 598                        ; FALSE
+                          ; UZ                 ; Uzbekistan          ; أوزبكستان                             ; 7                          ; FALSE
+                          ; VA                 ; Vatican City        ; مدينة الفاتيكان                       ; 39                         ; FALSE
+                          ; VC                 ; St. Vincent         ; سانت فنسنت وجرينادين                  ; 1809                       ; FALSE
+                          ; VE                 ; Venezuela           ; فنزويلا                               ; 58                         ; FALSE
+                          ; VG                 ; Brit.Virgin Is.     ; جزر فيرجن البريطانية                  ; 1809                       ; FALSE
+                          ; VI                 ; Amer.Virgin Is.     ; جزر فيرجن الأمريكية                   ; 1809                       ; FALSE
+                          ; VN                 ; Vietnam             ; فيتنام                                ; 84                         ; FALSE
+                          ; VU                 ; Vanuatu             ; فانواتو                               ; 678                        ; FALSE
+                          ; WF                 ; Wallis Futuna       ; جزر والس وفوتونا                      ; 681                        ; FALSE
+                          ; WS                 ; Samoa               ; ساموا                                 ; 685                        ; FALSE
+                          ; XK                 ; Kosovo              ; كوسوفو                                ; 381                        ; FALSE
+                          ; YE                 ; Yemen               ; اليمن                                 ; 967                        ; FALSE
+                          ; YT                 ; Mayotte             ; مايوت                                 ; 269                        ; FALSE
+                          ; ZA                 ; South Africa        ; جنوب إفريقيا                          ; 27                         ; FALSE
+                          ; ZM                 ; Zambia              ; زامبيا                                ; 260                        ; FALSE
+                          ; ZW                 ; Zimbabwe            ; زيمبابوي                              ; 263                        ; FALSE

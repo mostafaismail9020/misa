@@ -1,0 +1,178 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalHomepageTemplate
+$page = portal-homepage
+$pageName = Homepage
+$titleAr = $pageName
+$pageLabel = /home
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = ar]; description[lang = en]; keywords[lang = en]                                                            ; masterTemplate(uid, $contentCV)   ; label        ; homepage   ; defaultPage[default = 'true']   ; approvalStatus(code)[default = 'approved']  ; $contentCV[unique = true] ;
+                         ; $page             ; $pageName ; $titleAr        ; $pageName             ; Invest Saudi,Home,Home, invest Saudi, Saudi Arabia, Opportunities, investments ; $template                         ; $pageLabel   ; true       ;                                 ;                                             ;                           ;
+
+
+UPDATE CMSSite; uid[unique = true]; startingPage(uid, $contentCV)
+              ; $siteUid          ; $page
+
+#################################### Invest Saudi Video Banner Component START #####################################################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]             ;  linkName [lang = ar] ; contentPage(uid, $contentCV)  ; $contentCV[unique = true];
+                               ; bannnner-exploreall-nav-link   ;  اكتشف الفرص          ; opportunity-search            ;                          ;
+
+
+INSERT_UPDATE InvestSaudiVideoBannerComponent ; uid[unique = true]	; name       	; exploreNowUrl(uid, $contentCV) ; title[lang = ar]                         ; description[lang = ar]          ; &componentRef   ; $contentCV[unique = true] ;
+											  ; banner-video      	; Banner Video  ; bannnner-exploreall-nav-link   ; استثمر في المملكة العربية السعودية		; كن جزءًا من رؤية المستقبل        ; banner-video    ;                           ;
+
+#################################### Invest Saudi Video Banner Component END ########################################################
+                   
+				   				   
+#################################### WHEN NUMBERS TALK START #####################################################
+
+INSERT_UPDATE InvestSaudiNumberTalkComponent; uid[unique = true]   ; number[lang = ar]     ; name                ; text[lang = ar]                                                                          ; &componentRef  ; $contentCV[unique = true] ;
+                                            ; numbertalk-1         ; 700.1 مليار دولار      ; Number Talk 1       ; الناتج المحلي الإجمالي الإسمي عام 2020                                                     ; numbertalk-1   ;                           ;
+                                            ; numbertalk-2         ; 675 مليار دولار        ; Number Talk 2       ; الناتج المحلي الإجمالي الحقيقي عام 2020                                                   ; numbertalk-2   ;                           ;
+                                            ; numbertalk-3         ; 19,936.8 دولار         ; Number Talk 3       ; نصيب الفرد من الناتج المحلي الإجمالي عام 2020                                             ; numbertalk-3   ;                           ;
+                                            ; numbertalk-4         ; %60.2                 ; Number Talk 4       ; مساهمة القطاع غير النفطي في الناتج المحلي الإجمالي في الربع الثاني من عام 2021            ; numbertalk-4   ;                           ;
+                                            ; numbertalk-5         ; تاسع                  ; Number Talk 5       ; أكبر سوق مالية في العالم والأكبر في منطقة الشرق الأوسط وشمال إفريقيا (تداول)               ; numbertalk-5   ;                           ;
+											; numbertalk-6         ; %67                   ; Number Talk 6       ; من السعوديون تقلّ أعمارهم عن (35 سنة )                                                    ; numbertalk-6   ;                           ;
+
+
+INSERT_UPDATE InvestSaudiNumberTalkContainer ; uid[unique = true]          ; name                         ; title[lang = ar]                         ; simpleCMSComponents(&componentRef)                                            ; &componentRef        ; $contentCV[unique = true] ;
+                                             ; numbertalk-container        ; Home Number Talk Container   ; <span class="clr_gld">أهم الأرقام </span> ; numbertalk-1,numbertalk-2,numbertalk-3,numbertalk-4,numbertalk-5,numbertalk-6 ; numbertalk-container ;                           ;
+
+#################################### WHEN NUMBERS TALK END ########################################################
+
+
+#################################### Explore 7 kEY REASONS START #####################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                  ; linkName [lang = ar]; contentPage(uid, $contentCV) ; $contentCV[unique = true] ;  
+                              ; key-reasons-exploreall-nav-link     ; اكتشف المزيد        ; meet-the-kingdom             ;                           ;
+
+
+INSERT_UPDATE ExploreKeyReasonsComponent ; uid[unique = true]                       ; reasonTitle[lang = ar]                                                                                     ;  reasonFullDescription [lang = ar]                                                                                                                                                                                                                                                                                                ; $contentCV[unique = true]  ;  
+                                         ; is-game-changing-opportunities           ; فرص استثماريه فريده                                                                                        ;  تقدم المملكة العربية السعودية في إطار رؤية السعودية 2030 إمكانات وفرصاً متميزة للمستثمرين وذلك من خلال عدد من المشاريع الضخمة.  إن التحول الذي تشهده المملكة في كافة المجالات ساهم في تحسين بيئة الأعمال وتذليل المعوقات لجعلها بيئة أكثر جاذبية للمستثمرين المحليين والأجانب.                                     					 ;                            ;  
+									     ; is-ambitious-reform-journey              ; سلسلة إصلاحات طموحة                                                                                         ;  شهدت المملكة خلال السنوات الماضيه سلسلة من الإصلاحات الهيكليه غير المسبوقه لتمكين التحول الاقتصادي والتي بدورها أسهمت في جعل المملكة رائدة الإصلاح في  بيئة الأعمال ، حيث حققت قفزة نوعية في سهولة وسرعة  بدء ممارسة النشاط التجاري .                                                                                                   ;                            ;  
+									     ; is-strategic-global-location             ; موقع جغرافي استراتيجي                                                                                      ;  تسعى المملكة لإستثمار موقعها الجغرافي الذي يتوسط القارات الثلاث عبر حزمة من المشروعات الكبرى التي أطلقتها لتعزيز التكامل في منظومة الخدمات اللوجستيه و أنماط النقل الحديثه . إضافة  لما تتمتع به المملكة من بنيه رقميه قويه و متقدمة و التي أسهمت  بشكل كبير في تسريع عملية التحول الرقمي فيها .                                   ;                            ;  
+									     ; is-attractive-property-solutions         ; حلول عقاريّة جاذبة                                                                                          ;  تطوّر المملكة العربية السعودية مدنًا صناعية واقتصادية تهدف إلى تنمية المناطق المحلية والمساهمة في التنوّع الاقتصادي. إن تأثير التجمعات، وتعزيز أوجه التآزر وزيادة الإنتاجية تمكّن المملكة العربية السعودية من تقديم حلول عقارية جاذبة للمستثمرين.                                                                                      ;                            ;  
+									     ; is-young-and-skilled-workforce           ; قوى عاملة و كفاءات شابه                                                                                    ;  ما يقارب 58% من السعوديين تقل أعمارهم عن 35 سنة. تتمتع هذه الفئة الشابة بمواهب وكفاءات عالية وتتميّز بمستواها التعليمي العالي وبالدعم المتواصل الذي تقدمه لهم الحكومة.                                                                                                                                                            ;                            ;  
+									     ; is-expanding-quality-of-life             ; إنجازات بارزة لتعزيز جودة الحياة 								                                             ;  تُعدّ المملكة العربية السعودية من أكثر الدول أمانًا في العالم . فإضافة لما تقدمه من  خدمات رعاية صحيًه عالية الجودة  فهي تساهم بالعديد من المبادرات والأهداف الإستراتيجية التي وضعتها  في بناء و تطوير البيئة اللازمة لاستحداث خيارات أكثر حيويه تعزز من أنماط الحياة الإيجابيه و تزيد من تفاعل المواطنين و المقيمين في المجتمع .         ;                            ;  
+									     ; is-leading-financial-sector              ; قطاع ماليّ متنوع و فاعل                                                                                     ;  تتميّز المملكة العربية السعودية  بنظامها المصرفي المتين و بقطاعها الماليّ الرائدالذي يدعم إقتصادها الوطني و يساهم في تنويع مصادر دخله .                                                                                                                                                                                            ;                            ;  
+
+
+INSERT_UPDATE ExploreSaudiCarouselComponent; uid[unique = true]   				     ;carouselTitle [lang = ar]                                                                            ; carouselExploreAllButton(uid, $contentCV)   ; &componentRef                        ; $contentCV[unique = true] ;  
+										   ; explore7KeyReasonsCarouselComponent	 ;<span class="color_golden">7 أسباب </span> <br> <span class="colblack">للاستثمار في السعودية</span>   ; key-reasons-exploreall-nav-link             ; explore7KeyReasonsCarouselComponent  ;	                        ;
+
+#################################### Explore 7 kEY REASONS END ########################################################
+
+
+#################################### WHERE TO INVEST SECTOR START #####################################################
+
+INSERT_UPDATE InvestSaudiSectorsComponent; uid[unique = true]   ; name              ; category(code, $catalogVersion)	; &componentRef		; title[lang = ar]           ; exploreAllURL(uid, $contentCV); exploreAllText[lang = ar]; $contentCV[unique = true]	; 
+                                         ; sectors-component	; Sectors Component	; sector-opportunities    			; sectors-component ; استثمر في القطاعات التالية ; 								 ;				 			;							;
+
+#################################### WHERE TO INVEST SECTOR END ########################################################
+
+
+#################################### INCENTIVES FOR INVESTOR START #####################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                  ; linkName [lang = ar]   ; contentPage(uid, $contentCV)  ; $contentCV[unique = true]; 
+                              ; incentives-exploreall-nav-link      ; اكتشف المزيد           ; incentives                    ;                          ;
+
+
+INSERT_UPDATE InvestSaudiIncentivesInvestorComponent; uid[unique = true]          ; name                         ; title[lang = ar]                                 ; description[lang = ar]                                                                                                                                                                   ; &componentRef          ; $contentCV[unique = true] ;
+                                                    ; incentivesinvestor-1        ; Incentives for Investor 1    ; إئتمان الصادرات و الضمان  والتأمين               ; تقدم المملكة  تمويل الائتمان، والضمان، والتأمين وغيرها من الحوافز المتعلقة بالتصدير من خلال بنك التصدير والاستيراد السعودي، وصندوق التنمية الصناعية السعودي، و غيرها من جهات ذات العلاقه     ; incentivesinvestor-1   ;                           ;
+                                                    ; incentivesinvestor-2        ; Incentives for Investor 2    ; تمكين الطاقة والمرافق                            ; سيستفيد المستثمرون من الحلول الجاذبة للطاقة، والمياه، والغاز الطبيعي، والإيثان، والديزل والعقارات في المدن الصناعية                                   -                                   ; incentivesinvestor-2   ;                           ;
+                                                    ; incentivesinvestor-3        ; Incentives for Investor 3    ; حوافز مالية للبحث والتطوير                       ;    دعم مالي للمبتكرين يتضمن قروضًا متعددة الأغراض لمشاريع البحث والتطوير المحلية والعالمية                                                                                                 ; incentivesinvestor-3   ;                           ;
+                                                    ; incentivesinvestor-4        ; Incentives for Investor 4    ; برامج القروض							            ; تعرًف على برامج القروض المقدَمه للمشاريع المحلية و الإقليمية                                                                                                                                ; incentivesinvestor-4   ;                           ;
+                                                    ; incentivesinvestor-5        ; Incentives for Investor 5    ; برامج دعم التوظيف  				                ; التعرف على الفرص التوظيفية من خلال برامج مخصصة                                                                                                                                            ; incentivesinvestor-5   ;                           ;
+                                                    ; incentivesinvestor-6        ; Incentives for Investor 6    ; الإئتمان و الإعفاء الضريبي 						;يستفيد المستثمرون من الإعفاءات الضريبية في العديد من المجالات مثل الاستثمارات في مشاريع البحث والتطوير وأرباح الصادرات.                                                                  ; incentivesinvestor-6   ;                           ;
+
+
+INSERT_UPDATE InvestSaudiIncentivesforInvestorContainer; uid[unique = true]           ; name                              ; investorTitle[lang = ar]  ; simpleCMSComponents(&componentRef)                                                                                            ; &componentRef                ; $contentCV[unique = true] ;
+                                                       ; incentivesinvestor-container ; Incentives for Investor Container ; حوافز الاستثمار            ; incentivesinvestor-1,incentivesinvestor-2,incentivesinvestor-3,incentivesinvestor-4,incentivesinvestor-5,incentivesinvestor-6 ; incentivesinvestor-container ;                           ;
+
+#################################### INCENTIVES FOR INVESTOR END ########################################################
+
+
+#################################### MEGA AND GIGYA PROJECTS START #####################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                 ; linkName [lang = ar]; contentPage(uid, $contentCV)  ; $contentCV[unique = true]  ;
+                              ; megaandgigya-exploreall-nav-link   ; اكتشف المزيد        ; meet-the-kingdom              ;                            ;
+
+
+INSERT_UPDATE InvestSaudiProjectsComponent ; uid[unique = true]  ; name                 ; projectTitle[lang = ar]                                                                         ; longDescription[lang = ar]                                                                                                                                                                                                                                                                                                                                                                                       ; content[lang = ar]                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ; projectCSS    ; &componentRef      ; $contentCV[unique = true] ;
+                                           ; is-neom-project     ; Neom Project         ; نيوم                                                                                            ; نيوم هي الرؤية الطّموحة التي ستشكل المستقبل الجديد وهي حجر الزاويه لرؤية السعوديه 2030 فهي مشروع عالمي يعمل بتسارع كبير لتجاوز كل التحديات التي يعيشها العالم على مختلف المستويات .  لن تكون نيوم مجرد وجهة، بل ستفتح أبوابها لتكون موطناً لأصحاب الأحلام الكبيرة، ولكل من يطمح أن يُسهم في بناء نموذج جديد لاستدامة الحياة والعمل والازدهار.                                                                            ; "<ul class=""d-flex justify-content-between list-unstyled pb-4""><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">26,500 كم٢<sup>2</sup></a><strong>مساحة المشروع</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">500 مليار دولار</a><strong>الاستثمار</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">17</a><strong>القطاعات</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">100%</a><strong>الطاقة المتجددة</strong></li></ul>"    ; pills-home    ; is-neom-project    ;                           ;
+                                           ; is-red-sea-project  ; The Red Sea Project  ; مشروع البحر الأحمر                                                                               ; يعد مشروع البحر الأحمر أحد اكثر المشاريع السياحية المتجددة طموحًا في العالم . يستحدث المشروع معايير جديده للتنميه المستدامة ليكون رائدّا في قطاع السياحه الفاخره وعلاقتها بالبيئة الطبيعيه ، ليضع المملكة على خارطة السياحه العالميه .كما سيشجع الشمروع زواره على استكشاف كنوز البحر الأحمر و التعرف عن قرب على التراث الثقافي و الحضاري الغني لهذه المنطقة المتميزه على الساحل الغربي للملكة العربية السعودية .      ; "<ul class=""d-flex justify-content-between list-unstyled pb-4""><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">34,000 كم٢<sup>2</sup></a><strong>مساحة المشروع</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">90+</a><strong>جزيرة بكر</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">22</a><strong>جزيرة مطوّرة</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">48</a><strong>فندق</strong></li></ul>"                        ; pills-profile ; is-red-sea-project ;                           ;
+                                           ; is-qiddiya-project  ; Qiddiya Project      ; القدّية                                                                                          ; وجهة مميّزة ومبتكرة تقدّم تجاربًا سياحية متنوّعة تعدّ من الأكثر ابتكارًا واثارة . تقدم القدّية تجاربًا عديدة في خمسة مجالات أساسية هي الرياضة والصحة، الطبيعة والبيئة، المتنزهات والوجهات الترفيهية، العاب الإثاره و التشويق، والفنون والثقافة.                                                                                                                                                                             ; "<ul class=""d-flex justify-content-between list-unstyled pb-4""><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">367 كم٢<sup>2</sup></a><strong>مساحة المشروع</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">131 كم٢<sup>2</sup></a><strong>المساحة المقرر تطويرها</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">+20 مليون</a><strong>زائر محتمل</strong></li></ul>"                                                                              ; pills-contact ; is-qiddiya-project ;                           ;
+                                           ; is-amaala-project   ; Amaala Project       ; أمالا                                                                                            ; تعد أمالا وجهة سياحية استثنائية تقدم لزوارها أعلى مستويات الفخامه و الرفاهيه وهي تمتد على ساحل البحر الأحمر . من المقرر أن تجذب أمالا كل محبّي السفر والرفاهية. سوف تقدم أمالا لضيوفها المرافق والخدمات اللازمة ليتمتّعوا بتجربه فريده .                                                                                                                                                                                ; "<ul class=""d-flex justify-content-between list-unstyled pb-4""><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">4155 كم٢<sup>2</sup></a><strong>مساحة المشروع</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">2800</a><strong>غرفة فندقية</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">929</a><strong>فيلا سكنية</strong></li></ul>"                                                                                                              ; pills-test    ; is-amaala-project  ;                           ;
+                                                    
+													
+INSERT_UPDATE MegaAndGigyaProjectsContainer; uid[unique = true]             ; name                              ;  projectsTitle[lang = ar]                                                                  ; exploreAllTitle[lang = ar]   ; simpleCMSComponents(&componentRef)                                      ; &componentRef                  ; $contentCV[unique = true] ;
+                                           ; megaandgigyaprojects-container ; Mega And Gigya Projects Container ;  المشاريع الرئيسية                                                                         ; اكتشف المزيد                 ; is-neom-project,is-red-sea-project,is-qiddiya-project,is-amaala-project ; megaandgigyaprojects-container ;                           ;
+                                                    
+#################################### MEGA AND GIGYA PROJECTS END ########################################################
+
+
+#################################### Success Stories Carousel Component START #####################################################
+
+INSERT_UPDATE SuccessStoriesCarouselComponent; uid[unique = true]   				  ; exploreAllText [lang = ar]	; carouselTitle [lang = ar]                   ; &componentRef                      ; $contentCV[unique = true];   
+										     ; success-stories-carousel-component	  ; اكتشف المزيد   				; <span class="clr_gld">قصص النجاح </span>    ; success-stories-carousel-component ;                          ;
+ 
+#################################### Success Stories Carousel Component END ########################################################
+
+
+#################################### Last New Component START #####################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]              ; linkName [lang = ar] ; contentPage(uid, $contentCV) ; $contentCV[unique = true]  ;
+                              ; last-news-explore-all-link      ; اكتشف المزيد         ; news                         ;                            ;
+
+
+INSERT_UPDATE InvestSaudiLastNewsComponent; uid[unique = true]  ; name                 ; title[lang = ar]            ; &componentRef       ; $contentCV[unique = true] ;
+                                          ; last-news-component ; Last News Component  ; الأخبار                      ; last-news-component ;                           ;
+
+#################################### Last New Component END ########################################################
+
+
+#################################### Featured Opportunities Carousel Component START #####################################################
+
+INSERT_UPDATE FeaturedOpportunitiesProductComponent ; uid[unique = true]      ; carouselId[lang = ar]   ; &componentRef    ; $contentCV[unique = true];                                                 
+                                                    ; top-featured            ; top-featured    	    ; top-featured     ;                          ;
+									                ; newly-released          ; newly-released 		    ; newly-released   ;                          ;    
+
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]                   ; linkName[lang = ar]  ; $contentCV[unique = true] ;
+                               ; featured-opportunities-explore-all   ; اكتشف المزيد         ;                           ;
+
+
+INSERT_UPDATE FeaturedOpportunitiesCarouselComponent ; uid[unique = true]   				       ; carouselTitle [lang = ar]                            	; &componentRef                               ; $contentCV[unique = true];   
+										             ; featured-opportunities-carousel-component   ; الفرص <span class="clr_gld"> الإستثمارية  </span>       ; featured-opportunities-carousel-component   ;                          ;
+
+#################################### Featured Opportunities Carousel Component END ########################################################
+
+
+#################################### Contact US Banner Component START #####################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]    ; linkName [lang = ar]   ; contentPage(uid, $contentCV) ; $contentCV[unique = true]  ;
+                              ; contact-us-nav-link   ; تواصل معنا             ; contact-us                   ;                            ;
+
+
+INSERT_UPDATE InvestSaudiContactUsBannerComponent ; uid[unique = true]          ; name                  ; title [lang = ar]           ; &componentRef               ; $contentCV[unique = true] ;
+                                                  ; contact-us-banner-component ; InvestSaudi ContactUs ; شاركنا أفكارك!              ; contact-us-banner-component ;                           ;
+
+#################################### Contact US Banner Component END ########################################################
+
+

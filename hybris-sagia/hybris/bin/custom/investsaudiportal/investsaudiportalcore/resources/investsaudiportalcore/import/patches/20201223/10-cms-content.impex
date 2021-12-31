@@ -1,0 +1,62 @@
+$contentCatalog = investsaudiportalContentCatalog
+$productCatalog = investsaudiportalProductCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$productCV = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$mediafolder = portal-media
+$contentCVStagged = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$contentCVOnline = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[unique=true, default=$contentCatalog:Online]
+
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+# Content Pages Menu Links, link details are in file
+UPDATE CMSLinkComponent; uid[unique = true]; name  ; contentPage(uid, $contentCVStagged); $contentCVStagged[unique = true]
+                       ; about-link        ; About ; about                              ;
+
+UPDATE ContentPage; uid[unique = true]          ; label                                  ; $contentCVStagged[unique = true]
+                  ; success-stories-search-page ; /sectors-opportunities/success-stories ;
+
+UPDATE CMSLinkComponent; uid[unique = true]                           ; url                                                                           ; $contentCVStagged[unique = true]
+                       ; ss-explore-all-chemicals                     ; /sectors-opportunities/success-stories/?q=&sectorIds=chemicals                ;
+                       ; ss-explore-all-information-technology        ; /sectors-opportunities/success-stories/?q=&sectorIds=information-technology   ;
+                       ; ss-explore-all-industrial-manufacturing      ; /sectors-opportunities/success-stories/?q=&sectorIds=industrial-manufacturing ;
+                       ; ss-explore-all-energy-water                  ; /sectors-opportunities/success-stories/?q=&sectorIds=energy-water             ;
+                       ; ss-explore-all-healthcare-life-sciences      ; /sectors-opportunities/success-stories/?q=&sectorIds=healthcare-life-sciences ;
+                       ; ss-explore-all-mining-metals                 ; /sectors-opportunities/success-stories/?q=&sectorIds=mining-metals            ;
+                       ; ss-explore-all-transport-logistics           ; /sectors-opportunities/success-stories/?q=&sectorIds=transport-logistics      ;
+                       ; ss-explore-all-real-estate                   ; /sectors-opportunities/success-stories/?q=&sectorIds=real-estate              ;
+                       ; ss-explore-all-tourism-culture-entertainment ; /sectors-opportunities/success-stories/?q=&sectorIds=culture-entertainment    ;
+
+UPDATE CMSLinkComponent; uid[unique = true]; name  ; contentPage(uid, $contentCVOnline); $contentCVOnline[unique = true]
+                       ; about-link        ; About ; about                             ;
+
+UPDATE ContentPage; uid[unique = true]          ; label                                  ; $contentCVOnline[unique = true]
+                  ; success-stories-search-page ; /sectors-opportunities/success-stories ;
+
+UPDATE CMSLinkComponent; uid[unique = true]                           ; url                                                                           ; $contentCVOnline[unique = true]
+                       ; ss-explore-all-chemicals                     ; /sectors-opportunities/success-stories/?q=&sectorIds=chemicals                ;
+                       ; ss-explore-all-information-technology        ; /sectors-opportunities/success-stories/?q=&sectorIds=information-technology   ;
+                       ; ss-explore-all-industrial-manufacturing      ; /sectors-opportunities/success-stories/?q=&sectorIds=industrial-manufacturing ;
+                       ; ss-explore-all-energy-water                  ; /sectors-opportunities/success-stories/?q=&sectorIds=energy-water             ;
+                       ; ss-explore-all-healthcare-life-sciences      ; /sectors-opportunities/success-stories/?q=&sectorIds=healthcare-life-sciences ;
+                       ; ss-explore-all-mining-metals                 ; /sectors-opportunities/success-stories/?q=&sectorIds=mining-metals            ;
+                       ; ss-explore-all-transport-logistics           ; /sectors-opportunities/success-stories/?q=&sectorIds=transport-logistics      ;
+                       ; ss-explore-all-real-estate                   ; /sectors-opportunities/success-stories/?q=&sectorIds=real-estate              ;
+                       ; ss-explore-all-tourism-culture-entertainment ; /sectors-opportunities/success-stories/?q=&sectorIds=culture-entertainment    ;
+
+
+REMOVE ContentSlot; uid[unique = true]; $contentCVStagged[unique = true]
+                  ; PortalWebinarFooterCRSlot-webinars
+
+REMOVE ContentSlot; uid[unique = true]; $contentCVOnline[unique = true]
+                  ; PortalWebinarFooterCRSlot-webinars
+
+REMOVE ContentSlotForPage; uid[unique = true]; $contentCVStagged[unique = true]
+                         ; PortalWebinarFooterCRSlot-webinars
+
+REMOVE ContentSlotForPage; uid[unique = true]; $contentCVOnline[unique = true]
+                         ; PortalWebinarFooterCRSlot-webinars
+
+UPDATE ContentSlot; uid[unique = true]               ; name                ; active; cmsComponents(uid, $contentCV)                   ; $contentCV[unique = true]
+                  ; PortalWebinarFooterSlot-webinars ; PortalWebinarFooter ; true  ; generic-footer-webinar,generic-footer-cr-webinar ;

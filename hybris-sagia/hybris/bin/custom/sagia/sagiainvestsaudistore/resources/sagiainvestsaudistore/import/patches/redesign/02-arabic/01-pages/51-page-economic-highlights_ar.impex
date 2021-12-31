@@ -1,0 +1,72 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = EconomicHighlightsLandingPageTemplate
+$page = economic-highlights
+$pageName = الملامح الاقتصادية الهامة
+$pageTitleAr = $pageName
+$pageLabel = /economicHighlights/dashboard
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = ar]  ; description[lang = ar]; keywords[lang = ar]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleAr      ; $pageName             ; Invest Saudi,Invest Saudi - Meet,Kingdom, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+#######################################################
+
+INSERT_UPDATE CMSLinkComponent  ; $contentCV[unique = true]; uid[unique = true] 				; linkName [lang = ar]												;url																	; &linkRef
+								;						   ; dashboard-tail-link1-$page 		; المملكة العربية السعودية في المؤشرات الدولية  					;economicHighlights/saInternationalIndices  	; dashboard-tail-link1-$page
+								;						   ; dashboard-tail-link2-$page			; البُنية التحتية والخدمات اللوجستية 								;economicHighlights/infraLogistics 			; dashboard-tail-link2-$page
+								;						   ; dashboard-tail-link3-$page			; القطاعات الاقتصادية السعودية  		  	 							;economicHighlights/saudiEconomicSectors		; dashboard-tail-link3-$page
+								;						   ; dashboard-tail-link4-$page		 	; بيانات الاستثمار  		  	 										;economicHighlights/investmentData			; dashboard-tail-link4-$page
+ 
+
+#########################################################################################
+
+INSERT_UPDATE Media	; code[unique = true]         								; realFileName             									; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]			; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; economic-dashboard-image.png 								; economic-dashboard-image.png								; $siteResource/economic-dashboard-image.png 											; 	image/png						;										   ; ""     ;
+					; dashboard-economic-international-indices.png		 		; dashboard-economic-international-indices.png				; $siteResource/dashboard-economic-international-indices.png							; 	image/png						;										   ; ""     ;
+					; dashboard-logistics.png 									; dashboard-logistics.png 									; $siteResource/dashboard-logistics.png 						 						; 	image/png						;										   ; ""     ;
+					; dashboard-economic_sectors.png		 					; dashboard-economic_sectors.png		 					; $siteResource/dashboard-economic_sectors.png		 									; 	image/png						;										   ; ""     ;
+					; dashboard-investment-data.png			 					; dashboard-investment-data.png			 					; $siteResource/dashboard-investment-data.png			 								; 	image/png						;										   ; ""     ;
+					
+
+
+#####################################################################
+
+	
+INSERT_UPDATE EconomicDashboardBannerComponent  ; uid[unique = true]			 	; tailHeader [lang = ar]							 ; tailBanner (code, $contentCV)	      							; link (&linkRef)			      		; &componentRef 			 	  ; $contentCV[unique = true]
+												; dashboard-tail-1				    ; المملكة العربية السعودية في المؤشرات الدولية  	 ; dashboard-economic-international-indices.png						; dashboard-tail-link1-$page	    	; dashboard-tail-1				  ;  
+												; dashboard-tail-2				    ; البُنية التحتية والخدمات اللوجستية 			  	 ; dashboard-logistics.png 											; dashboard-tail-link2-$page	    	; dashboard-tail-2				  ;  
+												; dashboard-tail-3				    ; القطاعات الاقتصادية السعودية  		  	 			 ; dashboard-economic_sectors.png		 							; dashboard-tail-link3-$page	    	; dashboard-tail-3				  ;  
+												; dashboard-tail-4				    ; بيانات الاستثمار  		  	 						 ; dashboard-investment-data.png			 						; dashboard-tail-link4-$page	    	; dashboard-tail-4				  ;  
+
+
+
+INSERT_UPDATE EconomicCustomBannerContainer	 ; uid[unique = true] 			   		  ; name 							    ; backgroundImage (code, $contentCV)		; title [lang = ar]						; simpleCMSComponents(&componentRef)	  										  ; &componentRef							; $contentCV[unique = true]
+											 ; economic-dashboard-banner-container1   ; economic dashboard banner Container ; economic-dashboard-image.png  			; بيانات الاستثمار 					    ; dashboard-tail-1,dashboard-tail-2,dashboard-tail-3,dashboard-tail-4 			  ; economic-dashboard-banner-container1     ;
+
+
+
+##########################################################################################
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)		; $contentCV	;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                             		;				;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; 	economic-dashboard-banner-container1								;				;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                    				;				;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+

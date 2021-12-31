@@ -1,0 +1,190 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "type": "ZQEEMAH2_EXT_SRV.DropdownValues"
+        },
+        "Q2regiontext": "",
+        "Q2langu": "",
+        "Q2legalstatus": "BRFC",
+        "Q2uom": "",
+        "Q2city": "",
+        "Q2legalstatustext": "Foreign Entity Branch",
+        "Q2uomtext": "",
+        "Q2citytext": "",
+        "Q2product": "",
+        "Q2natio": "",
+        "Q2producttext": "",
+        "Q2natiotext": "",
+        "Q2country": "",
+        "Q2countrytext": "",
+        "Q2region": "",
+        "Q2flag": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "type": "ZQEEMAH2_EXT_SRV.DropdownValues"
+        },
+        "Q2regiontext": "",
+        "Q2langu": "",
+        "Q2legalstatus": "BRJS",
+        "Q2uom": "",
+        "Q2city": "",
+        "Q2legalstatustext": "Closed joint stock company branch",
+        "Q2uomtext": "",
+        "Q2citytext": "",
+        "Q2product": "",
+        "Q2natio": "",
+        "Q2producttext": "",
+        "Q2natiotext": "",
+        "Q2country": "",
+        "Q2countrytext": "",
+        "Q2region": "",
+        "Q2flag": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "type": "ZQEEMAH2_EXT_SRV.DropdownValues"
+        },
+        "Q2regiontext": "",
+        "Q2langu": "",
+        "Q2legalstatus": "BRLL",
+        "Q2uom": "",
+        "Q2city": "",
+        "Q2legalstatustext": "LLC Branch",
+        "Q2uomtext": "",
+        "Q2citytext": "",
+        "Q2product": "",
+        "Q2natio": "",
+        "Q2producttext": "",
+        "Q2natiotext": "",
+        "Q2country": "",
+        "Q2countrytext": "",
+        "Q2region": "",
+        "Q2flag": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "type": "ZQEEMAH2_EXT_SRV.DropdownValues"
+        },
+        "Q2regiontext": "",
+        "Q2langu": "",
+        "Q2legalstatus": "BRPS",
+        "Q2uom": "",
+        "Q2city": "",
+        "Q2legalstatustext": "Public Joint Stock Company branch",
+        "Q2uomtext": "",
+        "Q2citytext": "",
+        "Q2product": "",
+        "Q2natio": "",
+        "Q2producttext": "",
+        "Q2natiotext": "",
+        "Q2country": "",
+        "Q2countrytext": "",
+        "Q2region": "",
+        "Q2flag": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "type": "ZQEEMAH2_EXT_SRV.DropdownValues"
+        },
+        "Q2regiontext": "",
+        "Q2langu": "",
+        "Q2legalstatus": "CJOI",
+        "Q2uom": "",
+        "Q2city": "",
+        "Q2legalstatustext": "Closed joint stock company",
+        "Q2uomtext": "",
+        "Q2citytext": "",
+        "Q2product": "",
+        "Q2natio": "",
+        "Q2producttext": "",
+        "Q2natiotext": "",
+        "Q2country": "",
+        "Q2countrytext": "",
+        "Q2region": "",
+        "Q2flag": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "type": "ZQEEMAH2_EXT_SRV.DropdownValues"
+        },
+        "Q2regiontext": "",
+        "Q2langu": "",
+        "Q2legalstatus": "ILLC",
+        "Q2uom": "",
+        "Q2city": "",
+        "Q2legalstatustext": "Individual LLC",
+        "Q2uomtext": "",
+        "Q2citytext": "",
+        "Q2product": "",
+        "Q2natio": "",
+        "Q2producttext": "",
+        "Q2natiotext": "",
+        "Q2country": "",
+        "Q2countrytext": "",
+        "Q2region": "",
+        "Q2flag": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "type": "ZQEEMAH2_EXT_SRV.DropdownValues"
+        },
+        "Q2regiontext": "",
+        "Q2langu": "",
+        "Q2legalstatus": "JOIN",
+        "Q2uom": "",
+        "Q2city": "",
+        "Q2legalstatustext": "Public Joint Stock Company",
+        "Q2uomtext": "",
+        "Q2citytext": "",
+        "Q2product": "",
+        "Q2natio": "",
+        "Q2producttext": "",
+        "Q2natiotext": "",
+        "Q2country": "",
+        "Q2countrytext": "",
+        "Q2region": "",
+        "Q2flag": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DropdownValuesSet('')",
+          "type": "ZQEEMAH2_EXT_SRV.DropdownValues"
+        },
+        "Q2regiontext": "",
+        "Q2langu": "",
+        "Q2legalstatus": "LLC",
+        "Q2uom": "",
+        "Q2city": "",
+        "Q2legalstatustext": "LLC",
+        "Q2uomtext": "",
+        "Q2citytext": "",
+        "Q2product": "",
+        "Q2natio": "",
+        "Q2producttext": "",
+        "Q2natiotext": "",
+        "Q2country": "",
+        "Q2countrytext": "",
+        "Q2region": "",
+        "Q2flag": ""
+      }
+    ]
+  }
+}

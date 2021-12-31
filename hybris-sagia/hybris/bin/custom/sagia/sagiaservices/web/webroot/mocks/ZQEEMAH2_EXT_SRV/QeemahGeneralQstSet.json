@@ -1,0 +1,1204 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q10')",
+          "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q10')",
+          "type": "ZQEEMAH2_EXT_SRV.QeemahGeneralQst"
+        },
+        "Language": "",
+        "Refid": "",
+        "QuestionId": "Q10",
+        "Sectionno": "1",
+        "QuestionTxt": "License Type",
+        "QuestionType": "DROP",
+        "NavGeneralQuest": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('1')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('1')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "1",
+              "Value": "INDUSTRIAL  صناعي"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('2')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('2')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "2",
+              "Value": "SERVICES خدمي"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('3')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('3')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "3",
+              "Value": "REAL ESTATE  عقاري"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('4')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('4')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "4",
+              "Value": "TRADING  تجاري"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('6')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('6')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "6",
+              "Value": "TEMPORARY  ترخيص مؤقت"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('7')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('7')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "7",
+              "Value": "SCIENTIFIC & TECH OFFICE مكتب علمي وفني"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('0')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('0')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "0",
+              "Value": "Others"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q11')",
+          "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q11')",
+          "type": "ZQEEMAH2_EXT_SRV.QeemahGeneralQst"
+        },
+        "Language": "",
+        "Refid": "",
+        "QuestionId": "Q11",
+        "Sectionno": "4",
+        "QuestionTxt": "ISIC Section",
+        "QuestionType": "DROP",
+        "NavGeneralQuest": {
+          "results": []
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q12')",
+          "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q12')",
+          "type": "ZQEEMAH2_EXT_SRV.QeemahGeneralQst"
+        },
+        "Language": "",
+        "Refid": "",
+        "QuestionId": "Q12",
+        "Sectionno": "4",
+        "QuestionTxt": "ISIC Division",
+        "QuestionType": "DROP",
+        "NavGeneralQuest": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('00')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('00')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "00",
+              "Value": "Others"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('01')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('01')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "01",
+              "Value": "Crop and animal production, hunting and related se"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('02')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('02')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "02",
+              "Value": "Forestry and logging"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('03')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('03')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "03",
+              "Value": "Fishing and aquaculture"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('05')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('05')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "05",
+              "Value": "Mining of coal and lignite"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('06')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('06')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "06",
+              "Value": "Extraction of crude petroleum and natural gas"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('07')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('07')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "07",
+              "Value": "Mining of metal ores"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('08')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('08')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "08",
+              "Value": "Other mining and quarrying"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('09')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('09')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "09",
+              "Value": "Mining support service activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('10')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('10')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "10",
+              "Value": "Manufacture of food products"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('11')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('11')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "11",
+              "Value": "Manufacture of beverages"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('13')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('13')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "13",
+              "Value": "Manufacture of textiles"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('14')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('14')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "14",
+              "Value": "Manufacture of wearing apparel"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('15')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('15')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "15",
+              "Value": "Manufacture of leather and related products"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('16')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('16')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "16",
+              "Value": "Manufacture of wood and of products of wood and co"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('17')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('17')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "17",
+              "Value": "Manufacture of paper and paper products"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('18')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('18')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "18",
+              "Value": "Printing and reproduction of recorded media"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('19')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('19')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "19",
+              "Value": "Manufacture of coke and refined petroleum products"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('20')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('20')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "20",
+              "Value": "Manufacture of chemicals and chemical products"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('21')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('21')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "21",
+              "Value": "Manufacture of basic pharmaceutical products and p"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('22')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('22')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "22",
+              "Value": "Manufacture of rubber and plastics products"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('23')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('23')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "23",
+              "Value": "Manufacture of other non-metallic mineral products"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('24')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('24')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "24",
+              "Value": "Manufacture of basic metals"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('25')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('25')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "25",
+              "Value": "Manufacture of fabricated metal products, except m"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('26')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('26')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "26",
+              "Value": "Manufacture of computer, electronic and optical pr"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('27')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('27')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "27",
+              "Value": "Manufacture of electrical equipment"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('28')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('28')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "28",
+              "Value": "Manufacture of machinery and equipment n.e.c."
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('29')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('29')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "29",
+              "Value": "Manufacture of motor vehicles, trailers and semi-t"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('30')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('30')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "30",
+              "Value": "Manufacture of other transport equipment"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('31')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('31')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "31",
+              "Value": "Manufacture of furniture"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('32')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('32')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "32",
+              "Value": "Other manufacturing"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('33')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('33')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "33",
+              "Value": "Repair and installation of machinery and equipment"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('35')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('35')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "35",
+              "Value": "Electricity, gas, steam and air conditioning suppl"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('36')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('36')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "36",
+              "Value": "Water collection, treatment and supply"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('37')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('37')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "37",
+              "Value": "Sewerage"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('38')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('38')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "38",
+              "Value": "Waste collection, treatment and disposal activitie"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('39')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('39')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "39",
+              "Value": "Remediation activities and other waste management"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('41')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('41')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "41",
+              "Value": "Construction of buildings"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('42')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('42')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "42",
+              "Value": "Civil engineering"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('43')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('43')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "43",
+              "Value": "Specialized construction activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('45')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('45')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "45",
+              "Value": "Wholesale and retail trade and repair of motor veh"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('46')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('46')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "46",
+              "Value": "Wholesale trade, except of motor vehicles and moto"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('47')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('47')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "47",
+              "Value": "Retail trade, except of motor vehicles and motorcy"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('49')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('49')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "49",
+              "Value": "Land transport and transport via pipelines"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('50')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('50')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "50",
+              "Value": "Water transport"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('51')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('51')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "51",
+              "Value": "Air transport"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('52')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('52')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "52",
+              "Value": "Warehousing and support activities for transportat"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('53')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('53')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "53",
+              "Value": "Postal and courier activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('55')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('55')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "55",
+              "Value": "Accommodation"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('56')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('56')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "56",
+              "Value": "Food and beverage service activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('58')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('58')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "58",
+              "Value": "Publishing activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('59')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('59')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "59",
+              "Value": "Motion picture, video and television programme pro"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('60')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('60')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "60",
+              "Value": "Programming and broadcasting activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('61')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('61')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "61",
+              "Value": "Telecommunications"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('62')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('62')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "62",
+              "Value": "Computer programming, consultancy and related acti"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('63')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('63')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "63",
+              "Value": "Information service activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('64')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('64')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "64",
+              "Value": "Financial service activities, except insurance and"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('65')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('65')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "65",
+              "Value": "Insurance, reinsurance and pension funding, except"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('66')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('66')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "66",
+              "Value": "Activities auxiliary to financial service and insu"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('68')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('68')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "68",
+              "Value": "Real estate activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('69')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('69')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "69",
+              "Value": "Legal and accounting activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('70')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('70')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "70",
+              "Value": "Activities of head offices; management consultancy"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('71')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('71')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "71",
+              "Value": "Architectural and engineering activities; technica"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('72')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('72')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "72",
+              "Value": "Scientific research and development"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('73')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('73')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "73",
+              "Value": "Advertising and market research"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('74')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('74')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "74",
+              "Value": "Other professional, scientific and technical activ"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('75')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('75')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "75",
+              "Value": "Veterinary activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('77')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('77')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "77",
+              "Value": "Rental and leasing activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('78')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('78')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "78",
+              "Value": "Employment activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('79')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('79')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "79",
+              "Value": "Travel agency, tour operator, reservation service"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('80')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('80')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "80",
+              "Value": "Security and investigation activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('81')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('81')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "81",
+              "Value": "Services to buildings and landscape activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('82')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('82')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "82",
+              "Value": "Office administrative, office support and other bu"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('84')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('84')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "84",
+              "Value": "Public administration and defence; compulsory soci"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('85')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('85')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "85",
+              "Value": "Education"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('86')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('86')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "86",
+              "Value": "Human health activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('87')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('87')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "87",
+              "Value": "Residential care activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('88')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('88')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "88",
+              "Value": "Social work activities without accommodation"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('90')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('90')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "90",
+              "Value": "Creative, arts and entertainment activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('91')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('91')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "91",
+              "Value": "Libraries, archives, museums and other cultural ac"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('93')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('93')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "93",
+              "Value": "Sports activities and amusement and recreation act"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('94')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('94')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "94",
+              "Value": "Activities of membership organizations"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('95')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('95')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "95",
+              "Value": "Repair of computers and personal and household goo"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('96')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('96')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "96",
+              "Value": "Other personal service activities"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('97')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('97')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "97",
+              "Value": "Activities of households as employers of domestic"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('98')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('98')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "98",
+              "Value": "Undifferentiated goods- and services-producing act"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('99')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('99')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "99",
+              "Value": "Activities of extraterritorial organizations and b"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q30')",
+          "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q30')",
+          "type": "ZQEEMAH2_EXT_SRV.QeemahGeneralQst"
+        },
+        "Language": "",
+        "Refid": "",
+        "QuestionId": "Q30",
+        "Sectionno": "2",
+        "QuestionTxt": "IS YOUR COMPANY REGISTERED IN ANY NATIONAL LEVL STOCK MARKET ?",
+        "QuestionType": "DROP",
+        "NavGeneralQuest": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('01')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('01')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "01",
+              "Value": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('02')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('02')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "02",
+              "Value": "No"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q40')",
+          "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q40')",
+          "type": "ZQEEMAH2_EXT_SRV.QeemahGeneralQst"
+        },
+        "Language": "",
+        "Refid": "",
+        "QuestionId": "Q40",
+        "Sectionno": "2",
+        "QuestionTxt": "SELECT COUNTRY",
+        "QuestionType": "DROP",
+        "NavGeneralQuest": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('1')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('1')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "1",
+              "Value": "GULF COOPERATION COUNCIL"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('10')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('10')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "10",
+              "Value": "AUSTRIA"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('11')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('11')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "11",
+              "Value": "SINGAPORE"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('12')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('12')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "12",
+              "Value": "NORWAY"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('13')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('13')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "13",
+              "Value": "SWITZERLAND"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('14')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('14')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "14",
+              "Value": "SPAIN"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('15')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('15')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "15",
+              "Value": "SOUTH AFRICA"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('16')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('16')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "16",
+              "Value": "DENMARK"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('17')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('17')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "17",
+              "Value": "FRANCE"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('18')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('18')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "18",
+              "Value": "ITALY"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('19')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('19')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "19",
+              "Value": "AUSTRALIA"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('2')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('2')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "2",
+              "Value": "UNITED STATES"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('20')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('20')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "20",
+              "Value": "MALAYSIA"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('21')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('21')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "21",
+              "Value": "POLAND"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('22')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('22')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "22",
+              "Value": "RUSSIA"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('3')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('3')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "3",
+              "Value": "UNITED KINGDOM"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('4')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('4')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "4",
+              "Value": "GERMANY"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('5')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('5')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "5",
+              "Value": "CANADA"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('6')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('6')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "6",
+              "Value": "JAPAN"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('7')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('7')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "7",
+              "Value": "SOUTH KOREA"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('8')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('8')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "8",
+              "Value": "THE NETHERLANDS"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('9')",
+                "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralddSet('9')",
+                "type": "ZQEEMAH2_EXT_SRV.QeemahGeneraldd"
+              },
+              "Zkey": "9",
+              "Value": "OTHERS"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q50')",
+          "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/QeemahGeneralQstSet(Language='',QuestionId='Q50')",
+          "type": "ZQEEMAH2_EXT_SRV.QeemahGeneralQst"
+        },
+        "Language": "",
+        "Refid": "",
+        "QuestionId": "Q50",
+        "Sectionno": "2",
+        "QuestionTxt": "ENTER ISIN CODE",
+        "QuestionType": "INPUT",
+        "NavGeneralQuest": {
+          "results": []
+        }
+      }
+    ]
+  }
+}

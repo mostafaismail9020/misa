@@ -1,0 +1,314 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+
+# Language
+$lang=en
+$defaultPassword=IOJSD2314@salk212
+
+INSERT_UPDATE BackofficeRole;UID[unique=true];backOfficeLoginDisabled;authorities
+# we are going to add the employeegrouop to the admin role only as the restriction is working per level and in this case we would get our desired behavior (employee group runs first and then our role restriction
+# runs after and would override some restrictions from employeegroup
+;customersupportadministratorrole;FALSE;customersupportadministratorrole,backofficeworkflowuser
+;customersupportmanagerrole;FALSE;customersupportmanagerrole,backofficeworkflowuser
+;customersupportagentrole;FALSE;customersupportagentrole,backofficeworkflowuser
+;marcommcustomersupportagentrole;FALSE;customersupportagentrole,backofficeworkflowuser
+;bdcustomersupportagentrole;FALSE;customersupportagentrole,backofficeworkflowuser
+
+INSERT_UPDATE UserGroup;UID[unique=true];description;locname[lang=$lang]
+;customersupportadministratorgroup;The Customer Support Administrator Group has access to the Customer Support Backoffice's Customer Support Administrator Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Customer Support Administrator Group"
+;marcommdeputygovernorgroup;The Deputy Governor of Marketing and Communications Group has access to the Customer Support Backoffice's Customer Support Administrator Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Deputy Governor of Marketing and Communications"
+;marketingstratexedirectorgroup;The Marketing Strategy Executive Director Group has access to the Customer Support Backoffice's Customer Support Administrator Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Marketing Strategy Executive Director"
+;marketingcommsexedirectorgroup;The Marketing Communications Executive Director Group has access to the Customer Support Backoffice's Customer Support Administrator Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Marketing Communications Executive Director"
+;corporatecommsexedirectorgroup;The Corporate Communications Executive Director Group has access to the Customer Support Backoffice's Customer Support Administrator Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Corporate Communications Executive Director"
+
+INSERT_UPDATE CsAgentGroup;UID[unique=true];description;locname[lang=$lang]
+;customersupportmanagergroup;The Customer Support Manager Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Customer Support Manager Group"
+;stakeholdersupdirectorgroup;The Stakeholder Support Director Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Stakeholder Support Director"
+;marketingstratresdirectorgroup;The Marketing Strategy & Research Director Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Marketing Strategy & Research Director"
+;brandmanagementdirectorgroup;The Brand Management Director Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Brand Management Director"
+;eventsexhibitionsdirectorgroup;The Events & Exhibitions Director Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Events & Exhibitions Director"
+;advertisingdirectorgroup;The Advertising Director Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Advertising Director"
+;marketingchannelsdirectorgroup;The Marketing Channels Director Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Marketing Channels Director"
+;publicrelationsdirectorgroup;The Public Relations Director Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Public Relations Director"
+;mediacenterdirectorgroup;The Media Center Director Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Media Center Director"
+;businesssupportdirectorgroup;The Business Support Director Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Business Support Director"
+;stakeholdersupdispatchergroup;The Stakeholder Support - Dispatcher Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Stakeholder Support - Dispatcher Group"
+;genericmanagergroup;The Generic Manager Group has access to the Customer Support Backoffice's Customer Support Manager Group and Customer Support Agent Group views AND/OR the Assisted Service Module.;"Generic Manager Group"
+
+;customersupportagentgroup;The Customer Support Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Customer Support Agent Group"
+;stakeholdersupagentgroup;The Stakeholder Support - Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Stakeholder Support - Agent Group"
+;marketingstratresagentgroup;The Marketing Strategy & Research - Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Marketing Strategy & Research - Agent Group"
+;brandmanagementagentgroup;The Brand Management - Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Brand Management - Agent Group"
+;eventsexhibitionsagentgroup;The Events & Exhibitions - Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Events & Exhibitions - Agent Group"
+;advertisingagentgroup;The Advertising - Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Advertising - Agent Group"
+;marketingchannelsagentgroup;The Marketing Channels - Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Marketing Channels - Agent Group"
+;publicrelationsagentgroup;The Public Relations - Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Public Relations - Agent Group"
+;mediacenteragentgroup;The Media Center - Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Media Center - Agent Group"
+;businesssupportagentgroup;The Business Support - Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Business Support - Agent Group"
+;genericagentgroup;The Generic Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Generic Agent Group"
+
+;marcommcustomersupportagentgroup;The Marcomm Customer Support Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"Marcomm Agent Group"
+;bdcustomersupportagentgroup;The BD Customer Support Agent Group has access to the Customer Support Backoffice's Customer Support Agent Group views and AND/OR the Assisted Service Module.;"BD Agent Group"
+
+
+
+
+
+INSERT_UPDATE PrincipalGroupRelation;source(uid)[unique=true];target(uid)[unique=true]
+;customersupportadministratorrole;employeegroup
+;customersupportmanagerrole;employeegroup
+;customersupportagentrole;employeegroup
+
+
+;customersupportadministratorgroup;backofficeadmingroup
+;customersupportadministratorgroup;customersupportadministratorrole
+;customersupportadministratorgroup;customersupportmanagerrole
+;customersupportadministratorgroup;customersupportagentrole
+;customersupportadministratorgroup;csagentmanagergroup
+;customersupportadministratorgroup;backofficeauditgroup
+
+;marcommdeputygovernorgroup;backofficeadmingroup
+;marcommdeputygovernorgroup;customersupportadministratorrole
+;marcommdeputygovernorgroup;customersupportmanagerrole
+;marcommdeputygovernorgroup;customersupportagentrole
+;marcommdeputygovernorgroup;csagentmanagergroup
+;marcommdeputygovernorgroup;backofficeauditgroup
+
+;marketingstratexedirectorgroup;backofficeadmingroup
+;marketingstratexedirectorgroup;customersupportadministratorrole
+;marketingstratexedirectorgroup;customersupportmanagerrole
+;marketingstratexedirectorgroup;customersupportagentrole
+;marketingstratexedirectorgroup;csagentmanagergroup
+;marketingstratexedirectorgroup;backofficeauditgroup
+
+;marketingcommsexedirectorgroup;backofficeadmingroup
+;marketingcommsexedirectorgroup;customersupportadministratorrole
+;marketingcommsexedirectorgroup;customersupportmanagerrole
+;marketingcommsexedirectorgroup;customersupportagentrole
+;marketingcommsexedirectorgroup;csagentmanagergroup
+;marketingcommsexedirectorgroup;backofficeauditgroup
+
+;corporatecommsexedirectorgroup;backofficeadmingroup
+;corporatecommsexedirectorgroup;customersupportadministratorrole
+;corporatecommsexedirectorgroup;customersupportmanagerrole
+;corporatecommsexedirectorgroup;customersupportagentrole
+;corporatecommsexedirectorgroup;csagentmanagergroup
+;corporatecommsexedirectorgroup;backofficeauditgroup
+
+
+;customersupportmanagergroup;employeegroup
+;customersupportmanagergroup;customersupportmanagerrole
+;customersupportmanagergroup;customersupportagentrole
+;customersupportmanagergroup;csagentmanagergroup
+;customersupportmanagergroup;backofficeauditgroup
+
+;stakeholdersupdirectorgroup;employeegroup
+;stakeholdersupdirectorgroup;customersupportmanagerrole
+;stakeholdersupdirectorgroup;customersupportagentrole
+;stakeholdersupdirectorgroup;csagentmanagergroup
+;stakeholdersupdirectorgroup;backofficeauditgroup
+
+;marketingstratresdirectorgroup;employeegroup
+;marketingstratresdirectorgroup;customersupportmanagerrole
+;marketingstratresdirectorgroup;customersupportagentrole
+;marketingstratresdirectorgroup;csagentmanagergroup
+;marketingstratresdirectorgroup;backofficeauditgroup
+
+;brandmanagementdirectorgroup;employeegroup
+;brandmanagementdirectorgroup;customersupportmanagerrole
+;brandmanagementdirectorgroup;customersupportagentrole
+;brandmanagementdirectorgroup;csagentmanagergroup
+;brandmanagementdirectorgroup;backofficeauditgroup
+
+;eventsexhibitionsdirectorgroup;employeegroup
+;eventsexhibitionsdirectorgroup;customersupportmanagerrole
+;eventsexhibitionsdirectorgroup;customersupportagentrole
+;eventsexhibitionsdirectorgroup;csagentmanagergroup
+;eventsexhibitionsdirectorgroup;backofficeauditgroup
+
+;advertisingdirectorgroup;employeegroup
+;advertisingdirectorgroup;customersupportmanagerrole
+;advertisingdirectorgroup;customersupportagentrole
+;advertisingdirectorgroup;csagentmanagergroup
+;advertisingdirectorgroup;backofficeauditgroup
+
+;marketingchannelsdirectorgroup;employeegroup
+;marketingchannelsdirectorgroup;customersupportmanagerrole
+;marketingchannelsdirectorgroup;customersupportagentrole
+;marketingchannelsdirectorgroup;csagentmanagergroup
+;marketingchannelsdirectorgroup;backofficeauditgroup
+
+;publicrelationsdirectorgroup;employeegroup
+;publicrelationsdirectorgroup;customersupportmanagerrole
+;publicrelationsdirectorgroup;customersupportagentrole
+;publicrelationsdirectorgroup;csagentmanagergroup
+;publicrelationsdirectorgroup;backofficeauditgroup
+
+;mediacenterdirectorgroup;employeegroup
+;mediacenterdirectorgroup;customersupportmanagerrole
+;mediacenterdirectorgroup;customersupportagentrole
+;mediacenterdirectorgroup;csagentmanagergroup
+;mediacenterdirectorgroup;backofficeauditgroup
+
+;businesssupportdirectorgroup;employeegroup
+;businesssupportdirectorgroup;customersupportmanagerrole
+;businesssupportdirectorgroup;customersupportagentrole
+;businesssupportdirectorgroup;csagentmanagergroup
+;businesssupportdirectorgroup;backofficeauditgroup
+
+;stakeholdersupdispatchergroup;employeegroup
+;stakeholdersupdispatchergroup;customersupportmanagerrole
+;stakeholdersupdispatchergroup;customersupportagentrole
+;stakeholdersupdispatchergroup;csagentmanagergroup
+;stakeholdersupdispatchergroup;backofficeauditgroup
+
+;genericmanagergroup;employeegroup
+;genericmanagergroup;customersupportmanagerrole
+;genericmanagergroup;customersupportagentrole
+;genericmanagergroup;csagentmanagergroup
+;genericmanagergroup;backofficeauditgroup
+
+
+;customersupportagentgroup;employeegroup
+;customersupportagentgroup;customersupportagentrole
+;customersupportagentgroup;backofficeauditgroup
+
+;stakeholdersupagentgroup;employeegroup
+;stakeholdersupagentgroup;customersupportagentrole
+;stakeholdersupagentgroup;backofficeauditgroup
+
+;marketingstratresagentgroup;employeegroup
+;marketingstratresagentgroup;customersupportagentrole
+;marketingstratresagentgroup;backofficeauditgroup
+
+;brandmanagementagentgroup;employeegroup
+;brandmanagementagentgroup;customersupportagentrole
+;brandmanagementagentgroup;backofficeauditgroup
+
+;eventsexhibitionsagentgroup;employeegroup
+;eventsexhibitionsagentgroup;customersupportagentrole
+;eventsexhibitionsagentgroup;backofficeauditgroup
+
+;advertisingagentgroup;employeegroup
+;advertisingagentgroup;customersupportagentrole
+;advertisingagentgroup;backofficeauditgroup
+
+;marketingchannelsagentgroup;employeegroup
+;marketingchannelsagentgroup;customersupportagentrole
+;marketingchannelsagentgroup;backofficeauditgroup
+
+;publicrelationsagentgroup;employeegroup
+;publicrelationsagentgroup;customersupportagentrole
+;publicrelationsagentgroup;backofficeauditgroup
+
+;mediacenteragentgroup;employeegroup
+;mediacenteragentgroup;customersupportagentrole
+;mediacenteragentgroup;backofficeauditgroup
+
+;businesssupportagentgroup;employeegroup
+;businesssupportagentgroup;customersupportagentrole
+;businesssupportagentgroup;backofficeauditgroup
+
+;genericagentgroup;employeegroup
+;genericagentgroup;customersupportagentrole
+;genericagentgroup;backofficeauditgroup
+
+
+;marcommcustomersupportagentgroup;employeegroup
+;marcommcustomersupportagentgroup;marcommcustomersupportagentrole
+;marcommcustomersupportagentgroup;backofficeauditgroup
+
+;bdcustomersupportagentgroup;employeegroup
+;bdcustomersupportagentgroup;bdcustomersupportagentrole
+;bdcustomersupportagentgroup;backofficeauditgroup
+
+
+INSERT_UPDATE Employee;UID[unique=true];name;groups(uid);description;password; backOfficeLoginDisabled
+;BsuCustomerSupportAdministrator;BSU Customer Support Administrator;marketingstratexedirectorgroup;This generic Customer Support Administrator User is assigned and has access to the Backoffice Administrator, Customer Support Manager and Customer Support Agent Group views - to provide administrative support to these later users.;1234; false
+
+;BsuCustomerSupportManager1;Stake Holder Support Director;stakeholdersupdirectorgroup;This generic Customer Support Manager User is assigned and has access to the Backoffice Customer Support Manager and Customer Support Agent Group views and ASM - to provide restricted Backoffice and ASM customer sales and service manager support.;1234; false
+;BsuCustomerSupportManager2;Marketing Strategy And Research Director;marketingstratresdirectorgroup;This generic Customer Support Manager User is assigned and has access to the Backoffice Customer Support Manager and Customer Support Agent Group views and ASM - to provide restricted Backoffice and ASM customer sales and service manager support.;1234; false
+;BsuCustomerSupportManager3;Brand Management Director;brandmanagementdirectorgroup;This generic Customer Support Manager User is assigned and has access to the Backoffice Customer Support Manager and Customer Support Agent Group views and ASM - to provide restricted Backoffice and ASM customer sales and service manager support.;1234; false
+;BsuCustomerSupportManager4;Stake Holder Support Dispatcher;stakeholdersupdispatchergroup;This generic Customer Support Manager User is assigned and has access to the Backoffice Customer Support Manager and Customer Support Agent Group views and ASM - to provide restricted Backoffice and ASM customer sales and service manager support.;1234; false
+
+;BsuCustomerSupportAgent1;Stake Holder Support Agent;stakeholdersupagentgroup;This generic Customer Support Agent is assigned and has access to the Backoffice Customer Support Agent Group views and ASM - to provide restricted Backoffice and ASM customer sales and service manager support.;1234; false
+;BsuCustomerSupportAgent2;Marketing Strategy And Research Agent;marketingstratresagentgroup;This generic Customer Support Agent is assigned and has access to the Backoffice Customer Support Agent Group views and ASM - to provide restricted Backoffice and ASM customer sales and service manager support.;1234; false
+;BsuCustomerSupportAgent3;Brand Management Agent;brandmanagementagentgroup;This generic Customer Support Agent is assigned and has access to the Backoffice Customer Support Agent Group views and ASM - to provide restricted Backoffice and ASM customer sales and service manager support.;1234; false
+
+
+INSERT_UPDATE BackofficeSavedQuery;typeCode[unique=true];name[lang=en,unique=true];globalOperatorCode;queryOwner(uid)[unique=true];sortAsc;&savedQueryRef;
+;CsTicket;"My Assigned Tickets";"and";"CustomerSupportAdministrator";true;csAdmin;
+;CsTicket;"My Assigned Tickets";"and";"BsuCustomerSupportAdministrator";true;csBsuAdmin;
+
+;CsTicket;"My Assigned Tickets";"and";"CustomerSupportManager";true;csMgr;
+;CsTicket;"My Assigned Tickets";"and";"BsuCustomerSupportManager1";true;csBsuMgr1;
+;CsTicket;"My Assigned Tickets";"and";"BsuCustomerSupportManager2";true;csBsuMgr2;
+;CsTicket;"My Assigned Tickets";"and";"BsuCustomerSupportManager3";true;csBsuMgr3;
+;CsTicket;"My Assigned Tickets";"and";"BsuCustomerSupportManager4";true;csBsuMgr4;
+
+;CsTicket;"My Assigned Tickets";"and";"CustomerSupportAgent";true;csAgent;
+;CsTicket;"My Assigned Tickets";"and";"BsuCustomerSupportAgent1";true;csBsuAgent1;
+;CsTicket;"My Assigned Tickets";"and";"BsuCustomerSupportAgent2";true;csBsuAgent2;
+;CsTicket;"My Assigned Tickets";"and";"BsuCustomerSupportAgent3";true;csBsuAgent3;
+
+
+
+INSERT_UPDATE BackofficeSearchCondition;value[unique=true];attribute;selected;operatorCode;valueReference(Employee.uid)[mode=replace,unique=true];savedQuery(&savedQueryRef)[unique=true];
+;;assignedAgent;true;equals;CustomerSupportAdministrator;csAdmin;
+;;assignedAgent;true;equals;BsuCustomerSupportAdministrator;csBsuAdmin;
+
+;;assignedAgent;true;equals;CustomerSupportManager;csMgr;
+;;assignedAgent;true;equals;BsuCustomerSupportManager1;csBsuMgr1;
+;;assignedAgent;true;equals;BsuCustomerSupportManager2;csBsuMgr2;
+;;assignedAgent;true;equals;BsuCustomerSupportManager3;csBsuMgr3;
+;;assignedAgent;true;equals;BsuCustomerSupportManager4;csBsuMgr4;
+
+;;assignedAgent;true;equals;CustomerSupportAgent;csAgent;
+;;assignedAgent;true;equals;BsuCustomerSupportAgent1;csBsuAgent1;
+;;assignedAgent;true;equals;BsuCustomerSupportAgent2;csBsuAgent2;
+;;assignedAgent;true;equals;BsuCustomerSupportAgent3;csBsuAgent3;
+
+;CsTicketState#OPEN;state;true;equals;;csAdmin;
+;CsTicketState#OPEN;state;true;equals;;csBsuAdmin;
+;CsTicketState#OPEN;state;true;equals;;csMgr;
+;CsTicketState#OPEN;state;true;equals;;csBsuMgr1;
+;CsTicketState#OPEN;state;true;equals;;csBsuMgr2;
+;CsTicketState#OPEN;state;true;equals;;csBsuMgr3;
+;CsTicketState#OPEN;state;true;equals;;csAgent;
+;CsTicketState#OPEN;state;true;equals;;csBsuAgent1;
+;CsTicketState#OPEN;state;true;equals;;csBsuAgent2;
+;CsTicketState#OPEN;state;true;equals;;csBsuAgent3;
+
+######## BSU B2B Registration approver stakeholdersupb2bapprovergroup
+INSERT_UPDATE UserGroup;uid[unique=true];groups(uid);locname[lang=en];
+;stakeholdersupb2bapprovergroup;admingroup,employeegroup,cockpitgroup;BSU B2B Registration Approver;
+
+INSERT_UPDATE UserGroup;uid[unique=true];groups(uid);locname[lang=en];
+;stakeholdersupb2bapprovergroup;;BSU B2B Registration Approver;
+
+INSERT_UPDATE Employee;uid[unique=true];name;groups(uid)[mode=append];password[default=$defaultPassword];
+;RegApproverA;Bruce Rivers;b2bregistrationapprovergroup;
+;bsuregapprover;Kijar Muhamed;stakeholdersupb2bapprovergroup;
+
+INSERT_UPDATE Address;owner(Employee.UID)[unique=true]; email;contactAddress
+;bsuregapprover;bsuregapprover@sagia.gov.sa;true
+
+;BsuCustomerSupportAdministrator;BsuCustomerSupportAdministrator@sagia.gov.sa;true
+
+;BsuCustomerSupportManager1;BsuCustomerSupportManager1@sagia.gov.sa;true
+;BsuCustomerSupportManager2;BsuCustomerSupportManager2@sagia.gov.sa;true
+;BsuCustomerSupportManager3;BsuCustomerSupportManager3@sagia.gov.sa;true
+;BsuCustomerSupportManager4;BsuCustomerSupportManager4@sagia.gov.sa;true
+
+;BsuCustomerSupportAgent1;BsuCustomerSupportAgent1@sagia.gov.sa;true
+;BsuCustomerSupportAgent2;BsuCustomerSupportAgent2@sagia.gov.sa;true
+;BsuCustomerSupportAgent3;BsuCustomerSupportAgent3@sagia.gov.sa;true

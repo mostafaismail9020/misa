@@ -1,0 +1,344 @@
+#############################################################
+################## 1. User Group Creation  ##################
+$lang=en
+INSERT_UPDATE UserGroup;UID[unique=true];locname[en];groups(uid);description;
+;WOAdminGroup;Workflow Admin Permissions;BDUserGroup,b2badmingroup; User for manange child org user for parent
+;WOBDUserGroup;Workflow Business Development ; BDUserGroup;For user who can create opportunity which will be submitted to approver
+;WOAGUserGroup;WorkflowOpportunityApproverGroup;BDUserGroup,b2badmingroup; For user who can apporve opportunity
+
+
+#############################################################
+################## 2. CMS Page Creation  ##################
+
+$contentCatalog=investsaudiContentCatalog
+$contentCatalogName=Investsaudi Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$lang=en
+
+#cms-content.impex
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false'];previewImage(code, $contentCV)
+                         ;;add-child-unit;Create new Child Unit;AccountPageTemplate;add-child-unit
+                         ;;add-new-user;Add New User for Child Unit;AccountPageTemplate;add-new-user
+                         ;;view-child-units;View Child Unit;AccountPageTemplate;view-child-units
+                         ;;manage-childb2b-users;Manage User;AccountPageTemplate;manage-childb2b-users
+
+# ContentSlot
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+                         ;;SideContent-add-new-user;Side Content Slot for Add New User;true;;;;
+                         ;;BodyContent-add-new-user;Body Content Slot for Add New User;true;AddNewUserComponent;;;
+
+                         ;;SideContent-add-child-unit;Side Content Slot for Add New Child Unit;true;;;;
+                         ;;BodyContent-add-child-unit;Body Content Slot for Add New Child Unit;true;AddNewChildUnitComponent;;;
+
+                         ;;SideContent-view-child-units;Side Content Slot for View Child Unit;true;;;;
+                         ;;BodyContent-view-child-units;Body Content Slot for View Child Unit;true;ViewChildUnitsComponent;;;
+
+                         ;;SideContent-manage-childb2b-users;Side Content Slot for Manage User;true;;;;
+                         ;;BodyContent-manage-childb2b-users;Body Content Slot for Manage User;true;ManageUserComponent;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='add-child-unit'];contentSlot(uid,$contentCV)[unique=true];;;
+                                ;;SideContent-add-child-unit;SideContent;;SideContent-add-child-unit;;;
+                                ;;BodyContent-add-child-unit;BodyContent;;BodyContent-add-child-unit;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='add-new-user'];contentSlot(uid,$contentCV)[unique=true];;;
+                                ;;SideContent-add-new-user;SideContent;;SideContent-add-new-user;;;
+                                ;;BodyContent-add-new-user;BodyContent;;BodyContent-add-new-user;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='view-child-units'];contentSlot(uid,$contentCV)[unique=true];;;
+                                ;;SideContent-view-child-units;SideContent;;SideContent-view-child-units;;;
+                                ;;BodyContent-view-child-units;BodyContent;;BodyContent-view-child-units;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='manage-childb2b-users'];contentSlot(uid,$contentCV)[unique=true];;;
+                                ;;SideContent-manage-childb2b-users;SideContent;;SideContent-manage-childb2b-users;;;
+                                ;;BodyContent-manage-childb2b-users;BodyContent;;BodyContent-manage-childb2b-users;;;
+
+
+
+# components
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;&componentRef
+                                 ;;AddNewUserComponent;Add new User Component;/WEB-INF/views/responsive/pages/account/newUser.jsp;AddNewUserComponent
+                                 ;;AddNewChildUnitComponent;Add new Child Unit Component;/WEB-INF/views/responsive/pages/account/newChildUnit.jsp;AddNewChildUnitComponent
+                                 ;;ViewChildUnitsComponent;View Child Units Component;/WEB-INF/views/responsive/pages/account/viewChildUnit.jsp;ViewChildUnitsComponent
+                                 ;;ManageUserComponent;Manage User Component;/WEB-INF/views/responsive/pages/account/manageChildB2BUsers.jsp;ManageUserComponent
+
+# Import modulegen config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+$jarResourceCms=$config-jarResourceCmsValue
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]               ; name                         ; url[default="#"]            ; &linkRef                             ;styleAttributes             ; linkName[lang=$lang]           ; target(code)[default='sameWindow']
+                               ;                         ; AdminstrationLink              ; Adminstration                ; /                           ; AdminstrationLink                    ;                            ; "Administration"       ;
+                               ;                         ; InvestsaudiAddUserLink         ; Add User Link                ; /my-account/new-user        ; InvestsaudiAddUserLink               ;                            ; "Add User"             ;
+                               ;                         ; InvestsaudiAddChildUnitLink    ; Add Child B2B Unit Link      ; /my-account/child-unit      ; InvestsaudiAddChildUnitLink          ;                            ; "Add Child Unit"       ;
+                               ;                         ; InvestsaudiListChildUnitLink   ; List All Child B2B Unit Link ; /my-account/view-child-units; InvestsaudiListChildUnitLink         ;                            ; "List All Child Units" ;
+                               ;                         ; InvestsaudiManageUserLink      ; Manage Users Link            ; /my-account/manage-users    ; InvestsaudiManageUserLink            ;                            ; "Manage Users"         ;
+
+
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];title[lang=$lang];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef;
+                               ;AdminstrationNavNode;Administration;;Administration;investsaudiCategoryNavNode;;AdminstrationNavNode;
+
+## level 4 -- Personal Details etc. : children of MyAccountNavNode ##
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];title[lang=$lang];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
+                               ;InvestsaudiAddUserNavNode;;Add User;Add User Navigation Node;AdminstrationNavNode;;InvestsaudiAddUserNavNode
+                               ;InvestsaudiAddChildUnitNavNode;;Add Child Unit;Add Child Unit Navigation Node;AdminstrationNavNode;;InvestsaudiAddChildUnitNavNode
+                               ;InvestsaudiListChildUnitNavNode;;List Child Units;List Child Units Navigation Node;AdminstrationNavNode;;InvestsaudiListChildUnitNavNode
+                               ;InvestsaudiManageUserNavNode;;Manage Users;Manage User Navigation Node;AdminstrationNavNode;;InvestsaudiManageUserNavNode
+
+
+
+
+# entries of the above navigation nodes
+INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(&linkRef);
+                                ;AdminstrationNavEntry;;Administration Entry;AdminstrationNavNode;AdminstrationLink
+                                ;InvestsaudiAddUserNavEntry;;Add User Navigation Entry;InvestsaudiAddUserNavNode;InvestsaudiAddUserLink
+                                ;InvestsaudiAddChildUnitNavEntry;;Add Child Unit Navigation Entry;InvestsaudiAddChildUnitNavNode;InvestsaudiAddChildUnitLink
+                                ;InvestsaudiListChildUnitNavEntry;;List Child Units Navigation Entry;InvestsaudiListChildUnitNavNode;InvestsaudiListChildUnitLink
+                                ;InvestsaudiManageUserNavEntry;;Manage User Navigation Entry;InvestsaudiManageUserNavNode;InvestsaudiManageUserLink
+
+
+INSERT_UPDATE CMSUserGroupRestriction ; $contentCV[unique=true] ; uid[unique=true]                      ; name                                      						; userGroups(uid)  				; includeSubgroups ; components(uid, $contentCV)
+                                      ;                         ; WOUserGroupNavNodeRestriction 		; Workflow Opportunity User Group Navigation Node Restriction 		; WOAdminGroup  	            ; true             ; AdminstrationLink,InvestsaudiAddUserLink,InvestsaudiAddChildUnitLink,InvestsaudiListChildUnitLink,InvestsaudiManageUserLink
+
+INSERT_UPDATE CMSUserGroupRestriction ; $contentCV[unique=true] ; uid[unique=true]                      ; name                                      						; userGroups(uid)  				; includeSubgroups ; components(uid, $contentCV)
+                                      ;                         ; WOUserGroupPageRestriction 			; Workflow Opportunity User Group Page Restriction					; WOAdminGroup 	                ; true             ; AddNewUserComponent,AddNewChildUnitComponent,ViewChildUnitsComponent,ManageUserComponent
+
+
+#############################################################
+################## 3. Disable BD cron job  ##################
+
+INSERT_UPDATE CronJob; code[unique = true]                    ; job(code)                          ; sessionLanguage(isoCode)[default = en]
+                     ; workflowBDUserDisableCronJob           ; workflowBDUserDisableJob           ;
+
+INSERT_UPDATE ServicelayerJob; code[unique = true]     ; springId
+                             ; workflowBDUserDisableServiceLayerJob ; workflowBDUserDisableJob
+
+INSERT_UPDATE CronJob; code[unique = true]                    ; job(code)                          ; sessionLanguage(isoCode)[default = en]
+                     ; workflowBDUserDisableCronJob           ; workflowBDUserDisableServiceLayerJob           ;
+
+
+INSERT_UPDATE Trigger; cronJob(code)[unique = true]           ; cronExpression
+                     ; workflowBDUserDisableCronJob           ; 0 23 * * * ?
+
+					 
+######################################################################
+################## 5. Email Page -UserGroup Update  ##################
+
+$contentCatalog=investsaudiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailFromEmail=info@sagia.gov.sa
+$emailFromName=Customer Services Team
+$lang = en
+$jarResource=jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+
+################## Start InvestSaudi 2 Factor Authentication Email Template  #####################
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; customerUsergroupUpdateTemplate    ; Custome Usergroup Update Template       ; true ; customerUsergroupUpdateTemplate    ; customer_usergroup_update_Subject    ; customer_usergroup_update_Body    ; EmailPage
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'customerUsergroupUpdateTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'customerUsergroupUpdateTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-customerUsergroupUpdate      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-customerUsergroupUpdate    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-customerUsergroupUpdate ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@sagia.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; customerUsergroupUpdate    ; User Group update email page    ; customerUsergroupUpdateTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; customer_usergroup_update_Body       ; com.investsaudi.email.context.CustomerUserGroupUpdateEmailContext
+; customer_usergroup_update_Subject    ; com.investsaudi.email.context.CustomerUserGroupUpdateEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; customer_usergroup_update_Body       ; "Customer Usergroup Update Email Body"          ; $jarResource/email-customerUsergroupUpdateBody.vm
+; customer_usergroup_update_Subject    ; "Customer Usergroup Update Email Subject"       ; $jarResource/email-customerUsergroupUpdateSubject.vm
+
+
+
+######################################################################
+################## 6. Email Page -New User Created  ##################
+
+$contentCatalog=investsaudiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailFromEmail=info@sagia.gov.sa
+$emailFromName=Customer Services Team
+$lang = en
+$jarResource=jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+
+################## Start InvestSaudi 2 Factor Authentication Email Template  #####################
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; userCreatedTemplate    ; user Created Template       ; true ; userCreatedTemplate    ; user_created_Subject    ; user_created_Body    ; EmailPage
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'userCreatedTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'userCreatedTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-userCreated      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-userCreated    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-userCreated ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@sagia.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; userCreated    ; User Created email page    ; userCreatedTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; user_created_Body       ; com.investsaudi.email.context.UserCreatedEmailContext
+; user_created_Subject    ; com.investsaudi.email.context.UserCreatedEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;user_created_Body       ; "user created Email Body"          ; $jarResource/email-userCreatedBody.vm
+; user_created_Subject    ; "user created Email Subject"       ; $jarResource/email-userCreatedSubject.vm
+
+
+
+######################################################################
+################## 7. Email Page -User Opportunity Notificaion #######
+
+$contentCatalog=investsaudiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailFromEmail=info@sagia.gov.sa
+$emailFromName=Customer Services Team
+$lang = en
+$jarResource=jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+
+################## Start InvestSaudi 2 Factor Authentication Email Template  #####################
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; opportunityCreatedTemplate    ; opportunity Created Template       ; true ; opportunityCreatedTemplate    ; opportunity_created_Subject    ; opportunity_created_Body    ; EmailPage
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'opportunityCreatedTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'opportunityCreatedTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-opportunityCreated      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-opportunityCreated    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-opportunityCreated ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@sagia.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; opportunityCreated    ; Opportunity Created email page    ; opportunityCreatedTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; opportunity_created_Body       ; com.investsaudi.email.context.OpportunityCreatedEmailContext
+; opportunity_created_Subject    ; com.investsaudi.email.context.OpportunityCreatedEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;opportunity_created_Body       ; "opportunity created Email Body"          ; $jarResource/email-opportunityCreatedBody.vm
+; opportunity_created_Subject    ; "opportunity created Email Subject"       ; $jarResource/email-opportunityCreatedSubject.vm
+
+
+
+######################################################################
+################## 8. Email Page -Apporver Opportunity Notificaion ###
+
+$contentCatalog=investsaudiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailFromEmail=info@sagia.gov.sa
+$emailFromName=Customer Services Team
+$lang = en
+$jarResource=jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+
+################## Start InvestSaudi 2 Factor Authentication Email Template  #####################
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; opportunityCreatedApproverTemplate    ; opportunity Created Approver Template       ; true ; opportunityCreatedApproverTemplate    ; opportunity_created_approver_Subject    ; opportunity_created_approver_Body    ; EmailPage
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'opportunityCreatedApproverTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'opportunityCreatedApproverTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-opportunityCreatedApprover      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-opportunityCreatedApprover    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-opportunityCreatedApprover ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@sagia.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; opportunityCreatedApprover   ; Opportunity Created Approver email page    ; opportunityCreatedApproverTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; opportunity_created_approver_Body       ; com.investsaudi.email.context.OpportunityCreatedApproverEmailContext
+; opportunity_created_approver_Subject    ; com.investsaudi.email.context.OpportunityCreatedApproverEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;opportunity_created_approver_Body       ; "opportunity created approver Email Body"          ; $jarResource/email-opportunityCreatedApproverBody.vm
+; opportunity_created_approver_Subject    ; "opportunity created approver Email Subject"       ; $jarResource/email-opportunityCreatedApproverSubject.vm
+
+
+
+######################################################################
+################## 9. Email Page -Opportunity Update  #################
+
+$contentCatalog=investsaudiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailfromemail=info@sagia.gov.sa
+$emailFromName=Customer Services Team
+$lang = en
+$jarResource=jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; opportunityUpdatedTemplate    ;Opportunity Updated Template       ; true ; opportunityUpdatedTemplate    ; opportunity_updated_Subject    ; opportunity_updated_Body    ; EmailPage
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'opportunityUpdatedTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'opportunityUpdatedTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-opportunityUpdated    ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-opportunityUpdated   ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-opportunityUpdated ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@sagia.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; opportunityUpdated   ; Opportunity Updated email page    ; opportunityUpdatedTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; opportunity_updated_Body       ; com.investsaudi.email.context.OpportunityUpdatedEmailContext
+; opportunity_updated_Subject    ; com.investsaudi.email.context.OpportunityUpdatedEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; opportunity_updated_Body       ; "Opportunity Updated Email Body"          ; $jarResource/email-opportunityUpdatedBody.vm
+; opportunity_updated_Subject    ; "Opportunity Updated Email Subject"       ; $jarResource/email-opportunityUpdatedSubject.vm
+
+

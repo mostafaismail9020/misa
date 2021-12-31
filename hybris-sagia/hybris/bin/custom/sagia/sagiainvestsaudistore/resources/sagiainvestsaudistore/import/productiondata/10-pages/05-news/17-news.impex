@@ -1,0 +1,62 @@
+$page = news-organization-of-the-year-for-youth
+$template = portalGlobalTemplate
+$name = ORGANIZATION OF THE YEAR FOR YOUTH EMPOWERMENT AT THE GCC GOVERNMENT HR SUMMIT AWARDS
+$titleEn = $name
+$titleAr = هيئة الاستثمار تفوز بالمركز الأول في الموارد البشرية لـ تمكين الشباب على مستوى منظمات الخليج
+$shortDescEn = Organization Of The Year For Youth Empowerment At The GCC Government HR Summit
+$shortDescAr = حصدت الهيئة العامة للاستثمار المركز الأول في  جائزة الموارد البشرية
+$pagelabel = /news/organization-of-the-year-for-youth-empowerment-at-the-gcc-government-hr-summit-awards
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; sagia_1            ; sagia.png   ; $siteResource/sagia.png                                                     ; image/svg+xml               ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias ; $contentCV; ; ; ;
+                            ; media-container-$page   ; sagia_1 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; sagia_1                           ; sagia_1                             ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 17.10.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; ""
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page      ;                          ; "<p>حصدت الهيئة العامة للاستثمار المركز الأول في &nbsp;جائزة الموارد البشرية لـ""تمكين الشباب"" على مستوى منظمات الخليج خلال حفل توزيع جوائز الموارد البشرية في القطاع الحكومي لدول مجلس التعاون الخليجي لعام 2019، &nbsp;بالتزامن مع انعقاد القمة الحكومية للموارد البشرية في العاصمة الإماراتية أبو ظبي.</p>
+<p>&nbsp;</p>
+<p>وتهدف الجائزة التي تمنح لعدة جهات حكومية في منطقة الخليج إلى الاحتفاء بالإنجازات التي حققتها مؤسسات القطاع العام، والأفراد الذين أظهروا قيادة مثالية أسهمت في رفع فعالية فريق العمل، وقدمت نماذج مميزة في التخطيط الاستراتيجي.</p>
+<p>&nbsp;</p>
+<p>وكشفت نجود الحجار المديرة التنفيذية لإدارة الموارد البشرية في الهيئة العامة للاستثمار أن الفوز بالجائزة مؤشر على التقدم الكبير الذي حققه القطاع العام في المملكة في مجال تحسين بيئة العمل، لافتةً إلى أن الهيئة العامة للاستثمار تسعى دائما لاستقطاب أفضل الكفاءات الوطنية خاصة فئة الشباب ودعمهم وتمكينهم، انطلاقا من إيمانها بأن بيئة العمل الجاذبة تحقق أعلى درجات الإنتاجية، بما ينعكس &nbsp;على أهدافها لجذب وتطوير الاستثمارات في المملكة، والتعريف بالفرص الواعدة في عدة قطاعات استراتيجية من شأنها تعزيز موقع المملكة كوجهة استثمارية رائدة عالمياً.</p>
+<p>وأضافت الحجار أن القفزات النوعية التي شهدتها المملكة مؤخراً في أرقام ونسب نمو الاستثمار الأجنبي والاستثمارات المحلية التي مكنتها الهيئة عبر شراكات أجنبية، تمت على أيدي شباب وفتيات سعوديين جابوا العالم والتقوا العديد من المستثمرين من مختلف الدول للتعريف بالمملكة ومناخ الاستثمار فيها والفرص الاستثمارية النوعية والواعدة التي تتمتع بها في مختلف القطاعات، لاسيما في القطاعات المستهدفة، واسهموا &nbsp; في جلب الكثير من الاستثمارات النوعية وذات القيمة المضافة والعائد الاقتصادي الكبير إلى وطننا الغالي.&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+<p>يذكر أن الجائزة التي تنظمها ""كيو ان ايه انترناشونال""، تعد من الجوائز المرموقة في مجال تقييم أداء الجهات الحكومية وتحديد الجهات التي تستحق الفوز بناء على عدة معايير عالمية.</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

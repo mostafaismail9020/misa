@@ -1,0 +1,144 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleAr = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 ; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+########  Asir  #########			  
+					   ; asir-banner-image.png            			 ; asir-banner-image.png     						; $siteResource/asir-banner-image.png                                         			  ;                 image/png                ;                                          ; ""     ;
+					   ; asir-map.png                       		 ; asir-map.png               						; $siteResource/asir-map.png                                                  			  ;                 image/png                ;                                          ; ""     ;
+					   ; asir-tourism.png                            ; asir-tourism.png                      			; $siteResource/asir-tourism.png                                                          ;                 image/png                ;                                          ; ""     ;
+					   ; asir-trade.png                              ; asir-trade.png                        			; $siteResource/asir-trade.png                                                            ;                 image/png                ;                                          ; ""     ;
+					   ; asir-healthcare.png                         ; asir-healthcare.png                   			; $siteResource/asir-healthcare.png                                                       ;                 image/png                ;                                          ; ""     ;
+					   ; asir-agriculture.png                        ; asir-agriculture.png                  			; $siteResource/asir-agriculture.png                                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-mining.png                             ; asir-mining.png                       			; $siteResource/asir-mining.png                                                           ;                 image/png                ;                                          ; ""     ;   
+																	   
+					   ; asir-active-factories.png                   ; asir-active-factories.png                   		; $siteResource/asir-active-factories.png                                                 ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-airport.png                      		 ; asir-airport.png              					; $siteResource/asir-airport.png                                                  		  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-dams.png                         		 ; asir-dams.png                 					; $siteResource/asir-dams.png                                                    		  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-hospitals.png                          ; asir-hospitals.png                  				; $siteResource/asir-hospitals.png                                                     	  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-hotels.png                     		 ; asir-hotels.png             						; $siteResource/asir-hotels.png                                                 		  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-industrial-city.png                    ; asir-industrial-city.png                			; $siteResource/asir-industrial-city.png                                                  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-population.png                         ; asir-population.png                    			; $siteResource/asir-population.png                                                       ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-population-growth.png                  ; asir-population-growth.png                     	; $siteResource/asir-population-growth.png                                                ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-private-sector-employees.png           ; asir-private-sector-employees.png                ; $siteResource/asir-private-sector-employees.png                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-roads-length.png                       ; asir-roads-length.png               				; $siteResource/asir-roads-length.png                                                     ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-sport-city.png                    	 ; asir-sport-city.png            					; $siteResource/asir-sport-city.png                                                		  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-towns.png                           	 ; asir-towns.png                   			    ; $siteResource/asir-towns.png                                                       	  ;                 image/png                ;                                          ; ""     ;   					
+					   											   
+					   ; asir-business-infrastructure.png            ; asir-business-infrastructure.png            		; $siteResource/asir-business-infrastructure.png                                          ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-healthcare-infrastructure.png          ; asir-healthcare-infrastructure.png             	; $siteResource/asir-healthcare-infrastructure.png                                        ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-quality-of-higher-education.png        ; asir-quality-of-higher-education.png             ; $siteResource/asir-quality-of-higher-education.png                                      ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-tourist-potential.png                  ; asir-tourist-potential.png                       ; $siteResource/asir-tourist-potential.png                                                ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-unique-climate.png                     ; asir-unique-climate.png                      	; $siteResource/asir-unique-climate.png                                                   ;                 image/png                ;                                          ; ""     ;   	
+																	   
+					   ; asir-build.png                              ; asir-build.png                       			; $siteResource/asir-build.png                                                            ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-develop.png                            ; asir-develop.png                    				; $siteResource/asir-develop.png                                                          ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-investments.png                        ; asir-investments.png                    			; $siteResource/asir-investments.png                                                      ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-launch.png                             ; asir-launch.png                    				; $siteResource/asir-launch.png                                                           ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-upgrade.png                            ; asir-upgrade.png                    				; $siteResource/asir-upgrade.png                                                          ;                 image/png                ;                                          ; ""     ;   	
+					   
+					
+					
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=ar]			; bannerText[lang=ar]																							; bannerImage (code, $contentCV)	; keyFactsHeader [lang = ar]		 ; keyStrengthsHeader [lang = ar] 	 ; opportunitiesHeader [lang = ar]		
+							   ; asir		 		;				; عسير							; رؤية عسير تحويل عسير إلى وجهة سياحية عالمية تتفرد بمواردها الطبيعية وبمزيج ساحر من الاصالة والحداثة. 			; asir-banner-image.png				; اهم المعلومات والأرقام	 			 ; المزايا المناطقية		 		; فرص استثمارية																																																									
+	
+	
+	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 ;  $contentCV  ; headerText[lang = ar]    ; imageIcon  (code, $contentCV)     ; &componentRef
+											    ; asir-tourism		 ; 				; السياحة				   ; asir-tourism.png				   ; asir-tourism		
+                                                ; asir-trade		 ;              ; التجارة			       ; asir-trade.png		               ; asir-trade		
+                                                ; asir-healthcare	 ;              ; الرعاية الصحية	       ; asir-healthcare.png	           ; asir-healthcare	
+                                                ; asir-agriculture	 ;              ; الزراعة	           	   ; asir-agriculture.png	           ; asir-agriculture	
+                                                ; asir-mining		 ;              ; التعدين		           ; asir-mining.png		           ; asir-mining		
+
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = ar] ; value[lang = ar] 
+										; asir-strategic-population		;			   ; 2,308,329		; التعداد السكاني
+										; asir-strategic-landmass		;			   ; 80,000 كم2 	; المساحة
+	 
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]				; $contentCV   	; sectorHeader	[lang = ar]		; backgroundImage (code, $contentCV)   			; sectors(&componentRef) 													; longDescription[lang = ar]																																																																																												  	; localizedStats (uid, $contentCV)   					; &componentRef
+												 ; asir-strategic-component		;          		; القطاعات الاستراتيجية			; asir-map.png									; asir-tourism, asir-trade, asir-healthcare, asir-agriculture, asir-mining	; تُعدّ عسير من أسرع الوجهات السياحية ازدهارًا في المملكة العربية السعودية، لا سيما بعد أن رصد لها صندوق الاستثمارات العامة 3 مليار دولار لإتمام مشاريع سياحية وأخرى متعلقة بالبنية التحتية. تقع منطقة عسير في جنوب غرب المملكة العربية السعودية وتقدر مساحتها بـ 80 ألف كم٢.  تتمتع عسير بطبيعة مميزّة وجبال وسهول وشواطئ خلابة، فضلا عن مناخ معتدل طوال أشهر السنة مما ساهم في نموّها السريع كوجهة سياحية مهمة.  	     ; asir-strategic-population,asir-strategic-landmass 						;  asir-strategic-component
+                                                                               
+	
+####################################################################
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]	; $contentCV ; imageIcon (code, $contentCV) 				; headerText[lang = ar]			; text[lang = ar]											; &componentRef
+#									   ; asir-keyfacts1		;			 ; asir-population.png							; 2.3M							; التعداد السكاني											; asir-keyfacts1	
+#									   ; asir-keyfacts2     ;            ; asir-population-growth.png		            ; 2.00%		                    ; annual population growth between 2013-2019	            ; asir-keyfacts2 
+									   ; asir-keyfacts3     ;            ; asir-private-sector-employees.png	        ; 385,574	                    ; اجمالي المشتغلين الربع الأول 2021						    ; asir-keyfacts3 
+									   ; asir-keyfacts4     ;            ; asir-active-factories.png			        ; 312		                    ; عدد المصانع المنتجة الربع الثالث 2021  					; asir-keyfacts4 
+									   ; asir-keyfacts5     ;            ; asir-airport.png					            ; 2		                        ; عدد المطارات الدولية والمحلية 	            			; asir-keyfacts5 
+									   ; asir-keyfacts6     ;            ; asir-dams.png						        ; 171		                    ; عدد السدود 2019											; asir-keyfacts6 
+									   ; asir-keyfacts7     ;            ; asir-hotels.png					            ; 27		                    ; عدد الفنادق 2019										    ; asir-keyfacts7 
+									   ; asir-keyfacts8     ;            ; asir-industrial-city.png			            ; 1			                    ; عدد  المدن الصناعية 2019								    ; asir-keyfacts8 
+									   ; asir-keyfacts9     ;            ; asir-sport-city.png				            ; 1			                    ; عدد  المدن الرياضية 2019									; asir-keyfacts9 
+									   ; asir-keyfacts10    ;            ; asir-roads-length.png				        ; 5,594		                    ; مجموع أطوال الطرق									        ; asir-keyfacts10
+									   ; asir-keyfacts11    ;            ; asir-hospitals.png				            ; 28		                    ; عدد المستشفيات 2019 بمجموع 3,200 سرير					    ; asir-keyfacts11
+									   ; asir-keyfacts12    ;            ; asir-towns.png					            ; 16		                    ; عدد المحافظات في المنطقة2019 								; asir-keyfacts12
+									   
+									   
+									   
+									   
+									   
+									 
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]									; $contentCV      ; image (code, $contentCV)					          ; text[lang=ar]				                         															;&componentRef
+                                                                                                                                                                                                                    
+										   ; asir-unique-climate                                ;                 ; asir-unique-climate.png                               ; بيئة استثنائية				                         															; asir-unique-climate             
+                                           ; asir-quality-of-higher-education                   ;                 ; asir-quality-of-higher-education.png                  ; جودة التعليم العالي بما فيه جامعة الملك خالد التي تحتل المرتبة الخامسة بين جامعات المملكة العربية السعودية      ; asir-quality-of-higher-education
+                                           ; asir-tourist-potential                             ;                 ; asir-tourist-potential.png                            ; 30 مبادرة للاستفادة من الإمكانات السياحية التي تختزنها المنطقة         											; asir-tourist-potential          
+                                           ; asir-business-infrastructure                      	;                 ; asir-business-infrastructure.png                      ; البنية التحتية المناسبة لدعم الأعمال                   						    								; asir-business-infrastructure    
+                                           ; asir-healthcare-infrastructure                     ;                 ; asir-healthcare-infrastructure.png                    ; البنية التحتية للرعاية الصحية بما فيها مدينة الملك فيصل الطبية التي تؤمن الخدمات الطبية للمناطق الجنوبية        ; asir-healthcare-infrastructure  
+		
+	
+	
+#####################################################	
+	
+	
+INSERT_UPDATE ProvinceInvestmentOpportunitiesComponent	; uid[unique=true]		      ; $contentCV	  ; iconImage	(code, $contentCV)					         ; headerText[lang = ar]	                                     ; text[lang = ar]																											; &componentRef
+													                                                                                                                                                        
+														; develop-asir			      ;               ; asir-develop.png                                         ;	تطوير	                                                         ; إنشاء أكثر من 40,000 وحدة سكنية تناسب كافة شرائح المجتمع على اختلاف مستويات دخلها 										; develop-asir 
+														; launch-asir			      ;               ; asir-launch.png				                             ; اطلاق					                                     ; إطلاق العديد من المشاريع في مجالات الاتصالات والصحة والنقل																	; launch-asir
+														; upgrade-asir			      ;               ; asir-upgrade.png				                         ; زيادة					                                     ; زيادة الطاقة الاستيعابية لمطار أبها لتمكينه من استقبال 10 مليون مسافر														; upgrade-asir
+														; investments-asir		      ;               ; asir-investments.png			                         ; استثمارات				                                     ; استثمارات تقدر بأكثر من 13 مليار دولار لتطوير مشاريع حيوية مثل إنشاء معالم سياحية من شأنها أن تحوّل عسير إلى وجهة عالمية	; investments-asir
+                                                        ; buid-asir				      ;               ; asir-build.png				                             ; بناء						                                     ; بناء 23,000 غرفة فندقية ليصل العدد الإجمالي إلى 37,000 غرفة بحلول عام 2030       											; buid-asir
+
+	
+	
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																									; keyStrengths(&componentRef) 																												  ; investmentOpportunities(&componentRef)
+							   ; asir		 		;				    ;  asir-strategic-component  				 ; asir-keyfacts3,asir-keyfacts4,asir-keyfacts5,asir-keyfacts6,asir-keyfacts7,asir-keyfacts8,asir-keyfacts9,asir-keyfacts10,asir-keyfacts11,asir-keyfacts12    ;asir-unique-climate, asir-quality-of-higher-education,asir-tourist-potential,asir-business-infrastructure, asir-healthcare-infrastructure    ;	develop-asir, launch-asir, upgrade-asir, investments-asir, buid-asir
+	
+	
+

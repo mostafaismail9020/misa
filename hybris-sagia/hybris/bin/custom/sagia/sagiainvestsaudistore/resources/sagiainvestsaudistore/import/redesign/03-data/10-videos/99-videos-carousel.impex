@@ -1,0 +1,24 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE InvestSaudiWebinarVideoComponent; uid[unique = true]        ; name                      ; title[lang = en]                         ; $contentCV[unique = true]
+                                              ; webinar-video-component-1 ; Webinar Video Component 1 ; Logistics Incentives and Services        ;                                 
+                                              ; webinar-video-component-2 ; Webinar Video Component 2 ; Healthcare & Life Sciences Sector        ;      						  
+                                              ; webinar-video-component-3 ; Webinar Video Component 3 ; ICT Sector                               ;                          
+
+
+INSERT_UPDATE PortalVideosCarouselComponent	; $contentCV[unique = true]	; uid[unique = true]   			; videos(uid, $contentCV)														; &componentRef
+											; 							; portalVideosCarouselComponent	; webinar-video-component-1,webinar-video-component-2,webinar-video-component-3 ; portalVideosCarouselComponent
+
+

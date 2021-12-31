@@ -1,0 +1,27 @@
+$page = sample-industrial-manufacturing
+$template = portalSectorTemplate
+$pageName = Industrial and Manufacturing
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+INSERT_UPDATE CategoryPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); $contentCV[unique = true]; defaultPage[default = 'false']; approvalStatus(code)[default = 'approved']
+                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ;                          ;                               ;
+
+INSERT_UPDATE CMSCategoryRestriction; uid[unique = true]                          ; categories(code, $catalogVersion); $contentCV[unique = true]; pages(uid, $contentCV)
+                                    ; sample-industrial-manufacturing-restriction ; sample-industrial-manufacturing  ;                          ; sample-industrial-manufacturing
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef); $contentCV
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                             ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ;                             ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;

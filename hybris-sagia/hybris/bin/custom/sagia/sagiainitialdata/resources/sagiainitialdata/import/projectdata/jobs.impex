@@ -1,0 +1,10 @@
+INSERT_UPDATE CleanUpMediaCronJob ; code[unique=true]          ; job(code)            ; singleExecutable    ; sessionLanguage(isocode)
+                                  ; cleanUpMediaFilesJob       ; cleanUpMediaFilesJob ; false               ; en
+
+INSERT_UPDATE CleanUpDraftCronJob ; code[unique=true]          ; job(code)            ; singleExecutable    ; sessionLanguage(isocode)
+                                  ; cleanUpDraftJob            ; cleanUpDraftJob      ; false               ; en
+
+
+INSERT_UPDATE Trigger             ; cronJob(code)[unique=true] ; cronExpression       ; active[default=true]
+                                  ; cleanUpMediaFilesJob       ; 0 0/30 * * * ?
+                                  ; cleanUpDraftJob            ; 0 0 0/1 * * ?

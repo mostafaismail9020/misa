@@ -1,0 +1,952 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000091')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000091')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000091",
+        "SrGuid": "00155D56-5E0B-1ED7-B893-A0633FA980CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513209600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000091')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000091')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000091')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000090')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000090')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000090",
+        "SrGuid": "00155D56-5E0B-1ED7-B893-317156E840CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513209600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000090')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000090')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000090')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000089')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000089')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000089",
+        "SrGuid": "00155D56-5E0B-1ED7-B892-F0C5EE1BE0CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513209600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000089')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000089')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000089')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000088')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000088')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000088",
+        "SrGuid": "00155D56-5E0B-1ED7-B7FE-E6C1802760CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513123200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000088')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000088')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000088')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000087')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000087')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000087",
+        "SrGuid": "00155D56-5E0B-1ED7-B7FA-CC7F04FB00CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513123200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000087')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000087')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000087')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000086')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000086')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000086",
+        "SrGuid": "00155D56-5E0B-1ED7-B7FA-B01B221E20CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513123200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000086')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000086')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000086')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000085')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000085')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000085",
+        "SrGuid": "00155D56-5E0B-1ED7-B7FA-7535018FC0CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513123200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000085')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000085')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000085')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000084')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000084')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000084",
+        "SrGuid": "00155D56-5E0B-1ED7-B7F9-FEC6715A20CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513123200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000084')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000084')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000084')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000083')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000083')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000083",
+        "SrGuid": "00155D56-5E0B-1ED7-B7F9-E94953FEA0CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513123200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000083')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000083')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000083')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000082')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000082')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000082",
+        "SrGuid": "00155D56-5E0B-1ED7-B7F9-6C6E315820CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513123200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000082')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000082')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000082')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000081')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000081')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000081",
+        "SrGuid": "00155D56-5E0B-1ED7-B7F8-60266BEC20CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1513123200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000081')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000081')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000081')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000080')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000080')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000080",
+        "SrGuid": "00155D56-5E0B-1ED7-B7F8-51B1F01100CA",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1513123200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000080')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000080')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000080')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000051')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000051')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000051",
+        "SrGuid": "00155D74-370C-1ED5-AAC5-807F5CD138A5",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1450915200000)/",
+        "SrStCode": "E0002",
+        "SrStDesc": "Completed",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000051')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000051')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000051')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000050')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000050')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": true,
+        "SrID": "50000050",
+        "SrGuid": "00155D74-370C-1ED5-AAC5-4EBD0C0AB8A5",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1450915200000)/",
+        "SrStCode": "E0003",
+        "SrStDesc": "Rejected",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000050')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000050')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000050')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000003')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000003')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": true,
+        "SrID": "50000003",
+        "SrGuid": "14FEB556-CA71-1EE5-97BC-A463CDB06D38",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1442534400000)/",
+        "SrStCode": "E0003",
+        "SrStDesc": "Rejected",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000003')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000003')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000003')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000002')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000002')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": true,
+        "SrID": "50000002",
+        "SrGuid": "14FEB556-CA71-1EE5-97BC-85E0B1942D38",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1442534400000)/",
+        "SrStCode": "E0003",
+        "SrStDesc": "Rejected",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000002')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000002')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000002')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000001')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000001')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "50000001",
+        "SrGuid": "14FEB556-CA71-1EE5-96DA-545E0362CD38",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1442188800000)/",
+        "SrStCode": "E0002",
+        "SrStDesc": "Completed",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000001')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000001')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000001')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000971')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000971')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": true,
+        "SrID": "10000971",
+        "SrGuid": "14FEB556-CA71-1EE5-94C5-F3ACAC1DED38",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441238400000)/",
+        "SrStCode": "E0003",
+        "SrStDesc": "Rejected",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000971')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000971')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000971')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000970')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000970')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "10000970",
+        "SrGuid": "14FEB556-CA71-1EE5-94C5-E72B6EF6ED38",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441238400000)/",
+        "SrStCode": "E0002",
+        "SrStDesc": "Completed",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000970')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000970')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000970')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000951')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000951')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "10000951",
+        "SrGuid": "14FEB556-CA71-1EE5-93F5-A826353AAD38",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1440979200000)/",
+        "SrStCode": "E0014",
+        "SrStDesc": "Resolved",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000951')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000951')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000951')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000950')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000950')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "10000950",
+        "SrGuid": "14FEB556-CA71-1EE5-93F5-5710DE5DED38",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1440979200000)/",
+        "SrStCode": "E0014",
+        "SrStDesc": "Resolved",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000950')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000950')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000950')/LicenseReplToTextNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000949')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000949')",
+          "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+        },
+        "ReApply": false,
+        "SrID": "10000949",
+        "SrGuid": "14FEB556-CA71-1EE5-93F5-393EA8672D38",
+        "LicID": "12822",
+        "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1440979200000)/",
+        "SrStCode": "E0014",
+        "SrStDesc": "Resolved",
+        "LicExDate": "/Date(1694044800000)/",
+        "ValidFrom": "/Date(1410393600000)/",
+        "TransType": "ZSR8",
+        "Action": "00",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "NonChangable": false,
+        "TermCond": false,
+        "LicenseReplToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000949')/LicenseReplToUploadNav"
+          }
+        },
+        "LicenseReplToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000949')/LicenseReplToContentNav"
+          }
+        },
+        "LicenseReplToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('10000949')/LicenseReplToTextNav"
+          }
+        }
+      }
+    ]
+  }
+}

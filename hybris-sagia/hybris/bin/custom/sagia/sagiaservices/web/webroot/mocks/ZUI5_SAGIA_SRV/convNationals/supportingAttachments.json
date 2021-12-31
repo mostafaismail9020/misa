@@ -1,0 +1,51 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR7',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR7',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZSR7",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          1",
+        "FieldSubtype": "",
+        "Description": "Last Budget",
+        "Dockey_ID": "1012",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR7',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR7',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZSR7",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          2",
+        "FieldSubtype": "",
+        "Description": "SIDF approval (industrial)",
+        "Dockey_ID": "1342",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR7',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%203')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR7',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%203')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZSR7",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          3",
+        "FieldSubtype": "",
+        "Description": "Pledge for complete documentation and CR Amendment",
+        "Dockey_ID": "1344",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      }
+    ]
+  }
+}

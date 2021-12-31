@@ -1,0 +1,119 @@
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<groups xmlns="http://www.isdc.ro/wro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
+	
+	<import>classpath:wro_addons.xml</import>
+
+
+	<group name="alpha_responsive">
+		<css>/_ui/responsive/theme-alpha/css/style.css</css>
+	</group>
+
+	<group name="lambda_responsive">
+		<css>/_ui/responsive/theme-lambda/css/style.css</css>
+	</group>
+	
+	<group name="all_responsive">
+	
+		<css>/_ui/responsive/theme-alpha/css/particles.css</css>
+		
+		<js>/_ui/responsive/theme-alpha/js/sagia.I18n.js</js>
+		<js>/_ui/responsive/theme-alpha/js/polyfill.js</js>
+		<js>/_ui/responsive/theme-alpha/js/formDataPolyfill.js</js>
+		<js minimize="false">/_ui/responsive/theme-alpha/js/jquery-3.3.1.min.js</js>
+		<js>/_ui/responsive/theme-alpha/js/jquery.tabs.min.js</js>
+		<js>/_ui/responsive/theme-alpha/js/jquery.menu-aim.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia-jquery.select2.js</js>
+		<js>/_ui/responsive/theme-alpha/js/popper.min.js</js>
+		<js>/_ui/responsive/theme-alpha/js/bootstrap/util.js</js>
+		<js>/_ui/responsive/theme-alpha/js/bootstrap/modal.js</js>
+		<js>/_ui/responsive/common/js/Imager.min.js</js>
+		<js>/_ui/responsive/common/js/jquery.blockUI-2.66.js</js>
+		<js>/_ui/responsive/common/js/jquery.validate.js</js>
+		<js>/_ui/responsive/common/js/additional-methods.js</js>
+		<js>/_ui/responsive/common/js/jquery.colorbox-min.js</js>
+		<js>/_ui/responsive/common/js/jquery.form.min.js</js>
+		<js>/_ui/responsive/common/js/jquery.hoverIntent.js</js>
+		<js>/_ui/responsive/common/js/jquery.pstrength.custom-1.2.0.js</js>
+		<js>/_ui/responsive/common/js/jquery.syncheight.custom.js</js>
+		<js>/_ui/responsive/common/js/jquery.tabs.custom.js</js>
+		<js>/_ui/responsive/common/js/jquery-ui-1.12.1.min.js</js>
+		<js>/_ui/responsive/common/js/jquery.zoom.custom.js</js>
+		<js>/_ui/responsive/common/js/owl.carousel.custom.js</js>
+		<js>/_ui/responsive/common/js/jquery.tmpl-1.0.0pre.min.js</js>
+		<js>/_ui/responsive/common/js/jquery.currencies.min.js</js>
+		<js>/_ui/responsive/common/js/jquery.waitforimages.min.js</js>
+		<js>/_ui/responsive/common/js/jquery.slideviewer.custom.1.2.js</js>
+		<js>/_ui/responsive/common/js/jsrender.min.js</js>
+		<js>/_ui/responsive/common/js/main.js</js>
+		<js>/_ui/responsive/common/js/acc.autocomplete.js</js>
+		<js>/_ui/responsive/common/js/acc.colorbox.js</js>
+		<js>/_ui/responsive/common/js/acc.common.js</js>
+		<js>/_ui/responsive/theme-alpha/js/_autoload.js</js>
+		<js>/_ui/responsive/theme-alpha/js/enquire.min.js</js>
+		<js>/_ui/responsive/theme-alpha/js/Chart.js</js>
+		<js>/_ui/responsive/theme-alpha/js/bootstrap/tooltip.js</js>
+		<js>/_ui/responsive/theme-alpha/js/js-calendar/js-calendar.js</js>
+		<js>/_ui/responsive/theme-alpha/js/flatpickr.min.js</js>
+		<js>/_ui/responsive/theme-alpha/js/i10n/ar.js</js>
+		<js>/_ui/responsive/theme-alpha/js/jquery.qrcode.js</js>
+		<js>/_ui/responsive/theme-alpha/js/qrcode.js</js>
+		<js>/_ui/responsive/theme-alpha/js/picturefill.min.js</js>
+
+        <js>/_ui/responsive/theme-alpha/js/jquery_calendars/jquery.calendars.min.js</js>
+        <js>/_ui/responsive/theme-alpha/js/jquery_calendars/jquery.calendars.plus.min.js</js>
+        <js>/_ui/responsive/theme-alpha/js/jquery_calendars/jquery.plugin.min.js</js>
+        <js>/_ui/responsive/theme-alpha/js/jquery_calendars/jquery.calendars.picker.min.js</js>
+        <js>/_ui/responsive/theme-alpha/js/jquery_calendars/jquery.calendars.ummalqura.min.js</js>
+        <js>/_ui/responsive/theme-alpha/js/jquery_calendars/jquery.calendars.picker-ar.js</js>
+        <js>/_ui/responsive/theme-alpha/js/jquery_calendars/jquery.calendars.ummalqura-ar.js</js>
+
+		<js>/_ui/responsive/theme-alpha/js/sagia.common.js</js>
+        <js>/_ui/responsive/theme-alpha/js/sagia.ratings.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.statusUpdate.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.globalAlerts.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.formElements.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.jquery.search.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.sagiaNavigation.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.tabComponent.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.mainSections.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.panelTabs.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.eServiceTour.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.expandTables.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.expandContent.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.expandService.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.stepsList.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.showTarget.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.fileInput.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.fileInputBox.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.formRangeSlider.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.deleteDropdown.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.realTimeOnlineSupport.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.serviceMenu.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.toggleView.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.pagination.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.fileListUpload.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.termsAndConditions.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.messages.js</js>
+
+		<js>/_ui/responsive/theme-alpha/js/acc.calendarcommons.js</js>
+        <js>/_ui/responsive/theme-alpha/js/sagia.investsaudiHeader.js</js>
+
+		<js>/_ui/responsive/theme-alpha/js/sagia.I18n.js</js>
+		<js>/_ui/responsive/theme-alpha/js/sagia.messages.js</js>
+		
+		<!-- Cms Action JavaScript files -->
+        <js>/_ui/responsive/common/js/cms/*.js</js>
+        
+    </group>
+   
+</groups>

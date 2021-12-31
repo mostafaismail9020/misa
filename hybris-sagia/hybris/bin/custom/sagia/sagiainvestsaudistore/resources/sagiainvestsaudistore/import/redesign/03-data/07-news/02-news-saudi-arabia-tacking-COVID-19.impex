@@ -1,0 +1,56 @@
+######### NEWS SAUDI ARBIAN TRACKING OF COVID-19######################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+$newsTitleAr=اقتصادي / وزير الاستثمار: المملكة تعاملت مع جائحة كورونا بمرونة عالية وكسبت ثقة المستثمرين
+$shortDescAr= اقتصادي / وزير الاستثمار: المملكة تعاملت مع جائحة كورونا بمرونة عالية وكسبت ثقة المستثمرين
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                      			; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; news-saudi-arabia-tacking-COVID-19.jpg             ; news-saudi-arabia-tacking-COVID-19.jpg     		; $siteResource/news-saudi-arabia-tacking-COVID-19.jpg                         ;                 image/jpg                ;                                          ; ""     ;
+                   ; news-saudi-arabia-tacking-COVID-19-thumbnail.jpg   ; news-saudi-arabia-tacking-COVID-19-thumbnail.jpg  ; $siteResource/news-saudi-arabia-tacking-COVID-19-thumbnail.jpg               ;                 image/jpg                ;                                          ; ""     ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]     		; $medias                  	 																; $contentCV;
+                            ; media-container-tacking-COVID-19 	; news-saudi-arabia-tacking-COVID-19.jpg,news-saudi-arabia-tacking-COVID-19-thumbnail.jpg 	;           ;
+
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true]; uid[unique = true]                   ; newsTitle[lang = en]                                                  	; newsDate[dateformat = dd.MM.yyyy HH:mm:ss]    ; newsUrl
+                                      ;							; news-saudi-arabia-tacking-COVID-19   ; Saudi Arabia tackling of COVID-19 pandemic gains investors' confidence ; 27.01.2021 00:00:00                           ;                     
+
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]          			; newsShortInformation[lang = en]	;
+									  ;							 ; news-saudi-arabia-tacking-COVID-19   ; "The Minister of Investment, Eng. Khalid Al-Falih, affirmed that Saudi Arabia has dealt with the repercussions of COVID-19 pandemic in a manner that surpassed many countries, through the leadership that demonstrated the Kingdom's resilience and its superior ability to deal with crises.It strengthened investor confidence, as foreign direct investment in the Kingdom increased greatly in 2020 compared to the previous year.";
+							   
+	
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]					; newsFullDescription[lang = en]
+                               ;						  ; news-saudi-arabia-tacking-COVID-19  ; "
+This came in session titled  Leveling up: How will a new era of interdependence reinvigorate international investment? , during the Future Investment Initiative, with the participation of Dr. Rania Al-Mashat, Minister of International Cooperation of the Arab Republic of Egypt; Sultan Ahmed bin Sulayem, Group Chairman and CEO, DP World; Lord Grimstone of Boscobel; Minister for Investment at the UK Department for International Trade and Eric Cantor, Vice Chairman and Managing Director, Moelis and Company. The session discussed policies aimed at enhancing investment and business partnerships, reflecting the prevailing realities and geopolitical situations.
+<p>Eng. Al-Falih expressed his optimism about the future of the global economy. He indicated that the world went through similar circumstances 100 years ago, as it faced the Spanish flu, and then it was able to bounce back and benefit from the economic recovery. Today the world is facing the COVID-19 pandemic, but with greater and more advanced capabilities.</p>
+<p>The Minister of Investment highlighted a set of changes that occurred during 2020, including consumption patterns and technology uses, trade tensions and changing corporate strategies, and the pandemic's impact on supply and demand and foreign direct investment.</p>
+<p>Eng. Al-Falih stressed that the Kingdom is continuing to create an exceptional investment environment, as it has changed and amended more than 200 of 400 legislations, which it has reformed to meet the needs of investors. As a result, the Kingdom has leapfrogged global indices on risk and ease of doing business.</p>
+<p>He indicated that the pandemic demonstrated the importance of technology and future sectors, such as the data industry, the logistics, biotechnology and others, stressing that the Kingdom is focusing on developing its capabilities in the future sectors. He added that industries need to enhance the strength of the digital infrastructure in order to grow and prosper, supported by the necessary legislation and regulations, and this is on top the Ministry of Investment priorities.</p>
+";
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]					; newsFullDescription[lang = ar]
+                               ;						  ; news-saudi-arabia-tacking-COVID-19  ; "
+<p>أكد معالي وزير الاستثمار المهندس خالد بن عبدالعزيز الفالح, أن المملكة العربية السعودية تعاملت مع تداعيات الأزمة التي تسببت بها جائحة كورونا كوفيد-19 بأسلوب تفوقت فيه على الكثير من الدول، وذلك من خلال القيادة الحكيمة التي أثبتت مرونة المملكة وقدرتها الفائقة على التعامل مع الأزمات، ورسخت من ثقة المستثمرين, حيث ارتفع الاستثمار الأجنبي المباشر في المملكة خلال عام 2020 بنسبة أكبر من العام السابق.</p>
+<p>جاء ذلك في جلسة بعنوان  نحو المستقبل : في عالم تحكمه التشاركية والترابط, ماهو مستقبل الاستثمار الدولي؟ ضمن جلسات مؤتمر مبادرة مستقبل الاستثمار, بمشاركة معالي وزيرة التعاون الدولي بجمهورية مصر العربية الدكتورة رانيا المشاط, ومعالي رئيس مجلس الإدارة الرئيس التنفيذي لموانئ دبي العالمية سلطان أحمد بن سليم، ووزير الدولة لشؤون التجارة في المملكة المتحدة اللورد غيري غريمستون، ونائب رئيس مجلس الإدارة المدير العام   لموليس آند كومباني إيريك كانتور, والرئيس التنفيذي لصندوق الاستثمار المباشر الروسي كيريل ديميترييف، التي تناولت السياسات الرامية إلى تعزيز الاستثمار والشراكات التجارية بما يعكس الوقائع والأوضاع الجيوسياسية السائدة.</p>
+<p>وأبدى المهندس الفالح تفاؤله حيال مستقبل الاقتصاد العالمي, مشيراً إلى أن العالم مر بظروف مشابهة منذ 100 عام, حيث واجه الحمى الإسبانية، وبعد ذلك استطاع النهوض والاستفادة من الانتعاش الاقتصادي، واليوم يواجه العالم جائحة كورونا ولكن بقدرات أكبر وأكثر تطوراً.</p>
+<p>وأبرز الفالح مجموعة من المتغيرات التي طرأت خلال عام 2020، منها أنماط الاستهلاك واستخدامات التكنولوجيا، بالإضافة إلى التوترات التجارية وتغير إستراتيجيات الشركات، وانتهاء بتأثير الجائحة على العرض والطلب والاستثمارات الأجنبية المباشرة.</p>
+<p>وحول تشريعات وتنظيمات البيئة الاستثمارية في المملكة، أكد المهندس الفالح أن المملكة ماضية في إيجاد بيئة استثمارية استثنائية، حيث قامت بتغيير وتعديل أكثر من 200 تشريع من أصل 400، عملت على إصلاحها لتلبية حاجات المستثمرين، ونتيجة لذلك حققت المملكة قفزات كبيرة في المؤشرات العالمية المتعلقة بسهولة ممارسة الأعمال.</p>
+<p>وبين معاليه أن الجائحة أظهرت أهمية التقنية وقطاعات المستقبل، مثل صناعة البيانات والقطاع اللوجستي والتكنولوجيا الحيوية وغيرها, مؤكداً أن المملكة تركز على تطوير قدراتها في قطاعات المستقبل, والصناعات بحاجة لتعزيز قوة البنية التحتية الرقمية لكي تنمو وتزدهر، مدعومة بالتشريعات واللوائح اللازمة، وتحقيق ذلك يأتي على رأس أولويات وزارة الاستثمار</p>
+";
+
+				   
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true]; uid[unique = true]                ; newsDetailsImage(code, $contentCV)    ; newsThumbnailImage(code, $contentCV)             ; $galleryImages	;
+                                      ;                         ; news-saudi-arabia-tacking-COVID-19; news-saudi-arabia-tacking-COVID-19.jpg; news-saudi-arabia-tacking-COVID-19-thumbnail.jpg ;    	;
+  
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true]; uid[unique = true]				; newsTitle[lang = ar]; newsShortInformation[lang=ar];
+									  ; 						; news-saudi-arabia-tacking-COVID-19; $newsTitleAr        ; $shortDescAr;                                                                  

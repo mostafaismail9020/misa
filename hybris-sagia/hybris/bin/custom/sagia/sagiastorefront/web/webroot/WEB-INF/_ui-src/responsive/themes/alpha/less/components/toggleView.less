@@ -1,0 +1,32 @@
+.toggleView {
+    display: inline-flex;
+    
+    &-action {
+        width: 25px;
+        height: 25px;
+        margin-right: 13px;
+        &:last-child {
+            margin-right: 0;
+        }
+        
+        svg {
+            width: 100%;
+            height: auto;
+        }
+        
+        &:hover,
+        &:focus {
+            
+            svg g {
+                fill: darken(#DADDE1, 5%);
+            }
+        }        
+        
+        &.active {
+            
+            svg g {
+                fill: @apple;
+            }
+        }
+    }
+}

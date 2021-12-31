@@ -1,0 +1,9 @@
+#Ant properties
+#Wed Dec 13 13:56:21 CET 2017
+builddate=20171213 1354
+description=casblogcockpit
+name=casblogcockpit
+releasedate=20160407 1737
+vendor=hybris
+version=6.0.0.21
+version.api=6.0.0

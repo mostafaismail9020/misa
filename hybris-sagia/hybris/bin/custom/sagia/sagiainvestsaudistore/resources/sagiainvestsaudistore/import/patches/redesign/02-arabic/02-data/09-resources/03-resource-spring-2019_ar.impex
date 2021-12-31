@@ -1,0 +1,25 @@
+#### Impex For Spring 2019 ####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]		;resourceTitle[lang = ar] 					;resourceShortInformation[lang = ar]										;&componentRef;
+										  ; 						;resource-spring-2019	;موجز مستجدات الاستثمار  ربيع 2019			;"ابرز مستجدات الاستثمار في الربع الأول من عام 2019"							;resource-spring-2019;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]		;resourceFullDescription[lang = ar]	;
+										  ;							;resource-spring-2019   ;"
+<p>نفخر إذ نحتفل بالذكرى الثالثة لانطلاقة رؤية المملكة 2030 أن نعرض لكم (موجز الاستثمار)، ويرصد هذا التقرير أهم مستجدات الاستثمار في المملكة خلال الربع الأول من العام 2019 إذ يتضمن عددًا من أهم الصفقات الاستثمارية التي تمت خلال هذه المرحلة، إضافة إلى عرض ارتباط هذه الصفقات الاستثمارية بفرص استثمارية أكبر.</p>
+<p>ويتضمن التقرير أيضًا مستجدات الخصخصة المتسارعة والشراكات التي تتم بين القطاعين السعوديين الحكومي والخاص، وانطلاقة المشاريع الجديدة الكبرى.</p>
+<p>يتضمن التقرير: </p>
+<ul id='arabic-list'>
+<li>أرقام التراخيص الجديدة</li>
+<li> أكبر الدول المستثمرة</li>
+<li>أكثر القطاعات استثمارًا</li>
+<li>المشاريع الكبرى والفرص</li>
+</ul>
+";

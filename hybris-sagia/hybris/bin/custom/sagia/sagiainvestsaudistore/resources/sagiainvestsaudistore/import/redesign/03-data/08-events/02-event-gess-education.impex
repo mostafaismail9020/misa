@@ -1,0 +1,45 @@
+############# EVENT  GESS Education ########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails; $contentCV[unique = true] ;uid[unique = true]			;keyName[lang = en]				;keyValue[lang = en];
+							;							;gess-key-1          			;Event attendees        		;5,000				;
+							;							;gess-key-2          			;Booth Attendees				;2,000				;
+								  
+			
+INSERT_UPDATE Media; code[unique = true]            ; realFileName                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; GESS-banner-image.jpg   		; GESS-banner-image.jpg   		; $siteResource/GESS-banner-image.jpg                                           ; image/jpg                   ;                                          ; ""     ;
+                   ; GESS-Thumbnail-image.jpg       ; GESS-Thumbnail-image.jpg      ; $siteResource/GESS-Thumbnail-image.jpg                                        ; image/jpg                   ;                                          ; ""     ;
+                   ; event-gallary-image.png        ; event-gallary-image.png       ; $siteResource/event-gallary-image.png                                         ; image/png                   ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]			; $medias					; $contentCV;
+                            ; media-container-gess-educaton   	; event-gallary-image.png	;           ;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	; eventUrl(uid, $contentCV) ;eventLocation[lang = en]	;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss];eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+										;						  ; event-gess-educaton ; 							;"Dubai"                 	;25.02.2020 00:00:00                             ;27.02.2020 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	;eventName[lang = en]   ;eventShortInformation[lang = en];
+										;						  ; event-gess-educaton ;GESS Education         ;"The Ministry of Investment is participating with a number of entities in the Ministry of Education pavilion.";
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventKeyDetails(uid, $contentCV);
+										;						  ;event-gess-educaton  ;gess-key-1,gess-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventBannerImage(code, $contentCV)	;eventThumbnailImage(code, $contentCV)	;eventGalleryImages(qualifier, $contentCV);
+										;						  ;event-gess-educaton	;GESS-banner-image.jpg				;GESS-Thumbnail-image.jpg				;media-container-gess-educaton	;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventFullDescription[lang = en];
+										;						  ;event-gess-educaton  ;					 ;

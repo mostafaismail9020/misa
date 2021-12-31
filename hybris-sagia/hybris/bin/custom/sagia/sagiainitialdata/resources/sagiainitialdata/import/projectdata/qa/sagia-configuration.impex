@@ -1,0 +1,33 @@
+INSERT_UPDATE SagiaConfiguration; key[unique = true]; value; displayValue[default=true]
+; technicalUsername; MCM;;
+; enableSmsService; false;;
+; smsServiceUrl ; https://sagia.local:9002/sagiaservices/mock/smsService?REQUESTTYPE=SMSSubmitReq&ORIGIN_ADDR=SAGIA&TYPE=0;
+#; smsServiceUrl ; http://awaljawaly.awalservices.com.sa:8001/Send.aspx?REQUESTTYPE=SMSSubmitReq&ORIGIN_ADDR=SAGIA&TYPE=0
+; smsServiceUser; SAGIA;;
+; smsServicePassword; saPassword; false;
+; unifiedLicenseUrl ; https://sagia.meras.gov.sa/
+; itemsPerPage ; 5
+; showitemsPerPage ; "5,10,15,25,50,100"
+; realtimeEmailUs; test@sagia.com
+; realtimeCallLocal; 8002449990
+; realtimeCallInternational; 00966112035777
+; googleMapKey; AIzaSyCku8HZ0sbzK30T4-NC-tv0BX4_rcAz9DI
+; chatUrl;http://10.110.80.159:8000/ecf/12/sample/visitor.html
+; webcallbackSoapUrl;http://10.110.80.169/OII/IciSystemService.asmx
+;webcall_En_Queue;5702
+;webcall_Ar_Queue;5703
+; enableSalaryAndEmploymentOnDashboard; false
+;mandatorySurvey ; false
+; enableTwoFactorAuthService  ; false                                                                                                    ;                            ;  
+
+#http://chatq.mysagia.gov
+#; chatUrl;https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606
+; dashboardBannerUrl ; http://testurl.com
+
+INSERT_UPDATE SagiaPasswordRuleConfig; key[unique = true]; value
+# Minimum 8 characters: at least 5 letters, 2 digits and 1 special character.
+; passwordRegex; .+;;
+ 
+INSERT_UPDATE SagiaPasswordErrorMessageConfig; langCode[unique = true]; name ; value
+; en; passwordErrorMessage; Password must contain at minimum 8 characters: at least 5 letters, 2 digits and 1 special character.
+; ar; passwordErrorMessage; كلمة المرور يجب ان تتكون على الأقل من 8 خانات : 5 أحرف على الأقل و رقميين  و رمز واحد

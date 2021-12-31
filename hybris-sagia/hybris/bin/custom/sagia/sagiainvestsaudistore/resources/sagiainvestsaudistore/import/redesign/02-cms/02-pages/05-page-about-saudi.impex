@@ -1,0 +1,142 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalGlobalTemplate
+$page = about-invest-saudi
+$pageName = About Invest Saudi
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pageLabel = /aboutSaudi
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]                      ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Invest Saudi - About,About, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]      ; name                              ; &componentRef         	; $contentCV[unique = true]	; description[lang = en]; description[lang = ar]
+                                                  ; generic-paragraph-about	; About Generic Paragraph Component	; generic-paragraph-about	; 							; "
+<section class='container mb-5 general-info'>
+<div class='umb-grid'>
+<div class='grid-section'>
+<div>
+<div class='container page-contents'>
+<div class='row clearfix'>
+<div class='column'>
+<div>
+<p>INVEST SAUDI is Saudi Arabia's nation-wide investment attraction and promotion brand. Overseen by the Ministry of Investment (MISA), INVEST SAUDI facilitates investments in Saudi Arabia that support the country's economic growth and position it at the forefront of the global business world.</p>
+<p>INVEST SAUDI is designed to provide a clear, unified, and effective message about the Kingdom's investment opportunities to both foreign and domestic investors, as well as private sector businesses. It is therefore the primary point of contact for foreign investors seeking assistance before, during, and after their entry into the Kingdom.</p>
+<p>As the Kingdom is living in an era where the economy is thriving and the nation is reviving, INVEST SAUDI brings ministries, government agencies, and the private sector closer together to promote a multitude of investment and business opportunities in the Kingdom, assisting in the Kingdom's long-term economic growth.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+"; "
+<section class='container mb-5 general-info'>
+<div class='umb-grid'>
+<div class='grid-section'>
+<div>
+<div class='container page-contents'>
+<div class='row clearfix'>
+<div class=' column'>
+<div>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+"
+
+INSERT_UPDATE Media ; code[unique = true]    	; realFileName        		; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; about-invest-saudi.png	; about-invest-saudi.png	; $siteResource/about-invest-saudi.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-overview.png	; about-saudi-overview.png	; $siteResource/about-saudi-overview.png                                        ; image/png                   ;                                          ; ""     ;
+
+					; about-saudi-our-aim.png	; about-saudi-our-aim.png	; $siteResource/about-saudi-our-aim.png                                         ; image/png                   ;                                          ; ""     ;
+					; about-saudi-our-goal.png	; about-saudi-our-goal.png	; $siteResource/about-saudi-our-goal.png                                        ; image/png                   ;                                          ; ""     ;
+					; about-saudi-our-mission.png	; about-saudi-our-mission.png	; $siteResource/about-saudi-our-mission.png                             ; image/png                   ;                                          ; ""     ;
+
+					; about-saudi-wealth.png	; about-saudi-wealth.png	; $siteResource/about-saudi-wealth.png                                         	; image/png                   ;                                          ; ""     ;
+					; about-saudi-transperency.png	; about-saudi-transperency.png	; $siteResource/about-saudi-transperency.png                       		; image/png                   ;                                          ; ""     ;
+					; about-saudi-opportunity.png	; about-saudi-opportunity.png	; $siteResource/about-saudi-opportunity.png                        		; image/png                   ;                                          ; ""     ;
+
+					; about-saudi-wedo-1.png	; about-saudi-wedo-1.png	; $siteResource/about-saudi-wedo-1.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-wedo-2.png	; about-saudi-wedo-2.png	; $siteResource/about-saudi-wedo-2.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-wedo-3.png	; about-saudi-wedo-3.png	; $siteResource/about-saudi-wedo-3.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-wedo-4.png	; about-saudi-wedo-4.png	; $siteResource/about-saudi-wedo-4.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-wedo-5.png	; about-saudi-wedo-5.png	; $siteResource/about-saudi-wedo-5.png                                          ; image/png                   ;                                          ; ""     ;
+					
+					; about-saudi-number1.png	; about-saudi-number1.png	; $siteResource/about-saudi-number1.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-number2.png	; about-saudi-number2.png	; $siteResource/about-saudi-number2.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-number3.png	; about-saudi-number3.png	; $siteResource/about-saudi-number3.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-number4.png	; about-saudi-number4.png	; $siteResource/about-saudi-number4.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-number5.png	; about-saudi-number5.png	; $siteResource/about-saudi-number5.png                                          ; image/png                   ;                                          ; ""     ;
+
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]	; name            	 ; descriptionText[lang = ar]	; descriptionText[lang = en]; buttonText[lang = en]  ; buttonText[lang = ar]    ; image(code, $contentCV)	; buttonURL(&linkRef)	; link  ; &componentRef   		; $contentCV[unique = true]
+                                        ; about-saudi-banner-1  ; About Saudi Banner ;								; ABOUT INVEST SAUDI		;         				 ;           				; about-invest-saudi.png   	;  	  					; true  ; about-saudi-banner-1  ;
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      		; name                    		; simpleCMSComponents(&componentRef); &componentRef          		; $contentCV[unique = true]
+                                        ; about-saudi-banner-container 	; About Saudi Banner Container 	; about-saudi-banner-1 				; about-saudi-banner-container 	;
+
+
+INSERT_UPDATE InvestSaudiAboutSaudiOverviewContainer; uid[unique = true]      		; name                    		; simpleCMSComponents(&componentRef); backgroundImage(code, $contentCV)	; &componentRef           			; $contentCV[unique = true]
+													; about-saudi-overview-container; About Saudi Overview Container; generic-paragraph-about 			; about-saudi-overview.png			; about-saudi-overview-container 	;
+
+
+INSERT_UPDATE InvestSaudiAboutSaudiGoalMissionComponent	; uid[unique = true]	; name  		; value[lang = en] 	; text[lang = en]																																					; imageIcon(code, $contentCV)	; &componentRef ; $contentCV[unique = true]
+														; our-goal				; Our Goal		; Our Goal			; Our goal is to support you and your business wherever possible so that investors have an excellent experience in Saudi Arabia.									; about-saudi-our-goal.png		; our-goal		;
+														; our-mission			; Our Mission	; Our Mission		; Our mission is to promote Saudi Arabia as a world-class investment destination and attract investors for the benefit of a sustainable national economic growth.	; about-saudi-our-mission.png	; our-mission	;
+
+INSERT_UPDATE InvestSaudiAboutSaudiGoalMissionContainer	; uid[unique = true]      				; name                 	; simpleCMSComponents(&componentRef); backgroundImage(code, $contentCV)	; &componentRef           				; $contentCV[unique = true]
+														; about-saudi-goal-mission-container 	; Goal Mission Container; our-goal,our-mission 				; about-saudi-our-aim.png			; about-saudi-goal-mission-container 	;
+
+
+INSERT_UPDATE InvestSaudiAboutSaudiOurValuesComponent; uid[unique = true]	; name  		; value[lang = en] 	; text[lang = en]																																; imageIcon(code, $contentCV)	; &componentRef ; $contentCV[unique = true]
+													 ; wealth				; Wealth		; Wealth			; A powerful G20 economy with macroeconomic fundamentals that offer long-term stability and provide a sustainable platform for investment.		; about-saudi-wealth.png		; wealth		;
+													 ; transperency			; Transperency	; Transperency		; Enabling a raft of business reforms aimed at easing investment and bolstering investor support in the Kingdom.								; about-saudi-transperency.png	; transperency	;
+													 ; opportunity			; Opportunity	; Opportunity		; Creating unique opportunities in new sectors in the Kingdom that have hitherto been restricted to international investment.					; about-saudi-opportunity.png	; opportunity	;
+
+INSERT_UPDATE InvestSaudiAboutSaudiOurValuesContainer; uid[unique = true]      			; name                 ; title[lang = en]	; simpleCMSComponents(&componentRef)    ; &componentRef           			; $contentCV[unique = true]
+													 ; about-saudi-our-values-container ; Our Values Container ; OUR VALUES			; wealth,transperency,opportunity 		; about-saudi-our-values-container 	;
+
+
+INSERT_UPDATE InvestSaudiAboutSaudiWhatWeDoComponent; uid[unique = true]	; name   	; numberImage(code, $contentCV)	; text[lang = en]																									; imageIcon(code, $contentCV)	; &componentRef	; $contentCV[unique = true]
+													; we-do-1				; we-do-1	; about-saudi-number1.png		; Transform Saudi Arabia into a global investment powerhouse and realize the objectives set by Vision 2030			; about-saudi-wedo-1.png		; we-do-1		;
+													; we-do-2				; we-do-2	; about-saudi-number2.png		; Elevate the Kingdom’s global reputation with investors by promoting compelling opportunities and success stories	; about-saudi-wedo-2.png		; we-do-2		;
+													; we-do-3				; we-do-3	; about-saudi-number3.png		; Curate opportunities for investors to help support their activities in Saudi Arabia								; about-saudi-wedo-3.png		; we-do-3		;
+													; we-do-4				; we-do-4	; about-saudi-number4.png		; Engage investors everywhere with tales of our rich history and immense untapped potential							; about-saudi-wedo-4.png		; we-do-4		;
+													; we-do-5				; we-do-5	; about-saudi-number5.png		; Create a vibrant and active investment ecosystem by working closely with local and international partners			; about-saudi-wedo-5.png		; we-do-5		;
+
+INSERT_UPDATE InvestSaudiAboutSaudiWhatWeDoContainer; uid[unique = true]      		; name                	; title[lang = en]	; simpleCMSComponents(&componentRef)     	; &componentRef           	; $contentCV[unique = true]
+													; about-what-we-do-container 	; What we do Container 	; WHAT WE DO		; we-do-1,we-do-2,we-do-3,we-do-4,we-do-5	; about-what-we-do-container;
+
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)	; 
+                         ; 							; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                             	;
+                         ; 							; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; about-saudi-banner-container,about-saudi-overview-container,about-saudi-goal-mission-container,about-saudi-our-values-container,about-what-we-do-container		;
+                         ; 							; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                             	;
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]	; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]
+                                ; 							; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;							
+                                ; 							; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; 							; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+

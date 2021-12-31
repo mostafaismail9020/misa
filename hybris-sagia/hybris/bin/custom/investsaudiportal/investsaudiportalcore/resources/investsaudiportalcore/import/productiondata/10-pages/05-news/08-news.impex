@@ -1,0 +1,104 @@
+$page = news-saudi-arabia-announces-54-increase
+$template = portalGlobalTemplate
+$name = SAUDI ARABIA ANNOUNCES 54% INCREASE IN NUMBER OF NEW INTERNATIONAL COMPANIES IN 2019, IN RECORD YEAR FOR FOREIGN INVESTMENT
+$titleEn = $name
+$titleAr = السعودية تُعلن عن أكبر زيادة في أعداد الاستثمارات الأجنبية خلال 10 سنوات.. 54% زيادة في المستثمرين الأجانب خلال 2019
+$shortDescEn = Saudi Arabia sees sharp uptick in the number of new international companies,
+$shortDescAr = كشفت الهيئة العامة للاستثمار اليوم الأحد في تقريرها لمستجدات الاستثمار في
+$pagelabel = /news/saudi-arabia-announces-54-increase-in-number-of-new-international-companies-in-2019-in-record-year-for-foreign-investment
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]         ; realFileName                    ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; investment_highlight_spring ; investment_highlight_spring.jpg ; $siteResource/investment_highlight_spring.jpg                               ;                             ;                                          ; ""     ; ;
+#                   ; newsThumbnailImage-1 ; $siteResource/newsThumbnailImage-1.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias                     ; $contentCV; ; ; ;
+                            ; media-container-$page   ; investment_highlight_spring ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; investment_highlight_spring       ; investment_highlight_spring         ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 19.01.2020 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "
+<ul>
+<li><em>Saudi Arabia sees sharp uptick in the number of new international companies, according to a new&nbsp;</em><em>Invest Saudi report&nbsp;</em>[<a href=""https://investsaudi.sa/en/news/a-special-report-by-invest-saudi-winter-2020/"">https://investsaudi.sa/media/1837/investment-highlights-winter-2020-en-digital.pdf</a>]&nbsp;<em>published by the Saudi Arabian General Investment Authority</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<ul>
+<li><em>Cross-government investment promotion campaigns saw significant success in 2019, with 1,131 new international companies setting up operations throughout the year, compared to 736 companies in 2018</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<ul>
+<li><em>Strong growth in number of international companies demonstrates that the Kingdom is driving forward on its path to achieve the goals set out in Saudi Vision 2030, as skills transfer becomes localized and private sector development creates job opportunities</em></li>
+</ul>
+<p><strong>Riyadh, [19] January 2020</strong>&nbsp;&ndash; As a result of an accelerated effort by the Saudi Arabian General Investment Authority (SAGIA) through the Invest Saudi brand to promote the Kingdom&rsquo;s competitive and open business environment, a total of 1,131 new international companies set up operations in the Kingdom in 2019. This number marks a 54 percent increase when compared to the 2018 figures, making 2019 a record year for Saudi Arabia&rsquo;s rapidly-developing business landscape.</p>
+<p>Invest Saudi provided an annual overview of the Kingdom&rsquo;s investment environment in 2019 in its newly-released Investment Highlights Winter 2020 report, highlighting the latest new international business figures, alongside the year&rsquo;s most important milestone deals, projects and reforms.</p>
+<p>In terms of international companies established, the final quarter of 2019 proved to be the busiest period of the year, with the number of new international companies increasing to 305 from 238 during the same quarter in 2018. The report highlights some 150 investor deals that SAGIA signed across high-priority Vision 2030 sectors in 2019, from tourism to value-added manufacturing.</p>
+<p>Commenting on the progress of foreign investment in the Kingdom,&nbsp;<strong>His Excellency</strong>&nbsp;<strong>Eng. Ibrahim Al Omar, Governor of the Saudi Arabian General Investment Authority (SAGIA)</strong>, said:&nbsp;<em>&ldquo;Guided by Saudi Vision 2030, our country is undergoing a remarkable economic transformation. The continued prosperity of the Kingdom depends on sparking innovation, attracting foreign investors and empowering the private sector. The positive growth numbers that we have seen in the final quarter of 2019 &ndash; and indeed throughout the entire year &ndash; represent a significant milestone on the road to 2030.&rdquo;</em></p>
+<p>Leading growth sectors include construction, manufacturing and ICT, as demand in these industries increases alongside infrastructural development and progress of the Kingdom&rsquo;s giga projects driving forward in line with Vision 2030. During 2019, 193 new construction, 190 manufacturing and 178 ICT companies were established, compared to 111, 113 and 111 established in the three sectors in 2018 respectively.</p>
+<p>&nbsp;</p>
+<p>The Kingdom&rsquo;s growing foreign investment landscape is underpinned by sweeping economic and social reforms made throughout 2019, aimed at improving Saudi Arabia&rsquo;s business climate and attracting new investments. The impact of these reforms is being recognized on a global scale: Saudi Arabia was ranked the world&rsquo;s top improver and reformer by the World Bank, climbing 30 places in the World Bank&rsquo;s Doing Business 2020 report.</p>
+<p>&nbsp;</p>
+<p><strong>Al Omar</strong>&nbsp;continued:<em>&nbsp;&ldquo;The goal of our reform program is to help realize the potential that Saudi Arabia holds for the benefit of Saudi nationals and improve our competitiveness. The investment opportunities that the Kingdom offers international companies also creates opportunities for the transfer of skills, expertise and best practice to local communities across the Kingdom, while providing new private sector job prospects for young Saudi men and women. We consider foreign companies who look to Saudi Arabia as growth partners for their business expansions &ndash; whether they seek a joint-venture with Saudi companies or choose to set up on their own. Out of the new international companies setting up in Saudi Arabia in 2019, 69% were full foreign onwership while 31% were joint venture partnerships with local investors. Our 2019 figures therefore demonstrate how integral new international businesses are to the success of our journey toward 2030.&rdquo;</em></p>
+<p>The 1,131 new companies that were established in 2019 represent a diverse range of global markets. Strong growth comes from long-standing and strategically-important Saudi partners such as the United States and United Kingdom, with 100 UK companies and 82 US companies setting up in 2019 compared to 24 for both countries in 2018. India, Egypt, Jordan and China were also among the top countries represented, with India&rsquo;s share of the market increasing dramatically from 30 companies established in 2018 to 140 in 2019, driven by high-profile royal visits to the country in February 2019. In addition, other top countries from 2018, Jordan and France, were well-represented in 2019.</p>
+<p><strong>Al Omar</strong>&nbsp;concluded:&nbsp;<em>&ldquo;We want to make it easier for foreign companies to set up and do business in Saudi Arabia. We have taken global best practice models and combined them local knowledge and insights in order to eliminate unnecessary barriers to doing business, while making it easier for our new partners from abroad to understand our unique Saudi culture and customs and how they can better integrate and contribute.&rdquo;</em></p>
+<p>SAGIA has played an important role in attracting foreign companies to establish operations in the Kingdom throughout 2019, facilitating a series of high-level investor forums in countries such as China, India, Germany and South Korea, as well as hosting delegations to the Kingdom from the US, UK, Japan and Russia.</p>
+<p>&nbsp;</p>
+<p>SAGIA is also launching high-profile campaigns at key global events leading in to 2020, such as the World Economic Forum in Davos, to raise awareness of the valuable and diverse investment opportunities that Saudi Arabia offers.</p>
+"
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "
+<ul>
+<li>
+<p>كشفت الهيئة العامة للاستثمار اليوم الأحد في تقريرها لمستجدات الاستثمار في المملكة والذي أصدرته تزامناً مع قرب انطلاق أعمال المنتدى الاقتصادي العالمي في ""دافوس""، عن ارتفاع عدد الاستثمارات الأجنبية الجديدة في المملكة بنسبة 54% خلال عام 2019 مقارنةً بعدد الرخص التي تم إصدارها في عام 2018، وبإجمالي 1,130 شركة جديدة، محققة بذلك إقبالاً غير مسبوق على مستوى الاستثمارات الأجنبية خلال العشرة أعوام الماضية.</p>
+<p>&nbsp;</p>
+<p>وتصدرت الشركات الأجنبية من الهند والولايات المتحدة والصين وبريطانيا وفرنسا ومصر والأردن الدول الأكثر استثماراً في المملكة خلال العام 2019، فيما تصدرت قطاعات التصنيع والبناء والاتصالات وتقنية المعلومات القطاعات الأكثر إقبالاً، حيث ارتفع الطلب على هذه القطاعات، إلى جانب تطوير البنية التحتية مدفوعاً بالتقدم الذي تم تحقيقه في المشاريع العملاقة التي تشهدها المملكة تماشيًا مع رؤية 2030، إذ تم خلال عام 2019، تأسيس 193 شركة إنشاءات و190 شركة تصنيع و178 شركة تقنية معلومات واتصالات جديدة.</p>
+<p>&nbsp;</p>
+<p>وشهد العام 2019 دخول 100 شركة بريطانية و82 شركة أمريكية، مقارنةً بـ 24 شركة لكلا البلدين في عام 2018. كما جاءت الهند ومصر والأردن والصين من بين أعلى الدول من حيث عدد الشركات الجديدة التي بدأت الاستثمار في المملكة، حيث ارتفعت حصة الهند من السوق على نحو كبير من 30 شركة في عام 2018 إلى 140 شركة في عام 2019.</p>
+<p>وكان الربع الأخير من عام 2019 هو الأكثر نشاطًا خلال العام، حيث ارتفع عدد الشركات الأجنبية الجديدة التي بدأت الاستثمار في المملكة إلى 305 شركة، مقارنةً بـ 238 شركة خلال نفس الفترة من عام 2018.</p>
+<p>&nbsp;</p>
+<p>وفي تعليقه على نمو الاستثمارات الأجنبية في المملكة، صرح&nbsp;<strong>معالي المهندس إبراهيم العمر، محافظ الهيئة العامة للاستثمار،&nbsp;</strong>بأن المملكة &nbsp;تشهد تحولاً اقتصاديًا هائلاً يعزز من جذب المستثمرين وتمكين القطاع الخاص، لافتاً إلى أن النمو الإيجابي الذي شهدناه خلال العام 2019، يعد خطوة كبيرة في الطريق نحو تحقيق رؤية عام 2030.</p>
+<p>&nbsp;</p>
+<p>وحول الشراكات المحلية والدولية، كشف المهندس العمر أن أحد أهم أهداف الهيئة في جذب الاستثمارات الأجنبية هو توطين التقنية ونقل المعرفة وخلق الوظائف، لافتاً إلى أن أكثر من 30% من مجموع الاستثمارات التي تم جذبها للمملكة ساهمت الهيئة في وضعها على شكل شراكات أجنبية مع القطاع الخاص الوطني، وذلك لتمكين المستثمر المحلي وتعزيز موقعه في كافة المجالات الاستثمارية.</p>
+<p>&nbsp;</p>
+<p>ويأتي هذا النمو في الاستثمارات الأجنبية في المملكة نتيجة للإصلاحات الاقتصادية والاجتماعية الشاملة التي شهدتها البلاد خلال عام 2019 بهدف تحسين البيئة الاستثمارية في المملكة وجذب استثمارات جديدة إليها. وكان البنك الدولي قد أشاد في تقريره ""سهولة ممارسة الأعمال"" الذي أصدره مؤخراً بتأثير تلك الإصلاحات على الصعيد العالمي، حيث وضع المملكة في المرتبة الأولى بين الدول الأسرع تحسنًا وإصلاحًا على مستوى العالم، لتتقدم المملكة بذلك 30 مركزًا في التقرير لعام 2020.</p>
+<p>&nbsp;</p>
+<p>وأطلقت هيئة الاستثمار حملتها التسويقية والإعلامية تحت هوية ""استثمر في السعودية"" للتعريف بالفرص الاستثمارية والإصلاحات التي شهدتها بيئة الاستثمار السعودية وذلك &nbsp;ضمن فعاليات المنتدى الاقتصادي العالمي المنعقد خلال الفترة من 21 وحتى 24 من شهر يناير الجاري في المدينة السويسرية ""دافوس"".</p>
+<p>&nbsp;</p>
+<p>وتشتمل الفعاليات التي تنظمها الهيئة بالتعاون مع شركائها من القطاعين الحكومي والخاص في المملكة على عشاء عمل؛ حيث يلتقي أكثر من 100 شخصية من صناع القرار وكبار المستثمرين العالميين مع نظرائهم السعوديين يوم الثلاثاء القادم للتعرف وبحث الفرص الاستثمارية في المملكة، والاطلاع على المستجدات في بيئة الاستثمار والإصلاحات المرتبطة بها.</p>
+<p>&nbsp;</p>
+<p>كما تتضمن الفعاليات حملات تسويقية كبرى تحتوي على حملة إعلانية مع أهم وسائل الإعلام الدولية، بالإضافة إلى الترويج للاستثمارات في المملكة عبر أكبر المنصات الإعلانية في دافوس.</p>
+</li>
+</ul>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

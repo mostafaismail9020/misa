@@ -1,0 +1,142 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleEn = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 ; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+			  
+					   ; al-jouf-banner-image.png                                       		 ;al-jouf-banner-image.png                                						; $siteResource/al-jouf-banner-image.png                                        			  ;                 image/png                ;                                          ; ""     ;
+					   ; al-jouf-map.png                                                  		 ;al-jouf-map.png                                          						; $siteResource/al-jouf-map.png                                                  			  ;                 image/png                ;                                          ; ""     ;
+					   ; al-jouf-agriculture.png				   	    			                ;al-jouf-agriculture.png				   	    			               		; $siteResource/al-jouf-agriculture.png				   	    			                                                   ;                 image/png                ;                                          ; ""     ;
+					   ; al-jouf-tradeing.png	           						                ;al-jouf-tradeing.png	           						                      ; $siteResource/al-jouf-tradeing.png	           							                                                           ;                 image/png                ;                                          ; ""     ;
+					   ; al-jouf-solarenergy.png	           						                ;al-jouf-solarenergy.png	           						                   	; $siteResource/al-jouf-solarenergy.png	           						                                                       ;                 image/png                ;                                          ; ""     ;
+					   ; al-jouf-non-metallic-mineral-products-manufacturing.png	                ;al-jouf-non-metallic-mineral-products-manufacturing.png	      				; $siteResource/al-jouf-non-metallic-mineral-products-manufacturing.png	                                          ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-logistics1.png			           				                ;al-jouf-logistics1.png			           				               		; $siteResource/al-jouf-logistics1.png			           				                                                   ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-tourism.png			           				                ;al-jouf-tourism.png			           				      				; $siteResource/al-jouf-tourism.png			           					                                          ;                 image/png                ;                                          ; ""     ;   
+					   
+					   
+					   ; al-jouf-population.png        		        ;al-jouf-population.png        		           	; $siteResource/al-jouf-population.png        		                                       ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-active-factories.png   			     ;al-jouf-active-factories.png   				; $siteResource/al-jouf-active-factories.png   		                               		  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-population-growth.png    		        ;al-jouf-population-growth.png    		           	; $siteResource/al-jouf-population-growth.png    			                                               		  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-airport.png              		     	 ;al-jouf-airport.png              					; $siteResource/al-jouf-airport.png              			                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-private-sector-employees.png        	 ;al-jouf-private-sector-employees.png  				; $siteResource/al-jouf-private-sector-employees.png                                      		  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-dams.png        				 		 ;al-jouf-dams.png        							; $siteResource/al-jouf-dams.png        					                               ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-hotels.png					        ;al-jouf-hotels.png					           	; $siteResource/al-jouf-hotels.png					                                            ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-roads-length.png             	    	 ;al-jouf-roads-length.png             	       		; $siteResource/al-jouf-roads-length.png             	 	                                 ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-chambers-of-commerce.png          	 ;al-jouf-chambers-of-commerce.png                    ; $siteResource/al-jouf-chambers-of-commerce.png                                        ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-hospitals.png					        ;al-jouf-hospitals.png					              ; $siteResource/al-jouf-hospitals.png						                                                    ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-industrial-city.png				     ;al-jouf-industrial-city.png					; $siteResource/al-jouf-industrial-city.png			                                   		  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-towns.png						        ;al-jouf-towns.png						   			; $siteResource/al-jouf-towns.png							                                        	  ;                 image/png                ;                                          ; ""     ;   					
+					  
+					  
+					   ; al-jouf-renewable-energy-potential.png     ;al-jouf-renewable-energy-potential.png     		; $siteResource/al-jouf-renewable-energy-potential.png                                  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-jouf-access-jordanian-market.png        ;al-jouf-access-jordanian-market.png              ; $siteResource/al-jouf-access-jordanian-market.png                                         ;                 image/png                ;                                          ; ""     ;   	
+					   ; al-jouf-good-road-accessibility.png     	 ;al-jouf-good-road-accessibility.png           	; $siteResource/al-jouf-good-road-accessibility.png                                   ;                 image/png                ;                                          ; ""     ;   	
+					   ; al-jouf-large-university-capacity.png      ;al-jouf-large-university-capacity.png            ; $siteResource/al-jouf-large-university-capacity.png                                                  ;                 image/png                ;                                          ; ""     ;   	
+					   ; al-jouf-good-infrastructure-utiliti.png    ;al-jouf-good-infrastructure-utiliti.png          ; $siteResource/al-jouf-good-infrastructure-utiliti.png                                              ;                 image/png                ;                                          ; ""     ;   	
+					   ; al-jouf-olive-cultivation.png              ;al-jouf-olive-cultivation.png                    ; $siteResource/al-jouf-olive-cultivation.png                                                  ;                 image/png                ;                                          ; ""     ;   	
+					  
+					; al-jouf-solar-energy.png              ;al-jouf-solar-energy.png                    ; $siteResource/al-jouf-solar-energy.png                                                  ;                 image/png                ;                                          ; ""     ;   	
+					  
+					
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=en]			; bannerText[lang=en]																															    													; bannerImage (code, $contentCV)	; keyFactsHeader [lang = en]		 ; keyStrengthsHeader [lang = en] 	 ; opportunitiesHeader [lang = en]		
+							   ; al-jouf		 		;			; AL-JOUF PROVINCE			    ; 	; al-jouf-banner-image.png		    ; KEY FACTS AND FIGURES	 			 ; REGIONAL BENEFITS		 			 ; INVESTMENT OPPORTUNITIES																																																									
+	
+	
+
+#########################################################	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 		 ;  $contentCV  ; headerText[lang = en]        					; imageIcon  (code, $contentCV)     	   						; &componentRef
+											    ; al-jouf-agriculture		 ; 				; Agriculture				  				    ; al-jouf-agriculture.png				   	    				; al-jouf-agriculture	
+                                                ; al-jouf-trading			 ;              ; Trading	           							; al-jouf-tradeing.png	           								; al-jouf-trading	 
+                                                ; al-jouf-solar-energy	 	 ;              ; Solar energy           						; al-jouf-solarenergy.png	           							; al-jouf-solar-energy	
+                                                ; al-jouf-non-metallic		 ;              ; Non-metallic mineral products manufacturing	; al-jouf-non-metallic-mineral-products-manufacturing.png		; al-jouf-non-metallic	
+                                                ; al-jouf-logistics			 ;              ; Logistics			           					; al-jouf-logistics1.png			           					; al-jouf-logistics		
+												; al-jouf-tourism			 ;              ; Tourism			           					; al-jouf-tourism.png			           						; al-jouf-tourism		
+	 
+	 
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = en] ; value[lang = en] 
+										; al-jouf-strategic-population		;			   ; 520,737		; population
+										; al-jouf-strategic-landmass		;			   ; 85,000 km2 	; in landmass area
+
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = en]	; backgroundImage (code, $contentCV)   	; sectors(&componentRef) 																							; longDescription[lang = en]																																																																																																																																																																												; localizedStats (uid, $contentCV)   				     ; &componentRef
+												 ; al-jouf-strategic-component		;          		; STRATEGIC SECTORS			; al-jouf-map.png						; al-jouf-agriculture,al-jouf-trading,al-jouf-solar-energy,al-jouf-non-metallic,al-jouf-logistics,al-jouf-tourism	; Al-Jouf is one of the Kingdom's oldest inhabited regions and home to archaeological sites - as well as enormous olive and date orchards. Al-Jouf region is characterized by its rich agricultural lands, diversity of crops, the cultivation of olive trees. In fact, the region has the world's largest modern olive farm, according to Guinness World Records. The Saudi government has launched several development projects in the region to stimulate its economy. In 2019, Sakaka solar power plant was established in an area of approximately 6 square kilometers and aims to produce 300 gigawatts of renewable energy by 2030. In addition, Al-Jouf is home to the Dumat Al-Jandal wind farm, the largest in the Middle East.	; al-jouf-strategic-population,al-jouf-strategic-landmass      ;  al-jouf-strategic-component
+                                                                               
+
+#######################################################	
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]		   ; $contentCV ; imageIcon (code, $contentCV) 			; headerText[lang = en]		   	;  text[lang = en]									; &componentRef
+									   ; al-jouf-keyfacts1	       ;			; al-jouf-population.png        		; 531,952	                   	;  population		; al-jouf-keyfacts1	
+									   ; al-jouf-keyfacts2         ;            ; al-jouf-active-factories.png   		; 68		            		;  active factories in Q3 2021                      ; al-jouf-keyfacts2 
+#									   ; al-jouf-keyfacts3         ;            ; al-jouf-population-growth.png    		; 2.10%		               		;  annual population growth between 2013-2019		; al-jouf-keyfacts3 		
+									   ; al-jouf-keyfacts4         ;            ; al-jouf-airport.png              		; 2			            		;  domestic airport     ; al-jouf-keyfacts4 
+									   ; al-jouf-keyfacts5         ;            ; al-jouf-private-sector-employees.png  ; 88,766		               	;  number of employees  					        ; al-jouf-keyfacts5 
+									   ; al-jouf-keyfacts6         ;            ; al-jouf-dams.png        				; 10		                   	;  dams									            ; al-jouf-keyfacts6 
+									   ; al-jouf-keyfacts7         ;            ; al-jouf-hotels.png					; 8		                   		;  Hotels					                        ; al-jouf-keyfacts7 
+									   ; al-jouf-keyfacts8         ;            ; al-jouf-roads-length.png             	; 2,348			               	;  roads length						                ; al-jouf-keyfacts8 
+									   ; al-jouf-keyfacts9         ;            ; al-jouf-chambers-of-commerce.png      ; 2	                   	   	   	;  Chambers of Commerce                             ; al-jouf-keyfacts9 
+									   ; al-jouf-keyfacts10        ;            ; al-jouf-hospitals.png					; 13			               	;  hospitals with 1,820 beds			            ; al-jouf-keyfacts10
+									   ; al-jouf-keyfacts11        ;            ; al-jouf-industrial-city.png			; 1			               		;  industrial city			                        ; al-jouf-keyfacts11
+									   ; al-jouf-keyfacts12        ;            ; al-jouf-towns.png						; 4			               		;  Towns			                                ; al-jouf-keyfacts12
+						   
+									   
+									 
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]		; $contentCV      ; image (code, $contentCV)					      ; text[lang=en]				                       		     ;&componentRef
+                                                                                                                                                                                                        
+										   ; al-jouf-key-strength1	;                 ; al-jouf-renewable-energy-potential.png 	          ; RENEWABLE ENERGY POTENTIAL - DUMAT ALJANDAL WIND FARM LARGEST IN THE MIDDLE EAST                                	 ; al-jouf-key-strength1	 
+                                           ; al-jouf-key-strength2  ;                 ; al-jouf-access-jordanian-market.png    	          ; ACCESS TO THE JORDANIAN MARKET                            	 ; al-jouf-key-strength2    
+                                           ; al-jouf-key-strength3  ;                 ; al-jouf-good-road-accessibility.png    	          ; GOOD ROAD ACCESSIBILITY VIA ROAD EAST-WEST AND NORTH-SOUTH   ; al-jouf-key-strength3    
+                                           ; al-jouf-key-strength4	;                 ; al-jouf-large-university-capacity.png  	          ; LARGE UNIVERSITY CAPACITY                                    ; al-jouf-key-strength4
+                                           ; al-jouf-key-strength5	;                 ; al-jouf-good-infrastructure-utiliti.png           ; GOOD INFRASTRUCTURE AND UTILITIES                         	 ; al-jouf-key-strength5
+		                                   ; al-jouf-key-strength6	;                 ; al-jouf-olive-cultivation.png          	          ; OLIVE CULTIVATION - LARGEST MODERN OLIVE FARM IN THE WORLD (GUINNESS)                                            ; al-jouf-key-strength6	
+	
+	
+#####################################################	
+	
+INSERT_UPDATE ProvinceInvestmentOpportunitiesComponent	; uid[unique=true]		      ; $contentCV	  ; iconImage	(code, $contentCV)					         ; headerText[lang = en]	                                     ; text[lang = en]																															; &componentRef
+													                                                                                                                                                        
+														; al-jouf-investment1			      ;               ; al-jouf-solar-energy.png                                         ; Solar energy                                          ; The Renewable Energy Project Development Office (REPDO) has identified four potential sites for solar farms						; al-jouf-investment1
+														
+	
+	
+#######################################################3
+	
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																																														; keyStrengths(&componentRef) 				; investmentOpportunities(&componentRef)
+							   ; al-jouf		 		;				    ; al-jouf-strategic-component 				; al-jouf-keyfacts1,al-jouf-keyfacts2,al-jouf-keyfacts4,al-jouf-keyfacts5,al-jouf-keyfacts6,al-jouf-keyfacts7,al-jouf-keyfacts8,al-jouf-keyfacts9,al-jouf-keyfacts10,al-jouf-keyfacts11,al-jouf-keyfacts12   							;  al-jouf-key-strength1,al-jouf-key-strength2,al-jouf-key-strength3,al-jouf-key-strength4,al-jouf-key-strength5,al-jouf-key-strength6   ; al-jouf-investment1
+	
+	
+

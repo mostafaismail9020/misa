@@ -1,0 +1,81 @@
+## messageSource=classpath:/sagiacore/messages/email-updateEmailConfirmation_$lang.properties
+#macro(genHtmlLinkStartTag $url)
+<a href="$url"><font color="#666666">
+#end
+#macro(genHtmlLinkEndTag)
+</font></a>
+#end
+#macro(genHtmlLink $url $textColor $bodyContent)
+<a href="$url"><font color="$textColor">$bodyContent</font></a>
+#end
+
+<html>
+	<head>
+	</head>
+	<body bgcolor="#ffffff"
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="center" valign="top">
+				<table width="610" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#fff">
+					<tr>
+						<td align="center" valign="top" bgcolor="#FFFFFF">
+							<table width="570" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td valign="middle">&nbsp;</td>
+								</tr>
+                                <tr>
+                                    <td valign="middle">
+										${ctx.cmsSlotContents.SiteLogo}
+                                        <img src="https://sagia.gov.sa/dist/img/logo.png" alt="Logo" title="Logo" border="0" align="left" />
+                                    </td>
+                                </tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td style="text-align: ${ctx.textAlign}; direction: ${ctx.textDirection};" valign="top">
+									#set ($secureAccountUrl = "${ctx.secureBaseUrl}/my-account")
+									#set ($securePswdResetUrl = "${ctx.secureBaseUrl}/login/pw/request/external")
+									#set ($mailToUrl = "mailto:${ctx.messages.contactUsEmailAddress}")
+									#if(${ctx.baseSite.Uid} == "electronics")
+									#set ( $instructionsContactUs = ${ctx.messages.getMessage('instructionsContactUs_electronics', "#genHtmlLinkStartTag(${ctx.messages.contactUsPage})", "#genHtmlLinkEndTag()", "#genHtmlLink($mailToUrl '#666666' ${ctx.messages.contactUsEmailAddress})")} )
+									#else
+									#set ($faqPage = "${ctx.baseUrl}/faq")
+									#set ( $instructionsContactUs = ${ctx.messages.getMessage('instructionsContactUs', "#genHtmlLinkStartTag($faqPage)", "#genHtmlLinkEndTag()", "#genHtmlLinkStartTag(${ctx.messages.contactUsPage})", "#genHtmlLinkEndTag()", "#genHtmlLink($mailToUrl '#666666' ${ctx.messages.contactUsEmailAddress})")} )
+									#end
+										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif"><b>${ctx.messages.getMessage('salutation',${ctx.username})}</b>,</font></p>
+                                        <p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.getMessage('confirmation',${ctx.newEmail})}</font></p>
+                                        <p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.prevention}</font></p>
+                                        <p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.complimentaryClosing}</font></p>
+										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.signature}</font></p>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+                                <tr>
+                                    <td valign="middle">
+                                        800 244 9990<br>
+                                        +966 11 203 5777<br>
+                                        @SAGIAcare<br>
+                                        InvestorCare@sagia.gov.sa
+                                    </td>
+                                    <td>
+                                        <img src="https://sagia.gov.sa/dist/img/arrow-right-big.png" alt="" style="transform: rotate(180deg);" align="right" />
+                                    </td>
+                                </tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</body>
+</html>

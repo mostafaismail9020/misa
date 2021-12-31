@@ -1,0 +1,182 @@
+.notificationList {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 24px;
+    max-height: calc(~"62vh - 112px");
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    
+    #media-breakpoint-down(sm, {
+        max-height: calc(~"62vh - 112px");
+        overflow: auto;
+    });    
+    
+    &_smallMarginTop {
+        margin-top: 10px;
+    }
+    &_noMargin {
+        margin: 0;
+    }
+
+    &_small {
+        max-width: 400px;
+    }
+
+    &-item {
+        position: relative;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            display: block;
+            width: 2px;
+            background: transparent;
+        }
+        
+        &:after {
+            content: '';
+            display: block;
+            width: calc(~"100% - 60px");
+            bottom: 0;
+            height: 1px;
+            position: absolute;
+            background: #d9d9d9;
+            left: 30px;
+            
+            .notificationList_small & {
+                width: calc(~"100% - 40px");
+                left: 20px;
+            }
+        }
+        
+        &:hover {
+            background: lighten(#f4f4f4, 2%);
+        }
+        
+        &_current,
+        &.select {
+            background: #f4f4f4;
+            &:before {
+                background: @apple;
+            }
+            &:after {
+                display: none;
+            }
+            
+            .notificationList-link .notificationList-id, 
+            .notificationList-id {
+                color: @apple;
+            }
+
+            .notificationList_small & {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
+        &_unread {
+            .notificationList-name {
+                color: @apple;
+            }
+            .notificationList-title:after {
+                display: none;
+            }
+        }
+        
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    &-thumb {
+        padding-right: 15px;
+        
+        .iconElement {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: @pale-grey;
+        }
+    }
+
+    &-link {
+        padding: 12px 30px 9px 30px;
+        display: flex;
+        justify-content: space-between;
+
+        .notificationList_small & {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    
+    &-note {
+        flex: 1 0 auto;
+        max-width: calc(~"100% - 55px");
+    }
+    &-details {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        line-height: 19px;
+        color: #565656;
+    }
+    &-name {
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &-date {
+        flex: 0 1 auto;
+        font-style: italic;
+        font-size: 12px;
+        color: #979da3;
+        line-height: 19px;
+    }
+    &-title {
+        max-width: 100%;
+        white-space: normal;
+        text-align: left;
+
+        &:after {
+            display: inline-block;
+            width: 12px;
+            position: relative;
+            top: 2px;
+            height: 12px;
+            margin-left: 6px;
+            background: url('../icons/check_read.svg') center no-repeat;
+            background-size: 12px auto;
+            content: "";
+        }
+    }
+
+    &_empty &-item {
+        display: none;
+    }
+    &_empty &-item_empty {
+        display: block;
+    }
+    &-item_empty {
+        border-top: solid 1px #d9d9d9;
+        padding: 24px 40px 16px 37px;
+        font-size: 13px;
+        text-align: left;
+        color: #313f4b;
+        
+        &:hover {
+            background: transparent;
+        }
+    }
+}
+
+

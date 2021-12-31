@@ -1,0 +1,12 @@
+INSERT_UPDATE SagiaLegalStatus;code[unique=true];name[lang=en];name[lang=ar]
+;BRFC;Foreign Entity Branch;فرع شركة أجنبية
+;LLC;LLC;شركة ذات مسؤولية محدودة
+;BRLL;LLC Branch;فرع شركة ذات مسؤولية محدودة
+;ILLC;Individual LLC;شركة شخص واحد ذات مسؤولية محدودة
+;JOIN;Public Joint Stock Company;شركة مساهمة عامة
+;BRPS;Public Joint Stock Company Branch;فرع شركة مساهمة عامة
+;CJOI;Closed Joint Stock company;شركة مساهمة مقفلة
+;BRJS;Closed Joint Stock Company Branch;فرع شركة مساهمة مقفلة
+;ICJS;Individual Closed Joint Stock Company;شركة شخص واحد مساهمة مقفلة
+;ESTB;Establishment;مؤسسة فردية
+;BRIN;Establishment Branch;فرع مؤسسة فردية

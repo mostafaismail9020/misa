@@ -1,0 +1,22 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = ar
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ; Commercial-and-Digital-Banking    ;                ; "
+<ul class='bulled-list mt-3'>
+  <li><span>Commercial and digital banks are licensed by the Saudi Central Bank, SAMA to conduct commercial banking activities which include: (Retail and Corporate banking, Treasury,Global Banking,Trade Finance, Cash Management).</span></li>
+  <li><span>Encourage Foreign bank branches from various successful markets to bring their presence in KSA as this will bring capital injection in the country. </span></li>
+ </ul>
+"
+                                ; Insurance     ;                ; "
+<ul class='bulled-list mt-3'>
+  <li><span>Insurance sector in KSA is undergoing a lot of upgrades and opportunities as KSA economy prospers.  </span></li>
+  <li><span>Encouraging foreign investors to buy local insurance companies.  </span></li>
+</ul>
+"
+                                ; Investment-Banking-and-Capital-Market    ;                ; "
+<ul class='bulled-list mt-3'>
+  <li><span>Investment banking and capital market related firms which are licensed by the Capital Market Authority CMA, to conduct investment banking activities which include: (Dealing,Advisory, Fund & Portfolio Management,Arranging,Custody). </span></li>
+</ul>
+" 

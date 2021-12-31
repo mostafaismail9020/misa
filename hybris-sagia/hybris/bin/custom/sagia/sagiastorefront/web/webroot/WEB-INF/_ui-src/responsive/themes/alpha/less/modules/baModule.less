@@ -1,0 +1,69 @@
+.baModule {
+    margin-bottom: 32px;
+    
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        #media-breakpoint-up(sm, {
+			flex-wrap: nowrap;
+		});
+        
+        & + .contentModule-headline {
+            margin-top: 0 !important;
+        }
+    }
+    
+    &-headline {
+        color: @steel-grey;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        
+        span {
+            font-weight: normal;
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+    
+    &-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #313f4b;
+        flex: 1 0 100%;
+        margin-bottom: 8px;
+        
+        #media-breakpoint-up(sm, {
+			padding-right: 16px;
+            margin-bottom: 0;
+            flex: 1 1 auto;
+		});        
+        
+    }
+    
+    &-search {
+        max-width: 260px;
+        flex: 1 1 auto;
+    }
+    
+    //checkbox mod inside baModule
+    .formCheckBox {
+        
+        .form-group {
+            padding-top: 10px;
+        }
+        
+        .form-item {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    .contentModule-headline {
+        margin-top: 24px;
+    }
+}

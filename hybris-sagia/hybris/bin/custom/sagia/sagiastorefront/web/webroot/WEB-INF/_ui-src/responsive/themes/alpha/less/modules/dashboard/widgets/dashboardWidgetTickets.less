@@ -1,0 +1,54 @@
+.dashboardWidgetTickets{
+
+	&-table{
+		max-height: 295px;
+	}
+
+	&-status{
+		&_code01 {
+			color: @apple;
+		}
+
+		&_code02 {
+			color: #cfb264;
+		}			
+
+		&_code03 {
+			color: #4a4a4a;
+		}			
+	}
+
+	&-btn{
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	&-count{
+		background: @apple;
+		color: #fff;
+		font-size: 14px;
+		font-weight: bold;
+		color: #ffffff;
+		display: inline-block;
+		border-radius: 100%;
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		line-height: 21px;
+	}
+
+	&-action{
+		text-align: center;
+	}
+
+
+	#media-breakpoint-down(sm,{
+		margin-top: -9px;
+
+		.tableModule{
+			margin-left: -10px;
+			margin-right: -10px;
+			margin-bottom: 0;
+		}
+	});
+}

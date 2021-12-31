@@ -1,0 +1,256 @@
+$page = news-entrepreneurship-world-cup
+$template = portalGlobalTemplate
+$name = Invest Saudi Announces Strategic Sponsorship Of Entrepreneurship World Cup Global Finals At 2019 Misk Global Forum
+$titleEn = $name
+$titleAr = استثمر في السعودية تقدم اتفاقية شراكة استراتيجية لنهائي بطولة العالم في ريادة الاعمال في مؤتمر مسك الدوليل
+$shortDescEn = Invest Saudi will be main sponsor of the Entrepreneurship World Cup global finals and collaborate on future EWC plans
+$shortDescAr = استثمر في السعودية تقدم اتفاقية شراكة استراتيجية لنهائي بطولة العالم في ريادة الاعمال في مؤتمر مسك الدولي
+$pagelabel = /news/entrepreneurship-world-cup
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; a15i4708           ; a15i4708.jpg ; $siteResource/a15i4708.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; a15i4708 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ;                                   ;                                     ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 13.11.2019 00:00:00                       ;                          ;               ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li>
+<section class='elementor-element elementor-element-cecc6c9 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section' data-id='cecc6c9' data-element_type='section'>
+<div class='elementor-container elementor-column-gap-default'>
+<div class='elementor-row'>
+<div class='elementor-element elementor-element-b1044d6 elementor-column elementor-col-100 elementor-top-column' data-id='b1044d6' data-element_type='column'>
+<div class='elementor-column-wrap  elementor-element-populated'>
+<div class='elementor-widget-wrap'>
+<div class='elementor-element elementor-element-a4ac83b elementor-widget elementor-widget-text-editor animated fadeIn' data-id='a4ac83b' data-element_type='widget' data-settings='{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:600}' data-widget_type='text-editor.default'>
+<div class='elementor-widget-container'>
+<div class='elementor-text-editor elementor-clearfix'>
+<p>&bull; Invest Saudi will be main sponsor of the Entrepreneurship World Cup global finals and collaborate on future EWC plans.</p>
+<p>&bull; Invest Saudi&rsquo;s sponsorship part of wider partnership between Saudi Arabian General Investment Authority and Misk signed in 2018 at the Misk Global Forum.</p>
+<p>&bull; Entrepreneurship World Cup global finals will be held at the 2019 Misk Global Forum annual gathering in Riyadh, Saudi Arabia, from 12 &ndash; 14 November</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class='elementor-element elementor-element-ef77a02 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section' data-id='ef77a02' data-element_type='section' data-settings='{&quot;background_background&quot;:&quot;classic&quot;}'>
+<div class='elementor-container elementor-column-gap-default'>
+<div class='elementor-row'>
+<div class='elementor-element elementor-element-3211596 elementor-column elementor-col-100 elementor-top-column' data-id='3211596' data-element_type='column'>
+<div class='elementor-column-wrap  elementor-element-populated'>
+<div class='elementor-widget-wrap'>
+<div class='elementor-element elementor-element-26cf51d elementor-widget elementor-widget-premium-divider' data-id='26cf51d' data-element_type='widget' data-widget_type='premium-divider.default'>
+<div class='elementor-widget-container'>
+<div id='premium-separator-container-26cf51d' class='premium-separator-container premium-separator-solid' data-settings='solid'>
+<div class='premium-separator-wrapper'>
+<div class='premium-separator-wrapper-separator'>
+<div class='premium-separator-wrapper-separator-divider'>
+<div class='premium-separator-wrapper-separator-divider-main-inner'>
+<div class='premium-separator-wrapper-separator-divider-inner'>
+<div class='premium-separator-wrapper-separator-divider-left premium-separator-left-side'><hr /></div>
+<div class='premium-separator-wrapper-separator-divider-right premium-separator-right-side'><hr /></div>
+</div>
+</div>
+</div>
+</div>
+<div class='premium-clearfix'>&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class='elementor-element elementor-element-dc837f0 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section' data-id='dc837f0' data-element_type='section'>
+<div class='elementor-container elementor-column-gap-default'>
+<div class='elementor-row'>
+<div class='elementor-element elementor-element-4e48d4b elementor-column elementor-col-100 elementor-top-column' data-id='4e48d4b' data-element_type='column'>
+<div class='elementor-column-wrap  elementor-element-populated'>
+<div class='elementor-widget-wrap'>
+<div class='elementor-element elementor-element-cb01cab elementor-widget elementor-widget-text-editor animated fadeIn' data-id='cb01cab' data-element_type='widget' data-settings='{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:600}' data-widget_type='text-editor.default'>
+<div class='elementor-widget-container'>
+<div class='elementor-text-editor elementor-clearfix'>
+<p><strong><em>Riyadh, Saudi Arabia, 13 November 2019</em></strong></p>
+<p>Invest Saudi today announced its sponsorship of the 2019 Entrepreneurship World Cup (EWC) global finals, being held at the Misk Global Forum (MGF) annual gathering in Riyadh from 12 &ndash; 14 November.</p>
+<p>Invest Saudi will work closely with MGF and the Global Entrepreneurship Network (GEN), the international organisers of the EWC, in the workshops and classes offered to the finalists and will also have priority access to potential investments in the winning finalists.</p>
+<p>H.E. Dr. Majid bin Abdullah Al Qassabi, the Minister of Commerce and Investment and Chairman of Board of Directors at SAGIA, will be awarding the prizes to the winning finalists.</p>
+<p><strong>Dr. Mazin AlZaidi, Entrepreneurship &amp; Innovation Segment Director</strong>, representing Invest Saudi, said: &ldquo;It has never been easier to start a business in Saudi Arabia. In late 2017 SAGIA introduced the Entrepreneurship License that allows foreign start-ups to setup their business in Saudi with 100% ownership. We have licensed more than 200 start-ups in the last 24 months at an average of eight start-ups per month. In addition, just in the last six months more than 45 VCs have joined the VENTURE by Invest Saudi initiative that enables VCs to either bring in their portfolio companies to Saudi or invest in local and foreign start-ups in the Saudi market.&rdquo;</p>
+<p><strong>Dr. AlZaidi</strong>&nbsp;continued: &ldquo;We are delighted to be supporting the Misk Initiative &ndash; building on the partnership we established at the Misk Global Forum last year. Innovation is at the core of our vision for the future of the Saudi economy and we look forward to the opportunity to learn from some of the world&rsquo;s most talented entrepreneurs at the Entrepreneurship World Cup.&rdquo;</p>
+<p><strong>Abdulrahman Al Suhaymi</strong>, who leads the EWC, the flagship entrepreneurship initiative at Misk, added: &ldquo;The EWC has offered life-changing opportunities to its entrants from the start, but Invest Saudi&rsquo;s partnership takes those opportunities to the next level. We&rsquo;re also looking forward to working with Invest Saudi on the EWC&rsquo;s 2020 plans.&rdquo;</p>
+<p>The partnership between Invest Saudi and the EWC is part of the wider strategic partnership between the Misk Initiatives Center and the Saudi Arabian General Investment Authority (SAGIA), which oversees the Invest Saudi initiative. The partnership was originally signed at the 2018 MGF annual gathering and has seen SAGIA and MGF collaborate on a range of projects and initiatives around the world, including the Misk Media Forum events in Riyadh and Cairo and Misk&rsquo;s activations in China and India. &nbsp;</p>
+<p>INVEST SAUDI&rsquo;s support for the EWC is part of its role in growing the Kingdom&rsquo;s startup sector and Foreign Direct Investment (FDI). With the introduction of the 3-hour Entrepreneurship License, introduced by SAGIA in 2017, and dedicated platforms and initiatives supporting foreign investors resulting in 200 startups being registered in the last 24 months, Invest Saudi is demonstrating that it has never been easier to start a business in Saudi.</p>
+<p>ENDS</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Notes to editors:</strong></p>
+<p><strong>&nbsp;</strong><strong>About INVEST SAUDI:&nbsp;</strong>INVEST SAUDI is the national investment promotion brand and platform, providing insights into the value propositions for targeted investment sectors within the Kingdom. In line with Vision 2030, Saudi Arabia aims to become a leading investment destination through diversifying its economy across different sectors. To learn more, please visit InvestSaudi.sa.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>About the Entrepreneurship World Cup:&nbsp;</strong>The EWC is the biggest and most diverse startup pitch competition and support program of its kind, featuring 100,000 entrepreneurs from 170 countries. It offers winners life-changing prizes, including training and resources, networking and connection opportunities, investment, and cash-prizes totalling US$5 million. It also supports all entrants with a virtual incubator, enabling them to refine and hone their pitches throughout the competition. The EWC global finals are taking place at the fourth annual gathering of the Misk Global Forum in Riyadh in November. The EWC has five stages of participation:</p>
+<ul>
+<li>Education and virtual training</li>
+<li>National Finals</li>
+<li>Virtual and direct training sessions in preparation for Global Finals</li>
+<li>Live training sessions and on-stage competitions</li>
+<li>Global peer network offering mentorship and support service</li>
+</ul>
+<p><strong>About the Misk Global Forum</strong></p>
+<p>The Misk Global Forum (MGF) is the flagship international platform of the Misk Foundation, a non-profit philanthropic foundation established by Saudi Arabia&rsquo;s Crown Prince Mohammed bin Salman to discover, develop and empower Saudi youth to become active participants in the future economy.</p>
+<p>Since its launch in 2016, MGF has extended Misk&rsquo;s mission to young people across the globe. Through international events, research and global initiatives, MGF brings together emerging and established leaders, innovators, and creators to explore, experience and experiment with ways to meet the challenge of change. MGF focuses on three core areas across its activations: skills for the future economy; entrepreneurship and employment; and active global citizenship. Website:&nbsp;<a href='https://miskglobalforum.com/about-mgf/'>https://miskglobalforum.com/about-mgf/</a>&nbsp;&nbsp;</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>About the Global Entrepreneurship Network:&nbsp;</strong>The Global Entrepreneurship Network operates a platform of projects and programs in 170 countries aimed at making it easier for anyone, anywhere to start and scale a business. By fostering deeper cross border collaboration and initiatives between entrepreneurs, investors, researchers, policymakers and entrepreneurial support organizations, GEN works to fuel healthier start and scale ecosystems that create more jobs, educate individuals, accelerate innovation and strengthen economic growth.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</li>
+</ul>"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<ul>
+<li>
+<section class='elementor-element elementor-element-cecc6c9 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section' data-id='cecc6c9' data-element_type='section'>
+<div class='elementor-container elementor-column-gap-default'>
+<div class='elementor-row'>
+<div class='elementor-element elementor-element-b1044d6 elementor-column elementor-col-100 elementor-top-column' data-id='b1044d6' data-element_type='column'>
+<div class='elementor-column-wrap  elementor-element-populated'>
+<div class='elementor-widget-wrap'>
+<div class='elementor-element elementor-element-a4ac83b elementor-widget elementor-widget-text-editor animated fadeIn' data-id='a4ac83b' data-element_type='widget' data-settings='{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:600}' data-widget_type='text-editor.default'>
+<div class='elementor-widget-container'>
+<div class='elementor-text-editor elementor-clearfix'>
+<p>&bull; Invest Saudi will be main sponsor of the Entrepreneurship World Cup global finals and collaborate on future EWC plans.</p>
+<p>&bull; Invest Saudi&rsquo;s sponsorship part of wider partnership between Saudi Arabian General Investment Authority and Misk signed in 2018 at the Misk Global Forum.</p>
+<p>&bull; Entrepreneurship World Cup global finals will be held at the 2019 Misk Global Forum annual gathering in Riyadh, Saudi Arabia, from 12 &ndash; 14 November</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class='elementor-element elementor-element-ef77a02 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section' data-id='ef77a02' data-element_type='section' data-settings='{&quot;background_background&quot;:&quot;classic&quot;}'>
+<div class='elementor-container elementor-column-gap-default'>
+<div class='elementor-row'>
+<div class='elementor-element elementor-element-3211596 elementor-column elementor-col-100 elementor-top-column' data-id='3211596' data-element_type='column'>
+<div class='elementor-column-wrap  elementor-element-populated'>
+<div class='elementor-widget-wrap'>
+<div class='elementor-element elementor-element-26cf51d elementor-widget elementor-widget-premium-divider' data-id='26cf51d' data-element_type='widget' data-widget_type='premium-divider.default'>
+<div class='elementor-widget-container'>
+<div id='premium-separator-container-26cf51d' class='premium-separator-container premium-separator-solid' data-settings='solid'>
+<div class='premium-separator-wrapper'>
+<div class='premium-separator-wrapper-separator'>
+<div class='premium-separator-wrapper-separator-divider'>
+<div class='premium-separator-wrapper-separator-divider-main-inner'>
+<div class='premium-separator-wrapper-separator-divider-inner'>
+<div class='premium-separator-wrapper-separator-divider-left premium-separator-left-side'><hr /></div>
+<div class='premium-separator-wrapper-separator-divider-right premium-separator-right-side'><hr /></div>
+</div>
+</div>
+</div>
+</div>
+<div class='premium-clearfix'>&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class='elementor-element elementor-element-dc837f0 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section' data-id='dc837f0' data-element_type='section'>
+<div class='elementor-container elementor-column-gap-default'>
+<div class='elementor-row'>
+<div class='elementor-element elementor-element-4e48d4b elementor-column elementor-col-100 elementor-top-column' data-id='4e48d4b' data-element_type='column'>
+<div class='elementor-column-wrap  elementor-element-populated'>
+<div class='elementor-widget-wrap'>
+<div class='elementor-element elementor-element-cb01cab elementor-widget elementor-widget-text-editor animated fadeIn' data-id='cb01cab' data-element_type='widget' data-settings='{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:600}' data-widget_type='text-editor.default'>
+<div class='elementor-widget-container'>
+<div class='elementor-text-editor elementor-clearfix'>
+<p><strong><em>Riyadh, Saudi Arabia, 13 November 2019</em></strong></p>
+<p>Invest Saudi today announced its sponsorship of the 2019 Entrepreneurship World Cup (EWC) global finals, being held at the Misk Global Forum (MGF) annual gathering in Riyadh from 12 &ndash; 14 November.</p>
+<p>Invest Saudi will work closely with MGF and the Global Entrepreneurship Network (GEN), the international organisers of the EWC, in the workshops and classes offered to the finalists and will also have priority access to potential investments in the winning finalists.</p>
+<p>H.E. Dr. Majid bin Abdullah Al Qassabi, the Minister of Commerce and Investment and Chairman of Board of Directors at SAGIA, will be awarding the prizes to the winning finalists.</p>
+<p><strong>Dr. Mazin AlZaidi, Entrepreneurship &amp; Innovation Segment Director</strong>, representing Invest Saudi, said: &ldquo;It has never been easier to start a business in Saudi Arabia. In late 2017 SAGIA introduced the Entrepreneurship License that allows foreign start-ups to setup their business in Saudi with 100% ownership. We have licensed more than 200 start-ups in the last 24 months at an average of eight start-ups per month. In addition, just in the last six months more than 45 VCs have joined the VENTURE by Invest Saudi initiative that enables VCs to either bring in their portfolio companies to Saudi or invest in local and foreign start-ups in the Saudi market.&rdquo;</p>
+<p><strong>Dr. AlZaidi</strong>&nbsp;continued: &ldquo;We are delighted to be supporting the Misk Initiative &ndash; building on the partnership we established at the Misk Global Forum last year. Innovation is at the core of our vision for the future of the Saudi economy and we look forward to the opportunity to learn from some of the world&rsquo;s most talented entrepreneurs at the Entrepreneurship World Cup.&rdquo;</p>
+<p><strong>Abdulrahman Al Suhaymi</strong>, who leads the EWC, the flagship entrepreneurship initiative at Misk, added: &ldquo;The EWC has offered life-changing opportunities to its entrants from the start, but Invest Saudi&rsquo;s partnership takes those opportunities to the next level. We&rsquo;re also looking forward to working with Invest Saudi on the EWC&rsquo;s 2020 plans.&rdquo;</p>
+<p>The partnership between Invest Saudi and the EWC is part of the wider strategic partnership between the Misk Initiatives Center and the Saudi Arabian General Investment Authority (SAGIA), which oversees the Invest Saudi initiative. The partnership was originally signed at the 2018 MGF annual gathering and has seen SAGIA and MGF collaborate on a range of projects and initiatives around the world, including the Misk Media Forum events in Riyadh and Cairo and Misk&rsquo;s activations in China and India. &nbsp;</p>
+<p>INVEST SAUDI&rsquo;s support for the EWC is part of its role in growing the Kingdom&rsquo;s startup sector and Foreign Direct Investment (FDI). With the introduction of the 3-hour Entrepreneurship License, introduced by SAGIA in 2017, and dedicated platforms and initiatives supporting foreign investors resulting in 200 startups being registered in the last 24 months, Invest Saudi is demonstrating that it has never been easier to start a business in Saudi.</p>
+<p>ENDS</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Notes to editors:</strong></p>
+<p><strong>&nbsp;</strong><strong>About INVEST SAUDI:&nbsp;</strong>INVEST SAUDI is the national investment promotion brand and platform, providing insights into the value propositions for targeted investment sectors within the Kingdom. In line with Vision 2030, Saudi Arabia aims to become a leading investment destination through diversifying its economy across different sectors. To learn more, please visit InvestSaudi.sa.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>About the Entrepreneurship World Cup:&nbsp;</strong>The EWC is the biggest and most diverse startup pitch competition and support program of its kind, featuring 100,000 entrepreneurs from 170 countries. It offers winners life-changing prizes, including training and resources, networking and connection opportunities, investment, and cash-prizes totalling US$5 million. It also supports all entrants with a virtual incubator, enabling them to refine and hone their pitches throughout the competition. The EWC global finals are taking place at the fourth annual gathering of the Misk Global Forum in Riyadh in November. The EWC has five stages of participation:</p>
+<ul>
+<li>Education and virtual training</li>
+<li>National Finals</li>
+<li>Virtual and direct training sessions in preparation for Global Finals</li>
+<li>Live training sessions and on-stage competitions</li>
+<li>Global peer network offering mentorship and support service</li>
+</ul>
+<p><strong>About the Misk Global Forum</strong></p>
+<p>The Misk Global Forum (MGF) is the flagship international platform of the Misk Foundation, a non-profit philanthropic foundation established by Saudi Arabia&rsquo;s Crown Prince Mohammed bin Salman to discover, develop and empower Saudi youth to become active participants in the future economy.</p>
+<p>Since its launch in 2016, MGF has extended Misk&rsquo;s mission to young people across the globe. Through international events, research and global initiatives, MGF brings together emerging and established leaders, innovators, and creators to explore, experience and experiment with ways to meet the challenge of change. MGF focuses on three core areas across its activations: skills for the future economy; entrepreneurship and employment; and active global citizenship. Website:&nbsp;<a href='https://miskglobalforum.com/about-mgf/'>https://miskglobalforum.com/about-mgf/</a>&nbsp;&nbsp;</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>About the Global Entrepreneurship Network:&nbsp;</strong>The Global Entrepreneurship Network operates a platform of projects and programs in 170 countries aimed at making it easier for anyone, anywhere to start and scale a business. By fostering deeper cross border collaboration and initiatives between entrepreneurs, investors, researchers, policymakers and entrepreneurial support organizations, GEN works to fuel healthier start and scale ecosystems that create more jobs, educate individuals, accelerate innovation and strengthen economic growth.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</li>
+</ul>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

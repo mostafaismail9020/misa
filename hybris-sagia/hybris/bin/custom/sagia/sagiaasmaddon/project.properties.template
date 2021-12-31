@@ -1,0 +1,39 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+
+# you can put key/value pairs here.
+sagiaasmaddon.key=value
+# Use Config.getParameter(..) to retrieve the values during runtime.
+
+# Specifies the location of the spring context file added automatically to the global platform application context.
+sagiaasmaddon.application-context=sagiaasmaddon-spring.xml
+
+yacceleratorstorefront.additionalWebSpringConfigs.sagiaasmaddon=classpath:/sagiaasmaddon/web/spring/sagiaasmaddon-web-spring.xml
+yb2bacceleratorstorefront.additionalWebSpringConfigs.sagiaasmaddon=classpath:/sagiaasmaddon/web/spring/sagiaasmaddon-web-spring.xml
+
+sagiaasmaddon.javascript.paths.mobile=/responsive/common/js/sagiaasmaddon.js;/responsive/common/js/jquery.tablesorter.pager.js;/responsive/common/js/jquery.tablesorter.min.js;/responsive/common/js/Chart.min.js
+sagiaasmaddon.javascript.paths.responsive=/responsive/common/js/sagiaasmaddon.js;/responsive/common/js/jquery.tablesorter.pager.js;/responsive/common/js/jquery.tablesorter.min.js;/responsive/common/js/Chart.min.js
+
+sagiaasmaddon.css.paths.mobile=/responsive/common/css/sagiaasmaddon.css;/responsive/common/css/storeFinder.css
+sagiaasmaddon.css.paths.responsive=/responsive/common/css/sagiaasmaddon.css;/responsive/common/css/storeFinder.css
+
+sagiaasmaddon.redirect.customer_and_cart=/cart
+sagiaasmaddon.redirect.customer_only=/my-account
+sagiaasmaddon.redirect.error=/
+sagiaasmaddon.redirect.order=/my-account/order/%s
+
+sagiaasmaddon.deeplink.link=/assisted-service/emulate
+
+cscokpit.assistedservice.deeplink=true
+sagiaasmaddon.profile.cookie.name=profile.tracking.pause
+# AIF AJAX call timeout in milliseconds
+sagiaasmaddon.aif.timeout=7000

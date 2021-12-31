@@ -1,0 +1,95 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = ar
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ; 3D-PRINTING-for-Industrial-Automotive-Health-care-Aerospace            ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Opportunity to consider different operating models 
+– FDI with 100% ownership or joint venture with 
+local private sector player(s) </span></li>
+  <li><span>KSA is expected to lead the MENA in 3DP with a 30-35% of the market IN 2025(ARAMCO)</span></li>
+</ul>
+"
+
+
+                                ;Automated-Customer-Support      ;                ; "
+
+<ul class='bulled-list mt-3'>
+     <li><span>Opportunity to consider different operating models –
+FDI with 100% ownership or joint venture with local 
+private sector player(s)</span></li>
+  <li><span>Healthcare facilities are investing more into 
+technologies such as automated customer services to 
+improve the quality of the services provided to patients </span></li>
+</ul>
+"
+                                ; AI-POWERED-Capacity-Planning      ;                ; "
+
+<ul class='bulled-list mt-3'>
+   <li><span>Opportunity to consider different operating models –
+FDI with 100% ownership or joint venture with local 
+private sector player(s) </span></li>
+  <li><span>Healthcare institutions are investing in AI-powered 
+capacity planning to optimize patients needs, decreases 
+costs due to more efficient operations and better 
+capacity utilization, and finally significantly impacts 
+efficiency outcomes across operations </span></li>
+</ul>
+"
+
+                                ;AI-POWERED-MEDICAL-IMAGING           ;                ; "
+
+<ul class='bulled-list mt-3'>
+   <li><span>Expected investment size of USD 290 Mn</span></li>
+  <li><span>Investment IRR: 12%</span></li>
+    <li><span>Payback period: 9.2 years</span></li>
+	  <li><span>Opportunity to consider different operating models 
+– FDI with 100% ownership or joint venture with 
+local private sector player(s)</span></li>
+</ul>
+"
+
+                                ;EDGE-COMPUTING     ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 8 Bn</span></li>
+  <li><span>Opportunity to consider different operating models 
+– FDI with 100% ownership or joint venture with 
+local private sector player(s)</span></li>
+</ul>
+"
+
+                                ; Localize-Commercial-Drones-Manufacturing     ;                ; "
+
+<ul class='bulled-list mt-3'>
+   <li><span>Localizing Drones Manufacturing requires an 
+investment of approximately 28m+ USD.</span></li>
+  <li><span>3-4 years to develop and manufacture the first 
+model</span></li>
+</ul>
+"
+
+                                ; Manufacturing-Optimization-Quality-Control ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Estimated market size of USD 1.5 Bn</span></li>
+  <li><span> Opportunity to consider different operating models 
+– FDI with 100% ownership or joint venture with 
+local private sector player(s)</span></li>
+</ul>
+"
+
+                                ; ML-POWERED-LIFESTYLE-AND-WELL-BEING    ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 730 Mn</span></li>
+  <li><span>Investment IRR: 15%</span></li>
+  <li><span>Payback period: 9.2 years</span></li>
+  <li><span>Opportunity to consider different operating models 
+– FDI with 100% ownership or joint venture with 
+local private sector player(s)
+</span></li>
+</ul>
+"

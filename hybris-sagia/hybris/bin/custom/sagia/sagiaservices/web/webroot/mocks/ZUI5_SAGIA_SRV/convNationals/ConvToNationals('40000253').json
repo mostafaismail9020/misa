@@ -1,0 +1,117 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ConvToNationals('40000253')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ConvToNationals('40000253')",
+      "type": "ZUI5_SAGIA_SRV.ConvToNational"
+    },
+    "ReApply": false,
+    "TransTypeDesc": "",
+    "SrID": "40000253",
+    "SrGuid": "005056B1-1C89-1EE8-979C-EC5C9E0B4D22",
+    "LicID": "12845",
+    "LicGuid": "005056B1-1C89-1EE8-9EEE-9F5136118CE2",
+    "LicType": "1",
+    "LicTypeDesc": "INDUSTRIAL  صناعي",
+    "BpID": "613392",
+    "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+    "SrCrDate": "/Date(1526860800000)/",
+    "SrStCode": "E0001",
+    "SrStDesc": "In Process",
+    "LicExDate": "/Date(1694044800000)/",
+    "ValidFrom": "/Date(1410393600000)/",
+    "TransType": "ZSR7",
+    "Action": "00",
+    "BpChangeID": "",
+    "SalesrepCount": "",
+    "ContactChInd": "",
+    "NonChangeble": false,
+    "TermCond": false,
+    "ConvNatToContentNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='40000253',DocumentID='005056B11C891EE8979CEC8D25366D22',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='40000253',DocumentID='005056B11C891EE8979CEC8D25366D22',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "40000253",
+          "ObjectGuid": "005056B1-1C89-1EE8-979C-EC5C9E0B4D22",
+          "Filename": "Pledge for complete documentation and CR Amendment",
+          "Filesize": "0000000357",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D565E0B1ED7B7C6D8E5912B20CA",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1526860800000)/",
+          "DocKeyID": "1344",
+          "ShDocID": "convnation",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='40000253',DocumentID='005056B11C891EE8979CEC8D25366D22',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='40000253',DocumentID='005056B11C891EE8979CEC8D2536CD22',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='40000253',DocumentID='005056B11C891EE8979CEC8D2536CD22',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "40000229",
+          "ObjectGuid": "005056B1-1C89-1EE8-979C-EC5C9E0B4D22",
+          "Filename": "SIDF approval (industrial)",
+          "Filesize": "0000000357",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D565E0B1ED7B7C86082AE0D40CA",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1526860800000)/",
+          "DocKeyID": "1342",
+          "ShDocID": "convnation",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='40000253',DocumentID='005056B11C891EE8979CEC8D2536CD22',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='40000253',DocumentID='005056B11C891EE8979CEC8D25372D22',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='40000253',DocumentID='005056B11C891EE8979CEC8D25372D22',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "40000229",
+          "ObjectGuid": "005056B1-1C89-1EE8-979C-EC5C9E0B4D22",
+          "Filename": "Last Budget",
+          "Filesize": "0000000357",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D565E0B1ED7B7C86082AE0D40CA",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1526860800000)/",
+          "DocKeyID": "1012",
+          "ShDocID": "convnation",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='40000253',DocumentID='005056B11C891EE8979CEC8D25372D22',Stage='')/FollowupSrvHDR"
+            }
+          }
+        }
+      ]
+    },
+    "ConvNatToUploadNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ConvToNationals('40000253')/ConvNatToUploadNav"
+      }
+    },
+    "ConvNatToTextNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ConvToNationals('40000253')/ConvNatToTextNav"
+      }
+    }
+  }
+}

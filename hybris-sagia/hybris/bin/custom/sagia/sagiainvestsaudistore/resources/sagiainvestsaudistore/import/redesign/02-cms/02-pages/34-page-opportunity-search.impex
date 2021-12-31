@@ -1,0 +1,60 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProductSearchTemplate
+$page = opportunity-search
+$pageName = Opportunities Search
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pageLabel = /sectors-opportunities/opportunities
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+#$siteResource = $config-portalRedesignMediaResources
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ; $pageLabel ; false   ;
+
+
+INSERT_UPDATE Media ; code[unique = true]    	; realFileName        	; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; all-opportunity.jpg		; all-opportunity.jpg	; $siteResource/all-opportunity.jpg                                         	; image/jpg                   ;                                          ; ""     ;
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]		; name            	 		; descriptionText[lang = ar]	; descriptionText[lang = en]; buttonText[lang = en]  ; buttonText[lang = ar]    ; image(code, $contentCV)	; buttonURL(&linkRef)	; link  ; &componentRef   			; $contentCV[unique = true]
+                                        ; all-opportunity-banner-1  ; All Opportunities Banner 	;								; OPPORTUNITIES				;         				 ;           				; all-opportunity.jpg  		;  	  					; true  ; all-opportunity-banner-1  ;
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      			; name                    				; simpleCMSComponents(&componentRef)	; &componentRef          			; $contentCV[unique = true]
+                                        ; all-opportunity-banner-container 	; All Opportunities Banner Container 	; all-opportunity-banner-1 				; all-opportunity-banner-container 	;
+
+
+INSERT_UPDATE InvestSaudiOpportunitySearchBarComponent; uid[unique = true]             		; name                             ; &componentRef                  	; $contentCV[unique = true]
+                                                      ; opportunity-search-bar-component 	; Opportunity Search Bar Component ; opportunity-search-bar-component 	;
+
+
+INSERT_UPDATE InvestSaudiOpportunitySearchResultComponent; uid[unique = true]                  ; name                              		; &componentRef                       	; $contentCV[unique = true]
+                                                         ; opportunity-search-result-component ; Opportunity Search Result Component 	; opportunity-search-result-component 	;
+
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]           	; name                              ; &componentRef                     ; description[lang = en]                                                                                                                                                                                                                                                                                       ; $contentCV[unique = true]
+                                                  ; generic-paragraph-opportunities ; Opportunities Paragraph Component ; generic-paragraph-opportunities	; <div class="container"><p class="sectors-content">We've assembled a variety of investment opportunities for potential investors who are keen to invest in Saudi Arabia. These opportunities are of different types such as public tenders, PPP, identified opportunities by our advisors, etc. Search for the opportunities after selecting the industry below</p></div><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p> ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]       	; name           	; active	; cmsComponents(&componentRef)	; $contentCV[unique = true]	;
+                     	 ; PortalPageTopSlot-$page    	; PortalPageTop    	; false  	;                             	;							;
+						 ; PortalPageMainSlot-$page 	; PortalPageMain 	; true  	; all-opportunity-banner-container, opportunity-search-bar-component, generic-paragraph-opportunities, opportunity-search-result-component	;	;
+						 ; PortalPageBottomSlot-$page 	; PortalPageBottom 	; false  	;         						;							;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]    ; position[unique = true]	; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                         ; PortalPageTopSlot-$page    	; PortalPageTop          	; PortalPageTopSlot-$page                    ;						
+						 ; PortalPageMainSlot-$page 	; PortalPageMain 			; PortalPageMainSlot-$page 					 ;
+						 ; PortalPageBottomSlot-$page 	; PortalPageBottom       	; PortalPageBottomSlot-$page             	 ;

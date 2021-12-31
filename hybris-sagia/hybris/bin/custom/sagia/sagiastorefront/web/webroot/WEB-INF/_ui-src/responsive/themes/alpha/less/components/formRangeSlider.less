@@ -1,0 +1,307 @@
+.formRangeSlider {
+
+    .form-group {
+        padding-top: 15px;
+	    margin-bottom: 16px;
+        position: relative;
+    }
+    
+    &-label,
+    &-value {
+        position: absolute;
+        top: -2px;
+        left: 0;
+        font-size: 12px;
+        color: #7b838c;
+        text-transform: uppercase;
+    }
+    
+    &-value {
+        right: 0;
+        left: auto;
+        color: #333a4b;
+        font-size: 14px;
+        text-transform: none;
+    }
+
+
+    @thumb-color: #fff;
+    @thumb-radius: 100%;
+    @thumb-height: 37px;
+    @thumb-width: 37px;
+    @thumb-border-width: 1px;
+    @thumb-border-color: #dadde1;
+    @thumb-mgt: -16px;
+
+    //@track-color: linear-gradient(to right, #5cc83b 0%, #5cc83b 50%, #e6e6ed 50%, #e6e6ed 100%);
+    @track-color: transparent;
+    @track-width: 100%;
+    @track-height: 6px;
+    @track-radius: 5px;  
+    
+
+
+    .track() {
+        width: 100%;
+        height: @track-height;
+        cursor: pointer;
+        animate: 0.2s;     
+        background: inherit;
+    }
+    .thumb() {
+        -webkit-appearance: none;
+        border: solid 1px @thumb-border-color;
+        height: @thumb-height;
+        width: @thumb-width;
+        border-radius: 100%;
+        background: #ffffff;
+        cursor: pointer;
+        margin-top: @thumb-mgt;
+        /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+        box-shadow: 0 2px 11px 0 rgba(28, 36, 44, 0.12);
+    }
+
+    input[type=range] {
+        -webkit-appearance: none;
+        margin: @thumb-height/2 0;
+        width: @track-width;
+        border-radius: @track-radius;
+        background-image: linear-gradient(to right, #e6e6ed 0%, #e6e6ed 100%);
+        height: @track-height;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-slider-runnable-track {
+            .track();
+
+            border-radius: @track-radius;
+
+        }
+        &::-webkit-slider-thumb {
+            .thumb();
+            -webkit-appearance: none;
+        }
+
+
+        &::-moz-range-track {
+            .track();
+            border-radius: @track-radius;
+        }
+        
+        &:focus::-moz-range-track {
+            outline: none;
+        }
+        
+        &::-moz-range-thumb {
+            .thumb();
+        }
+        
+        &::-moz-focus-outer {
+            border: 0;
+        }        
+
+
+
+        &::-ms-track {
+            width: 100%;
+            height: 6px;
+
+            /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+            background: transparent !important;
+
+            /*leave room for the larger thumb to overflow with a transparent border */
+            border-color: transparent;
+            border-width: 22px 0;
+
+            /*remove default tick marks*/
+            color: transparent;
+        }
+        &::-ms-fill-lower {
+            background: @apple;
+            border-radius: @track-radius*2;
+
+        }
+        &::-ms-fill-upper {
+            background: @pale-grey;
+            border-radius: @track-radius*2;
+
+        }
+
+        &::-ms-thumb {
+            .thumb();
+            margin-top: 0;
+        }
+
+    }          
+    
+   
+    
+    &&_slim {
+        
+        .form-group {
+            padding-top: 25px;
+            padding-bottom: 9px;
+        }
+        
+        
+        
+        @thumb-height: 18px;
+        @thumb-width: 18px;
+        @thumb-mgt: -9px;
+        @thumb-border-color: @apple;
+        
+        @track-height: 2px;
+        @track-radius: 0;
+        
+        .track() {
+            width: 100%;
+            height: @track-height;
+            cursor: pointer;
+            animate: 0.2s;     
+            background: inherit;
+            
+        }
+        .thumb() {
+            -webkit-appearance: none;
+            border: solid 1px @thumb-border-color;
+            height: @thumb-height;
+            width: @thumb-width;
+            border-radius: 100%;
+            background: #ffffff;
+            cursor: pointer;
+            margin-top: @thumb-mgt;
+            /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+            box-shadow: none;          
+        }
+        
+        input[type=range] {
+            -webkit-appearance: none;
+            margin: @thumb-height/2 0;
+            width: @track-width;
+            border-radius: @track-radius;
+            background-image: linear-gradient(to right, #e6e6ed 0%, #e6e6ed 100%);
+            height: @track-height;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::-webkit-slider-runnable-track {
+                .track();
+                border-radius: @track-radius;
+
+            }
+            &::-webkit-slider-thumb {
+                .thumb();
+                -webkit-appearance: none;
+            }
+
+
+            &::-moz-range-track {
+                .track();
+                height: 2px;
+                border-radius: @track-radius;
+
+            }
+            &::-moz-range-thumb {
+                .thumb();
+            }
+
+
+
+            &::-ms-track {
+                width: 100%;
+                height: 2px;
+
+                /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+                background: transparent !important;
+
+                /*leave room for the larger thumb to overflow with a transparent border */
+                border-color: transparent;
+                border-width: 10px 0;
+
+                /*remove default tick marks*/
+                color: transparent;
+            }
+            &::-ms-fill-lower {
+                background: @apple;
+                border-radius: @track-radius*2;
+
+            }
+            &::-ms-fill-upper {
+                background: @pale-grey;
+                border-radius: @track-radius*2;
+
+            }
+
+            &::-ms-thumb {
+                .thumb();
+                margin-top: 0;
+            }
+
+        }              
+        
+    } 
+    
+}
+
+
+
+//ie hack for ie11
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .formRangeSlider {
+     
+        input[type=range] {
+            background: transparent !important;
+            background-image: none !important;
+            margin: 0;
+            padding: 0;
+            height: auto;
+        }
+        
+        &&_slim {
+            .form-group {
+                padding-top: 15px;
+                margin-bottom: 16px;
+                position: relative;
+            }
+            
+            input[type=range] {
+                margin-top: 8px;
+                padding: 0;
+                height: auto;
+            }            
+        }        
+        
+    }
+}
+//ie hack for edge
+@supports (-ms-ime-align:auto) {
+    .formRangeSlider {
+        
+        input[type=range] {
+            background: transparent !important;
+            background-image: none !important;
+            margin: 0;
+            padding: 0;
+            margin-top: -9px;
+            height: auto;
+        }
+        
+        &&_slim {
+            .form-group {
+                padding-top: 15px;
+                margin-bottom: 16px;
+                position: relative;
+            }
+            
+            input[type=range] {
+                margin-top: 0px;
+                height: auto;
+            }            
+        }
+    }    
+
+} 

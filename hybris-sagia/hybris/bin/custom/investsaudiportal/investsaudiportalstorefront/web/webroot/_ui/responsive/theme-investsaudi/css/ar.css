@@ -1,0 +1,209 @@
+.copyright,
+.mp-bold,
+.navbar-dark .navbar-nav .nav-link,
+body {
+    font-family: NeoSansArabic;
+}
+li.nav-item.text-center.diff-color.arabic a {
+    position: relative;
+    top: auto;
+}
+.english-font,
+.tabs_container label span {
+    font-family: MyriadHebrew-Regular, NeoSansArabic;
+}
+.facts-corner:hover .font-bold {
+    font-size: 18px;
+}
+div.statistic-section {
+    font-size: 24px;
+    line-height: 29px;
+}
+.main-content-images p {
+    font-size: 18px;
+    line-height: 26px;
+}
+#divSubscList ul li a {
+    font-family: NeoSansArabic;
+}
+.error-info span {
+    top: 7px;
+}
+.fearured-opp h1 {
+    direction: ltr;
+    text-align: right;
+}
+.acc-login,
+.new-reg {
+    border-radius: 0 10px;
+    -moz-border-radius: 0 10px;
+}
+.brach-location ul li:after {
+    top: 8px;
+}
+.brach-location ul li.b-phone:after {
+    transform: scaleX(-1);
+}
+#why-page .tab-content .scroller ul li:before {
+    font-size: 18px;
+}
+.copyright {
+    font-size: 12px;
+}
+.my-login-part {
+    left: auto !important;
+    right: -2px;
+    text-align: left;
+    direction: ltr;
+    transform: translate(45%, 45%) rotate(90deg);
+}
+.my-login-part .account-login,
+.my-login-part .fixed-registration {
+    border-radius: 0 10px;
+    -moz-border-radius: 0 10px;
+    padding: 0.25rem 1rem 0.5rem;
+}
+.opp-search-container .a-search,
+.succ-search-container .a-search {
+    top: 7px;
+}
+.scroller.sub-sector-content ul li {
+    font-size: 14px;
+    line-height: 1.8em;
+    margin-bottom: 12px;
+}
+.scroller.sub-sector-content ul li:before {
+    font-size: 18px;
+}
+.icon-linked-in {
+    left: 4px;
+}
+.icon-youtube {
+    left: 8px;
+}
+.subscribe-text {
+    line-height: 22px;
+}
+.my-page-name span.diff-color {
+    position: relative;
+    top: 2px;
+}
+.btn-green {
+    border-radius: 1px 8px 0;
+    -moz-border-radius: 1px 8px 0;
+}
+.indexed-list .indexed-list-item label {
+    padding-right: 3rem;
+}
+.icon-email-filled-closed-envelope {
+    background-position: -88px 0;
+}
+.icon-call {
+    background-position: -44px 0;
+}
+.icon-international-calling-service-symbol {
+    background-position: 5px 0;
+}
+.opp-search-container input[type="search"],
+.opp-search-container input[type="text"],
+.succ-search-container input[type="search"],
+.succ-search-container input[type="text"] {
+    font-size: 13px;
+}
+#divSubscList a.close-list {
+    top: 7px;
+    left: 10px;
+}
+#divSubscList,
+.brach-location,
+.corner-borders,
+.fearured-opp {
+    border-radius: 0 32px;
+    -moz-border-radius: 0 32px;
+}
+.footer .selctors-industries ul li a {
+    font-family: NeoSansArabic;
+}
+.intl-tel-input .country-list {
+    direction: ltr;
+}
+.intl-tel-input .country-list .country {
+    font-size: 12px;
+}
+.intl-tel-input.allow-dropdown input,
+.intl-tel-input.allow-dropdown input[type="tel"],
+.intl-tel-input.allow-dropdown input[type="text"],
+.intl-tel-input.separate-dial-code input,
+.intl-tel-input.separate-dial-code input[type="tel"],
+.intl-tel-input.separate-dial-code input[type="text"] {
+    padding-left: 6px;
+    padding-right: 52px;
+}
+.intl-tel-input.allow-dropdown .flag-container,
+.intl-tel-input.separate-dial-code .flag-container {
+    right: 0;
+    left: auto;
+}
+.intl-tel-input .selected-flag .iti-flag {
+    right: 6px;
+}
+.intl-tel-input .selected-flag .iti-arrow {
+    left: 6px;
+    right: auto;
+}
+#whyKSA ul li:before {
+    top: 5px;
+    font-size: 20px;
+}
+.site-ie .fearured-opp h1.font-bold,
+.site-ie .footer .footer-menu li,
+.site-ie .news h1,
+.site-ie .sectors-investment .font-bold {
+    font-weight: 400 !important;
+}
+.site-ie .accordion-content label:after {
+    line-height: 18px;
+}
+.site-ie .my-login-part {
+    -ms-transform: translate(-45%, -45%) rotate(-90deg);
+}
+.brach-location ul li,
+.contact-section p.font-bold span.font-normal {
+    font-family: MyriadHebrew-Regular;
+}
+.brach-location ul li.b-map {
+    font-family: NeoSansArabic;
+}
+.brach-location ul li em {
+    font-family: NeoSansArabic, MyriadHebrew-Regular;
+}
+.beta-version {
+    transform: rotate(0deg);
+    top: 70px;
+}
+@media only screen and (max-width: 1024px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+        font-size: 13px;
+    }
+}
+@media (max-width: 991px) {
+    .whyksa-animate.indexed-list .indexed-list-item label {
+        right: 50px;
+    }
+    .beta-version {
+        top: 0;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .contact-section p.font-bold {
+        font-size: 13px;
+    }
+    .brach-location ul li {
+        font-size: 14px;
+    }
+    .brach-location ul li em {
+        font-size: 13px;
+    }
+}

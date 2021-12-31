@@ -1,0 +1,40 @@
+$productCatalog = sagiaProductCatalog	
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$classCatalogVersion = catalogVersion(catalog(id[default='sagiaClassification']), version[default='1.0'])
+
+
+####
+INSERT_UPDATE OpportunityProduct; code[unique = true]       					; name [lang = en]          				; name [lang = ar]          			; featured		; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; SPORTS-BOULEVARD          					; SPORTS BOULEVARD           				; SPORTS BOULEVARD     					; false    		; real-estate        ;          ;	;"Invest Saudi,SPORTS BOULEVARD - Real Estate,Real Estate,"
+								; YANBU-WATERFRONT-AND-CITY-CENTER        		; YANBU WATERFRONT AND CITY CENTER  		; YANBU WATERFRONT AND CITY CENTER  	; false    		; real-estate       ;          ;	;"Invest Saudi,YANBU WATERFRONT AND CITY CENTER-Real Estate,Real Estate,"
+								; RESIDENTIA-RETAIL-DEVELOPMENT-IN-RIYADH		; RESIDENTIAL & RETAIL DEVELOPMENT IN RIYADH;RESIDENTIAL & RETAIL DEVELOPMENT IN RIYADH; false    	;real-estate   ;          ;	;"Invest Saudi,RESIDENTIAL & RETAIL DEVELOPMENT IN RIYADH- Real Estate,Real Estate,"
+								; RESIDENTIAL-DEVELOPMENT-IN-RIYADH				; RESIDENTIAL DEVELOPMENT IN RIYADH			;RESIDENTIAL DEVELOPMENT IN RIYADH		; false    		;real-estate  ;          ;	;"Invest Saudi,RESIDENTIAL DEVELOPMENT IN RIYADH- Real Estate,Real Estate,"
+								; RETAIL-ENTERTAINMENT-DEVELOPMENT-IN-ALJAWF	; RETAIL & ENTERTAINMENT DEVELOPMENT IN AL JAWF;RETAIL & ENTERTAINMENT DEVELOPMENT IN AL JAWF; false ; real-estate  ;          ;	;"Invest Saudi,RETAIL & ENTERTAINMENT DEVELOPMENT IN AL JAWF- Real Estate,Real Estate,"
+								; RETAIL-HOSPITALITY-DEVELOPMENT-IN-ABHA	    ; RETAIL & HOSPITALITY DEVELOPMENT IN ABHA	 ;RETAIL & HOSPITALITY DEVELOPMENT IN ABHA; false    	;real-estate  ;          ;	;"Invest Saudi,RETAIL & HOSPITALITY DEVELOPMENT IN ABHA- Real Estate,Real Estate,"
+								; RETAIL-DEVELOPMENT-IN-ALAHSA			   		; RETAIL DEVELOPMENT IN AL AHSA				 ;RETAIL DEVELOPMENT IN AL AHSA			; false    		; real-estate ;          ;	;"Invest Saudi,RETAIL DEVELOPMENT IN AL AHSA- Real Estate,Real Estate,"
+								; RETAIL-DEVELOPMENT-IN-ALBAHA					; RETAIL DEVELOPMENT IN AL BAHA				 ;RETAIL DEVELOPMENT IN AL BAHA			; false    		; real-estate ;          ;	;"Invest Saudi,RETAIL DEVELOPMENT IN AL BAHA-Real Estate,Real Estate,"
+								; RETAIL-DEVELOPMENT-IN-ALJAWF					; RETAIL DEVELOPMENT IN AL JAWF				 ;RETAIL DEVELOPMENT IN AL JAWF			; false    		;real-estate ;          ;	;"Invest Saudi,RETAIL DEVELOPMENT IN AL JAWF- Real Estate,Real Estate,"
+								; RETAIL-DEVELOPMENT-IN-HAIL					; RETAIL DEVELOPMENT IN HAIL					 ;RETAIL DEVELOPMENT IN HAIL			; false    		;real-estate   ;          ;	;"Invest Saudi,RETAIL DEVELOPMENT IN HAIL- Real Estate,Real Estate,"
+								; RETAIL-DEVELOPMENT-IN-JEDDAH					; RETAIL DEVELOPMENT IN JEDDAH				 ;RETAIL DEVELOPMENT IN JEDDAH			; false   		 ;real-estate    ;          ;	;"Invest Saudi,RETAIL DEVELOPMENT IN JEDDAH-Real Estate,Real Estate,"
+								; RETAIL-DEVELOPMENT-IN-ALQASEEM				; RETAIL DEVELOPMENT IN ALQASEEM				 ;RETAIL DEVELOPMENT IN ALQASEEM		; false    		; real-estate ;          ;	;"Invest Saudi,RETAIL DEVELOPMENT IN ALQASEEM- Real Estate,Real Estate,"
+								; RETAIL-DEVELOPMENT-IN-NAJRAN					; RETAIL DEVELOPMENT IN NAJRAN				 ;RETAIL DEVELOPMENT IN NAJRAN			; false    		; real-estate ;          ;	;"Invest Saudi,RETAIL DEVELOPMENT IN NAJRAN- Real Estate,Real Estate,"
+								; RETAIL-DEVELOPMENT-IN-NORTHERN-BOUNDARIES		; RETAIL DEVELOPMENT IN NORTHERN BOUNDARIES	 ;RETAIL DEVELOPMENT IN NORTHERN BOUNDARIES; false    	; real-estate   ;          ;	;"Invest Saudi,RETAIL DEVELOPMENT IN NORTHERN BOUNDARIES-Real Estate,Real Estate,"
+
+
+#### real-estate - miral
+INSERT_UPDATE OpportunityProduct; code[unique = true]                  ; name [lang = en]                   ; name [lang = ar]                  ; featured ; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; HEALTHCARE-&-RETAIL-IN-ALMADINAH     ; HEALTHCARE & RETAIL IN ALMADINAH   ; HEALTHCARE & RETAIL IN ALMADINAH  ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,HEALTHCARE & RETAIL IN ALMADINAH - REAL ESTATE,REAL ESTATE,"
+								; HEALTHCARE-&-RETAIL-TABUK            ; HEALTHCARE & RETAIL TABUK          ; HEALTHCARE & RETAIL TABUK         ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,HEALTHCARE & RETAIL TABUK - REAL ESTATE,REAL ESTATE,"
+								; HEALTHCARE-DEVELOPMENT-IN-JAZAN      ; HEALTHCARE DEVELOPMENT IN JAZAN    ; HEALTHCARE DEVELOPMENT IN JAZAN   ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,HEALTHCARE DEVELOPMENT IN JAZAN - REAL ESTATE,REAL ESTATE,"
+								; HEALTHCARE-MAKKAH                    ; HEALTHCARE MAKKAH                  ; HEALTHCARE MAKKAH                 ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,HEALTHCARE MAKKAH - REAL ESTATE,REAL ESTATE,"
+								; PILGRIM-ACCOMMODATION-&-RETAIL       ; PILGRIM ACCOMMODATION & RETAIL     ; PILGRIM ACCOMMODATION & RETAIL    ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,PILGRIM ACCOMMODATION & RETAIL - REAL ESTATE,REAL ESTATE,"
+								; BOARD-OF-GRIEVANCES-PLOT             ; BOARD OF GRIEVANCES PLOT           ; BOARD OF GRIEVANCES PLOT          ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,BOARD OF GRIEVANCES PLOT - REAL ESTATE,REAL ESTATE,"
+								; NHC-DHAHIYAT-ALFURSAN                ; NHC-DHAHIYAT ALFURSAN              ; NHC-DHAHIYAT ALFURSAN             ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,NH-CDHAHIYAT ALFURSAN - REAL ESTATE,REAL ESTATE,"
+								; JEDDAH-COURTHOUSE-PLOT               ; JEDDAH COURTHOUSE PLOT             ; JEDDAH COURTHOUSE PLOT            ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,JEDDAH COURTHOUSE PLOT - REAL ESTATE,REAL ESTATE,"
+								; MAKKAH-COURTHOUSE-PLOT               ; MAKKAH COURTHOUSE PLOT             ; MAKKAH COURTHOUSE PLOT            ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,MAKKAH COURTHOUSE PLOT - REAL ESTATE,REAL ESTATE,"
+								; MEWA-HEAD-OFFICE-COMPLEX-RIYADH-PLOT ; MEWA HEAD OFFICE COMPLEX RIYADH PLOT ; MEWA HEAD OFFICE COMPLEX RIYADH PLOT  ; false    ; real-estate                     ;                                           ;	            ;"Invest Saudi,MEWA HEAD OFFICE COMPLEX RIYADH PLOT - REAL ESTATE,REAL ESTATE,"
+								; OIC-HEAD-OFFICE-PLOT                 ; OIC HEAD OFFICE PLOT                ; OIC HEAD OFFICE PLOT             ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,OIC HEAD OFFICE PLOT - REAL ESTATE,REAL ESTATE,"
+								; PUBLIC-PROSECUTION-PLOT              ; PUBLIC PROSECUTION PLOT            ; PUBLIC PROSECUTION PLOT           ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,PUBLIC PROSECUTION PLOT - REAL ESTATE,REAL ESTATE,"
+								; RIYADH-COURTHOUSE-PLOT               ; RIYADH COURTHOUSE PLOT             ; RIYADH COURTHOUSE PLOT            ; false    ; real-estate                           ;                                           ;	            ;"Invest Saudi,RIYADH COURTHOUSE PLOT - REAL ESTATE,REAL ESTATE,"
+
+								            

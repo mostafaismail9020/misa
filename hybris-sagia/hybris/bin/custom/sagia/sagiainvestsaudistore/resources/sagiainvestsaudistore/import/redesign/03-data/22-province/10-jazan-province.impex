@@ -1,0 +1,134 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleEn = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 					 ; realFileName                    											; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+			  
+					   ; jazan-banner-image.png                                		 ; jazan-banner-image.png                          						; $siteResource/jazan-banner-image.png                                         			  ;                 image/png                ;                                          ; ""     ;
+					   ; jazan-map.png                                           	 ; jazan-map.png                                    						; $siteResource/jazan-map.png                                                 			  ;                 image/png                ;                                          ; ""     ;
+					   ; jazan-machines-industrialequipment.png	                     ; jazan-machines-industrialequipment.png	                   			; $siteResource/jazan-machines-industrialequipment.png	                                                      ;                 image/png                ;                                          ; ""     ;
+					   ; jazan-chemical-products-manufacturing.png	                 ; jazan-chemical-products-manufacturing.png	                 			; $siteResource/jazan-chemical-products-manufacturing.png	                                                   ;                 image/png                ;                                          ; ""     ;
+					   ; jazan-agriculture.png	        			                 ; jazan-agriculture.png	        			                			; $siteResource/jazan-agriculture.png	        			                                                     ;                 image/png                ;                                          ; ""     ;
+					   ; jazan-logistics.png	           			                     ; jazan-logistics.png	           			                     			; $siteResource/jazan-logistics.png	           			                                                   ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-tourism.png	           				                 ; jazan-tourism.png	           				                 			; $siteResource/jazan-tourism.png	           				                                                   ;                 image/png                ;                                          ; ""     ;   
+					   
+					   
+					   ; jazan-population.png        	                         ; jazan-population.png        	                                	; $siteResource/jazan-population.png        	                                        ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-seaports.png    			       	                 ; jazan-seaports.png    			   	                         	; $siteResource/jazan-seaports.png    			                                		  ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-active-factories.png            	                 ; jazan-active-factories.png      		                         	; $siteResource/jazan-active-factories.png      	                                		  ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-dams.png              	                          ; jazan-dams.png              	      	                         	; $siteResource/jazan-dams.png              	                                     	  ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-airport.png  				     	                 ; jazan-airport.png  				  		                        	; $siteResource/jazan-airport.png  				                               		  ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-hotels.png        		                         ; jazan-hotels.png        		                                	; $siteResource/jazan-hotels.png        		                                        ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-chambers-of-commerce.png 	                         ; jazan-chambers-of-commerce.png 	     	                         	; $siteResource/jazan-chambers-of-commerce.png 		                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-roads-length.png                                    ; jazan-roads-length.png                                            	; $siteResource/jazan-roads-length.png                                                  ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-industrial-city.png      	                          ; jazan-industrial-city.png      	                                   ; $siteResource/jazan-industrial-city.png      	                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-hospitals.png				                         ; jazan-hospitals.png				  		                         	; $siteResource/jazan-hospitals.png					                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-sport-city.png			                          ; jazan-sport-city.png			   	                         	; $siteResource/jazan-sport-city.png			                                 		  ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-towns.png					                        	 ; jazan-towns.png					   	                            ; $siteResource/jazan-towns.png					                                   	  ;                 image/png                ;                                          ; ""     ;   					
+					   											                   
+						
+					   ; jazan-jazan-city-Industries.png                          ; jazan-jazan-city-Industries.png                        			; $siteResource/jazan-jazan-city-Industries.png                                                    ;                 image/png                ;                                          ; ""     ;   
+					   ; jazan-logistics1.png                                      ; jazan-logistics1.png                                       		; $siteResource/jazan-logistics1.png                                                                ;                 image/png                ;                                          ; ""     ;   	
+					   ; jazan-300km-long-coastline-farasan-islands.png           ; jazan-300km-long-coastline-farasan-islands.png              		; $siteResource/jazan-300km-long-coastline-farasan-islands.png                                     ;                 image/png                ;                                          ; ""     ;   	
+					   ; jazan-solar-energy-potential.png                         ; jazan-solar-energy-potential.png                            		; $siteResource/jazan-solar-energy-potential.png                                                   ;                 image/png                ;                                          ; ""     ;   	
+					   ; jazan-renewable-water-reserves.png                       ; jazan-renewable-water-reserves.png                      			; $siteResource/jazan-renewable-water-reserves.png                                                 ;                 image/png                ;                                          ; ""     ;   	
+																	   
+					   
+					
+					
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=en]			; bannerText[lang=en]										 ; bannerImage (code, $contentCV)		; keyFactsHeader [lang = en]		 ; keyStrengthsHeader [lang = en] 	 ; opportunitiesHeader [lang = en]		
+							   ; jazan		 		;				; JAZAN PROVINCE				; Jazan's is home to several islands located in the Red Sea. ; jazan-banner-image.png				; KEY FACTS AND FIGURES	 			 ; REGIONAL BENEFITS		 			 ; 																																																									
+	
+	
+	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 				;  $contentCV  ; headerText[lang = en]    							; imageIcon  (code, $contentCV)     				; &componentRef
+											    ; jazan-machines					; 			   ; Petroleum products manufacturing			  		; jazan-machines-industrialequipment.png			; jazan-machines			
+                                                ; jazan-chemical-products			;              ; Chemical products manufacturing		  			; jazan-chemical-products-manufacturing.png		    ; jazan-chemical-products	
+                                                ; jazan-agriculture	 				;              ; Agriculture	   								  	; jazan-agriculture.png	        					; jazan-agriculture	 		
+                                                ; jazan-logistics	 				;              ; Logistics	           		 						; jazan-logistics.png	           					; jazan-logistics	 		
+                                                ; jazan-tourism	 					;              ; Tourism	           		 						; jazan-tourism.png	           						; jazan-tourism	 			
+  
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = en] ; value[lang = en] 
+										; jazan-strategic-population	;			   ; 1.6M			; population
+										; jazan-strategic-landmass		;			   ; 13,000 km2 	; in landmass area
+
+	  
+												
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = en]	; backgroundImage (code, $contentCV)   	; sectors(&componentRef) 													       			   ; longDescription[lang = en]																																																																																																																																						; localizedStats (uid, $contentCV)   				     ; &componentRef
+												 ; jazan-strategic-component		;          		; STRATEGIC SECTORS			; jazan-map.png		     			    ;jazan-machines,jazan-chemical-products	,jazan-agriculture	,jazan-logistics,jazan-tourism	  ; Jazan's most precious island is Farasan island. Jazan City for Basic and Downstream Industries is one of the most important industrial cities and investment destinations in the region, due to its proximity to international shipping lanes on the Red Sea and the Horn of Africa.The port of Jazan, which has a capacity of 5 million tons, is strategically located near the maritime trade routes connecting Europe, the Arabian Gulf, and East Africa. Jazan is also connected to a modern road network that enable the region to link it with the south of the Kingdom.  ; jazan-strategic-population,jazan-strategic-landmass      ;  jazan-strategic-component
+                                                                               
+	
+###########################################################
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]		 ; $contentCV ; imageIcon (code, $contentCV) 		; headerText[lang = en]		   	;  text[lang = en]										; &componentRef
+									   ; jazan-keyfacts1	     ;			  ; jazan-population.png        		; 1,637,361	                   	;  population			; jazan-keyfacts1
+									   ; jazan-keyfacts2       	 ;            ; jazan-seaports.png    				; 1		                   		;  Seaports                                             ; jazan-keyfacts2 
+									   ; jazan-keyfacts3         ;            ; jazan-active-factories.png      	; 107		               	   	;  active factories in Q3 2021				             ; jazan-keyfacts3 
+									   ; jazan-keyfacts4         ;            ; jazan-dams.png              		; 13			               	;  dams                                                 ; jazan-keyfacts4 
+									   ; jazan-keyfacts5         ;            ; jazan-airport.png  					; 1		               			;  international airport and domestic airport			; jazan-keyfacts5 		   
+									   ; jazan-keyfacts6         ;            ; jazan-hotels.png        			; 57		                   	;  Hotels									            ; jazan-keyfacts6 
+									   ; jazan-keyfacts7         ;            ; jazan-chambers-of-commerce.png 		; 1			                   	;  Chambers of Commerce					                ; jazan-keyfacts7 
+									   ; jazan-keyfacts8         ;            ; jazan-roads-length.png             	; 2,201			               	;  roads length						                    ; jazan-keyfacts8 
+									   ; jazan-keyfacts9         ;            ; jazan-industrial-city.png      		; 1	                   	   	   	;  industrial city                                      ; jazan-keyfacts9 
+									   ; jazan-keyfacts10        ;            ; jazan-hospitals.png					; 21			               	;  hospitals with 2,250 beds			                    ; jazan-keyfacts10
+									   ; jazan-keyfacts11        ;            ; jazan-sport-city.png				; 1			               		;  Sport City			                                ; jazan-keyfacts11
+									   ; jazan-keyfacts12        ;            ; jazan-towns.png						; 17		               	   	;  Towns			                                    ; jazan-keyfacts12
+												   
+									   
+									   
+									   
+									 
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]					  	  ; $contentCV      ; image (code, $contentCV)					             				 ; text[lang=en]				                        ;&componentRef
+                                                                                                                                                                                                                    
+										   ; jazan-key-strength1                   ;                 ; jazan-jazan-city-Industries.png                                 ; JAZAN CITY FOR BASIC AND DOWNSTREAM INDUSTRIES                    ; jazan-key-strength1
+                                           ; jazan-key-strength2                   ;                 ; jazan-logistics1.png                                            ; LOGISTICS                                                         ; jazan-key-strength2
+                                           ; jazan-key-strength3                   ;                 ; jazan-300km-long-coastline-farasan-islands.png                  ; 300 KM LONG COASTLINE INCLUDING ISLANDS - THOSE ISLANDS CAN CREATE A LOT OF INVESTMENT OPPORTUNITIES IN TOURISM & OTHER SECTORS (FARASAN ISLAND)         ; jazan-key-strength3
+                                           ; jazan-key-strength4                   ;                 ; jazan-solar-energy-potential.png                                ; SOLAR ENERGY POTENTIAL                                            ; jazan-key-strength4
+                                           ; jazan-key-strength5                   ;                 ; jazan-renewable-water-reserves.png                              ; RENEWABLE WATER RESERVES                                          ; jazan-key-strength5
+		                                   
+	
+#####################################################	
+	
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																									; keyStrengths(&componentRef) 																									; investmentOpportunities(&componentRef)
+							   ; jazan	;				    ;  jazan-strategic-component  				 ; jazan-keyfacts1,jazan-keyfacts2 ,jazan-keyfacts3 ,jazan-keyfacts4 ,jazan-keyfacts5 ,jazan-keyfacts6, jazan-keyfacts7 ,jazan-keyfacts8 ,jazan-keyfacts9 ,jazan-keyfacts10,jazan-keyfacts11,jazan-keyfacts12   ; jazan-key-strength1,jazan-key-strength2,jazan-key-strength3,jazan-key-strength4,jazan-key-strength5   ;	
+	
+	
+
+
+

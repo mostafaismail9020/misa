@@ -1,0 +1,59 @@
+#### Impex For Spring 2019 ####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                ; realFileName                         ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]   ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; Banner-Image-Spring-2019.jpg       ;Banner-Image-Spring-2019.jpg          ; $siteResource/Banner-Image-Spring-2019.jpg                      				; image/jpg   ;                                          ; ""     ;
+				   ; Spring-2019-Thumbnail_02.jpg       ;Spring-2019-Thumbnail_02.jpg          ; $siteResource/Spring-2019-Thumbnail_02.jpg                    					; image/jpg   ;                                          ; ""     ;
+
+
+INSERT_UPDATE Media; code[unique = true]                                        ; realFileName                                             	; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]  ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; resource-investment-highlights-spring-2019-arabic.pdf		;resource-investment-highlights-spring-2019-arabic.pdf		; $siteResource/resource-investment-highlights-spring-2019-arabic.pdf           ; application/pdf                 ;                                          ; ""     ;
+                   ; resource-investment-highlights-spring-2019-english.pdf     ;resource-investment-highlights-spring-2019-english.pdf		; $siteResource/resource-investment-highlights-spring-2019-english.pdf          ; application/pdf                 ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias												;  $contentCV ; 
+                            ; media-container-spring-2019   ; resource-investment-highlights-spring-2019-arabic.pdf, resource-investment-highlights-spring-2019-english.pdf	;          ; 
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]		;resourceTitle[lang = en] 					;resourceShortInformation[lang = en];resourceUrl(uid, $contentCV);resourceBulletPoints	;resourceDate[dateformat = dd.MM.yyyy HH:mm:ss]	;&componentRef;
+										  ; 						;resource-spring-2019	;Saudi Arabia's investment news in Q1 2019	;"Investment Highlights Spring 2019";							 ;						;04.06.2019 00:00:00							;resource-spring-2019;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]		;resourceFullDescription[lang = en]
+										  ;							;resource-spring-2019	;"
+<p>As we celebrate the three-year anniversary since the launch of Vision 2030, we are proud to present ''Investment Highlights''. In this special report, we present some of the major investment highlights for the year to date, also discussing how they relate to further investment opportunities.</p> 
+<p>For the global investor community, Vision 2030 signals the start of new possibilities. Under this ambitious blueprint for the future, the Kingdom is continuing to unlock new investment opportunities and sectors at an unprecedented rate, while working hard to implement hundreds of reforms that make it easier for the business community to access these.</p>
+<p>The ''Investment Highlights'' report also covers recent acceleration in privatization and public-private partnerships, as well as the launch of exciting new mega projects and policy programs. We trust you will find this information both useful and illuminating.</p>
+<p>Inside this report:</p>
+<ul>
+<li>New licenses figures</li>
+<li>Top countries of origin</li>
+<li>Top sectors of new investment</li>
+<li>Major projects and opportunities</li>
+</ul>
+";
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]		;resourceFullDescription[lang = ar]
+										  ;							;resource-spring-2019   ;"
+<p>فخر إذ نحتفل بالذكرى الثالثة لانطلاقة رؤية المملكة 2030 أن نعرض لكم (موجز الاستثمار)، ويرصد هذا التقرير أهم مستجدات الاستثمار في المملكة خلال الربع الأول من العام 2019 إذ يتضمن عددًا من أهم الصفقات الاستثمارية التي تمت خلال هذه المرحلة، إضافة إلى عرض ارتباط هذه الصفقات الاستثمارية بفرص استثمارية أكبر.</p>
+<p>ويتضمن التقرير أيضًا مستجدات الخصخصة المتسارعة والشراكات التي تتم بين القطاعين السعوديين الحكومي والخاص، وانطلاقة المشاريع الجديدة الكبرى.</p>
+<p>يتضمن التقرير:</p>
+<p>- أرقام التراخيص الجديدة</p>
+<p>- أكبر الدول المستثمرة</p>
+<p>- أكثر القطاعات استثمارًا</p>
+<p>- المشاريع الكبرى والفرص</p>
+";
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]		; resourceDetailsImage(code, $contentCV) 	; resourceThumbnailImage(code, $contentCV)    ;resourceFullReport(qualifier, $contentCV);
+                                          ;                         ;resource-spring-2019  	;Banner-Image-Spring-2019.jpg   			; Spring-2019-Thumbnail_02.jpg                ;media-container-spring-2019	;
+

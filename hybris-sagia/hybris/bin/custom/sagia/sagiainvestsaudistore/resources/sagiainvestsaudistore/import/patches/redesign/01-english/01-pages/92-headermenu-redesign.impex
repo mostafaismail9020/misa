@@ -1,0 +1,230 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$jarResourceCms = $config-jarResourceCmsValue
+
+INSERT_UPDATE Media	; code[unique = true]         						; realFileName             					            ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]		; mime[default = 'image/jpeg']  ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; INV_logo_white_en.svg 							; INV_logo_white_en.svg 			                	; $siteResource/INV_logo_white_en.svg 	 								  			; image/svg+xml					;										   ; ""     ;
+					; INV_logo_green_en.svg 							; INV_logo_green_en.svg 			                	; $siteResource/INV_logo_green_en.svg 	 								  			; image/svg+xml					;										   ; ""     ;
+					; INV_logo_white_ar.svg 							; INV_logo_white_ar.svg 			                	; $siteResource/INV_logo_white_ar.svg 	 								  			; image/svg+xml					;										   ; ""     ;
+					; INV_logo_green_ar.svg 							; INV_logo_green_ar.svg 			                	; $siteResource/INV_logo_green_ar.svg 	 								  			; image/svg+xml					;										   ; ""     ;
+
+
+INSERT_UPDATE Media; code[unique = true]               ; realFileName                      ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']	; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; about_Banner.png                  ; about_Banner.png                  ; $siteResource/about_Banner.png                                     			; image/png                     ;                                          ; ""     ;
+                   ; economic_Highlights_Banner.png    ; economic_Highlights_Banner.png    ; $siteResource/economic_Highlights_Banner.png                                   ; image/png                     ;                                          ; ""     ;
+                   ; invest_In_Saudi_Arabia_Banner.png ; invest_In_Saudi_Arabia_Banner.png ; $siteResource/invest_In_Saudi_Arabia_Banner.png                                ; image/png                     ;                                          ; ""     ;
+                   ; investment_Guide_Banner.png       ; investment_Guide_Banner.png       ; $siteResource/investment_Guide_Banner.png                                      ; image/png                     ;                                          ; ""     ;
+                   ; media_Center_Banner.png           ; media_Center_Banner.png           ; $siteResource/media_Center_Banner.png                                     		; image/png                     ;                                          ; ""     ;
+                   ; meet_the_Kingdom_Banner.png       ; meet_the_Kingdom_Banner.png       ; $siteResource/meet_the_Kingdom_Banner.png                                     	; image/png                     ;                                          ; ""     ;
+
+
+########## Url links
+INSERT_UPDATE CMSLinkComponent; uid[unique = true] 		; name 				; linkName[lang = en]	; linkName[lang = ar]	; url 							; $contentCV[unique = true]
+							  ; language-switch-link 	; Language Switch 	; English 				; Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©		; /ar 							;
+							  ; vision-link 			; Vision 2030 		; 		 			 	; 						; http://vision2030.gov.sa/ar/ 	;
+
+
+########## Content Pages Menu Links, link details are in file
+INSERT_UPDATE CMSLinkComponent; uid[unique = true] 				; name 							; linkName[lang = en] 		; linkName[lang = ar] 			; contentPage(uid, $contentCV)			; url	; $contentCV[unique = true]	; 
+							  ; about-kingdom-link      		; About the Kingdom 			; About the Kingdom 		; About the Kingdom 			; meet-the-kingdom 						;		;
+							  ; living-in-saudi-link    		; Living In Saudi Arabia		; Living In Saudi Arabia	; Living In Saudi Arabia		; living-in-saudi 						;		;
+                              ; regions-link            		; Regions Overview 				; Regions Overview  		; Regions Overview  			; province-region-homepage				;		;
+                              ; province-explore-more   		; Province Explore More 		; Explore More  	    	; Explore More 	        		; province-region-homepage				;		;
+									
+							  ; sectors-link 					; Sectors 						; Sectors 					; Sectors 						; sectors-opportunities 				;		;
+                              ; explore-more-link           	; Explore More              	; Explore More              ; Explore More              	; sectors-opportunities					;		;
+							  ; opportunities-link 				; Opportunities 				; Opportunities 			; Opportunities 				; opportunity-search 					;		;
+                              ; RHQ-link                    	; Regional Head Quarters		; Regional Head Quarters  	; Regional Head Quarters  		; regional-head-quarters				;		;
+
+                              ; investor-journey-link         	; Investment Guide  			; Investment Guide  		; Investment Guide 				; guide 								;		;
+                              ; incentives-for-investors-link 	; Incentives			  		; Incentives			    ; Incentives 					; incentives 							;		;
+							
+							  ; about-invest-saudi-link 		; About Invest Saudi			; About Invest Saudi  		; About Invest Saudi  			; about-invest-saudi  					;		;
+							  ; contact-us-link         		; Contact Us 	 				; Contact Us 	 			; Contact Us 	 				; contact-us 							;		;
+							
+							  ; media-center-overview-link 		; Media Center Overview 		; Media Center Overview 	; Media Center Overview 		; media-center 							;		;
+							  ; news-link               		; News 							; News 						; News 							; news 									;		;
+							  ; events-link             		; Events  						; Events  					; Events  						; events 								;		;
+							  ; resources-link          		; Resources 					; Resources 				; Resources 					; resources 							;		;
+							  ; videos-link             		; Videos 						; Videos 					; Videos 						; videos 								;		;
+				
+                              ; dasboard-link                 	; Dashboard 					; Dashboard 				; Dashboard 					; economic-highlights  					;		;
+                              ; international-link            	; SA in International Indices 	; SA in International Indices 	; SA in International Indices 	; sa-international-indices 			;		;
+                              ; infrastructure-logistic-link  	; Infrastructures and Logistic 	; Infrastructures and Logistic 	; Infrastructures and Logistic 	; infrastructure-logistics 			;		;
+                              ; economic-sectors-link         	; Saudi Economic Sectors 		; Saudi Economic Sectors 	; Saudi Economic Sectors 		; saudi-economic-sectors 				;		;
+                              ; investment-data-link          	; Investment Data 				; Investment Data 			; Investment Data 				; investment-data						;		;
+
+
+########## Redesigning the Nodes
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]          	; name             				; linkName[lang = en] 				; linkName[lang = ar] 					; url      											; $contentCV[unique = true]	;
+                              ; meet-the-kingdom-link       	; Meet the Kingdom 				; Meet the Kingdom    				; Meet the Kingdom    					; #				 									;       
+							  ; invest-in-saudi-arabia-link 	; Invest in Saudi Arabia 		; Invest in Saudi Arabia    		; Invest in Saudi Arabia    			; # 												;                              
+							  ; investor-guide-link         	; Start Your Business 			; Start Your Business    			; Start Your Business   				; # 												;
+                              ; economic-highlight-link     	; Economic Highlights 			; Economic Highlights 				; Economic Highlights 					; #													;                             							  
+							  ; media-center-link           	; Media  						; Media     						; Media     							; # 												;
+                              ; about-us-link               	; About 						; About    							; About   								; # 												;
+					
+#Defining 3rd level links		
+                              ; riyadh-link                 	; Riyadh Province 				; Riyadh Province 					; Riyadh Province 						; /meetTheKingdom/province/riyadh 					;
+                              ; makkah-link          			; Makkah Province 				; Makkah Province 					; Makkah Province 						; /meetTheKingdom/province/makkah 					;
+                              ; eastern-link                	; Eastern Province				; Eastern Province 					; Eastern Province 						; /meetTheKingdom/province/eastern 		    		;
+                              ; madinah-link                	; Madinah Province 				; Madinah Province 					; Madinah Province 						; /meetTheKingdom/province/medina 					;
+                              ; al-baha-link                	; Al Baha Province 				; Al Baha Province 					; Al Baha Province 						; /meetTheKingdom/province/al-baha 					;
+                              ; al-jawf-link                	; Al Jawf Province				; Al Jawf Province 					; Al Jawf Province 						; /meetTheKingdom/province/al-jouf 					;	
+                              ; northern-borders-link       	; Northern Borders Province 	; Northern Borders Province 		; Northern Borders Province 			; /meetTheKingdom/province/northern-borders 		;
+                              ; qassim-link                 	; Qassim Province 				; Qassim Province 					; Qassim Province 						; /meetTheKingdom/province/qassim 					;
+                              ; hail-link                   	; Ha'il Province				; Ha'il Province 					; Ha'il Province 						; /meetTheKingdom/province/hail 					;
+                              ; tabuk-link                  	; Tabuk Province 				; Tabuk Province 					; Tabuk Province 						; /meetTheKingdom/province/tabuk 					;
+                              ; aseer-link                 		; Aseer Province 				; Aseer Province 					; Aseer Province 						; /meetTheKingdom/province/asir						;
+                              ; jazan-link                  	; Jazan Province				; Jazan Province 					; Jazan Province 						; /meetTheKingdom/province/jazan 					;
+                              ; ajran-link                  	; Najran Province				; Najran Province 					; Najran Province 						; /meetTheKingdom/province/najran 					;
+							
+                              ; chemicals-link					; Chemicals  					; Chemicals  						; Chemicals 							; /sectors-opportunities/chemicals					;
+                              ; energy-link                 	; Energy   						; Energy   							; Energy  								; /sectors-opportunities/energy 					;
+                              ; environment-services-link   	; Environment Services  		; Environment Services  			; Environment Services 					; /sectors-opportunities/environment-services 		;
+                              ; info-and-tech-link          	; Information and Communication Technology  ; Information and Communication Technology  ; Information and Communication Technology ; /sectors-opportunities/information-technology 	;
+                              ; tourism-link                	; Tourism & Quality of Life 	; Tourism & Quality of Life 		; Tourism & Quality of Life 			; /sectors-opportunities/tourism-culture-entertainment 	;
+                              ; industries-link             	; Industrial and Manufacturing  ; Industrial and Manufacturing  	; Industrial and Manufacturing 			; # 												;
+                              ; health-link                 	; Healthcare & Life Sciences	; Healthcare & Life Sciences		; Healthcare & Life Sciences			; # 												;
+                              ; mining-and-metals-link      	; Mining and Metals  			; Mining and Metals  				; Mining and Metals 					; # 												;
+                              ; transport-and-logistics-link	; Transport & Logistics   		; Transport & Logistics   			; Transport & Logistics  				; # 												;
+                              ; real-estate-link            	; Real Estate 					; Real Estate  						; Real Estate 							; # 												;
+                              ; education-link              	; Education  					; Education  						; Education 							; # 												;
+                              ; financial-services-link     	; Financial Services  			; Financial Services  				; Financial Services 					; # 												;         
+                              ; innovation-entrepreneurship-link; Innovation and Entrepreneurship	; Innovation and Entrepreneurship	; Innovation and entrepreneurship 	; # 												;
+
+
+########## CMSNavigationNode - Name, Image, Title and Description
+INSERT_UPDATE CMSNavigationNode	; uid[unique = true]				; name						; nodeImage(code, $contentCV)	     ; title[lang = en] 		; title[lang = ar] 			; &nodeRef 						; $contentCV[unique = true]	; nodeDescription[lang = en];
+								; root 								; Root 						; 								     ;							;							;								;							;					;
+								; header-menu 						; Portal Header Menu		;								     ; Portal Header Menu 		; Portal Header Menu		; PortalHeaderMenu				;							;					;
+																																     
+# Meet the Kingdom                                                                                                                   
+								; meet-the-kingdom-navnode 			; Meet the Kingdom 			; meet_the_Kingdom_Banner.png		 ; Meet the Kingdom 		; Meet the Kingdom  		; meet-the-kingdom-navnode 		; 							; Explore why Saudi Arabia is your perfect investment destination.;
+								; about-the-kingdom-navnode 		; About the Kingdom 		;								     ; About the Kingdom 		; About the Kingdom 		; about-the-kingdom-navnode 	; 							; 					;
+								; living-in-saudi-arabia-navnode	; Living In Saudi Arabia	;								     ; Living In Saudi Arabia	; Living In Saudi Arabia 	; living-in-saudi-arabia-navnode; 							; 					;
+								; regions-navnode 					; Regions Overview 		 	;								     ; Regions Overview 		; Regions Overview  		; regions-navnode 				; 							;					;
+																																     
+# Invest in Saudi Arabia                                                                                                             
+								; invest-in-saud-arabia-navnode		; Invest in Saudi Arabia 	; invest_In_Saudi_Arabia_Banner.png  ; Invest in Saudi Arabia	; Invest in Saudi Arabia 	; invest-in-saud-arabia-navnode ;							; Explore Saudi Arabia's exceptional dynamic sectors and key opportunities for business growth and success.;
+								; sectors-navnode 					; Sectors 					;								     ; Sectors 					; Sectors 					; sectors-navnode 				; 							; 					;
+								; opportunities-navnode 			; Opportunities 			;								     ; Opportunities 			; Opportunities 			; opportunities-navnode 		; 							;  					;
+								; regional-hgts-navnode 			; Regional Head Quarters 	;								     ; Regional Head Quarters 	; Regional Head Quarters 	; regional-hgts-navnode 		; 							; 					;
+
+# Investor Guide
+								; investor-guide-navnode 			; Investor Guide 			; investment_Guide_Banner.png	     ; Start Your Business 		; Start Your Business		; investor-guide-navnode 		;							; Discover our end-to-end facilitation services to support you in all your business needs and livability essentials.;
+								; investor-journey-navnode 			; Investor Journey 			;								     ; Investment Guide			; Investment Guide 			; investor-journey-navnode 		; 							;					;
+								; incentives-for-investors-navnode 	; Incentives for Investors 	;								     ; Incentives  				; Incentives 				; incentives-for-investors-navnode	; 						;					;
+																																     
+# Economic Highlights                                                                                                                
+								; economic-highlight-navnode 		; Economic Highlight 		; economic_Highlights_Banner.png	 ; Economic Highlights 		; Economic Highlights 		; economic-highlight-navnode 	; 							; Insights about key economic numbers in Saudi Arabia.;
+								; dasboard-navnode 					; Dashboard  				;								     ; Dashboard  				; Dashboard  				; dasboard-navnode 				; 							; 					;	
+								; international-navnode 			; SA in international Indices	;							     ; SA in International Indices	 ; SA in International Indices	; international-navnode ; 							; 					;
+								; infrastructure-logistic-navnode 	; Infrastructures and Logistic  ;							     ; Infrastructures and Logistic  ; Infrastructures and Logistic ; infrastructure-logistic-navnode ; 				;  					;
+								; economic-sectors-navnode 			; Saudi Economic Sectors  		;							     ; Saudi Economic Sectors  	; Saudi Economic Sectors  	; economic-sectors-navnode 		; 							; 					;
+								; investment-data-navnode 			; Investment Data 			;								     ; Investment Data 			; Investment Data 			; investment-data-navnode 		; 							;  					;
+
+# Media Center
+								; media-center-navnode 				; Media 					; media_Center_Banner.png			 ; Media 					; Media 					; media-center-navnode 			; 							; Explore our collection of resources to guide you through the investment opportunities in Saudi Arabia.;
+								; media-center-overview-navnode 	; Media Center Overview  	;								     ; Media Center Overview  	; Media Center Overview  	; media-center-overview-navnode ; 							; 					;
+                                ; media-center-news-navnode         ; News                      ;                                    ; News                     ; News                      ; media-center-news-navnode     ;                           ;                   ;
+                                ; media-center-events-navnode       ; Events                    ;                                    ; Events                   ; Events                    ; media-center-events-navnode   ;                           ;                   ;
+                                ; media-center-resources-navnode    ; Resources                 ;                                    ; Resources                ; Resources                 ; media-center-resources-navnode;                           ;                   ;
+                                ; media-center-videos-navnode       ; Videos                    ;                                    ; Videos                   ; Videos                    ; media-center-videos-navnode   ;                           ;                   ;
+								
+# About Us                                                                                                                           
+								; about-us-navnode 					; About Us 					; about_Banner.png	                 ; About 				    ; About 					; about-us-navnode				;							; Learn more about us and our role as Saudi Arabia's global investment attraction and promotion platform.;
+								; about-invest-saudi-navnode 		; About Invest Saudi 		;								     ; About Invest Saudi 		; About Invest Saudi 		; about-invest-saudi-navnode 	; 							; 					;
+								; contact-and-faq-navnode 			; Contact Us  				;								     ; Contact Us  				; Contact Us  				; contact-and-faq-navnode 		; 							; 					;
+
+
+REMOVE CMSNavigationNode		; uid[unique = true]   ; $contentCV[unique = true];
+                                ; news-navnode 		   ;
+                                ; events-navnode 	   ;
+                                ; resources-navnode    ;
+                                ; videos-navnode 	   ;
+
+
+########## CMSNavigationNode - Parent and Child relationship					
+INSERT_UPDATE CMSNavigationNode	; uid[unique = true]			; name					; cmsLink(uid, $contentCV) 	 	; &nodeRef 							; parent(uid, $contentCV) 	; children(uid, $contentCV)[mode = append]	; links(uid, $contentCV)[mode = replace]; $contentCV[unique = true]	;
+								; root 							; Root 					; 	 							;									; 							; 											; 										; 							;
+								; header-menu 					; Portal Header Menu	;								;									; root						;									 		; 									 	; 							;
+
+# Meet the Kingdom
+								; meet-the-kingdom-navnode 		; Meet the Kingdom 		; meet-the-kingdom-link			; meet-the-kingdom-navnode			; header-menu 				; 											; 										; 							;
+								; about-the-kingdom-navnode 	; About the Kingdom 	; about-kingdom-link			; about-the-kingdom-navnode			; meet-the-kingdom-navnode 	; 											; 										; 							;
+								; living-in-saudi-arabia-navnode; Living In Saudi Arabia; living-in-saudi-link			; living-in-saudi-arabia-navnode	; meet-the-kingdom-navnode 	; 											; 										; 							;
+								; regions-navnode 				; Regions Overview  	; regions-link					; regions-navnode					; meet-the-kingdom-navnode 	; 											; riyadh-link,makkah-link,eastern-link,madinah-link,aseer-link,province-explore-more ;		;
+
+# Invest in Saudi Arabia
+								; invest-in-saud-arabia-navnode	; Invest in Saudi Arabia; invest-in-saudi-arabia-link	; invest-in-saud-arabia-navnode  	; header-menu 				;  											; 									 	; 							;
+								; sectors-navnode 				; Sectors 				; sectors-link					; sectors-navnode 					; invest-in-saud-arabia-navnode ; 										; chemicals-link,energy-link,environment-services-link,info-and-tech-link,tourism-link,explore-more-link ;		;
+								; opportunities-navnode 		; Opportunities 		; opportunities-link			; opportunities-navnode 			; invest-in-saud-arabia-navnode ;										; 									 	; 							;
+								; regional-hgts-navnode 		; Regional Head Quarters; RHQ-link						; regional-hgts-navnode 			; invest-in-saud-arabia-navnode ;  										; 									 	; 							;
+
+# Investor Guide
+								; investor-guide-navnode 		; Start Your Business	; investor-guide-link			; investor-guide-navnode 			; header-menu 				;  											; 									 	; 							;
+								; investor-journey-navnode 		; Investment Guide 		; investor-journey-link			; investor-journey-navnode  		; investor-guide-navnode 	;  											; 									 	; 							;
+								; incentives-for-investors-navnode ; Incentives			; incentives-for-investors-link	; incentives-for-investors-navnode	; investor-guide-navnode 	;  											; 									 	; 							;
+
+# Economic Highlights
+								; economic-highlight-navnode 	; Economic Highlight 	            ; economic-highlight-link		; economic-highlight-navnode 		; header-menu 					;  							; 									 	; 							;
+								; dasboard-navnode 				; Dashboard  			            ; dasboard-link					; dasboard-navnode 					; economic-highlight-navnode 	;  							; 									 	; 							;
+								; international-navnode 		; SA in international Indices  		; international-link			; international-navnode 			; economic-highlight-navnode 	;  							; 									 	; 							;
+								; infrastructure-logistic-navnode ; Infrastructures and logistic  	; infrastructure-logistic-link	; infrastructure-logistic-navnode  	; economic-highlight-navnode	;  							; 									 	; 							;
+								; economic-sectors-navnode 		; Saudi Economic Sectors  			; economic-sectors-link			; economic-sectors-navnode   		; economic-highlight-navnode 	;  							; 									 	; 							;
+								; investment-data-navnode 		; Investment Data 					; investment-data-link			; investment-data-navnode   		; economic-highlight-navnode 	;  							; 									 	; 							;
+
+# Media Center
+								; media-center-navnode 			  ; Media 				            ; media-center-link 			; media-center-navnode 				; header-menu 				    ;  							; 									 	; 							;
+								; media-center-overview-navnode   ; Media Center Overview           ; media-center-overview-link	; media-center-overview-navnode   	; media-center-navnode 		    ;  							;                        				;	                        ;
+                                ; media-center-news-navnode       ; News                            ; news-link                     ; media-center-news-navnode         ; media-center-navnode          ;                           ;                                       ;                           ;
+                                ; media-center-events-navnode     ; Events                          ; events-link                   ; media-center-events-navnode       ; media-center-navnode          ;                           ;                                       ;                           ;
+                                ; media-center-resources-navnode  ; Resources                       ; resources-link                ; media-center-resources-navnode    ; media-center-navnode          ;                           ;                                       ;                           ;
+                                ; media-center-videos-navnode     ; Videos                          ; videos-link                   ; media-center-videos-navnode       ; media-center-navnode          ;                           ;                                       ;                           ;
+
+# About Us
+								; about-us-navnode 				; About Us 				; about-us-link					; about-us-navnode 					; header-menu 				;  											; 									 	; 							;
+								; about-invest-saudi-navnode 	; About Invest Saudi 	; about-invest-saudi-link		; about-invest-saudi-navnode 		; about-us-navnode 			;  											; 									 	; 							;
+								; contact-and-faq-navnode 		; Contact Us  			; contact-us-link 				; contact-and-faq-navnode   		; about-us-navnode 			;  											; 									 	; 							;
+
+
+########## CMSNavigationNode - Parent and Child relationship
+INSERT_UPDATE CMSNavigationNode; uid[unique = true][mode = replace]; name               ; title[lang = en]   ; parent(uid, $contentCV); &nodeRef         ; children(uid, $contentCV)[mode = replace]   ; links(uid, $contentCV); $contentCV[unique = true]
+                               ; header-menu                       ; Portal Header Menu ; Portal Header Menu ; root                   ; PortalHeaderMenu ; meet-the-kingdom-navnode,invest-in-saud-arabia-navnode,investor-guide-navnode,economic-highlight-navnode,media-center-navnode,about-us-navnode ; ;
+
+
+INSERT_UPDATE InvestSaudiNavigationBarComponent; uid[unique = true] ; name               ; navigationNode(&nodeRef); logoImage(code, $contentCV)[lang = en] ; logoImage(code, $contentCV)[lang = ar]; logoLink (uid, $contentCV); visionImage(code, $contentCV)[lang = en]; visionImage(code, $contentCV)[lang = ar]; visionLink(uid, $contentCV); &componentRef ; $contentCV[unique = true]
+                                               ; portal-header-menu ; Portal Header Menu ; PortalHeaderMenu        ; INV_logo_white_en.svg                  ; INV_logo_white_ar.svg                 ;                           ; INV_logo_green_en.svg                   ; INV_logo_green_ar.svg                   ; vision-link                ; navigationbar ;
+
+
+# Create Content Slots
+UPDATE ContentSlot; uid[unique = true]	; cmsComponents(&componentRef) ; $contentCV[unique = true]
+				  ; PortalHeaderSlot 	; navigationbar 				;
+
+
+# Content Slots
+INSERT_UPDATE ContentSlot; $contentCV[unique=true]	; uid[unique=true]	; active	; cmsComponents(&componentRef)[mode=replace]
+						 ;							; TopHeaderSlot		; true		; 
+
+
+INSERT_UPDATE ComponentTypeGroups2ComponentType; source(code)[unique = true]; target(code)[unique = true]
+                                               ; portalheaderlinks          ; InvestSaudiNavigationBarComponent
+
+
+UPDATE InvestSaudiNavigationBarComponent; uid[unique = true] ; name               ; &componentRef ; $contentCV[unique = true]
+                                        ; portal-header-menu ; Portal Header Menu ; navigationbar ;
+

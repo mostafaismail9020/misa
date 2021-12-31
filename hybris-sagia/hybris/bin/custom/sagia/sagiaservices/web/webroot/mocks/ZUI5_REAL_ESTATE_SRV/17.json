@@ -1,0 +1,90 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "17",
+        "RegionDesc": "Jizan",
+        "CityCode": "18000142",
+        "CityDesc": "Jazan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "17",
+        "RegionDesc": "Jizan",
+        "CityCode": "18000143",
+        "CityDesc": "Sabia"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "17",
+        "RegionDesc": "Jizan",
+        "CityCode": "18000144",
+        "CityDesc": "Abi `Arish"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "17",
+        "RegionDesc": "Jizan",
+        "CityCode": "18000145",
+        "CityDesc": "Samtah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "17",
+        "RegionDesc": "Jizan",
+        "CityCode": "18000146",
+        "CityDesc": "Baysh"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "17",
+        "RegionDesc": "Jizan",
+        "CityCode": "18000147",
+        "CityDesc": "Ahad Al Masarihah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "17",
+        "RegionDesc": "Jizan",
+        "CityCode": "18000148",
+        "CityDesc": "Al Ardha"
+      }
+    ]
+  }
+}

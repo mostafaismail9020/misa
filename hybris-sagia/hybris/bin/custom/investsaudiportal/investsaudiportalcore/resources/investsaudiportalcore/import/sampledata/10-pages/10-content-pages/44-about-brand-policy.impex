@@ -1,0 +1,83 @@
+$page = sample-brand-policy
+$template = portalGlobalTemplate
+$pageName = Brand Policy
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /about/brandpolicy
+
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Brand Policy ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                    ; name                                     ; &componentRef                         ; $contentCV[unique = true]; description[lang = en]; description[lang = ar];
+                                                  ; sample-generic-paragraph-brand-policy ; Brand Policy Generic Paragraph Component ; sample-generic-paragraph-brand-policy ;                          ; "
+<section class='container mb-5 general-info'>
+   <div class='umb-grid'>
+      <div class='grid-section'>
+         <div >
+            <div class='container'>
+               <div class='row clearfix'>
+                  <div class='col-md-12 column'>
+                     <div >
+                        <p>INVEST SAUDI brand is available for use by the public subject to the terms of the INVEST SAUDI’s Brand Policy. To download our logo, you must read the Brand Policy and then click I AGREE to download the logo. Permission is granted to you to use the logo only on the conditions set forth in the Brand Policy. Your use of the logo implies acceptance of and agreement with the terms of the Brand Policy. If you do not accept and agree to follow the rules for using the logo as set out in the Brand Policy, you do not have the right to use INVEST SAUDI logo. Any use of the logo that does not comply with the Brand Policy is not authorized.</p>
+                        <p> </p>
+                        <p> </p>
+                        <object width='100%' height='500px' data='https://docs.google.com/gview?embedded=true&url=https://investsaudi.sa/media/2079/invest-saudis-brand-policy-en.pdf'>
+                           <p>This browser does not support inline PDFs. Please download the PDF to view it: <a href='https://investsaudi.sa/media/2079/invest-saudis-brand-policy-en.pdf' download>Download PDF</a></p>
+                        </object>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+"                                                                                                                                                                                                                               ; "
+<section class='container mb-5 general-info'>
+   <div class='umb-grid'>
+      <div class='grid-section'>
+         <div>
+            <div class='container'>
+               <div class='row clearfix'>
+                  <div class='col-md-12 column'>
+                     <div>
+                        <p>شعار 'استثمر في السعودية' متاح للاستخدام وفقًا لشروط سياسة الهوية الخاصة بـ 'استثمر في السعودية'. للحصول على الشعار، يجب أن تقرأ سياسة الهوية ومن ثم الضغط على 'موافق' لتحميل الشعار. يحق لك استخدام الشعار فقط عند التزامك بالشروط المتبعة في سياسة الهوية لـ 'استثمر في السعودية'. عند عدم امتثالك لقواعد سياسة الهوية لـ'استثمر في السعودية'، لا يحق لك استخدامه.</p>
+                        <p>&nbsp;</p>
+                        <object width='100%' height='500px' data='https://docs.google.com/gview?embedded=true&amp;url=https://investsaudi.sa/media/2080/invest-saudis-brand-policy-ar.pdf'>
+                           <p>This browser does not support inline PDFs. Please download the PDF to view it: <a href='https://investsaudi.sa/media/2080/invest-saudis-brand-policy-ar.pdf' download=''>Download PDF</a></p>
+                        </object>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+"
+
+# TODO DOCUMENT VIEWER
+
+INSERT_UPDATE Media; code[unique = true]; realFileName   ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime            ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; brand-logo.pdf     ; brand-logo.pdf ; $siteResource/investsaudi_brandlogo.pdf                                     ; application/pdf ;                                          ; ""     ;
+                   ; brand-logo.jpg     ; brand-logo.jpg ; $siteResource/investsaudi_brandlogo.jpg                                     ; image/jpeg      ;                                          ; ""     ;
+                   ; brand-logo.png     ; brand-logo.png ; $siteResource/investsaudi_brandlogo.png                                     ; image/png       ;                                          ; ""     ;
+
+INSERT_UPDATE InvestSaudiBrandDownloadComponent; uid[unique = true]    ; name                                  ; pdf(code, $contentCV); jpg(code, $contentCV); png(code, $contentCV); buttonPDF[lang = en]; buttonJPG[lang = en]; buttonPNG[lang = en]; buttonPDF[lang = ar]; buttonJPG[lang = ar]; buttonPNG[lang = ar]; agreeMessage[lang = en]                                   ; agreeMessage[lang = ar]                                ; &componentRef         ; $contentCV[unique = true]
+                                               ; sample-brand-download ; Invest Saudi Brand Download Component ; brand-logo.pdf       ; brand-logo.jpg       ; brand-logo.png       ; "LOGO IN PDF"       ; "LOGO IN JPG"       ; "LOGO IN PNG"       ; "الشعار بصيغة PDF"  ; "الشعار بصيغة JPG"  ; "الشعار بصيغة PNG"  ; "I have read and I agree to INVEST SAUDI’s Brand Policy." ; "أُقر وأوافق على سياسة الهوية لـ'استثمر في السعودية'." ; sample-brand-download ;
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef)                                 ; $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; sample-generic-paragraph-brand-policy, sample-brand-download ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;                                                      ;

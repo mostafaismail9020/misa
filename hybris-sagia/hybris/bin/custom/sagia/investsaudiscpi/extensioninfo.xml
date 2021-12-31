@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+--><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+           
+    
+    <extension abstractclassprefix="Generated" classprefix="Investsaudiscpi" jaloLogicFree="true" managername="InvestsaudiscpiManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="investsaudiscpi" usemaven="false">
+                  
+      
+        
+        <!-- for more information on maven managed libraries please consult https://wiki.hybris.com/x/Nq8sDQ -->
+                               
+      
+        
+        <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->
+                         
+      
+        
+     <requires-extension name="sapcpicustomerexchangeb2b"/>
+     <coremodule generated="true" manager="com.investsaudi.jalo.InvestsaudiscpiManager" packageroot="com.investsaudi"/>
+
+       <!-- <webmodule jspcompile="false" webroot="/investsaudiscpi"/>-->
+
+    </extension>
+              
+
+
+</extensioninfo>

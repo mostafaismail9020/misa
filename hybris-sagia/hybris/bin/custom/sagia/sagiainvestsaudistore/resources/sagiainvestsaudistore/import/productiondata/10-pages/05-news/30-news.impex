@@ -1,0 +1,73 @@
+$page = news-cooperation-program-signed
+$template = portalGlobalTemplate
+$name = COOPERATION PROGRAM SIGNED BETWEEN SAGIA AND THE SAUDI VENTURE CAPITAL ASSOCIATION
+$titleEn = $name
+$titleAr = توقيع برنامج تعاون بين هيئة الاستثمار والجمعية السعودية لرأس المال الجريء
+$shortDescEn = The Saudi Arabian General Investment Authority (SAGIA) And The Saudi Arabia
+$shortDescAr = وقعت الهيئة العامة للاستثمار والجمعية السعودية لرأس المال الجريء برنامج تعاون
+$pagelabel = /news/cooperation-program-signed-between-sagia-and-the-saudi-venture-capital-association
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; au8i1262           ; au8i1262.jpg ; $siteResource/au8i1262.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; au8i1262 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; au8i1262                          ; au8i1262                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 16.07.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<p>The Saudi Arabian General Investment Authority (SAGIA) and the Saudi Arabia Venture Capital and Private Equity Association (SAVCPEA) signed a framework cooperation program aimed at enforcing the role of venture capital and private equity funds for investment in the Saudi market.</p>
+<p>&nbsp;</p>
+<p>The program was signed on Tuesday, July 16, at SAGIA headquarters, under the patronage of SAGIA Governor, Mr. Sultan Mufti, and SAVCPEA Chairman, Mr. Abdul Rahman Tarabzouni, in the presence of SAGIA Deputy Chairman, Mr. Omar Al-Majdoui, and SAVCPEA CEO Mr. Osama Ashri.</p>
+<p>&nbsp;</p>
+<p>According to the program, the two parties will promote cooperation in encouraging venture capital funds to participate in the Venture Investment Initiative of Invest in Saudi Arabia, and granting the participating investors membership in SAVCPEA. SAVCPEA will also support investors in exploring the local market, communication with relevant government entities and prospect partners and investors, as well as taking part in events and studies in venture investment and private equity sector. SAVCPEA will also support developing venture investment manual for investors in the Kingdom.</p>
+<p>&nbsp;</p>
+<p>On the sidelines of the first session of the Financial Sector Conference, SAGIA recently announced the launch of Venture Investment Initiative of Invest in Saudi Arabia to facilitate the access of venture capital funds and their startups into the Saudi market. This will increase the number of startups in the local market and urge venture capital investors to invest in startups.</p>
+<p>&nbsp;</p>
+<p>The Saudi Arabia Venture Capital and Private Equity Association (SAVCPEA), a newly formed professional association represented by Saudi Arabia venture capital and private equity sector, seeks to stimulate investment in Saudi Arabia by raising awareness of the sector, address challenges and foster further important partnerships among experts in venture investment and private equity.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>وقعت الهيئة العامة للاستثمار والجمعية السعودية لرأس المال الجريء والملكية الخاصة برنامج تعاون إطاري يهدف إلى تفعيل دور صناديق رأس المال الجريء وصناديق الملكية الخاصة للاستثمار في السوق السعودي.</p>
+<p>&nbsp;</p>
+<p>ووقع البرنامج اليوم الثلاثاء 16 يوليو، بمقر هيئة الاستثمار، وكيل محافظ الهيئة العامة للاستثمار لقطاع جذب وتطوير الاستثمار، الأستاذ سلطان مفتي، ورئيس مجلس إدارة الجمعية السعودية لرأس المال الجريء والملكية الخاصة الأستاذ عبد الرحمن طرابزوني، وذلك بحضور نائب رئيس المجلس الأستاذ عمر المجدوعي، والرئيس التنفيذي للجمعية الأستاذ أسامة عشري.</p>
+<p>&nbsp;</p>
+<p>ووفقًا للبرنامج، سيعمل الطرفان على تعزيز التعاون في تشجيع صناديق رأس المال الجريء للاشتراك في مبادرة الاستثمار الجريء من استثمر في السعودية، مع منح الجهات الاستثمارية المشاركة مع الهيئة عضوية الجمعية، كما ستدعم الجمعية المستثمرين في استكشاف السوق المحلي وتواصلها مع الجهات ذات العلاقة من جهات حكومية وشركاء ومستثمرين محتملين، إضافة لدعمها من خلال المشاركة في الفعاليات والدراسات في قطاع الاستثمار الجريء والملكية الخاصة، وأخيرًا دعم الجمعية في تطوير دليل الاستثمار الجريء للمستثمرين في المملكة.</p>
+<p>&nbsp;</p>
+<p>وكانت الهيئة العامة للاستثمار قد أعلنت مؤخرا على هامش أعمال الدورة الأولى لمؤتمر القطاع المالي، عن إطلاق مبادرة الاستثمار الجريء من ""استثمر في السعودية""، الهادفة إلى تسهيل دخول صناديق استثمار رأس المال الجريء وشركاتها الناشئة للسوق السعودي، مما سيسهم في زيادة عدد الشركات الناشئة في السوق المحلي ويساعد على تحفيز مستثمري رأس المال الجريء للاستثمار في الشركات الناشئة.</p>
+<p>&nbsp;</p>
+<p>وتسعى جمعية رأس المال الجريء والملكية الخاصة في السعودية، التي شُكّلت حديثًا لتكون جمعية مهنية ممثلة بقطاع رأس المال الجريء والملكية الخاصة في السعودية، إلى تحفيز الاستثمار في السعودية، من خلال زيادة الوعي بالقطاع، والمساهمة في معالجة التحديات وتشجيع المزيد من الشراكات المهمة بين المتخصصين في مجال الاستثمار الجريء والملكية الخاصة.</p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

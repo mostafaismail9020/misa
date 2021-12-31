@@ -1,0 +1,128 @@
+$contentCatalog=investsaudiContentCatalog
+$productCatalog=investsaudiProductCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$siteResource=jar:de.hybris.platform.investsaudistore.constants.InvestsaudistoreConstants&/investsaudistore/import/sampledata/contentCatalogs/$contentCatalog
+$indexedType=investsaudiProductType
+$lang=en
+
+# Import modulegen config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+$jarResourceCms=$config-jarResourceCmsValue
+#################### Start Post Go-Live ###########################
+INSERT_UPDATE Usergroup;uid[unique=true];groups(uid);locname[lang=en];
+;NIPCUserGroup;b2bgroup;NIPC UserGroup Customer Group;
+
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true]  ; $contentCV[unique=true] ; name                      ; parent(uid, $contentCV)    ; links(&linkRef) ; &nodeRef
+                                ; NipcMyOpportunitiesNavNode   ;                         ; NIPC My Opportunities Category         ; investsaudiCategoryNavNode ;                 ; NipcMyOpportunitiesNavNode
+                                ; NipcAllOpportunitiesNavNode   ;                         ; NIPC All Opportunities Category         ; investsaudiCategoryNavNode ;                 ; NipcAllOpportunitiesNavNode
+
+INSERT_UPDATE CMSNavigationEntry ; uid[unique=true]       ; $contentCV[unique=true] ; name                              ; navigationNode(&nodeRef) ; item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV) ;
+ 								 ; NipcMyOpportunitiesNavNodeEntry   ;                         ; NIPC My Opportunities Navigation Node Entry    ; NipcMyOpportunitiesNavNode          ; NipcMyOpportunitiesCategoryLink    ;
+ 								 ; NipcAllOpportunitiesNavNodeEntry   ;                         ; NIPC All Opportunities Navigation Node Entry    ; NipcAllOpportunitiesNavNode          ; NipcAllOpportunitiesCategoryLink    ;
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]       ; name                      ; url                                         ; &linkRef               ; &componentRef         ; target(code)[default='sameWindow']
+							   ;                 ; NipcMyOpportunitiesCategoryLink   ; NIPC My Opportunities Category Link    ; /my-account/support-tickets?oppType=MyOpportunity                 ; NipcMyOpportunitiesCategoryLink   ; NipcMyOpportunitiesCategoryLink
+							   ;                 ; NipcAllOpportunitiesCategoryLink   ; NIPC All Opportunities Category Link    ; /my-account/support-tickets?oppType=AllOpportunity                ; NipcAllOpportunitiesCategoryLink   ; NipcAllOpportunitiesCategoryLink
+
+UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]          ; linkName[lang=en]  
+                        ;                         ; NipcMyOpportunitiesCategoryLink      ; "MY NIPC OPPORTUNITIES"
+                        ;                         ; NipcAllOpportunitiesCategoryLink     ; "All NIPC OPPORTUNITIES"
+
+
+INSERT_UPDATE CMSUserGroupRestriction;$contentCV[unique=true];uid[unique=true];name;userGroups(uid);includeSubgroups;components(&linkRef)
+;;NIPCUserGroupRestriction;NIPC User Group Restriction;NIPCUserGroup;true;ContentHubCategoryLink,NipcMyOpportunitiesCategoryLink,NipcAllOpportunitiesCategoryLink,MeetingsCategoryLink,CalenderCategoryLink,DirectoryCategoryLink
+
+UPDATE CMSUserGroupRestriction;$contentCV[unique=true];uid[unique=true];name;userGroups(uid);includeSubgroups;components(&componentRef)[mode=append]
+;;MarComUserGroupRestriction;MarCom User Group Restriction;MarCommUserGroup;true;categoryRotatingBannerComponent,productCarouselComponent,CategoryCarouselTitleParagraph,home-main-rotating-banner
+;;NIPCUserGroupRestriction;NIPC User Group Restriction;NIPCUserGroup;true;categoryRotatingBannerComponent,productCarouselComponent,CategoryCarouselTitleParagraph,nipc-home-main-rotating-banner
+
+#################### End Post Go-Live ###########################
+
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true]             	; $contentCV[unique=true] ; name                    	; parent(uid, $contentCV)  		; links(&linkRef) ; &nodeRef                    
+                                ; ChemicalsSectorNavNode 		;                         ; Chemicals Sector Category 	; NipcAllOpportunitiesNavNode  	;                 ; ChemicalsSectorNavNode
+                                ; EmergingSectorNavNode 		;                         ; Emerging Sector Category 	; NipcAllOpportunitiesNavNode  	;                 ; EmergingSectorNavNode
+                                ; InformationSectorNavNode 		;                         ; Information Sector Category 	; NipcAllOpportunitiesNavNode  	;                 ; InformationSectorNavNode
+                                ; EnergySectorNavNode 			;                         ; Energy Sector Category 	; NipcAllOpportunitiesNavNode  	;                 ; EnergySectorNavNode
+                                ; MiningSectorNavNode 			;                         ; Mining Sector Category 	; NipcAllOpportunitiesNavNode  	;                 ; MiningSectorNavNode
+                                ; HealthcareSectorNavNode 		;                         ; Healthcare Sector Category 	; NipcAllOpportunitiesNavNode  	;                 ; HealthcareSectorNavNode
+                                ; TourismSectorNavNode 			;                         ; Tourism Sector Category 	; NipcAllOpportunitiesNavNode  	;                 ; TourismSectorNavNode
+                                ; TransportSectorNavNode 		;                         ; Transport Sector Category 	; NipcAllOpportunitiesNavNode  	;                 ; TransportSectorNavNode
+                                ; IndustrySectorNavNode 		;                         ; Industry Sector Category 	; NipcAllOpportunitiesNavNode  	;                 ; IndustrySectorNavNode
+
+
+
+
+INSERT_UPDATE CMSNavigationEntry ; uid[unique=true]                 ; $contentCV[unique=true] 	; name                                          ; navigationNode(&nodeRef)     	; item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV) 	;
+                                 ; ChemicalsSectorNavNodeEntry 		;                         	; Chemicals Sector Navigation Node Entry 		; ChemicalsSectorNavNode 		; ChemicalsSectorLink                              			;  
+                                 ; EmergingSectorNavNodeEntry 		;                         	; Emerging Sector Navigation Node Entry 		; EmergingSectorNavNode 		; EmergingSectorLink                              			;  
+                                 ; InformationSectorNavNodeEntry 		;                         	; Information Sector Navigation Node Entry 		; InformationSectorNavNode 		; InformationSectorLink                              			;  
+                                 ; EnergySectorNavNodeEntry 			;                         	; Energy Sector Navigation Node Entry 		; EnergySectorNavNode 		; EnergySectorLink                              			;  
+                                 ; MiningSectorNavNodeEntry 			;                         	; Mining Sector Navigation Node Entry 		; MiningSectorNavNode 		; MiningSectorLink                              			;  
+                                 ; HealthcareSectorNavNodeEntry 		;                         	; Healthcare Sector Navigation Node Entry 		; HealthcareSectorNavNode 		; HealthcareSectorLink                              			;  
+                                 ; TourismSectorNavNodeEntry 			;                         	; Tourism Sector Navigation Node Entry 		; TourismSectorNavNode 		; TourismSectorLink                              			;  
+                                 ; TransportSectorNavNodeEntry 			;                         	; Transport Sector Navigation Node Entry 		; TransportSectorNavNode 		; TransportSectorLink                              			;  
+                                 ; IndustrySectorNavNodeEntry 			;                         	; Industry Sector Navigation Node Entry 		; IndustrySectorNavNode 		; IndustrySectorLink                              			;  
+
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]          ; name                         ; url                                                        ; &linkRef                  ; &componentRef            ; target(code)[default='sameWindow']
+                               ;                         ; ChemicalsSectorLink       ; Chemicals Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=10        ; ChemicalsSectorLink       ; ChemicalsSectorLink      
+                               ;                         ; EmergingSectorLink       ; Emerging Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=20        ; EmergingSectorLink       ; EmergingSectorLink   
+                               ;                         ; InformationSectorLink       ; Information Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=60        ; InformationSectorLink       ; InformationSectorLink   
+                               ;                         ; EnergySectorLink       ; Energy Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=30        ; EnergySectorLink       ; EnergySectorLink   
+                               ;                         ; MiningSectorLink       ; Mining Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=70        ; MiningSectorLink       ; MiningSectorLink   
+                               ;                         ; HealthcareSectorLink       ; Healthcare Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=40        ; HealthcareSectorLink       ; HealthcareSectorLink   
+                               ;                         ; TourismSectorLink       ; Tourism Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=80        ; TourismSectorLink       ; TourismSectorLink   
+                               ;                         ; TransportSectorLink       ; Transport Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=90        ; TransportSectorLink       ; TransportSectorLink   
+                               ;                         ; IndustrySectorLink       ; Industry Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=50        ; IndustrySectorLink       ; IndustrySectorLink   
+
+
+
+UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]          ; linkName[lang=en] 
+                        ;                         ; ChemicalsSectorLink ; "CHEMICALS"
+                        ;                         ; EmergingSectorLink ; "EMERGING"
+                        ;                         ; InformationSectorLink ; "INFORMATION & COMM TECH"
+                        ;                         ; EnergySectorLink ; "ENERGY & WATER"
+                        ;                         ; MiningSectorLink ; "MINING & METALS"
+                        ;                         ; HealthcareSectorLink ; "HEALTHCARE & LIFE SCIENCES"
+                        ;                         ; TourismSectorLink ; "TOURISM & QUALITY OF LIFE"
+                        ;                         ; TransportSectorLink ; "TRANSPORT & LOGISTICS"
+                        ;                         ; IndustrySectorLink ; "INDUSTRY & MANUFACTURING"
+  
+#####                            
+# Main Carousel                  
+#####                            
+
+INSERT_UPDATE Media ; mediaFormat(qualifier) ; code[unique=true]       ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true] ; realfilename            ; altText          ; mime[default='image/png'] ; $contentCV[unique=true] ; folder(qualifier)[default=images] ;  
+                    ; widescreen             ; home-main-banner-01.png ; $siteResource/images/theme/home-main-banner-01.png                                          ; home-main-banner-01.png ; "Main Banner 01" ;                           
+                    ; widescreen             ; home-main-banner-02.png ; $siteResource/images/theme/home-main-banner-02.png                                          ; home-main-banner-02.png ; "Main Banner 02" ;                           
+
+                    ; widescreen             ; nipc-home-main-banner-01.png ; $siteResource/images/theme/nipc-home-main-banner-01.png                                          ; nipc-home-main-banner-01.png ; "NIPC Main Banner 01" ;                           
+                    ; widescreen             ; nipc-home-main-banner-02.jpg ; $siteResource/images/theme/nipc-home-main-banner-02.jpg                                          ; nipc-home-main-banner-02.jpg ; "NIPC Main Banner 02" ;                           
+
+					
+					
+INSERT_UPDATE BannerComponent ; $contentCV[unique=true] ; uid[unique=true]    ; media(code, $contentCV) ; name                 
+                              ;                         ; home-main-banner-01 ; home-main-banner-01.png ; "Home Main Banner 01"
+                              ;                         ; home-main-banner-02 ; home-main-banner-02.png ; "Home Main Banner 02"
+
+                              ;                         ; nipc-home-main-banner-01 ; nipc-home-main-banner-01.png ; "NIPC Home Main Banner 01"
+                              ;                         ; nipc-home-main-banner-02 ; nipc-home-main-banner-02.jpg ; "NIPC Home Main Banner 02"
+							 
+INSERT_UPDATE RotatingImagesComponent ; $contentCV[unique=true] ; uid[unique=true]          ; name                        ; banners(uid, $contentCV)               
+                                      ;                         ; home-main-rotating-banner ; "Home Main Rotating Banner" ; home-main-banner-01,home-main-banner-02
+
+                                      ;                         ; nipc-home-main-rotating-banner ; "NIPC Home Main Rotating Banner" ; nipc-home-main-banner-01,nipc-home-main-banner-02
+									  
+UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]      ; cmsComponents(uid, $contentCV)
+                   ;                         ; Section1Slot-Homepage ; home-main-rotating-banner,nipc-home-main-rotating-banner    
+
+#                   ;                         ; Section1Slot-Homepage ; home-main-rotating-banner     
+				   
+INSERT_UPDATE BannerComponent ; $contentCV[unique=true] ; uid[unique=true]    ; urlLink ; content[lang=$lang]                                                                                                                                                            
+                              ;                         ; home-main-banner-01 ; "#"     ; "<h1 class=""animated pulse"">Check out our special <span class=""diff-color mp-bold"">Investment Highlights </span><br>the latest on Saudi Arabiaâ€™s investment landscape</h1>"
+                              ;                         ; home-main-banner-02 ; "#"     ; "<h1 class=""animated pulse""> Welcome to <span class=""diff-color mp-bold"">Saudi Arabia,</span> <br>the land of growing businesses and investments </h1>"                    
+
+                              ;                         ; nipc-home-main-banner-01 ; "#"     ; "<h1 class=""animated pulse"">Check out our special <span class=""diff-color mp-bold"">Investment Highlights </span><br>the latest on Saudi Arabia investment landscape</h1>"
+                              ;                         ; nipc-home-main-banner-02 ; "#"     ; "<h1 class=""animated pulse""> Welcome to <span class=""diff-color mp-bold"">Saudi Arabia,</span> <br>the land of growing businesses and investments </h1>"                    
+							  

@@ -1,0 +1,43 @@
+$sapBaseStoreConfigurationName = E-Services SAP Integration
+
+$rfcDestinationName = CRD CRM
+$rfcClient = 300
+$rfcSID = CRD
+#$rfcSID = CRQ
+$rfcTargetHost = 10.180.0.75
+#$rfcTargetHost = 10.180.0.77
+$rfcInstance = 00
+$rfcUser = HC_USER
+#$rfcUser = BGUSER
+$rfcPassword = +e7pjHAYb5}%>}9n@n2ByS4$<t4jKvmD27hr2}Xk
+#$rfcPassword = sagia@123
+
+$httpDestinationName = NGD Gateway
+
+#httpCRMDestinationName name should be CRM for all the environment
+$httpCRMDestinationName = CRM
+$crmODataTargetURL = http://sagcrdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap
+
+$oDataTargetURL = http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap
+#$oDataTargetURL = https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap
+#$oDataTargetURL = https://sagia.local:9002/sagiaservices
+#$oDataUser = HC_USER
+$oDataUser = BGUSER
+#$oDataPassword = PaZNTEZHO7E7F#IxEu
+$oDataPassword = sagia@123
+
+# Create CRM RFC destination
+INSERT_UPDATE SAPRFCDestination ; rfcDestinationName[unique = true] ; client     ; backendType(code, itemtype(code)) ; connectionType ; sid     ; targetHost     ; instance     ; userid   ; password     ; pooledConnectionMode
+                                ; $rfcDestinationName               ; $rfcClient ; CRM:BackendType                   ; true           ; $rfcSID ; $rfcTargetHost ; $rfcInstance ; $rfcUser ; $rfcPassword ; true                
+
+# Create Gateway HTTP destination
+INSERT_UPDATE SAPHTTPDestination ; httpDestinationName[unique = true] ; targetURL          ; userid     ; password      ;  
+                                 ; $httpDestinationName               ; $oDataTargetURL    ; $oDataUser ; $oDataPassword
+                                 ; $httpCRMDestinationName            ; $crmODataTargetURL ; $oDataUser ; $oDataPassword
+# Assign CRM RFC destination to SAP base store configuration
+INSERT_UPDATE SAPConfiguration ; core_name[unique = true]       ; sapRfcDestination(rfcDestinationName)
+                               ; $sapBaseStoreConfigurationName ; $rfcDestinationName                  
+
+# Assign Gateway HTTP destination to SAP base store configuration
+INSERT_UPDATE SAPConfiguration ; core_name[unique = true]       ; sapHttpDestination(httpDestinationName)
+                               ; $sapBaseStoreConfigurationName ; $httpDestinationName                   

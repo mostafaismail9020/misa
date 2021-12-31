@@ -1,0 +1,56 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZAPPEAL_SET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZAPPEAL_SET('E')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZAPPEAL"
+        },
+        "Lang": "E",
+        "Class": "A",
+        "Text": "A : Premium"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZAPPEAL_SET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZAPPEAL_SET('E')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZAPPEAL"
+        },
+        "Lang": "E",
+        "Class": "A+",
+        "Text": "A+ : Strategic"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZAPPEAL_SET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZAPPEAL_SET('E')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZAPPEAL"
+        },
+        "Lang": "E",
+        "Class": "B",
+        "Text": "B : Advanced"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZAPPEAL_SET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZAPPEAL_SET('E')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZAPPEAL"
+        },
+        "Lang": "E",
+        "Class": "C",
+        "Text": "C : Limited"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZAPPEAL_SET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZAPPEAL_SET('E')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZAPPEAL"
+        },
+        "Lang": "E",
+        "Class": "I",
+        "Text": "I : Innovation"
+      }
+    ]
+  }
+}

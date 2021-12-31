@@ -1,0 +1,61 @@
+############ Resource Investment Highlights For Summer 2020 ########
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$titleAr = موجز مستجدات الاستثمار  صيف  2020
+$shortDescAr = ابرز مستجدات الاستثمار في الربع الثاني من عام 2020
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                                     ; realFileName                                   ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]    ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; Banner-Image-Summer-2020.jpg                            ;Banner-Image-Summer-2020.jpg                    ; $siteResource/Banner-Image-Summer-2020.jpg                       ; image/jpg   ;                                          ; ""     ;
+				   ; Summer-2020-Thumbnail_09.jpg                            ;Summer-2020-Thumbnail_09.jpg                    ; $siteResource/Summer-2020-Thumbnail_09.jpg                      ; image/jpg   ;                                          ; ""     ;
+
+
+INSERT_UPDATE Media; code[unique = true]                                                 ; realFileName                                             ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]   ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; resource-investment-highlights-summer-2020-arabic.pdf               ;resource-investment-highlights-summer-2020-arabic.pdf      ; $siteResource/resource-investment-highlights-summer-2020-arabic.pdf           ; application/pdf                 ;                                          ; ""     ;
+                   ; resource-investment-highlights-summer-2020-english.pdf              ;resource-investment-highlights-summer-2020-english.pdf     ; $siteResource/resource-investment-highlights-summer-2020-english.pdf          ; application/pdf                 ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]		; $medias					; $contentCV ;
+                            ; media-container-summer-2020   ; resource-investment-highlights-summer-2020-arabic.pdf, resource-investment-highlights-summer-2020-english.pdf   ;          ;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]								;resourceTitle[lang = en]         	;resourceShortInformation[lang = en]			;resourceUrl(uid, $contentCV)	;resourceBulletPoints		;resourceDate[dateformat = dd.MM.yyyy HH:mm:ss]
+										  ;							;resource-investment-highlights-summer-2020     ;Investment Highlights Summer 2020	;"Saudi Arabia's investment news in Q2 2020"	;								;                           ;30.09.2020 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]								;resourceTitle[lang = ar]	;resourceShortInformation[lang=ar]	;resourceBulletPoints;
+										  ;							;resource-investment-highlights-summer-2020  	;$titleAr                	;$shortDescAr						;					 ;
+
+
+UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]							;resourceFullDescription[lang=en]
+									;						 ;resource-investment-highlights-summer-2020    ;"
+<p> this edition of Investment Highlights, the Ministry of Investment of Saudi Arabia (MISA) announced that 506 new international companies were granted investor licenses during H1 2020. The figures came after 20% year-on-year growth in Q1 was followed by a 47% year-on-year decline in Q2, largely due to the impact of the COVID-19 pandemic on the global economy.  </p>
+<p>However, in more positive news, the data showed an increase in economic activity towards the end of Q2 - suggesting that the economy may be experiencing significant catch-up growth as the Kingdom cautiously lifted some of its lockdown measures.</p>
+<p>This edition of Investment Highlights contains a special feature on Saudi Arabia's mining sector, following the announcement of a new mining law in June 2020. This includes an interview with Khalid Al-Mudaifer, Vice Minister for Mining Affairs at the Ministry of Industry and Mineral Resources (MIM). Saudi Arabia's mining sector is in its early stages of development and full of potential, with metals and minerals reserves worth an estimated $1.3 trillion.</p>
+<p>Inside this report:</p>
+<ul>
+<li> Opening remarks by Bandar Alkhorayef, Minister of Industry and Mineral Resources</li>
+<li>Interview with Jerry Inzerillo, CEO of Diriyah Gate Development Authority</li>
+<li> Expert opinion by Bank of America Merrill Lynch</li>
+<li>New foreign investor projects in Q2</li>
+</ul>
+";
+
+UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]							;resourceFullDescription[lang=ar]
+									;						 ;resource-investment-highlights-summer-2020    ;"
+<p>تستعرض وزارة الاستثمار في تقريرها للربع الثاني 2020، أبرز مستجدات البيئة الاستثمارية خلال فترة صيف 2020، حيث أعلنت عن منحها رخص استثمارية لـ 506 شركة أجنبية خلال النصف الأول من هذا العام. وتأتي هذه النتائج بعد تسجيل نمو للاستثمارات الأجنبية في المملكة للربع الأول بنسبة (20%) خلال الربع الأول بينما سجلت تراجعا بنسبة (47%) للربع الثاني من هذا العام، وذلك نتيجةً لتأثر الاقتصاد العالمي بجائحة فيروس كورونا.</p>
+<p>كما يكشف هذا العدد الجاذبية الكبيرة التي يتمتع بها قطاع التعدين، والذي يُعد من القطاعات الأكثر حيوية في المملكة، حيث تقدّر قيمته السوقية بــ(1.3) ترليون دولار.  ويتضمن العدد مقابلة مع نائب وزير الصناعة والثروة المعدنية لشؤون التعدين، المهندس خالد المديفر.   </p>
+<p>تضمن التقرير أيضا كلمة افتتاحية لمعالي وزير الصناعة والثروة المعدنية، بندر الخريف؛ ومقابلة مع الرئيس التنفيذي لهيئة تطوير بوابة الدرعية، جيري انزيرلو كشف من خلالها عن مستجدات المشاريع السعودية الكبرى.</p>
+";
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]                   			; resourceDetailsImage(code, $contentCV) 	; resourceThumbnailImage(code, $contentCV)    ;resourceFullReport(qualifier, $contentCV);
+                                          ;                         ;resource-investment-highlights-summer-2020 	;Banner-Image-Summer-2020.jpg   			; Summer-2020-Thumbnail_09.jpg				  ;media-container-summer-2020				;
+

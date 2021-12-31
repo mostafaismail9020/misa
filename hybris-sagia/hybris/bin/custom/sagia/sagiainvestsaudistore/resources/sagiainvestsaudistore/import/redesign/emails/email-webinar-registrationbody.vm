@@ -1,0 +1,46 @@
+<HTML>
+    <HEAD>
+        <STYLE type=text/css>P.ImprintUniqueID {MARGIN: 0cm 0cm 0pt}LI.ImprintUniqueID {MARGIN: 0cm 0cm 0pt}DIV.ImprintUniqueID {MARGIN: 0cm 0cm 0pt}TABLE.ImprintUniqueIDTable {MARGIN: 0cm 0cm 0pt}DIV.Section1 {page: Section1}</STYLE>
+    </HEAD>
+    <BODY>
+        <p><a href="${ctx.linkUrl}"><img style="width: 500px; height: 326.942px; display: block; margin-left: auto; margin-right: auto;" src="${ctx.imageUrl}"/></a></p>
+        <TABLE class=ImprintUniqueIDTable style="BORDER-COLLAPSE: collapse" cellSpacing=0 cols=1 cellPadding=0 border=0>
+            <TBODY>
+                <TR>
+                    <TD><FONT size=1>&nbsp;</FONT><BR/><img width=190 height=70 style='border: 0px Solid ; 'src="${ctx.logo}"></TD>
+                </TR>
+                <TR>
+                    <TD style="FONT-FAMILY: Verdana; COLOR: #cecece">
+                        <table cellPadding=0 cellSpacing=0 style class=d6acf5a3-e30d-4698-821d-a0fa4532354bTable>
+                            <tr>
+                                <td style="font-weight: bold; font-size: 8pt; font-family: Arial; color: #006F44;"><font style='font-family:Arial;font-size:8pt;color:#006F44;font-weight:bold;'><font style='font-family:Arial;font-weight:bold;'>Invest Saudi Team</font> </font></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 8pt; font-family: Arial; color: #535353;"><font style='font-family:Arial;color:#A0A0A0;font-weight:normal;'>E : <span style='font-family:Arial;font-weight:normal;text-decoration:none;'><a href='mailto:${ctx.fromEmail}' title='Click to send email to Invest Saudi Team' target='' style='font-family:Arial;font-weight:normal;text-decoration:none;'><span style='font-family:Arial; font-weight:normal; text-decoration:none;'>${ctx.fromEmail}</span></a></span></font></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: 8pt; font-family: Arial; color: #8EDD65;"><font style='font-family:Arial;color:#92D050;font-weight:bold;'>misa.gov.sa</font></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 4pt; font-family: Arial; color: #535353;"> &nbsp;&nbsp;&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style><a href='https://twitter.com/sagiagov' target=''><img width=14 height=14 style='border: 0px Solid ; 'src="${ctx.twitter}"></a> &nbsp;<a href='https://www.youtube.com/channel/UC_HSLxfZygzVHWa_YeQDcaQ' target=''><img width=14 height=14 style='border: 0px Solid ; 'src="${ctx.youtube}"></a> &nbsp;<a href='https://www.linkedin.com/company/sagia/' target=''><img width=14 height=14 style='border: 0px Solid ; 'src="${ctx.linkedin}"></a></td>
+                            </tr>
+                        </table>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD style="FONT-SIZE: 7pt; FONT-FAMILY: Verdana; COLOR: #7d7d7d; PADDING-TOP: 20px"><STRONG>Disclaimer:<BR/></STRONG>The contents of this email, including all related responses, files and attachments transmitted with it (collectively referred to as “this Email”), are intended solely for the use of the individual/entity to whom/which they are addressed, and may contain confidential and/or legally privileged information. This Email may not be disclosed or forwarded to anyone else without authorization from the originator of this Email. If you have received this Email in error, please notify the sender immediately and delete all copies from your system. Please note that this email does not constitute any contractual relationship in any way, moreover the views or opinions presented in this Email are those of the author and may not necessarily represent those of the Ministry of Investment. The recipient should check this Email and any attachments for the presence of any viruses. Ministry of Investment accepts no liability for any damage caused by any virus/error transmitted by this Email.</TD>
+                </TR>
+            </TBODY>
+            </TD></TR>
+            <TBODY>
+                <TR>
+                    <TD style="FONT-SIZE: 7pt; FONT-FAMILY: Verdana; COLOR: #cecece; PADDING-TOP: 15px" dir=rtl align=right><STRONG class=ImprintUniqueID style="FONT-SIZE: 7.5pt; FONT-FAMILY: Verdana; COLOR: #7d7d7d">إخلاء مسؤولية <BR/></STRONG><SPAN style="FONT-SIZE: 7.5pt; FONT-FAMILY: Verdana; COLOR: #7d7d7d" dir=rtl align="justify">المعلومات الواردة في هذه الرسالة ومرفقاتها (إن وجدت) سرية وخاصة فقط بالمرسل إليه/إليهم، إذا لم تكن أحد المعنيين باستلام هذه الرسالة من هذا البريد الالكتروني فإنه يمنع منعاً باتاً تحويل أو نسخ أو طباعة أو إفشاء أو اتخاذ أو إلغاء أية إجراءات بالاعتماد على هذا البريد الإلكتروني أو على أي من محتوياته، ويلزم تنبيه صاحب الرسالة بخطأ وصولها إليك، وحذف الرسالة ومرفقاتها (إن وجدت) من نظام البريد الالكتروني والجهاز المستقبل للرسالة، علماً بأن هذا البريد الإلكتروني ومحتوياته لا يشكل أي علاقة تعاقدية بأي شكل من الأشكال و الإفادات والآراء التي يحويها تعبر عن رأي المرسل فقط، وليس بالضرورة أن تمثل رأي وزارة الاستثمار، ولا تتحمل الوزارة أي مسؤولية عن الأضرار الناتجة عن أي فيروس أو برامج ترسل بواسطة هذا البريد الإلكتروني .<BR/></SPAN></TD>
+                </TR>
+                </TD></TR>
+            </TBODY>
+        </TABLE>
+    </BODY>
+</HTML>

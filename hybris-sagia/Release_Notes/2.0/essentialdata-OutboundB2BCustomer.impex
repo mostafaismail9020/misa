@@ -1,0 +1,29 @@
+#*****************************************
+#******* B2B Customer Outbound     *******
+#*****************************************
+
+INSERT_UPDATE IntegrationObject; code[unique = true];
+                               ; OutboundB2BCustomer
+
+INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]       ; type(code)                ; root[default = false]
+                                   ; OutboundB2BCustomer                   ; SAPCpiOutboundB2BCustomer ; SAPCpiOutboundB2BCustomer ; true
+                                   ; OutboundB2BCustomer                   ; SAPCpiOutboundB2BContact  ; SAPCpiOutboundB2BContact  ;
+
+INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier) ; returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]
+
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BCustomer                      ; uid                         ; SAPCpiOutboundB2BCustomer:uid                       ;                                                           ; true
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BCustomer                      ; firstName                   ; SAPCpiOutboundB2BCustomer:firstName                 ;                                                           ;
+
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BCustomer                      ; sapCpiOutboundB2BContacts   ; SAPCpiOutboundB2BCustomer:sapCpiOutboundB2BContacts ; OutboundB2BCustomer:SAPCpiOutboundB2BContact              ;
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; uid                         ; SAPCpiOutboundB2BContact:uid                        ;                                                           ; true
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; email                       ; SAPCpiOutboundB2BContact:email                      ;                                                           ; true
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; firstName                   ; SAPCpiOutboundB2BContact:firstName                  ;                                                           ;
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; entityCode                  ; SAPCpiOutboundB2BContact:entityCode                 ;                                                           ;
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; otherEntityName             ; SAPCpiOutboundB2BContact:otherEntityName            ;                                                           ;
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; department                  ; SAPCpiOutboundB2BContact:department                 ;                                                           ;
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; position                    ; SAPCpiOutboundB2BContact:position                   ;                                                           ;
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; phoneCountryCode            ; SAPCpiOutboundB2BContact:phoneCountryCode           ;                                                           ;
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; phone                       ; SAPCpiOutboundB2BContact:phone                      ;                                                           ;
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; groups                      ; SAPCpiOutboundB2BContact:groups                     ;                                                           ;
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; sessionLanguage             ; SAPCpiOutboundB2BContact:sessionLanguage            ;                                                           ;
+                                            ; OutboundB2BCustomer:SAPCpiOutboundB2BContact                       ; objType                     ; SAPCpiOutboundB2BContact:objType                    ;

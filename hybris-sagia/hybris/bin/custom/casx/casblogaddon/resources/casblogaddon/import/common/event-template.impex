@@ -1,0 +1,130 @@
+$contentCatalog=investsaudiContentCatalog
+$contentCatalogName=Investsaudi Content Catalog
+$contentCV=catalogVersion(catalog(id[default=$contentCatalog]),version[default='Staged'])
+$jarResourceCms=jar:com.casblogaddon.constants.CasblogaddonConstants&/casblogaddon/import/cockpits/cmscockpit
+$siteResource=jar:com.casblogaddon.constants.CasblogaddonConstants&/casblogaddon/import/contentCatalogs/$contentCatalog
+$lang=en
+$picture=media(code, $contentCV)
+
+
+#-----------------------Start of Components------------------------------------------------
+# Uncomment below media when your are running this first time
+#INSERT_UPDATE Media ; $contentCV[unique=true] ; code[unique=true] ; realfilename ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default='image/jpeg'] ; altText ; &componentRef
+#                    ;                         ; Connect.png       ; Connect.png  ; $siteResource/images/Connect.png                                           ; image/jpeg                 ; Connect ;              ;
+
+INSERT_UPDATE BannerComponent ; $contentCV[unique=true] ; uid[unique=true]          ; name                         ; &componentRef                ; headline[lang=$lang] ; $picture[lang=$lang] ; content[lang=$lang]
+                              ;                         ; blogHeaderBannerComponent ; Event Header Banner Component ; componentRefblogHeaderBanner ; Connect              ; Connect.png          ; ""
+
+INSERT_UPDATE FeaturedPostComponent ; $contentCV[unique=true] ; uid[unique=true]          ; name                    ; &componentRef                     ;
+                                    ;                         ; blogfeaturedPostComponent ; Featured Post Component ; componentRefFeaturedPostComponent ;
+
+INSERT_UPDATE MostPopularBlogPostsComponent ; $contentCV[unique=true] ; uid[unique=true]              ; name                              ; &componentRef                             ;
+                                            ;                         ; mostPopularBlogPostsComponent ; Most Popular Event Posts Component ; componentRefMostPopularBlogPostsComponent ;
+
+INSERT_UPDATE JspIncludeComponent ; $contentCV[unique=true] ; uid[unique=true]    ; name                  ; page                                                                    ; &componentRef
+                                  ;                         ; newsLetterComponent ; News Letter Component ; /WEB-INF/views/addons/casblogaddon/responsive/pages/blog/newsLetter.jsp ; componentRefNewsLetterComponent
+                                  ;                         ; blogSearchComponent ; Blog Search Component ; /WEB-INF/views/addons/casblogaddon/responsive/pages/blog/blogSearch.jsp    ; componentRefBlogSearchComponent
+
+
+INSERT_UPDATE BlogPostContainerComponent ; $contentCV[unique=true] ; uid[unique=true]           ; name                          ; &componentRef
+                                         ;                         ; blogPostContainerComponent ; Event Post Container Component ; componentRefBlogPostContainerComponent
+
+INSERT_UPDATE BlogPostSearchContainerComponent ; $contentCV[unique=true] ; uid[unique=true]                 ; name                                 ; &componentRef
+                                               ;                         ; blogPostSearchContainerComponent ; Event Post Search Container Component ; componentRefBlogPostSearchContainerComponent
+
+#-----------------------------End of Components-----------------------------------------
+
+#----------------Start BlogIndexPageTemplate---------------------------------
+
+INSERT_UPDATE PageTemplate ; $contentCV[unique=true] ; uid[unique=true]      ; name                     ; frontendTemplateName                                 ; restrictedPageTypes(code) ; velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator] ; active[default=true]
+                           ;                         ; BlogIndexPageTemplate ; Event Index Page Template ; addon:/casblogaddon/pages/layout/blogIndexLayoutPage ; ContentPage               ; $jarResourceCms/structure-view/structure_blogIndexTemplate.vm                                         ;
+
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]               ; cmsComponents(&componentRef)                                                                              ; name                              ; active[default=true]
+                          ;                         ; Section1HeadSlot-blogindexPage ; componentRefblogHeaderBanner                                                                              ; Blog Header Banner  Slot          ;
+                          ;                         ; Section2A-blogindexPage        ; componentRefFeaturedPostComponent                                                                         ; Featured Post  Slot               ;
+                          ;                         ; Section2B-blogindexPage        ; componentRefBlogSearchComponent,componentRefMostPopularBlogPostsComponent                                 ; Most Popular Slot                 ;
+                          ;                         ; Section3-blogindexPage         ; componentRefBlogPostContainerComponent                                                                    ; Blog Post COntainer Slot          ;
+                          ;                         ; Section3-blogSearchResultsSlot ; componentRefBlogPostSearchContainerComponent                                                              ; Blog Post Search Container Slot
+
+INSERT_UPDATE ContentSlotName ; name[unique=true]      ; template(uid,$contentCV)[unique=true][default='BlogIndexPageTemplate'] ; validComponentTypes(code)                         ; compTypeGroup(code)
+                              ; SiteLogo               ;                                                                        ;                                                   ; logo
+                              ; HeaderLinks            ;                                                                        ;                                                   ; headerlinks
+                              ; MiniCart               ;                                                                        ;                                                   ; minicart
+                              ; NavigationBar          ;                                                                        ;                                                   ; navigation
+                              ; Footer                 ;                                                                        ;                                                   ; footer
+                              ; TopHeaderSlot          ;                                                                        ;                                                   ; wide
+                              ; BottomHeaderSlot       ;                                                                        ;                                                   ; wide
+                              ; PlaceholderContentSlot ;                                                                        ;                                                   ;
+                              ; Section1Head           ;                                                                        ; BannerComponent                                   ;
+                              ; Section2A              ;                                                                        ; FeaturedPostComponent                             ;
+                              ; Section2B              ;                                                                        ; MostPopularBlogPostsComponent,JspIncludeComponent ;
+                              ; Section3               ;                                                                        ; BlogPostContainerComponent                        ;
+
+
+
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                 ; position[unique=true]  ; pageTemplate(uid,$contentCV)[unique=true][default='BlogIndexPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite
+                                     ;                         ; SiteLogo-BlogIndex               ; SiteLogo               ;                                                                            ; SiteLogoSlot                             ; true
+                                     ;                         ; HomepageLink-BlogIndex           ; HomepageNavLink        ;                                                                            ; HomepageNavLinkSlot                      ; true
+                                     ;                         ; MiniCart-BlogIndex               ; MiniCart               ;                                                                            ; MiniCartSlot                             ; true
+                                     ;                         ; NavigationBar-BlogIndex          ; NavigationBar          ;                                                                            ; NavigationBarSlot                        ; true
+                                     ;                         ; HeaderLinks-BlogIndex            ; HeaderLinks            ;                                                                            ; HeaderLinksSlot                          ; true
+                                     ;                         ; SearchBox-BlogIndex              ; Searchbox              ;                                                                            ; SearchBoxSlot                            ; true
+                                     ;                         ; Footer-BlogIndex                 ; Footer                 ;                                                                            ; FooterSlot                               ; true
+                                     ;                         ; TopHeaderSlot-BlogIndex          ; TopHeaderSlot          ;                                                                            ; TopHeaderSlot                            ; true
+                                     ;                         ; BottomHeaderSlot-BlogIndex       ; BottomHeaderSlot       ;                                                                            ; BottomHeaderSlot                         ; true
+                                     ;                         ; PlaceholderContentSlot-BlogIndex ; PlaceholderContentSlot ;                                                                            ; PlaceholderContentSlot                   ; true
+
+                                     ;                         ; Section1HeadSlot-BlogIndex       ; Section1Head           ;                                                                            ; Section1HeadSlot-blogindexPage           ; true
+                                     ;                         ; Section2B-BlogIndex              ; Section2B              ;                                                                            ; Section2B-blogindexPage                  ; true
+
+#---------------------End BlogIndexPageTemplate------------------------------------------
+
+#-----------------------End of Blog Index Page-------------------------------------------
+
+
+
+
+
+
+
+######################  -------Start BlogPostPageTemplate-------------------######################
+
+INSERT_UPDATE PageTemplate ; $contentCV[unique=true] ; uid[unique=true]     ; name                    ; frontendTemplateName                                ; restrictedPageTypes(code) ; velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator] ; active[default=true]
+                           ;                         ; BlogPostPageTemplate ; Event Page Template ; addon:/casblogaddon/pages/layout/blogPostLayoutPage ; ContentPage               ; $jarResourceCms/structure-view/structure_blogPostTemplate.vm                                          ;
+
+INSERT_UPDATE ContentSlotName ; name[unique=true]      ; template(uid,$contentCV)[unique=true][default='BlogPostPageTemplate'] ; validComponentTypes(code)                         ; compTypeGroup(code)
+                              ; SiteLogo               ;                                                                       ;                                                   ; logo
+                              ; HeaderLinks            ;                                                                       ;                                                   ; headerlinks
+                              ; MiniCart               ;                                                                       ;                                                   ; minicart
+                              ; NavigationBar          ;                                                                       ;                                                   ; navigation
+                              ; Footer                 ;                                                                       ;                                                   ; footer
+                              ; TopHeaderSlot          ;                                                                       ;                                                   ; wide
+                              ; BottomHeaderSlot       ;                                                                       ;                                                   ; wide
+                              ; PlaceholderContentSlot ;                                                                       ;                                                   ;
+                              ; Section1Head           ;                                                                       ; BannerComponent                                   ;
+                              ; Section2A              ;                                                                       ; BlogPostComponent                                 ;
+                              ; Section2B              ;                                                                       ; MostPopularBlogPostsComponent,JspIncludeComponent ;
+
+
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]               ; cmsComponents(&componentRef)                                                                              ; name                              ; active[default=true]
+                          ;                         ; Section2B-blogpostPage         ; componentRefBlogSearchComponent,componentRefMostPopularBlogPostsComponent,componentRefNewsLetterComponent ; Most Popular & NewsLetter Slot    ;
+
+
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                ; position[unique=true]  ; pageTemplate(uid,$contentCV)[unique=true][default='BlogPostPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite
+                                     ;                         ; SiteLogo-BlogPost               ; SiteLogo               ;                                                                           ; SiteLogoSlot                             ; true
+                                     ;                         ; HomepageLink-BlogPost           ; HomepageNavLink        ;                                                                           ; HomepageNavLinkSlot                      ; true
+                                     ;                         ; NavigationBar-BlogPost          ; NavigationBar          ;                                                                           ; NavigationBarSlot                        ; true
+                                     ;                         ; MiniCart-BlogPost               ; MiniCart               ;                                                                           ; MiniCartSlot                             ; true
+                                     ;                         ; HeaderLinks-BlogPost            ; HeaderLinks            ;                                                                           ; HeaderLinksSlot                          ; true
+                                     ;                         ; SearchBox-BlogPost              ; Searchbox              ;                                                                           ; SearchBoxSlot                            ; true
+                                     ;                         ; Footer-BlogPost                 ; Footer                 ;                                                                           ; FooterSlot                               ; true
+                                     ;                         ; TopHeaderSlot-BlogPost          ; TopHeaderSlot          ;                                                                           ; TopHeaderSlot                            ; true
+                                     ;                         ; BottomHeaderSlot-BlogPost       ; BottomHeaderSlot       ;                                                                           ; BottomHeaderSlot                         ; true
+                                     ;                         ; PlaceholderContentSlot-BlogPost ; PlaceholderContentSlot ;                                                                           ; PlaceholderContentSlot                   ; true
+
+                                     ;                         ; Section1HeadSlot-BlogPost       ; Section1Head           ;                                                                           ; Section1HeadSlot-blogindexPage           ; true
+                                     ;                         ; Section2B-BlogPost              ; Section2B              ;                                                                           ; Section2B-blogpostPage                   ; true
+#----------------End BlogPostPageTemplate----------------------------------------------
+
+
+

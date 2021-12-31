@@ -1,0 +1,114 @@
+$page = news-sagia-announces-more-than-us-2-billion
+$template = portalGlobalTemplate
+$name = SAGIA ANNOUNCES MORE THAN US$2 BILLION IN NEW PETROCHEMICAL INVESTMENTS
+$titleEn = $name
+$titleAr = هيئة الاستثمار توقع خمس مذكرات تفاهم مع كبرى شركات البتروكيماويات في العالم بقيمة بلغت 7.5 مليار ريال
+$shortDescEn = SAGIA convenes over 80 representatives from more than 13 entities at Riyadh headquarters
+$shortDescAr = هيئة الاستثمار توقع خمس مذكرات تفاهم مع كبرى شركات البتروكيماويات في العالم بقيمة بلغت 7.5 مليار ريال
+$pagelabel = /news/sagia-announces-more-than-us-2-billion-in-new-petrochemical-investments
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; a15i4708           ; a15i4708.jpg ; $siteResource/a15i4708.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; a15i4708 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; a15i4708                          ; a15i4708                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 21.11.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>SAGIA convenes over&nbsp;</em><em>80</em><em>&nbsp;representatives from more than&nbsp;</em><em>13</em><em>&nbsp;entities at Riyadh headquarters &nbsp;</em></li>
+<li><em>Signatories exchange five Memoranda of Understanding aimed at facilitating greater collaboration and developing future investment opportunities in the Kingdom&rsquo;s petrochemicals sector</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<p><strong>Riyadh, 21 November 2019</strong>: Today over 80 representatives of more than 13 government and private sector entities from Saudi Arabia and across the globe convened to sign more than US $2 billion in new petrochemical investments.</p>
+<p><strong>His Excellency, Ibrahim Al-Omar, Governor of SAGIA</strong>, commented:</p>
+<p><em>&ldquo;Our country is undergoing a significant economic transformation. The petrochemicals sector provides exciting opportunities for international investors as we look to draw on the expertise and experience of the private sector in transforming the industry. This meeting &ndash; and the MoUs that have been exchanged today &ndash; reflect our increasing focus on promoting opportunities and facilitating international partnerships to drive the growth of this strategic sector. We are very pleased to welcome these industry giants to Saudi Arabia as we build the future of the petrochemicals sector in the Kingdom.&rdquo;</em></p>
+<p>Memoranda of Understanding signed and exchanged at the meeting include:</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>SAGIA &amp; BASF &ndash;&nbsp;</strong>A deal aimed at evaluating and assessing opportunities in Saudi Arabia.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>SAGIA &amp; SNF &ndash;&nbsp;</strong>A deal aimed at evaluating the establishment of a polyacrylamide plant with a capacity of 50,000 tons per annum in Jubail, providing 80 new employment opportunities.</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>SAGIA &amp; Mitsui &amp; Co. &ndash;</strong>&nbsp;A deal aimed at establishing an ammonia commercial production project in Jubail with an estimated capacity of 1 million tons per annum, using a highly-efficient and environmentally-friendly manufacturing process. In addition, SAGIA and Mitsui &amp; Co. have agreed to work together to develop a specialty chemicals downstream opportunity.</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>SAGIA &amp; Shell &ndash;&nbsp;</strong>A deal aimed at evaluating building a state-of-the-art residue upgrading catalyst manufacturing facility in Jubail Industrial City, subject to regulatory approvals.</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>AMG &amp; Shell &ndash;&nbsp;</strong>A deal aimed at assessing the feasibility of building a facility to reclaim valuable metals by recycling spent residue upgrading catalysts generated by refineries in Saudi Arabia and the surrounding region. The proposed facility would help maximize the benefits from the Kingdom&rsquo;s natural resources while addressing the need to provide environmentally responsible management of spent residue upgrading catalysts.</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Mr. Pascal Remy, CEO of SNF</strong>, commented:&nbsp;<em>&ldquo;As part of its global strategy, SNF is investigating the prospects of an implantation in the Jubail industrial complex. On a medium term, this strategic location will host the production of some critical raw material in the synthesis of polyacrylamide, such as acrylonitrile according to the recent announcement of Ineos, and will also bring SNF closer to the growing market of shale gas in Saudi Arabia.&rdquo;</em></p>
+<p><strong>Mr. Tatsuo Yasunaga, President and CEO of Mitsui &amp; Co.</strong>, said:&nbsp;<em>&ldquo;Mitsui aims to realize an ammonia production project in Jubail, Kingdom of Saudi Arabia, using a highly efficient and environment-friendly manufacturing technology and concept, which may include Carbon Capture and Storage (CCS).&rdquo;</em></p>
+<p><strong>Mr. Andy Gosse, President of Shell Catalysts &amp; Technologies</strong>, commented:&nbsp;<em>&ldquo;This agreement with SAGIA and AMG reflects Shell&rsquo;s interest in growing its presence in Saudi Arabia and serving its clients locally and regionally through a world class end-to-end business solution utilizing our extensive expertise in catalyst technologies. New global fuel regulations, combined with the growing trend of crude oil to chemicals production, are leading refiners to develop sustainable waste management plans for their spent catalyst. We look to have meaningful opportunities to build strong relationships with local and international participants.&rdquo;</em></p>
+<p><strong>Mr. Heinz Schimmelbusch, Chairman and CEO of AMG</strong>, stated:&nbsp;<em>&ldquo;AMG is excited to provide cutting edge recycling technologies for treating refinery waste in Saudi Arabia. The recycling process allows the extraction of metals like vanadium from spent catalysts providing ferro-vanadium alloys for the domestic production of high strength steel. Through the reclamation of ferro-vanadium from spent catalysts, steel manufacturers benefit from a low CO2 alternative compared to sourcing the vanadium through mining. It is also the basis for building stationary vanadium batteries used for grid stabilization in view of the growing renewable energy sector in Saudi Arabia. All of that is in line with AMG&rsquo;s vision to enable CO2 reduction through its technologies and products.&rdquo;</em></p>
+<p>These investments build on the positive momentum that Saudi Arabia has seen this year in terms of inward investment. According to Invest Saudi&rsquo;s Fall 2019 Investment Highlights&nbsp;<a href=""https://investsaudi.sa/en/news/fall-investment-highlight/"">report</a>, over 250 overseas businesses were granted investor licenses Q3 2019. This marks a 30 per cent increase compared to the same period last year.</p>
+<p>&nbsp;</p>
+<p>In fact, 809 new foreign companies have established operations in Saudi Arabia, 67 per cent of which are for fully foreign ownership investments. This represents the highest number of foreign investor licenses issued by SAGIA since 2010.</p>
+<p>&nbsp;</p>
+<p>These investments come alongside a broad series of economic reforms, which are enabling rapid growth in foreign investment in Saudi Arabia. These reforms have had a significant impact. According to the 2019 Global Competitiveness Report published by the World Economic Forum, Saudi Arabia&nbsp;has moved up three positions to the 36<sup>th</sup>&nbsp;place, globally, through its efforts to diversify the Kingdom&rsquo;s economy.</p>
+<p>&nbsp;</p>
+<p>Earlier this month, Saudi Arabia also climbed 30 places in the World Bank&rsquo;s Doing Business 2020 report, rising to 62nd place and becoming the most improved economy globally. According to the report, Saudi Arabia&rsquo;s rise in the index was driven by key reforms including lifting foreign ownership restrictions in a range of new sectors, while adopting faster and less complicated business registration procedures by introducing a one-stop shop for business registration.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<ul>
+<li>
+<p>وقعت الهيئة العامة للاستثمار خمس مذكرات تفاهم مع عدد من كبرى شركات البتروكيماويات في العالم، بقيمة بلغت 2 مليار دولار (7.5 مليار ريال)، وذلك خلال حفل أقيم اليوم الخميس 21 نوفمبر 2019، بفندق كراون بلازا في الرياض، بحضور معالي محافظ الهيئة العامة للاستثمار، المهندس إبراهيم العمر. ومعالي رئيس مجلس إدارة هيئة المحتوى المحلي والمشتريات الحكومية، د. غسان الشبل ومعالي نائب وزير الصناعة، المهندس أسامة الزامل، ومعالي رئيس مجلس إدارة الهيئة الملكية للجبيل وينبع، المهندس عبد الله السعدان، والنائب الأعلى لرئيس شركة أرامكو للخدمات الفنية المهندس أحمد السعدي. إضافة إلى ممثلي كبرى شركات البتروكيماويات، وعدد من الجهات الحكومية والقطاع الخاص في المملكة.</p>
+<p>&nbsp;</p>
+<p>من جانبه رحب معالي محافظ الهيئة العامة للاستثمار، المهندس إبراهيم العمر بكبرى شركات قطاع البتروكيماويات العالمية في السوق السعودي، مؤكداً على أن هذا الإنجاز تحقق عبر سعي الهيئة الدائم لتسويق الفرص الاستثمارية بالمملكة، وتمكين الشركات العالمية منها.</p>
+<p>وأضاف العمر بأن قطاع البتروكيماويات يعد أحد أهم القطاعات الإستراتيجية التي توفر فرصا استثنائية للمستثمرين، ولذلك تعمل الهيئة العامة للاستثمار بالتنسيق والتكامل مع الجهات المعنية بمنظومة الصناعة والطاقة، على جذب المستثمرين وتمكينهم من هذه الفرص وتقديم كل التسهيلات المتاحة لدخولهم السوق السعودي واستدامة عملهم في القطاعات الإستراتيجية، خصوصا في ظل الإصلاحات الاقتصادية الكبرى التي تشهدها المملكة، والتي جعلت منها بيئة جاذبة لاستقطاب الاستثمارات من أنحاء العالم.</p>
+<p>&nbsp;</p>
+<p>وتهدف هيئة الاستثمار من هذا التوقيع إلى جذب استثمارات نوعية ومختلفة في الصناعات التحويلية لقطاع البتروكيماويات، إذ يعتبر القطاع من الركائز الأساسية لإستراتيجية المملكة الصناعية. وشملت مذكرات التفاهم ما يلي:</p>
+<p>&nbsp;</p>
+<p>1. مذكرة تفاهم بين الهيئة العامة للاستثمار وشركة ""BASF"" الألمانية، والتي تعد إحدى أكبر شركات البتروكيماويات في العالم، وتهدف المذكرة إلى دراسة وتقييم إنشاء مصنع لإنتاج كيماويات متخصصة في مدينة الجبيل الصناعية.</p>
+<p>2. مذكرة تفاهم بين الهيئة العامة للاستثمار وشركة &ldquo;SNF&rdquo; الفرنسية، والتي تعد أكبر منتج لمادة PAM في العالم، المستخدمة في معالجة المياه واستخراج النفط والغاز، والتعدين.</p>
+<p>3. مذكرة تفاهم بين الهيئة العامة للاستثمار وشركة &ldquo;Mitsui &amp; Co.&rdquo; اليابانية، وهي واحدة من أكبر الشركات في العالم، وبموجب هذه المذكرة سيتعاون الطرفان على دراسة وتقييم إنشاء مصنع بمدينة الجبيل الصناعية، لإنتاج مادة الأمونيا بطاقة استيعابية تقدر بمليون طن سنوياً، وبطريقة إنتاج صديقة للبيئة، بالإضافة إلى مصنع آخر لإنتاج كيماويات متخصصة.</p>
+<p>4. مذكرة تفاهم بين الهيئة العامة للاستثمار وشركة &ldquo;Shell&rdquo; المتخصصة في مجال الطاقة والبتروكيماويات. وستتيح هذه المذكرة العمل على إنشاء مصنع في مدينة الجبيل الصناعية لإنتاج محفزات تعمل على إنتاج مواد ذات قيمة مضافة من زيت الوقود بالإضافة إلى تقليص مادة الكبريت فيه، وذلك لتقليل آثاره السلبية على البيئة.</p>
+<p>5. مذكرة تفاهم بين الهيئة العامة للاستثمار وشركتي &ldquo;Shell&rdquo; و&ldquo;AMG&rdquo;، بهدف إنشاء مصنع لإعادة استخلاص معادن ذات قيمة عالية من المحفزات المستخدمة في عمليات تكرير النفط بعد استهلاكها؛ حيث تستخدم هذه المعادن في إنتاج أنواع متخصصة من الحديد والصلب وغيرها.</p>
+<p>&nbsp;</p>
+<p>يشار إلى أن استقطاب الاستثمارات الأجنبية في المملكة يشهد حراكا كبيرا في كافة القطاعات حيث أعلنت الهيئة مؤخرا في تقريرها الربعي الثالث أن عدد الرخص الصادرة للاستثمار الأجنبي بلغ 251 رخصة، بزيادة 30% مقارنة بنفس الفترة من عام 2018، كما أعلنت الهيئة بأن عدد تراخيص الاستثمار الأجنبي حتى نهاية الربع الثالث من العام الجاري بلغ 809 تراخيص، شملت مشاريع مشتركة مع مستثمرين محليين، وبإضافة مجموع العدد التراكمي على مدى الأرباع الثلاثة الماضية خلال العام الحالي، والتي بلغت 809 تراخيص استثمارية، تسجل الهيئة أكبر عدد للتراخيص السنوية على مدى التسعة أعوام الماضية، أي منذ عام 2010.</p>
+<p>ويأتي هذا النمو السريع في عدد الاستثمارات في الوقت الذي نفذت فيه المملكة سلسلة واسعة من الإصلاحات الاقتصادية، إذ قفزت المملكة 30 مرتبة وفقًا لتقرير ممارسة الأعمال 2020، الصادر عن مجموعة البنك الدولي، لتصبح بذلك أكثر الاقتصادات تطورًا على مستوى العالم.</p>
+</li>
+</ul>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

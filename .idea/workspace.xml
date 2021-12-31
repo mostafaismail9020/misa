@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0fcfd3a-4d0b-4757-8bfd-f311cd8d9a36" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/develop" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/investsaudiportal" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1khbMBnZJG3bEevJjfR0dMP7LJZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hybris-sagia/hybris/bin/custom/investsaudiportal/investsaudiportalstorefront/web/webroot/_ui/responsive/theme-investsaudi/images" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0fcfd3a-4d0b-4757-8bfd-f311cd8d9a36" name="Default Changelist" comment="" />
+      <created>1606155719380</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606155719380</updated>
+    </task>
+    <task id="LOCAL-00001" summary="new favIcon">
+      <created>1606294978510</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606294978510</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new favIcon" />
+    <option name="LAST_COMMIT_MESSAGE" value="new favIcon" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="773" y="388" key="#Notifications" timestamp="1606297510681">
+      <screen x="0" y="25" width="1792" height="1022" />
+    </state>
+    <state x="773" y="388" key="#Notifications/-57.-1055.1920.1055/0.25.1792.1022@0.25.1792.1022" timestamp="1606297510681" />
+    <state x="361" y="93" key="CommitChangelistDialog2" timestamp="1606294978273">
+      <screen x="0" y="25" width="1792" height="1022" />
+    </state>
+    <state x="361" y="93" key="CommitChangelistDialog2/-57.-1055.1920.1055/0.25.1792.1022@0.25.1792.1022" timestamp="1606294978273" />
+    <state x="475" y="260" key="IDE.errors.dialog" timestamp="1606245187430">
+      <screen x="0" y="25" width="1792" height="1018" />
+    </state>
+    <state x="475" y="260" key="IDE.errors.dialog/-57.-1055.1920.1055/0.25.1792.1018@0.25.1792.1018" timestamp="1606245187430" />
+    <state x="527" y="118" width="891" height="637" key="MultipleFileMergeDialog" timestamp="1606297846917">
+      <screen x="0" y="25" width="1792" height="1022" />
+    </state>
+    <state x="527" y="118" width="891" height="637" key="MultipleFileMergeDialog/-57.-1055.1920.1055/0.25.1792.1022@0.25.1792.1022" timestamp="1606297846917" />
+    <state x="489" y="258" key="Vcs.Push.Dialog.v2" timestamp="1606298186263">
+      <screen x="0" y="25" width="1792" height="1022" />
+    </state>
+    <state x="489" y="258" key="Vcs.Push.Dialog.v2/-57.-1055.1920.1055/0.25.1792.1022@0.25.1792.1022" timestamp="1606298186263" />
+    <state x="564" y="544" width="957" height="501" key="find.popup" timestamp="1606236820255">
+      <screen x="0" y="25" width="1792" height="1022" />
+    </state>
+    <state x="651" y="-796" width="1025" height="490" key="find.popup/-57.-1055.1920.1055/0.25.1792.1010@-57.-1055.1920.1055" timestamp="1606156418055" />
+    <state x="651" y="-796" width="1025" height="518" key="find.popup/-57.-1055.1920.1055/0.25.1792.1012@-57.-1055.1920.1055" timestamp="1606171119126" />
+    <state x="564" y="544" width="957" height="501" key="find.popup/-57.-1055.1920.1055/0.25.1792.1020@0.25.1792.1020" timestamp="1606236218387" />
+    <state x="564" y="544" width="957" height="501" key="find.popup/-57.-1055.1920.1055/0.25.1792.1022@0.25.1792.1022" timestamp="1606236820255" />
+    <state x="446" y="460" width="670" height="653" key="search.everywhere.popup" timestamp="1606244777920">
+      <screen x="0" y="25" width="1792" height="1018" />
+    </state>
+    <state x="617" y="-828" width="670" height="676" key="search.everywhere.popup/-57.-1055.1920.1055/0.25.1792.1010@-57.-1055.1920.1055" timestamp="1606155874878" />
+    <state x="446" y="460" width="670" height="653" key="search.everywhere.popup/-57.-1055.1920.1055/0.25.1792.1018@0.25.1792.1018" timestamp="1606244777920" />
+    <state x="446" y="461" width="670" height="654" key="search.everywhere.popup/-57.-1055.1920.1055/0.25.1792.1020@0.25.1792.1020" timestamp="1606235531005" />
+  </component>
+</project>

@@ -1,0 +1,16 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GlobalLicenseCancellationSet(SrID='30000200',Stage='05')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GlobalLicenseCancellationSet(SrID='30000200',Stage='05')",
+      "type": "ZUI5_SAGIA_SRV.GlobalLicenseCancellation"
+    },
+    "SrID": "30000200",
+    "SrGuid": "005056B1-1C89-1ED8-9BDF-CA0646BAAFEF",
+    "SrStCode": "E0002",
+    "SrStDesc": "Completed",
+    "Action": "",
+    "TermCond": false,
+    "Stage": "05"
+  }
+}

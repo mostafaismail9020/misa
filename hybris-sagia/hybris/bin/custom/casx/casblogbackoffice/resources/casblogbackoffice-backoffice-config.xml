@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<config xmlns="http://www.hybris.com/cockpit/config"
+		xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea"
+		xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
+
+	<!-- casblogbackoffice UI configuration should be provided here -->
+
+	<!--<context component="component-code" module="casblogbackoffice">-->
+		<!--Please check documentation for code snippets for specific components-->
+	<!--</context>-->
+	<context component="cs-explorer-tree"
+			 module="customersupportbackoffice"
+			 principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+			 merge-by="principal" merge-mode="add">
+		<n:explorer-tree
+				xmlns:n="http://www.hybris.com/cockpitng/config/explorertree"
+				title="customer_support">
+
+			<n:type-node code="CsBlogTicket"
+						 id="customersupport_backoffice_explorerTree_events"
+						 merge-mode="add" />
+
+		</n:explorer-tree>
+	</context>
+
+	<context merge-by="type"  parent="CsTicket" type="CsBlogTicket"  component="cs-editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole" module="customersupportbackoffice" >
+		<editorArea:editorArea>
+			<editorArea:tab name="customersupport_backoffice_ticket_tab_details" tooltipText="customersupport_backoffice_ticket_tab_details_desc" >
+				<editorArea:section name="hmc.tab.section.ticket.details" position="1" merge-mode="append">
+
+					<editorArea:attribute qualifier="headline"  label="customersupport_backoffice_tickets_subject" readonly="false" />
+					<editorArea:attribute qualifier="blogComment" label="customersupport_backoffice_tickets_comment" readonly="false"   />
+
+					<editorArea:attribute qualifier="blogPostComponent.blogType"  label="customersupport_backoffice_tickets_blog_type" readonly="false" />
+					<editorArea:attribute qualifier="blogPostComponent.postUrl"  label="customersupport_backoffice_tickets_post_url" readonly="false" />
+					<editorArea:attribute qualifier="priority"  label="customersupport_backoffice_tickets_priority" readonly="false" />
+					<editorArea:attribute qualifier="category"  label="customersupport_backoffice_tickets_category" readonly="false" />
+					<editorArea:attribute qualifier="location"  merge-mode="remove"/>
+					<editorArea:attribute qualifier="configuration"  merge-mode="remove"/>
+
+				</editorArea:section>
+
+				<editorArea:section name="customersupport_backoffice_section_ticket_correspondence" merge-mode="remove"/>
+				<editorArea:section name="customersupport_backoffice_tickets_tickets" merge-mode="remove"/>
+
+			</editorArea:tab>
+
+			<editorArea:tab name="hmc.tab.ticket.answer" merge-mode="remove"/>
+
+		</editorArea:editorArea>
+	</context>
+
+
+</config>

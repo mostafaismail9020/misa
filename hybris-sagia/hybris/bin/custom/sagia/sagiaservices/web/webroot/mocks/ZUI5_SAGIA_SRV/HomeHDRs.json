@@ -1,0 +1,262 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeHDRs('613392')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeHDRs('613392')",
+      "type": "ZUI5_SAGIA_SRV.HomeHDR"
+    },
+    "AutorrfcEligible": "",
+    "CheckRfcFlag": "",
+    "AutoRenewalFlag": "",
+    "Enforcepopup": "X",
+    "CheckGovtFlag": "",
+    "Curruser": "",
+    "EnforceRfcPopup": "",
+    "TermsConditions": "",
+    "Errormsg": "",
+    "LicID": "",
+    "LicGuid": "00000000-0000-0000-0000-000000000000",
+    "LicStatus": "",
+    "LicStDesc": "",
+    "LicType": "",
+    "LicTypeDesc": "",
+    "BpID": "613392",
+    "BpGuid": "00000000-0000-0000-0000-000000000000",
+    "BpName": "شركة تجربة",
+    "Action": "",
+    "Activity": " Shelled, whether or not broken,",
+    "SHText": "",
+    "Logo": "",
+    "ActiveSurvey": "X",
+    "MandSurvey": "",
+    "MandContUpd": "",
+    "MandContUpdInPro": "",
+    "MandFinance": "",
+    "MandFinInPro": "",
+    "MandGovDocs": "",
+    "MandGovInPro": "",
+    "SocialUserInfos": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeHDRs('613392')/SocialUserInfos"
+      }
+    },
+    "HomeToLicInfoNav": {
+      "__metadata": {
+        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseInfos('613392')",
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseInfos('613392')",
+        "type": "ZUI5_SAGIA_SRV.LicenseInfo"
+      },
+      "LicID": "12723",
+      "LicGuid": "00155D56-5E0B-1ED7-B7E7-7AE9B71940CA",
+      "LicStatus": "ACTIV",
+      "LicStDesc": "Active",
+      "LicType": "1",
+      "LicTypeDesc": "INDUSTRIAL  صناعي",
+      "LicClass": "A+",
+      "LicCapital": "5900000",
+      "LicIssueDt": "/Date(1410393600000)/",
+      "LicExDate": "/Date(1541548800000)/",
+      "LicIsicSection": "Accommodation and food service activities",
+      "BpID": "613392",
+      "BpGuid": "00000000-0000-0000-0000-000000000000"
+    },
+    "HomeToContactNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeContactDetails('613392')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeContactDetails('613392')",
+            "type": "ZUI5_SAGIA_SRV.HomeContactDetail"
+          },
+          "BpID": "613392",
+          "BpGuid": "00000000-0000-0000-0000-000000000000",
+          "ContactType": "SP",
+          "FirstName": "شركة تجربة",
+          "MiddleName": "",
+          "LastName": "",
+          "TelNumber": "+966 (012042495)",
+          "MobileNumber": "+966 (059899898)",
+          "Email": "v.j@sa.com",
+          "city": "Tayma",
+          "Website": "HP Ghurnata",
+          "Region": "Tabuk",
+          "Nationality": "Saudi Arabia",
+          "FullName": "شركة تجربة"
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeContactDetails('402985')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeContactDetails('402985')",
+            "type": "ZUI5_SAGIA_SRV.HomeContactDetail"
+          },
+          "BpID": "402985",
+          "BpGuid": "00000000-0000-0000-0000-000000000000",
+          "ContactType": "GM",
+          "FirstName": "Vij",
+          "MiddleName": "",
+          "LastName": "Kan",
+          "TelNumber": "+966 (12121212)",
+          "MobileNumber": "+966 (942324)",
+          "Email": "v.j@s.com",
+          "city": "riyadh",
+          "Website": "",
+          "Region": "",
+          "Nationality": "Saudi Arabia",
+          "FullName": "Vij  Kan"
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeContactDetails('402986')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeContactDetails('402986')",
+            "type": "ZUI5_SAGIA_SRV.HomeContactDetail"
+          },
+          "BpID": "402986",
+          "BpGuid": "00000000-0000-0000-0000-000000000000",
+          "ContactType": "R1",
+          "FirstName": "Ilam",
+          "MiddleName": "",
+          "LastName": "Siva",
+          "TelNumber": "",
+          "MobileNumber": "+966 (23324)",
+          "Email": "v.j@sa.com",
+          "city": "",
+          "Website": "",
+          "Region": "",
+          "Nationality": "Saudi Arabia",
+          "FullName": "Ilam  Siva"
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeContactDetails('403004')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/HomeContactDetails('403004')",
+            "type": "ZUI5_SAGIA_SRV.HomeContactDetail"
+          },
+          "BpID": "403004",
+          "BpGuid": "00000000-0000-0000-0000-000000000000",
+          "ContactType": "R2",
+          "FirstName": "Henry",
+          "MiddleName": "Sr",
+          "LastName": "Ford",
+          "TelNumber": "+966 (01198989898)",
+          "MobileNumber": "+966 (+9665605601)",
+          "Email": "Rep2@ihg.com",
+          "city": "",
+          "Website": "",
+          "Region": "",
+          "Nationality": "Saudi Arabia",
+          "FullName": "Henry Sr Ford"
+        }
+      ]
+    },
+    "HomeToShareHolderNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ShareHolderInfos('613391')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ShareHolderInfos('613391')",
+            "type": "ZUI5_SAGIA_SRV.ShareHolderInfo"
+          },
+          "BpID": "613391",
+          "BpGuid": "00000000-0000-0000-0000-000000000000",
+          "ContactType": "SH",
+          "FirstName": "شوكت علي",
+          "MiddleName": "",
+          "LastName": "شاد",
+          "Shareinfo": "              50.00",
+          "FullName": "شوكت علي  شاد",
+          "Nationality": "Saudi Arabia"
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ShareHolderInfos('621559')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ShareHolderInfos('621559')",
+            "type": "ZUI5_SAGIA_SRV.ShareHolderInfo"
+          },
+          "BpID": "621559",
+          "BpGuid": "00000000-0000-0000-0000-000000000000",
+          "ContactType": "SH",
+          "FirstName": "شركة الطاقة الوقائية",
+          "MiddleName": "",
+          "LastName": "",
+          "Shareinfo": "              50.00",
+          "FullName": "شركة الطاقة الوقائية",
+          "Nationality": "Saudi Arabia"
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ShareHolderInfos('603973')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ShareHolderInfos('603973')",
+            "type": "ZUI5_SAGIA_SRV.ShareHolderInfo"
+          },
+          "BpID": "603973",
+          "BpGuid": "00000000-0000-0000-0000-000000000000",
+          "ContactType": "SH",
+          "FirstName": "عمرو",
+          "MiddleName": "",
+          "LastName": "محمود سنبل",
+          "Shareinfo": "               0.00",
+          "FullName": "عمرو  محمود سنبل",
+          "Nationality": "Saudi Arabia"
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ShareHolderInfos('200246')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ShareHolderInfos('200246')",
+            "type": "ZUI5_SAGIA_SRV.ShareHolderInfo"
+          },
+          "BpID": "200246",
+          "BpGuid": "00000000-0000-0000-0000-000000000000",
+          "ContactType": "SH",
+          "FirstName": "مصنع اومني للصناعات الكيماوية",
+          "MiddleName": "",
+          "LastName": "",
+          "Shareinfo": "               0.00",
+          "FullName": "مصنع اومني للصناعات الكيماوية",
+          "Nationality": "Saudi Arabia"
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ShareHolderInfos('200231')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ShareHolderInfos('200231')",
+            "type": "ZUI5_SAGIA_SRV.ShareHolderInfo"
+          },
+          "BpID": "200231",
+          "BpGuid": "00000000-0000-0000-0000-000000000000",
+          "ContactType": "SH",
+          "FirstName": "سشميدت كليمنس ميدل ايست م.د.م.س",
+          "MiddleName": "",
+          "LastName": "",
+          "Shareinfo": "               0.00",
+          "FullName": "سشميدت كليمنس ميدل ايست م.د.م.س",
+          "Nationality": "United Arab Emirates"
+        }
+      ]
+    },
+    "HomeHDRToSalAndEmpNav": {
+      "__metadata": {
+        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/SalAndEmps('613392')",
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/SalAndEmps('613392')",
+        "type": "ZUI5_SAGIA_SRV.SalAndEmp"
+      },
+      "BpID": "613392",
+      "ExpatSal": "23000.00000",
+      "KsaSal": "5600.00000",
+      "ExpNo": "0000000300",
+      "KsaNo": "0000000060",
+      "male_emp": "0000000003",
+      "females_emp": "0"
+    },
+    "HomeHDRToClassificNav": {
+      "__metadata": {
+        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/Classifics('613392')",
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/Classifics('613392')",
+        "type": "ZUI5_SAGIA_SRV.Classific"
+      },
+      "BpID": "613392",
+      "Duration": "5 Years",
+      "Fees": "30000.00",
+      "Category": "A+",
+      "CurRef": ""
+    }
+  }
+}

@@ -1,0 +1,68 @@
+$page = news-investment-highlight-summer
+$template = portalGlobalTemplate
+$name = INVESTMENT HIGHLIGHT SUMMER 2020
+$titleEn = $name
+$titleAr = تقرير الربع الثاني من موجز مستجدات الاستثمار
+$shortDescEn = In This Edition Of Investment Highlights, The Ministry Of Investment Of Saudi
+$shortDescAr = في تقرير الربع الثاني من موجز مستجدات الاستثمار: تعرف على الفرص الاستثمارية
+$pagelabel = /news/investment-highlight-summer-2020
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; banner             ; banner.jpg  ; $siteResource/banner.jpg                                                    ;                             ;                                          ; ""     ; ;
+#                   ; newsThumbnailImage-1 ; $siteResource/newsThumbnailImage-1.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias; $contentCV; ; ; ;
+                            ; media-container-$page   ; banner ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; banner                            ; banner                              ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 30.09.2020 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "
+<p>In this edition of Investment Highlights, the Ministry of Investment of Saudi Arabia (MISA) announced that 506 new international companies were granted investor licenses during H1 2020. The figures came after 20% year-on-year growth in Q1 was followed by a 47% year-on-year decline in Q2, largely due to the impact of the COVID-19 pandemic on the global economy.&nbsp;</p>
+<p>&nbsp;</p>
+<p>However, in more positive news, the data showed an increase in economic activity towards the end of Q2 &ndash; suggesting that the economy may be experiencing significant catch-up growth as the Kingdom cautiously lifted some of its lockdown measures.</p>
+<p>&nbsp;</p>
+<p>This edition of Investment Highlights contains a special feature on Saudi Arabia&rsquo;s mining sector, following the announcement of a new mining law in June 2020. This includes an interview with Khalid Al-Mudaifer, Vice Minister for Mining Affairs at the Ministry of Industry and Mineral Resources (MIM). Saudi Arabia&rsquo;s mining sector is in its early stages of development and full of potential, with metals and minerals reserves worth an estimated $1.3 trillion.</p>
+<p>&nbsp;</p>
+<p>Also, inside this report are opening remarks from Bander Alkhorayef, Minister of Industry and Mineral Resources, an update on the mega projects with an interview with Jerry Inzerillo, CEO of the Diriyah Gate Development Authority (DGDA), and much more.</p>
+"
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "
+<p>تستعرض وزارة الاستثمار في تقريرها للربع الثاني 2020، أبرز مستجدات البيئة الاستثمارية خلال فترة صيف 2020، حيث أعلنت عن منحها رخص استثمارية لـ 506 شركة أجنبية خلال النصف الأول من هذا العام. وتأتي هذه النتائج بعد تسجيل نمو للاستثمارات الأجنبية في المملكة للربع الأول بنسبة (20%) خلال الربع الأول بينما سجلت تراجعا بنسبة (47%) للربع الثاني من هذا العام، وذلك نتيجةً لتأثر الاقتصاد العالمي بجائحة فيروس كورونا.</p>
+<p>&nbsp;</p>
+<p>كما يكشف هذا العدد الجاذبية الكبيرة التي يتمتع بها قطاع التعدين، والذي يُعد من القطاعات الأكثر حيوية في المملكة، حيث تقدّر قيمته السوقية بــ(1.3) ترليون دولار. &nbsp;ويتضمن العدد مقابلة مع نائب وزير الصناعة والثروة المعدنية لشؤون التعدين، المهندس خالد المديفر. &nbsp;&nbsp;</p>
+<p>تضمن التقرير أيضا كلمة افتتاحية لمعالي وزير الصناعة والثروة المعدنية، بندر الخريف؛ ومقابلة مع الرئيس التنفيذي لهيئة تطوير بوابة الدرعية، جيري انزيرلو كشف من خلالها عن مستجدات المشاريع السعودية الكبرى.</p>
+							   "
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

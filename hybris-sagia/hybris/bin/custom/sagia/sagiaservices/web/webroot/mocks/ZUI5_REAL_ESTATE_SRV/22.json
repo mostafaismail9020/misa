@@ -1,0 +1,138 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000085",
+        "CityDesc": "Buraydah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000086",
+        "CityDesc": "Unaizah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000087",
+        "CityDesc": "Al Rass"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000088",
+        "CityDesc": "Al Methnb"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000089",
+        "CityDesc": "Al Bukairyah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000090",
+        "CityDesc": "Al Bdaia"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000091",
+        "CityDesc": "AL Asyah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000092",
+        "CityDesc": "Al Nabhaniya"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000093",
+        "CityDesc": "Al Shemasyah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000094",
+        "CityDesc": "Uyun AlJiwa"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "22",
+        "RegionDesc": "Qasim",
+        "CityCode": "18000095",
+        "CityDesc": "Riyadh Al Khubraa"
+      }
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleEn = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                    ; realFileName                  		 	; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+																            												 
+					   ; tabuk-banner-image.png   			    ; tabuk-banner-image.png   					; $siteResource/tabuk-banner-image.png   	                     		  ;                 image/png                ;                                          ; ""     ;
+					   ; tabuk-map.png     			 		    ; tabuk-map.png     						; $siteResource/tabuk-map.png     			                              	  ;                 image/png                ;                                          ; ""     ;
+					   ; tabuk-tourism.png       			   	; tabuk-tourism.png       	    			; $siteResource/tabuk-tourism.png       		                                               ;                 image/png                ;                                          ; ""     ;
+					   ; tabuk-technology.png      		       	; tabuk-technology.png        				; $siteResource/tabuk-technology.png                                                     ;                 image/png                ;                                          ; ""     ;
+					   ; tabuk-trading.png      			    ; tabuk-trading.png      	    			; $siteResource/tabuk-trading.png      			                                                 ;                 image/png                ;                                          ; ""     ;
+					   ; tabuk-renewable-energy.png		   		; tabuk-renewable-energy.png    			; $siteResource/tabuk-renewable-energy.png		                                             	  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-logistics.png       		   		; tabuk-logistics.png         				; $siteResource/tabuk-logistics.png                                                      ;                 image/png                ;                                          ; ""     ;   
+					   
+
+
+
+
+
+						
+					   ; tabuk-population.png        		            		; tabuk-population.png        			; $siteResource/tabuk-population.png        		                                  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-airport.png    					               	; tabuk-airport.png    				   	; $siteResource/tabuk-airport.png    				                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-private-sector-employees.png  	            	; tabuk-private-sector-employees.png  ; $siteResource/tabuk-private-sector-employees.png                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-seaport.png              			              	; tabuk-seaport.png              			; $siteResource/tabuk-seaport.png              			                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-active-factories.png  		              		; tabuk-active-factories.png  			; $siteResource/tabuk-active-factories.png  		                             		  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-dams.png        					              	; tabuk-dams.png        					; $siteResource/tabuk-dams.png        					                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-chambers-of-commerce.png 			              	; tabuk-chambers-of-commerce.png 		    ; $siteResource/tabuk-chambers-of-commerce.png 		                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-hotels.png              			              	; tabuk-hotels.png              		    ; $siteResource/tabuk-hotels.png              		                             	  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-industrial-city.png      		            		; tabuk-industrial-city.png      		  	; $siteResource/tabuk-industrial-city.png      		                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-sport-city.png					              	; tabuk-sport-city.png				    ; $siteResource/tabuk-sport-city.png				                                  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-roads-length.png           	            		; tabuk-roads-length.png           		; $siteResource/tabuk-roads-length.png           	                                   	  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-hospitals.png                               		; tabuk-hospitals.png                 	; $siteResource/tabuk-hospitals.png                                                     ;                 image/png                ;                                          ; ""     ;   					
+					   ; tabuk-towns.png							              	; tabuk-towns.png							; $siteResource/tabuk-towns.png													  		  ;                 image/png                ;											; ""	 ;
+					   		  				  
+																					  
+					   ; tabuk-electricity-infrastructure.png            	; tabuk-electricity-infrastructure.png             	; $siteResource/tabuk-electricity-infrastructure.png                                    ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-mega-giga-projects.png                    	; tabuk-mega-giga-projects.png                    	; $siteResource/tabuk-mega-giga-projects.png                                			  ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-solar-energy-potential.png                	; tabuk-solar-energy-potential.png                	; $siteResource/tabuk-solar-energy-potential.png                                 		  ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-tourism-potential.png                         ; tabuk-tourism-potential.png                     	; $siteResource/tabuk-tourism-potential.png                                             ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-proximity-egypt-Jordan-southern-europe.png    ; tabuk-proximity-egypt-Jordan-southern-europe.png  ; $siteResource/tabuk-proximity-egypt-Jordan-southern-europe.png                        ;                 image/png                ;                                          ; ""     ;   	
+					   
+					   
+					   
+					   ; tabuk-neom.png				     	; tabuk-neom.png				      	; $siteResource/tabuk-neom.png				                              ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-redsea-project.png		 	; tabuk-redsea-project.png		 	; $siteResource/tabuk-redsea-project.png		              			  ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-amaala.png				 	; tabuk-amaala.png				 	; $siteResource/tabuk-amaala.png				                   		  ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-renewable-energy-office.png    ; tabuk-renewable-energy-office.png	; $siteResource/tabuk-renewable-energy-office.png                         ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-high-end.png				     ; tabuk-high-end.png				 ; $siteResource/tabuk-high-end.png				                          ;                 image/png                ;                                          ; ""     ;   	
+					   
+					   
+
+
+	
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=en]			; bannerText[lang=en]														; bannerImage (code, $contentCV)	; keyFactsHeader [lang = en]		 ; keyStrengthsHeader [lang = en] 	 ; opportunitiesHeader [lang = en]		
+							   ; tabuk		    ;		        ; TABUK PROVINCE			        ; Tabuk is Saudi Arabia's northern gateway to the Arabian Peninsula.		; tabuk-banner-image.png		    ; KEY FACTS AND FIGURES	 			 ; REGIONAL BENEFITS		 			 ; INVESTMENT OPPORTUNITIES																																																							
+	
+	
+
+#########################################################	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 		 ;  $contentCV  ; headerText[lang = en]      			; imageIcon  (code, $contentCV)     	 						; &componentRef
+											    ; tabuk-tourism		 		 ; 				; Tourism	    						; tabuk-tourism.png       	   									; tabuk-tourism		 		
+                                                ; tabuk-technology	 	 	 ;              ; Technology	           				; tabuk-technology.png                    						; tabuk-technology	 	
+                                                ; tabuk-trading	 		 	 ;              ; Trading      							; tabuk-trading.png      										; tabuk-trading	 		
+                                                ; tabuk-renewable-energy 	 ;             	; Renewable energy      				; tabuk-renewable-energy.png        							; tabuk-renewable-energy
+                                                ; tabuk-logistics 		 	 ;              ; Logistics 							; tabuk-logistics.png                  							; tabuk-logistics 		
+	                                            
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = en] ; value[lang = en] 
+										; tabuk-strategic-population		;		   ; 949,612		; population
+										; tabuk-strategic-landmass		;			   ; 136,000 km2 	; in landmass area
+	 
+	  
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = en]	; backgroundImage (code, $contentCV)   	; sectors(&componentRef) 																																								; longDescription[lang = en]																																																																																																																																																																									; localizedStats (uid, $contentCV)   					  ; &componentRef
+												 ; tabuk-strategic-component		;          		; STRATEGIC SECTORS			; tabuk-map.png							; tabuk-tourism,tabuk-technology,tabuk-trading,tabuk-renewable-energy,tabuk-logistics  ; Facing the Red Sea, the region is surrounded by pristine white beaches and includes some of the most important landmarks in the Kingdom, which reflect the ancient history of the region. Tabuk is home to several Vision 2030 mega and giga projects, which are set to dramatically revive the region's economy, including NEOM, The Red Sea Project, and Amaala. Additionally, the region has the highest wind speed in the Kingdom and unlimited wind and solar endowment making it an attractive area for renewable energy investments. The region also has sophisticated infrastructure, such as the modern Duba Port, which has a capacity of 10 million tons and is the closest port to the Suez Canal. In terms of livability, Tabuk's population enjoys access to University of Tabuk and 12 high-quality hospitals. 	; tabuk-strategic-population,tabuk-strategic-landmass 	  ; tabuk-strategic-component
+                             
+
+							 
+
+#######################################################	
+
+
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]		 ; $contentCV ; imageIcon (code, $contentCV) 			; headerText[lang = en]		   ;  text[lang = en]										; &componentRef
+									   ; tabuk-keyfacts1	     ;			  ; tabuk-population.png        			; 949,612	                   ;  population											; tabuk-keyfacts1
+									   ; tabuk-keyfacts2       	 ;            ; tabuk-airport.png    					; 3	                   	       ;  international airport and 2 domestic airport          ; tabuk-keyfacts2 
+									   ; tabuk-keyfacts3         ;            ; tabuk-private-sector-employees.png      ; 139,119		               ;  number of employees				                	; tabuk-keyfacts3 
+									   ; tabuk-keyfacts4         ;            ; tabuk-seaport.png              			; 1			                   ;  Seaport                                              	; tabuk-keyfacts4 
+									   ; tabuk-keyfacts5         ;            ; tabuk-active-factories.png  			; 76		                   ;  active factories in Q3 2021					        ; tabuk-keyfacts5 
+									   ; tabuk-keyfacts6         ;            ; tabuk-dams.png        					; 16		                   ;  dams									                ; tabuk-keyfacts6 
+									   ; tabuk-keyfacts7         ;            ; tabuk-chambers-of-commerce.png 			; 1			                   ;  Chambers of Commerce					                ; tabuk-keyfacts7 
+									   ; tabuk-keyfacts8         ;            ; tabuk-hotels.png              			; 20			               ;  Hotels						                        ; tabuk-keyfacts8 
+									   ; tabuk-keyfacts9         ;            ; tabuk-industrial-city.png      			; 1	                   	   	   ;  industrial city                                       ; tabuk-keyfacts9 
+									   ; tabuk-keyfacts10        ;            ; tabuk-sport-city.png					; 1			               	   ;  Sport City			                                ; tabuk-keyfacts10
+									   ; tabuk-keyfacts11        ;            ; tabuk-roads-length.png           		; 3,965			               ;  roads length					                        ; tabuk-keyfacts11
+									   ; tabuk-keyfacts12        ;            ; tabuk-hospitals.png                 	; 12		                   ;  hospitals with 1,820 beds							    ; tabuk-keyfacts12
+									   ; tabuk-keyfacts13        ;            ; tabuk-towns.png							; 7		                   	   ;  Towns				                                    ; tabuk-keyfacts13
+									   									   
+		
+					   
+								
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]		; $contentCV      ; image (code, $contentCV)					         	; text[lang=en]				          				 ;&componentRef
+                     					 
+										   ; tabuk-key-strength1 	;                 ; tabuk-electricity-infrastructure.png                    ; ELECTRICITY INFRASTRUCTURE                    	  ; tabuk-key-strength1
+                                           ; tabuk-key-strength2 	;                 ; tabuk-mega-giga-projects.png                            ; MEGA AND GIGA PROJECTS                              ; tabuk-key-strength2
+                                           ; tabuk-key-strength3	;                 ; tabuk-solar-energy-potential.png                        ; SOLAR ENERGY POTENTIAL - THE RENEWABLE ENERGY PROJECT DEVELOPMENT OFFICE (REPDO) HAS IDENTIFIED TWO POTENTIAL SITES FOR SOLAR FARMS + TWO POTENTIAL SITES FOR WIND FARMS.                              ; tabuk-key-strength3
+                                           ; tabuk-key-strength4	;                 ; tabuk-tourism-potential.png                             ; TOURISM POTENTIAL                                   ; tabuk-key-strength4
+                                           ; tabuk-key-strength5 	;                 ; tabuk-proximity-egypt-Jordan-southern-europe.png        ; PROXIMITY TO EGYPT, JORDAN AND SOUTHERN EUROPE      ; tabuk-key-strength5
+		   
+
+		   
+###################################################3			   
+
+
+INSERT_UPDATE ProvinceInvestmentOpportunitiesComponent	; uid[unique=true]		      ; $contentCV	  ; iconImage	(code, $contentCV)					         ; headerText[lang = en]	                                     ; text[lang = en]																															; &componentRef
+													                                                                                                                                                        
+														; tabuk-investment1			      ;               ; tabuk-neom.png				                                         ; NEOM						                                     ; the world's most ambitious city in the making																						    ; tabuk-investment1	
+														; tabuk-investment2			      ;               ; tabuk-redsea-project.png		 		                             ; The Red Sea Project		                               		 ; a giga-project with high growth potential																									; tabuk-investment2	
+														; tabuk-investment3			      ;               ; tabuk-amaala.png				 			                         ; AMAALA					                               		 ; a new destination that redefines the standard for luxury tourism																				; tabuk-investment3	
+														; tabuk-investment4			      ;               ; tabuk-renewable-energy-office.png			                         ; The Renewable Energy Project Development Office (REPDO)		 ; has identified two potential sites for solar farms and two potential sites for wind farms													; tabuk-investment4	
+														; tabuk-investment5			      ;               ; tabuk-high-end.png				 			                         ; High End						                           		 ; Utilities and digital infrastructure																											; tabuk-investment5	
+									 
+
+########################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																																					; keyStrengths(&componentRef) 																				  		; investmentOpportunities(&componentRef)
+							   ; tabuk		 		;				; tabuk-strategic-component 				; tabuk-keyfacts1,tabuk-keyfacts2 ,tabuk-keyfacts3 ,tabuk-keyfacts4 ,tabuk-keyfacts5 ,tabuk-keyfacts6, tabuk-keyfacts7 ,tabuk-keyfacts8 ,tabuk-keyfacts9 ,tabuk-keyfacts10,tabuk-keyfacts11,tabuk-keyfacts12,tabuk-keyfacts13   ; tabuk-key-strength1,tabuk-key-strength2,tabuk-key-strength3,tabuk-key-strength4,tabuk-key-strength5   ; tabuk-investment1,tabuk-investment2,tabuk-investment3,tabuk-investment4,tabuk-investment5
+	
+	
+

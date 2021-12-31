@@ -1,0 +1,23 @@
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../config/ehcache.xsd" updateCheck="false" monitoring="autodetect"
+         dynamicConfig="true">
+
+	<!--
+	see ehcache-core-*.jar/ehcache-failsafe.xml for description of elements
+	 -->
+    <diskStore path="java.io.tmpdir/odataCache"/>
+    <cache name="odataCache"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="true"
+           maxElementsOnDisk="10"
+           diskPersistent="false"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="FIFO"  />
+
+</ehcache>

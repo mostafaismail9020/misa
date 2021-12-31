@@ -1,0 +1,66 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          1",
+        "FieldSubtype": "",
+        "Description": "Copy Of The Investment License",
+        "Dockey_ID": "1137",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          2",
+        "FieldSubtype": "",
+        "Description": "Original Commercial Register",
+        "Dockey_ID": "1200",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%203')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%203')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          3",
+        "FieldSubtype": "",
+        "Description": "Power Of Attorney",
+        "Dockey_ID": "1232",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%204')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%204')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          4",
+        "FieldSubtype": "",
+        "Description": "Standard Form Signed By The Manager",
+        "Dockey_ID": "1262",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      }
+    ]
+  }
+}

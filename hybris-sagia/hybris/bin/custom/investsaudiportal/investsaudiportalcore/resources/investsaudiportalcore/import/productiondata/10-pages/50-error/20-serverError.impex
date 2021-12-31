@@ -1,0 +1,32 @@
+$page = serverError
+$template = portalGlobalTemplate
+$pageName = 500
+$pagelabel = serverError
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = $mediafolder
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]              ; name         ; page                                                  ; actions(uid, $contentCV); &componentRef
+                                 ;                          ; server-errror-include-component ; Server Error ; /WEB-INF/views/responsive/pages/error/serverError.jsp ;                         ; server-errror-include-component
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)    ; $contentCV
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                 ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; server-errror-include-component ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                 ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+

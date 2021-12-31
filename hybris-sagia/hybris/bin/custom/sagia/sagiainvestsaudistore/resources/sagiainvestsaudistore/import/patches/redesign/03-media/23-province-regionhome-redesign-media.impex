@@ -1,0 +1,31 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]						; realFileName             					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; province-home-banner-image.jpg			; province-home-banner-image.jpg			; $siteResource/province-home-banner-image.jpg								  ; image/jpeg					 ;											; ""   ;
+					; riyadh-background-image.jpg				; riyadh-background-image.jpg				; $siteResource/riyadh-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; makkah-background-image.jpg				; makkah-background-image.jpg				; $siteResource/makkah-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; medina-background-image.jpg				; medina-background-image.jpg				; $siteResource/medina-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; qassim-background-image.jpg				; qassim-background-image.jpg				; $siteResource/qassim-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; eastern-background-image.jpg				; eastern-background-image.jpg				; $siteResource/eastern-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+					; asir-background-image.jpg					; asir-background-image.jpg					; $siteResource/asir-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; tabuk-background-image.jpg				; tabuk-background-image.jpg				; $siteResource/tabuk-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; hail-background-image.jpg					; hail-background-image.jpg					; $siteResource/hail-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; northern-borders-background-image.jpg	    ; northern-borders-background-image.jpg		; $siteResource/northern-borders-background-image.jpg						  ; image/jpeg					 ;											; ""   ;
+					; jazan-background-image.jpg				; jazan-background-image.jpg				; $siteResource/jazan-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; najran-background-image.jpg				; najran-background-image.jpg				; $siteResource/najran-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; al-baba-background-image.jpg				; al-baba-background-imagejpg				; $siteResource/al-baba-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+					; al-jouf-background-image.jpg				; al-jouf-background-image.jpg				; $siteResource/al-jouf-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+

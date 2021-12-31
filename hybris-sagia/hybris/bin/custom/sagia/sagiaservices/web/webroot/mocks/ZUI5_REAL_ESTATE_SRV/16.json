@@ -1,0 +1,174 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000107",
+        "CityDesc": "Abha"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000108",
+        "CityDesc": "Khamis Mushait"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000109",
+        "CityDesc": "Bisha"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000110",
+        "CityDesc": "Al-Namas"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000111",
+        "CityDesc": "Mahayil"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000112",
+        "CityDesc": "Rijal Almaa"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000113",
+        "CityDesc": "Al Mjardh"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000114",
+        "CityDesc": "Sarat abedah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000115",
+        "CityDesc": "Ahad Rufaidah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000116",
+        "CityDesc": "Belgarn"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000117",
+        "CityDesc": "Tathlith"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000118",
+        "CityDesc": "Dhahran AL Jnob"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000171",
+        "CityDesc": "Sabt Al Alalaya"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "16",
+        "RegionDesc": "Asir",
+        "CityCode": "18000172",
+        "CityDesc": "Balasmar"
+      }
+    ]
+  }
+}

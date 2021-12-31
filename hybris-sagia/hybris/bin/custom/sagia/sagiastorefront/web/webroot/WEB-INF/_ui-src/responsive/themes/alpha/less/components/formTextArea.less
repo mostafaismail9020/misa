@@ -1,0 +1,113 @@
+.formTextArea{
+	.form-group{
+		padding-top: 15px;
+		margin-bottom: 16px;
+		position: relative;
+	}
+
+	.control-label{
+		text-align: left;
+		color: @steel-grey;
+		line-height: 17px;
+		padding: 10px;
+		position: absolute;
+		top: -11px;
+		left: -10px;
+		right: 1px;
+		transition: all 300ms;
+		text-transform: uppercase;
+		font-size: 12px;
+		pointer-events: none;
+		
+	}
+
+	.form-control{
+		display: block;
+		width: 100%;
+		font-size: 1rem;
+		line-height: 1.5;
+		background: #fff;
+		background-clip: padding-box;
+		border: 1px solid #d9d9d9;
+		padding: 10px;
+		font-size: 14px;
+		line-height: 17px;
+		color: #343a4a;
+		border-radius: 2px;
+		box-shadow: inset 0 1px 3px 0 rgba(241, 242, 242, 0.6);
+		resize: none;
+		height: 152px;
+
+		&:focus{
+			border-color: #a0ed98;
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05), inset 0 1px 3px 0 rgba(241, 242, 242, 0.6);
+			outline: none;
+		}
+		
+		&_slim {
+			height: 76px;
+		}
+		
+		&[disabled]{
+			border-color: #d9d9d9;
+			background-color: #fbfbfb;
+			cursor: not-allowed;
+		}
+
+	}
+
+	&_slim textarea.form-control {
+		height: 72px;
+	}
+
+	.form-control::placeholder{
+		font-size: 0;
+	}
+	
+	.form-control::-ms-input-placeholder {
+		font-size: 0;
+		color: #fff;
+	}		
+	
+	.form-control:placeholder-shown + .control-label{
+		top: 16px;
+		font-size: 14px;
+		left: 1px;
+	}
+	
+	.form-control.placeholder-shown + .control-label{
+		top: 16px;
+		font-size: 14px;
+		left: 1px;
+	}
+
+	.form-control.placeholder-not-shown + .control-label{
+		top: -11px;
+		font-size: 12px;
+		left: -10px;
+	}
+
+	.form-control:focus + .control-label{
+		top: -11px;
+		font-size: 12px;
+		left: -10px;
+	}
+
+
+	.help-block{
+		font-size: 10px;
+		text-align: right;
+		color: #ff4c4a;
+		line-height: 1.2;
+		margin-top: 6px;
+
+	}
+
+	// error
+	.form-group.has-error .form-control{
+		border-color: #ff4c4a;
+	}
+
+
+
+}

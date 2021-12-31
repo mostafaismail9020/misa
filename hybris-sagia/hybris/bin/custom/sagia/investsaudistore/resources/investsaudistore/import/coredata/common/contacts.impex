@@ -1,0 +1,147 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#
+# Import Contacts Sectors/Department
+#
+INSERT_UPDATE InvestSaudiSector;code[unique=true];name[lang=en];ranking
+;ISMCD;"Invest Saudi Marketing & Communication Department";1
+;HEGSHD;"His Excellency The Governor Of SAGIA And His Deputies";2
+;GE;"Government Entities";3
+;NGO;"Non-governmental Organizations";4
+;PSE;"Private Sector Entities";5
+;CE;"Consulting Entities";6
+
+
+# Import Contacts
+#
+INSERT_UPDATE InvestSaudiContact;code[unique=true];name[lang=en];posistion[lang=en];telephone;mobile;email;department(code);ranking
+
+# Sector ISMCD
+;contact11;"Khaled A. Tash";"Deputy Governor Of Marketing & Communications";"+966 112035533";"+966 555813788";"ktash@sagia.gov.sa";ISMCD;1
+;contact12;"Mohammed M. Abuazzah";"Executive Director Of Strategic Marketing";"+966 112035042";"+966 563636636";"mabuazzah@sagia.gov.sa";ISMCD;2
+;contact13;"Fahad S. Alabdulaziz";"Marketing Channels Director";"+966 112035909";"+966 503430430";"falabdulaziz@sagia.gov.sa";ISMCD;3
+;contact14;"Fares J. Alshammary";"Advertising Officer";"+966 112035951";"+966 506040202";"falshammary@sagia.gov.sa";ISMCD;4
+;contact15;"Lujain A. Alragdi";"Advertising Officer";"-";"+966 568366192";"lalragdi@sagia.gov.sa";ISMCD;5
+;contact101;Noura K. Almuzairie;Business Support Director;+966 112035222;+966 553512020;nalmuzairie@sagia.gov.sa;ISMCD;6
+;contact102;Zaid S. Alshakri;Corporate Commun. Executive Director;+966 112035910;+966 550073000;zalshakri@sagia.gov.sa;ISMCD;7
+;contact103;Emad M. Alabbad;Media Center Director;-;+966 551010939;ealabbad@sagia.gov.sa;ISMCD;8
+;contact104;Norah S. Alshalhoub;Brand Management Director;+966 112035357;+966 547777827;nalshalhoub@sagia.gov.sa;ISMCD;9
+;contact105;Mohannad A. Mandora;Marketing Strategy And Research Director;+966 112035237;+966 536370666;mmandora@sagia.gov.sa;ISMCD;10
+;contact106;Zuhair S. Al-Salem;Industrial Stakeholder Support Director;+966 112035488;+966 504268066;zsalem@sagia.gov.sa;ISMCD;11
+;contact107;Moaath W. Salamah;Advertising Specialist;+966 112035902;+966 544151962;msalamah@sagia.gov.sa;ISMCD;12
+;contact108;Omar Alalshaykh;Advertising Officer;-;+966 556027344;oalalshaykh@sagia.gov.sa;ISMCD;13
+;contact109;Raghad M. Alahmadi;Advertising Officer;+966 112035382;-;ralahmadi@sagia.gov.sa;ISMCD;14
+;contact110;Munirah Alzeer;Brand Officer;+966 112035376;+966 504445119;malzeer@sagia.gov.sa;ISMCD;15
+;contact111;Abdulaziz A. Al Jaber;Public Relations Office;+966 112035588;+966 530133530;aaj@sagia.gov.sa;ISMCD;16
+;contact112;Fahad H. Al-Damer;Business Support Officer;+966 112035509;+966 563370707;fdamer@sagia.gov.sa;ISMCD;17
+;contact113;Mustafa A. Alshehri;Business Support Officer;+966 112035253;+966 567411112;maalshehri@sagia.gov.sa;ISMCD;18
+;contact114;Tariq S. Bin Saeed;Project Manager;+966 112035342;+966 557561768;tbinsaeed@sagia.gov.sa;ISMCD;19
+;contact115;Waeel M. Saleh;Business Support Officer;+966 112035904;+966 542239994;wsaleh@sagia.gov.sa;ISMCD;20
+;contact116;Noha S. Albahli;Marketing Account Manager;+966 112035908;+966 555103001;nalbahli@sagia.gov.sa;ISMCD;21
+;contact117;Douna S. Al.Mansour;Senior Public Relation Officer;+966 112035095;+966 555402722;dsm@sagia.gov.sa;ISMCD;22
+;contact118;Majed H. Albagami;Senior Public Relations Officer;+966 112035617;+966 553203697;malbagami@sagia.gov.sa;ISMCD;23
+;contact119;Norah A. Alrabiah;Public Relations Officer;+966 112035920;+966 530059090;nalrabiah@sagia.gov.sa;ISMCD;24
+;contact120;Aseel A. Al-Zamil;Sr. Public Relations Analyst;+966 112035130;+966 500099130;azamil@sagia.gov.sa;ISMCD;25
+;contact121;Fahad K. Almejrad;Senior Public Relations Officer;+966 112035932;+966 554777006;falmejrad@sagia.gov.sa;ISMCD;26
+;contact122;Muneera S. Aldawood;Sr. Public Relation Officer;+966 112035360;+966 541535551;msaldawood@sagia.gov.sa;ISMCD;27
+;contact123;Abdulaziz F. Muhaysin;Digital Channels Specialist;+966 112035934;+966 566757650;amuhaysin@sagia.gov.sa;ISMCD;28
+;contact124;Fatemah A. Alowain;Senior Digital Channels Officer;+966 112035681;+966 543900063;falowain@sagia.gov.sa;ISMCD;29
+;contact125;Maha M. Binmulfi;Media Specialist;+966 112035386;+966 568811672;mbinmulfi@sagia.gov.sa;ISMCD;30
+;contact126;Nawwaf Almutairi;Digital Channels Officer;+966 112035907;+966 509287139;nalmutairi@sagia.gov.sa;ISMCD;31
+;contact127;Razan F. Bogari;Int'L Media Relations Officer;+966 112035956;+966 505642269;rbogari@sagia.gov.sa;ISMCD;32
+
+# Sector HEGSHD
+;contact21;"Ibrahim A. Alomar";"His Excellency The Governor Of SAGIA";"+966 112035023";"+966 506452847";"ialomar@sagia.gov.sa";HEGSHD;1
+;contact22;"Ibrahim S. Alsuwail";"Deputy Governor For Investor Services & Attraction";"+966 112035053";"+966 504467249";"ialsuwail@sagia.gov.sa";HEGSHD;2
+;contact23;"Ayedh H. Al-otaibi";"Deputy Governor For Investment Climate";"+966 112035574";"+966 530053034";"aho@sagia.gov.sa";HEGSHD;3
+;contact24;"Mohaned A. Alkhaldi";"Sector Head - Emerging Sectors";"+966 112035359";"+966 507070708";"malkhaldi@sagia.gov.sa";HEGSHD;4
+;contact25;"Mohammed H. Alhajjaj";"Sector Head - Energy";"+966 112035374";"+966 500099877";"malhajjaj@sagia.gov.sa";HEGSHD;5
+
+;contact206;Mohammed A. Aljunaini;Sector Head - Industrial;+966 112035303;+966 555817070;maljunaini@sagia.gov.sa;HEGSHD;10
+;contact207;Mazin M. Alzaidi;Sector Head - Entrepreneurship;+966 112035408;+966 504883888;malzaidi@sagia.gov.sa;HEGSHD;11
+;contact208;Riad G. Abdo;Country Head - Usa;+966 112035385;+966 508277000;rabdo@sagia.gov.sa;HEGSHD;12
+;contact209;Abdulrahman D. Almutlak;Country Head - Russia;+966 112035355;+966 505440396;aalmutlak@sagia.gov.sa;HEGSHD;13
+;contact210;Yaarub F. Aldaghither;Country Head - Euro;+966 112035446;+966 555239579;yaldaghither@sagia.gov.sa;HEGSHD;14
+
+
+# Sector GE
+;contact31;"Zayed Alasmary";"Ministry Of Commerce And Investment";"-";"+966 566651901";"zasmary@mci.gov.sa";GE;1
+;contact302;Haithm Alsheikh;Ministry Of Commerce And Investment (Mci);-;+966 552560212;halshaikh@mci.gov.sa;GE;2
+;contact303;Abdulrhman Alhussain;Ministry Of Commerce And Investment (Mci);-;+966 504455799;ahusain@mci.gov.sa;GE;3
+;contact304;Abdulkhraim Alhomaid;Ministry Of Culture;-;+966 509222266;aalhumaid@moc.gov.sa;GE;4
+;contact305;Mohammed Al Dukhaini;Ministry Of Education;-;+966 533369933;-;GE;5
+;contact306;Eiman Alsaad;Ministry Of Energy, Industry And Mineral Resources (Meim);-;+966 558823882;eiman.saad@meim.gov.sa;GE;6
+;contact307;Mosleh Alzobidi;Ministry Of Environment, Water And Agriculture (Mewa);-;-;mosleh@mewa.gov.sa;GE;7
+;contact308;Abdullah Abaalkahil;Ministry Of Environment, Water And Agriculture (Mewa);-;-;a.abalkhail@mewa.gov.sa;GE;8
+;contact309;Ayman Arfag;Ministry Of Hajj And Umrah;-;+966 508004097;aymanar@haj.gov.sa;GE;9
+;contact310;Reem Ali Altharwa;Ministry Of Health;-;-;raltharwa@moh.gov.sa;GE;10
+;contact311;Thamer Aljuwaidi;Ministry Of Health;-;-;taljuwaidi@moh.gov.sa;GE;11
+;contact312;Essam Al-Ghamdi;Ministry Of Housing;-;-;e.ghamdi@housing.gov.sa;GE;12
+;contact313;Emad Al-Qurashi;Ministry Of Housing;-;-;e.alqurashi@housing.gov.sa;GE;13
+;contact314;Nasser Alrashed;Ministry Of Transport;-;+966 555474848;nrashed@mot.gov.sa;GE;14
+;contact315;Yousef Alwably;Modon Saudi Authority For Industrial Cities And Technology Zones;-;+966 500831555;ywably@modon.gov.sa;GE;15
+;contact316;Jameel Alsuliman;Minister Of Communications And Information Technology;-;-;jsulaimani@mcit.gov.sa;GE;16
+;contact317;Sultan Alsourayia;Minister Of Communications And Information Technology;-;-;ssuryyia@mcit.gov.sa;GE;17
+;contact318;Adel H Rabee;National Industrial Development And Logistics Program (Nidlp);-;+966 504703909;adel.rabee@nidlp.gov.sa;GE;18
+;contact319;Saleh Alshubaili;Neom;-;-;saleh.alshubaili@neom.com;GE;19
+;contact320;Abdulaziz Alsheikh;Diriyah Gate Development Authority;-;+966 566699266;aalsheikh@dgda.gov.sa;GE;20
+;contact321;Ziad Bin Hassan;Economic Cities Authorities (Eca);-;+966 566330880;zbinhassan@eca.gov.sa;GE;21
+;contact322;Saad Alahmri;General Entertainment Authority (Gea);-;+966 592440979;salahmari@gea.gov.sa;GE;22
+;contact323;Amor Adel Mashhour;General Sports Authority;-;+966 566668058;aamashhour@gsa.gov.sa;GE;23
+;contact324;Najat Al-Fayez;Industrial Cluster (Ic);-;+966 551402951;najat.fayez@ic.gov.sa;GE;24
+;contact325;Faris Almusallam;King Abdullah Economic City (Kaec);-;-;fmusallam@kaec.net;GE;25
+;contact326;Rakan Tarabzoni;Public Investment Fund  (Pif);-;-;rtarabzoni@pif.gov.sa;GE;26
+;contact327;Sultan Alharbi;Public Investment Fund  (Pif);-;-;salharbi@pif.gov.sa;GE;27
+;contact328;Wadi Ahmed;Qiddiya;-;-;wadi.abiani@qiddiya.com;GE;28
+;contact329;Christopher Chackal;Red Sea Company;-;+966 546252605;christopher.chackal@theredsea.sa;GE;29
+;contact330;Rawan Alsebyyani;Red Sea Company;-;+966 549691128;rawan.alsebayyani@theredsea.sa;GE;30
+;contact331;Abdulaziz A. Al Zeer;Riyadh Airport Company;-;+966 555233117;aalzeer@riyadhairports.com;GE;31
+;contact332;Faisal Hamdan Dhfeeri;Royal Commission For Jubail And Yanbu (Rcjy);-;-;dhfeerif@rcjubail.gov;GE;32
+;contact333;Hesham Altamimi;Royal Commission For Jubail And Yanbu (Rcjy);-;-;tamimih@rcjy.gov.sa;GE;33
+;contact334;Abdulaziz Alobilan;Saline Water Conversion Corporation (Swcc);-;+966 508007070;aalobilan@swcc.gov.sa;GE;34
+;contact335;Fahad Hamid Addin;Saudi Commission For Tourism And National Heritage (Scth);-;-;fhamidaddin@scth.gov.sa;GE;35
+;contact336;Sultan Almutari;Saudi Energy Efficiency Center (Seec);-;+966 532222332;sultan@seec.gov.sa;GE;36
+;contact337;Feras A. Alhumidi;Saudi Export Authority;-;+966 506241472;falhumidi@saudiexports.sa;GE;37
+;contact338;Saleh Y. Al-Olayan;Saudi Food And Drug Authority (Sfda);-;-;syolayan@sfda.gov.sa;GE;38
+;contact339;Abdulrhamn Alghriri;Saudi Food And Drug Authority (Sfda);-;-;gsghandourah@sfda.gov.sa;GE;39
+;contact340;Abdullah Aleesa;Saudi Industrial Development Fund (Sidf);-;+966 553366395;a.eesa@sidf.gov.sa;GE;40
+;contact341;Laila Al-Kadi;Saudi Industrial Development Fund (Sidf);-;-;l.kadi@sidf.gov.sa;GE;41
+;contact342;Badr Al Qadi;Small & Medium Enterprises General Authority Smea (Monsha'At);-;-;bkadi@monshaat.gov.sa;GE;42
+;contact343;Norah A. Bin Saif;Small & Medium Enterprises General Authority Smea (Monsha'At);-;-;nsaif@monshaat.gov.sa;GE;43
+;contact344;Salem Alarayedh;Renewable Energy Project Development Office (Repdo) - Ministry Of Energy;-;-;salem.al-arayedh@fhflondon.co.uk;GE;44
+
+
+# Sector NGO
+
+;contact41;"Sultan M Almusallam";"MISK";"-";"+966 555729877";"Sultan.musallam@miskglobalforum.com";NGO;1
+;contact42;"Abdullah Alkhayyal";"MISK";"-";"-";"-";NGO;2
+
+
+
+
+# Sector PSE
+
+;contact51;"Mahmoud Al-musabeh";"ARAMCO";"-";"+966 556001674";"mahmoud.musabeh@aramco.com";PSE;1
+;contact502;Salem Basalamah;Sabic;-;+966 558250056;basalamahs@sabic.com;PSE;2
+;contact503;Khalid Darazi;Saudi Britain Joint Business Council (Sbjbc);-;-;khalid.darazi@fco.gov.uk ;PSE;3
+;contact504;Nora Alashaikh;Seven;-;+966 544567776;nora.alashaikh@entertainment.sa;PSE;4
+;contact505;Mohammad Aldubae;Ma'Aden;-;-;dobiem@maaden.com.sa;PSE;5
+;contact506;Anas Almosa;Ma'Aden;-;-;mousaan@maaden.com.sa;PSE;6
+;contact507;Esmail Alhusain;Ma'Aden;-;-;hosayeni@maaden.com.sa;PSE;7
+
+# Sector CE
+
+;contact61;"Marco Binenti";"GLOBAL THINK GROUP";"-";"+966 539054197";"marco@globalthinkgroup.com";CE;1
+;contact602;Rami Rafih;Boston Consulting Group - Bcg;"-";+966 553432902;rafih.rami@bcg.com;CE;2
+;contact603;Rodolphe Di Carlo;Boston Consulting Group - Bcg;"-";+971 554480371;chamedicarlo.rodolphe@bcg.com;CE;3
+
+
+

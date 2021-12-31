@@ -1,0 +1,346 @@
+#-----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalRegionalHQTemplate
+$page = regional-head-quarters
+$pageName = المقرات الإقليمية
+$pageTitleAr = $pageName
+$pageLabel = /sectors-opportunities/regionalHQ
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = ar]; description[lang = ar]; keywords[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleAr    ; $pageName             ; 					; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+############# MEDIA AND COMPONENTS START ######################
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique = true]; uid[unique = true] 									; name						  	  ; linkName [lang = ar] 		    ; &linkRef
+							   ;						  ; kingdom-culture-video-link-$page					; kingdom-culture-video 	      ;                                 ; kingdom-culture-video-link-$page
+																																					                                
+							   ;						  ; lilly-success-stories-video-link-$page				; lilly-success-stories-video 	  ;                                 ; lilly-success-stories-video-link-$page
+					           ;						  ; pepsico-success-stories-video-link-$page			; pepsico-success-stories-video   ;                                 ; pepsico-success-stories-video-link-$page
+					           ;						  ; the-kingdom-glance-video-link-$page					; the-kingdom-glance-video 	      ; اقرأ المزيد                      ; the-kingdom-glance-video-link-$page
+					           ;						  ; regional-head-quarters-link-$page					; the-kingdom-glance-link 	      ; ابدأ رحلتك الان                  ; regional-head-quarters-link-$page
+					          
+
+#########################################################
+
+
+INSERT_UPDATE Media	; code[unique = true]         							; realFileName             					                ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]				; mime[default = 'image/jpeg']  ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; rhq-header-banner-image.jpg 							; rhq-header-banner-image.jpg 			                	; $siteResource/rhq-header-banner-image.jpg 	 								  			; image/png						;										   ; ""     ;
+					; RHQ-Map-animation_v3.mp4 								; RHQ-Map-animation_v3.mp4 			                		; $siteResource/RHQ-Map-animation_v3.mp4		 	 								  		; video/mp4						;										   ; ""     ;
+					; RHQ-Map-animation_v3_Arabic-v4-.mp4 					; RHQ-Map-animation_v3_Arabic-v4-.mp4 			            ; $siteResource/RHQ-Map-animation_v3_Arabic-v4-.mp4		 	 								; video/mp4						;										   ; ""     ;
+					
+					
+					; relocation-services-top-image.jpg	 					; relocation-services-top-image.jpg				            ; $siteResource/relocation-services-top-image.jpg	 								  		; image/png						;										   ; ""     ;
+					; concierge-services-top-image.jpg   					; concierge-services-top-image.jpg   	                	; $siteResource/concierge-services-top-image.jpg    								  		; image/png						;										   ; ""     ;
+					; facilitation-services-top-image.jpg 					; facilitation-services-top-image.jpg			            ; $siteResource/facilitation-services-top-image.jpg 								  		; image/png						;										   ; ""     ;
+					; professional-services-top-image.jpg					; professional-services-top-image.jpg	                	; $siteResource/professional-services-top-image.jpg 								  		; image/png						;										   ; ""     ;
+					; exclusive-discounts-top.jpg         					; exclusive-discounts-top.jpg        			            ; $siteResource/exclusive-discounts-top.jpg         								  		; image/png						;										   ; ""     ;
+						
+					; relocation-services-icon.png	 						; relocation-services-icon.png				                ; $siteResource/relocation-services-icon.png	 								  		    ; image/png						;										   ; ""     ;
+					; concierge-services-icon.png   						; concierge-services-icon.png   	                		; $siteResource/concierge-services-icon.png    								  				; image/png						;										   ; ""     ;
+					; facilitation-services-icon.png 						; facilitation-services-icon.png			                ; $siteResource/facilitation-services-icon.png 								  				; image/png						;										   ; ""     ;
+					; professional-services-icon.png						; professional-services-icon.png	                		; $siteResource/professional-services-icon.png 								  				; image/png						;										   ; ""     ;
+					; exclusive-discounts-icon.png   						; exclusive-discounts-icon.png  			                ; $siteResource/exclusive-discounts-icon.png   								  				; image/png						;										   ; ""     ;
+						
+					; lilly-success-stories-icon.jpg 		 				; lilly-success-stories-icon.jpg 					        ; $siteResource/lilly-success-stories-icon.jpg 		 								  		    ; image/png						;										   ; ""     ;
+					; eai-success-stories-icon.jpg							; eai-success-stories-icon.jpg				               	; $siteResource/eai-success-stories-icon.jpg			 								  				; image/png						;										   ; ""     ;
+					; baker-huges-success-stories-icon.png  				; baker-huges-success-stories-icon.png 			            ; $siteResource/baker-huges-success-stories-icon.png  								  				; image/png						;										   ; ""     ;
+					; pepsico-success-stories-icon.jpg 						; pepsico-success-stories-icon.jpg 		                	; $siteResource/pepsico-success-stories-icon.jpg 	 								  				; image/png						;										   ; ""     ;
+					; alderley-success-stories-icon.jpg	 					; alderley-success-stories-icon.jpg				            ; $siteResource/alderley-success-stories-icon.jpg	 								  		    ; image/png						;										   ; ""     ;
+					; gleeds-success-stories-icon.jpg		 				; gleeds-success-stories-icon.jpg					        ; $siteResource/gleeds-success-stories-icon.jpg		 								  				; image/png						;										   ; ""     ;
+					
+					; opterna-icon.png	 									; opterna-icon.png				            				; $siteResource/opterna-icon.png	 								  		    ; image/png						;										   ; ""     ;
+					; opterna-image-icon.png		 						; opterna-image-icon.png							        ; $siteResource/opterna-image-icon.png		 								  				; image/png						;										   ; ""     ;
+					
+										
+					; lilly-ltd-success-stories-image.jpg		 			; lilly-ltd-success-stories-image.jpg				        ; $siteResource/lilly-ltd-success-stories-image.jpg										  		    ; image/png						;										   ; ""     ;
+					; eai-systems-success-stories-image.jpg					; eai-systems-success-stories-image.jpg			           	; $siteResource/eai-systems-success-stories-image.jpg			 								  				; image/png						;										   ; ""     ;
+					; baker-hugesceo-success-stories-image.png				; baker-hugesceo-success-stories-image.png			        ; $siteResource/baker-hugesceo-success-stories-image.png	 								  				; image/png						;										   ; ""     ;
+					; pepsico-success-stories-image.jpg						; pepsico-success-stories-image.jpg			            	; $siteResource/pepsico-success-stories-image.jpg											  				; image/png						;										   ; ""     ;
+					; alderly-success-storie-image.jpg						; alderly-success-storie-image.jpg					        ; $siteResource/alderly-success-storie-image.jpg											  		    ; image/png						;										   ; ""     ;
+					; gleeds-success-stories-images.jpg			 			; gleeds-success-stories-images.jpg					        ; $siteResource/gleeds-success-stories-images.jpg											  				; image/png						;										   ; ""     ;
+					
+					; opterna-success-banner.png							; opterna-success-banner.png					        	; $siteResource/opterna-success-banner.png											  		    ; image/png						;										   ; ""     ;
+					; opterna-success-image.png			 					; opterna-success-image.png					        		; $siteResource/opterna-success-image.png											  				; image/png						;										   ; ""     ;
+					
+
+					; riyadh-background-image.jpg			                ; riyadh-background-image.jpg			                 	; $siteResource/riyadh-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; makkah-background-image.jpg			                ; makkah-background-image.jpg			                 	; $siteResource/makkah-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; medina-background-image.jpg			                ; medina-background-image.jpg			                 	; $siteResource/medina-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; qassim-background-image.jpg			                ; qassim-background-image.jpg			                 	; $siteResource/qassim-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; eastern-background-image.jpg			                ; eastern-background-image.jpg			                 	; $siteResource/eastern-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+					; asir-background-image.jpg				                ; asir-background-image.jpg				                 	; $siteResource/asir-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; tabuk-background-image.jpg				            ; tabuk-background-image.jpg				                ; $siteResource/tabuk-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; hail-background-image.jpg				                ; hail-background-image.jpg				                 	; $siteResource/hail-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; northern-borders-background-image.jpg	                ; northern-borders-background-image.jpg	                 	; $siteResource/northern-borders-background-image.jpg						  ; image/jpeg					 ;											; ""   ;
+					; jazan-background-image.jpg				            ; jazan-background-image.jpg				                ; $siteResource/jazan-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; najran-background-image.jpg			                ; najran-background-image.jpg			                 	; $siteResource/najran-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; al-baba-background-image.jpg			                ; al-baba-background-imagejpg			                 	; $siteResource/al-baba-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+					; al-jouf-background-image.jpg			                ; al-jouf-background-image.jpg			                 	; $siteResource/al-jouf-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+																			  
+					; riyadh-province-city-map.jpg			                ; riyadh-province-city-map.jpg			                 	; $siteResource/riyadh-province-city-map.jpg								  ; image/jpeg					 ;											; ""   ;
+					; riyadh_city-map-arabic.svg			                ; riyadh_city-map-arabic.svg			                 	; $siteResource/riyadh_city-map-arabic.svg								  	  ; image/svg+xml					 ;											; ""   ;
+																			  
+					; province-cultural-events.png							        ; province-cultural-events.png							               	; $siteResource/province-cultural-events.png										  	  ; image/jpeg					 ;											; ""   ;
+					; province-music-concerts.png             			            ; province-music-concerts.png             			               	; $siteResource/province-music-concerts.png             						  	  ; image/jpeg					 ;											; ""   ;
+					; province-culinary-events.png            			            ; province-culinary-events.png            			               	; $siteResource/province-culinary-events.png            							  ; image/jpeg					 ;											; ""   ;
+					; province-world-class-sporting-events.png			            ; province-world-class-sporting-events.png			               	; $siteResource/province-world-class-sporting-events.png							  ; image/jpeg					 ;											; ""   ;
+																			  
+#					; jazan-special-economic-zone.jpg				        ; jazan-special-economic-zone.jpg				            ; $siteResource/jazan-special-economic-zone.jpg									  ; image/jpeg					 ;											; ""   ;
+#					; ras-al-khair-special-economic-zone.jpg 			    ; ras-al-khair-special-economic-zone.jpg 			        ; $siteResource/ras-al-khair-special-economic-zone.jpg 						  	  ; image/jpeg					 ;											; ""   ;
+#					; alsoudah-special-economic-zone.jpg     			    ; alsoudah-special-economic-zone.jpg     			        ; $siteResource/alsoudah-special-economic-zone.jpg     							  	  ; image/jpeg					 ;											; ""   ;
+#					; special-economic-zone-economic-city.jpg			    ; special-economic-zone-economic-city.jpg			        ; $siteResource/special-economic-zone-economic-city.jpg								  ; image/jpeg					 ;											; ""   ;
+#					; cloud-computing-informatics-area.jpg   			    ; cloud-computing-informatics-area.jpg   			        ; $siteResource/cloud-computing-informatics-area.jpg   								  ; image/jpeg					 ;											; ""   ;
+
+
+
+
+
+
+###########################################################################
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]		 	   ; descriptionText[lang = ar]										;descriptionText2 [lang = ar]	    ; buttonText[lang = ar]  ; buttonURL(&linkRef)     										; link   ; &componentRef 				  ; $contentCV[unique = true];
+										; regional-head-quarters-banner    ; أسّس مقرّك الإقليمي في المملكة العربية السعودية				    ; 						            ; 						 ; regional-head-quarters-link-$page		   	    		   ; true   ; regional-head-quarters-banner   ; 						;
+
+										
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true]					; content[lang=ar]																																																																																																							;&componentRef ;
+								   ;					   ;regional-head-quarters-paragraph	; المقرّات الإقليمية في المملكة العربية السعودية: هي مقرّات لشركات متعددة الجنسيّات أنشأت وفقًا لأحكام القوانين السعودية بهدف تقديم الدعم والإدارة والتوجيه الاستراتيجي لفروعها والشركات التابعة لها في منطقة الشرق الأوسط وشمال إفريقيا. إنّ برنامج المقرّات الإقليمية هو مبادرة مشتركة بين وزارة الاستثمار والهيئة الملكية لمدينة الرياض يدعو الشركات العالمية إلى نقل مقرّاتها الإقليمية إلى المملكة العربية السعودية. 									; regional-head-quarters-paragraph ;
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true] 			  	 	   ; name 							  		  ; simpleCMSComponents(&componentRef)       ; &componentRef					   		 ; $contentCV[unique = true]
+										; regional-head-quarters-banner-container  ; regional-head-quarters banner container  ; regional-head-quarters-banner 			 ; regional-head-quarters-banner-container   ;
+
+
+
+###################################################################
+
+
+INSERT_UPDATE TheKingdomGlanceComponent ; uid[unique = true]  	; localizedRhqVideo(code, $contentCV)[lang = ar]  			  ; readMore(&linkRef)						; &componentRef 		; $contentCV[unique = true]
+										; the-kingdom-glance	; RHQ-Map-animation_v3_Arabic-v4-.mp4 	  			  		  ; the-kingdom-glance-video-link-$page		; the-kingdom-glance	;
+
+
+
+
+INSERT_UPDATE TheKingdomGlanceContainer ; uid[unique = true]     		    ; headerText [lang = ar] 																      									  ; name  			     		; title[lang=ar]      	    			; &componentRef    						; $contentCV[unique = true]
+										; the-kingdom-glance-container		; المملكة العربية السعودية هي أكبر اقتصاد في الشرق الأوسط وشمال إفريقيا وتحتل المركز الثامن عشر في ترتيب أكبر اقتصادات العالم.	  ; The Kingdom at a Glance		; <p>لمحة عن المملكة العربية السعودية</p>	; the-kingdom-glance-container			; 
+
+
+
+
+
+###############################################################
+
+
+
+INSERT_UPDATE TheKingdomCultureContainer ; uid[unique = true]     		      ; name  			     		 ; title[lang = ar]      	   				; &componentRef    					; $contentCV[unique = true]
+										 ; kingdom-culture-container		  ; The Kingdom Culture			 ; ثقافة المملكة العربية السعودية			; kingdom-culture-container			;		
+
+
+###############################################################
+
+INSERT_UPDATE SupportRegionalHqComponent ; uid[unique = true]  	; headerText [lang = ar]     							; description [lang = ar]																											 ; &componentRef 					; $contentCV[unique = true]
+										 ; regional-hq1			; خدمات الانتقال		 									; <P>مكاتب مؤقتة</P> <P>شقق أو فيلات</P> <P> توظيف محلّي</P> <P>خدمات أخرى لتسهيل الانتقال</P>			                   				 ; regional-hq1						;
+                                         ; regional-hq2         ; الخدمات العملية    		 							; <P> الحجوزات </P> <P> تنظيم الأنشطة</P> <P> الرياضة واللياقة البدنية </P> <P> مساعد شخصي</P>                          				 ; regional-hq2                      ;
+                                         ; regional-hq3         ; خدمات التيسير     							        ; <P> التوظيف </P> <P> تأسيس الأعمال </P><p> السكن والمدارس</p> <P> وكالات استقدام العاملين والعاملات في الخدمة المنزلية</P>            ; regional-hq3                      ;
+                                         ; regional-hq4         ; خدمات مهنيّة      										; <P> الاستشارات في شؤون الضريبة</P> <P> خدمات مسؤول العلاقات الحكومية </P> <P> فتح حسابات مصرفية</P>                                  ; regional-hq4                      ;
+                                         ; regional-hq5         ; حسومات حصرية       						   		    ; <P> الخطوط الجويّة </P> <P> المكاتب </P> <P>السكن</P> <P>المدارس</P>                                                   			 ; regional-hq5                      ;
+
+
+
+
+INSERT_UPDATE SupportRegionalHqContainer ; uid[unique = true]     		    ; simpleCMSComponents(&componentRef)  									 ; name  			     			 		; title[lang = ar]      	    						        			; &componentRef    						; $contentCV[unique = true]
+										 ; support-regional-hq-container	; regional-hq1, regional-hq2, regional-hq3, regional-hq4, regional-hq5	 ; Support In Setting Up Regional Hq		; <p> أسس مقرّك الإقليمي في المملكة العربية السعودية اليوم  </p>	; support-regional-hq-container			; 
+
+
+##################################################################
+
+
+
+INSERT_UPDATE TestimonialsStoriesComponent  ; $contentCV[unique = true]	 ; uid[unique = true]		; video(code, $contentCV)  ; defaultVideo[default=false]   	; description [lang = ar]																																																																																																																																																																																																								; companyDetails[lang = ar]													   										; &componentRef
+									        ;							 ; testimonials-stories1	;				  		   ;                               	;عملنا عن كثب مع وزارة الاستثمار ونقلنا مقراتنا الإقليمية إلى الرياض. هذه الخطوة تدعم مكاتب جليدز الإقليمية في دبي وأبو ظبي وقطر والقاهرة وتعود بالفائدة الكبيرة على شبكتنا العالمية.							 																																																																																																																																								    																		; ديمتري ليفاداس، الرئيس والمدير العام لشركة إيلي ليلي المحدودة    													; testimonials-stories1
+									        ;							 ; testimonials-stories2	;				  		   ;                                ;تعد شركة إي أيه آي سيستمز شركة تكامل أنظمة يقع مقرها في المملكة المتحدة منذ 2006. وبصفتنا جزء من وفد دولي، قمنا بزيارة السعودية منذ عامين، وقد لمسنا منذ ذلك الحين تحولًا مبهرًا في المملكة بموجب خارطة طريق رؤية 2030، كما قررنا أن يُقام مقرنا الإقليمي في الرياض هذا العام. وسنبني قدرتنا الإقليمية مستعينين بمواهب محلية بغية توسيع أعمال التحول الرقمي خاصتنا في الشرق الأوسط، وإننا نتطلع إلى فرص التعاون مع الوزارات والبنوك وقطاع الاتصالات بغية جلب المزيد من تقنيات التحول الرقمي في جميع أنحاء المنطقة.																																																																																				; كيلاس لفلكار، المدير التنفيذي لشركة إي أيه آي سيستمز 																; testimonials-stories2
+									        ;							 ; testimonials-stories3	;				 		   ; true                           ; لطالما كانت شركة بيكر هيوز جزءًا لا يتجزأ من المملكة العربية السعودية لما يزيد عن ثمانين (80) عامًا، ويعود تاريخها إلى بئر الخير (بئر الدمام السابع)، وهو أول بئر تم حفره في المملكة عام 1938. وبصفتنا شركة تكنولوجيا للطاقة، يتحتم علينا دعم رؤية 2030 السعودية مع التركيز بشدة على دفع التحول في مجال الطاقة وبناء نظام بيئي قوي في مجال الطاقة ودعم مبادرات التوطين، وذلك تأييدًا لمسيرة المملكة نحو التحول إلى مركز عالمي للطاقة يخدم العالم. كما سيسهم التوسع في المملكة العربية السعودية بصفتها مقراتنا الإقليمية في زيادة تعزيز جهودنا لدفع الطاقة مُستعينين بعملائنا وشركائنا في المنطقة، مساهمين في جعلها أكثر أمنًا ونظافة وفعالية للبشر والكوكب من حولنا.   																																														; لورينزو سيمونيلي، الرئيس والمدير التنفيذي لشركة بيكر هيوز															; testimonials-stories3
+									        ;							 ; testimonials-stories4	;				 		   ;                               	;تسهّل المملكة العربية السعودية ممارسة الأعمال، الأمر الذي يساعدنا دومًا في اتخاذ القرارات المتعلقة بالاستثمار. فشركات مثل بيبسيكو تميل إلى البساطة والحوافز لكي تستمر في النمو وخلق  المزيد من فرص الأعمال.																																																																																																																																																										            ; رامون لاغوارتا، رئيس مجلس الإدارة والرئيس التنفيذي لبيبسيكو   														; testimonials-stories4
+									        ;							 ; testimonials-stories5	;				  		   ;                               	;تتواجد شركة فيليبس في المملكة العربية السعودية منذ أكثر من 80 سنة وهي تتعاون مع جهات معنيّة محليّة، وتقدم التقنيات والحلول الأكثر تقدما وتطورا، وتساهم في نقل المعرفة، وتطوير الكفاءات السعودية. نحرص على استمرار تواجدنا في المملكة. لذلك، يسعدنا الإعلان عن تعاوننا مع وزارة الاستثمار، وعن توقيعنا مذكرة تفاهم للانضمام إلى برنامج جذب المقرّات الإقليمية حيث سنخصص الموارد والقدرات الإقليمية لخدمة استراتيجيتنا في المملكة وفي المنطقة. انطلاقا من كونها شركة رائدة عالميا في مجال التقنيات الصحية، لطالما كانت فيليبس سبّاقة في الشراكة بين القطاعين العام والخاص وساهمت في العديد من مشاريع المملكة لتحوّل القطاع الصحي على مستوى الوطن بهدف تحسين رعاية المرضى وخدمات الرعاية الصحية بما يتوافق مع رؤية 2030.																																			   	; محمد مصطفى، المدير العام للأنظمة الصحية في شركة فيليبس الشرق الأوسط وتركيا.								            ; testimonials-stories5
+									        ;							 ; testimonials-stories6	;				  		   ;                               	;تشهد المملكة العربية السعودية ازدهارًا واسعا بوتيرة متسارعة بفضل اقتصادها الحيوي ورؤيتها الواعدة للمستقبل. إذ تتميّز بسياستها الطموحة والطويلة الأمد في قطاع الطاقة مما يخلق فرصًا بلا حدود لمقدّمي الحلول في كافة مراحل سلسلة القيمة مثل شركة ألدرلي بهدف تلبية احتياجات هذا القطاع العالميّ المستوى.																																																																																																																																					    ; كولين إلكوت، المسؤول التنفيذي لشركة ألدرلي  																		; testimonials-stories6
+									        ;							 ; testimonials-stories7	;				  		   ;                               	;تدعم أوبتيرنا مبادرات رؤية 2030، خاصة المتعلقّة منها بصناعة المحتوى محليّا وترخيص المقرّات الإقليمية. بما أنّ اقتصاد المملكة العربية السعودية يشكّل 80% من اقتصاد الشرق الأوسط ككلّ وبما أنّ العديد من الشركات العالمية تستفيد من ممارسة الأعمال في المملكة، أقلّ ما يمكننا فعله في المقابل هو دعم هذه المبادرات بالكامل 																																																																																																																																			; نجم سيد حسين، المدير التنفيذي لشركة أوبترنا العربية  																; testimonials-stories7
+									        ;							 ; testimonials-stories8	;				  		   ;                               	;عملنا عن كثب مع وزارة الاستثمار ونقلنا مقراتنا الإقليمية إلى الرياض. هذه الخطوة تدعم مكاتب جليدز الإقليمية في دبي وأبو ظبي وقطر والقاهرة وتعود بالفائدة الكبيرة على شبكتنا العالمية.																																																																																																																																																																		; ريتشارد ستير، رئيس شركة جليدز 																					; testimonials-stories8
+									       
+
+
+INSERT_UPDATE TestimonialsStoriesContainer ; uid[unique = true]     	    ; simpleCMSComponents(&componentRef)																																					; title[lang = ar]	 	 ; &componentRef  					; $contentCV[unique = true]
+										   ; testimonials-stories-container ; testimonials-stories1, testimonials-stories2, testimonials-stories3, testimonials-stories4,testimonials-stories5, testimonials-stories6,testimonials-stories7, testimonials-stories8	; شهادة المستثمرين		 ; testimonials-stories-container	;
+
+#########################################################################
+
+
+INSERT_UPDATE ProvinceRegionHomeComponent 	 ;$contentCV[unique = true]	; uid[unique = true]	 	; componentId				; title [lang = ar] 		    ; backgroundImage (code, $contentCV) 		; defaultComponent[default=false] 	; longDescription [lang=ar]																																																																																																																			   ; localizedStats (uid, $contentCV)									 	  ; &componentRef
+											 ;							; riyadh-component			; riyadh_data				; الرياض 						; riyadh-background-image.jpg		 		;  true								;  الرياض هي أكبر مدن المملكة العربية السعودية وهي موطن لرأس مالها التجاري. تشهد منطقة الرياض معدلات نمو اقتصادي متصاعده باعتبارها العاصمه السياسية و التجاريه و الماليه للملكة ، إضافة الى موقعها في وسط سوق اقليميه كبيره تتمثل في دول مجلس التعاون الخليجي و الدول المجاوره .																																																						   ; riyadh-stats-1,riyadh-stats-2,riyadh-stats-3,riyadh-stats-4         	  ; riyadh-component
+											 ;							; makkah-component			; makkah_data				; مكة المكرّمة					; makkah-background-image.jpg		 		;  									;  	 مكه المكرمة هي أم القرى ، و اكثر مدن العالم قداسة عند المسلمين حيث تحتل السياحة في مكة المكرمة مكانة خاصة بقلوب الملايين .فضلاً عن مكانتها الدينية ، فإنها تضم العديد من المعالم السياحية المتنوعه مابين التاريخي و الثقافي و الحضاري و الترفيهي  . تضم منطقة مكة المكرمة كل من مدينة جدّة ومدينة الملك عبدالله الاقتصادية على الساحل الغربي للملكة  ، حيث يمكن للمستثمرين الاستفادة من تقاطع أهم طرق الملاحة التي تمكّن من الوصول الى المستهلكين في الشرق الأوسط وشمال إفريقيا.							   ; makkah-stats-1,makkah-stats-2,makkah-stats-3,makkah-stats-4              ; makkah-component
+											 ;							; medina-component			; medina_data				; المدينة المنوّرة				; medina-background-image.jpg		 		;  									;  تضم المدينة المنوّرة ''العُلا''، أول موقع سعودي مُدرج على قائمة اليونيسكو للتراث العالمي. تعد المدينة المنوّرة مركزًا مزدهرًا للأعمال إذ تضم منطقتين صناعيتين تبلغ مساحتهما 10 مليون متر مربع و236 مصنعًا لإنتاج المنتجات النفطية، ومواد البناء، والمنتجات الغذائية وغيرها من المنتجات.																																														            				   ; medina-stats-1,medina-stats-2,medina-stats-3,medina-stats-4              ; medina-component
+											 ;							; qassim-component			; qassim_data				; القصيم						; qassim-background-image.jpg		 		;  									;  تشتهر منطقة القصيم بوفرة المياه الجوفية وبتربتها الخصبة وبواحاتها الزراعية الغنية ما يجعل منها منطقة زراعية من الدرجة الأولى. كما تتميّز القصيم بأفضل بنية تحتية للطاقة الكهربائية على مستوى المملكة، وبأراض زراعية شاسعة فضلا عن قدرة إنتاجية عالية لتصنيع المواد الغذائية.																																																						   ; qassim-stats-1,qassim-stats-2,qassim-stats-3,qassim-stats-4              ; qassim-component
+											 ;							; eastern-component			; eastern_data				; المنطقة الشرقية 				; eastern-background-image.jpg		 		;  									;  هي أحد أهم مناطق المملكة ، و تتسم بموقعها المتميز على الخليج العربي ، و بقربها من دول مجلس التعاون الخليجي . تساهم  المنطقة الشرقية بالجزء الأكبر من إنتاج  النفط في المملكة العربية السعودية،  وهي أكبر مناطق المملكة إذ تمتد على طول الساحل الشرقي بكامله.																																																										   ; eastern-stats-1,eastern-stats-2,eastern-stats-3,eastern-stats-4          ; eastern-component
+											 ;							; asir-component			; asir_data					; عسير							; asir-background-image.jpg		 	 		; 									;  ُعدّ عسير من أسرع الوجهات السياحية ازدهارًا في المملكة العربية السعودية، لا سيما بعد أن رصد لها صندوق الاستثمارات العامة 3 مليار دولار لإتمام مشاريع سياحية وأخرى متعلقة بالبنية التحتية.																																																																												   ; asir-stats-1,asir-stats-2,asir-stats-3,asir-stats-4 			  		  ; asir-component                    
+											 ;							; tabuk-component			; tabuk_data				; تبوك							; tabuk-background-image.jpg		 		;  									;  تشتهر تبوك بمنتجاتها الزراعية وبمركزها التجاري الناشط. وهي موطن لعدد من المشاريع الضخمة مثل (نيوم) و(مشروع البحر الأحمر) مما يجعل منها موقعًا جاذبًا للاستثمار في مختلف القطاعات.																																																																												 	   ; tabuk-stats-1,tabuk-stats-2,tabuk-stats-3,tabuk-stats-4   			  	  ; tabuk-component
+											 ;							; hail-component			; hail_data					; حائل							; hail-background-image.jpg		 	 		;  									;  تشهد حائل تطوّرًا سريعًا لا سيما مع وضع 259 مشروع تطوير قيد التنفيذ في المنطقة بقيمة تتجاوز 1.5 مليار دولار. كما أنها موطن لموقعَين مدرجَين على قائمة اليونيسكو للتراث العالمي. 																																																																														   ; hail-stats-1,hail-stats-2,hail-stats-3,hail-stats-4   			  		  ; hail-component
+											 ;							; northern-borders-component; northern-borders_data		; الحدود الشمالية				; northern-borders-background-image.jpg 	;  									;  تستقبل الحدود الشمالية المستثمرين من كافة أنحاء العالم للتعرف على وفرة مواردها الطبيعية ، لا سيما احتياطات الفوسفات وحقول الغاز الطبيعي.																																																																																						      ; northern-stats-1,northern-stats-2,northern-stats-3,northern-stats-4      ; northern-borders-component
+											 ;							; jazan-component			; jazan_data				; جازان							; jazan-background-image.jpg		 		;  									;  جازان هي موطن لعدد من الجزر في البحر الأحمر. تعد (مدينة جازان للصناعات الأساسية والتحويلية)  واحدة من أهمّ المدن الصناعية ومن أبرز وجهات الاستثمار في المنطقة نظرًا لقربها من ممرات الملاحة العالمية.																																																																								      ; jazan-stats-1,jazan-stats-2,jazan-stats-3,jazan-stats-4              	  ; jazan-component
+											 ;							; najran-component			; najran_data				; نجران							; najran-background-image.jpg		 		;  									;  نجران هي واحدة من المناطق الأسرع نموّا في المملكة العربية السعودية. تعد نجران مدينة جاذبه لللمستثمرين بسبب جمال طبيعتها الخضراء ووفرة مواردها المعدنية وأراضيها الزراعية الخصبة.																																																																												      ; najran-stats-1,najran-stats-2,najran-stats-3,najran-stats-4              ; najran-component
+											 ;							; al-baha-component			; al-baha_data				; الباحة						; al-baba-background-image.jpg		 		;  									;  تتميز الباحة  بمزجها بين الغابات الخضراء والمرافق الترفيهيه و الخدمات السياحيه . كما تزخر المنطقه بالمواقع الأثريه و التاريخيه ما يجعلها موقعًا جاذبًا للاستثمارات في مجال السياحة.																																																																												      ; al-baha-stats-1,al-baha-stats-2,al-baha-stats-3,al-baha-stats-4          ; al-baha-component
+											 ;							; al-jouf-component			; al-jouf_data				; الجوف							; al-jouf-background-image.jpg		 		;  									;  تعدّ الجوف من أكثر المناطق خصوبة في المملكة العربية السعودية وتتميز بأراضيها الزراعية الغنية، وبتنوّع محاصيلها لاسيما الزيتون والتمر وبمواردها المعدنية. كما تشتهر بوفرة الطاقة الشمسية وطاقة الرياح فيها ما يجعلها موقعًا مثاليا للاستثمار في مجال الطاقة المتجددة.																																																								      ; al-jouf-stats-1,al-jouf-stats-2,al-jouf-stats-3,al-jouf-stats-4          ; al-jouf-component
+            
+
+
+
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 		;  $contentCV  ; key[lang = ar] ; value[lang = ar]                               
+
+###### riyadh1 
+				
+										; riyadh-stats-1			;			   ; 8.7M			;  عدد السكان 		                             
+										; riyadh-stats-2			;			   ; 4			 	; عدد الغرف التجارية           	             
+										; riyadh-stats-3   			;			   ; 1				; المطارات الدولية  			                 
+										; riyadh-stats-4			;			   ; 3,332			; عدد المصانع المنتجة في الربع الثالث 2021					 
+###### makkah2	 	
+										; makkah-stats-1			;			   ; 9M				;عدد السكان    		                             
+		                                ; makkah-stats-2			;			   ; 3			 	; عدد الغرف التجارية            	             
+		                                ; makkah-stats-3   			;			   ; 1				; المطارات الدولية 			                 
+		                                ; makkah-stats-4			;			   ; 1,741			;  عدد المصانع المنتجة في الربع الثالث 2021					 
+	
+###### medina3	 	
+										; medina-stats-1			;			   ; 2.2M			; عدد السكان   		                             
+		                                ; medina-stats-2			;			   ; 2			 	; عدد الغرف التجارية           	             
+		                                ; medina-stats-3   			;			   ; 1				; المطارات الدولية 			                 
+		                                ; medina-stats-4			;			   ; 351			;  عدد المصانع المنتجة في الربع الثالث 2021					 
+	
+###### qassim4	 	
+										; qassim-stats-1			;			   ; 1.5M			;عدد السكان  		                             
+		                                ; qassim-stats-2			;			   ; 4			 	; عدد الغرف التجارية          	             
+		                                ; qassim-stats-3   			;			   ; 1				; المطارات الدولية			                 
+		                                ; qassim-stats-4			;			   ; 332			; عدد المصانع المنتجة في الربع الثالث 2021						 
+
+###### eastern5	 	
+										; eastern-stats-1			;			   ; 5.1M			; عدد السكان 		                             
+		                                ; eastern-stats-2			;			   ; 3			 	;عدد الغرف التجارية            	             
+		                                ; eastern-stats-3   		;			   ; 1				; المطارات الدولية			                 
+		                                ; eastern-stats-4			;			   ; 1,877			; عدد المصانع المنتجة في الربع الثالث 2021					 
+		
+###### asir6	 	
+										; asir-stats-1				;			   ; 2.3M			; عدد السكان    		                             
+		                                ; asir-stats-2				;			   ; 171			; السدود         	             
+		                                ; asir-stats-3   			;			   ; 1				; المطارات الدولية		                 
+		                                ; asir-stats-4				;			   ; 312			; عدد المصانع المنتجة في الربع الثالث 2021 				 
+			
+###### tabuk7	 	
+										; tabuk-stats-1				;			   ; 949,612		; عدد السكان  
+		                                ; tabuk-stats-2				;			   ; 139,119		; اجمالي المشتغلين          	             
+		                                ; tabuk-stats-3   			;			   ; 1				; المطارات الدولية			                 
+		                                ; tabuk-stats-4				;			   ; 76				; عدد المصانع المنتجة في الربع الثالث 2021 					 
+
+###### hail8	 	
+										; hail-stats-1				;			   ; 731,147		; عدد السكان   		                             
+		                                ; hail-stats-2				;			   ; 140,712		; اجمالي المشتغلين           	             
+		                                ; hail-stats-3   			;			   ; 1				; مطارات محلية 			                 
+		                                ; hail-stats-4				;			   ; 83				; عدد المصانع المنتجة في الربع الثالث 2021					 
+	
+###### northern-borders9	 	
+										; northern-stats-1			;			   ; 383,051		; عدد السكان  		                             
+		                                ; northern-stats-2			;			   ; 1				; عدد الغرف التجارية            	             
+		                                ; northern-stats-3   		;			   ; 3				; مطارات محلية 			                 
+		                                ; northern-stats-4			;			   ; 39				; عدد المصانع المنتجة في الربع الثالث 2021					 
+
+###### jazan10	 	
+										; jazan-stats-1				;			   ; 1.6M			; عدد السكان   		                             
+		                                ; jazan-stats-2				;			   ; 1				; عدد المدن الصناعية           	             
+		                                ; jazan-stats-3   			;			   ; 1				; عدد الغرف التجارية 			                 
+		                                ; jazan-stats-4				;			   ; 107			; عدد المصانع المنتجة في الربع الثالث 2021					 
+	
+###### jazan11	 	
+										; najran-stats-1			;			   ; 608,467		; عدد السكان   		                             
+		                                ; najran-stats-2			;			   ; 141,955		; اجمالي المشتغلين         	             
+		                                ; najran-stats-3   			;			   ; 2				; مطارات محلية		                 
+		                                ; najran-stats-4			;			   ; 42				; عدد المصانع المنتجة في الربع الثالث 2021					 
+	
+###### jazan12	 	
+										; al-baha-stats-1			;			   ; 497,068		; عدد السكان 		                             
+		                                ; al-baha-stats-2			;			   ; 3				; عدد الغرف التجارية            	             
+		                                ; al-baha-stats-3   		;			   ; 1				; مطارات محلية			                 
+		                                ; al-baha-stats-4			;			   ; 31				; عدد المصانع المنتجة في الربع الثالث 2021					 
+
+###### jazan13	 	
+										; al-jouf-stats-1			;			   ; 531,952		; عدد السكان  		                             
+		                                ; al-jouf-stats-2			;			   ; 2				; عدد الغرف التجارية          	             
+		                                ; al-jouf-stats-3   		;			   ; 2				; مطارات محلية  		                 
+		                                ; al-jouf-stats-4			;			   ; 68				; عدد المصانع المنتجة في الربع الثالث 2021					 
+	
+
+
+
+
+
+
+
+INSERT_UPDATE ProvinceRegionHomeContainer  ; uid[unique = true]				 	 ; name		 				 	; title[lang = ar]														                ; &componentRef                  		 ; simpleCMSComponents (&componentRef)																																																				; $contentCV[unique = true]
+										   ; province-region-region-hq-container ; Province Region Container	; <p> تعرف على مناطق المملكة العربية السعودية   </p> <p> ثلاثة عشر منطقة  </p>			; province-region-region-hq-container    ;  riyadh-component, makkah-component, medina-component,qassim-component,eastern-component,asir-component,tabuk-component,hail-component,northern-borders-component,jazan-component,najran-component,al-baha-component,al-jouf-component           ;
+
+
+########################################################################
+
+INSERT_UPDATE  ProvinceVibrantCulturalComponent ; uid[unique = true]            ;title[lang = ar]			 		           ; $contentCV[unique = true]
+											   ; vibrant-culture-1 	    	    ; أحداث ثقافية				 	               ;
+                                               ; vibrant-culture-2               ; حفلات موسيقية                                ;
+                                               ; vibrant-culture-3               ;فعاليات متعلقة بفن الطهي                     ;
+                                               ; vibrant-culture-4               ; فعاليات رياضية بمستوى عالمي                 ;
+ 
+
+
+INSERT_UPDATE ProvinceBusinessCulturalComponent ; uid[unique = true]    	    ; localizedMapLogo(code, $contentCV)[lang = ar]     	 ; headerText [lang = ar]									; provinceCultures(uid, $contentCV)	 											     				;	localizedStats (uid, $contentCV)																								; &componentRef 			    ; $contentCV[unique = true]
+												; riyadh-province-cultural		; riyadh_city-map-arabic.svg							 ;تتمتع الرياض بحضور ثقافي و ترفيهي بارز 		                ; vibrant-culture-1,vibrant-culture-2,vibrant-culture-3,vibrant-culture-4		          			;	riyadh-business-stats-1,riyadh-business-stats-2,riyadh-business-stats-3,riyadh-business-stats-4									; riyadh-province-cultural		;
+
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 		        ;  $contentCV  ; key[lang = ar] 							; value[lang = ar]                                			
+										; riyadh-business-stats-1			;			   ; 50%								;من الناتج المحلي الإجمالي غير النفطي للمملكة العربية السعودية مصدره الرياض  		                             
+										; riyadh-business-stats-2			;			   ; 2.3 مليون	    					;  عدد القوى العاملة          	             
+										; riyadh-business-stats-3   		;			   ; المركز 18 عالميا					;  من حيث مستوى الناتج المحلي الإجمالي على أساس تعادل القوة الشرائية 			                 
+										; riyadh-business-stats-4			;			   ; 4.5 مليون 							; 	عدد السكان الذين تقل أعمارهم عن 35 سنة				 
+
+
+
+											  
+INSERT_UPDATE ProvinceBusinessCulturalContainer ; uid[unique = true]				 	; simpleCMSComponents(&componentRef) 		    ; name		 					; title [lang = ar]														; &componentRef   						; $contentCV[unique = true]
+											    ; province-cultural-business-container	; riyadh-province-cultural						; Province Vibrant Cultural		; الرياض هي مركز الأعمال والمركز الثقافي للمملكة العربية السعودية		; province-cultural-business-container	;				
+
+
+
+
+########################################################################
+
+#INSERT_UPDATE UpcomingSpecialZonesComponent ; uid[unique = true]    			; headerText [lang = ar] 													; text [lang = ar]																					; longDescription [lang = ar]																																																																; &componentRef 			 ; $contentCV[unique = true]
+#											; upcoming-special-zone1			; منطقة جازان الاقتصادية الخاصة												; المنطقة الاقتصادية الخاصة في مدينة الملك عبدالله الاقتصادية 											; 	تستفيد منطقة جازان الاقتصادية الخاصة من موقعها الاستراتيجي على ساحل البحر الأحمر لتتفوق في مجالات التصنيع والأغذية والمعادن والخدمات اللوجستية والتصدير للأسواق الإقليمية والعالمية.																											; upcoming-special-zone1	 ;
+#											; upcoming-special-zone2            ; منطقة رأس الخير الاقتصادية الخاصة                               			; منطقة رأس الخير الاقتصادية الخاصة																     ; تعتمد مدينة رأس الخير الاقتصادية الخاصة على الاستثمارات الهامة لشركة أرامكو السعودية في الصناعة البحرية لتصبح مركز صناعة السفن الأكثر تنافسية في العالم.                                                                                                   									 ; upcoming-special-zone2     ;
+#											; upcoming-special-zone3            ; المنطقة الاقتصادية الخاصة في مدينة الملك عبدالله الاقتصادية              		; المنطقة الاقتصادية الخاصة في مدينة الملك عبدالله الاقتصادية 											; تجمع المنطقة الاقتصادية الخاصة في مدينة الملك عبدالله الاقتصادية بين جودة الحياة العصرية والحضرية من جهة والبنية التحتية ذات القدرة التنافسية العالمية للخدمات اللوجستية والصناعات الخفيفة وصناعات الأدوية والأجهزة الطبية من جهة أخرى.                                       					 ; upcoming-special-zone3     ;
+#											; upcoming-special-zone4        	; منطقة السودة الاقتصادية الخاصة                                   			; منطقة السودة الاقتصادية الخاصة																	     ; فضل موقعها في أعلى جبال السعودية، تقدم السودة تجاربًا فريدة وحصريّة تتميّز بالرفاهية وحسن الضيافة. تعدّ السودة وجهة ثقافية أساسية لمحبّي المغامرة والاستكشاف.                                                                                        											 ; upcoming-special-zone4     ;
+#											; upcoming-special-zone5            ; المنطقة الاقتصادية الخاصة «كلاود»				                		    ; المنطقة الاقتصادية الخاصة «كلاود»																     ; المنطقة الاقتصدية الخاصة "كلاود" هي مركز عالمي للابتكار الرقمي. تطمح هذه المنطقة الواقعة ضمن مركز الملك عبدالله المالي إلى ابتكار الحلول الذكية للأجيال القادمة من خلال دعم الكفاءات الأكثر طموحًا وتقدمًا في العالم.     																			; upcoming-special-zone5     ;
+											
+								
+							
+
+#INSERT_UPDATE UpcomingSpecialZonesContainer ; uid[unique = true]				 		; simpleCMSComponents (&componentRef) 																							; name		 					; title [lang = ar]											; &componentRef   						; $contentCV[unique = true]
+#											; upcoming-special-zones-container			; upcoming-special-zone1, upcoming-special-zone2, upcoming-special-zone3, upcoming-special-zone4, upcoming-special-zone5		; Upcoming Special Zones		;المناطق الاقتصادية الخاصة المقرر افتتاحها مستقبلًا		    ; upcoming-special-zones-container		;
+
+#####################################################################
+
+
+   

@@ -1,0 +1,138 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+    
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE CMSLinkComponent	; uid[unique = true] 									; url 											; &linkRef											; $contentCV[unique = true];
+								; globalthinkgroup-innvoation-video-link				; https://youtube.com/embed/hkmLgSJlC90 		; globalthinkgroup-innvoation-video-link			;		;
+								; nmc-healthcare-video-link								; https://youtube.com/embed/oTJSljwvgyE			; nmc-healthcare-video-link							;		;
+								; fresnuis-medicalcare-asmusangelkort-video-link 		; https://youtube.com/embed/zeC-xE3zLzo			; fresnuis-medicalcare-asmusangelkort-video-link	;		;
+								; fresnuis-medicalcare-frankwagner-video-link			; https://youtube.com/embed/3O2MxtT9Peo 		; fresnuis-medicalcare-frankwagner-video-link		;		;
+								; gesaudiarabia-energy-water-video-link					; https://youtube.com/embed/lNgho2CEjlI			; gesaudiarabia-energy-water-video-link				;		;
+								; exxonmobil-chemical-video-link						; https://youtube.com/embed/j209vxqFK-U			; exxonmobil-chemical-video-link					;		;
+								; shelloverseas-chemicals-video-link					; https://youtube.com/embed/AqoD3n1WjQE			; shelloverseas-chemicals-video-link				;		;
+								; accel-education-video-link							; https://youtube.com/embed/yFt5VW1yuwk			; accel-education-video-link						;		;
+								; thecityschool-education-video-link					; https://youtube.com/embed/SVNf1j3bX3Q			; thecityschool-education-video-link				;		;
+								; pepsico-foodprocessing-video-link						; https://youtube.com/embed/N5zbd7lceiA			; pepsico-foodprocessing-video-link					;		;
+								; ambitious-reform-video-link							; https://www.youtube.com/embed/cvt-fbOkArM     ; ambitious-reform-video-link						;		;
+								; young-and-skilled-workforce-video-link				; https://www.youtube.com/embed/hy1NliYJKtE 	; young-and-skilled-workforce-video-link			;		;
+
+								
+INSERT_UPDATE SuccessStoriesComponent; $contentCV[unique = true]; uid[unique = true]					; video (code, $contentCV)	; videoLink(&linkRef)									; poster (code, $contentCV)					; accordion (code, $contentCV)	; icon (code, $contentCV)		; companyLogo (code, $contentCV)		; localizedStats(uid, $contentCV)	                                                                                                                     ; &componentRef	;
+									 ;							; globalthinkgroup-innvoation			;				  		 	; globalthinkgroup-innvoation-video-link				; globalthinkgroup-innvoation.png			; inverted-icon.png 			; innovation-icon.png 			; global-think-group-logo.png 			; globalthinkgroup-innvoation1,globalthinkgroup-innvoation2,globalthinkgroup-innvoation3,globalthinkgroup-innvoation4                                    ; globalthinkgroup-innvoation
+									 ;							; nmc-healthcare						;				  			; nmc-healthcare-video-link								; nmc-healthcare.png						; inverted-icon.png 			; healthcare-icon.png 			; nmc-healthcare-logo.png 				; nmc-healthcare1,nmc-healthcare2,nmc-healthcare3,nmc-healthcare4                                                                                        ; nmc-healthcare
+									 ;							; fresnuis-medicalcare-asmusangelkort	;				 		 	; fresnuis-medicalcare-asmusangelkort-video-link  		; fresnuis-medicalcare-asmusangelkort.png	; inverted-icon.png 			; healthcare-icon.png 			; fresnuis-medical-care-logo.png		; fresnuis-medicalcare-asmusangelkort1,fresnuis-medicalcare-asmusangelkort2,fresnuis-medicalcare-asmusangelkort3,fresnuis-medicalcare-asmusangelkort4    ; fresnuis-medicalcare-asmusangelkort
+									 ;							; fresnuis-medicalcare-frankwagner		;				 		 	; fresnuis-medicalcare-frankwagner-video-link   		; fresnuis-medicalcare-frankwagner.png		; inverted-icon.png 			; healthcare-icon.png 			; fresnuis-medical-care-logo.png		; fresnuis-medicalcare-frankwagner1,fresnuis-medicalcare-frankwagner2,fresnuis-medicalcare-frankwagner3,fresnuis-medicalcare-frankwagner4                ; fresnuis-medicalcare-frankwagner
+									 ;							; gesaudiarabia-energy-water			;				  		    ; gesaudiarabia-energy-water-video-link					; gesaudiarabia-energy-water.png			; inverted-icon.png 			; energy-and-water-icon.png		; gesaudi-energywater-logo.png 			; gesaudiarabia-energy-water1,gesaudiarabia-energy-water2,gesaudiarabia-energy-water3,gesaudiarabia-energy-water4                                        ; gesaudiarabia-energy-water
+									 ;							; exxonmobil-chemical					;				  		 	; exxonmobil-chemical-video-link 						; exxonmobil-chemical.png					; inverted-icon.png 			; chemical-icon.png 			; exxon-mobil-logo.png 					; exxonmobil-chemical1,exxonmobil-chemical2,exxonmobil-chemical3,exxonmobil-chemical4                                                                    ; exxonmobil-chemical
+									 ;							; shelloverseas-chemicals				;				  			; shelloverseas-chemicals-video-link 				    ; shelloverseas-chemicals.png				; inverted-icon.png 			; chemical-icon.png 			; shell-chemicals-logo.png		 		; shelloverseas-chemicals1,shelloverseas-chemicals2,shelloverseas-chemicals3,shelloverseas-chemicals4                                                    ; shelloverseas-chemicals
+									 ;							; accel-education						;				  			; accel-education-video-link							; accel-education.png						; inverted-icon.png 			; education-icon.png 			; accel-logo.png			 			; accel-education1,accel-education2,accel-education3,accel-education4                                                                                    ; accel-education
+									 ;							; thecityschool-education				;				  		 	; thecityschool-education-video-link					; thecityschool-education.png				; inverted-icon.png 			; education-icon.png 			; city-school-saudi-logo.png			; thecityschool-education1,thecityschool-education2,thecityschool-education3,thecityschool-education4                                                    ; thecityschool-education
+									 ;							; pepsico-foodprocessing				;				  		 	; pepsico-foodprocessing-video-link						; pepsico-foodprocessing.png				; inverted-icon.png 			; food-processing-icon.png 		; pepsico-foodprocessing-logo.png 		; pepsico-foodprocessing1,pepsico-foodprocessing2,pepsico-foodprocessing3,pepsico-foodprocessing4                                                        ; pepsico-foodprocessing
+
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]             ; value[lang = ar]	;																																					
+			                            ;              ; اسم الشركة           ; globalthinkgroup-innvoation1 ;  مجموعة جلوبال ثينك
+                                        ;              ; الاسم                 ; globalthinkgroup-innvoation2 ;  أندريانا دافنيس										
+									    ;              ; المنصب               ; globalthinkgroup-innvoation3 ;  اسم الشركة				
+										;              ; اسم القطاع           ; globalthinkgroup-innvoation4 ;  قطاع الابتكار وريادة الأعمال			
+										 			
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]        ; value[lang = ar]	;																																																		
+                                        ;              ;  اسم الشركة          ; nmc-healthcare1         ; المركز الطبي الجديد
+                                        ;              ;  الاسم                ; nmc-healthcare2         ; ميكائيل دافيز
+										;              ;  المنصب              ; nmc-healthcare3         ; الرئيس التنفيذي
+										;              ; اسم القطاع           ; nmc-healthcare4         ; الرعاية الصحية
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]	;																																																		
+                                        ;              ; اسم الشركة           ; fresnuis-medicalcare-asmusangelkort1 ; Fresnuis Medical Care
+                                        ;              ; الاسم                 ; fresnuis-medicalcare-asmusangelkort2 ; أسموز أنجيلكورت
+                                        ;              ; المنصب               ; fresnuis-medicalcare-asmusangelkort3 ; نائب رئيس الشؤون المالية
+                                        ;              ; اسم القطاع           ; fresnuis-medicalcare-asmusangelkort4 ; الرعاية الصحية
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]	;																																																			
+			                            ;              ; اسم الشركة           ; fresnuis-medicalcare-frankwagner1    ; Fresnuis Medical Carea							
+										;              ; الاسم                 ; fresnuis-medicalcare-frankwagner2    ; فرانك واجنر
+										;              ; المنصب               ; fresnuis-medicalcare-frankwagner3    ; نائب الرئيس التنفيذي
+										;              ; اسم القطاع           ; fresnuis-medicalcare-frankwagner4    ; الرعاية الصحية
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]	;																																																		
+                                        ;              ; اسم الشركة           ; gesaudiarabia-energy-water1          ; جنرال إلكتريك في السعودية والبحرين
+			                            ;              ; الاسم                 ; gesaudiarabia-energy-water2          ; ستيفن ماك كاليون
+			                            ;              ; المنصب               ; gesaudiarabia-energy-water3          ; الرئيس التنفيذي للعمليات
+			                            ;              ; اسم القطاع           ; gesaudiarabia-energy-water4          ; الطاقة والمياه
+			
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]	;																																																
+			                            ;              ; اسم الشركة           ; exxonmobil-chemical1                 ; إكسون موبيل
+			                            ;              ; الاسم                 ; exxonmobil-chemical2                 ; جين بيري فوري
+			                            ;              ; المنصب               ; exxonmobil-chemical3                 ; المدير العام للتخطيط 
+			                            ;              ; اسم القطاع           ; exxonmobil-chemical4                 ; الكيماويات
+										
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]	;																																																									
+                                        ;              ; اسم الشركة           ; shelloverseas-chemicals1	         ; شركة شيل أوفرسيز للخدمات المحدودة
+                                        ;              ; الاسم                 ; shelloverseas-chemicals2			 ;	أندريو كرويي						
+			                            ;              ; المنصب               ; shelloverseas-chemicals3             ;  المدير
+			                            ;              ; اسم القطاع           ; shelloverseas-chemicals4             ; المواد الكيماوية
+			
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]	;																																																																
+			                            ;              ; اسم الشركة           ; accel-education1	                 ; أكسيل 
+			                            ;              ; الاسم                 ; accel-education2			         ; راي دام
+			                            ;              ; المنصب               ; accel-education3                     ; الرئيس التنفيذي
+			                            ;              ; اسم القطاع           ; accel-education4                     ; التعليم
+			
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]	;																																																																			
+			                            ;              ; اسم الشركة           ; thecityschool-education1	         ; مدرسة مدينة السعودية
+			                            ;              ; الاسم                 ; thecityschool-education2			 ; عمرانا أحمد
+			                            ;              ; المنصب               ; thecityschool-education3             ; المدير الإقليمي 
+			                            ;              ; اسم القطاع           ; thecityschool-education4             ; التعليم
+			
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]	;																																																																	
+                                        ;              ; اسم الشركة           ; pepsico-foodprocessing1	             ; بيبسيكو              
+                                        ;              ; الاسم                 ; pepsico-foodprocessing2			     ; رامون لاجوارتا
+                                        ;              ; المنصب               ; pepsico-foodprocessing3              ; رئيس مجلس الإدارة والرئيس التنفيذي
+                                        ;              ; اسم القطاع           ; pepsico-foodprocessing4              ; معالجة الطعام
+
+
+									 
+INSERT_UPDATE SuccessStoriesComponent ;$contentCV[unique = true]; uid[unique = true]					; description [lang = ar]	;																																																																													
+						              ;							; globalthinkgroup-innvoation			; "‘’تتسم عملية تأسيس شركه في المملكة  العربيه السعوديه بالسهولة البالغة مقارنة بالبلدان الأخرى، وحالياً أصبح من السهل أيضًا الحصول على تأشيرة إلكترونية. إذ تعدُّ المملكة من دول مجموعة العشرين، وتتمتع بالكثير من فرص الاستثمار الجديدة في كلٍ من القطاعات التقليدية  والناشئة، ومنها قطاع الرياضة والثقافة والسياحة والترفيه  ’’	</br> - أندريانا دافنيس, الشريك الإداري, مجموعة جلوبال ثينك"	   	;	
+								      ;							; nmc-healthcare						; "‘’ قمت بزيارة جميع مناطق و مدن المملكة ، وانا على ثقة بأن الدروس المستفادة هنا ستبقى في ذهني طوال حياتي، فالشعب السعودي يسعد بدعم رواد الأعمال والأشخاص ذوي الروح الريادية الذين يرغبون في المساهمة في  الارتقاء بالمجتمع. ’’"                                                                                                                                                                 	;                                                                                                   
+								      ;							; fresnuis-medicalcare-asmusangelkort	; "‘’ أعتقد بأنه يجب على المستثمرين دراسة رؤية 2030 بعناية، كما يجب عليهم تقييم مدى تتطابق الرؤية مع أهدافهم واستراتيجيتهم، وفي حال توافقها مع أهدافهم، فإن المزج بين التقنيات عالمية المستوى مع المواهب السعودية يسهم في خلق بيئة استثمارية عظيمة في المملكة تهدف إلى تحقيق النجاحات. ’’  </br> – أسموز أنجيلكورت, نائب رئيس الشؤون المالية,Fresnuis Medical Care"                            	;                          
+								      ;							; fresnuis-medicalcare-frankwagner		; "‘’ما تعلمته من خلال تجربتي في ظل الثقافة السعودية ورؤية 2030 بأن السعودية من الدول سريعة التقدم بشكل يومي، إذ ترحب بمختلف الزائرين الأجانب وغيرهم من المستثمرين، وعلى الرغم من تواجدنا في السعودية لدواعي العمل، إلا أننا يسعدنا أن نحظى ببعض الرفاهية. ’’"                                                                                                                                    	;
+								      ;							; gesaudiarabia-energy-water			; "‘’هناك الكثير من الجهود المبذولة لتسهيل حضور الأشخاص إلى السعودية والاستثمار فيها، وهذا ما شهدناه في ترتيب المملكة في تصنيفات مؤشر سهولة ممارسة الأعمال التابع للبنك الدولي. ’’	</br>  – ستيفن ماك كاليون, الرئيس التنفيذي للعمليات, جنرال إلكتريك في السعودية والبحرين	 "                                                                                                                  	;		                                                                                                                                   
+								      ;							; exxonmobil-chemical					; "‘’تجمع المملكة بين رفاهية العيش وسهولة ممارسة الأعمال ، فالشعب السعودي شعب ودود و مضياف . كما تضم مجتمع كبير من االمقيمين غيرالسعوديين ، ويجب على أي شخص  زيارة المملكة وخوض التجربة بنفسه. ’’"                                                                                                                                                                                              	;                                                                                                                              
+								      ;							; shelloverseas-chemicals				; "‘’ تسعى المملكة العربية السعودية  لتحقيق أهداف  رؤيتها 2030 ما يخلق العديد من الفرص في كافة الأصعده و المجالات ، حيث تم إنشاء قطاعات جديدة منها قطاع السياحة والترفيه والطاقة والطاقة المتجددة وقطاع البيع بالتجزئة وغيرها من الأسواق الجديده و المتطورة .’’"	                                                                                                                               	;			                                                       
+								      ;							; accel-education						; "‘’لقد قررنا في شركتنا إنشاء فرعٍ في المملكة للعمل في قطاع التعليم في شهر فبراير 2019، وبحلول سبتمبر من العام نفسه كان الفرع جاهزًا للتشغيل . وأعتقدُ بأن الكثير من الشركات والمنظمات سوف تنتقل إلى المملكة للعمل فيها في ظل هذا التعداد السكاني المميز، وستكون جزءاً من التغير المجتمعي المرتقب في المملكة. ’’	</br>  – راي دام, الرئيس التنفيذي, أكسيل"	                                   	;		       
+								      ;							; thecityschool-education				; "‘’بصفتنا أحد المستثمرين الأجانب، فنحن سعداءٌ  جدًا بتجربتنا في المملكة العربية السعودية ، حيث أنها تتمتع ببيئة محفزه للعمل وللاستثمار.لقد كانت جميع الإجراءات سريعه و سلسة، ونتطلع للتوسع في أعمالنا في كافة أنحاء المملكة. ’’"		                                                                                                                                                           	;	                                                                                           
+								      ;							; pepsico-foodprocessing				; "‘’تحرص المملكة  على تسهيل ممارسة الأعمال التجارية، حيث تعرض الكثير من الحوافز الجذاب ما يساعدنا بصورة دائمة على اتخاذ قراراتنا الاستثمارية، وهناك العديد من الشركات - مثل شركة بيبسيكو - التي ترغب في هذ القدر من التسهيلات والحوافز الملموسة لتحقيق مزيدٍ من النمو والتطور وخلق المزيد من فرص العمل الجيدة. ’’	 </br> – رامون لاجوارتا, رئيس مجلس الإدارة والرئيس التنفيذي, بيبسيكو"		       	;           
+								
+								
+INSERT_UPDATE Category	; code[unique = true]			; successStories(uid, $contentCV) 			; $catalogVersion	; 
+						; energy                 		; gesaudiarabia-energy-water				;					;
+						; environment-services			; gesaudiarabia-energy-water				;					;
+						; industrial-manufacturing     	; pepsico-foodprocessing					;					;
+						; healthcare-life-sciences     	; nmc-healthcare,fresnuis-medicalcare-asmusangelkort,fresnuis-medicalcare-frankwagner	;			;
+						; chemicals                    	; exxonmobil-chemical,shelloverseas-chemicals;					;
+						; real-estate                  	; 									 		;					;
+						; education                    	; accel-education,thecityschool-education	;					;
+						; innovation                   	; 									 		;					;
+						; financial                    	; 											;					;
+						; transport-logistics          	; 										 	;					;
+						; mining-metals                	; 											;					;
+						; tourism-culture-entertainment ;											;					;
+			  			; information-technology       	;										 	;					;
+					 					  
+								
+						

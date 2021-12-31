@@ -1,0 +1,45 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Category Media into investsaudi Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=investsaudiProductCatalog
+$productCatalogName=investsaudi Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$siteResource=jar:de.hybris.platform.investsaudistore.constants.InvestsaudistoreConstants&/investsaudistore/import/sampledata/productCatalogs/$productCatalog
+
+
+# Import Category Media
+INSERT_UPDATE Media;code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];$catalogVersion
+;/thumbs/invest_saudi_010.jpg;invest_saudi_010.jpg;$siteResource/images/thumbs/invest_saudi_010.jpg;
+;/thumbs/invest_saudi_011.jpg;invest_saudi_011.jpg;$siteResource/images/thumbs/invest_saudi_011.jpg;
+;/thumbs/invest_saudi_012.jpg;invest_saudi_012.jpg;$siteResource/images/thumbs/invest_saudi_012.jpg;
+
+UPDATE Category;code[unique=true];$thumbnail;allowedPrincipals(uid)[default='customergroup'];$catalogVersion
+;100000;/thumbs/invest_saudi_010.jpg
+;101000;/thumbs/invest_saudi_011.jpg
+;101100;/thumbs/invest_saudi_012.jpg
+;101200;/thumbs/invest_saudi_010.jpg
+;101010;/thumbs/invest_saudi_011.jpg
+;101011;/thumbs/invest_saudi_012.jpg
+;101012;/thumbs/invest_saudi_010.jpg
+;101013;/thumbs/invest_saudi_011.jpg
+;101014;/thumbs/invest_saudi_012.jpg
+;101015;/thumbs/invest_saudi_010.jpg
+;101016;/thumbs/invest_saudi_011.jpg
+;101017;/thumbs/invest_saudi_012.jpg
+;101110;/thumbs/invest_saudi_010.jpg
+;101111;/thumbs/invest_saudi_011.jpg
+;101210;/thumbs/invest_saudi_012.jpg
+;101211;/thumbs/invest_saudi_012.jpg
+

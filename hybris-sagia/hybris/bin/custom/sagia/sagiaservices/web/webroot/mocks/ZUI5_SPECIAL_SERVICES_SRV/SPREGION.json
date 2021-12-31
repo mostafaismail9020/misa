@@ -1,0 +1,56 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPREGIONSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPREGIONSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPREGION"
+        },
+        "LANGUAGE": "E",
+        "REGIONCODE": "10",
+        "REGION": "SAGIA Riyadh Office"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPREGIONSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPREGIONSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPREGION"
+        },
+        "LANGUAGE": "E",
+        "REGIONCODE": "11",
+        "REGION": "SAGIA Jeddah Office"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPREGIONSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPREGIONSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPREGION"
+        },
+        "LANGUAGE": "E",
+        "REGIONCODE": "12",
+        "REGION": "SAGIA Dammam Office"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPREGIONSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPREGIONSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPREGION"
+        },
+        "LANGUAGE": "E",
+        "REGIONCODE": "13",
+        "REGION": "SAGIA Madina Office"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPREGIONSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPREGIONSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPREGION"
+        },
+        "LANGUAGE": "E",
+        "REGIONCODE": "17",
+        "REGION": "SAGIA Jizan Office"
+      }
+    ]
+  }
+}

@@ -1,0 +1,177 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$productCatalog = sagiaProductCatalog
+$productCV = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)[mode=replace]
+$logos = logos(code, $contentCV)[mode=replace]
+
+#$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+# Footer Navigation Links
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]              	; name                      		; linkName[lang = en]     				; linkName[lang = ar]			; contentPage(uid, $contentCV)	; $contentCV[unique = true] ;
+                              ; footer-link                         ; Footer Link               		;                         				;                       		;                             	;			;
+                              ; footer-meet-the-kingdom-link        ; Meet the Kingdom               	; Meet the Kingdom               		; Meet the Kingdom         		; meet-the-kingdom				;			;
+                              ; footer-about-saudi-arabia-link		; Invest in Saudi Arabia            ; Invest in Saudi Arabia                ; Invest in Saudi Arabia        ; about-invest-saudi        	;			;
+                              ; footer-investment-guide-link        ; Investment Guide           		; Investment Guide                 		; Investment Guide              ; guide          				;			;
+                              ; footer-media-center-link          	; Media Center           			; Media Center                 			; Media Center              	; media-center          		;			;
+
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]                 ; name                              ; title[lang = en]                  	; title[lang = ar]            	; parent(uid, $contentCV)		; &nodeRef								; children(uid, $contentCV)      																		; links(uid, $contentCV); $contentCV[unique = true]	;
+                               ; footer-menu                        ; Portal Footer Menu      			; Portal Footer Menu      				; Portal Footer Menu			; root                   		; PortalFooterMenu             			; footer-meet-the-kingdom-navnode, footer-about-saudi-arabia-navnode, footer-investment-guide-navnode, footer-media-center-navnode 	;                       ;			;
+                               ; footer-meet-the-kingdom-navnode    ; Meet the Kingdom               	; Meet the Kingdom               		; Meet the Kingdom              ; footer-menu                   ; footer-meet-the-kingdom-navnode     	;                                                                                                       ;                       ;			;
+                               ; footer-about-saudi-arabia-navnode	; Invest in Saudi Arabia            ; Invest in Saudi Arabia            	; Invest in Saudi Arabia        ; footer-menu                   ; footer-about-saudi-arabia-navnode   	;                                                                                                       ;                       ;			;
+                               ; footer-investment-guide-navnode    ; Investment Guide               	; Investment Guide                		; Investment Guide              ; footer-menu                   ; footer-investment-guide-navnode     	;                                                                                                       ;                       ;			;
+                               ; footer-media-center-navnode    	; Media Center               		; Media Center              			; Media Center               	; footer-menu                   ; footer-media-center-navnode       	;                                                                                                       ;                       ;			;
+
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]                ; name                               ; navigationNode(&nodeRef)           	; item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV); $contentCV[unique = true];
+                                ; footer-entry                      ; Footer Entry                       ; PortalFooterMenu                   	; footer-link							;
+                                ; footer-meet-the-kingdom-entry     ; Meet the Kingdom Entry             ; footer-meet-the-kingdom-navnode     	; footer-meet-the-kingdom-link          ;
+                                ; footer-about-saudi-arabia-entry   ; Invest in Saudi Arabia Entry       ; footer-about-saudi-arabia-navnode    ; footer-about-saudi-arabia-link        ;
+                                ; footer-investment-guide-entry     ; Investment Guide  Entry            ; footer-investment-guide-navnode     	; footer-investment-guide-link          ;
+                                ; footer-media-center-entry     	; Media Center Entry             	 ; footer-media-center-navnode     		; footer-media-center-link              ;
+
+
+# Footer Sectors & Industries Navigation Nodes
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                 ; name                               ; linkName[lang = en]                ; linkName[lang = ar]         ; url 								; contentPage(uid, $contentCV) 	; $contentCV[unique = true]	;
+                              ; sectors-industries-link            ; Sectors & Industries               ; Sectors & Industries               ; القطاعات والصناعات          ; #           						;								;
+                              ; chemicals-link                     ; Chemicals                          ; Chemicals                          ; مواد كيميائية               ; /sectors-opportunities/chemicals	;								;
+                              ; information-technology-link        ; Information and Technology         ; Information and Technology         ; المعلومات والتكنولوجيا      ; /sectors-opportunities/information-technology	;					;
+                              ; energy-water-link                  ; Energy 		                    ; Energy 							 ; الطاقة والمياه              ; /sectors-opportunities/energy		;								;
+                              ; explore-more-link                  ; Explore More                       ; Explore More                       ; استكشاف المزيد              ; /en/sectors-opportunities          ; sectors-opportunities			;
+
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]                    ; name                               ; title[lang = en]                   ; title[lang = ar]                   ; parent(uid, $contentCV); &nodeRef                              ; children(uid, $contentCV)                                                   					; links(uid, $contentCV); $contentCV[unique = true];
+                               ; sectors-industries                    ; Sectors & Industries               ; Sectors & Industries               ; Sectors & Industries               ; root                   ; SectorsIndustriesNavigation           ; chemicals-navnode, information-technology-navnode, energy-water-navnode, explore-more-navnode	;                       ;			;
+                               ; chemicals-navnode                     ; Chemicals                          ; Chemicals                          ; Chemicals                          ; sectors-industries     ; chemicals-navnode                     ;                                                                                                ;                       ;			;
+                               ; information-technology-navnode        ; Information and Technology         ; Information and Technology         ; Information and Technology         ; sectors-industries     ; information-technology-navnode        ;                                                                                                ;                       ;			;
+                               ; energy-water-navnode                  ; Energy and Water                   ; Energy and Water                   ; Energy and Water                   ; sectors-industries     ; energy-water-navnode                  ;                                                                                                ;                       ;			;
+                               ; explore-more-navnode                  ; Explore More                       ; Explore More                       ; Explore More                       ; sectors-industries     ; explore-more-navnode                  ;                                                                                                ;                       ;			;
+
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]                  ; name                                     ; navigationNode(&nodeRef)              ; item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV); $contentCV[unique = true]
+                                ; sectors-industries-entry            ; Sectors & Industries Entry               ; SectorsIndustriesNavigation           ; sectors-industries-link                                ;
+                                ; chemicals-entry                     ; Chemicals Entry                          ; chemicals-navnode                     ; chemicals-link                                         ;
+                                ; information-technology-entry        ; Information and Technology Entry         ; information-technology-navnode        ; information-technology-link                            ;
+                                ; energy-water-entry                  ; Energy and Water Entry                   ; energy-water-navnode                  ; energy-water-link                                      ;
+                                ; explore-more-entry                  ; Explore More Entry                       ; explore-more-navnode                  ; explore-more-link                                      ;
+
+
+# Footer Program & Incentives Navigation Nodes
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                 ; name                               ; linkName[lang = en]                ; linkName[lang = ar]         	; url 							; contentPage(uid, $contentCV) 	; $contentCV[unique = true]	;
+                              ; program-incentives-link            ; Program & Incentives               ; Program & Incentives               ; Program & Incentives			; #                             ;                              	;
+                              ; regional-headquarter-link          ; Regional Head Quarters             ; Regional Head Quarters             ; Regional Head Quarters       ;                               ; regional-head-quarters        ;
+                              ; incentives-link                    ; Incentives                         ; Incentives                         ; Incentives                 	;                               ; incentives                    ;
+                              ; ministry-of-investments-link       ; Ministry of Investments            ; Ministry of Investments            ; Ministry of Investments    	; https://misa.gov.sa/en/       ;                              	;
+                              ; vision-2030-link                   ; Vision 2030                        ; Vision 2030                        ; Vision 2030                	; http://vision2030.gov.sa/ar/  ;                              	;
+
+
+#Attached the link to the Program & Incentives to differentiate
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]                    ; name                               ; title[lang = en]                   ; title[lang = ar]                   ; parent(uid, $contentCV); &nodeRef                              ; children(uid, $contentCV)	                                                           					; links(uid, $contentCV); $contentCV[unique = true];
+                               ; program-incentives                    ; Program & Incentives               ; Program & Incentives               ; Program & Incentives               ; root                   ; ProgramIncentivesNavigation           ; regional-headquarter-navnode, incentives-navnode, ministry-of-investments-navnode, vision-2030-navnode	;  						;			;
+                               ; regional-headquarter-navnode          ; Regional Head Quarters             ; Regional Head Quarters             ; Regional Head Quarters             ; program-incentives     ; regional-headquarter-navnode          ;                                                                                                        ;                       ;			;
+                               ; incentives-navnode                    ; Incentives                         ; Incentives                         ; Incentives                         ; program-incentives     ; incentives-navnode                    ;                                                                                                        ;                       ;			;
+                               ; ministry-of-investments-navnode       ; Ministry of Investments            ; Ministry of Investments            ; Ministry of Investments            ; program-incentives     ; ministry-of-investments-navnode       ;                                                                                                        ;                       ;			;
+                               ; vision-2030-navnode                   ; Vision 2030                        ; Vision 2030                        ; Vision 2030                        ; program-incentives     ; vision-2030-navnode                   ;                                                                                                        ;                       ;			;
+
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]                  ; name                                     ; navigationNode(&nodeRef)              ; item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV); $contentCV[unique = true];
+                                ; program-incentives-entry            ; Program & Incentives Entry               ; ProgramIncentivesNavigation           ; program-incentives-link                                ;
+                                ; regional-headquarter-entry          ; Regional headquarter Entry               ; regional-headquarter-navnode          ; regional-headquarter-link                              ;
+                                ; incentives-entry                    ; Incentives Entry                         ; incentives-navnode                    ; incentives-link                                        ;
+                                ; ministry-of-investments-entry       ; Ministry of Investments Entry            ; ministry-of-investments-navnode       ; ministry-of-investments-link                           ;
+                                ; vision-2030-entry                   ; Vision 2030 Entry                        ; vision-2030-navnode                   ; vision-2030-link                                       ;
+
+                               
+# Footer Follow US Navigation Nodes
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name      ; linkName[lang = en]                 ; linkName[lang = ar]                 ; url                                          ; $contentCV[unique = true]; target(code)[default = 'newWindow']
+                              ; follow-us-link    ; Follow Us ; Follow Us                           ; تابعنا                              ;                                              ;                          ;
+                              ; linkedin-link     ; Linkedin  ; <span class="icon icon-linked-in"/> ; <span class="icon icon-linked-in"/> ; https://www.linkedin.com/company/investsaudi ;                          ;
+                              ; twitter-link      ; Twitter   ; <span class="icon icon-twitter"/>   ; <span class="icon icon-twitter"/>   ; https://twitter.com/InvestSaudi              ;                          ;
+
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; parent(uid, $contentCV); &nodeRef           ; children(uid, $contentCV)[mode = replace]; links(uid, $contentCV); $contentCV[unique = true];
+                               ; follow-us         ; Follow Us ; Follow Us       ; Follow Us       ; root                   ; FollowUsNavigation ; linkedin-navnode, twitter-navnode        ;                       ;
+                               ; linkedin-navnode  ; Linkedin  ; Linkedin        ; Linkedin        ; follow-us              ; linkedin-navnode   ;                                          ;                       ;
+                               ; twitter-navnode   ; Twitter   ; Twitter         ; Twitter         ; follow-us              ; twitter-navnode    ;                                          ;                       ;
+
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]; name            ; navigationNode(&nodeRef); item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV); $contentCV[unique = true];
+                                ; follow-us-entry   ; Follow Us Entry ; FollowUsNavigation      ; follow-us-link                                         ;
+                                ; linkedin-entry    ; Linkedin        ; linkedin-navnode        ; linkedin-link                                          ;
+                                ; twitter-entry     ; Twitter         ; twitter-navnode         ; twitter-link                                           ;
+
+
+# Sitemap and Policies Navigation Nodes
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]  ; name                 ; linkName[lang = en]; linkName[lang = ar]    ; contentPage(uid, $contentCV); $contentCV[unique = true];
+                              ; map-policy-link     ; Sitemap and Policies ;                    ;                        ;                             ;
+                              ; sitemap-link        ; Sitemap              ; Sitemap            ; خريطة الموقع           ; sitemap                     ;
+                              ; privacy-policy-link ; Privacy Policy       ; Privacy Policy     ; سياسة خاصة             ; privacy-policy              ;
+                              ; brand-policy-link   ; Brand Policy         ; Brand Policy       ; سياسة العلامة التجارية  ; brand-policy                ;
+
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true][mode = replace]; name                 ; title[lang = en]     ; title[lang = ar]     ; parent(uid, $contentCV); &nodeRef               ; children(uid, $contentCV)[mode = replace]                   ; links(uid, $contentCV); $contentCV[unique = true]
+                               ; map-policy                        ; Sitemap and Policies ; Sitemap and Policies ; Sitemap and Policies ; root                   ; MapPolicyNavigation    ; brand-policy-navnode,privacy-policy-navnode,sitemap-navnode ;                       ;
+                               ; sitemap-navnode                   ; Sitemap              ; Sitemap              ; Sitemap              ; map-policy             ; sitemap-navnode        ;                                                             ;                       ;
+                               ; privacy-policy-navnode            ; Privacy Policy       ; Privacy Policy       ; Privacy Policy       ; map-policy             ; privacy-policy-navnode ;                                                             ;                       ;
+                               ; brand-policy-navnode              ; Brand Policy         ; Brand Policy         ; Brand Policy         ; map-policy             ; brand-policy-navnode   ;                                                             ;                       ;
+
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]   ; name                       ; navigationNode(&nodeRef); item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV); $contentCV[unique = true];
+                                ; map-policy-entry     ; Sitemap and Policies Entry ; MapPolicyNavigation     ; map-policy-link                                        ;
+                                ; sitemap-entry        ; Sitemap                    ; sitemap-navnode         ; sitemap-link                                           ;
+                                ; privacy-policy-entry ; Privacy Policy             ; privacy-policy-navnode  ; privacy-policy-link                                    ;
+                                ; brand-policy-entry   ; Brand Policy               ; brand-policy-navnode    ; brand-policy-link                                      ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']	; folder(qualifier)[default = $mediafolder]	; altText      	; $contentCV[unique = true]
+                   ; logo-en.svg        ; logo-en.svg ; $siteResource/logo-en.svg                                                   ; image/svg+xml               	;                                          	; Invest Saudi 	;
+                   ; logo-ar.svg        ; logo-ar.svg ; $siteResource/logo-ar.svg                                                   ; image/svg+xml               	;	                                       	; Invest Saudi 	;
+
+
+# Logo Footer Links
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name        ; linkName[lang = en]; linkName[lang = ar]; url                          ; $contentCV[unique = true]; &linkRef
+                              ; logo1-link        ; Logo 1 Link ; Logo 1             ; Logo 1             ; /                            ;                          ; logo1-link
+                              ; logo2-link        ; Logo 2 Link ; Logo 2             ; Logo 2             ; /                            ;                          ; logo2-link
+                              ; logo3-link        ; Logo 3 Link ; Logo 3             ; Logo 3             ; http://vision2030.gov.sa/ar/ ;                          ; logo3-link
+
+
+INSERT_UPDATE InvestSaudiFooterComponent; uid[unique = true]; name          ; navigationLinks(&nodeRef); navigationFollowUs(&nodeRef); NavigationNodesList(&nodeRef)[mode = replace]  			; navigationMapPolicy(&nodeRef); copyrightText[lang = en]                  ; &componentRef ; $contentCV[unique = true]
+                                        ; portal-footer     ; Portal Footer ; PortalFooterMenu         ; FollowUsNavigation          ; SectorsIndustriesNavigation,ProgramIncentivesNavigation 	; MapPolicyNavigation          ; © 2021 Invest Saudi. All rights reserved. ; portal-footer ;
+
+
+UPDATE InvestSaudiFooterComponent; uid[unique = true]; logo1(code, $contentCV)[lang = en]; logo1(code, $contentCV)[lang = ar]; logo2(code, $contentCV)[lang = en]; logo2(code, $contentCV)[lang = ar]; logo3(code, $contentCV)[lang = en]; logoLink1(&linkRef); logoLink2(&linkRef); logoLink3(&linkRef); $contentCV[unique = true]
+                                 ; portal-footer     ; logo-en.svg                       ; logo-ar.svg                       ;                         			 ;                        			 ;                        			 ; logo1-link         ; logo2-link         ; logo3-link         ;
+
+
+# Hanging Login Urls
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name         ; linkName[lang = en]; linkName[lang = ar]	; url                                                       ; &linkRef 			; $contentCV[unique = true]	;
+                              ; register-url-link ; Register Url ; Apply Now          ; قدم الآن           	; https://eservices.sagia.gov.sa/en/login#register-apply	; register-url-link	;
+                              ; login-url-link    ; Login Url    ; Account Login      ; تسجل الدخول        	; https://eservices.sagia.gov.sa/                           ; login-url-link	;
+
+
+UPDATE InvestSaudiFooterComponent; uid[unique = true]; registerUrl(&linkRef); loginUrl(&linkRef); $contentCV[unique = true]
+                                 ; portal-footer     ; register-url-link    ; login-url-link 	;
+
+
+INSERT_UPDATE InvestSaudiCookieBarComponent; uid[unique = true]; name                 ; &componentRef	; text[lang = en]							; $contentCV[unique = true]	;
+                                           ; cookie-bar        ; Cookie Bar Component ; cookie-bar   	; <p>Our site uses cookies to help us improve the user experience. By using the site, you consent to the use of these cookies.</p>To learn more about cookies, please read our privacy policy <a href="/en/privacy-policy/" class="alert-link"><u>here</u></a>;	;
+
+
+# Create Content Slots
+UPDATE ContentSlot; uid[unique = true]; cmsComponents(&componentRef)	; $contentCV[unique = true]
+                  ; PortalFooterSlot  ; portal-footer,cookie-bar		;
+
+

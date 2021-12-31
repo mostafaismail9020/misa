@@ -1,0 +1,15 @@
+INSERT_UPDATE Status; code[unique = true]; name[lang = EN]    ; name[lang = AR]
+# status code must (!) be in lowercase letters
+                    ; open               ; "Open"             ; "مفتوح"
+                    ; in process         ; "In Process"       ; "قيد الإجراء"
+                    ; cancelled          ; "Cancelled"        ; "ملغي"
+                    ; completed          ; "Completed"        ; "مكتمل"
+                    ; rejected           ; "Rejected"         ; "مرفوض"
+                    ; visit initiated    ; "Visit Initiated"  ; "تم إنشاء الزيارة"
+                    ; activated          ; "Activated"        ; "مُفعل"
+                    ; closed             ; "Closed"           ; "مغلق"
+                    ; awaiting payment   ; "Awaiting Payment" ; "بإنتظار السداد"
+                    ; to be printed      ; "To Be Printed"    ; "تحت الطباعة"
+                    ; resolved           ; "Resolved"         ; "تمت المعالجة"
+                    ; approved           ; "Approved"         ; "تمت الموافقة"
+                    ; request expired    ; "Request Expired"  ; "الطلب منتهي الصلاحية"

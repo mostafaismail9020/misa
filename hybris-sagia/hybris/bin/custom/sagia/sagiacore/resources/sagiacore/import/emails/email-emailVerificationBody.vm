@@ -1,0 +1,101 @@
+## messageSource=classpath:/sagiacore/messages/email-emailVerification_$lang.properties
+#macro(genHtmlLinkStartTag $url)
+<a href="$url"><font color="#666666">
+#end
+#macro(genHtmlLinkEndTag)
+</font></a>
+#end
+#macro(genHtmlLink $url $textColor $bodyContent)
+<a href="$url"><font color="$textColor">$bodyContent</font></a>
+#end
+
+<html>
+	<head>
+	</head>
+	<body bgcolor="#ffffff"
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="center" valign="top">
+				<table width="610" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#fff">
+					<tr>
+						<td align="center" valign="top" bgcolor="#FFFFFF">
+							<table width="570" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td valign="middle">&nbsp;</td>
+								</tr>
+								<tr align="center">
+									<td valign="middle" align="center">
+										<img src="https://investsaudi.sa/investsaudistorefront/_ui/responsive/theme-lambda/images/InvestSaudiLogo-Email.png" alt="" width="229" height="72" border="0" align="center" title="" />
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td style="text-align: ${ctx.textAlign}; direction: ${ctx.textDirection};" valign="top">
+										#set ($pswdRequestUrl = "${ctx.secureRequestResetPasswordUrl}")
+										#set ($secureResetPasswordUrl = "${ctx.secureResetPasswordUrl}")
+										#set ($secureEmailVerifyUrl = "${ctx.secureEmailVerifyUrl}")
+										#set ($displaySecureResetPasswordUrl = "${ctx.displaySecureResetPasswordUrl}")
+										#if ($pswdRequestUrl.toString().toUpperCase().contains("SAGHCP")) <!--PROD SAGHCPAP, QA SAGHCQAP, DEV SAGHCDHWS-->
+											#set ($pswdRequestUrl = "https://investsaudi.sa/" + $pswdRequestUrl.toString().substring($pswdRequestUrl.toString().indexOf("sagiastorefront/")))
+											#set ($secureResetPasswordUrl = "https://investsaudi.sa/" + $secureResetPasswordUrl.toString().substring($secureResetPasswordUrl.toString().indexOf("sagiastorefront/")))
+											#set ($displaySecureResetPasswordUrl = "https://investsaudi.sa/" + $displaySecureResetPasswordUrl.toString().substring($displaySecureResetPasswordUrl.toString().indexOf("sagiastorefront/")))
+											#set ($secureEmailVerifyUrl = "https://investsaudi.sa/" + $secureEmailVerifyUrl.toString().substring($secureEmailVerifyUrl.toString().indexOf("sagiastorefront/")))
+										#end
+										#if ($secureEmailVerifyUrl.toString().toUpperCase().contains("SAGHCP")) <!--PROD SAGHCPAP, QA SAGHCQAP, DEV SAGHCDHWS-->
+											
+											#set ($secureEmailVerifyUrl = "https://investsaudi.sa/" + $secureEmailVerifyUrl.toString().substring($secureEmailVerifyUrl.toString().indexOf("sagiastorefront/")))
+										#end
+
+										#set ($mailToUrl = "mailto:${ctx.messages.contactUsEmailAddress}")
+										#if(${ctx.baseSite.Uid} == "electronics")
+											#set ( $paragraphContactUs = ${ctx.messages.getMessage('paragraphContactUs_electronics', "#genHtmlLinkStartTag(${ctx.messages.contactUsPage})", "#genHtmlLinkEndTag()", "#genHtmlLink($mailToUrl '#666666' ${ctx.messages.contactUsEmailAddress})")} )
+										#else
+											#set ($faqPage = "${ctx.baseUrl}/faq")
+											#set ( $paragraphContactUs = ${ctx.messages.getMessage('paragraphContactUs', "#genHtmlLinkStartTag($faqPage)", "#genHtmlLinkEndTag()", "#genHtmlLinkStartTag(${ctx.messages.contactUsPage})", "#genHtmlLinkEndTag()", "#genHtmlLink($mailToUrl '#666666' ${ctx.messages.contactUsEmailAddress})")} )
+										#end
+
+										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif"><b>${ctx.messages.getMessage('salutation', ${ctx.title},${ctx.displayName})}</b>,</font></p>
+										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.sentenceAlmostDone}&nbsp;&nbsp;</font></p>
+##										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.sentenceUpdatePswdInstructions}:&nbsp;<a href="$secureResetPasswordUrl"><font color="#666666">$displaySecureResetPasswordUrl</font></a> </font></p>
+										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.sentenceUpdatePswdInstructions}:&nbsp;<a href="$secureEmailVerifyUrl" style="font-weight: bold;"><font color="#666666">Verify Email</font></a> </font></p>
+										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.getMessage('paragraphSecurityNote', ${ctx.emailExpiresInMinutes})}</font></p>
+										
+										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">$paragraphContactUs</font></p>
+										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.complimentaryClosing}</font></p>
+										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.signature}</font></p>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+                                <tr>
+                                    <td valign="middle">
+
+                                        800 244 9990<br>
+                                        +966 11 203 5777<br>
+                                        Twitter @MISAcare<br>
+                                        InvestorCare@misa.gov.sa
+                                    </td>
+                                </tr>
+								<tr align="right">
+									<td valign="middle" align="right">
+										<img src="https://investsaudi.sa/investsaudistorefront/_ui/responsive/theme-lambda/images/InvestSaudiFooter-Email.png" alt="" width="229" height="72" border="0" align="right" title="" />
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</body>
+</html>

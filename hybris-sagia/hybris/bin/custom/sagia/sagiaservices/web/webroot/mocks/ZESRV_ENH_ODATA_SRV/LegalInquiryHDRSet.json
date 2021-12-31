@@ -1,0 +1,2470 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000680')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000680')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000680",
+        "SrGuid": "005056B1-1C89-1ED8-9BE0-A9F680C99036",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1528848000000)/",
+        "SrStCode": "E0020",
+        "SrStDesc": "Started",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000680')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000680')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000680')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000680')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000680')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000684')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000684')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000684",
+        "SrGuid": "005056B1-1C89-1ED8-9BF2-70D48749D51F",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1528934400000)/",
+        "SrStCode": "E0020",
+        "SrStDesc": "Started",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000684')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000684')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000684')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000684')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000684')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000685')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000685')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000685",
+        "SrGuid": "005056B1-1C89-1ED8-9BF6-9224CDB995C9",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1528934400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000685')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000685')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000685')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000685')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000685')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000686')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000686')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000686",
+        "SrGuid": "005056B1-1C89-1ED8-9BF7-08F59FDF55D1",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1528934400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000686')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000686')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000686')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000686')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000686')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000687')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000687')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000687",
+        "SrGuid": "005056B1-1C89-1ED8-9BF8-609FED381667",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1528934400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000687')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000687')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000687')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000687')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000687')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000688')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000688')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000688",
+        "SrGuid": "005056B1-1C89-1ED8-9BF8-99996E4A9680",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1528934400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000688')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000688')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000688')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000688')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000688')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000699')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000699')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000699",
+        "SrGuid": "005056B1-1C89-1ED8-9DA4-A37027DA4121",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1529539200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000699')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000699')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000699')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000699')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000699')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000700')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000700')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000700",
+        "SrGuid": "005056B1-1C89-1ED8-9DA5-71689C7B414B",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1529539200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000700')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000700')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000700')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000700')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000700')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000701')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000701')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000701",
+        "SrGuid": "005056B1-1C89-1ED8-9DA6-115EA968014E",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1529539200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000701')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000701')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000701')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000701')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000701')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000704')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000704')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000704",
+        "SrGuid": "005056B1-1C89-1ED8-9DA8-B4A6285C41E9",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1529539200000)/",
+        "SrStCode": "E0002",
+        "SrStDesc": "Completed",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000704')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000704')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000704')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000704')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000704')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000706')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000706')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000706",
+        "SrGuid": "005056B1-1C89-1ED8-9DAA-A8FDE60E0238",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1529539200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000706')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000706')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000706')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000706')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000706')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000707')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000707')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000707",
+        "SrGuid": "005056B1-1C89-1ED8-9DAB-033D7C040249",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1529539200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000707')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000707')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000707')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000707')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000707')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000740')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000740')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000740",
+        "SrGuid": "005056B1-1C89-1ED8-9FCF-2FFE4E4681A5",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1530576000000)/",
+        "SrStCode": "E0002",
+        "SrStDesc": "Completed",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000740')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000740')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000740')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000740')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000740')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000751')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000751')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000751",
+        "SrGuid": "005056B1-1C89-1ED8-A082-C5F2D2958C7D",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1530748800000)/",
+        "SrStCode": "E0002",
+        "SrStDesc": "Completed",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000751')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000751')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000751')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000751')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000751')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000779')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000779')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000779",
+        "SrGuid": "005056B1-1C89-1ED8-A3E6-46EDEAA384AE",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532390400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000779')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000779')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000779')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000779')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000779')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000780')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000780')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000780",
+        "SrGuid": "005056B1-1C89-1ED8-A3E7-16D101B704DA",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532390400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000780')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000780')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000780')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000780')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000780')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000781')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000781')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000781",
+        "SrGuid": "005056B1-1C89-1ED8-A3F7-BA319382889F",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532476800000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000781')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000781')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000781')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000781')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000781')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000783')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000783')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000783",
+        "SrGuid": "005056B1-1C89-1ED8-A497-60988E5FD249",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532563200000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000783')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000783')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000783')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000783')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000783')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000785')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000785')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000785",
+        "SrGuid": "005056B1-1C89-1ED8-A4AA-FB9CB0D6D79F",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532649600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000785')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000785')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000785')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000785')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000785')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000786')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000786')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000786",
+        "SrGuid": "005056B1-1C89-1ED8-A4AB-26E56A21D7A3",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532649600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000786')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000786')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000786')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000786')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000786')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000787')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000787')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000787",
+        "SrGuid": "005056B1-1C89-1ED8-A4AB-5A7985E157A3",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532649600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000787')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000787')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000787')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000787')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000787')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000789')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000789')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000789",
+        "SrGuid": "005056B1-1C89-1ED8-A4AB-9CB8DFD5D7A7",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532649600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000789')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000789')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000789')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000789')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000789')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000790')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000790')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000790",
+        "SrGuid": "005056B1-1C89-1ED8-A4AB-D3671498D7B8",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532649600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000790')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000790')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000790')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000790')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000790')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000791')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000791')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000791",
+        "SrGuid": "005056B1-1C89-1ED8-A4AD-E5D541D757EB",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532649600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000791')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000791')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000791')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000791')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000791')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000792')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000792')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000792",
+        "SrGuid": "005056B1-1C89-1ED8-A4AE-1BD74E16981C",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532649600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000792')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000792')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000792')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000792')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000792')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000793')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000793')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000793",
+        "SrGuid": "005056B1-1C89-1ED8-A4AE-252066FB981C",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532649600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000793')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000793')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000793')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000793')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000793')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000796')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000796')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000796",
+        "SrGuid": "005056B1-1C89-1ED8-A4AE-610C48BBD837",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532649600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000796')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000796')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000796')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000796')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000796')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000698')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000698')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000698",
+        "SrGuid": "005056B1-1C89-1EE8-9D8F-DADBE44D1B62",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1529452800000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000698')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000698')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000698')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000698')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000698')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000730')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000730')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000730",
+        "SrGuid": "005056B1-1C89-1EE8-9EEE-393DC4FDCCCB",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1530230400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000730')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000730')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000730')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000730')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000730')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000731')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000731')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000731",
+        "SrGuid": "005056B1-1C89-1EE8-9EEE-BE1B66D0CCEE",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1530230400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000731')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000731')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000731')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000731')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000731')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000732')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000732')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000732",
+        "SrGuid": "005056B1-1C89-1EE8-9EEF-ABF8247A4D1A",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1530230400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000732')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000732')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000732')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000732')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000732')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000733')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000733')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000733",
+        "SrGuid": "005056B1-1C89-1EE8-9FB5-171A010D5A9D",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1530489600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000733')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000733')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000733')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000733')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000733')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000734')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000734')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000734",
+        "SrGuid": "005056B1-1C89-1EE8-9FB8-CE110E199B6C",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1530489600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000734')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000734')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000734')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000734')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000734')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000735')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000735')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000735",
+        "SrGuid": "005056B1-1C89-1EE8-9FBA-6411C6009BC6",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1530489600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000735')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000735')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000735')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000735')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000735')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000739')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000739')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000739",
+        "SrGuid": "005056B1-1C89-1EE8-9FBF-755BDE661D4D",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1530489600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000739')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000739')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000739')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000739')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000739')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000757')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000757')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000757",
+        "SrGuid": "005056B1-1C89-1EE8-A2E1-89B3DDDDC13A",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000757')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000757')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000757')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000757')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000757')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000758')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000758')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000758",
+        "SrGuid": "005056B1-1C89-1EE8-A2E3-E09B06F44189",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000758')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000758')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000758')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000758')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000758')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000759')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000759')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000759",
+        "SrGuid": "005056B1-1C89-1EE8-A2E5-06AFC6138192",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000759')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000759')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000759')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000759')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000759')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000760')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000760')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000760",
+        "SrGuid": "005056B1-1C89-1EE8-A2E6-3B8050B201D2",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000760')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000760')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000760')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000760')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000760')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000761')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000761')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000761",
+        "SrGuid": "005056B1-1C89-1EE8-A2E6-8517FDB141DE",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0003",
+        "SrStDesc": "Rejected",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000761')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000761')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000761')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000761')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000761')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000762')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000762')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000762",
+        "SrGuid": "005056B1-1C89-1EE8-A2E7-A05378218205",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0003",
+        "SrStDesc": "Rejected",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000762')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000762')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000762')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000762')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000762')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000763')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000763')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000763",
+        "SrGuid": "005056B1-1C89-1EE8-A2E7-BA9A550D420C",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000763')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000763')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000763')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000763')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000763')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000764')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000764')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000764",
+        "SrGuid": "005056B1-1C89-1EE8-A2E7-BC7132A0820C",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000764')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000764')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000764')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000764')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000764')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000765')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000765')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000765",
+        "SrGuid": "005056B1-1C89-1EE8-A2E7-C229D863420C",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000765')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000765')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000765')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000765')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000765')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000766')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000766')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000766",
+        "SrGuid": "005056B1-1C89-1EE8-A2E7-FF3F3FDDC211",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000766')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000766')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000766')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000766')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000766')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000767')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000767')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000767",
+        "SrGuid": "005056B1-1C89-1EE8-A2E8-0EF9B49EC212",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000767')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000767')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000767')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000767')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000767')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000768')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000768')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000768",
+        "SrGuid": "005056B1-1C89-1EE8-A2E8-194576358215",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000768')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000768')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000768')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000768')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000768')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000769')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000769')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000769",
+        "SrGuid": "005056B1-1C89-1EE8-A2E8-32772E816230",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000769')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000769')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000769')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000769')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000769')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000770')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000770')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000770",
+        "SrGuid": "005056B1-1C89-1EE8-A2E8-63CB2917C24C",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000770')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000770')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000770')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000770')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000770')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000771')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000771')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000771",
+        "SrGuid": "005056B1-1C89-1EE8-A2E8-6C83A1E2C259",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000771')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000771')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000771')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000771')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000771')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000772')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000772')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000772",
+        "SrGuid": "005056B1-1C89-1EE8-A2E8-6F30D2DC4259",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000772')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000772')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000772')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000772')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000772')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000773')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000773')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000773",
+        "SrGuid": "005056B1-1C89-1EE8-A2E8-D8B5507F4271",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000773')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000773')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000773')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000773')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000773')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000774')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000774')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000774",
+        "SrGuid": "005056B1-1C89-1EE8-A2E9-986135CD02A4",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000774')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000774')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000774')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000774')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000774')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000775')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000775')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000775",
+        "SrGuid": "005056B1-1C89-1EE8-A2E9-C6ABDCA462A6",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000775')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000775')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000775')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000775')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000775')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000776')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000776')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000776",
+        "SrGuid": "005056B1-1C89-1EE8-A2E9-CABB7C2FC2A8",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531958400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000776')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000776')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000776')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000776')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000776')/LegalInquiry"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000777')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000777')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryHDR"
+        },
+        "SrId": "1000777",
+        "SrGuid": "005056B1-1C89-1EE8-A3C9-EEDB7BF9DDDE",
+        "BpId": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1532304000000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "TransType": "ZS20",
+        "TransTypeDesc": "Legal Consultation",
+        "Action": "00",
+        "LogonUser": "TUSER10",
+        "BpName": "شركة تجربة",
+        "AttachmantHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000777')/AttachmantHDRSet"
+          }
+        },
+        "ContentHDRSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000777')/ContentHDRSet"
+          }
+        },
+        "GetTextSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000777')/GetTextSet"
+          }
+        },
+        "UploadContentSet": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000777')/UploadContentSet"
+          }
+        },
+        "LegalInquiry": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryHDRSet('1000777')/LegalInquiry"
+          }
+        }
+      }
+    ]
+  }
+}

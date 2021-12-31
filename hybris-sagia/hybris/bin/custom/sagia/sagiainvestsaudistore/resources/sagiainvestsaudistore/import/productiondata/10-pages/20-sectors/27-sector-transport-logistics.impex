@@ -1,0 +1,392 @@
+$page = transport-logistics
+$sector= transport-logistics
+$template = portalSectorTemplate
+$pageName = Transport and Logistics
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media						   
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources																															   
+
+INSERT_UPDATE CategoryPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); $contentCV[unique = true]; defaultPage[default = 'false']; approvalStatus(code)[default = 'approved']
+                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ;                          ;                               ;
+
+INSERT_UPDATE CMSCategoryRestriction; uid[unique = true]                               ; categories(code, $catalogVersion); $contentCV[unique = true]; pages(uid, $contentCV)
+                                    ; sector-transport-logistics-restriction ; transport-logistics   ;                          ; transport-logistics
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; name                                ; &componentRef                           ; $contentCV[unique = true]
+                                                  ; transport-logistics-paragraph ; Transport and Logistics Overview ; transport-logistics-paragraph ;
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = en]
+                                           ; transport-logistics-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<h3>Overview</h3>
+<p>Being at the crossroads of important international trade routes, amidst three continents: Asia, Europe and Africa, Saudi Arabia&rsquo;s Vision 2030 aims at maximizing the benefits of its exceptional and strategic geographic position by building a unique transport &amp; logistics hub in the region.</p>
+<p>&nbsp;</p>
+<p>KSA government has already invested heavily in the construction of several transport &amp; logistics infrastructure such as ports, railways, roads and airports. To take full advantage of these investments, Saudi Arabia is entering into a new series of international partnerships and working with the private sector to complete, improve and link its infrastructure internally and across borders. Transport and logistic infrastructure is also being unlocked with systems that can drive higher performance, including more rigorous governance, leaner processes and a more efficient customs system.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = ar]
+                                           ; transport-logistics-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+                                              نظرة عامة
+ترتكز  رؤية المملكة 2030 على موقعها الاستراتيجي كمفترق طرق للتجارة الدولية الهامة، بين ثلاث قارات: آسيا وأوروبا وأفريقيا، وتهدف إلى تحقيق أقصى قدرٍ  من منافع حضورها الجغرافي الاستثنائي والاستراتيجي من خلال بناء مركز فريد للنقل والخدمات اللوجستية في المنطقة.
+
+ 
+
+وقد استثمرت حكومة المملكة العربية السعودية بشكل كبير في بناء العديد من البنى التحتية للنقل والخدمات اللوجستية؛ مثل الموانئ والسكك الحديدية والطرق والمطارات.وللاستفادة الكاملة من هذه الاستثمارات، تدخل المملكة العربية السعودية في سلسلة جديدة من الشراكات الدولية، كما تعمل مع القطاع الخاص لاستكمال وتحسين وربط بنيتها التحتية داخلياً وعبر الحدود.
+
+ 
+
+وقد ساعدت أنظمة فتح الهياكل الأساسية للنقل والخدمات اللوجستية على تقديم أداء أفضل، بما في ذلك: تعزيز دور الحوكمه، و تقليل الإجراءات، و نظام جمركي أكثر كفاءة.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresComponent; uid[unique = true]; name         ; figures; unit; facts[lang=en] ; &componentRef; $contentCV[unique = true];
+
+                                     ; facts-figures-1-$sector      ; Facts Figures 37 ; 70       ; SAR Billion  ;Logistic market size                        ; facts-figures-1-$sector ;
+                                     ; facts-figures-2-$sector      ; Facts Figures 38 ; 6      ;                                       ;Number of container ports; facts-figures-2-$sector ;
+                                     ; facts-figures-3-$sector      ; Facts Figures 39 ; 27     ;         ;Total number of airports                  ; facts-figures-3-$sector ;
+                                     ; facts-figures-4-$sector      ; Facts Figures 40 ; 85    ; Million passengers         ;Number of air passengers in 2016                  ; facts-figures-4-$sector ;
+                                     ; facts-figures-5-$sector      ; Facts Figures 41 ; 1.2       ;  Million tons ;Volume of air cargo in 2015                 ; facts-figures-5-$sector ;
+                                     ; facts-figures-6-$sector      ; Facts Figures 42 ; 1,500      ;  KM ;Length of new railways         ; facts-figures-6-$sector ;
+                                     ; facts-figures-7-$sector      ; Facts Figures 43 ; 240     ; Million tons ;Cargo handled by sea ports in 2017                        ; facts-figures-7-$sector ;
+
+ 
+
+INSERT_UPDATE InvestSaudiFactsFiguresContainer; uid[unique = true]      ; name                     ;title[lang=en]  ; simpleCMSComponents(&componentRef)  ; &componentRef  ;$contentCV[unique = true]
+                                     ; ff-container-$sector   ; Fatcs Figures Container  ;Fatcs & Figures ; facts-figures-1-$sector, facts-figures-2-$sector, facts-figures-3-$sector,facts-figures-4-$sector,facts-figures-5-$sector,facts-figures-6-$sector,facts-figures-7-$sector ; ff-container-$sector ;
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; $contentCV; &componentRef
+                                           ; contact-form ;           ; contact-form
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; fo-explore-all-$sector ;                          ; Explore all          ; /sectors-opportunities/opportunities/?q=&sectorIds=transport-logistics
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]       ; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                       ; fo-component-$sector ; Featured Opportunities Component ; Transport and Logistics Opportunities ;3; fo-explore-all-$sector ; fo-component-$sector ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; ss-explore-all-$sector ;                          ; Explore all          ; /about/success-stories/?q=&sectorIds=transport-logistics
+
+
+INSERT_UPDATE InvestSaudiSuccessStoriesComponent; uid[unique = true]; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                ; ss-component-$sector ; Success Story Component ; Transport and Logistics Success Stories ;3; ss-explore-all-$sector ; ss-component-$sector;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                       ; $contentCV[unique = true]; linkName  [lang = en]             ; linkName[lang = ar]        ; url
+                              ; sector-proposition-1-link-$sector ;                          ; Transport        ; قطاع النقل ;
+                              ; sector-proposition-2-link-$sector ;                          ; Logistics        ; الخدمات اللوجستية     ;
+
+INSERT_UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; name                        ; url(uid, $contentCV)                     ; index(); &componentRef                       ; $contentCV[unique = true]
+                                                   ; sector-proposition-1-$sector ; Transport ; sector-proposition-1-link-$sector ; 1      ; sector-proposition-1-$sector ;
+                                                   ; sector-proposition-2-$sector ; Logistics ; sector-proposition-2-link-$sector ; 2      ; sector-proposition-2-$sector ;
+																				   
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-1-$sector ;                          ; "<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p>Whether by land, sea or air, Saudi businesses benefit from transport connectivity that rivals the best networks in the world. Located at the convergence of three different continents, Saudi Arabia&rsquo;s transport sector enjoys a geographical competitive advantage with its accessibility to major emerging markets and important marine passages. This sector is about to experience unprecedented improvements that will take transport services to the next level. KSA sea freight already surpasses neighboring GCC nations in terms of capacity and usage, yet it&rsquo;s set to significantly increase due to seaport expansion and technological advancement.</p>
+<p>A new era awaits the aviation sector with 5 new airports in the pipeline, as well as key extensions to Jeddah and Riyadh and 17 other airports that are already underway. Ground networks are also considerable, spanning hundreds of thousands of kilometers of roads and thousands of kilometers of railways that are subject to major refurbishment and expansion. Exciting opportunities await investors who are keen to contribute to the new transportation model or to benefit from the additional access that it manifests.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Heart of a thriving region</strong></p>
+<p>Saudi Arabia&rsquo;s strategic location puts it at arms distance from a vast array of global consumers. Most European markets are under 7 hours flight time away and Asian markets are generally just a 4 hour plane journey from KSA. Half the world&rsquo;s population lives within a 5 hour flight from the Kingdom, connecting it to a regional market consisting of more than 3.5 billion potential customers over three continents. KSA&rsquo;s central location also provides it with a cost advantage in the Arabian Peninsula, North Africa and East Africa. Cost distribution advantages of more than 10% exist for Greater Arab Free Trade countries (GAFTA) and to nations within the Arabian Peninsula, enabling favorable conditions for the movement of goods between the regions.</p>
+<p>&nbsp;</p>
+<p><strong>Robust transport infrastructure in place</strong></p>
+<p>Saudi Arabia has a landmass of more than 2 million square km and boasts a wide transport network with a particular strength in maritime transport, air transport and road transportation :</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Maritime transport</strong></li>
+</ul>
+<p>Saudi Arabia&rsquo;s maritime network is unrivaled in the Middle East, handling a capacity of approximately 8 million twenty-foot equivalent containers (TEUs) per year and receiving 11,000 ships annually. The network consists of 10 primary harbors for non-oil trade, 200 piers, 216 berths and 6 leading container ports located along a critical intersection of the East-West shipping routes.</p>
+<p>&nbsp;</p>
+<p>More than 270 million tons of cargo move through the Saudi maritime network on a yearly basis, making it the largest within the GCC. KSA is also the home of the fastest growing port in the world, King Abdullah Port at King Abdullah Economic City (KAEC), which handles 4 million TEU annual capacity. Saudi Arabia&rsquo;s ports dominate the regional transit market, handling more than 90% of Red Sea trade transits and 30% of the East African trade transits.</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Air transport</strong></li>
+</ul>
+<p>Saudi Arabia&rsquo;s aviation infrastructure is extensive, efficient and robust, comprising of 6 international, 9 regional and 12 domestic airports. Three of its airports are amongst the busiest in the GCC, transporting the bulk of the 80 million passengers who pass through the Kingdom on a yearly basis. KSA connects to 81 airports in 45 countries, allowing for more than 1.2 million tons of cargo to be shuttled around the globe. 90% of the Saudi population lives within a two-hour drive of the nearest airport, making air travel a popular transport option. In recent years, Saudi Arabia&rsquo;s airports have experienced significant growth. 2016 saw Saudi airports receive 85 million passengers, which is a 4% increase on the year before. The number of flights was up 10% at 710,000 trips, while 7% more cargo was handled by the aviation sector totaling 1.5 million tons over the year.</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Road transport</strong></li>
+</ul>
+<p>The Kingdom has one of the largest road networks in the world covering more than 200,000 KM of roads, including 66,000 km of roadways connecting major cities and providing access to railways, ports and airports. This vast and growing ground network benefits from 5,000 km of highways and 6,000 km of bridges, providing extensive means to transport passengers and goods in and around the Kingdom.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Government commitment to grow the sector</strong></p>
+<p>Economic growth, population maturation and rapid urbanization are all factors driving Saudi Arabia to invest in the massive expansion of its transportation networks. This includes the introduction of urban transport systems such as metros and buses, as well as inter-urban networks such as freight and high speed railways. The underlying aim here is to capitalize on considerably untapped potential and to transform the Kingdom into a global logistics hub.</p>
+<p>The Saudi Arabian government is fully committed to developing the sector and has set aside considerable capital for expansion plans. The allocation of significant budget to KSA&rsquo;s transport infrastructure is an essential prerequisite for the stimulation of growth. Hence the reason why the Saudi 2018 budget includes an 86% increase in planned government expenditure on infrastructure and transportation, increasing from SAR 29 billion (USD $ 7.7bn) to SAR 54 billion (USD $ 14.4 billion).</p>
+<p>Furthermore, between 2016 and 2020, Saudi Arabia plans to spend SAR 200 million (USD $ 53.3 million) on improving railway cargo capacity and a further SAR 30 million (USD$ 8 million) on upgrading the rail network. Furthermore, the Ministry of Transport has been allocated SAR 174 million (USD $ 46.4 million) to improve the efficiency of ports, specifically targeting a reduction in the time that containers are tied up in port customs (from 14 to 5 days).</p>
+<p>&nbsp;</p>
+<p><strong>Major expansion initiatives are underway</strong></p>
+<p>Several expansion opportunities are underway in Saudi Arabia across the different transport verticals :</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Air transport</strong></li>
+</ul>
+<p>The aviation sector in Saudi Arabia is booming and undergoing extensive improvements that will provide fantastic opportunities for investors. Expansion of King Abdulaziz international airport in Jeddah is already underway with an aim to host 43 million passengers by 2025 and 80 million passengers by 2035. King Khaled international airport in Riyadh is also undergoing expansion with the view to accommodate 25 million passengers per year. Moreover, Saudi Arabia is building five new airports in Taif, Jizan, Qunfudah, Farsan and Najran and adding terminals to its existing airports in Jeddah, Abha, Arar, Hail, Al Ahsa, Yanbu, Qassim, Wadi Al Dawasir, Al Qurayyat, Rafha, Al Jawf, Turaid, Al Qaisuma, Sharurah, Al Wajh and Al Baha.</p>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Rail transport</strong></li>
+</ul>
+<p>The Saudi government is currently investing SAR 93.75 billion (USD $ 25 billion) in three mega projects as part of a combined 3,900km rail expansion plan. The North-South Rail Project is the largest railway in the region spanning a distance of 2,400 KM stretching from the capital city of Riyadh (in the northwest of the country) to Al Haditha, near the border with Jordan. The project is costing SAR 13.1 billion (USD $ 3.5 billion) and is projected to transport 4 million tons of commodities and 2 million passengers annually once it&rsquo;s up and running.</p>
+<p>&nbsp;</p>
+<p>The SAR 56.25 billion (USD$ 15 billion) Haramain High Speed Rail Project linking Mecca and Medina is also underway. Once complete it will span 450 km and cut transportation time between the two cities to a mere two hours. It also runs through Jeddah and Rabigh, shortening the trip from Jeddah to Mecca to a rapid half hour.</p>
+<p>&nbsp;</p>
+<p>The third major rail program is the Saudi Land bridge Project providing the first direct link between the Red Sea and the Arabian Gulf. This impressive proposal includes plans to construct 950 km of new rail line between Riyadh and Jeddah and another 115 km of track between Dammam and Jubail, costing in the region of SAR 26.25 billion (USD $ 7 billion). In addition to the above mega-projects, the Saudi government envisions a further 10,000km of rail and metro tracks to be added to the network by 2030.</p>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Maritime transport</strong></li>
+</ul>
+<p>Saudi Arabia is heavily investing in its seaports to modernize its infrastructure and increase their capacity. Several projects worth SAR 6 billion (USD $ 1.6 billion) are already underway and are designed to boost the maritime transport sector by transforming it into one of the most technologically advanced and functional systems of the world. SAR 30 billion (USD $ 8 billion) has been set aside by the Saudi Ports Authority as a strategic investment for the equipping and modernization of all of ports.</p>
+<p>&nbsp;</p>
+<p>With an estimated SAR 1 billion (USD $ 266 million) worth of projects still to be awarded, investors would be pertinent to watch this space.</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Road transport</strong></li>
+</ul>
+<p>Ground networks in KSA are vast and growing at a rapid pace, providing a comprehensive means to transport passengers and goods inland. Land freight transportation is forecast to boom due to increasing industrial activity and the expansion of e-commerce throughout the region.</p>
+<p>&nbsp;</p>
+<p>Under the current development plan, Saudi Arabia has allocated a substantial sum to the creation and renovation of the Kingdom&rsquo;s roadways, particularly its heavily used inner-city roads, intersections and bridges. Plans are scheduled to build over 3,500 km of new roads, including 284 highways set to link the country&rsquo;s main urban centers. Several ambitious projects are starting to take shape, such as the design and construction of Obhur Creek Bridge, located 20 km from Jeddah. Plans for construction include eight lanes of road traffic, footpaths and two lanes of rail transit. Also of grandeur is the 72 km Mecca-Jeddah Highway, designed to appease Hajj pilgrims by spanning 4 lanes in both directions. KSA road projects are in full swing and are showing no signs of abating with an additional 2,200 km of road construction planned for the next development phase beginning in 2020.</p>
+<p>&nbsp;</p>
+<p>As the ground network expands, so will the opportunity to access new regions and connect businesses previously considered out of reach.</p>
+<p>&nbsp;</p>
+<p><strong>Pivotal role for private sector to participate in the transport</strong></p>
+<p>Saudi Arabia is determined to broaden the role of the private sector as it pushes to diversify its economy. Private entities are being encouraged to collaborate with the government as it develops the Kingdom&rsquo;s transport infrastructure. Particular partnership is being sought for the operation of seaports, airports and their related supply chains. Public-private partnerships (PPP) are being pursued to fund several key schemes, while a number of the country&rsquo;s publicly operated transportation facilities are being readied for full privatization. By 2020, the target is for private sector companies to be involved in the development and operation of at least 5% of roads, 50% of the rail network and 70% of Saudi Arabia&rsquo;s ports.</p>
+<p>Several projects and initiatives are already underway with strong private sector participation. Examples include the 20-year build-operate-transfer agreement between Saudi Binladen Group and A&eacute;roports de Paris Management for the Hajj terminal at King Abdulaziz International Airport.</p>
+<p>Considerable investment opportunities await domestic and international organizations that are eager to participate in the development of Saudi Arabia&rsquo;s transport sector.</p>
+</div>
+</div>
+</div>
+</div>
+</div> "
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-2-$sector ;                          ; "<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p>Saudi Arabia occupies a truly exceptional geographical location in the world when it comes to logistics and international trade. It sits between three continents giving it a unique advantage when it comes to the Asia-Europe trade routes and distributing goods through the Arabian Peninsula.</p>
+<p>It should come as no surprise that KSA is a freight-forwarding leader that holds the largest logistics market in the GCC. It&rsquo;s a market that has consistently grown at a rate of 5% per year and that maintains a bullish outlook. The KSA logistics infrastructure is also well-established and is positioned to flourish with the largest maritime network in the Middle East, one of the largest road networks in the world and a new state of the art industrial city hub system about to open its doors.</p>
+<p>Simply put, there are very few places on Earth with the logistics market potential of Saudi Arabia.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<p><strong>Favorable and strategic geographical location</strong></p>
+<p>Saudi Arabia sits right at the crossroads of a very important international trade route that connects Asia, Europe and Africa. This strategic location provides the Kingdom with a unique advantage over other nations, enabling it to become a leading regional logistics hub.</p>
+<p>The country&rsquo;s location is optimal for the distribution of goods within the Arabian Peninsula, the Levant and East Africa; an area with an aggregated GDP of SAR 9.000 trillion (USD $ 2.413 trllion) and 647 million consumers. Moreover, the Kingdom resides directly on the Asia-to-Europe trade route, through which 12% of global container trade moves annually.</p>
+<p>&nbsp;</p>
+<p><strong>Large regional market with excellent prospects for growth</strong></p>
+<p>Saudi Arabia&rsquo;s logistics market is valued at SAR 67.5 billion (USD $ 18 billion), making it the largest among the GCC nations. It accounts for 55% of the total GCC logistics market and is ranked 3<sup>rd</sup>&nbsp;most attractive within emerging markets. It is also one of the fastest growing logistics sectors globally and is expected to reach almost SAR 94 billion (USD $ 25 billion) by 2020.</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Freight forwarding</strong>&nbsp;&nbsp;</li>
+</ul>
+<p>The market for freight forwarding is expected to further increase at 6.4% CAGR to reach SAR 71.25 billion (USD $ 19.0 billion) by 2020. This surge is attributable to the expanding expatriate population, increases in fuel prices, rising industrialization and the advancement of the e-commerce industry.</p>
+<p>The freight-forwarding segment of the logistics market is the biggest contributor to growth in this sector. The market size increased from SAR 40 billion (USD $ 10.6 billion) in 2010 to SAR 52.1 billion (USD $ 13.9 billion) in 2015. Freight forwarding by sea is the dominant means of transport, accounting for SAR 26.25 billion (USD $ 7 billion).</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Third Party Logistics (3PL)</strong>&nbsp;&nbsp;</li>
+</ul>
+<p>Rising demand for 3PL logistics is forecast for several reasons. Trade relations between Saudi Arabia and other countries are improving, which is attracting significant interest in KSA export and import values. Strong FDI inflows (particularly in oil &amp; gas) are also set to increase opportunities for 3PL providers, as will expanding industrial activity that stimulates the need for supply chain management services.</p>
+<p>The 3PL segment of the logistics market increased significantly between 2010 and 2015, growing at 26.6% CAGR (vs. 7.5% growth globally) and reaching a total value of SAR 3 billion (USD $ 0.8 billion). Expectations are set for it to grow even further at 22% CAGR until 2020 to reach a value of SAR 8.25 billion (USD $ 2.2 billion).</p>
+<p>Rising demand for 3PL logistics is forecast for several reasons. Trade relations between Saudi Arabia and other countries are improving, which is attracting significant interest in KSA export and import values. Strong FDI inflows (particularly in oil &amp; gas) are also set to increase opportunities for 3PL providers, as will expanding industrial activity that stimulates the need for supply chain management services.</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Warehousing</strong>&nbsp;<strong>&nbsp;</strong></li>
+</ul>
+<p>As with freight-forwarding, cold chain and third party logistics, the warehousing market is expected to further grow at 9% CAGR to reach a market size of SAR 15.75 billion (US $4.2 billion) by 2020. Growth in this segment is expected to materialize as a result of increasing manufacturing activity, burgeoning international trade, rising domestic consumption and the easing of government regulations.</p>
+<p>The warehousing segment has also witnessed substantial growth in recent years, expanding from SAR 7.1 billion (USD $ 1.9 billion) in 2010 to SAR 10.12 billion (USD $ 2.7 billion) in 2015. Industrial/retail warehousing leads this segment and accounts for SAR 4.1 billion (USD $ 1.1 billion) in revenue. CFS/ICD is in close second and accounts for SAR 3.75 billion (USD $ 1.0 billion), while cold storage warehouse facilities generate SAR 2.25 billion (US $ 0.6 billion).</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Cold Chain</strong></li>
+</ul>
+<p>The cold chain segment of KSA&rsquo;s logistics market is no different to the other segments in that it has also seen significant growth over recent years. This segment grew at 4% CAGR from SAR 2.92 billion (USD $ 0.78 billion) in 2010 to SAR 3.65 billion (USD $ 0.95 billion) in 2015. Growth is expected to reach SAR 6.15 billion (USD $ 1.64 billion) by 2020 as a result of active participation by the pharmaceutical industry and the increasing demand for fresh/processed fruits, vegetables, meat and dairy.</p>
+<p>&nbsp;</p>
+<p><strong>Government efforts to grow the sector</strong></p>
+<p>Saudi Arabia has an established and well-equipped logistics infrastructure that is in the process of modernization and adaptation to a rapidly expanding market. The government has directed considerable efforts towards the growth of this sector through regulatory reform and massive investments in logistics infrastructure.</p>
+<p>Plans have been announced to invest SAR 112.5 billion (USD $ 30 billion) in upgrading facilities that will enable the Kingdom&rsquo;s ports to compete at a global level. SAR 159 billion (USD $ 42.4 billion) has been set aside to develop KSA&rsquo;s first private port; &lsquo;King Abdullah port&rsquo;, which is expected to handle 20 million TEUs by 2020. The Kingdom is also investing SAR 337.5 billion (USD $ 90 billion) developing its vast road and railway infrastructure.</p>
+<p>Huge benefits will be felt across the region in terms of expediting trade, improving transportation and curtailing waiting times. Furthermore, Saudi Arabia is developing 6 economic and industrial cities that are designated to move cargo freely between one another. KSA&rsquo;s industrial output already constitutes a share of 90% in non-oil exports, which means the logistics industry is about to receive a major boost when it settles into its new streamlined industrial city super-hubs.</p>
+</div>
+</div>
+</div>
+</div>
+</div> "
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-1-$sector ;                          ; " <div class='col-md-6 column'>
+<div>
+<p><strong>موقعٌ يستدعي الاهتمام</strong></p>
+<p>سواءٌ أكان المرور برًّا أو بحرًا أو جوًّا، ستتساوى ميزات السفر عبر المملكة، وذلك بفضل استفادة الشركات السعودية من شبكة للنقل التي تمكّنها من التواصل التنافسي مع أفضل الشبكات في العالم.</p>
+<p>فموقع المملكة الاستراتيجي عند تقاطعٍ تلتقي فيه ثلاث قارات مختلفة، يهب قطاع النقل في المملكة العربية السعودية أفضلية تنافسية جغرافية تيسّر له إمكانية الوصول إلى الأسواق الناشئة الرئيسة والاستفادة من الممرات البحرية الهامة.</p>
+<p>كما سيحظى هذا القطاع قريباً بطفرات تحسّن غير مسبوقة، تُعلي من خدمات النقل إلى مستوى أرقى. وحالياً، يتفوق الشحن البحري في المملكة العربية السعودية على ما لدى دول مجلس التعاون الخليجي المجاورة، سواء في القدرات المتاحة أو الاستخدام المتوفر، غير أن المتوقع أن يزداد ذلك على نحوٍ بيِّن، بفضل التوسع في الموانئ والاستفادة من التقدم التكنولوجي.</p>
+<p>هناك عصرٌ جديدٌ ينتظر قطاع الطيران مع التأهب لافتتاح 5 مطارات جديدة، بالإضافة إلى امتدادات رئيسة إلى مطاري جدة والرياض و17 مطارًا آخر قيد الإنشاء. كما أن شبكات النقل البرية مؤهلة وتمتد بطول مئات الآلاف من الكيلومترات قوامها الطرق المعبَّدة، وآلاف الكيلومترات من السكك الحديدية التي تشهد عمليات أساسية للتجديد والتوسعة.</p>
+<p>هناك فرص واعدة مثيرة تنتظر المستثمرين الحريصين على الإسهام في نموذج النقل الجديد أو الاستفادة من المقاصد الإضافية التي يحققها.</p>
+<p>&nbsp;</p>
+<p><strong>أكبر شبكة بحرية في دول مجلس التعاون الخليجي</strong></p>
+<p>يُهيمن الشحن البحري على سوق النقل في المملكة العربية السعودية، ليؤدي دورًا رئيسًا في استيراد وتصدير البضائع في جميع أنحاء المملكة. تتعامل الموانئ السعودية مع نحو 7 ملايين حاوية نمطية، كما تستقبل أكثر من 11000 سفينة سنوياً. وفي عام 2017 عبرت بضائع تزن أكثر من 270000 مليون طن عبر تسعة موانئ صناعية وتجارية بالمملكة، مما يجعل السعودية مستحوذة لأكبر شبكة بحرية في الشرق الأوسط.</p>
+<p>وتشرف الهيئة&nbsp;العامة&nbsp;للموانئ بالسعودية على هذه الشبكة، التي يشكلها 216 رصيفًا بجميع أنحاء البلاد، موفرة ممرات ربط تنافسية وآمنة بين الاقتصاد الوطني والعالمي. وتستثمر المملكة بكثافة في الموانئ البحرية لزيادة قدراتها عبر تطوير أنظمة رقمية تقلل بشكل كبير من الإجراءات الروتينية وتبسط إجراءات تخليص البضائع. وتنوي المملكة العربية السعودية استكمال أكبر شبكة بحرية في دول مجلس التعاون الخليجي بتحويلها إلى واحدة من أكفأ الأنظمة التكنولوجية والوظيفية في العالم.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p><strong>عصر جديد للنقل الجوي</strong></p>
+<p>يشهد قطاع الطيران في المملكة العربية السعودية عصر ازدهاره، ويحظى بتطبيق تعزيزات كبيرة توفر فرصاً رائعة للمستثمرين. وتضم شبكة النقل الجوي حاليًا 27 مطارًا، منها 6 دولية و 8 إقليمية و 13 محلية، وينمو النشاط والحركة بمعدل متضاعف باستمرار.</p>
+<p>ففي عام 2016 ، استقبلت هذه المطارات 85 مليون مسافر (بنمو سنوي قدره 4٪) ، وإدارة 710000 رحلة (بنمو سنوي نسبته 10٪) وتعاملت مع 1.5 مليون طن من البضائع (بنمو سنوي يساوي 7٪ ).</p>
+<p>وتنفذ المملكة العربية السعودية مشاريع كبرى تواكب هذا النمو، فهي تستحدث مطارات جديدة في الطائف وجازان والقنفذة وفرسان ونجران. كما تجري توسعات بمطاري جدة والرياض، وخاصة بمطار الملك عبد العزيز الدولي، للاستفادة من الخصخصة وبدعم من مطار شانغي الدولي في سنغافورة. كما تنال مرافق الشحن الجوي حصتها من هذا التحديث السريع، بغرض التوسع، والتخلص من اختناقات البنى التحتية. فالهدف هو زيادة إجمالي حجم الشحن الجوي في المملكة ليصل إلى 6 ملايين طن سنوياً بحلول عام 2030. يُضاف إلى ذلك تشغيل شركات الطيران الجديدة في السوق، مما يعني خيارات أكبر، سواء في الأسعار الأفضل أو الوجهات الأكثر، مما يدعم هدف المملكة العربية السعودية في أن تصبح مركز الملاحة الجوية في الشرق الأوسط.</p>
+<p>&nbsp;</p>
+<p><strong>شبكة برية واسعة ومتنامية</strong></p>
+<p>تتميز شبكات الطرق البرية في المملكة العربية السعودية بالامتداد والنمو بإيقاع متصاعد، بما يوفر وسائل شاملة لنقل الركاب والبضائع داخل البلاد. ومن المتوقع ازدهار النقل البري بسبب زيادة النشاط الصناعي، وتوسع التجارة الإلكترونية، في جميع أنحاء المنطقة.</p>
+<p>ويعد تيسير هذا النمو أحد أوجه ما أنجزته أكبر شبكات الطرق في العالم، الممتدة لأكثر من 200 ألف كيلومتر ، منها 66 ألف كيلومتر من الطرق السريعة.</p>
+<p>يُضاف إلى ذلك، توقع توسع الشبكة بشكل كبير تزامناً مع تطوير بنية تحتية جديدة بالشراكة مع القطاع الخاص (مثل الطرق الجديدة).</p>
+<p>تكتمل شبكة الطرق البرية هذه بأكثر من 1700 كيلو متر من السكك الحديدية التي تمتد بطول المملكة وعرضها. ومن المتوقع أن تتضاعف هذه الشبكة، فقد أقرت الحكومة العديد من مشاريع السكك الحديدية الجديدة التي تشمل سكة حديدية بين الشمال والجنوب ومشروع قطار الحرمين السريع​. يُضاف لذلك ، قيام المملكة العربية السعودية بالتزامن بتطوير بنية تحتية حديثة للنقل العام لمعالجة عدد من أهداف رؤية 2030 للمملكة.</p>
+<p>ويتطلع السعوديون إلى بدء تشغيل أول خدمات المترو بحلول عام 2019، بالإضافة إلى إنشاء نماذج جديدة للحافلات والناقلات المشتركة. ومع توسع الشبكة البرية، ستتوسع الفرص بالتزامن للوصول إلى مناطق جديدة تربط ما بين الشركات التي كانت تعد سابقاً وجهات نائية.</p>
+</div>
+</div> "
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-2-$sector ;                          ; " <div class='col-md-6 column'>
+<div>
+<p>تحتل المملكة العربية السعودية موقعاً استثنائياً&nbsp;يتوسط&nbsp;العالم،&nbsp; يشكل هذا الموقع للمملكة ميزةً فريدةً فيما يتعلق&nbsp; بالخدمات اللوجستية والتجارة الدولية ، إذ تقع&nbsp; المملكة بين ثلاث قارات لتكون على&nbsp; طرق التجارة التي تربط بين &nbsp;بين آسيا وأوروبا&nbsp;وبذلك يتم&nbsp;&nbsp;توزيع السلع والبضائع عبر شبه الجزيرة العربية.</p>
+<p>&nbsp;</p>
+<p>تعتبر المملكة العربية السعودية رائدة&nbsp; في مجال التجارة عبر الحدود ، ومالكة أكبر سوق لوجستية في دول مجلس التعاون الخليجي؛ فهي السوق التي نمت بمعدل سنوي نسبته 5٪ . كما أن البنية التحتية للخدمات اللوجستية في المملكة تتمتع بالقاعدة المتينة ، وذلك يعود لامتلاك السعودية أكبر شبكة بحرية في الشرق الأوسط، فضلاً عن كونها إحدى أضخم شبكات الطرق البرية في العالم.</p>
+<p>&nbsp;</p>
+<p>بإيجاز نقول: إنه من النادر أن نجد مكاناً&nbsp;لديه المواصفات التي تتمتع بها المملكة ،&nbsp; ويستحوذ على ما يماثل إمكانات سوق الخدمات اللوجستية للمملكة العربية السعودية.</p>
+<p><strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p><strong>الوصل بين ثلاث قارات</strong></p>
+<p>تقع المملكة العربية السعودية تماماً عند مفترق طرق تجارية دولية هامة تربط آسيا وأوروبا وأفريقيا. ويوفر هذا الموقع الاستراتيجي للمملكة ميزةً فريدة عن من&nbsp;سواها من الدول، مما يمكنها من أن تصبح مركزًا لوجستيًا إقليميًا رائدًا.</p>
+<p>فهذا الموقع هو الأمثل لتوزيع السلع&nbsp;على مستوى دول المنطقة وكذلك دول الشرق الأوسط&nbsp;&nbsp;و شمال أفريقيا؛ فهذه المناطق يبلغ إجمالي ناتجها المحلي 9 تريليون ريال سعودي ويقطنها 647 مليون مستهلك.</p>
+<p>كما أن المملكة&nbsp;تقع على طريق آسيا - أوروبا التجاري، إذ يشهد عبور 12٪ من تجارة الحاويات العالمية سنويًّا. وتحمل هذه كميات بضائع هائلة عابرة دول مجلس التعاون الخليجي التي ينمو الطلب فيها على المنتجات الصناعية.</p>
+<p>&nbsp;</p>
+<p><strong>السوق الإقليمية المتعطشة</strong></p>
+<p><strong>دراساتٌ بنموٍ هائل للقطاع</strong></p>
+<p>تبلغ قيمة سوق الخدمات اللوجستية في المملكة العربية السعودية اليوم 67.5 مليار ريال سعودي (18 مليار دولار أمريكي)، مما يضعها في المرتبة الأولى بين دول مجلس التعاون الخليجي. وتمثل هذه الخدمات اللوجستية نسبة 55 ٪ من إجمالي السوق المماثلة في دول مجلس التعاون الخليجي، كما تأتي في المرتبة الثالثة الأكثر جاذبية في الأسواق الناشئة. هذا وتعد الخدمات اللوجستية أحد أسرع القطاعات نمواً في العالم، ومن المتوقع أن يصل هذا القطاع إلى 94 مليار ريال سعودي (25 مليار دولار) بحلول عام 2020.</p>
+<p>&nbsp;</p>
+<p><strong>شحن البضائع</strong></p>
+<p>تعتبر مساهمة قطاع الشحن في سوق الخدمات اللوجستية هي الأكبر في نمو هذا القطاع. فقد ارتفع حجم السوق من 40 مليار ريال سعودي (10.6 مليار دولار) في عام 2010 إلى 52.1 مليار ريال سعودي (13.9 مليار دولار) في عام 2015. ويهيمن النقل البحري على وسائل النقل، حيث بلغ 26.25 مليار ريال سعودي (7 مليار دولار أمريكي).</p>
+<p>ومن المتوقع أن يزداد سوق الشحن بنسبة 6.4٪ ليصل إلى 71.25 مليار ريال سعودي (19 مليار دولار أمريكي) بحلول عام 2020. ويعزى هذا الارتفاع إلى زيادة عدد المغتربين، وارتفاع أسعار الوقود، ونمو التصنيع، والنهوض بالقطاع. وشيوع التجارة الإلكترونية.</p>
+<p>.</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>الخدمات اللوجستية عبر طرف ثالث 'وسيط'&nbsp;</strong><strong>(PL3)</strong></p>
+<p>على نحو كبير، زاد قطاع الخدمات اللوجستية عبر طرف ثالث (PL3) من مردود سوق الخدمات اللوجستية بين عامي 2010 و 2015، بمعدل نمو سنوي مركّب بلغ 26.6٪ (مقابل 7.5٪ وهي نسبة النمو عالميًا) وبلغ إجمالي القيمة 3 مليار ريال سعودي (0.8 مليار دولار أمريكي). ومن المتوقع أن تزداد بمعدل نمو سنوي مركّب يبلغ 22٪ حتى عام 2020 ليصل إلى 8.25 مليار ريال سعودي (2.2 مليار دولار أمريكي).</p>
+<p>كما يتوقع ارتفاع الطلب على قطاع الخدمات اللوجستية عبر طرف ثالث (PL3)&nbsp;لعدة أسباب، فتحسن العلاقات التجارية بين المملكة العربية السعودية والدول الأخرى، يجذب اهتماما أكبر بقيم الصادرات والواردات في المملكة العربية السعودية. إضافةً إلى أن تدفقات الاستثمار الأجنبي المباشر القوية (خاصة في قطاع النفط والغاز) سوف تؤدي إلى زيادة فرص مزوّدي&nbsp;الخدمات اللوجستية عبر طرف ثالث (PL3)، وكذلك توسيع النشاط الصناعي الذي يحفّز الحاجة إلى خدمات إدارة سلسلة التوريد.</p>
+<p>&nbsp;</p>
+<p><strong>التخزين</strong></p>
+<p>بالمثل، شهد قطاع التخزين نموًا كبيرًا في السنوات الأخيرة، حيث ارتفع من 7.1 مليار ريال سعودي (1.9 مليار دولار) في عام 2010 ليصل إلى 10.12 مليار ريال سعودي (2.7 مليار دولار أمريكي) في عام 2015. ويقود هذا القطاع كلا من التخزين الصناعي وتخزين التجزئة بعائدات قيمتها 4.1 مليار ريال سعودي. (1.1 مليار دولار).</p>
+<p>وبفارق طفيف عن التخزين الصناعي وتخزين التجزئة، تأتي في المرتبة الثانية محطات شحن الحاويات ومستودعات الحاويات الداخلية (CFS / ICD) بعائدات قيمتها 3.75 مليار ريال سعودي (1.0 مليار دولار أمريكي) ، في حين تحقق مرافق التخزين البارد 2.25 مليار ريال سعودي (0.6 مليار دولار أمريكي).</p>
+<p>وكما هو الحال مع عمليات شحن البضائع، وسلسلة التبريد، والخدمات اللوجستية عبر طرف ثالث (PL3)، من المتوقع أن ينمو سوق التخزين بمعدل نمو سنوي مركّب نسبته 9٪ ليصل حجم السوق إلى 15.75 مليار ريال سعودي (4.2 مليار دولار) بحلول عام 2020. ومن المقدر أن يتحقق النمو في هذا القطاع. نتيجة لزيادة النشاط الصناعي، وتضاعف التجارة الدولية، وارتفاع الاستهلاك المحلي، وتيسير اللوائح الحكومية.</p>
+<p>&nbsp;</p>
+<p><strong>سلسلة التبريد</strong></p>
+<p>لا يختلف قطاع سلسلة التبريد في سوق الخدمات اللوجستية بالمملكة العربية السعودية عن القطاعات الأخرى، فقد شهد نموًّا واضحاً خلال السنوات الأخيرة، إذ نما هذا القطاع بمعدل سنوي مركَّب نسبته 4٪، من 2.92 مليار ريال سعودي (0.78 مليار دولار) في عام 2010 إلى 3.65 مليار ريال سعودي (0.95 مليار دولار أمريكي) في عام 2015. ومن المتوقع أن يصل النمو إلى 6.15 مليار ريال سعودي (1.64 مليار دولار) بحلول عام 2020 نتيجة المشاركة النشطة من قبل الصناعة الدوائية والطلب المتزايد على الفواكه الطازجة والمعالَجة والخضروات واللحوم ومنتجات الألبان.</p>
+<p>&nbsp;</p>
+<p><strong>جهدٌ حكومي لتنمية القطاع</strong></p>
+<p>تمتاز المملكة العربية السعودية بتوفر بنىً تحتية راسخة للخدمات اللوجستية، وهي بنية مجهزة على النحو الأمثل، إضافةً إلى ما تشهده من تطوير مستمر بما يواكب سوقًا سريعة التوسع. وقد وجهت الحكومة جهودًا كبيرة نحو نمو هذا القطاع من خلال الإصلاح التنظيمي والاستثمارات الضخمة في البنية التحتية للخدمات اللوجستية.</p>
+<p>وقد تم الإعلان عن خططٍ لاستثمار 112.5 مليار ريال سعودي (30 مليار دولار أمريكي) في مرافق ترقية موانئ المملكة لتمكنها من التنافس العالمي. كما تم تخصيص 159 مليار ريال سعودي (42.4 مليار دولار أمريكي) لتطوير أول ميناء خاص في المملكة العربية السعودية. 'ميناء الملك عبد الله، الذي من المتوقع أن يتعامل مع 20 مليون حاوية نمطية بحلول عام 2020. وتستثمر المملكة 337.5&nbsp;مليار ريال سعودي (90 مليار دولار أمريكي) بعمليات تطوير موسعة للبنى التحتية للطرق والسكك الحديدية فيها.</p>
+<p>فوائدٌ جمة ستحظى بها المنطقة بتنشيط التجارة، وترقية النقل، وتخفيض فترات الانتظار. إضافة لذلك، تقوم المملكة العربية السعودية بتطوير 6 مدن اقتصادية وصناعية مخصصة لنقل البضائع بسهولة فيما بينها.</p>
+<p>أخيراً: يشكل الإنتاج الصناعي في المملكة العربية السعودية نسبة 90٪ فعلياً من الصادرات غير النفطية، ما يعني أن صناعة الخدمات اللوجستية تتأهب لدفعةٍ كبيرة بعد أن تستقر في محاورها الجديدة بالمدن الصناعية المركزية</p>
+</div>
+</div> "
+
+
+INSERT_UPDATE Media; code[unique = true]  ; realFileName                            ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText                         ; $contentCV[unique = true]
+                   ; background_sample1.png ;background_sample1.png            ; $siteResource/background_sample1.png   ; image/png   ;; "";
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; description[lang = en]                                ; description[lang = ar]     ; $contentCV[unique = true]
+#                                            ; sector-proposition-2-$sector ; "Information and Communication Technology Hub " ; الاتصالات وتقنية المعلومات ;
+
+
+INSERT_UPDATE InvestSaudiSectorPropositionContainer; uid[unique = true]                          ; name                                ; backgroundImage(code, $contentCV)  ; simpleCMSComponents(&componentRef)                                      ; &componentRef                               ; $contentCV[unique = true]; title
+                                                   ; sector-proposition-container-$sector ;  Sector Proposition Container ; background_sample1.png      ; sector-proposition-1-$sector, sector-proposition-2-$sector ; sector-proposition-container-$sector ;                          ; Transport And Logistics Value Proposition
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)                                                                                                                                                                     ; $contentCV[unique = true]
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                                                                                                                  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; transport-logistics-paragraph, ff-container-$sector, sector-proposition-container-$sector, fo-component-$sector, ss-component-$sector, contact-form ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                                                                                                                                                                                  ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+

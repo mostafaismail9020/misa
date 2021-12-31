@@ -1,0 +1,276 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000123')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000123')",
+          "type": "ZUI5_SAGIA_SRV.GovtServicesHDR"
+        },
+        "SrID": "70000123",
+        "SrGuid": "00155D74-370C-1ED5-ABB4-19E9E64C18A5",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "LicRenFlag": false,
+        "BpID": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1451260800000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZS10",
+        "Action": "",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "TermCond": false,
+        "MinistryType": "",
+        "ServiceType": "ZMOL_07",
+        "BpName": "",
+        "GovtServicesToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000123')/GovtServicesToTextNav"
+          }
+        },
+        "GovtServicesToContentHDRNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000123')/GovtServicesToContentHDRNav"
+          }
+        },
+        "GovtServicesToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000123')/GovtServicesToUploadNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000121')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000121')",
+          "type": "ZUI5_SAGIA_SRV.GovtServicesHDR"
+        },
+        "SrID": "70000121",
+        "SrGuid": "00155D74-370C-1ED5-ABB2-50D82CB3B8A5",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "LicRenFlag": false,
+        "BpID": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1451260800000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZS10",
+        "Action": "",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "TermCond": false,
+        "MinistryType": "",
+        "ServiceType": "ZMOL_07",
+        "BpName": "",
+        "GovtServicesToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000121')/GovtServicesToTextNav"
+          }
+        },
+        "GovtServicesToContentHDRNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000121')/GovtServicesToContentHDRNav"
+          }
+        },
+        "GovtServicesToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000121')/GovtServicesToUploadNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000117')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000117')",
+          "type": "ZUI5_SAGIA_SRV.GovtServicesHDR"
+        },
+        "SrID": "70000117",
+        "SrGuid": "00155D74-370C-1ED5-ABAD-B442A2D778A5",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "LicRenFlag": false,
+        "BpID": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1451260800000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZS10",
+        "Action": "",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "TermCond": false,
+        "MinistryType": "",
+        "ServiceType": "ZMOL_07",
+        "BpName": "",
+        "GovtServicesToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000117')/GovtServicesToTextNav"
+          }
+        },
+        "GovtServicesToContentHDRNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000117')/GovtServicesToContentHDRNav"
+          }
+        },
+        "GovtServicesToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000117')/GovtServicesToUploadNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000116')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000116')",
+          "type": "ZUI5_SAGIA_SRV.GovtServicesHDR"
+        },
+        "SrID": "70000116",
+        "SrGuid": "00155D74-370C-1ED5-ABAD-7DDA071458A5",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "LicRenFlag": false,
+        "BpID": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1451260800000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZS10",
+        "Action": "",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "TermCond": false,
+        "MinistryType": "",
+        "ServiceType": "ZMOL_07",
+        "BpName": "",
+        "GovtServicesToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000116')/GovtServicesToTextNav"
+          }
+        },
+        "GovtServicesToContentHDRNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000116')/GovtServicesToContentHDRNav"
+          }
+        },
+        "GovtServicesToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000116')/GovtServicesToUploadNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000115')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000115')",
+          "type": "ZUI5_SAGIA_SRV.GovtServicesHDR"
+        },
+        "SrID": "70000115",
+        "SrGuid": "00155D74-370C-1ED5-ABAD-6C383616F8A5",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "LicRenFlag": false,
+        "BpID": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1451260800000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZS10",
+        "Action": "",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "TermCond": false,
+        "MinistryType": "",
+        "ServiceType": "ZMOL_07",
+        "BpName": "",
+        "GovtServicesToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000115')/GovtServicesToTextNav"
+          }
+        },
+        "GovtServicesToContentHDRNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000115')/GovtServicesToContentHDRNav"
+          }
+        },
+        "GovtServicesToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000115')/GovtServicesToUploadNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000114')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000114')",
+          "type": "ZUI5_SAGIA_SRV.GovtServicesHDR"
+        },
+        "SrID": "70000114",
+        "SrGuid": "00155D74-370C-1ED5-ABAD-5CCF3C65D8A5",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "LicRenFlag": false,
+        "BpID": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1451260800000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "In Process",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZS10",
+        "Action": "",
+        "BpChangeID": "",
+        "SalesrepCount": "",
+        "ContactChInd": "",
+        "TermCond": false,
+        "MinistryType": "",
+        "ServiceType": "ZMOL_07",
+        "BpName": "",
+        "GovtServicesToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000114')/GovtServicesToTextNav"
+          }
+        },
+        "GovtServicesToContentHDRNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000114')/GovtServicesToContentHDRNav"
+          }
+        },
+        "GovtServicesToUploadNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000114')/GovtServicesToUploadNav"
+          }
+        }
+      }
+    ]
+  }
+}

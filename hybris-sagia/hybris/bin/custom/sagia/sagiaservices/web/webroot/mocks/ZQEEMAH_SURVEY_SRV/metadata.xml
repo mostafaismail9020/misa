@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+           xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+           xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZQEEMAH_SURVEY_SRV" xml:lang="en" sap:schema-version="1"
+                xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Subscription" sap:semantics="subscriptions" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Sub. ID"
+                          sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="user" Type="Edm.String" MaxLength="12" m:FC_TargetPath="SyndicationAuthorName"
+                          m:FC_KeepInContent="false" sap:label="User Name" sap:creatable="false"
+                          sap:filterable="false"/>
+                <Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated"
+                          m:FC_KeepInContent="false" sap:label="Time Stamp" sap:creatable="false"
+                          sap:filterable="false"/>
+                <Property Name="title" Type="Edm.String" MaxLength="255" m:FC_TargetPath="SyndicationTitle"
+                          m:FC_KeepInContent="false" sap:label="Title" sap:filterable="false"/>
+                <Property Name="deliveryAddress" Type="Edm.String" sap:label="Delivery Address" sap:filterable="false"/>
+                <Property Name="persistNotifications" Type="Edm.Boolean" sap:label="Persist Notification"
+                          sap:filterable="false"/>
+                <Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection"
+                          sap:filterable="false"/>
+                <Property Name="filter" Type="Edm.String" sap:label="Filter" sap:filterable="false"/>
+                <Property Name="select" Type="Edm.String" MaxLength="255" sap:label="Select" sap:filterable="false"/>
+                <Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/>
+            </EntityType>
+            <EntityType Name="Notification" sap:semantics="notifications" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Notification ID"/>
+                <Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection"/>
+                <Property Name="title" Type="Edm.String" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false"
+                          sap:label="Notif. Text"/>
+                <Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated"
+                          m:FC_KeepInContent="false" sap:label="Time Stamp"/>
+                <Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/>
+                <Property Name="entriesOfInterest" Type="Edm.Int32" sap:label="No. of Entries"/>
+                <Property Name="recipient" Type="Edm.String" MaxLength="112" sap:label="Recipient" sap:creatable="false"
+                          sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="Survey_Que" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Flag"/>
+                    <PropertyRef Name="SurveyID"/>
+                    <PropertyRef Name="Lang"/>
+                </Key>
+                <Property Name="Flag" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="QuestID" Type="Edm.String" Nullable="false" MaxLength="64"/>
+                <Property Name="Qtxtlg" Type="Edm.String" Nullable="false" MaxLength="255"/>
+                <Property Name="Quest" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="SurveyID" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="NodeGuid" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Lang" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Attachment" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Units" Type="Edm.String" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Survey_Ans" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SurveyID"/>
+                    <PropertyRef Name="NodeGuid"/>
+                    <PropertyRef Name="Lang"/>
+                    <PropertyRef Name="Flag"/>
+                </Key>
+                <Property Name="Units" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="MaxRating" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Rating" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Attachment" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="SurveyVersion" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="AnswType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Atxtlg" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="MainAnswer" Type="Edm.String" Nullable="false" MaxLength="64"/>
+                <Property Name="AnswerID" Type="Edm.String" Nullable="false" MaxLength="64"/>
+                <Property Name="SurveyID" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="NodeGuid" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ShTxt" Type="Edm.String" Nullable="false" MaxLength="255"/>
+                <Property Name="Lang" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Flag" Type="Edm.String" Nullable="false" MaxLength="1"/>
+            </EntityType>
+            <EntityType Name="Survey_Change" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Investorid"/>
+                    <PropertyRef Name="NodeGuid"/>
+                </Key>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="QuestID" Type="Edm.String" MaxLength="64"/>
+                <Property Name="NodeGuid" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ShareHoldID" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ShareHoldFname" Type="Edm.String" MaxLength="40"/>
+                <Property Name="ShareHoldLname" Type="Edm.String" MaxLength="40"/>
+                <Property Name="SurveyID" Type="Edm.String" MaxLength="32"/>
+                <Property Name="SurveyVersion" Type="Edm.String" MaxLength="10"/>
+                <Property Name="AnswerID" Type="Edm.String" MaxLength="64"/>
+                <Property Name="AnswerValue" Type="Edm.String" MaxLength="255"/>
+                <Property Name="AnswerRating" Type="Edm.String" MaxLength="255"/>
+                <Property Name="MaxRating" Type="Edm.String" MaxLength="255"/>
+                <Property Name="BonusPoint" Type="Edm.String" MaxLength="6"/>
+                <Property Name="Atxtlg" Type="Edm.String" MaxLength="60"/>
+                <Property Name="Qtxtlg" Type="Edm.String" MaxLength="225"/>
+                <Property Name="Return" Type="Edm.String" MaxLength="20"/>
+            </EntityType>
+            <EntityType Name="Survey_Att" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Investorid"/>
+                    <PropertyRef Name="NodeGuid"/>
+                    <PropertyRef Name="FileName"/>
+                </Key>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="NodeGuid" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="MimeType" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Return" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <EntityType Name="SurChg" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Investorid"/>
+                    <PropertyRef Name="NodeGuid"/>
+                </Key>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="NodeGuid" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Atxtlg" Type="Edm.String" MaxLength="60"/>
+                <Property Name="Return" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Flag" Type="Edm.String" MaxLength="1"/>
+                <Property Name="Lang" Type="Edm.String" MaxLength="1"/>
+                <Property Name="Fin_value" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Units" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Shldr_FName" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Shldr_LName" Type="Edm.String" MaxLength="40"/>
+            </EntityType>
+            <EntityType Name="Survey_Att_hdr" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Investorid"/>
+                    <PropertyRef Name="NodeGuid"/>
+                    <PropertyRef Name="FileName"/>
+                </Key>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="NodeGuid" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <NavigationProperty Name="SurveyFile" Relationship="ZQEEMAH_SURVEY_SRV.SurveyFile"
+                                    FromRole="FromRole_SurveyFile" ToRole="ToRole_SurveyFile"/>
+            </EntityType>
+            <Association Name="SurveyFile" sap:content-version="1">
+                <End Type="ZQEEMAH_SURVEY_SRV.Survey_Att_hdr" Multiplicity="1" Role="FromRole_SurveyFile"/>
+                <End Type="ZQEEMAH_SURVEY_SRV.Survey_Att" Multiplicity="*" Role="ToRole_SurveyFile"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SurveyFile">
+                        <PropertyRef Name="FileName"/>
+                        <PropertyRef Name="NodeGuid"/>
+                        <PropertyRef Name="Investorid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SurveyFile">
+                        <PropertyRef Name="FileName"/>
+                        <PropertyRef Name="NodeGuid"/>
+                        <PropertyRef Name="Investorid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZQEEMAH_SURVEY_SRV_Entities" m:IsDefaultEntityContainer="true"
+                             sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SubscriptionCollection" EntityType="ZQEEMAH_SURVEY_SRV.Subscription"
+                           sap:content-version="1"/>
+                <EntitySet Name="NotificationCollection" EntityType="ZQEEMAH_SURVEY_SRV.Notification"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="SurveyQueSet" EntityType="ZQEEMAH_SURVEY_SRV.Survey_Que" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="SurveyAnsSet" EntityType="ZQEEMAH_SURVEY_SRV.Survey_Ans" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="SurveyChangeSet" EntityType="ZQEEMAH_SURVEY_SRV.Survey_Change" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="SurveyAttSet" EntityType="ZQEEMAH_SURVEY_SRV.Survey_Att" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="SurChgSet" EntityType="ZQEEMAH_SURVEY_SRV.SurChg" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="Survey_Att_hdrSet" EntityType="ZQEEMAH_SURVEY_SRV.Survey_Att_hdr"
+                           sap:content-version="1"/>
+                <AssociationSet Name="SurveyFileSet" Association="ZQEEMAH_SURVEY_SRV.SurveyFile" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Survey_Att_hdrSet" Role="FromRole_SurveyFile"/>
+                    <End EntitySet="SurveyAttSet" Role="ToRole_SurveyFile"/>
+                </AssociationSet>
+                <FunctionImport Name="SurveyQue" ReturnType="Collection(ZQEEMAH_SURVEY_SRV.Survey_Que)"
+                                EntitySet="SurveyQueSet" m:HttpMethod="GET">
+                    <Parameter Name="Lang" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="SurveyID" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Flag" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="SurveyAns" ReturnType="Collection(ZQEEMAH_SURVEY_SRV.Survey_Ans)"
+                                EntitySet="SurveyAnsSet" m:HttpMethod="GET">
+                    <Parameter Name="Lang" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Flag" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="SurveyID" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="NodeGuid" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="SurveyChg" ReturnType="Collection(ZQEEMAH_SURVEY_SRV.SurChg)"
+                                EntitySet="SurChgSet" m:HttpMethod="GET">
+                    <Parameter Name="Investorid" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="NodeGuid" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="SurChg" ReturnType="Collection(ZQEEMAH_SURVEY_SRV.SurChg)" EntitySet="SurChgSet"
+                                m:HttpMethod="GET">
+                    <Parameter Name="Flag" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Investorid" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link rel="self"
+                       href="https://sagcrdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SURVEY_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version"
+                       href="https://sagcrdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SURVEY_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

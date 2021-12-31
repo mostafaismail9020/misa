@@ -1,0 +1,12 @@
+<svg id="zoom-minus-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26.868" height="26.621" viewBox="0 0 26.868 26.621">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_911" data-name="Rectangle 911" width="26.868" height="26.621" fill="none" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1323" data-name="Group 1323" clip-path="url(#clip-path)">
+    <path id="Path_2182" data-name="Path 2182" d="M24.479,12.989A11.49,11.49,0,1,1,12.99,1.5,11.49,11.49,0,0,1,24.479,12.989Z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path_2183" data-name="Path 2183" d="M25.826,25.542l-4.815-4.651Z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"/>
+    <line id="Line_275" data-name="Line 275" x2="12" transform="translate(6.989 12.989)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"/>
+  </g>
+</svg>

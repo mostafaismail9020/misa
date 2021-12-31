@@ -1,0 +1,141 @@
+$page = healthcare-life-sciences
+$sector= healthcare-life-sciences
+$template = portalSectorTemplate
+$pageName = HealthCare and Life Sciences
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media						   
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources																															   
+
+INSERT_UPDATE CategoryPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); $contentCV[unique = true]; defaultPage[default = 'false']; approvalStatus(code)[default = 'approved']
+                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ;                          ;                               ;
+
+INSERT_UPDATE CMSCategoryRestriction; uid[unique = true]                               ; categories(code, $catalogVersion); $contentCV[unique = true]; pages(uid, $contentCV)
+                                    ; sector-healthcare-life-sciences-restriction ; healthcare-life-sciences    ;                          ; healthcare-life-sciences
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; name                                ; &componentRef                           ; $contentCV[unique = true]
+                                                  ; healthcare-life-sciences-paragraph ; Healthcare and Lifesciences Overview ; healthcare-life-sciences-paragraph ;
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = en]
+                                           ; healthcare-life-sciences-paragraph ;                          ; " 
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<p>The Healthcare and Life Sciences Sector is one of the most significant sectors for the Kingdom of Saudi Arabia.</p>
+<p>&nbsp;</p>
+<p>The healthcare sector is largely publicly financed, and over the past several decades, the Kingdom of Saudi Arabia has made significant strides in the improvement of its healthcare infrastructure and system.</p>
+<p>&nbsp;</p>
+<p>The demand for healthcare has continued to rise, and this has been witnessed by the increasing healthcare budget and healthcare investment made over the past few decades, notably in the past 10 years. Despite the increase in healthcare expenditure, the Kingdom is facing a set of challenges that includes: increasing longevity and the continued rise in non-communicable diseases.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = ar]
+                                           ; healthcare-life-sciences-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<p>قطاع الرعاية الصحية وعلوم الحياة هو أحد أكثر القطاعات أهمية في المملكة العربية السعودية. قطاع الرعاية الصحية يتم تمويله بشكل ضخم من قِبل القطاع العام، وعلى مدى العقود الماضية تمكنت المملكة من تحقيق خطوات كبيرة في تحسين البنية التحتية لِجهاز الرعاية الصحية.</p>
+<p>&nbsp;</p>
+<p>الطلب على الرعاية الصحية مستمر في الارتفاع، وقد شُهد ذلك من خلال زيادة ميزانية القطاع، بالإضافة إلى الاستثمار في الرعاية الصحية على مدى العقود القليلة الماضية. لا سيما في السنوات العشر الأخيرة، على الرغم من زيادة نفقات الرعاية الصحية، حيث أن المملكة تواجه مجموعة من التحديات التي تشمل: زيادة متوسط العمر، واستمرار الارتفاع في معدلات الأمراض المزمنة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresComponent; uid[unique = true]; name         ; figures; unit; facts[lang=en] ; &componentRef; $contentCV[unique = true];
+								 
+                                     ;facts-figures-1-$sector     ; Facts Figures 53 ; 130       ; Bn USD  ;Cumulative government expenditure from 2017-2021                        ; facts-figures-1-$sector ;
+                                     ;facts-figures-2-$sector      ; Facts Figures 54 ; 28%     ;                               ;Increase of population by 2030; facts-figures-2-$sector;
+                                     ;facts-figures-3-$sector      ; Facts Figures 55 ; 90%    ; ;of medical devices in the Kingdom are imported  ; facts-figures-3-$sector ;
+  
+
+INSERT_UPDATE InvestSaudiFactsFiguresContainer; uid[unique = true]      ; name                     ;title[lang=en]  ; simpleCMSComponents(&componentRef)  ; &componentRef  ;$contentCV[unique = true]
+#                                     ; ff-container-$sector   ; Fatcs Figures Container  ;Fatcs & Figures ; facts-figures-1-$sector, facts-figures-2-$sector, facts-figures-3-$sector; ff-container-$sector ;
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; $contentCV; &componentRef
+                                           ; contact-form ;           ; contact-form
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; fo-explore-all-$sector ;                          ; Explore all          ; /sectors-opportunities/opportunities/?q=&sectorIds=healthcare-life-sciences
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]       ; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                       ; fo-component-$sector ; Featured Opportunities Component ; Healthcare and Lifesciences Opportunities ;3; fo-explore-all-$sector ; fo-component-$sector ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; ss-explore-all-$sector ;                          ; Explore all          ; /about/success-stories/?q=&sectorIds=healthcare-life-sciences
+
+
+INSERT_UPDATE InvestSaudiSuccessStoriesComponent; uid[unique = true]; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                ; ss-component-$sector ; Success Story Component ; Healthcare and lifesciences Success Stories ;3; ss-explore-all-$sector ; ss-component-$sector;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                       ; $contentCV[unique = true]; linkName  [lang = en]             ; linkName[lang = ar]        ; url
+#                              ; sector-proposition-1-link-$sector ;                          ; Information and Technology        ; الاتصالات وتقنية المعلومات ;
+#                              ; sector-proposition-2-link-$sector ;                          ; Information and Technology  ;                            ;
+
+INSERT_UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; name                        ; url(uid, $contentCV)                     ; index(); &componentRef                       ; $contentCV[unique = true]
+#                                                   ; sector-proposition-1-$sector ; Sector Proposition 1 ; sector-proposition-1-link-$sector ; 1      ; sector-proposition-1-$sector ;
+#                                                   ; sector-proposition-2-$sector ; Sector Proposition 2 ; sector-proposition-2-link-$sector ; 2      ; sector-proposition-2-$sector ;
+																				   
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+#                                            ; sector-proposition-1-$sector ;                          ; " "
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+#                                            ; sector-proposition-1-$sector ;                          ; "" 
+
+
+#INSERT_UPDATE Media; code[unique = true]    ; realFilename                          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText                         ; $contentCV[unique = true]
+#                   ; background_sample1.png  ;   background_sample1.png        ; $siteResource/background_sample1.png   ; image/png   ;; " ";
+
+
+
+#INSERT_UPDATE InvestSaudiSectorPropositionContainer; uid[unique = true]                          ; name                                ; backgroundImage(code, $contentCV)  ; simpleCMSComponents(&componentRef)                                      ; &componentRef                               ; $contentCV[unique = true]; title
+#                                                   ; sector-proposition-container-$sector ;  Sector Proposition Container ; background_sample1.png      ; sector-proposition-1-$sector, sector-proposition-2-$sector ; sector-proposition-container-$sector ;                          ; Information And Technology Value Proposition
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)                                                                                                                                                                     ; $contentCV[unique = true]
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                                                                                                                  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; healthcare-life-sciences-paragraph,  fo-component-$sector, ss-component-$sector, contact-form ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                                                                                                                                                                                  ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;

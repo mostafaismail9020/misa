@@ -1,0 +1,173 @@
+.globalMessage{
+	position: relative;
+	border-radius: 40px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 30px 0 rgba(29, 36, 44, 0.12);
+	padding: 25px 20px 11px 65px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	
+	&_closeing {
+		transition: all 0.35s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+		padding-top: 0;
+		padding-bottom: 0;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		height: 0;
+		opacity: 0;
+		overflow: hidden;
+		transform: translateY(-20px);
+	}
+	
+	margin-bottom: 40px;
+	
+	&:first-child {
+		margin-top: 20px;
+	}
+	
+
+	& + &{
+		margin-top: -30px;
+		#media-breakpoint-down(xs,  {
+			margin-top: 0;
+		});
+	} 
+
+	&-icon{
+		position: absolute;
+		top: 0;
+		left: -35px;
+		width: 16px;
+		height: 16px;
+
+		svg{
+			width: 100%;
+			height: 100%;
+		}
+		&_error {
+			color: #D0021B;
+		}
+		&_warning {
+			color: #D2C20C;
+		}
+	}
+
+	&-msg{
+		font-size: 13px;
+		color: #313f4b;
+		line-height: 16px;
+		padding-right: 45px;
+		display: inline-block;
+		order: -1;
+		flex: 1 1 auto;
+		margin-bottom: 16px;
+		position: relative;
+	}
+
+	&-action{
+		flex: 0 0 auto;
+		margin-top: -8px;
+		
+		.btn {
+			margin-bottom: 8px;
+		}
+
+		.btn + .btn{
+			margin-left: 10px;
+		}
+		&_close.close,
+		&_close.btn {
+			display: block;
+			width: 24px;
+			height: 24px;
+			padding: 5px;
+			color: #32465A;
+			border-color: #32465A;
+			position: absolute;
+//			top: 50%;
+			top: 0;
+			margin-top: 20px;
+			right: 20px;
+//			transform: translateY(-50%);
+			font-weight: bold;
+			z-index: 1;
+			
+			svg {
+				width: 12px;
+				height: 12px;
+			}
+			
+			&:hover {
+				color: #32465A;
+				border-color: #32465A;
+			}
+		}
+		&_close.close {
+			border-radius: 18px;
+			border-color: transparent;
+			cursor: pointer;
+			appearance: none;
+			background-color: transparent;
+			&:hover {
+				border-color: transparent;
+				
+				svg path {
+					stroke: @apple;
+				}
+			}
+		}
+	}
+
+	#media-breakpoint-down(xs,  {
+		background: none;
+		border-radius: 0;
+		box-shadow: none;
+		padding: 25px 15px;
+		padding-bottom: 17px;
+		display: flex;
+		flex-direction: column;		
+		margin-left: -15px;
+		margin-right: -15px;
+		
+		&:first-child {
+			margin-top: 0;			
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+			border-bottom: 1px solid #ccd0d4;
+		}		
+
+		&-holder{
+			margin-bottom: 0;
+		}
+		
+		& + &{
+			border-top: 1px solid #ccd0d4;
+		}
+
+		&-icon{
+			top: -4px;
+			left: 0;
+			width: 23px;
+			height: 23px;
+		}
+
+		&-msg{
+			padding-left: 40px;
+//			min-height: 32px;
+		}
+
+		&-action{
+			display: block;
+			float: none;
+			order: 3;
+			margin: 0;
+			margin-top: 8px;
+			text-align: center;
+
+		}
+	});
+}

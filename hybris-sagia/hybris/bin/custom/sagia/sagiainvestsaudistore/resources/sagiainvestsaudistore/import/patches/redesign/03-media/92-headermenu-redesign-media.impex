@@ -1,0 +1,33 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$jarResourceCms = $config-jarResourceCmsValue
+
+
+INSERT_UPDATE Media	; code[unique = true]         		; realFileName             				; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]		; mime[default = 'image/jpeg']  ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; INV_logo_white_en.svg 			; INV_logo_white_en.svg 			    ; $siteResource/INV_logo_white_en.svg 	 								  			; image/svg+xml					;										   ; ""     ;
+					; INV_logo_green_en.svg 			; INV_logo_green_en.svg 			    ; $siteResource/INV_logo_green_en.svg 	 								  			; image/svg+xml					;										   ; ""     ;
+					; INV_logo_white_ar.svg 			; INV_logo_white_ar.svg 			    ; $siteResource/INV_logo_white_ar.svg 	 								  			; image/svg+xml					;										   ; ""     ;
+					; INV_logo_green_ar.svg 			; INV_logo_green_ar.svg 			    ; $siteResource/INV_logo_green_ar.svg 	 								  			; image/svg+xml					;										   ; ""     ;
+
+
+INSERT_UPDATE Media; code[unique = true]               		; realFileName                      	; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']	; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+                   ; about_Banner.png                  		; about_Banner.png                  	; $siteResource/about_Banner.png                                     			; image/png                     ;                                          ; ""     ;
+                   ; economic_Highlights_Banner.png    		; economic_Highlights_Banner.png    	; $siteResource/economic_Highlights_Banner.png                                  ; image/png                     ;                                          ; ""     ;
+                   ; invest_In_Saudi_Arabia_Banner.png 		; invest_In_Saudi_Arabia_Banner.png 	; $siteResource/invest_In_Saudi_Arabia_Banner.png                               ; image/png                     ;                                          ; ""     ;
+                   ; investment_Guide_Banner.png       		; investment_Guide_Banner.png       	; $siteResource/investment_Guide_Banner.png                                     ; image/png                     ;                                          ; ""     ;
+                   ; media_Center_Banner.png           		; media_Center_Banner.png           	; $siteResource/media_Center_Banner.png                                     	; image/png                     ;                                          ; ""     ;
+                   ; meet_the_Kingdom_Banner.png       		; meet_the_Kingdom_Banner.png       	; $siteResource/meet_the_Kingdom_Banner.png                                     ; image/png                     ;                                          ; ""     ;
+

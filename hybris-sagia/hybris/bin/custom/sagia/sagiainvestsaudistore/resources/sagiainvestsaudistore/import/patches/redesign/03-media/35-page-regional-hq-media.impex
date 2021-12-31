@@ -1,0 +1,81 @@
+$pageName = Regional Head Quarters 
+$pageTitleEn = $pageName
+$pageLabel = /sectors-opportunities/regionalHQ
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]         							; realFileName             					                ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]				; mime[default = 'image/jpeg']  ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; rhq-header-banner-image.jpg 							; rhq-header-banner-image.jpg 			                	; $siteResource/rhq-header-banner-image.jpg 	 								  			; image/png						;										   ; ""     ;
+					; RHQ-Map-animation_v3.mp4 								; RHQ-Map-animation_v3.mp4 			                		; $siteResource/RHQ-Map-animation_v3.mp4		 	 								  		; video/mp4						;										   ; ""     ;
+					; RHQ-Map-animation_v3_Arabic-v4-.mp4 					; RHQ-Map-animation_v3_Arabic-v4-.mp4 			            ; $siteResource/RHQ-Map-animation_v3_Arabic-v4-.mp4		 	 								; video/mp4						;										   ; ""     ;
+					
+					
+					; relocation-services-top-image.jpg	 					; relocation-services-top-image.jpg				            ; $siteResource/relocation-services-top-image.jpg	 								  		; image/png						;										   ; ""     ;
+					; concierge-services-top-image.jpg   					; concierge-services-top-image.jpg   	                	; $siteResource/concierge-services-top-image.jpg    								  		; image/png						;										   ; ""     ;
+					; facilitation-services-top-image.jpg 					; facilitation-services-top-image.jpg			            ; $siteResource/facilitation-services-top-image.jpg 								  		; image/png						;										   ; ""     ;
+					; professional-services-top-image.jpg					; professional-services-top-image.jpg	                	; $siteResource/professional-services-top-image.jpg 								  		; image/png						;										   ; ""     ;
+					; exclusive-discounts-top.jpg         					; exclusive-discounts-top.jpg        			            ; $siteResource/exclusive-discounts-top.jpg         								  		; image/png						;										   ; ""     ;
+						
+					; relocation-services-icon.png	 						; relocation-services-icon.png				                ; $siteResource/relocation-services-icon.png	 								  		    ; image/png						;										   ; ""     ;
+					; concierge-services-icon.png   						; concierge-services-icon.png   	                		; $siteResource/concierge-services-icon.png    								  				; image/png						;										   ; ""     ;
+					; facilitation-services-icon.png 						; facilitation-services-icon.png			                ; $siteResource/facilitation-services-icon.png 								  				; image/png						;										   ; ""     ;
+					; professional-services-icon.png						; professional-services-icon.png	                		; $siteResource/professional-services-icon.png 								  				; image/png						;										   ; ""     ;
+					; exclusive-discounts-icon.png   						; exclusive-discounts-icon.png  			                ; $siteResource/exclusive-discounts-icon.png   								  				; image/png						;										   ; ""     ;
+						
+					; lilly-success-stories-icon.jpg 		 				; lilly-success-stories-icon.jpg 					        ; $siteResource/lilly-success-stories-icon.jpg 		 								  		; image/png						;										   ; ""     ;
+					; eai-success-stories-icon.jpg							; eai-success-stories-icon.jpg				               	; $siteResource/eai-success-stories-icon.jpg			 								  	; image/png						;										   ; ""     ;
+					; baker-huges-success-stories-icon.png  				; baker-huges-success-stories-icon.png 			            ; $siteResource/baker-huges-success-stories-icon.png  								  	    ; image/png						;										   ; ""     ;
+					; pepsico-success-stories-icon.jpg 						; pepsico-success-stories-icon.jpg 		                	; $siteResource/pepsico-success-stories-icon.jpg 	 								  	    ; image/png						;										   ; ""     ;
+					; alderley-success-stories-icon.jpg	 					; alderley-success-stories-icon.jpg				            ; $siteResource/alderley-success-stories-icon.jpg	 								  		; image/png						;										   ; ""     ;
+					; gleeds-success-stories-icon.jpg		 				; gleeds-success-stories-icon.jpg					        ; $siteResource/gleeds-success-stories-icon.jpg		 								  		; image/png						;										   ; ""     ;
+					
+					; opterna-icon.png	 									; opterna-icon.png				            				; $siteResource/opterna-icon.png	 								  		                ; image/png						;										   ; ""     ;
+					; opterna-image-icon.png		 						; opterna-image-icon.png							        ; $siteResource/opterna-image-icon.png		 								  				; image/png						;										   ; ""     ;
+					; philips-sucess-stories-icon.png	 					; philips-sucess-stories-icon.png				            ; $siteResource/philips-sucess-stories-icon.png	 								  		    ; image/png						;										   ; ""     ;
+					
+					
+					; lilly-ltd-success-stories-image.jpg		 			; lilly-ltd-success-stories-image.jpg				        ; $siteResource/lilly-ltd-success-stories-image.jpg										  	; image/png						;										   ; ""     ;
+					; eai-systems-success-stories-image.jpg					; eai-systems-success-stories-image.jpg			           	; $siteResource/eai-systems-success-stories-image.jpg			 							; image/png						;										   ; ""     ;
+					; baker-hugesceo-success-stories-image.png				; baker-hugesceo-success-stories-image.png			        ; $siteResource/baker-hugesceo-success-stories-image.png	 								; image/png						;										   ; ""     ;
+					; pepsico-success-stories-image.jpg						; pepsico-success-stories-image.jpg			            	; $siteResource/pepsico-success-stories-image.jpg											; image/png						;										   ; ""     ;
+					; alderly-success-storie-image.jpg						; alderly-success-storie-image.jpg					        ; $siteResource/alderly-success-storie-image.jpg											; image/png						;										   ; ""     ;
+					; gleeds-success-stories-images.jpg			 			; gleeds-success-stories-images.jpg					        ; $siteResource/gleeds-success-stories-images.jpg											; image/png						;										   ; ""     ;
+					
+					; opterna-success-banner.png							; opterna-success-banner.png					        	; $siteResource/opterna-success-banner.png											  		; image/png						;										   ; ""     ;
+					; opterna-success-image.png			 					; opterna-success-image.png					        		; $siteResource/opterna-success-image.png											  		; image/png						;										   ; ""     ;
+					
+
+					; riyadh-background-image.jpg			                ; riyadh-background-image.jpg			                 	; $siteResource/riyadh-background-image.jpg								  	                ; image/jpeg					;											; ""   ;
+					; makkah-background-image.jpg			                ; makkah-background-image.jpg			                 	; $siteResource/makkah-background-image.jpg								  	                ; image/jpeg					;											; ""   ;
+					; medina-background-image.jpg			                ; medina-background-image.jpg			                 	; $siteResource/medina-background-image.jpg								  	                ; image/jpeg					;											; ""   ;
+					; qassim-background-image.jpg			                ; qassim-background-image.jpg			                 	; $siteResource/qassim-background-image.jpg								  	                ; image/jpeg					;											; ""   ;
+					; eastern-background-image.jpg			                ; eastern-background-image.jpg			                 	; $siteResource/eastern-background-image.jpg								                ; image/jpeg					;											; ""   ;
+					; asir-background-image.jpg				                ; asir-background-image.jpg				                 	; $siteResource/asir-background-image.jpg								  	                ; image/jpeg					;											; ""   ;
+					; tabuk-background-image.jpg				            ; tabuk-background-image.jpg				                ; $siteResource/tabuk-background-image.jpg								  	                ; image/jpeg					;											; ""   ;
+					; hail-background-image.jpg				                ; hail-background-image.jpg				                 	; $siteResource/hail-background-image.jpg								  	                ; image/jpeg					;											; ""   ;
+					; northern-borders-background-image.jpg	                ; northern-borders-background-image.jpg	                 	; $siteResource/northern-borders-background-image.jpg						                ; image/jpeg					;											; ""   ;
+					; jazan-background-image.jpg				            ; jazan-background-image.jpg				                ; $siteResource/jazan-background-image.jpg								  	                ; image/jpeg					;											; ""   ;
+					; najran-background-image.jpg			                ; najran-background-image.jpg			                 	; $siteResource/najran-background-image.jpg								  	                ; image/jpeg					;											; ""   ;
+					; al-baba-background-image.jpg			                ; al-baba-background-imagejpg			                 	; $siteResource/al-baba-background-image.jpg								                ; image/jpeg					;											; ""   ;
+					; al-jouf-background-image.jpg			                ; al-jouf-background-image.jpg			                 	; $siteResource/al-jouf-background-image.jpg								                ; image/jpeg					;											; ""   ;
+																			  
+					; riyadh-province-city-map.jpg			                ; riyadh-province-city-map.jpg			                 	; $siteResource/riyadh-province-city-map.jpg								                ; image/jpeg					;											; ""   ;
+					; riyadh_city-map-arabic.svg			                ; riyadh_city-map-arabic.svg			                 	; $siteResource/riyadh_city-map-arabic.svg								  	                ; image/svg+xml					;											; ""   ;
+					
+					
+					; province-cultural-events.png							; province-cultural-events.png							    ; $siteResource/province-cultural-events.png										  	    ; image/jpeg					;											; ""   ;
+					; province-music-concerts.png             			    ; province-music-concerts.png             			        ; $siteResource/province-music-concerts.png             						  	        ; image/jpeg					;											; ""   ;
+					; province-culinary-events.png            			    ; province-culinary-events.png            			        ; $siteResource/province-culinary-events.png            							        ; image/jpeg					;											; ""   ;
+					; province-world-class-sporting-events.png			    ; province-world-class-sporting-events.png			        ; $siteResource/province-world-class-sporting-events.png							        ; image/jpeg					;											; ""   ;
+																			  
+					; jazan-special-economic-zone.jpg				        ; jazan-special-economic-zone.jpg				            ; $siteResource/jazan-special-economic-zone.jpg									            ; image/jpeg					;											; ""   ;
+					; ras-al-khair-special-economic-zone.jpg 			    ; ras-al-khair-special-economic-zone.jpg 			        ; $siteResource/ras-al-khair-special-economic-zone.jpg 						  	            ; image/jpeg					;											; ""   ;
+					; alsoudah-special-economic-zone.jpg     			    ; alsoudah-special-economic-zone.jpg     			        ; $siteResource/alsoudah-special-economic-zone.jpg     							  	        ; image/jpeg					;											; ""   ;
+					; special-economic-zone-economic-city.jpg			    ; special-economic-zone-economic-city.jpg			        ; $siteResource/special-economic-zone-economic-city.jpg								        ; image/jpeg					;											; ""   ;
+					; cloud-computing-informatics-area.jpg   			    ; cloud-computing-informatics-area.jpg   			        ; $siteResource/cloud-computing-informatics-area.jpg   								        ; image/jpeg					;											; ""   ;

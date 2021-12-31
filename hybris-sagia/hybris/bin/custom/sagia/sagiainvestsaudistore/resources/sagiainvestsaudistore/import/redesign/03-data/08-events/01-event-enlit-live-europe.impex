@@ -1,0 +1,55 @@
+############# EVENT  Enlit live Europe ########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails; $contentCV[unique = true]  ;uid[unique = true]			;keyName[lang = en]				;keyValue[lang = en];
+                             ;							  ; enlit-key-1         		;Exhibitors    					;1,000;
+							 ;							  ; enlit-key-2          		;Speaker       					;500;
+							 ;							  ; enlit-key-3         		;Attendees     					;15,000;
+							 ;							  ; enlit-key-4				    ;Sector							;Energy and Water/Exhibitions;
+                             							  
+			
+INSERT_UPDATE Media; code[unique = true]            ; realFileName           	; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;Enlit-banner-image.jpg   		; Enlit-banner-image.jpg   	; $siteResource/Enlit-banner-image.jpg                                        ; image/jpg                   ;                                          ; ""     ;
+                   ;Enlit-thumbnail.jpg      		; Enlit-thumbnail.jpg       ; $siteResource/Enlit-thumbnail.jpg                                           ; image/jpg                   ;                                          ; ""     ;
+                   ;event-gallary-image.png       	; event-gallary-image.png   ; $siteResource/event-gallary-image.png                                       ; image/png                   ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]		; $medias					; $contentCV; 
+                            ; media-container-enlit-live  	; event-gallary-image.png   ;			;       		   
+
+
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]   ; name                  ; url 									; &linkRef		;
+							  ;                          ; events-link1 		; eventslink1 			; https://www.enlit-europe.com/live		; events-link1	;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]       ; eventUrl(uid, $contentCV); eventLocation[lang = en]	; eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss]; eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+                                        ;                         ; event-enlit-live-europe  ; events-link1				; "Milan, Italy"			; 30.11.2021 00:00:00                             ; 02.12.2021 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]    	; eventName[lang = en]	; eventShortInformation[lang = en]; 
+                                        ;                         ; event-enlit-live-europe ; Enlit live Europe     ; "Enlit vows to light the spark that will fuel the change we need to ensure our industry - and our planet - have the brightest possible future."; 
+
+																														
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventKeyDetails(uid, $contentCV);
+										;						  ;event-enlit-live-europe  ;enlit-key-1,enlit-key-2 ,enlit-key-3,enlit-key-4;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventBannerImage(code, $contentCV)	;eventThumbnailImage(code, $contentCV);eventGalleryImages(qualifier, $contentCV);
+										;						  ;event-enlit-live-europe	;Enlit-banner-image.jpg				;Enlit-thumbnail.jpg				  ;media-container-enlit-live	;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]			;eventFullDescription[lang = en];
+										;						  ; event-enlit-live-europe  	;"
+<p>Enlit is a series of energy events unlike any other - because they are more than just energy events. Enlit is a community that for 365-days a year will collaborate and innovate to solve the most pressing energy-related issues.</p>
+<p>At the European edition, the Enlit community will come together in our Staged platform and for three days in Milan from 30 November through to 2 December 2021, to meet and inspire each other and to develop their discussions and actions to take steps forward in the energy transition. </p>
+<p>And so the Enlit circle begins: a constantly growing, inclusive and end-to-end forum that addresses every aspect of Europe's energy transition</p>
+";

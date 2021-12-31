@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<project name="jenkins_targets">
+	<description>
+		Targets used by Jenkins jobs.
+		@author adrien.missemer
+	</description>
+
+	<!-- do a clean build of the system by invoking the standard hybris clean and all ant targets -->
+	<target name="buildall" depends="install,prepare">
+		<ant dir="${platformhome}" target="clean"  />
+		<ant dir="${platformhome}" target="all" />
+	</target>
+
+	<!-- nightly build targets -->
+	<target name="nightlybuild" depends="buildall, initialize, junitinit, qacode"/>
+	
+	<!-- incremental build targets -->
+	<target name="incrementalbuild" depends="build, allcustomtests" />
+	
+	<target name="pullrequestbuild" depends="buildall, initialize, junitinit, allcustomtestswithcoverage, sonar" />
+	
+</project>

@@ -1,0 +1,147 @@
+$page = news-sagia-and-scth-announce-around-100-billion
+$template = portalGlobalTemplate
+$name = SAGIA AND SCTH ANNOUNCE AROUND 100 BILLION SAR (US$27 BILLION) IN NEW TOURISM AGREEMENTS WITH LOCAL AND INTERNATIONAL INVESTORS
+$titleEn = $name
+$titleAr = هيئتا السياحة والاستثمار تعلنان عن اتفاقيات بحوالي 100 مليار ريال مع شركات محلية وعالمية
+$shortDescEn = SAGIA AND SCTH ANNOUNCE AROUND 100 BILLION SAR (US$27 BILLION) IN NEW TOURISM
+$shortDescAr = هيئتا السياحة والاستثمار تعلنان عن اتفاقيات بحوالي 100 مليار ريال مع شركات
+$pagelabel = /news/sagia-and-scth-announce-around-100-billion-sar-us-27-billion-in-new-tourism-agreements-with-local-and-international-investors
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; saudia             ; saudia.jpg   ; $siteResource/saudia.jpg                                                    ;                             ;                                          ; ""     ; ;
+                   ; saudia_1           ; saudia_1.jpg ; $siteResource/saudia_1.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias         ; $contentCV; ; ; ;
+                            ; media-container-$page   ; saudia,saudia_1 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; saudia                            ; saudia                              ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 27.09.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>Agreements represent full value chain, spanning hotel &amp; hospitality, leisure, transport and real estate development</em></li>
+<li><em>Spokespeople highlight the crucial role that the private sector plays in unlocking Saudi Arabia&rsquo;s tourism sector</em></li>
+<li><em>Signing ceremony held as major tourism announcements expected later tonight</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<p><em>&nbsp;</em></p>
+<p><strong>Riyadh, Saudi Arabia &ndash; 27 September 2019:</strong>&nbsp;As Saudi Arabia opens to tourists from across the world, the General Investment Authority (SAGIA) and the Saudi Commission for Tourism and National Heritage (SCTH) announce a number of memoranda of understanding (MOUs) and agreements with regional and international investors totaling around 100 billion SAR.</p>
+<p>&nbsp;</p>
+<p>Signed at a ceremony held at the Ritz-Carlton hotel in Riyadh, these agreements reflect the enormous potential Saudi Arabia's growing tourism sector offers to investors across the Kingdom and around the world.</p>
+<p>&nbsp;</p>
+<p>Opening Saudi Arabia to tourism is a key milestone in the implementation of Vision 2030, which seeks to diversify the country&rsquo;s economy and reduce its dependence on oil.</p>
+<h2>&nbsp;</h2>
+<p>Saudi Arabia expects to increase international and domestic visits to 100 million a year by 2030, attracting significant foreign and domestic investment and creating a million jobs.</p>
+<p>&nbsp;</p>
+<p>By 2030, the aim is for tourism to contribute up to 10% towards Saudi Arabia&rsquo;s GDP, compared to just 3% today.&nbsp;</p>
+<p>&nbsp;</p>
+<p>These agreements demonstrate the private sector&rsquo;s confidence in the potential of the country&rsquo;s tourism sector, and its prospects for future growth.</p>
+<p>&nbsp;</p>
+<p><strong>His Excellency Eng. Ibrahim Al-Omar, Governor of SAGIA</strong>, commented:</p>
+<p><em>&ldquo;In Saudi Arabia, the market fundamentals are in place for a vibrant tourism industry, and we believe that the private sector will play a crucial role in unlocking this potential. At SAGIA, our role is to empower and enable domestic and international investors by identifying and developing new opportunities, fostering partnerships and shaping regulatory reforms. Signing these agreements today represents a milestone for the Kingdom of Saudi Arabia as we continue charting a path to a new diversified economy.&rdquo;</em></p>
+<p>&nbsp;</p>
+<p><strong>His Excellency Ahmad Al Khateeb, Chairman of SCTH</strong>, added:</p>
+<p><em>&ldquo;These exciting and wide-ranging agreements are only the beginning of the investment opportunities that will arise within Saudi Arabia - the fastest growing tourism sector on earth. We anticipate more businesses from around the world will establish operations within the Kingdom, as its unique attractions, culture and natural beauty become more widely appreciated.&rdquo;</em></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Agreements and MOUs signed by SAGIA include:</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Triple 5</strong>&nbsp;&ndash; an MoU and other investment opportunities worth SAR 37.5 billion, with Triple 5 planning to develop a series of mixed-use tourism, hospitality and entertainment destinations across the Kingdom.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Majid Al Futtaim</strong>&nbsp;&ndash; an MOU worth SAR 20 billion for a mixed-use shopping and entertainment destination which will create 12,000 jobs and feature the region&rsquo;s largest indoor ski slope and snow park.&nbsp;</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>FTG Development</strong>&nbsp;&ndash; an MoU worth SAR 5.5 billion to build a hotel, waterpark and retail development in Qiddiya; a 1,500 room hotel in NEOM; and a hotel situated between Jeddah and Makkah.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>OYO Rooms</strong>&nbsp;&ndash; an MoU worth SAR 4 billion, as OYO announces its intent to purchase 10 or more upper-budget level and luxury hotel properties across the Saudi Arabia.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Nenking Group / Ajlan</strong>&nbsp;Brothers &ndash; a joint-venture, worth SAR1.5 billion, to build a landmark lifestyle destination in Riyadh to serve as an anchor point for the Kingdom&rsquo;s entertainment industry.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Kerten Hospitality</strong>&nbsp;&ndash; an investment license with a value of SAR 270 million, with the company planning to develop a portfolio of mixed-use projects across the Kingdom.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Tetrapylon</strong>&nbsp;&ndash; an investment license worth SAR 2.5 million, with the company planning to coordinate with leading tour operators across North America, Europe and Asia to profile Saudi Arabia as a must visit global tourist destination.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Agreements and MOUs facilitated by SCTH include:</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Al Khozama</strong>&nbsp;&ndash; two MoUs concerning the Mayasem Project and the Harbour Project in Jeddah, along with other investment plans. These cover real estate, food and beverage investments, as well as facility management services and business development projects.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Diryah Gate Development Authority</strong>&nbsp;&ndash; two MoUs; the first with Greg Norman Golf Design to establish a 27-hole golf course at Wadi Safar. The second agreement is with AMAN Resorts to build an exclusive 40 room hotel in Al Bujairi, overlooking the Wadi Hanifah Valley and At-Turaif UNESCO World Heritage Site.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Saudia</strong>&nbsp;&ndash; the airline has agreed four MoUs, with the first agreement involving the launch of the first commercial flights to NEOM. The other MoUs cover the creation of Saudi Arabia's first destination management company (with the regulatory support of Saudi Commission for Tourism &amp; National Heritage); a joint initiative between Saudia and SAUDIA and The Red Sea Development Company to promote the Red Sea Project as a luxury global destination to drive inbound tourism; and an agreement with the Royal Commission for Al-Ula.</li>
+</ul>
+<p>&nbsp;</p>
+<p>In addition, organisations have made investment commitments collectively valued at SAR 36.25 billion, including Alshaya, Shomoul, Radisson, Alrajhi Investment and Seera Group.</p>
+<p>&nbsp;</p>
+<p>These investments come alongside a broad series of economic reforms which are enabling rapid growth in foreign investment in Saudi Arabia. For example, obtaining a foreign investor license through SAGIA now requires two documents and can be processed in three hours &ndash; reducing the requirement from twelve documents, which would take three days to process.</p>
+<p>&nbsp;</p>
+<p>The total number of foreign investor licenses issued in the first half of 2019 was more than double the number issued the same period a year before.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>ENDS</strong></p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>أعلنت الهيئة العامة للسياحة والتراث الوطني والهيئة العامة للاستثمار اليوم عن توقيع عدد من مذكرات التفاهم والاتفاقيات مع شركات استثمارية محلية وعالمية في قطاع السياحة؛ بقيمة إجمالية تبلغ حوالي 100 مليار ريال.</p>
+<p>وتمثل مذكرات التفاهم والاتفاقيات التي تم الإعلان عنها اليوم في فندق الريتز كارلتون بالعاصمة الرياض؛ الفرص الواعدة في القطاع السياحي بالمملكة، كما تعكس الإمكانات الكبيرة التي يقدمها هذا القطاع محليًّا وعالميًّا.</p>
+<p>وشهد الحفل توقيع عدد من مذكرات التفاهم والاتفاقيات بإشراف من هيئة السياحة بين مؤسسات وطنية ونظيراتها الأجنبية، إذ تم توقيع مذكرتي تفاهم بين شركة الخزامى ومشروع مياسم ومشروع هاربور؛ للعمل على مشاريع استثمارية في القطاع العقاري وقطاع الأغذية والمشروبات وإدارة المرافق وتقديم الخدمات، إضافة إلى توقيع مذكرة تفاهم واتفاقية وقعتهما هيئة تطوير بوابة الدرعية مع جريج نورمان لتصميم ملاعب الجولف، وذلك لبناء ملعب للجولف في وادي صفار، بينما كانت الاتفاقية مع أمان ريزورتس لبناء فندق من أربعين غرفة في حي البجيري، كما وقعت الخطوط الجوية العربية السعودية عددًا من مذكرات التفاهم والاتفاقيات، كانت الأولى مع نيوم لإطلاق أولى الرحلات التجارية إلى نيوم، بينما كانت الثانية بدعم من هيئة السياحة وذلك لإطلاق مبادرة مشتركة بين الخطوط السعودية وشركة البحر الأحمر للتطوير، بهدف تسويق مشروع البحر الأحمر كوجهة سياحية عالمية فاخرة، وأخيرًا اتفاقية مع الهيئة الملكية لمحافظة العلا.</p>
+<p>كما شهد الحفل توقيع مذكرات تفاهم بين هيئة الاستثمار وعدد من مختلف الشركات الإقليمية والعالمية، إذ وقعت هيئة الاستثمار مذكرة تفاهم مع تربل فايف قروب، وذلك لتطوير عدد من المشاريع السياحية ومشاريع الفندقة والترفيه حول المملكة بقيمة 37.5 مليار ريال، كما وقعت الهيئة مذكرة تفاهم مع شركة ماجد الفطيم، بقيمة 20 مليار ريال وبواقع فرص وظيفية تصل إلى 12,000 فرصة وظيفية؛ وذلك لبناء سوق تجاري وترفيهي، حيث تتوفر فيه أكبر حلبة جليد مغلقة للتزلج وحديقة للثلج، إضافة إلى توقيع مذكرات التفاهم الأخرى مع إف تي جي دفلوبمنت وأويو رومز وننكنق قروب/عجلان بقيمة إجمالية تبلغ 11 مليار ريال.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>يُشار إلى أن مذكرات التفاهم والاتفاقيات التي وقعت اليوم هي أحد محققات رؤية السعودية 2030 في زيادة العائدات غير النفطية وتنويع الاقتصاد الوطني، إذ تهدف المملكة إلى زيادة عدد السياح داخليًّا وخارجيًّا إلى 100 مليون سائح بحلول عام 2030، سعيًا في زيادة مساهمة القطاع السياحي في إجمالي الناتج المحلي بنسبة 10٪؜ مقارنة بالنسبة الحالية البالغة 3٪؜، إضافة إلى خلق مليون فرصة وظيفية، كما تمثل هذه الاتفاقيات ثقة القطاع الخاص في القطاع السياحي بالمملكة، والإمكانات التنموية التي يتميز بها القطاع.</p>
+<p>وكشف معالي الأستاذ أحمد الخطيب -رئيس مجلس إدارة الهيئة العامة للسياحة والتراث الوطني- أن مذكرات التفاهم والاتفاقيات الموقعة اليوم هي باكورة الفرص الاستثمارية القادمة في قطاع السياحة السعودي، لافتًا إلى أن قطاع السياحة في المملكة هو القطاع الأكثر نموًّا في العالم، كما أضاف الخطيب إلى أن السعودية ستشهد تأسيس شركات عالمية أخرى لأعمالها في السوق السعودي، بالنظر إلى ما تتميز به المملكة من معالم وثقافة وجمال طبيعي يحظى بتقدير عالمي.</p>
+<p>من جانبه علق المهندس إبراهيم العمر -محافظ الهيئة العامة للاستثمار- أن المملكة تحظى بقطاع سياحي يتمتع بكامل العناصر الأساسية التي تكمن في إيجاد سوق سياحي حيوي، لافتًا إلى أن للقطاع الخاص دور كبير في المساهمة بالسوق السياحي السعودي وازدهاره، منوهًا إلى أن الهيئة العامة للاستثمار تقوم على دعم وتمكين المستثمر المحلي والأجنبي عبر حصر وتطوير الفرص الاستثمارية، وتعزيز الشراكات البينية وتطوير الإصلاحات التنظيمية، مشيرًا إلى أن مذكرات التفاهم والاتفاقيات التي وقعتها هيئة الاستثمار وهيئة السياحة اليوم تُعد تطوراً&nbsp; استراتيجياً على صعيد خلق اقتصاد متنوع مستدام.</p>
+<p>وفي سياق حفل التوقيع؛ سلمت هيئة الاستثمار رخصتين استثماريتين بقيمة إجمالية تبلغ 272.5 مليون ريال، كانت الأولى لشركة كيرتين هوسبيتاليتي الإيرلندية، وذلك لتطوير محفظة مشاريع متعددة الأهداف حول المملكة، والثانية لشركة تيترابيلون البريطانية، للتعاون مع شركات تقديم الخدمات السياحية من شمال أمريكا وأوروبا وآسيا.</p>
+<p>كما شهد الحفل إعلان عدد من الشركات كان من ضمنها شركة الشايع وشركة شمول العقارية وفنادق راديسون ومجموعة سيرا القابضة -استثمارهم في القطاع السياحي بالمملكة بقيمة إجمالية تبلغ 36.25 مليار ريال.</p>
+<p>جدير بالذكر أن هذه الاستثمارات الكبيرة تأتي في سياق سلسلة الإصلاحات الاقتصادية الواسعة التي تنفذها المملكة، وذلك لجذب الاستثمارات النوعية إلى السوق السعودي، إذ أعلنت الهيئة العامة للاستثمار مؤخرًا عن إصدار 291 رخصة استثمار أجنبي خلال الربع الثاني من عام 2019، ما يعادل أكثر من الضعف مقارنة بنفس الفترة من عام 2018، وبزيادة نسبتها 103% مقارنة مع الربع الأول من عام 2019، بمعدل 5 رخص استثمار أجنبي تصدر يوميًّا.</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

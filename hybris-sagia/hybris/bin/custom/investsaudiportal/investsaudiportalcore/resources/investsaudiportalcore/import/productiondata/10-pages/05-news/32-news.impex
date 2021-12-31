@@ -1,0 +1,106 @@
+$page = news-sagia-announces-15-new-mous
+$template = portalGlobalTemplate
+$name = SAGIA ANNOUNCES 15 NEW MOUS WITH INVESTORS IN SOUTH KOREA
+$titleEn = $name
+$titleAr = ملتقى الشراكة السعودي الكوري ينعقد في العاصمة الكورية وسط حضور كبير وتوقيع 15 مذكرة تفاهم بين القطاع الخاص والعام
+$shortDescEn = Saudi Arabian Business Delegation Ink 15 Memoranda Of Understanding Across A
+$shortDescAr = شهدت العاصمة الكورية الجنوبية سيؤول اليوم الأربعاء عقد ملتقى الشراكة السعودي
+$pagelabel = /news/sagia-announces-15-new-mous-with-investors-in-south-korea
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true] ; realFileName            ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; img-20190626-wa0064 ; img-20190626-wa0064.jpg ; $siteResource/img-20190626-wa0064.jpg                                       ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias             ; $contentCV; ; ; ;
+                            ; media-container-$page   ; img-20190626-wa0064 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; img-20190626-wa0064               ; img-20190626-wa0064                 ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 26.06.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>Saudi Arabian business delegation ink 15 Memoranda of Understanding across a broad range of strategic sectors</em></li>
+<li><em>SAGIA issues 2 new Saudi licenses issued to South Korean companies</em></li>
+<li><em>Announcement made at the Saudi-South Korean Partnership Convention in Seoul</em></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Seoul, South Korea &ndash; 26 June 2019:&nbsp;</strong>The Saudi Arabian General Investment Authority (SAGIA) announces the signing of 15 memoranda of understanding (MOUs) and agreements with South Korean investors. Two new licenses were also awarded to South Korean businesses, permitting them to establish operations in the Kingdom.</p>
+<p>&nbsp;</p>
+<p>These deals highlight the value and diversity of opportunities being created by Saudi Arabia&rsquo;s Vision 2030 plan, as well as the growing interest from public and private sector entities from across the globe to invest in the Kingdom.</p>
+<p>&nbsp;</p>
+<p>Spanning a number of strategic sectors including finance, media, manufacturing, construction and petrochemicals &ndash; these agreements involve a number of leading South Korean firms.</p>
+<p>&nbsp;</p>
+<p>His Excellency Ibrahim Al-Omar, Governor of SAGIA, commented:</p>
+<p><em>&ldquo;Businesses from Saudi Arabia and South Korea have a strong track record of working together, and there are significant opportunities for further growth. The relationship between our two countries is a winning proposition for both sides.&nbsp;</em><em>Saudi Arabia benefits from South Korean businesses&rsquo; expertise and investment, while South Korean companies are able to tap into a dynamic G20 economy with strong market fundamentals across a number of strategic sectors.&nbsp;</em><em>These partnerships are essential for unlocking innovation and opportunities, while transferring valuable skills and creating jobs for young Saudi men and women. We look forward to welcoming these companies to the Kingdom and we hope many more will follow.&rdquo;</em></p>
+<p>&nbsp;</p>
+<p>The announcements follow the Saudi-South Korean Partnership Convention, held today (26 June 2019), in Seoul. The event brought together more than 200 participants, including high-ranking government officials, investors and business leaders for a series of open discussions, presentations, sectorial workshops and bilateral meetings.&nbsp;</p>
+<p>&nbsp;</p>
+<p>The Saudi-South Korean Partnership Convention is a key step in implementing the Saudi-Korean Vision 2030 plan, a cooperation agreement signed between the two countries in 2017. The plan is designed to diversify the scope of collaboration between these two countries, with a focus on energy and manufacturing, smart infrastructure and digitization, capacity building, healthcare and life sciences, and small and medium sized enterprises and investments</p>
+<p>&nbsp;</p>
+<p>Agreements exchanged at the Convention include: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<ul>
+<li>The<strong>&nbsp;National Command Center for Clinical Trials</strong>&nbsp;agreement between Korea National Enterprise for Clinical Trials, Seoul National University Hospital, and the Ministry of National Guard Health Affairs /King Abdullah International Medical Research Center</li>
+<li>An&nbsp;<strong>Artificial Intelligence for Healthcare</strong>&nbsp;agreement between Seoul National University Bundang Hospital, and the Ministry of National Guard Health Affairs /King Abdullah International Medical Research Center</li>
+<li>A&nbsp;<strong>Research &amp; Development and Manufacturing of Biosimilars</strong>&nbsp;agreement between Samsung Bioepis and the Ministry of National Guard Health Affairs /King Abdullah International Medical Research Center</li>
+<li>A&nbsp;<strong>Genomics and Precision Medicine for Diagnosis and Therapeutics&nbsp;</strong>agreement between GENINUS, Inc and the Ministry of National Guard Health Affairs /King Abdullah International Medical Research Center</li>
+<li>A&nbsp;<strong>Technical Cooperation for SME Banking</strong>&nbsp;agreement between the Industrial Bank of Korea and Saudi Arabia&rsquo;s SMEA</li>
+<li>An agreement to conduct a&nbsp;<strong>Feasibility Study of Additional MPE Plants using Nexlene Technology&nbsp;</strong>between SK Global Chemical and Saudi Arabia&rsquo;s SABIC</li>
+<li>A&nbsp;<strong>PDH-PP Project&nbsp;</strong>agreement between SK Gas Co, Ltd and SABIC</li>
+<li>A&nbsp;<strong>PP Compounding Project&nbsp;</strong>between SK Gas Co, Ltd and Advanced Global Investment Company</li>
+<li>A&nbsp;<strong>Mixed Feed Cracker Study&nbsp;</strong>between SK Gas Co, Ltd and Advanced Global Investment Company</li>
+<li>A<strong>&nbsp;Cooperation Agreement in the Field of Recycling&nbsp;</strong>between BLOOMX and Avin Riyadh Trading Establishment</li>
+<li>A&nbsp;<strong>Cooperation Agreement in the Field of Money Transfer&nbsp;</strong>between BLOOMX and Avin Riyadh Trading Establishment</li>
+<li>A<strong>&nbsp;Cooperation Agreement in the Solar Energy Sector&nbsp;</strong>between BLOOMX and Avin Riyadh Trading Establishment</li>
+<li>A<strong>&nbsp;Media Cooperation Agreement&nbsp;</strong>between MINORITY and MAG Production</li>
+<li>A<strong>&nbsp;Partnership to Manufacture Industrial Values&nbsp;</strong>between PK Valve Co, Ltd and Saudi Valve Manufacturing Company</li>
+<li><strong>A Technical Cooperation Agreement&nbsp;</strong>between the Saudi Standards, Metrology and Quality Organization and the Korea Research Institute of Standards and Science</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Since 2016, the Saudi Arabian government has delivered 45% of over 500 planned reforms, including the introduction of 100% foreign ownership rights, enhancing legal infrastructure and offering greater protection for shareholders.&nbsp; As a result, Saudi Arabia is climbing international competitiveness and ease-of-doing-business rankings and investors are increasingly towards to the Kingdom, with FDI inflows increasing by 127% in 2018 and the number of new companies entering Saudi Arabia rose 70% on a year-on-year basis in Q1 2019.</p>
+<p>&nbsp;</p>
+<p><strong>ENDS</strong></p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>شهدت العاصمة الكورية الجنوبية سيؤول اليوم الأربعاء عقد ملتقى الشراكة السعودي الكوري الذي نظمته الهيئة العامة للاستثمار بالتعاون مع وزارة الاقتصاد والتخطيط ووكالة كوريا لتشجيع التجارة والاستثمار وبمشاركة عدد من الجهات الحكومية والخاصة من الجانبين، وذلك تزامناً مع الزيارة الرسمية التي يقوم بها صاحب السمو الملكي الأمير محمد بن سلمان بن عبد العزيز ولي العهد نائب رئيس مجلس الوزراء وزير الدفاع إلى جمهورية كوريا الجنوبية.</p>
+<p>&nbsp;وضمن فعاليات الملتقى، نظمت الهيئة العامة للاستثمار مؤتمرا صحفيا حضره أكثر من 50 وسيلة إعلامية محلية وعالمية، وشهد توقيع 15 مذكرة تفاهم بين الجانبين السعودي والكوري، إضافة إلى تسليم رخصتي استثمار من الهيئة العامة للاستثمار لشركات كورية لبدء أعمالها في المملكة.</p>
+<p>وتضمنت مذكرات التفاهم عدداً من القطاعات الإستراتيجة المستهدفة في المملكة؛ مثل التمويل والإعلام والتصنيع والبناء والبتروكيماويات، شملت عدداً من الشركات الكورية الكبرى مثل مؤسسة كوريا الوطنية للتجارب السريرية ومستشفى جامعة سيؤول الوطنية وبنك كوريا الصناعي، وسامسونغ بايوبس، إضافة إلى الشركة الكورية للكيماويات وشركة إس كاي للغاز، وشركة إس كاي العالمية للكيماويات، وبلومكس وماينوريتي، والمعهد الكوري لأبحاث معايير العلوم، وشركة بي كي للصمامات.</p>
+<p>وكشف محافظ الهيئة العامة للاستثمار معالي المهندس إبراهيم العمر أن ملتقى الشراكة السعودي الكوري المنعقد اليوم بين الجهات السعودية ونظيراتها الكورية الجنوبية يعزز الرصيد الكبير للعلاقة بين البلدين والتاريخ الحافل من العلاقات المميزة بينهما، لافتاً إلى أن فرص التعاون بين الشركات من البلدين الصديقين كبيرة وواعدة، لاسيما في ظل الرؤية السعودية الكورية 2030 التي تعزز من فرص استغلال الميزات التنافسية والفرص النوعية بين البلدين في عدد من المجالات والقطاعات المستهدفة.</p>
+<p>كما تضمن المؤتمر الصحفي إعلان افتتاح مكتب تحقيق الرؤية في العاصمة الكورية سيؤول بنهاية الربع الأول من عام 2020، سعيًا نحو تعميق الشراكة السعودية الكورية، وتحقيق الأهداف الإستراتيجية للرؤية السعودية الكورية 2030، إذ سيتولى مكتب تحقيق الرؤية اكتشاف فرص تعاون أكبر بين البلدين على صعيد القطاع الخاص والعام.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>وفي كلمته الافتتاحية في الملتقى؛ شدد سلطان مفتي وكيل محافظ الهيئة العامة للاستثمار لتطوير وجذب الاستثمار؛ على أهمية العلاقة السعودية الكورية نظراً لما تمتع به من تاريخ طويل من الشراكة الاقتصادية، مؤكدا على أن هذا الملتقى يعد استكمالا وتتويجاً لهذه العلاقة المميزة بين البلدين.</p>
+<p>كما تضمنت فعاليات الملتقى عرضًا من قبل جمعية الصداقة السعودية الكورية قدمه د. عبدالله لي، وعدداً من ورش عمل القطاعات التي قدمها فريق الهيئة العامة للاستثمار، إضافة إلى العروض المختلفة؛ حيث قدم فريق برنامج تطوير الصناعة الوطنية والخدمات اللوجستية عرضًا عن إستراتيجية رؤية السعودية 2030 في تطوير قطاعي الصناعة والخدمات اللوجستية والفرص الاستثمارية ذات العلاقة، كما استعرض فريق الهيئة العامة للمنشآت الصغيرة والمتوسطة تطور السوق السعودي على صعيد الابتكار والشركات الناشئة، وطموح رؤية السعودية 2030 في تنمية هذا القطاع الذي يُعد أحد محركات النمو الاقتصادي. وقد ختمت الهيئة العامة للاستثمار الملتقى بعرض عن الخدمات التي تقدمها للمستثمرين، مستعرضة سهولة ممارسة الأعمال في المملكة وطريقة استصدار الرخص الاستثمارية، إضافة إلى استعراض رحلة المستثمر منذ التقدم بطلب رخصة وحتى إصدارها.</p>
+<p>يُذكر أن ملتقى الشراكة السعودي الكوري يعد خطوة متقدمة نحو تنفيذ الرؤية السعودية الكورية 2030؛ التي تم إطلاقها في عام 2017 لتوسيع نطاق التعاون بين البلدين؛ خاصة في قطاعات الطاقة والتصنيع والبنية التحتية الذكية والرقمنة وتطوير الكوادر البشرية، إضافة إلى الرعاية الصحية وعلوم الحياة والمنشآت الصغيرة والمتوسطة.</p>
+<p>ومنذ انطلاق رؤية السعودية 2030 في أبريل 2016؛ فقد حققت المملكة ما نسبته 45% من 500 إصلاح اقتصادي، إذ تضمنت الإصلاحات التملك الكامل للاستثمار الأجنبي، خاصة بوجود بنية تحتية متكاملة ومتطورة من الحقوق القانونية وحماية أكبر للمستثمر الأجنبي، ونتيجة لهذا فقد حققت المملكة المرتبة الرابعة ضمن مجموعة العشرين وفقًا لتقرير سهولة ممارسة الأعمال الصادر من البنك الدولي، وما تزال المملكة تنافس عالميًّا بتحقيق أعلى المراتب؛ إذ بلغ تدفق الاستثمار الأجنبي في عام 2018 ما نسبته 127%، إضافة إلى هذا فإن المملكة ما تزال تحقق طموحات برنامج رؤية السعودية 2030؛ إذ بلغت زيادة الشركات الأجنبية التي بدأت أعمالها في المملكة في الربع الأول من عام 2019 ما نسبته 70% بالمقارنة مع الربع الأول من العام الماضي.</p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

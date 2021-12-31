@@ -1,0 +1,38 @@
+INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code)
+                               ; OutboundOpportunity; INBOUND
+
+INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code)
+                                   ; OutboundOpportunity	; Catalog       	; Catalog       	; 	; ALL_SUB_AND_SUPER_TYPES	;
+                                   ; OutboundOpportunity	; CatalogVersion	; CatalogVersion	; 	; ALL_SUB_AND_SUPER_TYPES	;
+                                   ; OutboundOpportunity	; User          	; User          	; 	; ALL_SUB_AND_SUPER_TYPES	;
+                                   ; OutboundOpportunity	; CsTicket      	; CsTicket      	; true	; ALL_SUB_AND_SUPER_TYPES	;
+                                   ; OutboundOpportunity	; TicketAnswer  	; TicketAnswer  	; 	; ALL_SUB_AND_SUPER_TYPES	;
+                                   ; OutboundOpportunity	; Media         	; Media         	; 	; ALL_SUB_AND_SUPER_TYPES	;
+                                   ; OutboundOpportunity	; TicketQuestion	; TicketQuestion	; 	; ALL_SUB_AND_SUPER_TYPES	;
+
+INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false]
+                                            ; OutboundOpportunity:Catalog       	; id            	; Catalog:id                   	;                                   	; true	;
+                                            ; OutboundOpportunity:CatalogVersion	; catalog       	; CatalogVersion:catalog       	; OutboundOpportunity:Catalog       	; true	;
+                                            ; OutboundOpportunity:CatalogVersion	; version       	; CatalogVersion:version       	;                                   	; true	;
+                                            ; OutboundOpportunity:User          	; displayName   	; User:displayName             	;                                   	; 	;
+                                            ; OutboundOpportunity:User          	; uid           	; User:uid                     	;                                   	; true	;
+                                            ; OutboundOpportunity:CsTicket      	; sector     	; CsTicket:sector              	;                                   	; 	;
+                                            ; OutboundOpportunity:CsTicket      	; subSector     	; CsTicket:subSector              	;                                   	; 	;
+                                            ; OutboundOpportunity:CsTicket      	; ticketID      	; CsTicket:ticketID            	;                                   	; true	;
+                                            ; OutboundOpportunity:CsTicket      	; customer      	; CsTicket:customer            	; OutboundOpportunity:User          	; 	;
+                                            ; OutboundOpportunity:CsTicket      	; answers       	; CsTicket:answers             	; OutboundOpportunity:TicketAnswer  	; 	;
+                                            ; OutboundOpportunity:CsTicket      	; headline      	; CsTicket:headline            	;                                   	; 	;
+                                            ; OutboundOpportunity:CsTicket      	; location      	; CsTicket:location            	;                                   	; 	;
+                                            ; OutboundOpportunity:CsTicket      	; attachments   	; CsTicket:attachments         	; OutboundOpportunity:Media         	; 	;
+                                            ; OutboundOpportunity:TicketAnswer  	; answer        	; TicketAnswer:answer          	;                                   	; true	;
+                                            ; OutboundOpportunity:TicketAnswer  	; ticketQuestion	; TicketAnswer:ticketQuestion  	; OutboundOpportunity:TicketQuestion	; true	;
+                                            ; OutboundOpportunity:Media         	; realFileName  	; Media:realFileName           	;                                   	; 	;
+                                            ; OutboundOpportunity:Media         	; location      	; Media:location               	;                                   	; 	;
+                                            ; OutboundOpportunity:Media         	; code          	; Media:code                   	;                                   	; true	;
+                                            ; OutboundOpportunity:Media         	; catalogVersion	; Media:catalogVersion         	; OutboundOpportunity:CatalogVersion	; true	;
+                                            ; OutboundOpportunity:Media         	; mime          	; Media:mime                   	;                                   	; 	;
+                                            ; OutboundOpportunity:Media         	; size          	; Media:size                   	;                                   	; 	;
+                                            ; OutboundOpportunity:TicketQuestion	; placeholderkey	; TicketQuestion:placeholderkey	;                                   	; true	;
+                                            ; OutboundOpportunity:TicketQuestion	; question      	; TicketQuestion:question      	;                                   	; 	;
+                                            ; OutboundOpportunity:TicketQuestion	; code          	; TicketQuestion:code          	;                                   	; true	;
+                                            ; OutboundOpportunity:TicketQuestion	; label         	; TicketQuestion:label         	;                                   	; true	;

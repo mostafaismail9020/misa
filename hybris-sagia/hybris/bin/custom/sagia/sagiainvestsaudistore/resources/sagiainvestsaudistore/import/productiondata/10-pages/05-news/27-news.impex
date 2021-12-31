@@ -1,0 +1,79 @@
+$page = news-sagia-signs-us-200-million
+$template = portalGlobalTemplate
+$name = SAGIA SIGNS US$200 MILLION MOU WITH UNIBIO AND LOCAL PARTNER EDHAFAT
+$titleEn = $name
+$titleAr = هيئة الاستثمار توقع مذكرة تفاهم مع يوني-بايو وشريكتها السعودية إضافات بقيمة 200 مليون دولار
+$shortDescEn = SAGIA Announces Today That It Has Signed A Memorandum Of Understanding With
+$shortDescAr = وقعت الهيئة العامة للاستثمار، بمقرها الرئيس اليوم مذكرة تفاهم بقيمة 200 مليون
+$pagelabel = /news/sagia-signs-us-200-million-mou-with-unibio-and-local-partner-edhafat
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; au8i1734           ; au8i1734.jpg ; $siteResource/au8i1734.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; au8i1734 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; au8i1734                          ; au8i1734                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 01.08.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>Danish biotechnology firm to establish a protein production plant in Saudi Arabia</em></li>
+<li><em>Unibio&rsquo;s new facility will implement patented process to convert natural gas into high-protein animal feed substitutes</em></li>
+<li><em>New facility to employ&nbsp;</em><em>160 staff direct and indirect</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<p><strong>Riyadh, 1 August 2019</strong>&nbsp;&ndash; SAGIA announces today that it has signed a memorandum of understanding with Denmark-based biotechnology firm Unibio, along with its local Saudi Arabian partner Edhafat, worth US$200 million.</p>
+<p>As part of the MoU, Unibio has committed to commence development of a facility in Saudi Arabia that will utilize its patented fermentation process, which converts natural gas into high-protein livestock feed. This project is a valuable opportunity for technology and knowledge transfer in Saudi Arabia&rsquo;s burgeoning chemicals sector, and to attract and develop more Saudi employees and local capabilities.</p>
+<p>The MoU was signed in a ceremony in Riyadh today attended by His Excellency Ibrahim Al Omar, Governor of SAGIA; Sultan Mofti, Deputy Governor, Investment Attraction and Development; Ahmad AlAbedi, Managing Director of Petrochemical, Oil and Gas Sector; Henrik Busch-Larsen, Unibio&rsquo;s CEO; Dr. Nasser bin Kadasah, Edhafat&rsquo;s CEO; and Ture Vahan Munksgaard, the Head of Trade from the Royal Danish Embassy in Riyadh.</p>
+<p>His Excellency Ibrahim Al Omar, Governor of SAGIA, said:&nbsp;<em>&ldquo;With a growing population, this project represents an important step towards achieving food security for the Kingdom by providing a sustainable and economically viable source of animal feed products. The importance of this project is that it uses a clean and abundant natural source in the Kingdom, and produces a high-quality protein supplements to feed fish, poultry and livestock, in addition to the transfer of advanced technology to the Kingdom.&rdquo;</em></p>
+<p>By using natural gas, cost-effective electricity and chemicals, proteins can be produced without adding stress to the agricultural system or fish stock. Unibio patented technology is unique in that it enables the decoupling of protein production from farming and fishing.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Henrik Busch-Larsen, CEO of Unibio, added: &ldquo;<em>We are very pleased to sign an MOU with an important governmental organization such as SAGIA as well as partnering up with Edhafat and other local stakeholders in our effort to participate in the development on the Saudi Arabian economy, bringing investments, jobs and a profitable business opportunity to the Kingdom.&rdquo;</em></p>
+<p>Saudi Arabia&rsquo;s chemical market is the largest in the Middle East &amp; North Africa, housing one of the most expansive integrated chemical complexes globally. The chemicals sector is an essential part of the Kingdom&rsquo;s economic diversification program. In line with Vision 2030, Saudi Arabia is seeking to double its value over the next decade. &nbsp;</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>ENDS</strong></p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p><strong>الرياض، 1 أغسطس 2019م -</strong>&nbsp;وقعت الهيئة العامة للاستثمار، بمقرها الرئيس اليوم مذكرة تفاهم بقيمة 200 مليون دولار، مع شركة ""يوني-بايو"" الدنماركية وشريكتها السعودية ""إضافات""، حيث تعتزم الشركتان بموجب هذه المذكرة بناء منشأة لصناعة البايو بروتين داخل المملكة.</p>
+<p>ووقع مذكرة التفاهم من طرف الهيئة العامة للاستثمار، محافظ الهيئة المهندس إبراهيم العُمر، ومن طرف شركة ""يوني-بايو""، الرئيس التنفيذي هينريك بوش لارسن، والرئيس التنفيذي لشركة ""إضافات"" الدكتور ناصر بن كدسه، وذلك بحضور وكيل المحافظ لجذب وتطوير الاستثمار سلطان مفتي، والمدير العام التنفيذي لقطاع البتروكيماويات والنفط والغاز المهندس أحمد العبيدي.</p>
+<p>وكشف المهندس إبراهيم العمر عن أهمية هذا المشروع على مستوى توطين التقنية ونقل المعرفة في مجال الصناعات الكيميائية في المملكة، منوهاً إلى أن المشروع سيساهم في توفير مصادر مستدامة لأغذية الأسماك والمواشي، وتعزيز الأمن الغذائي، وخلق فرص عمل، في قطاع هو الأكبر من نوعه في منطقة الشرق الأوسط ودول شمال أفريقيا، ومضيفاً أن أهمية قطاع البتروكيماويات تكمن في كونه جزءاً من برنامج التنوع الاقتصادي للمملكة الذي يهدف لتوفير مصادر دخل متعددة من خلال مضاعفة قيمته خلال العقد القادم.</p>
+<p>&nbsp;من جانبه عبّر الرئيس التنفيذي لـ يوني بايو السيد هنريك لارسن عن أهمية هذا المشروع في المملكة، بالعمل مع شريك سعودي للمساهمة في خطط التنمية بالمملكة، وجزءاً من تطوّرها الاقتصادي في تطوير الأعمال وتوطين التقنية والاستعانة بالكوادر السعودية وتوظيف خبراتها في هذا المجال.</p>
+<p>&nbsp;</p>
+<p><strong>انتهى</strong></p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

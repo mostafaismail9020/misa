@@ -1,0 +1,70 @@
+$page = news-saudi-iraqi-economic-trade-investment
+$template = portalGlobalTemplate
+$name = Saudi-Iraqi Economic, Trade, Investment, Development and Relief Committee Convenes to Activate Investment Partnerships
+$titleEn = $name
+$titleAr = اللجنة الاقتصادية والتجارية والاستثمارية والتنموية والإغاثة السعودية والعراقية تجتمع لتفعيل الشراكات الاستثمارية
+$shortDescEn = His Excellency Eng. Ibrahim Al Omar, Governor of the Saudi Arabian General Investment Authority (SAGIA), along with and His Excellency Nouri Sabah Al Dulaimi
+$shortDescAr =  وقع معالي محافظ الهيئة العامة للاستثمار، المهندس إبراهيم بن عبد الرحمن العمر، رئيس اللجنة الاقتصادية والتجارية والاستثمارية والتنموية والإغاثة بمجلس التنسيق السعودي العراقي، ومعالي وزير التخطيط العراقي الدكتور نوري صباح الدليمي
+$pagelabel = /news/saudi-iraqi-economic-trade-investment-development-and-relief-committee-convenes-to-activate-investment-partnerships-1
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true];realFileName  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; saudiiraqi ;  saudiiraqi.jpg				; $siteResource/saudiiraqi.jpg                                        ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias            ; $contentCV; ; ; ;
+                            ; media-container-$page   ; saudiiraqi ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 41 ; $titleEn            ; $titleAr            ; saudiiraqi                ; saudiiraqi                ; $shortDescEn                   ; $shortDescAr                   ; link-$page       ;                                 ; 27.05.2020 00:00:00                       ;                          ;media-container-$page  ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; " <p style='font-size: 13px;'>His Excellency Eng. Ibrahim Al Omar, Governor of the Saudi Arabian General Investment Authority (SAGIA), along with and His Excellency Nouri Sabah Al Dulaimi, Iraq&rsquo;s Minister of Planning, served as co-chairs of the Economic, Trade, Investment, Development and Relief Committee, a working group of the Saudi-Iraqi Coordination Council.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>The committee convened on 23 May at Riyadh&rsquo;s Ritz-Carlton Hotel. Discussion topics included the activation of previously confirmed agreements and memoranda of understanding which were signed in conjunction with the recent visit of Iraqi Prime Minister Adil Abdul-Mahdi.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>In a statement following the meeting&rsquo;s conclusion, His Excellency Governor Al Omar highlighted the significance of this step, stating that both parties are committed to developing their bilateral relations. He also stated that the Kingdom looks forward to a more prosperous Iraq, through enhanced cooperation between the two countries, along with a more diversified economy that the committee&rsquo;s agreements seek to accomplish.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>In parallel, SAGIA also held a forum for Saudi and Iraqi businessmen who discussed investment opportunities in both countries. The attendees said that they are optimistic about the future of the Saudi-Iraqi economic ties. They also said that they are encouraged by the close working relationship between the two countries as reflected by the formation of the Saudi-Iraqi Coordination Council.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>These meetings signal the commitment that both countries have in developing valuable growth opportunities, work towards mutual goals, and strengthen private sector companies in order to realize shared goals and interests.</p> "
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page      ;                          ; " <p style='font-size: 13px;'>وقع معالي محافظ الهيئة العامة للاستثمار، المهندس إبراهيم بن عبد الرحمن العمر، رئيس اللجنة الاقتصادية والتجارية والاستثمارية والتنموية والإغاثة بمجلس التنسيق السعودي العراقي، ومعالي وزير التخطيط العراقي الدكتور نوري صباح الدليمي، رئيس اللجنة الاقتصادية والتجارية والاستثمارية والتنموية والإغاثة، محضر اجتماع اللجنة الاقتصادية والتجارية والاستثمارية والتنموية الاغاثة، المنبثقة من مجلس التنسيق السعودي العراقي.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>جاء ذلك عقب اجتماع اللجنة الاقتصادية والتجارية والاستثمارية والتنموية والإغاثة الذي عقد اليوم الخميس 23 مايو في فندق الرتزكارلتون بمدينة الرياض، وناقش الطرفان سبل تفعيل عدد من الموضوعات المُدرجة في جدول الأعمال، من أهمها تفعيل الاتفاقيات ومذكرات التفاهم والتي تم توقيعها على هامش زيارة دولة رئيس مجلس الوزراء العراقي للمملكة، وتحفيز الاستثمارات ودعم القطاع الخاص وحل معوقاته في مجال الاستثمار، والتنمية الاقتصادية وإعادة الاعمار، والإغاثة والدعم الإنساني.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وبين محافظ هيئة الاستثمار المهندس إبراهيم العمر أن هذه الخطوة تعد بالغة الأهمية، حيث يتطلع الطرفان إلى تنمية العلاقات في جميع المجالات، مؤكداً أن المملكة تتطلع إلى أن يكون العراق الشقيق أكثر ازدهاراً اقتصاديا وتنموياً عبر تعزيز مجالات التعاون بين البلدين الشقيقين، وتنويع مصادر الاقتصاد والعمل على ترجمة الاتفاقيات التي تم وسيتم التوصل إليها بين البلدين.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وكانت الهيئة العامة للاستثمار قد نظمت اليوم لقاء رجال الاعمال السعوديين مع نظرائهم من الأشقاء رجال الأعمال العراقيين، حيث استعرض الجانبان الفرص الاستثمارية المتاحة في البلدين، معبرين عن تفاؤلهم بمستقبل العلاقات الاقتصادية، وعن سعادتهم بالانفتاح الكبير الذي حصل بين البلدين، والذي تمثل بتشكيل مجلس التنسيق العراقي السعودي المشترك والزيارات المتبادلة بين الجانبين والتعاون على مختلف الأصعدة.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وتأتي هذه الزيارات تأكيدا على حرص البلدين الشقيقين على تبادل الاستثمارات النوعية، لما يملكه البلدان من إمكانات كبيرة، مدعومة بالإرادة السياسية المشتركة، إضافة إلى رغبة وجاهزية وقدرة القطاع الخاص على تحقيق الأهداف والمصالح التجارية المشتركة بين البلدين.</p> "
+							   
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template       ; $pagelabel                     ; false ;         ;                          ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page                ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

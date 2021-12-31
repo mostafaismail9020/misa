@@ -1,0 +1,52 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https:\/\/sagngdap03.hec.sagia.gov.sa:44300\/sap\/opu\/odata\/sap\/ZUI5_REAL_ESTATE_SRV\/RealEstateSet('6000445')",
+      "uri": "https:\/\/sagngdap03.hec.sagia.gov.sa:44300\/sap\/opu\/odata\/sap\/ZUI5_REAL_ESTATE_SRV\/RealEstateSet('6000445')",
+      "type": "ZUI5_REAL_ESTATE_SRV.RealEstate"
+    },
+    "ObjectID": "6000445",
+    "ObjectGUID": "005056B1-1C89-1EE8-A380-C4B5543CC730",
+    "REType": "Buy",
+    "PurchaseType": "50",
+    "PlotNo": "44",
+    "PlotArea": "44",
+    "DeedNo": "44",
+    "PurchaseDate": "20180731",
+    "OutsideMakkah": "0",
+    "ApprovedIndustrial": "1",
+    "ProjectValue": "jj",
+    "Price": "44",
+    "Region": "10",
+    "City": "18000046",
+    "HousingType": "",
+    "District": "1",
+    "UnitNo": "33",
+    "BlockNo": "23",
+    "Remarks": "33",
+    "ThirtyMore": "0",
+    "Description": "Real Estate / 613392",
+    "BPID": "613392",
+    "PostingDate": "20180720",
+    "Status": "In Process",
+    "AttachmentsSet": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https:\/\/sagngdap03.hec.sagia.gov.sa:44300\/sap\/opu\/odata\/sap\/ZUI5_REAL_ESTATE_SRV\/AttachmentsSet('')",
+            "uri": "https:\/\/sagngdap03.hec.sagia.gov.sa:44300\/sap\/opu\/odata\/sap\/ZUI5_REAL_ESTATE_SRV\/AttachmentsSet('')",
+            "type": "ZUI5_REAL_ESTATE_SRV.Attachments"
+          },
+          "ObjectID": "",
+          "DocGUID": "00000000-0000-0000-0000-000000000000",
+          "Filename": "",
+          "MimeType": "",
+          "FileContString": "",
+          "ObjectGUID": "00000000-0000-0000-0000-000000000000",
+          "DocID": "",
+          "Filesize": ""
+        }
+      ]
+    }
+  }
+}

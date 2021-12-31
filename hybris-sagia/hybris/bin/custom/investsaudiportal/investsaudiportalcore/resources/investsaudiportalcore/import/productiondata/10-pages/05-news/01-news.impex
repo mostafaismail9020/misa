@@ -1,0 +1,113 @@
+$page = news-khalid-al-falih
+$template = portalGlobalTemplate
+$name = KHALID AL FALIH SETS THE AGENDA FOR THE FUTURE OF GLOBAL FDI AT NEW DIGITAL SUMMIT
+$titleEn = $name
+$titleAr = وزير الاستثمار: اقتصاد المملكة أثبت مرونته العالية خلال جائحة كورونا
+$shortDescEn = His Excellency Khalid Al Falih, Saudi Arabia’s Minister of Investment, outlined
+$shortDescAr = أكد معالي وزير الاستثمار المهندس خالد بن عبد العزيز الفالح أن اقتصاد المملكة أحد أكثر الاقتصادات مرونة في العالم
+$pagelabel = /news/khalid-al-falih-sets-the-agenda-for-the-future-of-global-fdi-at-new-digital-summit
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; sagi7535           ; sagi7535.jpg ; $siteResource/sagi7535.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; newsThumbnailImage-1 ; $siteResource/sagi7535.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; sagi7535 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; sagi7535                          ; sagi7535                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 22.10.2020 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "
+                               <p><strong> </strong></p>
+<ul>
+    <li><em>His Excellency Khalid Al Falih, Saudi Arabia’s Minister of Investment, outlined how governments can enable
+        growth of FDI as tool for economic recovery through forming private sectors partnerships during headline
+        interview at Global Digital Summit Series</em></li>
+</ul><p><em> </em></p>
+<ul>
+    <li><em>Providing safety and security for investors is seen as vital to ensuring business continuity during and
+        after COVID-19</em></li>
+</ul><p><em> </em></p>
+<ul>
+    <li><em>Inspired by theme of Saudi G20 Presidency, four-day digital conference brings together government and
+        private sector decision makers to identify strategies, technologies and policies needed for inclusive,
+        sustainable global growth post-pandemic</em></li>
+</ul><p></p><p><strong>Riyadh, Saudi Arabia – 21 October 2020: </strong>Governments must strengthen private sector
+    partnerships to ensure their economies remain resilient against unexpected shocks as the world recovers from the
+    COVID-19 pandemic, according to His Excellency Khalid Al Falih, Minister of Investment of Saudi Arabia, who was
+    speaking today during a headline interview at the inaugural Global Digital Summit Series. The new digital conference
+    series is providing an international audience with an immersive program exploring the policies and strategies needed
+    for inclusive recovery, building on the commitment made by G20 ministers to work together to strengthen trade and
+    investment as a tool for global innovation, growth and job creation.</p><p></p><p>In conversation with Jacopo
+    Dettoni, Editor of fDi Intelligence, on the first day of the event,<strong>His Excellency Khalid Al Falih</strong>
+    emphasized the importance of mitigating risks to business environments when enabling foreign direct investment
+    (FDI). <strong>The Minister</strong>said: “A sense of safety and security for investors is important for governments
+    to ensure. States need to make sure regulations are predictable, transparent and fair, have an honest conversation
+    with the private sector, and keep the business environment healthy so investments can grow and investors can
+    profit.”</p> <p></p><p>According to UNCTAD, FDI is forecast to decrease by nearly 40% in 2020, on top of long-term
+    decline seen over the past five years. The G20 Trade and Investment Ministers addressed this directly in their most
+    recent communique, recognizing that ongoing decline in global FDI flows would exacerbate the economic and social
+    impact of the pandemic, especially in developing nations who already face significant barriers to attracting FDI.
+    The G20 has also reiterated its commitment to identifying gaps in investment promotion capabilities in markets
+    facing barriers to inward investment.</p><p></p><p>His Excellency Khalid Al Falih also outlined how FDI can help
+    drive global economic recovery, stating that governments need to be strategic when attracting investment.
+    “Governments need to bring in FDI when it adds value. This is done by matching the capabilities of investors with
+    market requirements and ensuring their business environment is a suitable platform for investors to address local
+    needs, so that countries can be competitive and profitable in a sustainable way,” <strong>the Minister</strong>
+    said.</p><p></p><p>His Excellency Al Falih also revealed that the Kingdom’s Vision 2030 plan was already
+    anticipating new global challenges and implementing business continuity policies for the private sector before the
+    onset of COVID-19. Going into more detail, <strong>His Excellency</strong> explained: “Vision 2030 is already
+    addressing the global mega trends we have seen having an impact on FDI before the pandemic - such as globalization,
+    urbanization, rapid population growth and increased consumption. We are focusing on leveraging the Kingdom’s
+    qualitative, competitive advantages and building sectors that are anchored in knowledge, research and innovation.”
+</p><p></p><p>According to the Minister, the key to achieving this objective is making sure Saudi Arabia’s youth have a
+    seat at the table. He said: “We are empowering our most important resource: young Saudi men and women. They are in
+    the driving seat of Vision 2030.”</p><p></p><p>Despite the unprecedented impact of COVID-19 and the decline in oil
+    prices on the Saudi market at the beginning of the pandemic, His Excellency Al Falih remains optimistic about the
+    Kingdom’s ongoing economic transformation. Ending the session, <strong>the Minister concluded</strong>: “Saudi
+    Arabia’s economy is resilient - our credit rating has been maintained during the onset of the pandemic. We have
+    proven to the private sector and our people that we can look after them first. With 27 reformed regulations being
+    currently addressed by the government and a plan for Special Economic Zones in development, Saudi Arabia is on its
+    way to recovery.”</p><p></p><p>The Global Digital Summit Series is organized by the Financial Times Live and
+    co-hosted by the Ministry of Investment of Saudi Arabia and G20 Saudi Secretariat as part of the G20’s International
+    Conferences Program, honoring the Kingdom’s role as host of the G20 2020 Presidency. Inspired by this year’s G20
+    theme, ‘Realizing Opportunities of the 21st Century for All’, the <strong>‘A New Framework for Inclusive
+        Growth’</strong> series is taking place between 21<sup>st</sup> - 29<sup>th</sup> October 2020.</p><p></p><p>
+    Across four days of diverse sessions and plenaries, the event is addressing some of the G20’s key priorities as it
+    seeks to support the rebuilding of the global economy – including trade and investment, sustainable development,
+    employment and the digital economy.</p>"
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>أكد معالي وزير الاستثمار المهندس خالد بن عبد العزيز الفالح أن اقتصاد المملكة أحد أكثر الاقتصادات مرونة في العالم، حيث إن أكبر حافز لأي اقتصاد في العالم هو قدرته على الثبات والصمود في وجه الصدمات.<br />جاء ذلك خلال جلسة نقاش ضمن سلسلة لقاءات القمة العالمية الرقمية التي تنظمها شبكة فايننشال تايمز بالتعاون مع وزارة الاستثمار والأمانة السعودية لمجموعة العشرين.<br />وأوضح معاليه إلى أنه من المهم بالنسبة للحكومات في العالم بناء شراكات حقيقية مع القطاع الخاص، مشيراً إلى أن المملكة أثبتت اهتماماً كبيراً بالقطاع الخاص خلال جائحة كورونا إلا أن اهتمامها بالإنسان يأتي أولاً.<br />كما أكد الوزير الفالح على أهمية دور الحكومات في العالم في التعرف على التحديات التي تواجه المستثمرين في العالم وتقديم الدعم اللازم لمواجهة تلك التحديات مشيراً إلى أن المملكة تدعم تلك الجهود.<br />وقال معالي وزير الاستثمار: أن شفافية ووضوح الأنظمة يمنح المستثمرين شعوراً بالأمان ومن المهم أن يعمل العالم على ضمان ذلك.<br />وأشار معاليه، إلى أن المملكة، ورغم الظروف الحالية، ماضية في خططها التنموية وتنفيذ مشاريعها الكبرى المرتبطة برؤية المملكة 2030 ودعم المستثمرين، منوهاً إلى أن استراتيجية المملكة للتكيف مع الظروف الحالية تقوم على تمكين الشباب الذين هم الثروة الحقيقية و المحرك الاساس لرؤية 2030.<br />وأكد الفالح على تشجيع المملكة للاستثمار في مجالات الصناعة والصحة والتكنولوجيا الحيوية والصناعات الدوائية، معرباً معاليه عن تفاؤله بمستقبل الاستثمار في المملكة، على الرغم من الانخفاض العالمي في معدلاته، خصوصًا وأن الإصلاحات الاقتصادية وتمكين الشباب وإقامة مناطق اقتصادية خاصة، ستساعد المملكة على التعافي من آثار الجائحة.<br />يذكر، أن لقاءات القمة العالم الرقمية تقام على مدى أربعة أيام (21-22-28-29) من شهر أكتوبر، بمشاركة أبرز مسؤولي وقادة أعمال كبريات الشركات العالمية، حيث تتناول عدداً من المحاور والموضوعات من أبرزها بناء الاقتصاد الرقمي، والتنمية المستدامة، وتعزيز التوظيف واكتساب المهارات.</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

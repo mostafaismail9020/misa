@@ -1,0 +1,67 @@
+<a:entry xmlns:a="http://www.w3.org/2005/Atom" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+         xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+    <a:author>
+        <a:name/>
+    </a:author>
+    <a:content type="application/xml">
+        <m:properties>
+            <d:Entity>601992</d:Entity>
+            <d:CrNo>1234</d:CrNo>
+            <d:GosiNo>100056348</d:GosiNo>
+            <d:MolNo>1234</d:MolNo>
+            <d:MomraYesNo>N</d:MomraYesNo>
+            <d:ShopLicNo/>
+            <d:Amanah/>
+            <d:Return/>
+            <d:ZakatNo>1234</d:ZakatNo>
+        </m:properties>
+    </a:content>
+    <a:link href="" rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/GovtBranchSet"
+            type="application/atom+xml;type=feed">
+        <m:inline>
+            <a:feed>
+                <a:entry>
+                    <a:author>
+                        <a:name/>
+                    </a:author>
+                    <a:id>
+                        https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtBranches(Entity='601992',BranchName='',BranchType='Commercial%20Center',BranchCity='000018000046',Addr='115673')
+                    </a:id>
+                    <a:category term="ZUI5_SAGIA_SRV.GovtBranch"
+                                scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme"/>
+                    <a:content type="application/xml">
+                        <m:properties>
+                            <d:Entity m:type="Edm.String">601992</d:Entity>
+                            <d:BranchName m:type="Edm.String"/>
+                            <d:BranchType m:type="Edm.String">Commercial Center</d:BranchType>
+                            <d:BranchCity m:type="Edm.String">000018000046</d:BranchCity>
+                            <d:Addr m:type="Edm.String">115673</d:Addr>
+                            <d:BranchStatus m:type="Edm.String">Not Verified</d:BranchStatus>
+                            <d:HeadOffice m:type="Edm.String"/>
+                            <d:MomraYesNo m:type="Edm.String">Y</d:MomraYesNo>
+                            <d:MomraSlNo m:type="Edm.String">123</d:MomraSlNo>
+                            <d:MomraSlAmanah m:type="Edm.String">AL-HASA CITY</d:MomraSlAmanah>
+                            <d:MomraClassCrNo m:type="Edm.String"/>
+                            <d:CrYesNo m:type="Edm.String">Y</d:CrYesNo>
+                            <d:CrNo m:type="Edm.String">123</d:CrNo>
+                            <d:WasselConnectCr m:type="Edm.String"/>
+                            <d:NowasselConnectCr m:type="Edm.String"/>
+                            <d:NoPhyLoc m:type="Edm.String">X</d:NoPhyLoc>
+                            <d:PhyAddress m:type="Edm.String"/>
+                            <d:WasselCrNo m:type="Edm.String"/>
+                            <d:WasselStreet m:type="Edm.String"/>
+                            <d:WasselBuildNo m:type="Edm.String"/>
+                            <d:WasselAddNo m:type="Edm.String"/>
+                            <d:WasselZip m:type="Edm.String"/>
+                            <d:WasselUnit m:type="Edm.String"/>
+                            <d:WasselLatitude m:type="Edm.String"/>
+                            <d:WasselLongitude m:type="Edm.String"/>
+                            <d:sSelectedIndex m:type="Edm.String">0</d:sSelectedIndex>
+                            <d:Updated m:type="Edm.String">X</d:Updated>
+                        </m:properties>
+                    </a:content>
+                </a:entry>
+            </a:feed>
+        </m:inline>
+    </a:link>
+</a:entry>

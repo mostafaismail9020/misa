@@ -1,0 +1,11 @@
+$productCatalog = investsaudiProductCatalog
+$storeUid = investsaudi
+$siteUid = investsaudi
+$siteName = Investsaudi
+$contentCatalog = investsaudiContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default = $contentCatalog]), CatalogVersion.version[default = Staged])[default = $contentCatalog:Staged]
+$defaultLanguage = en
+$localSiteUrl=(?i)^https?:\/\/saghcdhws03.hec.sagia.gov.sa:9002\/investsaudistorefront(.*)$
+
+UPDATE CMSSite; uid[unique = true]; name[$defaultLanguage]; theme(code); channel(code); stores(uid); contentCatalogs(id); defaultCatalog(id); defaultLanguage(isoCode); urlPatterns; active; previewURL; urlEncodingAttributes
+; $siteUid ; $siteName ; lambda ; B2B ; $storeUid ; $contentCatalog ; $productCatalog ; $defaultLanguage ; $localSiteUrl,(?i)^https?://[^/]+(/[^?]*)?\?(.*\&)?(site=$siteUid)(|\&.*)$,(?i)^https?://$siteUid\.[^/]+(|/.*|\?.*)$,(?i)^https?://api\.hybrisdev\.com(:[\d]+)?/rest/.*$,(?i)^https?://localhost(:[\d]+)?/rest/.*$ ; true ; $storefrontContextRoot/?site=$siteUid ; storefront,language

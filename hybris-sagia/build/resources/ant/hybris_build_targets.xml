@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project name="hybris_build_targets">
+	<target name="all" description="build and deploy" if="platformPresent">
+		<ant dir="${platformhome}" target="all" inheritrefs="true"/>
+	</target>
+	<target name="build" description="Builds all extensions">
+		<ant dir="${platformhome}" target="build" inheritrefs="true"/>
+	</target>
+	<target name="clean" description="Cleans platform and all extensions" if="platformPresent">
+		<ant dir="${platformhome}" target="clean" inheritrefs="true"/>
+	</target>
+	<target name="codequality" description="executes all codequality tests">
+		<ant dir="${platformhome}" target="codequality" inheritrefs="true"/>
+	</target>
+	<target name="customize" description="Copies all files from '/config/customize' folder to '/bin' folder recursively">
+		<ant dir="${platformhome}" target="customize" inheritrefs="true"/>
+	</target>
+	<target name="deploy" description="Deploys platform to bundled server. Will copy files of config/tomcat or config/tcServer to config folder of configured bundled server.">
+		<ant dir="${platformhome}" target="deploy" inheritrefs="true"/>
+	</target>
+	<target name="dist" description="Creates a distribution">
+		<ant dir="${platformhome}" target="dist" inheritrefs="true"/>
+	</target>
+	<target name="initialize" depends="all" description="Runs an initialization of the specified tenant in stand-alone mode, using hybris Administration Console default settings. Syntax: ant initialize [-Dtenant].">
+		<ant dir="${platformhome}" target="initialize" inheritrefs="true">
+			<property name="tenant" value="master"/>
+		</ant>
+	</target>
+	<target name="pmd" description="Tests the source code with the pmd rules.">
+		<ant dir="${platformhome}" target="pmd" inheritrefs="true"/>
+	</target>
+	<target name="production" description="Adjusts the wrapper script to run as hybris and creates production environment zip's for hybris Server, then restores the original settings in wrapper script">
+                <replace file="${platformhome}/tomcat/bin/wrapper.sh" value="RUN_AS_USER=hybris">
+		    <replacetoken>#RUN_AS_USER=</replacetoken>
+                </replace>
+		<ant dir="${platformhome}" target="production" inheritrefs="true"/>
+                <replace file="${platformhome}/tomcat/bin/wrapper.sh" value="#RUN_AS_USER=">
+                    <replacetoken>RUN_AS_USER=hybris</replacetoken>
+                </replace>
+	</target>
+	<target name="server" description="Configures hybris Server and restart if running">
+		<ant dir="${platformhome}" target="server" inheritrefs="true"/>
+	</target>
+	<target name="sonarsingle" description="Executes sonar to check a single project with the sonar rules.">
+		<ant dir="${platformhome}" target="sonarsingle" inheritrefs="true"/>
+	</target>
+	<target name="startHybrisServer" description="Starts the hybris Server">
+		<ant dir="${platformhome}" target="startHybrisServer" inheritrefs="true"/>
+	</target>
+	<target name="updatesystem" description="Performs an update system on master tenant">
+		<ant dir="${platformhome}" target="updatesystem" inheritrefs="true"/>
+	</target>
+</project>

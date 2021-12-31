@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+    <bean class="de.hybris.platform.commercefacades.product.data.ProductData">
+        <property name="investmentModel" type="java.lang.String"/>
+        <property name="featured" type="java.lang.Boolean"/>
+        <property name="highlights" type="java.lang.String"/>
+        <property name="pdfUrl" type="java.lang.String"/>
+        <property name="imageUrl" type="java.lang.String"/>
+        <property name="logo" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
+        <property name="banner" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
+        <property name="overviewPicture" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
+        <property name="featureMap" type="java.util.Map&lt;String, String>"/>
+        <property name="opportunityDetailsTitle" type="java.lang.String"/>
+        <property name="parentCategory" type="java.lang.String"/>
+        <property name="productType" type="java.lang.String"/>
+        <property name="quote" type="java.lang.String"/>
+        <property name="featureInfoMap" type="java.util.Map&lt;String, String>"/>
+        <property name="featureAdditionalInfoMap" type="java.util.Map&lt;String, String>"/>
+    </bean>
+
+    <bean class="de.hybris.platform.commercefacades.product.data.CategoryData">
+        <property name="picture" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
+        <property name="thumbnail" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
+        <property name="parentCategoryCode" type="java.lang.String"/>
+    </bean>
+
+    <bean class="de.hybris.platform.commercefacades.product.data.OpportunityData">
+        <property name="opportunity" type="de.hybris.platform.commercefacades.product.data.ProductData"/>
+        <property name="parentCategory" type="de.hybris.platform.commercefacades.product.data.CategoryData"/>
+    </bean>
+
+    <bean class="de.hybris.platform.commercefacades.product.data.SuccessStoryData">
+        <property name="successStory" type="de.hybris.platform.commercefacades.product.data.ProductData"/>
+        <property name="parentCategory" type="de.hybris.platform.commercefacades.product.data.CategoryData"/>
+    </bean>
+
+    <bean class="de.hybris.platform.customerticketingfacades.data.ContactTicketSubjectData">
+        <property name="code" type="java.lang.String"/>
+        <property name="label" type="java.lang.String"/>
+    </bean>
+    <bean class="de.hybris.platform.commercefacades.product.data.SiteMapItemData">
+        <property name="url" type="java.lang.String"/>
+        <property name="name" type="java.lang.String"/>
+        <property name="code" type="java.lang.String"/>
+    </bean>
+
+
+    <bean class="de.hybris.platform.customerticketingfacades.data.ContactTicketData" extends="de.hybris.platform.customerticketingfacades.data.TicketData">
+        <property name="name" type="java.lang.String"/>
+        <property name="company" type="java.lang.String"/>
+        <property name="mobile" type="java.lang.String"/>
+        <property name="jobTitle" type="java.lang.String"/>
+        <property name="email" type="java.lang.String"/>
+        <property name="contactSubject" type="java.lang.String"/>
+        <property name="categoryCode" type="java.lang.String"/>
+        <property name="opportunity" type="java.lang.String"/>
+    </bean>
+
+    <bean class="de.hybris.platform.ticketsystem.data.ContactTicketParameter" extends="de.hybris.platform.ticketsystem.data.CsTicketParameter">
+        <property name="name" type="java.lang.String"/>
+        <property name="company" type="java.lang.String"/>
+        <property name="mobile" type="java.lang.String"/>
+        <property name="jobTitle" type="java.lang.String"/>
+        <property name="email" type="java.lang.String"/>
+        <property name="contactSubject" type="java.lang.String"/>
+        <property name="message" type="java.lang.String"/>
+        <property name="categoryCode" type="java.lang.String"/>
+        <property name="opportunity" type="java.lang.String"/>
+    </bean>
+</beans>

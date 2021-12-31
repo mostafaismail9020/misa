@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<project name="testing">
+	<description>
+		Custom targets to run only custom extensions tests.
+		@author adrien.missemer
+	</description>
+
+	<macrodef name="run_web_tests">
+		<attribute name="extensions" />
+		<sequential>
+			<for list="@{extensions}" param="ext" delimiter=",">
+				<sequential>
+					<echo>"yunitweb testing @{ext}"</echo>
+					<extension_yunitweb extname="@{ext}" />
+				</sequential>
+			</for>
+		</sequential>
+	</macrodef>
+	
+	<target name="allcustomtests" description="Runs all JUnit tests in the custom extensions, that is, all JUnit tests located at 'testsrc' folder of an extensions in ${test.custom.extensions}">
+		<property name="testclasses.extensions" value="${test.custom.extensions}" />
+		<ant dir="${platformhome}" target="alltests" inheritrefs="true"/>
+	</target>
+	<target name="junitadditional" description="Runs all JUnit tests in the custom and additional extensions, that is, all JUnit tests located at 'testsrc' folder of an extensions in ${test.custom.extensions} and ${test.additional.extensions}">
+		<if>
+			<length string="${test.additional.extensions}" trim="true" length="0" />
+			<then>
+				<property name="testclasses.extensions" value="${test.custom.extensions}" />
+			</then>
+			<else>
+				<property name="testclasses.extensions" value="${test.custom.extensions},${test.additional.extensions}" />
+			</else>
+		</if>
+		<ant dir="${platformhome}" target="alltests" inheritrefs="true"/>
+	</target>
+	<target name="junitall" description="Runs all JUnit tests; that is, all JUnit tests located at 'testsrc' folder of an extensions">
+		<ant dir="${platformhome}" target="alltests" inheritrefs="true"/>
+	</target>
+	<target name="junitweb" description="Runs all JUnit web tests in the custom extensions; that is, all JUnit tests located at 'web/testsrc' folder of an extensions in ${test.custom.extensions}">
+		<run_web_tests extensions="${test.custom.extensions}" />
+	</target>
+	<target name="junitwebadditional" description="Runs all JUnit web tests in the custom extensions and additional extensions; that is, all JUnit tests located at 'web/testsrc' folder of an extensions in ${test.custom.extensions} and ${test.additional.extensions}">
+		<if>
+			<length string="${test.additional.extensions}" trim="true" length="0" />
+			<then>
+				<property name="testclasses.extensions" value="${test.custom.extensions}" />
+			</then>
+			<else>
+				<property name="testclasses.extensions" value="${test.custom.extensions},${test.additional.extensions}" />
+			</else>
+		</if>
+		<run_web_tests extensions="${testclasses.extensions}" />
+	</target>
+	<target name="junitweball" description="Runs all JUnit web tests; that is, all JUnit tests located at 'web/testsrc' folder of an extensions">
+		<ant dir="${platformhome}" target="yunitweball" inheritrefs="true"/>
+	</target>
+</project>

@@ -1,0 +1,9 @@
+#Ant properties
+#Mon Jun 11 15:35:19 CEST 2018
+builddate=20180611 1533
+description=sagiasecchat
+name=sagiasecchat
+releasedate=20180313 1012
+vendor=hybris
+version=6.7.0.2
+version.api=6.7.0

@@ -1,0 +1,30 @@
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<groups>
+	<group name="addons_responsive">
+      <css>/_ui/addons/smarteditaddon/responsive/common/css/smarteditaddon.css</css>
+      <css>/_ui/addons/customerticketingaddon/responsive/common/css/customerticketingaddon.css</css>
+      <css>/_ui/addons/casblogaddon/responsive/common/css/casblogaddon.css</css>
+      <css minimize="false">/_ui/addons/casblogaddon/responsive/common/css/jquery-ui-1.10.3.custom.min.css</css>
+      <css>/_ui/addons/casblogaddon/responsive/common/css/rangecalendar.css</css>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/webApplicationInjector.js</js>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/reprocessPage.js</js>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/adjustComponentRenderingToSE.js</js>
+      <js>/_ui/addons/smarteditaddon/responsive/common/js/smarteditaddon.js</js>
+      <js>/_ui/addons/customerticketingaddon/responsive/common/js/customerticketingaddon.js</js>
+      <js>/_ui/addons/investsaudisecureportal/responsive/common/js/investsaudisecureportal.js</js>
+      <js>/_ui/addons/casblogaddon/responsive/common/js/acc.casblogaddon.js</js>
+      <js>/_ui/addons/casblogaddon/responsive/common/js/jquery.rangecalendar.js</js>
+      <js minimize="false">/_ui/addons/casblogaddon/responsive/common/js/jquery.ui.touch-punch.min.js</js>
+      <js minimize="false">/_ui/addons/casblogaddon/responsive/common/js/moment+langs.min.js</js>
+      <js>/_ui/addons/casblogaddon/responsive/common/js/acc.rangecalendarcustom.js</js>
+   </group>
+</groups>

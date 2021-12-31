@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<project name="master">
+	<description>
+		Master build ant project for Hybris implementations at SAP AMS
+	</description>
+	<property name="environment" value="local"/>
+	<property location="./build" name="BUILD_HOME"/>
+	
+	<property location="hybris/bin/platform" name="platformhome"/>
+	<property location="hybris" name="HYBRIS_HOME"/>
+	<property location="${HYBRIS_HOME}/config" name="HYBRIS_CONFIG_DIR"/>
+	<property location="${HYBRIS_HOME}/config-${environment}" name="HYBRIS_ENV_CONFIG_DIR"/>
+	<property location="${HYBRIS_HOME}/config-common" name="HYBRIS_COMMON_CONFIG_DIR"/>
+	<property location="${HYBRIS_HOME}/data" name="HYBRIS_DATA_DIR"/>
+	<property location="${HYBRIS_HOME}/log" name="HYBRIS_LOG_DIR"/>
+	<property location="${HYBRIS_HOME}/bin" name="HYBRIS_BIN_DIR"/>
+	<property location="${HYBRIS_HOME}/bin/custom" name="HYBRIS_CUSTOM_DIR"/>
+	
+	<!-- FIX for https://mtl-ps-jira.hybris.com/browse/COACH-296, see also https://wiki.hybris.com/display/~matt.rossner@hybris.com/ant+production+workaround -->
+	<property name="maven.update.dbdrivers" value="false"/>
+	
+	<tstamp>
+		<format pattern="yyyy_MM_dd_hh" property="build.date" unit="hour"/>
+	</tstamp>
+	
+	<property name="release.description" value="SAP AMS Team Build"/>
+	<property name="release.version" value="${build.date}"/>
+	<property name="release.date" value="${build.date}"/>
+	
+	<available file="${platformhome}/build.xml" property="platformPresent"/>
+	<echo>-------------------------------------------------------------------------------</echo>
+	<echo>ENVIRONMENT: ${environment}</echo>
+	<echo>RELEASE: ${release.description} - ${release.version}</echo>
+	<echo>platformhome: ${platformhome}</echo>
+	<echo>-------------------------------------------------------------------------------</echo>
+	
+	<!-- import hybris macros after configuration has been set, allow to fail for unzip tasks, etc. -->
+	<macrodef description="Updates the configuration" name="config">
+		<sequential>
+			<!-- required in 5.0.2.1 because of antmacros.xml:99 -->
+			<copy file="${BUILD_HOME}/config/customize/platform/lib/dbdriver/mysql-connector-java-5.1.23-bin.jar" todir="${platformhome}/lib/dbdriver/" verbose="true"/>
+			<available file="${platformhome}/build.xml" property="platformPresent"/>
+			<ant antfile="prepare.xml" dir="build/resources/ant" target="prepare"/>
+		</sequential>
+	</macrodef>
+
+	<import file="${platformhome}/resources/ant/antmacros.xml" optional="true"/>
+	<import file="resources/ant/prepare.xml"/>
+	<import file="resources/ant/hybris_build_targets.xml"/>
+	<import file="resources/ant/quality.xml"/>
+	<import file="resources/ant/package.xml"/>
+	<import file="resources/ant/packaging.xml"/>
+	<import file="resources/ant/testing.xml"/>
+	<import file="resources/ant/jenkins_targets.xml"/>
+	
+	<config />
+
+	<condition property="hybrisZipFileIsKnown">
+		<or>
+			<isset property="hybris.zip.package.src"/>
+			<isset property="hybris.zip.package.filename"/>
+		</or>
+	</condition>
+	
+	<condition property="mustDefinehybrisZipFile">
+		<and>
+			<not>
+				<isset property="hybris.zip.package.src"/>
+			</not>
+			<isset property="hybris.zip.package.filename"/>
+		</and>
+	</condition>
+
+	<target name="failIfHybrisZipFileUnknown" unless="hybrisZipFileIsKnown">
+		<echo>********** CANNOT INSTALL ********************</echo>
+		<echo>Hybris ZIP file is not defined at ${hybris.zip.package.filename}</echo>
+		<echo>**********************************************</echo>
+		<fail>
+		</fail>
+	</target>
+
+	<target if="mustDefinehybrisZipFile" name="setHybrisZipFile">
+		<property location="${hybris.zip.package.filename}" name="hybris.zip.package.src"/>
+	</target>
+
+	<target name="failIfHybrisZipNotPresent" unless="hybrisZipPresent">
+		<echo>********** CANNOT INSTALL ********************</echo>
+		<echo>Missing Hybris zip file ${hybris.zip.package.src} </echo>
+		<echo>You can download it on linux server using the following command</echo>
+		<echo>      wget https://download.hybris.com/resources/releases/5.x.y/hybris-accelerator-version.zip -P /tmp --user=your.email@hybris.com --ask-password</echo>
+		<echo>**********************************************</echo>
+		<fail>
+		</fail>
+	</target>
+
+	<target name="install" depends="failIfHybrisZipFileUnknown,setHybrisZipFile" unless="platformPresent">
+		<echo>Unzipping Hybris platform from ${hybris.zip.package.src}</echo>
+		<available file="${hybris.zip.package.src}" property="hybrisZipPresent"/>
+		<antcall target="failIfHybrisZipNotPresent"/>
+		<unzip dest="." src="${hybris.zip.package.src}">
+			<patternset>
+				<include name="hybris/**/*"/>
+			</patternset>
+		</unzip>
+		<echo>Unzipping done!</echo>
+		<config/>
+		<antcall target="customize"/>
+	</target>
+
+	<!-- fix for PLA-9860 -->
+	<target description="Initializes JUnit tenant" name="junitinit">
+		<ant antfile="junitinit.xml" dir="${BUILD_HOME}/resources/ant/" inheritrefs="true" target="junitinit"/>
+	</target>
+</project>

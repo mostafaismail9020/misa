@@ -1,0 +1,43 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                      	 					; realFileName                    									; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; al-baha-banner-image.png	                                    ; al-baha-banner-image.png	                                 		; $siteResource/al-baha-banner-image.png	                                        	  ;                 image/png                ;                                          ; ""     ;
+					; al-baha-map.png                                               ; al-baha-map.png                                               	; $siteResource/al-baha-map.png                                                  		  ;                 image/png                ;                                          ; ""     ;
+					; al-baha-trading.png				   						    ; al-baha-trading.png				   						        ; $siteResource/al-baha-trading.png				   						                  ;                 image/png                ;                                          ; ""     ;
+					; al-baha-health-care.png		           					    ; al-baha-health-care.png		           					        ; $siteResource/al-baha-health-care.png		           					                  ;                 image/png                ;                                          ; ""     ;
+					; al-baha-non-metallic-mineral-products-manufacturing.png		; al-baha-non-metallic-mineral-products-manufacturing.png			; $siteResource/al-baha-non-metallic-mineral-products-manufacturing.png	                  ;                 image/png                ;                                          ; ""     ;
+					; al-baha-technology.png	           						    ; al-baha-technology.png	           						        ; $siteResource/al-baha-technology.png	           						                  ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-tourism.png		           						    ; al-baha-tourism.png		           						        ; $siteResource/al-baha-tourism.png		           						                  ;                 image/png                ;                                          ; ""     ;   
+																   
+					; al-baha-population.png        	           					; al-baha-population.png        	           						; $siteResource/al-baha-population.png        	                                          ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-airport.png    			     		 				; al-baha-airport.png    											; $siteResource/al-baha-airport.png    			                                 		  ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-population-growth.png        		 					; al-baha-population-growth.png   									; $siteResource/al-baha-population-growth.png    	                                	  ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-landmass.png                       					; al-baha-landmass.png               								; $siteResource/al-baha-landmass.png                                                      ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-active-factories.png  	   		 					; al-baha-active-factories.png  									; $siteResource/al-baha-active-factories.png  	                               		  	  ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-dams.png        		          						; al-baha-dams.png        		       								; $siteResource/al-baha-dams.png        			                                      ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-hotels.png				          					; al-baha-hotels.png				      			                ; $siteResource/al-baha-hotels.png				    									  ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-roads-length.png                  					; al-baha-roads-length.png                      	                ; $siteResource/al-baha-roads-length.png               									  ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-chambers-of-commerce.png         						; al-baha-chambers-of-commerce.png                                  ; $siteResource/al-baha-chambers-of-commerce.png       									  ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-hospitals.png			           						; al-baha-hospitals.png			   				                    ; $siteResource/al-baha-hospitals.png				     								  ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-industrial-city.png		      	 					; al-baha-industrial-city.png						                ; $siteResource/al-baha-industrial-city.png		     									  ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-towns.png				        	 					; al-baha-towns.png							                        ; $siteResource/al-baha-towns.png						  								  ;                 image/png                ;                                          ; ""     ;   					
+																   
+					; al-baha-good-electricity-infrastructure.png             		; al-baha-good-electricity-infrastructure.png             			; $siteResource/al-baha-good-electricity-infrastructure.png                               ;                 image/png                ;                                          ; ""     ;   
+					; al-baha-good-road-infrastructure.png                    		; al-baha-good-road-infrastructure.png              	         	; $siteResource/al-baha-good-road-infrastructure.png                                      ;                 image/png                ;                                          ; ""     ;   	
+					; al-baha-highest-production-honey-nationally.png         		; al-baha-highest-production-honey-nationally.png   	           	; $siteResource/al-baha-highest-production-honey-nationally.png                           ;                 image/png                ;                                          ; ""     ;   	
+					; al-baha-good-digital-infrastructure.png                 		; al-baha-good-digital-infrastructure.png           	           	; $siteResource/al-baha-good-digital-infrastructure.png                                   ;                 image/png                ;                                          ; ""     ;   	
+					; al-baha-high-capacity-higher-education.png              		; al-baha-high-capacity-higher-education.png        	       		; $siteResource/al-baha-high-capacity-higher-education.png                                ;                 image/png                ;                                          ; ""     ;   												   
+					; al-baha-two-industrial-cities.png                       		; al-baha-two-industrial-cities.png                					; $siteResource/al-baha-two-industrial-cities.png                                         ;                 image/png                ;                                          ; ""     ;   	

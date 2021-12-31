@@ -1,0 +1,121 @@
+INSERT_UPDATE EaseOfProtectingMinorityInvestors	;frequency      ;rankValue       ;scoreValue 	;year[unique=true]
+												;Annual 		;			     ;			    ;2010
+												;Annual 		;16				 ;70			;2011	
+												;Annual 		;16				 ;87	        ;2012
+												;Annual 		;19				 ;73			;2013
+												;Annual 		;21				 ;66.7			;2014
+												;Annual 		;60				 ;57.5			;2015
+												;Annual 		;83		      	 ;51.7			;2016
+												;Annual 		;62				 ;58.3			;2017
+												;Annual 	    ;10				 ;75			;2018
+												;Annual 	    ;6				 ;80	        ;2019
+												;Annual 		;03				 ;86			;2020
+												;Annual 		;03			     ;86.0   			;2021
+
+INSERT_UPDATE LogisticsPerformanceIndex			;frequency      	;rankValue       ;scoreValue 		;year[unique=true]
+												;Every 2 years 		;40			     ;3.22			    ;2010
+												;Every 2 years 		;				 ;					;2011	
+												;Every 2 years 		;37				 ;3.18		        ;2012
+												;Every 2 years 		;				 ;					;2013
+												;Every 2 years 		;49				 ;3.15				;2014
+												;Every 2 years 		;				 ;					;2015
+												;Every 2 years 		;52		      	 ;3.16				;2016
+												;Every 2 years 		;				 ;					;2017
+												;Every 2 years 	    ;55				 ;3.01				;2018
+												;Every 2 years 	    ;				 ;			        ;2019
+												;Every 2 years 		;				 ;					;2020
+												;Every 2 years 		;			     ;  	 			;2021
+
+
+INSERT_UPDATE EconomicFreedomIndex				;frequency      ;rankValue       ;scoreValue 		;year[unique=true]
+												;Annual 		;			     ;64.1			    ;2010
+												;Annual 		;				 ;66.2				;2011	
+												;Annual 		;				 ;62.5	            ;2012
+												;Annual 		;				 ;60.6				;2013
+												;Annual 		;				 ;62.2				;2014
+												;Annual 		;				 ;62.1				;2015
+												;Annual 		;		      	 ;62.1				;2016
+												;Annual 		;				 ;64.4				;2017
+												;Annual 	    ;				 ;59.6				;2018
+												;Annual 	    ;				 ;60.7	        	;2019
+												;Annual 		;				 ;62.4				;2020
+												;Annual 		;63			     ;66   				;2021
+
+
+INSERT_UPDATE GlobalInnovationIndex				;frequency      ;rankValue       ;scoreValue 	;year[unique=true]
+												;Annual 		;			     ;			    ;2010
+												;Annual 		;54				 ;36.44			;2011	
+												;Annual 		;48				 ;39.3	        ;2012
+												;Annual 		;42				 ;41.21			;2013
+												;Annual 		;38				 ;41.61			;2014
+												;Annual 		;43				 ;40.65			;2015
+												;Annual 		;49		      	 ;37.75			;2016
+												;Annual 		;55				 ;36.17			;2017
+												;Annual 	    ;61				 ;34.27			;2018
+												;Annual 	    ;68				 ;32.93	        ;2019
+												;Annual 		;66				 ;30.94			;2020
+												;Annual 		;66			     ;31.8   		;2021
+
+
+INSERT_UPDATE EGovernmentDevelopmentIndex		;frequency      	;rankValue       ;scoreValue 			;year[unique=true]
+												;Every 2 years 		;58			     ;0.5142			    ;2010
+												;Every 2 years 		;				 ;						;2011	
+												;Every 2 years 		;41				 ;0.6658	        	;2012
+												;Every 2 years 		;				 ;						;2013
+												;Every 2 years 		;36				 ;0.69					;2014
+												;Every 2 years 		;				 ;						;2015
+												;Every 2 years 		;44		      	 ;0.6822				;2016
+												;Every 2 years 		;				 ;						;2017
+												;Every 2 years 	    ;52				 ;0.7119				;2018
+												;Every 2 years 	    ;				 ;				        ;2019
+												;Every 2 years 		;43				 ;0.7991				;2020
+												;Every 2 years 		;			     ;   					;2021
+
+
+INSERT_UPDATE GlobalCompetitivenessReport	;frequency      ;rankValue       ;scoreValue 			;year[unique=true]
+												;Annual 		;28			     ;4.75			    ;2010
+												;Annual 		;21				 ;4.95				;2011	
+												;Annual 		;17				 ;5.17	        	;2012
+												;Annual 		;18				 ;5.19				;2013
+												;Annual 		;24				 ;5.1				;2014
+												;Annual 		;25				 ;5.1				;2015
+												;Annual 		;29		      	 ;4.84				;2016
+												;Annual 		;30				 ;4.83				;2017
+												;Annual 	    ;39				 ;67.5				;2018
+												;Annual 	    ;36				 ;70	       		;2019
+												;Annual 		;				 ;					;2020
+												;Annual 		;			     ;   				;2021
+
+
+INSERT_UPDATE LegatumProsperityIndex			;frequency      ;rankValue       ;scoreValue 	;year[unique=true]
+												;Annual 		;49			     ;			    ;2010
+												;Annual 		;49				 ;				;2011	
+												;Annual 		;52				 ;		        ;2012
+												;Annual 		;50				 ;				;2013
+												;Annual 		;47				 ;				;2014
+												;Annual 		;42				 ;				;2015
+												;Annual 		;85		      	 ;				;2016
+												;Annual 		;78				 ;				;2017
+												;Annual 	    ;86				 ;				;2018
+												;Annual 	    ;71				 ;		        ;2019
+												;Annual 		;71				 ;				;2020
+												;Annual 		;			     ;   			;2021
+
+
+INSERT_UPDATE EaseOfStartingBusiness			;frequency      ;rankValue       ;scoreValue 	;year[unique=true]
+												;Annual 		;			     ;			    ;2010
+												;Annual 		;9				 ;96.2			;2011	
+												;Annual 		;14				 ;90.6	        ;2012
+												;Annual 		;83				 ;80.9			;2013
+												;Annual 		;86				 ;80.8			;2014
+												;Annual 		;89				 ;82.7			;2015
+												;Annual 		;98		      	 ;78.7			;2016
+												;Annual 		;108			 ;77.1			;2017
+												;Annual 	    ;100			 ;80			;2018
+												;Annual 	    ;107			 ;80.1	        ;2019
+												;Annual 		;36				 ;93.1			;2020
+												;Annual 		;36			     ;93.1   		;2021
+												
+
+
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util.xsd">
+		
+	<context:annotation-config/>
+
+	<security:http pattern="/**" security="none" />
+
+	<!-- Path matcher to use, AntPathMatcher is the default -->
+	<alias name="antPathMatcher" alias="defaultPathMatcher" />
+	<bean id="antPathMatcher" class="org.springframework.util.AntPathMatcher" />
+
+	<bean id="redirectStrategy" class="org.springframework.security.web.DefaultRedirectStrategy"  />
+
+	<alias name="defaultGuidCookieGenerator" alias="guidCookieGenerator"/>
+	<bean id="defaultGuidCookieGenerator" class="com.investsaudi.portal.storefront.security.cookie.EnhancedCookieGenerator" >
+		<property name="cookieSecure" value="true" />
+		<property name="cookieName" value="acceleratorSecureGUID" />
+		<property name="httpOnly" value="true"/>
+	</bean>
+
+	<!-- CSRF -->
+	<bean id="csrfTokenRepository" class="org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository">
+    	<property name="headerName" value="CSRFToken" />
+    	<property name="parameterName" value="CSRFToken" />
+	</bean>
+	
+	<util:list id="csrfAllowedUrlPatternsList" />
+	
+	<alias name="defaultCsrfProtectionMatcher" alias="csrfProtectionMatcher"/>
+	<bean id="defaultCsrfProtectionMatcher" class="com.investsaudi.portal.storefront.security.CsrfProtectionMatcher">
+		<property name="csrfAllowedUrlPatterns" ref="csrfAllowedUrlPatternsList"/>
+	</bean>
+
+</beans>

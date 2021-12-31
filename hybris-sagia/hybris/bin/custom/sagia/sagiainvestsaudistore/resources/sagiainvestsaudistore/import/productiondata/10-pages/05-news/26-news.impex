@@ -1,0 +1,73 @@
+$page = news-manufacturing-in-saudi-arabia
+$template = portalGlobalTemplate
+$name = MANUFACTURING IN SAUDI ARABIA – A WIN-WIN OPPORTUNITY
+$titleEn = $name
+$titleAr = هيئة الاستثمار تستضيف توقيع اتفاقية بين تي آر بي الكورية والشركة السعودية المتقدمة للسيور المطاطية
+$shortDescEn = The Manufacturing And Industry Are Central To The Future Of Saudi Arabia’s
+$shortDescAr = استضافت هيئة الاستثمار اليوم في مقرها بالرياض توقيع اتفاقية المشروع المشترك بين
+$pagelabel = /news/manufacturing-in-saudi-arabia-a-win-win-opportunity
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; au8i2045           ; au8i2045.jpg ; $siteResource/au8i2045.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; au8i2045 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; au8i2045                          ; au8i2045                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 22.08.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<p>The manufacturing and industry are central to the future of Saudi Arabia&rsquo;s economy &ndash; and our ambitious program of economic reforms aims to ensure that they can create jobs, diversify our economy, drive exports and provide long term sustainable growth. However, we know that we will need to work with partners to achieve this and attracting international investors will be vital.</p>
+<p>&nbsp;</p>
+<p>One example of the sort of investment we are looking to attract was showcased in SAGIA&rsquo;s offices today when TRB, a South Korean manufacturer of conveyor belts signed a joint venture with Advanced Industrial Belts Company, a Saudi firm.</p>
+<p>&nbsp;</p>
+<p>Alongside the signing of the joint venture, the two companies also held a workshop with potential customers &ndash; including leading global industrial entities such as SABIC, Saudi Aramco and Ma&rsquo;aden and other local leading cement companies &ndash; to showcase the manufacturing capacity they will be developing and address the demand within the local market.</p>
+<p>&nbsp;</p>
+<p>Finally, not only does this announcement show the importance of manufacturing within Saudi Arabia &ndash; it also demonstrates the impact of building closer ties with our international partners.</p>
+<p>&nbsp;</p>
+<p>TRB&rsquo;s investment doesn&rsquo;t come in isolation, it follows years of cooperation between Saudi Arabia and South Korea, including the recent Saudi-South Korean Partnership Convention. Arranged by SAGIA, the forum saw fifteen memoranda of understanding between Saudi and South Korean entities.&nbsp;</p>
+<p>&nbsp;</p>
+<p>Expanding into a new market is a challenging decision for any business &ndash; and not one they will take without a strong understanding of the country, its regulations and its culture. By continuing to work with our partners in key markets, we can help them understand the opportunity in Saudi Arabia and how they can access it.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>استضافت هيئة الاستثمار اليوم في مقرها بالرياض توقيع اتفاقية المشروع المشترك بين الشركة الكورية تي آر بي والشركة السعودية المتقدمة للسيور المطاطية، حيث تسعى الشركتان إلى إنشاء مصنع لإنتاج السيور المطاطية.</p>
+<p>&nbsp;</p>
+<p>وفي سياق الاتفاقية الموقعة؛ استضافت الهيئة ورشة عمل عقدتها الشركتان عقب توقيع الاتفاقية، وقد حضر الورشة عدد من كبرى الشركات السعودية ذات العلاقة مثل أرامكو السعودية وسابك ومعادن وغيرها من الشركات المحلية لصناعة الإسمنت، وهدفت الشركتان من ورشة العمل إلى استعراض المنتجات المزمع تقديمها في السوق، إضافة إلى فهم احتياجات الشركات المحلية ومتطلبات السوق بوجه عام.</p>
+<p>&nbsp;</p>
+<p>جدير بالذكر أن الاتفاقية الموقعة تستهدف توطين صناعة السيور المطاطية في المملكة، إذ يتوقع أن تثمر هذه الشراكة استثمارًا كبيرًا في المستقبل؛ حيث يؤدي قطاع الصناعة والتصنيع دورًا محوريًّا في مستقبل الاقتصاد السعودي بصفته أحد القطاعات المستهدفة في برنامج الإصلاحات الاقتصادية، لمساهمته في توفير المزيد من فرص العمل وتحقيق التنوع الاقتصادي وزيادة الصادرات وتحقيق نمو مستدام.</p>
+<p>&nbsp;</p>
+<p>يُعد توقيع الاتفاقية أحد نتائج العلاقات الاستثمارية والاقتصادية الممتدة بين المملكة وكوريا الجنوبية، إذ تم مؤخرًا انعقاد ملتقى الشراكة السعودي الكوري الذي نظمته هيئة الاستثمار في العاصمة الكورية سيؤول، حيث شهد الملتقى توقيع 15 مذكرة تفاهم في عدد من القطاعات الإستراتيجية المستهدفة في المملكة.</p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

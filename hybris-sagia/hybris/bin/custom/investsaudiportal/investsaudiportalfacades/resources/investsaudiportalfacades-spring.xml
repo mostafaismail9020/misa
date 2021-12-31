@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+		
+	<context:annotation-config  />
+	<context:component-scan base-package="com.investsaudi.portal.facades" />
+
+	<!-- accelerator Image Format Mappings -->
+	<alias name="acceleratorImageFormatMapping" alias="imageFormatMapping"/>
+	<bean id="acceleratorImageFormatMapping" parent="defaultImageFormatMapping">
+		<property name="mapping">
+			<map>
+				<entry key="superZoom" value="1200Wx1200H"/>
+				<entry key="zoom" value="515Wx515H"/>
+				<entry key="store" value="365Wx246H"/>
+				<entry key="product" value="300Wx300H"/>
+				<entry key="thumbnail" value="96Wx96H"/>
+				<entry key="cartIcon" value="65Wx65H"/>
+				<entry key="styleSwatch" value="30Wx30H"/>
+			</map>
+		</property>
+	</bean>
+
+	<alias name="acceleratorProductPrimaryImagePopulator" alias="productPrimaryImagePopulator" />
+	<bean id="acceleratorProductPrimaryImagePopulator" parent="defaultProductPrimaryImagePopulator">
+		<property name="imageFormats">
+			<list>
+				<value>zoom</value>
+				<value>product</value>
+				<value>thumbnail</value>
+				<value>cartIcon</value>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="acceleratorProductGalleryImagesPopulator" alias="productGalleryImagesPopulator" />
+	<bean id="acceleratorProductGalleryImagesPopulator" parent="defaultProductGalleryImagesPopulator">
+		<property name="imageFormats">
+			<list>
+				<value>superZoom</value>
+				<value>zoom</value>
+				<value>product</value>
+				<value>thumbnail</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+	<bean id="investSaudiCategoryFacade" class="com.investsaudi.portal.facades.category.impl.InvestSaudiCategoryFacadeImpl"/>
+
+	<bean id="investSaudiProductFacade" class="com.investsaudi.portal.facades.product.impl.InvestSaudiProductFacadeImpl"/>
+
+	<bean id="investSaudiOpportunityPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiOpportunityPopulator">
+		<property name="imageConverter" ref="imageConverter"/>
+	</bean>
+
+	<bean id="investSaudiSuccessStoryPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiSuccessStoryPopulator">
+		<property name="imageConverter" ref="imageConverter"/>
+	</bean>
+
+
+	<alias name="investSaudiCategoryPopulator" alias="categoryPopulator"/>
+	<bean id="investSaudiCategoryPopulator"
+		  class="com.investsaudi.portal.facades.category.populator.InvestSaudiCategoryPopulator"
+		  parent="defaultCategoryPopulator">
+	</bean>
+
+	<bean id="contactTicketSubjectPoulator" class="com.investsaudi.portal.facades.contact.populator.ContactTicketSubjectPopulator" />
+	<bean id="contactTicketSubjectConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.customerticketingfacades.data.ContactTicketSubjectData"/>
+		<property name="populators">
+			<list>
+				<ref bean="contactTicketSubjectPoulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="contactTicketFacade" class="com.investsaudi.portal.facades.contact.ContactTicketFacade" parent="defaultCustomerTicketingFacade" />
+
+	<bean id="investSaudiSiteMapContentPagePopulator" class="com.investsaudi.portal.facades.sitemap.populator.InvestSaudiSiteMapContentPagePopulator"/>
+
+	<bean id="investSaudiSiteMapProductPagePopulator" class="com.investsaudi.portal.facades.sitemap.populator.InvestSaudiSiteMapProductPagePopulator"/>
+
+	<bean id="investSaudiSiteMapCategoryPagePopulator" class="com.investsaudi.portal.facades.sitemap.populator.InvestSaudiSiteMapCategoryPagePopulator"/>
+
+	<bean id="investSaudiSiteMapFacadeImpl" class="com.investsaudi.portal.facades.sitemap.impl.InvestSaudiSiteMapFacadeImpl"/>
+
+	<bean id="sectorCategoryModelUrlResolver" class="de.hybris.platform.commerceservices.url.impl.DefaultCategoryModelUrlResolver">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="commerceCategoryService" ref="commerceCategoryService"/>
+		<property name="baseSiteService" ref="baseSiteService"/>
+		<property name="pattern" value="/sectors-opportunities/{category-code}"/>
+	</bean>
+
+	<bean id="investSaudiProductModelUrlResolver" class="com.investsaudi.portal.facades.product.InvestSaudiProductModelUrlResolver">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="commerceCategoryService" ref="commerceCategoryService"/>
+		<property name="baseSiteService" ref="baseSiteService"/>
+		<property name="defaultPattern" value="/sectors-opportunities/{category-code}/{product-code}"/>
+		<property name="productAndCategoryHelper" ref="productAndCategoryHelper"/>
+	</bean>
+
+	<bean id="investSaudiWebinarRegistrationFacade" class="com.investsaudi.portal.facades.webinar.impl.InvestSaudiWebinarRegistrationFacadeImpl"/>
+
+
+	<bean id="cmsInvestSaudiContainerTypesAttributePopulator" class="com.investsaudi.portal.facades.cms.populators.CMSInvestSaudiContainerTypesAttributePopulator">
+		<property name="attributeDescriptorModelHelperService" ref="attributeDescriptorModelHelperService"/>
+		<property name="i18nComponentTypePopulator" ref="i18nComponentTypePopulator" />
+		<property name="typeService" ref="typeService" />
+		<property name="componentTypeDataFactory" ref="componentTypeDataFactory" />
+	</bean>
+
+
+	<bean depends-on="cmsAttributePredicatePopulatorListMap" parent="mapMergeDirective">
+		<property name="key">
+			<bean parent="cmsAssignableFromAttributePredicate">
+				<property name="typeCode" value="CMSItem" />
+			</bean>
+		</property>
+		<property name="value">
+			<list merge="true">
+				<ref bean="cmsInvestSaudiContainerTypesAttributePopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="investSaudiWebinarRegistrationContext"
+		  class="com.investsaudi.portal.facades.process.email.context.InvestSaudiWebinarRegistrationContext"
+		  parent="abstractEmailContext"
+		  scope="prototype">
+	</bean>
+
+	<bean id="investSaudiNewsComponentGalleryImagesStructureDirective" depends-on="cmsStructureTypeBlacklistAttributeMap" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiNewsComponent" />
+		<property name="value" value="galleryImages" />
+	</bean>
+
+	<bean id="investSaudiNewsComponentGalleryImagesStructureInvoke" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" depends-on="investSaudiNewsComponentGalleryImagesStructureDirective">
+		<property name="targetObject" ref="cmsGenericComposedTypeToStructureConverter" />
+		<property name="targetMethod" value="afterPropertiesSet" />
+	</bean>
+
+	<bean id="investSaudiNewsComponentGalleryImagesTypeDirective" depends-on="cmsTypeBlacklistedAttributeMap" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiNewsComponent" />
+		<property name="value" value="galleryImages" />
+	</bean>
+
+	<bean id="investSaudiNewsComponentGalleryImagesTypeInvoke" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" depends-on="investSaudiNewsComponentGalleryImagesTypeDirective">
+		<property name="targetObject" ref="cmsComposedTypeToAttributeCollectionConverter" />
+		<property name="targetMethod" value="afterPropertiesSet" />
+	</bean>
+	
+</beans>

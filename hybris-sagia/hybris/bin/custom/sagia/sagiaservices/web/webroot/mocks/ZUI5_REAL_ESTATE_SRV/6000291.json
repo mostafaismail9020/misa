@@ -1,0 +1,52 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RealEstateSet('6000291')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RealEstateSet('6000291')",
+      "type": "ZUI5_REAL_ESTATE_SRV.RealEstate"
+    },
+    "ObjectID": "6000291",
+    "ObjectGUID": "00155D56-5D0E-1ED7-B581-1285ECBF40C9",
+    "REType": "Sell",
+    "PurchaseType": "10",
+    "PlotNo": "12121",
+    "PlotArea": "121212",
+    "DeedNo": "12121",
+    "PurchaseDate": "20171127",
+    "OutsideMakkah": "",
+    "ApprovedIndustrial": "",
+    "ProjectValue": "",
+    "Price": "12121",
+    "Region": "Qasim",
+    "City": "Al Shemasyah",
+    "HousingType": "3",
+    "District": "1212",
+    "UnitNo": "",
+    "BlockNo": "",
+    "Remarks": "1",
+    "ThirtyMore": "",
+    "Description": "Real Estate / 613392",
+    "BPID": "613392",
+    "PostingDate": "20171128",
+    "Status": "In Process",
+    "AttachmentsSet": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/AttachmentsSet('')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/AttachmentsSet('')",
+            "type": "ZUI5_REAL_ESTATE_SRV.Attachments"
+          },
+          "ObjectID": "",
+          "DocGUID": "00000000-0000-0000-0000-000000000000",
+          "Filename": "",
+          "MimeType": "",
+          "FileContString": "",
+          "ObjectGUID": "00000000-0000-0000-0000-000000000000",
+          "DocID": "",
+          "Filesize": ""
+        }
+      ]
+    }
+  }
+}

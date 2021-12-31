@@ -1,0 +1,84 @@
+$page = news-five-new-foreign-investor
+$template = portalGlobalTemplate
+$name = FIVE NEW FOREIGN INVESTOR LICENCES ISSUED A DAY IN SAUDI ARABIA IN Q2 2019
+$titleEn = $name
+$titleAr = النصف الأول يحقق أرقاماً نوعية للاستثمارات في المملكة
+$shortDescEn = Number of foreign investor licenses issued in Q2 2019 103% higher
+$shortDescAr = ارتفاع معدل رخص الاستثمار الأجنبي في المملكة إلى 5 رخص يوميًّا في الربع الثاني
+$pagelabel = /news/five-new-foreign-investor-licences-issued-a-day-in-saudi-arabia-in-q2-2019
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]    ; realFileName                                   ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; invest-saudi_brandmark ; invest-saudi_brandmark-artwork_english_rgb.png ; $siteResource/invest-saudi_brandmark-artwork_english_rgb.png                ; image/svg+xml               ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias                ; $contentCV; ; ; ;
+                            ; media-container-$page   ; invest-saudi_brandmark ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; invest-saudi_brandmark            ; invest-saudi_brandmark              ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 11.09.2019 00:00:00                       ;                          ;               ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>Number of foreign investor licenses issued in Q2 2019 103% higher than same period in 2018</em></li>
+<li><em>Growth in investment reflects continuing momentum created by Saudi economic reforms</em></li>
+<li><em>Construction, ICT and manufacturing among sectors attracting highest numbers of new investors</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<p><strong>Riyadh,&nbsp;</strong><strong>&middot;</strong><strong>&nbsp;September 2019</strong>: SAGIA announced today that 291 new foreign investor licenses were issued in Q2 2019, more than double the number issued in the same period last year and the equivalent of five new licenses a day.</p>
+<p>This growth followed a series of social and economic reforms that aim at realizing the Kingdom&rsquo;s economic potential under Vision 2030. Within two years, Saudi Arabia has implemented 55% of more than 300 economic reforms identified, such as opening up a wide range of economic sectors to foreign investment, including allowing 100 percent foreign ownership in a range of new sectors.</p>
+<p>Recent reforms have also simplified the investment process. Obtaining a foreign investor license from SAGIA now requires two documents and can be processed in three hours &ndash; reducing the requirement from twelve documents, which would take three days to process.</p>
+<p>The growth in licenses in Q2 2019 was broad based, with increases across all ten main sectors. The sectors accounting for the most licenses were construction (61 licenses), ICT (51 licenses) and manufacturing (45 licenses), with significant investment also seen in the professional, scientific and technical sector, wholesale and retail trade, administrative and support services and hotels and restaurants.</p>
+<p>The United Kingdom (45 licenses), India (29 licenses) and the United States (23 licenses) were the leading sources of new investors, while there was also significant investors from countries within the Arab world (Jordan, Egypt and UAE). There was also continued investor interest from countries which have been the focus of Saudi economic outreach, including China, where SAGIA hosted a major investment forum earlier this year.</p>
+<p>Two thirds of the new foreign investor licenses in the period were for ventures with full foreign ownership, reflecting the impact of recent reforms to enable full foreign ownership across a number of sectors.</p>
+<p>&ldquo;These figures demonstrate the clear momentum we are seeing in foreign investment in Saudi Arabia,&rdquo; said Majed Al Qasabi, Minister of Commerce and Investment. &ldquo;We continue to pursue further reforms to make it easier for international investors to play a role in our economic transformation in the years to come &ndash; bringing jobs, growth and opportunity to Saudi citizens.&rdquo;</p>
+<p>&ldquo;&ldquo;As a G20 economy, Saudi Arabia&rsquo;s rapid reform provides a real opportunity for international investors and we are seeing clear evidence that they are responding to it,&rdquo; said HE Ibrahim Al Omar, Governor, SAGIA. &ldquo;As we speak to investors across the world, we hear real excitement across a wide range of new sectors and we look forward to hearing from more businesses about how we can help them to access the Saudi opportunity.&rdquo;</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>ENDS</strong></p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>أعلنت الهيئة العامة للاستثمار عن إصدار 291 رخصة استثمار أجنبي خلال الربع الثاني من عام 2019، ما يعادل أكثر من الضعف مقارنة بنفس الفترة من عام 2018، وبزيادة نسبتها 103% مقارنة مع الربع الأول من عام 2019، بمعدل 5 رخص استثمار أجنبي تصدر يوميًّا.&nbsp;</p>
+<p>وشهدت نسب النمو في رخص الاستثمار الأجنبي الصادرة في الربع الثاني من عام 2019 كافة القطاعات المستهدفة ، إذ شهد قطاع البناء إصدار 61 رخصة، إضافة إلى القطاعات الأخرى مثل قطاع الاتصالات وتقنية المعلومات الذي شهد إصدار 51 رخصة، وقطاع التصنيع الذي شهد إصدار 45 رخصة، بالإضافة إلى عدد التراخيص المتنامي في القطاعات الأخرى المتبقية مثل قطاع الخدمات المهنية والعلمية والتقنية وقطاع تجارة التجزئة والجملة وقطاع الخدمات الإدارية وخدمات الدعم، وأخيرًا قطاع الفندقة والتموين.</p>
+<p>&nbsp;وتصدرت الشركات البريطانية القائمة بحصولها على45 رخصة، تليها الشركات الهندية بحصولها على 29 رخصة فالولايات المتحدة الأمريكية بعدد 23 رخصة، بالإضافة إلى ذلك فقد شهدت المملكة توجه عدد كبير من الشركات العربية إلى الاستثمار فيها، حيث شهد الربع الثاني إصدار عدد من التراخيص لشركات من مصر والأردن والإمارات، كما شهدت المملكة اهتمامًا من الشركات الصينية للاستثمار في المملكة، وذلك بعد أن أقامت الهيئة بالشراكة مع عدد من الجهات الحكومية الأخرى منتدى الاستثمار السعودي الصيني مطلع العام الحالي.</p>
+<p>وشكّلت المشاريع المشتركة مع المستثمرين المحليين في الربع الثاني من العام ما نسبته 32%، مما يعكس الإصلاحات الاقتصادية التي أجرتها المملكة مؤخرًا من أجل تمكين القطاع الخاص في المساهمة في تنمية اقتصادية مستدامة.</p>
+<p>وفي إطار هذا النجاح الوطني؛ علق وزير التجارة والاستثمار رئيس مجلس إدارة الهيئة معالي الدكتور ماجد القصبي، بأن الإحصاءات المشهودة في الربع الثاني تبرهن على تزايد اهتمام المستثمرين الأجانب لبدء أعمالهم في المملكة، مؤكدًا مواصلة سعي المملكة في تحقيق المزيد من الإصلاحات الكفيلة بتسهيل ممارسة الأعمال في السوق السعودي، وتعزيز دور الاستثمار الأجنبي في التنمية الاقتصادية التي تشهدها المملكة حاضرًا وتعمل على استدامتها مستقبلًا، بما يمكن من خلق فرص عمل وتنوع اقتصادي مستدام.</p>
+<p>ومن جانبه، نوه محافظ الهيئة العامة للاستثمار معالي المهندس إبراهيم العمر بأن المملكة بصفتها إحدى أهم اقتصادات مجموعة الدول العشرين؛ فإن الإصلاحات الاقتصادية التي تقوم بتنفيذها تصنع فرصًا للاستثمار الأجنبي للدخول في السوق السعودي، مضيفًا أن الربع الثاني من عام 2019 ما زال يشهد اهتمامًا كبيرًا من مجتمع الاستثمار الدولي، وهو ما يجعلنا نتطلّع إلى جذب المزيد من الاستثمارات الأجنبية إلى المملكة بما يساهم في تنوع الاقتصاد السعودي واستدامته.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>يذكر أن المملكة قطعت شوطاً على صعيد إيجاد بيئة استثمارية أكثر جذبًا وأكثر سهولة لممارسة الأعمال، إذ بلغت نسبة الإصلاحات الاقتصادية 55% من أصل ما يزيد عن 300 إصلاح اقتصادي خاضعة للإصلاح، كان من ضمنها التملك الأجنبي الكامل في عدد من القطاعات الاستثمارية الاستراتيجية في المملكة التي كان من ضمنها مؤخرًا قطاع التعليم، واعتماد إجراءات أسرع وأقل تعقيدًا لتسجيل الأعمال، بما في ذلك إصدار تأشيرات العمل في 24 ساعة وإصدار التراخيص في وقت أقل من 24 ساعة، وتطوير البنية التحتية القانونية عبر تطبيق نظام الإفلاس الجديد، وإنشاء مركز تحكيم تجاري ومحاكم تجارية متخصصة، إضافة إلى تعزيز الحماية القانونية لصغار المساهمين.</p>
+<p>وفي سياق هذه الإصلاحات، حظيت المملكة بإشادة دولية؛ حيث حققت المرتبة الرابعة ضمن مجموعة العشرين وفقًا لتقرير سهولة ممارسة الأعمال الصادر من البنك الدولي، إضافة إلى ذلك؛ فقد صُنفت المملكة بين أفضل 40 اقتصادًا في العالم حسب تقرير التنافسية العالمي الصادر من المنتدى الاقتصادي العالمي.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>انتهى</strong></p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

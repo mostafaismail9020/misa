@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72" height="72" viewBox="0 0 72 72">
+  <defs>
+    <clipPath id="clip-quotation_01">
+      <rect width="72" height="72"/>
+    </clipPath>
+  </defs>
+  <g id="quotation_01" clip-path="url(#clip-quotation_01)">
+    <g id="Group_1" data-name="Group 1" transform="translate(-134 -8356.5)">
+      <circle id="Ellipse_71" data-name="Ellipse 71" cx="35.215" cy="35.215" r="35.215" transform="translate(135 8357.5)" fill="#bf9b2e"/>
+      <g id="Group_467" data-name="Group 467" transform="translate(155.535 8381.239)">
+        <path id="Union_35" data-name="Union 35" d="M0,3.6A28.726,28.726,0,0,1,4.661,7.846a7.653,7.653,0,0,1,1.714,3.838,6.2,6.2,0,1,0,6.169,6.857l0,.005s1.229-6.062-1.749-10.7A30.613,30.613,0,0,0,2.954,0Z" transform="translate(29.194 24.09) rotate(180)" fill="#fff"/>
+        <path id="Union_36" data-name="Union 36" d="M0,3.6A28.726,28.726,0,0,1,4.661,7.846a7.653,7.653,0,0,1,1.714,3.838,6.2,6.2,0,1,0,6.169,6.857l0,.005s1.229-6.062-1.749-10.7A30.613,30.613,0,0,0,2.954,0Z" transform="translate(12.799 24.09) rotate(180)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

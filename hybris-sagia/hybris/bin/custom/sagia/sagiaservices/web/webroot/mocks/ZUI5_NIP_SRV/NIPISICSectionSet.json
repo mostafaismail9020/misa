@@ -1,0 +1,258 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='I')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='I')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "I",
+        "ISIC_SECTION_TEXT": "Accommodation and food service activities",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='U')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='U')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "U",
+        "ISIC_SECTION_TEXT": "Activities of extraterritorial organizations and bodies",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='T')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='T')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "T",
+        "ISIC_SECTION_TEXT": "Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='N')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='N')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "N",
+        "ISIC_SECTION_TEXT": "Administrative and support service activities",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='A')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='A')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "A",
+        "ISIC_SECTION_TEXT": "Agriculture, forestry and fishing",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='R')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='R')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "R",
+        "ISIC_SECTION_TEXT": "Arts, entertainment and recreation",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='F')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='F')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "F",
+        "ISIC_SECTION_TEXT": "Construction",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='P')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='P')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "P",
+        "ISIC_SECTION_TEXT": "Education",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='D')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='D')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "D",
+        "ISIC_SECTION_TEXT": "Electricity, gas, steam and air conditioning supply",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='K')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='K')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "K",
+        "ISIC_SECTION_TEXT": "Financial and insurance activities",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='Q')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='Q')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "Q",
+        "ISIC_SECTION_TEXT": "Human health and social work activities",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='J')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='J')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "J",
+        "ISIC_SECTION_TEXT": "Information and communication",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='C')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='C')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "C",
+        "ISIC_SECTION_TEXT": "Manufacturing",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='B')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='B')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "B",
+        "ISIC_SECTION_TEXT": "Mining and quarrying",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='S')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='S')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "S",
+        "ISIC_SECTION_TEXT": "Other service activities",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='M')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='M')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "M",
+        "ISIC_SECTION_TEXT": "Professional, scientific and technical activities",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='O')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='O')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "O",
+        "ISIC_SECTION_TEXT": "Public administration and defence; compulsory social security",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='L')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='L')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "L",
+        "ISIC_SECTION_TEXT": "Real estate activities",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='H')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='H')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "H",
+        "ISIC_SECTION_TEXT": "Transportation and storage",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='E')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='E')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "E",
+        "ISIC_SECTION_TEXT": "Water supply; sewerage, waste management and remediation activities",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='G')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICSectionSet(LANGUAGE='E',ISIC_SECTION='G')",
+          "type": "ZUI5_NIP_SRV.NIPISICSection"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "G",
+        "ISIC_SECTION_TEXT": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+        "SUCCESS": "",
+        "ERROR": ""
+      }
+    ]
+  }
+}

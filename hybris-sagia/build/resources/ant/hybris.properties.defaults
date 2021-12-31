@@ -1,0 +1,65 @@
+############################################
+# Default values for the hybris.properties #
+############################################
+
+backoffice.cockpitng.hotDeployment.enabled=true
+
+db.url=jdbc:sap://<host>:30015/?reconnect=true
+db.driver=com.sap.db.jdbc.Driver
+db.username=<username>
+db.password=<pwd>
+db.tableprefix=
+
+media.read.dir=/NFS_DATA/hybris-media
+media.replication.dirs=/NFS_DATA/hybris-media
+
+clustermode=true
+cluster.id=0
+cluster.maxid=50
+cluster.broadcast.methods=jgroups
+cluster.broadcast.method.jgroups=de.hybris.platform.cluster.jgroups.JGroupsBroadcastMethod
+cluster.broadcast.method.jgroups.configuration=jgroups-udp.xml
+cluster.broadcast.method.jgroups.channel.name=hybris-broadcast
+cluster.broadcast.method.jgroups.udp.mcast_port=45588
+cluster.broadcast.senderthreads.disable=true
+
+mail.smtp.server=<smtpserver>
+mail.smtp.port=25
+
+solrserver.instances.default.autostart=false
+
+dynatrace.server=<dynatrace>
+dynatrace.agentlib=/opt/dynatrace/agent/lib64/libdtagent.so
+tomcat.generaloptions.dynatrace=
+
+tomcat.http.port=9001
+tomcat.ssl.port=9002
+
+tomcat.ajp.port=8009
+tomcat.ajp.secureport=8010
+
+proxy.http.port=80
+proxy.ssl.port=443
+
+log4j.threshold=WARN
+
+tomcat.generaloptions.jmxsettings= -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.password.file=%CATALINA_BASE%/conf/jmxremote.password -Dcom.sun.management.jmxremote.access.file=%CATALINA_BASE%/conf/jmxremote.access -Dcom.sun.management.jmxremote.ssl=false
+
+bundled.tomcat.version=7.0.90
+bundled.tomcat.home=/opt/tomcat
+bundled.tomcat.base=/opt/tomcat
+
+tomcat.wrapper.logfile=${HYBRIS_LOG_DIR}/tomcat/console.log 
+standalone.javaoptions=${tomcat.generaloptions.jvmsettings}
+
+tomcat.generaloptions.jvmsettings=-Xms5825m -Xmx5825m -XX:+UseG1GC -XX:+UseTLAB -XX:+PrintTenuringDistribution -XX:+PrintGCDateStamps -XX:+PrintGCDetails -Xloggc:/opt/hybris/log/tomcat/java_gc_${yms.hostname}.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M
+
+tomcat.generaloptions=-Dorg.tanukisoftware.wrapper.WrapperManager.mbean=true -Dcatalina.base=%CATALINA_BASE% -Dcatalina.home=%CATALINA_HOME% -Dfile.encoding=UTF-8 -Dlog4j.configuration=log4j_init_tomcat.properties -Djava.util.logging.config.file=jdk_logging.properties -Djava.io.tmpdir="${HYBRIS_TEMP_DIR}" ${tomcat.generaloptions.jmxsettings} ${tomcat.generaloptions.jvmsettings} ${tomcat.generaloptions.dynatrace} -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses=true -Duser.timezone=EST
+
+tomcat.jmx.port= tomcat.jmx.server.port=
+
+yb2bacceleratorstorefront.webroot=
+b2bStorefrontContextRoot=
+
+# Disabled junit tenant on dev
+installed.tenants=

@@ -1,0 +1,52 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https:\/\/sagngdap03.hec.sagia.gov.sa:44300\/sap\/opu\/odata\/sap\/ZUI5_REAL_ESTATE_SRV\/RealEstateSet('6000310')",
+      "uri": "https:\/\/sagngdap03.hec.sagia.gov.sa:44300\/sap\/opu\/odata\/sap\/ZUI5_REAL_ESTATE_SRV\/RealEstateSet('6000310')",
+      "type": "ZUI5_REAL_ESTATE_SRV.RealEstate"
+    },
+    "ObjectID": "6000310",
+    "ObjectGUID": "005056B1-1C89-1EE8-94B9-25A03B759714",
+    "REType": "Buy",
+    "PurchaseType": "20",
+    "PlotNo": "123",
+    "PlotArea": "123",
+    "DeedNo": "123",
+    "PurchaseDate": "20180509",
+    "OutsideMakkah": "",
+    "ApprovedIndustrial": "123",
+    "ProjectValue": "",
+    "Price": "123",
+    "Region": "Najran",
+    "City": "Thar",
+    "HousingType": "",
+    "District": "",
+    "UnitNo": "",
+    "BlockNo": "",
+    "Remarks": "",
+    "ThirtyMore": "",
+    "Description": "Real Estate \/ 613392",
+    "BPID": "613392",
+    "PostingDate": "20180507",
+    "Status": "In Process",
+    "AttachmentsSet": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https:\/\/sagngdap03.hec.sagia.gov.sa:44300\/sap\/opu\/odata\/sap\/ZUI5_REAL_ESTATE_SRV\/AttachmentsSet('')",
+            "uri": "https:\/\/sagngdap03.hec.sagia.gov.sa:44300\/sap\/opu\/odata\/sap\/ZUI5_REAL_ESTATE_SRV\/AttachmentsSet('')",
+            "type": "ZUI5_REAL_ESTATE_SRV.Attachments"
+          },
+          "ObjectID": "",
+          "DocGUID": "00000000-0000-0000-0000-000000000000",
+          "Filename": "",
+          "MimeType": "",
+          "FileContString": "",
+          "ObjectGUID": "00000000-0000-0000-0000-000000000000",
+          "DocID": "",
+          "Filesize": ""
+        }
+      ]
+    }
+  }
+}

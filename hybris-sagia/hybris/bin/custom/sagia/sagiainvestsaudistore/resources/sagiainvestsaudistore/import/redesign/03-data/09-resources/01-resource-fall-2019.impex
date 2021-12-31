@@ -1,0 +1,63 @@
+#### Impex for Fall 2019 ####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+ 
+ 
+INSERT_UPDATE Media; code[unique = true]                            ; realFileName                                ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]    ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; Banner-Image-Fall-2019.jpg                     ;Banner-Image-Fall-2019.jpg                   ; $siteResource/Banner-Image-Fall-2019.jpg                      ; image/jpg   ;                                          ; ""     ;
+				   ; Fall-2019-Thumbnail_05.jpg                     ;Fall-2019-Thumbnail_05.jpg                   ; $siteResource/Fall-2019-Thumbnail_05.jpg                     ; image/jpg   ;                                          ; ""     ;
+
+
+INSERT_UPDATE Media; code[unique = true]                                                ; realFileName                                             	; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]   ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; resource-investment-highlights-fall-2019-arabic.pdf               	;resource-investment-highlights-fall-2019-arabic.pdf      	; $siteResource/resource-investment-highlights-fall-2019-arabic.pdf           ; application/pdf                 ;                                          ; ""     ;
+                   ; resource-investment-highlights-fall-2019-english.pdf               ;resource-investment-highlights-fall-2019-english.pdf		; $siteResource/resource-investment-highlights-fall-2019-english.pdf          ; application/pdf                 ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]		; $medias					; $contentCV ;
+                            ; media-container-fall-2019   	; resource-investment-highlights-fall-2019-arabic.pdf, resource-investment-highlights-fall-2019-english.pdf;          ;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true] 			;resourceTitle[lang = en]			;resourceShortInformation[lang = en] 					;resourceUrl(uid, $contentCV);resourceBulletPoints	;resourceDate[dateformat = dd.MM.yyyy HH:mm:ss];&componentRef				;
+										  ;							;resource-investment-fall-2019	;Investment Highlights Fall 2019	;Saudi Arabia's investment news in Q3 2019;							 ;						;29.10.2019 00:00:00						   ;resource-investment-fall-2019;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]				;resourceFullDescription[lang = en]
+										  ;							;resource-investment-fall-2019  ;"
+<p>Highest investor interest in Saudi Arabia since 2010, with over 800 investor licenses awarded so far in 2019.</p>
+<p>In the third quarter of this year, over 250 overseas businesses were granted investor licenses, a 30% increase compared to the same period last year. </p>
+<p>Investors all over the world are bringing their businesses to the Kingdom, with major new investors in the last quarter from India, USA, UK, Egypt, Netherlands, France, and China among many others.</p>
+<p>In this third edition of ''Investment Highlights'', we present some of the most exciting updates from across Saudi Arabia's investment environment, as well as updates on the latest deals, opportunities, reforms, and incentives. </p>
+<p>Special featured pieces include H.E. Ahmed Al Khateeb, Chairman of the Saudi Commission for Tourism and National Heritage, and Nicholas Naples, CEO of AMAALA, Saudi Arabia's next ultra-luxury tourism destination on the Red Sea coast. </p>
+<p>In this report:</p>
+<ul>
+<li>New licenses figures</li>
+<li>Top countries of origin</li>
+<li>Top sectors of new investment</li>
+<li>Major projects and opportunities</li>
+</ul>
+";
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]				;resourceFullDescription[lang = ar]
+										  ;							;resource-investment-fall-2019  ;"
+<p>أعلى نسبة اهتمام تشهده البيئة الاستثمارية في المملكة منذ عام 2010، إذ تم خلال عام 2019 وحتى نهاية الربع الثالث من العام إصدار أكثر من 800 رخصة استثمارية.</p>
+<p>كما شهد الربع الثالث من عام 2010  إصدار أكثر من 250 رخصة استثمارية، بزيادة نسبية بلغت (30%) مقارنة بالفترة نفسها من العام الماضي.</p>
+<p>يستعرض تقرير الربع الثالث من موجز الاستثمار  أهم مستجدات الاستثمار حول المملكة، وأحدث الاتفاقيات التي تمت خلال الربع والفرص الاستثمارية والحوافز التي تم طرحها، إضافة إلى مستجدات الإصلاحات الاقتصادية التي خضعت للتنفيذ.</p>
+<p>كما يقدم التقرير كلمة من معالي أحمد الخطيب -رئيس مجلس إدارة الهيئة العامة للسياحة والتراث الوطني-، ومقابلة حصرية مع نيكولاس نيبلز -الرئيس التنفيذي لمشروع أمالا-.</p>
+<ul>يتضمن التقرير:</ul>
+<li>أرقام التراخيص الجديدة</li>
+<li> أكبر الدول المستثمرة</li>
+<li>أكثر القطاعات استثمارًا</li>
+<li>المشاريع الكبرى والفرص</li>
+";
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]                  ; resourceDetailsImage(code, $contentCV) 	; resourceThumbnailImage(code, $contentCV)   ;resourceFullReport(qualifier, $contentCV);
+                                          ;                          ;resource-investment-fall-2019   	 ;Banner-Image-Fall-2019.jpg  		 		; Fall-2019-Thumbnail_05.jpg				 ;media-container-fall-2019		;
+

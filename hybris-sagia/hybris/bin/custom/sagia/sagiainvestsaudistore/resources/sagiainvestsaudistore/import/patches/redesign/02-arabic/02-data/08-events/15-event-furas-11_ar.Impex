@@ -1,0 +1,31 @@
+
+#### Impex For Forum ####
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$eventNameAr= ملتقى الاستثمار البلدي فرص
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails; $contentCV[unique = true]	;uid[unique = true]		;keyValue[lang = ar]	; keyName[lang = ar]	;
+							;							 	;forum-key-1           	;200      				; عدد زوار الفعالية		;
+							;								;forum-key-2          	;200       				; عدد زوار الجناح 		;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]   ; eventName[lang = ar]   ; eventLocation[lang = ar]	;
+                                        ;                         ;event-forum  		; $eventNameAr           ; 	الرياض					;
+										
+										
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	  ;eventShortInformation[lang = ar];
+										;						  ; event-forum    		  ;"يهدف الملتقى إلى توسيع قاعدة المتنافسين على الفرص الاستثمارية التي يتم طرحها من قبل الأمانات والبلديات في جميع مدن المملكة بمختلف الأنشطة الاقتصادية التي تسهم في تنمية المدن، وكجسر جديد للتواصل مع المستثمرين، لتعريف القطاع الخاص بمبادرات تطوير منظومة الاستثمار في القطاع البلدي والتوجهات المستقبلية في ضوء رؤية المملكة 2030";
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventKeyDetails(uid, $contentCV);
+										;						  ;event-forum 			;forum-key-1,forum-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventFullDescription[lang = ar];
+										;						  ;event-forum 	       	;		                        ;						

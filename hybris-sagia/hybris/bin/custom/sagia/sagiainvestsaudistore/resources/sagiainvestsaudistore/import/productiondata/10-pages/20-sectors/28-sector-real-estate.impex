@@ -1,0 +1,304 @@
+$page = real-estate
+$sector= real-estate
+$template = portalSectorTemplate
+$pageName = Real Estate
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media						   
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources																															   
+
+INSERT_UPDATE CategoryPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); $contentCV[unique = true]; defaultPage[default = 'false']; approvalStatus(code)[default = 'approved']
+                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ;                          ;                               ;
+
+INSERT_UPDATE CMSCategoryRestriction; uid[unique = true]                               ; categories(code, $catalogVersion); $contentCV[unique = true]; pages(uid, $contentCV)
+                                    ; sector-real-estate-restriction ; real-estate    ;                          ; real-estate
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; name                                ; &componentRef                           ; $contentCV[unique = true]
+                                                  ; real-estate-paragraph ; Real Estate Overview ; real-estate-paragraph ;
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = en]
+                                           ; real-estate-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<p>In a rapidly growing &amp; young population as KSA, the government recognizes the importance of Housing sector to its citizens and took completely different approach to realize its commitments: by adopting new technologies like 3D printing, using more prefabricated buildings, leveraging robots for construction, providing many incentives for private sector players like funding and risk sharing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = ar]
+                                           ; real-estate-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<p>In a rapidly growing &amp; young population as KSA, the government recognizes the importance of Housing sector to its citizens and took completely different approach to realize its commitments: by adopting new technologies like 3D printing, using more prefabricated buildings, leveraging robots for construction, providing many incentives for private sector players like funding and risk sharing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresComponent; uid[unique = true]; name         ; figures; unit; facts[lang=en] ; &componentRef; $contentCV[unique = true];
+ 
+                                     ; facts-figures-1-$sector      ; Facts Figures 53 ; 50%       ;   ;Percentage of new units built using new technology                       ; facts-figures-1-$sector ;
+                                     ; facts-figures-2-$sector      ; Facts Figures 54 ; 1.2      ; B sqm    ; of Built-up area are expected to be developed by 2030; facts-figures-2-$sector ;
+                                     ; facts-figures-3-$sector      ; Facts Figures 55 ; 70%    ;   ;Home ownership target by 2030 ; facts-figures-3-$sector ;
+                                     ; facts-figures-4-$sector      ; Facts Figures 56 ; 1.5     ;  Million unit   ;to be built by 2030 ; facts-figures-4-$sector ;
+                                     
+  
+ 
+
+INSERT_UPDATE InvestSaudiFactsFiguresContainer; uid[unique = true]      ; name                     ;title[lang=en]  ; simpleCMSComponents(&componentRef)  ; &componentRef  ;$contentCV[unique = true]
+                                     ; ff-container-$sector   ; Fatcs Figures Container  ;Fatcs & Figures ; facts-figures-1-$sector, facts-figures-2-$sector, facts-figures-3-$sector,facts-figures-4-$sector ; ff-container-$sector ;
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; $contentCV; &componentRef
+                                           ; contact-form ;           ; contact-form
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; fo-explore-all-$sector ;                          ; Explore all          ; /sectors-opportunities/opportunities/?q=&sectorIds=real-estate
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]       ; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                       ; fo-component-$sector ; Featured Opportunities Component ; Real Estate Opportunities ;3; fo-explore-all-$sector ; fo-component-$sector ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; ss-explore-all-$sector ;                          ; Explore all          ; /about/success-stories/?q=&sectorIds=real-estate
+
+
+INSERT_UPDATE InvestSaudiSuccessStoriesComponent; uid[unique = true]; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                ; ss-component-$sector ; Success Story Component ; Real Estate Success Stories ;3; ss-explore-all-$sector ; ss-component-$sector;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                       ; $contentCV[unique = true]; linkName  [lang = en]             ; linkName[lang = ar]        ; url
+                              ; sector-proposition-1-link-$sector ;                          ; Real Estate        ; القطاع العقاري ;
+#                              ; sector-proposition-2-link-$sector ;                          ; Information and Technology  ;                            ;
+
+INSERT_UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; name                        ; url(uid, $contentCV)                     ; index(); &componentRef                       ; $contentCV[unique = true]
+                                                   ; sector-proposition-1-$sector ; Sector Proposition 1 ; sector-proposition-1-link-$sector ; 1      ; sector-proposition-1-$sector ;
+                                                   ; sector-proposition-2-$sector ; Sector Proposition 2 ; sector-proposition-2-link-$sector ; 2      ; sector-proposition-2-$sector ;
+																				   
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-1-$sector ;                          ; " <p>Growing and attractive housing market for residential developers</p>
+<p>Over the next couple of years, KSA is expected to witness a sharp increase in the demand for new housing units. Saudi Arabia currently holds the greatest potential for the construction sector within the GCC:</p>
+<ul>
+<li>5 million cumulative housing units needed by 2030</li>
+<li>With more than 5,000 capital projects worth well over $1.6 trillion in the pre-execution stage</li>
+<li>About 1.2 B sqm of built-up area are expected to be developed by 2030</li>
+</ul>
+<p>Driven by strong market fundamentals:</p>
+<ul>
+<li>Rapid growth of a large and young national population</li>
+<li>Presence of middle-income class of nationals able to afford housing units</li>
+<li>Economic growth and manufacturing GDP</li>
+</ul>
+<p>Demand for new housing units is distributed throughout KSA across 4 category groups (villas, apartments, duplexes and townhouses)</p>
+<p>Residential developers can benefit from high profit margins resulting from competitive cost advantage compared to other countries</p>
+<p>New era in the housing construction</p>
+<p>The housing construction industry in KSA is shifting from traditional to technology-based delivery methods, also known as Modern Methods of Construction (MMCs). These MMCs include but are not limited to:</p>
+<p><em>2D/2.5D Building Systems:</em></p>
+<ul>
+<li>Insulated Precast Systems</li>
+<li>Autoclaved Aerated Concrete</li>
+<li>Light Gauge Steel</li>
+<li>Insulated Concrete Form</li>
+<li>Form work system and Tunnel formwork</li>
+</ul>
+<p><em>3D Building Systems</em>:</p>
+<ul>
+<li>Modular Concrete</li>
+<li>Modular Light Gauge Steel</li>
+</ul>
+<p>The shift towards these new methods of construction is driven by the government&rsquo;s appetite to address current construction market challenges which include gaps related to the construction price, duration and quality &ndash; all hindering the realization of the housing sector potential in the Kingdom. As such, the government&rsquo;s efforts are now focused around:</p>
+<ul>
+<li>Decreasing the housing units&rsquo;&nbsp;<strong>construction cost</strong></li>
+<li><strong>Expediting the delivery</strong>&nbsp;and construction of housing units</li>
+<li>Increasing the housing units&rsquo;&nbsp;<strong>construction quality</strong></li>
+</ul>
+<p>In line with KSA&rsquo;s ambitious Vision 2030, ~<strong>400k units</strong>(including residential, commercial and industrial) are expected to be built using modern methods of construction by 2025 in the Kingdom. This will drive an increased demand for modern methods of construction. The current MMC supply capacity is estimated at&nbsp;<strong>~40k units per year&nbsp;</strong>and so, additional competitive supply is required in the market in order to meet the yearly demand of the next five years.</p>
+<p>The Building Technology Stimulus Initiative (BTSI), which is part of the Real Estate Development Deputyship under the Ministry of Housing, is fully committed towards industrializing the MMC sector in the Kingdom. The initiative aims at increasing the adoption of MMCs in the Kingdom to expedite the housing delivery and address, in the process, the market challenges.</p>
+<p>In order to realize its strategic vision and objectives, the initiative is currently operating under three strategic pillars, which are all supported by the required financial and non-financial offerings:</p>
+<ol>
+<li><strong>Strengthening MMC production</strong>&nbsp;and boosting its competitiveness: BTSI aims at increasing the competitiveness of the MMC capacity present in KSA. This is done through:
+<ol>
+<li>Supporting current factories present in KSA in resolving the challenges faced and making them more attractive to the market. Offerings include financial ones such as working capital financing, expansion financing, modernization financing as well as non-financial ones which include but are not limited to value engineering advisory services, upskilling services, etc.</li>
+<li>Attracting new factories to the Kingdom and help localize best-in-class cutting-edge technologies. Offerings include financial ones such as set-up financing (covering 75% of the required capital investment as well as up to 6 months of working capital requirements with up to 20% advanced payments at a preferential rate) as well as non-financial offerings such as investor attraction, business support such as licensing, incorporation, access to lands, etc.</li>
+</ol>
+</li>
+</ol>
+<p>&nbsp;</p>
+<ol>
+<li>Driving&nbsp;<strong>housing delivery</strong>&nbsp;<strong>through adoption of MMC</strong>: BTSI also aims at driving the adoption of MMCs in the Kingdom to expedite the housing delivery. This is done through:
+<ol>
+<li>Match-making efforts between developers (private and public) and relevant MMC factories to support in creating partnerships between the two parties</li>
+<li>Match-making efforts between contractors and MMC factories to create solid partnerships which is able to deliver turn-key products at competitive prices</li>
+<li>Providing incentives and offerings (financial, regulatory, etc.) to push the adoption of MMC in the market</li>
+</ol>
+</li>
+</ol>
+<p>&nbsp;</p>
+<ul>
+<li>Creating an&nbsp;<strong>enabling environment to strengthen MMC&nbsp;</strong>in KSA: The initiative also aims at creating an attractive ecosystem that supports the thrive of MMCs. This is done though:
+<ol>
+<li>Marketing efforts to increase the acceptance of MMCs in the overall market across the different players of the ecosystem (developers, citizens, contractors, etc.)</li>
+<li>Upskilling efforts to enhance the workforce capabilities and further increase the workforce localization in the sector</li>
+</ol>
+</li>
+</ul>"
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-1-$sector ;                          ; " <div class='col-md-6 column'>
+<div>
+<p><strong>سوق إسكان متنامٍ وجذاب للمطورين العقاريين</strong></p>
+<p>من المتوقع أن تشهد المملكة العربية السعودية على مدى العامين المقبلين زيادة كبيرة في الطلب على الوحدات السكنية الجديدة، إذ تتميز المملكة العربية السعودية حاليًّا بامتلاكها أكبر إمكانات قطاع الإنشاءات بين دول مجلس التعاون الخليجي، ويتضح ذلك فيما يلي:</p>
+<ul>
+<li>توفير 1.5 مليون وحدة سكنية شاملة مخطط انتهاؤها بحلول عام 2030م.</li>
+<li>تجهيز أكثر من 5000 مشروع رأسمالي بقيمة تزيد عن 1.6 تريليون دولار في مرحلة ما قبل التنفيذ.</li>
+<li>من المقرر تطوير حوالي 1.2 مليار متر مربع من المساحات المبنية بحلول عام 2030م.</li>
+</ul>
+<p>&nbsp;وتستند هذه الإمكانات إلى أساسيات السوق الفعّالة التي تتمثَّل فيما يلي:</p>
+<ul>
+<li>النمو السريع للكثافة السكانية السعودية، لا سيما فئة الشباب.</li>
+<li>شريحة المواطنين ذوي الدخل المتوسط القادرة على شراء الوحدات السكنية.</li>
+<li>النمو الاقتصادي والناتج المحلي الإجمالي من التصنيع.</li>
+</ul>
+<p>الطلب على الوحدات السكنية الجديدة في جميع أنحاء المملكة العربية السعودية يتوزع على 4 مجموعات من الفئات وهي: (الفلل، والشقق، والدوبليكس، والمنازل الصغيرة).</p>
+<p>ويمكن للمطورين العقاريين الاستفادة من هوامش الربح العالية الناتجة عن ميزة التكلفة التنافسية مقارنةً بالدول الأخرى.</p>
+<p>&nbsp;عهدُ جديدُ في بناء الوحدات السكانية</p>
+<p>تحوَّل مجال بناء الوحدات السكانية في المملكة العربية السعودية من طرق التسليم التقليدية إلى طرق تقديم الخدمات التقنية، والمعروفة أيضًا باسم تقنيات البناء الحديثة (MMC)، والتي تشمل -على سبيل المثال لا الحصر- ما يلي:</p>
+<p><strong><em>&nbsp;</em></strong><strong>أنظمة بناء ذات الأبعاد&nbsp;</strong><strong>2D/2.5 D</strong><strong>:</strong></p>
+<ul>
+<li>أنظمة الخرسانة الجاهزة المعزولة.</li>
+<li>نظام البناء بالخرسانة خفيفة الوزن.</li>
+<li>نظام البناء بالهياكل المعدنية خفيفة الوزن.</li>
+<li>نظام البناء بالقوالب الخرسانية المعزولة.</li>
+<li>أنظمة قوالب الصب المؤقتة والقوالب النفقية.</li>
+</ul>
+<p><strong>&nbsp;أنظمة بناء ثلاثية الأبعاد&nbsp;</strong><strong>3D</strong><strong>:</strong></p>
+<ul>
+<li>خرسانة معيارية.</li>
+<li>وحدات معيارية من الفولاذ الخفيف.</li>
+</ul>
+<p>ينبع التحوُّل نحو تقنيات البناء الحديثة من رغبة الحكومة في مواجهة تحديات سوق البناء الحالية التي تشمل: فجواتٍ تتعلق بالسعر وسرعة الإنجاز والجودة، إذ تُعيق تلك الفجوات تحقيق إمكانات قطاع الإسكان في المملكة، لذا تتركز جهود الحكومة حالياً حول ما يلي:</p>
+<ul>
+<li>تخفيض&nbsp;<strong>تكلفة البناء</strong>&nbsp;للوحدات السكنية.</li>
+<li><strong>سرعة التسليم</strong>&nbsp;وبناء الوحدات السكنية.</li>
+<li>رفع&nbsp;<strong>جودة بناء</strong>&nbsp;الوحدات السكنية.</li>
+</ul>
+<p>تماشيًا مع رؤية المملكة الطموحة 2030، يُتوقَّع بناءُ ما يقرب من&nbsp;<strong>400 ألف وحدة</strong>&nbsp;(تشمل: وحدات سكنية، وتجارية، وصناعية) في المملكة باستخدام تقنيات البناء الحديثة بحلول عام 2025. ما يسهم في زيادة الطلب على تقنيات البناء الحديثة، إذ تُقدَّر الطاقة الإنتاجية لتوريد تقنيات البناء الحديثة الحالية بحوالي<strong>&nbsp;40 ألف وحدة سنوياً</strong>، وبالتالي، يلزم تقديم عرض تنافسي آخر في السوق؛ لتلبية الطلب السنوي على مدى السنوات الخمس القادمة.</p>
+<p>تلتزم مبادرة تحفيز تقنية البناء (BTSI) التي أطلقتها وكالة التطوير العقاري بوزارة الإسكان تمامًا تجاه تحويل قطاع تقنيات البناء الحديثة بالمملكة إلى استخدام الطرق الصناعية، وتهدف المبادرة إلى زيادة نسبة اعتماد تقنيات البناء الحديثة في المملكة، وذلك للإسراع في توفير الوحدات السكنية لا سيما التصدي لتحديات السوق في الوقت نفسه.</p>
+<p>&nbsp;تعمل المبادرة حاليًّا على تحقيق رؤيتها وأهدافها الاستراتيجية، استناداً إلى ثلاث ركائز استراتيجية، مدعومة بالكامل من العروض المالية وغير المالية المطلوبة، وتتلخص هذه الركائز فيما يلي:</p>
+<p><strong>أولًا: تعزيز صناعة تقنية البناء الحديثة</strong>&nbsp;وزيادة قدرتها التنافسية: تهدف مبادرة تحفيز تقنية البناء إلى زيادة القدرة التنافسية للطاقة الإنتاجية لتقنية البناء الحديثة الموجودة في المملكة العربية السعودية، ويتم ذلك من خلال ما يلي:</p>
+<ul>
+<li>دعم المصانع المحلية الموجودة بالمملكة في مواجهة التحديات القائمة وجعلها أكثر جاذبيةً للسوق. وتشمل: العروض المالية في صورة تمويل رأس المال العامل، وتمويل التوسُّع، وتمويل التحديث، بالإضافة إلى العروض غير المالية التي تشمل -على سبيل المثال لا الحصر-الخدمات الاستشارية الهندسية الفعَّالة، وخدمات تنمية المهارات وغيرها.</li>
+<li>جذب مصانع جديدة إلى المملكة، والمساعدة في توطين أفضل التقنيات المتطورة في فئتها، وتشمل: العروض المالية، مثل التمويل العقاري (الذي يغطي 75% من الاستثمار الرأسمالي المطلوب، وكذلك ما يعادل 6 أشهر من متطلبات رأس المال العامل بدفعات مقدمة تصل إلى 20% وبسعر تفضيلي) بالإضافة إلى العروض غير المالية مثل جذب المستثمرين، ودعم الأعمال التجارية، مثل: الترخيص، والتأسيس، والحصول على الأراضي وغير ذلك.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>ثانيًا</strong>:&nbsp;<strong>تيسير</strong>&nbsp;<strong>عملية توفير الوحدات السكنية من خلال اعتماد تقنية البناء الحديثة</strong>: تهدف مبادرة تحفيز تقنيات البناء إلى تحفيز اعتماد تقنيات البناء الحديثة في المملكة؛ لتسريع عملية توفير الوحدات السكنية، ويتم ذلك من خلال ما يلي:</p>
+<ul>
+<li>جهود التوافق بين المطورين (في القطاعين الخاص والعام) ومصانع تقنية البناء الحديثة ذات الصلة للمساعدة في تفعيل الشراكات بين الطرفين.</li>
+<li>جهود التوافق بين المقاولين ومصانع تقنية البناء الحديثة ذات الصلة لتفعيل الشراكات الراسخة القادرة على تقديم منتجات جاهزة بأسعار تنافسية.</li>
+<li>تقديم المحفزات والعروض (المالية والتنظيمية وغيرها) لدفع اعتماد تقنيات البناء الحديثة في السوق.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>ثالثًا:</strong>&nbsp;<strong>خلق</strong>&nbsp;<strong>بيئة مواتية لتعزيز تقنيات البناء الحديثة</strong>&nbsp;في المملكة العربية السعودية: تهدف المبادرة أيضًا إلى خلق نظام بيئي جذَّاب يدعم نمو تقنيات البناء الحديثة، ويتم ذلك من خلال ما يلي:</p>
+<ul>
+<li>جهود التسويق لزيادة قبول تقنيات البناء الحديثة في السوق العام عبر مختلف الجهات في النظام البيئي (كالمطورين والمواطنين والمقاولين وغيرهم).</li>
+<li>جهود تنمية المهارات لتعزيز قدرات القوى العاملة وزيادة توطينها في القطاع.</li>
+</ul>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p><strong>نقل تجربة 'جودة حياة مستدامة' للمجتمعات المحلية والضواحي</strong></p>
+<p>تتمثَّل واحدة من جوانب رؤية المملكة لعام 2030 في تطوير أنماط حياة الأفراد عبر وضع منظومة بيئية تدعم وتسهم في توفير خيارات جديدة تعزز مشاركة السعوديين وغير السعوديين في الأنشطة الثقافية، والترفيهية، والرياضية، بالإضافة إلى تطوير أنشطة ملائمة تسهم في تعزيز جودة حياة الأفراد والأسر، وخلق فرص العمل، وتنويع الاقتصاد، بالإضافة إلى رفع مستوى مدن المملكة لتتبوَّأ مكانة متقدمة بين أفضل المدن في العالم.</p>
+<p>بحلول عام 2030، من المتوقع بناء 1.5 مليون وحدة، أي: ما يعادل 580 مليون متر مربع من التطوير العقاري، ويتطلب هذا تطوير 24 ألف مرفق وخدمات دعم سكنية مختلفة، كما يُتوقع إنشاء سوق لتطوير هذه المرافق وتشغيلها بقيمة 33 مليار ريال سعودي.</p>
+<p>تلتزم مبادرة 'جودة حياة' التي أطلقتها وكالة التطوير العقاري بوزارة الإسكان التزامًا تامًّا بتمكين مشاركة القطاع الخاص في تطوير جودة حياة مستدامة للمجتمعات والضواحي في المملكة؛ إذ تمتلك المبادرة جميع الأدوات المطلوبة لتحقيق هذا الهدف من خلال توفير ما يلي:</p>
+<ul>
+<li>تسليط الضوء على فرص الاستثمار (كالحدائق والمدارس ومرافق الرعاية الصحية الأولية والأعمال الأمنية والتجارية وغيرها).</li>
+<li>التوافق (دعم الوصول إلى الطلب/ المشاريع في إطار برامج الإسكان الحكومية).</li>
+<li>دعم الشركات (كالترخيص والتأسيس والحصول على الأراضي والمباني وسلاسل التوريد المحلية وغيرها).</li>
+<li>الدعم المالي.</li>
+<li>الخدمات الاستشارية.</li>
+</ul>
+<p><strong>&nbsp;التزام الحكومة بتطوير الصناعة</strong></p>
+<p>تعبر حكومة المملكة العربية السعودية عن التزامها من خلال الاستثمار في أعمال التطوير العقاري الكبرى، وتقديم عوامل التحفيز لجذب المطورين من القطاع الخاص والمنظومة البيئية المتطورة.</p>
+<p>&nbsp;بالنسبة للمطورين، يتم تقديم عوامل التحفيز للبناء على الأراضي التابعة للوزارة والأراضي الخاصة، ويشمل ذلك أيضًا:</p>
+<ul>
+<li>الدعم المالي (رهنًا بالشروط التي تُحددها الوزارة في كل مشروع): قروض بدون فوائد، ودعم تمويل البنية التحتية، وضمانات إعادة الشراء المشروط، وتغطية ضريبة القيمة المضافة ونسب الطوابق العليا إلى المساحة.</li>
+<li>يتم تقديم الدعم غير المالي في أشكال مختلفة: تسهيلات الإنشاء (كالترخيص عن طريق الخدمة السريعة)، والدعم التشغيلي (كالتسويق والمبيعات)، وتطوير الأعمال ودعم التوسُّع (كربط مقدمي التقنية بالطلب/ المطورين).</li>
+</ul>
+<p>بالنسبة للجهات المستفيدة، تم إنشاء صندوق التنمية العقاري السعودي، والشركة السعودية لإعادة التمويل العقاري لتطوير سوق الرهن العقاري الناشئ في المملكة العربية السعودية بهدف زيادة ملكية الوحدات السكنية إلى 60٪ بحلول عام 2020، 70٪ بحلول عام 2030.</p>
+<ul>
+<li>يغطي صندوق التنمية العقاري السعودي المقترضين والمطورين المتعثرين، ويدفع جزءًا من الدفعة المقدمة بهدف تحفيز المقترضين لقبول مزيدٍ من الرهون العقارية والمطورين لإقراض المزيد.</li>
+<li>تقدم الشركة السعودية لإعادة التمويل العقاري حلولًا للمبتدئين، وتضمن ازدهار السوق المتوازن والمستدام، وتوجيه السيولة في السوق.</li>
+</ul>
+<p>وضعت المملكة العربية السعودية قواعد واضحة لحوكمة قطاع الإسكان من خلال تخصيص كيانات واضحة عبر سلسلة القيمة المعنية بالإسكان وهم: (مالك/ مروّج القطاع، والمطورون، والممولون، ومصدرو التراخيص).</p>
+<p>'استثمِرْ في السعودية' تدعم الشركات التي تسعى إلى الاستثمار في القطاع العقاري السعودي من خلال ما يلي:</p>
+<ul>
+<li>تسليط الضوء على فرص الاستثمار المحتمل.</li>
+<li>تقديم معلومات عن سوق العقارات في المملكة العربية السعودية.</li>
+<li>التنسيق مع الجهات الحكومية لتوفير عوامل تحفيز الاستثمار.</li>
+<li>ربط المستثمرين مع الشركاء المحتملين (خدمات التوافق).</li>
+<li>دعم خطط العمل.</li>
+<li>توفير الدعم فيما يتعلق بالتراخيص والبناء.</li>
+</ul>
+</div>
+</div>
+"
+
+INSERT_UPDATE Media; code[unique = true]   ; realFileName                           ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText                         ; $contentCV[unique = true]
+                   ; background_sample1.png ; background_sample1.png           ; $siteResource/background_sample1.png   ; image/png   ;; "";
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; description[lang = en]                                ; description[lang = ar]     ; $contentCV[unique = true]
+#                                            ; sector-proposition-2-$sector ; "Information and Communication Technology Hub " ; الاتصالات وتقنية المعلومات ;
+
+
+INSERT_UPDATE InvestSaudiSectorPropositionContainer; uid[unique = true]                          ; name                                ; backgroundImage(code, $contentCV)  ; simpleCMSComponents(&componentRef)                                      ; &componentRef                               ; $contentCV[unique = true]; title
+                                                   ; sector-proposition-container-$sector ;  Sector Proposition Container ; background_sample1.png      ; sector-proposition-1-$sector ; sector-proposition-container-$sector ;                          ; Real Estate Value Proposition
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)                                                                                                                                                                     ; $contentCV[unique = true]
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                                                                                                                  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; real-estate-paragraph, ff-container-$sector, sector-proposition-container-$sector, fo-component-$sector, ss-component-$sector, contact-form ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                                                                                                                                                                                  ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+

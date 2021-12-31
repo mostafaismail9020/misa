@@ -1,0 +1,38 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_PAYMENT_DETAILS_ODATA_SRV/SalesOrderPaymentDetailsSet('18000731')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_PAYMENT_DETAILS_ODATA_SRV/SalesOrderPaymentDetailsSet('18000731')",
+      "type": "ZESRV_PAYMENT_DETAILS_ODATA_SRV.SalesOrderPaymentDetails"
+    },
+    "ContactLastName": "",
+    "ServiceId": "18000731",
+    "EmpFirstName": "622421 Ilam S",
+    "ServiceRejectReason": "",
+    "ServiceDesc": "0001000262 - License Fee",
+    "EmpLastName": "Sivaprakasam",
+    "SadadBillStatus": "SENT TO SADAD",
+    "PaymentDate": "\/Date(1474934400000)\/",
+    "ContactFirstName": "",
+    "SadadBillNum": "",
+    "PaymentStatus": "E0035",
+    "SadadTransNum": "",
+    "NetValue": "18000.000",
+    "SadadTransDate": "",
+    "Currency": "SAR",
+    "SadadBillAccount": "",
+    "PaymentStatusDesc": "Awaiting Payment",
+    "SadadBankId": "",
+    "HouseNum": "",
+    "SadadInvestorId": "",
+    "SadadAmountPaid": "",
+    "City": "",
+    "SadadPaymentChannel": "",
+    "Street": "",
+    "SadadPaymentMethod": "",
+    "HouseNo2": "",
+    "SadadPaymentNum": "",
+    "PostlCod1": "",
+    "Name1": ""
+  }
+}

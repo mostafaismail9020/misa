@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<project name="packaging">
+	<!-- number of expected zip files in the package.files.to.include -->
+	<!-- the package name to be used for the final Cloud packaging -->
+	<!-- the patternset of files we allow in the config folders, defaults to all -->
+	<!-- the source directory in the repository, for the files to be put in the Cloud Services package -->
+	<!-- the sub-directories of the config/ dir, in the Cloud Services package -->
+	<description>Packaging related targets. @author adrien.missemer</description>
+	<taskdef resource="net/sf/antcontrib/antlib.xml" classpath="${platformhome}/lib/ant-contrib-1.0b3.jar" />
+
+	
+
+
+	<fileset dir="${HYBRIS_TEMP_DIR}/hybrisServer" id="package.files.to.include">
+		<patternset>
+			<include name="hybrisServer-AllExtensions.zip"/>
+			<include name="hybrisServer-Platform.zip"/>
+		</patternset>
+	</fileset>
+	<macrodef name="checkCloudConfigDir">
+		<attribute name="dir"/>
+		<sequential>
+			<!--<compileHybrisProperties configDir="@{dir}" targetFile="${HYBRIS_TEMP_DIR}/cloud-config/${dirName}/hybris.properties" />
+			<concatConfigProperties configDir="@{dir}" hybrisConfigFile="${HYBRIS_TEMP_DIR}/cloud-config/${dirName}/hybris.properties" targetFile="${HYBRIS_TEMP_DIR}/cloud-config/${dirName}/local.properties" />
+			<checkDuplicatedProperties file="${HYBRIS_TEMP_DIR}/cloud-config/${dirName}/local.properties" />-->
+			<basename file="@{dir}" property="dirName"/>
+			<checkCloudConfigFiles configDir="@{dir}"/>
+			<checkDuplicatedProperties file="${HYBRIS_TEMP_DIR}/cloud-config/${dirName}/local.properties"/>
+			<compileHybrisProperties configDir="@{dir}" targetFile="${HYBRIS_TEMP_DIR}/cloud-config/${dirName}/hybris.properties"/>
+			<concatConfigProperties configDir="@{dir}" hybrisConfigFile="${HYBRIS_TEMP_DIR}/cloud-config/${dirName}/hybris.properties" targetFile="${HYBRIS_TEMP_DIR}/cloud-config/${dirName}/local.properties"/>
+			<echo message="Verifying the structure of the ${dirName} config folder"/>
+			<local name="dirName"/>
+		</sequential>
+	</macrodef>
+	<macrodef name="checkCloudConfigFiles">
+		<attribute name="configDir"/>
+		<sequential>
+			<!--
+		<fail message="ERROR: customer.properties is mandatory in cloud config @{configDir}">
+			<condition>
+				<not>
+					<available file="@{configDir}/customer.properties" />
+				</not>
+			</condition>
+		</fail>
+-->
+			<fail message="ERROR: local.properties is not allowed in cloud config @{configDir}, use customer.properties instead.">
+				<condition>
+					<available file="@{configDir}/local.properties"/>
+				</condition>
+			</fail>
+			<if>
+				<available file="@{configDir}/hybris.properties"/>
+				<then>
+					<echo level="warn" message="WARN: the @{configDir}/hybris.properties file can be used in dev but will be ignored by the Cloud Services for staging and prod"/>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+	<macrodef name="checkDuplicatedProperties">
+		<attribute name="file"/>
+		<sequential>
+			<echo message="Checking duplicate properties in @{file}"/>
+			<taskdef classpath="${BUILD_HOME}/resources/ant/lib/rscbundlecheck-1.31-bin.jar" resource="task.properties"/>
+			
+		</sequential>
+	</macrodef>
+	<macrodef name="compileHybrisProperties">
+		<attribute name="configDir"/>
+		<attribute name="targetFile"/>
+		<sequential>
+			<copy failonerror="true" file="${BUILD_HOME}/resources/ant/hybris.properties.template" overwrite="true" tofile="@{targetFile}">
+				<filterset onmissingfiltersfile="ignore">
+					<filtersfile file="${BUILD_HOME}/resources/ant/hybris.properties.defaults"/>
+					<filtersfile file="${platformhome}/project.properties"/>
+					<filtersfile file="${platformhome}/resources/advanced.properties"/>
+					<filtersfile file="@{configDir}/hybris.properties"/>
+				</filterset>
+			</copy>
+			<delete file="@{targetFile}"/>
+		</sequential>
+	</macrodef>
+	<macrodef name="concatConfigProperties">
+		<attribute name="configDir"/>
+		<attribute name="hybrisConfigFile"/>
+		<attribute name="targetFile"/>
+		<sequential>
+			<concat destfile="@{targetFile}" encoding="UTF-8" eol="unix" fixlastline="true" force="no" outputencoding="UTF-8" overwrite="no">
+				<fileset file="@{configDir}/customer.properties"/>
+				<fileset file="@{hybrisConfigFile}"/>
+			</concat>
+			<delete file="@{targetFile}"/>
+			<echo message="concatenating customer.properties and filtered hybris.properties into @{targetFile}"/>
+		</sequential>
+	</macrodef>
+	<patternset id="allowed.cloud.config.files">
+		<exclude name="customize/PUT_HERE_FILES_THAT_MUST_BE_COPIED_TO_HYBRIS_BIN.TXT"/>
+		<exclude name="hybris.properties"/>
+		<exclude name="licence/*"/>
+		<exclude name="local_tenant_junit.properties"/>
+		<exclude name="tomcat/**/*"/>
+		<include name="**/*"/>
+	</patternset>
+	<patternset id="mandatory.cloud.config.files">
+		<include name="customer.properties"/>
+		<include name="localextensions.xml"/>
+	</patternset>
+	<patternset id="package.misc.files.pattern">
+		<exclude name="put_here_the_files_you_want_packaged*"/>
+		<include name="**/*"/>
+	</patternset>
+	<property location="${HYBRIS_HOME}/config-ms-dev" name="package.environment.config.dev.dir"/>
+	<property location="${HYBRIS_HOME}/config-ms-prod" name="package.environment.config.prod.dir"/>
+	<property location="${HYBRIS_HOME}/config-ms-staging" name="package.environment.config.stag.dir"/>
+	<property location="${HYBRIS_HOME}/misc/ms-dev" name="package.environment.misc.dev.dir"/>
+	<property location="${HYBRIS_HOME}/misc/ms-prod" name="package.environment.misc.prod.dir"/>
+	<property location="${HYBRIS_HOME}/misc/ms-staging" name="package.environment.misc.stag.dir"/>
+	<property name="package.environments" value="dev,stag,prod"/>
+	<property name="package.files.to.include.count" value="2"/>
+	<property name="package.name" value="${project.code}-${project.version}"/>
+	<property name="package.temp.dir" value="${HYBRIS_TEMP_DIR}/package/${package.name}"/>
+	<target depends="checkCloudConfigDirectories" name="packageConfigurations">
+		<for list="${package.environments}" param="config">
+			<sequential>
+				<!-- copy only the mandatory files from the default config dir. This folder contains generated files and files copied from the platform, we do not want them unless they are mandatory in the package, or versioned in the repository. -->
+				<!-- overwrite with the versioned files in config-common -->
+				<!-- overwrite with the versioned files in config-{config} -->
+				<!--<copy todir="${package.temp.dir}/hybris/config/@{config}" failonerror="true" overwrite="true">
+					<fileset dir="${HYBRIS_COMMON_CONFIG_DIR}">
+						<patternset refid="allowed.cloud.config.files"/>
+					</fileset>
+				</copy>-->
+				<copy failonerror="true" overwrite="true" todir="${package.temp.dir}/hybris/config/@{config}">
+					<fileset dir="${HYBRIS_CONFIG_DIR}">
+						<patternset refid="mandatory.cloud.config.files"/>
+					</fileset>
+				</copy>
+				<copy failonerror="true" overwrite="true" todir="${package.temp.dir}/hybris/config/@{config}">
+					<fileset dir="${package.environment.config.@{config}.dir}">
+						<patternset refid="allowed.cloud.config.files"/>
+					</fileset>
+				</copy>
+			</sequential>
+		</for>
+	</target>
+	<target depends="cleanPackage,packageConfigurations,packageAdditionalFiles" name="package">
+		<checksum file="${package.temp.dir}.zip" fileext=".md5" pattern="{0} {1}"/>
+		<copy failonerror="true" todir="${package.temp.dir}/hybris/bin">
+			<fileset refid="package.files.to.include"/>
+		</copy>
+		<echo file="${package.temp.dir}/metadata.properties" message="package_version = 2.4"/>
+		<echo message="	${package.temp.dir}.md5"/>
+		<echo message="	${package.temp.dir}.zip"/>
+		<echo message="Cloud deployment package is ready: "/>
+		<fail message="ERROR: missing production zip files, run ant production first">
+			<condition>
+				<not>
+					<resourcecount count="${package.files.to.include.count}">
+						<fileset refid="package.files.to.include"/>
+					</resourcecount>
+				</not>
+			</condition>
+		</fail>
+		<move file="${package.temp.dir}.zip.md5" tofile="${package.temp.dir}.md5"/>
+		<zip destfile="${package.temp.dir}.zip">
+			<zipfileset dir="${package.temp.dir}" prefix="${package.name}"/>
+		</zip>
+	</target>
+	<target name="checkCloudConfigDirectories">
+		<for list="${package.environments}" param="config">
+			<sequential>
+				<if>
+					<available file="${dir}" type="dir"/>
+					<else>
+						<echo level="warn" message="WARN: Missing Cloud Config directory: ${dir}, set the package.environments property to remove that warning."/>
+					</else>
+					<then>
+						<checkCloudConfigDir dir="${dir}"/>
+					</then>
+				</if>
+				<local name="dir"/>
+				<property name="dir" value="${package.environment.config.@{config}.dir}"/>
+			</sequential>
+		</for>
+	</target>
+	<target name="cleanPackage">
+		<delete dir="${HYBRIS_TEMP_DIR}/package"/>
+		<fail message="Please set the project.code and project.version properties in your build.xml file">
+			<condition>
+				<not>
+					<and>
+						<isset property="project.code"/>
+						<isset property="project.version"/>
+					</and>
+				</not>
+			</condition>
+		</fail>
+	</target>
+	<target name="packageAdditionalFiles">
+		<for list="${package.environments}" param="config">
+			<sequential>
+				<copy failonerror="false" overwrite="false" todir="${package.temp.dir}/hybris/misc/@{config}">
+					<fileset dir="${package.environment.misc.@{config}.dir}">
+						<patternset refid="package.misc.files.pattern"/>
+					</fileset>
+				</copy>
+			</sequential>
+		</for>
+	</target>
+	<taskdef classpath="${platformhome}/lib/ant-contrib-1.0b3.jar" resource="net/sf/antcontrib/antlib.xml"/>
+</project>

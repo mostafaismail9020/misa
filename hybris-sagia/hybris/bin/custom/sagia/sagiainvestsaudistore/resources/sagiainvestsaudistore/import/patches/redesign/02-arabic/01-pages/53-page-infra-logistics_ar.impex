@@ -1,0 +1,72 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = InfrastructureLogisticsPageTemplate
+$page = infrastructure-logistics
+$pageName = البُنية التحتية والخدمات اللوجستية
+$pageTitleAr = $pageName
+$pageLabel = /economicHighlights/infraLogistics
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[unique=true, default=$contentCatalog:Online]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = ar] ; description[lang = ar]; keywords[lang = ar]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleAr     ; $pageName             ; Invest Saudi,Invest Saudi - Meet,Kingdom, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+#######################################################
+
+
+INSERT_UPDATE CMSLinkComponent  ; $contentCV[unique = true]; uid[unique = true] 					; linkName [lang = ar]														;url																	; &linkRef
+								;						   ; infra-logistics-tail-link1-$page 		; أهم الأرقام 		  	 							 		;economicHighlights/dashboard  				; infra-logistics-tail-link1-$page
+								;						   ; infra-logistics-tail-link2-$page		; المملكة العربية السعودية في المؤشرات الدولية  	 		;economicHighlights/saInternationalIndices	; infra-logistics-tail-link2-$page
+								;						   ; infra-logistics-tail-link3-$page		; البُنية التحتية والخدمات اللوجستية 				 		;economicHighlights/infraLogistics 			; infra-logistics-tail-link3-$page
+								;						   ; infra-logistics-tail-link4-$page		; القطاعات الاقتصادية السعودية  		  	 			 		;economicHighlights/saudiEconomicSectors		; infra-logistics-tail-link4-$page
+								;						   ; infra-logistics-tail-link5-$page		; بيانات الاستثمار  		  	 						 		;economicHighlights/investmentData			; infra-logistics-tail-link5-$page
+ 
+
+
+#########################################################################
+
+INSERT_UPDATE Media	; code[unique = true]         								; realFileName             									; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]			; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; economic-infrastructures-logistics-banner.png 			; economic-infrastructures-logistics-banner.png				; $siteResource/economic-infrastructures-logistics-banner.png 							; 	image/png						;										   ; ""     ;
+					
+
+#####################################################################
+
+	
+INSERT_UPDATE EconomicDashboardBannerComponent  ; uid[unique = true]			 	; tailHeader [lang = ar]											 ; tailBanner (code, $contentCV)	      	; link(&linkRef)      								; &componentRef 			 	  ; $contentCV[unique = true]
+												; infra-logistics-tail-1			; أهم الأرقام 		  	 											 ; 											; infra-logistics-tail-link1-$page	    			; infra-logistics-tail-1		  ;  
+												; infra-logistics-tail-2			; المملكة العربية السعودية في المؤشرات الدولية  		  			 ; 											; infra-logistics-tail-link2-$page	    			; infra-logistics-tail-2		  ;  
+												; infra-logistics-tail-3			; البُنية التحتية والخدمات اللوجستية 			  	 				 ; 											; infra-logistics-tail-link3-$page	    			; infra-logistics-tail-3		  ;  
+												; infra-logistics-tail-4			; القطاعات الاقتصادية السعودية  		  	 							 ; 											; infra-logistics-tail-link4-$page	    			; infra-logistics-tail-4		  ;  
+												; infra-logistics-tail-5			; بيانات الاستثمار  		  	 										 ; 											; infra-logistics-tail-link5-$page	    			; infra-logistics-tail-5		  ;  
+
+
+INSERT_UPDATE EconomicCustomBannerContainer		; uid[unique = true] 			   			  ; name 							  				; backgroundImage (code, $contentCV)						; title [lang = ar]									; simpleCMSComponents(&componentRef)	  										  											 	  ; &componentRef                         		; $contentCV[unique = true]
+												; infrastructures-logistics-banner-container  ; infrastructures logistics banner Container     	; economic-infrastructures-logistics-banner.png  			; البنية التحتية والخدمات اللوجستية 				; infra-logistics-tail-1,infra-logistics-tail-2,infra-logistics-tail-3,infra-logistics-tail-4,infra-logistics-tail-5 		      ; infrastructures-logistics-banner-container  ;
+
+
+
+################################################################################
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)		; $contentCV	;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                             		;				;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; 	infrastructures-logistics-banner-container								;				;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                    				;				;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+

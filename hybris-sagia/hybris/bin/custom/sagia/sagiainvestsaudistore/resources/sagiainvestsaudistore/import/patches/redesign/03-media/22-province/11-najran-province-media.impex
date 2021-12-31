@@ -1,0 +1,43 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                      	 				; realFileName                    								; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]		; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; najran-banner-image.png                                   ; najran-banner-image.png                                     	; $siteResource/najran-banner-image.png                                         	;                 image/png                ;                                          ; ""     ;
+					; najran-map.png                                            ; najran-map.png                                               	; $siteResource/najran-map.png                                                 		;                 image/png                ;                                          ; ""     ;
+					; najran-mining.png										    ; najran-mining.png										        ; $siteResource/najran-mining.png										            ;                 image/png                ;                                          ; ""     ;
+					; najran-non-metallic-mineral-products-manufacturing.png	; najran-non-metallic-mineral-products-manufacturing.png		; $siteResource/najran-non-metallic-mineral-products-manufacturing.png              ;                 image/png                ;                                          ; ""     ;
+					; najran-trading.png	        						    ; najran-trading.png	        						        ; $siteResource/najran-trading.png	        						                ;                 image/png                ;                                          ; ""     ;
+					; najran-agriculture.png	           					    ; najran-agriculture.png	           					        ; $siteResource/najran-agriculture.png	           					                ;                 image/png                ;                                          ; ""     ;   
+					; najran-logistic-services.png	           				    ; najran-logistic-services.png	           				        ; $siteResource/najran-logistic-services.png	           				            ;                 image/png                ;                                          ; ""     ;   
+										   
+					; najran-population.png        		                        ; najran-population.png        		                            ; $siteResource/najran-population.png        		                                ;                 image/png                ;                                          ; ""     ;   
+					; najran-airport.png    				        	        ; najran-airport.png    				   	                    ; $siteResource/najran-airport.png    				                               	;                 image/png                ;                                          ; ""     ;   
+					; najran-private-sector-employees.png 	      	            ; najran-private-sector-employees.png 		                    ; $siteResource/najran-private-sector-employees.png                                	;                 image/png                ;                                          ; ""     ;   
+					; najran-dams.png              		                        ; najran-dams.png              		      	                    ; $siteResource/najran-dams.png              		                                ;                 image/png                ;                                          ; ""     ;   
+					; najran-active-factories.png  		      	                ; najran-active-factories.png  		  		                    ; $siteResource/najran-active-factories.png  		                              	;                 image/png                ;                                          ; ""     ;   
+					; najran-hotels.png        			                        ; najran-hotels.png        			                            ; $siteResource/najran-hotels.png        			                                ;                 image/png                ;                                          ; ""     ;   
+					; najran-chambers-of-commerce.png 	                        ; najran-chambers-of-commerce.png 	     	                    ; $siteResource/najran-chambers-of-commerce.png 	                                ;                 image/png                ;                                          ; ""     ;   
+					; najran-hospitals.png             	                        ; najran-hospitals.png             	                            ; $siteResource/najran-hospitals.png             	                                ;                 image/png                ;                                          ; ""     ;   
+					; najran-industrial-city.png      	                        ; najran-industrial-city.png      	                            ; $siteResource/najran-industrial-city.png      	                                ;                 image/png                ;                                          ; ""     ;   
+					; najran-towns.png					                        ; najran-towns.png					  		                    ; $siteResource/najran-towns.png					                                ;                 image/png                ;                                          ; ""     ;   
+					; najran-roads-length.png			                        ; najran-roads-length.png			       	                    ; $siteResource/najran-roads-length.png			                                	;                 image/png                ;                                          ; ""     ;   
+
+					; najran-geological-reserves-copper.png             		; najran-geological-reserves-copper.png           				; $siteResource/najran-geological-reserves-copper.png                               ;                 image/png                ;                                          ; ""     ;   
+					; najran-strong-support-systems-smes.png            		; najran-strong-support-systems-smes.png             			; $siteResource/najran-strong-support-systems-smes.png                              ;                 image/png                ;                                          ; ""     ;   	
+					; najran-connected-roadinfrastructure.png           		; najran-connected-roadinfrastructure.png              			; $siteResource/najran-connected-roadinfrastructure.png                             ;                 image/png                ;                                          ; ""     ;   	
+					; najran-proximity-yemen.png                        		; najran-proximity-yemen.png                           			; $siteResource/najran-proximity-yemen.png                                          ;                 image/png                ;                                          ; ""     ;   	
+					; najran-rich-heritage-culture.png                  		; najran-rich-heritage-culture.png                 				; $siteResource/najran-rich-heritage-culture.png                                    ;                 image/png                ;                                          ; ""     ;   	
+																   
+					; najran-investments.png                              		; najran-investments.png                       					; $siteResource/najran-investments.png                                              ;                 image/png                ;                                          ; ""     ;   	

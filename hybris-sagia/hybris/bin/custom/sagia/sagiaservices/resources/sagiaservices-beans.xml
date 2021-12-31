@@ -1,0 +1,3620 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- [y] hybris Platform Copyright (c) 2017 SAP SE or an SAP affiliate company. 
+	All rights reserved. This software is the confidential and proprietary information 
+	of SAP ("Confidential Information"). You shall not disclose such Confidential 
+	Information and shall use it only in accordance with the terms of the license 
+	agreement you entered into with SAP. -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="beans.xsd">
+	<!-- ZUI5Sagia -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.HomeHDRData">
+		<property name="bpID" type="java.lang.String">
+			<description>Bussiness Partner Identifier</description>
+		</property>
+		<property name="autorrfcEligible" type="java.lang.String" />
+		<property name="checkRfcFlag" type="java.lang.String" />
+		<property name="autoRenewalFlag" type="java.lang.String" />
+		<property name="enforcepopup" type="java.lang.String" />
+		<property name="checkGovtFlag" type="java.lang.String" />
+		<property name="curruser" type="java.lang.String" />
+		<property name="enforceRfcPopup" type="java.lang.String" />
+		<property name="termsConditions" type="java.lang.String" />
+		<property name="errormsg" type="java.lang.String" />
+		<property name="licID" type="java.lang.String" />
+		<property name="licGuid" type="java.lang.String" />
+		<property name="licStatus" type="java.lang.String" />
+		<property name="licStDesc" type="java.lang.String" />
+		<property name="licType" type="java.lang.String" />
+		<property name="licTypeDesc" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="bpName" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="activity" type="java.lang.String" />
+		<property name="shText" type="java.lang.String" />
+		<property name="logo" type="java.lang.String" />
+		<property name="activeSurvey" type="java.lang.String" />
+		<property name="mandSurvey" type="java.lang.String" />
+		<property name="mandContUpd" type="java.lang.String" />
+		<property name="mandContUpdInPro" type="java.lang.String" />
+		<property name="mandFinance" type="java.lang.String" />
+		<property name="mandFinInPro" type="java.lang.String" />
+		<property name="mandGovDocs" type="java.lang.String" />
+		<property name="mandGovInPro" type="java.lang.String" />
+		<property name="maxLicenseDuration" type="java.lang.String" />
+		<property name="licenseFeePerYr" type="java.lang.String" />
+		<property name="subscriptionOutstandingFee" type="java.lang.String" />
+		<property name="socialUserInfos"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SocialUserInfoData" />
+		<!--<property name="homeToLicInfoNav" type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseInfoData"/> -->
+		<!--<property name="homeToContactNav" type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.HomeContactDetailData&gt;"/> -->
+		<!--<property name="homeToShareHolderNav" type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ShareHolderInfoData&gt;"/> -->
+		<!--<property name="homeHDRToSalAndEmpNav" type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SalAndEmpData"/> -->
+		<!--<property name="homeHDRToClassificNav" type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ClassificData"/> -->
+		<property name="socialUserInfoData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SocialUserInfoData" />
+		<property name="licenseInfoData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseInfoData" />
+		<property name="homeContactDetailDataSet"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.HomeContactDetailData&gt;" />
+		<property name="shareHolderInfoDataSet"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ShareHolderInfoData&gt;" />
+		<property name="salAndEmpData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SalAndEmpData" />
+		<property name="classificData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ClassificData" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ServiceBpHDRData">
+		<property name="SrID" type="java.lang.String" />
+		<property name="SrGuid" type="java.lang.String" />
+		<property name="LicGuid" type="java.lang.String" />
+		<property name="BpID" type="java.lang.String" />
+		<property name="BpGuid" type="java.lang.String" />
+		<property name="BpChangeID" type="java.lang.String" />
+		<property name="SrCrDate" type="java.time.LocalDateTime" />
+		<property name="SrStCode" type="java.lang.String" />
+		<property name="SrStDesc" type="java.lang.String" />
+		<property name="SrvBPHdrToBPContactDataSet"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SrvBPHdrContactData&gt;" />
+		<property name="SrvBPHdrToAttachNav"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
+		<property name="SrvBPHdrToTextNav"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContactUpdateMessagesData&gt;" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.SupportVisitData">
+		<property name="SrId" type="java.lang.String" />
+		<property name="Status" type="java.lang.String" />
+		<property name="BpId" type="java.lang.String" />
+		<property name="StatDesc" type="java.lang.String" />
+		<property name="VisitDate" type="java.time.LocalDateTime" />
+		<property name="TextMsg" type="java.lang.String" />
+		<property name="Tdid" type="java.lang.String" />
+		<property name="SuppVisitToText"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.GetTextData&gt;" />
+		<property name="SupportVstToAttachNav"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.DocAttachSetData&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zverifyModuleSrvOData.EmailVerificationData">
+		<property name="Entity" type="java.lang.String" />
+		<property name="Message" type="java.lang.String" />
+		<property name="EmailId" type="java.lang.String" />
+		<property name="Verified" type="java.lang.String" />
+		<property name="Isverificationrequired"
+			type="java.lang.String" />
+		<property name="IsSubscriptionFeeCheckRequired"
+			type="java.lang.String" />
+		<property name="SubscriptionFeeCheckMessage"
+			type="java.lang.String" />
+		<property name="IsFinancialStatementCheckRequired"
+			type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zverifyModuleSrvOData.EmailSubscriptionFeeData">
+		<property name="Entity" type="java.lang.String" />
+		<property name="Message" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GlobalVals">
+		<property name="SrStCode" type="java.lang.String" />
+	</bean>
+
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SocialUserInfoData">
+		<property name="socialUser" type="java.lang.String" />
+		<property name="socialMediaChannel" type="java.lang.String" />
+		<property name="bpId" type="java.lang.String" />
+		<property name="socialUserName" type="java.lang.String" />
+		<property name="genderCode" type="java.lang.String" />
+		<property name="countryName" type="java.lang.String" />
+		<property name="locationName" type="java.lang.String" />
+		<property name="socialUserEmailAddress"
+			type="java.lang.String" />
+		<property name="homeHDRDataSet"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.HomeHDRData&gt;" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseInfoData">
+		<property name="bpID" type="java.lang.String" />
+		<property name="licID" type="java.lang.String" />
+		<property name="licGuid" type="java.lang.String" />
+		<property name="licStatus" type="java.lang.String" />
+		<property name="licStDesc" type="java.lang.String" />
+		<property name="licType" type="java.lang.String" />
+		<property name="licTypeDesc" type="java.lang.String" />
+		<property name="licClass" type="java.lang.String" />
+		<property name="licCapital" type="java.lang.String" />
+		<property name="licIssueDt" type="java.time.LocalDateTime" />
+		<property name="licExDate" type="java.time.LocalDateTime" />
+		<property name="licIsicSection" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="homeHDRData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.HomeHDRData" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.HomeContactDetailData">
+		<property name="bpID" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="contactType" type="java.lang.String" />
+		<property name="firstName" type="java.lang.String" />
+		<property name="middleName" type="java.lang.String" />
+		<property name="lastName" type="java.lang.String" />
+		<property name="telNumber" type="java.lang.String" />
+		<property name="mobileNumber" type="java.lang.String" />
+		<property name="email" type="java.lang.String" />
+		<property name="city" type="java.lang.String" />
+		<property name="website" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="nationality" type="java.lang.String" />
+		<property name="nationalId" type="java.lang.String" />
+		<property name="fullName" type="java.lang.String" />
+		<property name="priContFlag" type="java.lang.String" />
+		<property name="homeHDRData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.HomeHDRData" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ShareHolderInfoData">
+		<property name="bpID" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="contactType" type="java.lang.String" />
+		<property name="firstName" type="java.lang.String" />
+		<property name="middleName" type="java.lang.String" />
+		<property name="lastName" type="java.lang.String" />
+		<property name="shareinfo" type="java.lang.String" />
+		<property name="fullName" type="java.lang.String" />
+		<property name="nationality" type="java.lang.String" />
+		<property name="homeHDRData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.HomeHDRData" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SalAndEmpData">
+		<property name="bpID" type="java.lang.String" />
+		<property name="expatSal" type="java.math.BigDecimal" />
+		<property name="ksaSal" type="java.math.BigDecimal" />
+		<property name="expNo" type="java.lang.String" />
+		<property name="ksaNo" type="java.lang.String" />
+		<property name="male_emp" type="java.lang.String" />
+		<property name="females_emp" type="java.lang.String" />
+		<property name="homeHDRData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.HomeHDRData" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ClassificData">
+		<property name="bpID" type="java.lang.String" />
+		<property name="duration" type="java.lang.String" />
+		<property name="fees" type="java.math.BigDecimal" />
+		<property name="category" type="java.lang.String" />
+		<property name="curRef" type="java.lang.String" />
+		<property name="homeHDRData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.HomeHDRData" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SrvBPHdrContactData">
+		<property name="BpGuid" type="java.lang.String" />
+		<property name="BpID" type="java.lang.String" />
+		<property name="SrID" type="java.lang.String" />
+		<property name="NationalID" type="java.lang.String" />
+		<property name="DocumentID" type="java.lang.String" />
+		<property name="GosiID" type="java.lang.String" />
+		<property name="PrimaryContact" type="java.lang.String" />
+		<property name="ContactType" type="java.lang.String" />
+		<property name="FirstName" type="java.lang.String" />
+		<property name="LastName" type="java.lang.String" />
+		<property name="MiddleName" type="java.lang.String" />
+		<property name="MobileNumber" type="java.lang.String" />
+		<property name="Email" type="java.lang.String" />
+	</bean>
+
+	<!-- SurveyHDR entity defined in ZUI5_SAGIA_SRV -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SurveyHDRData">
+		<property name="surveyid" type="java.lang.String" />
+		<property name="surveyversion" type="java.lang.String" />
+		<property name="applicationId" type="java.lang.String" />
+		<property name="surveytitle" type="java.lang.String" />
+		<property name="mandatfrom" type="java.time.LocalDateTime" />
+		<property name="validfrom" type="java.time.LocalDateTime" />
+		<property name="validto" type="java.time.LocalDateTime" />
+		<property name="createdAt" type="java.time.LocalDateTime" />
+		<property name="createdBy" type="java.lang.String" />
+		<property name="modifiedAt" type="java.time.LocalDateTime" />
+		<property name="modifiedBy" type="java.lang.String" />
+		<property name="survQuestAnsDataSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SurvQuestAnsData&gt;" />
+		<property name="survQuestDefDataSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SurvQuestDefData&gt;" />
+	</bean>
+
+
+	<!-- START SurveyHDR related entities from ZESRV_ENH_ODATA_SRV -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.SurveyHDREnhData">
+
+		<property name="transactionId" type="java.lang.String" />
+		<property name="surveyid" type="java.lang.String" />
+		<property name="surveyVersion" type="java.lang.String" />
+		<property name="language" type="java.lang.String" />
+		<property name="applicationId" type="java.lang.String" />
+		<property name="surveytitle" type="java.lang.String" />
+		<property name="mandatfrom" type="java.time.LocalDateTime" />
+		<property name="validfrom" type="java.time.LocalDateTime" />
+		<property name="validto" type="java.time.LocalDateTime" />
+		<property name="createdAt" type="java.time.LocalDateTime" />
+		<property name="createdBy" type="java.lang.String" />
+		<property name="modifiedAt" type="java.time.LocalDateTime" />
+		<property name="modifiedBy" type="java.lang.String" />
+		<property name="survQuestAnsDataSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.SurvQuestAnsEnhData&gt;" />
+		<property name="survQuestDefDataSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.SurvQuestDefEnhData&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.SurvQuestAnsEnhData">
+		<property name="surveyid" type="java.lang.String" />
+		<property name="questID" type="java.lang.String" />
+		<property name="surveyVersion" type="java.lang.String" />
+		<property name="language" type="java.lang.String" />
+		<property name="answType" type="java.lang.String" />
+		<property name="answerID" type="java.lang.String" />
+		<property name="txtlg" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.SurvQuestDefEnhData">
+		<property name="surveyId" type="java.lang.String" />
+		<property name="applicationId" type="java.lang.String" />
+		<property name="surveyVersion" type="java.lang.String" />
+		<property name="language" type="java.lang.String" />
+		<property name="hierLevel" type="java.lang.String" />
+		<property name="consnr" type="java.lang.String" />
+		<property name="quest" type="java.lang.String" />
+		<property name="mandquest" type="java.lang.Boolean" />
+		<property name="questID" type="java.lang.String" />
+		<property name="ansTypeSt" type="java.lang.String" />
+		<property name="answType" type="java.lang.String" />
+		<property name="questTXT" type="java.lang.String" />
+		<property name="survQustDDLBDataSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.SurvQustDDLBEnhData&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.SurvQustDDLBEnhData">
+		<property name="surveyId" type="java.lang.String" />
+		<property name="questID" type="java.lang.String" />
+		<property name="surveyVersion" type="java.lang.String" />
+		<property name="language" type="java.lang.String" />
+		<property name="ansHierLevel" type="java.lang.String" />
+		<property name="ansID" type="java.lang.String" />
+		<property name="ansText" type="java.lang.String" />
+		<property name="controlID" type="java.lang.String" />
+	</bean>
+	<!-- END SurveyHDR related entities from ZESRV_ENH_ODATA_SRV -->
+
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SurvQuestAnsData">
+		<property name="surveyid" type="java.lang.String" />
+		<property name="questID" type="java.lang.String" />
+		<property name="answType" type="java.lang.String" />
+		<property name="answerID" type="java.lang.String" />
+		<property name="txtlg" type="java.lang.String" />
+		<property name="surveyHDRData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SurveyHDRData" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SurvQuestDefData">
+		<property name="surveyid" type="java.lang.String" />
+		<property name="questID" type="java.lang.String" />
+		<property name="applicationid" type="java.lang.String" />
+		<property name="hierLevel" type="java.lang.String" />
+		<property name="consnr" type="java.lang.String" />
+		<property name="quest" type="java.lang.String" />
+		<property name="mandquest" type="java.lang.Boolean" />
+		<property name="ansTypeStd" type="java.lang.String" />
+		<property name="answType" type="java.lang.String" />
+		<property name="questTXT" type="java.lang.String" />
+		<property name="surveyHDRData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SurveyHDRData" />
+		<property name="survQustDDLBDataSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SurvQustDDLBData&gt;" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SurvQustDDLBData">
+		<property name="surveyid" type="java.lang.String" />
+		<property name="questID" type="java.lang.String" />
+		<property name="ansHierLevel" type="java.lang.String" />
+		<property name="ansID" type="java.lang.String" />
+		<property name="ansText" type="java.lang.String" />
+		<property name="controlID" type="java.lang.String" />
+		<property name="survQuestDefData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SurvQuestDefData" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GovtHeaderData">
+		<property name="entity" type="java.lang.String" />
+		<property name="status" type="java.lang.String" />
+		<property name="statusCode" type="java.lang.String" />
+		<property name="crNo" type="java.lang.String" />
+		<property name="gosiNo" type="java.lang.String" />
+		<property name="zakatNo" type="java.lang.String" />
+		<property name="molNo" type="java.lang.String" />
+		<property name="momraYesNo" type="java.lang.String" />
+		<property name="shopLicNo" type="java.lang.String" />
+		<property name="amanah" type="java.lang.String" />
+		<property name="Return" type="java.lang.String" />
+		<property name="note" type="java.lang.String" />
+		<property name="success" type="java.lang.String" />
+		<property name="serviceId" type="java.lang.String" />
+		<property name="govtBranchSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GovtBranchData&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GovtBranchData">
+		<property name="govtHeader"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GovtHeaderData" />
+		<property name="branchName" type="java.lang.String" />
+		<property name="branchType" type="java.lang.String" />
+		<property name="branchCity" type="java.lang.String" />
+		<property name="addr" type="java.lang.String" />
+		<property name="branchStatus" type="java.lang.String" />
+		<property name="headOffice" type="java.lang.String" />
+		<property name="momraYesNo" type="java.lang.String" />
+		<property name="momraSlNo" type="java.lang.String" />
+		<property name="momraSlAmanah" type="java.lang.String" />
+		<property name="momraClassCrNo" type="java.lang.String" />
+		<property name="crYesNo" type="java.lang.String" />
+		<property name="crNo" type="java.lang.String" />
+		<property name="wasselConnectCr" type="java.lang.String" />
+		<property name="noWasselConnectCr" type="java.lang.String" />
+		<property name="noPhyLoc" type="java.lang.String" />
+		<property name="phyAddress" type="java.lang.String" />
+		<property name="wasselCrNo" type="java.lang.String" />
+		<property name="wasselStreet" type="java.lang.String" />
+		<property name="wasselBuildNo" type="java.lang.String" />
+		<property name="wasselAddNo" type="java.lang.String" />
+		<property name="wasselZip" type="java.lang.String" />
+		<property name="wasselUnit" type="java.lang.String" />
+		<property name="wasselLatitude" type="java.lang.String" />
+		<property name="wasselLongitude" type="java.lang.String" />
+		<property name="sSelectedIndex" type="java.lang.String" />
+		<property name="updated" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.AmendHeaderData">
+		<property name="srId" type="java.lang.String" />
+		<property name="prevSrGuid" type="java.lang.String" />
+		<property name="reApply" type="java.lang.Boolean" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="licID" type="java.lang.String" />
+		<property name="licGuid" type="java.lang.String" />
+		<property name="licType" type="java.lang.String" />
+		<property name="licTypeDesc" type="java.lang.String" />
+		<property name="licRenFlag" type="java.lang.Boolean" />
+		<property name="shipmentNo" type="java.lang.String" />
+		<property name="bpID" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="srCrDate" type="java.time.LocalDateTime" />
+		<property name="srStCode" type="java.lang.String" />
+		<property name="srStDesc" type="java.lang.String" />
+		<property name="licExDate" type="java.time.LocalDateTime" />
+		<property name="validFrom" type="java.time.LocalDateTime" />
+		<property name="transType" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="termCond" type="java.lang.Boolean" />
+		<property name="bpName" type="java.lang.String" />
+		<property name="msgType" type="java.lang.String" />
+		<property name="message" type="java.lang.String" />
+		<property name="amendChangeID" type="java.lang.String" />
+		<!-- <property name="instantAmendment" type="java.lang.Boolean" /> -->
+		<property name="isInstant" type="java.lang.Boolean" />
+		<property name="amendmentTypeData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.AmendmentTypeData" />
+		<property name="contentHDRDataSet"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
+	</bean>
+
+	<!-- entity that defines an existing attachment ZUI5_SAGIA_SRV; -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData">
+		<property name="contentType" type="java.lang.String" />
+		<property name="objectId" type="java.lang.String" />
+		<property name="objectGuid" type="java.lang.String" />
+		<property name="filename" type="java.lang.String" />
+		<property name="filesize" type="java.lang.String" />
+		<property name="mimetype" type="java.lang.String" />
+		<property name="documentID" type="java.lang.String" />
+		<property name="crtdby" type="java.lang.String" />
+		<property name="crtdon" type="java.lang.String" />
+		<property name="docKeyID" type="java.lang.String" />
+		<property name="shDocID" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+		<property name="fullFileName" type="java.lang.String" />
+		<property name="fileContString" type="java.lang.String" />
+
+		<!-- entity that defines an existing attachment ZESRV_ENH_ODATA_SRV; -->
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.ContentHDRData">
+		<property name="objectId" type="java.lang.String" />
+		<property name="objectGuid" type="java.lang.String" />
+		<property name="filename" type="java.lang.String" />
+		<property name="fullFileName" type="java.lang.String" />
+		<property name="filesize" type="java.lang.String" />
+		<property name="mimetype" type="java.lang.String" />
+		<property name="documentId" type="java.lang.String" />
+		<property name="contenttype" type="java.lang.String" />
+		<property name="crtdby" type="java.lang.String" />
+		<property name="crtdon" type="java.time.LocalDateTime" />
+		<property name="stage" type="java.lang.String" />
+		<property name="dockeyid" type="java.lang.String" />
+		<property name="shDocId" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.AmendmentTypeData">
+		<property name="srID" type="java.lang.String" />
+		<property name="bpID" type="java.lang.String" />
+		<property name="brClose" type="java.lang.String" />
+		<property name="brOpen" type="java.lang.String" />
+		<property name="enActCh" type="java.lang.String" />
+		<property name="enCapIncr" type="java.lang.String" />
+		<property name="enCapRed" type="java.lang.String" />
+		<property name="enEstToLlc" type="java.lang.String" />
+		<property name="enIncrWf" type="java.lang.String" />
+		<property name="enLegalstatToIllc" type="java.lang.String" />
+		<property name="enLocCh" type="java.lang.String" />
+		<property name="enNameCh" type="java.lang.String" />
+		<property name="prAddReCh" type="java.lang.String" />
+		<property name="shAddExNew" type="java.lang.String" />
+		<property name="shInProp" type="java.lang.String" />
+		<property name="shNameCh" type="java.lang.String" />
+		<property name="shRem" type="java.lang.String" />
+		<property name="shReQu" type="java.lang.String" />
+		<property name="amendHeaderData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.AmendHeaderData" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.AppointmentData">
+		<property name="contactperson" type="java.lang.String" />
+		<property name="apptID" type="java.lang.Integer" />
+		<property name="apptStatus" type="java.lang.String" />
+		<property name="apptStatDesc" type="java.lang.String" />
+		<property name="department" type="java.lang.String" />
+		<property name="deptDesc" type="java.lang.String" />
+		<property name="branch" type="java.lang.String" />
+		<property name="branchDesc" type="java.lang.String" />
+		<property name="dateAppt" type="java.time.LocalDateTime" />
+		<property name="timeTo" type="java.time.LocalTime" />
+		<property name="timeFrom" type="java.time.LocalTime" />
+		<property name="bpID" type="java.lang.String" />
+		<property name="servType1" type="java.lang.String" />
+		<property name="servType1Desc" type="java.lang.String" />
+		<property name="servType2" type="java.lang.String" />
+		<property name="servType2Desc" type="java.lang.String" />
+		<property name="servType3" type="java.lang.String" />
+		<property name="servType3Desc" type="java.lang.String" />
+		<property name="ministry1" type="java.lang.String" />
+		<property name="ministry1Desc" type="java.lang.String" />
+		<property name="ministry2" type="java.lang.String" />
+		<property name="ministry2Desc" type="java.lang.String" />
+		<property name="ministry3" type="java.lang.String" />
+		<property name="ministry3Desc" type="java.lang.String" />
+		<property name="service1" type="java.lang.String" />
+		<property name="service1Desc" type="java.lang.String" />
+		<property name="service2" type="java.lang.String" />
+		<property name="service2Desc" type="java.lang.String" />
+		<property name="service3" type="java.lang.String" />
+		<property name="service3Desc" type="java.lang.String" />
+		<property name="apptPrint" type="java.lang.Boolean" />
+		<property name="action" type="java.lang.String" />
+		<property name="notes" type="String"/>
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.NationalInvestorAppointmentData">
+		<property name="Branch" type="java.lang.String" />
+		<property name="ServiceType1" type="java.lang.String" />
+		<property name="Service1" type="java.lang.String" />
+		<property name="Email" type="java.lang.String" />
+		<property name="IDNumber" type="java.lang.String" />
+		<property name="ApptPrint" type="java.lang.String" />
+		<property name="DateAppt" type="java.time.LocalDate" />
+		<!-- This is used to work with proper date time properties -->
+		<!--<property name="DateApptFormatted" type="java.time.LocalDate" /> -->
+		<property name="TimeFrom" type="java.time.LocalTime" />
+		<property name="TimeTo" type="java.lang.LocalTime" />
+		<property name="ApptID" type="java.lang.Integer" />
+		<property name="ApptStatus" type="java.lang.String" />
+		<property name="ApptStatDesc" type="java.lang.String" />
+		<property name="Department" type="java.lang.String" />
+		<property name="DeptDesc" type="java.lang.String" />
+		<property name="BpID" type="java.lang.String" />
+		<property name="Action" type="java.lang.String" />
+	</bean>
+
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.CustomizingGetData">
+		<property name="scenario" type="java.lang.String" />
+		<property name="fieldname" type="java.lang.String" />
+		<property name="fieldkey" type="java.lang.String" />
+		<property name="fieldSubtype" type="java.lang.String" />
+		<property name="description" type="java.lang.String" />
+		<property name="dockey_ID" type="java.lang.String" />
+		<property name="longDescr" type="java.lang.String" />
+		<property name="optionalAttach" type="java.lang.String" />
+	</bean>
+	
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GenInqAttSet">
+		<property name="OBJECT_ID" type="java.lang.String" />
+		<property name="OBJECT_GUID" type="java.lang.String" />
+		<property name="DOC_GUID" type="java.lang.String" />
+		<property name="Filename" type="java.lang.String" />
+		<property name="MimeType" type="java.lang.String" />
+		<property name="FileContString" type="java.lang.String" />
+		<property name="DOC_ID" type="java.lang.String" />
+		<property name="size" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="ERROR_MSG" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.CalendarSlotData">
+		<property name="ApptId" type="java.lang.String" />
+		<property name="ApptDate" type="java.time.LocalDateTime" />
+		<property name="ApptDatep" type="java.time.LocalDateTime" />
+		<property name="ApptTimeStart" type="java.time.LocalTime" />
+		<property name="ApptTimeTo" type="java.time.LocalTime" />
+		<property name="ApptType" type="java.lang.String" />
+		<property name="ApptType1" type="java.lang.String" />
+		<property name="ApptType2" type="java.lang.String" />
+		<property name="Ministry1" type="java.lang.String" />
+		<property name="Ministry2" type="java.lang.String" />
+		<property name="Ministry3" type="java.lang.String" />
+		<property name="Branch" type="java.lang.String" />
+		<property name="TimeDuration" type="java.lang.String" />
+		<property name="ApptBooked" type="java.lang.Boolean" />
+		<property name="ApptAvailable" type="java.lang.Boolean" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GetTextData">
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="commentDate" type="java.time.LocalDateTime" />
+		<property name="sagiaCommentDate"
+			type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData" />
+		<property name="commentTime" type="java.lang.String" />
+		<property name="zone" type="java.lang.String" />
+		<property name="commentBy" type="java.lang.String" />
+		<property name="tdID" type="java.lang.String" />
+		<property name="comments" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.UploadContentData">
+		<property name="objectID" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+		<property name="dockey_ID" type="java.lang.String" />
+		<property name="documentID" type="java.lang.String" />
+		<property name="fileCont" type="java.lang.String" />
+		<property name="fileContString" type="java.lang.String" />
+		<property name="filename" type="java.lang.String" />
+		<property name="mimeType" type="java.lang.String" />
+		<property name="objectGuid" type="java.lang.String" />
+		<property name="shDocId" type="java.lang.String" />
+		<property name="complaintsAndEnquiryHDRData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ComplaintsAndEnquiryHdrsData" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GovtDropdown">
+		<property name="key" type="String" />
+		<property name="amanah" type="String" />
+		<property name="chamberId" type="String" />
+		<property name="chamber" type="String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseReplaceMentData">
+		<property name="reApply" type="java.lang.Boolean" />
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="licID" type="java.lang.String" />
+		<property name="licGuid" type="java.lang.String" />
+		<property name="licType" type="java.lang.String" />
+		<property name="licTypeDesc" type="java.lang.String" />
+		<property name="bpID" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="srCrDate" type="java.time.LocalDateTime" />
+		<property name="srStCode" type="java.lang.String" />
+		<property name="srStDesc" type="java.lang.String" />
+		<property name="licExDate" type="java.time.LocalDateTime" />
+		<property name="validFrom" type="java.time.LocalDateTime" />
+		<property name="transType" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="bpChangeID" type="java.lang.String" />
+		<property name="salesrepCount" type="java.lang.String" />
+		<property name="contactChInd" type="java.lang.String" />
+		<property name="nonChangable" type="java.lang.Boolean" />
+		<property name="termCond" type="java.lang.Boolean" />
+		<property name="licenseReplaceMentToContentNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
+		<property name="licenseReplaceMentToTextNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseReplaceMentToTextNavData>" />
+		<property name="licenseReplToUploadNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.UploadContentData>" />
+
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.LicenseAmendmentData">
+		<property name="PrevSrGuid" type="java.lang.String" />
+		<property name="ReApply" type="java.lang.Boolean" />
+		<property name="SrID" type="java.lang.String" />
+		<property name="SrGuid" type="java.lang.String" />
+		<property name="LicID" type="java.lang.String" />
+		<property name="LicGuid" type="java.lang.String" />
+		<property name="LicType" type="java.lang.String" />
+		<property name="LicTypeDesc" type="java.lang.String" />
+		<property name="LicRenFlag" type="java.lang.Boolean" />
+		<property name="ShipmentNo" type="java.lang.String" />
+		<property name="BpID" type="java.lang.String" />
+		<property name="BpGuid" type="java.lang.String" />
+		<property name="SrCrDate" type="java.time.LocalDateTime" />
+		<property name="SrStCode" type="java.lang.String" />
+		<property name="SrStDesc" type="java.lang.String" />
+		<property name="LicExDate" type="java.time.LocalDateTime" />
+		<property name="ValidFrom" type="java.lang.String" />
+		<property name="TransType" type="java.lang.String" />
+		<property name="Action" type="java.lang.String" />
+		<property name="TermCond" type="java.lang.Boolean" />
+		<property name="BpName" type="java.lang.String" />
+		<property name="MsgType" type="java.lang.String" />
+		<property name="Message" type="java.lang.String" />
+		<property name="AmendChangeID" type="java.lang.String" />
+		<!-- <property name="InstantAmendment" type="java.lang.Boolean" /> -->
+		<property name="IsInstant" type="java.lang.Boolean" />
+		<property name="AmendHeaderToAmendShareHoldNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ShareholderData&gt;" />
+		<property name="AmendHeaderToAmendProductNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ProductData&gt;" />
+		<property name="AmendHeaderToAmendBranchNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.BranchData&gt;" />
+		<property name="AmendHeaderToAmendEntityNav"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.EntityData" />
+		<property name="AmendHeaderToAmendmentTypeNav"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.AmendTypeData" />
+		<property name="AmendHeaderToUploadNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.AmendAttachmentData&gt;" />
+		<property name="AmendHeaderToAmendISICActivityNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.BusinessActivityData&gt;" />
+		<property name="AmendHeaderToTextNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.TextData&gt;" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.AmendTypeData">
+		<property name="ShReQu" type="java.lang.String" /> <!--Modify existing shareholder percentage -->
+		<property name="ShRem" type="java.lang.String" /> <!--Delete existing shareholder -->
+		<property name="ShAddExNew" type="java.lang.String" /> <!--New Share holder entry -->
+		<property name="ShInProp" type="java.lang.String" />
+		<property name="BrOpen" type="java.lang.String" /> <!--New Branch added -->
+		<property name="BrClose" type="java.lang.String" /> <!--Delete existing branch -->
+		<property name="EnLocCh" type="java.lang.String" /> <!--Modify existing branch -->
+		<property name="PrAddReCh" type="java.lang.String" /> <!--Products modified -->
+		<property name="PrDescChange" type="java.lang.String" /> <!--Products description modified -->
+		<property name="EnActCh" type="java.lang.String" /> <!--Entity activity changed -->
+		<property name="EnCapIncr" type="java.lang.String" /> <!--Entity capital increase -->
+		<property name="EnCapRed" type="java.lang.String" /> <!--Entity capital reduction -->
+		<property name="EnIncrWf" type="java.lang.String" /> <!--Entity Labour Increase -->
+		<property name="EnNameCh" type="java.lang.String" /> <!--Entity Brandname change -->
+		<property name="EnEstToLlc" type="java.lang.String" /> <!--Convert Establishment to company -->
+		<property name="EnLegalstatToIllc" type="java.lang.String" /> <!--Convert to Individual LLC -->
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.AmendAttachmentData">
+		<property name="Filename" type="java.lang.String" />
+		<property name="MimeType" type="java.lang.String" />
+		<property name="FileContString" type="java.lang.String" />
+		<property name="Dockey_ID" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.TextData">
+		<property name="Comments" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ShareholderData">
+		<property name="SrID" type="java.lang.String" />
+		<property name="BpID" type="java.lang.String" />
+		<property name="ShBpID" type="java.lang.String" />
+		<property name="BpType" type="java.lang.String" />
+		<property name="Firstname" type="java.lang.String" />
+		<property name="NameEng" type="java.lang.String" />
+		<property name="Secondname" type="java.lang.String" />
+		<property name="MultiNatComp" type="java.lang.String" />
+		<property name="Industry" type="java.lang.String" />
+		<property name="IndDesc" type="java.lang.String" />
+		<property name="Subsector" type="java.lang.String" />
+		<property name="LegalStatus" type="java.lang.String" />
+		<property name="LegalStat_desc" type="java.lang.String" />
+		<property name="Laboursize" type="java.lang.String" />
+		<property name="Capitals" type="java.lang.String" />
+		<property name="Gender" type="java.lang.String" />
+		<property name="GenderDesc" type="java.lang.String" />
+		<property name="MaritalStatus" type="java.lang.String" />
+		<property name="MaritalDesc" type="java.lang.String" />
+		<property name="AcademicTitle" type="java.lang.String" />
+		<property name="AcaTitleDesc" type="java.lang.String" />
+		<property name="Birthdate" type="java.time.LocalDateTime" />
+		<property name="Nationality" type="java.lang.String" />
+		<property name="NatioDesc" type="java.lang.String" />
+		<property name="PrevNational" type="java.lang.String" />
+		<property name="PreNatDesc" type="java.lang.String" />
+		<property name="Percentage" type="java.lang.String" />
+		<property name="CreateDate" type="java.time.LocalDateTime" />
+		<property name="ShInherProp" type="java.lang.Boolean" />
+		<property name="ShDocId" type="java.lang.String" />
+		<property name="Action" type="java.lang.String" />
+		<property name="Street" type="java.lang.String" />
+		<property name="HouseNo" type="java.lang.String" />
+		<property name="Country" type="java.lang.String" />
+		<property name="CountryName" type="java.lang.String" />
+		<property name="ZipCode" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="Telephone" type="java.lang.String" />
+		<property name="Email" type="java.lang.String" />
+		<property name="Website" type="java.lang.String" />
+		<property name="PremiumResident" type="java.lang.String" />
+		<property name="PremiumResidentDesc" type="java.lang.String" />
+		<property name="IsPersonNICVerified" type="java.lang.String" />
+		<property name="SelfDelegate" type="java.lang.String" />
+		<property name="IsPerDelegateNICVerified" type="java.lang.String" />
+		<property name="DeleIDType" type="java.lang.String" />
+		<property name="DeleIDNumber" type="java.lang.String" />
+		<property name="DeleDOB" type="java.time.LocalDateTime" />
+		<property name="DeleFirstNameArabic" type="java.lang.String" />
+		<property name="DeleLastNameArabic" type="java.lang.String" />
+		<property name="DeleNameEnglish" type="java.lang.String" />
+		<property name="DeleGender" type="java.lang.String" />
+		<property name="DeleIDIssueDate" type="java.time.LocalDateTime" />
+		<property name="DeleIDExpiryDate" type="java.time.LocalDateTime" />
+		<property name="DeleCountry" type="java.lang.String" />
+		<property name="DeleNationality" type="java.lang.String" />
+		<property name="DeleTeleCCode" type="java.lang.String" />
+		<property name="DeleTeleNumber" type="java.lang.String" />
+		<property name="DeleMobCcode" type="java.lang.String" />
+		<property name="DeleMobNumber" type="java.lang.String" />
+		<property name="DeleEmail" type="java.lang.String" />
+		<property name="DelePostalCode" type="java.lang.String" />
+		<property name="DelePoBox" type="java.lang.String" />
+		
+		<property name="OrgCountry" type="java.lang.String" />
+		<property name="OrgCRNumber" type="java.lang.String" />
+		<property name="OrgMCVer" type="java.lang.String" />
+		
+		<property name="PerIDType" type="java.lang.String" />
+		<property name="PerIDNum" type="java.lang.String" />
+		<property name="PerNICVerified" type="java.lang.String" />
+		
+		<property name="DeedNumber" type="java.lang.String"/>
+		<property name="DeceasedId" type="java.lang.String"/>
+		<property name="DeceasedName" type="java.lang.String"/>
+		<property name="IsMojVerified" type="java.lang.String"/>
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ProductData">
+		<property name="SrID" type="java.lang.String" />
+		<property name="BpID" type="java.lang.String" />
+		<property name="ProductID" type="java.lang.String" />
+		<property name="ProdDesc" type="java.lang.String" />
+		<property name="Quantity" type="java.lang.String" />
+		<property name="Unit" type="java.lang.String" />
+		<property name="UnitDesc" type="java.lang.String" />
+		<property name="Action" type="java.lang.String" />
+		<property name="MsgType" type="java.lang.String" />
+		<property name="Message" type="java.lang.String" />
+		<property name="CreateDate" type="java.time.LocalDateTime" />
+		<property name="NumberInt" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.BranchData">
+		<property name="SrID" type="java.lang.String" />
+		<property name="BpID" type="java.lang.String" />
+		<property name="BranchType" type="java.lang.String" />
+		<property name="BranchDesc" type="java.lang.String" />
+		<property name="Action" type="java.lang.String" />
+		<property name="BrAddrNum" type="java.lang.String" />
+		<property name="MainBranch" type="java.lang.Boolean" />
+		<property name="BranTypDesc" type="java.lang.String" />
+		<property name="CreateDate" type="java.time.LocalDateTime" />
+		<property name="Street" type="java.lang.String" />
+		<property name="HouseNo" type="java.lang.String" />
+		<property name="Country" type="java.lang.String" />
+		<property name="CountryName" type="java.lang.String" />
+		<property name="Region" type="java.lang.String" />
+		<property name="RegionDesc" type="java.lang.String" />
+		<property name="CityCode" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="ZipCode" type="java.lang.String" />
+		<property name="Telephone" type="java.lang.String" />
+		<property name="Email" type="java.lang.String" />
+		<property name="Website" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.EntityData">
+		<property name="SrID" type="java.lang.String" />
+		<property name="BpID" type="java.lang.String" />
+		<property name="Labour" type="java.lang.String" />
+		<property name="LabourOld" type="java.lang.String" />
+		<property name="BrandName" type="java.lang.String" />
+		<property name="BrandNameOld" type="java.lang.String" />
+		<property name="Capital" type="java.lang.String" />
+		<property name="CapitalOld" type="java.lang.String" />
+		<property name="Activity" type="java.lang.String" />
+		<property name="ActivityOld" type="java.lang.String" />
+		<property name="CreateDate" type="java.time.LocalDateTime" />
+		<property name="Action" type="java.lang.String" />
+		<property name="LegalStatus" type="java.lang.String" />
+		<property name="LegalStausOld" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.BusinessActivityData">
+		<property name="IsicID" type="java.lang.String" />
+		<property name="DescriptionAR" type="java.lang.String" />
+		<property name="DescriptionEN" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.TemporaryBiddingLicenseData">
+		<property name="CAname" type="java.lang.String" />
+		<property name="CEname" type="java.lang.String" />
+		<property name="PAname" type="java.lang.String" />
+		<property name="PEname" type="java.lang.String" />
+		<property name="Capital" type="java.lang.String" />
+		<property name="Gentity" type="java.lang.String" />
+		<property name="Country" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="Pcode" type="java.lang.String" />
+		<property name="PBox" type="java.lang.String" />
+		<property name="TPhone" type="java.lang.String" />
+		<property name="Mobile" type="java.lang.String" />
+		<property name="Email" type="java.lang.String" />
+		<property name="Return" type="java.lang.String" />
+		<property name="Id" type="java.lang.String" />
+		<property name="ZTEMPTOATT"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.TemporaryBiddingLicenseAttachmentData&gt;" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.TemporaryBiddingLicenseAttachmentData">
+		<property name="Id" type="java.lang.String" />
+		<property name="Filename" type="java.lang.String" />
+		<property name="MimeType" type="java.lang.String" />
+		<property name="Content" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.TemporaryBiddingLicenseListItemData">
+		<property name="Country" type="java.lang.String" />
+		<property name="Gentity" type="java.lang.String" />
+		<property name="Ctext" type="java.lang.String" />
+		<property name="Gtext" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.TemporaryBiddingLicenseCountryPrefixData">
+		<property name="CKey" type="java.lang.String" />
+		<property name="Status" type="java.lang.String" />
+		<property name="TelNo" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.IncomeStat">
+		<property name="FINANCE_HDR"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.FinanceHDRS" />
+		<property name="PARTNER" type="String" />
+		<property name="FINANCIAL_YEAR" type="String" />
+		<property name="REVENUE" type="String" />
+		<property name="SALES_COST" type="String" />
+		<property name="GROSS_INCOME" type="String" />
+		<property name="TOTAL_OPERATING_COST" type="String" />
+		<property name="MAIN_OPERATION_INCOME" type="String" />
+		<property name="TOTAL_OTHER_INCOME" type="String" />
+		<property name="INCOME_BEFORE_ZAKAT" type="String" />
+		<property name="ZAKAT_AMOUNT" type="String" />
+		<property name="TAX_AMOUNT" type="String" />
+		<property name="NET_INCOME" type="String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.BalanceSheet">
+		<property name="FINANCE_HDR"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.FinanceHDRS" />
+		<property name="PARTNER" type="String" />
+		<property name="FINANCIAL_YEAR" type="String" />
+		<property name="CURRENT_ASSETS" type="String" />
+		<property name="NON_CURR_ASSETS" type="String" />
+		<property name="OTHER_ASSETS" type="String" />
+		<property name="TOTAL_ASSETS" type="String" />
+		<property name="CURRENT_LIABILITES" type="String" />
+		<property name="NON_CURR_LIABILITIES" type="String" />
+		<property name="OTHER_LIABILITES" type="String" />
+		<property name="TOTAL_LIABILITIES" type="String" />
+		<property name="CAPITAL" type="String" />
+		<property name="PARTNERS_DRAW_ACCS" type="String" />
+		<property name="RETAINED_EARNINGS" type="String" />
+		<property name="OTHERS" type="String" />
+		<property name="SHAREHOLDERS_EQUITY" type="String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ChangeEquity">
+		<property name="FINANCE_HDR"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.FinanceHDRS" />
+		<property name="PARTNER" type="String" />
+		<property name="FINANCIAL_YEAR" type="String" />
+		<property name="RET_EARNINGS_BF" type="String" />
+		<property name="RET_EARNINGS_AF" type="String" />
+		<property name="TOT_BALANCE_BF" type="String" />
+		<property name="TOT_BALANCE_AF" type="String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.FinanceContent">
+		<property name="FINANCE_HDR"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.FinanceHDRS" />
+		<property name="ContentType" type="String" />
+		<property name="ObjectGuid" type="String" />
+		<property name="Filename" type="String" />
+		<property name="Filesize" type="String" />
+		<property name="Mimetype" type="String" />
+		<property name="DocumentID" type="String" />
+		<property name="Crtdby" type="String" />
+		<property name="Crtdon" type="java.time.LocalDateTime" />
+		<property name="DocKeyID" type="String" />
+		<property name="ShDocID" type="String" />
+		<property name="Stage" type="String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.FinanceHDRS">
+		<property name="BpID" type="String" />
+		<property name="Year" type="String" />
+		<property name="Sr_Guid" type="String" />
+		<property name="SrID" type="String" />
+		<property name="Trans_Type" type="String" />
+		<property name="Sr_Cr_Date" type="java.time.LocalDateTime" />
+		<property name="Sr_St_Code" type="String" />
+		<property name="Sr_St_Desc" type="String" />
+
+		<property name="incomeStat"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.IncomeStat" />
+		<property name="balanceSheet"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.BalanceSheet" />
+		<property name="changeEquity"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ChangeEquity" />
+		<property name="financeContents"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.FinanceContent&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SpCheckHistory">
+		<property name="OBJECT_ID" type="java.lang.Integer" />
+		<property name="PROCESS_TYPE" type="java.lang.String" />
+		<property name="CAT_CODE1" type="java.lang.String" />
+		<property name="CATEGORY1" type="java.lang.String" />
+		<property name="CAT_CODE2" type="java.lang.String" />
+		<property name="CATEGORY2" type="java.lang.String" />
+		<property name="CAT_CODE3" type="java.lang.String" />
+		<property name="CATEGORY3" type="java.lang.String" />
+		<property name="CAT_CODE4" type="java.lang.String" />
+		<property name="CATEGORY4" type="java.lang.String" />
+		<property name="DESCRIPTION" type="java.lang.String" />
+		<property name="POSTING_DATE" type="java.lang.String" />
+		<property name="POSTING_DATE_FORMATTED"
+			type="java.time.LocalDate" />
+		<property name="STATUS" type="java.lang.String" />
+		<property name="COMMENTS" type="java.lang.String" />
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="CREATION_ALLOWED" type="java.lang.String" />
+		<property name="ERROR_MSG" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SpApplicantData">
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="ZZAPP_NAME" type="java.lang.String" />
+		<property name="ZZIQAMA_NUM" type="java.lang.String" />
+		<property name="ZZIQAMA_EXPIRY" type="java.lang.String" />
+		<property name="ZZAPP_NATION" type="java.lang.String" />
+		<property name="ZZNATION_NOTE" type="java.lang.String" />
+		<property name="ZZAPP_PROF" type="java.lang.String" />
+		<property name="ZZSAGIA_BP" type="java.lang.String" />
+		<property name="ZZAPPLY_CAT" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ServiceApplicantData">
+		<property name="ERROR_MSG" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="OBJECT_GUID" type="java.lang.String" />
+		<property name="ZZAPPLY_CAT" type="java.lang.String" />
+		<property name="ZZSAGIA_BP" type="java.lang.String" />
+		<property name="ZZAPP_PROF" type="java.lang.String" />
+		<property name="ZZNATION_NOTE" type="java.lang.String" />
+		<property name="ZZAPP_NATION" type="java.lang.String" />
+		<property name="ZZIQAMA_EXPIRY" type="java.lang.String" />
+		<property name="ZZIQAMA_NUM" type="java.lang.String" />
+		<property name="ZZAPP_NAME" type="java.lang.String" />
+		<property name="OBJECT_ID" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SpCountryData">
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="COUNTRYCODE" type="java.lang.String" />
+		<property name="COUNTRY" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SpRegionData">
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="REGIONCODE" type="java.lang.String" />
+		<property name="REGION" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SpAttachmentData">
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="SEQUENCE_NUMBER" type="java.lang.String" />
+		<property name="DESCRIPTION_PASS" type="java.lang.String" />
+		<property name="MANDATORY" type="java.lang.String" />
+		<property name="ZZAPPLY_CAT_FLAG" type="java.lang.String" />
+		<property name="DESCRIPTION" type="java.lang.String" />
+	</bean>
+	
+	<!-- Contact Ticket related objects -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GeneralInquirySet">
+		<property name="firstName" type="java.lang.String" />
+		<property name="lastName" type="java.lang.String" />
+		<property name="telNo" type="java.lang.String" />
+		<property name="email" type="java.lang.String" />
+		<property name="textMsg" type="java.lang.String" />
+		<property name="address" type="java.lang.String" />
+		<property name="category1" type="java.lang.String" />
+		<property name="enquiryType" type="java.lang.String" />
+		<property name="OBJECT_ID" type="java.lang.String" />
+		<property name="TOATTACHMENTS"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.UploadAssoNavData" />
+	</bean>
+	
+
+	<!-- Complaints related objects -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ComplaintsAndEnquiryHdrsData">
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="licID" type="java.lang.String" />
+		<property name="licGuid" type="java.lang.String" />
+		<property name="licType" type="java.lang.String" />
+		<property name="licTypeDesc" type="java.lang.String" />
+		<property name="bpID" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="srCrDate" type="java.time.LocalDateTime" />
+		<property name="srStCode" type="java.lang.String" />
+		<property name="srStDesc" type="java.lang.String" />
+		<property name="licExDate" type="java.time.LocalDateTime" />
+		<property name="validFrom" type="java.time.LocalDateTime" />
+		<property name="transType" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="bpName" type="java.lang.String" />
+		<property name="actionType" type="java.lang.Boolean" />
+		<property name="compAndEnqHdrToDetailNav"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.CompAndEnqHdrToDetailNavData" />
+		<property name="compAndEnqHdrToContentNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
+		<property name="compAndEnqHdrToTextNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.CompAndEnqHdrToTextNavData>" />
+		<property name="compAndEnqHdrToUploadAssoNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.UploadAssoNavData>" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.CompAndEnqHdrToDetailNavData">
+		<property name="srID" type="java.lang.String" />
+		<property name="category1" type="java.lang.String" />
+		<property name="category2" type="java.lang.String" />
+		<property name="branch" type="java.lang.String" />
+		<property name="enquiryType" type="java.lang.String" />
+		<property name="subject" type="java.lang.String" />
+		<property name="textMsg" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.CompAndEnqHdrToTextNavData">
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="commentDate"
+			type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData" />
+		<property name="commentTime" type="java.lang.String" />
+		<property name="zone" type="java.lang.String" />
+		<property name="commentBy" type="java.lang.String" />
+		<property name="tdID" type="java.lang.String" />
+		<property name="comments" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.UploadAssoNavData">
+		<property name="filename" type="java.lang.String" />
+		<property name="mimeType" type="java.lang.String" />
+		<property name="fileContString" type="java.lang.String" />
+		<property name="fileCont" type="java.lang.String" />
+		<property name="dockey_ID" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.CategorizationSchemaGetListData">
+		<property name="scenarioID" type="java.lang.String" />
+		<property name="catID" type="java.lang.String" />
+		<property name="catDesc" type="java.lang.String" />
+		<property name="catLevel" type="java.lang.String" />
+		<property name="parentID" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseReplaceMentToTextNavData">
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="commentDate" type="java.time.LocalDateTime" />
+		<property name="commentTime" type="java.lang.String" />
+		<property name="zone" type="java.lang.String" />
+		<property name="commentBy" type="java.lang.String" />
+		<property name="tdID" type="java.lang.String" />
+		<property name="comments" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContactUpdateMessagesData">
+		<property name="srID" type="String" />
+		<property name="srGuid" type="String" />
+		<property name="commentDate"
+			type="com.sap.ibso.eservices.core.sagia.format.SagiaDateTimeData" />
+		<property name="commentTime" type="String" />
+		<property name="zone" type="String" />
+		<property name="commentBy" type="String" />
+		<property name="tdID" type="String" />
+		<property name="comments" type="String" />
+		<property name="stage" type="String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ServiceAttachmentData">
+		<property name="Filename" type="java.lang.String" />
+		<property name="DOC_GUID" type="java.lang.String" />
+		<property name="OBJECT_ID" type="java.lang.String" />
+		<property name="MimeType" type="java.lang.String" />
+		<property name="FileContString" type="java.lang.String" />
+		<property name="OBJECT_GUID" type="java.lang.String" />
+		<property name="DOC_ID" type="java.lang.String" />
+		<property name="size" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="ERROR_MSG" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SpecialServiceHeaderData">
+		<property name="ERROR_MSG" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="OBJECT_GUID" type="java.lang.String" />
+		<property name="ZZ_700_NUMBER" type="java.lang.String" />
+		<property name="ZZ_CR_NUMBER" type="java.lang.String" />
+		<property name="STATUS_CODE" type="java.lang.String" />
+		<property name="ZZ_COC_BR" type="java.lang.String" />
+		<property name="OBJECT_ID" type="java.lang.Integer" />
+		<property name="PROCESS_TYPE" type="java.lang.String" />
+		<property name="CAT_CODE1" type="java.lang.String" />
+		<property name="ZZ_MOL_BR" type="java.lang.String" />
+		<property name="CATEGORY1" type="java.lang.String" />
+		<property name="CAT_CODE2" type="java.lang.String" />
+		<property name="CATEGORY2" type="java.lang.String" />
+		<property name="ZZ_MOMRA_BR" type="java.lang.String" />
+		<property name="DESCRIPTION" type="java.lang.String" />
+		<property name="POSTING_DATE" type="java.lang.String" />
+		<property name="POSTING_DATE_FORMATTED"
+			type="java.time.LocalDate" />
+		<property name="STATUS" type="java.lang.String" />
+		<property name="ZZ_MOCI_BR" type="java.lang.String" />
+		<property name="COMMENTS" type="java.lang.String" />
+		<property name="ZZSER_REGION" type="java.lang.String" />
+		<property name="ZZPHONE_NUM" type="java.lang.String" />
+		<property name="ZZ_ZAKAT_BR" type="java.lang.String" />
+		<property name="ZZEMAIL_ADD" type="java.lang.String" />
+		<property name="ZZAPP_REASON" type="java.lang.String" />
+		<property name="ZZNEW_COMP" type="java.lang.String" />
+		<property name="ZZ_GOSI_BR" type="java.lang.String" />
+		<property name="ZZNEW_COMP_CR" type="java.lang.String" />
+		<property name="ZZNEW_PROF" type="java.lang.String" />
+		<property name="TOATTACHMENTS"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ServiceAttachmentData&gt;" />
+		<property name="TOAPPLICANTS"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ServiceApplicantData&gt;" />
+	</bean>
+	<!-- ConvertToNationals related entities -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ConvToNationalsData">
+		<property name="reApply" type="java.lang.Boolean" />
+		<property name="transTypeDesc" type="java.lang.String" />
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="licID" type="java.lang.String" />
+		<property name="licGuid" type="java.lang.String" />
+		<property name="licType" type="java.lang.String" />
+		<property name="licTypeDesc" type="java.lang.String" />
+		<property name="bpID" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="srCrDate" type="java.time.LocalDateTime" />
+		<property name="sagiaSrCrDate"
+			type="com.sap.ibso.eservices.core.sagia.format.SagiaDateTimeData" />
+		<property name="srStCode" type="java.lang.String" />
+		<property name="srStDesc" type="java.lang.String" />
+		<property name="licExDate" type="java.time.LocalDateTime" />
+		<property name="sagiaLicExDate"
+			type="com.sap.ibso.eservices.core.sagia.format.SagiaDateTimeData" />
+		<property name="validFrom" type="java.time.LocalDateTime" />
+		<property name="sagiaValidFrom"
+			type="com.sap.ibso.eservices.core.sagia.format.SagiaDateTimeData" />
+		<property name="transType" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="bpChangeID" type="java.lang.String" />
+		<property name="salesrepCount" type="java.lang.String" />
+		<property name="contactChInd" type="java.lang.String" />
+		<property name="nonChangeble" type="java.lang.Boolean" />
+		<property name="termCond" type="java.lang.Boolean" />
+		<property name="convNatToContentNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
+		<property name="convNatToUploadNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.UploadContentData>" />
+		<property name="convNatToTextNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GetTextData>" />
+		<property name="IsAllowed" type="java.lang.String" />
+		<property name="IsInstant" type="java.lang.Boolean" />
+		<property name="MsgToInvestor" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentDetailsData">
+		<property name="objectId" type="java.lang.String" />
+		<property name="objectGuid" type="java.lang.String" />
+		<property name="documentID" type="java.lang.String" />
+		<property name="fileContString" type="java.lang.String" />
+		<property name="fileCont" type="java.lang.String" />
+		<property name="fileName" type="java.lang.String" />
+		<property name="mimeType" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zclassification.ZListData">
+		<property name="LANG" type="java.lang.String" />
+		<property name="OBJECT_ID" type="java.lang.String" />
+		<property name="STATUS" type="java.lang.String" />
+		<property name="ENTITY" type="java.lang.String" />
+		<property name="CLASS" type="java.lang.String" />
+		<property name="RETURN" type="java.lang.String" />
+		<property name="TYPE" type="java.lang.String" />
+		<property name="APPEAL" type="java.lang.String" />
+		<property name="DATE" type="java.lang.String" />
+		<property name="SAGIADATE"
+			type="com.sap.ibso.eservices.core.sagia.format.SagiaDateTimeData" />
+		<property name="OCLASS" type="java.lang.String" />
+		<property name="TOATTACH" type="java.lang.String" />
+	</bean>
+
+	<!-- to attach entity ToAttach you have to model it -->
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zclassification.ZCLASS_DETSETData">
+		<property name="ObjectID" type="java.lang.String" />
+		<property name="ClassProperty" type="java.lang.String" />
+		<property name="Appeal" type="java.lang.String" />
+		<property name="Entity" type="java.lang.String" />
+		<property name="ZCLASSATT"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zclassification.ZCLASS_ATTData>" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zclassification.ZCLASS_ATTData">
+		<property name="ObjectID" type="java.lang.String" />
+		<property name="DocGUID" type="java.lang.String" />
+		<property name="Filename" type="java.lang.String" />
+		<property name="MimeType" type="java.lang.String" />
+		<property name="FileContString" type="java.lang.String" />
+		<property name="ObjectGUID" type="java.lang.String" />
+		<property name="DocID" type="java.lang.String" />
+		<property name="Filesize" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SrvReqToContentDetailNav">
+		<property name="MimeType" type="java.lang.String" />
+		<property name="Filename" type="java.lang.String" />
+		<property name="FileContString" type="java.lang.String" />
+		<property name="Dockey_ID" type="java.lang.String" />
+		<property name="DocumentID" type="java.lang.String" />
+		<property name="ObjectID" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SrvReqToAddressNav">
+		<property name="SrID" type="java.lang.String" />
+		<property name="Street" type="java.lang.String" />
+		<property name="Building" type="java.lang.String" />
+		<property name="HouseNo" type="java.lang.String" />
+		<property name="Country" type="java.lang.String" />
+		<property name="ZipCode" type="java.lang.String" />
+		<property name="AdditNo" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="Period" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ServiceReqData">
+		<property name="ReApply" type="java.lang.Boolean" />
+		<property name="SrGuid" type="java.lang.String" />
+		<property name="LicenseDuration" type="java.lang.String" />
+		<property name="SrvReqToAddressNav"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SrvReqToAddressNav" />
+		<property name="SrvReqToContentDetailNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SrvReqToContentDetailNav>" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GlobalLicenseCancellation">
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="srStCode" type="java.lang.String" />
+		<property name="srStDesc" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="termCond" type="java.lang.Boolean" />
+		<property name="stage" type="java.lang.String" />
+		<property name="IsAllowed" type="java.lang.String" />
+		<property name="IsInstant" type="java.lang.Boolean" />
+		<!-- <property name="CancellationMessage" type="java.lang.String" /> -->
+		<property name="MsgToInvestor" type="java.lang.String" />
+		<property name="crNo" type="java.lang.String" />
+		<property name="zakatNo" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseCancellationSetData">
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="licID" type="java.lang.String" />
+		<property name="licGuid" type="java.lang.String" />
+		<property name="licType" type="java.lang.String" />
+		<property name="licTypeDesc" type="java.lang.String" />
+		<property name="licClflag" type="java.lang.String" />
+		<property name="licRenFlag" type="java.lang.Boolean" />
+		<property name="bpID" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="srCrDate" type="java.time.LocalDateTime" />
+		<property name="SrStCodeCancel" type="java.lang.String" />
+		<property name="SrStDesCancel" type="java.lang.String" />
+		<property name="licExDate" type="java.time.LocalDateTime" />
+		<property name="validFrom" type="java.time.LocalDateTime" />
+		<property name="transType" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="bpChangeID" type="java.lang.String" />
+		<property name="salesrepCount" type="java.lang.String" />
+		<property name="contactChInd" type="java.lang.String" />
+		<property name="termCond" type="java.lang.Boolean" />
+		<property name="bpName" type="java.lang.String" />
+		<property name="ministryType" type="java.lang.String" />
+		<property name="serviceType" type="java.lang.String" />
+		<property name="amendChangeID" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+		<property name="url" type="java.lang.String" />
+		<property name="IsInstant" type="java.lang.Boolean" />
+		<property name="MsgToInvestor" type="java.lang.String" />
+		<property name="licenseCancelToContentNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
+		<property name="licenseCancelToTextNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseToTextNavData>" />
+		<property name="licenseCancelToUploadNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.UploadAssoNavData>" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseToTextNavData">
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="commentDate" type="java.time.LocalDateTime" />
+		<property name="commentTime" type="java.lang.String" />
+		<property name="zone" type="java.lang.String" />
+		<property name="commentBy" type="java.lang.String" />
+		<property name="tdID" type="java.lang.String" />
+		<property name="comments" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseClearanceSetData">
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="licID" type="java.lang.String" />
+		<property name="licGuid" type="java.lang.String" />
+		<property name="licType" type="java.lang.String" />
+		<property name="licTypeDesc" type="java.lang.String" />
+		<property name="licRenFlag" type="java.lang.Boolean" />
+		<property name="bpID" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="srCrDate" type="java.time.LocalDateTime" />
+		<property name="SrStCode" type="java.lang.String" />
+		<property name="srStDesc" type="java.lang.String" />
+		<property name="licExDate" type="java.time.LocalDateTime" />
+		<property name="validFrom" type="java.time.LocalDateTime" />
+		<property name="transType" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="bpChangeID" type="java.lang.String" />
+		<property name="salesrepCount" type="java.lang.String" />
+		<property name="contactChInd" type="java.lang.String" />
+		<property name="termCond" type="java.lang.Boolean" />
+		<property name="bpName" type="java.lang.String" />
+		<property name="ministryType" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+		<property name="serviceType" type="java.lang.String" />
+		<property name="PrintDocu" type="java.lang.String" />
+		<property name="CollectDocu" type="java.lang.String" />
+		<property name="url" type="java.lang.String" />
+		<property name="IsInstant" type="java.lang.Boolean" />
+		<property name="MsgToInvestor" type="java.lang.String" />
+		<property name="crNo" type="java.lang.String" />
+		<property name="zakatNo" type="java.lang.String" />
+		<property name="licenseClearToContentNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
+		<property name="licenseClearToTextNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.LicenseToTextNavData>" />
+		<property name="licenseClearToUploadNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.UploadAssoNavData>" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.AddressHDRData">
+		<property name="srId" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="bpID" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="street" type="java.lang.String" />
+		<property name="building" type="java.lang.String" />
+		<property name="houseNo" type="java.lang.String" />
+		<property name="countryDesc" type="java.lang.String" />
+		<property name="country" type="java.lang.String" />
+		<property name="zipCode" type="java.lang.String" />
+		<property name="additNo" type="java.lang.String" />
+		<property name="city" type="java.lang.String" />
+		<property name="period" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ServiceRequestHDRsData">
+		<property name="prevSrGuid" type="java.lang.String" />
+		<property name="reApply" type="java.lang.Boolean" />
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="licID" type="java.lang.String" />
+		<property name="licGuid" type="java.lang.String" />
+		<property name="licType" type="java.lang.String" />
+		<property name="licTypeDesc" type="java.lang.String" />
+		<property name="bpID" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="srCrDate" type="java.time.LocalDateTime" />
+		<property name="srStCode" type="java.lang.String" />
+		<property name="srStDesc" type="java.lang.String" />
+		<property name="maxLicenseDuration" type="java.lang.String" />
+		<property name="licenseFeePerYr" type="java.lang.String" />
+		<property name="subscriptionOutstandingFee" type="java.lang.String" />
+		<property name="licExDate" type="java.time.LocalDateTime" />
+		<property name="validFrom" type="java.time.LocalDateTime" />
+		<property name="transType" type="java.lang.String" />
+		<property name="licRenFlag" type="java.lang.Boolean" />
+		<property name="action" type="java.lang.String" />
+		<property name="IsAllowed" type="java.lang.String" />
+		<property name="MsgToInvestor" type="java.lang.String" />
+		<property name="srvReqToAddressNav"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.AddressHDRData" />
+		<property name="srvReqToContentNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
+		<property name="srvReqToAttachNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.AttachmentHDRData&gt;" />
+		<property name="srvReqToTextNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.TextHDRData&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.AttachmentHDRData">
+		<property name="documentID" type="java.lang.String" />
+		<property name="objectID" type="java.lang.String" />
+		<property name="contentType" type="java.lang.String" />
+		<property name="crtdby" type="java.lang.String" />
+		<property name="crton" type="java.time.LocalDateTime" />
+		<property name="filename" type="java.lang.String" />
+		<property name="filesize" type="java.lang.Long" />
+		<property name="mimetype" type="java.lang.String" />
+		<property name="objectGuid" type="java.lang.String" />
+		<property name="fileContString" type="java.lang.String" />
+		<property name="complaintsAndEnquiryHDRData"
+			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ComplaintsAndEnquiryHdrsData" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.TextHDRData">
+		<property name="srID" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="commentDate" type="java.time.LocalDateTime" />
+		<property name="commentTime" type="java.time.LocalTime" />
+		<property name="zone" type="java.lang.String" />
+		<property name="commentBy" type="java.lang.String" />
+		<property name="tdID" type="java.lang.String" />
+		<property name="comments" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.FollowUpServicesData">
+		<property name="srId" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="bpId" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="srCrDate" type="java.lang.String" />
+		<property name="srStCode" type="java.lang.String" />
+		<property name="srStDesc" type="java.lang.String" />
+		<property name="transType" type="java.lang.String" />
+		<property name="transTypeDesc" type="java.lang.String" />
+		<property name="objectId" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="termCond" type="java.lang.String" />
+		<property name="ministryType" type="java.lang.String" />
+		<property name="serviceType" type="java.lang.String" />
+		<property name="comments" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+		<property name="message" type="java.lang.String" />
+		<property name="messageType" type="java.lang.String" />
+		<property name="noOfDaysExtension" type="java.lang.String" />
+		<property name="noOfApprDaysExtn" type="java.lang.String" />
+		<property name="extWlDate" type="java.lang.String" />
+		<property name="extWlEndDate" type="java.lang.String" />
+
+		<property name="violation"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ViolationNavData&gt;" />
+		<property name="contentHdr"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
+		<property name="followText"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.FollowTextNavData&gt;" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.FollowTextNavData">
+		<property name="srID" type="java.lang.String" />
+		<property name="commentDate" type="java.lang.String" />
+		<property name="commentTime" type="java.lang.String" />
+		<property name="comments" type="java.lang.String" />
+		<property name="commentBy" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ViolationNavData">
+		<property name="srId" type="java.lang.String" />
+		<property name="bpId" type="java.lang.String" />
+		<property name="serviceType" type="java.lang.String" />
+		<property name="violationKey" type="java.lang.String" />
+		<property name="violationText" type="java.lang.String" />
+		<property name="violationNote" type="java.lang.String" />
+		<property name="violationReply" type="java.lang.String" />
+		<property name="violationReplyText" type="java.lang.String" />
+		<property name="violationStatus" type="java.lang.String" />
+		<property name="violationStatusText" type="java.lang.String" />
+		<property name="warningLetterNo" type="java.lang.String" />
+		<property name="warningEndDate" type="java.lang.String" />
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.facades.data.RegionCityData">
+		<property name="Language" type="java.lang.String" />
+		<property name="RegionCode" type="java.lang.Integer" />
+		<property name="RegionDesc" type="java.lang.String" />
+		<property name="CityCode" type="java.lang.String" />
+		<property name="CityDesc" type="java.lang.String" />
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.facades.data.RealEstateData">
+		<property name="ObjectId" type="java.lang.String" />
+		<property name="ObjectGuid" type="java.lang.String" />
+		<property name="OutsideMakkah" type="java.lang.String" />
+		<property name="ApprovedIndustrial" type="java.lang.String" />
+		<property name="ProjectValue" type="java.lang.String" />
+		<property name="ThirtyMore" type="java.lang.String" />
+		<property name="Remarks" type="java.lang.String" />
+		<property name="BpID" type="java.lang.String" />
+		<property name="PostingDate" type="java.lang.String" />
+		<property name="Status" type="java.lang.String" />
+		<property name="REType" type="java.lang.String" />
+		<property name="PurchaseType" type="java.lang.String" />
+		<property name="HousingType" type="java.lang.String" />
+		<property name="PlotNo" type="java.lang.String" />
+		<property name="DeedNo" type="java.lang.String" />
+		<property name="Region" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="PlotArea" type="java.lang.String" />
+		<property name="PurchaseDate" type="java.lang.String" />
+		<property name="Price" type="java.lang.String" />
+		<property name="District" type="java.lang.String" />
+		<property name="UnitNo" type="java.lang.String" />
+		<property name="BlockNo" type="java.lang.String" />
+		<property name="AttachmentsSet"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.RealEstateAttachmentData&gt;" />
+		<property name="MojRegion" type="java.lang.String" />
+		<property name="MojCity" type="java.lang.String" />
+		<property name="MojDeedDate" type="java.lang.String" />
+		<property name="IdNo" type="java.lang.String" />
+		<property name="IdType" type="java.lang.String" />
+		<property name="IsVerified" type="java.lang.String" />
+		<property name="IssuerCourtName" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.RealEstateAttachmentData">
+		<property name="ObjectId" type="java.lang.String" />
+		<property name="DocGuid" type="java.lang.String" />
+		<property name="Filename" type="java.lang.String" />
+		<property name="MimeType" type="java.lang.String" />
+		<property name="FileContString" type="java.lang.String" />
+		<property name="ObjectGUID" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.RealEstateAttachmentListData">
+		<property name="type" type="java.lang.String" />
+		<property name="subtype" type="java.lang.String" />
+		<property name="attachmentName" type="java.lang.String" />
+		<property name="language" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.RealEstateEntityDetailsSetData">
+		<property name="Username" type="java.lang.String" />
+		<property name="Sell" type="java.lang.String" />
+		<property name="Buy" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zclassification.ZCLASS_CONTData">
+		<property name="objectID" type="java.lang.String" />
+		<property name="docGUID" type="java.lang.String" />
+		<property name="filename" type="java.lang.String" />
+		<property name="filetype" type="java.lang.String" />
+		<property name="content" type="java.lang.String" />
+		<property name="objectGUID" type="java.lang.String" />
+		<property name="docID" type="java.lang.String" />
+		<property name="filesize" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.payment.SalesOrderPayment">
+		<property name="NumOfDays" type="java.lang.String" />
+		<property name="ServiceId" type="java.lang.String" />
+		<property name="ServiceDesc" type="java.lang.String" />
+		<property name="PaymentDate" type="java.time.LocalDateTime" />
+		<property name="PaymentStatus" type="java.lang.String" />
+		<property name="NetValue" type="java.math.BigDecimal" />
+		<property name="Currency" type="java.lang.String" />
+		<property name="PaymentStatusDesc" type="java.lang.String" />
+		<property name="ContactLastName" type="java.lang.String" />
+		<property name="EmpFirstName" type="java.lang.String" />
+		<property name="ServiceRejectReason" type="java.lang.String" />
+		<property name="EmpLastName" type="java.lang.String" />
+		<property name="SadadBillStatus" type="java.lang.String" />
+		<property name="SadadTransNum" type="java.lang.String" />
+		<property name="SadadTransDate" type="java.lang.String" />
+		<property name="SadadBillNum" type="java.lang.String" />
+		<property name="SadadBillAccount" type="java.lang.String" />
+		<property name="SadadBankId" type="java.lang.String" />
+		<property name="HouseNum" type="java.lang.String" />
+		<property name="SadadInvestorId" type="java.lang.String" />
+		<property name="SadadAmountPaid" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="Street" type="java.lang.String" />
+		<property name="SadadPaymentMethod" type="java.lang.String" />
+		<property name="SadadPaymentChannel" type="java.lang.String" />
+		<property name="HouseNo2" type="java.lang.String" />
+		<property name="SadadPaymentNum" type="java.lang.String" />
+		<property name="PostlCod1" type="java.lang.String" />
+		<property name="Name1" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.SagiaConfigurationData">
+		<property name="key" type="String" />
+		<property name="value" type="String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.WarningLettersInfos">
+		<property name="warningLetterNo" type="java.lang.String" />
+		<property name="serviceType" type="java.lang.String" />
+		<property name="warningEndDate" type="java.lang.String" />
+
+		<property name="violations"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ViolationNavData&gt;" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zclassification.ZATT_LISTData">
+		<property name="type" type="java.lang.String" />
+		<property name="subtype" type="java.lang.String" />
+		<property name="language" type="java.lang.String" />
+		<property name="attachmentName" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zclassification.ZCREATEData">
+		<property name="entity" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+		<property name="classProperty" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zclassification.ZAPPEALData">
+		<property name="lang" type="java.lang.String" />
+		<property name="classProperty" type="java.lang.String" />
+		<property name="text" type="java.lang.String" />
+	</bean>
+	
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.moj.MOJInheritSetData">
+		<property name="DeedNumber" type="java.lang.String"/>
+		<property name="DeceasedId" type="java.lang.String"/>
+		<property name="DeceasedName" type="java.lang.String"/>
+		<property name="IsMojVerified" type="java.lang.String"/>
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.nip.NIPHeaderSetData">
+		<property name="CR_NUMBER" type="java.lang.String" />
+		<property name="SRQ_GUID" type="java.lang.String" />
+		<property name="SRQ_ID" type="java.lang.String" />
+		<property name="PARTNER" type="java.lang.String" />
+		<property name="NAME_ARABIC" type="java.lang.String" />
+		<property name="NAME_ENGLISH" type="java.lang.String" />
+		<property name="CAPITAL" type="java.lang.String" />
+		<property name="LEGAL_STATUS" type="java.lang.String" />
+		<property name="COMP_NAT_TYPE" type="java.lang.String" />
+		<property name="COMP_NATIONALITY" type="java.lang.String" />
+		<property name="COUNTRY" type="java.lang.String" />
+		<property name="REGION" type="java.lang.String" />
+		<property name="CITY" type="java.lang.String" />
+		<property name="MOBILE" type="java.lang.String" />
+		<property name="EMAIL" type="java.lang.String" />
+		<property name="LIC_TYPE" type="java.lang.String" />
+		<property name="ISIC_SECTION" type="java.lang.String" />
+		<property name="ISIC_DIVISION" type="java.lang.String" />
+		<property name="NUMBER_700" type="java.lang.String" />
+		<property name="ZAKAT_NUMBER" type="java.lang.String" />
+		<property name="MOL_NUMBER" type="java.lang.String" />
+		<property name="GOSI_NUMBER" type="java.lang.String" />
+		<property name="CONTACT_NAME" type="java.lang.String" />
+		<property name="CONTACT_NATIONALITY" type="java.lang.String" />
+		<property name="CONTACT_COUNTRY" type="java.lang.String" />
+		<property name="CONTACT_REGION" type="java.lang.String" />
+		<property name="CONTACT_CITY" type="java.lang.String" />
+		<property name="CONTACT_MOBILE" type="java.lang.String" />
+		<property name="CONTACT_EMAIL" type="java.lang.String" />
+		<property name="CR_ISSUE_DATE" type="java.lang.String" />
+		<property name="CR_EXPIRY_DATE" type="java.lang.String" />
+		<property name="CR_ACTIVITY" type="java.lang.String" />
+		<property name="CR_EXPIRY_CHECK" type="java.lang.String" />
+		<property name="CR_VALID_CHECK" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="ERROR" type="java.lang.String" />
+		<property name="ToAttachments"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.nip.NationalInvestorAtachmentData&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.nip.NationalInvestorAtachmentData">
+		<property name="DOC_ID" type="java.lang.String" />
+		<property name="FILENAME" type="java.lang.String" />
+		<property name="Mimetype" type="java.lang.String" />
+		<property name="Content" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.nip.NIPLegalStatusSetData">
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="LEGAL_STATUS" type="java.lang.String" />
+		<property name="LEGAL_STATUS_TEXT" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="ERROR" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.nip.NIPCountrySetData">
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="COUNTRY" type="java.lang.String" />
+		<property name="COUNTRY_TEXT" type="java.lang.String" />
+		<property name="NATIONALITY_CAT" type="java.lang.String" />
+		<property name="NATIONALITY_TEXT" type="java.lang.String" />
+		<property name="MOBILE_CODE" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="ERROR" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.nip.NIPRegionSetData">
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="COUNTRY" type="java.lang.String" />
+		<property name="REGION" type="java.lang.String" />
+		<property name="REGION_TEXT" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="ERROR" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.nip.NIPCitySetData">
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="COUNTRY" type="java.lang.String" />
+		<property name="REGION" type="java.lang.String" />
+		<property name="CITY" type="java.lang.String" />
+		<property name="CITY_TEXT" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="ERROR" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.nip.NIPISICSectionSetData">
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="ISIC_SECTION" type="java.lang.String" />
+		<property name="ISIC_SECTION_TEXT" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="ERROR" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.nip.NIPISICDivisionSetData">
+		<property name="LANGUAGE" type="java.lang.String" />
+		<property name="ISIC_SECTION" type="java.lang.String" />
+		<property name="ISIC_DIVISION" type="java.lang.String" />
+		<property name="ISIC_DIVISION_TEXT" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="ERROR" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.account.DedicatedAccountManagerData">
+		<property name="title" type="java.lang.String" />
+		<property name="firstName" type="java.lang.String" />
+		<property name="lastName" type="java.lang.String" />
+		<property name="email" type="java.lang.String" />
+		<property name="phoneNumber" type="java.lang.String" />
+		<property name="mobileNumber" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.duration.AverageProcessingTimeData">
+		<property name="serviceType" type="java.lang.String" />
+		<property name="days" type="int" />
+		<property name="hours" type="int" />
+		<property name="minutes" type="int" />
+		<property name="seconds" type="int" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.price.PriceSimulationData">
+		<property name="priceSimulationItems"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.price.PriceSimulationItemData&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.price.PriceSimulationItemData">
+		<property name="serviceName" type="java.lang.String" />
+		<property name="netValue" type="java.math.BigDecimal" />
+		<property name="currencyIso" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.company.BasicCompanyData">
+		<property name="companyNameInEnglish" type="java.lang.String" />
+		<property name="companyNameInArabic" type="java.lang.String" />
+		<property name="businessEmailAddress" type="java.lang.String" />
+		<property name="legalStatus" type="java.lang.String" />
+		<property name="country" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="city" type="java.lang.String" />
+		<property name="capitalValue" type="java.math.BigDecimal" />
+		<property name="currencyIso" type="java.lang.String" />
+		<property name="isinCode" type="java.lang.String" />
+		<property name="isicSection" type="java.lang.String" />
+		<property name="isicDevision" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.SagiaCRMGovtService">
+		<property name="LicID" type="java.lang.String" />
+		<property name="LicType" type="java.lang.String" />
+		<property name="SrStCode" type="java.lang.String" />
+		<property name="SrGuid" type="java.lang.String" />
+		<property name="Action" type="java.lang.String" />
+		<property name="BpChangeID" type="java.lang.String" />
+		<property name="SalesrepCount" type="java.lang.String" />
+		<property name="LicExDate" type="java.lang.String" />
+		<property name="TransType" type="java.lang.String" />
+		<property name="TermCond" type="java.lang.String" />
+		<property name="LicTypeDesc" type="java.lang.String" />
+		<property name="LicGuid" type="java.lang.String" />
+		<property name="BpID" type="java.lang.String" />
+		<property name="MinistryType" type="java.lang.String" />
+		<property name="ServiceType" type="java.lang.String" />
+		<property name="BpName" type="java.lang.String" />
+		<property name="ValidFrom" type="java.lang.String" />
+		<property name="LicRenFlag" type="java.lang.String" />
+		<property name="BpGuid" type="java.lang.String" />
+		<property name="SrStDesc" type="java.lang.String" />
+		<property name="ContactChInd" type="java.lang.String" />
+		<property name="SrID" type="java.lang.String" />
+		<property name="SrCrDate" type="java.lang.String" />
+		<property name="attachments"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
+		<property name="govtServicesToTextNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GetTextData>" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GovtServiceUploadData">
+		<property name="scenario" type="java.lang.String" />
+		<property name="fieldname" type="java.lang.String" />
+		<property name="fieldkey" type="java.lang.String" />
+		<property name="fieldSubtype" type="java.lang.String" />
+		<property name="description" type="java.lang.String" />
+		<property name="dockeyID" type="java.lang.String" />
+		<property name="longDescr" type="java.lang.String" />
+		<property name="optionalAttach" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SagiaGovtServiceFileUploadData">
+		<property name="SrID" type="java.lang.String" />
+		<property name="MinistryType" type="java.lang.String" />
+		<property name="ServiceType" type="java.lang.String" />
+		<property name="GovtServicesToUploadNav"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GovtServicesToUploadNavData&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GovtServicesToUploadNavData">
+		<property name="Filename" type="java.lang.String" />
+		<property name="MimeType" type="java.lang.String" />
+		<property name="FileContString" type="java.lang.String" />
+		<property name="Dockey_ID" type="java.lang.String" />
+	</bean>
+
+	<!-- InvestorNotification entities -->
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.InvestorNotificationData">
+		<property name="investorId" type="java.lang.String" />
+		<property name="transactionId" type="java.lang.String" />
+		<property name="notificationType" type="java.lang.String" />
+		<property name="notificationPriority" type="java.lang.String" />
+		<property name="expiryDate" type="java.time.LocalDateTime" />
+		<property name="notificationText" type="java.lang.String" />
+		<property name="createdBy" type="java.lang.String" />
+		<property name="createdOn" type="java.time.LocalDateTime" />
+		<property name="amountPayable" type="java.math.BigDecimal" />
+	</bean>
+
+	<!-- LegalConsultation entities -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.LegalInquiryDropdownSetData">
+		<property name="ScenarioId" type="java.lang.String" />
+		<property name="LegenqId" type="java.lang.String" />
+		<property name="Description" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.LegalInquiryHDRData">
+		<property name="srId" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="bpId" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="srCrDate" type="java.time.LocalDateTime" />
+		<property name="srStCode" type="java.lang.String" />
+		<property name="srStDesc" type="java.lang.String" />
+		<property name="transType" type="java.lang.String" />
+		<property name="transTypeDesc" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="logonUser" type="java.lang.String" />
+		<property name="bpName" type="java.lang.String" />
+		<property name="legalInquiry"
+			type="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.LegalInquiryData" />
+		<property name="uploadContentSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.UploadContentData&gt;" />
+		<property name="getTextSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.GetTextData&gt;" />
+		<property name="contentHDRSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.ContentHDRData&gt;" />
+		<property name="attachmantHDRSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.AttachmantHDRData&gt;" />
+	</bean>
+	
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.FinancialStatementHDRData">
+		<property name="srId" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="bpId" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="srCrDate" type="java.time.LocalDateTime" />
+		<property name="srStCode" type="java.lang.String" />
+		<property name="srStDesc" type="java.lang.String" />
+		<property name="transType" type="java.lang.String" />
+		<property name="transTypeDesc" type="java.lang.String" />
+		<property name="action" type="java.lang.String" />
+		<property name="logonUser" type="java.lang.String" />
+		<property name="bpName" type="java.lang.String" />
+		<property name="uploadContentSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.UploadContentData&gt;" />
+		<property name="contentHDRSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.ContentHDRData&gt;" />
+		<property name="attachmantHDRSet"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.AttachmantHDRData&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.UploadContentData">
+		<property name="objectId" type="java.lang.String" />
+		<property name="objectGuid" type="java.lang.String" />
+		<property name="documentId" type="java.lang.String" />
+		<property name="fileCont" type="java.lang.String" />
+		<property name="filename" type="java.lang.String" />
+		<property name="mimeType" type="java.lang.String" />
+
+		<property name="fileConts" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+		<property name="docId" type="java.lang.String" />
+		<property name="shDocID" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.GetTextData">
+		<property name="srId" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="tdid" type="java.lang.String" />
+		<property name="tdline" type="java.lang.String" />
+		<property name="commentsBy" type="java.lang.String" />
+		<property name="commentDate" type="java.time.LocalDateTime" />
+		<property name="commentTime" type="java.lang.String" />
+		<property name="timezone" type="java.lang.String" />
+		<property name="stage" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.AttachmantHDRData">
+		<property name="objectId" type="java.lang.String" />
+		<property name="objectGuid" type="java.lang.String" />
+		<property name="filename" type="java.lang.String" />
+		<property name="filesize" type="java.lang.String" />
+		<property name="mimetype" type="java.lang.String" />
+		<property name="documentId" type="java.lang.String" />
+		<property name="contenttype" type="java.lang.String" />
+		<property name="crtdby" type="java.lang.String" />
+		<property name="crtdon" type="java.time.LocalDateTime" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.LegalInquiryData">
+		<property name="srId" type="java.lang.String" />
+		<property name="srGuid" type="java.lang.String" />
+		<property name="bpId" type="java.lang.String" />
+		<property name="bpGuid" type="java.lang.String" />
+		<property name="legEnqTitle" type="java.lang.String" />
+		<property name="legEnqDesc" type="java.lang.String" />
+		<property name="textMsg" type="java.lang.String" />
+		<property name="tdid" type="java.lang.String" />
+	</bean>
+
+	<!-- ISIC activity entities -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.IsicSectionData">
+		<property name="Lang" type="java.lang.String" />
+		<property name="Userid" type="java.lang.String" />
+		<property name="Investorid" type="java.lang.String" />
+		<property name="Bpid" type="java.lang.String" />
+		<property name="Lictype" type="java.lang.String" />
+		<property name="Lictypetext" type="java.lang.String" />
+		<property name="Srid" type="java.lang.String" />
+		<property name="Licactivity" type="java.lang.String" />
+		<property name="Inputid" type="java.lang.String" />
+		<property name="Isicid" type="java.lang.String" />
+		<property name="DescriptionEn" type="java.lang.String" />
+		<property name="DescriptionAr" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.IsicDivisionData">
+		<property name="Lang" type="java.lang.String" />
+		<property name="Userid" type="java.lang.String" />
+		<property name="Investorid" type="java.lang.String" />
+		<property name="Bpid" type="java.lang.String" />
+		<property name="Lictype" type="java.lang.String" />
+		<property name="Lictypetext" type="java.lang.String" />
+		<property name="Srid" type="java.lang.String" />
+		<property name="Licactivity" type="java.lang.String" />
+		<property name="Inputid" type="java.lang.String" />
+		<property name="Isicid" type="java.lang.String" />
+		<property name="DescriptionEn" type="java.lang.String" />
+		<property name="DescriptionAr" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.IsicGroupData">
+		<property name="Lang" type="java.lang.String" />
+		<property name="Userid" type="java.lang.String" />
+		<property name="Investorid" type="java.lang.String" />
+		<property name="Bpid" type="java.lang.String" />
+		<property name="Lictype" type="java.lang.String" />
+		<property name="Lictypetext" type="java.lang.String" />
+		<property name="Srid" type="java.lang.String" />
+		<property name="Licactivity" type="java.lang.String" />
+		<property name="Inputid" type="java.lang.String" />
+		<property name="Isicid" type="java.lang.String" />
+		<property name="DescriptionEn" type="java.lang.String" />
+		<property name="DescriptionAr" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.IsicClassData">
+		<property name="Lang" type="java.lang.String" />
+		<property name="Userid" type="java.lang.String" />
+		<property name="Investorid" type="java.lang.String" />
+		<property name="Bpid" type="java.lang.String" />
+		<property name="Lictype" type="java.lang.String" />
+		<property name="Lictypetext" type="java.lang.String" />
+		<property name="Srid" type="java.lang.String" />
+		<property name="Licactivity" type="java.lang.String" />
+		<property name="Inputid" type="java.lang.String" />
+		<property name="Isicid" type="java.lang.String" />
+		<property name="DescriptionEn" type="java.lang.String" />
+		<property name="DescriptionAr" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.IsicBranchData">
+		<property name="Lang" type="java.lang.String" />
+		<property name="Userid" type="java.lang.String" />
+		<property name="Investorid" type="java.lang.String" />
+		<property name="Bpid" type="java.lang.String" />
+		<property name="Lictype" type="java.lang.String" />
+		<property name="Lictypetext" type="java.lang.String" />
+		<property name="Srid" type="java.lang.String" />
+		<property name="Licactivity" type="java.lang.String" />
+		<property name="Inputid" type="java.lang.String" />
+		<property name="Isicid" type="java.lang.String" />
+		<property name="DescriptionEn" type="java.lang.String" />
+		<property name="DescriptionAr" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.IsicActivityData">
+		<property name="Lang" type="java.lang.String" />
+		<property name="Userid" type="java.lang.String" />
+		<property name="Investorid" type="java.lang.String" />
+		<property name="Bpid" type="java.lang.String" />
+		<property name="Lictype" type="java.lang.String" />
+		<property name="Lictypetext" type="java.lang.String" />
+		<property name="Srid" type="java.lang.String" />
+		<property name="Licactivity" type="java.lang.String" />
+		<property name="Inputid" type="java.lang.String" />
+		<property name="Isicid" type="java.lang.String" />
+		<property name="DescriptionEn" type="java.lang.String" />
+		<property name="DescriptionAr" type="java.lang.String" />
+		<property name="SplRequirementId" type="java.lang.String" />
+		<property name="QeemahChannel" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.SagiaGovtServiceInfoDataCRM">
+		<property name="bpID" type="java.lang.String" />
+		<property name="crNumber" type="java.lang.String" />
+		<property name="crIssueDate" type="java.lang.String" />
+		<property name="crExpiryDate" type="java.lang.String" />
+		<property name="zakatNumber" type="java.lang.String" />
+		<property name="zakatIssueDate" type="java.lang.String" />
+		<property name="zakatExpiryDate" type="java.lang.String" />
+		<property name="molNumber" type="java.lang.String" />
+		<property name="molSize" type="java.lang.String" />
+		<property name="molColor" type="java.lang.String" />
+		<property name="saudiPercent" type="java.lang.String" />
+		<property name="cocNumber" type="java.lang.String" />
+		<property name="cocIssue" type="java.lang.String" />
+		<property name="cocExpiry" type="java.lang.String" />
+		<property name="gosiNumber" type="java.lang.String" />
+		<property name="gosiIssue" type="java.lang.String" />
+		<property name="gosiExpiry" type="java.lang.String" />
+		<property name="zakatTax" type="java.lang.String" />
+		<property name="zakatAccurrKey" type="java.lang.String" />
+		<property name="zakatAccPer" type="java.lang.String" />
+		<property name="maAmanah" type="java.lang.String" />
+		<property name="maBladiya" type="java.lang.String" />
+		<property name="maLicIssueDate" type="java.lang.String" />
+		<property name="maLicExpiryDate" type="java.lang.String" />
+		<property name="sevenHundredNumber" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.SagiaGovDocWasselCheck">
+		<property name="CRNUMBER" type="java.lang.String" />
+		<property name="SUCCESS" type="java.lang.String" />
+		<property name="MESSAGE" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.reopenfacility.ReopenFacilityAddressData">
+		<property name="Bpid" type="java.lang.String" />
+		<property name="Street" type="java.lang.String" />
+		<property name="HouseNo" type="java.lang.String" />
+		<property name="Country" type="java.lang.String" />
+		<property name="CountryDesc" type="java.lang.String" />
+		<property name="ZipCode" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="AdditNo" type="java.lang.String" />
+		<property name="Building" type="java.lang.String" />
+		<property name="POBox" type="java.lang.String" />
+		<property name="SrReqCrtFlag" type="java.lang.String" />
+		<property name="Message" type="java.lang.String" />
+		<property name="BPAddrToDepndtSrvReq"
+			type="java.util.Set&lt;com.sap.ibso.eservices.sagiaservices.data.reopenfacility.ReopenFacilityHistoryData&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.reopenfacility.ReopenFacilityHistoryData">
+		<property name="Bpid" type="java.lang.String" />
+		<property name="ObjectId" type="java.lang.String" />
+		<property name="CrtDate" type="java.time.LocalDate" />
+		<property name="StatusKey" type="java.lang.String" />
+		<property name="StatusText" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.reopenfacility.ReopenFacilityDetailsData">
+		<property name="SrID" type="java.lang.String" />
+		<property name="BPID" type="java.lang.String" />
+		<property name="VisitDate" type="java.time.LocalDate" />
+		<property name="Text" type="java.lang.String" />
+		<property name="Tdid" type="java.lang.String" />
+		<property name="DocType" type="java.lang.String" />
+		<property name="VisitType" type="java.lang.String" />
+		<property name="Source" type="java.lang.String" />
+		<!--<property name="Status" type="java.lang.String"/> -->
+		<property name="DecExecVisitToDocAttach"
+			type="java.util.Collection&lt;com.sap.ibso.eservices.sagiaservices.data.DocAttachSetData&gt;" />
+		<!--<property name="address" type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.AddressHDRData"/> -->
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.DocAttachSetData">
+		<property name="ObjectId" type="java.lang.String" />
+		<property name="FileGuid" type="java.lang.String" />
+		<property name="Filename" type="java.lang.String" />
+		<property name="Mimetype" type="java.lang.String" />
+		<property name="FileContent" type="java.lang.String" />
+		<property name="ObjectType" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.IsicMasterSetData">
+		<property name="Isictype" type="java.lang.String" />
+		<property name="Isicactivity" type="java.lang.String" />
+		<property name="Isicsection" type="java.lang.String" />
+		<property name="Isicdivision" type="java.lang.String" />
+		<property name="Isicgroup" type="java.lang.String" />
+		<property name="Isicclass" type="java.lang.String" />
+		<property name="Isicbranch" type="java.lang.String" />
+		<property name="Licensetype" type="java.lang.String" />
+		<property name="Active" type="java.lang.String" />
+		<property name="Descr_en" type="java.lang.String" />
+		<property name="Descr_ar" type="java.lang.String" />
+		<property name="Qeemahchannel" type="java.lang.String" />
+		<property name="Lreqid" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.IsicTextsSetData">
+		<property name="Indsector" type="java.lang.String" />
+		<property name="Istype" type="java.lang.String" />
+		<property name="Text_en" type="java.lang.String" />
+		<property name="Text_ar" type="java.lang.String" />
+		<property name="Textshort" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.overview.data.ServiceRequestData">
+		<property name="serviceRequestNumber" type="java.lang.String" />
+		<property name="serviceRequestCreationDate"
+			type="java.time.LocalDate" />
+		<property name="serviceRequestStatusCode"
+			type="java.lang.String" />
+		<property name="serviceRequestStatusDescription"
+			type="java.lang.String" />
+		<property name="serviceTypeCode" type="java.lang.String" />
+		<property name="serviceTypeName" type="java.lang.String" />
+		<property name="categoryLevelOneCode" type="java.lang.String" />
+		<property name="categoryLevelOneName" type="java.lang.String" />
+		<property name="categoryLevelTwoCode" type="java.lang.String" />
+		<property name="categoryLevelTwoName" type="java.lang.String" />
+		<property name="categoryLevelThreeCode"
+			type="java.lang.String" />
+		<property name="categoryLevelThreeName"
+			type="java.lang.String" />
+		<property name="categoryLevelFourCode"
+			type="java.lang.String" />
+		<property name="categoryLevelFourName"
+			type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.overview.data.ServiceRequestsOverviewData">
+		<property name="serviceRequests"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.overview.data.ServiceRequestData&gt;" />
+		<property name="languageIsoCode" type="java.lang.String" />
+	</bean>
+
+	<!--ZQEEMAH 1 -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.SubscriptionData">
+		<property name="ID" type="java.lang.String" />
+		<property name="user" type="java.lang.String" />
+		<property name="updated" type="java.time.LocalDateTime" />
+		<property name="title" type="java.lang.String" />
+		<property name="deliveryAddress" type="java.lang.String" />
+		<property name="persistNotifications" type="java.lang.String" />
+		<property name="collection" type="java.lang.String" />
+		<property name="filter" type="java.lang.String" />
+		<property name="select" type="java.lang.String" />
+		<property name="changeType" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.NotificationData">
+		<property name="ID" type="java.lang.String" />
+		<property name="collection" type="java.lang.String" />
+		<property name="title" type="java.lang.String" />
+		<property name="updated" type="java.time.LocalDateTime" />
+		<property name="changeType" type="java.lang.String" />
+		<property name="entriesOfInterest" type="java.lang.Integer" />
+		<property name="recipient" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ProductIdData">
+		<property name="productId" type="java.lang.String">
+			<description>Product Id</description>
+		</property>
+		<property name="uom" type="java.lang.String">
+			<description>UOM</description>
+		</property>
+		<property name="uomText" type="java.lang.String">
+			<description>uomText</description>
+		</property>
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.LicenseTypeAttachmentsData">
+		<property name="license" type="java.lang.String">
+			<description>License</description>
+		</property>
+		<property name="answer" type="java.lang.String">
+			<description>Answer</description>
+		</property>
+		<property name="language" type="java.lang.String">
+			<description>Language</description>
+		</property>
+		<property name="attachments" type="java.lang.String" />
+		<property name="question" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ReapplyData">
+		<property name="investorId" type="java.lang.String">
+			<description>Investor ID</description>
+		</property>
+		<property name="returnDetails" type="java.lang.String">
+			<description>Return Details</description>
+		</property>
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.OrgInfoData">
+		<property name="refID" type="java.lang.String" />
+		<property name="orgName" type="java.lang.String" />
+		<property name="orgName1" type="java.lang.String" />
+		<property name="orgName2" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="legalStatus" type="java.lang.String" />
+		<property name="city" type="java.lang.String" />
+		<property name="mncComp" type="java.lang.String" />
+		<property name="email" type="java.lang.String" />
+		<property name="street" type="java.lang.String" />
+		<property name="postalCode" type="java.lang.String" />
+		<property name="poBox" type="java.lang.String" />
+		<property name="commMtd" type="java.lang.String" />
+		<property name="capital" type="java.lang.String" />
+		<property name="telephone" type="java.lang.String" />
+		<property name="mobile" type="java.lang.String" />
+		<property name="website" type="java.lang.String" />
+		<property name="ccode_Tele" type="java.lang.String" />
+		<property name="ccode_Mobile" type="java.lang.String" />
+		<property name="lbrSize" type="java.lang.String" />
+		<property name="ccode_Fax" type="java.lang.String" />
+		<property name="fax" type="java.lang.String" />
+		<property name="country" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+		<property name="licenseDuration" type="java.lang.String" />
+	</bean>
+	 <bean class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.BasicContactInformationData">
+        <property name="refID" type="java.lang.String"/>
+        <property name="fileType" type="java.lang.String"/>
+        <property name="nameFirst" type="java.lang.String"/>
+        <property name="nameLast" type="java.lang.String"/>
+        <property name="gender" type="java.lang.String"/>
+        <property name="country" type="java.lang.String"/>
+        <property name="ccode_Tele" type="java.lang.String"/>
+        <property name="telephone" type="java.lang.String"/>
+        <property name="ccode_Mobile" type="java.lang.String"/>
+        <property name="mobile" type="java.lang.String"/>
+        <property name="ccode_Fax" type="java.lang.String"/>
+        <property name="fax" type="java.lang.String"/>
+        <property name="email" type="java.lang.String"/>
+        <property name="nationality" type="java.lang.String"/>
+        <property name="city" type="java.lang.String"/>
+        <property name="street" type="java.lang.String"/>
+        <property name="poBox" type="java.lang.String"/>
+        <property name="postalCode" type="java.lang.String"/>
+        <property name="commMtd" type="java.lang.String"/>
+        <property name="role" type="java.lang.String"/>
+        <property name="mime" type="java.lang.String"/>
+        <property name="returnProperty" type="java.lang.String"/>
+        <property name="dob" type="java.time.LocalDate"/>
+        <property name="passNo" type="java.lang.String"/>
+        <property name="passExp" type="java.time.LocalDate"/>
+        <property name="eduDet" type="java.lang.String"/>
+        <property name="passIssue" type="java.time.LocalDate"/>
+    </bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.odata.BasicContactInformationData">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Objectid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />		
+		<property name="Title" type="java.lang.String" />	
+		<property name="FirstName" type="java.lang.String" />		
+		<property name="LastName" type="java.lang.String" />
+		<property name="Role" type="java.lang.String" />
+		<property name="Education" type="java.lang.String" />		
+		<property name="Dob" type="java.lang.String" />
+		<property name="PassportNo" type="java.lang.String" />	
+		<property name="PassportIssueDt" type="java.lang.String" />
+		<property name="PassportExpDt" type="java.lang.String" />
+		<property name="Country" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="Street" type="java.lang.String" />
+		<property name="PoBox" type="java.lang.String" />
+		<property name="PostalCode" type="java.lang.String" />
+		<property name="Ccode_Tele" type="java.lang.String" />
+		<property name="TelephoneNo" type="java.lang.String" />
+		<property name="Ccode_Mobile" type="java.lang.String" />
+		<property name="MobileNo" type="java.lang.String" />
+		<property name="Email" type="java.lang.String" />
+		<property name="Return" type="java.lang.String" />
+	</bean>
+	
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.odata.EntityInformationData">
+		
+		<property name="Refid" type="java.lang.String" />
+		<property name="Objectid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+ 		<property name="Hasadvlicno" type="java.lang.String" /> 
+		<property name="Advlicno" type="java.lang.String" />
+		<property name="LicenseType" type="java.lang.String" />
+		<property name="IsEntrepreneur" type="java.lang.String" />
+		<property name="IsMoreThan2Branch" type="java.lang.String" />
+		<property name="IsMoreThan6Branch" type="java.lang.String" />
+		<property name="IsEntityListedInStockMarket" type="java.lang.String" />
+		<property name="IsEntityRevenueMoreThanThreshold" type="java.lang.String" />
+		<property name="IsEntityAssetMoreThanThreshold" type="java.lang.String" />
+		<property name="listOfRhqRegions" type="java.lang.String" />
+		<property name="listOfRhqCountries" type="java.lang.String" />
+		<property name="LicenseDuration" type="java.lang.String" />
+		<property name="EntityName" type="java.lang.String" />
+		<property name="EntityNameArabic" type="java.lang.String" />
+		<property name="LegalStatus" type="java.lang.String" />
+		<property name="Mnccomp" type="java.lang.String" />
+		<property name="Capital" type="java.lang.String" />
+		<property name="Email" type="java.lang.String" />
+		<property name="Telephone" type="java.lang.String" />
+		<property name="Mobile" type="java.lang.String" />
+		<property name="Ccode_Mobile" type="java.lang.String" />
+		<property name="Ccode_Tele" type="java.lang.String" />
+		<property name="Country" type="java.lang.String" />
+		<property name="Region" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="Street" type="java.lang.String" />
+		<property name="PoBox" type="java.lang.String" />
+		<property name="PostalCode" type="java.lang.String" />
+		<property name="Investment" type="java.lang.String" />
+		<property name="Website" type="java.lang.String" />
+		<property name="Return" type="java.lang.String" />
+		<property name="ProfessionalLicenseCr" type="java.lang.String"/>
+		<property name="HasProfessionalLicenseCr" type="java.lang.String"/>
+		<property name="ProfessionalLicenseCrVerified" type="java.lang.String"/>
+		<property name="IsPreApprovalNumber" type="java.lang.String"/>
+		<property name="PreApprovalNumber" type="java.lang.String"/>
+		
+	</bean>
+	
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.odata.ShareholderData">
+		
+		<property name="Refid" type="java.lang.String" />
+		<property name="Objectid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />		
+		<property name="Shhldcode" type="java.lang.String" />		
+		<property name="ShareHolderType" type="java.lang.String" />		
+		<property name="SharesPercentage" type="java.lang.String" />
+		<property name="Delegate" type="java.lang.String" />		
+		<property name="SelfDelegate" type="java.lang.String" />		
+		<property name="DelIdentityType" type="java.lang.String" />	
+		<property name="DelIdentityNumber" type="java.lang.String" />		
+		<property name="DelDob" type="java.lang.String" />		
+		<property name="DelFirstName" type="java.lang.String" />	
+		<property name="DelLastName" type="java.lang.String" />	
+		<property name="DelFullName" type="java.lang.String" />	
+		<property name="DelGender" type="java.lang.String" />		
+		<property name="DelIdIssueDt" type="java.lang.String" />		
+		<property name="DelIdExpiryDt" type="java.lang.String" />	
+		<property name="DelCcode_tele" type="java.lang.String" />			
+		<property name="DelTelephoneNo" type="java.lang.String" />	
+		<property name="DelCcode_Mobile" type="java.lang.String" />	
+		<property name="DelMobileNo" type="java.lang.String" />	
+		<property name="DelEmail" type="java.lang.String" />
+		<property name="DelCountry" type="java.lang.String" />	
+		<property name="DelNationality" type="java.lang.String" />	
+		<property name="DelPostalCode" type="java.lang.String" />	
+		<property name="DelPoBox" type="java.lang.String" />	
+		<property name="IsNICVerified" type="java.lang.String" />
+		<property name="EntityNo" type="java.lang.String" />	
+		<property name="ShareHolderName" type="java.lang.String" />	
+		<property name="ParCompCntry" type="java.lang.String" />	
+		<property name="Title" type="java.lang.String" />	
+		<property name="AcademicTitle" type="java.lang.String" />		
+		<property name="FirstName" type="java.lang.String" />
+		<property name="LastName" type="java.lang.String" />	
+		<property name="FullName" type="java.lang.String" />
+		<property name="Dob" type="java.lang.String" />
+		<property name="PassportNo" type="java.lang.String" />
+		<property name="PassportIssueDate" type="java.lang.String" />
+		<property name="PassportExpDate" type="java.lang.String" />
+		<property name="CurrNationality" type="java.lang.String" />
+		<property name="PrevNationality" type="java.lang.String" />
+		<property name="Country" type="java.lang.String" />
+		<property name="PremiumResident" type="java.lang.String" />		
+		<property name="ShCity" type="java.lang.String" />
+		<property name="ShPoBox" type="java.lang.String" />	
+		<property name="ShPostalCode" type="java.lang.String" />
+		<property name="ShCcode_Tele" type="java.lang.String" />
+		<property name="ShTelephoneNo" type="java.lang.String" />
+		<property name="ShCcode_Mobile" type="java.lang.String" />
+		<property name="ShMobileNo" type="java.lang.String" />
+		<property name="ShEmail" type="java.lang.String" />
+		<property name="OrgName" type="java.lang.String" />
+		<property name="OrgNameArabic" type="java.lang.String" />
+		<property name="LegalStatus" type="java.lang.String" />
+		<property name="MncCompany" type="java.lang.String" />
+		<property name="CompRegNo" type="java.lang.String" />		
+		<property name="CompCountry" type="java.lang.String" />
+		<property name="Capital" type="java.lang.String" />
+		<property name="Section" type="java.lang.String" />
+		<property name="Division" type="java.lang.String" />
+		<property name="ParCompName" type="java.lang.String" />
+		<property name="ParCompCountry" type="java.lang.String" />
+		<property name="CountryofReg" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="Street" type="java.lang.String" />
+		<property name="PoBox" type="java.lang.String" />
+		<property name="PostalCode" type="java.lang.String" />	
+		<property name="Ccode_Tele" type="java.lang.String" />
+		<property name="TelephoneNo" type="java.lang.String" />
+		<property name="Ccode_Mobile" type="java.lang.String" />
+		<property name="MobileNo" type="java.lang.String" />
+		<property name="Email" type="java.lang.String" />
+		<property name="Website" type="java.lang.String" />
+		<property name="Return" type="java.lang.String" />
+		<property name="FileType" type="java.lang.String" />
+		<property name="PerProfessionalLicense" type="java.lang.String"/>
+		<property name="OrgProfessionalLicense" type="java.lang.String"/>
+		<property name="ExtProfessionalLicense" type="java.lang.String"/>
+		<property name="IsPersonNICVerified" type="java.lang.String"/>
+		<property name="IsMCVerified" type="java.lang.String"/>
+		<property name="PerIdentityType" type="java.lang.String"/>
+		<property name="MofaNumber" type="java.lang.String"/>
+		<property name="MofaNumberVerified" type="java.lang.String"/>
+		
+	</bean>
+	
+	
+	<bean class="com.sap.ibso.eservices.sagiaservices.data.odata.ShareholderAttachmentData">
+
+		<property name="Refid" type="java.lang.String" />
+		<property name="Objectid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+		<property name="Shhldcode" type="java.lang.String" />
+		<property name="FileType" type="java.lang.String" />
+		<property name="FileName" type="java.lang.String" />
+		<property name="FileMtype" type="java.lang.String" />
+		<property name="Content" type="java.io.InputStream" />
+		<property name="Delegate" type="java.lang.String" />
+		<property name="Return" type="java.lang.String" />  
+    </bean>
+    
+    <bean class="com.sap.ibso.eservices.sagiaservices.data.odata.IsicInfoData">
+		<property name="Objectid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+		<property name="Investorid" type="java.lang.String" />
+		<property name="LicenseType" type="java.lang.String" />
+		<property name="BusinessType" type="java.lang.String" />
+		<property name="IsicSection" type="java.lang.String" />
+		<property name="IsicDivision" type="java.lang.String" />		
+		<property name="IsicGroup" type="java.lang.String" />
+		<property name="IsicClass" type="java.lang.String" />  
+		<property name="IsicActivity" type="java.lang.String" />  
+		<property name="IsicBranch" type="java.lang.String" />  
+		<property name="Act" type="java.lang.String" />  
+		<property name="ActDesc" type="java.lang.String" />  
+		<property name="Purofctrct" type="java.lang.String" />  
+    </bean>
+    
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.UserRegisterData">
+		<property name="userid" type="java.lang.String" />
+		<property name="ref_id" type="java.lang.String" />
+		<property name="password" type="java.lang.String" />
+		<property name="email" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="country" type="java.lang.String" />
+		<property name="ccodeMob" type="java.lang.String" />
+		<property name="contNumber" type="java.lang.String" />
+		<property name="contPersname" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+	</bean>
+	<!--ZBASIC_CONT_FILE -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.BasicContactFileData">
+		<property name="refID" type="java.lang.String" />
+		<property name="fileType" type="java.lang.String" />
+		<property name="fileName" type="java.lang.String" />
+		<property name="fileMtype" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+		<!--<NavigationProperty Name="InfoToPoa" Relationship="ZQEEMAH_SRV.InfoToPoa" 
+			FromRole="ToRole_InfoToPoa" ToRole="FromRole_InfoToPoa"/> -->
+	</bean>
+	<!--ZCONT_INFO_HEADER -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ContactInformationHeaderData">
+		<property name="refID" type="java.lang.String" />
+		<property name="nameFirst" type="java.lang.String" />
+		<property name="nameLast" type="java.lang.String" />
+		<property name="gender" type="java.lang.String" />
+		<property name="country" type="java.lang.String" />
+		<property name="telephone" type="java.lang.String" />
+		<property name="mobile" type="java.lang.String" />
+		<property name="fax" type="java.lang.String" />
+		<property name="email" type="java.lang.String" />
+		<property name="nationality" type="java.lang.String" />
+		<property name="city" type="java.lang.String" />
+		<property name="street" type="java.lang.String" />
+		<property name="poBox" type="java.lang.String" />
+		<property name="postalCode" type="java.lang.String" />
+		<property name="commMtd" type="java.lang.String" />
+		<property name="role" type="java.lang.String" />
+	</bean>
+	<!--Isic_Det -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.IsicDetData">
+		<property name="flag" type="java.lang.String" />
+		<property name="lang" type="java.lang.String" />
+		<property name="isicSection" type="java.lang.String" />
+		<property name="isicDivision" type="java.lang.String" />
+		<property name="isicGroup" type="java.lang.String" />
+		<property name="isicClass" type="java.lang.String" />
+		<property name="act" type="java.lang.String" />
+		<property name="isicDescription" type="java.lang.String" />
+		<property name="activity" type="java.lang.String" />
+		<property name="surveyID" type="java.lang.String" />
+		<property name="attachments" type="java.lang.String" />
+		<property name="question" type="java.lang.String" />
+	</bean>
+	<!--LOGON_ENT -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.LogonEntityData">
+		<property name="flag" type="java.lang.String" />
+		<property name="password" type="java.lang.String" />
+		<property name="investorid" type="java.lang.String" />
+		<property name="email" type="java.lang.String" />
+		<property name="mobileNo" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.UserRegistrationData">
+		<property name="flag" type="java.lang.String" />
+		<property name="userid" type="java.lang.String" />
+		<property name="password" type="java.lang.String" />
+		<property name="email" type="java.lang.String" />
+		<property name="mobileNo" type="java.lang.String" />
+		<property name="investorId" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+		<property name="nameFirst" type="java.lang.String" />
+		<property name="nameLast" type="java.lang.String" />
+	</bean>
+	<!--CrmIdStatusData -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ApplicationStatusData">
+		<property name="entityId" type="java.lang.String" />
+		<property name="invId" type="java.lang.String" />
+		<property name="lvReturn" type="java.lang.String" />
+		<property name="leadGuid" type="java.lang.String" />
+		<property name="leadId" type="java.lang.String" />
+		<property name="lvDate" type="java.lang.String" />
+		<property name="status" type="java.lang.String" />
+		<property name="statusDesc" type="java.lang.String" />
+		<property name="qeemah" type="java.lang.String" />
+		<property name="lvLocalDate" type="java.time.LocalDate" /> <!-- additional property to convert lvDate -->
+	</bean>
+	<!--PASSWORD_RESET -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ResetPasswordData">
+		<property name="currPwd" type="java.lang.String" />
+		<property name="investorid" type="java.lang.String" />
+		<property name="lang" type="java.lang.String" />
+		<property name="newPwd" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+		<property name="status" type="java.lang.String" />
+	</bean>
+	<!--PASSWORD_FORGOT -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ForgotPasswordData">
+		<property name="userid" type="java.lang.String" />
+		<property name="lang" type="java.lang.String" />
+		<property name="investorid" type="java.lang.String" />
+		<property name="password" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+		<property name="status" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.TelecodeData">
+		<property name="countKey" type="java.lang.String" />
+		<property name="lvStatus" type="java.lang.String" />
+		<property name="telNo" type="java.lang.String" />
+	</bean>
+	<!--ZCRM_SHAREHOLER -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.CrmShareholderData">
+		<property name="bpno" type="java.lang.String" />
+		<property name="bpname" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.InvestorDetailsData">
+		<property name="lvInvestorid" type="java.lang.String" />
+		<property name="lvEmail" type="java.lang.String" />
+		<property name="lvFirstname" type="java.lang.String" />
+		<property name="lvLastname" type="java.lang.String" />
+		<property name="lvMobileno" type="java.lang.String" />
+		<property name="lvStatus" type="java.lang.String" />
+	</bean>
+	<!--ZCRM_ISIC_LIST -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.CrmIsicListData">
+		<property name="treeGuid" type="java.lang.String" />
+		<property name="parentGuid" type="java.lang.String" />
+		<property name="nodeGuid" type="java.lang.String" />
+		<property name="searchTerm" type="java.lang.String" />
+		<property name="description" type="java.lang.String" />
+		<property name="hLvl" type="java.lang.String" />
+		<property name="key1" type="java.lang.String" />
+	</bean>
+	<!--ZCRM_DROPDOWN_LIST -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.OrgInfoDictionaryData">
+		<property name="bland_cty" type="String" />
+		<property name="bezei_city" type="String" />
+		<property name="cityCode_cty" type="String" />
+		<property name="cityName_cty" type="String" />
+		<property name="land1" type="String" />
+		<property name="landx" type="String" />
+		<property name="natio" type="String" />
+		<property name="landx50" type="String" />
+		<property name="natio50" type="String" />
+		<property name="source" type="String" />
+		<property name="textshort" type="String" />
+		<property name="textlong" type="String" />
+		<property name="iSINCode" type="String" />
+		<property name="type" type="String" />
+		<property name="description20" type="String" />
+		<property name="description" type="String" />
+		<property name="item" type="String" />
+		<property name="pcode" type="String" />
+		<property name="desc" type="String" />
+		<property name="bland_reg" type="String" />
+		<property name="bezei_reg" type="String" />
+		<property name="cityCode_reg" type="String" />
+		<property name="cityName_reg" type="String" />
+		<property name="msehi" type="String" />
+		<property name="mseh3" type="String" />
+		<property name="mseh6" type="String" />
+		<property name="mseht" type="String" />
+		<property name="msehl" type="String" />
+		<property name="lvkey" type="String" />
+	</bean>
+	<!--ZCRM_SURVEY_QUESTN -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.CrmSurveyQuestionData">
+		<property name="imLanguage" type="java.lang.String" />
+		<property name="nodeGuid" type="java.lang.String" />
+		<property name="nodeGuid_act" type="java.lang.String" />
+		<property name="surveyId_act" type="java.lang.String" />
+		<property name="quest_act" type="java.lang.String" />
+		<property name="qtxtlg_act" type="java.lang.String" />
+		<property name="questId_act" type="java.lang.String" />
+		<property name="answerId_act" type="java.lang.String" />
+		<property name="mainAnswer_act" type="java.lang.String" />
+		<property name="atxtlg_act" type="java.lang.String" />
+		<property name="answType_act" type="java.lang.String" />
+		<property name="surveyVersion_act" type="java.lang.String" />
+		<property name="attachment_act" type="java.lang.String" />
+		<property name="rating_act" type="java.lang.String" />
+		<property name="maxRating_act" type="java.lang.String" />
+		<property name="units_act" type="java.lang.String" />
+		<property name="shTxt_act" type="java.lang.String" />
+		<property name="nodeGuid_bus" type="java.lang.String" />
+		<property name="surveyId_bus" type="java.lang.String" />
+		<property name="quest_bus" type="java.lang.String" />
+		<property name="qtxtlg_bus" type="java.lang.String" />
+		<property name="questId_bus" type="java.lang.String" />
+		<property name="answerId_bus" type="java.lang.String" />
+		<property name="answer_Id_bus_para" type="java.lang.String" />
+		<property name="mainAnswer_bus" type="java.lang.String" />
+		<property name="atxtlg_bus" type="java.lang.String" />
+		<property name="answType_bus" type="java.lang.String" />
+		<property name="surveyVersion_bus" type="java.lang.String" />
+		<property name="attachment_bus" type="java.lang.String" />
+		<property name="rating_bus" type="java.lang.String" />
+		<property name="maxRating_bus" type="java.lang.String" />
+		<property name="units_bus" type="java.lang.String" />
+		<property name="shTxt_bus" type="java.lang.String" />
+		<property name="nodeGuid_exp" type="java.lang.String" />
+		<property name="surveyId_exp" type="java.lang.String" />
+		<property name="quest_exp" type="java.lang.String" />
+		<property name="qtxtlg_exp" type="java.lang.String" />
+		<property name="questId_exp" type="java.lang.String" />
+		<property name="answerId_exp" type="java.lang.String" />
+		<property name="mainAnswer_exp" type="java.lang.String" />
+		<property name="atxtlg_exp" type="java.lang.String" />
+		<property name="answType_exp" type="java.lang.String" />
+		<property name="surveyVersion_exp" type="java.lang.String" />
+		<property name="attachment_exp" type="java.lang.String" />
+		<property name="rating_exp" type="java.lang.String" />
+		<property name="maxRating_exp" type="java.lang.String" />
+		<property name="units_exp" type="java.lang.String" />
+		<property name="shTxt_exp" type="java.lang.String" />
+		<property name="nodeGuid_fin" type="java.lang.String" />
+		<property name="surveyId_fin" type="java.lang.String" />
+		<property name="quest_fin" type="java.lang.String" />
+		<property name="qtxtlg_fin" type="java.lang.String" />
+		<property name="questId_fin" type="java.lang.String" />
+		<property name="answerId_fin" type="java.lang.String" />
+		<property name="mainAnswer_fin" type="java.lang.String" />
+		<property name="atxtlg_fin" type="java.lang.String" />
+		<property name="answType_fin" type="java.lang.String" />
+		<property name="surveyVersion_fin" type="java.lang.String" />
+		<property name="attachment_fin" type="java.lang.String" />
+		<property name="rating_fin" type="java.lang.String" />
+		<property name="maxRating_fin" type="java.lang.String" />
+		<property name="units_fin" type="java.lang.String" />
+		<property name="shTxt_fin" type="java.lang.String" />
+	</bean>
+	<!--ZCRM_LIC_TYPE -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.CrmLicenseTypeData">
+		<property name="langu" type="java.lang.String" />
+		<property name="classGuid" type="java.lang.String" />
+		<property name="type" type="java.lang.String" />
+		<property name="description20" type="java.lang.String" />
+		<property name="description" type="java.lang.String" />
+	</bean>
+	<!--ZQEEMAH_SUBMIT -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.QeemahSubmitData">
+		<property name="RefID" type="java.lang.String" />
+		<property name="Return" type="java.lang.String" />
+		<property name="LeadID" type="java.lang.String" />
+		<property name="AdvLicNo" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.SubmitData">
+		<property name="RefID" type="java.lang.String" />
+		<property name="Return" type="java.lang.String" />
+		<property name="LeadID" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.IsicDetPsSetData">
+		<property name="investorid" type="java.lang.String" />
+		<property name="lic" type="java.lang.String" />
+		<property name="isicSection" type="java.lang.String" />
+		<property name="isicDivision" type="java.lang.String" />
+		<property name="isicGroup" type="java.lang.String" />
+		<property name="isicClass" type="java.lang.String" />
+		<property name="isicBranch" type="java.lang.String" />
+		<property name="isicActivity" type="java.lang.String" />
+		<property name="surveyID" type="java.lang.String" />
+		<property name="act" type="java.lang.String" />
+		<property name="isicDescription" type="java.lang.String" />
+		<property name="activity" type="java.lang.String" />
+		<property name="actDesc" type="java.lang.String" />
+		<property name="licans" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ValidateSareholderData">
+		<property name="bpno" type="java.lang.String" />
+		<property name="bpType" type="java.lang.String" />
+		<property name="bpname" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+		<property name="companycountry" type="java.lang.String" />
+		<property name="companycountrytext" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.ProdPsSetData">
+		<property name="investorid" type="java.lang.String" />
+		<property name="prdCode" type="java.lang.String" />
+		<property name="descr" type="java.lang.String" />
+		<property name="qty" type="java.lang.String" />
+		<property name="uom" type="java.lang.String" />
+		<property name="oomTxt" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.PreviewData">
+		<property name="id" type="java.lang.String">
+			<description>Id</description>
+		</property>
+		<property name="desc" type="java.lang.String">
+			<description>Description</description>
+		</property>
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ProductData">
+		<property name="sNo" type="java.lang.String" />
+		<property name="investorid" type="java.lang.String" />
+		<property name="prdCode" type="java.lang.String" />
+		<property name="descr" type="java.lang.String" />
+		<property name="qty" type="java.lang.String" />
+		<property name="uom" type="java.lang.String" />
+		<property name="uomTxt" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+	</bean>
+	<!--ProdDel -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ProductDelData">
+		<property name="sNo" type="java.lang.String" />
+		<property name="investorid" type="java.lang.String" />
+		<property name="prdCode" type="java.lang.String" />
+		<property name="descr" type="java.lang.String" />
+		<property name="qty" type="java.lang.String" />
+		<property name="uom" type="java.lang.String" />
+		<property name="uomTxt" type="java.lang.String" />
+		<property name="returnProperty" type="java.lang.String" />
+	</bean>
+	<!--NOT FOUND IN QEEMAH 1 ENTITIES LIST ($metadata) -->
+	 <bean class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ShareholderInfoData">
+        <property name="RefID" type="java.lang.String"/>
+        <property name="EntityNo" type="java.lang.String"/>
+        <property name="FileType" type="java.lang.String"/>
+        <property name="ShldrType" type="java.lang.String"/>
+        <property name="Exbpno" type="java.lang.String"/>
+        <property name="EntityFname" type="java.lang.String"/>
+        <property name="EntityLname" type="java.lang.String"/>
+        <property name="Gender" type="java.lang.String"/>
+        <property name="MaritalStatus" type="java.lang.String"/>
+        <property name="Academic" type="java.lang.String"/>
+        <property name="Dob" type="java.lang.String"/>
+        <property name="CcodeTele" type="java.lang.String"/>
+        <property name="Telephone" type="java.lang.String"/>
+        <property name="CcodeMobile" type="java.lang.String"/>
+        <property name="Mobile" type="java.lang.String"/>
+        <property name="CcodeFax" type="java.lang.String"/>
+        <property name="Fax" type="java.lang.String"/>
+        <property name="Email" type="java.lang.String"/>
+        <property name="Country" type="java.lang.String"/>
+        <property name="City" type="java.lang.String"/>
+        <property name="Street" type="java.lang.String"/>
+        <property name="PoBox" type="java.lang.String"/>
+        <property name="PostalCode" type="java.lang.String"/>
+        <property name="Website" type="java.lang.String"/>
+        <property name="CurrNationalty" type="java.lang.String"/>
+        <property name="PrevNationalty" type="java.lang.String"/>
+        <property name="CommMtd" type="java.lang.String"/>
+        <property name="Percentage" type="java.lang.String"/>
+        <property name="CompanyAge" type="java.lang.String"/>
+        <property name="Branches" type="java.lang.String"/>
+        <property name="Employees" type="java.lang.String"/>
+        <property name="FinStable" type="java.lang.String"/>
+        <property name="CultLandArea" type="java.lang.String"/>
+        <property name="NoGreenhouse" type="java.lang.String"/>
+        <property name="ApprMinistry" type="java.lang.String"/>
+        <property name="Stock12" type="java.lang.String"/>
+        <property name="Stock13" type="java.lang.String"/>
+        <property name="Stock14" type="java.lang.String"/>
+        <property name="CurrAssets12" type="java.lang.String"/>
+        <property name="CurrAssets13" type="java.lang.String"/>
+        <property name="CurrAssets14" type="java.lang.String"/>
+        <property name="CurrLiability12" type="java.lang.String"/>
+        <property name="CurrLiability13" type="java.lang.String"/>
+        <property name="CurrLiability14" type="java.lang.String"/>
+        <property name="NetSales12" type="java.lang.String"/>
+        <property name="NetSales13" type="java.lang.String"/>
+        <property name="NetSales14" type="java.lang.String"/>
+        <property name="TotAssets12" type="java.lang.String"/>
+        <property name="TotAssets13" type="java.lang.String"/>
+        <property name="TotAssets14" type="java.lang.String"/>
+        <property name="TotDebt12" type="java.lang.String"/>
+        <property name="TotDebt13" type="java.lang.String"/>
+        <property name="TotDebt14" type="java.lang.String"/>
+        <property name="NetIncome12" type="java.lang.String"/>
+        <property name="NetIncome13" type="java.lang.String"/>
+        <property name="NetIncome14" type="java.lang.String"/>
+        <property name="NetProfit12" type="java.lang.String"/>
+        <property name="NetProfit13" type="java.lang.String"/>
+        <property name="NetProfit14" type="java.lang.String"/>
+        <property name="Intrest12" type="java.lang.String"/>
+        <property name="Intrest13" type="java.lang.String"/>
+        <property name="Intrest14" type="java.lang.String"/>
+        <property name="BalShtAssest12" type="java.lang.String"/>
+        <property name="BalShtAssest13" type="java.lang.String"/>
+        <property name="BalShtAssest14" type="java.lang.String"/>
+        <property name="Return" type="java.lang.String"/>
+        <property name="Companycountry" type="java.lang.String"/>
+        <property name="passportnumber" type="java.lang.String"/>
+        <property name="SelfDelegate" type="java.lang.String"/>
+        <property name="PremiumResident" type="java.lang.String"/>
+        <property name="mofaNumber" type="java.lang.String"/>
+        <property name="mofaNumberVerified" type="java.lang.String"/>
+    </bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.DelegateInfoData">
+		<property name="RefID" type="java.lang.String" />
+		<property name="EntityNo" type="java.lang.String" />
+		<property name="Firstname" type="java.lang.String" />
+		<property name="Lastname" type="java.lang.String" />
+		<property name="Fullname" type="java.lang.String" />
+		<property name="Title" type="java.lang.String" />
+		<property name="Birthdate" type="java.lang.String" />
+		<property name="Nationality" type="java.lang.String" />
+		<property name="Gender" type="java.lang.String" />
+		<property name="MaritalStatus" type="java.lang.String" />
+		<property name="CcodeTele" type="java.lang.String" />
+		<property name="Telephone" type="java.lang.String" />
+		<property name="CcodeMobile" type="java.lang.String" />
+		<property name="Mobile" type="java.lang.String" />
+		<property name="Email" type="java.lang.String" />
+		<property name="Country" type="java.lang.String" />
+		<property name="City" type="java.lang.String" />
+		<property name="PoBox" type="java.lang.String" />
+		<property name="PostalCode" type="java.lang.String" />
+		<property name="IdNumber" type="java.lang.String" />
+		<property name="IdType" type="java.lang.String" />
+		<property name="IdIssueDate" type="java.lang.String" />
+		<property name="NicVerified" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ShareholderAttachmentData">
+		<property name="refId" type="java.lang.String" />
+		<property name="entityNumber" type="java.lang.String" />
+		<property name="fileType" type="java.lang.String" />
+		<property name="fileName" type="java.lang.String" />
+		<property name="fileContent" type="java.lang.String" />
+		<property name="fileMtype" type="java.lang.String" />
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.DelegateAttachmentData"
+		extends="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ShareholderAttachmentData">
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.EntrepreneurFileData">
+		<property name="refId" type="java.lang.String" />
+		<property name="fileType" type="java.lang.String" />
+		<property name="fileName" type="java.lang.String" />
+		<property name="fileContent" type="java.lang.String" />
+		<property name="fileMtype" type="java.lang.String" />
+	</bean>
+	<!--/ZQEEMAH 1 -->
+
+
+	<!--ZQEEMAH 2 -->
+
+	<!--QeemahGeneralQst -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.QeemahGeneralQstData">
+		<property name="Language" type="java.lang.String" />
+		<property name="Refid" type="java.lang.String" />
+		<property name="QuestionId" type="java.lang.String" />
+		<property name="Sectionno" type="java.lang.String" />
+		<property name="QuestionTxt" type="java.lang.String" />
+		<property name="QuestionType" type="java.lang.String" />
+		<property name="NavGeneralQuest"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zqeemah2.QeemahGeneralddData&gt;" />
+	</bean>
+	<!--QeemahGeneraldd -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.QeemahGeneralddData">
+		<property name="Zkey" type="java.lang.String" />
+		<property name="Value" type="java.lang.String" />
+	</bean>
+	<!--Generalqpost -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.GeneralQuestionPostData">
+		<property name="QuestionId" type="java.lang.String" />
+		<property name="Answerkey" type="java.lang.String" />
+		<property name="QuestionTxt" type="java.lang.String" />
+		<property name="Answer" type="java.lang.String" />
+	</bean>
+	<!--invsidpost -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.InvsIdPostData">
+		<property name="Investorid" type="java.lang.String" />
+		<property name="NavGeqPost"
+			type="java.util.Collection&lt;com.sap.ibso.eservices.sagiaservices.data.zqeemah2.GeneralQuestionPostData&gt;" />
+		<!--<NavigationProperty Name="NavGeqPost" Relationship="ZQEEMAH2_EXT_SRV.AssGeqPost" 
+			FromRole="FromRole_AssGeqPost" ToRole="ToRole_AssGeqPost"/> -->
+	</bean>
+	<!--FinancialQues -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.FinancialQuestionData">
+		<property name="QuestionId" type="java.lang.String" />
+		<property name="Sectionno" type="java.lang.String" />
+		<property name="Language" type="java.lang.String" />
+		<property name="QuestionTxt" type="java.lang.String" />
+		<property name="QuestionType" type="java.lang.String" />
+		<!--<NavigationProperty Name="NavFinQues" Relationship="ZQEEMAH2_EXT_SRV.AssFinQuest" 
+			FromRole="FromRole_AssFinQuest" ToRole="ToRole_AssFinQuest"/> -->
+		<property name="NavFinQues"
+			type="java.util.Collection&lt;com.sap.ibso.eservices.sagiaservices.data.zqeemah2.FinancialQuestionDropdownData&gt;" />
+	</bean>
+	<!--FinancialQuesdd -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.FinancialQuestionDropdownData">
+		<property name="Zkey" type="java.lang.String" />
+		<property name="Value" type="java.lang.String" />
+	</bean>
+	<!--fininvisidpost -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.FininvisidPostData">
+		<property name="Investorid" type="java.lang.String" />
+		<property name="Zreturn" type="java.lang.String" />
+		<property name="NavFinqPost"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zqeemah2.FinancialPostData&gt;" />
+	</bean>
+	<!--FinancialPost -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.FinancialPostData">
+		<property name="QuestionId" type="java.lang.String" />
+		<property name="Answerkey" type="java.lang.String" />
+		<property name="QuestionTxt" type="java.lang.String" />
+		<property name="Answer" type="java.lang.String" />
+	</bean>
+	<!--keyISIC -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.KeyISICData">
+		<property name="Zkey" type="java.lang.String" />
+		<property name="Value" type="java.lang.String" />
+	</bean>
+	<!--opp_service_creation -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.OppServiceCreationData">
+		<property name="Oppid" type="java.lang.String" />
+		<property name="Zreturn" type="java.lang.String" />
+		<property name="Refid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+		<property name="AdvLicNo" type="java.lang.String" />
+		<property name="NavAttach"
+			type="java.util.Collection&lt;com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AttachmentData&gt;" />
+		<!--<NavigationProperty Name="NavAttach" Relationship="ZQEEMAH2_EXT_SRV.AssAttach" 
+			FromRole="FromRole_AssAttach" ToRole="ToRole_AssAttach"/> -->
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.ServiceRequestCreationData">
+		<property name="ServiceReqId" type="java.lang.String" />
+		<property name="Zreturn" type="java.lang.String" />
+		<property name="Refid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+		<property name="AdvLicNo" type="java.lang.String" />
+		<property name="NavAttach"
+			type="java.util.Collection&lt;com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AttachmentData&gt;" />
+		<!--<NavigationProperty Name="NavAttach" Relationship="ZQEEMAH2_EXT_SRV.AssAttach" 
+			FromRole="FromRole_AssAttach" ToRole="ToRole_AssAttach"/> -->
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.odata.ODataServiceRequestCreationData">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Advlicno" type="java.lang.String" />
+		<property name="Objectid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+		<property name="Return" type="java.lang.String" />
+		<!--<NavigationProperty Name="NavAttach" Relationship="ZQEEMAH2_EXT_SRV.AssAttach" 
+			FromRole="FromRole_AssAttach" ToRole="ToRole_AssAttach"/> -->
+	</bean>
+
+
+	<!--opp_service2 -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.OppService2Data">
+		<property name="Oppid" type="java.lang.String" />
+		<property name="Zreturn" type="java.lang.String" />
+		<property name="Refid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.ServiceRequestMDData">
+		<property name="ServiceReqId" type="java.lang.String" />
+		<property name="Zreturn" type="java.lang.String" />
+		<property name="Refid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+	</bean>
+
+	<!--attachments -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AttachmentData">
+		<property name="Attachcode" type="java.lang.String" />
+		<property name="Content" type="java.lang.String" />
+		<property name="Filename" type="java.lang.String" />
+		<property name="Mimetype" type="java.lang.String" />
+	</bean>
+	<!--displayattachdescrip -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.DisplayAttachmentDescriptionData">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Questiontexten" type="java.lang.String" />
+		<property name="Attachcode" type="java.lang.String" />
+		<property name="Attachdescen" type="java.lang.String" />
+		<property name="Attachdescar" type="java.lang.String" />
+	</bean>
+	<!--Basic_org_info -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.BasicOrganizationInformationData">
+		<property name="Q2companyname" type="java.lang.String" />
+		<property name="Q2investment" type="java.lang.String" />
+		<property name="Q2legalstatustext" type="java.lang.String" />
+		<property name="Q2city" type="java.lang.String" />
+		<property name="Q2regiontext" type="java.lang.String" />
+		<property name="Q2qeemah" type="java.lang.String" />
+		<property name="Q2citytext" type="java.lang.String" />
+		<property name="Q2refid" type="java.lang.String" />
+		<property name="Q2region" type="java.lang.String" />
+		<property name="Q2return" type="java.lang.String" />
+		<property name="Q2entnameEn" type="java.lang.String" />
+		<property name="Q2entnameAr" type="java.lang.String" />
+		<property name="Q2legalstatus" type="java.lang.String" />
+		<property name="Q2laboursize" type="java.lang.String" />
+		<property name="Q2capital" type="java.lang.String" />
+	</bean>
+	<!--Basic_cont_info -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.BasicContactInfoData">
+		<property name="q2countrytext" type="java.lang.String" />
+		<property name="q2mobilecde" type="java.lang.String" />
+		<property name="q2refid" type="java.lang.String" />
+		<property name="q2nationaitytext" type="java.lang.String" />
+		<property name="q2telecode" type="java.lang.String" />
+		<property name="q2firstname" type="java.lang.String" />
+		<property name="q2gendertext" type="java.lang.String" />
+		<property name="q2lastname" type="java.lang.String" />
+		<property name="q2roletext" type="java.lang.String" />
+		<property name="q2gender" type="java.lang.String" />
+		<property name="q2country" type="java.lang.String" />
+		<property name="q2nationaity" type="java.lang.String" />
+		<property name="q2role" type="java.lang.String" />
+		<property name="q2mobileno" type="java.lang.String" />
+		<property name="q2teleno" type="java.lang.String" />
+		<property name="q2email" type="java.lang.String" />
+		<property name="q2returnproperty" type="java.lang.String" />
+		<property name="q2qeemah" type="java.lang.String" />
+	</bean>
+	<!--Shareholder -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.ShareholderData">
+		<property name="Q2nationalityt" type="java.lang.String" />
+		<property name="Q2refid" type="java.lang.String" />
+		<property name="Q2share" type="java.lang.String" />
+		<property name="Q2name" type="java.lang.String" />
+		<property name="Q2nationaity" type="java.lang.String" />
+		<property name="Q2sharetype" type="java.lang.String" />
+		<property name="Q2shareper" type="java.lang.String" />
+		<property name="Q2legalstatus" type="java.lang.String" />
+		<property name="Q2return" type="java.lang.String" />
+		<property name="Q2qeemah" type="java.lang.String" />
+	</bean>
+	<!--createmshareholder -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.CreateMShareholderData">
+		<property name="Q2share" type="java.lang.String" />
+		<property name="Q2name" type="java.lang.String" />
+		<property name="Q2nationaity" type="java.lang.String" />
+		<property name="Q2sharetype" type="java.lang.String" />
+		<property name="Q2shareper" type="java.lang.String" />
+		<property name="Q2legalstatus" type="java.lang.String" />
+		<property name="Q2return" type="java.lang.String" />
+		<property name="Q2qeemah" type="java.lang.String" />
+	</bean>
+	<!--Shareholderinvs -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.ShareholderInvsData">
+		<property name="Refid" type="java.lang.String" />
+		<!--<NavigationProperty Name="NavShare" Relationship="ZQEEMAH2_EXT_SRV.AssShare" 
+			FromRole="FromRole_AssShare" ToRole="ToRole_AssShare"/> -->
+	</bean>
+	<!--updatelictypediv -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.UpdateLicenseTypeDivisionData">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Isicsec" type="java.lang.String" />
+		<property name="Isicdiv" type="java.lang.String" />
+		<property name="Licensetype" type="java.lang.String" />
+	</bean>
+	<!--ISICdetermination -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.IsicDeterminationData">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Isicsec" type="java.lang.String" />
+		<property name="Isicdiv" type="java.lang.String" />
+		<property name="Licensetype" type="java.lang.String" />
+	</bean>
+	<!--Licesnetype -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.LicesneTypeData">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Isicsec" type="java.lang.String" />
+		<property name="Isicdiv" type="java.lang.String" />
+		<property name="Licensetype" type="java.lang.String" />
+	</bean>
+	<!--LicenseType -->
+	<!--<bean class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.LicenseTypeData"> 
+		<property name="Zkey" type="java.lang.String"/> <property name="Value" type="java.lang.String"/> 
+		</bean> -->
+	<!--LegalStatus -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.LegalStatusData">
+		<property name="Legalkey" type="java.lang.String" />
+		<property name="Legalvalue" type="java.lang.String" />
+	</bean>
+	<!--answeredquestiondisplay -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AnsweredQuestionDisplayData">
+		<property name="Answerkey" type="java.lang.String" />
+		<property name="Qid" type="java.lang.String" />
+		<property name="Question" type="java.lang.String" />
+		<property name="Answer" type="java.lang.String" />
+	</bean>
+	<!--DiffQeemah -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.DiffQeemahData">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Qeemah" type="java.lang.String" />
+	</bean>
+	<!--DropdownValues -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.DropdownValueData">
+		<property name="Q2regiontext" type="java.lang.String" />
+		<property name="Q2langu" type="java.lang.String" />
+		<property name="Q2legalstatus" type="java.lang.String" />
+		<property name="Q2uom" type="java.lang.String" />
+		<property name="Q2city" type="java.lang.String" />
+		<property name="Q2legalstatustext" type="java.lang.String" />
+		<property name="Q2uomtext" type="java.lang.String" />
+		<property name="Q2citytext" type="java.lang.String" />
+		<property name="Q2product" type="java.lang.String" />
+		<property name="Q2natio" type="java.lang.String" />
+		<property name="Q2producttext" type="java.lang.String" />
+		<property name="Q2natiotext" type="java.lang.String" />
+		<property name="Q2country" type="java.lang.String" />
+		<property name="Q2countrytext" type="java.lang.String" />
+		<property name="Q2region" type="java.lang.String" />
+		<property name="Q2flag" type="java.lang.String" />
+	</bean>
+	<!--UpdateISICdet -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.UpdateIsicDetailsData">
+		<property name="Language" type="java.lang.String" />
+		<property name="Qid" type="java.lang.String" />
+		<property name="Zsection" type="java.lang.String" />
+		<property name="Division" type="java.lang.String" />
+		<property name="Sectiontext" type="java.lang.String" />
+		<property name="Divisiontext" type="java.lang.String" />
+	</bean>
+	<!--UpdateISIClang -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.UpdateIsicLanguageData">
+		<property name="Language" type="java.lang.String" />
+		<property name="Questionid" type="java.lang.String" />
+		<!--<NavigationProperty Name="NavISIC" Relationship="ZQEEMAH2_EXT_SRV.AssISIC" 
+			FromRole="FromRole_AssISIC" ToRole="ToRole_AssISIC"/> -->
+	</bean>
+	<!--AnsQuesSection -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AnsweredQuestionSectionData">
+		<property name="Q2section" type="java.lang.String" />
+		<property name="Q2refid" type="java.lang.String" />
+		<!--<NavigationProperty Name="NavAnsQues" Relationship="ZQEEMAH2_EXT_SRV.AssAnsQues" 
+			FromRole="FromRole_AssAnsQues" ToRole="ToRole_AssAnsQues"/> -->
+	</bean>
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.ISICDetailsData">
+		<property name="Q2sectionno" type="java.lang.String" />
+		<property name="Q2sectiondesc" type="java.lang.String" />
+		<property name="Q2divisionno" type="java.lang.String" />
+		<property name="Q2divisiondesc" type="java.lang.String" />
+		<property name="Q2activityno" type="java.lang.String" />
+		<property name="Q2activitydesc" type="java.lang.String" />
+		<property name="Q2complimentaryno" type="java.lang.String" />
+		<property name="Q2complimentarydesc" type="java.lang.String" />
+		<property name="Q2licno" type="java.lang.String" />
+		<property name="Q2licdesc" type="java.lang.String" />
+	</bean>
+	<!--Product -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.ProductData">
+		<property name="Q2refid" type="java.lang.String" />
+		<property name="Q2sno" type="java.lang.String" />
+		<property name="Q2prdcode" type="java.lang.String" />
+		<property name="Q2descr" type="java.lang.String" />
+		<property name="Q2qty" type="java.lang.String" />
+		<property name="Q2uom" type="java.lang.String" />
+		<property name="Q2uomtxt" type="java.lang.String" />
+		<property name="Q2return" type="java.lang.String" />
+	</bean>
+	<!--Government_Contract_det -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.GovernmentContractDetailsData">
+		<property name="Q2governConId" type="java.lang.String" />
+		<property name="Q2governConNameT" type="java.lang.String" />
+		<property name="Q2governEnddate" type="java.lang.String" />
+		<property name="Q2governConName" type="java.lang.String" />
+		<property name="Q2governStartdate" type="java.lang.String" />
+		<property name="Q2refid" type="java.lang.String" />
+	</bean>
+	<!--Attachementheader -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AttachmentHeaderData">
+		<property name="Q2refid" type="java.lang.String" />
+		<property name="Q2return" type="java.lang.String" />
+		<!--<NavigationProperty Name="NavAttachments" Relationship="ZQEEMAH2_EXT_SRV.AssAttachements" 
+			FromRole="FromRole_AssAttachements" ToRole="ToRole_AssAttachements"/> -->
+	</bean>
+	<!--attachementupdation -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AttachmentUpdateData">
+		<property name="Attachcode" type="java.lang.String" />
+		<property name="Filename" type="java.lang.String" />
+		<property name="Mimetype" type="java.lang.String" />
+		<property name="Content" type="java.lang.String" />
+	</bean>
+	<!--CreatedAttachments -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.CreatedAttachmentsData">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Questiontexten" type="java.lang.String" />
+		<property name="Attachcode" type="java.lang.String" />
+		<property name="Attachdescen" type="java.lang.String" />
+		<property name="Attachdescar" type="java.lang.String" />
+	</bean>
+	<!--Government_Entity -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.GovernmentEntityData">
+		<property name="Q2entitykey" type="java.lang.String" />
+		<property name="Q2entityname" type="java.lang.String" />
+	</bean>
+	<!--ProductId -->
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.ProductIdData">
+		<property name="Productid" type="java.lang.String" />
+		<property name="Uom" type="java.lang.String" />
+		<property name="Uomtext" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.LicenseTypeData">
+		<property name="Bpid" type="java.lang.String" />
+		<property name="Lictype" type="java.lang.String" />
+		<property name="Lictypetext" type="java.lang.String" />
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.sagiaservices.data.DraftData">
+		<property name="id" type="java.lang.String" />
+		<property name="url" type="java.lang.String" />
+		<property name="parameters"
+			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.DraftParameter&gt;" />
+		<property name="files"
+			type="java.util.List&lt;org.springframework.web.multipart.MultipartFile&gt;" />
+		<property name="attachmentsNames"
+			type="java.util.List&lt;String&gt;" />
+		<property name="attachmentsInputNames"
+			type="java.util.List&lt;String&gt;" />
+		<property name="draftFiles"
+			type="java.util.List&lt;String&gt;" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.DraftJsonData">
+		<property name="serviceId" type="java.lang.String" />
+		<property name="json" type="java.lang.String" />
+		<property name="url" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.DraftParameter">
+		<property name="name" type="java.lang.String" />
+		<property name="value" type="java.lang.String" />
+		<property name="type" type="java.lang.String" />
+		<property name="fileName" type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.GovtDocCheck">
+		<property name="Partner" type="String" />
+		<property name="AutorenEligible" type="String" />
+		<property name="EnforcePopup" type="String" />
+		<property name="AutorenEligPrev" type="String" />
+		<property name="RedirectFlag" type="String" />
+		<property name="ErrorMsg" type="String" />
+		<property name="AutorrfcEligible" type="String" />
+		<property name="EnforceRfcPopup" type="String" />
+		<property name="AutorfcEligPrev" type="String" />
+		<property name="RedirectRfcFlag" type="String" />
+	</bean>
+
+	<bean
+		class="com.sap.ibso.eservices.sagiaservices.data.RemovePopupALR">
+		<property name="Partner" type="String" />
+		<property name="Sucess" type="String" />
+		<property name="ErrorMsg" type="String" />
+	</bean>
+
+	<!--ZQEEMAH 2 -->
+</beans>

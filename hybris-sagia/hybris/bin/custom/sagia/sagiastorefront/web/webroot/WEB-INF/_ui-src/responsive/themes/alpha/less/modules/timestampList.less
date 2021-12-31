@@ -1,0 +1,55 @@
+.timestampList {
+	
+	padding: 0 15px;
+	margin: 0;
+	list-style-type: none;
+	
+	&-item {
+		padding: 24px 0;
+		margin: 0 -15px;
+		display: flex;
+		flex-wrap: wrap;
+		#media-breakpoint-up(md, {
+			flex-wrap: nowrap;
+		});		
+	}
+	
+	&-info {
+		padding: 0 15px;
+		width: 100px;
+		flex: 1 0 100%;
+		margin-bottom: 8px;
+		
+		#media-breakpoint-up(md, {
+			margin-bottom: 0;
+			flex: 0 0 33.33333333%;
+			max-width: 33.33333333%;
+		});			
+	}
+	
+	&-message {
+		padding: 0 15px;
+		flex: 1 1 auto;
+	}
+	
+	&-timestampLabel {
+		color: #b7c5cd;
+		display: inline-block;
+		margin-right: 8px;
+	}
+	
+	&-timestamp {
+		white-space: nowrap;
+	}
+	
+	&-message {
+		
+		p {
+			margin-bottom: 8px;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

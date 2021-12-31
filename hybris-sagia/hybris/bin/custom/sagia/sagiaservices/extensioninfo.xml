@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+    <extension abstractclassprefix="Generated" classprefix="Sagiaservices" managername="SagiaServicesManager"
+               managersuperclass="de.hybris.platform.jalo.extension.Extension" name="sagiaservices" usemaven="false">
+        <!-- for more information on maven managed libraries please consult https://wiki.hybris.com/x/Nq8sDQ -->
+
+        <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->
+        <requires-extension name="sapcore"/> <!-- to use GenericFactory for accessing Spring beans in scope sapSession -->
+        <requires-extension name="sagiabol"/> <!-- to access SAP backend services -->
+        <requires-extension name="basecommerce"/> <!--to access for base store service -->
+        <requires-extension name="sagiacore"/>
+
+        <coremodule generated="true" manager="com.sap.ibso.eservices.sagiaservices.jalo.SagiaServicesManager"
+                    packageroot="com.sap.ibso.eservices.sagiaservices"/>
+
+        <webmodule jspcompile="false" webroot="/sagiaservices"/>
+    </extension>
+</extensioninfo>

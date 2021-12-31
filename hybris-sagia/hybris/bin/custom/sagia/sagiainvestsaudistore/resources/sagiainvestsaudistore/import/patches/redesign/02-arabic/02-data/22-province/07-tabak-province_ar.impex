@@ -1,0 +1,164 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleAr = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                    ; realFileName                  		 	; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+																            												 
+					   ; tabuk-banner-image.png   			    ; tabuk-banner-image.png   					; $siteResource/tabuk-banner-image.png   	                     		  ;                 image/png                ;                                          ; ""     ;
+					   ; tabuk-map.png     			 		    ; tabuk-map.png     						; $siteResource/tabuk-map.png     			                              	  ;                 image/png                ;                                          ; ""     ;
+					   ; tabuk-tourism.png       			   	; tabuk-tourism.png       	    			; $siteResource/tabuk-tourism.png       		                                               ;                 image/png                ;                                          ; ""     ;
+					   ; tabuk-technology.png      		       	; tabuk-technology.png        				; $siteResource/tabuk-technology.png                                                     ;                 image/png                ;                                          ; ""     ;
+					   ; tabuk-trading.png      			    ; tabuk-trading.png      	    			; $siteResource/tabuk-trading.png      			                                                 ;                 image/png                ;                                          ; ""     ;
+					   ; tabuk-renewable-energy.png		   		; tabuk-renewable-energy.png    			; $siteResource/tabuk-renewable-energy.png		                                             	  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-logistics.png       		   		; tabuk-logistics.png         				; $siteResource/tabuk-logistics.png                                                      ;                 image/png                ;                                          ; ""     ;   
+					   
+
+
+
+
+
+						
+					   ; tabuk-population.png        		            		; tabuk-population.png        			; $siteResource/tabuk-population.png        		                                  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-airport.png    					               	; tabuk-airport.png    				   	; $siteResource/tabuk-airport.png    				                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-private-sector-employees.png  	            	; tabuk-private-sector-employees.png  ; $siteResource/tabuk-private-sector-employees.png                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-seaport.png              			              	; tabuk-seaport.png              			; $siteResource/tabuk-seaport.png              			                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-active-factories.png  		              		; tabuk-active-factories.png  			; $siteResource/tabuk-active-factories.png  		                             		  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-dams.png        					              	; tabuk-dams.png        					; $siteResource/tabuk-dams.png        					                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-chambers-of-commerce.png 			              	; tabuk-chambers-of-commerce.png 		    ; $siteResource/tabuk-chambers-of-commerce.png 		                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-hotels.png              			              	; tabuk-hotels.png              		    ; $siteResource/tabuk-hotels.png              		                             	  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-industrial-city.png      		            		; tabuk-industrial-city.png      		  	; $siteResource/tabuk-industrial-city.png      		                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-sport-city.png					              	; tabuk-sport-city.png				    ; $siteResource/tabuk-sport-city.png				                                  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-roads-length.png           	            		; tabuk-roads-length.png           		; $siteResource/tabuk-roads-length.png           	                                   	  ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-hospitals.png                               		; tabuk-hospitals.png                 	; $siteResource/tabuk-hospitals.png                                                     ;                 image/png                ;                                          ; ""     ;   					
+					   ; tabuk-towns.png							              	; tabuk-towns.png							; $siteResource/tabuk-towns.png													  		  ;                 image/png                ;											; ""	 ;
+					   		  				  
+																					  
+					   ; tabuk-electricity-infrastructure.png            	; tabuk-electricity-infrastructure.png             	; $siteResource/tabuk-electricity-infrastructure.png                                    ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-mega-giga-projects.png                    	; tabuk-mega-giga-projects.png                    	; $siteResource/tabuk-mega-giga-projects.png                                			  ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-solar-energy-potential.png                	; tabuk-solar-energy-potential.png                	; $siteResource/tabuk-solar-energy-potential.png                                 		  ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-tourism-potential.png                         ; tabuk-tourism-potential.png                     	; $siteResource/tabuk-tourism-potential.png                                             ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-proximity-egypt-Jordan-southern-europe.png    ; tabuk-proximity-egypt-Jordan-southern-europe.png  ; $siteResource/tabuk-proximity-egypt-Jordan-southern-europe.png                        ;                 image/png                ;                                          ; ""     ;   	
+					   
+					   
+					   
+					   ; tabuk-neom.png				     	; tabuk-neom.png				      	; $siteResource/tabuk-neom.png				                              ;                 image/png                ;                                          ; ""     ;   
+					   ; tabuk-redsea-project.png		 	; tabuk-redsea-project.png		 	; $siteResource/tabuk-redsea-project.png		              			  ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-amaala.png				 	; tabuk-amaala.png				 	; $siteResource/tabuk-amaala.png				                   		  ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-renewable-energy-office.png    ; tabuk-renewable-energy-office.png	; $siteResource/tabuk-renewable-energy-office.png                         ;                 image/png                ;                                          ; ""     ;   	
+					   ; tabuk-high-end.png				     ; tabuk-high-end.png				 ; $siteResource/tabuk-high-end.png				                          ;                 image/png                ;                                          ; ""     ;   	
+					   
+					   
+
+
+	
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=ar]			; bannerText[lang=ar]																	; bannerImage (code, $contentCV)	; keyFactsHeader [lang = ar]		 ; keyStrengthsHeader [lang = ar] 	 ; opportunitiesHeader [lang = ar]		
+							   ; tabuk		    ;		        	; منطقة تبوك			        ; تعد منطقة تبوك بوابة المملكة العربية السعودية الشمالية إلى شبه الجزيرة العربية. 		; tabuk-banner-image.png		    ; اهم المعلومات والأرقام	 			 ; المزايا المناطقية		 			 ; فرص استثمارية																																																							
+	
+	
+
+#########################################################	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 		 ;  $contentCV  ; headerText[lang = ar]      			; imageIcon  (code, $contentCV)     	 						; &componentRef
+											    ; tabuk-tourism		 		 ; 				; السياحة	    						; tabuk-tourism.png       	   									; tabuk-tourism		 		
+                                                ; tabuk-technology	 	 	 ;              ; التكنولوجيا	           				; tabuk-technology.png                    						; tabuk-technology	 	
+                                                ; tabuk-trading	 		 	 ;              ; التجارة      							; tabuk-trading.png      										; tabuk-trading	 		
+                                                ; tabuk-renewable-energy 	 ;             	; الطاقة المتجددة       				; tabuk-renewable-energy.png        							; tabuk-renewable-energy
+                                                ; tabuk-logistics 		 	 ;              ; الخدمات اللوجستية 					; tabuk-logistics.png                  							; tabuk-logistics 		
+	                                            
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = ar] ; value[lang = ar] 
+										; tabuk-strategic-population		;			   ; 949,612		; التعداد السكاني
+										; tabuk-strategic-landmass		;			   ; 136,000 	; المساحة
+
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = ar]	; backgroundImage (code, $contentCV)   	; sectors(&componentRef) 															   ; longDescription[lang = ar]																																																																																																																																																																																													; localizedStats (uid, $contentCV)   							; &componentRef
+												 ; tabuk-strategic-component		;          		; القطاعات الاستراتيجية			; tabuk-map.png							; tabuk-tourism,tabuk-technology,tabuk-trading,tabuk-renewable-energy,tabuk-logistics  ;  تشتهر تبوك بعدد من أهمّ المواقع الأثرية القديمة التي تعكس تاريخ المنطقة العريق وتروي حكاياتها اللامتناهية. تمثّل مدنها المطلّة على ساحل البحر الأحمر بداية الساحل السعودي وتمتاز بشواطئها النقية ورمالها الذهبية، مما يجعل من تبوك أبرز الوجهات السياحية في المملكة. تحتوي المنطقة على العديد من المشاريع الضخمة والكبرى التي تدعم رؤية 2030 وتنعش اقتصادها، منها مشروع نيوم ومشروع البحر الأحمر وأمالا. إضافة إلى ذلك، تتميز المنطقة بأعلى سرعة للرياح في المملكة مما يجعل منها موقعا مثاليا للاستثمار في الطاقة الشمسية وطاقة الرياح ومختلف موارد الطاقة المتجددة. يوجد في المنطقة أيضا بنية تحتية استثنائية مثل ميناء ضباء الذي تبلغ طاقته الاستيعابية 10مليون طن ويعتبر أقرب موانئ المملكة من قناة السويس. أما على الصعيد المعيشي، فتشتهر المنطقة بعدة مؤسسات تعليمية أبرزها جامعة تبوك، فضلًا عن 12 مستشفى. 		; tabuk-strategic-population,tabuk-strategic-landmass 		   ; tabuk-strategic-component                          
+                             
+
+							 
+
+#######################################################	
+
+
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]		 ; $contentCV ; imageIcon (code, $contentCV) 			; headerText[lang = ar]		   ;  text[lang = ar]										; &componentRef
+									   ; tabuk-keyfacts1	     ;			  ; tabuk-population.png        			; 949,612	                   ;  التعداد السكاني											; tabuk-keyfacts1
+									   ; tabuk-keyfacts2       	 ;            ; tabuk-airport.png    					; 3	                   	       ;  عدد المطارات الدولية وعدد 2 مطارات محلية            ; tabuk-keyfacts2 
+									   ; tabuk-keyfacts3         ;            ; tabuk-private-sector-employees.png      ; 139,119		               ;  اجمالي المشتغلين				                	; tabuk-keyfacts3 
+									   ; tabuk-keyfacts4         ;            ; tabuk-seaport.png              			; 1			                   ;  ميناء بحري                                              	; tabuk-keyfacts4 
+									   ; tabuk-keyfacts5         ;            ; tabuk-active-factories.png  			; 76		                   ;  عدد المصانع المنتجة في الربع الثالث 2021					        ; tabuk-keyfacts5 
+									   ; tabuk-keyfacts6         ;            ; tabuk-dams.png        					; 16		                   ;  عدد السدود									                ; tabuk-keyfacts6 
+									   ; tabuk-keyfacts7         ;            ; tabuk-chambers-of-commerce.png 			; 1			                   ;  عدد الغرف التجارية					                ; tabuk-keyfacts7 
+									   ; tabuk-keyfacts8         ;            ; tabuk-hotels.png              			; 20			               ;  عدد الفنادق						                        ; tabuk-keyfacts8 
+									   ; tabuk-keyfacts9         ;            ; tabuk-industrial-city.png      			; 1	                   	   	   ;  عدد المدن الصناعية                                      ; tabuk-keyfacts9 
+									   ; tabuk-keyfacts10        ;            ; tabuk-sport-city.png					; 1			               	   ;  عدد المدن الرياضية 			                                ; tabuk-keyfacts10
+									   ; tabuk-keyfacts11        ;            ; tabuk-roads-length.png           		; 3,965			               ;  مجموع أطوال الطرق -كم 					                        ; tabuk-keyfacts11
+									   ; tabuk-keyfacts12        ;            ; tabuk-hospitals.png                 	; 12		                   ;  عدد المستشفيات 2019 بمجموع 1,820 سرير							    ; tabuk-keyfacts12
+									   ; tabuk-keyfacts13        ;            ; tabuk-towns.png							; 7		                   	   ;  عدد المحافظات في المنطقة				                                    ; tabuk-keyfacts13
+									   									   
+		
+					   
+								
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]		; $contentCV      ; image (code, $contentCV)					         	; text[lang=ar]				          				 ;&componentRef
+                     					 
+										   ; tabuk-key-strength1 	;                 ; tabuk-electricity-infrastructure.png                    ; بنية تحتية للطاقة الكهربائية                    	  ; tabuk-key-strength1
+                                           ; tabuk-key-strength2 	;                 ; tabuk-mega-giga-projects.png                            ; مشاريع كبرى وضخمة                              ; tabuk-key-strength2
+                                           ; tabuk-key-strength3	;                 ; tabuk-solar-energy-potential.png                        ; إمكانات في مجال الطاقة الشمسية                             ; tabuk-key-strength3
+                                           ; tabuk-key-strength4	;                 ; tabuk-tourism-potential.png                             ; إمكانات سياحية                                   ; tabuk-key-strength4
+                                           ; tabuk-key-strength5 	;                 ; tabuk-proximity-egypt-Jordan-southern-europe.png        ; القرب الجغرافي من مصر والأردن وجنوب أوروبا      ; tabuk-key-strength5
+		   
+
+		   
+###################################################3			   
+
+
+INSERT_UPDATE ProvinceInvestmentOpportunitiesComponent	; uid[unique=true]		      ; $contentCV	  ; iconImage	(code, $contentCV)					         ; headerText[lang = ar]	                                     ; text[lang = ar]																															; &componentRef
+													                                                                                                                                                        
+														; tabuk-investment1			      ;               ; tabuk-neom.png				                                         ; مدينة نيوم						         ;  المدينة الأكثر طموحًا في العالم																						    ; tabuk-investment1	
+														; tabuk-investment2			      ;               ; tabuk-redsea-project.png		 		                             ; مشروع البحر الأحمر		                 ; مشروع ضخم بإمكانات نموّ كبيرة																									; tabuk-investment2	
+														; tabuk-investment3			      ;               ; tabuk-amaala.png				 			                         ; أمالا					                     ; وجهة سياحية جديدة لمحبّي الرفاه والاستجمام																			; tabuk-investment3	
+														; tabuk-investment4			      ;               ; tabuk-renewable-energy-office.png			                         ;  مكتب تطوير مشاريع الطاقة المتجددة 		 ; حدد م موقعين محتملين لمحطات الطاقة الشمسية وموقعين محتملين لمحطات طاقة الرياح													; tabuk-investment4	
+														; tabuk-investment5			      ;               ; tabuk-high-end.png				 			                         ; جودة عالية						             ; مرافق وبنية تحتية رقمية																											; tabuk-investment5	
+									 
+
+########################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																																					; keyStrengths(&componentRef) 																				  		; investmentOpportunities(&componentRef)
+							   ; tabuk		 		;				; tabuk-strategic-component 				; tabuk-keyfacts1,tabuk-keyfacts2 ,tabuk-keyfacts3 ,tabuk-keyfacts4 ,tabuk-keyfacts5 ,tabuk-keyfacts6, tabuk-keyfacts7 ,tabuk-keyfacts8 ,tabuk-keyfacts9 ,tabuk-keyfacts10,tabuk-keyfacts11,tabuk-keyfacts12,tabuk-keyfacts13   ; tabuk-key-strength1,tabuk-key-strength2,tabuk-key-strength3,tabuk-key-strength4,tabuk-key-strength5   ; tabuk-investment1,tabuk-investment2,tabuk-investment3,tabuk-investment4,tabuk-investment5
+	
+	
+

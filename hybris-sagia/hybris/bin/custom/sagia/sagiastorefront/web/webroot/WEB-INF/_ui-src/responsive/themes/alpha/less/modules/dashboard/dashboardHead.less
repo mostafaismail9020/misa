@@ -1,0 +1,76 @@
+.dashboardHead{
+	height: 300px;
+	background: #d9d9d9;
+	position: relative;
+
+	#media-breakpoint-down(xs,  {
+		margin-bottom: 0;
+	});
+
+	&Add{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		text-align: center;
+
+		&-text{
+			font-size: 18px;
+			color: #313f4b;
+			margin-bottom: 55px;
+			line-height: 40px;
+
+			svg{
+				fill: none;
+				stroke: @steel-grey;
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 20px;
+				width: 40px;
+				height: 40px;
+			}
+		}
+
+		&-link{
+			display: inline-block;
+			font-size: 15px;
+			color: @steel-grey;
+			line-height: 15px;
+
+			svg{
+				fill: none;
+				stroke: @steel-grey;
+				display: inline-block;
+				vertical-align: top;
+				width: 15px;
+				height: 15px;
+			}
+		}
+	}	
+
+
+
+	&Image{
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		&_defaultBackground {
+			background-image: url('../img/profile-background-img.png');
+			@media (-webkit-min-device-pixel-ratio: 2), 
+			(min-resolution: 192dpi) { 
+			    background-image: url('../img/profile-background-img@2x.png');
+			}
+		}
+	}	
+}
+
+
+#bannerUploadForm {
+	margin-bottom: 40px;
+}

@@ -1,0 +1,45 @@
+
+#### Impex For Davos ####
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails ; $contentCV[unique = true] ;uid[unique = true]	;keyValue[lang = en]  	;keyName[lang = en]	;
+							;							  ;davos-key-1          ;100        			;Event attendees	;
+							;							  ;davos-key-2          ;100       				;Booth Attendees	;
+
+
+INSERT_UPDATE Media; code[unique = true]            			; realFileName                    	 		;@media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]				; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;Davos-banner-image.jpg 			      		; Davos-banner-image.jpg  					; $siteResource/Davos-Banner-image.jpg                                         				; image/jpg                   ;                                          ; ""     ;
+                   ;Davos-thumbnail-image.jpg    		 		; Davos-thumbnail-image.jpg   	    	    ; $siteResource/Davos-thumbnail-image.jpg                                             		; image/jpg                   ;                                          ; ""     ;
+                   ;event-gallary-image.png       				; event-gallary-image.png        			; $siteResource/event-gallary-image.png                                           			; image/png                   ;                                          ; ""     ;
+
+				   
+INSERT_UPDATE MediaContainer; qualifier[unique = true]			; $medias					  				; $contentCV; 
+                            ; media-container-davos   			;  event-gallary-image.png    				;           ; 			   
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true] ;eventUrl(uid, $contentCV)		;eventLocation[lang = en]	;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss];eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+										;						  ;event-davos        ;									;"Switzerland" 			    ;22.01.2020 00:00:00                             ; ;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true] ;eventName[lang = en]				;eventShortInformation[lang = en] ;
+										;						  ;event-davos        ;Davos                            ;The World Economic Forum is one of the most important worldwide gatherings, bringing together decision-makers, corporate executives ,and international investors specializing in investments, foreign direct investment and the global economy ;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventKeyDetails(uid, $contentCV);
+										;						  ;event-davos 		 ;davos-key-1,davos-key-2  ;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventBannerImage(code, $contentCV);eventThumbnailImage(code, $contentCV);eventGalleryImages(qualifier, $contentCV);
+										;						  ;event-davos 		 ;Davos-banner-image.jpg 		    ;Davos-thumbnail-image.jpg 			  ;media-container-davos; 
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventFullDescription[lang = en];
+										;						  ;event-davos       ;								; 

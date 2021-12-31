@@ -1,0 +1,3 @@
+
+INSERT_UPDATE SagiaTermsAndConditionsAcceptanceEvent;name[unique=true];code[unique=true];
+;REGISTRATION;REG;

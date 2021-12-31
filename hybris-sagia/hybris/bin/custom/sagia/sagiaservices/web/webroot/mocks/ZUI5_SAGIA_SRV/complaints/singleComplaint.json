@@ -1,0 +1,66 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')",
+      "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+    },
+    "SrID": "10000781",
+    "SrGuid": "14FEB556-CA71-1ED5-83B7-C45662864203",
+    "LicID": "",
+    "LicGuid": "00000000-0000-0000-0000-000000000000",
+    "LicType": "",
+    "LicTypeDesc": "",
+    "BpID": "",
+    "BpGuid": "00000000-0000-0000-0000-000000000000",
+    "SrCrDate": "/Date(1433721600000)/",
+    "SrStCode": "E0010",
+    "SrStDesc": "Closed",
+    "LicExDate": null,
+    "ValidFrom": null,
+    "TransType": "ZRVR",
+    "Action": "00",
+    "BpName": "",
+    "ActionType": false,
+    "CompAndEnqHdrToDetailNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')/CompAndEnqHdrToDetailNav"
+      }
+    },
+    "CompAndEnqHdrToTextNav": {
+            "results": [
+                {
+                    "__metadata": {
+                        "id": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GetTexts(SrID='10002152',CommentDate=datetime'2018-09-07T00%3A00%3A00',CommentTime=time'PT12H44M04S',Zone='UTC%2B3',TdID='ZS10',Stage='')",
+                        "uri": "https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GetTexts(SrID='10002152',CommentDate=datetime'2018-09-07T00%3A00%3A00',CommentTime=time'PT12H44M04S',Zone='UTC%2B3',TdID='ZS10',Stage='')",
+                        "type": "ZUI5_SAGIA_SRV.GetText"
+                    },
+                    "SrID": "10002152",
+                    "SrGuid": "005056B1-5F93-1ED8-ACD0-51B6AB459FEE",
+                    "CommentDate": "/Date(1536278400000)/",
+                    "CommentTime": "PT12H44M04S",
+                    "Zone": "UTC+3",
+                    "CommentBy": "شركة إيه تي يو السعودية للتجارة",
+                    "TdID": "ZS10",
+                    "Comments": "test,test",
+                    "Stage": ""
+                }
+            ]
+        },
+    "CompAndEnqHdrToAttachNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')/CompAndEnqHdrToAttachNav"
+      }
+    },
+    "CompAndEnqHdrToContentNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')/CompAndEnqHdrToContentNav"
+      }
+    },
+    "CompAndEnqHdrToUploadAssoNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')/CompAndEnqHdrToUploadAssoNav"
+      }
+    }
+  }
+}

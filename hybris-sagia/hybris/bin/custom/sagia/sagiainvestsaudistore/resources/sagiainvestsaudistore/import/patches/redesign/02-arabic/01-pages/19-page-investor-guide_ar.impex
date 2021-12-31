@@ -1,0 +1,238 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalGuideTemplate
+$page = guide
+$pageNameAr = دليل المستثمر
+
+$pageTitleAr = $pageNameAr
+$pageLabel = /investor/guide
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+#$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]   ; title[lang = ar]; description[lang = ar]; keywords[lang = ar]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page                ; $pageTitleAr    ; $pageNameAr           ; 										  ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+
+############# MEDIA AND COMPONENTS START ######################
+
+
+INSERT_UPDATE Media	; code[unique = true]         							; realFileName             					                ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]			; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; investment-guide-bannerimage.png 						; investment-guide-bannerimage.png 			                ; $siteResource/investment-guide-bannerimage.png 	 								  	; image/png						;										   ; ""  ;
+					; business-day.png 										; business-day.png 							                ; $siteResource/business-day.png 					 								    ; image/png						;										   ; ""  ;
+					; documents.png 										; documents.png 							                ; $siteResource/documents.png 					 								  		; image/png						;										   ; ""  ;
+					
+					
+					; business-day-ar.png									; business-day-ar.png						                ; $siteResource/business-day-ar.png 					 								    ; image/png						;										   ; ""  ;
+					; documents-ar.png   									; documents-ar.png   						                ; $siteResource/documents-ar.png   				 								  		; image/png						;										   ; ""  ;
+										
+					; type-of-businesses-background.png 					; type-of-businesses-background.png 		                ; $siteResource/type-of-businesses-background.png 	 								  	; image/png						;										   ; ""  ;
+					; foreign-company-branch.svg 							; foreign-company-branch.svg 				                ; $siteResource/foreign-company-branch.svg 			 								  	; image/svg+xml						;										   ; ""  ;
+					; joint-stock-company.svg 								; joint-stock-company.svg 					                ; $siteResource/joint-stock-company.svg 				 								; image/svg+xml						;										   ; ""  ;
+					; limited-liability-company.svg 						; limited-liability-company.svg 			                ; $siteResource/limited-liability-company.svg 		 								  	; image/svg+xml						;										   ; ""  ;
+					; limited-liability-personcompany.svg 					; limited-liability-personcompany.svg 		                ; $siteResource/limited-liability-personcompany.svg 	 								; image/svg+xml						;										   ; ""  ;
+					; solidarity-professional-company.svg 					; solidarity-professional-company.svg 		                ; $siteResource/solidarity-professional-company.svg 	 								; image/svg+xml						;										   ; ""  ;
+					
+					
+					; agricultura-llicense.png 								; agricultura-llicense.png 									; $siteResource/agricultura-llicense.png 					 							; image/png						;										   ; ""  ;
+					; audiovisual-media-license.png 						; audiovisual-media-license.png 							; $siteResource/audiovisual-media-license.png 										  	; image/png						;										   ; ""  ;
+					; commercial-license.png 								; commercial-license.png 									; $siteResource/commercial-license.png 												  	; image/png						;										   ; ""  ;
+					; consulting-license-engineering-offices.png 			; consulting-license-engineering-offices.png				; $siteResource/consulting-license-engineering-offices.png							  	; image/png						;										   ; ""  ;
+					; consulting-license-technical-offices.png 				; consulting-license-technical-offices.png 					; $siteResource/consulting-license-technical-offices.png 	 							; image/png						;										   ; ""  ;
+					; entrepreneur-license.png 								; entrepreneur-license.png 									; $siteResource/entrepreneur-license.png 					 							; image/png						;										   ; ""  ;
+					; license-for-ascientific-office.png 					; license-for-ascientific-office.png 						; $siteResource/license-for-ascientific-office.png 									  	; image/png						;										   ; ""  ;
+					; license-forserving-agents-services.png 				; license-forserving-agents-services.png 					; $siteResource/license-forserving-agents-services.png 								  	; image/png						;										   ; ""  ;
+					; lndustrial-license.png 								; lndustrial-license.png 									; $siteResource/lndustrial-license.png 												  	; image/png						;										   ; ""  ;
+					; mining-license.png 									; mining-license.png 										; $siteResource/mining-license.png 													  	; image/png						;										   ; ""  ;
+					; printing-publishing-license.png 						; printing-publishing-license.png 							; $siteResource/printing-publishing-license.png 			 							; image/png						;										   ; ""  ;
+					; professional-license-Saudi-shareholder.png 			; professional-license-Saudi-shareholder.png				; $siteResource/professional-license-Saudi-shareholder.png							  	; image/png						;										   ; ""  ;
+					; province-real-estate-image.png						; province-real-estate-image.png							; $siteResource/province-real-estate-image.png														  	; image/png						;										   ; ""  ;
+					; services-license.png 									; services-license.png 										; $siteResource/services-license.png 						 							; image/png						;										   ; ""  ;
+					; transport-license.png 								; transport-license.png 									; $siteResource/transport-license.png 												  	; image/png						;										   ; ""  ;
+					
+					; 1.png													; 1.png														; $siteResource/1.png						 								  			; image/png						;										   ; ""  ;
+					; 2.png 												; 2.png 													; $siteResource/2.png 												  					; image/png						;										   ; ""  ;
+					; 2-documents-ar.png 									; 2-documents-ar.png 										; $siteResource/2-documents-ar.png 												  					; image/png						;										   ; ""  ;
+					
+					; 2-documents.png 										; 2-documents.png 											; $siteResource/2-documents.png 												  					; image/png						;										   ; ""  ;
+					
+					
+					; 2-documents-1.png									    ; 2-documents-1.png									     	; $siteResource/2-documents-1.png								 	 					; image/png						;										   ; ""  ;
+					; gcam-logo.png                                 	    ; gcam-logo.png                                 	     	; $siteResource/gcam-logo.png                                 	 						; image/png						;										   ; ""  ;
+					; ministry-of-foregin-affairs-logo.png          	    ; ministry-of-foregin-affairs-logo.png          	     	; $siteResource/ministry-of-foregin-affairs-logo.png          							; image/png						;										   ; ""  ;
+					; ministry-of-investment-logo1.png              	    ; ministry-of-investment-logo1.png              	     	; $siteResource/ministry-of-investment-logo1.png              							; image/png						;										   ; ""  ;
+					; ministry-of-investment-logo2.png     				    ; ministry-of-investment-logo2.png     				     	; $siteResource/ministry-of-investment-logo2.png     									; image/png						;										   ; ""  ;
+					; ministry-of-municipal-reral-affairs-logo1.png		    ; ministry-of-municipal-reral-affairs-logo1.png		     	; $siteResource/ministry-of-municipal-reral-affairs-logo1.png							; image/png						;										   ; ""  ;
+					; ministry-of-municipal-reral-affairs-logo2.png		    ; ministry-of-municipal-reral-affairs-logo2.png		     	; $siteResource/ministry-of-municipal-reral-affairs-logo2.png		 					; image/png						;										   ; ""  ;
+					; additional-doc-background-image.jpg		    		; additional-doc-background-image.jpg		     			; $siteResource/additional-doc-background-image.jpg		 								; image/png						;										   ; ""  ;
+			        ; public-buses-or-metros-license.png                    ; public-buses-or-metros-license.png                        ; $siteResource/public-buses-or-metros-license.png                              		; image/png						;										   ; ""  ;
+					; entrepreneurship-license.png              		    ; entrepreneurship-license.png              		     	; $siteResource/consulting-license-for-engineering-offices.png               			; image/png						;										   ; ""  ;
+					; consulting-license-for-engineering-offices.png	    ; consulting-license-for-engineering-offices.png		    ; $siteResource/consulting-license-for-engineering-offices.png							; image/png						;										   ; ""  ;
+					
+					
+					
+					; investor-journey-ar-01.png 	                            ; investor-journey-ar-01.png	     	                        ; $siteResource/investor-journey-ar-01.png						  							; image/png						;										   ; ""  ;
+					; investor-journey-ar-02.png 	                            ; investor-journey-ar-02.png	     	                        ; $siteResource/investor-journey-ar-02.png						  							; image/png						;										   ; ""  ;
+					; investor-journey-ar-03.png	                            ; investor-journey-ar-03.png	     	                        ; $siteResource/investor-journey-ar-03.png							  						; image/png						;										   ; ""  ;
+					; investor-journey-ar-04.png		                        ; investor-journey-ar-04.png	     	                        ; $siteResource/investor-journey-ar-04.png							  						; image/png						;										   ; ""  ;
+					; investor-journey-ar-05.png		                        ; investor-journey-ar-05.png	     	                        ; $siteResource/investor-journey-ar-05.png	 								  				; image/png						;										   ; ""  ;
+					
+					; investor-journey-01.png 	                            ; investor-journey-01.png	     	                        ; $siteResource/investor-journey-01.png						  							; image/png						;										   ; ""  ;
+					; investor-journey-02.png 	                            ; investor-journey-02.png	     	                        ; $siteResource/investor-journey-02.png						  							; image/png						;										   ; ""  ;
+					; investor-journey-03.png	                            ; investor-journey-03.png	     	                        ; $siteResource/investor-journey-03.png							  						; image/png						;										   ; ""  ;
+					; investor-journey-04.png		                        ; investor-journey-04.png	     	                        ; $siteResource/investor-journey-04.png							  						; image/png						;										   ; ""  ;
+					; investor-journey-05.png		                        ; investor-journey-05.png	     	                        ; $siteResource/investor-journey-05.png	 								  				; image/png						;										   ; ""  ;
+					
+					; ministry-of-investment-logo-2.png	    					; ministry-of-investment-logo-2.png 	     				; $siteResource/ministry-of-investment-logo-2.png 							  		; image/png						;										   ; ""  ;
+					; ministry-of-commerce-industry-ministry-justice-logo.png	; ministry-of-commerce-industry-ministry-justice-logo.png 	; $siteResource/ministry-of-commerce-industry-ministry-justice-logo.png 			; image/png						;										   ; ""  ;
+					; ministry-of-commerce-and-industry.png		    			; ministry-of-commerce-and-industry.png		     			; $siteResource/ministry-of-commerce-and-industry.png								; image/png						;										   ; ""  ;
+					; general-authority-zakat-tax.png	    					; general-authority-zakat-tax.png		     				; $siteResource/general-authority-zakat-tax.png								  		; image/png						;										   ; ""  ;
+					; general-organization-for-social-insurance.png	    		; general-organization-for-social-insurance.png		     	; $siteResource/general-organization-for-social-insurance.png		 				; image/png						;										   ; ""  ;
+					; human-resources-and-social-development.png	    		; human-resources-and-social-development.png		     	; $siteResource/human-resources-and-social-development.png		 					; image/png						;										   ; ""  ;
+					
+					
+
+
+
+###########################################################################
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]		 		; descriptionText[lang = ar]	 	; descriptionText2 [lang = ar]								     ; image(code, $contentCV)            ; buttonURL(&linkRef)     ; link   ; &componentRef           ; $contentCV[unique = true]
+										; investment-guide-banner    	    ; دليل المستثمر 	                ; كل ما تحتاج معرفته لبدأ رحلتك الاستثمارية بالسعودية             ; investment-guide-bannerimage.png   ;                         ; true   ; investment-guide-banner ;
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true] 			  	   ; simpleCMSComponents(&componentRef)   ; &componentRef					   ; $contentCV[unique = true]
+										; investment-guide-banner-container    ; investment-guide-banner 			 ; investment-guide-banner-container   ;
+
+
+################################################################
+
+
+INSERT_UPDATE InvestmentLicenseComponent ; uid[unique = true]	 ; headerText [lang = ar]	 ; localizedImage (code, $contentCV)[lang = ar]   ; description [lang = ar] 							; &componentRef ; $contentCV[unique = true]
+										 ; business-day			 ; يوم عمل   			  	 ; business-day-ar.png				  			  ;  يوم عمل واحد للحصول على رخصة الاستثمار 	; business-day	;	
+										 ; documents			 ; مستندات  				 ; documents-ar.png   				  			  ;  مُستندَين اثنَين فقط لإصدار رخصة الاستثمار    ; documents		;
+
+
+INSERT_UPDATE InvestmentLicenseContainer ; uid[unique = true] 				   ; title[lang=ar]          					                                                    ; simpleCMSComponents(&componentRef)                 ; longDescription [lang = ar]            																																																																							                                                                                                                               			; &componentRef    				; $contentCV[unique = true]
+										 ; investment-license-container		   ; <h2 class="title-heading invest_lic_first_text"> ابدا باستخراج رخصتك الاستثمارية  </h2>         ; business-day,documents		   	                  ; <p> حققت المملكة قفزة نوعيه في سهولة ممارسة الاعمال ، يأتي هذا التقدم نتيجة إحداث مجموعه من الإصلاحات و التحسينات المتنوعة والتي نفذتها المملكة على مستوى الأنظمة و اللوائح و الإجراءات .مما يؤكد عزمها على دعم ريادة الاعمال و القطاع الخاص للوصول الى إقتصاد مزدهر و حيوي .  </p> <p>تعمل وزارة الاستثمار على تقديم الدعم للمستثمرين أثناء جميع مراحل عملهم ، منذ التأسيس حتى بدء ممارسة الأعمال  وذلك من خلال "مراكز الخدامات "  المنتشرة في مختلف مناطق المملكة . </p>			; investment-license-container	;
+
+
+###################################################################
+
+INSERT_UPDATE BusinessesInvesterLicenseComponent ; uid[unique = true]	 	 ; icon (code, $contentCV)  				; text [lang = ar] 				          ; &componentRef 		  ; $contentCV[unique = true]
+                                                 ; businesses-invester1      ; foreign-company-branch.svg               ; شركة ذات مسؤولية محدودة                 ; businesses-invester1  ;              	
+                                                 ; businesses-invester2      ; joint-stock-company.svg 			        ; شركة الشخص الواحد ذات مسؤولية محدودة    ; businesses-invester2  ;
+                                                 ; businesses-invester3      ; limited-liability-company.svg 	        ; شركة مساهمة                             ; businesses-invester3  ;
+										         ; businesses-invester4      ; limited-liability-personcompany.svg      ; فرع لشركة أجنبية                        ; businesses-invester4  ;
+										         ; businesses-invester5      ; solidarity-professional-company.svg      ; شركة مهنية تضامنية                      ; businesses-invester5  ;
+										 				 
+INSERT_UPDATE BusinessesInvesterLicenseContainer ; uid[unique = true] 							; simpleCMSComponents(&componentRef)  																			  ; backgroundImage (code, $contentCV)	; title[lang=ar] 	                                                                                                                                          ; &componentRef                                ; longDescription [lang = ar]            																									                      ; $contentCV[unique = true]										 
+										         ; businesses-investment-license-container		; businesses-invester1,businesses-invester2,businesses-invester3 ,businesses-invester4,businesses-invester5		  ; type-of-businesses-background.png   ; <h2> ما هي أنواع </h2> <h2><strong>  الشركات </strong></h2> <h2>  التي يمكنها تتقدم بطلب </h2>  <h2><strong>  الحصول على رخصة الاستثمار؟ </strong></h2>             ; businesses-investment-license-container      ; تصدر كافة التراخيص على أساس مبدأ المعاملة المنصفة والمتساوية مما يضمن للمستثمرين الأجانب التمتع بالحقوق والالتزامات ذاتها التي يتمتع بها المستثمرين المحليين      ;  
+										 										 
+#########################################################################
+
+INSERT_UPDATE TypeOfInvestmentLicensesComponent ; uid[unique = true]	   	; text [lang = ar] 	                                     ; icon (code, $contentCV)                          ; longDescription [lang =ar]			                                                                                                                                                                                                                                                                  ; &componentRef 			 ; $contentCV[unique = true]
+                                                ; investment-licenses1		; الترخيص الزراعي                                        ; agricultura-llicense.png                         ;  يتم إصداره للشركات العاملة في مجال الزراعة.                                                                                                                                                                                                                                                            ; investment-licenses1     ;
+										        ; investment-licenses2		; ترخيص الإعلام المرئي والمسموع                            ; audiovisual-media-license.png                    ;  يتم إصداره للشركات العاملة في مجالي المرئي والمسموع.                                                                                                                                                                                                                                                   ; investment-licenses2	 ;
+										        ; investment-licenses3		; الترخيص التجاري                                        ; commercial-license.png                           ;  يتم إصداره  للشركات العامله في مجال تجارة الجملة والتجزئة.                                                                                                                                                                                                                                             ; investment-licenses3	 ;
+										        ; investment-licenses4      ; الترخيص الاستشاري للمكاتب الهندسية                      ; consulting-license-engineering-offices.png       ;  يتم إصدار هذا الترخيص للشركات التي تقدم خدمات الاستشارة الهندسية في المملكة العربية السعودية.                                                                                                                                                                                                           ; investment-licenses4     ;
+										        ; investment-licenses5      ; الترخيص الاستشاري لمكاتب الاتصال  الفنية) والاقتصادية     ; consulting-license-technical-offices.png         ;  يتم إصدار هذا الترخيص للمكاتب الاقتصادية والتقنية التابعة للدول الراغبة بالحصول على الترخيص.                                                                                                                                                                                                            ; investment-licenses5     ;
+										        ; investment-licenses6      ; الترخيص الريادي                                        ; entrepreneur-license.png                         ;  يتم إصدار هذا الترخيص لرواد الأعمال الراغبين بتأسيس شركات تقنية وابتكارية ناشئة وقابلة للتوسع والنمو مستقبلاً    في المملكة.                                                                                                                                                                              ; investment-licenses6     ;
+										        ; investment-licenses7      ; ترخيص مكتب علمي وفني                                   ; license-for-ascientific-office.png               ;  يتم إصدار هذا الترخيص للشركات التي ترغب في فتح مكتب يقدم الخدمات العلمية والتقنية لوكلاء وموزعي ومستهلكي منتجات الشركة.                                                                                                                                                                                 ; investment-licenses7     ;                 
+										        ; investment-licenses8      ; ترخيص نشاط وكلاء الاستقدام وتأجير خدمات العمالة المنزلية ; license-forserving-agents-services.png           ;  يتم إصدار هذا الترخيص للشركات التي تؤمن خدمات استقدام العمالة المنزلية ووكالات التشغيل المؤقت للخدمات المنزلية.                                                                                                                                                                                         ; investment-licenses8     ;
+										        ; investment-licenses9      ; الترخيص الصناعي                                        ; lndustrial-license.png                           ;  يتم إصداره لكافة أنواع الأنشطة الصناعية مثل الصناعات الثقيلة والخفيفة والصناعات التحويلية.                                                                                                                                                                                                              ; investment-licenses9     ;
+										        ; investment-licenses10     ; ترخيص التعدين                                          ; mining-license.png                               ;  يتم إصداره للشركات العاملة في مجال التعدين.                                                                                                                                                                                                                                                            ; investment-licenses10    ;                 
+										        ; investment-licenses11     ; ترخيص أنشطة المطبوعات والنشر                           ; printing-publishing-license.png                  ;  يتم إصداره للشركات العاملة في مجال المطبوعات والنشر.                                                                                                                                                                                                                                                   ; investment-licenses11    ;
+                                                ; investment-licenses12     ; الترخيص المهني بالشراكه مع مستثمر سعودي                ; professional-license-Saudi-shareholder.png       ;  يتم إصدار هذا الترخيص للشركات التي ترغب في ممارسة أنشطة مهنية في المملكة مع وجود شريك سعودي.                                                                                                                                                                                                           ; investment-licenses12    ;
+                                                ; investment-licenses13     ; الترخيص العقاري                                        ; province-real-estate-image.png                   ;  يتم إصداره للشركات العاملة  في القطاع العقاري.                                                                                                                                                                                                                                                         ; investment-licenses13    ;
+                                                ; investment-licenses14     ; الترخيص الخدمي                                         ; services-license.png                             ;  يتم إصدار الترخيص الخدمي  لأنشطة تقديم الخدمات التالية:  المقاولات ، الاستثمار الإداري، تقنية المعلومات، السياحة، التدريب، الرعاية الصحية، التأمين وإعادة التأمين، التعليم، الإعلان والإعلام، الخدمات اللوجستية، تنظيم المعارض، خدمات التموين والتغذية، الخدمات المالية، الطيران وخدمات المناولة.              ; investment-licenses14    ;
+					                            ; investment-licenses15     ; ترخيص النقل                                            ; transport-license.png                            ;  يتم إصداره لخدمات  النقل العام بالحافلات وبقطارات المترو داخل المدن ولأنشطة النقل العام الأخرى.                                                                                                                                                                                                           ; investment-licenses15    ;           
+
+												
+INSERT_UPDATE TypeOfInvestmentLicensesContainer ; uid[unique = true] 							; simpleCMSComponents(&componentRef)  																																																																									 ; title[lang=ar]        									                                                                           ; &componentRef    							           ; $contentCV[unique = true]
+												; type-of-investment-licenses-container			;investment-licenses1,investment-licenses2,investment-licenses3,investment-licenses4,investment-licenses5,investment-licenses6,investment-licenses7,investment-licenses8,investment-licenses9,investment-licenses10,investment-licenses11,investment-licenses12,investment-licenses13,investment-licenses14,investment-licenses15     	 ; <h2 class="invest_lic_first_text pt-5" >أنواع التراخيص التي بإمكانك طلب الحصول عليها</h2> <h2> في المملكة العربية السعودية</h2>     ; type-of-investment-licenses-container                  ; 
+					
+##############################################################################
+
+
+
+INSERT_UPDATE InvestorRequiredDocumentsComponent ; uid[unique = true] 			; icon (code, $contentCV)    ; longDescription [lang = ar] 																									; $contentCV[unique = true]																								 
+                                                 ; acquire-investor1-point1     ; 1.png                      ; صورة السجل التجاري للمنشأة في بلدها الأصلي مصادقة من السفارة السعودية                                                                 ;					
+					                             ; acquire-investor1-point2     ; 2.png                      ; القوائم المالية لآخر سنة مالية للشركة الأجنبية ، مُعدّة من قبل مكتب قانوني معترف به عالميًا ومصادق عليها من السفارة السعودية              ;
+					
+					
+INSERT_UPDATE OnlyTwoDocumentsInvestorLicenseComponent ; uid[unique = true] 	; localizedImage (code, $contentCV)[lang = ar]   		; description[lang = ar]                                            ; subText[lang = ar]                                  ;  &componentRef        ; text[lang = ar]                                                                ; documentsRequired(uid, $contentCV)         								 		; $contentCV[unique = true]					
+                                                       ; acquire-investor1      ; 2-documents-ar.png                     				; مستندَين اثنين فقط للحصول على ترخيص استثماري                ; لإصدار ترخيص استثماري،  يتطلب إحضار مستندَين اثنَين هما:      ;  acquire-investor1    ; *من الممكن أن يُطلب إحضار مستندات إضافية بحسب النشاط ونوع الترخيص المطلوب        ; acquire-investor1-point1, acquire-investor1-point2                               ;
+
+
+					
+INSERT_UPDATE OnlyTwoDocumentsInvestorLicenseContainer ; uid[unique = true]     				  ; simpleCMSComponents(&componentRef) 	  	  ; title[lang=ar]        											                                        ; &componentRef    						; $contentCV[unique = true]
+													   ; only-two-investor-license-container	  ; acquire-investor1  						  ; <h2 class="invest_lic_first_text">مستندين فقط  </h2> <h2>للحصول على ترخيصك الاستثماري </h2>           ; only-two-investor-license-container   ;		
+			
+
+
+
+
+			
+#####################################################################################
+
+
+INSERT_UPDATE AdditionalDocumentsLicenseComponent ; uid[unique = true] 		; icon (code, $contentCV)		                                 ; headerText [lang = ar] 						                    ; &componentRef                ; longDescription [lang = ar] 										 	                                                           ; $contentCV[unique = true]
+                                                  ; additional-documents1	; public-buses-or-metros-license.png                             ; ترخيص الحافلات أو قطارات المترو العامّة داخل المدن                 ; additional-documents1        ; <ul class="INS_li_ul_under"><li>  3 مستندات إضافية  </li> <li> 	 الجهة المرخصة : وزارة النقل  </li></ul>                       ;                                                                   
+                                                  ; additional-documents2   ; gcam-logo.png                                                  ; ترخيص الإعلام المرئي والمسموع                                      ; additional-documents2        ; <ul class="INS_li_ul_under"><li> مستند إضافي واحد  </li>  <li> الجهة المرخصة : الهيئة العامّة للإعلام المرئي والمسموع  </li></ul>    ;                                                       
+                                                  ; additional-documents3   ; ministry-of-foregin-affairs-logo.png                           ; ترخيص أنشطة المطبوعات والنشر                                     ; additional-documents3        ; <ul class="INS_li_ul_under"><li> مستند إضافي واحد  </li>  <li> الجهة المرخصة : وزارة الخارجية  </li></ul>                         ;                                                   
+                                                  ; additional-documents4   ; entrepreneurship-license.png                                   ; ترخيص ريادة الأعمال                                               ; additional-documents4        ; <ul class="INS_li_ul_under"><li> مستندَين إضافيين   </li> <li> الجهة المرخصة : وزارة الاستثمار </li></ul>                          ;                                                               
+                                                  ; additional-documents5   ; consulting-license-for-engineering-offices.png                 ; الترخيص الاستشاري للمكاتب الهندسية                                ; additional-documents5        ; <ul class="INS_li_ul_under"><li> مستند إضافي واحد  </li>  <li> الجهة المرخصة : وزارة الاستثمار </li></ul>                        ;                                                                        
+                                                  ; additional-documents6	; ministry-of-municipal-reral-affairs-logo1.png	                 ; التراخيص المؤقتة لتنفيذ عقد حكومي/شبه حكومي                      ; additional-documents6        ; <ul class="INS_li_ul_under"><li> مستند إضافي واحد </li>  <li> الجهة المرخصة : وزارة الشؤون البلدية والقروية والإسكان </li></ul>    ;                                                            
+                                                  ; additional-documents7   ; ministry-of-municipal-reral-affairs-logo2.png                  ; شهادة مؤقتة لتقديم عروض تنفيذ المشاريع الحكومية                  ; additional-documents7        ; <ul class="INS_li_ul_under"><li> 5 مستندات إضافية </li>  <li> الجهة المرخصة : وزارة الشؤون البلدية والقروية والإسكان   </li></ul>  ;                                                        
+					
+INSERT_UPDATE AdditionalDocumentsLicenseContainer ; uid[unique = true]                          ; backgroundImage (code, $contentCV)  ; simpleCMSComponents(&componentRef) 																														     ; title[lang=ar] 								                                                                              ; &componentRef    							; $contentCV[unique = true]
+					                              ; additional-documents-license-container		; additional-doc-background-image.jpg ; additional-documents1,additional-documents2,additional-documents3,additional-documents4,additional-documents5,additional-documents6,additional-documents7    ; <h2 class="invest_lic_first_text">من الممكن أن يُطلب إحضار مستندات إضافية</h2> <h2>بحسب النشاط ونوع الترخيص المطلوب </h2>   ; additional-documents-license-container       ; 
+					
+###############################################################################################
+
+
+
+
+
+INSERT_UPDATE InvestorJourneyComponent ; uid[unique = true]                     ; mainHeader [lang = ar]   ; localizedImage (code, $contentCV)[lang = ar]    ; mainDescription [lang = ar]             ; &componentRef     ; requirementHeader [lang = ar] ; responsibleIcon (code, $contentCV)                         ; responsibleHeader [lang = ar] ; requirementDescription [lang = ar]                                                                                                                                                                                         ; $contentCV[unique = true]
+									   ;  investor-journey1                     ; المرحلة                  ; investor-journey-ar-01.png			             ; إصدار ترخيص الاستثمار                    ; investor-journey1 ; المتطلبات                     ; ministry-of-investment-logo-2.png                          ; الجهة المسؤولة                ; <p> - السجل التجاري للشركة مصدق من السفارة السعودية </p> <p>- القوائم المالية لآخر سنة مصدقة من السفارة السعودية </p>                                                                                                       ;
+									   ;  investor-journey2                     ; المرحلة                  ; investor-journey-ar-02.png                      ; توقيع عقد التأسيس                       ; investor-journey2 ; المتطلبات                     ; ministry-of-commerce-industry-ministry-justice-logo.png    ; الجهة المسؤولة                ; <p> يتعين على فروع الشركات الأجنبية تقديم قرار بفتح الفرع في المملكة فقط لأستكمال اصدار السجل التجاري ولا تلزم بتوثيق عقد التأسيس جديد.</p>                                                                                   ;
+									   ;  investor-journey3	                    ; المرحلة                  ; investor-journey-ar-03.png			             ; إصدار سجل تجاري                         ; investor-journey3 ; المتطلبات                     ; ministry-of-commerce-and-industry.png                      ; الجهة المسؤولة                ; <p> 1- السجل التجاري للشركة الأم. </p> <p> 2- قرار الشركاء بافتتاح فرع (لفروع الشركات الأجنبية)</p> <p>3- عقد التأسيس الموثق (للشركات الجديدة)</p><p>4- قرار تعيين المدير العام</p><p>5- اثبات هوية الملاك والمدير العام</p>  ;
+									   ;  investor-journey4                     ; المرحلة                  ; investor-journey-ar-04.png                      ; فتح ملفات للمنشأة                       ; investor-journey4 ; المتطلبات                     ; general-authority-zakat-tax.png,general-organization-for-social-insurance.png,human-resources-and-social-development.png ; الجهة المسؤولة ; <p>1- فتح ملف لدى الهيئة العامة للزكاة والدخل<p> <p> 2- فتح ملف لدى وزارة العمل </p> <p> 3- فتح ملف لدى المؤسسة العامة للتأمينات الاجتماعية</p>                              ;
+									   ;  investor-journey5                     ; المرحلة                  ; investor-journey-ar-05.png                      ; إصدار تأشيرة المدير العام               ; investor-journey5 ; المتطلبات                     ; human-resources-and-social-development.png                 ; الجهة المسؤولة                ; <p> - قرار تعيين المدير العام</p>  <p> - اثبات هوية المدير العام</p>                                                                                                                                                       ;
+
+INSERT_UPDATE InvestorJourneyContainer ; uid[unique = true]			 ; simpleCMSComponents(&componentRef) 														  ; title[lang=ar] 	  ; &componentRef    					; $contentCV[unique = true]
+                                       ; investor-journey-container  ; investor-journey1,investor-journey2,investor-journey3,investor-journey4,investor-journey5  ; رحلة المستثمر  ; investor-journey-container          ;          
+
+
+
+
+
+############# MEDIA AND COMPONENTS END ######################
+
+                                      
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef); $contentCV;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ;	   investment-guide-banner-container, investment-license-container, businesses-investment-license-container, type-of-investment-licenses-container,only-two-investor-license-container, additional-documents-license-container, investor-journey-container         ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;  ; 
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+ 
+      
+      
+					

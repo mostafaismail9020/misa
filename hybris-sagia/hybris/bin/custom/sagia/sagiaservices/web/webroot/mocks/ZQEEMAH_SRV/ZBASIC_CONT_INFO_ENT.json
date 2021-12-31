@@ -1,0 +1,41 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/ZBASIC_CONT_INFO_ENT(RefID='',FileType='')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/ZBASIC_CONT_INFO_ENT(RefID='',FileType='')",
+      "type": "ZQEEMAH_SRV.ZBASIC_CONT_INFO"
+    },
+    "RefID": "",
+    "FileType": "",
+    "NameFirst": "",
+    "NameLast": "",
+    "Gender": "",
+    "Country": "",
+    "Ccode_Tele": "",
+    "Telephone": "",
+    "Ccode_Mobile": "",
+    "Mobile": "",
+    "Ccode_Fax": "",
+    "Fax": "",
+    "Email": "",
+    "Nationality": "",
+    "City": "",
+    "Street": "",
+    "PoBox": "",
+    "PostalCode": "",
+    "CommMtd": "",
+    "Role": "",
+    "Mime": "",
+    "Return": "Data does not exist",
+    "Dob": "",
+    "PassNo": "",
+    "PassExp": "",
+    "EduDet": "",
+    "PassIssue": "",
+    "InfoToPoa": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/ZBASIC_CONT_INFO_ENT(RefID='',FileType='')/InfoToPoa"
+      }
+    }
+  }
+}

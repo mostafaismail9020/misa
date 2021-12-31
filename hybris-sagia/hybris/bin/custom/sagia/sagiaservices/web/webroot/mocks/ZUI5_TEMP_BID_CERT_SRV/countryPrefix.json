@@ -1,0 +1,12 @@
+{
+    "d": {
+        "__metadata": {
+            "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZTEL_CODESET('AL')",
+            "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZTEL_CODESET('AL')",
+            "type": "ZUI5_TEMP_BID_CERT_SRV.ZTELCODE"
+        },
+        "CKey": "AL",
+        "Status": "T",
+        "TelNo": "355"
+    }
+}

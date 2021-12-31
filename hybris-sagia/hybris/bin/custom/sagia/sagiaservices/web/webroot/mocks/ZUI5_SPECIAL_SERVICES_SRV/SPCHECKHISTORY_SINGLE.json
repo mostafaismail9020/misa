@@ -1,0 +1,26 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKHISTORYSET('E')",
+      "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKHISTORYSET('E')",
+      "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKHISTORY"
+    },
+    "OBJECT_ID": "9000100",
+    "PROCESS_TYPE": "ZS13",
+    "CAT_CODE1": "ZSPLJAWA",
+    "CATEGORY1": "Special Passport Services",
+    "CAT_CODE2": "ZSPLJAWA01",
+    "CATEGORY2": "Exit Re-Entry Visa Application",
+    "CAT_CODE3": "",
+    "CATEGORY3": "",
+    "CAT_CODE4": "",
+    "CATEGORY4": "",
+    "DESCRIPTION": "Exit Re-Entry Visa Application/613392",
+    "POSTING_DATE": "20160712",
+    "STATUS": "Rejected",
+    "COMMENTS": "",
+    "LANGUAGE": "E",
+    "CREATION_ALLOWED": "",
+    "ERROR_MSG": "Special Services Are Not Allowed"
+  }
+}

@@ -1,0 +1,293 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+
+INSERT_UPDATE SectorFactsFiguresComponent; uid[unique = true] 					; name               							; figures[lang = ar] 	; unit[lang = ar]			; facts[lang = ar]                                    													; $contentCV[unique = true]	;
+#tourism-culture-entertainment
+                                         ; tourism-facts-001 		            ; Tourism Facts 1 								; 100     				; 	        				; مليون سائح محلي ودولي سنويًا بحلول عام 2030                         						        	;			;
+                                         ; tourism-facts-002 					; Tourism Facts 2 								; 10      	    		; %                 		; ارتفاع نسبة مساهمة القطاع بالناتج المحلي الإجمالي من 3% بحلول عام 2030         		       			;			;
+                                         ; tourism-facts-003 					; Tourism Facts 3 								; 19.3   			    ; مليار دولار        		; قيمة عائدات السياحة المحلية والدولية عام 2019        							                    	;			;
+                                         ; tourism-facts-004 					; Tourism Facts 4 								; 519 دولار     			; 		            		; متوسّط إنفاق السائح في السعودية عام 2019                                             					;			;
+
+                                         ; culture-entertainment-facts-001 		; Culture and Entertainment Facts 1 	    	; 57        			; مليار دولار        		; حجم الاستثمارات اللازمة لبناء بنية تحتية ملائمة لقطاع الترفيه بحلول عام 2030     						;			;
+                                         ; culture-entertainment-facts-002 	    ; Culture and Entertainment Facts 2 			; 11      	   	 		;                   		; عدد المواسم الترفيهية التي أطلقت في أرجاء المملكة       		           								;			;
+                                         ; culture-entertainment-facts-003 		; Culture and Entertainment Facts 3 			; 2,500  	    		;        		    		; عدد الأنشطة الترفيهية في السنوات الخمس الأخيرة     							                        	;			;
+                                         ; culture-entertainment-facts-004 	    ; Culture and Entertainment Facts 4 			; 26,000     			; 		            		; عدد الأيام التي تخللها نشاطات ترفيهية في مختلف المناطق السعودية في السنوات الخمس الأخيرة            	;			;
+                                         ; culture-entertainment-facts-005 		; Culture and Entertainment Facts 5 			; 155     				;        		    		; عدد الوجهات الترفيهية في السنوات الخمس الأخيرة                       							    	;			;
+                                         ; culture-entertainment-facts-006 	    ; Culture and Entertainment Facts 6	        	; 75      	    		; مليون	            		; عدد الزوار في السنوات الخمس الأخيرة         	                        								;			;
+
+                                         ; sports-facts-001 		            ; Sports Facts 1 								; 320     			    ; مليار دولار	        	; قيمة استثمارات القطاع الخاص في رعاية النوادي حتى عام 2023                                         	;			;
+										 ; sports-facts-002 					; Sports Facts 2 								; 670     			    ; مليار دولار             	; قيمة المبالغ المرصودة لدعم النوادي الرياضية في تحقيق الاستقرار المالي وفي الخصخصة						;			;
+
+
+#chemicals
+                                         ; chemicals-facts-001 					; Chemicals Facts 1 							; 170     				; مليار ريال 					; قيمة إيرادات تشغيل قطاع الكيميائيات في العام 2016 					 								;			;
+                                         ; chemicals-facts-002 					; Chemicals Facts 2 							; 5       				; %           				; نسبة نموّ الطاقة الإنتاجية للكيميائيات في العام 2016    				 								;			;
+                                         ; chemicals-facts-003 					; Chemicals Facts 3 							; 97,267  				; كيلوطن          			; حجم القدرة المحلية لإنتاج حمض بيرفلورو الأوكتانويك في العام 2017         								;			;
+
+
+#food-processing
+										 ; food-processing-facts-001 			; Food Processing Facts 1 						; 42        			; مليار دولار       			; قيمة سوق المأكولات والمشروبات ومن المتوقع أن تنمو بنسبة سنوية تقدّر بـ 3% خلال السنوات الخمس المقبلة.	;			;
+                                         ; food-processing-facts-002 	    	; Food Processing Facts 2 						; 85	        		; %                 		; هدف المملكة العربية السعودية إلى رفع نسبة توطين الصناعات الغذائية  بحلول عام 2030   		          	;			;
+										 
+
+#aerospace-defense
+										 ; aerospace-defense-facts-001 		    ; Aero Space and Defense Facts 1 				; 50     		        ; % 		        		; نسبة التوطين بحلول عام 2030، مقارنةً بنسبته في عام 2020 والتي بلغت 8%            						;			;
+                                         ; aerospace-defense-facts-002 		    ; Aero Space and Defense Facts 2 				; 100      		        ; %                			; السماح للأجانب بالتملك       							                          						;			;
+                                         ; aerospace-defense-facts-003 		    ; Aero Space and Defense Facts 3 				; المرتبة السادسة   	;           				; عالميًا بين الدول ذات أعلى إنفاق عسكري في عام 2020                               						;			;
+                                         
+
+#healthcare-life-sciences										 
+										 ; medical-technologies-facts-001 		; Medical Technologies Facts 1 			    	; 100     				; %	        				; من السكان سيشملهم الملف الصحي الموحّد بحلول العام 2025            									 	;			;
+                                         ; medical-technologies-facts-002 	    ; Medical Technologies Facts 2 					; 5.4$     	   			; BN                		; مليار دولار قيمة سوق التكنولوجيا الطبية في العام 2021    		       							     	;			;
+                                         ; medical-technologies-facts-003 		; Medical Technologies Facts 3 			    	; 49	        		; %        		    		; حصة المملكة من سوق التكنولوجيا الطبية في الشرق الأوسط وإفريقيا   							         	;			;
+                                         
+                                         ; medical-services-facts-001 			; Medical Services Facts 1 			    		; 88     				; %	        				; من التجمعات السكانية سيتم تغطيتها بالخدمات الصحية في كافة مناطق المملكة بحلول العام 2025 		        ;			;
+                                         ; medical-services-facts-002 	    	; Medical Services Facts 2 						; 5.8    	    		; %                 		; ارتفاع معدل النمو السنوي المركّب لقطاع الخدمات الصحية بين عامَي 2017 و2029   		       				;			;
+                                         ; medical-services-facts-003 			; Medical Services Facts 3 			    		; 7	            		; %        		    		; ارتفاع عدد المسنين في السعودية بنسبة بحلول العام 2030							                        ;			;
+
+
+#financial										 
+										 ; financial-facts-001 		            ; Financial Facts 1 							; 1.3    				;تريليون دولار		    	; القيمة التقديرية للطلب الإجمالي على القروض بحلول عام 2030               		    					;			;
+                                         ; financial-facts-002 					; Financial Facts 2 							; 20       	    		; %                 		; زيادة حصة تمويل المنشآت متناهية الصغر والصغيرة والمتوسطة من البنوك بحلول عام 2030         			;			;
+                                         ; financial-facts-003 					; Financial Facts 3 							; 70 	    			; %        		    		; تقليل حصة التعاملات غير النقدية بحلول عام 2030                                  						;			;
+                                         ; financial-facts-004 					; Financial Facts 4 							; 53    				; %		            		; زيادة معدل أصـول أسواق المال بحلول عام 2030                  									        ;			;
+
+
+#energy
+                                         ; conventional-energy-facts-001 		; Conventional Energy Facts 1 			    	; المرتبة  الثانية    		;       		    	; عالميًا من حيث  استهلاك الطاقة للفرد                                 									;			;
+                                         ; conventional-energy-facts-002 	    ; Conventional Energy Facts 2 					; المرتبة الحادية عشر	    ;                   	; عالميًا من حيث إنتاج الطاقة الكهربائية السنوي   		             									;			;
+																																																										             
+										 ; renewable-energy-facts-001 			; Renewable Energy Facts 1 			    		; المرتبة السادسة   		;       		  	  	; عالميًا من حيث إمكانات توليد الطاقة الشمسية                         									;			;
+                                         ; renewable-energy-facts-002 	    	; Renewable Energy Facts 2 						; المرتبة الثالثة عشر	    ;                   	; عالميًا من حيث إمكانات توليد طاقة الرياح 	       		             									;			;
+																																				            
+										 ; energy-saving-facts-001 				; Energy Saving Facts 1 			    		; 260,000    	            ;       		    	; منشأة حكومية تحتاج لإعادة التجهيز من أجل ترشيد استخدامها للطاقة     									;			;
+                                         ; energy-saving-facts-002 	    		; Energy Saving Facts 2 						;  أكثر من 3 ملايين	        ;  	         	 		; عامود إنارة بحاجة لإعادة تجهيز من أجل ترشيد الطاقة 													;			;
+
+
+#enviroment-services
+										 ; water-facts-001 						; Water Facts 1 								; 67  					; مليار دولار		        ; قيمة الاستثمارات في قطاع المياه ومشاريع الصرف الصحي بحلول العام 2025                                									;			;
+                                         ; water-facts-002 						; Water Facts 2 								; 5.5        			; مليون م3              	; في اليوم الواحد حجم الزيادة في القدرة المركبة لتحلية المياه بحلول عام 2026  								  							;			;
+                                         ; water-facts-003 						; Water Facts 3 								; 90  	   				; %         				; من احتياجات المملكة من المياه ستغطيها التحلية بحلول العام 2030                  														;			;
+                                         ; water-facts-004 						; Water Facts 4 								; ~3,000     			; كم		        		; تقريبا من خطوط انابيب نقل المياه الإضافية بحلول العام 2025                         													;			;
+                                         ; water-facts-005 						; Water Facts 5 								; 15     	    		; %                 		; خفض تسربات المياه بحلول عام 2030   								                        											;
+                                         ; water-facts-006 						; Water Facts 6 								; +95		    		; %    		    			; من مساحة السعودية ستحظى بتغطية شبكة مياه الصرف الصحي بحلول العام 2030           														;			;
+                                         ; water-facts-007 		    			; Water Facts 7 			    				; 5.5   				;  مليون م٣      			; في اليوم الواحد حجم الزيادة في القدرة المركبة لمعالجة مياه الصرف الصحي بحلول العام 2030 لتبلغ المعالجة نسبة 100%     					;			;
+                                         ; water-facts-008 	        			; Water Facts 8 								; 90	        		; %                 		; نسبة إعادة استخدام المياه بحلول عام 2040 	       							                                        					;			;
+                                         
+										 ; waste-management-facts-001 			; Waste Management Facts 1 	    				; 82     				; %       					; نسبة تحويل النفايات عن المرادم المتوقع تحقيقها بحلول 2035، مع احتمال تخطي هذه الأرقام في مناطق معيّنة وفي مراحل معيّنة من معالجة النفايات ;			;
+                                         ; waste-management-facts-002 	    	; Waste Management Facts 2 						; 81      	    		; %                 		; من نفايات البلديات الصلبة يعاد تدويرها، وتُحوَّل النسبة المتبقية من النفايات إلى طاقة بحلول عام 2035       		       					 ;			;
+                                         ; waste-management-facts-003 			; Waste Management Facts 3 						; 57 	    			; %      		    		; من النفايات الناتجة عن أعمال البناء والهدم ستحوّل عن المرادم بحلول عام 2035    							   							 ;			;
+                                         ; waste-management-facts-004 	    	; Waste Management Facts 4 						; 85     				; %		            		; من النفايات الصناعية الخطرة ستحوّل عن المرادم بحلول عام 2035                                         									 ;			;
+
+
+#real-estate
+                                         ; real-estate-facts-001 				; Real Estate Facts 1 							; 70     				; % 		        		; رفع نسبة التملك السكني بحلول 2030                    																				  	;			;
+                                         ; real-estate-facts-002 				; Real Estate Facts 2 							; 1.2      				; مليار متر٢              	; تطوير حوالي من المساحات المبنية بحلول عام 2031    																					;			;
+                                         ; real-estate-facts-003 				; Real Estate Facts 3 							; 1.5  	    			; مليون         			; بناء وحدة سكنية بحلول العام 2030                  																					;			;
+                                         ; real-estate-facts-005 				; Real Estate Facts 5 							; 50        			; %                			; من الوحدات الجديدة مصنوعة باستخدام التقنيات الحديثة     																				;			;
+                                         ; real-estate-facts-006 				; Real Estate Facts 6 							; 70 		    		; %       		    		; وحدة سكنية تبنى قبل 2030                  																							;			;
+
+                                   																					
+#pharma-biotech
+										 ; pharmacuticals-facts-001 			; Pharmacuticals Facts 1 			    		; 8.5     				; مليار دولار أمريكي      	; سوق المستحضرات الصيدلانية في المملكة العربية السعودية                                                                          		;			;
+                                         ; pharmacuticals-facts-002 	    	; Pharmacuticals Facts 2 						; 641	        		; مليون دولار                  	; حجم الطلب على اللقاحات     		       							                  												;			;
+                                        				
+														
+#industrial-manufacturing
+										 ; automotives-facts-001 				; Automotives Facts 1 			    			; 17    				; مليار دولار      		    ; قيمة مبيعات سوق السيارات في عام 2019                                                             										;			;
+                                         ; automotives-facts-002 	    		; Automotives Facts 2 						    ; 537,000 	    		;                   		; آلية تم بيعها في عام 2019  		       							                                     								;			;
+                                         ; automotives-facts-003	    		; Automotives Facts 3							; 45.3	        		; مليون                		; سيارة في السعودية بحلول عام 2030 		       							                  												;			;
+										
+										 ; industrial-spareparts-facts-001 		; Industrial & Spare Parts Facts 1 				; 400     				; مليار دولار       		    ; قيمة المبلغ المقرر إنفاقه على برنامج تعزيز القيمة المضافة الإجمالية في المملكة (اكتفاء) التابع لشركة أرامكو السعودية بحلول 2030        ;			;      										 
+                                         ; industrial-spareparts-facts-002 	    ; Industrial & Spare Parts Facts 2 				; 13	        		; مليار دولار                 	; القيمة الإجمالية لواردات أسلاك الطاقة في الشرق الأوسط وشمال إفريق  		       							                  			;			;
+
+
+#transport-logistics
+										 ; transport-logistics-facts-001 		; Transport & Logistics Facts 1 				; 26        		    ; مليار دولار		       			; حجم النمو السنوي المتوقع قبل عام ٢٠٣٠م                  		    																	;			;
+                                         ; transport-logistics-facts-002 		; Transport & Logistics Facts 2 				; 30  	     		    ; مليار دولار              		; يتوقع أن تبلغ قيمة استثمارات القطاع العام خلال العقد المقبل.          																	;			;
+                                         ; transport-logistics-facts-003 		; Transport & Logistics Facts 3 				; 18  	    		    ; مليار دولار       				; حجم السوق الإجمالي                                                																		;			;
+                                         ; transport-logistics-facts-004 		; Transport & Logistics Facts 4 				; 12     				; %		            		; سيبلغ معدل النمو السنوي الإجمالي بحلول عام ٢٠٣٠م                         	                            								;			;
+                                        
+
+#information-technology
+										 ; digital-content-facts-001 			; Digital Content Facts 1 			    		; 2.5     			    ; مليار دولار      		    	; حجم سوق الألعاب المتوقع بحلول عام 2030                                                            												;		;
+                                         ; digital-content-facts-002 	    	; Digital Content Facts 2 						; 25,000	       		;                  			; مستهدف خلق الفرص الوظيفية في مجال تقنية المعلومات   		       							                                  					;		;
+										 ; digital-content-facts-003            ; Digital Content Facts 3             			; 24					; %							; زيادة سنوياً في الوقت المستغرق في ممارسة الألعاب في منطقة الشرق الأوسط وشمال أفريقيا في عام 2020، مقارنة بزيادة قدرها 11٪ على الصعيد العالمي     ;		;
+                                       
+										 ; digital-infrastructure-facts-001 	; Digital Infrastructure Facts 1 				; 18       			    ;  مليار دولار		        	; استثمارات لبناء شبكة وطنية من مراكز البيانات الضخمة                             									 							;		;
+                                         ; digital-infrastructure-facts-002 	; Digital Infrastructure Facts 2 				; 2.5            	    ;  مليار دولار               		; مخصصة لبناء البنية التحتية الرقمية اللازمة للصناعة 4.0  								  									 					;		;
+                                         										 
+										 ; technology-platforms-facts-001 	    ; Technology & Platforms Facts 1 				; 13      			    ;  مليار دولار		       		; يبلغ حجم سوق التجارة الإلكترونية في عام 2021، بنسبة 45٪ من حصة سوق دول مجلس التعاون الخليج                                     			    ;		;
+                                         ; technology-platforms-facts-002 		; Technology & Platforms Facts 2 				; 32           			; %                 		; نمو لسوق التجارة الإلكترونية من 2015 إلى 2020   								  				   									 			;		;
+                                         ; technology-platforms-facts-003 		; Technology & Platforms Facts 3 				; 33   	    		    ; مليار دولار         			; القيمة المتوقعة لمعاملات التقنية المالية بحلول عام 2023                									  								    ;		;
+                                         ; technology-platforms-facts-004 		; Technology & Platforms Facts 4 				; 20      			    ; مليار دولار 		        	; حجم الاستثمارات في مجال البيانات والذكاء الاصطناعي بحلول عام 2030                       									  		   			;		;
+                                         ; technology-platforms-facts-005 		; Technology & Platforms Facts 5 				; 300     	    		;                   		; محتوى للبيانات المخصصة وسيتم إنشاء شركات ناشئة للذكاء الاصطناعي بحلول عام 2030  								           					    ;		;
+                                         ; technology-platforms-facts-006 		; Technology & Platforms Facts 6 				; 22	        		; %    		        		; المتوقع أن ينمو الإنفاق على الحوسبة السحابية بمعدل نمو سنوي مركب بين عامي 2021 و2024 ليصل إلى 6 مليارات دولار.         				   			;		;
+
+
+#education
+                                         ; education-facts-001 					; Education Facts 1 							; 49.5      	        ; مليار دولار		        		; قيمة الإنفاق على التعليم                  		                     								           									;		;
+                                         ; education-facts-002 					; Education Facts 2 							; 5        	            ; %                 		; نسبة ارتفاع عدد مؤسسات التعليم الخاصة مقارنة مع مؤسسات التعليم ، منذ العام 2013                              									;		;
+
+
+#innovation                                         										 
+                                         ; innovation-facts-001 				; Innovation and Enterpreneurship Facts 1		; 29       		        ; %   		        		; نسبة مساهمة المنشآت الصغيرة والمتوسطة في الناتج المحلي الإجمالي عام 2020 مقارنة مع 20% عام 2016               									;		;
+                                         ; innovation-facts-002 				; Innovation and Enterpreneurship Facts 2 		; 35       		        ; %                 		; نسبة مساهمة المنشآت الصغيرة والمتوسطة في الناتج المحلي الإجمالي التي تطمح المملكة إلى تحقيقها بحلول العام     									;		;
+                                         ; innovation-facts-003 				; Innovation and Enterpreneurship Facts 3 		; 65 	    	        ; %            				; نسبة النمو في النظام البيئي لرأس المال الجريء منذ العام 2016 حتى العام 2021.      						   									;		;
+
+
+#mining-metals
+                                         ; mining-metals-facts-001 				; Mining and Metals Facts 1						; 1.3     	            ; تريليون دولار		            ; القيمة التقديرية للموارد المعدنية                   				 																			;		;
+                                         ; mining-metals-facts-002 				; Mining and Metals Facts 2 					; 75       	            ; مليار دولار   					; حجم المساهمة بالناتج المحلّي الإجمالي بحلول عام 2035     			 																			;		;
+                                         ; mining-metals-facts-003 				; Mining and Metals Facts 3						; 4th 	 	            ;          		            ; في استيراد المنتجات المعدنية                                      																			;		;
+                                         ; mining-metals-facts-004 				; Mining and Metals Facts 4						; 48     		        ; 		                    ; عدد المعادن الذي تمّ التعرف عليه في المملكة العربية السعودية       																			;		;
+                                         ; mining-metals-facts-005 				; Mining and Metals Facts 5 					; 11.5     	            ; مليار دولار    					; خفض الواردات من 19 مليار دولار بحلول عام 2035      																							;		;
+                                          
+										  
+
+INSERT_UPDATE SectorKeyDetailsComponent	; $contentCV[unique = true]	; uid[unique = true]					; name													; bulletPoints [lang = ar]	;
+#tourism-culture-entertainment
+                                        ; 							; tourism-key-001		        		; Tourism key details 			             			; "
+<p>اكتشف وجهة سياحية عالمية جديدة</p>
+<p>مشاريع عديدة ومتنوعة لتطوير بنية تحتية سياحية بمعايير عالمية </p>
+<p>وجهات حصرية على خارطة السياحة العالمية</p>
+<p>غنى الإرث الثقافي العريق وسحر المناظر الطبيعية</p>";
+                                   
+										 ; 							; culture-entertainment-key-001 		; Culture and Entertainment key details        			; "
+<p>رؤية طموحة لإثراء حياة المواطنين والمقيمين</p>
+<p>فرص هائلة</p>
+<p>وجهات حصرية على خارطة السياحة العالمية</p>
+<p>الحكومة تدعم توسيع آفاق القطاع والاستفادة من كامل إمكاناته</p>";
+   									                								   
+                             			 ; 							; sports-key-001	  					; Sports key details 					         		; "
+<p>طموحات لتحويل السعودية إلى الوجهة المثالية لاستضافة أبرز الأحداث الرياضية العالمية</p>
+<p>التزام الحكومة بتنمية القطاع</p>";
+
+
+#food-processing
+										 ; 							;  food-processing-key-001	  			; Food Processing key details 			     			; "
+<p>أسواق محلية وإقليمية كبيرة ومتنامية</p>
+<p>إمكانات كبيرة لتصدير التمور السعودية العالية الجودة</p>
+<p>ثروه سمكيه غنيًه ، تفتح مزيدًا من مجالات الفرص للإستثمار</p>
+<p>نظام بيئي متطور وإدارة متفوقة لسلسلة الإمداد</p>";
+  								  
+
+#healthcare-life-sciences										
+										; 							; medical-technologies-key-001			; Medical Technologies key details  	                ; "
+<p>مع انتشار الأمراض المزمنة والمعدية ، يتزايد الطلب العالمي على الخدمات الصحية</p>
+<p>إمكانات كبيرة للتوطين</p>
+<p>مركز التكنولوجيا الطبية في المنطقة</p>
+<p>هيئة تنظيمية تحرص على تسهيل الأعمال في السعودية</p> ";
+
+										; 						    ; medical-services-key-001	   			; Medical Services key details 		            		; "
+<p>إمكانات غير مستثمرة بعد في سوق كبيرة ومشرفة على المزيد من النمو والازدهار</p>
+<p>انتشار الأمراض المزمنة بسبب العمر ونمط الحياة والتركيب الجيني</p>
+<p>التزام الحكومة بتحقيق أهداف طموحة لتطوير القطاع الصحي </p>
+<p>فرص وحوافز للاستثمار في قطاع الرعاية الصحية </p> ";
+
+
+#energy
+										 ; 						    ; conventional-energy-key-001			; Conventional Energy key details      	     			; "
+<p>طلب كبير ومتنامي على الطاقة</p>                                                                                  
+<p>بنية تحتية وأسس متينة</p>                                                                                        
+<p>تسعى المملكة لتوسيع التوطين ورفع مساهمة القطاع الخاص </p>";
+                                                                                                                                                                                                                                                                                            
+										 ; 						    ; renewable-energy-key-001				; Renewable Energy key details                 			; "
+<p>مقومات قويه في المملكة للطاقة الشمسية و طاقة الرياح </p>									                                                  
+<p>تعد المملكة سوق إقليمية كبيرة تمتلك العديد من الفرص</p>                                                                                           
+<p>سوق متطورة وقائمة على المعرفة</p>                                                                                             
+<p>خدمات و تسهيلات كبيره للمستثمرين </p>";                                                                                              
+                                                                                                                                                                                                                                                                                            
+										 ; 						    ; energy-saving-key-001         		; Energy Saving key details                    			; "
+<p>زيادة في تعرفة استهلاك الكهرباء في واحدة من أكثر الدول استهلاكًا للطاقة</p>                                   
+<p>تدعم الحكومة نموّ الصناعات المتعلقة بتوفير الطاقة</p>
+<p>سوق متطورة وقائمة على المعرفة</p>
+<p>إنشاء شركة ترشيد لتعزيز كفاءة الطاقة في المنشآت العامة</p>";
+
+
+#enviromental-services
+										;                          ; water-key-001    			    		; Water key details                                  	; "
+<p>ازدياد الطلب على المياه</p>
+<p>السعودية رائدة عالميًا في تحلية المياه</p>
+<p>التزام الحكومة تطوير بنية تحتية لا تقتصر على التحلية</p>
+<p>طموحات كبيرة لرفع القدرات والخبرات الوطنية في مجال تكنولوجيا المياه </p> ";
+
+										;						   ; waste-management-key-001 				; Waste Management key details 		                    ; "
+<p>تنظيم أنشطة إدارة النفايات و الإشراف عليها لتحقيق أهداف التنمية المستدامه</p>
+<p>التزام الحكومة الاستفادة من كامل إمكانات القطاع من خلال الابتكار و تبني أفضل الممارسات و التقنيات الحديثه</p>
+<p>أهداف طموحة للاستدامة في معالجة النفايات </p>
+<p>تطوير البحث و الإبتكار في مجالات الإدارة المتكاملة للنفايات </p> ";
+
+
+#industrial-manufacturing 
+										; 							; automotives-key-001	  				; Automotives key details 								; "
+<p>مركز التصنيع الأكثر جاذبية في المنطقة</p>";
+
+										; 							; industrial-spareparts-key-001			; Industrial & Spare Parts key details 	 				; "
+<p>نمو سريع بالتزامن مع ازدهار الصناعات الأخرى</p>
+<p>برامج التوطين تسهّل اغتنام الفرص وتأسيس الأعمال</p>
+<p>برامج التوطين تسهّل اغتنام الفرص وتأسيس الأعمال</p>";
+ 										
+
+#information-technology
+										; 							; digital-content-key-001				; Digital Content key details 		 					; "
+<p>الألعاب</p>
+<P>واحدة من أسرع أسواق الألعاب نموًا على الصعيد العالمي</p>
+<P>اعتماد تقنيات جديدة في مجال سوق الألعاب على نطاق واسع</p>
+<P> المحتوى المرئي</p>
+<P>يتزايد الطلب على منصات الفيديو</p>
+<P>سوق كبير للفيديو في طريقه إلى التوسع أكثر</p>
+<P>المحتوى الصوتي</p>
+<P>حل المحتوى الرقمي للمقاطع الصوتية محل المحتوى التقليدي لها</p>
+<P>الإعلانات الرقمية</p>
+<P> إمكانات كبيرة في السوق للإعلانات الرقمية</p>
+<P>من بين أعلى أوقات التفاعل عبر الإنترنت في العالم</p>";
+
+										; 							; digital-infrastructure-key-001		; Digital Infrastructure key details 					; "
+<p>مراكز البيانات</p>
+<p>التزام قوي بإنعاش سوق مركز البيانات</p>
+<p>الاتصالات</p>
+<p>الطلب الكبير على السوق يتطلب قدرًا كبيرًا من المعروض</p>
+<p>الاستثمارات طويلة الأجل الناجحة</p>
+<p>جودة ممتازة وتغطية واسعة تضمن وصول الخدمات إلى الجميع</p>
+<p>هيئة تنظيمية عالمية تكفل التميز المستمر</p>
+<p>المدن الذكية</p>
+<p>الصناعة 4.0</p>";
+
+										; 							; technology-platforms-key-001			; Technology & Platforms key details 					; "
+<p>الذكاء الاصطناعي</p>
+<p>استراتيجية ناجحة قابلة للتنفيذ</p>
+<p>التجارة الإلكترونية</p>
+<p>سوق التجارة الإلكترونية الأكبر والأكثر ربحًا في المنطق</p>
+<p>وجهة جذابة للاستثمار من ناحية التجارة الإلكترونية</p>
+<p>لقد وقع اختيار الشركات الكبيرة متعددة الجنسيات بالفعل على المملكة العربية السعودية</p>
+<p>الحوسبة السحابية</p>
+<p>الريادة الناشئة في الخدمات السحابية</p>
+<p>التقنية المالية</p>
+<p>ينمو قطاع التقنية المالية في المملكة بمعدل سريع</p>";
+										
+										
+#education										
+										; 							; education-key-001        				; Education key details      							; "
+<p>تصنًف المملكة كأكبر سوق للتعليم بين دول مجلس التعاون الخليجي مع أكبر عدد من الطلاب </p>
+<p>فرص  استثماريه هائلة  في  قطاع التعليم الخاص في المملكة العربية السعودية</p>
+<p>التزام  المملكة بدعم قطاع التعليم لتحقيق التنمية المستدامة </p>";
+
+
+#innovation
+										; 							; innovation-key-001       				; Innovation key details        						; "
+<p>نظام بيئي سريع النمو</p>
+<p>تمكين مستقبل ريادة الأعمال</p>
+<p>التزام الحكومة ودعمها لريادة الأعمال</p>";
+

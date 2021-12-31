@@ -1,0 +1,96 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          1",
+        "FieldSubtype": "",
+        "Description": "Copy Of Valid Investment License",
+        "Dockey_ID": "1151",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          2",
+        "FieldSubtype": "",
+        "Description": "Medical Insurance",
+        "Dockey_ID": "1188",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%203')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%203')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          3",
+        "FieldSubtype": "",
+        "Description": "Original Iqama And Passport",
+        "Dockey_ID": "1203",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%204')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%204')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          4",
+        "FieldSubtype": "",
+        "Description": "Payment Of Iqama Fees Through Atm",
+        "Dockey_ID": "1228",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%205')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%205')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          5",
+        "FieldSubtype": "",
+        "Description": "Processing Of The Standard Form",
+        "Dockey_ID": "1243",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%206')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%206')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          6",
+        "FieldSubtype": "",
+        "Description": "Work Card For The General Manager",
+        "Dockey_ID": "1281",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      }
+    ]
+  }
+}

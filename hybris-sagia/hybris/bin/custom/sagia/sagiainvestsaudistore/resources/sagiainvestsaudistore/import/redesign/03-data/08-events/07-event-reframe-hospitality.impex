@@ -1,0 +1,55 @@
+############# EVENT  Reframe Hospitality ########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails ; $contentCV[unique = true];uid[unique = true]			;keyName [lang = en]              		;keyValue[lang = en];
+                              ;                        	 ;reframe-key-1          		; Countries Represented              	;80;
+							  ;                        	 ;reframe-key-2        			; Speakers                              ;230+;
+							  ;                          ;reframe-key-3       			; Sectors                               ;Tourism /Exhibitions;
+                              ;                          ;reframe-key-4    	      		; SENOR LEADERS                         ;2.5k;
+							  ;                          ;reframe-key-5       		   	; COUNTRIES REPRESENTED                 ;80;
+							  ;                          ;reframe-key-6     		    ; INDUSSTRY-LEADING SPEAKERS            ;230+;
+							  ;                          ;reframe-key-7       	   		; GLOBAL CEOS                           ;95;
+							  ;                          ;reframe-key-8      		   	; INVESTOR COMMUNITY (IN AUM)           ;$600B;
+
+
+INSERT_UPDATE Media; code[unique = true]            ; realFileName                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;IHIF1-Banner-image.jpg   		; IHIF1-Banner-image.jpg   		; $siteResource/IHIF1-Banner-image.jpg                                        ; image/jpg                   ;                                          ; ""     ;
+                   ;IHIF-Thumbnail-image.jpg       	; IHIF-Thumbnail-image.jpg      ; $siteResource/IHIF-Thumbnail-image.jpg                                      ; image/jpg                   ;                                          ; ""     ;
+                   ;event-gallary-image.png         ; event-gallary-image.png       ; $siteResource/event-gallary-image.png                                       ; image/png                   ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]		; $medias					; $contentCV;
+                            ; media-container-hospitality   ; event-gallary-image.png   ;           ;
+
+
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]   ; name        ; url     									; &linkRef		;
+							  ;                         ; events-link7 			; eventslink7 ; https://www.hospitalityinsights.com/ihif	; events-link7	;
+							  
+			   				    
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]         ; eventUrl(uid, $contentCV)           ;eventLocation[lang = en]  ;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss];eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+                                        ;                         ;event-reframe-hospitality  ; events-link7                        ;Berlin, Germany           ;01.09.2021 00:00:00                              ;03.09.2021 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]         ; eventName[lang = en]   	; eventShortInformation[lang = en]   ;
+                                        ;                         ;event-reframe-hospitality  ; Reframe Hospitality		; "The 2021 edition of IHIF will look and feel different for the reasons we all know, but what will remain the same is its reputation as the place where deals are done and important industry decisions are made.What you will see at IHIF this year is an industry coming together."; 
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]			;eventKeyDetails(uid, $contentCV);
+										;						  ;event-reframe-hospitality    ;reframe-key-1,reframe-key-2,reframe-key-3,reframe-key-4,reframe-key-5,reframe-key-6,reframe-key-7,reframe-key-8 ;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]			;eventBannerImage(code, $contentCV)		;eventThumbnailImage(code, $contentCV)	; eventGalleryImages(qualifier, $contentCV);
+										;						  ;event-reframe-hospitality  	;IHIF1-Banner-image.jpg					;IHIF-Thumbnail-image.jpg				; media-container-hospitality	;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]			;eventFullDescription[lang = en];
+										;						  ;event-reframe-hospitality    ;"According to our latest investor sentiment assessment, economic conditions improved significantly from Q3 at 54% to Q4 at 74% of investors expecting improvement. Resilience and adaptability are the hallmarks of the hospitality sector and now more than ever we share the collective goal of supporting one another to reframe the conversation, reframe the deals and reframe hospitality.";

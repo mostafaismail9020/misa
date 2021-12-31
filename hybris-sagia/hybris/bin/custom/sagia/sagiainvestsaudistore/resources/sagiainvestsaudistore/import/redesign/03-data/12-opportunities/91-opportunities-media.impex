@@ -1,0 +1,16 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                                                    ; realFileName                                                                      ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]                  ; mime[default = 'application/pdf'] ; folder(qualifier)[default = $mediafolder] ; altText; $catalogVersion[unique = true]
+                   ; chemicals-inv-opp-scorecard-formic-acid.pdf							; chemicals-inv-opp-scorecard-formic-acid.pdf										; $siteResource/chemicals-inv-opp-scorecard-formic-acid.pdf										;									;											;		 ;
+				   ; industry-40.pdf						                                ; industry-40.pdf                                             						; $siteResource/industry-40.pdf                                           						;                                   ;                                           ;     	 ;
+			
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]                                      ; detail (code, $catalogVersion)                                                    ;  $catalogVersion	;
+                                ; formic-acid                                              ; chemicals-inv-opp-scorecard-formic-acid.pdf                                       ;   					;
+                                ; industry-40                                              ; industry-40.pdf                                            					   ;  					;

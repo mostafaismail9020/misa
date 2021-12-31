@@ -1,0 +1,258 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000105')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000105')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000105",
+        "CITY_TEXT": "AL Nairyah",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000104')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000104')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000104",
+        "CITY_TEXT": "Abqaiq",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000096')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000096')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000096",
+        "CITY_TEXT": "Al Dammam",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000099')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000099')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000099",
+        "CITY_TEXT": "Al Jubail",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000102')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000102')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000102",
+        "CITY_TEXT": "Al Khafji",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000101')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000101')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000101",
+        "CITY_TEXT": "Al Khobar",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000106')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000106')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000106",
+        "CITY_TEXT": "Al Qaria",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000100')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000100')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000100",
+        "CITY_TEXT": "Al Qatif",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000097')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000097')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000097",
+        "CITY_TEXT": "Al-Ahsa",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000165')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000165')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000165",
+        "CITY_TEXT": "Al-Hofuf",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000162')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000162')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000162",
+        "CITY_TEXT": "Dhahran",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000098')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000098')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000098",
+        "CITY_TEXT": "Hafar Al-Batin",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000169')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000169')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000169",
+        "CITY_TEXT": "Jubail Industrial",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000163')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000163')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000163",
+        "CITY_TEXT": "Mubarraz",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000164')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000164')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000164",
+        "CITY_TEXT": "Ras Al-Khair",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000103')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000103')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000103",
+        "CITY_TEXT": "Ras Tanura",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000168')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000168')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000168",
+        "CITY_TEXT": "Saihat",
+        "SUCCESS": "",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000173')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCitySet(LANGUAGE='E',CITY='000018000173')",
+          "type": "ZUI5_NIP_SRV.NIPCity"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "REGION": "12",
+        "CITY": "000018000173",
+        "CITY_TEXT": "Tanajeeb",
+        "SUCCESS": "",
+        "ERROR": ""
+      }
+    ]
+  }
+}

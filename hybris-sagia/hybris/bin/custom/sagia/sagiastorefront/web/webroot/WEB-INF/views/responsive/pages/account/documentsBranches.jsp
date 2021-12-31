@@ -1,0 +1,383 @@
+<%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
+<%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
+
+<c:choose>
+    <c:when test="${branchData.statusCode == 'V' || branchData.statusCode == 'I' }">
+        <c:set var="disabled" value="disabled"/>
+    </c:when>
+    <c:otherwise>
+        <c:set var="disabled" value=""/>
+    </c:otherwise>
+</c:choose>
+
+<div class="mainSection mainSection_dark">
+    <div class="container">
+        <div class="mainSection-header">
+            <h1 class="mainSection-headline">Government documents</h1>
+        </div>
+    </div>
+</div>
+<div class="mainSection mainSection_dark mainSection_noPadding">
+    <div class="container">
+        <a href="${encodedContextPath}/my-sagia/sagia-profile"
+           class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span>Back to Account Overview</a>
+    </div>
+</div>
+<div class="mainSection mainSection_dark mainSection_pdt16">
+    <div class="container">
+        <div class="panelModule panelModule_halfRadius">
+            <div class="contentModule">
+                <div class="contentModule-section">
+                    <div class="contentModule-headline">
+                        <span class="iconElement iconElement_branches"><icon:branches/></span>
+                        <spring:theme code="dashboard.myLicense.branches"/>
+                        ${pageType}
+                    </div>
+                    <div class="formError hidden" id="error-group">
+                        <icon:messageError/><spring:theme code="govDocs.error.branchesNotCompleted"/>
+                    </div>
+
+                    <div class="tableModule">
+                        <table class="tableModule-table">
+                            <thead class="tableModule-head">
+                            <tr>
+                                <th><spring:theme code="text.account.profile.license.branches.name"/></th>
+                                <th><spring:theme code="text.account.profile.license.branches.type"/></th>
+                                <th><spring:theme code="text.account.profile.license.branches.city"/></th>
+                                <th class="tableModule-headItem tableModule-headItem_actionsCount_2"><%--<spring:theme code="dashboard.myLicense.branches.actions"/>--%></th>
+                            </tr>
+                            </thead>
+                            <tbody class="tableModule-body">
+                            <c:forEach items="${branches}" var="branch" varStatus="loop">
+                                <tr>
+                                    <td><c:out value="${branch.name}"/></td>
+                                    <td><c:out value="${branch.type}"/></td>
+                                    <td><c:out value="${branch.city}"/></td>
+                                    <td class="tableModule-bodyItem-action">
+                                        <button class="btn btn_link hidden" data-completed-index="${loop.index}">
+                                            <icon:status-complete/>
+                                        </button>
+                                        <button class="btn btn_link btn-edit-branch" data-toggle="modal"
+                                                data-target="#branchEditModal" data-index="${loop.index}"
+                                                onclick="showBranchInModal(this)">
+                                            <c:choose>
+                                                <c:when test="${branchData.statusCode == 'V' || branchData.statusCode == 'I' }">
+                                                    <icon:view/>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <icon:edit/>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
+            <c:url value="/governmentDocuments" var="governmentDocs"/>
+            <button type="submit" class="btn" onclick="sendBranches()" ${disabled}>Submit</button>
+ 	<input type="hidden" id="serviceId"/>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="branchEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Edit <span id="branchName"></span></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
+            </div>
+
+            <div class="modal-body modal-body_bordered">
+                <div class="contentModule">
+                    <div class="contentModule-section">
+                        <div class="contentModule-headline">
+                            <span class="iconElement iconElement_register02"><icon:register02/></span>
+                            Commercial register
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="formRadioButton">
+                                    <div class="form-group">
+
+                                        <div class="form-item">
+                                            <input id="aahasCr1" class="form-control gov-docs-hasCr" name="aahasCr"
+                                                   type="radio" value="true" onchange="handleCrnRadioChange()" ${disabled}>
+                                            <label for="aahasCr1" class="control-label">
+                                                <span></span> <spring:theme code="govDocs.hasCrY"/></label>
+                                        </div>
+
+                                        <div class="form-item">
+                                            <input id="aahasCr2" class="form-control gov-docs-hasCr" name="aahasCr"
+                                                   type="radio" value="false" onchange="handleCrnRadioChange()" ${disabled}>
+                                            <label for="aahasCr2" class="control-label">
+                                                <span></span><spring:theme code="govDocs.hasCrN"/></label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="formInputBox">
+                                    <div class="formInputBox">
+                                        <div class="form-group" id="cr-group">
+                                            <input id="govDocs-CRN" class="form-control gov-docs-crn" placeholder="."
+                                                   value="" type="text" ${disabled}>
+                                            <label class="control-label" for="govDocs-CRN">
+                                                <spring:theme code="govDocs.CRN"/>
+                                            </label>
+                                            <div class="help-block">
+                                                <span id="govDocs-CRN-error"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contentModule-section">
+                        <div class="contentModule-headline">
+                            <span class="iconElement iconElement_momra"><icon:momra/></span>
+                            Momra
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="formRadioButton">
+                                    <div class="form-group">
+                                        <div class="form-item">
+                                            <input id="aahasMomra1" class="form-control gov-docs-momra"
+                                                   name="aahasMomra" type="radio" value="true"
+                                                   onchange="handleMomraRadioChange()" ${disabled}>
+                                            <label for="aahasMomra1" class="control-label">
+                                                <span></span> <spring:theme code="govDocs.momraY"/></label>
+                                        </div>
+
+                                        <div class="form-item">
+                                            <input id="aahasMomra2" class="form-control gov-docs-momra"
+                                                   name="aahasMomra" type="radio" value="false"
+                                                   onchange="handleMomraRadioChange()" ${disabled}>
+                                            <label for="aahasMomra2" class="control-label">
+                                                <span></span><spring:theme code="govDocs.momraN"/></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="formInputBox">
+                                    <div class="formInputBox">
+                                        <div class="form-group" id="shopLicNo-group">
+                                            <input id="govDocs-shopLicNo" class="form-control gov-docs-shopLicNo"
+                                                   placeholder="." value="" type="text" ${disabled}>
+                                            <label class="control-label" for="govDocs-shopLicNo">
+                                                <spring:theme code="govDocs.shopLicNo"/>
+                                            </label>
+                                            <div class="help-block">
+                                                <span id="govDocs-shopLicNo-error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="formSelectBox">
+                                    <div class="form-group" id="amanah-group">
+                                        <select id="govDocs-amanah" name=""
+                                                class="js-select2 form-control gov-docs-amanah" ${disabled}>
+                                            <option></option>
+                                            <c:forEach items="${amanahs}" var="amanah">
+                                                <option value="${amanah.key}">${amanah.name}</option>
+                                            </c:forEach>
+                                        </select>
+                                        <label class="control-label" for="govDocs-amanah">
+                                            <spring:theme code="govDocs.amanah"/>
+                                        </label>
+                                        <div class="help-block">
+                                            <span id="govDocs-amanah-error"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="contentModule-section contentModule-section_slimDivider">
+
+                        <div class="row">
+
+                            <div class="col-md-5">
+                                <div class="contentModule-headline">
+                                    <span class="iconElement iconElement_momra"><icon:momra/></span>
+                                    Wassel
+                                </div>
+                                <div class="formRadioButton formRadioButton_block formRadioButton_slim">
+                                    <div class="form-group">
+
+                                        <div class="form-item">
+                                            <input id="aaWassel0" class="form-control gov-docs-wassel" name="wassel"
+                                                   type="radio" value="0" onchange="handleWasselRadioChange()" ${disabled}>
+                                            <label for="aaWassel0" class="control-label">
+                                                <span></span> <spring:theme code="govDocs.wassel.CrConnected"/></label>
+                                        </div>
+
+                                        <div class="form-item">
+                                            <input id="aaWassel1" class="form-control gov-docs-wassel" name="wassel"
+                                                   type="radio" value="1" onchange="handleWasselRadioChange()" ${disabled}>
+                                            <label for="aaWassel1" class="control-label">
+                                                <span></span><spring:theme code="govDocs.wassel.noCrConnected"/></label>
+                                        </div>
+                                        <div class="form-item">
+                                            <input id="aaWassel2" class="form-control gov-docs-wassel" name="wassel"
+                                                   type="radio" value="2" onchange="handleWasselRadioChange()" ${disabled}>
+                                            <label for="aaWassel2" class="control-label">
+                                                <span></span><spring:theme code="govDocs.wassel.noAddress"/></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-7" id="mapContainer">
+                                <div class="contentModule-headline">
+                                    <span class="iconElement iconElement_locationPin_filled"><icon:locationPin_filled/></span>
+                                    Physical address
+                                </div>
+                                <div class="mapsModule">
+                                    <div id="map" style="height: 350px"></div>
+                                </div>
+                                <div class="formInputBox">
+                                    <div class="form-group" id="gMap-group">
+                                        <input id="gMapAddress" class="form-control" placeholder="." value=""
+                                               type="text" readonly="true" >
+                                        <label class="control-label control-label_mandatory" for="gMapAddress">
+                                            your address
+                                        </label>
+                                        <div class="help-block">
+                                            <span id="govDocs-gMap-error"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer modal-footer_centered">
+                <button type="reset" class="btn btn_outline" data-dismiss="modal">
+                    Cancel
+                </button>
+                <button type="button" class="btn" onclick="saveBranch()" ${disabled}>
+                    <spring:theme code="govDocs.saveButton"/>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="branchesUpdated" tabindex="-1" role="dialog" aria-labelledby="requestSubmittedApply" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title"></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-heroImage">
+                    <icon:modal02/>
+                </div>
+                <div class="modal-description">
+                    <spring:theme code="govDocs.updated"/><span id="service-id"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <c:url value="/dashboard" var="dashboardUrl"></c:url>
+                <a class="btn btn_slim" href="${dashboardUrl}"><spring:theme code="govDocs.okay"/></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="branchesUpdatedError"  tabindex="-1" role="dialog" aria-labelledby="requestSubmittedApply" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title"></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-heroImage">
+                    <icon:attention-error/>
+                </div>
+                <div class="modal-description">
+                    <spring:theme code="govDocs.updated.error"/><span id="update-error"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn_slim" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="wassel-check" tabindex="-1" role="dialog" aria-labelledby="requestSubmittedApply" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title"></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-heroImage">
+                    <icon:modal02/>
+                </div>
+                <div class="modal-description">
+                    <c:out value="${wasselCheckMessage}"></c:out>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="infoModalClose" type="button" class="btn btn_slim" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var notNullError = '<spring:theme code="govDocs.error.notEmpty"/>';
+    var notNumberError = '<spring:theme code="govDocs.error.notNumber"/>';
+    var gMapError = '<spring:theme code="govDocs.error.gmapNotNull"/>';
+
+    var branchesJson = ${branchesJSON};
+    var mainBranchJson = ${mainBranchJSON};
+    var selectedBranch;
+
+</script>
+

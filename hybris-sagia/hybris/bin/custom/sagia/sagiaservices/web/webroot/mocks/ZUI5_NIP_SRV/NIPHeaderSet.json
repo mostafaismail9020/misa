@@ -1,0 +1,54 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPHeaderSet('1010259143')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPHeaderSet('1010259143')",
+          "type": "ZUI5_NIP_SRV.NIPHeader"
+        },
+        "CR_NUMBER": "1010259143",
+        "SRQ_GUID": "",
+        "SRQ_ID": "",
+        "PARTNER": "",
+        "NAME_ARABIC": "انماط التقنية للمقاولات فرع شركة انماط التقنية للتجارة",
+        "NAME_ENGLISH": "",
+        "CAPITAL": "25000",
+        "LEGAL_STATUS": "",
+        "COMP_NAT_TYPE": "",
+        "COMP_NATIONALITY": "",
+        "COUNTRY": "SA",
+        "REGION": "10",
+        "CITY": "000018000046",
+        "MOBILE": "",
+        "EMAIL": "",
+        "LIC_TYPE": "",
+        "ISIC_SECTION": "",
+        "ISIC_DIVISION": "",
+        "NUMBER_700": "",
+        "ZAKAT_NUMBER": "",
+        "MOL_NUMBER": "",
+        "GOSI_NUMBER": "",
+        "CONTACT_NAME": "",
+        "CONTACT_NATIONALITY": "",
+        "CONTACT_COUNTRY": "",
+        "CONTACT_REGION": "",
+        "CONTACT_CITY": "",
+        "CONTACT_MOBILE": "",
+        "CONTACT_EMAIL": "",
+        "CR_ISSUE_DATE": "20081129",
+        "CR_EXPIRY_DATE": "20190509",
+        "CR_ACTIVITY": "بناءوترميم انشاءوتصميم المباني العامةوالخاصةوانشاءوتمديدواقامةوتشغيل,وادارةوصيانةوترميم وحفرالطرق والجسوروالمباني ومحطات الوقودوشبكات الصرف,الصحي وشبكات الكهرباءوالانارةواعمال الهدم والردم والديكوروالاعمال,الخشبيةوشراءوبيع الاراضي لاقامةالمباني والمستودعات عليهاواستثمارهذه,المباني للبيع اوالايجارلصالح الشركةوادارةوتطويروصيانةوترميم ونظافة",
+        "CR_EXPIRY_CHECK": "",
+        "CR_VALID_CHECK": "X",
+        "SUCCESS": "",
+        "ERROR": "",
+        "ToAttachments": {
+          "__deferred": {
+            "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPHeaderSet('1010259143')/ToAttachments"
+          }
+        }
+      }
+    ]
+  }
+}

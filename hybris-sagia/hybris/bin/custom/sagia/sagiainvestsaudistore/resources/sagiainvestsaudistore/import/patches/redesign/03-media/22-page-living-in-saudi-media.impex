@@ -1,0 +1,27 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]         				; realFileName             					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; livinginsaudi-bannerimage.png 			; livinginsaudi-bannerimage.png				; $siteResource/livinginsaudi-bannerimage.png 								  ; image/png						;										   ; ""  ;
+					; healthcare-backgroundimage.png 			; healthcare-backgroundimage.png			; $siteResource/healthcare-backgroundimage.png 								  ;	image/png						;										   ; ""  ;
+					; education-backgroundimage.png 			; education-backgroundimage.png				; $siteResource/education-backgroundimage.png								  ;	image/png						;										   ; ""  ;
+					; leisure-backgroundimage.png  				; leisure-backgroundimage.png				; $siteResource/leisure-backgroundimage.png 								  ;	image/png						;										   ; ""  ;
+					; digitalInfrastructure-backgroundimage.png	; digitalInfrastructure-backgroundimage.png	; $siteResource/digitalInfrastructure-backgroundimage.png 					  ;	image/png						;										   ; ""  ;
+					; livinginsaudi-backgroundimage.png			; livinginsaudi-backgroundimage.png			; $siteResource/livinginsaudi-backgroundimage.png 							  ;	image/png						;										   ; ""  ;
+					; healthcareicon.png			            ; healthcareicon.png						; $siteResource/healthcareicon.png 											  ;	image/png						;										   ; ""  ;
+					; educationicon.png			                ; educationicon.png							; $siteResource/educationicon.png 											  ;	image/png						;										   ; ""  ;
+					; leisureicon.png					        ; leisureicon.png							; $siteResource/leisureicon.png 											  ;	image/png						;										   ; ""  ;
+					; digitalinfrastructureicon.png	            ; digitalinfrastructureicon.png				; $siteResource/digitalinfrastructureicon.png								  ;	image/png						;										   ; ""  ;
+

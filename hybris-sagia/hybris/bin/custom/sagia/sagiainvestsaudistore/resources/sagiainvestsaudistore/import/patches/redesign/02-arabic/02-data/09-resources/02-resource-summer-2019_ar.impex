@@ -1,0 +1,27 @@
+#### Impex For Summer 2019 ####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE InvestSaudiResourceComponent 	;$contentCV[unique = true]			  ;uid[unique = true]							  ;resourceTitle[lang = ar]           		 	;resourceShortInformation[lang = ar]	;
+											;									  ;resource-investment-summer-2019      		  ;موجز مستجدات الاستثمار  صيف  2019 			;ابرز مستجدات الاستثمار في الربع الثاني من عام 2019 ;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]												;resourceFullDescription [lang = ar]	;
+										  ;							;resource-investment-summer-2019                                ;"
+<p>أعلنت الهيئة العامة للاستثمار عن إصدار 291 رخصة استثمار أجنبي خلال الربع الثاني من عام 2019، ما يعادل أكثر من الضعف مقارنة بنفس الفترة من عام 2018، وبزيادة نسبتها 103% مقارنة مع الربع الأول من عام 2019، بمعدل 5 رخص استثمار أجنبي تصدر يوميًّا.</p>
+<p>وشهدت نسب النمو في رخص الاستثمار الأجنبي الصادرة في الربع الثاني من عام 2019 كافة القطاعات المستهدفة ، إذ شهد قطاع البناء إصدار 61 رخصة، إضافة إلى القطاعات الأخرى مثل قطاع الاتصالات وتقنية المعلومات الذي شهد إصدار 51 رخصة، وقطاع التصنيع الذي شهد إصدار 45 رخصة، بالإضافة إلى عدد التراخيص المتنامي في القطاعات الأخرى.</p>
+<p>كما يشهد السوق السعودي اهتمام المستثمرين من كافة أنحاء العالم، حيث تميز هذا الربع بترخيص عدد من الشركات البريطانية والأمريكية والفرنسية، إضافة إلى شركات أخرى من مصر والصين والهند وغيرها من الدول.</p>
+<p>يستعرض تقرير مستجدات الاستثمار في نسخته للربع الثاني أهم أخبار بيئة الاستثمار حول المملكة، وأحدث الفرص الاستثمارية والإصلاحات الاقتصادية والمحفزات التي تقدمها المملكة في بيئة تتميز بسهولة ممارسة الأعمال.</p>
+<p>يتضمن التقرير: </p>
+<ul id='arabic-list'>
+<li> أرقام التراخيص الجديدة</li>
+<li>أكبر الدول المستثمرة</li>
+<li>أكثر القطاعات استثمارًا</li>
+<li>المشاريع الكبرى والفرص</li>
+</ul>
+";

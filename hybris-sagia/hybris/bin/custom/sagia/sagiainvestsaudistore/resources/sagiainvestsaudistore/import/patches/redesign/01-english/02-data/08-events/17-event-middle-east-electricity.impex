@@ -1,0 +1,45 @@
+####Impex For Middle-East-Electricity####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails;$contentCV[unique = true]	;uid[unique = true] 			;keyValue[lang = en]  	;keyName[lang = en];
+                            ;       					;electricity-key-1           	;7,000        			;Event attendees;
+							;	  						;electricity-key-2           	;500    				;Booth Attendees;
+
+
+INSERT_UPDATE Media; code[unique = true]            			     ; realFileName                    	 		;@media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]				; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;MEE1-Banner-image.jpg			      		 	 ; MEE1-Banner-image.jpg 					; $siteResource/MEE1-Banner-image.jpg                                     					; image/jpg                   ;                                          ; ""     ;
+                   ;MEE-Thumbnail-image.jpg  		 		 	 	 ; MEE-Thumbnail-image.jpg  	    	    ; $siteResource/MEE-Thumbnail-image.jpg                                          		    ; image/jpg                   ;                                          ; ""     ;
+                   ;event-gallary-image.png          				 ; event-gallary-image.png         			; $siteResource/event-gallary-image.png                                              		; image/png                   ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]				; $medias					; $contentCV; 
+                            ; media-container-electricity    		; event-gallary-image.png	;           ; 			   
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true] 		;eventUrl(uid, $contentCV)			;eventLocation[lang = en]	;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss];eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+										;						  ;event-electricity        ;									;"Dubai" 			        ;03.03.2020 00:00:00                              ;05.03.2020 00:00:00
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true] 		;eventName[lang = en]				;eventShortInformation[lang = en] ;
+										;						  ;event-electricity        ;Middle East Electricity            ;The Ministry of Investment is participating in the Middle East Energy Exhibition specializing in innovative solutions and new technologies.;
+
+     
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventKeyDetails(uid, $contentCV)	;
+										;						  ;event-electricity 		;electricity-key-1,electricity-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventBannerImage(code, $contentCV);eventThumbnailImage(code, $contentCV);eventGalleryImages(qualifier, $contentCV);
+										;						   ;event-electricity  		;MEE1-Banner-image.jpg 			   ;MEE-Thumbnail-image.jpg				 ;media-container-electricity  ; 
+		   
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventFullDescription[lang = en];
+										;						  ;event-electricity        ;								;

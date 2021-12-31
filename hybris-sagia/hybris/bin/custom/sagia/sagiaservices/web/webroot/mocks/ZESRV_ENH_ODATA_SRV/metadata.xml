@@ -1,0 +1,687 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZESRV_ENH_ODATA_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="InvestorNotification" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="InvestorId"/>
+                    <PropertyRef Name="TransactionId"/>
+                    <PropertyRef Name="NotificationType"/>
+                </Key>
+                <Property Name="AmountPayable" Type="Edm.Decimal" Precision="16" Scale="3" sap:unicode="false" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InvestorId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BusinessPartner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MainRequest" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TransactionId" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Notification ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NotificationType" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Notification Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NotificationPriority" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Notification Priorit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ExpiryDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NotificationText" Type="Edm.String" Nullable="false" MaxLength="2048" sap:unicode="false" sap:label="Notification Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Char80" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreatedOn" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ISICClass" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lang"/>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Investorid"/>
+                </Key>
+                <Property Name="Lang" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LANG" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="USERID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INVESTORID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bpid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="BPID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictypetext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPETEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Srid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SRID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Licactivity" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICACTIVITY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inputid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INPUTID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISICID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionEn" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_EN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionAr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_AR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ISICBranch" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lang"/>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Investorid"/>
+                </Key>
+                <Property Name="Lang" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LANG" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="USERID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INVESTORID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bpid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="BPID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictypetext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPETEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Srid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SRID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Licactivity" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICACTIVITY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inputid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INPUTID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISICID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionEn" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_EN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionAr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_AR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ISICActivity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lang"/>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Investorid"/>
+                </Key>
+                <Property Name="Lang" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LANG" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="USERID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INVESTORID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bpid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="BPID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictypetext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPETEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Srid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SRID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Licactivity" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICACTIVITY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inputid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INPUTID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISICID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionEn" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_EN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionAr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_AR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="LegalInquiryHDR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SrId"/>
+                </Key>
+                <Property Name="SrId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SrGuid" Type="Edm.Guid" sap:unicode="false" sap:label="Object GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BpId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BusinessPartner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BpGuid" Type="Edm.Guid" sap:unicode="false" sap:label="BP GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SrCrDate" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SrStCode" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SrStDesc" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TransType" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Transaction Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TransTypeDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="UI Actions" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LogonUser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Logon User name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BpName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="AttachmantHDRSet" Relationship="ZESRV_ENH_ODATA_SRV.LegalInquiryHDRToAttchAsso" FromRole="FromRole_LegalInquiryHDRToAttchAsso" ToRole="ToRole_LegalInquiryHDRToAttchAsso"/>
+                <NavigationProperty Name="ContentHDRSet" Relationship="ZESRV_ENH_ODATA_SRV.LegalInquiryHDRToContentAsso" FromRole="FromRole_LegalInquiryHDRToContentAsso" ToRole="ToRole_LegalInquiryHDRToContentAsso"/>
+                <NavigationProperty Name="GetTextSet" Relationship="ZESRV_ENH_ODATA_SRV.LegalInquiryHDRToTextAsso" FromRole="FromRole_LegalInquiryHDRToTextAsso" ToRole="ToRole_LegalInquiryHDRToTextAsso"/>
+                <NavigationProperty Name="UploadContentSet" Relationship="ZESRV_ENH_ODATA_SRV.LegalInquiryHDRToUploadAsso" FromRole="FromRole_LegalInquiryHDRToUploadAsso" ToRole="ToRole_LegalInquiryHDRToUploadAsso"/>
+                <NavigationProperty Name="LegalInquiry" Relationship="ZESRV_ENH_ODATA_SRV.LegalInquiryHDRToLegdetAsso" FromRole="FromRole_LegalInquiryHDRToLegdetAsso" ToRole="ToRole_LegalInquiryHDRToLegdetAsso"/>
+            </EntityType>
+            <EntityType Name="ContentDetails" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ObjectId"/>
+                    <PropertyRef Name="DocumentId"/>
+                </Key>
+                <Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ObjectGuid" Type="Edm.Guid" sap:unicode="false" sap:label="Object GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DocumentId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileCont" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="Binary String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="File Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MimeType" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="MIME_TYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileContString" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="FILE_CONTS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ISIC_DetPS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Investorid"/>
+                </Key>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INVESTORID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lic" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LIC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsicSection" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISIC_SECTION" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsicDivision" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISIC_DIVISION" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsicGroup" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISIC_GROUP" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsicClass" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISIC_CLASS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsicBranch" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISIC_BRANCH" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsicActivity" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISIC_ACTIVITY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SurveyID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SURVEY_ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Act" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ACT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsicDescription" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISIC_DESCRIPTION" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Activity" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ACTIVITY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ActDesc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ACTDESC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LicenseType" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICENSE_TYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Return" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="RETURN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Licans" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICANS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SupportVisit" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SrId"/>
+                </Key>
+                <Property Name="SrId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="User status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BpId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BusinessPartner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatDesc" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VisitDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TextMsg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tdid" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Text ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="SuppVisitToText" Relationship="ZESRV_ENH_ODATA_SRV.SuppVisitToText" FromRole="FromRole_SuppVisitToText" ToRole="ToRole_SuppVisitToText"/>
+                <NavigationProperty Name="SupportVstToAttachNav" Relationship="ZESRV_ENH_ODATA_SRV.SupportVstToAttachAsso" FromRole="FromRole_SupportVstToAttachAsso" ToRole="ToRole_SupportVstToAttachAsso"/>
+                <NavigationProperty Name="SupportVstToContHdrNav" Relationship="ZESRV_ENH_ODATA_SRV.SupportVstToContHdrAsso" FromRole="FromRole_SupportVstToContHdrAsso" ToRole="ToRole_SupportVstToContHdrAsso"/>
+            </EntityType>
+            <EntityType Name="DocAttach" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ObjectId"/>
+                    <PropertyRef Name="FileGuid"/>
+                </Key>
+                <Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileGuid" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Log. document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="File Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="Mime type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileContent" Type="Edm.Binary" sap:unicode="false" sap:label="Binary String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ObjectType" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Trans. Cat." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="LegalInquiry" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SrId"/>
+                </Key>
+                <Property Name="SrId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SrGuid" Type="Edm.Guid" sap:unicode="false" sap:label="Object GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BpId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BusinessPartner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BpGuid" Type="Edm.Guid" sap:unicode="false" sap:label="BP GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LegEnqTitle" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Legal Enquiry" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LegEnqDesc" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="Enquiry Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TextMsg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="TEXT_MSG" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tdid" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Text ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="AttachmantHDR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ObjectId"/>
+                    <PropertyRef Name="DocumentId"/>
+                </Key>
+                <Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ObjectGuid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Object GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="File Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filesize" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Mime Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DocumentId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Contenttype" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crtdby" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crtdon" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ContentHDR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ObjectId"/>
+                    <PropertyRef Name="DocumentId"/>
+                    <PropertyRef Name="Stage"/>
+                </Key>
+                <Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ObjectGuid" Type="Edm.Guid" sap:unicode="false" sap:label="Object GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="File Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filesize" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mimetype" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:label="Mime Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DocumentId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Contenttype" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crtdby" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crtdon" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stage" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Stage" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dockeyid" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Docu ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShDocId" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Sh Doc ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="GetText" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SrId"/>
+                    <PropertyRef Name="Tdid"/>
+                    <PropertyRef Name="CommentDate"/>
+                    <PropertyRef Name="CommentTime"/>
+                    <PropertyRef Name="Timezone"/>
+                </Key>
+                <Property Name="SrId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SrGuid" Type="Edm.Guid" sap:unicode="false" sap:label="Object GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tdid" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Text ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tdline" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="TDLINE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CommentsBy" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="COMMENTS_BY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CommentDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CommentTime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Field of type TIMS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Timezone" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Time zone from" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stage" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Stage" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="UploadContent" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ObjectId"/>
+                    <PropertyRef Name="Stage"/>
+                </Key>
+                <Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ObjectGuid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Object GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DocumentId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileCont" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="Binary String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="File Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MimeType" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="MIME_TYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileConts" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="FILE_CONTS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stage" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Stage" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DocId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Docu ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShDocId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sh Doc ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ISICSection" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lang"/>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Investorid"/>
+                </Key>
+                <Property Name="Lang" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LANG" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="USERID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INVESTORID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bpid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="BPID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictypetext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPETEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Srid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SRID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Licactivity" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICACTIVITY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inputid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INPUTID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISICID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionEn" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_EN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionAr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_AR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ISICDivision" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lang"/>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Investorid"/>
+                </Key>
+                <Property Name="Lang" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LANG" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="USERID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INVESTORID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bpid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="BPID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictypetext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPETEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Srid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SRID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Licactivity" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICACTIVITY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inputid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INPUTID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISICID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionEn" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_EN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionAr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_AR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ISICGroup" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lang"/>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Investorid"/>
+                </Key>
+                <Property Name="Lang" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LANG" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="USERID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INVESTORID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bpid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="BPID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictypetext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPETEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Srid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SRID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Licactivity" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICACTIVITY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inputid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="INPUTID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISICID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionEn" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_EN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionAr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DESCRIPTION_AR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="DecExecVisit" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SrID"/>
+                </Key>
+                <Property Name="SrID" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BPID" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BusinessPartner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VisitDate" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tdid" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Text ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DocType" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Transaction Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VisitType" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Transaction Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Source" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Source created from" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="User status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatusText" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="DecExecVisitToDocAttach" Relationship="ZESRV_ENH_ODATA_SRV.DecExecVisitToDocAttach" FromRole="FromRole_DecExecVisitToDocAttach" ToRole="ToRole_DecExecVisitToDocAttach"/>
+            </EntityType>
+            <EntityType Name="SurveyHDR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Surveyid"/>
+                    <PropertyRef Name="SurveyVersion"/>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="TransactionId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Surveyid" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Survey ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SurveyVersion" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Survey Version" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApplicationId" Type="Edm.String" MaxLength="32" sap:unicode="false" sap:label="Appl." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Surveytitle" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Long Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mandatfrom" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Validfrom" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Validto" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreatedAt" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Created by" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ModifiedAt" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ModifiedBy" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Changed by" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="SurveyHdrToSurvQuestDefNav" Relationship="ZESRV_ENH_ODATA_SRV.SurveyHdrToSurvQuestDefAsso" FromRole="FromRole_SurveyHdrToSurvQuestDefAsso" ToRole="ToRole_SurveyHdrToSurvQuestDefAsso"/>
+                <NavigationProperty Name="SurveyHdrToSurvQuestAnsNav" Relationship="ZESRV_ENH_ODATA_SRV.SurveyHdrToSurvQuestAnsAsso" FromRole="FromRole_SurveyHdrToSurvQuestAnsAsso" ToRole="ToRole_SurveyHdrToSurvQuestAnsAsso"/>
+            </EntityType>
+            <EntityType Name="SurvQuestAns" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Surveyid"/>
+                    <PropertyRef Name="QuestID"/>
+                </Key>
+                <Property Name="Surveyid" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Survey ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QuestID" Type="Edm.String" Nullable="false" MaxLength="64" sap:unicode="false" sap:label="Question ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SurveyVersion" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Survey Version" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AnswType" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Answer Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AnswerID" Type="Edm.String" MaxLength="64" sap:unicode="false" sap:label="Answer ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Txtlg" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Long Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SurvQuestDef" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SurveyId"/>
+                    <PropertyRef Name="SurveyVersion"/>
+                    <PropertyRef Name="Language"/>
+                    <PropertyRef Name="QuestID"/>
+                </Key>
+                <Property Name="SurveyId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Survey ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApplicationId" Type="Edm.String" MaxLength="32" sap:unicode="false" sap:label="Appl." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SurveyVersion" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Survey Version" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HierLevel" Type="Edm.Byte" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Consnr" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Quest" Type="Edm.String" MaxLength="32" sap:unicode="false" sap:label="Question" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mandquest" Type="Edm.Boolean" sap:unicode="false" sap:label="Boolean Variable (X=true, -=false, space=unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QuestID" Type="Edm.String" Nullable="false" MaxLength="64" sap:unicode="false" sap:label="Question ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AnsTypeSt" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Question Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AnswType" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Answer Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QuestTXT" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="SurveyQuestDefToSurvQuestDDLBNav" Relationship="ZESRV_ENH_ODATA_SRV.SurveyQuestDefToSurvQuestDDLBAsso" FromRole="FromRole_SurveyQuestDefToSurvQuestDDLBAsso" ToRole="ToRole_SurveyQuestDefToSurvQuestDDLBAsso"/>
+            </EntityType>
+            <EntityType Name="SurvQustDDLB" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SurveyId"/>
+                    <PropertyRef Name="QuestID"/>
+                </Key>
+                <Property Name="SurveyId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Survey ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QuestID" Type="Edm.String" Nullable="false" MaxLength="64" sap:unicode="false" sap:label="Question ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SurveyVersion" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Survey Version" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AnsHierLevel" Type="Edm.Byte" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AnsID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AnsText" Type="Edm.String" MaxLength="200" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ControlID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="BPAddr" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Bpid"/>
+                </Key>
+                <Property Name="Bpid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BusinessPartner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HouseNo" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Supplement" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CountryDesc" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZipCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postal Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AdditNo" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Company Post Cd" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Building" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Building Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="POBox" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="POBox" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SrReqCrtFlag" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="SrReqCrtFlag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="Message" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="BPAddrToDepndtSrvReq" Relationship="ZESRV_ENH_ODATA_SRV.BPAddrToDepndtSrvReq" FromRole="FromRole_BPAddrToDepndtSrvReq" ToRole="ToRole_BPAddrToDepndtSrvReq"/>
+            </EntityType>
+            <EntityType Name="DepndtSrvReq" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Bpid"/>
+                    <PropertyRef Name="ObjectId"/>
+                </Key>
+                <Property Name="Bpid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BPID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CrtDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatusKey" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatusText" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="LegalInquiryDropdown" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ScenarioId"/>
+                    <PropertyRef Name="Lang"/>
+                    <PropertyRef Name="LegenqId"/>
+                </Key>
+                <Property Name="ScenarioId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Scenario ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lang" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Lang" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LegenqId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Legal Enquiry" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="Enquiry Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="LicType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lictype"/>
+                </Key>
+                <Property Name="Bpid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="BPID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lictypetext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LICTYPETEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="SuppVisitToText" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.SupportVisit" Multiplicity="1" Role="FromRole_SuppVisitToText"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.GetText" Multiplicity="*" Role="ToRole_SuppVisitToText"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SuppVisitToText">
+                        <PropertyRef Name="SrId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SuppVisitToText">
+                        <PropertyRef Name="SrId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SupportVstToAttachAsso" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.SupportVisit" Multiplicity="1" Role="FromRole_SupportVstToAttachAsso"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.DocAttach" Multiplicity="*" Role="ToRole_SupportVstToAttachAsso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SupportVstToAttachAsso">
+                        <PropertyRef Name="SrId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SupportVstToAttachAsso">
+                        <PropertyRef Name="ObjectId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SupportVstToContHdrAsso" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.SupportVisit" Multiplicity="1" Role="FromRole_SupportVstToContHdrAsso"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.ContentHDR" Multiplicity="*" Role="ToRole_SupportVstToContHdrAsso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SupportVstToContHdrAsso">
+                        <PropertyRef Name="SrId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SupportVstToContHdrAsso">
+                        <PropertyRef Name="ObjectId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="LegalInquiryHDRToContentAsso" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.LegalInquiryHDR" Multiplicity="1" Role="FromRole_LegalInquiryHDRToContentAsso"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.ContentHDR" Multiplicity="*" Role="ToRole_LegalInquiryHDRToContentAsso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_LegalInquiryHDRToContentAsso">
+                        <PropertyRef Name="SrId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_LegalInquiryHDRToContentAsso">
+                        <PropertyRef Name="ObjectId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="LegalInquiryHDRToTextAsso" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.LegalInquiryHDR" Multiplicity="1" Role="FromRole_LegalInquiryHDRToTextAsso"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.GetText" Multiplicity="*" Role="ToRole_LegalInquiryHDRToTextAsso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_LegalInquiryHDRToTextAsso">
+                        <PropertyRef Name="SrId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_LegalInquiryHDRToTextAsso">
+                        <PropertyRef Name="SrId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="LegalInquiryHDRToUploadAsso" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.LegalInquiryHDR" Multiplicity="1" Role="FromRole_LegalInquiryHDRToUploadAsso"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.UploadContent" Multiplicity="*" Role="ToRole_LegalInquiryHDRToUploadAsso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_LegalInquiryHDRToUploadAsso">
+                        <PropertyRef Name="SrId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_LegalInquiryHDRToUploadAsso">
+                        <PropertyRef Name="ObjectId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="LegalInquiryHDRToLegdetAsso" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.LegalInquiryHDR" Multiplicity="0..1" Role="FromRole_LegalInquiryHDRToLegdetAsso"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.LegalInquiry" Multiplicity="1" Role="ToRole_LegalInquiryHDRToLegdetAsso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_LegalInquiryHDRToLegdetAsso">
+                        <PropertyRef Name="SrId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_LegalInquiryHDRToLegdetAsso">
+                        <PropertyRef Name="SrId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="LegalInquiryHDRToAttchAsso" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.LegalInquiryHDR" Multiplicity="1" Role="FromRole_LegalInquiryHDRToAttchAsso"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.AttachmantHDR" Multiplicity="*" Role="ToRole_LegalInquiryHDRToAttchAsso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_LegalInquiryHDRToAttchAsso">
+                        <PropertyRef Name="SrId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_LegalInquiryHDRToAttchAsso">
+                        <PropertyRef Name="ObjectId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="BPAddrToDepndtSrvReq" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.BPAddr" Multiplicity="1" Role="FromRole_BPAddrToDepndtSrvReq"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.DepndtSrvReq" Multiplicity="*" Role="ToRole_BPAddrToDepndtSrvReq"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_BPAddrToDepndtSrvReq">
+                        <PropertyRef Name="Bpid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_BPAddrToDepndtSrvReq">
+                        <PropertyRef Name="Bpid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DecExecVisitToDocAttach" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.DecExecVisit" Multiplicity="1" Role="FromRole_DecExecVisitToDocAttach"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.DocAttach" Multiplicity="*" Role="ToRole_DecExecVisitToDocAttach"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DecExecVisitToDocAttach">
+                        <PropertyRef Name="SrID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DecExecVisitToDocAttach">
+                        <PropertyRef Name="ObjectId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SurveyQuestDefToSurvQuestDDLBAsso" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.SurvQuestDef" Multiplicity="1" Role="FromRole_SurveyQuestDefToSurvQuestDDLBAsso"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.SurvQustDDLB" Multiplicity="*" Role="ToRole_SurveyQuestDefToSurvQuestDDLBAsso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SurveyQuestDefToSurvQuestDDLBAsso">
+                        <PropertyRef Name="SurveyId"/>
+                        <PropertyRef Name="QuestID"/>
+                        <PropertyRef Name="Language"/>
+                        <PropertyRef Name="SurveyVersion"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SurveyQuestDefToSurvQuestDDLBAsso">
+                        <PropertyRef Name="SurveyId"/>
+                        <PropertyRef Name="QuestID"/>
+                        <PropertyRef Name="Language"/>
+                        <PropertyRef Name="SurveyVersion"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SurveyHdrToSurvQuestAnsAsso" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.SurveyHDR" Multiplicity="1" Role="FromRole_SurveyHdrToSurvQuestAnsAsso"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.SurvQuestAns" Multiplicity="*" Role="ToRole_SurveyHdrToSurvQuestAnsAsso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SurveyHdrToSurvQuestAnsAsso">
+                        <PropertyRef Name="Surveyid"/>
+                        <PropertyRef Name="Language"/>
+                        <PropertyRef Name="SurveyVersion"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SurveyHdrToSurvQuestAnsAsso">
+                        <PropertyRef Name="Surveyid"/>
+                        <PropertyRef Name="Language"/>
+                        <PropertyRef Name="SurveyVersion"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SurveyHdrToSurvQuestDefAsso" sap:content-version="1">
+                <End Type="ZESRV_ENH_ODATA_SRV.SurveyHDR" Multiplicity="1" Role="FromRole_SurveyHdrToSurvQuestDefAsso"/>
+                <End Type="ZESRV_ENH_ODATA_SRV.SurvQuestDef" Multiplicity="*" Role="ToRole_SurveyHdrToSurvQuestDefAsso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SurveyHdrToSurvQuestDefAsso">
+                        <PropertyRef Name="Surveyid"/>
+                        <PropertyRef Name="Language"/>
+                        <PropertyRef Name="SurveyVersion"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SurveyHdrToSurvQuestDefAsso">
+                        <PropertyRef Name="SurveyId"/>
+                        <PropertyRef Name="Language"/>
+                        <PropertyRef Name="SurveyVersion"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZESRV_ENH_ODATA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="InvestorNotificationSet" EntityType="ZESRV_ENH_ODATA_SRV.InvestorNotification" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ISICClassSet" EntityType="ZESRV_ENH_ODATA_SRV.ISICClass" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ISICBranchSet" EntityType="ZESRV_ENH_ODATA_SRV.ISICBranch" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ISICActivitySet" EntityType="ZESRV_ENH_ODATA_SRV.ISICActivity" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="LegalInquiryHDRSet" EntityType="ZESRV_ENH_ODATA_SRV.LegalInquiryHDR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ContentDetailsSet" EntityType="ZESRV_ENH_ODATA_SRV.ContentDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ISIC_DetPSSet" EntityType="ZESRV_ENH_ODATA_SRV.ISIC_DetPS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SupportVisitSet" EntityType="ZESRV_ENH_ODATA_SRV.SupportVisit" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="DocAttachSet" EntityType="ZESRV_ENH_ODATA_SRV.DocAttach" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="LegalInquirySet" EntityType="ZESRV_ENH_ODATA_SRV.LegalInquiry" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AttachmantHDRSet" EntityType="ZESRV_ENH_ODATA_SRV.AttachmantHDR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ContentHDRSet" EntityType="ZESRV_ENH_ODATA_SRV.ContentHDR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="GetTextSet" EntityType="ZESRV_ENH_ODATA_SRV.GetText" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="UploadContentSet" EntityType="ZESRV_ENH_ODATA_SRV.UploadContent" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ISICSectionSet" EntityType="ZESRV_ENH_ODATA_SRV.ISICSection" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ISICDivisionSet" EntityType="ZESRV_ENH_ODATA_SRV.ISICDivision" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ISICGroupSet" EntityType="ZESRV_ENH_ODATA_SRV.ISICGroup" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="DecExecVisitSet" EntityType="ZESRV_ENH_ODATA_SRV.DecExecVisit" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SurveyHDRSet" EntityType="ZESRV_ENH_ODATA_SRV.SurveyHDR" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SurvQuestAnsSet" EntityType="ZESRV_ENH_ODATA_SRV.SurvQuestAns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SurvQuestDefSet" EntityType="ZESRV_ENH_ODATA_SRV.SurvQuestDef" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SurvQustDDLBSet" EntityType="ZESRV_ENH_ODATA_SRV.SurvQustDDLB" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="BPAddrSet" EntityType="ZESRV_ENH_ODATA_SRV.BPAddr" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="DepndtSrvReqSet" EntityType="ZESRV_ENH_ODATA_SRV.DepndtSrvReq" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="LegalInquiryDropdownSet" EntityType="ZESRV_ENH_ODATA_SRV.LegalInquiryDropdown" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="LicTypeSet" EntityType="ZESRV_ENH_ODATA_SRV.LicType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="SurveyHdrToSurvQuestDefAssoSet" Association="ZESRV_ENH_ODATA_SRV.SurveyHdrToSurvQuestDefAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SurveyHDRSet" Role="FromRole_SurveyHdrToSurvQuestDefAsso"/>
+                    <End EntitySet="SurvQuestDefSet" Role="ToRole_SurveyHdrToSurvQuestDefAsso"/>
+                </AssociationSet>
+                <AssociationSet Name="LegalInquiryHDRToTextAssoSet" Association="ZESRV_ENH_ODATA_SRV.LegalInquiryHDRToTextAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="LegalInquiryHDRSet" Role="FromRole_LegalInquiryHDRToTextAsso"/>
+                    <End EntitySet="GetTextSet" Role="ToRole_LegalInquiryHDRToTextAsso"/>
+                </AssociationSet>
+                <AssociationSet Name="LegalInquiryHDRToAttchAssoSet" Association="ZESRV_ENH_ODATA_SRV.LegalInquiryHDRToAttchAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="LegalInquiryHDRSet" Role="FromRole_LegalInquiryHDRToAttchAsso"/>
+                    <End EntitySet="AttachmantHDRSet" Role="ToRole_LegalInquiryHDRToAttchAsso"/>
+                </AssociationSet>
+                <AssociationSet Name="LegalInquiryHDRToUploadAssoSet" Association="ZESRV_ENH_ODATA_SRV.LegalInquiryHDRToUploadAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="LegalInquiryHDRSet" Role="FromRole_LegalInquiryHDRToUploadAsso"/>
+                    <End EntitySet="UploadContentSet" Role="ToRole_LegalInquiryHDRToUploadAsso"/>
+                </AssociationSet>
+                <AssociationSet Name="SupportVstToContHdrAssoSet" Association="ZESRV_ENH_ODATA_SRV.SupportVstToContHdrAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SupportVisitSet" Role="FromRole_SupportVstToContHdrAsso"/>
+                    <End EntitySet="ContentHDRSet" Role="ToRole_SupportVstToContHdrAsso"/>
+                </AssociationSet>
+                <AssociationSet Name="BPAddrToDepndtSrvReqSet" Association="ZESRV_ENH_ODATA_SRV.BPAddrToDepndtSrvReq" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="BPAddrSet" Role="FromRole_BPAddrToDepndtSrvReq"/>
+                    <End EntitySet="DepndtSrvReqSet" Role="ToRole_BPAddrToDepndtSrvReq"/>
+                </AssociationSet>
+                <AssociationSet Name="SuppVisitToTextSet" Association="ZESRV_ENH_ODATA_SRV.SuppVisitToText" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SupportVisitSet" Role="FromRole_SuppVisitToText"/>
+                    <End EntitySet="GetTextSet" Role="ToRole_SuppVisitToText"/>
+                </AssociationSet>
+                <AssociationSet Name="LegalInquiryHDRToContentAssoSet" Association="ZESRV_ENH_ODATA_SRV.LegalInquiryHDRToContentAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="LegalInquiryHDRSet" Role="FromRole_LegalInquiryHDRToContentAsso"/>
+                    <End EntitySet="ContentHDRSet" Role="ToRole_LegalInquiryHDRToContentAsso"/>
+                </AssociationSet>
+                <AssociationSet Name="LegalInquiryHDRToLegdetAssoSet" Association="ZESRV_ENH_ODATA_SRV.LegalInquiryHDRToLegdetAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="LegalInquiryHDRSet" Role="FromRole_LegalInquiryHDRToLegdetAsso"/>
+                    <End EntitySet="LegalInquirySet" Role="ToRole_LegalInquiryHDRToLegdetAsso"/>
+                </AssociationSet>
+                <AssociationSet Name="SupportVstToAttachAssoSet" Association="ZESRV_ENH_ODATA_SRV.SupportVstToAttachAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SupportVisitSet" Role="FromRole_SupportVstToAttachAsso"/>
+                    <End EntitySet="DocAttachSet" Role="ToRole_SupportVstToAttachAsso"/>
+                </AssociationSet>
+                <AssociationSet Name="SurveyHdrToSurvQuestAnsAssoSet" Association="ZESRV_ENH_ODATA_SRV.SurveyHdrToSurvQuestAnsAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SurveyHDRSet" Role="FromRole_SurveyHdrToSurvQuestAnsAsso"/>
+                    <End EntitySet="SurvQuestAnsSet" Role="ToRole_SurveyHdrToSurvQuestAnsAsso"/>
+                </AssociationSet>
+                <AssociationSet Name="DecExecVisitToDocAttachSet" Association="ZESRV_ENH_ODATA_SRV.DecExecVisitToDocAttach" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="DecExecVisitSet" Role="FromRole_DecExecVisitToDocAttach"/>
+                    <End EntitySet="DocAttachSet" Role="ToRole_DecExecVisitToDocAttach"/>
+                </AssociationSet>
+                <AssociationSet Name="SurveyQuestDefToSurvQuestDDLBAssoSet" Association="ZESRV_ENH_ODATA_SRV.SurveyQuestDefToSurvQuestDDLBAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SurvQuestDefSet" Role="FromRole_SurveyQuestDefToSurvQuestDDLBAsso"/>
+                    <End EntitySet="SurvQustDDLBSet" Role="ToRole_SurveyQuestDefToSurvQuestDDLBAsso"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/$metadata"/>
+            <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/$metadata"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

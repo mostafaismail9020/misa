@@ -1,0 +1,111 @@
+$langen = en
+$langar = ar
+
+$contentCatalog = sagiaContentCatalog
+$contentCatalogName = Sagia Content Catalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+$siteResource = jar:com.sap.ibso.eservices.initialdata.setup.InitialDataSystemSetup&/sagiainitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$icon = icon(code, $contentCV)
+$menuIcon = menuIcon(code, $contentCV)
+$sagiaCategory = category(code)
+
+INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]            ; realfilename                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; altText; mime[default = 'image/png']; $contentCV[unique = true]; folder(qualifier)[default = 'images']
+                   ; widescreen            ; licenseServiceIcon             ; license-service.svg           ; $siteResource/icons/license-service.svg                                     ; "License Services Icon"
+                   ; widescreen            ; licenseServiceMenuIcon         ; license-service-menu.svg      ; $siteResource/icons/license-service-menu.svg                                ; "License Services Menu Icon"
+                   ; widescreen            ; specialServiceIcon             ; special-service.svg           ; $siteResource/icons/special-service.svg                                     ; "Special Services Icon"
+                   ; widescreen            ; specialServiceMenuIcon         ; special-service-menu.svg      ; $siteResource/icons/special-service-menu.svg                                ; "Special Services Menu Icon"
+                   ; widescreen            ; commerceAndIndustryIcon        ; commerce-industry.svg         ; $siteResource/icons/commerce-industry.svg                                   ; "Commerce And Industry Icon"
+                   ; widescreen            ; commerceAndIndustryMenuIcon    ; commerce-industry-menu.svg    ; $siteResource/icons/commerce-industry-menu.svg                              ; "Commerce And Industry Icon"
+                   ; widescreen            ; financialStatementIcon         ; financial-statement.svg       ; $siteResource/icons/financial-statement.svg                                 ; "Financial Statement Icon"
+                   ; widescreen            ; financialStatementMenuIcon     ; financial-statement-menu.svg  ; $siteResource/icons/financial-statement-menu.svg                            ; "Financial Statement Menu Icon"
+                   ; widescreen            ; followUpIcon                   ; follow-up.svg                 ; $siteResource/icons/follow-up.svg                                           ; "Follow Up Icon"
+                   ; widescreen            ; followUpMenuIcon               ; follow-up-menu.svg            ; $siteResource/icons/follow-up-menu.svg                                      ; "Follow Up Menu Icon"
+                   ; widescreen            ; interiorAndPassportIcon        ; interior-passport.svg         ; $siteResource/icons/interior-passport.svg                                   ; "Interior And Passport Icon"
+                   ; widescreen            ; interiorAndPassportMenuIcon    ; interior-passport-menu.svg    ; $siteResource/icons/interior-passport-menu.svg                              ; "Interior And Passport Menu Icon"
+                   ; widescreen            ; interiorAndRecruitmentIcon     ; interior-recruitment.svg      ; $siteResource/icons/interior-recruitment.svg                                ; "Interior And Recruitment Icon"
+                   ; widescreen            ; interiorAndRecruitmentMenuIcon ; interior-recruitment-menu.svg ; $siteResource/icons/interior-recruitment-menu.svg                           ; "Interior And Recruitment Menu Icon"
+                   ; widescreen            ; labourIcon                     ; labour.svg                    ; $siteResource/icons/labour.svg                                              ; "Labour Icon"
+                   ; widescreen            ; labourMenuIcon                 ; labour-menu.svg               ; $siteResource/icons/labour-menu.svg                                         ; "Labour Menu Icon"
+                   ; widescreen            ; realEstateIcon                 ; real-estate.svg               ; $siteResource/icons/real-estate.svg                                         ; "Real Estate Icon"
+                   ; widescreen            ; realEstateMenuIcon             ; real-estate-menu.svg          ; $siteResource/icons/real-estate-menu.svg                                    ; "Real Estate Menu Icon"
+                   ; widescreen            ; governmentDocumentsIcon        ; government-documents.svg      ; $siteResource/icons/government-documents.svg                                ; "Government Documents Icon"
+                   ; widescreen            ; governmentDocumentsMenuIcon    ; government-documents-menu.svg ; $siteResource/icons/government-documents-menu.svg                           ; "Government Documents Menu Icon"
+                   ; widescreen            ; rulesAndRegulationsIcon        ; rules-regulations.svg         ; $siteResource/icons/rules-regulations.svg                                   ; "Rules And Regulations Icon"
+                   ; widescreen            ; rulesAndRegulationsMenuIcon    ; rules-regulations-menu.svg    ; $siteResource/icons/rules-regulations-menu.svg                              ; "Rules And Regulations MenuIcon"
+
+
+INSERT_UPDATE SagiaCategory; code[unique = true]; name[lang = $langen]; description[lang = $langen]                                                                           ; categoryUrl; $icon              ; label   ; $menuIcon              ; name[lang = $langar]
+                           ; 1                  ; "License Services"  ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "caturl"   ; licenseServiceIcon ; "FIRST" ; licenseServiceMenuIcon ; "خدمات التراخيص"
+
+### Insert Governmental Categories
+INSERT_UPDATE SagiaCategory; code[unique = true]    ; name[lang = $langen]                ; description[lang = $langen]         ; $icon                      ; $menuIcon                      ; categoryUrl; label                   ; name[lang = $langar]
+                           ; commerceAndIndustry    ; Ministry of Commerce and Investment ; Ministry of Commerce and Investment ; commerceAndIndustryIcon    ; commerceAndIndustryMenuIcon    ; ZMOCI      ; "GOVERNMENTAL SERVICES" ; "وزارة التجارة والاستثمار"
+                           ; labour                 ; Labour                              ; Labour                              ; labourIcon                 ; labourMenuIcon                 ; ZMOL       ; "GOVERNMENTAL SERVICES" ; "مكتب العمل"
+                           ; interiorAndRecruitment ; Interior & Recruitment              ; Interior & Recruitment              ; interiorAndRecruitmentIcon ; interiorAndRecruitmentMenuIcon ; ZMOIR      ; "GOVERNMENTAL SERVICES" ; "الداخلية و الاستقدام"
+                           ; interiorAndPassport    ; Interior & Passport                 ; Interior & Passport                 ; interiorAndPassportIcon    ; interiorAndPassportMenuIcon    ; ZMOIP      ; "GOVERNMENTAL SERVICES" ; "الداخلية والجوازات"
+
+INSERT_UPDATE SagiaCategory; code[unique = true]; name[lang = $langen]            ; description[lang = $langen]                                                                           ; categoryUrl; $icon                   ; label            ; $menuIcon                   ; name[lang = $langar]
+                           ; 2                  ; "Special Services"              ; "Special services that are provide for you by SAGIA"                                                  ; "caturl"   ; specialServiceIcon      ; "SAGIA SERVICES" ; specialServiceMenuIcon      ; "الخدمات الخاصة"
+                           ; 3                  ; "Financial Statement"           ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "caturl"   ; financialStatementIcon  ; "SAGIA SERVICES" ; financialStatementMenuIcon  ; "القوائم المالية"
+                           ; 4                  ; "Real Estate"                   ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "caturl"   ; realEstateIcon          ; "SAGIA SERVICES" ; realEstateMenuIcon          ; "عقار"
+                           ; 5                  ; "Follow Up Services"            ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "caturl"   ; followUpIcon            ; "SAGIA SERVICES" ; followUpMenuIcon            ; "خدمات المتابعة"
+                           ; 6                  ; "Government Documents"          ; "Government Documents"                                                                                ; "caturl"   ; governmentDocumentsIcon ; "SAGIA SERVICES" ; governmentDocumentsMenuIcon ; "مستندات حكومية"
+                           ; 7                  ; "Rules & Regulations Advisory " ; "Rules & Regulations Advisory"                                                                        ; "caturl"   ; rulesAndRegulationsIcon ; "SAGIA SERVICES" ; rulesAndRegulationsMenuIcon ; "إستشارات اللوائح و الأنظمة"
+
+
+INSERT_UPDATE SagiaService; code[unique = true]; name[lang = $langen]              ; description[lang = $langen]                                                                           ; url                                   ; $sagiaCategory; tabs(code); serviceTypes(code)                         ; name[lang = $langar]
+                          ; ZSPLJAWA01         ; "Exist Re-entry Visa"             ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "special-services/exit-re-entry-visa" ; 2             ; 11,12,13  ;                                            ; "تأشيرة خروج وعودة"
+                          ; ZSPLJAWA02         ; "Renewal of IQAMA"                ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "special-services/renewal-of-iqama"   ; 2             ;           ;                                            ; "تجديد الإقامة"
+                          ; ZSPLJAWA03         ; "Transfer of IQAMA"               ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "special-services/transfer-of-iqama"  ; 2             ; 21,22,23  ;                                            ; "نقل كفالة"
+                          ; ZSPLJAWA04         ; "Final Exit of Visa Application " ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "special-services/final-exit-visa"    ; 2             ;           ;                                            ; "تأشيرة خروج نهائي"
+
+                          ; ZSR7               ; "Convert to national "            ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "my-sagia/license/convert"            ; 1             ;           ; ConvToNationals                            ; "تحويل إلى وطني"
+# License replacement service is no longer supported as e-service
+# Obsolete for e-services ; ZSR8               ; "Replace"                         ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "my-sagia/license/replace"            ; 1             ;           ; LicenseReplaceMents                        ; "استبدال"
+                          ; ZSR4               ; "Renew"                           ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "my-sagia/license/renew"              ; 1             ;           ; ServiceReqHDRs                             ; "تجديد"
+                          ; ZSR6               ; "Cancel"                          ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "my-sagia/license/cancel"             ; 1             ;           ; LicenseClearanceSet,LicenseCancellationSet ; "إلغاء"
+
+                          ; ZSR9               ; "Cancellation Support Letter"     ;                                                                                                       ; "my-sagia/license/cancel"             ;               ;           ;                                            ;
+                          ; ZSR1               ; "Investor Information Update"     ;                                                                                                       ; "contacts/history"                    ;               ;           ;                                            ;
+
+                          ; ZS11               ; "Financial Statement"             ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "financial"                           ; 3             ;           ;                                            ; "القوائم المالية"
+                          ; ZRES               ; "Buy and sell Real Estate"        ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "real-estate"                         ; 4             ;           ;                                            ; "بيع وشراء عقار"
+                          ; ZFLUP_02           ; "Violation replies"               ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "violation-replies"                   ; 5             ;           ;                                            ; "الرد على المخالفة"
+                          ; ZFLUP_03           ; "Warning Letters"                 ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "warning-letters"                     ; 5             ;           ;                                            ; "التبليغ الكتابي"
+                          ; ZS14               ; "Government Documents"            ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "governmentDocuments"                 ; 6             ;           ;                                            ; "مستندات حكومية"
+                          ; ZSVR               ; "Support Visits"                  ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "support-visits"                      ; 5             ;           ;                                            ; "زيارات الدعم"
+                          ; ZS20               ; "Rules & Regulations Advisory"    ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "legalconsultations"                  ; 7             ;           ;                                            ; "إستشارات اللوائح و الأنظمة"
+                          ; ZSR5               ; "Amend"                           ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "my-sagia/license/amend"              ; 1             ;           ;                                            ; "تعديل"
+                          ; Z_ONLINE           ; "Re-open Facility"                ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "facility-reopen"                     ; 5             ;           ;                                            ; "إعادة فتح منشأة"
+
+INSERT_UPDATE SagiaServiceTab; code[unique = true]; title[lang = $langen]  ; content[lang = $langen]
+                             ; 11                 ; " exit visa tab 1"     ; "content one"
+                             ; 12                 ; " exit visa tab 2"     ; "content two"
+                             ; 13                 ; " exit visa tab 3"     ; "content three"
+
+                             ; 21                 ; " Transfer of IQAMA 1" ; "content one"
+                             ; 22                 ; " Transfer of IQAMA 2" ; "content two"
+                             ; 23                 ; " Transfer of IQAMA 3" ; "content three"
+
+INSERT_UPDATE SagiaBEServiceType; code[unique = true]      ; transType
+                                ; LicenseCancellationSet   ; ZSR6
+                                ; LicenseClearanceSet      ; ZSR9
+                                ; LicenseReplaceMents      ; ZSR8
+                                ; ConvToNationals          ; ZSR7
+                                ; ServiceReqHDRs           ; ZSR4
+                                ; FinanceHDRS              ; ZS11
+                                ; AmendHeaders             ; ZSR5
+                                ; GovtServices             ; ZS10
+                                ; ServiceBpHDRs            ; ZSR1
+                                ; SPCHECKHISTORYSET        ; ZS13
+                                ; FollowupServices         ; ZS15
+                                ; ComplaintsAndEnquiryHdrs ; ZRVR
+                                ; LegalInquiryHDRSet       ; ZS20
+                                ; QemahServiceReq          ; ZS16
+                                ; GovtDropdowns            ; ZS14
+                                ; NIPHeaderSet             ; ZS17
+
+
+
+
+

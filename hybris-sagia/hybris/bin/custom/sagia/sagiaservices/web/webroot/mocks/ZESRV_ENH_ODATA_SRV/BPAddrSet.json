@@ -1,0 +1,22 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/BPAddrSet('613392')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/BPAddrSet(‘613392’)",
+      "type": "ZESRV_ENH_ODATA_SRV.BPAddr"
+    },
+    "Bpid": "613392",
+    "Street": "1118",
+    "HouseNo": "16",
+    "Country": "SA",
+    "CountryDesc": "Saudi Arabia",
+    "ZipCode": "20130",
+    "City": "Jazan",
+    "AdditNo": "",
+    "Building": "16",
+    "POBox": "20135",
+    "BPAddrToDepndtSrvReq": {
+      "results": []
+    }
+  }
+}

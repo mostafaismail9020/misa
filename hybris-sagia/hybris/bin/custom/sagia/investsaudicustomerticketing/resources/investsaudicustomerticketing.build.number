@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Nov 22 11:02:59 UTC 2017
+builddate=20171122 1102
+description=investsaudicustomerticketing
+group.id=de.hybris.platform
+module.name=platform-module
+name=investsaudicustomerticketing
+releasedate=20171115 1019
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

@@ -1,0 +1,19 @@
+$classSystemVersion = systemVersion(catalog(id[default='sagiaClassification']), version[default='1.0'])
+$classCatalogVersion = catalogVersion(catalog(id[default='sagiaClassification']), version[default='1.0'])
+
+INSERT_UPDATE ClassificationAttribute; $classSystemVersion; code[unique = true]; name            ;
+                                     ;                    ; sector             ; Sector          ;
+                                     ;                    ; sub-sector         ; Sub-Sector      ;
+                                     ;                    ; location           ; Location        ;
+                                     ;                    ; investment-size    ; Investment Size ;
+                                     ;                    ; timeline           ; Timeline        ;
+
+INSERT_UPDATE ClassificationClass; $classCatalogVersion; code[unique = true]          ; name[lang = en]     ; name[lang = ar]
+                                 ;                     ; opportunities-classification ; Opportunity Details ; Opportunity Details
+
+INSERT_UPDATE ClassAttributeAssignment; attributeType(code[default = string]); classificationAttribute(code[unique = true], systemVersion(catalog(id), version))[unique = true]; classificationClass(code, catalogVersion(catalog(id), version))[unique = true]; $classSystemVersion; localized[default = true];
+                                      ;                                      ; sector:sagiaClassification:1.0                                                ; opportunities-classification:sagiaClassification:1.0        ;                    ;                          ;
+                                      ;                                      ; sub-sector:sagiaClassification:1.0                                            ; opportunities-classification:sagiaClassification:1.0        ;                    ;                          ;
+                                      ;                                      ; location:sagiaClassification:1.0                                              ; opportunities-classification:sagiaClassification:1.0        ;                    ;                          ;
+                                      ;                                      ; investment-size:sagiaClassification:1.0                                       ; opportunities-classification:sagiaClassification:1.0        ;                    ;                          ;
+                                      ;                                      ; timeline :sagiaClassification:1.0                                             ; opportunities-classification:sagiaClassification:1.0        ;                    ;                          ;

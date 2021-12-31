@@ -1,0 +1,98 @@
+$page = news-sagia-announces-new-joint-venture
+$template = portalGlobalTemplate
+$name = SAGIA ANNOUNCES NEW JOINT VENTURE IN RENEWABLE ENERGY SECTOR
+$titleEn = $name
+$titleAr = شراكة سعودية - فرنسية لتصميم وتصنيع هياكل متطورة لحمل ألواح الطاقة الشمسية باستثمار يبلغ ٢٠٠ مليون ريال
+$shortDescEn = SAGIA Hosted Al Rushaid Group And Optimum Tracker For The Signing Of A New Joint
+$shortDescAr = شهدت الهيئة العامة للاستثمار اليوم توقيع اتفاقية مشروع مشترك في مجال الطاقة بين
+$pagelabel = /news/sagia-announces-new-joint-venture-in-renewable-energy-sector
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; 4u1a0752           ; 4u1a0752.jpg ; $siteResource/4u1a0752.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; newsThumbnailImage-1 ; $siteResource/newsThumbnailImage-1.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; 4u1a0752 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; 4u1a0752                          ; 4u1a0752                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 19.12.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "
+<ul>
+<li><em>SAGIA hosted Al Rushaid Group and Optimum Tracker for the signing of a new joint venture agreement within the field of renewable energy</em></li>
+<li><em>New Saudi-registered company providing design and engineering capabilities created through the agreement, with a key focus on the manufacturing of mounting system structures for solar PV panels</em></li>
+<li><em>Signifies SAGIA&rsquo;s efforts to facilitate international partnerships to drive the growth of the renewable energy sector, localize technological transfer, and create employment opportunities</em></li>
+</ul>
+<p>The General Investment Authority (SAGIA) today announced the signing of a new joint venture agreement in the Kingdom&rsquo;s emerging renewable energy sector.</p>
+<p>Hosted at SAGIA&rsquo;s Riyadh headquarters, the signatories, Al Rushaid Group (Al Rushaid) and the French-based Optimum Tracker, solidified their new partnership at a signing ceremony witnessed by His Excellency Ibrahim Al-Omar, Governor of SAGIA, attending under Invest Saudi.</p>
+<p>The new legal entity created by the two companies will combine their expertise into a Saudi-registered company providing design and engineering services in the field of solar energy, with a focus on the manufacturing of mounting system structures for solar PV panels. Beginning the joint venture with an initial investment of more than US$53 million, Al Rushaid and Optimum Tracker will base their main operations in the Kingdom&rsquo;s Eastern Province and target a gradual capacity to no less than 150 megawatts (MW). The plant constructed under the deal plans to export at least 30% of its products to countries across the region and create 1,000 direct jobs.</p>
+<p>&nbsp;</p>
+<p><strong>His Excellency Ibrahim AlOmar, Governor of SAGIA&nbsp;</strong>said:</p>
+<p><em>&ldquo;Our country is undergoing a significant economic transformation and energy demand at home and abroad is growing rapidly, leading to the emergence of renewable energy as one of the most important strategic sectors in line with Saudi Vision 2030. Renewable energy is seen as a vital enabler of sustainable growth in the Kingdom and therefore provides exciting opportunities for both local and international investors, as we look to draw on the expertise and experience of the private sector in transforming the industry. This new joint venture reflects our increasing focus on promoting opportunities and facilitating international partnerships to drive the growth of this strategic sector. We are very pleased to welcome Optimum Tracker to Saudi Arabia and facilitate their new partnership with leading Saudi innovator Al Rushaid Group, as we build the future of the renewable energy sector in the Kingdom.&rdquo;</em></p>
+<p>&nbsp;</p>
+<p><strong>Sheikh Rasheed A. Al Rushaid, Vice Chairman and President of Al Rushaid Group,&nbsp;</strong>commented:</p>
+<p><em>&ldquo;We&rsquo;re proud and extremely excited to be working side by side with a successful, rapidly growing company like Optimum Tracker, as we work towards localizing an important component of solar plants in Saudi Arabia in line with the Kingdom Vision 2030. We are confident that our experience and expertise in the industrial field will assure a quick and seamless start of manufacturing and commercialization of solar trackers, in order for these innovative products to be installed across in Kingdom and exported worldwide. We are blessed to find in SAGIA a true partner in success - their unconditional support has been instrumental to facilitating this exciting new partnership.&rdquo;</em></p>
+<p>This agreement builds on the positive momentum that Saudi Arabia has seen this year in terms of inward investment. According to Invest Saudi&rsquo;s Fall 2019 Investment Highlights&nbsp;<a href=""https://investsaudi.sa/en/news/fall-investment-highlight/"">report</a>, over 250 overseas businesses were granted investor licenses in Q3 2019, marking a 30 per cent increase compared to the same period last year.</p>
+<p>&nbsp;</p>
+<p>In fact, 809 new foreign companies have established operations in Saudi Arabia, 67 per cent of which are for fully foreign ownership investments, representing the highest number of foreign investor licenses issued by SAGIA since 2010.</p>
+<p>&nbsp;</p>
+<p>These investments come alongside a broad series of economic reforms, which are enabling rapid growth in foreign investment in Saudi Arabia. These reforms have had a significant impact. According to the 2019 Global Competitiveness Report published by the World Economic Forum, Saudi Arabia&nbsp;has moved up three positions to 36<sup>th</sup>&nbsp;place globally through its efforts to diversify the Kingdom&rsquo;s economy.</p>
+<p>&nbsp;</p>
+<p>Saudi Arabia has also been recognised by the World Bank as the fourth largest reformer within the G20, climbing 30 places in the World Bank&rsquo;s Doing Business 2020 report. According to the report, Saudi Arabia&rsquo;s rise in the index was driven by key reforms including lifting foreign ownership restrictions in a range of new sectors, while adopting faster and less complicated business registration procedures by introducing a one-stop shop for business registration.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "
+شهدت الهيئة العامة للاستثمار اليوم توقيع اتفاقية مشروع مشترك في مجال الطاقة بين شركة ""أوبتيمم تراكر"" الشركة الفرنسية العالمية في تصنيع أجهزة تتبع الطاقة الشمسية، وتوفيرها لمحطات الطاقة الشمسية، وبين شركة الرشيد للاستثمارات البترولية، الشركة السعودية المتخصصة في مجالات النفط والغاز والبتروكيماويات والتعدين والطاقة والصناعة.
+
+ 
+
+جاء ذلك خلال حفل أقامته هيئة الاستثمار اليوم بمقرها بالرياض، بحضور معالي محافظ الهيئة العامة للاستثمار المهندس إبراهيم بن عبد الرحمن العمر، والرئيس التنفيذي لشركة الرشيد للاستثمارات البترولية الشيخ رشيد الرشيد ونائب رئيس مجلس الإدارة، مدير عام شركة الرشيد محمد نفاتي، والرئيس التنفيذي للشركة الفرنسية والشريك المؤسس مدين ميشوت دو ويل، ومدير عام المشروع المشترك اليد موكرين بوديان.
+
+ 
+
+وتتمتع الشركة الفرنسية ""أوبتيمم تراكر"" بحيازتها على براءة اختراع لتطويرها تقنية جديدة لأنظمة التركيب والبناء التي تمكّن من زيادة إنتاج الكهرباء في محطات الطاقة الشمسية، حيث يهدف المشروع المشترك إلى تصميم وتصنيع أنظمة التركيب والبناء للألواح الكهروضوئية بسعة تصل إلى 150 ميجاوات. وتبلغ القيمة الاستثمارية المبدئية للمشروع حوالي 200 مليون ريال، ما سيخلق 1000 وظيفة مباشرة، كما يهدف المشروع إلى تلبية أهداف البرنامج الوطني للطاقة المتجددة، والهادف إلى التنويع السريع لإمدادات الطاقة المحلية في المملكة من خلال زيادة حصة الطاقة المتجددة في مزيج الطاقة بالمملكة من أقل من 1٪ إلى 30٪ بحلول عام 2030.
+
+ 
+
+وكشف محافظ الهيئة المهندس إبراهيم العمر أن مثل هذه الشراكة المحلية الدولية تأتي تتويجا لما تم إنجازه خلال العام الحالي على صعيد تمكين المستثمر المحلي عبر الشراكات الأجنبية، حتى وصلت نسبة الشراكات المحلية الأجنبية إلى أكثر من 33% من إجمالي عدد التراخيص التي أصدرتها الهيئة حتى نهاية الربع الثالث، لافتاً إلى أن الهيئة تهدف من صناعة ودعم الشراكات المحلية الدولية إلى تحقيق عدة أهداف، ومن أهمها نقل المعرفة، وتوطين الصناعات والخدمات في مجال الطاقة المتجددة، وخلق الفرص الوظيفية في مثل هذه القطاعات ذات الطبيعة المتخصصة.
+
+ 
+
+من جهته قال الشيخ رشيد بن عبد الله الرشيد الرئيس التنفيذي لشركة الرشيد للاستثمارات البترولية أننا نتطلع إلى العمل مع شريك ناجح وسريع النمو مثل ""أوبتيمم تراكر"" من أجل توطين جزء مهم من صناعات الطاقة المتجددة في المملكة، لافتاً إلى أن هذه الشراكة جاهزة ومهيأة بخبراتها الطويلة في القطاع للبدء في تصنيع هياكل التعقب الشمسي، سواء للسوق المحلية أو للتصدير لكل دول العالم والوصول إلى أسواق تنافسية.
+
+ 
+
+يذكر أن عدد تراخيص الاستثمار الأجنبي بلغت حتى نهاية الربع الثالث من العام الجاري 809 تراخيص، كان نسبة المشاريع المشتركة منها مع مستثمرين محليين أكثر من 33%، كما يعد قطاع الطاقة أحد أهم القطاعات الإستراتيجية التي توفر فرصًا استثنائية للمستثمرين، خصوصًا في ظل الإصلاحات الاقتصادية الكبرى التي تشهدها المملكة، والتي جعلت منها بيئة جاذبة لاستقطاب الاستثمارات من أنحاء العالم.
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

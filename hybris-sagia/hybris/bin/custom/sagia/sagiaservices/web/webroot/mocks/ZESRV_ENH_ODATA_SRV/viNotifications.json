@@ -1,0 +1,21 @@
+{
+	"d": {
+		"results": [
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='0000526473',NotificationType='VI')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='0000526473',NotificationType='VI')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "0000526473",
+				"NotificationType": "VI",
+				"NotificationPriority": "O",
+				"ExpiryDate": null,
+				"NotificationText": "SAGIA will visit the Company this week regarding request 526473",
+				"CreatedBy": "Appointment Notification",
+				"CreatedOn": null
+			}
+		]
+	}
+}

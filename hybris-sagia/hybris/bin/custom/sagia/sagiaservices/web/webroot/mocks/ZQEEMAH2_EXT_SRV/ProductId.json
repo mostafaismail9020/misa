@@ -1,0 +1,26 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/ProductIdSet('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/ProductIdSet('')",
+          "type": "ZQEEMAH2_EXT_SRV.ProductId"
+        },
+        "Productid": "",
+        "Uom": "",
+        "Uomtext": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/ProductIdSet('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/ProductIdSet('')",
+          "type": "ZQEEMAH2_EXT_SRV.ProductId"
+        },
+        "Productid": "",
+        "Uom": "EA",
+        "Uomtext": "each"
+      }
+    ]
+  }
+}

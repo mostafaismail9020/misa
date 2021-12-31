@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+	<bean class="com.sap.ibso.eservices.soapservices.WebcallbackRequestData">
+		<property name="number" type="java.lang.String"/>
+		<property name="queue" type="java.lang.String"/>
+		<property name="callTime" type="java.lang.String"/>
+		<property name="notes" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.soapservices.WebcallbackResponseData">
+		<property name="response" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.sap.nic.NICUserData">
+		<property name="result" type="java.lang.String"/>
+		<property name="expiryDate" type="java.lang.String"/>
+		<property name="issueDate" type="java.lang.String"/>
+		<property name="firstName_AR" type="java.lang.String"/>
+		<property name="secondName_AR" type="java.lang.String"/>
+		<property name="thirdName_AR" type="java.lang.String"/>
+		<property name="lastName_AR" type="java.lang.String"/>
+		<property name="firstName_EN" type="java.lang.String"/>
+		<property name="secondName_EN" type="java.lang.String"/>
+		<property name="thirdName_EN" type="java.lang.String"/>
+		<property name="lastName_EN" type="java.lang.String"/>
+		<property name="fullName_EN" type="java.lang.String"/>
+		<property name="gender" type="java.lang.String"/>
+		<property name="idType" type="java.lang.Integer"/>
+		<property name="idNumber" type="java.lang.String"/>
+		<property name="dob" type="java.lang.String"/>
+		<property name="premium_Residency" type="java.lang.Boolean"/>
+	</bean>
+
+</beans>

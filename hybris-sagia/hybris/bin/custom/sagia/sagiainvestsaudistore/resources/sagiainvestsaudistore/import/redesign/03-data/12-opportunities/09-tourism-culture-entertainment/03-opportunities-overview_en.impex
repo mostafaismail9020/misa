@@ -1,0 +1,80 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = en
+
+
+#### Opportunities from "AlBahah"
+INSERT_UPDATE OpportunityProduct; code[unique = true]				; $catalogVersion; description[lang = $lang]
+                                ; DEVELOP-3-STAR-HOTEL-IN-ALBAHAH 	;                ; " <p>Opportunity to develop 3 stars hotels in Al Bahah</p>"
+                                ; DEVELOP-4-STAR-HOTEL-IN-ALBAHAH 	;                ; " <p>Opportunity to develop 4 stars hotels in Al Bahah</p>"
+                                ; DEVELOP-4-STAR-RESORT-IN-ALBAHAH	;                ; " <p>DEVELOP-4-STAR-RESORT-IN-ALBAHAH</p>"
+                                ; DEVELOP-5-STAR-HOTEL-IN-ALBAHAH 	;                ; " <p>Opportunity to develop 5 stars hotels in Al Bahah </p>"
+                                ; DEVELOP-5-STAR-RESORT-IN-ALBAHAH	;                ; " <p>Opportunity to develop 5 stars resort in Al Bahah</p>"
+
+
+#### Opportunities from "AlJouf"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       		; $catalogVersion; description[lang = $lang]
+                                ; DEVELOP-3-STAR-HOTEL-IN-ALJOUF	;                ; " <p>Opportunity to develop 3 stars hotels in Al Jouf </p>"
+                                ; DEVELOP-4-STAR-HOTEL-IN-ALJOUF	;                ; " <p>Opportunity to develop 4 stars hotels in Al Jouf </p>"
+                                ; DEVELOP-4-STAR-RESORT-IN-ALJOUF 	;                ; " <p>Opportunity to develop 4 stars resort in Al Jouf</p>"
+                                ; DEVELOP-5-STAR-HOTEL-IN-ALJOUF  	;                ; " <p>Opportunity to develop 5 stars hotels in Al Jouf</p>"
+                                ; DEVELOP-5-STAR-RESORT-IN-ALJOUF 	;                ; " <p>Opportunity to develop 5 stars resort in Al Jouf</p>"
+ 
+
+#### Opportunities from "AlMadinah"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       		; $catalogVersion; description[lang = $lang]
+								; DEVELOP-3-STAR-HOTEL-IN-MADINAH  	;                ; "<p>Opportunity to develop 3 stars hotels in Madinah</p>"
+								; DEVELOP-4-STAR-HOTEL-IN-MADINAH 	;                ; "<p>Opportunity to develop 4 stars hotels in Madinah</p>"
+								; DEVELOP-4-STAR-RESORT-IN-MADINAH 	;                ; "<p>DEVELOP-4-STAR-RESORT-IN-MADINAH</p>"
+								; DEVELOP-5-STAR-HOTEL-IN-MADINAH 	;                ; "<p>Opportunity to develop 5 stars hotels in Madinah, being the pinnacle of comfort and luxury</p>"
+								; DEVELOP-5-STAR-RESORT-IN-MADINAH 	;                ; "<p>Opportunity to develop 5 stars resort in Madinah</p>"
+
+
+#### Opportunities from "Taif"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       		; $catalogVersion; description[lang = $lang]
+								; DEVELOP-5-STAR-RESORT-IN-TAIF		;                ; " <p>Opportunity to develop 5 stars resort in Taif</p>"
+								; DEVELOP-5-STAR-HOTEL-IN-TAIF		;                ; " <p>Opportunity to develop 5 stars hotels in Taif</p>"
+								; DEVELOP-4-STAR-RESORT-IN-TAIF		;                ; " <p>Opportunity to develop 4 stars resort in Taif </p>"
+								; DEVELOP-4-STAR-HOTEL-IN-TAIF		;                ; " <p>Opportunity to develop 4 stars hotels in Taif</p>"
+								; DEVELOP-3-STAR-HOTEL-IN-TAIF		;                ; " <p>Opportunity to develop 3 stars hotels in Taif</p>"
+
+
+#### Opportunities from "Aseer"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       			; $catalogVersion	; description[lang = $lang]
+								; DEVELOP-5-STAR-RESORT-IN-ASEER		;       			; "<p>Opportunity to develop 5 stars resort in Aseer</p>"
+								; DEVELOP-3-STAR-HOTEL-IN-ASEER			;       			; "<p>Opportunity to develop 3 stars hotels in Aseer</p>"
+								; Aseer-Adventure-Park 					;                	; "<p>Opportunity to build an adventure park which can contain a wide variety of activities, including rope climbing exercises, obstacle courses, bouldering, rock climbing, target oriented activities, and zip-lines.</p>"
+								; DEVELOP-5-STAR-HOTEL-IN-ASEER 		;                	; "<p>Opportunity to develop 5 stars hotels in Aseer</p>"
+								; Hospitality-College-in-Aseer-Region	;                	; "<p>Opportunity to establish a private college for hospitality in Aseer. The College awards a bachelor's degree in the fields of hospitality </p>"
+								; DEVELOP-4-STAR-HOTEL-IN-ASEER 		;                	; "<p>Opportunity to develop 4 stars hotels in Aseer</p>"
+								; DEVELOP-4-STAR-RESORT-IN-ASEER		;                	; "<p>Opportunity to develop 4 stars resort in Aseer</p>"
+								
+								
+#### Opportunities from "Hail"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       		; $catalogVersion	; description[lang = $lang]
+								; DEVELOP-5-STAR-RESORT-IN-HAIL		;                	; " <p>Opportunity to develop 5 stars resort in Hail</p>"
+								; DEVELOP-5-STAR-HOTEL-IN-HAIL		;                	; " <p>Opportunity to develop 5 stars hotels in Hail</p>"
+								; DEVELOP-4-STAR-RESORT-IN-HAIL 	;                	; " <p>Opportunity to develop 4 stars resort in Hail</p>"
+								; DEVELOP-4-STAR-HOTEL-IN-HAIL  	;                	; " <p>Opportunity to develop 4 stars hotels in Hail</p>"
+								; DEVELOP-3-STAR-HOTEL-IN-HAIL		;                 	; " <p>Opportunity to develop 3 stars hotels in Hail</p>"
+
+
+#### Opportunities from "Jeddah"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       				; $catalogVersion	; description[lang = $lang]
+								; DEVELOP-5-STAR-RESORT-IN-JEDDAH-obhur  	;                	; " <p>Opportunity to develop 5 star resort in Jeddah</p>"
+								; DEVELOP-5-STAR-RESORT-IN-JEDDAH-corniche	;       			; " <p>Opportunity to develop 5 star resort in Jeddah </p>"
+								; DEVELOP-5-STAR-HOTEL-IN-JEDDAH 	        ;                	; " <p>Opportunity to develop 5 star hotels in Jeddah, being the pinnacle of comfort and luxury</p>"
+								; DEVELOP-4-STAR-RESORT-IN-JEDDAH    		;                	; " <p>Opportunity to develop 4 star resort in Jeddah</p>"
+								; DEVELOP-4-STAR-HOTEL-IN-JEDDAH   			;                	; " <p>Opportunity to develop 4 star hotels in Jeddah</p>"
+								; DEVELOP-3-STAR-HOTEL-IN-JEDDAH    		;               	; " <p>Opportunity to develop 3 star hotels in Jeddah</p>"
+
+
+#### Opportunities from "KAEC"								
+INSERT_UPDATE OpportunityProduct; code[unique = true]       	; $catalogVersion	; description[lang = $lang]
+								; The-Peninsula 				;      				; " <p>Developing quality lifestyle precinct in a unique location overlooking a pristine beach and a world class marina. The need todevelop a mix of hospitality retail and luxury residential offering.</p>"
+								; KAEC-Lagoona-Motor-Park 		;                	; " <p>13 Track Variations & 4 FIA Homologated tracks with a capacity to host Formula 2, 3, & 4, Porsche Series Cup, Single Seater Races, Drifting, GT Series, Blancpain,Track Days, Arrive and Drive, and Road Safety Training. Building Capacity up to 1,300 Visitors, 15 Pits and VIP lounge + 2 Paddock lounges, Welcome Center for Arrive and Drive experiences</p>"
+								; Private-Beach-Club			;                   ; " <p>The project is a beach development integrating a unique mix of leisure and F&B components excluding a substantial hotel offering. The “Private Beach Club” gives beach‐goers the opportunity to enjoy a day under the sun in a fully‐serviced environment and shall be positioned as a premier beach destination for local and foreign families adopting a strong beach culture.</p>"
+								; Esmeralda-Sports-Complex 		;                	; " <p>A world class 14,700m² BUA sports and Leisure facility on a 53,000m² plot. Aims to be ranked as the No.1 sports & leisure facility in KSA including: an outdoor Football pitch, Tennis Courts, Swimming Pools, indoor Basketball, Football, Tennis, Squash, Bowling, Retail, F&B, Rock Climbing, Spa, Male and Female Gym area, Striking Room and an indoor running track</p>"
+
+
+								

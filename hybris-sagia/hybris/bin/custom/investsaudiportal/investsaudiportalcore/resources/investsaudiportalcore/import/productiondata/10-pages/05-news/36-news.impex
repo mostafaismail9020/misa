@@ -1,0 +1,72 @@
+$page = news-investment-highlights-korean
+$template = portalGlobalTemplate
+$name = Investment Highlights Korean
+$titleEn = $name
+$titleAr = Investment Highlights Korean
+$shortDescEn = نفخر إذ نحتفل بالذكرى الثالثة لانطلاقة رؤية المملكة 2030 أن نعرض لكم
+$shortDescAr = نفخر إذ نحتفل بالذكرى الثالثة لانطلاقة رؤية المملكة 2030 أن نعرض لكم
+$pagelabel = /news/investment-highlights-korean
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; korean             ; korean.jpg  ; $siteResource/korean.jpg                                                    ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias; $contentCV; ; ; ;
+                            ; media-container-$page   ; korean ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; korean                            ; korean                              ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 17.06.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<p>نفخر إذ نحتفل بالذكرى الثالثة لانطلاقة رؤية المملكة 2030 أن نعرض لكم (موجز الاستثمار)، ويرصد هذا التقرير أهم مستجدات الاستثمار في المملكة خلال الربع الأول من العام 2019 إذ يتضمن عددًا من أهم الصفقات الاستثمارية التي تمت خلال هذه المرحلة، إضافة إلى عرض ارتباط هذه الصفقات الاستثمارية بفرص استثمارية أكبر.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>ويتضمن التقرير أيضًا مستجدات الخصخصة المتسارعة والشراكات التي تتم بين القطاعين السعوديين الحكومي والخاص، وانطلاقة المشاريع الجديدة الكبرى.</p>
+<p>&nbsp;</p>
+<p>يتضمن التقرير:</p>
+<p><br />- أرقام التراخيص الجديدة<br />- أكبر الدول المستثمرة<br />- أكثر القطاعات استثمارًا<br />- المشاريع الكبرى والفرص</p>
+<p>&nbsp;</p>
+<p><strong>حمل التقرير كاملًا (<a href='https://investsaudi.sa/media/1562/investment-highlights_spring-2019_ko.pdf'>هنا</a>)</strong></p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>نفخر إذ نحتفل بالذكرى الثالثة لانطلاقة رؤية المملكة 2030 أن نعرض لكم (موجز الاستثمار)، ويرصد هذا التقرير أهم مستجدات الاستثمار في المملكة خلال الربع الأول من العام 2019 إذ يتضمن عددًا من أهم الصفقات الاستثمارية التي تمت خلال هذه المرحلة، إضافة إلى عرض ارتباط هذه الصفقات الاستثمارية بفرص استثمارية أكبر.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>ويتضمن التقرير أيضًا مستجدات الخصخصة المتسارعة والشراكات التي تتم بين القطاعين السعوديين الحكومي والخاص، وانطلاقة المشاريع الجديدة الكبرى.</p>
+<p>&nbsp;</p>
+<p>يتضمن التقرير:</p>
+<p><br />- أرقام التراخيص الجديدة<br />- أكبر الدول المستثمرة<br />- أكثر القطاعات استثمارًا<br />- المشاريع الكبرى والفرص</p>
+<p>&nbsp;</p>
+<p><strong>حمل التقرير كاملًا (<a href='https://investsaudi.sa/media/1562/investment-highlights_spring-2019_ko.pdf'>هنا</a>)</strong></p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

@@ -1,0 +1,106 @@
+$page = sample-news10
+$template = portalGlobalTemplate
+$pageName = NEWS 10
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /news/news10
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]  ; name   ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; sample-news-10-link ; news10 ; News 10            ;                    ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]         ; realFileName                    ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; sample-newsDetailsImage-1   ; sample-newsDetailsImage-1.jpg   ; $siteResource/newsDetailsImage-1.jpg                                        ;                             ;                                          ; ""     ; ;
+                   ; sample-newsThumbnailImage-1 ; sample-newsThumbnailImage-1.jpg ; $siteResource/newsThumbnailImage-1.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]     ; $medias                   ; $contentCV; ; ; ;
+                            ; sample-media-container-$page ; sample-newsDetailsImage-1 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name           ; newsTitle[lang = en]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages               ; &componentRef
+                                      ; sample-news-10    ; Sample news 10 ; English title       ; sample-newsDetailsImage-1         ; sample-newsThumbnailImage-1         ; news short description         ; sample-news-10-link     ;                                 ; 19.10.2000 00:00:00                       ;                          ; sample-media-container-$page ; sample-news-10 ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; sample-news-10    ;                          ; "
+                               <p><strong> </strong></p>
+<ul>
+    <li><em>His Excellency Khalid Al Falih, Saudi Arabia’s Minister of Investment, outlined how governments can enable
+        growth of FDI as tool for economic recovery through forming private sectors partnerships during headline
+        interview at Global Digital Summit Series</em></li>
+</ul><p><em> </em></p>
+<ul>
+    <li><em>Providing safety and security for investors is seen as vital to ensuring business continuity during and
+        after COVID-19</em></li>
+</ul><p><em> </em></p>
+<ul>
+    <li><em>Inspired by theme of Saudi G20 Presidency, four-day digital conference brings together government and
+        private sector decision makers to identify strategies, technologies and policies needed for inclusive,
+        sustainable global growth post-pandemic</em></li>
+</ul><p></p><p><strong>Riyadh, Saudi Arabia – 21 October 2020: </strong>Governments must strengthen private sector
+    partnerships to ensure their economies remain resilient against unexpected shocks as the world recovers from the
+    COVID-19 pandemic, according to His Excellency Khalid Al Falih, Minister of Investment of Saudi Arabia, who was
+    speaking today during a headline interview at the inaugural Global Digital Summit Series. The new digital conference
+    series is providing an international audience with an immersive program exploring the policies and strategies needed
+    for inclusive recovery, building on the commitment made by G20 ministers to work together to strengthen trade and
+    investment as a tool for global innovation, growth and job creation.</p><p></p><p>In conversation with Jacopo
+    Dettoni, Editor of fDi Intelligence, on the first day of the event,<strong>His Excellency Khalid Al Falih</strong>
+    emphasized the importance of mitigating risks to business environments when enabling foreign direct investment
+    (FDI). <strong>The Minister</strong>said: “A sense of safety and security for investors is important for governments
+    to ensure. States need to make sure regulations are predictable, transparent and fair, have an honest conversation
+    with the private sector, and keep the business environment healthy so investments can grow and investors can
+    profit.”</p> <p></p><p>According to UNCTAD, FDI is forecast to decrease by nearly 40% in 2020, on top of long-term
+    decline seen over the past five years. The G20 Trade and Investment Ministers addressed this directly in their most
+    recent communique, recognizing that ongoing decline in global FDI flows would exacerbate the economic and social
+    impact of the pandemic, especially in developing nations who already face significant barriers to attracting FDI.
+    The G20 has also reiterated its commitment to identifying gaps in investment promotion capabilities in markets
+    facing barriers to inward investment.</p><p></p><p>His Excellency Khalid Al Falih also outlined how FDI can help
+    drive global economic recovery, stating that governments need to be strategic when attracting investment.
+    “Governments need to bring in FDI when it adds value. This is done by matching the capabilities of investors with
+    market requirements and ensuring their business environment is a suitable platform for investors to address local
+    needs, so that countries can be competitive and profitable in a sustainable way,” <strong>the Minister</strong>
+    said.</p><p></p><p>His Excellency Al Falih also revealed that the Kingdom’s Vision 2030 plan was already
+    anticipating new global challenges and implementing business continuity policies for the private sector before the
+    onset of COVID-19. Going into more detail, <strong>His Excellency</strong> explained: “Vision 2030 is already
+    addressing the global mega trends we have seen having an impact on FDI before the pandemic - such as globalization,
+    urbanization, rapid population growth and increased consumption. We are focusing on leveraging the Kingdom’s
+    qualitative, competitive advantages and building sectors that are anchored in knowledge, research and innovation.”
+</p><p></p><p>According to the Minister, the key to achieving this objective is making sure Saudi Arabia’s youth have a
+    seat at the table. He said: “We are empowering our most important resource: young Saudi men and women. They are in
+    the driving seat of Vision 2030.”</p><p></p><p>Despite the unprecedented impact of COVID-19 and the decline in oil
+    prices on the Saudi market at the beginning of the pandemic, His Excellency Al Falih remains optimistic about the
+    Kingdom’s ongoing economic transformation. Ending the session, <strong>the Minister concluded</strong>: “Saudi
+    Arabia’s economy is resilient - our credit rating has been maintained during the onset of the pandemic. We have
+    proven to the private sector and our people that we can look after them first. With 27 reformed regulations being
+    currently addressed by the government and a plan for Special Economic Zones in development, Saudi Arabia is on its
+    way to recovery.”</p><p></p><p>The Global Digital Summit Series is organized by the Financial Times Live and
+    co-hosted by the Ministry of Investment of Saudi Arabia and G20 Saudi Secretariat as part of the G20’s International
+    Conferences Program, honoring the Kingdom’s role as host of the G20 2020 Presidency. Inspired by this year’s G20
+    theme, ‘Realizing Opportunities of the 21st Century for All’, the <strong>‘A New Framework for Inclusive
+        Growth’</strong> series is taking place between 21<sup>st</sup> - 29<sup>th</sup> October 2020.</p><p></p><p>
+    Across four days of diverse sessions and plenaries, the event is addressing some of the G20’s key priorities as it
+    seeks to support the rebuilding of the global economy – including trade and investment, sustainable development,
+    employment and the digital economy.</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; sample-news-10              ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

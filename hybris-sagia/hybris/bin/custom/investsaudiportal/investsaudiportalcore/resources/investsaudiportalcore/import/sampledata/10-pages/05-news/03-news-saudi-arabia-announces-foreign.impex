@@ -1,0 +1,115 @@
+$page = sample-news-saudi-arabia-announces-foreign
+$template = portalGlobalTemplate
+$pageName = SAUDI ARABIA ANNOUNCES FOREIGN INVESTOR LICENSE RESULTS FOR Q1 2020
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /news/saudi-arabia-announces-foreign-investor-license-results-for-q1-2020
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true] ; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; sample-news-3-link ; news3 ; News 3             ;                    ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]         ; realFileName                    ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; sample-newsDetailsImage-3   ; sample-newsDetailsImage-3.jpg   ; $siteResource/newsDetailsImage-3.jpg                                        ;                             ;                                          ; ""     ; ;
+                   ; sample-newsThumbnailImage-3 ; sample-newsThumbnailImage-3.jpg ; $siteResource/newsThumbnailImage-3.jpg                                      ;                             ;                                          ; ""     ; ;
+                   ; sample-pdf-3                ; sample-pdf-3.pdf                ; $siteResource/news-report-3.pdf                                             ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name          ; newsTitle[lang = en]                                                ; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]                                             ; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages; &componentRef
+                                      ; sample-news-3     ; Sample news 3 ; SAUDI ARABIA ANNOUNCES FOREIGN INVESTOR LICENSE RESULTS FOR Q1 2020 ; sample-newsDetailsImage-3         ; sample-newsThumbnailImage-3         ; Saudi Arabia Sees Sharp Uptick In The Number Of New International Companies ; sample-news-3-link      ; sample-pdf-3                    ; 18.05.2010 00:00:00                       ;                          ;               ; sample-news-3 ;
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; sample-news-3     ;                          ; "
+                               <ul>
+    <li><em>The Ministry of Investment of Saudi Arabia (MISA) reported 348 new international companies were granted
+        licenses to operate in the Saudi market in Q1 2020 in its latest Investment Highlights report.</em></li>
+</ul> <p></p>
+<ul>
+    <li><em>This announcement comes as MISA works to position the Saudi economy to emerge resilient through the COVID-19
+        pandemic.</em></li>
+</ul> <p><em> </em></p>
+<ul>
+    <li><em>The Saudi Arabian government is implementing a range of social and economic stimulus packages to support
+        business continuity, sustain vital industries, and provide citizens and residents with access to healthcare and
+        income assistance.</em></li>
+</ul> <p></p>
+<ul>
+    <li><em>Q1 2020 figures indicate that global investors remain positive about the long-term potential of the Kingdom
+        as an investment destination as economies transition to post-COVID-19 conditions.</em></li>
+</ul> <p></p> <p><strong>Riyadh, Saudi Arabia, 18 May 2020 </strong>– The Ministry of Investment of Saudi Arabia (MISA)
+    announced today that 348 new international companies were granted investor licenses during the first quarter of
+    2020. This marks a 19% annual increase compared to the same period in 2019, and a 20% quarter-on-quarter increase
+    from the final three months of 2019. Month-to-month growth began to slow in March as global markets reacted to the
+    impact of the COVID-19 pandemic.</p> <p></p> <p>MISA released the figures as part of its new Investment Highlights
+    Spring 2020 report, which provides an overview of the development of the Kingdom’s investment environment in the
+    first quarter of this year. The period coincides with the elevation of the General Investment Authority (SAGIA) –
+    the entity previously responsible for attracting inward investment – to a full-scale dedicated investment
+    ministry.</p> <p></p> <p>In this special edition of the quarterly report, the ministry also charts Saudi Arabia’s
+    national response to the Coronavirus pandemic, alongside the Kingdom’s global response as the holder of the G20
+    presidency. The report places focus on the measures introduced across the government to support business community
+    and how Saudi Arabia’s local and international investors are playing a leading role in navigating the pandemic’s
+    economic and societal challenges.</p> <p></p> <p><strong>His Excellency Eng. Khalid Al Falih, Minister of Investment
+    of Saudi Arabia (MISA)</strong>, said:</p> <p><em>“The first quarter of 2020 was Saudi Arabia’s strongest period for
+    investor interest in ten years. However, the economic effects of COVID-19 began to be felt worldwide towards the end
+    of this period, and this becomes evident when we compare the rate of new investment on a month-by-month basis.
+    January and February saw strong momentum, but growth began to slow in March with 101 new licenses compared to 126
+    and 121 granted in the first two months of the quarter respectively. Despite the cautious nature of economic
+    activity, we can see that 73% of all new investments in Q1 2020 were for full foreign ownership and 27% were joint
+    ventures with local Saudi partners. As we look toward a post-COVID-19 future, this is a reassuring show of
+    confidence from the world’s investors in the Kingdom’s long-term prospects as an attractive investment
+    destination.”</em></p> <p><em> </em></p> <p>Major sources of new foreign investment at the beginning of 2020
+    continued to represent a diverse range of global markets and sectors. As in 2019, growth came from long-standing
+    strategic partners such as the United States and United Kingdom, with 37 US companies and 32 UK companies awarded
+    licenses in Q1 2020. Alongside, India, Lebanon, and Egypt were among the five leading countries for new
+    international companies. Quarter-to-quarter sector growth was also seen across a selection of emerging industries,
+    such as ICT, retail and e-commerce, and tourism, culture and entertainment.</p> <p></p> <p><strong>His Excellency
+    the Minister continued:</strong><em> “Investors are the most important enablers of Saudi Arabia’s ongoing
+    transformation through Vision 2030, and in recognition of this MISA has been tasked with safeguarding the stability
+    and security of the Kingdom’s full investment ecosystem. This is the central aim of our COVID-19 business continuity
+    initiatives. By acting swiftly, MISA has been able to have a direct impact through our COVID-19 Response Center
+    (MCRC). We have spoken to investors about how and where they need support and taken their queries directly to our
+    government partners, ensuring that the regulations needed for companies across vital sectors to continue to operate
+    are put in place.”</em></p> <p><em> </em></p> <p>Saudi government entities have implemented numerous stimulus
+    packages and funding relief programs for the private sector worth 45 billion USD, aimed at helping the Kingdom’s
+    local and international businesses, and citizens and residents, to mitigate both the immediate and long-term impacts
+    of COVID-19. Tailored support is accessible to companies and individuals across a variety of industries and scales,
+    from SMEs through to multinationals. Measures range from tax exemptions and discounts or postponements on utilities,
+    energy and labor costs to a wide selection of loans and income support.</p> <p><em> </em></p> <p>Several deals
+    signed since the beginning of the pandemic indicate that the global business community remains positive about the
+    long-term potential and resilience of Saudi Arabia as an investment destination. New agreements include a
+    joint-venture partnership between a Saudi company and South Korean petrochemicals firm and the announcement of a new
+    shipping line connecting Saudi Arabia to East Africa.</p> <p></p> <p><strong>His Excellency the Minister</strong>
+    concluded: <em>“Saudi Arabia remains open for business. Investing in the global investor community, as they have
+        invested in us, is at the forefront of how MISA is adapting our policies and regulations to support business
+        continuity for local and international businesses as part of a unified national response to the pandemic. The
+        Kingdom continues to develop investment opportunities in partnership with our local business ecosystem – with
+        over 100 launched this week alone under our National Investment Promotion arm, Invest Saudi. We are confident
+        that businesses will keep coming to the Kingdom as investor activity gains momentum and adapts to the
+        post-COVID-19 era.”</em></p> <p></p> <p>During the pandemic, the Ministry of Investment continues to support
+    investors through its MISA COVID-19 Response Center (MCRC). Businesses are encouraged to get in touch with the MCRC
+    through either WhatsApp (+9661120358880) or by email (InvestorCare@MISA.gov.sa). MISA representatives are also
+    reachable through the Ministry’s social media channels.</p> <p></p> <p><strong>ENDS</strong></p> <p></p> <p>
+    Contact</p> <p><span><a href='mailto:media@misa.gov.sa'>media@misa.gov.sa</a></span></p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; sample-news-3               ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

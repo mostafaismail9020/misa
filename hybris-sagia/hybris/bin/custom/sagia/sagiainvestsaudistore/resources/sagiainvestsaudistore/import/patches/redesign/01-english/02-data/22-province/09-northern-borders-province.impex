@@ -1,0 +1,137 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleEn = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 					 ; realFileName                    											; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+			  
+					   ; northern-banner-image.png                                		 ; northern-banner-image.png                          						; $siteResource/northern-banner-image.png                                         			  ;                 image/png                ;                                          ; ""     ;
+					   ; northern-borders-map.png                                   	 ; northern-borders-map.png                            						; $siteResource/northern-borders-map.png                                                 			  ;                 image/png                ;                                          ; ""     ;
+					   ; northern-chemical-products-manufacturing.png	                 ; northern-chemical-products-manufacturing.png	                 			; $siteResource/northern-chemical-products-manufacturing.png	                                                      ;                 image/png                ;                                          ; ""     ;
+					   ; northern-logistics.png		    			                     ; northern-logistics.png		    			                   			; $siteResource/northern-logistics.png		    			                                                      ;                 image/png                ;                                          ; ""     ;
+					   ; northern-cement-non-metallicmetal-products.png                  ; northern-cement-non-metallicmetal-products.png                 			; $siteResource/northern-cement-non-metallicmetal-products.png                                                      ;                 image/png                ;                                          ; ""     ;
+					   ; northern-technology.png	           			                 ; northern-technology.png	           			                   			; $siteResource/northern-technology.png	           			                                                      ;                 image/png                ;                                          ; ""     ;   
+					   
+					   
+					   ; northern-population.png        		                         ; northern-population.png        		                                 	; $siteResource/northern-population.png        		                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-active-factories.png    	          	                 ; northern-active-factories.png    	    	                         	; $siteResource/northern-active-factories.png    	                                 		  ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-population-growth.png      	      	                 ; northern-population-growth.png      			                         	; $siteResource/northern-population-growth.png      	                                		  ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-airport.png              	                             ; northern-airport.png              	       	                         	; $siteResource/northern-airport.png              	                                      	  ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-private-sector-employees.png      	                 ; northern-private-sector-employees.png   		                        	; $siteResource/northern-private-sector-employees.png                               		  ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-hotels.png        			                         ; northern-hotels.png        			                                 	; $siteResource/northern-hotels.png        			                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-sport-city.png 				                         ; northern-sport-city.png 				      	                         	; $siteResource/northern-sport-city.png 				                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-dams.png             		                             ; northern-dams.png             		                                   	; $siteResource/northern-dams.png             		                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-chambers-of-commerce.png                               ; northern-chambers-of-commerce.png                                        ; $siteResource/northern-chambers-of-commerce.png                                             ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-industrial-city.png			                         ; northern-industrial-city.png			   		                         	; $siteResource/northern-industrial-city.png			                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-roads-length.png			                             ; northern-roads-length.png			    	                         	; $siteResource/northern-roads-length.png			                                  		  ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-towns.png					                           	 ; northern-towns.png					    	                            ; $siteResource/northern-towns.png					                                    	  ;                 image/png                ;                                          ; ""     ;   					
+					   ; northern-hospitals.png				                           	 ; northern-hospitals.png				    	                            ; $siteResource/northern-hospitals.png				                                    	  ;                 image/png                ;                                          ; ""     ;   					
+																	                   
+						
+					   ; northern-rich-phosphate-reserves.png                            ; northern-rich-phosphate-reserves.png                          			; $siteResource/northern-rich-phosphate-reserves.png                                                       ;                 image/png                ;                                          ; ""     ;   
+					   ; northern-solar-energy-potential.png                             ; northern-solar-energy-potential.png                              		; $siteResource/northern-solar-energy-potential.png                                                        ;                 image/png                ;                                          ; ""     ;   	
+					   ; northern-electricity-water-infrastructure.png                   ; northern-electricity-water-infrastructure.png                      		; $siteResource/northern-electricity-water-infrastructure.png                                              ;                 image/png                ;                                          ; ""     ;   	
+					   ; northern-proximity-to-the-iraqi-jordanian-markets.png           ; northern-proximity-to-the-iraqi-jordanian-markets.png              		; $siteResource/northern-proximity-to-the-iraqi-jordanian-markets.png                                      ;                 image/png                ;                                          ; ""     ;   	
+					   ; northern-high-production-chemicals.png                          ; northern-high-production-chemicals.png                         			; $siteResource/northern-high-production-chemicals.png                                                     ;                 image/png                ;                                          ; ""     ;   	
+																	   
+					   ; northern-boarders-solar-energy.png                              ; northern-boarders-solar-energy.png                       				; $siteResource/northern-boarders-solar-energy.png                                                           ;                 image/png                ;                                          ; ""     ;   	
+					   
+					
+					
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]				;$contentCV		; bannerHeader[lang=en]			; bannerText[lang=en]																									  ; bannerImage (code, $contentCV)		; keyFactsHeader [lang = en]		 ; keyStrengthsHeader [lang = en] 	 ; opportunitiesHeader [lang = en]		
+							   ; northern-borders		 		;				; NORTHERN BORDERS PROVINCE		; The Northern Borders region is home to Ma'aden's "Wa'ad Al-Shamal" industrial city dedicated to the phosphate industry. ; northern-banner-image.png			; KEY FACTS AND FIGURES	 			 ; REGIONAL BENEFITS		 			 ; INVESTMENT OPPORTUNITIES																																																									
+	
+	
+	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 				;  $contentCV  ; headerText[lang = en]    							; imageIcon  (code, $contentCV)     						; &componentRef
+											    ; northern-chemical-products		; 			   ; Chemical products manufacturing			  		; northern-chemical-products-manufacturing.png				; northern-chemical-products	
+                                                ; northern-logistics				;              ; Logistics		  									; northern-logistics.png		    						; northern-logistics			
+                                                ; northern-cement-non-metallic	 	;              ; Cement and other non-metallic metal products	    ; northern-cement-non-metallicmetal-products.png	        ; northern-cement-non-metallic	
+                                                ; northern-technology	 			;              ; Technology	           		 						; northern-technology.png	           						; northern-technology	 		
+ 
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = en] ; value[lang = en] 
+										; northern-strategic-population		;			   ; 383,051		; population
+										; northern-strategic-landmass		;			   ; 104,000 km2 	; in landmass area 
+	 
+ 
+ 
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = en]	; backgroundImage (code, $contentCV)   			; sectors(&componentRef) 													       			  ; longDescription[lang = en]																																																																																																																																																														  																									  ; localizedStats (uid, $contentCV)   								; &componentRef
+												 ; northern-strategic-component		;          		; STRATEGIC SECTORS			; northern-borders-map.png		         ;northern-chemical-products,northern-logistics	,northern-cement-non-metallic,northern-technology																										  ; Renowned for its natural resources, the Northern Borders is the least populated of Saudi Arabia's 13 regions. The region has an abundance of phosphate raw materials and phosphate fertilizer production. Its dolomite reserves are estimated to be 50 million tons, and its phosphate reserves are estimated to be 2.7 billion tons, accounting for 7% of the world's phosphate reserves. The Northern Borders region is home to Ma'aden's "Wa'ad Al-Shamal" industrial city dedicated to the phosphate industry. The region has a northern freight train with a length of 1,550 km, and work is underway to construct the Northern passenger train with a length of 1,250 km.   ; northern-strategic-population,northern-strategic-landmass      ;  northern-strategic-component
+                                                                               
+	
+###########################################################
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]			; $contentCV ; imageIcon (code, $contentCV) 			; headerText[lang = en]		   ;  text[lang = en]									; &componentRef
+									   ; northern-keyfacts1	     	;			 ; northern-population.png        			; 383,051	                   ;  population										; northern-keyfacts1	
+									   ; northern-keyfacts2       	;            ; northern-active-factories.png    		; 39			               ;  active factories in Q3 2021                       ; northern-keyfacts2 
+#									   ; northern-keyfacts3         ;            ; northern-population-growth.png      		; 2%		               	   ;  annual population growth between 2013-2019		; northern-keyfacts3 		
+									   ; northern-keyfacts4         ;            ; northern-airport.png              		; 3			               	   ;  domestic airport      							; northern-keyfacts4 
+									   ; northern-keyfacts5         ;            ; northern-private-sector-employees.png  	; 62,056		               ;  number of employees					        ; northern-keyfacts5 
+									   ; northern-keyfacts6         ;            ; northern-hotels.png        				; 18		                   ;  Hotels									        ; northern-keyfacts6 
+									   ; northern-keyfacts7         ;            ; northern-sport-city.png 					; 1			                   ;  Sport City					                    ; northern-keyfacts7 
+									   ; northern-keyfacts8         ;            ; northern-dams.png             			; 11			               ;  dams						                        ; northern-keyfacts8 
+									   ; northern-keyfacts9         ;            ; northern-chambers-of-commerce.png      	; 1	                   	   	   ;  Chambers of Commerce                              ; northern-keyfacts9 
+									   ; northern-keyfacts10        ;            ; northern-industrial-city.png				; 2			               	   ;  industrial city			                        ; northern-keyfacts10
+									   ; northern-keyfacts11        ;            ; northern-roads-length.png				; 2,169			               ;  roads length			                            ; northern-keyfacts11
+									   ; northern-keyfacts12        ;            ; northern-towns.png						; 4			               	   ;  Towns			                                    ; northern-keyfacts12
+									   ; northern-keyfacts13        ;            ; northern-hospitals.png					; 10			               ;  hospitals with 1,360 beds			                ; northern-keyfacts13
+												   
+									   
+									   
+									   
+									 
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]					  	  ; $contentCV      ; image (code, $contentCV)					             				 ; text[lang=en]				                        ;&componentRef
+                                                                                                                                                                                                                    
+										   ; northern-key-strength1                   ;                 ; northern-rich-phosphate-reserves.png                                   ; RICH PHOSPHATE RESERVES - 7% OF THE WORLD'S PHOSPHATE RESERVES                             ; northern-key-strength1
+                                           ; northern-key-strength2                   ;                 ; northern-solar-energy-potential.png                                    ; SOLAR ENERGY POTENTIAL                               ; northern-key-strength2
+                                           ; northern-key-strength3                   ;                 ; northern-electricity-water-infrastructure.png                          ; ELECTRICITY AND WATER INFRASTRUCTURE                 ; northern-key-strength3
+                                           ; northern-key-strength4                   ;                 ; northern-proximity-to-the-iraqi-jordanian-markets.png                  ; PROXIMITY TO THE IRAQI AND JORDANIAN MARKETS         ; northern-key-strength4
+                                           ; northern-key-strength5                   ;                 ; northern-high-production-chemicals.png                                 ; HIGH PRODUCTION CAPACITY OF CHEMICALS                ; northern-key-strength5
+		                                   
+	
+#####################################################	
+	
+	
+INSERT_UPDATE ProvinceInvestmentOpportunitiesComponent	; uid[unique=true]		 ; $contentCV	  ; iconImage	(code, $contentCV)		  ; headerText[lang = en]   ; text[lang = en]																										; &componentRef
+													                                                                                                                                                        
+														; northern-investment1   ;                ; northern-boarders-solar-energy.png   ; Solar energy            ; The Renewable Energy Project Development Office has so far identified one site with promising sun energy potential			; northern-investment1 
+														
+	
+	
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																									; keyStrengths(&componentRef) 																									; investmentOpportunities(&componentRef)
+							   ; northern-borders	;				    ;  northern-strategic-component  				 ; northern-keyfacts1,northern-keyfacts2 ,northern-keyfacts4 ,northern-keyfacts5 ,northern-keyfacts6, northern-keyfacts7 ,northern-keyfacts8 ,northern-keyfacts9 ,northern-keyfacts10,northern-keyfacts11,northern-keyfacts12,northern-keyfacts13    ; northern-key-strength1,northern-key-strength2,northern-key-strength3,northern-key-strength4,northern-key-strength5   ;	northern-investment1
+	
+	

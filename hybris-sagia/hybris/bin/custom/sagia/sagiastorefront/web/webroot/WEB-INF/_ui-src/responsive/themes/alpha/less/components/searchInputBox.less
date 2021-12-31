@@ -1,0 +1,146 @@
+.searchInputBox {
+	border-radius: 20px;
+	border: 1px solid @pale-grey;
+	background: #fff;
+	width: 100%;
+	display: block;
+	height: 40px;
+	line-height: 38px;
+	padding: 0 15px;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex: 1 0 auto;
+	
+	&-close {
+		appearance: none;
+		cursor: pointer;
+		background: none;
+		border: none;
+		width: 12px;
+		height: 30px;
+		padding: 0 7px;
+		box-sizing: content-box;
+		display: none;
+		svg {
+			width: 100%;
+			height: auto;
+			stroke: @steel-grey;
+			display: block;
+			path {
+				stroke: inherit;
+			}
+		}
+		&:hover,
+		&:focus {
+			svg {
+				stroke: #000;
+			}
+		}
+	}
+	
+	&_limited {
+		max-width: 271px;
+	}
+	
+	&_dark {
+		
+		border-color: @steel-grey;
+	}
+
+	&:before {
+		position: absolute;
+		content:"";
+		width: 24px;
+		height: 24px;
+		background: transparent url("../icons/search.svg") center no-repeat;
+		background-size: 24px auto;
+		top: 50%;
+		margin-left: -4px;
+		transform: translateY(-50%);
+	}
+	&-input {
+		border: none;
+		font-size: 12px;
+		line-height: inherit;
+		background: transparent;
+		margin: 0 0 0 25px;
+		display: block;
+		color: @dark;
+		flex: 1;
+
+		&,
+		&:active,
+		&:focus {
+			box-shadow: none;
+			outline: none;
+		}
+		
+		&.active {
+			
+			& + .searchInputBox-close {
+				display: block;
+			}
+		}
+	}
+	&-input::placeholder{
+		color: @steel-grey;
+	}
+	&-input:focus::placeholder {
+		color: transparent;
+	}
+	&-switchModeBtn {
+		border: none;
+		color: @apple;
+		height: inherit;
+		float: right;
+		display: block;
+		cursor: pointer;
+		font-size: 11px;
+		padding: 1px 0 0;
+		background-color: transparent;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&_slim {
+		height: 32px;
+		border-radius: 16px;
+		line-height: 30px;
+		padding: 0 13px;
+
+		&:before {
+			margin-left: -5px;
+			background-size: 22px auto;
+		}
+	}
+	&_slim &-input {
+		font-size: 11px;
+		margin-left: 20px;
+
+	}
+	&_slim &-switchModeBtn {
+		height: 30px;
+		font-size: 10px;
+	}
+	&_inline {
+		display: inline-flex;
+		width: auto;
+		
+		.searchInputBox-input {
+			min-width: 123px;
+		}
+
+		&_aside {
+			width: 280px;
+
+			.row > &:only-child {
+				margin-bottom: -8px;
+			}
+		}
+	}
+	&_spaceTop {
+		margin-top: 24px;
+	}
+}

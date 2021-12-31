@@ -1,0 +1,144 @@
+﻿# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalGlobalTemplate
+$page = about-invest-saudi
+$pageName = عن "استثمر في السعوديه"  
+$pageTitleAr = $pageName
+$pageLabel = /aboutSaudi
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]  ; title[lang = ar]; description[lang = ar]; keywords[lang = ar]                      ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page               ; $pageTitleAr    ; $pageName             ; Invest Saudi,Invest Saudi - About,About, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+						 					 
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]       ; &componentRef         	; $contentCV[unique = true] ;description[lang = ar]
+                                                  ; generic-paragraph-about	 ; generic-paragraph-about	; 							; "
+ <section class='container mb-5 general-info'>
+<div class='umb-grid'>
+<div class='grid-section'>
+<div>
+<div class='container page-contents'>
+<div class='row clearfix'>
+<div class='column'>
+<div>
+<p>''استثمر في السعودية'' هي الهوية الوطنية الموحدة لتسويق الاستثمار في المملكة العربية السعودية وقد تم تطويرها وإطلاقها كإحدى مبادرات تحقيق رؤية المملكة 2030 .</p>
+<p>تعمل ''استثمر في السعودية ''على تسهيل عمل المستثمرين وتذليل المعوّقات أمام الاستثمارات التي تدعم النمو الاقتصادي للملكة وتعزّز دورها كأحد اللاعبين الرئيسيين في اقتصاد الأعمال العالمي. </p>
+<p>وهي مصمّمة خصّيصًا لتقدّم معلومات واضحة، موحّدة وفعّالة حول فرص الاستثمار في المملكة العربية السعودية للمستثمرين الأجانب والمحليين من جهة ولشركات القطاع الخاص من جهة أخرى. فهي تشكًل نقطة الانطلاق الأساسيّة للمستثمرين الأجانب الراغبين بتلقّي المساعدة والدعم في المراحل التي تسبق أوترافق أو تلي دخولهم المملكة العربية السعودية.</p>
+<p>ويعد الموقع الإلكتروني (investsaudi.sa) أحد أبرز القنوات التسويقية لهوية ''استثمر في السعودية'' للتعريف بالبيئة الاستثمارية والمزايا التنافسية للمملكة وإبراز الفرص الاستثمارية الواعدة في كافة القطاعات ، ولتسهيل التواصل مع المستثمرين محليًّا وعالميًّا.</p>
+<p>فيما تشهد المملكة العربية السعودية إزدهارًا إقتصاديأ و تقدماً في جميع مجالات التنميه ،   تعمل ''استثمر في السعودية'' على توحيد  الرسائل والجهود بين  كافة الوزارات و الجهات الحكومية  لتعزيز مكانة المملكة كوجهة استثمارية جاذبة  و لتسليط الضوء على مختلف الفرص في مجال الأعمال والاستثمار، وذلك في إطار دعمها للنموّ الاقتصادي الطويل الأمد للمملكة العربية السعودية.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+"; "
+<section class='container mb-5 general-info'>
+<div class='umb-grid'>
+<div class='grid-section'>
+<div>
+<div class='container page-contents'>
+<div class='row clearfix'>
+<div class=' column'>
+<div>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+"
+
+						 						 
+INSERT_UPDATE Media ; code[unique = true]    	; realFileName        		; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; about-invest-saudi.png	; about-invest-saudi.png	; $siteResource/about-invest-saudi.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-overview.png	; about-saudi-overview.png	; $siteResource/about-saudi-overview.png                                        ; image/png                   ;                                          ; ""     ;
+
+					; about-saudi-our-aim.png	; about-saudi-our-aim.png	; $siteResource/about-saudi-our-aim.png                                         ; image/png                   ;                                          ; ""     ;
+					; about-saudi-our-goal.png	; about-saudi-our-goal.png	; $siteResource/about-saudi-our-goal.png                                        ; image/png                   ;                                          ; ""     ;
+					; about-saudi-our-mission.png	; about-saudi-our-mission.png	; $siteResource/about-saudi-our-mission.png                             ; image/png                   ;                                          ; ""     ;
+
+					; about-saudi-wealth.png	; about-saudi-wealth.png	; $siteResource/about-saudi-wealth.png                                         	; image/png                   ;                                          ; ""     ;
+					; about-saudi-transperency.png	; about-saudi-transperency.png	; $siteResource/about-saudi-transperency.png                       		; image/png                   ;                                          ; ""     ;
+					; about-saudi-opportunity.png	; about-saudi-opportunity.png	; $siteResource/about-saudi-opportunity.png                        		; image/png                   ;                                          ; ""     ;
+
+					; about-saudi-wedo-1.png	; about-saudi-wedo-1.png	; $siteResource/about-saudi-wedo-1.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-wedo-2.png	; about-saudi-wedo-2.png	; $siteResource/about-saudi-wedo-2.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-wedo-3.png	; about-saudi-wedo-3.png	; $siteResource/about-saudi-wedo-3.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-wedo-4.png	; about-saudi-wedo-4.png	; $siteResource/about-saudi-wedo-4.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-wedo-5.png	; about-saudi-wedo-5.png	; $siteResource/about-saudi-wedo-5.png                                          ; image/png                   ;                                          ; ""     ;
+					
+					; about-saudi-number1.png	; about-saudi-number1.png	; $siteResource/about-saudi-number1.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-number2.png	; about-saudi-number2.png	; $siteResource/about-saudi-number2.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-number3.png	; about-saudi-number3.png	; $siteResource/about-saudi-number3.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-number4.png	; about-saudi-number4.png	; $siteResource/about-saudi-number4.png                                          ; image/png                   ;                                          ; ""     ;
+					; about-saudi-number5.png	; about-saudi-number5.png	; $siteResource/about-saudi-number5.png                                          ; image/png                   ;                                          ; ""     ;
+
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]	 ; descriptionText[lang = ar]   ; buttonText[lang = ar]    ; image(code, $contentCV)	; buttonURL(&linkRef)	; link  ; &componentRef   		; $contentCV[unique = true]
+                                        ; about-saudi-banner-1   ;	عن "استثمر في السعوديه"     ;           				; about-invest-saudi.png   	;  	  					; true  ; about-saudi-banner-1  ;
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      		; simpleCMSComponents(&componentRef); &componentRef          		; $contentCV[unique = true]
+                                        ; about-saudi-banner-container 	; about-saudi-banner-1 				; about-saudi-banner-container 	;
+					
+INSERT_UPDATE InvestSaudiAboutSaudiOverviewContainer; uid[unique = true]      		  ; simpleCMSComponents(&componentRef); backgroundImage(code, $contentCV)	; &componentRef           			; $contentCV[unique = true]
+													; about-saudi-overview-container  ; generic-paragraph-about 			; about-saudi-overview.png			; about-saudi-overview-container 	;
+					
+INSERT_UPDATE InvestSaudiAboutSaudiGoalMissionComponent	; uid[unique = true]	; value[lang = ar] 						;  text[lang = ar]																		            		; imageIcon(code, $contentCV)	; &componentRef ; $contentCV[unique = true]
+														; our-goal				; هدفنا             							; 	هدفنا هو دعم المستثمرين  حيثما أَمكَن من أجل ضمان تجربة ممتازة لهم في المملكة العربية السعودية    ; about-saudi-our-goal.png		; our-goal		;
+                                                        ; our-mission           ; مهمّتنا            ;تعزيز مكانة المملكة  و جعلها وجهة استثمارية رائدة ومحفزة للاستمرار والتوسع ، من أجل تحقيق نمو اقتصادي مستديم 					;  about-saudi-our-mission.png	; our-mission	;
+   
+
+INSERT_UPDATE InvestSaudiAboutSaudiGoalMissionContainer	; uid[unique = true]      			  ; simpleCMSComponents(&componentRef); backgroundImage(code, $contentCV)	; &componentRef           				; $contentCV[unique = true]
+														; about-saudi-goal-mission-container  ; our-goal,our-mission 				; about-saudi-our-aim.png			; about-saudi-goal-mission-container 	;
+
+														
+INSERT_UPDATE InvestSaudiAboutSaudiOurValuesComponent; uid[unique = true]	; value[lang = ar] 	; text[lang = ar]																																						 ; imageIcon(code, $contentCV)	; &componentRef ; $contentCV[unique = true]
+                                                     ; wealth               ; الازدهار           ; انطلاقًا من موقعها كعضو فاعل في مجموعة العشرين وكقوّة اقتصادية ضخمة تقوم على مبادئ الاقتصاد الكليّ، تقدم المملكة العربية السعودية استقرارًا طويل الأمد ومنصة مستدامة للاستثمار. ; about-saudi-wealth.png		; wealth		;
+													 ; transperency         ; الشفافية          ;تنفيذ مجموعة من الإصلاحات المتعلّقة بالأعمال بهدف تسهيل الاستثمار وتقديم المزيد من الدعم للمستثمرين داخل المملكة.                                                              ; about-saudi-transperency.png	; transperency	;
+													; opportunity           ; الفرص              ; إتاحة المزيد من فرص الاستثمار الجديدة أمام المستثمرين الأجانب في قطاعات لم يكن العمل فيها متاحًا لهم في السابق.                                                              ; about-saudi-opportunity.png	; opportunity	;
+
+
+INSERT_UPDATE InvestSaudiAboutSaudiOurValuesContainer ; uid[unique = true]               ; title[lang = ar]	  ; simpleCMSComponents(&componentRef)    ; &componentRef           			; $contentCV[unique = true]													
+                                                      ; about-saudi-our-values-container ; قيمنا              ; wealth,transperency,opportunity 	  ; about-saudi-our-values-container 	;
+													  
+													  
+													  
+INSERT_UPDATE InvestSaudiAboutSaudiWhatWeDoComponent ; uid[unique = true]	; numberImage(code, $contentCV)	; text[lang = ar]																									         ; imageIcon(code, $contentCV)	; &componentRef	; $contentCV[unique = true]
+													 ; we-do-1              ; about-saudi-number1.png       ; تحويل المملكة العربية السعودية إلى قوّة استثمارية عالمية وتحقيق الأهداف المرجوّة لرؤية 2030                                   ; about-saudi-wedo-1.png		; we-do-1		;
+                                                     ; we-do-2              ; about-saudi-number2.png       ; تعزيز مكانة وسمعة المملكة العربية السعودية لدى المستثمرين من خلال تسليط الضوء على الفرص الجاذبة والتجارب الناجحة            ; about-saudi-wedo-2.png		; we-do-2		;
+													 ; we-do-3              ; about-saudi-number3.png       ; تقديم الفرص المناسبة للمستثمرين كلّ بحسب مجاله من أجل دعم أنشطتهم في المملكة العربية السعودية                               ; about-saudi-wedo-3.png		; we-do-3		;
+													 ; we-do-4              ; about-saudi-number4.png       ; زيادة وعي المستثمرين بالإزدهار التاريخي والحضاري للبلاد ، وبالفرص الهائلة التي تختزنها المملكة العربية السعودية              ; about-saudi-wedo-4.png		; we-do-4		;
+													 ; we-do-5              ; about-saudi-number5.png       ; خلق بيئة استثمارية تتّسم  الكفاءة العالية وسهولة ممارسة الأعمال من خلال العمل والتعاون عن كثب مع الشركاء المحليين والأجانب .   ; about-saudi-wedo-5.png		; we-do-5		;
+													 
+													 
+INSERT_UPDATE InvestSaudiAboutSaudiWhatWeDoContainer; uid[unique = true]        	; title[lang = ar]	; simpleCMSComponents(&componentRef)     	; &componentRef           	; $contentCV[unique = true]
+													; about-what-we-do-container 	; أهدافنا           ; we-do-1,we-do-2,we-do-3,we-do-4,we-do-5	; about-what-we-do-container;
+
+
+   
+										
+			
+
+										
+
+					

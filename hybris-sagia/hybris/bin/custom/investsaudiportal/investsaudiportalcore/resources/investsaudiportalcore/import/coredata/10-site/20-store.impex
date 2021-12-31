@@ -1,0 +1,14 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+#
+# Create the BaseStore
+#
+
+$storeUid = investsaudiportal
+$languages = en, ar
+$defaultLanguage = en
+
+# Base Store
+INSERT_UPDATE BaseStore; uid[unique = true]; languages(isocode); defaultLanguage(isocode); name[lang = en]           ; catalogs(id)
+                       ; $storeUid         ; $languages        ; $defaultLanguage        ; Invest Saudi Portal Store ; investsaudiportalProductCatalog

@@ -1,0 +1,238 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template" %>
+<%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
+<%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
+<%@ taglib prefix="account" tagdir="/WEB-INF/tags/responsive/user" %>
+<%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
+<%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ attribute name="hasLicense" required="false" type="java.lang.Boolean" %>
+
+<c:set var="pageIsDashboard" value="${fn:containsIgnoreCase(requestScope['javax.servlet.forward.request_uri'], 'dashboard')}"/>
+
+<c:if test="${hasLicense}">
+    <div class="panelTabs-head" id="enquiriesTab"><spring:theme code="company.enquirescomplaints"/>
+        <span id="complaintsCount" class="notifyCount"></span>
+    </div>
+    <div class="panelTabs-body" id="enquiriesTabData">
+        <div class="panelModule panelModule_halfRadius">
+            <div class="contentModule">
+                <div class="contentModule-section">
+                    <div class="contentModule-headline">
+                        <span class="iconElement iconElement_enquiry3"><icon:enquiry3/></span><spring:theme code="profile.enquiry.new"/>
+                    </div>
+
+                    <div id="complaintInProgress" style="display: none">${complaintInProgress}</div>
+                    <form:form id="createComplantForm" action="${encodedContextPath}/complaints/create" enctype="multipart/form-data" method="post" modelAttribute="complaintFormData">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="formSelectBox">
+                                    <spring:bind path="details.EnquiryType">
+                                        <div class="form-group <c:if test="${status.error}">has-error</c:if>">
+                                            <form:select class="js-select2-oneColumn" id="enquiryList" path="details.EnquiryType" mandatory = "true">
+                                                <form:options items="${complaintFormData.enquiryTypes}" itemValue="catID" itemLabel="catDesc" htmlEscape="true" />
+                                            </form:select>
+                                            <span class="help-block"><form:errors path="details.EnquiryType"/></span>
+                                            <label class="control-label control-label_mandatory"><spring:theme code="profile.enquiry.type"/></label>
+                                        </div>
+                                    </spring:bind>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="formSelectBox">
+                                    <spring:bind path="details.Category1">
+                                        <div class="form-group <c:if test="${status.error}">has-error</c:if>">
+                                            <form:select class="js-select2-oneColumn" id="categoriesOneList" path="details.Category1" mandatory = "true">
+                                                <form:options itemValue="catID" itemLabel="catDesc" htmlEscape="true"/>
+                                            </form:select>
+                                            <span class="help-block"><form:errors path="details.Category1"/></span>
+                                            <label class="control-label control-label_mandatory"><spring:theme code="general.category1"/></label>
+                                        </div>
+                                    </spring:bind>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="formSelectBox">
+                                    <spring:bind path="details.Category2">
+                                        <div class="form-group <c:if test="${status.error}">has-error</c:if>">
+                                            <form:select class="js-select2-oneColumn" id="categoriesTwoList" path="details.Category2" mandatory = "true">
+                                                <form:options itemValue="catID" itemLabel="catDesc" htmlEscape="true"/>
+                                            </form:select>
+                                            <span class="help-block"><form:errors path="details.Category2"/></span>
+                                            <label class="control-label control-label_mandatory"><spring:theme code="general.category2"/></label>
+                                        </div>
+                                    </spring:bind>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="formSelectBox">
+                                    <div class="form-group">
+                                        <form:select class="js-select2-oneColumn" path="details.Branch" mandatory = "true">
+                                             <!-- population is making in sagia.profile.js - reason for which I cut itemValue="description" itemLabel="description" -->
+                                            <form:options items="${complaintFormData.branches}" htmlEscape="true"/>
+                                        </form:select>
+                                        <label class="control-label"><spring:theme code="general.branch"/></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hiddenAttachmentsSection"></div>
+                        </div>
+
+                        <formElement:formInputBox idKey="details.Subject" labelKey="profile.enquiry.subject" path="details.Subject" inputCSS="text" labelCSS="control-label_mandatory" mandatory="true"/>
+                        <formElement:formTextArea idKey="details.TextMsg" labelKey="profile.enquiry.message" path="details.TextMsg" labelCSS="control-label_mandatory"  areaCSS="form-control" mandatory="true"/>
+                        <div class="row enquiryFiles">
+                            <div class="col-md-6">
+                                <!-- todo: formInputFile tag needs to be added -->
+                                <div class="formInputFile">
+                                    <div class="form-group">
+                                        <input id="file0" name="files[0]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
+                                        <input id="text05" name="text05" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
+                                        <label class="control-label"><spring:theme code="general.labelforfile"/></label>
+                                        <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                        <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- todo: formInputFile tag needs to be added -->
+                                <div class="formInputFile">
+                                    <div class="form-group">
+                                        <input id="file1" name="files[1]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
+                                        <input id="text02" name="text02" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
+                                        <label class="control-label"><spring:theme code="general.labelforfile"/></label>
+                                        <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                        <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- todo: formInputFile tag needs to be added -->
+                                <div class="formInputFile">
+                                    <div class="form-group">
+                                        <input id="file2" name="files[2]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
+                                        <input id="text03" name="text03" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
+                                        <label class="control-label"><spring:theme code="general.labelforfile"/></label>
+                                        <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                        <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- todo: formInputFile tag needs to be added -->
+                                <div class="formInputFile">
+                                    <div class="form-group">
+                                        <input id="file3" name="files[3]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
+                                        <input id="text04" name="text04" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
+                                        <label class="control-label"><spring:theme code="general.labelforfile"/></label>
+                                        <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                        <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
+                            <button class="btn" type="submit" value="SUBMIT"><spring:theme code="profile.enquiry.create"/></button>
+                        </div>
+                    </form:form>
+                </div>
+
+                <div class="contentModule-section" id="ticketsSection">
+                    <div class="contentModule-headline contentModule-headline_flex">
+                        <div class="contentModule-headline-title">
+                            <span class="iconElement iconElement_your-tickets"><icon:your-tickets/></span>
+                            <spring:theme code="profile.yourTickets"/>
+                        </div>
+
+                        <div class="serviceTime" style="display: none">
+                            <div class="serviceTime-label"><spring:theme code="average.service.time"/></div>
+                            <div class="serviceTime-detail">
+                                <c:choose>
+                                    <c:when test="${(processingTime.days > 0)  ||  (processingTime.hours > 0)}">
+                                        <span class="serviceTime-highlight">${processingTime.days}</span>
+                                        <spring:theme code="average.processingTime.days"/>
+                                        <span class="serviceTime-highlight">${processingTime.hours}</span>
+                                        <spring:theme code="average.processingTime.hours"/>
+                                    </c:when>
+                                    <c:when test="${(processingTime.minutes > 0)  ||  (processingTime.seconds > 0)}">
+                                        <span class="serviceTime-highlight">${processingTime.minutes}</span>
+                                        <spring:theme code="average.processingTime.minutes"/>
+                                        <span class="serviceTime-highlight">${processingTime.seconds}</span>
+                                        <spring:theme code="average.processingTime.seconds"/>
+                                    </c:when>
+                                </c:choose>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contentModule-filter">
+                        <select id="profileTicketSort" title="profileTicketSort" class="js-select2-oneColumn form-control" onchange="sortProfileTickets()">
+                            <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
+                            <option value="status_desc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
+                            <option value="number_asc" data-sort="asc"><spring:theme code="sagia.sort.ticketNumber"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
+                            <option value="number_desc" data-sort="desc"><spring:theme code="sagia.sort.ticketNumber"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
+                            <option value="date_asc" data-sort="asc"><spring:theme code="sagia.sort.date"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
+                            <option value="date_desc" data-sort="desc"><spring:theme code="sagia.sort.date"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
+                        </select>
+                    </div>
+
+                    <div class="tableModule">
+                        <table class="tableModule-table" id="profileTicketsTable">
+                            <thead class="tableModule-head">
+                            <tr>
+                                <th><spring:theme code="general.lastUpdate"/></th>
+                                <th><spring:theme code="general.ticketNumber"/></th>
+                                <%--<th><spring:theme code="general.enquiry.type"/></th>--%>
+                                <th><spring:theme code="general.status"/></th>
+                                <th><spring:theme code="general.options"/></th>
+                            </tr>
+                            </thead>
+                            <tbody class="tableModule-body" id="ticketsTable"></tbody>
+                        </table>
+                    </div>
+                    <div class="paginationModule paginationModule_loading">
+                        <c:if test="${!pageIsDashboard}">
+                            <div class="dashboardWidget-filter">
+                                <div style="width: 150px; position: absolute">
+                                    <select class="paginationPicker js-select2-oneColumn form-control"></select>
+                                </div>
+                            </div>
+                        </c:if>
+                        <div class="paginationModule-wrapper">
+                            <button class="paginationModule-control paginationModule-control_left" disabled><icon:arrow_green_right/></button>
+                            <div class="paginationModule-items">
+                                <div class="loadingModule">
+                                    <div class="loadingModule-icon"><icon:loading-spinner /></div>
+                                    <div class="loadingModule-msg">Loading content ...</div>
+                                </div>
+                            </div>
+                            <button class="paginationModule-control paginationModule-control_right"><icon:arrow_green_right/></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="enquiryDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document"></div>
+    </div>
+
+    <table class="profileTicketsTemplateWrapper" style="display: none;">
+        <tr>
+            <td class="lastUpdate"></td>
+            <td class="ticketNumber"></td>
+            <%--<td class="enquiryType"></td>--%>
+            <td class="status"></td>
+            <td class="details">
+                <a href="#" class="link" data-toggle="modal" data-complaint-id="" data-target="#enquiryDetail"><spring:theme code="profile.details.label"/></a>
+                <span class="notifyCount"></span>
+            </td>
+        </tr>
+    </table>
+</c:if>

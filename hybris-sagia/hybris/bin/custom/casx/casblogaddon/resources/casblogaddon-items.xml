@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2000-2016 hybris AG
+ All rights reserved.
+
+ This software is the confidential and proprietary information of hybris
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with hybris.
+-->
+
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
+
+    <collectiontypes>
+        <collectiontype code="blogPostComponentCollection" elementtype="BlogPostComponent" autocreate="true"
+                        generate="true" type="list"/>
+    </collectiontypes>
+
+    <enumtypes>
+        <enumtype code="BlogType" generate="true" autocreate="true" dynamic="true">
+            <description>
+                This enumeration defines the different types of blogs on the website.
+            </description>
+            <value code="Connect"/>
+        </enumtype>
+    </enumtypes>
+
+    <relations>
+
+        <relation code="SagiaBlogEvents2SagiaUserRelation" localized="false">
+            <deployment table="sagiablogs2sagiauser" typecode="32366"/>
+            <sourceElement qualifier="subscribedBlogEvents" type="BlogPostComponent" cardinality="many"/>
+            <targetElement qualifier="subscribedUsers" type="User" cardinality="many"/>
+        </relation>
+
+    </relations>
+
+    <itemtypes>
+        <typegroup name="Blog">
+            <itemtype code="BlogPostComponent" generate="true"
+                      extends="CMSParagraphComponent" autocreate="true">
+                <description>To store the blog post data</description>
+                <attributes>
+                    <attribute qualifier="blogType" type="BlogType">
+                        <description>Field to track the type of blog on the website.</description>
+                        <persistence type="property"/>
+                        <defaultvalue>em().getEnumerationValue("BlogType","Connect")</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="restrictedGroup" type="UserGroup" generate="true"
+                               autocreate="true">
+                        <persistence type="property"/>
+                        <modifiers optional="true" />
+                        <description>Restricted group</description>
+                    </attribute>
+                    <attribute qualifier="title" generate="true" autocreate="true"
+                               type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Title for the blog post</description>
+                    </attribute>
+                    <attribute qualifier="postUrl" generate="true" autocreate="true"
+                               type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <defaultvalue>"/events/"</defaultvalue>
+                        <description>Url of this blog post</description>
+                    </attribute>
+                    <attribute qualifier="tag" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Tags</description>
+                    </attribute>
+                    <attribute qualifier="promoteToIndexPage" generate="true"
+                               autocreate="true" type="boolean">
+                        <persistence type="property"/>
+                        <defaultvalue>false</defaultvalue>
+                        <description>Represents whether the blog is promoted to index page or not</description>
+                    </attribute>
+                    <attribute qualifier="shortContent" generate="true"
+                               autocreate="true" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Short Content of the post for the blog index page</description>
+                    </attribute>
+                    <attribute qualifier="postImage" generate="true"
+                               autocreate="true" type="Media">
+                        <persistence type="property"/>
+                        <description>An optional attribute to store Hybris Image. This Image will be used for as post image.</description>
+                    </attribute>
+                    <attribute qualifier="thumbnailImage" generate="true"
+                               autocreate="true" type="Media">
+                        <persistence type="property"/>
+                        <description>An optional attribute to store thumbnail Image. Which will be used for as post image on blog index page.</description>
+                    </attribute>
+                    <attribute qualifier="extractedContent" generate="true"
+                               autocreate="true" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Used internally to save extracted Content which display on blog index page
+                        </description>
+                    </attribute>
+                    <attribute qualifier="thumbnailImageSrc" generate="true" autocreate="true" type="java.lang.String">
+                        <modifiers write="false"/>
+                        <persistence type="dynamic" attributeHandler="blogThumbnailImageSrcAttributeHandler"/>
+                        <description>Used internally to get the thumbnailImage of post for index page</description>
+                    </attribute>
+                    <attribute qualifier="featuredPostImageSrc" generate="true" autocreate="true"
+                               type="java.lang.String">
+                        <modifiers write="false"/>
+                        <persistence type="dynamic" attributeHandler="blogFeaturedPostImageSrcAttributeHandler"/>
+                        <description>Used internally to get the postImage of post for index page</description>
+                    </attribute>
+                    <attribute qualifier="startDate" type="java.util.Date">
+                        <persistence type="property"/>
+                        <description>Start Date</description>
+                    </attribute>
+                    <attribute qualifier="endDate" type="java.util.Date">
+                        <persistence type="property"/>
+                        <description>End Date</description>
+                    </attribute>
+                    <attribute qualifier="uniqueCode" generate="true" autocreate="true"
+                               type="java.lang.String">
+                        <modifiers write="false"/>
+                        <persistence type="dynamic" attributeHandler="blogUniqueCodeAttributeHandler"/>
+                        <description>Used internally to set uid code in this field for subscribe/unsubscribe blog</description>
+                    </attribute>
+                    <attribute qualifier="newsletterSubscriptionFlag" generate="true" autocreate="true" type="java.lang.Boolean">
+                        <modifiers write="false"/>
+                        <persistence type="dynamic" attributeHandler="newsletterSubscriptionFlagAttributeHandler"/>
+                        <description>Used internally to check the subscription status of event</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="FeaturedPostComponent" autocreate="true"
+                      generate="true" extends="SimpleCMSComponent"
+                      jaloclass="com.casblogaddon.jalo.components.FeaturedPostComponent">
+                <description>Feature blog post component</description>
+                <attributes>
+                    <attribute qualifier="featuredPost" type="BlogPostComponent">
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                        <description>feature Post component</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MostPopularBlogPostsComponent" autocreate="true"
+                      generate="true" extends="SimpleCMSComponent"
+                      jaloclass="com.casblogaddon.jalo.components.MostPopularBlogPostsComponent">
+                <description>Collection of popular blog post components</description>
+                <attributes>
+                    <attribute qualifier="popularPosts" type="blogPostComponentCollection">
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                        <description>Collection of blog post component</description>
+                    </attribute>
+                    <attribute qualifier="numberOfPostToShow" generate="true"
+                               autocreate="true" type="java.lang.Integer">
+                        <persistence type="property"/>
+                        <modifiers optional="false"/>
+                        <defaultvalue>3</defaultvalue>
+                        <description>Number of post to be shown on the Most popular section of blog index page
+                        </description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="BlogPostContainerComponent" autocreate="true"
+                      generate="true" extends="SimpleCMSComponent"
+                      jaloclass="com.casblogaddon.jalo.components.BlogPostContainerComponent">
+                <description>Collection of blog post components</description>
+                <attributes>
+                    <attribute qualifier="blogType" type="BlogType">
+                        <description>Field to find the type of blog to be displayed.</description>
+                        <persistence type="property"/>
+                        <defaultvalue>em().getEnumerationValue("BlogType","Connect")</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="numberOfPostPerPage" generate="true" autocreate="true"
+                               type="java.lang.Integer">
+                        <persistence type="property"/>
+                        <description>Number of post to be shown per page on blog index page</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="BlogPostSearchContainerComponent" autocreate="true"
+                      generate="true" extends="SimpleCMSComponent"
+                      jaloclass="com.casblogaddon.jalo.components.BlogPostSearchContainerComponent">
+                <description>Collection of blog post components to be used in search page</description>
+                <attributes>
+                    <attribute qualifier="blogType" type="BlogType">
+                        <description>Field to find the type of blog to be displayed.</description>
+                        <persistence type="property"/>
+                        <defaultvalue>em().getEnumerationValue("BlogType","Connect")</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="numberOfPostPerPage" generate="true" autocreate="true"
+                               type="java.lang.Integer">
+                        <persistence type="property"/>
+                        <description>Number of post to be shown per page on blog index page</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="CsBlogTicket" generate="true"  autocreate="true" extends="CsTicket">
+                <attributes>
+                    <attribute qualifier="blogComment" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" initial="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="blogPostComponent" type="BlogPostComponent">
+                        <modifiers read="true" write="true" search="true" initial="true" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="NewsLetter" autocreate="true" generate="true">
+                <deployment table="newsLetter" typecode="20231"/>
+                <attributes>
+                    <attribute type="java.lang.String" qualifier="email">
+                        <persistence type="property"></persistence>
+                        <modifiers unique="true" optional="false"/>
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="firstName">
+                        <persistence type="property"></persistence>
+                        <modifiers optional="false"/>
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="lastName">
+                        <persistence type="property"></persistence>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+    </itemtypes>
+</items>

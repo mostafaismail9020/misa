@@ -1,0 +1,31 @@
+INSERT_UPDATE ComponentTypeGroup; code[unique = true]
+                                ; portalheaderlinks
+                                ; portalfooter
+                                ; portalwide
+                                ; portalnarrow
+
+INSERT_UPDATE ComponentTypeGroups2ComponentType; source(code)[unique = true]; target(code)[unique = true]
+                                               ; portalwide                 ; InvestSaudiNumberTalkContainer
+                                               ; portalwide                 ; InvestSaudiBannerContainer
+                                               ; portalheaderlinks          ; InvestSaudiNavigationBarComponent
+                                               ; portalwide                 ; InvestSaudiWhyContainer
+                                               ; portalwide                 ; InvestSaudiWhyDetailContainer
+                                               ; portalwide                 ; InvestSaudiGenericParagraphComponent
+                                               ; portalfooter               ; InvestSaudiFooterComponent
+                                               ; portalwide                 ; InvestSaudiFeaturedOpportunitiesComponent
+                                               ; portalwide                 ; InvestSaudiCookieBarComponent
+                                               ; portalwide                 ; InvestSaudiSectorsComponent
+                                               ; portalwide                 ; InvestSaudiFactsFiguresContainer
+                                               ; portalnarrow               ; InvestSaudiWhySideMenuContainer
+                                               ; portalwide                 ; InvestSaudiFaqContainer
+                                               ; portalwide                 ; InvestSaudiVideoContainer
+                                               ; portalwide                 ; InvestSaudiSuccessStoriesComponent
+                                               ; portalwide                 ; InvestSaudiWebinarSingleVideoComponent
+                                               ; portalwide                 ; InvestSaudiTableContainer
+                                               ; portalwide                 ; InvestSaudiNewsComponent
+                                               ; portalwide                 ; InvestSaudiSectorPropositionContainer
+                                               ; portalwide                 ; InvestSaudiSimpleBannerComponent
+                                               ; portalwide                 ; InvestSaudiWebinarRegistrationComponent
+                                               ; portalwide                 ; InvestSaudiBrandDownloadComponent
+                                               ; portalwide                 ; InvestSaudiAboutButtonsComponent
+                                               ; portalwide                 ; InvestSaudiServicesButtonsComponent

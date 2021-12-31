@@ -1,0 +1,186 @@
+.paginationModule {
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 8px;  
+    
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    
+    &-control {
+        border: none;
+        background: none;
+        appearance: none;
+        cursor: pointer;
+        padding-bottom: 0;
+        
+        svg {
+            vertical-align: -3px;
+            [dir="rtl"] & {
+                transform: rotate(180deg);
+            }
+        }
+        
+        &_left {
+            svg {
+                transform: rotate(180deg);
+                [dir="rtl"] &{
+                    transform: rotate(0);
+                }
+            } 
+        }
+        
+        &[disabled] {
+            cursor: not-allowed;
+            svg path {
+                fill: #32465a;
+            }
+        }
+    }
+    
+    &-items {
+        
+        &_firstNumbers {
+            
+            .paginationModule-item {
+                &:nth-child(4) {
+                    margin-right: 28px;
+                    position: relative;
+                    &:after {
+                        content: "\2026";
+                        display: block;
+                        position: absolute;
+                        right: -28px;
+                        top: 0;
+                        width: 28px;
+                        height: 24px;
+                        line-height: 24px;
+                        font-size: 15px;
+	                    color: #32465a;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        
+        
+        &_middleNumbers {
+            
+            .paginationModule-item {
+                &:nth-child(1) {
+                    margin-right: 28px;
+                    position: relative;
+                    &:after {
+                        content: "\2026";
+                        display: block;
+                        position: absolute;
+                        right: -28px;
+                        top: 0;
+                        width: 28px;
+                        height: 24px;
+                        line-height: 24px;
+                        font-size: 15px;
+	                    color: #32465a;
+                        text-align: center;
+                    }
+                }
+                
+                &:nth-last-child(1) {
+                    margin-left: 28px;
+                    position: relative;
+                    &:after {
+                        content: "\2026";
+                        display: block;
+                        position: absolute;
+                        left: -28px;
+                        top: 0;
+                        width: 28px;
+                        height: 24px;
+                        line-height: 24px;
+                        font-size: 15px;
+	                    color: #32465a;
+                        text-align: center;
+                    }
+                }                
+            }
+        }         
+        
+        
+        &_lastNumbers {
+            
+            .paginationModule-item {
+                &:nth-last-child(4) {
+                    margin-left: 28px;
+                    position: relative;
+                    &:after {
+                        content: "\2026";
+                        display: block;
+                        position: absolute;
+                        left: -28px;
+                        top: 0;
+                        width: 28px;
+                        height: 24px;
+                        line-height: 24px;
+                        font-size: 15px;
+	                    color: #32465a;
+                        text-align: center;
+                    }
+                }
+            }
+        }        
+        
+    }
+    
+    &-item {
+        display: inline-block;
+        font-size: 0;
+        padding: 0 2px;
+    }
+    
+    &-link,
+    &-separator {
+        font-size: 15px;
+        color: #32465a;
+        [dir="rtl"] & {
+            font-size: 13px;
+        }        
+    }
+    
+    &-separator {
+        width: 22px;
+        text-align: center;
+    }
+    
+    &-link {
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        border-radius: 100%;
+        border: 1px solid transparent;
+        line-height: 24px;
+        display: block;
+        text-indent: -0.5px;
+        &:hover,
+        &:focus {
+            color: #7bd35d;
+        }        
+        
+        &.active {
+            border-color: @apple;
+            color: @apple;
+            &:hover,
+            &:focus {
+                color: #7bd35d;
+                border-color: #7bd35d;
+            }            
+        }
+    }
+    
+    &&_loading {
+        
+        .paginationModule-control {
+            display: none;
+        }
+    }
+}

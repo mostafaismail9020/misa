@@ -1,0 +1,71 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPGETATTACHMENTSSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPGETATTACHMENTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPGETATTACHMENTS"
+        },
+        "LANGUAGE": "E",
+        "SEQUENCE_NUMBER": "1 ",
+        "DESCRIPTION_PASS": "ZSJ0201",
+        "MANDATORY": "X",
+        "ZZAPPLY_CAT_FLAG": "",
+        "DESCRIPTION": "Copy of Iqama or Iqamas"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPGETATTACHMENTSSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPGETATTACHMENTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPGETATTACHMENTS"
+        },
+        "LANGUAGE": "E",
+        "SEQUENCE_NUMBER": "2 ",
+        "DESCRIPTION_PASS": "ZSJ0202",
+        "MANDATORY": "X",
+        "ZZAPPLY_CAT_FLAG": "",
+        "DESCRIPTION": "Commercial Registration Copy"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPGETATTACHMENTSSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPGETATTACHMENTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPGETATTACHMENTS"
+        },
+        "LANGUAGE": "E",
+        "SEQUENCE_NUMBER": "3 ",
+        "DESCRIPTION_PASS": "ZSJ0203",
+        "MANDATORY": "X",
+        "ZZAPPLY_CAT_FLAG": "",
+        "DESCRIPTION": "Copy of SAGIA Decision (Revoke or Cancel)"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPGETATTACHMENTSSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPGETATTACHMENTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPGETATTACHMENTS"
+        },
+        "LANGUAGE": "E",
+        "SEQUENCE_NUMBER": "4 ",
+        "DESCRIPTION_PASS": "ZSJ0204",
+        "MANDATORY": "X",
+        "ZZAPPLY_CAT_FLAG": "",
+        "DESCRIPTION": "SAGIA License Copy"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPGETATTACHMENTSSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPGETATTACHMENTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPGETATTACHMENTS"
+        },
+        "LANGUAGE": "E",
+        "SEQUENCE_NUMBER": "5 ",
+        "DESCRIPTION_PASS": "ZSJ0205",
+        "MANDATORY": "X",
+        "ZZAPPLY_CAT_FLAG": "",
+        "DESCRIPTION": "Supporting Documents"
+      }
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+$lang = en
+
+INSERT_UPDATE CommentType; code[unique = true]  ; name                  ; domain[unique = true](code); metaType(code)
+                         ; contactCreationEvent ; Contact Created Event ; ticketSystemDomain         ; CsCustomerEvent
+
+#INSERT_UPDATE CsTicketEventEmailConfiguration; code[unique = true]; recipientType(code); alteredAttributes(qualifier, enclosingType(ComposedType.code)); eventType(code)      ; subject                                                                                    ; plainTextTemplate(code); htmlTemplate(code)                    ;
+#                                             ; contact            ; Contact            ;                                                               ; contactCreationEvent ; Contact us Notification: [${ctx.sector}] - ${ctx.ticket.headline} - ${ctx.ticket.ticketID} ;                        ; TickSystem_Contact_TicketCreated_HTML ;
+
+INSERT_UPDATE RendererTemplate; code[unique = true]                   ; contextClass                                                  ; description[lang = $lang]                        ; rendererType(code)[default = 'velocity']; templateScript[lang = $lang];
+                              ; TickSystem_Contact_TicketCreated_HTML ; de.hybris.platform.ticket.email.context.AbstractTicketContext ; Ticket System Ticket Created Customer HTML Email ;                                         ; "
+<html>
+  <head></head>
+  <body>
+    <table border='0' cellpadding='0' cellspacing='0' style='width: 100%; background: #f6f6f6;' width='100%'>
+      <tbody>
+        <tr>
+          <td style='padding: 0cm 0cm 0cm 0cm;'>
+            <div style='border: solid gray 1pt; padding: 0cm 0cm 0cm 0cm; margin-top: 37.5pt; margin-bottom: 7.5pt;'>
+              <table border='0' cellpadding='0' cellspacing='0' style='width: 100%;' width='100%'>
+                <tbody>
+                  <tr>
+                    <td colspan='2' style='width: 100%; padding: 0cm 0cm 0cm 0cm;' valign='top' width='100%'>
+                      <div>
+                        <p style='background: #1c242c;'>
+                          <span style='color: white;'>
+                            <a href='http://investsaudi.sa/?utm_source=investsaudi&amp;utm_medium=email&amp;utm_content=logolink&amp;utm_campaign=emailtemplate'>
+                              <span style='color: white; text-decoration: none;'>
+                                <span style='color: blue;'>
+                                  <img alt='Invest Saudi' border='0' id='_x0000_i1029' style='width: 1.25in;' width='120' src=""https://investsaudi.sa/resources/images/logo-en.svg"" />
+                                </span>
+                              </span>
+                            </a>
+                          </span>
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan='2' style='width: 100%; padding: 15pt 7.5pt 15pt 7.5pt;' valign='top' width='100%'>
+                      <table border='0' cellpadding='0' cellspacing='3'>
+                        <tbody>
+                          <tr>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>Name</p>
+                            </td>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>${ctx.name}</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>Email</p>
+                            </td>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p><a href='${ctx.email}'>${ctx.email}</a></p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>Mobile No.</p>
+                            </td>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>${ctx.mobile}</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>Company.</p>
+                            </td>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>${ctx.company}</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>Job Title</p>
+                            </td>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>${ctx.jobTitle}</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>Subject</p>
+                            </td>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>${ctx.contactSubject}</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>Sector</p>
+                            </td>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>${ctx.sector}</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>Message</p>
+                            </td>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>${ctx.text}</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>Submitted on</p>
+                            </td>
+                            <td style='padding: 0.75pt 0.75pt 0.75pt 0.75pt;'>
+                              <p>${ctx.date}</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style='width: 60%; padding: 7.5pt 9.75pt 11.25pt 9.75pt;' width='60%'>
+                      <p style='line-height: 13.5pt;'><span style='font-size: 10pt; font-family: Arial, sans-serif;'>&nbsp;</span></p>
+                    </td>
+                    <td style='width: 40%; padding: 7.5pt 9.75pt 11.25pt 9.75pt;' width='40%'>
+                      <p align='right' style='text-align: right;'>&nbsp;</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style='width: 100%; padding: 0cm 9.75pt 11.25pt 9.75pt;' valign='top' width='100%'>
+            <div style='margin-bottom: 30pt;'>
+              <p style='line-height: 13.5pt;'><span style='font-size: 8.5pt; font-family: Arial, sans-serif; color: black;'>© 2020 Invest Saudi. All Rights Reserved</span></p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+	"                                                                                                                                                                                                                                                               ;

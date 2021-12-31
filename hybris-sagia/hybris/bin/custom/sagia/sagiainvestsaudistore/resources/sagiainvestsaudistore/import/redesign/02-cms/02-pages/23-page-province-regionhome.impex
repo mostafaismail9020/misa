@@ -1,0 +1,185 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalGlobalTemplate
+$page = province-region-homepage
+$pageName = Regions Overview
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pageLabel = /meetRegions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+#$siteResource = $config-portalRedesignMediaResources
+$siteResource = jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]  ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+						 ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ;  				 	; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+############# MEDIA AND COMPONENTS START ######################
+
+INSERT_UPDATE Media	; code[unique = true]         				; realFileName             					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					   ;province-home-banner-image.jpg				;province-home-banner-image.jpg				; $siteResource/province-home-banner-image.jpg								  ; image/jpeg					 ;											; ""   ;
+					   ;riyadh-background-image.jpg				;riyadh-background-image.jpg				; $siteResource/riyadh-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					   ;makkah-background-image.jpg				;makkah-background-image.jpg				; $siteResource/makkah-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					   ;medina-background-image.jpg				;medina-background-image.jpg				; $siteResource/medina-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					   ;qassim-background-image.jpg				;qassim-background-image.jpg				; $siteResource/qassim-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					   ;eastern-background-image.jpg				;eastern-background-image.jpg				; $siteResource/eastern-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+					   ;asir-background-image.jpg					;asir-background-image.jpg					; $siteResource/asir-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					   ;tabuk-background-image.jpg					;tabuk-background-image.jpg					; $siteResource/tabuk-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					   ;hail-background-image.jpg					;hail-background-image.jpg					; $siteResource/hail-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					   ;northern-borders-background-image.jpg	    ;northern-borders-background-image.jpg		; $siteResource/northern-borders-background-image.jpg						  ; image/jpeg					 ;											; ""   ;
+					   ;jazan-background-image.jpg					;jazan-background-image.jpg					; $siteResource/jazan-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					   ;najran-background-image.jpg				;najran-background-image.jpg				; $siteResource/najran-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					   ;al-baba-background-image.jpg				;al-baba-background-imagejpg				; $siteResource/al-baba-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+					   ;al-jouf-background-image.jpg				;al-jouf-background-image.jpg				; $siteResource/al-jouf-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+
+
+
+
+##############################################################
+
+
+INSERT_UPDATE InvestSaudiBannerComponent	;uid[unique = true]						; name							   			; descriptionText[lang = ar]	 ; descriptionText[lang = en] 			;descriptionText2 [lang = en]		; buttonText[lang = en] ; buttonText[lang = ar]   ; image(code, $contentCV)            ; buttonURL(&linkRef)     ; link   ; &componentRef ; $contentCV[unique = true]
+
+											; province-region-homepage-banner 	; Discover Saudi Arabia's regions Banner ;							 	 ; 	Discover Saudi Arabia's regions 	; 		Saudi Arabia is divided into 13 regions, each with its own set of unique investment opportunities. Discover what each location can offer you in their unique ways and find out where your next business opportunity is							; 						;						  ; province-home-banner-image.jpg     ; 						  ; true   ; province-region-homepage-banner  ;
+
+
+INSERT_UPDATE BreadcrumbComponent;uid[unique=true];&componentRef;$contentCV[unique=true]
+								 ;province-region-homepage-breadcrumb ; province-region-homepage-breadcrumb
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true] 			   ; name 							  	; simpleCMSComponents(&componentRef); &componentRef; $contentCV[unique = true]
+										; province-region-homepage-banner-container  ; DISCOVER SAUDI ARABIA'S 13 REGIONS Banner Container  ; province-region-homepage-banner 			  ; province-region-homepage-banner-container  ;
+
+###############################################################################################################
+
+
+
+INSERT_UPDATE ProvinceRegionHomeComponent 	;$contentCV[unique = true]	; uid[unique = true]	 	; componentId				; title [lang = en] 		; backgroundImage (code, $contentCV) 		; defaultComponent[default=false] 	; longDescription [lang=en]																																																																					    ; localizedStats (uid, $contentCV)									 	      												; &componentRef
+											 ;							; riyadh-component			; riyadh_data				; Riyadh 					; riyadh-background-image.jpg		 		;  true								; Home to the Kingdom's business capital and largest city, Riyadh is also the new rising star of GCC, offering incredible opportunities to investors from all over the world.																																	; riyadh-stats-1,riyadh-stats-2,riyadh-stats-3,riyadh-stats-4         	 													; riyadh-component
+											 ;							; makkah-component			; makkah_data				; Makkah					; makkah-background-image.jpg		 		;  									; Islam's holiest city draws millions of people from around the world every year. The region is home to Jeddah and King Abdullah Economic City on the Red Sea coast, where investors can leverage the international trade routes to serve consumers in the Middle East and North Africa.						; makkah-stats-1,makkah-stats-2,makkah-stats-3,makkah-stats-4             													; makkah-component
+											 ;							; medina-component			; medina_data				; Medina					; medina-background-image.jpg		 		;  									; Medina is home to Saudi Arabia’s first UNESCO World Heritage Site AlUla, it is also a booming business hub possessing two industrial areas with a total area of 10 million m2 and 236 factories producing petroleum products, building materials, food products, and a variety of other goods.				; medina-stats-1,medina-stats-2,medina-stats-3,medina-stats-4             													; medina-component
+											 ;							; qassim-component			; qassim_data				; Qassim					; qassim-background-image.jpg		 		;  									; A first-class agricultural region with an abundance of water, fertile soil, and agricultural diversity. Qassim has the best access to electricity infrastructure at the national level, a large area of agricultural land, and an outstanding production capacity in food.									; qassim-stats-1,qassim-stats-2,qassim-stats-3,qassim-stats-4             													; qassim-component
+											 ;							; eastern-component			; eastern_data				; Eastern					; eastern-background-image.jpg		 		;  									; A major contributor to the majority of the country's oil production and exports, Eastern Province is the largest in the Kingdom, encompassing the entire east coast.																																			; eastern-stats-1,eastern-stats-2,eastern-stats-3,eastern-stats-4         													; eastern-component
+											 ;							; asir-component			; asir_data					; Asir						; asir-background-image.jpg		 	 		; 									; Asir is one of the fastest rising tourist destinations in Saudi Arabia, with $3 billion of PIF projects in the pipeline for tourism and infrastructure.																																						; asir-stats-1,asir-stats-2,asir-stats-3,asir-stats-4 			  		 													; asir-component
+											 ;							; tabuk-component			; tabuk_data				; Tabuk						; tabuk-background-image.jpg		 		;  									; Known for its agricultural products, Tabuk is also an active commercial center and home to several giga-projects including NEOM and the Red Sea Project making it an attractive location for diverse investments across different sectors.																	; tabuk-stats-1,tabuk-stats-2,tabuk-stats-3,tabuk-stats-4   			  	 												; tabuk-component
+											 ;							; hail-component			; hail_data					; Hail						; hail-background-image.jpg		 	 		;  									; Hail is a rapidly developing region with 259 development projects worth more than $1.5 billion. The region is also home to two UNESCO World Heritage Sites.																																					; hail-stats-1,hail-stats-2,hail-stats-3,hail-stats-4   			  		 												; hail-component
+											 ;							; northern-borders-component; northern-borders_data		; Northern Borders			; northern-borders-background-image.jpg 	;  									; From its phosphate mines to natural gas fields, the Northern Borders is ready to welcome investors from around the world to discover its natural resources.																																					; northern-stats-1,northern-stats-2,northern-stats-3,northern-stats-4     													; northern-borders-component
+											 ;							; jazan-component			; jazan_data				; Jazan						; jazan-background-image.jpg		 		;  									; Situated on the Red Sea coast, Jazan's is home to several islands. Jazan City for Basic and Downstream Industries is one of the most important industrial cities and investment destinations in the region, due to its proximity to international shipping lanes.												; jazan-stats-1,jazan-stats-2,jazan-stats-3,jazan-stats-4              	 													; jazan-component
+											 ;							; najran-component			; najran_data				; Najran					; najran-background-image.jpg		 		;  									; One of Saudi Arabia's fastest-growing regions in the Kingdom, Najran invites investors to a beautiul green nature rich in mineral resources and fertile in agricultural products.																																; najran-stats-1,najran-stats-2,najran-stats-3,najran-stats-4             													; najran-component
+											 ;							; al-baha-component			; al-baha_data				; Al-Baha					; al-baba-background-image.jpg		 		;  									; With its natural parks, archeological villages, and its wonderful nature, Al-Baha is an attractive investment region for tourism with a lot of potential.																																						; al-baha-stats-1,al-baha-stats-2,al-baha-stats-3,al-baha-stats-4         													; al-baha-component
+											 ;							; al-jouf-component			; al-jouf_data				; Al-Jouf					; al-jouf-background-image.jpg		 		;  									; One of the most fertile regions in Saudi Arabia, Al-Jouf region is characterized by its rich agricultural lands, diversity of crops, olive trees and mineral resources. Al-jouf is also renowned for its wind and solar endowment making it an attractive location for renewable energy investments.			; al-jouf-stats-1,al-jouf-stats-2,al-jouf-stats-3,al-jouf-stats-4         													; al-jouf-component
+
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 		;  $contentCV  ; key[lang = en] ; value[lang = en]                               
+
+###### riyadh1 				
+										; riyadh-stats-1			;			   ; 8.7M			; Population  		                             
+										; riyadh-stats-2			;			   ; 4			 	; Chambers of Commerce           	             
+										; riyadh-stats-3   			;			   ; 1				; International Airport			                 
+										; riyadh-stats-4			;			   ; 3,332			; Active factories in Q3 2021					 
+###### makkah2	 	
+										; makkah-stats-1			;			   ; 9M				; Population  		                             
+		                                ; makkah-stats-2			;			   ; 3			 	; Chambers of Commerce           	             
+		                                ; makkah-stats-3   			;			   ; 1				; International Airport			                 
+		                                ; makkah-stats-4			;			   ; 1,741			; Active factories in Q3 2021					 
+	
+###### medina3	 	
+										; medina-stats-1			;			   ; 2.2M			; Population  		                             
+		                                ; medina-stats-2			;			   ; 2			 	; Chambers of Commerce           	             
+		                                ; medina-stats-3   			;			   ; 1				; International Airport			                 
+		                                ; medina-stats-4			;			   ; 351			; Active factories in Q3 2021					 
+	
+###### qassim4	 	
+										; qassim-stats-1			;			   ; 1.5M			; Population  		                             
+		                                ; qassim-stats-2			;			   ; 4			 	; Chambers of Commerce           	             
+		                                ; qassim-stats-3   			;			   ; 1				; International Airport			                 
+		                                ; qassim-stats-4			;			   ; 332			; Active factories in Q3 2021					 
+
+###### eastern5	 	
+										; eastern-stats-1			;			   ; 5.1M			; Population  		                             
+		                                ; eastern-stats-2			;			   ; 3			 	; Chambers of Commerce           	             
+		                                ; eastern-stats-3   		;			   ; 1				; International Airport			                 
+		                                ; eastern-stats-4			;			   ; 1,877			; Active factories in Q3 2021					 
+		
+###### asir6	 	
+										; asir-stats-1				;			   ; 2.3M			; Population  		                             
+		                                ; asir-stats-2				;			   ; 171			; Dams           	             
+		                                ; asir-stats-3   			;			   ; 1				; International Airport			                 
+		                                ; asir-stats-4				;			   ; 312			; Active factories in Q3 2021					 
+			
+###### tabuk7	 	
+										; tabuk-stats-1				;			   ; 949,612		; Population  		                             
+		                                ; tabuk-stats-2				;			   ; 139,119		; number of employees           	             
+		                                ; tabuk-stats-3   			;			   ; 1				; International Airport			                 
+		                                ; tabuk-stats-4				;			   ; 76				; Active factories in Q3 2021					 
+
+###### hail8	 	
+										; hail-stats-1				;			   ; 731,147		; Population  		                             
+		                                ; hail-stats-2				;			   ; 140,712		; number of employees           	             
+		                                ; hail-stats-3   			;			   ; 1				; Domestic Airport			                 
+		                                ; hail-stats-4				;			   ; 83				; Active factories in Q3 2021					 
+	
+###### northern-borders9	 	
+										; northern-stats-1			;			   ; 383,051		; Population  		                             
+		                                ; northern-stats-2			;			   ; 1				; Chambers of Commerce           	             
+		                                ; northern-stats-3   		;			   ; 3				; Domestic Airports			                 
+		                                ; northern-stats-4			;			   ; 39				; Active factories in Q3 2021					 
+
+###### jazan10	 	
+										; jazan-stats-1				;			   ; 1.6M			; Population  		                             
+		                                ; jazan-stats-2				;			   ; 1				; industrial city           	             
+		                                ; jazan-stats-3   			;			   ; 1				; Chambers of Commerce			                 
+		                                ; jazan-stats-4				;			   ; 107			; Active factories in Q3 2021					 
+	
+###### jazan11	 	
+										; najran-stats-1			;			   ; 608,467		; Population  		                             
+		                                ; najran-stats-2			;			   ; 141,955		; number of employees           	             
+		                                ; najran-stats-3   			;			   ; 2				; Domestic Airports			                 
+		                                ; najran-stats-4			;			   ; 42				; Active factories in Q3 2021					 
+	
+###### jazan12	 	
+										; al-baha-stats-1			;			   ; 497,068		; Population  		                             
+		                                ; al-baha-stats-2			;			   ; 3				; Chambers of Commerce           	             
+		                                ; al-baha-stats-3   		;			   ; 1				; Domestic Airports			                 
+		                                ; al-baha-stats-4			;			   ; 31				; Active factories in Q3 2021					 
+
+###### jazan13	 	
+										; al-jouf-stats-1			;			   ; 531,952		; Population  		                             
+		                                ; al-jouf-stats-2			;			   ; 2				; Chambers of Commerce           	             
+		                                ; al-jouf-stats-3   		;			   ; 2				; Domestic Airports			                 
+		                                ; al-jouf-stats-4			;			   ; 68				; Active factories in Q3 2021					 
+	
+
+
+
+
+INSERT_UPDATE ProvinceRegionHomeContainer  ; uid[unique = true]				 	 ; name		 					; &componentRef                  		; simpleCMSComponents (&componentRef)																																																				; $contentCV[unique = true]
+										   ; province-region-homepage-container	 ; Province Region Container	; province-region-homepage-container    ;  riyadh-component, makkah-component, medina-component,qassim-component,eastern-component,asir-component,tabuk-component,hail-component,northern-borders-component,jazan-component,najran-component,al-baha-component,al-jouf-component;
+
+
+
+############# MEDIA AND COMPONENTS END ######################
+
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef); $contentCV;
+						 ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;  ;
+						 ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ;	 province-region-homepage-banner-container,province-region-homepage-breadcrumb , province-region-homepage-container;
+						 ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;  ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+								; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+								; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+								; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;

@@ -1,0 +1,164 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000106')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000106')",
+      "type": "ZUI5_SAGIA_SRV.GovtServicesHDR"
+    },
+    "SrID": "70000106",
+    "SrGuid": "00000000-0000-0000-0000-000000000000",
+    "LicID": "",
+    "LicGuid": "00000000-0000-0000-0000-000000000000",
+    "LicType": "",
+    "LicTypeDesc": "",
+    "LicRenFlag": false,
+    "BpID": "613392",
+    "BpGuid": "DD77465C-6D07-62F1-B934-0015C588C2FA",
+    "SrCrDate": null,
+    "SrStCode": "",
+    "SrStDesc": "",
+    "LicExDate": null,
+    "ValidFrom": null,
+    "TransType": "ZS10",
+    "Action": "",
+    "BpChangeID": "",
+    "SalesrepCount": "",
+    "ContactChInd": "",
+    "TermCond": false,
+    "MinistryType": "",
+    "ServiceType": "",
+    "BpName": "",
+    "GovtServicesToTextNav": {
+      "results": []
+    },
+    "GovtServicesToContentHDRNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD15A93A39B8A5',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD15A93A39B8A5',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "70000106",
+          "ObjectGuid": "00155D74-370C-1ED5-AADD-15A5F83DD8A5",
+          "Filename": "Power Of Attorney",
+          "Filesize": "0000003816",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D74370C1ED5AADD15A93A39B8A5",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1451001600000)/",
+          "DocKeyID": "1015",
+          "ShDocID": "Power Of A",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD15A93A39B8A5',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD15E6BBDBB8A5',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD15E6BBDBB8A5',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "70000106",
+          "ObjectGuid": "00155D74-370C-1ED5-AADD-15A5F83DD8A5",
+          "Filename": "Board Resolution",
+          "Filesize": "0000003816",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D74370C1ED5AADD15E6BBDBB8A5",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1451001600000)/",
+          "DocKeyID": "1002",
+          "ShDocID": "Board Reso",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD15E6BBDBB8A5',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD1645CDE778A5',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD1645CDE778A5',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "70000106",
+          "ObjectGuid": "00155D74-370C-1ED5-AADD-15A5F83DD8A5",
+          "Filename": "Main Commercial Register",
+          "Filesize": "0000003816",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D74370C1ED5AADD1645CDE778A5",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1451001600000)/",
+          "DocKeyID": "1140",
+          "ShDocID": "Main Comme",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD1645CDE778A5',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD164682FF78A5',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD164682FF78A5',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "70000106",
+          "ObjectGuid": "00155D74-370C-1ED5-AADD-15A5F83DD8A5",
+          "Filename": "Main license and the branch license",
+          "Filesize": "0000003816",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D74370C1ED5AADD164682FF78A5",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1451001600000)/",
+          "DocKeyID": "1365",
+          "ShDocID": "Main licen",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD164682FF78A5',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD164687E178A5',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD164687E178A5',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "70000106",
+          "ObjectGuid": "00155D74-370C-1ED5-AADD-15A5F83DD8A5",
+          "Filename": "Forms",
+          "Filesize": "0000003816",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D74370C1ED5AADD164687E178A5",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1451001600000)/",
+          "DocKeyID": "1366",
+          "ShDocID": "Forms",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='70000106',DocumentID='00155D74370C1ED5AADD164687E178A5',Stage='')/FollowupSrvHDR"
+            }
+          }
+        }
+      ]
+    },
+    "GovtServicesToUploadNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GovtServices('70000106')/GovtServicesToUploadNav"
+      }
+    }
+  }
+}

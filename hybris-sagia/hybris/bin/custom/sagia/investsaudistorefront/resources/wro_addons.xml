@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<groups xmlns="http://www.isdc.ro/wro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
+   <group name="addons_responsive">
+      <css>/_ui/addons/smarteditaddon/responsive/common/css/smarteditaddon.css</css>
+      <css>/_ui/addons/customerticketingaddon/responsive/common/css/customerticketingaddon.css</css>
+      <css>/_ui/addons/casblogaddon/responsive/common/css/casblogaddon.css</css>
+      <css minimize="false">/_ui/addons/casblogaddon/responsive/common/css/jquery-ui-1.10.3.custom.min.css</css>
+      <css>/_ui/addons/casblogaddon/responsive/common/css/rangecalendar.css</css>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/webApplicationInjector.js</js>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/reprocessPage.js</js>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/adjustComponentRenderingToSE.js</js>
+      <js>/_ui/addons/smarteditaddon/responsive/common/js/smarteditaddon.js</js>
+      <js>/_ui/addons/customerticketingaddon/responsive/common/js/customerticketingaddon.js</js>
+      <js>/_ui/addons/investsaudisecureportal/responsive/common/js/investsaudisecureportal.js</js>
+      <js>/_ui/addons/casblogaddon/responsive/common/js/acc.casblogaddon.js</js>
+      <js>/_ui/addons/casblogaddon/responsive/common/js/jquery.rangecalendar.js</js>
+      <js minimize="false">/_ui/addons/casblogaddon/responsive/common/js/jquery.ui.touch-punch.min.js</js>
+      <js minimize="false">/_ui/addons/casblogaddon/responsive/common/js/moment+langs.min.js</js>
+      <js>/_ui/addons/casblogaddon/responsive/common/js/acc.rangecalendarcustom.js</js>
+      <css>/_ui/addons/sagiasecchat/responsive/common/css/sagiasecchat.css</css>
+      <js>/_ui/addons/sagiaasmaddon/responsive/common/js/sagiaasmaddon.js</js>
+      <js>/_ui/addons/sagiaasmaddon/responsive/common/js/jquery.tablesorter.pager.js</js>
+      <js>/_ui/addons/sagiaasmaddon/responsive/common/js/jquery.tablesorter.min.js</js>
+      <js>/_ui/addons/sagiaasmaddon/responsive/common/js/Chart.min.js</js>
+      <css>/_ui/addons/sagiaasmaddon/responsive/common/css/sagiaasmaddon.css</css>
+      <css>/_ui/addons/sagiaasmaddon/responsive/common/css/storeFinder.css</css>
+   </group>
+</groups>
+

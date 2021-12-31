@@ -1,0 +1,36 @@
+.ynList {
+    
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    list-style: none;
+    
+    &_columns {
+        columns: 2;
+        column-gap: 30px;
+        #media-breakpoint-down(sm, {
+			columns: 1;
+            column-gap: 0;
+		});	
+    }
+    
+    &-item {
+        padding-left: 57px;
+        font-size: 14px;
+        color: #313f4b;
+        position: relative;
+        margin-bottom: 30px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        span {
+            width: 43px;
+            height: 17px;
+            left: 0;
+            top: 0;
+            position: absolute;
+        }
+    }
+}

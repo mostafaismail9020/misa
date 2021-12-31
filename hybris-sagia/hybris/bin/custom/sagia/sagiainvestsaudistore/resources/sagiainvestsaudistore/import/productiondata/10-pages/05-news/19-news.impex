@@ -1,0 +1,80 @@
+$page = news-sagia-signs-us-320-million
+$template = portalGlobalTemplate
+$name = SAGIA SIGNS US$320 MILLION LOCALIZATION AGREEMENT WITH SOUTH KOREA’S GL RAPHA
+$titleEn = $name
+$titleAr = المشروع الأول من نوعه في المملكة .. هيئة الاستثمار وشركة جي إل رافا الكورية توقعان اتفاقية لتصنيع الأدوية البيولوجية بقيمة 1.2 مليار
+$shortDescEn = SAGIA Announces That It Has Signed A Memorandum Of Understanding With GL Rapha
+$shortDescAr = وقعت اليوم الهيئة العامة للاستثمار وشركة جي إل رافا الكورية القابضة في مقر
+$pagelabel = /news/sagia-signs-us-320-million-localization-agreement-with-south-korea-s-gl-rapha
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; sagia-signs        ; 1 (1).jpg   ; $siteResource/1 (1).jpg                                                     ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias     ; $contentCV; ; ; ;
+                            ; media-container-$page   ; sagia-signs ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; sagia-signs                       ; sagia-signs                         ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 02.10.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>GL Rapha seeks to be one of the multinational biopharmaceutical companies to have a manufacturing facility in Saudi Arabia.</em></li>
+<li><em>Agreement to explore investment in biotechnology technology transfer</em></li>
+<li><em>Announcement reflects rapid growth in biopharmaceuticals&rsquo; opportunities in Saudi healthcare sector driven by demographic change and regulatory reform</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<p><strong>RIYADH, Saudi Arabia&nbsp;</strong>(2 October 2019) &ndash; SAGIA announces that it has signed a memorandum of understanding with GL Rapha Co., which will result in significant localization of GL Rapha operations in the Kingdom.</p>
+<p>As part of the US$320 million (SAR 1.2 billion) agreement, GL Rapha, holding company of Hankook Korus Pharm, plans to establish a local facility to manufacture 30 biotechnology products in Saudi Arabia and launch five innovative products over the next five years.</p>
+<p>The agreement was signed in a ceremony in Riyadh today attended by Mr. Jae-Gan Whang, Chairman of GL Rapha, Mr. Chang-Jo Yun, Assistant Manager, GL Rapha and Mr. Sultan Mofti, Deputy Governor, SAGIA.</p>
+<p>Commenting on the agreement, Mr. Alabbas Alghamdi, Director of Pharmaceutical Segment at SAGIA, said:</p>
+<p><em>&ldquo;This agreement is a clear signal that international investors and business leaders recognize Saudi Arabia&rsquo;s potential for healthcare investment. Working in concert with our partners throughout the Kingdom and abroad, we are also proactively fostering a greater localization of healthcare services and pharmaceutical manufacturing to meet growing demand.&rdquo;</em></p>
+<p>Mr. Jae-Gan Whang, Chairman of GL Rapha, added:</p>
+<p><em>&ldquo;GL Rapha seeks to be one of the multinational biopharmaceutical companies to have manufacturing facility in Saudi Arabia. GL Rapha is willing to innovate and support Saudi Arabia vision for 2030 to increase local manufacturing and biotechnology products and foster local talent. Over the years, GL Rapha has been committed to improving patients&rsquo; access to innovative medicines worldwide. The MoU we have signed today aims to start our local manufacturing in the bio-similar, monoclonal antibody (mAb), growth factor, pharmaceutical raw material and reinforces our commitment to work with Saudi Government for a sustainable ecosystem that encourages innovation and investment in healthcare and Saudi talent development. We are willing to invest SAR 1.2 Billion and create more than 300 high skilled jobs&rdquo;.</em></p>
+<p>Saudi Arabia has seen rapid growth in the number of investment licenses issued &ndash; the number of licenses issued in the second quarter of 2019 was 103% higher than that in the same period in 2018.</p>
+<p>GL Rapha plans to start operating in Saudi Arabia as a pioneer among Korean companies in this differentiated sector and is considered as the first Korean multinational pharmaceutical and biotechnology company investing in localizing biotechnology in the Kingdom of Saudi Arabia.</p>
+<p>Saudi Arabia is the largest spender on healthcare in the MENA region, with $46bn allocated by the government in 2019 and $130bn expected government expenditure on the sector from 2017-2021.</p>
+<p>The sector is expected to grow rapidly in the coming years as a consequence of positive population growth and demographic shifts, and major reforms such as 100% foreign ownership being made possible in the sector for the first time in 2018.</p>
+<p>Saudi Arabia is undergoing a series of social and economic reforms that aim at realizing the Kingdom&rsquo;s economic potential under Vision 2030. Within two years, Saudi Arabia has implemented 55% of more than 300 economic reforms identified, including opening up a wide range of economic sectors to foreign investment, including allowing 100 percent foreign ownership in a range of new sectors.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p><em>في مشروع يعد الأول من نوعه في المملكة، وقعت اليوم الهيئة العامة للاستثمار وشركة جي إل رافا الكورية القابضة في مقر الهيئة بالرياض، اتفاقية لتصنيع الأدوية البيولوجية في المملكة، والذي يغطي كافة مراحل تصنيع الأدوية البيولوجية بما في ذلك تصنيع المواد الأولية،&nbsp;</em>حيث تضمنت الاتفاقية قيام الشركة ببناء منشأة لتصنيع 30 منتجًا من منتجات التقنية البيولوجية في المملكة، إضافة إلى تصنيع 5 منتجات ابتكارية أخرى خلال السنوات الخمس المقبلة.</p>
+<p>ووقع الاتفاقية من طرف الهيئة، وكيل المحافظ لتطوير وجذب الاستثمار سلطان مفتي، ومن طرف شركة جي إل رافا الكورية السيد جايجان وانج رئيس مجلس إدارة جي إل رافا، وبحضور شانجيو يون مدير المشروع.</p>
+<p>وكشف العباس بن سعد الغامدي مدير إدارة قطاع الأدوية في الهيئة العامة للاستثمار أن هذ المشروع، الذي يعد الأول من نوعه في المملكة، يعكس اهتمام المستثمرين وقادة الأعمال بالفرص الاستثمارية التي يتميز بها قطاع الرعاية الصحية في السوق السعودي، لافتاً إلى أن الهيئة تعمل مع شركائها محليًّا وعالميًّا على توطين أكبر لخدمات الرعاية الصحية وصناعة الأدوية لمواكبة الطلب في السوق المحلي.</p>
+<p>من جانبه أضاف جايجان وانج أن شركة جي إل رافا تسعى إلى أن تكون واحدة من الشركات الدولية التي تسعى لخلق تواجد لها في السوق السعودي بمجال صناعة الأدوية البيولوجية، منوهًا إلى أن الشركة تسعى إلى صناعة المنتجات الابتكارية ودعم المملكة في توجهها لزيادة التصنيع المحلي لمنتجات التقنية البيولوجية وتعزيز مهارات رأس المال البشري السعودي، كما أشار السيد وانج إلى أن مذكرة التفاهم التي وقعت اليوم تهدف إلى بدء التصنيع المحلي للمضادات البيولوجية أحادية النسيلة ""<em>monoclonal antibody</em><em>""</em>&nbsp;والمواد الدوائية الخام وغيرها، مؤكدًا على حرص شركة جي إل رافا بالعمل مع الجهات المعنية في المملكة لاستدامة التعاون في خلق بيئة تشجع على الابتكار والاستثمار في قطاع الرعاية الصحية السعودي وتطوير المهارات المحلية، خاتمًا بأن الشركة تعتزم&nbsp; استثمار 1.2 مليار ريال مما سيخلق 300 فرصة عمل بمهارات عالية التدريب والتأهيل في مجال صناعة الادوية البيولوجية.</p>
+<p>يُشار إلى أن شركة جي إل رافا تهدف إلى بدء ممارسة أعمالها في المملكة بصفتها إحدى الشركات الكورية الرائدة في قطاع الرعاية الصحية السعودي، وإحدى الشركات الكورية الدولية الأولى في توطين صناعة الأدوية وتصنيع منتجات التقنية البيولوجية في المملكة.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>يذكر أن المملكة شهدت نموًّا كبيرًا في عدد التراخيص الاستثمارية؛ حيث أعلنت الهيئة العامة للاستثمار مؤخراً عن إصدار 291 رخصة استثمار أجنبي خلال الربع الثاني من عام 2019، ما يعادل أكثر من الضعف مقارنة بنفس الفترة من عام 2018، وبزيادة نسبتها 103% مقارنة مع الربع الأول من عام 2019، بمعدل 5 رخص استثمار أجنبي تصدر يوميًّا، كما قطعت المملكة شوطًا على صعيد إيجاد بيئة استثمارية أكثر جذبًا وأكثر سهولة لممارسة الأعمال، إذ بلغت نسبة الإصلاحات الاقتصادية 55% من أصل ما يزيد عن 300 إصلاح اقتصادي خاضعة للإصلاح، كان من ضمنها التملك الأجنبي الكامل في عدد من القطاعات الاستثمارية الإستراتيجية في المملكة، واعتماد إجراءات أسرع وأكثر سهولةً لتسجيل الأعمال، بما في ذلك إصدار تأشيرات العمل في 24 ساعة وإصدار التراخيص في وقت أقل من 24 ساعة، وتطوير البنية التحتية القانونية عبر تطبيق نظام الإفلاس الجديد، وإنشاء مركز تحكيم تجاري ومحاكم تجارية متخصصة، إضافة إلى تعزيز الحماية القانونية لصغار المساهمين.</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

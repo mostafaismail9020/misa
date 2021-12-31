@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<project name="packageconfigs">
+
+  <description>Packages the config files for prod and uat environments for easier deployments, for non standard hCS deployments
+    @author cristian.popa
+  </description>
+
+  <property name="destinationDir" value="${HYBRIS_TEMP_DIR}/hybrisServer"/>
+
+  <target depends="prerequisites" if="configsPresent" name="packageconfigs">
+    <delete dir="${destinationDir}/config-prod" quiet="true"/>
+    <delete dir="${destinationDir}/config-stag" quiet="true"/>
+    <delete dir="${destinationDir}/config-dev" quiet="true"/>
+    <delete dir="${destinationDir}/config-local" quiet="true"/>
+    <delete file="${destinationDir}/config-prod.zip" quiet="true"/>
+    <delete file="${destinationDir}/config-stag.zip" quiet="true"/>
+    <delete file="${destinationDir}/config-dev.zip" quiet="true"/>
+    <delete file="${destinationDir}/config-local.zip" quiet="true"/>
+    
+    <ant dir="${platformhome}/resources/ant" target="prepare">
+      <property name="input.template" value="develop"/>
+    </ant>
+    
+    <antcall target="copyConfigMaster"/>
+    
+    <echo>Adding config resources from ${HYBRIS_COMMON_CONFIG_DIR}</echo>
+    
+    <copy failonerror="false" overwrite="yes" todir="${destinationDir}/config-prod" verbose="true">
+      <fileset dir="${HYBRIS_COMMON_CONFIG_DIR}"/>
+    </copy>
+    <copy failonerror="false" overwrite="yes" todir="${destinationDir}/config-stag" verbose="true">
+      <fileset dir="${HYBRIS_COMMON_CONFIG_DIR}"/>
+    </copy>
+    <copy failonerror="false" overwrite="yes" todir="${destinationDir}/config-dev" verbose="true">
+      <fileset dir="${HYBRIS_COMMON_CONFIG_DIR}"/>
+    </copy>
+    <copy failonerror="false" overwrite="yes" todir="${destinationDir}/config-local" verbose="true">
+      <fileset dir="${HYBRIS_COMMON_CONFIG_DIR}"/>
+    </copy>
+    <copy failonerror="false" overwrite="yes" todir="${destinationDir}/config-prod" verbose="true">
+      <fileset dir="${HYBRIS_HOME}/config-prod"/>
+    </copy>
+    <copy failonerror="false" overwrite="yes" todir="${destinationDir}/config-stag" verbose="true">
+      <fileset dir="${HYBRIS_HOME}/config-stag"/>
+    </copy>
+    <copy failonerror="false" overwrite="yes" todir="${destinationDir}/config-dev" verbose="true">
+      <fileset dir="${HYBRIS_HOME}/config-dev"/>
+    </copy>
+    <copy failonerror="false" overwrite="yes" todir="${destinationDir}/config-local" verbose="true">
+      <fileset dir="${HYBRIS_HOME}/config-local"/>
+    </copy>
+
+    <echo>Creating merged local.properties for DEV</echo>
+    <antcall target="createDevLocalProperties" />
+
+    <zip destfile="${destinationDir}/config-prod.zip">
+      <zipfileset dir="${destinationDir}/config-prod"/>
+    </zip>
+    <zip destfile="${destinationDir}/config-stag.zip">
+      <zipfileset dir="${destinationDir}/config-stag"/>
+    </zip>
+    <zip destfile="${destinationDir}/config-dev.zip">
+      <zipfileset dir="${destinationDir}/config-dev"/>
+    </zip>
+    <zip destfile="${destinationDir}/config-local.zip">
+      <zipfileset dir="${destinationDir}/config-local"/>
+    </zip>
+
+  </target>
+
+  <target name="createDevLocalProperties">
+      <compileHybrisProperties configDir="${destinationDir}/config-dev" targetFile="${destinationDir}/config-dev/hybris.properties" />
+      <concatConfigProperties configDir="${destinationDir}/config-dev" hybrisConfigFile="${destinationDir}/config-dev/hybris.properties" targetFile="${destinationDir}/config-dev/local.properties" />
+      <checkDuplicatedProperties file="${destinationDir}/config-dev/local.properties" />
+  </target>
+
+  <target name="copyConfigMaster">
+    <copy failonerror="true" overwrite="true" todir="${destinationDir}/config-prod" verbose="true">
+      <fileset dir="${BUILD_HOME}/config"/>
+    </copy>
+    <copy failonerror="true" overwrite="true" todir="${destinationDir}/config-stag" verbose="true">
+      <fileset dir="${BUILD_HOME}/config"/>
+    </copy>
+    <copy failonerror="true" overwrite="true" todir="${destinationDir}/config-dev" verbose="true">
+      <fileset dir="${BUILD_HOME}/config"/>
+    </copy>
+    <copy failonerror="true" overwrite="true" todir="${destinationDir}/config-local" verbose="true">
+      <fileset dir="${BUILD_HOME}/config"/>
+    </copy>
+  </target>
+
+  <target name="prerequisites">
+    <echo>Running packageconfigs pre-requisites</echo>
+
+    <condition property="configsPresent">
+      <and>
+        <isset property="platformPresent"/>
+        <available file="${HYBRIS_COMMON_CONFIG_DIR}/local.properties"/>
+        <available file="${HYBRIS_HOME}/config-prod/opt_config" type="dir"/>
+        <available file="${HYBRIS_COMMON_CONFIG_DIR}/local.properties"/>
+        <available file="${HYBRIS_HOME}/config-stag/opt_config" type="dir"/>
+        <available file="${HYBRIS_COMMON_CONFIG_DIR}/local.properties"/>
+        <available file="${HYBRIS_HOME}/config-dev/opt_config" type="dir"/>
+        <available file="${HYBRIS_COMMON_CONFIG_DIR}/local.properties"/>
+        <available file="${HYBRIS_HOME}/config-local/opt_config" type="dir"/>
+      </and>
+    </condition>
+  </target>
+
+</project>

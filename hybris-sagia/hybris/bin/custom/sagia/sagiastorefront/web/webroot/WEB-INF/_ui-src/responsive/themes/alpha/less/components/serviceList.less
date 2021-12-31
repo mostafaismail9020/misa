@@ -1,0 +1,43 @@
+.serviceList {
+    
+    padding-left: 10px;
+    list-style: none;
+    margin-bottom: 24px;
+    
+    &-item {
+        margin-bottom: 24px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &-headline {
+        font-size: 14px;
+        font-weight: bold;
+        color: #313f4b;
+        line-height: 14px;
+        padding-bottom: 8px;
+        border-bottom: solid 1px #e4e5e7;
+        margin-bottom: 8px;
+    }
+    
+    &-description {
+        font-size: 14px;
+        color: #313f4b;
+        p {
+            color: inherit;
+            font-size: inherit;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    &-link:hover &,
+    &-link:focus & {
+        
+        &-headline {
+            color: @apple;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+$page = sample-opportunity-search-page
+$template = portalProductSearchTemplate
+$pageName = Opportunities
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /sectors-opportunities/opportunities
+
+
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ; $pagelabel ; false   ;
+
+INSERT_UPDATE InvestSaudiOpportunitySearchBarComponent; uid[unique = true]                      ; name                            ; &componentRef                           ; $contentCV[unique = true]
+                                                      ; sample-opportunity-search-bar-component ; Opportunity SearchBar Component ; sample-opportunity-search-bar-component ;
+
+INSERT_UPDATE InvestSaudiOpportunitySearchResultComponent; uid[unique = true]                         ; name                                ; &componentRef                              ; $contentCV[unique = true]
+                                                         ; sample-opportunity-search-result-component ; Opportunity Search Result Component ; sample-opportunity-search-result-component ;
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                     ; name                              ; &componentRef                          ; description[lang = en]                                                                                                                                                                                                                                                                                                                                                                                       ; $contentCV[unique = true]
+                                                  ; sample-generic-paragraph-opportunities ; Opportunities Paragraph Component ; sample-generic-paragraph-opportunities ; <div class="container"><p class="sectors-content">We've assembled a variety of investment opportunities for potential investors who are keen to invest in Saudi Arabia. These opportunities are of different types such as public tenders, PPP, identified opportunities by our advisors, etc. Search for the opportunities after selecting the industry below</p></div><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p> ;
+
+INSERT_UPDATE ContentSlot; uid[unique = true]       ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; sample-generic-paragraph-opportunities,sample-opportunity-search-bar-component,sample-opportunity-search-result-component
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]       ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMainSlot-$page ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+

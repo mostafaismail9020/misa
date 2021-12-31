@@ -1,0 +1,52 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RealEstateSet('6000311')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RealEstateSet('6000311')",
+      "type": "ZUI5_REAL_ESTATE_SRV.RealEstate"
+    },
+    "ObjectID": "6000311",
+    "ObjectGUID": "005056B1-1C89-1ED8-959E-B44CE4650A97",
+    "REType": "Buy",
+    "PurchaseType": "10",
+    "PlotNo": "123",
+    "PlotArea": "123",
+    "DeedNo": "123",
+    "PurchaseDate": "20180515",
+    "OutsideMakkah": "",
+    "ApprovedIndustrial": "",
+    "ProjectValue": "",
+    "Price": "123",
+    "Region": "Riyadh",
+    "City": "Al Quayeyah",
+    "HousingType": "1",
+    "District": "",
+    "UnitNo": "",
+    "BlockNo": "",
+    "Remarks": "",
+    "ThirtyMore": "",
+    "Description": "Real Estate / 613392",
+    "BPID": "613392",
+    "PostingDate": "20180511",
+    "Status": "In Process",
+    "AttachmentsSet": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/AttachmentsSet('')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/AttachmentsSet('')",
+            "type": "ZUI5_REAL_ESTATE_SRV.Attachments"
+          },
+          "ObjectID": "",
+          "DocGUID": "00000000-0000-0000-0000-000000000000",
+          "Filename": "",
+          "MimeType": "",
+          "FileContString": "",
+          "ObjectGUID": "00000000-0000-0000-0000-000000000000",
+          "DocID": "",
+          "Filesize": ""
+        }
+      ]
+    }
+  }
+}

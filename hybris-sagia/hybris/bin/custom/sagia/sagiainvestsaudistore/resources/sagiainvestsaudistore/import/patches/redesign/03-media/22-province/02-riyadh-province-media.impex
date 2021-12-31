@@ -1,0 +1,47 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]						; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			; mime[default = 'image/jpeg']			   ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+		  			; riyadh-banner-image.png            		; riyadh-banner-image.png     						; $siteResource/riyadh-banner-image.png                                         		;                 image/png                ;                                          ; ""     ;
+					; riyadh-map.png                       		; riyadh-map.png               						; $siteResource/riyadh-map.png                                                  		;                 image/png                ;                                          ; ""     ;
+					; riyadh-technology.png                     ; riyadh-technology.png                      		; $siteResource/riyadh-technology.png                                                   ;                 image/png                ;                                          ; ""     ;
+					; riyadh-trade-and-retail.png               ; riyadh-trade-and-retail.png                       ; $siteResource/riyadh-trade-and-retail.png                                             ;                 image/png                ;                                          ; ""     ;
+					; riyadh-financialservices.png              ; riyadh-financialservices.png                   	; $siteResource/riyadh-financialservices.png                                            ;                 image/png                ;                                          ; ""     ;
+					; riyadh-media.png                          ; riyadh-media.png                  				; $siteResource/riyadh-media.png                                                      	;                 image/png                ;                                          ; ""     ;   
+					; riyadh-logistics.png                      ; riyadh-logistics.png                       		; $siteResource/riyadh-logistics.png                                                    ;                 image/png                ;                                          ; ""     ;   
+					
+					; riyadh-active-factories.png               ; riyadh-active-factories.png                   	; $siteResource/riyadh-active-factories.png                                             ;                 image/png                ;                                          ; ""     ;   
+					; riyadh-airport.png                      	; riyadh-airport.png              					; $siteResource/riyadh-airport.png                                                 		;                 image/png                ;                                          ; ""     ;   
+					; riyadh-chambers-of-commerce.png           ; riyadh-chambers-of-commerce.png                 	; $siteResource/riyadh-chambers-of-commerce.png                                         ;                 image/png                ;                                          ; ""     ;   
+					; riyadh-dams.png                          	; riyadh-dams.png                  					; $siteResource/riyadh-dams.png                                                     	;                 image/png                ;                                          ; ""     ;   
+					; riyadh-hospitals.png                     	; riyadh-hospitals.png              				; $siteResource/riyadh-hospitals.png                                                  	;                 image/png                ;                                          ; ""     ;   
+					; riyadh-hotels.png                    		; riyadh-hotels.png                					; $siteResource/riyadh-hotels.png                                                  		;                 image/png                ;                                          ; ""     ;   
+					; riyadh-industrial-city.png                ; riyadh-industrial-city.png                    	; $siteResource/riyadh-industrial-city.png                                              ;                 image/png                ;                                          ; ""     ;   
+					; riyadh-population.png                  	; riyadh-population.png                     		; $siteResource/riyadh-population.png                                                	;                 image/png                ;                                          ; ""     ;   
+					; riyadh-population-growth.png           	; riyadh-population-growth.png                 		; $siteResource/riyadh-population-growth.png                                        	;                 image/png                ;                                          ; ""     ;   
+					; riyadh-private-sector-employees.png       ; riyadh-private-sector-employees.png               ; $siteResource/riyadh-private-sector-employees.png                                     ;                 image/png                ;                                          ; ""     ;   
+					; riyadh-roads-length.png                   ; riyadh-roads-length.png            				; $siteResource/riyadh-roads-length.png                                                	;                 image/png                ;                                          ; ""     ;   
+					; riyadh-sport-city.png                     ; riyadh-sport-city.png                   			; $siteResource/riyadh-sport-city.png                                                   ;                 image/png                ;                                          ; ""     ;   					
+					; riyadh-stadiums.png				 		; riyadh-stadiums.png								; $siteResource/riyadh-stadiums.png											  			;                 image/png                ;										  ; ""	   ;
+					; riyadh-towns.png				 			; riyadh-towns.png									; $siteResource/riyadh-towns.png											  			;                 image/png                ;										  ; ""	   ;
+					
+					; riyadh-large-regional-market.png          ; riyadh-large-regional-market.png            		; $siteResource/riyadh-large-regional-market.png                                        ;                 image/png                ;                                          ; ""     ;   
+					; riyadh-highly-connected-logistics.png     ; riyadh-highly-connected-logistics.png             ; $siteResource/riyadh-highly-connected-logistics.png                                   ;                 image/png                ;                                          ; ""     ;   	
+					; riyadh-modern-educationsystem.png        	; riyadh-modern-educationsystem.png              	; $siteResource/riyadh-modern-educationsystem.png                                      	;                 image/png                ;                                          ; ""     ;   	
+					; riyadh-private-sector-multinationals.png  ; riyadh-private-sector-multinationals.png          ; $siteResource/riyadh-private-sector-multinationals.png                               	;                 image/png                ;                                          ; ""     ;   	
+					; riyadh-modern-healthcare-system.png       ; riyadh-modern-healthcare-system.png               ; $siteResource/riyadh-modern-healthcare-system.png                                     ;                 image/png                ;                                          ; ""     ;   	
+					; riyadh-strategic-location.png             ; riyadh-strategic-location.png                     ; $siteResource/riyadh-strategic-location.png                                           ;                 image/png                ;                                          ; ""     ;   	
+

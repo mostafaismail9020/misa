@@ -1,0 +1,12 @@
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+# Create Content Slots
+INSERT_UPDATE ContentSlot; uid[unique = true]       ; $contentCV[unique = true]
+                         ; PortalHeaderSlot         ;
+                         ; PortalHomepageBannerSlot ;
+                         ; PortalPageTopSlot        ;
+                         ; PortalMainSlot           ;
+                         ; PortalPageBottomSlot     ;
+                         ; PortalFooterSlot         ;
+

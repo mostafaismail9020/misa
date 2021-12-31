@@ -1,0 +1,11 @@
+# Language
+$lang=en
+
+
+# Languages
+UPDATE Language	;isocode[unique=true]	;name[lang=$lang];				
+				;en						;"English"
+				;ar						;"Arabic"
+				;de					 	;"German"
+				;ja						;"Japanese"
+				;zh						;"Chinese"

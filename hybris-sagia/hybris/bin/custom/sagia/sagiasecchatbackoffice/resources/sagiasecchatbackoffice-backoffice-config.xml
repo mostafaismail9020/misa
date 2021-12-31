@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<config xmlns="http://www.hybris.com/cockpit/config"
+		xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea"
+		xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree"
+		xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config"
+		xmlns:y="http://www.hybris.com/cockpit/config/hybris"
+		xmlns:list="http://www.hybris.com/cockpitng/component/listView"
+		xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
+
+	<!-- sagiasecchatbackoffice UI configuration should be provided here -->
+
+	<!--<context component="component-code" module="sagiasecchatbackoffice">-->
+		<!--Please check documentation for code snippets for specific components-->
+	<!--</context>-->
+	<context type="ChatQueueType" component="base" merge-by="type" parent="GenericItem">
+		<y:base>
+			<y:labels>
+				<y:label>isoCode+ ' - ' +chatQueue</y:label>
+			</y:labels>
+		</y:base>
+	</context>
+
+	<context type="ChatQueueType" component="editor-area" merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="ChatQueueTypeTab">
+				<editorArea:section name="ChatQueueTypeSection">
+					<editorArea:attribute qualifier="isoCode"/>
+					<editorArea:attribute qualifier="mappedIsoCode"/>
+					<editorArea:attribute qualifier="chatQueue"/>
+					<editorArea:attribute qualifier="position"/>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+	<context type="ChatQueueType" component="listview">
+		<list-view:list-view>
+			<list-view:column qualifier="isoCode"/>
+			<list-view:column qualifier="mappedIsoCode"/>
+			<list-view:column qualifier="chatQueue"/>
+			<list-view:column qualifier="position"/>
+		</list-view:list-view>
+	</context>
+	<context type="ChatQueueType" component="create-wizard">
+		<wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="ChatQueueTypeWizard" title="Sagia ChatQueueType Wizard">
+			<wz:prepare id="ChatQueueTypePrepare">
+				<wz:initialize property="newChatQueueType" type="ChatQueueType"/>
+				<wz:assign property="newChatQueueType.isoCode" value="ctx.isoCode"/>
+				<wz:assign property="newChatQueueType.mappedIsoCode" value="ctx.mappedIsoCode"/>
+				<wz:assign property="newChatQueueType.chatQueue" value="ctx.chatQueue"/>
+			</wz:prepare>
+			<wz:step id="step1" label="Create a new Sagia ChatQueueType" sublabel="isoCode, mappedIsoCode and chatQueue fields are mandatory.">
+				<wz:content id="step1.content">
+					<wz:property-list root="newChatQueueType">
+						<wz:property qualifier="isoCode" type="java.lang.String"/>
+						<wz:property qualifier="mappedIsoCode" type="java.lang.String"/>
+						<wz:property qualifier="chatQueue" type="java.lang.String"/>
+					</wz:property-list>
+				</wz:content>
+				<wz:navigation id="step1.navigation">
+					<wz:cancel/>
+					<wz:done visible="!#empty(newChatQueueType.isoCode) AND !#empty(newChatQueueType.mappedIsoCode) AND !#empty(newChatQueueType.chatQueue)">
+						<wz:save property="newChatQueueType"/>
+					</wz:done>
+				</wz:navigation>
+			</wz:step>
+		</wz:flow>
+	</context>
+</config>

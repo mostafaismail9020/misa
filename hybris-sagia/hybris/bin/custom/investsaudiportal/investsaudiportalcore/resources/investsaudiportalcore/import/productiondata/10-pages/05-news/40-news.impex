@@ -1,0 +1,85 @@
+$page = news-making-reforms-measuring-progress
+$template = portalGlobalTemplate
+$name = MAKING REFORMS, MEASURING PROGRESS 
+$titleEn = $name
+$titleAr = محافظ هيئة الاستثمار: تقرير التنافسية يعزز موقع المملكة دولياً كوجهة استثمارية
+$shortDescEn = As Saudi Arabia undertakes its ambitious program of economic reforms, we know that it is important not just to implement the reforms, but also to monitor the difference that they are making.
+$shortDescAr =  أكد محافظ الهيئة العامة للاستثمار المهندس إبراهيم بن عبد الرحمن العمر، أن القفزة النوعية الكبيرة التي حققتها المملكة عبر تقدمها 13 مرتبة لتصبح في المركز 26 عالميا في تقرير التنافسية العالمية
+$pagelabel = /news/making-reforms-measuring-progress
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true] ; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; news-9   ;news-9.jpg				; $siteResource/news-9.jpg                                        ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias            ; $contentCV; ; ; ;
+                            ; media-container-$page   ; news-9 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; news-9                ; news-9                ; $shortDescEn                   ; $shortDescAr                   ; link-$page       ;                                 ; 31.05.2020 00:00:00                       ;                          ;media-container-$page  ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; " <div class='col-lg-8 col-md-8 col-sm-8 pb-5 news-contents' style='font-size: 13px;'>
+<p style='font-size: 13px;'>As Saudi Arabia undertakes its ambitious program of economic reforms, we know that it is important not just to implement the reforms, but also to monitor the difference that they are making.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>We approach this in a number of ways &ndash; from high level key performance indicators, to sending &lsquo;mystery shoppers&rsquo; to test how well reforms are working in practice.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>One of the key measures we look to is how Saudi Arabia is ranked in independent reports looking at how global competitive economies are and how easy it is to do business. The reports are important because they tell us how international experts see things and what impact they believe our reforms are having.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>I am very pleased to say that we are making considerable progress in this area.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>For example, the World Competitiveness Report, which is published by IMD, one of the world&rsquo;s leading business schools, is the latest example of independent analysis reflecting the progress that Saudi Arabia is making.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>The report ranked Saudi Arabia as the world&rsquo;s 26<sup>th</sup> most competitive economy and the 7<sup>th</sup> most competitive G20 nation. This is positive in itself, but even more important was the fact that we were the country with the largest improvement &ndash; rising 13 places in the rankings from last year. The report noted that Saudi Arabia &lsquo;registered the highest global ranking for investment in education and fared well in public and business finance&rsquo;.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Importantly, this is not an isolated report, but part of a wider trend. The World Bank ranked Saudi Arabia as the 4th largest reformer within the G20 and noted it had improved in four separate pillars in its latest Doing Business report.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Likewise, the World Economic Forum ranked Saudi Arabia among the top 40 economies worldwide in its Global Competitiveness Report, including being ranked in the top five for &lsquo;quality of road network&rsquo;, &lsquo;shareholder governance&rsquo;, &lsquo;future orientation of government&rsquo; and joint first globally for &lsquo;macroeconomic stability&rsquo;, &lsquo;debt dynamics&rsquo; and &lsquo;inflation&rsquo;.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>There are many reasons that our performance in these rankings has improved, but I&rsquo;d like to highlight three particularly important initiatives here.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Firstly, reforms to business licensing. The National Licensing and Reform Program &ndash; which was established by Tayseer, a cross-government entity that helps to drive economic reform has delivered real results. The number of licensing requirements in Saudi Arabia has been reduced by more than half and more than 60% of over 5,500 licenses selected for reform have either been eliminated entirely or amended.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Secondly, opening the economy to foreign investors. In the past year or so, we have enabled 100% foreign ownership across large parts of the economy &ndash; including sectors such as courier services, education, healthcare and life sciences. To give you a sense of the impact of this on investors, 70% of the new international investment licenses issued in Q1 2019 were for entities with 100% foreign ownership.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Thirdly, the introduction of entrepreneur licenses. We launched the Entrepreneur License in late 2017 and it allows international entrepreneurs to launch a fully foreign-owned start-up in Saudi Arabia. We have issued more than 100 licenses already and the momentum is increasing as people learn more about the opportunity &ndash; we issued more than 45 in the first three months of this year alone.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>These reforms &ndash; and a range of others &ndash; are beginning to have an impact not only on our rankings, but also on investment. The number of new foreign business licenses issued by SAGIA in Q1 2019 was 70% higher than the same period last year and the level of FDI in 2018 was 127% higher than in 2017.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>We are not complacent &ndash; the scale of our ambitions means that we see this as a first step, not a goal in itself.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>We are continuing to implement further reforms and open new opportunities to domestic and international investors &ndash; and I look forward to hearing more from businesses across the world about how we can help them to invest and grow in Saudi Arabia.</p>
+</div>"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page      ;                          ; "  <div class='col-lg-8 col-md-8 col-sm-8 pb-5 news-contents' style='font-size: 13px;'>
+<p style='font-size: 13px;'><span style='font-size: 13px;'>أكد محافظ الهيئة العامة للاستثمار المهندس إبراهيم بن عبد الرحمن العمر، أن القفزة النوعية الكبيرة التي حققتها المملكة عبر تقدمها 13 مرتبة لتصبح في المركز 26 عالميا في تقرير التنافسية العالمية IMD 2019؛ يثبت مدى نجاح السياسات الاقتصادية واستراتيجيات تحسين بيئة الأعمال الداخلية، مبيناً أن هذا التصنيف جاء ليعزز ريادية موقع الاقتصاد الوطني السعودي ونجاح مشروع تطوير البنية التحتية والتشريعية والتحفيزية للاستثمار في المملكة.</span><br /><span style='font-size: 13px;'>كما يأتي ذلك تزامنا مع ما كشفه تقرير الكتاب السنوي للتنافسية العالمية IMD 2019، الصادر عن مركز التنافسية العالمي، التابع للمعهد الدولي للتنمية الإدارية بمدينة لوزان السويسرية، والذي كشف فيه أن المملكة العربية السعودية حققت قفزة كبيرة مقارنة بترتيبها في العام الماضي.</span><br /><span style='font-size: 13px;'>وقال العمر:' إن التقدم الكبير الذي حققته المملكة في هذا التصنيف الذي يأتي بعد تقرير بعثة صندوق النقد الدولي مؤخراً عن فاعلية الإصلاحات الاقتصادية في المملكة التي تقودها رؤية المملكة 2030، يؤكد ديناميكية البيئة الاستثمارية في المملكة في الاستجابة لحاجات المستثمرين وقدرتها على تهيئة الظروف الملائمة لذلك.</span><br /><span style='font-size: 13px;'>يذكر أن بعثة خبراء صندوق النقد الدولي قد ضمنت في تقريرها الصادر في منتصف الشهر الجاري قد كشف عن تقدم إيجابي على مستوى بيئة الأعمال والأسواق المالية والإطار القانوني، منوهاً في هذا السياق بالتحول الاقتصادي والتطور الذي تشهده المملكة على مستوى التنمية غير النفطية، وارتفاع معدل مشاركة المرأة في سوق العمل، وانخفاض الاستهلاك الفردي للبنزين والكهرباء نتيجة لإصلاحات أسعار الطاقة، والإجراءات التي اتخذتها المملكة لحماية الأسر منخفضة ومتوسطة الدخل من ارتفاع تكاليف الإصلاحات، إضافة إلى ارتفاع نسبة الشفافية المالية.</span><br /><span style='font-size: 13px;'>// انتهى //</span></p>
+</div>"
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template       ; $pagelabel                     ; false ;         ;                          ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page                ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

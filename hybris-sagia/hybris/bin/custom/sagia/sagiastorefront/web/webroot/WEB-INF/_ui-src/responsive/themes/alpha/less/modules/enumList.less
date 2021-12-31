@@ -1,0 +1,98 @@
+.enumList {
+	counter-reset: item;
+	list-style: none;
+	padding: 0 0 0 18px;
+	margin: 0;
+
+	&-item {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		counter-increment: item;
+		padding-left: 32px;
+		border-left: 1px solid #ccd0d4;
+
+		&:before {
+			content: counter(item);
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			border: 1px solid #ccd0d4;
+			left: -18px;
+			position: absolute;
+			box-sizing: border-box;
+			text-align: center;
+			line-height: 36px;
+			font-size: 16px;
+			color: #ccd0d4;
+			background-color: #fff;
+			padding-right: 1px;
+			padding-top: 1px;
+		}
+		&-head {
+			color: @steel-grey;
+
+			.contentModule-headline {
+				color: inherit;
+				font-weight: normal;
+				padding: 6px 0 2px;
+				margin: 0;
+			}
+			margin-bottom: 20px;
+		}
+		&_disabled &-head {
+			opacity: 0.7;
+		}
+		&-body {
+			padding-bottom: 36px;
+		}
+		&&_active &-head {
+			color: @dark;
+		}
+	}
+	&_validatable &-item_valid {
+		&:before {
+			color: transparent;
+			border: none;
+			background: url('../icons/check-big.svg') center no-repeat;
+			background-color: @white;
+			background-size: 36px auto;
+		}
+	}
+	&_collapsible &-item {
+		.enumList-item-head {
+			cursor: pointer;
+		}
+		.enumList-item-body,
+		&_active.enumList-item_collapsed .enumList-item-body {
+			display: none;
+		}
+		&_active .enumList-item-body {
+			display: block;
+			cursor: default;
+		}
+		&_disabled .enumList-item-head {
+			cursor: default;
+		}
+		&:last-child {
+			border-left-color: transparent;
+		}
+		&_active:last-child {
+			// border-left-color: #ccd0d4;
+		}
+	}
+	&,
+	&_validatable,
+	&_collapsible {
+		.enumList-item.enumList-item_active {
+			&:before {
+				background: @apple;
+				border-color: @apple;
+				color: @white;
+			}
+		}
+	}
+	&_collapsible&_validatable &-item_invalid .enumList-item-body {
+		display: block;
+	}
+}

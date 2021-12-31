@@ -1,0 +1,68 @@
+############ NEWS-NATIONAL CENTER FOR WASTE MANAGEMENT#######################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+$newsTitleAr= اقتصادي/ وزارة الاستثمار والمركز الوطني لإدارة النفايات يوقعان اتفاقية تعاون لتفعيل الاستثمارات في قطاع إدارة النفايات
+$shortDescAr=  اقتصادي/ وزارة الاستثمار والمركز الوطني لإدارة النفايات يوقعان اتفاقية تعاون لتفعيل الاستثمارات في قطاع إدارة النفايات
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                                     ; realFileName                                     		; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;news-national-center-for-waste-management.jpg            ; news-national-center-for-waste-management.jpg     		; $siteResource/news-national-center-for-waste-management.jpg                                         ;                 image/jpg                ;                                          ; ""     ;
+				   ;news-national-center-for-waste-management-thumbnail.jpg  ; news-national-center-for-waste-management-thumbnail.jpg  ; $siteResource/news-national-center-for-waste-management-thumbnail.jpg                                        ;                 image/jpg                ;                                          ; ""     ;
+							   
+INSERT_UPDATE MediaContainer; qualifier[unique = true]     		; $medias                                   															; $contentCV; 
+                            ; media-container-waste-management  ; news-national-center-for-waste-management-thumbnail.jpg,news-national-center-for-waste-management.jpg ;           ;
+	
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true]; uid[unique = true]                                   ; newsTitle[lang = en]                                                                                                                                                                 ; newsDate[dateformat = dd.MM.yyyy HH:mm:ss]    ;newsUrl
+                                      ;; news-national-center-for-waste-management                                     ; The Ministry of Investment and the National Center for Waste Management sign a cooperation agreement to activate investments in the waste management sector                          ; 09.11.2021 00:00:00                           ;                     
+
+
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]        ; newsShortInformation[lang = en]
+                               ;;news-national-center-for-waste-management                    ;"Saudi Arabia's Ministry of Investment has inked a cooperation agreement with the kingdom's National Center for Waste Management to boost investment prospects in the waste management sector."
+
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]; newsFullDescription[lang = en]
+                               ;;news-national-center-for-waste-management                    ; "
+The agreement was signed in the presence of the Minister of Investment, HE Eng. Khalid bin Abdulaziz Al-Falih, and the Minister of Environment, Water, and Agriculture, HE Eng. Abdul Rahman bin Abdul Mohsen Al-Fadhli.
+<p>Preliminary estimates indicate that more than 53 million tonnes of waste are produced in the kingdom annually, including municipal solid waste, demolition, and construction waste, medical and industrial waste, and others, which reveals the size of the large investment opportunities that this sector promises.</p>
+<p>In addition, the large population growth rates in the kingdom; the industrial and urban boom in all cities and regions; and the rising standards of living and increased spending power in the kingdom is expected to lead to a significant increase in the production of waste.</p>
+<p>The Minister of Investment stressed that signing the agreement is the first step towards cooperation, and pointed out that collaborative work will help transform the challenges in the industry into investment opportunities and enhance the country's development.</p>
+<p>Al-Falih pointed out that the Ministry of Investment will work to strengthen the strategic partnership with the National Center for Waste Management through this agreement to coordinate and unify efforts, find solutions to the challenges facing investment in this sector, and improve the investment environment in it in order to contribute to the recycling industry and waste management programmes.</p>
+<p>The Minister of Environment, Water, and Agriculture explained that the signing of this agreement will contribute to achieving the strategic objectives of the waste management sector in the kingdom; activating the principle of circular investment in waste facilities management; establishing the integration work between all relevant sectors; and building capabilities for the growth of information in this field.</p>
+<p>Saudi Arabia has carried out a number of structural reforms in the Saudi economy, and launched a group of emerging sectors, including the waste management sector that aims at integrated economic and environmental sustainability, by increasing the efficiency of waste management, establishing comprehensive recycling projects, and reducing all types of waste pollution.</p>
+<p>The National Centee for Waste Management aims to manage, regulate, and monitor the waste management sector in the kingdom, in addition to stimulating investment in the sector and improving its quality by setting standards, controls, and technical requirements for integrated waste management activities.</p>
+";
+
+
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]; newsFullDescription[lang = ar]
+                               ;;news-national-center-for-waste-management                    ; "
+<p>وقعت وزارة الاستثمار اتفاقية تعاون مع المركز الوطني لإدارة النفايات، بحضور معالي وزير الاستثمار المهندس خالد بن عبد العزيز الفالح، ومعالي وزير البيئة والمياه والزراعة المهندس عبد الرحمن بن عبد المحسن الفضلي وذلك قبيل انعقاد فعالية ندوة آفاق الاستثمار في قطاع إدارة النفايات بالمملكة، التي نظمتها وزارة الاستثمار اليوم .</p>
+<p>وأعرب معالي وزير الاستثمار في كلمته التي ألقاها، عن سعادته بتوقيع الاتفاقية، لكونها ستعمل على تأسيس وتعزيز التعاون في قطاع إدارة النفايات في المملكة.</p>
+<p>وذكر أن التقديرات الأولية تشير إلى أنه يُنتج في المملكة أكثر من (53) مليون طن من النفايات سنوياً، تشمل النفايات البلدية الصلبة ونفايات الهدم والبناء والنفايات الطبية والصناعية وغيرها، مما يكشف حجم الفرص الاستثمارية الكبيرة التي يعد بها هذا القطاع،  مبينًا أن التطورات الاقتصادية والاجتماعية الكبيرة التي تشهدها المملكة ومعدلات النمو السكاني فيها، والنهضة الصناعية والعمرانية في جميع المدن والمناطق إضافة إلى ارتفاع مستويات المعيشة والإنفاق والتزايد المتوقع في أعداد الزائرين للمملكة ستؤدي إلى زيادة كبيرة في إنتاج النفايات.*</p>
+<p>وأكد معاليه، أن توقيع الاتفاقية هو الخطوة الأولى للتعاون، مشيراً إلى أن العمل التشاركي سيساعد على تحويل التحدي إلى فرص استثمارية ومنجزات تعمل على تعزيز مسيرة التنمية التي تعيشها بلادنا.</p>
+<p>ولفت الوزير الفالح النظر إلى أن وزارة الاستثمار ستعمل على تعزيز الشراكة الإستراتيجية مع المركز الوطني لإدارة النفايات من خلال هذه الاتفاقية لتنسيق وتوحيد الجهود، وإيجاد حلول للتحديات التي تواجه الاستثمار في هذا القطاع وتحسين البيئة الاستثمارية فيه بما يعمل على مساهمة صناعة إعادة التدوير وبرامج إدارة النفايات في الناتج الوطني.</p>
+<p>واختتم معالي وزير الاستثمار كلمته بالتأكيد على أهمية الشراكة والتكامل في العمل بين مختلف الجهات ذات العلاقة بما فيها القطاع الخاص، لتفعيل هذا القطاع الحيوي وتحقيق المستهدفات الطموحة له، التي تتمثل في التخلص والاستفادة من أكثر من 80٪ من إجمالي النفايات المنقولة إلى المرادم بحلول عام 2035.</p>
+<p>من جانبه أوضح معالي وزير البيئة والمياه والزراعة المهندس عبد الرحمن بن عبد المحسن الفضلي، أن توقيع هذه الاتفاقية يأتي في إطار حرص الوزارتين  على دعم توثيق التعاون بين الجانبين، تماشيا مع لتوجيهات المباشرة من خادم الحرمين الشريفين وسمو ولي عهدة الأمين – حفظهما الله- على تقديم أفضل الخدمات للمواطنين في مختلف المجالات.</p>
+<p>وبين الفضلي، أن الجميع يتطلع أن تسهم هذه الاتفاقية في تحقيق الأهداف الإستراتيجية لقطاع إدارة النفايات بالمملكة، وتفعيل مبدأ الاستثمار الدائري في إدارة مرافق النفايات، وتؤسس للعمل التكاملي بين جميع القطاعات ذات العلاقة، وبناء القدرات والمعلومات في هذا المجال.</p>
+<p>يشار إلى أن المملكة قامت بإجراء عدد من الإصلاحات الهيكلية في الاقتصاد السعودي، وإطلاق مجموعة من القطاعات الناشئة، بما في ذلك قطاع إدارة النفايات الذي يهدف إلى الاستدامة الاقتصادية والبيئية المتكاملة، من خلال زيادة كفاءة إدارة النفايات، وإنشاء مشاريع شاملة لإعادة التدوير والحد من جميع أنواع التلوث لتحقيق الاستدامة البيئية لمجتمع نابض بالحياة، الذي يحقق أهم أهداف الرؤية الرئيسية.</p>
+<p>يذكر أن المركز الوطني لإدارة النفايات يهدف إلى إدارة وتنظيم ومراقبة قطاع إدارة النفايات في المملكة، بالإضافة إلى تحفيز الاستثمار في القطاع والارتقاء بجودته من خلال وضع مقاييس وضوابط واشتراطات فنية وتقنية لأنشطة إدارة النفايات المتكاملة.</p>
+";
+
+
+						 								   
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]                        ;newsDetailsImage(code, $contentCV)           ;newsThumbnailImage(code, $contentCV)                   ;newsFullReport(code, $contentCV) ;$galleryImages  ; &componentRef	;
+                                      ;                         ;news-national-center-for-waste-management ;news-national-center-for-waste-management.jpg;news-national-center-for-waste-management-thumbnail.jpg;                                 ;  				;news-national-center-for-waste-management;
+  
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]							;newsTitle[lang = ar]	;newsShortInformation[lang=ar];
+									  ;							;news-national-center-for-waste-management 	;$newsTitleAr       	;$shortDescAr;                                                                  
+							   							   

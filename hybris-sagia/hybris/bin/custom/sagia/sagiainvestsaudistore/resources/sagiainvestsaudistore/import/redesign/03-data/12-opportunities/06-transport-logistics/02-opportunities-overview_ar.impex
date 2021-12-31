@@ -1,0 +1,10 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = ar
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       			; $catalogVersion				; description[lang = $lang]
+                                ; Aviation-Academies        			;      							; " <p>Provide certified aviation academies “training centers” in the Kingdom of Saudi Arabia.</p>"
+                                ; Bunkering-Agent-KFIP      			;      							; " <p>Provide bunker agency services including distribution/final delivery of fuel to vessels through barges/trucks at King Fahad Industrial Port in Yanbu.</p>"
+                                ; Duty-Free-KFIP        				;      							; " <p>Provide duty-free facility at King Fahad Industrial Port in Yanbu.</p>"
+                                ; Shipping-Agencies-KFIP     			;      							; " <p>Set up and operate shipping agencies “husbandry services” within Yanbu Integrated Bunkering Hub at KFIP in Yanbu.</p>"
+                                ; Vessels-MRO-Services       		   ;      							; " <p>Set up vessels MRO facility in Yanbu</p>"

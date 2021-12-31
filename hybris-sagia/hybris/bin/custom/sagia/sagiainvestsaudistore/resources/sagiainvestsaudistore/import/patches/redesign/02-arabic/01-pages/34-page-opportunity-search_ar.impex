@@ -1,0 +1,40 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProductSearchTemplate
+$page = opportunity-search
+$pageName = Opportunities Search
+$pageTitleAr = $pageName
+$pageLabel = /sectors-opportunities/opportunities
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+
+INSERT_UPDATE ContentPage; uid[unique = true] ; name       ; title[lang = ar] ; description[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage ; $contentCV[unique = true]; 
+                         ; $page              ; $pageName  ; $pageTitleAr     ; $pageName             ; $template                      ; $pageLabel ; false    ;                          ;
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]		; name            	 		; descriptionText[lang = ar] ; buttonText[lang = ar]  ; &componentRef   			; $contentCV[unique = true]
+                                        ; all-opportunity-banner-1  ; All Opportunities Banner 	; الفرص						 ;           			  ; all-opportunity-banner-1    ;
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      			; name                    				; simpleCMSComponents(&componentRef)	; &componentRef          			; $contentCV[unique = true]
+                                        ; all-opportunity-banner-container 	; All Opportunities Banner Container 	; all-opportunity-banner-1 				; all-opportunity-banner-container 	;
+
+
+INSERT_UPDATE InvestSaudiOpportunitySearchBarComponent; uid[unique = true]             		; name                             ; &componentRef                  	; $contentCV[unique = true]
+                                                      ; opportunity-search-bar-component 	; Opportunity Search Bar Component ; opportunity-search-bar-component 	;
+
+
+INSERT_UPDATE InvestSaudiOpportunitySearchResultComponent; uid[unique = true]                  ; name                              		; &componentRef                       	; $contentCV[unique = true]
+                                                         ; opportunity-search-result-component ; Opportunity Search Result Component 	; opportunity-search-result-component 	;
+
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]           	; name                              ; &componentRef                     ; description[lang = ar]                                                                                                                                                                                                                                                                                       ; $contentCV[unique = true]
+                                                  ; generic-paragraph-opportunities ; Opportunities Paragraph Component ; generic-paragraph-opportunities	; <div class="container"><p class="sectors-content">قائمة بالفرص الاستثمارية المميزة والمحددة تحت قطاعات مختلفة لتتناسب مع متطلبات نشاطك الاستثماري. استكشف الفرص الاستثمارية الان.</p></div><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p> ;
+
+	

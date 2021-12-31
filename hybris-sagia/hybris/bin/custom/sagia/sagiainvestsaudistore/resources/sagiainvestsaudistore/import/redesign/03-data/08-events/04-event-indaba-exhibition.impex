@@ -1,0 +1,46 @@
+############# EVENT INDABA Exhibition########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails;$contentCV[unique = true];uid[unique = true]				;keyName[lang = en]						;keyValue[lang = en];
+							 ;                         ;indaba-key-1          			;Event attendees            			;8,000;
+							 ;						   ;indaba-key-2         			;Booth Attendees						;1,000;
+									  
+			
+INSERT_UPDATE Media; code[unique = true]            ; realFileName                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;INDAB-1-banner-image.jpg   		; INDAB-1-banner-image.jpg   	; $siteResource/INDAB-1-banner-image.jpg                                      ; image/jpg                   ;                                          ; ""     ;
+                   ;indaba-Thumbnail-image.jpg      ; indaba-Thumbnail-image.jpg    ; $siteResource/indaba-Thumbnail-image.jpg                                    ; image/jpg                   ;                                          ; ""     ;
+                   ;event-gallary-image.png         ; event-gallary-image.png       ; $siteResource/event-gallary-image.png                                       ; image/png                   ;                                          ; ""     ;
+				   
+				   
+INSERT_UPDATE MediaContainer; qualifier[unique = true]				; $medias					; $contentCV;
+                            ; media-container-indaba-exhibition   	; event-gallary-image.png   ;           ;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]      ; eventUrl(uid, $contentCV)	;eventLocation[lang = en]	;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss];eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+                                        ;                         ;event-indaba-exhibition ;             				;"South Africa"          	;03.02.2020 00:00:00                             ;06.02.2020 00:00:00;
+
+ 
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]      ;eventName[lang = en] ;eventShortInformation[lang = en];
+                                        ;                         ;event-indaba-exhibition ;INDABA Exhibition    ;The Ministry of Investment is participating in the 'Invest in Saudi Arabia' pavilion,along with the Ministry of Industry and Mineral Resources and other entities;      
+
+                                            																	
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventKeyDetails(uid, $contentCV);
+										;						  ;event-indaba-exhibition 	;indaba-key-1,indaba-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventBannerImage(code, $contentCV)	;eventThumbnailImage(code, $contentCV)	;eventGalleryImages(qualifier, $contentCV)	;
+										;						  ;event-indaba-exhibition 	;INDAB-1-banner-image.jpg			;indaba-Thumbnail-image.jpg				;media-container-indaba-exhibition			;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventFullDescription[lang = en];
+										;						  ;event-indaba-exhibition 	;								;
+

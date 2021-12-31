@@ -1,0 +1,12 @@
+INSERT_UPDATE SagiaLicenseType;code[unique=true];name[lang=en];name[lang=ar]
+;1;INDUSTRIAL INVESTMENT LICENSE;ترخيص استثمار صناعي
+;2;SERVICES INVESTMENT LICENSE;ترخيص استثمار خدمي
+;3;REAL ESTATE INVESTMENT LICENSE;ترخيص استثمار عقاري
+;4;TRADING INVESTMENT LICENSE;ترخيص استثمار تجاري
+;5;AGRICULTURAL INVESTMENT LICENSE;ترخيص استثمار زراعي
+;6;TEMPORARY LICENSE FOR CONTRACTS;ترخيص استثمار مؤقت للعقود
+;7;SCIENTIFIC-TECHNICAL INVESTMENT LICENSE;ترخيص استثمار مكتب علمي و�?ني
+;8;ECONOMIC AND TECHNICAL LIAISON OFFICE;مكاتب الاتصال الاقتصادية وال�?نية
+;9;PROFESSIONAL INVESTMENT LICENSE;ترخيص استثمار مهني
+;10;MINING INVESTMENT LICENSE;ترخيص استثمار تعدين
+;11;REGIONAL HEADQUARTER LICENSE;ترخيص المقر الإقليمي

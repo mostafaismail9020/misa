@@ -1,0 +1,8 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = ar
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]                   ; $catalogVersion; description[lang = $lang]
+                                ; Commercial-and-Digital-Banking        ;                ; "<p> Attracting commercial and digital Banks to conduct: Corporate Banking, Treasury Services, Trade Finance, Retail Banking, Cash Management and Global Banking. Furthermore, attract foreign capital to be allocated in financing opportunities (Greenfields and brownfields). </p>"								
+                                ; Insurance                             ;                ; "<p> Attracting insurance and re-insurance companies that offer both the property & casualty insurance policies and health insurance policies.   </p>"								
+                                ; Investment-Banking-and-Capital-Market ;                ; "<p> Attracting Investment Banks, Financial Advisor, Funds, and Financial Custodians to conduct: Dealing, Fund and Portfolio Management, Advising, Arranging  and Custody. Furthermore, attract foreign capital to be allocated in financing opportunities (Greenfields and brownfields). </p>"								

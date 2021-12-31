@@ -1,0 +1,423 @@
+
+
+#media-breakpoint-up(md, {
+	
+	.investsaudiHeader #insvest-navbar {
+		
+		.investNavigation {
+			> ul {
+				height: 70px;
+				> li {
+					flex: 0 1 auto !important;
+					width: auto !important;
+				}
+			}
+			
+			&-left {
+				justify-content: space-between;
+				
+				> li {
+					&:first-child {
+						a {
+							padding-left: 0;
+						}
+					}
+					&:not(:first-child) {
+						padding-top: 6px;
+					}
+				}
+
+			}
+			
+			&-right {	
+				
+				> li {
+					&:first-child {
+						a {
+							padding-right: 0;
+							padding-left: 16px;
+						}
+					}
+				}				
+			}
+		}
+	}
+});	
+
+
+.investsaudiHeader{
+	z-index: 30010;
+	position: relative;
+
+
+	.collapse {
+
+	    display: none !important;
+
+	}
+
+
+
+	#insvest-navbar {
+	    height: 70px;
+	    width: 55%;
+	    border-radius: 0 27px;
+	    background-color: #1C242C;
+	    margin: 0 auto;
+	    position: absolute;
+		.navbar-nav {
+			#media-breakpoint-up(lg, {
+				height: 70px;
+				
+			});				
+		}
+
+	}
+
+	#insvest-navbar .nav-item {
+	    color: #FFF;
+	    font-weight: 400;
+	    font-size: 15px;
+	    line-height: 21px;
+	    text-align: center;
+	}
+	
+	.navbar-nav {
+		
+	    display: flex;
+	    flex-direction: column;
+	    margin-bottom: 0;
+	    list-style: none;
+	    flex-direction: row;
+	    padding: 0 1rem;
+	    flex-grow: 1;
+	    align-items: center;		
+		
+		.nav-item {
+			width: 100%;
+			
+		}
+		
+		&.none {
+			display: none;
+		}
+	}
+
+	#insvest-navbar.fixed-header {
+		
+	    position: static!important;
+	    width: 100%!important;
+	    border-radius: 0!important;
+	    top: 0!important;		
+		
+		#navbarResponsive {
+			padding: 0 1rem;
+			@media (min-width: 768px) and (max-width: 991px) {
+				padding: 1rem;
+			}
+		}		
+	} 
+
+	nav #navbarResponsive {
+	    padding: 0;
+	}
+
+	.none {
+	    display: none
+	}
+
+	.navbar > .container, 
+	.navbar > .container-fluid {
+
+	    display: flex;
+	    flex-wrap: wrap;
+	    align-items: center;
+	    justify-content: space-between;
+	    padding-left: 0 !important;
+	}
+
+	
+	.mynav-logo {
+		flex-grow: 0;
+		position: relative;
+		text-align: center !important;		
+		img {
+			height: 100px;
+			width: auto;
+			display: block;
+			margin-left: -13px;
+		}
+	}
+
+
+	.nav-link {
+	    display: block;
+	    padding: .5rem 1rem;
+	    padding-right: .5rem;
+	    padding-left: .5rem;
+	}
+
+	.logo-postion-fix {
+		max-height: 99px !important;
+		margin-top: -35px !important;
+		overflow: hidden !important;
+	}
+	
+	.logo-postion-fix > img {
+		margin-top: 8px !important;
+		margin-left: -10px !important;
+	}
+
+
+	.navbar-dark .navbar-nav .nav-link {
+	    color: #fff;
+	}
+
+
+	a {
+	    color: #fff;
+	    transition: color.2s ease-in;
+	}
+
+
+	#insvest-navbar, .explore-more a, .fearured-opp h4 {
+	    text-transform: uppercase;
+	}
+
+
+
+	#insvest-navbar.fixed-header li.nav-item.text-center.diff-color.arabic {
+
+	    display: block;
+
+	}
+
+	.lang-switcher.diff-color a, 
+	li.nav-item.text-center.diff-color.arabic a {
+	    color: #fff;
+	    font-size: 14px;
+	    font-weight: 500;
+	    font-family: "Neo-Sans-Arabic-light";
+	}
+
+
+
+	#insvest-navbar a{
+		text-decoration: none;
+	}
+
+
+
+	#insvest-navbar a:hover {
+
+	    color: #5BC53B;
+
+	}
+
+	.navbar-toggler,
+	.sagiaMobileNav-toggler {
+	    padding: .25rem .75rem;
+	    font-size: 1.25rem;
+	    line-height: 1;
+	    background: 0 0;
+	    border: 1px solid rgba(255,255,255,.1);
+	    border-radius: .25rem;
+	    margin-top: 15px;
+		position: absolute;
+		left: 16px;
+		top: 0;
+		cursor: pointer;
+	}
+
+
+	[type="reset"], [type="submit"], button, html [type="button"] {
+
+	    -webkit-appearance: button;
+
+	}
+
+	@media  (min-width:768px) {
+		.navbar-expand-lg .navbar-toggler {
+
+		    display: none;
+
+		}
+
+	}
+	.navbar-dark .navbar-toggler {
+
+	    color: rgba(255,255,255,.5);
+	    outline: 0;
+
+	}
+
+
+	.navbar-toggler-icon {
+	    display: inline-block;
+	    width: 1.5em;
+	    height: 1.5em;
+	    vertical-align: middle;
+	    content: "";
+	    background: no-repeat center center;
+	    background-image: none;
+	    background-size: 100% 100%;
+	}
+
+	.navbar-dark .navbar-toggler-icon {
+	    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+	}
+
+	.navbar-toggler-close {
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		display: none;
+		position: relative;
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 75%;
+			height: auto;
+			fill: rgba(255,255,255,.5);
+			transform: translate(-50%,-50%);
+		}
+	}
+	
+	.navbar-toggler.active,
+	.sagiaMobileNav-toggler.active {
+		
+		.navbar-toggler-icon {
+			display: none;
+		}
+		
+		.navbar-toggler-close {
+			display: block;
+		}
+	}
+
+
+	#insvest-navbar ul, body {
+
+	    padding: 0;
+
+	}
+
+	.float-right {
+	    float: right !important;
+
+	}
+
+
+	.roya-height {
+
+	    height: 45px;
+		width: auto;
+
+	}
+
+
+
+	@media  (min-width:768px) {
+		.navbar-expand-lg .navbar-collapse {
+
+		    display: flex !important;
+		    flex-basis: auto;
+
+		}
+	}
+
+
+
+
+	ul.dropdown-list{
+
+	    display: none;
+	    line-height: 1.7em;
+	    position: relative;
+	    top: 0;
+	    width: auto;
+	    background-color: #1C242C;
+	    transition: display .5s linear;
+		box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+		padding: 8px !important;
+		margin-left: -16px;
+		margin-right: -16px;
+		list-style: none;
+		#media-breakpoint-up(lg, {
+			position: absolute;
+			top: 70px;
+			box-shadow: 0 7px 11px 0 rgba(0, 0, 0, 0.39);
+			background: #1C242C;
+			border-radius: 0 0 40px 0; 
+		});		
+
+	}
+
+	.a-nav-item {
+	   	padding: .5rem 1rem;
+		display: block;
+	}
+
+
+	@media  (max-width:767px) {
+		nav #navbarResponsive {
+
+			@keyframes slideInFromLeft {
+				0% {
+					transform: translateX(-100%);
+				}
+				100% {
+					transform: translateX(0);
+				}
+			}			
+		    position: absolute;
+		    top: 70px;
+		    width: 100%;
+		    left: 0;
+		    padding: 0;
+		    background-color: #222931;
+			padding-bottom: 16px;
+		    animation: slideInFromLeft .1s ease-in-out;
+			flex-direction: column;
+
+		}
+
+
+		//logo div for screens up to lg
+		.nav-item.logo.hiddenlarge.d-md-none {
+
+		    display: flex !important;
+		    right: 16px;
+		    left: auto;
+		    top: 0;
+			position: absolute;
+			height: 70px;
+			align-items: center;
+			
+			.nav-link {
+				padding-right: 0;
+				img {
+					height: 40px;
+					width: auto;
+				}
+			}
+		}
+
+
+		.account-login, .fixed-registration, .img-roya {
+
+		    display: none;
+
+		}
+
+	}
+
+
+
+}
+
+
+.img-roya-nav{
+	flex-grow: 0 !important;
+}

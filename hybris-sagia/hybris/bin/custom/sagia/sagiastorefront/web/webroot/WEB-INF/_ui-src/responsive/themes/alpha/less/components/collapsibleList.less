@@ -1,0 +1,41 @@
+.collapsibleList {
+	> li {
+		padding-top: 8px;
+		padding-bottom: 8px;
+		position: relative;
+	}
+	&-item{
+		&-header {
+			margin: 0.25rem 0;
+			padding-right: 20px;
+			font-weight: 600;
+			color: #000;
+			position: relative;
+		}
+		&-body {
+			display: none;
+			padding: 4px 4px 0 0;
+		}
+		&_expanded {
+			background-color: #fbfbfb;
+		}
+		&_expanded &-body {
+			display: block;
+		}
+		&-trigger {
+			border: none;
+			width: 16px;
+			height: 16px;
+			background: url(../icons/collapsed.svg) center no-repeat;
+			background-size: 16px auto;
+			box-shadow: none;
+			position: absolute;
+			right: 4px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&_expanded &-trigger {
+			background-image: url(../icons/expanded.svg);
+		}
+	}
+}

@@ -1,0 +1,7 @@
+<svg id="share" xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43">
+  <g id="Ellipse_4" data-name="Ellipse 4" fill="#00a6be" stroke="#00a6be" stroke-width="1">
+    <circle cx="21.5" cy="21.5" r="21.5" stroke="none"/>
+    <circle cx="21.5" cy="21.5" r="21" fill="none"/>
+  </g>
+  <path id="Icon_awesome-share-alt" data-name="Icon awesome-share-alt" d="M12.381,11.256a3.362,3.362,0,0,0-2.1.735l-3.6-2.253a3.4,3.4,0,0,0,0-1.466l3.6-2.253A3.371,3.371,0,1,0,9.085,4.11L5.48,6.363a3.377,3.377,0,1,0,0,5.284l3.6,2.253a3.377,3.377,0,1,0,3.3-2.644Z" transform="translate(13.5 12.5)" fill="none" stroke="#fff" stroke-width="1"/>
+</svg>

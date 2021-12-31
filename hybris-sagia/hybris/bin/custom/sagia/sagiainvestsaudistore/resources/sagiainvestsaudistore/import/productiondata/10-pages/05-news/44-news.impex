@@ -1,0 +1,73 @@
+$page = news-investment-highlights
+$template = portalGlobalTemplate
+$name = Investment Highlights
+$titleEn = $name
+$titleAr = ربط القارات وتمكين النمو: دور المملكة العربية السعودية كمركز ناشئ للنقل والخدمات اللوجستية
+$shortDescEn = As we celebrate the three-year anniversary since the launch of Vision 2030, we are proud to present Investment Highlights. In this special report, we present some of the major investment highlights for the year to date
+$shortDescAr =  نفخر إذ نحتفل بالذكرى الثالثة لانطلاقة رؤية المملكة 2030 أن نعرض لكم (موجز الاستثمار)، ويرصد هذا التقرير أهم مستجدات الاستثمار في المملكة خلال الربع الأول من العام 2019 إذ يتضمن
+$pagelabel = /news/investment-highlights
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true] ; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; untitled01   ; untitled01.jpg				; $siteResource/untitled01.jpg                                       ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias            ; $contentCV; ; ; ;
+                            ; media-container-$page   ; untitled01 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; untitled01                ; untitled01                ; $shortDescEn                   ; $shortDescAr                   ; link-$page       ;                                 ; 04.06.2019 00:00:00                       ;                          ;media-container-$page  ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; " <p style='font-size: 13px;'>As we celebrate the three-year anniversary since the launch of Vision 2030, we are proud to present &ldquo;Investment Highlights&rdquo;. In this special report, we present some of the major investment highlights for the year to date, also discussing how they relate to further investment opportunities.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>For the global investor community, Vision 2030 signals the start of new possibilities. Under this ambitious blueprint for the future, the Kingdom is continuing to unlock new investment opportunities and sectors at an unprecedented rate, while working hard to implement hundreds of reforms that make it easier for the business community to access these.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>The &ldquo;Investment Highlights&rdquo; report also covers recent acceleration in privatization and public-private partnerships, as well as the launch of exciting new mega projects and policy programs. We trust you will find this information both useful and illuminating.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>Inside this report:</p>
+<ul>
+<li>New licenses figures</li>
+<li>Top countries of origin</li>
+<li>Top sectors of new investment</li>
+<li>Major projects and opportunities</li>
+</ul>"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page      ;                          ; "  <p style='font-size: 13px;'>نفخر إذ نحتفل بالذكرى الثالثة لانطلاقة رؤية المملكة 2030 أن نعرض لكم (موجز الاستثمار)، ويرصد هذا التقرير أهم مستجدات الاستثمار في المملكة خلال الربع الأول من العام 2019 إذ يتضمن عددًا من أهم الصفقات الاستثمارية التي تمت خلال هذه المرحلة، إضافة إلى عرض ارتباط هذه الصفقات الاستثمارية بفرص استثمارية أكبر.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>ويتضمن التقرير أيضًا مستجدات الخصخصة المتسارعة والشراكات التي تتم بين القطاعين السعوديين الحكومي والخاص، وانطلاقة المشاريع الجديدة الكبرى.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>يتضمن التقرير:</p>
+<p style='font-size: 13px;'><br />- أرقام التراخيص الجديدة<br />- أكبر الدول المستثمرة<br />- أكثر القطاعات استثمارًا<br />- المشاريع الكبرى والفرص</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template       ; $pagelabel                     ; false ;         ;                          ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page                ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

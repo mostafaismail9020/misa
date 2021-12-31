@@ -1,0 +1,282 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000046",
+        "CityDesc": "Riyadh"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000047",
+        "CityDesc": "Al Diriyah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000048",
+        "CityDesc": "Al Kharj"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000049",
+        "CityDesc": "Al Dawadmi"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000050",
+        "CityDesc": "Al Majma'ah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000051",
+        "CityDesc": "Al Quayeyah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000052",
+        "CityDesc": "Al Aflaj"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000053",
+        "CityDesc": "Wadi Al Dwasir"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000054",
+        "CityDesc": "Al Zulfi"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000055",
+        "CityDesc": "Shakrah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000056",
+        "CityDesc": "Hotat Bani Tamim"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000057",
+        "CityDesc": "Afif"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000058",
+        "CityDesc": "Al Sulayyil"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000059",
+        "CityDesc": "Dhurama"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000060",
+        "CityDesc": "Al Mizahmiyah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000061",
+        "CityDesc": "Ramah"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000062",
+        "CityDesc": "Thadig"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000063",
+        "CityDesc": "Hureimla'a"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000064",
+        "CityDesc": "Al Hareeq"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000065",
+        "CityDesc": "Al Ghatt"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000161",
+        "CityDesc": "AL Delam"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000166",
+        "CityDesc": "Sudair Industrial and Business City"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/RegionCitySet('E')",
+          "type": "ZUI5_REAL_ESTATE_SRV.RegionCity"
+        },
+        "Language": "E",
+        "RegionCode": "10",
+        "RegionDesc": "Riyadh",
+        "CityCode": "18000167",
+        "CityDesc": "AL Hayathem"
+      }
+    ]
+  }
+}

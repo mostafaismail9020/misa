@@ -1,0 +1,32 @@
+#### Impex For Bett3 ####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$eventNameAr= معرض "بيت" لتقنية المعلومات
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails	; $contentCV[unique = true]	;uid[unique = true]	;keyValue[lang = ar]	; keyName[lang = ar];
+								;					  		;bett-key-1          ;48,689        		; عدد زوار الفعالية
+								;							;bett-key-2          ;3,483    				; عدد زوار الجناح
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]   ; eventName[lang = ar]   		 ; eventLocation[lang = ar]	;
+                                        ;                         ;event-bett   		; $eventNameAr           		 ; 	لندن					;
+										
+										
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	  ;eventShortInformation[lang = ar];
+                                        ;                         ; event-bett            ;"تشارك وزارة الاستثمار في المعرض الأكبر عالميا في مجال تقنيات لتعليم في لندن، بهدف الالتقاء بكبرى شركات التعليم ";    
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventKeyDetails(uid, $contentCV);
+										;						  ;event-bett 			;bett-key-1,bett-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventFullDescription[lang = ar]	;
+										;						  ;event-bett      		;                             ;
+																				

@@ -1,0 +1,87 @@
+$page = news-sagia-and-jetro-host-japanese
+$template = portalGlobalTemplate
+$name = SAGIA And JETRO Host Japanese Public And Private Sector Entities At Saudi-Japan Vision 2030 Business Forum In Tokyo
+$titleEn = $name
+$titleAr = أكثر من 20 جهة سعودية حكومية وخاصة تلتقي بنظرائها اليابانيين في منتدى أعمال الرؤية السعودية اليابانية 2030
+$shortDescEn = Forum organized ahead of the upcoming G20 Summit in Osaka, Japan
+$shortDescAr =  انعقدت في العاصمة اليابانية طوكيو اليوم الاثنين فعاليات منتدى أعمال
+$pagelabel = /news/sagia-and-jetro-host-japanese-public-and-private-sector-entities-at-saudi-japan-vision-2030-business-forum-in-tokyo
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true] ; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; jetro   		;2 (1).jpg		; $siteResource/2 (1).jpg                                        ;                             ;                                          ; ""     ; ;
+#                   ; file2  		;		; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3         ;       ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias            ; $contentCV; ; ; ;
+                            ; media-container-$page   ; jetro ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; jetro                ; jetro                ; $shortDescEn                   ; $shortDescAr                   ; link-$page       ;                                 ; 17.06.2019 00:00:00                       ;                          ;media-container-$page  ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>Forum organized ahead of the upcoming G20 Summit in Osaka, Japan</em></li>
+<li><em>SAGIA highlights opportunities for Japanese investors being created by Saudi Vision 2030, along with ongoing reform program to enable easier market access</em></li>
+</ul>
+<p><strong>Tokyo, Japan; 17 June 2019:&nbsp;</strong>The Saudi Arabian General Investment Authority (SAGIA) welcomed leading government representatives and investors to the Saudi-Japan Vision 2030 Business Forum, held in Tokyo today. Hosted in partnership with the Japan External Trade Organization (JETRO), the Saudi-Japan Vision 2030 Business Forum focused on investment opportunities being created in multiple strategic sectors in Saudi Arabia, including energy, infrastructure, and logistics entertainment, as well as key reforms underway to enable easier market access for foreign companies.</p>
+<p>Speaking at the Forum, His Excellency Mohammed Al Tuwaijri, Saudi Arabia&rsquo;s Minister of Economy and Planning, said:</p>
+<p><em>&ldquo;Today&rsquo;s Forum is a testimony to the success of the strategic direction set by the Saudi-Japanese Vision 2030 two years ago, which seeks to drive private sector involvement &ndash; both by partnering with public sector entities and establishing joint-ventures across our respective countries. Involving the private sector is a key step towards achieving our shared Vision, and we believe that it is a key driver of sustainable, market-based economic cooperation between Saudi Arabia and Japan.&rdquo;</em></p>
+<p>The event brought together more than 300 delegates, including high-ranking government officials, investors and business leaders for a series of open discussions, sectorial workshops and bilateral meetings.&nbsp;</p>
+<p>His Excellency Ibrahim Al-Omar, Governor, SAGIA, commented:</p>
+<p><em>&ldquo;Japan is one of our most important economic partners &ndash; and we are excited by the potential to build upon this partnership as our economy undergoes a wide range of investor-friendly reforms.&nbsp;</em><em>At SAGIA, we have been working on creating a more attractive and favourable business environment in Saudi Arabia, which is making it easier for foreign companies to access opportunities in the Kingdom.&nbsp;&nbsp;</em><em>The continued prosperity of the Kingdom depends on fostering innovation, attracting foreign investment and enabling private sector growth to create jobs and opportunities for Saudi men and women. We look forward to welcoming these companies as they take part in the historic transformation of our economy.&rdquo;</em></p>
+<p>Japan is one of Saudi Arabia&rsquo;s most important economic partners - it is the Kingdom&rsquo;s second largest source of foreign capital and third-largest trading partner, with total trade exceeding US$39 billion.</p>
+<p>Mr. Yasushi Akahoshi, President of JETRO, also commented:</p>
+<p><em>'Saudi-Japan Vision 2030 has made great progress since it was first announced. Under this strategic initiative, the number of cooperative projects between our two countries has nearly doubled, from 31 to 61, and represents a diverse range of sectors and stakeholders. Today marks the introduction of Saudi-Japan Vision 2030 2.0 &ndash; the next step of this important initiative. We are encouraged that our partnership will create valuable business opportunities for both Saudi and Japanese companies.'</em></p>
+<p>Since 2016, the Saudi Arabian government has delivered 45% of over 500 planned reforms, including the introduction of 100% foreign ownership rights, enhancing legal infrastructure and offering greater protection for shareholders.&nbsp; As a result, Saudi Arabia is climbing international competitiveness and ease-of-doing-business rankings and investors are increasingly towards to the Kingdom, with FDI inflows increasing by 127% in 2018 and the number of new companies entering Saudi Arabia rose 70% on a year-on-year basis in Q1 2019.</p>
+<p>For more information about investment opportunities in Saudi Arabia, visit:&nbsp;<a href='http://www.investsaudi.sa/'>www.investsaudi.sa</a>&nbsp;&nbsp;</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>ENDS</strong></p>
+<p>&nbsp;</p>
+<p><strong>Contact</strong></p>
+<p><a href='mailto:mediacenter@sagia.gov.sa'>mediacenter@sagia.gov.sa</a></p>
+<p>&nbsp;</p>
+<p><strong>About SAGIA</strong></p>
+<p>The Saudi Arabian General Investment Authority (SAGIA) works in collaboration with other government entities to attract, retain and expand high-value investments for the benefit of sustainable national economic growth.</p>
+<p>SAGIA works across the public and private sectors to help businesses and investors access fast-emerging opportunities across Saudi Arabia. It identifies and develops investment opportunities and supports regulatory improvements to increase competitiveness, unleash the capabilities of promising economic sectors, and open new opportunities for foreign investments.</p>
+<p>SAGIA supports businesses throughout the investment journey: from identifying opportunities, to conducting feasibility studies and connecting with potential partners, to setting-up operations.</p>
+<p>SAGIA has a particular focus on nine priority sectors identified within Saudi Arabia&rsquo;s Vision 2030: chemicals, information &amp; technology, energy &amp; water, industrial &amp; manufacturing, mining &amp; metals, healthcare &amp; life sciences, transport &amp; logistics, tourism, culture &amp; entertainment, and emerging sectors.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page      ;                          ; "<p>انعقدت في العاصمة اليابانية طوكيو اليوم الاثنين فعاليات منتدى أعمال الرؤية السعودية اليابانية 2030، والذي تنظمه الهيئة العامة للاستثمار ومنظمة التجارة الخارجية اليابانية (JETRO)، ويأتي انعقاد المنتدى بحضور معالي وزير الاقتصاد والتخطيط الأستاذ محمد التويجري، ومعالي وزير الطاقة والصناعة والثروة المعدنية المهندس خالد الفالح، ومعالي محافظ الهيئة العامة للاستثمار المهندس إبراهيم العمر، وبحضور أكثر من 300 مشارك من البلدين، لتسليط الضوء على الفرص الاستثمارية الواعدة في مختلف القطاعات الإستراتيجية في المملكة، مثل قطاع الطاقة والبنية التحتية واللوجستيات والترفيه، إضافة إلى تناول الإصلاحات الاقتصادية الرئيسة التي تعمل المملكة على إنجازها لتسهيل ممارسة الأعمال وتمكين الشركات الأجنبية من دخول السوق السعودي.</p>
+<p>وفي خطابه في منتدى أعمال الرؤية السعودية اليابانية 2030؛ ذكر معالي وزير الاقتصاد والتخطيط الأستاذ محمد التويجري بأن منتدى أعمال الرؤية السعودية اليابانية 2030 هو دليل نجاح التوجه الإستراتيجي الذي تسلكه الرؤية السعودية اليابانية 2030 منذ انطلاقتها قبل عامين، والتي تسعى إلى تفعيل دور القطاع الخاص عبر الشراكة مع القطاع العام بمؤسساته ذات العلاقة وتأسيس المشاريع المشتركة بين الشركات من الدولتين، لافتًا إلى أن تمكين القطاع الخاص يعد الخطوة الرئيسة نحو تحقيق رؤيتنا المشتركة، ومشيرًا إلى أن ذلك محرك رئيس لاقتصاد مشترك ومستدام بين البلدين.</p>
+<p>ومن جانب آخر؛ فقد نوه معالي المهندس إبراهيم العمر -محافظ الهيئة العامة للاستثمار- إلى أن اليابان تعد أحد أهم الشركاء الاقتصاديين للمملكة، مشيرًا إلى أن انعقاد المنتدى يؤكد عمق هذه الشراكة بين البلدين في ظل الإصلاحات الاقتصادية التي تشهدها المملكة وفق رؤية السعودية 2030، والتي تهدف إلى تحقيق بيئة استثمارية جاذبة، تسهل ممارسة الأعمال في المملكة. وأضاف العمر بأن الهيئة العامة للاستثمار تعمل لإيجاد بيئة استثمارية جاذبة حيث تسهل فيها ممارسة الأعمال لتمكين المستثمر الأجنبي من الوصول إلى الفرص الاستثمارية التي تزخر بها المملكة، مؤكدًا أن الازدهار المستمر الذي تشهده المملكة يعتمد على الانفتاح على العالم عبر استقطاب المبتكرين والمستثمرين الأجانب إضافة إلى تمكين تنمية القطاع الخاص لخلق فرص عمل للقوى الشابة السعودية، خاتمًا حديثه بأن المملكة ترحب بالشركات اليابانية لبدء أعمالها لدينا والمشاركة في هذا التحول التاريخي للاقتصاد السعودي.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>من جانبه نوه السيد ياسوشي أكاهوشي رئيس منظمة التجارة الخارجية اليابانية (JETRO) في الخطاب الذي ألقاه في نهاية فعاليات المنتدى بأن الرؤية السعودية اليابانية حققت تقدمًا كبيرًا منذ انطلاقتها، ففي ظل هذه المبادرة الإستراتيجية زاد عدد المشاريع المشتركة بين البلدين إلى الضعف؛ من 31 مشروعاً مشتركاً إلى 61 إذ تتمثل هذه المشاريع بشركاء وقطاعات مختلفة ، واليوم هو نقطة انطلاقة حديثة للرؤية السعودية اليابانية 2030، حيث يعد هذا المنتدى خطوة متقدمة لهذه المبادرة، ونحن متفائلون بهذه الشراكة التي نعلم أنها ستخلق فرصًا عملية ذات قيمة عالية للشركات من البلدين.</p>
+<p>يذكر أن اليابان إحدى أهم الدول الشريكة في الاقتصاد السعودي؛ إذ تعد ثاني أكبر مصادر المملكة لرأس المال الأجنبي وثالث أكبر الشركاء التجاريين لها؛ بإجمالي مبالغ تجارية تصل إلى أكثر من 39 مليار دولار. ومنذ انطلاق رؤية السعودية 2030 في أبريل 2016؛ فقد حققت المملكة ما نسبته 45% من 500 إصلاح اقتصادي، إذ تضمنت الإصلاحات التملك الكامل للاستثمار الأجنبي، خاصة بوجود بنية تحتية متكاملة ومتطورة من الحقوق القانونية وحماية أكبر للمستثمر الأجنبي، ونتيجة لهذا فقد حققت المملكة المرتبة الرابعة ضمن مجموعة العشرين وفقًا لتقرير سهولة ممارسة الأعمال الصادر من البنك الدولي، وما تزال المملكة تنافس عالميًّا بتحقيق أعلى المراتب؛ إذ بلغ تدفق الاستثمار الأجنبي في عام 2018 ما نسبته 127%، إضافة إلى هذا فإن المملكة ما تزال تحقق طموحات برنامج رؤية السعودية 2030؛ إذ بلغت زيادة الشركات الأجنبية التي بدأت أعمالها في المملكة في الربع الأول من عام 2019 ما نسبته 70% بالمقارنة مع الربع الأول من العام الماضي.</p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template       ; $pagelabel                     ; false ;         ;                          ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page                ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

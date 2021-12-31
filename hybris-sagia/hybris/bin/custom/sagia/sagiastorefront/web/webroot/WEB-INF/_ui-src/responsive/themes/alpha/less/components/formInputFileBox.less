@@ -1,0 +1,159 @@
+.formInputFileBox {
+	
+	position: relative;
+	margin-bottom: 40px;
+	
+	&-list {
+		padding-left: 0;
+		list-style: none;
+	}
+	
+	//fake border helper
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-image: linear-gradient(90deg, #ccd0d4, #ccd0d4 50%, #fff 50%, #fff 100%);
+		background-size: 20px 10px;
+		z-index: 0;
+	}
+	
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		background-image: linear-gradient(0deg, #ccd0d4, #ccd0d4 50%, #fff 50%, #fff 100%);
+		background-size: 10px 20px;
+		left: 0;
+		right: 0;
+		top: 1px;
+		bottom: 1px;
+		z-index: 0;
+	}
+	
+	&-dragndrop,
+	&-uploading,
+	&-success,
+	&-error {
+		display: none;
+	}
+	
+	&.hasAdvancedUpload {
+		
+		.formInputFileBox {
+			
+			&-dragndrop {
+				display: inline;
+			}
+		}
+		
+	}
+	
+	&.isDragover {
+		
+		.form-group {
+
+			&:before {
+				background: #f1f1f1;
+			}
+		}
+		
+		.form-icon_browse {
+			
+			> svg {
+				transform: translate(-50%, -50%) scale(0.8);
+			}
+		}
+		
+		.formInputFileBox {
+			
+			
+			
+		}
+	}
+	
+	.form-group{
+		position: relative;
+		z-index: 5;
+		padding: 73px 40px 78px;
+		text-align: center;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			background: #fff;
+			top: 1px;
+			bottom: 1px;
+			left: 1px;
+			right: 1px;
+			z-index: -1;
+			transition: background 0.125s ease-out;
+		}
+	}
+	
+	.form-icon {
+		display: inline-block;
+		
+		&_browse {
+			width: 46px;
+			height: 40px;
+			margin-bottom: 32px;
+			position: relative;
+			
+			> svg {
+				width: 46px;
+				height: 40px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%) scale(1);
+				transform-origin: center;
+				transition: transform 0.125s ease-out;
+				g {
+					stroke: @apple;
+				}
+				
+			}
+		}
+	}
+	
+	.control-label{
+		color: #313f4b;
+		line-height: 25px;
+		font-size: 16px;
+		text-align: center;
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	.form-control{
+		display: block;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		
+		&[type=file] {
+			background: transparent;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 10;
+			opacity: 0;
+		}
+		
+		&::-webkit-file-upload-button {
+			visibility: hidden;
+		}
+
+
+
+	}
+	
+}

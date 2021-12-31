@@ -1,0 +1,63 @@
+############## Impex For Resource FALL 2020 #################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+
+$shortDescAr =ابرز مستجدات الاستثمار في الربع الثالث من عام 2020
+$titleAr = موجز مستجدات الاستثمار  خريف  2020 
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                                                ; realFileName                    						 ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]                 ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; resource-investment-highlights-fall-2020-arabic.pdf				; resource-investment-highlights-fall-2020-arabic.pdf    ; $siteResource/resource-investment-highlights-fall-2020-arabic.pdf                            ; application/pdf             ;                                          ; ""     ;
+                   ; resource-investment-highlights-fall-2020-english.pdf  				; resource-investment-highlights-fall-2020-english.pdf   ; $siteResource/resource-investment-highlights-fall-2020-english.pdf
+
+
+INSERT_UPDATE Media; code[unique = true]                                                  ; realFileName                                         ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]              ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;Banner-Image-Fall-2020.jpg                         					  ; Banner-Image-Fall-2020.jpg         					 ; $siteResource/Banner-Image-Fall-2020.jpg                               					 ; image/jpg   				   ;                                          ; ""     ;
+                   ;Fall-2020-Thumbnail_03.jpg                      					  ; Fall-2020-Thumbnail_03.jpg        					 ; $siteResource/Fall-2020-Thumbnail_03.jpg                              					 ; image/jpg   				   ;                                          ; ""     ;					
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]   ; $medias																										;$contentCV ; 
+                            ; media-container-fall-2020  ; resource-investment-highlights-fall-2020-arabic.pdf,resource-investment-highlights-fall-2020-english.pdf    ;          ; 
+
+
+INSERT_UPDATE InvestSaudiResourceComponent 	;$contentCV[unique = true]	;uid[unique = true] 							;resourceUrl(uid, $contentCV) 				;resourceBulletPoints							;resourceDate[dateformat = dd.MM.yyyy HH:mm:ss];
+											;							;resource-investment-fall-2020					;											;												;23.12.2020 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent 	;$contentCV[unique = true]	;uid[unique = true] 	                    	;resourceTitle[lang = en]           		;resourceShortInformation[lang = en]	
+											;							;resource-investment-fall-2020 					;Investment Highlights Fall 2020  		    ;"Saudi Arabia's investment news in Q3 2020"
+
+
+INSERT_UPDATE InvestSaudiResourceComponent 	;$contentCV[unique = true]	;uid[unique = true]								;resourceTitle[lang = ar]           		;resourceShortInformation[lang=ar]
+											;							;resource-investment-fall-2020					;$titleAr 									;$shortDescAr
+
+
+
+INSERT_UPDATE InvestSaudiResourceComponent ;$contentCV[unique = true]	;uid[unique = true]                   			; resourceDetailsImage(code, $contentCV) 	; resourceThumbnailImage(code, $contentCV)    	;resourceFullReport(qualifier, $contentCV)	;
+										  ;							    ;resource-investment-fall-2020					;Banner-Image-Fall-2020.jpg					;Fall-2020-Thumbnail_03.jpg                     ;media-container-fall-2020 					;
+  
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true]	;uid[unique = true]								;resourceFullDescription[lang=en]
+										  ;								;resource-investment-fall-2020                  ;"
+<p>In this edition of Investment Highlights, we showcase the Kingdom's economic and investment initiatives in Q3 2020, as well as its global leadership role as G20 President.</p>
+<p>In Q3 2020, Saudi Arabia licensed 306 new foreign investment projects - a 21% year-on-year increase relative to 2019. This shows a significant rebound in investors' interest in Saudi Arabia, following a sharp slowdown in Q2 due to the pandemic. Overall, Saudi Arabia licensed 812 new foreign investment projects in the first nine months of 2020, which represents only a 3% slowdown compared to the same period last year. </p>
+<p>The report provides detailed information on a number of investment opportunities and promising sectors for investors, with an unprecedented deep dive into the defense and security sector, conducted in partnership with the General Authority for Military Industries (GAMI).</p>
+<p>On a separate note, the report includes a comprehensive review of the Saudi G20 Presidency, which ended with a successful Riyadh Leaders' Summit despite the most challenging circumstances presented by the pandemic.</p>
+<p>Finally, the report gives insights on the top investment opportunities by Invest Saudi, along with many more interesting topics:</p>
+<ul>
+<li>	Vision 2030 progress review and key achievements</li>
+<li>	Update on mega and giga projects in the Kingdom</li>
+<li>	Insights on the digital media sector by the local content creation company Myrkott</li>
+<li>	Overview of Saudi Arabia's food security and food sector opportunities</li>
+<li>	Key data on the Saudi Summer domestic tourism campaign</li>
+<li>	Reforms and business rankings in the last quarter</li>
+</ul>
+";

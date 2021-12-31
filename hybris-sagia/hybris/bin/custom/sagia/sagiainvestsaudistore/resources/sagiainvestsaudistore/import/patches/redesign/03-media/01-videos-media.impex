@@ -1,0 +1,20 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]             					; realFileName											; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; video-logistics-incentives-banner.jpg   			; video-logistics-incentives-banner.jpg                 ; $siteResource/video-logistics-incentives-banner.jpg                           ; image/jpg                   ;                                          ; ""     ;
+                   ; video-healthcare-life-banner.jpg    				; video-healthcare-life-banner.jpg                     	; $siteResource/video-healthcare-life-banner.jpg                                ; image/jpg                   ;                                          ; ""     ;
+                   ; video-ICT-banner.jpg			           			; video-ICT-banner.jpg                          		; $siteResource/video-ICT-banner.jpg                                    		; image/jpg                   ;                                          ; ""     ;
+                   

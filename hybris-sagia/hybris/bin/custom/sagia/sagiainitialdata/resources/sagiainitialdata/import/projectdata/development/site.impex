@@ -1,0 +1,11 @@
+$productCatalog = sagiaProductCatalog
+$storeUid = sagia
+$siteUid = sagia
+$siteName = Sagia
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default = $contentCatalog]), CatalogVersion.version[default = Staged])[default = $contentCatalog:Staged]
+$defaultLanguage = en
+$localSiteUrl=(?i)^https?://saghcdhws03.hec.sagia.gov.sa(.*)$
+
+UPDATE CMSSite; uid[unique = true]; name[$defaultLanguage]; theme(code); channel(code); stores(uid); contentCatalogs(id); defaultCatalog(id); defaultLanguage(isoCode); urlPatterns; active; previewURL; urlEncodingAttributes
+; $siteUid ; $siteName ; alpha ; B2C ; $storeUid ; $contentCatalog ; $productCatalog ; $defaultLanguage ; $localSiteUrl,(?i)^https?://[^/]+(/[^?]*)?\?(.*\&)?(site=$siteUid)(|\&.*)$,(?i)^https?://$siteUid\.[^/]+(|/.*|\?.*)$,(?i)^https?://api\.hybrisdev\.com(:[\d]+)?/rest/.*$,(?i)^https?://localhost(:[\d]+)?/rest/.*$ ; true ; $storefrontContextRoot/?site=$siteUid ; storefront,language

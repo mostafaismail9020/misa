@@ -1,0 +1,144 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleEn = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 ; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+########  Asir  #########			  
+					   ; asir-banner-image.png            			 ; asir-banner-image.png     						; $siteResource/asir-banner-image.png                                         			  ;                 image/png                ;                                          ; ""     ;
+					   ; asir-map.png                       		 ; asir-map.png               						; $siteResource/asir-map.png                                                  			  ;                 image/png                ;                                          ; ""     ;
+					   ; asir-tourism.png                            ; asir-tourism.png                      			; $siteResource/asir-tourism.png                                                          ;                 image/png                ;                                          ; ""     ;
+					   ; asir-trade.png                              ; asir-trade.png                        			; $siteResource/asir-trade.png                                                            ;                 image/png                ;                                          ; ""     ;
+					   ; asir-healthcare.png                         ; asir-healthcare.png                   			; $siteResource/asir-healthcare.png                                                       ;                 image/png                ;                                          ; ""     ;
+					   ; asir-agriculture.png                        ; asir-agriculture.png                  			; $siteResource/asir-agriculture.png                                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-mining.png                             ; asir-mining.png                       			; $siteResource/asir-mining.png                                                           ;                 image/png                ;                                          ; ""     ;   
+																	   
+					   ; asir-active-factories.png                   ; asir-active-factories.png                   		; $siteResource/asir-active-factories.png                                                 ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-airport.png                      		 ; asir-airport.png              					; $siteResource/asir-airport.png                                                  		  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-dams.png                         		 ; asir-dams.png                 					; $siteResource/asir-dams.png                                                    		  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-hospitals.png                          ; asir-hospitals.png                  				; $siteResource/asir-hospitals.png                                                     	  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-hotels.png                     		 ; asir-hotels.png             						; $siteResource/asir-hotels.png                                                 		  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-industrial-city.png                    ; asir-industrial-city.png                			; $siteResource/asir-industrial-city.png                                                  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-population.png                         ; asir-population.png                    			; $siteResource/asir-population.png                                                       ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-population-growth.png                  ; asir-population-growth.png                     	; $siteResource/asir-population-growth.png                                                ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-private-sector-employees.png           ; asir-private-sector-employees.png                ; $siteResource/asir-private-sector-employees.png                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-roads-length.png                       ; asir-roads-length.png               				; $siteResource/asir-roads-length.png                                                     ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-sport-city.png                    	 ; asir-sport-city.png            					; $siteResource/asir-sport-city.png                                                		  ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-towns.png                           	 ; asir-towns.png                   			    ; $siteResource/asir-towns.png                                                       	  ;                 image/png                ;                                          ; ""     ;   					
+					   											   
+					   ; asir-business-infrastructure.png            ; asir-business-infrastructure.png            		; $siteResource/asir-business-infrastructure.png                                          ;                 image/png                ;                                          ; ""     ;   
+					   ; asir-healthcare-infrastructure.png          ; asir-healthcare-infrastructure.png             	; $siteResource/asir-healthcare-infrastructure.png                                        ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-quality-of-higher-education.png        ; asir-quality-of-higher-education.png             ; $siteResource/asir-quality-of-higher-education.png                                      ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-tourist-potential.png                  ; asir-tourist-potential.png                       ; $siteResource/asir-tourist-potential.png                                                ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-unique-climate.png                     ; asir-unique-climate.png                      	; $siteResource/asir-unique-climate.png                                                   ;                 image/png                ;                                          ; ""     ;   	
+																	   
+					   ; asir-build.png                              ; asir-build.png                       			; $siteResource/asir-build.png                                                            ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-develop.png                            ; asir-develop.png                    				; $siteResource/asir-develop.png                                                          ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-investments.png                        ; asir-investments.png                    			; $siteResource/asir-investments.png                                                      ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-launch.png                             ; asir-launch.png                    				; $siteResource/asir-launch.png                                                           ;                 image/png                ;                                          ; ""     ;   	
+					   ; asir-upgrade.png                            ; asir-upgrade.png                    				; $siteResource/asir-upgrade.png                                                          ;                 image/png                ;                                          ; ""     ;   	
+					   
+					
+					
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=en]			; bannerText[lang=en]																																						 ; bannerImage (code, $contentCV)	; keyFactsHeader [lang = en]		 ; keyStrengthsHeader [lang = en] 	 ; opportunitiesHeader [lang = en]		
+							   ; asir		 		;				; ASEER PROVINCE				; Aseer's vision to become a global tourist destination by offering a balance of authenticity and modernity based on the area's uniqueness and natural resources. ; asir-banner-image.png			; KEY FACTS AND FIGURES	 			 ; REGIONAL BENEFITS		 			 ; INVESTMENT OPPORTUNITIES																																																									
+	
+	
+	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 ;  $contentCV  ; headerText[lang = en]    ; imageIcon  (code, $contentCV)     ; &componentRef
+											    ; asir-tourism		 ; 				; Tourism				   ; asir-tourism.png				   ; asir-tourism		
+                                                ; asir-trade		 ;              ; Trade			           ; asir-trade.png		               ; asir-trade		
+                                                ; asir-healthcare	 ;              ; Healthcare	           ; asir-healthcare.png	           ; asir-healthcare	
+                                                ; asir-agriculture	 ;              ; Agriculture	           ; asir-agriculture.png	           ; asir-agriculture	
+                                                ; asir-mining		 ;              ; Mining		           ; asir-mining.png		           ; asir-mining		
+	 
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = en] ; value[lang = en] 
+										; asir-strategic-population		;			   ; 2,308,329			; population
+										; asir-strategic-landmass		;			   ; 80,000 km2 	; in landmass area
+	
+
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]				; $contentCV   	; sectorHeader	[lang = en]	; backgroundImage (code, $contentCV)   			; sectors(&componentRef) 													; longDescription[lang = en]																																																																																																													   ; localizedStats (uid, $contentCV)   				 							; &componentRef
+												 ; asir-strategic-component		;          		; STRATEGIC SECTORS			; asir-map.png				; asir-tourism, asir-trade, asir-healthcare, asir-agriculture, asir-mining	; Aseer is one of the fastest rising tourist destinations in Saudi Arabia, with $3 billion of PIF projects in the pipeline for tourism and infrastructure. The province is in the southwestern part of Saudi Arabia spanning an area of 80,000 square kilometers. Asir has a distinct natural landscape, with attractive mountains, plains, and sea beaches, as well as a pleasant climate throughout the year, all of which contributed to its quick growth as a significant tourist destination.	   ; asir-strategic-population,asir-strategic-landmass   							;  asir-strategic-component
+                                                                               
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]	; $contentCV ; imageIcon (code, $contentCV) 				; headerText[lang = en]			; text[lang = en]											; &componentRef
+#									   ; asir-keyfacts1		;			 ; asir-population.png							; 2.3M							; population				; asir-keyfacts1	
+#									   ; asir-keyfacts2     ;            ; asir-population-growth.png		            ; 2.00%		                    ; annual population growth between 2013-2019	            ; asir-keyfacts2 
+									   ; asir-keyfacts3     ;            ; asir-private-sector-employees.png	        ; 385,574	                    ; number of employees						                ; asir-keyfacts3 
+									   ; asir-keyfacts4     ;            ; asir-active-factories.png			        ; 312		                    ; active factories in Q3 2021					            ; asir-keyfacts4 
+									   ; asir-keyfacts5     ;            ; asir-airport.png					            ; 1		                        ; international airport and 1 domestic airport	            ; asir-keyfacts5 
+									   ; asir-keyfacts6     ;            ; asir-dams.png						        ; 171		                    ; dams											            ; asir-keyfacts6 
+									   ; asir-keyfacts7     ;            ; asir-hotels.png					            ; 27		                    ; Hotels										            ; asir-keyfacts7 
+									   ; asir-keyfacts8     ;            ; asir-industrial-city.png			            ; 1			                    ; industrial city								            ; asir-keyfacts8 
+									   ; asir-keyfacts9     ;            ; asir-sport-city.png				            ; 1			                    ; Sport City									            ; asir-keyfacts9 
+									   ; asir-keyfacts10    ;            ; asir-roads-length.png				        ; 5,594		                    ; roads length									            ; asir-keyfacts10
+									   ; asir-keyfacts11    ;            ; asir-hospitals.png				            ; 28		                    ; Hospitals with 3,200 beds						            ; asir-keyfacts11
+									   ; asir-keyfacts12    ;            ; asir-towns.png					            ; 16		                    ; Towns											            ; asir-keyfacts12
+									   
+									   
+									   
+									   
+									   
+									 
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]									; $contentCV      ; image (code, $contentCV)					          ; text[lang=en]				                         						;&componentRef
+                                                                                                                                                                                                                    
+										   ; asir-unique-climate                                ;                 ; asir-unique-climate.png                               ; UNIQUE CLIMATE				                         						; asir-unique-climate             
+                                           ; asir-quality-of-higher-education                   ;                 ; asir-quality-of-higher-education.png                  ; QUALITY OF HIGHER EDUCATION - KING KHALED UNIVERSITY RANKED 5TH IN SAUDI (SHANGHAI RANKING)                          						; asir-quality-of-higher-education
+                                           ; asir-tourist-potential                             ;                 ; asir-tourist-potential.png                            ; TOURIST POTENTIAL - REGION'S STRATEGY HAS 30 INITIATIVES IN TOURISM         ; asir-tourist-potential          
+                                           ; asir-business-infrastructure                      	;                 ; asir-business-infrastructure.png                      ; BUSINESS SUPPORT INFRASTRUCTURE                   						    ; asir-business-infrastructure    
+                                           ; asir-healthcare-infrastructure                     ;                 ; asir-healthcare-infrastructure.png                    ; HEALTHCARE INFRASTRUCTURE - KING FAISAL MEDICAL CITY " BUILT TO SERVE THE KINGDOM'S SOUTHERN REGIONS (ASIR - AL-BAHA - NAJRAN - JAZAN)                            						; asir-healthcare-infrastructure  
+		
+	
+	
+#####################################################	
+	
+	
+INSERT_UPDATE ProvinceInvestmentOpportunitiesComponent	; uid[unique=true]		      ; $contentCV	  ; iconImage	(code, $contentCV)					         ; headerText[lang = en]	                                     ; text[lang = en]																															; &componentRef
+													                                                                                                                                                        
+														; develop-asir			      ;               ; asir-develop.png                                         ; Develop                                                       ; 40,000+ housing units to suit all levels of income 																							; develop-asir 
+														; launch-asir			      ;               ; asir-launch.png				                             ; Launch					                                     ; Several projects in communications, health and transport industries																								; launch-asir
+														; upgrade-asir			      ;               ; asir-upgrade.png				                         ; Upgrade					                                     ; Abha's Airport to host 10 million passengers																			; upgrade-asir
+														; investments-asir		      ;               ; asir-investments.png			                         ; Investments				                                     ; worth over $13 billion in critical projects such as the development of attractions that will transform Asir into a global destination	; investments-asir
+                                                        ; buid-asir				      ;               ; asir-build.png				                             ; Buid						                                     ; 23,000 hotel rooms to reach a total of 37,000 by 2030																					; buid-asir
+
+	
+	
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																									; keyStrengths(&componentRef) 																												  ; investmentOpportunities(&componentRef)
+							   ; asir		 		;				    ;  asir-strategic-component  				 ; asir-keyfacts3,asir-keyfacts4,asir-keyfacts5,asir-keyfacts6,asir-keyfacts7,asir-keyfacts8,asir-keyfacts9,asir-keyfacts10,asir-keyfacts11,asir-keyfacts12    ;asir-unique-climate, asir-quality-of-higher-education,asir-tourist-potential,asir-business-infrastructure, asir-healthcare-infrastructure    ;	develop-asir, launch-asir, upgrade-asir, investments-asir, buid-asir
+	
+	
+

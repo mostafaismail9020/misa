@@ -1,0 +1,74 @@
+############## Impex For Resource Investment Highlights For Spring 2021 #################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+
+$shortDescAr =ابرز مستجدات الاستثمار في الربع الاول من عام 2021
+$titleAr = موجز مستجدات الاستثمار  ربيع2021
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                                                 ; realFileName                   							 ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]                               ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; resource-investment-highlights-spring-2021-arabic.pdf 				 ;resource-investment-highlights-spring-2021-arabic.pdf      ; $siteResource/resource-investment-highlights-spring-2021-arabic.pdf                                        ; application/pdf             ;                                          ; ""     ;
+                   ; resource-investment-highlights-spring-2021-english.pdf  			 ;resource-investment-highlights-spring-2021-english.pdf     ; $siteResource/resource-investment-highlights-spring-2021-english.pdf
+
+INSERT_UPDATE Media; code[unique = true]                                                 ; realFileName                                               ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]                              ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;Banner-Image-Spring-2021.jpg                                         ; Banner-Image-Spring-2021.jpg                   			  ; $siteResource/Banner-Image-Spring-2021.jpg                                                                ; image/jpg           		;                                          ; ""     ;
+                   ;Spring-2021-Thumbnail_04.jpg                                         ; Spring-2021-Thumbnail_04.jpg                   			  ; $siteResource/Spring-2021-Thumbnail_04.jpg                                                                ; image/jpg           		;                                          ; ""     ;
+                  
+INSERT_UPDATE MediaContainer; qualifier[unique = true]		; $medias																										   ;$contentCV ; 
+                            ; media-container-spring-2021   ; resource-investment-highlights-spring-2021-arabic.pdf,resource-investment-highlights-spring-2021-english.pdf   ;          ; 
+
+
+
+INSERT_UPDATE InvestSaudiResourceComponent 	 ;$contentCV[unique = true]			  ;uid[unique = true] 							  	;resourceUrl(uid, $contentCV) 			    ;resourceBulletPoints							;resourceDate[dateformat = dd.MM.yyyy HH:mm:ss];
+											 ;									  ;resource-investment-spring-highlights-2021    	;											;											    ;10.08.2021 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent	;$contentCV[unique = true]			  ;uid[unique = true] 	                    	  	;resourceTitle[lang = en]           		;resourceShortInformation[lang = en]	;
+											;									  ;resource-investment-spring-highlights-2021      	;Investment Highlights Spring 2021    		;"Saudi Arabia's investment news in Q1 2021"	;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent 	;$contentCV[unique = true]			  ;uid[unique = true]							  	;resourceTitle[lang = ar]           		;resourceShortInformation[lang = ar];
+											;									  ;resource-investment-spring-highlights-2021       ;$titleAr 							     	;$shortDescAr	;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent	;$contentCV[unique = true]			;uid[unique = true]                   			  	; resourceDetailsImage(code, $contentCV)	; resourceThumbnailImage(code, $contentCV)    ; resourceFullReport(qualifier, $contentCV)	;
+											;                          			;resource-investment-spring-highlights-2021        	; Banner-Image-Spring-2021.jpg     			; Spring-2021-Thumbnail_04.jpg                ; media-container-spring-2021;
+
+
+
+INSERT_UPDATE InvestSaudiResourceComponent	;$contentCV[unique = true];uid[unique = true]											;resourceFullDescription[lang = en]
+											;						  ;resource-investment-spring-highlights-2021                   ;"
+<p>In the ninth edition of the  Investment Highlights  report, the Ministry of Investment of Saudi Arabia (MISA) reported that more foreign investor licenses were issued during Q1 2021 than during any previous quarter since Saudi records began in 2005, as the Kingdom's investment recovery accelerates.</p>
+<p>The issuance of 478 new licenses breaks the previous record, set as recently as Q4 2020, and marks a 2.6% quarterly increase. The first quarter of 2021 also recorded the fourth consecutive increase in the number of new foreign investment projects since the peak of the pandemic in Q2 2020, indicating a continued rebound in FDI.</p>
+<p>The report also details recent progress made by Saudi Arabia to ensure that investors in its health sector are supported by appropriate regulatory frameworks for sustainable growth, digitization, and increased efficiency. A growing, wealthy population and major government investment has led to growing demand for healthcare services and the Kingdom is aiming to grow the private sector's contribution to the healthcare market from 25% to 35% by 2030.</p>
+<p>Reforms profiled include Shareek , part of a $7.2 trillion investment program designed to provide solid support for the Saudi economy via financial, monetary, and regulatory means, as well as through asset investment over the next 10 years. As well as the ''Made in Saudi'' program to strengthen the private sector's resilience and contribution to GDP, and the Private Sector Participation Law to accelerate private sector participation in infrastructure projects and the privatization of public sector assets.</p>
+<p>Inside this report:</p>
+<ul>
+<li> Opening remarks by Tawfig Al-Rabiah, Minister of Health of Saudi Arabia</li>
+<li> Sector highlights on Healthcare and Life Sciences</li>
+<li> Deep dive on the quarter's top investor stories across all sectors</li>
+<li> Expert opinion by Tim Callen, IMF Mission Chief to Saudi Arabia</li>
+<li> Top 3 investment opportunities by INVEST SAUDI</li>
+</ul>
+
+";
+INSERT_UPDATE InvestSaudiResourceComponent; $contentCV[unique = true]; uid[unique = true]							; resourceFullDescription[lang = ar]
+										  ;							 ;resource-investment-spring-highlights-2021    ;"
+<p>واصلت الاستثمارات الجديدة نموها في المملكة وحققت زيادة سنوية 2    ,(36%) للربع الأول من عام 2021مقارنة بالفترة ذاتها من العام السابق حيث وصل إجمالي عدد التراخيص الاستثمارية التي تم إصدارها 478 ترخيصاً. ومنذ ذروة الجائحة في الربع الثاني من العام الماضي يمثل هذا الارتفاع الرابع على التوالي في زيادة إصدار التراخيص الاستثمارية وفقاً لتقرير مستجدات الاستثمار</p>
+<p>وأوضح التقرير، الصادر عن وزارة الاستثمار، استحواذ قطاع الصناعة والتصنيع نسبة كبيرة من التراخيص المصدرة حيث بلغت 114 ترخيصاً، فيما جاء قطاع التشييد والبناء في المرتبة الثانية حيث حقق 78 ترخيصاً وكذلك قطاع التجزئة والتجارة الإلكترونية 78 ترخيصاً، فيما جاء القطاع المهني والعلمي ثالثاً حيث سجل 62 ترخيصاً والاتصالات وتقنية المعلومات بـ 41 ترخيص. وتعكس الأرقام الصادرة عن التقرير استمرار الزخم باتجاه التنويع الاقتصادي للمملكة، إضافة إلى سرعة تكيف الاقتصاد مع المتغيرات التي فرضتها الجائحة العالمية على الأسواق العالمية وعلى التوجهات الاستهلاكية.</p>
+<p>وافتتح التقرير بكلمة لمعالي وزير الصحة الدكتور توفيق بن فوزان الربيعة تناول فيها أبرز التحديات التي تواجه العالم بسبب جائحة كوفيد- 19 والجهود التي تبذلها المملكة للحفاظ على صحة الإنسان والخطط التي تعمل عليها المملكة للتوسع في الخدمات الطبية وتمكين القطاع الخاص من الاستفادة من الفرص الاستثمارية المتاحة في القطاع الصحي وفقاً لرؤية 2030. </p>
+<p>وبيّن التقرير أن الاستثمارات الأجنبية المباشرة، بحسب بيانات البنك المركزي السعودي، وصلت لأعلى مستوياتها خلال 5 سنوات حيث وصل إجمالي تدفقات الاستثمار الأجنبي المباشر في المملكة إلى 5,5 مليار دولار في عام 2020.</p>
+<p> كما أوضح التقرير ارتفاعاً كبيراً في الاستثمارات في الصناعات الغير نفطية بنسبة (198%) في الربع الأول من هذا العام، حيث أظهرت البيانات أن الاستثمارات الصناعية الحاصلة على ترخيص وزارة الصناعة والثروة المعدنية سجلت قفزة كبيرة خلال شهر مارس حيث بلغت 4,1 مليار دولار.</p>
+<p>وألقى التقرير الضوء على استمرار ارتفاع تدفقات ملكية المستثمرين الأجانب في السوق المالية السعودي تداول حيث سجلت ارتفاعاً للربع الرابع على التوالي وبلغ إجمالي ملكية المستثمرين الأجانب في سوق تداول 50,2 مليار دولار حتى الربع الأول من 2021.</p>
+<p>وتطرق التقرير إلى أبرز الإصلاحات في البيئة الاستثمارية كما تناول عدداً من المبادرات والبرامج التي جرى إطلاقها ومنها مبادرة شريك، وبرنامج صنع في السعودية، إضافة إلى أبرز الشركات العالمية التي أعلنت عن افتتاح مقرات إقليمية لها في المملكة.</p>
+<p>وقدم التقرير تحليلاً للتوقعات المتعلقة بقطاع الرعاية الصحية وعلوم الحياة والأهداف الحالية والمستقبلية للمملكة في تحسين جودة الحياة ورفع كفاءة الخدمات الصحية في ضوء برنامج التحول للقطاع الصحي 2025، إضافة إلى أبرز الفرص الاستثمارية في القطاع الصحي وعلوم الحياة.</p>
+<p>الجدير ذكره، أن تقرير مستجدات الاستثمار الربعي يبحث آخر المستجدات في البيئة الاستثمارية وأهم الأرقام والإحصائيات للبيئة الاستثمارية في المملكة كما ويرصد أراء الخبراء والمتخصصين.</p>
+";
+

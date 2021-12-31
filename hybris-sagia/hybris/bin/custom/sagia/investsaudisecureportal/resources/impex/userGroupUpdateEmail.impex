@@ -1,0 +1,41 @@
+
+$contentCatalog=investsaudiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailFromEmail=info@sagia.gov.sa
+$emailFromName=Customer Services Team
+$lang = en
+$jarResource=jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+
+################## Start InvestSaudi 2 Factor Authentication Email Template  #####################
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; customerUsergroupUpdateTemplate    ; Custome Usergroup Update Template       ; true ; customerUsergroupUpdateTemplate    ; customer_usergroup_update_Subject    ; customer_usergroup_update_Body    ; EmailPage
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'customerUsergroupUpdateTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'customerUsergroupUpdateTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-customerUsergroupUpdate      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-customerUsergroupUpdate    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-customerUsergroupUpdate ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@sagia.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; customerUsergroupUpdate    ; User Group update email page    ; customerUsergroupUpdateTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; customer_usergroup_update_Body       ; com.investsaudi.email.context.CustomerUserGroupUpdateEmailContext
+; customer_usergroup_update_Subject    ; com.investsaudi.email.context.CustomerUserGroupUpdateEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; customer_usergroup_update_Body       ; "Customer Usergroup Update Email Body"          ; $jarResource/email-customerUsergroupUpdateBody.vm
+; customer_usergroup_update_Subject    ; "Customer Usergroup Update Email Subject"       ; $jarResource/email-customerUsergroupUpdateSubject.vm
+

@@ -1,0 +1,45 @@
+.notifyCount {	
+	color: #fff;
+	font-size: 14px;
+	color: #ffffff;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 21px;
+	background: #5cc83b;
+	border-radius: 100%;
+	text-align: center;
+	margin-left: 5px;
+	[dir="rtl"] & {
+		line-height: 22px;
+		font-size: 12px;
+	}
+	
+	&:empty {
+		display: none;
+	}
+
+	&_small {
+		font-size: 9px;
+	    line-height: 9px;
+	    border-radius: 6px;
+	    min-width: 12px;
+	    width: auto;
+	    height: 12px;
+	    padding: 2px 3px;
+	    text-align: center;
+		line-height: 1;
+		[dir="rtl"] & {
+			line-height: 11px;
+			font-size: 8px;
+		}		
+
+	    .sagiaNavigation-msg &,
+	    .btn & {
+	    	position: absolute;
+	    	margin-top: -5px;
+	    	right: 10px;
+	    	transform: translateX(50%);
+	    }
+	} 
+}

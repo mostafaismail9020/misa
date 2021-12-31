@@ -1,0 +1,74 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = SaudiEconomicSectorsPageTemplate
+$page = saudi-economic-sectors
+$pageName = Saudi Economic Sectors
+$pageTitleEn = $pageName
+$pageLabel = /economicHighlights/saudiEconomicSectors
+
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = ar] ; description[lang = ar]; keywords[lang = ar]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn     ; $pageName             ; Invest Saudi,Invest Saudi - Meet,Kingdom, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+#######################################################
+
+INSERT_UPDATE CMSLinkComponent  ; $contentCV[unique = true]; uid[unique = true] 					; linkName [lang = en]											;url																	; &linkRef
+								;						   ; saudi-economic-tail-link1-$page 		; Dashboard 		  	 					 	;economicHighlights/dashboard  				; saudi-economic-tail-link1-$page
+								;						   ; saudi-economic-tail-link2-$page		; Saudi Arabia in International Indices 	 	;economicHighlights/saInternationalIndices	; saudi-economic-tail-link2-$page
+								;						   ; saudi-economic-tail-link3-$page		; Infrastructures and logistics				 	;economicHighlights/infraLogistics 			; saudi-economic-tail-link3-$page
+								;						   ; saudi-economic-tail-link4-$page		; Saudi Economic Sectors  		  	 		 	;economicHighlights/saudiEconomicSectors		; saudi-economic-tail-link4-$page
+								;						   ; saudi-economic-tail-link5-$page		; Investment Data  		  	 				 	;economicHighlights/investmentData			; saudi-economic-tail-link5-$page
+ 
+
+
+
+#########################################################################
+
+INSERT_UPDATE Media	; code[unique = true]         								; realFileName             									; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]			; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; saudi-economic-sectors-banner-image.png 					; saudi-economic-sectors-banner-image.png					; $siteResource/saudi-economic-sectors-banner-image.png 								; 	image/png						;										   ; ""     ;
+					
+
+#####################################################################
+
+	
+INSERT_UPDATE EconomicDashboardBannerComponent  ; uid[unique = true]			 	; tailHeader [lang = en]							 ; tailBanner (code, $contentCV)	      	; link(&linkRef)      									; &componentRef 			 	  ; $contentCV[unique = true]
+												; saudi-economic-tail-1				; Dashboard 		  	 							 ; 											; saudi-economic-tail-link1-$page	    				; saudi-economic-tail-1			  ;  
+												; saudi-economic-tail-2				; Saudi Arabia in International Indices 		  	 ; 											; saudi-economic-tail-link2-$page	    				; saudi-economic-tail-2			  ;  
+												; saudi-economic-tail-3				; Infrastructures and logistics			  	 		 ; 											; saudi-economic-tail-link3-$page	    				; saudi-economic-tail-3			  ;  
+												; saudi-economic-tail-4				; Saudi Economic Sectors  		  	 				 ; 											; saudi-economic-tail-link4-$page	    				; saudi-economic-tail-4			  ;  
+												; saudi-economic-tail-5				; Investment Data  		  	 						 ; 											; saudi-economic-tail-link5-$page	    				; saudi-economic-tail-5			  ;  
+	
+
+
+INSERT_UPDATE EconomicCustomBannerContainer	; uid[unique = true] 			   			  ; name 							  				; backgroundImage (code, $contentCV)						; title [lang = en]						; simpleCMSComponents(&componentRef)	  										  											  ; &componentRef                         		; $contentCV[unique = true]
+											; saudi-economic-sectors-banner-container 	  ; saudi economic sectors banner Container     	; saudi-economic-sectors-banner-image.png  					; SAUDI ECONOMIC SECTORS 				; saudi-economic-tail-1	,saudi-economic-tail-2,saudi-economic-tail-3,saudi-economic-tail-4,saudi-economic-tail-5 		      ; saudi-economic-sectors-banner-container 	;
+
+
+################################################################################
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)		; $contentCV	;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                             		;				;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; saudi-economic-sectors-banner-container									;				;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                    				;				;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+						 

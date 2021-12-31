@@ -1,0 +1,11 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DiffQeemahSet('6000003629')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/DiffQeemahSet('6000003629')",
+      "type": "ZQEEMAH2_EXT_SRV.DiffQeemah"
+    },
+    "Refid": "6000003629",
+    "Qeemah": "QEEMAH 1"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/FinanceHDRS('80000042')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/FinanceHDRS('80000042')",
+      "type": "ZUI5_SAGIA_SRV.FinanceHDR"
+    },
+    "BpID": "613392",
+    "Year": "2015",
+    "Sr_Guid": "00000000-0000-0000-0000-000000000000",
+    "SrID": "80000042",
+    "Trans_Type": "ZS11",
+    "Sr_Cr_Date": null,
+    "Sr_St_Code": "",
+    "Sr_St_Desc": "",
+    "FinanceHDRToUploadNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/FinanceHDRS('80000042')/FinanceHDRToUploadNav"
+      }
+    },
+    "FinanceHDRToIncomeStatementNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/FinanceHDRS('80000042')/FinanceHDRToIncomeStatementNav"
+      }
+    },
+    "FinanceHDRToCashFlowNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/FinanceHDRS('80000042')/FinanceHDRToCashFlowNav"
+      }
+    },
+    "FinanceHDRToBalanceSheetNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/FinanceHDRS('80000042')/FinanceHDRToBalanceSheetNav"
+      }
+    },
+    "FinanceHDRToUI5IncomeStatNav": {
+      "__metadata": {
+        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/UI5IncomeStatementSet('80000042')",
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/UI5IncomeStatementSet('80000042')",
+        "type": "ZUI5_SAGIA_SRV.UI5IncomeStatement"
+      },
+      "PARTNER": "613392",
+      "FINANCIAL_YEAR": "2015",
+      "REVENUE": "4200",
+      "SALES_COST": "4200",
+      "GROSS_INCOME": "42000",
+      "TOTAL_OPERATING_COST": "42000",
+      "MAIN_OPERATION_INCOME": "420000",
+      "TOTAL_OTHER_INCOME": "42000",
+      "INCOME_BEFORE_ZAKAT": "42000000",
+      "ZAKAT_AMOUNT": "42000000",
+      "TAX_AMOUNT": "42",
+      "NET_INCOME": "",
+      "SrID": "80000042"
+    },
+    "FinanceHDRToUI5BalanceSheetNav": {
+      "__metadata": {
+        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/UI5BalanceSheetSet('80000042')",
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/UI5BalanceSheetSet('80000042')",
+        "type": "ZUI5_SAGIA_SRV.UI5BalanceSheet"
+      },
+      "PARTNER": "613392",
+      "FINANCIAL_YEAR": "2015",
+      "CURRENT_ASSETS": "",
+      "NON_CURR_ASSETS": "",
+      "OTHER_ASSETS": "",
+      "TOTAL_ASSETS": "",
+      "CURRENT_LIABILITES": "",
+      "NON_CURR_LIABILITIES": "",
+      "OTHER_LIABILITES": "",
+      "TOTAL_LIABILITIES": "",
+      "CAPITAL": "",
+      "PARTNERS_DRAW_ACCS": "",
+      "RETAINED_EARNINGS": "",
+      "OTHERS": "",
+      "SHAREHOLDERS_EQUITY": "",
+      "SrID": "80000042"
+    },
+    "FinanceHDRToUI5ChangeEquityNav": {
+      "__metadata": {
+        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/UI5ChangeEquitySet('80000042')",
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/UI5ChangeEquitySet('80000042')",
+        "type": "ZUI5_SAGIA_SRV.UI5ChangeEquity"
+      },
+      "PARTNER": "613392",
+      "FINANCIAL_YEAR": "2015",
+      "RET_EARNINGS_BF": "",
+      "RET_EARNINGS_AF": "",
+      "TOT_BALANCE_BF": "",
+      "TOT_BALANCE_AF": "",
+      "SrID": "80000042"
+    },
+    "FinanceHDRToContentNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='80000042',DocumentID='00155DF60D031EE5A4F0ED325E6F0A0D',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='80000042',DocumentID='00155DF60D031EE5A4F0ED325E6F0A0D',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "80000042",
+          "ObjectGuid": "00155DF6-0D03-1EE5-A4F0-ECDA07CF8A0D",
+          "Filename": "Financial Statement",
+          "Filesize": "0000008109",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155DF60D031EE5A4F0ED325E6F0A0D",
+          "Crtdby": "TUSER10",
+          "Crtdon": "\/Date(1448409600000)\/",
+          "DocKeyID": "1333",
+          "ShDocID": "Financial",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='80000042',DocumentID='00155DF60D031EE5A4F0ED325E6F0A0D',Stage='')/FollowupSrvHDR"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

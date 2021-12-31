@@ -1,0 +1,31 @@
+####  Impex For IDEX ####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$eventNameAr=فبراير
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails; $contentCV[unique = true] ;uid[unique = true] ;keyValue[lang = ar]	; keyName[lang = ar];
+							;							;idex-key-1          ;62,445       			; عدد زوار الفعالية	;
+							;							;idex-key-2          ;1,632    				; عدد زوار الجناح	;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]   ; eventName[lang = ar]   ; eventLocation[lang = ar]	;
+                                        ;                         ;event-idex  			; $eventNameAr           ; دبي						;
+										
+										
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	  ; eventShortInformation[lang = ar]	;
+										;						  ; event-idex    		  ; "مشاركة وزارة الاستثمار في معرض الدفاع الدولي تحت مظلة استثمر في السعودية وبتنيم الهيئة العامة للصناعات العسكرية وعدد من ممثلي الجهات الحكومية";
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventKeyDetails(uid, $contentCV);
+										;					      ;event-idex 			;idex-key-1,idex-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventFullDescription[lang = ar]	;
+										;						  ;event-bett      	 ;								;

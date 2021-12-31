@@ -1,0 +1,347 @@
+.iconElement {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    
+    svg {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+        position: absolute; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: transparent;
+        [dir="rtl"] &{
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                transform: translate(-50%,-50%);
+            }					
+        }	        
+    }
+
+    svg &-color {
+        &_color {
+            fill: currentColor;
+            color: currentColor;
+            stroke: currentColor;
+        }
+        &_fill {
+            fill: currentColor;
+        }
+        &_stroke {
+            stroke: currentColor;
+        }
+        &Primary {
+            &_color {
+                fill: @apple;
+                color: @apple;
+                stroke: @apple;
+            }
+            &_fill {
+                fill: @apple;
+            }
+            &_stroke {
+                stroke: @apple;
+            }
+        }
+        &Secondary {
+            &_color {
+                fill: #32465A;
+                color: #32465A;
+                stroke: #32465A;
+            }
+            &_fill {
+                fill: #32465A;
+            }
+            &_stroke {
+                stroke: #32465A;
+            }
+        }
+        &Background {
+            &_color {
+                fill: #fff;
+                color: #fff;
+                stroke: #fff;        
+            }
+            &_fill {
+                fill: #fff;
+            }
+            &_stroke {
+                stroke: #fff;
+            }
+        }
+    }
+    
+    &_pdf {
+        width: 24px;
+        height: 31px;
+        margin-right: 20px;
+        fill: #5CC83B;
+        margin-top: -4px;
+    }
+    
+    &_contact-person {
+        width: 100px;
+        height: 100px;
+    }
+    
+    &_plus {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+    
+    &_headlineTooltip {
+        height: 24px;
+        width: 24px;
+        padding: 3px;
+        vertical-align: -4px;
+        svg {
+            width: 18px !important;
+            height: 18px !important;
+            margin-right: 0;
+            path {
+                fill: #1c242c;
+            }
+        }
+    }
+    
+    &_pdf02 {
+        width: 21px;
+        height: 26px;
+    }
+    
+    &_cloud {
+        height: 18px;
+        width: 18px;
+        margin-right: 5px;
+        vertical-align: -4px;
+    }
+    
+    &_cloud02 {
+        height: 14px;
+        width: 16px;
+        margin-right: 5px;
+        vertical-align: -3px;
+    }
+    
+    &_reupload {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        vertical-align: -3px;
+    }
+    
+    &_save {
+        width: 17px;
+        height: 17px;
+        margin-left: 9px;
+        vertical-align: top;
+    }
+    
+    &_info,
+    &_documents,
+    &_history,
+    &_enquiry,
+    &_enquiry2,
+    &_enquiry3,
+    &_branches,
+    &_register02,
+    &_locationPin_filled,
+    &_momra,
+    &_generalManager,
+    &_governmentDocuments,
+    &_accountSettings02,
+    &_password,
+    &_your-tickets,
+    &_feedback,
+    &_group,
+    &_questionaires,
+    &_loading,
+    &_chat,
+    &_sellingHouse {
+        width: 24px;
+        height: 24px;
+        vertical-align: -4px;
+        margin-right: 6px;
+    }
+    
+    &_tipInfo {
+        width: 18px;
+        height: 18px;
+    }
+    
+    &_iconButton {
+        width: 140px;
+        height: 50px;
+        margin: 0 auto 21px;
+        display: block;
+        
+        > svg {
+            width: auto !important;
+            height: 50px !important;
+        }
+    }
+
+    &_expertProfile{
+        &_white {
+            width: 40px;
+            height: 40px;
+
+            .iconElement-colorSecondary_fill {
+                fill: #fff;
+            }
+        }
+        &_green {
+            width: 40px;
+            height: 40px;
+            
+            .iconElement-colorPrimary_fill {
+                fill: none;
+            }
+            .iconElement-colorSecondary_fill {
+                fill: @apple;
+            }
+            &.iconElement-colorSecondary_grey {
+                background-color: #e6e6ed;
+            }
+        }
+    }
+    &_product,
+    &_shareholderProfile {
+        height: 80px;
+        width: auto;
+        display: block;
+        svg {
+            width: auto !important;
+            height: 100% !important;
+        }
+    }
+    &_business {
+        height: 60px;
+        width: auto;
+        display: block;
+        margin-bottom: 16px;
+        margin-top: 16px;
+        svg {
+            width: auto !important;
+            height: 100% !important;
+        }        
+    }
+    
+    &_print,
+    &_editButton{
+        width: 18px;
+        height: 18px;
+
+        svg {
+            margin: 0;
+        }
+        .btn & {
+            display: inline-block;
+            margin-left: 8px;
+            svg {
+                fill: @apple;
+                
+            }
+        }
+    }
+    &_edit {
+        &,
+        &.btn-link{
+            width: 16px;
+            height: 36px;
+            padding: 0;
+            
+            svg {
+                margin: 0;
+            }
+        }
+        
+    }
+    &_edit02 {
+        &,
+        &.btn-link{
+            padding: 0 10px;
+            vertical-align: -4px;
+            
+            svg {
+                margin: 0;
+                position: relative;
+                transform: none;
+                left: 0;
+                display: block;
+                width: 16px !important;
+                height: 16px !important;
+            }
+        }
+        
+    }
+    &_edit03 {
+        &,
+        &.btn-link{
+            width: 16px;
+            height: auto;
+            padding: 0;
+            
+            svg {
+                margin: 0;
+            }
+        }
+        
+    }
+    &_check_green {
+        width: 18px;
+        height: 18px;
+        position: relative;
+        top: -3px;
+        left: -4px;
+
+        svg {
+            &,
+            path{
+              fill: @apple !important;  
+            }
+        }
+    }
+    &_pin {
+        width: 18px;
+        height: 18px;
+        position: relative;
+        top: -3px;
+        left: -4px;
+    }
+    &_closeEdit {
+        font-weight: 600;
+        font-size: 17px;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    &_closeBack {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        margin-top: -2px;        
+        svg {
+            width: 9px !important;
+            path {
+                stroke: currentColor;
+            }
+        }
+    }
+    &_ynIcon {
+        width: 44px;
+        height: 17px;
+        color: @green;
+        padding: 0;
+
+        &_no {
+            color: @steel-grey;
+        }
+    }
+    
+    &_controlBar {
+        width: 24px;
+        height: 24px;
+    }
+}

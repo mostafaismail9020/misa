@@ -1,0 +1,36 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR4',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR4',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZSR4",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          1",
+        "FieldSubtype": "",
+        "Description": "Copy of Zakat and Income Tax certificate",
+        "Dockey_ID": "1324",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR4',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR4',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZSR4",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          2",
+        "FieldSubtype": "",
+        "Description": "Saudization Certificate",
+        "Dockey_ID": "1390",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      }
+    ]
+  }
+}

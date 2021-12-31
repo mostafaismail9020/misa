@@ -1,0 +1,58 @@
+#***************************************************************************#
+#*** Please change only the sample data and do NOT change anything else! ***#                                                                                       #
+#***************************************************************************#
+
+#**************************#
+#***  OAuth CredentialS ***#
+#**************************#
+$clientId = misaCommerceSCPI
+$password = MISA2020Test
+$destination_target = scpiInboundDestinationTarget
+
+#************************#
+#*** B2B Opportunity URL ***#
+#************************#
+$opportunityUrl = https://vhsaghcpws01.hec.sagia.gov.sa/odata2webservices/InboundOpportunity
+$opportunityVersion = v=1
+#*****************************************#
+#***  DO NOT Change The Section Below! ***#
+#*****************************************#
+
+
+#******************#
+#***  Endpoints ***#
+#******************#
+INSERT_UPDATE Endpoint; id[unique = true]              ; version[unique = true]; specUrl                                ; name
+                      ; scpiOpportunityInboundEndpoint ; unknown               ; "$opportunityUrl;$opportunityVersion/" ; scpiOpportunityInboundEndpoint
+
+
+
+#**************************#
+#***  OAuth Credentials ***#
+#**************************#
+INSERT_UPDATE IntegrationClientCredentialsDetails; clientId[unique = true]; resourceIds; authorities                ; clientSecret; registeredRedirectUri                           ; user(uid)        ; scope ; authorizedGrantTypes
+                                                 ; $clientId              ; hybris     ; ROLE_INTEGRATIONADMINGROUP ; $password   ; https://localhost:9002/oauth2_implicit_callback ; oauthInboundUser ; basic ; client_credentials
+
+INSERT_UPDATE Employee; name             ; UID[unique = true]; groups(uid)           ; password  ; loginDisabled;
+                      ; oauthInboundUser ; oauthInboundUser  ; integrationadmingroup ; $password ;              ;
+
+INSERT_UPDATE ExposedOAuthCredential; id[unique = true]          ; oAuthClientDetails(clientId); password
+                                    ; scpiInboundOauthCredential ; $clientId                   ; $password
+
+
+#****************************#
+#***  Destination Target  ***#
+#****************************#
+INSERT_UPDATE DestinationTarget; id[unique = true]   ; destinationChannel(code)[default = DEFAULT]; template
+                               ; $destination_target ;                                            ; false
+
+#*******************************#
+#***  Exposed Destinations  ***#
+#*******************************#
+INSERT_UPDATE ExposedDestination; id[unique = true]                 ; url                         ; endpoint(id)                     ; destinationTarget(id)[default = $destination_target]; active; credential(id)
+                                ; scpiInboundOpportunityDestination ; "$opportunityUrl/CsTickets" ; scpiOpportunityInboundEndpoint ;                                                     ; true  ; scpiInboundOauthCredential ;
+
+
+
+INSERT_UPDATE InboundChannelConfiguration; integrationObject(code)[unique = true]; authenticationType(code);
+                                         ; InboundOpportunity                    ; OAUTH                   ;

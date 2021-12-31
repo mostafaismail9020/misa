@@ -1,0 +1,50 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                    			; realFileName                  		 			; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; tabuk-banner-image.png   			    			; tabuk-banner-image.png   							; $siteResource/tabuk-banner-image.png   	                     		 		;                 image/png                ;                                          ; ""     ;
+					; tabuk-map.png     			 		    		; tabuk-map.png     								; $siteResource/tabuk-map.png     			                              	  	;                 image/png                ;                                          ; ""     ;
+					; tabuk-tourism.png       			   				; tabuk-tourism.png       	    					; $siteResource/tabuk-tourism.png       		                                ;                 image/png                ;                                          ; ""     ;
+					; tabuk-technology.png      		       			; tabuk-technology.png        						; $siteResource/tabuk-technology.png                                            ;                 image/png                ;                                          ; ""     ;
+					; tabuk-trading.png      			    			; tabuk-trading.png      	    					; $siteResource/tabuk-trading.png      			                                ;                 image/png                ;                                          ; ""     ;
+					; tabuk-renewable-energy.png		   				; tabuk-renewable-energy.png    					; $siteResource/tabuk-renewable-energy.png		                                ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-logistics.png       		   				; tabuk-logistics.png         						; $siteResource/tabuk-logistics.png                                             ;                 image/png                ;                                          ; ""     ;   
+											
+					; tabuk-population.png 		                        ; tabuk-population.png        		       			; $siteResource/tabuk-population.png        		                            ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-airport.png    					            ; tabuk-airport.png    				   	   			; $siteResource/tabuk-airport.png    				                            ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-private-sector-employees.png  	            ; tabuk-private-sector-employees.png	    		; $siteResource/tabuk-private-sector-employees.png                              ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-seaport.png              			        ; tabuk-seaport.png              	    			; $siteResource/tabuk-seaport.png              			                        ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-active-factories.png  		              	; tabuk-active-factories.png  						; $siteResource/tabuk-active-factories.png  		                            ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-dams.png        					        ; tabuk-dams.png        			  				; $siteResource/tabuk-dams.png        					                        ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-chambers-of-commerce.png 			        ; tabuk-chambers-of-commerce.png 	     			; $siteResource/tabuk-chambers-of-commerce.png 		                            ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-hotels.png              			        ; tabuk-hotels.png              	  				; $siteResource/tabuk-hotels.png              		                            ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-industrial-city.png      		            ; tabuk-industrial-city.png      					; $siteResource/tabuk-industrial-city.png      		                            ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-sport-city.png					            ; tabuk-sport-city.png				  	    		; $siteResource/tabuk-sport-city.png				                            ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-roads-length.png           	            	; tabuk-roads-length.png           					; $siteResource/tabuk-roads-length.png           	                            ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-hospitals.png                              	; tabuk-hospitals.png               	  			; $siteResource/tabuk-hospitals.png                                             ;                 image/png                ;                                          ; ""     ;   					
+					; tabuk-towns.png							        ; tabuk-towns.png					    			; $siteResource/tabuk-towns.png													;                 image/png                ;										  ; ""	   ;
+							  				  																					  
+					; tabuk-electricity-infrastructure.png            	; tabuk-electricity-infrastructure.png             	; $siteResource/tabuk-electricity-infrastructure.png                            ;                 image/png                ;                                          ; ""     ;   
+					; tabuk-mega-giga-projects.png                    	; tabuk-mega-giga-projects.png                    	; $siteResource/tabuk-mega-giga-projects.png                                	;                 image/png                ;                                          ; ""     ;   	
+					; tabuk-solar-energy-potential.png                	; tabuk-solar-energy-potential.png                	; $siteResource/tabuk-solar-energy-potential.png                                ;                 image/png                ;                                          ; ""     ;   	
+					; tabuk-tourism-potential.png                       ; tabuk-tourism-potential.png                     	; $siteResource/tabuk-tourism-potential.png                                     ;                 image/png                ;                                          ; ""     ;   	
+					; tabuk-proximity-egypt-Jordan-southern-europe.png	; tabuk-proximity-egypt-Jordan-southern-europe.png	; $siteResource/tabuk-proximity-egypt-Jordan-southern-europe.png                ;                 image/png                ;                                          ; ""     ;   	
+										  					   
+					; tabuk-neom.png				     				; tabuk-neom.png				      				; $siteResource/tabuk-neom.png				                              		;                 image/png                ;                                          ; ""     ;   
+					; tabuk-redsea-project.png		 					; tabuk-redsea-project.png		 					; $siteResource/tabuk-redsea-project.png		              			  		;                 image/png                ;                                          ; ""     ;   	
+					; tabuk-amaala.png				 					; tabuk-amaala.png				 					; $siteResource/tabuk-amaala.png				                   		  		;                 image/png                ;                                          ; ""     ;   	
+					; tabuk-renewable-energy-office.png    				; tabuk-renewable-energy-office.png					; $siteResource/tabuk-renewable-energy-office.png                         		;                 image/png                ;                                          ; ""     ;   	
+					; tabuk-high-end.png				     			; tabuk-high-end.png				 				; $siteResource/tabuk-high-end.png				                          		;                 image/png                ;                                          ; ""     ;   	

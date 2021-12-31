@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="investsaudiportalbackofficeLabelLocator" class="com.hybris.cockpitng.util.labels.ResourcesLabelLocator" scope="singleton" init-method="init" lazy-init="false">
+  		<property name="location" value="/investsaudiportalbackoffice-backoffice-labels/"/>
+  		<property name="name" value="labels"/>
+  	</bean>
+
+	<!--
+        <bean class="com.hybris.cockpitng.core.util.impl.ListPropertyExtender"
+              lazy-init="false" init-method="extend" destroy-method="clean">
+            <property name="propertyName" value="availableBeanNames"/>
+            <property name="filtered" value="true"/>
+            <property name="parentBean" ref="fixedBeanResolver"/>
+            <property name="additionalValues">
+                <list value-type="java.lang.String">
+                    <value>catalogVersionService</value>
+                </list>
+            </property>
+        </bean>
+        -->
+</beans>

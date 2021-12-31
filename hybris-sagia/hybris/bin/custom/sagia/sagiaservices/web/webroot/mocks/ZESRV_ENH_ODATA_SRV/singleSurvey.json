@@ -1,0 +1,249 @@
+{
+	"d": {
+		"__metadata": {
+			"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurveyHDRSet(Surveyid='SAGIA_ESRV_CUSTOMER_SATISFACTION',SurveyVersion='0000000001',Language='')",
+			"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurveyHDRSet(Surveyid='SAGIA_ESRV_CUSTOMER_SATISFACTION',SurveyVersion='0000000001',Language='')",
+			"type": "ZESRV_ENH_ODATA_SRV.SurveyHDR"
+		},
+		"TransactionId": "",
+		"Surveyid": "SAGIA_ESRV_CUSTOMER_SATISFACTION",
+		"SurveyVersion": "0000000001",
+		"Language": "",
+		"ApplicationId": "CRM_SURVEY_SERVICE",
+		"Surveytitle": "Customer Satisfaction Survey",
+		"Mandatfrom": null,
+		"Validfrom": null,
+		"Validto": null,
+		"CreatedAt": null,
+		"CreatedBy": "",
+		"ModifiedAt": null,
+		"ModifiedBy": "",
+		"SurveyHdrToSurvQuestDefNav": {
+			"results": [
+				{
+					"__metadata": {
+						"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQuestDefSet(SurveyId='SAGIA_ESRV_CUSTOMER_SATISFACTION',SurveyVersion='0000000001',Language='EN',QuestID='')",
+						"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQuestDefSet(SurveyId='SAGIA_ESRV_CUSTOMER_SATISFACTION',SurveyVersion='0000000001',Language='EN',QuestID='')",
+						"type": "ZESRV_ENH_ODATA_SRV.SurvQuestDef"
+					},
+					"SurveyId": "SAGIA_ESRV_CUSTOMER_SATISFACTION",
+					"ApplicationId": "CRM_SURVEY_SERVICE",
+					"SurveyVersion": "0000000001",
+					"Language": "EN",
+					"HierLevel": 1,
+					"Consnr": "",
+					"Quest": "",
+					"Mandquest": false,
+					"QuestID": "",
+					"AnsTypeSt": "",
+					"AnswType": "",
+					"QuestTXT": "",
+					"SurveyQuestDefToSurvQuestDDLBNav": {
+						"results": []
+					}
+				},
+				{
+					"__metadata": {
+						"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQuestDefSet(SurveyId='SAGIA_ESRV_CUSTOMER_SATISFACTION',SurveyVersion='0000000001',Language='EN',QuestID='q1')",
+						"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQuestDefSet(SurveyId='SAGIA_ESRV_CUSTOMER_SATISFACTION',SurveyVersion='0000000001',Language='EN',QuestID='q1')",
+						"type": "ZESRV_ENH_ODATA_SRV.SurvQuestDef"
+					},
+					"SurveyId": "SAGIA_ESRV_CUSTOMER_SATISFACTION",
+					"ApplicationId": "CRM_SURVEY_SERVICE",
+					"SurveyVersion": "0000000001",
+					"Language": "EN",
+					"HierLevel": 2,
+					"Consnr": "",
+					"Quest": "",
+					"Mandquest": false,
+					"QuestID": "q1",
+					"AnsTypeSt": "",
+					"AnswType": "10",
+					"QuestTXT": "How satisfied are you with the employee who served you?",
+					"SurveyQuestDefToSurvQuestDDLBNav": {
+						"results": [
+							{
+								"__metadata": {
+									"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='SAGIA_ESRV_CUSTOMER_SATISFACTION',QuestID='q1')",
+									"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='SAGIA_ESRV_CUSTOMER_SATISFACTION',QuestID='q1')",
+									"type": "ZESRV_ENH_ODATA_SRV.SurvQustDDLB"
+								},
+								"SurveyId": "SAGIA_ESRV_CUSTOMER_SATISFACTION",
+								"QuestID": "q1",
+								"SurveyVersion": "0000000001",
+								"Language": "EN",
+								"AnsHierLevel": 3,
+								"AnsID": "a1",
+								"AnsText": "Very Satisfied",
+								"ControlID": "id_005056b11c891ed8a3ee5f1d7729072a"
+							},
+							{
+								"__metadata": {
+									"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='q1')",
+									"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='q1')",
+									"type": "ZESRV_ENH_ODATA_SRV.SurvQustDDLB"
+								},
+								"SurveyId": "",
+								"QuestID": "q1",
+								"SurveyVersion": "0000000001",
+								"Language": "EN",
+								"AnsHierLevel": 3,
+								"AnsID": "a1",
+								"AnsText": "Satisfied",
+								"ControlID": "id_005056b11c891ed8a3ee63b7f6f7472a"
+							},
+							{
+								"__metadata": {
+									"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='q1')",
+									"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='q1')",
+									"type": "ZESRV_ENH_ODATA_SRV.SurvQustDDLB"
+								},
+								"SurveyId": "",
+								"QuestID": "q1",
+								"SurveyVersion": "0000000001",
+								"Language": "EN",
+								"AnsHierLevel": 3,
+								"AnsID": "a1",
+								"AnsText": "Neutral",
+								"ControlID": "id_005056b11c891ed8a3ee67307c8c472a"
+							},
+							{
+								"__metadata": {
+									"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='q1')",
+									"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='q1')",
+									"type": "ZESRV_ENH_ODATA_SRV.SurvQustDDLB"
+								},
+								"SurveyId": "",
+								"QuestID": "q1",
+								"SurveyVersion": "0000000001",
+								"Language": "EN",
+								"AnsHierLevel": 3,
+								"AnsID": "a1",
+								"AnsText": "Not Satisfied",
+								"ControlID": "id_005056b11c891ed8a3ee69790b48872a"
+							},
+							{
+								"__metadata": {
+									"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='q1')",
+									"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='q1')",
+									"type": "ZESRV_ENH_ODATA_SRV.SurvQustDDLB"
+								},
+								"SurveyId": "",
+								"QuestID": "q1",
+								"SurveyVersion": "0000000001",
+								"Language": "EN",
+								"AnsHierLevel": 3,
+								"AnsID": "a1",
+								"AnsText": "Extremely Dissatisfied",
+								"ControlID": "id_005056b11c891ed8a3ee6c3d5355c72a"
+							}
+						]
+					}
+				},
+				{
+					"__metadata": {
+						"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQuestDefSet(SurveyId='SAGIA_ESRV_CUSTOMER_SATISFACTION',SurveyVersion='0000000001',Language='EN',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+						"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQuestDefSet(SurveyId='SAGIA_ESRV_CUSTOMER_SATISFACTION',SurveyVersion='0000000001',Language='EN',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+						"type": "ZESRV_ENH_ODATA_SRV.SurvQuestDef"
+					},
+					"SurveyId": "SAGIA_ESRV_CUSTOMER_SATISFACTION",
+					"ApplicationId": "CRM_SURVEY_SERVICE",
+					"SurveyVersion": "0000000001",
+					"Language": "EN",
+					"HierLevel": 2,
+					"Consnr": "",
+					"Quest": "",
+					"Mandquest": false,
+					"QuestID": "id_005056b11c891ed8a3ee86f99bfec733",
+					"AnsTypeSt": "",
+					"AnswType": "10",
+					"QuestTXT": "What is your overall satisfaction about the service provided?",
+					"SurveyQuestDefToSurvQuestDDLBNav": {
+						"results": [
+							{
+								"__metadata": {
+									"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='SAGIA_ESRV_CUSTOMER_SATISFACTION',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+									"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='SAGIA_ESRV_CUSTOMER_SATISFACTION',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+									"type": "ZESRV_ENH_ODATA_SRV.SurvQustDDLB"
+								},
+								"SurveyId": "SAGIA_ESRV_CUSTOMER_SATISFACTION",
+								"QuestID": "id_005056b11c891ed8a3ee86f99bfec733",
+								"SurveyVersion": "0000000001",
+								"Language": "EN",
+								"AnsHierLevel": 3,
+								"AnsID": "id_005056b11c891ed8a3ee8a94aeaa4736",
+								"AnsText": "Very Satisfied",
+								"ControlID": "id_005056b11c891ed8a3ee8ba3ba050736"
+							},
+							{
+								"__metadata": {
+									"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+									"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+									"type": "ZESRV_ENH_ODATA_SRV.SurvQustDDLB"
+								},
+								"SurveyId": "",
+								"QuestID": "id_005056b11c891ed8a3ee86f99bfec733",
+								"SurveyVersion": "0000000001",
+								"Language": "EN",
+								"AnsHierLevel": 3,
+								"AnsID": "id_005056b11c891ed8a3ee8a94aeaa4736",
+								"AnsText": "Satisfied",
+								"ControlID": "id_005056b11c891ed8a3ee8e0e68c72736"
+							},
+							{
+								"__metadata": {
+									"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+									"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+									"type": "ZESRV_ENH_ODATA_SRV.SurvQustDDLB"
+								},
+								"SurveyId": "",
+								"QuestID": "id_005056b11c891ed8a3ee86f99bfec733",
+								"SurveyVersion": "0000000001",
+								"Language": "EN",
+								"AnsHierLevel": 3,
+								"AnsID": "id_005056b11c891ed8a3ee8a94aeaa4736",
+								"AnsText": "Neutral",
+								"ControlID": "id_005056b11c891ed8a3ee8f87a0b28736"
+							},
+							{
+								"__metadata": {
+									"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+									"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+									"type": "ZESRV_ENH_ODATA_SRV.SurvQustDDLB"
+								},
+								"SurveyId": "",
+								"QuestID": "id_005056b11c891ed8a3ee86f99bfec733",
+								"SurveyVersion": "0000000001",
+								"Language": "EN",
+								"AnsHierLevel": 3,
+								"AnsID": "id_005056b11c891ed8a3ee8a94aeaa4736",
+								"AnsText": "Not Satisfied",
+								"ControlID": "id_005056b11c891ed8a3ee916c7a464736"
+							},
+							{
+								"__metadata": {
+									"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+									"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurvQustDDLBSet(SurveyId='',QuestID='id_005056b11c891ed8a3ee86f99bfec733')",
+									"type": "ZESRV_ENH_ODATA_SRV.SurvQustDDLB"
+								},
+								"SurveyId": "",
+								"QuestID": "id_005056b11c891ed8a3ee86f99bfec733",
+								"SurveyVersion": "0000000001",
+								"Language": "EN",
+								"AnsHierLevel": 3,
+								"AnsID": "id_005056b11c891ed8a3ee8a94aeaa4736",
+								"AnsText": "Extremely Dissatisfied",
+								"ControlID": "id_005056b11c891ed8a3ee93634f298736"
+							}
+						]
+					}
+				}
+			]
+		},
+		"SurveyHdrToSurvQuestAnsNav": {
+			"__deferred": {
+				"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SurveyHDRSet(Surveyid='SAGIA_ESRV_CUSTOMER_SATISFACTION',SurveyVersion='0000000001',Language='')/SurveyHdrToSurvQuestAnsNav"
+			}
+		}
+	}
+}

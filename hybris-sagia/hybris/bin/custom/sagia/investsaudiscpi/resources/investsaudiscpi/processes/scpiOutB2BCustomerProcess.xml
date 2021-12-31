@@ -1,0 +1,14 @@
+
+<process xmlns="http://www.hybris.de/xsd/processdefinition" start="sendB2BCustomer" name="scpiOutB2BCustomerProcess"
+		 processClass="com.investsaudi.model.scpi.outbound.process.ScpiOutB2BCustomerProcessModel" onError="error">
+
+	<action id="sendB2BCustomer" bean="sendB2BCustomerToScpiAction">
+		<transition name="OK" to="success"/>
+		<transition name="NOK" to="error"/>
+	</action>
+
+	<end id="error" state="ERROR">Something went wrong while sending b2bCustomer to SCPI.</end>
+	<end id="failed" state="FAILED">Process failed while sending b2bCustomer to SCPI.</end>
+	<end id="success" state="SUCCEEDED">B2BCustomer sent successfully to SCPI.</end>
+
+</process>

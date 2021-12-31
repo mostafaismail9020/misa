@@ -1,0 +1,438 @@
+.header-tutorial-header-btn{
+    display: none;
+}
+.eServiceTutorial {
+    padding: 0;
+    background: #ccc; 
+    list-style: none;
+    display: none;
+    * {
+        backface-visibility: hidden;
+    }
+    
+    &-panel {
+        position: absolute;
+        top: 0;
+        max-width: 598px;
+        width: auto;
+        transition: all 0.25s ease-out;
+        
+        &_top {
+            transform: translateY(-100%);
+            top: 0;
+            max-width: 583px;
+            padding-bottom: 30px;
+            padding-left: 15px;
+            padding-right: 15px;
+            left: 0;
+            right: auto;
+            [dir="rtl"] & {
+                transform: translateY(-100%);
+                left: 0;
+                right: auto;
+            }             
+        }
+        
+        &_bottom {
+            transform: translateY(100%);
+            top: auto;
+            bottom: 0;
+            padding-top: 30px;
+            padding-left: 15px;
+            padding-right: 15px;
+            left: 0;
+            right: auto;
+            [dir="rtl"] & {
+                transform: translateY(100%);
+                left: 0;
+                right: auto;
+            }              
+        }
+        &_left {
+            top: 50%;
+            left: 0;
+            transform: translate(-100%, -50%); 
+            padding: 0 30px 30px 15px;
+            [dir="rtl"] & {
+                top: 50%;
+                left: 0;
+                right: auto;
+                transform: translate(-100%, -50%); 
+                padding: 0 30px 30px 15px;
+            }              
+        }
+        &_right {
+            top: 50%;
+            left: auto;
+            right: 0;
+            transform: translate(100%, -50%);
+            padding: 0 15px 30px 30px;
+            [dir="rtl"] & {
+                top: 50%;
+                left: auto;
+                right: 0;
+                transform: translate(100%, -50%);
+                padding: 0 15px 30px 30px;
+            }            
+        }        
+    }
+    
+    &-panelInner {
+        border-radius: 0 40px 0 40px;
+        background: #fff;
+        padding: 50px 32px 32px 32px;
+        box-shadow: 0 2px 30px 0 rgba(28, 36, 44, 0.12);
+        max-width: 553px;
+        margin-left: auto;
+    }
+    
+    &-header {
+        position: relative;
+    }
+    
+    &-headline {
+        font-size: 25px;
+        font-weight: normal;
+        color: @apple;
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+    
+    &-highlight {
+        position: fixed;
+        box-shadow: 0 0 0px 10000px rgba(28, 36, 44, 0.32);
+        transition: width 0.25s ease-out, height 0.25s ease-out, top 0.25s ease-out, left 0.25s ease-out, padding 0.25s ease-out;
+        z-index: 30000;
+        backface-visibility: hidden;
+        
+        &_close {
+            animation: closePanel 0.3s ease-out 0s forwards;
+            @keyframes closePanel {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+        
+        @moveArrowDuration: 0.25s;
+        @moveArrowDelay: 0.3s;
+        
+        &_top {
+            
+            .eServiceTutorial-arrow {
+                bottom: auto;
+                top: -1px;
+                left: 50%;
+                opacity: 0;
+                width: 40px;
+                height: 30px;
+                transform: translate(-50%,-100%);
+                animation: moveArrowFromTop @moveArrowDuration ease-out @moveArrowDelay forwards;
+                @keyframes moveArrowFromTop {
+                    0% {
+                        opacity: 0;
+                        top: -30px;
+                    }
+                    100% {
+                        opacity: 1;
+                        top:-1px;
+                    }
+                }
+                
+                
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    background: #fff;
+                    transform: rotate(45deg);
+                    top: -30px;
+                }
+                
+                
+                //rtl overwrites
+                [dir="rtl"] & {
+                    transform: translate(-50%,-100%);
+                    left: 50%;
+                    right: auto;
+                }                  
+                
+            }
+          
+        }
+        
+        &_bottom {
+            
+            .eServiceTutorial-arrow {
+                bottom: -1px;
+                top: auto;
+                left: 50%;
+                opacity: 0;
+                width: 40px;
+                height: 30px;
+                transform: translate(-50%,100%);
+                animation: moveArrowFromBottom @moveArrowDuration ease-out @moveArrowDelay forwards;
+                @keyframes moveArrowFromBottom {
+                    0% {
+                        opacity: 0;
+                        bottom: -30px;
+                    }
+                    100% {
+                        opacity: 1;
+                        bottom:-1px;
+                    }
+                }
+                
+                
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    background: #fff;
+                    transform: rotate(45deg);
+                    bottom: -30px;
+                }
+                
+                //rtl overwrites
+                [dir="rtl"] & {
+                    transform: translate(-50%,100%);
+                    left: 50%;
+                    right: auto;
+                }                
+            }
+          
+        }        
+        
+        &_right {
+            .eServiceTutorial-arrow {
+                width: 30px;
+                height: 40px;
+                bottom: auto;
+                top: 50%;
+                left: auto;
+                right: -1px;
+                opacity: 0;
+                transform: translate(100%, -50%);
+                animation: moveArrowFromRight @moveArrowDuration ease-out @moveArrowDelay forwards;
+                @keyframes moveArrowFromRight {
+                    0% {
+                        opacity: 0;
+                        right: -30px;
+                    }
+                    100% {
+                        opacity: 1;
+                        right:-1px;
+                    }
+                }
+                
+                //rtl overwrites
+                [dir="rtl"] & {
+                    width: 30px;
+                    height: 40px;
+                    bottom: auto;
+                    top: 50%;
+                    left: auto;
+                    right: -1px;
+                    transform: translate(100%, -50%);
+                    @keyframes moveArrowFromRight {
+                        0% {
+                            opacity: 0;
+                            right: -30px;
+                        }
+                        100% {
+                            opacity: 1;
+                            right:-1px;
+                        }
+                    }
+                }                  
+                
+                
+                
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    background: #fff;
+                    transform: rotate(45deg);
+                    right: -30px;
+                    [dir="rtl"] & {
+                        transform: rotate(45deg);
+                        right: -30px;                        
+                    }
+                }                  
+            }            
+        }
+        
+        &_left {
+            .eServiceTutorial-arrow {
+                width: 30px;
+                height: 40px;
+                bottom: auto;
+                top: 50%;
+                left: -1px;
+                right: auto;
+                opacity: 0;
+                transform: translate(-100%, -50%);
+                animation: moveArrowFromLeft @moveArrowDuration ease-out @moveArrowDelay forwards;
+                @keyframes moveArrowFromLeft {
+                    0% {
+                        opacity: 0;
+                        left: -30px;
+                    }
+                    100% {
+                        opacity: 1;
+                        left:-1px;
+                    }
+                }
+                [dir="rtl"] & {
+                    bottom: auto;
+                    top: 50%;
+                    left: -1px;
+                    right: auto;
+                    transform: translate(-100%, -50%);
+                    @keyframes moveArrowFromLeft {
+                        0% {
+                            opacity: 0;
+                            left: -30px;
+                        }
+                        100% {
+                            opacity: 1;
+                            left:-1px;
+                        }
+                    }                    
+                }
+                
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    background: #fff;
+                    transform: rotate(45deg);
+                    left: -30px;
+                    right: auto;
+                    [dir="rtl"] & {
+                        transform: rotate(45deg);
+                        left: -30px;
+                        right: auto;
+                    }
+                }                  
+            }            
+        }        
+    }
+    
+    &-arrow {
+        position: absolute;
+        z-index: 30000;
+        overflow: hidden;
+        backface-visibility: hidden;
+    }
+    
+    &-description {
+        font-size: 18px;
+        color: #32465a;
+        font-style: italic;
+        margin-right: 24px;
+        flex: 1 1 auto;
+        &:only-child {
+            margin-right: 0;
+        }
+        #media-breakpoint-down(xs, {
+			margin-right: 0;
+		});         
+    }
+    
+    &-body {
+        display: flex;
+        #media-breakpoint-down(xs, {
+			flex-wrap: wrap;
+		});
+    }
+    
+    &-actions {
+        flex: 0 0 auto;
+        #media-breakpoint-down(xs, {
+			margin-top: 16px;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+		});        
+    }
+    
+    &-close {
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        position: absolute;
+        top: -20px;
+        right: 0;
+        
+        svg path{
+            fill: #7b838c;
+	        stroke: #7b838c;            
+        }
+        
+        &:hover svg path{
+            fill: #1c242c;
+            stroke: #1c242c;            
+        }
+    }
+}
+
+
+
+.eServiceTutorial-test {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    
+    &-item {
+
+        padding: 30px;
+        text-align: center;
+        width: 100%;
+        span {
+            width: 160px;
+            height: 60px;
+            line-height: 60px;
+            display: inline-block;
+            background: #ccc;
+        }
+        &:nth-child(1) {
+            text-align: left;
+//            margin-left: 10%;
+            padding: 0;
+            margin: 30px 0;
+            span {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        &:nth-child(2) {
+            text-align: left;
+            padding: 0;
+            margin: 60px 0 30px;
+            span {
+                width: 80%;
+                max-width: 100%;
+            }
+        }
+        &:nth-child(3) {
+            text-align: left;
+            margin-left: 20%;
+        }         
+    }
+}

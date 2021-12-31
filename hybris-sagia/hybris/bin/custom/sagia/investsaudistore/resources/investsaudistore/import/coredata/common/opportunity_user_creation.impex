@@ -1,0 +1,47 @@
+$contentCatalog=investsaudiportalContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailFromEmail=info@misa.gov.sa
+$emailFromName=Customer Services Team
+$lang = en
+$jarResource=jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+$jarResourceCms=jar:com.sap.ibso.eservices.core.setup.CoreSystemSetup&/sagiacore/import/cockpits/cmscockpit
+
+################## Start Opportunity User Email Template  #####################
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; OpportunityUserEmailTemplate    ; Opportunity User Email Template       ; true ; OpportunityUserEmailTemplate    ; sagia_Opportunity_User_Email_Subject    ; sagia_Opportunity_User_Email_Body    ; EmailPage
+
+# Templates for CMS Cockpit Page Edit
+UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; ; OpportunityUserEmailTemplate    ; $jarResourceCms/structure-view/structure_opportunity_User_Email.vm
+
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'OpportunityUserEmailTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'OpportunityUserEmailTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-OpportunityUserEmail      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-OpportunityUserEmail    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-OpportunityUserEmail ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@misa.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; OpportunityUserEmail    ; Opportunity User Email    ; OpportunityUserEmailTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; sagia_Opportunity_User_Email_Body       ; com.investsaudi.email.context.OpportunityUserEmailContext
+; sagia_Opportunity_User_Email_Subject    ; com.investsaudi.email.context.OpportunityUserEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; sagia_Opportunity_User_Email_Body       ; "Opportunity User Body"          ; $jarResource/email-opportunityUserEmailBody.vm
+; sagia_Opportunity_User_Email_Subject    ; "Opportunity User Subject"       ; $jarResource/email-opportunityUserEmailSubject.vm
+
+################## End Opportunity User Email Template  #####################

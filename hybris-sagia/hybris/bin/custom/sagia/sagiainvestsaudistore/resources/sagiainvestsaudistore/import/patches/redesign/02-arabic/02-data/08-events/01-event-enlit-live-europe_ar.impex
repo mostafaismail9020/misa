@@ -1,0 +1,37 @@
+############# EVENT  Enlit live Europe ########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$eventNameAr= معرض "ان ليت" أوروبا
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+                             							  
+INSERT_UPDATE EventKeyDetails; $contentCV[unique = true]  ;uid[unique = true]			 	;keyName[lang = ar]			;keyValue[lang = ar];
+                             ;							  ; enlit-key-1         			 ;عدد العارضون				; 1,000                                  
+							 ;							  ; enlit-key-2         			 ;عدد المتحدثون				; 500                                 
+                           	 ;						      ; enlit-key-3        				 ;عدد الحضور				; 15,000 
+                             ;							  ; enlit-key-4					 	; القطاع					; الطاقة والمياه / المعارض							 
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]      ; eventName[lang = ar]  ; eventLocation[lang = ar]	;
+										;						  ; event-enlit-live-europe ; $eventNameAr          ; ميلان, ايطاليا 			;
+
+ 
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]    		; eventShortInformation[lang = ar]	;                                                                                                                 
+                                        ;                         ; event-enlit-live-europe     ; "تتعهد ''إنلت'' بتمهيد طريق التغيير الذي نحتاجه لضمان أفضل مُستقبل ممكن لصناعتنا وعالمنا." ;
+ 
+																														
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]			; eventKeyDetails(uid, $contentCV)	;
+										;						  ;event-enlit-live-europe  	; enlit-key-1,enlit-key-2,enlit-key-3,enlit-key-4	;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]			; eventFullDescription[lang = ar];
+										;						  ; event-enlit-live-europe  	; "
+إنلت هي سلسلة من الأحداث والفعاليات المُتعلقة بالطاقة وتُعد فريدة من نوعها لكونها أكثر من مجرد فعاليات وأحداث تتعلق بالطاقة. بل تُعتبر منظومة كاملة تعمل وتتعاون وتبتكر طوال أيام السنة ولمدة 365 يوم لحل أكثر المسائل الملحة المتعلقة بالطاقة.
+<p>سيلتقي مجتمع إنلت  بنسخته الأوروبية في منصتنا الإلكترونية لمدة ثلاثة أيام في ميلانو من تاريخ 30 نوفمبر وحتى تاريخ 2 ديسمبر من عام 2021م؛ من أجل استلهام الأفكار واجراء المناقشات ووضع التدابير للمُضيّ قدما فيما يخص التحول في مجال الطاقة.</p>
+<p>وهكذا كانت بداية  إنلت: منتدى شامل وكامل ومتنامي بشكلٍ مستمر، ويتطرق لجميع جوانب التحول في مجال الطاقة في أوروبا</p>
+";
+

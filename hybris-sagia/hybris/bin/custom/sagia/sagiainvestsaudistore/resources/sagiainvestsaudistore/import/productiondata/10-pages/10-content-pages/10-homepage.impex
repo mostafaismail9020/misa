@@ -1,0 +1,114 @@
+$page = homepage
+$template = portalHomepageTemplate
+$pageName = Homepage
+$titleEn = $pageName
+$titleAr = $pageName
+$pagelabel = portalHomepage
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]                                                            ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $titleEn        ; $titleAr        ; $pageName             ; Invest Saudi,Home,Home, invest Saudi, Saudi Arabia, Opportunities, investments ; $template                      ; $pagelabel ; true    ;                          ;                              ;
+
+
+UPDATE CMSSite; uid[unique = true]; startingPage(uid, $contentCV)
+              ; $siteUid          ; $page
+
+
+INSERT_UPDATE Media; code[unique = true]             ; realFileName                    ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; totalpopulationnormal.svg       ; totalpopulationnormal.svg       ; $siteResource/totalpopulationnormal.svg                                     ; image/svg+xml               ;                                          ; ""     ;
+                   ; totalpopulationwhite.svg        ; totalpopulationwhite.svg        ; $siteResource/totalpopulationwhite.svg                                      ; image/svg+xml               ;                                          ; ""     ;
+                   ; whycontainerbackgroundimage.png ; whycontainerbackgroundimage.png ; $siteResource/whycontainerbackgroundimage.png                               ; image/png                   ;                                          ; ""     ;
+                   ; banner-01.png                   ; banner-01.png                   ; $siteResource/banner-v2-3-01.png                                            ; image/png                   ;                                          ; ""     ;
+                   ; banner-02.jpg                   ; banner-02.jpg                   ; $siteResource/invest_saudi_landing_page_header-01.jpg                       ; image/jpg                   ;                                          ; ""     ;
+                   ; banner-03.png                   ; banner-03.png                   ; $siteResource/background_1.png                                              ; image/png                   ;                                          ; ""     ;
+
+INSERT_UPDATE InvestSaudiNumberTalkComponent; uid[unique = true]  ; name                 ; number[lang = ar] ; text[lang = ar]                             ; number[lang = en]; text[lang = en]                       ; imageNormal(code, $contentCV)    ; imageHover(code, $contentCV)    ; &componentRef       ; $contentCV[unique = true]
+                                            ; numbertalk-1 ; Number Talk 1 ; 782 782;إجمالي عدد السكان; 33.4 Billion  ; Nominal GDP                      ; totalpopulationnormal.svg ; totalpopulationwhite.svg ; numbertalk-1 ;
+                                            ; numbertalk-2 ; Number Talk 2 ; 230.8 مليار دولار ; الأسهم الواردة من الاستثمار الأجنبي المباشر;$ 230.8 Billion  ; FDI inward stock                      ; totalpopulationnormal.svg ; totalpopulationwhite.svg ; numbertalk-2 ;
+                                            ; numbertalk-3 ; Number Talk 3 ; 33.4 السكان;إجمالي عدد السكان; 33.4 Million  ; Total Population                      ; totalpopulationnormal.svg ; totalpopulationwhite.svg ; numbertalk-3 ;
+                                            ; numbertalk-4 ; Number Talk 4 ; 1.6%;معدل النمو السكاني (5 سنوات القادمة);1.6%             ; Population Growth Rate (next 5 years) ; totalpopulationnormal.svg ; totalpopulationwhite.svg ; numbertalk-4 ;
+                                            ; numbertalk-5 ; Number Talk 5 ; 23.570 دولارًا  ;الناتج المحلي الإجمالي للفرد الواحد;$ 23,570         ; GDP Per Capita                        ; totalpopulationnormal.svg ; totalpopulationwhite.svg ; numbertalk-5 ;
+											; numbertalk-6 ; Number Talk 6 ; 3.2 مليون; القوى العاملة السعودية;3.2 Million      ; Saudi labor force                     ; totalpopulationnormal.svg ; totalpopulationwhite.svg ; numbertalk-6  ;
+
+INSERT_UPDATE InvestSaudiNumberTalkContainer; uid[unique = true]          ; name                         ; title[lang = en]  ; title[lang = ar]  ; simpleCMSComponents(&componentRef)                                                                                      ; &componentRef               ; $contentCV[unique = true]
+                                            ; numbertalk-container ; Home Number Talk Container ; When Numbers Talk ; السعودية بالأرقام ; numbertalk-1,numbertalk-2,numbertalk-3,numbertalk-4,numbertalk-5,numbertalk-6 ; numbertalk-container ;
+
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]     ; name                   ; url                                                              ; &linkRef               ; target(code)[default = 'sameWindow']
+                              ;                          ; banner1ButtonURL ; banner1ButtonURL ; https://investsaudi.sa/en/news/investment-highlight-summer-2020/ ; banner1ButtonURL ;
+                              ;                          ; banner2ButtonURL ; banner2ButtonURL ; https://investsaudi.sa/en/news/misa-covid-19-response-center-mcrc-now-live/ ; banner2ButtonURL ;
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]; name            ; descriptionText[lang = ar]                                                                                 ; descriptionText[lang = en]                                                                                                 ; buttonText[lang = en]  ; buttonText[lang = ar]   ; image(code, $contentCV); buttonURL(&linkRef)    ; link  ; &componentRef   ; $contentCV[unique = true]
+                                        ; banner-1   ; Banner 1 ; موجز الاستثمار – صيف 2020 <span class="diff-color mp-bold">استمرارية ومرونة للأعمال والاستثمار  </span>    ; INVESTMENT HIGHLIGHTS SUMMER 2020 <span class="diff-color mp-bold">A RETURN TO BUSINESS WITH AGILITY AND RESILIENCE</span> ; FULL REPORT            ; التقرير كاملاً          ; banner-01.png   ; banner1ButtonURL ; true  ; banner-1 ;
+                                        ; banner-2   ; Banner 2 ; (MCRC) مركز الاستجابة لأزمة كورونا  <span class="diff-color mp-bold"></span>                               ; The MISA COVID-19 RESPONSE CENTER (MCRC) <span class="diff-color mp-bold"></span>                                          ; CLICK NOW.. KNOW MORE. ; تواصل معنا.. بالضغط هنا ; banner-02.jpg   ; banner2ButtonURL ; true  ; banner-2 ;
+                                        ; banner-3   ; Banner 3 ; مرحبا بك في <span class="diff-color mp-bold">المملكة العربية السعودية</span><br>البيئة الاستثمارية الرائدة ; Welcome to <span class="diff-color mp-bold">Saudi Arabia,</span> <br/>   the land of growing businesses and investments    ;                        ;                         ; banner-03.png   ;                        ; false ; banner-3 ;
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      ; name                    ; simpleCMSComponents(&componentRef)              ; &componentRef           ; $contentCV[unique = true]
+                                        ; banner-container ; Banner Container ; banner-1,banner-2,banner-3 ; banner-container ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; $contentCV[unique = true]; linkName  [lang = en]                             ; url
+                              ; why-1-link ;                          ; Saudi Arabia's diversification and reform journey ; /why-saudi-arabia?tab=1
+                              ; why-2-link ;                          ; Game-changing opportunities                       ; /why-saudi-arabia?tab=2
+                              ; why-3-link ;                          ; Integrated infrastructure                         ; /why-saudi-arabia?tab=3
+                              ; why-4-link ;                          ; Young and skilled workforce                       ; /why-saudi-arabia?tab=4
+                              ; why-5-link ;                          ; Expanding quality of life                         ; /why-saudi-arabia?tab=5
+                              ; why-6-link ;                          ; Leading financial sector                          ; /why-saudi-arabia?tab=6
+
+
+INSERT_UPDATE InvestSaudiWhyComponent; uid[unique = true]; name         ; url(uid, $contentCV); index(); &componentRef; $contentCV[unique = true];
+                                     ; why-1      ; Why 1 ; why-1-link   ; 1      ; why-1 ;
+                                     ; why-2      ; Why 2 ; why-2-link   ; 2      ; why-2 ;
+                                     ; why-3      ; Why 3 ; why-3-link   ; 3      ; why-3 ;
+                                     ; why-4      ; Why 4 ; why-4-link   ; 4      ; why-4 ;
+                                     ; why-5      ; Why 5 ; why-5-link   ; 5      ; why-5 ;
+                                     ; why-6      ; Why 6 ; why-6-link   ; 6      ; why-6 ;
+
+
+INSERT_UPDATE InvestSaudiWhyContainer; uid[unique = true]   ; name                 ; simpleCMSComponents(&componentRef)                                            ; &componentRef        ; $contentCV[unique = true]; title             ; backgroundImage(code, $contentCV)      ;
+                                     ; why-container     ; Home Why Container ; why-1,why-2,why-3,why-4,why-5,why-6 ; why-container ;                          ; Why Saudi Arabia? ; whycontainerbackgroundimage.png  ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url
+                              ; sectors-explore-all-url ;                          ; EXPLORE ALL          ; /sectors-opportunities
+
+
+INSERT_UPDATE InvestSaudiSectorsComponent; uid[unique = true]       ; name                     ; category(code, $catalogVersion); &componentRef            ; $contentCV[unique = true]; title           ; exploreAllURL(uid, $contentCV) ; exploreAllText[lang = en]; exploreAllText[lang = ar];
+                                         ; sectors-component ; Sectors Component ; sector-opportunities    ; sectors-component ;                          ; Where To Invest ; sectors-explore-all-url ; EXPLORE ALL              ; الكل استكشف
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                        ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; featured-opportunities-explore-all ;                          ; Explore all          ; sectors-opportunities/opportunities/
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]               ; name                             ; title[lang = en]       ; title[lang = ar]       ; numberItensDisplayed; exploreAllURL(uid, $contentCV)     ; &componentRef                    ; $contentCV[unique = true];
+                                                       ; featured-opportunities-component ; Featured Opportunities Component ; Featured Opportunities ; Featured Opportunities ; 3                   ; featured-opportunities-explore-all ; featured-opportunities-component ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                ; $contentCV[unique = true]; linkName  [lang = en]; linkName [lang = ar]; contentPage(uid, $contentCV);
+                              ; last-news-explore-all-link ;                          ; EXPLORE ALL          ; EXPLORE ALL         ; news
+
+INSERT_UPDATE InvestSaudiLastNewsComponent; uid[unique = true]         ; name                       ; title[lang = en]; title[lang = ar]; numberOfNews; exploreAllUrl(uid, $contentCV)    ; exploreAllUrlName[lang = en]; exploreAllUrlName[lang = ar]; &componentRef; $contentCV[unique = true];
+                                          ; last-news-component ; Last News Component ; Stay Up To Date ; Stay Up To Date ; 3           ; last-news-explore-all-link ; EXPLORE ALL                 ; EXPLORE ALL                 ; last-news-component
+
+INSERT_UPDATE ContentSlot; uid[unique = true]             ; name                 ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalHomepageBannerSlot-$page ; PortalHomepageBanner ; true  ; banner-container
+                         ; PortalPageTopSlot-$page        ; PortalPageTop        ; true  ; numbertalk-container
+                         ; PortalPageMain-$page           ; PortalPageMain       ; true  ; why-container,sectors-component,featured-opportunities-component,last-news-component
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]             ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalHomepageBannerSlot-$page ; PortalHomepageBanner   ; PortalHomepageBannerSlot-$page             ;                                                      ;
+                                ; PortalPageTopSlot-$page        ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMain-$page           ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+

@@ -1,0 +1,477 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = en
+
+
+#### Opportunities from "AlBahah"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ;DEVELOP-3-STAR-HOTEL-IN-ALBAHAH ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 3 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 40-100 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership</span></li>
+  <li><span>Location: Al Bahah</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-4-STAR-HOTEL-IN-ALBAHAH  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 60-120 Mn SAR</span></li>
+    <li><span> Investment model options: leasing, shared revenue model or 100% ownership</span></li>
+  <li><span>Location: Al Bahah</span></li>
+    <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-4-STAR-RESORT-IN-ALBAHAH ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 250-350 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership/span></li>
+  <li><span>Location: Al Bahah</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ; DEVELOP-5-STAR-HOTEL-IN-ALBAHAH;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star hotel 150-300 keys</span></li>
+  <li><span>Expected Investment size 150-280 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Bahah</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ; DEVELOP-5-STAR-RESORT-IN-ALBAHAH ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 350-450 Mn SAR</span></li>
+      <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Bahah</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+
+#### Opportunities from "AlJouf"
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ;DEVELOP-3-STAR-HOTEL-IN-ALJOUF ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 3 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 40-100 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Jouf</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-4-STAR-HOTEL-IN-ALJOUF;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 60-120 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Jouf</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-4-STAR-RESORT-IN-ALJOUF  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 250-350 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Jouf</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+              ;DEVELOP-5-STAR-HOTEL-IN-ALJOUF  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star hotel 150-300 keys</span></li>
+  <li><span>Expected Investment size 150-280 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Jouf</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+
+                                ;DEVELOP-5-STAR-RESORT-IN-ALJOUF;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 350-450 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Jouf</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+
+#### Opportunities from "AlMadinah"
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ;DEVELOP-3-STAR-HOTEL-IN-MADINAH ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 3 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 40-100 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Madinah city</span></li>
+  <li><span>Estimated Project IRR: 8-10 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-4-STAR-HOTEL-IN-MADINAH;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 60-120 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Madinah city</span></li>
+  <li><span>Estimated Project IRR: 8-10 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-4-STAR-RESORT-IN-MADINAH ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 250-350 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Madinah city</span></li>
+  <li><span>Estimated Project IRR: 8-10 %</span></li>
+</ul>
+"
+
+                                ; DEVELOP-5-STAR-HOTEL-IN-MADINAH;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star hotel 150-300 keys</span></li>
+  <li><span>Expected Investment size 150-280 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Madinah city</span></li>
+  <li><span>Estimated Project IRR: 8-10 %</span></li>
+</ul>
+"
+
+                                ; DEVELOP-5-STAR-RESORT-IN-MADINAH;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 350-450 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Al Madinah city</span></li>
+  <li><span>Estimated Project IRR: 8-10 %</span></li>
+</ul>
+"
+
+
+#### Opportunities from "Taif"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ;DEVELOP-5-STAR-RESORT-IN-TAIF;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 350-450 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Taif</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-5-STAR-HOTEL-IN-TAIF  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star hotel 150-300 keys</span></li>
+  <li><span>Expected Investment size 150-280 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Taif</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-4-STAR-RESORT-IN-TAIF ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 250-350 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Taif</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+                                ;DEVELOP-4-STAR-HOTEL-IN-TAIF ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 60-120 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Taif</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+                                ;DEVELOP-3-STAR-HOTEL-IN-TAIF ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 3 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 40-100 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span>Location: Taif</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+
+#### Opportunities from "Aseer"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ;DEVELOP-5-STAR-RESORT-IN-ASEER ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star resort 300-400 keys</span></li
+    <li><span>Expected Investment size 350-450 Mn SAR</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or 100% ownership</span></li>
+  <li><span>Location: Aseer</span></li>
+    <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-3-STAR-HOTEL-IN-ASEER ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 3 star hotel 100-200 keys</span></li
+    <li><span>Expected Investment size 40-100 Mn SAR</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or 100% ownership</span></li>
+  <li><span>Location: Aseer</span></li>
+    <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+                                ;Aseer-Adventure-Park ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Investment size 60-200 Mn SAR</span></li
+</ul>
+"
+                                ;DEVELOP-5-STAR-HOTEL-IN-ASEER;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star hotel 150-300 keys</span></li
+    <li><span>Expected Investment size 150-280 Mn SAR</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or 100% ownership</span></li>
+  <li><span>Location: Aseer</span></li>
+    <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+                                ;Hospitality-College-in-Aseer-Region ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Investment size varies depending on size, location and programs offered</span></li
+    <li><span>The opportunity size will also depend on partnerships required with local and international parties</span></li>
+</ul>
+"
+                                ; DEVELOP-4-STAR-HOTEL-IN-ASEER   ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star hotel 100-200 keys</span></li
+    <li><span>Expected Investment size 60-120 Mn SAR</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or 100% ownership</span></li>
+  <li><span>Location: Aseer</span></li>
+    <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+                                ;DEVELOP-4-STAR-RESORT-IN-ASEER    ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><spanTo develop 4 star resort 300-400 keys</span></li
+    <li><span>Expected Investment size 250-350 Mn SAR</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or 100% ownership</span></li>
+  <li><span>Location: Aseer</span></li>
+    <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+
+#### Opportunities from "Hail"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ;DEVELOP-5-STAR-RESORT-IN-HAIL  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star resort 300-400 keys</span></li>
+  <li><span> Expected Investment size 350-450 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership/span></li>
+  <li><span> Location: Hail</span></li>
+  <li><span> Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-5-STAR-HOTEL-IN-HAIL ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star hotel 150-300 keys</span></li>
+  <li><span>Expected Investment size 150-280 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership/span></li>
+  <li><span> Location: Hail</span></li>
+  <li><span> Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+                                ; DEVELOP-4-STAR-RESORT-IN-HAIL  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 250-350 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership/span></li>
+  <li><span> Location: Hail</span></li>
+  <li><span> Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+                                ;DEVELOP-4-STAR-HOTEL-IN-HAIL ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 60-120 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership/span></li>
+  <li><span> Location: Hail</span></li>
+  <li><span> Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+                                ; DEVELOP-3-STAR-HOTEL-IN-HAIL;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 3 star hotel 100-200 keys</span></li>
+  <li><span> Expected Investment size 40-100 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership/span></li>
+  <li><span> Location: Hail</span></li>
+  <li><span> Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+
+#### Opportunities from "Jeddah"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+        ;DEVELOP-5-STAR-RESORT-IN-JEDDAH-obhur;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 350-450 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span> Location: Jeddah city</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-5-STAR-RESORT-IN-JEDDAH-corniche;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 350-450 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span> Location: Jeddah city</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-5-STAR-HOTEL-IN-JEDDAH ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 5 star hotel 150-300 keys</span></li>
+  <li><span>Expected Investment size 150-280 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span> Location: Jeddah city</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+                                ;DEVELOP-4-STAR-RESORT-IN-JEDDAH  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star resort 300-400 keys</span></li>
+  <li><span>Expected Investment size 250-350 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span> Location: Jeddah city</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+                                ; DEVELOP-4-STAR-HOTEL-IN-JEDDAH ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 4 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 60-120 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span> Location: Jeddah city</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+                                ; DEVELOP-3-STAR-HOTEL-IN-JEDDAH ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>To develop 3 star hotel 100-200 keys</span></li>
+  <li><span>Expected Investment size 40-100 Mn SAR</span></li>
+    <li><span>Investment model options: leasing, shared revenue model or 100% ownership </span></li>
+  <li><span> Location: Jeddah city</span></li>
+  <li><span>Estimated Project IRR: 10-12 %</span></li>
+</ul>
+"
+
+
+#### Opportunities from "KAEC"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ;The-Peninsula  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Investment size 1,100 Million SAR</span></li>
+  <li><span> Expected IRR 10 - 12%</span></li>
+    <li><span>Forms of collaboration: 
+ Joint venture
+ Outright purchase of land & 
+development (3rd party 
+investment)</span></li>
+</ul>
+"
+                                ; KAEC-Lagoona-Motor-Park;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Investment size 160 Million SAR</span></li>
+  <li><span>RoI Expected 12%</span></li>
+    <li><span>Completion 87%</span></li>
+  <li><span>Forms of collaboration: 
+ 3rd party investor 
+ Direct investment</span></li>
+</ul>
+"
+
+                                ;Private-Beach-Club;                    ;"
+
+<ul class='bulled-list mt-3'>
+  <li><span>Investment size 55 Million SAR</span></li>
+  <li><span>Expected IRR 12 - 14%</span></li>
+    <li><span>Forms of collaboration: 
+ Joint venture
+ Outright purchase of land & development </span></li>
+</ul>
+"
+                                ; Esmeralda-Sports-Complex;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Investment size 250 Million SAR</span></li>
+  <li><span>Expected IRR 10 - 12%</span></li>
+    <li><span>Completion 80%</span></li>
+  <li><span>Forms of collaboration: 
+ Joint venture
+ Direct investment </span></li>
+</ul>
+"
+
+

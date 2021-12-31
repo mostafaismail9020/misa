@@ -1,0 +1,85 @@
+$page = news-sagia-signs-manufacturing-localization
+$template = portalGlobalTemplate
+$name = SAGIA SIGNS MANUFACTURING LOCALIZATION AGREEMENT WITH GLAXOSMITHKLINE
+$titleEn = $name
+$titleAr = هيئة الاستثمار توقع مذكرة تفاهم مع شركة جلاكسو لزيادة توطين صناعاتها الدوائية في المملكة
+$shortDescEn = SAGIA Announces That It Has Signed A Memorandum Of Understanding With
+$shortDescAr = وقعت الهيئة العامة للاستثمار وشركة جلاكسو العربية السعودية المحدودة إحدى شركات
+$pagelabel = /news/sagia-signs-manufacturing-localization-agreement-with-glaxosmithkline
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; file               ; file.jpg    ; $siteResource/file.jpg                                                      ;                             ;                                          ; ""     ; ;
+                   ; file2              ; file2.jpg   ; $siteResource/file2.jpg                                                     ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias    ; $contentCV; ; ; ;
+                            ; media-container-$page   ; file,file2 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; file                              ; file                                ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 24.07.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>GlaxoSmithKline to expand local manufacturing capacity of innovative pharmaceutical portfolio and double full manufacturing by 2022</em></li>
+</ul>
+<ul>
+<li>Agreement to explore additional opportunities for technology transfer and to attract and develop more Saudi employees and local capabilities</li>
+</ul>
+<ul>
+<li>Announcement reflects rapid growth in opportunities in Saudi healthcare sector driven by demographic change and regulatory reform</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Riyadh, 23rd July 2019 &ndash; SAGIA announces that it has signed a memorandum of understanding with GlaxoSmithKline Saudi Arabia (&ldquo;GSK&rdquo;), which will result in significant localization of GSK&rsquo;s operations in the Kingdom.</p>
+<p>As part of the agreement, GSK intends to expand the local manufacturing capacity of its innovative pharmaceutical portfolio and double its full manufacturing by 2022. GSK will also explore additional opportunities for technology transfer and to attract and develop more Saudi employees and local capabilities.</p>
+<p>The agreement was signed in a ceremony in Riyadh today attended by Emin Fadıllıoğlu, Emerging Markets Central Senior Vice President of GSK, Senior Vice President, GSK, Luciano Andrade, VP &amp; General Manager of GSK Saudi Arabia, and HE Ibrahim Al Omar, Governor, SAGIA.</p>
+<p>&ldquo;Saudi Arabia has the highest expenditure on healthcare in the MENA region and with the population expected to grow by more than a quarter by 2030, there is real opportunity for international investors in the sector. This agreement reflects not only the potential for healthcare investment, but also for greater localization of healthcare manufacturing to meet that growing demand,&rdquo; said HE Ibrahim Al Omar, Governor, SAGIA.</p>
+<p>Luciano Andrade, VP &amp; General Manager of GSK Saudi Arabia, said: &ldquo;For over 65 years, GSK has been committed to improving patients&rsquo; access to innovative medicines across Saudi Arabia. The MoU we have signed today aims to expand our local manufacturing capacity in the areas of Respiratory, Antibiotics, HIV and Central Nervous Systems and reinforces our commitment to work with Saudi Government for a sustainable ecosystem that encourages innovation and investment in healthcare and Saudi talent development&rdquo;.</p>
+<p>Saudi Arabia has seen rapid growth in the number of investment licenses issued &ndash; the number of licenses issued in the first quarter of 2019 was 70% higher than that in the same period in 2018. There has been particularly strong growth in the number of UK companies; 24 licenses were awarded to UK firms in Q1 2019 alone &ndash; the equivalent of two a week.</p>
+<p>GSK has been operating in Saudi Arabia for more than 65 years and was the first multinational pharmaceutical company to establish a manufacturing facility in the Kingdom in the early 1990s. Today, 80% of GSK medicines supplied to Saudi patients are manufactured at its facility in Jeddah.</p>
+<p>Saudi Arabia is the largest spender on healthcare in the MENA region, with $46bn allocated by the government in 2019 and $130bn expected government expenditure on the sector from 2017-2021.</p>
+<p>The sector is expected to grow rapidly in the coming years as a consequence of population growth, ageing (the number of people aged over 50 is expected to rise 200% by 2030) and major reforms such as 100% foreign ownership being made possible in the sector for the first time in 2018.&nbsp;</p>
+<p>Saudi Arabia is undergoing a series of social and economic reforms that aim at realizing the Kingdom&rsquo;s economic potential under Vision 2030. Within two years, Saudi Arabia has implemented 45% of more than 500 economic reforms identified, including opening up a wide range of economic sectors to foreign investment, including allowing 100 percent foreign ownership in a range of new sectors.</p>
+<p>The World Bank ranked Saudi Arabia as the 4th largest reformer within the G20 and noted improvement across four key pillars in its latest Doing Business report. The investment principles provide an ongoing framework for reform to ensure continued economic development and encourage investment.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>وقعت الهيئة العامة للاستثمار وشركة جلاكسو العربية السعودية المحدودة إحدى شركات جلاسكو سميث كلاين العالمية في مقر الهيئة بالرياض مذكرة تفاهم تهدف إلى المساهمة في رفع مستوى توطين الصناعات الدوائية في المملكة.</p>
+<p>وتتضمن الاتفاقية توسيع الشركة لنطاق قدرتها التصنيعية في المجالات الدوائية بالمملكة، إلى جانب مضاعفة أعمالها التصنيعية الكاملة بحلول عام 2022. كما ستعمل شركة جلاكسو بموجب هذه الاتفاقية على استكشاف فرص إضافية لنقل تقنيات هذه الصناعة، والعمل على دعم وتدريب الكوادر السعودية، وبناء القدرات على هذا الصعيد.</p>
+<p>&nbsp;</p>
+<p>&nbsp;ووقع الاتفاقية من طرف الهيئة، محافظ الهيئة العامة للاستثمار المهندس إبراهيم العمر، ومن طرف الشركة، إمين فاديليوقلو، كبير نواب رئيس شركة جلاكسو سميث كلاين في الأسواق الناشئة المركزية، وبحضور سلطان مفتي وكيل المحافظ لجذب وتطوير الاستثمار، ولوسيانو أندرادي، نائب الرئيس والمدير العام لشركة جلاكسو سميث كلاين في المملكة العربية السعودية.</p>
+<p>وكشف المهندس إبراهيم&nbsp; العمر، محافظ الهيئة العامة للاستثمار، أن المملكة تعد الأكثر إنفاقًا&nbsp; في منطقة الشرق الأوسط وشمال أفريقيا في مجال الرعاية الصحية، لافتاً إلى أنه وفقاً للإحصائيات عن الزيادة المتوقعة في النمو السكاني بحلول عام 2030؛ فإن قطاع الرعاية الصحية يعد قطاعا واعدا على مستوى الاستثمارات وتوطين هذه الصناعات المتخصصة، إذ سيوفر فرصًا استثمارية مهمة، مؤكدًا أن مذكرة التفاهم الموقعة مع شركة جلاكسو العربية السعودية المحدودة تعكس أهمية التوطين المتنامي للصناعة في قطاع الرعاية الصحية، لمواكبة الاحتياج المتزايد فضلًا عن القيمة التنافسية للاستثمار في هذا القطاع.</p>
+<p>&nbsp;</p>
+<p>وفي تعليق على هذه الشراكة، أشار لوسيانو أندريد أن شركة جلاكسو سميث كلاين ما تزال تلتزم ولأكثر من 65 عامًا بتقديم أفضل الخدمات في مجال صناعة الأدوية والرعاية الصحية في المملكة، إذ تهدف هذه الاتفاقية إلى تغطية جوانب صحية مختلفة مثل الجهاز التنفسي والمضادات الحيوية وأمراض الأعصاب وفيروس نقص المناعة. وأضاف أن الشركة تعمل مع شركائها في المملكة على بناء منظومة وطنية مستدامة تشجع على الابتكار والاستثمار في القطاع الصحي وتطوير المواهب المحلية.</p>
+<p>جدير بالذكر، أن المملكة شهدت نموًّا كبيرًا في عدد التراخيص الاستثمارية؛ حيث ارتفعت نسبة الزيادة في عدد الرخص التي أصدرتها الهيئة العامة للاستثمار في الربع الأول من عام 2019 إلى 70%، مقارنة بالربع نفسه من عام 2018، فيما بلغ عدد الشركات البريطانية التي أصدرت رخصًا استثمارية 24 شركة في الربع الأول من هذا العام، أي ما يعادل رخصتي استثمار في الأسبوع الواحد.&nbsp;</p>
+<p>&nbsp;يشار إلى أن شركة جلاكسو سميث كلاين قد بدأت ممارسة أعمالها في المملكة قبل 65 عامًا، وكانت أول شركة دواء عالمية تؤسس منشأة لصناعة الأدوية في المملكة في العام 1992، واليوم فإن 80% من أدوية الشركة التي يستهلكها المرضى في السعودية يتم تصنيعها في مصنع الشركة بجدة.</p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

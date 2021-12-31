@@ -1,0 +1,387 @@
+$template = portalGlobalTemplate
+
+$incentivesFinancialSupportPage = incentives-pussort-financial-support
+$incentivesFinancialSupportPageName = Financial support
+$incentivesFinancialSupportTitleEn = $incentivesFinancialSupportPageName
+$incentivesFinancialSupportTitleAr = $incentivesFinancialSupportPageName
+$incentivesFinancialSupportPageLabel = /why-saudi-arabia/incentives-support/financial-support
+
+$incentivesFiscalSupportPage = incentives-pussort-fiscal-support
+$incentivesFiscalSupportPageName = Fiscal support
+$incentivesFiscalSupportTitleEn = $incentivesFiscalSupportPageName
+$incentivesFiscalSupportTitleAr = $incentivesFiscalSupportPageName
+$incentivesFiscalSupportPageLabel = /why-saudi-arabia/incentives-support/fiscal-support
+
+$incentivesEmploymentFundingPage = incentives-pussort-employment-funding
+$incentivesEmploymentFundingPageName = Employment funding
+$incentivesEmploymentFundingTitleEn = $incentivesEmploymentFundingPageName
+$incentivesEmploymentFundingTitleAr = $incentivesEmploymentFundingPageName
+$incentivesEmploymentFundingPageLabel = /why-saudi-arabia/incentives-support/employment-funding
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]               ; name                                 ; title[lang = en]                    ; title[lang = ar]                    ; description[lang = en]           ; keywords[lang = en]                                                                                            ; masterTemplate(uid, $contentCV)[default = $template]; label                                 ; homepage[default = false]; $contentCV[unique = true]; defaultPage[default = true]; approvalStatus(code)[default = 'approved']
+                         ; $incentivesFinancialSupportPage  ; $incentivesFinancialSupportPageName  ; $incentivesFinancialSupportTitleEn  ; $incentivesFinancialSupportTitleAr  ; $incentivesFinancialSupportPage  ; Invest Saudi,Incentives & Support - Why Saudi Arabia,Why Saudi Arabia,Incentives & Support, Financial Support  ;                                                     ; $incentivesFinancialSupportPageLabel  ;                          ;                          ;                            ;
+                         ; $incentivesFiscalSupportPage     ; $incentivesFiscalSupportPageName     ; $incentivesFiscalSupportTitleEn     ; $incentivesFiscalSupportTitleAr     ; $incentivesFiscalSupportPage     ; Invest Saudi,Incentives & Support - Why Saudi Arabia,Why Saudi Arabia,Incentives & Support, Fiscal Support     ;                                                     ; $incentivesFiscalSupportPageLabel     ;                          ;                          ;                            ;
+                         ; $incentivesEmploymentFundingPage ; $incentivesEmploymentFundingPageName ; $incentivesEmploymentFundingTitleEn ; $incentivesEmploymentFundingTitleAr ; $incentivesEmploymentFundingPage ; Invest Saudi,Incentives & Support - Why Saudi Arabia,Why Saudi Arabia,Incentives & Support, Employment Funding ;                                                     ; $incentivesEmploymentFundingPageLabel ;                          ;                          ;                            ;
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; $contentCV[unique = true]; uid[unique = true]                                ; name                                                      ; &componentRef                                     ; description[lang = en]
+                                                  ;                          ; paragraph-$incentivesFinancialSupportPage  ; Foreign Investment Financial Support Paragraph Component  ; paragraph-$incentivesFinancialSupportPage  ;
+                                                  ;                          ; paragraph-$incentivesFiscalSupportPage     ; Foreign Investment Fiscal Support Paragraph Component     ; paragraph-$incentivesFiscalSupportPage     ;
+                                                  ;                          ; paragraph-$incentivesEmploymentFundingPage ; Foreign Investment Employment Funding Paragraph Component ; paragraph-$incentivesEmploymentFundingPage ;
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; $contentCV[unique = true]; uid[unique = true]                                ; description[lang = en]
+                                                  ;                          ; paragraph-$incentivesFinancialSupportPage  ; "
+<section class=""container mb-5 general-info mt-4"">
+  <div style=""width: 50%; margin: 0 auto;"">
+    <h2><span style=""font-size: 20px;"">Export credit financing, guarantee, insurance; Energy     and utilities subsidies; Financial incentives for R&amp;D</span></h2>
+    <p><strong><span style=""color: #5bc53b;"">1.​Credit financing, guarantee and insurance</span></strong><span style=""color: #5bc53b;""></span></p>
+    <p>​Export credit financing, guarantees and insurance by the Saudi Export Program</p>
+    <ul>
+      <li>Coverage up to 90% of credit value</li>
+    </ul>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <ul>
+      <li>Exports with Saudi origin</li>
+      <li>Min %25 local of value added (crude oil is excluded)</li>
+      <li>Min transaction value funded 100k SR</li>
+      <li>Operational risk and credit worthiness to be accepted</li>
+      <li>Guarantees vary depending on risks associated</li>
+    </ul>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>Saudi Fund for Development</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><strong><span style=""color: #5bc53b;"">2. Energy and utilities </span></strong><span style=""color: #5bc53b;""></span></p>
+    <p>Subsidized tariffs for power, water, natural gas, ethane, diesel and land</p>
+    <p>&nbsp;</p>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <ul>
+      <li>Power at $ 0.048 per kWh for industrial sector</li>
+      <li>Water at $ 0.5 - $1.35 per cubic meter (based on volume)</li>
+      <li>Natural gas at $ 1.25 per MMBTU</li>
+      <li>Ethane at $ 1.75 per MMBTU</li>
+      <li>Diesel at $ 14/ barrel</li>
+      <li>Land for lease starting from $ 0.26 per sqm</li>
+    </ul>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>Saudi Electricity Company</li>
+      <li>National Water Company</li>
+      <li>Saudi Aramco</li>
+      <li>Saudi Industrial Property Authority</li>
+    </ul>
+    <p><strong><span style=""color: #5bc53b;"">3. Financial incentive for R&amp;D projects  </span></strong><span style=""color: #5bc53b;""></span></p>
+    <p>Investment in selected local and international R&amp;D projects with potential to boost country's economic growth and self-reliance</p>
+    <p>&nbsp;</p>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <p><span style=""font-size: 14px;"">Investment with following characteristics</span></p>
+    <ul>
+      <li style=""list-style-type: none;"">
+        <p> –Enable technology transfer to Saudi Arabia</p>
+        <p> –Diversify Saudi Arabia economy</p>
+        <p> –Create high skilled jobs<span style=""text-align: left;""></span></p>
+      </li>
+    </ul>
+    <p><span style=""text-align: left;"">Financed amount uncapped</span></p>
+    <p>&nbsp;</p>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>King Abdulaziz City for Science and Technology</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h2>Local loan programs</h2>
+    <p><strong><span style=""color: #5bc53b;"">1. ​Loan program for industrial projects</span></strong></p>
+    <p>​Finance up to 50% of project costs in major cities, and 75% in promising cities</p>
+    <ul>
+      <li>Repayment periods of up to 15 years</li>
+      <li>2-year grace period</li>
+      <li>Additional advice on administration, marketing, technical</li>
+    </ul>
+    <p>&nbsp;</p>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <p>Financeable industrial project with a valid industrial license and to realize considerable value for the economy. Characteristics:</p>
+    <ul>
+      <li>Economically viable</li>
+      <li>To provide training and employment opportunities for Saudi</li>
+      <li>To use locally sourced raw materials</li>
+      <li>To integrate with other projects in KSA or GCC countries</li>
+      <li>To replace imports by local products</li>
+      <li>To target export opportunities</li>
+      <li>To bring advanced technology</li>
+    </ul>
+    <p>&nbsp;</p>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>Saudi Industrial Development Fund</li>
+    </ul>
+    <p><strong><span style=""color: #5bc53b;"">2. Loan Guarantee Program (KAFALAH) for small &amp; medium enterprises</span></strong></p>
+    <p>​Cover the risk of banks in financing small and medium enterprises</p>
+    <ul>
+      <li>Guarantee rate up to 75% of loan</li>
+    </ul>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <p>Legal entity</p>
+    <p>Annual sales &lt; SAR 30 million</p>
+    <p>Viable in the economic, financial, technical and administrative terms</p>
+    <p>Contributes positively to the Saudi economy in terms of:</p>
+    <ul>
+      <li>Hiring and training Saudi nationals</li>
+      <li>Replacing imported goods by local ones and/or producing high quality innovative goods and services</li>
+    </ul>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>Saudi Industrial Development Fund</li>
+      <li>Saudi banks</li>
+    </ul>
+    <p><span style=""color: #5bc53b;""><strong>3. Productive Loans for small projects and start-ups</strong></span></p>
+    <p>​Interest-free loans provided across a variety of paths to support the Saudi society</p>
+    <p>&nbsp;</p>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <ul>
+      <li style=""list-style-type: none;"">
+        <ul>
+          <li>Saudi national</li>
+          <li>Specific conditions for each path</li>
+        </ul>
+      </li>
+    </ul>
+    <p><span style=""text-align: left;""> </span></p>
+    <p>&nbsp;</p>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>Social Development Bank</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h2>Regional loan programs</h2>
+    <p><span style=""color: #5bc53b;""><strong>1.Loan program for public/ private investment projects</strong></span></p>
+    <p>​Financing for public/ private investment projects</p>
+    <ul>
+      <li>Reduced interest rate to 2.5% for low-income Arab countries and 3% for other Arab countries</li>
+      <li>4-6 grace period</li>
+      <li>Long term extended to 22-25 years</li>
+    </ul>
+    <p>&nbsp;</p>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <p>Public sector: request to be accompanied by a techno-economic feasibility study (to be considered for financing)</p>
+    <p>Private sector: only for legally independent entity with:</p>
+    <ul>
+      <li style=""list-style-type: none;"">
+        <p>Sound financial position</p>
+        <p>Good management practices</p>
+        <p>Operating in a purely commercial basis</p>
+        <p>Main objective of developing the economy</p>
+        <p>Not less than 51% of capital owned by citizens of member states of the Arab Fund</p>
+      </li>
+    </ul>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>The Arab Fund for Economic and Social Development</li>
+    </ul>
+    <p><span style=""color: #5bc53b;""><strong>2. Loan program for economic development and reform in Arab countries</strong></span></p>
+    <p>​Loans and facilities offered to help address overall balance of payment deficit of member countries; include 4 types of loans that vary in size, terms and maturity</p>
+    <p>&nbsp;</p>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <p>The fund must take into consideration when lending to Arab countries:</p>
+    <ul>
+      <li style=""list-style-type: none;"">
+        <p>Fairness and equal opportunity of access to Fund’s loans</p>
+        <p>Safeguard of the Fund’s ability to maintain its continuity in growth</p>
+        <p>Ensure that the resources it lends are used safely by borrowing members who must have the ability to meet their obligations</p>
+      </li>
+    </ul>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>Arab Monetary Fund</li>
+    </ul>
+    <p><span style=""color: #5bc53b;""><strong>3. Financing facilities for trade transactions of goods of Arab origin</strong></span></p>
+    <p>​Refinancing of Arab exports to Arab &amp; non-Arab countries through lines of credit, e.g., pre-export credits, post-shipment credits, buyers’ credits, and import credits</p>
+    <p>&nbsp;</p>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <ul>
+      <li>Goods entirely produced or manufactured in an Arab country from primary resources and other domestic components, or if the value added in an Arab country is at least 40% of the value of the goods</li>
+    </ul>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>Arab Trade Financing Program</li>
+    </ul>
+    <p><span style=""color: #5bc53b;""><strong>4. Political &amp; commercial risk insurance for investments and export credit guarantees</strong></span></p>
+    <p>​Insurance schemes and guarantees to encourage investments in Arab countries, and enhance inter-Arab trade and Arab exports worldwide</p>
+    <p>&nbsp;</p>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <ul>
+      <li>Investment insurance for investments in an Arab country, the investor shall not be from the same country of the investment</li>
+      <li>Export credit guarantees for exports to/from Arab countries</li>
+    </ul>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>The Arab Investment &amp; Export Credit Guarantee Corporation</li>
+    </ul>
+    <p><span style=""color: #5bc53b;""><strong>5. ​Equity &amp; debt financing for enterprises and productive projects in member countries</strong></span></p>
+    <p>​Offers different financing schemes to support investment capital of projects, grants loans to enterprises and productive projects, and accepts deposits to mobilize financial resources in accordance with the provisions of Islamic law</p>
+    <p>&nbsp;</p>
+    <h4><span style=""font-size: 14px;"">Main conditions</span></h4>
+    <p>Prospective member country should:</p>
+    <ul>
+      <li style=""list-style-type: none;"">
+        <p>Be a member of the Organization of Islamic Cooperation (OIC)</p>
+        <p>Pay its contribution to the capital of the Bank</p>
+        <p>Be willing to accept such terms and conditions as may be decided upon by the bank's Board of Governors</p>
+      </li>
+    </ul>
+    <h4>Responsible entity<span style=""font-size: 20px;""></span></h4>
+    <ul>
+      <li>Islamic Development Bank</li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+</section>
+"
+                                                  ;                          ; paragraph-$incentivesFiscalSupportPage     ; "
+<section class='container mb-5 general-info mt-4'>
+    <div style='width: 50%; margin: 0 auto;'>
+<h2><span style='font-size: 20px;'> Custom duty drawback, exemption; tax credits and exemption</span></h2>
+<p>&nbsp;</p>
+<p><span style='color: #5bc53b;'><strong>1. Custom duty drawback</strong></span></p>
+<p>​Refund to importers/ exporters of raw material imports that are processed in Saudi Arabia and re-exported as more finished products</p>
+<p>&nbsp;</p>
+<h4><span style='font-size: 14px;'>Main Conditions </span></h4>
+<ul>
+<li>Importer to inform Customs at the point of entry on raw materials for manufacturing</li>
+<li>Importer to provide the Customs</li>
+<li>Import Declaration</li>
+<li>Receipt for payment of duty</li>
+<li>Certificate of Origin</li>
+<li>Copy of the invoice to the buyer certified</li>
+</ul>
+<p style='padding-left: 60px;'> </p>
+<h4><span style='font-size: 14px;'>Responsible Entity </span></h4>
+<p><span style='font-size: 14px;'>Saudi Customs </span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style='color: #5bc53b;'><strong>2. Custom Duty Exemption </strong></span></p>
+<p>​​Exemption on authorized imports for industrial establishments (e.g., materials, equipment, machinery)</p>
+<p>&nbsp;</p>
+<h4><span style='font-size: 14px;'>Main Conditions </span></h4>
+<ul>
+<li>Available only if local supply does not exist or the local supply is not up to the specifications of the manufacturers</li>
+</ul>
+<h4><span style='font-size: 14px;'>Responsible Entity </span></h4>
+<ul>
+<li>Ministry of Commerce and Investment</li>
+</ul>
+<p><span style='color: #5bc53b;'><strong>3. Tax Incentives </strong></span></p>
+<p>​Up to 50% tax credit on Saudi national worker's payroll and training cost for 10 years</p>
+<p>&nbsp;</p>
+<h4><span style='font-size: 14px;'>Main Conditions</span></h4>
+<p>Available in specific regions :</p>
+<ul>
+<li>- Hail, Northern Border, Jazan, Al-Jouf, Najran, Al-Baha</li>
+</ul>
+<p>Number of employees &gt;5  :</p>
+<ul>
+<li>
+<p>- either technical or administrative jobs</p>
+<p>- contract time not less than 1 year</p>
+</li>
+</ul>
+<p>Capital &gt;1M SR.</p>
+<p>&nbsp;</p>
+<h4><span style='font-size: 14px;'>Responsible Entity</span></h4>
+<p><span style='font-size: 14px;'>Industrial Clusters </span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</section>"
+                                                  ;                          ; paragraph-$incentivesEmploymentFundingPage ; "
+<section class='container mb-5 general-info mt-4'>
+    <div style='width: 50%; margin: 0 auto;'>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style='color: #5bc53b;'><strong>1<span style='color: #5bc53b;'>. Program to support the growth of Saudization of enterprises</span></strong></span><span style='font-size: 14px;'></span></p>
+<ul>
+<li>HRDF to provide:</li>
+<li>15% of monthly salary for male citizens</li>
+<li>20% of monthly salary for female citizens</li>
+</ul>
+<p><strong>Program duration:</strong> 1 October 2017 – 30 September 2019</p>
+<p>&nbsp;</p>
+<h4><span style='font-size: 14px;'>Conditions to apply</span></h4>
+<ul>
+<li>
+<p>Saudi national</p>
+<p>Age between 18-60</p>
+<p>Employee's monthly salary not exceeding SAR 6,000</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p><span style='color: #5bc53b;'><strong>2. Tamheer program</strong></span></p>
+<p><span class='Apple-tab-span'> </span>​<span>On-the-job training program for Saudi graduates</span></p>
+<p><span></span><span>To provide financial support of SAR 3,000 per month during the 3 to 6 months long period of training, and occupational hazard insurance</span></p>
+<p><span class='Apple-tab-span'> </span>​</p>
+<h4><span></span><span style='font-size: 14px;'>Conditions to apply</span></h4>
+<ul>
+<li><span></span><span>Saudi national (or foreign national with Saudi mother)</span><span></span></li>
+<li><span>With bachelor, master or PhD degree</span><span></span></li>
+<li><span>Currently unemployed and not employed for the past 6 months</span><span></span></li>
+<li><span>No previous participation in Tamheer program</span></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style='color: #5bc53b;'><strong>3. </strong><strong>Professional Certification Support Program</strong></span><span style='color: #5bc53b;'></span>​</p>
+<ul>
+<li>Aim is to enable the Saudi workforce to obtain professional certificates accredited in several professional fields required by the labor market, e.g.,</li>
+</ul>
+<p>–CMMP, CIT, PMP,…etc. </p>
+<ul>
+<li>HRDF to provide reimbursement for training costs, and test fees</li>
+</ul>
+<h4><span></span><span style='font-size: 14px;'>Conditions to apply </span></h4>
+<ul>
+<li>
+<p>Saudi national</p>
+<p>Certificate to be accredited by HRDF</p>
+<p>Certificate to be valid and not expired</p>
+<p>Maximum reimbursement: 2 certificates for each person</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p><span style='color: #5bc53b;'><strong>4. Doroob program</strong></span></p>
+<p><span class='Apple-tab-span'> </span>​<span>Comprehensive program involving electronic learning courses</span></p>
+<ul>
+<li><span></span><span>Aim is to obtain certificates approved and recognized by the main companies</span></li>
+</ul>
+<p><span class='Apple-tab-span'> </span>​</p>
+<p><span class='Apple-tab-span'> </span>​<span>Priority in the direct employment for the certificates holders</span></p>
+<ul>
+<li><span></span><span>Providing also the opportunity of benefiting from the on-the–job training program</span></li>
+</ul>
+<p>&nbsp;</p>
+<h4><span></span><span style='font-size: 14px;'>Conditions to apply</span></h4>
+<p><span></span><span>Saudi national</span></p>
+</div>
+<p>&nbsp;</p>
+</section>"
+
+INSERT_UPDATE ContentSlot; uid[unique = true]                                  ; name           ; active[default = true]; cmsComponents(&componentRef)                      ; $contentCV[unique = true]
+                         ; PortalPageMainSlot-$incentivesFinancialSupportPage  ; PortalPageMain ;                       ; paragraph-$incentivesFinancialSupportPage  ;
+                         ; PortalPageMainSlot-$incentivesFiscalSupportPage     ; PortalPageMain ;                       ; paragraph-$incentivesFiscalSupportPage     ;
+                         ; PortalPageMainSlot-$incentivesEmploymentFundingPage ; PortalPageMain ;                       ; paragraph-$incentivesEmploymentFundingPage ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]                              ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]         ; page(uid, $contentCV)[unique = true]; $contentCV[unique = true]
+                                ; PortalPageMain-$incentivesFinancialSupportPage  ; PortalPageMain         ; PortalPageMainSlot-$incentivesFinancialSupportPage  ; $incentivesFinancialSupportPage     ;
+                                ; PortalPageMain-$incentivesFiscalSupportPage     ; PortalPageMain         ; PortalPageMainSlot-$incentivesFiscalSupportPage     ; $incentivesFiscalSupportPage        ;
+                                ; PortalPageMain-$incentivesEmploymentFundingPage ; PortalPageMain         ; PortalPageMainSlot-$incentivesEmploymentFundingPage ; $incentivesEmploymentFundingPage    ;

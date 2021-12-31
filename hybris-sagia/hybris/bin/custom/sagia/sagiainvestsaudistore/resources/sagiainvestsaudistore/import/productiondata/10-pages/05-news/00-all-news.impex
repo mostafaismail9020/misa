@@ -1,0 +1,12 @@
+$page = news
+$template = portalNewsTemplate
+$pageName = News
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /news
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $template                      ; $pagelabel ; false   ;                          ;                              ;

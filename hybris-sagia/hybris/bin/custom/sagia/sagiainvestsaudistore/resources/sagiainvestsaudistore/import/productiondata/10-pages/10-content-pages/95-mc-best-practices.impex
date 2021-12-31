@@ -1,0 +1,38 @@
+$page = mc-best-practices
+$template = portalGlobalTemplate
+$pageName = Marketing & Communication Best Practices
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /mc-best-practices
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE Media; code[unique = true]   ; realFileName          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; why-saudi-english.pdf ; why-saudi-english.pdf ; $siteResource/why-saudi-english.pdf                                         ; application/pdf             ;                                          ;        ;
+                   ; download.png          ; download.png          ; $siteResource/download.png                                                  ; image/png                   ;                                          ;        ;
+
+INSERT_UPDATE InvestSaudiRowComponent; uid[unique = true]; name            ; &componentRef   ; $contentCV[unique = true]; text[lang = en]    ; text[lang = ar]                 ; image(code, $contentCV); pdfLink(code, $contentCV);
+                                     ; row-component-1   ; Row Component 1 ; row-component-1 ;                          ; M&C Best Practices ; افضل التعاملات للتسويق والتواصل ; download.png           ; why-saudi-english.pdf    ;
+
+INSERT_UPDATE InvestSaudiTableContainer; uid[unique = true]; name            ; simpleCMSComponents(&componentRef); &componentRef   ; $contentCV[unique = true];
+                                       ; table-container   ; Table Container ; row-component-1                   ; table-container ;                          ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; table-container             ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;                                                      ;
+
+

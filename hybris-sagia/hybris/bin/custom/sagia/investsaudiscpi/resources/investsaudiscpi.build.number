@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Jul 15 20:19:13 CEST 2020
+version.api=2005
+vendor=hybris
+group.id=de.hybris.platform
+name=investsaudiscpi
+description=investsaudiscpi
+builddate=20200715 2019
+releasedate=20200513 1957
+version=2005.01
+module.name=platform-module

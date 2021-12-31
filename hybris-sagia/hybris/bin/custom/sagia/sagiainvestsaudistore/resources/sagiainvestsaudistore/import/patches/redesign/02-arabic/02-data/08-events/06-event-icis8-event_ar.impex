@@ -1,0 +1,32 @@
+############# EVENT ICIS Event########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+$eventNameAr=مؤتمر العالمي للزيوت والشحوم
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails;$contentCV[unique = true];uid[unique = true]			;keyName[lang = ar]       			;keyValue[lang = ar];
+                             ;                         ; icis-key-1       			;عدد زوار الفعالية         			;150;
+							 ;						   ; icis-key-2       			;عدد زوار الجناح			  		;150;
+								  			
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]       ;eventName[lang = ar]	; eventLocation[lang = ar]	;
+										;						  ;event-icis-event    		;$eventNameAr           ; لندن     				;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	  ;eventShortInformation[lang = ar];
+										;						  ; event-icis-event  	  ;"مشاركة الوزارة مع أرامكو في مؤتمر ومعرض الزيوت والشحوم والذي ينظمها ارامكو";
+
+																	
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventKeyDetails(uid, $contentCV);
+										;						  ;event-icis-event  ;icis-key-1,icis-key-2 ;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventFullDescription[lang = ar];
+										;						  ;event-icis-event	 ;                              ;

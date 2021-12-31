@@ -1,0 +1,64 @@
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+$newsTitleAr=اقتصادي / وزير الاستثمار : البيئة الاستثمارية في المملكة جاذبة
+$shortDescAr= اقتصادي / وزير الاستثمار : البيئة الاستثمارية في المملكة جاذبة
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                      		; realFileName                    			; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; news-ministry-of-investment.jpg           	; news-ministry-of-investment.jpg     		; $siteResource/news-ministry-of-investment.jpg                                       ;                 image/jpg                ;                                          ; ""     ;
+					; news-ministry-of-investment-thumbnail.jpg     ; news-ministry-of-investment-thumbnail.jpg ; $siteResource/news-ministry-of-investment-thumbnail.jpg                                       ;                 image/jpg                ;                                          ; ""     ;
+								
+INSERT_UPDATE MediaContainer; qualifier[unique = true]  		; $medias                   ; $contentCV;
+                            ; media-container-royal-commission 	; news-ministry-of-investment.jpg,news-ministry-of-investment-thumbnail.jpg;           ; 
+
+	   
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true]; uid[unique = true]             	; newsTitle[lang = en]                                                                    																			; newsDate[dateformat = dd.MM.yyyy HH:mm:ss]    ;newsUrl
+                                      ;							; news-ministry-of-investment       ;  The Ministry of Investment and the Royal Commission for Riyadh City sign partnership with Spanish SEK Education Group to open first international school in Riyadh; 13.07.2021 00:00:00                           ;                     
+
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]				;  newsShortInformation[lang = en]
+									  ; 						 ; news-ministry-of-investment      ; "The Ministry of Investment and the Royal Commission for Riyadh City (RCRC) have partnered with Spain's SEK Education Group to open SEK International School's first campus in Saudi Arabia. "
+
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]			; newsFullDescription[lang = en]
+                               ;						  ; news-ministry-of-investment ; "
+ The agreement, the second for the International Schools Attraction Program initiative under Vision 2030, follows an earlier announcement last April for King's College to open a Riyadh campus.
+<p>Minister of Investment Khalid Al-Falih said: ''This partnership with SEK Education Group, which operates some of the highest ranked schools in Spain, is yet another testament to the outstanding results achieved through the joint efforts of our ministries and the RCRC to drive the International Schools Attraction Program. We will continue to identify, attract and guide leading educational institutions from around the world to establish their new homes in the Kingdom. The combination of our young population and transforming economy creates an environment of unique demand and opportunity for the rapid growth of the education sector.''</p>
+<p>Dr. Hamad Al-Sheikh, minister of education, added: ''By blending the power of culture and heritage with innovation and technology, SEK International School Riyadh will provide students with an exceptional learning. I wish the school success in its mission, as we work together to develop Riyadh into a world-class city.''</p>
+<p>Building a world-class educational system requires a long-term investment in the people of Riyadh. RCRC is acting as a catalyst to fast-track the process by partnering with reputable international educational institutions such as SEK, to equip young Saudis and foreign students with the needed skills to fulfill long-lasting careers for the future, said President of RCRC Fahd Alrasheed.</p>
+<p>The new school will welcome students from pre-K (3 years) to grade 2 (7/8 years), and will become one of the few schools in Riyadh accredited to offer the International Baccalaureate (IB) Primary Years Program (PYP), Middle Years Program (MYP), and Diploma Program (DP).</p>
+<p>Ambassador of Spain to Saudi Arabia Alvaro Iranzo Gutierrez described the opening of the SEK International School in Riyadh, as an opportunity for bilateral educational cooperation between Saudi Arabia and Spain. ''SEK International School Riyadh will ensure fluency in English, the main language of instruction, as well as in Spanish and Arabic. This specificity will also open up the window to Spanish culture to many children in Riyadh,'' he said</p>
+<p>''We are delighted and honored to contribute to Saudi Arabia's Vision 2030, thanks to the invitation and support of the Ministry of Investment, Ministry of Education and the RCRC. The school embodies a long education tradition with the most innovative learning model, designed to serve each one of our students and create the best learning experience for them,'' said Nieves Segovia, president of SEK Education Group.</p>
+";
+    
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]			; newsFullDescription[lang = ar]
+                               ;						  ; news-ministry-of-investment ; "
+<p>أعلنت وزارة الاستثمار والهيئة الملكية لمدينة الرياض اليوم توقيع شراكة مع مجموعة إس إي كا (SEK) التعليمية الدولية -ومقرها إسبانيا- لافتتاح أول مدرسة لها في مدينة الرياض، ابتداء من مطلع العام الدراسي في شهر سبتمبر المقبل.</p>
+<p>وستكون مدرسة إس إي كاي الرياض العالمية المدرسة الدولية الثانية التي تستقطبها الهيئة الملكية بعد مدرسة كينجز كولدج الرياض، وذلك ضمن برنامج جذب المدارس الدولية الذي تمَّ إطلاقه تماشيًا مع رؤية المملكة 2030.</p>
+<p>وستستقبل مدرسة إس إي كاي الرياض العالمية في عامها الأكاديمي الأول الطلاب من مرحلة الحضانة (من سن 3 أعوام) حتى الصف الثاني الابتدائي (ما بين 7 إلى 8 أعوام)، مع إمكانية التدرج في افتتاح صفوف مستقبلية لنظام البكالوريا الدولية، والتعليم الابتدائي، والمرحلة المتوسطة، وبرنامج الدبلوم.</p>
+<p>وستوفر مدرسة إس إي كاي الرياض العالمية -كونها مجموعة تعليمية إسبانية- لجميع الطلاب فرصة تعلم اللغتين الإسبانية والعربية، ضمن بيئة تعليمية ترتكز على اللغة الإنجليزية، كما ستسخّر
+خبرتها لتوفير بيئة تعليمية محفزة للابتكار من خلال نموذج تعلم خاص يقود الطلاب نحو تحقيق نتائج أكاديمية مبهرة، فضلًا عن تعليمهم كيفية معالجة التحديات، وتعزيز مهاراتهم من أجل اغتنام فرص القرن الحادي والعشرين.</p>
+<p>وعدّ معالي وزير الاستثمار المهندس خالد بن عبدالعزيز الفالح الشراكة مع مجموعة (إس إي كي) -التي تُدير مدارس ذات تصنيف عالمي في إسبانيا- مثالًا آخرًا للتعاون المثمر بين الوزارة والهيئة الملكية لمدينة الرياض، لإنجاح برنامج جذب المدارس الدولية ، مشيرا إلى مواصلة العمل مع الهيئة لاستقطاب أفضل المدارس العالمية وتشجعيها على تعزيز وجودها في المملكة ، مؤكدا أن الجمع بين الطاقة الشابة والتحول الاقتصادي ينتج فرصًا واعدة تواكب النمو السريع لقطاع التعليم .</p>
+<p>من جانبه عبر معالي وزير التعليم الدكتور حمد آل الشيخ عن سعادته أن يكون التعليم جزءًا من هذه الشراكة المميزة مع الهيئة الملكية لمدينة الرياض ووزارة الاستثمار، مبينا أن مدرسة (إس إي كاي) ستوفر لطلاب الرياض تعليمًا استثنائيًا يمزج الثقافة والتراث بالابتكار والتقنية ، متمنيا للمدرسة النجاح في مهمتها، وأن تكون الرياض مدينة رائدة عالميًا.</p>
+<p>كما عدّ معالي الرئيس التنفيذي للهيئة الملكية لمدينة الرياض الأستاذ فهد بن عبدالمحسن الرشيد بناء وتطوير نظام تعليمي عالمي المستوى في مدينة الرياض استثماراً طويل الأمد في الإنسان ، مؤكدا العمل على عقد شراكات مع مؤسسات تعليمية دولية مرموقة مثل (إس إي كاي) ، لافتا النظر إلى أن الاتفاقية تعكس التزام الهيئة مع شركائها بتوفير فرص تعليم للطلاب في مدينة الرياض، بما يضمن تعزيز وتمكين الاستثمار في رأس المال البشري لشغل وظائف المستقبل، والإسهام معا في تطوير منهج متطور لقطاع تعليمي عصري .</p>
+<p>من جهته رحب سفير إسبانيا لدى المملكة ألفارو إيرانزو جوتيريز بافتتاح مدرسة إس إي كاي الرياض العالمية، مشيرًا إلى أنها تمثل فرصة لتعزيز التعاون في الجانب التعليمي بين المملكة وإسبانيا ، مبينا أن المدرسة ستضمن لطلابها إتقانهم اللغة الإنجليزية بوصفها لغة تعلّم رئيسة، إضافة إلى اللغتين الإسبانية والعربية، وستتيح لهم فرصة التعرف على الثقافة الإسبانية .</p>
+<p>وقالت رئيسة مجموعة س إي كاي التعليمية نيفيس سيغوفيا يشرفنا أن نسهم في تنفيذ رؤية المملكة العربية السعودية 2030، وذلك بفضل الدعم الذي نحظى به من وزارتي الاستثمار والتعليم والهيئة الملكية لمدينة الرياض من خلال إرادة التعاون، وسنتمكن من بناء مجتمع تعليمي حيوي تتخطى حدوده أسوار مدرستنا نحو آفاق جديدة.</p>
+<p>يذكر أن مدرسة س إي كاي الرياض العالمية ستكون ثاني مدارس المجموعة في منطقة الشرق الأوسط، حيث تقدم المجموعة في مدارسها المنتشرة في كل من إسبانيا، وفرنسا، وقطر، وايرلندا، منهجًا تعليميًا عالي الجودة، لأكثر من 6000 طالب من أكثر من 70 جنسية حول العالم، تتراوح أعمارهم ما بين (4 أشهر حتى 18 عامًا).</p>
+";
+                                                         
+														 
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]           ;newsDetailsImage(code, $contentCV);newsThumbnailImage(code, $contentCV)       ; $galleryImages; &componentRef;   
+                                      ;                         ;news-ministry-of-investment  ;news-ministry-of-investment.jpg    ;news-ministry-of-investment-thumbnail.jpg ; 				 ; news-ministry-of-investment;
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]				;newsTitle[lang = ar];newsShortInformation[lang=ar];
+									  ;							;news-ministry-of-investment    ;$newsTitleAr        ;$shortDescAr;                                                                  
+
+	

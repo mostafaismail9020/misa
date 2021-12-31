@@ -1,0 +1,41 @@
+INSERT_UPDATE InfraLogisticsLanding			;internationalAirportslabel[unique=true]			     ;internationalAirportsValue    ;domesticAirportsLabel[lang = ar] 		;domesticAirportsLabel[lang = en]	  						;domesticAirportsValue 		;containersLabel[lang = ar] 		;containersValue 			;containersAmount[lang = ar]					; portsCapacityLabel[lang = ar]	      					;portsCapacityValue	  				;portsCapacityAmount[lang = ar]	      				;airportsLabel[lang = ar] 				;airportsValue    ;portsLabel[lang = ar]  		;portsValue		;displayAirportslabel[lang = ar]		;displayAirportslabel[lang = en]
+											;"International Airports"  		 			                 ;"13"  						;"المطارات الداخلية"    				;"Domestic Airports" 										;"14"        	   	   		;"مليون حاوية"            			;"13"            			;"(مليون)"     									; "الطاقة الاستيعابية للموانئ"           				;"615"	           					; "(مليون طن)"	 	 								;"المطارات"    							;"28"   		  ;"الموانئ"    			;"9"			;"المطارات الدولية"                 	;"International Airports"
+
+INSERT_UPDATE Infrastructure ;name[unique=true]						;value1					;label1[lang = ar] 				;label1[lang = en]					;value2	  												;label2 [lang = ar]     										   ;value3		 				;label3 [lang = ar]																	;displayName [lang = ar]		;displayName [lang = en]
+							 ;"Infrastructure"     					;"1,264"				;"مرافق الخدمات"  			    ;"Service Facilities"				;"7,400"  												;"قدرة محطات الطاقة "    										   ;"123,500"	 				;"سعة محطة معالجة مياه الصرف الصحي (متر مكعب في اليوم)" 							;"البنية التحتية"               ;"Infrastructure" 
+							 
+
+INSERT_UPDATE Employment  ;name[unique=true]						;value1					;label1[lang = ar]  			;label1[lang = en]		          	;value2	  												;label2[lang = ar]     		          								;value3	 					;label3 [lang = ar]																	;displayName[lang = ar] 		;displayName [lang = en] 						    
+						 ;"Employment"      			    		;"185,840"				;"الموظفون السعوديون "  		; "Saudi Males Employees"		  	;"16,825"  												;"الموظفات السعوديات"    											;"31,457"	 				;"الموظفين غير السعوديين"															;"التوظيف"						;"Employment" 						
+
+
+
+INSERT_UPDATE TotalArea ;name[unique=true]							;value1					;label1[lang = ar] 									;label1[lang = en]				   					   ;value2	    	 ;label2 [lang = ar]    					  						;value3		 			 	 ;label3 [lang = ar]																;displayName[lang = ar]			;displayName [lang = en]
+					    ;"TotalArea"     							;"979.7"				;"إجمالي مساحة المدن الصناعية (مليون متر مربع)" 	;"Total Area of industrial cities(million m2)" 	   ;"194.8"      	;" مساحة الأراضي المطورة (مليون متر مربع)  "    	    				;"124.7"	 			     ;" مساحة الأراضي المخصصة (مليون متر مربع)"											;"إجمالي المساحة"               ;"TotalArea" 
+
+
+
+INSERT_UPDATE HousingFacilities ;name[unique=true]				    ;value1					;label1 [lang = ar]				;label1[lang = en]									;value2	  					   			;label2 [lang = ar]    									  			;value3	 					  ;label3[lang = ar]												                ;value4	 					    	 ;label4 [lang = ar]											;value5	 						;label5 [lang = ar]  															;displayName[lang = ar]		;displayName [lang = en] 
+							    ;"Housing & Facilities"     	    ;"9,647"				;"عدد الوحدات السكنية" 			 ;"Number of Housing units"   						;"47,344"   				    		;"القدرة السكنية بالمدن الصناعية (موظف)"	  			  			;"186.7"   					  ;" مساحة المنشآت الرياضية وقاعات التدريب (ألف متر مربع)"				            ;"1.8"   					   		 ;"المساحات الخضراء بالمدن الصناعية (مليون متر مربع)"		    ;"175.9" 						;"مساحة مراكز التدريب بالمدن الصناعية (ألف متر مربع)"							;"المرافق والإسكان"          ;"Housing & Facilities" 
+
+
+INSERT_UPDATE IndustrialCities ;name[unique=true]				    ;value1					;label1 [lang = ar]							;label1[lang = en]						;value2	  								;label2 [lang = ar]	    							 				 ;value3		 			  ;label3 [lang = ar]	      											   			 ;value4  							;label4 [lang = ar]											 	;displayName[lang = ar]			;displayName [lang = en]
+							   ;"Industrial cities" 			     ;"6,587"				;"العقود الصناعية والاستثمارية"  		    ;"Industrial and investment contracts"		;"3,350"  								;"التراخيص التشغيلية الصادرة"    						  			 ;"3,724"	 				  ;"المصانع"  																		 ;"582"   							;"المصانع المبنية لغرض معين"								 	;"المدن الصناعية "          	;"Industrial cities"
+
+
+INSERT_UPDATE PrivateCities	;name[unique=true]			 								;establishmentYear 	  ;totalArea	;developedArea 		;noOfContracts 				;displayName[lang = ar]								;displayName[lang = en]
+							;"Obeikan Industrial City"    								;"2007"				  ;""			;"984"       		;""							;"مدينة العبيكان الصناعية الخاصة"                   ;"Obeikan Industrial City" 	
+							;"Special Industrial Development City"						;"2007"				  ;"1,311"		;""       		    ;""							;"مدينة التنمية الصناعية الخاصة"                    ;"Special Industrial Development City"
+							;"Zamil Industrial City"									;"2013"				  ;"1,340"		;"1,273"       		;""							;"مدينة الزامل الصناعية الخاصة"                     ;"Zamil Industrial City"
+							;"Al Fanar City"											;"2007"				  ;"681"		;"681"       		;""							;"مدينة الفنار الصناعية الخاصة"	                    ;"Al Fanar City"
+							;"Al-Agimi city"											;"2008"				  ;"1,314"		;"1,051"       		;""							;"مدينة العجمي الصناعية الخاصة"	                    ;"Al-Agimi city"
+							;"Petro Rabigh city"										;"2010"				  ;"2,400"		;"2,400"       		;""							;"مدينة بترو رابغ الصناعية الخاصة"	                ;"Petro Rabigh city"
+							;"Bin Laden City"											;"2020"			      ;"5,068"		;""       		    ;""							;"مدينة بن لادن الصناعية الخاصة"                     ;"Bin Laden City"
+							;"Gate City"												;""				 	  ;"6,522"		;"5,608"       		;""							;"مدينة البوابة الصناعية الخاصة"                    ;"Gate City"
+							;"Industrial Complex for Logistics Services 'Caden'"		;""				      ;"418"		;"405"     		    ;""							;"المجمع الصناعي للخدمات اللوجستية 'كادن'"          ;"Industrial Complex for Logistics Services 'Caden'"
+							;"Construction Materials Holding Company Complex"    	    ;""					  ;"189"		;"189"       		;""							;"مجمع شركة مواد الإعمار القابضة"                    ;"Construction Materials Holding Company Complex"
+							;"Industrial Services Complex"					            ;""				  	  ;"418"		;"405"       		;""							;"مجمع الخدمات الصناعية"                            ;"Industrial Services Complex"	
+							;"Riyadh Cable Company Complex"								;""					  ;"313"		;"313"       		;""							;"مجمع شركة كابلات الرياض"                           ;"Riyadh Cable Company Complex"	
+							;"Saudi Ceramic Company Complex"							;""				 	  ;"423"		;"423"       		;""							;"مجمع شركة الخزف السعودي"                          ;"Saudi Ceramic Company Complex"
+							;"Eastern Textile Company"									;"1994"				  ;"265"		;"265"       		;""							;"شركة النسيج الشرقية"                              ;"Eastern Textile Company"	
+							;"Al-Nahdi Medical Company"									;""				  	  ;"249"		;""       		    ;""							;"شركة النهدي الطبية"                               ;"Al-Nahdi Medical Company"

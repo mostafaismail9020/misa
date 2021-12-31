@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- [y] hybris Platform Copyright (c) 2017 SAP SE or an SAP affiliate company. 
+	All rights reserved. This software is the confidential and proprietary information 
+	of SAP ("Confidential Information"). You shall not disclose such Confidential 
+	Information and shall use it only in accordance with the terms of the license 
+	agreement you entered into with SAP. -->
+
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="items.xsd">
+
+	<collectiontypes>
+		<collectiontype code="ApproverEmails" elementtype="java.lang.String" autocreate="true" type="list"/>
+	</collectiontypes>
+
+	<enumtypes>
+		<enumtype generate="true" code="InvestSaudiLob" autocreate="true" dynamic="true">
+			<value code="BDUserGroup" />
+			<value code="MarCommUserGroup" />
+		</enumtype>
+	</enumtypes>
+	
+	<itemtypes>
+
+		<itemtype code="CMSSecurePortalRestriction"
+			jaloclass="com.investsaudi.jalo.restrictions.CMSSecurePortalRestriction"
+			extends="AbstractRestriction" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="description" redeclare="true"
+					type="java.lang.String">
+					<persistence type="dynamic"
+						attributeHandler="cmsSecurePortalRestrictionDynamicDescription" />
+					<modifiers write="false" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="CMSSite" autocreate="false" generate="false">
+			<attributes>
+				<attribute type="boolean"
+					qualifier="requiresAuthentication">
+					<persistence type="property" />
+					<modifiers optional="false" />
+					<defaultvalue>true</defaultvalue>
+					<description>Indicates if the website requires authentication or not.</description>
+				</attribute>
+				<attribute type="boolean" qualifier="enableRegistration">
+					<persistence type="property" />
+					<modifiers optional="false" />
+					<defaultvalue>true</defaultvalue>
+					<description>Indicates if the website supports registration request.</description>
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="B2BRegistration">
+			<deployment table="b2bregistration" typecode="10040" />
+			<attributes>
+				<attribute type="CMSSite" qualifier="cmsSite">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="Language" qualifier="language">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="Currency" qualifier="currency">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="BaseStore" qualifier="baseStore">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="Title" qualifier="title">
+					<persistence type="property" />
+					<modifiers optional="true" />
+				</attribute>
+				<attribute type="java.lang.String" qualifier="name">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="java.lang.String" qualifier="email">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<!-- attribute type="java.lang.String" qualifier="accountNumber"> <persistence 
+					type="property" /> <modifiers optional="true" /> </attribute> -->
+				<attribute type="java.lang.String" qualifier="position">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="java.lang.String" qualifier="telephone">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="java.lang.String"
+					qualifier="telephoneExtension">
+					<persistence type="property" />
+					<modifiers optional="true" />
+				</attribute>
+				<attribute type="java.lang.String" qualifier="companyName">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="java.lang.String"
+					qualifier="companyAddressStreet">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="java.lang.String"
+					qualifier="companyAddressStreetLine2">
+					<persistence type="property" />
+					<modifiers optional="true" />
+				</attribute>
+				<attribute type="java.lang.String"
+					qualifier="companyAddressCity">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="java.lang.String"
+					qualifier="companyAddressPostalCode">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="Region" qualifier="companyAddressRegion">
+					<persistence type="property" />
+					<modifiers optional="true" />
+				</attribute>
+				<attribute type="Country"
+					qualifier="companyAddressCountry">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+				<attribute type="java.lang.String" qualifier="message">
+					<modifiers optional="true" />
+					<persistence type="property">
+						<columntype>
+							<value>HYBRIS.LONG_STRING</value>
+						</columntype>
+					</persistence>
+				</attribute>
+				<attribute type="java.lang.String"
+					qualifier="rejectReason">
+					<persistence type="property" />
+					<modifiers optional="true" />
+				</attribute>
+				<attribute type="B2BUnit" qualifier="defaultB2BUnit">
+					<persistence type="property" />
+					<modifiers optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="B2BRegistrationProcess"
+			extends="StoreFrontCustomerProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="registration" type="B2BRegistration">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="CustomerUserGroupUpdateEmailProcess"
+				  extends="StoreFrontCustomerProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="userGroup" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="OpportunityCreatedEmailProcess"
+				  extends="StoreFrontCustomerProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="opportunityId" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+
+		<itemtype code="OpportunityUpdatedEmailProcess"
+				  extends="StoreFrontCustomerProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="opportunityId" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="currentState" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="UserCreatedEmailProcess"
+				  extends="StoreFrontCustomerProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="role" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="initialPassword" type="java.lang.String">
+					<modifiers encrypted="true" />
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="OpportunityUserEmailProcess"
+				  extends="OpportunityCreatedEmailProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="initialPassword" type="java.lang.String">
+					<modifiers encrypted="true" />
+					<persistence type="property" />
+				</attribute>
+				<attribute type="boolean" qualifier="isNewCustomer">
+					<persistence type="property" />
+					<defaultvalue>false</defaultvalue>
+				</attribute>
+			</attributes>
+
+		</itemtype>
+
+		<itemtype code="OpportunityCreatedApproverEmailProcess"
+				  extends="StoreFrontCustomerProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="opportunityId" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="approvers" type="ApproverEmails">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="B2BRegistrationApprovedProcess"
+			extends="B2BRegistrationProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="passwordResetToken"
+					type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="B2BRegistrationRejectedProcess"
+			extends="B2BRegistrationProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="rejectReason"
+					type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+		
+		<itemtype code="InvestSaudi2FactorAuthProcess"
+			extends="StoreFrontCustomerProcess" autocreate="true" generate="true"
+            jaloclass="de.hybris.platform.commerceservices.jalo.process.InvestSaudi2FactorAuthProcess">>
+			<attributes>
+				<attribute qualifier="otp" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+
+
+
+        <itemtype code="Customer" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="department"
+					type="java.lang.String" generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="otherUserEntity"
+					type="java.lang.String" generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="B2BUnit" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="isDisplayToCustomers"
+					type="java.lang.Boolean" generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+		
+		 <!-- Add your item definitions here -->
+		 <itemtype code="InvestSaudiSector"
+                jaloclass="com.sap.ibso.eservices.core.jalo.InvestSaudiSector"
+                extends="GenericItem"
+                generate="true"
+                autocreate="true">
+            <deployment table="InvestSaudiSectors" typecode="4099"/>
+            <attributes>
+                <attribute qualifier="code" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="false" unique="true" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="name" type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="ranking" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="false" initial="true" />
+                     <defaultvalue>0</defaultvalue>          
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+        
+        <itemtype
+                code="InvestSaudiContact"
+                jaloclass="com.sap.ibso.eservices.core.jalo.InvestSaudiContact"
+                extends="GenericItem"
+                generate="true"
+                autocreate="true">
+            <deployment table="InvestSaudiContacts" typecode="4098"/>
+            <attributes>
+                <attribute qualifier="code" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="false" unique="true" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="name" type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="posistion" type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="mobile" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="telephone" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="email" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="ranking" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="false" initial="true" />
+                     <defaultvalue>0</defaultvalue>          
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="department"
+					type="InvestSaudiSector" generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" />
+				</attribute>
+				
+				<attribute type="boolean"
+					qualifier="isActive">
+					<persistence type="property" />
+					<modifiers optional="false" />
+					<defaultvalue>true</defaultvalue>
+					<description>Indicates if the contact is active or not.</description>
+				</attribute>
+            </attributes>
+           
+        </itemtype>
+
+	</itemtypes>
+</items>

@@ -1,0 +1,91 @@
+.dashboardWidgetRequests{
+	&-info{
+		text-align: center;
+		padding-top: 25px;
+		&-icon{
+			margin-bottom: 25px;
+			svg{
+				width: 72px;
+				height: 72px;
+			}
+		}
+
+		&-text{
+			font-size: 13px;
+			color: #313f4b;
+			margin-bottom: 25px;
+		}
+
+		&-info{
+			margin-top: 25px;
+			svg{
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
+
+	&-action{
+		text-align: center;
+	}
+
+	table td{
+		vertical-align: top;
+	}
+
+
+	&-btn{
+		padding-top: 0;
+		padding-bottom: 0;
+		svg {
+			width: 13px;
+			height: 13px;
+		}
+	}
+
+	&-title{
+		font-size: 15px;
+		color: @apple;
+		margin-bottom: 5px;
+		line-height: 18px;
+	}
+
+	&-desc{
+		font-size: 13px;
+		margin-bottom: 5px;
+		line-height: 15px;
+	}
+
+	&-avg{
+		font-size: 11px;
+		line-height: 13px;
+	}
+
+
+	&-status{
+		&-icon{
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			vertical-align: sub;
+			margin-left: 5px;
+
+			svg{
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+
+
+	#media-breakpoint-down(sm,{
+		margin-top: -9px;
+
+		.tableModule{
+			margin-left: -10px;
+			margin-right: -10px;
+			margin-bottom: 0;
+		}
+	});
+}

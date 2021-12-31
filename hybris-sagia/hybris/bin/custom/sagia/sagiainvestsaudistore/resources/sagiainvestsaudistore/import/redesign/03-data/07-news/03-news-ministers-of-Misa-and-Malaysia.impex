@@ -1,0 +1,57 @@
+################## NEWS-Ministers of Misa and Malaysia#########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+$newsTitleAr= اقتصادي / وزير الاستثمار يبحث مع وزير التجارة الدولية الماليزي تعزيز التعاون والفرص الاستثمارية بين البلدين
+$shortDescAr=  اقتصادي / وزير الاستثمار يبحث مع وزير التجارة الدولية الماليزي تعزيز التعاون والفرص الاستثمارية بين البلدين
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                      			; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; news-ministers-of-Misa-and-Malaysia.jpg           ; news-ministers-of-Misa-and-Malaysia.jpg     		; $siteResource/news-ministers-of-Misa-and-Malaysia.jpg                        ;                 image/jpg                ;                                          ; ""     ;
+					; news-ministers-of-Misa-and-Malaysia-thumbnail.jpg ; news-ministers-of-Misa-and-Malaysia-thumbnail.jpg ; $siteResource/news-ministers-of-Misa-and-Malaysia-thumbnail.jpg              ;                 image/jpg                ;                                          ; ""     ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]     				; $medias                                   											   ; $contentCV;
+                            ; media-container-Misa-and-Malaysia        ; news-ministers-of-Misa-and-Malaysia.jpg,news-ministers-of-Misa-and-Malaysia-thumbnail.jpg ;            ;  
+
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true]; uid[unique = true]                      ; newsTitle[lang = en]                                                                                                       	         ; newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; 
+                                      ;							; news-ministers-of-Misa-and-Malaysia     ; Minister of Investment, Malaysian Minister of International Trade Discuss Enhancing Cooperation and Investment Opportunities . 	; 03.05.2021 00:00:00                           ;                     
+
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]          			; newsShortInformation[lang = en];
+									  ;							 ; news-ministers-of-Misa-and-Malaysia  ; "Minister of Investment Eng. Khalid bin Abdulaziz Al-Falih met here yesterday with Malaysian Minister of International Trade and Industry Mohamed Azmin Ali, and his accompanying delegation, during his official visit to the Kingdom of Saudi Arabia.";
+
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]					; newsFullDescription[lang = en]
+                               ;						  ; news-ministers-of-Misa-and-Malaysia ; "
+During the meeting, they reviewed the trade and investment relations between the two countries, and ways of developing and strengthening them in a way that reflects the aspirations of the two leaderships to achieve prosperity for the two brotherly peoples.
+<p>This occasion represents an opportunity to invite the Malaysian companies to come to the Kingdom of Saudi Arabia to explore the investment opportunities in all sectors , Eng. Khalid Al-Falih said, stressing the Kingdom of Saudi Arabia's keenness to enhance the cooperation between the two countries and to work to overcome the trade and investment challenges.</p>
+<p>It is worth mentioning that the Malaysian delegation came to Riyadh from Madinah after receiving the invitation of Minister of Investment Eng. Khalid Al-Falih, who is also Chairman of the Board of Directors of the Economic Cities and Special Zones Authority, to visit the Knowledge Economic City to explore the economic city's projects and promising investment opportunities in a number of fields of interest of the Malaysian investor.</p>
+";
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]					; newsFullDescription[lang = ar]
+                               ;						  ; news-ministers-of-Misa-and-Malaysia ; "
+<p>لتقى معالي وزير الاستثمار المهندس خالد بن عبد العزيز الفالح في الرياض، بمعالي وزير التجارة الدولية والصناعة الماليزي محمد أزمين علي، والوفد المرافق له، وذلك خلال زيارته الرسمية إلى المملكة.</p>
+<p>وجرى خلال اللقاء استعراض العلاقات التجارية والاستثمارية بين البلدين، وبحث سبل تنميتها وتعزيزها بما يعكس طموحات القيادتين لتحقيق الازدهار للشعبين الشقيقين.</p>
+<p>وقال معالي وزير الاستثمار المهندس خالد الفالح: إن هذه المناسبة تمثل فرصة لدعوة الشركات الماليزية للقدوم إلى المملكة والاطلاع على الفرص الاستثمارية والنوعية في القطاعات كافة, مؤكداً حرص المملكة على تعزيز التعاون بين البلدين والعمل على التغلب على التحديات التجارية والاستثمارية.</p>
+<p>وأضاف معاليه نظراً للتقارب والتشابه الثقافي بين الشعبين الشقيقين، لدينا الكثير من الفرص التي يمكن تطويرها والاستفادة منها في قطاعات مختلفة, مستعرضاً المميزات التي توفرها المملكة للمستثمرين بدءًا بموقعها الإستراتيجي الذي يربط قارتي أوروبا وأفريقيا وغرب آسيا وامتلاكها أكبر اقتصاد في المنطقة وعضويتها في مجموعة العشرين بالإضافة إلى تمتعها بنظام مالي ومصرفي قوي ومستقر، مشيرًا إلى دور وزارة الاستثمار في خدمة الشركات والمستثمرين وتسهيل أعمالهم وتلبية احتياجاتهم والربط مع الجهات ذات العلاقة في المملكة.</p>
+<p>وأكد الفالح، على ما توليه القيادة الرشيدة من أهمية تنمية العلاقات مع مملكة ماليزيا الاتحادية وضرورة تنامي أوجه التعاون بينهما على مختلف الأصعدة، ولا سيما في الجانب الاستثماري والتعاون التقني والعلمي، والدفع بهذه العلاقة نحو آفاق أوسع؛ خدمةً لمصالحهما المشتركة, آملاً رؤية الأشقاء الماليزيين في بلدهم الثاني للعمرة أو للسياحة بالإضافة إلى الشركات والمستثمرين وبما يعمل على تعزيز وتنمية العلاقات الاقتصادية والاستثمارية والمشروعات المشتركة لتحقيق الأهداف والطموحات.</p>
+<p>وفي ختام الزيارة استضاف معالي وزير الاستثمار، الوزير الماليزي على وجبة إفطار رمضانية بحي الطريف في الدرعية، تلاها جولة تعريفية بتاريخ الدرعية وتراث المملكة.</p>
+<p>الجدير بالذكر أن الوفد الماليزي قدم للرياض من المدينة المنورة بعد تلقي دعوة معالي وزير الاستثمار المهندس خالد الفالح رئيس مجلس هيئة المدن والمناطق الاقتصادية الخاصة، لزيارة مدينة المعرفة الاقتصادية؛للتعرف على مشاريع المدينة الاقتصادية والفرص الاستثمارية الواعدة فيها في عدد من المجالات التي تهم المستثمر الماليزي وتوفرها مدينة المعرفة.</p>
+";
+
+						 								   
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]                  ;newsDetailsImage(code, $contentCV)     ;newsThumbnailImage(code, $contentCV)             ; $galleryImages	; &componentRef	;
+                                      ;                         ;news-ministers-of-Misa-and-Malaysia ;news-ministers-of-Misa-and-Malaysia.jpg;news-ministers-of-Misa-and-Malaysia-thumbnail.jpg;      			;news-ministers-of-Misa-and-Malaysia;
+  
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]						;newsTitle[lang = ar]	;newsShortInformation[lang=ar];
+									  ;							;news-ministers-of-Misa-and-Malaysia  	;$newsTitleAr      		;$shortDescAr;                                                                  
+							   	
+							   							   

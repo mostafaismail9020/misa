@@ -1,0 +1,22 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/ZBASIC_CONT_FILE_ENT(RefID='0000000000',FileType='')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/ZBASIC_CONT_FILE_ENT(RefID='0000000000',FileType='')",
+      "type": "ZQEEMAH_SRV.ZBASIC_CONT_FILE",
+      "content_type": "application/octet-stream",
+      "media_src": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/ZBASIC_CONT_FILE_ENT(RefID='0000000000',FileType='')/$value",
+      "edit_media": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/ZBASIC_CONT_FILE_ENT(RefID='0000000000',FileType='')/$value"
+    },
+    "RefID": "0000000000",
+    "FileType": "",
+    "FileName": "",
+    "FileMtype": "",
+    "Return": "No record Exists",
+    "InfoToPoa": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/ZBASIC_CONT_FILE_ENT(RefID='0000000000',FileType='')/InfoToPoa"
+      }
+    }
+  }
+}

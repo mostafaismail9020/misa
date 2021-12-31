@@ -1,0 +1,109 @@
+$page = news-us-15-billion-in-new-international-investment
+$template = portalGlobalTemplate
+$name = US$15 BILLION IN NEW INTERNATIONAL INVESTMENT DEALS SIGNED AT THE FUTURE INVESTMENT INITIATIVE
+$titleEn = $name
+$titleAr = هيئة الاستثمار تعلن عن اتفاقيات بقيمة 15 مليار دولار في مبادرة مستقبل الاستثمار
+$shortDescEn = (SAGIA) Announces The Signing And Exchange Of 23 Investment Agreements, As Part
+$shortDescAr = أعلنت الهيئة العامة للاستثمار اليوم ضمن فعاليات مبادرة مستقبل الاستثمار التي
+$pagelabel = /news/us-15-billion-in-new-international-investment-deals-signed-at-the-future-investment-initiative
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; dsc_5053           ; dsc_5053.jpg ; $siteResource/dsc_5053.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; dsc_5053 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; dsc_5053                          ; dsc_5053                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 29.10.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>Ceremony held at the Ritz-Carton, Riyadh on the sidelines of the third annual Future Investment Initiative</em></li>
+</ul>
+<ul>
+<li><em>23 deals represent the scale and diversity of the Kingdom&rsquo;s economy</em></li>
+</ul>
+<ul>
+<li><em>Spokespeople highlight that these deals follow recent news that Saudi Arabia has climbed 30 places in the World Bank&rsquo;s Doing Business report&nbsp;</em></li>
+</ul>
+<ul>
+<li><em>This announcement builds on the momentum achieved thus far in 2019, which has seen the highest number of foreign investor licenses issued by SAGIA in nearly a decade</em></li>
+</ul>
+<ul>
+<li><em>Four new international companies established operations in Saudi Arabia every day during Q3 2019, according to new Invest Saudi&nbsp;report&nbsp;</em></li>
+</ul>
+<p>Riyadh, Saudi Arabia &ndash; 29 October 2019:&nbsp;As the Future Investment Initiative kicks off in Riyadh today, the Saudi Arabian General Investment Authority (SAGIA) announces the signing and exchange of 23 investment agreements, as part of the global investment platform&rsquo;s agenda.&nbsp;</p>
+<p>Totaling more than US$15 billion in value, these agreements were exchanged by signatories in a dedicated ceremony held at the Ritz-Carlton hotel in Riyadh. Coordinated under Invest Saudi, these agreements reflect the enormous potential that Saudi Arabia offers to investors from across the Kingdom and around the world.</p>
+<p>Commenting on the significance of the agreements exchanged at FII, His Excellency&nbsp;Dr. Majid bin Abdullah Al&nbsp;Qasabi, Minister of Commerce and Investment, said:&nbsp;<em>&ldquo;As Saudi Arabia welcomes investors and decision-makers from across the globe to this annual global investment platform, the agreements exchanged here today reflect the strength and diversity of the economy. Under Saudi Vision 2030, Saudi Arabia is undergoing an ambitious program of economic reform, and the world is taking notice. This month, Saudi Arabia climbed 30 places in the World Bank&rsquo;s Doing Business 2020 report, becoming the most improved economy globally. The indicators are clear: Saudi Arabia is not only open for business, it&rsquo;s the economy of the future.&rdquo;</em></p>
+<p>These investments continue the positive momentum that Saudi Arabia has seen this year in terms of inward investment.&nbsp;&nbsp;</p>
+<p>According to Invest Saudi&rsquo;s Fall 2019 Investment Highlights&nbsp;<a href='https://investsaudi.sa/en/news/fall-investment-highlight/'><span class='diff-color'>report&nbsp;</span></a>,which was launched on the sidelines of FII, over 250 overseas businesses were granted investor licenses Q3 2019. This marks a 30 percent increase compared to the same period last year.&nbsp;</p>
+<p>In fact, 809 new foreign companies have established operations in Saudi Arabia,&nbsp; 67 percent of which are for fully foreign ownership investments. This represents the highest number of foreign investor licenses issued by SAGIA since 2010.</p>
+<p>These investments come alongside a broad series of economic reforms, which are enabling rapid growth in foreign investment in Saudi Arabia. These reforms have had a significant impact. According to the 2019 Global Competitiveness Report published by the World Economic Forum, Saudi Arabia&nbsp;has moved up three positions to the 36th&nbsp;place, globally, through its efforts to diversify the Kingdom&rsquo;s economy.</p>
+<p>Earlier this month, Saudi Arabia also climbed 30 places in the World Bank&rsquo;s Doing Business 2020 report, rising to 62nd place and becoming the most improved economy globally. According to the report, Saudi Arabia's rise in the index was driven by key reforms including lifting foreign ownership restrictions in a range of new sectors, while adopting faster and less complicated business registration procedures by introducing a one-stop-shop for business registration.</p>
+<p>Agreements signed and exchanged at FII include:</p>
+<ul>
+<li>A US$700 milion investment deal between&nbsp;SAGIA&nbsp;and&nbsp;Modular Middle East, a prefabricated building solutions company, aimed at localizing its supply chain and developing its manufacturing facilities in Saudi Arabia.</li>
+<li>A US$300 million investment deal between&nbsp;SAGIA&nbsp;and&nbsp;ForDeal, a China-based online shopping platform to establish a regional distribution hub and localize their operations in the Kingdom of Saudi Arabia.&nbsp;</li>
+<li>A US$200 million between&nbsp;SAGIA&nbsp;and London-based&nbsp;Shiloh Minerals. Shiloh aims to develop its local production capacity, as well as invest in potential upstream mining opportunities in Saudi Arabia.</li>
+<li>A US$120 million investment deal between&nbsp;SAGIA&nbsp;and&nbsp;BRF Brazil Foods, one of the biggest food companies globally, with over 30 brands in its portfolio. BRF plans to develop its local production capabilities in Saudi Arabia.&nbsp;</li>
+<li>A US$110 million investment deal between&nbsp;SAGIA&nbsp;and&nbsp;KME, one of the world&rsquo;s largest copper producers. With production capabilities in Germany, France, Italy, Spain, China and the United States, KME plans to expand its manufacturing capacity into Saudi Arabia.</li>
+<li>A US$50 million investment deal between&nbsp;SAGIA&nbsp;and&nbsp;Xylem, a US-based water technology company. Xylem aims to establish a manufacturing and service center in Saudi Arabia for water &amp; wastewater pumps, which wouldwould generate 300 jobs locally.</li>
+<li>A US$50 million agreement between&nbsp;SABIC&nbsp;and&nbsp;Baker Hughes&nbsp;aimed at developing local capacity, creating downstream business opportunities and industry diversification.</li>
+<li>A US$50 million agreement between&nbsp;Aurora Motors&nbsp;and&nbsp;Alkhorayef Group&nbsp;intended to introduce leading-edge irrigation machinery systems and well drilling equipment while creating up to 1,000 local jobs.</li>
+<li>A US$32 million agreement between&nbsp;SABIC&nbsp;and&nbsp;Taqnia&nbsp;aimed at developing smart grid solutions, as well as innovative wastewater and cooling technologies.</li>
+<li>A US$200 million agreement beween&nbsp;DTDC&nbsp;and&nbsp;Zajil&nbsp;to launch a pan-regional packaging e-commerce company based in Saudi Arabia.</li>
+<li>An MoU between&nbsp;Industrial Clusters&nbsp;and&nbsp;Eurofarma&nbsp;to conduct a feasibility study with the aim of investing up to US$110 million to develop local&nbsp;pharamaceutical production capacity.</li>
+<li>An MoU between&nbsp;Industrial Clusters&nbsp;and&nbsp;AERIS&nbsp;to conduct a feasibility study with the aim of investing up to US$100 million to develop sustainable wind energy capabiltiies in Saudi Arabia.</li>
+<li>An MoU between&nbsp;Industrial Clusters&nbsp;and&nbsp;Instituto Butantan&nbsp;to conduct a feasibility study with the aim of investing up to US$250 million to develop local&nbsp;vaccine&nbsp;production.</li>
+<li>A US$17.5 million deal between&nbsp;LT Foods/DAAWAT&nbsp;and&nbsp;SALIC&nbsp;aimed at deploying investments in agricultural and livestock production.</li>
+<li>A US$50 million deal between&nbsp;Fast Service&nbsp;and&nbsp;Extreme International&nbsp;to develop and launch a series of action and adventure sporting events across Saudi Arabia.</li>
+<li>An MoU between&nbsp;Air Products and Chemicals, Inc.&nbsp;and&nbsp;ACWA Power&nbsp;to develop the US$11.45 billion Air Product Qudra project.A US$45 million.</li>
+<li>A US$110 agreement deal between&nbsp;Saudi Aramco&nbsp;and&nbsp;AKER SAS, a Norwegian holding company engaged in offshore fishing, construction, and engineering.</li>
+<li>An MoU between&nbsp;Saudi Aramco&nbsp;and&nbsp;APQ&nbsp;to form joint-venture valued at US$600 million</li>
+<li>A US$200 million deal between&nbsp;Saudi Aramco&nbsp;and&nbsp;Dassault Systems, aimed at collaborating across diverse vectors including data analytics, project management, and smart cities.&nbsp;</li>
+<li>A US$230 million agreement between&nbsp;Saudi Aramco&nbsp;and&nbsp;Baker Hughes&nbsp;around co-investment and co-development for Artificial Intelligence and Digital Transformation.</li>
+<li>A US$74 million agreement&nbsp;Saudi Aramco&nbsp;and&nbsp;BMT&nbsp;to establish a fittings and valves manufacturing facility in Saudi Arabia.</li>
+<li>A deal between&nbsp;Saudi Aramco&nbsp;and&nbsp;Tubacex Group, aimed at investing in CRA pipe threading and weld overlay and cladding services manufacturing facilities in the Kingdom.</li>
+<li>A US$25 million deal between&nbsp;Saudi Aramco&nbsp;and&nbsp;Pultron&nbsp;to invest in developing manufacturing facilities in Saudi Arabia that will produce high-performance glass fiber-reinforced polymer (GFRP) pultrusion products.</li>
+</ul>"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>أعلنت&nbsp;الهيئة&nbsp;العامة&nbsp;للاستثمار&nbsp;اليوم&nbsp;ضمن&nbsp;فعاليات&nbsp;مبادرة&nbsp;مستقبل&nbsp;الاستثمار&nbsp;التي&nbsp;بدأت&nbsp;أعمالها&nbsp;اليوم&nbsp;بالرياض&nbsp;في&nbsp;فندق&nbsp;الريتز-كارلتون؛&nbsp;عن&nbsp;توقيع&nbsp;23&nbsp;اتفاقية&nbsp;بقيمة&nbsp;إجمالية&nbsp;تبلغ&nbsp;15&nbsp;مليار&nbsp;دولار.</p>
+<p>وجرى&nbsp;توقيع&nbsp;الاتفاقيات&nbsp;ضمن&nbsp;حفل&nbsp;أقامته&nbsp;هيئة&nbsp;الاستثمار&nbsp;على&nbsp;هامش&nbsp;فعاليات&nbsp;المبادرة&nbsp;تحت&nbsp;شعار&nbsp;استثمر&nbsp;في&nbsp;السعودية،&nbsp;حيث&nbsp;تضمنت&nbsp;الاتفاقيات&nbsp;عددًا&nbsp;من&nbsp;النشاطات&nbsp;الاستثمارية&nbsp;في&nbsp;مختلف&nbsp;القطاعات&nbsp;الاستراتيجية،&nbsp;من&nbsp;أبرزها&nbsp;قطاع&nbsp;الطاقة&nbsp;والمياه،&nbsp;إضافة&nbsp;إلى&nbsp;قطاع&nbsp;الدواء&nbsp;والخدمات&nbsp;اللوجستية&nbsp;والبتركيماويات&nbsp;والتقنية&nbsp;وريادة&nbsp;الأعمال&nbsp;والابتكار.</p>
+<p>وأكد&nbsp;معالي&nbsp;محافظ&nbsp;الهيئة&nbsp;العامة&nbsp;للاستثمار&nbsp;المهندس&nbsp;إبراهيم&nbsp;بن&nbsp;عبدالرحمن&nbsp;العمر،&nbsp;أنه&nbsp;في&nbsp;الوقت&nbsp;الذي&nbsp;يشاهد&nbsp;فيه&nbsp;حضور&nbsp;المستثمرين&nbsp;وصناع&nbsp;القرار&nbsp;من&nbsp;جميع&nbsp;أنحاء&nbsp;العالم&nbsp;إلى&nbsp;منتدى&nbsp;مبادرة&nbsp;مستقبل&nbsp;الاستثمار&nbsp;التي&nbsp;تعد&nbsp;منصة&nbsp;عالمية&nbsp;لبحث&nbsp;أفق&nbsp;مستقبل&nbsp;الاستثمار&nbsp;العالمي&nbsp;وتوجهاته،&nbsp;تأتي&nbsp;مذكرات&nbsp;التفاهم&nbsp;التي&nbsp;تم&nbsp;توقيعها&nbsp;اليوم&nbsp;لتشير&nbsp;إلى&nbsp;قوة&nbsp;وتنوع&nbsp;الاقتصاد&nbsp;الوطني&nbsp;للمملكة&nbsp;العربية&nbsp;السعودية،&nbsp;مبينًا&nbsp;أن&nbsp;المملكة&nbsp;تمر&nbsp;بتغيرات&nbsp;كبيرة&nbsp;ونوعية&nbsp;في&nbsp;ظل&nbsp;برنامج&nbsp;الإصلاحات&nbsp;الاقتصادية&nbsp;الطموح&nbsp;الذي&nbsp;تقوده&nbsp;رؤية&nbsp;المملكة&nbsp;2030،&nbsp;مؤكدًا&nbsp;على&nbsp;النجاح&nbsp;الذي&nbsp;حققته&nbsp;الإصلاحات&nbsp;الاقتصادية&nbsp;وفقًا&nbsp;لتقرير&nbsp;ممارسة&nbsp;الأعمال&nbsp;2020&nbsp;الذي&nbsp;أصدره&nbsp;البنك&nbsp;الدولي&nbsp;مؤخرًا.</p>
+<p>ونوّه&nbsp;العمر&nbsp;إلى&nbsp;أهمية&nbsp;النتائج&nbsp;التي&nbsp;استعرضها&nbsp;البنك&nbsp;الدولي،&nbsp;التي&nbsp;كان&nbsp;من&nbsp;ضمنها&nbsp;تقدم&nbsp;المملكة&nbsp;30&nbsp;مرتبة،&nbsp;لتصبح&nbsp;السعودية&nbsp;بذلك&nbsp;أكثر&nbsp;الاقتصادات&nbsp;تطورًا&nbsp;على&nbsp;مستوى&nbsp;العالم،&nbsp;لافتاً&nbsp;إلى&nbsp;أن&nbsp;كل&nbsp;هذه&nbsp;المؤشرات&nbsp;تبرهن&nbsp;على&nbsp;أن&nbsp;المملكة&nbsp;هي&nbsp;الاقتصاد&nbsp;الواعد&nbsp;عالميًّا.</p>
+<p>وتأتي&nbsp;مذكرات&nbsp;التفاهم&nbsp;التي&nbsp;تم&nbsp;توقيعها&nbsp;اليوم،&nbsp;امتداداً&nbsp;للتقدم&nbsp;الذي&nbsp;تحققه&nbsp;المملكة&nbsp;في&nbsp;عام&nbsp;2019،&nbsp;حيث&nbsp;أعلنت&nbsp;هيئة&nbsp;الاستثمار&nbsp;في&nbsp;تقريرها&nbsp;للربع&nbsp;الثالث،&nbsp;الذي&nbsp;أصدرته&nbsp;بالتزامن&nbsp;مع&nbsp;انطلاق&nbsp;فعاليات&nbsp;مبادرة&nbsp;مستقبل&nbsp;الاستثمار؛&nbsp;أن&nbsp;عدد&nbsp;الرخص&nbsp;الصادرة&nbsp;للاستثمار&nbsp;الأجنبي&nbsp;بلغ&nbsp;251&nbsp;رخصة،&nbsp;بزيادة&nbsp;نسبتها&nbsp;30%&nbsp;مقارنة&nbsp;بنفس&nbsp;الفترة&nbsp;من&nbsp;عام&nbsp;2018.</p>
+<p>وذكرت&nbsp;الهيئة&nbsp;أن&nbsp;عدد&nbsp;تراخيص&nbsp;الاستثمار&nbsp;الأجنبي&nbsp;حتى&nbsp;نهاية&nbsp;الربع&nbsp;الثالث&nbsp;من&nbsp;العام&nbsp;الجاري&nbsp;بلغت&nbsp;809&nbsp;ترخيص،&nbsp;شملت&nbsp;مشاريع&nbsp;مشتركة&nbsp;مع&nbsp;مستثمرين&nbsp;محليين،&nbsp;وبإضافة&nbsp;مجموع&nbsp;العدد&nbsp;التراكمي&nbsp;على&nbsp;مدى&nbsp;الأرباع&nbsp;الثلاثة&nbsp;الماضية&nbsp;خلال&nbsp;العام&nbsp;الحالي&nbsp;والتي&nbsp;بلغت&nbsp;809&nbsp;ترخيص&nbsp;استثماري،&nbsp;فإن&nbsp;الهيئة&nbsp;تسجل&nbsp;بذلك&nbsp;أكبر&nbsp;عدد&nbsp;للتراخيص&nbsp;السنوية&nbsp;على&nbsp;مدى&nbsp;التسعة&nbsp;أعوام&nbsp;الماضية،&nbsp;أي&nbsp;منذ&nbsp;عام&nbsp;2010.</p>
+<p>يذكر&nbsp;أن&nbsp;هذا&nbsp;النمو&nbsp;السريع&nbsp;في&nbsp;عدد&nbsp;الاستثمارات&nbsp;يأتي&nbsp;في&nbsp;الوقت&nbsp;الذي&nbsp;نفذت&nbsp;فيه&nbsp;المملكة&nbsp;سلسلة&nbsp;واسعة&nbsp;من&nbsp;الإصلاحات&nbsp;الاقتصادية،&nbsp;حيث&nbsp;قفزت&nbsp;المملكة&nbsp;30&nbsp;مرتبة&nbsp;وفقًا&nbsp;لتقرير&nbsp;ممارسة&nbsp;الأعمال&nbsp;2020،&nbsp;الصادر&nbsp;عن&nbsp;مجموعة&nbsp;البنك&nbsp;الدولي،&nbsp;لتصبح&nbsp;بذلك&nbsp;أكثر&nbsp;الاقتصادات&nbsp;تطورًا&nbsp;على&nbsp;مستوى&nbsp;العالم.</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

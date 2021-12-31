@@ -1,0 +1,41 @@
+
+$contentCatalog=investsaudiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailFromEmail=info@sagia.gov.sa
+$emailFromName=Customer Services Team
+$lang = en
+$jarResource=jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+
+################## Start InvestSaudi 2 Factor Authentication Email Template  #####################
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; opportunityCreatedApproverTemplate    ; opportunity Created Approver Template       ; true ; opportunityCreatedApproverTemplate    ; opportunity_created_approver_Subject    ; opportunity_created_approver_Body    ; EmailPage
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'opportunityCreatedApproverTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'opportunityCreatedApproverTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-opportunityCreatedApprover      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-opportunityCreatedApprover    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-opportunityCreatedApprover ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@sagia.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; opportunityCreatedApprover   ; Opportunity Created Approver email page    ; opportunityCreatedApproverTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; opportunity_created_approver_Body       ; com.investsaudi.email.context.OpportunityCreatedApproverEmailContext
+; opportunity_created_approver_Subject    ; com.investsaudi.email.context.OpportunityCreatedApproverEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;opportunity_created_approver_Body       ; "opportunity created approver Email Body"          ; $jarResource/email-opportunityCreatedApproverBody.vm
+; opportunity_created_approver_Subject    ; "opportunity created approver Email Subject"       ; $jarResource/email-opportunityCreatedApproverSubject.vm
+

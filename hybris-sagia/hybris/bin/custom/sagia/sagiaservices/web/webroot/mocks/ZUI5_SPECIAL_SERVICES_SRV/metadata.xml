@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+           xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+           xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZUI5_SPECIAL_SERVICES_SRV" xml:lang="en" sap:schema-version="1"
+                xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="SPCHECKHISTORY" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                </Key>
+                <Property Name="OBJECT_ID" Type="Edm.String"/>
+                <Property Name="PROCESS_TYPE" Type="Edm.String"/>
+                <Property Name="CAT_CODE1" Type="Edm.String"/>
+                <Property Name="CATEGORY1" Type="Edm.String"/>
+                <Property Name="CAT_CODE2" Type="Edm.String"/>
+                <Property Name="CATEGORY2" Type="Edm.String"/>
+                <Property Name="CAT_CODE3" Type="Edm.String"/>
+                <Property Name="CATEGORY3" Type="Edm.String"/>
+                <Property Name="CAT_CODE4" Type="Edm.String"/>
+                <Property Name="CATEGORY4" Type="Edm.String"/>
+                <Property Name="DESCRIPTION" Type="Edm.String"/>
+                <Property Name="POSTING_DATE" Type="Edm.String"/>
+                <Property Name="STATUS" Type="Edm.String"/>
+                <Property Name="COMMENTS" Type="Edm.String"/>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false"/>
+                <Property Name="CREATION_ALLOWED" Type="Edm.String"/>
+                <Property Name="ERROR_MSG" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="SPCHECKAPPLICANTS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZAPP_NAME" Type="Edm.String"/>
+                <Property Name="ZZIQAMA_NUM" Type="Edm.String"/>
+                <Property Name="ZZIQAMA_EXPIRY" Type="Edm.String"/>
+                <Property Name="ZZAPP_NATION" Type="Edm.String"/>
+                <Property Name="ZZNATION_NOTE" Type="Edm.String"/>
+                <Property Name="ZZAPP_PROF" Type="Edm.String"/>
+                <Property Name="ZZSAGIA_BP" Type="Edm.String"/>
+                <Property Name="ZZAPPLY_CAT" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="SERVICEHEADER" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OBJECT_ID"/>
+                </Key>
+                <Property Name="ERROR_MSG" Type="Edm.String" Nullable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false"/>
+                <Property Name="OBJECT_GUID" Type="Edm.String"/>
+                <Property Name="ZZ_700_NUMBER" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZ_CR_NUMBER" Type="Edm.String" Nullable="false"/>
+                <Property Name="STATUS_CODE" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZ_COC_BR" Type="Edm.String" Nullable="false"/>
+                <Property Name="OBJECT_ID" Type="Edm.String" Nullable="false"/>
+                <Property Name="PROCESS_TYPE" Type="Edm.String" Nullable="false"/>
+                <Property Name="CAT_CODE1" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZ_MOL_BR" Type="Edm.String" Nullable="false"/>
+                <Property Name="CATEGORY1" Type="Edm.String" Nullable="false"/>
+                <Property Name="CAT_CODE2" Type="Edm.String" Nullable="false"/>
+                <Property Name="CATEGORY2" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZ_MOMRA_BR" Type="Edm.String" Nullable="false"/>
+                <Property Name="DESCRIPTION" Type="Edm.String" Nullable="false"/>
+                <Property Name="POSTING_DATE" Type="Edm.String" Nullable="false"/>
+                <Property Name="STATUS" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZ_MOCI_BR" Type="Edm.String" Nullable="false"/>
+                <Property Name="COMMENTS" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZSER_REGION" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZPHONE_NUM" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZ_ZAKAT_BR" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZEMAIL_ADD" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZAPP_REASON" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZNEW_COMP" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZ_GOSI_BR" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZNEW_COMP_CR" Type="Edm.String" Nullable="false"/>
+                <Property Name="ZZNEW_PROF" Type="Edm.String" Nullable="false"/>
+                <NavigationProperty Name="TOATTACHMENTS" Relationship="ZUI5_SPECIAL_SERVICES_SRV.HEADERTOATTACHMENTS"
+                                    FromRole="FromRole_HEADERTOATTACHMENTS" ToRole="ToRole_HEADERTOATTACHMENTS"/>
+                <NavigationProperty Name="TOAPPLICANTS" Relationship="ZUI5_SPECIAL_SERVICES_SRV.HEADERTOAPPLICANTS"
+                                    FromRole="FromRole_HEADERTOAPPLICANTS" ToRole="ToRole_HEADERTOAPPLICANTS"/>
+            </EntityType>
+            <EntityType Name="SERVICEAPPLICANTS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OBJECT_ID"/>
+                </Key>
+                <Property Name="ERROR_MSG" Type="Edm.String"/>
+                <Property Name="SUCCESS" Type="Edm.String"/>
+                <Property Name="OBJECT_GUID" Type="Edm.String"/>
+                <Property Name="ZZAPPLY_CAT" Type="Edm.String"/>
+                <Property Name="ZZSAGIA_BP" Type="Edm.String"/>
+                <Property Name="ZZAPP_PROF" Type="Edm.String"/>
+                <Property Name="ZZNATION_NOTE" Type="Edm.String"/>
+                <Property Name="ZZAPP_NATION" Type="Edm.String"/>
+                <Property Name="ZZIQAMA_EXPIRY" Type="Edm.String"/>
+                <Property Name="ZZIQAMA_NUM" Type="Edm.String"/>
+                <Property Name="ZZAPP_NAME" Type="Edm.String"/>
+                <Property Name="OBJECT_ID" Type="Edm.String" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="SERVICEATTACHMENTS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OBJECT_ID"/>
+                </Key>
+                <Property Name="Filename" Type="Edm.String" Nullable="false"/>
+                <Property Name="DOC_GUID" Type="Edm.String"/>
+                <Property Name="OBJECT_ID" Type="Edm.String" Nullable="false"/>
+                <Property Name="MimeType" Type="Edm.String" Nullable="false"/>
+                <Property Name="FileContString" Type="Edm.String" Nullable="false"/>
+                <Property Name="OBJECT_GUID" Type="Edm.String"/>
+                <Property Name="DOC_ID" Type="Edm.String" Nullable="false"/>
+                <Property Name="size" Type="Edm.String" Nullable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false"/>
+                <Property Name="ERROR_MSG" Type="Edm.String" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="ATTACHMENTDETAILS" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OBJECT_ID"/>
+                    <PropertyRef Name="DOC_GUID"/>
+                </Key>
+                <Property Name="OBJECT_ID" Type="Edm.String" Nullable="false"/>
+                <Property Name="DOC_GUID" Type="Edm.String" Nullable="false"/>
+                <Property Name="FILENAME" Type="Edm.String" Nullable="false"/>
+                <Property Name="FILETYPE" Type="Edm.String" Nullable="false"/>
+                <Property Name="CONTENT" Type="Edm.String" Nullable="false"/>
+                <Property Name="OBJECT_GUID" Type="Edm.String" Nullable="false"/>
+                <Property Name="DOC_ID" Type="Edm.String" Nullable="false"/>
+                <Property Name="FILESIZE" Type="Edm.String" Nullable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false"/>
+                <Property Name="ERROR_MSG" Type="Edm.String" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="SPCOUNTRY" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false"/>
+                <Property Name="COUNTRYCODE" Type="Edm.String"/>
+                <Property Name="COUNTRY" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="SPREGION" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false"/>
+                <Property Name="REGIONCODE" Type="Edm.String"/>
+                <Property Name="REGION" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="SPAPPLICATIONCAT" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGAUGE"/>
+                </Key>
+                <Property Name="LANGAUGE" Type="Edm.String" Nullable="false"/>
+                <Property Name="APPCATCODE" Type="Edm.String"/>
+                <Property Name="APPLICATIONCAT" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="SPGETATTACHMENTS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false"/>
+                <Property Name="SEQUENCE_NUMBER" Type="Edm.String"/>
+                <Property Name="DESCRIPTION_PASS" Type="Edm.String"/>
+                <Property Name="MANDATORY" Type="Edm.String"/>
+                <Property Name="ZZAPPLY_CAT_FLAG" Type="Edm.String"/>
+                <Property Name="DESCRIPTION" Type="Edm.String"/>
+            </EntityType>
+            <Association Name="HEADERTOATTACHMENTS" sap:content-version="1">
+                <End Type="ZUI5_SPECIAL_SERVICES_SRV.SERVICEHEADER" Multiplicity="1"
+                     Role="FromRole_HEADERTOATTACHMENTS"/>
+                <End Type="ZUI5_SPECIAL_SERVICES_SRV.SERVICEATTACHMENTS" Multiplicity="*"
+                     Role="ToRole_HEADERTOATTACHMENTS"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_HEADERTOATTACHMENTS">
+                        <PropertyRef Name="OBJECT_ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_HEADERTOATTACHMENTS">
+                        <PropertyRef Name="OBJECT_ID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="HEADERTOAPPLICANTS" sap:content-version="1">
+                <End Type="ZUI5_SPECIAL_SERVICES_SRV.SERVICEHEADER" Multiplicity="1"
+                     Role="FromRole_HEADERTOAPPLICANTS"/>
+                <End Type="ZUI5_SPECIAL_SERVICES_SRV.SERVICEAPPLICANTS" Multiplicity="*"
+                     Role="ToRole_HEADERTOAPPLICANTS"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_HEADERTOAPPLICANTS">
+                        <PropertyRef Name="OBJECT_ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_HEADERTOAPPLICANTS">
+                        <PropertyRef Name="OBJECT_ID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZUI5_SPECIAL_SERVICES_SRV_Entities" m:IsDefaultEntityContainer="true"
+                             sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SPCHECKHISTORYSET" EntityType="ZUI5_SPECIAL_SERVICES_SRV.SPCHECKHISTORY"
+                           sap:content-version="1"/>
+                <EntitySet Name="SPCHECKAPPLICANTSSET" EntityType="ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+                           sap:content-version="1"/>
+                <EntitySet Name="SERVICEHEADERSET" EntityType="ZUI5_SPECIAL_SERVICES_SRV.SERVICEHEADER"
+                           sap:content-version="1"/>
+                <EntitySet Name="SERVICEAPPLICANTSSET" EntityType="ZUI5_SPECIAL_SERVICES_SRV.SERVICEAPPLICANTS"
+                           sap:content-version="1"/>
+                <EntitySet Name="SERVICEATTACHMENTSSET" EntityType="ZUI5_SPECIAL_SERVICES_SRV.SERVICEATTACHMENTS"
+                           sap:content-version="1"/>
+                <EntitySet Name="ATTACHMENTDETAILSSET" EntityType="ZUI5_SPECIAL_SERVICES_SRV.ATTACHMENTDETAILS"
+                           sap:content-version="1"/>
+                <EntitySet Name="SPCOUNTRYSET" EntityType="ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+                           sap:content-version="1"/>
+                <EntitySet Name="SPREGIONSET" EntityType="ZUI5_SPECIAL_SERVICES_SRV.SPREGION" sap:content-version="1"/>
+                <EntitySet Name="SPAPPLICATIONCATSET" EntityType="ZUI5_SPECIAL_SERVICES_SRV.SPAPPLICATIONCAT"
+                           sap:content-version="1"/>
+                <EntitySet Name="SPGETATTACHMENTSSET" EntityType="ZUI5_SPECIAL_SERVICES_SRV.SPGETATTACHMENTS"
+                           sap:content-version="1"/>
+                <AssociationSet Name="HEADERTOAPPLICANTSSET" Association="ZUI5_SPECIAL_SERVICES_SRV.HEADERTOAPPLICANTS"
+                                sap:creatable="false" sap:updatable="false" sap:deletable="false"
+                                sap:content-version="1">
+                    <End EntitySet="SERVICEHEADERSET" Role="FromRole_HEADERTOAPPLICANTS"/>
+                    <End EntitySet="SERVICEAPPLICANTSSET" Role="ToRole_HEADERTOAPPLICANTS"/>
+                </AssociationSet>
+                <AssociationSet Name="HEADERTOATTACHMENTSSET"
+                                Association="ZUI5_SPECIAL_SERVICES_SRV.HEADERTOATTACHMENTS" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SERVICEHEADERSET" Role="FromRole_HEADERTOATTACHMENTS"/>
+                    <End EntitySet="SERVICEATTACHMENTSSET" Role="ToRole_HEADERTOATTACHMENTS"/>
+                </AssociationSet>
+                <FunctionImport Name="SPCHECKHISTORY" ReturnType="Collection(ZUI5_SPECIAL_SERVICES_SRV.SPCHECKHISTORY)"
+                                EntitySet="SPCHECKHISTORYSET" m:HttpMethod="GET">
+                    <Parameter Name="PROCESS_TYPE" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="CAT_CODE1" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="CAT_CODE2" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="SPCHECKAPPLICANTS"
+                                ReturnType="Collection(ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS)"
+                                EntitySet="SPCHECKAPPLICANTSSET" m:HttpMethod="GET">
+                    <Parameter Name="CAT_CODE1" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="CAT_CODE2" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="PROCESS_TYPE" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="SPCOUNTRY" ReturnType="Collection(ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY)"
+                                EntitySet="SPCOUNTRYSET" m:HttpMethod="GET">
+                    <Parameter Name="LANGUAGE" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="SPREGION" ReturnType="Collection(ZUI5_SPECIAL_SERVICES_SRV.SPREGION)"
+                                EntitySet="SPREGIONSET" m:HttpMethod="GET">
+                    <Parameter Name="LANGUAGE" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="SPAPPLICATIONCAT"
+                                ReturnType="Collection(ZUI5_SPECIAL_SERVICES_SRV.SPAPPLICATIONCAT)"
+                                EntitySet="SPAPPLICATIONCATSET" m:HttpMethod="GET">
+                    <Parameter Name="LANGUAGE" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="SPGETATTACHMENTS"
+                                ReturnType="Collection(ZUI5_SPECIAL_SERVICES_SRV.SPGETATTACHMENTS)"
+                                EntitySet="SPGETATTACHMENTSSET" m:HttpMethod="GET">
+                    <Parameter Name="LANGUAGE" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="PROCESS_TYPE" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="CAT_CODE1" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="CAT_CODE2" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link rel="self"
+                       href="http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version"
+                       href="http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,551 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = en
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ; industry-40               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Entrant to generate up to $900Mn revenues in KSA and rest of MENA region by 2030 </span></span></li>
+  <li><span><span>Entrant market share is assumed at 10% in year 1, growing to 30% by year 10 </span></span></li>
+</ul>
+"
+                                ; gaming               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Opportunity to setup a design studio to build/localize mobile games and a publishing unit to finance and roll-out locally developed games in the Kingdom and region </span></span></li>
+  <li><span><span>With an original investment of USD 17 Mn and EBITDA margin of over 12% in Year 8 of operations in KSA alone, investors could potentially generate USD 80 Mn in cumulative cashflow (from Saudi and MENA region) in 10 years </span></span></li>
+</ul>
+"
+                                ; e-commerce               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Opportunity for global e-commerce players to setup regional HQ in KSA to address GCC market demand and develop Arabic user interface to serve local market </span></span></li>
+  <li><span><span>Investor would need to invest ~USD 58 Mn and would breakeven in 6 years of operations </span></span></li>
+  <li><span><span>Investors can generate cumulative net revenues (from Saudi and GCC) of ~USD 1.7 Bn in KSA and additional ~USD 600 Mn from rest GCC market by 2030 and maintain an EBITDA of ~8% </span></span></li>
+</ul>
+"
+                                ; cloud               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Opportunity for global CSPs2 to enter KSA market by setting up data centers and offer cloud services </span></span></li>
+  <li><span><span>An initial investment of ~USD 748 Mn can lead to generate revenues (from Saudi and MENA region) of ~USD 1.2 Bn in ten years of operations through a market share of ~18% </span></span></li>
+</ul>
+"
+                                ; e-waste               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Global electronic device refurbishment and resale companies can enter KSA through a regional hub to localize their platforms </span></span></li>
+  <li><span><span>Starting with an initial investment of ~ USD 23 Mn, the investment can generate cumulative FCF (from Saudi only) of ~USD 30 Mn in 10 years </span></span></li>
+</ul>
+"
+                                ; it-services-software               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Setting up a regional software support center in KSA (including call center, virtual troubleshoot, or any support with matters related to IT software, applications, system infrastructure, etc.) </span></span></li>
+  <li><span><span>Localizing managed IT services (Installation and maintenance of devices, outsourcing and management of IT business application environment etc). </span></span></li>
+  <li><span><span>With an initial investment of ~USD 110 Mn and expected generated revenues up to ~USD 2.3 Bn in 10 years (KSA only ) </span></span></li>
+</ul>
+"
+                                ; smart-intermodal-transport               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Opportunity to setup platform in KSA for end-to-end mobility services focused catering local market as priority and later extend services across the region </span></span></li>
+  <li><span><span>Investors could potentially generate USD 595 Mn in cumulative cashflow in 10 years by investing ~USD 397 Mn over 10 years maintaining EBITDA margin of over 49% in Year 1 of operations in KSA alone </span></span></li>
+  <li><span><span>IRR – 31% </span></span></li>
+</ul>
+"
+
+
+                                ; polytetramethylene-ether-glycol-ptmeg               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected Investment size of USD 271 Mn </span></span></li>
+  <li><span><span>Plant capacity: 35 – 40 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; methacrylate-butadiene-styrene-mbs-resin               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 115 Mn </span></span></li>
+  <li><span><span>Plant capacity: 25 - 40 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; polyaluminum-chloride-pac               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 25Mn </span></span></li>
+  <li><span><span>Plant capacity: 15 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; formic-acid               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 107Mn </span></span></li>
+  <li><span><span>Plant capacity: 40-45 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; neopentyl-glycol-npg               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 116Mn </span></span></li>
+  <li><span><span>Plant capacity: 25-50 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; copolyester-ethers               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 49Mn </span></span></li>
+  <li><span><span>Plant capacity: 30-35 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; fumaric-acid               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 27Mn </span></span></li>
+  <li><span><span>Plant capacity: 20-25 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; dichlorobenzene               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 153Mn </span></span></li>
+  <li><span><span>Plant capacity: 25-30 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; ethylene-vinyl-alcohol-evoh               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 183Mn </span></span></li>
+  <li><span><span>Plant capacity: 35-40 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; monochlorobenzene               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 143Mn </span></span></li>
+  <li><span><span>Plant capacity: 25-30 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; mpeg-hpeoplusmeoh               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 227Mn </span></span></li>
+  <li><span><span>Plant capacity: 40-45 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; polyamide-9t               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 136Mn </span></span></li>
+  <li><span><span>Plant capacity: 35-40 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; polyamide-12               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 68Mn </span></span></li>
+  <li><span><span>Plant capacity: 35-40 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; polyvinyl-butyral-pvb               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 77Mn </span></span></li>
+  <li><span><span>Plant capacity: 45-50 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+                                ; trimethylol-propane-tmp               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 189Mn </span></span></li>
+  <li><span><span>Plant capacity: 30-50 KMT </span></span></li>
+  <li><span><span>Expected IRR: More than 12%</span></span></li>
+</ul>
+"
+
+
+
+                                ; south-murcia-land-development-project               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected Investment size of USD 2.3 Bn.</span></span></li>
+  <li><span><span>Investment model: Sub-Development Agreement with NHC, the Master Developer. </span></span></li>
+  <li><span><span>Location: North of Riyadh city – South of Murcia project.</span></span></li>
+</ul>
+"
+                                ; alhamadania-land-development-project               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected Investment size of USD 500 Mn.</span></span></li>
+  <li><span><span>Investment model: Sub Development Agreement with NHC, the Master Developer.</span></span></li>
+  <li><span><span>Location: Jeddah Alfalah District.</span></span></li>
+</ul>
+"
+                                ; albuhairat-land-development-project               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected Investment size of USD 1.9 Bn. </span></span></li>
+  <li><span><span>Investment model: Sub-Development Agreement with NHC, the Master Developer.</span></span></li>
+  <li><span><span>Location: Northwest of Jeddah city.</span></span></li>
+</ul>
+"
+
+
+                                ; film-infrastructure               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span><span>Expected investment size of USD 190.4 Mn: .</span></span></li>
+  <li><span><span>Total Capex for 10 studios: USD 17.0 Mn</span></span></li>
+  <li><span><span>Total Capex for 6 buildings: USD 90.0 Mn.</span></span></li>
+  <li><span><span>Total Capex for other: USD 69.4 Mn.</span></span></li>
+  <li><span><span>Total soft costs: USD 14.0 Mn .</span></span></li>
+  <li><span><span>Expected revenues (cumulative for 10 years): USD 240.3 Mn</span></span></li>
+  <li><span><span>Expected profit margin of 45% by 2030</span></span></li>
+  <li><span><span>Expected EBITDA margin of 57% by 2030</span></span></li>
+</ul>
+"
+
+                                ; brass-and-copper-plant               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 120 Mn</span></li>
+<li><span>Plant capacity: 45 ktpa</span></li>
+<li><span>Expected IRR: 13%</span></li>
+<li><span>Payback period: 9.1 years</span></li>
+</ul>
+"
+                                ; copper-rod-plant               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 30 Mn</span></li>
+<li><span>Plant capacity: 115 ktpa</span></li>
+<li><span>Expected IRR: 10%</span></li>
+<li><span>Payback period: 9.4 years</span></li>
+</ul>
+"
+                                ; silicon-smelter               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 140 Mn</span></li>
+<li><span>Plant capacity: 45 ktpa</span></li>
+<li><span>Expected IRR: 14.1%</span></li>
+<li><span>Payback period: 9.2 years</span></li>
+</ul>
+"
+                                ; steelmaking               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 4.0 Bn</span></li>
+<li><span>Plant capacity: 7,500 ktpa</span></li>
+<li><span>Expected IRR: 10%</span></li>
+<li><span>Payback period: 9.3 years</span></li>
+</ul>
+"
+                                ;  stainless-steel-grades-seamless-pipes-facility               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 227 Mn</span></li>
+<li><span>Plant capacity: 40 ktpa</span></li>
+<li><span>Expected IRR: 9%</span></li>
+<li><span>Payback period: 9.3 years</span></li>
+</ul>
+"
+                                ;  tinplate-production-plant               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 400 Mn</span></li>
+<li><span>Plant capacity: 400 ktpa</span></li>
+<li><span>Expected IRR: 12%</span></li>
+<li><span>Payback period: 9.2 years</span></li>
+</ul>
+"
+                                ;  aluminum-fluoride               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 105 Mn</span></li>
+<li><span>Plant capacity: 34 ktpa</span></li>
+<li><span>Expected IRR: 10.9%</span></li>
+<li><span>Payback period: 9.2 years</span></li>
+</ul>
+"
+                                ;  aluminum-rolling-foil               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 167 Mn</span></li>
+<li><span>Plant capacity: 35 ktpa</span></li>
+<li><span>Expected IRR: 10%</span></li>
+<li><span>Payback period: 9.3 years</span></li>
+</ul>
+"
+                                ;  hq-hot-rolled-coil-production-plant               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 900 Mn</span></li>
+<li><span>Plant capacity: 3 mtpa</span></li>
+<li><span>Expected IRR: 14%</span></li>
+<li><span>Payback period: 9.1 years</span></li>
+</ul>
+"
+                                ;  aluminum-scrap-recycling-plant               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 70 Mn</span></li>
+<li><span>Plant capacity: 120 mtpa</span></li>
+<li><span>Expected IRR: 49%</span></li>
+<li><span>Payback period: 3 years</span></li>
+</ul>
+"
+                                ;  large-sizes-alloyed-seamless-pipes-production-plant               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 220 Mn</span></li>
+<li><span>Plant capacity: 50 mtpa</span></li>
+<li><span>Expected IRR: 7.7%</span></li>
+<li><span>Payback period: 9.4 years</span></li>
+</ul>
+"
+                                ;  calcium-ammonium-nitrate-can               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 350 Mn</span></li>
+<li><span>Plant capacity: 500 ktpa</span></li>
+<li><span>Expected IRR: 8%</span></li>
+<li><span>Payback period: 9.24 years</span></li>
+</ul>
+"
+                                ;  heavy-profiles-marine-profiles-rails               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 800 Mn</span></li>
+<li><span>Plant capacity: 1.6 mtpa</span></li>
+<li><span>Expected IRR: 9%</span></li>
+<li><span>Payback period: 9.23 years</span></li>
+</ul>
+"
+                                ;  processing-glass-plant               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 50 Mn</span></li>
+<li><span>Plant capacity: 42 ktpa</span></li>
+<li><span>Expected IRR: 13%</span></li>
+<li><span>Payback period: 9.1 years</span></li>
+</ul>
+"
+
+                                ;  fan-coil-unit-manufacturing               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Opportunity to setup FCU manufacturing base in KSA to cater local and regional market</span></li>
+<li><span>Localizing manufacturing of components such as motors to create additional opportunities due to synergies with other HVAC products and home appliances</span></li>
+<li><span>Capitalize on easy access to raw material for manufacturing FCU components such as evaporator coil and body</span></li>
+</ul>
+"
+                                ;  air-conditioners               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Opportunity to setup air conditioners manufacturing base in KSA to cater local and regional market</span></li>
+<li><span>Localizing manufacturing of components such as plastic and metal casing to create additional opportunities due to synergies with refrigerator insulation and body</span></li>
+<li><span>Capitalize on easy access to raw material for manufacturing air conditioner components such heat exchangers</span></li>
+</ul>
+"
+                                ;  air-handling-units-manufacturing               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Opportunity to setup Air Handling Units (AHU) manufacturing base in KSA to cater local and regional market</span></li>
+<li><span>Capitalize easy access to raw material for manufacturing AHU components such as coil and body</span></li>
+<li><span>Investing in standardized production line to produce components such as motors to create additional opportunities due to synergies with other HVAC systems</span></li>
+</ul>
+"
+                                ;  chillers               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Opportunity to setup manufacturing base for chillers in KSA to cater local and regional market</span></li>
+<li><span>Investing in standardized production line to produce components such as motors to create additional opportunities due to synergies with other HVAC systems and home appliances</span></li>
+</ul>
+"
+                                ;  escalators              ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Opportunity to setup escalator manufacturing base in KSA to cater local and regional market</span></li>
+<li><span>Tapping into a large revenue potential in a market with strong and growing demand and large investment planned in infrastructure projects</span></li>
+<li><span>First mover advantage given non-existent competition from any major global player</span></li>
+</ul>
+"
+                                ;  elevators               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Opportunity to setup elevator manufacturing base in KSA to cater local and regional market</span></li>
+<li><span>Capitalize easy access to raw material (steel) for manufacturing elevator components such as cabin/doors and guiderails</span></li>
+<li><span>Tap into highly profitable service segment of elevator value chain – installation and maintenance</span></li>
+</ul>
+"
+                                ;  localization-of-poultry-vertical-integration               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>With an initial investment of USD 90-120 Mn, the vertically integrated poultry farm could achieve an IRR of 8%</span></li>
+<li><span>Estimated to create 100 direct and 200 indirect jobs</span></li>
+<li><span>Secondary processors have the highest estimated profit as compared to other processes in the supply chain</span></li>
+</ul>
+"
+                                ;  localization-of-canned-tuna               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>With an initial investment of USD 240Mn, the canned tuna company could achieve an EBITDA margin of 8% by 2024 and an IRR of 12%</span></li>
+<li><span>Estimated to create 220-250 direct and 480-500 indirect jobs</span></li>
+<li><span>Secondary processors have the highest estimated profit as compared to other processes in the supply chain</span></li>
+</ul>
+"
+
+
+
+                                ;  power-transformers-1               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Investment size of USD 13-40 Mn</span></li>
+<li><span>Opportunity to consider different operating models &ndash; pure private sector model or joint venture with local player</span></li>
+<li><span>Expected timeline to set up the manufacturing and assembly plant is 3-4 months</span></li>
+<li><span>Estimated cumulative transmission HV substations capacity target (KSA &ndash; 214K MVA, MEA &ndash; 664K MVA) over 10 years</span></li>
+<li><span>Expected IRR &ndash; 17%</span></li>
+</ul>
+"
+                                ;  ar-rass-solar-pv-700-mw               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 700 Mn</span></li>
+<li><span>Investment model: Build, Own, Operate (BOO)</span></li>
+<li><span>Opportunity to be part of a greenfield project with a PPA of 25 years</span></li>
+<li><span>Location: Ar Rass, Qassim Region</span></li>
+</ul>
+"
+                                ;  saad-solar-pv-300-mw               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 300 Mn</span></li>
+<li><span>Investment model: Build, Own, Operate (BOO)</span></li>
+<li><span>Opportunity to be part of a greenfield project with a PPA of 25 years</span></li>
+<li><span>Location: Saad, Riyadh Region</span></li>
+</ul>
+"
+                                ;  layla-solar-pv-80-mw               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 80 Mn</span></li>
+<li><span>Investment model: Build, Own, Operate (BOO)</span></li>
+<li><span>Opportunity to be part of a greenfield project with a PPA of 25 years</span></li>
+<li><span>Location: Layla, Riyadh Region</span></li>
+</ul>
+"
+                                ;  wadi-aldawasir-solar-pv-120-mw               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected Investment size of USD 120 Mn</span></li>
+<li><span>Investment model: Build, Own, Operate (BOO)</span></li>
+<li><span>Opportunity to be part of a greenfield project with a PPA of 25 years</span></li>
+<li><span>Location: Wadi Aldawasir, Riyadh Region</span></li>
+</ul>
+"
+                                ;  reverse-osmosis-ro-membrane               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>KSA represents 22% of global desalination capacity</span></li>
+<li><span>&nbsp;Reverse osmosis membrane demand in GCC is forecasted to grow by about 13% per year</span></li>
+<li><span>Investment size USD 40 45 Mn with a potential for a JV with local player or 100% private investment</span></li>
+<li><span>IRR for RO Membrane projects are expected to be between 8% 13%</span></li>
+</ul>
+"
+                                ;  high-pressure-pumps-1               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected investment size of USD 19-56 Mn</span></li>
+<li><span>Investment model: JV or 100% private investment</span></li>
+<li><span>This opportunity is expected to create 150-200 jobs</span></li>
+<li><span>Expected IRR: More than 9%</span></li>
+</ul>
+"
+                                ;  pressure-exchangers               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Investment size of USD 16-21 Mn</span></li>
+<li><span>Investment model: JV or 100% private investment</span></li>
+<li><span>This opportunity is expected to create 60-100 jobs</span></li>
+<li><span>Expected IRR: More than 8%</span></li>
+</ul>
+"
+                                ;  dissolved-air-flotation-daf-systems               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Investment size of USD 29-40 Mn</span></li>
+<li><span>Investment model: JV or 100% private investment</span></li>
+<li><span>This opportunity is expected to create 110 jobs</span></li>
+<li><span>Expected IRR: More than 7%</span></li>
+</ul>
+"
+                                ;  electrical-cutout-fuse               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected investment size of USD 5-15 Mn</span></li>
+<li><span>Opportunity to consider different operating models &ndash; pure private sector model or joint venture with local player</span></li>
+<li><span>Expected timeline to setup the manufacturing and assembly plant is 3-4 months</span></li>
+<li><span>Estimated distribution HV substations capacity target (KSA &ndash; 188K MVA) over 10 years</span></li>
+</ul>
+"
+                                ;  high-voltage-extra-high-voltage-gas-insulated-switchgear               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected investment size of USD 13-40 Mn.</span></li>
+<li><span>Opportunity to consider different operating models &ndash; pure private sector model or joint venture with local player.</span></li>
+<li><span>Expected timeline to setup the manufacturing and assembly plant is 3-4 months.</span></li>
+<li><span>Estimated cumulative transmission HV substations capacity target (KSA &ndash; 214K MVA) over 10 years.</span></li>
+</ul>
+"
+                                ;  energy-services-company-esco               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected investment size of USD 2 Mn.</span></li>
+<li><span>Opportunity to consider different operating models &ndash; pure private sector model or joint venture with local player.</span></li>
+<li><span>Expected IRR 8%-12%&nbsp;</span></li>
+</ul>
+"
+                                ;  electric-generators               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Medium and high-power electric generators and non-standard motors manufacturing.</span></li>
+<li><span>Expected investment size of USD 40 Mn.</span></li>
+<li><span>Plant capacity: 750 MWpa .</span></li>
+<li><span>Expected IRR: 13%.</span></li>
+<li><span>Payback period: 9 years.</span></li>
+</ul>
+"
+                                ;  energy-audit-company               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected investment size of USD 550 K.</span></li>
+<li><span>Opportunity to consider different operating models &ndash; pure private sector model or joint venture with local player.</span></li>
+<li><span>Expected IRR 9% - 14%.</span></li>
+</ul>
+"
+                                ;  industrial-energy-audit-company               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+<li><span>Expected investment size of USD 550 K.</span></li>
+<li><span>Opportunity to consider different operating models &ndash; pure private sector model or joint venture with local player.</span></li>
+<li><span>Expected IRR 6% - 10%.</span></li>
+</ul>
+"
+
+

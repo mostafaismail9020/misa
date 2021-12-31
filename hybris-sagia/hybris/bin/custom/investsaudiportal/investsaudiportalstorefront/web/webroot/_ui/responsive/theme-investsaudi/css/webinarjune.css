@@ -1,0 +1,49 @@
+@font-face { font-family: 'BahijTheSansArabic-ExtraBold'; src: url('../fonts/BahijTheSansArabic-ExtraBold.svg#BahijTheSansArabic-ExtraBold') format('svg'), url('../fonts/BahijTheSansArabic-ExtraBold.ttf') format('truetype'), url('../fonts/BahijTheSansArabic-ExtraBold.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Bahij_TheSansArabic-ExtraBold'; src: url('../fonts/Bahij_TheSansArabic-ExtraBold.eot'); src: url('../fonts/Bahij_TheSansArabic-ExtraBold.eot?#iefix') format('embedded-opentype'), url('../fonts/Bahij_TheSansArabic-ExtraBold.woff2') format('woff2'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'TheSans-Regular'; src: url('../fonts/TheSans-Regular.eot'); src: url('../fonts/TheSans-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/TheSans-Regular.svg#TheSans-Regular') format('svg'), url('../fonts/TheSans-Regular.ttf') format('truetype'), url('../fonts/TheSans-Regular.woff') format('woff'), url('../fonts/TheSans-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'TheSans-Plain'; src: url('../fonts/TheSans-Plain.eot'); src: url('../fonts/TheSans-Plain.eot?#iefix') format('embedded-opentype'), url('../fonts/TheSans-Plain.svg#TheSans-Plain') format('svg'), url('../fonts/TheSans-Plain.ttf') format('truetype'), url('../fonts/TheSans-Plain.woff') format('woff'), url('../fonts/TheSans-Plain.woff2') format('woff2'); font-weight: normal; font-style: normal; }
+
+
+body { background-color: #c7c8ca; color: #50566a; font-family: 'TheSans-Plain' }
+h1, h2, h3, h4, h5 { color: #086b3a; font-family: 'Bahij_TheSansArabic-ExtraBold'; letter-spacing: 1px; text-transform: uppercase; }
+.hero-banner figcaption { text-align: center; margin: 100px auto 25px; }
+.body-contents a { color: #1473e6; }
+.border-square { border: 2px solid #086b3a; color: #50566a; border-radius: 4px; }
+.body-contents.fullwidth .col-md-6 { -webkit-box-flex: 0; -ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%; }
+    .body-contents.fullwidth .col-md-6 .digi-contents { width: 80%; margin: 0 auto; }
+        .body-contents.fullwidth .col-md-6 .digi-contents h3 { display: none; }
+        .body-contents.fullwidth .col-md-6 .digi-contents .digi-notes { display: flex; }
+            .body-contents.fullwidth .col-md-6 .digi-contents .digi-notes h5 { font-weight: bold; font-size: 16px; display: inline-block; width: 80%; margin-bottom: 25px; }
+            .body-contents.fullwidth .col-md-6 .digi-contents .digi-notes span { display: block; }
+            .body-contents.fullwidth .col-md-6 .digi-contents .digi-notes h5:before { display: none; }
+            .body-contents.fullwidth .col-md-6 .digi-contents .digi-notes h5:after { content: ''; display: block; width: 40px; height: 2px; position: absolute; left: auto; bottom: -5px; background-color: #c02228; }
+.digi-notes div { margin: 25px 0 25px 25px; font-size: 14px; }
+    .digi-notes div h5 { font-size: 14px; margin-bottom: 0px; position: relative; }
+        .digi-notes div h5:before { content: "\f00c"; display: block; font: normal normal normal 14px/1 FontAwesome; position: absolute; top: 0; left: -25px; }
+.add-to-calender { display: none; }
+.body-contents.fullwidth .add-to-calender { text-align: center; margin: 15px auto; display: block; }
+    .body-contents.fullwidth .add-to-calender a { display: inline-block; color: #50566a; border: 1px solid #086b3a; padding: 2px 12px; border-radius: 50px; font-size: 13px; }
+.subscriptionBox { background-color: #1a1a1a; border-radius: 5px; color: #FFF; }
+    .subscriptionBox .email-cont .form-control { background-color: transparent; border-radius: 0; border: 1px solid #fdfdfd; padding: 15px 10px; color: #b5c0c8; position: relative; z-index: 3; }
+    .subscriptionBox .email-cont .btn-contact { background-color: #96db68; color: #086b3a; padding: 5px 25px 4px; }
+.error em span { color: #c02228; }
+.digi-contents, .subscriptionBox { margin-bottom: 25px; }
+footer img { display: none; }
+
+.table-agenda { margin-bottom: 25px; }
+    .table-agenda tr { border-bottom: 1px solid #8e9595; }
+        .table-agenda tr:first-child { border-bottom: 1px solid #dfe0e2; }
+        .table-agenda tr:last-child { border-bottom: 0px solid #8e9595; }
+        .table-agenda tr td { vertical-align: top; padding: 15px 0; font-family: 'Bahij_TheSansArabic-ExtraBold'; }
+        .table-agenda tr.header { font-size: 1.15rem; }
+            .table-agenda tr.header td:first-child { font-style: normal; font-weight: normal; }
+        .table-agenda tr td:first-child { font-style: italic; width: 150px; font-size: 1.15rem; font-weight: bold; }
+        .table-agenda tr td, .table-agenda tr td h4 { color: #086b3a; font-size: 0.8rem; }
+            .table-agenda tr td h4 { font-size: 1.15rem; letter-spacing:0; }
+
+html[dir=rtl] body { font-family: NeoSansArabic }
+html[dir=rtl] .digi-notes div h5:before { left: auto; right: -25px; }
+@media(max-width:768px){
+	.two-col-lay .col-md-6{order:0}
+	.two-col-lay .col-md-6:first-child{order:1}
+}

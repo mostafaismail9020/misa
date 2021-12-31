@@ -1,0 +1,69 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$page = sectors-opportunities
+$template = portalSectorTemplate
+$pageName = Sectors & Opportunities
+$pageTitleAr = $pageName
+$pageLabel = /sectors-opportunities
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]		; name            	 		; descriptionText[lang = ar]	 ; buttonText[lang = ar]     ; &componentRef   			 ; $contentCV[unique = true] ;
+                                        ; Investment-Sectors-Banner ; Investment Sectors Banner ; القطاعات والفرص في السعودية	 ;           			     ; Investment-Sectors-Banner ;                           ;
+
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]                        	; linkName[lang = ar]		    ;  $contentCV[unique = true] ; 
+                               ; investment-hub-modon-link     			   	; قم بزيارة الموقع الاكتروني   	;                            ;
+                               ; investment-hub-neom-link				   	; قم بزيارة الموقع الاكتروني     ;                            ;
+							   ; investment-hub-puras-link				   	; قم بزيارة الموقع الاكتروني	  	;                            ;
+							   ; investment-hub-royal-commission-link		; قم بزيارة الموقع الاكتروني	  	;							 ;		
+							   ; investment-hub-industrials-link			; قم بزيارة الموقع الاكتروني	  	;                            ;
+							   ; investment-hub-national-link				; قم بزيارة الموقع الاكتروني	  	;							 ;		
+
+
+INSERT_UPDATE SectorInvestmentsHubComponent	; uid[unique = true]				; &componentRef           			; $contentCV[unique = true] ;
+                                            ; investment-hub-modon 				; investment-hub-modon              ;   						;   
+										    ; investment-hub-neom 				; investment-hub-neom 				;							;
+											; investment-hub-puras 				; investment-hub-puras				;                           ;
+											; investment-hub-royal-commission	; investment-hub-royal-commission	;                           ;
+											; investment-hub-industrials		; investment-hub-industrials		;                           ;
+											; investment-hub-national			; investment-hub-national			;                           ;
+
+
+INSERT_UPDATE SectorInvestmentsHubContainer ; uid[unique = true]      			; name                				; title[lang = ar]	    ; simpleCMSComponents(&componentRef)     														                                                    ; &componentRef           			; $contentCV[unique = true] ;
+											; sectors-investments-hub-container ; Sector Investments Hub Container 	; المنصات الاستثمارية	; investment-hub-modon,investment-hub-neom,investment-hub-puras,investment-hub-royal-commission,investment-hub-industrials,investment-hub-national	; sectors-investments-hub-container	;							;
+
+
+INSERT_UPDATE SectorInvestmentsHubContainer ; uid[unique = true]      			  ; text[lang = ar]	                                                    ; &componentRef           			 ; $contentCV[unique = true] ;
+											; sectors-investments-hub-container   ; اكتشف المزيد من الفرص الاستثمارية بالمملكة من خلال المنصات التالية.	; sectors-investments-hub-container	 ;							 ;
+
+
+INSERT_UPDATE FeaturedOpportunitiesProductComponent ; uid[unique = true]       ; carouselId       ; &componentRef   	; $contentCV[unique = true];
+                                                    ; top-featured             ; top-featured     ; top-featured   	    ;					       ;
+									                ; newly-released           ; newly-relased    ; newly-released      ;					       ; 
+
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]           		; linkName[lang = ar]   ; $contentCV[unique = true] ;
+                               ; featured-opportunities-explore-all	; اكتشف المزيد		 	;                           ;
+
+
+INSERT_UPDATE FeaturedOpportunitiesCarouselComponent ; uid[unique = true]   				       	 ; carouselTitle [lang = ar]                           		 ; &componentRef  							     ; $contentCV[unique = true] ; 
+										             ; sectors-top-featured-opportunities-component  ; ابرز الفرص <span class="clr_gld"> الاستثمارية  </span> 	 ; sectors-top-featured-opportunities-component  ;							 ;
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name       ; title[lang = ar]  ; description[lang = ar]; keywords[lang = en]   ; masterTemplate(uid, $contentCV); label      ; homepage  ; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved'] ; $contentCV[unique = true] ;
+                         ; $page             ; $pageName  ; $pageTitleAr      ; $pageName             ; Invest Saudi,Sectors  ; $template                      ; $pageLabel ; false     ;                              ;                                            ;                           ;
+

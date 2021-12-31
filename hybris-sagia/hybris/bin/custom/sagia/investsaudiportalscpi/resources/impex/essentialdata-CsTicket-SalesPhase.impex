@@ -1,0 +1,14 @@
+INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
+; InboundSalesPhase; INBOUND 
+ 
+INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code) 
+; InboundSalesPhase	; Governmentlead	; Governmentlead	; 	; ALL_SUBTYPES           	;  
+; InboundSalesPhase	; InvestorLead  	; InvestorLead  	; 	; ALL_SUBTYPES           	;  
+; InboundSalesPhase	; CsTicket      	; CsTicket      	; true	; ALL_SUB_AND_SUPER_TYPES	;  
+ 
+INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
+; InboundSalesPhase:Governmentlead	; code          	; Governmentlead:code    	;                                 	; true	;  
+; InboundSalesPhase:InvestorLead  	; code          	; InvestorLead:code      	;                                 	; true	;  
+; InboundSalesPhase:CsTicket      	; governmentlead	; CsTicket:governmentlead	; InboundSalesPhase:Governmentlead	; 	;  
+; InboundSalesPhase:CsTicket      	; investorlead  	; CsTicket:investorlead  	; InboundSalesPhase:InvestorLead  	; 	;  
+; InboundSalesPhase:CsTicket      	; ticketID      	; CsTicket:ticketID      	;                                 	; true	;  

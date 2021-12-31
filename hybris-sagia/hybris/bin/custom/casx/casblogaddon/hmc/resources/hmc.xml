@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2000-2016 hybris AG
+ All rights reserved.
+
+ This software is the confidential and proprietary information of hybris
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with hybris.
+
+  
+-->
+<configuration xmlns="hybris.de/schemas/hmc/generic"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="hybris.de/schemas/hmc/generic hmc.xsd">
+
+	<!-- Configuration for extension casblogaddon -->
+
+	<explorertree>
+		<group name="bloggroup" mode="append">
+			<group name="blog">
+				<typeref type="MostPopularBlogPostsComponent"/>
+				<typeref type="BlogPostComponent"/>
+				<typeref type="NewsLetter"/>
+			</group>
+		</group>
+	</explorertree>
+	
+	<type name="MostPopularBlogPostsComponent" mode="append">
+		<organizer>
+			<editor mode="append">
+				<tab name="tab.blog.general" position="0">
+					<section name="section.details">
+						<listlayout>
+							<attribute labelwidth="200" name="numberOfPostToShow" />
+							<attribute labelwidth="200" name="popularPosts" />
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+	
+	<type name="BlogPostComponent" mode="append">
+		<organizer>
+			<search mode="replace">
+				<condition attribute="uid" />
+				<condition attribute="title" />
+				<condition attribute="catalogVersion" operator="equal"/>
+				<condition attribute="blogType" operator="equal"/>
+			</search>
+			<result>
+				<listview mode="replace">
+					<itemlayout>
+						<attribute name="uid" width="180"/>
+						<attribute name="catalogVersion" width="180"/>
+						<attribute name="title" width="200"/>
+						<attribute name="blogType" width="200"/>
+					</itemlayout>
+				</listview>
+			</result>
+			<editor mode="append">
+				<tab name="properties" position="0">
+	               <section name="properties" mode="replace">
+	                  <listlayout>
+	                     <listlayout>
+							<attribute name="title"/>
+							<attribute name="postUrl"/>
+							<attribute name="tag"/>
+							<attribute name="date"/>
+							<attribute name="blogType"/>
+							<attribute name="content">
+	                        	<wysiwygeditor />
+	                     	</attribute>
+							<attribute name="promoteToIndexPage"/>
+						</listlayout>
+	                  </listlayout>
+	               </section>
+	            </tab>
+			</editor>
+		</organizer>
+	</type>
+	
+	<type name="NewsLetter" mode="append">
+            <organizer>
+                  <search mode="replace">
+                        <condition attribute="email" />
+                  </search>
+                  <result>
+                        <listview mode="replace">
+                              <itemlayout>
+                                    <attribute name="email" width="200"/>
+                                    <attribute name="firstName" width="200"/>
+                                    <attribute name="lastName" width="200"/>
+                              </itemlayout>
+                        </listview>
+                  </result>
+                  <editor mode="append">
+                        <tab name="tab.blog.general" position="0">
+                              <section name="section.details">
+                                    <listlayout>
+                                          <attribute labelwidth="200" name="email" />
+                                          <attribute labelwidth="200" name="firstName" />
+                                          <attribute labelwidth="200" name="lastName" />
+                                    </listlayout>
+                              </section>
+                        </tab>
+                  </editor>
+            </organizer>
+      </type>
+	
+</configuration>

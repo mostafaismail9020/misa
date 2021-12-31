@@ -1,0 +1,245 @@
+$page = sample-information-technology
+$sector = information-technology
+$template = portalSectorTemplate
+$pageName = Information and Technology
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CategoryPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); $contentCV[unique = true]; defaultPage[default = 'false']; approvalStatus(code)[default = 'approved']
+                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ;                          ;                               ;
+
+INSERT_UPDATE CMSCategoryRestriction; uid[unique = true]                               ; categories(code, $catalogVersion); $contentCV[unique = true]; pages(uid, $contentCV)
+                                    ; sample-sector-information-technology-restriction ; sample-information-technology    ;                          ; sample-information-technology
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; name                                ; &componentRef                           ; $contentCV[unique = true]
+                                                  ; sample-information-technology-paragraph ; Information and Technology Overview ; sample-information-technology-paragraph ;
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = en]
+                                           ; sample-information-technology-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+                <h3>Overview</h3>
+                <p>A modern sector for information and communication technologies is integral to today’s advanced industrial activities.</p>
+                <p>&nbsp;</p>
+                <p>Saudi Vision 2030 aims to transform Saudi Arabia into a globally competitive ICT hub, with modern technologies and an empowered information society.</p>
+                <p>&nbsp;</p>
+                <p>The ambition envisages many investment themes, including the development of the digital content and media, the expansion of the telecommunication system, the digitization of the country, and the creation of new high-tech and smart industries.</p>
+                <p>&nbsp;</p>
+                <p>The government is working alongside the private sector to modernize the ICT infrastructure, enhancing the regulatory framework to enable new innovative investments, and building the most suitable ecosystem to support entrepreneurs and digital talents.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = ar]
+                                           ; sample-information-technology-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+                <h1 class='heading text-left mb-3 mt-2' style='direction: rtl;'>نظرة عامة</h1>
+                <p style='direction: rtl; text-align: justify;'>يمثّل قطاع الاتصالات وتقنية المعلومات القلب النابض في عالم  الصناعات المتقدمة اليوم.</p>
+                <p style='direction: rtl; text-align: justify;'>كما تهدف رؤية 2030 إلى نقل المملكة بشكل جذري لتكون مركزاً دولياً لتكنولوجيا المعلومات والاتصالات، لتكون قادرة على المنافسة عالمياً من خلال التقنيات الحديثة وتمكين مجتمع معلوماتي متطور.</p>
+                <p style='direction: rtl; text-align: justify;'>&nbsp;</p>
+                <p style='direction: rtl; text-align: justify;'>طموحنا يحلق باتجاه فضاءات استثمارات متعددة، بما في ذلك تطوير المحتوى الرقمي، و النهوض بوسائل الإعلام، والتوسع في أنظمة الاتصالات، و أنظمة التحول الرقمي، و تطوير صناعة تكنولوجيا المعلومات.</p>
+                <p style='direction: rtl; text-align: justify;'>&nbsp;</p>
+                <p style='direction: rtl; text-align: justify;'>تعمل حكومة المملكة جنباً إلى جنب، مع القطاع الخاص لتحديث البنية التحتية لتكنولوجيا المعلومات والاتصالات، وتعزيز الإطار التنظيمي لتمكين الاستثمارات المبتكرة الجديدة، وبناء النظام البيئي الأنسب لدعم رواد الأعمال والمواهب الرقمية</p>
+                <p style='direction: rtl;'>&nbsp;</p>
+                <p style='direction: rtl;'>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresComponent; uid[unique = true]             ; name            ; figures; unit                                      ; facts[lang = en]                      ; &componentRef                  ; $contentCV[unique = true];
+                                              ; sample-facts-figures-1-$sector ; Facts Figures 1 ; 37%    ; of households are covered by fiber optics ; (23% in 2016)                         ; sample-facts-figures-1-$sector ;
+                                              ; sample-facts-figures-2-$sector ; Facts Figures 2 ; 28.5   ; B SAR                                     ; ecommerce market size in Saudi Arabia ; sample-facts-figures-2-$sector ;
+                                              ; sample-facts-figures-3-$sector ; Facts Figures 3 ; 29.3   ; Mbps Average mobile broadband speed       ; (9.08 Mbps in 2016)                   ; sample-facts-figures-3-$sector ;
+                                              ; sample-facts-figures-4-$sector ; Facts Figures 4 ; 58%    ; Approx.                                   ; Percentage of population under 30     ; sample-facts-figures-4-$sector ;
+                                              ; sample-facts-figures-5-$sector ; Facts Figures 5 ; $ 11   ; Cinemas operating in the Kingdom          ; Licensed Cinemas                      ; sample-facts-figures-5-$sector ;
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresContainer; uid[unique = true]            ; name                    ; title[lang = en]; title[lang = ar]; subtitle[lang = en]; simpleCMSComponents(&componentRef)                                                             ; &componentRef                 ; $contentCV[unique = true]
+                                              ; sample-ff-container-1-$sector ; Fatcs Figures Container ; Fatcs & Figures ; Fatcs & Figures ; Sub title 1        ; sample-facts-figures-1-$sector, sample-facts-figures-2-$sector, sample-facts-figures-3-$sector ; sample-ff-container-1-$sector ;
+                                              ; sample-ff-container-2-$sector ; Fatcs Figures Container ;                 ;                 ; Sub title 2        ; sample-facts-figures-4-$sector, sample-facts-figures-5-$sector                                 ; sample-ff-container-2-$sector ;
+
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; $contentCV; &componentRef
+                                           ; sample-contact-form ;           ; sample-contact-form
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]            ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; sample-fo-explore-all-$sector ;                          ; Explore all          ; /sectors-opportunities/opportunities/?q=&sectorIds=sample-information-technology
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]          ; name                                    ; title[lang = en]                         ; title[lang = ar]                         ; numberItensDisplayed; exploreAllURL(uid, $contentCV); &componentRef               ; $contentCV[unique = true];
+                                                       ; sample-fo-component-$sector ; Sample Featured Opportunities Component ; Information And Technology Opportunities ; Information And Technology Opportunities ; 3                   ; sample-fo-explore-all-$sector ; sample-fo-component-$sector ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]            ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; sample-ss-explore-all-$sector ;                          ; Explore all          ; /sectors-opportunities/success-stories/?q=&sectorIds=sample-information-technology
+
+
+INSERT_UPDATE InvestSaudiSuccessStoriesComponent; uid[unique = true]          ; name                           ; title[lang = en]                           ; title[lang = ar]                           ; numberItensDisplayed; exploreAllURL(uid, $contentCV); &componentRef               ; $contentCV[unique = true];
+                                                ; sample-ss-component-$sector ; Sample Success Story Component ; Information And Technology Success Stories ; Information And Technology Success Stories ; 3                   ; sample-ss-explore-all-$sector ; sample-ss-component-$sector ;
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                       ; $contentCV[unique = true]; linkName  [lang = en]             ; linkName[lang = ar]        ; url
+                              ; sample-sector-proposition-1-link-$sector ;                          ; Information and Technology        ; الاتصالات وتقنية المعلومات ;
+                              ; sample-sector-proposition-2-link-$sector ;                          ; Information and Technology Sample ;                            ;
+
+INSERT_UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; name                        ; url(uid, $contentCV)                     ; index(); &componentRef                       ; $contentCV[unique = true]
+                                                   ; sample-sector-proposition-1-$sector ; Sample Sector Proposition 1 ; sample-sector-proposition-1-link-$sector ; 1      ; sample-sector-proposition-1-$sector ;
+                                                   ; sample-sector-proposition-2-$sector ; Sample Sector Proposition 2 ; sample-sector-proposition-2-link-$sector ; 2      ; sample-sector-proposition-2-$sector ;
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sample-sector-proposition-1-$sector ;                          ; "
+<div class='col-md-6 column'>
+    <div>
+        <p style='color: #5cc83b !important;'><strong>Information and Communication Technology Hub</strong></p>
+        <ul>
+            <li>Saudi Arabia is the biggest IT market in the MENA Region (Spending per year expected to reach 45 billion
+                dollars
+                by end of 2019)</li>
+            <li>Saudi Arabia enjoys a strategic location to become a main IT service and cloud hub with access to
+                international
+                connectivity through Red Sea and Gulf, Central location to serve Europe, Asia and Africa</li>
+        </ul>
+        <p> </p>
+        <p style='color: #5cc83b !important;'><strong>Digital Government</strong></p>
+        <ul>
+            <li>As part of Saudi Vision 2030, all government entities are mandated to provide their services to citizens
+                and
+                stakeholders digitally, digitize their operations and go paper less.</li>
+        </ul>
+        <ul>
+            <li>Creation of National Digitization Unit to support government in its digital transformation journey all
+                sectors
+                including healthcare, education, commerce... Etc</li>
+        </ul>
+        <ul>
+            <li>71% Digital maturity level percentage of eGovernment services (58% in 2016)</li>
+        </ul>
+    </div>
+</div>
+<div class='col-md-6 column'>
+    <div>
+        <p style='color: #5cc83b !important;'><strong>Digital Economy</strong></p>
+        <ul>
+            <li>Giga Projects: NEOM, Redsea, Qidiya, Waad Alshamal, SPARK and all the new projects are all technology
+                first projects and will be build leveraging the latest technologies</li>
+            <li>SMART Cities: Other than the new citites, Saudi Arabia aims to equip 5 existing cities with SMART
+                infrastructure to be among the top 100 cities for worldwide</li>
+            <li>Private sector: due to decrease in government subsidization for oil and increase in labor fees Saudi
+                private sector is doubling down on technology to optimize their operations</li>
+            <li>SMEs: currently SME participates to 20% of Saudi GDP and the government is prioritizing as part of
+                vision 2030 to increase that number to 35%+ via easier business requirements and many financing programs
+                which present huge opportunity for IaaS and SaaS provider</li>
+        </ul>
+        <p style='color: #5cc83b !important;'><strong>Digital Society</strong></p>
+        <ul>
+            <li>With 100% of population covered by 2G and 3G (88% of which is covered by 4G), Saudi Arabia is among the
+                highest countries when it comes to internet penetration</li>
+            <li>Facebook (16 million users), Twitter (11 million users), Instagram (11 million users), Snapchat (14
+                million users) out of total population of 32 million </li>
+            <li>E-commerce market size is 28.5 Billion SAR (vs 25 Billion SAR in 2017)</li>
+            <li>50% + of population shop online (vs 37% in 2016)</li>
+        </ul>
+    </div>
+</div>"
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sample-sector-proposition-1-$sector ;                          ; "
+<div class='row clearfix'>
+   <div class='col-md-6 column'>
+      <div>
+         <p style='color: #5cc83b !important;'><strong>مركز حيوي لتقنية المعلومات والاتصالات</strong></p>
+         <ul>
+            <li>تعد السعودية أكبر سوق لتقنية المعلومات في منطقة الشرق الأوسط وشمال إفريقيا (حيث من المتوقع أن يصل إنفاقها السنوي إلى 45 مليار دولار مع نهاية عام 2019)</li>
+            <li>تتمتع السعودية بموقع استراتيجي يمكنها من أن تصبح مركزًا رئيسيًا لخدمات تكنولوجيا المعلومات والتقنيات السحابية وذلك بفضل قدرتها على الوصول إلى خطوط الاتصالات الدولية عبر البحر الأحمر والخليج العربي وموقعها الذي يتوسط أوروبا وآسيا وإفريقيا</li>
+         </ul>
+         <p>&nbsp;</p>
+         <p style='color: #5cc83b !important;'><strong>الحكومة الرقمية</strong></p>
+         <ul>
+            <li>ضمن إطار رؤية السعودية 2030، تلتزم جميع الهيئات الحكومية بتزويد المواطنين والجهات المعنية بخدمات رقمية وتطبيق التحول الرقمي على عملياتها وإيقاف المعاملات الورقية.</li>
+         </ul>
+         <ul>
+            <li>إنشاء وحدة التحول الرقمي لدعم الحكومة خلال عملية التحول الرقمي التي تشمل جميع القطاعات بما فيها الرعاية الصحية والتعلم والتجارة وغيرها..</li>
+         </ul>
+         <ul>
+            <li>71% نسبة النضج الرقمي لخدمات الحكومة الإلكترونية (مقارنةً بنسبة 58% عام 2016)</li>
+         </ul>
+      </div>
+   </div>
+   <div class='col-md-6 column'>
+      <div>
+         <p style='color: #5cc83b !important;'><strong>الاقتصاد الرقمي</strong></p>
+         <ul>
+            <li>تمتاز المشاريع الكبرى كمدينة نيوم ومشروع البحر الأحمر ومشروع القدية ومدينة وعد الشمال ومدينة الملك سلمان للطاقة (سبارك) بأنها مشاريع تقنية بالدرجة الأولى تسعى إلى توظيف آخر الوسائل في مجال التكنولوجيا&nbsp;</li>
+            <li>المدن الذكية: إلى جانب المدن الجديدة، تهدف السعودية إلى تزويد 5 مدن حالية بالبنى التحتية الذكية لتصبح من أفضل 100 مدينة في العالم</li>
+            <li>القطاع الخاص: بسبب تخفيض الدعم الحكومي للنفط وزيادة رسوم العمالة الوافدة، يسعى القطاع الخاص إلى رفع اعتماده على التقنية لتحقيق كفاءة الأداء في العمليات التشغيلية</li>
+            <li>المنشآت الصغيرة والمتوسطة: تساهم المنشآت الصغيرة والمتوسطة حاليًا بنسبة 20% من الناتج القومي الإجمالي في السعودية، لذلك تسعى الحكومة إلى منحها الأولوية باعتبارها جزءًا من رؤية السعودية 2030 بهدف زيادة عددها إلى 35% فما فوق. كما تحرص الحكومة على تسهيل الإجراءات المطلوبة وتوفير برامج التمويل التي تمنح فرصًا هامة لمزودي نماذج البنية التحتية كخدمة والبرمجيات كخدمة.</li>
+         </ul>
+         <p style='color: #5cc83b !important;'><strong>المجتمع الرقمي</strong></p>
+         <ul>
+            <li>تعتبر السعودية من بين الدول التي ترتفع فيها أعداد مستخدمي الإنترنت، حيث يحصل 100% من السكان على اتصال بشبكة الجيل الثاني والثالث (و88% منهم حاصلون على اتصال بشبكة الجيل الرابع)</li>
+            <li>يستخدم مواقع فيسبوك (16 مليون مستخدم) وتويتر (11 مليون مستخدم) وإنستقرام (11 مليون مستخدم) وسناب شات (14 مليون مستخدم) من أصل 35 مليون من إجمالي السكان&nbsp;</li>
+            <li>يبلغ حجم سوق التجارة الإلكترونية 28.5 مليار ريال سعودي (مقابل 25 مليار ريال سعودي في عام 2017)</li>
+            <li>50% فما فوق من السكان يتسوقون عبر الإنترنت (مقابل نسبة 37% عام 2016)</li>
+         </ul>
+      </div>
+   </div>
+</div>
+"
+
+INSERT_UPDATE Media; code[unique = true]           ; realFileName                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; sample-background_sample1.png ; sample-background_sample1.png ; $siteResource/background_sample1.png                                        ; image/png                   ;                                          ; ""     ;
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; description[lang = en]                                ; description[lang = ar]     ; $contentCV[unique = true]
+                                            ; sample-sector-proposition-2-$sector ; "Information and Communication Technology Hub Sample" ; الاتصالات وتقنية المعلومات ;
+
+
+INSERT_UPDATE InvestSaudiSectorPropositionContainer; uid[unique = true]                          ; name                                ; backgroundImage(code, $contentCV); simpleCMSComponents(&componentRef)                                      ; &componentRef                               ; $contentCV[unique = true]; title
+                                                   ; sample-sector-proposition-container-$sector ; Sample Sector Proposition Container ; sample-background_sample1.png    ; sample-sector-proposition-1-$sector,sample-sector-proposition-2-$sector ; sample-sector-proposition-container-$sector ;                          ; Information And Technology Value Proposition
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)                                                                                                                                                                                                     ; $contentCV[unique = true]
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                                                                                                                                                  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; sample-information-technology-paragraph,sample-ff-container-1-$sector,sample-ff-container-2-$sector,sample-sector-proposition-container-$sector,sample-fo-component-$sector,sample-ss-component-$sector,sample-contact-form ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                                                                                                                                                                                                                  ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+

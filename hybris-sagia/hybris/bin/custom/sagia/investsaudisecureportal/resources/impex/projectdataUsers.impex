@@ -1,0 +1,19 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+$defaultPassword=IOJSD2314@salk212
+
+INSERT_UPDATE Employee;uid[unique=true];name;groups(uid)[mode=append];password[default=$defaultPassword];
+;RegApproverA;Bruce Rivers;b2bregistrationapprovergroup;
+;bsuregapprover;Kijar Muhamed;stakeholdersupb2bapprovergroup;
+
+
+INSERT_UPDATE Address;owner(Employee.UID)[unique=true]; email;contactAddress
+;bsuregapprover;bsuregapprover@sagia.gov.sa;true

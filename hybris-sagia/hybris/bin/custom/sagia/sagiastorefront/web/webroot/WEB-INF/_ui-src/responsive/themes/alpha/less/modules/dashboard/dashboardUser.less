@@ -1,0 +1,311 @@
+.dashboardUser{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #d9d9d9;
+	overflow: hidden;
+
+	&-image{
+		position: relative;
+//		display: inline-block;
+		display: flex;
+		align-items: center;		
+		
+
+		&-add{
+			line-height: 0;
+			padding: 10px;
+			position: absolute;
+			right: -17px;
+			top: 50%;
+			transform: translateY(-50%);
+			margin-top: -37px;
+			z-index: 10;
+
+			svg{
+				stroke: @apple;
+				width: 14px;
+				height: 14px;
+				margin: 0;
+			}
+		}
+
+		&-img{
+			overflow: hidden;
+			position: relative;
+			border-radius: 100%;
+			border: 1px solid #9099a2;
+			width: 90px;
+			height: 90px;
+			background: #e8e8e8;
+
+			svg{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				fill: #fff;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+			}
+
+			img{
+				position: relative;
+				z-index: 2;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		
+		.myAccount-profilImage {
+			margin-bottom: 0;
+			
+			&-img {
+				width: 90px;
+				height: 90px;
+				margin-right: 0;
+			}
+		}
+		
+	}
+
+	&-col{
+		display: flex;
+		align-items: center;
+		position: relative;
+		width: 100%;
+
+//		#media-breakpoint-up(md,{
+//			&_seperator:before{
+//				content: '';
+//				position: absolute;
+////				left: -15px;
+//				top: 14px;
+//				bottom: 14px;
+//				width: 1px;
+//				background: @steel-grey;
+//			}
+//		});
+	}
+
+	&-company{
+		font-size: 18px;
+		font-weight: bold;
+		color: @dark;
+	}
+
+	&-entry{
+
+	}
+
+	&-label{
+		font-size: 13px;
+		color: @steel-grey;
+		margin-bottom: 8px;
+		line-height: 16px;
+
+		&-xs{
+			display: none;
+		}
+	}
+
+	&-value{
+		font-size: 18px;
+		color: @dark-grey-blue;
+		text-transform: uppercase;
+		line-height: 22px;
+	}
+	
+	&-wrapper {
+		margin-left: -40px;
+		margin-right: -40px;
+		display: flex;
+		flex-wrap: nowrap;
+		#media-breakpoint-down(sm,{
+			flex-wrap: wrap;
+			margin-left: 0;
+			margin-right: 0;
+		});
+	}
+	
+	&-left {
+		padding-left: 40px;
+		padding-right: 40px;
+		width: auto;
+		flex: 0 0 auto;
+		position: relative;
+		display: flex;
+		#media-breakpoint-down(sm,{
+			padding-left: 0;
+			padding-right: 0;
+			width: 100%;
+		});		
+		
+		.row {
+			margin-left: -20px;
+			margin-right: -20px;
+			flex-wrap: nowrap;
+			width: calc(~"100% + 40px");
+			
+			#media-breakpoint-down(sm,{
+				flex-wrap: wrap;
+			});				
+			.col {
+				padding: 20px;
+				flex: 1 1 auto;
+				width: auto;
+				display: flex;
+
+				&:nth-child(1) {
+					flex: 0 0 130px;
+					width: 130px;
+				}
+
+				&:nth-child(2){
+					max-width: 240px;
+					min-width: 120px;
+				}			
+
+				&:nth-child(3){
+					flex: 0 0 40px;
+					width: 40px;
+				}
+				
+				#media-breakpoint-down(sm,{
+					width: 100% !important;
+					flex: 1 0 100% !important;
+					max-width: none !important;
+					padding-top: 0;
+					padding-bottom: 0;
+					&:first-child {
+						justify-content: center;
+					}
+				});					
+
+			}
+		}
+		
+		&:after{
+			#media-breakpoint-up(md,{
+					content: '';
+					position: absolute;
+					right: 0;
+					top: 14px;
+					bottom: 14px;
+					width: 1px;
+					background: @steel-grey;
+
+			});
+		}
+	}
+	
+	&-right {
+		padding-left: 40px;
+		padding-right: 40px;
+		flex: 1 1 auto;
+		width: auto;
+		display: flex;
+		#media-breakpoint-down(sm,{
+			padding-left: 0;
+			padding-right: 0;
+			width: 100%;
+		});		
+		
+		.row {
+			margin-left: -20px;
+			margin-right: -20px;
+			width: calc(~"100% + 40px");
+			.col {
+				padding: 20px;
+				flex: 1 1 auto;
+				width: auto;
+				display: flex;
+				
+				#media-breakpoint-down(sm,{
+					width: 100%;
+					flex: 1 0 100%;
+					padding-top: 0;
+					padding-bottom: 0;
+					&:last-child {
+						padding-bottom: 20px;
+					}
+				});					
+			}
+		}	
+	}
+
+
+
+
+
+
+	#media-breakpoint-down(sm,{
+		padding-bottom: 0;
+				
+//		.col{
+//			min-width: 100%;
+//		}
+
+
+		&-image{
+			display: block;
+			text-align: center;
+			margin-bottom: 25px;
+
+			&-add{
+//				display: none;
+			}
+
+
+			&-img{
+				display: inline-block;
+				width: 130px;
+				height: 130px;
+				box-shadow: 0 10px 30px 0 rgba(28, 36, 44, 0.12);
+			}
+		}
+
+
+		&-entry{
+			width: 100%;
+			display: flex;
+			margin-bottom: 10px;
+		}
+
+		&-label{
+			width: 45%;
+			margin-bottom: 0;
+			flex: 0 0 45%;
+
+			&-sm{
+				display: none;
+			}
+
+			&-xs{
+				display: block;
+			}
+		}
+
+		&-value{
+			font-size: 14px;
+			color: @dark;
+			text-transform: none;
+			line-height: 16px;
+		}
+
+
+		&-action{
+			text-align: right;
+			display: block;
+		}
+
+
+	});
+	
+	
+	#media-breakpoint-down(xs,{
+		margin-top: 24px;
+	});
+
+
+}

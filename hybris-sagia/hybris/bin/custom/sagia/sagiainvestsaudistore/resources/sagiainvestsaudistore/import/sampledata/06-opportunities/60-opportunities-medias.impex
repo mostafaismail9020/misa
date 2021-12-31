@@ -1,0 +1,16 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE Media; code[unique = true]         ; realFileName                ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'application/pdf']; folder(qualifier)[default = $mediafolder]; altText; $catalogVersion[unique = true]
+                   ; sample-industry-40.pdf      ; sample-industry-40.pdf      ; $siteResource/industry-40.pdf                                               ;                                  ;                                          ; ""     ;
+                   ; sample-industry4.png        ; sample-industry4.png        ; $siteResource/industry4.png                                                 ; image/png                        ;                                          ; ""     ;
+                   ; sample-shutterstock-min.jpg ; sample-shutterstock-min.jpg ; $siteResource/shutterstock-min.jpg                                          ; image/jpg                        ;                                          ; ""     ;
+
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; detail (code, $catalogVersion); others (code, $catalogVersion); picture(code, $catalogVersion); $catalogVersion
+                                ; industry-40               ; sample-industry-40.pdf        ; sample-industry4.png          ;                               ;
+                                ; production-of-drill-pipes ;                               ;                               ; sample-shutterstock-min.jpg   ;

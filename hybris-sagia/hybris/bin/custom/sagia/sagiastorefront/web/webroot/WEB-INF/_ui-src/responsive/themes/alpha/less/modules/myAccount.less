@@ -1,0 +1,148 @@
+//first questionaire after headline
+.contentModule-headline + .myAccount-questionnaire {
+	padding-top: 20px;
+}
+
+.myAccount{
+	position: relative;
+
+	&-hr{
+		border: 0;
+		border-bottom: 1px solid #dfdfdf;
+		margin: 30px 0;
+		&_dark {
+			border-bottom-color: @steel-grey;
+		}
+	}
+	
+
+	&-profilImage{
+		margin-bottom: 40px;
+
+		&-img{
+			display: inline-block;
+			border-radius: 100%;
+			margin-right: 24px;
+			overflow: hidden;
+			vertical-align: middle;
+			border: 1px solid  #979797;
+			width: 100px;
+			height: 100px;
+			position: relative;
+			
+			.profilePicture {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: transparent url() center center no-repeat;
+				background-size: cover;
+			}
+			
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+				background: url(../icons/head-grey02.svg) no-repeat;
+				background-size: 103% auto;
+			}
+
+			img{
+				width: 100%;
+				height: 100px;
+				position: relative;
+				z-index: 1;
+				object-fit: cover;
+			}
+		}
+
+		&-change{
+			display: inline-block;
+			font-size: 14px;
+  			color: @steel-grey;
+		}
+	}
+
+
+	&-passwordInfo{
+		font-size: 14px;
+		color: #a1a1a1;
+		line-height: 17px;
+		margin-top: 20px;
+	}
+	
+
+	&-questionnaire{
+		padding: 30px 0;
+
+		&-title{
+			font-size: 18px;
+			color: @steel-grey;
+			line-height: 22px;
+		}
+
+		&-new{
+			display: inline-block;
+			font-size: 13px;
+			font-weight: bold;
+			color: #79c551;
+			margin-right: .25 em;
+		}
+
+		&-action{
+			float: right;
+			margin-top: -6px;
+			padding: 0 20px;
+			font-size: 0;
+		}
+
+		&-completed{
+			font-size: 15px;
+			font-weight: normal;
+			color: @steel-grey;
+
+			svg{
+				width: 15px;
+				height: 16px;
+				vertical-align: top;
+				margin-right: 5px;
+			}
+
+		}
+
+		&-view{
+			font-size: 15px;
+			font-weight: bold;
+			color: #79c551;
+			position: relative;
+
+			svg{
+				width: 16px;
+				height: 14px;
+				vertical-align: top;
+				margin-top: 2px;
+				margin-right: 5px;
+			}
+
+			&:before{
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 1px;
+				background: #ccd0d4;
+			}
+		}
+
+		& + &{
+			border-top: 1px solid #e8ebef;
+		}
+	}
+
+
+}

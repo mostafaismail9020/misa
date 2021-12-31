@@ -1,0 +1,45 @@
+#### Impex For Biban-Rriyadh####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails ;$contentCV[unique = true];uid[unique = true] ;keyValue[lang = en]  	;keyName[lang = en];
+								;						;biban-key-1           ;80,000         		;Event attendees ;
+								;						;biban-key-2           ;2,000   			;Booth Attendees ;
+
+
+INSERT_UPDATE Media; code[unique = true]            			; realFileName                    	 		;@media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]				; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;Biban-banner-image.jpg			       		; Biban-banner-image.jpg  					; $siteResource/biban-banner-image.jpg                                         				; image/jpg                   ;                                          ; ""     ;
+                   ;Biban-thumbnail-image.jpg   		   		; Biban-thumbnail-image.jpg      			; $siteResource/biban-Thumbnail-image.jpg                                            		; image/jpg                   ;                                          ; ""     ;
+                   ;event-gallary-image.png       				; event-gallary-image.png        			; $siteResource/event-gallary-image.png                                            			; image/png                   ;                                          ; ""     ;
+
+				   
+INSERT_UPDATE MediaContainer; qualifier[unique = true]			; $medias					  ; $contentCV; 
+                            ; media-container-riyadh  			;  event-gallary-image.png    ;           ; 				   
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventUrl(uid, $contentCV)	;eventLocation[lang = en]	;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss] ;eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+										;						  ;event-biban-riyadh  		;							;"Riyadh" 			  		;29.01.2020 00:00:00                              ;01.02.2020 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventName[lang = en]		;eventShortInformation[lang = en] ;
+										;						  ;event-biban-riyadh       ; Biban Rriyadh     		;The Ministry of Investment's Innovation and Entrepreneurship Sector is participating to highlight the Ministry's role  and the efforts made in attracting entrepreneurs to invest in emerging projects.;                                
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventKeyDetails(uid, $contentCV);
+										;						  ;event-biban-riyadh 		;biban-key-1,biban-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventBannerImage(code, $contentCV);eventThumbnailImage(code, $contentCV);eventGalleryImages(qualifier, $contentCV);
+										;						  ;event-biban-riyadh 		;Biban-banner-image.jpg 		   ;Biban-thumbnail-image.jpg   		 ;media-container-riyadh ;
+
+ 
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventFullDescription[lang = en];
+										;						  ;event-biban-riyadh       ;								;

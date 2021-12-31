@@ -1,0 +1,47 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = ar
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]      	 ; $catalogVersion; highlights[lang = $lang]
+                                ; Aviation-Academies         ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Opportunity to fill a significant gap in the number of certified aviation academies in Saudi Arabia. </span></li>
+  <li><span>Aging workforce with 20% of pilots older than 55 years.</span></li>
+  <li><span>Expected investment size of SAR 23 Million.</span></li>
+  <li><span>Demand exceeds supply to over than 10,000 pilot by the mid of 2027.</span></li>
+</ul>
+"
+                                ; Bunkering-Agent-KFIP         ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Opportunity to consider different operating models – pure bunkering agent (handling distribution from fuel suppliers to end user) or joint venture with local player to integrate within value chain.</span></li>
+  <li><span>King Fahad Industrial Port at Yanbu exported 96M tons and imported 30M tons in 2019.</span></li>
+  <li><span>Expected IRR  ~10 -- 14%.</span></li>
+  <li><span>Estimated EBITDA  ~20 – 30%.</span></li>
+</ul>
+"
+                                ; Duty-Free-KFIP               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The duty-free will be strategically located in the port to offer abundant selection of products at good value to passengers and crew members.</span></li>
+  <li><span>This opportunity is to be invested in KFIP with potentially targeting Yanbu commercial port.</span></li>
+  <li><span>Investors for this opportunity may be global branded stores or large local branded stores.</span></li> 
+</ul>
+"
+                                ; Shipping-Agencies-KFIP          ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 150 – 200K. </span></li>
+  <li><span>The Saudi market is well developed and served through well-known international and Saudi agents. </span></li>
+    <li><span>The opportunity will serve as part of an integrated bunkering hub in KFIP. </span></li>
+</ul>
+"
+                                ; Vessels-MRO-Services            ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Types of MRO services targeted at Yanbu includes: dry docking, afloat repairs, underwater repairs and provision for spare parts. </span></li>
+  <li><span>All the 9 shipyards in the GCC region offer all ship repair services including dry dock. In the Red Sea, only Jeddah port offers Commercial Ship MRO services.  </span></li>
+    <li><span>Expected IRR ~ 12 - 14%</span></li>
+</ul>
+"

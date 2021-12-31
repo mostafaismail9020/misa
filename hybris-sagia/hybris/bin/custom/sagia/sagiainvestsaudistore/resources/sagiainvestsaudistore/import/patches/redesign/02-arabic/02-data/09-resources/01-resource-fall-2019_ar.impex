@@ -1,0 +1,27 @@
+#### Impex for Fall 2019 ####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+ 
+ 
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true] 			;resourceTitle[lang = ar]			;resourceShortInformation[lang = ar] 					;&componentRef				;
+										  ;							;resource-investment-fall-2019	;موجز مستجدات الاستثمار  خريف  2019 	;ابرز مستجدات الاستثمار في الربع الثالث من عام 2019	    ;resource-investment-fall-2019;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]				;resourceFullDescription[lang = ar]	;
+										  ;							;resource-investment-fall-2019  ;"
+<p>أعلى نسبة اهتمام تشهده البيئة الاستثمارية في المملكة منذ عام 2010، إذ تم خلال عام 2019 وحتى نهاية الربع الثالث من العام إصدار أكثر من 800 رخصة استثمارية.</p>
+<p>كما شهد الربع الثالث من عام 2019؛ إصدار أكثر من 250 رخصة استثمارية، بزيادة نسبية بلغت 30% مقارنة بالفترة نفسها من العام الماضي.</p>
+<p>يستعرض تقرير الربع الثالث من موجز الاستثمار؛ أهم مستجدات الاستثمار حول المملكة، وأحدث الاتفاقيات التي تمت خلال الربع والفرص الاستثمارية والحوافز التي تم طرحها، إضافة إلى مستجدات الإصلاحات الاقتصادية التي خضعت للتنفيذ.</p>
+<p>كما يقدم التقرير كلمة من معالي أحمد الخطيب -رئيس مجلس إدارة الهيئة العامة للسياحة والتراث الوطني-، ومقابلة حصرية مع نيكولاس نيبلز -الرئيس التنفيذي لمشروع أمالا.</p>
+<p>يتضمن التقرير: </p>
+<ul id='arabic-list' >
+<li> أرقام التراخيص الجديدة</li>
+<li> أكبر الدول المستثمرة</li>
+</ul> 
+";
+

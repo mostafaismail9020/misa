@@ -1,0 +1,10 @@
+# Create sample investor users
+INSERT_UPDATE Customer;uid[unique=true];userNameEmail;originalUid;name;customerId[unique=true];company;mobileCountryCode[unique=true];mobileNumber[unique=true];Title(code);Country(code);Sector(code);applicantReferenceID;entityID;internetUserID;sessionLanguage(isocode);sessionCurrency(isocode);groups(uid);password
+;johnsmith;john.smith@sap.com;john.smith@sap.com;John Smith;8305fbd2-8c5e-4a49-aa2f-66d40243ea93;SAP SE;49;1234567;mr;DE;J;6000003581;TUSER10;TUSER10;en;EUR;customergroup;test1234
+;jamesward;james.ward@sap.com;james.ward@sap.com;James Ward;b6b52afa-06f7-470c-ad6e-de773f031825;SAP Romania;40;2345678;mr;RO;D;1000020000;TUSER10;TUSER10;en;EUR;customergroup;test1234
+;simonericson;simon.ericson@sap.com;simon.ericson@sap.com;Simon.Ericson;40975a37-c5b3-43be-a700-33996b239f38;SAP India;91;3456789;mr;IN;C;1000030000;TUSER10;TUSER10;en;USD;customergroup;test1234
+;gracejane;grace.jane@sap.com;grace.jane@sap.com;Grace.Jane;567-c5b3-43be-a700-567885;SAP Romania;40;989898;ms;RO;D;1000020000;614140;614140;en;USD;customergroup;test1234
+
+# Provide entity identifier to anonymous user for test purposes (without login)
+INSERT_UPDATE Customer;uid[unique=true];entityID;internetUserID
+;anonymous;TUSER10;TUSER10

@@ -1,0 +1,14 @@
+
+<process xmlns="http://www.hybris.de/xsd/processdefinition" start="sendLeadTicket" name="scpiOutLeadTicketProcess"
+         processClass="com.investsaudiportal.model.scpi.outbound.process.ScpiOutLeadTicketProcessModel" onError="error">
+
+    <action id="sendLeadTicket" bean="sendLeadTicketToScpiAction">
+        <transition name="OK" to="success"/>
+        <transition name="NOK" to="error"/>
+    </action>
+
+    <end id="error" state="ERROR">Something went wrong while sending LeadTicket to SCPI.</end>
+    <end id="failed" state="FAILED">Process failed while sending LeadTicket to SCPI.</end>
+    <end id="success" state="SUCCEEDED">LeadTicket sent successfully to SCPI.</end>
+
+</process>

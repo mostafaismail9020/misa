@@ -1,0 +1,10 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$classCatalogVersion = catalogVersion(catalog(id[default='sagiaClassification']), version[default='1.0'])
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; name [lang = en]          ; name [lang = ar]          ;seoKeywords[lang=en]; featured; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion;
+                                ; industry-40               ; Industry 4.0              ; Industry 4.0              ;"Invest Saudi,Industry 4.0 - Information and Technology,Information and Technology,"; true    ; sample-information-technology         ;                                           ;
+                                ; production-of-drill-pipes ; Production Of Drill Pipes ; Production Of Drill Pipes ;"Invest Saudi,Production of drill pipes - Industrial and Manufacturing,Industrial and Manufacturing,"; true    ; sample-industrial-manufacturing       ;                                           ;
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; supercategories(code, $classCatalogVersion)[mode = append]; $catalogVersion
+                                ; production-of-drill-pipes ; opportunities-classification                              ;

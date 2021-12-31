@@ -1,0 +1,220 @@
+$page = chemicals
+$sector= chemicals
+$template = portalSectorTemplate
+$pageName = Chemicals
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media	
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources																															   
+
+INSERT_UPDATE CategoryPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); $contentCV[unique = true]; defaultPage[default = 'false']; approvalStatus(code)[default = 'approved']
+                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ;                          ;                               ;
+
+INSERT_UPDATE CMSCategoryRestriction; uid[unique = true]                               ; categories(code, $catalogVersion); $contentCV[unique = true]; pages(uid, $contentCV)
+                                    ; sector-chemicals-restriction ; chemicals    ;                          ; chemicals
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; name                                ; &componentRef                           ; $contentCV[unique = true]
+                                                  ; chemicals-paragraph ; chemicals Overview ; chemicals-paragraph ;
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = en]
+                                           ; chemicals-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+				<h3>Overview</h3>
+				<p>The Chemicals industry is an essential part of the Kingdom&rsquo;s economic diversification. In line with Vision 2030, we have the ambition to further double its value.</p>
+				<p>&nbsp;</p>
+				<p>Saudi Arabia has already embarked on a transformational program that will generate a significant industrial growth in various sectors, which will be the main driver for the development of the chemicals sector in all segments &ndash; basics, intermediates, and specialties.</p>
+				<p>&nbsp;</p>
+				<p>Furthermore, companies in the chemicals sector can rely on a solid ecosystem including but not limited to universities, research and development centers, suppliers, infrastructure and logistics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = ar]
+                                           ; chemicals-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+                <h1 class='heading text-left mb-3 mt-2' style='direction: rtl;'>نظرة عامة</h1>
+                <p style='direction: rtl; text-align: justify;'>يمثّل قطاع الاتصالات وتقنية المعلومات القلب النابض في عالم  الصناعات المتقدمة اليوم.</p>
+                <p style='direction: rtl; text-align: justify;'>كما تهدف رؤية 2030 إلى نقل المملكة بشكل جذري لتكون مركزاً دولياً لتكنولوجيا المعلومات والاتصالات، لتكون قادرة على المنافسة عالمياً من خلال التقنيات الحديثة وتمكين مجتمع معلوماتي متطور.</p>
+                <p style='direction: rtl; text-align: justify;'>&nbsp;</p>
+                <p style='direction: rtl; text-align: justify;'>طموحنا يحلق باتجاه فضاءات استثمارات متعددة، بما في ذلك تطوير المحتوى الرقمي، و النهوض بوسائل الإعلام، والتوسع في أنظمة الاتصالات، و أنظمة التحول الرقمي، و تطوير صناعة تكنولوجيا المعلومات.</p>
+                <p style='direction: rtl; text-align: justify;'>&nbsp;</p>
+                <p style='direction: rtl; text-align: justify;'>تعمل حكومة المملكة جنباً إلى جنب، مع القطاع الخاص لتحديث البنية التحتية لتكنولوجيا المعلومات والاتصالات، وتعزيز الإطار التنظيمي لتمكين الاستثمارات المبتكرة الجديدة، وبناء النظام البيئي الأنسب لدعم رواد الأعمال والمواهب الرقمية</p>
+                <p style='direction: rtl;'>&nbsp;</p>
+                <p style='direction: rtl;'>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresComponent; uid[unique = true]; name         ; figures; unit; facts[lang=en] ; &componentRef; $contentCV[unique = true];								 
+			 
+                                     ; facts-figures-1-$sector      ; Facts Figures 13 ; 170     ; Billion SAR  ;Operating revenues of the Chemicals sector for 2016             ; facts-figures-1-$sector ;
+                                     ; facts-figures-2-$sector      ; Facts Figures 14 ; 5%      ;   ;Production capacity growth for Chemicals for 2016                                                             ; facts-figures-2-$sector ;
+                                     ; facts-figures-3-$sector     ; Facts Figures 15 ; 97,267      ; KT     ;Chemical production capacity in KSA for 2017                  ; facts-figures-3-$sector ;
+ 
+ 
+
+INSERT_UPDATE InvestSaudiFactsFiguresContainer; uid[unique = true]      ; name                     ;title[lang=en]  ; simpleCMSComponents(&componentRef)  ; &componentRef  ;$contentCV[unique = true]
+                                     ; ff-container-$sector   ; Fatcs Figures Container  ;Fatcs & Figures ; facts-figures-1-$sector, facts-figures-2-$sector, facts-figures-3-$sector ; ff-container-$sector ;
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; $contentCV; &componentRef
+                                           ; contact-form ;           ; contact-form
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; fo-explore-all-$sector ;                          ; Explore all          ; /sectors-opportunities/opportunities/?q=&sectorIds=chemicals
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]       ; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                       ; fo-component-$sector ; Featured Opportunities Component ; Chemicals Opportunities ;3; fo-explore-all-$sector ; fo-component-$sector ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; ss-explore-all-$sector ;                          ; Explore all          ; /about/success-stories/?q=&sectorIds=chemicals
+
+
+INSERT_UPDATE InvestSaudiSuccessStoriesComponent; uid[unique = true]; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                ; ss-component-$sector ; Success Story Component ; Chemicals Success Stories ;3; ss-explore-all-$sector ; ss-component-$sector;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                       ; $contentCV[unique = true]; linkName  [lang = en]             ; linkName[lang = ar]        ; url
+                              ; sector-proposition-1-link-$sector ;                          ; Chemicals        ; الصناعات الكيميائية ;
+#                              ; sector-proposition-2-link-$sector ;                          ; Chemicals  ;                            ;
+
+INSERT_UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; name                        ; url(uid, $contentCV)                     ; index(); &componentRef                       ; $contentCV[unique = true]
+                                                   ; sector-proposition-1-$sector ; Sector Proposition 1 ; sector-proposition-1-link-$sector ; 1      ; sector-proposition-1-$sector ;
+#                                                   ; sector-proposition-2-$sector ; Sector Proposition 2 ; sector-proposition-2-link-$sector ; 2      ; sector-proposition-2-$sector ;
+																				   
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-1-$sector ;                          ; " 
+<div class='col-md-6 column'>
+<div>
+<h4>Chemicals value proposition:</h4>
+<p>Saudi Arabia boasts a healthy and established chemicals sector and is investing heavily to grow this industry. Production capacities are growing as is the percentage of the Kingdom&rsquo;s share in the global chemicals market. KSA is now the global production leader of several key chemical products and benefits from being one of the most cost favorable environments for chemicals businesses to operate in. &nbsp;Increasing global demand and KSA&rsquo;s efforts to invest in the chemicals industry are just some of the reasons why this sector is expected to double in size by 2030.</p>
+<p>The Kingdom also benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon. KSA companies also enjoy access to a comprehensive and established logistics network, placing the</p>
+<p>Kingdom in a prime position to serve the increasing demands of Africa, Europe and Asia.</p>
+<h4>Large domestic sector to experience a significant growth</h4>
+<p>Saudi Arabia&rsquo;s chemical market is the largest in the Middle East &amp; North Africa, housing one of the grandest integrated chemical complexes worldwide. In 2016, investments in the sector were 40% higher than any other global market, amounting to SAR 3.75 billion (US $1 billion) and helping production capacity grow by 5%. &nbsp;</p>
+<p>&nbsp;</p>
+<p>The Kingdom now has the 5<sup>th</sup>&nbsp;largest chemical production market in the world and takes up a 10% share of total global output, generating operating revenues of SAR 170 billion (US $637.5) in 2016. KSA is also the global production leader of several key products, including Ethylene, Glycol, Polyethylene and Methyl tert &ndash;butyl Ether (MYBE). Furthermore, Saudi Arabia is one of the most cost efficient places in the world to produce Ethylene, assisting the Kingdom to take a 10% share of total global production.</p>
+<p>&nbsp;</p>
+<p>The chemicals sector is expected to double in size by 2030 due to the increasing demand for basic, intermediate and specialty chemicals. Furthermore, the undergoing industrial growth led by Ministry of Energy, Industry and Mineral Resources (MoEIM) and the diversification of KSA&rsquo;s economy represent key components that are driving this market forward.</p>
+<h4>Cost advantages and abundant access to raw materials and infrastructure</h4>
+<p>Chemicals companies in KSA operate in an industry friendly environment, benefitting from cost competitive advantages, abundant access to raw materials and a well-developed infrastructure.</p>
+<p>&nbsp;</p>
+<p>Costs are favorable due to low feedstock prices, low utility expenses and customs duty exemptions. KSA has a 10% cost advantage for Naphtha when compared to other countries in Europe and the USA. Electricity prices are almost 50% lower than the global average.</p>
+<p>&nbsp;</p>
+<p>Saudi Arabia also has secure access to an abundance of raw materials, being home to more than 25% of the world&rsquo;s proven oil reserves. This access is also complimented by the existence of key producers like SABIC for chemicals and Saudi Aramco for energy.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<h4>Reliable logistical network providing easy access to relevant international markets</h4>
+<p>Saudi Arabia is strategically located at the crossroads of several markets with a high demand for chemical products. The Asian market size is currently SAR 6.75 trillion (US $1.8 trillion) per year and is expected to grow at rate of 8% annually. &nbsp;European demand currently sits at SAR 2.8 trillion (US $750 billion per year) and is expected to grow at a rate of 4% annually. Whilst in Africa, the market size is valued at SAR 187.5 billion (US $50 billion) and is also expected to increase at 4% annually.</p>
+<p>&nbsp;</p>
+<p>KSA players enjoy access to a comprehensive and established logistics network containing the largest marine network in the Middle East region and the fastest growing port in the world; King Abdullah Port at KAEC. Furthermore, the Kingdom&rsquo;s logistics network is being improved in line with Vision 2030 goals through modernizing reforms and the assistance of the Public Investment Fund. KSA's chemicals sector exports represent approximately 60% of non-oil exports and are expected to significantly grow as part of the Saudi Export initiative.</p>
+<p>&nbsp;</p>
+<h4>Fully developed ecosystem</h4>
+<p>Saudi Arabia has established a solid ecosystem for the chemicals sector in the city of Jubail, which is the largest industrial city in the Middle East. The Royal Commission for Jubail and Yanbu is responsible for supporting KSA&rsquo;s chemicals sector through several initiatives. These include talent sourcing through top local universities like KFUPM and through expats relocating to KSA from more than 40 different countries. Research and Development (R&amp;D) and technological innovation are also high on the Commission&rsquo;s agenda, with Saudi Aramco recently establishing a state-of-the-art research center at King Abdullah University of Science and Technology. Achievements include the development of cutting-edge technologies that enable the production of high tech products for a variety of market applications, such as Linear Alpha Olefin (LAO). The Commission is also responsible for supporting services (e.g. waste management) and has partnered with more than 50 different companies in the city of Jubail alone.</p>
+<p>&nbsp;</p>
+<p>Furthermore, the Commission oversees the rental of land for industrial use, offering very competitive prices ranging from USD 0.27 &ndash; USD 4.40 per m<sup>2</sup>/ year. In short, there are few places in the world offering the kind of investment environment that Saudi Arabia does for the chemi</p>
+</div>
+</div>"
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-1-$sector ;                          ; " 
+<div class='col-md-6 column' style='font-size: 13px;'>
+<div style='font-size: 13px;'>
+<p style='font-size: 13px;'><span style='color: #5bc53b; font-size: 13px;'><strong>الصناعات الكيميائية في المملكة، القيمة والمعطيات</strong></span></p>
+<p style='font-size: 13px;'>يمتاز قطاع الصناعات الكيميائية بالمملكة بتحقيقه معدلات نمو عالية ومستقرة،&nbsp;&nbsp;حيث تستثمر الحكومة الرشيدة في تنمية هذه الصناعة، مما نتج عنها تزايد قدرات المملكة الإنتاجية بشكل متواصل كما تتزايد حصتها المئوية من سوق المواد الكيميائية العالمية.</p>
+<p style='font-size: 13px;'>وتعتبر المملكة العربية السعودية اليوم من الدول الرائدة&nbsp;&nbsp;في تصنيع العديد من المنتجات الكيميائية الرئيسية، إضافةً إلى استثمار معطياتها كواحدةٍ من أكثر البيئات المناسبة&nbsp;للصناعات &nbsp;الكيميائية منخفضة التكلفة.</p>
+<p style='font-size: 13px;'>ومن المتوقع تضاعف حجم أعمال المملكة بحلول عام 2030 استناداً إلى زيادة الطلب العالمي على صناعة الكيميائيات وبسبب عمل المملكة العربية السعودية الدؤوب للدفع بعجلة الاستثمار في هذا القطاع.</p>
+<p style='font-size: 13px;'>كما تمتاز المملكة بوفرة المواد الخام فيها وسهولة الوصول إليها إضافةً إلى امتلاكها مستوى عالٍ من البنى التحتية التي يتم تحسينها باستمرار، كما تتمتع شركات المملكة العربية السعودية أيضاً بإمكانية الوصول إلى شبكة لوجيستية متينة وواسعة مما يضع المملكة في موقع رئيسي يخدم الطلب المتزايد لأفريقيا وأوروبا وآسيا.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'><span style='color: #5bc53b; font-size: 13px;'><strong>نموٌ كبير في القطاع المحلي</strong></span></p>
+<p style='font-size: 13px;'>تعتبر سوق المواد الكيميائية في المملكة العربية السعودية هي الأكبر في منطقة الشرق الأوسط وشمال أفريقيا، حيث تضم واحدة من أكبر المجمعات الكيميائية المتكاملة في جميع أنحاء العالم.</p>
+<p style='font-size: 13px;'>في عام 2016، كانت الاستثمارات في هذا القطاع أعلى بنسبة 40٪ من أي سوق عالمية أخرى، حيث بلغت 3.75 مليار ريال سعودي (1 مليار دولار أمريكي) وساعدت في زيادة الطاقة الإنتاجية بنسبة 5٪.</p>
+<p style='font-size: 13px;'>واليوم، تمتلك المملكة خامس أكبر سوق للإنتاج الكيميائي في العالم وتستحوذ على 10٪ من إجمالي الإنتاج العالمي، كما تدر إيرادات تشغيل بقيمة 170 مليار ريال سعودي (637.5 مليون دولار) حسب إحصاءات العام 2016.</p>
+<p style='font-size: 13px;'>من جهةٍ أخرى، فإن المملكة العربية السعودية رائدة في الإنتاج العالمي للعديد من المنتجات الرئيسية بما في ذلك الإيثيلين، جلايكول، البولي إيثيلين، وميثيل-بوتيل الإيثر الثلاثي (MYBE)، إضافةً إلى اعتبار المملكة العربية السعودية واحدة من أكثر الأماكن حول العالم كفاءةً ومنافسةً من حيث التكلفة لإنتاج الإثيلين، مما يساعد المملكة في الحصول على حصة 10 ٪ من إجمالي الإنتاج العالمي.</p>
+<p style='font-size: 13px;'>ومن المتوقع أن يتضاعف حجم قطاع الصناعة الكيميائية بحلول عام 2030 بسبب تزايد الطلب على المواد الكيميائية الأساسية والمتوسطة والمتخصصة، كما تدفع السوق الكيميائية قدماً عدة معطيات من بينها النمو الصناعي الذي تشهده وزارة الطاقة والصناعة والموارد المعدنية والعمل الجاد على تنويع اقتصاد المملكة العربية السعودية.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'><span style='color: #5bc53b; font-size: 13px;'><strong>مزايا التكلفة ونفاذ وافر إلى المواد الخام والبنية التحتية</strong></span></p>
+<p style='font-size: 13px;'>تعمل شركات الصناعة الكيميائية في المملكة العربية السعودية في منظومة صديقة للبيئة وتستفيد من المزايا التنافسية من حيث التكلفة والوفرة في الوصول إلى المواد الخام والبنية التحتية المتطورة.</p>
+<p style='font-size: 13px;'>وتعد التكاليف مناسبة بسبب انخفاض أسعار المواد الخام وانخفاض نفقات المرافق وإعفاءات الرسوم الجمركية، حيث تمتاز المملكة العربية السعودية بانخفاض نسبة إنتاج النفط 10٪ مقارنةً بالدول الأخرى في أوروبا والولايات المتحدة الأمريكية، كما أن أسعار الكهرباء تقل بنسبة 50٪ تقريبًا عن المتوسط العالمي.</p>
+<p style='font-size: 13px;'>إضافة إلى ما سبق، تتمتع المملكة العربية السعودية بإمكانية الوصول الآمن إلى المواد الخام الوفيرة، حيث تحتوي على أكثر من 25٪ من احتياطيات النفط العالمية المثبتة، إلى جانب وجود منتجين رئيسيين للطاقة 'سابك للمواد الكيميائية وأرامكو السعودية'.</p>
+</div>
+</div>
+<div class='col-md-6 column' style='font-size: 13px;'>
+<div style='font-size: 13px;'>
+<p style='font-size: 13px;'><span style='color: #5bc53b; font-size: 13px;'><strong>شبكة لوجستية موثوقة تتيح سهولة الوصول إلى الأسواق الدولية</strong></span></p>
+<p style='font-size: 13px;'>تتمتع المملكة العربية السعودية بموقع استراتيجي على مفترق طرق العديد من الأسواق العالمية، مما يشكل ميزة هائلة مع ارتفاع الطلب على المنتجات الكيميائية، إذ يبلغ حجم السوق الآسيوي حالياً 6.75 تريليون ريال سعودي (1.8 تريليون دولار أمريكي) سنوياً، ومن المتوقع أن ينمو بمعدل 8٪ سنوياً، ويبلغ الطلب الأوروبي حالياً 2.8 تريليون ريال سعودي (750 مليار دولار أمريكي سنوياً) ومن المتوقع أن ينمو بمعدل 4٪ سنوياً. <span style='font-size: 13px;'>بينما يبلغ حجم السوق في أفريقيا 187.5 مليار ريال سعودي (50 مليار دولار أمريكي) ومن المتوقع أن يرتفع بنسبة 4٪ سنوياً</span>.</p>
+<p style='font-size: 13px;'><br />&nbsp;يتمتع العاملون في القطاع داخل المملكة العربية السعودية بالوصول إلى شبكة لوجيستية شاملة وراسخة تحتوي على أكبر شبكة بحرية في منطقة الشرق الأوسط، وتضم الميناء الأسرع نمواً في العالم، ميناء الملك عبدالله في مدينة الملك عبدالله الاقتصادية على البحر الأحمر.</p>
+<p style='font-size: 13px;'>هذا بالإضافة إلى تحسين شبكة اللوجستيات في المملكة بشكلٍ مستمر تماشياً مع أهداف رؤية 2030 من خلال التحديث والإصلاحات ومساعدة صندوق الاستثمار العام، ولنا أن نعلم أن صادرات قطاع الصناعة الكيميائية في المملكة العربية السعودية تشكل حوالي 60٪ من الصادرات غير النفطية، ومن المتوقع أن تنمو بشكل كبير كجزء من مبادرة الصادرات السعودية.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'><span style='color: #5bc53b; font-size: 13px;'><strong>النظام البيئي </strong></span></p>
+<p style='font-size: 13px;'>أنشأت المملكة العربية السعودية نظامًا بيئيًا&nbsp; متطوراً لقطاع الصناعة الكيميائية في مدينة الجبيل التي تعد أكبر مدينة صناعية في الشرق الأوسط. &nbsp;وتتولى الهيئة الملكية للجبيل وينبع مسؤولية دعم قطاع الصناعة الكيميائية في المملكة العربية السعودية من خلال العديد من المبادرات. من جهةٍ أخرى، فإن الموارد البشرية&nbsp; و الكفاءات ، تعد داعماً مهماً للقطاع حيث تحتوي المملكة على أفضل الجامعات المتخصصة ، مثل جامعة الملك فهد للبترول والمعادن، التي تصدر المواهب باستمرار، كما تتميز باستقطابها لكبار الخبراء الذين ينتقلون إلى المملكة العربية السعودية ويعملون فيها &nbsp;من أكثر من 40 دولة مختلفة حول العالم، &nbsp;كما أن الأبحاث والتطوير والابتكارات التكنولوجية هي أيضاً على رأس جدول أعمال المملكة في الوقت الحالي، حيث أنشأت أرامكو السعودية مؤخراً مركزاً حديثاً للأبحاث في جامعة الملك عبد الله للعلوم والتكنولوجيا يضم آخر التقنيات المتطورة التي تمكّن من إطلاق منتجات عالية التقنية لمجموعة متنوعة من تطبيقات السوق، مثل Linear Alpha Olefin (LAO) كما أن الهيئة مسؤولة عن تسهيل الخدمات، 'إدارة النفايات على سبيل المثال' إضافةً إلى وجود أكثر من 50 شركة مختلفة في مدينة الجبيل وحدها.</p>
+<p style='font-size: 13px;'><br />ولا بد أن نعلم أن اللجنة المسؤولة تشرف على استئجار الأراضي للاستخدام الصناعي، حيث تقدم أسعارًا تنافسية للغاية تتراوح من 0.27 دولارًا أمريكيًا إلى 4.40 دولاراً أمريكياً لكل متر مربع سنويًا.</p>
+<p style='font-size: 13px;'>باختصار، هناك أماكن قليلة جداً في العالم تقدم هذا النوع المتقدم من بيئة الاستثمار مثل الذي تقدمه المملكة العربية السعودية لصناعة المواد الكيميائية.</p>
+</div>
+</div>
+"
+
+INSERT_UPDATE Media; code[unique = true]    ;realFileName                          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText                         ; $contentCV[unique = true]
+                   ; background_sample1.png ; background_sample1.png            ; $siteResource/background_sample1.png   ; image/png   ;; "";
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; description[lang = en]                                ; description[lang = ar]     ; $contentCV[unique = true]
+#                                            ; sector-proposition-2-$sector ; "Chemicals Hub " ; الاتصالات وتقنية المعلومات ;
+
+
+INSERT_UPDATE InvestSaudiSectorPropositionContainer; uid[unique = true]                          ; name                                ; backgroundImage(code, $contentCV)  ; simpleCMSComponents(&componentRef)                                      ; &componentRef                               ; $contentCV[unique = true]; title
+                                                   ; sector-proposition-container-$sector ;  Sector Proposition Container ; background_sample1.png      ; sector-proposition-1-$sector ; sector-proposition-container-$sector ;                          ; Chemicals Value Proposition
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)                                                                                                                                                                     ; $contentCV[unique = true]
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                                                                                                                  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; chemicals-paragraph, ff-container-$sector, sector-proposition-container-$sector, fo-component-$sector, ss-component-$sector, contact-form ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                                                                                                                                                                                  ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;

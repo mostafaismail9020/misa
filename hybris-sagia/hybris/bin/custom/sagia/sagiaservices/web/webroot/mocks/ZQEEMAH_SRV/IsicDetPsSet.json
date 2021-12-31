@@ -1,0 +1,22 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/IsicDetPsSet('6000003629')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/IsicDetPsSet('6000003629')",
+      "type": "ZQEEMAH_SRV.Isic_Det_Ps"
+    },
+    "Investorid": "6000003629",
+    "Lic": "N",
+    "IsicSection": "A",
+    "IsicDivision": "01",
+    "IsicGroup": "011",
+    "IsicClass": "0113",
+    "SurveyID": "",
+    "Act": "6",
+    "IsicDescription": "",
+    "Activity": "AGRICULTURE  Ø²Ø±Ø§Ø¹Ù",
+    "ActDesc": "Ø²Ø±Ø§Ø¹Ø© Ø§ÙØ¨Ø·Ø§Ø·Ø³ ÙØ§ÙØ¨Ø·Ø§Ø·Ø§ Ø§ÙØ­ÙÙØ© , Ø²Ø±Ø§Ø¹Ø© Ø§ÙØ¨ØµÙ , Ø²Ø±Ø§Ø¹Ø© Ø§ÙØ·ÙØ§Ø·Ù , Ø²Ø±Ø§Ø¹Ø© Ø§ÙØ¬Ø²Ø± ",
+    "Return": "Created",
+    "Licans": ""
+  }
+}

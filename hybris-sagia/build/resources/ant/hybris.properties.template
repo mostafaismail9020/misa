@@ -1,0 +1,164 @@
+###########################################################################
+###########################################################################
+## Environment Configuration
+###########################################################################
+#
+# hybris Managed Services
+# 
+# configuration template : v 1.0
+# 
+# customer       : hll
+# datacenter     : MA
+# environment    : d
+# hybris         : 6.3.0
+#
+
+yms.hostname=hll-d-ma-app-001
+
+
+backoffice.cockpitng.hotDeployment.enabled=@backoffice.cockpitng.hotDeployment.enabled@
+
+###########################################################################
+## DB Connection
+###########################################################################
+
+db.url=@db.url@
+db.driver=@db.driver@
+db.username=@db.username@
+db.password=@db.password@
+db.tableprefix=@db.tableprefix@
+
+###########################################################################
+## Media Folder Settings
+###########################################################################
+
+media.read.dir=@media.read.dir@
+media.replication.dirs=@media.replication.dirs@
+
+
+
+###########################################################################
+## Cluster Settings
+###########################################################################
+clustermode=@clustermode@
+cluster.id=@cluster.id@
+cluster.maxid=@cluster.maxid@
+cluster.broadcast.methods=@cluster.broadcast.methods@
+cluster.broadcast.method.jgroups=@cluster.broadcast.method.jgroups@
+cluster.broadcast.method.jgroups.configuration=@cluster.broadcast.method.jgroups.configuration@
+cluster.broadcast.method.jgroups.channel.name=@cluster.broadcast.method.jgroups.channel.name@
+cluster.broadcast.method.jgroups.udp.mcast_port=@cluster.broadcast.method.jgroups.udp.mcast_port@
+cluster.broadcast.senderthreads.disable=@cluster.broadcast.senderthreads.disable@
+
+###########################################################################
+## Mail Settings
+###########################################################################
+
+mail.smtp.server=@mail.smtp.server@
+mail.smtp.port=@mail.smtp.port@
+
+
+
+###########################################################################
+## Solr Instances Auto Start
+###########################################################################
+
+solrserver.instances.default.autostart=@solrserver.instances.default.autostart@
+
+
+
+###########################################################################
+## Dynatrace Settings
+###########################################################################
+
+dynatrace.agentlib=@dynatrace.agentlib@
+dynatrace.server=@dynatrace.server@
+
+#dynatrace.enabled=true
+#tomcat.generaloptions.dynatrace= -agentpath:${dynatrace.agentlib}=name=${yms.hostname},server=${dynatrace.server},wait=30
+tomcat.generaloptions.dynatrace=@tomcat.generaloptions.dynatrace@
+
+
+
+###########################################################################
+## Port Settings
+###########################################################################
+
+# HTTP/HTTPS ports
+tomcat.http.port=@tomcat.http.port@
+tomcat.ssl.port=@tomcat.ssl.port@
+# AJP ports
+tomcat.ajp.port=@tomcat.ajp.port@
+tomcat.ajp.secureport=@tomcat.ajp.secureport@
+# Proxy ports
+proxy.http.port=@proxy.http.port@
+proxy.ssl.port=@proxy.ssl.port@
+
+
+
+###########################################################################
+## Log level Settings
+###########################################################################
+
+# uncomment in production
+#log4j.threshold=@log4j.threshold@
+
+###########################################################################
+## Webroot Settings 
+###########################################################################
+
+hac.webroot=/hac
+hmc.webroot=/hmc
+
+yacceleratorstorefront.webroot=
+storefrontContextRoot=
+    
+
+
+
+###########################################################################
+## JMX Settings
+###########################################################################
+
+tomcat.generaloptions.jmxsettings=@tomcat.generaloptions.jmxsettings@
+#tomcat.jmx.port=@tomcat.jmx.port@
+#tomcat.jmx.server.port=@tomcat.jmx.server.port@
+
+
+###########################################################################
+## Tomcat Settings
+###########################################################################
+
+bundled.tomcat.version=@bundled.tomcat.version@
+bundled.tomcat.home=@bundled.tomcat.home@
+bundled.tomcat.base=@bundled.tomcat.base@
+
+tomcat.wrapper.logfile=@tomcat.wrapper.logfile@
+
+standalone.javaoptions=@standalone.javaoptions@
+
+tomcat.generaloptions.jvmsettings=@tomcat.generaloptions.jvmsettings@
+
+tomcat.generaloptions=@tomcat.generaloptions@
+
+yb2bacceleratorstorefront.webroot=@yb2bacceleratorstorefront.webroot@
+b2bStorefrontContextRoot=@b2bStorefrontContextRoot@
+
+# Disabled junit tenant on dev
+installed.tenants=
+
+#
+# END OF HCS standard config
+# hybris Managed Services
+# 
+# configuration template : v 1.0
+# 
+# customer       : hll
+# datacenter     : MA
+# environment    : d
+# hybris         : 6.3.0
+#
+###########################################################################
+## Environment Configuration
+###########################################################################
+###########################################################################

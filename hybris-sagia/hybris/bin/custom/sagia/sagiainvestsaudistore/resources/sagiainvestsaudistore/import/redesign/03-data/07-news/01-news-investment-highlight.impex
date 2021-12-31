@@ -1,0 +1,56 @@
+##########SAUDI ARBIAN INVESTMENT  ON ENVIROMENT##############################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+$newsTitleAr=اقتصادي / وزير الاستثمار : البيئة الاستثمارية في المملكة جاذبة
+$shortDescAr= اقتصادي / وزير الاستثمار : البيئة الاستثمارية في المملكة جاذبة
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                      	; realFileName                    			; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 	; mime[default = 'image/jpeg']	; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; news-investment-highlights.png             ; news-investment-highlights.png     		; $siteResource/news-investment-highlights.png                             		;                 image/png  	;                                          ; ""     ;
+				   ; news-investment-highlights-thumbnail.png   ; news-investment-highlights-thumbnail.png  ; $siteResource/news-investment-highlights-thumbnail.png                        ;                 image/png     ;                                          ; ""     ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]  			; $medias                   												; $contentCV;
+                            ; media-container-investment-highlight  ; news-investment-highlights.png,news-investment-highlights-thumbnail.png 	;           ; 
+
+
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]       	; newsTitle[lang = en]                                   					; newsDate[dateformat = dd.MM.yyyy HH:mm:ss]    ;newsUrl
+                                      ;							 ; news-investment-highlight    ; Minister of Investment: The Saudi investment environment is attractive    ; 17.02.2021 00:00:00                           ;                     
+
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]		; newsShortInformation[lang = en]
+									  ;							 ; news-investment-highlight; "The Minister of Investment Eng. Khalid Al-Falih has expressed his confidence in the attractiveness of Saudi Arabia's investment environment, in light of its competitive advantages being provided to local investors as well as international companies."
+								
+																
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]	; uid[unique = true]		; newsFullDescription[lang = en]
+                               ;							; news-investment-highlight ; "					   
+ In a statement to the Saudi Press Agency (SPA), the Minister affirmed that the decision to limit government agencies  contracting with international companies that have regional headquarters in the Kingdom will improve the investment environment and contribute to the development and expansion of international companies' business, as well as help localize expertise and knowledge and develop local content.
+<p>Eng. Al-Falih said that Saudi Arabia s regional and global position, G20 membership, the size of the Saudi economy, its investment opportunities and its purchasing power, which represents between 40% to 80% of foreign companies' revenues from the region's markets, are among the factors that support the presence of regional headquarters of international companies and their executive departments to be close to their partners in Saudi Arabia.</p>
+<p>He added that the announcement of 24 international companies moving their headquarters to Riyadh is the first step in this direction.</p>
+<p>Eng. Al-Falih said that this approach will contribute to achieving Vision 2030 goals, which focuses on empowering the private sector, enhancing its role in economic development, creating jobs, and increasing its contribution to the gross domestic product to be a major engine for the national economy.</p>
+";
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]			; newsFullDescription[lang = ar]
+                               ;						  ; news-investment-highlight   ; "
+<p>أعرب معالي وزير الاستثمار المهندس خالد بن عبد العزيز الفالح، عن ثقته في جاذبية البيئة الاستثمارية في المملكة، في ظل الميزات التنافسية التي توفرها للمستثمرين المحليين والشركات العالمية على حد سواء.</p>
+<p>وأكّد معاليه في تصريح لوكالة الأنباء السعودية أن قرار حصر تعاقد الجهات الحكومية مع الشركات العالمية التي لها مقراتٌ إقليميةٌ في المملكة، سيرتقي بالبيئة الاستثمارية، ويُسهم في تنمية وتوسيع أعمال الشركات العالمية، كما سيساعد على توطين الخبرات والمعرفة وتنمية المحتوى المحلي.</p>
+<p>وأوضح أن المملكة مستمرة في مسيرة الإصلاح والتطوير في جميع المسارات، مشيرًا إلى أن إعلان صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز ولي العهد نائب رئيس مجلس الوزراء وزير الدفاع، بشأن تطوير منظومة التشريعات، مؤخرًا، يُضاف إلى سلسة الإصلاحات الاقتصادية والتنموية، التي شهدتها المملكة، على أرض الواقع، خلال السنوات الماضية، التي تعزز موقع المملكة كوجهة استثمارية مُفضّلةٍ عالمية.</p>
+<p>وأفاد المهندس الفالح أن مكانة المملكة الإقليمية والعالمية، وعضويتها في مجموعة العشرين، وضخامة الاقتصاد السعودي وفرصه الاستثمارية العملاقة، والقوة الشرائية التي يتمتع بها، التي تمثل ما بين (40%) إلى (80%) من إيرادات الشركات الأجنبية من أسواق المنطقة، هي من العوامل التي تدعم تواجد المقرات الإقليمية للشركات العالمية وإداراتها التنفيذية بالقرب من شركائهم في المملكة، مشيرًا إلى إعلان (24) شركة عالمية نقل مقراتها إلى الرياض، كأول خطوة في هذا الاتجاه.</p>
+<p>وبين وزير الاستثمار أن هذا التوجه سيُسهم في تحقيق مستهدفات رؤية لمملكة 2030، التي تركز على تمكين القطاع الخاص، وتعزيز دوره في التنمية الاقتصادية، وتوفير الوظائف، وزيادة إسهامه في الناتج المحلي الإجمالي ليكون محركاً رئيساً للاقتصاد الوطني.</p>
+<p>وقال معاليه في ختام تصريحه: إن وزارة الاستثمار، بالشراكة مع جميع الجهات الحكومية، ستعمل على تقديم التسهيلات والحوافز التي تدعم أعمال الشركات العالمية، والمستثمر المحلي والأجنبي في المملكة بشكلٍ عام، كاشفًا عن نية المملكة إطلاق الاستراتيجية الوطنية للاستثمار، وتدشين عددٍ من المناطق الاقتصادية الخاصة قريبًا، لتعزيز جاذبية البيئة الاستثمارية في المملكة.</p>
+";
+
+						 								   
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]         ; newsDetailsImage(code, $contentCV)  ; newsThumbnailImage(code, $contentCV)     	; $galleryImages	;                 
+									  ;	                         ; news-investment-highlight  ; news-investment-highlights.png      ; news-investment-highlights-thumbnail.png	; 	;
+  
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]		; newsTitle[lang = ar]; newsShortInformation[lang=ar]	;
+									  ;							 ; news-investment-highlight; $newsTitleAr        ; $shortDescAr					;                                                                  
+							   							   

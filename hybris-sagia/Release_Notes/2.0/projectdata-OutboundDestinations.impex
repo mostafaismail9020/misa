@@ -1,0 +1,51 @@
+#***************************************************************************#
+#*** Please change only the sample data and do NOT change anything else! ***#                                                                                       #
+#***************************************************************************#
+
+#**************************#
+#***  OAuth CredentialS ***#
+#**************************#
+$oAuthUrl = https://oauthasservices-xhu10op9t2.sa1.hana.ondemand.com/oauth2/api/v1/token
+$clientId = bf3a919d-5226-3aaf-9552-0cc38788b218
+$password = uD74he1wNh6H5k
+
+#************************#
+#*** B2B Customer URL ***#
+#************************#
+$b2bCustomerUrl = https://l650036-iflmap.hcisbp.sa1.hana.ondemand.com/gw/odata/SAP/REPLICATE-B2B-CUSTOMER-FROM-SAP-COMMERCE-TO-SAP-SALES-CLOUD
+$b2bCustomerVersion = v=1
+
+#************************#
+#*** B2B Opportunity URL ***#
+#************************#
+$opportunityUrl = https://l650036-iflmap.hcisbp.sa1.hana.ondemand.com/gw/odata/SAP/REPLICATE-OPPORTUNITY-FROM-SAP-COMMERCE-TO-SAP-SALES-CLOUD
+$opportunityVersion = v=1
+#*****************************************#
+#***  DO NOT Change The Section Below! ***#
+#*****************************************#
+
+
+#**************************#
+#***  OAuth Credentials ***#
+#**************************#
+INSERT_UPDATE ConsumedOAuthCredential; id[unique = true]   ; clientId  ; clientSecret; oAuthUrl
+                                     ; scpiOauthCredential ; $clientId ; $password   ; $oAuthUrl ;
+#******************#
+#***  Endpoints ***#
+#******************#
+INSERT_UPDATE Endpoint; id[unique = true]       ; version[unique = true]; specUrl                                ; name
+                      ; scpiB2BCustomerEndpoint ; unknown               ; "$b2bCustomerUrl;$b2bCustomerVersion/" ; scpiB2BCustomerEndpoint
+                      ; scpiOpportunityEndpoint ; unknown               ; "$opportunityUrl;$opportunityVersion/" ; scpiOpportunityEndpoint
+
+#****************************#
+#***  Destination Target  ***#
+#****************************#
+INSERT_UPDATE DestinationTarget; id[unique = true]
+                               ; scpiDestinationTarget
+
+#*******************************#
+#***  Consumed Destinations  ***#
+#*******************************#
+INSERT_UPDATE ConsumedDestination; id[unique = true]          ; url                                                              ; endpoint(id, version)           ; credential(id)      ; additionalProperties(key, value)[map-delimiter = |]; destinationTarget(id)[default = scpiDestinationTarget]
+                                 ; scpiB2BCustomerDestination ; "$b2bCustomerUrl;$b2bCustomerVersion/SAPCpiOutboundB2BCustomers" ; scpiB2BCustomerEndpoint:unknown ; scpiOauthCredential ; "csrfURL->$b2bCustomerUrl;$b2bCustomerVersion/"    ;
+                                 ; scpiOpportunityDestination ; "$opportunityUrl;$opportunityVersion/CsTickets" ; scpiOpportunityEndpoint:unknown ; scpiOauthCredential ; "csrfURL->$opportunityUrl;$opportunityVersion/"    ;

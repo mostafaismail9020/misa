@@ -1,0 +1,315 @@
+.btn{
+	display: inline-block;
+	margin: 0;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	padding: 9px 24px 7px;
+	font-size: 13px;
+	line-height: 20px;
+	border-radius: .25rem;
+	-webkit-appearance: none;
+	border: 0 solid transparent;
+	border-radius:0;
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	
+	&_wide {
+		min-width: 114px;
+	}
+
+
+
+	//default
+	color: #fff;
+	background-color: @apple;
+	border-color:  @apple;
+	border-radius: 0 1em;
+
+	> svg{
+		width: 1em;
+		height: auto;
+		vertical-align: middle;
+		margin-left: 5px;
+		margin-right: 5px;
+		//ie hack for ie11
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			width: 1em;
+			height: 1em;
+		}		
+	}
+
+
+	&:hover,
+	&:focus {
+		text-decoration: inherit;
+		color: #fff;
+		outline: none;
+	}
+
+	//secondary
+	&-secondary{
+		background-color: @dark-grey-blue;
+		border-color: @dark-grey-blue;
+	}
+
+	//warning
+	&-warning{
+		background-color: #d0021b;
+		border-color: #d0021b;
+	}
+
+	&_slim{
+		padding-top: 7px;
+		padding-bottom: 5px;
+	}
+
+	&_slim&_outline{
+		padding-top: 6px;
+		padding-bottom: 4px;
+	}
+
+
+	//outline
+	&_outline{
+		background-color: transparent;
+		border-width: 1px;
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
+
+	&&_outline{
+		color: @apple;
+	}
+
+	&-secondary&_outline{
+		color: @dark-grey-blue;
+	}
+
+	&-warning&_outline{
+		color: #d0021b;
+	}
+
+
+	//round
+	&_round{
+		border-radius: 36px / 2;
+	}
+
+
+	//link
+	&_link{
+		background: none;
+		font-weight: normal;
+		padding: 8px 20px;
+
+		&_text {
+			padding: 0;
+			color: #565656;
+			
+			&:hover:not([disabled]){
+				color: @apple;
+			} 
+		}
+		&_slim {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	
+	&_inForm {
+		margin-top: 15px;
+		margin-bottom: 19px;
+	}
+
+	&&_link {
+		color: @apple;
+	}
+	
+	//Edit Button link
+	&_edit {
+		padding: 0;
+	}
+	
+	&&_edit {
+		color: @dark;
+		font-size: 14px;
+		&:hover,
+		&:focus {
+			color: @apple !important;
+		}
+	}
+
+	&-secondary&_link{
+		color: @dark-grey-blue;
+	}
+
+	&-warning&_link{
+		color: #d0021b;
+	}
+
+	// hover
+	&:hover:not([disabled]),
+	&[hover]:not([disabled]){
+		background-color: #3CDC0F;
+	}
+
+	&-secondary:hover:not([disabled]),
+	&-secondary[hover]:not([disabled]){
+		background-color: #4B5A69;
+	}
+
+	&-warning:hover:not([disabled]),
+	&-warning[hover]:not([disabled]){
+		background-color: #f40000;
+	}
+
+
+	&&_outline:hover:not([disabled]),
+	&&_outline[hover]:not([disabled]){
+		background-color: transparent;
+		color: #42d017;
+		border-color: #42d017;
+	}
+
+	&_outline&-secondary:hover:not([disabled]),
+	&_outline&-secondary[hover]:not([disabled]){
+		color: #4B5A69;
+		border-color: #4B5A69;
+	}
+
+	&_outline&-warning:hover:not([disabled]),
+	&_outline&-warning[hover]:not([disabled]){
+		color: #f40000;
+		border-color: #f40000;
+	}
+
+
+	&&_link:hover:not([disabled]),
+	&&_link[hover]:not([disabled]){
+		background-color: transparent;
+		color: #3CDC0F;
+	}
+
+	&_link&-secondary:hover:not([disabled]),
+	&_link&-secondary[hover]:not([disabled]){
+		color: #4B5A69;
+	}
+
+	&_link&-warning:hover:not([disabled]),
+	&_link&-warning[hover]:not([disabled]){
+		color: #f40000;
+	}
+	
+	//class to make button look disabled but allow tooltips
+	&_disabled,
+	&[disabled] {
+		opacity: .5;
+		cursor: not-allowed;
+	}
+	
+	&&_leftIconLink {
+		background: none;
+		color: #313f4b;
+		font-weight: normal;
+		padding: 0;
+		font-size: 14px;
+		
+		&:hover,
+		&:focus {
+			background: none;
+		}		
+		
+		span {
+			font-weight: 600;
+			font-size: 16px;
+			display: inline-block;
+			margin-right: 8px;
+			color: inherit;
+			&:first-child {
+				[dir="rtl"] & {
+					font-weight: 500;
+				}
+				
+			}			
+		}
+	}
+	
+	&_darkLink {
+		color: #313f4b;
+		
+		&:hover,
+		&:focus {
+			background: none;
+			color: @apple;
+		}		
+	}
+	
+	&_greenLink {
+		color: #7bd35d;
+		
+		&:hover,
+		&:focus {
+			background: none;
+			color: @apple;
+		}		
+	}
+	
+	
+	&&_rightIconLink {
+		background: none;
+		font-weight: normal;
+		padding: 0;
+		font-size: 14px;
+		
+		span {
+			font-weight: 600;
+			font-size: 10px;
+			display: inline-block;
+			margin-left: 8px;
+			color: inherit;
+			vertical-align: middle;
+			[dir="rtl"] & {
+				transform: rotate(180deg);
+			}			
+		}
+		
+		&:hover,
+		&:focus {
+			background: none;
+			color: @apple;
+		}
+	}	
+	
+	&_bold {
+		font-weight: 600 !important;
+	}
+	
+	&-hollow {
+		background: none;
+		color: #313f4b;
+		padding: 8px 10px;
+		
+		&:hover,
+		&:focus {
+			background: none;
+			color: @apple;
+		}		
+	}
+	
+	&_formAligned {
+		margin-top: 15px;
+	}
+
+	&_bigPadding{
+		padding-left: 48px;
+		padding-right: 48px;
+	}
+	
+	&&_inFooterModal {
+		width: 100%;
+		margin-bottom: 0;
+	}
+}

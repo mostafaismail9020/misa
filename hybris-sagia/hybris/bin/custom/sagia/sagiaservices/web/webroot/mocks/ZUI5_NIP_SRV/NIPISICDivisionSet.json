@@ -1,0 +1,45 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICDivisionSet(LANGUAGE='E',ISIC_DIVISION='47')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICDivisionSet(LANGUAGE='E',ISIC_DIVISION='47')",
+          "type": "ZUI5_NIP_SRV.NIPISICDivision"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "G",
+        "ISIC_DIVISION": "47",
+        "ISIC_DIVISION_TEXT": "Retail trade, except of motor vehicles and motorcycles",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICDivisionSet(LANGUAGE='E',ISIC_DIVISION='45')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICDivisionSet(LANGUAGE='E',ISIC_DIVISION='45')",
+          "type": "ZUI5_NIP_SRV.NIPISICDivision"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "G",
+        "ISIC_DIVISION": "45",
+        "ISIC_DIVISION_TEXT": "Wholesale and retail trade and repair of motor vehicles and motorcycles",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICDivisionSet(LANGUAGE='E',ISIC_DIVISION='46')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPISICDivisionSet(LANGUAGE='E',ISIC_DIVISION='46')",
+          "type": "ZUI5_NIP_SRV.NIPISICDivision"
+        },
+        "LANGUAGE": "E",
+        "ISIC_SECTION": "G",
+        "ISIC_DIVISION": "46",
+        "ISIC_DIVISION_TEXT": "Wholesale trade, except of motor vehicles and motorcycles",
+        "SUCCESS": "X",
+        "ERROR": ""
+      }
+    ]
+  }
+}

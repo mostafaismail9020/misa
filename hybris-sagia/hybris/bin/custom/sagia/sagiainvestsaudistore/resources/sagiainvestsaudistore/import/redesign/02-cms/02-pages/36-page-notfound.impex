@@ -1,0 +1,63 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalGlobalTemplate
+$page = notFound
+$pageName = 404
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pageLabel = notfound
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+#$siteResource = $config-portalMediaResources
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]         ; name                ; &componentRef              ; $contentCV[unique = true]
+                                                  ; not-found-paragraph ; Not Found Paragraph ; not-found-paragraph ;
+
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]         ; $contentCV[unique = true]; description[lang = en]
+                                           ; not-found-paragraph ;                          ; "
+<div class='container my-auto text-center error-not-found'>
+                    <div class='row'>
+                        <div class='col-lg-12 logo mr-auto'>
+                            <a href='/'>
+                                <img class='hd-scroll' src=""/_ui/responsive/common/images/INV_logo_green.svg"" />
+                            </a>
+                        </div>
+                        <div class='col-lg-12 col-md-12 col-12 mx-auto margin-top-5'>
+                            <div class='err-404'>404</div>
+                            <div class='dark-gray text-center notfound-text'>
+                                <span class='d-block'>WE ARE SORRY, BUT THE PAGE YOU REQUESTED </span>
+                                <span class='d-block'>WAS NOT FOUND </span>
+                            </div>
+                            <a class='link text-uppercase px-0' href='/'><button type='button' class='err-button-home'>Home</button></a>
+                        </div>
+                        </div>
+                </div>"
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef); $contentCV
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                             ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; not-found-paragraph  	   ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                             ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+

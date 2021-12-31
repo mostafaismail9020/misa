@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38"><g stroke="#5CC83B" fill="none"><circle cx="18" cy="18" r="18" transform="translate(1 1)"/><path d="M27 14l-11.25 11-3.75-3.928"/></g></svg>

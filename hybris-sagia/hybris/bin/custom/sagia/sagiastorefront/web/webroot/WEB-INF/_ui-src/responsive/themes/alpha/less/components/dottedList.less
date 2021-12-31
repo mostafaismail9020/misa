@@ -1,0 +1,45 @@
+.dottedList {
+    
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    list-style: none;
+
+
+    &_big &-item{
+        font-size: 18px;
+        line-height: 19px;
+    }
+    
+    &-item {
+        position: relative;
+        padding-left: 17px;
+        font-size: 14px;
+        margin-bottom: 8px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        &:before {
+            content: '';
+            display: block;
+            border-radius: 100%;
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            left: 0;
+            top: 7px;
+            background: @dark;
+        }
+    }
+    
+    &_green {
+        .dottedList {
+            &-item {
+                &:before {
+                    background: @apple;
+                }
+            }
+        }
+    }
+}

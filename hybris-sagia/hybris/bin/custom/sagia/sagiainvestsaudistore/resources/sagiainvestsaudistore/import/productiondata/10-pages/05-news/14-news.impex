@@ -1,0 +1,82 @@
+$page = news-fall-investment-highlight
+$template = portalGlobalTemplate
+$name = INVESTMENT HIGHLIGHTS - FALL 2019
+$titleEn = $name
+$titleAr = مستجدات الاستثمار في المملكة خلال الربع الثالث من عام 2019
+$shortDescEn = Highest Investor Interest In Saudi Arabia Since 2010, With Over 800 Investor
+$shortDescAr = تقرير يلخص أهم مستجدات الاستثمار في المملكة خلال الربع الثالث من عام 2019
+$pagelabel = /news/fall-investment-highlight
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]                                 ; realFileName                                            ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; investment-highlights-fall-2019-q3-271019-b-1-cover ; investment-highlights-fall-2019-q3-271019-b-1-cover.jpg ; $siteResource/investment-highlights-fall-2019-q3-271019-b-1-cover.jpg       ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias                                             ; $contentCV; ; ; ;
+                            ; media-container-$page   ; investment-highlights-fall-2019-q3-271019-b-1-cover ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV)                  ; newsThumbnailImage(code, $contentCV)                ; newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; investment-highlights-fall-2019-q3-271019-b-1-cover ; investment-highlights-fall-2019-q3-271019-b-1-cover ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 29.10.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<p>Highest investor interest in Saudi Arabia since 2010, with over 800 investor licenses awarded so far in 2019.</p>
+<p>&nbsp;</p>
+<p>In the third quarter of this year, over 250 overseas businesses were granted investor licenses, a 30% increase compared to the same period last year.</p>
+<p>&nbsp;</p>
+<p>Investors all over the world are bringing their businesses to the Kingdom, with major new investors in the last quarter from India, USA, UK, Egypt, Netherlands, France, and China among many others.</p>
+<p>&nbsp;</p>
+<p>In this third edition of &ldquo;Investment Highlights&rdquo;, we present some of the most exciting updates from across Saudi Arabia&rsquo;s investment environment, as well as updates on the latest deals, opportunities, reforms, and incentives.</p>
+<p>&nbsp;</p>
+<p>Special featured pieces include H.E. Ahmed Al Khateeb, Chairman of the Saudi Commission for Tourism and National Heritage, and Nicholas Naples, CEO of AMAALA, Saudi Arabia&rsquo;s next ultra-luxury tourism destination on the Red Sea coast.</p>
+<p>&nbsp;</p>
+<p>In this report:</p>
+<ul>
+<li>New licenses figures</li>
+<li>Top countries of origin</li>
+<li>Top sectors of new investment</li>
+<li>Major projects and opportunities</li>
+</ul>"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>أعلى نسبة اهتمام تشهده البيئة الاستثمارية في المملكة منذ عام 2010، إذ تم خلال عام 2019 وحتى نهاية الربع الثالث من العام إصدار أكثر من 800 رخصة استثمارية.</p>
+<p>كما شهد الربع الثالث من عام 2019؛ إصدار أكثر من 250 رخصة استثمارية، بزيادة نسبية بلغت 30% مقارنة بالفترة نفسها من العام الماضي.</p>
+<p>يستعرض تقرير الربع الثالث من موجز الاستثمار؛ أهم مستجدات الاستثمار حول المملكة، وأحدث الاتفاقيات التي تمت خلال الربع والفرص الاستثمارية والحوافز التي تم طرحها، إضافة إلى مستجدات الإصلاحات الاقتصادية التي خضعت للتنفيذ.</p>
+<p>كما يقدم التقرير كلمة من معالي أحمد الخطيب -رئيس مجلس إدارة الهيئة العامة للسياحة والتراث الوطني-، ومقابلة حصرية مع نيكولاس نيبلز -الرئيس التنفيذي لمشروع أمالا-.</p>
+<p>&nbsp;</p>
+<p>يتضمن التقرير:</p>
+<ul>
+<li>أرقام التراخيص الجديدة</li>
+<li>أكبر الدول المستثمرة</li>
+<li>أكثر القطاعات استثمارًا</li>
+<li>المشاريع الكبرى والفرص</li>
+</ul>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

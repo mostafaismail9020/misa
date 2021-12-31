@@ -1,0 +1,186 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/AnsQuesSectionSet('1')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/AnsQuesSectionSet('1')",
+          "type": "ZQEEMAH2_EXT_SRV.AnsQuesSection"
+        },
+        "Q2section": "1",
+        "Q2refid": "6000003629",
+        "NavAnsQues": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q30')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q30')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "02",
+              "Qid": "Q30",
+              "Question": "IS YOUR COMPANY REGISTERED IN ANY NATIONAL LEVL STOCK MARKET ?",
+              "Answer": "No"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "10",
+              "Qid": "Q40",
+              "Question": "SELECT COUNTRY",
+              "Answer": "AUSTRIA"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "10",
+              "Qid": "Q40",
+              "Question": "DOSE THE REVENUES FOR ONE OF THE SHAREHOLDERS OR THE PARENT COMPANY EXCEEDED $ 70 MILLION SAUDIS OR EQUIVALENT DURING THE 2015 OR 2016?",
+              "Answer": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "10",
+              "Qid": "Q40",
+              "Question": "Dose THE ASSETS FOR ONE OF THE SHAREHOLDERS OR THE PARENT COMPANY EXCEEDED $ 100 MILLION SAUDIS OR EQUIVALENT DURING THE 2015 OR 2016?",
+              "Answer": "No"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "10",
+              "Qid": "Q40",
+              "Question": "DOSE THE NET PROFIT FOR ONE OF THE SHAREHOLDERS OR THE PARENT COMPANY EXCEEDED $ 50 MILLION SAUDIS OR EQUIVALENT DURING THE 2015 OR 2016?",
+              "Answer": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "10",
+              "Qid": "Q40",
+              "Question": "DOES THE ENTITY REQUIRED LICENSE OR ONE OF THE SHAREHOLDERS 3 REGIONAL BRANCHES OUTSIDE OF THEIR COUNTRY?",
+              "Answer": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "10",
+              "Qid": "Q40",
+              "Question": "IS THE PERCENT OF ENTITY EXPORT PRODUCTS IN THE HOME COUNTRY 50% OR MORE?",
+              "Answer": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "10",
+              "Qid": "Q40",
+              "Question": "IS THE SIZE OF THE WORKFORCE OF THE ENTITY 10 THOUSAND PERSON OR MORE?",
+              "Answer": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q40')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "10",
+              "Qid": "Q40",
+              "Question": "DOES THE ENTITY REQUIRED LICENSE OR ONE OF THE SHAREHOLDERS PATENTED RELATING TO THE ACTIVITY TO BE LICENSED?",
+              "Answer": "Yes"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/AnsQuesSectionSet('2')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/AnsQuesSectionSet('2')",
+          "type": "ZQEEMAH2_EXT_SRV.AnsQuesSection"
+        },
+        "Q2section": "2",
+        "Q2refid": "6000003629",
+        "NavAnsQues": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q10')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('Q10')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "1",
+              "Qid": "Q10",
+              "Question": "LICENSE TYPE",
+              "Answer": "INDUSTRIAL  صناعي"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('IQ1')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('IQ1')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "B",
+              "Qid": "IQ1",
+              "Question": "ISIC Section",
+              "Answer": "Mining and quarrying"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('IQ2')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('IQ2')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "22",
+              "Qid": "IQ2",
+              "Question": "ISIC Division",
+              "Answer": "Manufacture of rubber and plastics products"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('IQ4')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('IQ4')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "5",
+              "Qid": "IQ4",
+              "Question": "Complimentary",
+              "Answer": " اتاحة امكانية ادراج البند الجمركي وكمية المنتج من قبل العميل"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('IQ5')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/answeredquestiondisplaySet('IQ5')",
+                "type": "ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+              },
+              "Answerkey": "15",
+              "Qid": "IQ5",
+              "Question": "Activity Description",
+              "Answer": " يلزم المنشاءة الحصول على الترخيص الصناعي النهائي من وزارة الطاقة والصناعة والثروة المعدنية"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

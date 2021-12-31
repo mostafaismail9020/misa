@@ -1,0 +1,173 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/FollowupServices('35000178')",
+      "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/FollowupServices('35000178')",
+      "type": "ZUI5_SAGIA_SRV.FollowupSrvHDR"
+    },
+    "SrId": "35000177",
+    "SrGuid": "",
+    "BpId": "613392",
+    "BpGuid": "3ueukrTn1vGqTQAVxYjC+g==",
+    "SrCrDate": null,
+    "SrStCode": "E0002",
+    "SrStDesc": "Completed",
+    "TransType": "ZS15",
+    "TransTypeDesc": "",
+    "ObjectId": "",
+    "Action": "",
+    "TermCond": "",
+    "MinistryType": "",
+    "ServiceType": "",
+    "Stage": "",
+    "MessageType": "",
+    "Message": "",
+    "TotalNoOfLabor": "00020",
+    "NoOfSaudiGoci": "00000",
+    "NoOfFrnrGoci": "00000",
+    "NoOfFrnrJwzt": "00000",
+    "NoOfEmplReq": "00000",
+    "Comments": "Reject",
+    "NoOfDaysExtension": "00024",
+    "NoOfApprDaysExtn": "00033",
+    "ExtWlDate": "/Date(1472342400000)/",
+    "ExtWlEndDate": "/Date(1472342400000)/",
+    "FollowupServicesToContentHDRNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='35000178',DocumentID='00155D0617391EE692ACE0CDEC769C7C',Stage='')",
+            "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='35000178',DocumentID='00155D0617391EE692ACE0CDEC769C7C',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "35000178",
+          "ObjectGuid": "00155D06-1739-1EE6-92AC-DF41C8E1BC7C",
+          "Filename": "Z.pdf",
+          "Filesize": "0000000259",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D0617391EE692ACE0CDEC769C7C",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1468454400000)/",
+          "DocKeyID": "",
+          "ShDocID": "Z.pdf",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='35000178',DocumentID='00155D0617391EE692ACE0CDEC769C7C',Stage='')/FollowupSrvHDR"
+            }
+          }
+        }
+      ]
+    },
+    "FollowupServicesToUploadNav": {
+      "__deferred": {
+        "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/FollowupServices('35000178')/FollowupServicesToUploadNav"
+      }
+    },
+    "FollowupServicesToViolationsNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/EntityViolationsSet(WarningLetterNo='0',ServiceType='',SrId='35000178')",
+            "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/EntityViolationsSet(WarningLetterNo='0',ServiceType='',SrId='35000178')",
+            "type": "ZUI5_SAGIA_SRV.EntityViolations"
+          },
+          "WarningLetterNo": "0",
+          "ServiceType": "",
+          "SrId": "35000178",
+          "WarningEndDate": null,
+          "BpId": "",
+          "BpGuid": "",
+          "ViolationKey": "101",
+          "ViolationText": "اختلاف بيانات السجل التجاري عن البيانات الموجودة بالترخيص الاستثماري  الصادر من الهيئة .",
+          "ViolationNote": "",
+          "ViolationReply": "FI",
+          "ViolationReplyText": "Rectified",
+          "ViolationStatus": "",
+          "ViolationStatusText": ""
+        },
+        {
+          "__metadata": {
+            "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/EntityViolationsSet(WarningLetterNo='0',ServiceType='',SrId='35000178')",
+            "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/EntityViolationsSet(WarningLetterNo='0',ServiceType='',SrId='35000178')",
+            "type": "ZUI5_SAGIA_SRV.EntityViolations"
+          },
+          "WarningLetterNo": "0",
+          "ServiceType": "",
+          "SrId": "35000178",
+          "WarningEndDate": null,
+          "BpId": "",
+          "BpGuid": "",
+          "ViolationKey": "103",
+          "ViolationText": "عدم وجود ترخيص استثمار لفروع الشركة ومراكز التسويق.",
+          "ViolationNote": "",
+          "ViolationReply": "NF",
+          "ViolationReplyText": "Not Rectified",
+          "ViolationStatus": "",
+          "ViolationStatusText": ""
+        },
+        {
+          "__metadata": {
+            "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/EntityViolationsSet(WarningLetterNo='0',ServiceType='',SrId='35000178')",
+            "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/EntityViolationsSet(WarningLetterNo='0',ServiceType='',SrId='35000178')",
+            "type": "ZUI5_SAGIA_SRV.EntityViolations"
+          },
+          "WarningLetterNo": "0",
+          "ServiceType": "",
+          "SrId": "35000178",
+          "WarningEndDate": null,
+          "BpId": "",
+          "BpGuid": "",
+          "ViolationKey": "105",
+          "ViolationText": "استخدام اسم او شعار وكالة تجارية عالمية او محلية دون ترخيص او استخدام مطبوعات أو أختام أو وسائل دعائية باسم تجاري مخالف للاسم المرخص من الهيئة.",
+          "ViolationNote": "",
+          "ViolationReply": "FI",
+          "ViolationReplyText": "Rectified",
+          "ViolationStatus": "",
+          "ViolationStatusText": ""
+        },
+        {
+          "__metadata": {
+            "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/EntityViolationsSet(WarningLetterNo='0',ServiceType='',SrId='35000178')",
+            "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/EntityViolationsSet(WarningLetterNo='0',ServiceType='',SrId='35000178')",
+            "type": "ZUI5_SAGIA_SRV.EntityViolations"
+          },
+          "WarningLetterNo": "0",
+          "ServiceType": "",
+          "SrId": "35000178",
+          "WarningEndDate": null,
+          "BpId": "",
+          "BpGuid": "",
+          "ViolationKey": "107",
+          "ViolationText": "عدم إخطار الهيئة كتابياً بتعديل العنوان او بيانات المراسلة والاتصال او تحديث البيانات..",
+          "ViolationNote": "",
+          "ViolationReply": "NF",
+          "ViolationReplyText": "Not Rectified",
+          "ViolationStatus": "",
+          "ViolationStatusText": ""
+        }
+      ]
+    },
+    "FollowupServicesToTextNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GetTexts(SrID='35000178',CommentDate=datetime'2016-11-13T00%3A00%3A00',CommentTime=time'PT11H56M12S',Zone='UTC%2B3',TdID='ZS03',Stage='')",
+            "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/GetTexts(SrID='35000178',CommentDate=datetime'2016-11-13T00%3A00%3A00',CommentTime=time'PT11H56M12S',Zone='UTC%2B3',TdID='ZS03',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.GetText"
+          },
+          "SrID": "35000178",
+          "SrGuid": "00000000-0000-0000-0000-000000000000",
+          "CommentDate": "/Date(1478995200000)/",
+          "CommentTime": "PT11H56M12S",
+          "Zone": "UTC+3",
+          "CommentBy": "Omar Khan (SAGIA Advisor)",
+          "TdID": "ZS03",
+          "Comments": "Approved for complete",
+          "Stage": ""
+        }
+      ]
+    }
+  }
+}

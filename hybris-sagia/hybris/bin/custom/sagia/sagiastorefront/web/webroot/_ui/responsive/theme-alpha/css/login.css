@@ -1,0 +1,130 @@
+/* Font family */
+
+@font-face {
+    font-family: 'TheSans';
+    src: url('../fonts/TheSans-Plain.ttf');
+    src: url('../fonts/TheSans-Plain.eot'), url('../fonts/TheSans-Plain.woff') format('woff'), url('../fonts/TheSans-Plain.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'TheSansB6SemiBold';
+    src: url('../fonts/TheSansB6SemiBold.eot');
+    src: url('../fonts/TheSansB6SemiBold.ttf'), url('../fonts/TheSansB6SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'TheSanSemiBold';
+    src: url('../fonts/TheSansB6SemiBold.eot');
+    src: url('../fonts/TheSansB6SemiBold.ttf'), url('../fonts/TheSansB6SemiBold.woff2') format('woff2');
+}
+
+body.page-login,
+body.page-login-second-step {
+    /* font-family: "TheSans"; */
+}
+.globalMessage-action a.btn_round {
+ /*   color: #fff; */
+}
+.sagiaHead{
+	z-index:99999 !important;
+}
+#termsAndConditionsResponseApplyModal{
+	z-index:99999;
+}
+#eServiceTour{
+	z-index:99999;
+}
+#sagiaRegisterFormQuickRegistration .select2.select2-container
+{
+z-index: 0;
+}
+#errorResponseModal{
+	z-index:99999 !important;
+}
+#requestSubmittedApply{
+	z-index:99999;
+}
+#logoutModal{
+	z-index:99999;
+}
+#licenseApplicationPayment{
+	z-index:99999;
+}
+#creditCardPayment{
+	z-index:99999;
+}
+#termsAndConditionsResponseApplyModal > .modal-dialog.modal-dialog-centered{
+	min-width:85%;
+}
+#businessActivitiesModal{
+	z-index:99999;
+}
+#businessActivitiesModal > .modal-dialog.modal-dialog-centered{
+	min-width:82%;
+}	
+#typeRequirementModal{
+	z-index:999999;
+}
+#typeRequirementModal > .modal-dialog.modal-dialog-centered{
+	min-width:65%;
+}
+
+#termsAndConditionsResponseModal{
+	z-index:99999;
+}
+#termsAndConditionsResponseModal > .modal-dialog.modal-dialog-centered{
+	min-width:70%;
+}
+
+#instantRenewal{
+	z-index:99999;
+}
+
+#shareholderModalId{
+	z-index:99999;
+}
+#shareholderModalId > #shareholderFormId > .modal-dialog.modal-dialog-centered{
+	min-width:65%;
+}
+
+#branchModalId{
+	z-index:99999;
+}
+
+#branchModalId > .modal-dialog.modal-dialog-centered{
+	min-width:60%;
+}
+
+
+#productModalId{
+	z-index:99999;
+}
+
+#productModalId > .modal-dialog.modal-dialog-centered{
+	min-width:60%;
+}
+
+
+
+.page-license-renew.modal-open .select2-container--open.select2-container,
+.page-license-amend.modal-open .select2-container--open.select2-container{
+	z-index:999999;
+}
+
+
+#registerForm .form_field_error {
+  width:auto;
+  float: none;
+  padding-right:0;
+  clear:both;
+}
+
+.js-recaptcha-captchaaddon {
+  margin: 20px 0;
+  
+}
+
+#g-recaptcha_incorrect {
+  color: red;
+  display: none;
+}

@@ -1,0 +1,186 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%201')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          1",
+        "FieldSubtype": "",
+        "Description": "Letter From The Investor To Amend The Profession And Transfer Of Sponsorshi",
+        "Dockey_ID": "1027",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%202')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          2",
+        "FieldSubtype": "",
+        "Description": "Appearance Of Investor Or His Designee",
+        "Dockey_ID": "1041",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%203')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%203')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          3",
+        "FieldSubtype": "",
+        "Description": "Approval Of Labor Office To Amend The Profession And Transfer Of Sponsorship",
+        "Dockey_ID": "1047",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%204')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%204')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          4",
+        "FieldSubtype": "",
+        "Description": "Assignment Letter From The Previous Sponsor Approved By The Chamber Of Commer",
+        "Dockey_ID": "1054",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%205')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%205')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          5",
+        "FieldSubtype": "",
+        "Description": "Iqama And Passport With The Original",
+        "Dockey_ID": "1101",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%206')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%206')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          6",
+        "FieldSubtype": "",
+        "Description": "Copy Of Valid Investment License And Commercial Register",
+        "Dockey_ID": "1152",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%207')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%207')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          7",
+        "FieldSubtype": "",
+        "Description": "Moa For Companies Authenticated By The Saudi Embassy",
+        "Dockey_ID": "1191",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%208')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%208')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          8",
+        "FieldSubtype": "",
+        "Description": "Moa Of The Parent Company Approved By The Embassy And Foreign Ministry",
+        "Dockey_ID": "1192",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%209')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%20%209')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "          9",
+        "FieldSubtype": "",
+        "Description": "Partners' Decision Authenticated By The Saudi Embassy And Foreign Ministry.",
+        "Dockey_ID": "1214",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%2010')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%2010')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "         10",
+        "FieldSubtype": "",
+        "Description": "Payment Of Fine (sr 2000 For First Time, Sr 4000 For Second Time And Sr 60)",
+        "Dockey_ID": "1225",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%2011')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%2011')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "         11",
+        "FieldSubtype": "",
+        "Description": "Payment Of Sr 1000 Against Profession Amendment Through Atm.",
+        "Dockey_ID": "1229",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%2012')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZS10',Fieldname='ATTACHMENT',Fieldkey='%20%20%20%20%20%20%20%20%2012')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZS10",
+        "Fieldname": "ATTACHMENT",
+        "Fieldkey": "         12",
+        "FieldSubtype": "",
+        "Description": "Processing Of The Standard Form By Printing",
+        "Dockey_ID": "1249",
+        "LongDescr": "",
+        "OptionalAttach": ""
+      }
+    ]
+  }
+}

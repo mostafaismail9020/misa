@@ -1,0 +1,77 @@
+$page = news-sagia-showcases-saudi-chemicals
+$template = portalGlobalTemplate
+$name = SAGIA SHOWCASES SAUDI CHEMICALS OPPORTUNITY AT CHEMSPEC EUROPE
+$titleEn = $name
+$titleAr = تحت شعار استثمر في السعودية .. عدد من الجهات تشارك في المعرض العالمي للكيماويات المتخصصة
+$shortDescEn = SAGIA SHOWCASES SAUDI CHEMICALS OPPORTUNITY AT CHEMSPEC EUROPE
+$shortDescAr = تحت شعار استثمر في السعودية .. عدد من الجهات تشارك في المعرض العالمي للكيماويات المتخصصة
+$pagelabel = /news/sagia-showcases-saudi-chemicals-opportunity-at-chemspec-europe
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; photo-2019         ; photo-2019-06-27-11-21-13.jpg ; $siteResource/photo-2019-06-27-11-21-13.jpg                                 ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias    ; $contentCV; ; ; ;
+                            ; media-container-$page   ; photo-2019 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; photo-2019                        ; photo-2019                          ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 27.06.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>Seminar included presentations from SAGIA, Royal Commission for Jubail &amp; Yanbu, Saudi Aramco, SABIC and Sadara</em></li>
+<li><em>Saudi is the 5th largest chemical production market in the world and accounts for 10 percent of total global output</em></li>
+<li><em>Leading chemicals firm INEOS announced agreement to build its first ever plants in the Middle East in Saudi Arabia earlier this month</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<p><strong>Riyadh, 27 June 2019</strong>&nbsp;&ndash; SAGIA hosted a seminar at Chemspec Europe today to showcase the opportunities available to international investors in the Saudi chemicals industry. Held in Basel, Switzerland, Chemspec Europe is one of the leading international events in the sector.</p>
+<p>Today&rsquo;s seminar saw a presentation from SAGIA, alongside speakers from the Royal Commission for Jubail &amp; Yanbu, Saudi Aramco, SABIC and Sadara.</p>
+<p>Saudi is the 5<sup>th</sup>&nbsp;largest chemical production market in the world and accounts for 10 percent of total global output. It is also home to nine of the world&rsquo;s ten largest chemicals firms &ndash; all of whom are looking at potential downstream partners.</p>
+<p>Commenting on the event, Ahmad AlAbedi, Managing Director of Petrochemical, Oil and Gas Sector, SAGIA, said: &ldquo;The chemicals sector is one of the most exciting in the country, having grown 8% over the past 7 years and is expected to double in size by 2030.</p>
+<p>&ldquo;Saudi Arabia offers excellent access to key global markets through its geographical location and an extensive logistics network. And as well as being close to major markets, Saudi Arabia also provides access to abundant raw materials and low costs &ndash; thanks to low feedstock prices, low utility expenses and customs duty exemptions.</p>
+<p>&ldquo;Today&rsquo;s seminar provided an excellent opportunity for us to showcase the opportunities to a specialist audience and for investors to hear from leading figures in the Saudi chemicals industry.&rdquo;</p>
+<p>Reflecting international interest in the sector, INEOS, a leading UK chemicals firm, announced earlier this month that it had signed an agreement with Saudi Aramco and Total to build its first ever plants in the Middle East.</p>
+<p>The three world-scale plants will produce the key building blocks for carbon fiber, engineering polymers and synthetic lubricants that are pivotal to economic growth in the region. Saudi Aramco and Total are preparing the construction of a $5bn petrochemical complex (Project Amiral) which will supply more than $4bn of downstream derivatives and specialty chemicals units; the three INEOS plants will be part of them.&nbsp;</p>
+<p>Saudi Arabia has seen rapid growth in the number of investment licenses issued this year &ndash; the number of licenses issued in the first quarter of 2019 was 70% higher than that in the same period in 2018.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>شاركت الهيئة العامة للاستثمار في المعرض العالمي للكيماويات المتخصصة الذي أقيمت فعالياته خلال الفترة ٢٦ - ٢٧ / ٧ / ٢٠١٩، تحت&nbsp; شعار ""استثمر"" في السعودية""، ويضم عدداً من الجهات الحكومية والخاصة ذات العلاقة، حيث اطلع المستثمرون الأجانب وزوار المعرض على الفرص الاستثمارية الواعدة في مجال الكيماويات بالمملكة، بالإضافة إلى التعرف على دور الهيئة في خدمة المستثمرين وتعريفهم بأنظمة الاستثمار في المملكة، والتسهيلات التي تقدمها بالتعاون مع الجهات ذات العلاقة لجذب الاستثمارات في القطاعات المستهدفة.</p>
+<p>&nbsp;</p>
+<p>وقدم المهندس أحمد العبيدي، رئيس قطاع الكيماويات في الهيئة العامة للاستثمار، عرضا عن الاستراتيجية الوطنية لقطاع البتروكيماويات ضمن رؤية 2030، ومزايا الاستثمار في المملكة، والفرص الاستثمارية المتوفرة في قطاع الكيماويات المتخصصة، بالإضافة إلى برامج المحتوى المحلي لكل من شركة أرامكو السعودية والشركة السعودية للصناعات الأساسية (سابك)، والفرص الاستثمارية التي يوفرها كل من البرنامجين.</p>
+<p>&nbsp;</p>
+<p>وقدمت الهيئة الملكية للجبيل وينبع عرضاً عن مجمعات الصناعات التحويلية التي يجري العمل حالياً على تطويرها والقيمة التي تقدمها هذه المجمعات للمستثمرين والحوافز التي توفرها الدولة لتمكين مشاريع الكيماويات المتخصصة في هذه المجمعات، فيما قدمت أرامكو السعودية تعريفاً ببرنامج تعزيز القيمة الإجمالية في المملكة (اكتفاء)، وما ينطوي عليه هذا البرنامج الطموح من فرص للمستثمرين. كما قدمت شركة سابك نبذة عن مبادرة المحتوى المحلي (نساند) الذي تسعى من خلاله إلى تطوير الصناعة المحلية، فيما عرضت شركة صدارة الفرص الاستثمارية في مجمع بلاسكيم بالجبيل، وذلك اعتماداً على المواد الأولية التي تنتجها الشركة.</p>
+<p>&nbsp;</p>
+<p>يذكر أن قطاع الصناعات الكيميائية في المملكة يتميز بوفرة المواد الخام وسهولة الوصول إليها، اذ تشكل الصناعات الكيميائية جزءاً أساسياً من أهداف رؤية المملكة 2030، الرامية لدعم فكرة الاقتصاد المتنوع للوصول إلى مرحلة ما بعد النفط، ولهذا شرعت المملكة في تنفيذ برنامج خاص للصناعات التحويلية؛ لتحفيز النمو الصناعي في مختلف المجالات، وبما يجعله المحرك الرئيس لتطوير القطاع، ومما يضع المملكة في موقع هام ورئيسي يخدم الطلب المتزايد لأفريقيا وأوروبا وآسيا.</p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

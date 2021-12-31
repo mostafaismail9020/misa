@@ -1,0 +1,2 @@
+INSERT_UPDATE SearchRestriction; code[unique = true]                          ; principal(uid)[unique = true]; query                                               ; restrictedType(code)[unique = true]; active; generate
+                               ; InvestSaudiNewsComponent-Frontend-Visibility ; customergroup                ; {item:catalogVersion} IN (?session.catalogversions) ; InvestSaudiNewsComponent           ; true  ; false

@@ -1,0 +1,38 @@
+$langen = en
+$langar = ar
+
+$contentCatalog = sagiaContentCatalog
+$contentCatalogName = Sagia Content Catalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$siteResource = jar:com.sap.ibso.eservices.initialdata.setup.InitialDataSystemSetup&/sagiainitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$icon = icon(code, $contentCV)
+$menuIcon = menuIcon(code, $contentCV)
+$sagiaCategory = category(code)
+
+
+
+INSERT_UPDATE SagiaService; code[unique = true]; name[lang = $langen]              ; description[lang = $langen]                                                                           ; url                                   ; $sagiaCategory; tabs(code); serviceTypes(code)                         ; name[lang = $langar]
+                          ; ZS11               ; "Financial Statement"             ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "financial"                           ; 3             ;           ;                                            ; "Financial Statement"
+                          ; ZS11_1             ; "Upload Financial Statement"      ; "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut." ; "financial-statement"       		   ; 3             ;           ;                                            ; "Upload Financial Statement"
+						  
+						  
+
+						  
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]                     ; name                                                     ; masterTemplate(uid, $contentCV); label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']; previewImage(code, $contentCV)[default = 'ContentPageModel__function_preview'];
+                         ;                          ; financial-statement                     ; Financial Statement                                       ; SagiaTemplate                  ; financial-statement
+                         ;                          ; financial-statement-create              ; Create Financial Statement                                ; SagiaTemplate                  ; financial-statement-create
+
+						  
+INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                            		; name                                       ; page                                                                        ; actions(uid, $contentCV); &componentRef
+                                 ;                          ; SagiaFinancialStatementComponent               		; Sagia Financial Statement                   ; /WEB-INF/views/responsive/pages/account/sagiaFinancialStatement.jsp          ;                         ; SagiaFinancialStatementComponent
+                                 ;                          ; SagiaCreateFinancialStatementComponent         		; Sagia Create Financial Statement            ; /WEB-INF/views/responsive/pages/account/sagiaFinancialStatementCreate.jsp    ;                         ; SagiaCreateFinancialStatementComponent
+					  
+						  
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                                   		; name                                     		; active; cmsComponents(&componentRef)                  ; ; ;
+                         ;                          ; InnerPageContentSlot-FinancialStatement               	; SAGIA FINANCIAL STATEMENT                 		; true  ; SagiaFinancialStatementComponent               ; ; ;
+                         ;                          ; InnerPageContentSlot-CreateFinancialStatement         	; SAGIA CREATE FINANCIAL STATEMENT          		; true  ; SagiaCreateFinancialStatementComponent         ; ; ;
+
+					  
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]                                   			; position[unique = true]; page(uid, $contentCV)[unique = true]; contentSlot(uid, $contentCV)[unique = true]          ; ; ;						  
+                                ;                          ; InnerPageContentSlot-FinancialStatement               			; InnerPageContentSlot   ; financial-statement                  ; InnerPageContentSlot-FinancialStatement               ; ; ;
+                                ;                          ; InnerPageContentSlot-CreateFinancialStatement         			; InnerPageContentSlot   ; financial-statement-create           ; InnerPageContentSlot-CreateFinancialStatement         ; ; ;

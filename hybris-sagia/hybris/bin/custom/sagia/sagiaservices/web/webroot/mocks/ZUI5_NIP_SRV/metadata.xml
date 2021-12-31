@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+           xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+           xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZUI5_NIP_SRV" xml:lang="en" sap:schema-version="1"
+                xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Subscription" sap:semantics="subscriptions" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Sub. ID"
+                          sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="user" Type="Edm.String" MaxLength="12" m:FC_TargetPath="SyndicationAuthorName"
+                          m:FC_KeepInContent="false" sap:label="User Name" sap:creatable="false"
+                          sap:filterable="false"/>
+                <Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated"
+                          m:FC_KeepInContent="false" sap:label="Time Stamp" sap:creatable="false"
+                          sap:filterable="false"/>
+                <Property Name="title" Type="Edm.String" MaxLength="255" m:FC_TargetPath="SyndicationTitle"
+                          m:FC_KeepInContent="false" sap:label="Title" sap:filterable="false"/>
+                <Property Name="deliveryAddress" Type="Edm.String" sap:label="Delivery Address" sap:filterable="false"/>
+                <Property Name="persistNotifications" Type="Edm.Boolean" sap:label="Persist Notification"
+                          sap:filterable="false"/>
+                <Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection"
+                          sap:filterable="false"/>
+                <Property Name="filter" Type="Edm.String" sap:label="Filter" sap:filterable="false"/>
+                <Property Name="select" Type="Edm.String" MaxLength="255" sap:label="Select" sap:filterable="false"/>
+                <Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/>
+            </EntityType>
+            <EntityType Name="Notification" sap:semantics="notifications" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Notification ID"/>
+                <Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection"/>
+                <Property Name="title" Type="Edm.String" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false"
+                          sap:label="Notif. Text"/>
+                <Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated"
+                          m:FC_KeepInContent="false" sap:label="Time Stamp"/>
+                <Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/>
+                <Property Name="entriesOfInterest" Type="Edm.Int32" sap:label="No. of Entries"/>
+                <Property Name="recipient" Type="Edm.String" MaxLength="112" sap:label="Recipient" sap:creatable="false"
+                          sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="NIPCountry" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                    <PropertyRef Name="COUNTRY"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="COUNTRY" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="COUNTRY_TEXT" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NATIONALITY_CAT" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NATIONALITY_TEXT" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MOBILE_CODE" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="NIPRegion" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                    <PropertyRef Name="REGION"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="COUNTRY" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="REGION" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="REGION_TEXT" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="NIPCity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                    <PropertyRef Name="CITY"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="COUNTRY" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="REGION" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CITY" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CITY_TEXT" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="NIPLicenseType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                    <PropertyRef Name="LICENSE_TYPE"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LICENSE_TYPE" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LICENSE_TYPE_TEXT" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="NIPISICSection" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                    <PropertyRef Name="ISIC_SECTION"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ISIC_SECTION" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ISIC_SECTION_TEXT" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="NIPISICDivision" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                    <PropertyRef Name="ISIC_DIVISION"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ISIC_SECTION" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ISIC_DIVISION" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ISIC_DIVISION_TEXT" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="NIPLegalStatus" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                    <PropertyRef Name="LEGAL_STATUS"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LEGAL_STATUS" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LEGAL_STATUS_TEXT" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="NIPHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CR_NUMBER"/>
+                </Key>
+                <Property Name="CR_NUMBER" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SRQ_GUID" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SRQ_ID" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PARTNER" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NAME_ARABIC" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NAME_ENGLISH" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CAPITAL" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LEGAL_STATUS" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="COMP_NAT_TYPE" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="COMP_NATIONALITY" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="COUNTRY" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="REGION" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CITY" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MOBILE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EMAIL" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LIC_TYPE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ISIC_SECTION" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ISIC_DIVISION" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NUMBER_700" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZAKAT_NUMBER" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MOL_NUMBER" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GOSI_NUMBER" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CONTACT_NAME" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CONTACT_NATIONALITY" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CONTACT_COUNTRY" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CONTACT_REGION" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CONTACT_CITY" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CONTACT_MOBILE" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CONTACT_EMAIL" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CR_ISSUE_DATE" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CR_EXPIRY_DATE" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CR_ACTIVITY" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CR_EXPIRY_CHECK" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CR_VALID_CHECK" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToAttachments" Relationship="ZUI5_NIP_SRV.HeaderToAttachments"
+                                    FromRole="FromRole_HeaderToAttachments" ToRole="ToRole_HeaderToAttachments"/>
+            </EntityType>
+            <EntityType Name="NIPActiveCheck" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SHUT_DOWN" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="NIPAttachmentList" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LANGUAGE"/>
+                    <PropertyRef Name="ATTACH_CODE"/>
+                </Key>
+                <Property Name="LANGUAGE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ATTACH_CODE" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ATTACHMENT" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MANDATORY" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="NIPAttachedDocs" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CR_NUMBER"/>
+                </Key>
+                <Property Name="CR_NUMBER" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SRQ_ID" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SRQ_GUID" Type="Edm.String" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DOC_ID" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DOC_GUID" Type="Edm.String" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FILENAME" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mimetype" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Content" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FILESIZE" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUCCESS" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ERROR_MSG" Type="Edm.String" Nullable="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="HeaderToAttachments" sap:content-version="1">
+                <End Type="ZUI5_NIP_SRV.NIPHeader" Multiplicity="1" Role="FromRole_HeaderToAttachments"/>
+                <End Type="ZUI5_NIP_SRV.NIPAttachedDocs" Multiplicity="*" Role="ToRole_HeaderToAttachments"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_HeaderToAttachments">
+                        <PropertyRef Name="CR_NUMBER"/>
+                    </Principal>
+                    <Dependent Role="ToRole_HeaderToAttachments">
+                        <PropertyRef Name="CR_NUMBER"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZUI5_NIP_SRV_Entities" m:IsDefaultEntityContainer="true"
+                             sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SubscriptionCollection" EntityType="ZUI5_NIP_SRV.Subscription"
+                           sap:content-version="1"/>
+                <EntitySet Name="NotificationCollection" EntityType="ZUI5_NIP_SRV.Notification" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="NIPCountrySet" EntityType="ZUI5_NIP_SRV.NIPCountry" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="NIPRegionSet" EntityType="ZUI5_NIP_SRV.NIPRegion" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="NIPCitySet" EntityType="ZUI5_NIP_SRV.NIPCity" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="NIPLicenseTypeSet" EntityType="ZUI5_NIP_SRV.NIPLicenseType" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="NIPISICSectionSet" EntityType="ZUI5_NIP_SRV.NIPISICSection" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="NIPISICDivisionSet" EntityType="ZUI5_NIP_SRV.NIPISICDivision" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="NIPLegalStatusSet" EntityType="ZUI5_NIP_SRV.NIPLegalStatus" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="NIPHeaderSet" EntityType="ZUI5_NIP_SRV.NIPHeader" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="NIPActiveCheckSet" EntityType="ZUI5_NIP_SRV.NIPActiveCheck" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="NIPAttachmentListSet" EntityType="ZUI5_NIP_SRV.NIPAttachmentList" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="NIPAttachedDocsSet" EntityType="ZUI5_NIP_SRV.NIPAttachedDocs" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <AssociationSet Name="HeaderToAttachmentsSet" Association="ZUI5_NIP_SRV.HeaderToAttachments"
+                                sap:creatable="false" sap:updatable="false" sap:deletable="false"
+                                sap:content-version="1">
+                    <End EntitySet="NIPHeaderSet" Role="FromRole_HeaderToAttachments"/>
+                    <End EntitySet="NIPAttachedDocsSet" Role="ToRole_HeaderToAttachments"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version"
+                       href="http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,45 @@
+#### Impex For Bett3 ####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails ; $contentCV[unique = true];uid[unique = true]	;keyValue[lang = en]  	;keyName[lang = en];
+								;					     ;bett-key-1           	;48,689        			;Event attendees
+								;						 ;bett-key-2            ;3,483    				;Booth Attendees
+
+
+INSERT_UPDATE Media; code[unique = true]            			; realFileName                    	 		; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]				; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;Bett-banner-image.jpg  						; Bett-banner-image.jpg   					; $siteResource/BETT-Banner-image.jpg                                          				; image/jpg                   ;                                          ; ""     ;
+                   ;Bett-thumbnail-image.jpg    				; Bett-thumbnail-image.jpg        			; $siteResource/bett-Thumbnail-image.jpg                                           			  ; image/jpg                   ;                                          ; ""     ;
+                   ;event-gallary-image.png       				; event-gallary-image.png        			; $siteResource/event-gallary-image.png                                      				; image/png                   ;                                          ; ""     ;
+
+				   
+INSERT_UPDATE MediaContainer; qualifier[unique = true]		; $medias						; $contentCV; 
+                            ; media-container-bett    		;  event-gallary-image.png      ;           ; 				   
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventUrl(uid, $contentCV)		;eventLocation[lang = en]	;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss];eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+										;						  ;event-bett        	;					     		;"London" 				   	;22.01.2020 00:00:00                             ;25.01.2020 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventName[lang = en]			;eventShortInformation[lang = en]	;
+										;						  ;event-bett			; "Bett"						;The Ministry of Investment is participating in the world's largest exhibition in the field of educational technologies in London,with the aim of meeting with major education companies;
+
+        
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventKeyDetails(uid, $contentCV);
+										;						  ;event-bett 			;bett-key-1,bett-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventBannerImage(code, $contentCV);eventThumbnailImage(code, $contentCV);eventGalleryImages(qualifier, $contentCV);
+										;						  ;event-bett 		 	;Bett-banner-image.jpg 			   ;Bett-thumbnail-image.jpg 			 ;media-container-bett					   ; 
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventFullDescription[lang = en];
+										;						  ;event-bett           ;								;

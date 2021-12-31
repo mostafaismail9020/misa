@@ -1,0 +1,66 @@
+.statusIndicator{
+//	position: absolute;
+	right: 0;
+	bottom: (6px + 16) *-1;
+	padding-top: 6px;
+
+	font-size: 13px;
+	line-height: 16px;
+	font-weight: bold;
+	color: @dark;
+
+	span{
+		font-weight: normal;
+		display: inline-block;
+		font-weight: normal;
+		position: relative;
+		padding-right: 15px;
+		padding-left: 8px;
+
+
+		&:after{
+			content: '';
+			display:block;
+			position: absolute;
+			border-radius: 100%;
+			width: 8px;
+			height: 8px;
+			right: 0;
+			margin-top: -1px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+
+
+
+
+
+	&_process, &_inprocess{
+		span{
+			color: #cfb264;
+			&:after{
+				background: #cfb264;
+			}
+		}
+	}
+
+	&_rejected{
+		span{
+			color: #d0021b;
+			&:after{
+				background: #d0021b;
+			}
+		}
+	}
+
+	&_accepted, &_completed{
+		span{
+			color: #7bd35d;
+			&:after{
+				background: #7bd35d;
+			}
+		}
+	} 
+}

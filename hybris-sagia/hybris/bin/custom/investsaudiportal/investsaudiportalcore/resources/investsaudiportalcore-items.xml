@@ -1,0 +1,1600 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
+    <collectiontypes>
+        <collectiontype code="WebinarRegistrationList" elementtype="InvestSaudiWebinarRegistration" autocreate="true"
+                        generate="true" type="list"/>
+    </collectiontypes>
+
+    <enumtypes>
+        <enumtype code="CsEmailRecipients" autocreate="false" generate="false">
+            <value code="Contact"/>
+        </enumtype>
+    </enumtypes>
+
+    <itemtypes>
+
+        <typegroup name="investsaudi">
+            <itemtype code="OpportunityProduct" extends="Product"
+                      autocreate="true" generate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.OpportunityProduct">
+                <description>Opportunity product</description>
+                <attributes>
+                    <attribute autocreate="true" qualifier="investmentModel" type="localized:java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <custom-properties>
+                            <property name="hmcIndexField">
+                                <value>"thefield"</value>
+                            </property>
+                        </custom-properties>
+                    </attribute>
+                    <attribute autocreate="true" qualifier="highlights" type="localized:java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <custom-properties>
+                            <property name="hmcIndexField">
+                                <value>"thefield"</value>
+                            </property>
+                        </custom-properties>
+                    </attribute>
+                    <attribute qualifier="seoKeywords" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="featured" type="java.lang.Boolean">
+                        <defaultvalue>Boolean.TRUE</defaultvalue>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="SuccessStoryProduct" extends="Product"
+                      autocreate="true" generate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SuccessStoryProduct">
+                <description>Success Story product</description>
+                <attributes>
+                    <attribute qualifier="seoKeywords" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute autocreate="true" qualifier="quote" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <custom-properties>
+                            <property name="hmcIndexField">
+                                <value>"thefield"</value>
+                            </property>
+                        </custom-properties>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="Category" generate="false" autocreate="false">
+                <attributes>
+                    <attribute qualifier="emailList" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="seoKeywords" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="ContactTicketSubject" generate="true" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.ContactTicketSubject">
+                <description>Invest Saudi Contact Us Ticket Subject</description>
+                <deployment table="contactTicketSubject" typecode="25912"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="label" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="emailList" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="ContactTicket" generate="true"
+                      extends="CsTicket" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.PortalContactTicket">
+                <description>Portal Contact Us Component</description>
+                <attributes>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="company" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="mobile" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="jobTitle" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="email" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="contactSubject" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="message" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="sectorCategory" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="opportunityName" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="sendEmailTo" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiAboutButtonsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiAboutButtonsComponent">
+                <description>About Buttons Component</description>
+                <attributes>
+                    <attribute qualifier="aboutMisa" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="aboutVision" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="aboutMisaText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="aboutVisionText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+
+        <typegroup name="investsaudiportalcms">
+
+            <itemtype code="InvestSaudiComponentContainer" generate="true"
+                      extends="AbstractCMSComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiComponentContainer">
+                <description>Invest Saudi Container</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiNumberTalkContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiNumberTalkContainer">
+                <description>When numbers talk Icon Container</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiNumberTalkCarouselContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiNumberTalkCarouselContainer">
+                <description>When numbers talk Icon Carousel Container</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiNumberTalkComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiNumberTalkComponent">
+                <description>When numbers talk Icon Component</description>
+                <attributes>
+                    <attribute type="Media" qualifier="imageNormal">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="imageHover">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="number" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="text" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiNavigationBarComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiNavigationBarComponent">
+                <description>Invest Saudi Navigation Bar Component</description>
+                <attributes>
+                    <attribute type="localized:Media" qualifier="logoImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="CMSLinkComponent" qualifier="logoLink">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="CMSNavigationNode" qualifier="navigationNode">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The cms navigation node of this navigation bar component.</description>
+                    </attribute>
+                    <attribute type="localized:Media" qualifier="visionImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="CMSLinkComponent" qualifier="visionLink">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiBannerContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiBannerContainer">
+                <description>Banner Container</description>
+                <attributes>
+                    <!-- TODO: add tributes -->
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWhyContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiWhyContainer">
+                <description>Invest Saudi Why Container</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String" generate="true" autocreate="true">
+                        <persistence type="property"/>
+                        <description>Title</description>
+                    </attribute>
+                    <attribute qualifier="backgroundImage" type="Media">
+                        <persistence type="property"/>
+                        <description>Background Image</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWhyComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiWhyComponent">
+                <description>Invest Saudi Why Component</description>
+                <attributes>
+                    <attribute qualifier="url" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <description>Url</description>
+                    </attribute>
+                    <attribute qualifier="index" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>Index</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWhyDetailContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiWhyDetailContainer">
+                <description>Invest Saudi Why Detail Container</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String" generate="true" autocreate="true">
+                        <persistence type="property"/>
+                        <description>Title</description>
+                    </attribute>
+                    <attribute qualifier="backgroundImage" type="Media">
+                        <persistence type="property"/>
+                        <description>Background Image</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWhyDetailComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiWhyDetailComponent">
+                <description>Invest Saudi Why Detail Component</description>
+                <attributes>
+                    <attribute qualifier="url" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <description>Url</description>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String" generate="true"
+                               autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                        <description>Description</description>
+                    </attribute>
+                    <attribute qualifier="index" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>Index</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiGenericParagraphComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiGenericParagraphComponent">
+                <description>Invest Saudi Generic Paragraph Component</description>
+                <attributes>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiBannerComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiBannerComponent">
+                <description>Invest Saudi Banner Component</description>
+                <attributes>
+                    <attribute type="Media" qualifier="image">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="descriptionText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="buttonText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="buttonURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="link" type="localized:java.lang.Boolean">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiCustomBannerContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiCustomBannerContainer">
+                <description>Invest Saudi Custom Banner Container</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String" generate="true" autocreate="true">
+                        <persistence type="property"/>
+                        <description>Title</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiCustomBannerComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiCustomBannerComponent">
+                <description>Invest Saudi Custom Banner Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="url" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="backgroundImage">
+                        <persistence type="property"/>
+                        <description>Background Image</description>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="additionalText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+
+            <itemtype code="InvestSaudiSectorsIconComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiSectorsIconComponent">
+                <description>Invest Saudi Sectors Icon Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="category" type="Category">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String" generate="true"
+                               autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                        <description>Description</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiFooterComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiFooterComponent">
+                <description>Invest Saudi Footer Component</description>
+                <attributes>
+                    <attribute type="localized:Media" qualifier="logo1">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The logo media in footer.</description>
+                    </attribute>
+                    <attribute type="localized:Media" qualifier="logo2">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The logo media in footer.</description>
+                    </attribute>
+                    <attribute type="localized:Media" qualifier="logo3">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The logo media in footer.</description>
+                    </attribute>
+                    <attribute type="CMSLinkComponent" qualifier="logoLink1">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The logo media link in footer.</description>
+                    </attribute>
+                    <attribute type="CMSLinkComponent" qualifier="logoLink2">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The logo media link in footer.</description>
+                    </attribute>
+                    <attribute type="CMSLinkComponent" qualifier="logoLink3">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The logo media link in footer.</description>
+                    </attribute>
+                    <attribute qualifier="copyrightText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>The copyright text in footer.</description>
+                    </attribute>
+                    <attribute type="CMSNavigationNode" qualifier="navigationLinks">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The cms navigation nodes for links in footer.</description>
+                    </attribute>
+                    <attribute type="CMSNavigationNode" qualifier="navigationSector">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The cms navigation nodes for Sectors and Industries in footer.</description>
+                    </attribute>
+                    <attribute type="CMSNavigationNode" qualifier="navigationFollowUs">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The cms navigation nodes for Follow Us links in footer.</description>
+                    </attribute>
+                    <attribute type="CMSNavigationNode" qualifier="navigationMapPolicy">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>The cms navigation nodes for Sitemap and Policies in footer.</description>
+                    </attribute>
+                    <attribute qualifier="registerUrl" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <description>Register Url</description>
+                    </attribute>
+                    <attribute qualifier="loginUrl" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <description>Login Url</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiSectorsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiSectorsComponent">
+                <description>Invest Saudi Sectors Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="category" type="Category">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="exploreAllURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="exploreAllText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+
+            <itemtype code="InvestSaudiCookieBarComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiCookieBarComponent">
+                <description>Invest Saudi Cookie Bar Component</description>
+                <attributes>
+                    <attribute qualifier="text" type="localized:java.lang.String" generate="true" autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWhySideMenuContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiWhySideMenuContainer">
+                <description>Side Menu Container</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWhySideOptionComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiWhySideOptionComponent">
+                <description>Side Menu Component</description>
+                <attributes>
+                    <attribute qualifier="url" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiFeaturedOpportunitiesComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiFeaturedOpportunitiesComponent">
+                <description>Invest Saudi Sectors Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="numberItensDisplayed" type="int">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="exploreAllURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiSuccessStoriesComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiSuccessStoriesComponent">
+                <description>Invest Saudi Sectors Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="numberItensDisplayed" type="int">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="exploreAllURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiFactsFiguresContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiFactsFiguresContainer">
+                <description>Facts and Figures Container</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String" generate="true" autocreate="true">
+                        <persistence type="property"/>
+                        <description>Title</description>
+                    </attribute>
+                    <attribute qualifier="subtitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiFactsFiguresComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiFactsFiguresComponent">
+                <description>Invest Saudi Facts and Figures Component</description>
+                <attributes>
+                    <attribute qualifier="figures" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="unit" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="facts" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiFaqContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiFaqContainer">
+                <description>Invest Saudi FAQ Container</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiFaqComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiFaqComponent">
+                <description>Invest Saudi FAQ Component</description>
+                <attributes>
+                    <attribute qualifier="text" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="descriptionText" type="localized:java.lang.String" generate="true"
+                               autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiOpportunitySearchBarComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiOpportunitySearchBarComponent">
+                <description>Invest Saudi Opportunity SearchBar Component</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiOpportunitySearchResultComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiOpportunitySearchResultComponent">
+                <description>Invest Saudi Opportunity Search Result Component</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiSuccessStorySearchBarComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiSuccessStorySearchBarComponent">
+                <description>Invest Saudi Success Story SearchBar Component</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiSuccessStorySearchResultComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiSuccessStorySearchResultComponent">
+                <description>Invest Saudi Success Story Search Result Component</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiSiteMapComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiSiteMapComponent">
+                <description>Invest Saudi Site Map Component</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiVideoContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiVideoContainer">
+                <description>Invest Saudi FAQ Container</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiVideoComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiVideoComponent">
+                <description>Invest Saudi FAQ Component</description>
+                <attributes>
+                    <attribute qualifier="video" type="Media">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="videoLink" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="poster" type="Media">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="descriptionText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWebinarVideoContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiWebinarVideoContainer">
+                <description>Invest Saudi FAQ Container</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWebinarVideoComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiWebinarVideoComponent">
+                <description>Invest Saudi FAQ Component</description>
+                <attributes>
+                    <attribute qualifier="embedURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="twitterURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="linkedinURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="InvestSaudiSimpleBannerComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiSimpleBannerComponent">
+                <description>Invest Saudi Webinar banner image</description>
+                <attributes>
+                    <attribute qualifier="image" type="Media">
+                        <persistence type="property"/>
+                        <description>Webinar banner image</description>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWebinarSingleVideoComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiWebinarSingleVideoComponent">
+                <description>Invest Saudi FAQ Component</description>
+                <attributes>
+                    <attribute qualifier="embedURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="twitterURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="linkedinURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiContactUsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiContactUsComponent">
+                <description>Invest Saudi Contact Us Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="nameLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="companyLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="mobileLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="jobTitleLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="emailLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="contactSubjectListLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="messageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="successMessage" type="localized:java.lang.String" generate="true"
+                               autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="submitButtonLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiTableContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiTableContainer">
+                <description>Invest Saudi FAQ Container</description>
+            </itemtype>
+
+            <itemtype code="InvestSaudiRowComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiRowComponent">
+                <description>Invest Saudi FAQ Component</description>
+                <attributes>
+                    <attribute qualifier="pdfLink" type="Media">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="image" type="Media">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="text" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiNewsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiNewsComponent">
+                <description>Invest Saudi News Post Component</description>
+                <attributes>
+                    <attribute qualifier="newsTitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>neews post title</description>
+                    </attribute>
+                    <attribute qualifier="newsShortDescription" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>news post short description</description>
+                    </attribute>
+                    <attribute qualifier="newsFullDescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                        <description>news post full description</description>
+                    </attribute>
+                    <attribute qualifier="newsUrl" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="newsDetailsImage" type="Media">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="newsThumbnailImage" type="Media">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="newsFullReport" type="Media">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="newsDate" type="java.util.Date">
+                        <persistence type="property"/>
+                        <description>news post date</description>
+                    </attribute>
+                    <attribute qualifier="galleryImages" type="MediaContainer">
+                        <persistence type="property"/>
+                        <description>It is a media container with additional images for the news</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiSectorPropositionContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiSectorPropositionContainer">
+                <description>Invest Saudi Sector Proposition Container</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String" generate="true" autocreate="true">
+                        <persistence type="property"/>
+                        <description>Title</description>
+                    </attribute>
+                    <attribute qualifier="backgroundImage" type="Media">
+                        <persistence type="property"/>
+                        <description>Background Image</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiSectorPropositionComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiSectorPropositionComponent">
+                <description>Invest Saudi Sector Proposition Component</description>
+                <attributes>
+                    <attribute qualifier="url" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <description>Url</description>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String" generate="true"
+                               autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                        <description>Description</description>
+                    </attribute>
+                    <attribute qualifier="index" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>Index</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiLastNewsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiLastNewsComponent">
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="exploreAllUrl" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="exploreAllUrlName" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="numberOfNews" type="int">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiMapComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiMapComponent">
+                <description>Invest Saudi Map Component</description>
+                <attributes>
+                    <attribute qualifier="googleMapsAPIKey" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiContactComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiContactComponent">
+                <description>Invest Saudi Contact Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="descriptionText" type="localized:java.lang.String" generate="true"
+                               autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="emailURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="localURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="internationalURL" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiOfficesContainer" generate="true"
+                      extends="InvestSaudiComponentContainer" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiOfficesContainer">
+                <description>Invest Saudi Offices Container</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="InvestSaudiOfficesComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiOfficesComponent">
+                <description>Invest Saudi Offices Component</description>
+                <attributes>
+                    <attribute qualifier="officeName" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="address" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="telephone" type="java.lang.String" generate="true" autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="buildingNumber" type="java.lang.String" generate="true" autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="additionalNumber" type="java.lang.String" generate="true" autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="postalCode" type="java.lang.String" generate="true" autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="dataTypeLat" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="dataTypeLng" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="buttonText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+
+            <itemtype code="InvestSaudiBrandDownloadComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiBrandDownloadComponent">
+                <description>Invest Saudi Brand Download Component</description>
+                <attributes>
+                    <attribute type="Media" qualifier="pdf">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="jpg">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="png">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="buttonPDF" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="buttonJPG" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="buttonPNG" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="agreeMessage" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiServicesButtonsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiServicesButtonsComponent">
+                <description>Invest Saudi Services Buttons Component</description>
+                <attributes>
+                    <attribute qualifier="investorLicenseApply" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="investorAccountLogin" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="investorLicenseApplyText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="investorAccountLoginText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+        </typegroup>
+
+        <typegroup name="Webinar Registration">
+
+            <itemtype code="InvestSaudiWebinarRegistration" autocreate="true" generate="true">
+                <deployment table="WebinarRegistration" typecode="14465"/>
+                <attributes>
+                    <attribute qualifier="userEmail" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" initial="true" optional="false"
+                                   unique="true"/>
+                        <persistence type="property"/>
+                        <description>User Email</description>
+                    </attribute>
+                    <attribute qualifier="webinarCode" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" initial="true" optional="false"
+                                   unique="true"/>
+                        <persistence type="property"/>
+                        <description>User Email</description>
+                    </attribute>
+                    <attribute qualifier="languageIso" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>Language Iso Code</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWebinar" autocreate="true" generate="true">
+                <deployment table="Webinar" typecode="14466"/>
+                <attributes>
+                    <attribute qualifier="webinarCode" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" initial="true" optional="false"
+                                   unique="true"/>
+                        <persistence type="property"/>
+                        <description>User Email</description>
+                    </attribute>
+                    <attribute qualifier="portalWebinarRegistration" type="WebinarRegistrationList">
+                        <persistence type="property"/>
+                        <description>List of portal registration</description>
+                    </attribute>
+                    <attribute type="Media" qualifier="image">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" initial="true" optional="false"
+                                   unique="false"/>
+                        <description>Image</description>
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="url">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" initial="true" optional="false"
+                                   unique="false"/>
+                        <description>Url</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWebinarRegistrationComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiWebinarRegistrationComponent">
+                <description>Invest Saudi Webinar Registration Component</description>
+                <attributes>
+                    <attribute qualifier="signupTitleText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>Signup Title Text</description>
+                    </attribute>
+                    <attribute qualifier="titleText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>Title text</description>
+                    </attribute>
+                    <attribute qualifier="buttonText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>Button Text</description>
+                    </attribute>
+                    <attribute qualifier="webinarCode" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>Webinar Code</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InvestSaudiWebinarRegistrationProcess" generate="true"
+                      extends="StoreFrontCustomerProcess" autocreate="true">
+                <attributes>
+                    <attribute type="java.lang.String" qualifier="linkUrl">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>Link Url</description>
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="userEmail">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>User Email</description>
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="imageUrl">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers/>
+                        <description>Image Url</description>
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="fromEmail">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>From Email</description>
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="twitterImageUrl">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers/>
+                        <description>Image Url</description>
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="logoImageUrl">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers/>
+                        <description>Image Url</description>
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="youtubeImageUrl">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers/>
+                        <description>Image Url</description>
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="linkedinImageUrl">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers/>
+                        <description>Image Url</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="CMSSite" autocreate="false" generate="false">
+                <attributes>
+                    <attribute type="Media" qualifier="metaImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+    </itemtypes>
+</items>

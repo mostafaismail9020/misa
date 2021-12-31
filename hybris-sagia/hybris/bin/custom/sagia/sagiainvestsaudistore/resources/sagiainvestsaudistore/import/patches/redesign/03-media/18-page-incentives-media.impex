@@ -1,0 +1,52 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                 ; realFileName             		    ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText ; $contentCV[unique = true];
+					; incentives_banner.jpg 	          ; incentives_banner.jpg			    ; $siteResource/incentives_banner.jpg										    ; image/jpeg						;										   ; ""      ;                          ;
+#Loan Program
+					; arab_fund.jpg 		              ; arab_fund.jpg			            ; $siteResource/arab_fund.jpg										            ; image/jpeg						;										   ; ""      ;                          ;
+					; Mask_Group_114.jpg 		          ; Mask_Group_114.jpg			        ; $siteResource/Mask_Group_114.jpg										        ; image/jpeg						;										   ; ""      ;                          ;
+					; atfp.jpg 		                      ; atfp.jpg			                ; $siteResource/atfp.jpg										                ; image/jpeg						;										   ; ""      ;                          ;
+					; arab_investment.jpg 		          ; arab_investment.jpg			        ; $siteResource/arab_investment.jpg										        ; image/jpeg						;										   ; ""      ;                          ;
+					; Mask_Group_115.jpg 		          ; Mask_Group_115.jpg			        ; $siteResource/Mask_Group_115.jpg										        ; image/jpeg						;										   ; ""      ;                          ;
+#Energy n Utility
+					; logo_ar.png 		                  ; logo_ar.png			                ; $siteResource/logo_ar.png										                ; image/png							;										   ; ""      ;                          ;
+					; saudi_aramco.png 		              ; saudi_aramco.png			        ; $siteResource/saudi_aramco.png										        ; image/png							;										   ; ""      ;                          ;
+					; Mask_Group_109.png 		          ; Mask_Group_109.png			        ; $siteResource/Mask_Group_109.png										        ; image/png							;										   ; ""      ;                          ;
+					; Saudi_Electricity_Company_Logo.png  ; Saudi_Electricity_Company_Logo.png	; $siteResource/Saudi_Electricity_Company_Logo.png							    ; image/png							;										   ; ""      ;                          ;
+					; national_water.png 		          ; national_water.png			        ; $siteResource/national_water.png										        ; image/png							;										   ; ""      ;                          ;
+#Employment Support
+					; tamheer.jpg 		                  ; tamheer.jpg 		                ; $siteResource/tamheer.jpg 							                        ; image/jpeg						;										   ; ""      ;                          ;
+					; program.jpg 		                  ; program.jpg 		                ; $siteResource/program.jpg 								                    ; image/jpeg						;										   ; ""      ;                          ;
+					; professional.jpg                    ; professional.jpg 	                ; $siteResource/professional.jpg 							                    ; image/jpeg						;										   ; ""      ;                          ;
+					; doroob.jpg                          ; doroob.jpg                          ; $siteResource/doroob.jpg       						                        ; image/jpeg						;										   ; ""      ;                          ;
+#Export credit finance
+					; SIDF_logo.jpg 		              ; SIDF_logo.jpg 		                ; $siteResource/SIDF_logo.jpg 								                    ; image/jpeg						;										   ; ""      ;                          ;
+					; itfc_eng_rgb_vertical.jpg           ; itfc_eng_rgb_vertical.jpg 	        ; $siteResource/itfc_eng_rgb_vertical.jpg 							            ; image/jpeg				        ;										   ; ""      ;                          ;
+					; saudi_exim.jpg                      ; saudi_exim.jpg                      ; $siteResource/saudi_exim.jpg       						                    ; image/jpeg					    ;										   ; ""      ;                          ;
+#Land Solutions
+					; modon.jpg 		                  ; modon.jpg 		                    ; $siteResource/modon.jpg 								                        ; image/jpeg						;										   ; ""      ;                          ;
+					; rcjy.jpg                            ; rcjy.jpg 	                        ; $siteResource/rcjy.jpg 							                            ; image/jpeg				        ;										   ; ""      ;                          ;
+					; ecza.jpg                            ; ecza.jpg                            ; $siteResource/ecza.jpg       						                            ; image/jpeg					    ;										   ; ""      ;                          ;
+					; kaec.jpg                            ; kaec.jpg 	                        ; $siteResource/kaec.jpg 							                            ; image/jpeg				        ;										   ; ""      ;                          ;
+					; ic_seeklogo.jpg                     ; ic_seeklogo.jpg                     ; $siteResource/ic_seeklogo.jpg       						                    ; image/jpeg					    ;										   ; ""      ;                          ;
+#Finance RnD
+					; kacst.png                           ; kacst.png 	                        ; $siteResource/kacst.png 							                            ; image/png				        	;										   ; ""      ;                          ;
+					; SIDF_logo.png 		              ; SIDF_logo.png 		                ; $siteResource/SIDF_logo.png 								                    ; image/png							;										   ; ""      ;                          ;
+#Tax Exemption
+					; Tax_credit.png                      ; Tax_credit.png 	                    ; $siteResource/Tax_credit.png 							                        ; image/png				            ;										   ; ""      ;                          ;
+#Smes Ecosystem
+					; monshaat_logo.png                   ; monshaat_logo.png 	                ; $siteResource/monshaat_logo.png 							                    ; image/png				            ;										   ; ""      ;                          ;
+

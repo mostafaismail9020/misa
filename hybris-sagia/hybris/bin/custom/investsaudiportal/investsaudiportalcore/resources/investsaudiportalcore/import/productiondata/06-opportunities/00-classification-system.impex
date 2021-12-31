@@ -1,0 +1,19 @@
+$classSystemVersion = systemVersion(catalog(id[default='investsudiPortalClassificationCatalog']), version[default='1.0'])
+$classCatalogVersion = catalogVersion(catalog(id[default='investsudiPortalClassificationCatalog']), version[default='1.0'])
+
+INSERT_UPDATE ClassificationAttribute; $classSystemVersion[unique = true]; code[unique = true]; name [lang = en]; name [lang = ar]
+                                     ;                                   ; sector             ; Sector          ; قطاع
+                                     ;                                   ; sub-sector         ; Sub-Sector      ; القطاع الفرعي
+                                     ;                                   ; location           ; Location        ; موقعك
+                                     ;                                   ; investment-size    ; Investment Size ; حجم الاستثمار
+                                     ;                                   ; timeline           ; Timeline        ; الجدول الزمني
+
+INSERT_UPDATE ClassificationClass; $classCatalogVersion[unique = true]; code[unique = true]          ; name[lang = en]     ; name[lang = ar]
+                                 ;                                    ; opportunities-classification ; Opportunity Details ; تفاصيل الفرصة
+
+INSERT_UPDATE ClassAttributeAssignment; attributeType(code[default = string]); classificationAttribute(code[unique = true], systemVersion(catalog(id), version))[unique = true]; classificationClass(code, catalogVersion(catalog(id), version))[unique = true]; $classSystemVersion; localized[default = true];
+                                      ;                                      ; sector:investsudiPortalClassificationCatalog:1.0                                                ; opportunities-classification:investsudiPortalClassificationCatalog:1.0        ;                    ;                          ;
+                                      ;                                      ; sub-sector:investsudiPortalClassificationCatalog:1.0                                            ; opportunities-classification:investsudiPortalClassificationCatalog:1.0        ;                    ;                          ;
+                                      ;                                      ; location:investsudiPortalClassificationCatalog:1.0                                              ; opportunities-classification:investsudiPortalClassificationCatalog:1.0        ;                    ;                          ;
+                                      ;                                      ; investment-size:investsudiPortalClassificationCatalog:1.0                                       ; opportunities-classification:investsudiPortalClassificationCatalog:1.0        ;                    ;                          ;
+                                      ;                                      ; timeline :investsudiPortalClassificationCatalog:1.0                                             ; opportunities-classification:investsudiPortalClassificationCatalog:1.0        ;                    ;                          ;

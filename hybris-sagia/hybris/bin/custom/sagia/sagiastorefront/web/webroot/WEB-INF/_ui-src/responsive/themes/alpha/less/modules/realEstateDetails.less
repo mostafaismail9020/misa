@@ -1,0 +1,175 @@
+.realEstateDetails { 
+	color: #313f4b;
+	
+	h2.contentModule-headline {
+		margin-bottom: 0;
+	}
+
+	&-properties {
+		text-align: right;
+		font-size: 13px;
+		
+		#media-breakpoint-down(sm, {
+			text-align: left;
+		});	
+	}
+	&-property {
+		display: inline-block;
+		line-height: 40px;
+		vertical-align: middle;
+		
+		
+		.appointmentList-status-value{
+			font-size: 13px;
+		}
+		.appointmentList-locationBtn {
+			border: none;
+			background-color: transparent;
+		}
+		&.appointmentList-location {
+			color: #313f4b;
+			padding-top: 10px;
+			font-size: 13px;
+			padding-bottom: 10px;
+			line-height: 20px;
+			display: inline-block;
+		}
+		#media-breakpoint-down(sm, {
+			&.appointmentList-date:last-child {
+				float: right;
+				text-align: center;
+			}
+		});
+		&_delimiter {
+			display: inline-block;
+			margin: 0 10px;
+			border-left: 2px solid #99abb5;
+			height: 16px;
+			opacity: 0.5;
+			position: relative;
+			top: 4px;
+		}
+
+	}
+	&-row {
+		line-height: 24px;
+		font-size: 15px;
+
+		dt {
+			font-weight: normal;
+		}
+		dd + dt {
+			margin-top: 25px;
+		}
+		h3.contentModule-headline {
+			font-weight: 500;
+			color: @dark;
+			font-size: 15px;
+		}
+		& + & {
+			margin-top: 30px;
+		}
+		&_paddingV_30{
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		&_borderV {
+			border-top: 1px solid #ccd0d4;
+			border-bottom: 1px solid #ccd0d4;
+
+			& + & {
+				border-top-color: transparent;
+			}
+		}
+	}
+	
+	&_forms &-row {
+		padding-top: 10px;
+		padding-bottom: 30px;
+
+		.contentModuel-headline + {
+			border-top-color: transparent;
+		}
+
+		&_add {
+			padding-bottom: 10px;
+		}
+	}
+	&_forms > .contentModule-actions.contentModule_spaceTop {
+		margin-top: 0;
+		padding-top: 10px;
+	}
+
+	&-table {
+		margin-bottom: 25px;
+		table-layout: fixed;
+		width: 100%;
+
+		td,
+		th {
+			padding-right: 10px;
+			padding-top: 10px;
+			padding-bottom: 6px;
+			font-weight: normal;
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+		td {
+			border-top: 1px solid #ccd0d4;
+			vertical-align: top;
+			padding-right: 3px;
+		}
+	}
+	
+	.text-center,
+	&-row.text-center {
+		text-align: center;
+	}
+	.btn_download:last-child,
+	.btn&-downloadBtn:last-child {
+		padding-bottom: 0;
+	}
+	&, 
+	&_forms &-row {
+
+		> hr {
+			margin-top: 30px;
+			margin-bottom: 30px;
+
+			&.realEstateDetails-row_delimiter {
+				border-top: 1px solid @pale-grey;
+				margin: 0;
+			}
+			&.realEstateDetails-row_section-delimiter {
+				margin-top: 10px;
+				border-top: 1px solid #ccd0d4;
+
+				+ h2.contentModuel-headline {
+					padding-top: 10px;
+				}
+			}
+		}
+		.btn_link:last-child {
+			padding-bottom: 0;
+		}
+
+		&.text-center {
+			.btn.btn_link {
+				margin: 0 auto;
+			}
+		}
+	}
+	&-qrCodeImagePlaceholder {
+		height: 220px;
+		text-align: right;
+		#media-breakpoint-down(xs, {
+			text-align: center;
+		});
+	}
+	.btn&-downloadBtn svg{
+		width: 21px;
+		margin: 0;
+	}
+}

@@ -1,0 +1,69 @@
+$page = news-misa-covid-19-response-center
+$template = portalGlobalTemplate
+$name = MISA COVID-19 RESPONSE CENTER (MCRC).. NOW LIVE!
+$titleEn = $name
+$titleAr = إعلان انطلاق مركز الاستجابة لأزمة كورونا (MCRC)
+$shortDescEn = MISA COVID-19 RESPONSE CENTER (MCRC).. NOW LIVE!
+$shortDescAr = إعلان انطلاق مركز الاستجابة لأزمة كورونا (MCRC)
+$pagelabel = /news/misa-covid-19-response-center-mcrc-now-live
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName   ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; mcrc_posts         ; mcrc_posts.jpg ; $siteResource/mcrc_posts.jpg                                                ;                             ;                                          ; ""     ; ;
+#                   ; newsThumbnailImage-1 ; $siteResource/newsThumbnailImage-1.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias    ; $contentCV; ; ; ;
+                            ; media-container-$page   ; mcrc_posts ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; mcrc_posts                        ; mcrc_posts                          ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 26.03.2020 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "
+<ul>
+<li>
+<p>We strive to serve, and fulfill our role; even through the toughest times.<br />The Ministry of Investment has formed a new taskforce, for this specific global pandemic. The MISA COVID-19 RESPONSE CENTER (MCRC) is here 24/7 to answer your inquiries, solve your issues and continue growing your business.<br />To know more about the MCRC&rsquo;s services and FAQs; please visit the following link:</p>
+<p><br />Email: InvestorCare@MISA.gov.sa<br />WhatsApp: +966112035888</p>
+</li>
+</ul>
+"
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "
+<ul>
+<li>
+<p>سعيًا لخدمتكم، وضمان استمرارية أعمالكم. تم تشكيل فريق عمل متخصص، تحت مظلة وزارة الاستثمار. ويعمل فريق مركز الاستجابة لأزمة كورونا (MCRC) على مدار الساعة، لتقديم كافّة أنواع الدعم في ظل الظروف الراهنة.<br />وللتعرف على خدمات المركز، والأسئلة الأكثر شيوعًا، تفضلوا بزيارة الرابط التالي.<br />علمًا أنه يمكنكم الوصول لهم 24/7 على التالي:<br />بريد إلكتروني: InvestorCare@MISA.gov.sa<br />واتساب: 00966112035888</p>
+</li>
+</ul>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

@@ -1,0 +1,44 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/IsicDetSet(Flag='N',Lang='',IsicSection='',IsicDivision='',IsicGroup='',IsicClass='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/IsicDetSet(Flag='N',Lang='',IsicSection='',IsicDivision='',IsicGroup='',IsicClass='')",
+          "type": "ZQEEMAH_SRV.Isic_Det"
+        },
+        "Flag": "N",
+        "Lang": "",
+        "IsicSection": "",
+        "IsicDivision": "",
+        "IsicGroup": "",
+        "IsicClass": "",
+        "Act": "",
+        "IsicDescription": "Permanent",
+        "Activity": "",
+        "SurveyID": "",
+        "Attachments": "",
+        "Question": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/IsicDetSet(Flag='T',Lang='',IsicSection='',IsicDivision='',IsicGroup='',IsicClass='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/IsicDetSet(Flag='T',Lang='',IsicSection='',IsicDivision='',IsicGroup='',IsicClass='')",
+          "type": "ZQEEMAH_SRV.Isic_Det"
+        },
+        "Flag": "T",
+        "Lang": "",
+        "IsicSection": "",
+        "IsicDivision": "",
+        "IsicGroup": "",
+        "IsicClass": "",
+        "Act": "",
+        "IsicDescription": "Temporary",
+        "Activity": "",
+        "SurveyID": "",
+        "Attachments": "",
+        "Question": ""
+      }
+    ]
+  }
+}

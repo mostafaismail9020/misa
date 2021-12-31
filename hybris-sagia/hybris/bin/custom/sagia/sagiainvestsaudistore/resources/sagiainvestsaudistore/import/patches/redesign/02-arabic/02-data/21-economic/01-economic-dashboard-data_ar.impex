@@ -1,0 +1,66 @@
+
+
+INSERT_UPDATE RealGDP			;value      	;valueLabel [lang = ar]    			;percentage 	;percentageLabel [lang = ar] 		; displayName	[lang = ar]			;name [unique=true]					;calenderValue [lang = ar] 		;currencyValue			
+								;"608,791"  	;"مليون ريال سعودي"    				;"1.83%"    	;"النموّ"        			 		; الناتج المحلي الإجمالي الحقيقي		;"Real GDP"             			;"الربع الثاني لعام 2021 "		;
+
+INSERT_UPDATE MoneySupply		;value			;valueLabel	[lang = ar]	  			;percentage 	;percentageLabel [lang = ar] 		;displayName	[lang = ar]	 		;name[unique=true] 					;calenderValue [lang = ar] 		;currencyValue
+								;"2,239,324"	;"مليون ريال سعودي"    				;"7.8%"			;"النموّ"		 			 		;" عرض النقود"						;"Money Supply M3"		 			;"أغسطس 2021 "					;	
+					
+													
+INSERT_UPDATE TradeBalance		;value			;valueLabel	[lang = ar]	  			;percentage 	;percentageLabel [lang = ar] 		;displayName	[lang = ar]			;name[unique=true] 			 		;calenderValue [lang = ar] 		;currencyValue
+								;           	;				  					;"13.3%	"   	;"الناتج المحلي الإجمالي"          	;" الميزان التجاري"					;"Trade Balance"        			;"الربع الثاني لعام 2021 "		;
+																			
+																			
+INSERT_UPDATE BudgetDeficit		;value			;valueLabel	[lang = ar]	  			;percentage		;percentageLabel [lang = ar] 		;displayName	[lang = ar]			;name[unique=true] 					;calenderValue [lang = ar] 		;currencyValue
+								;           	;	   								;"0.6%"			;"الناتج المحلي الإجمالي"       	 	;"عجز الميزانية"					;"Budget Deficit"        			;"الربع الثاني لعام 2021 "		;	
+											
+																			
+INSERT_UPDATE GDPPerCapita		;value			;valueLabel	[lang = ar]	  			;percentage		;percentageLabel [lang = ar] 		;displayName	[lang = ar]					;name[unique=true] 			;calenderValue [lang = ar] 		;currencyValue
+								;"20,993"   	;"ريال سعودي" 	 		  				;"30.3%"		;"النموّ"    				 		;" نصيب الفرد من الناتج المحلي الإجمالي"		;"GDP Per Capita"        	;" الربع الثاني لعام 2021 "		;
+																			
+																			
+INSERT_UPDATE InterestRate		;value	[lang = ar]										;valueLabel	[lang = ar]	  			;percentage		;percentageLabel [lang = ar] 		;displayName	[lang = ar]			;name[unique=true] 						;calenderValue [lang = ar] 		;currencyValue
+								;"متوسط أسعار الفائدة بين البنوك السعودية (3 أشهر)"		;المتوسط ​​الشهري.	  				;"0.80"			;"Aug-2021"      			 		;"سعر الفائدة"						;"Interest Rate"        				;								;
+																			
+																			
+INSERT_UPDATE FDIinflow 		;value		;valueLabel	[lang = ar]	  				;percentage		;percentageLabel [lang = ar] 	;displayName	[lang = ar]				;name[unique=true] 						;calenderValue [lang = ar] 		;currencyValue
+								;"51,860"   ;"مليون ريال سعودي"	  					;"1573.9%"		;"النموّ"    				 	;"تدفقات الاستثمار الأجنبي المباشر"		;"FDI Inflow"           				;"الربع الثاني لعام 2021 "		;
+																			
+																			
+INSERT_UPDATE GovernmentDebt	;value		;valueLabel	[lang = ar]	  			;percentage		;percentageLabel [lang = ar] 		;displayName	[lang = ar]			;name[unique=true] 			 			;calenderValue [lang = ar] 		;currencyValue
+								; 		    ;				  					;"29.7%"		;"٪ الناتج المحلي الإجمالي *"     	;"الدين الحكومي "					;"Government Debt"   					;"النصف الأول لعام 2021" 		;   
+											
+																			
+INSERT_UPDATE Unemployment		;value		;valueLabel	[lang = ar]	  			;percentage		;percentageLabel  [lang = ar] ;displayName	[lang = ar]			;name[unique=true] 						;calenderValue [lang = ar] 					;currencyValue
+								;"6.6%"     ;"الإجمالي"		  					;"11.3%"		;"سعودي"         			  ;"البطالة"						;"Unemployment"    						;"الربع الثاني لعام 2021 "   				;"(مليون ريال سعودي)"
+			
+			
+									
+INSERT_UPDATE Inflation			;value		;valueLabel [lang = ar]			  ;percentage		;percentageLabel [lang = ar] 	;displayName	[lang = ar]			;name[unique=true] 					 ;calenderValue [lang = ar]		;currencyValue
+								;"104.4"    ;""		  	  					  ;"0.69%"			;"النموّ"       	 		 		;" التضخم"							;"Inflation"        	 			 ;"سبتمبر 2021 "				;
+								
+
+INSERT_UPDATE SaudiStockMarket	;value				;valueLabel [lang = ar]		  	  				;percentage		;percentageLabel [lang = ar] 											 ;displayName	[lang = ar]			;name[unique=true] 					;calenderValue [lang = ar] 	 ;currencyValue
+								;"11,495.67"		;"مؤشر السوق الرئيسية (تاسي)  (سبتمبر 2021)"	;"23,652.32"  	;"مؤشر السوق الموازية (نمو حد أعلى)  (سبتمبر 2021)"         			 ;"سوق الأسهم السعودية"				;"Saudi Stock Market"   			;""							 ;""
+								
+
+INSERT_UPDATE CreditRating		;spLabel [lang = ar]	 			 ;moodysLabel [lang = ar]	  ;fitchLabel [lang = ar]   ;spValue [lang = ar]		 ;moodysValue [lang = ar]		     ;fitchValue [lang = ar] 	;displayName	[lang = ar]	  ;name[unique=true]             ;calenderValue [lang = ar] ;currencyValue				
+								;"مؤشر إس آند بي"     				 ;"مؤسسة موديز "		  	  ;"فيتش"					;"أ-"            			 ;"أ1"                   			 ;"أ"		  			 	;"التصنيف الائتماني"		  	  ;"Credit Rating"        		 ;"2021"                    ;""
+								
+
+
+INSERT_UPDATE Population		;value			;valueLabel	[lang = ar]	  		  ;percentage		;percentageLabel  [lang = ar] ;displayName	[lang = ar]			;name[unique=true]  			 ;calenderValue [lang = ar] 	 ;currencyValue
+								;"35,013,414"	;""		  						  ;"2.3%"			;"النموّ"        			  ;"عدد السكان"						;"Population"           		 ;"2020"						 ;
+								
+INSERT_UPDATE ExchangeRate		;value			;valueLabel	[lang = ar]	  		  ;percentage		;percentageLabel [lang = ar]  			  ;displayName	[lang = ar]			;name[unique=true]  			 ;calenderValue [lang = ar] 	  ;currencyValue
+								;           	;				  				  ;"3.75"			;"دولار أمريكي / ريال سعودي"       			  ;"سعر الصرف" 						;"Exchange Rate"       			 ;""							  ;
+
+
+INSERT_UPDATE TotalReserveAssets;value			;valueLabel	[lang = ar]	  		  ;percentage		;percentageLabel [lang = ar]  ;displayName	[lang = ar]			;name[unique=true]   		 ;calenderValue [lang = ar] 	  ;currencyValue
+								;"1,705,436"    ;"مليون ريال سعودي"		  		  ;"0.3%"			;"النموّ"         			  ;" إجمالي الأصول الإحتياطية"		;"Total Reserve Assets" 	 ;"أغسطس 2021" 					  ;"مليون ريال سعودي"
+								
+								
+
+INSERT_UPDATE GovernmentReserve	;value			;valueLabel	[lang = ar]	  		  ;percentage		;percentageLabel [lang = ar]  ;displayName	[lang = ar]	 		;name[unique=true] 			 ;calenderValue [lang = ar]		  ;currencyValue
+								;"357,229"		;"مليون ريال سعودي"		  		  ;"-15.4%"			;"النموّ"       			  	  ;"الاحتياطي الحكومي"				;"Government Reserve"    	 ;"أغسطس 2021"					  ;
+

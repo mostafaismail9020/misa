@@ -1,0 +1,41 @@
+$page = sample-sectors-opportunities
+$template = portalGlobalTemplate
+$pageName = Sectors & Opportunities
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /sectors-opportunities
+
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = $mediafolder
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+INSERT_UPDATE InvestSaudiSectorsIconComponent; uid[unique = true]  ; name    ()          ; category(code, $catalogVersion); &componentRef       ; $contentCV[unique = true]; title()         ; description[lang = en]                                                                                                                                                                                                                                                                                       ;
+                                             ; sample-sectors-icon ; Sample Sectors Icon ; sector-opportunities           ; sample-sectors-icon ;                          ; Choose a Sector ; We've assembled a variety of investment opportunities for potential investors who are keen to invest in Saudi Arabia. These opportunities are of different types such as public tenders, PPP, identified opportunities by our advisors, etc. Search for the opportunities after selecting the industry below: ;
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                               ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; sample-featured-opportunities-sector-explore-all ;                          ; Explore all          ; sectors-opportunities/opportunities/
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]                             ; name                                    ; title[lang = en]       ; title[lang = ar]       ; numberItensDisplayed; exploreAllURL(uid, $contentCV)                   ; &componentRef                                  ; $contentCV[unique = true];
+                                                       ; sample-featured-opportunities-sector-component ; Sample Featured Opportunities Component ; Featured Opportunities ; Featured Opportunities ; 3                   ; sample-featured-opportunities-sector-explore-all ; sample-featured-opportunities-sector-component ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; sample-sectors-icon,sample-featured-opportunities-sector-component
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+

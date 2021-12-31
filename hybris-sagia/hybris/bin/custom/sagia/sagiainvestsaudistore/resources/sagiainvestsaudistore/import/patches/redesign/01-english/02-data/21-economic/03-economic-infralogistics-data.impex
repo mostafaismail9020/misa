@@ -1,0 +1,43 @@
+INSERT_UPDATE InfraLogisticsLanding			;internationalAirportslabel[unique=true]      ;internationalAirportsValue    ;domesticAirportsLabel[lang = en]  	;domesticAirportsValue 		;containersLabel[lang = en]  		;containersValue 			;containersAmount[lang = en] 			; portsCapacityLabel[lang = en] 	      ;portsCapacityValue  ;portsCapacityAmount[lang = en]       ;airportsLabel[lang = en]  ;airportsValue    ;portsLabel [lang = en]  ;portsValue  ;displayAirportslabel[lang = en]
+											;"International Airports"  		 			  			  ;"13"  	  					;"Domestic Airports"    			    ;"14"        	   	   		;"Million Containers"            	;"13"            			;"(Million)"     						; "Ports Capacity"           			   ;"615"	           ; "(Million Tons)"	 	 			 ;"Airports"    			;"28"   		  ;"Ports"    	;"9"  		;"International Airports"
+
+INSERT_UPDATE LengthOfNetwork		;networkName[unique=true]					;networkValue
+									;"North train network"						;"2,750"
+									;"North train passenger line"   			;"1,250"
+									;"North train freight line" 				;"1,550"
+									;"East train network"   					;"1,775"
+									;"East train passenger line"   				;"733"
+									;"East Cargo Train"   						;"566"
+									;"Haramain High Speed Rail"  				;"449"
+									
+INSERT_UPDATE Infrastructure ;name[unique=true]					;value1		;label1[lang = en]  				;value2	  		;label2[lang = en]      					;value3		 			;label3 [lang = en] 												;displayName [lang = en] 
+							 ;"Infrastructure"     			    ;"1,264"	;"Service Facilities"  				;"7,400"  		;"Capacity of Power Stations(MVA)"    		;"123,500"	 			;"Wastewater treatment plant capacity(3m per day)"					;"Infrastructure" 
+
+INSERT_UPDATE Employment ;name[unique=true]						;value1		;label1 [lang = en] 				 ;value2	  	;label2 [lang = en]      		          	;value3	 				;label3 [lang = en] 												;displayName [lang = en] 
+							 ;"Employment"      				;"185,840"	;"Saudi Males Employees"  			 ;"16,825"  	;"Saudi Females Employees"    			  	;"31,457"	 			;"Non Saudi Employees"												;"Employment" 
+							 
+INSERT_UPDATE TotalArea ;name[unique=true]			 			;value1		;label1 [lang = en] 								;value2	  ;label2[lang = en]      			;value3		 			;label3[lang = en] 													;displayName [lang = en]
+					    ;"TotalArea"      						;"979.7"	;"Total Area of industrial cities(million m2)" 	;"194.8"  ;"Developed Land Area(million m2)" ;"124.7"	 			;"The area of land allocated(million m2)"							;"TotalArea" 
+							 
+INSERT_UPDATE HousingFacilities ;name[unique=true]			 	;value1		;label1 [lang = en] 					;value2	  	;label2 [lang = en]     								;value3	 	;label3	[lang = en] 											;value4	 ;label4 [lang = en] 									;value5	 	;label5 [lang = en]  											 ;displayName [lang = en] 
+							    ;"Housing & Facilities"      	;"9,647"	;"Number of Housing units" 				;"47,344"   ;"Residential Capacity in industrial Cities(employee)  ";"186.7"   	;"Area of sports facilities and training halls(thousand m2)"	;"1.8"   ;"Green Areas in the industrial cities(million m2)"	;"175.9" 	;"Area of training centers in industrial cities(thousand m2)"	 ;"Housing & Facilities" 
+
+INSERT_UPDATE IndustrialCities ;name[unique=true]			 	 ;value1	;label1[lang = en]  					;value2	  	;label2 [lang = en]     					;value3		 			;label3[lang = en]        										;value4  ;label4[lang = en] 				;displayName [lang = en]
+							   ;"Industrial cities"  			 ;"6,587"	;"Industrial and investment contracts"  ;"3,350" 	 ;"Issued Operational licenses"    			;"3,724"	 			;"Factories"  			   										;"582"   ;"Purpose-built factories"			;"Industrial cities"
+
+INSERT_UPDATE PrivateCities	;name[unique=true]			 							;establishmentYear 	  ;totalArea	;developedArea 		;noOfContracts 		  ;displayName[lang = en]
+							;"Obeikan Industrial City"    							;"2007"				  ;""			;"984"       		;""					  ;"Obeikan Industrial City" 	
+							;"Special Industrial Development City"					;"2007"				  ;"1,311"		;""       		    ;""					  ;"Special Industrial Development City"
+							;"Zamil Industrial City"								;"2013"				  ;"1,340"		;"1,273"       		;""					  ;"Zamil Industrial City"
+							;"Al Fanar City"										;"2007"				  ;"681"		;"681"       		;""					  ;"Al Fanar City"
+							;"Al-Agimi city"										;"2008"				  ;"1,314"		;"1,051"       		;""					  ;"Al-Agimi city"
+							;"Petro Rabigh city"									;"2010"				  ;"2,400"		;"2,400"       		;""					  ;"Petro Rabigh city"
+							;"Bin Laden City"										;"2020"			      ;"5,068"		;""       		    ;""					  ;"Bin Laden City"
+							;"Gate City"											;""				 	  ;"6,522"		;"5,608"       		;""					  ;"Gate City"
+							;"Industrial Complex for Logistics Services 'Caden'"	;""				      ;"418"		;"405"     		    ;""					  ;"Industrial Complex for Logistics Services 'Caden'"
+							;"Construction Materials Holding Company Complex"    	;""					  ;"189"		;"189"       		;""					  ;"Construction Materials Holding Company Complex"
+							;"Industrial Services Complex"					        ;""				  	  ;"418"		;"405"       		;""					  ;"Industrial Services Complex"	
+							;"Riyadh Cable Company Complex"							;""					  ;"313"		;"313"       		;""					  ;"Riyadh Cable Company Complex"	
+							;"Saudi Ceramic Company Complex"						;""				 	  ;"423"		;"423"       		;""					  ;"Saudi Ceramic Company Complex"
+							;"Eastern Textile Company"								;"1994"				  ;"265"		;"265"       		;""					  ;"Eastern Textile Company"	
+							;"Al-Nahdi Medical Company"								;""				  	  ;"249"		;""       		    ;""					  ;"Al-Nahdi Medical Company"

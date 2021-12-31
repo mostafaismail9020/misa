@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+           xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+           xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZUI5_NEW_INV_APPT_SRV" xml:lang="en" sap:schema-version="1"
+                xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Appointment" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ApptID"/>
+                </Key>
+                <Property Name="ApptID" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptStatus" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptStatDesc" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Department" Type="Edm.String" Nullable="false" MaxLength="20" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DeptDesc" Type="Edm.String" Nullable="false" MaxLength="20" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Branch" Type="Edm.String" Nullable="false" MaxLength="50" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DateAppt" Type="Edm.String" MaxLength="8" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TimeFrom" Type="Edm.Time" Precision="0" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TimeTo" Type="Edm.Time" Precision="0" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BpID" Type="Edm.String" MaxLength="10" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ServiceType1" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Service1" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptPrint" Type="Edm.String" MaxLength="1" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Action" Type="Edm.String" MaxLength="2" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="241" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IDNumber" Type="Edm.String" Nullable="false" MaxLength="20" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ApptPDF" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ApptID"/>
+                </Key>
+                <Property Name="ApptID" Type="Edm.Int32" Nullable="false" sap:label="Integer" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MimeType" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="MIME Type"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ApptAvail" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ApptId"/>
+                </Key>
+                <Property Name="ApptId" Type="Edm.Int32" Nullable="false" sap:label="Integer" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptDate" Type="Edm.DateTime" Precision="0" sap:label="Date" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptDateP" Type="Edm.DateTime" Precision="0" sap:label="Date" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptTimeStart" Type="Edm.Time" Precision="0" sap:label="Field of type TIMS"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptTimeTo" Type="Edm.Time" Precision="0" sap:label="Field of type TIMS"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptType" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Appointment Type"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptType1" Type="Edm.String" Nullable="false" MaxLength="10"
+                          sap:label="Appointment Type" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="ApptType2" Type="Edm.String" Nullable="false" MaxLength="10"
+                          sap:label="Appointment Type" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Ministry1" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Transaction Type"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ministry2" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Transaction Type"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ministry3" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Transaction Type"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Branch" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Sagia Branches"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TimeDuration" Type="Edm.String" Nullable="false" MaxLength="2"
+                          sap:label="Version Number Component" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptBooked" Type="Edm.Boolean" Nullable="false"
+                          sap:label="Boolean Variable (X=true, -=false, space=unknown)" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApptAvailable" Type="Edm.Boolean" Nullable="false"
+                          sap:label="Boolean Variable (X=true, -=false, space=unknown)" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZUI5_NEW_INV_APPT_SRV_Entities" m:IsDefaultEntityContainer="true"
+                             sap:supported-formats="atom json xlsx">
+                <EntitySet Name="AppointmentSet" EntityType="ZUI5_NEW_INV_APPT_SRV.Appointment" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="ApptPDFSet" EntityType="ZUI5_NEW_INV_APPT_SRV.ApptPDF" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="ApptAvailSet" EntityType="ZUI5_NEW_INV_APPT_SRV.ApptAvail" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self"
+                       href="http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_NEW_INV_APPT_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version"
+                       href="http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_NEW_INV_APPT_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

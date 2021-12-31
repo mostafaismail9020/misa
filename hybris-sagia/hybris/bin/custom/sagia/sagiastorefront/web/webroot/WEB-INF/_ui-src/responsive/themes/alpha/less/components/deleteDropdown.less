@@ -1,0 +1,40 @@
+.deleteDropdown{
+	position: relative;
+
+
+	&-btn{
+
+	}
+
+	&-drop{
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 100%;
+		margin-top: 12px;
+		padding: 20px;
+		box-shadow: 0 2px 30px 0 rgba(29, 36, 44, 0.12);
+		background: #fff;
+		text-align: center;
+		z-index: 1;
+	}
+
+	&-text{
+		font-size: 14px;
+  		line-height: 1.36;
+	}
+
+	&-actions{
+		margin-top: 10px;
+		font-size: 0;
+
+		.btn + .btn{
+			margin-left: 10px;
+		}
+	}
+
+
+	&.active &-drop{
+		display: block;
+	}
+}

@@ -1,0 +1,313 @@
+$page = tourism-culture-entertainment
+$sector= tourism-culture-entertainment
+$template = portalSectorTemplate
+$pageName = Tourism Culture Entertainment
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media						   
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources																															   
+
+INSERT_UPDATE CategoryPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); $contentCV[unique = true]; defaultPage[default = 'false']; approvalStatus(code)[default = 'approved']
+                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ;                          ;                               ;
+
+INSERT_UPDATE CMSCategoryRestriction; uid[unique = true]                               ; categories(code, $catalogVersion); $contentCV[unique = true]; pages(uid, $contentCV)
+                                    ; sector-tourism-culture-entertainment-restriction ; tourism-culture-entertainment    ;                          ; tourism-culture-entertainment
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; name                                ; &componentRef                           ; $contentCV[unique = true]
+                                                  ; tourism-culture-entertainment-paragraph ; Tourism Culture and Entertainment Overview ; tourism-culture-entertainment-paragraph ;
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = en]
+                                           ; tourism-culture-entertainment-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<h3>Overview</h3>
+<p>For Entertainment, Vision 2030 aspires to grow household spending on entertainment from 2.9% to 6.0%, which in turn is expected to develop a SAR 30 B market. Realizing this aspiration requires developing cutting-edge entertainment experiences, launching new entertainment attractions and hosting world-class events and festivals.</p>
+<p>&nbsp;</p>
+<p>For Tourism, Vision 2030 aims to create attractions that are of the highest international standards, improve visa issuance procedures for visitors, and develop Saudi historical and heritage sites. Saudi Arabia aims to more than double the number of Saudi heritage sites registered with UNESCO.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = ar]
+                                           ; tourism-culture-entertainment-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<h1 class='heading text-left mb-3 mt-2'>نظرة عامة</h1>
+<p>تطمح رؤية 2030 إلى زيادة إنفاق الأسر على الترفيه من 2.9٪ إلى 6٪، وهي نسبة من شأنها أن تطور سوقاً بقيمة 30 مليار ريال سعودي. ويتطلب تحقيق هذا الطموح تطوير الخبرات الترفيهية الراقية، وإطلاق معالم ترفيه جديدة واستضافة أحداث ومهرجانات على مستوى عالمي.</p>
+<p>&nbsp;</p>
+<p>وتهدف رؤية 2030 إلى إيجاد نقاط قوة وفق أعلى المعايير الدولية، وتعمل على تحسين إجراءات إصدار التأشيرات للزوار، وتطوير المواقع التاريخية والتراثية السعودية. كما تهدف المملكة العربية السعودية إلى إضافة أكثر من ضعف عدد المواقع السعودية التراثية المسجلة حالياً لدى اليونسكو.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresComponent; uid[unique = true]; name         ; figures; unit; facts[lang=en] ; &componentRef; $contentCV[unique = true];
+
+                                     ; facts-figures-1-$sector      ; Facts Figures 44 ; 33       ; Million  ;Total population                       ; facts-figures-1-$sector ;
+                                     ; facts-figures-2-$sector      ; Facts Figures 45 ; 18      ; M, Inbound, Local 45 M, Total 63 M                                      ;Trips to/inter Saudi; facts-figures-2-$sector;
+                                     ; facts-figures-3-$sector      ; Facts Figures 46 ; $ 15    ; B, Local spend, Inbound spend $ 25 B, Outbound spend $ 26 B, Total spend $ 66 B        ;Spend on tourism                  ; facts-figures-3-$sector ;
+                                     ; facts-figures-4-$sector     ; Facts Figures 47 ; 9     ;  Nights (foreign tourists), 5 Nights (local tourists)         ;Average nights per trip spent in Saudi Arabia                  ; facts-figures-4-$sector ;
+                                     ; facts-figures-5-$sector      ; Facts Figures 48 ; 58%      ;  Approx. ;Percentage of population under 30                   ; facts-figures-5-$sector ;
+                                     ; facts-figures-6-$sector      ; Facts Figures 49 ; $ 11     ;  B, Local spend, Spend abroad $ 26 B, Total spend $ 37 B ;Saudis spend on entertainment         ; facts-figures-6-$sector ;
+                                     ; facts-figures-7-$sector      ; Facts Figures 50 ; 7     ; Cinemas operating in the Kingdom  ;Licensed Cinemas ; facts-figures-7-$sector ;
+                                     ; facts-figures-8-$sector      ; Facts Figures 51 ;> $ 2     ; B, Expected to invest in developing entertainment projects  ;The Entertainment Company; facts-figures-8-$sector ;
+                                     ; facts-figures-9-$sector      ; Facts Figures 52 ; 334     ;  Square kilometers covering area, Iconic destination for entertainment, 	        ;Qiddiya ; facts-figures-9-$sector ;
+  
+
+INSERT_UPDATE InvestSaudiFactsFiguresContainer; uid[unique = true]      ; name                     ;title[lang=en]  ; simpleCMSComponents(&componentRef)  ; &componentRef  ;$contentCV[unique = true]
+                                     ; ff-container-$sector   ; Fatcs Figures Container  ;Fatcs & Figures ; facts-figures-1-$sector, facts-figures-2-$sector, facts-figures-3-$sector,facts-figures-4-$sector,facts-figures-5-$sector,facts-figures-6-$sector,facts-figures-7-$sector,facts-figures-8-$sector ,facts-figures-9-$sector  ; ff-container-$sector ;
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; $contentCV; &componentRef
+                                           ; contact-form ;           ; contact-form
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; fo-explore-all-$sector ;                          ; Explore all          ; /sectors-opportunities/opportunities/?sectorIds=tourism-culture-entertainment
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]       ; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                       ; fo-component-$sector ; Featured Opportunities Component ; Tourism Culture and entertainment Opportunities ;3; fo-explore-all-$sector ; fo-component-$sector ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; ss-explore-all-$sector ;                          ; Explore all          ; /about/success-stories/?sectorIds=tourism-culture-entertainment
+
+
+INSERT_UPDATE InvestSaudiSuccessStoriesComponent; uid[unique = true]; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                ; ss-component-$sector ; Success Story Component ; Tourism Culture and Entertainment Success Stories ;3; ss-explore-all-$sector ; ss-component-$sector;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                       ; $contentCV[unique = true]; linkName  [lang = en]             ; linkName[lang = ar]        ; url
+                              ; sector-proposition-1-link-$sector ;                          ; Entertainment, Culture and Sports        ; الترفيه والثقافة والرياضة ;
+                              ; sector-proposition-2-link-$sector ;                          ; Tourism  ;                               ; السياحة
+
+INSERT_UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; name                        ; url(uid, $contentCV)                     ; index(); &componentRef                       ; $contentCV[unique = true]
+                                                   ; sector-proposition-1-$sector ; Sector Proposition 1 ; sector-proposition-1-link-$sector ; 1      ; sector-proposition-1-$sector ;
+                                                   ; sector-proposition-2-$sector ; Sector Proposition 2 ; sector-proposition-2-link-$sector ; 2      ; sector-proposition-2-$sector ;
+																				   
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-1-$sector ;                          ; "  <div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p>Saudi Arabia&rsquo;s Vision 2030 program breaks new ground by encouraging the development of a vibrant society. Regulatory authorities have been established to organize, develop and lead the entertainment sector to provide exciting entertainment options and tailored experiences to the needs of people in Saudi Arabia. This market is in its early stages of growth yet has the potential to make great strides towards satisfying the artistic drive of the Kingdom&rsquo;s youthful population.</p>
+<p>Financial opportunities await evolving businesses to capitalize on this sector through production and ancillary services, generating income whilst satisfying the needs of the young Saudis. 2017 saw some interesting achievements in this sector and set the stage for more than doubling the activity scheduled for 2018. Immense anticipation is being held for this sector due to its liberating nature and morale-boosting potential for KSA residents.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<h4><strong>High Potential Sector</strong></h4>
+<p>The Kingdom of Saudi Arabia is a country with one of the largest populations in the Middle East. Its citizens and expats currently exceed 33 million and demographics are growing at a steady rate of 2.5%. Around half of inhabitants are under the age of 30 with a considerable appetite for entertainment, culture and sports.</p>
+<p>Saudis make approximately 9.6 million leisure trips abroad each year, spending around 80% of their entertainment budget whist they&rsquo;re away. This amounts to around SAR 21 billion (US$5.6 billion) per year, a sizeable sum reflecting the recreational needs of the modern society. Saudi Arabia envisages a future where its inhabitants seek entertainment from domestically based cultural and sporting events.</p>
+<p>&nbsp;</p>
+<h4><strong>Providing lots of opportunities</strong></h4>
+<p>KSA is committed to entertainment, culture and sports development through clear rules and regulations. Ambitions are aimed towards delivering a comprehensive offering that is in line with global standards by 2030. Private sector participation in the industry is key within the areas of infrastructure development, event operations, content building and capabilities building. The expansion of this sector will also open up opportunities for the private sector through ancillary services such as food and beverages, retail, logistics, tourism and accommodation.</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<h4><strong>Supported with government commitment</strong></h4>
+<p>Vision 2030 sets goals to increase a targeted variety of cultural and entertainment activities. The KSA Government remains strongly committed to unlocking this sector and has accordingly introduced the General Entertainment Authority (GEA), General Authority for Culture, General Sports Authority (GSA), Entertainment Company and Qiddiya with clear mandates. Furthermore, companies have been established to invest in the entertainment infrastructure and there are plans to introduce and review the use of regulations and incentives to promote growth in this sector.</p>
+<p>&nbsp;</p>
+<h4><strong>Proven with a year of achievements</strong></h4>
+<p>The introduction of entertainment, culture and sport to Saudi society has been a great success, generating an appetite in the Saudi population for recreational enjoyment. Over 2,200 event titles were held by the General Entertainment Authority (GEA) in 2017, attracting 7 million attendees in over 50 towns and cities. In fact, the first all-female performer concert took place in Riyadh in 2017, selling out immediately due to large demand. Furthermore, the scheduling of top tier international events in 2017 attracted the interest of millions of visitors to the Kingdom, bringing considerable revenue into KSA.</p>
+<p>The General Entertainment Authority (GEA) has set even higher targets for 2018, as it plans to organize around 5,500 events during that year. Also, 2018 will bring the long awaited re-opening of cinemas in Saudi towns and cities, sparking enthusiasm in citizens not seen for generations. The inaugural participation of Saudi Arabia in the Venice based Biennale also signified a shift in cultural diversity reflecting the needs of modern Saudi society.</p>
+</div>
+</div>
+</div>
+</div>
+</div>"
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-2-$sector ;                          ; "  <div class='col-md-12 column' style='font-size: 13px;'>
+<div style='font-size: 13px;'>
+<p style='font-size: 13px;'>Imagine a country with the financial muscle to turn its pristine landscapes into smartly designed, state-of-the-art tourist destinations. That country is Saudi Arabia, a Kingdom with a high and growing demand for domestic and international tourism that is undergoing one of the biggest transformations that the world has ever seen. The relaxation of immigration rules and development of tourism infrastructure are just some of the multiple initiatives being promoted by KSA to enable tourism growth. Saudi Arabia is also promoting private investments in the country, significantly developing its existing and forthcoming attractions and introducing massive extensions to it&rsquo;s transportation infrastructure. With capital investment for tourism set to rise to more than SAR 200 billion (USD $ 54 billion) over the next 10 years, Saudis expects to become a key touristic destination by 2030.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+</div>
+</div>
+<div style='font-size: 13px;'>
+<div class='container' style='font-size: 13px;'>
+<div class='row clearfix' style='font-size: 13px;'>
+<div class='col-md-6 column' style='font-size: 13px;'>
+<div style='font-size: 13px;'>
+<p style='font-size: 13px;'>&nbsp;</p>
+<h4><span style='color: #5bc53b; font-size: 13px;'><strong><span style='font-size: 13px;'>High and growing demand for tourism in KSA</span></strong></span></h4>
+<p style='font-size: 13px;'>Saudi Arabia&rsquo;s tourism sector has witnessed massive growth marked by a boom in inbound international visitors and a significant increase in domestic tourism. In 2016, Saudi Arabia received more than 19 million inbound visitors from around the world, a number that has been growing at a CAGR of 10% since 2010, with religious tourism constituting around 45% of the total number of inbound trips. Domestic tourism has also been registering significant growth in KSA, growing at a CAGR of 14% since 2010 and swelling the number of domestic trips to 50 million in 2016.</p>
+<p style='font-size: 13px;'>In addition to the increase in the number of inbound and domestic tourists, KSA has witnessed a remarkable increase in tourism spend. Inbound passengers spent SAR 94 billion (USD $ 25 billion) in 2016, growing at CAGR at 24% since 2010. Total spend from domestic tourism grew by 9% CAGR since 2010, reaching SAR 53.6 billion (US $14.3 billion) in 2016 and marking an 11% increase from domestic spend in 2015. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p style='font-size: 13px;'>As a result, Saudi Arabia currently ranks among the top 20 countries in the world in terms of total GDP contribution, with tourism contributing SAR 224 billion (USD 59.7 billion) to the economy. This is expected to further rise by 4.7% per annum, to SAR 412 billion (USD $ 110 billion) constituting 11.1% of GDP by 2027.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<h4><strong><span style='color: #5bc53b; font-size: 13px;'>Government fully committed to unlock the tourism sector</span></strong></h4>
+<p style='font-size: 13px;'>In line with its vision to diversify it&rsquo;s economy away from oil and gas, Saudi Arabia is striving towards unlocking the sector&rsquo;s potential by implementing several key changes that will enhance its tourism ecosystem. For the first time in its history, Saudi Arabia will start issuing tourist visas in the second quarter of 2018. Additionally, Saudi Arabia is investing in developing the Saudi tourism infrastructure, starting with the opening a new international airport in Jeddah that will be able to handle 100 million passengers.</p>
+<p style='font-size: 13px;'>Saudi Arabia is also promoting private investments in the country through the Kafalah program and land lease extensions. The Kafalah program will guarantee tourism projects receive loans of up to SAR 1.5 billion (US $400 million), whilst the land lease extension initiative will grant ventures with expected investment of more than SAR 20 million (US $ 5.33 million) an extension of the land lease period to 50 years, instead of the original 15 or 20.</p>
+<p style='font-size: 13px;'>In 2016, the Saudi Arabian tourism sector attracted investment of SAR 107.2 billion (USD $28.6 billion), which was six times the world average in tourism capital investments. Investments are expected to rise by 9.8% in 2017 and by 5.5% pa over the next ten years to SAR200 billion (USD $ 54 billion). These investments target the preparation and development of attractions and historical/heritage sights to the highest of international standards.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+</div>
+</div>
+<div class='col-md-6 column' style='font-size: 13px;'>
+<div style='font-size: 13px;'>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'><strong><span style='color: #5bc53b; font-size: 13px;'>Rich cultural heritage and iconic sights</span></strong></p>
+<p style='font-size: 13px;'>Saudi Arabia&rsquo;s diverse terrain offers a wide variety of scenery, while its captivating history, rich culture and significance for Islam make it one of the most visited countries in the world. There are more than 4,000 registered archaeological sites across the Kingdom, as well as the UNESCO World Heritage sites of Addiriyah, Madain Saleh, Jabal Umm Sinman and Jeddah (Al-Balad).</p>
+<p style='font-size: 13px;'>The historic site of Addiriyah is an oasis located on the banks of Wadi Hanifa in Riyadh. It is the original home of the Saudi Royal family and was declared a UNESCO heritage site in 2010. Madain Saleh is an archaeological site located in the Sector of Al-`Ula within Al Madinah Region and was declared a UNESCO World Heritage Site in 2008. The majority of the remains in this site date from the Nabatean kingdom (1st century AD). The rock art sites at Jabal Umm Sinman near the Hail region were declared a UNESCO World Heritage Site in 2015. This site has traces dating back 10,000 years and showcases art left by the ancient Arab population. Historic Jeddah (Al-Balad) also known as &lsquo;the Gate to Makkah&rsquo; is a 7<sup>th</sup> century AD major port for Indian Ocean trade routes, channeling goods to Makkah. This site was declared a UNESCO World Heritage Site in 2014. KSA&rsquo;s UNESCO sites are to undergo significant development for the purpose of raising infrastructure levels to the highest of international standards.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<h4><span style='color: #5bc53b; font-size: 13px;'>Massive new mega tourist destinations under development</span></h4>
+<p style='font-size: 13px;'>In addition to the key changes outlined above, the government has identified several projects aimed at expanding and establishing the tourism sector.</p>
+<p style='font-size: 13px;'>Neom is a SAR 1.9 trillion (US $500 billion) mega city planned for Tabuk province that is set to be world&rsquo;s first private zone spanning 26,500sq/km over three countries. Tourists are set to enjoy the experience of visiting a truly state-of-the-art city positioned at the crosshairs of Saudi Arabia, Egypt and Jordan.</p>
+<p style='font-size: 13px;'>The UNESCO World Heritage site of Al Ula located in Madinah province is to undergo transformative development, as are the 50 untouched islands of The Red Sea in Tabuk province that are subject to a luxurious coastal project. This development is set to transform a location that&rsquo;s considered by many to be one of the world&rsquo;s last natural hidden treasures.</p>
+<p style='font-size: 13px;'>Also identified as an ideal location to grow the tourism sector, Okaz City, an oasis of culture and heritage provides a remarkable experience featuring high quality, integrated facilities for leisure, entertainment, meetings, business and accommodation. For tourists seeking entertainment, cultural and sporting activities, The Qiddiya, will be located over 334 square km outside Riyadh, to cater to this newly founded segment.</p>
+<p style='font-size: 13px;'>White Cape, Located in Madinah province, is being developed into a year round coastal resort offering upscale leisure, wellness and entertainment attractions.</p>
+<p style='font-size: 13px;'>The Farasan Islands in Jazan province, an archipelago of 84 coral islands in the Red Sea, are being developed into a marina sanctuary eco-tourism destination.</p>
+<p style='font-size: 13px;'>Jabal Sawda near Abha in the Asir Region, situated on a high plateau that receives more rainfall than the rest of the country and contains the country's highest peaks (which rise to almost 3,000m) is also being geared to receive tourists.</p>
+<p style='font-size: 13px;'>Finally Al Uqair, on the Saudi eastern coast, is being developed to offer waterfront activities that target domestic tourists.</p>
+<p style='font-size: 13px;'>These projects will no doubt be the first of many unprecedented initiatives that are to transform Saudi Arabia into a global touristic hub of the highest caliber.</p>
+</div>
+</div>
+</div>
+</div>
+</div> "
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-1-$sector ;                          ; " <div class='col-md-6 column'>
+<div>
+<p><strong>قفزاتٌ كبيرة ونقلاتٌ نوعية</strong></p>
+<p>تعمل رؤية 2030 للمملكة العربية السعودية كمنصة انطلاق جديدة مع تشجيع مقومات التنمية من أجل مجتمع نابض بالحياة. فقد أنشأت هيئات تنظيمية لتأسيس وتطوير وقيادة قطاع الترفيه من أجل توفير خيارات ترفيهية مثيرة، وإتاحة خبرات صممت لتلبي احتياجات الجميع في المملكة العربية السعودية. ولا تزال هذه السوق في مراحلها البكْر من النمو، إلا أن لديها القدرات الواعدة كي تحقق قفزات تُشبع الدوافع الفنية لشباب المملكة.</p>
+<p>الفرص المالية تنتظر كل الشركات المتطورة للاستثمار في هذا القطاع والاستفادة منه، سواء بالإنتاج أو تشغيل خدماته المساعدة، لتجد استثماراتها المرجوة بينما تلبي احتياجات الشباب السعودي.</p>
+<p>&nbsp;</p>
+<p><strong>قطاع واعدٌ بكل معنى الكلمة</strong></p>
+<p>إن المملكة العربية السعودية، أحد أكبر التجمعات السكنية في الشرق الأوسط. إذ يتجاوز عدد مواطنيها والوافدين إليها في الوقت الحالي ـ 33 مليون نسمة، وتنمو الزيادة السكانية بمعدل ثابت يبلغ 2.5 ٪. وتقل أعمار نصف نسبة هؤلاء عن 30 سنة، بما لهم من شغف كبير بالترفيه والثقافة والرياضة.</p>
+<p>ويتمتع السعوديون بنحو 9.6 مليون رحلة ترفيهية إلى الخارج سنويا، ينفقون خلالها حوالي 80٪ من ميزانية الترفيه الخاصة بهم،بما قيمته نحو 21 مليار ريال سعودي (5.6 مليار دولار أمريكي) سنوياً ، وهو مبلغ كبير يعكس الاحتياجات الترفيهية للمجتمع الحديث. وتسعى المملكة العربية السعودية إلى مستقبل يمارس فيه سكانها أوقات ترفيه خاصة بهم بين ربوعها، في فعاليات محلية، ثقافية، ورياضية.</p>
+<p>&nbsp;</p>
+<p><strong>توفير فرص بلا حدود</strong></p>
+<p>تلتزم المملكة العربية السعودية بإتاحة سبل الترفيه ومنابر الثقافة وساحات الرياضة من خلال قواعد وأنظمة واضحة. إذ تهدف الطموحات إلى تقديم عرض شامل يتماشى مع المعايير العالمية بحلول عام 2030. وتعد مشاركة القطاع الخاص أمرًا أساسيًا لتطوير البنى التحتية وإقامة الفاعليات، وصياغة المحتوى، وبناء القدرات. كما سيؤدي التوسع في هذا القطاع إلى فتح باب الفرص الاستثماريه على مصراعيه للقطاع الخاص حين يوفر الخدمات الملحقة بهذه الأنشطة، مثل بيع المواد الغذائية والمشروبات والسلع بالتجزئة والخدمات اللوجستية والسياحية والإقامات الفندقية.</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p dir='RTL'><strong>دعم والتزام حكومي</strong></p>
+<p dir='RTL'>تحدد رؤية&nbsp;2030&nbsp;أهدافًا لزيادة مجموعة متنوعة من الأنشطة الثقافية والترفيهية. وتظل حكومة المملكة العربية السعودية ملتزمة تماماً بانفتاح هذا القطاع، لذلك أسست هيئة الترفيه العامة (GSA) والهيئة العامة للثقافة، والهيئة العامة للرياضة (GSA)، وشركة الترفيه، ومشروع القدية بتوجيهات واضحة. علاوة على ذلك، تم تأسيس شركات للاستثمار في البنية التحتية للترفيه وهناك خطط لإدخال ومراجعة استخدام اللوائح والحوافز لتعزيز النمو في هذا القطاع.</p>
+<p dir='RTL'>&nbsp;</p>
+<p dir='RTL'><strong>قطاعٌ أثبت جديته</strong></p>
+<p dir='RTL'><strong>عامٌ من الإنجازات</strong></p>
+<p dir='RTL'>حقق قطاع الترفيه والثقافة والرياضة الجديد نجاحًا كبيرًا وإضافةً إلى المجتمع السعودي، وعزز تطلعات السعوديين للاستمتاع بالترفيه. وقد أقامت الهيئة العامة للترفيه (GEA) أكثر من 2200 فعالية في عام 2017، اجتذبت 7 ملايين زائر بأكثر من 50 بلدة ومدينة.</p>
+<p dir='RTL'>حددت الهيئة العامة للترفيه (GEA) أهدافًا أعلى للعام 2018، حيث تم التخطيط لتنظيم حوالي 5500 حدث خلال تلك السنة. بما فيها أول حفلة موسيقية نسائية بيعت تذاكرها بالفعل فور طرحها بسبب الطلب الكبير عليها. علاوة على ذلك، اجتذبت برامج الترفيه الراقية في عام 2017 اهتمام ملايين الزوار بالبلاد، وهو ما جلب إيرادات كبيرة إلى المملكة العربية السعودية.</p>
+<p dir='RTL'>كما شهد 2018 أيضا حدثاً طال انتظاره، وهو إعادة افتتاح دور السينما في المدن والبلدات السعودية، مما أثار حماسة مواطنين لم يروها منذ أجيال. كما أن المشاركة الأولى للمملكة العربية السعودية في بينالي فينيسيا أشارت كذلك إلى تحول نوعي ثقافي يعكس احتياجات المجتمع السعودي المعاصر.</p>
+<p>&nbsp;</p>
+</div>
+</div>"
+
+
+											
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-2-$sector ;                          ; "<div class='col-md-6 column'>
+<div>
+<h2>وعودٌ أكيدة لمردود سياحي كبير</h2>
+<p>لنتخيل بلدًا لديه الإمكانات المالية لتحويل مناظر طبيعتة الخلابة البِكْر إلى وجهات سياحية عصرية وأنيقة!</p>
+<p>إن هذا البلد هو المملكة العربية السعودية، حيث توجد رغبة هائلة ومتنامية لتنشيط السياحة الداخلية والدولية، إذ تشهد المملكة أحد أكبر التحولات التي عاصرها العالم على الإطلاق. بدءاً بتيسير قوانين التأشيرات وتطوير البنية التحتية السياحية، لتظهر للعيان بواكير رزمة من المبادرات - تروّج لها المملكة العربية السعودية - لتمكين نمو قطاع السياحة.</p>
+<p>وتعمل المملكة العربية السعودية أيضًا على تشجيع الاستثمارات الخاصة في البلاد ، بشكل يمثل نقلة نوعية لتطوير معالمها الحالية والقادمة بشكل فارق، وإدخال تحسينات هائلة على البنية التحتية لقطاع النقل.</p>
+<p>ومع توقع زيادة رأس المال للاستثمار في السياحة إلى أكثر من 200 مليار ريال سعودي (54 مليار دولار) على مدى السنوات العشر المقبلة، يتوقع السعوديون أن تصبح مملكتهم وجهة سياحية رئيسة بحلول عام 2030.</p>
+<p>&nbsp;</p>
+<h2>ارتفاع ونمو الطلب على السياحة في المملكة العربية السعودية</h2>
+<p>لقد شهد قطاع السياحة في المملكة العربية السعودية نمواً هائلاً ونقلةً واسعة تحققت بفضل زوارها القادمين من كل أنحاء العالم، فضلاً عن الزيادة الكبيرة والملموسة في السياحة الداخلية. ففي عام 2016، استقبلت المملكة العربية السعودية أكثر من 19 مليون زائر وفدوا من كافة أرجاء المعمورة، وهو عدد ينمو بمعدل سنوي مُركّب يبلغ 10 ٪ منذ عام 2010 ، وتشكل نسبة زوار الحرمين حوالي 45 ٪ من إجمالي عدد الرحلات الداخلية.</p>
+<p>كما سجلت نسبة السياحة المحلية نموًّا واضحا في المملكة، إذ ارتفعت بمعدل نمو سنوي مُركّب بلغ 14٪ منذ عام 2010، ليبلغ عدد الرحلات الداخلية 50 مليونا عام 2016.</p>
+<p>ويضاف إلى زيادة عدد السياح الوافدين والمواطنين، تلك الزيادة الملحوظة التي شهدتها المملكة في الإنفاق السياحي؛ إذ أنفق الركاب القادمون 94 مليار ريال سعودي (25 مليار دولار أمريكي) في عام 2016، بمعدل نمو سنوي مُركَّب بلغ 24٪ منذ عام 2010.</p>
+<p>كما نما إجمالي الإنفاق على السياحة الداخلية بنسبة 9٪ كنمو سنوي مُركَّب منذ عام 2010، حيث بلغ 53.6 مليار ريال سعودي (14.3 مليار دولار) في عام 2016 ليشكل زيادة نسبتها 11٪ من الإنفاق المحلي في عام 2015.</p>
+<p>&nbsp;ونتيجة لذلك، تحتل المملكة العربية السعودية حالياً المرتبة الأولى بين 20 دولة في العالم من حيث إجمالي مساهمة السياحة بالناتج المحلي الإجمالي، حيث قدم هذا القطاع 224 مليار ريال سعودي (59.7 مليار دولار أمريكي) إسهاما في الاقتصاد الوطني. ومن المتوقع أن يرتفع هذا المعدل بنسبة 4.7٪ سنوياً ، ليصل إلى 412 مليار ريال سعودي (110 مليار دولار) ليشكل 11.1٪ من الناتج المحلي الإجمالي بحلول عام 2027.</p>
+<p>&nbsp;</p>
+<h2>التزام شامل من الحكومة بانفتاح قطاع السياحة</h2>
+<p>تماشياً مع رؤيتها لتنويع اقتصادها خارج موارد النفط والغاز، تسعى المملكة العربية السعودية بشكل حثيث إلى إطلاق قدرات القطاع السياحي الواعدة باعتماد العديد من التغييرات الرئيسية التي من شأنها تعزيز بيئة النظام السياحية. فلأول مرة في تاريخها، ستقوم المملكة العربية السعودية بإصدار تأشيرات سياحية في الربع الثاني من عام 2018.</p>
+<p>يضاف إلى ذلك، استثمار المملكة في تطوير البنية التحتية للسياحة في البلاد، بدءاً بافتتاح مطار دولي جديد في جدة يمكنه استقبال 100 مليون مسافر سنوياً.</p>
+<p>كما تشجع المملكة العربية السعودية الاستثمارات الخاصة في البلاد من خلال برنامج (كفالة)، وتمديد الإيجار للأراضي. ويضمن برنامج (كفالة) للمشروعات السياحية الحصول على قروض تصل إلى 1.5 مليار ريال سعودي (400 مليون دولار أمريكي)، في حين تُمنح مبادرة تمديد إيجار الأرض لمشاريع باستثمارات متوقعة تبلغ أكثر من 20 مليون ريال سعودي (5.33 مليون دولار أمريكي) لتصل فترة إيجار الأراضي إلى 50 سنة، بدلاً من 15 أو 20 في السابق.</p>
+<p>وفي عام 2016، اجتذب قطاع السياحة في المملكة العربية السعودية استثمارًا بقيمة 107.2 مليار ريال سعودي (28.6 مليار دولار أمريكي)، وهو ما يعادل ستة أضعاف المتوسط ​​العالمي لاستثمارات رأس المال السياحي.</p>
+<p>ومن المتوقع أن ترتفع الاستثمارات بنسبة 9.8 ٪ في عام 2017 وبنسبة 5.5 ٪ سنوياً على مدى السنوات العشر المقبلة إلى 200 مليار ريال سعودي (54 مليار دولار). وتستهدف هذه الاستثمارات إعداد وتطوير المعالم السياحية والتاريخية / التراثية وفقًا لأعلى المعايير الدولية.</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<h2>تراث ثقافي غني ومشاهد خلابة</h2>
+<p>بفضل التضاريس المتنوعة لجغرافيا المملكة العربية السعودية تحظى البلاد بتشكيلات متنوعة من المناظر الطبيعية الخلابة، وفي الوقت نفسه يأتي تاريخ المملكة الآسر وثقافتها الثرية ودورها المهم في خدمة الإسلام ليجعلها إحدى أكثر البقاع زيارة في العالم.</p>
+<p>فهناك أكثر من 4000 موقع أثري مسجل في جميع أنحاء المملكة، بالإضافة إلى مواقع يسجلها اليونسكو بقائمة التراث العالمي الجدير بالحماية، مثل الــدرعـيــة&nbsp; ومدائن صالح وجبل أم سنمان وجدّة (البلد).</p>
+<p>&nbsp;ومن ذلك، موقع الــدرعـيــة التاريخي الواحة التي تقع على ضفاف وادي حنيفة في الرياض. هنا عاشت جذور العائلة السعودية المالكة، وقد أعلن عنه اليونسكو كموقع للتراث العالمي عام 2010.</p>
+<p>أما مدائن صالح فهو موقع أثري تاريخي يقع في محافظة العُلا داخل منطقة المدينة المنورة، وقد سجلته اليونسكو موقعاً للتراث العالمي عام 2008. وتعود غالبية الآثار المكتشفة في هذا الموقع إلى مملكة الأنباط (القرن الأول الميلادي).</p>
+<p>كما أعلنت اليونسكو عام 2015 أن مواقع الفنون الصخرية في جبل أم سنمان، بالقرب من منطقة حائل، بين مواقع التراث العالمي. وهذا الموقع به آثار تعود إلى 10.000عام مضى، ويعرض الفن الذي تركه سكانها من العرب القدامى.</p>
+<p>وتأتي جدة التاريخية (البلد) المعروفة أيضًا باسم 'بوابة مكة' كميناء رئيس لطرق التجارة في المحيط الهندي يعود إلى القرن السابع الميلادي، وكانت تُنقل منه البضائع إلى مكة المكرمة. وتم الإعلان عنه موقعا للتراث العالمي من قبل اليونسكو عام 2014.</p>
+<p>وسينال التطور الكبير المرتقب جميع المواقع المختارة في ربوع المملكة العربية السعودية من قبل اليونسكو، حتى ترتقي مستويات البنية التحتية بها إلى أعلى المعايير الدولية.</p>
+<p>&nbsp;</p>
+<h2>وجهات سياحية جديدة عملاقة قيد التطوير</h2>
+<p>بالإضافة إلى التغييرات الرئيسة المشار إليها أعلاه، حددت الحكومة العديد من المشاريع التي تهدف إلى تأسيس وتوسع قطاع السياحة.</p>
+<p>أولى هذه المشاريع مدينة نيوم الكبرى بتكلفة 1.9 تريليون ريال سعودي (500 مليار دولار)، ومن المقرر إقامتها في محافظة تبوك لتكون أول منطقة خاصة في العالم، ممتدة على مساحة 26.500 كيلومتر مربع داخل 3 دول، ليستمتع السائحون فيها بتجربة زيارة مدينة عصرية كليا تقع على مفترق الطرق في المملكة العربية السعودية ومصر والأردن.</p>
+<p>ويخضع موقع العُلا المُدْرَج على قائمة اليونسكو للتراث العالمي، في منطقة المدينة المنورة، إلى تطوير تحويلي، كما هو الحال مع 50 جزيرة عذراء بالبحر الأحمر في محافظة تبوك، كي تصبح مشروعاً ساحلياً فاخراً. هذا التطوير من شأنه إضفاء روح عصرية هذا الموقع الذي يعتبره الكثيرون أحد أحدث الكنوز الطبيعية المخفية في العالم.</p>
+<p>&nbsp;كما تلقب مدينة عكاظ بأنها واحة الثقافة والتراث، لذلك اختيرت موقعاً مثالياً لتنمية قطاع السياحة، وهي توفر تجربة رائعة تتميز بمرافق متكاملة عالية الجودة للترفيه والتسلية والاجتماعات والأعمال والإقامة. أما السياح الذين يبحثون عن الترفيه والأنشطة الثقافية والرياضية، فسيكون لديهم موقع مشروع القديّة السياحي المقام على مساحة تزيد عن 334 كيلومتر مربع خارج مدينة الرياض، وتم تأسيسه حديثًا لتلبية هذا المطلب.</p>
+<p>ويتم تطوير الرأس الأبيض، الذي يقع في منطقة المدينة المنورة، ليصبح منتجعًا ساحليًا على مدار العام، يوفر مرافق ترفيهية راقية للاستجمام والنقاهة والترفيه.</p>
+<p>أيضاً، يجري تطوير جزر فرسان في محافظة جازان، وهي أرخبيل يضم 84 جزيرة مرجانية في البحر الأحمر، لتصبح وجهة سياحية بيئية في محمية بحرية.</p>
+<p>وتقع مرتفعات جبل السودة بالقرب من أبها في منطقة عسير، على هضبة عالية تتساقط عليها الأمطار أكثر من أية بقعة بالمملكة، وفيها أعلى قمم البلاد (بارتفاع حوالي 3000 متر)، مما يجعلها مقصداً لاستقبال السياح.</p>
+<p>أخيراً، يجري تطوير شاطيء العقير، على الساحل الشرقي السعودي ، ليقدم أنشطة تستهدف إسعاد السياح المحليين بالواجهة البحرية.</p>
+<p>ولا شك أن مثل هذه المشاريع ستكون باكورة العديد من المبادرات غير المسبوقة التي من شأنها تحويل المملكة العربية السعودية إلى مركز سياحي عالمي وفق أعلى المعايير.</p>
+</div>
+</div> "											
+											
+
+INSERT_UPDATE Media; code[unique = true]  ; realFileName                            ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText                         ; $contentCV[unique = true]
+                   ; background_sample1.png ; background_sample1.png            ; $siteResource/background_sample1.png   ; image/png   ;; "";
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; description[lang = en]                                ; description[lang = ar]     ; $contentCV[unique = true]
+#                                            ; sector-proposition-2-$sector ; "Tourism Culture and Entertainment Hub " ; الاتصالات وتقنية المعلومات ;
+
+
+INSERT_UPDATE InvestSaudiSectorPropositionContainer; uid[unique = true]                          ; name                                ; backgroundImage(code, $contentCV)  ; simpleCMSComponents(&componentRef)                                      ; &componentRef                               ; $contentCV[unique = true]; title
+                                                   ; sector-proposition-container-$sector ;  Sector Proposition Container ; background_sample1.png      ; sector-proposition-1-$sector, sector-proposition-2-$sector ; sector-proposition-container-$sector ;                          ; Tourism, Culture And Entertainment Value Proposition
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)                                                                                                                                                                     ; $contentCV[unique = true]
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                                                                                                                  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; tourism-culture-entertainment-paragraph, ff-container-$sector, sector-proposition-container-$sector, fo-component-$sector, ss-component-$sector, contact-form ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                                                                                                                                                                                  ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+

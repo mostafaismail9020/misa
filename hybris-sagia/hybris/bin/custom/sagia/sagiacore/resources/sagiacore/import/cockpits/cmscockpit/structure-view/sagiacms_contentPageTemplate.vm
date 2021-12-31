@@ -1,0 +1,19 @@
+<div>
+    <table width="100%" cellspacing="0" style="margin:0;padding:0;table-layout:auto;border:1px solid #1E4EBF;">
+        <tbody>
+        <tr>
+            <td colspan="5" class="structureViewSection">
+                <cockpit code="MCM_CMS_COMMON"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" class="structureViewSection">
+                <cockpit code="MCM_CMS_OTHER"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div style="width:100%; border-top: 2px solid #bbb" class="cmsContentEditor">
+        <cockpit code="editor"/>
+    </div>
+</div>

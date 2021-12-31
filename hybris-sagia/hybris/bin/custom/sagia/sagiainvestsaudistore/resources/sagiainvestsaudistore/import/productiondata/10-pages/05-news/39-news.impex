@@ -1,0 +1,72 @@
+$page = news-sagia-congratulations-to-his-royal-highness
+$template = portalGlobalTemplate
+$name = SAGIA: Congratulations to His Royal Highness the Crown Prince, on the Second Anniversary of our Pledge of Allegiance 
+$titleEn = $name
+$titleAr = العمر في حلول الذكرى الثانية لمبايعة سمو ولي العهد: عامان من الأمجاد والمنجزات 
+$shortDescEn = SAGIA: Congratulations to His Royal Highness the Crown Prince, on the Second Anniversary of our Pledge of Allegiance 
+$shortDescAr =  العمر في حلول الذكرى الثانية لمبايعة سمو ولي العهد: عامان من الأمجاد والمنجزات 
+$pagelabel = /news/sagia-congratulations-to-his-royal-highness-the-crown-prince-on-the-second-anniversary-of-our-pledge-of-allegiance
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true] ; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; news-9   ; news-9.jpg				; $siteResource/news-9.jpg                                        ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias            ; $contentCV; ; ; ;
+                            ; media-container-$page   ; news-9 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; news-9                ; news-9                ; $shortDescEn                   ; $shortDescAr                   ; link-$page       ;                                 ; 31.05.2020 00:00:00                       ;                          ;media-container-$page  ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<div class='col-lg-8 col-md-8 col-sm-8 pb-5 news-contents' style='font-size: 13px;'>
+<p style='font-size: 13px;'>Speaking on behalf of the Saudi Arabian General Investment Authority (SAGIA), His Excellency Eng. Ibrahim bin Abdulrahman Al-Omar, the Authority&rsquo;s Governor, offered the highest congratulations to the Custodian of the Two Holy Mosques King Salman bin Abdulaziz Al Saud, along with His Royal Highness Crown Prince Mohammed bin Salman bin Abdulaziz on the occasion of the second anniversary of the pledge of allegiance to His Royal Highness as the Kingdom&rsquo;s Crown Prince.</p>
+<p style='font-size: 13px;'>&nbsp;His Excellency the Governor highlighted that the achievements and successes made during the past two years were thanks to God, along with the wisdom and guidance of the Custodian of the Two Holy Mosques and the continued efforts of His Highness the Crown Prince in order to realize the ambitions of the Saudi people and raise Saudi Arabia to the highest levels of global influence and achievement.</p>
+<p style='font-size: 13px;'>His Excellency commented: 'The second anniversary of our pledge of allegiance to His Highness the Crown Prince comes in a time in which our country lives by the grace of God at its utmost growth and prosperity and enjoys remarkable security and stability while looking forward towards a brighter future. All of this came as a result of the wise vision put forward by His Highness the Crown Prince, whose actions precede His words.&rdquo;</p>
+<p style='font-size: 13px;'>His Excellency continued: 'The significant achievements made in the past two years under the leadership of His Highness the Crown Prince are real signs of the progress of our country and its citizens towards a more prosperous future. The Saudi people have proved that they can build their future and that they are fully prepared to achieve the ambitious vision of their leadership. Looking up at the sky together, the leadership and the people will achieve the impossible.&rdquo;</p>
+<p style='font-size: 13px;'>Over the past two years since this Pledge of Allegiance, sectors and institutions across the Kingdom are seeing tremendous success. SAGIA is seeing particular success &ndash; being an integral part of the ambitious vision of His Royal Highness the Crown Prince. SAGIA seeks to achieve the aspirations of the country and its leadership, and &ndash; thanks His Royal Highness &ndash; has made significant progress towards creating an ideal environment for local and international investors that are enabling Saudi Arabia&rsquo;s continued economic growth. &nbsp;</p>
+<p style='font-size: 13px;'>&nbsp;'We renew our allegiance and loyalty to His Highness the Crown Prince and ask God Almighty to keep our precious homeland safe and secure under His wise leadership. May our beloved country continue to prosper,&rdquo; His Excellency concluded.</p>
+</div> "
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page      ;                          ; " 
+							   <p style='font-size: 13px;'>رفع معالي محافظ الهيئة العامة للاستثمار إبراهيم بن عبدالرحمن العمر باسمه ونيابة عن منسوبي ومنسوبات الهيئة أسمى آيات التهاني والتبريكات لخادم الحرمين الشريفين الملك سلمان بن عبدالعزيز آل سعود، ولسمو ولي العهد الأمين صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز حفظهما الله، وإلى كافة أفراد الشعب السعودي الكريم، بمناسبة حلول الذكرى الثانية لبيعة سموه ولياً للعهد.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وأكد العمر على أن ما تحقق خلال هذين العامين من إنجازات ونجاحات كانت بفضل الله ثم بفضل توجيهات خادم الحرمين وجهود سمو ولي عهده الأمين لتحقيق طموحات الشعب السعودي الكريم والارتقاء بالوطن نحو أعلى درجات العز والتمكين.</p>
+<p style='font-size: 13px;'>وقال معاليه في تصريح بهذه المناسبة 'تمر علينا ذكرى البيعة الثانية لسمو ولي العهد وبلادنا تعيش بفضل الله في أوج نموها وازدهارها، وتنعم بالأمن والاستقرار وتتطلع بكل تفاؤل إلى مستقبل أكثر إشراقا وطموحا، إذ لا يكاد يمر شهر دون تدشين مشروع عملاق يضيف خطوة نجاح للوطن، ويحقق رفاها للمواطن، كل ذلك كان نتاجا لرؤية محكمة وضعها سمو ولي العهد، وأفعال تسبق الأقوال.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وأضاف العمر 'أن ما تحقق خلال العامين الماضيين من إنجازات ونجاحات كبيرة بقيادة سمو ولي العهد، هي مؤشرات حقيقية على الخطى الحثيثة والجادة التي يسير بها الوطن وأبناؤه تجاه مستقبل أكثر نماء وازدهارا، كما أن الشعب السعودي الكريم أثبت أنه قادر على أن يصنع مستقبله، وأنه على أتم الاستعداد لتحقيق الرؤية الطموحة لقيادته، ومعا، قيادة وشعبا سنحقق المستحيل وطموحنا يتصاعد إلى عنان السماء.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وأشار المهندس العمر إلى خطوات النجاح الطويلة التي قطعتها كافة قطاعات الدولة ومؤسساتها بشكل عام، والهيئة العامة للاستثمار على وجه الخصوص والتي كانت جزءا لا يتجزأ من الرؤية الطموحة لسمو ولي العهد، حيث تسعى الهيئة حثيثا لتحقيق تطلعات الوطن وقيادته، وهو ما تمخض عنه العديد من القفزات الكبيرة مقارنة بالأعوام السابقة في مجال خلق بيئة مثالية للمستثمر المحلي والدولي، وخدمة النمو الاقتصادي في المملكة. &nbsp;</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>واختتم العمر بقوله 'نجدد البيعة والولاء لسمو ولي العهد، سائلين المولى عز وجل أن يديم على وطننا الغالي نعمة الأمن والأمان في ظل قيادتنا الرشيدة، وكل عام وبلادنا الحبيبة أكثر رخاء وعزا وازدهارا'</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template       ; $pagelabel                     ; false ;         ;                          ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page                ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

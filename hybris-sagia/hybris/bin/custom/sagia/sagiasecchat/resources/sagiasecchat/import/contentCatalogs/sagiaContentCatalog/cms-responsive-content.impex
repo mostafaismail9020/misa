@@ -1,0 +1,55 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+
+$contentCatalog=sagiaContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$addonExtensionName=sagiasecchat
+
+#cms-content.impex
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false'];previewImage(code, $contentCV)
+#;;support-tickets;Support Tickets Page;AccountPageTemplate;support-tickets
+
+# ContentSlotForPage
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='support-tickets'];contentSlot(uid,$contentCV)[unique=true];;;
+#;;BodyContent-support-tickets;BodyContent;;BodyContent-support-tickets;;;
+
+# ContentSlot
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+#;;BodyContent-support-tickets;Body Content Slot for SecAngularComponent;true;SecAngularComponent;;;
+
+# CMS Navigation Nodes (children of my account)
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
+#;SupportTicketNavNode;;SupportTicketNavNode;MyAccountNavNode;;SupportTicketNavNode
+
+# create cms navigation entry for nvaigation child nodes
+INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(&linkRef);
+#;SupportTicketNavNodeEntry;;SupportTicketNavNodeEntry;SupportTicketNavNode;AccountSupportTicketHistoryLink;
+
+# CMS Link Components
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];
+#;;AccountSupportTicketHistoryLink;AccountSupportTicketHistoryLink;/my-account/support-tickets;AccountSupportTicketHistoryLink;AccountSupportTicketHistoryLink;;
+
+INSERT_UPDATE SECAngularScriptComponent;$contentCV[unique=true];uid[unique=true];name;file;actions(uid,$contentCV);&componentRef
+                                       ;;SecAngularComponent;Angular Component;/WEB-INF/views/addons/sagiasecchat/responsive/pages/angular/angularPage.jsp;;SecAngularComponent
+
+
+INSERT_UPDATE SecChatComponent;$contentCV[unique=true];uid[unique=true];name;chatQueue(isoCode);chatEcfModulePath;chatCctrUrl;chatBootstrapUrl;videoChatEnabled[default='false'];showLogin[default='false'];authenticationType;&componentRef
+                              ;;SecChatComponent;Sec Chat Service Component;en,ar;http://chatq.mysagia.gov:8000/ecf/12/visitor;http://chatq.mysagia.gov:8000/ecfs;https://sapui5.hana.ondemand.com/1.46.9/resources/sap-ui-core.js;;;HTTP-Basic;SecChatComponent
+#;;SecChatComponent;Sec Chat Service Component;en,ar;https://prod-eu.sapcctr.com/cctrdemo/ecf/1708/visitor;https://prod-eu.sapcctr.com/ecenterprodmgmt1/visitor/ecfs;https://sapui5.hana.ondemand.com/resources/sap-ui-core.js;;SecChatComponent
+
+# Content Slots
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)[mode=append]
+#;;NavigationBarSlot;true;SecChatComponent
+                         ;;FooterSlot;true;SecChatComponent
+
+INSERT_UPDATE ChatQueueType;isoCode[unique = true];mappedIsoCode;chatQueue;position
+                           ;en;en;EnglishChat@sagia.gov.sa;{bottom: 20,right: 10,width: 200,height: 40}
+                           ;ar;ru;ArabicChat@sagia.gov.sa;{bottom: 20,left: 10,width: 200,height: 40}

@@ -1,0 +1,68 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE InvestSaudiWebinarVideoComponent; uid[unique = true]        	; name                      	; &componentRef             	; title[lang = ar]							; videoType(code)	; $contentCV[unique = true] ;
+                                              ; webinar-video-component-1 	; Webinar Video Component 1 	; webinar-video-component-1     ;الحوافز والخدمات اللوجستية					; VIDEO_STORY      	;							;
+                                              ; webinar-video-component-2 	; Webinar Video Component 2 	; webinar-video-component-2 	;قطاع الرعاية الصحية وعلوم الحياة  			; VIDEO_STORY     	;							;
+                                              ; webinar-video-component-3 	; Webinar Video Component 3 	; webinar-video-component-3 	;قطاع الاتصالات وتكنولوجيا المعلومات	    	; VIDEO_STORY     	;							;
+                                              ; webinar-video-component-4 	; Webinar Video Component 4 	; webinar-video-component-4 	;الحوافز والخدمات المالية          			; VIDEO_STORY     	;							;
+                                              ; webinar-video-component-5 	; Webinar Video Component 5 	; webinar-video-component-5 	;حوافز وخدمات رأس المال البشري    			; VIDEO_STORY		;							;
+                                              ; webinar-video-component-6 	; Webinar Video Component 6 	; webinar-video-component-6 	;الحوافز والخدمات الصناعية والمعدنية		; VIDEO_STORY		;                           ;
+                                              ; webinar-video-component-7 	; Webinar Video Component 7 	; webinar-video-component-7 	;حوافز التمويل والخدمات               	 	; VIDEO_STORY		;							;
+                                              ; webinar-video-component-8 	; Webinar Video Component 8 	; webinar-video-component-8     ;حوافز وخدمات الاستيراد والتصدير       		; VIDEO_STORY       ;                           ;
+									          
+											  ; success-video-component-1 	; Success Video Component 1 	; success-video-component-1     ; الابتكار وريادة الأعمال                  	; SUCCESS_STORY		;	                        ;                                                                                                                                                                    											  
+											  ; success-video-component-2 	; Success Video Component 2 	; success-video-component-2     ; الرعاية الصحية                     	 	; SUCCESS_STORY		;							;
+											  ; success-video-component-3 	; Success Video Component 3 	; success-video-component-3     ; الرعاية الصحية                         	; SUCCESS_STORY     ;                           ;
+											  ; success-video-component-4 	; Success Video Component 4 	; success-video-component-4     ; الرعاية الصحية                     	 	; SUCCESS_STORY		;							;
+											  ; success-video-component-5 	; Success Video Component 5 	; success-video-component-5     ; الطاقةوالمياه                         	; SUCCESS_STORY		;							;
+											  ; success-video-component-6 	; Success Video Component 6 	; success-video-component-6     ; الكيميائيات                     			; SUCCESS_STORY		;							;
+											  ; success-video-component-7 	; Success Video Component 7 	; success-video-component-7     ; الكيميائيات                      	    	; SUCCESS_STORY		;							;
+											  ; success-video-component-8 	; Success Video Component 8 	; success-video-component-8     ; التعليم                     				; SUCCESS_STORY		;							;
+											  ; success-video-component-9 	; Success Video Component 9 	; success-video-component-9     ; التعليم                     				; SUCCESS_STORY		;							;
+											  ; success-video-component-10	; Success Video Component 10	; success-video-component-10    ; الصناعات الغذائية                     	; SUCCESS_STORY		;							;
+											  ; success-video-component-11 	; success-video-component-11    ; success-video-component-11    ; الرعاية الصحية وعلوم الحياة           	; SUCCESS_STORY		; 							;
+											  ; success-video-component-12 	; success-video-component-12    ; success-video-component-12    ; الرعاية الصحية وعلوم الحياة           	; SUCCESS_STORY		; 							;
+											  ; success-video-component-13 	; success-video-component-13    ; success-video-component-13    ; الرعاية الصحية وعلوم الحياة            	; SUCCESS_STORY		; 							;
+											  ; success-video-component-14	; success-video-component-14    ; success-video-component-14    ; الرعاية الصحية وعلوم الحياة           	; SUCCESS_STORY		; 							;
+
+
+											  
+INSERT_UPDATE InvestSaudiWebinarVideoComponent; uid[unique = true]           ; &componentRef                ; videoDescription[lang = ar]                                                                                                                     			; $contentCV[unique = true]	;
+											  ; webinar-video-component-1    ; webinar-video-component-1    ;"ربط المستثمرين بخطط الدعم والحوافز لإزالة الصعوبات التي تواجهها الشركات العاملة في هذه الصناعة الحيوية حاليًا."                                    		    ;                                                 
+									          ; webinar-video-component-2    ; webinar-video-component-2    ;"لتقديم إصلاحات قطاع الرعاية الصحية وعلوم الحياة في المملكة العربية السعودية و الفرص المطروحه في القطاع"                                             		;                                                        
+                     						  ; webinar-video-component-3    ; webinar-video-component-3    ;"لعرض مجموعة الفرص الواسعة في المملكة العربية السعودية لشركات التكنولوجيا والشركات الناشئة"                                                     			;                                                                   
+											  ; webinar-video-component-4    ; webinar-video-component-4    ;"لتوفير رؤية شاملة لمبادرات الدعم المالي وحزم التحفيز في المملكة"                                                                                 			;                                                                                           
+											  ; webinar-video-component-5    ; webinar-video-component-5    ;"تقديم حلول للقضايا التي تؤثر على المواطنين السعوديين والمقيمين الذين يعيشون ويعملون في المملكة"                                                			;                                                             
+											  ; webinar-video-component-6    ; webinar-video-component-6    ;"لتلبية احتياجات قطاعي الموارد الصناعية والمعدنية ، وكيف يمكن للمستثمرين الحصول على مساعدة مباشرة ، مع تعويضات مالية للمصانع."                 			;                                
+											  ; webinar-video-component-7    ; webinar-video-component-7    ;"استكشاف المبادرات التي تنطوي على إعادة هيكلة وتأجيل مدفوعات القروض وإعفاء المشروعات متناهية الصغر والصغيرة والمتوسطة من تكاليف توفير الدعم التمويلي"		;         
+											  ; webinar-video-component-8    ; webinar-video-component-8    ;"تهدف إلى مساعدة المستثمرين السعوديين والدوليين في صنع منتجات للمستهلكين والشركات على حد سواء للوصول إلى دعم مخصص لاقتصاد فيروس كورونا"						;                     
+																				 
+											  ; success-video-component-1 	; success-video-component-1    ;"تتسم عملية تأسيس شركه في المملكة  العربيه السعوديه بالسهولة البالغة مقارنة بالبلدان الأخرى، وحالياً أصبح من السهل أيضًا الحصول على تأشيرة إلكترونية. إذ تعدُّ المملكة من دول مجموعة العشرين، وتتمتع بالكثير من فرص الاستثمار الجديدة في كلٍ من القطاعات التقليدية  والناشئة، ومنها قطاع الرياضة والثقافة والسياحة والترفيه"    ;																																							
+											  ; success-video-component-2 	; success-video-component-2    ;"قمت بزيارة جميع مناطق و مدن المملكة ، وانا على ثقة بأن الدروس المستفادة هنا ستبقى في ذهني طوال حياتي، فالشعب السعودي يسعد بدعم رواد الأعمال والأشخاص ذوي الروح الريادية الذين يرغبون في المساهمة في  الارتقاء بالمجتمع." ;                                      	            									
+											  ; success-video-component-3 	; success-video-component-3    ;"أعتقد بأنه يجب على المستثمرين دراسة رؤية 2030 بعناية، كما يجب عليهم تقييم مدى تتطابق الرؤية مع أهدافهم واستراتيجيتهم، وفي حال توافقها مع أهدافهم، فإن المزج بين التقنيات عالمية المستوى مع المواهب السعودية يسهم في خلق بيئة استثمارية عظيمة في المملكة تهدف إلى تحقيق النجاحات." ;  							
+											  ; success-video-component-4 	; success-video-component-4    ;" ما تعلمته من خلال تجربتي في ظل الثقافة السعودية ورؤية 2030 بأن السعودية من الدول سريعة التقدم بشكل يومي، إذ ترحب بمختلف الزائرين الأجانب وغيرهم من المستثمرين، وعلى الرغم من تواجدنا في السعودية لدواعي العمل، إلا أننا يسعدنا أن نحظى ببعض الرفاهية." ;                                  		        									 
+											  ; success-video-component-5 	; success-video-component-5    ;"هناك الكثير من الجهود المبذولة لتسهيل حضور الأشخاص إلى السعودية والاستثمار فيها، وهذا ما شهدناه في ترتيب المملكة في تصنيفات مؤشر سهولة ممارسة الأعمال التابع للبنك الدولي. " ;                                                 													
+											  ; success-video-component-6 	; success-video-component-6    ;" تجمع المملكة بين رفاهية العيش وسهولة ممارسة الأعمال ، فالشعب السعودي شعب ودود و مضياف . كما تضم مجتمع كبير من االمقيمين غيرالسعوديين ، ويجب على أي شخص  زيارة المملكة وخوض التجربة بنفسه.   " ;                                                                                                             									
+											  ; success-video-component-7 	; success-video-component-7    ;" تسعى المملكة العربية السعودية  لتحقيق أهداف  رؤيتها 2030 ما يخلق العديد من الفرص في كافة الأصعده و المجالات ، حيث تم إنشاء قطاعات جديدة منها قطاع السياحة والترفيه والطاقة والطاقة المتجددة وقطاع البيع بالتجزئة وغيرها من الأسواق الجديده و المتطورة " ;                                                              									
+											  ; success-video-component-9 	; success-video-component-9    ;"بصفتنا أحد المستثمرين الأجانب، فنحن سعداءٌ  جدًا بتجربتنا في المملكة العربية السعودية ، حيث أنها تتمتع ببيئة محفزه للعمل وللاستثمار.لقد كانت جميع الإجراءات سريعه و سلسة، ونتطلع للتوسع في أعمالنا في كافة أنحاء المملكة    " ;                                                                     									
+											  ; success-video-component-10	; success-video-component-10   ;"تحرص المملكة  على تسهيل ممارسة الأعمال التجارية، حيث تعرض الكثير من الحوافز الجذاب ما يساعدنا بصورة دائمة على اتخاذ قراراتنا الاستثمارية، وهناك العديد من الشركات - مثل شركة بيبسيكو - التي ترغب في هذ القدر من التسهيلات والحوافز الملموسة لتحقيق مزيدٍ من النمو والتطور وخلق المزيد من فرص العمل الجيدة." ;
+											  ; success-video-component-11 	; success-video-component-11   ; 					                             ;
+											  ; success-video-component-12 	; success-video-component-12   ;                   	                             ;
+											  ; success-video-component-13 	; success-video-component-13   ;                   	                             ;
+											  ; success-video-component-14	; success-video-component-14   ;"الرعاية الصحية وعلوم الحياة"                    ;   	 
+											  					  
+                                       
+									   

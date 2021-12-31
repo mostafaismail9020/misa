@@ -1,0 +1,191 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalIncentivesTemplate
+$page = incentives
+$pageName = الحوافز  المقدمة للمستثمرين
+$pageTitleAr = $pageName
+$pageLabel = /investor/incentives
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]  ; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']	;
+                         ; $page               ; $pageTitleAr    ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+############# incentives BANNER start ###################
+
+INSERT_UPDATE InvestSaudiBannerComponent ; uid[unique = true]	; descriptionText[lang = ar]	; descriptionText2 [lang = ar]	 ; buttonText[lang = ar]     ; buttonURL(&linkRef)     ; link   ; &componentRef      ; $contentCV[unique = true] ;
+                                         ; incentives-banner    ; الحوافز  المقدمة للمستثمرين   ;                                ;                           ;                         ; true   ; incentives-banner  ;                           ;                 
+
+############# incentives BANNER end ###################
+ 
+ 
+ ############# incentives PARAGRAPH start ###################
+
+INSERT_UPDATE CMSParagraphComponent ; $contentCV[unique = true] ; uid[unique=true]     ; content[lang = ar]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ; &componentRef        ;
+                                    ;                        	; incentives-paragraph ; "<section class=""INS_sections_insdetials"" id=""""><div class=""container""><div class=""row""><p class=""INS_para"">في إطار سعي المملكة لأن تكون وجهة استثماريه جاذبه و محفزه ، فقد حرصت على تقديم  التسهيلات و الخدمات للمستثمرين لتشجيع الاستثمارات التي من شأنها أن تنوّع وتعزّز القدرة التنافسية للمملكة.</p><p class=""INS_para"">تقدم المملكة حوافزا ودعمًا خاصّا لفروع الشركات الأجنبية التي ترغب بإنشاء مكاتب  إقليميه لها في المملكة بهدف تسويق تجمّع الأنشطة  ، والحرص على انتقال المعرفة  ، والإسهام في تعزيز نموّ المهارات والكفاءات الوطنية في المملكة.</p></div></div></section>"	; incentives-paragraph ;
+
+############# incentives PARAGRAPH end #####################
+
+
+############# incentives LOAN PROGRAM start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]               ; linkName [lang = ar]      ; $contentCV[unique = true];                      
+                               ; loanprogram-exploreall-link-1    ; تعرًف على المزيد 		  ; 						 ;
+                               ; loanprogram-exploreall-link-2    ; تعرًف على المزيد  		  ;   						 ;
+                               ; loanprogram-exploreall-link-3    ; تعرًف على المزيد 		  ; 						 ;
+                               ; loanprogram-exploreall-link-4    ; تعرًف على المزيد 		  ; 						 ;
+                               ; loanprogram-exploreall-link-5    ; تعرًف على المزيد           ;                          ;
+
+
+INSERT_UPDATE LoanProgramsforIncentiveComponent ; uid[unique = true] ; title[lang = ar]                                                         ; description[lang = ar]                                                                                                                                                                                                           ; knowMore(uid, $contentCV)      ; &componentRef  ; $contentCV[unique = true] ;
+                                                ; loanprogram-1      ; برنامج القروض لمشاريع الاستثمار العامة والخاص                             ; "<p class=""INS_loanpbm_para"">تمويل مشاريع الاستثمار العامة والخاصة:</p><ul class=""INS_list_font""><li>خفض معدّل الفائدة</li><li>فترة إمهال تتراوح بين 4 و6</li><li>	قروض طويلة الأمد تمتدّ حتى 22-25 سنة</li></ul>"               ; loanprogram-exploreall-link-1  ; loanprogram-1  ; 		;
+                                                ; loanprogram-2      ; برنامج القروض للتنمية والإصلاح الاقتصادي في الدول العربية                   ; "<p class=""INS_loanpbm_para"">يقدم هذا البرنامج قروضًا وتسهيلات لمساعدة الدول الأعضاء على معالجة العجز العام في ميزان المدفوعات ويتضمن أربعة أنواع من القروض التي تختلف في الحجم والشروط والاستحقاق.</p>"                           ; loanprogram-exploreall-link-2  ; loanprogram-2  ;			;
+                                                ; loanprogram-3      ; خدمات التمويل للمعاملات التجارية للسلع العربية المنشأ                   	; "<p class=""INS_loanpbm_para"">يقدم خدمات إعادة التمويل للصادرات العربية  المنشأ من خلال خطوط ائتمان مثل ائتمانات ما قبل التصدير وائتمانات ما بعد الشحن وائتمانات المشترين وائتمانات الواردات.</p>"                               ; loanprogram-exploreall-link-3  ; loanprogram-3  ; 		;
+                                                ; loanprogram-4      ; تأمين المخاطر السياسية والتجارية للاستثمارات وضمان ائتمان الصادرات		; "<p class=""INS_loanpbm_para"">مخططات وضمانات لتشجيع الاستثمارات في الدول العربية ولتعزيز التجارة العربية المحلية والصادرات العربية لدول العالم.</p>"                                                                             ; loanprogram-exploreall-link-4  ; loanprogram-4  ; 		;
+                                                ; loanprogram-5      ; تمويل الأسهم والديون للمؤسسات والمشاريع الإنتاجية في الدول الأعضاء 			; "<p class=""INS_loanpbm_para"">تقديم مخططات التمويل المختلفة لدعم رأس المال الاستثماري للمشاريع ومنح القروض للشركات والمشاريع الإنتاجية، وقبول الودائع من أجل تعبئة الموارد المالية بما يتوافق مع أحكام الشريعة الإسلامية.</p>"  	; loanprogram-exploreall-link-5  ; loanprogram-5  ; 		;
+
+
+INSERT_UPDATE LoanProgramsforIncentiveContainer ; uid[unique = true]                 ; title[lang = ar] ; simpleCMSComponents(&componentRef)                                    ; &componentRef                     ; $contentCV[unique = true] ;
+                                                ; loanprograms-incentives-container  ; برامج القروض     ; loanprogram-1,loanprogram-2,loanprogram-3,loanprogram-4,loanprogram-5 ; loanprograms-incentives-container ;                           ;
+
+############# incentives LOAN PROGRAM end ###################
+
+############# incentives ENERGY N UTILITY start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]             ; linkName [lang = ar]      ; $contentCV[unique = true];                                               
+                               ; energynutil-exploreall-link-1  ; تعرًف على المزيد			; 		;
+                               ; energynutil-exploreall-link-2  ; تعرًف على المزيد			;       ;
+                               ; energynutil-exploreall-link-3  ; تعرًف على المزيد 			;       ;
+                               ; energynutil-exploreall-link-4  ; تعرًف على المزيد 			;       ;
+                               ; energynutil-exploreall-link-5  ; تعرًف على المزيد			;       ;
+
+
+INSERT_UPDATE EnergynUtilityforIncentiveComponent ; uid[unique = true] ; logoUrl(uid, $contentCV)       ; &componentRef  ; $contentCV[unique = true] ;
+                                                  ; energynutil-1      ; energynutil-exploreall-link-1  ; energynutil-1  ;                           ;
+                                                  ; energynutil-2      ; energynutil-exploreall-link-2  ; energynutil-2  ;                           ;
+                                                  ; energynutil-3      ; energynutil-exploreall-link-3  ; energynutil-3  ;                           ;
+                                                  ; energynutil-4      ; energynutil-exploreall-link-4  ; energynutil-4  ;                           ;
+                                                  ; energynutil-5      ; energynutil-exploreall-link-5  ; energynutil-5  ;                           ;
+
+
+INSERT_UPDATE EnergynUtilityforIncentiveContainer ; uid[unique = true]               ; title[lang = ar]        			; subTitle[lang = ar]                      ; simpleCMSComponents(&componentRef)                                    ; &componentRef                     ; $contentCV[unique = true] ;
+                                                  ; energynutil-incentives-container ; تمكين الطاقة والمرافق         	; تمكين الطاقة والمرافق في المدن الصناعية  ; energynutil-1,energynutil-2,energynutil-3,energynutil-4,energynutil-5 ; energynutil-incentives-container  ;                           ;
+
+############# incentives ENERGY N UTILITY end ###################
+
+############# incentives Employment Support start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]                   ; linkName [lang = ar]	; $contentCV[unique = true];
+                               ; employmentsupport-exploreall-link-1  ; تعرًف على المزيد  		;                        ;
+                               ; employmentsupport-exploreall-link-2  ; تعرًف على المزيد         ;                        ;
+                               ; employmentsupport-exploreall-link-3  ; تعرًف على المزيد         ;                        ;
+                               ; employmentsupport-exploreall-link-4  ; تعرًف على المزيد         ;                        ; 
+
+
+INSERT_UPDATE EmploymentSupportforIncentiveComponent ; uid[unique = true]   ; title [lang = ar]							; description [lang = ar]                                                                                                                                                                                                                                            		; knowMore(uid, $contentCV)            ; defaultIncentiveProgram[default=false] ; componentId  ; componentTabId  ; &componentRef        ; $contentCV[unique = true] ;
+                                                     ; employmentsupport-1  ; برنامج تمهير           					; "برامج التدريب العملي في مواقع العمل للخريجين والخريجات السعوديين ويتضمن:  <ul class=""INS_li_ul_under  pb-3 mb-3"" ><li>	تقديم دعم مالي قدره 3000 ريال شهرياً (800 دولار أميركي) خلال مدة التدريب التي تتراوح بين 3 و6 أشهر، إضافة إلى تغطية تأمين ضد مخاطر العمل.</li></ul>"	; employmentsupport-exploreall-link-1  ; true                                   ; Tamheer      ; home            ; employmentsupport-1  ;                           ;
+                                                     ; employmentsupport-2  ; برنامج  لتوطين المهن في مختلف القطاعات  	;                                                                                                                                                                                                                                                                    		; employmentsupport-exploreall-link-2  ;                                        ; Program      ; profile         ; employmentsupport-2  ;                           ;
+                                                     ; employmentsupport-3  ; برنامج دعم الشهادات المهنية الاحترافية		; يهدف البرنامج إلى تمكين القوى العاملة السعودية من الحصول على شهادات مهنية احترافية معتمدة في المجالات المتخصصة والمطلوبة في سوق العمل. إضافة إلى ذلك، يقوم صندوق تنمية الموارد البشرية بسداد تكاليف التدريب ورسوم الاختبار.													; employmentsupport-exploreall-link-3  ;                                        ; Professional ; contact         ; employmentsupport-3  ;                           ;
+                                                     ; employmentsupport-4  ; برنامج دروب 								; دروب هي منصة وطنية للتدريب الإلكتروني الشامل تمكّن المواطنين والمواطنات السعوديين من الحصول على شهادات معتمدة ومعترف بها من قبل أهم الشركات في المملكة العربية السعودية.																									; employmentsupport-exploreall-link-4  ;                                        ; Doroob       ; contact         ; employmentsupport-4  ;                           ;
+
+
+INSERT_UPDATE EmploymentSupportforIncentiveContainer ; uid[unique = true]                     ; title[lang = ar] 	; simpleCMSComponents(&componentRef)                                              ; &componentRef                           ; $contentCV[unique = true] ;
+                                                     ; employmentsupport-incentives-container ; برامج دعم التوظيف 	; employmentsupport-1,employmentsupport-2,employmentsupport-3,employmentsupport-4 ; employmentsupport-incentives-container  ;                           ;
+
+############# incentives Employment Support end ###################
+
+############# incentives Export Credit Finance start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]               ; linkName [lang = ar]	; $contentCV[unique = true] ;
+                               ; creditfinance-exploreall-link-1  ; تعرًف على المزيد 		;     					  ;
+                               ; creditfinance-exploreall-link-2  ; تعرًف على المزيد 		;                  		  ;
+                               ; creditfinance-exploreall-link-3  ; تعرًف على المزيد  		; 						  ;
+
+
+INSERT_UPDATE ExportCreditFinanceforIncentiveComponent ; uid[unique = true] ; knowMore(uid, $contentCV)        ; &componentRef    ; $contentCV[unique = true] ;
+                                                       ; creditfinance-1    ; creditfinance-exploreall-link-1  ; creditfinance-1  ;                           ;
+                                                       ; creditfinance-2    ; creditfinance-exploreall-link-2  ; creditfinance-2  ;                           ;
+                                                       ; creditfinance-3    ; creditfinance-exploreall-link-3  ; creditfinance-3  ;                           ;
+
+
+INSERT_UPDATE ExportCreditFinanceforIncentiveContainer ; uid[unique = true]                 ; title[lang = ar]                                   ; shortDescription[lang = ar]                 ; longDescription[lang = ar]                                                                                                                             ; simpleCMSComponents(&componentRef)              ; &componentRef                       ; $contentCV[unique = true] ;
+                                                       ; creditfinance-incentives-container ;  تمويل ائتمان الصادرات والضمان والتأمين 			 ; تمويل الائتمان والضمان والتأمين			   ; تقدم المملكة العربية السعودية الحوافز لتمويل ما قبل التصدير للمصدّرين السعوديين للمشترين وتمويل ما بعد الشحن للمشترين الدوليين للبضائع السعودية. 		; creditfinance-1,creditfinance-2,creditfinance-3 ; creditfinance-incentives-container  ;                           ;
+
+############# incentives Export Credit Finance end ###################
+
+
+############# incentives Attractive Land Solutions start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]               ; linkName [lang = ar]	; $contentCV[unique = true];                               
+                               ; landsolutions-exploreall-link-1  ; تعرًف على المزيد 		; 		;
+                               ; landsolutions-exploreall-link-2  ; تعرًف على المزيد 		; 		;
+                               ; landsolutions-exploreall-link-3  ; تعرًف على المزيد 		;       ;
+                               ; landsolutions-exploreall-link-4  ; تعرًف على المزيد         ;       ;
+                               ; landsolutions-exploreall-link-5  ; تعرًف على المزيد 		;       ;
+
+
+INSERT_UPDATE AttractiveLandSolutionsforIncentiveComponent ; uid[unique = true] ; title [lang =ar]                                      ; knowMore(uid, $contentCV)        ; &componentRef    ; $contentCV[unique = true] ;
+                                                           ; landsolutions-1    ; الهيئة السعودية للمدن الصناعية ومناطق التقنية (مدن)  	; landsolutions-exploreall-link-1  ; landsolutions-1  ;                           ;
+                                                           ; landsolutions-2    ; الهيئة الملكية للجبيل وينبع                           ; landsolutions-exploreall-link-2  ; landsolutions-2  ;                           ;
+                                                           ; landsolutions-3    ; هيئة المدن والمناطق الاقتصادية الخاصة                  ; landsolutions-exploreall-link-3  ; landsolutions-3  ;                           ;
+                                                           ; landsolutions-4    ; مدينة الملك عبد الله الاقتصادية                           ; landsolutions-exploreall-link-4  ; landsolutions-4  ;                           ;
+                                                           ; landsolutions-5    ; المركز الوطني للتنمية الصناعية                        ; landsolutions-exploreall-link-5  ; landsolutions-5  ;                           ;
+
+
+INSERT_UPDATE AttractiveLandSolutionsforIncentiveContainer ; uid[unique = true]                 ; title[lang = ar]          ; simpleCMSComponents(&componentRef)                                              ; &componentRef                       ; $contentCV[unique = true] ;
+                                                           ; landsolutions-incentives-container ; حلول الملكيات الجاذبة     ; landsolutions-1,landsolutions-2,landsolutions-3,landsolutions-4,landsolutions-5 ; landsolutions-incentives-container  ;                           ;
+
+############# incentives Attractive Land Solutions end ###################
+
+############# incentives Finance RnD start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]             ; linkName [lang = ar]      ; $contentCV[unique = true];
+                               ; finance-rnd-exploreall-link-1  ; تعرًف على المزيد  	        ;                 		   ;
+                               ; finance-rnd-exploreall-link-2  ; تعرًف على المزيد           ; 						   ;
+
+
+INSERT_UPDATE FinancialRnDforIncentiveComponent ; uid[unique = true] ; title [lang = ar]                    ; longDescription [lang = ar]                                                                                                           ; knowMore(uid, $contentCV)      ; &componentRef	; $contentCV[unique = true]	;
+                                                ; finance-rnd-1      ; حوافز مالية لمشاريع البحث والتطوير	; الاستثمار في عدد من مشاريع البحث والتطوير المحلية والعالمية التي تساهم في دعم النموّ الاقتصادي للمملكة والقدرة على الاعتماد على الذات. 	; finance-rnd-exploreall-link-1  ; finance-rnd-1 	; 			;                                             
+                                                ; finance-rnd-2      ; قرض متعدد الأغراض     				; قروض متوسطة أو طويلة الأجل لتأسيس <br> مصانع جديدة أو توسعة القائمة منها         							; finance-rnd-exploreall-link-2  ; finance-rnd-2 	;           ;
+
+
+INSERT_UPDATE FinancialRnDforIncentiveContainer ; uid[unique = true]               	; title[lang = ar]             ; simpleCMSComponents(&componentRef) ; &componentRef                     ; $contentCV[unique = true] ;
+                                                ; finance-rnd-incentives-container	; حوافز مالية للبحث والتطوير   ; finance-rnd-1,finance-rnd-2        ; finance-rnd-incentives-container  ;                           ;
+
+############# incentives Finance RnD end ###################
+
+
+############# incentives Tax Credit Exemption start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]             ; linkName [lang = ar]     ; $contentCV[unique = true];
+                               ; tax-exemption-exploreall-link	; تعرًف على المزيد          ; 			;
+
+
+INSERT_UPDATE TaxCreditExemptionforIncentiveComponent ; uid[unique = true]	; title [lang = ar]        	; shortDescription [lang = ar]                                      ; longDescription [lang = ar]                                                                                        	; knowMore(uid, $contentCV)      ; &componentRef  ; $contentCV[unique = true] ;
+                                                      ; tax-exemption       ; الائتمان والإعفاء الضريبي	; الائتمان الضريبي على تكاليف الرواتب والتدريب للمواطنين السعوديين	; يقدّم المركز الصناعي ائتمانًا ضريبيًا يصل إلى 50% على تكلفة رواتب وتدريب العمالة السعودية لمدة 10 سنوات.	                ; tax-exemption-exploreall-link  ; tax-exemption  ;                           ;
+
+############# incentives Tax Credit Exemption end ###################
+
+
+############# incentives Smes Ecosystem start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]             ; linkName [lang = ar]      ; $contentCV[unique = true]; 
+                               ; smesecosystem-exploreall-link  ; تعرًف على المزيد           ;						   ;
+
+												 
+INSERT_UPDATE SmesEcosystemforIncentiveComponent ; uid[unique = true]	; title [lang = ar]       							  	; shortDescription [lang = ar] 	; longDescription [lang = ar]                                                                                                                                   ; knowMore(uid, $contentCV)      ; &componentRef  ; $contentCV[unique = true] ;
+                                                 ; smesecosystem       	; تحفيز النظام البيئي للشركات الصغيرة والمتوسطة الحجم	; مبادرة الإقراض غير المباشر 	; تقدم مبادرة الإقراض غير المباشر قروضًا منخفضة التكلفة لشركات التمويل المرخصة والتي تقوم بدورها بتقديم حلول تمويلية بمزايا تنافسية للمنشآت الصغيرة والمتوسطة.	; smesecosystem-exploreall-link  ; smesecosystem  ;                           ;
+												 
+############# incentives Smes Ecosystem end ###################	
+

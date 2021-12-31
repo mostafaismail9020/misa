@@ -1,0 +1,26 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalGlobalTemplate
+
+$contentCatalog = investsaudiportalContentCatalog
+
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+INSERT_UPDATE PageTemplate; uid[unique = true]; name            ; frontendTemplateName; restrictedPageTypes(code); active[default = true]; $contentCV[unique = true]
+                          ; $template         ; Global Template ; layout/portalGlobal ; ContentPage
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; compTypeGroup(code); validComponentTypes(code); template(uid, $contentCV)[unique = true][default = $template]
+                             ; PortalHeader       ; portalheaderlinks  ;                          ;
+                             ; PortalPageTop      ; portalwide         ;                          ;
+                             ; PortalPageMain     ; portalwide         ;                          ;
+                             ; PortalPageBottom   ; portalwide         ;                          ;
+                             ; PortalFooter       ; portalfooter       ;                          ;
+
+INSERT_UPDATE ContentSlotForTemplate; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite; $contentCV[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = $template]
+                                    ; PortalHeaderSlot-$template ; PortalHeader           ; PortalHeaderSlot                           ; true          ;                          ;
+                                    ; PortalFooterSlot-$template ; PortalFooter           ; PortalFooterSlot                           ; true          ;                          ;
+

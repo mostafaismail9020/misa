@@ -1,0 +1,26 @@
+$page = sample-about
+$template = portalGlobalTemplate
+$pageName = About
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /about
+
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]                      ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Invest Saudi - About,About, ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+INSERT_UPDATE ContentSlot; uid[unique = true]; name; active; cmsComponents(&componentRef); $contentCV[unique = true]
+#                         ; PortalPageMain-$page ; PortalPageMain ; true  ; 
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+#                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+

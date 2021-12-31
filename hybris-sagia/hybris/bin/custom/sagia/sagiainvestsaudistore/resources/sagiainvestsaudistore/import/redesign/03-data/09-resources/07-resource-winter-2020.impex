@@ -1,0 +1,71 @@
+######## Impex for resource investment Highlights Winter 2020 #############
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+
+$titleAr = موجز مستجدات الاستثمار  شتاء  2020 
+$shortDescAr = ابرز مستجدات الاستثمار في الربع الرابع من عام 2019
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                                   ; realFileName                                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]  ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					;Banner-image-Winter-2020.jpg                           ;Banner-image-Winter-2020.jpg                   ; $siteResource/Banner-image-Winter-2020.jpg                                    ; image/jpg   ;                                          ; ""     ;
+					;Winter-2020-Thumbnail_08.jpg                           ;Winter-2020-Thumbnail_08.jpg                   ; $siteResource/Winter-2020-Thumbnail_08.jpg                                    ; image/jpg   ;                                          ; ""     ;
+
+
+INSERT_UPDATE Media; code[unique = true]                                    ; realFileName                    						; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]  ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; resource-investment-highlights-winter-2021-arabic.pdf 	;resource-investment-highlights-winter-2021-arabic.pdf  ; $siteResource/resource-investment-highlights-winter-2021-arabic.pdf           ; application/pdf                 ;                                          ; ""     ;
+                   ; resource-investment-highlights-winter-2021-english.pdf ;resource-investment-highlights-winter-2021-english.pdf ; $siteResource/resource-investment-highlights-winter-2021-english.pdf			; application/pdf                 ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]		; $medias										; $contentCV ; 
+                            ; media-container-winter-2020   ; resource-investment-highlights-winter-2021-arabic.pdf,resource-investment-highlights-winter-2021-english.pdf   ;          ;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]							;resourceTitle[lang = en]			;resourceShortInformation[lang = en]		;resourceUrl(uid, $contentCV)	;resourceBulletPoints;resourceDate[dateformat = dd.MM.yyyy HH:mm:ss];
+										  ;						    ;resource-investment-winter-highlights-2020	;Investment Highlights Winter 2020	;"Saudi Arabia's investment news in Q4 2019";								;					 ;19.01.2020 00:00:00	;
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]							;resourceTitle[lang = ar]	;resourceShortInformation[lang = ar];
+										  ;							;resource-investment-winter-highlights-2020 ;$titleAr                	;$shortDescAr					;
+
+
+UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]							;resourceFullDescription[lang=en]
+								   ;						 ;resource-investment-winter-highlights-2020   	;"
+<p>In this fourth edition of ''Investment Highlights'' brought to you by Invest Saudi, we look back on a record-breaking year for investors in Saudi Arabia.</p>
+<p>2019 saw investor interest in the Kingdom reach new heights, with momentum continuing to build in the run up to 2030. More than 150 major investor deals were signed by SAGIA throughout the year, and the number of new foreign companies establishing operations in Saudi Arabia was up 54% on 2018.</p>
+<p>Drawn by the wealth of opportunity in untapped sectors and an ever more investor-friendly environment that's being fostered through business-centric reforms, businesses from all over the world are coming to the Kingdom, with major new investors from countries such as India, UK, USA, Egypt, France, China, and many more.</p>
+<p>Special features include opening remarks from Dr. Majid Al Qasabi, Minister of Commerce and Investment, and an exclusive interview with Prince Abdulaziz bin Turki Al Faisal, Chairman of the General Sports Authority.</p>
+<p>In this report:</p>
+<ul>
+<li>2019 in review</li>
+<li>	New foreign investors figures</li>
+<li>	Top countries of origin</li>
+<li>	Timeline of pro-business reforms</li>
+<li>	Major projects and opportunities</li>
+</ul>
+";
+
+UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]							;resourceFullDescription[lang=ar]
+								   ;						 ;resource-investment-winter-highlights-2020    ;"
+<p>كشفت الهيئة العامة للاستثمار اليوم الأحد في تقريرها لمستجدات الاستثمار في المملكة والذي أصدرته تزامناً مع قرب انطلاق أعمال المنتدى الاقتصادي العالمي في دافوس عن ارتفاع عدد الاستثمارات الأجنبي الجديدة في المملكة بنسبة 54% خلال عام 2019 مقارنةً بعدد الرخص التي تم إصدارها في عام 2018، وبإجمالي 1,130 شركة جديدة، محققة بذلك إقبالاً غير مسبوق على مستوى الاستثمارات الأجنبية خلال العشرة أعوام الماضية.</p>
+<p>وتصدرت الشركات الأجنبية من الهند والولايات المتحدة والصين وبريطانيا وفرنسا ومصر والأردن الدول الأكثر استثماراً في المملكة خلال العام 2019، فيما تصدرت قطاعات التصنيع والبناء والاتصالات وتقنية المعلومات القطاعات الأكثر إقبالاً، حيث ارتفع الطلب على هذه القطاعات، إلى جانب تطوير البنية التحتية مدفوعاً بالتقدم الذي تم تحقيقه في المشاريع العملاقة التي تشهدها المملكة تماشيًا مع رؤية 2030، إذ تم خلال عام 2019، تأسيس 193 شركة إنشاءات و190 شركة تصنيع و178 شركة تقنية معلومات واتصالات جديدة.</p>
+<p>وشهد العام 2019 دخول 100 شركة بريطانية و82 شركة أمريكية، مقارنةً بـ 24 شركة لكلا البلدين في عام 2018. كما جاءت الهند ومصر والأردن والصين من بين أعلى الدول من حيث عدد الشركات الجديدة التي بدأت الاستثمار في المملكة، حيث ارتفعت حصة الهند من السوق على نحو كبير من 30 شركة في عام 2018 إلى 140 شركة في عام 2019.</p>
+<p></p>
+<p>وكان الربع الأخير من عام 2019 هو الأكثر نشاطًا خلال العام، حيث ارتفع عدد الشركات الأجنبية الجديدة التي بدأت الاستثمار في المملكة إلى 305 شركة، مقارنةً بـ 238 شركة خلال نفس الفترة من عام 2018.</p>
+<p>وفي تعليقه على نمو الاستثمارات الأجنبية في المملكة، صرح معالي المهندس إبراهيم العمر، محافظ الهيئة العامة للاستثمار، بأن المملكة  تشهد تحولاً اقتصاديًا هائلاً يعزز من جذب المستثمرين وتمكين القطاع الخاص، لافتاً إلى أن النمو الإيجابي الذي شهدناه خلال العام 2019، يعد خطوة كبيرة في الطريق نحو تحقيق رؤية عام 2030.</p>
+<p>وحول الشراكات المحلية والدولية، كشف المهندس العمر أن أحد أهم أهداف الهيئة في جذب الاستثمارات الأجنبية هو توطين التقنية ونقل المعرفة وخلق الوظائف، لافتاً إلى أن أكثر من 30% من مجموع الاستثمارات التي تم جذبها للمملكة ساهمت الهيئة في وضعها على شكل شراكات أجنبية مع القطاع الخاص الوطني، وذلك لتمكين المستثمر المحلي وتعزيز موقعه في كافة المجالات الاستثمارية.</p>
+<p>ويأتي هذا النمو في الاستثمارات الأجنبية في المملكة نتيجة للإصلاحات الاقتصادية والاجتماعية الشاملة التي شهدتها البلاد خلال عام 2019 بهدف تحسين البيئة الاستثمارية في المملكة وجذب استثمارات جديدة إليها. وكان البنك الدولي قد أشاد في تقريره  سهولة ممارسة الأعمال الذي أصدره مؤخراً بتأثير تلك الإصلاحات على الصعيد العالمي، حيث وضع المملكة في المرتبة الأولى بين الدول الأسرع تحسنًا وإصلاحًا على مستوى العالم، لتتقدم المملكة بذلك 30 مركزًا في التقرير لعام 2020.</p>
+<p>وأطلقت هيئة الاستثمار حملتها التسويقية والإعلامية تحت  هوية استثمر في السعودية للتعريف بالفرص الاستثمارية والإصلاحات التي شهدتها بيئة الاستثمار السعودية وذلك  ضمن فعاليات المنتدى الاقتصادي العالمي المنعقد خلال الفترة من 21 وحتى 24 من شهر يناير الجاري في المدينة السويسرية .</p>
+<p>وتشتمل الفعاليات التي تنظمها الهيئة بالتعاون مع شركائها من القطاعين الحكومي والخاص في المملكة على عشاء عمل؛ حيث يلتقي أكثر من 100 شخصية من صناع القرار وكبار المستثمرين العالميين مع نظرائهم السعوديين يوم الثلاثاء القادم للتعرف وبحث الفرص الاستثمارية في المملكة، والاطلاع على المستجدات في بيئة الاستثمار والإصلاحات المرتبطة بها.</p>
+<p>كما تتضمن الفعاليات حملات تسويقية كبرى تحتوي على حملة إعلانية مع أهم وسائل الإعلام الدولية، بالإضافة إلى الترويج للاستثمارات في المملكة عبر أكبر المنصات الإعلانية في دافوس.</p>
+";
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]							;resourceDetailsImage(code, $contentCV) ;resourceThumbnailImage(code, $contentCV)   ;resourceFullReport(qualifier, $contentCV);
+										  ;							;resource-investment-winter-highlights-2020 ;Banner-image-Winter-2020.jpg			;Winter-2020-Thumbnail_08.jpg 				; media-container-winter-2020	;
+

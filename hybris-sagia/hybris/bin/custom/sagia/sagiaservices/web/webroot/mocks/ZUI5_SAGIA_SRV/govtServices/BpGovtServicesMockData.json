@@ -1,0 +1,33 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/BpGovtServices('613392')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/BpGovtServices('613392')",
+      "type": "ZUI5_SAGIA_SRV.BpGovtService"
+    },
+    "BpID": "613392",
+    "CrNumber": "",
+    "CrIssueDate": null,
+    "CrExpiryDate": null,
+    "ZakatNumber": "3001624729",
+    "ZakatIssueDate": "\/Date(1456358400000)\/",
+    "ZakatExpiryDate": "\/Date(1517097600000)\/",
+    "MolNumber": "1-132038",
+    "MolSize": "VERY LARGE",
+    "MolColor": "310",
+    "SaudiPercent": "8.61000",
+    "CocNumber": "",
+    "CocIssue": null,
+    "CocExpiry": null,
+    "GosiNumber": "",
+    "GosiIssue": "\/Date(1185667200000)\/",
+    "GosiExpiry": null,
+    "ZakatTax": "               0.00",
+    "ZakatAccurrKey": "",
+    "ZakatAccPer": "0.00",
+    "MaAmanah": "",
+    "MaBladiya": "",
+    "MaLicIssueDate": "",
+    "MaLicExpiryDate": ""
+  }
+}

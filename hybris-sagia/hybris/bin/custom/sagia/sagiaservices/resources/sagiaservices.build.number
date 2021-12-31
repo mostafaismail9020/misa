@@ -1,0 +1,11 @@
+#Ant properties
+#Fri Nov 17 16:17:57 UTC 2017
+builddate=20180317 1617
+description=sagiaservices
+group.id=de.hybris.platform
+module.name=platform-module
+name=sagiaservices
+releasedate=20180317 1617
+vendor=hybris
+version=1.0.0.0
+version.api=1.0.0.0

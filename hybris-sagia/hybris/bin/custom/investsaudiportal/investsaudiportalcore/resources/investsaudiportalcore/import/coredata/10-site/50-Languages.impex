@@ -1,0 +1,11 @@
+INSERT_UPDATE Language; isocode[unique = true]; name[lang = en]; name [lang = ar]
+                      ; ar                    ; Arabic         ; العربية
+
+INSERT_UPDATE BaseStore; uid[unique = true]; languages(isoCode)
+                       ; investsaudiportal ; en,ar
+
+INSERT_UPDATE SiteTheme; code[unique = true]
+                       ; investsaudi
+
+INSERT_UPDATE CMSSite; uid[unique = true]; theme(code)
+                     ; investsaudiportal ; investsaudi

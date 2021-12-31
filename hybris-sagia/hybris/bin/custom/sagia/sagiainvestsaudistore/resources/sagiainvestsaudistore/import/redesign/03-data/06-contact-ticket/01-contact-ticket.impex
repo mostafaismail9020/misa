@@ -1,0 +1,6 @@
+INSERT_UPDATE ContactTicketPurpose; code[unique = true]; emailList; label[lang = en]                   ; label[lang = ar];
+                                  ; general-inquiry    ;          ; General Inquiry                    ; الغرض من الاتصال
+                                  ; interest-business  ;          ; Interested in business opportunity ; عام
+                                  ; legal-advisory     ;          ; Legal Advisory                     ; مهتم بفرصة استثمارية
+                                  ; interest-invest    ;          ; Interested in Invest in Saudi      ; مهتم بالاستثمار بالمملكة
+                                  ; media-inquiriess   ;          ; Media inquiriess                   ; المركز الإعلامي

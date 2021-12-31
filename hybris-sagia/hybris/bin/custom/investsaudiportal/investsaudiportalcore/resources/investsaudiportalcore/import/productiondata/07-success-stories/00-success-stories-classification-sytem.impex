@@ -1,0 +1,44 @@
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$classSystemVersion = systemVersion(catalog(id[default='investsudiPortalClassificationCatalog']), version[default='1.0'])
+$classCatalogVersion = catalogVersion(catalog(id[default='investsudiPortalClassificationCatalog']), version[default='1.0'])
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+$mediafolder = portal-media
+$media = media(code, $catalogVersion);
+$siteUid = investsaudiportal
+$productArticleCatalogVersion = $productCatalog!Article:Staged
+
+
+INSERT_UPDATE ClassificationAttribute; $classSystemVersion[unique = true]; code[unique = true]    ; name  [lang = en]              ; name  [lang = ar]
+                                     ;                                   ; location               ; Location                       ; الموقع
+                                     ;                                   ; industry               ; Industry                       ; صناعة
+                                     ;                                   ; employees-saudi        ; Employees in Saudi Arabia      ; موظفين في المملكة العربية السعودية
+                                     ;                                   ; employees-world-wide   ; Employees Worldwide            ; الموظفين في جميع أنحاء العالم
+                                     ;                                   ; country-origin         ; Country of Origin              ;بلد المنشأ
+                                     ;                                   ; revenue                ; Revenue                        ;إيرادات
+                                     ;                                   ; date-establishment     ; Date of establishment globally ;تاريخ التأسيس عالميا
+                                     ;                                   ; date-market-entry      ; Date of Saudi market entry     ;تاريخ دخول السوق السعودي
+                                     ;                                   ; saudization-rate       ; Saudization rate               ;معدل السعودة
+                                     ;                                   ; female-employment-rate ; Female employment rate         ;معدل عمالة الإناث
+                                     ;                                   ; operations             ; Operations                     ;عمليات
+
+INSERT_UPDATE ClassificationClass; $classCatalogVersion[unique = true]; code[unique = true]                         ; name
+                                 ;                                    ; success-story-info-classification           ; Success Story Info Classification
+                                 ;                                    ; success-story-aditional-info-classification ; Success Story Aditional Info Classification
+
+
+INSERT_UPDATE ClassAttributeAssignment; attributeType(code[default = string]); classificationAttribute(code[unique = true], systemVersion(catalog(id), version))[unique = true]; classificationClass(code, catalogVersion(catalog(id), version))[unique = true]        ; $classSystemVersion; localized[default = true];
+                                      ;                                      ; location:investsudiPortalClassificationCatalog:1.0                                              ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+                                      ;                                      ; industry:investsudiPortalClassificationCatalog:1.0                                              ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+                                      ;                                      ; employees-saudi:investsudiPortalClassificationCatalog:1.0                                       ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+                                      ;                                      ; country-origin:investsudiPortalClassificationCatalog:1.0                                        ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+                                      ;                                      ; revenue:investsudiPortalClassificationCatalog:1.0                                               ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0 ;                    ;                          ;
+                                      ;                                      ; employees-world-wide:investsudiPortalClassificationCatalog:1.0                                  ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+                                      ;                                      ; date-establishment:investsudiPortalClassificationCatalog:1.0                                    ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0 ;                    ;                          ;
+                                      ;                                      ; date-market-entry:investsudiPortalClassificationCatalog:1.0                                     ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0 ;                    ;                          ;
+                                      ;                                      ; saudization-rate:investsudiPortalClassificationCatalog:1.0                                      ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0 ;                    ;                          ;
+                                      ;                                      ; female-employment-rate:investsudiPortalClassificationCatalog:1.0                                ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0 ;                    ;                          ;
+                                      ;                                      ; operations:investsudiPortalClassificationCatalog:1.0                                            ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;

@@ -1,0 +1,50 @@
+$page = sample-investor-services
+$template = portalGlobalTemplate
+$pageName = Investors Services
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /investors-services
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]             ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Investors Services ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                         ; name                                          ; &componentRef                              ; $contentCV[unique = true]; description[lang = en]; description[lang = ar]
+                                                  ; sample-generic-paragraph-investor-services ; Investor Services Generic Paragraph Component ; sample-generic-paragraph-investor-services ;                          ; "
+<section class='container mb-5 general-info mt-4'>
+	<div class='col-md-6 column' style='margin: 0 auto;'>
+		<p><strong>MISA</strong> is committed to supporting new and growing businesses in Saudi Arabia. To make it as easy as possible to invest in or set up and operate a business in KSA, it has created a network of dynamic Business Centers throughout the nation (Riyadh, Jeddah, Dammam, and Medina). Each center provides a highly responsive and effective resource to help companies get up and running quickly and efficiently.</p>
+		<p>The centers offer everything needed, including advice, license requirements, and after-license services by providing representatives of all related government departments, such as the Ministry of Labor, General Directorate of Passports, Ministry of Commerce and Investment, General Authority of Zakat and Tax, and notarial offices. They also provide high-end e-services from the registration point to online investment management through a variety of automated services represented in an advanced web portal.</p>
+	</div>
+</section>
+"                                                                                                                                                                                                                                              ; "
+<section class='container mb-5 general-info mt-4'>
+  <div class='col-md-6 column' style='margin: 0 auto;'>
+    <p>تلتزم وزارة الاستثمار بدعم الشركات الناشئة والنامية في المملكة العربية السعودية. ولجعل الاستثمار في المملكة سهلاً قدر الإمكان، فقد أنشأت الوزارة شبكة من مراكز الأعمال الفعّالة في جميع أنحاء المملكة (الرياض، جدة، الدمام، والمدينة). يوفر كل واحد منها موردًا عالي الاستجابة والفعالية يساعد الشركات على الانطلاق بسرعة وكفاءة.</p>
+    <p>تقدم هذه المراكز كل ما يلزم، بما في ذلك المشورة ومتطلبات الترخيص وخدمات ما بعد الترخيص من خلال ممثلين عن جميع الدوائر الحكومية ذات الصلة، كوزارة العمل، والمديرية العامة للجوازات، و وزارة التجارة ، والهيئة العامة للزكاة والدخل، وكتابات العدل. كما توفر خدمات إلكترونية فائقة تشمل جميع مراحل العمل من التسجيل إلى إدارة الاستثمار عبر الإنترنت من خلال مجموعة متنوعة من الخدمات الآلية في بوابة متقدمة.</p>
+  </div>
+</section>
+"
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]            ; linkName[lang = en]           ; linkName[lang = ar]; url                                                                            ; target(code)[default = 'newWindow']; $contentCV[unique = true]
+                              ; sample-investor-license-apply ; Sample Investor License Apply ;                    ; "https://eservices.sagia.gov.sa/en/login#register-apply" ;                                    ;
+                              ; sample-investor-account-login ; Sample Investor Account Login ;                    ; "https://eservices.sagia.gov.sa/"                                              ;                                    ;
+
+INSERT_UPDATE InvestSaudiServicesButtonsComponent; uid[unique = true]      ; name                          ; investorLicenseApply(uid, $contentCV); investorAccountLogin(uid, $contentCV); investorLicenseApplyText[lang = en]; investorAccountLoginText[lang = en]; investorLicenseApplyText[lang = ar]; investorAccountLoginText[lang = ar]; &componentRef           ; $contentCV[unique = true]
+                                                 ; sample-services-buttons ; Invest Saudi Services Buttons ; sample-investor-license-apply        ; sample-investor-account-login        ; "APPLY FOR INVESTOR LICENSE"       ; "INVESTOR ACCOUNT LOGIN"           ; "تسجيل جديد"                       ; "تسجيل الدخول"                     ; sample-services-buttons ;
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; sample-generic-paragraph-investor-services,sample-services-buttons
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+

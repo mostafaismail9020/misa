@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sagiabackofficeLabelLocator" class="com.hybris.cockpitng.util.labels.ResourcesLabelLocator" scope="singleton" init-method="init" lazy-init="false">
+  		<property name="location" value="/sagiabackoffice-backoffice-labels/"/>
+  		<property name="name" value="labels"/>
+  	</bean>
+
+	<bean id="sagiaBackofficeDateHandler" class="com.sap.ibso.eservices.backoffice.handler.CreateDateFormatHandler">
+		<property name="modelService" ref="modelService"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<bean id="sagiaBackofficeUpdateDateHandler" class="com.sap.ibso.eservices.backoffice.handler.UpdateDateFormatHandler">
+		<property name="objectFacade" ref="objectFacade"/>
+		<property name="validationHandler" ref="validationHandler"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+    <bean id="sagiaBackofficeHttpDestinationHandler" class="com.sap.ibso.eservices.backoffice.handler.HttpDestinationUpdateHandler" parent="editorAreaLogicHandler">
+        <property name="eventService"  ref="eventService" />
+    </bean>
+
+	<alias name="defaultSagiaUserPasswordPanelRenderer" alias="userPasswordPanelRenderer"/>
+	<bean id="defaultSagiaUserPasswordPanelRenderer"
+		  class=" com.sap.ibso.eservices.backoffice.renderers.SagiaUserPasswordPanelRenderer"  parent="defaultUserPasswordPanelRenderer">
+		<property name="userService" ref="userService"/>
+		<property name="sagiaConfigurationService" ref="sagiaConfigurationService" />
+		<property name="passwordPolicyService" ref="passwordPolicyService"/>
+	</bean>
+
+
+	<bean id="defaultAnswersAndQuestionsListCellRenderer"
+		  class="com.sap.ibso.eservices.backoffice.renderers.TicketConfigurationRenderer"  >
+		         
+	</bean>
+
+    <bean id="ticketConfigurationRenderer" class="com.sap.ibso.eservices.backoffice.renderers.TicketConfigurationRenderer" />
+    
+    <alias name="defaultSagiaWorkflowDecisionMaker" alias="workflowDecisionMaker" />
+	<bean id="defaultSagiaWorkflowDecisionMaker" class="com.sap.ibso.eservices.backoffice.actions.DefaultSagiaWorkflowDecisionMaker" parent="defaultWorkflowDecisionMaker">
+	</bean>	
+
+</beans>

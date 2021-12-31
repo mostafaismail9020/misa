@@ -1,0 +1,57 @@
+############# EVENT  MIPIM16 ########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails ;$contentCV[unique = true];uid[unique = true]				; keyName[lang = en]	    		;keyValue[lang = en];
+                              ;                        ; mipim-key-1         			; Courtiers                         ; 100;
+							  ;                        ; mipim-key-2        			; Speakers                          ; 480;
+							  ;                        ; mipim-key-3          			; Exhibiting Companies              ; 3,800;
+                              ;                        ; mipim-key-4          			; Sector                            ; Real Estate/Exhibitions;
+							  ;                        ; mipim-key-5          			; M2                                ; 22,000;
+#							  ;                        ; mipim-key-6         			; Exhibiting companies              ; 3,800;
+							  ;                        ; mipim-key-7					; countries                         ; 100;
+							  ;                        ; mipim-key-8      				; keynotes & speakers               ; 480;
+							  ;                        ; mipim-key-9       			    ; investors                         ; 24%;
+							  ;                        ; mipim-key-10      				; iCEOs and C-levels professionals  ; 15%;
+
+
+INSERT_UPDATE Media; code[unique = true]            ; realFileName                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+                   ;MIPIM-banner-image.jpg   		; MIPIM-banner-image.jpg   		; $siteResource/MIPIM-banner-image.jpg                                        ; image/jpg                   ;                                          ; ""     ;
+                   ;MIPIM-Thumbnail-image.jpg       ; MIPIM-Thumbnail-image.jpg     ; $siteResource/MIPIM-Thumbnail-image.jpg                                     ; image/jpg                   ;                                          ; ""     ;
+                   ;event-gallary-image.png         ; event-gallary-image.png       ; $siteResource/event-gallary-image.png                                       ; image/png                   ;                                          ; ""     ;
+				   
+				   
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias						; $contentCV;
+                            ; media-container-mipim   ;  event-gallary-image.png    ;           ;
+
+				   
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]   ; name                  ; url 												; &linkRef		;
+							  ;                          ; events-link5 		; eventslink5 			; https://www.mipim.com/en-gb/mipim2022.html		; events-link5	;			   
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]  ; eventUrl(uid, $contentCV)  ;eventLocation[lang = en]             ;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss];eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+                                        ;                         ;event-mipim         ; events-link5               ;Palais des Festivals, Cannes         ;15.03.2022 00:00:00                              ;18.03.2022 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]  ;eventName[lang = en]  ;eventShortInformation[lang = en];
+                                        ;                         ;event-mipim         ; MIPIM 2022           ;"The premier real estate event gathers the most influential players from all sectors of the international property industry for two days of networking, learning and transaction through premium events, conferences and dedicated exhibition zones."; 
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventKeyDetails(uid, $contentCV);
+										;						  ;event-mipim    	 ;mipim-key-1,mipim-key-2,mipim-key-3,mipim-key-4,mipim-key-5,mipim-key-7,mipim-key-8,mipim-key-9,mipim-key-10;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventBannerImage(code, $contentCV);eventThumbnailImage(code, $contentCV)	;eventGalleryImages(qualifier, $contentCV);
+										;						  ;event-mipim  	 ;MIPIM-banner-image.jpg 			;MIPIM-Thumbnail-image.jpg				;media-container-mipim	;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventFullDescription[lang = en];
+										;						  ;event-mipim    	 ;								;

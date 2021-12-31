@@ -1,0 +1,39 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media ; code[unique = true]    		; realFileName        			; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']	; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+                    ; about-invest-saudi.png		; about-invest-saudi.png		; $siteResource/about-invest-saudi.png                                          ; image/png                   	;                                          ; ""     ;
+					; about-saudi-overview.png		; about-saudi-overview.png		; $siteResource/about-saudi-overview.png                                        ; image/png                   	;                                          ; ""     ;
+		
+					; about-saudi-our-aim.png		; about-saudi-our-aim.png		; $siteResource/about-saudi-our-aim.png                                         ; image/png                   	;                                          ; ""     ;
+					; about-saudi-our-goal.png		; about-saudi-our-goal.png		; $siteResource/about-saudi-our-goal.png                                        ; image/png                   	;                                          ; ""     ;
+					; about-saudi-our-mission.png	; about-saudi-our-mission.png	; $siteResource/about-saudi-our-mission.png                             		; image/png                   	;                                          ; ""     ;
+
+					; about-saudi-wealth.png		; about-saudi-wealth.png		; $siteResource/about-saudi-wealth.png                                         	; image/png                   	;                                          ; ""     ;
+					; about-saudi-transperency.png	; about-saudi-transperency.png	; $siteResource/about-saudi-transperency.png                       				; image/png                   	;                                          ; ""     ;
+					; about-saudi-opportunity.png	; about-saudi-opportunity.png	; $siteResource/about-saudi-opportunity.png                        				; image/png                   	;                                          ; ""     ;
+
+					; about-saudi-wedo-1.png		; about-saudi-wedo-1.png		; $siteResource/about-saudi-wedo-1.png                                          ; image/png                   	;                                          ; ""     ;
+					; about-saudi-wedo-2.png		; about-saudi-wedo-2.png		; $siteResource/about-saudi-wedo-2.png                                          ; image/png                   	;                                          ; ""     ;
+					; about-saudi-wedo-3.png		; about-saudi-wedo-3.png		; $siteResource/about-saudi-wedo-3.png                                          ; image/png                   	;                                          ; ""     ;
+					; about-saudi-wedo-4.png		; about-saudi-wedo-4.png		; $siteResource/about-saudi-wedo-4.png                                          ; image/png                   	;                                          ; ""     ;
+					; about-saudi-wedo-5.png		; about-saudi-wedo-5.png		; $siteResource/about-saudi-wedo-5.png                                          ; image/png                   	;                                          ; ""     ;
+							
+					; about-saudi-number1.png		; about-saudi-number1.png		; $siteResource/about-saudi-number1.png                                         ; image/png                  	;                                          ; ""     ;
+					; about-saudi-number2.png		; about-saudi-number2.png		; $siteResource/about-saudi-number2.png                                         ; image/png                  	;                                          ; ""     ;
+					; about-saudi-number3.png		; about-saudi-number3.png		; $siteResource/about-saudi-number3.png                                         ; image/png                  	;                                          ; ""     ;
+					; about-saudi-number4.png		; about-saudi-number4.png		; $siteResource/about-saudi-number4.png                                         ; image/png                  	;                                          ; ""     ;
+					; about-saudi-number5.png		; about-saudi-number5.png		; $siteResource/about-saudi-number5.png                                         ; image/png                  	;                                          ; ""     ;
+

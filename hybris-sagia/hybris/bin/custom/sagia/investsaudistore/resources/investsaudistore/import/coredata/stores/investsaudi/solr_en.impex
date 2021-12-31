@@ -1,0 +1,9 @@
+$lang=en 
+$indexedType=investsaudiProductType 
+
+# Define the available sorts 
+UPDATE SolrSort;indexedType(identifier)[unique=true,default=$indexedType];code[unique=true];name[lang=$lang] 
+ ;;name-asc;Name (ascending); 
+ ;;name-desc;Name (descending); 
+ 
+ 

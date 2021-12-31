@@ -1,0 +1,88 @@
+$page = news-sagia-joins-si-uk-to-host
+$template = portalGlobalTemplate
+$name = SAGIA JOINS SI-UK TO HOST SAUDI-UK HIGHER EDUCATION MEETING
+$titleEn = $name
+$titleAr = هيئة الاستثمار تستضيف الجامعات البريطانية وتحتضن توقيع 3 مذكرات تفاهم في قطاع التعليم
+$shortDescEn = SAGIA convenes more than 100 representatives from 14 entities to explore opportunities
+$shortDescAr = استضافت الهيئة العامة للاستثمار بالتعاون مع SI-UK البريطانية اجتماع التعليم العالي
+$pagelabel = /news/sagia-joins-si-uk-to-host-saudi-uk-higher-education-meeting
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; au8i7828           ; au8i7828.jpg ; $siteResource/au8i7828.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; au8i7828 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; au8i7828                          ; au8i7828                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 08.09.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>SAGIA convenes more than 100 representatives from 14 entities to explore opportunities in the Kingdom&rsquo;s Higher Education segment</em></li>
+<li><em>Signatories exchange three Memoranda of Understanding aimed at facilitating greater collaboration and developing future opportunities</em></li>
+<li><em>Recent data show leading global education providers entering Saudi market on back of significant reforms</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<p><strong>Riyadh, 0</strong><strong>8</strong>&nbsp;<strong>September 2019</strong>: The Saudi Arabian General Investment Authority (SAGIA) today hosted the Saudi-UK Education Meeting at its Riyadh headquarters, convening more than 100 representatives of 14 entities from Saudi Arabia and the United Kingdom. Partnering with SI-UK &ndash; an advisory firm focused on supporting students applying to study in the UK &ndash; attendees explored opportunities in Saudi Arabia&rsquo;s higher education segment.</p>
+<p>Saudi Arabia&rsquo;s university-aged population is rapidly expanding and is expected to reach a cohort of more than four million 18-to-24-year-olds by 2025, up from three million today.<a href=""https://investsaudi.sa/en/news/sagia-joins-si-uk-to-host-saudi-uk-higher-education-meeting/#_ftn1"" name=""_ftnref1"">[1]</a>&nbsp;Government stakeholders have also recognized a need to engage private sector organizations to ensure higher education outcomes are aligned with job market requirements. National development and diversification plans have also outlined a need to establish strategic partnerships with apprenticeship providers, and new skills councils from industry, and large private companies.<a href=""https://investsaudi.sa/en/news/sagia-joins-si-uk-to-host-saudi-uk-higher-education-meeting/#_ftn2"" name=""_ftnref2"">[2]</a></p>
+<p>Mr. Ibrahim AlSuwail, SAGIA&rsquo;s Deputy Governor of Investor Services &amp; Advisory, commented:&nbsp;<em>&ldquo;Our country is undergoing a significant economic transformation. To ensure the continued prosperity of Saudi Arabia, we must empower young Saudi men and women who will become the Kingdom&rsquo;s leaders of tomorrow. This requires a commitment to education, facilitating skills transfer and creating new and valuable job opportunities by bolstering the private sector. This meeting &ndash; and the MoUs that have been exchanged today &ndash; reflect our increasing focus on promoting opportunities and facilitating international partnerships to drive the growth of this strategic market segment.&rdquo;</em></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Memoranda of Understanding exchanged at the meeting include:</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>SAGIA &amp; SI-UK &ndash; an agreement to&nbsp;</strong>cconsolidate and focus collaboration between Saudi government entities and higher education institutions in the UK.</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>SAGIA &amp; Saudi Engineering Council &ndash;&nbsp;</strong>an agreement to develop educational investments, and to attract institutions and special training providers in the field of engineering.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Saudi Engineering Council &amp; SI-UK &ndash;&nbsp;</strong>an agreement to support Saudi engineering students who plan to pursue further education in the UK</li>
+</ul>
+<p>&nbsp;</p>
+<p>The growing opportunities in Saudi Arabia&rsquo;s education sector reflect the recent reforms that have been introduced to make it easier for foreign investors to access the Saudi education market. In addition to allowing 100% foreign ownership in the sector in 2018, Saudi Arabia has undertaken a number of initiatives to encourage private investment, including subsidies for kindergarten and nursery schools, school construction financing and public-private partnerships.</p>
+<p>The reforms to the Kingdom&rsquo;s education sector come alongside a broad series of economic reforms which are enabling rapid growth in foreign investment in Saudi Arabia.</p>"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>استضافت الهيئة العامة للاستثمار بالتعاون مع SI-UK البريطانية اجتماع التعليم العالي السعودي البريطاني اليوم الأحد 8 سبتمبر، بحضور أكثر من 100 ممثل للقطاعين الحكومي والخاص من الجانبين السعودي والبريطاني.</p>
+<p>&nbsp;</p>
+<p>ويهدف الاجتماع الذي شهد حضور السفارة البريطانية في المملكة ووزارة التعليم والهيئة السعودية للمهندسين وعدد من الجامعات البريطانية وغيرها من ممثلي مختلف الجهات من البلدين، إلى بحث الفرص في قطاع التعليم بالمملكة، إضافة الى التعريف بالنظام التعليمي في المملكة، وبحث تعظيم مساهمة القطاع الخاص في نمو قطاع التعليم.</p>
+<p>كما شهد الاجتماع توقيع 3 مذكرات تفاهم بين الجانبين السعودي والبريطاني، حيث تم توقيع مذكرة تفاهم بين الهيئة العامة للاستثمار وSI-UK السعودية، لضمان العمل التعاوني مع المؤسسات التعليمية البريطانية، حيث تعتبر شركة&nbsp;SI-UK&nbsp;للخدمات الطلابية وكالة تساعد الطلاب الراغبين في إتمام تعليمهم خارج المملكة بالالتحاق بمؤسسات التعليم العالي بالمملكة المتحدة، وقدومها إلى المملكة كجزء من خطة التوسع لمكاتب&nbsp;SI-UK للخدمات الطلابية حول العالم، كما تضمن الاجتماع توقيع مذكرة تفاهم بين الهيئة العامة للاستثمار والهيئة السعودية للمهندسين، لتطوير الاستثمارات التعليمية ولجذب المؤسسات التعليمية الأجنبية المتخصصة في الهندسة، إضافة لتوقيع مذكرة تفاهم بين الهيئة السعودية للمهندسين وSI-UK ، لدعم طلاب الهندسة السعوديين في سعيهم للدراسة في بريطانيا.</p>
+<p>من جانبه علق وكيل المحافظ لخدمات واستشارات المستثمرين بالهيئة العامة للاستثمار&nbsp;الأستاذ إبراهيم&nbsp;بن صالح&nbsp;السويل في كلمته خلال اللقاء أن المملكة تشهد تحولاً اقتصاديًّا مهمًّا، ولازدهار وطني مستدام اس يجب علينا تمكين الشباب والشابات السعوديين الذين سيصبحون قادة المملكة في المستقبل، مشيرًا إلى أن هذا يتطلب التزامًا بالتعليم، وبنقل المهارات، وتوفير فرص عمل جديدة ذات قيمة عالية من خلال تعظيم مساهمة القطاع الخاص، منوهًا إلى أن هذا الاجتماع ومذكرات التفاهم التي تم تبادلها اليوم، تؤكد التركيز المتزايد على تعزيز الفرص وتسهيل إقامة الشراكات الدولية لتحفيز نمو هذا القطاع الإستراتيجي.</p>
+<p>يذكر أن المملكة قامت بعدد من المبادرات لتشجيع القطاع الخاص، بما في ذلك الإعانات التي تقدمها لمدارس رياض الأطفال ودور الحضانة، وتمويل بناء المدارس، إضافة إلى الشراكات المنعقدة بين القطاعين الخاص والعام، وتعد الفرص المتزايدة في قطاع التعليم السعودي؛ انعكاس للإصلاحات الاقتصادية التي أثمرت بتحقق بيئة تسهل فيها ممارسة الأعمال، تمكينًا للاستثمار الأجنبي للوصول إلى الفرص التي يزخر بها قطاع التعليم في المملكة.</p>
+<p>&nbsp;</p>
+<p>وما تزال المملكة تعمل على إيجاد بيئة استثمارية أكثر جذبًا وأكثر سهولة لممارسة الأعمال، إذ بلغت نسبة الإصلاحات الاقتصادية 55% من أصل ما يزيد عن 300 إصلاح اقتصادي، كان من ضمنها التملك الأجنبي الكامل في عدد كبير من القطاعات الاستثمارية في المملكة والتي كان من ضمنها مؤخرًا قطاع التعليم، اعتماد إجراءات أسرع وأقل تعقيدًا لتسجيل الأعمال، بما في ذلك إصدار تأشيرات العمل في 24 ساعة وإصدار التراخيص في وقت أقل من 24 ساعة، وتطوير البنية التحتية القانونية عبر تطبيق نظام الإفلاس الجديد، وإنشاء مركز تحكيم تجاري ومحاكم تجارية متخصصة، إضافة إلى تعزيز الحماية القانونية لصغار المساهمين.</p>
+<p>وفي سياق هذه الإصلاحات، فقد حظيت هذه المملكة بإشادة دولية؛ حيث حققت المرتبة الرابعة ضمن مجموعة العشرين وفقًا لتقرير سهولة ممارسة الأعمال الصادر من البنك الدولي، إضافة إلى ذلك؛ فقد&nbsp;صُنفت المملكة بين أفضل 40 اقتصادًا في العالم حسب تقرير التنافسية العالمي الصادر من المنتدى الاقتصادي العالمي.</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

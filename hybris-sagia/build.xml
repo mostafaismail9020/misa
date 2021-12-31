@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<project name="build" default="all">
+
+    <!-- The filename of the hybris commerce suite zip archive to install when using "ant install" -->
+    <property name="hybris.zip.package.filename" location="hybris-commerce-suite-2005.01.zip"/>
+
+    <property name="package.environment.config.dev.dir" location="hybris/config-dev" />
+    <property name="package.environment.config.stag.dir" location="hybris/config-stag" />
+    <property name="package.environment.config.prod.dir" location="hybris/config-prod" />
+    <property name="package.environment.misc.dev.dir" location="hybris/misc-dev" />
+    <property name="package.environment.misc.stag.dir" location="hybris/misc-stag" />
+    <property name="package.environment.misc.prod.dir" location="hybris/misc-prod" />
+
+    <property name="project.code" value="sag" />
+    <property name="project.version" value="sag_v01.01" />
+
+    <import file="build/master.xml" />
+                     
+    <!-- List of the custom extensions (separator ',') that should be considered for testing when using "ant junit" and "ant junitweb" -->
+    <property name="test.custom.extensions" value="sagiacore,sagiafacades,sagiacockpit,sagiafulfilmentprocess,sagiainitialdata,sagiastorefront" />
+
+</project>

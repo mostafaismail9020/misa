@@ -1,0 +1,11 @@
+#Ant properties
+#Mon Nov 20 23:22:07 UTC 2017
+builddate=20171120 2322
+description=sagiacore
+group.id=de.hybris.platform
+module.name=platform-module
+name=sagiacore
+releasedate=20171118 1516
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

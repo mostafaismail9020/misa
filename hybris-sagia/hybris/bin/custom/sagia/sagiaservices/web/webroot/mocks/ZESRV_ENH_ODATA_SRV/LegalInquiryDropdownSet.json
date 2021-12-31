@@ -1,0 +1,46 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryDropdownSet(ScenarioId='',LegenqId='FIN')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryDropdownSet(ScenarioId='',LegenqId='FIN')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryDropdown"
+        },
+        "ScenarioId": "",
+        "LegenqId": "FIN",
+        "Description": "FINE"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryDropdownSet(ScenarioId='',LegenqId='OTH')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryDropdownSet(ScenarioId='',LegenqId='OTH')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryDropdown"
+        },
+        "ScenarioId": "",
+        "LegenqId": "OTH",
+        "Description": "OTHERS"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryDropdownSet(ScenarioId='',LegenqId='PRC')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryDropdownSet(ScenarioId='',LegenqId='PRC')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryDropdown"
+        },
+        "ScenarioId": "",
+        "LegenqId": "PRC",
+        "Description": "PROSECUTION CASE"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryDropdownSet(ScenarioId='',LegenqId='VOI')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/LegalInquiryDropdownSet(ScenarioId='',LegenqId='VOI')",
+          "type": "ZESRV_ENH_ODATA_SRV.LegalInquiryDropdown"
+        },
+        "ScenarioId": "",
+        "LegenqId": "VOI",
+        "Description": "VIOLATION"
+      }
+    ]
+  }
+}

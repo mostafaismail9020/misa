@@ -1,0 +1,94 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalGlobalTemplate
+$page = living-in-saudi
+$pageName = الحياة في السعودية
+$pageTitleAr = $pageName
+$pageLabel = /livingInSaudi
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; title[lang = ar]; description[lang = ar]; keywords[lang = ar]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageTitleAr    ; $pageName             ; Invest Saudi,Invest Saudi - Living,Saudi, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+############# MEDIA AND COMPONENTS START ######################
+
+INSERT_UPDATE Media	; code[unique = true]         				; realFileName             					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; livinginsaudi-bannerimage.png 			; livinginsaudi-bannerimage.png				; $siteResource/livinginsaudi-bannerimage.png 								  ; image/png						;										   ; ""  ;
+					; healthcare-backgroundimage.png 			; healthcare-backgroundimage.png			; $siteResource/healthcare-backgroundimage.png 								  ;	image/png						;										   ; ""  ;
+					; education-backgroundimage.png 			; education-backgroundimage.png				; $siteResource/education-backgroundimage.png								  ;	image/png						;										   ; ""  ;
+					; leisure-backgroundimage.png  				; leisure-backgroundimage.png				; $siteResource/leisure-backgroundimage.png 								  ;	image/png						;										   ; ""  ;
+					; digitalInfrastructure-backgroundimage.png	; digitalInfrastructure-backgroundimage.png	; $siteResource/digitalInfrastructure-backgroundimage.png 					  ;	image/png						;										   ; ""  ;
+					; livinginsaudi-backgroundimage.png			; livinginsaudi-backgroundimage.png			; $siteResource/livinginsaudi-backgroundimage.png 							  ;	image/png						;										   ; ""  ;
+					; healthcareicon.png			            ; healthcareicon.png						; $siteResource/healthcareicon.png 											  ;	image/png						;										   ; ""  ;
+					; educationicon.png			                ; educationicon.png							; $siteResource/educationicon.png 											  ;	image/png						;										   ; ""  ;
+					; leisureicon.png					        ; leisureicon.png							; $siteResource/leisureicon.png 											  ;	image/png						;										   ; ""  ;
+					; digitalinfrastructureicon.png	            ; digitalinfrastructureicon.png				; $siteResource/digitalinfrastructureicon.png								  ;	image/png						;										   ; ""  ;
+
+############# MEDIA AND COMPONENTS END ######################
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]		 	  	; descriptionText[lang = ar]	 		 			; descriptionText2 [lang = ar]				        	 ; buttonText[lang = ar]   	; image(code, $contentCV)          	; buttonURL(&linkRef)   ; link   ; &componentRef 			; $contentCV[unique = true]
+										; livinginsaudi-banner-1    	 	; الحياة في السعودية 							 	; الوجهة العالمية الجديدة للعَيش والعمل والترفيه	   		 ;	                		; livinginsaudi-bannerimage.png   	; 						; true   ; livinginsaudi-banner-1  	; 
+
+
+INSERT_UPDATE BreadcrumbComponent; uid[unique=true]					      	; &componentRef						 				; $contentCV[unique=true]
+								 ; livinginsaudi-breadcrumb 		      	; livinginsaudi-breadcrumb			 				;
+
+
+INSERT_UPDATE CMSParagraphComponent ; $contentCV[unique=true]		      	; uid[unique=true]					 	 			; content[lang=ar]																																																											   	; &componentRef
+									;									  	; livinginsaudi-paragraph			 	 			; "تقدّم المملكة العربية السعودية فرصة فريدة للازدهار على المدى الطويل في ظل التحوّل الحيوي الذي تشهده على الصعيد الاجتماعي والثقافي والاقتصادي. إن المملكة العربية السعودية ذات الحضارة العريقة والتاريخ الغني والمستقبل الواعد جاهزة لاستقبال المستثمرين وعائلاتهم."	; livinginsaudi-paragraph
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true] 			    ; simpleCMSComponents(&componentRef)				; &componentRef					  						; $contentCV[unique = true]
+										; livinginsaudi-banner-container    ; livinginsaudi-banner-1 			    			; livinginsaudi-banner-container  						;
+
+
+INSERT_UPDATE LivingInSaudiAchievement;id[unique = true];header[lang = ar]			; description[lang = ar] 													 												; &achievementRef
+###Health Care
+									  ;health1			;المرتبة الأولى			    ;عربيًا والواحدة والعشرون عالميًا في "مؤشّر السعادة العالمي 2021																;health1
+									  ;health2          ;20 مليون              		;مستخدم لتطبيق "توكّلنا" الذي يُعنى بتحديد ومتابعة الحالات المصابة بفيروس كورونا  											;health2
+									  ;health3			;2				            ;من بين أفضل خمس مستشفيات في الشرق الأوسط																					;health3
+									  ;health4			;100+			  			;مستشفى في الرياض 																											;health4
+
+###Education
+									 ;education1		;1							;أكبر جامعة للإناث في العالم																									;education1
+									 ;education2		;19.2%						;النسبة الأعلى في ميزانية 2021 مخصصة للتعليم 																				;education2
+									 ;education3		;39							;جامعة وكلّية في الرياض																										;education3
+									 ;education4		;36,461						;مؤسسة تعليمية في المملكة العربية السعودية																					;education4
+
+###Leisure
+									 ;leisure1			;11							;فعالية ضمن "مواسم السعودية" تضمّ أكثر من 30 مليون مشارك																		;leisure1
+									 ;leisure2			;%23						;نسبة المشاركة في الأنشطة الرياضية عام 2019، مما يشكّل ارتفاعًا بنسبة 13% مقارنة بعام 2015										;leisure2
+									 ;leisure3			;64 مليار دولار				;المبلغ المخصص للفنون والسياحة والترفيه في السنوات العشر المقبلة															;leisure3
+									 ;leisure4			;28							;لعبة ومركبة في متنزه "6 فلاجز القدية" الترفيهي و الذي يمتد على مساحة 32 هكتار  و المقرر افتتاحه عام 2023 					;leisure4
+
+###Digital infrastructure 
+									;digital1		    ;المرتبة الأولى				;بين دول مجموعة العشرين الأكثر نهوضًا بقدرتها التنافسية الرقمية عام 2020														;digital1
+									;digital2			;المرتبة السابعة			;عالميا لجهة سرعة الإنترنت في الربع الثاني من العام 2021																		;digital2
+									;digital3			;%47						;نسبة التغطية بالجيل الخامس																								    ;digital3
+									;digital4			;%95.70						;نسبة استخدام المواطنين والمقيمين في السعودية للإنترنت، فيما تبلغ نسبة المستخدمين للإنترنت عالميا 53.6%						;digital4
+
+
+INSERT_UPDATE InvestSaudiLivingInSaudiComponent; uid[unique = true]							; achievements(key,value(&achievementRef))[map-delimiter=|]					; imageIcon(code, $contentCV)		; backgroundImage(code, $contentCV)		; headerText[lang = ar]			; description[lang = ar]  																															; bannerImage(code, $contentCV)					; alignmentLeft 	;  &componentRef 				; $contentCV[unique = true]
+											   ; HealthAchievementComponent 				; 1->health1 | 2->health2 | 3 -> health3 | 4 -> health4						; healthcareicon.png				; livinginsaudi-backgroundimage.png		; الرعاية الصحية				; نظام رعاية صحية متقدّم يوفّر للمواطنين والمقيمين والزائرين مستويات عالية من الجودة في الرعاية الطبية 												;healthcare-backgroundimage.png					;true				; HealthAchievementComponent	;
+											   ; EducationAchievementComponent 				; 1->education1 | 2->education2 | 3 -> education3 | 4 -> education4			; educationicon.png 				; livinginsaudi-backgroundimage.png 	; التعليم						; نظام تعليميّ متطور يسعى لتعزيز التنوّع، التفكير النقدي والابتكار لدى كافّة الطلاب.																		;education-backgroundimage.png					;false				; EducationAchievementComponent	;
+											   ; LeisureAchievementComponent 				; 1->leisure1 | 2->leisure2 | 3 -> leisure3 | 4 -> leisure4					; leisureicon.png 					; livinginsaudi-backgroundimage.png 	; الترفيه						; أنشطة ترفيهية  متنوعه على مدار العام ولكافة الفئات العمريّة.																						;leisure-backgroundimage.png					;true				; LeisureAchievementComponent	;
+											   ; DigitalInfrastructureAchievementComponent 	; 1->digital1 | 2->digital2 | 3 -> digital3 | 4 -> digital4					; digitalinfrastructureicon.png 	; livinginsaudi-backgroundimage.png		; البنيه التحتية الرقمية		; نظام بيئي رقمي مزدهر يجمع بين متطلبات اليوم وطموح الغد لضمان تحوّل المملكة العربية السعودية إلى دولة رقمية. 									    ;digitalInfrastructure-backgroundimage.png 		;false				; DigitalInfrastructureAchievementComponent	;
+
+
+INSERT_UPDATE InvestSaudiLivingInSaudiComponentContainer; uid[unique = true]					; title[lang = ar]                   	; simpleCMSComponents(&componentRef)                                                                                           	; &componentRef                        ; $contentCV[unique = true]
+														; living-in-saudi-achievement-container	; LIVING IN SAUDI COMPONENT CONTAINER	; LeisureAchievementComponent,DigitalInfrastructureAchievementComponent,EducationAchievementComponent,HealthAchievementComponent; living-in-saudi-achievement-container;
+
+ 

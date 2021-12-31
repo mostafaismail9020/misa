@@ -1,0 +1,50 @@
+.baList {
+    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    &_columns {
+        columns: 2;
+        column-gap: 0;
+        #media-breakpoint-down(sm, {
+			columns: 1;
+            column-gap: 0;
+		});	
+    }
+    
+    &-item {
+        padding: 0;
+        font-size: 14px;
+        position: relative;
+        background: #fff;
+        cursor: pointer;
+        break-inside: avoid-column;
+        
+        &:hover,
+        &:focus {
+            background: #fbfbfc;
+            
+            a {
+                //font-weight: 600;
+                color: @apple;
+            }
+        }
+        
+        a {
+            color: @dark;
+            padding: 10px 24px; 
+            display: block;
+        }
+    }
+}
+
+
+//baList in businessActivities Modal
+.modal-dialog_businessActivities {
+    
+    .baList {
+        margin: 0 -25px;
+        width: calc(~"100% + 50px");
+    }
+}

@@ -1,0 +1,109 @@
+.dashboardWidgetPayments{
+	&-info{
+		text-align: center;
+		padding-top: 25px;
+		&-icon{
+			margin-bottom: 25px;
+			svg{
+				width: 72px;
+				height: 72px;
+			}
+		}
+
+		&-text{
+			font-size: 13px;
+			color: #313f4b;
+			margin-bottom: 25px;
+		}
+	}
+
+	&-action{
+		text-align: center;
+	}
+
+
+	&-lastCol{
+		width: 15%;
+	}
+
+	&-status-icon{
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		vertical-align: sub;
+		margin-left: 5px;
+	}
+
+
+
+	&-amount{
+		display: block;
+		font-size: 15px;
+		color: #000;
+		font-weight: bold;
+	}
+
+	&-currency{
+		display: block;
+		font-size: 14px;
+		color: @steel-grey;
+	}
+
+	&-date{
+		//font-weight: bold;
+		font-size: 20px;
+		line-height: 24px;
+		text-transform: uppercase;
+		float: left;
+		div{
+			font-size: 13px;
+			line-height: 16px;
+		}
+
+		&_advanced {
+			font-size: 14px;
+
+			div{
+				padding: 10px 0 0 0;
+			}
+		}
+	}
+
+	&-title{
+		font-size: 15px;
+  		color: @apple;
+  		line-height: 18px;
+  		margin-bottom: 6px;
+  		margin-left: 45px;
+
+		&_advanced {
+			margin-left: 0px;
+		}
+	}
+
+	&-eid{
+		font-size: 13px;
+		color: @steel-grey;
+		line-height: 15px;
+		margin-left: 45px;
+
+		&_advanced {
+			margin-left: 100px;
+		}
+		
+		&_noMargin {
+			margin-left: 0;
+		}
+	}
+
+
+	#media-breakpoint-down(sm,{
+		margin-top: -9px;
+
+		.tableModule{
+			margin-left: -10px;
+			margin-right: -10px;
+			margin-bottom: 0;
+		}
+	});
+}

@@ -1,0 +1,131 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleEn = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 ; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+			  
+					   ; al-baha-banner-image.png	                                        			 ; al-baha-banner-image.png	                                 						; $siteResource/al-baha-banner-image.png	                                        			  ;                 image/png                ;                                          ; ""     ;
+					   ; al-baha-map.png                                                       		 ; al-baha-map.png                                               						; $siteResource/al-baha-map.png                                                  			  ;                 image/png                ;                                          ; ""     ;
+					   ; al-baha-trading.png				   						                       ; al-baha-trading.png				   						                 			; $siteResource/al-baha-trading.png				   						                                                      ;                 image/png                ;                                          ; ""     ;
+					   ; al-baha-health-care.png		           					                       ; al-baha-health-care.png		           					                 			; $siteResource/al-baha-health-care.png		           					                                                      ;                 image/png                ;                                          ; ""     ;
+					   ; al-baha-non-metallic-mineral-products-manufacturing.png	                       ; al-baha-non-metallic-mineral-products-manufacturing.png	                 			; $siteResource/al-baha-non-metallic-mineral-products-manufacturing.png	                                                      ;                 image/png                ;                                          ; ""     ;
+					   ; al-baha-technology.png	           						                       ; al-baha-technology.png	           						                 			; $siteResource/al-baha-technology.png	           						                                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-tourism.png		           						                       ; al-baha-tourism.png		           						                 			; $siteResource/al-baha-tourism.png		           						                                                      ;                 image/png                ;                                          ; ""     ;   
+																	   
+					   ; al-baha-population.png        	           ; al-baha-population.png        	           		; $siteResource/al-baha-population.png        	                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-airport.png    			     		 ; al-baha-airport.png    							; $siteResource/al-baha-airport.png    			                                 		  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-population-growth.png        		 ; al-baha-population-growth.png   				; $siteResource/al-baha-population-growth.png    	                                		  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-landmass.png                       ; al-baha-landmass.png               				; $siteResource/al-baha-landmass.png                                                    	  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-active-factories.png  	   		 ; al-baha-active-factories.png  					; $siteResource/al-baha-active-factories.png  	                               		  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-dams.png        		           ; al-baha-dams.png        		       			; $siteResource/al-baha-dams.png        			                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-hotels.png				           ; al-baha-hotels.png				      			; $siteResource/al-baha-hotels.png				                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-roads-length.png                   ; al-baha-roads-length.png                      	; $siteResource/al-baha-roads-length.png                                                   ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-chambers-of-commerce.png           ; al-baha-chambers-of-commerce.png                ; $siteResource/al-baha-chambers-of-commerce.png                                           ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-hospitals.png			           ; al-baha-hospitals.png			   				; $siteResource/al-baha-hospitals.png				                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-industrial-city.png		      	 ; al-baha-industrial-city.png						; $siteResource/al-baha-industrial-city.png		                                  		  ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-towns.png				        	 ; al-baha-towns.png							    ; $siteResource/al-baha-towns.png					                                    	  ;                 image/png                ;                                          ; ""     ;   					
+					   											   
+					   ; al-baha-good-electricity-infrastructure.png             ; al-baha-good-electricity-infrastructure.png             		; $siteResource/al-baha-good-electricity-infrastructure.png                                          ;                 image/png                ;                                          ; ""     ;   
+					   ; al-baha-good-road-infrastructure.png                    ; al-baha-good-road-infrastructure.png                       	; $siteResource/al-baha-good-road-infrastructure.png                                                 ;                 image/png                ;                                          ; ""     ;   	
+					   ; al-baha-highest-production-honey-nationally.png         ; al-baha-highest-production-honey-nationally.png              ; $siteResource/al-baha-highest-production-honey-nationally.png                                      ;                 image/png                ;                                          ; ""     ;   	
+					   ; al-baha-good-digital-infrastructure.png                 ; al-baha-good-digital-infrastructure.png                      ; $siteResource/al-baha-good-digital-infrastructure.png                                              ;                 image/png                ;                                          ; ""     ;   	
+					   ; al-baha-high-capacity-higher-education.png              ; al-baha-high-capacity-higher-education.png               	; $siteResource/al-baha-high-capacity-higher-education.png                                           ;                 image/png                ;                                          ; ""     ;   												   
+					   ; al-baha-two-industrial-cities.png                       ; al-baha-two-industrial-cities.png                			; $siteResource/al-baha-two-industrial-cities.png                                                    ;                 image/png                ;                                          ; ""     ;   	
+					   
+					  
+					
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=en]			; bannerText[lang=en]																																						 ; bannerImage (code, $contentCV)	; keyFactsHeader [lang = en]		 ; keyStrengthsHeader [lang = en] 	 ; opportunitiesHeader [lang = en]		
+							   ; al-baha		 	;				; AL-BAHA PROVINCE			; A region which enjoys several beautiful landscapes ; al-baha-banner-image.png			; KEY FACTS AND FIGURES	 			 ; REGIONAL BENEFITS		 			 ; 																																																									
+	
+	
+	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 	 ;  $contentCV  ; headerText[lang = en]    							; imageIcon  (code, $contentCV)    								; &componentRef
+											    ; al-baha-trading		 ; 				; Trade				   							; al-baha-trading.png				   							; al-baha-trading		
+                                                ; al-baha-health-care	 ;              ; Health Care			           					; al-baha-health-care.png		           					    ; al-baha-health-care	
+                                                ; al-baha-non-metallic	 ;              ; Non-metallic mineral products manufacturing	    ; al-baha-non-metallic-mineral-products-manufacturing.png	    ; al-baha-non-metallic	
+                                                ; al-baha-technology	 ;              ; Technology	           							; al-baha-technology.png	           							; al-baha-technology	
+                                                ; al-baha-tourism		 ;              ; Tourism		           							; al-baha-tourism.png		           							; al-baha-tourism		
+	
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = en] ; value[lang = en] 
+										; al-baha-strategic-population		;			   ; 500,000		; population
+										; al-baha-strategic-landmass		;			   ; 12,000 km2 	; in landmass area
+	
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]				; $contentCV   	; sectorHeader	[lang = en]	; backgroundImage (code, $contentCV)   			; sectors(&componentRef) 																; longDescription[lang = en]																																																																																																																												  ; localizedStats (uid, $contentCV)   						               ; &componentRef
+												 ; al-baha-strategic-component		;          		; STRATEGIC SECTORS			; al-baha-map.png				; al-baha-trading,al-baha-health-care,al-baha-non-metallic,al-baha-technology,al-baha-tourism		; Small in size but rich in character, Al-Baha's is characterized by the cultivation of summer seasonal fruits such as pomegranates and oranges. The region enjoys several beautiful landscapes, with forests and ancient cities that will be interesting for tourists to explore. The government has launched several infrastructure projects, including road and tourism developments. The region offers two industrial cities, an excellent road network, and good airport infrastructure, in addition to a business-friendly ecosystem.	  ; al-baha-strategic-population,al-baha-strategic-landmass 	                   ;  al-baha-strategic-component
+                                                                               
+######################################################################	
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]		   ; $contentCV ; imageIcon (code, $contentCV) 			; headerText[lang = en]		   	;  text[lang = en]									; &componentRef
+#									   ; al-baha-keyfacts1	       ;			; al-baha-population.png        		; 497,068                   	;  population										; al-baha-keyfacts1	
+									   ; al-baha-keyfacts2         ;            ; al-baha-airport.png    				; 1		                   		;  domestic airport     ; al-baha-keyfacts2 
+#									   ; al-baha-keyfacts3         ;            ; al-baha-population-growth.png    		; 1.90%		               		;  annual population growth between 2013-2019		; al-baha-keyfacts3 		
+									   ; al-baha-keyfacts4         ;            ; al-baha-landmass.png              	; 12,000 km2			            ;  in landmass area                                 ; al-baha-keyfacts4 
+									   ; al-baha-keyfacts5         ;            ; al-baha-active-factories.png  		; 31		               		;  active factories in Q3 2021					    ; al-baha-keyfacts5 
+									   ; al-baha-keyfacts6         ;            ; al-baha-dams.png        				; 48		                   	;  dams									            ; al-baha-keyfacts6 
+									   ; al-baha-keyfacts7         ;            ; al-baha-hotels.png					; 11		                   	;  Hotels					                        ; al-baha-keyfacts7 
+									   ; al-baha-keyfacts8         ;            ; al-baha-roads-length.png             	; 1,869			               	;  roads length						                ; al-baha-keyfacts8 
+									   ; al-baha-keyfacts9         ;            ; al-baha-chambers-of-commerce.png      ; 3	                   	   	   	;  Chambers of Commerce                             ; al-baha-keyfacts9 
+									   ; al-baha-keyfacts10        ;            ; al-baha-hospitals.png					; 10			               	;  hospitals with 1,165 beds			            ; al-baha-keyfacts10
+									   ; al-baha-keyfacts11        ;            ; al-baha-industrial-city.png			; 1			               		;  industrial city			                        ; al-baha-keyfacts11
+									   ; al-baha-keyfacts12        ;            ; al-baha-towns.png						; 10			               	;  Towns			                                ; al-baha-keyfacts12
+									  
+							   
+									   
+									   
+									   
+									 
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]									; $contentCV      ; image (code, $contentCV)					          ; text[lang=en]				                         ;&componentRef
+                                                                                                                                                                                                                    
+										   ; al-baha-key-strength1                    ;                 ; al-baha-good-electricity-infrastructure.png                      ; GOOD ELECTRICITY INFRASTRUCTURE                          ; al-baha-key-strength1
+                                           ; al-baha-key-strength2                    ;                 ; al-baha-good-road-infrastructure.png                             ; GOOD ROAD INFRASTRUCTURE                                 ; al-baha-key-strength2
+                                           ; al-baha-key-strength3                    ;                 ; al-baha-highest-production-honey-nationally.png                  ; HIGHEST PRODUCTION OF HONEY IN THE KINGDOM                   ; al-baha-key-strength3
+                                           ; al-baha-key-strength4                    ;                 ; al-baha-good-digital-infrastructure.png                          ; GOOD DIGITAL INFRASTRUCTURE                            ; al-baha-key-strength4
+                                           ; al-baha-key-strength5                    ;                 ; al-baha-high-capacity-higher-education.png                       ; HIGH CAPACITY FOR HIGHER EDUCATION                       ; al-baha-key-strength5
+		                                   ; al-baha-key-strength6                    ;                 ; al-baha-two-industrial-cities.png                                ; TWO INDUSTRIAL CITIES                 				  ; al-baha-key-strength6
+	
+	
+#####################################################	
+	
+	
+													
+	
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																									; keyStrengths(&componentRef) 																												  ; investmentOpportunities(&componentRef)
+							   ; al-baha		 		;				    ;  al-baha-strategic-component  				 ;al-baha-keyfacts2 ,al-baha-keyfacts4 ,al-baha-keyfacts5 ,al-baha-keyfacts6, al-baha-keyfacts7 ,al-baha-keyfacts8 ,al-baha-keyfacts9 ,al-baha-keyfacts10,al-baha-keyfacts11,al-baha-keyfacts12    ; al-baha-key-strength1,al-baha-key-strength2,al-baha-key-strength3,al-baha-key-strength4,al-baha-key-strength5,al-baha-key-strength6    	  ;	
+	
+	
+

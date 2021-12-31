@@ -1,0 +1,40 @@
+############# EVENT  Reframe Hospitality ########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$eventNameAr= إعادة صياغة مفهوم الضيافة
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails; $contentCV[unique = true];uid[unique = true]		;keyName [lang = ar]								; keyValue[lang = ar];
+                             ;                        	;reframe-key-1       	; عدد الدول الممثلة 								; 80;  
+							 ;                        	;reframe-key-2     		; عدد المتحدثون 									; 230+;
+							 ;                       	;reframe-key-3     		; القطاعات											; السياحة / المعارض;
+                             ;                        	;reframe-key-4         	; ألف من كبار القادة								; 2.5k; 
+							 ;                        	;reframe-key-5     		; دولة ممثلة										; 80 ;
+							 ;                        	;reframe-key-6     	    ; متحدث رائد في الصناعة								; 230+
+							 ;                        	;reframe-key-7        	; رئيس تنفيذي من كل أنحاء العالم					; 95   
+							 ;                        	;reframe-key-8     		; مليار دولار - أصول تحت إدارة مجتمع المستثمرين		; $600B
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]   			; eventName[lang = ar]   ;eventLocation[lang = ar]	;
+                                        ;                         ;event-reframe-hospitality  		; $eventNameAr           ; برلين, المانيا			;
+										
+										
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	  			; eventShortInformation[lang = ar]	;
+										;						  ; event-reframe-hospitality   	; "سيكون المنتدى الدولي للاستثمار الفندقي للعام 2021م مُختلفًا لأسبابٍ واضحة، لكنه سيظل -كما عُرِف دائمًا- المكان الذي تُبرم فيه الصفقات وتتُخذ فيه القرارات الهامة في مجال" ;
+
+                                            															
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]			;eventKeyDetails(uid, $contentCV);
+										;						  ;event-reframe-hospitality    ;reframe-key-1,reframe-key-2,reframe-key-3,reframe-key-4,reframe-key-5,reframe-key-6,reframe-key-7,reframe-key-8 ;
+									   
+									   
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]			; eventFullDescription[lang = ar]	;
+										;						  ;event-reframe-hospitality   	; "
+وما سترونه في المنتدى الدولي للاستثمار الفندقي هذا العام ما هو إلا اتحاد واجتماع رواد الصناعة. تحسنت الظروف الاقتصادية، وفقًا لآخر تقييم لرأي المستثمرين، تحسنًا ملحوظًا، فقد ارتفع من الربع الثالث بنسبة 54٪ ليصل في الربع الرابع لنسبة 74% من توقعات المستثمرين للتحسن. يتميّز قطاع الضيافة بالمرونة والقدرة على التكيف. ونتشارك حاليًا -أكثر من أي وقت مضى- الهدف الجماعي المتمثل في دعم بعضنا البعض لإعادة صياغة الحوار والصفقات ومفهوم الضياف
+";

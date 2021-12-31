@@ -1,0 +1,33 @@
+############# EVENT  POWERING PROGRESS DEFINING YOUR FUTURE ########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$eventNameAr= عرض الدفاع ومعدات الأمن الدولي
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails ; $contentCV[unique = true];uid[unique = true]		;keyValue[lang = ar]		; keyName[lang = ar]			;                  
+								;						;powering-key-1          	;1,700						; بلغ عدد العارضون لعام 2019 	;    
+								;						;powering-key-2              ;القطاع					; الدفاع / معرض					;
+		                      
+       
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]       ; eventName[lang = ar]   ;eventLocation[lang = ar]	;
+                                        ;                         ;event-powering-progress  ; $eventNameAr           ; 	لندن					;
+										
+										
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	      ;eventShortInformation[lang = ar];
+										;						  ; event-powering-progress   ;"يربط معرض الدفاع ومعدات الأمن الدولي الحكومات والقوات المسلحة الوطنية وقادة الفكر في صناعة الدفاع وسلسلة التوريد لقطاع الدفاع والأمن بشكلٍ كامل على نطاق عالمي";
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]			;eventKeyDetails(uid, $contentCV);
+										;						  ;event-powering-progress  	;powering-key-1 ,powering-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]			; eventFullDescription[lang = ar];
+										;						  ;event-powering-progress  	; "
+ومن خلال مجموعة من الفرص القيمة للتواصل، ومنصة للأعمال، والوصول إلى المحتوى ذي الصلة والعروض التوضيحية الحية، فإنه يمكن لمجتمع معرض الدفاع ومعدات الأمن الدولي تعزيز العلاقات وتبادل المعرفة والمشاركة في أحدث الإمكانيات على نطاق الفضاء والبر والبحر والأمن والمناطق المُشتركة للمعرض.";
+

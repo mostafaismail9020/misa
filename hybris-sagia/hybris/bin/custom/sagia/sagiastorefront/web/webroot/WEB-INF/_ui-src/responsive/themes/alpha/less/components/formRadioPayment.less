@@ -1,0 +1,108 @@
+//default RadioButtons are displayed inline
+.formRadioPayment {
+		
+	.form-group {
+		position: relative;
+		width: calc(~"100% + 4px");
+		margin: 0 -2px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+  
+	.form-item {
+		display: block;
+		padding: 0 2px;
+		flex: 0 1 auto;
+	}
+
+	.form-control{
+
+		opacity: 0;
+		position: absolute;
+		cursor: default;
+		pointer-events: none;
+
+		//&:checked {
+		//
+		//	& + .control-label {
+		//		border-color: @apple;
+		//		background: linear-gradient(124deg, #7acc61, #73c859 74%, #6dc452);
+		//		box-shadow: 0 12px 22px 0 rgba(160, 237, 152, 0.5);
+		//		transition: box-shadow 0.125s ease-out;
+		//	}
+		//}
+		//
+		//&:focus {
+		//	& + .control-label {
+		//		border-color: @apple;
+		//		background: linear-gradient(124deg, #7acc61, #73c859 74%, #6dc452);
+		//		background: red;
+		//	}
+		//}
+		
+		&[disabled] {
+			
+			& + .control-label {
+
+				cursor: default;
+			}
+			
+			&:checked {
+				
+				& + .control-label {
+
+					span {
+						
+					}
+				}				
+			}
+		}
+	}	
+	
+	.control-label{
+		background: #fff;
+		position: relative;
+		cursor: default;
+		pointer-events: none;
+		text-align: center;
+		height: 44px;
+		border-radius: 4px;
+		padding: 2px;
+		border: 1px solid transparent;
+		
+		&:hover {
+			border-color: @apple;
+			background: @apple;
+		}
+	}
+
+	.form-control::placeholder{
+		font-size: 0;
+	}
+
+
+	.help-block{
+		font-size: 10px;
+		text-align: right;
+		color: #ff4c4a;
+		line-height: 1.2;
+		margin-top: 6px;
+		margin-left: 8px;
+		margin-right: 8px;
+		width: 100%;
+	}
+
+	
+
+	// error
+	.form-group.has-error .control-label{
+		color: #ff4c4a;
+		
+		span {
+			border-color: #ff4c4a;
+		}
+	}
+
+
+}

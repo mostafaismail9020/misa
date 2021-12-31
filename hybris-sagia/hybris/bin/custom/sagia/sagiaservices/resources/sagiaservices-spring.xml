@@ -1,0 +1,1859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<!--suppress SpringSecurityFiltersConfiguredInspection, SpringSecurityFiltersConfiguredInspection -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="httpURLConnectionService" class="com.sap.ibso.eservices.sagiaservices.services.http.HttpURLConnectionService"/>
+
+	<bean id="oDataEdmConvertor" class="com.sap.ibso.eservices.sagiaservices.utils.ODataEdmConvertor"/>
+
+	<bean id="sagiaConfigurationFacade" class="com.sap.ibso.eservices.sagiaservices.services.DefaultSagiaConfigurationFacade">
+		<property name="sagiaConfigurationConverter" ref="sagiaConfigurationConverter"/>
+		<property name="sagiaConfigurationService" ref="sagiaConfigurationService"/>
+	</bean>
+
+	<bean id="smsService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SmsService">
+		<property name="httpURLConnectionService" ref="httpURLConnectionService"/>
+		<property name="sagiaConfigurationFacade" ref="sagiaConfigurationFacade"/>
+	</bean>
+
+	<!-- ODATA SERVICES START -->
+	<bean id="oDataService" abstract="true" class="com.sap.ibso.eservices.sagiaservices.services.ODataService" init-method="init" destroy-method="destroy">
+		<property name="httpURLConnectionService" ref="httpURLConnectionService"/>
+		<property name="ODataEdmConvertor" ref="oDataEdmConvertor"/>
+		<property name="baseStoreService" ref="baseStoreService"/>
+		<property name="userService" ref="userService"/>
+		<property name="eventService" ref="eventService"/>
+        <property name="commonI18NService" ref="commonI18NService"/>
+	</bean>
+
+	<bean id="zqeemahShrhldrODataService" parent="oDataService">
+		<property name="serviceName" value="ZQEEMAH_SHRHLDR_SRV"/>
+	</bean>
+	<bean id="zqeemahSurveyODataService" parent="oDataService">
+		<property name="serviceName" value="ZQEEMAH_SURVEY_SRV"/>
+	</bean>
+
+	<bean id="zui5SagiaODataService" parent="oDataService">
+		<property name="serviceName" value="ZUI5_SAGIA_SRV"/>
+	</bean>
+	
+	<bean id="zui5SagiaContactUsODataService" parent="oDataService">
+		<property name="serviceName" value="ZUI5_GENERAL_INQUIRY_SRV"/>
+	</bean>
+
+	<bean id="zui5RealEstateODataService" parent="oDataService">
+		<property name="serviceName" value="ZUI5_REAL_ESTATE_SRV"/>
+	</bean>
+	<bean id="zui5NewInvApptODataService" parent="oDataService">
+		<property name="serviceName" value="ZUI5_NEW_INV_APPT_SRV"/>
+	</bean>
+	<bean id="ZUI5SpecialServicesODataService" parent="oDataService">
+		<property name="serviceName" value="ZUI5_SPECIAL_SERVICES_SRV"/>
+	</bean>
+	<bean id="zui5NipSrvODataService" parent="oDataService">
+		<property name="serviceName" value="ZUI5_NIP_SRV"/>
+	</bean>
+	<bean id="zClassificationUpSrvODataService" parent="oDataService">
+		<property name="serviceName" value="ZCLASSIFICATION_UP_SRV"/>
+	</bean>
+	<bean id="zui5SagiaTempBidCertSrvODataService" parent="oDataService">
+		<property name="serviceName" value="ZUI5_TEMP_BID_CERT_SRV"/>
+	</bean>
+	<bean id="zqeemahODataService" parent="oDataService">
+		<property name="serviceName" value="ZQEEMAH_SRV"/>
+	</bean>
+
+	<bean id="zePaymentDetailsODataService" parent="oDataService">
+		<property name="serviceName" value="ZESRV_PAYMENT_DETAILS_ODATA_SRV"/>
+	</bean>
+
+	<bean id="zesrvEnhODataService" parent="oDataService">
+		<property name="serviceName" value="ZESRV_ENH_ODATA_SRV" />
+	</bean>
+
+	<bean id="zqeemah2ExtSrvODataService" parent="oDataService">
+		<property name="serviceName" value="ZQEEMAH2_EXT_SRV"/>
+	</bean>
+	<bean id="zverifyModuleSrvODataService" parent="oDataService">
+		<property name="serviceName" value="ZVERIFY_MODULE_SRV"/>
+	</bean>
+	
+	<bean id="zCRMMasterData" parent="oDataService">
+		<property name="serviceName" value="ZCRM_HYBRIS_MASTERDATA_SRV" />
+		<property name="destinationSystem" value="${sagia.crm.destination.system}" />
+	</bean>
+	
+	<bean id="zCRM_QEEMAH_SUBMIT_SRV" parent="oDataService">
+		<property name="serviceName" value="ZCRM_QEEMAH_SUBMIT_SRV" />
+		<property name="destinationSystem" value="${sagia.crm.destination.system}" />
+	</bean>
+	<!-- ODATA SERVICES END -->
+
+	<!-- User-specific credential verification against SAP Gateway server begin -->
+	<bean id="credentialVerificationService" class="com.sap.ibso.eservices.sagiaservices.auth.impl.DefaultCredentialVerificationService">
+        <!-- generic factory instance to access Spring beans with scope "prototype" or "sapSession" -->
+        <property name="genericFactory" ref="sapCoreGenericFactory"/>
+    </bean>
+
+    <bean id="credentialVerificationODataService" parent="oDataService" scope="prototype"
+          class="com.sap.ibso.eservices.sagiaservices.auth.impl.odata.CredentialVerificationODataService">
+		<property name="serviceName" value="ZUI5_SAGIA_SRV"/>
+	</bean>
+	<!-- User-specific credential verification against SAP Gateway server end -->
+
+	<!-- POPULATORS START -->
+	<bean name="socialUserInfoPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SocialUserInfoPopulator"/>
+
+	<bean name="licenseInfoPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.LicenseInfoPopulator"/>
+
+	<bean name="homeContactDetailPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.HomeContactDetailPopulator"/>
+
+	<bean name="shareHolderInfoPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ShareHolderInfoPopulator"/>
+
+	<bean name="salAndEmpPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SalAndEmpPopulator"/>
+
+	<bean name="classificPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ClassificPopulator"/>
+
+	<bean id="homeHDRPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.HomeHDRPopulator">
+		<property name="socialUserInfoPopulator" ref="socialUserInfoPopulator"/>
+		<property name="licenseInfoPopulator" ref="licenseInfoPopulator"/>
+		<property name="homeContactDetailPopulator" ref="homeContactDetailPopulator"/>
+		<property name="shareHolderInfoPopulator" ref="shareHolderInfoPopulator"/>
+		<property name="salAndEmpPopulator" ref="salAndEmpPopulator"/>
+		<property name="classificPopulator" ref="classificPopulator"/>
+	</bean>
+	<bean id="homeHDRReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.HomeHDRReversePopulator"/>
+
+	<bean id="serviceBpHDRPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ServiceBpHDRPopulator">
+		<property name="serviceBpHDRContactPopulator" ref="serviceBpHDRContactPopulator"/>
+		<property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+		<property name="commentsUpdateHistoryPopulator" ref="commentsUpdateHistoryPopulator"/>
+	</bean>
+
+	<bean id="warningLettersInfoPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.WarningLettersInfoPopulator">
+		<property name="violationNavPopulator" ref="violationNavPopulator"/>
+	</bean>
+
+	<bean id="serviceBpHDRContactPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ServiceBpHDRContactPopulator"/>
+	<bean id="commentsUpdateHistoryPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.CommentsUpdateHistoryPopulator"/>
+
+	<bean id="serviceBpHDRReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ServiceBpHDRReversePopulator"/>
+
+	<bean name="addressHDRPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.AddressHDRPopulator"/>
+
+	<bean name="zui5ContentHDRPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.attachment.zui5.ContentHDRPopulator"/>
+	<bean name="zesrvContentHDRPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.attachment.zesrv.ContentHDRPopulator"/>
+
+	<bean name="attachmentHDRPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.AttachmentHDRPopulator"/>
+
+	<bean name="survQustDDLBPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.surveys.zui5.SurvQustDDLBPopulator"/>
+
+	<bean name="survQuestDefPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.surveys.zui5.SurvQuestDefPopulator">
+		<property name="survQustDDLBPopulator" ref="survQustDDLBPopulator"/>
+	</bean>
+
+	<bean name="survQuestAnsPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.surveys.zui5.SurvQuestAnsPopulator"/>
+
+	<bean id="surveyHDRPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.surveys.zui5.SurveyHDRPopulator">
+		<property name="survQuestDefPopulator" ref="survQuestDefPopulator"/>
+		<property name="survQuestAnsPopulator" ref="survQuestAnsPopulator"/>
+	</bean>
+	
+	
+	<!-- START Populators for SurveyHDR from  ZESRV_ENH_ODATA_SRV-->
+	<bean name="survQustDDLBEnhPopulator"
+		class="com.sap.ibso.eservices.sagiaservices.converters.surveys.zesrv.SurvQustDDLBEnhPopulator" />
+
+	<bean name="survQuestDefEnhPopulator"
+		class="com.sap.ibso.eservices.sagiaservices.converters.surveys.zesrv.SurvQuestDefEnhPopulator">
+		<property name="survQustDDLBEnhPopulator" ref="survQustDDLBEnhPopulator" />
+	</bean>
+
+	<bean name="survQuestAnsEnhPopulator"
+		class="com.sap.ibso.eservices.sagiaservices.converters.surveys.zesrv.SurvQuestAnsEnhPopulator" />
+
+	<bean id="surveyHDREnhPopulator"
+		class="com.sap.ibso.eservices.sagiaservices.converters.surveys.zesrv.SurveyHDREnhPopulator">
+		<property name="survQuestDefEnhPopulator" ref="survQuestDefEnhPopulator" />
+		<property name="survQuestAnsEnhPopulator" ref="survQuestAnsEnhPopulator" />
+	</bean>
+	<!-- END Populators for SurveyHDR from  ZESRV_ENH_ODATA_SRV-->
+	
+	<bean name="appointmentPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.AppointmentPopulator"/>
+
+	<bean name="calendarSlotPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.CalendarSlotPopulator"/>
+
+	<bean name="customizationListPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.CustomizationListPopulator"/>
+	
+	<bean name="generalInquirySetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.GeneralInquirySetPopulator"/>
+
+	<bean name="regionCityListPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.RegionCityListPopulator"/>
+
+	<bean name="realEstateDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.RealEstateDataPopulator"/>
+	<bean name="realEstateReverseDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.RealEstateReverseDataPopulator"/>
+    <bean name="realEstateEntityDetailsSetDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.RealEstateEntityDetailsSetDataPopulator"/>
+
+	<bean name="spCheckHistoryPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SPCheckHistoryPopulator"/>
+	<bean name="spCheckApplicantPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SPCheckApplicantPopulator"/>
+
+	<bean name="servicesRequestAddressDataPopulator" class ="com.sap.ibso.eservices.sagiaservices.converters.ServicesRequestAddressPopulator"/>
+
+	<bean name="servicesRequestAttachmentDataPopulator" class ="com.sap.ibso.eservices.sagiaservices.converters.ServicesRequestAttachmentPopulator"/>
+
+	<bean name="servicesRequestTextDataPopulator" class ="com.sap.ibso.eservices.sagiaservices.converters.ServicesRequestTextPopulator"/>
+
+	<bean name="servicesRequestHDRPopulator" class ="com.sap.ibso.eservices.sagiaservices.converters.ServicesRequestHDRPopulator">
+		<property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+		<property name="addressPopulator" ref="servicesRequestAddressDataPopulator"/>
+		<property name="attachmentPopulator" ref="servicesRequestAttachmentDataPopulator"/>
+		<property name="textPopulator" ref="servicesRequestTextDataPopulator"/>
+	</bean>
+
+	<bean name="serviceAttachmentDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ServiceAttachmentDataPopulator"/>
+
+	<bean name="serviceApplicantDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ServiceApplicantDataPopulator"/>
+
+	<bean name="serviceHeaderPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ServiceHeaderPopulator">
+		<property name="serviceAttachmentDataPopulator" ref="serviceAttachmentDataPopulator"/>
+		<property name="serviceApplicantDataPopulator" ref="serviceApplicantDataPopulator"/>
+	</bean>
+	<bean name="serviceHeaderReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ServiceHeaderReversePopulator"/>
+
+	<bean name="specialServiceCountryDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SPCountryPopulator"/>
+	<bean name="specialServiceRegionDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SPRegionPopulator"/>
+	<bean name="specialServiceAttachmentDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SPAttachmentPopulator"/>
+
+	<bean name="govtBranchPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.GovtBranchPopulator"/>
+	<bean name="govtBranchReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.GovtBranchReversePopulator"/>
+
+	<bean id="govtHeaderPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.GovtHeaderPopulator">
+		<property name="govtBranchPopulator" ref="govtBranchPopulator"/>
+	</bean>
+	<bean id="govtHeaderReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.GovtHeaderReversePopulator">
+		<property name="govtBranchReversePopulator" ref="govtBranchReversePopulator"/>
+	</bean>
+
+	<bean id="amendHeaderPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.AmendHeadersPopulator"/>
+
+	<bean id="entityPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.EntityPopulator"/>
+	<bean id="shareholderPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.ShareholderPopulator"/>
+	<bean id="branchPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.BranchPopulator"/>
+	<bean id="sagiaLicenseProductPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.ProductPopulator"/>
+	<bean id="sagiaLicenseTextPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.TextPopulator"/>
+	<bean id="licenseAmendmentDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.LicenseAmendmentPopulator">
+		<property name="entityPopulator" ref="entityPopulator"/>
+		<property name="shareholderPopulator" ref="shareholderPopulator"/>
+		<property name="branchPopulator" ref="branchPopulator"/>
+		<property name="productPopulator" ref="sagiaLicenseProductPopulator"/>
+		<property name="textPopulator" ref="sagiaLicenseTextPopulator"/>
+	</bean>
+
+    <bean id="entityAmendReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.EntityReversePopulator"/>
+    <bean id="shareholderAmendReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.ShareholderReversePopulator"/>
+    <bean id="branchAmendReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.BranchReversePopulator"/>
+    <bean id="sagiaProductLicenseReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.ProductReversePopulator"/>
+    <bean id="amendTypeAmendReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.AmendTypeReversePopulator"/>
+    <bean id="attachmentAmendReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.AttachmentReversePopulator"/>
+	<bean id="amendTextReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.TextReversePopulator"/>
+    <bean id="businessActivityReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.BusinessActivityReversePopulator"/>
+    <bean id="licenseAmendmentDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.license.amendment.LicenseAmendmentReversePopulator">
+        <property name="entityReversePopulator" ref="entityAmendReversePopulator"/>
+        <property name="shareholderReversePopulator" ref="shareholderAmendReversePopulator"/>
+        <property name="branchReversePopulator" ref="branchAmendReversePopulator"/>
+        <property name="productReversePopulator" ref="sagiaProductLicenseReversePopulator"/>
+        <property name="amendTypeReversePopulator" ref="amendTypeAmendReversePopulator"/>
+        <property name="attachmentReversePopulator" ref="attachmentAmendReversePopulator"/>
+		<property name="businessActivityReversePopulator" ref="businessActivityReversePopulator"/>
+    </bean>
+
+	<bean id="followUpPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.FollowUpPopulator">
+		<property name="violationNavPopulator" ref="violationNavPopulator"/>
+		<property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+		<property name="textNavPopulator" ref="textNavPopulator"/>
+	</bean>
+
+	<bean id="violationNavPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.FollowUpViolationDataPopulator"/>
+	<bean id="textNavPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.FollowUpTextDataPopulator"/>
+
+	<bean id="temporaryBiddingLicensePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.TemporaryBiddingLicensePopulator"/>
+	<bean id="temporaryBiddingLicenseAttachmentReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.TemporaryBiddingLicenseAttachmentReversePopulator"/>
+	<bean id="temporaryBiddingLicenseReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.TemporaryBiddingLicenseReversePopulator">
+		<property name="temporaryBiddingLicenseAttachmentReversePopulator" ref="temporaryBiddingLicenseAttachmentReversePopulator"/>
+	</bean>
+
+	<bean id="amanahPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.AmanahPopulator"/>
+
+	<bean id="temporaryBiddingLicenseListItemPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.TemporaryBiddingLicenseListItemPopulator"/>
+
+	<bean id="temporaryBiddingLicenseCountryPrefixPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.TemporaryBiddingLicenseCountryPrefixPopulator"/>
+
+	<bean id="licenseReplacementDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.LicenseReplacementPopulator">
+		<property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+	</bean>
+
+	<bean id="financeContentPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.FinanceContentPopulator"/>
+
+	<bean id="changeEquityPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ChangeEquityPopulator"/>
+
+	<bean id="incomeStatPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.IncomeStatPopulator"/>
+
+	<bean id="balanceSheetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.BalanceSheetPopulator"/>
+
+	<bean id="financialPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.FinancialPopulator">
+		<property name="financeContentPopulator" ref="financeContentPopulator"/>
+		<property name="changeEquityPopulator" ref="changeEquityPopulator"/>
+		<property name="incomeStatPopulator" ref="incomeStatPopulator"/>
+		<property name="balanceSheetPopulator" ref="balanceSheetPopulator"/>
+	</bean>
+
+	<bean name="complaintEnquiriesPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.complaints.ComplaintEnquiriesPopulator">
+        <property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+        <property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+    </bean>
+	<bean name="complaintEnquiriesReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.complaints.ComplaintEnquiriesReversePopulator"/>
+
+    <bean name="contactUsEnquiriesPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.complaints.ContactUsEnquiriesPopulator">
+        <property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+        <property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+    </bean>
+    <bean name="contactUsEnquiriesReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.complaints.ContactUsEnquiriesReversePopulator"/>
+    
+	<bean name="convertToNationalsPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.convNationals.ConvertToNationalsPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="getTextDataPopulator" ref="getTextDataPopulator"/>
+		<property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+	</bean>
+	<bean name="convertToNationalsReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.convNationals.ConvertToNationalsReversePopulator"/>
+	<bean name="getTextDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zui5.GetTextDataPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	
+	<bean name="classificationUpgradePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ClassificationUpgradePopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<bean name="classificationUpgradeDetailPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ClassificationUpgradeDetailPopulator"/>
+	<bean name="classificationUpgradeDetailReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ClassificationUpgradeDetailReversePopulator"/>
+
+	<bean name="classificationUpgradeAppealPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ClassificationUpgradeAppealPopulator"/>
+
+	<bean name="classificationUpgradeAttachmentListPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ClassificationUpgradeAttachmentListPopulator"/>
+
+	<bean name="classificationUpgradeCreatePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ClassificationUpgradeCreatePopulator"/>
+
+	<bean id="licenseCancellationSetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.LicenseCancellationSetPopulator">
+		<property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+	</bean>
+
+	<bean id="globalLicenseCancellationPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.GlobalLicenseCancellationPopulator"/>
+
+	<bean id="licenseClereanceSetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.LicenseClereanceSetPopulator">
+		<property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+	</bean>
+
+	<bean name="categorizationSchemaGetListPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.CategorizationSchemaGetListPopulator"/>
+
+	<alias name="defaultSagiaConfigurationConverter" alias="sagiaConfigurationConverter"/>
+	<bean id="defaultSagiaConfigurationConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.SagiaConfigurationData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaConfigurationDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="sagiaConfigurationDataPopulator" class="com.sap.ibso.eservices.sagiaservices.services.SagiaConfigurationDataPopulator" >
+	</bean>
+
+	<bean id="salesOrderPaymentPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SalesOrderPaymentPopulator" >
+	</bean>
+
+	<bean id="govtServiceDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SagiaGovtServiceDataPopulator">
+		<property name="getTextDataPopulator" ref="getTextDataPopulator"/>
+		<property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+	</bean>
+	<bean id="govtServiceInfoDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SagiaOdataGovtInfoDataPopulator"/>
+	<bean id="sagiaGovtServiceCRMPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtServiceCRMPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="govtServiceSupportingDocumentsPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.GovtServiceSupportingDocumentsPopulator"/>
+	<bean id="sagiaGovtCRMUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtCRMUploadPopulator"/>
+
+	<bean name="investorNotificationPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.notifications.InvestorNotificationPopulator"/>
+	<bean name="investorNotificationReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.notifications.InvestorNotificationReversePopulator"/>
+	<bean name="investorNotificationConverter" class="com.sap.ibso.eservices.sagiaservices.converters.notifications.InvestorNotificationConverter">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+    <bean name="legalInquiryDropdownSetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.legalconsultation.LegalInquiryDropdownSetPopulator"/>
+
+	<bean name="legalInquiryHDRPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.legalconsultation.LegalInquiryHDRPopulator">
+		<property name="contentHDRPopulator" ref="zesrvContentHDRPopulator"/>
+	</bean>
+    <bean name="legalInquiryHDRReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.legalconsultation.LegalInquiryHDRReversePopulator"/>
+
+    <bean name="getTextPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.legalconsultation.GetTextPopulator"/>
+
+    <bean name="attachmentHDRLegalConsultationPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.legalconsultation.AttachmentHDRLegalConsultationPopulator"/>
+
+	<bean name="contentHDRLegalConsultationPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.legalconsultation.ContentHDRLegalConsultationPopulator"/>
+
+	<bean name="legalInquiryPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.legalconsultation.LegalInquiryPopulator"/>
+
+    <!-- ISIC OData populators -->
+    <bean name="sagiaIsicSectionDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.isic.SectionPopulator"/>
+    <bean name="sagiaIsicDivisionDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.isic.DivisionPopulator"/>
+    <bean name="sagiaIsicGroupDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.isic.GroupPopulator"/>
+    <bean name="sagiaIsicClassDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.isic.ClassPopulator"/>
+    <bean name="sagiaIsicBranchDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.isic.BranchPopulator"/>
+    <bean name="sagiaIsicActivityDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.isic.ActivityPopulator"/>
+
+	<bean name="govDocWasselCheckPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.GovDocWasselCheckPopulator"/>
+
+    <bean name="qeemahShareholderInfoPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.QeemahShareholderInfoPopulator"/>
+	<!-- POPULATORS END -->
+
+	<!-- SAGIA SERVICES START -->
+	<bean id="abstractSagiaService" class="com.sap.ibso.eservices.sagiaservices.services.AbstractSagiaService" abstract="true">
+	</bean>
+
+	<bean name="checkGovernDocSetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.CheckGovernmentDocPopulator"/>
+	<bean id="checkGovDocService" class="com.sap.ibso.eservices.sagiaservices.services.impl.CheckGovernmentDocService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="checkGovernDocSet"/>
+		<property name="entityUrl" value="checkGovernDocSet"/>
+		<property name="oDataPopulator" ref="checkGovernDocSetPopulator"/>
+	</bean>
+
+	<bean name="removePopupPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.RemovePopupALRPopulator"/>
+	<bean id="removePopupALRService" class="com.sap.ibso.eservices.sagiaservices.services.impl.RemovePopupALRService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="RemovePopupALRSet"/>
+		<property name="entityUrl" value="RemovePopupALRSet"/>
+		<property name="oDataPopulator" ref="removePopupPopulator"/>
+	</bean>
+
+	<bean id="appointmentService" class="com.sap.ibso.eservices.sagiaservices.services.impl.AppointmentService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="Appointments"/>
+		<property name="entityUrl" value="Appointments"/>
+		<property name="oDataPopulator" ref="appointmentPopulator"/>
+		<property name="appointmentPdfService" ref="appointmentPdfService"/>
+	</bean>
+
+	<bean id="calendarSlotService" class="com.sap.ibso.eservices.sagiaservices.services.impl.CalendarSlotService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="ApptAvails"/>
+		<property name="entityUrl" value="ApptAvails"/>
+		<property name="oDataPopulator" ref="calendarSlotPopulator"/>
+	</bean>
+
+	<bean id="customizationListService" class="com.sap.ibso.eservices.sagiaservices.services.impl.CustomizationListService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="CustomizingGetList"/>
+		<property name="entityUrl" value="CustomizingGetList"/>
+		<property name="oDataPopulator" ref="customizationListPopulator"/>
+	</bean>
+	
+	<bean id="generalInquirySetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.GeneralInquirySetService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaContactUsODataService"/>
+		<property name="entitySetName" value="GenInqAttSet"/>
+		<property name="entityUrl" value="GenInqAttSet"/>
+		<property name="oDataPopulator" ref="generalInquirySetPopulator"/>
+	</bean>
+
+	<bean name="sagiaRegionCityService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaRegionCityService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5RealEstateODataService"/>
+		<property name="entitySetName" value="RegionCitySet"/>
+		<property name="entityUrl" value="RegionCitySet"/>
+		<property name="oDataPopulator" ref="regionCityListPopulator"/>
+		<property name="i18NService" ref="i18NService" />
+	</bean>
+
+	<bean id="homeHDRService" class="com.sap.ibso.eservices.sagiaservices.services.impl.HomeHDRService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="HomeHDRs"/>
+		<property name="entityUrl" value="HomeHDRs"/>
+		<property name="oDataPopulator" ref="homeHDRPopulator"/>
+		<property name="oDataReversePopulator" ref="homeHDRReversePopulator"/>
+	</bean>
+
+	<bean id="globalValsService" class="com.sap.ibso.eservices.sagiaservices.services.impl.GlobalValsService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="GlobalVals"/>
+		<property name="entityUrl" value="GlobalVals"/>
+	</bean>
+
+	<bean id="warningLettersInfosService" class="com.sap.ibso.eservices.sagiaservices.services.impl.WarningLettersInfosService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="EntityWarningLetterInfosSet"/>
+		<property name="entityUrl" value="EntityWarningLetterInfosSet"/>
+		<property name="oDataPopulator" ref="warningLettersInfoPopulator"/>
+	</bean>
+
+	<bean id="serviceBpHDRService" class="com.sap.ibso.eservices.sagiaservices.services.impl.ServiceBpHDRService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="ServiceBpHDRs"/>
+		<property name="entityUrl" value="ServiceBpHDRs"/>
+		<property name="oDataPopulator" ref="serviceBpHDRPopulator"/>
+		<property name="oDataReversePopulator" ref="serviceBpHDRReversePopulator"/>
+	</bean>
+
+    <bean id="shareholderInfoService" class="com.sap.ibso.eservices.sagiaservices.services.impl.ShareholderInfoService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zqeemahShrhldrODataService"/>
+        <property name="entityUrl" value="ZSHAREHOLDER_INFO_ENT"/>
+        <property name="entitySetName" value="ZSHAREHOLDER_INFO_ENT"/>
+        <property name="oDataPopulator" ref="qeemahShareholderInfoPopulator"/>
+    </bean>
+    
+    <bean id="delegateInfoSetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.DelegateInfoSetService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zqeemahShrhldrODataService"/>
+        <property name="entityUrl" value="DelegateInfoSet"/>
+        <property name="entitySetName" value="DelegateInfoSet"/>
+        <property name="oDataPopulator" ref="qeemahShareholderInfoPopulator"/>
+    </bean>
+
+	<bean id="surveyHDRService" class="com.sap.ibso.eservices.sagiaservices.services.surveys.zui5.SurveyHDRService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="SurveyHDRs"/>
+		<property name="entityUrl" value="SurveyHDRs"/>
+		<property name="oDataPopulator" ref="surveyHDRPopulator"/>
+	</bean>
+
+	<bean name="sagiaRealEstateService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaRealEstateService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5RealEstateODataService"/>
+		<property name="entitySetName" value="RealEstateSet"/>
+		<property name="entityUrl" value="RealEstateSet"/>
+		<property name="oDataPopulator" ref="realEstateDataPopulator"/>
+		<property name="oDataReversePopulator" ref="realEstateReverseDataPopulator"/>
+	</bean>
+	
+	<bean name="sagiaRealEstateDeedInfoDtlsSetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaRealEstateDeedInfoDtlsSetService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5RealEstateODataService"/>
+		<property name="entitySetName" value="DeedInfoDtlsSet"/>
+		<property name="entityUrl" value="DeedInfoDtlsSet"/>
+	</bean>
+
+	<bean name="sagiaRealEstateEntityDetailsSetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaRealEstateEntityDetailsSetService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5RealEstateODataService"/>
+		<property name="entitySetName" value="EntityDetailsSet"/>
+		<property name="entityUrl" value="EntityDetailsSet"/>
+        <property name="oDataPopulator" ref="realEstateEntityDetailsSetDataPopulator"/>
+	</bean>
+
+
+	<bean name="sagiaRealEstateAttachmentSetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaRealEstateAttachmentSetService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5RealEstateODataService"/>
+		<property name="entitySetName" value="AttachmentListSet"/>
+		<property name="entityUrl" value="AttachmentListSet"/>
+		<property name="i18NService" ref="i18NService" />
+	</bean>
+
+	<bean name="sagiaRealEstateAttachmentService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaRealEstateAttachmentService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5RealEstateODataService"/>
+		<property name="entitySetName" value="ContentDetailsSet"/>
+		<property name="entityUrl" value="ContentDetailsSet"/>
+	</bean>
+
+	<bean name="govtServicesAttachmentService" class="com.sap.ibso.eservices.sagiaservices.services.impl.GovtServicesAttachmentService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="ContentDetails"/>
+		<property name="entityUrl" value="ContentDetails"/>
+	</bean>
+
+	<bean name="sagiaSupportVisitsAttachmentService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaSupportVisitsAttachmentService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zesrvEnhODataService"/>
+		<property name="entitySetName" value="DocAttachSet"/>
+		<property name="entityUrl" value="DocAttachSet"/>
+	</bean>
+
+	<bean id="apptAvailSetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.ApptAvailSet" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5NewInvApptODataService"/>
+		<property name="entitySetName" value="ApptAvailSet"/>
+		<property name="entityUrl" value="ApptAvailSet"/>
+		<property name="oDataPopulator" ref="calendarSlotPopulator"/>
+	</bean>
+
+	<bean id="spCheckHistoryService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SPCheckHistoryService" parent="abstractSagiaService">
+		<property name="oDataService" ref="ZUI5SpecialServicesODataService"/>
+		<property name="entitySetName" value="SPCHECKHISTORYSET"/>
+		<property name="entityUrl" value="SPCHECKHISTORY"/>
+		<property name="oDataPopulator" ref="spCheckHistoryPopulator"/>
+	</bean>
+
+	<bean id="spCheckApplicants" class="com.sap.ibso.eservices.sagiaservices.services.impl.SPCheckApplicants" parent="abstractSagiaService">
+		<property name="oDataService" ref="ZUI5SpecialServicesODataService"/>
+		<property name="entitySetName" value="SPCHECKAPPLICANTSSET"/>
+		<property name="entityUrl" value="SPCHECKAPPLICANTS"/>
+		<property name="oDataPopulator" ref="serviceApplicantDataPopulator"/>
+	</bean>
+
+
+	<bean name="nipAppointmentSetReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.NIPAppointmentSetReversePopulator"/>
+	<bean id="nipAppointmentSetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.NipAppointmentSetService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5NewInvApptODataService"/>
+		<property name="entitySetName" value="AppointmentSet"/>
+		<property name="entityUrl" value="AppointmentSet"/>
+		<property name="oDataPopulator" ref="calendarSlotPopulator"/>
+		<property name="oDataReversePopulator" ref="nipAppointmentSetReversePopulator"/>
+	</bean>
+
+	<!-- <bean id="mojInheritVerificationPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.MojInheritVerificationPopulator"/> -->
+	<bean id="mojInheritService" class="com.sap.ibso.eservices.sagiaservices.services.impl.MojInheritService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entityUrl" value="MOJInheritVerifySet"/>
+		<property name="entitySetName" value="MOJInheritVerifySet"/>
+		<!-- <property name="oDataPopulator" ref="mojInheritVerificationPopulator"/> -->
+	</bean>
+
+	<bean name="nipHeaderSetAttachmentsPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.NationalInvestorAtachmentDataPopulator"/>
+	<bean name="nipHeaderSetDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.NIPHeaderSetDataPopulator"/>
+	<bean id="nipHeaderSetDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.NIPHeaderSetDataReversePopulator"/>
+	<bean id="nipService" class="com.sap.ibso.eservices.sagiaservices.services.impl.NipService">
+		<property name="oDataService" ref="zui5NipSrvODataService"/>
+		<property name="entitySetName" value="NIPHeaderSet"/>
+		<property name="entityUrl" value="NIPHeaderSet"/>
+		<property name="oDataPopulator" ref="nipHeaderSetDataPopulator"/>
+		<property name="oDataReversePopulator" ref="nipHeaderSetDataReversePopulator"/>
+	</bean>
+
+	<bean name="nipLegalStatusSetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.NipLegalStatusSetPopulator"/>
+	<bean id="nipLegalStatusService" class="com.sap.ibso.eservices.sagiaservices.services.impl.NipLegalStatusService">
+		<property name="oDataService" ref="zui5NipSrvODataService"/>
+		<property name="entitySetName" value="NIPLegalStatusSet"/>
+		<property name="entityUrl" value="NIPLegalStatusSet"/>
+		<property name="oDataPopulator" ref="nipLegalStatusSetPopulator"/>
+	</bean>
+
+	<bean name="nipCountrySetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.NipCountrySetPopulator"/>
+	<bean id="nipCountryService" class="com.sap.ibso.eservices.sagiaservices.services.impl.NipCountryService">
+		<property name="oDataService" ref="zui5NipSrvODataService"/>
+		<property name="entitySetName" value="NIPCountrySet"/>
+		<property name="entityUrl" value="NIPCountrySet"/>
+		<property name="oDataPopulator" ref="nipCountrySetPopulator"/>
+	</bean>
+
+	<bean name="nipRegionSetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.NipRegionSetPopulator"/>
+	<bean id="nipRegionService" class="com.sap.ibso.eservices.sagiaservices.services.impl.NipRegionService">
+		<property name="oDataService" ref="zui5NipSrvODataService"/>
+		<property name="entitySetName" value="NIPRegionSet"/>
+		<property name="entityUrl" value="NIPRegionSet"/>
+		<property name="oDataPopulator" ref="nipRegionSetPopulator"/>
+	</bean>
+
+	<bean name="nipCitySetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.NipCitySetPopulator"/>
+	<bean id="nipCityService" class="com.sap.ibso.eservices.sagiaservices.services.impl.NipCityService">
+		<property name="oDataService" ref="zui5NipSrvODataService"/>
+		<property name="entitySetName" value="NIPCitySet"/>
+		<property name="entityUrl" value="NIPCitySet"/>
+		<property name="oDataPopulator" ref="nipCitySetPopulator"/>
+	</bean>
+
+    <bean name="nipISISCSectionSetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.NipISICSectionSetPopulator"/>
+    <bean id="nipISISCSectionService" class="com.sap.ibso.eservices.sagiaservices.services.impl.NipISICSectionService">
+        <property name="oDataService" ref="zui5NipSrvODataService"/>
+        <property name="entitySetName" value="NIPISICSectionSet"/>
+        <property name="entityUrl" value="NIPISICSectionSet"/>
+        <property name="oDataPopulator" ref="nipISISCSectionSetPopulator"/>
+    </bean>
+
+	<bean name="nipISISCDivisionSetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.NipISICDivisionSetPopulator"/>
+    <bean id="nipISISCDivisionService" class="com.sap.ibso.eservices.sagiaservices.services.impl.NipISICDivisionService">
+        <property name="oDataService" ref="zui5NipSrvODataService"/>
+        <property name="entitySetName" value="NIPISICDivisionSet"/>
+        <property name="entityUrl" value="NIPISICDivisionSet"/>
+        <property name="oDataPopulator" ref="nipISISCDivisionSetPopulator"/>
+    </bean>
+
+	<bean name="supportVisitDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SupportVisitDataPopulator"/>
+	<bean id="supportVisitSetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SupportVisitSetService">
+		<property name="oDataService" ref="zesrvEnhODataService"/>
+		<property name="entitySetName" value="SupportVisitSet"/>
+		<property name="entityUrl" value="SupportVisitSet"/>
+		<property name="oDataPopulator" ref="supportVisitDataPopulator"/>
+	</bean>
+
+	<bean id="specialServiceHeader" class="com.sap.ibso.eservices.sagiaservices.services.impl.SpecialServiceHeaderService" parent="abstractSagiaService">
+		<property name="oDataService" ref="ZUI5SpecialServicesODataService"/>
+		<property name="entitySetName" value="SERVICEHEADERSET"/>
+		<property name="entityUrl" value="SERVICEHEADERSET"/>
+		<property name="oDataPopulator" ref="serviceHeaderPopulator"/>
+		<property name="oDataReversePopulator" ref="serviceHeaderReversePopulator"/>
+	</bean>
+
+	<bean id="specialServiceAttachmentService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SpecialServiceAttachmentService">
+		<property name="oDataService" ref="ZUI5SpecialServicesODataService"/>
+		<property name="entitySetName" value="SPGETATTACHMENTSSET"/>
+		<property name="entityUrl" value="SPGETATTACHMENTS"/>
+		<property name="oDataPopulator" ref="specialServiceAttachmentDataPopulator"/>
+	</bean>
+
+	<bean id="specialServiceCountryService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SpecialServiceCountryService">
+		<property name="oDataService" ref="ZUI5SpecialServicesODataService"/>
+		<property name="entitySetName" value="SPCOUNTRYSET"/>
+		<property name="entityUrl" value="SPCOUNTRY"/>
+		<property name="oDataPopulator" ref="specialServiceCountryDataPopulator"/>
+	</bean>
+
+	<bean id="specialServiceRegionService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SpecialServiceRegionService">
+		<property name="oDataService" ref="ZUI5SpecialServicesODataService"/>
+		<property name="entitySetName" value="SPREGIONSET"/>
+		<property name="entityUrl" value="SPREGION"/>
+		<property name="oDataPopulator" ref="specialServiceRegionDataPopulator"/>
+	</bean>
+
+	<bean id="zqeemahFacade" class="com.sap.ibso.eservices.sagiaservices.services.SagiaZqeemahFacade">
+		<property name="orgInfoService" ref="orgInfoService"/>
+		<property name="orgInfoDictionaryService" ref="orgInfoDictionaryService"/>
+		<property name="i18NService" ref="i18NService"/>
+	</bean>
+
+	<bean id="servicesRequestHDRService" class="com.sap.ibso.eservices.sagiaservices.services.impl.ServicesRequestHDRService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService" />
+		<property name="entityUrl" value="ServiceReqHDRs"/>
+		<property name="entitySetName" value="ServiceReqHDRs"/>
+		<property name="oDataPopulator" ref="servicesRequestHDRPopulator"/>
+	</bean>
+
+	<bean id="govtHeaderService" class="com.sap.ibso.eservices.sagiaservices.services.impl.GovtHeaderService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entityUrl" value="GovtHeaders"/>
+		<property name="entitySetName" value="GovtHeaders"/>
+		<property name="oDataPopulator" ref="govtHeaderPopulator"/>
+		<property name="oDataReversePopulator" ref="govtHeaderReversePopulator"/>
+	</bean>
+
+	<bean id="amendHeadersService" class="com.sap.ibso.eservices.sagiaservices.services.impl.AmendHeadersService" parent="abstractSagiaService">
+	<property name="oDataService" ref="zui5SagiaODataService"/>
+	<property name="entityUrl" value="AmendHeaders"/>
+	<property name="entitySetName" value="AmendHeaders"/>
+	<property name="oDataPopulator" ref="amendHeaderPopulator"/>
+	<property name="oDataReversePopulator" ref="licenseAmendmentDataReversePopulator"/>
+    </bean>
+
+	<bean id="amendProductsService" class="com.sap.ibso.eservices.sagiaservices.services.impl.AmendProductsService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entityUrl" value="AmendProducts"/>
+		<property name="entitySetName" value="AmendProducts"/>
+		<property name="oDataPopulator" ref="sagiaLicenseProductPopulator"/>
+		<property name="oDataReversePopulator" ref="sagiaProductLicenseReversePopulator"/>
+	</bean>
+
+	<bean id="licenseAmendmentShareholderService" class="com.sap.ibso.eservices.sagiaservices.services.impl.LicenseAmendmentShareholderService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entityUrl" value="AmendShareHolders"/>
+		<property name="entitySetName" value="AmendShareHolders"/>
+		<property name="oDataPopulator" ref="shareholderPopulator"/>
+	</bean>
+
+	<bean id="licenseAmendmentService" class="com.sap.ibso.eservices.sagiaservices.services.impl.LicenseAmendmentService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entityUrl" value="AmendHeaders"/>
+		<property name="entitySetName" value="AmendHeaders"/>
+		<property name="oDataPopulator" ref="licenseAmendmentDataPopulator"/>
+		<property name="oDataReversePopulator" ref="licenseAmendmentDataReversePopulator"/>
+	</bean>
+
+	<bean id="amanahService" class="com.sap.ibso.eservices.sagiaservices.services.impl.AmanahService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entityUrl" value="GovtDropdowns"/>
+		<property name="entitySetName" value="GovtDropdowns"/>
+		<property name="oDataPopulator" ref="amanahPopulator"/>
+	</bean>
+
+	<bean id="followUpService" class="com.sap.ibso.eservices.sagiaservices.services.impl.FollowUpService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entityUrl" value="FollowupServices"/>
+		<property name="entitySetName" value="FollowupServices"/>
+		<property name="oDataPopulator" ref="followUpPopulator"/>
+		<property name="mediaService" ref="mediaService"/>
+		<property name="modelService" ref="modelService"/>
+	</bean>
+
+	<bean id="temporaryBiddingLicenseService" class="com.sap.ibso.eservices.sagiaservices.services.impl.TemporaryBiddingLicenseService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaTempBidCertSrvODataService"/>
+		<property name="entitySetName" value="ZTEMPSET"/>
+		<property name="entityUrl" value="ZTEMPSET"/>
+		<property name="oDataPopulator" ref="temporaryBiddingLicensePopulator"/>
+		<property name="oDataReversePopulator" ref="temporaryBiddingLicenseReversePopulator"/>
+	</bean>
+
+	<bean id="temporaryBiddingLicenseListItemService" class="com.sap.ibso.eservices.sagiaservices.services.impl.TemporaryBiddingLicenseListItemService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaTempBidCertSrvODataService"/>
+		<property name="entitySetName" value="ZLISTSET"/>
+		<property name="entityUrl" value="LIST"/>
+		<property name="oDataPopulator" ref="temporaryBiddingLicenseListItemPopulator"/>
+	</bean>
+
+	<bean id="temporaryBiddingLicenseCountryPrefixService" class="com.sap.ibso.eservices.sagiaservices.services.impl.TemporaryBiddingLicenseCountryPrefixService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaTempBidCertSrvODataService"/>
+		<property name="entitySetName" value="ZTEL_CODESET"/>
+		<property name="entityUrl" value="ZTEL_CODESET"/>
+		<property name="oDataPopulator" ref="temporaryBiddingLicenseCountryPrefixPopulator"/>
+	</bean>
+
+	<bean id="licenseReplacementService" class="com.sap.ibso.eservices.sagiaservices.services.licensereplacement.LicenseReplacementService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="LicenseReplaceMents"/>
+		<property name="entityUrl" value="LicenseReplaceMents"/>
+		<property name="oDataPopulator" ref="licenseReplacementDataPopulator"/>
+	</bean>
+
+	<bean id="financialService" class="com.sap.ibso.eservices.sagiaservices.services.impl.FinancialService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="FinanceHDRS"/>
+		<property name="entityUrl" value="FinanceHDRS"/>
+		<property name="oDataPopulator" ref="financialPopulator"/>
+	</bean>
+   
+   <bean id="contactUsService" class="com.sap.ibso.eservices.sagiaservices.services.complaints.ContactUsService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zui5SagiaContactUsODataService" />
+        <property name="entitySetName" value="GeneralInquirySet"/>
+		<property name="entityUrl" value="GeneralInquirySet"/>
+		<property name="oDataPopulator" ref="contactUsEnquiriesPopulator"/>
+		<property name="oDataReversePopulator" ref="contactUsEnquiriesReversePopulator"/>
+    </bean>
+    
+   <bean id="complaintsAndEnquiryService" class="com.sap.ibso.eservices.sagiaservices.services.complaints.ComplaintsAndEnquiryService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zui5SagiaODataService" />
+        <property name="entitySetName" value="ComplaintsAndEnquiryHdrs"/>
+		<property name="entityUrl" value="ComplaintsAndEnquiryHdrs"/>
+        <property name="oDataPopulator" ref="complaintEnquiriesPopulator"/>
+        <property name="oDataReversePopulator" ref="complaintEnquiriesReversePopulator"/>
+    </bean>
+
+    <bean id="categorizationSchemaGetListService" class="com.sap.ibso.eservices.sagiaservices.services.complaints.CategorizationSchemaGetListService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zui5SagiaODataService" />
+		<property name="entitySetName" value="CategorizationSchemaGetList"/>
+        <property name="entityUrl" value="CategorizationSchemaGetList"/>
+        <property name="oDataPopulator" ref="categorizationSchemaGetListPopulator"/>
+    </bean>
+    
+    <bean id="categorizationSchemaContactUsListService" class="com.sap.ibso.eservices.sagiaservices.services.complaints.CategorizationSchemaContactUsListService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zui5SagiaContactUsODataService" />
+		<property name="entitySetName" value="CategorizationSchemaGetList"/>
+        <property name="entityUrl" value="CategorizationSchemaGetList"/>
+        <property name="oDataPopulator" ref="categorizationSchemaGetListPopulator"/>
+    </bean>
+
+    <bean name="contentDetailsService" class="com.sap.ibso.eservices.sagiaservices.services.attachments.ContentDetailsService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zui5SagiaODataService" />
+		<property name="entitySetName" value="ContentDetails"/>
+        <property name="entityUrl" value="ContentDetails"/>
+    </bean>
+
+	<bean name="appointmentPdfService" class="com.sap.ibso.eservices.sagiaservices.services.impl.AppointmentPdfService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zui5SagiaODataService" />
+		<property name="entitySetName" value="ApptPDFs"/>
+        <property name="entityUrl" value="ApptPDFs"/>
+    </bean>
+
+	<bean id="convertToNationalsService" class="com.sap.ibso.eservices.sagiaservices.services.license.ConvertToNationalsService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zui5SagiaODataService" />
+        <property name="entitySetName" value="ConvToNationals"/>
+		<property name="entityUrl" value="ConvToNationals"/>
+        <property name="oDataPopulator" ref="convertToNationalsPopulator"/>
+		<property name="oDataReversePopulator" ref="convertToNationalsReversePopulator"/>
+		<property name="mediaService" ref="mediaService"/>
+	</bean>
+
+	<bean id="classificationUpgradeService" class="com.sap.ibso.eservices.sagiaservices.services.classification.ClassificationUpgradeService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zClassificationUpSrvODataService" />
+		<property name="entitySetName" value="ZLISTSET"/>
+		<property name="entityUrl" value="LIST"/>
+		<property name="oDataPopulator" ref="classificationUpgradePopulator"/>
+	</bean>
+
+	<bean id="classificationUpgradeDetailService" class="com.sap.ibso.eservices.sagiaservices.services.classification.ClassificationUpgradeDetailService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zClassificationUpSrvODataService" />
+		<property name="entitySetName" value="ZCLASS_DETSET"/>
+		<property name="entityUrl" value="ZCLASS_DETSET"/>
+		<property name="oDataPopulator" ref="classificationUpgradeDetailPopulator"/>
+		<property name="oDataReversePopulator" ref="classificationUpgradeDetailReversePopulator"/>
+	</bean>
+
+	<bean name="classificationUpgradeContentService" class="com.sap.ibso.eservices.sagiaservices.services.classification.ClassificationUpgradeContentService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zClassificationUpSrvODataService" />
+		<property name="entitySetName" value="ZCLASS_CONTSET"/>
+		<property name="entityUrl" value="ZCLASS_CONTSET"/>
+	</bean>
+
+	<bean name="licenseCancellationSetService" class="com.sap.ibso.eservices.sagiaservices.services.licensecancellation.LicenseCancellationSetService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService" />
+		<property name="entityUrl" value="LicenseCancellationSet"/>
+		<property name="entitySetName" value="LicenseCancellationSet"/>
+		<property name="oDataPopulator" ref="licenseCancellationSetPopulator"/>
+	</bean>
+
+	<bean name="globalLicenseCancellationService" class="com.sap.ibso.eservices.sagiaservices.services.licensecancellation.GlobalLicenseCancellationService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService" />
+		<property name="entityUrl" value="GlobalLicenseCancellationSet"/>
+		<property name="entitySetName" value="GlobalLicenseCancellationSet"/>
+		<property name="oDataPopulator" ref="globalLicenseCancellationPopulator"/>
+	</bean>
+
+	<bean name="licenseClearanceSetService" class="com.sap.ibso.eservices.sagiaservices.services.licensecancellation.LicenseClearanceSetService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService" />
+		<property name="entityUrl" value="LicenseClearanceSet"/>
+		<property name="entitySetName" value="LicenseClearanceSet"/>
+		<property name="oDataPopulator" ref="licenseClereanceSetPopulator"/>
+	</bean>
+
+	<bean name="sagiaPaymentService" class="com.sap.ibso.eservices.sagiaservices.services.payment.PaymentService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zePaymentDetailsODataService" />
+		<property name="entityUrl" value="SalesOrderPaymentSet"/>
+		<property name="entitySetName" value="SalesOrderPaymentSet"/>
+		<property name="oDataPopulator" ref="salesOrderPaymentPopulator"/>
+	</bean>
+
+	<bean name="sagiaPaymentDetailsService" class="com.sap.ibso.eservices.sagiaservices.services.payment.PaymentDetailsService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zePaymentDetailsODataService" />
+		<property name="entityUrl" value="SalesOrderPaymentDetailsSet"/>
+		<property name="entitySetName" value="SalesOrderPaymentDetailsSet"/>
+		<property name="oDataPopulator" ref="salesOrderPaymentPopulator"/>
+	</bean>
+
+	<bean id="defaultAuthenticationCodeGeneratorService" class="com.sap.ibso.eservices.sagiaservices.services.authentication.impl.DefaultAuthenticationCodeGeneratorService">
+	</bean>
+
+	<bean id="sagiaGovtService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaGovtService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="GovtServices"/>
+		<property name="entityUrl" value="GovtServices"/>
+		<property name="oDataPopulator" ref="govtServiceDataPopulator"/>
+		<!--<property name="oDataReversePopulator" ref="govtServiceReversePopulator"/>-->
+		<property name="sagiaGovtServiceDAO" ref="sagiaGovtServiceDAO"/>
+	</bean>
+
+	<bean id="sagiaGovtInfoDataService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaGovtInfoDataService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="BpGovtServices"/>
+		<property name="entityUrl" value="BpGovtServices"/>
+		<property name="oDataPopulator" ref="govtServiceInfoDataPopulator"/>
+	</bean>
+
+	<bean id="sagiaGovtCreationService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaGovtCreationService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="GovtServices"/>
+		<property name="entityUrl" value="GovtServices"/>
+	</bean>
+
+	<bean id="sagiaSupportingDocumentsService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaSupportingDocumentsService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="CustomizingGetList"/>
+		<property name="entityUrl" value="CustomizingGetList"/>
+		<property name="oDataPopulator" ref="govtServiceSupportingDocumentsPopulator"/>
+	</bean>
+
+	<bean id="govDocWasselCheckService" class="com.sap.ibso.eservices.sagiaservices.services.impl.GovDocWasselCheckService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="UI5GovDocWasselCheckSet"/>
+		<property name="entityUrl" value="UI5GovDocWasselCheckSet"/>
+		<property name="oDataPopulator" ref="govDocWasselCheckPopulator"/>
+	</bean>
+	
+	<bean name="emailVerificationDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.EmailVerificationDataPopulator"/>
+	<bean id="emailVerificationSetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.EmailVerificationSetService">
+		<property name="oDataService" ref="zverifyModuleSrvODataService"/>
+		<property name="entitySetName" value="EmailVerificationSet"/>
+		<property name="entityUrl" value="EmailVerificationSet"/>
+		<property name="oDataPopulator" ref="emailVerificationDataPopulator"/>
+	</bean>
+	
+	<bean name="emailSubscriptionFeeDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.EmailSubscriptionFeeDataPopulator"/>
+	<bean id="emailSubscriptionFeeSetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.EmailSubscriptionFeeSetService">
+		<property name="oDataService" ref="zverifyModuleSrvODataService"/>
+		<property name="entitySetName" value="EmailSubscriptionFeeSet"/>
+		<property name="entityUrl" value="EmailSubscriptionFeeSet"/>
+		<property name="oDataPopulator" ref="emailSubscriptionFeeDataPopulator"/>
+	</bean>
+
+	<!-- SAGIA SERVICES END -->
+
+    <alias alias="zQeemahService" name="defaultZQeemahService"/>
+    <bean id="defaultZQeemahService" class="com.sap.ibso.eservices.sagiaservices.services.license.application.impl.DefaultZQeemahService">
+        <property name="applicationStatusService" ref="applicationStatusService"/>
+        <property name="userRegisterService" ref="userRegisterService"/>
+        <property name="userService" ref="userService"/>
+    </bean>
+
+	<alias alias="licenseInformationService" name="defaultLicenseInformationService"/>
+    <bean id="defaultLicenseInformationService" class="com.sap.ibso.eservices.sagiaservices.services.license.info.impl.DefaultLicenseInformationService">
+        <constructor-arg ref="userService"/>
+        <constructor-arg ref="zQeemahService"/>
+    </bean>
+
+	<alias alias="investorMappingService" name="defaultInvestorMappingService"/>
+	<bean id="defaultInvestorMappingService" class="com.sap.ibso.eservices.sagiaservices.investor.impl.DefaultInvestorMappingService">
+		<constructor-arg ref="modelService" />
+		<constructor-arg ref="zQeemahService"/>
+		<constructor-arg ref="userService"/>
+	</bean>
+
+    <!-- CRM investor applicant code -->
+    <bean id="crmInvestorApplicantCodeGenerator" class="de.hybris.platform.servicelayer.keygenerator.impl.PersistentKeyGenerator">
+        <property name="key" value="${sagiaservices.keygen.crm.investor.applicant.code.name}"/>
+        <property name="digits" value="${sagiaservices.keygen.crm.investor.applicant.code.digits}"/>
+        <property name="start" value="${sagiaservices.keygen.crm.investor.applicant.code.start}"/>
+        <property name="type" value="${sagiaservices.keygen.crm.investor.applicant.code.type}"/>
+        <property name="template" value="${sagiaservices.keygen.crm.investor.applicant.code.template}"/>
+    </bean>
+
+	<!-- SAGIA FACADES START -->
+	<bean id="ZUI5SagiaFacade" class="com.sap.ibso.eservices.sagiaservices.services.ZUI5SagiaFacade">
+		<property name="homeHDRService" ref="homeHDRService"/>
+		<property name="surveyHDRService" ref="surveyHDRService"/>
+		<property name="appointmentService" ref="appointmentService"/>
+		<property name="calendarSlotService" ref="calendarSlotService"/>
+		<property name="amendHeadersService" ref="amendHeadersService"/>
+		<property name="govtHeaderService" ref="govtHeaderService"/>
+		<property name="amanahService" ref="amanahService"/>
+		<property name="customizationListService" ref="customizationListService"/>
+		<property name="serviceBpHDRService" ref="serviceBpHDRService"/>
+		<property name="warningLettersInfosService" ref="warningLettersInfosService"/>
+		<property name="sagiaRegionCityService" ref="sagiaRegionCityService"/>
+		<property name="sagiaRealEstateService" ref="sagiaRealEstateService"/>
+		<property name="licenseReplacementService" ref="licenseReplacementService"/>
+		<property name="financialService" ref="financialService"/>
+		<property name="servicesRequestHDRService" ref="servicesRequestHDRService"/>
+		<property name="followUpService" ref="followUpService"/>
+		<property name="licenseClearanceSetService" ref="licenseClearanceSetService"/>
+		<property name="globalLicenseCancellationService" ref="globalLicenseCancellationService"/>
+		<property name="licenseCancellationSetService" ref="licenseCancellationSetService"/>
+		<property name="servicesReqHDRService" ref="servicesReqHDRService"/>
+		<property name="govDocWasselCheckService" ref="govDocWasselCheckService"/>
+		<property name="globalValsService" ref="globalValsService"/>
+		<property name="companyInformationService" ref="sagiaEServicesCompanyInformationService"/>
+		<property name="realEstateEntityDetailsSetService" ref="sagiaRealEstateEntityDetailsSetService"/>
+		<property name="checkGovDocService" ref="checkGovDocService"/>
+		<property name="removePopupALRService" ref="removePopupALRService"/>
+	</bean>
+	
+	<bean id="zui5NewInvestorSagiaFacade" class="com.sap.ibso.eservices.sagiaservices.services.ZUI5NewInvestorSagiaFacade">
+		<property name="apptAvailSetService" ref="apptAvailSetService"/>
+        <property name="nipService" ref="nipService"/>
+        <property name="nipAppointmentSetService" ref="nipAppointmentSetService"/>
+        <property name="nipLegalStatusService" ref="nipLegalStatusService"/>
+		<property name="nipCountryService" ref="nipCountryService"/>
+		<property name="nipRegionService" ref="nipRegionService"/>
+		<property name="nipCityService" ref="nipCityService"/>
+		<property name="nipISICSectionService" ref="nipISISCSectionService"/>
+		<property name="nipISICDivisionService" ref="nipISISCDivisionService"/>
+		<property name="i18NService" ref="i18NService" />
+    </bean>
+
+	<bean id="ZUI5SpecialServiceSagiaFacade" class="com.sap.ibso.eservices.sagiaservices.services.ZUI5SpecialServiceSagiaFacade">
+		<property name="spCheckHistoryService" ref="spCheckHistoryService"/>
+		<property name="specialServiceHeader" ref="specialServiceHeader"/>
+		<property name="specialServiceAttachment" ref="specialServiceAttachmentService"/>
+		<property name="specialServiceCountryService" ref="specialServiceCountryService"/>
+		<property name="specialServiceRegionService" ref="specialServiceRegionService"/>
+		<property name="spCheckApplicants" ref="spCheckApplicants"/>
+	</bean>
+
+	<bean id="zePaymentDetailsODataFacade" class="com.sap.ibso.eservices.sagiaservices.services.ZePaymentDetailsFacade">
+		<property name="paymentService" ref="sagiaPaymentService"/>
+		<property name="paymentDetailsService" ref="sagiaPaymentDetailsService"/>
+	</bean>
+
+	<alias alias="zqeemah2Facade" name="Zqeemah2SagiaFacade" />
+	<bean id="Zqeemah2SagiaFacade" class="com.sap.ibso.eservices.sagiaservices.services.Zqeemah2SagiaFacade">
+		<property name="diffQeemahService" ref="diffQeemahService"/>
+		<property name="invsIdPostService" ref="invsIdPostService"/>
+		<property name="dropdownValueService" ref="dropdownValueService"/>
+		<property name="qeemahGeneralQstService" ref="qeemahGeneralQstService"/>
+		<property name="basicContactInformationService" ref="basicContactInformationService" />
+		<property name="legalStatusService" ref="legalStatusService"/>
+	</bean>
+
+	<!-- SAGIA FACADES END -->
+
+	<!-- RFC START -->
+	<alias alias="sagiaEServicesDocumentService" name="sagiaEServicesDefaultDocumentService" />
+	<bean id="sagiaEServicesDefaultDocumentService"
+		  class="com.sap.ibso.eservices.sagiaservices.document.impl.DefaultDocumentService"
+          parent="sagiaEServicesBackendAwareService">
+		<!-- the bean name (or alias) of the document backend service -->
+		<constructor-arg type="java.lang.String" value="sagiaEServicesDocumentBackendService"/>
+        <constructor-arg ref="investorMappingService"/>
+	</bean>
+
+    <alias alias="sagiaEServicesAccountManagerService" name="sagiaEServicesDefaultAccountManagerService" />
+    <bean id="sagiaEServicesDefaultAccountManagerService"
+          class="com.sap.ibso.eservices.sagiaservices.account.impl.DefaultAccountManagerService"
+          parent="sagiaEServicesBackendAwareService">
+        <!-- the bean name (or alias) of the account manager backend service -->
+        <constructor-arg type="java.lang.String" value="sagiaEServicesAccountManagerBackendService"/>
+        <constructor-arg ref="investorMappingService"/>
+    </bean>
+
+    <!--
+	<bean id="sagiaEServicesMockAverageProcessingTimeService"
+		  class="com.sap.ibso.eservices.sagiaservices.services.duration.MockAverageProcessingTimeService">
+	</bean>
+	-->
+
+	<alias alias="sagiaEServicesAverageProcessingTimeService" name="sagiaEServicesDefaultAverageProcessingTimeService" />
+	<bean id="sagiaEServicesDefaultAverageProcessingTimeService"
+		  class="com.sap.ibso.eservices.sagiaservices.duration.impl.DefaultAverageProcessingTimeService"
+          parent="sagiaEServicesBackendAwareService">
+		<!-- the bean name (or alias) of the average processing time backend service -->
+		<constructor-arg type="java.lang.String" value="sagiaEServicesAverageProcessingTimeBackendService"/>
+	</bean>
+
+	<alias alias="sagiaEServicesFeedbackService" name="sagiaEServicesDefaultFeedbackService" />
+	<bean id="sagiaEServicesDefaultFeedbackService"
+		  class="com.sap.ibso.eservices.sagiaservices.feedback.impl.DefaultFeedbackService"
+          parent="sagiaEServicesBackendAwareService">
+		<!-- the bean name (or alias) of the feedback backend service -->
+		<constructor-arg type="java.lang.String" value="sagiaEServicesFeedbackBackendService"/>
+	</bean>
+
+	<alias alias="sagiaEServicesPriceSimulationService" name="sagiaEServicesDefaultPriceSimulationService" />
+	<bean id="sagiaEServicesDefaultPriceSimulationService"
+		  class="com.sap.ibso.eservices.sagiaservices.price.impl.DefaultPriceSimulationService"
+		  parent="sagiaEServicesBackendAwareService">
+		<!-- the bean name (or alias) of the price simulation backend service -->
+		<constructor-arg type="java.lang.String" value="sagiaEServicesPriceSimulationBackendService"/>
+		<constructor-arg ref="commonI18NService"/>
+		<constructor-arg ref="investorMappingService"/>
+	</bean>
+
+	<alias alias="sagiaEServicesSalesOrderService" name="sagiaEServicesDefaultSalesOrderService" />
+	<bean id="sagiaEServicesDefaultSalesOrderService"
+		  class="com.sap.ibso.eservices.sagiaservices.price.impl.DefaultSalesOrderService"
+		  parent="sagiaEServicesBackendAwareService">
+		<!-- the bean name (or alias) of the price simulation backend service -->
+		<constructor-arg type="java.lang.String" value="sagiaEServicesSalesOrderBackendService"/>
+		<!--<constructor-arg ref="commonI18NService"/>-->
+		<!--<constructor-arg ref="investorMappingService"/>-->
+	</bean>
+
+    <alias alias="sagiaEServicesPaymentAssignmentService" name="sagiaEServicesDefaultPaymentAssignmentService" />
+    <bean id="sagiaEServicesDefaultPaymentAssignmentService"
+          class="com.sap.ibso.eservices.sagiaservices.license.impl.DefaultPaymentAssignmentService"
+          parent="sagiaEServicesBackendAwareService">
+        <!-- the bean name (or alias) of the payment assignment backend service -->
+        <constructor-arg type="java.lang.String" value="sagiaEServicesPaymentAssignmentBackendService"/>
+        <constructor-arg ref="investorMappingService"/>
+    </bean>
+
+    <alias alias="sagiaEServicesCompanyInformationService" name="sagiaEServicesDefaultCompanyInformationService" />
+    <bean id="sagiaEServicesDefaultCompanyInformationService"
+          class="com.sap.ibso.eservices.sagiaservices.company.impl.DefaultCompanyInformationService"
+          parent="sagiaEServicesBackendAwareService">
+        <!-- the bean name (or alias) of the company information backend service -->
+        <constructor-arg type="java.lang.String" value="sagiaEServicesCompanyInformationBackendService"/>
+        <constructor-arg ref="commonI18NService"/>
+        <constructor-arg ref="investorMappingService"/>
+    </bean>
+
+	<alias alias="sagiaEServicesServiceRequestsOverviewService" name="sagiaEServicesDefaultServiceRequestsOverviewService" />
+	<bean id="sagiaEServicesDefaultServiceRequestsOverviewService"
+		  class="com.sap.ibso.eservices.sagiaservices.overview.impl.DefaultServiceRequestsOverviewService"
+		  parent="sagiaEServicesBackendAwareService">
+		<!-- the bean name (or alias) of the company information backend service -->
+		<constructor-arg type="java.lang.String" value="sagiaEServicesServiceRequestsOverviewBackendService"/>
+		<constructor-arg ref="commonI18NService"/>
+		<constructor-arg ref="investorMappingService"/>
+		<constructor-arg ref="sagiaServiceTypeService"/>
+		<constructor-arg ref="sagiaServiceTypeCategoryService"/>
+		<constructor-arg ref="sagiaStatusService"/>
+	</bean>
+
+	<!-- RFC END -->
+
+	<bean id="classificationUpgradeAppealService" class="com.sap.ibso.eservices.sagiaservices.services.classification.ClassificationUpgradeAppealService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zClassificationUpSrvODataService" />
+		<property name="entityUrl" value="/APPEAL"/>
+		<property name="entitySetName" value="ZAPPEAL_SET"/>
+		<property name="oDataPopulator" ref="classificationUpgradeAppealPopulator"/>
+	</bean>
+
+	<bean id="classificationUpgradeAttachmentListService" class="com.sap.ibso.eservices.sagiaservices.services.classification.ClassificationUpgradeAttachmentListService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zClassificationUpSrvODataService" />
+		<property name="entityUrl" value="/ZATT_LISTSET"/>
+		<property name="entitySetName" value="ZATT_LISTSET"/>
+		<property name="oDataPopulator" ref="classificationUpgradeAttachmentListPopulator"/>
+	</bean>
+
+	<bean id="classificationUpgradeZCreateDataService" class="com.sap.ibso.eservices.sagiaservices.services.classification.ClassificationUpgradeZCreateDataService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zClassificationUpSrvODataService" />
+		<property name="entityUrl" value="/ZCREATESET"/>
+		<property name="entitySetName" value="ZCREATESET"/>
+		<property name="oDataPopulator" ref="classificationUpgradeCreatePopulator"/>
+	</bean>
+	<bean id="servicesReqHDRService" class="com.sap.ibso.eservices.sagiaservices.services.impl.ServiceReqHDRService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService" />
+		<property name="entityUrl" value="ServiceReqHDRs"/>
+		<property name="entitySetName" value="ServiceReqHDRs"/>
+		<property name="oDataPopulator" ref="servicesRequestHDRPopulator"/>
+	</bean>
+
+	<!--Investor Notifications  -->
+
+	<bean id="investorNotificationsService" class="com.sap.ibso.eservices.sagiaservices.services.notifications.InvestorNotificationsService" >
+		<property name="investorMappingService" ref="investorMappingService" />
+		<property name="sagiaHybrisInvestorNotificationService" ref="sagiaHybrisInvestorNotificationService" />
+		<property name="sagiaCRMInvestorNotificationsService" ref="sagiaCRMInvestorNotificationsService" />
+		<property name="investorNotificationConverter" ref="investorNotificationConverter" />
+	</bean>
+	
+	<bean id="sagiaCRMInvestorNotificationsService" 
+			  class="com.sap.ibso.eservices.sagiaservices.services.notifications.SagiaCRMInvestorNotificationsService" 
+			  parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="InvestorNotificationSet"/>
+		<property name="entityUrl" value="InvestorNotificationSet"/>
+        <property name="oDataPopulator" ref="investorNotificationPopulator"/>
+		<property name="oDataReversePopulator" ref="investorNotificationReversePopulator"/>
+	</bean>
+
+	<bean id="licensePaymentService" class="com.sap.ibso.eservices.sagiaservices.services.license.payment.LicensePaymentService" parent="abstractSagiaService"/>
+
+    <bean id="legalInquiryHDRService" class="com.sap.ibso.eservices.sagiaservices.services.legalconsultation.LegalInquiryHDRService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="LegalInquiryHDRSet"/>
+        <property name="entityUrl" value="LegalInquiryHDRSet"/>
+        <property name="oDataPopulator" ref="legalInquiryHDRPopulator"/>
+        <property name="oDataReversePopulator" ref="legalInquiryHDRReversePopulator"/>
+		<property name="legalInquiryHDRConverter" ref="legalInquiryHDRConverter"/>
+    </bean>
+    
+    <bean name="financialStatementHDRPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.legalconsultation.FinancialStatementHDRPopulator">
+		<property name="contentHDRPopulator" ref="zesrvContentHDRPopulator"/>
+	</bean>
+	<bean name="financialStatementHDRReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.legalconsultation.FinancialStatementHDRReversePopulator"/>
+	
+    <bean id="financialStatementHDRService" class="com.sap.ibso.eservices.sagiaservices.services.legalconsultation.FinancialStatementHDRService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="FinancialStatementHDRSet"/>
+        <property name="entityUrl" value="FinancialStatementHDRSet"/>
+        <property name="oDataPopulator" ref="financialStatementHDRPopulator"/>
+        <property name="oDataReversePopulator" ref="financialStatementHDRReversePopulator"/>
+		<property name="financialStatementHDRConverter" ref="financialStatementHDRConverter"/>
+    </bean>
+    
+    <bean id="financialStatementHDRConverter" class="com.sap.ibso.eservices.sagiaservices.services.legalconsultation.FinancialStatementHDRConverter">
+		<property name="modelService" ref="modelService"/>
+		<property name="mediaService" ref="mediaService"/>
+	</bean>
+
+	<bean id="legalInquiryHDRConverter" class="com.sap.ibso.eservices.sagiaservices.services.legalconsultation.LegalInquiryHDRConverter">
+		<property name="modelService" ref="modelService"/>
+		<property name="mediaService" ref="mediaService"/>
+	</bean>
+
+    <bean id="legalInquiryDropdownSetService" class="com.sap.ibso.eservices.sagiaservices.services.legalconsultation.LegalInquiryDropdownSetService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="LegalInquiryDropdownSet"/>
+        <property name="entityUrl" value="LegalInquiryDropdownSet"/>
+        <property name="oDataPopulator" ref="legalInquiryDropdownSetPopulator"/>
+    </bean>
+
+    <bean id="getTextService" class="com.sap.ibso.eservices.sagiaservices.services.legalconsultation.GetTextService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="GetTextSet"/>
+        <property name="entityUrl" value="GetTextSet"/>
+        <property name="oDataPopulator" ref="getTextPopulator"/>
+    </bean>
+
+    <bean id="contentHDRService" class="com.sap.ibso.eservices.sagiaservices.services.legalconsultation.ContentHDRService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="ContentHDRSet"/>
+        <property name="entityUrl" value="ContentHDRSet"/>
+        <property name="oDataPopulator" ref="contentHDRLegalConsultationPopulator"/>
+    </bean>
+
+    <!-- ISIC activity services -->
+    <bean id="sagiaIsicSectionService" class="com.sap.ibso.eservices.sagiaservices.services.isic.SectionService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="ISICSectionSet"/>
+        <property name="entityUrl" value="ISICSectionSet"/>
+        <property name="oDataPopulator" ref="sagiaIsicSectionDataPopulator"/>
+    </bean>
+    <bean id="sagiaIsicDivisionService" class="com.sap.ibso.eservices.sagiaservices.services.isic.DivisionService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="ISICDivisionSet"/>
+        <property name="entityUrl" value="ISICDivisionSet"/>
+        <property name="oDataPopulator" ref="sagiaIsicDivisionDataPopulator"/>
+    </bean>
+    <bean id="sagiaIsicGroupService" class="com.sap.ibso.eservices.sagiaservices.services.isic.GroupService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="ISICGroupSet"/>
+        <property name="entityUrl" value="ISICGroupSet"/>
+        <property name="oDataPopulator" ref="sagiaIsicGroupDataPopulator"/>
+    </bean>
+    <bean id="sagiaIsicClassService" class="com.sap.ibso.eservices.sagiaservices.services.isic.ClassService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="ISICClassSet"/>
+        <property name="entityUrl" value="ISICClassSet"/>
+        <property name="oDataPopulator" ref="sagiaIsicClassDataPopulator"/>
+    </bean>
+    <bean id="sagiaIsicBranchService" class="com.sap.ibso.eservices.sagiaservices.services.isic.BranchService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="ISICBranchSet"/>
+        <property name="entityUrl" value="ISICBranchSet"/>
+        <property name="oDataPopulator" ref="sagiaIsicBranchDataPopulator"/>
+    </bean>
+    <bean id="sagiaIsicActivityService" class="com.sap.ibso.eservices.sagiaservices.services.isic.ActivityService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="ISICActivitySet"/>
+        <property name="entityUrl" value="ISICActivitySet"/>
+        <property name="oDataPopulator" ref="sagiaIsicActivityDataPopulator"/>
+    </bean>
+
+	<bean id="surveyDetailsEnhService" class="com.sap.ibso.eservices.sagiaservices.services.surveys.zesrv.SurveyDetailsEnhService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zesrvEnhODataService"/>
+		<property name="entitySetName" value="SurveyHDRSet"/>
+		<property name="entityUrl" value="SurveyHDRSet"/>
+		<property name="oDataPopulator" ref="surveyHDREnhPopulator"/>
+		<property name="i18NService" ref="i18nService"/>
+	</bean>
+	
+	<bean id="surveyDetailsService" class="com.sap.ibso.eservices.sagiaservices.services.surveys.zui5.SurveyDetailsService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="SurveyHDRs"/>
+		<property name="entityUrl" value="SurveyHDRs"/>
+		<property name="oDataPopulator" ref="surveyHDRPopulator"/>
+		<property name="i18NService" ref="i18nService"/>
+	</bean>
+
+    <bean id="attachmentHDRService" class="com.sap.ibso.eservices.sagiaservices.services.legalconsultation.AttachmentHDRService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zesrvEnhODataService" />
+        <property name="entitySetName" value="AttachmantHDRSet"/>
+        <property name="entityUrl" value="AttachmantHDRSet"/>
+        <property name="oDataPopulator" ref="attachmentHDRLegalConsultationPopulator"/>
+    </bean>
+
+	<bean id="legalInquiryService" class="com.sap.ibso.eservices.sagiaservices.services.legalconsultation.LegalInquiryService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zesrvEnhODataService" />
+		<property name="entitySetName" value="LegalInquirySet"/>
+		<property name="entityUrl" value="LegalInquirySet"/>
+		<property name="oDataPopulator" ref="legalInquiryPopulator"/>
+	</bean>
+
+
+	<!--SERVICE FOR REOPEN FACILITY HISTORY LISTING - MADNESS-->
+	<bean name="reopenFacilityHistoryDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.reopenfacility.ReopenFacilityHistoryDataPopulator"/>
+	<bean name="reopenFacilityAddressDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.reopenfacility.ReopenFacilityAddressDataPopulator">
+		<property name="reopenFacilityHistoryDataPopulator" ref="reopenFacilityHistoryDataPopulator"/>
+	</bean>
+	<bean id="reopenFacilityHistoryService" class="com.sap.ibso.eservices.sagiaservices.services.reopenfacility.ReopenFacilityHistoryService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zesrvEnhODataService" />
+		<property name="entitySetName" value="BPAddrSet"/>
+		<property name="entityUrl" value="BPAddrSet"/>
+		<property name="oDataPopulator" ref="reopenFacilityAddressDataPopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+
+
+	<bean id="reopenFacilityServiceDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.reopenfacility.ReopenFacilityServiceDataPopulator">
+		<property name="documentAttachmentDataPopulator" ref="documentAttachmentDataPopulator" />
+	</bean>
+	<bean id="documentAttachmentDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.DocumentAttachmentDataReversePopulator"/>
+	<bean id="reopenFacilityServiceDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.reopenfacility.ReopenFacilityServiceDataReversePopulator">
+		<property name="documentAttachmentDataReversePopulator" ref="documentAttachmentDataReversePopulator" />
+	</bean>
+	<bean id="reopenFacilityService" class="com.sap.ibso.eservices.sagiaservices.services.reopenfacility.ReopenFacilityService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zesrvEnhODataService" />
+		<property name="entitySetName" value="DecExecVisitSet"/>
+		<property name="entityUrl" value="DecExecVisitSet"/>
+		<property name="oDataPopulator" ref="reopenFacilityServiceDataPopulator"/>
+		<property name="oDataReversePopulator" ref="reopenFacilityServiceDataReversePopulator"/>
+        <property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+
+	<bean id="documentAttachmentDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.DocumentAttachmentDataPopulator"/>
+	<bean id="documentAttachmentService" class="com.sap.ibso.eservices.sagiaservices.services.DocumentAttachmentService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zesrvEnhODataService" />
+		<property name="entitySetName" value="DocAttachSet"/>
+		<property name="entityUrl" value="DocAttachSet"/>
+		<property name="oDataPopulator" ref="documentAttachmentDataPopulator"/>
+	</bean>
+
+	<bean id="isicTextsDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.isic.IsicTextsDataPopulator"/>
+	<bean id="isicTextsService" class="com.sap.ibso.eservices.sagiaservices.services.isic.IsicTextsService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zCRMMasterData" />
+		<property name="entitySetName" value="IsictextsSet"/>
+		<property name="entityUrl" value="IsictextsSet"/>
+		<property name="oDataPopulator" ref="isicTextsDataPopulator"/>
+	</bean>
+
+	<bean id="isicMasterDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.isic.IsicMasterDataPopulator"/>
+	<bean id="isicMasterDataService" class="com.sap.ibso.eservices.sagiaservices.services.isic.IsicMasterDataService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zCRMMasterData" />
+		<property name="entitySetName" value="IsicmasterSet"/>
+		<property name="entityUrl" value="IsicmasterSet"/>
+		<property name="oDataPopulator" ref="isicMasterDataPopulator"/>
+		<property name="sagiaIsicMasterDataDAO" ref="sagiaIsicMasterDataDAO"/>
+	</bean>
+	
+
+	<bean id="shareHolderInfoAttODataModelPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.ShareHolderInfoAttODataPopulator"/>
+	<bean id="shareHolderInfoAttService" class="com.sap.ibso.eservices.sagiaservices.services.odata.ShareHolderInfoAttService">
+		<property name="oDataService" ref="zCRM_QEEMAH_SUBMIT_SRV"/>
+		<property name="entityUrl" value="ShareHolderInfoSet"/>
+		<property name="entitySetName" value="ShareHolderInfoSet"/>
+		<property name="oDataPopulator" ref="entityInformationODataModelPopulator"/>
+	</bean>
+	
+	<bean id="isicInformationODataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.IsicInformationODataPopulator"/>
+	<bean id="odataIsicInformationService" class="com.sap.ibso.eservices.sagiaservices.services.odata.IsicInformationService">
+		<property name="oDataService" ref="zCRM_QEEMAH_SUBMIT_SRV"/>
+		<property name="entityUrl" value="IsicInfoSet"/>
+		<property name="entitySetName" value="IsicInfoSet"/>
+		<property name="oDataPopulator" ref="isicInformationODataPopulator"/>
+	</bean>
+	
+	
+	<bean id="entityInformationODataModelPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.EntityInformationODataPopulator"/>
+	<bean id="odataEntityInformationService" class="com.sap.ibso.eservices.sagiaservices.services.odata.EntityInformationService">
+		<property name="oDataService" ref="zCRM_QEEMAH_SUBMIT_SRV"/>
+		<property name="entityUrl" value="EntityInfoSet"/>
+		<property name="entitySetName" value="EntityInfoSet"/>
+		<property name="oDataPopulator" ref="entityInformationODataModelPopulator"/>
+	</bean>
+	
+	<bean id="shareHoldersODataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.ShareHolderODataPopulator"/>
+	<bean id="shareHolderODataService" class="com.sap.ibso.eservices.sagiaservices.services.odata.ShareHolderODataService">
+		<property name="oDataService" ref="zCRM_QEEMAH_SUBMIT_SRV"/>
+		<property name="entityUrl" value="ShareHolderInfoSet"/>
+		<property name="entitySetName" value="ShareHolderInfoSet"/>
+		<property name="oDataPopulator" ref="shareHoldersODataPopulator"/>
+	</bean>
+	
+	
+	<bean id="basicContactInformationODataModelPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.BasicContactInformationODataPopulator"/>
+	<bean id="odataBasicContactInformationService" class="com.sap.ibso.eservices.sagiaservices.services.odata.BasicContactInformationService">
+		<property name="oDataService" ref="zCRM_QEEMAH_SUBMIT_SRV"/>
+		<property name="entityUrl" value="ContactInfoSet"/>
+		<property name="entitySetName" value="ContactInfoSet"/>
+		<property name="oDataPopulator" ref="basicContactInformationODataModelPopulator"/>
+	</bean>
+	
+	<bean name="serviceRequestCreationODataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.ServiceRequestCreationODataPopulator"/>
+	<bean name="serviceRequestCreationODataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.ServiceRequestCreationODataReversePopulator"/>	
+	<bean id="serviceRequestODataCreationDataService" class="com.sap.ibso.eservices.sagiaservices.services.odata.ServiceRequestODataCreationDataService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zCRM_QEEMAH_SUBMIT_SRV" />
+		<property name="entitySetName" value="CreateServReqSet"/>
+		<property name="entityUrl" value="CreateServReqSet"/>		                
+		<property name="oDataPopulator" ref="serviceRequestCreationODataPopulator"/> 
+		<property name="oDataReversePopulator" ref="serviceRequestCreationODataReversePopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+	
+
+	<!--ZQEEMAH 1-->
+	<bean id="orgInfoPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.OrgInfoDataPopulator"/>
+	<bean id="orgInfoReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.OrgInfoDataReversePopulator"/>
+	<bean id="orgInfoService" class="com.sap.ibso.eservices.sagiaservices.services.impl.OrgInfoService">
+		<property name="oDataService" ref="zqeemahODataService"/>
+		<property name="entityUrl" value="ZBASIC_ORG_INFO_ENT"/>
+		<property name="entitySetName" value="ZBASIC_ORG_INFO_ENT"/>
+		<property name="oDataPopulator" ref="orgInfoPopulator"/>
+		<property name="oDataReversePopulator" ref="orgInfoReversePopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+	<bean id="orgInfoDictionaryPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.OrgInfoDictionaryDataPopulator"/>
+	<bean id="orgInfoDictionaryService" class="com.sap.ibso.eservices.sagiaservices.services.impl.OrgInfoDictionaryService">
+		<property name="oDataService" ref="zqeemahODataService"/>
+		<property name="entityUrl" value="ZFM_CRM_QMH_DROPDOWN"/>
+		<property name="entitySetName" value="ZCRM_DROPDOWN_LIST_ENT"/>
+		<property name="oDataPopulator" ref="orgInfoDictionaryPopulator"/>
+	</bean>
+
+	<bean name="userRegisterDataPopulator" class="com.sap.ibso.eservices.sagiaservices.services.license.application.populator.UserRegisterPopulator"/>
+	<bean name="userRegisterDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.services.license.application.populator.UserRegisterReversePopulator"/>
+	<bean id="userRegisterService" class="com.sap.ibso.eservices.sagiaservices.services.license.application.odata.UserRegisterService" parent="abstractSagiaService">
+		<constructor-arg ref="userService"/>
+		<constructor-arg ref="modelService"/>
+        <constructor-arg ref="crmInvestorApplicantCodeGenerator"/>
+        <constructor-arg ref="zQeemahService"/>
+		<property name="oDataService" ref="zqeemahODataService" />
+		<property name="entitySetName" value="REGISTER_USER_ENT"/>
+		<property name="entityUrl" value="REGISTER_USER_ENT"/>
+		<property name="oDataPopulator" ref="userRegisterDataPopulator"/>
+		<property name="oDataReversePopulator" ref="userRegisterDataReversePopulator"/>
+	</bean>
+
+	<bean name="telecodeDataPopulator" class="com.sap.ibso.eservices.sagiaservices.services.license.application.populator.TelecodePopulator"/>
+	<bean id="telecodeService" class="com.sap.ibso.eservices.sagiaservices.services.license.application.odata.TelecodeService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemahODataService" />
+		<property name="entitySetName" value="ZCRM_TELECODE_ENT"/>
+		<property name="entityUrl" value="ZCRM_TELECODE_ENT"/>
+		<property name="oDataPopulator" ref="telecodeDataPopulator"/>
+	</bean>
+
+	<bean name="applicationStatusDataPopulator" class="com.sap.ibso.eservices.sagiaservices.services.license.application.populator.ApplicationStatusPopulator"/>
+	<bean id="applicationStatusService" class="com.sap.ibso.eservices.sagiaservices.services.license.application.odata.ApplicationStatusService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemahODataService" />
+		<property name="entitySetName" value="CRM_ID_STATUS_ENT"/>
+		<property name="entityUrl" value="ZFM_CRM_ID_STATUS"/>
+		<property name="oDataPopulator" ref="applicationStatusDataPopulator"/>
+	</bean>
+
+	<bean id="prodPsPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ProdPsPopulator"/>
+	<bean id="prodPsService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaProdPsService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemahODataService" />
+		<property name="entitySetName" value="ProdPsSet"/>
+		<property name="entityUrl" value="ProdPsSet"/>
+		<property name="oDataPopulator" ref="prodPsPopulator"/>
+	</bean>
+
+	<bean id="isicDetPsPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.IsicDetPsPopulator"/>
+	<bean id="isicDetPsService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaIsicDetPsService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemahODataService"/>
+		<property name="entitySetName" value="IsicDetPsSet"/>
+		<property name="entityUrl" value="IsicDetPsSet"/>
+		<property name="oDataPopulator" ref="isicDetPsPopulator"/>
+	</bean>
+
+    <bean id="isicDetPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah1.IsicDetPopulator"/>
+    <bean id="isicDetService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah.SagiaIsicDetService" parent="abstractSagiaService">
+        <property name="oDataService" ref="zqeemahODataService"/>
+        <property name="entitySetName" value="IsicDetSet"/>
+        <property name="entityUrl" value="IsicDet"/>
+        <property name="oDataPopulator" ref="isicDetPopulator"/>
+    </bean>
+
+	<bean id="existingShareholderPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah1.ExistingShareholderPopulator"/>
+	<bean id="existingShareholderService" class="com.sap.ibso.eservices.sagiaservices.services.impl.ExistingShareholderService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemahODataService"/>
+		<property name="entitySetName" value="VALIDATE_SHAREHOLDER_ENT"/>
+		<property name="entityUrl" value="VALIDATE_SHAREHOLDER_ENT"/>
+		<property name="oDataPopulator" ref="existingShareholderPopulator"/>
+	</bean>
+	
+	<bean id="mofaVerificationPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah1.MofaVerificationPopulator"/>
+	<bean id="mofaVerificationService" class="com.sap.ibso.eservices.sagiaservices.services.impl.MofaVerificationService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemahODataService"/>
+		<property name="entitySetName" value="VALIDATEMOFASet"/>
+		<property name="entityUrl" value="VALIDATEMOFASet"/>
+		<property name="oDataPopulator" ref="mofaVerificationPopulator"/>
+	</bean>
+
+	<bean id="basicContactInformationDataPopulatorQeemah1" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah.BasicContactInformationDataPopulatorQ1"/>
+	<bean id="basicContactInformationServiceQeemah1" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah.BasicContactInformationServiceQeemah1">
+		<property name="oDataService" ref="zqeemahODataService"/>
+		<property name="entityUrl" value="ZBASIC_CONT_INFO_ENT"/>
+		<property name="entitySetName" value="ZBASIC_CONT_INFO_ENT"/>
+		<property name="oDataPopulator" ref="basicContactInformationDataPopulatorQeemah1"/>
+	</bean>
+
+    <bean id="qeemahSubmitDataPopulatorQ1" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah.QeemahSubmitDataPopulatorQ1"/>
+    <bean id="qeemahSubmitDataReversePopulatorQ1" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah.QeemahSubmitDataReversePopulatorQ1"/>
+    <bean id="qeemahSubmitServiceQ1" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah.QeemahSubmitServiceQ1">
+        <property name="oDataService" ref="zqeemahODataService"/>
+        <property name="entityUrl" value="ZQEEMAH_SUBMIT_ENT"/>
+        <property name="entitySetName" value="ZQEEMAH_SUBMIT_ENT"/>
+        <property name="oDataPopulator" ref="qeemahSubmitDataPopulatorQ1"/>
+        <property name="oDataReversePopulator" ref="qeemahSubmitDataReversePopulatorQ1"/>
+    </bean>
+
+    <bean id="submitDataPopulatorQ1" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah.SubmitDataPopulatorQ1"/>
+    <bean id="submitDataReversePopulatorQ1" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah.SubmitDataReversePopulatorQ1"/>
+    <bean id="submitServiceQ1" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah.SubmitServiceQ1">
+        <property name="oDataService" ref="zqeemahODataService"/>
+        <property name="entityUrl" value="SUBMIT_ENT"/>
+        <property name="entitySetName" value="SUBMIT_ENT"/>
+        <property name="oDataPopulator" ref="submitDataPopulatorQ1"/>
+        <property name="oDataReversePopulator" ref="submitDataReversePopulatorQ1"/>
+    </bean>
+
+    <bean name="productDataPopulatorQeemah1" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah1.ProductDataPopulator"/>
+    <bean name="productDataReversePopulatorQeemah1" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah1.ProductDataReversePopulator"/>
+    <bean id="productServiceQeemah1" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah.ProductServiceQ1" parent="abstractSagiaService">
+        <property name="oDataService" ref="zqeemahODataService" />
+        <property name="entitySetName" value="ProductSet"/>
+        <property name="entityUrl" value="ProductSet"/>
+        <property name="oDataPopulator" ref="productDataPopulatorQeemah1"/>
+        <property name="oDataReversePopulator" ref="productDataReversePopulatorQeemah1"/>
+        <property name="investorMappingService" ref="investorMappingService"/>
+    </bean>
+
+	<bean id="shareholderAttachmentDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah1.ShareholderAttachmentDataPopulator"/>
+	<bean id="shareholderAttachmentDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah1.ShareholderAttachmentDataReversePopulator"/>
+	<bean id="entrepreneurFileService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah.EntrepreneurFileService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemahODataService"/>
+		<property name="entityUrl" value="ZBASIC_CONT_INFO_ENT"/>
+		<property name="entitySetName" value="ZBASIC_CONT_INFO_ENT"/>
+		<property name="oDataPopulator" ref="shareholderAttachmentDataPopulator"/>
+		<property name="oDataReversePopulator" ref="shareholderAttachmentDataReversePopulator"/>
+	</bean>
+	<!--/ZQEEMAH 1-->
+
+	<!--ZQEEMAH 2-->
+	<bean id="basicContactInfoDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.BasicContactInfoDataPopulator"/>
+	<bean id="basicContactInfoDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.BasicContactInfoDataReversePopulator"/>
+	<bean id="basicContactInformationService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.BasicContactInformationService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService"/>
+		<property name="entityUrl" value="Basic_cont_infoSet"/>
+		<property name="entitySetName" value="Basic_cont_infoSet"/>
+		<property name="oDataPopulator" ref="basicContactInfoDataPopulator"/>
+		<property name="oDataReversePopulator" ref="basicContactInfoDataReversePopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+	<bean id="basicOrganizationInformationDataPopulatorQ2" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.BasicOrganizationInfoDataPopulatorQ2"/>
+	<bean id="basicOrganizationInformationDataReversePopulatorQ2" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.BasicOrganizationInfoDataReversePopulatorQ2"/>
+	<bean id="basicOrganizationInformationService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.BasicOrganizationInformationService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService"/>
+		<property name="entityUrl" value="Basic_org_infoSet"/>
+		<property name="entitySetName" value="Basic_org_infoSet"/>
+		<property name="oDataPopulator" ref="basicOrganizationInformationDataPopulatorQ2"/>
+		<property name="oDataReversePopulator" ref="basicOrganizationInformationDataReversePopulatorQ2"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+	<bean name="leagalStatusDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.LegalStatusDataPopulator"/>
+	<bean id="legalStatusService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.LegalStatusService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService"/>
+		<property name="entityUrl" value="LegalStatusSet"/>
+		<property name="entitySetName" value="LegalStatusSet"/>
+		<property name="oDataPopulator" ref="leagalStatusDataPopulator"/>
+	</bean>
+
+	<bean name="diffQeemahPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.DiffQeemahPopulator"/>
+	<bean id="diffQeemahService" class="com.sap.ibso.eservices.sagiaservices.services.impl.DiffQeemahService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="DiffQeemahSet"/>
+		<property name="entityUrl" value="DiffQeemahSet"/>
+		<property name="oDataPopulator" ref="diffQeemahPopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+	<bean id="financialQuestionDropdownDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.FinancialQuestionDropdownDataPopulator"/>
+	<bean id="financialQuestionDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.FinancialQuestionDataPopulator">
+		<property name="financialQuestionDropdownDataPopulator" ref="financialQuestionDropdownDataPopulator"/>
+	</bean>
+	<bean id="financialQuestionService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.FinancialQuestionService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="FinancialQuesSet"/>
+		<property name="entityUrl" value="FinancialQuesSet"/>
+		<property name="oDataPopulator" ref="financialQuestionDataPopulator"/>
+	</bean>
+
+	<bean name="dropdownValueDataPopulator" class="com.sap.ibso.eservices.sagiaservices.services.license.application.populator.DropdownValueDataPopulator"/>
+	<bean id="dropdownValueService" class="com.sap.ibso.eservices.sagiaservices.services.license.application.odata.DropdownValueService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="DropdownValuesSet"/>
+		<property name="entityUrl" value="Dropdown"/>
+		<property name="oDataPopulator" ref="dropdownValueDataPopulator"/>
+	</bean>
+
+	<bean name="qeemahGeneralDdDataPopulator" class="com.sap.ibso.eservices.sagiaservices.services.license.application.populator.QeemahGeneralDdDataPopulator"/>
+	<bean name="qeemahGeneralQstDataPopulator" class="com.sap.ibso.eservices.sagiaservices.services.license.application.populator.QeemahGeneralQstDataPopulator">
+		<property name="qeemahGeneralDdDataPopulator" ref="qeemahGeneralDdDataPopulator"/>
+	</bean>
+	<bean id="qeemahGeneralQstService" class="com.sap.ibso.eservices.sagiaservices.services.license.application.odata.QeemahGeneralQstService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="QeemahGeneralQstSet"/>
+		<property name="entityUrl" value="QeemahGeneralQstSet"/>
+		<property name="oDataPopulator" ref="qeemahGeneralQstDataPopulator"/>
+	</bean>
+
+	<bean name="productDataPopulatorQeemah2" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.ProductDataPopulator"/>
+	<bean name="productDataReversePopulatorQeemah2" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.ProductDataReversePopulator"/>
+	<bean id="productServiceQeemah2" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.ProductService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="ProductSet"/>
+		<property name="entityUrl" value="ProductSet"/>
+		<property name="oDataPopulator" ref="productDataPopulatorQeemah2"/>
+		<property name="oDataReversePopulator" ref="productDataReversePopulatorQeemah2"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+	<bean name="shareholderDataPopulatorQeemah2" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.ShareholderDataPopulator"/>
+	<bean name="shareholderDataReversePopulatorQeemah2" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.ShareholderDataReversePopulator"/>
+	<bean id="shareholdersService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.ShareholdersService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="ShareholderSet"/>
+		<property name="entityUrl" value="ShareholderSet"/>
+		<property name="oDataPopulator" ref="shareholderDataPopulatorQeemah2"/>
+		<property name="oDataReversePopulator" ref="shareholderDataReversePopulatorQeemah2"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+	<bean name="oppServiceCreationDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.OppServiceCreationDataPopulator"/>
+	<bean name="oppServiceCreationDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.OppServiceCreationDataReversePopulator"/>
+	<bean id="oppServiceCreationService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.OppServiceCreationService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="opp_service_creationSet"/>
+		<property name="entityUrl" value="opp_service_creationSet"/>
+		<property name="oDataPopulator" ref="oppServiceCreationDataPopulator"/>
+		<property name="oDataReversePopulator" ref="oppServiceCreationDataReversePopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+	<bean name="serviceRequestCreationDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.ServiceRequestCreationDataPopulator"/>
+	<bean name="serviceRequestCreationDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.ServiceRequestCreationDataReversePopulator"/>
+	<bean id="serviceRequestCreationDataService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.ServiceRequestCreationDataService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="ServiceReqCreationSet"/>
+		<property name="entityUrl" value="ServiceReqCreationSet"/>
+		<property name="oDataPopulator" ref="serviceRequestCreationDataPopulator"/> 
+		<property name="oDataReversePopulator" ref="serviceRequestCreationDataReversePopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+
+	<bean name="oppService2DataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.OppService2DataPopulator"/>
+	<bean name="oppService2DataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.OppService2DataReversePopulator"/>
+	<bean id="oppService2Service" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.OppService2Service" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="opp_service2Set"/>
+		<property name="entityUrl" value="opp_service2Set"/>
+		<property name="oDataPopulator" ref="oppService2DataPopulator"/>
+		<property name="oDataReversePopulator" ref="oppService2DataReversePopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+	<bean name="serviceRequestMDDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.ServiceRequestMDDataPopulator"/>
+	<bean name="serviceRequestMDDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.ServiceRequestMDDataReversePopulator"/>
+	<bean id="serviceRequestMDService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.ServiceRequestMDService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="ServReqMDSetSet"/>
+		<property name="entityUrl" value="ServReqMDSetSet"/>
+		<property name="oDataPopulator" ref="serviceRequestMDDataPopulator"/>
+		<property name="oDataReversePopulator" ref="serviceRequestMDDataReversePopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+
+	<!--fininvisidpostSet-->
+	<bean name="fininvisidPostDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.FininvisidPostDataPopulator"/>
+	<bean name="fininvisidPostDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.FininvisidPostDataReversePopulator"/>
+	<bean name="finanacialAnswersService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.FinanacialAnswersService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="fininvisidpostSet"/>
+		<property name="entityUrl" value="fininvisidpostSet"/>
+		<property name="oDataPopulator" ref="fininvisidPostDataPopulator"/>
+		<property name="oDataReversePopulator" ref="fininvisidPostDataReversePopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+
+	<bean name="invsIdPostDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.InvsIdPostDataPopulator"/>
+	<bean name="invsIdPostDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.InvsIdPostDataReversePopulator"/>
+	<bean id="invsIdPostService" class="com.sap.ibso.eservices.sagiaservices.services.impl.InvsIdPostService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="invsidpostSet"/>
+		<property name="entityUrl" value="invsidpostSet"/>
+		<property name="oDataPopulator" ref="invsIdPostDataPopulator"/>
+		<property name="oDataReversePopulator" ref="invsIdPostDataReversePopulator"/>
+	</bean>
+
+	<!--fininvisidpostSet-->
+	<bean name="investorIdPostDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.InvsIdPostDataPopulator"/>
+	<bean name="investorIdPostDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.InvsIdPostDataReversePopulator"/>
+	<bean name="investorAnswersService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.InvestorAnswersService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="invsidpostSet"/>
+		<property name="entityUrl" value="invsidpostSet"/>
+		<property name="oDataPopulator" ref="investorIdPostDataPopulator"/>
+		<property name="oDataReversePopulator" ref="investorIdPostDataReversePopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+	<!--displayattachdescripSet-->
+	<bean name="displayAttachmentDescriptionDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah2.DisplayAttachmentDescriptionPopulator"/>
+	<bean id="displayAttachmentDescriptionService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah2.DisplayAttachmentDescriptionService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="displayattachdescripSet"/>
+		<property name="entityUrl" value="displayattachdescripSet"/>
+		<property name="oDataPopulator" ref="displayAttachmentDescriptionDataPopulator"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+	</bean>
+
+	<bean name="iSICDetailsPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.ISICDetailsPopulator"/>
+	<bean id="iSICDetailsService" class="com.sap.ibso.eservices.sagiaservices.services.isicdetails.ISICDetailsService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zqeemah2ExtSrvODataService" />
+		<property name="entitySetName" value="ISIC_detailsSet"/>
+		<property name="entityUrl" value="ISICDetails"/>
+		<property name="oDataPopulator" ref="iSICDetailsPopulator"/>
+	</bean>
+
+	<bean name="licenseTypeDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.zqeemah.LicenseTypeDataPopulator"/>
+	<bean id="licenseTypeService" class="com.sap.ibso.eservices.sagiaservices.services.impl.zqeemah.LicenseTypeService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zesrvEnhODataService" />
+		<property name="entitySetName" value="LicTypeSet"/>
+		<property name="entityUrl" value="LicTypeSet"/>
+		<property name="oDataPopulator" ref="licenseTypeDataPopulator"/>
+	</bean>
+	<!--/ZQEEMAH 2-->
+
+
+	<bean id="isicMasterDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.isic.IsicMasterDataReversePopulator"/>
+	<bean id="isicTextsDataReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.isic.IsicTextsDataReversePopulator"/>
+
+
+	<bean id="appointmentCalendarLabelsService" class="com.sap.ibso.eservices.sagiaservices.appointment.AppointmentCalendarLabelsService">
+        <property name="messageSource" ref="messageSource"/>
+        <property name="i18NService" ref="i18NService"/>
+	</bean>
+
+	<alias alias="emailService" name="defaultEmailService"/>
+	<bean id="defaultEmailService" class="com.sap.ibso.eservices.sagiaservices.services.SagiaEmailService">
+		<property name="modelService" ref="modelService"/>
+		<property name="mediaService" ref="mediaService"/>
+		<property name="catalogVersionService" ref="catalogVersionService"/>
+		<property name="catalogService" ref="catalogService"/>
+		<property name="configurationService" ref="configurationService"/>
+		<property name="emailAttachmentsMediaFolderName" value="email-attachments"/>
+		<property name="emailBodyMediaFolderName" value="email-body"/>
+		<property name="emailAddressFetchStrategy" ref="emailAddressFetchStrategy"/>
+	</bean>
+	
+	<bean id="i18NMessageTranslatorService" class="com.sap.ibso.eservices.sagiaservices.i18n.I18NMessageTranslatorService">
+        <property name="messageSource" ref="messageSource"/>
+        <property name="i18NService" ref="i18NService"/>
+	</bean>
+
+	<alias alias="emailGenerationService" name="sagiaEmailGenerationService"/>
+	<bean id="sagiaEmailGenerationService"
+		  class="com.sap.ibso.eservices.sagiaservices.services.email.SagiaEmailGenerationService">
+		<property name="emailService" ref="emailService"/>
+		<property name="rendererService" ref="rendererService"/>
+		<property name="emailContextFactory" ref="emailContextFactory"/>
+	</bean>
+
+	<bean id="sagiaUpdateSaleOrderJob" class="com.sap.ibso.eservices.sagiaservices.jobs.SagiaUpdateSaleOrderJob" parent="abstractJobPerformable">
+		<property name="sagiaPaymentService" ref="sagiaSalesOrderPaymentService"/>
+		<property name="salesOrderService" ref="sagiaEServicesSalesOrderService"/>
+		<property name="modelService" ref="modelService"/>
+	</bean>
+
+	<bean id="isicMasterDataSyncJob"
+		  class="com.sap.ibso.eservices.sagiaservices.jobs.IsicMasterDataSyncJob" parent="abstractJobPerformable">
+		<property name="isicMasterDataService" ref="isicMasterDataService" />
+		<property name="isicTextsService" ref="isicTextsService" />
+		<property name="modelService" ref="modelService"/>
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>
+
+	<bean id="sagiaB2BCustomer" class="com.sap.ibso.eservices.sagiaservices.services.b2b.impl.SagiaB2BCustomerImpl">
+		<property name="sagiaUserDao" ref="sagiaUserDao" />
+	</bean>
+
+	<bean id="workflowBDUserDisableJob" class="com.sap.ibso.eservices.sagiaservices.jobs.WorkflowOpportunityDisableBDUserJob" parent="abstractJobPerformable">
+		<property name="modelService" ref="modelService"/>
+		<property name="sagiaB2BCustomer" ref="sagiaB2BCustomer"/>
+	</bean>
+
+</beans>

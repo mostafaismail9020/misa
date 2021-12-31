@@ -1,0 +1,243 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = en
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ; ADDITIVE-MANUFACTURING    ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish 3D printing facility to supply componentsfor multiple applications </span></li>
+  <li><span>Engineering and reverse engineering services </span></li>
+</ul>
+"
+                                ; ARTIFICIAL-LIFT-SYSTEMS     ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a manufacturing facility for ESP and components </span></li>
+  <li><span>Invest in technical support service centers to provide maintenance and field support requirements for Artificial Lift Systems. </span></li>
+    <li><span>Establish a local cable manufacturing facility to increase local content in kingdom. </span></li>
+	  <li><span>Establish a precision machine shop to manufacture Artificial Lift core components/spare parts </span></li>
+</ul>
+"
+                                ; CABLE-DUCT                  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Currently, no manufacturing facilities in KSA.However, with the forecasted volume of subsea cables, it is recommended to have available manufacturers to produce Cable ducts IK. </span></li>
+</ul>
+"
+                                ; CEMENTING-STAGE-TOOLS      ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a Cementing Stage Tool design and R&D center to develop designs for KSA requirements. </span></li>
+  <li><span>Establish a precision machine shop to manufacture Cementing Stage Tool components. </span></li>
+    <li><span>Establish technical support service center to serve requirements for Cementing Stage Tools including field services </span></li>
+</ul>
+"
+                                ; CENTRALIZERS               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a workshop to manufacture Centralizers. </span></li>
+  <li><span>Establish technical support service center to serve requirements for Centralizers. </span></li>
+   <li><span>Establish a Centralizer design and R&D center to develop designs for KSA requirements. </span></li>
+</ul>
+"
+                                ; CONTROL-VALVES    ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a factory to manufacture: a. Control valves with focus on casting & forging activities. b. Positioners Types. c. Pneumatic. d. Hydraulic. b. Solenoid Valve. </span></li>
+  <li><span>Small and Medium Enterprises can provide the following a. Filter Regulator. b. Volume tank ( c. Volume booster. </span></li>
+    <li><span>Establish technical support service center to serve requirements for Testing, Maintenance and Troubleshooting of Control Valves </span></li>
+	  <li><span>Establish a Control Valves design and R&D center to develop designs for KSA requirements. </span></li>
+</ul>
+"
+                                ; COUPLINGS    ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Potential to establish facilities to locally machine and manufacture couplings. </span></li>
+  <li><span>Potential to develop SMEs to perform services,such as non destructive inspection and testing to support local manufacturing. </span></li>
+    <li><span>Establish technical support service center to serve requirements for manufacturer couplings. </span></li>
+	  <li><span>Establish Separation Internals design and R&Dcenter to design for KSA requirements. </span></li>
+</ul>
+"
+                                ; DIRECTIONAL-DRILLING         ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a precision machine shop to manufacture Directional Drilling components. </span></li>
+  <li><span>Establish a training center to serve the GCC region. </span></li>
+    <li><span>Establish a Directional Drilling servicecenter to develop support for KSA requirements. </span></li>
+</ul>
+"
+                                ; FITTINGS-FOR-TOPSIDE-PIPING    ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Localization potential exists at most stages of thefittings value chain (Design, Raw Materials, Manufacturing) </span></li>
+</ul>
+"
+                                ; FLANGES                        ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Targeting multiple types of flanges (Weld Neck, Blind and Socket weld flanges) </span></li>
+  <li><span>Expected investment size of USD 40 Mn </span></li>
+    <li><span>Expected IRR: 10 15 </span></li>
+</ul>
+"
+                                ; FLOAT-EQUIPMENT                ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a precision machine shop to manufacture Float Equipment. </span></li>
+  <li><span>Establish technical support service center to serve requirements for Float Equipment </span></li>
+    <li><span>Establish an Float Equipment design and R&D center to develop designs for KSA requirements. </span></li>
+
+</ul>
+"
+                                ; HEAT-EXCHANGERS                 ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Manufacturing gaps are: Tube Sheets (forged), Thermal Design, Testing (NDT, PWHT ) and other services </span></li>
+</ul>
+"
+                                ; HYDROGEN-TANKS                  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish multiple facilities to manufacture hydrogen vessels for different applications: Hydrogen vehicles Heavy duty trucks Fuel Stations. </span></li>
+  <li><span>Establish multiple carbon fiber composites manufacturing facilities to supply local and regional growing demand. </span></li>
+</ul>
+"
+                                ; IMPELLERS                      ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Develop equipment locally and supply to manufacturing facilities. </span></li>
+  <li><span>Establish technical support service center to serverequirements for manufacturers of Impellers including testing </span></li>
+    <li><span>Establish an Impellers design and R&D center to develop designs for KSA requirements. </span></li>
+</ul>
+"
+                                ; INDUSTRIAL-PUMPS                ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish an Industrial Pumps design and R&D center to develop designs for KSA requirements. </span></li>
+  <li><span>Establish a production facility to manufacture Industrial Pumps. </span></li>
+    <li><span>Investment in components, especially motors </span></li>
+	  <li><span>Establish technical support service center for field maintenance, equipment modification and repair </span></li>
+</ul>
+"
+                                ; INDUSTRIAL-RUBBER              ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a production facility for industrial rubber products gaskets, rings, washers, seals and inner tubes) to close KSA imports gap and satisfy part ofOIC demand </span></li>
+</ul>
+"
+                                ; INSTRUMENT-MANIFOLD-TUBING-and-FITTINGS     ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a factory to manufacture componentsincluding: a. Tubing. b. Fitting. c. manifold . </span></li>
+  <li><span>Small Medium Size Enterprise: SMEs to manufacture support components such as a. cover cap. b. Packaging. </span></li>
+    <li><span>Establish technical support service center to serve the following requirements: a. Technical consultation. b. Spare parts. c. Maintenance and troubleshooting. d. Testing and Certification </span></li>
+	  <li><span>Design by centralized team in KSA </span></li>
+</ul>
+"
+                                ; INSTRUMENTS-TUBES                           ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a manufacturing facility for Instruments Tubing </span></li>
+  <li><span>Localization potential exists at most stages of the instruments tube value chain </span></li>
+</ul>
+"
+                                ; LINER-HANGERS                               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a Liner Hanger design and R&D center to develop designs for KSA requirements. </span></li>
+  <li><span>Establish a precision machine shop to manufacture Liner Hanger components.</span></li>
+    <li><span>Establish technical support service center to serve requirements for Liner Hangers</span></li>
+</ul>
+"
+                                ; MIXER-TRUCKS                               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Local production is available but only for concrete mixer component: assembly to the truck is mostly outsourced </span></li>
+  <li><span>KSA market too small to give suppliers confidence to build a full mixer truck factory (i.e. truck & concrete mixer): focus should be on components for which expertise is already in KSA as well as assembly to truck </span></li>
+  <li><span>Mixer trucks market is expanding in KSA & regionally due to real estate construction projects but its usage depends on project size & location </span></li>
+</ul>
+"
+                                ; MULTILATERAL-COMPLETIONS                    ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a Multilateral Completions design and R&D center to develop designs for KSA requirements. </span></li>
+  <li><span>Establish a precision machine shop to manufacture Multilateral Completion components. </span></li>
+    <li><span>Establish technical support service center to serve requirements for Multilateral Completions. </span></li>
+</ul>
+"
+                                ; NEEDLE-VALVES                               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Design by a centralized Team in KSA. </span></li>
+  <li><span>Establish a local facility to manufacture different components used for Needle Valves, mainly casting and forging facility for bodies and internals. </span></li>
+    <li><span>Assembly of Needle Valves at local facility and plan to localize supply chain in phases. </span></li>
+  <li><span>Establish technical support service center to serve requirements for Testing, Repair and Maintenance of Needle Valves. </span></li> 
+</ul>
+"
+                                ; OIL-COUNTRY-TUBULAR-GOODS-ACCESSORIES      ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish an OCTG Accessories design and R&D center to develop designs for KSA requirements. </span></li>
+  <li><span>Establish a precision machine shop to manufacture OCTG Accessories. </span></li>
+    <li><span>Establish technical support service center to serve requirements for OCTG Accessories. </span></li>
+</ul>
+"
+                                ; OIL-COUNTRY-TUBULAR-GOODS-TUBING            ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish an OCTG Tubing design and R&D center to develop designs for KSA requirements. </span></li>
+  <li><span>Establish a mill to manufacture OCTG Tubing. </span></li>
+    <li><span>Thread OCTG Tubing prior to use in operations. </span></li>
+	  <li><span>Establish technical support service center to serve requirements for OCTG Tubing. </span></li>
+</ul>
+"
+                                ; PACKERS                                     ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a precision machine shop to manufacture Packer components. </span></li>
+  <li><span>Establish technical support service center to serve requirements for Packers. </span></li>
+    <li><span>Establish a Packer design and R&D center to develop designs for KSA requirements. </span></li>
+</ul>
+"
+                                ; PRECISION-MACHINING    ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a precision machining facility to server multiple industries </span></li>
+  <li><span>Provide services such as engineering, revers engineering </span></li>
+</ul>
+"
+                                ; RELIEF-VALVES          ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a production facility to manufacture Relief Valves. </span></li>
+  <li><span>Establish technical support service center for field maintenance, equipment modification and repair. </span></li>
+    <li><span>Establish a Relief Valve design and R&D center to develop designs for KSA requirements </span></li>
+</ul>
+"
+                                ; VALVES-FOR-FIRE-WATER-SYSTEMS    ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a Valves for Fire Water Systems design and R&D center to develop designs for KSA requirements. </span></li>
+  <li><span>Establish a factory to manufacture Valves for Fire Water Systems. </span></li>
+    <li><span>Small and Medium Enterprises can provide: Metal attachments, Gaskets, Coating. </span></li>
+	  <li><span>Establish technical support service center to serve requirements for Testing, Maintenance and Troubleshooting of Valves for Fire Water Systems </span></li>
+	    <li><span>Manufactures to provide spare parts </span></li>
+</ul>
+"
+                                ; INDUSTRIAL-VALVE                 ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Targeting multiple types of valves (gate, ball,butterfly, check and globe valves) </span></li>
+  <li><span>Expected investment size of USD 25 Mn</span></li>
+    <li><span>Expected IRR: 10-15%</span></li>
+</ul>
+"
+                                ; WELLHEAD-EQUIPMENT                ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Establish a Wellhead Equipment design and R&D center to develop designs for KSA requirements. </span></li>
+  <li><span>Establish a production facility to manufacture Wellhead Equipment. </span></li>
+    <li><span>Establish technical support service center for field maintenance, installation, equipment modification and repair </span></li>
+</ul>
+"

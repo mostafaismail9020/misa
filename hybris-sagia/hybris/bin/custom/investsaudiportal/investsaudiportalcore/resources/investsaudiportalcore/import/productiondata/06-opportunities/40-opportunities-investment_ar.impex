@@ -1,0 +1,822 @@
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = ar
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; investmentModel[lang = $lang]
+
+                                ; zoos-development ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>تشغيل صافي بمخطط الإدارة (لا حاجة للاستثمار)</span></li>
+</ul>                           
+"
+                                ; botanical-gardens-development ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>تشغيل صافي بمخطط الإدارة (لا حاجة للاستثمار)</span></li>
+</ul>                           
+"
+                                ; family-entertainment-centers-fecs-development ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>نموذج صاف للقطاع الخاص</span></div>                           
+"
+                                ; theme-parks-development ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+  <li><span>تشغيل صافي بمخطط الإدارة (لا حاجة للاستثمار)</span></li>
+</ul>                             
+"
+                                ; waterparks-development ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+  <li><span>تشغيل صافي بمخطط الإدارة (لا حاجة للاستثمار)</span></li>
+</ul>                             
+"
+                                ; aquariums-development ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+  <li><span>تشغيل صافي بمخطط الإدارة (لا حاجة للاستثمار)</span></li>
+</ul>                             
+"
+
+
+
+
+                                ; bonded-zone-in-dammam ;                ; "
+<h1 class='heading text-left my-3 mb-4'>Investment Model</h1>
+<div>Model: <span class='diff-color'>Pure private sector model</span></div>                     
+"
+                                ; controlled-temperature-logistics-operator ;                ; "
+<h1 class='heading text-left my-3 mb-4'>Investment Model</h1>
+<div>Model: <span class='diff-color'>Pure private sector model</span></div>                     
+"
+                                ; wheel-manufacturing-plant-for-trains ;                ; "
+<h1 class='heading text-left my-3 mb-4'>Investment Model</h1>
+<div>Model: <span class='diff-color'>Pure private sector model</span></div>                     
+"
+                                ; al-khomrah-logistics-zone ;                ; "
+<h1 class='heading text-left my-3 mb-4'>Investment Model</h1>
+<div>Model: <span class='diff-color'>Variable Lease</span></div>                     
+"
+
+
+
+
+                                ; open-die-forging-facilities ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; closed-die-forging-facilities ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-plants-for-investment-casting ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-plants-for-sand-casting ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; aluminium-foundry-alloys ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; glass-wool ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; proppants-plant ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; ductile-iron-pipes-dip ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; aluminium-wheels-and-casting ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; seamless-copper-tube ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; aluminium-circles-slug ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; aluminium-powder ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; aluminium-forgings ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+
+
+
+
+
+                                ; precision-machining-workshop-for-downhole-equipment-tools  ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-coiled-tubing-strings ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; production-of-drill-pipes ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-perforating-guns ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-drill-collars ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-liner-hangers ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-facility-for-packers ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-dv-tools ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; marine-finfish-cage-farming ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-whipstocks ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-pipe-fittings ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-heat-exchanger-tubes ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-butterfly-valves ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-plug-valves ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-choke-valves  ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-industrial-gears ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-mechanical-seals-for-industrial-equipment ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-bearings-for-industrial-equipment ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-industrial-fan-blades ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-ct-vt-instrument-transformers ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-electrical-fuses ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-circuit-breakers ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-protective-relays ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-industrial-ups ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-batteries-for-industrial-applications ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-electrical-inverters ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-low-voltage-motors ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-conduits-and-fittings ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-smart-meters ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-welding-machinery  ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-welding-consumables ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-diesel-generators ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-of-personal-protective-equipment-ppe ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; pumps ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+
+
+
+
+
+
+                                ; manufacturingassembly-plant-for-solar-pv-trackers ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; plant-for-module-assembly-1 ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-of-solar-pv-mounting-steel-structures ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-of-solar-pv-inverters ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; assembly-of-common-substation-transformers ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-of-wind-nacelle-housing ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-of-wind-turbine-gearboxes ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-plant-for-wind-turbine-generators-1 ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-of-wind-turbine-shafts ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-of-wind-turbine-converters ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-of-wind-turbine-bearings ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-of-wind-turbine-towers ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturingassembly-of-wind-turbine-blades ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturingassembly-of-solar-csp-pumps ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-of-solar-csp-steam-turbines ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturingassembly-of-solar-csp-heliostats ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-of-solar-csp-steam-generators ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; assembly-of-solar-csp-condensers ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-plant-for-solar-pv-cells ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; assembly-plant-for-control-system-components-1 ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localize-surge-lightning-arrestors-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localize-air-insulated-and-sandwich-type-busbar-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localize-power-capacitors-and-harmonics-filters-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localizing-aluminum-alloy-conductors-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localizing-dry-transformers-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-for-fuel-additives-1 ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturing-assembly-plant-for-gas-turbines-1 ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-high-voltage-switchgear-gis-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-circuit-interrupters-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-lv-control-gear-switches-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-low-voltage-switchgear-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-mv-breakers-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-mv-switchgear-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; assembly-plant-for-polymer-electrical-insulators-1 ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-porcelain-electrical-insulator-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-power-cables-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-recloserautorecloser-and-sectionalizer-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-ring-main-units-rmu-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; localization-of-smart-electricity-meters-production ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; assembly-plant-for-steam-condensers-heat-exchangers-1 ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; management-contracts-concession-contracts-for-water-distribution-sector ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; commercialization-of-brine ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>نموذج الاستثمار</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>فرصة للنظر في مجموعة متنوعة من نماذج التشغيل: 1. نموذج الاستثمار القائم على القطاع الخاص كليًا 2. مشروع مشترك مع إحدى الجهات المحلية الفاعلة</span></li>
+</ul>                             
+"
+                                ; manufacturingassembly-for-smart-water-meter ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturingassembly-for-electrical-ac-motor ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"
+                                ; manufacturingassembly-for-filtration-equipment ;                ; "
+<h1 class='heading text-left my-3 mb-4'>نموذج الاستثمار</h1>
+<div>نموذج: <span class='diff-color'>هناك فرصة للتفكير في نماذج تشغيل مختلفة</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>نموذج صافٍ للقطاع الخاص</span></li>
+  <li><span>مشروع مشترك مع جهة محلية</span></li>
+</ul>                             
+"

@@ -1,0 +1,527 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalGlobalTemplate
+$page = meet-the-kingdom
+$pageNameAr = تعرف على المملكة  
+$pageTitleAr = $pageNameAr
+$pageLabel = /aboutKingdom
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]   ; title[lang = ar]; description[lang = ar]; keywords[lang = ar]                         ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page                ; $pageTitleAr    ; $pageNameAr             ; Invest Saudi,Invest Saudi - Meet,Kingdom, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+
+############# MEDIA AND COMPONENTS START ######################
+
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true] ; name;url; &linkRef
+ #;; international-rankings-video-link-$page 						; international-rankings Video 								;https://youtube.com/embed/hkmLgSJlC90  	; international-rankings-video-link-$page
+ ;; globalthinkgroup-innvoation-video-link-$page					; globalthinkgroup-innvoation-video 	    				;https://youtube.com/embed/hkmLgSJlC90 	;globalthinkgroup-innvoation-video-link-$page
+ ;; nmc-healthcare-Video-link-$page									;nmc-healthcare-Video										;https://youtube.com/embed/oTJSljwvgyE	;nmc-healthcare-Video-link-$page
+ ;; fresnuis-medicalcare-asmusangelkort-Video-link-$page		 	;fresnuis-medicalcare-asmusangelkort-Video					;https://youtube.com/embed/zeC-xE3zLzo	;fresnuis-medicalcare-asmusangelkort-Video-link-$page
+ ;; fresnuis-medicalcare-frankwagner-Video-link-$page				;fresnuis-medicalcare-frankwagner-Video						;https://youtube.com/embed/3O2MxtT9Peo 	;fresnuis-medicalcare-frankwagner-Video-link-$page
+ ;; gesaudiarabia-energy-water-Video-link-$page						;gesaudiarabia-energy-water-Video							;https://youtube.com/embed/lNgho2CEjlI	;gesaudiarabia-energy-water-Video-link-$page
+ ;; exxonmobil-chemical-Video-link-$page							;exxonmobil-chemical-Video									;https://youtube.com/embed/j209vxqFK-U	;exxonmobil-chemical-Video-link-$page
+ ;; shelloverseas-chemicals-Video-link-$page						;shelloverseas-chemicals-Video								;https://youtube.com/embed/AqoD3n1WjQE	;shelloverseas-chemicals-Video-link-$page
+ ;; accel-education-Video-link-$page								;accel-education-Video										;https://youtube.com/embed/yFt5VW1yuwk	;accel-education-Video-link-$page
+ ;; thecityschool-education-Video-link-$page						;thecityschool-education-Video								;https://youtube.com/embed/SVNf1j3bX3Q	;thecityschool-education-Video-link-$page
+ ;; pepsico-foodprocessing-Video-link-$page							;pepsico-foodprocessing-Video								;https://youtube.com/embed/N5zbd7lceiA	;pepsico-foodprocessing-Video-link-$page
+ ; ;ambitious-reform-Video-link-$page								;ambitious-reform-Video										;https://www.youtube.com/embed/cvt-fbOkArM ;ambitious-reform-Video-link-$page
+ ; ;young-and-skilled-workforce-Video-link-$page					;young-and-skilled-workforce-Video							;https://www.youtube.com/embed/hy1NliYJKtE ;young-and-skilled-workforce-Video-link-$page
+
+ ; ;lilly-ltd-success-Video-link-$page								;lilly-ltd-success-Video							;https://www.youtube.com/embed/dVd2uz7ufwQ 			; lilly-ltd-success-Video-link-$page				
+ ; ;jansen-emea-success-Video-link-$page							;jansen-emea-success-Video							;https://www.youtube.com/embed/f1q3o-iAjGo 			; jansen-emea-success-Video-link-$page			
+ ; ;novartis-oncology-middle-east-Video-link-$page					;novartis-oncology-middle-east-Video				;https://www.youtube.com/embed/Fu-KY6BX5ec		 	; novartis-oncology-middle-east-Video-link-$page	
+ ; ;astrazeneca-success-Video-link-$page							;astrazeneca-success-Video							;https://www.youtube.com/embed/g0aVQd7q_so 		 	; astrazeneca-success-Video-link-$page			
+
+
+INSERT_UPDATE Media	; code[unique = true]         								; realFileName             									; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; meet-the-kingdom-banner.png 								; meet-the-kingdom-banner.png								; $siteResource/meet-the-kingdom-banner.png 									; 	image/png						;										   ; ""  ;
+					; population-growth.png			           				 	; population-growth.png										; $siteResource/population-growth.png		 								 	;	image/png						;										   ; ""  ;
+					; lowest-debt.png 											; lowest-debt.png											; $siteResource/lowest-debt.png								  					;	image/png						;										   ; ""  ;
+					; gdp-growth.png  											; gdp-growth.png											; $siteResource/gdp-growth.png 								  					;	image/png						;										   ; ""  ;
+					; fdi-stock.png												; fdi-stock.png												; $siteResource/fdi-stock.png 					  								;	image/png						;										   ; ""  ;
+					; largest-gdp.png											; largest-gdp.png											; $siteResource/largest-gdp.png 							 				 	;	image/png						;										   ; ""  ;
+					; government-budget.png			            				; government-budget.png										; $siteResource/government-budget.png 											;	image/png						;										   ; ""  ;
+					; foreign-assets.png			            				; foreign-assets.png										; $siteResource/foreign-assets.png 											  	;	image/png						;										   ; ""  ;
+					; fdi-inflows.png					        				; fdi-inflows.png											; $siteResource/fdi-inflows.png 											  	;	image/png						;										   ; ""  ;
+					; public-investment.png	            						; public-investment.png										; $siteResource/public-investment.png								  			;	image/png						;										   ; ""  ;
+					; foreign-assets-reserve.png								; foreign-assets-reserve.png		    					; $siteResource/foreign-assets-reserve.png										;	image/png						;										   ; ""	 ;
+					; intersection-background.png 								; intersection-background.png 								; $siteResource/intersection-background.png										;	image/png						;										   ; ""  ;
+					; macroeconomic-background.png 								; macroeconomic-background.png 								; $siteResource/macroeconomic-background.png									;	image/png						;										   ; ""  ;
+					; game-changing-opportunities.png							; game-changing-opportunities.png							; $siteResource/game-changing-opportunities.png									;	image/png						;										   ; ""	 ;
+					; ambitious-reform.png	              	  					; ambitious-reform.png     		        					; $siteResource/ambitious-reform.png                  			 				;  	image/png						;										   ; ""  ;
+					; strategic-global-location.png             				; strategic-global-location.png         					; $siteResource/strategic-global-location.png                 	 	 			;  	image/png						;										   ; ""  ;
+					; attractive-property-solutions.png         				; attractive-property-solutions.png    						; $siteResource/attractive-property-solutions.png                  	 			;  	image/png						;										   ; ""  ;
+					; young-and-skilled-workforce.png           				; young-and-skilled-workforce.png      						; $siteResource/young-and-skilled-workforce.png                   				; 	image/png						;										   ; ""  ; 
+					; expanding-quality-life.png             					; expanding-quality-life.png    							; $siteResource/expanding-quality-life.png                  		 			;  	image/png						;										   ; ""	 ;
+	                ; leading-financial-sector.png              				; leading-financial-sector.png     							; $siteResource/leading-financial-sector.png                  		 			; 	image/png						;										   ; ""  ;
+					; back-button.png											; back-button.png											; $siteResource/back-button.png													;	image/png						;										   ; ""  ;
+					; next-button.png 											; next-button.png 											; $siteResource/next-button.png													;	image/png						;										   ; ""  ;
+					; chemical-icon.png											; chemical-icon.png											; $siteResource/chemicals.png												    ;	image/png						;										   ; ""  ;
+					; education-icon.png										; education-icon.png										; $siteResource/education.png												    ;	image/png						;										   ; ""  ;
+					; energy-and-water-icon.png 								; energy-and-water-icon.png 								; $siteResource/energy-and-water-icon.png										;	image/png						;										   ; ""  ;
+					; food-processing-icon.png 									; food-processing-icon.png 									; $siteResource/food-processing.png										        ;	image/png						;										   ; ""  ;
+					; healthcare-icon.png 										; healthcare-icon.png 										; $siteResource/healthcare-life-sciences.png									;	image/png						;										   ; ""  ;
+					; innovation-icon.png 										; innovation-icon.png 										; $siteResource/innovation.png												    ;	image/png						;										   ; ""  ;
+					; inverted-icon.png 										; inverted-icon.png 										; $siteResource/inverted-icon.png												;	image/png						;										   ; ""  ;
+					; play-button.png 											; play-button.png 											; $siteResource/play-button.png													;	image/png						;										   ; ""  ;
+					; base-logo1.png 											; base-logo1.png 											; $siteResource/base-logo1.png													;	image/png						;										   ; ""  ;
+					; isuzu-logo1.png											; isuzu-logo1.png											; $siteResource/isuzu-logo1.png
+					; danone-logo1.png											; danone-logo1.png											; $siteResource/danone-logo1.png
+					; boeing-logo1.png											; boeing-logo1.png											; $siteResource/boeing-logo1.png
+					; lockheed-martin-logo1.png 								; lockheed-martin-logo1.png 								; $siteResource/lockheed-martin-logo1.png										;	image/png						;										   ; ""  ;
+					; pfizer-logo1.png 											; pfizer-logo1.png 											; $siteResource/pfizer-logo1.png												;	image/png						;										   ; ""  ;
+					; accel-education.png 										; accel-education.png 										; $siteResource/accel-education.png												;	image/png						;										   ; ""  ;
+					; exxonmobil-chemical.png 									; exxonmobil-chemical.png 									; $siteResource/exxonmobil-chemical.png											;	image/png						;										   ; ""  ;
+					; fresnuis-medicalcare-asmusangelkort.png 					; fresnuis-medicalcare-asmusangelkort.png					; $siteResource/fresnuis-medicalcare-asmusangelkort.png							;	image/png						;										   ; ""  ;
+					; fresnuis-medicalcare-frankwagner.png 						; fresnuis-medicalcare-frankwagner.png 						; $siteResource/fresnuis-medicalcare-frankwagner.png							;	image/png						;										   ; ""  ; 
+					; gesaudiarabia-energy-water.png 							; gesaudiarabia-energy-water.png 							; $siteResource/gesaudiarabia-energy-water.png									;	image/png						;										   ; ""  ;
+					; globalthinkgroup-innvoation.png							; globalthinkgroup-innvoation.png							; $siteResource/globalthinkgroup-innvoation.png									;	image/png						;										   ; ""  ;
+					; nmc-healthcare.png 										; nmc-healthcare.png 										; $siteResource/nmc-healthcare.png												;	image/png						;										   ; ""  ;
+					; shelloverseas-chemicals.png 								; shelloverseas-chemicals.png 								; $siteResource/shelloverseas-chemicals.png										;	image/png						;										   ; ""  ;
+					; pepsico-foodprocessing.png 								; pepsico-foodprocessing.png								; $siteResource/pepsico-foodprocessing.png										;	image/png						;										   ; ""  ;
+					; thecityschool-education.png 								; thecityschool-education.png 								; $siteResource/thecityschool-education.png										;	image/png						;										   ; ""  ;
+					; accel-logo.png 											; accel-logo.png 											; $siteResource/accel-logo.png													;	image/png						;										   ; ""  ;
+					; city-school-saudi-logo.png 								; city-school-saudi-logo.png 								; $siteResource/city-school-saudi-logo.png										;	image/png						;										   ; ""  ;
+					; exxon-mobil-logo.png 										; exxon-mobil-logo.png 										; $siteResource/exxon-mobil-logo.png											;	image/png						;										   ; ""  ;
+					; fresnuis-medical-care-logo.png 							; fresnuis-medical-care-logo.png 							; $siteResource/fresnuis-medical-care-logo.png									;	image/png						;										   ; ""  ;
+					; gesaudi-energywater-logo.png 								; gesaudi-energywater-logo.png								; $siteResource/gesaudi-energywater-logo.png									;	image/png						;										   ; ""  ;
+					; global-think-group-logo.png 								; global-think-group-logo.png 								; $siteResource/global-think-group-logo.png										;	image/png						;										   ; ""  ;
+					; nmc-healthcare-logo.png 									; nmc-healthcare-logo.png									; $siteResource/nmc-healthcare-logo.png											;	image/png						;										   ; ""  ;
+					; pepsico-foodprocessing-logo.png 							; pepsico-foodprocessing-logo.png 							; $siteResource/pepsico-foodprocessing-logo.png									;	image/png						;										   ; ""  ;
+					; play-button.svg 											; play-button.svg 											; $siteResource/play-button.svg													;	image/svg+xml					;										   ; ""  ;
+					
+					; astrazeneca-logo.png 										; astrazeneca-logo.png 										; $siteResource/astrazeneca-logo.png											;	image/png						;										   ; ""  ;
+					; janssen-logo.png 											; janssen-logo.png 											; $siteResource/janssen-logo.png												;	image/png						;										   ; ""  ;
+					; lilly-logo.png 											; lilly-logo.png 											; $siteResource/lilly-logo.png													;	image/png						;										   ; ""  ;
+					; novartis-logo.png 										; novartis-logo.png 										; $siteResource/novartis-logo.png												;	image/png						;										   ; ""  ;
+					; astrazeneca-success-stories.png 							; astrazeneca-success-stories.png 							; $siteResource/astrazeneca-success-stories.png									;	image/png						;										   ; ""  ;
+					; jansen-emea-success-stories.png 							; jansen-emea-success-stories.png 							; $siteResource/jansen-emea-success-stories.png									;	image/png						;										   ; ""  ;
+					; lilly-ltd-success-stories.png 							; lilly-ltd-success-stories.png 							; $siteResource/lilly-ltd-success-stories.png									;	image/png						;										   ; ""  ;
+					; novartis-oncology-success-stories.png 					; novartis-oncology-success-stories.png 					; $siteResource/novartis-oncology-success-stories.png		;	image/png						;										   ; ""  ;
+					
+					
+					; shell-chemicals-logo.png 									; shell-chemicals-logo.png 									; $siteResource/shell-chemicals-logo.png										;	image/png						;										   ; ""  ;
+					; international-rankings-1.mp4 								; international-rankings-1.mp4 							    ; $siteResource/international-rankings-1.mp4									;	video/mp4						;										   ; ""  ;
+					; international-rankings_arabic.mp4 						; international-rankings_arabic.mp4 						; $siteResource/international-rankings_arabic.mp4								;	video/mp4						;										   ; ""  ;
+					
+					
+					# MEGA AND GIGA CONTENT LOGO
+					; neom_logo.png 								            ; neom_logo.png								                ; $siteResource/neom_logo.png										            ;	image/png						;										   ; ""  ;
+					; the_red_sea_logo.png 							            ; the_red_sea_logo.png 									    ; $siteResource/the_red_sea_logo.png											;	image/png						;										   ; ""  ;
+					; qiddiya_logo.png 								            ; qiddiya_logo.png 								            ; $siteResource/qiddiya_logo.png										        ;	image/png						;										   ; ""  ;
+					; amaala_logo.png 								            ; amaala_logo.png 										    ; $siteResource/amaala_logo.png											        ;	image/png						;										   ; ""  ;
+					; diriyah_gate_logo.png 						            ; diriyah_gate_logo.png 							        ; $siteResource/diriyah_gate_logo.png									        ;	image/png						;										   ; ""  ;
+					; roya_commission_for_allula.png 				            ; roya_commission_for_allula.png							; $siteResource/roya_commission_for_allula.png									;	image/png						;										   ; ""  ;
+					; kafd_logo.png 								            ; kafd_logo.png 								            ; $siteResource/kafd_logo.png										            ;	image/png						;										   ; ""  ;
+					; soudah_development_company_logo.png 			            ; soudah_development_company_logo.png						; $siteResource/soudah_development_company_logo.png								;	image/png						;										   ; ""  ;
+					; roshn_logo.png 							                ; roshn_logo.png 							                ; $siteResource/roshn_logo.png									                ;	image/png						;										   ; ""  ;
+					; kaec_logo.png 								            ; kaec_logo.png 											; $siteResource/kaec_logo.png													;	image/png					    ;										   ; ""  ;
+					; knowledge_economic_city.png 					            ; knowledge_economic_city.png 								; $siteResource/knowledge_economic_city.png										;	image/png						;										   ; ""  ;
+					; royal_commission_for_jubali_and_yanbu.png 	            ; royal_commission_for_jubali_and_yanbu.png 				; $siteResource/royal_commission_for_jubali_and_yanbu.png						;	image/png						;										   ; ""  ;
+					; king_salman_park_logo.png 							    ; king_salman_park_logo.png 								; $siteResource/king_salman_park_logo.png									    ;	image/png						;										   ; ""  ;
+					; king_salman_energy_park_logo.png 							; king_salman_energy_park_logo.png 							; $siteResource/king_salman_energy_park_logo.png							    ;	image/png						;										   ; ""  ;
+					; king_salman_international_complex_logo.png 				; king_salman_international_complex_logo.png 				; $siteResource/king_salman_international_complex_logo.png						;	image/png						;										   ; ""  ;
+
+# MEGA AND GIGA CONTENT BACKGROUND IMAGES
+					; neom_img.jpg 								                ; neom_img.jpg								                ; $siteResource/neom_img.jpg										            ;	image/jpeg						;										   ; ""  ;
+					; the_red_sea_img.jpg 							            ; the_red_sea_img.jpg 									    ; $siteResource/the_red_sea_img.jpg											    ;	image/jpeg						;										   ; ""  ;
+					; qiddiya_img.jpg 								            ; qiddiya_img.jpg 								            ; $siteResource/qiddiya_img.jpg										            ;	image/jpeg						;										   ; ""  ;
+					; amaala_img.jpg 								            ; amaala_img.jpg 										    ; $siteResource/amaala_img.jpg											        ;	image/jpeg						;										   ; ""  ;
+					; diriyah_gate_img.jpg 						                ; diriyah_gate_img.jpg 							            ; $siteResource/diriyah_gate_img.jpg									        ;	image/jpeg						;										   ; ""  ;
+					; roya_commission_for_allula_img.jpg 				        ; roya_commission_for_allula_img.jpg						; $siteResource/roya_commission_for_allula_img.jpg								;	image/jpeg						;										   ; ""  ;
+					; kafd_img.jpg 								                ; kafd_img.jpg 								                ; $siteResource/kafd_img.jpg										            ;	image/jpeg						;										   ; ""  ;
+					; soudah_development_company_img.jpg 			            ; soudah_development_company_img.jpg						; $siteResource/soudah_development_company_img.jpg								;	image/jpeg						;										   ; ""  ;
+					; roshn_img.jpg 							                ; roshn_img.jpg 							                ; $siteResource/roshn_img.jpg									                ;	image/jpeg						;										   ; ""  ;
+					; kaec_img.jpg 								                ; kaec_img.jpg 											    ; $siteResource/kaec_img.jpg													;	image/jpeg					    ;										   ; ""  ;
+					; knowledge_economic_city_img.jpg 					        ; knowledge_economic_city_img.jpg 							; $siteResource/knowledge_economic_city_img.jpg									;	image/jpeg						;										   ; ""  ;
+					; royal_commission_for_jubali_and_yanbu_img.jpg 	        ; royal_commission_for_jubali_and_yanbu_img.jpg 			; $siteResource/royal_commission_for_jubali_and_yanbu_img.jpg					;	image/jpeg						;										   ; ""  ;
+                    ; king_salman_park_img.jpg 							        ; king_salman_park_img.jpg 								    ; $siteResource/king_salman_park_img.jpg										;	image/jpeg						;										   ; ""  ;
+					; king_salman_energy_park.jpg 								; king_salman_energy_park.jpg 								; $siteResource/king_salman_energy_park.jpg										;	image/jpeg						;										   ; ""  ;
+					; king_salman_international_complex_img.jpg 				; king_salman_international_complex_img.jpg 				; $siteResource/king_salman_international_complex_img.jpg						;	image/jpeg						;										   ; ""  ;
+
+
+#############################################################
+
+INSERT_UPDATE InvestSaudiBannerComponent ; uid[unique = true]      ; descriptionText[lang = ar] ; image(code, $contentCV)         ; link   ; &componentRef            ; $contentCV[unique = true]
+                                         ; meetthekingdom-banner-1 ; تعرف على المملكة           ; meet-the-kingdom-banner.png     ; true   ; meetthekingdom-banner-1  ;
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true] 			     ; simpleCMSComponents(&componentRef); &componentRef                     ; $contentCV[unique = true]
+										; meetthekingdom-banner-container    ; meetthekingdom-banner-1 			  ; meetthekingdom-banner-container  ;
+
+
+
+
+#################################################################
+
+INSERT_UPDATE MeetTheKingdomMacroEconomicComponent	; uid[unique = true]  ; headerText[lang = ar] ; imageIcon(code, $contentCV)   ; description[lang = ar] 							                                   ; &componentRef    ; $contentCV[unique = true]
+                                                    ; macroeconomic1      ; المركز الأول           ; population-growth.png         ; ثقة في أداء الحكومة لعام 2021                                                      ; macroeconomic1
+                                                    ; macroeconomic2      ; %2.6                  ; gdp-growth.png                ; النمو المتوقع في الناتج المحلي الإجمالي الحقيقي لعام 2021                           ; macroeconomic2
+                                                    ; macroeconomic3      ; المركز الثالث         ; lowest-debt.png               ; في نسبة الدين من الناتج المحلي الإجمالي بين دول مجموعة العشرين                      ; macroeconomic3
+                                                    ; macroeconomic4      ; %34.50                ; fdi-stock.png                 ; نسبة رصيد الاستثمار الأجنبي المباشر من إجمالي الناتج المحلي                          ; macroeconomic4
+                                                    ; macroeconomic5      ; المركز الخامس         ; largest-gdp.png               ; في نصيب الفرد من إجمالي الناتج المحلي (تعادل القوة الشرائية) بين دول مجموعة العشرين; macroeconomic5                              
+                                                    ; macroeconomic6      ; 5.4 مليار دولار أمريكي ; fdi-inflows.png               ; تدفقات الاستثمار الأجنبي المباشر في العام 2020                                       ; macroeconomic6
+                                                    ; macroeconomic7      ; %20                   ; foreign-assets.png            ; ارتفاع تدفقات الإستثمار الأجنبي المباشر في العام 2020مقارنة بإنخفاض  عالمي بنسبة  35% ; macroeconomic7
+                                                    ; macroeconomic8      ; 264 مليار دولار أمريكي ; government-budget.png         ; ميزانية الحكومة في العام المالي 2021                                                ; macroeconomic8
+                                                    ; macroeconomic9      ; %52.10                ; public-investment.png         ; نمو الصادرات غير النفطية في الربع الثاني من 2021                                    ; macroeconomic9
+                                                    ; macroeconomic10     ; 454.8 مليار دولار أمريكي ; foreign-assets-reserve.png  ;  إجمالي الأصول الاحتياطية في أغسطس 2021                                               ; macroeconomic10
+
+INSERT_UPDATE MeetTheKingdomMacroEconomicContainer ; uid[unique = true]              ;  title[lang=ar]                ; simpleCMSComponents(&componentRef)                                                                                                                              ; subtitle[lang = ar]                                      ; backgroundImage(code, $contentCV)   ; text[lang = ar]                                        ;  &componentRef                 ; $contentCV[unique = true]													
+								                   ; MacroEconomicOverviewContainer	 ;  لمحة عامة على الاقتصاد الكلي	  ; macroeconomic1,macroeconomic2, macroeconomic3,macroeconomic4, macroeconomic5, macroeconomic6, macroeconomic7, macroeconomic8, macroeconomic9, macroeconomic10	; الاقتصاد السعودي : قوه عالميه و إقليميه مؤثرة إقتصاديًا    ; macroeconomic-background.png	     ; تُعد السعودية واحدة من أكبر الدول في مجموعة العشرين	  ; MacroEconomicOverviewContainer ;
+													
+####################################################################													
+													
+INSERT_UPDATE MeetTheKingdomInternationalRankingsComponent ; uid[unique = true]     ; &componentRef		      ; localizedGifImage (code, $contentCV)[lang = ar]    			; title[lang=ar]         ;  $contentCV[unique = true];													
+			                                              ; international-rankings  ; international-rankings  ; international-rankings_arabic.mp4  							; التصنيفات الدولية      ;                           ;										
+			 										
+####################################################################
+
+INSERT_UPDATE MeetTheKingdomKeyReasonsComponent ; $contentCV[unique = true] ; uid[unique = true]			; reasonHeader [lang = ar]	    ; backgroundImage (code, $contentCV)   ; title [lang = ar]                           ; videoLink(&linkRef)                				; &componentRef							                     ; subtitle [lang = ar]                                                                                                    	       ; localizedStats(uid, $contentCV)  
+											                                                                                                                                                                                                                                        
+												;                           ; game-changing-opportunities	; فرص استثماريه فريده           ; game-changing-opportunities.png	   ;  فرص إستثماريه فريده                         ;                        	  						; game-changing-opportunities     			                 ;  بيئة عمل مُتطوره                                                                                                          ; game-changing1,game-changing2,game-changing4,game-changing5,game-changing6,game-changing7
+										                                                                                                                                                                                                                                                                                                                                                                                                                                  
+												;							; ambitious-reform				; سلسلة إصلاحات طموحه            ; ambitious-reform.png                 ; سلسلة إصلاحات ضمن رؤية 2030                   ;   ambitious-reform-Video-link-$page              ; ambitious-reform                                       ; مع نجاحات مثبتة ومبكرة                                                                                            ; ambitious-reform1,ambitious-reform2,ambitious-reform3,ambitious-reform4,ambitious-reform5,ambitious-reform6
+												                                                                                                                                                                                                                                                                                                                                                                                                                          
+												;							; strategic-global-location		; موقع جغرافي إستراتيجي         ; strategic-global-location.png        ; موقع جغرافي إستراتيجي  	                  ;                                        	      	; strategic-global-location       					     ; ربط شبكي ممتاز داخليا ودوليا                                                                                                ; strategic-global-location1,strategic-global-location2,strategic-global-location3,strategic-global-location4,strategic-global-location5,strategic-global-location6
+												                                                                                                                                                                                                                                                                                                                                                                                                                          
+												;							; attractive-property-solutions	; حلول عقارية جاذبه             ; attractive-property-solutions.png    ; حلول عقارية جاذبه                            ;                                           	    ; attractive-property-solutions     					     ; أكثر من 35 مدينة صناعية و إقتصادية و بأسعار تنافسية                                                               ; attractive-property-solutions1,attractive-property-solutions2,attractive-property-solutions3,attractive-property-solutions4,attractive-property-solutions5,attractive-property-solutions6
+												                                                                                                                                                                                                                                                                                                                                                                                                                          
+												;							; young-and-skilled-workforce	; قوى عامله و كفاءات شابه       ; young-and-skilled-workforce.png      ; قوى عامله و كفاءات شابه                      ;  young-and-skilled-workforce-Video-link-$page	; young-and-skilled-workforce                             ; نسبة 58% من الشباب في سوق العمل هم تحت العمر35   و قطاع التعليم من أهم بنود الانفاق الحكومي                                        ; young-and-skilled-workforce1,young-and-skilled-workforce2,young-and-skilled-workforce3,young-and-skilled-workforce6,young-and-skilled-workforce7,young-and-skilled-workforce8
+												                                                                                                                                                                                                                                                                                                                                                                                                                          
+												;							; leading-financial-sector	    ;قطاع مالي متنوع و فاعل         ; leading-financial-sector.png         ; قطاع مالي متنوع و فاعل                       ;                                                  ; leading-financial-sector            						 ; مدعومًا بالنظام المصرفي المرن وقاعدة كبيرة من الأصول                                                           	   ; leading-financial-sector1,leading-financial-sector2,leading-financial-sector3,leading-financial-sector4,leading-financial-sector5,leading-financial-sector6
+			                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+												;							; expanding-quality-life		; إنجازات بارزه لتحسين جودة الحياة  ; expanding-quality-life.png       ; إنجازات بارزه لتحسين جودة الحياة              ;                                                  ; expanding-quality-life                                   ;  وذلك من خلال تقديم رواتب بدون ضرائب ورعاية صحية متقدمة وأسلوب حياة أكثر تطور                                               ; expanding-quality-life1,expanding-quality-life2,expanding-quality-life3,expanding-quality-life4,expanding-quality-life5,expanding-quality-life6
+
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                     ; uid[unique=true]    ; value[lang = ar]												
+			                            ;              ; 1.3 تريليون دولار أمريكي            ; game-changing1	  ; احتياطي مثالي من إمكانات التعدين غير المستغلة
+										;              ; 100 مليار دولار أمريكي              ; game-changing2      ; للاستثمارات البتروكيماوية المقررة من جانب شركة أرامكو خلال العِقد القادم       
+
+										;              ; 64 مليار دولار أمريكي               ; game-changing4      ; للاستثمارات في الفن والسياحة والترفيه خلال العِقد القادم      
+										;              ; 224 مليار دولار أمريكي              ; game-changing5      ; من الإنفاق على الرعاية الصحية في السنوات الخمس القادمة من جانب القطاعين العام والخاص           
+										;              ; 150 مليار دولار أمريكي              ; game-changing6      ; للاستثمارات المتوقعة للنقل والخدمات اللوجستية بحلول 2030      
+										;              ; 1.8 مليار دولار أمريكي              ; game-changing7      ; تمويل رأس المال المخاطر المدعوم من جانب الحكومة               
+	
+	
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]               ; uid[unique=true]    ; value[lang = ar]												
+                                        ;              ; 3 تريليون دولار               ; ambitious-reform1   ; قيمة الاستثمارات المخطط لها ضمن مشروعات رؤية 2030 
+                                        ;              ; 517                          ; ambitious-reform2   ; من بين 517 عملية إصلاح داعمة للأعمال التجارية المنفذة بنجاح
+                                        ;              ; 3 ساعات                      ; ambitious-reform3   ; فترة اعتماد رخصة الاستثمار 
+                                        ;              ; أكثر من 5 سنوات              ; ambitious-reform4   ; تمديد فترة رخصة المستثمر
+                                        ;              ; 24 ساعة                      ; ambitious-reform5   ; لإصدار تأشيرات العمل، دون دعوة محلية
+                                        ;              ; 100%                         ; ambitious-reform6   ; السماح بالملكية الأجنبية الكاملة في الاستثمار
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]               ; uid[unique=true]              ; value[lang = ar]												
+                                        ;              ; %13                          ; strategic-global-location1    ; من التجارة البحرية العالمية عبورا بالبحر الأحمر                         
+                                        ;              ; 40                           ; strategic-global-location2    ; سوق سريعة النمو يمكن تحقيقها في غضون 4 ساعات 
+                                        ;              ; 10                           ; strategic-global-location3    ; موانئ بحرية تشكل أكبر الشبكات البحرية في الشرق الأوسط
+                                        ;              ; 28                           ; strategic-global-location4    ; مطار ينقل ما يزيد عن 90 مليون مسافر كل عام
+                                        ;              ; 5,590 كم                     ; strategic-global-location5    ; من السكك الحديدية التي تقدم ربط شبكي مناسب
+                                        ;              ; 71,500 كم                    ; strategic-global-location6    ; من الطرق البرية، التي تحتل المرتبة الأولى عالميًا في شبكة الطرق حسب المنتدى الاقتصادي العالمي
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                                           ; uid[unique=true]                ; value[lang = ar]												
+                                        ;              ; 0.27 دولار أمريكي لكل متر مربع                            ; attractive-property-solutions1  ; أراضي للإيجار
+                                        ;              ; 0.049 دولار أمريكي لكل كيلو واط من الطاقة في الساعة       ; attractive-property-solutions2  ; لقطاع الصناعة
+                                        ;              ; 1.1 - 2.2 دولار أمريكي لكل متر مكعب                       ; attractive-property-solutions3  ; لمياه الشرب (بناءً على المنطقة والحجم)
+                                        ;              ; 0.5 - 1.4 دولار أمريكي لكل متر مكعب                       ; attractive-property-solutions4  ; للمياه المعالَجَة (بناءً على المنطقة والحجم)
+                                        ;              ; 1.27 دولار أمريكي لكل وحدة حرارية بريطانية                ; attractive-property-solutions5  ; للغاز الطبيعي
+                                        ;              ; 15.26 دولار/ برميل                                        ; attractive-property-solutions6  ; لبراميل الديزل
+
+										
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                ; value[lang = ar]												
+                                        ;              ; %6                              ; young-and-skilled-workforce1    ; معدل النمو السنوي للقوى العاملة السعودية      
+                                        ;              ; 50 مليار دولار أمريكي            ; young-and-skilled-workforce2    ; ميزانية قطاع التعليم المخصصة في عام 2021 
+                                        ;              ; %80                             ; young-and-skilled-workforce3    ; من مصروفات التعليم الحكومي في دول مجلس التعاون الخليجي
+ 
+ 
+                                        ;              ; 82,483                          ; young-and-skilled-workforce6    ; منح دولية مقدمة إلى الطلاب السعوديين في 2019
+                                        ;              ; المركز الأربعون                  ; young-and-skilled-workforce7    ; في مؤشر تنافسية المواهب العالمية في 2020
+                                        ;              ; المركز التاسع                   ; young-and-skilled-workforce8    ; عالميًا في الإلمام الرقمي في 2020
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                ; value[lang = ar]												
+                                        ;              ; أكثر من 31 مليون         		 ; expanding-quality-life1         ; زائر إلى مهرجانات مواسم السعودية
+                                        ;              ; 10 مليار           			 ; expanding-quality-life2         ; شجرة تتم زراعتها عبر أنحاء المملكة
+                                        ;              ; أكثر من 4%           			 ; expanding-quality-life3         ; من انبعاثات الكربون يتم تخفيضها في المساهمة العالمية
+                                        ;              ; المركز الثامن           		 ; expanding-quality-life4         ; في جميع أنحاء العالم في مصداقية خدمة الشرطة
+                                        ;              ; المركز الخامس عشر            	 ; expanding-quality-life5         ; عالميًا في أقل معدل لحوادث الجريمة المنظمة
+                                        ;              ; أكثر من 2000           		 ; expanding-quality-life6         ; فعالية ونشاط تم إطلاقها
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                ; value[lang = ar]												
+                                        ;              ; المركز الثاني                   ; leading-financial-sector1       ; من بين دول مجموعة العشرين لنسبة رأس مال البنك إلى الأصول                
+                                        ;              ; المركز الخامس عشر               ; leading-financial-sector2       ; عالميًا في السلامة المالية للبنوك في عام 2019 
+                                        ;              ; %36                             ; leading-financial-sector3       ; من معاملات الأسهم غير النقدية في 2020 (نسبة من إجمالي المعاملات)
+                                        ;              ; %88                             ; leading-financial-sector4       ; من أصول القطاع المصرفي إلى إجمالي الناتج المحلي في 2019
+                                        ;              ; %60                             ; leading-financial-sector5       ; من نسبة الائتمانات المصرفية في القطاع الخاص إلى إجمالي الناتج المحلي
+                                        ;              ; أكثر من 60                      ; leading-financial-sector6       ; من الشركات الناشئة في التقنية المالية في السوق السعودي
+
+												
+INSERT_UPDATE MeetTheKingdomKeyReasonsContainer ; uid[unique = true]             ; simpleCMSComponents(&componentRef)                                                                                                                                                    ; title[lang = ar]                   ; &componentRef                  ; description[lang = ar]        ; $contentCV[unique = true]
+                                                ; MeetTheKingdomReasonsContainer ; game-changing-opportunities,ambitious-reform, strategic-global-location, attractive-property-solutions, young-and-skilled-workforce, expanding-quality-life, leading-financial-sector ; سبعة أسباب للاستثمار في المملكة     ; MeetTheKingdomReasonsContainer ; سلسلة إصلاحات ضمن رؤية 2030 
+
+
+####################################################################
+
+INSERT_UPDATE MeetTheKingdomMegaAndGigaProjectComponent ; $contentCV[unique = true]	; uid[unique = true]	             ; componentId                                            ; logo (code, $contentCV)                     ; backgroundImage (code, $contentCV)              ; knowMoreUrl                                                   ; defaultComponent[default=false]  ; shortDescription [lang = ar]                                                  ; &componentRef                      ; longDescription [lang = ar]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ; localizedStats(uid, $contentCV)               
+					                                    ; 							; neom-project 			             ; neom                                                   ; neom_logo.png                               ; neom_img.jpg                                    ; https://www.neom.com/en-us 							         ; true                             ; نيوم -انطلاقة لتقدم البشرية                                                    ; neom-project                        ; نيوم هي الرؤية الطّموحة التي ستشكل المستقبل الجديد وهي حجر الزاويه لرؤية السعوديه 2030 فهي مشروع عالمي يعمل بتسارع كبير لتجاوز كل التحديات التي يعيشها العالم على مختلف المستويات .لن تكون نيوم مجرد وجهة، بل ستفتح أبوابها لتكون موطناً لأصحاب الطموح العاليه ولكل من يطمح أن يُسهم في بناء نموذج جديد لاستدامة الحياة والعمل والازدهار.                                                                                                                                                                                                                ; neom-project1,neom-project2,neom-project3,neom-project4 
+                                                        ; 							; the-red-sea-project 	             ; theRedSea                                              ; the_red_sea_logo.png 					   ; the_red_sea_img.jpg 							 ; https://www.theredsea.sa/en                                   ;                                  ; مشروع البحر الأحمر - المشروع السياحي المتجدد الأكثر نشاطًا حول العالم            ; the-red-sea-project                 ; يعد مشروع البحر الأحمر أحد اكثر المشاريع السياحية المتجددة طموحًا في العالم . يستحدث المشروع معايير جديده للتنميه المستدامة ليكون رائدّا في قطاع السياحه الفاخره وعلاقتها بالبيئة الطبيعيه ، ليضع المملكة على خارطة السياحه العالميه .كما سيشجع الشمروع زواره على استكشاف كنوز البحر الأحمر و التعرف عن قرب على التراث الثقافي و الحضاري الغني لهذه المنطقة المتميزه على الساحل الغربي للملكة العربية السعودية .                                                                                                                                        ; the-red-sea-project1,the-red-sea-project2,the-red-sea-project3,the-red-sea-project4					              
+												        ; 							; qiddiya-project 	                 ; qiddiya                                                ; qiddiya_logo.png 						   ; qiddiya_img.jpg 								 ; https://qiddiya.com                                           ;                                  ; القدية - عاصمة الترفيه والرياضة والفنون                                       ; qiddiya-project                     ; هي وجهة مميّزة ومبتكرة تقدّم تجاربًا سياحية متنوّعة تعدّ من الأكثر ابتكارًا واثارة . تحتوي القدية على  خمسة مجالات أساسية هي الرياضة والصحة، الطبيعة والبيئة، المتنزهات والوجهات الترفيهية، الحركة والتشويق، والفنون والثقافة.                                                                                                                                                                                                                                                                                                                             ; qiddiya-project1,qiddiya-project2,qiddiya-project3,qiddiya-project4,qiddiya-project5,qiddiya-project6					
+                                                        ; 							; amaala-project 	                 ; amaala                                                 ; amaala_logo.png 							   ; amaala_img.jpg 								 ; https://www.amaala.com/en/                                    ;                                  ; أمالا -  ريفيرا الشرق الأوسط                                                    ; amaala-project                      ; أمالا هو وجهة سياحية فاخرة  تقع على ساحل البحر الأحمر في المملكة العربية السعودية  و توفر ملاذاً للزوار يجمع بين متعة الاستجمام والمعيشة الصحية والاستدامة، ويهدف مشروع أمالا ليصبح الوجهة الجديدة لملتقى  الرحالة حول العالم. ومن المقرر أن يوفر كافة التسهيلات والخدمات لنزلائه لتقديم تجربة سياحية فاخرة.                                                                                                                                                                                                                                                ; amaala-project1,amaala-project2,amaala-project3,amaala-project4,amaala-project5,amaala-project6					
+                                                        ; 							; diriyah-gate-project 	             ; diriyahGate                                            ; diriyah_gate_logo.png 					   ; diriyah_gate_img.jpg 						     ; https://dgda.gov.sa/home.aspx                                 ;                                  ; مشروع تطوير بوابة الدرعية - جوهرة المملكة في قلب الرياض                       ; diriyah-gate-project                ; ستكون الدرعيه التاريخيه   واحده من أهم الوجهات السياحيه و الثقافيه و الترفيهيه و التعليميه في العالم ، ويعد مشروع بوابة الدرعية جزءًا من برنامج رؤية 2030 و الذي سيعرض تاريخ المملكة من خلال مزيج من التجارب التراثية والضيافة والتعليم وتجارة التجزئة والمطاعم.		                                                                                                                                                                                                                                                                               ; diriyah-gate-project1,diriyah-gate-project2,diriyah-gate-project3,diriyah-gate-project4,diriyah-gate-project5,diriyah-gate-project6,diriyah-gate-project7,diriyah-gate-project8					
+                                                        ; 							; allula-project 	                 ; allula                                                 ; roya_commission_for_allula.png 			   ; roya_commission_for_allula_img.jpg 			 ; https://www.experiencealula.com/                              ;                                  ; العلا - إحدى أعظم العجائب التي لم تُكتشَف                                        ; allula-project                      ; تُعتبر العلا  إحدى أجمل  المواقع في العالم ، و واحدة من المدن القديمة في شبه الجزيرة العربية وأحد مواقع التراث العالمي لليونسكو، وتُعد هذه المدينة القديمة أرضًا ذات أهمية تاريخية وجيولوجية وثقافية، والتي كانت تقع على مفترق طرق الحرير والبخور، والتي تمت إعادة اكتشافها في  العالم بالآونة الأخيرة.                                                                                                                                                                                                                                                  ; allula-project1,allula-project2,allula-project3,allula-project4,allula-project5					
+                                                        ; 							; kafd-project                       ; kafd                                                   ; kafd_logo.png 							   ; kafd_img.jpg 								     ; https://www.kafd.sa/                                          ;                                  ;مدينة الملك عبدالله المالية-الأسرع نمواً  في مراكز التصنيع والخدمات اللوجستية    ; kafd-project                        ; مركز الملك عبدالله المالي (كافد) هو الوجهة الرئيسية للمال والأعمال في المنطقة حيث يمنح معنىً جديداً للحياة العصرية، ويعدّ أكثر المشاريع طموحاً على مستوى العالم على مساحة تزيد عن 3 مليون متر مربع و امتداد 10.6 كيلو متر مربع في قلب مدينة الرياض. كما يتّسم كافد ببنية تحتية متطورة توفر بيئة جاذبة للحياة والازدهار والاكتشاف.                                                                                                                                                                                                                             ; kafd-project1,kafd-project2,kafd-project3,kafd-project4,kafd-project5,kafd-project6					
+                                                        ; 							; soudah-development-company-project ; soudahDevelopment                                      ; soudah_development_company_logo.png 		   ; soudah_development_company_img.jpg 			 ; https://soudah.sa/?lang=en                                    ;                                  ; شركة السودة للتطوير - جبال شاهقة وملتقى الحضارات                              ; soudah-development-company-project  ; تقود ''شركة السودة للتطوير'' حركة تطوير منطقة السودة وأجزاء من محافظة رجال ألمع  الواقعه في منطقة عسير، ما يخلق وجهة جبلية مستدامة مع تجارب ثقافية ثرية و  مناظر طبيعيه خلابه                                                                                                                                                                                                                                                                                                                                                                       ; soudah-development-company-project1,soudah-development-company-project2,soudah-development-company-project3,soudah-development-company-project4,soudah-development-company-project5,soudah-development-company-project6					
+                                                        ; 							; roshn-project 					 ; roshn                                                  ; roshn_logo.png 							   ; roshn_img.jpg 							         ; https://www.roshn.sa/en                                       ;                                  ; مشروع ''سدرة'' التابع لـ''روشن''- – مجتمع حديث ومتكامل في الرياض              ; roshn-project                       ; ''روشن'' هي شركة تطوير عقاري وطنية، وإحدى شركات صندوق الاستثمارات العامة، تعمل على تطوير أحياء سكنية متكاملة توفر أسلوب حياة عصري للمواطمنين ، كما تساهم في دعم الخطط الحكومية لزيادة معدلات تملك المنازل بين المواطنين السعوديين لتصل إلى نسبة 70% بحلول عام 2030. ''سدرة'' هو أحد المشاريع التي تطوّرها ''روشن''، وهو أول مجتمع سكني متكامل في الرياض، في شمال شرق العاصمة. تم تصميم الحي ليبرز جمال  ''العمارة السلمانية '' بشكل يضمن تصاميم حضرية حديثة مع الحفاظ على التصاميم المستلهمة من التراث السعودي الأصيل.                                 ; roshn-project1,roshn-project2					
+                                                        ; 							; kaec-project 						 ; kaec                                                   ; kaec_logo.png 							   ; kaec_img.jpg 								     ; https://www.kaec.net/                                         ;                                  ; مدينة الملك عبدالله الاقتصادية-الأسرع نمواً  في مراكز التصنيع والخدمات اللوجستية    ; kaec-project                        ; تُعد مدينة الملك عبدالله الاقتصادية - التي تقع على بعد 100 كيلو متر شمال مدينة جدة على طول ساحل البحر الأحمر - مدينة حديثة ووجهة سياحية مزدهرة، إذ توفر الأسلوب الأمثل لنمط الحياة   بهدف دعم قاعدة صناعية مزدهرة من شركات التصنيع الخفيف والخدمات اللوجستية  . كما توفر بيئة آمنة للحياة العائلية  حيث تغطيها المساحات الخضراء المطله على شواطئ  البحر الأحمر الساحره .                                                                                                                                                                                    ; kaec-project1,kaec-project2,kaec-project3,kaec-project4					
+                                                        ; 							; knowledge-economic-city-project 	 ; knowledgeEconomicCity                                  ; knowledge_economic_city.png 				   ; knowledge_economic_city_img.jpg 				 ;                                                               ;                                  ; مدينة المعرفة الاقتصادية - بوابة المدينة المنورة                               ; knowledge-economic-city-project     ; صُممت مدينة المعرفة الاقتصادية خصيصًا لتلبية متطلبات ما يزيد عن مليون مواطن وحوالي 10 مليون زائرًا سنويًا، وتقع على بعد 5 كيلو متر من المسجد النبوي في المدينة المنورة وعلى بعد 8 كيلو متر من مطار  الأمير محمد بن عبد العزيز الدولي، وتم بناؤها كأحد الركائز الأساسية للتنويع الاقتصادي في المملكة، وذلك بناءً على مفهوم تبادل المعرفة وتأسيس المدينة كمركزٍ عالمي للعلوم والحضارة الإسلامية.                                                                                                                                                                 ; knowledge-economic-city-project1,knowledge-economic-city-project2,knowledge-economic-city-project3,knowledge-economic-city-project4					
+                                                        ; 							; jubali-and-yanbu-project 	         ; jubaliAndYanbu                                         ; royal_commission_for_jubali_and_yanbu.png   ; royal_commission_for_jubali_and_yanbu_img.jpg   ;                                                               ;                                  ; مدينة جازان للصناعات الأساسية والتحويلية - مدينة صناعية مخصصة بالكامل للمواد الكيمياوية ; jubali-and-yanbu-project   ; تُعد مدينة جازان للصناعات الأساسية والتحويلية مشروعًا اقتصاديًا كبيرًا في منطقة جازان بالمملكة، وتعد هذه المدينة خطوة مهمة في تطوير الاقتصاد والتنويع المستمر للمملكة، وتمتلك المدينة ميناءً أساسيًا، ومصنعاً للتكرير ومصنعاً لمعالجة المعادن وبنية تحتية داعمة.                                                                                                                                                                                                                                                                                             ; jubali-and-yanbu-project1,jubali-and-yanbu-project2,jubali-and-yanbu-project3,jubali-and-yanbu-project4					
+                                                        ; 							; king-salman-park-project 			 ; salmanPark                                             ; king_salman_park_logo.png 				   ; king_salman_park_img.jpg 					     ; https://www.rcrc.gov.sa/en/projects/king-salman-park-project  ;                                  ; حديقة الملك سلمان – واحة  الرياض الخضراء                                      ; king-salman-park-project            ; تتوسط حديقة الملك سلمان مدينة الرياض وستكون أكبر حدائق المدن في العالم بمساحة تزيد عن 16 كم. إلى جانب كونها حديقة عامّة، ستكون حديقة الملك سلمان مشروعا بيئيا ورياضيا وثقافيا وترفيهيا يساهم في تحسين نمط حياة كافة سكان مدينة الرياض. وستضمّ الحديقه مجموعة متنوعة من المرافق والمنشآت مثل المجمع الملكي للفنون، المسرح الوطني، مركز الزوار، وأكاديميات الفنون والمتاحف.                                                                                                                                                                            ; king-salman-park-project1,king-salman-park-project2,king-salman-park-project3,king-salman-park-project4,king-salman-park-project5					
+                                                        ; 							; king-salman-energy-park-project 	 ; salmanEnergyPark                                       ; king_salman_energy_park_logo.png 		   ; king_salman_energy_park.jpg 				     ; https://www.spark-ksa.com/                                    ;                                  ; مدينة الملك سلمان للطاقة – المركز العالمي الجديد للطاقة                       ; king-salman-energy-park-project     ; مدينة الملك سلمان للطاقة هي مجتمع صناعي دولي نابض بالحياة وقائم على التميز والابتكار يعتمد على قوى عاملة من الطراز العالمي. يجري تطوير مدينة الملك سلمان للطاقة للحصول على القيمة الاقتصادية الكاملة من السلع والخدمات المرتبطة بالطاقة في المملكة العربية السعودية وفي جميع أنحاء المنطقة، مما يؤدي إلى توطين استحداث القيمة من خلال التطوير الصناعي الواسع. تستقطب المدينة المستثمرين الصناعيين في خمسة قطاعات استراتيجية هي: التنقيب والإنتاج ، التكرير والمعالجة والتسويق، البتروكيميائيات، الطاقة الكهربائية، المياه ومياه الصرف الصحي.           ; king-salman-energy-park-project1,king-salman-energy-park-project2					
+                                                        ; 							; king-salman-international-project  ; salmanInternationalComplex                             ; king_salman_international_complex_logo.png  ; king_salman_international_complex_img.jpg       ;                                                               ;                                  ; مجمع الملك سلمان العالمي للصناعات والخدمات البحرية – أكبر حوض بحري في المنطقة ; king-salman-international-project   ; من المقرر أن يصبح مجمع الملك سلمان العالمي للصناعات والخدمات البحرية في رأس الخير أكبر حوض لبناء السفن في منطقة الشرق الأوسط وشمال افريقيا. سوف يؤمن المجمّع أحدث البنى التحتية لشركات بناء السفن والمنصّات لتمكينها من إجراء عمليات البناء والصيانة والإصلاح والتجديد. تشرف على المشروع الشركة العالمية للصناعة البحرية، وهي شركة مهنيّة تضامنيّة تتألف من أرامكو السعودية وشركة لامبريل والشركة الوطنية السعودية للنقل البحري وشركة هيونداي للصناعات الثقيلة.                                                                                            ; king-salman-international-project1,king-salman-international-project2,king-salman-international-project3					
+
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                     ; value[lang = ar]																										
+                                        ;              ; 26,500 كيلو متر مربع            ; neom-project1                        ; مساحة المشروع
+                                        ;              ; 500 مليار دولار أمريكي           ; neom-project2                        ; استثمار
+                                        ;              ; 17                              ; neom-project3                        ; قطاع
+                                        ;              ; %100                            ; neom-project4                        ; طاقة متجددة
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]        ; value[lang = ar]																										
+                                        ;              ; 34,000 كم مربع                  ; the-red-sea-project1    ; مساحة المشروع             
+                                        ;              ; أكثر من 90                      ; the-red-sea-project2    ; جزيرة تحتفظ بنقائها الأصلي
+                                        ;              ; المرحلة الأولى (2022 - 2023)     ; the-red-sea-project3    ; خمس جزر مطورة, موقعين داخليين, 16 فندق بسعة 3,000 غرفة
+                                        ;              ; انتهاء المشروع (2030)           ; the-red-sea-project4    ; 22 جزيرة مطورة, 6 مواقع داخلية, 48 فندق بسعة 8,000 غرفة, 1,316 وحدةبنية تحتية (مطار، ووسائل نقل ومرافق وبيئة مدنية)
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]        ; value[lang = ar]																																				
+						                ;              ; 367 كم مربع                     ; qiddiya-project1        ; مساحة المشروع				
+										;              ; 131 كم مربع                     ; qiddiya-project2        ; منطقة مخطط لتطويرها
+										;              ; أكثر من 20 مليون                ; qiddiya-project3        ; عميل محتمل	
+										;              ; المرحلة الأولى (2017 - 2023)     ; qiddiya-project4        ; أعلنت القدية عن, التصميم والتخطيط, التشييد والشراكات الاستراتيجية,الاختبار والافتتاح الكبير في 2023
+										;              ; المرحلة الثانية (2024 - 2025)   ; qiddiya-project5        ; زيادة العروض والقدرة المتنامية
+										;              ; المرحلة الثالثة (2026 - 2030)   ; qiddiya-project6        ; زيادة العروض والقدرة المتنامية
+										
+										
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]        ; value[lang = ar]																																														
+				                        ;              ; 4,155 كم مربع                   ; amaala-project1         ; مساحة المشروع						
+									    ;              ; 2800                            ; amaala-project2         ; غرفة فندقية
+										;              ; 929                             ; amaala-project3         ; فيلا سكنية
+										;              ; المرحلة الأولى                   ; amaala-project4         ; الخلجان الثلاثة: 15 فندقًا، 305 وحدة سكنية، 22 أصل تجريبي. مرايا: 5 فنادق، 35 وحدة سكنية، 12 أصل تجريبي. الجزيرة: 7 فنادق، 200 وحدة سكنية، 17 أصل تجريبي
+										;              ; المرحلة الثانية:                ; amaala-project5         ; الخلجان الثلاثة: فندقين، 105 وحدة سكنية، 1 أصل تجريبي, مرايا: فندق واحد، 165 وحدة سكنية، 2 أصل تجريبي
+										;              ; المرحلة الثالثة:                ; amaala-project6         ; الخلجان الثلاثة: فندق واحد، 25 وحدة سكنية، 2 أصل تجريبي
+										
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]         ; value[lang = ar]																																																								
+		                                ;              ; 7 كم مربع                       ; diriyah-gate-project1    ; منطقة المشروع لضم 20 علامة فندقية فاخرة								
+										;              ; 17 مليار دولار أمريكي            ; diriyah-gate-project2    ; استثمارات لترميم الدرعية، موقع التراث العالمي لليونسكو
+										;              ; 190 كم مربع                     ; diriyah-gate-project3    ; إجمالي مساحة منطقة المتحف عبر 8 متاحف
+										;              ; أكثر من 38 كيلو متر مربع        ; diriyah-gate-project4    ; إجمالي مساحة مراكز التعليم ومرافق التعليم العالي
+								        ;              ; أكثر من 5.1                     ; diriyah-gate-project5    ; وحدة سكنية يتم تطويرها، بما يشمل الفلات والشقق والتاون هاوس
+                                        ;              ; 4,365                           ; diriyah-gate-project6    ; إجمالي عدد الغرف في 38 فندق
+                                        ;              ; 60 كم مربع                      ; diriyah-gate-project7    ; إجمالي مساحة مكتبية
+                                        ;              ; 35 ألف متر مربع                 ; diriyah-gate-project8    ; إجمالي مساحة الأصول التعليمية الترفيهية
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]         ; value[lang = ar]																																																								
+                                        ;              ; 32 مليار دولار أمريكي            ; allula-project1          ; مساهمة إلى إجمالي الناتج المحلي السعودي بحلول 2035
+                                        ;              ; 20 مليار دولار أمريكي            ; allula-project2          ; من المبالغ المستهدفة للاستثمارات
+                                        ;              ; 1,000                           ; allula-project3          ; غرفة تُقدم في المرحلة الأولى
+                                        ;              ; 2 مليون                         ; allula-project4          ; سائحًا 
+                                        ;              ; 38,000                          ; allula-project5          ; وظيفة جديدة بحلول 2035
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]         ; value[lang = ar]																																																								
+                                        ;              ; 3 مليون متر مربع                ; kafd-project1            ; مساحة المشروع
+                                        ;              ; 56                              ; kafd-project2            ; برج
+                                        ;              ; 500 ألف متر مربع                ; kafd-project3            ; مساحة مكتبية
+										;              ; 200 ألف متر مربع                ; kafd-project4            ; مساحة سكنية
+                                        ;              ; 5300                            ; kafd-project5            ; مساكن فاخرة
+                                        ;              ; 40                              ; kafd-project6            ; جسر مشاه مظلل
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                    ; value[lang = ar]																																																								
+                                        ;              ; 8 مليار دولار أمريكي             ; soudah-development-company-project1 ; مساهمة في إجمالي الناتج المحلي بحلول 2030
+                                        ;              ; 3 مليار دولار أمريكي             ; soudah-development-company-project2 ; استثمار
+                                        ;              ; 2 مليون                         ; soudah-development-company-project3 ; زائرًا متوقع سنويًا
+                                        ;              ; 2,700                           ; soudah-development-company-project4 ; غرفة فندقية
+                                        ;              ; 1,300                           ; soudah-development-company-project5 ; وحدة سكنية
+                                        ;              ; 30                              ; soudah-development-company-project6 ; معلمًا سياحيًا  
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                    ; value[lang = ar]																																																								
+                                        ;              ; +20 مليون متر مربع              ; roshn-project1                      ; من الأحياء                   
+                                        ;              ; 30,000+                         ; roshn-project2                      ; وحدة سكنية يتم تقديمها
+                                       
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                    ; value[lang = ar]																																																								
+                                        ;              ; 180 مليون متر مربع              ; kaec-project1                       ; إجمالي مساحة الأرض
+                                        ;              ; أكثر من 14 مليار دولار أمريكي    ; kaec-project2                       ; تم جذب الاستثمارات منذ بدء تنفيذ المشروع
+                                        ;              ; أكثر من 160                     ; kaec-project3                       ; مستثمر جاهز بالفعل
+                                        ;              ; 191 كم                          ; kaec-project4                       ; طرق مبنية
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                    ; value[lang = ar]																																																								
+                                        ;              ; 7 كيلو متر مربع                 ; knowledge-economic-city-project1    ; مساحة المشروع
+                                        ;              ; أكثر من 2600                    ; knowledge-economic-city-project2    ; غرفة
+                                        ;              ; 6-8 مليون                       ; knowledge-economic-city-project3    ; زائرًا سنويًا للمدينة
+                                        ;              ; 1.5 مليار دولار أمريكي           ; knowledge-economic-city-project4    ; لفرص الاستثمار
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                    ; value[lang = ar]																																																								
+                                        ;              ; 103 كيلو متر مربع               ; jubali-and-yanbu-project1           ; مساحة إجمالية
+                                        ;              ; أكثر من 22 مليار دولار أمريكي    ; jubali-and-yanbu-project2           ; في الاستثمارات
+                                        ;              ; 1.2 مليون                       ; jubali-and-yanbu-project3           ; محطة حاوية وحدة قياسية 
+                                        ;              ; 4 مليون                         ; jubali-and-yanbu-project4           ; طن متري ومحطة صلبة
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                    ; value[lang = ar]																																																								
+                                        ;              ; 5                               ; king-salman-park-project1           ; مرّات أكبر من حديقة الهايد بارك في  العاصمة البريطانية لندن
+                                        ;              ; 4                               ; king-salman-park-project2           ; مرّات أكبر من حديقة  السنترال بارك في مدينة نيويورك
+                                        ;              ; مليار دولار                      ; king-salman-park-project3           ; قيمة العقود الموقّعة مع المستثمرين
+                                        ;              ; 5                               ; king-salman-park-project4           ; محطات مترو جديدة تصل الزائرين بالحديقة
+                                        ;              ; 10                              ; king-salman-park-project5           ; محطات للحافلات  تصل الزائرين بالحديقة
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                    ; value[lang = ar]																																																								
+                                        ;              ; 6 مليار دولار                    ; king-salman-energy-park-project1    ; حجم المساهمة المتوقعة بالناتج المحلي الإجمالي للمملكة 
+                                        ;              ; 100,000                         ; king-salman-energy-park-project2    ; فرصة عمل مباشرة وغير مباشرة ستخلقها المدينة عند تشغيلها بالكامل
+                                       
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]                  ; uid[unique=true]                    ; value[lang = ar]																																																								
+                                        ;              ; 80,000                          ; king-salman-international-project1  ; فرصة عمل ستخلقها المدينة
+                                        ;              ; 12 مليار دولار                   ; king-salman-international-project2  ;  قيمة التوفير في تكلفة الواردات
+                                        ;              ; 17 مليار دولار                   ; king-salman-international-project3  ; حجم المساهمة المتوقعة بالناتج المحلي الإجمالي للمملكة
+										
+														
+INSERT_UPDATE MeetTheKingdomMegaAndGigaProjectContainer ; uid[unique = true]                         ; projectTitle[lang = ar]                          ; &componentRef                               ; projectDescription[lang = ar]                                                                                      ; simpleCMSComponents(&componentRef)                                                                                                                                                                                                                                                                                                  ; $contentCV[unique = true]													
+	                                                    ; MeetTheKingdomMegaAndGigaProjectContainer1 ; مشاريع عملاقه و ضخمه وفق أعلى المستويات العالميه  ; MeetTheKingdomMegaAndGigaProjectContainer1  ; تقوم المشروعات العملاقة والضخمة في السعويه   بتقديم بعضًا من التطورات الطموحة التي ما زالت قيد التنفيذ حول العالم    ; neom-project,the-red-sea-project,qiddiya-project,amaala-project,diriyah-gate-project,allula-project,kafd-project,soudah-development-company-project,roshn-project,kaec-project,knowledge-economic-city-project,jubali-and-yanbu-project,king-salman-park-project,king-salman-energy-park-project,king-salman-international-project  ; 												
+										
+										
+
+
+#############################################################
+
+INSERT_UPDATE SuccessStoriesComponent  ; $contentCV[unique = true]	 ; uid[unique = true]					;video (code, $contentCV); defaultVideo[default=false] ; videoLink(&linkRef)									; poster (code, $contentCV)					     ; accordion (code, $contentCV)	    ; icon (code, $contentCV)					; companyLogo (code, $contentCV)				; description[lang = ar]					                                                                                                                                                                                                                                                                                                         										                                                        ; &componentRef		                     ; localizedStats(uid, $contentCV)		
+									   ;							 ; globalthinkgroup-innvoation			;				  		 ;                             ; globalthinkgroup-innvoation-video-link-$page			; globalthinkgroup-innvoation.png			     ; inverted-icon.png 				; innovation-icon.png 						; global-think-group-logo.png 				    ; "‘’تتسم عملية تأسيس شركه في المملكة  العربيه السعوديه بالسهولة البالغة مقارنة بالبلدان الأخرى، وحالياً أصبح من السهل أيضًا الحصول على تأشيرة إلكترونية. إذ تعدُّ المملكة من دول مجموعة العشرين، وتتمتع بالكثير من فرص الاستثمار الجديدة في كلٍ من القطاعات التقليدية  والناشئة، ومنها قطاع الرياضة والثقافة والسياحة والترفيه  ’’	</br> - أندريانا دافنيس, الشريك الإداري, مجموعة جلوبال ثينك"		             										; globalthinkgroup-innvoation             ; globalthinkgroup-innvoation1,globalthinkgroup-innvoation2,globalthinkgroup-innvoation3,globalthinkgroup-innvoation4	
+                                       ;							 ; nmc-healthcare						;				  		 ;                             ; nmc-healthcare-Video-link-$page						; nmc-healthcare.png							 ; inverted-icon.png 				; healthcare-icon.png 						; nmc-healthcare-logo.png 					    ; "‘’ قمت بزيارة جميع مناطق و مدن المملكة ، وانا على ثقة بأن الدروس المستفادة هنا ستبقى في ذهني طوال حياتي، فالشعب السعودي يسعد بدعم رواد الأعمال والأشخاص ذوي الروح الريادية الذين يرغبون في المساهمة في  الارتقاء بالمجتمع. ’’"                                                                                                                                                                               										; nmc-healthcare                          ; nmc-healthcare1,nmc-healthcare2,nmc-healthcare3,nmc-healthcare4
+                                       ;							 ; fresnuis-medicalcare-asmusangelkort	;				 		 ; true                        ; fresnuis-medicalcare-asmusangelkort-Video-link-$page   ; fresnuis-medicalcare-asmusangelkort.png	     ; inverted-icon.png 			    ; healthcare-icon.png 						; fresnuis-medical-care-logo.png 			    ; "‘’ أعتقد بأنه يجب على المستثمرين دراسة رؤية 2030 بعناية، كما يجب عليهم تقييم مدى تتطابق الرؤية مع أهدافهم واستراتيجيتهم، وفي حال توافقها مع أهدافهم، فإن المزج بين التقنيات عالمية المستوى مع المواهب السعودية يسهم في خلق بيئة استثمارية عظيمة في المملكة تهدف إلى تحقيق النجاحات. ’’  </br> – أسموز أنجيلكورت, نائب رئيس الشؤون المالية,Fresnuis Medical Care"                                          										; fresnuis-medicalcare-asmusangelkort     ; fresnuis-medicalcare-asmusangelkort1,fresnuis-medicalcare-asmusangelkort2,fresnuis-medicalcare-asmusangelkort3,fresnuis-medicalcare-asmusangelkort4
+									   ;							 ; fresnuis-medicalcare-frankwagner		;				 		 ;                             ; fresnuis-medicalcare-frankwagner-Video-link-$page   	; fresnuis-medicalcare-frankwagner.png		     ; inverted-icon.png 				; healthcare-icon.png 						; fresnuis-medical-care-logo.png 			    ; "‘’ما تعلمته من خلال تجربتي في ظل الثقافة السعودية ورؤية 2030 بأن السعودية من الدول سريعة التقدم بشكل يومي، إذ ترحب بمختلف الزائرين الأجانب وغيرهم من المستثمرين، وعلى الرغم من تواجدنا في السعودية لدواعي العمل، إلا أننا يسعدنا أن نحظى ببعض الرفاهية. ’’"                                                                                                                                                  										; fresnuis-medicalcare-frankwagner        ; fresnuis-medicalcare-frankwagner1,fresnuis-medicalcare-frankwagner2,fresnuis-medicalcare-frankwagner3,fresnuis-medicalcare-frankwagner4
+									   ;							 ; gesaudiarabia-energy-water			;				  		 ;                             ; gesaudiarabia-energy-water-Video-link-$page			; gesaudiarabia-energy-water.png				 ; inverted-icon.png 				; energy-and-water-icon.png 			    ; gesaudi-energywater-logo.png 				    ; "‘’هناك الكثير من الجهود المبذولة لتسهيل حضور الأشخاص إلى السعودية والاستثمار فيها، وهذا ما شهدناه في ترتيب المملكة في تصنيفات مؤشر سهولة ممارسة الأعمال التابع للبنك الدولي. ’’	</br>  – ستيفن ماك كاليون, الرئيس التنفيذي للعمليات, جنرال إلكتريك في السعودية والبحرين	 "                                                                                                                                   										; gesaudiarabia-energy-water              ; gesaudiarabia-energy-water1,gesaudiarabia-energy-water2,gesaudiarabia-energy-water3,gesaudiarabia-energy-water4
+									   ;                 			 ; exxonmobil-chemical					;				  		 ;                             ; exxonmobil-chemical-Video-link-$page 				    ; exxonmobil-chemical.png					     ; inverted-icon.png 				; chemical-icon.png 					    ; exxon-mobil-logo.png 						    ; "‘’تجمع المملكة بين رفاهية العيش وسهولة ممارسة الأعمال ، فالشعب السعودي شعب ودود و مضياف . كما تضم مجتمع كبير من االمقيمين غيرالسعوديين ، ويجب على أي شخص  زيارة المملكة وخوض التجربة بنفسه. ’’"                                                                                                                                                                                                            										; exxonmobil-chemical                     ; exxonmobil-chemical1,exxonmobil-chemical2,exxonmobil-chemical3,exxonmobil-chemical4
+									   ;							 ; shelloverseas-chemicals				;				  		 ;                             ; shelloverseas-chemicals-Video-link-$page 			    ; shelloverseas-chemicals.png				     ; inverted-icon.png 				; chemical-icon.png 						; shell-chemicals-logo.png		 			    ; "‘’ تسعى المملكة العربية السعودية  لتحقيق أهداف  رؤيتها 2030 ما يخلق العديد من الفرص في كافة الأصعده و المجالات ، حيث تم إنشاء قطاعات جديدة منها قطاع السياحة والترفيه والطاقة والطاقة المتجددة وقطاع البيع بالتجزئة وغيرها من الأسواق الجديده و المتطورة .’’"	                                                                                                                                             										; shelloverseas-chemicals                 ; shelloverseas-chemicals1,shelloverseas-chemicals2,shelloverseas-chemicals3,shelloverseas-chemicals4
+									   ;							 ; accel-education						;				  		 ;                             ; accel-education-Video-link-$page						; accel-education.png						     ; inverted-icon.png 				; education-icon.png 						; accel-logo.png			 				    ; "‘’لقد قررنا في شركتنا إنشاء فرعٍ في المملكة للعمل في قطاع التعليم في شهر فبراير 2019، وبحلول سبتمبر من العام نفسه كان الفرع جاهزًا للتشغيل . وأعتقدُ بأن الكثير من الشركات والمنظمات سوف تنتقل إلى المملكة للعمل فيها في ظل هذا التعداد السكاني المميز، وستكون جزءاً من التغير المجتمعي المرتقب في المملكة. ’’	</br>  – راي دام, الرئيس التنفيذي, أكسيل"	                                                 										; accel-education                         ; accel-education1,accel-education2,accel-education3,accel-education4
+									   ;							 ; thecityschool-education				;				  		 ;                             ; thecityschool-education-Video-link-$page				; thecityschool-education.png				     ; inverted-icon.png 				; education-icon.png 						; city-school-saudi-logo.png				    ; "‘’بصفتنا أحد المستثمرين الأجانب، فنحن سعداءٌ  جدًا بتجربتنا في المملكة العربية السعودية ، حيث أنها تتمتع ببيئة محفزه للعمل وللاستثمار.لقد كانت جميع الإجراءات سريعه و سلسة، ونتطلع للتوسع في أعمالنا في كافة أنحاء المملكة. ’’"		                                                                                                                                                                         										; thecityschool-education                 ; thecityschool-education1,thecityschool-education2,thecityschool-education3,thecityschool-education4	
+									   ;							 ; pepsico-foodprocessing				;				  		 ;                             ; pepsico-foodprocessing-Video-link-$page				; pepsico-foodprocessing.png					 ; inverted-icon.png 				; food-processing-icon.png 					; pepsico-foodprocessing-logo.png 			    ; "‘’ تقدم المملكة  تسهيلات عديده لممارسة الأعمال ، كما تقدم العديد من الحوافز الجاذبة الأمر الذي يساعدنا دومًا  عند اتخاذ القرارات المتعلقة بالاستثمار.فشركة مثل بيبسيكو تدعم تقديم  التسهيلات والحوافز لكي  تستمر  في النمو والتطور وخلق  المزيد من فرص العمل ’’ </br> – رامون لاغوارتا، رئيس مجلس الإدارة والرئيس التنفيذي لبيبسيكو"		                     										                                                    ; pepsico-foodprocessing                  ; pepsico-foodprocessing1,pepsico-foodprocessing2,pepsico-foodprocessing3,pepsico-foodprocessing4	
+													
+									   ;							 ; lilly-ltd-success					;				  		 ;                             ; lilly-ltd-success-Video-link-$page					    ; lilly-ltd-success-stories.png				     ; inverted-icon.png 				; healthcare-icon.png 						; lilly-logo.png 							   ; "‘’We are proud of our bright, engaged and empowered Saudi employees. Nearly 80% of our workforce are Saudi nationals, split equally between men and women. This is a true testament to the Kingdom's evolving healthcare landscape, guided by the country's compelling vision. We are grateful for our first 40 years in the Kingdom, and we look forward to the next 40 years.’’"      ; lilly-ltd-success ; lilly-ltd-success1,lilly-ltd-success2,lilly-ltd-success3,lilly-ltd-success4			                
+									   ;							 ; jansen-emea-success					;				  		 ;                             ; jansen-emea-success-Video-link-$page					; jansen-emea-success-stories.png			     ; inverted-icon.png 				; healthcare-icon.png 						; janssen-logo.png 							   ; "‘’For the past 40 years, we have brought our products and solutions to patients in the Kingdom. We are proud to have had a long and successful collaboration with Saudi Arabia in building a local biotechnology industry that is both driving economic growth and improving the healthcare system.’’"                                        ; jansen-emea-success                     ;  jansen-emea-success1,jansen-emea-success2,jansen-emea-success3,jansen-emea-success4			
+									   ;							 ; novartis-oncology-middle-east		;				  		 ;                             ; novartis-oncology-middle-east-Video-link-$page		    ; novartis-oncology-success-stories.png		     ; inverted-icon.png 				; healthcare-icon.png 						; novartis-logo.png 						   ; "‘’Novartis has been in Saudi Arabia for over 50 years. In this period, we’ve successfully collaborated with many local stakeholders that have helped us make an impact. Thanks to our collaborations, today, we touch the lives of over 2 million patients across the Kingdom and we contribute over 1 billion Saudi riyals to the Kingdom's economy.’’" ; novartis-oncology-middle-east ; novartis-oncology-middle-east1,novartis-oncology-middle-east2,novartis-oncology-middle-east3,novartis-oncology-middle-east4				
+									   ;							 ; astrazeneca-success					;				  		 ;                             ; astrazeneca-success-Video-link-$page					; astrazeneca-success-stories.png			     ; inverted-icon.png 				; healthcare-icon.png 						; astrazeneca-logo.png 						   ; "‘’We are proud to work in close partnership with Saudi Arabia to develop a more sustainable and resilient healthcare system. As part of our commitment to innovation in the Kingdom, we have invested substantially in local manufacturing, and we have expanded our research and development projects in line with Vision 2030. ’’"			; astrazeneca-success                      ; astrazeneca-success1,astrazeneca-success2,astrazeneca-success3,astrazeneca-success4	
+													
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]             ; value[lang = ar]																																							
+			                            ;              ; اسم الشركة           ; globalthinkgroup-innvoation1 ;  مجموعة جلوبال ثينك
+                                        ;              ; الاسم                 ; globalthinkgroup-innvoation2 ;  أندريانا دافنيس										
+									    ;              ; المنصب               ; globalthinkgroup-innvoation3 ;  اسم الشركة				
+										;              ; اسم القطاع           ; globalthinkgroup-innvoation4 ;  قطاع الابتكار وريادة الأعمال			
+										 			
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]        ; value[lang = ar]																																																				
+                                        ;              ;  اسم الشركة          ; nmc-healthcare1         ; المركز الطبي الجديد
+                                        ;              ;  الاسم                ; nmc-healthcare2         ; ميكائيل دافيز
+										;              ;  المنصب              ; nmc-healthcare3         ; الرئيس التنفيذي
+										;              ; اسم القطاع           ; nmc-healthcare4         ; الرعاية الصحية
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																				
+                                        ;              ; اسم الشركة           ; fresnuis-medicalcare-asmusangelkort1 ; Fresnuis Medical Care
+                                        ;              ; الاسم                 ; fresnuis-medicalcare-asmusangelkort2 ; أسموز أنجيلكورت
+                                        ;              ; المنصب               ; fresnuis-medicalcare-asmusangelkort3 ; نائب رئيس الشؤون المالية
+                                        ;              ; اسم القطاع           ; fresnuis-medicalcare-asmusangelkort4 ; الرعاية الصحية
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																				
+			                            ;              ; اسم الشركة           ; fresnuis-medicalcare-frankwagner1    ; Fresnuis Medical Carea							
+										;              ; الاسم                 ; fresnuis-medicalcare-frankwagner2    ; فرانك واجنر
+										;              ; المنصب               ; fresnuis-medicalcare-frankwagner3    ; نائب الرئيس التنفيذي
+										;              ; اسم القطاع           ; fresnuis-medicalcare-frankwagner4    ; الرعاية الصحية
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																				
+                                        ;              ; اسم الشركة           ; gesaudiarabia-energy-water1          ; جنرال إلكتريك في السعودية والبحرين
+			                            ;              ; الاسم                 ; gesaudiarabia-energy-water2          ; ستيفن ماك كاليون
+			                            ;              ; المنصب               ; gesaudiarabia-energy-water3          ; الرئيس التنفيذي للعمليات
+			                            ;              ; اسم القطاع           ; gesaudiarabia-energy-water4          ; الطاقة والمياه
+			
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																							
+			                            ;              ; اسم الشركة           ; exxonmobil-chemical1                 ; إكسون موبيل
+			                            ;              ; الاسم                 ; exxonmobil-chemical2                 ; جين بيري فوري
+			                            ;              ; المنصب               ; exxonmobil-chemical3                 ; المدير العام للتخطيط 
+			                            ;              ; اسم القطاع           ; exxonmobil-chemical4                 ; الكيماويات
+										
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																																	
+                                        ;              ; اسم الشركة           ; shelloverseas-chemicals1	         ; شركة شيل أوفرسيز للخدمات المحدودة
+                                        ;              ; الاسم                 ; shelloverseas-chemicals2			 ;	أندريو كرويي						
+			                            ;              ; المنصب               ; shelloverseas-chemicals3             ;  المدير
+			                            ;              ; اسم القطاع           ; shelloverseas-chemicals4             ; المواد الكيماوية
+			
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																																				
+			                            ;              ; اسم الشركة           ; accel-education1	                 ; أكسيل 
+			                            ;              ; الاسم                 ; accel-education2			         ; راي دام
+			                            ;              ; المنصب               ; accel-education3                     ; الرئيس التنفيذي
+			                            ;              ; اسم القطاع           ; accel-education4                     ; التعليم
+			
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																																							
+			                            ;              ; اسم الشركة           ; thecityschool-education1	         ; مدرسة مدينة السعودية
+			                            ;              ; الاسم                 ; thecityschool-education2			 ; عمرانا أحمد
+			                            ;              ; المنصب               ; thecityschool-education3             ; المدير الإقليمي 
+			                            ;              ; اسم القطاع           ; thecityschool-education4             ; التعليم
+			
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																																										
+                                        ;              ; اسم الشركة           ; pepsico-foodprocessing1	             ; بيبسيكو              
+                                        ;              ; الاسم                 ; pepsico-foodprocessing2			     ; رامون لاجوارتا
+                                        ;              ; المنصب               ; pepsico-foodprocessing3              ; رئيس مجلس الإدارة والرئيس التنفيذي
+                                        ;              ; اسم القطاع           ; pepsico-foodprocessing4              ; معالجة الطعام
+
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																																										
+                                        ;              ; اسم الشركة           ; lilly-ltd-success1	                 ; Eli Lilly
+                                        ;              ; الاسم                 ; lilly-ltd-success2			         ; Dimitri Livadas
+                                        ;              ; المنصب               ; lilly-ltd-success3                   ; President and General Manager
+										;              ; اسم القطاع           ; lilly-ltd-success4                   ; Healthcare & Life science
+	
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																																											
+										;              ; اسم الشركة           ; jansen-emea-success1	             ; Jansen EMEA
+										;              ; الاسم                 ; jansen-emea-success2			     ; Asgar Rangoonwala
+                                        ;              ; المنصب               ; jansen-emea-success3                 ; Senior Vice President of Emerging Markets
+                                        ;              ; اسم القطاع           ; jansen-emea-success4                 ; Healthcare & Life science
+										
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																																																					
+										;              ; اسم الشركة           ; novartis-oncology-middle-east1	     ; Novartis Oncology Middle East and Africa
+										;              ; الاسم                 ; novartis-oncology-middle-east2	     ; Marie-Andree Gamache
+										;              ; المنصب               ; novartis-oncology-middle-east3       ; Head of Oncology
+										;              ; اسم القطاع           ; novartis-oncology-middle-east4       ; Healthcare & Life science
+										
+INSERT_UPDATE StrategicDetailsComponent ; $contentCV   ; key[lang = ar]       ; uid[unique=true]                     ; value[lang = ar]																																																																																															
+										;              ; اسم الشركة           ; astrazeneca-success1	             ; AstraZeneca
+										;              ; الاسم                 ; astrazeneca-success2	             ; Pascal Soriot
+										;              ; المنصب               ; astrazeneca-success3                 ; Chief Executive Officer
+										;              ; اسم القطاع           ; astrazeneca-success4                 ; Healthcare & Life science
+										
+										
+INSERT_UPDATE SuccessStoriesContainer ; uid[unique = true]      ;simpleCMSComponents(&componentRef)                                                                                                                                                                                                                                                                                                                     ; name; title[lang = ar]; &componentRef  ; $contentCV[unique = true]
+                                      ;SuccessStoriesContainer ; globalthinkgroup-innvoation, nmc-healthcare, fresnuis-medicalcare-asmusangelkort, fresnuis-medicalcare-frankwagner, gesaudiarabia-energy-water, exxonmobil-chemical, shelloverseas-chemicals, accel-education, thecityschool-education, pepsico-foodprocessing,lilly-ltd-success,jansen-emea-success,novartis-oncology-middle-east,astrazeneca-success ;    ; قصص النجاح ;SuccessStoriesContainer
+										
+
+
+############# MEDIA AND COMPONENTS END ######################
+
+                                      
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef); $contentCV;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ;	meetthekingdom-banner-container, MacroEconomicOverviewContainer, international-rankings, MeetTheKingdomReasonsContainer, MeetTheKingdomMegaAndGigaProjectContainer1, SuccessStoriesContainer;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;  ; 
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+ 
+         									
+										
+										

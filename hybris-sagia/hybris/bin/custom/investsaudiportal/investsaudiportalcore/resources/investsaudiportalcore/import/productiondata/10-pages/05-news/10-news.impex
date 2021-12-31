@@ -1,0 +1,65 @@
+$page = news-sagia-grants-120-million-industrial-investment
+$template = portalGlobalTemplate
+$name = SAGIA Grants $120 Million Industrial Investment License To BRF Brasil
+$titleEn = $name
+$titleAr = هيئة الاستثمار تسلم رخصة استثمارية صناعية بقيمة 120 مليون دولار لشركة BRF البرازيلية
+$shortDescEn = The Saudi Arabian General Investment Authority (SAGIA) has granted an industrial investment license worth $120
+$shortDescAr = سلمت الهيئة العامة للاستثمار اليوم، رخصة استثمارية صناعية بقيمة 120 مليون دولار لشركة BRF البرازيلية
+$pagelabel = /news/sagia-grants-120-million-industrial-investment-license-to-brf-brasil
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; a21i7015           ; a21i7015.jpg ; $siteResource/a21i7015.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias            ; $contentCV; ; ; ;
+                            ; media-container-$page   ; newsDetailsImage-1 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; a21i7015                          ; a21i7015                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 11.12.2019 00:00:00                       ;                          ;               ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<p>The Saudi Arabian General Investment Authority (SAGIA) has granted an industrial investment license worth $120 million to Brazilian company BRF, considered to be one of the biggest exporters of poultry products in the world.</p>
+<p>The license was presented to BRF during a dedicated ceremony organized by SAGIA at its headquarters in Riyadh, in the presence of Eng. Ibrahim Al Omar, Governor of SAGIA; Deputy Governor for Investment Attraction and Development Sultan Mufti; Eng. Mohammed Al Aljunaini, SAGIA&rsquo;s General Manager of the Industrial Sector; Marcelo Della Nina, Brazil Ambassador to Saudi Arabia; Fadi Felfeli, BRF Deputy CEO; and Igor Marti, Vice President.</p>
+<p>The presentation of this license to BRF, a leading global player in the food industry, represents a major step forward in SAGIA&rsquo;s contributions to localizing the poultry sector and reinforcing the Kingdom&rsquo;s growing capacity as an exporter of poultry products in the region. Having received the license, BRF is set to begin building its first factory in Saudi Arabia, and is committed to expanding its businesses by creating a base in the Saudi market, from where it can compete within local and regional markets.&nbsp;</p>
+<p>SAGIA Governor Eng. Ibrahim Al Omar said: &ldquo;Having this opportunity to aid BRF in setting up its operations in Saudi Arabia further confirms that the Kingdom&rsquo;s investment environment is going from strength to strength, in addition to the great deal of activity we have seen across a wide range of target sectors since the start of 2019. SAGIA has issued over 800 investment licenses in the first three quarters of this year, 67 of which is fully foreign owned.</p>
+<p>&ldquo;At SAGIA, we are committed to streamlining business processes in the Saudi market, developing investment opportunities across industries in collaboration with our partners in government entities, and promoting the abundant opportunities in Saudi to potential investors across the world.&rdquo;</p>
+<p>BRF signed a memorandum of understanding (MoU) with SAGIA during the Future Investment Initiative, held in Riyadh, Saudi Arabia between 29-31 October 2019. During the event, SAGIA announced the adoption of the Invest Saudi brand and oversaw the signing of 26 MoUs with international partners, valued at over $20 billion. These agreements covered various investment activities across strategic sectors, most notably energy and water, pharmaceuticals, logistics, petrochemicals, technology, and entrepreneurship and innovation.</p>"
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>سلمت الهيئة العامة للاستثمار اليوم، رخصة استثمارية صناعية بقيمة 120 مليون دولار لشركة BRF البرازيلية لمنتجات الدواجن، التي تُعد من أكبر مُصدري الدواجن في العالم.</p>
+<p>وجرى تسليم الرخصة في حفل أقامته الهيئة بهذه المناسبة في مقرها بالرياض، بحضور محافظ هيئة الاستثمار المهندس إبراهيم العمر، ووكيل المحافظ لجذب وتطوير الاستثمار سلطان مفتي، والمهندس محمد الجنيني مدير عام القطاع الصناعي، وسفير جمهورية البرازيل الاتحادية السيد مارسيلو نينا، إضافة إلى نائب رئيس شركة BRF فادي فلفلي، ونائب الرئيس أيقور مارتي.</p>
+<p>وتأتي أهمية هذه المناسبة في سياق إسهام هيئة الاستثمار في توطين صناعة الدواجن، وزيادة القدرة الاستيعابية للمملكة كمصدّر لها في المنطقة، حيث ستبدأ شركة BRF وفقًا لتسلمها الرخصة؛ ببناء وتشغيل مصنعها في المملكة، إذ تعتزم الشركة بدء وتوسعة أعمالها عبر اتخاذ السوق السعودي مركزًا لها، لتنطلق منه للمنافسة في السوق المحلي وأسواق المنطقة.</p>
+<p>وأكد معالي محافظ الهيئة العامة للاستثمار، أن البيئة الاستثمارية في المملكة تشهد نشاطًا كبيرا على مختلف القطاعات الاستثمارية المستهدفة من بداية عام 2019، منوهًا بإصدار الهيئة لأكثر من 800 رخصة استثمارية حتى الربع الثالث من العام بلغت نسبة المشاريع المشتركة منها مع مستثمرين محليين 33%، لافتاً النظر إلى حرص هيئة الاستثمار في تسهيل بدء ممارسة الأعمال للمستثمرين في السوق السعودي، وتطوير الفرص الاستثمارية التي تقدمها القطاعات بالتعاون مع الجهات الحكومية ذات العلاقة كافة، إضافة إلى إبراز هذه الفرص الاستثمارية عالميًّا.</p>
+<p>يُشار إلى أن شركة BRF كانت قد وقعت مع هيئة الاستثمار مذكرة تفاهم خلال فعاليات مبادرة مستقبل الاستثمار، الذي انعقد في أواخر شهر أكتوبر الماضي، حيث أعلنت الهيئة عن احتضان هوية ""استثمر في السعودية"" توقيع 26 مذكرة تفاهم تجاوزت قيمتها 20 مليار دولار، تضمنت عددًا من النشاطات الاستثمارية في مختلف القطاعات الاستراتيجية، أبرزها قطاع الطاقة والمياه، وقطاع الدواء والخدمات اللوجستية والبتروكيماويات والتقنية، إضافة إلى قطاع ريادة الأعمال والابتكار.</p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

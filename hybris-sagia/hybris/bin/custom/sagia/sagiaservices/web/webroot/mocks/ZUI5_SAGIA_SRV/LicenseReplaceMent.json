@@ -1,0 +1,186 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000089')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000089')",
+      "type": "ZUI5_SAGIA_SRV.LicenseReplaceMent"
+    },
+    "ReApply": false,
+    "SrID": "50000089",
+    "SrGuid": "00155D56-5E0B-1ED7-B892-F0C5EE1BE0CA",
+    "LicID": "12822",
+    "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+    "LicType": "1",
+    "LicTypeDesc": "INDUSTRIAL  صناعي",
+    "BpID": "613392",
+    "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+    "SrCrDate": "/Date(1513209600000)/",
+    "SrStCode": "E0001",
+    "SrStDesc": "In Process",
+    "LicExDate": "/Date(1694044800000)/",
+    "ValidFrom": "/Date(1410393600000)/",
+    "TransType": "ZSR8",
+    "Action": "00",
+    "BpChangeID": "",
+    "SalesrepCount": "",
+    "ContactChInd": "",
+    "NonChangable": false,
+    "TermCond": false,
+    "LicenseReplToUploadNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseReplaceMents('50000089')/LicenseReplToUploadNav"
+      }
+    },
+    "LicenseReplToContentNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15E82D8C0CA',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15E82D8C0CA',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "50000089",
+          "ObjectGuid": "00155D56-5E0B-1ED7-B892-F0C5EE1BE0CA",
+          "Filename": "CR Copy.pdf",
+          "Filesize": "0000003822",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D565E0B1ED7B892F15E82D8C0CA",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1513209600000)/",
+          "DocKeyID": "",
+          "ShDocID": "CR Copy",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15E82D8C0CA',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15ECF16E0CA',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15ECF16E0CA',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "50000089",
+          "ObjectGuid": "00155D56-5E0B-1ED7-B892-F0C5EE1BE0CA",
+          "Filename": "Zakat Certificate.pdf",
+          "Filesize": "0000003822",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D565E0B1ED7B892F15ECF16E0CA",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1513209600000)/",
+          "DocKeyID": "",
+          "ShDocID": "Zakat Cert",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15ECF16E0CA',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15F1B6140CA',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15F1B6140CA',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "50000089",
+          "ObjectGuid": "00155D56-5E0B-1ED7-B892-F0C5EE1BE0CA",
+          "Filename": "Sagia License.pdf",
+          "Filesize": "0000003822",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D565E0B1ED7B892F15F1B6140CA",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1513209600000)/",
+          "DocKeyID": "",
+          "ShDocID": "Sagia Lice",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15F1B6140CA',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15F67AB40CA',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15F67AB40CA',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "50000089",
+          "ObjectGuid": "00155D56-5E0B-1ED7-B892-F0C5EE1BE0CA",
+          "Filename": "GOSI Certificate.pdf",
+          "Filesize": "0000003822",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D565E0B1ED7B892F15F67AB40CA",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1513209600000)/",
+          "DocKeyID": "",
+          "ShDocID": "GOSI Certi",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15F67AB40CA',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15F6C8D40CA',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15F6C8D40CA',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "50000089",
+          "ObjectGuid": "00155D56-5E0B-1ED7-B892-F0C5EE1BE0CA",
+          "Filename": "Announcemnt in local newspapers.pdf",
+          "Filesize": "0000003822",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D565E0B1ED7B892F15F6C8D40CA",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1513209600000)/",
+          "DocKeyID": "",
+          "ShDocID": "Announcemn",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F15F6C8D40CA',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F160003E80CA',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F160003E80CA',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "50000089",
+          "ObjectGuid": "00155D56-5E0B-1ED7-B892-F0C5EE1BE0CA",
+          "Filename": "Letter From The Investor.pdf",
+          "Filesize": "0000000079",
+          "Mimetype": "application/pdf",
+          "DocumentID": "00155D565E0B1ED7B892F160003E80CA",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1513209600000)/",
+          "DocKeyID": "",
+          "ShDocID": "Letter Fro",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='50000089',DocumentID='00155D565E0B1ED7B892F160003E80CA',Stage='')/FollowupSrvHDR"
+            }
+          }
+        }
+      ]
+    },
+    "LicenseReplToTextNav": {
+      "results": []
+    }
+  }
+}

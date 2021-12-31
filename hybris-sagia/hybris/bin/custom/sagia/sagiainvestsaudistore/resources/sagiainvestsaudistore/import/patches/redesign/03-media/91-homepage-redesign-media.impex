@@ -1,0 +1,82 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]            		; realFileName                   		; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+                   ; populationgrowthrate.svg       		; populationgrowthrate.svg       		; $siteResource/populationgrowthrate.svg                                    	; image/svg+xml               ;                                          ; ""     ;
+                   ; realGDP.svg                    		; realGDP.svg                    		; $siteResource/realGDP.svg                                                  	; image/svg+xml               ;                                          ; ""     ;
+                   ; GDPpercapita.svg               		; GDPpercapita.svg               		; $siteResource/GDPpercapita.svg                                             	; image/svg+xml               ;                                          ; ""     ;
+                   ; foreignassets.svg              		; foreignassets.svg              		; $siteResource/foreignassets.svg                                            	; image/svg+xml               ;                                          ; ""     ;
+                   ; workforceannualgrowth.svg      		; workforceannualgrowth.svg      		; $siteResource/workforceannualgrowth.svg                                    	; image/svg+xml               ;                                          ; ""     ;
+                   ; GCCpopulation.svg              		; GCCpopulation.svg              		; $siteResource/GCCpopulation.svg                                            	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-1.svg                  		; explore-1.svg                  		; $siteResource/explore-1.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-2.svg                  		; explore-2.svg                  		; $siteResource/explore-2.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-3.svg                  		; explore-3.svg                  		; $siteResource/explore-3.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-4.svg                  		; explore-4.svg                  		; $siteResource/explore-4.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-5.svg                  		; explore-5.svg                  		; $siteResource/explore-5.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-6.svg                  		; explore-6.svg                  		; $siteResource/explore-6.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-7.svg                  		; explore-7.svg                  		; $siteResource/explore-7.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-all-arrow-right.svg    		; explore-all-arrow-right.svg    		; $siteResource/explore-all-arrow-right.svg                                  	; image/svg+xml               ;                                          ; ""     ;
+                   ; incentivesinvestor-1.png       		; incentivesinvestor-1.png       		; $siteResource/incentivesinvestor-1.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; incentivesinvestor-2.png       		; incentivesinvestor-2.png       		; $siteResource/incentivesinvestor-2.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; incentivesinvestor-3.png       		; incentivesinvestor-3.png       		; $siteResource/incentivesinvestor-3.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; incentivesinvestor-4.png       		; incentivesinvestor-4.png       		; $siteResource/incentivesinvestor-4.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; incentivesinvestor-5.png       		; incentivesinvestor-5.png       		; $siteResource/incentivesinvestor-5.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; incentivesinvestor-6.png       		; incentivesinvestor-6.png       		; $siteResource/incentivesinvestor-6.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; explore-all-img.svg            		; explore-all-img.svg            		; $siteResource/explore-all-img.svg                                          	; image/svg+xml               ;                                          ; ""     ;
+                   ; knowmore-img.svg               		; knowmore-img.svg               		; $siteResource/knowmore-img.svg                                             	; image/svg+xml               ;                                          ; ""     ;
+                   ; success_img_1.png              		; success_img_1.png              		; $siteResource/success_img_1.png                                            	; image/png                   ;                                          ; ""     ;				   
+                   ; success_img_2.png              		; success_img_2.png              		; $siteResource/success_img_2.png                                            	; image/png                   ;                                          ; ""     ;				   
+                   ; success_img_3.png              		; success_img_3.png              		; $siteResource/success_img_3.png                                            	; image/png                   ;                                          ; ""     ;				   
+                   ; success_img_4.png              		; success_img_4.png              		; $siteResource/success_img_4.png                                            	; image/png                   ;                                          ; ""     ;				   
+                   ; success.png                    		; success.png                    		; $siteResource/success.png                                                  	; image/png                   ;                                          ; ""     ;				   
+                   ; GTG_logo.png                   		; GTG_logo.png                   		; $siteResource/GTG_logo.png                                                 	; image/png                   ;                                          ; ""     ;				   
+                   ; pepsco.png                     		; pepsco.png                     		; $siteResource/pepsco.png                                                   	; image/png                   ;                                          ; ""     ;				   
+                   ; cropped-ACCEL_logo_2020.png    		; cropped-ACCEL_logo_2020.png    		; $siteResource/cropped-ACCEL_logo_2020.png                                  	; image/png                   ;                                          ; ""     ;				   
+				   ; arrow-right.png                		; arrow-right.png                		; $siteResource/arrow-right.png                                              	; image/png                   ;                                          ; ""     ;				   
+                   ; arrow-left.png                 		; arrow-left.png                 		; $siteResource/arrow-left.png                                               	; image/png                   ;                                          ; ""     ;				   
+                   ; contact_banner.png             		; contact_banner.png             		; $siteResource/contact_banner.png                                           	; image/png                   ;                                          ; ""     ;				   
+#banner		
+				   ; home_banner.jpg                		; home_banner.jpg				 		; $siteResource/home_banner.jpg										        	; image/jpeg				  ;										   	 ; ""     ;
+
+#explore 7 key reasons
+					; game_changing_opportunities.png		; game_changing_opportunities.png		; $siteResource/game_changing_opportunities.png									; image/png					  ;										   	 ; ""  	  ;
+					; ambitious_reform_journey.png 			; ambitious_reform_journey.png			; $siteResource/ambitious_reform_journey.png									; image/png					  ;										     ; ""     ;
+					; strategic_global_location.png 		; strategic_global_location.png 		; $siteResource/strategic_global_location.png									; image/png					  ;										     ; ""     ;
+					; attractive_property_solution.png 		; attractive_property_solution.png 		; $siteResource/attractive_property_solution.png								; image/png					  ;										     ; ""     ;
+					; young_and_Skilled_Workforce.png 		; young_and_Skilled_Workforce.png 		; $siteResource/young_and_Skilled_Workforce.png									; image/png					  ;										     ; ""     ;
+					; expanding_Quality_of_Life.png 		; expanding_Quality_of_Life.png 		; $siteResource/expanding_Quality_of_Life.png									; image/png					  ;										     ; ""     ;
+					; leading_financial_sector.png			; leading_financial_sector.png			; $siteResource/leading_financial_sector.png									; image/png					  ;										     ; ""     ;
+				
+#MEGA AND GIGYA PROJECTS START				
+                   ; Neom-background-image.png       		; Neom-background-image.png        		; $siteResource/Neom-background-image.png                       				; image/png                   ;                                          ; ""     ;				   
+                   ; The-red-sea-background-image.png		; The-red-sea-background-image.png 		; $siteResource/The-red-sea-background-image.png                				; image/png                   ;                                          ; ""     ;				   
+                   ; Quiddiya-background-image.png   		; Quiddiya-background-image.png    		; $siteResource/Quiddiya-background-image.png                   				; image/png                   ;                                          ; ""     ;				   
+                   ; Amaala-background-image.png     		; Amaala-background-image.png      		; $siteResource/Amaala-background-image.png                     				; image/png                   ;                                          ; ""     ;				   
+                   ; Neom-Logo.png                   		; Neom-Logo.png                    		; $siteResource/Neom-Logo.png                                   				; image/png                   ;                                          ; ""     ;				   
+                   ; The-red-sea-logo.png            		; The-red-sea-logo.png             		; $siteResource/The-red-sea-logo.png                            				; image/png                   ;                                          ; ""     ;
+                   ; Quddiya-logo.png                		; Quddiya-logo.png                 		; $siteResource/Quddiya-logo.png                                				; image/png                   ;                                          ; ""     ;
+                   ; Amaala-logo.png                 		; Amaala-logo.png                  		; $siteResource/Amaala-logo.png                                 				; image/png                   ;                                          ; ""     ;
+                   ; Neom-tab-active-logo.png        		; Neom-tab-active-logo.png         		; $siteResource/Neom-tab-active-logo.png                        				; image/png                   ;                                          ; ""     ;				   
+                   ; The-Red-sea-tab-active-logo.png 		; The-Red-sea-tab-active-logo.png  		; $siteResource/The-Red-sea-tab-active-logo.png                 				; image/png                   ;                                          ; ""     ;
+                   ; Qiddiya-tab-active-logo.png     		; Qiddiya-tab-active-logo.png      		; $siteResource/Qiddiya-tab-active-logo.png                     				; image/png                   ;                                          ; ""     ;
+                   ; AMAALA-tab-active-logo.png      		; AMAALA-tab-active-logo.png       		; $siteResource/AMAALA-tab-active-logo.png                      				; image/png                   ;                                          ; ""     ;
+                   ; Neom.png                        		; Neom.png                         		; $siteResource/Neom.png                                        				; image/png                   ;                                          ; ""     ;
+                   ; TheRedSea.png                   		; TheRedSea.png                    		; $siteResource/TheRedSea.png                                   				; image/png                   ;                                          ; ""     ;
+                   ; Quiddiya.png                    		; Quiddiya.png                     		; $siteResource/Quiddiya.png                                    				; image/png                   ;                                          ; ""     ;
+                   ; Amala.png                       		; Amala.png                        		; $siteResource/Amala.png                                       				; image/png                   ;                                          ; ""     ;
+

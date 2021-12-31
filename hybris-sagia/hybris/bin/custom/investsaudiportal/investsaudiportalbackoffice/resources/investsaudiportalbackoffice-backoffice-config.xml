@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config xmlns="http://www.hybris.com/cockpit/config"
+        xmlns:ea="http://www.hybris.com/cockpitng/component/editorArea"
+        xmlns:simple-search="http://www.hybris.com/cockpitng/config/simplesearch"
+        xmlns:list-view="http://www.hybris.com/cockpitng/component/listView"
+        xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config"
+        xmlns:df="http://www.hybris.com/cockpitng/component/dynamicForms"
+>
+    <!--
+     Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+    -->
+    <context principal="portal-cmsmanagerrole" parent="auto" component="explorer-tree">
+        <explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
+            <explorer-tree:navigation-node id="backoffice_dashboard" position="0"/>
+            <explorer-tree:navigation-node id="hmc_backoffice-workflow-inbox" position="1"/>
+            <explorer-tree:navigation-node id="hmc_treenode_catalog">
+                <explorer-tree:type-node code="CatalogVersion" id="hmc_typenode_catalogversion"/>
+                <explorer-tree:type-node code="OpportunityProduct" id="hmc.opportunity.product" />
+                <explorer-tree:type-node code="SuccessStoryProduct" id="hmc.success.story.product"/>
+                <explorer-tree:type-node code="Category" id="hmc.sectors.category"/>
+            </explorer-tree:navigation-node>
+            <explorer-tree:navigation-node id="hmc.portal.medias">
+                <explorer-tree:type-node code="Media" id="Media"/>
+                <explorer-tree:type-node code="MediaContainer" id="MediaContainer"/>
+            </explorer-tree:navigation-node>
+            <explorer-tree:navigation-node id="hmc.portal.webinars">
+                <explorer-tree:type-node code="InvestSaudiWebinar" id="InvestSaudiWebinar"/>
+                <explorer-tree:type-node code="InvestSaudiWebinarRegistration" id="InvestSaudiWebinarRegistration"/>
+                <explorer-tree:type-node code="InvestSaudiWebinarRegistrationProcess" id="InvestSaudiWebinarRegistrationProcess"/>
+            </explorer-tree:navigation-node>
+            <explorer-tree:navigation-node id="hmc.portal.tickets">
+                <explorer-tree:type-node code="ContactTicketSubject" id="hmc.contact.us.subject" />
+                <explorer-tree:type-node code="ContactTicket" id="hmc.contact.ticket" />
+            </explorer-tree:navigation-node>
+            <explorer-tree:navigation-node id="hmc.portal.news">
+                <explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
+            </explorer-tree:navigation-node>
+            <explorer-tree:navigation-node id="hmc.cms2">
+                <explorer-tree:type-node code="CMSSite" id="CMSSite" />
+                <explorer-tree:type-node code="CMSPageType" id="CMSPageType" />
+                <explorer-tree:type-node code="PageTemplate" id="PageTemplate" />
+                <explorer-tree:type-node code="ContentSlotForTemplate" id="ContentSlotForTemplate" />
+                <explorer-tree:type-node code="AbstractPage" id="AbstractPage" />
+                <explorer-tree:type-node code="ContentSlot" id="ContentSlot" />
+                <explorer-tree:type-node code="ContentSlotForPage" id="ContentSlotForPage" />
+                <explorer-tree:type-node code="SimpleCMSComponent" id="SimpleCMSComponent" />
+                <explorer-tree:type-node code="CMSLinkComponent" id="CMSLinkComponent" />
+                <explorer-tree:type-node code="ComponentTypeGroup" id="ComponentTypeGroup" />
+                <explorer-tree:type-node code="AbstractCMSComponentContainer" id="AbstractCMSComponentContainer" />
+                <explorer-tree:type-node code="RestrictionType" id="RestrictionType" />
+                <explorer-tree:type-node code="AbstractRestriction" id="AbstractRestriction" />
+                <explorer-tree:type-node code="CMSNavigationNode" id="CMSNavigationNode" />
+                <explorer-tree:type-node code="CMSVersion" id="CMSVersion" />
+                <explorer-tree:type-node code="CMSVersionGCProcess" id="CMSVersionGCProcess" />
+            </explorer-tree:navigation-node>
+        </explorer-tree:explorer-tree>
+    </context>
+
+    <context parent="auto" component="explorer-tree">
+        <explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
+            <explorer-tree:navigation-node id="hmc.portal">
+                <explorer-tree:type-node code="OpportunityProduct" id="hmc.opportunity.product" />
+                <explorer-tree:type-node code="SuccessStoryProduct" id="hmc.success.story.product"/>
+                <explorer-tree:type-node code="Category" id="hmc.sectors.category"/>
+                <explorer-tree:type-node code="InvestSaudiWebinar" id="InvestSaudiWebinar"/>
+                <explorer-tree:type-node code="InvestSaudiWebinarRegistration" id="InvestSaudiWebinarRegistration"/>
+                <explorer-tree:type-node code="InvestSaudiWebinarRegistrationProcess" id="InvestSaudiWebinarRegistrationProcess"/>
+                <explorer-tree:type-node code="ContactTicketSubject" id="hmc.contact.us.subject" />
+                <explorer-tree:type-node code="ContactTicket" id="hmc.contact.ticket" />
+                <explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
+            </explorer-tree:navigation-node>
+        </explorer-tree:explorer-tree>
+    </context>
+
+    <context merge-by="type" parent="BaseSite" type="CMSSite" component="editor-area" principal="portal-cmsmanagerrole">
+        <ea:editorArea>
+            <ea:essentials>
+                <ea:essentialSection name="hmc.essential">
+                    <ea:attribute qualifier="uid" />
+                    <ea:attribute qualifier="name" />
+                    <ea:attribute qualifier="active" />
+                </ea:essentialSection>
+            </ea:essentials>
+            <ea:tab name="hmc.properties">
+                <ea:section name="hmc.section.cmssite.contentcatalogs">
+                    <ea:attribute qualifier="contentCatalogs" />
+                </ea:section>
+                <ea:section name="hmc.section.basesite.basestores">
+                    <ea:attribute qualifier="defaultCatalog" />
+                </ea:section>
+                <ea:section name="hmc.section.cmssite.config">
+                    <ea:attribute qualifier="startingPage" />
+                    <ea:attribute qualifier="redirectURL" />
+                    <ea:attribute qualifier="urlPatterns" />
+                    <ea:attribute qualifier="metaImage" />
+                </ea:section>
+                <ea:section name="hmc.section.cmssite.active">
+                    <ea:attribute qualifier="activeFrom" />
+                    <ea:attribute qualifier="activeUntil" />
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.tab.wcms.cockpit.properties">
+                <ea:section name="hmc.section.cms.component.configuration">
+                    <ea:attribute qualifier="validComponentTypes" />
+                </ea:section>
+                <ea:section name="hmc.section.wcms.cockpit.preview.information">
+                    <ea:attribute qualifier="openPreviewInNewTab" />
+                    <ea:attribute qualifier="previewURL" />
+                    <ea:attribute qualifier="defaultPreviewCatalog" />
+                    <ea:attribute qualifier="defaultPreviewCategory" />
+                    <ea:attribute qualifier="defaultPreviewProduct" />
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.administration">
+                <ea:section name="hmc.section.cms.admin">
+                    <ea:attribute qualifier="startPageLabel" />
+                    <ea:attribute qualifier="classificationCatalogs" />
+                    <ea:attribute qualifier="productCatalogs" />
+                </ea:section>
+            </ea:tab>
+        </ea:editorArea>
+    </context>
+
+    <context principal="portal-cmsmanagerrole" merge-by="type" parent="GenericItem" type="OpportunityProduct"
+             component="editor-area">
+        <ea:editorArea name="">
+            <ea:essentials>
+                <ea:essentialSection name="hmc.essential">
+                    <ea:attribute qualifier="code"/>
+                    <ea:attribute qualifier="name"/>
+                    <ea:attribute qualifier="catalogVersion"/>
+                    <ea:attribute qualifier="approvalStatus"/>
+                </ea:essentialSection>
+            </ea:essentials>
+            <ea:tab name="hmc.tab.opportunity.properties" position="1">
+                <ea:section name="hmc.product.descriptions" columns="3">
+                    <ea:panel name="" colspan="2" rowspan="2">
+                        <ea:attribute qualifier="featured"/>
+                        <ea:attribute qualifier="keywords"/>
+                        <ea:attribute qualifier="seoKeywords"/>
+                        <ea:attribute editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)"
+                                      qualifier="description"/>
+                        <ea:attribute editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)"
+                                      qualifier="highlights"/>
+                        <ea:attribute editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)"
+                                      qualifier="investmentModel"/>
+                    </ea:panel>
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.tab.product.multimedia" position="18">
+                <ea:section name="hmc.section.product.pictures">
+                    <ea:attribute qualifier="picture"/>
+                    <ea:attribute qualifier="thumbnail"/>
+                </ea:section>
+                <ea:section name="hmc.section.product.additionalmedias">
+                    <ea:attribute qualifier="logo"/>
+                    <ea:attribute qualifier="detail"/>
+                    <ea:attribute qualifier="others"/>
+                </ea:section>
+            </ea:tab>
+            <ea:customTab name="hmc.tab.attribute" spring-bean="classificationTabEditorAreaRenderer" position="6">
+                <ea:section name="hmc.section.product.untypedfeatures">
+                    <ea:attribute qualifier="untypedFeatures" description="hmc.text.product.untypedfeatures"/>
+                </ea:section>
+            </ea:customTab>
+            <ea:tab name="hmc.tab.product.categorysystem" position="10">
+                <ea:section name="hmc.section.product.productincategory">
+                    <ea:attribute qualifier="supercategories"/>
+                    <ea:attribute qualifier="classificationClasses"/>
+                </ea:section>
+                <ea:section name="hmc.section.product.productreferences">
+                    <ea:attribute qualifier="productReferences"/>
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.administration" merge-mode="remove"/>
+        </ea:editorArea>
+    </context>
+
+    <context principal="portal-cmsmanagerrole" merge-by="type" parent="GenericItem" type="SuccessStoryProduct"
+             component="editor-area">
+        <ea:editorArea name="">
+            <ea:essentials>
+                <ea:essentialSection name="hmc.essential">
+                    <ea:attribute qualifier="code"/>
+                    <ea:attribute qualifier="name"/>
+                    <ea:attribute qualifier="catalogVersion"/>
+                    <ea:attribute qualifier="approvalStatus"/>
+                </ea:essentialSection>
+            </ea:essentials>
+            <ea:tab name="hmc.tab.success.stories.properties" position="1">
+                <ea:section name="hmc.product.descriptions" columns="3">
+                    <ea:panel name="" colspan="2" rowspan="2">
+                        <ea:attribute qualifier="keywords"/>
+                        <ea:attribute qualifier="seoKeywords"/>
+                        <ea:attribute editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)"
+                                      qualifier="description"/>
+                        <ea:attribute editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)"
+                                      qualifier="quote"/>
+                    </ea:panel>
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.tab.product.multimedia" position="18">
+                <ea:section name="hmc.section.product.pictures">
+                    <ea:attribute qualifier="picture"/>
+                    <ea:attribute qualifier="thumbnail"/>
+                </ea:section>
+                <ea:section name="hmc.section.product.additionalmedias">
+                    <ea:attribute qualifier="logo"/>
+                    <ea:attribute qualifier="others"/>
+                </ea:section>
+            </ea:tab>
+            <ea:customTab name="hmc.tab.attribute" spring-bean="classificationTabEditorAreaRenderer" position="6">
+                <ea:section name="hmc.section.product.untypedfeatures">
+                    <ea:attribute qualifier="untypedFeatures" description="hmc.text.product.untypedfeatures"/>
+                </ea:section>
+            </ea:customTab>
+            <ea:tab name="hmc.tab.product.categorysystem" position="10">
+                <ea:section name="hmc.section.product.productincategory">
+                    <ea:attribute qualifier="supercategories"/>
+                    <ea:attribute qualifier="classificationClasses"/>
+                </ea:section>
+                <ea:section name="hmc.section.product.productreferences">
+                    <ea:attribute qualifier="productReferences"/>
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.administration" merge-mode="remove"/>
+        </ea:editorArea>
+    </context>
+
+    <context merge-by="type" parent="GenericItem" type="Category" component="editor-area" principal="portal-cmsmanagerrole">
+        <ea:editorArea name="">
+            <ea:essentials>
+                <ea:essentialSection name="hmc.essential">
+                    <ea:attribute qualifier="code"/>
+                    <ea:attribute qualifier="name"/>
+                    <ea:attribute qualifier="catalogVersion"/>
+                </ea:essentialSection>
+            </ea:essentials>
+            <ea:tab name="hmc.tab.sector.properties" position="1">
+                <ea:section name="hmc.section.category.visibility">
+                    <ea:attribute qualifier="allowedPrincipals"/>
+                </ea:section>
+                <ea:section name="hmc.section.category.description">
+                    <ea:panel name="" colspan="2" rowspan="2">
+                        <ea:attribute qualifier="keywords"/>
+                        <ea:attribute qualifier="seoKeywords"/>
+                        <ea:attribute qualifier="emailList"/>
+                        <ea:attribute editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)"
+                                      qualifier="description"/>
+                    </ea:panel>
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.tab.structure" position="2">
+                <ea:section name="hmc.section.supercategories">
+                    <ea:attribute qualifier="supercategories"/>
+                </ea:section>
+                <ea:section name="hmc.section.subcategoriesandproducts">
+                    <ea:attribute qualifier="categories"/>
+                    <ea:attribute qualifier="products"/>
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.multimedia" position="3">
+                <ea:section name="hmc.pictures">
+                    <ea:attribute qualifier="picture"/>
+                    <ea:attribute qualifier="thumbnail"/>
+                </ea:section>
+                <ea:section name="hmc.section.additionalmedias">
+                    <ea:attribute qualifier="logo"/>
+                    <ea:attribute qualifier="others"/>
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.administration" merge-mode="remove"/>
+        </ea:editorArea>
+    </context>
+
+    <context merge-by="type" parent="Category" type="ClassificationClass" component="editor-area" principal="portal-cmsmanagerrole">
+        <ea:editorArea name="">
+            <ea:essentials>
+                <ea:essentialSection name="hmc.essential">
+                    <ea:attribute qualifier="code"/>
+                    <ea:attribute qualifier="name"/>
+                    <ea:attribute qualifier="externalID"/>
+                    <ea:attribute qualifier="catalogVersion"/>
+                </ea:essentialSection>
+            </ea:essentials>
+            <ea:tab name="hmc.tab.classification.properties" position="1">
+                <ea:section name="hmc.section.category.visibility">
+                    <ea:attribute qualifier="allowedPrincipals"/>
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.tab.category.extendedattributes" position="2">
+                <ea:section name="hmc.section.classificationattributes">
+                    <ea:attribute qualifier="declaredClassificationAttributeAssignments"
+                                  editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor">
+                        <ea:editor-parameter>
+                            <ea:name>listConfigContext</ea:name>
+                            <ea:value>referenceListView</ea:value>
+                        </ea:editor-parameter>
+                        <ea:editor-parameter>
+                            <ea:name>configurableFlowConfigCtx</ea:name>
+                            <ea:value>create-wizard-no-save</ea:value>
+                        </ea:editor-parameter>
+                    </ea:attribute>
+                    <ea:attribute qualifier="showEmptyAttributes"/>
+                </ea:section>
+            </ea:tab>
+            <ea:tab name="hmc.tab.structure"
+                    position="3"/>
+            <ea:tab name="hmc.multimedia" merge-mode="remove"/>
+            <ea:tab name="hmc.tab.sector.properties" merge-mode="remove"/>
+        </ea:editorArea>
+    </context>
+
+    <context parent="GenericItem" type="InvestSaudiWebinar" component="editor-area">
+        <ea:editorArea name="">
+            <ea:essentials>
+                <ea:essentialSection name="hmc.essential">
+                    <ea:attribute qualifier="webinarCode"/>
+                    <ea:attribute qualifier="url"/>
+                    <ea:attribute qualifier="image"/>
+                </ea:essentialSection>
+            </ea:essentials>
+            <ea:tab name="hmc.tab.webinar.properties" position="1">
+                <ea:section name="hmc.webinar.registrations" columns="3">
+                    <ea:attribute qualifier="portalWebinarRegistration"/>
+                </ea:section>
+            </ea:tab>
+        </ea:editorArea>
+    </context>
+
+
+    <context parent="GenericItem" type="InvestSaudiNewsComponent" component="editor-area">
+        <ea:editorArea name="">
+            <ea:tab name="hmc.tab.newscomponent.properties" position="1">
+                <ea:section name="hmc.tab.newscomponent.properties">
+                    <ea:panel name="" colspan="2" rowspan="2">
+                        <ea:attribute qualifier="name" />
+                        <ea:attribute qualifier="newsTitle" />
+                        <ea:attribute qualifier="newsUrl"/>
+                        <ea:attribute qualifier="newsDetailsImage"/>
+                        <ea:attribute qualifier="newsThumbnailImage"/>
+                        <ea:attribute qualifier="newsFullReport"/>
+                        <ea:attribute qualifier="newsDate"/>
+                        <ea:attribute qualifier="galleryImages"/>
+                        <ea:attribute qualifier="newsShortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+                        <ea:attribute qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+                    </ea:panel>
+                </ea:section>
+            </ea:tab>
+        </ea:editorArea>
+    </context>
+    <context component="create-wizard" merge-by="type" parent="SimpleCMSComponent" type="InvestSaudiNewsComponent">
+        <wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="InvestSaudiNewsComponentWizard" title="create.title(ctx.TYPE_CODE)">
+            <wz:prepare id="InvestSaudiNewsComponentPrepare">
+                <wz:initialize property="newObject" type="ctx.TYPE_CODE" />
+            </wz:prepare>
+            <wz:step id="step1" label="">
+                <wz:content id="step1.content">
+                    <wz:property-list root="newObject"
+                                      include-non-declared-mandatory="false"
+                                      include-non-declared-writable-on-creation="false"
+                                      include-non-declared-unique="false"
+                                      enable-non-declared-includes="true">
+                        <wz:property qualifier="uid" />
+                        <wz:property qualifier="name" />
+                        <wz:property qualifier="catalogVersion" />
+                        <wz:property qualifier="newsTitle" />
+                        <wz:property qualifier="newsUrl" />
+                        <wz:property qualifier="newsDetailsImage" />
+                        <wz:property qualifier="newsThumbnailImage" />
+                        <wz:property qualifier="newsFullReport" />
+                        <wz:property qualifier="newsDate" />
+                        <wz:property qualifier="galleryImages" />
+                        <wz:property qualifier="newsShortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+                        <wz:property qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+                    </wz:property-list>
+                </wz:content>
+            </wz:step>
+        </wz:flow>
+    </context>
+
+    <context component="create-wizard" merge-by="type" parent="GenericItem" type="ContactTicketSubject">
+        <wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="ContactTicketSubjectComponentWizard" title="create.title(ctx.TYPE_CODE)">
+            <wz:prepare id="ContactTicketSubjectPrepare">
+                <wz:initialize property="newObject" type="ctx.TYPE_CODE" />
+            </wz:prepare>
+            <wz:step id="step1" label="">
+                <wz:content id="step1.content">
+                    <wz:property-list root="newObject"
+                                      include-non-declared-mandatory="false"
+                                      include-non-declared-writable-on-creation="false"
+                                      include-non-declared-unique="false"
+                                      enable-non-declared-includes="true">
+                            <wz:property qualifier="code" />
+                            <wz:property qualifier="label" />
+                            <wz:property qualifier="emailList" />
+                    </wz:property-list>
+                </wz:content>
+            </wz:step>
+        </wz:flow>
+    </context>
+
+    <context parent="GenericItem" type="ContactTicketSubject" component="editor-area">
+        <ea:editorArea name="">
+            <ea:tab name="" position="1">
+                <ea:section name="">
+                    <ea:panel name="" colspan="2" rowspan="2">
+                        <ea:attribute qualifier="code" />
+                        <ea:attribute qualifier="label" />
+                        <ea:attribute qualifier="emailList" />
+                    </ea:panel>
+                </ea:section>
+            </ea:tab>
+        </ea:editorArea>
+    </context>
+    
+    <context type="ContactTicketSubject" component="listview"
+             principal="portal-cmsmanagerrole">
+        <list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+            <column qualifier="code" position="1"/>
+            <column qualifier="label" position="2"/>
+            <column qualifier="emailList" position="3"/>
+        </list-view:list-view>
+    </context>
+
+    <context type="ContactTicket" component="listview"
+             principal="portal-cmsmanagerrole">
+        <list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+            <column qualifier="sectorCategory" position="1"/>
+            <column qualifier="name" position="2"/>
+            <column qualifier="company" position="3"/>
+            <column qualifier="mobile" position="4"/>
+            <column qualifier="jobTitle" position="5"/>
+            <column qualifier="email" position="6"/>
+            <column qualifier="contactSubject" position="7"/>
+            <column qualifier="message" position="8"/>
+        </list-view:list-view>
+    </context>
+
+    <context merge-by="type" parent="CsTicket" type="ContactTicket" component="editor-area" principal="portal-cmsmanagerrole">
+        <ea:editorArea name="">
+            <ea:tab name="hmc.tab.contactTicket.properties" position="2">
+                <ea:section name="mc.section.contactTicket.properties">
+                    <ea:attribute qualifier="sectorCategory"/>
+                    <ea:attribute qualifier="name"/>
+                    <ea:attribute qualifier="company"/>
+                    <ea:attribute qualifier="mobile"/>
+                    <ea:attribute qualifier="jobTitle"/>
+                    <ea:attribute qualifier="email"/>
+                    <ea:attribute qualifier="contactSubject"/>
+                    <ea:attribute qualifier="message"/>
+                </ea:section>
+            </ea:tab>
+        </ea:editorArea>
+    </context>
+
+    <context type="InvestSaudiWebinar" component="listview"
+             principal="portal-cmsmanagerrole">
+        <list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+            <column qualifier="webinarCode" position="1"/>
+            <column qualifier="image" position="2"/>
+            <column qualifier="url" position="3"/>
+        </list-view:list-view>
+    </context>
+
+    <context type="InvestSaudiWebinar" component="advanced-search" merge-by="type"
+             principal="portal-cmsmanagerrole">
+        <as:advanced-search xmlns:as="http://www.hybris.com/cockpitng/config/advancedsearch" connection-operator="AND">
+            <as:field-list>
+                <as:field name="webinarCode" selected="true"/>
+            </as:field-list>
+        </as:advanced-search>
+    </context>
+
+
+    <context merge-by="type" type="InvestSaudiWebinar" component="simple-search"
+             principal="portal-cmsmanagerrole">
+        <simple-search:simple-search>
+            <simple-search:field name="webinarCode"/>
+        </simple-search:simple-search>
+    </context>
+
+    <context type="InvestSaudiWebinar" component="create-wizard-no-save" merge-by="component" parent="create-wizard">
+        <wz:flow id="InvestSaudiWebinarFlow" title="create.title(ctx.TYPE_CODE)">
+            <wz:prepare id="prepare">
+                <wz:initialize property="newWebinar" type="ctx.TYPE_CODE"/>
+            </wz:prepare>
+            <wz:step id="step1" label="newWebinar"  merge-mode="replace">
+                <wz:content id="step1.content" merge-mode="replace">
+                    <wz:property-list root="newWebinar">
+                        <wz:property qualifier="webinarCode" validate="true"/>
+                        <wz:property qualifier="image">
+                            <wz:editor-parameter>
+                                <wz:name>isNestedObjectCreationDisabled</wz:name>
+                                <wz:value>false</wz:value>
+                            </wz:editor-parameter>
+                        </wz:property>
+                        <wz:property qualifier="url" validate="true"/>
+                    </wz:property-list>
+                </wz:content>
+                <wz:navigation id="step1.navigation">
+                    <wz:cancel/>
+                    <wz:done>
+                        <wz:save property="newWebinar"/>
+                    </wz:done>
+                </wz:navigation>
+            </wz:step>
+        </wz:flow>
+    </context>
+
+    <context type="InvestSaudiWebinar" component="create-wizard" merge-by="component">
+        <wz:flow id="InvestSaudiWebinarFlow" title="create.title(ctx.TYPE_CODE)">
+            <wz:prepare id="prepare">
+                <wz:initialize property="newWebinar" type="ctx.TYPE_CODE"/>
+            </wz:prepare>
+            <wz:step id="step1" label="newWebinar"  merge-mode="replace">
+                <wz:content id="step1.content" >
+                    <wz:property-list root="newWebinar">
+                        <wz:property qualifier="webinarCode" validate="true"/>
+                        <wz:property qualifier="image">
+                            <wz:editor-parameter>
+                                <wz:name>isNestedObjectCreationDisabled</wz:name>
+                                <wz:value>false</wz:value>
+                            </wz:editor-parameter>
+                        </wz:property>
+                        <wz:property qualifier="url" validate="true"/>
+                    </wz:property-list>
+                </wz:content>
+                <wz:navigation id="step1.navigation">
+                    <wz:cancel/>
+                    <wz:done>
+                        <wz:save property="newWebinar"/>
+                    </wz:done>
+                </wz:navigation>
+            </wz:step>
+        </wz:flow>
+    </context>
+
+    <context type="InvestSaudiWebinarRegistration" component="listview"
+             principal="portal-cmsmanagerrole">
+        <list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+            <column qualifier="userEmail" position="1"/>
+            <column qualifier="webinarCode" position="2"/>
+            <column qualifier="creationtime" position="3"/>
+            <column qualifier="languageIso" position="4"/>
+        </list-view:list-view>
+    </context>
+
+
+    <context type="InvestSaudiWebinarRegistration" component="advanced-search" merge-by="type"
+             principal="portal-cmsmanagerrole">
+        <as:advanced-search xmlns:as="http://www.hybris.com/cockpitng/config/advancedsearch" connection-operator="AND">
+            <as:field-list>
+                <as:field name="webinarCode" selected="true"/>
+                <as:field name="userEmail"/>
+            </as:field-list>
+        </as:advanced-search>
+    </context>
+
+
+    <context merge-by="type" type="InvestSaudiWebinarRegistration" component="simple-search"
+             principal="portal-cmsmanagerrole">
+        <simple-search:simple-search>
+            <simple-search:field name="webinarCode"/>
+            <simple-search:field name="userEmail"/>
+        </simple-search:simple-search>
+    </context>
+
+
+    <context parent="GenericItem" type="InvestSaudiWebinarRegistration" component="editor-area">
+        <ea:editorArea name="">
+            <ea:tab name="hmc.tab.hmc.tab.webinar.properties.properties" position="1">
+                <ea:section name="hmc.tab.hmc.tab.webinar.properties.properties">
+                    <ea:attribute qualifier="userEmail"/>
+                    <ea:attribute qualifier="webinarCode"/>
+                    <ea:attribute qualifier="creationtime"/>
+                    <ea:attribute qualifier="languageIso"/>
+                </ea:section>
+            </ea:tab>
+        </ea:editorArea>
+    </context>
+
+    <context type="InvestSaudiWebinarRegistrationProcess" component="listview"
+             principal="portal-cmsmanagerrole">
+        <list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+            <column qualifier="code" position="1"/>
+            <column qualifier="userEmail" position="2"/>
+            <column qualifier="state" position="3"/>
+            <column qualifier="endMessage" position="4"/>
+        </list-view:list-view>
+    </context>
+
+</config>

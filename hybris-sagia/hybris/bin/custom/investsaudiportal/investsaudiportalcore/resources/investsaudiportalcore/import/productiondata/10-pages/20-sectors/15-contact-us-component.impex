@@ -1,0 +1,30 @@
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; name           ; title[lang = en]                        ; nameLabel[lang = en]; companyLabel[lang = en]; mobileLabel[lang = en]; jobTitleLabel[lang = en]; emailLabel[lang = en]; contactSubjectListLabel[lang = en]; messageLabel[lang = en]; submitButtonLabel[lang = en]; &componentRef       ; $contentCV[unique = true];
+                                           ; contact-form ; Contact Expert ; Contact Our {sector-opportunity} Expert ; Name                ; Company                ; Mobile                ; Job Title               ; Email                ; Purpose of Contacting             ; Message                ; Apply                       ; contact-form ;
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; name           ; title[lang = ar]                            ; nameLabel[lang = ar]; companyLabel[lang = ar]; mobileLabel[lang = ar]; jobTitleLabel[lang = ar]; emailLabel[lang = ar]; contactSubjectListLabel[lang = ar]; messageLabel[lang = ar]; submitButtonLabel[lang = ar]; &componentRef       ; $contentCV[unique = true];
+                                           ; contact-form ; Contact Expert ; {sector-opportunity}  التواصل مع مسؤول قطاع ; الاسم               ; الشركة                 ; رقم الجوال            ; المسمى الوظيفي          ; البريد الالكتروني    ; الغرض من الاتصال                  ; الرسالة                ; إرسال                       ; contact-form ;
+
+UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; $contentCV[unique = true]; successMessage[lang = en]
+                                    ; contact-form ;                          ; "
+<div class='formSuccess d-none'>
+    <p class='font-bold'>Thank you for your interest in the Invest Saudi.</p>
+    <p>We received your inquiry, and we will get back to you shortly.</p>
+</div>
+"
+
+UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; $contentCV[unique = true]; successMessage[lang = ar]
+                                    ; contact-form ;                          ; "
+<div class='formSuccess d-none'>
+  <p class='font-bold'>شكراَ لتواصلك مع الهيئة العامة للاستثمار</p>
+    <p>لقد تم استلام رسالتك، سوف يتم التواصل معك في أقرب وقت
+  </p>
+</div>
+"
+

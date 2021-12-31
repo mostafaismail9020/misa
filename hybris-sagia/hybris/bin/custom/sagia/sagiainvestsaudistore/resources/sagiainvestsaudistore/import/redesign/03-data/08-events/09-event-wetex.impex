@@ -1,0 +1,52 @@
+############# EVENT  WETEX ########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+							  							  
+INSERT_UPDATE EventKeyDetails;$contentCV[unique = true]	;uid[unique = true]				; keyName [lang = en]			;keyValue[lang = en];
+							 ;                          ;wetex-key-1          			; Exhibitors            		; 1,076;
+							 ;                          ;wetex-key-2        			; Courtiers                 	; 52;
+							 ;                          ;wetex-key-3         			; Sector                    	; Energy and Water/Exhibitions;
+							 ;                          ;wetex-key-4         			; visitors                  	; 63,058;
+							 ;                          ;wetex-key-5					; Sponsors						; more than 47;				
+
+
+INSERT_UPDATE Media; code[unique = true]            ; realFileName               	; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;Wetex-banner-image.jpg  		; Wetex-banner-image.jpg 		; $siteResource/Wetex-banner-image.jpg                                        ; image/jpg                   ;                                          ; ""     ;
+                   ;Wetex-thumbnail-image.jpg       ; Wetex-thumbnail-image.jpg     ; $siteResource/Wetex-thumbnail-image.jpg                                     ; image/jpg                 ;                                       		; ""     ;
+                   ;event-gallary-image.png         ; event-gallary-image.png       ; $siteResource/event-gallary-image.png                                       ; image/png                   ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias					; $contentCV; 	
+                            ; media-container-wetex   ; event-gallary-image.png ;         	;
+
+				   
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]   ; name   		; url   					; &linkRef		;
+                              ;                          ; events-link9 		; eventslink9   ; https://www.wetex.ae/		; events-link9	;
+
+ 
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]      ; eventUrl(uid, $contentCV)    ;eventLocation[lang = en] ;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss];eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+                                        ;                         ;event-wetex       	   ; events-link9                 ;Dubai           			;05.10.2021 00:00:00                              ;07.10.2021 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]      ;eventName[lang = en] ;eventShortInformation[lang = en] ;
+                                        ;                         ;event-wetex       	   ; WETEX               ;"The exhibition aims to achieve integration between all sectors of the energy industry and bring together trade and technical sectors whilst facilitating the creation of new trade opportunities, enhancing an exchange of ideas and experiences and showcasing the latest innovations"  ; 
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]	;uid[unique = true]	;eventKeyDetails(uid, $contentCV);
+										;							;event-wetex  		;wetex-key-1,wetex-key-2,wetex-key-3,wetex-key-4 ,wetex-key-5;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventBannerImage(code, $contentCV)		;eventThumbnailImage(code, $contentCV);eventGalleryImages(qualifier, $contentCV);
+										;						  ;event-wetex			;Wetex-banner-image.jpg					;Wetex-thumbnail-image.jpg			  ;media-container-wetex ;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventFullDescription[lang = en];
+										 ;						  ;event-wetex  	 ;								;

@@ -1,0 +1,12 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$classCatalogVersion = catalogVersion(catalog(id[default='sagiaClassification']), version[default='1.0'])
+
+####
+INSERT_UPDATE OpportunityProduct; code[unique = true]       	; name [lang = en]          					; name [lang = ar]          					; featured; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; Aviation-Academies        	; Aviation Academies        					; Aviation Academies   		 					; false    ; transport-logistics ;     ;	;"Invest Saudi,Aviation Academies - Transport and Logistics,Transport and Logistics,"
+								; Bunkering-Agent-KFIP        	; Bunkering Agent at King Fahad Industrial Port ; Bunkering Agent at King Fahad Industrial Port  ; false    ; transport-logistics ;     ;	;"Invest Saudi,Bunkering Agent at King Fahad Industrial Port - Transport and Logistics,Transport and Logistics,"
+								; Duty-Free-KFIP      			 ; Duty-Free at King Fahad Industrial Port        ; Duty-Free at King Fahad Industrial Port    	 ; false    ; transport-logistics ;     ;	;"Invest Saudi,Duty-Free at King Fahad Industrial Port - Transport and Logistics,Transport and Logistics,"
+								; Shipping-Agencies-KFIP        ; Shipping Agencies at King Fahad Industrial Port ; Shipping Agencies at King Fahad Industrial Port ; false    ; transport-logistics ;     ;	;"Invest Saudi,Shipping Agencies at King Fahad Industrial Port - Transport and Logistics,Transport and Logistics,"
+								; Vessels-MRO-Services        	; Vessels MRO Services        					  ; Vessels MRO Services    						; false    ; transport-logistics ;     ;	;"Invest Saudi,Vessels MRO Services - Transport and Logistics,Transport and Logistics,"
+	

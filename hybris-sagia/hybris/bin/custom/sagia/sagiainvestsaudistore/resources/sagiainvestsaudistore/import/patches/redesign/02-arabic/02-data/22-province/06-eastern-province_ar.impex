@@ -1,0 +1,153 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleAr = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                                	 	; realFileName                  		 						; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+																            												 
+					   ; eastern-banner-image.png   			 		     	 	; eastern-banner-image.png   			 						; $siteResource/eastern-banner-image.png                                         		  ;                 image/png                ;                                          ; ""     ;
+					   ; eastern-province-map.png     			 		      		; eastern-province-map.png     			 						; $siteResource/eastern-province-map.png                                                  	  ;                 image/png                ;                                          ; ""     ;
+					   ; eastern-agriculture.png       	   					   	    ; eastern-agriculture.png       	   			    			; $siteResource/eastern-agriculture.png       	   				                                               ;                 image/png                ;                                          ; ""     ;
+					   ; eastern-tourism.png                    			       	; eastern-tourism.png                    		  				; $siteResource/eastern-tourism.png                    		                                               ;                 image/png                ;                                          ; ""     ;
+					   ; eastern-mining.png      							   		; eastern-mining.png      						    			; $siteResource/eastern-mining.png      							                                                 ;                 image/png                ;                                          ; ""     ;
+					   ; eastern-logistics.png        						   		; eastern-logistics.png        					    			; $siteResource/eastern-logistics.png        						                                             	  ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-machines-and-industrialequipment.png		   		; eastern-machines-and-industrialequipment.png    				; $siteResource/eastern-machines-and-industrialequipment.png                                               ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-petroleum-productsmanufacturing.png 		   		; eastern-petroleum-productsmanufacturing.png     				; $siteResource/eastern-petroleum-productsmanufacturing.png                                                ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-chemical-products-manufacturing.png 		   		; eastern-chemical-products-manufacturing.png     				; $siteResource/eastern-chemical-products-manufacturing.png                                                ;                 image/png                ;                                          ; ""     ;   
+					   
+
+
+
+
+
+						
+					   ; eastern-population.png        		                		; eastern-population.png        				; $siteResource/eastern-population.png        		                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-active-factories.png    			               	; eastern-active-factories.png    	       	; $siteResource/eastern-active-factories.png    		                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-population-growth.png          	            		; eastern-population-growth.png       		; $siteResource/eastern-population-growth.png                                               ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-airport.png              			              	; eastern-airport.png              			; $siteResource/eastern-airport.png              			                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-private-sector-employees.png                 		; eastern-private-sector-employees.png		; $siteResource/eastern-private-sector-employees.png                                 		  ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-seaports.png         				              	; eastern-seaports.png         		    	; $siteResource/eastern-seaports.png         				                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-chambers-of-commerce.png 			              	; eastern-chambers-of-commerce.png 	        ; $siteResource/eastern-chambers-of-commerce.png 		                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-dams.png              				              	; eastern-dams.png              		    	; $siteResource/eastern-dams.png              		                                 	  ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-industrial-city.png      	  	            		; eastern-industrial-city.png      	      	; $siteResource/eastern-industrial-city.png      	 	                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-hotels.png							              	; eastern-hotels.png					        ; $siteResource/eastern-hotels.png					                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-sport-city.png           	  	            		; eastern-sport-city.png           			; $siteResource/eastern-sport-city.png           	 	                                   	  ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-hospitals.png                                		; eastern-hospitals.png               		; $siteResource/eastern-hospitals.png                                                       ;                 image/png                ;                                          ; ""     ;   					
+					   ; eastern-stadiums.png						              	; eastern-stadiums.png						; $siteResource/eastern-stadiums.png												  		  ;                 image/png                ;											; ""	 ;
+					   ; eastern-towns.png							              	; eastern-towns.png							; $siteResource/eastern-towns.png													  		  ;                 image/png                ;											; ""	 ;
+					   ; eastern-roads-length.png					              	; eastern-roads-length.png					; $siteResource/eastern-roads-length.png											  		  ;                 image/png                ;											; ""	 ;
+					   				  				  
+																					  
+					   ; eastern-access-to-gcc-market.png             		; eastern-access-to-gcc-market.png               	; $siteResource/eastern-access-to-gcc-market.png                                     ;                 image/png                ;                                          ; ""     ;   
+					   ; eastern-geological-resources.png             		; eastern-geological-resources.png              	; $siteResource/eastern-geological-resources.png                         			  ;                 image/png                ;                                          ; ""     ;   	
+					   ; eastern-good-facility-infrastructure.png     		; eastern-good-facility-infrastructure.png      	; $siteResource/eastern-good-facility-infrastructure.png                      		  ;                 image/png                ;                                          ; ""     ;   	
+					   ; eastern-quality-logistics-infrastructure.png 	    ; eastern-quality-logistics-infrastructure.png  	; $siteResource/eastern-quality-logistics-infrastructure.png                         ;                 image/png                ;                                          ; ""     ;   	
+					   ; eastern-large-set-of-companies.png         	         ; eastern-large-set-of-companies.png         		; $siteResource/eastern-large-set-of-companies.png         	                         ;                 image/png                ;                                          ; ""     ;   	
+					   
+					   
+					   
+
+
+	
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=ar]			; bannerText[lang=ar]										; bannerImage (code, $contentCV)	; keyFactsHeader [lang = ar]		 ; keyStrengthsHeader [lang = ar] 	 ; opportunitiesHeader [lang = ar]		
+							   ; eastern		    ;		        ; المنطقة الشرقية			    ; 		; eastern-banner-image.png		    ; اهم المعلومات والأرقام	 			 ; المزايا المناطقية		 			 ; 																																																							
+	
+	
+
+#########################################################	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 		 ;  $contentCV  ; headerText[lang = ar]      			; imageIcon  (code, $contentCV)     	 						; &componentRef
+											    ; eastern-agriculture		 ; 				; الزراعة	    					; eastern-agriculture.png       	   							; eastern-agriculture			
+                                                ; eastern-tourism	 		 ;              ; السياحة	           					; eastern-tourism.png                    						; eastern-tourism	 		
+                                                ; eastern-mining	 		 ;              ; التعدين      							; eastern-mining.png      										; eastern-mining	 		
+                                                ; eastern-logistics	 		 ;             	; الخدمات اللوجستية      						; eastern-logistics.png        									; eastern-logistics	 		
+                                                ; eastern-machines-equipment ;              ; الآلات والمعدات الصناعية		; eastern-machines-and-industrialequipment.png                  ; eastern-machines-equipment
+	                                            ; eastern-petroleum			 ;              ; تصنيع المنتجات البتروكيماوية		; eastern-petroleum-productsmanufacturing.png                   ; eastern-petroleum			
+	                                            ; eastern-chemical			 ;              ; تصنيع المنتجات الكيميائية		; eastern-chemical-products-manufacturing.png                   ; eastern-chemical			
+	
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 				;  $contentCV  ; key[lang = ar] ; value[lang = ar] 
+										; eastern-strategic-population		;			   ; 5,148,598		; التعداد السكاني
+										; eastern-strategic-landmass		;			   ; 540,000 كم2 	; المساحة
+		
+	 
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = ar]	; backgroundImage (code, $contentCV)   	; sectors(&componentRef) 																											 ; longDescription[lang = ar]																																																																																																																																																												; localizedStats (uid, $contentCV)   											; &componentRef
+												 ; eastern-strategic-component		;          		; القطاعات الاستراتيجية			; eastern-province-map.png				; eastern-agriculture,eastern-tourism,eastern-mining,eastern-logistics,eastern-machines-equipment,eastern-petroleum,eastern-chemical ; تعتبر المنطقة الشرقية الأكبر من حيث المساحة في المملكة العربية السعودية حيث تمثل 27.6% من مساحة المملكة الإجمالية. تتميز المنطقة الشرقية باقتصاد متين نظرًا لاحتوائها على أكبر احتياطي نفط في العالم، مما عزز وجود الصناعات النفطية فيها مثل انتاج النفط وصناعات الغاز الطبيعي والصناعات البتروكيماوية. كما أن المنطقة الشرقية تعتبر مصدرًا طبيعيًا لأجود أنواع التمور إذ تقع فيها واحة الأحساء، أكبر واحة طبيعية في العالم تضم أكثر من 2.5 مليون شجرة نخيل. تعد المنطقة الشرقية بوابة المملكة العربية السعودية إلى دول مجلس التعاون الخليجي، فـ60% من المنافذ إلى المملكة تمرّ عبر هذه المنطقة و66% من صادرات المنتجات غير النفطية تُحمَّل عبر موانئ المنطقة الشرقية.  				; eastern-strategic-population,eastern-strategic-landmass 						; eastern-strategic-component
+                             
+
+							 
+
+#######################################################	
+
+
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]		 ; $contentCV ; imageIcon (code, $contentCV) 			; headerText[lang = ar]		   ;  text[lang = ar]								        ; &componentRef
+									   ; eastern-keyfacts1	     ;			  ; eastern-population.png        			; 5,148,598		               ;  التعداد السكاني	        ; eastern-keyfacts1	
+									   ; eastern-keyfacts2       ;            ; eastern-active-factories.png    		; 1,877		                   ;  عدد المصانع المنتجة الربع الثالث 2021                            ; eastern-keyfacts2  
+#									   ; eastern-keyfacts3       ;            ; eastern-population-growth.png         	; 2.40%		                   ;  annual population growth between 2013-2019	        ; eastern-keyfacts3  		
+									   ; eastern-keyfacts4       ;            ; eastern-airport.png              		; 3			                   ;  عدد المطارات الدولية وعدد 2 مطارات محلية            ; eastern-keyfacts4  
+									   ; eastern-keyfacts5       ;            ; eastern-private-sector-employees.png  	; 1,823,196		               ;  اجمالي المشتغلين    	        ; eastern-keyfacts5  
+									   ; eastern-keyfacts6       ;            ; eastern-seaports.png         			; 4		                  	   ;  عدد الموانئ 									             ; eastern-keyfacts6  
+									   ; eastern-keyfacts7       ;            ; eastern-chambers-of-commerce.png 		; 3			                   ;  عدد الغرف التجارية 				                 ; eastern-keyfacts7  
+									   ; eastern-keyfacts8       ;            ; eastern-dams.png              			; 1			               	   ;  عدد السدود  						                             ; eastern-keyfacts8  
+									   ; eastern-keyfacts9       ;            ; eastern-industrial-city.png      		; 7		                   	   ;  عدد المدن الصناعية                                           ; eastern-keyfacts9  
+									   ; eastern-keyfacts10      ;            ; eastern-hotels.png						; 108			               ;  عدد الفنادق			                                     ; eastern-keyfacts10 
+									   ; eastern-keyfacts11      ;            ; eastern-sport-city.png           		; 3			                   ;  عدد المدن الرياضية 					                         ; eastern-keyfacts11 
+									   ; eastern-keyfacts12      ;            ; eastern-hospitals.png                 	; 37		                   ;  عدد المستشفيات  بمجموع 6,411 سرير 						        ; eastern-keyfacts12    
+									   ; eastern-keyfacts13      ;            ; eastern-stadiums.png					; 1		                   	   ;  عدد الملاعب الرياضية  				                                 ; eastern-keyfacts13 
+									   ; eastern-keyfacts14      ;            ; eastern-towns.png						; 12		                   ;  عدد المحافظات في المنطقة				                                     ; eastern-keyfacts14 
+									   ; eastern-keyfacts15      ;            ; eastern-roads-length.png				; 7,572		                   ;  مجموع أطوال الطرق -كم 				                             ; eastern-keyfacts15 
+												   
+		
+					   
+								
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]		; $contentCV      ; image (code, $contentCV)					         ; text[lang=ar]				           																													;&componentRef
+                     					 
+										   ; eastern-key-strength1 	;                 ; eastern-access-to-gcc-market.png                    ; إمكانية الوصول إلى سوق دول مجلس التعاون الخليجي                  	; eastern-key-strength1
+                                           ; eastern-key-strength2 	;                 ; eastern-geological-resources.png                    ; الموارد الجيولوجية                         ; eastern-key-strength2
+                                           ; eastern-key-strength3	;                 ; eastern-good-facility-infrastructure.png            ; بنية تحتية ممتازة للمرافق                 ; eastern-key-strength3
+                                           ; eastern-key-strength4	;                 ; eastern-quality-logistics-infrastructure.png        ; جودة البنية التحتية اللوجستية      ; eastern-key-strength4
+                                           ; eastern-key-strength5 	;                 ; eastern-large-set-of-companies.png         	        ; عدد كبير من الشركات                       ; eastern-key-strength5
+		                                   
+
+########################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																																					; keyStrengths(&componentRef) 																				  		; investmentOpportunities(&componentRef)
+							   ; eastern		 		;				; eastern-strategic-component 				; eastern-keyfacts1,eastern-keyfacts2 ,eastern-keyfacts4 ,eastern-keyfacts5 ,eastern-keyfacts6, eastern-keyfacts7 ,eastern-keyfacts8 ,eastern-keyfacts9 ,eastern-keyfacts10,eastern-keyfacts11,eastern-keyfacts12,eastern-keyfacts13,eastern-keyfacts14,eastern-keyfacts15   ; eastern-key-strength1,eastern-key-strength2,eastern-key-strength3,eastern-key-strength4,eastern-key-strength5   ; 
+	
+	
+

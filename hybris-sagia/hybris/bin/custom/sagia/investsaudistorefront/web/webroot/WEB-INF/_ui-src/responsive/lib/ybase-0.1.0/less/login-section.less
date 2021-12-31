@@ -1,0 +1,376 @@
+.login-page__headline,
+.user-register__headline{
+	.page-headline();
+}
+
+.login-left-content-slot{
+    margin-right: 10px;
+  	margin-left: 30px;
+
+  	@media (max-width: @screen-sm-max) {
+      margin-left: 20px;
+      margin-right: 20px;
+  	}
+}
+
+.login-right-content-slot{
+    margin-right: 30px;
+  	margin-left: 10px;
+
+  	@media (max-width: @screen-sm-max) {
+      margin-left: 20px;
+      margin-right: 20px;
+  	}
+}
+
+.forgotten-password{
+	form & {
+    margin-bottom: 25px;
+  }
+
+
+
+  &.alert {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+	.description{
+      margin-bottom: (@grid-gutter-width/2);
+	}
+
+  #colorbox & .btn-primary {
+    margin-top: 35px;
+  }
+}
+
+.register-form-action, .login-form-action {
+  margin-top: 35px;
+}
+
+.register-form-action {
+  .formCheckBox {
+    .form-control {
+      opacity: 0;
+      position: absolute;
+
+      &:checked + input[type=hidden] + .control-label span {
+        background-color: #5cc83b;
+      }
+    }
+
+    .control-label {
+      padding-left: 21px;
+      font-size: 14px;
+      position: relative;
+      cursor: pointer;
+
+      span {
+        left: 0;
+        border: solid 1px #79c551;
+        background: #fff;
+        position: absolute;
+        top: 2px;
+        width: 14px;
+        height: 14px;
+
+        svg {
+          width: 9px;
+          height: 9px;
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
+  }
+}
+
+.forgotten-password + .login-form-action {
+  margin-top: 0;
+}
+
+.alert-dismissable,
+.alert-dismissible  {
+  .close {
+	right: 0;
+  }
+}
+
+.register__container {
+  .full-width-padding();
+}
+
+@media (max-width: @screen-xs-max) {
+	.login-form-action {
+		.btn-default {
+          margin-top: @grid-gutter-width * 1.5;
+		}
+	}
+}
+
+@media (max-width: @screen-xs-max) {
+	.login-section,
+  	.register-section {
+
+		.forgotten-password {
+          margin-bottom: 45px;
+		}
+	}
+}
+
+.page-login,.page-updatePassword{
+
+  .login-logo {
+    a {
+      img {
+        width: 160px;
+      }
+    }
+  }
+
+  header,
+  footer {
+    display: none;
+  }
+
+  padding-top: 50px !important;
+  background-color: rgba(29,36,44,.12);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(/investsaudistorefront/_ui/responsive/common/images/login-background.jpg);
+
+  .main__inner-wrapper {
+    text-align: center;
+
+    .login-area-wrapper {
+      display: flex;
+      margin: 12vh;
+      background-color: rgba(230, 230, 237, 0.2);
+      border-radius: 0 40px;
+      border: 1px solid #7b838c;
+
+      .paragraph-wrapper {
+        color: #fff;
+        padding: 32px 20px;
+        width: 45%;
+        text-align: left;
+      }
+
+      .login-wrapper {
+        padding: 32px 50px;
+        display: inline-block;
+        background-color: #fff;
+        border-radius: 0 40px 0 0;
+        width: 55%;
+
+        .login-section {
+          max-width: 320px;
+          margin: 0 auto;
+
+          .login-page__headline {
+            padding-top: 0;
+            font-weight: normal;
+          }
+
+          #loginForm {
+            .form-group {
+              text-align: left;
+
+              .control-label {
+                font-weight: normal;
+                color: #7b838c;
+              }
+            }
+
+            .forgotten-password {
+              margin: 25px 0 10px 0;
+              font-size: 12px;
+
+              a {
+                color: #5BC53B;
+              }
+            }
+
+            .form-fields-wrapper {
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+
+      @media(max-width: @screen-md-min) {
+        margin: 12vh 0 5vh 0;
+      }
+
+      @media(max-width: @screen-sm-min) {
+        flex-wrap: wrap;
+
+        .paragraph-wrapper,
+        .login-wrapper {
+          width: 100%;
+        }
+
+        .login-wrapper {
+          border-radius: 0 40px;
+        }
+      }
+    }
+  }
+}
+
+
+.page-SecureCustomerPortalRegisterPage {
+  .login-logo {
+    a {
+      img {
+        width: 160px;
+      }
+    }
+  }
+
+  header,
+  footer {
+    display: none;
+  }
+
+  padding-top: 50px !important;
+  background-color: rgba(29,36,44,.12);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(/investsaudistorefront/_ui/responsive/common/images/login-background.jpg);
+
+  .register__container {
+    background-color: rgba(230,230,237,.2);
+    border-radius: 0 40px;
+    padding: 0;
+    border: 1px solid #7b838c;
+    margin-bottom: 30px;
+    margin-top: 2.5vh;
+
+    .register__section {
+      background: #fff;
+      border-radius: 0 40px 0 0;
+      padding: 45px 70px 32px 70px;
+
+      @media(max-width: @screen-sm-min) {
+        border-radius: 0 40px;
+      }
+    }
+  }
+
+  .item_container {
+    padding: 25px 20px 30px 40px;
+    color: #fff;
+  }
+}
+
+.dottedList {
+  padding: 0;
+  list-style: none;
+
+  &.dottedList_green .dottedList-item:before {
+    background: #5cc83b;
+  }
+
+  .dottedList-item {
+    padding-left: 15px;
+    position: relative;
+
+    &:before {
+      border-radius: 50%;
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      top: 7px;
+      left: 0;
+    }
+  }
+}
+
+.page-SecureCustomerPortalRegisterPage,.page-updatePassword,
+.page-login {
+  .content {
+    font-size: 13px;
+    line-height: 1.7;
+
+    .headline.accountLogin-content-headline {
+      font-size: 28px;
+      font-weight: 400;
+    }
+  }
+}
+
+.login-back{
+  color: #7bd35d;
+}
+
+.tab-controls {
+  ul.nav.nav-tabs {
+    border: 0;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto auto;
+    max-width: 790px;
+
+    & > li {
+      flex: 1 0 50%;
+
+      & > a {
+        background-color: #fff;
+        color: #474646;
+        border: 0;
+        margin: 0;
+        text-align: center;
+        position: relative;
+        padding: 20px 16px;
+        font-size: 15px;
+      }
+
+      &.active {
+        & > a {
+          background-color: #5cc83b;
+          color: #fff;
+
+          &:after {
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            content: '';
+            position: absolute;
+            top: ~"calc(100% - 10px)";
+            width: 20px;
+            height: 20px;
+            z-index: -1;
+            display: block;
+            background: #74ca5b;
+          }
+        }
+      }
+
+      &:first-child {
+        & > a {
+          border-radius: 0 0 0 20px;
+        }
+      }
+
+      &:last-child {
+        & > a {
+          border-radius: 0 20px 0 0;
+        }
+      }
+    }
+  }
+}
+
+.registerForm {
+  margin-bottom: 10px;
+}

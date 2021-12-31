@@ -1,0 +1,274 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalHomepageTemplate
+$page = portal-homepage
+$pageName = Homepage
+$titleEn = $pageName
+$titleAr = $pageName
+$pageLabel = /home
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+#$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]                                                            ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved'];
+                         ; $page             ; $pageName ; $titleEn        ; $titleAr        ; $pageName             ; Invest Saudi,Home,Home, invest Saudi, Saudi Arabia, Opportunities, investments ; $template                      ; $pageLabel ; true    ;                          ;                              ;
+
+
+UPDATE CMSSite; uid[unique = true]; startingPage(uid, $contentCV)
+              ; $siteUid          ; $page
+
+
+INSERT_UPDATE Media; code[unique = true]            ; realFileName                   ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+                   ; populationgrowthrate.svg       ; populationgrowthrate.svg       ; $siteResource/populationgrowthrate.svg                                    	; image/svg+xml               ;                                          ; ""     ;
+                   ; realGDP.svg                    ; realGDP.svg                    ; $siteResource/realGDP.svg                                                  	; image/svg+xml               ;                                          ; ""     ;
+                   ; GDPpercapita.svg               ; GDPpercapita.svg               ; $siteResource/GDPpercapita.svg                                             	; image/svg+xml               ;                                          ; ""     ;
+                   ; foreignassets.svg              ; foreignassets.svg              ; $siteResource/foreignassets.svg                                            	; image/svg+xml               ;                                          ; ""     ;
+                   ; workforceannualgrowth.svg      ; workforceannualgrowth.svg      ; $siteResource/workforceannualgrowth.svg                                    	; image/svg+xml               ;                                          ; ""     ;
+                   ; GCCpopulation.svg              ; GCCpopulation.svg              ; $siteResource/GCCpopulation.svg                                            	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-1.svg                  ; explore-1.svg                  ; $siteResource/explore-1.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-2.svg                  ; explore-2.svg                  ; $siteResource/explore-2.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-3.svg                  ; explore-3.svg                  ; $siteResource/explore-3.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-4.svg                  ; explore-4.svg                  ; $siteResource/explore-4.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-5.svg                  ; explore-5.svg                  ; $siteResource/explore-5.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-6.svg                  ; explore-6.svg                  ; $siteResource/explore-6.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-7.svg                  ; explore-7.svg                  ; $siteResource/explore-7.svg                                                	; image/svg+xml               ;                                          ; ""     ;
+                   ; explore-all-arrow-right.svg    ; explore-all-arrow-right.svg    ; $siteResource/explore-all-arrow-right.svg                                  	; image/svg+xml               ;                                          ; ""     ;
+                   ; incentivesinvestor-1.png       ; incentivesinvestor-1.png       ; $siteResource/incentivesinvestor-1.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; incentivesinvestor-2.png       ; incentivesinvestor-2.png       ; $siteResource/incentivesinvestor-2.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; incentivesinvestor-3.png       ; incentivesinvestor-3.png       ; $siteResource/incentivesinvestor-3.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; incentivesinvestor-4.png       ; incentivesinvestor-4.png       ; $siteResource/incentivesinvestor-4.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; incentivesinvestor-5.png       ; incentivesinvestor-5.png       ; $siteResource/incentivesinvestor-5.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; incentivesinvestor-6.png       ; incentivesinvestor-6.png       ; $siteResource/incentivesinvestor-6.png                                     	; text/png                    ;                                          ; ""     ;
+                   ; explore-all-img.svg            ; explore-all-img.svg            ; $siteResource/explore-all-img.svg                                          	; image/svg+xml               ;                                          ; ""     ;
+                   ; knowmore-img.svg               ; knowmore-img.svg               ; $siteResource/knowmore-img.svg                                             	; image/svg+xml               ;                                          ; ""     ;
+                   ; success_img_1.png              ; success_img_1.png              ; $siteResource/success_img_1.png                                            	; image/png                   ;                                          ; ""     ;				   
+                   ; success_img_2.png              ; success_img_2.png              ; $siteResource/success_img_2.png                                            	; image/png                   ;                                          ; ""     ;				   
+                   ; success_img_3.png              ; success_img_3.png              ; $siteResource/success_img_3.png                                            	; image/png                   ;                                          ; ""     ;				   
+                   ; success_img_4.png              ; success_img_4.png              ; $siteResource/success_img_4.png                                            	; image/png                   ;                                          ; ""     ;				   
+                   ; success.png                    ; success.png                    ; $siteResource/success.png                                                  	; image/png                   ;                                          ; ""     ;				   
+                   ; GTG_logo.png                   ; GTG_logo.png                   ; $siteResource/GTG_logo.png                                                 	; image/png                   ;                                          ; ""     ;				   
+                   ; pepsco.png                     ; pepsco.png                     ; $siteResource/pepsco.png                                                   	; image/png                   ;                                          ; ""     ;				   
+                   ; cropped-ACCEL_logo_2020.png    ; cropped-ACCEL_logo_2020.png    ; $siteResource/cropped-ACCEL_logo_2020.png                                  	; image/png                   ;                                          ; ""     ;				   
+				   ; arrow-right.png                ; arrow-right.png                ; $siteResource/arrow-right.png                                              	; image/png                   ;                                          ; ""     ;				   
+                   ; arrow-left.png                 ; arrow-left.png                 ; $siteResource/arrow-left.png                                               	; image/png                   ;                                          ; ""     ;				   
+                   ; contact_banner.png             ; contact_banner.png             ; $siteResource/contact_banner.png                                           	; image/png                   ;                                          ; ""     ;				   
+#banner
+				   ; home_banner.jpg                ; home_banner.jpg				 ; $siteResource/home_banner.jpg										        ; image/jpeg				  ;										   	 ; ""     ;
+
+#explore 7 key reasons
+					; game_changing_opportunities.png		; game_changing_opportunities.png		; $siteResource/game_changing_opportunities.png					; image/png						;										   ; ""  ;
+					; ambitious_reform_journey.png 			; ambitious_reform_journey.png			; $siteResource/ambitious_reform_journey.png					; image/png						;										   ; ""  ;
+					; strategic_global_location.png 		; strategic_global_location.png 		; $siteResource/strategic_global_location.png					; image/png						;										   ; ""  ;
+					; attractive_property_solution.png 		; attractive_property_solution.png 		; $siteResource/attractive_property_solution.png				; image/png						;										   ; ""  ;
+					; young_and_Skilled_Workforce.png 		; young_and_Skilled_Workforce.png 		; $siteResource/young_and_Skilled_Workforce.png					; image/png						;										   ; ""  ;
+					; expanding_Quality_of_Life.png 		; expanding_Quality_of_Life.png 		; $siteResource/expanding_Quality_of_Life.png					; image/png						;										   ; ""  ;
+					; leading_financial_sector.png			; leading_financial_sector.png			; $siteResource/leading_financial_sector.png					; image/png						;										   ; ""  ;
+
+#MEGA AND GIGYA PROJECTS START
+                   ; Neom-background-image.png       		; Neom-background-image.png        		; $siteResource/Neom-background-image.png                       ; image/png                   ;                                          ; ""     ;				   
+                   ; The-red-sea-background-image.png		; The-red-sea-background-image.png 		; $siteResource/The-red-sea-background-image.png                ; image/png                   ;                                          ; ""     ;				   
+                   ; Quiddiya-background-image.png   		; Quiddiya-background-image.png    		; $siteResource/Quiddiya-background-image.png                   ; image/png                   ;                                          ; ""     ;				   
+                   ; Amaala-background-image.png     		; Amaala-background-image.png      		; $siteResource/Amaala-background-image.png                     ; image/png                   ;                                          ; ""     ;				   
+                   ; Neom-Logo.png                   		; Neom-Logo.png                    		; $siteResource/Neom-Logo.png                                   ; image/png                   ;                                          ; ""     ;				   
+                   ; The-red-sea-logo.png            		; The-red-sea-logo.png             		; $siteResource/The-red-sea-logo.png                            ; image/png                   ;                                          ; ""     ;
+                   ; Quddiya-logo.png                		; Quddiya-logo.png                 		; $siteResource/Quddiya-logo.png                                ; image/png                   ;                                          ; ""     ;
+                   ; Amaala-logo.png                 		; Amaala-logo.png                  		; $siteResource/Amaala-logo.png                                 ; image/png                   ;                                          ; ""     ;
+                   ; Neom-tab-active-logo.png        		; Neom-tab-active-logo.png         		; $siteResource/Neom-tab-active-logo.png                        ; image/png                   ;                                          ; ""     ;				   
+                   ; The-Red-sea-tab-active-logo.png 		; The-Red-sea-tab-active-logo.png  		; $siteResource/The-Red-sea-tab-active-logo.png                 ; image/png                   ;                                          ; ""     ;
+                   ; Qiddiya-tab-active-logo.png     		; Qiddiya-tab-active-logo.png      		; $siteResource/Qiddiya-tab-active-logo.png                     ; image/png                   ;                                          ; ""     ;
+                   ; AMAALA-tab-active-logo.png      		; AMAALA-tab-active-logo.png       		; $siteResource/AMAALA-tab-active-logo.png                      ; image/png                   ;                                          ; ""     ;
+                   ; Neom.png                        		; Neom.png                         		; $siteResource/Neom.png                                        ; image/png                   ;                                          ; ""     ;
+                   ; TheRedSea.png                   		; TheRedSea.png                    		; $siteResource/TheRedSea.png                                   ; image/png                   ;                                          ; ""     ;
+                   ; Quiddiya.png                    		; Quiddiya.png                     		; $siteResource/Quiddiya.png                                    ; image/png                   ;                                          ; ""     ;
+                   ; Amala.png                       		; Amala.png                        		; $siteResource/Amala.png                                       ; image/png                   ;                                          ; ""     ;
+                   
+
+#################################### Invest Saudi Video Banner Component START #####################################################
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique = true]; uid[unique = true]     ; name              ; url                                         ; &linkRef               ;
+                               ;                          ; home-banner-video-link ; home Banner Video ; https://www.youtube.com/embed/u3sQ7TDFUWs   ; home-banner-video-link ;
+
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]           ; $contentCV[unique = true]; linkName[lang = en] 		; contentPage(uid, $contentCV);
+                               ; bannnner-exploreall-nav-link ;                          ; Explore Opportunities    ; opportunity-search          ;
+
+
+INSERT_UPDATE InvestSaudiVideoBannerComponent ; uid[unique = true]	; name       	; videoLink(&linkRef)    ; exploreNowUrl(uid, $contentCV) ; title[lang = en]       ; description[lang = en]                       ; backgroundBannerImage(code, $contentCV) ; &componentRef   ; $contentCV[unique = true] ;
+											  ; banner-video      	; Banner Video  ; home-banner-video-link ; bannnner-exploreall-nav-link   ; Invest in Saudi Arabia ; Be part of the <br/> vision for the future ; home_banner.jpg                         ; banner-video    ;                           ;
+                                        
+#################################### Invest Saudi Video Banner Component END ########################################################
+                   
+				   				   
+#################################### WHEN NUMBERS TALK START #####################################################
+
+INSERT_UPDATE InvestSaudiNumberTalkComponent; uid[unique = true]  ; name                 ; number[lang = ar]    ; text[lang = ar]                                                            	; number[lang = en]   ; text[lang = en]                                                            	; imageNormal(code, $contentCV) ; imageHover(code, $contentCV) ; &componentRef  ; $contentCV[unique = true] ;
+                                            ; numbertalk-1        ; Number Talk 1        ; $700.1 BN            ; Nominal GDP in 2020                                                        	; $700.1 BN           ; Nominal GDP in 2020                                                        	; populationgrowthrate.svg      ; populationgrowthrate.svg     ; numbertalk-1   ;                           ;
+                                            ; numbertalk-2        ; Number Talk 2        ; $675 BN              ; Real GDP in 2020)                                                     		; $675 BN             ; Real GDP in 2020                                                     		; realGDP.svg                   ; realGDP.svg                  ; numbertalk-2   ;                           ;
+                                            ; numbertalk-3        ; Number Talk 3        ; $19,937              ; GDP per capita in 2020                                             			; $19,937             ; GDP per capita in 2020                                             			; GDPpercapita.svg              ; GDPpercapita.svg             ; numbertalk-3   ;                           ;
+                                            ; numbertalk-4        ; Number Talk 4        ; 60%                  ; Non-oil sector's contribution to GDP in Q2 2021                    			; 60.2%               ; Non-oil sector's contribution to GDP in Q2 2021                    			; foreignassets.svg             ; foreignassets.svg            ; numbertalk-4   ;                           ;
+                                            ; numbertalk-5        ; Number Talk 5        ; 9th                  ; largest stock market in the world and largest in the MENA region (Tadawul) 	; 9th                 ; largest stock market in the world and largest in the MENA region (Tadawul) 	; workforceannualgrowth.svg     ; workforceannualgrowth.svg    ; numbertalk-5   ;                           ;
+											; numbertalk-6        ; Number Talk 6        ; 58%                  ; of population under the age of 35                                  			; 58.2%               ; of population under the age of 35                                  			; GCCpopulation.svg             ; GCCpopulation.svg            ; numbertalk-6   ;                           ;
+
+
+INSERT_UPDATE InvestSaudiNumberTalkContainer ; uid[unique = true]          ; name                         ; title[lang = en]                         ; title[lang = ar]                         ; simpleCMSComponents(&componentRef)                                            ; &componentRef        ; $contentCV[unique = true] ;
+                                             ; numbertalk-container        ; Home Number Talk Container   ; <span class="clr_gld">Key </span>Numbers ; <span class="clr_gld">Key </span>Numbers ; numbertalk-1,numbertalk-2,numbertalk-3,numbertalk-4,numbertalk-5,numbertalk-6 ; numbertalk-container ;                           ;
+
+#################################### WHEN NUMBERS TALK END ########################################################
+
+
+#################################### Explore 7 kEY REASONS START #####################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                 ; $contentCV[unique = true]; linkName[lang = en]	; contentPage(uid, $contentCV) ;
+                              ; key-reasons-exploreall-nav-link    ;                          ; Explore All         ; meet-the-kingdom             ;
+
+
+INSERT_UPDATE ExploreKeyReasonsComponent;$contentCV[unique = true]; uid[unique = true]                       ; reasonTitle[lang = en]        ; reasonbackgroundImage(code, $contentCV)    ;  index ;  reasonImage(code, $contentCV)   ;  reasonFullDescription [lang = en] ;                                       
+                                        ;                         ; is-game-changing-opportunities           ; Game-changing opportunities   ; game_changing_opportunities.png	          ;  1     ;  explore-1.svg                   ;  Saudi Arabia's economic transformation Vision 2030 has created exciting opportunities for local and international investors through its game-changing giga and mega projects  ;                            
+									    ;                         ; is-ambitious-reform-journey              ; Ambitious Reform Journey      ; ambitious_reform_journey.png 		      ;  2     ;  explore-2.svg                   ;  Saudi Arabia's successful reform implementation has earned the Kingdom a top place among global business reformers. It is now easier, faster, and safer to access investment opportunities and get registered as an investor in Saudi Arabia ;
+									    ;                         ; is-strategic-global-location             ; Strategic Global Location     ; strategic_global_location.png 	          ;  3     ;  explore-3.svg                   ;  The Kingdom sits at the crossroad of 3 continents supported by an interconnected logistics network and a modern digital infrastructure  ;
+									    ;                         ; is-attractive-property-solutions         ; Attractive Property Solutions ; attractive_property_solution.png 	      ;  4     ;  explore-4.svg                   ;  The Kingdom is developing industrial and economic cities to develop local regions and contribute to economic diversification. With cluster effects, leveraged synergies and increased productivity, Saudi Arabia offers attractive property solutions for investors ;
+									    ;                         ; is-young-and-skilled-workforce           ; Young and Skilled Workforce   ; young_and_Skilled_Workforce.png 	          ;  5     ;  explore-5.svg                   ;  About 58% of the Saudi population is under the age of 35. The young and growing population is extremely talented and supported by good quality education and constant government support ;
+									    ;                         ; is-expanding-quality-of-life             ; Expanding Quality of Life     ; expanding_Quality_of_Life.png 	          ;  6     ;  explore-6.svg                   ;  Saudi Arabia is recognized as one of the safest countries globally. In addition to high quality healthcare services, several entertainment projects and programs such as the Saudi Green Initiative are turning the Kingdom into a peaceful and rewarding destination for residents and visitors ;
+									    ;                         ; is-leading-financial-sector              ; Leading Financial Sector      ; leading_financial_sector.png		          ;  7     ;  explore-7.svg                   ;  Saudi Arabia is home to a leading financial sector backed up by a resilient banking system and a large asset base ;
+
+
+INSERT_UPDATE ExploreSaudiCarouselComponent; uid[unique = true]   				    ; exploreSaudi(uid, $contentCV)                                                                                                                                                                                    ; capacity ;carouselTitle [lang = en]                                                                                     ; carouselExploreAllButton(uid, $contentCV); $contentCV[unique = true] ; &componentRef                       ;  
+										   ; explore7KeyReasonsCarouselComponent	; is-game-changing-opportunities,is-ambitious-reform-journey,is-strategic-global-location,is-attractive-property-solutions,is-young-and-skilled-workforce,is-expanding-quality-of-life,is-leading-financial-sector ; 4        ;<span class="color_golden">EXPLORE 7 Key Reasons </span> <br> <span class="colblack">to Invest in SAUDI</span>; key-reasons-exploreall-nav-link          ;	                        ; explore7KeyReasonsCarouselComponent ;
+
+#################################### Explore 7 kEY REASONS END ########################################################
+
+
+#################################### WHERE TO INVEST SECTOR START #####################################################
+
+INSERT_UPDATE InvestSaudiSectorsComponent; uid[unique = true]   ; name              ; category(code, $catalogVersion)	; &componentRef		; title[lang = en]; exploreAllURL(uid, $contentCV) 	; exploreAllText[lang = en]	; $contentCV[unique = true]	; 
+                                         ; sectors-component	; Sectors Component	; sector-opportunities    			; sectors-component ; WHERE TO INVEST ; 								;            				;			 			    ;							;
+
+#################################### WHERE TO INVEST SECTOR END ########################################################
+
+
+#################################### INCENTIVES FOR INVESTOR START #####################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                ; $contentCV[unique = true]; linkName  [lang = en]; linkName [lang = ar]; contentPage(uid, $contentCV);
+                              ; incentives-exploreall-nav-link    ;                          ; Explore All           ; Explore All        ; incentives                  ;
+
+
+INSERT_UPDATE InvestSaudiIncentivesInvestorComponent; uid[unique = true]   ; name                      ; title[lang = en]                                   ; description[lang = en]                                                                        ; imageNormal(code, $contentCV) ; &componentRef        ; $contentCV[unique = true] ;
+                                                    ; incentivesinvestor-1 ; Incentives for Investor 1 ; Export credit financing, guarantee, and insurance	; Discover competitive export credit financing, guarantee, insurance 							; incentivesinvestor-1.png		; incentivesinvestor-1 ; 	;
+                                                    ; incentivesinvestor-2 ; Incentives for Investor 2 ; Energy and utility opportunities 					; Discover competitive conditions for power, water, gas, and land 								; incentivesinvestor-2.png 		; incentivesinvestor-2 ; 	;
+                                                    ; incentivesinvestor-3 ; Incentives for Investor 3 ; Financial opportunities for R&D 					; Discover competitive financial opportunities, including multi-purpose loans for R&D projects 	; incentivesinvestor-3.png 		; incentivesinvestor-3 ; 	;
+                                                    ; incentivesinvestor-4 ; Incentives for Investor 4 ; Loan Programs 										; Discover competitive loan programs for projects 												; incentivesinvestor-4.png 		; incentivesinvestor-4 ; 	;
+                                                    ; incentivesinvestor-5 ; Incentives for Investor 5 ; Employment opportunities 							; Discover employment opportunities through designated programs 								; incentivesinvestor-5.png 		; incentivesinvestor-5 ; 	;
+                                                    ; incentivesinvestor-6 ; Incentives for Investor 6 ; Tax opportunities 									; Discover competitive tax opportunities on several areas such as R&D investments 				; incentivesinvestor-6.png 		; incentivesinvestor-6 ; 	;
+
+
+INSERT_UPDATE InvestSaudiIncentivesforInvestorContainer; uid[unique = true]           ; name                              ; investorTitle[lang = en]  ; exploreAllUrl(uid, $contentCV)  ; exploreAllImage(code, $contentCV) ; simpleCMSComponents(&componentRef)                                                                                            ; &componentRef                ; $contentCV[unique = true] ;
+                                                       ; incentivesinvestor-container ; Incentives for Investor Container ; INCENTIVES FOR INVESTORS  ; incentives-exploreall-nav-link  ; explore-all-img.svg               ; incentivesinvestor-1,incentivesinvestor-2,incentivesinvestor-3,incentivesinvestor-4,incentivesinvestor-5,incentivesinvestor-6 ; incentivesinvestor-container ;                           ;
+
+#################################### INCENTIVES FOR INVESTOR END ########################################################
+
+
+#################################### MEGA AND GIGYA PROJECTS START ######################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                ; $contentCV[unique = true]; linkName[lang = en]	;  contentPage(uid, $contentCV);
+                              ; megaandgigya-exploreall-nav-link  ;                          ; Explore All          ;  meet-the-kingdom            ;
+
+
+INSERT_UPDATE InvestSaudiProjectsComponent ; uid[unique = true]  ; name                 ; projectTitle[lang = en]  ; backgroundImage(code, $contentCV) ; projectLogo(code, $contentCV) ; projectSmartLogo(code, $contentCV) ; projectSmartActiveLogo(code, $contentCV) ; defaultProject[default=false]; longDescription[lang = en]                                                                                                                                                                                                                                                                                                                                    ; content[lang = en]                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ; projectCSS    ; &componentRef      ; $contentCV[unique = true] ;
+                                           ; is-neom-project     ; Neom Project         ; NEOM                     ; Neom-background-image.png         ; Neom-Logo.png                 ; Neom.png                           ; Neom-tab-active-logo.png                 ; true                         ; NEOM is a new vision of what the future could be. It's an attempt to do something that's never been done before and it's coming at a time when the world needs fresh thinking and new solutions. Put simply, NEOM will not only be a destination, but a home for people who dream big and who want to be part of building a new model for sustainable living. ; "<ul class=""d-flex justify-content-between list-unstyled pb-4""><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">26,500 KM<sup>2</sup></a><strong>Project size</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">$500BN</a><strong>Investment</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">17</a><strong>Sectors</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">100%</a><strong>Renewable Energy</strong></li></ul>"     ; pills-home    ; is-neom-project    ;                           ;
+                                           ; is-red-sea-project  ; The Red Sea Project  ; The Red Sea Project      ; The-red-sea-background-image.png  ; The-red-sea-logo.png          ; TheRedSea.png                      ; The-Red-sea-tab-active-logo.png          ;                              ; The Red Sea Project will be an exquisite sanctuary offering indulgent experiences, seamlessly customized to the unique needs of each visitor. It is planned to be established on the Saudi Arabian Red Sea coast. The project is focused on luxury tourism, hoping to attract tourists to visit and explore the Saudi western coast.                          ; "<ul class=""d-flex justify-content-between list-unstyled pb-4""><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">34,000 KM<sup>2</sup></a><strong>Project size</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">90+</a><strong>Pristine Islands</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">22</a><strong>Islands developed</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">48</a><strong>Hotels</strong></li></ul>"    ; pills-profile ; is-red-sea-project ;                           ;
+                                           ; is-qiddiya-project  ; Qiddiya Project      ; Qiddiya                  ; Quiddiya-background-image.png     ; Quddiya-logo.png              ; Quiddiya.png                       ; Qiddiya-tab-active-logo.png              ;                              ; Qiddiya will be a disruptive destination that offers innovative and immersive leisure experiences integrated on a scale never seen before. Qiddiya's wide range of offerings are based on five cornerstones, sports and wellness, nature and environment, parks and attractions, motion and mobility, and arts and culture.                                   ; "<ul class=""d-flex justify-content-between list-unstyled pb-4""><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">367 KM<sup>2</sup></a><strong>Project size</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">131 KM<sup>2</sup></a><strong>Planned development area</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">20M+</a><strong>Potential customers</strong></li></ul>"                                                                   ; pills-contact ; is-qiddiya-project ;                           ;
+                                           ; is-amaala-project   ; Amaala Project       ; AMAALA                   ; Amaala-background-image.png       ; Amaala-logo.png               ; Amala.png                          ; AMAALA-tab-active-logo.png               ;                              ; AMAALA is an ultra-luxury resort destination located by Saudi Arabia's Red Sea coast focusing on wellness, healthy living, and sustainability. AMAALA is intended to become the newest destination on the jet-setter map. AMAALA will provide the facilities and services for guests to shape their own ultra-luxury experience.                              ; "<ul class=""d-flex justify-content-between list-unstyled pb-4""><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">4155 KM<sup>2</sup></a><strong>Project size</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">2800</a><strong>Hotel rooms</strong></li><li class=""pl-0 pr-0""><a href="""" class=""d-flex"">929</a><strong>Residential villas</strong></li></ul>"                                                                                                ; pills-test    ; is-amaala-project  ;                           ;
+
+
+INSERT_UPDATE MegaAndGigyaProjectsContainer; uid[unique = true]             ; name                              ; projectsTitle[lang = en]  ; exploreAllTitle[lang = en]  ; exploreAllUrl(uid, $contentCV)   ; exploreAllImage(code, $contentCV) ; simpleCMSComponents(&componentRef)                                      ; &componentRef                  ; $contentCV[unique = true] ;
+                                           ; megaandgigyaprojects-container ; Mega And Gigya Projects Container ; FLAGSHIP PROJECTS         ; Explore All                 ; megaandgigya-exploreall-nav-link ; explore-all-img.svg               ; is-neom-project,is-red-sea-project,is-qiddiya-project,is-amaala-project ; megaandgigyaprojects-container ;                           ;
+                                                    
+#################################### MEGA AND GIGYA PROJECTS END ########################################################
+
+
+#################################### Success Stories Carousel Component START #####################################################
+
+#HAVE TO REMOVE THE RELATION AS THERE IS A MAPPING CHANGE FROM SuccessStoriesVideoComponent to SuccessStoriesComponent
+#REMOVE SuccessStories2VideoRel; pk[unique = true]	
+#                              ; 8796093085177    
+#                              ; 8796093117945
+#                              ; 8796093150713
+#                              ; 8796093183481
+#                              ; 8796093216249
+#                              ; 8796093249017
+#                              ; 8796093281785
+#                              ; 8796093314553
+
+
+INSERT_UPDATE SuccessStoriesCarouselComponent; uid[unique = true]   				; videoComponents(uid, $contentCV)[mode=replace]                                                         ; exploreAllUrl                                   ; exploreAllText	[lang = en]	; carouselTitle [lang = en]                    ; carouselArrowRight(code, $contentCV); carouselArrowLeft(code, $contentCV); carouselSliderText	; $contentCV[unique = true]   ; &componentRef                      ;   
+										     ; success-stories-carousel-component	; fresnuis-medicalcare-asmusangelkort,globalthinkgroup-innvoation,pepsico-foodprocessing,accel-education ; /en/mediaCenter/videos?videoType=SUCCESS_STORY  ; EXPLORE ALL   				; <span class="clr_gld">SUCCESS </span>STORIES ; arrow-right.png                     ; arrow-left.png                     ; 01 - 04	        	;                             ; success-stories-carousel-component ;
+ 
+#################################### Success Stories Carousel Component END ########################################################
+
+
+#################################### Last New Component START #####################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                ; $contentCV[unique = true] ; linkName[lang = en]	; contentPage(uid, $contentCV) ;
+                              ; last-news-explore-all-link        ;                           ; EXPLORE ALL         ; news                         ;
+
+
+INSERT_UPDATE InvestSaudiLastNewsComponent; uid[unique = true]  ; name                ; title[lang = en] ; numberOfNews ; exploreAllUrl(uid, $contentCV)    ; &componentRef       ; $contentCV[unique = true] ;
+                                          ; last-news-component ; Last News Component ; NEWS & UPDATES   ; 3            ; last-news-explore-all-link        ; last-news-component ;                           ;
+
+#################################### Last New Component END ########################################################
+
+
+#################################### Featured Opportunities Carousel Component START #####################################################
+
+INSERT_UPDATE FeaturedOpportunitiesProductComponent ; $contentCV[unique = true] ; uid[unique = true]      ; defaultCarousel[default=false] ; carouselId[lang = en]  ; products(code, $catalogVersion)								; &componentRef  ;                                                 
+                                                    ;                           ; top-featured            ; true                           ; top-featured    		; gaming,polytetramethylene-ether-glycol-ptmeg,zoos-development ; top-featured   ;
+									                ;                           ; newly-released          ;                                ; newly-released 		; gaming,polytetramethylene-ether-glycol-ptmeg,zoos-development	; newly-released ;    
+
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]                        ; $contentCV[unique = true] ; linkName[lang = en] 	; url                                   ;
+                               ; featured-opportunities-explore-all        ;                           ; Explore all           	; en/sectors-opportunities/opportunities/  ;
+
+
+INSERT_UPDATE FeaturedOpportunitiesCarouselComponent ; uid[unique = true]   				       ; products(uid, $contentCV)   ; carouselTitle [lang = en]                           ; exploreAllUrl(uid, $contentCV)     ; $contentCV[unique = true]	; &componentRef                             ;   
+										             ; featured-opportunities-carousel-component   ; top-featured,newly-released ; FEATURED <span class="clr_gld">OPPORTUNITIES</span> ; featured-opportunities-explore-all ;                            	; featured-opportunities-carousel-component ;
+
+#################################### Featured Opportunities Carousel Component END ########################################################
+
+
+
+#################################### Contact US Banner Component START #####################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]		; $contentCV[unique = true]; linkName[lang = en]; contentPage(uid, $contentCV);
+                              ; contact-us-nav-link     ;                          ; Contact Us         ; contact-us                  ;
+
+
+INSERT_UPDATE InvestSaudiContactUsBannerComponent ; uid[unique = true]          ; name                  ; title[lang = en]             	; backgroundImage(code, $contentCV) ; contactUsLink(uid, $contentCV) ; &componentRef               ; $contentCV[unique = true] ;
+                                                  ; contact-us-banner-component ; InvestSaudi ContactUs ; TALK TO US ABOUT YOUR IDEA	; contact_banner.png                ; contact-us-nav-link            ; contact-us-banner-component ;                           ;
+
+#################################### Contact US Banner Component END ########################################################
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]             ; name                 ; active; cmsComponents(&componentRef); $contentCV[unique = true] ;
+                         ; PortalHomepageBannerSlot-$page ; PortalHomepageBanner ; true  ; banner-video                ;                           ;
+                         ; PortalPageTopSlot-$page        ; PortalPageTop        ; true  ; numbertalk-container        ;                           ;
+                         ; PortalPageMain-$page           ; PortalPageMain       ; true  ; explore7KeyReasonsCarouselComponent,sectors-component,featured-opportunities-carousel-component,incentivesinvestor-container,megaandgigyaprojects-container,success-stories-carousel-component,last-news-component,contact-us-banner-component; ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]             ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page] ; $contentCV[unique = true] ;
+                                ; PortalHomepageBannerSlot-$page ; PortalHomepageBanner   ; PortalHomepageBannerSlot-$page             ;                                                       ;                           ;
+                                ; PortalPageTopSlot-$page        ; PortalPageTop          ; PortalPageTopSlot-$page                    ;                                                       ;                           ;
+                                ; PortalPageMain-$page           ; PortalPageMain         ; PortalPageMain-$page                       ;                                                       ;                           ;
+

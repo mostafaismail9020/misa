@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<editor-definition id="com.sagia.backoffice.editor.ticket.state"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/editor-definition.xsd">
+
+    <name>Ticket State Editor</name>
+    <description>Default Ticket State Editor</description>
+    <author>hybris</author>
+    <version>0.1</version>
+
+    <type>java.lang.Enum(CsTicketState)</type>
+    <editorClassName>com.sap.ibso.eservices.backoffice.editor.SagiaTicketStateEditor</editorClassName>
+
+    <sockets>
+        <output id="state"/>
+    </sockets>
+</editor-definition>

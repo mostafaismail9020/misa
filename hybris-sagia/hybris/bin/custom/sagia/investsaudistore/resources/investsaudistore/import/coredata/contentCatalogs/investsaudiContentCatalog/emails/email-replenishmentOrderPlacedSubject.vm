@@ -1,0 +1,2 @@
+## messageSource=classpath:/investsaudistore/messages/email-replenishmentOrderPlacedSubject_$lang.properties
+${ctx.messages.emailSubject}

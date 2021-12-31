@@ -1,0 +1,62 @@
+# -----------------------------------------------------------------------
+# Opportunity Ticket Status Workflow
+# -----------------------------------------------------------------------
+
+# Main & CSAgent User Groups
+$userGroupsInWorkflow=admingroup,csagentgroup
+
+# Access rights for workflow users
+$START_USERRIGHTS;;;;;;;;;
+Type;UID;MemberOfGroups;Password;Target;read;change;create;remove;change_perm
+UserGroup;csagentgroup;;;;;;;
+
+# workflow items
+;;;;Workflow;+;+;-;-;-;
+;;;;WorkflowAction;+;+;;;;
+
+$END_USERRIGHTS;;;;;
+
+INSERT_UPDATE WorkflowTemplate;code[unique=true];name[lang=en];owner(uid);description[lang=en];visibleForPrincipals(uid);
+                              ;OpportunityTicketStatusWorkflow;Opportunity Ticket Status Workflow;admin;;$userGroupsInWorkflow;
+
+
+INSERT_UPDATE WorkflowActionTemplate;code[unique=true];name[lang=en];description[lang=en];principalAssigned(uid);workflow(code)[unique=true];actionType(code)
+                                    ;InitialReviewAction;Is Information Complete?;Manual Decision step where a "Cs Agent" can approve OR reject an information;csagentgroup;OpportunityTicketStatusWorkflow;start;
+                                    ;IsValidOpportunityAction;Is Valid Opportunity?;Manual Decision step where a "Cs Agent" can approve OR reject as valid opportunity;csagentgroup;OpportunityTicketStatusWorkflow;normal;
+                                    ;ApproveOpportunityAction;Aprove Opportunity?;Manual Decision step where a "Cs Agent" can approve OR reject as approved opportunity;csagentgroup;OpportunityTicketStatusWorkflow;normal;
+                                    ;ApproveByMarketingAction;Approved by Marketing?;Manual Decision step where a "Cs Agent" can accept opportunity by marketing approval;csagentgroup;OpportunityTicketStatusWorkflow;normal;
+                                    ;IsPublishedToInvestSaudiAction;Is Published to InvestSaudi?;Manual Decision step where a "Cs Agent" can mark as ready to publish;csagentgroup;OpportunityTicketStatusWorkflow;normal;
+
+
+INSERT_UPDATE WorkflowDecisionTemplate;code[unique=true];name[lang=en];actionTemplate(code);description[allownull=true];
+;InformationCompleteDecision;Yes;InitialReviewAction;Approve because information registered by B2BCustomer is complete;
+;InformationIncompleteDecision;No;InitialReviewAction;Decline because information registered by B2BCustomer is incomplete;
+;IsValidOpportunityDecision;Yes;IsValidOpportunityAction;Approve because opportunity is valid;
+;IsInvalidOpportunityDecision;No;IsValidOpportunityAction;Decline because opportunity is invalid;
+;ApproveOpportunityDecision;Yes;ApproveOpportunityAction;Approve opportunity;
+;RejectOpportunityOpportunityDecision;No;ApproveOpportunityAction;Reject opportunity;
+;ApprovedByMarketingDecision;Yes;ApproveByMarketingAction;Approve by Marketing;
+;IsPublishedToInvestSaudiDecision;Yes;IsPublishedToInvestSaudiAction;Ready to Publish;
+
+
+INSERT_UPDATE AutomatedWorkflowActionTemplate;code[unique=true];name[lang=en];principalAssigned(uid);workflow(code)[unique=true];actionType(code);jobHandler;description[lang=en];
+;InformationCompleteJob;Information Complete CronJob;csagentgroup;OpportunityTicketStatusWorkflow;normal;b2bInformationCompleteAutomatedWorkflowTemplateJob;Execute and update ticket status when the decision by a cs agent was taken;
+;InformationIncompleteJob;Information Incomplete CronJob;csagentgroup;OpportunityTicketStatusWorkflow;normal;b2bInformationIncompleteAutomatedWorkflowTemplateJob;Execute and update ticket status when the decision by a cs agent was taken;
+;ValidOpportunityJob;Valid Opportuntity CronJob;csagentgroup;OpportunityTicketStatusWorkflow;normal;b2bValidOpportunityAutomatedWorkflowTemplateJob;Execute and update ticket status when the decision by a cs agent was taken;
+;InvalidOpportunityJob   ;Invalid Opportunity CronJob   ;csagentgroup;OpportunityTicketStatusWorkflow;normal;b2bInvalidOpportunityAutomatedWorkflowTemplateJob   ;Execute and update ticket status when the decision by a cs agent was taken;
+;ApproveOpportunityJob;Approve Opportuntity CronJob;csagentgroup;OpportunityTicketStatusWorkflow;normal;b2bApproveOpportunityAutomatedWorkflowTemplateJob;Execute and update ticket status when the decision by a cs agent was taken;
+;RejectOpportunityJob;Reject Opportuntity CronJob;csagentgroup;OpportunityTicketStatusWorkflow;normal;b2bRejectOpportunityAutomatedWorkflowTemplateJob;Execute and update ticket status when the decision by a cs agent was taken;
+;ApprovedByMarketingOpportunityJob;Approved by Marketing CronJob;csagentgroup;OpportunityTicketStatusWorkflow;normal;b2bApprovedByMarketingOpportunityAutomatedWorkflowTemplateJob;Execute and update ticket status when the decision by a cs agent was taken;
+;PublishToInvestSaudiOpportunityJob;Publish to InvestSaudi CronJob;csagentgroup;OpportunityTicketStatusWorkflow;normal;b2bPublishToInvestSaudiOpportunityAutomatedWorkflowTemplateJob;Execute and update ticket status when the decision by a cs agent was taken;
+
+
+
+INSERT_UPDATE WorkflowActionTemplateLinkTemplateRelation;source(code)[unique=true];target(code)[unique=true];andConnectionTemplate;qualifier;
+;InformationCompleteDecision;InformationCompleteJob;false;WorkflowActionTemplateLinkTemplateRelation;
+;InformationIncompleteDecision;InformationIncompleteJob;false;WorkflowActionTemplateLinkTemplateRelation;
+;IsValidOpportunityDecision;ValidOpportunityJob;false;WorkflowActionTemplateLinkTemplateRelation;
+;IsInvalidOpportunityDecision;InvalidOpportunityJob;false;WorkflowActionTemplateLinkTemplateRelation;
+;ApproveOpportunityDecision;ApproveOpportunityJob;false;WorkflowActionTemplateLinkTemplateRelation;
+;RejectOpportunityOpportunityDecision;RejectOpportunityJob;false;WorkflowActionTemplateLinkTemplateRelation;
+;ApprovedByMarketingDecision;ApprovedByMarketingOpportunityJob;false;WorkflowActionTemplateLinkTemplateRelation;
+;IsPublishedToInvestSaudiDecision;PublishToInvestSaudiOpportunityJob;false;WorkflowActionTemplateLinkTemplateRelation;

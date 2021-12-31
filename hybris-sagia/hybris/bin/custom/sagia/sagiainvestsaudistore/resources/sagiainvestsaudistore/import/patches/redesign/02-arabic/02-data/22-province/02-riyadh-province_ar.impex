@@ -1,0 +1,135 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleAr = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 ; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+			  
+					   ; riyadh-banner-image.png            		 ;riyadh-banner-image.png     						; $siteResource/riyadh-banner-image.png                                         			  ;                 image/png                ;                                          ; ""     ;
+					   ; riyadh-map.png                       		 ;riyadh-map.png               						; $siteResource/riyadh-map.png                                                  			  ;                 image/png                ;                                          ; ""     ;
+					   ; riyadh-technology.png                       ;riyadh-technology.png                      		; $siteResource/riyadh-technology.png                                                          ;                 image/png                ;                                          ; ""     ;
+					   ; riyadh-trade-and-retail.png                 ;riyadh-trade-and-retail.png                       ; $siteResource/riyadh-trade-and-retail.png                                                            ;                 image/png                ;                                          ; ""     ;
+					   ; riyadh-financialservices.png                ;riyadh-financialservices.png                   	; $siteResource/riyadh-financialservices.png                                                       ;                 image/png                ;                                          ; ""     ;
+					   ; riyadh-media.png                            ;riyadh-media.png                  				; $siteResource/riyadh-media.png                                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-logistics.png                        ;riyadh-logistics.png                       		; $siteResource/riyadh-logistics.png                                                           ;                 image/png                ;                                          ; ""     ;   
+					   
+					   ; riyadh-active-factories.png                 ;riyadh-active-factories.png                   	; $siteResource/riyadh-active-factories.png                                                ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-airport.png                      	 ;riyadh-airport.png              					; $siteResource/riyadh-airport.png                                                 		  ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-chambers-of-commerce.png             ;riyadh-chambers-of-commerce.png                 	; $siteResource/riyadh-chambers-of-commerce.png                                                    		  ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-dams.png                          	 ;riyadh-dams.png                  					; $siteResource/riyadh-dams.png                                                     	  ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-hospitals.png                     	 ;riyadh-hospitals.png              				; $siteResource/riyadh-hospitals.png                                                  		  ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-hotels.png                    		 ;riyadh-hotels.png                					; $siteResource/riyadh-hotels.png                                                  ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-industrial-city.png                  ;riyadh-industrial-city.png                    	; $siteResource/riyadh-industrial-city.png                                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-population.png                  	 ;riyadh-population.png                     		; $siteResource/riyadh-population.png                                                ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-population-growth.png           	 ;riyadh-population-growth.png                 		; $siteResource/riyadh-population-growth.png                                        ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-private-sector-employees.png         ;riyadh-private-sector-employees.png               ; $siteResource/riyadh-private-sector-employees.png                                                     ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-roads-length.png                   	 ;riyadh-roads-length.png            				; $siteResource/riyadh-roads-length.png                                                		  ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-sport-city.png                       ;riyadh-sport-city.png                   			; $siteResource/riyadh-sport-city.png                                                       	  ;                 image/png                ;                                          ; ""     ;   					
+					   ; riyadh-stadiums.png				 		 ;riyadh-stadiums.png								; $siteResource/riyadh-stadiums.png											  ;                 image/png                ;											; ""	 ;
+					   ; riyadh-towns.png				 			 ;riyadh-towns.png									; $siteResource/riyadh-towns.png											  ;                 image/png                ;											; ""	 ;
+					   
+					   ; riyadh-large-regional-market.png            ;riyadh-large-regional-market.png            		; $siteResource/riyadh-large-regional-market.png                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; riyadh-highly-connected-logistics.png       ;riyadh-highly-connected-logistics.png             ; $siteResource/riyadh-highly-connected-logistics.png                                        ;                 image/png                ;                                          ; ""     ;   	
+					   ; riyadh-modern-educationsystem.png        	 ;riyadh-modern-educationsystem.png              	; $siteResource/riyadh-modern-educationsystem.png                                      ;                 image/png                ;                                          ; ""     ;   	
+					   ; riyadh-private-sector-multinationals.png    ;riyadh-private-sector-multinationals.png          ; $siteResource/riyadh-private-sector-multinationals.png                                                ;                 image/png                ;                                          ; ""     ;   	
+					   ; riyadh-modern-healthcare-system.png         ;riyadh-modern-healthcare-system.png               ; $siteResource/riyadh-modern-healthcare-system.png                                                   ;                 image/png                ;                                          ; ""     ;   	
+					   ; riyadh-strategic-location.png               ;riyadh-strategic-location.png                     ; $siteResource/riyadh-strategic-location.png                                                   ;                 image/png                ;                                          ; ""     ;   	
+					  
+					
+					
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=ar]			; bannerText[lang=ar]																															    																																												; bannerImage (code, $contentCV)	; keyFactsHeader [lang = ar]		 ; keyStrengthsHeader [lang = ar] 	 ; opportunitiesHeader [lang = ar]		
+							   ; riyadh		 		;				; الرياض					    ; تقع منطقة الرياض في قلب المملكة العربية السعودية. يطغى طابع الحداثة على العاصمة التي تنبض بالحياة، إذ تمتاز الرياض بأبراجها الفخمة وبتألّق المشهد الفنّي المعاصر ووسائل الترفيه. تتصدّر الرياض المشهد الإقليمي في مجالات عدّة سواءً لجهة اقتصادها الضخم وقدرتها التنافسية العالية أو لجهة تصنيفها كأول عاصمة رقمية في العالم العربي. 	; riyadh-banner-image.png		    ; اهم المعلومات والأرقام	 			 ; المزايا المناطقية		 		 ; 																																																									
+	
+	
+
+#########################################################	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 		 ;  $contentCV  ; headerText[lang = ar]        ; imageIcon  (code, $contentCV)     		   ; &componentRef
+											    ; riyadh-technology			 ; 				;  التكنولوجيا 				   ; riyadh-technology.png				   	   ; riyadh-technology			
+                                                ; riyadh-trade-and-retail	 ;              ;  التجارة والتجزئة	           ; riyadh-trade-and-retail.png	           ; riyadh-trade-and-retail	
+                                                ; riyadh-financialservices	 ;              ;  الخدمات المالية             ; riyadh-financialservices.png	           ; riyadh-financialservices	
+                                                ; riyadh-media				 ;              ;  الإعلام			 	       ; riyadh-media.png			  	           ; riyadh-media				
+                                                ; riyadh-logistics			 ;              ; الخدمات اللوجستية			   ; riyadh-logistics.png			           ; riyadh-logistics			
+	 
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = ar] ; value[lang = ar] 
+										; riyadh-strategic-population		;			   ; 8,660,885		; التعداد السكاني
+										; riyadh-strategic-landmass		;			   ; 380,000 كم2 	; المساحة
+	 
+
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = ar]	; backgroundImage (code, $contentCV)   	; sectors(&componentRef) 																				; longDescription[lang = ar]																																																																																																		; localizedStats (uid, $contentCV)   					  		; &componentRef                       
+												 ; riyadh-strategic-component		;          		; القطاعات الاستراتيجية		; riyadh-map.png						; riyadh-technology, riyadh-trade-and-retail, riyadh-financialservices, riyadh-media, riyadh-logistics	; تضم الرياض أكبر عدد من الجامعات الحكومية والخاصة وأكثر من 49 مستشفى حكومي. إضافة إلى ذلك، ساهم توفّر البنية التحتية اللوجستية والخدمات المساندة ذات المستوى العالمي في ربط العاصمة بباقي مناطق المملكة فضلا عن تعزيز ارتباطها بالدول المجاورة وبباقي دول العالم.تمتاز الرياض بتاريخها العريق، إذ يمكن استشعار حضارتها ذات الجذور الضاربة بعمق القرون الماضية من خلال أسواقها التقليدية ومتاحفها الجذابة ومعالمها التاريخية.	        ; riyadh-strategic-population,riyadh-strategic-landmass            	; riyadh-strategic-component
+                                                                               
+
+#######################################################	
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]	; $contentCV ; imageIcon (code, $contentCV) 		; headerText[lang = ar]		   ;  text[lang = ar]											; &componentRef
+#									   ; riyadh-keyfacts1	;			 ; riyadh-population.png				; 8.7M		                   ;  التعداد السكاني		        ; riyadh-keyfacts1
+#									   ; riyadh-keyfacts2   ;            ; riyadh-population-growth.png			; 2.60%		                   ;  annual population growth between 2013-2019	            ; riyadh-keyfacts2 
+									   ; riyadh-keyfacts3   ;            ; riyadh-active-factories.png			; 3,332		                   ;  عدد المصانع المنتجة في الربع الثالث 2021						        ; riyadh-keyfacts3 
+									   ; riyadh-keyfacts4   ;            ; riyadh-airport.png					; 1			                   ;  مطار دولي و عدد 2 مطارات محليه    	            ; riyadh-keyfacts4 
+									   ; riyadh-keyfacts5   ;            ; riyadh-private-sector-employees.png	; 3.8M		                   ;  اجمالي المشتغلين						            ; riyadh-keyfacts5 
+									   ; riyadh-keyfacts6   ;            ; riyadh-hotels.png					; 108		                   ;  عدد الفنادق											        ; riyadh-keyfacts6 
+									   ; riyadh-keyfacts7   ;            ; riyadh-sport-city.png				; 2			                   ;  عدد المدن الرياضية										        ; riyadh-keyfacts7 
+									   ; riyadh-keyfacts8   ;            ; riyadh-chambers-of-commerce.png		; 4			                   ;  عدد الغرف التجارية 							            ; riyadh-keyfacts8 
+									   ; riyadh-keyfacts9   ;            ; riyadh-dams.png						; 103		                   ;  عدد السدود											            ; riyadh-keyfacts9 
+									   ; riyadh-keyfacts10  ;            ; riyadh-industrial-city.png			; 8			                   ;  عدد الغرف الصناعية								            ; riyadh-keyfacts10
+									   ; riyadh-keyfacts11  ;            ; riyadh-stadiums.png					; 2			                   ;  عدد الملاعب الرياضية										            ; riyadh-keyfacts11
+									   ; riyadh-keyfacts12  ;            ; riyadh-roads-length.png				; 14,854		               ;  مجموع أطوال الطرق -كم 									            ; riyadh-keyfacts12
+									   ; riyadh-keyfacts13  ;            ; riyadh-hospitals.png					; 49		                   ;  عدد المستشفيات بمجموع 8,507 سرير 						            ; riyadh-keyfacts13
+									   ; riyadh-keyfacts14  ;            ; riyadh-towns.png						; 21		                   ;  عدد المحافظات في المنطقة											            ; riyadh-keyfacts14
+									   
+									   
+									   
+									 
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]						; $contentCV      ; image (code, $contentCV)					          ; text[lang=ar]				                        																			     ;&componentRef
+                                                                                                                                                                                                        
+										   ; riyadh-large-regional-market 			;                 ; riyadh-large-regional-market.png			          ; سوق إقليمية كبيرة																												 ; riyadh-large-regional-market 			 
+                                           ; riyadh-highly-connected-logistics 	    ;                 ; riyadh-highly-connected-logistics.png		          ;  بنية تحتية لوجستية تربط العاصمة بمختلف الوجهات الداخلية والعالمية		 																					 ; riyadh-highly-connected-logistics 	    
+                                           ; riyadh-modern-educationsystem		    ;                 ; riyadh-modern-educationsystem.png			          ; نظام تعليمي حديث بما فيه جامعة الملك سعود التي تحتل المرتبة الثانية بين جامعات المملكة العربية السعودية												     ; riyadh-modern-educationsystem		    
+                                           ; riyadh-private-sector-multinationals	;                 ; riyadh-private-sector-multinationals.png	          ; مركز جاذب للقطاع الخاص لا سيما للشركات الكبرى المتعددة الجنسيات																						     ; riyadh-private-sector-multinationals	
+                                           ; riyadh-modern-healthcare-system 		;                 ; riyadh-modern-healthcare-system.png		              ;  نظام رعاية صحية حديث بما فيه مدينة الملك فهد الطبية ومدينة الأمير سلطان الطبية العسكرية ومدينة الملك عبد العزيز الطبية.	 ; riyadh-modern-healthcare-system 		
+		                                   ; riyadh-strategic-location 				;                 ; riyadh-strategic-location.png				          ;  موقع استراتيجي																												     ; riyadh-strategic-location 				
+	
+	
+#####################################################	
+	
+	
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																																								; keyStrengths(&componentRef) 																												  													; investmentOpportunities(&componentRef)
+							   ; riyadh		 		;				    ; riyadh-strategic-component 				; riyadh-keyfacts3,riyadh-keyfacts4,riyadh-keyfacts5,riyadh-keyfacts6,riyadh-keyfacts7,riyadh-keyfacts8,riyadh-keyfacts9,riyadh-keyfacts10,riyadh-keyfacts11,riyadh-keyfacts12,riyadh-keyfacts13,riyadh-keyfacts14    ; riyadh-large-regional-market,riyadh-highly-connected-logistics,riyadh-modern-educationsystem,riyadh-private-sector-multinationals,riyadh-modern-healthcare-system,riyadh-strategic-location   ;
+	
+	
+

@@ -1,0 +1,148 @@
+$page = sample-webinar
+$template = portalWebinarTemplate
+$pageName = Webinar
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /webinars
+
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]      ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Real Estate ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE Media; code[unique = true]         ; realFileName             ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; banner-webinar.jpg          ; banner-webinar.jpg       ; $siteResource/banner-webinar.jpg                                            ;                             ;                                          ; ""     ;
+                   ; sample-webinar-registration ; webinar-registration.jpg ; $siteResource/webinar-registration.jpg                                      ;                             ;                                          ; ""     ;
+                   ; sample-twitter              ; twitter.png              ; $siteResource/twitter.png                                                   ; image/png                   ; portal-media-email                       ; ""     ;
+                   ; sample-linkedin             ; linkedin.png             ; $siteResource/linkedin.png                                                  ; image/png                   ; portal-media-email                       ; ""     ;
+                   ; sample-youtube              ; youtube.png              ; $siteResource/youtube.png                                                   ; image/png                   ; portal-media-email                       ; ""     ;
+                   ; sample-logo                 ; logo.png                 ; $siteResource/logo.png                                                      ; image/png                   ; portal-media-email                       ; ""     ;
+
+
+INSERT_UPDATE InvestSaudiSimpleBannerComponent; uid[unique = true]      ; name             ; image(code, $contentCV); &componentRef           ; $contentCV[unique = true]
+                                              ; sample-webinar-banner-1 ; Webinar Banner 1 ; banner-webinar.jpg     ; sample-webinar-banner-1 ;
+
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]               ; name                        ; &componentRef                    ; description[lang = en]                                                                              ; $contentCV[unique = true]
+                                                  ; sample-generic-footer-cr-webinar ; Webinar Footer CR Component ; sample-generic-footer-cr-webinar ; "<div class='sec-width text-center'><div class='pt-4 pb-5'>Copyright Invest Saudi 2020</div></div>" ;
+                                                  ; sample-generic-footer-webinar    ; Webinar Footer Component    ; sample-generic-footer-webinar    ; "
+        <div>
+        <div class='container'>
+        <div class='row clearfix'>
+            <div class='col-md-12 column'>
+          <p class='text-center'>Learn more about why we went online</p>
+<p class='text-center'><a rel='noopener' href='https://investsaudi.sa/en/faq/' target='_blank'>Read our FAQs</a></p></div>
+            </div>        </div>
+        </div>"                                                                                     ;
+                                                  ; sample-generic-paragraph-webinar ; Webinar Paragraph Component ; sample-generic-paragraph-webinar ; "<p><strong> </strong></p>
+ <p>Saudi Arabia’s promising sectors are creating a growing demand for real estate options to meet the changing needs of the Kingdom’s thriving economic ecosystem.  </p>
+<p> </p>
+<p>Register now for this interactive webinar to explore Saudi Arabia’s robust and evolving real estate sector. Learn more about what you need to know to operate a business and meet the standards of the industry, hearing from experienced advisers from the private sector and government about the vast opportunities open to investors in the rapidly growing Saudi real estate market.</p>
+<div class='digi-contents'></div>
+<p> </p>
+        <table border='0' cellpadding='0' cellspacing='0' class='table-agenda'>
+    <tr class='header'>
+        <td>TIME</td>
+        <td>ACTIVITY</td>
+    </tr>
+    <tr>
+        <td>01:00 - 01:05 PM</td>
+        <td class='text-uppercase'>
+            <h4 class='text-uppercase'>Welcoming Address</h4>
+            <div>
+<span class='text-white'>Housing segment director, ministry of Investment,</span>                 Fahad Alhashem
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>01:05 - 01:10 PM</td>
+        <td class='text-uppercase'>
+            <h4 class='text-uppercase'>Opening Keynote</h4>
+            <div>
+<span class='text-white'>Housing segment director, ministry of Investment,</span>                 Fahad Alhashem
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>01:10 - 01:20 PM</td>
+        <td class='text-uppercase'>
+            <h4 class='text-uppercase'>Sector overview &amp; Investments Opportunities</h4>
+            <div>
+<span class='text-white'>Housing segment director, ministry of Investment,</span>                 Fahad Alhashem
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>01:20 - 01:30 PM</td>
+        <td class='text-uppercase'>
+            <h4 class='text-uppercase'>Investment Opportunity In Real Estate</h4>
+            <div>
+<span class='text-white'>Deputy Minister for programs and Planning, Ministry of Municipal and Rural affairs,</span>                 Khaled Aldegaither
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>01:30 - 01:40 PM</td>
+        <td class='text-uppercase'>
+            <h4 class='text-uppercase'>Real Estate General Authority</h4>
+            <div>
+                Deputy Governor For Strategy and PMO, Abdulaziz M. Almohimeed; General Manager, Muteeb M. Alsulaimani;  Associate Deputy Governor for strategic planning and PMO, Khaled Almasari;
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>01:40 - 01:50 PM</td>
+        <td class='text-uppercase'>
+            <h4 class='text-uppercase'>National Housing Company</h4>
+            <div>
+<span class='text-white'>Business Development General manager,</span>                 Muath Alfares
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>01:50 - 02:00 PM</td>
+        <td class='text-uppercase'>
+            <h4 class='text-uppercase'>Q&amp;A</h4>
+            <div>
+
+            </div>
+        </td>
+    </tr>
+</table>
+<p class='add-to-calender'><a rel='noopener' href='https://www.google.com/calendar/render?action=TEMPLATE&amp;text=Summit&amp;dates=20200610T214000/20200610T221500&amp;details=For+details,+link+here:+http://www.investsaudi.sa/en/&amp;location=Riyadh+Saudi+Arabia&amp;sf=true&amp;output=xml' target='_blank'>Add to calendar</a></p>
+<p> </p>
+"                                                                                                   ;
+
+INSERT_UPDATE InvestSaudiWebinarRegistrationComponent; uid[unique = true]   ; name                 ; &componentRef        ; webinarCode ; buttonText[lang = en]; signupTitleText[lang = en]           ; titleText[lang = en]; buttonText[lang = ar]; signupTitleText[lang = ar]                                ; titleText[lang = ar]; $contentCV[unique = true]
+                                                     ; webinar-registration ; Webinar Registration ; webinar-registration ; webinarCode ; "Send"               ; "Sign up to attend the Live webinar" ; "Business Email"    ; "أرسل"               ; "اشترك للحصول على وصول مجاني إلى الحدث عند الطلب بالكامل" ; "بريد العمل"        ;
+
+INSERT_UPDATE InvestSaudiWebinar; webinarCode[unique = true]; image(code, $contentCV)     ; url
+                                ; webinarCode               ; sample-webinar-registration ; https://misaevent.webex.com/misaevent/onstage/g.php?MTID=eb28cec65805e5a0af60d021073785c70
+
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]       ; name                       ; masterTemplate(uid, $contentCV)  ; defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'live@investsaudi.sa']; fromName[lang = en][default = 'live@investsaudi.sa'];
+                       ;                          ; WebinarRegistrationEmail ; Webinar Registration Email ; WebinarRegistrationEmailTemplate ; true       ;                                           ;                                                      ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]                  ; name                ; active; cmsComponents(&componentRef)     ; $contentCV[unique = true]
+                         ; PortalPageBannerWebinar-$page       ; PortalBanner        ; true  ; sample-webinar-banner-1          ;
+                         ; PortalWebinarFooterSlot-$page       ; PortalWebinarFooter ; true  ; sample-generic-footer-webinar, sample-generic-footer-cr-webinar;
+                         ; PortalWebinarDescriptionSlot-$page  ; PortalDescription   ; true  ; sample-generic-paragraph-webinar ;
+                         ; PortalWebinarRegistrationSlot-$page ; PortalEmail         ; true  ; webinar-registration             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]                  ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalWebinarDescriptionSlot-$page  ; PortalDescription      ; PortalWebinarDescriptionSlot-$page         ;                                                      ;
+                                ; PortalPageBannerWebinar-$page       ; PortalBanner           ; PortalPageBannerWebinar-$page              ;                                                      ;
+                                ; PortalWebinarFooterSlot-$page       ; PortalWebinarFooter    ; PortalWebinarFooterSlot-$page              ;                                                      ;                                 ;
+                                ; PortalWebinarRegistrationSlot-$page ; PortalEmail            ; PortalWebinarRegistrationSlot-$page        ;                                                      ;
+
+

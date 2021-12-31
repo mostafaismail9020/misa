@@ -1,0 +1,45 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                                	 	; realFileName                  		 				; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']	; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; qassims-banner-image.png            	            	 	; qassims-banner-image.png    			 				; $siteResource/qassims-banner-image.png                                        ; image/png                ;                                          ; ""     ;
+					; qassim-map.png                                   	 		; qassim-map.png               			 				; $siteResource/qassim-map.png                                                  ; image/png                ;                                          ; ""     ;
+					; qassim-agriculture.png   				             		; qassim-agriculture.png        			    		; $siteResource/qassim-agriculture.png    	                                    ; image/png                ;                                          ; ""     ;
+					; qassim-food-processing.png				            	; qassim-food-processing.png  							; $siteResource/qassim-food-processing.png                                      ; image/png                ;                                          ; ""     ;
+					; qassim-tradeing.png      				            		; qassim-tradeing.png      	    						; $siteResource/qassim-tradeing.png      	                                    ; image/png                ;                                          ; ""     ;
+					; qassim-mining.png        				            		; qassim-mining.png        	    						; $siteResource/qassim-mining.png        	                                    ; image/png                ;                                          ; ""     ;   
+					; qassim-logistics.png      				            	; qassim-logistics.png          						; $siteResource/qassim-logistics.png                                            ; image/png                ;                                          ; ""     ;   
+
+					; qassim-population.png        		                		; qassim-population.png        		    				; $siteResource/qassim-population.png        		                            ; image/png                ;                                          ; ""     ;   
+					; qassim-active-factories.png    			               	; qassim-active-factories.png    		       			; $siteResource/qassim-active-factories.png    			                        ; image/png                ;                                          ; ""     ;   
+					; qassim-population-growth.png          	            	; qassim-population-growth.png         					; $siteResource/qassim-population-growth.png                                    ; image/png                ;                                          ; ""     ;   
+					; qassim-airport.png              			              	; qassim-airport.png              						; $siteResource/qassim-airport.png              			                    ; image/png                ;                                          ; ""     ;   
+					; qassim-private-sector-employees.png                 		; qassim-private-sector-employees.png  					; $siteResource/qassim-private-sector-employees.png                             ; image/png                ;                                          ; ""     ;   
+					; qassim-dams.png         					              	; qassim-dams.png         				    			; $siteResource/qassim-dams.png         					                    ; image/png                ;                                          ; ""     ;   
+					; qassim-hotels.png  						              	; qassim-hotels.png  					        		; $siteResource/qassim-hotels.png  						                        ; image/png                ;                                          ; ""     ;   
+					; qassim-sport-city.png              		              	; qassim-sport-city.png              	    			; $siteResource/qassim-sport-city.png              	                            ; image/png                ;                                          ; ""     ;   
+					; qassim-chambers-of-commerce.png      	            		; qassim-chambers-of-commerce.png             			; $siteResource/qassim-chambers-of-commerce.png      	                        ; image/png                ;                                          ; ""     ;   
+					; qassim-roads-length.png					              	; qassim-roads-length.png				        		; $siteResource/qassim-roads-length.png				                            ; image/png                ;                                          ; ""     ;   
+					; qassim-industrial-city.png           	            		; qassim-industrial-city.png           					; $siteResource/qassim-industrial-city.png           	                        ; image/png                ;                                          ; ""     ;   
+					; qassim-hospitals.png                                		; qassim-hospitals.png                 					; $siteResource/qassim-hospitals.png                                            ; image/png                ;                                          ; ""     ;   					
+					; qassim-towns.png							              	; qassim-towns.png										; $siteResource/qassim-towns.png												; image/png                ;										  ; ""	   ;
+										  																					  
+					; qassim-infrastructure-utilities.jpg                		; qassim-infrastructure-utilities.jpg                  	; $siteResource/qassim-infrastructure-utilities.jpg                             ; image/png                ;                                          ; ""     ;   
+					; qassim-agricultural-endowment-dates-vegetables.png 		; qassim-agricultural-endowment-dates-vegetables.png  	; $siteResource/qassim-agricultural-endowment-dates-vegetables.png              ; image/png                ;                                          ; ""     ;   	
+					; qassim-high-production-food-products.png           		; qassim-high-production-food-products.png            	; $siteResource/qassim-high-production-food-products.png                        ; image/png                ;                                          ; ""     ;   	
+					; qassim-geological-resources-bauxite.png            	    ; qassim-geological-resources-bauxite.png             	; $siteResource/qassim-geological-resources-bauxite.png                         ; image/png                ;                                          ; ""     ;   	
+					; qassim-business-support-infrastructure.png		        ; qassim-business-support-infrastructure.png			; $siteResource/qassim-business-support-infrastructure.png			            ; image/png                ;                                          ; ""     ;   	
+										   
+					; qassim-palm.png		            						; qassim-palm.png										; $siteResource/qassim-palm.png			                         				; image/png                ;                                          ; ""     ;   	

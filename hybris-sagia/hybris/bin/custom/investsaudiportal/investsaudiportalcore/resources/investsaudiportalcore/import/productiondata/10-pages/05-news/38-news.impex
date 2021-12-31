@@ -1,0 +1,71 @@
+$page = news-connecting-continents-and-enabling-growth
+$template = portalGlobalTemplate
+$name = CONNECTING CONTINENTS AND ENABLING GROWTH: SAUDI ARABIA’S ROLE AS AN EMERGING HUB FOR TRANSPORT AND LOGISTICS
+$titleEn = $name
+$titleAr = ربط القارات وتمكين النمو: دور المملكة العربية السعودية كمركز ناشئ للنقل والخدمات اللوجستية
+$shortDescEn = Transport and logistics play a key role in unlocking the Kingdom’s economic potential and achieving the goals
+$shortDescAr =  يؤدي النقل والخدمات اللوجستية دورًا رئيسيًا في إطلاق العنان للإمكانات الاقتصادية للمملكة وتحقيق الأهداف
+$pagelabel = /news/connecting-continents-and-enabling-growth
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; img_9207   ; 	img_9207.jpg			; $siteResource/img_9207.jpg                                        ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias            ; $contentCV; ; ; ;
+                            ; media-container-$page   ; img_9207 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; img_9207                ; img_9207                ; $shortDescEn                   ; $shortDescAr                   ; link-$page       ;                                 ; 04.06.2019 00:00:00                       ;                          ;media-container-$page  ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<p>Transport and logistics play a key role in unlocking the Kingdom&rsquo;s economic potential and achieving the goals laid out in its Saudi Vision 2030 economic blueprint. Highlighted as one of the plan&rsquo;s three essential pillars, Saudi Arabia is committed to transforming its unique geographic position into a strategic global hub.</p>
+<p>&nbsp;</p>
+<p>Set at the crossroads of Africa, Asia and Europe, the Kingdom&rsquo;s central location between important trading routes across East and West, and North and South, makes the Kingdom of Saudi Arabia an epicenter for trade and a gateway to the world. 50 percent of the world&rsquo;s population is within a five-hour flight from Saudi Arabia, and some 13 percent of all global trade flows through the Red Sea.</p>
+<p>&nbsp;</p>
+<p>Leveraging this natural competitive advantage, the government of Saudi Arabia is entering into a new series of international partnerships and working with the private sector to enhance, develop and connect its transport and logistics infrastructure across the Kingdom and beyond its borders. &nbsp;Saudi Arabia&rsquo;s budget for the 2018 fiscal year included an 86 percent increase in planned government expenditure on infrastructure and transportation &ndash; &nbsp;from $US$ 7.7 billion to US$ 14.4 billion. &nbsp;</p>
+<p>&nbsp;</p>
+<p>Under the Vision 2030 plan, Saudi Arabia is also making progress towards meeting the burgeoning demand for public transit services. By 2030, the government plans on completing an additional 10,000 kilometers of rail and metro projects. Five key projects have already received a greenlight, including the Riyadh metro project which has an allocated investment of more than US$24 billion and is scheduled to commence operations later this year.</p>
+<p>&nbsp;</p>
+<p>To ensure that the completion of these projects, the government is seeking to expand the role of the private sector. By next year, the target is for private sector companies to handle the development, operation and maintenance of 5% of roads, 50% of rail networks and 70% of Saudi Arabia&rsquo;s seaports.</p>
+<p>&nbsp;</p>
+<p>The government is pushing ahead with multiple public-private partnerships, joint-ventures and build-operate-transfer schemes, while a number of the Kingdom&rsquo;s publicly operated transportation facilities are set readied for full privatization by 2030. Furthermore, in 2018 plans were approved to develop a unique regional logistical hub in the country, which will facilitate the assembly, processing and movement of goods.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page      ;                          ; "<p>يؤدي النقل والخدمات اللوجستية دورًا رئيسيًا في إطلاق العنان للإمكانات الاقتصادية للمملكة وتحقيق الأهداف المنشودة في المخطط الاقتصادي لرؤية السعودية 2030، بحيث تلتزم المملكة بتحويل موقعها الجغرافي الفريد إلى مركز عالمي استراتيجي باعتباره إحدى الركائز الرئيسية الثلاث في الخطة.</p>
+<p>تقع المملكة على مفترق الطرق بين أفريقيا وآسيا وأوروبا وبين طرق التجارة الهامة من الشرق إلى الغرب ومن الشمال إلى الجنوب ما يجعل منها مركزًا رئيسًا للتجارة وبوابة للعالم، آخذين بعين الاعتبار وجود 50% من سكان العالم على بعد أقل من 5 ساعات بالطائرة عن المملكة في وقت يتدفق فيه حوالي 13% من إجمالي التجارة العالمية عبر البحر الأحمر.</p>
+<p>بالاستفادة من هذه الميزة التنافسية الطبيعية، تدخل السعودية في سلسلة جديدة من الشراكات الدولية، وتعمل مع القطاع الخاص على تحسين وتطوير وربط بنيتها التحتية واللوجستية الداخلية والخارجية، بحيث شملت الميزانية السعودية للعام المالي 2018 زيادة بنسبة 86% في الإنفاق الحكومي المخطط له على البنية التحتية والنقل - من 7.7 إلى 14.4 مليار دولار أمريكي. &nbsp;</p>
+<p>يضاف إلى ذلك ما تحرزه المملكة من تقدم نحو تلبية الطلب المتزايد على خدمات النقل العام، فبحلول عام 2030، تخطط السعودية لاستكمال 10 آلاف كيلومتر من مشاريع السكك الحديدية والمترو، علمًا بأن خمس مشاريع رئيسية منها قد تم إقرارها، بما في ذلك مشروع مترو الرياض الذي خصص له أكثر من 24 مليار دولار أمريكي من الاستثمارات على أن يبدأ عملياته في وقت لاحق من هذا العام.</p>
+<p>ولضمان إنجاز هذه المشاريع، تسعى الحكومة إلى توسيع دور القطاع الخاص واضعة نصب عينيها هدفًا يتجلى بتولي شركات القطاع الخاص بحلول العام القادم تطوير وتشغيل وصيانة 5% من الطرق و50% من شبكات السكك الحديدية و70% من موانئ المملكة.</p>
+<p>في ذات السياق، تمضي الحكومة قدمًا في العديد من الشراكات بين القطاعين العام والخاص والمشاريع المشتركة ومخططات البناء والتشغيل والنقل بينما تجهز عددًا من مرافق النقل التي تديرها الحكومة للخصخصة بشكل كامل بحلول عام 2030، يضاف إلى ذلك اعتماد مجموعة من الخطط في عام 2018 لتطوير مركز لوجستي إقليمي فريد من نوعه في البلاد لتسهيل تجميع السلع وتجهيزها ونقلها.</p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template       ; $pagelabel                     ; false ;         ;                          ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page                ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

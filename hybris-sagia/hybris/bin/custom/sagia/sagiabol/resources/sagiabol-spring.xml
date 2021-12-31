@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2018 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Backend aware service as parent for all remote function call based default service implementations -->
+	<bean id="sagiaEServicesBackendAwareService"
+		  class="com.sap.ibso.eservices.bol.BackendAwareService"
+		  abstract="true">
+		<!-- generic factory instance to access Spring beans with scope "prototype" or "sapSession" -->
+		<property name="genericFactory" ref="sapCoreGenericFactory"/>
+	</bean>
+
+	<!-- Module Configuration -->
+	<alias alias="sagiaEServicesConfigurationAccess" name="sagiaEServicesModuleConfiguration" />
+	<bean id="sagiaEServicesModuleConfiguration" parent="sapCoreModuleConfigurationAccess">
+		<property name="moduleId" value="sagiaEServices" />
+	</bean>
+
+	<!-- Document Backend Service -->
+	<alias alias="sagiaEServicesDocumentBackendService" name="sagiaEServicesDefaultDocumentBackendService" />
+	<bean id="sagiaEServicesDefaultDocumentBackendService"
+		  class="com.sap.ibso.eservices.bol.document.impl.DocumentBackendServiceImpl"
+		  parent="sapCoreBackendObjectJCo">
+		<!-- bean scope inherited from parent bean configuration: sapSession  -->
+        <!-- defaultConnectionName property inherited from parent bean configuration: JCoStateless -->
+		<property name="moduleConfigurationAccess" ref="sagiaEServicesConfigurationAccess" />
+        <property name="defaultDestinationName" value="#{baseStoreService.getCurrentBaseStore().getSAPConfiguration().getSAPRFCDestination()?.getRfcDestinationName()}" />
+	</bean>
+
+	<!-- Account Manager Backend Service -->
+	<alias alias="sagiaEServicesAccountManagerBackendService" name="sagiaEServicesDefaultAccountManagerBackendService" />
+	<bean id="sagiaEServicesDefaultAccountManagerBackendService"
+		  class="com.sap.ibso.eservices.bol.account.impl.AccountManagerBackendServiceImpl"
+		  parent="sapCoreBackendObjectJCo">
+		<!-- bean scope inherited from parent bean configuration: sapSession  -->
+		<!-- defaultConnectionName property inherited from parent bean configuration: JCoStateless -->
+		<property name="moduleConfigurationAccess" ref="sagiaEServicesConfigurationAccess" />
+		<property name="defaultDestinationName" value="#{baseStoreService.getCurrentBaseStore().getSAPConfiguration().getSAPRFCDestination()?.getRfcDestinationName()}" />
+	</bean>
+
+	<!-- Sales Order Backend Service -->
+	<alias alias="sagiaEServicesSalesOrderBackendService" name="sagiaEServicesDefaultSalesOrderBackendService" />
+	<bean id="sagiaEServicesDefaultSalesOrderBackendService"
+		  class="com.sap.ibso.eservices.bol.price.impl.SalesOrderBackendServiceImpl"
+		  parent="sapCoreBackendObjectJCo">
+		<!-- bean scope inherited from parent bean configuration: sapSession  -->
+		<!-- defaultConnectionName property inherited from parent bean configuration: JCoStateless -->
+		<property name="moduleConfigurationAccess" ref="sagiaEServicesConfigurationAccess" />
+		<property name="defaultDestinationName" value="#{baseStoreService.getCurrentBaseStore().getSAPConfiguration().getSAPRFCDestination()?.getRfcDestinationName()}" />
+	</bean>
+
+	<!-- Average Processing Time Backend Service -->
+	<alias alias="sagiaEServicesAverageProcessingTimeBackendService" name="sagiaEServicesDefaultAverageProcessingTimeBackendService" />
+	<bean id="sagiaEServicesDefaultAverageProcessingTimeBackendService"
+		  class="com.sap.ibso.eservices.bol.duration.impl.AverageProcessingTimeBackendServiceImpl"
+		  parent="sapCoreBackendObjectJCo">
+		<!-- bean scope inherited from parent bean configuration: sapSession  -->
+		<!-- defaultConnectionName property inherited from parent bean configuration: JCoStateless -->
+		<property name="moduleConfigurationAccess" ref="sagiaEServicesConfigurationAccess" />
+		<property name="defaultDestinationName" value="#{baseStoreService.getCurrentBaseStore().getSAPConfiguration().getSAPRFCDestination()?.getRfcDestinationName()}" />
+	</bean>
+
+	<!-- Feedback Backend Service -->
+	<alias alias="sagiaEServicesFeedbackBackendService" name="sagiaEServicesDefaultFeedbackBackendService" />
+	<bean id="sagiaEServicesDefaultFeedbackBackendService"
+		  class="com.sap.ibso.eservices.bol.feedback.impl.FeedbackBackendServiceImpl"
+		  parent="sapCoreBackendObjectJCo">
+		<!-- bean scope inherited from parent bean configuration: sapSession  -->
+		<!-- defaultConnectionName property inherited from parent bean configuration: JCoStateless -->
+		<property name="moduleConfigurationAccess" ref="sagiaEServicesConfigurationAccess" />
+		<property name="defaultDestinationName" value="#{baseStoreService.getCurrentBaseStore().getSAPConfiguration().getSAPRFCDestination()?.getRfcDestinationName()}" />
+	</bean>
+
+	<!-- Price Simulation Backend Service -->
+	<alias alias="sagiaEServicesPriceSimulationBackendService" name="sagiaEServicesDefaultPriceSimulationBackendService" />
+	<bean id="sagiaEServicesDefaultPriceSimulationBackendService"
+		  class="com.sap.ibso.eservices.bol.price.impl.PriceSimulationBackendServiceImpl"
+		  parent="sapCoreBackendObjectJCo">
+		<!-- bean scope inherited from parent bean configuration: sapSession  -->
+		<!-- defaultConnectionName property inherited from parent bean configuration: JCoStateless -->
+		<property name="moduleConfigurationAccess" ref="sagiaEServicesConfigurationAccess" />
+		<property name="defaultDestinationName" value="#{baseStoreService.getCurrentBaseStore().getSAPConfiguration().getSAPRFCDestination()?.getRfcDestinationName()}" />
+	</bean>
+
+    <!-- Payment Assignment Backend Service -->
+    <alias alias="sagiaEServicesPaymentAssignmentBackendService" name="sagiaEServicesDefaultPaymentAssignmentBackendService" />
+    <bean id="sagiaEServicesDefaultPaymentAssignmentBackendService"
+          class="com.sap.ibso.eservices.bol.license.impl.PaymentAssignmentBackendServiceImpl"
+          parent="sapCoreBackendObjectJCo">
+        <!-- bean scope inherited from parent bean configuration: sapSession  -->
+        <!-- defaultConnectionName property inherited from parent bean configuration: JCoStateless -->
+        <property name="moduleConfigurationAccess" ref="sagiaEServicesConfigurationAccess" />
+        <property name="defaultDestinationName" value="#{baseStoreService.getCurrentBaseStore().getSAPConfiguration().getSAPRFCDestination()?.getRfcDestinationName()}" />
+    </bean>
+
+	<!-- Company Information Backend Service -->
+	<alias alias="sagiaEServicesCompanyInformationBackendService" name="sagiaEServicesDefaultCompanyInformationBackendService" />
+	<bean id="sagiaEServicesDefaultCompanyInformationBackendService"
+		  class="com.sap.ibso.eservices.bol.company.impl.CompanyInformationBackendServiceImpl"
+		  parent="sapCoreBackendObjectJCo">
+		<!-- bean scope inherited from parent bean configuration: sapSession  -->
+		<!-- defaultConnectionName property inherited from parent bean configuration: JCoStateless -->
+		<property name="moduleConfigurationAccess" ref="sagiaEServicesConfigurationAccess" />
+		<property name="defaultDestinationName" value="#{baseStoreService.getCurrentBaseStore().getSAPConfiguration().getSAPRFCDestination()?.getRfcDestinationName()}" />
+	</bean>
+
+	<!-- Service Requests Overview Backend Service -->
+	<alias alias="sagiaEServicesServiceRequestsOverviewBackendService" name="sagiaEServicesDefaultServiceRequestsOverviewBackendService" />
+	<bean id="sagiaEServicesDefaultServiceRequestsOverviewBackendService"
+		  class="com.sap.ibso.eservices.bol.overview.impl.ServiceRequestsOverviewBackendServiceImpl"
+		  parent="sapCoreBackendObjectJCo">
+		<!-- bean scope inherited from parent bean configuration: sapSession  -->
+		<!-- defaultConnectionName property inherited from parent bean configuration: JCoStateless -->
+		<property name="moduleConfigurationAccess" ref="sagiaEServicesConfigurationAccess" />
+		<property name="defaultDestinationName" value="#{baseStoreService.getCurrentBaseStore().getSAPConfiguration().getSAPRFCDestination()?.getRfcDestinationName()}" />
+	</bean>
+	  
+</beans>

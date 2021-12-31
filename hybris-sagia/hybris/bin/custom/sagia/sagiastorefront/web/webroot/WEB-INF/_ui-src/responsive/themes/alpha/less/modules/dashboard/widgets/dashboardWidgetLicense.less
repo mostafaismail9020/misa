@@ -1,0 +1,147 @@
+.dashboardWidgetLicense{
+	min-height: 300px;
+	
+	#media-breakpoint-down(sm,{
+		margin-top: -21px;
+	});	
+
+	
+	&-info{
+		text-align: center;
+		padding-top: 25px;
+		&-icon{
+			margin-bottom: 25px;
+			svg{
+				width: 72px;
+				height: 72px;
+			}
+		}
+
+		&-text{
+			font-size: 18px;
+			color: #313f4b;
+			line-height: 22px;
+			margin-bottom: 25px;
+		}
+
+		&-info{
+			margin-top: 25px;
+			svg{
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}	
+
+
+	&-list{
+		
+		margin-top: 25px;
+		
+		#media-breakpoint-up(md,{
+			#make-row();
+		});
+
+		&-entry{
+			#media-breakpoint-up(md,{
+				#make-col-ready();
+				#make-col(4);
+
+			})
+		}
+
+		&_4col &-entry{
+			#media-breakpoint-up(md,{
+				#make-col-ready();
+				#make-col(3);
+
+			})
+		}
+
+		&-label{
+			font-size: 15px;
+			font-weight: normal;
+			color: #a1a1a1;
+
+			a{
+				font-size: 13px;
+				font-weight: bold;
+				color: #79c551;
+				border-left: 1px solid #a5a5a5;
+				padding-left: 9px;
+				display: inline-block;
+				line-height: 16px;
+				margin-left: 4px;
+			}
+		}
+
+		&-value{
+			font-size: 18px;
+			font-weight: 500;
+			color: #474646;
+			margin-bottom: 14px;
+			margin-top: -3px;
+
+
+			.btn{
+				padding: 8px;
+			}
+			svg{
+				width: 24px;
+				height: 24px;
+			}
+			
+			&_green {
+				color: @apple;
+			}
+		}
+	}
+
+
+	&-table{
+		margin-bottom: 0;
+		&-action{
+			font-size: 0;
+			.btn{
+				padding: 0 8px;
+
+				svg{
+					width: 16px;
+					height: 16px;
+					margin: 0;
+
+				}
+			}
+		}
+
+		#media-breakpoint-down(sm,{
+			margin-top: -20px;
+
+			.tableModule{
+				margin-left: -12px;
+				margin-right: -12px;
+				margin-bottom: 0;
+			}
+		});
+	}
+
+	&-action{
+		text-align: center;
+		margin-top: 20px;
+		
+		.btn + .btn{
+			margin-left: 20px;
+		}
+		.btn svg:last-child {
+			width: 18px;
+			height: 18px;
+			margin-top: -2px;
+			margin-bottom: -1px;
+			margin-right: 0;
+
+			path[fill]{
+				fill: @white !important;
+			}
+		}
+	}
+}

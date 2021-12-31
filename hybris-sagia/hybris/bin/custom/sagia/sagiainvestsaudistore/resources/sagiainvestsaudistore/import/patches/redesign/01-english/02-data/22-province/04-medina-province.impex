@@ -1,0 +1,152 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleEn = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 	; realFileName                    			 		; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+																													 
+					   ; medina-banner-image.png            		 	; medina-banner-image.png    				 		; $siteResource/medina-banner-image.png                                         		  ;                 image/png                ;                                          ; ""     ;
+					   ; medina-map.png                       		 	; medina-map.png               				 		; $siteResource/medina-map.png                                                  	  ;                 image/png                ;                                          ; ""     ;
+					   ; medina-religious-cultural-tourism.png       	; medina-religious-cultural-tourism.png             ; $siteResource/medina-religious-cultural-tourism.png       	                                               ;                 image/png                ;                                          ; ""     ;
+					   ; medina-logistics.png                      	   	; medina-logistics.png                          	; $siteResource/medina-logistics.png                      	                                               ;                 image/png                ;                                          ; ""     ;
+					   ; medina-petroleum-productsmanufacturing-1.png  	; medina-petroleum-productsmanufacturing-1.png      ; $siteResource/medina-petroleum-productsmanufacturing-1.png                                                 ;                 image/png                ;                                          ; ""     ;
+					   ; medina-petroleum-productsmanufacturing.png    	; medina-petroleum-productsmanufacturing.png       	; $siteResource/medina-petroleum-productsmanufacturing.png                                               	  ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-mining.png                      		; medina-mining.png                      	       	; $siteResource/medina-mining.png                      		                                               ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-tradeing.png                      		; medina-tradeing.png                      	    	; $siteResource/medina-tradeing.png                      		                                           	  ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-agriculture.png                     	; medina-agriculture.png                            ; $siteResource/medina-agriculture.png                     	                                               ;                 image/png                ;                                          ; ""     ;   
+					  
+
+
+
+
+
+						
+					   ; medina-population.png        		        	; medina-population.png        		        		; $siteResource/medina-population.png        		                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-active -factories.png    		     	; medina-active -factories.png    		       		; $siteResource/medina-active -factories.png    		                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-economic-growth.png           	    	; medina-economic-growth.png           				; $siteResource/medina-economic-growth.png                                                 ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-airport.png              		    	; medina-airport.png              					; $siteResource/medina-airport.png              		                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-private-sector-employees.png        	; medina-private-sector-employees.png  				; $siteResource/medina-private-sector-employees.png                                 		  ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-dams.png         				    	; medina-dams.png         				    		; $siteResource/medina-dams.png         				                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-industrial-city.png  			    	; medina-industrial-city.png  			            ; $siteResource/medina-industrial-city.png  			                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-hotels.png              		    	; medina-hotels.png              		    		; $siteResource/medina-hotels.png              		                                 	  ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-sport-city.png       			    	; medina-sport-city.png       			       		; $siteResource/medina-sport-city.png       			                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-chambers-of-commerce.png		    	; medina-chambers-of-commerce.png		            ; $siteResource/medina-chambers-of-commerce.png		                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-towns.png            			    	; medina-towns.png            						; $siteResource/medina-towns.png            			                                   	  ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-hospitals.png                       	; medina-hospitals.png                 				; $siteResource/medina-hospitals.png                                                       ;                 image/png                ;                                          ; ""     ;   					
+					   ; medina-seaport.png					 	    	; medina-seaport.png								; $siteResource/medina-seaport.png												  		  ;                 image/png                ;											; ""	 ;
+					   ; medina-roads-length.png				    	; medina-roads-length.png							; $siteResource/medina-roads-length.png										  			  ;                 image/png                ;											; ""	 ;
+					  						  
+																					  
+					   ; medina-religious-cultural-assets.png            		; medina-religious-cultural-assets.png           	; $siteResource/medina-religious-cultural-assets.png                                    ;                 image/png                ;                                          ; ""     ;   
+					   ; medina-yanbu-Industrial-city.png              			; medina-yanbu-Industrial-city.png              	; $siteResource/medina-yanbu-Industrial-city.png                            			  ;                 image/png                ;                                          ; ""     ;   	
+					   ; medina-logistics-yanbu-seaport.png            			; medina-logistics-yanbu-seaport.png            	; $siteResource/medina-logistics-yanbu-seaport.png                               		  ;                 image/png                ;                                          ; ""     ;   	
+					   ; medina-natural-resources-solar-gold-copper.png		    ; medina-natural-resources-solar-gold-copper.png	; $siteResource/medina-natural-resources-solar-gold-copper.png                          ;                 image/png                ;                                          ; ""     ;   	
+					   ; medina-oil-gassupply-lines.png                         ; medina-oil-gassupply-lines.png                  	; $siteResource/medina-oil-gassupply-lines.png                                          ;                 image/png                ;                                          ; ""     ;   	
+					   
+					  
+
+
+	
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=en]			; bannerText[lang=en]																															    					; bannerImage (code, $contentCV)	; keyFactsHeader [lang = en]		 ; keyStrengthsHeader [lang = en] 	 ; opportunitiesHeader [lang = en]		
+							   ; medina		 		;				; MEDINA PROVINCE			    ; 	; medina-banner-image.png		    ; KEY FACTS AND FIGURES	 			 ; REGIONAL BENEFITS		 			 ; 																																																								
+	
+	
+
+#########################################################	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 		 ;  $contentCV  ; headerText[lang = en]      			; imageIcon  (code, $contentCV)     	 			; &componentRef
+											    ; medina-religious			 ; 				; Religious and cultural tourism	    ; medina-religious-cultural-tourism.png       	   	; medina-religious				
+                                                ; medina-logistics	 		 ;              ; Logistics	           			 		; medina-logistics.png                      		; medina-logistics	 		
+                                                ; medina-petroleum	 		 ;              ; Petroleum products manufacturing      ; medina-petroleum-productsmanufacturing-1.png      ; medina-petroleum	 		
+                                                ; medina-petroleum-products	 ;              ; Chemical products manufacturing      ; medina-petroleum-productsmanufacturing.png        ; medina-petroleum-products	
+                                                ; medina-mining			 	 ;              ; Mining			             		; medina-mining.png                      			; medina-mining			 	
+	                                            ; medina-trading			 ;              ; Trade			             		; medina-tradeing.png                      			; medina-trading			
+	                                            ; medina-agriculture		 ;              ; Agriculture			             	; medina-agriculture.png                     	    ; medina-agriculture		
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = en] ; value[lang = en] 
+										; medina-strategic-population		;			   ; 2.2M		; population
+										; medina-strategic-landmass		;			   ; 150,000 km2 	; in landmass area 
+		 
+	
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = en]	; backgroundImage (code, $contentCV)   	; sectors(&componentRef) 																																								; longDescription[lang = en]																																																																																																																																																																																				   ; localizedStats (uid, $contentCV)   				  ; &componentRef
+												 ; medina-strategic-component		;          		; STRATEGIC SECTORS			; medina-map.png						; medina-religious,medina-logistics,medina-petroleum,medina-petroleum-products,medina-mining,medina-trading,medina-agriculture			; Medina enjoys a special religious status being the home of the Prophet's Mosque. The region's location is of strategic importance, due to its central position around five major regions. Medina has a network of highways and railways that connect the main cities in the region, in addition to linking them to the neighboring regions.The Knowledge Economic City is one of five strategic and investor-friendly special economic zones and industrial cities in Medina. Additionally, the city features the King Fahd Industrial Port in Yanbu, which is the largest port for exports of crude oil, refined goods, and petrochemicals on the Red Sea. In terms of tourism and culture, Medina's AlUla is home to Saudi Arabia's first UNESCO World Heritage Site containing hundreds of archaeological inscriptions.   ; medina-strategic-population,medina-strategic-landmass    ; medina-strategic-component
+                             
+
+							 
+
+#######################################################	
+
+
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]	; $contentCV ; imageIcon (code, $contentCV) 		; headerText[lang = en]		   ;  text[lang = en]										; &componentRef
+									   ; medina-keyfacts1	;			 ; medina-population.png        		; 2,239,923		               ;  population		    ; medina-keyfacts1   
+									   ; medina-keyfacts2   ;            ; medina-active -factories.png    		; 351		                   ;  active factories in Q3 2021                           ; medina-keyfacts2 
+#									   ; medina-keyfacts3   ;            ; medina-economic-growth.png           ; 2.40%		                   ;  annual economic growth between 2013-2019				; medina-keyfacts3 
+									   ; medina-keyfacts4   ;            ; medina-airport.png              		; 1			                   ;  international airport and 2 domestic airports        ; medina-keyfacts4 
+									   ; medina-keyfacts5   ;            ; medina-private-sector-employees.png  ; 369,026		               ;  number of employees					                ; medina-keyfacts5 
+									   ; medina-keyfacts6   ;            ; medina-dams.png         				; 41		                   ;  dams									                ; medina-keyfacts6 
+									   ; medina-keyfacts7   ;            ; medina-industrial-city.png  			; 2			                   ;  industrial cities					                    ; medina-keyfacts7 
+									   ; medina-keyfacts8   ;            ; medina-hotels.png              		; 436			               ;  Hotels						                        ; medina-keyfacts8 
+									   ; medina-keyfacts9   ;            ; medina-sport-city.png       			; 1		                   	   ;  Sport City                                            ; medina-keyfacts9 
+									   ; medina-keyfacts10  ;            ; medina-chambers-of-commerce.png		; 2			               	   ;  Chambers of Commerce			                        ; medina-keyfacts10
+									   ; medina-keyfacts11  ;            ; medina-towns.png            			; 9			                   ;  Towns					                                ; medina-keyfacts11
+									   ; medina-keyfacts12  ;            ; medina-hospitals.png                 ; 20		                   ;  hospitals with 3,268 beds								; medina-keyfacts12   
+									   ; medina-keyfacts13  ;            ; medina-seaport.png					; 2	                   	   ;  Seaports				                                ; medina-keyfacts13
+									   ; medina-keyfacts14  ;            ; medina-roads-length.png				; 5,942		                   ;  roads length										    ; medina-keyfacts14
+									   
+		
+					   
+								
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]		; $contentCV      ; image (code, $contentCV)					          	; text[lang=en]				                        						;&componentRef
+                     					 
+										   ; medina-key-strength1 	;                 ; medina-religious-cultural-assets.png                  ; RELIGIOUS AND CULTURAL ASSETS                                         	 	; medina-key-strength1
+                                           ; medina-key-strength2 	;                 ; medina-yanbu-Industrial-city.png                      ; YANBU INDUSTRIAL CITY                                                       ; medina-key-strength2
+                                           ; medina-key-strength3	;                 ; medina-logistics-yanbu-seaport.png                    ; LOGISTICS - YANBU SEAPORT WITH A CAPACITY OF 210 MILLION TONS               ; medina-key-strength3
+                                           ; medina-key-strength4	;                 ; medina-natural-resources-solar-gold-copper.png        ; NATURAL RESOURCES INCLUDING SOLAR, GOLD AND COPPER                          ; medina-key-strength4
+                                           ; medina-key-strength5 	;                 ; medina-oil-gassupply-lines.png                        ; OIL AND GAS SUPPLY LINES                                                    ; medina-key-strength5
+		                                   
+
+
+	
+#####################################################	
+	
+	
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																																														 ; keyStrengths(&componentRef) 																												  		    ; investmentOpportunities(&componentRef)
+							   ; medina		 		;				    ; medina-strategic-component 				; medina-keyfacts1,medina-keyfacts2 ,medina-keyfacts4 ,medina-keyfacts5 ,medina-keyfacts6, medina-keyfacts7 ,medina-keyfacts8 ,medina-keyfacts9 ,medina-keyfacts10,medina-keyfacts11,medina-keyfacts12,medina-keyfacts13,medina-keyfacts14   ; medina-key-strength1,medina-key-strength2,medina-key-strength3,medina-key-strength4,medina-key-strength5   ; 
+	
+	
+

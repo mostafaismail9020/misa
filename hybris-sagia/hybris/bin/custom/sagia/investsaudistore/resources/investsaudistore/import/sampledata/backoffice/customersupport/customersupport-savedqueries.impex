@@ -1,0 +1,30 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+INSERT_UPDATE BackofficeSavedQuery ; typeCode[unique=true] ; name[lang=en,unique=true] ; globalOperatorCode ; queryOwner(uid)[unique=true] ; sortAsc ; &savedQueryRef ;  
+#                                   ; CsTicket              ; "My Assigned Tickets"     ; "and"              ; "customer.support.8@sap.com" ; true    ; csAgent8       ;  
+
+
+INSERT_UPDATE BackofficeSearchCondition ; value[unique=true] ; attribute     ; selected ; operatorCode ; valueReference(Employee.uid)[mode=replace,unique=true] ; savedQuery(&savedQueryRef)[unique=true] ;  
+                                        ;                    ; assignedAgent ; true     ; equals       ; CustomerSupportAdministrator                           ; csAdmin                                 ;  
+                                        ;                    ; assignedAgent ; true     ; equals       ; CustomerSupportManager                                 ; csMgr                                   ;  
+                                        ;                    ; assignedAgent ; true     ; equals       ; CustomerSupportAgent                                   ; csAgent                                 ;  
+
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csAdmin                                 ;  
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csMgr                                   ;  
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csAgent                                 ;  
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csAgent1                                ;  
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csAgent2                                ;  
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csAgent3                                ;  
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csAgent4                                ;  
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csAgent5                                ;  
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csAgent6                                ;  
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csAgent7                                ;  
+                                        ; CsTicketState#OPEN ; state         ; true     ; equals       ;                                                        ; csAgent8                                ;  

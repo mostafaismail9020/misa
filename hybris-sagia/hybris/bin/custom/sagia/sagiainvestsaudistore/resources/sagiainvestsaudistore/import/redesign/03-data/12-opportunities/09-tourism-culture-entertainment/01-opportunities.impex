@@ -1,0 +1,79 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$classCatalogVersion = catalogVersion(catalog(id[default='sagiaClassification']), version[default='1.0'])
+
+
+#### Opportunities from "AlBahah"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       			; name [lang = en]          				; name [lang = ar]          			; featured		; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; DEVELOP-3-STAR-HOTEL-IN-ALBAHAH		; DEVELOP 3 STAR HOTEL IN AL BAHAH 			; DEVELOP 3 STAR HOTEL IN AL BAHAH 		; false			; tourism-culture-entertainment ;  ;;"Invest Saudi,DEVELOP 3 STAR HOTEL IN AL BAHAH-  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-4-STAR-HOTEL-IN-ALBAHAH 		; DEVELOP 4 STAR HOTEL IN AL BAHAH			; DEVELOP 4 STAR HOTEL IN AL BAHAH		; false			; tourism-culture-entertainment ;  ;;"Invest Saudi,DEVELOP 4 STAR HOTEL IN AL BAHAH- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-4-STAR-RESORT-IN-ALBAHAH 		; DEVELOP 4 STAR RESORT IN AL BAHAH			; DEVELOP 4 STAR RESORT IN AL BAHAH 	; false			; tourism-culture-entertainment ;  ;;"Invest Saudi,DEVELOP 4 STAR RESORT IN AL BAHAH-  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-5-STAR-HOTEL-IN-ALBAHAH 		; DEVELOP 5 STAR HOTEL IN AL BAHAH			; DEVELOP 5 STAR HOTEL IN AL BAHAH 		; false			; tourism-culture-entertainment ;  ;;"Invest Saudi,DEVELOP 5 STAR HOTEL IN AL BAHAH- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-5-STAR-RESORT-IN-ALBAHAH		; DEVELOP 5 STAR RESORT IN AL BAHAH			; DEVELOP 5 STAR RESORT IN AL BAHAH 	; false			; tourism-culture-entertainment ;  ;;"Invest Saudi,DEVELOP 5 STAR RESORT IN AL BAHAH- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+
+
+#### Opportunities from "AlJouf"
+INSERT_UPDATE OpportunityProduct; code[unique = true]					; name [lang = en]          				; name [lang = ar]          			; featured		; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; DEVELOP-3-STAR-HOTEL-IN-ALJOUF		; DEVELOP 3 STAR HOTEL IN AL JOUF			; DEVELOP 3 STAR HOTEL IN AL JOUF		; false    		; tourism-culture-entertainment; ;;"Invest Saudi,DEVELOP 3 STAR HOTEL IN AL JOUF-  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-4-STAR-HOTEL-IN-ALJOUF 		; DEVELOP 4 STAR HOTEL IN AL JOUF			; DEVELOP 4 STAR HOTEL IN AL JOUF		; false  	  	; tourism-culture-entertainment; ;;"Invest Saudi,DEVELOP 4 STAR HOTEL IN AL JOUF -  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-4-STAR-RESORT-IN-ALJOUF 		; DEVELOP 4 STAR RESORT IN AL JOUF			; DEVELOP 4 STAR RESORT IN AL JOUF		; false    		; tourism-culture-entertainment; ;;"Invest Saudi,DEVELOP 4 STAR RESORT IN AL JOUF -  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-5-STAR-HOTEL-IN-ALJOUF 		; DEVELOP 5 STAR HOTEL IN AL JOUF			; DEVELOP 5 STAR HOTEL IN AL JOUF		; false    		; tourism-culture-entertainment; ;;"Invest Saudi,DEVELOP 5 STAR HOTEL IN AL JOUF-  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-5-STAR-RESORT-IN-ALJOUF		; DEVELOP 5 STAR RESORT IN AL JOUF 			; DEVELOP 5 STAR RESORT IN AL JOUF		; false		    ; tourism-culture-entertainment; ;;"Invest Saudi,DEVELOP 5 STAR RESORT IN AL JOUF-  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+
+
+#### Opportunities from "AlMadinah"
+INSERT_UPDATE OpportunityProduct; code[unique = true]        			; name [lang = en]          				; name [lang = ar]          			; featured		; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; DEVELOP-3-STAR-HOTEL-IN-MADINAH 		; DEVELOP 3 STAR HOTEL IN MADINAH			; DEVELOP 3 STAR HOTEL IN MADINAH		; false 	    ; tourism-culture-entertainment;;;"Invest Saudi,DEVELOP 3 STAR HOTEL IN MADINAH-  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-4-STAR-HOTEL-IN-MADINAH 		; DEVELOP 4 STAR HOTEL IN MADINAH 			; DEVELOP 4 STAR HOTEL IN MADINAH		; false    		; tourism-culture-entertainment;;;"Invest Saudi,DEVELOP 4 STAR HOTEL IN MADINAH-  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-4-STAR-RESORT-IN-MADINAH	 	; DEVELOP 4 STAR RESORT IN MADINAH			; DEVELOP 4 STAR RESORT IN MADINAH		; false 		; tourism-culture-entertainment;;;"Invest Saudi,DEVELOP 4 STAR RESORT IN MADINAH-  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-5-STAR-HOTEL-IN-MADINAH 		; DEVELOP 5 STAR HOTEL IN MADINAH			; DEVELOP 5 STAR HOTEL IN MADINAH 		; false		    ; tourism-culture-entertainment;;;"Invest Saudi,DEVELOP 5 STAR HOTEL IN MADINAH-  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-5-STAR-RESORT-IN-MADINAH 		; DEVELOP 5 STAR RESORT IN MADINAH 			; DEVELOP 5 STAR RESORT IN MADINAH 		; false    		; tourism-culture-entertainment;;;"Invest Saudi,DEVELOP 5 STAR RESORT IN MADINAH-  TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+
+
+#### Opportunities from "Taif"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       			; name [lang = en]          				; name [lang = ar]          			; featured		; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; DEVELOP-5-STAR-RESORT-IN-TAIF 		; DEVELOP 5 STAR RESORT IN TAIF				; DEVELOP 5 STAR RESORT IN TAIF			; false			; tourism-culture-entertainment;;;;"Invest Saudi,DEVELOP 5 STAR RESORT IN TAIF- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-5-STAR-HOTEL-IN-TAIF 			; DEVELOP 5 STAR HOTEL IN TAIF			    ; DEVELOP 5 STAR HOTEL IN TAIF			; false 		; tourism-culture-entertainment;;;;"Invest Saudi,DEVELOP 5 STAR HOTEL IN TAIF- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-4-STAR-RESORT-IN-TAIF 		; DEVELOP 4 STAR RESORT IN TAIF				; DEVELOP 4 STAR RESORT IN TAIF 		; false 		; tourism-culture-entertainment;;;;"Invest Saudi,DEVELOP 4 STAR RESORT IN TAIF - TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-4-STAR-HOTEL-IN-TAIF 			; DEVELOP 4 STAR HOTEL IN TAIF			  	; DEVELOP 4 STAR HOTEL IN TAIF			; false			; tourism-culture-entertainment;;;;"Invest Saudi,DEVELOP 4 STAR HOTEL IN TAIF - TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+								; DEVELOP-3-STAR-HOTEL-IN-TAIF			; DEVELOP 3 STAR HOTEL IN TAIF				; DEVELOP 3 STAR HOTEL IN TAIF			; false			; tourism-culture-entertainment;;;;"Invest Saudi,DEVELOP 3 STAR HOTEL IN TAIF- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE,"
+
+
+#### Opportunities from "Aseer"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       			; name [lang = en]          				; name [lang = ar]          			; featured		; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; DEVELOP-5-STAR-RESORT-IN-ASEER 		; DEVELOP 5 STAR RESORT IN ASEER			; DEVELOP 5 STAR RESORT IN ASEER		; false			; tourism-culture-entertainment ; ;;"Invest Saudi,DEVELOP 5 STAR RESORT IN ASEER - TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-3-STAR-HOTEL-IN-ASEER 		; DEVELOP 3 STAR HOTEL IN ASEER				; DEVELOP 3 STAR HOTEL IN ASEER 		; false			; tourism-culture-entertainment ; ;;"Invest Saudi,DEVELOP 3 STAR HOTEL IN ASEER- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; Aseer-Adventure-Park 					; Aseer Adventure Park						; Aseer Adventure Park					; false			; tourism-culture-entertainment ; ;;"Invest Saudi,Aseer Adventure Park- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-5-STAR-HOTEL-IN-ASEER			; DEVELOP 5 STAR HOTEL IN ASEER 			; DEVELOP 5 STAR HOTEL IN ASEER			; false			; tourism-culture-entertainment ; ;;"Invest Saudi,DEVELOP 5 STAR HOTEL IN ASEER- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; Hospitality-College-in-Aseer-Region 	; Hospitality College in Aseer Region		; Hospitality College in Aseer Region 	; false			; tourism-culture-entertainment ; ;;"Invest Saudi,Hospitality College in Aseer Region- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-4-STAR-HOTEL-IN-ASEER 		; DEVELOP 4 STAR HOTEL IN ASEER				; DEVELOP 4 STAR HOTEL IN ASEER			; false			; tourism-culture-entertainment ; ;;"Invest Saudi,DEVELOP 4 STAR HOTEL IN ASEER - TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-4-STAR-RESORT-IN-ASEER 		; DEVELOP 4 STAR RESORT IN ASEER 			; DEVELOP 4 STAR RESORT IN ASEER		; false			; tourism-culture-entertainment ; ;;"Invest Saudi,DEVELOP 4 STAR RESORT IN ASEER- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+
+
+#### Opportunities from "Hail"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       			; name [lang = en]        				  	; name [lang = ar]         			 	; featured		; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; DEVELOP-5-STAR-RESORT-IN-HAIL 		; DEVELOP 5 STAR RESORT IN HAIL				; DEVELOP 5 STAR RESORT IN HAIL			; false			; tourism-culture-entertainment ; ;;"Invest Saudi,DEVELOP 5 STAR RESORT IN HAIL - TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-5-STAR-HOTEL-IN-HAIL 			; DEVELOP 5 STAR HOTEL IN HAIL 				; DEVELOP 5 STAR HOTEL IN HAIL 			; false			; tourism-culture-entertainment ; ;;"Invest Saudi,DEVELOP 5 STAR HOTEL IN HAIL- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-4-STAR-RESORT-IN-HAIL 		; DEVELOP 4 STAR RESORT IN HAIL				; DEVELOP 4 STAR RESORT IN HAIL 		; false			; tourism-culture-entertainment ; ;;"Invest Saudi,DEVELOP 4 STAR RESORT IN HAIL- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-4-STAR-HOTEL-IN-HAIL 			; DEVELOP 4 STAR HOTEL IN HAIL				; DEVELOP 4 STAR HOTEL IN HAIL			; false			; tourism-culture-entertainment ; ;;"Invest Saudi,DEVELOP 4 STAR HOTEL IN HAIL - TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-3-STAR-HOTEL-IN-HAIL			; DEVELOP 3 STAR HOTEL IN HAIL				; DEVELOP 3 STAR HOTEL IN HAIL			; false			; tourism-culture-entertainment ; ;;"Invest Saudi,DEVELOP 3 STAR HOTEL IN HAIL- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+
+
+#### Opportunities from "Jeddah"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       				; name [lang = en]          					; name [lang = ar]          					; featured	; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; DEVELOP-5-STAR-RESORT-IN-JEDDAH-obhur 	; DEVELOP 5 STAR RESORT IN JEDDAH - obhur		; DEVELOP 5 STAR RESORT IN JEDDAH - obhur		; false		; tourism-culture-entertainment ;;;"Invest Saudi,DEVELOP 5 STAR RESORT IN JEDDAH - obhur- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-5-STAR-RESORT-IN-JEDDAH-corniche 	; DEVELOP 5 STAR RESORT IN JEDDAH - corniche	; DEVELOP 5 STAR RESORT IN JEDDAH - corniche 	; false		; tourism-culture-entertainment ;;;"Invest Saudi,DEVELOP 5 STAR RESORT IN JEDDAH - corniche- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-5-STAR-HOTEL-IN-JEDDAH 			; DEVELOP 5 STAR HOTEL IN JEDDAH				; DEVELOP 5 STAR HOTEL IN JEDDAH 				; false		; tourism-culture-entertainment ;;;"Invest Saudi,DEVELOP 5 STAR HOTEL IN JEDDAH- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-4-STAR-RESORT-IN-JEDDAH 			; DEVELOP 4 STAR RESORT IN JEDDAH				; DEVELOP 4 STAR RESORT IN JEDDAH				; false		; tourism-culture-entertainment ;;;"Invest Saudi,DEVELOP 4 STAR RESORT IN JEDDAH- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-4-STAR-HOTEL-IN-JEDDAH 			; DEVELOP 4 STAR HOTEL IN JEDDAH				; DEVELOP 4 STAR HOTEL IN JEDDAH				; false		; tourism-culture-entertainment ;;;"Invest Saudi,DEVELOP 4 STAR HOTEL IN JEDDAH- TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; DEVELOP-3-STAR-HOTEL-IN-JEDDAH			; DEVELOP 3 STAR HOTEL IN JEDDAH				; DEVELOP 3 STAR HOTEL IN JEDDAH 				; false		; tourism-culture-entertainment ;;;"Invest Saudi,DEVELOP 3 STAR HOTEL IN JEDDAH - TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+
+
+#### Opportunities from "KAEC"
+INSERT_UPDATE OpportunityProduct; code[unique = true]       			; name [lang = en]          				; name [lang = ar]          			; featured		; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; The-Peninsula 						; The Peninsula								; The Peninsula							; false			; tourism-culture-entertainment ; ;;"Invest Saudi,The Peninsula -TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; KAEC-Lagoona-Motor-Park 				; KAEC Lagoona Motor Park					; KAEC Lagoona Motor Park 				; false			; tourism-culture-entertainment ; ;;"Invest Saudi,KAEC Lagoona Motor Park-TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; Private-Beach-Club 					; Private Beach Club						; Private Beach Club					; false			; tourism-culture-entertainment ; ;;"Invest Saudi,Private Beach Club-TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+								; Esmeralda-Sports-Complex  			; Esmeralda Sports Complex 					; Esmeralda Sports Complex 				; false			; tourism-culture-entertainment ; ;;"Invest Saudi,Esmeralda Sports Complex-TOURISM & QUALITY OF LIFE,TOURISM & QUALITY OF LIFE"
+
+

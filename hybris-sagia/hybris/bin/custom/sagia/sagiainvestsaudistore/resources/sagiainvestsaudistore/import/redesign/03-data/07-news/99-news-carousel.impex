@@ -1,0 +1,24 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE InvestSaudiNewsComponent	; $contentCV[unique = true] ; uid[unique = true]                   			; newsTitle[lang = en]                                                                   
+										;							; news-national-center-for-waste-management     ; The Ministry of Investment and the National Center for Waste Management sign a cooperation agreement to activate investments in the waste management sector   
+										;							; news-saudi-arabia-tacking-COVID-19            ; Saudi Arabia tackling of COVID-19 pandemic gains investors' confidence                  
+										;							; news-ministers-of-Misa-and-Malaysia           ; Minister of Investment, Malaysian Minister of International Trade Discuss Enhancing Cooperation and Investment Opportunities           
+
+
+INSERT_UPDATE PortalNewsBannerCarouselComponent	; $contentCV[unique = true]	; uid[unique = true]   			; news(uid, $contentCV)																								;  &componentRef
+												; 							; portalNewsCarouselComponent	; news-national-center-for-waste-management,news-saudi-arabia-tacking-COVID-19,news-ministers-of-Misa-and-Malaysia	; portalNewsCarouselComponent
+
+

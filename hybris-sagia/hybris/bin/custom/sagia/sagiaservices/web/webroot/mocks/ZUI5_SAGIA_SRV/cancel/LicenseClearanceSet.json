@@ -1,0 +1,144 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseClearanceSet(SrID='30000200',Stage='01')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseClearanceSet(SrID='30000200',Stage='01')",
+      "type": "ZUI5_SAGIA_SRV.LicenseClearance"
+    },
+    "SrID": "30000200",
+    "SrGuid": "005056B1-1C89-1EE8-9A99-0749FA0DD52A",
+    "LicID": "",
+    "LicGuid": "00000000-0000-0000-0000-000000000000",
+    "LicType": "",
+    "LicTypeDesc": "",
+    "LicRenFlag": false,
+    "BpID": "",
+    "BpGuid": "00000000-0000-0000-0000-000000000000",
+    "SrCrDate": null,
+    "SrStCode": "E0002",
+    "SrStDesc": "Completed",
+    "LicExDate": null,
+    "ValidFrom": null,
+    "TransType": "ZSR9",
+    "Action": "",
+    "BpChangeID": "",
+    "SalesrepCount": "",
+    "ContactChInd": "",
+    "TermCond": true,
+    "BpName": "",
+    "MinistryType": "",
+    "Stage": "01",
+    "ServiceType": "",
+    "PrintDocu": "X",
+    "CollectDocu": "X",
+    "Url": "0060000120",
+    "LicenseClearToTextNav": {
+      "results": []
+    },
+    "LicenseClearToUploadNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/LicenseClearanceSet(SrID='30000200',Stage='01')/LicenseClearToUploadNav"
+      }
+    },
+    "LicenseClearToContentNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774B9352A',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774B9352A',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "60000120",
+          "ObjectGuid": "005056B1-1C89-1EE8-9A99-0749FA0DD52A",
+          "Filename": "CR Copy",
+          "Filesize": "0000001492",
+          "Mimetype": "application/pdf",
+          "DocumentID": "005056B11C891EE89A99076774B9352A",
+          "Crtdby": "200506",
+          "Crtdon": "/Date(1528156800000)/",
+          "DocKeyID": "1006",
+          "ShDocID": "CR Copy",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774B9352A',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774B9952A',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774B9952A',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "60000120",
+          "ObjectGuid": "005056B1-1C89-1EE8-9A99-0749FA0DD52A",
+          "Filename": "Sagia License",
+          "Filesize": "0000000153",
+          "Mimetype": "application/pdf",
+          "DocumentID": "005056B11C891EE89A99076774B9952A",
+          "Crtdby": "200506",
+          "Crtdon": "/Date(1528156800000)/",
+          "DocKeyID": "1016",
+          "ShDocID": "Sagia Lice",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774B9952A',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774B9F52A',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774B9F52A',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "60000120",
+          "ObjectGuid": "005056B1-1C89-1EE8-9A99-0749FA0DD52A",
+          "Filename": "Letter from establishment /Board resolution",
+          "Filesize": "0000000153",
+          "Mimetype": "application/pdf",
+          "DocumentID": "005056B11C891EE89A99076774B9F52A",
+          "Crtdby": "200506",
+          "Crtdon": "/Date(1528156800000)/",
+          "DocKeyID": "1337",
+          "ShDocID": "Letter fro",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774B9F52A',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774BA552A',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774BA552A',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "60000120",
+          "ObjectGuid": "005056B1-1C89-1EE8-9A99-0749FA0DD52A",
+          "Filename": "liquidator of account",
+          "Filesize": "0000000153",
+          "Mimetype": "application/pdf",
+          "DocumentID": "005056B11C891EE89A99076774BA552A",
+          "Crtdby": "200506",
+          "Crtdon": "/Date(1528156800000)/",
+          "DocKeyID": "1345",
+          "ShDocID": "liquidator",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='60000120',DocumentID='005056B11C891EE89A99076774BA552A',Stage='')/FollowupSrvHDR"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

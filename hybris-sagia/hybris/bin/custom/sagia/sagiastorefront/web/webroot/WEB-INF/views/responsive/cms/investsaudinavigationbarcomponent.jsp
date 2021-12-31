@@ -1,0 +1,120 @@
+<%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
+<%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+
+<c:if test="${component.visible}">
+	<c:set var="pageLabel" value="${cmsPage.itemtype eq 'ContentPage' ? cmsPage.label : ''}" />
+	<!-- ======= Header ======= -->
+	<div id="topbar" class="d-flex align-items-center fixed-top ">
+		<div class="container d-flex">
+			<div class="social-links">
+				<!-- <a href="#" class="search_item"><img src="${commonResourcePath}/images/Search_icon.png" /></a>
+				<a href="#" class="Font_enlargment"><span class=" btn-trans"><img src="${commonResourcePath}/images/Aa.png"/></span></a>
+				 -->
+				 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr"> A-</span>
+				 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
+				<a href="#" class="skype">
+					<span class="btn-group btn-group-toggle btn-trans" data-toggle="buttons">
+						<!-- <label class="btn lang-btn lang-en active"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label> -->
+						<label class="btn lang-btn lang-en active" onclick="LanguageToggle('en')"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label>
+						<label class="btn lang-btn" onclick="LanguageToggle('ar')"><input type="radio" name="options" id="option2" autocomplete="off"><img src="${commonResourcePath}/images/ar_text.png"/></label>
+					</span>
+				</a>
+				<a href="/en/investsaudi-login" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.login.label"/></span></a>
+				<a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
+				<a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+			</div>
+		</div>
+	</div>
+	<header id="header" class="fixed-top ">
+		<div class="container d-flex align-items-center">
+			<div class="logo mr-auto">
+				<a href="/${language}">
+					<img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" />
+					<img class="hd-scroll" src="${fn:escapeXml(component.visionImage.url)}" />
+				</a>
+			</div>
+			<nav class="nav-menu d-none d-lg-block ">
+				<ul>
+					<c:forEach items="${component.navigationNode.children}" var="childLevel1" varStatus="childLevel1index">
+						<!-- <li class="nav-item dropdown"> -->
+						<%-- <c:choose>
+						<c:when test="${not empty childLevel1.cmsLink}"> --%>
+							<c:set var="childlevel1link" value="${childLevel1.cmsLink}" />
+							<li class="nav-item dropdown">
+								<c:choose>
+									<c:when test="${not empty childlevel1link.url}">
+										<a class="nav-link dropdown-toggle" href="${childlevel1link.url}" 
+											data-toggle="dropdown" title="${childLevel1.title}">${childLevel1.title}</a>
+									</c:when>
+									<c:otherwise>
+										<cms:component component="${childlevel1link}" evaluateRestriction="true" element="span" 
+											class="nav-link dropdown-toggle" />
+									</c:otherwise>
+								</c:choose>
+								<ul class="dropdown-menu dropdown-large ">
+									<div class="row g-3">
+										<div class="col-5 menu-img-item">
+											<img class="img-fluid w-100" src="${fn:escapeXml(childLevel1.nodeImage.url)}" alt="">
+											<p>${childLevel1.nodeDescription}</p>
+										</div>
+										<c:if test="${not empty childLevel1.children}">
+											<div class="col-4 sub-items">
+												<c:forEach items="${childLevel1.children}" var="childLevel2" varStatus="childLevel2index">
+													<c:set var="childlevel2link" value="${childLevel2.cmsLink}" />
+													<c:choose>
+														<c:when test="${not empty childlevel2link.url}">
+															<li><a class="dropdown-item get_submenus" href="${childlevel2link.url}" 
+																	title="${childLevel2.title}">${childLevel2.title}</a>
+																<c:if test="${not empty childLevel2.links}">
+																	<ul class="submenu dropdown-menu get_submenus">
+																		<c:forEach items="${childLevel2.links}" var="childlevel3link">
+																			<c:choose>
+																				<c:when test="${not empty childlevel3link.url}">
+																					<li><a class="dropdown-item" href="${childlevel3link.url}">${childlevel3link.linkName}</a></li>
+																				</c:when>
+																				<c:otherwise>                                                                                             
+																					<li><a class="dropdown-item" href="${portal.cmsLinkUrl(childlevel3link)}">${childlevel3link.linkName}</a></li>
+																				</c:otherwise>
+																			</c:choose>
+																		</c:forEach>
+																	</ul>
+																</c:if>
+															</li>
+														</c:when>
+														<c:otherwise>
+														<li>
+															<cms:component component="${childlevel2link}" evaluateRestriction="true" element="span" class="dropdown-item get_submenus" />
+															<c:if test="${not empty childLevel2.links}">
+																<ul class="submenu dropdown-menu get_submenus">
+																	<c:forEach items="${childLevel2.links}" var="childlevel3link">
+																		<c:choose>
+																			<c:when test="${not empty childlevel3link.url}">
+																				<li><a class="dropdown-item" href="/${language}${childlevel3link.url}">${childlevel3link.linkName}</a></li>
+																			</c:when>
+																			<c:otherwise>                                                                                             
+																				<li><a class="dropdown-item" href="${portal.cmsLinkUrl(childlevel3link)}">${childlevel3link.linkName}</a></li>
+																			</c:otherwise>
+																		</c:choose>
+																	</c:forEach>
+																</ul>
+															</c:if>
+														</li>
+													</c:otherwise>
+												</c:choose>
+											</c:forEach>
+										</div>
+									</c:if>
+								</div>
+							</ul>
+						</li>
+					</c:forEach>
+				</ul>                                   
+			</nav>
+		</div>
+	</header>
+</c:if>

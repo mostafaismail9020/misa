@@ -1,0 +1,21 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR7',Fieldname='INFO',Fieldkey='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/CustomizingGetList(Scenario='ZSR7',Fieldname='INFO',Fieldkey='')",
+          "type": "ZUI5_SAGIA_SRV.CustomizingGet"
+        },
+        "Scenario": "ZSR7",
+        "Fieldname": "INFO",
+        "Fieldkey": "",
+        "FieldSubtype": "",
+        "Description": "",
+        "Dockey_ID": "",
+        "LongDescr": "This service is for any entity that wants to end its status with SAGIA with the exit of the foreign shareholders and conversion of the entity into a 100% national owned business.",
+        "OptionalAttach": ""
+      }
+    ]
+  }
+}

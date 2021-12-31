@@ -1,0 +1,2652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config/>
+
+	<!-- Message sources -->
+	<bean id="messageSource"
+		  class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>/messages/base</value>
+			</list>
+		</property>
+		<property name="defaultEncoding" value="UTF-8"/>
+		<property name="cacheSeconds" value="1"/>
+	</bean>
+
+	<!--<alias alias="simpleSuggestionFacade" name="defaultSimpleSuggestionFacade"/>
+	<bean id="defaultSimpleSuggestionFacade" class="com.sap.ibso.eservices.facades.suggestion.impl.DefaultSimpleSuggestionFacade" >
+		<property name="simpleSuggestionService" ref="simpleSuggestionService"/>
+		<property name="userService" ref="userService"/>
+		<property name="categoryService" ref="categoryService"/>
+		<property name="productService" ref="productService"/>
+		<property name="productConverter" ref="carouselProductConverter"/>
+		<property name="cartService" ref="cartService"/>
+	</bean> -->
+
+	<bean id="carouselProductConverter" parent="defaultProductConverter">
+		<property name="populators">
+			<list merge="true">
+				<ref bean="productPricePopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="acceleratorVariantOptionDataConverter" alias="variantOptionDataConverter"/>
+	<bean id="acceleratorVariantOptionDataConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="variantOptionData"/>
+		<property name="populators">
+			<list>
+				<ref bean="acceleratorVariantOptionDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultAcceleratorVariantOptionDataPopulator" alias="acceleratorVariantOptionDataPopulator"/>
+	<bean id="defaultAcceleratorVariantOptionDataPopulator"  class="com.sap.ibso.eservices.facades.populators.AcceleratorVariantOptionDataPopulator"
+		  parent="variantOptionDataPopulator" >
+		<property name="mediaService" ref="mediaService"/>
+		<property name="mediaContainerService" ref="mediaContainerService"/>
+		<property name="typeService" ref="typeService"/>
+		<property name="imageFormatMapping" ref="imageFormatMapping"/>
+		<property name="variantAttributeMapping">
+			<map>
+				<entry key="ApparelStyleVariantProduct.style" value="styleSwatch"/>
+			</map>
+		</property>
+	</bean>
+
+
+	<alias name="acceleratorGenderConverter" alias="genderConverter"/>
+	<bean id="acceleratorGenderConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.product.data.GenderData"/>
+		<property name="populators">
+			<list>
+				<ref bean="genderDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultGenderDataPopulator" alias="genderDataPopulator"/>
+	<bean id="defaultGenderDataPopulator" class="com.sap.ibso.eservices.facades.populators.GenderDataPopulator" >
+		<property name="typeService" ref="typeService"/>
+	</bean>
+
+	<!-- accelerator Image Format Mappings -->
+	<alias name="acceleratorImageFormatMapping" alias="imageFormatMapping"/>
+	<bean id="acceleratorImageFormatMapping" parent="defaultImageFormatMapping">
+		<property name="mapping">
+			<map>
+				<entry key="superZoom" value="1200Wx1200H"/>
+				<entry key="zoom" value="515Wx515H"/>
+				<entry key="store" value="365Wx246H"/>
+				<entry key="product" value="300Wx300H"/>
+				<entry key="thumbnail" value="96Wx96H"/>
+				<entry key="cartIcon" value="65Wx65H"/>
+				<entry key="styleSwatch" value="30Wx30H"/>
+			</map>
+		</property>
+	</bean>
+
+	<alias name="acceleratorProductPrimaryImagePopulator" alias="productPrimaryImagePopulator" />
+	<bean id="acceleratorProductPrimaryImagePopulator" parent="defaultProductPrimaryImagePopulator">
+		<property name="imageFormats">
+			<list>
+				<value>zoom</value>
+				<value>product</value>
+				<value>thumbnail</value>
+				<value>cartIcon</value>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="acceleratorProductGalleryImagesPopulator" alias="productGalleryImagesPopulator" />
+	<bean id="acceleratorProductGalleryImagesPopulator" parent="defaultProductGalleryImagesPopulator">
+		<property name="imageFormats">
+			<list>
+				<value>superZoom</value>
+				<value>zoom</value>
+				<value>product</value>
+				<value>thumbnail</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="customerEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.CustomerEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="customerConverter" ref="customerConverter"/>
+	</bean>
+
+	<bean id="supportVisitEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.SupportVisitEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="customerConverter" ref="customerConverter"/>
+	</bean>
+
+	<bean id="forgottenPasswordEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.ForgottenPasswordEmailContext" parent="customerEmailContext" scope="prototype" >
+		<property name="customerConverter" ref="customerConverter"/>
+	</bean>
+	
+	<bean id="emailVerificationContext" class="com.sap.ibso.eservices.facades.process.email.context.EmailVerificationContext" parent="forgottenPasswordEmailContext" scope="prototype" >
+		<!-- <property name="customerConverter" ref="customerConverter"/> -->
+		<property name="sagiaConfigurationFacade" ref="sagiaConfigurationFacade" />
+	</bean>
+
+	<bean id="appointmentEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.AppointmentEmailContext" parent="customerEmailContext" scope="prototype" >
+		<property name="customerConverter" ref="customerConverter"/>
+	</bean>
+
+	<bean id="contactUpdateEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.ContactUpdateEmailContext" parent="customerEmailContext" scope="prototype" >
+		<property name="customerConverter" ref="customerConverter"/>
+	</bean>
+
+	<bean id="orderNotificationEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.OrderNotificationEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="orderConverter" ref="orderConverter"/>
+	</bean>
+
+	<bean id="quoteNotificationEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.QuoteNotificationEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="quoteService" ref="quoteService"/>
+		<property name="quoteConverter" ref="quoteConverter"/>
+	</bean>
+
+	<bean id="deliverySentEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.DeliverySentEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="consignmentConverter" ref="consignmentConverter"/>
+	</bean>
+
+	<bean id="readyForPickupEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.ReadyForPickupEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="consignmentConverter" ref="consignmentConverter"/>
+	</bean>
+
+	<bean id="orderCancelledEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.OrderCancelledEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="orderConverter" ref="orderConverter"/>
+	</bean>
+
+	<bean id="orderRefundEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.OrderRefundEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="orderConverter" ref="orderConverter"/>
+	</bean>
+	<bean id="consignmentCollectionReminderEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.ConsignmentCollectionReminderEmailContext" parent="abstractEmailContext" scope="prototype">
+		<property name="consignmentConverter" ref="consignmentConverter"/>
+		<property name="formatFactory" ref="formatFactory"/>
+		<property name="customerServiceUncollectedConsignmentStrategy" ref="customerServiceUncollectedConsignmentStrategy" />
+		<property name="orderConverter" ref="orderConverter"/>
+	</bean>
+
+	<bean id="orderPartiallyModifiedEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.OrderPartiallyModifiedEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="orderConverter" ref="orderConverter"/>
+		<property name="orderEntryConverter" ref="orderEntryConverter"/>
+		<property name="priceDataFactory" ref="priceDataFactory"/>
+	</bean>
+
+	<bean id="orderPartiallyCanceledEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.OrderPartiallyCanceledEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
+	</bean>
+
+	<bean id="orderPartiallyRefundedEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.OrderPartiallyRefundedEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
+	</bean>
+
+	<bean id="notPickedUpConsignmentCanceledEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.NotPickedUpConsignmentCanceledEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="consignmentConverter" ref="consignmentConverter"/>
+		<property name="priceDataFactory" ref="priceDataFactory"/>
+	</bean>
+
+	<alias name="yacceleratorSearchPagePointOfServiceDistancePopulator" alias="searchPagePointOfServiceDistancePopulator" />
+	<bean id="yacceleratorSearchPagePointOfServiceDistancePopulator" class="com.sap.ibso.eservices.facades.storefinder.populators.SearchPagePointOfServiceDistancePopulator" >
+		<property name="pointOfServiceDistanceConverter" ref="pointOfServiceDistanceConverter"/>
+	</bean>
+
+	<bean id="genderData" class="com.sap.ibso.eservices.facades.product.data.GenderData" scope="prototype"/>
+
+	<alias name="defaultSagiaAccountFacade" alias="sagiaAccountFacade"/>
+	<bean id="defaultSagiaAccountFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaAccountFacade">
+		<property name="customerFacade" ref="sagiaCustomerFacade"/>
+		<property name="basicCompanyInfoPopulator" ref="basicCompanyInfoPopulator"/>
+		<property name="basicInfoDictionaryPopulator" ref="basicInfoDictionaryPopulator"/>
+		<property name="surveyDataPopulator" ref="surveyDataPopulator"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="contactUpdateHistoryPopulator" ref="contactUpdateHistoryPopulator"/>
+		<property name="sessionService" ref="sessionService"/>
+	</bean>
+
+	<alias name="defaultSagiaComplaintFacade" alias="sagiaComplaintFacade"/>
+	<bean id="defaultSagiaComplaintFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaComplaintFacade">
+		<property name="complaintsAndEnquiryService" ref="complaintsAndEnquiryService"/>
+		<property name="categorizationSchemaGetListService" ref="categorizationSchemaGetListService"/>
+		<property name="categorizationSchemaContactUsListService" ref="categorizationSchemaContactUsListService"/>
+		<property name="customizationListService" ref="customizationListService"/>
+		<property name="ticketsDataPopulator" ref="ticketsDataPopulator"/>
+	</bean>
+
+	<alias name="sagiaCustomerFacade" alias="customerFacade"/>
+	<bean id="sagiaCustomerFacade" class="com.sap.ibso.eservices.facades.user.impl.SagiaCustomerFacade" parent="defaultCustomerFacade">
+		<property name="sagiaCountryService" ref="sagiaCountryService"/>
+		<property name="sagiaSectorService" ref="sagiaSectorService"/>
+		<property name="sagiaTermsAndConditionsFacade" ref="sagiaTermsAndConditionsFacade"/>
+		<property name="mediaService" ref="mediaService"/>
+		<property name="sagiaUserService" ref="sagiaUserService"/>
+	</bean>
+
+	<alias name="defaultSagiaUserFacade" alias="sagiaUserFacade"/>
+	<bean id="defaultSagiaUserFacade" class="com.sap.ibso.eservices.facades.user.impl.DefaultSagiaUserFacade">
+		<property name="sagiaUserService" ref="sagiaUserService"/>
+		<property name="b2BCustomerConverter" ref="b2BCustomerConverter"/>
+	</bean>
+
+
+	<alias name="defaultSagiaSurveyFacade" alias="sagiaSurveyFacade"/>
+	<bean id="defaultSagiaSurveyFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaSurveyFacade">
+		<property name="surveyDataPopulator" ref="surveyDataPopulator"/>
+		<property name="surveyEnhDataPopulator" ref="surveyEnhDataPopulator"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="surveyDetailsService" ref="surveyDetailsService"/>
+		<property name="surveyDetailsEnhService" ref="surveyDetailsEnhService"/>
+	</bean>
+
+	<alias name="defaultSagiaLicenseFacade" alias="sagiaLicenseFacade"/>
+	<bean id="defaultSagiaLicenseFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaLicenseFacade">
+		<property name="branchReversePopulator" ref="branchReversePopulator"/>
+		<property name="licensePopulator" ref="licensePopulator"/>
+		<property name="shareholdersPopulator" ref="shareholdersPopulator"/>
+		<property name="branchPopulator" ref="governmentBranchPopulator"/>
+		<property name="mainBranchPopulator" ref="mainBranchPopulator"/>
+		<property name="generalManagerPopulator" ref="generalManagerPopulator"/>
+		<property name="contactPersonPopulator" ref="contactPersonPopulator"/>
+		<property name="licenseToCompanyPopulator" ref="licenseToCompanyPopulator"/>
+		<property name="classificToCompanyPopulator" ref="classificToCompanyPopulator"/>
+        <property name="messageSource" ref="messageSource"/>
+        <property name="i18nService" ref="i18nService"/>
+	</bean>
+
+	<alias name="defaultSagiaEmploymentFacade" alias="sagiaEmploymentFacade"/>
+	<bean id="defaultSagiaEmploymentFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaEmploymentFacade">
+	</bean>
+
+	<alias name="defaultSagiaServiceRequestFacade" alias="sagiaServiceRequestFacade"/>
+	<bean id="defaultSagiaServiceRequestFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaServiceRequestFacade">
+	</bean>
+
+	<alias name="defaultSagiaPaginationFacade" alias="sagiaPaginationFacade"/>
+	<bean id="defaultSagiaPaginationFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaPaginationFacade">
+	</bean>
+
+	<bean id="sagiaAppointmentDataPopulator" class="com.sap.ibso.eservices.facades.populators.AppointmentPopulator" >
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="sagiaAppointmentReverseDataPopulator" class="com.sap.ibso.eservices.facades.populators.AppointmentReversePopulator" >
+		<property name="sessionService" ref="sessionService"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="sagiaListItemPopulator" class="com.sap.ibso.eservices.facades.populators.ListItemPopulator" >
+	</bean>
+	<bean id="sagiaCalendarSlotDataPopulator" class="com.sap.ibso.eservices.facades.populators.CalendarSlotPopulator" >
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="sagiaCalendarSlotDataReversePopulator" class="com.sap.ibso.eservices.facades.populators.CalendarSlotReversePopulator" >
+	</bean>
+	<bean id="sagiaNationalInvestorAppointmentReverseDataPopulator" class="com.sap.ibso.eservices.facades.populators.NationalInvestorAppointmentReversePopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="sagiaNationalInvestorAppointmentPopulator" class="com.sap.ibso.eservices.facades.populators.NationalInvestorAppointmentPopulator"/>
+	<bean id="realEstatePopulator" class="com.sap.ibso.eservices.facades.populators.RealEstatePopulator">
+		<property name="realEstateAttachmentPopulator" ref="realEstateAttachmentPopulator"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="realEstateAttachmentSetPopulator" class="com.sap.ibso.eservices.facades.populators.RealEstateAttachmentSetPopulator"/>
+	<bean id="realEstateReversePopulator" class="com.sap.ibso.eservices.facades.populators.RealEstateReversePopulator">
+		<property name="realEstateAttachmentReversePopulator" ref="realEstateAttachmentReversePopulator"/>
+		<property name="i18NService" ref="i18NService"/>
+	</bean>
+
+	<bean id="realEstateEntityDetailsSetPopulator" class="com.sap.ibso.eservices.facades.populators.RealEstateEntityDetailsSetPopulator"/>
+
+	<bean id="regionCityPopulator" class="com.sap.ibso.eservices.facades.populators.RegionCityPopulator"/>
+
+
+	<alias name="defaultSagiaAppointmentFacade" alias="sagiaAppointmentFacade"/>
+	<bean id="defaultSagiaAppointmentFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaAppointmentFacade">
+		<property name="zui5SagiaFacade" ref="ZUI5SagiaFacade" />
+		<property name="appointmentPopulator" ref="sagiaAppointmentDataPopulator" />
+		<property name="appointmentReversePopulator" ref="sagiaAppointmentReverseDataPopulator" />
+		<property name="calendarSlotPopulator" ref="sagiaCalendarSlotDataPopulator" />
+		<property name="calendarSlotReversePopulator" ref="sagiaCalendarSlotDataReversePopulator" />
+		<property name="listItemPopulator" ref="sagiaListItemPopulator"/>
+		<property name="nationalInvestorAppointmentReversePopulator" ref="sagiaNationalInvestorAppointmentReverseDataPopulator"/>
+		<property name="eventService" ref="eventService"/>
+		<property name="baseStoreService" ref="baseStoreService"/>
+		<property name="baseSiteService" ref="baseSiteService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="sessionService" ref="sessionService"/>
+        <property name="appointmentCalendarLabelsService" ref="appointmentCalendarLabelsService"/>
+	</bean>
+
+	<bean id="sagiaNIPAttachmentPopulator" class="com.sap.ibso.eservices.facades.populators.NipAttachmentPopulator"/>
+	<bean id="sagiaNIPHeaderSetPopulator" class="com.sap.ibso.eservices.facades.populators.NIPHeaderSetPopulator">
+		<property name="nipAttachmentPopulator" ref="sagiaNIPAttachmentPopulator"/>
+	</bean>
+	<bean id="sagiaNipLegalStatusPopulator" class="com.sap.ibso.eservices.facades.populators.NipLegalStatusPopulator"></bean>
+	<bean id="sagiaNipCountryPopulator" class="com.sap.ibso.eservices.facades.populators.NipCountryPopulator"></bean>
+	<bean id="sagiaNipRegionPopulator" class="com.sap.ibso.eservices.facades.populators.NipRegionPopulator"></bean>
+	<bean id="sagiaNipCityPopulator" class="com.sap.ibso.eservices.facades.populators.NipCityPopulator"></bean>
+	<bean id="sagiaNipISICSectionPopulator" class="com.sap.ibso.eservices.facades.populators.NipISICSectionPopulator"></bean>
+	<bean id="sagiaNipISICDivisionPopulator" class="com.sap.ibso.eservices.facades.populators.NipISICDivisionPopulator"></bean>
+	<bean id="nipHeaderSetPopulator" class="com.sap.ibso.eservices.facades.populators.NIPHeaderSetPopulator"></bean>
+	<bean id="nipAttachmentReversePopulator" class="com.sap.ibso.eservices.facades.populators.NipAttachmentReversePopulator"></bean>
+	<bean id="nipHeaderSetReversePopulator" class="com.sap.ibso.eservices.facades.populators.NIPHeaderSetReversePopulator">
+		<property name="nipAttachmentReversePopulator" ref="nipAttachmentReversePopulator"/>
+	</bean>
+
+
+	<alias name="defaultSagiaNationalInvestorFacade" alias="sagiaNationalInvestorFacade"/>
+	<bean id="defaultSagiaNationalInvestorFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaNationalInvestorFacade">
+		<property name="zui5NewInvestorSagiaFacade" ref="zui5NewInvestorSagiaFacade" />
+		<property name="calendarSlotPopulator" ref="sagiaCalendarSlotDataPopulator" />
+		<property name="nationalInvestorAppointmentReversePopulator" ref="sagiaNationalInvestorAppointmentReverseDataPopulator"/>
+		<property name="nationalInvestorAppointmentPopulator" ref="sagiaNationalInvestorAppointmentPopulator"/>
+		<property name="nipHeaderSetPopulator" ref="nipHeaderSetPopulator"/>
+		<property name="nipHeaderSetReversePopulator" ref="nipHeaderSetReversePopulator"/>
+		<property name="sagiaNipLegalStatusPopulator" ref="sagiaNipLegalStatusPopulator"/>
+		<property name="sagiaNipCountryPopulator" ref="sagiaNipCountryPopulator"/>
+		<property name="sagiaNipRegionPopulator" ref="sagiaNipRegionPopulator"/>
+		<property name="sagiaNipCityPopulator" ref="sagiaNipCityPopulator"/>
+		<property name="sagiaNipISICSectionPopulator" ref="sagiaNipISICSectionPopulator"/>
+		<property name="sagiaNipISICDivisionPopulator" ref="sagiaNipISICDivisionPopulator"/>
+		<property name="sagiaNIPAttachmentPopulator" ref="sagiaNIPAttachmentPopulator"/>
+	</bean>
+
+	<bean id="sagiaShareholderReversePopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.ShareholderReversePopulator" >
+        <property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+    </bean>
+	<bean id="sagiaBranchReversePopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.BranchReversePopulator" />
+	<bean id="sagiaProductReversePopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.ProductReversePopulator" />
+	<bean id="licenseAmendmentReversePopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.LicenseAmendmentReversePopulator">
+		<property name="shareholderReversePopulator" ref="sagiaShareholderReversePopulator"/>
+		<property name="branchReversePopulator" ref="sagiaBranchReversePopulator"/>
+		<property name="productReversePopulator" ref="sagiaProductReversePopulator"/>
+	</bean>
+
+	<bean id="sagiaShareholderPopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.ShareholderPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="mojInheritPopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.MOJInheritPopulator" />
+    <bean id="sagiaBranchPopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.BranchPopulator" />
+    <bean id="sagiaProductPopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.ProductPopulator" />
+	<bean id="sagiaLicenseAmendListItemPopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.ListItemPopulator" />
+	<bean id="sagiaLicenseAmendSubListItemPopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.SubListItemPopulator" />
+	<bean id="sagiaLicenseAmendAttachmentListItemPopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.AttachmentListItemPopulator" />
+	<bean id="licenseAmendmentPopulator" class="com.sap.ibso.eservices.facades.populators.license.amendment.LicenseAmendmentPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="shareholderPopulator" ref="sagiaShareholderPopulator"/>
+        <property name="branchPopulator" ref="sagiaBranchPopulator"/>
+        <property name="productPopulator" ref="sagiaProductPopulator"/>
+	</bean>
+
+	<bean id="licenseReplacementAttachmentPopulator" class="com.sap.ibso.eservices.facades.populators.license.replace.LicenseReplacementAttachmentPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<bean id="licenseReplacementMessagePopulator" class="com.sap.ibso.eservices.facades.populators.license.replace.LicenseReplacementMessagePopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<bean id="licenseReplacementDocumentUploadPopulator" class="com.sap.ibso.eservices.facades.populators.license.replace.LicenseReplacementDocumentUploadPopulator">
+	</bean>
+
+	<bean id="licenseReplacementPopulator" class="com.sap.ibso.eservices.facades.populators.license.replace.LicenseReplacementPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="licenseReplacementAttachmentPopulator" ref="licenseReplacementAttachmentPopulator"/>
+		<property name="licenseReplacementMessagePopulator" ref="licenseReplacementMessagePopulator"/>
+		<property name="licenseReplacementDocumentUploadPopulator" ref="licenseReplacementDocumentUploadPopulator"/>
+	</bean>
+
+
+	<bean id="licenceRenewalReversePopulator" class="com.sap.ibso.eservices.facades.populators.LicenseRenewalReversePopulator">
+		<property name="mediaService" ref="mediaService"/>
+		<property name="modelService" ref="modelService"/>
+	</bean>
+
+	<alias name="defaultLicenseAmendmentFacade" alias="licenseAmendmentFacade"/>
+	<bean id="defaultLicenseAmendmentFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultLicenseAmendmentFacade">
+		<property name="licenseAmendmentService" ref="licenseAmendmentService" />
+        <property name="licenseAmendmentShareholderService" ref="licenseAmendmentShareholderService"/>
+        <property name="customizationListService" ref="customizationListService" />
+        <property name="amendProductsService" ref="amendProductsService"/>
+        <property name="globalValsService" ref="globalValsService"/>
+        <property name="priceSimulationService" ref="sagiaEServicesPriceSimulationService"/>
+        <property name="licenseAmendmentPopulator" ref="licenseAmendmentPopulator"/>
+        <property name="licenseAmendmentReversePopulator" ref="licenseAmendmentReversePopulator"/>
+        <property name="shareholderPopulator" ref="sagiaShareholderPopulator" />
+        <property name="listItemPopulator" ref="sagiaLicenseAmendListItemPopulator"/>
+		<property name="subListItemPopulator" ref="sagiaLicenseAmendSubListItemPopulator"/>
+        <property name="attachmentListItemPopulator" ref="sagiaLicenseAmendAttachmentListItemPopulator"/>
+        <property name="messageSource" ref="messageSource"/>
+        <property name="i18nService" ref="i18nService"/>
+        <property name="mojInheritService" ref="mojInheritService" />
+        <property name="mojInheritPopulator" ref="mojInheritPopulator" />
+	</bean>
+
+	<bean id="sagiaTemporaryBiddingLicenseReversePopulator" class="com.sap.ibso.eservices.facades.populators.TemporaryBiddingLicenseReversePopulator" />
+	<bean id="sagiaTemporaryBiddingLicenseCountryPopulator" class="com.sap.ibso.eservices.facades.populators.TemporaryBiddingLicenseCountryPopulator" />
+	<bean id="sagiaTemporaryBiddingLicenseGovernmentEntityPopulator" class="com.sap.ibso.eservices.facades.populators.TemporaryBiddingLicenseGovernmentEntityPopulator" />
+	<alias name="defaultSagiaTemporaryBiddingLicenseFacade" alias="sagiaTemporaryBiddingLicenseFacade"/>
+	<bean id="defaultSagiaTemporaryBiddingLicenseFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaTemporaryBiddingLicenseFacade">
+		<property name="temporaryBiddingLicenseReversePopulator" ref="sagiaTemporaryBiddingLicenseReversePopulator" />
+		<property name="temporaryBiddingLicenseCountryPopulator" ref="sagiaTemporaryBiddingLicenseCountryPopulator"/>
+		<property name="temporaryBiddingLicenseGovernmentEntityPopulator" ref="sagiaTemporaryBiddingLicenseGovernmentEntityPopulator" />
+		<property name="temporaryBiddingLicenseService" ref="temporaryBiddingLicenseService" />
+		<property name="temporaryBiddingLicenseListItemService" ref="temporaryBiddingLicenseListItemService" />
+	</bean>
+
+	<bean id="serviceAttachmentPopulator" class="com.sap.ibso.eservices.facades.populators.ServiceAttachmentPopulator" />
+	<bean id="serviceApplicantPopulator" class="com.sap.ibso.eservices.facades.populators.ServiceApplicantPopulator" />
+	<bean id="sagiaSpecialServiceHeaderPopulator" class="com.sap.ibso.eservices.facades.populators.SpecialServiceHeaderPopulator">
+		<property name="serviceAttachmentPopulator" ref="serviceAttachmentPopulator"/>
+		<property name="serviceApplicantPopulator" ref="serviceApplicantPopulator"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<bean id="serviceApplicantReversePopulator" class="com.sap.ibso.eservices.facades.populators.ServiceApplicantReversePopulator">
+		<property name="sagiaFormatProvider" ref="defaultSagiaFormatProvider"/>
+	</bean>
+	<bean id="serviceAttachmentReversePopulator" class="com.sap.ibso.eservices.facades.populators.ServiceAttachmentReversePopulator" />
+	<bean id="sagiaSpecialServiceHeaderReversePopulator" class="com.sap.ibso.eservices.facades.populators.SpecialServiceHeaderReversePopulator">
+		<property name="serviceApplicantReversePopulator" ref="serviceApplicantReversePopulator"/>
+		<property name="serviceAttachmentReversePopulator" ref="serviceAttachmentReversePopulator"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="mediaService" ref="mediaService"/>
+	</bean>
+
+	<bean id="sagiaSpecialServicePopulator" class="com.sap.ibso.eservices.facades.populators.SpecialServicePopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="specialServiceCountryPopulator" class="com.sap.ibso.eservices.facades.populators.SpecialServiceCountryPopulator"/>
+	<bean id="specialServiceRegionPopulator" class="com.sap.ibso.eservices.facades.populators.SpecialServiceRegionPopulator"/>
+	<bean id="specialServiceAttachmentPopulator" class="com.sap.ibso.eservices.facades.populators.SpecialServiceAttachmentPopulator"/>
+    <bean id="specialServiceCountryReversePopulator" class="com.sap.ibso.eservices.facades.populators.SpecialServiceCountryReversePopulator"/>
+    <bean id="specialServiceRegionReversePopulator" class="com.sap.ibso.eservices.facades.populators.SpecialServiceRegionReversePopulator"/>
+    <bean id="specialServiceAttachmentReversePopulator" class="com.sap.ibso.eservices.facades.populators.SpecialServiceAttachmentReversePopulator"/>
+    <alias name="defaultSagiaSpecialServicesFacade" alias="sagiaSpecialServicesFacade"/>
+	<bean id="defaultSagiaSpecialServicesFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaSpecialServiceFacade">
+		<property name="zui5SpecialServiceSagiaFacade" ref="ZUI5SpecialServiceSagiaFacade" />
+		<property name="sagiaSpecialServicePopulator" ref="sagiaSpecialServicePopulator" />
+		<property name="sagiaSpecialServiceHeaderPopulator" ref="sagiaSpecialServiceHeaderPopulator" />
+		<property name="sagiaSpecialServiceHeaderReversePopulator" ref="sagiaSpecialServiceHeaderReversePopulator" />
+		<property name="specialServiceCountryPopulator" ref="specialServiceCountryPopulator" />
+		<property name="specialServiceRegionPopulator" ref="specialServiceRegionPopulator" />
+		<property name="specialServiceAttachmentPopulator" ref="specialServiceAttachmentPopulator" />
+		<property name="serviceApplicantPopulator" ref="serviceApplicantPopulator"/>
+	</bean>
+
+	<bean id="realEstateAttachmentPopulator" class="com.sap.ibso.eservices.facades.populators.RealEstateAttachmentPopulator"/>
+	<bean id="realEstateAttachmentReversePopulator" class="com.sap.ibso.eservices.facades.populators.RealEstateAttachmentReversePopulator"/>
+	
+	<alias name="defaultRealEstateFacade" alias="sagiaRealEstateFacade"/>
+	<bean id="defaultRealEstateFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultRealEstateFacade">
+		<property name="zui5SagiaFacade" ref="ZUI5SagiaFacade"/>
+		<property name="regionCityPopulator" ref="regionCityPopulator"/>
+		<property name="realEstatePopulator" ref="realEstatePopulator"/>
+		<property name="realEstateAttachmentSetPopulator" ref="realEstateAttachmentSetPopulator"/>
+		<property name="realEstateReversePopulator" ref="realEstateReversePopulator"/>
+		<property name="sagiaRealEstateAttachmentSetService" ref="sagiaRealEstateAttachmentSetService"/>
+		<property name="realEstateEntityDetailsSetPopulator" ref="realEstateEntityDetailsSetPopulator"/>
+		<property name="sagiaRealEstateDeedInfoDtlsSetService" ref="sagiaRealEstateDeedInfoDtlsSetService"/>
+	</bean>
+
+	<alias name="defaultSagiaCountryConverter" alias="sagiaCountryConverter"/>
+	<bean id="defaultSagiaCountryConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.SagiaCountryData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaCountryDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultSagiaSectorConverter" alias="sagiaSectorConverter"/>
+	<bean id="defaultSagiaSectorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.SagiaSectorData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaSectorDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="sagiaCountryDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaCountryDataPopulator" >
+	</bean>
+
+	<bean id="sagiaSectorDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaSectorDataPopulator" >
+	</bean>
+
+	<alias name="defaultSagiaServiceConverter" alias="sagiaServiceConverter"/>
+	<bean id="defaultSagiaServiceConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.SagiaServiceData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaServiceDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="sagiaServiceDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaServiceDataPopulator" >
+		<property name="sagiaServiceConverter" ref="sagiaServiceConverter"/>
+		<property name="sagiaCategoryConverter" ref="sagiaCategoryConverter"/>
+	</bean>
+
+
+	<alias name="defaultSagiaSearchFacade" alias="sagiaSearchFacade"/>
+	<bean id="defaultSagiaSearchFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaSearchFacade">
+		<property name="sagiaSearchService" ref="sagiaSearchService"/>
+		<property name="sagiaServiceConverter" ref="sagiaServiceConverter"/>
+		<property name="sagiaServiceTabConverter" ref="sagiaServiceTabConverter"/>
+		<property name="sagiaCategoryConverter" ref="sagiaCategoryConverter"/>
+	</bean>
+
+	<alias name="defaultSagiaNavigationMenuFacade" alias="sagiaNavigationMenuFacade"/>
+	<bean id="defaultSagiaNavigationMenuFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaNavigationMenuFacade">
+		<property name="sagiaSearchService" ref="sagiaSearchService"/>
+		<property name="sagiaServiceConverter" ref="sagiaServiceConverter"/>
+		<property name="sagiaCategoryConverter" ref="sagiaCategoryConverter"/>
+		<property name="sagiaCategoryDAO" ref="sagiaCategoryDAO"/>
+		<property name="sagiaCategoryDataPopulator" ref="sagiaCategoryDataPopulator"/>
+	</bean>
+
+	<alias name="defaultSagiaServiceTabConverter" alias="sagiaServiceTabConverter"/>
+	<bean id="defaultSagiaServiceTabConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.SagiaServiceTabData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaServiceTabDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="sagiaTutorialStepDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaTutorialStepDataPopulator">
+	</bean>
+	<bean name="sagiaTutorialDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaTutorialDataPopulator">
+		<property name="sagiaTutorialStepDataPopulator" ref="sagiaTutorialStepDataPopulator"/>
+	</bean>
+	<alias name="defaultSagiaTutorialFacade" alias="sagiaTutorialFacade"/>
+	<bean id="defaultSagiaTutorialFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaTutorialFacade">
+		<property name="sagiaTutorialService" ref="sagiaTutorialService"/>
+		<property name="sagiaTutorialDataPopulator" ref="sagiaTutorialDataPopulator"/>
+	</bean>
+
+	<bean id="sagiaServiceTabDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaServiceTabDataPopulator" >
+	</bean>
+
+	<alias name="defaultSagiaCategoryConverter" alias="sagiaCategoryConverter"/>
+	<bean id="defaultSagiaCategoryConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.categories.SagiaCategoryData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaCategoryDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="sagiaCategoryDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaCategoryDataPopulator" >
+		<property name="mediaConverter" ref="mediaConverter"/>
+	</bean>
+
+	<alias name="defaultSagiaSectorFacade" alias="sagiaSectorFacade"/>
+	<bean id="defaultSagiaSectorFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaSectorFacade">
+		<property name="sagiaSectorService" ref="sagiaSectorService"/>
+		<property name="sagiaSectorConverter" ref="sagiaSectorConverter"/>
+	</bean>
+
+	<alias name="defaultSagiaMediaConverter" alias="sagiaMediaConverter"/>
+	<bean id="defaultSagiaMediaConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.SagiaMediaData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaMediaDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="mediaConverter" alias="mediaConverter"/>
+	<bean id="mediaConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.cmsfacades.data.MediaData"/>
+		<property name="populators">
+			<list>
+				<ref bean="mediaDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="mediaImageConverter" alias="mediaImageConverter"/>
+	<bean id="mediaImageConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commercefacades.product.data.ImageData"/>
+		<property name="populators">
+			<list>
+				<ref bean="mediaImageDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="basicCompanyInfoPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaBasicCompanyInfoPopulator" >
+		<property name="priceDataFactory" ref="priceDataFactory"/>
+	</bean>
+
+	<bean id="basicInfoDictionaryPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaBasicInfoDictionaryPopulator" >
+	</bean>
+
+	<bean id="mediaImageDataPopulator" class="com.sap.ibso.eservices.facades.populators.MediaImageDataPopulator" >
+	</bean>
+
+	<bean id="mediaDataPopulator" class="com.sap.ibso.eservices.facades.populators.MediaPopulator" >
+	</bean>
+
+	<bean id="sagiaMediaDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaMediaDataPopulator" >
+		<property name="mediaConverter" ref="mediaConverter"/>
+	</bean>
+
+
+	<alias name="defaultSagiaMediaFacade" alias="sagiaMediaFacade"/>
+	<bean id="defaultSagiaMediaFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaMediaFacade">
+		<property name="sagiaMediaService" ref="sagiaMediaService"/>
+		<property name="sagiaMediaConverter" ref="sagiaMediaConverter"/>
+	</bean>
+
+	<bean id="sagiaAmanahPopulator" class="com.sap.ibso.eservices.facades.populators.AmanahPopulator" >
+	</bean>
+
+	<bean id="branchReversePopulator" class="com.sap.ibso.eservices.facades.populators.BranchReversePopulator" >
+	</bean>
+
+	<bean id="wasselCheckPopulator" class="com.sap.ibso.eservices.facades.populators.WasselCheckPopulator" >
+	</bean>
+
+	<alias name="defaultSagiaGovernmentDocumentsFacade" alias="sagiaGovernmentDocumentsFacade"/>
+	<bean id="defaultSagiaGovernmentDocumentsFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaGovernmentDocumentsFacade">
+		<property name="zui5SagiaFacade" ref="ZUI5SagiaFacade" />
+		<property name="amanahPopulator" ref="sagiaAmanahPopulator" />
+		<property name="wasselCheckPopulator" ref="wasselCheckPopulator" />
+	</bean>
+
+	<bean id="servicesRequestCommentPopulator" class="com.sap.ibso.eservices.facades.populators.ServicesRequestCommentPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="servicesRequestAddressPopulator" class="com.sap.ibso.eservices.facades.populators.ServicesRequestAddressPopulator" />
+	<bean id="servicesRequestDocumentPopulator" class="com.sap.ibso.eservices.facades.populators.ServicesRequestDocumentPopulator" />
+	<bean id="contactUpdateCommentsPopulator" class="com.sap.ibso.eservices.facades.populators.ContactUpdateCommentsPopulator" />
+	<bean id="servicesRequestImagePopulator" class="com.sap.ibso.eservices.facades.populators.ServicesRequestImagePopulator" />
+	<bean id="sagiaServicesRequestHDRPopulator" class="com.sap.ibso.eservices.facades.populators.ServicesRequestHDRPopulator" >
+		<property name="servicesRequestCommentPopulator" ref="servicesRequestCommentPopulator" />
+		<property name="servicesRequestAddressPopulator" ref="servicesRequestAddressPopulator" />
+		<property name="servicesRequestDocumentPopulator" ref="servicesRequestDocumentPopulator" />
+		<property name="servicesRequestImagePopulator" ref="servicesRequestImagePopulator" />
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+
+	<bean id="servicesRequestCommentReversePopulator" class="com.sap.ibso.eservices.facades.populators.ServicesRequestCommentReversePopulator" />
+	<bean id="servicesRequestAddressReversePopulator" class="com.sap.ibso.eservices.facades.populators.ServicesRequestAddressReversePopulator" />
+	<bean id="servicesRequestDocumentReversePopulator" class="com.sap.ibso.eservices.facades.populators.ServicesRequestDocumentReversePopulator" />
+	<bean id="servicesRequestImageReversePopulator" class="com.sap.ibso.eservices.facades.populators.ServicesRequestImageReversePopulator" />
+	<bean id="serviceReqReversePopulator" class="com.sap.ibso.eservices.facades.populators.ServiceReqReversePopulator"/>
+	<bean id="sagiaServicesRequestHDRReversePopulator" class="com.sap.ibso.eservices.facades.populators.ServiceRequestReversePopulator" >
+		<property name="commentReversePopulator" ref="servicesRequestCommentReversePopulator" />
+		<property name="addressReversePopulator" ref="servicesRequestAddressReversePopulator" />
+		<property name="documentReversePopulator" ref="servicesRequestDocumentReversePopulator" />
+		<property name="imageReversePopulator" ref="servicesRequestImageReversePopulator" />
+	</bean>
+
+	<alias name="defaultSagiaRenewMyLicenceFacade" alias="sagiaRenewMyLicenceFacade"/>
+	<bean id="defaultSagiaRenewMyLicenceFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaRenewMyLicenceFacade">
+		<property name="zui5SagiaFacade" ref="ZUI5SagiaFacade" />
+		<property name="servicesRequestHDRPopulator" ref="sagiaServicesRequestHDRPopulator"/>
+		<property name="servicesRequestHDRReversePopulator" ref="sagiaServicesRequestHDRReversePopulator"/>
+		<property name="serviceReqReversePopulator"	ref="serviceReqReversePopulator" />
+		<property name="customizationListService" ref="customizationListService"/>
+		<property name="contentDetailsService" ref="contentDetailsService"/>
+		<property name="listItemPopulator" ref="sagiaListItemPopulator" />
+		<property name="licenseRenewalReversePopulator" ref="licenceRenewalReversePopulator"/>
+		<property name="globalValsService" ref="globalValsService"/>
+		<property name="governmentDocumentsCheckPopulator" ref="governmentDocumentsCheckPopulator"/>
+		<property name="removePopupALRPopulator" ref="removePopupALRPopulator"/>
+	</bean>
+	<alias name="defaultSagiaLicenseReplacementFacade" alias="sagiaLicenseReplacementFacade"/>
+	<bean id="defaultSagiaLicenseReplacementFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaLicenseReplacementFacade">
+		<property name="licenseReplacementService" ref="licenseReplacementService"/>
+		<property name="customizationListService" ref="customizationListService"/>
+		<property name="contentDetailsService" ref="contentDetailsService"/>
+		<property name="licenseReplacementPopulator" ref="licenseReplacementPopulator"/>
+	</bean>
+
+	<bean id="sagiaFinancialPopulator" class="com.sap.ibso.eservices.facades.populators.FinancialPopulator" >
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<alias name="defaultSagiaFinancialFacade" alias="sagiaFinancialFacade"/>
+	<bean id="defaultSagiaFinancialFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaFinancialFacade">
+		<property name="zui5SagiaFacade" ref="ZUI5SagiaFacade" />
+		<property name="sagiaFinancialPopulator" ref="sagiaFinancialPopulator" />
+	</bean>
+
+	<bean id="sagiaFollowUpPopulator" class="com.sap.ibso.eservices.facades.populators.FollowUpDataPopulator" >
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="servicesRequestDocumentPopulator" ref="servicesRequestDocumentPopulator"/>
+	</bean>
+
+	<bean id="surveyDataPopulator" class="com.sap.ibso.eservices.facades.populators.SurveyDataPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="surveyEnhDataPopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.SurveyEnhDataPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<bean id="warningLettersInfosPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaWarningLettersInfosPopulator" >
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<alias name="defaultSagiaFollowUpFacade" alias="sagiaFollowUpFacade"/>
+	<bean id="defaultSagiaFollowUpFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaFollowUpFacade">
+		<property name="zui5SagiaFacade" ref="ZUI5SagiaFacade" />
+		<property name="sagiaFollowUpPopulator" ref="sagiaFollowUpPopulator"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="warningLettersInfosService" ref="warningLettersInfosService"/>
+		<property name="sagiaWarningLettersInfosPopulator" ref="warningLettersInfosPopulator"/>
+		<property name="mediaService" ref="mediaService"/>
+		<property name="globalValsService" ref="globalValsService"/>
+	</bean>
+
+	<bean id="sagiaCustomerPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaCustomerPopulator" >
+		<property name="mediaImageConverter" ref="mediaImageConverter"/>
+	</bean>
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="customerConverter"/>
+		<property name="add" ref="sagiaCustomerPopulator"/>
+	</bean>
+
+	<bean id="sagiaB2BCustomerPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaB2BCustomerPopulator" >
+	</bean>
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="b2BCustomerConverter"/>
+		<property name="add" ref="sagiaB2BCustomerPopulator"/>
+	</bean>
+
+	<alias name="defaultSagiaLicenseCancellationFacade" alias="sagiaLicenseCancellationFacade"/>
+	<bean id="defaultSagiaLicenseCancellationFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaLicenseCancellationFacade">
+		<property name="zui5SagiaFacade" ref="ZUI5SagiaFacade" />
+	</bean>
+
+	<alias alias="sagiaAccountManagerFacade" name="defaultSagiaAccountManagerFacade" />
+	<bean id="defaultSagiaAccountManagerFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaAccountManagerFacade">
+		<property name="accountManagerService" ref="sagiaEServicesAccountManagerService" />
+	</bean>
+
+
+	<bean id="paymentPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaPaymentPopulator" >
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="i18NMessageTranslatorService" ref="i18NMessageTranslatorService"/>
+	</bean>
+
+	<bean id="afterPaymentPopulator" class="com.sap.ibso.eservices.facades.populators.AfterPaymentPopulator" >
+		<property name="userService" ref="userService"/>
+	</bean>
+
+	<alias name="sagiaDefaultPaymentFacade" alias="sagiaPaymentFacade"/>
+	<bean id="sagiaDefaultPaymentFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultPaymentFacade">
+		<property name="zePaymentFacade" ref="zePaymentDetailsODataFacade"/>
+		<property name="paymentPopulator" ref="paymentPopulator"/>
+		<property name="modelService" ref="modelService"/>
+		<property name="afterPaymentPopulator" ref="afterPaymentPopulator"/>
+		<property name="salesOrderService" ref="sagiaEServicesSalesOrderService"/>
+		<property name="sagiaPaymentService" ref="sagiaSalesOrderPaymentService"/>
+		<property name="userService" ref="userService"/>
+	</bean>
+
+	<alias alias="MIGSPaymentFacade" name="defaultMIGSPaymentFacade"/>
+	<bean id="defaultMIGSPaymentFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultMIGSPaymentFacade">
+		<property name="keyGenerator" ref="orderCodeGenerator"/>
+		<property name="sagiaPaymentSessionService" ref="sagiaPaymentSessionService" />
+		<property name="eventService" ref="eventService"/>
+	</bean>
+
+	<bean id="sagiaGovtCategoryFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaGovtCategoryFacade">
+		<property name="sagiaGovtService" ref="sagiaGovtService"/>
+		<property name="sagiaGovtInfoDataService" ref="sagiaGovtInfoDataService"/>
+		<property name="sagiaCategoryDataPopulator" ref="sagiaCategoryDataPopulator"/>
+		<property name="sagiaGovtServicePopulator" ref="sagiaGovtServicePopulator"/>
+		<property name="sagiaGovtServiceCRMPopulator" ref="sagiaGovtServiceCRMPopulator"/>
+		<property name="sagiaGovtCRMUploadPopulator" ref="sagiaGovtCRMUploadPopulator"/>
+		<property name="sagiaSupportingDocumentsService" ref="sagiaSupportingDocumentsService"/>
+		<property name="sagiaGovtInfoDataPopulator" ref="sagiaGovtInfoDataPopulator"/>
+	</bean>
+
+	<bean id="sagiaTermsAndConditionsFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultTermsAndConditionsFacade">
+		<property name="sagiaTermsAndConditionsService" ref="sagiaTermsAndConditionsService"/>
+		<property name="modelService" ref="modelService"/>
+	</bean>
+
+	<bean id="sagiaGovtServiceFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaGovtServiceFacade">
+		<property name="sagiaGovtServiceUploadPopulator" ref="sagiaGovtServiceUploadPopulator"/>
+		<property name="sagiaGovtCreationService" ref="sagiaGovtCreationService"/>
+	</bean>
+
+	<bean id="sagiaGovtServicePopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtServicePopulator">
+		<property name="sagiaCategoryDataPopulator" ref="sagiaCategoryDataPopulator"/>
+	</bean>
+	<bean id="sagiaGovtInfoDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtInfoDataPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="sagiaGovtServiceUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtServiceUploadPopulator">
+
+	</bean>
+
+	<bean id="sagiaDashboardWithoutLicenseFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaDashboardWithoutLicenseFacade">
+		<property name="licenseInformationService" ref="licenseInformationService"/>
+	</bean>
+	<bean id ="sagiaLicensePrintingFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultLicensePrintingFacade">
+		<property name="sagiaEServicesDefaultDocumentService" ref="sagiaEServicesDefaultDocumentService"/>
+	</bean>
+
+	<alias name="defaultSagiaClassificationConverter" alias="sagiaClassificationConverter"/>
+	<bean id="defaultSagiaClassificationConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.SagiaClassificationData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaClassificationDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="sagiaClassificationDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaClassificationDataPopulator" >
+	</bean>
+
+	<alias name="defaultSagiaClassificationFacade" alias="sagiaClassificationFacade"/>
+	<bean id="defaultSagiaClassificationFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaClassificationFacade">
+		<property name="sagiaClassificationService" ref="sagiaClassificationService"/>
+		<property name="sagiaClassificationConverter" ref="sagiaClassificationConverter"/>
+	</bean>
+
+
+	<alias name="defaultSagiaPaymentDetailsFacade" alias="sagiaPaymentDetailsFacade"/>
+	<bean id="defaultSagiaPaymentDetailsFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaPaymentDetailsFacade">
+		<property name="licensePaymentService" ref="licensePaymentService"/>
+	</bean>
+	
+	<alias name="defaultSagiaLicenseTypeRequirementFacade" alias="sagiaLicenseTypeRequirementFacade"/>
+	<bean id="defaultSagiaLicenseTypeRequirementFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaLicenseTypeRequirementFacade">
+		<property name="sagiaLicenseTypeRequirementService" ref="sagiaLicenseTypeRequirementService"/>
+		<property name="sagiaLicenseTypeRequirementConverter" ref="sagiaLicenseTypeRequirementConverter"/>
+	</bean>
+
+	<bean name="licensePopulator" class="com.sap.ibso.eservices.facades.populators.license.LicensePopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider" />
+	</bean>
+
+	<bean name="shareholdersPopulator" class="com.sap.ibso.eservices.facades.populators.license.ShareholdersPopulator"/>
+
+	<bean name="governmentBranchPopulator" class="com.sap.ibso.eservices.facades.populators.license.BranchPopulator"/>
+
+	<bean name="mainBranchPopulator" class="com.sap.ibso.eservices.facades.populators.license.MainBranchPopulator"/>
+
+	<bean name="generalManagerPopulator" class="com.sap.ibso.eservices.facades.populators.license.GeneralManagerPopulator"/>
+
+	<bean name="contactPersonPopulator" class="com.sap.ibso.eservices.facades.populators.license.ContactPersonPopulator"/>
+
+
+	<bean name="licenseToCompanyPopulator" class="com.sap.ibso.eservices.facades.populators.license.LicenseToCompanyPopulator">
+		<property name="sagiaCurrencyService" ref="sagiaCurrencyService"/>
+	</bean>
+	<bean name="classificToCompanyPopulator" class="com.sap.ibso.eservices.facades.populators.license.ClassificToCompanyPopulator">
+		<property name="sagiaCurrencyService" ref="sagiaCurrencyService"/>
+	</bean>
+
+	<bean id="sagiaInvestorNotificationsFacade"
+		class="com.sap.ibso.eservices.facades.sagia.impl.SagiaInvestorNotificationsFacade">
+		<property name="investorNotificationsService" ref="investorNotificationsService" />
+		<property name="investorNotificationConverter" ref="investorNotificationConverter" />
+		<property name="messageSource" ref="messageSource" />
+		<property name="i18NService" ref="i18NService" />
+		<property name="sagiaSalesOrderPaymentService" ref="sagiaSalesOrderPaymentService" />
+	</bean>
+
+	<alias name="defaultAverageProcessingTimeFacade" alias="averageProcessingTimeFacade"/>
+	<bean id="defaultAverageProcessingTimeFacade"
+		  class="com.sap.ibso.eservices.facades.sagia.impl.DefaultAverageProcessingTimeFacade">
+		<property name="sagiaBETransTypeService" ref="sagiaBETransTypeService" />
+		<property name="averageProcessingTimeService" ref="sagiaEServicesAverageProcessingTimeService"/>
+	</bean>
+
+	<bean name="sagiaLegalInquiryPopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.LegalInquiryPopulator"/>
+	<bean name="sagiaUploadContentPopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.UploadContentPopulator" />
+	<bean name="sagiaGetTextPopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.GetTextPopulator">
+        <property name="sagiaFormatProvider" ref="defaultSagiaFormatProvider"/>
+    </bean>
+	<bean name="sagiaAttachmantHDRPopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.AttachmantHDRPopulator" />
+	<bean id="sagiaLegalInquiryHDRPopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.LegalInquiryHDRPopulator">
+        <property name="legalInquiryPopulator" ref="sagiaLegalInquiryPopulator"/>
+        <property name="uploadContentPopulator" ref="sagiaUploadContentPopulator"/>
+        <property name="getTextPopulator" ref="sagiaGetTextPopulator"/>
+        <property name="contentHDRPopulator" ref="zesrvContentHDRPopulator"/>
+        <property name="attachmantHDRPopulator" ref="sagiaAttachmantHDRPopulator"/>
+        <property name="sagiaFormatProvider" ref="defaultSagiaFormatProvider"/>
+    </bean>
+    <bean id="sagialegalInquiryTypePopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.LegalInquiryTypePopulator" />
+    
+    <bean id="sagiaFinancialStatementHDRPopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.FinancialStatementHDRPopulator">
+        <property name="uploadContentPopulator" ref="sagiaUploadContentPopulator"/>
+        <property name="contentHDRPopulator" ref="zesrvContentHDRPopulator"/>
+        <property name="attachmantHDRPopulator" ref="sagiaAttachmantHDRPopulator"/>
+        <property name="sagiaFormatProvider" ref="defaultSagiaFormatProvider"/>
+    </bean>
+
+    <bean name="sagiaIsicSectionPopulator" class="com.sap.ibso.eservices.facades.populators.isic.SectionPopulator"/>
+    <bean name="sagiaIsicDivisionPopulator" class="com.sap.ibso.eservices.facades.populators.isic.DivisionPopulator"/>
+    <bean name="sagiaIsicGroupPopulator" class="com.sap.ibso.eservices.facades.populators.isic.GroupPopulator"/>
+    <bean name="sagiaIsicClassPopulator" class="com.sap.ibso.eservices.facades.populators.isic.ClassPopulator"/>
+    <bean name="sagiaIsicBranchPopulator" class="com.sap.ibso.eservices.facades.populators.isic.BranchPopulator"/>
+    
+    <bean name="sagiaIsicActivityPopulator" class="com.sap.ibso.eservices.facades.populators.isic.ActivityPopulator"/>
+
+	<!-- IsicActivity Populator -->
+	<alias name="sagiaIsicActivityPopulatorConverter" alias="isicActivityConverter"/>
+	<bean id="sagiaIsicActivityPopulatorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicActivity"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaIsicActivityPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+    <alias name="defaultSagiaIsicFacade" alias="sagiaIsicFacade"/>
+    <bean id="defaultSagiaIsicFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaIsicFacade">
+        <property name="sectionService" ref="sagiaIsicSectionService" />
+        <property name="divisionService" ref="sagiaIsicDivisionService" />
+        <property name="groupService" ref="sagiaIsicGroupService"/>
+        <property name="classService" ref="sagiaIsicClassService" />
+        <property name="branchService" ref="sagiaIsicBranchService" />
+        <property name="activityService" ref="sagiaIsicActivityService" />
+        <property name="sectionPopulator" ref="sagiaIsicSectionPopulator" />
+        <property name="divisionPopulator" ref="sagiaIsicDivisionPopulator" />
+        <property name="groupPopulator" ref="sagiaIsicGroupPopulator"/>
+        <property name="classPopulator" ref="sagiaIsicClassPopulator" />
+        <property name="branchPopulator" ref="sagiaIsicBranchPopulator" />
+        <property name="activityPopulator" ref="sagiaIsicActivityPopulator" />
+		<property name="i18NService" ref="i18NService"/>
+		<property name="isicMasterDataService" ref="isicMasterDataService" />
+    </bean>
+
+	<bean name="sagiaLegalInquiryReversePopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.LegalInquiryReversePopulator"/>
+	<bean name="sagiaUploadContentReversePopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.UploadContentReversePopulator" />
+	<bean name="sagiaContentHDRReversePopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.ContentHDRReversePopulator" />
+	<bean name="sagiaAttachmantHDRReversePopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.AttachmantHDRReversePopulator" />
+	<bean name="sagiaLegalInquiryHDRReversePopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.LegalInquiryHDRReversePopulator" />
+
+	<bean name="sagiaFinancialStatementHDRReversePopulator" class="com.sap.ibso.eservices.facades.populators.zesrvEnhOData.FinancialStatementHDRReversePopulator" />
+
+	<alias name="defaultSagiaLegalConsultationFacade" alias="sagiaLegalConsultationFacade"/>
+	<bean id="defaultSagiaLegalConsultationFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaLegalConsultationFacade">
+		<property name="legalInquiryHDRService" ref="legalInquiryHDRService" />
+		<property name="attachmentHDRService" ref="attachmentHDRService" />
+        <property name="legalInquiryDropdownSetService" ref="legalInquiryDropdownSetService"/>
+        <property name="legalInquiryHDRPopulator" ref="sagiaLegalInquiryHDRPopulator" />
+        <property name="legalInquiryTypePopulator" ref="sagialegalInquiryTypePopulator" />
+        <property name="documentAttachmentService" ref="documentAttachmentService" />
+	</bean>
+	
+	<alias name="defaultSagiaFinancialStatementFacade" alias="sagiaFinancialStatementFacade"/>
+	<bean id="defaultSagiaFinancialStatementFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaFinancialStatementFacade">
+		<property name="financialStatementHDRService" ref="financialStatementHDRService" />
+		<!-- <property name="attachmentHDRService" ref="attachmentHDRService" /> -->
+        <property name="financialStatementHDRPopulator" ref="sagiaFinancialStatementHDRPopulator" />
+        <property name="documentAttachmentService" ref="documentAttachmentService" />
+	</bean>
+
+	<bean id="sagiaSupportVisitFacade" class="com.sap.ibso.eservices.facades.sagia.impl.SagiaSupportVisitFacade">
+		<property name="supportVisitSetService" ref="supportVisitSetService" />
+		<property name="sagiaSupportVisitPopulator" ref="sagiaSupportVisitPopulator" />
+		<property name="supportVisitReversePopulator" ref="sagiaSupportVisitReversePopulator" />
+		<property name="eventService" ref="eventService"/>
+		<property name="baseStoreService" ref="baseStoreService"/>
+		<property name="baseSiteService" ref="baseSiteService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="sagiaVerificationFacade" class="com.sap.ibso.eservices.facades.sagia.impl.SagiaVerificationFacade">
+		<property name="emailVerificationSetService" ref="emailVerificationSetService" />
+		<property name="emailSubscriptionFeeSetService" ref="emailSubscriptionFeeSetService" />
+		<property name="eventService" ref="eventService"/>
+		<property name="baseStoreService" ref="baseStoreService"/>
+		<property name="baseSiteService" ref="baseSiteService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+	</bean>
+
+	<bean id="sagiaSupportVisitPopulator" class="com.sap.ibso.eservices.facades.populators.SupportVisitPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="getTextPopulator" ref="sagiaGetTextPopulator"/>
+		<property name="documentAttachmentPopulator" ref="documentAttachmentPopulator"/>
+	</bean>
+	<bean id="sagiaSupportVisitReversePopulator" class="com.sap.ibso.eservices.facades.populators.SupportVisitReversePopulator">
+		<property name="documentAttachmentReversePopulator" ref="documentAttachmentReversePopulator"/>
+	</bean>
+
+	<bean id="sagiaChangingEmailFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaChangingEmailFacade" parent="sagiaCustomerFacade">
+		<property name="sagiaChangingEmailService" ref="sagiaChangingEmailService" />
+	</bean>
+
+	<bean name="reopenFacilityPopulator" class="com.sap.ibso.eservices.facades.populators.ReopenFacilityPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean name="reopenFacilityReversePopulator" class="com.sap.ibso.eservices.facades.populators.ReopenFacilityReversePopulator">
+	</bean>
+	<bean name="reopenFacilityHistoryPopulator" class="com.sap.ibso.eservices.facades.populators.ReopenFacilityHistoryPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider" />
+	</bean>
+	<bean name="reopenFacilityAddressPopulator" class="com.sap.ibso.eservices.facades.populators.ReopenFacilityAddressPopulator">
+		<property name="reopenFacilityHistoryPopulator" ref="reopenFacilityHistoryPopulator"/>
+	</bean>
+
+	<alias name="defaultSagiaReopenFacilityFacade" alias="sagiaReopenFacilityFacade"/>
+	<bean id="defaultSagiaReopenFacilityFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaReopenFacilityFacade">
+		<property name="reopenFacilityService" ref="reopenFacilityService"/>
+		<property name="reopenFacilityHistoryService" ref="reopenFacilityHistoryService"/>
+		<property name="reopenFacilityPopulator" ref="reopenFacilityPopulator"/>
+		<property name="reopenFacilityReversePopulator" ref="reopenFacilityReversePopulator"/>
+		<property name="documentAttachmentFacade" ref="sagiaDocumentAttachmentFacade"/>
+		<property name="reopenFacilityAddressPopulator" ref="reopenFacilityAddressPopulator"/>
+		<property name="mediaService" ref="mediaService"/>
+	</bean>
+
+	<bean name="documentAttachmentPopulator" class="com.sap.ibso.eservices.facades.populators.DocumentAttachmentPopulator" />
+	<bean name="documentAttachmentReversePopulator" class="com.sap.ibso.eservices.facades.populators.DocumentAttachmentReversePopulator" />
+	<alias name="defaultSagiaDocumentAttachmentFacade" alias="sagiaDocumentAttachmentFacade"/>
+	<bean id="defaultSagiaDocumentAttachmentFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaDocumentAttachmentFacade">
+		<property name="documentAttachmentService" ref="documentAttachmentService"/>
+		<property name="documentAttachmentPopulator" ref="documentAttachmentPopulator"/>
+	</bean>
+
+	<alias name="defaultSagiaDraftFacade" alias="sagiaDraftFacade"/>
+	<bean id="defaultSagiaDraftFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaDraftFacade">
+		<property name="sagiaDraftService" ref="sagiaDraftService"/>
+		<property name="draftInfoPopulator" ref="draftInfoPopulator"/>
+		<property name="draftJsonInfoPopulator" ref="draftJsonInfoPopulator"/>
+		<property name="draftJsonUtilitiesPopulator" ref="draftJsonUtilitiesPopulator"/>
+		<property name="sagiaServiceTypeCategoryService" ref="sagiaServiceTypeCategoryService"/>
+	</bean>
+
+	<bean id="realTimeScheduleReversePopulator" class="com.sap.ibso.eservices.facades.populators.realTimeOnlineSupport.RealTimeScheduleReversePopulator">
+		<property name="userService" ref="userService"/>
+		<property name="storeSessionFacade" ref="storeSessionFacade" />
+		<property name="sagiaConfigurationFacade" ref="sagiaConfigurationFacade" />
+	</bean>
+
+	<alias name="defaultRealTimeScheduleFacade" alias="realTimeScheduleFacade"/>
+	<bean id="defaultRealTimeScheduleFacade" class=" com.sap.ibso.eservices.facades.sagia.impl.DefaultRealTimeScheduleFacade">
+		<property name="realTimeScheduleReversePopulator" ref="realTimeScheduleReversePopulator"/>
+		<property name="sagiaSoapService" ref="sagiaSoapService"/>
+	</bean>
+	<alias alias="customerEmailResolutionService" name="sagiaCustomerEmailResolutionService"/>
+	<bean id="sagiaCustomerEmailResolutionService" class="com.sap.ibso.eservices.facades.process.email.service.SagiaCustomerEmailResolutionService" parent="defaultCustomerEmailResolutionService"></bean>
+
+	<bean id="shareholderInfoPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.ShareholderInfoPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider" />
+	</bean>
+    <bean id="sagiaQeemahDropdownValuePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.DropdownValuePopulator" />
+	<bean id="userRegisterPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.UserRegisterPopulator" />
+	<bean id="userRegisterReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.UserRegisterReversePopulator" />
+	<bean id="applicationStatusPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.ApplicationStatusPopulator" />
+	<bean id="telecodePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.TelecodePopulator" />
+	<bean id="organizationInformationPopulatorQ1" class="com.sap.ibso.eservices.facades.populators.zqeemah.OrganizationInformationPopulator" />
+	<bean id="organizationInformationReversePopulatorQ1" class="com.sap.ibso.eservices.facades.populators.zqeemah.OrganizationInformationReversePopulator" />
+	<bean id="shareholderInfoReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.ShareholderInfoReversePopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+	<bean id="delegateInfoReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.DelegateInfoReversePopulator" >
+	     <property name="sagiaFormatProvider" ref="sagiaFormatProvider" />
+	</bean>
+    <bean id="businessTypePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.BusinessTypePopulator" />
+	<bean id="shareholderAttachmentReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.ShareholderAttachmentReversePopulator"/>
+	<bean id="licenseTypePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.LicenseTypePopulator"/>
+    <bean id="productPopulatorQ1" class="com.sap.ibso.eservices.facades.populators.zqeemah.ProductPopulator"/>
+    <bean id="productReversePopulatorQ1" class="com.sap.ibso.eservices.facades.populators.zqeemah.ProductReversePopulator"/>
+
+	<alias name="defaultSagiaZqeemahFacade" alias="sagiaZqeemahFacade"/>
+	<bean id="defaultSagiaZqeemahFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaZqeemahFacade">
+		<property name="userRegisterPopulator" ref="userRegisterPopulator"/>
+		<property name="applicationStatusPopulator" ref="applicationStatusPopulator"/>
+		<property name="telecodePopulator" ref="telecodePopulator"/>
+		<property name="shareholderInfoPopulator" ref="shareholderInfoPopulator"/>
+		<property name="shareholderInfoReversePopulator" ref="shareholderInfoReversePopulator"/>
+		<property name="delegateInfoReversePopulator" ref="delegateInfoReversePopulator"/>
+		<property name="shareholderAttachmentReversePopulator" ref="shareholderAttachmentReversePopulator"/>
+		<property name="telecodeService" ref="telecodeService"/>
+		<property name="applicationStatusService" ref="applicationStatusService"/>
+		<property name="userRegisterService" ref="userRegisterService"/>
+		<property name="shareholderInfoService" ref="shareholderInfoService"/>
+		<property name="delegateInfoSetService" ref="delegateInfoSetService"/>
+		<property name="existingShareholderService" ref="existingShareholderService"/>
+		<property name="mofaVerificationService" ref="mofaVerificationService"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+		<property name="orgInfoService" ref="orgInfoService"/>
+        <property name="isicDetService" ref="isicDetService"/>
+        <property name="businessTypePopulator" ref="businessTypePopulator"/>
+		<property name="organizationInformationReversePopulator" ref="organizationInformationReversePopulatorQ1"/>
+        <property name="orgInfoDictionaryService" ref="orgInfoDictionaryService"/>
+        <property name="dropdownValuePopulator" ref="sagiaQeemahDropdownValuePopulator"/>
+        <property name="basicContactInformationReversePopulatorQ1" ref="basicContactInformationReversePopulatorQ1"/>
+        <property name="basicContactInformationServiceQeemah1" ref="basicContactInformationServiceQeemah1"/>
+        <property name="isicDetPsReversePopulator" ref="isicDetPsReversePopulator"/>
+        <property name="isicDetPsService" ref="isicDetPsService"/>
+        <property name="i18NService" ref="i18NService"/>
+        <property name="submitServiceQ1" ref="submitServiceQ1"/>
+        <property name="qeemahSubmitServiceQ1" ref="qeemahSubmitServiceQ1"/>
+		<property name="zqeemahISICDetailsObjectsPopulator" ref="zqeemahISICDetailsObjectsPopulator"/>
+		<property name="licenseTypePopulator" ref="licenseTypePopulator"/>
+		<property name="licenseTypeService" ref="licenseTypeService"/>
+		<property name="sagiaLicenseTypeFacade" ref="sagiaLicenseTypeFacade"/>
+		<property name="sagiaLegalStatusFacade" ref="sagiaLegalStatusFacade"/>
+		<property name="sagiaRegionFacade" ref="sagiaRegionFacade"/>
+		<property name="sagiaCityFacade" ref="sagiaCityFacade"/>
+		<property name="sagiaCountryFacade" ref="sagiaCountryFacade"/>
+        <property name="productReversePopulator" ref="productReversePopulatorQ1"/>
+		<property name="productService" ref="productServiceQeemah1"/>
+		<property name="entrepreneurFileService" ref="entrepreneurFileService"/>
+	</bean>
+
+	<bean id="sagiaLicenseTypePopulator" class="com.sap.ibso.eservices.facades.populators.SagiaLicenseTypePopulator"/>
+
+	<bean id="sagiaLicenseTypeFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaLicenseTypeFacade">
+		<property name="sagiaLicenseTypeService" ref="sagiaLicenseTypeService"/>
+		<property name="sagiaLicenseTypePopulator" ref="sagiaLicenseTypePopulator"/>
+	</bean>
+
+	<bean id="sagiaLegalStatusPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaLegalStatusPopulator"/>
+
+	<bean id="sagiaLegalStatusFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaLegalStatusFacade">
+		<property name="sagiaLegalStatusService" ref="sagiaLegalStatusService"/>
+		<property name="sagiaLegalStatusPopulator" ref="sagiaLegalStatusPopulator"/>
+	</bean>
+
+	<bean id="sagiaRegionPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaRegionPopulator"/>
+	<bean id="sagiaRhqRegionPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaRhqRegionPopulator"/>
+
+	<bean id="sagiaRegionFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaRegionFacade">
+		<property name="sagiaRegionService" ref="sagiaRegionService"/>
+		<property name="sagiaRegionPopulator" ref="sagiaRegionPopulator"/>
+	</bean>
+
+
+	<bean id="sagiaCityPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaCityPopulator"/>
+
+	<bean id="sagiaCityFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaCityFacade">
+		<property name="sagiaCityService" ref="sagiaCityService"/>
+		<property name="sagiaCityPopulator" ref="sagiaCityPopulator"/>
+	</bean>
+
+	<bean id="sagiaCountryPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaCountryPopulator"/>
+
+	<bean id="sagiaCountryFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaCountryFacade">
+		<property name="sagiaCountryService" ref="sagiaCountryService"/>
+		<property name="sagiaCountryConverter" ref="sagiaCountryConverter"/>
+		<property name="sagiaCountryPopulator" ref="sagiaCountryPopulator"/>
+	</bean>
+
+
+	<bean id="draftInfoPopulator" class="com.sap.ibso.eservices.facades.populators.draft.DraftInfoPopulator">
+		<property name="mediaService" ref="mediaService"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<bean id="draftJsonInfoPopulator" class="com.sap.ibso.eservices.facades.populators.draft.DraftJsonInfoPopulator">
+		<property name="mediaService" ref="mediaService"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<bean id="draftJsonUtilitiesPopulator" class="com.sap.ibso.eservices.facades.populators.draft.DraftJsonUtilitiesPopulator">
+		<property name="mediaService" ref="mediaService"/>
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
+	<bean id="isicDetPsReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.IsicDetPsReversePopulator"/>
+	<bean id="zqeemahISICDetailsPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.ISICDetailsPopulator" />
+	<bean id="zqeemahISICDetailsObjectsPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.ISICDetailsObjectsPopulator"/>
+	<bean id="zqeemahISICDetailsReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.ISICDetailsReversePopulator" />
+    <bean id="dropdownValuePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.DropdownValuePopulator" />
+    <bean id="zqeemahLegalStatusPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.LegalStatusPopulator" />
+	<bean id="qeemahGeneralDropdownPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.QeemahGeneralDropdownPopulator" />
+	<bean id="qeemahGeneralQstPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.QeemahGeneralQstPopulator">
+		<property name="qeemahGeneralDropdownPopulator" ref="qeemahGeneralDropdownPopulator" />
+	</bean>
+	<bean id="basicContactInfoPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.BasicContactInfoPopulator"/>
+	<bean id="basicContactInfoReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.BasicContactInfoReversePopulator"/>
+	<bean id="basicContactInformationReversePopulatorQ1" class="com.sap.ibso.eservices.facades.populators.zqeemah.BasicContactInformationReversePopulatorQ1">
+		<property ref="sagiaFormatProvider" name="sagiaFormatProvider"/>
+		<property ref="investorMappingService" name="investorMappingService"/>
+	</bean>
+	<bean id="organizationInformationPopulatorQ2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.OrganizationInformationPopulator"/>
+	<bean id="organizationInformationReversePopulatorQ2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.OrganizationInformationReversePopulator"/>
+	<bean id="shareholderPopulatorQeemah2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.ShareholderPopulator"/>
+	<bean id="shareholderReversePopulatorQeemah2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.ShareholderReversePopulator"/>
+	<bean id="organizationInformationPopulatorQeemah2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.OrganizationInformationPopulator"/>
+	<bean id="organizationInformationReversePopulatorQeemah2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.OrganizationInformationReversePopulator"/>
+
+	<bean id="productPopulatorQeemah2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.ProductPopulator"/>
+	<bean id="productReversePopulatorQeemah2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.ProductReversePopulator"/>
+
+	<bean id="productMeasurementPopulatorQeemah2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.ProductMeasurementPopulator"/>
+	<bean id="productMeasurementReversePopulatorQeemah2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.ProductMeasurementReversePopulator"/>
+
+	<bean id="financialQuestionDropdownPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.FinancialQuestionDropdownPopulator"/>
+	<bean id="financialQuestionPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.FinancialQuestionPopulator">
+		<property name="financialQuestionDropdownPopulator" ref="financialQuestionDropdownPopulator"/>
+	</bean>
+
+	<bean id="displayAttachmentDescriptionPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.DisplayAttachmentDescriptionPopulator"/>
+	<bean id="attachmentPopulatorQeemah2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.AttachmentPopulator"/>
+	<bean id="oppServiceCreationPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.OppServiceCreationPopulator">
+		<property name="attachmentPopulator" ref="attachmentPopulatorQeemah2"/>
+	</bean>
+	<bean id="serviceRequestCreationPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.ServiceRequestCreationPopulator">
+		<property name="attachmentPopulator" ref="attachmentPopulatorQeemah2"/>
+	</bean>
+	
+	<bean id="serviceRequestODataCreationPopulator" class="com.sap.ibso.eservices.facades.populators.odata.ServiceRequestODataCreationPopulator">
+	</bean>
+	<bean id="serviceRequestCreationReverseODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.ServiceRequestCreationReverseODataPopulator">
+	</bean>
+	
+	
+
+	<bean id="attachmentReversePopulatorQeemah2" class="com.sap.ibso.eservices.facades.populators.zqeemah2.AttachmentReversePopulator"/>
+	<bean id="oppServiceCreationReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.OppServiceCreationReversePopulator">
+		<property name="attachmentReversePopulator" ref="attachmentReversePopulatorQeemah2"/>
+	</bean>
+	<bean id="serviceRequestCreationReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.ServiceRequestCreationReversePopulator">
+		<property name="attachmentReversePopulator" ref="attachmentReversePopulatorQeemah2"/>
+	</bean>
+	
+	
+	
+
+	<bean id="fininvsidPostPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.FininvisidPostPopulator"/>
+	<bean id="fininvsidPostReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.FininvisidPostReversePopulator"/>
+	<bean id="invsIdPostReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.InvsIdPostReversePopulator"/>
+	<bean id="invsIdPostPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.InvsIdPostPopulator"/>
+	<bean id="diffQeemahReversePopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah2.DiffQeemahReversePopulator"/>
+
+    <bean id="sagiaODataFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaODataFacade"/>
+    
+	<alias name="defaultSagiaZqeemah2Facade" alias="sagiaZqeemah2Facade"/>
+	<bean id="defaultSagiaZqeemah2Facade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaZqeemah2Facade">
+		<property name="zqeemahISICDetailsPopulator" ref="zqeemahISICDetailsPopulator"/>
+		<property name="iSICDetailsService" ref="iSICDetailsService"/>
+		<property name="dropdownValuePopulator" ref="dropdownValuePopulator"/>
+		<property name="qeemahGeneralQstPopulator" ref="qeemahGeneralQstPopulator"/>
+		<property name="dropdownValueService" ref="dropdownValueService" />
+		<property name="qeemahGeneralQstService" ref="qeemahGeneralQstService"/>
+        <property name="legalStatusService" ref="legalStatusService"/>
+        <property name="legalStatusPopulator" ref="zqeemahLegalStatusPopulator"/>
+
+		<property name="basicContactInfoReversePopulator" ref="basicContactInfoReversePopulator"/>
+		<property name="basicContactInformationService" ref="basicContactInformationService"/>
+
+		<property name="organizationInformationReversePopulator" ref="organizationInformationReversePopulatorQeemah2"/>
+		<property name="basicOrganizationInformationService" ref="basicOrganizationInformationService"/>
+
+		<property name="shareholderReversePopulator" ref="shareholderReversePopulatorQeemah2"/>
+		<property name="shareholdersService" ref="shareholdersService"/>
+
+
+		<property name="productReversePopulator" ref="productReversePopulatorQeemah2"/>
+
+		<property name="productService" ref="productServiceQeemah2"/>
+
+		<property name="oppServiceCreationPopulator" ref="oppServiceCreationPopulator"/>
+		<property name="oppServiceCreationReversePopulator" ref="oppServiceCreationReversePopulator"/>
+
+		<property name="oppServiceCreationService" ref="oppServiceCreationService"/>
+		<property name="oppService2Service" ref="oppService2Service"/>
+
+		<property name="serviceRequestCreationPopulator" ref="serviceRequestCreationPopulator"/>
+		<property name="serviceRequestCreationReversePopulator" ref="serviceRequestCreationReversePopulator"/>
+		<property name="serviceRequestCreationDataService" ref="serviceRequestCreationDataService"/>
+		<property name="serviceRequestMDService" ref="serviceRequestMDService"/>
+
+		<property name="displayAttachmentDescriptionPopulator" ref="displayAttachmentDescriptionPopulator"/>
+		<property name="displayAttachmentDescriptionService" ref="displayAttachmentDescriptionService"/>
+		<property name="financialQuestionService" ref="financialQuestionService"/>
+		<property name="financialQuestionPopulator" ref="financialQuestionPopulator"/>
+
+		<property name="fininvsidPostPopulator" ref="fininvsidPostPopulator"/>
+		<property name="fininvsidPostReversePopulator" ref="fininvsidPostReversePopulator"/>
+		<property name="finanacialAnswersService" ref="finanacialAnswersService"/>
+		<property name="investorAnswersService" ref="investorAnswersService"/>
+		<property name="invsIdPostReversePopulator" ref="invsIdPostReversePopulator"/>
+		<property name="invsIdPostPopulator" ref="invsIdPostPopulator"/>
+		<!--<property name="invsIdPostService" ref="invsIdPostService"/>-->
+		<property name="diffQeemahService" ref="diffQeemahService"/>
+		<property name="investorMappingService" ref="investorMappingService"/>
+		<property name="i18NService" ref="i18NService"/>
+	</bean>
+
+	<bean id="contactUpdateHistoryPopulator" class="com.sap.ibso.eservices.facades.populators.account.ContactUpdateHistoryPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="companyRepresentativePopulator" ref="companyRepresentativePopulator"/>
+		<property name="servicesRequestDocumentPopulator" ref="servicesRequestDocumentPopulator"/>
+	</bean>
+
+	<bean id="companyRepresentativePopulator" class="com.sap.ibso.eservices.facades.populators.account.CompanyRepresentativePopulator">
+	</bean>
+
+	<bean id="serviceRequestPopulator" class="com.sap.ibso.eservices.facades.populators.license.ServiceRequestPopulator"/>
+
+	<bean id="governmentDocumentsCheckPopulator" class="com.sap.ibso.eservices.facades.populators.GovernmentDocumentsCheckPopulator">
+	</bean>
+
+	<bean id="removePopupALRPopulator" class="com.sap.ibso.eservices.facades.populators.RemovePopupALRPopulator">
+	</bean>
+	
+	<bean id="ticketsDataPopulator" class="com.sap.ibso.eservices.facades.populators.tickets.TicketsDataPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+		<property name="i18NMessageTranslatorService" ref="i18NMessageTranslatorService"/>
+	</bean>
+	
+	<bean id="sagiaLicenseTypeRequirementPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaLicenseTypeRequirementPopulator" >
+	</bean>
+	
+	<alias name="defaultSagiaLicenseTypeRequirementConverter" alias="sagiaLicenseTypeRequirementConverter"/>
+	<bean id="defaultSagiaLicenseTypeRequirementConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.SagiaLicenseTypeRequirementData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaLicenseTypeRequirementPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultSagiaCustomerTicketingFacade" alias="defaultTicketFacade"/>
+	<bean id="defaultSagiaCustomerTicketingFacade" class="com.sap.ibso.eservices.facade.customerticket.impl.DefaultSagiaCustomerTicketingFacade" parent="defaultCustomerTicketingFacade">
+		<property name="sagiaTicketService" ref="sagiaTicketService"/>
+		<property name="ticketListConverter" ref="ticketListConverter"/>
+	</bean>
+	
+	<alias name="defaultSagiaBlogTicketingFacade" alias="defaultBlogTicketFacade"/>
+	<bean id="defaultSagiaBlogTicketingFacade" class="com.sap.ibso.eservices.facade.customerticket.DefaultSagiaBlogTicketingFacade" parent="defaultCustomerTicketingFacade"/>
+
+
+	<alias name="defaultSagiaTicketEventPopulator" alias="ticketEventPopulator"/>
+	<bean id="defaultSagiaTicketEventPopulator" class="com.sap.ibso.eservices.facades.populators.DefaultSagiaTicketEventPopulator" parent="defaultTicketEventPopulator" />
+	
+	
+	<alias name="defaultTicketConverter" alias="ticketConverter"/>
+    <bean id="defaultTicketConverter" parent="abstractPopulatingConverter" >
+        <lookup-method name="createTarget" bean="ticketData"/>
+        <property name="populators">
+            <list>
+                <ref bean="sagiaTicketPopulator"/>
+            </list>
+        </property>
+    </bean>
+	
+	<alias name="defaultSagiaTicketPopulator" alias="sagiaTicketPopulator"/>
+	<bean id="defaultSagiaTicketPopulator" class="com.sap.ibso.eservices.facades.populators.DefaultSagiaTicketPopulator" parent="defaultTicketPopulator" >
+		<property name="blogPostContainerComponentPopulator" ref="blogPostContainerComponentPopulator"/>
+	</bean>
+	
+	<!-- Entity Information Populator -->
+	<alias name="defaultLicenseEntityInformationConverter" alias="licenseEntityInformationConverter"/>
+	<bean id="defaultLicenseEntityInformationConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.EntityInformationData"/>
+		<property name="populators">
+			<list>
+				<ref bean="licenseEntityInformationPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultLicenseEntityInformationPopulator" alias="licenseEntityInformationPopulator"/>
+	<bean id="defaultLicenseEntityInformationPopulator" class="com.sap.ibso.eservices.facades.populators.LicenseEntityInformationPopulator"/>
+	
+	<alias name="defaultLicenseEntityInformationReversePopulator" alias="licenseEntityInformationReversePopulator"/>
+	<bean id="defaultLicenseEntityInformationReversePopulator" class="com.sap.ibso.eservices.facades.populators.LicenseEntityInformationReversePopulator" />
+	
+	<!-- Delegate Information Populator -->
+	<alias name="defaultLicenseDelegateInformationConverter" alias="licenseDelegateInformationConverter"/>
+	<bean id="defaultLicenseDelegateInformationConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.DelegateInformationData"/>
+		<property name="populators">
+			<list>
+				<ref bean="licenseDelegateInformationPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<alias name="defaultLicenseDelegateInformationPopulator" alias="licenseDelegateInformationPopulator"/>
+	<bean id="defaultLicenseDelegateInformationPopulator" class="com.sap.ibso.eservices.facades.populators.LicenseDelegateInformationPopulator"/>
+	
+	<alias name="defaultLicenseDelegateInformationReversePopulator" alias="licenseDelegateInformationReversePopulator"/>
+	<bean id="defaultLicenseDelegateInformationReversePopulator" class="com.sap.ibso.eservices.facades.populators.LicenseDelegateInformationReversePopulator"/>
+	
+	<!-- Existing Shareholder Populator -->
+	<alias name="defaultLicenseExistingShareholderConverter" alias="licenseExistingShareholderConverter"/>
+	<bean id="defaultLicenseExistingShareholderConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.ExistingShareholderData"/>
+		<property name="populators">
+			<list>
+				<ref bean="licenseExistingShareholderPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultLicenseExistingShareholderPopulator" alias="licenseExistingShareholderPopulator"/>
+	<bean id="defaultLicenseExistingShareholderPopulator" class="com.sap.ibso.eservices.facades.populators.LicenseExistingShareholderPopulator"/>
+	
+	<alias name="defaultLicenseExistingShareholderReversePopulator" alias="licenseExistingShareholderReversePopulator"/>
+	<bean id="defaultLicenseExistingShareholderReversePopulator" class="com.sap.ibso.eservices.facades.populators.LicenseExistingShareholderReversePopulator"/>
+	
+	<!-- Person Shareholder Populator -->
+	<alias name="defaultLicensePersonShareholderConverter" alias="licensePersonShareholderConverter"/>
+	<bean id="defaultLicensePersonShareholderConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.PersonShareholderData"/>
+		<property name="populators">
+			<list>
+				<ref bean="licensePersonShareholderPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultLicensePersonShareholderPopulator" alias="licensePersonShareholderPopulator"/>
+	<bean id="defaultLicensePersonShareholderPopulator" class="com.sap.ibso.eservices.facades.populators.LicensePersonShareholderPopulator"/>
+	
+	<bean id="licensePersonShareholderReversePopulator" class="com.sap.ibso.eservices.facades.populators.LicensePersonShareholderReversePopulator"/>
+	
+	<!-- Organization Shareholder Populator -->
+	<alias name="defaultLicenseOrganizationShareholderConverter" alias="licenseOrganizationShareholderConverter"/>
+	<bean id="defaultLicenseOrganizationShareholderConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.OrganizationShareholderData"/>
+		<property name="populators">
+			<list>
+				<ref bean="licenseOrganizationShareholderPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultLicenseOrganizationShareholderPopulator" alias="licenseOrganizationShareholderPopulator"/>
+	<bean id="defaultLicenseOrganizationShareholderPopulator" class="com.sap.ibso.eservices.facades.populators.LicenseOrganizationShareholderPopulator"/>
+	
+	<bean id="licenseOrganizationShareholderReversePopulator" class="com.sap.ibso.eservices.facades.populators.LicenseOrganizationShareholderReversePopulator"/>
+
+	<!-- Default Shareholder Populator -->
+	<alias name="defaultLicenseShareholderConverter" alias="licenseShareholderConverter"/>
+	<bean id="defaultLicenseShareholderConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.ShareHoldersData"/>
+		<property name="populators">
+			<list>
+				<ref bean="licenseShareholderPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultLicenseShareholderPopulator" alias="licenseShareholderPopulator"/>
+	<bean id="defaultLicenseShareholderPopulator" class="com.sap.ibso.eservices.facades.populators.LicenseShareholderPopulator"/>
+	
+	<bean id="licenseShareholderReversePopulator" class="com.sap.ibso.eservices.facades.populators.LicenseShareholderReversePopulator">
+		<property name="keyGenerator" ref="shareHolderCodeGenerator"/>
+	</bean>
+
+	
+
+	<!-- Default SagiaLicense Populator -->
+	<alias name="defaultSagiaLicenseConverter" alias="sagiaLicenseConverter"/>
+	<bean id="defaultSagiaLicenseConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.SagiaLicenseData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaLicensePopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultSagiaLicensePopulator" alias="sagiaLicensePopulator"/>
+	<bean id="defaultSagiaLicensePopulator" class="com.sap.ibso.eservices.facades.populators.SagiaLicensePopulator"/>
+	
+	<bean id="sagiaLicenseReversePopulator" class="com.sap.ibso.eservices.facades.populators.SagiaLicenseReversePopulator" />
+	
+	<!-- Default Contact Person Populator -->
+	<alias name="defaultLicenseContactPersonConverter" alias="licenseContactPersonConverter"/>
+	<bean id="defaultLicenseContactPersonConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.ContactPersonsData"/>
+		<property name="populators">
+			<list>
+				<ref bean="licenseContactPersonPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Default ShareHolderPopulator Populator -->
+	<alias name="defaultShareHolderInfoODataConverter" alias="shareHolderInfoODataConverter"/>
+	<bean id="defaultShareHolderInfoODataConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.zqeemah.ShareholderInfoData"/>
+		<property name="populators">
+			<list>
+				<ref bean="shareholderInfoODataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- Default delegateInfoODataConverter Populator -->
+	<alias name="defaultDelegateInfoODataConverter" alias="delegateInfoODataConverter"/>
+	<bean id="defaultDelegateInfoODataConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.zqeemah.DelegateInfoData"/>
+		<property name="populators">
+			<list>
+				<ref bean="delegateInfoODataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<alias name="defaultDelegateInfoODataPopulator" alias="delegateInfoODataPopulator"/>
+	<bean id="defaultDelegateInfoODataPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.DelegateInfoODataPopulator"/>
+	                                             
+	<!-- Default OrganizationInformationODataPopulator Populator -->
+	<alias name="defaultOrganizationInformationODataConverter" alias="organizationInformationODataConverter"/>
+	<bean id="defaultOrganizationInformationODataConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.zqeemah.OrgInfoData"/>
+		<property name="populators">
+			<list>
+				<ref bean="organizationInformationODataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<alias name="defaultOrganizationInformationODataPopulator" alias="organizationInformationODataPopulator"/>
+	<bean id="defaultOrganizationInformationODataPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.OrganizationInformationODataPopulator"/>
+	          
+	          
+	          
+	<alias name="defaultBusinessActivityODataConverter" alias="businessActivityODataConverter"/>
+	<bean id="defaultBusinessActivityODataConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.zqeemah.BusinessActivity"/>
+		<property name="populators">
+			<list>
+				<ref bean="businessActivityODataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<alias name="defaultBusinessActivityODataPopulator" alias="businessActivityODataPopulator"/>
+	<bean id="defaultBusinessActivityODataPopulator" class="com.sap.ibso.eservices.facades.populators.zqeemah.BusinessActivityODataPopulator"/>
+	                                                 
+	
+	
+	<!-- Default BasicContactInformationODataPopulator Populator -->
+	
+	<alias name="defaultIsicInfoODataPopulatorConverter" alias="isicInfoODataPopulatorConverter"/>
+	<bean id="defaultIsicInfoODataPopulatorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.odata.IsicInfoData"/>
+		<property name="populators">
+			<list>
+				<ref bean="isicInfoODataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultShareHolderAttachmentConverter" alias="shareHolderAttachmentODataConverter"/>
+	<bean id="defaultShareHolderAttachmentConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.odata.ShareholderAttachmentData"/>
+		<property name="populators">        
+			<list>
+				<ref bean="attachmentODataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<alias name="defaultShareHolderODataConverter" alias="shareHolderODataConverter"/>
+	<bean id="defaultShareHolderODataConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.odata.ShareholderData"/>
+		<property name="populators">
+			<list>
+				<ref bean="shareHolderODataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<alias name="defaultEntityODataConverter" alias="entityODataConverter"/>
+	<bean id="defaultEntityODataConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.odata.EntityInformationData"/>
+		<property name="populators">
+			<list>
+				<ref bean="entitytInformationODataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultBasicContactInformationODataConverter" alias="basicContactInformationODataConverter"/>
+	<bean id="defaultBasicContactInformationODataConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.odata.BasicContactInformationData"/>
+		<property name="populators">
+			<list>
+				<ref bean="contactPersonODataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	<alias name="defaultContactPersonODataPopulator" alias="contactPersonODataPopulator"/>
+	<bean id="defaultContactPersonODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.ContactPersonODataPopulator"/>
+	       
+	
+	
+	<bean id="entitytInformationODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.EntitytInformationODataPopulator"/>
+	     
+	<bean id="shareHolderODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.ShareHolderODataPopulator"/>
+	 
+	<bean id="isicInfoODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.IsicInfoODataPopulator"/>
+	
+	<bean id="attachmentODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.AttachmentODataPopulator"/>
+	 
+	 
+	 
+	<alias name="defaultLicenseContactPersonPopulator" alias="licenseContactPersonPopulator"/>
+	<bean id="defaultLicenseContactPersonPopulator" class="com.sap.ibso.eservices.facades.populators.LicenseContactPersonPopulator"/>
+	
+	<alias name="defaultShareholderInfoODataPopulator" alias="shareholderInfoODataPopulator"/>
+	<bean id="defaultShareholderInfoODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.ShareHolderODataPopulator"/>
+	                                             
+	
+	
+	<bean id="licenseContactPersonReversePopulator" class="com.sap.ibso.eservices.facades.populators.LicenseContactPersonReversePopulator"/>
+	
+	<alias name="defaultSagiaLicenseApplyFacade" alias="sagiaLicenseApplyFacade"/>
+	<bean id="defaultSagiaLicenseApplyFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefautSagiaLicenseApplyFacade"/>
+	
+	<bean id="sagiaMediaReversePopulator" class="com.sap.ibso.eservices.facades.populators.SagiaMediaReversePopulator" />
+	
+	
+	<bean id="sagiaPublishLicencesJob"
+		  class="com.sap.ibso.eservices.facade.jobs.SagiaPublishLicencesJob" parent="abstractJobPerformable">
+	</bean>
+	
+	
+	 
+    <bean id="sagiaSaveEntityInfo" class="com.sap.ibso.eservices.facade.actions.SagiaSaveEntityInfo" parent="abstractAction">
+    </bean>
+    
+   
+    
+    <bean id="sagiaCreateShareholders" class="com.sap.ibso.eservices.facade.actions.SagiaCreateShareholders" parent="abstractAction">
+    </bean>
+    
+
+    <bean id="sagiaSaveContactPerson" class="com.sap.ibso.eservices.facade.actions.SagiaSaveContactPerson" parent="abstractAction">
+    </bean>
+    
+    <bean id="sagiaSaveBusinessActivities" class="com.sap.ibso.eservices.facade.actions.SagiaSaveBusinessActivities" parent="abstractAction">
+    </bean>
+	
+	<bean id="twoFactorAuthenticationEmailContext" class="com.sap.ibso.eservices.facades.process.email.context.TwoFactorAuthenticationEmailContext" parent="forgottenPasswordEmailContext" scope="prototype" />
+
+	<alias name="sagiaCustomerTicketingFacadeImpl" alias="sagiaTicketingFacade"/>
+	<bean id="sagiaCustomerTicketingFacadeImpl" class="com.sap.ibso.eservices.facade.customerticket.impl.SagiaCustomerTicketingFacadeImpl" >
+		<property name="sagiaTicketService" ref="sagiaTicketService"/>
+		<property name="ticketListConverter" ref="ticketListConverter"/>
+	</bean>
+	
+	<!-- Start InvestSaudiPortalFacades spring.xml -->
+	
+	<context:component-scan base-package="com.investsaudi.portal.facades" />
+
+	<bean id="investSaudiCategoryFacade" class="com.investsaudi.portal.facades.category.impl.InvestSaudiCategoryFacadeImpl"/>
+
+	<bean id="investSaudiProductFacade" class="com.investsaudi.portal.facades.product.impl.InvestSaudiProductFacadeImpl"/>
+
+	<bean id="investSaudiOpportunityPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiOpportunityPopulator">
+		<property name="imageConverter" ref="imageConverter"/>
+	</bean>
+
+	<bean id="investSaudiSuccessStoryPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiSuccessStoryPopulator">
+		<property name="imageConverter" ref="imageConverter"/>
+	</bean>
+
+
+	<alias name="investSaudiCategoryPopulator" alias="categoryPopulator"/>
+	<bean id="investSaudiCategoryPopulator"
+		  class="com.investsaudi.portal.facades.category.populator.InvestSaudiCategoryPopulator"
+		  parent="defaultCategoryPopulator">
+	</bean>
+
+	<bean id="contactTicketSubjectPoulator" class="com.investsaudi.portal.facades.contact.populator.ContactTicketSubjectPopulator" />
+	<bean id="contactTicketSubjectConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.customerticketingfacades.data.ContactTicketSubjectData"/>
+		<property name="populators">
+			<list>
+				<ref bean="contactTicketSubjectPoulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="contactTicketFacade" class="com.investsaudi.portal.facades.contact.ContactTicketFacade" parent="defaultCustomerTicketingFacade" />
+
+	<bean id="investSaudiSiteMapContentPagePopulator" class="com.investsaudi.portal.facades.sitemap.populator.InvestSaudiSiteMapContentPagePopulator"/>
+
+	<bean id="investSaudiSiteMapProductPagePopulator" class="com.investsaudi.portal.facades.sitemap.populator.InvestSaudiSiteMapProductPagePopulator"/>
+
+	<bean id="investSaudiSiteMapCategoryPagePopulator" class="com.investsaudi.portal.facades.sitemap.populator.InvestSaudiSiteMapCategoryPagePopulator"/>
+
+	<bean id="investSaudiSiteMapFacadeImpl" class="com.investsaudi.portal.facades.sitemap.impl.InvestSaudiSiteMapFacadeImpl"/>
+
+	<bean id="sectorCategoryModelUrlResolver" class="de.hybris.platform.commerceservices.url.impl.DefaultCategoryModelUrlResolver">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="commerceCategoryService" ref="commerceCategoryService"/>
+		<property name="baseSiteService" ref="baseSiteService"/>
+		<property name="pattern" value="/sectors-opportunities/{category-code}"/>
+	</bean>
+
+	<bean id="investSaudiProductModelUrlResolver" class="com.investsaudi.portal.facades.product.InvestSaudiProductModelUrlResolver">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="commerceCategoryService" ref="commerceCategoryService"/>
+		<property name="baseSiteService" ref="baseSiteService"/>
+		<property name="defaultPattern" value="/sectors-opportunities/{category-code}/{product-code}"/>
+		<property name="productAndCategoryHelper" ref="productAndCategoryHelper"/>
+	</bean>
+
+	<!-- <bean id="investSaudiWebinarRegistrationFacade" class="com.investsaudi.portal.facades.webinar.impl.InvestSaudiWebinarRegistrationFacadeImpl"/> -->
+
+
+	<bean id="cmsInvestSaudiContainerTypesAttributePopulator" class="com.investsaudi.portal.facades.cms.populators.CMSInvestSaudiContainerTypesAttributePopulator">
+		<property name="attributeDescriptorModelHelperService" ref="attributeDescriptorModelHelperService"/>
+		<property name="i18nComponentTypePopulator" ref="i18nComponentTypePopulator" />
+		<property name="typeService" ref="typeService" />
+		<property name="componentTypeDataFactory" ref="componentTypeDataFactory" />
+	</bean>
+
+
+	<bean depends-on="cmsAttributePredicatePopulatorListMap" parent="mapMergeDirective">
+		<property name="key">
+			<bean parent="cmsAssignableFromAttributePredicate">
+				<property name="typeCode" value="CMSItem" />
+			</bean>
+		</property>
+		<property name="value">
+			<list merge="true">
+				<ref bean="cmsInvestSaudiContainerTypesAttributePopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- <bean id="investSaudiWebinarRegistrationContext"
+		  class="com.investsaudi.portal.facades.process.email.context.InvestSaudiWebinarRegistrationContext"
+		  parent="abstractEmailContext"
+		  scope="prototype">
+	</bean> -->
+
+	<bean id="investSaudiNewsComponentGalleryImagesStructureDirective" depends-on="cmsStructureTypeBlacklistAttributeMap" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiNewsComponent" />
+		<property name="value" value="galleryImages" />
+	</bean>
+
+	<bean id="investSaudiNewsComponentGalleryImagesStructureInvoke" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" depends-on="investSaudiNewsComponentGalleryImagesStructureDirective">
+		<property name="targetObject" ref="cmsGenericComposedTypeToStructureConverter" />
+		<property name="targetMethod" value="afterPropertiesSet" />
+	</bean>
+
+	<bean id="investSaudiNewsComponentGalleryImagesTypeDirective" depends-on="cmsTypeBlacklistedAttributeMap" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiNewsComponent" />
+		<property name="value" value="galleryImages" />
+	</bean>
+
+	<bean id="investSaudiNewsComponentGalleryImagesTypeInvoke" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" depends-on="investSaudiNewsComponentGalleryImagesTypeDirective">
+		<property name="targetObject" ref="cmsComposedTypeToAttributeCollectionConverter" />
+		<property name="targetMethod" value="afterPropertiesSet" />
+	</bean>
+	
+	<!-- InvestSaudiPortalFacades spring.xml ends -->
+	
+	
+		
+	<!-- Economic Highlights Changes Starts -->
+<bean id="economicFacade" class="com.sap.ibso.eservices.facades.sagia.economic.impl.DefaultEconomicFacade">
+		<property name="economicService" ref="economicService" />
+		<property name="realGDPConverter" ref="realGDPConverter" />
+		<property name="unemploymentConverter" ref="unemploymentConverter" />
+		<property name="tradeBalanceConverter" ref="tradeBalanceConverter" />
+		<property name="totalReserveAssetsConverter" ref="totalReserveAssetsConverter" />
+		<property name="saudiStockMarketConverter" ref="saudiStockMarketConverter" />
+		<property name="populationConverter" ref="populationConverter" />
+		<property name="moneySupplyConverter" ref="moneySupplyConverter" />
+		<property name="interestRateConverter" ref="interestRateConverter" />
+		<property name="inflationConverter" ref="inflationConverter" />
+		<property name="governmentReserveConverter" ref="governmentReserveConverter" />
+		<property name="governmentDebtConverter" ref="governmentDebtConverter" />
+		<property name="gDPPerCapitaConverter" ref="gDPPerCapitaConverter" />
+		<property name="fDIinflowConverter" ref="fDIinflowConverter" />
+		<property name="exchangeRateConverter" ref="exchangeRateConverter" />
+		<property name="creditRatingConverter" ref="creditRatingConverter" />
+		<property name="budgetDeficitConverter" ref="budgetDeficitConverter" />
+	</bean>
+	
+	<bean id="realGDPConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.RealGDPData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicRealGDPPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="unemploymentConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.UnemploymentData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicUnemploymentPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="tradeBalanceConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.TradeBalanceData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicTradeBalancePopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="totalReserveAssetsConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.TotalReserveAssetsData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicTotalReserveAssetsPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="saudiStockMarketConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SaudiStockMarketData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicSaudiStockMarketPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="populationConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.PopulationData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicPopulationPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="moneySupplyConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.MoneySupplyData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicMoneySupplyPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="interestRateConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InterestRateData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicInterestRatePopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="inflationConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InflationData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicInflationPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="governmentReserveConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GovernmentReserveData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicGovernmentReservePopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="governmentDebtConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GovernmentDebtData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicGovernmentDebtPPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="gDPPerCapitaConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GDPPerCapitaData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicGDPPerCapitaPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="fDIinflowConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.FDIinflowData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicFDIinflowPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="exchangeRateConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.ExchangeRateData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicExchangeRatePopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="creditRatingConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.CreditRatingData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicCreditRatingPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="budgetDeficitConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.BudgetDeficitData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicBudgetDeficitPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+
+	
+	<bean id="economicRealGDPPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.RealGDPPopulator" >	</bean>
+	<bean id="economicUnemploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.UnemploymentPopulator" >	</bean>
+	<bean id="economicTradeBalancePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.TradeBalancePopulator" >	</bean>
+	<bean id="economicTotalReserveAssetsPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.TotalReserveAssetsPopulator" >	</bean>
+	<bean id="economicSaudiStockMarketPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SaudiStockMarketPopulator" >	</bean>
+	<bean id="economicPopulationPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.PopulationPopulator" >	</bean>
+	<bean id="economicMoneySupplyPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.MoneySupplyPopulator" >	</bean>
+	<bean id="economicInterestRatePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.InterestRatePopulator" >	</bean>
+	<bean id="economicInflationPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.InflationPopulator" >	</bean>
+	<bean id="economicGovernmentReservePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GovernmentReservePopulator" >	</bean>
+	<bean id="economicGovernmentDebtPPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GovernmentDebtPopulator" >	</bean>
+	<bean id="economicGDPPerCapitaPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GDPPerCapitaPopulator" >	</bean>
+	<bean id="economicFDIinflowPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.FDIinflowPopulator" >	</bean>
+	<bean id="economicExchangeRatePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.ExchangeRatePopulator" >	</bean>
+	<bean id="economicCreditRatingPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.CreditRatingPopulator" >	</bean>
+	<bean id="economicBudgetDeficitPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.BudgetDeficitPopulator" >	</bean>
+	
+	<bean id="saInternationalIndicesFacade" class="com.sap.ibso.eservices.facades.sagia.economic.impl.DefaultSAInternationalIndicesFacade">
+		<property name="saInternationalIndicesService" ref="saInternationalIndicesService" />
+		<property name="easeOfProtectingMinorityInvestorsConverter" ref="easeOfProtectingMinorityInvestorsConverter"/>
+		<property name="easeOfStartingBusinessConverter" ref="easeOfStartingBusinessConverter" />
+		<property name="economicFreedomIndexConverter" ref="economicFreedomIndexConverter" />
+		<property name="eGovernmentDevelopmentIndexConverter" ref="eGovernmentDevelopmentIndexConverter" />
+		<property name="globalCompetitivenessReportConverter" ref="globalCompetitivenessReportConverter" />
+		<property name="globalInnovationIndexConverter" ref="globalInnovationIndexConverter" />
+		<property name="legatumProsperityIndexConverter" ref="legatumProsperityIndexConverter" />
+		<property name="logisticsPerformanceIndexConverter" ref="logisticsPerformanceIndexConverter" />
+	</bean>
+	
+	<bean id="easeOfProtectingMinorityInvestorsConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicEaseOfProtectingMinorityInvestorsPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+		<bean id="easeOfStartingBusinessConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicEaseOfStartingBusinessPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+		<bean id="economicFreedomIndexConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicEconomicFreedomIndexPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+		<bean id="eGovernmentDevelopmentIndexConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicEGovernmentDevelopmentIndexPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+		<bean id="globalCompetitivenessReportConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicGlobalCompetitivenessReportPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+		<bean id="globalInnovationIndexConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicGlobalInnovationIndexPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+		<bean id="legatumProsperityIndexConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicLegatumProsperityIndexPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+		<bean id="logisticsPerformanceIndexConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="economicLogisticsPerformanceIndexPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="economicEaseOfProtectingMinorityInvestorsPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EaseOfProtectingMinorityInvestorsPopulator" >	</bean>
+	<bean id="economicEaseOfStartingBusinessPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EaseOfStartingBusinessPopulator" >	</bean>
+	<bean id="economicEconomicFreedomIndexPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EconomicFreedomIndexPopulator" >	</bean>
+	<bean id="economicEGovernmentDevelopmentIndexPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EGovernmentDevelopmentIndexPopulator" >	</bean>
+	<bean id="economicGlobalCompetitivenessReportPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GlobalCompetitivenessReportPopulator" >	</bean>
+	<bean id="economicGlobalInnovationIndexPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GlobalInnovationIndexPopulator" >	</bean>
+	<bean id="economicLegatumProsperityIndexPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.LegatumProsperityIndexPopulator" >	</bean>
+	<bean id="economicLogisticsPerformanceIndexPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.LogisticsPerformanceIndexPopulator" >	</bean>
+	
+	<bean id="infraLogisticsFacade" class="com.sap.ibso.eservices.facades.sagia.economic.impl.DefaultInfraLogisticsFacade">
+		<property name="infraLogisticsService" ref="infraLogisticsService" />
+		<property name="infraLogisticsLandingConverter" ref="infraLogisticsLandingConverter" />
+		<property name="infrastructureConverter" ref="infrastructureConverter" />
+		<property name="lengthOfNetworkConverter" ref="lengthOfNetworkConverter" />
+		<property name="employmentConverter" ref="employmentConverter" />
+		<property name="totalAreaConverter" ref="totalAreaConverter" />
+		<property name="housingFacilitiesConverter" ref="housingFacilitiesConverter" />
+		<property name="industrialCitiesConverter" ref="industrialCitiesConverter" />
+		<property name="privateCitiesConverter" ref="privateCitiesConverter" />
+	</bean>
+	
+	<bean id="infraLogisticsLandingConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InfraLogisticsLandingData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="infraLogisticsLandingPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="infrastructureConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InfrastructureData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="infrastructurePopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="lengthOfNetworkConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.LengthOfNetworkData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="lengthOfNetworkPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="employmentConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.EmploymentData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="employmentPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="totalAreaConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.TotalAreaData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="totalAreaPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="housingFacilitiesConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.HousingFacilitiesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="housingFacilitiesPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="industrialCitiesConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.IndustrialCitiesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="industrialCitiesPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="privateCitiesConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.PrivateCitiesData"/>
+		
+		<property name="populators">
+			<list>
+				<ref bean="privateCitiesPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="infraLogisticsLandingPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.InfraLogisticsLandingPopulator" >	</bean>
+	<bean id="infrastructurePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.InfrastructurePopulator" >	</bean>
+	<bean id="lengthOfNetworkPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.LengthOfNetworkPopulator" >	</bean>
+	<bean id="employmentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EmploymentPopulator" >	</bean>
+	<bean id="totalAreaPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.TotalAreaPopulator" >	</bean>
+	<bean id="housingFacilitiesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.HousingFacilitiesPopulator" >	</bean>
+	<bean id="industrialCitiesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.IndustrialCitiesPopulator" >	</bean>
+	<bean id="privateCitiesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.PrivateCitiesPopulator" >	</bean>
+	
+	<bean id="saudiEconomicSectorsFacade" class="com.sap.ibso.eservices.facades.sagia.economic.impl.DefaultSaudiEconomicSectorsFacade">
+		<property name="saudiEconomicSectorsService" ref="saudiEconomicSectorsService" />
+		<property name="realSectorConverter" ref="realSectorConverter"/>
+		<property name="monetarySectorConverter" ref="monetarySectorConverter" />
+		<property name="fiscalSectorConverter" ref="fiscalSectorConverter" />
+		<property name="externalSectorConverter" ref="externalSectorConverter" />
+		<property name="graduatesByDegreeConverter" ref="graduatesByDegreeConverter" />
+		<property name="saudiPopulationConverter" ref="saudiPopulationConverter" />
+		<property name="populationByRegionConverter" ref="populationByRegionConverter" />
+		<property name="saudiEmploymentByRegionConverter" ref="saudiEmploymentByRegionConverter" />
+		<property name="nonSaudiEmploymentByRegionConverter" ref="nonSaudiEmploymentByRegionConverter" />
+		<property name="saudiEmploymentConverter" ref="saudiEmploymentConverter" />
+		<property name="nonSaudiEmploymentConverter" ref="nonSaudiEmploymentConverter" />
+		<property name="avgMonthlyWagesConverter" ref="avgMonthlyWagesConverter" />
+		<property name="growthrateWagesConverter" ref="growthrateWagesConverter" />
+		<property name="labourPrivateSectorConverter" ref="labourPrivateSectorConverter" />
+		<property name="saudiUnemploymentConverter" ref="saudiUnemploymentConverter" />
+		<property name="nonSaudiUnemploymentConverter" ref="nonSaudiUnemploymentConverter" />
+		<property name="overallUnemploymentConverter" ref="overallUnemploymentConverter" />
+	</bean>
+	
+	<bean id="realSectorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.RealSectorData"/>
+		<property name="populators">
+			<list>
+				<ref bean="realSectorPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="realSectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.RealSectorPopulator" >	</bean>
+	
+	<bean id="monetarySectorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.MonetarySectorData"/>
+		<property name="populators">
+			<list>
+				<ref bean="monetarySectorPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="monetarySectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.MonetarySectorPopulator" >	</bean>
+	
+	<bean id="fiscalSectorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.FiscalSectorData"/>
+		<property name="populators">
+			<list>
+				<ref bean="fiscalSectorPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="fiscalSectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.FiscalSectorPopulator" >	</bean>
+	
+	<bean id="externalSectorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.ExternalSectorData"/>
+		<property name="populators">
+			<list>
+				<ref bean="externalSectorPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="externalSectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.ExternalSectorPopulator" >	</bean>
+	
+	<bean id="graduatesByDegreeConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GraduatesByDegreeData"/>
+		<property name="populators">
+			<list>
+				<ref bean="graduatesByDegreePopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="graduatesByDegreePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GraduatesByDegreePopulator" >	</bean>
+	
+	<bean id="saudiPopulationConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SaudiPopulationData"/>
+		<property name="populators">
+			<list>
+				<ref bean="saudiPopulationPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="saudiPopulationPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SaudiPopulationPopulator" >	</bean>
+	
+	<bean id="populationByRegionConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.PopulationByRegionData"/>
+		<property name="populators">
+			<list>
+				<ref bean="populationByRegionPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="populationByRegionPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.PopulationByRegionPopulator" >	</bean>
+	
+	<bean id="saudiEmploymentByRegionConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SaudiEmploymentByRegionData"/>
+		<property name="populators">
+			<list>
+				<ref bean="saudiEmploymentByRegionPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="saudiEmploymentByRegionPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SaudiEmploymentByRegionPopulator" >	</bean>
+	
+	<bean id="nonSaudiEmploymentByRegionConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.NonSaudiEmploymentByRegionData"/>
+		<property name="populators">
+			<list>
+				<ref bean="nonSaudiEmploymentByRegionPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="nonSaudiEmploymentByRegionPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.NonSaudiEmploymentByRegionPopulator" >	</bean>
+	
+	<bean id="saudiEmploymentConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SaudiEmploymentData"/>
+		<property name="populators">
+			<list>
+				<ref bean="saudiEmploymentPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="saudiEmploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SaudiEmploymentPopulator" >	</bean>
+	
+	<bean id="nonSaudiEmploymentConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.NonSaudiEmploymentData"/>
+		<property name="populators">
+			<list>
+				<ref bean="nonSaudiEmploymentPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="nonSaudiEmploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.NonSaudiEmploymentPopulator" >	</bean>
+	
+	<bean id="avgMonthlyWagesConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.AvgMonthlyWagesData"/>
+		<property name="populators">
+			<list>
+				<ref bean="avgMonthlyWagesPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="avgMonthlyWagesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.AvgMonthlyWagesPopulator" >	</bean>
+	
+	<bean id="growthrateWagesConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GrowthrateWagesData"/>
+		<property name="populators">
+			<list>
+				<ref bean="growthrateWagesPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="growthrateWagesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GrowthrateWagesPopulator" >	</bean>
+	
+	<bean id="labourPrivateSectorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.LabourPrivateSectorData"/>
+		<property name="populators">
+			<list>
+				<ref bean="labourPrivateSectorPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="labourPrivateSectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.LabourPrivateSectorPopulator" >	</bean>
+	
+	<bean id="saudiUnemploymentConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SaudiUnemploymentData"/>
+		<property name="populators">
+			<list>
+				<ref bean="saudiUnemploymentPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="saudiUnemploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SaudiUnemploymentPopulator" >	</bean>
+	
+	<bean id="nonSaudiUnemploymentConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.NonSaudiUnemploymentData"/>
+		<property name="populators">
+			<list>
+				<ref bean="nonSaudiUnemploymentPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="nonSaudiUnemploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.NonSaudiUnemploymentPopulator" >	</bean>
+	
+	<bean id="overallUnemploymentConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.OverallUnemploymentData"/>
+		<property name="populators">
+			<list>
+				<ref bean="overallUnemploymentPopulator"/>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="overallUnemploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.OverallUnemploymentPopulator" >	</bean>
+	
+	
+	<bean id="investmentDataFacade" class="com.sap.ibso.eservices.facades.sagia.economic.impl.DefaultInvestmentDataFacade">
+		<property name="investmentDataService" ref="investmentDataService" />
+		<property name="annualValueConverter" ref="annualValueConverter"/>
+		<property name="annualGrowthConverter" ref="annualGrowthConverter" />
+		<property name="quarterlyValueConverter" ref="quarterlyValueConverter" />
+		<property name="quarterlyGrowthConverter" ref="quarterlyGrowthConverter" />
+		<property name="foreignInvestmentValueConverter" ref="foreignInvestmentValueConverter" />
+		<property name="foreignInvestmentGrowthConverter" ref="foreignInvestmentGrowthConverter" />
+		<property name="annualFundAssetsConverter" ref="annualFundAssetsConverter" />
+		<property name="quarterlyFundAssetsConverter" ref="quarterlyFundAssetsConverter" />
+		<property name="numberOfCommercialRegisterConverter" ref="numberOfCommercialRegisterConverter" />
+		<property name="capitalOfCommercialRegisterConverter" ref="capitalOfCommercialRegisterConverter" />
+		<property name="capitalInformationConverter" ref="capitalInformationConverter" />
+	</bean>
+	
+	<bean id="annualValueConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.AnnualValueData"/>
+		<property name="populators">
+			<list>
+				<ref bean="annualValuePopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="annualValuePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.AnnualValuePopulator" >	</bean>
+	
+	
+	<bean id="annualGrowthConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.AnnualGrowthData"/>
+		<property name="populators">
+			<list>
+				<ref bean="annualGrowthPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="annualGrowthPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.AnnualGrowthPopulator" >	</bean>
+	
+	<bean id="quarterlyValueConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.QuarterlyValueData"/>
+		<property name="populators">
+			<list>
+				<ref bean="quarterlyValuePopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="quarterlyValuePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.QuarterlyValuePopulator" >	</bean>
+	
+	<bean id="quarterlyGrowthConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.QuarterlyGrowthData"/>
+		<property name="populators">
+			<list>
+				<ref bean="quarterlyGrowthPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="quarterlyGrowthPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.QuarterlyGrowthPopulator" >	</bean>
+	
+	<bean id="foreignInvestmentValueConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.ForeignInvestmentValueData"/>
+		<property name="populators">
+			<list>
+				<ref bean="foreignInvestmentValuePopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="foreignInvestmentValuePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.ForeignInvestmentValuePopulator" >	</bean>
+	
+	<bean id="foreignInvestmentGrowthConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.ForeignInvestmentGrowthData"/>
+		<property name="populators">
+			<list>
+				<ref bean="foreignInvestmentGrowthPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="foreignInvestmentGrowthPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.ForeignInvestmentGrowthPopulator" >	</bean>
+	
+	
+	<bean id="annualFundAssetsConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.AnnualFundAssetsData"/>
+		<property name="populators">
+			<list>
+				<ref bean="annualFundAssetsPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="annualFundAssetsPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.AnnualFundAssetsPopulator" >	</bean>
+	
+	<bean id="quarterlyFundAssetsConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.QuarterlyFundAssetsData"/>
+		<property name="populators">
+			<list>
+				<ref bean="quarterlyFundAssetsPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="quarterlyFundAssetsPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.QuarterlyFundAssetsPopulator" >	</bean>
+	
+	<bean id="numberOfCommercialRegisterConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.NumberOfCommercialRegisterData"/>
+		<property name="populators">
+			<list>
+				<ref bean="numberOfCommercialRegisterPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="numberOfCommercialRegisterPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.NumberOfCommercialRegisterPopulator" >	</bean>
+	
+	<bean id="capitalOfCommercialRegisterConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.CapitalOfCommercialRegisterData"/>
+		<property name="populators">
+			<list>
+				<ref bean="capitalOfCommercialRegisterPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="capitalOfCommercialRegisterPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.CapitalOfCommercialRegisterPopulator" >	</bean>
+	
+	<bean id="capitalInformationConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.CapitalInformationData"/>
+		<property name="populators">
+			<list>
+				<ref bean="capitalInformationPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="capitalInformationPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.CapitalInformationPopulator" >	</bean>
+	
+	<!-- Economic Highlights Changes Ends -->
+	
+	<!-- SiteMap Changes Starts -->
+	
+	<bean id="investSaudiSiteMapPopulator"  class="com.sap.ibso.eservices.facades.populators.InvestSaudiSiteMapPopulator" >
+		<property name="investSaudiSiteMapLevel2Converter" ref="investSaudiSiteMapLevel2Converter"/>
+	</bean>
+
+	<bean id="investSaudiSiteMapConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InvestSaudiSiteMapData"/>
+		<property name="populators">
+			<list>
+				<ref bean="investSaudiSiteMapPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="investSaudiSiteMapLevel2Populator"  class="com.sap.ibso.eservices.facades.populators.InvestSaudiSiteMapLevel2Populator" >
+        <property name="investSaudiSiteMapLevel3Converter" ref="investSaudiSiteMapLevel3Converter"/>
+    </bean>
+
+	<bean id="investSaudiSiteMapLevel2Converter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InvestSaudiSiteMapLevel2Data"/>
+		<property name="populators">
+			<list>
+				<ref bean="investSaudiSiteMapLevel2Populator"/>
+			</list>
+		</property>
+	</bean>
+
+    <bean id="investSaudiSiteMapLevel3Populator"  class="com.sap.ibso.eservices.facades.populators.InvestSaudiSiteMapLevel3Populator" >
+        <property name="investSaudiSiteMapLevel4Converter" ref="investSaudiSiteMapLevel4Converter"/>
+    </bean>
+
+    <bean id="investSaudiSiteMapLevel3Converter" parent="abstractPopulatingConverter">
+        <property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InvestSaudiSiteMapLevel3Data"/>
+        <property name="populators">
+            <list>
+                <ref bean="investSaudiSiteMapLevel3Populator"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="investSaudiSiteMapLevel4Populator"  class="com.sap.ibso.eservices.facades.populators.InvestSaudiSiteMapLevel4Populator" > </bean>
+
+    <bean id="investSaudiSiteMapLevel4Converter" parent="abstractPopulatingConverter">
+        <property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InvestSaudiSiteMapLevel4Data"/>
+        <property name="populators">
+            <list>
+                <ref bean="investSaudiSiteMapLevel4Populator"/>
+            </list>
+        </property>
+    </bean>
+	
+	<!-- SiteMap Changes Ends -->
+	
+	
+	
+</beans>

@@ -1,0 +1,235 @@
+/* Color palette */
+
+@apple: #5cc83b;
+@dark: #1c242c;
+@pale-grey: #e6e6ed;
+@steel-grey: #7b838c;
+@dark-grey-blue: #32465a;
+
+//
+// General variables
+
+// Colors
+@color-primary: #5cc83b;
+@color-primary-dark: darken(@color-primary, 15%);
+@color-secondary: #333a4b;
+@color-secondary-dark: darken(@color-secondary, 15%);
+@color-warning: #d0021b;
+@color-warning-dark: darken(@color-warning, 15%);
+
+@color-black: #000; 
+@color-grey-dark: #1c242c;
+@color-grey: #7b838c;
+@color-grey-light: #e6e6ed;
+@color-grey-lightest: #fbfbfb;
+@color-white: #fff;
+
+@color-text: @color-black;
+@color-link: @color-primary;
+@color-link-hover: darken(@color-link, 25%);
+@color-link-focus: @color-link;
+
+
+// Fonts
+@font-family-sans-serif: 'MyriadHebrew';
+@font-family-serif: serif;
+@font-size-text: 1.4rem;
+
+@font-weight-light: 300;
+@font-weight-text: 400;
+@font-weight-bold: 700;
+
+@font-size-h1: 3rem;
+@font-size-h2: 3rem;
+@font-size-h3: 3rem;
+@font-size-h4: 3rem;
+@font-size-h5: 3rem;
+@font-size-h6: 3rem;
+
+@font-weight-h1: @font-weight-light;
+
+
+// Borders
+@border-radius-xs: 2px;
+@border-radius-sm: 14px;
+@border-radius-md: 16px;
+
+@transition-base: 200ms;
+
+
+//
+// Component variables
+
+// Buttons
+@btn-color: @color-text;
+
+@btn-color-primary: @color-white;
+@btn-color-primary-hover: @btn-color-primary;
+@btn-background-primary: @color-primary;
+@btn-background-primary-hover: @color-primary-dark;
+@btn-outline-color-primary: @color-primary;
+@btn-outline-color-primary-hover: @color-primary-dark;
+@btn-outline-border-color-primary: @color-primary;
+@btn-outline-border-color-primary-hover: @color-primary-dark;
+@btn-outline-background-primary: @white;
+@btn-outline-background-primary-hover: @btn-outline-background-primary;
+
+@btn-color-secondary: @color-white;
+@btn-color-secondary-hover: @btn-color-secondary;
+@btn-background-secondary: @color-secondary;
+@btn-background-secondary-hover: @color-secondary-dark;
+@btn-outline-color-secondary: @color-secondary;
+@btn-outline-color-secondary-hover: @color-secondary-dark;
+@btn-outline-border-color-secondary: @color-secondary;
+@btn-outline-border-color-secondary-hover: @color-secondary-dark;
+@btn-outline-background-secondary: @white;
+@btn-outline-background-secondary-hover: @btn-outline-background-secondary;
+
+@btn-color-warning: @color-white;
+@btn-color-warning-hover: @btn-color-warning;
+@btn-background-warning: @color-warning;
+@btn-background-warning-hover: @color-warning-dark;
+@btn-outline-color-warning: @color-warning;
+@btn-outline-color-warning-hover: @color-warning-dark;
+@btn-outline-border-color-warning: @color-warning;
+@btn-outline-border-color-warning-hover: @color-warning-dark;
+@btn-outline-background-warning: @white;
+@btn-outline-background-warning-hover: @btn-outline-background-warning;
+
+@btn-outline-border-width: 1px;
+@btn-outline-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.06);
+
+@btn-color-link: @color-grey;
+
+@btn-font-size-small: 1.4rem;
+@btn-font-size-base: 1.3rem;
+
+@btn-padding-small: 7px 15px;
+@btn-padding-base: 11px 16px;
+
+@btn-icon-max-height-small: 21px;
+@btn-icon-max-height-base: 19px;
+@btn-icon-margin-left-small: 2px;
+@btn-icon-margin-left-base: 4px;
+
+
+// Toggles
+@toggle-radius: 20px;
+@toggle-background: @white;
+
+@toggle-text-padding: 11px 26px;
+@toggle-font-size: 1.5rem;
+@toggle-color: #a1a1a1;
+@toggle-active-background-color: @color-primary;
+@toggle-active-color: #fff;
+@toggle-active-font-weight: @font-weight-bold;
+
+@toggle-icon-padding: 3px 10px;
+
+
+// Form
+@form-group-background-color: @white;
+@form-group-background-color-hover: #ebedee;
+
+@input-text-border: 1px solid #dfdfdf;
+@input-text-box-shadow: inset 0 1px 3px 0 rgba(241, 242, 242, 0.6);
+@input-text-color: @color-grey;
+@input-text-font-size: 1.4rem;
+
+@label-radio-button-background-color: @white;
+@label-radio-button-color: #9b9b9b;
+@label-radio-button-active-color: @color-secondary;
+@label-radio-button-active-font-weight: @font-weight-bold;
+@label-radio-button-border: 1px solid #dfdfdf;
+@label-radio-button-active-border: 1px solid @color-primary;
+@label-radio-button-border-radius: 2px;
+@label-radio-button-padding: 10px 0;
+@label-radio-button-box-shadow: inset 0 1px 3px 0 rgba(241, 242, 242, 0.6);
+
+@select-background-color: @white;
+@select-border: 1px solid #dfdfdf;
+@select-border-radius: 2px;
+@select-padding: 10px 0;
+@select-box-shadow: inset 0 1px 3px 0 rgba(241, 242, 242, 0.6);
+
+
+// Process section
+@process-section-background: @color-grey-lightest;
+@process-section-padding: 40px;
+@process-section-box-height: 109px;
+@process-section-box-background: @color-white;
+@process-section-box-background-active: @color-primary;
+@process-section-box-color: @color-primary;
+@process-section-box-color-active: @color-white;
+@process-section-box-font-size: 1.4rem;
+@process-section-box-padding: 25px 38px 22px 38px;
+@process-section-box-border-radius: 0 25px;
+@process-section-box-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+@process-section-box-box-shadow-active: 0 15px 20px 0 rgba(160, 237, 152, 0.5);
+@process-section-box-text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+
+
+// Tooltip
+@tooltip-link-color: @color-primary;
+@tooltip-link-hover-color: @color-primary-dark;
+@tooltip-wrapper-background-color: @white;
+@tooltip-wrapper-border: 1px solid #dfdfdf;
+@tooltip-wrapper-border-radius: 4px;
+@tooltip-wrapper-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+@tooltip-wrapper-padding: 27px 0;
+@tooltip-wrapper-z-index: 1000;
+
+
+// Accordion
+@accordion-font-size: 1.4rem;
+@accordion-heading-padding: 12px 0;
+
+@accordion-background-color: @white;
+@accordion-border-color: #dfdfdf;
+@accordion-heading-color: #474646;
+@accordion-content-color: #4a4a4a;
+
+@accordion-active-background-color: @color-grey-lightest;
+@accordion-active-heading-color: @color-primary;
+
+
+
+//
+// Module variables
+
+// Page
+@wrapper-max-width: 1600px;
+@wrapper-small-max-width: 976px;
+@font-size-base: 10px;
+
+
+// Subnav
+@subnav-background-color: #ebedee;
+@subnav-padding: 12px 0;
+@subnav-color: @color-grey-dark;
+@subnav-color-special: @color-primary;
+@subnav-dropdown-icon: url('../images/icons/angle-down.svg');
+@subnav-special-icon: url('../images/icons/angle-right.svg');
+@subnav-special-font-weight: @font-weight-bold;
+@subnav-badge-background-color: @color-primary;
+
+
+// Breadcrumbs
+@breadcrumbs-font-family: @font-family-sans-serif;
+@breadcrumbs-color: @color-grey;
+@breadcrumbs-seperator: '>';
+@breadcrumbs-seperator-color: @color-grey;
+
+// Apply
+@apply-section-padding: 0 0 50px 0;
+@apply-section-margin: 0 0 50px 0;
+@apply-section-border: 1px solid #dfdfdf;
+@apply-question-font-size: @font-size-text;
+@apply-question-color: #4a4a4a;
+@apply-heading-font-size: 2.5rem;
+@apply-heading-color: @color-secondary;
+@apply-heading-font-weight: @font-weight-light;
+@apply-desc-color: @color-grey;
+@apply-desc-font-size: 1.2rem;
+@apply-no-shareholder-hint-color: #4a4a4a;
+@apply-no-shareholder-hint-font-size: 1.4rem;

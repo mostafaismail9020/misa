@@ -1,0 +1,145 @@
+.appointmentControl {
+	margin-bottom: 25px;
+	display: flex;
+	justify-content: stretch;
+
+	&-search {
+		border-radius: 20px;
+		border: 1px solid @pale-grey;
+		background: #fff;
+		min-width: 80px;
+		display: inline-block;
+		height: 40px;
+		padding: 0 15px;
+		overflow: hidden;
+		position: relative;
+
+		#media-breakpoint-down(xs, {
+			width: 100%;
+		});
+
+		&:before {
+			position: absolute;
+			content:"";
+			width: 24px;
+			height: 24px;
+			background: transparent url("../icons/search.svg") center no-repeat;
+			background-size: 24px auto;
+			top: 50%;
+			margin-left: -4px;
+			transform: translateY(-50%);
+		}
+
+		input {
+			border: none;
+			line-height: 38px;
+			font-size: 12px;
+			background: transparent;
+			margin: 0 0 0 25px;
+			display: inline-block;
+			color: @dark;
+
+			&,
+			&:active,
+			&:focus {
+				box-shadow: none;
+				outline: none;
+			}
+			&::-webkit-input-placeholder {
+				color: @steel-grey;
+			}
+			&::-moz-placeholder {
+				color: @steel-grey;
+			}
+			&:-moz-placeholder {
+				color: @steel-grey;
+			}
+			&:-ms-input-placeholder {
+				color: @steel-grey;
+			}
+		}
+		&SwitchModeButton {
+			border: none;
+			line-height: 38px;
+			color: @apple;
+			height: 40px;
+			float: right;
+			display: inline-block;
+			cursor: pointer;
+			font-size: 11px;
+			padding-top: 1px;
+			background-color: transparent;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	#media-breakpoint-down(xs, {
+		flex-direction: column;
+	});
+
+	&_left,
+	&_right {
+		flex-grow: 1;
+		#media-breakpoint-down(xs, {
+			&:first-child {
+				margin-bottom: 10px;
+			}
+		});
+	}
+	&_right {
+		text-align: right;
+
+		#media-breakpoint-down(xs, {
+			text-align: left;
+		});
+	}
+	&_left {
+		.btn_link,
+		.btn_leftIconLink {
+			padding-left: 0;
+		}
+	}
+	h1 + & {
+		margin-top: 30px;
+	}
+	a.btn--primary {
+		&:active,
+		&:focus,
+		&:hover {
+			color: #fff !important;
+		}
+	}
+	.btn_link&-backBtn,
+	.btn_leftIconLink&-backBtn {
+		color: #333a4b;
+		font-size: 14px;
+		margin-top: 8px;
+
+		.appointmentControl-backBtn-label {
+			font-weight: normal;
+			font-size: inherit;
+			margin: 0;
+		}
+		&:focus,
+		&:active,
+		&:hover {
+			color: #333a4b !important;
+
+			.appointmentControl-backBtn-label {
+				text-decoration: underline;
+			}
+		}
+	}
+	&-calendar {
+		&:last-child {
+			margin-bottom: 50px;
+		}
+
+		.calendar-control-bar {
+			margin-bottom: 32px;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Nov 22 10:09:10 UTC 2017
+builddate=20171122 1009
+description=sagiaasmaddon
+group.id=de.hybris.platform
+module.name=platform-module
+name=sagiaasmaddon
+releasedate=20171115 1907
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

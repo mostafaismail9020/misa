@@ -1,0 +1,152 @@
+$page = sample-about-vision-2030
+$template = portalGlobalTemplate
+$pageName = Vision 2030
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /about/vision-2030
+
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]      ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Vision 2030 ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                   ; name                                               ; &componentRef                        ; $contentCV[unique = true]; description[lang = en]; description[lang = ar];
+                                                  ; sample-generic-paragraph-vision-2030 ; Vision 2030 Generic Paragraph Component ; sample-generic-paragraph-vision-2030 ;                          ; "
+<section class='container mb-5 general-info'>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div >
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div >
+                <ul>
+                  <li>Introduced in April 2016 by Crown Prince Mohammed bin Salman Al Saud to achieve King Salman Ibn Abdulaziz Al Saud Directions with the aim of diversifying and expanding the economy competitiveness</li>
+                  <li>Vision 2030 builds on Saudi Arabia's pillars of competitive advantage to deliver on three key themes</li>
+                </ul>
+                <ol>
+                  <li>A vibrant society</li>
+                  <li>A thriving economy</li>
+                  <li>An ambitious nation</li>
+                </ol>
+                <ul>
+                  <li>Its narrative sets forth the ambitions of the Kingdom over the next years and highlights a selection of commitments, goals, and aspirations like:</li>
+                </ul>
+                <ol>
+                  <li>Become One of the top 10 countries in Global Competitiveness Report</li>
+                  <li>Reach Rank 25 in Logistics Performance Index</li>
+                  <li>Increase The Foreign Direct Investment Percentage Of GDP</li>
+                </ol>
+                <p>&nbsp;</p>
+                <p><strong>12 Vision Realization Programs</strong></p>
+                <p>&nbsp;</p>
+                <p>12 Vision Realization Programs developed to deliver impact against strategic objectives, each with specific mandates, owners, and targets:</p>
+                <ol>
+                  <li>Enriching the Hajj and Umrah experience</li>
+                  <li>National Transformation Program</li>
+                  <li>PIF Program</li>
+                  <li>National Industrial Development and Logistics Program</li>
+                  <li>Financial Sector Development Program</li>
+                  <li>Lifestyle Improvement Program</li>
+                  <li>National Companies Promotion Program</li>
+                  <li>Strategic Partnership Program</li>
+                  <li>The Housing Program</li>
+                  <li>Privatization Program</li>
+                  <li>Saudi Character Enrichment Program</li>
+                  <li>Fiscal Balance Program</li>
+                </ol>
+                <p>&nbsp;</p>
+                <p><strong>Remarkable initial success</strong></p>
+                <p>&nbsp;</p>
+                <p>Since the beginning of Vision 2030, there are remarkable quick wins along multiple themes, attesting the seriousness of the country's transformation into a global and modern nation, in a clear synergy between the government agencies and the amazing interaction from citizens resulting an increase in women’s participation in the workforce, Reduction of budget deficit and Enhanced access to entertainment</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <div class='col-md-8 d-flex justify-content-end'><a rel='noopener' href='http://vision2030.gov.sa/en' target='_blank'> <button class='button btn btn-contact btn-green pl-5 pr-5 m-0 text-uppercase'>Visit Vision 2030 website <i class='fa fa-long-arrow-right'></i> </button></a></div>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+"                                                                                                                                                                                                                                       ; "
+<section class='container mb-5 general-info'>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div >
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div >
+                <p>&nbsp;</p>
+                <p>رؤية 2030 للمملكة العربية السعودية تستهل نجاحاتها بإنجازات مبهرة</p>
+                <p>&nbsp;</p>
+                <p><strong>المملكة العربية السعودية رؤية 2030</strong></p>
+                <p>&nbsp;</p>
+                <ul>
+                  <li>رؤية 2030 قدمها سمو ولي العهد الأمير محمد بن سلمان آل سعود في أبريل 2016م تحقيقا لتوجيهات خادم الحرمين الشريفين، بعدة أهداف استراتيجية منها تنويع وتوسيع القدرة التنافسية للاقتصاد.</li>
+                  <li>
+                    تعتمد رؤية 2030م على 3 محاور ذات ميزة تنافسية:
+                    <ol>
+                      <li>مجتمع حيوي</li>
+                      <li>اقتصاد مزدهر</li>
+                      <li>وطن طموح</li>
+                    </ol>
+                  </li>
+                  <li>ومن خلال محور الاقتصاد المزدهر نطمح بأن تحقق المملكة خلال السنوات القادمة عدد من المراكز المتقدمة عالميا في مجال التنافسية والاقتصاد، وتحسين بيئة الاعمال وتنويع الاقتصاد:</li>
+                </ul>
+                <ol>
+                  <li>الوصول لأحد للمراكز العشرة الأولى في مؤشر التنافسية العالمي</li>
+                  <li>الارتقاء بترتيب المملكة في مؤشر أداء الخدمات اللوجستية الى المركز 25</li>
+                  <li>رفع نسبة الاستثمارات الأجنبية المباشرة من إجمالي الناتج المحلي</li>
+                </ol>
+                <p>&nbsp;</p>
+                <p><strong>12 برنامجاً لتحقيق الرؤية</strong></p>
+                <p>&nbsp;</p>
+                <p>12 برنامجاً لتحقيق رؤية 2030 صممت لتجاوز التحديات التي تواجهها الأهداف الاستراتيجية، ولكل منها مدد زمنية محددة، وملاك، وأهداف:</p>
+                <ol>
+                  <li>برنامج تطوير الصناعة الوطنية والخدمات اللوجستية</li>
+                  <li>برنامج صندوق الاستثمارات العامة</li>
+                  <li>برنامج التحول الوطني</li>
+                  <li>برنامج خدمة ضيوف الرحمن</li>
+                  <li>برنامج الشراكات الاستراتيجية</li>
+                  <li>برنامج ريادة الشركات الوطنية</li>
+                  <li>برنامج تحسين نمط الحياة</li>
+                  <li>برنامج تطوير القطاع المالي</li>
+                  <li>برنامج تحقيق التوازن المالي</li>
+                  <li>برنامج تعزيز الشخصية الوطنية</li>
+                  <li>برنامج التوسع في الخصخصة</li>
+                  <li>برنامج الإسكان</li>
+                </ol>
+                <p>&nbsp;</p>
+                <p><strong>نجاح مبهر</strong></p>
+                <p>&nbsp;</p>
+                <p>منذ انطلاق الرؤية بدت هناك نتائج ملموسة في ترجمة جدية تحول البلاد إلى دولة حديثة، بتكاتف واضح بين الجهات الحكومية وبتفاعل مذهل من المواطنين.  كان من المكاسب السريعة لهذا التغيير زيادة مشاركة المرأة في القوى العاملة، وتخفيض العجز في الميزانية بشكل ملحوظ، وتعزيز الترفيه بكافة أشكاله.</p>
+                <p>&nbsp;</p>
+                <div class='col-md-8 d-flex justify-content-end'><a rel='noopener' href='http://vision2030.gov.sa/ar' target='_blank'> <button class='button btn btn-contact btn-green pl-5 pr-5 m-0 text-uppercase'>زيارة موقع رؤية 2030 <i class='fa fa-long-arrow-left'></i> </button></a></div>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+"
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef)         ; $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; sample-generic-paragraph-vision-2030 ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;                                                      ;

@@ -1,0 +1,602 @@
+$page = energy-water
+$sector= energy-water
+$template = portalSectorTemplate
+$pageName = Energy and Water
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media						   
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources																															   
+
+INSERT_UPDATE CategoryPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); $contentCV[unique = true]; defaultPage[default = 'false']; approvalStatus(code)[default = 'approved']
+                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ;                          ;                               ;
+
+INSERT_UPDATE CMSCategoryRestriction; uid[unique = true]                               ; categories(code, $catalogVersion); $contentCV[unique = true]; pages(uid, $contentCV)
+                                    ; sector-energy-water-restriction ; energy-water    ;                          ; energy-water
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; name                                ; &componentRef                           ; $contentCV[unique = true]
+                                                  ; energy-water-paragraph ; Energy and Water Overview ; energy-water-paragraph ;
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = en]
+                                           ; energy-water-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<h3>Overview</h3>
+<p>Energy &amp; Water is growing rapidly and is considered one of the most important strategic sectors in the kingdom. This led to the emergence of renewable energy as a key objective in Vision 2030 with focus on efficiency as an important element in sustainable growth. The Kingdom currently has the largest desalination market in the world, with aim of increasing the reuse and water treatment market. As well as a leadership role in finding solutions and innovations related to water technologies and research.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Based on a clear foundation and legislation in the production, transmission and distribution of electricity and water, to ensure the rights of investors and consumers, Saudi Arabia is considered one of the strong and serious committed countries with the ongoing privatization and localization in both energy and water sectors In addition, growing demand for electricity and water in the kingdom increases further due to the constant sustainable growth in the industrial, residential and commercial sectors. &nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = ar]
+                                           ; energy-water-paragraph ;                          ; " 
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<h1 class='heading text-left mb-3 mt-2'>نظرة عامة</h1>
+<p>يعد قطاع الطاقة والمياه من القطاعات سريعة النمو وأحد أهم القطاعات الاستراتيجية في المملكة. وحددت المملكة الطاقة المتجددة كعنصر أساسي في خطة التحول وتنويع مصادر الطاقة ضمن رؤية 2030 مع أهمية التركيز على الكفاءة لتحقيق النمو المستدام. وتصنف المملكة كأكبر سوق لتحلية المياه في العالم، وتهدف لزيادة سوق إعادة استخدام ومعالجة المياه، فضلاً عن ريادتها في إيجاد الحلول والابتكارات وتقنياتها وبحوثها كإحدى الدول الرائدة في المجال.</p>
+<p>&nbsp;</p>
+<p>تولي المملكة العربية السعودية التخصيص والتوطين في قطاع الطاقة والمياه أهمية وذلك من خلال وجود تشريعات وأنظمة في توليد ونقل وتوزيع الكهرباء والماء لحفظ حقوق المستثمرين والمستهلكين على حد سواء. بالإضافة إلى ذلك، فإن النمو المتوقع للقاعدة السكانية والصناعية والتجارية في المملكة ستساهم بزيادة الطلب على الطاقة والمياه مما يؤدي&nbsp;إلى&nbsp;نمو الاستثمارات في المملكة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+"
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresComponent; uid[unique = true]; name         ; figures; unit; facts[lang=en] ; &componentRef; $contentCV[unique = true];
+								 
+                                     ; facts-figures-1-$sector      ; Facts Figures 1 ; 6      ; th country worldwide  ;In solar energy potential                         ; facts-figures-1-$sector ;
+                                     ; facts-figures-2-$sector      ; Facts Figures 2 ; 13     ; th country worldwide                                      ;Onshore wind energy potential; facts-figures-2-$sector ;
+                                     ; facts-figures-3-$sector      ; Facts Figures 3 ; 27.3    ; GW        ;Capacity of renewable energy by 2024                          ; facts-figures-3-$sector ;
+                                     ; facts-figures-4-$sector      ; Facts Figures 4 ; 50    ; USD B         ;Investment in water sector by 2020                    ; facts-figures-4-$sector;
+                                     ; facts-figures-5-$sector      ; Facts Figures 5 ; 1.9      ; Mn m3/day in 2020 ;Water reuse market size by 2020                  ; facts-figures-5-$sector ;
+                                     ; facts-figures-6-$sector      ; Facts Figures 6 ;11     ; th country worldwide ;Annual Electricity Production          ; facts-figures-6-$sector ;
+                                     ; facts-figures-7-$sector      ; Facts Figures 7 ;260,000     ; Facilities across the country  ;Number of government/public buildings that need retrofitting                    ; facts-figures-7-$sector ;
+                                     ; facts-figures-8-$sector      ; Facts Figures 8 ;17     ; Of SWCC's desalination plants                                      ;Number of desalination plants to be privatized; facts-figures-8-$sector ;
+                                     ; facts-figures-9-$sector      ; Facts Figures 9 ; 31    ; GW        ;Forecasted capacity of conventional energy by 2030                   ; facts-figures-9-$sector ;
+                                     ; facts-figures-10-$sector      ; Facts Figures 10 ; 40    ; %         ;Demand growth expectation by 2030                       ; facts-figures-10-$sector;
+                                     ; facts-figures-11-$sector      ; Facts Figures 11 ; 58.7      ; GW ;Renewable energy target by 2030                  ; facts-figures-11-$sector ;
+                                     ; facts-figures-12-$sector      ; Facts Figures 12 ; 30     ; %  ;Renewable energy share by 2030        ; facts-figures-12-$sector ;
+                                     ; facts-figures-13-$sector      ; Facts Figures 13 ;3    ; rd country worldwide         ;Among the top 20 largest producers                  ; facts-figures-13-$sector;
+                                     ; facts-figures-14-$sector      ; Facts Figures 14 ;  2      ; Million ;Street lights to be retrofitted                   ; facts-figures-14-$sector ;
+                                     ; facts-figures-15-$sector      ; Facts Figures 15 ; 2-3     ; GW ;Nuclear energy capacity         ; facts-figures-15-$sector ; 
+
+INSERT_UPDATE InvestSaudiFactsFiguresContainer; uid[unique = true]      ; name                     ;title[lang=en]  ; simpleCMSComponents(&componentRef)  ; &componentRef  ;$contentCV[unique = true]
+                                     ; ff-container-$sector   ; Fatcs Figures Container  ;Fatcs & Figures ; facts-figures-1-$sector, facts-figures-2-$sector, facts-figures-3-$sector,facts-figures-4-$sector,facts-figures-5-$sector,facts-figures-6-$sector,facts-figures-7-$sector,facts-figures-8-$sector,facts-figures-9-$sector,facts-figures-10-$sector,facts-figures-11-$sector,facts-figures-12-$sector,facts-figures-13-$sector,facts-figures-14-$sector,facts-figures-15-$sector ; ff-container-$sector ;
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; $contentCV; &componentRef
+                                           ; contact-form ;           ; contact-form
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; fo-explore-all-$sector ;                          ; Explore all          ; /sectors-opportunities/opportunities/?q=&sectorIds=energy-water
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]       ; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                       ; fo-component-$sector ; Featured Opportunities Component ; Energy and Water Opportunities ;3; fo-explore-all-$sector ; fo-component-$sector ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; ss-explore-all-$sector ;                          ; Explore all          ; /about/success-stories/?q=&sectorIds=energy-water
+
+INSERT_UPDATE InvestSaudiSuccessStoriesComponent; uid[unique = true]; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                ; ss-component-$sector ; Success Story Component ; Energy and Water Success Stories ;3; ss-explore-all-$sector ; ss-component-$sector;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                       ; $contentCV[unique = true]; linkName  [lang = en]             ; linkName[lang = ar]        ; url
+                              ; sector-proposition-1-link-$sector ;                          ; Renewables        ; الطاقة المتجددة ;
+                              ; sector-proposition-2-link-$sector ;                          ; Water  ;             قطاع المياه               ;
+                              ; sector-proposition-3-link-$sector ;                          ; Energy Savings  ;      توفير الطاقة                      ;
+                              ; sector-proposition-4-link-$sector ;                          ; Conventional  ;        الطاقة التقليدية                    ;
+                              ; sector-proposition-5-link-$sector ;                          ; Waste Management  ;       إدارة النفايات                     ;
+
+INSERT_UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; name                        ; url(uid, $contentCV)                     ; index(); &componentRef                       ; $contentCV[unique = true]
+                                                   ; sector-proposition-1-$sector ; Sector Proposition 1 ; sector-proposition-1-link-$sector ; 1      ; sector-proposition-1-$sector ;
+                                                   ; sector-proposition-2-$sector ; Sector Proposition 2 ; sector-proposition-2-link-$sector ; 2      ; sector-proposition-2-$sector ;
+                                                   ; sector-proposition-3-$sector ; Sector Proposition 3 ; sector-proposition-3-link-$sector ; 3      ; sector-proposition-3-$sector ;
+                                                   ; sector-proposition-4-$sector ; Sector Proposition 4 ; sector-proposition-4-link-$sector ; 4      ; sector-proposition-4-$sector ;
+                                                   ; sector-proposition-5-$sector ; Sector Proposition 5 ; sector-proposition-5-link-$sector ; 5      ; sector-proposition-5-$sector ;
+																				   
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-1-$sector ;                          ; "  <div class='col-md-6 column'>
+<div>
+<ol>
+<li><strong>Unlimited natural solar and wind endowment</strong></li>
+</ol>
+<ul>
+<li>Saudi Arabia lies in the middle of the sunbelt, it ranks 6th worldwide in solar energy. Therefore, has a high potential of solar irradiation across most provinces.</li>
+<li>Saudi Arabia is located within the Hadley cell, it ranks 13th worldwide in wind energy. Therefore, has a high potential of wind energy along the northeast, central regions and mountains in the western region.</li>
+</ul>
+<p>&nbsp;</p>
+<ol start='2'>
+<li><strong>Ambition to significantly grow the sector</strong></li>
+</ol>
+<ul>
+<li>Establishment and growth with an initial target of generating 27.3 GW of renewable energy by 2024 and 58.7 GW by 2030.</li>
+<li>30% Localization Requirement of the Value Chain in 2018, Increased to 40% - 60% in 2019.</li>
+</ul>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<ol start='3'>
+<li><strong>Access to under-supplied regional market</strong></li>
+</ol>
+<ul>
+<li>Beyond Local demand, KSA Manufacturers Have the Opportunity to serve 17 GW in GCC Region and reaches to 70 GW in MENA region.</li>
+<li>Saudi Arabia has a geographical advantage, located at close proximity to the GCC countries and thus has a logistical advantage (i.e. lower transportation cost, shorter delivery time).</li>
+</ul>
+<ol start='4'>
+<li><strong>Advanced Knowledge-based market</strong></li>
+</ol>
+<ul>
+<li>Advanced Research &amp; Development (R&amp;D) ecosystem and innovation with pioneer projects with different entities.</li>
+<li>Comprehensive market information database such as the renewable energy atlas and the supplier database(<a href='http://www.wesupplyrenewables.com.sa/'>wesupplyrenewables.com.sa</a>).</li>
+</ul>
+<ol start='5'>
+<li><strong>Investor Centric Ecosystem</strong></li>
+</ol>
+<ul>
+<li>Clear governance, Regulatory framework, and Incentives to attract private sector investors.</li>
+<li>Facilitation to start and grow businesses to ensure that the journey and process are easy for investors.</li>
+</ul>
+</div>
+</div>"
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-2-$sector ;                          ; " <div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p>Saudi Arabia is widely recognized as one of the leading and most advanced nations in the water sector globally.</p>
+<p>The Kingdom is the global leader in desalination, the GCC&rsquo;s largest market for water reuse and a pioneer in water technology innovation, scale and research. Numerous investment opportunities await in this sector, whether in existing waste-water treatment assets or new projects like the world&rsquo;s first solar powered desalination plant. This sector also benefits from the support of a committed government and an independent regulator, making KSA one of the most attractive places in the world to invest in water.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<h4><strong>Outstanding Growth Opportunities</strong></h4>
+<p>Saudi Arabia's water sector has seen a remarkable annual growth of 8% per annum and is showing no signs abating. The current total daily capacity of 4.6 million m<sup>3</sup>&nbsp;(including desalination and re-use) prompts a valuation of the sector at over SAR 48.75 billion (US $ 13 billion). The water sector owes its growth to strong industrial output, steady population increases and a huge consumption rate per capita.</p>
+<p>Saudi has one of the highest rates of water consumption per capita globally. At 300 liters/ day, Saudi Arabia consumes twice as much water as the UK. Total investments are set to exceed SAR 187 billion (US $ 50 billion) by 2020, going towards water production, infrastructure and water related services.</p>
+<p>Opportunities for growth here are therefore considered to be outstanding, offering peace of mind to even the most hawkish of investors.</p>
+<p>&nbsp;</p>
+<h4><strong>Global Leader in Desalination</strong></h4>
+<p>Saudi Arabia is the largest desalination market in the world producing around 4 million cubic meters of desalinated water per day. With 28 desalination plants to its name, KSA has the most of any nation yet is pushing to triple the capacity of desalination production by 2025 to reach 8.5 million cubic meters per day.</p>
+<p>Tremendous opportunities await the private sector, with approximately SAR 300 billion (US $ 80 billion) expected to be invested in desalination projects over the next 10 years. Saudi Arabia is truly leading the way in this field and is well positioned to maintain this course for the foreseeable future.</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<h4><strong>Leading beyond desalination</strong></h4>
+<p>Water reuse is playing an increasingly important role in the pursuit of sustainable water resources management. Saudi Arabia already has a thriving water reuse industry and aims to become the GCC&rsquo;s largest market by tripling its current level of production to 1.9m m<sup>3</sup>/day by 2020. Ambitious targets of 90% water reuse have also been targeted by 2040, with aspirations to transform the existing and planned wastewater treatment assets into source water supplies for the industrial sector. In addition, the Kingdom officially launched a water reuse initiative to create an environmentally friendly, diversified source of water and to promote the financial sustainability of the long-term market. There are multiple projects and initiatives being implemented across this sector making the water reuse market very attractive to the outside investor.</p>
+<p>&nbsp;</p>
+<h4><strong>Ongoing Privatization and proven commitment</strong></h4>
+<p>KSA boasts the largest number of desalination plants in the world and has plans to privatise 17 of its SWCC plants to achieve 50% privatisation of the overall desalination market. Numerous investment opportunities will arise from these initiatives as the government continues its plan to diversify the desalination market. Additionally, more than 75 water and sewage projects worth more than SAR 2 billion (US $ 550 million) were signed by the government in the past 2 years, highlighting its proven commitment to the sector.</p>
+<p>Investors can also be assured by the Electricity and Cogeneration Regulatory Authority (ECRA), which was established as an independent regulator for the water sector and by the Water and Electricity Company (WEC), which acts as a principle buyer in the water sector.</p>
+<p>&nbsp;</p>
+<h4><strong>Pioneer in innovation, scale and research</strong></h4>
+<p>KSA has long been established as a pioneer in the water sector. Through its well-rooted companies, advanced R&amp;D centres and experienced talent pool, the Kingdom prides itself in its cutting-edge approach to sustainable water solutions. Boundaries are being pushed as Advanced Water Technology (AWT) is developing the world&rsquo;s first solar powered desalination plant. The same can be said for Saline Water Conversion Corporation (SWCC) research institute, which is heavily engaged in a variety of projects to enhance membrane technology and desalination production cost efficiencies. Furthermore, Saudi Aramco is investing in leading water technology companies (e.g. OxyMem for water), placing Saudi Arabia at the heart of technological advancement when it comes to water.</p>
+</div>
+</div>
+</div>
+</div>
+</div>"
+											
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-3-$sector ;                          ; " <div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<ol start='1'>
+<li><strong>Saudi Arabia is one of the largest energy consumers with increasing electricity tariffs</strong></li>
+</ol>
+<ul>
+<li>Saudi Arabia ranks 3rd within the top 20 largest producers worldwide for energy with 9,333 Kwh consumption per capita.</li>
+<li>Electricity tariffs increased twice over the past 3 years and expect to increase in the future.</li>
+<li>Estimated $ 20B investment needed to meet increasing energy demand by 2020.</li>
+</ul>
+<ol start='2'>
+<li><strong>Government commitment to support the development of the Energy Savings sector</strong></li>
+</ol>
+<ul>
+<li>Leveraging Saudi Energy Efficiency Center (SEEC) as the key entity and unique interface responsible for energy efficiency sector.</li>
+<li>Introducing new regulations (e.g. ESCO licensing, legal framework, incentives) and standards (e.g. measurements) to facilitate investments.</li>
+<li>Investing in human capital for building capabilities in the energy sector (e.g. certifications and training) and promoting public awareness&nbsp;</li>
+</ul>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<ol start='3'>
+<li><strong>Tarshid established to facilitate the public building energy savings</strong></li>
+</ol>
+<ul>
+<li>Super ESCO, &ldquo;Tarshid&rdquo; a newly-established company with approx. $500 M capital, is responsible to support the development of energy projects in the public sector partnering with private investors (ESCOs).</li>
+<li>Royal decree gives Tarshid an exclusive mandate to retrofit all government entities and public facilities Leveraging the Royal Decree mandating all government entities to undergo energy efficiency retrofits.</li>
+<li>Plan is to manage the energy retrofit of government and public buildings more ~260,000 government subscribers.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<h6><strong>Stakeholders:</strong></h6>
+</div>
+</div>
+</div>
+</div>
+</div>" 
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-4-$sector ;                          ; " <div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<ol>
+<li><strong>Large and growing demand for energy</strong></li>
+</ol>
+<ul>
+<li>Establishment of new major projects in KSA such as, Al Qidiya, NEOM and The Red Sea will drive greater energy consumption.</li>
+<li>Growth of electricity consumption is driven by 3 sectors; Residential, Commercial and industrial and is expected to grow more than 40%.</li>
+<li>Liquid fuel-based generation will be phased out by natural gas which will drive greater and more efficient investment opportunities.</li>
+</ul>
+<ol start='2'>
+<li><strong>Solid foundation for KSA energy sector</strong></li>
+</ol>
+<ul>
+<li>Good government track record in developing the sector with attractive incentives and well established</li>
+<li>Strong local supply chain to provide required raw materials and access to human capital to support businesses.</li>
+<li>Prime position for KSA to establish energy network linkages with neighboring countries and access to export markets.</li>
+</ul>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<ol start='3'>
+<li><strong>Commitment to localization and involvement of private sector</strong></li>
+</ol>
+<ul>
+<li>By 2021, SEC plans to increase the capacity of generation total to 91,000 MW and enhancing transmission network lengths and reliability by adding 21,500 km.</li>
+<li>The plan includes adding 162,000 km of distribution lines and bringing the total number of customers to more than 10.8 Million.</li>
+<li>SEC's localization program is already supporting growth in the number of local factories with a significant increase of 129% in local factories for electrical equipment.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<h6><strong>Stakeholders:</strong></h6>
+</div>
+</div>
+</div>
+</div>
+</div>" 
+											
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-5-$sector ;                          ; " 
+<h4><strong>1- Large and growing market</strong></h4>
+<p>&nbsp;</p>
+<p>The Kingdom of Saudi Arabia is the world&rsquo;s largest crude oil producer and possesses the largest oil reserves. With the big crude oil revenue, KSA has been witnessing high population growth rate, rapid industrialization and fast urbanization, which have been dramatically accelerating the waste generation in the kingdom. Moreover, social-economic growth, rise of standards of living and large number of visiting pilgrims every year have resulted in substantial increases in waste growth rate to reach 52 million tons of total waste annually.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4><strong>2- Government commitment to unlock the sector</strong></h4>
+<p>&nbsp;</p>
+<p>There&rsquo;s an emphasis on the importance of increasing the efficiency of waste management, establishing comprehensive recycling projects and reducing all types of pollution to achieve the environmental sustainability for a vibrant society with fulfilling lives. KSA has shown solid commitment to unlock &amp; transform the waste management sector in the Kingdom by the establishment of National Waste Management Center and Saudi Investment Recycling Company (SIRC).</p>
+<p>&nbsp;</p>
+<ul>
+<li>National Waste Management Center aims to govern, regulate and monitor the waste management sector in the Kingdom and integrates the needed infrastructure along with offering incentives to attract investments to the sector.</li>
+<li>The Saudi Investment Recycling Company (SIRC) is a Public Investment Fund company established to develop, own, operate and finance various activities across all waste types in the Kingdom of Saudi Arabia. Through its achievements, SIRC will help meet and exceed the objectives of the new economic reforms and support the success of various initiatives identified by the revised National Regulatory Framework.</li>
+</ul>" 
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-1-$sector ;                          ; " <div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<ol>
+<li><strong>هبات طبيعية من الطاقة الشمسية وطاقة الرياح</strong></li>
+</ol>
+<ul>
+<li>تقع المملكة العربية السعودية في منتصف الحزام الشمسي، حيث تحتل المرتبة السادسة عالمياً في مجال الطاقة الشمسية. لذلك، لديها إمكانية عالية من الإشعاع الشمسي في مختلف المناطق.</li>
+<li>تحتل المملكة العربية السعودية المرتبة 13 عالميًا في مجال طاقة الرياح. لذلك، لديها إمكانيات كبيرة لطاقة الرياح على طول المناطق الشمالية الشرقية والوسطى والجبال في المنطقة الغربية.</li>
+</ul>
+<p>&nbsp;</p>
+<ol start='2'>
+<li><strong>خطط تنموية ضخمة وأهداف طموحة لبناء القطاع</strong></li>
+</ol>
+<ul>
+<li>تحديد هدف مبدئي لتوليد 27.3 جيجاوات من الطاقة المتجددة بحلول عام 2024، 58,7&nbsp;جيجاوات بحلول عام 2030.</li>
+<li>تحديد شروط التوطين بنسبة 30٪ في عام 2018، مع استهداف زيادة التوطين بنسبة 40٪ إلى 60٪ في 2019.</li>
+</ul>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<ol start='3'>
+<li><strong>سهولة الوصول إلى الأسواق الإقليمية</strong></li>
+</ol>
+<ul>
+<li>يصل إجمالي حجم سوق الطاقة المتجددة في دول مجلس التعاون الخليجي إلى 17&nbsp;جيجاوات وفي منطقة الشرق الأوسط وشمال إفريقيا يصل إلى 70 جيجاوات.</li>
+<li>تتمتع المملكة العربية السعودية بميزة جغرافية، وتقع على مقربة من دول مجلس التعاون الخليجي، وبالتالي تتمتع بميزة لوجستية (أي انخفاض تكلفة النقل، ووقت تسليم أقصر).</li>
+</ul>
+<ol start='4'>
+<li><strong>&nbsp;سوق متقدم مبني على المعرفة والابتكار</strong></li>
+</ol>
+<ul>
+<li>نظام متقدم للبحث والتطوير والابتكار مع مشاريع رائدة لجهات مختلفة.</li>
+<li>قواعد بيانات شاملة لمعلومات السوق، على سبيل المثال أطلس الطاقة المتجددة وتتوفر قاعدة البيانات للموردين المحليين على (<a href='https://www.wesupplyrenewables.com.sa/web-ar/index.html'>wesupplyrenewables.com.sa</a>).</li>
+</ul>
+<p>&nbsp;</p>
+<ol start='5'>
+<li><strong>نظام تشريعي داعم للمستثمر</strong></li>
+</ol>
+<ul>
+<li>أنظمة واضحة، إطار تنظيمي وحوافز لجذب مستثمري القطاع الخاص.</li>
+<li>سهولة بدء وتنمية الأعمال التجارية وضمان سهولة إجراءات المستثمرين.</li>
+</ul>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<h6><strong>الجهات الحكومية المساندة</strong></h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+"
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-2-$sector ;                          ; " <div class='col-md-6 column'>
+<div>
+<p><strong>ريادةٌ عالمية وفرصٌ لا تحدّ</strong></p>
+<p>تصنف المملكة العربية السعودية من الدول الرائدة والأكثر تقدماً في قطاع المياه على مستوى العالم.</p>
+<p>سواءً في&nbsp;مجال تحلية المياه،&nbsp;حيث أنها أكبر سوق في دول مجلس التعاون الخليجي في إعادة استخدام المياه، فضلاً عن ريادتها في إيجاد الحلول والابتكار&nbsp;&nbsp;المتعلقة&nbsp;بالمياه وتقنياتها وبحوثها، من هنا نستطيع التأكيد بتوفر الكثير من الفرص الاستثمارية المنتظرة في هذا القطاع، سواءٌ في مصادر معالجة المياه المستعملة الحالية، أو من ناحية المشاريع الجديدة، مثل إنشاء أول محطة في العالم لتحلية مياه تعمل بالطاقة الشمسية.</p>
+<p>إن هذا القطاع يستفيد من دعم حكومة ملتزمة وتقنين مستقل، مما يجعل المملكة العربية السعودية واحدة من أكثر الأماكن جاذبية في العالم للاستثمار في قطاع المياه.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>فرص نموٍ فائقة</strong></p>
+<p>يحظى قطاع المياه في المملكة العربية السعودية بنموٍ سنويٍ هائل بلغت نسبته 8٪ سنويًّا، وهو نمو يشير إلى القوة والرسوخ.</p>
+<p>إن السعة الكلية اليومية التي تبلغ حالياً 4.6 مليون متر مكعب (وتشمل تحلية المياه وإعادة استخدامها) تجعل قيمة القطاع تزيد عن 48.75 مليار ريال سعودي (13 مليار دولار أمريكي). ويعود الفضل في نمو قطاع المياه إلى الإنتاج الصناعي الراسخ، والزيادة المتواصلة في عدد السكان، ونسب معدلات الاستهلاك الضخمة لكل فرد.</p>
+<p>إن السعودية تتمتع بواحدٍ من أعلى المعدلات على مستوى العالم من ناحية استهلاك الفرد الواحد للمياه. فاستهلاك الفرد 300 لتر من المياه يومياً بالمملكة العربية السعودية هو ضعف مثيله بالمملكة المتحدة على سبيل المثال.</p>
+<p>ومن المتوقع أن يتجاوز إجمالي الاستثمارات 187 مليار ريال سعودي (50 مليار دولار أمريكي) بحلول عام 2020 ، بالتوجه لإنتاج المياه، والبنية التحتية، والخدمات المتعلقة بالمياه.</p>
+<p>وبناءً على تلك المعطيات، تبدو فرص النمو واعدة للغاية، حتى أنها تتناسب مع أكثر المستثمرين تطلعاً.</p>
+<p>&nbsp;</p>
+<p><strong>أكبر سوق تحلية مياه في العالم</strong></p>
+<p>مع إنتاج حوالي 4 ملايين متر مكعب يوميًّا من المياه المحلاة، تُعدّ السعودية أكبر سوق لتحلية المياه في العالم. ورغم امتلاك 28 محطة تحلية 'أكثر من أية دولة أخرى' إلا أن المملكة تسعى لمضاعفة إنتاجها ثلاث مرات، لتصل إلى 8.5 مليون متر مكعب يوميًّا في عام 2025.</p>
+<p>هناك فرص هائلة بانتظار القطاع الخاص، تُقيَّم بنحو 300 مليار ريال سعودي (80 مليار دولار أمريكي) في مجال مشاريع تحلية المياه على مدى السنوات العشر المقبلة. وتقود المملكة العربية السعودية هذا القطاع بما تملك من مؤهلات للمحافظة على هذا المسار في المستقبل المنظور.</p>
+<p>&nbsp;</p>
+<p>.</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p><strong>ما بعد تحلية المياه.. الريادة والهدف</strong></p>
+<p>تتزايد أهمية إعادة استخدام المياه يوماً بعد يوم في السعي إلى إدارة مستدامة للموارد المائية. وتمتلك المملكة العربية السعودية حالياً صناعة مزدهرة لإعادة استخدام المياه، وقد حددت هدفها بالتحول إلى أكبر سوق لتلك الصناعة بين دول مجلس التعاون الخليجي، وذلك بزيادة إنتاجها الحالي إلى ثلاثة أضعاف وصولاً إلى 1.9 مليون متر مكعب يوميًّا بحلول عام 2020.</p>
+<p>ومن الأهداف الطموحة كذلك إعادة استخدام نسبة 90 ٪ من المياه بحلول عام 2040، مع طموحات تحويل مُقَدَّرات معالجة مياه الصرف الحالية إلى مصادر مياه تغذي القطاع الصناعي. بالإضافة إلى ذلك، أطلقت المملكة رسمياً مبادرة لإعادة استخدام المياه لإنشاء مصدر مياه صديق للبيئة ومتنوع، يعزز الاستدامة المالية للسوق على المدى البعيد. إضافةً إلى مشاريع ومبادرات متعددة يتم تنفيذها في هذا القطاع، مما يجعل سوق إعادة استخدام المياه جاذبة جدًا للمستثمر الخارجي.</p>
+<p>&nbsp;</p>
+<p><strong>الخصخصة المستمرة والالتزام الثابت</strong></p>
+<p>تفخر المملكة العربية السعودية بامتلاك أكبر عدد من محطات تحلية المياه في العالم، ولديها خطط لخصخصة 17 من مصانعها لتحلية المياه المالحة حتى تحقق الخصخصة لنسبة 50 ٪ من السوق الكلية للتحلية.</p>
+<p>من هنا، ستنشأ فرصٌ استثماريةٌ عديدة بفضل هذه المبادرات، بينما تواصل الحكومة خطتها لتنويع سوق تحلية المياه. يضاف إلى ما سبق؛ أن الحكومة وقعت خلال العامين السابقين عقوداً لتنفيذ أكثر من 75 مشروعًا للمياه والصرف الصحي تبلغ قيمتها أكثر من 2 مليار ريال سعودي (550 مليون دولار أمريكي) ، وهو ما يلقي الضوء على التزامها المؤكَّد بنمو القطاع.</p>
+<p>كما تأكد لدى المستثمرين من قِبل هيئة تنظيم الكهرباء والإنتاج المزدوج (ECRA) ، التي تم تأسيسها كمنظم مستقل لقطاع المياه وشركة المياه والكهرباء (WEC)، التي تعمل كمشترٍ رئيس في قطاع المياه.</p>
+<p>&nbsp;</p>
+<p><strong>ريادة الابتكار والتوسع والبحث العلمي</strong></p>
+<p>تحتفظ المملكة العربية السعودية بريادتها المبكرة في قطاع المياه. وبفضل شركاتها المتجذرة، ومراكز البحث والتطوير المتقدمة، ومجموعة الكفاءات المتمرسة، تفخر المملكة بمنهجها المتطور لتحقيق الحلول المستدامة بقطاع المياه. ويتم تجاوز كل ما هو اعتيادي بتطوير تقنية المياه المتقدمة (AWT) في أول محطة تحلية تعمل بالطاقة الشمسية في العالم.</p>
+<p>والأمر مماثل في معهد الأبحاث وتقنيات التحلية التابع للمؤسسة العامة لتحلية المياه المالحة، والمنخرط بكثافة في عدة مشاريع متنوعة تعزز كفاءة تكنولوجيا الطبقات وتكنولوجيا تحلية المياه.</p>
+<p>بجانب ذلك تستثمر أرامكو السعودية في شركات تكنولوجيا المياه الرائدة (مثل شركة أوكسيميم للمياه)، وهو ما يرسخ أقدام المملكة العربية السعودية في صميم التقدم التكنولوجي بكل ما يتصل بقطاع المياه</p>
+</div>
+</div>
+"
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-3-$sector ;                          ; " <div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<ol>
+<li><strong>المملكة العربية السعودية هي واحدة من أكبر مستهلكي الطاقة مع زيادة في رسوم الكهرباء</strong></li>
+</ol>
+<ul>
+<li>تحتل المملكة العربية السعودية المرتبة الثالثة ضمن أكبر 20 منتجين في جميع أنحاء العالم للكهرباء، حيث بلغ نصيب الفرد من الاستهلاك 9,333&nbsp;كيلووات ساعة.</li>
+<li>زيادة رسوم الكهرباء مرتين خلال الثلاث سنوات السابقة مع توقعات لاستمرارية الزيادة.</li>
+<li>هناك حاجة إلى استثمارات بقيمة 20 مليار دولار لتلبية الطلب المتزايد على الطاقة بحلول عام 2020.</li>
+</ul>
+<ol start='2'>
+<li><strong>التزام حكومي بدعم تطوير قطاع كفاءة الطاقة</strong></li>
+</ol>
+<ul>
+<li>الاستفادة من المركز السعودي لكفاءة الطاقة باعتباره الكيان الرئيسي والواجهة الفريدة المسؤولة عن قطاع كفاءة الطاقة.</li>
+<li>تطبيق أنظمة ومعايير جديدة في كفاءة الطاقة تشمل اصدار للتراخيص والقياس والتحقق والأطر القانونية والبرامج المحفزة وتقديم لوائح جديدة.</li>
+<li>الاستثمار في رأس المال البشري من خلال الشهادات والبرامج التدريبية بهدف بناء القدرات. وزيادة الوعي العام، مع حملات تهدف لتسهيل الاستثمار الخاص في كفاءة الطاقة.</li>
+</ul>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<ol start='3'>
+<li><strong>إنشاء شركة 'ترشيد' لتسهيل خدمات كفاءة الطاقة في المباني العامة</strong></li>
+</ol>
+<ul>
+<li>الشركة الوطنية لخدمات كفاءة الطاقة 'ترشيد'، وهي شركة حديثة الإنشاء برأس مال تقريبي بقيمة 1.9&nbsp;مليار ريال، مسؤولة عن دعم تطوير مشاريع خدمات كفاءة الطاقة في القطاع العام بالشراكة مع مستثمرين من القطاع الخاص (ESCOs).</li>
+<li>يمنح المرسوم الملكي شركة ترشيد امتياز لإعادة تأهيل جميع الجهات الحكومية والمرافق العامة. والاستفادة من المرسوم الملكي الذي يفرض على جميع الجهات الحكومية رفع كفاءة استخدام الطاقة في منشآتها.</li>
+<li>أطلقت المملكة العربية السعودية برنامج لإعادة تأهيل أكثر من 260 ألف منشأة حكومية وعامة.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<h6><strong>الجهات الحكومية المساندة</strong></h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+"
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-4-$sector ;                          ; " <div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<ol>
+<li><strong>النمو والطلب الكبير على الطاقة</strong></li>
+</ol>
+<ul>
+<li>إنشاء مشاريع رئيسية عملاقة جديدة في المملكة العربية السعودية تؤدي إلى زيادة استهلاك الطاقة. مثل مشروع نيوم، ومشروع البحر الأحمر ومشروع القدية.</li>
+<li>بسبب النمو المتزايد في القطاعات السكنية والتجارية والصناعية، من المتوقع أن يزيد الطلب على الكهرباء بنسبة 40%.</li>
+<li>التخلص التدريجي من توليد الكهرباء باستخدام الوقود السائل واستبداله بالغاز الطبيعي، مما سيؤدي إلى جذب فرص استثمارية أكثر كفاءة.</li>
+</ul>
+<p>&nbsp;</p>
+<ol start='2'>
+<li><strong>أساس متين لقطاع الطاقة في المملكة العربية السعودية</strong></li>
+</ol>
+<ul>
+<li>سجل قياسي مميز في تطوير القطاع وانشاء جهات ومحفزات لتطوير القطاع.</li>
+<li>سلسلة امدادات متينة من الموردين المحليين لتوفير المواد الخام المطلوبة ورأس مال بشري داعم للأعمال.</li>
+<li>ميزة جغرافية تمتاز بها المملكة العربية السعودية للاستفادة من أسواق التصدير والروابط المتصلة لشبكة الطاقة مع الدول المجاورة.</li>
+</ul>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<ol start='3'>
+<li><strong>الالتزام بالتوطين وزيادة مشاركة القطاع الخاص</strong></li>
+</ol>
+<ul>
+<li>بحلول عام 2021، الشركة السعودية للكهرباء تخطط لزيادة طاقة التوليد الإجمالية إلى 91,000ميجاوات وتحسين طول ودقة شبكة النقل عن طريق إضافة 21,500 كيلومتر.</li>
+<li>تتضمن الخطة إضافة 162,000&nbsp;كيلومتر من خطوط التوزيع ورفع العدد الإجمالي للعملاء إلى أكثر من 10.8 مليون.</li>
+<li>الشركة السعودية للكهرباء تقوم بتوطين ودعم نمو عدد من المصانع المحلية للمعدات الكهربائية بزيادة كبيرة بنسبة 129%.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<h6><strong>الجهات الحكومية المساندة</strong></h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+"
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-5-$sector ;                          ; " <div class='col-md-6 column'>
+<div>
+<h4>1-سوق كبير ومتنامي</h4>
+<p>&nbsp;</p>
+<p>أدت إيرادات النفط الضخمة للمملكة العربية السعودية خلال العقود الماضية إلى تغيرات اقتصادية واجتماعية كبيرة وضخمة حيث شهدت المملكة العربية السعودية معدل نمو سكاني مرتفع ونهضة صناعية كبيرة مما أدى بشكل كبير إلى زيادة معدل انتاج النفايات بمختلف أشكالها في المملكة. علاوة على ذلك، فقد أدى النمو الاجتماعي-الاقتصادي، وارتفاع مستويات المعيشة والإنفاق بالإضافة إلى زيارة ملايين الزوار خلال موسم الحج والعمرة إلى زيادة كبيرة في معدل نمو انتاج النفايات في المملكة ليصل إلى 52 مليون طن من النفايات سنويًا.</p>
+<p>&nbsp;</p>
+<h4>2-حوكمة متكاملة</h4>
+<p>&nbsp;</p>
+<p>تعمل المملكة على زيادة كفاءة إدارة النفايات، وإنشاء مشاريع شاملة لإعادة التدوير والحد من جميع أنواع التلوث لتحقيق الاستدامة البيئية لمجتمع نابض بالحياة والذي يحقق أهم أهداف الرؤية الرئيسية. لقد أظهرت المملكة العربية السعودية التزامًا قويًا بفتح وخصخصة قطاع إدارة النفايات في المملكة بشكل كامل من خلال إنشاء المركز الوطني لإدارة النفايات والشركة السعودية الاستثمارية لإعادة التدوير (SIRC).</p>
+<p>&nbsp;</p>
+<ul>
+<li>يهدف المركز الوطني لإدارة النفايات إلى إدارة وتنظيم ومراقبة قطاع إدارة النفايات في المملكة بالإضافة إلى تحفيز الاستثمار في القطاع والارتقاء بجودته من خلال وضع مقاييس وضوابط واشتراطات فنية وتقنية لأنشطة إدارة النفايات المتكاملة.</li>
+<li>الشركة السعودية الاستثمارية لإعادة التدوير (SIRC) هي شركة مملوكة بالكامل لصندوق الاستثمارات العامة في المملكة العربية السعودية حيث تعمل على تطوير وتشغيل العديد من النشاطات في مجال التدوير بالإضافة إلى الاستثمار أيضا في هذا المجال لتصبح رائدة وطنيًا في مجال التدوير لصنع العديد من الفرص الاستثمارية في القطاع الخاص وتمكينه لبناء الطاقات المحلية محققةً بذلك أهداف رؤية 2030.</li>
+</ul>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<h4>3 -أهداف واضحة وطويلة الأجل</h4>
+<p>&nbsp;</p>
+<p>قامت المملكة بإجراء عدد من الإصلاحات الهيكلية في الاقتصاد السعودي وإطلاق مجموعة من القطاعات الناشئة، بما في ذلك قطاع إدارة النفايات والذي يهدف إلى الاستدامة الاقتصادية والبيئية المتكاملة.</p>
+<p>تم تفعيل دور قطاع إدارة النفايات في المملكة بشكل كامل للتوصل إلى هدف طموح يتمثل في التخلص والاستفادة من 85٪ من إجمالي النفايات الذاهبة للمرادم بحلول عام 2035. واستنادًا إلى تحليل الوضع القائم وأنواع النفايات المنتجة في المملكة العربية السعودية، فقد تم اقتراح طرق وتقنيات حديثة لمعالجة مختلف أنواع النفايات في المملكة والتخلص الآمن منها لتطبيق أفضل الممارسات العالمية وتوليد فرصة&nbsp;</p>
+</div>
+</div>
+"
+
+INSERT_UPDATE Media; code[unique = true]   ; realFileName                           ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText                         ; $contentCV[unique = true]
+                   ; background_sample1.png ; background_sample1.png           ; $siteResource/background_sample1.png   ; image/png   ;; "";
+
+
+#UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; description[lang = en]                                ; description[lang = ar]     ; $contentCV[unique = true]
+#                                            ; sector-proposition-2-$sector ; "Information and Communication Technology Hub " ; الاتصالات وتقنية المعلومات ;
+
+
+INSERT_UPDATE InvestSaudiSectorPropositionContainer; uid[unique = true]                          ; name                                ; backgroundImage(code, $contentCV)  ; simpleCMSComponents(&componentRef)                                      ; &componentRef                               ; $contentCV[unique = true]; title
+                                                   ; sector-proposition-container-$sector ;  Sector Proposition Container ; background_sample1.png      ; sector-proposition-1-$sector, sector-proposition-2-$sector, sector-proposition-3-$sector, sector-proposition-4-$sector, sector-proposition-5-$sector; sector-proposition-container-$sector ;                          ; Energy And Water Value Proposition
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)                                                                                                                                                                     ; $contentCV[unique = true]
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                                                                                                                  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; energy-water-paragraph, ff-container-$sector, sector-proposition-container-$sector, fo-component-$sector, ss-component-$sector, contact-form ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                                                                                                                                                                                  ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;

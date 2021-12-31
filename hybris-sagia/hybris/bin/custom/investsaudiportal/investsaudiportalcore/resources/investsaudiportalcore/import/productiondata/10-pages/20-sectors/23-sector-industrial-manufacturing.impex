@@ -1,0 +1,573 @@
+$page = industrial-manufacturing
+$sector = industrial-manufacturing
+$template = portalSectorTemplate
+$pageName = Industrial and Manufacturing
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CategoryPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); $contentCV[unique = true]; defaultPage[default = 'false']; approvalStatus(code)[default = 'approved']
+                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ;                          ;                               ;
+
+INSERT_UPDATE CMSCategoryRestriction; uid[unique = true]                          ; categories(code, $catalogVersion); $contentCV[unique = true]; pages(uid, $contentCV)
+                                    ; sector-industrial-manufacturing-restriction ; industrial-manufacturing         ;                          ; industrial-manufacturing
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                 ; name                                  ; &componentRef                      ; $contentCV[unique = true]
+                                                  ; industrial-manufacturing-paragraph ; Industrial and Manufacturing Overview ; industrial-manufacturing-paragraph ;
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                 ; $contentCV[unique = true]; description[lang = en]
+                                           ; industrial-manufacturing-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<h3>Overview</h3>
+<p>To achieve Vision 2030, Saudi Arabia is growing and diversifying its economy: the industrial and manufacturing sectors in particular has the ambition to drive this diversification. The development and growth of the industrial and manufacturing industry is being catalyzed by attractive ecosystem consisting of industrial cities, well-developed infrastructure, high quality utility supplies, and a well-established logistics network.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                 ; $contentCV[unique = true]; description[lang = ar]
+                                           ; industrial-manufacturing-paragraph ;                          ; "
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<h1 class='heading text-left mb-3 mt-2'>نظرة عامة</h1>
+<p>لتحقيق رؤية 2030 وتعزيز نمو المملكة العربية السعودية وتنويع اقتصادها، يحظى قطاع التصنيع والمعدات على وجه خاص بفرصة كبيرة لتحقيق هذا التنوع. و مما يعزز نمو القطاعات الصناعية والصناعات التحويلية هو وجود مناخ جاذب يرتكز على: مدن صناعية متطورة، و بنية تحتية مكتملة، و خدمات مرافق عالية الجودة، وشبكة لوجستية متينة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresComponent; uid[unique = true]      ; name             ; figures; unit                                                            ; facts[lang = en]                                   ; &componentRef           ; $contentCV[unique = true];
+
+                                              ; facts-figures-1-$sector ; Facts Figures 31 ; 49     ; USD B & expected to grow at 6% per year over the next few years ; Size and growth of KSA F & B market                ; facts-figures-1-$sector ;
+                                              ; facts-figures-2-$sector ; Facts Figures 32 ; 60%    ;                                                                 ; Saudi market share of total GCC market consumption ; facts-figures-2-$sector ;
+                                              ; facts-figures-3-$sector ; Facts Figures 33 ; 1.3    ; Tr USD, And growing at 12% per year                             ; Global Halal market size and growth                ; facts-figures-3-$sector ;
+                                              ; facts-figures-4-$sector ; Facts Figures 34 ; 6      ; B USD                                                           ; KSA Halal market size                              ; facts-figures-4-$sector ;
+                                              ; facts-figures-5-$sector ; Facts Figures 35 ; 80%    ;                                                                 ; Share of imports of total Saudi demand             ; facts-figures-5-$sector ;
+                                              ; facts-figures-6-$sector ; Facts Figures 21 ; 13     ; B USD                                                           ; MENA region total import of energy wires           ; facts-figures-6-$sector ;
+
+
+
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresContainer; uid[unique = true]   ; name                    ; title[lang = en]; simpleCMSComponents(&componentRef)                                                                                                                ; &componentRef        ; $contentCV[unique = true]
+                                              ; ff-container-$sector ; Fatcs Figures Container ; Fatcs & Figures ; facts-figures-1-$sector, facts-figures-2-$sector, facts-figures-3-$sector,facts-figures-4-$sector,facts-figures-5-$sector,facts-figures-6-$sector ; ff-container-$sector ;
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]; $contentCV; &componentRef
+                                           ; contact-form      ;           ; contact-form
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]     ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; fo-explore-all-$sector ;                          ; Explore all          ; /sectors-opportunities/opportunities/?q=&sectorIds=industrial-manufacturing
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]   ; name                             ; title[lang = en]                           ; numberItensDisplayed; exploreAllURL(uid, $contentCV); &componentRef        ; $contentCV[unique = true];
+                                                       ; fo-component-$sector ; Featured Opportunities Component ; Industrial and Manufacturing Opportunities ; 3                   ; fo-explore-all-$sector        ; fo-component-$sector ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]     ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; ss-explore-all-$sector ;                          ; Explore all          ; /about/success-stories/?q=&sectorIds=industrial-manufacturing
+
+
+INSERT_UPDATE InvestSaudiSuccessStoriesComponent; uid[unique = true]   ; name                    ; title[lang = en]                             ; numberItensDisplayed; exploreAllURL(uid, $contentCV); &componentRef        ; $contentCV[unique = true];
+                                                ; ss-component-$sector ; Success Story Component ; Industrial and Manufacturing Success Stories ; 3                   ; ss-explore-all-$sector        ; ss-component-$sector ;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                ; $contentCV[unique = true]; linkName  [lang = en]    ; linkName[lang = ar]          ; url
+                              ; sector-proposition-1-link-$sector ;                          ; Food Processing          ; الصناعات الغذائية            ;
+                              ; sector-proposition-2-link-$sector ;                          ; Building Materials       ; مواد البناء                  ;
+                              ; sector-proposition-3-link-$sector ;                          ; Industrial & Spare Parts ; المعدات الصناعية وقطع الغيار ;
+                              ; sector-proposition-4-link-$sector ;                          ; Aerospace & Defense      ; الصناعات الجوية والدفاعية    ;
+
+INSERT_UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]           ; name            ; url(uid, $contentCV)              ; index(); &componentRef                ; $contentCV[unique = true]
+                                                   ; sector-proposition-1-$sector ; Food Processing ; sector-proposition-1-link-$sector ; 1      ; sector-proposition-1-$sector ;
+                                                   ; sector-proposition-2-$sector ; Food Processing ; sector-proposition-2-link-$sector ; 2      ; sector-proposition-2-$sector ;
+                                                   ; sector-proposition-3-$sector ; Food Processing ; sector-proposition-3-link-$sector ; 3      ; sector-proposition-3-$sector ;
+                                                   ; sector-proposition-4-$sector ; Food Processing ; sector-proposition-4-link-$sector ; 4      ; sector-proposition-4-$sector ;
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]           ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-1-$sector ;                          ; " <div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p>The food processing industry in KSA is established and well-positioned to grow at a considerable pace over the forthcoming years. Domestic, regional and international demands for Saudi food products has been increasing year on year, with seafood, dates and halal foods leading the way. The Kingdom is famed for its authentic Makkah/Medinah Halal food products and has the potential to turn the SAR 4.9 trillion (US$1.3 trillion) global Halal market in its favor. This sector also benefits from a well-developed ecosystem that is ready to meet the high standards and growing demands of the expanding marketplace. Investors should feel confident about the Saudi food processing sector given its established excellence and lucrative prospects.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<p><strong>Large and growing local and regional market</strong></p>
+<p>Saudi Arabia&rsquo;s Food and Beverage (F&amp;B) market is the largest and most attractive of the Middle East. Valued at SAR 169 billion (US$45 billion) and growing at a rate of 6% over the next 5 years, this market is showing no signs of slowing.</p>
+<p>Growth is being driven by the expanding population and an increase in the number of Hajj &amp; Umrah visitors. In 2016, the Saudi food industry accounted for a sizeable 12% of GDP, highlighting its importance as a leading KSA sector. The average household is reported to spend 18% of total expenditure on F&amp;B, which is a domestic demand that amounts to 60% of total consumption in the GCC. In 2015, imports exceeded SAR 41.25 billion (US$11 billion), which raises the prospect of significant import-substitution opportunities for Saudi F&amp;B producers to serve the untapped local demand for dairy, meat and fruit products. Furthermore, F&amp;B players in Saudi have easy access to growing and under-supplied markets in the GCC and MENA regions, such as the SAR 3.75 billion (US$1 billion) dairy export market.</p>
+<p>&nbsp;</p>
+<p><strong>Made in Makkah/Medinah authenticity advantage in Halal food production</strong></p>
+<p>Saudi Arabia is the motherland of Islam and home of the two holy cities of Makkah and Madinah, positioning it as uniquely qualified to lead the global Halal food market. KSA enforces rigorous Halal food standards, ensuring the optimum quality and authenticity for this market. The global Halal food market size is currently SAR 4.9 trillion (US$1.3 trillion) and is expected to grow at around 12% per annum, presenting attractive export opportunities for KSA-based producers baring the 'Made in Makkah/ Madinah' authenticity advantage.</p>
+<p>KSA's Halal market is forecast to significantly grow from its current size of SAR 22.5 billion (US$6 billion) due to substantial increases in the number of Hajj &amp; Umrah visitors (From 20m today to 50m in 2030) coupled with the increased adoption of Halal in all types of food.</p>
+<p><strong>Abundance in dates &amp; fisheries with great export potential</strong></p>
+<p>Saudi Arabia is naturally endowed with a wealth in dates and fisheries, making it a natural market for exports.</p>
+<ul>
+<li><strong>Dates</strong>&nbsp;</li>
+</ul>
+<p>Saudi dates enjoy a unique advantage over competitors as KSA&rsquo;s nutrient rich soil allows for the cultivation of Ajwa Madinah and Mabroum Sukari dates, leading to fantastic opportunities to produce large quantities of high quality and unique varieties of dates.</p>
+<p>The world&rsquo;s annual date harvest is estimated at more than 6 million tons, with the Kingdom producing more than 1.1 million tons per annum. This places Saudi Arabia among the top 3 global producers of dates with an 18% market share. The Kingdom&rsquo;s 25m+ date palms cover 157,000 hectares of national land, growing over 300 types of dates. Production rates are steadily increasing at a time when global demand has also picked up the pace.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Fisheries</strong>&nbsp;&nbsp;</li>
+</ul>
+<p>Saudi Arabia is now committed to unlocking the aquaculture industry and is on track to be the first country in the world to have national level Best Aquaculture Practices (BAP) certification. Ambitious targets have been set to increase the production of fish via aquaculture from 38,000 tons in 2016 to 530,000 tons in 2030. To enable this ramp-up, KSA aims to seek support from the private sector and to invest SAR 1.3 billion (USD$ 345 million) in infrastructure, R&amp;D and marketing support. In essence, there is enormous potential for KSA to become a leading exporter of fish through it abundance in fish stocks and the exciting advancements of the aquaculture sector.</p>
+<p>Shrimps, mackerels and crabs make up the majority of this demand and KSA&rsquo;s own inhabitants are showing an increase in appetite for seafood. Domestic consumption is expected to grow by 8% per annum until 2030, which translates to a significant increase from 310 tons to 865 tons. This is driven by 2% CAGR population growth and an increase of 5% CAGR per capita consumption growth. Significant increases in demand have therefore raised the need for alternative and sustainable forms of fish farming.</p>
+<p>A wide range of opportunities await the fisheries market to export high-quality seafood products to countries that envy the rich waters of the Red Sea and Arabian Gulf. Saudi Arabia&rsquo;s waters are naturally endowed with 5 million tons of fish capacity. KSA is an approved exporter of seafood to the EU and has the potential to ramp-up its large production capabilities and exploit the insatiable demands of the export market.</p>
+<p><strong>Well-developed ecosystem</strong></p>
+<p>Saudi Arabia has an established F&amp;B industry that benefits from state of the art technologies and highly advanced packaging, storage and distribution networks. The sector is also recognized for its home-grown rich pool of talent with over 100,000 employees that are continuing to climb in numbers. Cold chain facilities are advanced and extensive, handling an increasing supply of goods requiring cold storage.</p>
+<p>In tandem with the freight forwarding, warehousing and 3PL segments, the cold chain logistics segment has also seen significant growth in recent years. It grew at 4% CAGR from SAR 2.9 billion (USD $ 0.78 billion) in 2010 to SAR 3.56 billion (USD $ 0.95 billion) in 2015 and is expected to reach SAR 6.1 billion ($1.64 billion) by 2020. This will be attributable to the active participation by the pharmaceutical industry and the increasing demand for fresh/processed fruits, vegetables, meat and dairy. Saudi Arabia&rsquo;s Almarai is the world&rsquo;s largest integrated dairy company with over 22k employees and is listed by Forbes Magazine as a globally innovative business. Similarly, Al-Rabie is a dominant juice manufacturer in MENA with acclaimed notoriety and a thriving export market.</p>
+<p>Investors should also note that the Saudi Food and Drug Authority (SFDA) have set high standards for KSA businesses to align with global best practices and to commit to Vision 2030 objectives that 'ensure development &amp; food security&rdquo;.</p>
+</div>
+</div>
+</div>
+</div>
+</div>"
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]           ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-2-$sector ;                          ; "<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p>The KSA construction sector is booming due to the multiple development projects that are taking place throughout the Kingdom. This is driving an urgent and growing need for building materials to satisfy construction demands, leading to record breaking consumption rates of cement, ceramics, stone and glass.</p>
+<p>While the majority of building materials are imported today, Saudi Arabia is committed to exploiting the untapped potential of substituting imports with locally produced goods. Businesses that take on ventures to service the KSA building material sector can also look forward to capitalizing on export potential to growing GCC markets.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<p>Large market with growing demand for Building Material</p>
+<p>Saudi Arabia has a growing demand for building materials that is primarily being driven by the dynamics of the construction sector. Total spending over the past five years exceeded SAR 1.12 trillion (US $ 300 billion) and in 2017 spending hit an unprecedented SAR 270 billion (US $ 72 billion).</p>
+<p>&nbsp;</p>
+<p>Saudi Arabia&rsquo;s rigorous construction programs makes it the leading consumer of building materials in the region. The cement market alone has reached SAR 30 billion (US $ 7.9 billion), accounting for 53 million tons in 2016 and 1.5% of total world consumption. KSA also has a healthy appetite for ceramics, with a SAR 5.6 billion (US $ 1.5 billion) local demand primarily driven by the need for tiles (70%) and sanitary ware (20%). The KSA stones market is valued at SAR 3.75 billion (US $ 1.0 billion), whilst the glass market size is worth SAR 1.875 billion (US $ 0.5 billion).</p>
+<p>&nbsp;</p>
+<p>Moreover, the market is expected to grow at an annual rate of 7%, reaching a value of SAR 700 billion (US $ 186 billion) by 2030. Large-scale projects are the biggest drivers of demand growth in the building material industry, with NEOM city, the Red Sea project and Vision 2030&rsquo;s goal of building one million new residential units over the next five years being top of the list.</p>
+<p>&nbsp;</p>
+<p>With the above in mind, KSA&rsquo;s growing demand for building materials cannot be overstated.</p>
+<p>&nbsp;</p>
+<p>Untapped potential to substitute imports of Building Material</p>
+<p>Saudi Arabia is currently importing massive amounts of building materials to satisfy its large-scale construction program. Despite the Kingdom&rsquo;s heavy reliance on imports, there exists considerable potential for import substitution for a wide range of building material.</p>
+<p>For example, in 2016, marble made up a 90% import share of local demand, with total expenditure reaching SAR 1.2 billion (US $ 320 million). Although Marble deposits are abundant in KSA, the natural stone is mostly imported due to the lack of local resources. Furthermore, in 2016 Tiles also had a high share of imports as a percentage of local demand (70%), with total local expenditure of SAR 4.12 billion (US $1.1 billon)</p>
+<p>&nbsp;</p>
+<p>With demand set to continuously increase, KSA is preparing to release the untapped potential of its local resources and is welcoming proposals from accomplished investors interested in facilitating this process</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p>Significant export potential to neighboring growing markets</p>
+<p>In 2017, the GCC construction market reached SAR 600 billion (US $ 160 billion) and is expected to grow at a rate of 10% over the next five years. With its strategic location, close proximity to neighboring countries and world-class infrastructure, players in Saudi Arabia have the opportunity to tap into the large and growing GCC construction market.</p>
+<p>&nbsp;</p>
+<p>In 2016, Saudi Arabian businesses exported large quantities of ceramics and glass within the GCC, amounting to SAR 262 million (US $ 70 million) worth of ceramics and SAR 500 million (USD 133 million) worth and glass.</p>
+<p>&nbsp;</p>
+<p>As the Kingdom begins to exploit the untapped potential of its domestic building material resources, significant export potential exists to satisfy the growing demand from neighboring markets.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Well-established ecosystem for the sector</p>
+<p>The KSA building material sector benefits from a well-developed ecosystem comprising of a sweeping transportation network, a robust financing system, innovative R&amp;D teams and a strong pool of talent. The Kingdom&rsquo;s ports and roads are well-developed and subject to significant improvement programs, allowing for the seamless transportation of building materials within KSA and throughout regional markets. In terms of financing, investors seeking to build cement production facilities already have access to loans of up to 75% with repayment plans of up to 20 years. In terms of R&amp;D and innovation, KSA&rsquo;s leading universities have established strong research centers with an active focus on building materials, such as the Center of Excellence for Concrete Research and Testing at KSU and the Center for Engineering Research at KFUPM. Furthermore, some private sector players have established several research centers to boost the d</p>
+</div>
+</div>
+</div>
+</div>
+</div>  "
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]           ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-3-$sector ;                          ; "<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p>Saudi Arabia is embarking on the most ambitious infrastructure transformation in its history, signaling a revolution for the Kingdom&rsquo;s industrial sectors. Demand for equipment and spare parts is set to go through the roof, with an anticipated expenditure of SAR 1 trillion (US $270 billion) to be spent on domestic industrial equipment by 2030. KSA is naturally considering how its localized industries could benefit from this demand and has endowed initiatives that promote the procurement of locally produced products. The government is offering support to investors that invoke significant cost advantages to businesses setting up their manufacturing base in KSA. Furthermore, the increasing demand for industrial equipment and spare parts throughout the MENA region sets the stage for lucrative opportunities to businesses that establish themselves in the Kingdom.</p>
+<p>Whether your specialty is in defense, energy, renewables, water, petrochemicals or any of the other sectors servicing infrastructure, Saudi Arabia is ready to assist with turning ideas into reality.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<p>Fast-growing demand for all industrial equipment driven by economic and industrial growth</p>
+<p>Saudi Arabia is one of the world&rsquo;s largest markets for industrial equipment and is currently valued at SAR 56 billion (US $ 15 billion). Local demand for industrial equipment is set to experience massive growth, with KSA anticipating to spend approximately SAR 1 trillion (USD 270 billion) on industrial equipment between now and 2030.</p>
+<p>&nbsp;</p>
+<p>Demand is being driven by KSA&rsquo;s Vision 2030 program that seeks to develop its non-oil sectors and effectively bring about an industrial revolution. For example:</p>
+<ol>
+<li>The establishment of the renewable sector of capacity to reach 9.5 GW by 2023 will lead to substantial increase in the demand for many groups of industrial equipment (e.g., generators, transformers, pumps, valves)</li>
+<li>Similarly, significant growth plans in desalination (annual growth of 8%) and reuse water production will lead to substantial increase in demand for water related equipment (e.g., filters, sludge thickeners)</li>
+</ol>
+<p>&nbsp;</p>
+<p>Significant localization opportunities to boost demand for local products</p>
+<p>Saudi Arabia currently imports 80% of its local demand for industrial equipment and machinery, valued at SAR 64 billion (US $ 17 billion). This sizeable demand offers significant potential for import substitution, leading the government and other market players to introduce local content initiatives that promote the procurement of locally produced products, thus significantly increasing demand for locally produced industrial equipment.</p>
+<p>&nbsp;</p>
+<p>Driven by innovative programs, Saudi Arabia is set to leverage its considerable buying power across major state-owned enterprises to support local production. Significant initiatives include those led by SEC, SWCC, SABIC, the Ministry of Defense (AFED) and Aramco (IKTVA). For instance:</p>
+<ol>
+<li><strong>IKTVA:&nbsp;</strong>&lsquo;In-Kingdom Total Value Add&rsquo; program and is Saudi Aramco&rsquo;s flagship localization initiative. IKTVA is designed to drive domestic value creation with the aim of achieving 70% localization of all spending on goods and services and enabling the export of 30% of Saudi energy sector products by 2021.</li>
+<li><strong>Nusaned:&nbsp;</strong>SABIC's groundbreaking initiative that aims to raise the level of localization of industrial technologies, services and products to 72% by 2025.</li>
+<li><strong>Saline Water Conversion Corporation&rsquo;s (SWCC) localization program&nbsp;</strong>is tasked with increasing local content by 1% per annum (currently at 6%) and auditing suppliers for compliance with localization measures.</li>
+</ol>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p>Financial &amp; non-financial support by the government for investors</p>
+<p>Several entities and support programs have been put in place by the government to encourage investments in the sector within KSA.</p>
+<p>&nbsp;</p>
+<p>The Saudi Industrial Development Fund (SIDF) is one of the authorities that have been set up by the government to support investors. SIDF provides financial and advisory services that are needed to support the growth and development of localization. SIDF has supported hundreds of industrial joint ventures and provided more than SAR 52 billion (US $ 14 billion) in soft loans, of up to 75% of project financing, since its inception in 2016.</p>
+<p>&nbsp;</p>
+<p>The Saudi Industrial Property Authority (MODON) has been set up by the government to oversee the development of industrial cities. MODON is to ensure that industrial cities develop integrated infrastructure and services that are of the highest global standards and specifications. Furthermore, MODON is to create special industrial zones offering cheap rates for land (from USD 0.26 per m<sup>2</sup>) across 35+ cities.</p>
+<p>&nbsp;</p>
+<p>Furthermore, KSA provides several advantages with respect to import duties and utility costs.</p>
+<ul>
+<li>Import duties</li>
+</ul>
+<ol>
+<li>Refund to importers/ exporters of raw material imports that are processed in Saudi Arabia and re-exported as more finished products</li>
+<li>Exemption on authorized imports for industrial establishments (e.g., materials, equipment, machinery)</li>
+</ol>
+<ul>
+<li>Low utility costs</li>
+</ul>
+<ol>
+<li>Power at SAR 0.18 per kWh ($ 0.048 per kWh) for industrial sector</li>
+<li>Water at SAR 1.8 &ndash; SAR 5 per cubic meter (US $ 0.5- US $ 1.35 per cubic meter) - based on volume</li>
+<li>Natural gas at SAR 4.6 per MMBTU (US $ 1.25 per MMBTU)</li>
+<li>Ethane at 6.5 per MMBTU (US $ 1.75 per MMBTU)</li>
+</ol>
+<p><sup>&nbsp;</sup></p>
+<p>Attractive export opportunities to MENA and GCC region with government support</p>
+<p>Demand for industrial equipment and spare parts from neighboring MENA and GCC countries is increasing substantially. Saudi Arabian players have the opportunity to serve this expanding market and capitalize from this demand:</p>
+<ol>
+<li>Regional markets have noticeably increased their oilfield services and equipment (OFSE) expenditure to pay for pumps, ESPs and turbines. GCC and MENA countries requirement for OFSE is expected to grow at 6% per annum to reach SAR 147 billion (USD 39.4 billion) by 2020.</li>
+<li>Electricity demand from the region is similarly expected to grow at 7% per annum to reach 417 TWh in 2020. This will have the effect of increasing demand for certain equipment such as batteries, transformers and switchgears.</li>
+<li>Spending on water and wastewater infrastructure is expected to grow at 11% per annum to reach SAR 18 billion (USD 4.9 billion) by 2020, increasing the demand for membranes, compressors and pipes.</li>
+<li>Petrochemical capacity is expected to grow at 5% per annum to reach 135 Mtpa in 2020, which will increase the demand for cracking tubes, chillers and dryers.</li>
+</ol>
+<p>&nbsp;</p>
+<p>Manufacturers benefit greatly from the Kingdom's geographic proximity to the MENA region as it represents an export market with huge potential.</p>
+</div>
+</div>
+</div>
+</div>
+</div> "
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]           ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-4-$sector ;                          ; "<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p>Saudi Arabia is one of the world&rsquo;s biggest spenders on defense, allocating a substantial portion of its total expenditure to this sector. Vision 2030 outlines a clear intention to continue investing in defense but with a goal of localizing 50% of its military spending, creating more job opportunities and enhancing the capacity of the Saudi economy. Saudi Arabian Military Industries (SAMI) has been established as the main contractor for the government and is embarking on long-term joint ventures that will facilitate this process. Great progress is being made through partnerships that are fostering the domestic based defense ecosystem, opening up opportunities with multiple international players to share high capabilities and advanced knowledge across all segments of defense. In short, the Kingdom is positioning itself to be a military power that will maintain security and stability for its people.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<p>One of the world's biggest spenders on defense</p>
+<p>The defense and security market in Saudi Arabia is among the most lucrative in the world. 2017 saw the Kingdom spend approximately SAR 225 billion (US $ 60 billion) on its military, which equates to 28% of its total budget and places it 4<sup>th</sup>&nbsp;in the world in terms of defense spending. Military expenditure includes SAR 10.2 billion (US $ 2.7 billion) for building advanced systems and capacities, SAR 3.5 billion (USD 933 million) for military education/colleges and SAR 26.5 billion (US $ 7.1 billion) for military medical services. Defense expenditure is expected to increase by 7.5% CAGR in the next couple of years to reach SAR 300 billion (US $ 80.8 Billion) by 2022.</p>
+<p>&nbsp;</p>
+<p>Today, security is a key national objective primarily concerning KSA departments of homeland security, counter-terrorism and cybersecurity. Homeland security is expected to record a CAGR of 5% over the next 5 years and to increase from around SAR 97 billion (US $ 25.8 billion) in 2017 to around SAR 125 billion (US $ 33.3 billion) by 2022. Cybersecurity has also become a top defense agenda, which is a market with an annual growth rate of 14.5% that is expected to grow to more than SAR 13 billion (US $ 3.5 billion) by 2019.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Market assurance through well-established governance</p>
+<p>The KSA government has taken significant steps to support its military industrial complex and has a strong ambition to develop the defense sector further. In May 2017, SAMI was established to become the main defense contractor for the government, to become an offset partner for foreign defense companies and to support the localization of the industry. SAMI intends to establish long-term joint ventures with a range of international and domestic original equipment manufacturers (OEMs).</p>
+<p>By partnering with both local and international companies across its four business areas, SAMI aims to manufacture products and provide services for air systems, land systems, weapons and missiles (including ammunition) as well as defense electronics inside the Kingdom.</p>
+<p>In August 2017, General Authority of Military Industries (GAMI) was established with the role ranging from the management of procurement for the Saudi military to managing defense industrial R&amp;D and the transfer of technology.</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p>Commitment to localize the defense industry</p>
+<p>In accordance with Vision 2030, Saudi Arabia has set ambitious targets of localizing its total of military equipment from the current 2% level to 50% by 2030, which will naturally create an exciting market for investors.</p>
+<p>&nbsp;</p>
+<p>The Kingdom has already started developing part of the sector's value chain, such as spare parts, armored vehicles and basic ammunition. In recent years, localization efforts have been on-going through multiple joint ventures (JV) and partnerships between top foreign companies and local players. For instance:</p>
+<ol>
+<li>BAE systems has created over 5,000 high-skilled jobs and capabilities in Saudi over the past decade.</li>
+<li>In 2015, Boeing, SAEI and Alsalam Aircraft Company established a JV to open Saudi Rotorcraft Support Center in-country helicopter MRO facility.</li>
+<li>In 2015, Lockheed Martin opened an in-country sensor maintenance facility in partnership with Saudi based Advanced Electronics Company.</li>
+<li>In 2016, Sikorsky and TAQNIA Aeronautics signed a deal for the in-country final assembly of S-70 Black Hawk helicopters.</li>
+</ol>
+<p>Yet, the ambition is to expand to higher value and more complex equipment (e.g., as military aircraft manufacturing), hence GAMI was established to oversee the localization of the sector. GAMI will promote co-production, licensing and knowledge transfer by creating partnerships between foreign defense companies and local players.</p>
+<p>&nbsp;</p>
+<p>R&amp;D and partnerships fostering the ecosystem</p>
+<p>A strong ecosystem is being developed in KSA defense through R&amp;D, partnerships and private sector participation. SAMI has committed to invest over SAR 6 billion (US $ 1.6 billion) in R&amp;D and aims to create over 40,000 jobs by 2030. GAMI has been mandated to manage and allocate R&amp;D funds in defense and to set-up additional R&amp;D centers.</p>
+<p>In 2017, Lockheed Martin partnered with KACST to provide on-the-job training in advanced manufacturing. Also, in 2017, Raytheon and SAMI announced strategic partnership focused on creating indigenous defense, aerospace and security capabilities in the Kingdom.</p>
+</div>
+</div>
+</div>
+</div>
+</div>  "
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]           ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-1-$sector ;                          ; "  <div class='col-md-6 column'>
+<div>
+<p><strong>قاعدة مثالية وسوق ضخم</strong></p>
+<p>تتمتع الصناعات الغذائية في المملكة العربية السعودية بقاعدة مثالية تجعلها تنمو بوتيرة متسارعة خلال السنوات القادمة. فالطلب المحلي والإقليمي والدولي على المنتجات الغذائية السعودية يتزايد عاماً بعد عام، خاصة مع انتشار المأكولات البحرية والتمور والأطعمة الحلال. كما تشتهر المملكة بمنتجاتها الغذائية الأصيلة من مكة المكرمة والمدينة المنورة، ولديها الإمكانيات اللازمة لاقتطاع حصة كبيرة من السوق العالمية للأطعمة الحلال، وهي سوق ضخمة تبلغ قيمتها 1.3 تريليون دولار أمريكي. كما يمتاز قطاع الصناعات الغذائية بنظام بيئي متطور جاهز يفي بالمعايير العالية والمتطلبات المتزايدة للسوق الآخذة في التوسع. بناءً على ما تقدم، فعلى المستثمرين أن يشعروا بالثقة تجاه قطاع الصناعات الغذائية السعودية نظرًا لتميزها وإمكاناتها المثمرة.</p>
+<p><strong>سوق محلية وإقليمية ضخمة تنمو باستمرار</strong></p>
+<p>تُعد سوق المأكولات والمشروبات في المملكة العربية السعودية الأكبر والأكثر جاذبية في منطقة الشرق الأوسط. إذ تبلغ قيمة هذه السوق 45 مليار دولار أمريكي، وستنمو بمعدل 6٪ خلال الخمس سنوات القادمة، ولا تظهر أية إشارات للتباطؤ.</p>
+<p>هذا النمو مدفوع بالزيادة السكانية وارتفاع أعداد الحجاج والمعتمرين. ولنا أن نعلم أنه في عام 2016، استحوذ قطاع الصناعات الغذائية السعودية على نسبة كبيرة من إجمالي الناتج المحلي بلغت 12٪ ، مما يبرز أهميته كقطاع رائد في المملكة العربية السعودية.</p>
+<p>تقول تقارير الخبراء إن متوسط ما تنفقه ​​الأسر على المأكولات والمشروبات يوازي 18٪ من إجمالي الإنفاق، وتمثل هذه النسبة حجم الطلب المحلي الذي يصل إلى 60٪ من إجمالي الاستهلاك في دول مجلس التعاون الخليجي.</p>
+<p>وفي عام 2015 ، تجاوزت الواردات 41.25 مليار ريال سعودي (11 مليار دولار أمريكي)، مما يزيد احتمالات إيجاد فرص مهمة لمنتجي المأكولات والمشروبات السعوديين وخدمة الطلب المحلي غير المستغل، سواء على منتجات الألبان أو اللحوم أو الفاكهة. والأكثر من ذلك، أن الفاعلين في قطاع المأكولات والمشروبات في المملكة العربية السعودية يمكنهم بسهولة كبيرة الوصول إلى الأسواق المتنامية وتزويدها بكميات كافية في مناطق دول مجلس التعاون الخليجي والشرق الأوسط وشمال إفريقيا، مثل سوق تصدير الألبان البالغ حجمه3.75 مليار ريال سعودي (مليار دولار أمريكي).</p>
+<p><strong>صنع في مكة المكرمة / صنع في المدينة المنورة</strong></p>
+<p><strong>التميز بالأصالة في إنتاج الأغذية الحلال</strong></p>
+<p>المملكة العربية السعودية هي مهد الإسلام وبلاد الحرمين الشريفين، مكة المكرمة والمدينة المنورة، بما يؤهلها بشكل استثنائي لقيادة سوق الأغذية الحلال عالميًّا. وتطبق المملكة العربية السعودية معايير صارمة على إنتاج الأطعمة الحلال لضمان الأصالة والجودة الأمثل لهذه السوق. إذ يبلغ حجم السوق العالمية للأطعمة الحلال حاليًا4.9&nbsp;تريليون ريال سعودي (1.3 تريليون دولار أمريكي)،</p>
+<p>ومن المتوقع أن تنمو هذه السوق بمعدل 12٪ سنويًّا، مما يوفر فرصًا تصديرية جذابة للمنتجين المقيمين في المملكة العربية السعودية الذين يتفوقون بميزة منتج يحمل شعار 'صنع في مكة والمدينة' _ 'صنع في مكة المكرمة / صنع في المدينة المنورة'.</p>
+<p>كما يُتوقع أن تنمو سوق الأطعمة الحلال في المملكة العربية السعودية بقيمة أكبر من حجمها الحالي البالغ 6 مليارات دولار أمريكي بفضل الزيادة الكبيرة في عدد زوار الحج والعمرة، و زيادة اعتماد الأطعمة الحلال في جميع أنواع المواد الغذائية.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p><strong>وفرة التمور ومصايد الأسماك مع إمكانات كبيرة للتصدير</strong></p>
+<p>وهب الله المملكة العربية السعودية ثروات موفورة من التمور والمأكولات البحرية، مما يجعلها سوقا طبيعية لتصدير منتجاتها.</p>
+<p><strong>التمور</strong></p>
+<p>يقدر محصول التمر السنوي عالمياً بأكثر من 6 ملايين طن، تنتج المملكة العربية السعودية منه أكثر من 1.1 مليون طن في السنة، وهذا يضعها بين أفضل 3 منتجين عالميين للتمور بحصة سوقية تبلغ 18٪.</p>
+<p>بأكثر من 25 مليون نخلة تغطي مساحة 157.000 هكتار من أراضي المملكة، ومع ما يزيد عن 300 نوعاً من التمور. الأمر الذي يجعل تزايد معدلات الإنتاج تواكب ارتفاع الطلب العالمي بالتوازي.</p>
+<p>وتتمتع التربة السعودية بميزة فريدة من نوعها مقارنة بمُنافسيها، لأنها تسمح بزراعة تمور عجوة المدينة والمبروم والسكري، مما يقدم فرصاً رائعة لإنتاج كميات كبيرة من أصناف فريدة وعالية الجودة من التمور.</p>
+<p><strong>الثروة السمكية</strong>&nbsp;</p>
+<p>تنتظر سوق الثروة السمكية فرصٌ هائلة لتصدير منتجات المأكولات البحرية عالية الجودة إلى البلدان والمناطق المحرومة من نعمة مياه البحر الأحمر والخليج العربي بكنوزهما السمكية، إذ تحيا في المياه الطبيعية للمملكة خمسة ملايين طن من الأسماك بشكل دائم، إضافةً إلى أن المملكة تعد مصدراً مؤتمنا لتصدير المأكولات البحرية إلى الاتحاد الأوروبي، ولديها القدرة على زيادة الإنتاج وإشباع نهم سوق التصدير.</p>
+<p>ويأتي الروبيان والماكريل والسرطان البحري في صدارة الطلب على المأكولات البحرية كما يظهر أهل المملكة العربية السعودية شهية متزايدة لها. ومن المتوقع أن ينمو الاستهلاك المحلي بنسبة 8٪ سنوياً حتى عام 2030 ، مما يترجم إلى زيادة كبيرة من 310 طن إلى 865 طنًا. ويعود ذلك إلى النمو السكاني بمعدل نمو سنوي مركب يبلغ 2٪ وزيادة بمعدل نمو سنوي مركب للفرد يبلغ 5%.</p>
+<p>لقد أنعشت تلك الزيادة الكبيرة في الطلب الأفكار التي تبحث عن أشكال بديلة ومستدامة من الاستزراع السمكي.</p>
+<p>تلتزم المملكة العربية السعودية الآن بتنمية قطاع الاستزراع المائي، وهي في طريقها لتصبح أول دولة في العالم تحصل على شهادة أفضل الممارسات في مجال الاستزراع المائي (BAP). وقد وُضعت أهداف طموحة لزيادة إنتاج الأسماك عبر تربية الأحياء المائية من 38000 طن في عام 2016 إلى 530000 طن في عام 2030.</p>
+<p>وللتمكن من هذه الزيادة الكثيفة، تستهدف المملكة العربية السعودية دعم القطاع الخاص واستثمار 1.3 مليار ريال سعودي (345 مليون دولار أمريكي) في البنية التحتية وتدعيم البحث والتطوير والتسويق.</p>
+<p>في الخلاصة: ثمة إمكانات هائلة تجعل المملكة العربية السعودية مصدراً رئيسًاً للأسماك من خلال وفرة المخزون السمكي والتقدم المدهش في قطاع الاستزراع المائي.</p>
+<p><strong>نظام بيئي متطور</strong></p>
+<p>لدى المملكة العربية السعودية صناعات راسخة للمأكولات والمشروبات تطبق أحدث التقنيات وتستخدم أرقى شبكات التعبئة والتخزين والتوزيع.</p>
+<p>ويحظى هذا القطاع بالمكانة المستحقة بفضل كوادر بشرية ثرية بمواهبها تضم أكثر من 100.000 موظف، وهو عدد يزداد بشكل مستمر. كما أن مرافق سلسلة التبريد متطورة وشاملة، وتتعامل مع إمدادات السلع المتزايدة التي تتطلب التخزين البارد.</p>
+<p>وبالتزامن مع عمليات الشحن والتخزين والخدمات اللوجستية عبر طرف ثالث، شهد قطاع الخدمات اللوجستية لسلسلة التبريد نموًا ملحوظًا في السنوات الأخيرة. فقد نما بمعدل سنوي مُركّب نسبته 4٪ بدءاً من 2.9 مليار ريال سعودي (0.78 مليار دولار) في عام 2010 ليصل إلى 3.56 مليار ريال سعودي (0.95 مليار دولار أمريكي) في عام 2015 ومن المتوقع أن تصل إلى 6.1 مليار ريال سعودي (1.64 مليار دولار) بحلول عام 2020.</p>
+<p>ويعزى ذلك النمو للمشاركة النشطة بقطاع الصناعة الدوائية، والطلب المتزايد على الفواكه الطازجة / المعالجة والخضروات واللحوم ومنتجات الألبان.</p>
+<p>فشركة 'المراعي' السعودية هي أكبر شركة ألبان متكاملة في العالم، ويعمل بها أكثر من 22 ألف موظف، وقد أدرجتها مجلة فوربس في قائمة المؤسسات العالمية المبتكرة.</p>
+<p>كما أن 'الربيع' هي الشركة الرائدة المصنعة للعصائر في منطقة الشرق الأوسط وشمال أفريقيا تتمتع بشهرة واسعة وسوق تصديرية مزدهرة.</p>
+<p>ويجدر بالمستثمرين معرفة كيف وضعت الهيئة العامة للغذاء والدواء&nbsp; (SFDA) معايير عالية للأعمال التجارية في المملكة العربية السعودية بما يتوافق مع أفضل الممارسات العالمية، بجانب الالتزام بأهداف رؤية 2030 التي 'تضمن التنمية والأمن الغذائي'.</p>
+</div>
+</div>
+"
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]           ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-2-$sector ;                          ; " <div class='col-md-6 column'>
+<div>
+<p><strong>سوقٌ ضخم و طلب متزايد</strong></p>
+<p>يزدهر قطاع الإنشاءات في المملكة العربية السعودية بفضل ما يشهده من مشاريع التطوير المتعددة بجميع أنحاء المملكة. من هنا تبدو الحاجة الملحة والمتنامية لمواد البناء كي تستطيع تلبية العمليات الإنشائية المستمرة، وهو ما يفسر معدلات الاستهلاك القياسية للإسمنت والسيراميك والحجر والزجاج.</p>
+<p>وإذا كان استيراد معظم مواد البناء هو ما يحدث اليوم، فإن المملكة العربية السعودية ملتزمة باستخدام الإمكانات غير المستغلة لاستبدال الواردات بالسلع المنتجة محليًا. كما يمكن للشركات التي تتولى مشاريع لخدمة قطاع مواد البناء في المملكة التطلع للاستفادة من إمكانات التصدير إلى الأسواق الخليجية المتنامية.</p>
+<p>&nbsp;</p>
+<p><strong>&nbsp; سوق متنامي الطلب على&nbsp;مواد البناء</strong></p>
+<p>تشهد المملكة العربية السعودية طلباً متزايداً على مواد البناء. وقد تجاوز إجمالي الإنفاق على مدى السنوات الخمس الماضية 1.12 تريليون ريال سعودي (300 مليار دولار أمريكي) كما شهد عام 2017 إنفاقا بلغ 270 مليار ريال سعودي (72 مليار دولار أمريكي).</p>
+<p>برامج البناء المتطلِّبة في المملكة العربية السعودية جعلها المستهلك الرئيسي لمواد البناء في المنطقة. وجاء سوق الأسمنت وحده بقيمة 30 مليار ريال سعودي (7.9 مليار دولار أمريكي) ، وهو ما يمثل 53 مليون طن في عام 2016 و 1.5٪ من إجمالي الاستهلاك العالمي.</p>
+<p>كما تتمتع المملكة العربية السعودية أيضًا ببيئة أعمال مواتية لإنتاج للسيراميك، حيث بلغ الطلب المحلي 5.6 مليار ريال سعودي (1.5 مليار دولار أمريكي) مدفوعًا أساسًا بالحاجة إلى أرضيات البلاط (70٪) والأدوات الصحية (20٪). وتبلغ قيمة سوق الأحجار في المملكة 3.75 مليار ريال سعودي (1.0 مليار دولار أمريكي)، في حين تبلغ قيمة سوق الزجاج 1.875 مليار ريال سعودي (0.5 مليار دولار أمريكي).</p>
+<p>ويتوقع نمو السوق وفق معدل سنوي قدره 7٪، ليصل إلى 700 مليار ريال سعودي (186 مليار دولار) بحلول عام 2030. وتعتبر المشاريع الكبيرة هي المحرك الأكبر لنمو الطلب في صناعة مواد البناء، وتأتي مدينة نيوم، ومشروع البحر الأحمر، إلى جانب هدف رؤية 2030 ببناء مليون وحدة سكنية جديدة على مدى السنوات الخمس المقبلة، على رأس قائمة هذه المشاريع. وبالنظر إلى ذلك كله، يصبح تزايد الطلب على مواد البناء في المملكة العربية السعودية أمراً واقعاً لا شك فيه.</p>
+<p>&nbsp;</p>
+<p><strong>إمكانات غير مستغلة لاستبدال واردات مواد البناء</strong></p>
+<p>تستورد المملكة العربية السعودية حالياً كميات هائلة من مواد البناء لتلبية برامج البناء على نطاق واسع. على الرغم من اعتماد المملكة الكبير على الواردات، إلا أنه يوجد إمكانات كبيرة لاستبدال واردات مجموعة هائلة من مواد البناء.</p>
+<p>على سبيل المثال، في عام 2016، شكل الرخام نسبة 90٪ من الطلب المحلي للواردات، وبلغ إجمالي الإنفاق 1.2 مليار ريال سعودي (320 مليون دولار أمريكي). على الرغم من وجود رواسب الرخام في المملكة العربية السعودية ، إلا أن الحجر الخام الطبيعي يتم استيراده في الغالب بسبب نقص الموارد المحلية.</p>
+<p>وفي عام 2016 وصلت واردات أرضيات البلاط إلى نسبة عالية من الطلب المحلي (70٪)، ليبلغ إجمالي الإنفاق المحلي عليها 4.12 مليار ريال سعودي (1.1 مليار دولار أمريكي)</p>
+<p>ومع الزيادة المستمرة على الطلب تستعد المملكة لإطلاق الإمكانات غير المستغلة لمواردها المحلية مرحبة بما يقترحه المستثمرون الأكفاء والمهتمون بتشغيل هذا المجال.</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p><strong>إمكانات كبيرة للتصدير إلى الأسواق المجاورة المتنامية</strong></p>
+<p>في عام 2017، بلغ حجم سوق الإنشاءات في دول مجلس التعاون الخليجي 600 مليار ريال سعودي (160 مليار دولار أمريكي) ومن المتوقع أن ينمو بمعدل 10٪ خلال السنوات الخمس المقبلة. ومع موقعها الاستراتيجي، بالقرب من البلدان المجاورة وما تمتلك من بنية تحتية عالمية، تكون لدى المستثمرين المشتغلين بالقطاع في المملكة العربية السعودية فرصة كبيرة للاستفادة من السوق الكبيرة والمتنامية للبناء في دول مجلس التعاون الخليجي.</p>
+<p>وقد قامت الشركات السعودية في عام 2016 بتصدير كميات كبيرة من السيراميك والزجاج إلى دول مجلس التعاون الخليجي، بلغت قيمتها 262 مليون ريال سعودي (70 مليون دولار أمريكي) من السيراميك، و 500 مليون ريال سعودي (133 مليون دولار) من الزجاج.</p>
+<p>ومع بدء المملكة استغلال الإمكانات غير المستفاد منها لموارد مواد البناء المحلية، تكبر إمكانات التصدير لتلبية الطلب المتزايد من الأسواق المجاورة.</p>
+<p>&nbsp;</p>
+<p><strong>بيئة مثالية وراسخة للقطاع</strong></p>
+<p>يستفيد قطاع مواد البناء في المملكة العربية السعودية من بيئة مثالية متطورة قوامها شبكة نقل شاملة، ونظام تمويل قوي، وفرق بحث وتطوير مبتكرة، ومجموعة قوية من المواهب.</p>
+<p>إن موانئ المملكة وطرقها متطورة بشكل مميز وتخضع لبرامج تحسين هائل، مما يسمح بالنقل السلس لمواد البناء داخل المملكة العربية السعودية وإلى جميع الأسواق الإقليمية.</p>
+<p>&nbsp;</p>
+<p>وفيما يتعلق بالتمويل، يحصل المستثمرون الساعون إلى بناء منشآت إنتاج الإسمنت على قروض تصل لتغطية نسبة 75٪ مع خطط سداد تصل إلى 20 عامًا. أما بمجالات البحث والتطوير والابتكار، فقد أنشأت الجامعات الرائدة في المملكة مراكز أبحاث قوية تركز بشكل نشط على مواد البناء، مثل مركز التميز لأبحاث واختبارات الخرسانة في جامعة الملك سعود، ومركز أبحاث الهندسة في جامعة الملك فهد للبترول والمعادن. فضلا عن ذلك، أنشأت بعض الجهات الفاعلة في القطاع الخاص عدة مراكز أبحاث لتعزيز تنمية القطاع.</p>
+</div>
+</div> 
+"
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]           ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-3-$sector ;                          ; "  <div class='col-md-6 column'>
+<div>
+<p><strong>مؤشرات استثمارية غير مسبوقة</strong></p>
+<p>تشرف المملكة العربية السعودية على مرحلة هي الأكثر طموحا في تاريخها فيما يتعلق بالبنية التحتية، وهو مؤشر إيجابي ونوعي للقطاعات الصناعية في المملكة، ويرفع الطلب على المعدات الصناعية وقطع الغيار إلى مستويات غير مسبوقة، ويتوقع أن يصل الإنفاق إلى 1 تريليون ريال سعودي (270 مليار دولار) على المعدات الصناعية المحلية بحلول عام 2030.</p>
+<p>من الطبيعي أن تبحث المملكة العربية السعودية عن سبل استفادة صناعاتها المحلية من هذا الطلب، لذلك منحت مبادرات مشجّعة لاعتماد المنتجات المصنوعة محليًا. كما تستمر الحكومة بتقديم الدعم للمستثمرين كي يستفيدوا من المزايا الكبيرة الممنوحة للشركات التي تنشيء قواعدها التصنيعية في المملكة العربية السعودية.</p>
+<p>ويضاف إلى ذلك الطلب المتزايد على المعدات الصناعية وقطع الغيار في جميع أنحاء منطقة الشرق الأوسط وشمال إفريقيا وهو ما يمهد الطريق أمام الفرص الرابحة للأعمال التجارية التي تثبّت أقدامها في المملكة.</p>
+<p>سواء كان مجال أعمالكم التخصص في قطاعات الدفاع، أو الطاقة، أو الطاقة المتجددة، أو المياه، أو البتروكيماويات، أو أي من القطاعات الأخرى التي تخدم البنية التحتية، فإن المملكة العربية السعودية مستعدة لدعمكم في تحويل أفكار كم إلى واقع.</p>
+<p>&nbsp;</p>
+<p><strong>نمو اقتصادي وصناعي يرفع الطلب على المعدات الصناعية</strong></p>
+<p>تعد المملكة العربية السعودية واحدة من أكبر الأسواق العالمية للمعدات الصناعية، وتبلغ قيمة السوق الحالية 56 مليار ريال سعودي (15 مليار دولار أمريكي). ومن المقدر أن يشهد الطلب المحلي على المعدات الصناعية نمواً هائلاً، حيث تتوقع المملكة العربية السعودية إنفاق حوالي تريليون ريال سعودي (270 مليار دولار) على المعدات الصناعية من الآن وحتى عام 2030.</p>
+<p>ويقود السوق وارتفاع الطلبات توجه الرؤية 2030 التي تسعى إلى تطوير قطاعات المملكة غير النفطية، وتحقيق ثورة صناعية فاعلة. وعلى سبيل الذكر: فإن من شأن إنشاء قطاع الطاقة المتجددة الذي يصل إلى 9.5 جيجا وات بحلول عام 2023 أن يؤدي إلى زيادة كبيرة في الطلب على العديد من مجموعات المعدات الصناعية (مثل المولدات الكهربائية والمحولات والمضخات والصمامات).</p>
+<p>وبالمثل، ستؤدي خطط النمو الكبيرة في إنتاج مياه التحلية (بنمو سنوي يبلغ 8٪)، وإعادة استخدام المياه، إلى زيادة كبيرة في الطلب على المعدات المتصلة بالمياه (مثل المرشحات وخزانات التنقية من الرواسب).</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>فرص كبيرة للتوطين، تعزز الطلب على المنتجات المحلية</strong></p>
+<p>يتم استيراد 80٪ من الطلب السعودي ﺑﻘﻴﻤﺔ 64 ﻣﻠﻴﺎر رﻳﺎل سعودي (17 مليار دولار أمريكي تقريباً) للمعدات الصناعية وقطع الغيار، مما يمثل فرصاً كبيرة لاستبدال الواردات. لذلك أدخلت الحكومة والجهات الفاعلة الرائدة في السوق مبادرات المحتوى المحلي لتشجيع شراء المنتجات المنتجة محلياً، مما أدى إلى زيادة كبيرة في الطلب على المعدات الصناعية المنتجة محلياً.</p>
+<p>وتستعد المملكة العربية السعودية مدفوعة بالبرامج المبتكرة؛ للاستفادة من قوتها الشرائية الكبيرة عبر المؤسسات الحكومية الرئيسة لدعم الإنتاج المحلي. وتشمل المبادرات الهامة تلك التي تقودها الشركة السعودية للكهرباء والمؤسسة العامة لتحلية المياه المالحة والشركةالسعودية للصناعات الأساسية (سابك) ووزارة الدفاع، وأرامكو . ومن ذلك:</p>
+<ul>
+<li>برنامج (اكتفاء) ' تعزيز القيمة المضافة الإجمالية لقطاع التوريد' وهو مبادرة التوطين الرئيسة لشركة أرامكو السعودية. ويعطي البرنامج دفعة للقيمة المحلية بهدف تحقيق توطين 70٪ من الإنفاق الكلي على السلع والخدمات، والتمكن من تصدير 30٪ من منتجات قطاع الطاقة السعودي بحلول عام 2021.</li>
+<li>مبادرة (نُساند) من الشركةالسعودية للصناعات الأساسية (سابك) الرائدة التي تهدف إلى رفع مستوى توطين التكنولوجيات والخدمات والمنتجات الصناعية إلى 72٪ بحلول عام 2025.</li>
+<li>برنامج 'توطين' للمؤسسة العامة لتحلية المياه المالحة، ومهمته تقضي بزيادة المحتوى المحلي بنسبة 1٪ سنوياً (حاليًا بنسبة 6٪) والتدقيق بعمليات التوريد لضمان الامتثال للتدابير المحلية.</li>
+</ul>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p><strong>الدعم الحكومي مالياً واستشارياً للمستثمرين</strong></p>
+<p>أنشأت الحكومة عدة كيانات وبرامج داعمة لتشجيع الاستثمارات في القطاع داخل المملكة العربية السعودية.</p>
+<p>صندوق التنمية الصناعية السعودي (SIDF) هو أحد الهيئات التي أسستها الحكومة لدعم المستثمرين. حيث يقدم الصندوق الخدمات المالية والاستشارية اللازمة لدعم نمو وتطوير المشاريع الصناعية وكيف تبدأ تلك المشاريع. وقد دعم الصندوق مئات المشاريع الصناعية المشتركة وقدم الصندوق، منذ إنشائه في عام 2016، أكثر من 52 مليار ريال سعودي (14 مليار دولار أمريكي) في شكل قروض ميسرة تصل إلى 75٪ من تمويل المشروع.</p>
+<p>وتم إنشاء الهيئة السعودية&nbsp;للمدن&nbsp;الصناعية&nbsp;ومناطق التقنية (مُدُن) من قبل الحكومة للإشراف على تطوير المدن الصناعية. وتهدف هذه الهيئة إلى ضمان قيام المدن الصناعية بتطوير البنية التحتية والخدمات المتكاملة التي تتمتع بأعلى المعايير والمواصفات العالمية. إضافة لذلك، فإن (مُدُن) تنشيء مناطق صناعية خاصة تقدم أسعارًا رمزية مقابل أراضي المشروعات (تبدأ من 0.26 دولار أمريكي لكل متر مربع) في أكثر من 35 مدينة.</p>
+<p>فوق ما تقدم، توفر المملكة العربية السعودية مزايا عديدة خاصة برسوم الاستيراد وتكاليف المرافق.</p>
+<p>رسوم الاستيراد:</p>
+<ul>
+<li>تعويض المستوردين / المصدِّرين لواردات المواد الخام التي تتم معالجتها في المملكة العربية السعودية وإعادة تصديرها كمنتجات كاملة التصنيع.</li>
+<li>الإعفاء من الواردات المصرح بها للمنشآت الصناعية (مثل المواد الخام وقطع الغيار والمعدات الصناعية).</li>
+</ul>
+<p>انخفاض تكاليف المرافق</p>
+<ul>
+<li>الكهرباء بسعر 0.18 ريال سعودي لكل كيلووات (0.048 دولار للكيلووات) للقطاع الصناعي.</li>
+<li>المياه بسعر يتراوح بين 1.8 ريال سعودي و 5 ريالات سعودية لكل متر مكعب (0.5 دولار - 1.35 دولار أمريكي لكل متر مكعب) بناءً على الحجم.</li>
+<li>الغاز الطبيعي بسعر 4.6 ريال سعودي لكل وحدة (مليون وحدة حرارية) (25&nbsp;دولار أمريكي)</li>
+<li>غاز الإيثان بسعر 6.5 ريال سعودي لكل مليون وحدة حرارية (75&nbsp;دولار أمريكي)</li>
+</ul>
+<p>يزداد الطلب بشكل كبير على المعدات الصناعية وقطع الغيار من دول الجوار بمنطقة الشرق الأوسط وشمال أفريقيا. لدى المستثمرين السعوديين الفرصة لإمداد هذه السوق المتوسعة والاستفادة من هذا الطلب المتنامي.</p>
+<p>&nbsp;</p>
+<p><strong>فرص جاذبة ودعم حكومي للتصدير إلى المناطق المجاورة</strong></p>
+<ul>
+<li>زادت الأسواق الإقليمية بصورة ملحوظة من الإنفاق على خدمات ومعدات حقول النفط لشراء المضخات، والمرسبات الإلكترونية، والمحركات. ومن المتوقع أن ينمو الطلب على خدمات ومعدات حقول النفط في دول مجلس التعاون الخليجي والشرق الأوسط وشمال أفريقيا بنسبة 6٪ سنوياً ليصل إلى 147 مليار ريال سعودي (39.4 مليار دولار أمريكي) بحلول عام 2020.</li>
+<li>ﻣن اﻟﻣﺗوﻗﻊ أن ﯾﻧﻣو اﻟطﻟب ﻋﻟﯽ الكهرباء في اﻟﻣﻧطﻘﺔ ﺑﻧﺳﺑﺔ 7٪ ﺳﻧوﯾا ﻟﺗﺻل إﻟﯽ 417 تيرا وات ﻓﻲ ﻋﺎم 2020. وهو ما سيؤثر على زﯾﺎدة اﻟطﻟب ﻋﻟﯽ ﻣﻌدات ﻣﻌﯾﻧﺔ ﻣﺛل اﻟﺑطﺎرﯾﺎت واﻟﻣﺣوﻻت ولوحات المفاتيح الكهربائية.</li>
+<li>من المتوقع أن ينمو الإنفاق على البنية التحتية للمياه والصرف الصحي بنسبة 11٪ سنوياً ليصل إلى 18 مليار ريال سعودي (4.9 مليار دولار) بحلول عام 2020 ، مما يزيد الطلب على المرشحات والضواغط والأنابيب.</li>
+<li>ﻣن اﻟﻣﺗوﻗﻊ أن ﺗﻧﻣو سعة اﻟﺑﺗروﮐﯾﻣﺎوﯾات ﺑﻧﺳﺑﺔ 5٪ ﺳﻧوﯾﺎ ﻟﺗﺻل إﻟﯽ 135 ﻣﻟﯾون طن ﻣﺗري ﻓﻲ ﻋﺎم 2020 ، ﻣﻣﺎ يعني زيادة اﻟطﻟب ﻋﻟﯽ الأﻧﺎﺑﯾب واﻟﻣﺑردات واﻟﻣﺟﻔﻔﺎت.</li>
+</ul>
+<p>ويستفيد المصنّعون بشكل كبير من قرب المملكة الجغرافي من منطقة الشرق الأوسط وشمال أفريقيا حيث تمثل سوقاً تصديرية ذات إمكانات هائلة.</p>
+</div>
+</div>
+"
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]           ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-4-$sector ;                          ; "  <div class='col-md-6 column'>
+<div>
+<p><strong>شراكاتٌ ضخمة وإنجازاتٌ متواصلة</strong></p>
+<p>تُعد المملكة العربية السعودية من أكبر الدول في العالم إنفاقاً على الدفاع، حيث تخصص نسبة كبيرة من إجمالي الدخل على هذا القطاع. وتحدد رؤية 2030 بوضوح الهدف في مواصلة الاستثمار في هذا القطاع، كما تهدف إلى توطين 50 ٪ من الإنفاق على المعدات العسكرية، بما يعني خلق المزيد من فرص العمل، وتعزيز قدرة الاقتصاد السعودي.</p>
+<p>وقد أنشئت الشركة السعودية للصناعات العسكرية 'سامي' كمقاول رئيس لصناعات الدفاع في الحكومة، وقد دشنت مشاريع مشتركة طويلة الأجل من شأنها التقدم بالقطاع. واليوم تحققت إنجازات كبيرة من خلال تلك الشراكات التي تعزز النظام البيئي الدفاعي الوطني، وتتيح الفرص مع العديد من الجهات الفاعلة متعددة الجنسيات لتقاسم هذه القدرات العالية والمعرفة المتقدمة عبر جميع قطاعات الدفاع.</p>
+<p>باختصار، تؤهل المملكة نفسها لتكون قوة عسكرية تحافظ على الأمن والاستقرار لشعبها.</p>
+<p>&nbsp;</p>
+<p><strong>واحدة من أكبر الدول في العالم&nbsp;إنفاقاً على الدفاع</strong></p>
+<p>تعد سوق الدفاع والأمن في المملكة العربية السعودية من أكثر الأسواق ربحية في العالم. وقد شهد عام 2017 إنفاق المملكة ما يقرب من 225 مليار ريال سعودي (60 مليار دولار) على دفاعاتها، وهو ما يعادل 28٪ من ميزانيتها الإجمالية ويضعها في المرتبة الرابعة في العالم من حيث الإنفاق الدفاعي.</p>
+<p>ويشمل الإنفاق العسكري:</p>
+<ul>
+<li>بناء أنظمة وقدرات متقدمة 10.2 مليار ريال سعودي (2.7 مليار دولار أمريكي)</li>
+<li>التعليم والكليات العسكرية 3.5 مليار ريال سعودي (933 مليون دولار أمريكي)</li>
+<li>الخدمات الطبية العسكرية 26.5 مليار ريال سعودي (7.1 مليار دولار أمريكي).</li>
+</ul>
+<p>ومن المتوقع زيادة الإنفاق الدفاعي بنسبة 7.5٪ خلال العامين المقبلين ليصل إلى 300 مليار ريال سعودي (80.8 مليار دولار) بحلول عام 2022.</p>
+<p>&nbsp;واليوم، يشكل الأمن هدفاً وطنيًّا رئيسًا يتعلق أساسًا بالأمن الداخلي ومكافحة الإرهاب والأمن الإلكتروني في المملكة العربية السعودية. ومن المتوقع أن يسجل الأمن الداخلي معدل نمو سنوي مركب يبلغ 5٪ خلال السنوات الخمس القادمة، لتزيد قيمته من نحو 97 مليار ريال سعودي (25.8 مليار دولار) في عام 2017 إلى حوالي 125 مليار ريال سعودي (33.3 مليار دولار) بحلول عام 2022.</p>
+<p>من جهةٍ أخرى، أصبح الأمن الإلكتروني على قمة جدول أعمال الدفاع، وهو يمثل سوقا تنمو بمعدل سنوي يبلغ 14.5٪، ومن المتوقع أن يصل لأكثر من 13 مليار ريال سعودي (3.5 مليار دولار) بحلول عام 2019.</p>
+<p>&nbsp;</p>
+<p><strong>حوكمة راسخة تضمن السوق</strong></p>
+<p>لقد اتخذت حكومة المملكة العربية السعودية تدابير مهمة لدعم مجمعها الصناعي العسكري مرتكزةً على طموح قوي لتطوير قطاع الدفاع بشكل أكبر. شاكة السعودية للصناعات العسكرية 'سامي'1 في مايو</p>
+<p>في مايو 2017، تم تأسيس الشركة السعودية للصناعات العسكرية (سامي) لتصبح المقاول الرئيس لصناعات الدفاع في الحكومة، ولتصبح كذلك شريكًا رئيساً لشركات الدفاع الأجنبية وذلك لدعم توطين هذه الصناعة. تعتزم (سامي) تأسيس مشاريع مشتركة طويلة المدى مع مجموعة دولية ومحلية من مصنّعي المعدات الأصلية.</p>
+<p>وبالشراكة المحلية والدولية في جميع مجالات أعمالها الأربعة، تهدف الشركة السعودية للصناعات العسكرية إلى تصنيع المنتجات وتقديم الخدمات للأنظمة الجوية، والبرية، والأسلحة، والصواريخ (بما في ذلك الذخيرة)، وكذلك الأنظمة الإلكترونية الدفاعية داخل المملكة.</p>
+<p>وقد أنشئت الهيئة العامة للصناعات العسكرية في أغسطس 2017 لتنظيم الصناعة العسكرية، ويبدأ دورها من إدارة المشتريات للصناعات العسكرية السعودية، وإدارة الدفاع الصناعي، وصولاً إلى البحث والتطوير ونقل التكنولوجيا.</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p><strong>الالتزام بتوطين صناعة الدفاع</strong></p>
+<p>يعتبر التوطين أحد الأهداف الرئيسية لرؤية 2030 ' للمملكة العربية السعودية، لهذا يهدف القطاع إلى توطين أكثر من 50% من الإنفاق على المعدات العسكرية بحلول عام 2030، من المستوى الحالي البالغ 2٪، مما سيخلق بطبيعة الحال سوقًا مثيرًا للمستثمرين.</p>
+<p>وقد بدأت المملكة بالفعل في تطوير جزء من سلسلة القيمة في القطاع (مثل: قطع الغيار والمركبات المدرعة والذخائر الأساسية). وفي السنوات الأخيرة، كانت جهود التوطين مستمرة من خلال العديد من المشاريع المشتركة والشراكات بين الشركات الأجنبية الكبرى والمشتغلين المحليين، على سبيل المثال:</p>
+<ul>
+<li>أنشأت شركة باي سيستمز للصناعات الجوية والدفاعية، من خلال الوجود المحلي أكثر من 5000 وظيفة للقدرات عالية المهارة في المملكة العربية السعودية على مدى العقد الماضي.</li>
+<li>في عام 2015، قامت شركة بوينج، وشركة السعودية لهندسة وصناعة الطيران، وشركة السلام للطائرات، بفتح مركز الدعم السعودي للطائرات العمودية بالمملكة العربية السعودية خاص بمروحية MRO.</li>
+<li>في عام 2015، افتتحت شركة لوكهيد مارتن منشأة صيانة أجهزة الاستشعار في البلاد بالشراكة مع شركة الإلكترونيات المتقدمةالمحدودة التي تتخذ من المملكة مقرًّا لها.</li>
+<li>في عام 2016، وقعت سيكورسكي وتقنية للملاحة الجوية صفقة للتجميع النهائي لطائرات الهليكوبتر من طراز S-70 بلاك هوك في البلاد.</li>
+</ul>
+<p>ومع ذلك، فإن الطموح يتمثل في التوسع بتصنيع المعدات ذات القيمة الأعلى والأكثر تعقيداً (مثل تصنيع الطائرات العسكرية)، ومن ثم تم إنشاء الهيئة العامة للصناعات العسكرية للإشراف على توطين القطاع. وسوف تعزز الهيئة الإنتاج المشترك والترخيص ونقل المعرفة من خلال إقامة شراكات بين شركات الدفاع الأجنبية والجهات الفاعلة محلياً.</p>
+<p>&nbsp;</p>
+<p><strong>بحوث وشراكات تعزز مناخ بيئة الأعمال</strong></p>
+<p>يتم العمل اليوم على تعزيز نظام بيئي&nbsp;متطور من خلال البحث والتطوير والشراكات&nbsp; مع الجهات الفاعلة في القطاع الخاص. إذ تلتزم الشركة السعودية للصناعات العسكرية ' سامي ' باستثمار أكثر من 1.6 مليار دولار أمريكي في مجال البحث والتطوير، وتهدف إلى توفير أكثر من 40.000 وظيفة بحلول عام 2030 . كما تم تفويض الهيئة العامة للصناعات العسكرية لإدارة وتخصيص أموال البحث والتطوير في مجال الدفاع وإنشاء مراكز إضافية للبحث والتطوير.</p>
+<p>وفي عام 2017، وقعت لوكهيد مارتن عقد شراكة مع مدينة الملك عبد العزيز للعلوم والتقنية لتوفير التدريب على رأس العمل بمجال التصنيع المتقدم. وفي العام نفسه أيضا أعلنت رايثيون و الشركة السعودية للصناعات العسكرية عن شراكة إستراتيجية تركز على خلق قدرات الدفاع والفضاء والأمن المحلية في المملكة.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+</div>
+"
+
+
+INSERT_UPDATE Media; code[unique = true]    ; realFileName           ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; background_sample1.png ; background_sample1.png ; $siteResource/background_sample1.png                                        ; image/png                   ;                                          ; ""     ;
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]; description[lang = en]; description[lang = ar]; $contentCV[unique = true]
+#                                            ; sector-proposition-2-$sector ; "Information and Communication Technology Hub " ; الاتصالات وتقنية المعلومات ;
+
+
+INSERT_UPDATE InvestSaudiSectorPropositionContainer; uid[unique = true]                   ; name                         ; backgroundImage(code, $contentCV); simpleCMSComponents(&componentRef)                                                                                     ; &componentRef                        ; $contentCV[unique = true]; title
+                                                   ; sector-proposition-container-$sector ; Sector Proposition Container ; background_sample1.png           ; sector-proposition-1-$sector, sector-proposition-2-$sector, sector-proposition-3-$sector, sector-proposition-4-$sector ; sector-proposition-container-$sector ;                          ; Industrial And Manufacturing Value Proposition
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)                                                                                                                             ; $contentCV[unique = true]
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                                                                          ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; industrial-manufacturing-paragraph, ff-container-$sector, sector-proposition-container-$sector, fo-component-$sector, ss-component-$sector, contact-form ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                                                                                                                                          ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+

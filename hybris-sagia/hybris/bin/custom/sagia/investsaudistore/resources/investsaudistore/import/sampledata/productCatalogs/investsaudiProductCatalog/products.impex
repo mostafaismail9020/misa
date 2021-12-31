@@ -1,0 +1,76 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Products into investsaudi Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=investsaudiProductCatalog
+$productCatalogName=investsaudi Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='approved']
+
+# Language
+$lang=en
+
+INSERT_UPDATE Product;code[unique=true];$supercategories;$catalogVersion;$approved
+;200100;101010;;
+;200101;101010;;
+;200102;101111;;
+;200103;101111;;
+;200104;101011;;
+;200105;101011;;
+;200106;101210;;
+;200107;101012;;
+;200108;101210;;
+;200109;101210;;
+;200110;101210;;
+;200111;101210;;
+;200112;101012;;
+;200113;101012;;
+;200114;101013;;
+;200115;101013;;
+;200116;101013;;
+;200117;101012;;
+;200118;101013;;
+;200119;101012;;
+;200120;101013;;
+;200121;101012;;
+;200122;101013;;
+;200123;101012;;
+;200124;101013;;
+;200125;101012;;
+;200126;101013;;
+;200127;101012;;
+;200128;101013;;
+;200129;101012;;
+;200130;101013;;
+;200131;101012;;
+;200132;101013;;
+;200133;101012;;
+;200134;101013;;
+;200135;101012;;
+;200136;101013;;
+;200137;101012;;
+;200138;101013;;
+;200139;101012;;
+;200140;101013;;
+;200141;101012;;
+;200142;101013;;
+;200143;101012;;
+;200144;101017;;
+;200145;101017;;
+;200146;101017;;
+;200148;101210;;
+;200149;101017;;
+
+
+

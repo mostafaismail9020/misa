@@ -1,0 +1,168 @@
+$page = news-ksa-government-entities
+$template = portalGlobalTemplate
+$name = KSA GOVERNMENT ENTITIES JOIN RDIF TO HOST SAUDI RUSSIAN CEO FORUM IN RIYADH
+$titleEn = $name
+$titleAr = منتدى الرؤساء التنفيذيين السعودي الروسي يتوج فعالياته بـ17 مذكرة تفاهم و 4 تراخيص لشركات روسية
+$shortDescEn = KSA GOVERNMENT ENTITIES JOIN RDIF TO HOST SAUDI RUSSIAN CEO FORUM IN RIYADH
+$shortDescAr = ناقش موضوعات الطاقة والاستثمارات والاستدامة الزراعية والأمن الغذائي العالمي
+$pagelabel = /news/ksa-government-entities-join-rdif-to-host-saudi-russian-ceo-forum-in-riyadh
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; 11                 ; 11.jpg      ; $siteResource/11.jpg                                                        ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias; $contentCV; ; ; ;
+                            ; media-container-$page   ; 11     ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; 11                                ; 11                                  ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 14.10.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>Forum coincides with official state visit of Russian President Vladimir Putin, convening more than&nbsp;</em><em>400&nbsp;</em><em>senior business executives representing a range of strategic sectors</em></li>
+<li><em>Saudi Center for International Strategic Partnerships (SCISP), the Saudi Arabian General Investment Authority (SAGIA) and the Russian Direct Investment Fund join to organize Forum</em></li>
+<li><em>Ministry of Energy, Ministry of Commerce and Investment, Ministry of Agriculture, and the National Industrial Development and Logistics Program join Russian counterparts to explore topics around the future of energy, cross-border investment and food security &nbsp;&nbsp;</em></li>
+<li><em>Signatories exchange&nbsp;</em><em>17&nbsp;</em><em>Memoranda of Understanding aimed at facilitating greater collaboration and developing future opportunities</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<p><strong>RIYADH, KSA (</strong><strong>14</strong>&nbsp;<strong>October 2019)</strong>: Reflecting the strength of the partnership between Saudi Arabia and Russia, more than 400 business leaders and government officials representing both countries gathered for the Saudi Russian CEO Forum in Riyadh.</p>
+<p>Coinciding with the official state visit of Russian President Vladimir Putin, the Forum offered a platform for attendees to debate and generate solutions around the future of energy, cross-border investment between the two countries, sustainable agriculture and global food security.</p>
+<p>Partnering with the Russian Direct Investment Fund (RDIF) &ndash; which opened its first overseas office in Riyadh this week &ndash; the Saudi Center for International Strategic Partnerships (SCISP) and the Saudi Arabian General Investment Authority brought together Saudi Arabia&rsquo;s Ministry of Energy, the Ministry of Commerce and Investment, and the Ministry of Agriculture, along with their Russian counterparts, to explore new opportunities and identify areas for continued collaboration.</p>
+<p>The Forum also offered an opportunity for decisionmakers from across Russia&rsquo;s public and private sector to learn more about new investment opportunities across Saudi Arabia.</p>
+<p>&nbsp;</p>
+<p><strong>&nbsp;</strong></p>
+<p>Commenting on the Forum,&nbsp;<strong>His Excellency Dr. Majid bin Abdullah Al&nbsp;Qasabi, Minister of Commerce and Investment</strong>, said:&nbsp;<em>&ldquo;Saudi Arabia is a growing and diversifying G20 economy, and offers significant potential to Russian investors. We believe that today&rsquo;s event serves as a powerful platform to continue building this valuable relationship between our two countries. By cultivating mutual understanding, we are better able to identify areas of cooperation, develop new opportunities and work towards creating new solutions to building a global future-forward economy.&rdquo;</em></p>
+<p><strong>Mr. Kirill Dmitriev, CEO of RDIF</strong>, also commented said:&nbsp;<em>&ldquo;This unprecedented high-level delegation is attending Saudi Arabia as part of the state visit of the Russian President to discuss the most important issues on bilateral and global business agenda. We hope that such a major business event will result in many new partnerships and agreements in the future both in Russia and Saudi Arabia. Cooperation and dialogue between our nations will definitely pick up momentum as a result of the Forum and RDIF as a co-organizer is committed to strengthening these ties.&rdquo;</em></p>
+<p>&nbsp;</p>
+<p>Memoranda of Understanding exchanged at the Forum include:</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Saudi Aramco&nbsp;</strong>and<strong>&nbsp;Shelbayb</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Aramco&nbsp;</strong>and<strong>&nbsp;Galin</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Aramco&nbsp;</strong>and<strong>&nbsp;PAO TMK</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Aramco&nbsp;</strong>and<strong>&nbsp;Intratool</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Aramco&nbsp;</strong>and<strong>&nbsp;Ingra Service</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Aramco&nbsp;</strong>and<strong>&nbsp;Integra Service</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Aramco&nbsp;</strong>and<strong>&nbsp;Technovic</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Aramco&nbsp;</strong>and&nbsp;<strong>Gazprom Oil</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Aramco&nbsp;</strong>and&nbsp;<strong>Partner NKT</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Lamar Holding Company&nbsp;</strong>and&nbsp;<strong>Chelyabinsk</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>King Fahd University of Petroleum and Minerals&nbsp;</strong>and&nbsp;<strong>Moscow University of International Relations</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>King Abdullah Center for Petroleum Studies and Research&nbsp;</strong>and the&nbsp;<strong>Moscow School of Management</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>King Abdullah Center for Petroleum Studies and Research&nbsp;</strong>and the&nbsp;<strong>Institute of Energy and Finance</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Railway Company</strong>&nbsp;and&nbsp;<strong>Russian Railway Company</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>TAQNIA&nbsp;</strong>and<strong>&nbsp;RDIF</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Electricity Company&nbsp;</strong>and<strong>&nbsp;Energomera</strong></li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Saudi Power Transformers Company&nbsp;</strong>and<strong>&nbsp;Izolator</strong></li>
+</ul>
+<p>&nbsp;</p>
+<p>Additionally, four Russian businesses were granted licenses by SAGIA, including:</p>
+<ul>
+<li><strong>Kontakt</strong>&nbsp;&ndash; a construction and real estate development company</li>
+<li><strong>P Group Saudi</strong>&nbsp;&ndash; computer programming consultancy</li>
+<li><strong>RS Investment Advisor &ndash;&nbsp;</strong>an international financial advisory</li>
+<li><strong>Geopulsar</strong>&nbsp;&ndash; an architectural and engineering firm (via their UAE office)</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<p>These investments come alongside a broad series of economic reforms, which are enabling rapid growth in foreign investment in Saudi Arabia. In fact, the total number of foreign investor licenses issued in the first half of 2019 was more than double the number issued the same period a year before.</p>
+<p>&nbsp;</p>
+<p>These reforms have had a significant impact. According to the 2019 Global Competitiveness Report published by the World Economic Forum, Saudi Arabia&nbsp;has moved up three positions to the 36<sup>th</sup>&nbsp;place, globally, through its efforts to diversify the Kingdom&rsquo;s economy.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>شهدت العاصمة الرياض اليوم الاثنين 15 صفر 1441 هـ الموافق 14 أكتوبر 2019م إقامة منتدى الرؤساء التنفيذيين السعودي الروسي، الذي نظمّه المركز السعودي للشراكات الاستراتيجية الدولية بالتعاون مع الهيئة العامة للاستثمار، وصندوق الاستثمار الروسي المباشر وصندوق الاستثمارات العامة السعودي، وبمشاركة وزارة الطاقة، ووزارة التجارة والاستثمار، ووزارة البيئة والمياه والزراعة، ونظرائهم من الجانب الروسي، إضافةً إلى مشاركة جهات حكومية وخاصة من الجانبين، وذلك تزامنًا مع الزيارة الرسمية لفخامة الرئيس الروسي فلاديمير بوتين إلى المملكة.</p>
+<p>وناقش المنتدى الذي شهد حضور أكثر من 400 ممثل من الجهات الحكومية والخاصة السعودية والروسية، وقادة الأعمال من البلدين؛ عددًا من الموضوعات الحيوية كان من ضمنها مستقبل الطاقة، والحلول المقدمة لاستدامتها، والاستثمارات القائمة والقادمة بين البلدين، وفرص التعاون المشترك، إضافةً إلى الاستدامة الزراعية والأمن الغذائي العالمي.</p>
+<p>من جانبه، أكد صاحب السمو الملكي الأمير عبد العزيز بن سلمان بن عبد العزيز وزير الطاقة ورئيس اللجنة السعودية الروسية المشتركة من الجانب السعودي، على أهمية العلاقات السعودية - الروسية والمصالح المشتركة بينهما، والرغبة في تعزيز هذا التعاون من قبل قيادتي البلدين، التي توجت بالزيارات المتبادلة بين خادم الحرمين الشريفين الملك سلمان بن عبد العزيز آل سعود، وفخامة الرئيس فلاديمير بوتين رئيس روسيا الاتحادية.</p>
+<p>كما أكد سموه أن البلدين يعملان على المواءمة بين الطموحات والأهداف الاستراتيجية، التي تنطلق من رؤية المملكة 2030 والخطط التنموية الاستراتيجية الروسية، وتوسيع التعاون ليمتد من قطاع الطاقة، الذي يمثل ثقلًا كبيرًا في هذه العلاقات إلى مختلف القطاعات التنموية والاقتصادية والمالية.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>وبيّن سموه أن شراكة البلدين تركز من خلال اللجنة السعودية الروسية على صناعة النفط، وقطاعات الطاقة الأخرى، والبحث العلمي، والفضاء، والخدمات الصحية، والإدارة الضريبية، والثروة المعدنية، والسياحة، وصناعة الطيران، والتعاون الثقافي، وتعزيز العلاقات التجارية في الإطار الدبلوماسي، وغيرها.</p>
+<p>من جانبه؛ أشار معالي الدكتور ماجد القصبي وزير التجارة والاستثمار إلى أن العلاقة بين المملكة العربية والسعودية وروسيا الاتحادية متينة وقوية، مؤكدًا على أهمية إقامة منتدى الرؤساء التنفيذيين السعودي الروسي والموضوعات، التي نوقشت خلاله، ومشيرًا إلى أن الاقتصاد السعودي هو أحد الاقتصادات القوية والمتنامية بين مجموعة دول العشرين، إذ توفر المملكة فرصًا استثمارية عالية القيمة للمستثمرين الروسيّين لبدء أعمالهم في السوق السعودية، كما أضاف أن المنتدى يمثل منصة لاستكشاف آفاق أكبر للتعاون الاستثماري بين البلدين، وتعزيز التعاون القائم بينهما،&nbsp; كما نوّه القصبي بأن المنتدى يوفر فرصة لاكتساب فهم أعمق لثقافة كلا البلدين، ومن خلال ذلك يمكن تحديد أوجه التعاون المثالية، واستكشاف فرص أكبر لبناء مستقبل اقتصادي عالمي واعد.</p>
+<p>وفي جلسة حول الاستدامة الزراعية والأمن الغذائي، كشف معالي وزير البيئة المياه والزراعة المهندس عبدالرحمن بن عبدالمحسن الفضلي عن أن هناك فرص واعدة للشراكة السعودية الروسية في مجال الزراعة والأمن الغذائي، لاسيما أن المملكة تحظى بموقع جغرافي مميز، يربطها بعدة قارات، لافتا إلى أن البلدين يملكان مقومات النجاح في هذا المجال.</p>
+<p>وفي تعليق على المنتدى قال السيد كيريل ديميترييف الرئيس التنفيذي لصندوق الاستثمار الروسي المباشر أن الزيارة غير المسبوقة للوفد الروسي الرفيع المستوى إلى المملكة تأتي في إطار زيارة فخامة الرئيس الروسي لمناقشة أهم القضايا العالمية والمشتركة بين البلدين، مشيرًا إلى أن الطرفين يبحثان آفاق التعاون في قطاع الطاقة والاستثمارات الثنائية في عدد من المشاريع المتنوعة ما بين التقنية والأمن الغذائي، كما نوه السيد ديميترييف &nbsp;على أهمية مثل هذه المناسبات في بناء شراكات واتفاقيات مستقبلية بين المملكة وروسيا، مضيفاً بأن التعاون والحوار بين البلدين سيتضاعف وفقًا لمنتدى اليوم، حيث إن صندوق الاستثمار الروسي المباشر حريص على تدعيم هذه العلاقات.</p>
+<p>في ذات السياق؛ شهد المنتدى توقيع 17 مذكرة تفاهم بين عدد من الجهات السعودية والجهات الروسية، تضمنت عددًا من القطاعات المستهدفة مثل التقنية والبتروكيماويات والنقل والخدمات اللوجستية والطاقة والخدمات المالية والفضاء، شملت عددًا من الجهات الروسية مثل صندوق الاستثمار الروسي المباشر وشركة شلبايب وشركة إنيرقوميرا وشركة غازبروم نفط وشركة، إضافة إلى شركة شيليابينسك وشركة الخطوط الحديدية الروسية وشركة إيزولايتر وجامعة موسكو للعلاقات الدولية ومعهد الطاقة والمالية الروسي.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>كما سلّمت هيئة الاستثمار - خلال المنتدى - أربع رخص استثمارية، لكل من شركة كونتاكت السعودية للمقاولات وبي جروب السعودية والشركة السعودية الروسية للاستشارات الإدارية وشركة جيوبولسار، حيث تتنوع نشاطات هذه الشركات في البناء والتطوير العقاري، وتقنية المعلومات والاتصالات، والاستشارات المالية، والهندسة المعمارية.</p>
+<p>الجدير بالذكر أن هذه الاستثمارات تأتي في سياق سلسلة الإصلاحات الاقتصادية الواسعة، التي تنفذها المملكة، وذلك لجذب الاستثمارات النوعية إلى السوق السعودية، إذ أعلنت الهيئة العامة للاستثمار مؤخرًا عن إصدار 291 رخصة استثمار أجنبي خلال الربع الثاني من العام 2019م، ما يعادل أكثر من الضعف مقارنةً بنفس الفترة من العام 2018م، وبزيادة نسبتها 103% مقارنةً مع الربع الأول من العام 2019م، بمعدل 5 رخص استثمار أجنبي تصدر يوميًّا.</p>
+<p>يُشار إلى أن هذه الإصلاحات قد حظيت بشهادة دولية، إذ تقدمت المملكة 3 مراتب لتصبح في المرتبة 36 عالميًّا حسب تقرير التنافسية العالمي الصادر من المنتدى الاقتصادي الدولي، ما يؤكد سعي المملكة المستمر نحو تحقيق نجاح أكبر لاقتصاد وطني مستدام.</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

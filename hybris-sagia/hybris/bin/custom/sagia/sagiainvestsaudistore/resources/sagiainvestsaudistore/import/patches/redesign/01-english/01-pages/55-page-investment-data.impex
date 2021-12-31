@@ -1,0 +1,70 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = InvestmentDataPageTemplate
+$page = investment-data
+$pageName = Investment Data
+$pageTitleEn = $pageName
+$pageLabel = /economicHighlights/investmentData
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en] ; description[lang = en]; keywords[lang = en]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn     ; $pageName             ; Invest Saudi,Invest Saudi - Meet,Kingdom, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+#######################################################
+
+INSERT_UPDATE CMSLinkComponent  ; $contentCV[unique = true]; uid[unique = true] 						; linkName [lang = en]											;url																	; &linkRef
+								;						   ; economic-investment-tail-link1-$page 		; Dashboard 		  	 					 	;economicHighlights/dashboard  				; economic-investment-tail-link1-$page
+								;						   ; economic-investment-tail-link2-$page		; Saudi Arabia in International Indices 	 	;economicHighlights/saInternationalIndices	; economic-investment-tail-link2-$page
+								;						   ; economic-investment-tail-link3-$page		; Infrastructures and logistics				 	;economicHighlights/infraLogistics 			; economic-investment-tail-link3-$page
+								;						   ; economic-investment-tail-link4-$page		; Saudi Economic Sectors  		  	 		 	;economicHighlights/saudiEconomicSectors		; economic-investment-tail-link4-$page
+								;						   ; economic-investment-tail-link5-$page		; Investment Data  		  	 				 	;economicHighlights/investmentData			; economic-investment-tail-link5-$page
+ 
+
+
+#########################################################################################
+
+INSERT_UPDATE Media	; code[unique = true]         								; realFileName             									; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]			; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; economic-investment-data-banner.png 						; economic-investment-data-banner.png						; $siteResource/economic-investment-data-banner.png 									; 	image/png						;										   ; ""     ;
+					
+
+#####################################################################
+
+	
+INSERT_UPDATE EconomicDashboardBannerComponent  ; uid[unique = true]			 			; tailHeader [lang = en]							 ; tailBanner (code, $contentCV)	      	; link(&linkRef)      									; &componentRef 			 	  		  ; $contentCV[unique = true]
+												; economic-investment-tail-1				; Dashboard 		  	 							 ; 											; economic-investment-tail-link1-$page	    			; economic-investment-tail-1			  ;  
+												; economic-investment-tail-2				; Saudi Arabia in International Indices 		  	 ; 											; economic-investment-tail-link2-$page	    			; economic-investment-tail-2			  ;  
+												; economic-investment-tail-3				; Infrastructures and logistics			  	 		 ; 											; economic-investment-tail-link3-$page	    			; economic-investment-tail-3			  ;  
+												; economic-investment-tail-4				; Saudi Economic Sectors  		  	 				 ; 											; economic-investment-tail-link4-$page	    			; economic-investment-tail-4			  ;  
+												; economic-investment-tail-5				; Investment Data  		  	 						 ; 											; economic-investment-tail-link5-$page	    			; economic-investment-tail-5			  ;  
+
+	
+
+INSERT_UPDATE EconomicCustomBannerContainer		; uid[unique = true] 			   		; name 							  			; backgroundImage (code, $contentCV)			; title [lang = en]					; simpleCMSComponents(&componentRef)	  										  											  						  ; &componentRef                         ; $contentCV[unique = true]
+												; economic-investment-banner-container  ; economic investment banner Container     	; economic-investment-data-banner.png  			; INVESTMENT DATA	 				; economic-investment-tail-1,economic-investment-tail-2,economic-investment-tail-3,economic-investment-tail-4,economic-investment-tail-5 		      ; economic-investment-banner-container  ;
+
+#############################################################
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)		; $contentCV	;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                             		;				;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; economic-investment-banner-container									;				;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                    				;				;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+						 

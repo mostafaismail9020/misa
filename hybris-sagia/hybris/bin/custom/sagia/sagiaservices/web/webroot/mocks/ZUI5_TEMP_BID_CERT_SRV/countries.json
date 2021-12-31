@@ -1,0 +1,2580 @@
+{
+    "d": {
+        "results": [
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TF',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TF',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TF",
+                "Gentity": "",
+                "Ctext": "",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AF',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AF',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AF",
+                "Gentity": "",
+                "Ctext": "Afghanistan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AL',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AL',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AL",
+                "Gentity": "",
+                "Ctext": "Albania",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DZ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DZ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "DZ",
+                "Gentity": "",
+                "Ctext": "Algeria",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AS',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AS',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AS",
+                "Gentity": "",
+                "Ctext": "American Samoa",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VI',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VI',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "VI",
+                "Gentity": "",
+                "Ctext": "American Virgin Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AD',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AD',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AD",
+                "Gentity": "",
+                "Ctext": "Andorra",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AO",
+                "Gentity": "",
+                "Ctext": "Angola",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AI',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AI',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AI",
+                "Gentity": "",
+                "Ctext": "Anguilla",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AQ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AQ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AQ",
+                "Gentity": "",
+                "Ctext": "Antarctica",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AG",
+                "Gentity": "",
+                "Ctext": "Antigua and Barbuda",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AR",
+                "Gentity": "",
+                "Ctext": "Argentina",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AM",
+                "Gentity": "",
+                "Ctext": "Armenia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AW',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AW',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AW",
+                "Gentity": "",
+                "Ctext": "Aruba",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AU',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AU',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AU",
+                "Gentity": "",
+                "Ctext": "Australia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AT',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AT',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AT",
+                "Gentity": "",
+                "Ctext": "Austria",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AZ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AZ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AZ",
+                "Gentity": "",
+                "Ctext": "Azerbaijan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BS',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BS',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BS",
+                "Gentity": "",
+                "Ctext": "Bahamas",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BH',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BH',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BH",
+                "Gentity": "",
+                "Ctext": "Bahrain",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BD',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BD',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BD",
+                "Gentity": "",
+                "Ctext": "Bangladesh",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BB',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BB',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BB",
+                "Gentity": "",
+                "Ctext": "Barbados",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BY',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BY',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BY",
+                "Gentity": "",
+                "Ctext": "Belarus",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BE",
+                "Gentity": "",
+                "Ctext": "Belgium",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BZ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BZ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BZ",
+                "Gentity": "",
+                "Ctext": "Belize",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BJ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BJ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BJ",
+                "Gentity": "",
+                "Ctext": "Benin",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BM",
+                "Gentity": "",
+                "Ctext": "Bermuda",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BT',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BT',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BT",
+                "Gentity": "",
+                "Ctext": "Bhutan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BO",
+                "Gentity": "",
+                "Ctext": "Bolivia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BA",
+                "Gentity": "",
+                "Ctext": "Bosnia and Herzegovina",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BW',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BW',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BW",
+                "Gentity": "",
+                "Ctext": "Botswana",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BV',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BV',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BV",
+                "Gentity": "",
+                "Ctext": "Bouvet Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BR",
+                "Gentity": "",
+                "Ctext": "Brazil",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "VG",
+                "Gentity": "",
+                "Ctext": "British Virgin Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BN",
+                "Gentity": "",
+                "Ctext": "Brunei Darussalam",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BG",
+                "Gentity": "",
+                "Ctext": "Bulgaria",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BF',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BF',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BF",
+                "Gentity": "",
+                "Ctext": "Burkina Faso",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MM",
+                "Gentity": "",
+                "Ctext": "Burma",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BI',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='BI',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "BI",
+                "Gentity": "",
+                "Ctext": "Burundi",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KH',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KH',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KH",
+                "Gentity": "",
+                "Ctext": "Cambodia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CM",
+                "Gentity": "",
+                "Ctext": "Cameroon",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CA",
+                "Gentity": "",
+                "Ctext": "Canada",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CV',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CV',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CV",
+                "Gentity": "",
+                "Ctext": "Cape Verde",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KY',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KY',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KY",
+                "Gentity": "",
+                "Ctext": "Cayman Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CF',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CF',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CF",
+                "Gentity": "",
+                "Ctext": "Central African Republic",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TD',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TD',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TD",
+                "Gentity": "",
+                "Ctext": "Chad",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CL',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CL',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CL",
+                "Gentity": "",
+                "Ctext": "Chile",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CN",
+                "Gentity": "",
+                "Ctext": "China",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CX',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CX',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CX",
+                "Gentity": "",
+                "Ctext": "Christmas Islnd",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CC',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CC',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CC",
+                "Gentity": "",
+                "Ctext": "Coconut Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CO",
+                "Gentity": "",
+                "Ctext": "Colombia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KM",
+                "Gentity": "",
+                "Ctext": "Comoros",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CK',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CK',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CK",
+                "Gentity": "",
+                "Ctext": "Cook Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CR",
+                "Gentity": "",
+                "Ctext": "Costa Rica",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CI',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CI',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CI",
+                "Gentity": "",
+                "Ctext": "Cote d'Ivoire",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='HR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='HR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "HR",
+                "Gentity": "",
+                "Ctext": "Croatia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CU',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CU',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CU",
+                "Gentity": "",
+                "Ctext": "Cuba",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CY',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CY',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CY",
+                "Gentity": "",
+                "Ctext": "Cyprus",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CZ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CZ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CZ",
+                "Gentity": "",
+                "Ctext": "Czech Republic",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CD',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CD',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CD",
+                "Gentity": "",
+                "Ctext": "Democratic Republic of the Congo",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DK',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DK',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "DK",
+                "Gentity": "",
+                "Ctext": "Denmark",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DJ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DJ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "DJ",
+                "Gentity": "",
+                "Ctext": "Djibouti",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "DM",
+                "Gentity": "",
+                "Ctext": "Dominica",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "DO",
+                "Gentity": "",
+                "Ctext": "Dominican Republic",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AN",
+                "Gentity": "",
+                "Ctext": "Dutch Antilles",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TP',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TP',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TP",
+                "Gentity": "",
+                "Ctext": "East Timor",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='EC',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='EC',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "EC",
+                "Gentity": "",
+                "Ctext": "Ecuador",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='EG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='EG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "EG",
+                "Gentity": "",
+                "Ctext": "Egypt",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SV',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SV',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SV",
+                "Gentity": "",
+                "Ctext": "El Salvador",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GQ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GQ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GQ",
+                "Gentity": "",
+                "Ctext": "Equatorial Guinea",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ER',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ER',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "ER",
+                "Gentity": "",
+                "Ctext": "Eritrea",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='EE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='EE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "EE",
+                "Gentity": "",
+                "Ctext": "Estonia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ET',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ET',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "ET",
+                "Gentity": "",
+                "Ctext": "Ethiopia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FK',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FK',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "FK",
+                "Gentity": "",
+                "Ctext": "Falkland Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "FO",
+                "Gentity": "",
+                "Ctext": "Faroe Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FJ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FJ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "FJ",
+                "Gentity": "",
+                "Ctext": "Fiji",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FI',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FI',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "FI",
+                "Gentity": "",
+                "Ctext": "Finland",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "FR",
+                "Gentity": "",
+                "Ctext": "France",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GF',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GF',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GF",
+                "Gentity": "",
+                "Ctext": "French Guyana",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PF',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PF',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PF",
+                "Gentity": "",
+                "Ctext": "French Polynesia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GA",
+                "Gentity": "",
+                "Ctext": "Gabon",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GM",
+                "Gentity": "",
+                "Ctext": "Gambia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GE",
+                "Gentity": "",
+                "Ctext": "Georgia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='DE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "DE",
+                "Gentity": "",
+                "Ctext": "Germany",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GH',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GH',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GH",
+                "Gentity": "",
+                "Ctext": "Ghana",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GI',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GI',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GI",
+                "Gentity": "",
+                "Ctext": "Gibraltar",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GR",
+                "Gentity": "",
+                "Ctext": "Greece",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GL',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GL',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GL",
+                "Gentity": "",
+                "Ctext": "Greenland",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GD',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GD',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GD",
+                "Gentity": "",
+                "Ctext": "Grenada",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GP',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GP',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GP",
+                "Gentity": "",
+                "Ctext": "Guadeloupe",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GU',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GU',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GU",
+                "Gentity": "",
+                "Ctext": "Guam",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GT',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GT',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GT",
+                "Gentity": "",
+                "Ctext": "Guatemala",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GN",
+                "Gentity": "",
+                "Ctext": "Guinea",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GW',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GW',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GW",
+                "Gentity": "",
+                "Ctext": "Guinea-Bissau",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GY',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GY',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GY",
+                "Gentity": "",
+                "Ctext": "Guyana",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='HT',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='HT',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "HT",
+                "Gentity": "",
+                "Ctext": "Haiti",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='HN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='HN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "HN",
+                "Gentity": "",
+                "Ctext": "Honduras",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='HK',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='HK',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "HK",
+                "Gentity": "",
+                "Ctext": "Hong Kong",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='HU',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='HU',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "HU",
+                "Gentity": "",
+                "Ctext": "Hungary",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IS',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IS',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "IS",
+                "Gentity": "",
+                "Ctext": "Iceland",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "IN",
+                "Gentity": "",
+                "Ctext": "India",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ID',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ID',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "ID",
+                "Gentity": "",
+                "Ctext": "Indonesia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "IR",
+                "Gentity": "",
+                "Ctext": "Iran",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IQ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IQ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "IQ",
+                "Gentity": "",
+                "Ctext": "Iraq",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "IE",
+                "Gentity": "",
+                "Ctext": "Ireland",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IT',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='IT',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "IT",
+                "Gentity": "",
+                "Ctext": "Italy",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='JM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='JM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "JM",
+                "Gentity": "",
+                "Ctext": "Jamaica",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='JP',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='JP',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "JP",
+                "Gentity": "",
+                "Ctext": "Japan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='JO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='JO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "JO",
+                "Gentity": "",
+                "Ctext": "Jordan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KZ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KZ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KZ",
+                "Gentity": "",
+                "Ctext": "Kazakhstan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KE",
+                "Gentity": "",
+                "Ctext": "Kenya",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KI',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KI',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KI",
+                "Gentity": "",
+                "Ctext": "Kiribati",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KW',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KW',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KW",
+                "Gentity": "",
+                "Ctext": "Kuwait",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KG",
+                "Gentity": "",
+                "Ctext": "Kyrgyzstan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LA",
+                "Gentity": "",
+                "Ctext": "Laos",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LV',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LV',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LV",
+                "Gentity": "",
+                "Ctext": "Latvia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LB',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LB',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LB",
+                "Gentity": "",
+                "Ctext": "Lebanon",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LS',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LS',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LS",
+                "Gentity": "",
+                "Ctext": "Lesotho",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LR",
+                "Gentity": "",
+                "Ctext": "Liberia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LY',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LY',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LY",
+                "Gentity": "",
+                "Ctext": "Libya",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LI',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LI',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LI",
+                "Gentity": "",
+                "Ctext": "Liechtenstein",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LT',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LT',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LT",
+                "Gentity": "",
+                "Ctext": "Lithuania",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LU',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LU',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LU",
+                "Gentity": "",
+                "Ctext": "Luxembourg",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MO",
+                "Gentity": "",
+                "Ctext": "Macau",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MK',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MK',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MK",
+                "Gentity": "",
+                "Ctext": "Macedonia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MG",
+                "Gentity": "",
+                "Ctext": "Madagascar",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MW',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MW',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MW",
+                "Gentity": "",
+                "Ctext": "Malawi",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MY',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MY',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MY",
+                "Gentity": "",
+                "Ctext": "Malaysia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MV',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MV',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MV",
+                "Gentity": "",
+                "Ctext": "Maldives",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ML',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ML',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "ML",
+                "Gentity": "",
+                "Ctext": "Mali",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MT',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MT',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MT",
+                "Gentity": "",
+                "Ctext": "Malta",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MH',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MH',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MH",
+                "Gentity": "",
+                "Ctext": "Marshall Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MQ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MQ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MQ",
+                "Gentity": "",
+                "Ctext": "Martinique",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MR",
+                "Gentity": "",
+                "Ctext": "Mauretania",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MU',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MU',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MU",
+                "Gentity": "",
+                "Ctext": "Mauritius",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='YT',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='YT',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "YT",
+                "Gentity": "",
+                "Ctext": "Mayotte",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MX',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MX',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MX",
+                "Gentity": "",
+                "Ctext": "Mexico",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='FM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "FM",
+                "Gentity": "",
+                "Ctext": "Micronesia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MD',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MD',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MD",
+                "Gentity": "",
+                "Ctext": "Moldova",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MC',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MC',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MC",
+                "Gentity": "",
+                "Ctext": "Monaco",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MN",
+                "Gentity": "",
+                "Ctext": "Mongolia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MS',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MS',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MS",
+                "Gentity": "",
+                "Ctext": "Montserrat",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MA",
+                "Gentity": "",
+                "Ctext": "Morocco",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MZ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MZ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MZ",
+                "Gentity": "",
+                "Ctext": "Mozambique",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NA",
+                "Gentity": "",
+                "Ctext": "Namibia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NR",
+                "Gentity": "",
+                "Ctext": "Nauru",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NP',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NP',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NP",
+                "Gentity": "",
+                "Ctext": "Nepal",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NL',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NL',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NL",
+                "Gentity": "",
+                "Ctext": "Netherlands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NC',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NC',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NC",
+                "Gentity": "",
+                "Ctext": "New Caledonia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NZ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NZ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NZ",
+                "Gentity": "",
+                "Ctext": "New Zealand",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NI',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NI',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NI",
+                "Gentity": "",
+                "Ctext": "Nicaragua",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NE",
+                "Gentity": "",
+                "Ctext": "Niger",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NG",
+                "Gentity": "",
+                "Ctext": "Nigeria",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NU',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NU',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NU",
+                "Gentity": "",
+                "Ctext": "Niue",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NF',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NF',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NF",
+                "Gentity": "",
+                "Ctext": "Norfolk Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KP',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KP',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KP",
+                "Gentity": "",
+                "Ctext": "North Korea",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MP',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='MP',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "MP",
+                "Gentity": "",
+                "Ctext": "North Mariana Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='NO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "NO",
+                "Gentity": "",
+                "Ctext": "Norway",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='OM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='OM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "OM",
+                "Gentity": "",
+                "Ctext": "Oman",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PK',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PK',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PK",
+                "Gentity": "",
+                "Ctext": "Pakistan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PW',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PW',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PW",
+                "Gentity": "",
+                "Ctext": "Palau",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PS',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PS',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PS",
+                "Gentity": "",
+                "Ctext": "Palestine",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PA",
+                "Gentity": "",
+                "Ctext": "Panama",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PY',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PY',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PY",
+                "Gentity": "",
+                "Ctext": "Paraguay",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PE",
+                "Gentity": "",
+                "Ctext": "Peru",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PH',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PH',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PH",
+                "Gentity": "",
+                "Ctext": "Philippines",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PN",
+                "Gentity": "",
+                "Ctext": "Pitcairn Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PL',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PL',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PL",
+                "Gentity": "",
+                "Ctext": "Poland",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PT',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PT',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PT",
+                "Gentity": "",
+                "Ctext": "Portugal",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PR",
+                "Gentity": "",
+                "Ctext": "Puerto Rico",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='QA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='QA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "QA",
+                "Gentity": "",
+                "Ctext": "Qatar",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CG",
+                "Gentity": "",
+                "Ctext": "Republic of the Congo",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='RE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='RE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "RE",
+                "Gentity": "",
+                "Ctext": "Reunion",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='RO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='RO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "RO",
+                "Gentity": "",
+                "Ctext": "Romania",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='RU',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='RU',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "RU",
+                "Gentity": "",
+                "Ctext": "Russian Federation",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='RW',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='RW',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "RW",
+                "Gentity": "",
+                "Ctext": "Rwanda",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SH',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SH',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SH",
+                "Gentity": "",
+                "Ctext": "Saint Helena",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KN",
+                "Gentity": "",
+                "Ctext": "Saint Kitts and Nevis",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='WS',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='WS',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "WS",
+                "Gentity": "",
+                "Ctext": "Samoa",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SM",
+                "Gentity": "",
+                "Ctext": "San Marino",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ST',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ST',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "ST",
+                "Gentity": "",
+                "Ctext": "Sao Tome and Principe",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SA",
+                "Gentity": "",
+                "Ctext": "Saudi Arabia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SN",
+                "Gentity": "",
+                "Ctext": "Senegal",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CS',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CS',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CS",
+                "Gentity": "",
+                "Ctext": "Serbia and Montenegro",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SC',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SC',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SC",
+                "Gentity": "",
+                "Ctext": "Seychelles",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SL',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SL',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SL",
+                "Gentity": "",
+                "Ctext": "Sierra Leone",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SG",
+                "Gentity": "",
+                "Ctext": "Singapore",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SK',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SK',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SK",
+                "Gentity": "",
+                "Ctext": "Slovakia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SI',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SI',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SI",
+                "Gentity": "",
+                "Ctext": "Slovenia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SB',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SB',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SB",
+                "Gentity": "",
+                "Ctext": "Solomon Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SO",
+                "Gentity": "",
+                "Ctext": "Somalia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ZA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ZA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "ZA",
+                "Gentity": "",
+                "Ctext": "South Africa",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GS',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GS',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GS",
+                "Gentity": "",
+                "Ctext": "South Georgia and the Southern Sandwich Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='KR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "KR",
+                "Gentity": "",
+                "Ctext": "South Korea",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ES',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ES',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "ES",
+                "Gentity": "",
+                "Ctext": "Spain",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LK',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LK',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LK",
+                "Gentity": "",
+                "Ctext": "Sri Lanka",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LC',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='LC',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "LC",
+                "Gentity": "",
+                "Ctext": "St. Lucia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='PM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "PM",
+                "Gentity": "",
+                "Ctext": "St. Pierre and Miquelon",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VC',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VC',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "VC",
+                "Gentity": "",
+                "Ctext": "St. Vincent and the Grenadines",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SD',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SD',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SD",
+                "Gentity": "",
+                "Ctext": "Sudan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SR",
+                "Gentity": "",
+                "Ctext": "Suriname",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SJ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SJ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SJ",
+                "Gentity": "",
+                "Ctext": "Svalbard",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SZ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SZ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SZ",
+                "Gentity": "",
+                "Ctext": "Swaziland",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SE",
+                "Gentity": "",
+                "Ctext": "Sweden",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CH',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='CH',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "CH",
+                "Gentity": "",
+                "Ctext": "Switzerland",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SY',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='SY',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "SY",
+                "Gentity": "",
+                "Ctext": "Syria",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TW',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TW',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TW",
+                "Gentity": "",
+                "Ctext": "Taiwan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TJ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TJ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TJ",
+                "Gentity": "",
+                "Ctext": "Tajikistan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TZ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TZ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TZ",
+                "Gentity": "",
+                "Ctext": "Tanzania",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TH',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TH',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TH",
+                "Gentity": "",
+                "Ctext": "Thailand",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TG",
+                "Gentity": "",
+                "Ctext": "Togo",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TK',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TK',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TK",
+                "Gentity": "",
+                "Ctext": "Tokelau Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TO',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TO',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TO",
+                "Gentity": "",
+                "Ctext": "Tonga",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TT',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TT',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TT",
+                "Gentity": "",
+                "Ctext": "Trinidad and Tobago",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TN",
+                "Gentity": "",
+                "Ctext": "Tunisia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TR',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TR',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TR",
+                "Gentity": "",
+                "Ctext": "Turkey",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TM",
+                "Gentity": "",
+                "Ctext": "Turkmenistan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TC',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TC',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TC",
+                "Gentity": "",
+                "Ctext": "Turks and Caicos Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TV',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='TV',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "TV",
+                "Gentity": "",
+                "Ctext": "Tuvalu",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='US',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='US',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "US",
+                "Gentity": "",
+                "Ctext": "USA",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='UG',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='UG',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "UG",
+                "Gentity": "",
+                "Ctext": "Uganda",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='UA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='UA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "UA",
+                "Gentity": "",
+                "Ctext": "Ukraine",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='AE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "AE",
+                "Gentity": "",
+                "Ctext": "United Arab Emirates",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GB',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='GB',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "GB",
+                "Gentity": "",
+                "Ctext": "United Kingdom",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='UY',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='UY',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "UY",
+                "Gentity": "",
+                "Ctext": "Uruguay",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='UZ',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='UZ',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "UZ",
+                "Gentity": "",
+                "Ctext": "Uzbekistan",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VU',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VU',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "VU",
+                "Gentity": "",
+                "Ctext": "Vanuatu",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VA',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VA',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "VA",
+                "Gentity": "",
+                "Ctext": "Vatican City",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "VE",
+                "Gentity": "",
+                "Ctext": "Venezuela",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VN',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='VN',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "VN",
+                "Gentity": "",
+                "Ctext": "Vietnam",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='WF',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='WF',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "WF",
+                "Gentity": "",
+                "Ctext": "Wallis and Futuna Islands",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='EH',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='EH',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "EH",
+                "Gentity": "",
+                "Ctext": "West Sahara",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='YE',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='YE',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "YE",
+                "Gentity": "",
+                "Ctext": "Yemen",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ZM',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ZM',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "ZM",
+                "Gentity": "",
+                "Ctext": "Zambia",
+                "Gtext": ""
+            },
+            {
+                "__metadata": {
+                    "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ZW',Gentity='')",
+                    "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/ZLISTSET(Country='ZW',Gentity='')",
+                    "type": "ZUI5_TEMP_BID_CERT_SRV.ZLIST"
+                },
+                "Country": "ZW",
+                "Gentity": "",
+                "Ctext": "Zimbabwe",
+                "Gtext": ""
+            }
+        ]
+    }
+}

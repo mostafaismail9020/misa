@@ -1,0 +1,49 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                      	 ; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; asir-banner-image.png            			 ; asir-banner-image.png     						; $siteResource/asir-banner-image.png                                         			  ;                 image/png                ;                                          ; ""     ;
+					; asir-map.png                       		 ; asir-map.png               						; $siteResource/asir-map.png                                                  			  ;                 image/png                ;                                          ; ""     ;
+					; asir-tourism.png                           ; asir-tourism.png                      			; $siteResource/asir-tourism.png                                                          ;                 image/png                ;                                          ; ""     ;
+					; asir-trade.png                             ; asir-trade.png                        			; $siteResource/asir-trade.png                                                            ;                 image/png                ;                                          ; ""     ;
+					; asir-healthcare.png                        ; asir-healthcare.png                   			; $siteResource/asir-healthcare.png                                                       ;                 image/png                ;                                          ; ""     ;
+					; asir-agriculture.png                       ; asir-agriculture.png                  			; $siteResource/asir-agriculture.png                                                      ;                 image/png                ;                                          ; ""     ;   
+					; asir-mining.png                            ; asir-mining.png                       			; $siteResource/asir-mining.png                                                           ;                 image/png                ;                                          ; ""     ;   
+																   
+					; asir-active-factories.png                  ; asir-active-factories.png                   		; $siteResource/asir-active-factories.png                                                 ;                 image/png                ;                                          ; ""     ;   
+					; asir-airport.png                      	 ; asir-airport.png              					; $siteResource/asir-airport.png                                                  		  ;                 image/png                ;                                          ; ""     ;   
+					; asir-dams.png                         	 ; asir-dams.png                 					; $siteResource/asir-dams.png                                                    		  ;                 image/png                ;                                          ; ""     ;   
+					; asir-hospitals.png                         ; asir-hospitals.png                  				; $siteResource/asir-hospitals.png                                                     	  ;                 image/png                ;                                          ; ""     ;   
+					; asir-hotels.png                     		 ; asir-hotels.png             						; $siteResource/asir-hotels.png                                                 		  ;                 image/png                ;                                          ; ""     ;   
+					; asir-industrial-city.png                   ; asir-industrial-city.png                			; $siteResource/asir-industrial-city.png                                                  ;                 image/png                ;                                          ; ""     ;   
+					; asir-population.png                        ; asir-population.png                    			; $siteResource/asir-population.png                                                       ;                 image/png                ;                                          ; ""     ;   
+					; asir-population-growth.png                 ; asir-population-growth.png                     	; $siteResource/asir-population-growth.png                                                ;                 image/png                ;                                          ; ""     ;   
+					; asir-private-sector-employees.png          ; asir-private-sector-employees.png                ; $siteResource/asir-private-sector-employees.png                                         ;                 image/png                ;                                          ; ""     ;   
+					; asir-roads-length.png                      ; asir-roads-length.png               				; $siteResource/asir-roads-length.png                                                     ;                 image/png                ;                                          ; ""     ;   
+					; asir-sport-city.png                    	 ; asir-sport-city.png            					; $siteResource/asir-sport-city.png                                                		  ;                 image/png                ;                                          ; ""     ;   
+					; asir-towns.png                           	 ; asir-towns.png                   			    ; $siteResource/asir-towns.png                                                       	  ;                 image/png                ;                                          ; ""     ;   					
+																   
+					; asir-business-infrastructure.png           ; asir-business-infrastructure.png            		; $siteResource/asir-business-infrastructure.png                                          ;                 image/png                ;                                          ; ""     ;   
+					; asir-healthcare-infrastructure.png         ; asir-healthcare-infrastructure.png             	; $siteResource/asir-healthcare-infrastructure.png                                        ;                 image/png                ;                                          ; ""     ;   	
+					; asir-quality-of-higher-education.png       ; asir-quality-of-higher-education.png             ; $siteResource/asir-quality-of-higher-education.png                                      ;                 image/png                ;                                          ; ""     ;   	
+					; asir-tourist-potential.png                 ; asir-tourist-potential.png                       ; $siteResource/asir-tourist-potential.png                                                ;                 image/png                ;                                          ; ""     ;   	
+					; asir-unique-climate.png                    ; asir-unique-climate.png                      	; $siteResource/asir-unique-climate.png                                                   ;                 image/png                ;                                          ; ""     ;   	
+																  
+					; asir-build.png                             ; asir-build.png                       			; $siteResource/asir-build.png                                                            ;                 image/png                ;                                          ; ""     ;   	
+					; asir-develop.png                           ; asir-develop.png                    				; $siteResource/asir-develop.png                                                          ;                 image/png                ;                                          ; ""     ;   	
+					; asir-investments.png                       ; asir-investments.png                    			; $siteResource/asir-investments.png                                                      ;                 image/png                ;                                          ; ""     ;   	
+					; asir-launch.png                            ; asir-launch.png                    				; $siteResource/asir-launch.png                                                           ;                 image/png                ;                                          ; ""     ;   	
+					; asir-upgrade.png                           ; asir-upgrade.png                    				; $siteResource/asir-upgrade.png                                                          ;                 image/png                ;                                          ; ""     ;   	

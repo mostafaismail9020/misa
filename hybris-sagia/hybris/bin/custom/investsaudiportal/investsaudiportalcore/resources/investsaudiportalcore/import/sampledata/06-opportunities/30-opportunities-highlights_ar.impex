@@ -1,0 +1,12 @@
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = ar
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ; industry-40               ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Entrant to generate up to $900Mn revenues in KSA and rest of MENA region by 2030 </span></li>
+  <li><span>Entrant market share is assumed at 10% in year 1, growing to 30% by year 10 </span></li>
+</ul>
+"

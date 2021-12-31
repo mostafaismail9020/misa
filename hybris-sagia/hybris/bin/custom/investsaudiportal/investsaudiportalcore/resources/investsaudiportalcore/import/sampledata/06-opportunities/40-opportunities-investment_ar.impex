@@ -1,0 +1,13 @@
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = ar
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; investmentModel[lang = $lang]
+                                ; production-of-drill-pipes ;                ; "
+<h1 class='heading text-left my-3 mb-4'>Investment Model</h1>
+<div>Model: <span class='diff-color'>Opportunity to consider different operating models:</span></div>
+<ul class='bulled-list mt-3'>
+  <li><span>Opportunity to consider different operating models:</span></li>
+  <li><span>Joint venture with local player</span></li>
+</ul>                           
+"

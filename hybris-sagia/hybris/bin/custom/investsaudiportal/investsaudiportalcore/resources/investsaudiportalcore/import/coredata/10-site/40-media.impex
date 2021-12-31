@@ -1,0 +1,3 @@
+INSERT_UPDATE MediaFolder; qualifier[unique = true]; path[unique = true]
+                         ; portal-media            ; portal-media
+                         ; portal-media-email      ; portal-media-email

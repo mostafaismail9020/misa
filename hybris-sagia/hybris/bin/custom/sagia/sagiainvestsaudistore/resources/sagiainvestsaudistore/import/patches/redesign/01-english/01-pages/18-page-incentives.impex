@@ -1,0 +1,225 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalIncentivesTemplate
+$page = incentives
+$pageName = Incentives for Investor
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pageLabel = /investor/incentives
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+#$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  		; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName	; $pageTitleEn    ; $pageTitleAr    ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+#INSERT_UPDATE BreadcrumbComponent; uid[unique=true]			; &componentRef			; $contentCV[unique=true];
+
+INSERT_UPDATE Media	; code[unique = true]                 ; realFileName             		    ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText ; $contentCV[unique = true];
+					; incentives_banner.jpg 	          ; incentives_banner.jpg			    ; $siteResource/incentives_banner.jpg										    ; image/jpeg						;										   ; ""      ;                          ;
+#Loan Program
+					; arab_fund.jpg 		              ; arab_fund.jpg			            ; $siteResource/arab_fund.jpg										            ; image/jpeg						;										   ; ""      ;                          ;
+					; Mask_Group_114.jpg 		          ; Mask_Group_114.jpg			        ; $siteResource/Mask_Group_114.jpg										        ; image/jpeg						;										   ; ""      ;                          ;
+					; atfp.jpg 		                      ; atfp.jpg			                ; $siteResource/atfp.jpg										                ; image/jpeg						;										   ; ""      ;                          ;
+					; arab_investment.jpg 		          ; arab_investment.jpg			        ; $siteResource/arab_investment.jpg										        ; image/jpeg						;										   ; ""      ;                          ;
+					; Mask_Group_115.jpg 		          ; Mask_Group_115.jpg			        ; $siteResource/Mask_Group_115.jpg										        ; image/jpeg						;										   ; ""      ;                          ;
+#Energy n Utility
+					; logo_ar.png 		                  ; logo_ar.png			                ; $siteResource/logo_ar.png										                ; image/png						;										   ; ""      ;                          ;
+					; saudi_aramco.png 		              ; saudi_aramco.png			        ; $siteResource/saudi_aramco.png										        ; image/png						;										   ; ""      ;                          ;
+					; Mask_Group_109.png 		          ; Mask_Group_109.png			        ; $siteResource/Mask_Group_109.png										        ; image/png						;										   ; ""      ;                          ;
+					; Saudi_Electricity_Company_Logo.png  ; Saudi_Electricity_Company_Logo.png	; $siteResource/Saudi_Electricity_Company_Logo.png							    ; image/png						;										   ; ""      ;                          ;
+					; national_water.png 		          ; national_water.png			        ; $siteResource/national_water.png										        ; image/png						;										   ; ""      ;                          ;
+#Employment Support
+					; tamheer.jpg 		                  ; tamheer.jpg 		                ; $siteResource/tamheer.jpg 							                        ; image/jpeg						;										   ; ""      ;                          ;
+					; program.jpg 		                  ; program.jpg 		                ; $siteResource/program.jpg 								                    ; image/jpeg						;										   ; ""      ;                          ;
+					; professional.jpg                    ; professional.jpg 	                ; $siteResource/professional.jpg 							                    ; image/jpeg						;										   ; ""      ;                          ;
+					; doroob.jpg                          ; doroob.jpg                          ; $siteResource/doroob.jpg       						                        ; image/jpeg						;										   ; ""      ;                          ;
+#Export credit finance
+					; SIDF_logo.jpg 		              ; SIDF_logo.jpg 		                ; $siteResource/SIDF_logo.jpg 								                    ; image/jpeg						;										   ; ""      ;                          ;
+					; itfc_eng_rgb_vertical.jpg           ; itfc_eng_rgb_vertical.jpg 	        ; $siteResource/itfc_eng_rgb_vertical.jpg 							            ; image/jpeg				        ;										   ; ""      ;                          ;
+					; saudi_exim.jpg                      ; saudi_exim.jpg                      ; $siteResource/saudi_exim.jpg       						                    ; image/jpeg					    ;										   ; ""      ;                          ;
+#Land Solutions
+					; modon.jpg 		                  ; modon.jpg 		                    ; $siteResource/modon.jpg 								                        ; image/jpeg						;										   ; ""      ;                          ;
+					; rcjy.jpg                            ; rcjy.jpg 	                        ; $siteResource/rcjy.jpg 							                            ; image/jpeg				        ;										   ; ""      ;                          ;
+					; ecza.jpg                            ; ecza.jpg                            ; $siteResource/ecza.jpg       						                            ; image/jpeg					    ;										   ; ""      ;                          ;
+					; kaec.jpg                            ; kaec.jpg 	                        ; $siteResource/kaec.jpg 							                            ; image/jpeg				        ;										   ; ""      ;                          ;
+					; ic_seeklogo.jpg                     ; ic_seeklogo.jpg                     ; $siteResource/ic_seeklogo.jpg       						                    ; image/jpeg					    ;										   ; ""      ;                          ;
+#Finance RnD
+					; kacst.png                           ; kacst.png 	                        ; $siteResource/kacst.png 							                            ; image/png				        ;										   ; ""      ;                          ;
+					; SIDF_logo.png 		              ; SIDF_logo.png 		                ; $siteResource/SIDF_logo.png 								                    ; image/png						;										   ; ""      ;                          ;
+#Tax Exemption
+					; Tax_credit.png                      ; Tax_credit.png 	                    ; $siteResource/Tax_credit.png 							                        ; image/png				            ;										   ; ""      ;                          ;
+#Smes Ecosystem
+					; monshaat_logo.png                   ; monshaat_logo.png 	                ; $siteResource/monshaat_logo.png 							                    ; image/png				            ;										   ; ""      ;                          ;
+
+############# incentives BANNER start ###################
+
+INSERT_UPDATE InvestSaudiBannerComponent ; uid[unique = true] ; name       ; descriptionText[lang = ar]	; descriptionText[lang = en] ; descriptionText2 [lang = en]	; buttonText[lang = en] ; buttonText[lang = ar]   ; image(code, $contentCV)     ; buttonURL(&linkRef)     ; link   ; &componentRef      ; $contentCV[unique = true] ;
+                                         ; incentives-banner  ; INCENTIVES ; INCENTIVES                   ; INCENTIVES	             ;                              ;                       ;                         ; incentives_banner.jpg       ;                         ; true   ; incentives-banner  ;                           ;
+
+INSERT_UPDATE InvestSaudiBannerContainer ; uid[unique = true]          ; name                        ; simpleCMSComponents(&componentRef) ; &componentRef               ; $contentCV[unique = true] ;
+                                         ; incentives-banner-container ; Incentives banner container ; incentives-banner                  ; incentives-banner-container ;                           ;
+
+############# incentives BANNER end ###################
+ 
+############# incentives PARAGRAPH start ###################
+
+INSERT_UPDATE CMSParagraphComponent ;$contentCV[unique=true] ; uid[unique=true]     ; content[lang=en]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ; &componentRef        ;
+                                    ;                        ; incentives-paragraph ; "<section class=""INS_sections_insdetials"" id=""""><div class=""container""><div class=""row""><p class=""INS_para"">To facilitate investment in Saudi Arabia, the Kingdom offers appealing incentives designed to encourage investment with the potential to diversify and improve the Kingdom's competitiveness. </p><p class=""INS_para"">Special incentives and assistance are offered to foreign-affiliated enterprises and international companies wishing to create offices in the Kingdom, in order to promote clustering activities, ensure knowledge transfer, and accelerate the development of skills and competencies within the Kingdom.</p></div></div></section>"; incentives-paragraph ;
+
+############# incentives PARAGRAPH end #####################
+
+############# incentives LOAN PROGRAM start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]               ; $contentCV[unique = true] ; linkName  [lang = en]     ; linkName [lang = ar]      ; url                        ;
+                               ; loanprogram-exploreall-link-1    ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.arabfund.org/  ;
+                               ; loanprogram-exploreall-link-2    ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.amf.org.ae/en  ;
+                               ; loanprogram-exploreall-link-3    ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://atfp.org.ae/       ;
+                               ; loanprogram-exploreall-link-4    ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.dhaman.net/en/ ;
+                               ; loanprogram-exploreall-link-5    ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.isdb.org/      ;
+
+INSERT_UPDATE LoanProgramsforIncentiveComponent ; uid[unique = true] ; name                          ; title[lang = en]                                                                      ; description[lang = en]                                                                                                                                                                                                                                                         ; logo(code, $contentCV)  ; knowMore(uid, $contentCV)      ; &componentRef  ; $contentCV[unique = true] ;
+                                                ; loanprogram-1      ; Loan Programs for Incentive 1 ; Loan program for public/private investment projects                                   ; "<p class=""INS_loanpbm_para"">Financing for public/private investment projects offering:</p><ul class=""INS_list_font""><li>Reduced interest rate</li><li>4-6 grace period</li><li>Long term extended to 22-25 years</li></ul>"                                               ; arab_fund.jpg 		    ; loanprogram-exploreall-link-1  ; loanprogram-1  ; ;
+                                                ; loanprogram-2      ; Loan Programs for Incentive 2 ; Loan program for economic development and reform in Arab countries                    ; "<p class=""INS_loanpbm_para"">This program offers loans and facilities to help address the overall balance of payment deficit of member countries, including 4 types of loans that vary in size, terms, and maturity.</p>"                                                    ; Mask_Group_114.jpg 	    ; loanprogram-exploreall-link-2  ; loanprogram-2  ; ;
+                                                ; loanprogram-3      ; Loan Programs for Incentive 3 ; Financing facilities for trade transactions of goods of Arab origin                   ; "<p class=""INS_loanpbm_para"">This loan program offers refinancing of Arab exports to Arab & non-Arab countries through lines of credit, e.g., pre-export credits, post-shipment credits, buyers’ credits, and import credits.</p>"                                           ; atfp.jpg 		        ; loanprogram-exploreall-link-3  ; loanprogram-3  ; ;
+                                                ; loanprogram-4      ; Loan Programs for Incentive 4 ; Political and commercial risk insurance for investments and export credit guarantees  ; "<p class=""INS_loanpbm_para"">Insurance schemes and guarantees to encourage investments in Arab countries, and enhance inter-Arab trade and Arab exports worldwide.</p>"                                                                                                      ; arab_investment.jpg     ; loanprogram-exploreall-link-4  ; loanprogram-4  ; ;
+                                                ; loanprogram-5      ; Loan Programs for Incentive 5 ; Equity and debt financing for enterprises and productive projects in member countries ; "<p class=""INS_loanpbm_para"">Offers different financing schemes to support investment capital of projects, grants loans to enterprises and productive projects, and accepts deposits to mobilize financial resources in accordance with the provisions of Islamic law.</p>"  ; Mask_Group_115.jpg 	    ; loanprogram-exploreall-link-5  ; loanprogram-5  ; ;
+
+INSERT_UPDATE LoanProgramsforIncentiveContainer ; uid[unique = true]                ; name                                  ; title[lang = en] ; title[lang = ar] ; simpleCMSComponents(&componentRef)                                    ; &componentRef                     ; $contentCV[unique = true] ;
+                                                ; loanprograms-incentives-container ; Loan Programs for Incentive Container ; LOAN PROGRAMS    ; LOAN PROGRAMS    ; loanprogram-1,loanprogram-2,loanprogram-3,loanprogram-4,loanprogram-5 ; loanprograms-incentives-container ;                           ;
+
+############# incentives LOAN PROGRAM end ###################
+
+############# incentives ENERGY N UTILITY start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]             ; $contentCV[unique = true] ; linkName  [lang = en]     ; linkName [lang = ar]      ; url                                               ;
+                               ; energynutil-exploreall-link-1  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.mim.gov.sa/mim/index-ltr.html         ;
+                               ; energynutil-exploreall-link-2  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.aramco.com/                           ;
+                               ; energynutil-exploreall-link-3  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://modon.gov.sa/en/Pages/default.aspx        ;
+                               ; energynutil-exploreall-link-4  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.se.com.sa/en-us/Pages/home.aspx       ;
+                               ; energynutil-exploreall-link-5  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.nwc.com.sa/English/pages/default.aspx ;
+
+INSERT_UPDATE EnergynUtilityforIncentiveComponent ; uid[unique = true] ; name                          ; logo(code, $contentCV)             ; logoUrl(uid, $contentCV)       ; &componentRef  ; $contentCV[unique = true] ;
+                                                  ; energynutil-1      ; Energy N Util for Incentive 1 ; logo_ar.png 		                ; energynutil-exploreall-link-1  ; energynutil-1  ;                           ;
+                                                  ; energynutil-2      ; Energy N Util for Incentive 2 ; saudi_aramco.png 		            ; energynutil-exploreall-link-2  ; energynutil-2  ;                           ;
+                                                  ; energynutil-3      ; Energy N Util for Incentive 3 ; Mask_Group_109.png 		        ; energynutil-exploreall-link-3  ; energynutil-3  ;                           ;
+                                                  ; energynutil-4      ; Energy N Util for Incentive 4 ; Saudi_Electricity_Company_Logo.png ; energynutil-exploreall-link-4  ; energynutil-4  ;                           ;
+                                                  ; energynutil-5      ; Energy N Util for Incentive 5 ; national_water.png 		        ; energynutil-exploreall-link-5  ; energynutil-5  ;                           ;
+
+INSERT_UPDATE EnergynUtilityforIncentiveContainer ; uid[unique = true]               ; name                                  ; title[lang = en]              ; title[lang = ar]              ; subTitle[lang = en]                                ; subTitle[lang = ar]                                ; simpleCMSComponents(&componentRef)                                    ; &componentRef                     ; $contentCV[unique = true] ;
+                                                  ; energynutil-incentives-container ; Loan Programs for Incentive Container ; ENERGY AND UTILITY ENABLEMENT ; ENERGY AND UTILITY ENABLEMENT ; Enabling energy and utilities in industrial cities ; Enabling energy and utilities in industrial cities ; energynutil-1,energynutil-2,energynutil-3,energynutil-4,energynutil-5 ; energynutil-incentives-container  ;                           ;
+
+############# incentives ENERGY N UTILITY end ###################
+
+############# incentives Employment Support start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]                   ; $contentCV[unique = true] ; linkName  [lang = en]     ; linkName [lang = ar]      ; url                                                                                                                                                                                                         ;
+                               ; employmentsupport-exploreall-link-1  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.hrdf.org.sa/program/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D8%AA%D9%88%D8%B8%D9%8A%D9%81-%D8%A3%D9%81%D8%B1%D8%A7%D8%AF                                           ;
+                               ; employmentsupport-exploreall-link-2  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.hrdf.org.sa/program/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D8%AA%D9%88%D8%B8%D9%8A%D9%81-%D8%A3%D9%81%D8%B1%D8%A7%D8%AF                                           ;
+                               ; employmentsupport-exploreall-link-3  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.hrdf.org.sa/program/%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D8%B4%D9%87%D8%A7%D8%AF%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D9%87%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9 ;
+                               ; employmentsupport-exploreall-link-4  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://doroob.sa/                                                                                                                                                                                          ;
+
+INSERT_UPDATE EmploymentSupportforIncentiveComponent ; uid[unique = true]   ; name                               ; logo(code, $contentCV)  ; title [lang = en]                                           ; description [lang = en]                                                                                                                                                                                                                                            ; knowMore(uid, $contentCV)            ; defaultIncentiveProgram[default=false] ; componentId  ; componentTabId  ; &componentRef        ; $contentCV[unique = true] ;
+                                                     ; employmentsupport-1  ; Employment Support for Incentive 1 ; tamheer.jpg 		       ; Tamheer program                                             ; "The program offers on-the-job training programs for Saudi graduates including: <ul class=""INS_li_ul_under  pb-3 mb-3"" ><li>Financial support of SAR 3,000 ($800) per month during the 3 to 6 months of training with occupational hazard insurance.</li></ul>"  ; employmentsupport-exploreall-link-1  ; true                                   ; Tamheer      ; home            ; employmentsupport-1  ;                           ;
+                                                     ; employmentsupport-2  ; Employment Support for Incentive 2 ; program.jpg 		       ; Program to support the growth of Saudization of enterprises ;                                                                                                                                                                                                                                                                    ; employmentsupport-exploreall-link-2  ;                                        ; Program      ; profile         ; employmentsupport-2  ;                           ;
+                                                     ; employmentsupport-3  ; Employment Support for Incentive 3 ; professional.jpg 	   ; Professional certification support program                  ; The program aims to enable the Saudi workforce to obtain professional certificates accredited in several professional fields required by the labor market (CMMP, CIT, PMP, etc.). Additionally, HRDF provides reimbursement for training costs and test fees.      ; employmentsupport-exploreall-link-3  ;                                        ; Professional ; contact         ; employmentsupport-3  ;                           ;
+                                                     ; employmentsupport-4  ; Employment Support for Incentive 4 ; doroob.jpg              ; Doroob Program                                              ; Doroob is a comprehensive electronic learning platform enabling Saudi nationals to obtain certifications approved and recognized by the main companies in the Kingdom.                                                                                             ; employmentsupport-exploreall-link-4  ;                                        ; Doroob       ; contact         ; employmentsupport-4  ;                           ;
+
+INSERT_UPDATE EmploymentSupportforIncentiveContainer ; uid[unique = true]                     ; name                                       ; title[lang = en]              ; title[lang = ar]           ; simpleCMSComponents(&componentRef)                                              ; &componentRef                           ; $contentCV[unique = true] ;
+                                                     ; employmentsupport-incentives-container ; Employment Support for Incentive Container ; EMPLOYMENT SUPPORT PROGRAM    ; EMPLOYMENT SUPPORT PROGRAM ; employmentsupport-1,employmentsupport-2,employmentsupport-3,employmentsupport-4 ; employmentsupport-incentives-container  ;                           ;
+
+############# incentives Employment Support end ###################
+
+############# incentives Export Credit Finance start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]               ; $contentCV[unique = true] ; linkName  [lang = en]     ; linkName [lang = ar]      ; url                                            ;
+                               ; creditfinance-exploreall-link-1  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.sidf.gov.sa/en/Pages/Home.aspx     ;
+                               ; creditfinance-exploreall-link-2  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.itfc-idb.org/en                    ;
+                               ; creditfinance-exploreall-link-3  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://saudiexim.gov.sa/en/Pages/default.aspx ;
+
+INSERT_UPDATE ExportCreditFinanceforIncentiveComponent ; uid[unique = true] ; name                                  ; logo(code, $contentCV)    ; knowMore(uid, $contentCV)        ; &componentRef    ; $contentCV[unique = true] ;
+                                                       ; creditfinance-1    ; Export Credit Finance for Incentive 1 ; SIDF_logo.jpg 		    ; creditfinance-exploreall-link-1  ; creditfinance-1  ;                           ;
+                                                       ; creditfinance-2    ; Export Credit Finance for Incentive 2 ; itfc_eng_rgb_vertical.jpg ; creditfinance-exploreall-link-2  ; creditfinance-2  ;                           ;
+                                                       ; creditfinance-3    ; Export Credit Finance for Incentive 3 ; saudi_exim.jpg            ; creditfinance-exploreall-link-3  ; creditfinance-3  ;                           ;
+
+INSERT_UPDATE ExportCreditFinanceforIncentiveContainer ; uid[unique = true]                 ; name                                          ; title[lang = en]                                  ; title[lang = ar]                                  ; shortDescription[lang = en]                ; shortDescription[lang = ar]                ; longDescription[lang = en]                                                                                                                             ; longDescription[lang = ar]                                                                                                                             ; simpleCMSComponents(&componentRef)              ; &componentRef                       ; $contentCV[unique = true] ;
+                                                       ; creditfinance-incentives-container ; Export Credit Finance for Incentive Container ; EXPORT CREDIT FINANCING, GUARANTEE, AND INSURANCE ; EXPORT CREDIT FINANCING, GUARANTEE, AND INSURANCE ; Credit financing, guarantee, and insurance ; Credit financing, guarantee, and insurance ; Saudi Arabia offers incentives for pre-export financing to Saudi exporters' buyers and post-shipment financing to international buyers of Saudi goods. ; Saudi Arabia offers incentives for pre-export financing to Saudi exporters' buyers and post-shipment financing to international buyers of Saudi goods. ; creditfinance-1,creditfinance-2,creditfinance-3 ; creditfinance-incentives-container  ;                           ;
+
+############# incentives Export Credit Finance end ###################
+
+############# incentives Attractive Land Solutions start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]               ; $contentCV[unique = true] ; linkName  [lang = en]     ; linkName [lang = ar]      ; url                                                     ;
+                               ; landsolutions-exploreall-link-1  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://modon.gov.sa/ar/Pages/default.aspx              ;
+                               ; landsolutions-exploreall-link-2  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.rcjy.gov.sa/en-us/jubail/pages/default.aspx ;
+                               ; landsolutions-exploreall-link-3  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; http://www.ecza.gov.sa/                                 ;
+                               ; landsolutions-exploreall-link-4  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.kaec.net/                                   ;
+                               ; landsolutions-exploreall-link-5  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.ic.gov.sa/en/                               ;
+
+INSERT_UPDATE AttractiveLandSolutionsforIncentiveComponent ; uid[unique = true] ; name                                      ; title [lang = en]                                                    ; logo(code, $contentCV) ; knowMore(uid, $contentCV)        ; &componentRef    ; $contentCV[unique = true] ;
+                                                           ; landsolutions-1    ; Attractive Land Solutions for Incentive 1 ; Saudi Authority for Industrial Cities and Technology Zones (Modon)*: ; modon.jpg              ; landsolutions-exploreall-link-1  ; landsolutions-1  ;                           ;
+                                                           ; landsolutions-2    ; Attractive Land Solutions for Incentive 2 ; Royal Commission for Jubail and Yanbu*:                              ; rcjy.jpg               ; landsolutions-exploreall-link-2  ; landsolutions-2  ;                           ;
+                                                           ; landsolutions-3    ; Attractive Land Solutions for Incentive 3 ; Economic Cities and Special Zones Authority (ECZA):                  ; ecza.jpg               ; landsolutions-exploreall-link-3  ; landsolutions-3  ;                           ;
+                                                           ; landsolutions-4    ; Attractive Land Solutions for Incentive 4 ; King Abdullah Economic City (KAEC):                                  ; kaec.jpg               ; landsolutions-exploreall-link-4  ; landsolutions-4  ;                           ;
+                                                           ; landsolutions-5    ; Attractive Land Solutions for Incentive 5 ; National Industrial Development Centre                               ; ic_seeklogo.jpg        ; landsolutions-exploreall-link-5  ; landsolutions-5  ;                           ;
+
+INSERT_UPDATE AttractiveLandSolutionsforIncentiveContainer ; uid[unique = true]                 ; name                                              ; title[lang = en]          ; title[lang = ar]          ; simpleCMSComponents(&componentRef)                                              ; &componentRef                       ; $contentCV[unique = true] ;
+                                                           ; landsolutions-incentives-container ; Attractive Land Solutions for Incentive Container ; ATTRACTIVE LAND SOLUTIONS ; ATTRACTIVE LAND SOLUTIONS ; landsolutions-1,landsolutions-2,landsolutions-3,landsolutions-4,landsolutions-5 ; landsolutions-incentives-container  ;                           ;
+
+############# incentives Attractive Land Solutions end ###################
+
+############# incentives Finance RnD start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]             ; $contentCV[unique = true] ; linkName  [lang = en]     ; linkName [lang = ar]      ; url                                        ;
+                               ; finance-rnd-exploreall-link-1  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.kacst.edu.sa/                  ;
+                               ; finance-rnd-exploreall-link-2  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.sidf.gov.sa/en/Pages/Home.aspx ;
+
+INSERT_UPDATE FinancialRnDforIncentiveComponent ; uid[unique = true] ; name                          ; title [lang = en]            ; longDescription [lang = en]                                                                                                                              ; title [lang = ar]            ; longDescription [lang = ar]                                                                                                                              ; logo(code, $contentCV) ; knowMore(uid, $contentCV)      ; &componentRef  ; $contentCV[unique = true] ;
+                                                ; finance-rnd-1      ; Financial RnD for Incentive 1 ; FINANCIAL INCENTIVES FOR R&D ; Investment in selected local and international R&D projects with potential to boost the country's economic growth and self-reliance.                     ; FINANCIAL INCENTIVES FOR R&D ; Investment in selected local and international R&D projects with potential to boost the country's economic growth and self-reliance.                     ; kacst.png              ; finance-rnd-exploreall-link-1  ; finance-rnd-1  ;                           ;
+                                                ; finance-rnd-2      ; Financial RnD for Incentive 2 ; MULTI-PURPOSE LOAN           ; Finance capital expenditure items not resulting in rated production capacity increases, but potentially improving the borrower's business or operations. ; MULTI-PURPOSE LOAN           ; Finance capital expenditure items not resulting in rated production capacity increases, but potentially improving the borrower's business or operations. ; SIDF_logo.png          ; finance-rnd-exploreall-link-2  ; finance-rnd-2  ;                           ;
+
+INSERT_UPDATE FinancialRnDforIncentiveContainer ; uid[unique = true]               ; name                                  ; title[lang = en]             ; title[lang = ar]             ; simpleCMSComponents(&componentRef) ; &componentRef                     ; $contentCV[unique = true] ;
+                                                ; finance-rnd-incentives-container ; Financial RnD for Incentive Container ; FINANCIAL INCENTIVES FOR R&D ; FINANCIAL INCENTIVES FOR R&D ; finance-rnd-1,finance-rnd-2        ; finance-rnd-incentives-container  ;                           ;
+
+############# incentives Finance RnD end ###################
+
+############# incentives Tax Credit Exemption start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]             ; $contentCV[unique = true] ; linkName  [lang = en]     ; linkName [lang = ar]      ; url                       ;
+                               ; tax-exemption-exploreall-link  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.ic.gov.sa/en/ ;
+
+INSERT_UPDATE TaxCreditExemptionforIncentiveComponent ; uid[unique = true] ; name                               ; title [lang = en]        ; shortDescription [lang = en]                           ; longDescription [lang = en]                                                                            ; title [lang = ar]        ; shortDescription [lang = ar]                           ; longDescription [lang = ar]                                                                            ; logo(code, $contentCV) ; knowMore(uid, $contentCV)      ; &componentRef  ; $contentCV[unique = true] ;
+                                                      ; tax-exemption      ; Tax Credit Exemption for Incentive ; TAX CREDIT AND EXEMPTION ; Tax Credit on Saudi National Payroll and Training Cost ; NIDC offers up to a 50% tax credit on Saudi national worker's payroll and training costs for 10 years. ; TAX CREDIT AND EXEMPTION ; Tax Credit on Saudi National Payroll and Training Cost ; NIDC offers up to a 50% tax credit on Saudi national worker's payroll and training costs for 10 years. ; Tax_credit.png         ; tax-exemption-exploreall-link  ; tax-exemption  ;                           ;
+
+############# incentives Tax Credit Exemption end ###################
+
+############# incentives Smes Ecosystem start ###################
+
+INSERT_UPDATE CMSLinkComponent ; uid[unique = true]             ; $contentCV[unique = true] ; linkName  [lang = en]     ; linkName [lang = ar]      ; url                      ;
+                               ; smesecosystem-exploreall-link  ;                           ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://monshaat.gov.sa/ ;
+
+INSERT_UPDATE SmesEcosystemforIncentiveComponent ; uid[unique = true] ; name                         ; title [lang = en]       ; shortDescription [lang = en] ; longDescription [lang = en]                                                                                                                                                                                        ; title [lang = ar]       ; shortDescription [lang = ar] ; longDescription [lang = ar]                                                                                                                                                                                        ; logo(code, $contentCV) ; knowMore(uid, $contentCV)      ; &componentRef  ; $contentCV[unique = true] ;
+                                                 ; smesecosystem      ; Smes Ecosystem for Incentive ; SMEs ECOSYSTEM STIMULUS ; Indirect lending initiative  ; This program is designed to enhance SME lending by offering competitive loans to licensed financing companies that are used in turn to provide financing solutions and loans with competitive advantages for SMEs. ; SMEs ECOSYSTEM STIMULUS ; Indirect lending initiative  ; This program is designed to enhance SME lending by offering competitive loans to licensed financing companies that are used in turn to provide financing solutions and loans with competitive advantages for SMEs. ; monshaat_logo.png      ; smesecosystem-exploreall-link  ; smesecosystem  ;                           ;
+
+############# incentives Smes Ecosystem end ###################	
+											 
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)	; $contentCV	;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ; 								;				;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; incentives-banner-container, incentives-paragraph, loanprograms-incentives-container, energynutil-incentives-container, employmentsupport-incentives-container, creditfinance-incentives-container, landsolutions-incentives-container, finance-rnd-incentives-container, tax-exemption, smesecosystem		;				;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                             	;				;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+

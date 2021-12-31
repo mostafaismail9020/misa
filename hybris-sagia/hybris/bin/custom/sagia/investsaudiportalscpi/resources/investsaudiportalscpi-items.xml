@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:noNamespaceSchemaLocation="items.xsd">
+
+	<relations>
+
+		<relation generate="true" localized="false" code="LeadTicket2ScpiOutLeadTicketProcess"
+				  autocreate="true">
+			<sourceElement type="CsTicket" cardinality="one"
+						   qualifier="csTicket">
+				<modifiers initial="true" optional="true" />
+			</sourceElement>
+			<targetElement type="ScpiOutLeadTicketProcess" cardinality="many"
+						   qualifier="scpiOutLeadTicketProcess">
+				<modifiers initial="true" optional="true" />
+			</targetElement>
+		</relation>
+
+	</relations>
+	<itemtypes>
+
+		<itemtype code="scpiOutLeadTicketProcess" autocreate="true" generate="true"
+				  jaloclass="com.investsaudiportal.scpi.outbound.process.ScpiOutLeadTicketProcess"
+				  extends="BusinessProcess">
+		</itemtype>
+
+	</itemtypes>
+</items>

@@ -1,0 +1,239 @@
+INSERT_UPDATE SagiaCountry;code[unique=true];name[lang=en];name[lang=ar];nationality[lang=en];nationality[lang=ar]
+;AD;Andorra;أندورا;Andorran;أندوري
+;AE;United Arab Emirates;الإمارات العربية المتحدة;Emirati;الإمارات العربية المتحدة
+;AF;Afghanistan;أفغانستان;Afghani;أفغاني
+;AG;Antigua and Barbuda;أنتيغوا/باربودا;Antiguan;أنتيغوي
+;AI;Anguilla;أنغيلا;Anguillan;أنغيلي
+;AL;Albania;ألبانيا;Albanian;ألباني
+;AM;Armenia;أرمينيا;Armenian;أرميني
+;AN;Dutch Antilles;جزر الأنتيل الهولندية;Dutch (Antilles);هولندي أنتيلي
+;AO;Angola;أنغولا;Angolan;أنغولي
+;AQ;Antarctica;أنتاركتيكا;From Antarctica;أنتركتيكي
+;AR;Argentina;الأرجنتين;Argentinian;أرجنتيني
+;AS;American Samoa;ساموا الأمريكية;Samoan (American);ساموي أمريكي
+;AT;Austria;النمسا;Austrian;نمساوي
+;AU;Australia;أستراليا;Australian;أسترالي
+;AW;Aruba;أروبا;Aruban;أروبي
+;AZ;Azerbaijan;أذربيجان;Azerbaijani;أذربيجاني
+;BA;Bosnia and Herzegovina;البوسنة والهرسك;Bosnian Herzegovinian;بوسني-هيرزيجوفيني
+;BB;Barbados;باربادوس;Barbadian;باربادوسي
+;BD;Bangladesh;بنجلاديش;Bangladeshi;بنجلاديشي
+;BE;Belgium;بلجيكا;Belgian;بلجيكي
+;BF;Burkina Faso;بوركينا فاسو;Burkinabe;بوركينابي
+;BG;Bulgaria;بلغاريا;Bulgarian;بلغاري
+;BH;Bahrain;البحرين;Bahraini;بحريني
+;BI;Burundi;بوروندي;Burundi;بوروندي
+;BJ;Benin;بنين;Beninese;بنيني
+;BM;Bermuda;برمودا;Bermudan;برمودي
+;BN;Brunei Darussalam;بروناي دار السلام;Brunei;من بروناي
+;BO;Bolivia;بوليفيا;Bolivian;بوليفي
+;BR;Brazil;البرازيل;Brazilian;برازيلي
+;BS;Bahamas;الباهاما;Bahaman;من الباهاما
+;BT;Bhutan;بوتان;Bhutanese;من البوتان
+;BV;Bouvet Islands;جزر بوفيت;From the Bouvet Islands;من جزر بوفيت
+;BW;Botswana;بوتسوانا;Botswanan;بوتسواني
+;BY;Belarus;روسيا البيضاء;Belarusian;بيلاروسي
+;BZ;Belize;بليز;Belizean;بليزي
+;CA;Canada;كندا;Canadian;كندي
+;CC;Coconut Islands;جزر الكوكنت;Australian (Coconut Islands);أسترالي (كوكنت)
+;CD;Democratic Republic of the Congo;الكونغو;Congolese (Democratic Republic of the Congo);كونغولي ديموقراطي
+;CF;Central African Republic;جمهورية أفريقيا الوسطى;Central African;وسط أفريقي
+;CG;Republic of the Congo;جمهورية الكونغو;Congolese;كونغولي
+;CH;Switzerland;سويسرا;Swiss;سويسري
+;CI;Cote d Ivoire;ساحل العاج;Ivoirian;من ساحل العاج
+;CK;Cook Islands;جزر الكوك;From the Cook Islands;من جزر الكوك
+;CL;Chile;شيلي;Chilean;تشيلي
+;CM;Cameroon;الكاميرون;Cameroonian;كاميروني
+;CN;China;الصين;Chinese;صيني
+;CO;Colombia;كولومبيا;Colombian;كولومبي
+;CR;Costa Rica;كوستاريكا;Costa Rican;كوستاريكي
+;CS;Serbia and Montenegro;صربيا ومونتينيجرو;Serbian Montenegrin;صربي؛ مونتينيجري
+;CU;Cuba;كوبا;Cuban;كوبي
+;CV;Cape Verde;الرأس الأخضر;Cape Verdean;الرأس الأخضر
+;CX;Christmas Island;جزيرة كريستماس;Australian (Christmas Island);أسترالي كريسمس
+;CY;Cyprus;قبرص;Cypriot;قبرصي
+;CZ;Czech Republic;جمهورية التشيك;Czech;تشيكي
+;DE;Germany;ألمانيا;German;ألماني
+;DJ;Djibouti;جيبوتي;Djiboutian;من جيبوتي
+;DK;Denmark;الدانمارك;Danish;دانمركي
+;DM;Dominica;الدومينيكا;Dominican;دومينيكاني
+;DO;Dominican Republic;الجمهورية الدومينيكية;Dominican Republic;دومينيك جمهوري
+;DZ;Algeria;الجزائر;Algerian;جزائري
+;EC;Ecuador;الإكوادور;Ecuadorian;إكوادوري
+;EE;Estonia;إيستونيا;Estonian;إستوني
+;EG;Egypt;مصر;Egyptian;مصري
+;EH;West Sahara;الصحراء الغربية;French (West Sahara);فرنسي الصحراء الغربية
+;ER;Eritrea;إريتريا;Eritrean;إريتري
+;ES;Spain;إسبانيا;Spanish;إسباني
+;ET;Ethiopia;أثيوبيا;Ethiopian;أثيوبي
+;FI;Finland;فنلندا;Finnish;فنلندي
+;FJ;Fiji;فيجي;Fijian;من فيجي
+;FK;Falkland Islands;جزر الفوكلاند;British (Falkland Islands);بريطاني فوكلند
+;FM;Micronesia;ميكرونيزيا;Micronesian;ميكرونيزي
+;FO;Faroe Islands;جزر الفارو;Danish (Faroe Islands);دانمركي فارو
+;FR;France;فرنسا;French;فرنسي
+;GA;Gabon;الجابون;Gabonese;جابوني
+;GB;United Kingdom;المملكة المتحدة;British;بريطاني
+;GD;Grenada;جرانادا;Grenadian;من جرانادا
+;GE;Georgia;جورجيا;Georgian;جورجي
+;GF;French Guiana;جويانا الفرنسية;French (Guiana);فرنسي جويانا
+;GG;Guernsey;جرونسيه;British (Guernsey);انجليزي جرونسي
+;GH;Ghana;غانا;Ghanaian;غاني
+;GI;Gibraltar;جبل طارق;Gibraltar;من جبل طارق
+;GL;Greenland;غرينلاند;Danish (Greenland);دانمركي غرينلاند
+;GM;Gambia;غامبيا;Gambian;غامبي
+;GN;Guinea;غينيا;Guinean;غيني
+;GP;Guadeloupe;غواديلوب;French (Guadeloupe);فرنسي غواديلوب
+;GQ;Equatorial Guinea;جمهورية غينيا الاستوائية;Equatorial Guinean;من غينيا الاستوائية
+;GR;Greece;اليونان;Greek;يوناني
+;GS;South Georgia and the Southern Sandwich Islands;جورجيا الجنوبية وجزر ساندويش الجنوبية;From South Georgia and Southern Sandwich Islands;جورجيا الجنوبية
+;GT;Guatemala;غواتيمالا;Guatemalan;غواتيمالي
+;GU;Guam;جوام;American (Guam);أمريكي جوام
+;GW;Guinea - Bissau;غينيا بيساو;Guinean (Bissau);غيني بيساو
+;GY;Guyana;جويانا;Guyanese;جوياني
+;HK;Hong Kong;هونج كونج;Hong Kong;هونج كونج
+;HN;Honduras;هندوراس;Honduran;هندوراسي
+;HR;Croatia;كرواتيا;Croatian;كرواتي
+;HT;Haiti;هاييتي;Haitian;من هاييتي
+;HU;Hungary;المجر;Hungarian;هنغاري
+;ID;Indonesia;إندونيسيا;Indonesian;إندونيسي
+;IE;Ireland;آيرلندا;Irish;إيرلندي
+;IM;Isle of Man;آيل اوف مان;British (Isle of Man);انجليزي آيل اوف مان
+;IN;India;الهند;Indian;هندي
+;IQ;Iraq;العراق;Iraqi;عراقي
+;IS;Iceland;آيسلندا;Icelandic;آيسلندي
+;IT;Italy;إيطاليا;Italian;إيطالي
+;JI;Jersey;جيرسي;British (Jersey);انجليزي جيرسي
+;JM;Jamaica;جامايكا;Jamaican;جامايكي
+;JO;Jordan;الأردن;Jordanian;أردني
+;JP;Japan;اليابان;Japanese;ياباني
+;KE;Kenya;كينيا;Kenyan;كيني
+;KG;Kyrgyzstan;قيرغيستان;Kyrgyzstani;قيرغستاني
+;KH;Cambodia;كمبوديا;Cambodian;كمبودي
+;KI;Kiribati;كيريباتي;Kiribati;كيريباتي
+;KM;Comoros;جزر القمر;Comorian;من جزر القمر
+;KN;Saint Kitts and Nevis;اتحاد سانت كتس ونفس;From Saint Kitts and Nevis;من سانت كتس ونفس
+;KP;North Korea;كوريا الشمالية;North Korean;كوري شمالي
+;KR;South Korea;كوريا الجنوبية;South Korean;كوري جنوبي
+;KW;Kuwait;الكويت;Kuwaiti;كويتي
+;KY;Cayman Islands;جزر الكايمان;British (Cayman Islands);بريطاني جزر الكايمان
+;KZ;Kazakhstan;كازاخستان;Kazakh;كازاخستاني
+;LA;Laos;لاوس;Laotian;لاوي
+;LB;Lebanon;لبنان;Lebanese;لبناني
+;LC;St. Lucia;سانت لوشيا;Lucian;من سانت لوشيا
+;LI;Liechtenstein;ليختنشتاين;Liechtenstein;ليختنشتاين
+;LK;Sri Lanka;سريلانكا;Sri Lankan;سريلانكي
+;LR;Liberia;جمهورية ليبيريا;Liberian;ليبيري
+;LS;Lesotho;ليسوتو;Lesothan;من ليسوتو
+;LT;Lithuania;ليتوانيا;Lithuanian;ليتواني
+;LU;Luxembourg;لوكسمبورغ;Luxembourgian;لوكسمبورغي
+;LV;Latvia;لاتفيا;Latvian;اللاتفية
+;MA;Morocco;المغرب;Moroccan;مغربي
+;MC;Monaco;موناكو;Monegasque;من موناكو
+;MD;Moldova;مولدوفا;Moldovan;مولدوفي
+;MG;Madagascar;مدغشقر;Madagascan;مدغشقري
+;MH;Marshall Islands;جمهورية جزر مارشال;Marshallese;جزر مارشال
+;MK;Macedonia;مقدونيا;Macedonian;مقدوني
+;ML;Mali;مالي;Malian;من مالي
+;MM;Burma;بورما;Burmese;بورمي
+;MN;Mongolia;منغوليا;Mongolian;منغولي
+;MO;Macau;ماكاو;Portuguese (Macau);برتغالي ماكاو
+;MP;North Mariana Islands;جزر ماريانا الشمالية;Marianian;من ماريانا
+;MQ;Martinique;جزر المارتينيك;French (Martinique);فرنسي مارتينيك
+;MR;Mauretania;موريتانيا;Mauritanian;موريتاني
+;MS;Montserrat;مونتسرات;Montserrat;مونتسرات
+;MT;Malta;مالطا;Maltese;مالطي
+;MU;Mauritius;موريشيوس;Mauritian;من موريشيوس
+;MV;Maldives;جزر المالديف;Maldivian;مالديفي
+;MW;Malawi;ملاوي;Malawian;من ملاوي
+;MX;Mexico;المكسيك;Mexican;مكسيكي
+;MY;Malaysia;ماليزيا;Malaysian;ماليزي
+;MZ;Mozambique;موزمبيق;Mozambican;موزمبيقي
+;NA;Namibia;ناميبيا;Namibian;ناميبي
+;NC;New Caledonia;كاليدونيا الجديدة;French (New Caledonia);فرنسي كاليدونيا
+;NE;Niger;النيجر;Nigerian (Niger);نيجيري (نيجر)
+;NF;Norfolk Islands;جزر نورفوك;From the Norfolk Islands;من جزر نورفوك
+;NG;Nigeria;نيجيريا;Nigerian;نيجيري
+;NI;Nicaragua;نيكاراجوا;Nicaraguan;من نيكاراجوا
+;NL;Netherlands;هولندا;Dutch;هولندي
+;NO;Norway;النرويج;Norwegian;نرويجي
+;NP;Nepal;نيبال;Nepalese;نيبالي
+;NR;Nauru;ناورو;Nauruan;ناوروي
+;NU;Niue;نيو;Niuean;من النيو
+;NZ;New Zealand;نيوزيلندا;New Zealander;نيوزيلندا
+;OM;Oman;عُمان;Omani;عُماني
+;PA;Panama;بنما;Panamanian;بنمي
+;PE;Peru;بيرو;Peruvian;من بيرو
+;PF;French Polynesia;بولينيزيا الفرنسية;French (Polynesia);فرنسي بولينيز
+;PG;Papua New Guinea;بابا جيني الجديدة;Papua New Guinean;بابا جينيان
+;PH;Philippines;الفيليبين;Filipino;فلبيني
+;PK;Pakistan;باكستان;Pakistani;باكستاني
+;PL;Poland;بولندا;Polish;بولندي
+;PM;St. Pierre and Miquelon;سانت بيير ومكيلي;French (St. Pierre and Miquelon);فرنسي سانت بيير ومكيلي
+;PN;Pitcairn Islands;جزر بتكيرن;British (Pitcairn Islands);بريطاني جزر بتكيرن
+;PR;Puerto Rico;بورتو ريكو;American (Puerto Rico);أمريكي بورتو ريكو
+;PS;Palestine;فلسطين;Palestinian;فلسطيني
+;PT;Portugal;البرتغال;Portuguese;برتغالي
+;PW;Palau;بالاو;Palauan;بالاو
+;PY;Paraguay;باراغواي;Paraguayan;من باراغواي
+;QA;Qatar;قطر;Qatari;قطري
+;RE;Reunion;ريونيون;French (Reunion);فرنسي ريونيون
+;RO;Romania;رومانيا;Romanian;روماني
+;RU;Russian Federation;الاتحاد الروسي;Russian;روسي
+;RW;Rwanda;رواندا;Rwandan;رواندي
+;SA;Kingdom of Saudi Arabia;المملكة العربية السعودية;Saudi;سعودي
+;SB;Solomon Islands;جزر سولومون;Solomonese;من جزر سولومون
+;SC;Seychelles;سيشل;Seychellois;من سيشل
+;SD;Sudan;السودان;Sudanese;سوداني
+;SE;Sweden;السويد;Swedish;سويدي
+;SG;Singapore;سنغافورة;Singaporean;سنغافوري
+;SH;Saint Helena;سانت هيلينا;Saint Helenian;من سانت هيلينا
+;SI;Slovenia;سلوفينيا;Slovenian;سلوفيني
+;SJ;Svalbard;سفالبارد;Norwegian (Svalbard);نرويجي سفالبارد
+;SK;Slovakia;سلوفاكيا;Slovakian;سلوفاكي
+;SL;Sierra Leone;سيراليون;Sierra Leonean;سيراليوني
+;SM;San Marino;سان مارينو;Sammarinese;من سان مارينو
+;SN;Senegal;السنغال;Senegalese;سنغالي
+;SO;Somalia;الصومال;Somali;صومالي
+;SR;Suriname;سورينام;Surinamese;سورينامي
+;SS;South Sudan;سودان الجنوب;South Sudanese;سوداني جنوبي
+;ST;Sao Tome and Principe;جمهورية ساوتومي وبرنسب الديمقراطية;Sao Tomean;من ساوتومي
+;SV;El Salvador;السلفادور;Salvadoran;سلفادوري
+;SY;Syria;سوريا;Syrian;سوري
+;SZ;Swaziland;سوازيلند;Swazi;سوازيلندي
+;TC;Turks and Caicos Islands;الجزر التركية والكايكوس;From the Turks and Caicos Islands;من الجزر التركية والكايكوس
+;TD;Chad;تشاد;Chadian;تشادي
+;TF;French Southern Territories;أرض فرنسا الجنوب;French (Southern Territories);فرنسي جنوبي
+;TG;Togo;توجو;Togolese;توجولي
+;TH;Thailand;تايلاند;Thai;تايلاندي
+;TJ;Tajikistan;طاجكستان;Tajikistani;طاجيكي
+;TK;Tokelau Islands;جزر توكيلو;From the Tokelau Islands;من جزر توكيلو
+;TM;Turkmenistan;تركمانستان;Turkmenian;تركمانستاني
+;TN;Tunisia;تونس;Tunisian;تونسي
+;TO;Tonga;تونجا;Tongan;من تونجا
+;TP;East Timor;تيمور الشرقية;From East Timor;من تيمور الشرقية
+;TR;Turkey;تركيا;Turkish;تركي
+;TT;Trinidad and Tobago;جمهورية ترينيداد وتوباغو;From Trinidad and Tobago;من ترينيداد وتوباغو
+;TV;Tuvalu;توفالو;Tuvaluan;من توفالو
+;TW;Taiwan;تايوان;Taiwanese;تايواني
+;TZ;Tanzania;تنزانيا;Tanzanian;تنزاني
+;UA;Ukraine;أوكرانيا;Ukrainian;أوكراني
+;UG;Uganda;أوغندا;Ugandan;أوغندي
+;US;United States of America;الولايات المتحدة الأمريكية;American;أمريكي
+;UY;Uruguay;أورجواي;Uruguayan;من الأورجواي
+;UZ;Uzbekistan;أوزبكستان;Uzbekistani;أوزبكستاني
+;VA;Vatican City;مدينة الفاتيكان;From Vatican City;مدينة الفاتيكان
+;VC;St. Vincent and the Grenadines;سانت فنسنت وجرينادين;Vincentian;من فنسنت
+;VE;Venezuela;فنزويلا;Venezuelan;فنزويلي
+;VG;British Virgin Islands;جزر فيرجن البريطانية;British (Virgin Islands);بريطاني جزر فيرجن
+;VI;American Virgin Islands;جزر فيرجن الأمريكية;American (Virgin Islands);أمريكي جزر فيرجن
+;VN;Vietnam;فيتنام;Vietnamese;فيتنامي
+;VU;Vanuatu;فانواتو;Ni-Vanuatu;من فانواتو
+;WF;Wallis and Futuna Islands;جزر والس وفوتونا;From the Wallis and Futuna Islands;من جزر والس وفوتونا
+;WS;Samoa;ساموا;Samoan;ساموي
+;XK;Kosovo;كوسوفو;Kosovar;كوسوفي
+;YE;Yemen;اليمن;Yemeni;يمني
+;YT;Mayotte;مايوت;French (Mayotte);فرنسي مايوت
+;ZA;South Africa;جنوب إفريقيا;South African;جنوب إفريقي
+;ZM;Zambia;زامبيا;Zambian;زامبي
+;ZW;Zimbabwe;زيمبابوي;Zimbabwean;من زيمبابوي

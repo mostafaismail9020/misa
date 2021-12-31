@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+           xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+           xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZUI5_REAL_ESTATE_SRV" xml:lang="en" sap:schema-version="1"
+                xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="RealEstate" sap:label="Real Estate" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                </Key>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ObjectGUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="REType" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PurchaseType" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="PlotNo" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="PlotArea" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="DeedNo" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="PurchaseDate" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="OutsideMakkah" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="ApprovedIndustrial" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="ProjectValue" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Price" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Region" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="HousingType" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="District" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="UnitNo" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="BlockNo" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Remarks" Type="Edm.String" Nullable="false" MaxLength="1000"/>
+                <Property Name="ThirtyMore" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="BPID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PostingDate" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <NavigationProperty Name="AttachmentsSet" Relationship="ZUI5_REAL_ESTATE_SRV.RealEstateToAttachments"
+                                    FromRole="FromRole_RealEstateToAttachments"
+                                    ToRole="ToRole_RealEstateToAttachments"/>
+            </EntityType>
+            <EntityType Name="Attachments" sap:label="Attachments" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                </Key>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="DocGUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="MimeType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="FileContString" Type="Edm.String" Nullable="false"/>
+                <Property Name="ObjectGUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="DocID" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="Filesize" Type="Edm.String" Nullable="false" MaxLength="10"/>
+            </EntityType>
+            <EntityType Name="ContentDetails" m:HasStream="true" sap:label="Content Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                    <PropertyRef Name="DocGUID"/>
+                </Key>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ObjectGUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="DocGUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="DocID" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="Filetype" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Content" Type="Edm.String" Nullable="false"/>
+                <Property Name="Filesize" Type="Edm.String" Nullable="false" MaxLength="10"/>
+            </EntityType>
+            <EntityType Name="RegionCity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="RegionCode" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="RegionDesc" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="CityCode" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CityDesc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+            </EntityType>
+            <EntityType Name="AttachmentList" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Type"/>
+                    <PropertyRef Name="Subtype"/>
+                </Key>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Subtype" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="AttachmentName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2"/>
+            </EntityType>
+            <EntityType Name="EntityDetails" sap:label="Entity Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Username"/>
+                </Key>
+                <Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Sell" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Buy" Type="Edm.String" Nullable="false" MaxLength="1"/>
+            </EntityType>
+            <Association Name="RealEstateToAttachments" sap:content-version="1">
+                <End Type="ZUI5_REAL_ESTATE_SRV.RealEstate" Multiplicity="1" Role="FromRole_RealEstateToAttachments"/>
+                <End Type="ZUI5_REAL_ESTATE_SRV.Attachments" Multiplicity="*" Role="ToRole_RealEstateToAttachments"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_RealEstateToAttachments">
+                        <PropertyRef Name="ObjectID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_RealEstateToAttachments">
+                        <PropertyRef Name="ObjectID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZUI5_REAL_ESTATE_SRV_Entities" m:IsDefaultEntityContainer="true"
+                             sap:supported-formats="atom json xlsx">
+                <EntitySet Name="RealEstateSet" EntityType="ZUI5_REAL_ESTATE_SRV.RealEstate" sap:content-version="1"/>
+                <EntitySet Name="AttachmentsSet" EntityType="ZUI5_REAL_ESTATE_SRV.Attachments" sap:content-version="1"/>
+                <EntitySet Name="ContentDetailsSet" EntityType="ZUI5_REAL_ESTATE_SRV.ContentDetails"
+                           sap:content-version="1"/>
+                <EntitySet Name="RegionCitySet" EntityType="ZUI5_REAL_ESTATE_SRV.RegionCity" sap:content-version="1"/>
+                <EntitySet Name="AttachmentListSet" EntityType="ZUI5_REAL_ESTATE_SRV.AttachmentList"
+                           sap:content-version="1"/>
+                <EntitySet Name="EntityDetailsSet" EntityType="ZUI5_REAL_ESTATE_SRV.EntityDetails"
+                           sap:content-version="1"/>
+                <AssociationSet Name="RealEstateToAttachmentsSet"
+                                Association="ZUI5_REAL_ESTATE_SRV.RealEstateToAttachments" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="RealEstateSet" Role="FromRole_RealEstateToAttachments"/>
+                    <End EntitySet="AttachmentsSet" Role="ToRole_RealEstateToAttachments"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self"
+                       href="https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version"
+                       href="https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_REAL_ESTATE_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

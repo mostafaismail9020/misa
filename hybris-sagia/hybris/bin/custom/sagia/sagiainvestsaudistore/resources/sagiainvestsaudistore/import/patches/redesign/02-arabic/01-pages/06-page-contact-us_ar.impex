@@ -1,0 +1,47 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalContactTemplate
+$page = contact-us
+$pageNameAr = تواصل معنا
+$pageTitleAr = $pageNameAr
+$pageLabel = /contactUs
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media
+$media = media(code, $contentCV);
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]	; title[lang = ar] ; description[lang = ar]; keywords[lang = ar]  ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             	; $pageTitleAr     ; $pageNameAr           ; Invest Saudi,Contact ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+						 
+						 
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                   ; linkName[lang = ar] ; $contentCV[unique = true];
+                              ; contact-email-link                   ; Email               ;                          ;
+                              ; contact-tel-local-link               ; Local               ;                          ;
+                              ; contact-tel-international-link       ; International       ;                          ;
+					 
+						 						 
+INSERT_UPDATE InvestSaudiMapComponent; uid[unique = true]    ; googleMapsAPIKey                        	; &componentRef       ; $contentCV[unique = true];
+                                     ; map-component         ; AIzaSyCC-L0Zk4FYrfiD8i5Tut_hVrjkOk2C9BY	; map-component       ;                          ;
+
+
+INSERT_UPDATE InvestSaudiContactComponent; uid[unique = true]     ; title[lang = ar]; descriptionText[lang = ar]                                                                                                                                                                                                                                                                                                                                            ; emailURL(uid, $contentCV) ; localURL(uid, $contentCV)     ; internationalURL(uid, $contentCV)     ; &componentRef            ; $contentCV[unique = true];
+                                         ; contact-component      ; تواصل  MISA     ; "Contact us using this <span style=""text-decoration: underline;""><strong>(<a rel=""noopener"" href=""https://eservices.sagia.gov.sa:2443/generalenquiry/index.html?sap-client=300&amp;sap-language=EN"" target=""_blank"">Link</a>)</strong></span> if you have any questions about Sectors and Opportunities provided to the investors in Saudi Arabia."           ; contact-email-link        ; contact-tel-local-link        ; contact-tel-international-link        ; contact-component        ;                          ;
+
+
+INSERT_UPDATE InvestSaudiOfficesComponent ; uid[unique = true]	; officeName[lang = ar]			; address                                                        ; telephone                                ; buildingNumber                            ; additionalNumber               ; postalCode                   ; dataTypeLat; dataTypeLng  ; buttonText[lang = ar]; &componentRef   ; $contentCV[unique = true];										 
+	                                      ; office-1          	; الرياض (المقرّ الرئيسي)		; حيّ النخيل - طريق الإمام سعود بن عبد العزيز بن محمد              ; <em>رقم الهاتف المجاني </em>: 8002449990 ; <em> المبنى رقم</em>: <span>3966</span>   ; <em>Additional No. </em>: 6244 ; <em>الرمز البريدي</em>:12382 ;24.737844   ; 46.637261    ;                      ; office-1        ;                          ;
+										  ; office-2          	; جدّةّ			                ; طريق الأمير سلطان بن عبد العزيز  حيّ النعيم                      ; <em>رقم الهاتف المجاني </em>: 8002449990 ; <em> المبنى رقم</em>: <span>7261</span>   ; <em>Additional No. </em>: 2802 ; <em>الرمز البريدي</em>:23621 ;21.633861   ; 39.133348    ;                      ; office-2        ;                          ;
+										  ; office-3          	; الدمام			            ; شارع طارق بن زيادالراكة الجنوبية، الخبر                        ; <em>رقم الهاتف المجاني </em>: 8002449990 ; <em> المبنى رقم</em>: <span>7296</span>   ; <em>Additional No. </em>: 2231 ; <em>الرمز البريدي</em>:34227 ;26.347885   ; 50.195358    ;                      ; office-3        ;                          ;
+										  ; office-4          	; المدينة المنوّرة        		; طريق الملك عبدالله بن عبد العزيز حيّ الحثم                         ; <em>رقم الهاتف المجاني </em>: 8002449990 ; <em> المبنى رقم</em>: <span>7539</span>   ; <em>Additional No. </em>: 2410 ; <em>الرمز البريدي</em>:42363 ;24.482245   ; 39.572623    ;                      ; office-4        ;                          ;
+
+										  										  										  										
+INSERT_UPDATE InvestSaudiOfficesContainer; uid[unique = true] ; title[lang = ar]; simpleCMSComponents(&componentRef)    ; &componentRef     ; $contentCV[unique = true];
+                                         ; office-container   ; Saudi Offices   ; office-1,office-2,office-3,office-4	; office-container  ;                         ;
+

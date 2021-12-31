@@ -1,0 +1,133 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleAr = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 					 ; realFileName                    											; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+			  
+					   ; najran-banner-image.png                                           		 ; najran-banner-image.png                                     						; $siteResource/najran-banner-image.png                                         			  ;                 image/png                ;                                          ; ""     ;
+					   ; najran-map.png                                                      	 ; najran-map.png                                               						; $siteResource/najran-map.png                                                 			  ;                 image/png                ;                                          ; ""     ;
+					   ; najran-mining.png										                 ; najran-mining.png										               			; $siteResource/najran-mining.png										                                                      ;                 image/png                ;                                          ; ""     ;
+					   ; najran-non-metallic-mineral-products-manufacturing.png                   ; najran-non-metallic-mineral-products-manufacturing.png                   			; $siteResource/najran-non-metallic-mineral-products-manufacturing.png                                                    ;                 image/png                ;                                          ; ""     ;
+					   ; najran-trading.png	        						                     ; najran-trading.png	        						                    			; $siteResource/najran-trading.png	        						                                                      ;                 image/png                ;                                          ; ""     ;
+					   ; najran-agriculture.png	           					                     ; najran-agriculture.png	           					                     			; $siteResource/najran-agriculture.png	           					                                                    ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-logistic-services.png	           				                 ; najran-logistic-services.png	           				                 			; $siteResource/najran-logistic-services.png	           				                                                    ;                 image/png                ;                                          ; ""     ;   
+					   
+					   
+					   ; najran-population.png        		                         ; najran-population.png        		                                	; $siteResource/najran-population.png        		                                       ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-airport.png    				        	                 ; najran-airport.png    				   	                         	; $siteResource/najran-airport.png    				                               		  ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-private-sector-employees.png 	      	                 ; najran-private-sector-employees.png 		                         	; $siteResource/najran-private-sector-employees.png                                		  ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-dams.png              		                           ; najran-dams.png              		      	                         	; $siteResource/najran-dams.png              		                                    	  ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-active-factories.png  		      	                 ; najran-active-factories.png  		  		                        	; $siteResource/najran-active-factories.png  		                              		  ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-hotels.png        			                         ; najran-hotels.png        			                                	; $siteResource/najran-hotels.png        			                                       ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-chambers-of-commerce.png 	                         ; najran-chambers-of-commerce.png 	     	                         	; $siteResource/najran-chambers-of-commerce.png 	                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-hospitals.png             	                           ; najran-hospitals.png             	                                  	; $siteResource/najran-hospitals.png             	                                       ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-industrial-city.png      	                           ; najran-industrial-city.png      	                                   ; $siteResource/najran-industrial-city.png      	                                        ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-towns.png					                         ; najran-towns.png					  		                         	; $siteResource/najran-towns.png					                                         ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-roads-length.png			                               ; najran-roads-length.png			       	                         	; $siteResource/najran-roads-length.png			                                		  ;                 image/png                ;                                          ; ""     ;   
+					   											                   
+						
+					   ; najran-geological-reserves-copper.png             ; najran-geological-reserves-copper.png           			; $siteResource/najran-geological-reserves-copper.png                                        ;                 image/png                ;                                          ; ""     ;   
+					   ; najran-strong-support-systems-smes.png            ; najran-strong-support-systems-smes.png             		; $siteResource/najran-strong-support-systems-smes.png                                       ;                 image/png                ;                                          ; ""     ;   	
+					   ; najran-connected-roadinfrastructure.png           ; najran-connected-roadinfrastructure.png              		; $siteResource/najran-connected-roadinfrastructure.png                                      ;                 image/png                ;                                          ; ""     ;   	
+					   ; najran-proximity-yemen.png                        ; najran-proximity-yemen.png                           		; $siteResource/najran-proximity-yemen.png                                                   ;                 image/png                ;                                          ; ""     ;   	
+					   ; najran-rich-heritage-culture.png                  ; najran-rich-heritage-culture.png                 			; $siteResource/najran-rich-heritage-culture.png                                             ;                 image/png                ;                                          ; ""     ;   	
+																	   
+					   ; najran-investments.png                              ; najran-investments.png                       				; $siteResource/najran-investments.png                                                           ;                 image/png                ;                                          ; ""     ;   	
+					   
+					
+					
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]				;$contentCV		; bannerHeader[lang=ar]			; bannerText[lang=ar]																									  			; bannerImage (code, $contentCV)		; keyFactsHeader [lang = ar]		 ; keyStrengthsHeader [lang = ar] 	 ; opportunitiesHeader [lang = ar]		
+							   ; najran		 		;				; منطقة نجران		;   ; najran-banner-image.png				; اهم المعلومات والأرقام	 			 ; المزايا المناطقية		 			 ; فرص استثمارية																																																								
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 				;  $contentCV  ; headerText[lang = ar]    							; imageIcon  (code, $contentCV)     						; &componentRef
+											    ; najran-mining						; 			   ; التعدين			  									; najran-mining.png											; najran-mining					
+                                                ; najran-non-metallic-mineral		;              ; تصنيع المنتجات المعدنية اللافلزية		; najran-non-metallic-mineral-products-manufacturing.png	; najran-non-metallic-mineral	
+                                                ; najran-trading	 				;              ; التجارة	    									; najran-trading.png	        							; najran-trading	 			
+                                                ; najran-agriculture	 			;              ; الزراعة 	           		 					; najran-agriculture.png	           						; najran-agriculture	 		
+                                                ; najran-logistic	 				;              ; الخدمات اللوجستية	           		 				; najran-logistic-services.png	           					; najran-logistic	 			
+ 
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = ar] ; value[lang = ar] 
+										; najran-strategic-population		;			   ; 608,467		; التعداد السكاني
+										; najran-strategic-landmass		;			   ; 130,000 كم2 	; المساحة
+	 
+
+												
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = ar]	; backgroundImage (code, $contentCV)   			; sectors(&componentRef) 													       			  ; longDescription[lang = ar]																																																																																																																									; localizedStats (uid, $contentCV)   								  ; &componentRef
+												 ; najran-strategic-component		;          		; القطاعات الاستراتيجية			; najran-map.png		         ;najran-mining,najran-non-metallic-mineral	,najran-trading,najran-agriculture,	najran-logistic				 ; تقع منطقة نجران في جنوب غرب المملكة العربية السعودية وتتميز بغنى مواردها الزراعية وبمياهها الجوفية العذبة. هي أكثر المناطق ارتفاعًا بمعدلات الإشعاع الشمسي وتتميز بأراض شاسعة تمكّنها من احتضان العديد من محطات الطاقة الشمسية. تشتهر نجران بوفرة المعادن غير المستثمرة بعد كالنحاس، والزنك، والمعادن الثمينة والجرانيت. وتقدم اذًا فرص استثمار تقدّر بملايين الدولارات في قطاع التعدين.لا تقتصر أهمية منطقة نجران على مواردها الجيولوجية فحسب، بل تختزن إمكانات هائلة على الصعيد السياحي بفضل غناها الثقافي وطبيعتها الخلابة. 		; najran-strategic-population,najran-strategic-landmass 				  ;  najran-strategic-component
+                                                                               
+	
+###########################################################
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]		  ; $contentCV ; imageIcon (code, $contentCV) 			; headerText[lang = ar]		   	;  text[lang = ar]									; &componentRef
+									   ; najran-keyfacts1	      ;			   ; najran-population.png        			; 608,467	                   	;  التعداد السكاني										; najran-keyfacts1
+									   ; najran-keyfacts2         ;            ; najran-airport.png    					; 2	                   		    ;  عدد المطارات والمحلية      ; najran-keyfacts2 
+									   ; najran-keyfacts3         ;            ; najran-private-sector-employees.png    ; 141,955		               	;  اجمالي المشتغلين				            	; najran-keyfacts3 
+									   ; najran-keyfacts4         ;            ; najran-dams.png              			; 27			               	;  عدد السدود                                             ; najran-keyfacts4 
+									   ; najran-keyfacts5         ;            ; najran-active-factories.png  			; 42		               		;  عدد المصانع المنتجة الربع الثالث 2021  					    ; najran-keyfacts5 
+									   ; najran-keyfacts6         ;            ; najran-hotels.png        				; 35		                   	;  عدد الفنادق 									        ; najran-keyfacts6 
+									   ; najran-keyfacts7         ;            ; najran-chambers-of-commerce.png 		; 1			                   	;  عدد الغرف التجارية  					            ; najran-keyfacts7 
+									   ; najran-keyfacts8         ;            ; najran-hospitals.png             		; 10			               	;  عدد المستشفيات بمجموع 1,300 سرير						; najran-keyfacts8    
+									   ; najran-keyfacts9         ;            ; najran-industrial-city.png      		; 1	                   	   	   	;  عدد المدن الصناعية                                   ; najran-keyfacts9 
+									   ; najran-keyfacts10        ;            ; najran-towns.png						; 8			               		;  عدد المحافظات في المنطقة 			                                ; najran-keyfacts10
+									   ; najran-keyfacts11        ;            ; najran-roads-length.png				; 2,661			               	;  مجموع أطوال الطرق -كم 		                            ; najran-keyfacts11
+									  
+									   
+									   
+									   
+									   
+									 
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]					  	; $contentCV      ; image (code, $contentCV)					             ; text[lang=ar]				                       			   				   ;&componentRef
+                                                                                                                                                                                                                    
+										   ; najran-key-strength1                   ;                 ; najran-geological-reserves-copper.png                    ; الاحتياطات الجيولوجية الوافرة التي تتضمن النحاس والزنك والمعادن الثمينة والجرانيت         ; najran-key-strength1
+                                           ; najran-key-strength2                   ;                 ; najran-strong-support-systems-smes.png                   ; نظام دعم قوي للمنشآت الصغيرة والكبيرة                                                     ; najran-key-strength2
+                                           ; najran-key-strength3                   ;                 ; najran-connected-roadinfrastructure.png                  ; بنية تحتية للطرق تربط المنطقة بجوارها                                                   ; najran-key-strength3
+                                           ; najran-key-strength4                   ;                 ; najran-proximity-yemen.png                               ; القرب الجغرافي من اليمن                                                              ; najran-key-strength4
+                                           ; najran-key-strength5                   ;                 ; najran-rich-heritage-culture.png                         ; غنى الإرث والثقافة                                                    ; najran-key-strength5
+		                                   
+	
+#####################################################	
+	
+	
+INSERT_UPDATE ProvinceInvestmentOpportunitiesComponent	; uid[unique=true]		 ; $contentCV	  ; iconImage	(code, $contentCV)		  ; headerText[lang = ar]   ; text[lang = ar]																										; &componentRef
+													                                                                                                                                                        
+														; najran-investment1   ;                ; najran-investments.png   ; استثمارات          									  ; الاستثمار في البنية التحتية للسياحة وفي رأس المال البشري			; najran-investment1 
+														
+	
+	
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																									; keyStrengths(&componentRef) 																									; investmentOpportunities(&componentRef)
+							   ; najran	;				    ;  najran-strategic-component  				 ; najran-keyfacts1,najran-keyfacts2 ,najran-keyfacts3 ,najran-keyfacts4 ,najran-keyfacts5 ,najran-keyfacts6, najran-keyfacts7 ,najran-keyfacts8 ,najran-keyfacts9 ,najran-keyfacts10,najran-keyfacts11   ; najran-key-strength1,najran-key-strength2,najran-key-strength3,najran-key-strength4,najran-key-strength5   ;	najran-investment1
+	
+	

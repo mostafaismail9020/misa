@@ -1,0 +1,46 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                      	 						; realFileName                    										; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]		; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; al-jouf-banner-image.png                                       	; al-jouf-banner-image.png                                				; $siteResource/al-jouf-banner-image.png                                        	;                 image/png                ;                                          ; ""     ;
+					; al-jouf-map.png                                                   ; al-jouf-map.png                                          				; $siteResource/al-jouf-map.png                                                  	;                 image/png                ;                                          ; ""     ;
+					; al-jouf-agriculture.png				   	    			        ; al-jouf-agriculture.png				   	    			            ; $siteResource/al-jouf-agriculture.png				   	    			            ;                 image/png                ;                                          ; ""     ;
+					; al-jouf-tradeing.png	           						            ; al-jouf-tradeing.png	           						                ; $siteResource/al-jouf-tradeing.png	           							        ;                 image/png                ;                                          ; ""     ;
+					; al-jouf-solarenergy.png	           						        ; al-jouf-solarenergy.png	           						            ; $siteResource/al-jouf-solarenergy.png	           						            ;                 image/png                ;                                          ; ""     ;
+					; al-jouf-non-metallic-mineral-products-manufacturing.png			; al-jouf-non-metallic-mineral-products-manufacturing.png				; $siteResource/al-jouf-non-metallic-mineral-products-manufacturing.png	            ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-logistics1.png			           				        ; al-jouf-logistics1.png			           				            ; $siteResource/al-jouf-logistics1.png			           				            ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-tourism.png			           				            ; al-jouf-tourism.png			           				      			; $siteResource/al-jouf-tourism.png			           					            ;                 image/png                ;                                          ; ""     ;   
+										
+					; al-jouf-population.png        		        					; al-jouf-population.png        		           	   					; $siteResource/al-jouf-population.png        		                                ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-active-factories.png   			     					; al-jouf-active-factories.png   				       					; $siteResource/al-jouf-active-factories.png   		                               	;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-population-growth.png    		        					; al-jouf-population-growth.png    		           						; $siteResource/al-jouf-population-growth.png    			                        ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-airport.png              		     	 					; al-jouf-airport.png              										; $siteResource/al-jouf-airport.png              			                        ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-private-sector-employees.png        	 					; al-jouf-private-sector-employees.png  								; $siteResource/al-jouf-private-sector-employees.png                                ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-dams.png        				 		 				    ; al-jouf-dams.png        							   					; $siteResource/al-jouf-dams.png        					                        ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-hotels.png					        					; al-jouf-hotels.png					               					; $siteResource/al-jouf-hotels.png					                                ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-roads-length.png             	    	 					; al-jouf-roads-length.png             	       							; $siteResource/al-jouf-roads-length.png             	 	                        ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-chambers-of-commerce.png          						; al-jouf-chambers-of-commerce.png                    					; $siteResource/al-jouf-chambers-of-commerce.png                                    ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-hospitals.png					        					; al-jouf-hospitals.png					           						; $siteResource/al-jouf-hospitals.png						                        ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-industrial-city.png				     					; al-jouf-industrial-city.png											; $siteResource/al-jouf-industrial-city.png			                                ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-towns.png						        					; al-jouf-towns.png						   								; $siteResource/al-jouf-towns.png							                        ;                 image/png                ;                                          ; ""     ;   					
+					
+					; al-jouf-renewable-energy-potential.png     						; al-jouf-renewable-energy-potential.png     							; $siteResource/al-jouf-renewable-energy-potential.png                              ;                 image/png                ;                                          ; ""     ;   
+					; al-jouf-access-jordanian-market.png        						; al-jouf-access-jordanian-market.png             						; $siteResource/al-jouf-access-jordanian-market.png                                 ;                 image/png                ;                                          ; ""     ;   	
+					; al-jouf-good-road-accessibility.png     	 						; al-jouf-good-road-accessibility.png           						; $siteResource/al-jouf-good-road-accessibility.png                                 ;                 image/png                ;                                          ; ""     ;   	
+					; al-jouf-large-university-capacity.png      						; al-jouf-large-university-capacity.png           						; $siteResource/al-jouf-large-university-capacity.png                               ;                 image/png                ;                                          ; ""     ;   	
+					; al-jouf-good-infrastructure-utiliti.png    						; al-jouf-good-infrastructure-utiliti.png         						; $siteResource/al-jouf-good-infrastructure-utiliti.png                             ;                 image/png                ;                                          ; ""     ;   	
+					; al-jouf-olive-cultivation.png              						; al-jouf-olive-cultivation.png                   						; $siteResource/al-jouf-olive-cultivation.png                                       ;                 image/png                ;                                          ; ""     ;   	
+											
+					; al-jouf-solar-energy.png              							; al-jouf-solar-energy.png                        						; $siteResource/al-jouf-solar-energy.png                                            ;                 image/png                ;                                          ; ""     ;   	

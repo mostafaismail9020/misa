@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+           
+    <context:annotation-config/> 
+	
+	<bean id="sagiasecchatCoreDataImportedEventListener" parent="abstractCoreDataImportedEventListener">
+		<property name="supportedChannels">
+			<list value-type="de.hybris.platform.commerceservices.enums.SiteChannel">
+				<value>B2C</value>
+				<!--
+								<value>B2B</value>
+				-->
+			</list>
+		</property>
+		<property name="addonExtensionMetadata">
+			<bean class="de.hybris.platform.addonsupport.data.AddonExtensionMetadata">
+				<property name="suffixChannel" value="false"/>
+				<property name="baseExtensionName" value="sagiasecchat"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="sagiasecchatSampleDataEventListener" parent="abstractGenericAddOnSampleDataEventListener"  >
+		<property name="extensionName" value="sagiasecchat" />
+	</bean>
+
+	<alias name="defaultTicketServiceClientAdapter" alias="ticketServiceClientAdapter"/>
+	<bean id="defaultTicketServiceClientAdapter" class="com.sap.ibso.eservices.sagiasecchat.services.TicketServiceClientAdapter">
+		<property name="apiRegistryClientService" ref="apiRegistryClientService"/>
+	</bean>
+
+	<alias name="defaultCustomerMappingAdapter" alias="customerMappingAdapter"/>
+	<bean id="defaultCustomerMappingAdapter" class="com.sap.ibso.eservices.sagiasecchat.services.CustomerMappingAdapter">
+		<property name="apiRegistryClientService" ref="apiRegistryClientService"/>
+
+	</bean>
+	
+	<!-- <alias name="secYaasServiceFactory" alias="yaasServiceFactory"/>
+    <bean id="secYaasServiceFactory" class="com.sap.ibso.eservices.sagiasecchat.services.SecYaasServiceFactory" autowire="byType">	    
+	    <property name="yaasConfigurationService" ref="yaasConfigurationService" />	   
+	    <property name="charonFactory" ref="charonFactory" />    
+	</bean>   -->
+	
+<!-- 	<alias name="sapCpServiceFactory" alias="sapCpServiceFactory"/>
+    <bean id="sapCpServiceFactory" class="com.sap.ibso.eservices.sagiasecchat.sapcp.service.SapCpServiceFactory" autowire="byType">	    
+	      <property name="configurationService" ref="configurationService" />
+	       <property name="charonFactory" ref="charonFactory" />    
+	</bean>  -->
+	
+		
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="customerConverter"/>
+		<property name="add" ref="defaultSecCustomerPopulator"/>
+	</bean>
+
+	<bean id="defaultSecCustomerPopulator" class="com.sap.ibso.eservices.sagiasecchat.populators.DefaultSecCustomerPopulator"/>
+
+	<alias name="defaultTicketServiceFacade" alias="ticketServiceFacade"/>
+	<bean id="defaultTicketServiceFacade" class="com.sap.ibso.eservices.sagiasecchat.facades.DefaultTicketServiceFacade">
+		<property name="ticketServiceClientAdapter" ref="ticketServiceClientAdapter"/>
+		<property name="storeSessionFacade" ref="storeSessionFacade" />
+		<property name="secTicketConverter" ref="secTicketConverter" />
+		<property name="secTranscriptConverter" ref="secTranscriptConverter" />
+		<property name="sessionService" ref="sessionService" />
+		<property name="customerFacade" ref="customerFacade" />
+	</bean>
+
+	<alias name="defaultSecTicketConverter" alias="secTicketConverter"/>
+	<bean id="defaultSecTicketConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiasecchat.data.TicketSecData"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="defaultSecTicketPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="defaultSecTicketPopulator" class="com.sap.ibso.eservices.sagiasecchat.populators.DefaultSecTicketPopulator">
+		<property name="sessionService" ref="sessionService"/>
+	</bean>
+
+	<alias name="defaultSecTranscriptConverter" alias="secTranscriptConverter"/>
+	<bean id="defaultSecTranscriptConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiasecchat.data.TranscriptSec"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="secTranscriptPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="secTranscriptPopulator" class="com.sap.ibso.eservices.sagiasecchat.populators.DefaultSecTranscriptPopulator">
+		<property name="sessionService" ref="sessionService"/>
+		<property name="customerFacade" ref="customerFacade"/>
+	</bean>
+
+	<alias alias="chatQueueService" name="defaultChatQueueService"/>
+	<bean id="defaultChatQueueService" class="com.sap.ibso.eservices.sagiasecchat.services.Impl.DefaultChatQueueService" parent="abstractBusinessService">
+		<property name="chatQueueDAO" ref="chatQueueDAO"/>
+	</bean>
+	<alias alias="chatQueueDAO" name="defaultChatQueueDAO"/>
+	<bean id="defaultChatQueueDAO" class="com.sap.ibso.eservices.sagiasecchat.dao.Impl.DefaultChatQueueDAO">
+		<constructor-arg value="ChatQueueType"/>
+	</bean>
+</beans>

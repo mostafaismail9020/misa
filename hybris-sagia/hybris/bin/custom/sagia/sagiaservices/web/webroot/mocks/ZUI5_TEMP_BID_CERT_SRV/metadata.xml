@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+           xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+           xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZUI5_TEMP_BID_CERT_SRV" xml:lang="en" sap:schema-version="1"
+                xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="OnlineMessage" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Startdateen"/>
+                </Key>
+                <Property Name="Startdateen" Type="Edm.String" Nullable="false" sap:label="Startdate Gregorian"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Startdayen" Type="Edm.String" Nullable="false" sap:label="Start Day English"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Enddateen" Type="Edm.String" Nullable="false" sap:label="Enddate Gregorian"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Startdayar" Type="Edm.String" Nullable="false" sap:label="Start day arabic"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Enddayen" Type="Edm.String" Nullable="false" sap:label="End day english"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mobileno" Type="Edm.String" Nullable="false" sap:label="Mobileno" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Enddayar" Type="Edm.String" Nullable="false" sap:label="End day Arabic"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Startdatear" Type="Edm.String" Nullable="false" sap:label="Startdate Hijri"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Enddatear" Type="Edm.String" Nullable="false" sap:label="Endddate Hijri"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZLIST" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Country"/>
+                    <PropertyRef Name="Gentity"/>
+                </Key>
+                <Property Name="Country" Type="Edm.String" Nullable="false"/>
+                <Property Name="Gentity" Type="Edm.String" Nullable="false"/>
+                <Property Name="Ctext" Type="Edm.String"/>
+                <Property Name="Gtext" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="ZTEMP" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CAname" Type="Edm.String" MaxLength="60"/>
+                <Property Name="CEname" Type="Edm.String" MaxLength="60"/>
+                <Property Name="PAname" Type="Edm.String" MaxLength="60"/>
+                <Property Name="PEname" Type="Edm.String" MaxLength="60"/>
+                <Property Name="Capital" Type="Edm.String" MaxLength="15"/>
+                <Property Name="Gentity" Type="Edm.String" MaxLength="60"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="60"/>
+                <Property Name="City" Type="Edm.String" MaxLength="60"/>
+                <Property Name="Pcode" Type="Edm.String" MaxLength="10"/>
+                <Property Name="PBox" Type="Edm.String" MaxLength="10"/>
+                <Property Name="TPhone" Type="Edm.String" MaxLength="32"/>
+                <Property Name="Mobile" Type="Edm.String" MaxLength="32"/>
+                <Property Name="Email" Type="Edm.String" MaxLength="60"/>
+                <Property Name="Return" Type="Edm.String" MaxLength="255"/>
+                <NavigationProperty Name="ZTEMPTOATT" Relationship="ZUI5_TEMP_BID_CERT_SRV.ZTEMPTOZTEMPATT"
+                                    FromRole="FromRole_ZTEMPTOZTEMPATT" ToRole="ToRole_ZTEMPTOZTEMPATT"/>
+            </EntityType>
+            <EntityType Name="ZTEMPATT" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Filename" Type="Edm.String" MaxLength="100"/>
+                <Property Name="MimeType" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Content" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="ZTELCODE" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CKey"/>
+                </Key>
+                <Property Name="CKey" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TelNo" Type="Edm.String" Nullable="false" MaxLength="4" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="ZTEMPTOZTEMPATT" sap:content-version="1">
+                <End Type="ZUI5_TEMP_BID_CERT_SRV.ZTEMP" Multiplicity="1" Role="FromRole_ZTEMPTOZTEMPATT"/>
+                <End Type="ZUI5_TEMP_BID_CERT_SRV.ZTEMPATT" Multiplicity="*" Role="ToRole_ZTEMPTOZTEMPATT"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ZTEMPTOZTEMPATT">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ZTEMPTOZTEMPATT">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZUI5_TEMP_BID_CERT_SRV_Entities" m:IsDefaultEntityContainer="true"
+                             sap:supported-formats="atom json xlsx">
+                <EntitySet Name="OnlineMessageSet" EntityType="ZUI5_TEMP_BID_CERT_SRV.OnlineMessage"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="ZLISTSET" EntityType="ZUI5_TEMP_BID_CERT_SRV.ZLIST" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="ZTEMPSET" EntityType="ZUI5_TEMP_BID_CERT_SRV.ZTEMP" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="ZTEMP_ATTSET" EntityType="ZUI5_TEMP_BID_CERT_SRV.ZTEMPATT" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="ZTEL_CODESET" EntityType="ZUI5_TEMP_BID_CERT_SRV.ZTELCODE" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <AssociationSet Name="ZTEMPTOZTEMPATTSet" Association="ZUI5_TEMP_BID_CERT_SRV.ZTEMPTOZTEMPATT"
+                                sap:creatable="false" sap:updatable="false" sap:deletable="false"
+                                sap:content-version="1">
+                    <End EntitySet="ZTEMPSET" Role="FromRole_ZTEMPTOZTEMPATT"/>
+                    <End EntitySet="ZTEMP_ATTSET" Role="ToRole_ZTEMPTOZTEMPATT"/>
+                </AssociationSet>
+                <FunctionImport Name="LIST" ReturnType="Collection(ZUI5_TEMP_BID_CERT_SRV.ZLIST)" EntitySet="ZLISTSET"
+                                m:HttpMethod="GET">
+                    <Parameter Name="Type" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Lang" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link rel="self"
+                       href="http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version"
+                       href="http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_TEMP_BID_CERT_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

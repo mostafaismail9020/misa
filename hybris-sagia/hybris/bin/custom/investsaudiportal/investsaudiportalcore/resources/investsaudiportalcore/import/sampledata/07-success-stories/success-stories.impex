@@ -1,0 +1,279 @@
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$classSystemVersion = systemVersion(catalog(id[default='investsudiPortalClassificationCatalog']), version[default='1.0'])
+$classCatalogVersion = catalogVersion(catalog(id[default='investsudiPortalClassificationCatalog']), version[default='1.0'])
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+$mediafolder = portal-media
+$media = media(code, $catalogVersion);
+$siteUid = investsaudiportal
+$productArticleCatalogVersion = $productCatalog!Article:Staged
+
+
+INSERT_UPDATE ClassificationAttribute; $classSystemVersion; code[unique = true]    ; name                           ;
+                                     ;                    ; location               ; Location                       ;
+                                     ;                    ; industry               ; Industry                       ;
+                                     ;                    ; employees-saudi        ; Employees in Saudi Arabia      ;
+                                     ;                    ; employees-world-wide   ; Employees Worldwide            ;
+                                     ;                    ; country-origin         ; Country of Origin              ;
+                                     ;                    ; revenue                ; Revenue                        ;
+                                     ;                    ; date-establishment     ; Date of establishment globally ;
+                                     ;                    ; date-market-entry      ; Date of Saudi market entry     ;
+                                     ;                    ; saudization-rate       ; Saudization rate               ;
+                                     ;                    ; female-employment-rate ; Female employment rate         ;
+                                     ;                    ; operations             ; Operations                     ;
+
+
+INSERT_UPDATE ClassificationClass; $classCatalogVersion; code[unique = true]                         ; name
+                                 ;                     ; success-story-info-classification           ; Success Story Info Classification
+                                 ;                     ; success-story-aditional-info-classification ; Success Story Aditional Info Classification
+
+
+INSERT_UPDATE ClassAttributeAssignment; attributeType(code[default = string]); classificationAttribute(code[unique = true], systemVersion(catalog(id), version))[unique = true]; classificationClass(code, catalogVersion(catalog(id), version))[unique = true]        ; $classSystemVersion; localized[default = true];
+                                      ;                                      ; location:investsudiPortalClassificationCatalog:1.0                                              ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+                                      ;                                      ; industry:investsudiPortalClassificationCatalog:1.0                                              ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+                                      ;                                      ; employees-saudi:investsudiPortalClassificationCatalog:1.0                                       ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+                                      ;                                      ; country-origin:investsudiPortalClassificationCatalog:1.0                                        ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+                                      ;                                      ; revenue:investsudiPortalClassificationCatalog:1.0                                               ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0 ;                    ;                          ;
+                                      ;                                      ; employees-world-wide:investsudiPortalClassificationCatalog:1.0                                  ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+                                      ;                                      ; date-establishment:investsudiPortalClassificationCatalog:1.0                                    ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0 ;                    ;                          ;
+                                      ;                                      ; date-market-entry:investsudiPortalClassificationCatalog:1.0                                     ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0 ;                    ;                          ;
+                                      ;                                      ; saudization-rate:investsudiPortalClassificationCatalog:1.0                                      ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0 ;                    ;                          ;
+                                      ;                                      ; female-employment-rate:investsudiPortalClassificationCatalog:1.0                                ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0 ;                    ;                          ;
+                                      ;                                      ; operations:investsudiPortalClassificationCatalog:1.0                                            ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0           ;                    ;                          ;
+
+
+
+
+INSERT_UPDATE Media; code[unique = true]                              ; realFileName                                     ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime          ; folder(qualifier)[default = $mediafolder]; altText; $catalogVersion[unique = true]
+                   ; sap.svg                                          ; sap.svg                                          ; $siteResource/sap.svg                                                       ; image/svg+xml ;                                          ; ""     ;
+                   ; huawei-header.jpg                                ; huawei-header.jpg                                ; $siteResource/huawei-header.jpg                                             ; image/jpeg    ;                                          ; ""     ;
+                   ; hewlett-packard-enterprise-logo.png              ; hewlett-packard-enterprise-logo.png              ; $siteResource/hewlett-packard-enterprise-logo.png                           ; image/png     ;                                          ; ""     ;
+                   ; kisspng-huawei-ascend-logo-honor-huawei-logo.png ; kisspng-huawei-ascend-logo-honor-huawei-logo.png ; $siteResource/kisspng-huawei-ascend-logo-honor-huawei-logo.png              ; image/png     ;                                          ; ""     ;
+
+
+INSERT_UPDATE SuccessStoryProduct; code[unique = true]           ; name [lang = en];seoKeywords[lang = en] ; description [lang = en]      ; quote [lang = en]      ; logo (code, $catalogVersion)                     ; picture(code, $catalogVersion); supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion;
+                                 ; sap-success-story             ; SAP             ;"Invest Saudi,SAP - Information and Technology,Information and Technology," ; $description-sap             ; $quote-sap             ; sap.svg                                          ;                               ; sample-information-technology         ;
+                                 ; hewlett-packard-success-story ; Hewlett Packard ;"Invest Saudi,Hewlett-Packard Enterprise - Information and Technology,Information and Technology," ; $description-hewlett-packard ; $quote-hewlett-packard ; hewlett-packard-enterprise-logo.png              ;                               ; sample-information-technology         ;
+                                 ; huawei-success-story          ; Huawei          ;"Invest Saudi,Huawei - Information and Technology,Information and Technology," ; $description-huawei          ; $quote-huawei          ; kisspng-huawei-ascend-logo-honor-huawei-logo.png ; huawei-header.jpg             ; sample-information-technology         ;
+
+
+UPDATE SuccessStoryProduct; code[unique = true]; $catalogVersion; description [lang = en]
+                          ; sap-success-story  ;                ; "
+<p style='font-size: 15px;'><strong>&nbsp;</strong></p>
+<p style='font-size: 15px;'><strong>Company at a glance:</strong></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>SAP is the world leader in enterprise applications in terms of software and software-related service revenue. For over 44 years, SAP is the world’s 3rd largest independent software manufacturer serving 335,000 customers in 190 countries. SAP's vision is to help the world run better and improve people’s lives. Their strategy is to become THE most innovative cloud company powered by SAP HANA.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><strong>Company’s operations in Saudi Arabia:</strong></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>SAP in Saudi Arabia started as a national distributor in the early 90’s through an exclusive reseller, but the relationship was terminated in 2008. Same year, SAP subsidiary started in Saudi Arabia with few employees. An expansion plan approved in 2009 established Field Services in the Saudi market.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>Currently, 500+ Saudi Arabian companies run SAP, out of which 30 of the Top 100 Saudi companies. SAP Saudi Arabia covers 25 industries with a focus on Public Sector, Security &amp; Defense, Retail, Oil &amp; Gas, Energy &amp; Utilities, Construction and more.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>The operation has 3 offices in the main cities of the kingdom with around 19,000 services and support consultants working with more than 50 active partners. And as part of the Saudi focus, SAP Saudi Arabia gives big importance to localization of SAP solutions and has implemented a dedicated SAP Training and</p>
+<p style='font-size: 15px;'>Development Institute in the kingdom.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>Ahmed Jaber Al Faifi is the Managing Director of SAP Saudi Arabia, Bahrain &amp; Yemen.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>Reasons to Invest in Saudi Arabia:</p>
+<ol>
+<li>Market access.</li>
+<li>Incentives and commitment investors.</li>
+<li>Infrastructure.</li>
+<li>Education and research.</li>
+<li>Positive regulatory environment.</li>
+</ol>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>&nbsp;</p>"
+
+
+UPDATE SuccessStoryProduct; code[unique = true]; $catalogVersion; quote [lang = en]
+                          ; sap-success-story  ;                ; "
+<div class='div-text last'>Saudi Vision 2030 is a milestone for nationwide digital transformation – with public-private partnerships driving innovative new business models and solutions in the Digital Economy. With highly talented Saudi nationals and advanced technology infrastructure, the Kingdom is set to leapfrog established economies to become one of the world’s most innovative, from government to SMEs</div>
+<div class='font-bold'>Bill McDermott</div>
+<div class='diff-color my-1'>CEO</div>
+<div class='dark-gray font-normal'>global enterprise software company SAP</div>"
+
+
+UPDATE SuccessStoryProduct; code[unique = true]           ; $catalogVersion; description [lang = en]
+                          ; hewlett-packard-success-story ;                ; "
+<p style='font-size: 15px;'><strong>SAGIA Investor Case Study: Hewlett-Packard Enterprise</strong></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><strong>A revamped local presence</strong></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><em>Running start</em></p>
+<p style='font-size: 15px;'><em>&nbsp;</em></p>
+<p style='font-size: 15px;'>Over the past few decades Saudi Arabia has proved to be an important market for multinational corporations, especially in the ICT field. As a G20 economy with a young and rapidly growing population, the Kingdom is a strategic priority for many international players, including Hewlett-Packard Enterprise (HPE). HPE entered the country in 2001 (as HP, before the company split in 2015) and invested in the Kingdom as Saudi Arabia has progressed technologically and otherwise.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>In turn, Saudi Arabia directly benefitted of the presence of international companies such as HPE. Apart from the direct beneficial effects of foreign investment, HPE’s presence is Saudi Arabia has provided with direct access to the latest technological expertise and solutions developed globally. As Saudi Arabia embarks on a path towards the goals set out by Vision 2030, the importance of technology and digitization has become increasingly apparent.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>The National Digital Transformation Initiative under the National Transformation Program, an implementation plan for Vision 2030, aims to transform the Kingdom from a consumer to a producer of technology solutions.&nbsp; Coming as one of the first companies in Silicon Valley, still the global powerhouse of technology innovation, HPE brings technology know-how and experience. Most importantly, however, HPE’s relation with Saudi Arabia reached a turning point in 2017 when the company shifted from being an ICT solutions supplier to an ICT foreign investor, aligning its local presence with Saudi Arabia's market needs.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><em>Locally built</em></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>HPE entered the market as many foreign companies do, forming partnerships with vendors through which its products are marketed and sold. This is a highly regarded way to do business in a market like Saudi Arabia, where local partners forge business relationships with multinational companies by bringing their knowledge to the table. However, following the visit in May 2017 by Meg Withman, HPE’s former chief executive, the company initiated the process to become a SAGIA-licensed foreign investor in Saudi Arabia.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>The move is intended to benefit from the efficiency gains of doing business independently in the country. Looking at the Saudi customer experience from placing the order to making the payment, HPE found that most the time spent in order processing could be eliminated by reducing the documentation and the number of procedures required, benefits that could come from registering as a direct investor in the Kingdom.</p>
+<p style='font-size: 15px;'><em>&nbsp;</em></p>
+<p style='font-size: 15px;'>Direct investors to the Kingdom are subject to a 20% corporate income tax. HPE evaluated this tax regime as competitive relative to the rest of the world and worth the business development autonomy that would come with the foreign investor status. As a result of this move, the company was increasingly able invest in talent development and provide a full range of ICT development functions that go beyond the already provided support services.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><em>Trained for success</em></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>Among the new functions introduced, HPE established a training program that supports the company in meeting the workforce development requirements of a growing market like Saudi Arabia. Currently HPE has a cohort of 24 graduates, 50% of whom graduated from the King Abdullah Scholarship Program, a government program launched in 2005 to financially support Saudi students at leading universities abroad.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>HPE’s new hires are required to attend a three-month training class, followed by two years of on-the-job training rotations. The class includes technology and soft skills and takes place completely in English so that Saudi graduates can cement their familiarity with the technical vocabulary used in the industry and within the company. HPE is currently running the seventh round of this program after having promoted several graduates to positions across the different departments within the company.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>According to the company, by revamping its Saudi Arabia’s office structure HPE managed to reduce bureaucratic processes that took more than a month to an average of two weeks. The re-structuring also allowed HPE to address some of the challenges traditionally experienced with importing technology due to trade restrictions, delays bringing in new products through Customs or other logistics challenges. Products had to pass through many hubs before being brought into the country. To address this, HPE worked to become an importer of record with Saudi Customs. This moved allowed the company to improve the import process and shorten wait times.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><em>Expanding scope</em></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>Free to provide its Saudi customers with more than just sales services, HPE also added advisory and business consultancy services to its local portfolio, by establishing its digital transformation services provided by Pointnext organization. Saudi Arabia is one of nineteen countries where consultancy and professional services are currently provided. At the global level, Pointnext’s advisory services are offered to governments to enable a clear technology strategy and digital transformation roadmap. This is often considered a fertile soil to introduce HPE’s comprehensive multi-vendor technology solutions and build around the national digital initiatives.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>Digital transformation services are also targeting the Saudi corporate market, where the convergence between information technology, infrastructure, digital platforms, social media and communications is even more apparent. Companies in Saudi Arabia and beyond require new services as they race to maintain relevance in an increasingly digital world. In this context, demand for ICT consulting services, such as enterprise architecture and change management, is expected in increase in the near future.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>The introduction of these services in the Saudi market is also aligned with the goals set by the Saudi Vision 2030. In this context, the government aim to improve Saudi Arabia’s position in the World Bank's Government Effectiveness Index from 80th to 20th by 2030. Furthermore, Vision 2030 aims to increase the small and medium enterprise contribution to the Kingdom's GDP from 20% to 35%. Both targets rely heavily on process engineering and efficiency improvements. With the aid of well-implemented and state-of-the-art technology solutions, Saudi Arabia could have an opportunity to leapfrog developed countries into the digital future.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>ICT solution and digital transformation services companies are expected to play an important role as the government works to leverage the Kingdom's young population to improve the use of technology throughout government and private sector organizations. HPE’s revamped presence in Saudi Arabia provides a good example of how the transfer of foreign expertise and training capacity can provide foreign investors with a unique position to benefit from such a dynamic and growing digital market.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<h3 style='text-align: center;'><strong>CEO Interview </strong></h3>
+<p style='font-size: 15px;'><em>Mohammed Al Jasser, Managing Director of Hewlett-Packard Enterprise Saudi Arabia</em></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><strong>What drove HPE to transform its Saudi presence and register as a foreign direct investor?</strong></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>As we were reviewing the flow of goods, the order-to-cash process, we increasingly realised that obtaining a local license could increase our efficiency, shorten delivery cycles, ease documentation processing, and achieve some savings on operational expenditure. Based on a thorough internal analysis, we found that the end-to-end customer experience would immensely improve. Therefore, it really became a no-brainer to make that decision.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>When the proper comparative analysis is done across the two scenarios, we are seeing a significant improvement right from the start, in addition to increased flexibility for the future. As a sales office, it would be more challenging to maintain a sustainable business model in the long term, with staffing requirements playing a big part in this respect. As a matter of fact, beyond the operational efficiency, being a direct investor in the Kingdom enables us to develop local talent and create a more sustainable local presence.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><strong>What was your experience in registering as a local investor with SAGIA?</strong></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>It was the easiest process of this kind my team has ever gone through in any country. It was smooth and organized. We were able to communicate back-and-forth with SAGIA to get proper and prompt feedback, making the process as easy as we could imagine.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>SAGIA in particular has proved extremely eager to hear our concerns. They work by the book but also agree to look at the challenges that multinational investors faces in terms of government bureaucracy on a partnership basis. SAGIA went above and beyond our expectations by assigning a dedicated person who would follow up on our case. They would even proactively call to check on our legal team’s requirements and would offer to review our draft documents before formal submission to avoid wasting time with any missing stamps or other details. SAGIA made it clear that they are mandated to be the investors’ representative within the government and, in our case, they proved to be good ambassadors in the public sector ecosystem.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>It took just a few weeks of documents preparation from the day HPE finalized the decision to register locally to the day we formally applied. Most of that time was dedicated to the preparation and translation of internal documents, as well as approvals by our legal, finance and other departments around the globe. In terms of timing, SAGIA kept to their promise by issuing the licence within 48 hours, a dramatic transformation for our presence in Saudi Arabia.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>As one of the first fifty companies to obtain this investor licence, the speed and quality of HPE’s licensing procedure is an absolute accomplishment for SAGIA and a testimony of the Saudi government’s overall improvement. Such as smooth process would have been unthinkable just three years ago and the Kingdom has come such a long way in a very short period. As a technology company, we were particularly impressed by the fact that all procedures were executed digitally, with the ability to track procedural steps online and no need for physical bureaucratic interactions.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><strong>How would you rate Saudi businesses' adoption of the latest technology?</strong></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>Our decision to get a local license was influenced by the decision to play a part in the country's digital transformation, developing the Kingdom’s technology roadmap and looking at how we can help execute on that. HPE itself went under a big corporate transformation in the last few years and has a wealth of knowledge on how to guide others in using technologies to map out new solutions. At a global level, HPE has an advisory and business consulting arm that has only been activated in 19 countries to accelerate their digital transformation. One of them is Saudi Arabia; that shows HPE’s commitment towards the country.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>We have already introduced our newest products that serve these needs, and Saudi Arabia is definitely a promising market for them. For instance, we are implementing in Saudi Arabia and few other countries the Cloud 28+ digital platform for B2B collaborations. This is a platform that allows for lead generation, media communication and other collaboration opportunities between companies. Moreover, we are introducing Pathfinder, a program that brings HPE’s venture investment and partnership to top-tier start-ups in their expansion phase, a critical need for Saudi companies as they try to expand beyond their local and regional markets. We are constantly looking at potential investments in the Kingdom that will integrate well with our business.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>In addition, we anticipate more government support for SMEs in the form of tax breaks or other incentives that encourage them to invest in technology as the Kingdom pushes forward in its drive to increase automation and jump to the front of Industry 4.0 trends.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><strong>What has been your experience with training Saudi employees?</strong></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>When the right environment is created and local professionals are given the right chance, they will succeed. Our trainees start as full-time employees, they see our company's dedication to the country and willingness to invest in their abilities. That makes a big difference. With our newest round of hiring, we have already seen some return on our investment as they are creating leads and on-boarding new partners in their few months at the company. We welcome anyone to come learn from our training program and facilities and invite them to replicate our model as we work to better develop the technology ecosystem in the Kingdom.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'><strong>What will be the role of technological consultancy in the Kingdom's transformation?</strong></p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>We can see the global convergence between IT, communications, media and government taking place in Saudi Arabia at every level. At individual level, the high penetration of Twitter, Snapchat, Instagram and so on is allowing any Saudi to be a media producer. This has huge implications for the sector’s infrastructure needs. For businesses and government entities, we need to distinguish between digitization and digital transformation. Digitization is basically taking an existing process and making it digital, without changes.</p>
+<p style='font-size: 15px;'>&nbsp;</p>
+<p style='font-size: 15px;'>In digital transformation, you are actually disrupting the true essence of the process and changing the end-to-end experience, whether that is in making a new process, taking steps out of the process, or otherwise making things easier, faster and cheaper to do. We need to answer many questions, such as: What can you do to improve the customer experience? What goals do you want to achieve that will require process re-engineering? That is a transformation that requires enterprise change management and consulting to develop a business strategy and then a digital transformation strategy. Once we set clear business objectives, we can look at how technology can help. Technology should only be the means to an end business objective, improving the customer or citizen experience; in order to be successful, we need to have the business strategy and the technology strategy aligned and designed together. These are the issues Saudi Arabia and the world are currently confronted with.</p>"
+
+
+UPDATE SuccessStoryProduct; code[unique = true]           ; $catalogVersion; quote [lang = en]
+                          ; hewlett-packard-success-story ;                ; "
+<div class='div-text'>Hewlett Packard Enterprise (HPE), in Saudi Arabia, has eagerly embraced the Saudi 2030 Vision and
+    the National Transformation Program 2020 (NTP). HPE has developed and aligned our own strategy, unique value
+    proposition and solutions to support the fulfillment of the Vision and the NTP. HPE is fully committed to enabling
+    the NTP with advanced innovations coupled with our investment in highly skilled local resources. Furthermore, we are
+    progressing programmes to invest in technology enablement and knowledge transfer to support the evolution a highly
+    talented and entrepreneurial Saudi Arabian ICT workforce.&quot;</div>
+<div class='font-bold'>Dr. Khaled Al-Dhaher</div>
+<div class='diff-color my-1'>Managing Director</div>
+<div class='dark-gray font-normal'>Hewlett Packard Enterprise, Saudi Arabia</div>
+<div class='div-text'>&quot;The Saudi Arabian 2030 Vision is an economic and social program that has the potential to
+    revolutionize the way in which technology and people can combine to pioneer great national advancement. Hewlett
+    Packard Enterprise (HPE) is excited to be engaged and actively involved in partnering with the Kingdom and the
+    technology industry to turn the Vision into reality. We are also committed to bringing the latest technical
+    innovations, both ours and the broader Silicon Valley community, to benefit the transformation plan. HPE is
+    investing in a long-term, sustainable involvement to deliver positive outcomes for Saudi Arabia.&quot;</div>
+<div class='font-bold'>Chris Johnson</div>
+<div class='diff-color my-1'>Vice President &amp; Managing Director</div>
+<div class='dark-gray font-normal'>Hewlett Packard Enterprise, Middle East, Mediterranean &amp; Africa</div>
+<div class='div-text last'>&quot;Hewlett Packard Enterprise (HPE) founded Silicon Valley more than 75 years ago. Today,
+    in an age of digital disruption, HPE continues to accelerate innovation for our customers helping them on their
+    digital transformation journey. The Saudi nation is embarking upon just such a journey with the 2030 Vision and
+    Transformation Plan. HPE is honored to be involved helping make a significant impact and we are committed to a
+    long-term engagement. I am excited for the opportunities this partnership can bring both for HPE and Saudi Arabia.
+    Together, we can achieve great things and realize the Saudi Vision.&quot;</div>
+<div class='font-bold'>Meg Whitman</div>
+<div class='diff-color my-1'>President and CEO</div>
+<div class='dark-gray font-normal'>Hewlett Packard Enterprise</div>"
+
+
+UPDATE SuccessStoryProduct; code[unique = true]  ; $catalogVersion; description [lang = en]
+                          ; huawei-success-story ;                ; "
+<p style='font-size: 15px;'>&nbsp;</p>
+<p class='my-2' style='font-size: 15px;'>Huawei Tech Investment Saudi Arabia is a leading global information and communications technology (ICT) solutions provider that first established its subsidiary in KSA in 2002. Driven by its vision to build a better connected world, Huawei Saudi Arabia has established an end-to-end ICT solutions portfolio that gives customers competitive advantages in telecom and enterprise networks, devices and cloud computing. In 2016, Huawei was granted an investment license, allowing the company to retain 100% ownership of its trading operations in the Kingdom.</p>
+<p class='my-2' style='font-size: 15px;'>Huawei focuses on serving telecom operators, government entities and enterprise clients in Saudi Arabia, providing them enterprise infrastructure and communications, data centers, and industry applications, in addition to cloud computing-based data center and enterprise applications.</p>
+<p class='my-2' style='font-size: 15px;'>&nbsp;</p>
+<div class='my-2 header-tabs-main' style='font-size: 15px;'>Company operations in Saudi Arabia</div>
+<p class='my-2' style='font-size: 15px;'>Huawei’s operations in Saudi Arabia are broken up as follows.</p>
+<p class='my-2' style='font-size: 15px;'>&nbsp;</p>
+<div class='my-2 header-tabs-main' style='font-size: 15px;'>Carrier Network Business Group</div>
+<p class='my-2' style='font-size: 15px;'>Huawei offers end-to-end ICT solutions and professional services for telecom operators covering terminals, wireless and wireline networks, core network, and application &amp; software. Through years of development, Huawei has become the world’s trusted leader in the era of All-IP Convergence.</p>
+<p class='my-2' style='font-size: 15px;'>&nbsp;</p>
+<div class='my-2 header-tabs-main' style='font-size: 15px;'>Enterprise Business Group</div>
+<p class='my-2' style='font-size: 15px;'>Huawei's strategy in the enterprise domain focuses on close cooperation and integration with partners to deliver a wide range of highly efficient customer-centric ICT solutions and services. We offer a broad portfolio of innovative ICT solutions that cater to global vertical industry and enterprise customers across government and public sector, healthcare, education, oil &amp; gas, transportation, and more. Our portfolio covers enterprise networking, unified communications &amp; collaboration (UC&amp;C), cloud computing &amp; data center, enterprise wireless, network energy and infrastructure services.</p>"
+
+
+UPDATE SuccessStoryProduct; code[unique = true]  ; $catalogVersion; quote [lang = en]
+                          ; huawei-success-story ;                ; "
+<div class='div-text'>Huawei has proudly been operating in the Kingdom of Saudi Arabia since 2002, and views the country
+    as a key market regionally and globally. We were honored to be granted an investment license in 2016, allowing
+    Huawei to retain 100% ownership of its trading operations in the Kingdom,” said Ramadan Ding, CEO, Huawei Tech
+    Investment Saudi Arabia</div>
+<div class='div-text last'>Huawei has aligned its operations with the Kingdom’s development agenda and is constantly
+    identifying ways to use its technology to support the Saudi 2030 Vision - which places great emphasis on the
+    development of the country’s ICT sector. Huawei’s support to the Kingdom is witnessed through various activities
+    like launching the latest solutions and technologies, supporting the Saudi youth by arming them with necessary
+    knowledge to lead the country’s ICT development, collaborating with the government entities, and working closely
+    with the operators. We look forward to more partnerships with the leading organizations to further contribute to the
+    Kingdom’s growth and support its economy.</div>
+<div class='font-bold'>Ramadan Ding</div>
+<div class='diff-color my-1'>CEO</div>
+<div class='dark-gray font-normal'>Huawei Tech Investment Saudi Arabia</div>"
+
+
+INSERT_UPDATE SuccessStoryProduct; code[unique = true]           ; supercategories(code, $classCatalogVersion)[mode = append]                    ; $catalogVersion
+                                 ; sap-success-story             ; success-story-info-classification,success-story-aditional-info-classification ;
+                                 ; hewlett-packard-success-story ; success-story-info-classification,success-story-aditional-info-classification ;
+                                 ; huawei-success-story          ; success-story-info-classification,success-story-aditional-info-classification ;
+
+INSERT_UPDATE ProductFeature; product(code, $catalogVersion)[unique = true]; classificationAttributeAssignment(classificationClass(code, catalogVersion(catalog(id), version)), classificationAttribute(code, systemVersion(catalog(id), version)))[unique = true]; qualifier                                                                                                    ; value[translator = de.hybris.platform.catalog.jalo.classification.impex.ProductFeatureValueTranslator]                 ; language(isocode)
+                            ; sap-success-story                            ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:location:investsudiPortalClassificationCatalog:1.0                                                       ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.location                         ; string,Riyadh, Kingdom of Saudi Arabia                                                                                 ; en
+                            ; sap-success-story                            ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:industry:investsudiPortalClassificationCatalog:1.0                                                       ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.industry                         ; string,Enterprise Application Software, On premise, in the cloud and hybrid                                            ; en
+                            ; sap-success-story                            ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:employees-saudi:investsudiPortalClassificationCatalog:1.0                                                ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.employees-saudi                  ; string,150 Employees + 1500 Consultants                                                                                ; en
+                            ; sap-success-story                            ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:country-origin:investsudiPortalClassificationCatalog:1.0                                                 ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.country-origin                   ; string,USA                                                                                                             ; en
+                            ; sap-success-story                            ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0:revenue:investsudiPortalClassificationCatalog:1.0                                              ; investsudiPortalClassificationCatalog/1.0/success-story-aditional-info-classification.revenue                ; string,Euro 20.8bn (SAP Global FY15)                                                                                   ; en
+                            ; hewlett-packard-success-story                ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:location:investsudiPortalClassificationCatalog:1.0                                                       ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.location                         ; string,Riyadh (head office)                                                                                            ; en
+                            ; hewlett-packard-success-story                ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:industry:investsudiPortalClassificationCatalog:1.0                                                       ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.industry                         ; string,technology company                                                                                              ; en
+                            ; hewlett-packard-success-story                ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:employees-world-wide:investsudiPortalClassificationCatalog:1.0                                           ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.employees-world-wide             ; string,45,000                                                                                                          ; en
+                            ; hewlett-packard-success-story                ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:employees-saudi:investsudiPortalClassificationCatalog:1.0                                                ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.employees-saudi                  ; string,200 (direct), Partner Ecosystem +1000                                                                           ; en
+                            ; hewlett-packard-success-story                ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:country-origin:investsudiPortalClassificationCatalog:1.0                                                 ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.country-origin                   ; string,USA                                                                                                             ; en
+                            ; hewlett-packard-success-story                ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0:date-establishment:investsudiPortalClassificationCatalog:1.0                                   ; investsudiPortalClassificationCatalog/1.0/success-story-aditional-info-classification.date-establishment     ; string,HP in 1939 (converted to HPE in 2015)                                                                           ; en
+                            ; hewlett-packard-success-story                ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0:date-market-entry:investsudiPortalClassificationCatalog:1.0                                    ; investsudiPortalClassificationCatalog/1.0/success-story-aditional-info-classification.date-market-entry      ; string,2001                                                                                                            ; en
+                            ; hewlett-packard-success-story                ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0:saudization-rate:investsudiPortalClassificationCatalog:1.0                                     ; investsudiPortalClassificationCatalog/1.0/success-story-aditional-info-classification.saudization-rate       ; string,37%+ on average                                                                                                 ; en
+                            ; hewlett-packard-success-story                ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0:female-employment-rate:investsudiPortalClassificationCatalog:1.0                               ; investsudiPortalClassificationCatalog/1.0/success-story-aditional-info-classification.female-employment-rate ; string,15%                                                                                                             ; en
+                            ; huawei-success-story                         ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:location:investsudiPortalClassificationCatalog:1.0                                                       ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.location                         ; string,Riyadh                                                                                                          ; en
+                            ; huawei-success-story                         ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:industry:investsudiPortalClassificationCatalog:1.0                                                       ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.industry                         ; string,ICT solutions, telecommunications, networks, consumer devices, smart and safe cities solutions, cloud computing ; en
+                            ; huawei-success-story                         ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:employees-saudi:investsudiPortalClassificationCatalog:1.0                                                ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.employees-saudi                  ; string,1,000                                                                                                           ; en
+                            ; huawei-success-story                         ; success-story-info-classification:investsudiPortalClassificationCatalog:1.0:country-origin:investsudiPortalClassificationCatalog:1.0                                                 ; investsudiPortalClassificationCatalog/1.0/success-story-info-classification.country-origin                   ; string,China                                                                                                           ; en
+                            ; huawei-success-story                         ; success-story-aditional-info-classification:investsudiPortalClassificationCatalog:1.0:revenue:investsudiPortalClassificationCatalog:1.0                                              ; investsudiPortalClassificationCatalog/1.0/success-story-aditional-info-classification.revenue                ; string,Exceeded 4 Billion SAR in 2015                                                                                  ; en

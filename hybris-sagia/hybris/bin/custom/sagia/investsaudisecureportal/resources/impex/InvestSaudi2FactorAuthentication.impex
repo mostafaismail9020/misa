@@ -1,0 +1,71 @@
+
+$contentCatalog=investsaudiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailFromEmail=info@misa.gov.sa
+$emailFromName=Customer Services Team
+$lang = en
+$jarResource=jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+
+
+# Functional Content Pages
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]           ; name                           ; masterTemplate(uid, $contentCV)      ; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']; previewImage(code, $contentCV)
+                         ;                          ; login-second-step            ; Login Page - Second Step       ; LoginPageTemplate                    ; login-second-step
+
+
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+;;LoginSecondStepVerificationComponent;Login Second Step Verification Component;accountLoginSecondStepVerification.jsp;;LoginSecondStepVerificationComponent
+
+
+## Customer Login - second step
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+;;LeftContentSlot-login-secondstep;Left Content Slot for Customer Login;true;LoginSecondStepVerificationComponent;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login-second-step'];contentSlot(uid,$contentCV)[unique=true];;;
+;;LeftContentSlot-login-secondstep;LeftContentSlot;;LeftContentSlot-login-secondstep;;;
+
+
+
+################## Start InvestSaudi 2 Factor Authentication Email Template  #####################
+
+
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; InvestSaudi2FactorAuthTemplate    ; InvestSaudi Two Factor Authentication Template       ; true ; InvestSaudi2FactorAuthTemplate    ; investSaudi_Email_Two_Factor_Authentication_Subject    ; investSaudi_Email_Two_Factor_Authentication_Body    ; EmailPage
+
+# Templates for CMS Cockpit Page Edit
+UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; ; InvestSaudi2FactorAuthTemplate    ; $jarResource/email-emailTwoFactorAuthenticationTemplate.vm
+
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'InvestSaudi2FactorAuthTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'InvestSaudi2FactorAuthTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-InvestSaudi2FactorAuth      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-InvestSaudi2FactorAuth    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-InvestSaudi2FactorAuth ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@misa.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; InvestSaudi2FactorAuth    ; Email InvestSaudi Two Factor Authentication    ; InvestSaudi2FactorAuthTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; investSaudi_Email_Two_Factor_Authentication_Body       ; com.investsaudi.email.context.InvestSaudi2FactorAuthEmailContext
+; investSaudi_Email_Two_Factor_Authentication_Subject    ; com.investsaudi.email.context.InvestSaudi2FactorAuthEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; investSaudi_Email_Two_Factor_Authentication_Body       ; "Email InvestSaudi Two Factor Authentication Body"          ; $jarResource/email-emailTwoFactorAuthenticationBody.vm
+; investSaudi_Email_Two_Factor_Authentication_Subject    ; "Email InvestSaudi Two Factor Authentication Subject"       ; $jarResource/email-emailTwoFactorAuthenticationSubject.vm
+
+################## End InvestSaudi 2 Factor Authentication  #####################
+
+INSERT_UPDATE SagiaConfiguration; key[unique = true]; value; displayValue[default=true]
+; enableInvestSaudi2FactorAuthService; false;;

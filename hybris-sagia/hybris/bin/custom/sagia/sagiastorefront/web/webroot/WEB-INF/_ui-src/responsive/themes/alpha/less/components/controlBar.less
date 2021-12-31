@@ -1,0 +1,62 @@
+.controlBar {
+    
+    display: inline-flex;
+    border: solid 3px transparent;
+    border-bottom: solid 2px transparent;
+    box-shadow: 0 0 0 1px @apple;
+    background: transparent;
+    border-radius: 0 20px;
+    overflow: hidden;
+    height: 35px;
+    width: auto;
+    margin: 1px;
+    margin-bottom: 24px;
+    &-action {
+        padding: 0 25px;
+        background-color: transparent;
+        appearance: none;
+        border: none;
+        min-width: 92px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:first-child {
+            border-radius: 0 0 0 20px;
+        }
+        &:last-child {
+            border-radius: 0 20px 0 0;
+        }        
+        &:hover,
+        &:focus {
+            background-color: lighten(#E6E6ED, 5%);
+            outline: none;
+        }        
+        .iconElement_controlBar {
+            display: inline-block;
+            
+            &_active {
+                display: none;
+            }
+        }
+        
+        &.active {
+            background-color: #E6E6ED;
+            &:hover,
+            &:focus {
+                background-color: #E6E6ED;
+                outline: none;
+            }
+            
+            .iconElement_controlBar {
+                display: none;
+                
+                &_active {
+                    display: inline-block;
+                }
+            }
+        }
+        
+    }
+
+}

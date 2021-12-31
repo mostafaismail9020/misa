@@ -1,0 +1,99 @@
+.appointmentDetails {
+	color: #313f4b;
+	
+	h2.contentModule-headline {
+		margin-bottom: 0;
+		&:first-child {
+			padding-top: 4px;
+		}
+	}
+
+	&-properties {
+		text-align: right;
+		font-size: 13px;
+		margin-top: -10px;
+		margin-bottom: 8px;
+		
+		#media-breakpoint-down(sm, {
+			margin-top: -2px;
+			text-align: left;
+		});	
+	}
+	&-property {
+		display: inline-block;
+		line-height: 40px;
+		vertical-align: middle;
+		
+		
+		.appointmentList-status-value{
+			font-size: 13px;
+		}
+		.appointmentList-locationBtn {
+			border: none;
+			background-color: transparent;
+		}
+		&.appointmentList-location {
+			color: #313f4b;
+			padding-top: 10px;
+			font-size: 13px;
+			padding-bottom: 10px;
+			line-height: 20px;
+			display: inline-block;
+		}
+		#media-breakpoint-down(sm, {
+			&.appointmentList-date:last-child {
+				float: right;
+				text-align: center;
+			}
+		});
+		&_delimiter {
+			display: inline-block;
+			margin: 0 10px;
+			border-left: 2px solid #99abb5;
+			height: 16px;
+			opacity: 0.5;
+			position: relative;
+			top: 4px;
+		}
+
+	}
+	&_forms {
+		> .contentModule-actions.contentModule_spaceTop {
+			margin-top: 0;
+			padding-top: 10px;
+		}
+	}
+	
+	.text-center {
+		text-align: center;
+	}
+
+	.btn_download:last-child,
+	.btn&-downloadBtn:last-child {
+		padding-bottom: 0;
+	}
+	&, 
+	&_forms {
+
+		.btn_link:last-child {
+			padding-bottom: 0;
+		}
+
+		&.text-center {
+			.btn.btn_link {
+				margin: 0 auto;
+			}
+		}
+	}
+	&-qrCodeImagePlaceholder {
+		height: 220px;
+		text-align: right;
+		#media-breakpoint-down(xs, {
+			text-align: center;
+		});
+	}
+	.btn&-downloadBtn svg{
+		width: 21px;
+		margin: 0;
+	}
+}

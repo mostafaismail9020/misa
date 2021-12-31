@@ -1,0 +1,327 @@
+{
+    "d": {
+        "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendHeaders('0')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendHeaders('0')",
+            "type": "ZUI5_SAGIA_SRV.AmendHeader"
+        },
+        "PrevSrGuid": "00000000-0000-0000-0000-000000000000",
+        "ReApply": false,
+        "SrID": "0",
+        "SrGuid": "00000000-0000-0000-0000-000000000000",
+        "LicID": "12822",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "1",
+        "LicTypeDesc": "INDUSTRIAL  صناعي",
+        "LicRenFlag": false,
+        "ShipmentNo": "",
+        "BpID": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1531440000000)/",
+        "SrStCode": "",
+        "SrStDesc": "test status",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZSR5",
+        "Action": "",
+        "TermCond": false,
+        "BpName": "",
+        "MsgType": "",
+        "Message": "",
+        "AmendChangeID": "",
+        "InstantAmendment": false,
+        "AmendHeaderToAmendmentTypeNav": {
+            "__deferred": {
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendHeaders('0')/AmendHeaderToAmendmentTypeNav"
+            }
+        },
+        "AmendHeaderToContentHDRNav": {
+            "__deferred": {
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendHeaders('0')/AmendHeaderToContentHDRNav"
+            }
+        },
+        "AmendHeaderToAmendShareHoldNav": {
+            "results": [
+                {
+                    "__metadata": {
+                        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendShareHolders(SrID='',BpID='613392')",
+                        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendShareHolders(SrID='',BpID='613392')",
+                        "type": "ZUI5_SAGIA_SRV.AmendShareHolder"
+                    },
+                    "SrID": "",
+                    "BpID": "613392",
+                    "ShBpID": "613391",
+                    "BpType": "1",
+                    "Firstname": "شوكت علي",
+                    "NameEng": "",
+                    "Secondname": "شاد",
+                    "MultiNatComp": "",
+                    "Industry": "",
+                    "IndDesc": "",
+                    "Subsector": "",
+                    "LegalStatus": "",
+                    "LegalStat_desc": "",
+                    "Laboursize": "",
+                    "Capitals": "",
+                    "Gender": "M",
+                    "GenderDesc": "Male",
+                    "MaritalStatus": "1",
+                    "MaritalDesc": "",
+                    "AcademicTitle": "0001",
+                    "AcaTitleDesc": "",
+                    "Birthdate": "/Date(1260662400000)/",
+                    "Nationality": "PY",
+                    "NatioDesc": "",
+                    "PrevNational": "PA",
+                    "PreNatDesc": "",
+                    "Percentage": "20.0000000",
+                    "CreateDate": "/Date(1260662400000)/",
+                    "ShInherProp": true,
+                    "ShDocId": "        1",
+                    "Action": "",
+                    "Street": "street",
+                    "HouseNo": "75894327",
+                    "Country": "SA",
+                    "CountryName": "",
+                    "ZipCode": "8523798",
+                    "City": "testcity",
+                    "Telephone": "78594387295",
+                    "Email": "m@m",
+                    "Website": "testwebsite"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendShareHolders(SrID='',BpID='613392')",
+                        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendShareHolders(SrID='',BpID='613392')",
+                        "type": "ZUI5_SAGIA_SRV.AmendShareHolder"
+                    },
+                    "SrID": "",
+                    "BpID": "613392",
+                    "ShBpID": "621559",
+                    "BpType": "2",
+                    "Firstname": "شركة الطاقة الوقائية",
+                    "NameEng": "test",
+                    "Secondname": "test",
+                    "MultiNatComp": "1",
+                    "Industry": "0",
+                    "IndDesc": "",
+                    "Subsector": "abc",
+                    "LegalStatus": "LLC",
+                    "LegalStat_desc": "",
+                    "Laboursize": "42",
+                    "Capitals": "500000",
+                    "Gender": "F",
+                    "GenderDesc": "Female",
+                    "MaritalStatus": "0",
+                    "MaritalDesc": "",
+                    "AcademicTitle": "0002",
+                    "AcaTitleDesc": "",
+                    "Birthdate": "/Date(31536000000)/",
+                    "Nationality": "NU",
+                    "NatioDesc": "",
+                    "PrevNational": "NF",
+                    "PreNatDesc": "",
+                    "Percentage": "80.0000000",
+                    "CreateDate": "/Date(1281398400000)/",
+                    "ShInherProp": false,
+                    "ShDocId": "        2",
+                    "Action": "",
+                    "Street": "21545548",
+                    "HouseNo": "111",
+                    "Country": "SA",
+                    "CountryName": "",
+                    "ZipCode": "545454",
+                    "City": "abc",
+                    "Telephone": "123456",
+                    "Email": "ss@yy.com",
+                    "Website": "aaa"
+                }
+            ]
+        },
+        "AmendHeaderToAmendProductNav": {
+            "results": [
+                {
+                    "__metadata": {
+                        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendProducts(SrID='',BpID='613392',ProductID='74199990')",
+                        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendProducts(SrID='',BpID='613392',ProductID='74199990')",
+                        "type": "ZUI5_SAGIA_SRV.AmendProduct"
+                    },
+                    "SrID": "",
+                    "BpID": "613392",
+                    "ProductID": "74199990",
+                    "ProdDesc": "Other",
+                    "Quantity": "500.000",
+                    "Unit": "EA",
+                    "UnitDesc": "each",
+                    "Action": "",
+                    "MsgType": "",
+                    "Message": "",
+                    "CreateDate": null,
+                    "NumberInt": "0000000010"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendProducts(SrID='',BpID='613392',ProductID='15071000')",
+                        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendProducts(SrID='',BpID='613392',ProductID='15071000')",
+                        "type": "ZUI5_SAGIA_SRV.AmendProduct"
+                    },
+                    "SrID": "",
+                    "BpID": "613392",
+                    "ProductID": "15071000",
+                    "ProdDesc": " Crude oil, whether or not degummed",
+                    "Quantity": "500.000",
+                    "Unit": "EA",
+                    "UnitDesc": "each",
+                    "Action": "",
+                    "MsgType": "",
+                    "Message": "",
+                    "CreateDate": null,
+                    "NumberInt": "0000000020"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendProducts(SrID='',BpID='613392',ProductID='12022000')",
+                        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendProducts(SrID='',BpID='613392',ProductID='12022000')",
+                        "type": "ZUI5_SAGIA_SRV.AmendProduct"
+                    },
+                    "SrID": "",
+                    "BpID": "613392",
+                    "ProductID": "12022000",
+                    "ProdDesc": " Shelled, whether or not broken",
+                    "Quantity": "100.000",
+                    "Unit": "EA",
+                    "UnitDesc": "each",
+                    "Action": "",
+                    "MsgType": "",
+                    "Message": "",
+                    "CreateDate": null,
+                    "NumberInt": "0000000030"
+                }
+            ]
+        },
+        "AmendHeaderToAmendBranchNav": {
+            "results": [
+                {
+                    "__metadata": {
+                        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendBranches(SrID='',BpID='613392',BranchType='0001',BranchDesc='Hp%20Dammam',Action='')",
+                        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendBranches(SrID='',BpID='613392',BranchType='0001',BranchDesc='Hp%20Dammam',Action='')",
+                        "type": "ZUI5_SAGIA_SRV.AmendBranch"
+                    },
+                    "SrID": "",
+                    "BpID": "613392",
+                    "BranchType": "0001",
+                    "BranchDesc": "Hp Dammam",
+                    "Action": "",
+                    "BrAddrNum": "112218",
+                    "MainBranch": true,
+                    "BranTypDesc": "Factory Branch",
+                    "CreateDate": null,
+                    "Street": "asdasd",
+                    "HouseNo": "1212",
+                    "Country": "SA",
+                    "CountryName": "",
+                    "Region": "10",
+                    "RegionDesc": "Riyadh",
+                    "CityCode": "000018000046",
+                    "City": "Riyadh",
+                    "ZipCode": "",
+                    "Telephone": "12121",
+                    "Email": "Ab@ab.com",
+                    "Website": "Hp Dammam"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendBranches(SrID='',BpID='613392',BranchType='0001',BranchDesc='branch%20name',Action='')",
+                        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendBranches(SrID='',BpID='613392',BranchType='0001',BranchDesc='branch%20name',Action='')",
+                        "type": "ZUI5_SAGIA_SRV.AmendBranch"
+                    },
+                    "SrID": "",
+                    "BpID": "613392",
+                    "BranchType": "0001",
+                    "BranchDesc": "branch name",
+                    "Action": "",
+                    "BrAddrNum": "112357",
+                    "MainBranch": false,
+                    "BranTypDesc": "Factory Branch",
+                    "CreateDate": null,
+                    "Street": "121212",
+                    "HouseNo": "121212",
+                    "Country": "SA",
+                    "CountryName": "",
+                    "Region": "10",
+                    "RegionDesc": "Riyadh",
+                    "CityCode": "000018000046",
+                    "City": "Riyadh",
+                    "ZipCode": "",
+                    "Telephone": "12122",
+                    "Email": "ab@ab.com",
+                    "Website": "branch name"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendBranches(SrID='',BpID='613392',BranchType='0001',BranchDesc='asdasas',Action='')",
+                        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendBranches(SrID='',BpID='613392',BranchType='0001',BranchDesc='asdasas',Action='')",
+                        "type": "ZUI5_SAGIA_SRV.AmendBranch"
+                    },
+                    "SrID": "",
+                    "BpID": "613392",
+                    "BranchType": "0001",
+                    "BranchDesc": "asdasas",
+                    "Action": "",
+                    "BrAddrNum": "113288",
+                    "MainBranch": false,
+                    "BranTypDesc": "Factory Branch",
+                    "CreateDate": null,
+                    "Street": "asdsad",
+                    "HouseNo": "11212",
+                    "Country": "SA",
+                    "CountryName": "",
+                    "Region": "10",
+                    "RegionDesc": "Riyadh",
+                    "CityCode": "000018000046",
+                    "City": "Riyadh",
+                    "ZipCode": "",
+                    "Telephone": "12121",
+                    "Email": "ab@ab.com",
+                    "Website": "asdasas"
+                }
+            ]
+        },
+        "AmendHeaderToAmendEntityNav": {
+            "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendEntities('')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendEntities('')",
+                "type": "ZUI5_SAGIA_SRV.AmendEntity"
+            },
+            "SrID": "",
+            "BpId": "613392",
+            "Labour": "",
+            "LabourOld": "",
+            "BrandName": "شركة تجربة",
+            "BrandNameOld": "شركة تجربة",
+            "Capital": "",
+            "CapitalOld": "",
+            "Activity": ":تشغيل المجازر ( ذبح وتهيئة لحوم المواشي ) |:انتاج أنواع لحوم الدواجن والأرانب والطيور الطازجة",
+            "ActivityOld": ":تشغيل المجازر ( ذبح وتهيئة لحوم المواشي ) |:انتاج أنواع لحوم الدواجن والأرانب والطيور الطازجة",
+            "CreateDate": null,
+            "Action": "",
+            "LegalStatus": "ESTB",
+            "LegalStausOld": "ESTB"
+        },
+        "AmendHeaderToAmendAddNav": {
+            "__deferred": {
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendHeaders('0')/AmendHeaderToAmendAddNav"
+            }
+        },
+        "AmendHeaderToUploadNav": {
+            "__deferred": {
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendHeaders('0')/AmendHeaderToUploadNav"
+            }
+        },
+        "AmendHeaderToTextNav": {
+            "__deferred": {
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AmendHeaders('0')/AmendHeaderToTextNav"
+            }
+        }
+    }
+}

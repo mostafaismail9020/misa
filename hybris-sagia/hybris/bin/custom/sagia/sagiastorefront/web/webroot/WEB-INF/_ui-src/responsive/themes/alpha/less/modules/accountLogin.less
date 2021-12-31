@@ -1,0 +1,452 @@
+.login-section {
+	max-width: 320px;
+	margin: 0 auto;
+	
+//	.headline { 
+//		font-size: 28px;
+//		font-weight: 400;
+//		line-height: 1;
+//		color: @dark;
+//		margin-bottom: 32px;
+//	}
+}
+
+
+.accountLogin{
+	text-align: center;
+	
+	&-title { 
+		font-size: 28px;
+		font-weight: 400;
+		line-height: 1;
+		color: @dark;
+		margin-bottom: 32px;
+	}	
+	
+	&-copyWrapper {
+		font-size: 14px;
+		text-align: center;
+		color: @dark;
+		margin-bottom: 8px;
+		margin-top: 20px;
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+	&-linkWrapper {
+		margin-top: 16px;
+		margin-bottom: 24px;
+		text-align: center;
+	}
+	
+	&-buttonWrapper {
+		text-align: center;
+		margin-top: 30px;
+		margin-bottom: 24px;
+		display: flex;
+		justify-content: center;
+		width: auto;
+		margin-left: -8px;
+		margin-right: -8px;
+		&_spaceBetween {
+			justify-content: space-between;
+		}
+		
+		> .btn {
+			margin-right: 8px;
+			margin-left: 8px;
+		}
+		
+		& + .accountLogin-linkWrapper {
+			margin-top: -14px;
+		}
+	}
+	
+	&-background {
+		background-color: rgba(29,36,44,0.12);
+		background-position: bottom center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		overflow: auto;
+		background-attachment: fixed;
+		background-image: url("../img/login-background.jpg");
+		min-height: 100vh;
+	}
+	
+	.panelTabs_nested-body {
+		
+		> .row {
+			//fix for safari height issue
+			> div[class^="col-"] {
+				display: flex;
+				> div {
+					flex: 0 0 100%;
+					&.accountLogin-content-slot_right {
+						//fix margin -1px issue due to border on panel parent and flex setting
+						//flex needed due to height 100% safari bug
+						flex: 0 0 auto;
+						width: calc(~"100% + 1px");
+					}
+				}
+			}
+		}
+
+	}
+	
+	
+	//mobile nested adjustments
+	.panelTabs_nested &{
+		
+		&-content-slot {
+			
+			&_left {
+				
+				#media-breakpoint-down(sm, {
+					border-top: 1px solid rgba(0, 0, 0, 0.1);
+				});				
+				
+			}
+			
+			&_right {
+				
+				#media-breakpoint-down(sm, {
+					padding-top: 24px;
+				});
+				
+			}
+			
+		}
+		
+	}
+	
+	&-headline {
+		text-align: center;
+		width: 100%;
+
+		&-logo {	
+			margin: 30px auto;
+			display: inline-block;
+			img&,
+			img {
+				height: 140px;
+				width: auto;
+			}
+		}
+	}
+	&-content {
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1014px;
+		margin-bottom: 30px;
+		position: relative;
+		padding-top: 48px;
+		
+		&.panelTabs .panelTabs-body.panelModule_transparent90,
+		&.panelModule_transparent90 {
+			padding: 0 !important;
+			margin-bottom: 0;
+			overflow: hidden;
+			margin-top: 20px;
+			border: 1px solid @steel-grey;
+		}
+		&.panelTabs_iconsAndLabel {
+			padding-top: 30px;
+
+			> .panelTabs-navigation{
+				padding-bottom: 0;
+				padding-top: 0;
+			} 
+		}
+
+		> .panelTabs{
+			&-content {
+				padding-top: 0;
+				padding-bottom: 0;
+				
+				.panelTabs-body > .panelModule {
+					margin-top: 20px;
+				}
+
+				#media-breakpoint-down(sm, {
+					.panelTabs-body {
+						width: auto;
+						border-radius: 0;
+					}
+					.tabhead {
+						position: relative;
+						z-index: 1;
+						box-shadow: none;
+					}
+					.panelTabs-body.panelModule,
+					.panelTabs-body > .panelModule {
+						border-top-right-radius: 0;
+						border-width: 0;
+						margin-top: 0;
+						margin-bottom: 10px;
+						position: relative;
+						padding-top: 20px;
+						padding-bottom: 20px;
+					}
+					.accountLogin-content-slot {
+						padding-left: 15px;
+						padding-right: 15px;
+					}
+				});
+			}
+			&-navigation {	
+				.tabs-list li {
+					#media-breakpoint-up(ms, {
+						min-width: 200px;
+					});
+				}
+			}
+		}
+		
+		
+
+		
+		&_small {
+			max-width: 560px;
+			margin-top: 12vh;		
+		}
+		&_transparent {
+			background-color: rgba(255,255,255,0.1);
+		}
+		&-slot {
+
+			padding: 32px;
+			flex: 1 1 100%;
+
+			
+			#media-breakpoint-up(md, {
+				padding: 32px 60px;
+				padding-top: 45px;
+			});
+			#media-breakpoint-up(lg, {
+				padding: 32px 70px;
+				padding-top: 45px;
+			});				
+			
+
+			&_right {
+				background-color: #fff;
+				margin-right: -1px;
+
+				#media-breakpoint-down(sm, {
+//					margin-top: -31px;
+					margin-right: 0;
+					padding-top: 0;
+				});
+			}
+			
+			&_left {
+				font-size: 14px;
+				padding-right: 0;
+				
+				#media-breakpoint-up(md, {
+					padding: 60px 0 30px 40px;
+					
+				});
+				
+				#media-breakpoint-up(md, {
+					.panelTabs_nested-content & {
+						margin-top: -87px;
+					}
+				});						
+				
+
+				&,
+				.headline {
+					color: #fff;
+				}
+				
+				
+				//small screen overwrites
+				#media-breakpoint-down(sm, {
+					background: #fff;
+					color: @dark;
+					padding-bottom: 0;
+					&::after {
+					  content: "";
+					  display: table;
+					  clear: both;
+					}
+					
+					.headline {
+						color: @dark;
+					}
+					.pageLabel-sagia-cms-help-quick-registration & {
+						background: transparent;
+					}
+				});
+
+				.pageLabel-sagia-cms-help-quick-registration & {
+					background: transparent;
+					color: @white;
+					padding-right: 15px;
+					
+					.headline {
+						color: @white;
+					}
+
+				}
+
+				&-list {
+					padding: 0;
+					list-style: none;
+					position: relative;
+
+					li {
+						padding: 0.4em 0.2em 0.6em 1em;
+
+						&:before {
+							content: "•"; 
+							color: #5cc83b;
+							left: 2px;
+							position: absolute;
+						}
+						&:first-child {
+							padding-top: 0;
+						}
+					}
+				}
+			}
+			
+
+			.contentModule-headline_larger + .contentModule-actions {
+				margin-top: 40px;
+			}
+		}
+		&-headline {
+			margin-bottom: 20px;
+			font-size: 28px;
+			font-weight: 400;
+			line-height: 1.4285714285714286;
+			&_sub {
+				font-weight: lighter;
+				font-size: 18px;
+				margin-bottom: 20px;
+			}
+		}
+		&-formSubmitSubSection {
+			margin-top: 14px;
+			margin-bottom: 15px;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&-formSubmitSection {
+			text-align: center;
+			margin-top: 30px;
+			margin-bottom: 10px;
+			font-size: 12px;
+			
+			&-forgottenPassword,
+			&-formSwitchText {
+				margin-top: 28px;
+				font-size: 14px;
+//				margin-left: -10px;
+//				margin-right: -10px;
+			}
+			&-checkbox {
+				text-align: left;
+				margin-bottom: 24px;
+
+				.form-item {
+					margin-left: 1px;
+				}
+			}
+			a {
+				&,
+				&.accountLogin-content-toggleBtn {
+					color: @apple;
+					
+					&:hover {
+						color: #3CDC0F;
+					}
+				}
+			}
+			
+			.accountLogin-content-toggleBtn{ 
+				cursor: pointer;
+			}
+		}
+		&-inlineDelimiter {
+			margin-left: 10px;
+			margin-right: 10px;
+			color: #212529;
+			
+			#media-breakpoint-down(xs, {
+				color: transparent;
+				font-size: 1px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+				border-top: 1px solid #212529;
+				display: block;
+				width: 20px;
+				margin-left: auto;
+				margin-right: auto;
+			});
+		}
+		p {
+			font-size: 14px;
+		}
+	}
+}
+
+body.page-login, body.page-login-second-step {
+	
+	//hide header and paddinghelper on login page
+	.sagiaHead-paddingHelper,
+	.sagiaHead,
+	.realTimeOnlineSupport-btn {
+		display: none;
+	}
+}
+
+/* for demo only */
+body.page-login, body.page-login-second-step {
+	background-color: rgba(29,36,44,0.12);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: auto;
+	background-attachment: fixed;
+	background-image: url("../img/login-background.jpg");
+
+	> main {
+		position: relative;  
+		height: 100%;
+		width: 100%;
+	}
+	
+	.investsaudiHeader,
+	.sagiaNavigation,
+	.investsaudiFooter {
+		display: none;
+	}
+
+	.accountLogin-content {
+		display: none;
+		&.accountLogin-content_small {
+			min-height: 390px;
+			display: block;
+		}
+	}
+	.yCmsContentSlot.show > .accountLogin-content {
+		display: block;
+	}
+	&.page-login-register .accountLogin-content {
+		display: block;
+		&.accountLogin-content_small {
+			display: none;
+		}
+	}
+}
+
+body.pageLabel-sagia-cms-help-quick-registration {
+	background: transparent;
+}

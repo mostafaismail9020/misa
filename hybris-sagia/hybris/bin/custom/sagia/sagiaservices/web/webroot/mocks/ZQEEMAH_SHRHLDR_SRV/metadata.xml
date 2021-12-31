@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+           xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+           xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZQEEMAH_SHRHLDR_SRV" xml:lang="en" sap:schema-version="1"
+                xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Subscription" sap:semantics="subscriptions" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Sub. ID"
+                          sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="user" Type="Edm.String" MaxLength="12" m:FC_TargetPath="SyndicationAuthorName"
+                          m:FC_KeepInContent="false" sap:label="User Name" sap:creatable="false"
+                          sap:filterable="false"/>
+                <Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated"
+                          m:FC_KeepInContent="false" sap:label="Time Stamp" sap:creatable="false"
+                          sap:filterable="false"/>
+                <Property Name="title" Type="Edm.String" MaxLength="255" m:FC_TargetPath="SyndicationTitle"
+                          m:FC_KeepInContent="false" sap:label="Title" sap:filterable="false"/>
+                <Property Name="deliveryAddress" Type="Edm.String" sap:label="Delivery Address" sap:filterable="false"/>
+                <Property Name="persistNotifications" Type="Edm.Boolean" sap:label="Persist Notification"
+                          sap:filterable="false"/>
+                <Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection"
+                          sap:filterable="false"/>
+                <Property Name="filter" Type="Edm.String" sap:label="Filter" sap:filterable="false"/>
+                <Property Name="select" Type="Edm.String" MaxLength="255" sap:label="Select" sap:filterable="false"/>
+                <Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/>
+            </EntityType>
+            <EntityType Name="Notification" sap:semantics="notifications" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Notification ID"/>
+                <Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection"/>
+                <Property Name="title" Type="Edm.String" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false"
+                          sap:label="Notif. Text"/>
+                <Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated"
+                          m:FC_KeepInContent="false" sap:label="Time Stamp"/>
+                <Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/>
+                <Property Name="entriesOfInterest" Type="Edm.Int32" sap:label="No. of Entries"/>
+                <Property Name="recipient" Type="Edm.String" MaxLength="112" sap:label="Recipient" sap:creatable="false"
+                          sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="ZSHAREHOLDER_INFO" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="RefID"/>
+                    <PropertyRef Name="EntityNo"/>
+                    <PropertyRef Name="FileType"/>
+                </Key>
+                <Property Name="RefID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="EntityNo" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="FileType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ShldrType" Type="Edm.String" MaxLength="15"/>
+                <Property Name="Exbpno" Type="Edm.String" MaxLength="80"/>
+                <Property Name="EntityFname" Type="Edm.String" MaxLength="80"/>
+                <Property Name="EntityLname" Type="Edm.String" MaxLength="80"/>
+                <Property Name="Gender" Type="Edm.String" MaxLength="6"/>
+                <Property Name="MaritalStatus" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Academic" Type="Edm.String" MaxLength="70"/>
+                <Property Name="Dob" Type="Edm.String" MaxLength="15"/>
+                <Property Name="CcodeTele" Type="Edm.String" MaxLength="5"/>
+                <Property Name="Telephone" Type="Edm.String" MaxLength="30"/>
+                <Property Name="CcodeMobile" Type="Edm.String" MaxLength="5"/>
+                <Property Name="Mobile" Type="Edm.String" MaxLength="30"/>
+                <Property Name="CcodeFax" Type="Edm.String" MaxLength="5"/>
+                <Property Name="Fax" Type="Edm.String" MaxLength="30"/>
+                <Property Name="Email" Type="Edm.String" MaxLength="241"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="40"/>
+                <Property Name="City" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Street" Type="Edm.String" MaxLength="60"/>
+                <Property Name="PoBox" Type="Edm.String" MaxLength="10"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Website" Type="Edm.String" MaxLength="255"/>
+                <Property Name="CurrNationalty" Type="Edm.String" MaxLength="150"/>
+                <Property Name="PrevNationalty" Type="Edm.String" MaxLength="150"/>
+                <Property Name="CommMtd" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Percentage" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CompanyAge" Type="Edm.String" MaxLength="3"/>
+                <Property Name="Branches" Type="Edm.String" MaxLength="5"/>
+                <Property Name="Employees" Type="Edm.String" MaxLength="10"/>
+                <Property Name="FinStable" Type="Edm.String" MaxLength="3"/>
+                <Property Name="CultLandArea" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NoGreenhouse" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ApprMinistry" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Stock12" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Stock13" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Stock14" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CurrAssets12" Type="Edm.String"/>
+                <Property Name="CurrAssets13" Type="Edm.String"/>
+                <Property Name="CurrAssets14" Type="Edm.String"/>
+                <Property Name="CurrLiability12" Type="Edm.String"/>
+                <Property Name="CurrLiability13" Type="Edm.String"/>
+                <Property Name="CurrLiability14" Type="Edm.String"/>
+                <Property Name="NetSales12" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NetSales13" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NetSales14" Type="Edm.String" MaxLength="10"/>
+                <Property Name="TotAssets12" Type="Edm.String" MaxLength="10"/>
+                <Property Name="TotAssets13" Type="Edm.String" MaxLength="10"/>
+                <Property Name="TotAssets14" Type="Edm.String" MaxLength="10"/>
+                <Property Name="TotDebt12" Type="Edm.String" MaxLength="10"/>
+                <Property Name="TotDebt13" Type="Edm.String" MaxLength="10"/>
+                <Property Name="TotDebt14" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NetIncome12" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NetIncome13" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NetIncome14" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NetProfit12" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NetProfit13" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NetProfit14" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Intrest12" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Intrest13" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Intrest14" Type="Edm.String" MaxLength="10"/>
+                <Property Name="BalShtAssest12" Type="Edm.String" MaxLength="10"/>
+                <Property Name="BalShtAssest13" Type="Edm.String" MaxLength="10"/>
+                <Property Name="BalShtAssest14" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Return" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Companycountry" Type="Edm.String"/>
+                <Property Name="passportnumber" Type="Edm.String"/>
+                <NavigationProperty Name="InfoToFile" Relationship="ZQEEMAH_SHRHLDR_SRV.InfoToFile"
+                                    FromRole="FromRole_InfoToFile" ToRole="ToRole_InfoToFile"/>
+            </EntityType>
+            <EntityType Name="ZSHAREHOLDER_ATT" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="RefID"/>
+                    <PropertyRef Name="EntityNo"/>
+                    <PropertyRef Name="FileType"/>
+                </Key>
+                <Property Name="RefID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="EntityNo" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="FileType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="FileName" Type="Edm.String" MaxLength="255"/>
+                <Property Name="FileMtype" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Return" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <EntityType Name="sector" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="lang"/>
+                    <PropertyRef Name="ind"/>
+                </Key>
+                <Property Name="lang" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ind" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="desc" Type="Edm.String" MaxLength="20"/>
+            </EntityType>
+            <EntityType Name="ZSHAREHOLDER_ORG" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="RefID"/>
+                    <PropertyRef Name="EntityNo"/>
+                    <PropertyRef Name="FileType"/>
+                </Key>
+                <Property Name="RefID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="EntityNo" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="FileType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ShldrType" Type="Edm.String" MaxLength="15"/>
+                <Property Name="OrgName1" Type="Edm.String" MaxLength="40"/>
+                <Property Name="OrgName2" Type="Edm.String" MaxLength="40"/>
+                <Property Name="LegalStatus" Type="Edm.String" MaxLength="255"/>
+                <Property Name="MncComp" Type="Edm.String" MaxLength="255"/>
+                <Property Name="LbrSize" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CapitalAmt" Type="Edm.String" MaxLength="25"/>
+                <Property Name="IndSec" Type="Edm.String" MaxLength="80"/>
+                <Property Name="SubSec" Type="Edm.String" MaxLength="80"/>
+                <Property Name="CcodeTele" Type="Edm.String" MaxLength="5"/>
+                <Property Name="Telephone" Type="Edm.String" MaxLength="30"/>
+                <Property Name="CcodeMobile" Type="Edm.String" MaxLength="5"/>
+                <Property Name="Mobile" Type="Edm.String" MaxLength="30"/>
+                <Property Name="CcodeFax" Type="Edm.String" MaxLength="5"/>
+                <Property Name="Fax" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Email" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Build" Type="Edm.String"/>
+                <Property Name="City" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Street" Type="Edm.String" MaxLength="60"/>
+                <Property Name="PoBox" Type="Edm.String" MaxLength="10"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Website" Type="Edm.String" MaxLength="255"/>
+                <Property Name="Capital" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Percentage" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Return" Type="Edm.String" MaxLength="255"/>
+            </EntityType>
+            <EntityType Name="ZSHAREHOLDER_ORG_ATT" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="RefID"/>
+                    <PropertyRef Name="EntityNo"/>
+                    <PropertyRef Name="FileType"/>
+                </Key>
+                <Property Name="RefID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="EntityNo" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="FileType" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="FileName" Type="Edm.String" MaxLength="255"/>
+                <Property Name="FileMtype" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Return" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <Association Name="InfoToFile" sap:content-version="1">
+                <End Type="ZQEEMAH_SHRHLDR_SRV.ZSHAREHOLDER_INFO" Multiplicity="1" Role="FromRole_InfoToFile"/>
+                <End Type="ZQEEMAH_SHRHLDR_SRV.ZSHAREHOLDER_ATT" Multiplicity="*" Role="ToRole_InfoToFile"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_InfoToFile">
+                        <PropertyRef Name="RefID"/>
+                        <PropertyRef Name="EntityNo"/>
+                        <PropertyRef Name="FileType"/>
+                    </Principal>
+                    <Dependent Role="ToRole_InfoToFile">
+                        <PropertyRef Name="RefID"/>
+                        <PropertyRef Name="EntityNo"/>
+                        <PropertyRef Name="FileType"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZQEEMAH_SHRHLDR_SRV_Entities" m:IsDefaultEntityContainer="true"
+                             sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SubscriptionCollection" EntityType="ZQEEMAH_SHRHLDR_SRV.Subscription"
+                           sap:content-version="1"/>
+                <EntitySet Name="NotificationCollection" EntityType="ZQEEMAH_SHRHLDR_SRV.Notification"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="ZSHAREHOLDER_INFO_ENT" EntityType="ZQEEMAH_SHRHLDR_SRV.ZSHAREHOLDER_INFO"
+                           sap:searchable="true" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="ZSHAREHOLDER_ATT_ENT" EntityType="ZQEEMAH_SHRHLDR_SRV.ZSHAREHOLDER_ATT"
+                           sap:searchable="true" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="sectorSet" EntityType="ZQEEMAH_SHRHLDR_SRV.sector" sap:searchable="true"
+                           sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="ZSHAREHOLDER_ORGSet" EntityType="ZQEEMAH_SHRHLDR_SRV.ZSHAREHOLDER_ORG"
+                           sap:searchable="true" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="ZSHAREHOLDER_ORG_ATTSet" EntityType="ZQEEMAH_SHRHLDR_SRV.ZSHAREHOLDER_ORG_ATT"
+                           sap:searchable="true" sap:requires-filter="true" sap:content-version="1"/>
+                <AssociationSet Name="InfoToFileSet" Association="ZQEEMAH_SHRHLDR_SRV.InfoToFile" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZSHAREHOLDER_INFO_ENT" Role="FromRole_InfoToFile"/>
+                    <End EntitySet="ZSHAREHOLDER_ATT_ENT" Role="ToRole_InfoToFile"/>
+                </AssociationSet>
+                <FunctionImport Name="ZSHAREHOLDER_INF" ReturnType="Collection(ZQEEMAH_SHRHLDR_SRV.ZSHAREHOLDER_INFO)"
+                                EntitySet="ZSHAREHOLDER_INFO_ENT" m:HttpMethod="GET">
+                    <Parameter Name="EntityNo" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="FileType" Type="Edm.String" Mode="In" MaxLength="100"/>
+                    <Parameter Name="RefID" Type="Edm.String" Mode="In" MaxLength="10"/>
+                </FunctionImport>
+                <FunctionImport Name="Industry" ReturnType="Collection(ZQEEMAH_SHRHLDR_SRV.sector)"
+                                EntitySet="sectorSet" m:HttpMethod="GET">
+                    <Parameter Name="lang" Type="Edm.String" Mode="In" MaxLength="1"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link rel="self"
+                       href="https://sagcrdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SHRHLDR_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version"
+                       href="https://sagcrdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SHRHLDR_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

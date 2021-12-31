@@ -1,0 +1,31 @@
+#### Impex For Arab-Health####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$eventNameAr=ملتقى الصحة العربي 
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+ 
+INSERT_UPDATE EventKeyDetails;$contentCV[unique = true];uid[unique = true]   ;keyValue[lang = ar]	; keyName[lang = ar];
+							;							;arab-key-1          ;43,375       			; عدد زوار الفعالية;
+							;							;arab-key-2          ;8,468        			; عدد زوار الجناح;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventName[lang = ar]		; eventLocation[lang = ar] 	;
+										;						  ;event-arab-health    ;$eventNameAr               ;   دبي  					;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	  ;eventShortInformation[lang = ar];
+										;						  ; event-arab-health     ;"ملتقى الصحة العربي هو أكبر معرض ومؤتمر في قطاع الصحة بالمنطقة حيث يستعرض فيه المشاركين من القطاع الخاص والحكومي الفرص الاستثمارية وكل ما يتعلق بالقطاع";
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventKeyDetails(uid, $contentCV);
+										;						  ;event-arab-health ;arab-key-1,arab-key-2;
+									 
+									 									 
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventFullDescription[lang = ar];
+										;						  ;event-arab-health    ;                              ;

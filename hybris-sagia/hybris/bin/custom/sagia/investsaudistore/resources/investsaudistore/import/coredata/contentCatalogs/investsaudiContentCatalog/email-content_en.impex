@@ -1,0 +1,96 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#
+# Import the CMS content for the investsaudi site emails
+#
+$contentCatalog=investsaudiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$jarEmailResource=jar:de.hybris.platform.investsaudistore.constants.InvestsaudistoreConstants&/investsaudistore/import/coredata/contentCatalogs/investsaudiContentCatalog/emails
+
+# Import config properties into impex macros for modulegen
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+$emailResource=$config-emailResourceValue
+
+# Language
+$lang=en
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate;code[unique=true];description[lang=$lang];templateScript[lang=$lang,translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+ ;investsaudi-BannerComponent-template;"CMSBannerComponent Template";$emailResource/email-bannerComponentTemplate.vm
+ ;investsaudi-CMSImageComponent-template;"CMSImageComponent Template";$emailResource/email-cmsImageComponentTemplate.vm
+ ;investsaudi-CMSLinkComponent-template;"CMSLinkComponent Template";$emailResource/email-cmsLinkComponentTemplate.vm
+ ;investsaudi-CMSParagraphComponent-template;"CMSParagraphComponent Template";$emailResource/email-cmsParagraphComponentTemplate.vm
+ ;investsaudi-SimpleBannerComponent-template;"CMSSimpleBannerComponent Template";$emailResource/email-bannerComponentTemplate.vm
+ ;investsaudi_Email_Customer_Registration_Body;"Customer Registration Email Body";$emailResource/email-customerRegistrationBody.vm
+ ;investsaudi_Email_Customer_Registration_Subject;"Customer Registration Email Subject";$emailResource/email-customerRegistrationSubject.vm
+ ;investsaudi_Email_Delivery_Sent_Body;"Delivery Sent Email Body";$emailResource/email-deliverySentBody.vm
+ ;investsaudi_Email_Delivery_Sent_Subject;"Delivery Sent Email Subject";$emailResource/email-deliverySentSubject.vm
+ ;investsaudi_Email_Forgotten_Password_Body;"Forgotten Password Email Body";$emailResource/email-forgottenPasswordBody.vm
+ ;investsaudi_Email_Forgotten_Password_Subject;"Forgotten Password Email Subject";$emailResource/email-forgottenPasswordSubject.vm
+ ;investsaudi_Email_NotPickedUpConsignment_Canceled_Body;"Not Picked Up Consignment Canceled Email Body";$emailResource/email-notPickedUpConsignmentCanceledBody.vm
+ ;investsaudi_Email_NotPickedUpConsignment_Canceled_Subject;"Not Picked Up Consignment Canceled Email Subject";$emailResource/email-notPickedUpConsignmentCanceledSubject.vm
+ ;investsaudi_Email_Order_Cancelled_Body;"Order Cancelled Email Body";$emailResource/email-orderCancelledBody.vm
+ ;investsaudi_Email_Order_Cancelled_Subject;"Order Cancelled Email Subject";$emailResource/email-orderCancelledSubject.vm
+ ;investsaudi_Email_Order_Collection_Reminder_Body;"Order Collection Reminder Body";$emailResource/email-orderCollectionReminderBody.vm
+ ;investsaudi_Email_Order_Collection_Reminder_Subject;"Order Collection Reminder Subject";$emailResource/email-orderCollectionReminderSubject.vm
+ ;investsaudi_Email_Order_Confirmation_Body;"Order Confirmation Email Body";$emailResource/email-orderConfirmationBody.vm
+ ;investsaudi_Email_Order_Confirmation_Subject;"Order Confirmation Email Subject";$emailResource/email-orderConfirmationSubject.vm
+ ;investsaudi_Email_Order_Move_To_CS_Body;"Order Move To CS Body";$emailResource/email-orderMoveToCsBody.vm
+ ;investsaudi_Email_Order_Move_To_CS_Subject;"Order Move To CS Subject";$emailResource/email-orderMoveToCsSubject.vm
+ ;investsaudi_Email_Order_Partially_Canceled_Body;"Order Partially Canceled Email Body";$emailResource/email-orderPartiallyCanceledBody.vm
+ ;investsaudi_Email_Order_Partially_Canceled_Subject;"Order Partially Canceled Email Subject";$emailResource/email-orderPartiallyCanceledSubject.vm
+ ;investsaudi_Email_Order_Partially_Refunded_Body;"Order Partially Refunded Email Body";$emailResource/email-orderPartiallyRefundedBody.vm
+ ;investsaudi_Email_Order_Partially_Refunded_Subject;"Order Partially Refunded Email Subject";$emailResource/email-orderPartiallyRefundedSubject.vm
+ ;investsaudi_Email_Order_Refund_Body;"Order Refund Email Body";$emailResource/email-orderRefundBody.vm
+ ;investsaudi_Email_Order_Refund_Subject;"Order Refund Email Subject";$emailResource/email-orderRefundSubject.vm
+ ;investsaudi_Email_Quote_Buyer_Cancellation_Body;"Quote Buyer Cancellation Email Body";$emailResource/email-quoteBuyerCancellationBody.vm
+ ;investsaudi_Email_Quote_Buyer_Cancellation_Subject;"Quote Buyer Cancellation Email Subject";$emailResource/email-quoteBuyerCancellationSubject.vm
+ ;investsaudi_Email_Quote_Buyer_Submission_Body;"Quote Buyer Submission Email Body";$emailResource/email-quoteBuyerSubmissionBody.vm
+ ;investsaudi_Email_Quote_Buyer_Submission_Subject;"Quote Buyer Submission Email Subject";$emailResource/email-quoteBuyerSubmissionSubject.vm
+ ;investsaudi_Email_Quote_Expired_Body;"Quote Expired Body";$emailResource/email-quoteExpiredBody.vm
+ ;investsaudi_Email_Quote_Expired_Subject;"Quote Expired Subject";$emailResource/email-quoteExpiredSubject.vm
+ ;investsaudi_Email_Quote_To_Expire_Soon_Body;"Quote To Expire Soon Body";$emailResource/email-quoteToExpireSoonBody.vm
+ ;investsaudi_Email_Quote_To_Expire_Soon_Subject;"Quote To Expire Soon Subject";$emailResource/email-quoteToExpireSoonSubject.vm
+ ;investsaudi_Email_Ready_For_Pickup_Body;"Ready For Pickup Email Body";$emailResource/email-readyForPickupBody.vm
+ ;investsaudi_Email_Ready_For_Pickup_Subject;"Ready For Pickup Email Subject";$emailResource/email-readyForPickupSubject.vm
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate;code[unique=true];description[lang=$lang];templateScript[lang=$lang,translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+ ;investsaudi_Email_Order_ApprovalRejection_Body;"Buyer Approval Rejection Email Body";$jarEmailResource/email-orderApprovalRejectionBody.vm
+ ;investsaudi_Email_Order_ApprovalRejection_Subject;"Order Approval Rejection Email Subject";$jarEmailResource/email-orderApprovalRejectionSubject.vm
+ ;investsaudi_Email_Order_PendingApproval_Body;"Order Pending Approval Email Body";$jarEmailResource/email-orderPendingApprovalBody.vm
+ ;investsaudi_Email_Order_PendingApproval_Subject;"Order Pending Approval Email Subject";$jarEmailResource/email-orderPendingApprovalSubject.vm
+ ;investsaudi_Email_Replenishment_Order_Confirmation_Body;"";$jarEmailResource/email-replenishmentOrderConfirmationBody.vm
+ ;investsaudi_Email_Replenishment_Order_Confirmation_Subject;"Order Confirmation Email Subject";$jarEmailResource/email-replenishmentOrderConfirmationSubject.vm
+ ;investsaudi_Email_Replenishment_Order_Placed_Body;"Order Confirmation Email Subject";$jarEmailResource/email-replenishmentOrderPlacedBody.vm
+ ;investsaudi_Email_Replenishment_Order_Placed_Subject;"Order Confirmation Email Subject";$jarEmailResource/email-replenishmentOrderPlacedSubject.vm
+
+# Email Pages
+UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];fromEmail[lang=$lang];fromName[lang=$lang]
+ ;;CustomerRegistrationEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;DeliverySentEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;ForgottenPasswordEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;OrderApprovalRejectionEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;OrderCancelledEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;OrderCollectionReminderEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;OrderConfirmationEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;OrderMoveToCsEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;OrderPartiallyCanceledEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;OrderPartiallyRefundedEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;OrderPendingApprovalEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;OrderRefundEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;QuoteBuyerCancellationEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;QuoteBuyerSubmissionEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;QuoteExpiredEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;QuoteToExpireSoonEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;ReadyForPickupEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;ReplenishmentOrderConfirmationEmail;"info@misa.gov.sa";"Customer Services Team"
+ ;;ReplenishmentOrderPlacedEmail;"info@misa.gov.sa";"Customer Services Team"

@@ -1,0 +1,20 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = en
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; description[lang = $lang]
+                                ; industry-40               ;                ; "
+<p>Attract leading Industry 4.0 players to enable digital transformation of industrial sector companies </p>
+"
+                                ; production-of-drill-pipes ;                ; "
+<p>This opportunity entails developing the value chain for the production of drill pipes to serve the KSA and GCC oil and gas industry.</p>
+<p>In 2016, KSA demand for drill pipes is estimated at 13.3 Ktpa (Kilo tons per annum), and forecasted to increase at an annual growth rate of ~4% to reach 16.7 Ktpa by 2022. Currently, the KSA demand for drill pipes is addressed fully through imports, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the rest of the regional market in the GCC which is expected to witness strong growth fueled by oil and gas production, expected to increase from 18.4 Ktpa in 2017 to 22 Ktpa by 2022. KSA market demand is expected to be ~43% of the overall GCC demand for drill pipes.</p>
+<p>Drill pipes production has high potential for localization across the value chain, from design to rental and services. Opportunities across the value chain include:</p>
+<ul>
+  <li>Design: set-up design and R&amp;D facilities to engineer Drill pipes with specification needed for KSA customers</li>
+  <li>Input materials: opportunity to partner with steel suppliers to produce raw materials as per the required specifications</li>
+  <li>Manufacturing: set-up Drill pipes manufacturing plant in KSA</li>
+  <li>Rental &amp; services: potential to offer inspection, maintenance, and repair services</li>
+</ul>
+"

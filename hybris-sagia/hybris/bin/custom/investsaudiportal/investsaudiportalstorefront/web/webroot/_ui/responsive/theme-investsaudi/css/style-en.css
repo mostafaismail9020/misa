@@ -1,0 +1,28 @@
+/* Fonts */
+@font-face {
+    font-family: 'TheSans';
+    src: url("../fonts/TheSans-Plain.woff") format("woff"), url("../fonts/TheSans-Plain.ttf") format("truetype"), url("../fonts/TheSans-Plain.eot") format("eot"), url("../fonts/TheSans-Plain.svg") format("svg");
+  }
+  
+  @font-face {
+    font-family: 'TheSansBoldItalic';
+    src: url("../fonts/TheSans-B7BoldItalic.woff") format('woff'), url("../fonts/TheSans-B7BoldItalic.ttf") format('truetype'), url("../fonts/TheSans-B7BoldItalic.eot") format('eot'), url("../fonts/TheSans-B7BoldItalic.svg") format('svg');
+  }
+  
+  @font-face {
+    font-family: 'TheSanSemiBold';
+    src: url("../fonts/TheSansB6SemiBold.woff2") format("woff"), url("../fonts/TheSansB6SemiBold.ttf") format("truetype"), url("../fonts/TheSansB6SemiBold.eot") format("eot"), url("../fonts/TheSansB6SemiBold.svg") format("svg");
+  }
+/* Fonts End */
+
+/* General */
+body {
+    font-family: "TheSans";
+    color: #444444;
+}
+
+/* General End */
+
+/* About-us */
+
+/* About-us End */

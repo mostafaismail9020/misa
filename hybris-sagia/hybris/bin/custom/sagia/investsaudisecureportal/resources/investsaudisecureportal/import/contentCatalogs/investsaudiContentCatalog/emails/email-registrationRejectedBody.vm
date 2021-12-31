@@ -1,0 +1,75 @@
+## messageSource=classpath:/investsaudisecureportal/messages/email-registrationRejected_$lang.properties
+<html>
+<head>
+<style>
+@font-face {
+    font-family: TheSans;
+    src: url(${ctx.themeResourceUrl}/fonts/TheSans-Plain.otf);
+}
+</style>
+</head>
+<body bgcolor="#e4e7e8">
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#e4e7e8">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="center" valign="top">
+				<table width="610" border="6" align="center" cellpadding="0" cellspacing="0" bordercolor="#ebedee">
+					<tr>
+						<td align="center" valign="top" bgcolor="#FFFFFF">
+							<table width="570" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td valign="middle">&nbsp;</td>
+								</tr>
+								<tr align="center">
+									<td valign="middle" align="center">
+										<img src="https://investsaudi.sa/investsaudistorefront/_ui/responsive/theme-lambda/images/InvestSaudiLogo-Email.png" alt="" width="229" height="72" border="0" align="center" title="" />
+									</td>
+								</tr>
+								<!-- <tr>
+									<td align="center" valign="middle"><a href="${ctx.baseUrl}" style="display:block; margin-top:10px;margin-bottom:10px;">${ctx.cmsSlotContents.TopContent}</a></td>
+								</tr> -->
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr >
+									<td align="left" valign="top">
+										<p>
+											<font color="#666666" size="2" face="TheSans">${ctx.messages.getMessage('salutation', ${ctx.title}, ${ctx.displayName})},</font>											
+										</p>
+										<p>
+											<font color="#666666" size="2" face="TheSans">${ctx.messages.getMessage('newRegisrationIsRejected', ${ctx.rejectReason})}</font>											
+										</p>										
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>				
+								</tr>
+								<tr>
+									<td>&nbsp;</td>				
+								</tr>
+								<tr line-height="0.3" style="line-height: 0.3">
+									<td align="left" valign="top" line-height="0.3" style="line-height: 0.3">
+										<p line-height="0.3" style="line-height: 0.3">
+											<font  color="#666666" line-height="0.3" style="line-height: 0.3" size="2" face="TheSans">${ctx.messages.signature}</font>											
+										</p>										
+									</td>
+								</tr>
+								<tr align="right">
+									<td valign="middle" align="right">
+										<img src="https://investsaudi.sa/investsaudistorefront/_ui/responsive/theme-lambda/images/InvestSaudiFooter-Email.png" alt="" width="229" height="72" border="0" align="right" title="" />
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</body>
+</html>

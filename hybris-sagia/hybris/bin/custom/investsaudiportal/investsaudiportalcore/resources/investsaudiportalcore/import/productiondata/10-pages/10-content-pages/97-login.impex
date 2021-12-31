@@ -1,0 +1,41 @@
+$page = investsaudi-login
+$template = portalLoginTemplate
+$pageName = InvestSaudi Login 	
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /investsaudi-login
+
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]             ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Investors Services ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                  ; name                                          ; &componentRef                       ; $contentCV[unique = true]; description[lang = en]; description[lang = ar]
+                                                  ; generic-paragraph-investor-login    ; Investor login Generic Paragraph Component    ; generic-paragraph-investor-login    ;                          ;                       ; 
+												  
+												  
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]     ; linkName[lang = en]    ; linkName[lang = ar]; url                                                                            ; target(code)[default = 'newWindow']; $contentCV[unique = true]
+                              ; investor-license-apply ; Investor License Apply ;                    ; "https://eservices.sagia.gov.sa/investsaudistorefront" ;                                    ;
+                              ; investor-account-login ; Investor Account Login ;                    ; "https://eservices.sagia.gov.sa/sagiastorefront"                                              ;                                    ;
+
+
+INSERT_UPDATE InvestSaudiServicesButtonsComponent; uid[unique = true]; name                          ; investorLicenseApply(uid, $contentCV); investorAccountLogin(uid, $contentCV); investorLicenseApplyText[lang = en]; investorAccountLoginText[lang = en]; investorLicenseApplyText[lang = ar]; investorAccountLoginText[lang = ar]; &componentRef    ; $contentCV[unique = true]
+                                                 ; services-buttons  ; Invest Saudi Services Buttons ; investor-license-apply               ; investor-account-login               ; "MISA PARTNERS"       ; "MISA INVESTORS"           ; "تسجيل جديد"                       ; "تسجيل الدخول"                     ; services-buttons ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; generic-paragraph-investor-login,services-buttons
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+

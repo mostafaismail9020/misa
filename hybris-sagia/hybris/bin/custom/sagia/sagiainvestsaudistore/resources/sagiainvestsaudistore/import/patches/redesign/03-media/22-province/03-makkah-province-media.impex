@@ -1,0 +1,49 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                      	 				; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']	; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; makkah-banner-image.png            		 				; makkah-banner-image.png    						; $siteResource/makkah-banner-image.png                                         		  ; image/png                		;                                          ; ""     ;
+					; makkah-logistics.png                       		 		; makkah-logistics.png               				; $siteResource/makkah-logistics.png                                                  	  ; image/png                		;                                          ; ""     ;
+					; makkah-media.png                       					; makkah-media.png                      		    ; $siteResource/makkah-media.png                                                          ; image/png                		;                                          ; ""     ;
+					; makkah-mining.png                 						; makkah-mining.png                       			; $siteResource/makkah-mining.png                                                         ; image/png                		;                                          ; ""     ;
+					; makkah-religioustourism.png                				; makkah-religioustourism.png                   	; $siteResource/makkah-religioustourism.png                                               ; image/png                		;                                          ; ""     ;
+					; makkah-trade.png                            				; makkah-trade.png                  				; $siteResource/makkah-trade.png                                                      	  ; image/png                		;                                          ; ""     ;   
+					; makkah-province-map.png                        			; makkah-province-map.png                       	; $siteResource/makkah-province-map.png                                                   ; image/png                		;                                          ; ""     ;   
+																						
+					; makkah-active-factories.png                 				; makkah-active-factories.png                   	; $siteResource/makkah-active-factories.png                                               ; image/png                		;                                          ; ""     ;   
+					; makkah-chambers-of-commerce.png                      	 	; makkah-chambers-of-commerce.png              		; $siteResource/makkah-chambers-of-commerce.png                                           ; image/png                		;                                          ; ""     ;   
+					; makkah-dams.png             								; makkah-dams.png                 					; $siteResource/riyadh-chambers-of-commerce.png                                           ; image/png                		;                                          ; ""     ;   
+					; makkah-hospitals.png                         	 			; makkah-hospitals.png                  			; $siteResource/makkah-dams.png                                                     	  ; image/png                		;                                          ; ""     ;   
+					; makkah-hotels.png                     	 				; makkah-hotels.png              					; $siteResource/makkah-hotels.png                                                  		  ; image/png                		;                                          ; ""     ;   
+					; makkah-industrial-city.png                    		 	; makkah-industrial-city.png                		; $siteResource/makkah-industrial-city.png                                                ; image/png                		;                                          ; ""     ;   
+					; makkah-international-airport.png                  		; makkah-international-airport.png                  ; $siteResource/makkah-international-airport.png                                          ; image/png                		;                                          ; ""     ;   
+					; makkah-population.png                  	 				; makkah-population.png                     		; $siteResource/makkah-population.png                                                	  ; image/png                		;                                          ; ""     ;   
+					; makkah-population-growth.png           	 				; makkah-population-growth.png                 		; $siteResource/makkah-population-growth.png                                        	  ; image/png                		;                                          ; ""     ;   
+					; makkah-private-sector-employees.png         				; makkah-private-sector-employees.png               ; $siteResource/makkah-private-sector-employees.png                                       ; image/png                		;                                          ; ""     ;   
+					; makkah-roads-length.png                   	 			; makkah-roads-length.png            				; $siteResource/makkah-roads-length.png                                                	  ; image/png                		;                                          ; ""     ;   
+					; makkah-seaport.png                       					; makkah-seaport.png                   				; $siteResource/makkah-seaport.png                                                        ; image/png                		;                                          ; ""     ;   					
+					; makkah-sport-city.png				 					  	; makkah-sport-city.png								; $siteResource/makkah-sport-city.png											  		  ; image/png                		;										   ; ""	 	;
+					; makkah-stadiums.png				 			 			; makkah-stadiums.png								; $siteResource/makkah-stadiums.png											  			  ; image/png                		;										   ; ""	 	;
+					; makkah-towns.png				 			 				; makkah-towns.png									; $siteResource/makkah-towns.png											  			  ; image/png                		;										   ; ""	 	;
+		
+					; makkah-abundance-natural-resources.png            		; makkah-abundance-natural-resources.png           	; $siteResource/makkah-abundance-natural-resources.png                                    ; image/png                		;                                          ; ""     ;   
+					; makkah-jeddah-port.png       								; makkah-jeddah-port.png             				; $siteResource/makkah-jeddah-port.png                                        			  ; image/png                		;                                          ; ""     ;   	
+					; makkah-king-abdullah-port.png        	 					; makkah-king-abdullah-port.png              		; $siteResource/makkah-king-abdullah-port.png                                      		  ; image/png                		;                                          ; ""     ;   	
+					; makkah-religious-cultural-tourism.png   				    ; makkah-religious-cultural-tourism.png          	; $siteResource/makkah-religious-cultural-tourism.png                                     ; image/png                		;                                          ; ""     ;   	
+					; makkah-several-economic-cities-special-zones.png         	; makkah-several-economic-cities-special-zones.png  ; $siteResource/makkah-several-economic-cities-special-zones.png                          ; image/png                		;                                          ; ""     ;   	
+					; makkah-strategic-location.png              				; makkah-strategic-location.png                     ; $siteResource/makkah-strategic-location.png                                             ; image/png                		;                                          ; ""     ;   	
+					; makkah-strong-business-support-companies.png              ; makkah-strong-business-support-companies.png      ; $siteResource/makkah-strong-business-support-companies.png                              ; image/png                		;                                          ; ""     ;   	
+								 
+					; makkah-six-sites.png               						; makkah-six-sites.png                     			; $siteResource/makkah-six-sites.png                                             		  ; image/png                		;                                          ; ""     ;   	

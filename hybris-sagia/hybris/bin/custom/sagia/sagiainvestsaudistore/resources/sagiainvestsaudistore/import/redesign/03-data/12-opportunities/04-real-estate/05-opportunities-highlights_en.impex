@@ -1,0 +1,314 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = en
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+    ;SPORTS-BOULEVARD  ; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Estimated Capex: SAR86bn (all zones)</span></li>
+  <li><span>Investment Model: Joint Venture</span></li>
+   <li><span>Expected IRR: 10%-12%</span></li>
+  <li><span>Project Period: target timeline Q4 2027</span></li>
+</ul>
+"
+
+    ;YANBU-WATERFRONT-AND-CITY-CENTER     ; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected Investment size of USD 400-533 Mn</span></li>
+  <li><span>nvestment model options:
+ BOT (Build Operate and Transfer) 
+where RCJY allocate the land to the 
+investor and the investor builds, 
+operates and finally transfers the 
+project to RCJY post development
+ Establishing a JV between RCJY 
+and the investor to build and 
+operate the project</span></li>
+   <li><span>Location: Yanbu City</span></li>
+</ul>
+"
+
+    ;RESIDENTIA-RETAIL-DEVELOPMENT-IN-RIYADH  ; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 43.27 Mn (development cost)</span></li>
+  <li><span>Investment model options: leasing, 
+shared revenue model or shared revenue model + fixed amount </span></li>
+   <li><span>Location: Riyadh</span></li>
+   <li><span>Estimated Project IRR (25 year lease term) 9%~11%</span></li>
+   <li><span> Estimated Project IRR (50 year lease term) 10%~12%</span></li>
+   <li><span>Estimated Equity IRR (50:50 D/E ratio) 9%~11%</span></li>
+</ul>
+"
+
+    ;RESIDENTIAL-DEVELOPMENT-IN-RIYADH; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 24.96 Mn (development cost)</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount</span></li>
+   <li><span>Location: Riyadh</span></li>
+   <li><span> Estimated Project IRR:
+ 7%~9% (25 year lease term)
+ 9%~11% (50 year lease term)</span></li>
+</ul>
+"
+
+    ;RETAIL-ENTERTAINMENT-DEVELOPMENT-IN-ALJAWF; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span> Expected Investment size of SAR 114.78 Mn (development cost)</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount </span></li>
+   <li><span>Estimated Project IRR (25-year lease term): 9%-11%</span></li>
+   <li><span>Estimated Equity IRR (25 year lease term & 50:50 D/E ratio): 10%-12%</span></li>
+</ul>
+"
+
+    ;RETAIL-HOSPITALITY-DEVELOPMENT-IN-ABHA; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span> Expected investment size of SAR 288.7 Mn (development cost)</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount</span></li>
+   <li><span>Location: Asir city</span></li>
+   <li><span>Estimated Project IRR (25-year lease term): 7%~9% </span></li>
+      <li><span>Estimated Project IRR (50-year lease term): 9%~11%</span></li>
+</ul>
+"
+
+    ;RETAIL-DEVELOPMENT-IN-ALAHSA; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 20.32 Mn (development cost)</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount</span></li>
+   <li><span>Location: AlHofuf city</span></li>
+   <li><span>Estimated Project IRR (25-year lease term): 10%~12%</span></li>
+      <li><span>Estimated Equity IRR (50:50 D/E ratio) 11%~13%</span></li>
+</ul>
+"
+    ;RETAIL-DEVELOPMENT-IN-ALBAHA; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 7.94 Mn (development cost)</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount</span></li>
+   <li><span>Estimated Project IRR (25-year lease term): 10%~12%</span></li>
+   <li><span>Estimated Equity IRR (50:50 D/E ratio) 11%~13%</span></li>
+</ul>
+"
+
+    ;RETAIL-DEVELOPMENT-IN-ALJAWF; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected Investment size of SAR 106 Mn</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount </span></li>
+   <li><span>Location: Sakaka</span></li>
+   <li><span>Estimated Project IRR (25-year lease term): 6%-8%</span></li>
+      <li><span>Estimated Project IRR (50-year lease term): 8%-10%</span></li>
+</ul>
+"
+
+   ;RETAIL-DEVELOPMENT-IN-HAIL; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 40.85 Mn (development cost)</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount </span></li>
+   <li><span>Estimated Project IRR (25-year lease term): 11%~13%</span></li>
+   <li><span>Estimated Equity IRR (50:50 D/E ratio) 13%~15%</span></li>
+</ul>
+"
+
+   ;RETAIL-DEVELOPMENT-IN-JEDDAH; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span> Expected investment size of SAR 38.80 Mn (development cost)</span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount </span></li>
+   <li><span>Estimated Project IRR (25-year lease term): 10%~12%</span></li>
+   <li><span>Estimated Equity IRR (50:50 D/E ratio) 11%~13%</span></li>
+</ul>
+"
+
+   ;RETAIL-DEVELOPMENT-IN-ALQASEEM; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 17.78 Mn</span></li>
+  <li><span> Investment model options: leasing, shared revenue model or shared revenue model + fixed amount </span></li>
+   <li><span> Location: Alqaseem</span></li>
+   <li><span>Estimated Project IRR ( 25 year lease term) 11%~13%</span></li>
+      <li><span>Estimated Equity IRR ( 25 year lease term & 50:50 D/E ratio) 12%~14%</span></li>
+</ul>
+"
+
+   ;RETAIL-DEVELOPMENT-IN-NAJRAN; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 15.94 Mn</span></li>
+  <li><span> Investment model options: leasing, shared revenue model or shared revenue model + fixed amount</span></li>
+   <li><span>Location: Najran</span></li>
+   <li><span>Estimated Project IRR ( 25 year lease term) 11%~13%</span></li>
+      <li><span>Estimated Equity IRR ( 25 year lease term & 50:50 D/E ratio) 12%~14%</span></li>
+</ul>
+"
+
+   ;RETAIL-DEVELOPMENT-IN-NORTHERN-BOUNDARIES; ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 30.18 Mn</span></li>
+  <li><span> Investment model options: leasing, shared revenue model or shared revenue model + fixed amount </span></li>
+   <li><span> Location: Northern Boundaries</span></li>
+   <li><span>Estimated Project IRR (25 year lease term) 10%~12%</span></li>
+      <li><span>Estimated Equity IRR (50:50 D/E ratio) 11%~13%</span></li>
+</ul>
+"
+
+
+#### real-estate - miral
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ; HEALTHCARE-&-RETAIL-IN-ALMADINAH    ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 271.34 Mn (development cost) </span></li>
+  <li><span>Investment model options: leasing,shared revenue model or shared revenue model + fixed amount </span></li>
+  <li><span>Location: Medina </span></li>
+  <li><span>Estimated Project IRR (25 year lease term) 9%~11% </span></li>
+  <li><span>Estimated Equity IRR (25 year lease term & 50:50 D/E ratio) 10%~12% </span></li>
+</ul>
+"
+
+                                ; HEALTHCARE-&-RETAIL-TABUK    ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 348.59 Mn (development </span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount </span></li>
+  <li><span>Location: Tabuk </span></li>
+  <li><span>Estimated Project IRR (25 year lease term) 7%~9% </span></li>
+  <li><span>Estimated Project IRR (50 year lease term) 9%~11% </span></li>
+  <li><span>Estimated Equity IRR (25 year lease term & 50:50 D/E ratio) 8%~10% </span></li>
+</ul>
+"
+
+                                ; HEALTHCARE-DEVELOPMENT-IN-JAZA   ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 235 Mn </span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount </span></li>
+   <li><span>Location: Jazan </span></li>
+    <li><span>Estimated Project IRR (25 year lease term): 7%~9% </span></li>
+	 <li><span>Estimated Project IRR (50 year lease term): 8%~ 10% </span></li>
+	  <li><span>Estimated Equity IRR (50:50 D/E ratio) 7%~9% </span></li>
+</ul>
+"
+
+                                ; HEALTHCARE-MAKKAH             ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of SAR 314,38 Mn </span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount </span></li>
+  <li><span>Location: Makkah </span></li>
+  <li><span>Estimated Project IRR (25 year lease term) 7%~9% </span></li>
+  <li><span>Estimated Project IRR (50 year lease term) 9.%~11%</span></li>
+  <li><span>Estimated Equity IRR (50:50 D/E ratio) 8%~10% </span></li>
+</ul>
+"
+
+                                ; PILGRIM-ACCOMMODATION-&-RETAIL    ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Estimated Investment Size: SAR 322.81 Mn </span></li>
+  <li><span>Investment model options: leasing, shared revenue model or shared revenue model + fixed amount </span></li>
+  <li><span>Estimated Project IRR (25 year lease term): 9%~11% </span></li>
+  <li><span>Estimated Equity IRR (25 year lease term & 50:50 D/E ratio): 10%~12% </span></li>
+</ul>
+"
+
+                                ; BOARD-OF-GRIEVANCES-PLOT    ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Estimated Capex SAR 722.1 Mn </span></li>
+  <li><span>Project lease per annum SAR 109 Mn </span></li>
+  <li><span>Various structures are being studied including DBFM, and Hybrid models </span></li>
+  <li><span>Estimated Investment IRR: 8-12%</span></li>
+  <li><span>Project Period: 25 years </span></li>
+  <li><span>Exiting strategy: return buildings back to Government </span></li>
+</ul>
+"
+
+                                ; NHC-DHAHIYAT-ALFURSAN     ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Expected Investment size: USD 20 Bn </span></li>
+  <li><span>Investment model: Sub Development Agreement with NHC, the Master Developer </span></li>
+  <li><span>Location: North of Riyadh city South of Murcia project </span></li>
+</ul>
+"
+
+                                ; JEDDAH-COURTHOUSE-PLOT    ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Estimated Capex SAR 382.5 Mn </span></li>
+  <li><span>Project lease per annum SAR 61 Mn</span></li>
+  <li><span>Various structures are being studied including DBFA, SWAP and Hybrid models </span></li>
+  <li><span>Investment IRR: 8%-12% </span></li>
+  <li><span>Project Period: 25 years </span></li>
+  <li><span>Exiting strategy: return buildings back to Government </span></li>
+</ul>
+"
+
+                                ; MAKKAH-COURTHOUSE-PLOT   ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Estimated Capex SAR 584.8 Mn </span></li>
+  <li><span>Project lease per annum SAR 89 Mn DBFM / SAR 108 Mn SWAP </span></li>
+  <li><span>Various structures are being studied including DBFA, SWAP and Hybrid models </span></li>
+  <li><span>Investment IRR: 8%-12% </span></li>
+  <li><span>Project Period: 25 years </span></li>
+  <li><span>Exiting strategy: return buildings back to Government </span></li>
+</ul>
+"
+
+                                ; MEWA-HEAD-OFFICE-COMPLEX-RIYADH-PLOT    ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Estimated Capex SAR 626.2 Mn </span></li>
+  <li><span>Project lease per annum SAR 100 Mn </span></li>
+  <li><span>Various structures are being studied including DBFA, SWAP and Hybrid models </span></li>
+  <li><span>Investment IRR: 8%-12% </span></li>
+  <li><span>Project Period: 25 years</span></li>
+  <li><span>Exiting strategy: return buildings back to Government </span></li>
+</ul>
+"
+
+                                ; OIC-HEAD-OFFICE-PLOT    ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Estimated Capex SAR 278.1 Mn </span></li>
+  <li><span>Project lease per annum SAR 15 Mn </span></li>
+  <li><span>Various structures are being studied including DBFA, SWAP and Hybrid models </span></li>
+  <li><span>Investment IRR: 8%-12% </span></li>
+  <li><span>Project Period: 25 years </span></li>
+  <li><span>Exiting strategy: return buildings back to Government </span></li>
+</ul>
+"
+
+                                ; PUBLIC-PROSECUTION-PLOT    ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Estimated Capex SAR 400.6 Mn </span></li>
+  <li><span>Project lease per annum SAR 63 Mn </span></li>
+  <li><span>Various structures are being studied including DBFM, and Hybrid models </span></li>
+  <li><span>Investment IRR: 8%-12% </span></li>
+  <li><span>Project Period: 25 years </span></li>
+  <li><span>Exiting strategy: return buildings back to Government </span></li>
+</ul>
+"
+
+                                ; RIYADH-COURTHOUSE-PLOT    ;                ; "
+<h3>Opportunity Highlights:</h3>
+<ul class='bulled-list mt-3'>
+  <li><span>Estimated Capex SAR 424.4 Mn </span></li>
+  <li><span>Project lease per annum SAR 67 Mn</span></li>
+  <li><span>Various structures are being studied including DBFA, SWAP and Hybrid models </span></li>
+  <li><span>Investment IRR: 8%-12% </span></li>
+  <li><span>Project Period: 25 years </span></li>
+  <li><span>Exiting strategy: return buildings back to Government </span></li>
+</ul>
+"

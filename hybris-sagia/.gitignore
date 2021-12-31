@@ -1,0 +1,171 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+# allowing jar since there might be external dependencies in custom extensions
+#*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+
+#       Hybris       #
+######################
+
+# IntelliJ project files #
+##########################
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# eclipse project file #
+########################
+hybris/**/.settings/
+hybris/**/.classpath
+hybris/**/.project
+hybris/**/eclipsebin/
+
+README
+build-tools/
+c4c-integration/
+hybris-Mobile-Apps-SDK/
+hybris-ems/
+hybris-sbg/
+idea-module-files/
+installer/
+licenses/
+
+# ignore all in hybris folder
+hybris/*
+# allow this folder
+hybris/config/
+!hybris/config-local/
+!hybris/config-dev/
+!hybris/config-stag/
+!hybris/config-prod/
+!hybris/config-common/
+!hybris/bin/
+hybris/config/local.properties
+hybris/config/tcServer/*
+hybris/config/tomcat/*
+hybris/config/licence/*
+hybris/config/backup/*
+hybris/bin/*
+!hybris/bin/custom/
+!hybris/bin/platform/
+hybris/bin/platform/*
+!hybris/bin/platform/lib/
+hybris/bin/platform/lib/*
+#!hybris/bin/platform/lib/dbdriver
+hybris/bin/platform/lib/dbdriver/*
+!hybris/bin/platform/lib/dbdriver/mysql-connector-java-5.1.40.jar
+# ignore generated classes
+hybris/bin/custom/**/Generated*.java
+hybris/bin/custom/**/platformhome.properties
+# ignore generated CSS
+hybris/bin/custom/sagia/sagiastorefront/web/webroot/_ui/**/style.css
+hybris/bin/custom/sagia/sagiastorefront/web/webroot/_ui/**/style.css.map
+# ignore addon files from the storefront since they are copied during build from the addons
+hybris/bin/custom/sagia/sagiastorefront/web/addonsrc/*
+hybris/bin/custom/sagia/sagiastorefront/web/webroot/WEB-INF/*/addons/*
+hybris/bin/custom/sagia/sagiastorefront/web/webroot/_ui/addons/*
+# other random files
+hybris/bin/custom/**/*-testclasses.xml
+*backoffice_bof.jar
+hybris/bin/custom/**/rebel.xml
+# ignore jalo classes which are generated during build
+hybris/bin/custom/**/jalo/*.java
+!hybris/bin/custom/investsaudiportal/investsaudiportalcore/src/com/investsaudi/portal/core/jalo/InvestSaudiComponentContainer.java
+hybris/bin/custom/sagia/sagiastorefront/web/webroot/*cockpit/*
+
+# ignore backoffice files which are generated during build
+hybris/bin/custom/**/backoffice/classes
+
+# ignore the out folder
+hybris/bin/custom/sagia/**/out/
+out/
+hybris/bin/custom/sagia/sagiastorefront/node_modules/
+hybris/bin/custom/sagia/sagiastorefront/bin/node_modules/
+hybris/bin/custom/sagia/*cockpits/bin
+hybris/bin/custom/sagia/*storefront/bin
+hybris/bin/custom/sagia/*chat/bin
+hybris/bin/custom/sagia/*backoffice/bin
+hybris/bin/custom/sagia/*test/bin
+hybris/bin/custom/sagia/*core/bin
+hybris/bin/custom/sagia/sagia*/bin
+hybris/bin/custom/sagia/investsaudi*/bin
+hybris/bin/custom/sagia/investsaudi*/gensrc
+package-lock.json
+
+
+
+hybris/bin/custom/sagia/sagiastorefront/npm-debug.log
+hybris/config/hybris4intellij.properties
+
+#generated store front commons
+hybris/bin/custom/sagia/sagiastorefront/web/commonwebsrc/acceleratorstorefrontcommons/
+
+#generated classes from IDEA
+*.class
+
+# ignore build generated files in custom extensions
+hybris/bin/custom/**/build.xml
+hybris/bin/custom/**/extensioninfo.xsd
+hybris/bin/custom/**/beans.xsd
+hybris/bin/custom/**/items.xsd
+hybris/bin/custom/**/*-webtestclasses.xml
+hybris/bin/custom/*/buildcallbacks.xml
+
+#copied icons
+hybris/bin/custom/sagia/sagiastorefront/web/webroot/_ui/responsive/theme-alpha/icons/*
+hybris/bin/custom/sagia/sagiastorefront/web/webroot/WEB-INF/tags/responsive/icons/*
+
+hybris/bin/custom/sagia/sagiastorefront/web/webroot/_ui/responsive/theme-alpha/js/min/*
+hybris/bin/custom/sagia/sagiastorefront/web/webroot/_ui/responsive/theme-alpha/min-js/*
+
+#generated class files
+*.class
+
+hybris/bin/custom/sagia/sagiastorefront/resources/wro_addons.xml
+hybris/bin/custom/sagia/sagiafacades/lib/.lastupdate
+hybris/bin/custom/sagia/sagiafacades/lib/json-taglib-0.4.1.jar
+
+
+
+#Others
+**/web/commonwebsrc/
+**/web/webroot/cmscockpit/
+**/web/webroot/cockpit/
+ 
+
+#  Addon specific copy folders 
+**/_ui/addons
+**/_ui-src/addons
+**/views/addons
+**/tld/addons
+**/tags/addons
+**/messages/addons
+**/addonsrc
+**/addontestsrc
+
+# ignore auto generated theme style.css from .less files
+hybris/bin/custom/sagia/investsaudistorefront/web/webroot/_ui/responsive/**/style.css
+
+**/node_modules

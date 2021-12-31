@@ -1,0 +1,156 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleEn = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                                	 	; realFileName                  		 		; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+																            												 
+					   ; qassims-banner-image.png            	            	 	; qassims-banner-image.png    			 		; $siteResource/qassims-banner-image.png                                         		  ;                 image/png                ;                                          ; ""     ;
+					   ; qassim-map.png                                   	 		; qassim-map.png               			 		; $siteResource/qassim-map.png                                                  	  ;                 image/png                ;                                          ; ""     ;
+					   ; qassim-agriculture.png   				             		; qassim-agriculture.png        			    ; $siteResource/qassim-agriculture.png    	                                               ;                 image/png                ;                                          ; ""     ;
+					   ; qassim-food-processing.png				            		; qassim-food-processing.png  					; $siteResource/qassim-food-processing.png                                               ;                 image/png                ;                                          ; ""     ;
+					   ; qassim-tradeing.png      				            		; qassim-tradeing.png      	    				; $siteResource/qassim-tradeing.png      	                                                 ;                 image/png                ;                                          ; ""     ;
+					   ; qassim-mining.png        				            		; qassim-mining.png        	    				; $siteResource/qassim-mining.png        	                                             	  ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-logistics.png      				            		; qassim-logistics.png          				; $siteResource/qassim-logistics.png                                                     ;                 image/png                ;                                          ; ""     ;   
+					   
+
+
+
+
+
+						
+					   ; qassim-population.png        		                		; qassim-population.png        		    		; $siteResource/qassim-population.png        		                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-active-factories.png    			               	; qassim-active-factories.png    		       	; $siteResource/qassim-active-factories.png    			                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-population-growth.png          	            		; qassim-population-growth.png         			; $siteResource/qassim-population-growth.png                                                ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-airport.png              			              	; qassim-airport.png              				; $siteResource/qassim-airport.png              			                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-private-sector-employees.png                 		; qassim-private-sector-employees.png  			; $siteResource/qassim-private-sector-employees.png                                  		  ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-dams.png         					              	; qassim-dams.png         				    	; $siteResource/qassim-dams.png         					                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-hotels.png  						              	; qassim-hotels.png  					        ; $siteResource/qassim-hotels.png  						                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-sport-city.png              		              	; qassim-sport-city.png              	    	; $siteResource/qassim-sport-city.png              	                                 	  ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-chambers-of-commerce.png      	            		; qassim-chambers-of-commerce.png             	; $siteResource/qassim-chambers-of-commerce.png      	                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-roads-length.png					              	; qassim-roads-length.png				        ; $siteResource/qassim-roads-length.png				                                      ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-industrial-city.png           	            		; qassim-industrial-city.png           			; $siteResource/qassim-industrial-city.png           	                                   	  ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-hospitals.png                                		; qassim-hospitals.png                 			; $siteResource/qassim-hospitals.png                                                        ;                 image/png                ;                                          ; ""     ;   					
+					   ; qassim-towns.png							              	; qassim-towns.png								; $siteResource/qassim-towns.png													  		  ;                 image/png                ;											; ""	 ;
+					   					  
+																					  
+					   ; qassim-infrastructure-utilities.jpg                		; qassim-infrastructure-utilities.jpg                  	; $siteResource/qassim-infrastructure-utilities.jpg                                          ;                 image/png                ;                                          ; ""     ;   
+					   ; qassim-agricultural-endowment-dates-vegetables.png 		; qassim-agricultural-endowment-dates-vegetables.png  	; $siteResource/qassim-agricultural-endowment-dates-vegetables.png               			  ;                 image/png                ;                                          ; ""     ;   	
+					   ; qassim-high-production-food-products.png           		; qassim-high-production-food-products.png            	; $siteResource/qassim-high-production-food-products.png                              		  ;                 image/png                ;                                          ; ""     ;   	
+					   ; qassim-geological-resources-bauxite.png            	    ; qassim-geological-resources-bauxite.png             	; $siteResource/qassim-geological-resources-bauxite.png                                      ;                 image/png                ;                                          ; ""     ;   	
+					   ; qassim-business-support-infrastructure.png		            ; qassim-business-support-infrastructure.png			; $siteResource/qassim-business-support-infrastructure.png			                         ;                 image/png                ;                                          ; ""     ;   	
+					   
+					   
+					   ; qassim-palm.png		            						; qassim-palm.png										; $siteResource/qassim-palm.png			                         ;                 image/png                ;                                          ; ""     ;   	
+					   
+					  
+
+
+	
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=en]			; bannerText[lang=en]										; bannerImage (code, $contentCV)	; keyFactsHeader [lang = en]		 ; keyStrengthsHeader [lang = en] 	 ; opportunitiesHeader [lang = en]		
+							   ; qassim		 		;				; QASSIM PROVINCE			    ; Qassim, often referred to as the Kingdom's "food basket", supplies Saudi Arabia and the Arabian Gulf with the finest delicacies. The region is water-rich, with soil and temperature conditions that are ideal for growing grapes, oranges, lemons, grapefruit, mandarin oranges, pomegranates, and a variety of vegetables. 	; qassims-banner-image.png		    ; KEY FACTS AND FIGURES	 			 ; REGIONAL BENEFITS		 			 ; INVESTMENT OPPORTUNITIES																																																								
+	
+	
+
+#########################################################	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 		 ;  $contentCV  ; headerText[lang = en]      	; imageIcon  (code, $contentCV)     	 		; &componentRef
+											    ; qassim-agriculture		 ; 				; Agriculture	    			; qassim-agriculture.png       	   				; qassim-agriculture		
+                                                ; qassim-food-processing	 ;              ; Food processing	           	; qassim-food-processing.png                    ; qassim-food-processing
+                                                ; qassim-trading	 		 ;              ; Trading      					; qassim-tradeing.png      						; qassim-trading	 	
+                                                ; qassim-mining	 			 ;             	; Mining      					; qassim-mining.png        						; qassim-mining	 		
+                                                ; qassim-logistics			 ;              ; Logistics			            ; qassim-logistics.png                      	; qassim-logistics		
+	                                            
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = en] ; value[lang = en] 
+										; qassim-strategic-population		;		   ; 1,488,285		; population
+										; qassim-strategic-landmass		;			   ; 73,000 km2 	; in landmass area
+	 
+
+ 	 
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = en]	; backgroundImage (code, $contentCV)   	; sectors(&componentRef) 																																								; longDescription[lang = en]																																																																																																																																															; localizedStats (uid, $contentCV)   				   ; &componentRef
+												 ; qassim-strategic-component		;          		; STRATEGIC SECTORS			; qassim-map.png						; qassim-agriculture,qassim-food-processing,qassim-trading,qassim-mining,qassim-logistics ; Qassim supplies Saudi Arabia and the Arabian Gulf with the finest delicacies. The region is rich in water and has soil and a climate that is ideal for growing grapes, oranges, lemons, grapefruit, mandarin oranges, pomegranates, and a variety of vegetables.In terms of opportunities, the region has many projects under construction totaling $4.2 billion as part of Vision 2030's plan to revitalize the region's non-oil economy, providing a plethora of investment opportunities. Citizens, residents, and visitors of Qassim have access to 19 government hospitals, health facilities, two universities, one international airport and a railway that connects Qassim to Riyadh, Hail, and Al-Jouf. 	; qassim-strategic-population,qassim-strategic-landmass      ; qassim-strategic-component
+                             
+
+							 
+
+#######################################################	
+
+
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]		; $contentCV ; imageIcon (code, $contentCV) 		; headerText[lang = en]		   ;  text[lang = en]									; &componentRef
+#									   ; qassim-keyfacts1	    ;			 ; qassim-population.png        		; 1,488,285		               ;  population		; qassim-keyfacts1        
+									   ; qassim-keyfacts2       ;            ; qassim-active-factories.png    		; 332		                   ;  active factories in Q3 2021                       ; qassim-keyfacts2 
+#									   ; qassim-keyfacts3       ;            ; qassim-population-growth.png         ; 2.60%		                   ;  annual population growth between 2012-2017		; qassim-keyfacts3 		
+									   ; qassim-keyfacts4       ;            ; qassim-airport.png              		; 1			                   ;  International airport 					        ; qassim-keyfacts4 
+									   ; qassim-keyfacts5       ;            ; qassim-private-sector-employees.png  ; 384,470		               ;  number of employees					            ; qassim-keyfacts5 
+									   ; qassim-keyfacts6       ;            ; qassim-dams.png         				; 18		                   ;  dams									            ; qassim-keyfacts6 
+									   ; qassim-keyfacts7       ;            ; qassim-hotels.png  					; 14			               ;  Hotels					                        ; qassim-keyfacts7 
+									   ; qassim-keyfacts8       ;            ; qassim-sport-city.png              	; 1			                   ;  Sports City						                ; qassim-keyfacts8 
+									   ; qassim-keyfacts9       ;            ; qassim-chambers-of-commerce.png      ; 4		                   	   ;  Chambers of Commerce                              ; qassim-keyfacts9 
+									   ; qassim-keyfacts10      ;            ; qassim-roads-length.png				; 5,907		               	   ;  roads length			                            ; qassim-keyfacts10
+									   ; qassim-keyfacts11      ;            ; qassim-industrial-city.png           ; 3 		                   ;  industrial cities					                ; qassim-keyfacts11
+									   ; qassim-keyfacts12      ;            ; qassim-hospitals.png                 ; 19		                   ;  hospitals with 2,909 beds							; qassim-keyfacts12	   
+									   ; qassim-keyfacts13      ;            ; qassim-towns.png						; 13		                   ;  Towns				                                ; qassim-keyfacts13
+										   
+		
+					   
+								
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]		; $contentCV      ; image (code, $contentCV)					          		; text[lang=en]				                        								;&componentRef
+                     					 
+										   ; qassim-key-strength1 	;                 ; qassim-infrastructure-utilities.jpg                         ; INFRASTRUCTURE AND UTILITIES                                                	 	; qassim-key-strength1
+                                           ; qassim-key-strength2 	;                 ; qassim-agricultural-endowment-dates-vegetables.png          ; AGRICULTURAL ENDOWMENT - CULTIVATION OF PALM TREES,DATES, & A VARIETY OF VEGETABLES         ; qassim-key-strength2
+                                           ; qassim-key-strength3	;                 ; qassim-high-production-food-products.png                    ; HIGH PRODUCTION CAPACITY FOR FOOD PRODUCTS                                        ; qassim-key-strength3
+                                           ; qassim-key-strength4	;                 ; qassim-geological-resources-bauxite.png                     ; GEOLOGICAL RESOURCES SUCH AS BAUXITE                                              ; qassim-key-strength4
+                                           ; qassim-key-strength5 	;                 ; qassim-business-support-infrastructure.png			        ; BUSINESS SUPPORT INFRASTRUCTURE											       	; qassim-key-strength5
+		                                   
+
+###########################################################
+
+INSERT_UPDATE ProvinceInvestmentOpportunitiesComponent	; uid[unique=true]		      ; $contentCV	  ; iconImage	(code, $contentCV)			   ; headerText[lang = en]	                                     ; text[lang = en]																															; &componentRef
+													                                                                                                                                                        
+														; qassim-investment1			      ;               ; qassim-palm.png                            ; palm                                                       ; cultivation and date production 																							; qassim-investment1
+	
+	
+	
+#####################################################	
+	
+	
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																																					; keyStrengths(&componentRef) 																				  ; investmentOpportunities(&componentRef)
+							   ; qassim		 		;				    ; qassim-strategic-component 				; qassim-keyfacts2,qassim-keyfacts4 ,qassim-keyfacts5 ,qassim-keyfacts6, qassim-keyfacts7 ,qassim-keyfacts8 ,qassim-keyfacts9 ,qassim-keyfacts10,qassim-keyfacts11,qassim-keyfacts12,qassim-keyfacts13   ; qassim-key-strength1,qassim-key-strength2,qassim-key-strength3,qassim-key-strength4,qassim-key-strength5   ; qassim-investment1
+	
+	
+

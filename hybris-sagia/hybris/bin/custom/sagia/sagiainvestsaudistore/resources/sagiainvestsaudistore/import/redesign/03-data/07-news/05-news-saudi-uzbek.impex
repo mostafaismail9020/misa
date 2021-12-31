@@ -1,0 +1,58 @@
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+$newsTitleAr=اقتصادي / وزير الاستثمار : البيئة الاستثمارية في المملكة جاذبة
+$shortDescAr= اقتصادي / وزير الاستثمار : البيئة الاستثمارية في المملكة جاذبة
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                    ; realFileName                    	; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; news-saudi-uzbek.jpg           		; news-saudi-uzbek.jpg    			; $siteResource/news-saudi-uzbek.jpg                                        ;                 image/jpg                ;                                          ; ""     ;
+				   ; news-saudi-uzbek-thumbnail.jpg			; news-saudi-uzbek-thumbnail.jpg	; $siteResource/news-saudi-uzbek-thumbnail.jpg                                        ;                 image/jpg                ;                                          ; ""     ;
+					
+INSERT_UPDATE MediaContainer; qualifier[unique = true]     ; $medias                   ; $contentCV;
+                            ; media-container-saudi-uzbek  ; news-saudi-uzbek.jpg, news-saudi-uzbek-thumbnail.jpg;           ; 
+              
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true]; uid[unique = true]	; newsTitle[lang = en]         										; newsDate[dateformat = dd.MM.yyyy HH:mm:ss]    ;newsUrl
+                                      ;							; news-saudi-uzbek      ; Saudi, Uzbek officials build ties at investment forum in Bukhara 	; 23.01.2021 00:00:00                           ;                     
+
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]	; newsShortInformation[lang = en]
+									  ;							 ; news-saudi-uzbek     ; "The first Saudi-Uzbek Investment Forum was held recently in the Uzbek city of Bukhara.The forum was held under the co-auspices of Minister of Investment Khalid Al-Falih and the Uzbek deputy Prime Minister and Minister of Investment and Foreign Trade, Sardor Umurzakov."
+
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]; newsFullDescription[lang = en]
+                               ;						  ; news-saudi-uzbek  ; "
+Businessmen and representatives of the two countries government and private sectors participated in the forum.
+<p>Al-Falih, in his opening speech delivered during the forum, conveyed the greetings of King Salman and Crown Prince Mohammed bin Salman to the leadership and people of Uzbekistan. He reaffirmed the keenness of the Saudi leadership to cement bilateral relations with Uzbekistan in the political, economic, religious and cultural fields.</p>
+<p>Al-Falih said the aim was to build ties through empowering the private sector's companies, facilitating business performance and overcoming any challenges that might arise.</p>
+<p>Umurzakov said that the partnership between the Kingdom and Uzbekistan in the energy sector was one of the most prominent examples of the relationship between the two countries and that this would serve as a bridge to strengthen economic cooperation.</p>
+<p>Agreements and memoranda of understanding were signed including an arrangement to establish the Saudi-Uzbek Business Council to enhance joint work and enable the private sector to access investment opportunities in both countries. Other signings included a bilateral agreement between Saudi Flynas Airline and Uzbekistan Airways to operate direct flights between Saudi Arabia and Uzbekistan, and a memorandum of understanding between the King Faisal Center for Research and Islamic Studies and the Center for Islamic Civilization in Uzbekistan to strengthen cooperation in the areas of education, research, scientific studies, printing, culture and manuscripts.</p>
+";
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]; newsFullDescription[lang = ar]
+                               ;						  ; news-saudi-uzbek  ; "
+ <p>أقيمت في مدينة بخارى اليوم فعاليات منتدى الاستثمار السعودي الأوزبكي الأول من نوعه، وذلك برعاية وحضور معالي وزير الاستثمار المهندس خالد بن عبد العزيز الفالح، ومعالي نائب رئيس الوزراء الأوزبكي وزير الاستثمار والتجارة الخارجية ساردور أومور زاكوف، بمشاركة نخبة من رجال الأعمال وممثلي القطاع الخاص والحكومي من البلدين الصديقين.و ألقى معالي المهندس الفالح خلال المنتدى كلمة نقل فيها تحيات خادم الحرمين الشريفين الملك سلمان بن عبدالعزيز آل سعود ، وسمو ولي عهده الأمين - حفظهما الله - لقيادة وشعب جمهورية أوزبكستان الشقيقة، مؤكداً حرص القيادة الرشيدة على توثيق العلاقات مع جمهورية أوزباكستان في مختلف المجالات السياسية والاقتصادية والدينية والثقافية.</p>
+<p>وقال معاليه نتطلع لتنمية الشراكة ن لينا بما يحقق تطلعات قيادتينا، ويرقى لمستوى الروابط التي تجمع البلدين، مؤكدا أن الطموحات كبيرة، وسنعمل كمسؤولين في الجانبين على تحقيقها بتمكين القطاع الخاص والشركات وتسهيل ممارسة الأعمال وإزالة التحديات كافة.وأضاف المهندس الفالح أن جمهورية أوزباكستان تشهد نهضة كبيرة في جميع المجالات، ويسعدنا أن نسهم ونشارك بفعالية في خطتها الاستثنائية للتحول والنمو الاقتصادي.</p>
+<p>كما تطرق معاليه إلى أهمية دور القطاع الخاص لقيادة التنمية الاقتصادية للدول منوهاً بالدور الذي يقوم به في تعزيز التعاون والشراكات الدولية ومد جسور التواصل بين الشعوب والدول، مشيرا إلى أن المملكة تعول على الشركات الريادية والقطاع الخاص للإسهام في تعزيز التعاون التجاري والاستثماري مع الدول الصديقة </p>
+<p>وأفاد معالي وزير الاستثمار أن زيارة الوفد السعودي لجمهورية أوزبكستان بمشاركة عدد من الشركات السعودية الرائدة تؤكد أهمية أن يقوم القطاع الخاص بدور فاعل في زيادة التدفقات الاستثمارية بين البلدين، وتحويل الفرص الاستثمارية المتاحة ضمن إطار رؤيتي البلدين والإستراتيجيات التنموية إلى مشاريع على أرض الواقع ستدشن قريباً -بمشيئة الله-، وأشاد بالجهود المبذولة من قبل الشركات السعودية والأوزبكية المشاركة في المنتدى في سبيل تعزيز سبل التعاون بين البلدين.</p>
+<p>كما قدم معاليه شكره للجانب الأوزبكي حكومةً وشعباً على كرم الضيافة وحسن الاستقبال.بعدها ألقى نائب رئيس الوزراء الأوزبكي وزير الاستثمار والتجارة الخارجية زاكوف كلمة افتتاحية خلال أعمال المنتدى رحب فيها بالمشاركين، مشيرا إلى أن حضور الوفد السعودي إلى أوزبكستان في ظل الظروف الصعبة والقيود المفروضة على السفر التي يشهدها العالم بسبب انتشار جائحة كورونا، يعكس عمق العلاقة الأخوية التي تربط المملكة العربية السعودية وجمهورية أوزبكستان والمبنية على الثقة المتبادلة، والرغبة العميقة لدى البلدين في النمو والازدهار، مضيفا أن العلاقة بين البلدين تقودها روابط مشتركة يأتي الدين الإسلامي على رأسها، وتحتم توثيق أواصر العلاقة الأخوية، معربا عن ثقته بأن المملكة ستأخذ هذه العلاقة إلى مستويات أعلى من التعاون والشراكة لمستقبل أفضل بين البلدين.</p>
+<p>وأشار زاكوف إلى أن الشراكة بين المملكة وأوزبكستان في قطاع الطاقة تعد أحد أبرز الأمثلة على تميز العلاقة بين البلدين، وأن هذه الشراكة ستعمل كجسر لتوثيق التعاون الاقتصادي بين البلدين.
+<p>وشهدت أعمال المنتدى توقيع عدد من الاتفاقيات ومذكرات التفاهم ضمت اتفاقية بين الجانبين لتأسيس مجلس الأعمال السعودي الأوزبكي، لمواصلة وتعزيز العمل المشترك وتمكين القطاع الخاص من الوصول إلى الفرص الاستثمارية في كلا البلدين، واتفاقية ثنائية بين طيران ناس السعودي والخطوط الأوزبكية بهدف تشغيل رحلات مباشرة بين السعودية وأوزبكستان، ومذكرة تفاهم بين مركز الملك فيصل للبحوث والدراسات الإسلامية، ومركز الحضارة الإسلامية في أوزبكستان بهدف تعزيز وتطوير التعاون في مجال التعليم والبحوث والدراسات العلمية وعمليات الطباعة والثقافة والمخطوطات.وجرى عقد العديد من الاجتماعات الثنائية بين الجهات الحكومية والقطاع الخاص من الحانبين لبحث العديد من الفرص الاستثمارية المتاحة في البلدين.</p>
+<p>وتعقد أعمال المنتدى على هامش زيارة وفد سعودي رفيع المستوى من القطاعين الحكومي والخاص برئاسة معالي وزير الاستثمار المهندس خالد بن عبد العزيز الفالح لجمهورية أوزباكستان لتعزيز العلاقات الثنائية بين البلدين، وإطلاق عدد من المشاريع المشتركة، وتوقيع مذكرات تفاهم وتدشين مشروعات للطاقة المتجددة تقودها شركات سعودية.</p>
+";
+							   
+						 								   
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true];newsDetailsImage(code, $contentCV)  ;newsThumbnailImage(code, $contentCV);$galleryImages;&componentRef   ;
+								      ;                         ;news-saudi-uzbek  ;news-saudi-uzbek.jpg                ; news-saudi-uzbek-thumbnail.jpg	 ; 				;news-saudi-uzbek	;
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true];newsTitle[lang = ar];newsShortInformation[lang=ar];
+									  ;							;news-saudi-uzbek  ;$newsTitleAr        ;$shortDescAr;                                                                  
+

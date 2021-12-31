@@ -1,0 +1,3561 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AF')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AF')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AF",
+        "COUNTRY_TEXT": "Afghanistan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Afghan",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AL')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AL')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AL",
+        "COUNTRY_TEXT": "Albania",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Albanian",
+        "MOBILE_CODE": "355",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DZ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DZ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "DZ",
+        "COUNTRY_TEXT": "Algeria",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Algerian",
+        "MOBILE_CODE": "213",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "VI",
+        "COUNTRY_TEXT": "Amer.Virgin Is.",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "American",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AD')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AD')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AD",
+        "COUNTRY_TEXT": "Andorra",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Andorran",
+        "MOBILE_CODE": "376",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AO",
+        "COUNTRY_TEXT": "Angola",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Angolan",
+        "MOBILE_CODE": "244",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AI",
+        "COUNTRY_TEXT": "Anguilla",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Anguillian",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AQ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AQ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AQ",
+        "COUNTRY_TEXT": "Antarctica",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "From Antarctica",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AG",
+        "COUNTRY_TEXT": "Antigua/Barbuda",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Antiguan",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AR",
+        "COUNTRY_TEXT": "Argentina",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Argentinian",
+        "MOBILE_CODE": "54",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AM",
+        "COUNTRY_TEXT": "Armenia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Armenian",
+        "MOBILE_CODE": "374",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AW')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AW')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AW",
+        "COUNTRY_TEXT": "Aruba",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Arubanic",
+        "MOBILE_CODE": "297",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AU')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AU')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AU",
+        "COUNTRY_TEXT": "Australia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Australian",
+        "MOBILE_CODE": "61",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AT')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AT')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AT",
+        "COUNTRY_TEXT": "Austria",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Austrian",
+        "MOBILE_CODE": "43",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AZ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AZ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AZ",
+        "COUNTRY_TEXT": "Azerbaijan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Azerbaijani",
+        "MOBILE_CODE": "994",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BS')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BS')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BS",
+        "COUNTRY_TEXT": "Bahamas",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Bahaman",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BH')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BH')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BH",
+        "COUNTRY_TEXT": "Bahrain",
+        "NATIONALITY_CAT": "GCC",
+        "NATIONALITY_TEXT": "Bahraini",
+        "MOBILE_CODE": "973",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BD')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BD')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BD",
+        "COUNTRY_TEXT": "Bangladesh",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Bangladeshi",
+        "MOBILE_CODE": "880",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BB')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BB')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BB",
+        "COUNTRY_TEXT": "Barbados",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Barbadan",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BY')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BY')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BY",
+        "COUNTRY_TEXT": "Belarus",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Belarusian",
+        "MOBILE_CODE": "375",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BE",
+        "COUNTRY_TEXT": "Belgium",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Belgian",
+        "MOBILE_CODE": "32",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BZ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BZ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BZ",
+        "COUNTRY_TEXT": "Belize",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Belizean",
+        "MOBILE_CODE": "501",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BJ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BJ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BJ",
+        "COUNTRY_TEXT": "Benin",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Beninese",
+        "MOBILE_CODE": "229",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BM",
+        "COUNTRY_TEXT": "Bermuda",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Bermudan",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BT')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BT')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BT",
+        "COUNTRY_TEXT": "Bhutan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Bhutanese",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BO",
+        "COUNTRY_TEXT": "Bolivia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Bolivian",
+        "MOBILE_CODE": "591",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BA",
+        "COUNTRY_TEXT": "Bosnia-Herz.",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Bosnian-Herzegovinian",
+        "MOBILE_CODE": "387",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BW')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BW')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BW",
+        "COUNTRY_TEXT": "Botswana",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Botswanan",
+        "MOBILE_CODE": "267",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BV')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BV')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BV",
+        "COUNTRY_TEXT": "Bouvet Islands",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "From the Bouvet Islands",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BR",
+        "COUNTRY_TEXT": "Brazil",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Brazilian",
+        "MOBILE_CODE": "55",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "VG",
+        "COUNTRY_TEXT": "Brit.Virgin Is.",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "British",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BN",
+        "COUNTRY_TEXT": "Brunei Daruss.",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Brunei",
+        "MOBILE_CODE": "673",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BG",
+        "COUNTRY_TEXT": "Bulgaria",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Bulgarian",
+        "MOBILE_CODE": "359",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BF')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BF')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BF",
+        "COUNTRY_TEXT": "Burkina Faso",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Burkinabe",
+        "MOBILE_CODE": "226",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MM",
+        "COUNTRY_TEXT": "Burma",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Burmese",
+        "MOBILE_CODE": "95",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='BI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "BI",
+        "COUNTRY_TEXT": "Burundi",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Burundi",
+        "MOBILE_CODE": "257",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CF')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CF')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CF",
+        "COUNTRY_TEXT": "CAR",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Central African",
+        "MOBILE_CODE": "236",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KH')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KH')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KH",
+        "COUNTRY_TEXT": "Cambodia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Cambodian",
+        "MOBILE_CODE": "855",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CM",
+        "COUNTRY_TEXT": "Cameroon",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Cameroonian",
+        "MOBILE_CODE": "237",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CA",
+        "COUNTRY_TEXT": "Canada",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Canadian",
+        "MOBILE_CODE": "1",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CV')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CV')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CV",
+        "COUNTRY_TEXT": "Cape Verde",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Cape Verdean",
+        "MOBILE_CODE": "238",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KY')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KY')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KY",
+        "COUNTRY_TEXT": "Cayman Islands",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "British",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TD')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TD')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TD",
+        "COUNTRY_TEXT": "Chad",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Chadian",
+        "MOBILE_CODE": "235",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CL')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CL')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CL",
+        "COUNTRY_TEXT": "Chile",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Chilean",
+        "MOBILE_CODE": "56",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CN",
+        "COUNTRY_TEXT": "China",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Chinese",
+        "MOBILE_CODE": "86",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CX')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CX')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CX",
+        "COUNTRY_TEXT": "Christmas Islnd",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Australian",
+        "MOBILE_CODE": "61",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CC')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CC')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CC",
+        "COUNTRY_TEXT": "Coconut Islands",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Australian",
+        "MOBILE_CODE": "672",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CO",
+        "COUNTRY_TEXT": "Colombia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Colombian",
+        "MOBILE_CODE": "57",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KM",
+        "COUNTRY_TEXT": "Comoros",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Comoran",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CK')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CK')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CK",
+        "COUNTRY_TEXT": "Cook Islands",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Cook Islands",
+        "MOBILE_CODE": "682",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CR",
+        "COUNTRY_TEXT": "Costa Rica",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Costa Rican",
+        "MOBILE_CODE": "506",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CI",
+        "COUNTRY_TEXT": "Cote d'Ivoire",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Ivoirian",
+        "MOBILE_CODE": "225",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='HR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='HR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "HR",
+        "COUNTRY_TEXT": "Croatia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Croatian",
+        "MOBILE_CODE": "385",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CU')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CU')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CU",
+        "COUNTRY_TEXT": "Cuba",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Cuban",
+        "MOBILE_CODE": "53",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CY')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CY')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CY",
+        "COUNTRY_TEXT": "Cyprus",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Cypriot",
+        "MOBILE_CODE": "357",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CZ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CZ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CZ",
+        "COUNTRY_TEXT": "Czech Republic",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Czech",
+        "MOBILE_CODE": "420",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CD')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CD')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CD",
+        "COUNTRY_TEXT": "Dem. Rep. Congo",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Congolese",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DK')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DK')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "DK",
+        "COUNTRY_TEXT": "Denmark",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Danish",
+        "MOBILE_CODE": "45",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DJ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DJ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "DJ",
+        "COUNTRY_TEXT": "Djibouti",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Djiboutian",
+        "MOBILE_CODE": "253",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "DM",
+        "COUNTRY_TEXT": "Dominica",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Dominican",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "DO",
+        "COUNTRY_TEXT": "Dominican Rep.",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Dominican",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AN",
+        "COUNTRY_TEXT": "Dutch Antilles",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Dutch",
+        "MOBILE_CODE": "599",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TP')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TP')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TP",
+        "COUNTRY_TEXT": "East Timor",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "From East Timor",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='EC')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='EC')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "EC",
+        "COUNTRY_TEXT": "Ecuador",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Ecuadorian",
+        "MOBILE_CODE": "593",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='EG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='EG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "EG",
+        "COUNTRY_TEXT": "Egypt",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Egyptian",
+        "MOBILE_CODE": "20",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SV')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SV')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SV",
+        "COUNTRY_TEXT": "El Salvador",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Salvadoran",
+        "MOBILE_CODE": "503",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GQ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GQ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GQ",
+        "COUNTRY_TEXT": "Equatorial Guin",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Equatorial Guinean",
+        "MOBILE_CODE": "240",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ER')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ER')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "ER",
+        "COUNTRY_TEXT": "Eritrea",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Eritrean",
+        "MOBILE_CODE": "291",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='EE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='EE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "EE",
+        "COUNTRY_TEXT": "Estonia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Estonian",
+        "MOBILE_CODE": "372",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ET')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ET')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "ET",
+        "COUNTRY_TEXT": "Ethiopia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Ethiopian",
+        "MOBILE_CODE": "251",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FK')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FK')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "FK",
+        "COUNTRY_TEXT": "Falkland Islnds",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "British",
+        "MOBILE_CODE": "500",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "FO",
+        "COUNTRY_TEXT": "Faroe Islands",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Danish",
+        "MOBILE_CODE": "298",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FJ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FJ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "FJ",
+        "COUNTRY_TEXT": "Fiji",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Fijian",
+        "MOBILE_CODE": "679",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "FI",
+        "COUNTRY_TEXT": "Finland",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Finnish",
+        "MOBILE_CODE": "358",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "FR",
+        "COUNTRY_TEXT": "France",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "French",
+        "MOBILE_CODE": "33",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PF')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PF')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PF",
+        "COUNTRY_TEXT": "Frenc.Polynesia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "French",
+        "MOBILE_CODE": "689",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GF')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GF')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GF",
+        "COUNTRY_TEXT": "French Guayana",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "French",
+        "MOBILE_CODE": "594",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GA",
+        "COUNTRY_TEXT": "Gabon",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Gabonese",
+        "MOBILE_CODE": "241",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GM",
+        "COUNTRY_TEXT": "Gambia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Gambian",
+        "MOBILE_CODE": "220",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GE",
+        "COUNTRY_TEXT": "Georgia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Georgian",
+        "MOBILE_CODE": "995",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='DE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "DE",
+        "COUNTRY_TEXT": "Germany",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "German",
+        "MOBILE_CODE": "49",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GH')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GH')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GH",
+        "COUNTRY_TEXT": "Ghana",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Ghanian",
+        "MOBILE_CODE": "233",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GI",
+        "COUNTRY_TEXT": "Gibraltar",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Gibraltar",
+        "MOBILE_CODE": "350",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GR",
+        "COUNTRY_TEXT": "Greece",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Greek",
+        "MOBILE_CODE": "30",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GL')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GL')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GL",
+        "COUNTRY_TEXT": "Greenland",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Danish",
+        "MOBILE_CODE": "299",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GD')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GD')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GD",
+        "COUNTRY_TEXT": "Grenada",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Grenadian",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GP')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GP')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GP",
+        "COUNTRY_TEXT": "Guadeloupe",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "French",
+        "MOBILE_CODE": "590",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GU')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GU')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GU",
+        "COUNTRY_TEXT": "Guam",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "American",
+        "MOBILE_CODE": "671",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GT')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GT')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GT",
+        "COUNTRY_TEXT": "Guatemala",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Guatemalan",
+        "MOBILE_CODE": "502",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GG",
+        "COUNTRY_TEXT": "Guernsey",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Guernsey",
+        "MOBILE_CODE": "44",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GN",
+        "COUNTRY_TEXT": "Guinea",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Guinean",
+        "MOBILE_CODE": "224",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GW')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GW')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GW",
+        "COUNTRY_TEXT": "Guinea-Bissau",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Guinean",
+        "MOBILE_CODE": "245",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GY')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GY')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GY",
+        "COUNTRY_TEXT": "Guyana",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Guyanese",
+        "MOBILE_CODE": "592",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='HT')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='HT')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "HT",
+        "COUNTRY_TEXT": "Haiti",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Haitian",
+        "MOBILE_CODE": "509",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='HN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='HN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "HN",
+        "COUNTRY_TEXT": "Honduras",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Honduran",
+        "MOBILE_CODE": "504",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='HK')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='HK')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "HK",
+        "COUNTRY_TEXT": "Hong Kong",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Hong Kong",
+        "MOBILE_CODE": "852",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='HU')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='HU')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "HU",
+        "COUNTRY_TEXT": "Hungary",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Hungarian",
+        "MOBILE_CODE": "36",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "IM",
+        "COUNTRY_TEXT": "ISLE OF MAN",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "ISLE OF MAN",
+        "MOBILE_CODE": "44",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IS')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IS')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "IS",
+        "COUNTRY_TEXT": "Iceland",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Icelandic",
+        "MOBILE_CODE": "354",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "IN",
+        "COUNTRY_TEXT": "India",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Indian",
+        "MOBILE_CODE": "91",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ID')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ID')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "ID",
+        "COUNTRY_TEXT": "Indonesia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Indonesian",
+        "MOBILE_CODE": "62",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "IR",
+        "COUNTRY_TEXT": "Iran",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Iranian",
+        "MOBILE_CODE": "98",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IQ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IQ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "IQ",
+        "COUNTRY_TEXT": "Iraq",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Iraqi",
+        "MOBILE_CODE": "964",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "IE",
+        "COUNTRY_TEXT": "Ireland",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Irish",
+        "MOBILE_CODE": "353",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IT')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='IT')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "IT",
+        "COUNTRY_TEXT": "Italy",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Italian",
+        "MOBILE_CODE": "39",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='JM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='JM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "JM",
+        "COUNTRY_TEXT": "Jamaica",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Jamaican",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='JP')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='JP')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "JP",
+        "COUNTRY_TEXT": "Japan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Japanese",
+        "MOBILE_CODE": "81",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='JI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='JI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "JI",
+        "COUNTRY_TEXT": "Jersey Islands",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "British",
+        "MOBILE_CODE": "44",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='JO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='JO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "JO",
+        "COUNTRY_TEXT": "Jordan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Jordanian",
+        "MOBILE_CODE": "962",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KZ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KZ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KZ",
+        "COUNTRY_TEXT": "Kazakhstan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Kazakh",
+        "MOBILE_CODE": "7",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KE",
+        "COUNTRY_TEXT": "Kenya",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Kenyan",
+        "MOBILE_CODE": "254",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KI",
+        "COUNTRY_TEXT": "Kiribati",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Kiribati",
+        "MOBILE_CODE": "686",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='XK')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='XK')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "XK",
+        "COUNTRY_TEXT": "Kosovo",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Kosovo",
+        "MOBILE_CODE": "+381",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KW')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KW')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KW",
+        "COUNTRY_TEXT": "Kuwait",
+        "NATIONALITY_CAT": "GCC",
+        "NATIONALITY_TEXT": "Kuwaiti",
+        "MOBILE_CODE": "965",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KG",
+        "COUNTRY_TEXT": "Kyrgyzstan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Kyrgyzstani",
+        "MOBILE_CODE": "7",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LA",
+        "COUNTRY_TEXT": "Laos",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Laotian",
+        "MOBILE_CODE": "856",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LV')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LV')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LV",
+        "COUNTRY_TEXT": "Latvia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Latvian",
+        "MOBILE_CODE": "371",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LB')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LB')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LB",
+        "COUNTRY_TEXT": "Lebanon",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Lebanese",
+        "MOBILE_CODE": "961",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LS')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LS')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LS",
+        "COUNTRY_TEXT": "Lesotho",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Lesothan",
+        "MOBILE_CODE": "266",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LR",
+        "COUNTRY_TEXT": "Liberia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Liberian",
+        "MOBILE_CODE": "231",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LY')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LY')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LY",
+        "COUNTRY_TEXT": "Libya",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Libyan",
+        "MOBILE_CODE": "218",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LI",
+        "COUNTRY_TEXT": "Liechtenstein",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Liechtenstein",
+        "MOBILE_CODE": "41",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LT')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LT')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LT",
+        "COUNTRY_TEXT": "Lithuania",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Lithuanian",
+        "MOBILE_CODE": "370",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LU')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LU')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LU",
+        "COUNTRY_TEXT": "Luxembourg",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Luxembourgian",
+        "MOBILE_CODE": "352",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MO",
+        "COUNTRY_TEXT": "Macau",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Portuguese",
+        "MOBILE_CODE": "853",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MK')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MK')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MK",
+        "COUNTRY_TEXT": "Macedonia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Macedonian",
+        "MOBILE_CODE": "389",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MG",
+        "COUNTRY_TEXT": "Madagascar",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Madagascan",
+        "MOBILE_CODE": "261",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MW')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MW')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MW",
+        "COUNTRY_TEXT": "Malawi",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Malawian",
+        "MOBILE_CODE": "265",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MY')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MY')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MY",
+        "COUNTRY_TEXT": "Malaysia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Malaysian",
+        "MOBILE_CODE": "60",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MV')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MV')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MV",
+        "COUNTRY_TEXT": "Maldives",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Maldivian",
+        "MOBILE_CODE": "960",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ML')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ML')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "ML",
+        "COUNTRY_TEXT": "Mali",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Malian",
+        "MOBILE_CODE": "223",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MT')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MT')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MT",
+        "COUNTRY_TEXT": "Malta",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Maltese",
+        "MOBILE_CODE": "356",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MH')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MH')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MH",
+        "COUNTRY_TEXT": "Marshall Islnds",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Marshallese",
+        "MOBILE_CODE": "692",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MQ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MQ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MQ",
+        "COUNTRY_TEXT": "Martinique",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "French",
+        "MOBILE_CODE": "596",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MR",
+        "COUNTRY_TEXT": "Mauretania",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Mauretanian",
+        "MOBILE_CODE": "222",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MU')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MU')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MU",
+        "COUNTRY_TEXT": "Mauritius",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Mauritian",
+        "MOBILE_CODE": "230",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='YT')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='YT')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "YT",
+        "COUNTRY_TEXT": "Mayotte",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "French",
+        "MOBILE_CODE": "269",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MX')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MX')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MX",
+        "COUNTRY_TEXT": "Mexico",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Mexican",
+        "MOBILE_CODE": "52",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='FM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "FM",
+        "COUNTRY_TEXT": "Micronesia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Micronesian",
+        "MOBILE_CODE": "691",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MD')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MD')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MD",
+        "COUNTRY_TEXT": "Moldova",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Moldovan",
+        "MOBILE_CODE": "373",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MC')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MC')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MC",
+        "COUNTRY_TEXT": "Monaco",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Monegasque",
+        "MOBILE_CODE": "377",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MN",
+        "COUNTRY_TEXT": "Mongolia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Mongolian",
+        "MOBILE_CODE": "976",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MS')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MS')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MS",
+        "COUNTRY_TEXT": "Montserrat",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Montserrat",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MA",
+        "COUNTRY_TEXT": "Morocco",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Moroccan",
+        "MOBILE_CODE": "212",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MZ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MZ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MZ",
+        "COUNTRY_TEXT": "Mozambique",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Mozambican",
+        "MOBILE_CODE": "258",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MP')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='MP')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "MP",
+        "COUNTRY_TEXT": "N.Mariana Islnd",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Marianian",
+        "MOBILE_CODE": "670",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NA",
+        "COUNTRY_TEXT": "Namibia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Namibian",
+        "MOBILE_CODE": "264",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NR",
+        "COUNTRY_TEXT": "Nauru",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Nauruian",
+        "MOBILE_CODE": "674",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NP')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NP')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NP",
+        "COUNTRY_TEXT": "Nepal",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Nepalese",
+        "MOBILE_CODE": "977",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NL')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NL')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NL",
+        "COUNTRY_TEXT": "Netherlands",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Dutch",
+        "MOBILE_CODE": "31",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NC')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NC')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NC",
+        "COUNTRY_TEXT": "New Caledonia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "French",
+        "MOBILE_CODE": "687",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NZ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NZ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NZ",
+        "COUNTRY_TEXT": "New Zealand",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "New Zealand",
+        "MOBILE_CODE": "64",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NI",
+        "COUNTRY_TEXT": "Nicaragua",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Nicaraguan",
+        "MOBILE_CODE": "505",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NE",
+        "COUNTRY_TEXT": "Niger",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Nigerien",
+        "MOBILE_CODE": "227",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NG",
+        "COUNTRY_TEXT": "Nigeria",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Nigerian",
+        "MOBILE_CODE": "234",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NU')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NU')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NU",
+        "COUNTRY_TEXT": "Niue",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Niuean",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NF')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NF')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NF",
+        "COUNTRY_TEXT": "Norfolk Islands",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "From the Norfolk Islands",
+        "MOBILE_CODE": "6723",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KP')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KP')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KP",
+        "COUNTRY_TEXT": "North Korea",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Korean",
+        "MOBILE_CODE": "850",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='NO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "NO",
+        "COUNTRY_TEXT": "Norway",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Norwegian",
+        "MOBILE_CODE": "47",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='OM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='OM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "OM",
+        "COUNTRY_TEXT": "Oman",
+        "NATIONALITY_CAT": "GCC",
+        "NATIONALITY_TEXT": "Omani",
+        "MOBILE_CODE": "968",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PK')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PK')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PK",
+        "COUNTRY_TEXT": "Pakistan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Pakistani",
+        "MOBILE_CODE": "92",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PW')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PW')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PW",
+        "COUNTRY_TEXT": "Palau",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Palauan",
+        "MOBILE_CODE": "680",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PS')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PS')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PS",
+        "COUNTRY_TEXT": "Palestine",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Palestinian",
+        "MOBILE_CODE": "970",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PA",
+        "COUNTRY_TEXT": "Panama",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Panamanian",
+        "MOBILE_CODE": "507",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PY')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PY')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PY",
+        "COUNTRY_TEXT": "Paraguay",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Paraguayan",
+        "MOBILE_CODE": "595",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PE",
+        "COUNTRY_TEXT": "Peru",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Peruvian",
+        "MOBILE_CODE": "51",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PH')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PH')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PH",
+        "COUNTRY_TEXT": "Philippines",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Filipino",
+        "MOBILE_CODE": "63",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PN",
+        "COUNTRY_TEXT": "Pitcairn Islnds",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "British",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PL')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PL')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PL",
+        "COUNTRY_TEXT": "Poland",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Polish",
+        "MOBILE_CODE": "48",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PT')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PT')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PT",
+        "COUNTRY_TEXT": "Portugal",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Portuguese",
+        "MOBILE_CODE": "351",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PR",
+        "COUNTRY_TEXT": "Puerto Rico",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "American",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='QA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='QA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "QA",
+        "COUNTRY_TEXT": "Qatar",
+        "NATIONALITY_CAT": "GCC",
+        "NATIONALITY_TEXT": "Qatari",
+        "MOBILE_CODE": "974",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CG",
+        "COUNTRY_TEXT": "Rep.of Congo",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Congolese",
+        "MOBILE_CODE": "242",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='RE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='RE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "RE",
+        "COUNTRY_TEXT": "Reunion",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "French",
+        "MOBILE_CODE": "262",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='RO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='RO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "RO",
+        "COUNTRY_TEXT": "Romania",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Rumanian",
+        "MOBILE_CODE": "40",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='RU')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='RU')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "RU",
+        "COUNTRY_TEXT": "Russian Fed.",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Russian",
+        "MOBILE_CODE": "7",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='RW')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='RW')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "RW",
+        "COUNTRY_TEXT": "Rwanda",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Rwandan",
+        "MOBILE_CODE": "250",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GS')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GS')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GS",
+        "COUNTRY_TEXT": "S. Sandwich Ins",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "South Georgia",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ST')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ST')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "ST",
+        "COUNTRY_TEXT": "S.Tome,Principe",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Sao Tomean",
+        "MOBILE_CODE": "239",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SH')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SH')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SH",
+        "COUNTRY_TEXT": "Saint Helena",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Saint Helenian",
+        "MOBILE_CODE": "290",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='WS')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='WS')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "WS",
+        "COUNTRY_TEXT": "Samoa",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Samoan",
+        "MOBILE_CODE": "685",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AS')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AS')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AS",
+        "COUNTRY_TEXT": "Samoa, America",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Samoan",
+        "MOBILE_CODE": "684",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SM",
+        "COUNTRY_TEXT": "San Marino",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Sammarinese",
+        "MOBILE_CODE": "378",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SA",
+        "COUNTRY_TEXT": "Saudi Arabia",
+        "NATIONALITY_CAT": "SAUDI",
+        "NATIONALITY_TEXT": "Saudi Arabia",
+        "MOBILE_CODE": "966",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SN",
+        "COUNTRY_TEXT": "Senegal",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Senegalese",
+        "MOBILE_CODE": "221",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CS')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CS')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CS",
+        "COUNTRY_TEXT": "Serbia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Serbian",
+        "MOBILE_CODE": "381",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SC')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SC')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SC",
+        "COUNTRY_TEXT": "Seychelles",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Seychellian",
+        "MOBILE_CODE": "248",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SL')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SL')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SL",
+        "COUNTRY_TEXT": "Sierra Leone",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Sierra Leonean",
+        "MOBILE_CODE": "232",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SG",
+        "COUNTRY_TEXT": "Singapore",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Singaporean",
+        "MOBILE_CODE": "65",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SK')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SK')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SK",
+        "COUNTRY_TEXT": "Slovakia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Slovakian",
+        "MOBILE_CODE": "421",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SI')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SI')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SI",
+        "COUNTRY_TEXT": "Slovenia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Slovenian",
+        "MOBILE_CODE": "386",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SB')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SB')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SB",
+        "COUNTRY_TEXT": "Solomon Islands",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Solomonese",
+        "MOBILE_CODE": "677",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SO",
+        "COUNTRY_TEXT": "Somalia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Somali",
+        "MOBILE_CODE": "252",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ZA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ZA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "ZA",
+        "COUNTRY_TEXT": "South Africa",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "South African",
+        "MOBILE_CODE": "27",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KR",
+        "COUNTRY_TEXT": "South Korea",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Korean",
+        "MOBILE_CODE": "82",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ES')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ES')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "ES",
+        "COUNTRY_TEXT": "Spain",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Spanish",
+        "MOBILE_CODE": "34",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LK')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LK')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LK",
+        "COUNTRY_TEXT": "Sri Lanka",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Sri Lankan",
+        "MOBILE_CODE": "94",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='KN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "KN",
+        "COUNTRY_TEXT": "St Kitts&Nevis",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "From Saint Kitts and Nevis",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LC')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='LC')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "LC",
+        "COUNTRY_TEXT": "St. Lucia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Lucian",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VC')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VC')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "VC",
+        "COUNTRY_TEXT": "St. Vincent",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Vincentian",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='PM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "PM",
+        "COUNTRY_TEXT": "St.Pier,Miquel.",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "French",
+        "MOBILE_CODE": "508",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SD')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SD')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SD",
+        "COUNTRY_TEXT": "Sudan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Sudanese",
+        "MOBILE_CODE": "249",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SR",
+        "COUNTRY_TEXT": "Suriname",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Surinamese",
+        "MOBILE_CODE": "597",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SJ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SJ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SJ",
+        "COUNTRY_TEXT": "Svalbard",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Norwegian",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SZ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SZ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SZ",
+        "COUNTRY_TEXT": "Swaziland",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Swazi",
+        "MOBILE_CODE": "268",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SE",
+        "COUNTRY_TEXT": "Sweden",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Swedish",
+        "MOBILE_CODE": "46",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CH')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='CH')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "CH",
+        "COUNTRY_TEXT": "Switzerland",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Swiss",
+        "MOBILE_CODE": "41",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SY')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='SY')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "SY",
+        "COUNTRY_TEXT": "Syria",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Syrian",
+        "MOBILE_CODE": "963",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TW')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TW')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TW",
+        "COUNTRY_TEXT": "Taiwan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Chinese",
+        "MOBILE_CODE": "886",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TJ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TJ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TJ",
+        "COUNTRY_TEXT": "Tajikistan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Tajikistani",
+        "MOBILE_CODE": "7",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TZ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TZ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TZ",
+        "COUNTRY_TEXT": "Tanzania",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Tanzanian",
+        "MOBILE_CODE": "255",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TH')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TH')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TH",
+        "COUNTRY_TEXT": "Thailand",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Thai",
+        "MOBILE_CODE": "66",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TG",
+        "COUNTRY_TEXT": "Togo",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Togolese",
+        "MOBILE_CODE": "228",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TK')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TK')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TK",
+        "COUNTRY_TEXT": "Tokelau Islands",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "From the Tokelau Islands",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TO')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TO')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TO",
+        "COUNTRY_TEXT": "Tonga",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Tongan",
+        "MOBILE_CODE": "676",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TT')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TT')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TT",
+        "COUNTRY_TEXT": "Trinidad,Tobago",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "From Trinidad and Tobago",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TN",
+        "COUNTRY_TEXT": "Tunisia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Tunisian",
+        "MOBILE_CODE": "216",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TR')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TR')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TR",
+        "COUNTRY_TEXT": "Turkey",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Turkish",
+        "MOBILE_CODE": "90",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TM",
+        "COUNTRY_TEXT": "Turkmenistan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Turkmenian",
+        "MOBILE_CODE": "7",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TC')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TC')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TC",
+        "COUNTRY_TEXT": "Turksh Caicosin",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "From the Turks and Caicos Islands",
+        "MOBILE_CODE": "1809",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TV')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='TV')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "TV",
+        "COUNTRY_TEXT": "Tuvalu",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Tuvaluese",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='US')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='US')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "US",
+        "COUNTRY_TEXT": "USA",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "American",
+        "MOBILE_CODE": "1",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='UG')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='UG')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "UG",
+        "COUNTRY_TEXT": "Uganda",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Ugandan",
+        "MOBILE_CODE": "256",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='UA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='UA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "UA",
+        "COUNTRY_TEXT": "Ukraine",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Ukrainian",
+        "MOBILE_CODE": "38",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GB')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='GB')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "GB",
+        "COUNTRY_TEXT": "United Kingdom",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "British",
+        "MOBILE_CODE": "44",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='UY')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='UY')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "UY",
+        "COUNTRY_TEXT": "Uruguay",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Uruguayan",
+        "MOBILE_CODE": "598",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='AE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "AE",
+        "COUNTRY_TEXT": "Utd.Arab Emir.",
+        "NATIONALITY_CAT": "GCC",
+        "NATIONALITY_TEXT": "United Arab Emirates",
+        "MOBILE_CODE": "971",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='UZ')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='UZ')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "UZ",
+        "COUNTRY_TEXT": "Uzbekistan",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Uzbekistani",
+        "MOBILE_CODE": "7",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VU')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VU')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "VU",
+        "COUNTRY_TEXT": "Vanuatu",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Ni-Vanuatu",
+        "MOBILE_CODE": "678",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VA')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VA')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "VA",
+        "COUNTRY_TEXT": "Vatican City",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "",
+        "MOBILE_CODE": "39",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "VE",
+        "COUNTRY_TEXT": "Venezuela",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Venezuelan",
+        "MOBILE_CODE": "58",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VN')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='VN')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "VN",
+        "COUNTRY_TEXT": "Vietnam",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Vietnamese",
+        "MOBILE_CODE": "84",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='WF')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='WF')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "WF",
+        "COUNTRY_TEXT": "Wallis,Futuna",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "From the Wallis and Futuna Islands",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='EH')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='EH')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "EH",
+        "COUNTRY_TEXT": "West Sahara",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "French",
+        "MOBILE_CODE": "",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='YE')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='YE')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "YE",
+        "COUNTRY_TEXT": "Yemen",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Yemeni",
+        "MOBILE_CODE": "967",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ZM')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ZM')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "ZM",
+        "COUNTRY_TEXT": "Zambia",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Zambian",
+        "MOBILE_CODE": "260",
+        "SUCCESS": "X",
+        "ERROR": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ZW')",
+          "uri": "http://eservices.sagia.gov.sa/sap/opu/odata/sap/ZUI5_NIP_SRV/NIPCountrySet(LANGUAGE='E',COUNTRY='ZW')",
+          "type": "ZUI5_NIP_SRV.NIPCountry"
+        },
+        "LANGUAGE": "E",
+        "COUNTRY": "ZW",
+        "COUNTRY_TEXT": "Zimbabwe",
+        "NATIONALITY_CAT": "OTHER",
+        "NATIONALITY_TEXT": "Zimbabwean",
+        "MOBILE_CODE": "263",
+        "SUCCESS": "X",
+        "ERROR": ""
+      }
+    ]
+  }
+}

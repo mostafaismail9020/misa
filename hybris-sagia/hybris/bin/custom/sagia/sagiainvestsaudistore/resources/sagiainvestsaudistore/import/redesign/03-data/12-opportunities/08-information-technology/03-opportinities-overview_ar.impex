@@ -1,0 +1,13 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = ar
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       										; $catalogVersion							   ; description[lang = $lang]
+                                ; 3D-PRINTING-for-Industrial-Automotive-Health-care-Aerospace       ;     											; " <p>Attract global 3D printing companies to set up a regional HQ in KSA instead of using traditional manufacturing parts to reduce time, waste and increase efficiency. </p>"
+								; AI-POWERED-Capacity-planning               					    ;                								; " <p>Integrates and analyses hospital logistics, resource scheduling, patient flow data and suggests optimal resource allocation (e.g., staffing, scheduling) which will ease the access to healthcare services by sufficient overall capacity, appropriate geographical distribution and providing timely access to relevant services  </p>"
+								; AI-POWERED-MEDICAL-IMAGING             							;                								; " <p>Attract leading AI (Artificial Intelligence) based medical imaging service providers to KSA to cater local and regional demand </p>"
+								; Automated-Customer-Support             							;                								; " <p>Using Natural Language Processing (NLP)/Speech recognition to augment/offload human support which will ease the access to healthcare services by providing timely access to relevant services  </p>"
+								; EDGE-COMPUTING     												;                								; " <p>Attract an international Cloud provider or invest in a local company to accelerate the rollout of Edge Data Centers</p>"
+								; Localize-Commercial-Drones     									;                								; " <p>Global and/or local drones companies to set up a regional HQ in KSA, and to build and assemble drones for multiple purposes (security, logistics, mining, agriculture …etc.) to tap into KSA and MENA market.</p>"
+								; Manufacturing-Optimization-Quality-Control  						;                								; " <p> Enhance the Saudi manufacturing industry by introducing production monitoring and implementing high precision quality control for all aspects of connected equipment on factory floor to optimize manufacturing performance, quality and cost</p>"
+								; ML-POWERED-LIFESTYLE-AND-WELL-BEING 								;                								; " <p>Attract leading ML (Machine Learning) based healthcare service providers to KSA to cater local demand</p>"

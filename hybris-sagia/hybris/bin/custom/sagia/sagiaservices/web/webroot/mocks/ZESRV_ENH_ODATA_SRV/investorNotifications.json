@@ -1,0 +1,40 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='627603',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-37001302',NotificationType='SY')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='627603',TransactionId='SAGIA_ESRV_CUSTOMER_SATISFACTION-1-37001302',NotificationType='SY')",
+          "type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+        },
+        "AmountPayable": "0.000",
+        "InvestorId": "627871",
+        "MainRequest": "",
+        "TransactionId": "SAGIA_ESRV_CUSTOMER_SATISFACTION-1-37001302",
+        "NotificationType": "SY",
+        "NotificationPriority": "O",
+        "ExpiryDate": null,
+        "NotificationText": "Please complete the Survey for request 37001302",
+        "CreatedBy": "Survey",
+        "CreatedOn": null
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='627603',TransactionId='0021001008',NotificationType='PY')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='627603',TransactionId='0021001008',NotificationType='PY')",
+          "type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+        },
+        "AmountPayable": "1",
+        "InvestorId": "627871",
+        "MainRequest": "37001302",
+        "TransactionId": "0021001025|0021001025",
+        "NotificationType": "PY",
+        "NotificationPriority": "M",
+        "ExpiryDate": null,
+        "NotificationText": "Subscription Fee|Items - Main Branch Subscription Fee : SAR 10000.00",
+        "CreatedBy": "Payments",
+        "CreatedOn": null
+      }
+    ]
+  }
+}

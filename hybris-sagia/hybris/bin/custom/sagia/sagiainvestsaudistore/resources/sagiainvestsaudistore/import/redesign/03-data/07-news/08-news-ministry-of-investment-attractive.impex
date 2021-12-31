@@ -1,0 +1,61 @@
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+$newsTitleAr=اقتصادي / وزير الاستثمار: لدى المملكة وألمانيا إمكانات هائلة لتوسيع الاستثمارات بينهما
+$shortDescAr= اقتصادي / وزير الاستثمار: لدى المملكة وألمانيا إمكانات هائلة لتوسيع الاستثمارات بينهما
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                      	      ; realFileName                    			; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; news-investment-attractive-Banner.png           ; news-investment-attractive-Banner.png     	; $siteResource/news-investment-attractive-Banner.png                                      ;                 image/png                ;                                          ; ""     ;
+					; news-investment-attractive-thumbnail.jpg        ; news-investment-attractive-thumbnail.jpg    ; $siteResource/news-investment-attractive-thumbnail.jpg                                       ;                 image/jpg                ;                                          ; ""     ;
+				
+				
+INSERT_UPDATE MediaContainer; qualifier[unique = true]  				; $medias                   				; $contentCV; 
+                            ; media-container-investment-attractive 	; news-investment-attractive-thumbnail.jpg 	;           ;
+
+			   
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]	; uid[unique = true]            ; newsTitle[lang = en]                                                                    						; newsDate[dateformat = dd.MM.yyyy HH:mm:ss]    ; newsUrl
+                                      ; 							; news-ministry-of-investment   ; Minister of Investment: The Kingdom and Germany have enormous potential to expand investments between them  	; 10.09.2021 00:00:00                           ;                     
+
+INSERT_UPDATE InvestSaudiNewsComponent	; $contentCV[unique = true]	; uid[unique = true]			; newsShortInformation[lang = en]
+										;							; news-ministry-of-investment   ; "Minister of Investment, Eng. Khalid Al-Falih, today outlined the unparalleled Saudi investment opportunities that are available to German businesses."
+
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]			; newsFullDescription[lang = en]
+                               ;						  ; news-ministry-of-investment ; "
+In an event hosted by the Ministry of Investment of Saudi Arabia (MISA), the North Africa Middle East Initiative of German Business (NMI), and the German-Saudi Arabian Liaison Office for Economic Affairs (GESALO), the Minister outlined how Vision 2030 is driving the Kingdom's economic transformation, unlocking 12 trillion Saudi riyals' (EUR 2.7 trillion) worth of investment opportunities. Key sectors highlighted included renewable energy, green finance, automotive, petrochemicals, healthcare and life science, supply-chain, information communication technology and digitization.
+<p>The Minister also noted that the experience and expertise of many German companies meant they were particularly well-placed to take advantage of the opportunities that Saudi Arabia presents.</p>
+<p>Speaking at the event, Eng. Khalid Al-Falih, said: ''Germany and Saudi Arabia are partners that share common interests and common goals. Our bilateral relationship is supported by strong economic and commercial bonds and by the great respect that Saudis have for everything German. However, we are punching below our weight, and there is huge potential for our commercial and investment ties to expand significantly.''</p>
+<p>''Saudi Arabia's business environment has improved dramatically in recent years. The country is in the top ten in terms of the number of reforms enacted in 2020, according to the World Bank, and ranked second globally among the G20 countries in the World Economic Forum's Digital Competitiveness Report for the year 2021.''</p>
+<p>Chairman of the North Africa Middle East Initiative of German Business (NMI), Ralf Wintergerst, added: ''German companies greatly value the opportunities that Saudi Arabia offers. Its vision to become a regional hub will further contribute to its appeal for business and will attract innovative companies from Germany.''</p>
+<p>Germany is a key trade and investment partner for Saudi Arabia. It was the 4th largest source of imports to the Kingdom in 2020. and Saudi Arabia is home to a number of leading German companies-including Siemens and Bosch, which were among over 40 companies that recently signed Memorandums of Understanding with MISA to move their regional headquarters to the Kingdom.</p>
+<p>The webinar was organized by MISA in partnership with NMI - an entity dedicated to fostering bilateral ties between Germany and the Middle East and North Africa (MENA) region - and GESALO.NMI supports visits to the MENA region by the German government (and vice versa), together with business delegations and advocates seeking to reduce trade and investment barriers in the region and within the European Union. Located in Riyadh for over 40 years, GESALO is the official representation of the German Industry in the Kingdom of Saudi Arabia. GESALO works to support German companies that wish to enter the Saudi Market and to help them identify business opportunities in the Kingdom.</p>
+";
+    
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]			; newsFullDescription[lang = ar]
+                               ;						  ; news-ministry-of-investment ; "
+<p>أكّد معالي وزير الاستثمار المهندس خالد بن عبد العزيز الفالح، أن هناك الكثير من الفرص الاستثمارية النوعية في المملكة للشركات الألمانية الرائدة.</p>
+<p>جاء ذلك في كلمة ألقاها أمس، خلال ندوة عُقدت باستضافة وزارة الاستثمار ومبادرة قطاع الأعمال الألماني لشمال أفريقيا والشرق الأوسط؛ بحضور مجموعة من الشركات الألمانية، مبيناً أن المملكة وألمانيا شريكان تجمعهما أهداف ومصالح مشتركة، والعلاقات الثنائية</p>
+<p>مدعومة بروابط اقتصادية وتجارية قوية، بما فيها عضويتنا في مجموعة العشرين، ولدى المملكة إمكانات هائلة لتوسيع علاقتها الاستثمارية والتجارية بشكل كبير.</p>
+<p>وأوضح المهندس الفالح أن الشركات الألمانية والعالمية والسعودية، العاملة في المملكة، تستفيد من موقع المملكة الجغرافي الإستراتيجي، الذي لا يقتصر على كونه في قلب الشرق الأوسط، ولكنه، أيضًا، في موقعٍ رابطٍ بين ثلاث قارات، آسيا وأوروبا وأفريقيا، بحيث باتت هذه الشركات قادرة على الوصول وخدمة أكثر من 50% من سكان العالم في حدود خمس ساعات من السفر فقط.</p>
+<p>وأفاد معاليه خلال كلمته أن ألمانيا شريك تجاري واستثماري رئيس للمملكة، وقد كانت رابع أكبر مَصدر للواردات إلى المملكة في عام 2020م، كما أن المملكة هي مقر عملٍ لعدد من الشركات الألمانية الرائدة، منها شركات وقّعت، مؤخرًا، مذكرات تفاهم مع وزارة الاستثمار لافتتاح مقراتها الإقليمية في المملكة.</p>
+<p>وبيّن معالي وزير الاستثمار أن رؤية المملكة 2030 تقود التحول الاقتصادي في المملكة، وتعمل على توفير فرص استثمارية جديدة لمجموعة واسعة من المستثمرين الدوليين والسعوديين، متناولاً الفرص المتاحة في مجموعة من القطاعات الرئيسة، بما في ذلك قطاعات الصناعة والتصنيع، والخدمات اللوجستية، والرعاية الصحية، وعلوم الحياة، والطاقة المتجددة.</p>
+<p>وأشار المهندس الفالح إلى أن الشركات الألمانية تمتلك الخبرة والتجربة التي تدعم دخولها السوق السعودية، وتُعزز قدرتها على الاستفادة من الفرص المتاحة، خاصة أن المملكة عملت خلال السنوات الأخيرة على تنفيذ مجموعة واسعة من الإصلاحات الاقتصادية والتشريعية لدعم وتحسين بيئة الأعمال، مما انعكس إيجابياً على القدرة التنافسية للمملكة وترتيبها في التقارير العالمية.</p>
+<p>يذكر أن وزارة الاستثمار نظمت هذه الندوة الافتراضية بالشراكة مع مبادرة قطاع الأعمال الألماني لشمال أفريقيا والشرق الأوسط، وهي منظمة متخصصة تعمل على تعزيز علاقات الأعمال والعلاقات الاقتصادية والاستثمارية الثنائية بين ألمانيا ودول منطقتي شمال أفريقيا</p>
+<p>والشرق الأوسط.</p>
+";
+                  
+				  
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]				;newsDetailsImage(code, $contentCV)		;newsThumbnailImage(code, $contentCV)		;$galleryImages	;&componentRef   ;
+									  ;							;news-ministry-of-investment    ;news-investment-attractive-Banner.png	;news-investment-attractive-thumbnail.jpg	;				;news-ministry-of-investment ;
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]				;newsTitle[lang = ar]	;newsShortInformation[lang=ar];
+									  ;							;news-ministry-of-investment    ;$newsTitleAr       	;$shortDescAr;                                                                  

@@ -1,0 +1,2346 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AD",
+        "COUNTRY": "Andorran"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AE",
+        "COUNTRY": "United Arab Emirates"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AF",
+        "COUNTRY": "Afghan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AG",
+        "COUNTRY": "Antiguan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AI",
+        "COUNTRY": "Anguillian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AL",
+        "COUNTRY": "Albanian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AM",
+        "COUNTRY": "Armenian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AN",
+        "COUNTRY": "Dutch"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AO",
+        "COUNTRY": "Angolan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AQ",
+        "COUNTRY": "From Antarctica"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AR",
+        "COUNTRY": "Argentinian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AS",
+        "COUNTRY": "Samoan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AT",
+        "COUNTRY": "Austrian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AU",
+        "COUNTRY": "Australian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AW",
+        "COUNTRY": "Arubanic"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "AZ",
+        "COUNTRY": "Azerbaijani"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BA",
+        "COUNTRY": "Bosnian-Herzegovinian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BB",
+        "COUNTRY": "Barbadan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BD",
+        "COUNTRY": "Bangladeshi"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BE",
+        "COUNTRY": "Belgian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BF",
+        "COUNTRY": "Burkinabe"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BG",
+        "COUNTRY": "Bulgarian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BH",
+        "COUNTRY": "Bahraini"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BI",
+        "COUNTRY": "Burundi"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BJ",
+        "COUNTRY": "Beninese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BM",
+        "COUNTRY": "Bermudan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BN",
+        "COUNTRY": "Brunei"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BO",
+        "COUNTRY": "Bolivian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BR",
+        "COUNTRY": "Brazilian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BS",
+        "COUNTRY": "Bahaman"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BT",
+        "COUNTRY": "Bhutanese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BV",
+        "COUNTRY": "From the Bouvet Islands"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BW",
+        "COUNTRY": "Botswanan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BY",
+        "COUNTRY": "Belarusian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "BZ",
+        "COUNTRY": "Belizean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CA",
+        "COUNTRY": "Canadian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CC",
+        "COUNTRY": "Australian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CD",
+        "COUNTRY": "Congolese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CF",
+        "COUNTRY": "Central African"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CG",
+        "COUNTRY": "Congolese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CH",
+        "COUNTRY": "Swiss"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CI",
+        "COUNTRY": "Ivoirian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CK",
+        "COUNTRY": "Cook Islands"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CL",
+        "COUNTRY": "Chilean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CM",
+        "COUNTRY": "Cameroonian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CN",
+        "COUNTRY": "Chinese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CO",
+        "COUNTRY": "Colombian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CR",
+        "COUNTRY": "Costa Rican"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CS",
+        "COUNTRY": "Serbian; Montenegrin"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CU",
+        "COUNTRY": "Cuban"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CV",
+        "COUNTRY": "Cape Verdean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CX",
+        "COUNTRY": "Australian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CY",
+        "COUNTRY": "Cypriot"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "CZ",
+        "COUNTRY": "Czech"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "DE",
+        "COUNTRY": "German"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "DJ",
+        "COUNTRY": "Djiboutian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "DK",
+        "COUNTRY": "Danish"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "DM",
+        "COUNTRY": "Dominican"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "DO",
+        "COUNTRY": "Dominican"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "DZ",
+        "COUNTRY": "Algerian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "EC",
+        "COUNTRY": "Ecuadorian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "EE",
+        "COUNTRY": "Estonian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "EG",
+        "COUNTRY": "Egyptian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "EH",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "ER",
+        "COUNTRY": "Eritrean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "ES",
+        "COUNTRY": "Spanish"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "ET",
+        "COUNTRY": "Ethiopian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "FI",
+        "COUNTRY": "Finnish"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "FJ",
+        "COUNTRY": "Fijian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "FK",
+        "COUNTRY": "British"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "FM",
+        "COUNTRY": "Micronesian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "FO",
+        "COUNTRY": "Danish"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "FR",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GA",
+        "COUNTRY": "Gabonese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GB",
+        "COUNTRY": "British"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GD",
+        "COUNTRY": "Grenadian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GE",
+        "COUNTRY": "Georgian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GF",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GH",
+        "COUNTRY": "Ghanian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GI",
+        "COUNTRY": "Gibraltar"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GL",
+        "COUNTRY": "Danish"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GM",
+        "COUNTRY": "Gambian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GN",
+        "COUNTRY": "Guinean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GP",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GQ",
+        "COUNTRY": "Equatorial Guinean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GR",
+        "COUNTRY": "Greek"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GS",
+        "COUNTRY": "South Georgia"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GT",
+        "COUNTRY": "Guatemalan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GU",
+        "COUNTRY": "American"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GW",
+        "COUNTRY": "Guinean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "GY",
+        "COUNTRY": "Guyanese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "HK",
+        "COUNTRY": "Hong Kong"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "HN",
+        "COUNTRY": "Honduran"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "HR",
+        "COUNTRY": "Croatian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "HT",
+        "COUNTRY": "Haitian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "HU",
+        "COUNTRY": "Hungarian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "ID",
+        "COUNTRY": "Indonesian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "IE",
+        "COUNTRY": "Irish"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "IN",
+        "COUNTRY": "Indian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "IQ",
+        "COUNTRY": "Iraqi"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "IR",
+        "COUNTRY": "Iranian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "IS",
+        "COUNTRY": "Icelandic"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "IT",
+        "COUNTRY": "Italian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "JM",
+        "COUNTRY": "Jamaican"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "JO",
+        "COUNTRY": "Jordanian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "JP",
+        "COUNTRY": "Japanese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KE",
+        "COUNTRY": "Kenyan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KG",
+        "COUNTRY": "Kyrgyzstani"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KH",
+        "COUNTRY": "Cambodian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KI",
+        "COUNTRY": "Kiribati"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KM",
+        "COUNTRY": "Comoran"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KN",
+        "COUNTRY": "From Saint Kitts and Nevis"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KP",
+        "COUNTRY": "Korean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KR",
+        "COUNTRY": "Korean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KW",
+        "COUNTRY": "Kuwaiti"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KY",
+        "COUNTRY": "British"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "KZ",
+        "COUNTRY": "Kazakh"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LA",
+        "COUNTRY": "Laotian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LB",
+        "COUNTRY": "Lebanese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LC",
+        "COUNTRY": "Lucian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LI",
+        "COUNTRY": "Liechtenstein"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LK",
+        "COUNTRY": "Sri Lankan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LR",
+        "COUNTRY": "Liberian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LS",
+        "COUNTRY": "Lesothan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LT",
+        "COUNTRY": "Lithuanian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LU",
+        "COUNTRY": "Luxembourgian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LV",
+        "COUNTRY": "Latvian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "LY",
+        "COUNTRY": "Libyan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MA",
+        "COUNTRY": "Moroccan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MC",
+        "COUNTRY": "Monegasque"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MD",
+        "COUNTRY": "Moldovan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MG",
+        "COUNTRY": "Madagascan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MH",
+        "COUNTRY": "Marshallese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MK",
+        "COUNTRY": "Macedonian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "ML",
+        "COUNTRY": "Malian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MM",
+        "COUNTRY": "Burmese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MN",
+        "COUNTRY": "Mongolian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MO",
+        "COUNTRY": "Portuguese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MP",
+        "COUNTRY": "Marianian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MQ",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MR",
+        "COUNTRY": "Mauretanian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MS",
+        "COUNTRY": "Montserrat"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MT",
+        "COUNTRY": "Maltese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MU",
+        "COUNTRY": "Mauritian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MV",
+        "COUNTRY": "Maldivian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MW",
+        "COUNTRY": "Malawian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MX",
+        "COUNTRY": "Mexican"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MY",
+        "COUNTRY": "Malaysian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "MZ",
+        "COUNTRY": "Mozambican"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NA",
+        "COUNTRY": "Namibian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NC",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NE",
+        "COUNTRY": "Nigerien"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NF",
+        "COUNTRY": "From the Norfolk Islands"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NG",
+        "COUNTRY": "Nigerian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NI",
+        "COUNTRY": "Nicaraguan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NL",
+        "COUNTRY": "Dutch"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NO",
+        "COUNTRY": "Norwegian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NP",
+        "COUNTRY": "Nepalese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NR",
+        "COUNTRY": "Nauruian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NU",
+        "COUNTRY": "Niuean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "NZ",
+        "COUNTRY": "New Zealand"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "OM",
+        "COUNTRY": "Omani"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PA",
+        "COUNTRY": "Panamanian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PE",
+        "COUNTRY": "Peruvian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PF",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PH",
+        "COUNTRY": "Filipino"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PK",
+        "COUNTRY": "Pakistani"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PL",
+        "COUNTRY": "Polish"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PM",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PN",
+        "COUNTRY": "British"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PR",
+        "COUNTRY": "American"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PS",
+        "COUNTRY": "Palestinian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PT",
+        "COUNTRY": "Portuguese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PW",
+        "COUNTRY": "Palauan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "PY",
+        "COUNTRY": "Paraguayan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "QA",
+        "COUNTRY": "Qatari"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "RE",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "RO",
+        "COUNTRY": "Rumanian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "RU",
+        "COUNTRY": "Russian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "RW",
+        "COUNTRY": "Rwandan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SA",
+        "COUNTRY": "Saudi"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SB",
+        "COUNTRY": "Solomonese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SC",
+        "COUNTRY": "Seychellian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SD",
+        "COUNTRY": "Sudanese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SE",
+        "COUNTRY": "Swedish"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SG",
+        "COUNTRY": "Singaporean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SH",
+        "COUNTRY": "Saint Helenian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SI",
+        "COUNTRY": "Slovenian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SJ",
+        "COUNTRY": "Norwegian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SK",
+        "COUNTRY": "Slovakian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SL",
+        "COUNTRY": "Sierra Leonean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SM",
+        "COUNTRY": "Sammarinese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SN",
+        "COUNTRY": "Senegalese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SO",
+        "COUNTRY": "Somali"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SR",
+        "COUNTRY": "Surinamese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "ST",
+        "COUNTRY": "Sao Tomean"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SV",
+        "COUNTRY": "Salvadoran"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SY",
+        "COUNTRY": "Syrian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "SZ",
+        "COUNTRY": "Swazi"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TC",
+        "COUNTRY": "From the Turks and Caicos Islands"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TD",
+        "COUNTRY": "Chadian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TF",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TG",
+        "COUNTRY": "Togolese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TH",
+        "COUNTRY": "Thai"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TJ",
+        "COUNTRY": "Tajikistani"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TK",
+        "COUNTRY": "From the Tokelau Islands"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TM",
+        "COUNTRY": "Turkmenian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TN",
+        "COUNTRY": "Tunisian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TO",
+        "COUNTRY": "Tongan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TP",
+        "COUNTRY": "From East Timor"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TR",
+        "COUNTRY": "Turkish"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TT",
+        "COUNTRY": "From Trinidad and Tobago"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TV",
+        "COUNTRY": "Tuvaluese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TW",
+        "COUNTRY": "Chinese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "TZ",
+        "COUNTRY": "Tanzanian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "UA",
+        "COUNTRY": "Ukrainian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "UG",
+        "COUNTRY": "Ugandan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "US",
+        "COUNTRY": "American"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "UY",
+        "COUNTRY": "Uruguayan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "UZ",
+        "COUNTRY": "Uzbekistani"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "VA",
+        "COUNTRY": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "VC",
+        "COUNTRY": "Vincentian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "VE",
+        "COUNTRY": "Venezuelan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "VG",
+        "COUNTRY": "British"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "VI",
+        "COUNTRY": "American"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "VN",
+        "COUNTRY": "Vietnamese"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "VU",
+        "COUNTRY": "Ni-Vanuatu"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "WF",
+        "COUNTRY": "From the Wallis and Futuna Islands"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "WS",
+        "COUNTRY": "Samoan"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "YE",
+        "COUNTRY": "Yemeni"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "YT",
+        "COUNTRY": "French"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "ZA",
+        "COUNTRY": "South African"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "ZM",
+        "COUNTRY": "Zambian"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCOUNTRYSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCOUNTRY"
+        },
+        "LANGUAGE": "E",
+        "COUNTRYCODE": "ZW",
+        "COUNTRY": "Zimbabwean"
+      }
+    ]
+  }
+}

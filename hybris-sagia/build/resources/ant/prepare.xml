@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project name="prepare">
+	<description>
+		Prepare the hybris environment - creates config directory if not present and copies in config files from the CI Build dir if present there.
+		@author adrien.missemer
+	</description>
+
+	<target name="prepare" if="platformPresent">
+		<ant dir="${platformhome}/resources/ant" target="prepare">
+			<property name="input.template" value="develop" />
+		</ant>
+		<antcall target="copyConfigMaster"/>
+         
+		<antcall target="createLocalFromTemplate"/>
+		<echo>Overwriting config resources from ${HYBRIS_COMMON_CONFIG_DIR}</echo>
+		<copy todir="${HYBRIS_CONFIG_DIR}" overwrite="yes" failonerror="false" verbose="true">
+			<fileset dir="${HYBRIS_COMMON_CONFIG_DIR}" />
+		</copy>
+		<echo>Overwriting config resources from ${HYBRIS_ENV_CONFIG_DIR}</echo>
+		<copy todir="${HYBRIS_CONFIG_DIR}" overwrite="yes" failonerror="false"  verbose="true">
+			<fileset dir="${HYBRIS_ENV_CONFIG_DIR}" />
+		</copy>
+		
+	</target>
+	
+	<target name="createLocalFromTemplate" depends="localProperties.check" unless="localPropertiesPresent">
+		<copy file="${HYBRIS_ENV_CONFIG_DIR}/local.properties.sample" tofile="${HYBRIS_ENV_CONFIG_DIR}/local.properties" overwrite="false" failonerror="true" verbose="true" />
+	</target>
+	<target name="copyConfigMaster" >
+		<copy todir="${HYBRIS_CONFIG_DIR}/" overwrite="true" failonerror="true" verbose="true">
+			<fileset dir="${BUILD_HOME}/config"/>
+		</copy>
+	</target>
+        <target name="localProperties.check">
+           <condition property="localPropertiesPresent">
+             <or>
+               <available file="${HYBRIS_ENV_CONFIG_DIR}/local.properties" />
+               <available file="${HYBRIS_COMMON_CONFIG_DIR}/local.properties" />
+             </or>
+           </condition>
+        </target>
+</project>

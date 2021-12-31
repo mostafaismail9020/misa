@@ -1,0 +1,19 @@
+############ Resource Investment Highlights For Summer 2020 ########
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]								;resourceTitle[lang = ar]							;resourceShortInformation[lang=ar]	;
+										  ;							;resource-investment-highlights-summer-2020  	;موجز مستجدات الاستثمار  صيف  2020                	;ابرز مستجدات الاستثمار في الربع الثاني من عام 2020;					 
+
+
+UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]							;resourceFullDescription[lang = ar]	;
+									;						 ;resource-investment-highlights-summer-2020    ;"
+<p>تستعرض وزارة الاستثمار في تقريرها للربع الثاني 2020، أبرز مستجدات البيئة الاستثمارية خلال فترة صيف 2020، حيث أعلنت عن منحها رخص استثمارية لـ 506 شركة أجنبية خلال النصف الأول من هذا العام. وتأتي هذه النتائج بعد تسجيل نمو للاستثمارات الأجنبية في المملكة للربع الأول بنسبة (20%) خلال الربع الأول بينما سجلت تراجعا بنسبة (47%) للربع الثاني من هذا العام، وذلك نتيجةً لتأثر الاقتصاد العالمي بجائحة فيروس كورونا.</p>
+<p>كما يكشف هذا العدد الجاذبية الكبيرة التي يتمتع بها قطاع التعدين، والذي يُعد من القطاعات الأكثر حيوية في المملكة، حيث تقدّر قيمته السوقية بــ(1.3) ترليون دولار.  ويتضمن العدد مقابلة مع نائب وزير الصناعة والثروة المعدنية لشؤون التعدين، المهندس خالد المديفر.</p>
+<p>تضمن التقرير أيضا كلمة افتتاحية لمعالي وزير الصناعة والثروة المعدنية، بندر الخريف؛ ومقابلة مع الرئيس التنفيذي لهيئة تطوير بوابة الدرعية، جيري انزيرلو كشف من خلالها عن مستجدات المشاريع السعودية الكبرى. </p>  									
+";

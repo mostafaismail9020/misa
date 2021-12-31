@@ -1,0 +1,32 @@
+####Impex For Middle-East-Electricity####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+$eventNameAr= معرض الشرق الأوسط للطاقة
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails ;$contentCV[unique = true];uid[unique = true]		;keyValue[lang = ar]	; keyName[lang = ar];
+                              ;        					;electricity-key-1       ;7,000      			; عدد زوار الفعالية	;
+							  ;	       					;electricity-key-2       ;500    				; عدد زوار الجناح	;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]   ; eventName[lang = ar]   ;eventLocation[lang = ar]	;
+                                        ;                         ;event-electricity    ; $eventNameAr           ; 	دبي					;
+										
+										
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	;eventShortInformation[lang = ar]	;
+										;						  ; event-electricity	;"مشاركة وزارة الاستثمار في معرض الشرق الوسط للطاقة، حيث يختص بالحلول الابتكارية والتقنيات الجديدة ";
+
+    
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]		;eventKeyDetails(uid, $contentCV);
+										;						  ;event-electricity 		;electricity-key-1,electricity-key-2;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventFullDescription[lang = ar];
+										;						  ;event-electricity    ;							    ;

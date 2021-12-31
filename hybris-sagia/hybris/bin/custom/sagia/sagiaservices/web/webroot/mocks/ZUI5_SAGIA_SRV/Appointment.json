@@ -1,0 +1,46 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/Appointments(81000190)",
+      "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/Appointments(81000190)",
+      "type": "ZUI5_SAGIA_SRV.Appointment"
+    },
+    "Contactperson": "0000402985",
+    "ApptID": 81000190,
+    "ApptStatus": "E0001",
+    "ApptStatDesc": "Open",
+    "Department": "01",
+    "DeptDesc": "Business Centers",
+    "Branch": "10",
+    "BranchDesc": "RIYADH",
+    "DateAppt": "\/Date(1524528000000)\/",
+    "TimeFrom": "PT10H00M00S",
+    "TimeTo": "PT00H00M00S",
+    "BpID": "613392",
+    "ServType1": "GOVTSERV",
+    "ServType1Desc": "Government Services",
+    "ServType2": "",
+    "ServType2Desc": "",
+    "ServType3": "",
+    "ServType3Desc": "",
+    "Ministry1": "ZSG8",
+    "Ministry1Desc": "Chamber of Commerce",
+    "Ministry2": "",
+    "Ministry2Desc": "",
+    "Ministry3": "",
+    "Ministry3Desc": "",
+    "Service1": "100007_428",
+    "Service1Desc": "Stamp original document",
+    "Service2": "",
+    "Service2Desc": "",
+    "Service3": "",
+    "Service3Desc": "",
+    "ApptPrint": false,
+    "Action": "",
+    "AppointmentToAppAvailNav": {
+      "__deferred": {
+        "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/Appointments(81000190)/AppointmentToAppAvailNav"
+      }
+    }
+  }
+}

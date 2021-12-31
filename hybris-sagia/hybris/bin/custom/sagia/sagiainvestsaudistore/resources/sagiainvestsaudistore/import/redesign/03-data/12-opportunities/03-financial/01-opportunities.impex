@@ -1,0 +1,9 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$classCatalogVersion = catalogVersion(catalog(id[default='sagiaClassification']), version[default='1.0'])
+
+####
+INSERT_UPDATE OpportunityProduct; code[unique = true]                  ; name [lang = en]                         ; name [lang = ar]                       ; featured;supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+								; Commercial-and-Digital-Banking       ; Commercial and Digital Banking           ; Commercial and Digital Banking         ; false    ; financial                            ;                                           ;	            ;"Invest Saudi,Commercial and Digital Banking - FINANCIALS,FINANCIALS,"
+								; Insurance                            ; Insurance                                ; Insurance                              ; false    ; financial                            ;                                           ;	            ;"Invest Saudi,Insurance - FINANCIALS,FINANCIALS,"
+								; Investment-Banking-and-Capital-Market; Investment Banking and Capital Market    ; Investment Banking and Capital Market  ; false    ; financial                            ;                                           ;	            ;"Invest Saudi,Investment Banking and Capital Market - FINANCIALS,FINANCIALS,"

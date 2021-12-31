@@ -1,0 +1,384 @@
+$contentCatalog=investsaudiContentCatalog
+$productCatalog=investsaudiProductCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$siteResource=jar:de.hybris.platform.investsaudistore.constants.InvestsaudistoreConstants&/investsaudistore/import/sampledata/contentCatalogs/$contentCatalog
+$indexedType=investsaudiProductType
+$lang=en
+
+# Import modulegen config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+$jarResourceCms=$config-jarResourceCmsValue
+
+#####
+# Footer
+#####
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]                ; name                               ; linkName[lang=$lang]                 ; &linkRef                       ; url[default="#"]                                   ;  
+# Services Links               
+                               ;                         ; ChemicalsLink                   ; Chemicals Link                     ; Chemicals                            ; ChemicalsLink                  
+                               ;                         ; EnergyWaterLink                 ; Energy Water Link                  ; Energy and Water                     ; EnergyWaterLink                
+                               ;                         ; HealthCareLink                  ; Health Care Link                   ; Healthcare and Life Sciences         ; HealthCareLink                 
+                               ;                         ; MiningMetalsLink                ; Mining Metals Link                 ; Mining and Metals                    ; MiningMetalsLink               
+                               ;                         ; TourismCultureEntertainmentLink ; Tourism Culture Entertainment Link ; "Tourism, Culture and Entertainment" ; TourismCultureEntertainmentLink
+                               ;                         ; InformationTechnologyLink       ; Information Technology Link        ; Information and Technology           ; InformationTechnologyLink      
+                               ;                         ; IndustrialManufacturingLink     ; Industrial Manufacturing Link      ; Industrial and Manufacturing         ; IndustrialManufacturingLink    
+                               ;                         ; EmergingLink                    ; Emerging Link                      ; Emerging Sectors                     ; EmergingLink                   
+                               ;                         ; TransportLogisticsLink          ; Transport Logistics Link           ; Transport and Logistics              ; TransportLogisticsLink         
+# Category Links               
+                               ;                         ; WhySaudiArabiaLink              ; Why Saudi Arabia Link              ; Why Saudi Arabia                     ; WhySaudiArabiaLink             
+                               ;                         ; SectorsOpportunitiesLink        ; Sectors Opportunities Link         ; "Sectors & Opportunities"            ; SectorsOpportunitiesLink       
+                               ;                         ; InvestorsServicesLink           ; Investors Services Link            ; Investors Services                   ; InvestorsServicesLink          
+                               ;                         ; AboutLink                       ; About Link                         ; About                                ; AboutLink                      ; https://investsaudi.sa/en/about/about-invest-saudi/
+                               ;                         ; ContactLink                     ; Contact Link                       ; Contact                              ; ContactLink                    ;/contact
+                               ;                         ; FaqLink                         ; FAQ Link                           ; FAQ                                  ; FaqLink                        
+                               ;                         ; TermsAndConditionsLink          ; Terms and Conditions Link          ; Terms and Conditions                 ; TermsAndConditionsLink         
+
+INSERT_UPDATE CMSNavigationEntry ; $contentCV[unique=true] ; uid[unique=true]                        ; name                                    ; item(&linkRef)                 
+# Services Nav Entries           
+                                 ;                         ; ChemicalsNavNodeEntry                   ; Chemicals Nav Node Entry                ; ChemicalsLink                  
+                                 ;                         ; EnergyWaterNavNodeEntry                 ; Energy Water Nav Node Entry             ; EnergyWaterLink                
+                                 ;                         ; HealthCareNavNodeEntry                  ; Health Care Nav Node Entry              ; HealthCareLink                 
+                                 ;                         ; MiningMetalsNavNodeEntry                ; Mining Metals Nav Node Entry            ; MiningMetalsLink               
+                                 ;                         ; TourismCultureEntertainmentNavNodeEntry ; Tourism Culture Nav Node Entry          ; TourismCultureEntertainmentLink
+                                 ;                         ; InformationTechnologyNavNodeEntry       ; Information Technology Nav Node Entry   ; InformationTechnologyLink      
+                                 ;                         ; IndustrialManufacturingNavNodeEntry     ; Industrial Manufacturing Nav Node Entry ; IndustrialManufacturingLink    
+                                 ;                         ; EmergingNavNodeEntry                    ; Emerging Nav Node Entry                 ; EmergingLink                   
+                                 ;                         ; TransportLogisticsNavNodeEntry          ; Transport Nav Node Entry                ; TransportLogisticsLink         
+# Category nav entries           
+                                 ;                         ; WhySaudiArabiaNavNodeEntry              ; Why Saudi Arabia Nav Node Entry         ; WhySaudiArabiaLink             
+                                 ;                         ; SectorsOpportunitiesNavNodeEntry        ; Sectors Opportunities Nav Node Entry    ; SectorsOpportunitiesLink       
+                                 ;                         ; InvestorsServicesNavNodeEntry           ; Investors Services Nav Node Entry       ; InvestorsServicesLink          
+                                 ;                         ; AboutNavNodeEntry                       ; About Nav Node Entry                    ; AboutLink                      
+                                 ;                         ; ContactNavNodeEntry                     ; Contact Nav Node Entry                  ; ContactLink                    
+                                 ;                         ; FaqNavNodeEntry                         ; Faq Nav Node Entry                      ; FaqLink                        
+                                 ;                         ; TermsAndConditionsNavNodeEntry          ; Terms and Conditions Nav Node Entry     ; TermsAndConditionsLink         
+
+
+INSERT_UPDATE CMSNavigationNode ; $contentCV[unique=true] ; uid[unique=true]                   ; name                               ; entries(uid, $contentCV)                ;  
+# Services Nav nodes            
+                                ;                         ; ChemicalsNavNode                   ; Chemicals Page                     ; ChemicalsNavNodeEntry                   ;  
+                                ;                         ; EnergyWaterNavNode                 ; Energy Water Page                  ; EnergyWaterNavNodeEntry                 ;  
+                                ;                         ; HealthCareAndLifeSciencesNavNode   ; Health Care And Life Sciences Page ; HealthCareNavNodeEntry                  ;  
+                                ;                         ; MiningMetalsNavNode                ; Mining Metals Page                 ; MiningMetalsNavNodeEntry                ;  
+                                ;                         ; TourismCultureEntertainmentNavNode ; Tourism Culture Entertainment Page ; TourismCultureEntertainmentNavNodeEntry ;  
+                                ;                         ; InformationTechnologyNavNode       ; Information Technology Page        ; InformationTechnologyNavNodeEntry       ;  
+                                ;                         ; IndustrialManufacturingNavNode     ; Industrial Manufacturing Page      ; IndustrialManufacturingNavNodeEntry     ;  
+                                ;                         ; EmergingNavNode                    ; Emerging Page                      ; EmergingNavNodeEntry                    ;  
+                                ;                         ; TransportLogisticsNavNode          ; Transport Logistics Page           ; TransportLogisticsNavNodeEntry          ;  
+# Category nav nodes            
+                                ;                         ; WhySaudiArabiaNavNode              ; Why Saudi Arabia Page              ; WhySaudiArabiaNavNodeEntry              ;  
+                                ;                         ; SectorsOpportunitiesNavNode        ; Sectors Opportunities Page         ; SectorsOpportunitiesNavNodeEntry        ;  
+                                ;                         ; InvestorsServicesNavNode           ; Investors Services Page            ; InvestorsServicesNavNodeEntry           ;  
+                                ;                         ; AboutManufacturingNavNode          ; About Page                         ; AboutNavNodeEntry                       ;  
+                                ;                         ; ContactNavNode                     ; Contact Page                       ; ContactNavNodeEntry                     ;  
+                                ;                         ; FaqNavNode                         ; Faq Page                           ; FaqNavNodeEntry                         ;  
+                                ;                         ; TermsAndConditionsNavNode          ; Terms and Conditions Page          ; TermsAndConditionsNavNodeEntry          ;  
+
+UPDATE CMSNavigationNode ; $contentCV[unique=true] ; uid[unique=true] ; title[lang=$lang]     
+                         ;                         ; HybrisNavNode    ; "Sectors & Industries"
+
+UPDATE CMSNavigationNode ; $contentCV[unique=true] ; uid[unique=true]   ; children(uid, $contentCV)                                                                                                                                                                                                        
+                         ;                         ; FooterNavNode      ; AcceleratorNavNode                                                                                                                                                                                                               
+#####                    
+                         ;                         ; HybrisNavNode      ; ChemicalsNavNode,EnergyWaterNavNode,HealthCareAndLifeSciencesNavNode,MiningMetalsNavNode,TourismCultureEntertainmentNavNode,InformationTechnologyNavNode,IndustrialManufacturingNavNode,EmergingNavNode,TransportLogisticsNavNode
+                         ;                         ; AcceleratorNavNode ; AboutManufacturingNavNode,TermsAndConditionsNavNode,ContactNavNode                                                                                                                                                                              
+
+UPDATE FooterNavigationComponent ; $contentCV[unique=true] ; uid[unique=true]          ; wrapAfter ; notice[lang=$lang]                         
+                                 ;                         ; FooterNavigationComponent ; 6         ; "© 2019 Invest Saudi. All rights reserved."
+
+
+
+#####                            
+# Main Carousel                  
+#####                            
+
+INSERT_UPDATE Media ; mediaFormat(qualifier) ; code[unique=true]       ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true] ; realfilename            ; altText          ; mime[default='image/png'] ; $contentCV[unique=true] ; folder(qualifier)[default=images] ;  
+                    ; widescreen             ; home-main-banner-01.png ; $siteResource/images/theme/home-main-banner-01.png                                          ; home-main-banner-01.png ; "Main Banner 01" ;                           
+                    ; widescreen             ; home-main-banner-02.png ; $siteResource/images/theme/home-main-banner-02.png                                          ; home-main-banner-02.png ; "Main Banner 02" ;                           
+
+INSERT_UPDATE BannerComponent ; $contentCV[unique=true] ; uid[unique=true]    ; media(code, $contentCV) ; name                 
+                              ;                         ; home-main-banner-01 ; home-main-banner-01.png ; "Home Main Banner 01"
+                              ;                         ; home-main-banner-02 ; home-main-banner-02.png ; "Home Main Banner 02"
+
+INSERT_UPDATE RotatingImagesComponent ; $contentCV[unique=true] ; uid[unique=true]          ; name                        ; banners(uid, $contentCV)               
+                                      ;                         ; home-main-rotating-banner ; "Home Main Rotating Banner" ; home-main-banner-01,home-main-banner-02
+
+UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]      ; cmsComponents(uid, $contentCV)
+                   ;                         ; Section1Slot-Homepage ; home-main-rotating-banner     
+
+INSERT_UPDATE BannerComponent ; $contentCV[unique=true] ; uid[unique=true]    ; urlLink ; content[lang=$lang]                                                                                                                                                            
+                              ;                         ; home-main-banner-01 ; "#"     ; "<h1 class=""animated pulse"">Check out our special <span class=""diff-color mp-bold"">Investment Highlights </span><br>the latest on Saudi Arabia’s investment landscape</h1>"
+                              ;                         ; home-main-banner-02 ; "#"     ; "<h1 class=""animated pulse""> Welcome to <span class=""diff-color mp-bold"">Saudi Arabia,</span> <br>the land of growing businesses and investments </h1>"                    
+
+#####                         
+# Site Logo                   
+#####                         
+
+INSERT_UPDATE Media ; mediaFormat(qualifier) ; code[unique=true] ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true] ; realfilename ; altText           ; mime[default='image/svg'] ; $contentCV[unique=true] ; folder(qualifier)[default=images] ;  
+                    ; widescreen             ; logo-en.svg       ; $siteResource/images/theme/logo-en.svg                                                      ; logo-en.svg  ; "Site Logo Image" ;                           
+
+INSERT_UPDATE SimpleBannerComponent ; $contentCV[unique=true] ; uid[unique=true]      ; media(code, $contentCV) ; name                    ; urlLink
+                                    ;                         ; investsaudi-site-logo ; logo-en.svg             ; "Investsaudi Site Logo" ; "/"    
+
+UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true] ; cmsComponents(uid, $contentCV)
+                   ;                         ; SiteLogoSlot     ; investsaudi-site-logo         
+
+
+#####              
+# Cleaning slots not used (this can be run only one time, though it won't break anything if run multiple times)
+#####              
+
+UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]       ; cmsComponents(uid, $contentCV)
+                   ;                         ; Section2ASlot-Homepage ;                               
+                   ;                         ; Section2BSlot-Homepage ;                               
+                   ;                         ; Section3Slot-Homepage  ;                               
+                   ;                         ; Section4Slot-Homepage  ;                               
+
+#####              
+# Category Carousel
+#####
+
+INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];realfilename;altText;mime[default='image/svg'];$contentCV[unique=true];folder(qualifier)[default=images];
+;widescreen;LOGOSCATEGORY.svg;$siteResource/images/theme/LOGOSCATEGORY.svg;LOGOSCATEGORY.svg;"Logos";
+;widescreen;BRANDBESTPRACTICESCATEGORY.svg;$siteResource/images/theme/BRANDBESTPRACTICESCATEGORY.svg;BRANDBESTPRACTICESCATEGORY.svg;"Brand Best Practices";
+;widescreen;MASTERPRESENTATIONSCATEGORYICON.svg;$siteResource/images/theme/MASTERPRESENTATIONSCATEGORYICON.svg;MASTERPRESENTATIONSCATEGORYICON.svg;"Master Presentations";
+;widescreen;INVESTMENTREPORTSCATEGORY.svg;$siteResource/images/theme/INVESTMENTREPORTSCATEGORY.svg;INVESTMENTREPORTSCATEGORY.svg;"Investment Reports";
+;widescreen;DESIGNASSETSCATEGORY.svg;$siteResource/images/theme/DESIGNASSETSCATEGORY.svg;DESIGNASSETSCATEGORY.svg;"Design Assets";
+;widescreen;INVESTORKITSCATEGORY.svg;$siteResource/images/theme/INVESTORKITSCATEGORY.svg;INVESTORKITSCATEGORY.svg;"Investor Kits";
+
+INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];name;media(code, $contentCV);content[lang=$lang];urlLink
+
+;;categoryBanner01;"Category Banner 01";LOGOSCATEGORY.svg;"Logos";c/101010
+;;categoryBanner02;"Category Banner 02";BRANDBESTPRACTICESCATEGORY.svg;"Brand Best Practices";c/101111
+;;categoryBanner03;"Category Banner 03";MASTERPRESENTATIONSCATEGORYICON.svg;"Master Presentations";c/101011
+;;categoryBanner04;"Category Banner 04";INVESTMENTREPORTSCATEGORY.svg;"Investment Reports";c/101210
+;;categoryBanner05;"Category Banner 05";DESIGNASSETSCATEGORY.svg;"Design Assets";c/101012
+;;categoryBanner06;"Category Banner 06";INVESTORKITSCATEGORY.svg;"Investor Kits";c/101013
+
+INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(uid, $contentCV);
+;;categoryRotatingBannerComponent;"Category Rotating Banner Component";categoryBanner01,categoryBanner02,categoryBanner03,categoryBanner04,categoryBanner05,categoryBanner06
+
+#####
+# Product Carousel
+#####
+
+
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code, $productCV);popup;title[lang=$lang]
+;;productCarouselComponent;"Product Carousel Component";200100,200102,200105,200106,200110,200114;false;"INVEST SAUDI'S NEWLY UPDATED CONTENT"
+
+#####
+# Category Carousel Title
+#####
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;content[lang=$lang]
+;;CategoryCarouselTitleParagraph;Category Carousel Title Paragraph;"<h1 class='category-carousel-title'>INVEST SAUDI'S CONTENT & SERVICE CATALOGS</h1>"
+
+UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid, $contentCV)
+;;Section3Slot-Homepage;CategoryCarouselTitleParagraph,categoryRotatingBannerComponent,productCarouselComponent
+
+# Add to cart actions
+#####              
+
+UPDATE ShareOnSocialNetworkAction ; $contentCV[unique=true] ; uid[unique=true]          ; visible[default=false]
+                                  ;                         ; ShareOnSocialNetworkAction
+
+UPDATE PickUpInStoreAction ; $contentCV[unique=true] ; uid[unique=true]   ; visible[default=false]
+                           ;                         ; PickUpInStoreAction
+
+#####                      
+# My-account Navigation    
+#####                      
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]                     ; name                         ; url                         ; &linkRef                             ;styleAttributes             ; linkName[lang=$lang]  ; target(code)[default='sameWindow']
+                               ;                         ; InvestsaudiAccountHomeLink           ; Account Home Link            ; /my-account                 ; InvestsaudiAccountHomeLink           ;style='pointer-events: none'; "My Account"          ;                                   
+                               ;                         ; InvestsaudiAccountProfileLink        ; Account Profile Link         ; /my-account/profile         ; InvestsaudiAccountProfileLink        ;                            ; "Profile"             ;                                   
+                               ;                         ; InvestsaudiAccountUpdatePasswordLink ; Account Update Password Link ; /my-account/update-password ; InvestsaudiAccountUpdatePasswordLink ;                            ; "Password"            ;                                   
+                               ;                         ; InvestsaudiAccountSuportTicketsLink  ; Account Suport Tickets Link  ; /my-account/support-tickets ; InvestsaudiAccountSuportTicketsLink  ;                            ; "My Service Requests" ;                                   
+
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true] ; $contentCV[unique=true] ; name       ; links(&linkRef)                                                          ; &nodeRef        
+                                ; MyAccountNavNode ;                         ; My Account ; InvestsaudiAccountUpdatePasswordLink,InvestsaudiAccountSuportTicketsLink ; MyAccountNavNode
+
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true]          ; $contentCV[unique=true] ; name               ; parent(uid, $contentCV) ; children(uid, $contentCV) ; links(&linkRef)            ; &nodeRef                 
+                                ; InvestsaudiAccountNavNode ;                         ; My Account Wrapper ; SiteRootNode            ; MyAccountNavNode          ; InvestsaudiAccountHomeLink ; InvestsaudiAccountNavNode
+
+INSERT_UPDATE AccountNavigationComponent ; $contentCV[unique=true] ; uid[unique=true]                      ; name                              ; navigationNode(&nodeRef)  ; styleClass ; &componentRef                        
+                                         ;                         ; InvestsaudiAccountNavigationComponent ; Account Left Navigation Component ; InvestsaudiAccountNavNode ;            ; InvestsaudiAccountNavigationComponent
+
+UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true] ; cmsComponents(uid, $contentCV)       
+                   ;                         ; HeaderLinksSlot  ; InvestsaudiAccountNavigationComponent
+
+#####              
+# Register Page Side Content
+#####              
+
+INSERT_UPDATE CMSParagraphComponent ; $contentCV[unique=true] ; uid[unique=true]             ; name                            ; content[lang=$lang]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                                    ;                         ; RegisterSideContentParagraph ; Register Side Content Paragraph ; "<h1 class=""headline accountLogin-content-headline"">Invest Saudi Brand Support Unit (BSU)</h1><p class=""headline accountLogin-content-headline_sub"">SAGIA has built ""Invest Saudi"" Brand Support Unit (BSU) to serve as a centre of excellence to deliver its mission of</p><p><em><strong>""Promoting Saudi Arabia as a leading investment destination by unifying content and maximizing capacity to deliver world-class marketing and communications activities under a single national promotional brand"".</strong></em></p><p>BSU aims to:</p><ul class=""dottedList dottedList_green""><li class=""dottedList-item""><h4><strong>UNIFY</strong></h4>The BSU will unify the investment promotion and marketing activities, namely, Content &amp ; Capacity Services.</li><li class=""dottedList-item""><h4><strong>ACTIVATE</strong></h4>Stakeholders will be able to access, collaborate and utilize 20+ services.</li><li class=""dottedList-item""><h4><strong>OPTIMIZE</strong></h4>Provide continuous improvement to our Stakeholder via BSU..</li></ul>"
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]                    ; name              ; cmsComponents(uid, $contentCV)
+                          ;                         ; LeftContentSlot-SecuredRegisterPage ; Left Content Slot ; RegisterSideContentParagraph  
+
+
+
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]                ; position[unique=true] ; page(uid,$contentCV)[unique=true] ; contentSlot(uid,$contentCV)[unique=true]
+                                 ;                         ; LeftContent-SecuredRegisterPage ; LeftContentSlot       ; SecureCustomerPortalRegisterPage  ; LeftContentSlot-SecuredRegisterPage     
+
+#####                            
+# Login Page Side Content        
+#####                            
+
+INSERT_UPDATE CMSParagraphComponent ; $contentCV[unique=true] ; uid[unique=true]          ; name                         ; content[lang=$lang]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                                    ;                         ; LoginSideContentParagraph ; Login Side Content Paragraph ; "<h1 class=""headline accountLogin-content-headline"">Invest Saudi Brand Support Unit (BSU)</h1><p class=""headline accountLogin-content-headline_sub"">SAGIA has built ""Invest Saudi"" Brand Support Unit (BSU) to serve as a centre of excellence to deliver its mission of</p><p><em><strong>""Promoting Saudi Arabia as a leading investment destination by unifying content and maximizing capacity to deliver world-class marketing and communications activities under a single national promotional brand"".</strong></em></p><p>BSU aims to:</p><ul class=""dottedList dottedList_green""><li class=""dottedList-item""><h4><strong>UNIFY</strong></h4>The BSU will unify the investment promotion and marketing activities, namely, Content &amp ; Capacity Services.</li><li class=""dottedList-item""><h4><strong>ACTIVATE</strong></h4>Stakeholders will be able to access, collaborate and utilize 20+ services.</li><li class=""dottedList-item""><h4><strong>OPTIMIZE</strong></h4>Provide continuous improvement to our Stakeholder via BSU..</li></ul>"
+
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]      ; name                                 ; active ; cmsComponents(uid, $contentCV) ;  ;  ;  
+                          ;                         ; LeftContentSlot-login ; Left Content Slot for Customer Login ; true   ; LoginSideContentParagraph      ;  ;  ;  
+
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]      ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='login'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; LeftContentSlot-login ; LeftContentSlot       ;                                                    ; LeftContentSlot-login                    ;  ;  ;  ;  
+
+
+#####                            
+# Rest Password Page Side Content        
+#####                            
+
+INSERT_UPDATE CMSParagraphComponent ; $contentCV[unique=true] ; uid[unique=true]          ; name                         ; content[lang=$lang]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                                    ;                         ; ResetPasswordSideContentParagraph ; Reset Password Side Content Paragraph ; "<h1 class=""headline accountLogin-content-headline"">Rest your password to activate you account</h1><p class=""headline accountLogin-content-headline_sub"">SAGIA has built ""Invest Saudi"" Brand Support Unit (BSU) to serve as a centre of excellence to deliver its mission of</p><p><em><strong>""Promoting Saudi Arabia as a leading investment destination by unifying content and maximizing capacity to deliver world-class marketing and communications activities under a single national promotional brand"".</strong></em></p>"
+
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]      ; name                                 ; active ; cmsComponents(uid, $contentCV) ;  ;  ;  
+                          ;                         ; LeftContentSlot-updatePassword ; Left Content Slot for Customer reset ; true   ; ResetPasswordSideContentParagraph      ;  ;  ;  
+
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]      ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='updatePassword'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; LeftContentSlot-updatePassword ; LeftContentSlot       ;                                                    ; LeftContentSlot-updatePassword                    ;  ;  ;  ;  
+
+
+#####                            
+# My account content page        
+#####                            
+
+INSERT_UPDATE ContentPage ; $contentCV[unique=true] ; uid[unique=true] ; name         ; masterTemplate(uid,$contentCV) ; label  ; defaultPage[default='true'] ; approvalStatus(code)[default='approved'] ; homepage[default='false'] ;  
+                          ;                         ; account          ; Account Page ; AccountPageTemplate            ; account
+
+INSERT_UPDATE JspIncludeComponent ; $contentCV[unique=true] ; uid[unique=true]     ; name                     ; page                                                   
+                                  ;                         ; AccountPageComponent ; "Account Page Component" ; /WEB-INF/views/responsive/pages/account/accountPage.jsp
+
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]        ; name              ; cmsComponents(uid, $contentCV)
+                          ;                         ; BodyContent-AccountPage ; Left Content Slot ; AccountPageComponent          
+
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]               ; position    ; page(uid, $contentCV) ; contentSlot(uid, $contentCV)
+                                 ;                         ; BodyContentForPage-AccountPage ; BodyContent ; account               ; BodyContent-AccountPage     
+
+INSERT_UPDATE CMSParagraphComponent ; $contentCV[unique = true] ; uid[unique = true]                                       ; content[lang = en]        ;                  
+                                    ;                           ; SagiaCMSParagraphTermsAndConditionsRegistrationComponent ; "<p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:27.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; '><span style='font-size:24px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#343A4A ; '>Terms and Conditions</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>&nbsp ; </span></strong></p><ol style='list-style-type: decimal ; '><li><strong><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>All materials and information on this portal are educational and non-profitable</span></strong></li><li><strong><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>English is the primary language for using the portal and benefiting from all materials published on it.</span></strong></li><li><strong><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>The portal includes various e-participation tools, such as forums, polls, comments, blogs, voting system, personal contributions, and toll free services.</span></strong></li><li><strong><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>The Portal administration has drawn up a set of criteria and restrictions on the use of e-participation to achieve the highest benefit from the principle of e-participation. By entering, you accept these criteria and restrictions.</span></strong></li><li><strong><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>Invest Saudi reserves the right to delete or refuse any comment at any time for any reason.</span></strong></li><li><strong><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>Should you have any question regarding privacy and disclaimer statements, please contact us through the following e-mail&nbsp ; </span></strong></li></ol><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>&nbsp ; </span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:27.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; '><span style='font-size:24px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#343A4A ; '>Privacy Policy</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>&nbsp ; </span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:19px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>Personal Data</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>Information that is related to a person. Examples of such data would be your name, address, email address, IP address, and phone number.</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>What information do we collect through our website?</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>We collect information from you when you register on our site or fill out a form. When ordering or registering on our site, as appropriate, you may be asked to enter your name or e-mail address. You may, however, visit our site anonymously. We collect your cookies information and your IP Address. In addition to storing any information you will in any “Contact Us” form on our website, with information like your First Name, Last Name, Company Name, Telephone Number, Email Address. On our e-Services portal within our Sagia.gov.sa website, we also store other information submitted by you in order to process Licensing Services like: entity details &amp ; authenticated contact person details (Mobile Number, Email Address, Full Name).</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>What do we use your information for?</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>Any of the information we collect from you may be used in one of the following ways:</span></p><ul><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>To personalize your experience (your information helps us to better respond to your individual needs)</span></li><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>To improve our website (we continually strive to improve our website offerings based on the information and feedback we receive from you)</span></li><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>To improve customer service (your information helps us to more effectively respond to your customer service requests and support needs)</span></li><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>To process transactions and responses: your information, whether public or private, will not be sold, exchanged, transferred, or given to any other entity for any reason whatsoever, without your consent, other than to other governmental agencies and ministries to provide better service to your investments and develop the investment environment in Saudi Arabia</span></li><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>To send periodic e-mails (especially for those subscribed to newsletters): to the email address you provide for order processing, may be used to send you information and updates to your order, in addition to receiving occasional SAGIA news, updates, related product or service information, etc.</span></li><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>To administer promotional alerts, surveys, or other site features</span></li><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>Knowing your IP Address helps us improve our website, considering the nature of SAGIA’s role as the Investment Promotional Agency of Saudi Arabia, knowing the website visitors’ locations provide very important data to customize the experience.</span></li></ul><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:17.25pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; '><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>Who may we share the processed data with?</span></strong></p><ul><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>Data processors: IT, Marketing</span></li><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>State authorities</span></li></ul><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:17.25pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; '><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>Where do we process your personal data?</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>We always aim to process your data in Saudi Arabia. However, data may in some situations be transferred to suppliers or subcontractors outside of the Kingdom.</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>How long do we store your personal data?</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>We never save your data for longer than is necessary for their respective purposes.</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>What are your rights as a registered person?</span></strong></p><ul><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>Right of access. You have the right to request a copy of the data we have processed.</span></li><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>The right to amend. You have the right to correct or complete personal information.</span></li><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>The right to deletion. You have the right to request that we delete the personal data we process about you.</span></li><li><span style='font-family:&quot ; Sakkal Majalla&quot ;  ; font-size:12.0pt ; '>The right to object to certain types of processing. For example, avoid direct marketing.</span></li></ul><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:17.25pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; '><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>How do we protect your information?</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>We implement a variety of security measures to maintain the safety of your personal information, in addition to that, all entered passwords are encrypted.</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>What type of information do we use for our analytical reports?</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>We use Google Analytical Report for website analytics, which get information from IPs, information displayed in our analytical reports would show: country, city, device, visited pages, session time per visited page. These reports are solely used internally for analytical and website development purposes.</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>Do we use cookies?</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>Yes, we do.</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>Third Party Links</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>Occasionally, we may include or offer third party services (most of whom are other Saudi Arabian governmental agencies or ministries), these third party websites have separate and independent privacy policies. We therefore encourage you to read these Privacy Policies, knowing that they are not a part of this particular one, neither contextually nor legally.</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>Online Privacy Policy Only</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>This online privacy policy applies only to information collected through our website and not to information collected offline.</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>Your Consent</span></strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>By using our site, you consent to our privacy policy.</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>Changes to our Privacy Policy</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>If we decide to change our privacy policy, we will post those changes on this page indicating the date those changes took place. This policy was last modified on 19/07/2018</span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>Contacting Us</span></strong></p><p style='margin-top:0cm ; margin-right:0cm ; margin-bottom:.0001pt ; margin-left:0cm ; line-height:18.75pt ; font-size:15px ; font-family:&quot ; Calibri&quot ; ,sans-serif ; text-align:justify ; '><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>If there are any questions regarding this Privacy Policy, you may contact us through</span><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span><a href='https://investsaudi.sa/en/contact/'><strong><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#003300 ; '>Contact</span></strong></a><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>&nbsp ; </span><span style='font-size:16px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>page</span><span style='font-size:18px ; font-family:&quot ; Sakkal Majalla&quot ;  ; color:#7B838C ; '>.</span></p>"
+
+# Category fields                   
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; displayName[lang = en] ; type(code) ; localized[default=false] ; multiValue[default=true] ; categoryField[default=true] ; useForSpellchecking[default=false] ; useForAutocomplete[default=false] ; fieldValueProvider        ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryBoost
+                                  ; $indexedType                             ; allCategoriesName ; Categories             ; string     ;                          ;                          ;                             ;                                    ;                                   ; categoryNameValueProvider ;                               ;                     ;                         ;               ;                              ;                   
+
+
+# Facet search query properties   
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider ; facetSortProvider ; facetTopValuesProvider ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$indexedType]
+                                      ; allCategoriesName:$indexedType                                  ; true                ; Refine          ; -9999    ;                          ;                   ;                        ;                                 ;                                                                                              
+                                      
+                                      
+#Disable Price facet                                   
+UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true,default=$indexedType] ; name[unique=true] ; visible ; facet 
+#                           ;                                                               ; price             ; false   ; false ;  
+                           ;                                                               ; allCategories     ; false   ; false ;  
+                           ;                                                               ; allCategoriesName ; true    ; true  ;  
+                           
+#MEDIA                     
+INSERT_UPDATE MediaFolder ; qualifier[unique=true] ; path[unique=true]    
+                          ; securedProductContent  ; securedProductContent
+
+
+
+# Category Pages          
+UPDATE CategoryPage ; $contentCV[unique = true] ; uid[unique = true] ; defaultPage ;  
+                    ;                           ; productGrid        ; true        ;  
+                          
+
+
+#################### Start Post Go-Live ###########################
+INSERT_UPDATE Usergroup;uid[unique=true];groups(uid);locname[lang=en];
+;BDUserGroup;b2bgroup;BDUserGroup Customer Group;
+;MarCommUserGroup;b2bgroup;MarCommUserGroup Customer Group;
+
+#PIF Workflow Requirement.
+INSERT_UPDATE UserGroup;UID[unique=true];locname[en];groups(uid);description;
+;WOAdminGroup;Workflow Admin Permissions;BDUserGroup,b2badmingroup; User for manange child org user for parent
+;WOBDUserGroup;Workflow Business Development ; BDUserGroup;For user who can create opportunity which will be submitted to approver
+;WOAGUserGroup;WorkflowOpportunityApproverGroup;BDUserGroup,b2badmingroup; For user who can apporve opportunity
+
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true]  ; $contentCV[unique=true] ; name                      ; parent(uid, $contentCV)    ; links(&linkRef) ; &nodeRef
+                                ; ContentHubNavNode ;                         ; Content Hub Category      ; investsaudiCategoryNavNode ;                 ; ContentHubNavNode
+                                ; ServicesNavNode   ;                         ; Services Category         ; investsaudiCategoryNavNode ;                 ; ServicesNavNode  
+                                ; MeetingsNavNode   ;                         ; Virtual Meetings Category ; investsaudiCategoryNavNode ;                 ; MeetingsNavNode  
+                                ; CalenderNavNode   ;                         ; Calender Category         ; investsaudiCategoryNavNode ;                 ; CalenderNavNode  
+                                ; DirectoryNavNode  ;                         ; Directory Category        ; investsaudiCategoryNavNode ;                 ; DirectoryNavNode  
+                                ; OpportunitiesNavNode   ;                         ; Opportunities Category         ; investsaudiCategoryNavNode ;                 ; OpportunitiesNavNode  
+
+INSERT_UPDATE CMSNavigationEntry ; uid[unique=true]       ; $contentCV[unique=true] ; name                              ; navigationNode(&nodeRef) ; item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV) ;
+                                 ; OpportunitiesNavNodeEntry   ;                         ; Opportunities Navigation Node Entry    ; OpportunitiesNavNode          ; OpportunitiesCategoryLink                                   ;
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]       ; name                      ; url                                         ; &linkRef               ; &componentRef         ; target(code)[default='sameWindow']
+
+                               ;                         ; ContentHubCategoryLink ; Content Hub Category Link ; /Investsaudi-Catalogue/Content-Hub/c/100000 ; ContentHubCategoryLink ; ContentHubCategoryLink
+                               ;                         ; ServicesCategoryLink   ; Services Category Link    ; /my-account/support-tickets                 ; ServicesCategoryLink   ; ServicesCategoryLink  
+                               ;                         ; MeetingsCategoryLink   ; Meetings Category Link    ; "https://meeting.sagia.gov.sa/orion/joinmeeting.do?MTID=eead1941e2ce5215fbde0fdbccda58e3&RT=MiMzMg%3D%3D"                 ; MeetingsCategoryLink   ; MeetingsCategoryLink  ; newWindow
+                               ;                         ; CalenderCategoryLink   ; Calender Category Link    ; "/events"                 ; CalenderCategoryLink   ; CalenderCategoryLink  ; sameWindow
+                               ;                         ; DirectoryCategoryLink  ; Directory Category Link   ;"/contact/"                 ; DirectoryCategoryLink  ; DirectoryCategoryLink ; sameWindow
+							   ;                 ; OpportunitiesCategoryLink   ; Opportunities Category Link    ; /my-account/support-tickets                 ; OpportunitiesCategoryLink   ; OpportunitiesCategoryLink
+
+
+UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]          ; linkName[lang=en]  
+                        ;                         ; OpportunitiesCategoryLink      ; "MY OPPORTUNITIES"
+
+
+INSERT_UPDATE RotatingImagesComponent ; $contentCV[unique=true] ; uid[unique=true]                ; name                                 ; banners(uid, $contentCV)                                                                                              ; &componentRef  
+                                      ;                         ; categoryRotatingBannerComponent ; "Category Rotating Banner Component" ; categoryBanner01,categoryBanner02,categoryBanner03,categoryBanner04,categoryBanner05,categoryBanner06 ; categoryRotatingBannerComponent
+
+#####                                 
+# Product Carousel                    
+#####                                 
+
+INSERT_UPDATE ProductCarouselComponent ; $contentCV[unique=true] ; uid[unique=true]         ; name                         ; products(code, $productCV)                ; popup ; title[lang=$lang]    ; &componentRef                 
+                                       ;                         ; productCarouselComponent ; "Product Carousel Component" ; 200100,200101,200102,200103,200104,200105 ; false ; "INVEST SAUDI'S NEWLY UPDATED CONTENT";productCarouselComponent
+
+#####                                  
+# Category Carousel Title              
+#####                                  
+
+INSERT_UPDATE CMSParagraphComponent ; $contentCV[unique=true] ; uid[unique=true]               ; name                              ; content[lang=$lang]    ; &componentRef                                                             
+                                    ;                         ; CategoryCarouselTitleParagraph ; Category Carousel Title Paragraph ; "<h1 class='category-carousel-title'>INVEST SAUDI'S CONTENT & SERVICE CATALOGS</h1>" ;CategoryCarouselTitleParagraph
+
+INSERT_UPDATE CMSUserGroupRestriction;$contentCV[unique=true];uid[unique=true];name;userGroups(uid);includeSubgroups;components(&linkRef)
+;;BDUserGroupRestriction;Support Services Restriction;BDUserGroup;true;OpportunitiesCategoryLink
+;;MarComUserGroupRestriction;MarCom User Group Restriction;MarCommUserGroup;true;ContentHubCategoryLink,ServicesCategoryLink,MeetingsCategoryLink,CalenderCategoryLink,DirectoryCategoryLink
+
+UPDATE CMSUserGroupRestriction;$contentCV[unique=true];uid[unique=true];name;userGroups(uid);includeSubgroups;components(&componentRef)[mode=append]
+;;MarComUserGroupRestriction;MarCom User Group Restriction;MarCommUserGroup;true;categoryRotatingBannerComponent,productCarouselComponent,CategoryCarouselTitleParagraph
+
+#################### End Post Go-Live ###########################
+
+
+#####
+# Register Page tabs redesign
+#####
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;LeftContentSlot02;;;logo
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;content[lang=$lang]
+
+;;RegisterSideContentParagraph;Register Side Content Paragraph;"<h1 class=""headline accountLogin-content-headline"">Investment Opportunity Portal</h1><p class=""headline accountLogin-content-headline_sub"">Invest Saudi is a communication platform that serves all government entities with regards to promoting the Kingdom as a future-ready investment destination, thus contributing to realizing Vision 2030. Invest Saudi is tasked with promoting the enormous investment opportunities in Saudi Arabia to the world and strengthening the Kingdom’s investment environment image.</strong></em></p><p class=""headline accountLogin-content-headline_sub"">In order to submit you investment to Invest Saudi, please follow the following steps:</><ul class=""dottedList dottedList_green""><li class=""dottedList-item""><h4>Complete your Registration.</h4></li><li class=""dottedList-item""><h4>Fill and Submit the Opportunity Submission Form</h4></li></ul>"
+;;RegisterSideContentParagraph02;Register Side Content Paragraph02;"<h1 class=""headline accountLogin-content-headline"">Invest Saudi Brand Support Unit (BSU)</h1><p class=""headline accountLogin-content-headline_sub"">SAGIA has built ""Invest Saudi"" Brand Support Unit (BSU) to serve as a centre of excellence to deliver its mission of</p><p><em><strong>""Promoting Saudi Arabia as a leading investment destination by unifying content and maximizing capacity to deliver world-class marketing and communications activities under a single national promotional brand"".</strong></em></p><p>BSU aims to:</p><ul class=""dottedList dottedList_green""><li class=""dottedList-item""><h4><strong>UNIFY</strong></h4>The BSU will unify the investment promotion and marketing activities, namely, Content &amp ; Capacity Services.</li><li class=""dottedList-item""><h4><strong>ACTIVATE</strong></h4>Stakeholders will be able to access, collaborate and utilize 20+ services.</li><li class=""dottedList-item""><h4><strong>OPTIMIZE</strong></h4>Provide continuous improvement to our Stakeholder via BSU..</li></ul>"
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;cmsComponents(uid, $contentCV)
+;;LeftContentSlot-SecuredRegisterPage;Left Content Slot 01;RegisterSideContentParagraph
+;;LeftContentSlot02-SecuredRegisterPage;Left Content Slot 02;RegisterSideContentParagraph02
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true]
+;;LeftContent-SecuredRegisterPage;LeftContentSlot;SecureCustomerPortalRegisterPage;LeftContentSlot-SecuredRegisterPage
+;;LeftContent-SecuredRegisterPage02;LeftContentSlot02;SecureCustomerPortalRegisterPage;LeftContentSlot02-SecuredRegisterPage
+
+UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;;LoginPageTemplate;$jarResourceCms/structure-view/structure_loginPageTemplate.vm

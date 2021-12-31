@@ -1,0 +1,23 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/REGISTER_USER_ENT('')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/REGISTER_USER_ENT('')",
+          "type": "ZQEEMAH_SRV.REGISTER_USER"
+        },
+        "Userid": "GIGIKENT01",
+        "Ref_id": "6000003629",
+        "Password": "123456",
+        "Email": "gigi.kent01@sap.com",
+        "Company": "SAP RO",
+        "Country": "RO",
+        "CcodeMob": "40",
+        "ContNumber": "40721437497",
+        "ContPersname": "Gigi Kent",
+        "Return": "Successfully Registered"
+      }
+    ]
+  }
+}

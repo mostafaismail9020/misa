@@ -1,0 +1,156 @@
+
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProvinceDetailsTemplate
+
+$page = province
+$pageName = Invest in Saudi Arabia
+$pageTitleAr = $pageName
+$pageLabel = /province
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+
+########################################################################
+
+
+INSERT_UPDATE Media	   ; code[unique = true]                      	 				; realFileName                    					; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 			  ; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+			  
+					   ; makkah-banner-image.png            		 				; makkah-banner-image.png    						; $siteResource/makkah-banner-image.png                                         		  ;                 image/png                ;                                          ; ""     ;
+					   ; makkah-logistics.png                       		 		; makkah-logistics.png               				; $siteResource/makkah-logistics.png                                                  	  ;                 image/png                ;                                          ; ""     ;
+					   ; makkah-media.png                       					; makkah-media.png                      		    ; $siteResource/makkah-media.png                                                          ;                 image/png                ;                                          ; ""     ;
+					   ; makkah-mining.png                 							; makkah-mining.png                       			; $siteResource/makkah-mining.png                                                         ;                 image/png                ;                                          ; ""     ;
+					   ; makkah-religioustourism.png                				; makkah-religioustourism.png                   	; $siteResource/makkah-religioustourism.png                                               ;                 image/png                ;                                          ; ""     ;
+					   ; makkah-trade.png                            				; makkah-trade.png                  				; $siteResource/makkah-trade.png                                                      	  ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-province-map.png                        			; makkah-province-map.png                       	; $siteResource/makkah-province-map.png                                                   ;                 image/png                ;                                          ; ""     ;   
+																					  
+					   ; makkah-active-factories.png                 				; makkah-active-factories.png                   	; $siteResource/makkah-active-factories.png                                               ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-chambers-of-commerce.png                      	 	; makkah-chambers-of-commerce.png              		; $siteResource/makkah-chambers-of-commerce.png                                           ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-dams.png             								; makkah-dams.png                 					; $siteResource/riyadh-chambers-of-commerce.png                                           ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-hospitals.png                         	 			; makkah-hospitals.png                  			; $siteResource/makkah-dams.png                                                     	  ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-hotels.png                     	 					; makkah-hotels.png              					; $siteResource/makkah-hotels.png                                                  		  ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-industrial-city.png                    		 		; makkah-industrial-city.png                		; $siteResource/makkah-industrial-city.png                                                ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-international-airport.png                  			; makkah-international-airport.png                  ; $siteResource/makkah-international-airport.png                                          ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-population.png                  	 				; makkah-population.png                     		; $siteResource/makkah-population.png                                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-population-growth.png           	 				; makkah-population-growth.png                 		; $siteResource/makkah-population-growth.png                                        	  ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-private-sector-employees.png         				; makkah-private-sector-employees.png               ; $siteResource/makkah-private-sector-employees.png                                       ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-roads-length.png                   	 				; makkah-roads-length.png            				; $siteResource/makkah-roads-length.png                                                	  ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-seaport.png                       					; makkah-seaport.png                   				; $siteResource/makkah-seaport.png                                                        ;                 image/png                ;                                          ; ""     ;   					
+					   ; makkah-sport-city.png				 					  	; makkah-sport-city.png								; $siteResource/makkah-sport-city.png											  		  ;                 image/png                ;											; ""	 ;
+					   ; makkah-stadiums.png				 			 			; makkah-stadiums.png								; $siteResource/makkah-stadiums.png											  			  ;                 image/png                ;											; ""	 ;
+					   ; makkah-towns.png				 			 				; makkah-towns.png									; $siteResource/makkah-towns.png											  			  ;                 image/png                ;											; ""	 ;
+																					  
+																					  
+					   ; makkah-abundance-natural-resources.png            			; makkah-abundance-natural-resources.png           	; $siteResource/makkah-abundance-natural-resources.png                                    ;                 image/png                ;                                          ; ""     ;   
+					   ; makkah-jeddah-port.png       								; makkah-jeddah-port.png             				; $siteResource/makkah-jeddah-port.png                                        			  ;                 image/png                ;                                          ; ""     ;   	
+					   ; makkah-king-abdullah-port.png        	 					; makkah-king-abdullah-port.png              		; $siteResource/makkah-king-abdullah-port.png                                      		  ;                 image/png                ;                                          ; ""     ;   	
+					   ; makkah-religious-cultural-tourism.png   				    ; makkah-religious-cultural-tourism.png          	; $siteResource/makkah-religious-cultural-tourism.png                                     ;                 image/png                ;                                          ; ""     ;   	
+					   ; makkah-several-economic-cities-special-zones.png         	; makkah-several-economic-cities-special-zones.png  ; $siteResource/makkah-several-economic-cities-special-zones.png                          ;                 image/png                ;                                          ; ""     ;   	
+					   ; makkah-strategic-location.png              				; makkah-strategic-location.png                    ; $siteResource/makkah-strategic-location.png                                            ;                 image/png                ;                                          ; ""     ;   	
+					   ; makkah-strong-business-support-companies.png              	; makkah-strong-business-support-companies.png      ; $siteResource/makkah-strong-business-support-companies.png                              ;                 image/png                ;                                          ; ""     ;   	
+					  
+					 
+					   ; makkah-six-sites.png               						; makkah-six-sites.png                     			; $siteResource/makkah-six-sites.png                                             ;                 image/png                ;                                          ; ""     ;   	
+	
+
+
+
+	
+#########################################################################
+
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	;$contentCV		; bannerHeader[lang=ar]			; bannerText[lang=ar]																															    													; bannerImage (code, $contentCV)	; keyFactsHeader [lang = ar]		 ; keyStrengthsHeader [lang = ar] 	 ; opportunitiesHeader [lang = ar]		
+							   ; makkah		 		;				; مكّة المكرّمة			    ;   										; makkah-banner-image.png		    ; اهم المعلومات والأرقام	 			 ; المزايا المناطقية		 			 ; فرص استثمارية																																																								
+	
+	
+
+#########################################################	
+	
+
+INSERT_UPDATE ProvisionStrategicSectorComponent ; uid[unique=true]	 		 ;  $contentCV  ; headerText[lang = ar]      ; imageIcon  (code, $contentCV)     	 ; &componentRef
+											    ; makkah-logistics			 ; 				; الخدمات اللوجستية				  	 ; makkah-logistics.png       	   	   	 ; makkah-logistics			
+                                                ; makkah-media	 			 ;              ;  الإعلام	           			 ; makkah-media.png                      ; makkah-media	 		
+                                                ; makkah-mining	 			 ;              ; التعدين                     ; makkah-mining.png                     ; makkah-mining	 		
+                                                ; makkah-religioustourism	 ;              ; السياحة الدينية			 ; makkah-religioustourism.png           ; makkah-religioustourism
+                                                ; makkah-trade			 	 ;              ; التجارة			             ; makkah-trade.png                      ; makkah-trade			 
+	 
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 			;  $contentCV  ; key[lang = ar] ; value[lang = ar] 
+										; makkah-strategic-population		;			   ; 9M		; التعداد السكاني
+										; makkah-strategic-landmass		;			   ; 137,000 كم2  	; المساحة
+	 
+	 
+
+INSERT_UPDATE ProvisionStrategicDetailsComponent ; uid[unique=true]					; $contentCV   	; sectorHeader	[lang = ar]	; backgroundImage (code, $contentCV)   	; sectors(&componentRef) 															; longDescription[lang = ar]																																																																																																																																																					         ; localizedStats (uid, $contentCV)   				   ; &componentRef																																																																																																											
+												 ; makkah-strategic-component		;          		; القطاعات الاستراتيجية			; makkah-province-map.png				; makkah-logistics,makkah-media,makkah-mining,makkah-religioustourism,makkah-trade	; مكّة المكرمة هي مدينة الإسلام الأكثر قدسية وهي جوهر الهوية المسلمة، نظرًا لوجود المسجد الحرام والكعبة المشرفة فيها. تشكل المواسم الدينية مصدر دخل أساسي لأهالي المنطقة إذ يزورها ملايين الحجاج سنويا من مختلف دول العالم على مدار السنة لأداء فروض الحج والعمرة. إلى جانب الأصول الدينية، للأصول الصناعية في مكّة إمكانات نمو كبيرة. إضافة إلى ذلك، ساهم توفّر شبكة من الطرق السريعة وسكك الحديد والمرافئ والمطارات بربط المدينة بالمناطق المجاورة وبباقي دول العالم. تضم منطقة مكة المكرمة مدينة جدّة ومدينة الملك عبدالله الاقتصادية على ساحل البحر الأحمر حيث تتقاطع أهم طرق الملاحة التي تمكنها من الوصول الى المستهلكين في الشرق الأوسط وشمال إفريقيا.		         ; makkah-strategic-population,makkah-strategic-landmass    ; makkah-strategic-component
+                             
+
+							 
+
+#######################################################	
+
+
+
+
+INSERT_UPDATE ProvinceKeyFactComponent ; uid[unique=true]	; $contentCV ; imageIcon (code, $contentCV) 					; headerText[lang = en]		   ;  text[lang = ar]										; &componentRef
+									   ; makkah-keyfacts1	;			 ; makkah-population.png        					; 9M		                   ;  التعداد السكاني										    ; makkah-keyfacts1   
+									   ; makkah-keyfacts2   ;            ; makkah-active-factories.png   					; 1,741		                   ;  عدد المصانع المنتجة الربع الثالث 2021                           ; makkah-keyfacts2 
+#									   ; makkah-keyfacts3   ;            ; makkah-population-growth.png             		; 2.70%		                   ;  annual population growth between 2013-2019			; makkah-keyfacts3 	
+									   ; makkah-keyfacts4   ;            ; makkah-international-airport.png              	; 2			                   ;  عدد المطارات الدولية وعدد 2 مطارات محلية                                ; makkah-keyfacts4 
+									   ; makkah-keyfacts5   ;            ; makkah-private-sector-employees.png              ; 1.7M		                   ;  اجمالي المشتغلين الربع الأول 					            ; makkah-keyfacts5 
+									   ; makkah-keyfacts6   ;            ; makkah-dams.png         							; 57		                   ;  عدد السدود  									                ; makkah-keyfacts6 
+									   ; makkah-keyfacts7   ;            ; makkah-industrial-city.png   					; 6			                   ;  عدد المدن الصناعية 					                    ; makkah-keyfacts7 
+									   ; makkah-keyfacts8   ;            ; makkah-hotels.png              					; 1,600			               ;  عدد الفنادق 						                        ; makkah-keyfacts8 
+									   ; makkah-keyfacts9   ;            ; makkah-seaport.png       						; 3		                   	   ;  عدد الموانئ                                                ; makkah-keyfacts9 
+									   ; makkah-keyfacts10  ;            ; makkah-chambers-of-commerce.png					; 3			               	   ;  عدد الغرف التجارية  					                ; makkah-keyfacts10
+									   ; makkah-keyfacts11  ;            ; makkah-sport-city.png            				; 3			                   ;  عدد المدن الرياضية 									        ; makkah-keyfacts11
+									   ; makkah-keyfacts12  ;            ; makkah-stadiums.png                 				; 1		                   	   ;  عدد الملاعب الرياضية 								                ; makkah-keyfacts12
+									   ; makkah-keyfacts13  ;            ; makkah-towns.png									; 17		                   ;  عدد المحافظات في المنطقة					                                ; makkah-keyfacts13
+									   ; makkah-keyfacts14  ;            ; makkah-roads-length.png							; 6,819		                   ;  مجموع أطوال الطرق -كم  										    ; makkah-keyfacts14
+									   ; makkah-keyfacts15  ;            ; makkah-hospitals.png				 				; 44 						   ;  عدد المستشفيات بمجموع 8,825 سرير                              ; makkah-keyfacts15
+		
+					   
+								
+######################################################
+
+INSERT_UPDATE ProvinceKeyStrengthComponent ; uid[unique=true]		; $contentCV      ; image (code, $contentCV)					          	; text[lang=ar]				                        											 ;&componentRef
+                     					 
+										   ; makkah-key-strength1 	;                 ; makkah-religious-cultural-tourism.png                   ;  السياحية الدينية والثقافية                                                        		 ; makkah-key-strength1
+                                           ; makkah-key-strength2 	;                 ; makkah-strategic-location.png                           ;  موقع استراتيجي على تقاطع طرق التجارة العالمية الأساسية                                               ; makkah-key-strength2
+                                           ; makkah-key-strength3	;                 ; makkah-jeddah-port.png                                  ;  مرفأ جدة ذات الطاقة الاستيعابية التي تصل إلى 130 مليون طن                                           ; makkah-key-strength3
+                                           ; makkah-key-strength4	;                 ; makkah-strong-business-support-companies.png            ; نظام قوي لدعم أعمال الشركات الخاصة                                            ; makkah-key-strength4
+                                           ; makkah-key-strength5 	;                 ; makkah-king-abdullah-port.png                           ;  ميناء الملك عبد الله، أول ميناء تجاري يملكه ويموله القطاع الخاص بالكامل في المملكة العربية السعودية        ; makkah-key-strength5
+		                                   ; makkah-key-strength6	;                 ; makkah-several-economic-cities-special-zones.png        ; العديد من المدن الاقتصادية والمناطق الاقتصادية الخاصة                                             ; makkah-key-strength6
+	                                       ; makkah-key-strength7 	;				  ; makkah-abundance-natural-resources.png 					; وفرة الموارد الطبيعية                                                                 ; makkah-key-strength7
+
+
+#####################################################
+
+
+INSERT_UPDATE ProvinceInvestmentOpportunitiesComponent	; uid[unique=true]		   ; $contentCV	  ; iconImage (code, $contentCV)   ; headerText[lang = ar]	 ; text[lang = ar]												; &componentRef
+													                                                                                                                                                        
+														; makkah-investment1	   ;			  ;	 makkah-six-sites.png		   ;  ستة مواقع 				 ;  تم تحديد   لتطوير محطات الطاقة الشمسية الكهروضوئية	; makkah-investment1
+	
+	
+#####################################################	
+	
+	
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]	; $contentCV		; strategicDetails(&componentRef) 			; keyFacts(&componentRef)  																																																														 ; keyStrengths(&componentRef) 																												  		    ; investmentOpportunities(&componentRef)
+							   ; makkah		 		;				    ; makkah-strategic-component 				; makkah-keyfacts1,makkah-keyfacts2,makkah-keyfacts4 ,makkah-keyfacts5 ,makkah-keyfacts6 ,makkah-keyfacts7 ,makkah-keyfacts8 ,makkah-keyfacts9 ,makkah-keyfacts10,makkah-keyfacts11,makkah-keyfacts12,makkah-keyfacts13,makkah-keyfacts14,makkah-keyfacts15   ; makkah-key-strength1,makkah-key-strength2,makkah-key-strength3,makkah-key-strength4,makkah-key-strength5,makkah-key-strength6,makkah-key-strength7   ; makkah-investment1
+	
+	
+

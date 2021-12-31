@@ -1,0 +1,575 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = en
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+								; ALUMINUM-CIRCLES-SLUG;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 60 Mn</span></li>
+  <li><span>Plant capacity: 20 ktpa</span></li>
+   <li><span>Circles & slugs are precision aluminum raw materials that are further processed using impact extrusion and punched out of aluminum sheet coils in different shapes.</span></li>
+</ul>
+"
+
+
+
+								; ALUMINUM-COMPOSITE-PANELS(ACP) ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 25 Mn</span></li>
+  <li><span>Plant capacity: 25 ktpa</span></li>
+    <li><span>ACP is derived from flat rolled color coated sheets as a primary feedstock, applications majorly in Building & construction..
+</span></li>
+</ul>
+"
+
+
+
+								; ALUMINUM-WELDING-WIRE ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 10 Mn</span></li>
+  <li><span>Plant capacity: 5 ktpa</span></li>
+    <li><span>Welding wire is manufactured through the continuous cast process from liquid aluminum</span></li>
+  <li><span>Aluminum Welding Wire is a low volume, high value product that can be set up as an additional facility within the alloy rod plant with in 5,000 sq.m, this increases plant scale and generally improves plant economics.</span></li>
+</ul>
+"
+
+
+								;CALCINED-PETROLEUM-COKE-(CPC)-CATHODE-BLOCK ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 100-120 Mn (CPC) & USD 10-15 Mn (Cathode Block)</span></li>
+  <li><span>Plant capacity: 250 ktpa (CPC) & 5ktpa (Cathode Block)</span></li>
+    <li><span>Calcined petroleum coke is a critical ingredient in the production for Aluminum, Titanium, Steel produced from Anode grade GPC. </span></li>
+  <li><span>Cathode blocks made from carbon & graphite applied for the production of primary aluminum. Cathode blocks are used in the lining of aluminum electrolysis cells. </span></li>
+</ul>
+"
+
+
+								; CAUSTIC-SODA;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size: USD 125 Mn</span></li>
+  <li><span>Plant capacity: 80 ktpa</span></li>
+    <li><span>Caustic soda is the chemical compound sodium hydroxide (NaOH), and its used in the manufacture of pulp and paper, alumina, soap and detergents, petroleum products and chemical production</span></li>
+  <li><span>The proposed investment is a strategic link to the increased upstream and downstream activity in the aluminum market, and proposed tie-up to the metals sector</span></li>
+</ul>
+"
+
+
+							; COLD-ROLLED-COILS(CRC)FACILITY;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span> Expected investment size of USD 250 Mn</span></li>
+  <li><span>Plant capacity: 1.5 mtpa</span></li>
+    <li><span>Raw material can be accessed locally</span></li>
+  <li><span>Cold rolling is the process starts by Sheet metal placed into large rollers, which compress it down and squeeze it under high pressure just below its ultimate tensile strength to strengthen the sheet.</span></li>
+</ul>
+"
+
+
+							; CONTAINER-GLASS  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 60 Mn</span></li>
+  <li><span>Plant capacity: 60 ktpa</span></li>
+    <li><span>Container Glass is used for packaging of food, beverages, cosmetics (perfumes/colored cosmetics), and Pharmaceuticals (syrups).</span></li>
+</ul>
+"
+
+
+							;COPPER-CASTING;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 45 Mn</span></li>
+  <li><span>Plant capacity: 10 ktpa</span></li>
+    <li><span>Copper scrap is locally available, while the Kingdom has plans to localize manufacturing of Cathode</span></li>
+  <li><span>Copper casting products is obtained after melting copper alloys in different molds to obtain the desired casted shapes.</span></li>
+</ul>
+"
+
+
+						;COPPER-CATHODE  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 1,000 Mn</span></li>
+  <li><span>Plant capacity: 300 ktpa</span></li>
+    <li><span>Copper Cathode is 99.99% pure form of copper, produced by smelting and electrolytic refining process.</span></li>
+</ul>
+"
+
+					;ELECTRICAL-STEEL;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size: USD 650 Mn</span></li>
+  <li><span>Plant capacity: 150 ktpa</span></li>
+    <li><span>PRaw material can be accessed locally</span></li>
+  <li><span>Electrical steel is an iron alloy tailored to produce specific magnetic properties resulting in low power loss per cycle, low core loss, and high permeability.</span></li>
+</ul>
+"
+
+				;GLASS-WOOL ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 160 Mn</span></li>
+  <li><span>Plant capacity: 50 ktpa</span></li>
+    <li><span>Glass wool is made from a mixture of natural and recycled glass.</span></li>
+  <li><span>Potential product portfolio:
+ Cured felts in rolls
+ Uncured felt in rolls with resin
+ Felts in rolls without resin
+ Rigid or semi-rigid boards
+ Superfine fiber</span></li>
+</ul>
+"
+
+				; GOLD-REFINERY  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 800 Mn</span></li>
+  <li><span>Plant capacity: 30 tpa</span></li>
+    <li><span>Gold is a valuable yellow metallic element that occurs naturally in pure form and is used especially in coins, jewelry, and electronics.</span></li>
+</ul>
+"
+
+			;HIGH-CARBON-STEEL-WIRE-RODS;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected Investment Size: USD 10 Mn</span></li>
+  <li><span>Plant capacity: 100 Ktpa</span></li>
+    <li><span>High carbon steel wire rods, referred to as “wire rods,” means semi-finished hot rolled 
+carbon steel products with a circular-cross section in the form of coiled wire</span></li>
+</ul>
+"
+
+
+			;HIGH-QUALITY-STEEL-WIRES-AND-CABLES;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected Investment Size: USD 100 Mn</span></li>
+  <li><span>Tire cords are used as reinforcing materials for tires, designed to keep tires in shape and to enhance durability</span></li>
+    <li><span>Steel Cable is several strands of metal wire 
+twisted into a helix forming a composite rope 
+such as Safety mesh which used in the 
+roads to prevent rocks from falling</span></li>
+</ul>
+"
+
+
+			; HOT-DIP-GALVANIZED(HDG)STEEL-COIL ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size: USD 180 Mn</span></li>
+  <li><span>Plant capacity: 800 ktpa with 3 different units
+ 2 Units to produce automotive grade 
+with a total capacity of 500 ktpa
+ 1 unit with a capacity of 300 ktpa for 
+other applications</span></li>
+  <li><span>Hot Dip Galvanizing is a process for steel to 
+be immersed into molten zinc, a series of 
+zinc-iron alloy layers are formed by a 
+metallurgical reaction between the iron and 
+zinc</span></li>
+</ul>
+"
+
+
+			; INTEGRATED-STEEL-PLATE-MILL;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size: USD 2.3 Bn</span></li>
+  <li><span>Plant capacity: 1.2 MMTPA</span></li>
+    <li><span>Heavy steel plate is defined as any steel 
+plate material that is 3-inches thick or 
+greater. Heavy plate is comprised of a 
+variety of grades. These grades are used in 
+various applications, including Maritime, 
+mining, energy and automotive.</span></li>
+</ul>
+"
+
+
+			;LIMESTONE-HYDRATED-LIME(INTEGRATED);                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size: USD 80 Mn</span></li>
+  <li><span>Plant capacity: 150 ktpa</span></li>
+    <li><span>Quick lime is produced from calcination of limestone tumps, Hydrated Lime is produced when limestone is subjected to extreme heat</span></li>
+</ul>
+"
+
+
+			;LIQUID-PITCH;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 45 Mn</span></li>
+  <li><span>Plant capacity: 60 ktpa</span></li>
+    <li><span>Liquid pitch is a product of coal tar pitch, 
+used as binder along with graphite in 
+electrode and smelting industries.</span></li>
+</ul>
+"
+
+       ; METALLURGICAL-POWDER ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 50 Mn</span></li>
+  <li><span>Plant capacity: 30 ktpa</span></li>
+    <li><span>Metal powder is a metal that is broken down 
+into a powder form with various processes 
+such as Gas Atomization, Liquid Atomization 
+& Centrifugal Atomization, major fast moving 
+powders are from Iron, Aluminum, Copper, 
+Nickel etc</span></li>
+</ul>
+"
+
+
+       ;PELLETIZATION-PLANT ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 950 Mn</span></li>
+  <li><span>Plant capacity: 7 MMTPA</span></li>
+    <li><span>The formation of raw iron ore pellets, also 
+known as pelletizing, has the objective of 
+producing pellets in an appropriate band of 
+sizes and with mechanical properties high 
+usefulness during the stresses of 
+transference, transport, and use</span></li>
+</ul>
+"
+
+       ;REFRACTORY-MATERIALS;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Develop a 70 ktpa capacity Refractory Fabrication manufacturing plant to cater for local and regional demand</span></li>
+  <li><span>Plant capacity: 70 ktpa</span></li>
+    <li><span>Proposed type: Detailed description: 
+1. Monolithics (Castables, Insulating 
+Castables, Ramming)
+2. Bricks: Insulation, Fire clay, Magnesia & 
+high alumina bricks.</span></li>
+	  <li><span>Proposed type: Detailed description: 
+1. Monolithics (Castables, Insulating 
+Castables, Ramming)
+2. Bricks: Insulation, Fire clay, Magnesia & 
+high alumina bricks.</span></li>
+</ul>
+"
+
+
+
+       ;SPECIALTY-GLASS ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 220 Mn</span></li>
+  <li><span>Plant capacity: 180 ktpa</span></li>
+</ul>
+"
+
+
+
+       ;STEEL-COATED-PLANT ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span> Expected investment size: USD 50 Mn</span></li>
+  <li><span>Plant capacity: 300 ktpa</span></li>
+    <li><span>A final coated and painted coil will be 
+obtained to be acquired by the end 
+customer. Preprinted products are used 
+mainly in construction for profiles for 
+cladding, roofing tiles etc. </span></li>
+  <li><span>They are also broadly used in automotive 
+industry, domestic appliance sector for white 
+goods production and small kitchen 
+appliances, as well as urban furniture</span></li>
+</ul>
+"
+
+
+
+       ; THIN-GAUGE-STEEL-SHEETS  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 660 Mn</span></li>
+  <li><span>Plant capacity: 375 ktpa</span></li>
+    <li><span>Raw material can be accessed locally</span></li>
+  <li><span>A sheet metal gauge indicates the standard 
+thickness of sheet metal for a specific 
+material. As the gauge number increases, 
+the material thickness decreases.</span></li>
+</ul>
+"
+
+
+       ; FELDSPAR;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span> Expected investment size: USD 60 Mn</span></li>
+  <li><span>Plant capacity: 50 ktpa</span></li>
+    <li><span>Feldspar is the name given to a group of minerals distinguished by the presence of alumina and silica (SiO2) in their chemistry. soda, potassium, or lime. It is the single most abundant mineral group on Earth.</span></li>
+</ul>
+"
+
+
+
+       ; ALUMINUM-CASTING-PLANT  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 15 Mn</span></li>
+  <li><span>Plant capacity: 25 ktpa</span></li>
+    <li><span>Raw Materials can be accessed locally</span></li>
+  <li><span>The die casting process forces molten aluminum into a steel die (mold) under pressure this manufacturing technique is normally used for high-volume production</span></li>
+</ul>
+"
+
+
+       ; ALUMINUM-DRILL-PIPES-(ADP);                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 75 Mn</span></li>
+  <li><span>Plant capacity: 25 ktpa</span></li>
+    <li><span>Raw material can be accessed locally</span></li>
+  <li><span>Aluminum Drill pipe is hollow, thin-walled, made from aluminum alloy piping that is used in drilling rigs, which offers high strength properties as well as high correction resistance.</span></li>
+</ul>
+"
+
+
+       ;BASALT-FIBER ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Plant capacity: 5 ktpa</span></li>
+  <li><span> Basalt recourses is available in the Kingdom to be further explored</span></li>
+    <li><span> Basalt fiber is a material made from extremely fine fibers of basalt with non corrosive properties and high strength</span></li>
+</ul>
+"
+
+
+       ; BASALT-MINE ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span> Expected investment size of USD 70 Mn</span></li>
+  <li><span>Basalt is mainly used for structural building materials such as bricks, tiles, foundations and sculptures, as well as within stonewalls for thermal purposes and rail tracks.</span></li>
+</ul>
+"
+
+
+
+       ;DOLOMITIC-LIME ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 60 Mn</span></li>
+  <li><span>Plant capacity: 275 ktpa basalt fiber</span></li>
+    <li><span>Dolime is used in conjunction with high calcium lime to form a basic slag over the hot metal during the oxygen blow in a BOF or during the meltdown and finishing in an electric arc furnace.</span></li>
+</ul>
+"
+
+
+
+       ;ALUMINIUM-RE-MELT-BILLETS-EXTRUSION(INTEGRATED)  ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size: USD 100Mn</span></li>
+  <li><span>Plant capacity: 65 ktpa</span></li>
+    <li><span>Billets are created directly through continuous casting</span></li>
+  <li><span>Extrusion is the process of shaping aluminum by forcing it to flow through a specifically shaped die</span></li>
+</ul>
+"
+
+
+
+       ; AUTOMOTIVE-BRAKE-CASTING ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span> Expected investment size of USD 450 Mn</span></li>
+  <li><span>Plant capacity: 75 ktpa</span></li>
+    <li><span>Automotive braking systems is a disc brake uses the calipers to squeeze pairs of pads against a disc or a 'rotor' to create friction and braking power. </span></li>
+</ul>
+"
+
+
+      ;AUTOMOTIVE-SHEET(INTEGRATED FLAT STEEL UNIT) ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 2,500 Mn</span></li>
+  <li><span>Plant capacity: 500 ktpa</span></li>
+    <li><span>Steel as a metal is a leader in automobile applications, Flat rolled steel sheets is a critical material in passenger car & commercial vehicle. </span></li>
+</ul>
+"
+
+
+
+
+       ;CATHODE-COLLECTOR-BAR-MANUFACTURER-CICB;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 30 Mn</span></li>
+  <li><span>Plant capacity: 10 ktpa</span></li>
+    <li><span>Copper insert Collector Bar (cylindrical or slotted) are beneficial to the cell for lowering metal velocity field, metal deformation, CVD, and longer cathode life.</span></li>
+</ul>
+"
+
+
+
+
+       ; ELECTRIC-RESISTANCE-WELDED-(ERW)-PIPE-TUBES ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected Investment Size: USD 75 Mn</span></li>
+  <li><span>Plant capacity: 100 KTPA</span></li>
+    <li><span>Electric Resistance Welded (ERW) pipes are steel sheet (HRC) converted into rolls and charge</span></li>
+</ul>
+"
+
+
+
+
+       ;FRAC-SAND(SAND PROPPANT)RESIN-COATED-SAND ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 40Mn</span></li>
+  <li><span>Plant capacity: 250 KTPA</span></li>
+    <li><span>Sand Proppants play a vital role in hydraulic fracturing by keeping fractures open & to the wellbore. </span></li>
+</ul>
+"
+
+
+
+
+       ; GRAPHITE-EV-METAL-MATERIALS ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 200 Mn</span></li>
+  <li><span>Plant capacity: Natural Graphite: 18 ktpa  Anode Active Material (AAM): 10 ktpa</span></li>
+  <li><span>Graphite is a soft black lustrous form of in lead pencils and electrolytic anodes, as a lubricant, and as a moderator in nuclear reactors.</span></li>
+</ul>
+"
+
+
+
+       ;MANGANESE-EV-METALS-MATERIALS;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 180 Mn</span></li>
+  <li><span>Plant capacity: 40 ktpa</span></li>
+    <li><span>Manganese is a hard brittle silvery metal, 
+often found in minerals in combination with 
+iron, it has different industrial alloy usage, 
+particularly in stainless steel manufacturing</span></li>
+</ul>
+"
+
+
+
+       ; NICKEL(NICKELCLASS1)-EV-METALS-MATERIALS;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 950 Mn</span></li>
+  <li><span>Plant capacity: 10 ktpa</span></li>
+    <li><span>Nickel is a naturally-occurring metallic 
+element with a silvery-white, shiny 
+appearance. It is the fifth-most common 
+element on earth</span></li>
+</ul>
+"
+
+
+
+
+       ; PERLITE ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size: USD 20Mn</span></li>
+  <li><span>Plant capacity: 30 KTPA</span></li>
+    <li><span>Perlite is an amorphous volcanic glass that 
+has a relatively high water content, occurs 
+naturally and expands when heated 
+sufficiently.</span></li>
+</ul>
+"
+
+
+
+
+       ; VANADIUM ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 50-60Mn</span></li>
+  <li><span>Plant capacity: 10 KTPA</span></li>
+    <li><span>Vanadium is a silver-grey, ductile & malleable 
+transition metal, added to crude steel as 
+ferrovanadium to enhance the steel’s 
+properties.</span></li>
+</ul>
+"
+
+
+
+       ;TITANIUM-MELT-AND-FORGE ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 500 Mn</span></li>
+  <li><span>Plant capacity: 6 ktpa (Ti Forge) </span></li>
+    <li><span>Titanium is considered as one of the 
+strongest metals able to withstand high 
+temperatures, and has a high resistance to 
+corrosion, qualities that make it ideal for 
+many industries, including defense, medical 
+and aerospace sectors.</span></li>
+</ul>
+"
+
+
+
+       ;PHOSPHOROUS-DERIVATIVES ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 200 Mn</span></li>
+  <li><span>Plant capacity: 
+Phosphorus Trichloride: 30 ktpa
+Phosphorus Pentoxide: 15 ktpa</span></li>
+    <li><span>Phosphorus Derivatives leading to a 
+stereoisomer of the original molecule by 
+interchanging two of the substituents of the 
+phosphorus center.</span></li>
+</ul>
+"
+
+
+       ; RARE-EARTH-ELEMENTS(REE);                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 400 Mn</span></li>
+  <li><span>Plant capacity: 10 ktpa</span></li>
+    <li><span>The rare earth elements (rare earth metals) 
+are group of 17 chemically similar metallic 
+elements</span></li>
+</ul>
+"
+
+
+       ;REACTIVE-SILICA(MICRONISED SAND) ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size: USD 20 Mn</span></li>
+  <li><span>Plant capacity: 50 KTPA </span></li>
+    <li><span>Reactive Silica or Micronised Silica is washed 
+and dried sand, micronised to different micron 
+sizes.</span></li>
+</ul>
+"
+
+
+       ; TECHNICAL-AMMONIUM-NITRATE(TAN) ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 500 Mn</span></li>
+  <li><span>Plant capacity: 200 ktpa</span></li>
+    <li><span> Technical Ammonium nitrate is a white 
+crystalline solid consisting of ions of 
+ammonium and nitrate used to manufacture 
+explosives and Nitrous Oxide (Medical use)</span></li>
+</ul>
+"

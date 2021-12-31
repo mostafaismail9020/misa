@@ -1,0 +1,11 @@
+INSERT_UPDATE SagiaAvailability;type(code)[unique=true];dayOfWeek(code)[unique=true];startTime;endTime;timezone
+                               ;Callback;Sunday;08:30;17:30;GMT+3
+                               ;Callback;Monday;08:30;17:30;GMT+3
+                               ;Callback;Tuesday;08:30;17:30;GMT+3
+                               ;Callback;Wednesday;08:30;17:30;GMT+3
+                               ;Callback;Thursday;08:30;17:30;GMT+3
+                               ;Livechat;Sunday;08:30;17:30;GMT+3
+                               ;Livechat;Monday;08:30;17:30;GMT+3
+                               ;Livechat;Tuesday;08:30;17:30;GMT+3
+                               ;Livechat;Wednesday;08:30;17:30;GMT+3
+                               ;Livechat;Thursday;08:30;17:30;GMT+3

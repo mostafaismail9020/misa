@@ -1,0 +1,47 @@
+$template = portalProvinceTemplate
+$page = province
+$pageName = Province
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pageLabel = /province
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+#$siteResource = $config-portalRedesignMediaResources
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]                      ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Province                                 ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+
+INSERT_UPDATE ProvinceComponent; uid[unique=true]           ; $contentCV ; bannerHeader              ; bannerText                                                                                                                                                                                                                    ; strategicDetails(&componentRef) ; keyFactsHeader        ; keyFacts(&componentRef) ; keyStrengthsHeader ;keyStrengths(&componentRef) ; opportunitiesHeader      ;investmentOpportunities(&componentRef)
+                               ; asir                       ;            ; ASIR PROVINCE             ; Asir’s vision to become a global tourist destination by offering a balance of authenticity and modernity based on the area’s uniqueness and natural resources.                                                                ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ; INVESTMENT OPPORTUNITIES ;
+                               ; riyadh                     ;            ; RIYADH PROVINCE           ; Riyadh is at the heart of Saudi Arabia. A modern capital city with a gleaming skyline and a thriving contemporary art and entertainment scene                                                                                 ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ;                          ;
+                               ; makkah                     ;            ; MAKKAH PROVINCE           ; Makkah’s vision To become an inspiring destination admired for its Islamic identity, its natural and cultural diversity, a leading economic hub, and a home for innovation and entrepreneurship.                              ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ; INVESTMENT OPPORTUNITIES ;
+                               ; medina                     ;            ; MEDINA                    ; Medina’s vision To become an Islamic hub driven by a vibrant and sustainable economy that achieves the well-being of the population and the aspirations of pilgrims.                                                          ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ;                          ;
+                               ; qassim                     ;            ; QASSIM PROVINCE           ; Qassim, often referred to as the Kingdom’s “food basket”                                                                                                                                                                      ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ; INVESTMENT OPPORTUNITIES ;
+                               ; eastern                    ;            ; EASTERN PROVINCE          ; Eastern Province’s vision: To become the world’s energy hub and a national platform for new industries and innovation where everyone lives in vibrant, connected communities.                                                 ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ;                          ;
+                               ; tubak                      ;            ; TABUK PROVINCE            ; Tabuk is Saudi Arabia’s northern gateway to the Arabian Peninsula.                                                                                                                                                            ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ; INVESTMENT OPPORTUNITIES ;
+                               ; hail                       ;            ; HAIL PROVINCE             ; Hail’s vision To make Hail a prosperous and thriving region, based on its generous and welcoming traditions, by sharing the sustainable development of its natural resources and cultural heritage with the rest of the world.;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ; INVESTMENT OPPORTUNITIES ;
+                               ; northern-boarders          ;            ; NORTHERN BORDERS PROVINCE ; The Northern Borders region is home to Ma’aden’s “Wa’ad Al-Shamal” industrial city dedicated to the phosphate industry.                                                                                                       ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ; INVESTMENT OPPORTUNITIES ;
+                               ; jazan                      ;            ; JAZAN PROVINCE            ; Jazan's is home to several islands located in the Red Sea.                                                                                                                                                                    ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ;                          ;
+                               ; najran                     ;            ; NAJRAN PROVINCE           ; In Saudi Arabia’s southwest is the ancient region of Najran, home to an abundance of unexploited minerals, rich agriculture, and fresh groundwater.                                                                           ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ; INVESTMENT OPPORTUNITIES ;
+                               ; al-baha                    ;            ; AL-BAHA PROVINCE          ; A region which enjoys several beautiful landscapes                                                                                                                                                                            ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ;                          ;
+                               ; al-jouf                    ;            ; AL-JOUF PROVINCE          ; Al-Jouf’s vision To play a key role in the Kingdom's future development by serving as the country's northern gateway to the world, an agricultural powerhouse, and a source of talent and culture.                            ;                                 ; KEY FACTS AND FIGURES ;                         ; KEY STRENGTHS      ;                            ;                          ;
+							   							   
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)	; 
+                         ; 							; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                             	;
+                         ; 							; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; 		                        ;
+                         ; 							; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                             	;
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]	; uid[unique = true]         ; position[unique = true] ; contentSlot(uid, $contentCV)[unique = true] ; page(uid, $contentCV)[unique = true][default = $page]
+                                ; 							; PortalPageTopSlot-$page    ; PortalPageTop           ; PortalPageTopSlot-$page                     ;							
+                                ; 							; PortalPageMainSlot-$page   ; PortalPageMain          ; PortalPageMainSlot-$page                    ;
+                                ; 							; PortalPageBottomSlot-$page ; PortalPageBottom        ; PortalPageBottomSlot-$page                  ;

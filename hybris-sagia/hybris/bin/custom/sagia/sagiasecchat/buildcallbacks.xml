@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+--><project xmlns:if="ant:if" name="sagiasecchat_buildcallbacks">
+
+    <property name="ext.sagiasecchat.y.main.dir" value="${ext.sagiasecchat.path}/y-main"/>
+    <property name="ext.sagiasecchat.path" value="${ext.sagiasecchat.path}"/>
+	<property name="ext.angularancillary.node.modules.dir" value="${ext.angularancillary.path}/resources/npm/node_modules"/>
+	<property name="angular.project.node.modules.additional" value="${ext.sagiasecchat.path}/resources/additional_node_modules"/>
+	
+    <patternset id="extension.sagiasecchat.binary.filter">
+        <patternset refid="extension.binary.filter"/>
+        <exclude name="**/y-main/node_modules/"/>
+        <exclude name="**/y-main/npm"/>
+    </patternset>
+
+    <patternset id="extension.sagiasecchat.source.filter">
+        <patternset refid="extension.source.filter"/>
+        <exclude name="**/y-main/node_modules/"/>
+        <exclude name="**/y-main/npm"/>
+    </patternset>
+
+    <patternset id="extension.sagiasecchat.production.filter">
+        <patternset refid="extension.production.filter"/>
+        <exclude name="**/y-main/node_modules/"/>
+        <exclude name="**/y-main/npm"/>
+    </patternset>
+	<macrodef name="sagiasecchat_after_build">
+        <sequential>
+            <impexGenerate extname="sagiasecchat"/>
+            <delete failonerror="false" file="${ext.sagiasecchat.path}/resources-lang/touch_impexgen"/>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="sagiasecchat_after_clean">
+        <sequential>
+            <delete failonerror="false" file="${ext.sagiasecchat.path}/resources-lang/touch_impexgen"/>
+        </sequential>
+    </macrodef>
+    <macrodef if:true="${angularancillary.ready}" name="sagiasecchat_before_clean">
+        <sequential>
+            <clean_angular_addon angular.project.path="${ext.sagiasecchat.y.main.dir}"/>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="sagiasecchat_npm_build">
+        <sequential>
+            <prepare_node_modules_for_build angular.project.path="${ext.sagiasecchat.y.main.dir}"/>     
+            <build_angular_project angular.project.path="${ext.sagiasecchat.y.main.dir}"/>
+        </sequential>
+    </macrodef>
+	
+    <macrodef if:true="${angularancillary.ready}" name="sagiasecchat_before_build">
+        <sequential>
+            <sagiasecchat_npm_build/>
+        </sequential>
+    </macrodef>
+
+    <target description="Build the sagiasecchat y-main Angular project" if:true="${angularancillary.ready}" name="build-sagiasecchat-ymain">
+        <sagiasecchat_npm_build/>
+    </target>
+
+    <macrodef if:true="${angulartestancillary.ready}" name="sagiasecchat_before_yunit">
+        <sequential>
+            <prepare_and_test_angular_project angular.project.path="${ext.sagiasecchat.y.main.dir}"/>
+        </sequential>
+    </macrodef>
+
+</project>

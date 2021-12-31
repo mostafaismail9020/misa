@@ -1,0 +1,66 @@
+
+
+INSERT_UPDATE RealGDP			;value      ;valueLabel [lang = en]    			;percentage 	;percentageLabel [lang = en] ; displayName	[lang = en]	;name [unique=true]					;calenderValue [lang = en] 		;currencyValue			
+								;"608,791"  ;"Million SAR"    					;"1.8%"    	;"Growth"        			 ; Real GDP					;"Real GDP"             			;"Q2-2021"						;
+
+INSERT_UPDATE MoneySupply		;value		;valueLabel	[lang = en]	  			;percentage 	;percentageLabel [lang = en] ;displayName	[lang = en]	 		;name[unique=true] 		;calenderValue [lang = en] 		;currencyValue
+								;"2,239,324";"Million SAR"    					;"7.8%"			;"Growth"		 			 ;"Money Supply M3"							;"Money Supply M3"		 				;"Aug-21"						;	
+					
+													
+INSERT_UPDATE TradeBalance		;value		;valueLabel	[lang = en]	  			;percentage 	;percentageLabel [lang = en] ;displayName	[lang = en]			;name[unique=true] 			 			;calenderValue [lang = en] 		;currencyValue
+								;           ;				  					;"13.3%	"   	;"%GDP"          			 ;"Trade Balance"							;"Trade Balance"        				;"Q2-2021"						;
+																			
+																			
+INSERT_UPDATE BudgetDeficit		;value		;valueLabel	[lang = en]	  			;percentage		;percentageLabel [lang = en] ;displayName	[lang = en]			;name[unique=true] 						;calenderValue [lang = en] 		;currencyValue
+								;           ;	   								;"0.6%"			;"%GDP"       				 ;"Budget Deficit"							;"Budget Deficit"        				;"Q2-2021"						;
+											
+																			
+INSERT_UPDATE GDPPerCapita		;value		;valueLabel	[lang = en]	  			;percentage		;percentageLabel [lang = en] ;displayName	[lang = en]			;name[unique=true] 						;calenderValue [lang = en] 		;currencyValue
+								;"20,993"   ;"SAR" 	 		  					;"30.3%"		;"Growth"    				 ;"GDP Per Capita"						    ;"GDP Per Capita"        				;"Q2-2021"						;
+																			
+																			
+INSERT_UPDATE InterestRate		;value	 [lang = en]	;valueLabel	[lang = en]	  			;percentage		;percentageLabel [lang = en] ;displayName	[lang = en]			;name[unique=true] 						;calenderValue [lang = en] 		;currencyValue
+								;"3M SAIBOR"			;Monthly Avg.	  					;"0.8"			;"Aug-2021"      			 ;"Interest Rate"							;"Interest Rate"        				;								;
+																			
+																			
+INSERT_UPDATE FDIinflow 		;value		;valueLabel	[lang = en]	  			;percentage		;percentageLabel [lang = en] ;displayName	[lang = en]			;name[unique=true] 						;calenderValue [lang = en] 		;currencyValue
+								;"51,860"   ;"Million SAR"	  					;"1573.9%"		;"Growth"    				 ;"FDI Inflow"						    ;"FDI Inflow"           				;"Q2-2021"						;
+																			
+																			
+INSERT_UPDATE GovernmentDebt	;value		;valueLabel	[lang = en]	  			;percentage		;percentageLabel [lang = en] ;displayName	[lang = en]			;name[unique=true] 			 			;calenderValue [lang = en] 		;currencyValue
+								; 		    ;				  					;"29.7%"		;"%GDP*"     				 ;"Government Debt"						    ;"Government Debt"   					;"H1-2021" 						;   
+											
+																			
+INSERT_UPDATE Unemployment		;value		;valueLabel	[lang = en]	  			;percentage		;percentageLabel  [lang = en] ;displayName	[lang = en]			;name[unique=true] 						;calenderValue [lang = en] 		;currencyValue
+								;"6.6%"     ;"Total"		  					;"11.3%"		;"Saudi"         			  ;"Unemployment"						;"Unemployment"    						;"Q2-2021"   					;"(Million SAR)"
+			
+			
+									
+INSERT_UPDATE Inflation			;value		;valueLabel [lang = en]			  ;percentage		;percentageLabel [lang = en] ;displayName	[lang = en]			;name[unique=true] 					 ;calenderValue [lang = en]		;currencyValue
+								;"104.7"    ;""		  	  					  ;"0.6%"			;"Growth"       	 		 ;"Inflation"							;"Inflation"        	 				 ;"Sep-21"						;
+								
+
+INSERT_UPDATE SaudiStockMarket	;value		;valueLabel [lang = en]		  	  ;percentage		;percentageLabel [lang = en] ;displayName	[lang = en]			;name[unique=true] 					 ;calenderValue [lang = en] 	 ;currencyValue
+								;"11,495.67";"TASI (Sep-21)"		  					  ;"23,652.32"  	;"NomuC (Sep-21)"         			 ;"Saudi Stock Market"							;"Saudi Stock Market"   				 ;""							 ;""
+								
+
+INSERT_UPDATE CreditRating		;spLabel [lang = en]	 ;moodysLabel [lang = en]	  ;fitchLabel [lang = en]   ;spValue [lang = en]		 ;moodysValue [lang = en]		     ;fitchValue [lang = en] ;displayName	[lang = en]	  ;name[unique=true]             ;calenderValue [lang = en] ;currencyValue				
+								;"S&P"     				 ;"Moody's"		  			  ;"Fitch"					;"A-"            			 ;"A1"                   			 ;"A"		  			 ;"Credit Rating"		  	  ;"Credit Rating"        		 ;"2021"                    ;""
+								
+
+
+INSERT_UPDATE Population		;value			;valueLabel	[lang = en]	  		  ;percentage		;percentageLabel  [lang = en] ;displayName	[lang = en]			;name[unique=true]  			 ;calenderValue [lang = en] 	 ;currencyValue
+								;"35,013,414"	;""		  						  ;"2.3%"			;"Growth"        			  ;"Population"						;"Population"           				 ;"2020"						 ;
+								
+INSERT_UPDATE ExchangeRate		;value			;valueLabel	[lang = en]	  		  ;percentage		;percentageLabel [lang = en]  ;displayName	[lang = en]			;name[unique=true]  			 ;calenderValue [lang = en] 	  ;currencyValue
+								;           	;				  				  ;"3.75"			;"USD/SAR"       			  ;"Exchange Rate" 						;"Exchange Rate"       					 ;""							  ;
+
+
+INSERT_UPDATE TotalReserveAssets;value			;valueLabel	[lang = en]	  		  ;percentage		;percentageLabel [lang = en]  ;displayName	[lang = en]			;name[unique=true]   		 ;calenderValue [lang = en] 	  ;currencyValue
+								;"1,705,436"    ;"Million SAR"		  			  ;"0.3%"			;"Growth"         			  ;"Total Reserve Assets"					;"Total Reserve Assets" 				 ;"Aug-21" 						  ;"Million SAR"
+								
+								
+
+INSERT_UPDATE GovernmentReserve	;value			;valueLabel	[lang = en]	  		  ;percentage		;percentageLabel [lang = en]  ;displayName	[lang = en]	 		;name[unique=true] 			 ;calenderValue [lang = en]		  ;currencyValue
+								;"357,229"		;"Million SAR"		  			  ;"-15.4%"			;"Growth"       			  ;"Government Reserve"						;"Government Reserve"    				 ;"Aug-21"						  ;
+

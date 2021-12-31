@@ -1,0 +1,4073 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001555')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001555')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001555",
+        "SrGuid": "005056B1-1C89-1EE8-97E7-CA91A624B969",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1527120000000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001555')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001555')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001555')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001555')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001555')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001554')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001554')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001554",
+        "SrGuid": "005056B1-1C89-1ED8-96A0-7AA838913B47",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1526428800000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001554')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001554')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001554')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001554')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001554')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001553')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001553')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001553",
+        "SrGuid": "005056B1-1C89-1ED8-96A0-6A668349BB3C",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1526428800000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001553')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001553')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001553')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001553')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001553')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001551')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001551')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001551",
+        "SrGuid": "005056B1-1C89-1ED8-958C-69F7E343A7C4",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525910400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001551')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001551')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001551')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001551')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001551')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001550')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001550')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001550",
+        "SrGuid": "005056B1-1C89-1ED8-958B-C433E97E47AE",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525910400000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001550')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001550')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001550')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001550')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001550')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001549')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001549')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001549",
+        "SrGuid": "005056B1-1C89-1ED8-94EA-987FA051A094",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525824000000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001549')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001549')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001549')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001549')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001549')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001548')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001548')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001548",
+        "SrGuid": "005056B1-1C89-1EE8-94DA-C35DF65F3DAF",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001548')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001548')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001548')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001548')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001548')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001547')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001547')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001547",
+        "SrGuid": "005056B1-1C89-1EE8-94D9-1EF174B73D6E",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001547')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001547')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001547')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001547')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001547')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001546')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001546')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001546",
+        "SrGuid": "005056B1-1C89-1EE8-94D8-D7EB8CD81D4F",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001546')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001546')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001546')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001546')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001546')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001545')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001545')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001545",
+        "SrGuid": "005056B1-1C89-1EE8-94D8-8D256298BD4B",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001545')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001545')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001545')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001545')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001545')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001544')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001544')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001544",
+        "SrGuid": "005056B1-1C89-1EE8-94D8-6C46D1007D4B",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001544')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001544')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001544')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001544')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001544')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001543')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001543')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001543",
+        "SrGuid": "005056B1-1C89-1EE8-94D7-9AEDAA54FD26",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001543')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001543')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001543')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001543')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001543')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001542')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001542')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001542",
+        "SrGuid": "005056B1-1C89-1EE8-94D7-9442CBB1BD26",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001542')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001542')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001542')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001542')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001542')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001541')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001541')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001541",
+        "SrGuid": "005056B1-1C89-1EE8-94D7-3840CBB31D0F",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001541')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001541')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001541')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001541')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001541')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001540')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001540')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001540",
+        "SrGuid": "005056B1-1C89-1EE8-94D6-FEE555927D06",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001540')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001540')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001540')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001540')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001540')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001539')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001539')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001539",
+        "SrGuid": "005056B1-1C89-1EE8-94D6-F17555A31D06",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001539')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001539')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001539')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001539')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001539')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001538')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001538')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001538",
+        "SrGuid": "005056B1-1C89-1EE8-94D6-864ADFDF7CF5",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001538')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001538')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001538')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001538')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001538')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001537')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001537')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001537",
+        "SrGuid": "005056B1-1C89-1EE8-94D6-7B838D443CF4",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001537')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001537')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001537')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001537')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001537')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001536')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001536')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001536",
+        "SrGuid": "005056B1-1C89-1EE8-94D6-77A24100FCF4",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001536')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001536')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001536')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001536')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001536')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001535')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001535')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001535",
+        "SrGuid": "005056B1-1C89-1EE8-94D5-1438AA227CCF",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001535')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001535')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001535')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001535')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001535')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001534')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001534')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001534",
+        "SrGuid": "005056B1-1C89-1EE8-94D5-12A315639CCE",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001534')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001534')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001534')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001534')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001534')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001533')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001533')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001533",
+        "SrGuid": "005056B1-1C89-1EE8-94D5-0FCE1D903CCE",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001533')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001533')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001533')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001533')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001533')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001532')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001532')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001532",
+        "SrGuid": "005056B1-1C89-1EE8-94D4-0A7A30BCFC94",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1525737600000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001532')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001532')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001532')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001532')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001532')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001198')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001198')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001198",
+        "SrGuid": "00155D56-5E09-1ED7-9DEB-BA756EAE80C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1501632000000)/",
+        "SrStCode": "E0001",
+        "SrStDesc": "Open",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001198')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001198')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001198')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001198')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001198')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001197')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001197')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001197",
+        "SrGuid": "00155D56-5E09-1ED7-9DEB-9BCAE605E0C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1501632000000)/",
+        "SrStCode": "E0014",
+        "SrStDesc": "Resolved",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001197')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001197')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001197')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001197')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001197')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001141')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001141')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001141",
+        "SrGuid": "00155D56-5E09-1ED7-93D1-DD63B9B7A0C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1497139200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001141')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001141')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001141')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001141')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001141')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001140')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001140')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001140",
+        "SrGuid": "00155D56-5E09-1ED7-93CF-6B1E59F240C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1497139200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001140')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001140')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001140')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001140')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001140')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001139')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001139')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001139",
+        "SrGuid": "00155D56-5E09-1ED7-93CE-B8DD8F3660C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1497139200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001139')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001139')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001139')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001139')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001139')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001138')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001138')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001138",
+        "SrGuid": "00155D56-5E09-1ED7-9381-E221C3F540C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496880000000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001138')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001138')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001138')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001138')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001138')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001136')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001136')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001136",
+        "SrGuid": "00155D56-5E09-1ED7-92F1-24FC74A1E0C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496793600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001136')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001136')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001136')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001136')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001136')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001135')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001135')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001135",
+        "SrGuid": "00155D56-5E09-1ED7-92F0-F7A34E8780C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496793600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001135')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001135')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001135')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001135')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001135')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001134')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001134')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001134",
+        "SrGuid": "00155D56-5E09-1ED7-92F0-E8D5A39C40C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496793600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001134')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001134')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001134')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001134')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001134')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001133')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001133')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001133",
+        "SrGuid": "00155D56-5E09-1ED7-92F0-AEEED0D100C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496793600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001133')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001133')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001133')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001133')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001133')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001132')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001132')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001132",
+        "SrGuid": "00155D56-5E09-1ED7-92F0-39B53F5E20C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496793600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001132')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001132')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001132')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001132')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001132')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001131')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001131')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001131",
+        "SrGuid": "00155D56-5E09-1ED7-92EF-ED9882ACA0C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496793600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001131')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001131')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001131')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001131')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001131')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001130')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001130')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001130",
+        "SrGuid": "00155D56-5E09-1ED7-92EF-767DF1E500C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496793600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001130')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001130')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001130')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001130')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001130')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001129')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001129')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001129",
+        "SrGuid": "00155D56-5E09-1ED7-92EF-46F97DB120C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496793600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001129')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001129')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001129')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001129')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001129')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001127')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001127')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001127",
+        "SrGuid": "00155D56-5E09-1ED7-92EC-40C6BE5D80C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496793600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001127')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001127')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001127')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001127')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001127')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001126')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001126')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001126",
+        "SrGuid": "00155D56-5E09-1ED7-92D6-F91DE1C5C0C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496707200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001126')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001126')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001126')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001126')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001126')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001125')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001125')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001125",
+        "SrGuid": "00155D56-5E09-1ED7-92D6-DCDD1AF240C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496707200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001125')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001125')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001125')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001125')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001125')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001124')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001124')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001124",
+        "SrGuid": "00155D56-5E09-1ED7-92D6-A403106520C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496707200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001124')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001124')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001124')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001124')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001124')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001123')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001123')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001123",
+        "SrGuid": "00155D56-5E09-1ED7-92D6-5CB6E6B700C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496707200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001123')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001123')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001123')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001123')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001123')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001122')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001122')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001122",
+        "SrGuid": "00155D56-5E09-1ED7-92D4-B6BAB8A240C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496707200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001122')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001122')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001122')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001122')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001122')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001121')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001121')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001121",
+        "SrGuid": "00155D56-5E09-1ED7-92CF-59982E5B80C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496707200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001121')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001121')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001121')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001121')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001121')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001120')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001120')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001120",
+        "SrGuid": "00155D56-5E09-1ED7-92BE-5350A92500C7",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1496620800000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001120')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001120')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001120')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001120')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001120')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001081')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001081')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001081",
+        "SrGuid": "00155D65-D804-1EE5-ACD8-F8A6B7BBD97B",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1451865600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001081')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001081')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001081')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001081')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001081')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001080')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001080')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001080",
+        "SrGuid": "00155D65-D804-1EE5-ACD8-DF683443D97B",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1451865600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001080')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001080')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001080')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001080')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001080')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001070')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001070')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001070",
+        "SrGuid": "00155D74-370C-1ED5-A8E1-8D6290AC38A5",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1450137600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001070')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001070')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001070')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001070')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001070')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001063')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001063')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001063",
+        "SrGuid": "00155DF6-0D03-1EE5-A5FF-D80AEC242A0D",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1448928000000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001063')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001063')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001063')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001063')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001063')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001055')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001055')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001055",
+        "SrGuid": "00155D00-4A0F-1EE5-A0A6-23316899F180",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1446422400000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001055')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001055')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001055')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001055')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001055')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001053')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001053')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001053",
+        "SrGuid": "00155D00-4A0F-1EE5-A0A6-148DDFA5D180",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1446422400000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001053')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001053')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001053')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001053')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001053')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001052')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001052')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001052",
+        "SrGuid": "00155D00-4A0F-1EE5-A0A6-0034BFF53180",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "613392",
+        "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+        "SrCrDate": "/Date(1446422400000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "شركة تجربة",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001052')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001052')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001052')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001052')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001052')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001017')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001017')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001017",
+        "SrGuid": "14FEB556-CA71-1EE5-98B9-D53D7F71ED38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1442966400000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001017')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001017')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001017')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001017')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001017')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001012')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001012')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001012",
+        "SrGuid": "14FEB556-CA71-1EE5-968B-D119A2B68D38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441929600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001012')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001012')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001012')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001012')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001012')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001011')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001011')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001011",
+        "SrGuid": "14FEB556-CA71-1EE5-95F7-AC405098CD38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441843200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001011')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001011')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001011')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001011')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001011')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001009')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001009')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001009",
+        "SrGuid": "14FEB556-CA71-1EE5-95F7-97A23422AD38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441843200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001009')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001009')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001009')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001009')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001009')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001006')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001006')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001006",
+        "SrGuid": "14FEB556-CA71-1EE5-95F7-25639519ED38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441843200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001006')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001006')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001006')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001006')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001006')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001005')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001005')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001005",
+        "SrGuid": "14FEB556-CA71-1EE5-95F7-0539915CED38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441843200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001005')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001005')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001005')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001005')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001005')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001004')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001004')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10001004",
+        "SrGuid": "14FEB556-CA71-1EE5-95F6-C06175B8ED38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441843200000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001004')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001004')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001004')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001004')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10001004')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000998')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000998')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000998",
+        "SrGuid": "14FEB556-CA71-1EE5-95DC-221B0943ED38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441756800000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000998')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000998')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000998')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000998')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000998')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000997')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000997')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000997",
+        "SrGuid": "14FEB556-CA71-1EE5-95A7-A0F9C6B5ED38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441584000000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000997')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000997')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000997')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000997')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000997')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000996')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000996')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000996",
+        "SrGuid": "14FEB556-CA71-1EE5-95A6-005AC6E24D38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441584000000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000996')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000996')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000996')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000996')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000996')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000981')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000981')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000981",
+        "SrGuid": "14FEB556-CA71-1EE5-94DA-2F9172734D38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441324800000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000981')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000981')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000981')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000981')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000981')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000969')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000969')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000969",
+        "SrGuid": "14FEB556-CA71-1EE5-94C3-E549ED36CD38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441238400000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000969')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000969')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000969')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000969')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000969')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000968')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000968')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000968",
+        "SrGuid": "14FEB556-CA71-1EE5-9492-AEFDAB088D38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441065600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000968')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000968')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000968')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000968')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000968')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000966')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000966')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000966",
+        "SrGuid": "14FEB556-CA71-1EE5-9492-5D57FA88AD38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441065600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000966')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000966')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000966')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000966')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000966')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000965')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000965')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000965",
+        "SrGuid": "14FEB556-CA71-1EE5-9491-8A8DA91D8D38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441065600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000965')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000965')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000965')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000965')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000965')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000964')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000964')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000964",
+        "SrGuid": "14FEB556-CA71-1EE5-9491-729F3940ED38",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1441065600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000964')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000964')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000964')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000964')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000964')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000788')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000788')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000788",
+        "SrGuid": "14FEB556-CA71-1ED5-83B9-381CFE7A0203",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1433721600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000788')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000788')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000788')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000788')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000788')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000787')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000787')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000787",
+        "SrGuid": "14FEB556-CA71-1ED5-83B8-CC38E86B8203",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1433721600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000787')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000787')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000787')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000787')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000787')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000786')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000786')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000786",
+        "SrGuid": "14FEB556-CA71-1ED5-83B8-A3A4D4D0C203",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1433721600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000786')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000786')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000786')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000786')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000786')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000785')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000785')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000785",
+        "SrGuid": "14FEB556-CA71-1ED5-83B8-7E1D36A1A203",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1433721600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000785')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000785')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000785')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000785')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000785')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000784')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000784')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000784",
+        "SrGuid": "14FEB556-CA71-1ED5-83B8-666A6DB00203",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1433721600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000784')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000784')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000784')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000784')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000784')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000783')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000783')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000783",
+        "SrGuid": "14FEB556-CA71-1ED5-83B7-F17562522203",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1433721600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000783')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000783')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000783')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000783')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000783')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000782')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000782')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000782",
+        "SrGuid": "14FEB556-CA71-1ED5-83B7-E2FCDB35A203",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1433721600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000782')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000782')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000782')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000782')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000782')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000781",
+        "SrGuid": "14FEB556-CA71-1ED5-83B7-C45662864203",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1433721600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000781')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000780')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000780')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000780",
+        "SrGuid": "14FEB556-CA71-1ED5-83B7-A09BACFB0203",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1433721600000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000780')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000780')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000780')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000780')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000780')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000773')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000773')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000773",
+        "SrGuid": "14FEB556-CA71-1EE4-B8EC-649B0FE20878",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1429056000000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000773')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000773')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000773')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000773')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000773')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000771')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000771')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000771",
+        "SrGuid": "14FEB556-CA71-1EE4-B8E6-F717E796E878",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1429056000000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000771')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000771')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000771')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000771')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000771')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000769')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000769')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000769",
+        "SrGuid": "14FEB556-CA71-1EE4-B8E6-8BF2C5DC8878",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1429056000000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000769')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000769')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000769')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000769')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000769')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000768')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000768')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000768",
+        "SrGuid": "14FEB556-CA71-1EE4-B8E6-84FE0BB62878",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1429056000000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000768')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000768')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000768')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000768')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000768')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000767')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000767')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000767",
+        "SrGuid": "14FEB556-CA71-1EE4-B8E6-45BB4A25E878",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1429056000000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000767')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000767')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000767')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000767')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000767')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000251')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000251')",
+          "type": "ZUI5_SAGIA_SRV.ComplaintsAndEnquiryHDR"
+        },
+        "SrID": "10000251",
+        "SrGuid": "14FEB556-CA71-1EE3-B18D-336C5BBC5A69",
+        "LicID": "",
+        "LicGuid": "00000000-0000-0000-0000-000000000000",
+        "LicType": "",
+        "LicTypeDesc": "",
+        "BpID": "",
+        "BpGuid": "00000000-0000-0000-0000-000000000000",
+        "SrCrDate": "/Date(1397520000000)/",
+        "SrStCode": "E0010",
+        "SrStDesc": "Closed",
+        "LicExDate": null,
+        "ValidFrom": null,
+        "TransType": "ZRVR",
+        "Action": "00",
+        "BpName": "",
+        "ActionType": false,
+        "CompAndEnqHdrToDetailNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000251')/CompAndEnqHdrToDetailNav"
+          }
+        },
+        "CompAndEnqHdrToTextNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000251')/CompAndEnqHdrToTextNav"
+          }
+        },
+        "CompAndEnqHdrToAttachNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000251')/CompAndEnqHdrToAttachNav"
+          }
+        },
+        "CompAndEnqHdrToContentNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000251')/CompAndEnqHdrToContentNav"
+          }
+        },
+        "CompAndEnqHdrToUploadAssoNav": {
+          "__deferred": {
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ComplaintsAndEnquiryHdrs('10000251')/CompAndEnqHdrToUploadAssoNav"
+          }
+        }
+      }
+    ]
+  }
+}

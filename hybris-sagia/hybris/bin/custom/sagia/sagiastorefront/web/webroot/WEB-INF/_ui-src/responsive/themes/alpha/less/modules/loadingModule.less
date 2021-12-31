@@ -1,0 +1,27 @@
+.loadingModule {
+    text-align: center;
+    padding: 48px 0 32px 0;
+    width: 100%;
+    margin-bottom: 24px;
+    
+    &-icon {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 32px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        svg {
+            animation: spinner 0.8s steps(8, end) infinite;
+        }
+    }
+    
+    &-msg {
+        font-size: 15px;
+        color: #000;
+    }
+    
+    &&_loaded {
+        display: none;
+    }
+}

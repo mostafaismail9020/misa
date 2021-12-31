@@ -1,0 +1,45 @@
+#### Impex For Arab-Health####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+ 
+INSERT_UPDATE EventKeyDetails;$contentCV[unique = true] ;uid[unique = true]   ;keyValue[lang = en]  ;keyName[lang = en];	
+							;							;arab-key-1           ;43,375     			;Event attendees
+							;							;arab-key-2           ;8,468   				;Booth Attendees
+
+
+INSERT_UPDATE Media; code[unique = true]            	; realFileName                    	 		;@media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]				; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ;Arab-health-banner-image.jpg    	; Arab-health-banner-image.jpg    			; $siteResource/Arab-Health-Banner-Image.jpg                                           		; image/jpg                   ;                                          ; ""     ;
+                   ;Arab-health-thumbnail-image.jpg     ; Arab-health-thumbnail-image.jpg        	; $siteResource/Arab-Health-Thumbnail-image.jpg                                             ; image/jpg                   ;                                          ; ""     ;
+                   ;event-gallary-image.png       		; event-gallary-image.png        			; $siteResource/event-gallary-image.png                                            			; image/png                   ;                                          ; ""     ;
+				  
+				  
+INSERT_UPDATE MediaContainer; qualifier[unique = true]	; $medias					; $contentCV;
+                            ; media-container-health    ; event-gallary-image.png   ;           ;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventUrl(uid, $contentCV)	;eventLocation[lang = en]   ;eventStartDate[dateformat = dd.MM.yyyy HH:mm:ss];eventEndDate[dateformat = dd.MM.yyyy HH:mm:ss];
+										;						  ;event-arab-health	;                          	;"Dubai"           			;27.01.2020 00:00:00                             ;30.01.2020 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	; eventName[lang = en]	;eventShortInformation[lang = en]	;
+										;						  ;event-arab-health	; Arab Health     		; The Arab Health Forum is the largest exhibition and conference in the health sector in the region, where participants from the private and government sectors view investment opportunities across the sector. ;                          
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	; eventKeyDetails(uid, $contentCV);
+										;						  ;event-arab-health 	; arab-key-1,arab-key-2;
+									 
+									 
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventBannerImage(code, $contentCV)	;eventThumbnailImage(code, $contentCV)	;eventGalleryImages(qualifier, $contentCV);
+										;						  ;event-arab-health	;Arab-health-banner-image.jpg 		;Arab-health-thumbnail-image.jpg 		;media-container-health	;
+
+									 
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]	;eventFullDescription[lang = en];
+										;						  ;event-arab-health    ;								;

@@ -1,0 +1,162 @@
+//default RadioButtons are displayed inline
+.formRadioBox {
+	
+	&-wrapper {
+		background: #fff;
+		margin: 0 -10px;
+		padding: 24px 10px;
+		font-size: 14px;
+		color: #313f4b;
+		
+		div[class^="col"] {
+			display: flex;
+			align-items: flex-start;
+		}		
+		
+		.row span a {
+			color: @apple;
+			font-size: inherit;
+			text-decoration: underline;
+		}
+
+		.formRadioBox { 
+			width: 100%;
+			
+			.form-group {
+				padding-top: 0;
+				margin-bottom: 0;
+				#media-breakpoint-down(sm, {
+					padding-top: 20px;
+				});	
+			}			
+		}
+		
+		&:hover {
+			background: #fbfbfc;
+		}
+		
+	}
+	
+	&-label {
+		position: absolute;
+		left: 8px;
+		top: -2px;
+		color: #7b838c;
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+	
+	.form-group {
+		padding-top: 15px;
+		position: relative;
+		width: calc(~"100% + 16px");
+		margin: 0 -8px;
+		margin-bottom: 16px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+  
+	.form-item {
+		display: block;
+		height: 39px;
+		padding: 0 8px;
+		width: 50%;
+	}
+
+	.form-control{
+
+		opacity: 0;
+		position: absolute;
+		cursor: pointer;
+
+		&:checked{
+
+			& + .control-label {
+				color: #333a4b;
+				border-color: @apple;
+				box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+				font-weight: 600;
+				transition: box-shadow 0.3s ease-out;
+
+			}
+		}
+		
+		&:focus {
+			
+			& + .control-label {
+				color: @apple;
+			}
+			
+			&:checked + .control-label {
+				color: #333a4b;
+			}
+		}
+		
+		&[disabled] {
+			
+			& + .control-label {
+				color: darken(@pale-grey, 10%);
+				border-color: darken(@pale-grey, 10%);
+				cursor: not-allowed;
+			}
+			
+			&:checked {
+				
+				& + .control-label {
+
+					span {
+						
+					}
+				}				
+			}
+		}
+	}	
+	
+	.control-label{
+		background: #fff;
+		color: #9b9b9b;
+		font-size: 14px;
+		position: relative;
+		cursor: pointer;
+		text-align: center;
+		border: solid 1px #d9d9d9;
+		width: 100%;
+		height: 39px;
+		line-height: 37px;
+		border-radius: 2px;
+		
+		&:hover {
+			color: @apple;
+			border-color: @apple;
+		}
+	}
+
+	.form-control::placeholder{
+		font-size: 0;
+	}
+
+
+	.help-block{
+		font-size: 10px;
+		text-align: right;
+		color: #ff4c4a;
+		line-height: 1.2;
+		margin-top: 6px;
+		margin-left: 8px;
+		margin-right: 8px;
+		width: 100%;
+	}
+
+	
+
+	// error
+	.form-group.has-error .control-label{
+		color: #ff4c4a;
+		
+		span {
+			border-color: #ff4c4a;
+		}
+	}
+
+
+}

@@ -1,0 +1,42 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                      	 			; realFileName                    							; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]		; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; jazan-banner-image.png                                ; jazan-banner-image.png                          			; $siteResource/jazan-banner-image.png                                         		;                 image/png                ;                                          ; ""     ;
+					; jazan-map.png                                         ; jazan-map.png                                    			; $siteResource/jazan-map.png                                                 		;                 image/png                ;                                          ; ""     ;
+					; jazan-machines-industrialequipment.png	            ; jazan-machines-industrialequipment.png	                ; $siteResource/jazan-machines-industrialequipment.png	                            ;                 image/png                ;                                          ; ""     ;
+					; jazan-chemical-products-manufacturing.png				; jazan-chemical-products-manufacturing.png					; $siteResource/jazan-chemical-products-manufacturing.png	                        ;                 image/png                ;                                          ; ""     ;
+					; jazan-agriculture.png	        			            ; jazan-agriculture.png	        			                ; $siteResource/jazan-agriculture.png	        			                        ;                 image/png                ;                                          ; ""     ;
+					; jazan-logistics.png	           			            ; jazan-logistics.png	           			                ; $siteResource/jazan-logistics.png	           			                            ;                 image/png                ;                                          ; ""     ;   
+					; jazan-tourism.png	           				            ; jazan-tourism.png	           				                ; $siteResource/jazan-tourism.png	           				                        ;                 image/png                ;                                          ; ""     ;   
+										   
+					; jazan-population.png        	                        ; jazan-population.png        	                            ; $siteResource/jazan-population.png        	                                    ;                 image/png                ;                                          ; ""     ;   
+					; jazan-seaports.png    			       	            ; jazan-seaports.png    			   	                    ; $siteResource/jazan-seaports.png    			                                	;                 image/png                ;                                          ; ""     ;   
+					; jazan-active-factories.png            	            ; jazan-active-factories.png      		                    ; $siteResource/jazan-active-factories.png      	                                ;                 image/png                ;                                          ; ""     ;   
+					; jazan-dams.png              	                        ; jazan-dams.png              	      	                    ; $siteResource/jazan-dams.png              	                                    ;                 image/png                ;                                          ; ""     ;   
+					; jazan-airport.png  				     	            ; jazan-airport.png  				  		                ; $siteResource/jazan-airport.png  				                               		;                 image/png                ;                                          ; ""     ;   
+					; jazan-hotels.png        		                        ; jazan-hotels.png        		                            ; $siteResource/jazan-hotels.png        		                                    ;                 image/png                ;                                          ; ""     ;   
+					; jazan-chambers-of-commerce.png 	                    ; jazan-chambers-of-commerce.png 	     	                ; $siteResource/jazan-chambers-of-commerce.png 		                                ;                 image/png                ;                                          ; ""     ;   
+					; jazan-roads-length.png                                ; jazan-roads-length.png                                    ; $siteResource/jazan-roads-length.png                                              ;                 image/png                ;                                          ; ""     ;   
+					; jazan-industrial-city.png      	                    ; jazan-industrial-city.png      	                        ; $siteResource/jazan-industrial-city.png      	                                    ;                 image/png                ;                                          ; ""     ;   
+					; jazan-hospitals.png				                    ; jazan-hospitals.png				  		                ; $siteResource/jazan-hospitals.png					                                ;                 image/png                ;                                          ; ""     ;   
+					; jazan-sport-city.png			                        ; jazan-sport-city.png			   	                        ; $siteResource/jazan-sport-city.png			                                 	;                 image/png                ;                                          ; ""     ;   
+					; jazan-towns.png					                    ; jazan-towns.png					   	                    ; $siteResource/jazan-towns.png					                                   	;                 image/png                ;                                          ; ""     ;   					
+																                						
+					; jazan-jazan-city-Industries.png                       ; jazan-jazan-city-Industries.png                        	; $siteResource/jazan-jazan-city-Industries.png                                     ;                 image/png                ;                                          ; ""     ;   
+					; jazan-logistics1.png                                  ; jazan-logistics1.png                                      ; $siteResource/jazan-logistics1.png                                                ;                 image/png                ;                                          ; ""     ;   	
+					; jazan-300km-long-coastline-farasan-islands.png        ; jazan-300km-long-coastline-farasan-islands.png            ; $siteResource/jazan-300km-long-coastline-farasan-islands.png                      ;                 image/png                ;                                          ; ""     ;   	
+					; jazan-solar-energy-potential.png                      ; jazan-solar-energy-potential.png                          ; $siteResource/jazan-solar-energy-potential.png                                    ;                 image/png                ;                                          ; ""     ;   	
+					; jazan-renewable-water-reserves.png                    ; jazan-renewable-water-reserves.png                      	; $siteResource/jazan-renewable-water-reserves.png                                  ;                 image/png                ;                                          ; ""     ;   	

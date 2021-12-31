@@ -1,0 +1,589 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = en
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; highlights[lang = $lang]
+                                ; polyvinyl-acetate               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 85 Mn </span></li>
+  <li><span>Plant capacity: 45 KMT </span></li>
+  <li><span>Expected IRR: More than 12% </span></li>
+</ul>
+"
+                                ; phosphorous-trichloride              ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 85 Mn </span></li>
+  <li><span>Plant capacity: 30 KMT </span></li>
+  <li><span>Expected IRR: More than 12% </span></li>
+</ul>
+"
+                                ; maleic-anhydride               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 100 Mn </span></li>
+  <li><span>Plant capacity: 30 KMT </span></li>
+  <li><span>Expected IRR: More than 12% </span></li>
+</ul>
+"
+                                ; refrigerant-grade-IsoButane-(R-600a)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 3 Mn </span></li>
+  <li><span>Plant capacity: 5 KMT </span></li>
+  <li><span>Expected IRR: More than 12% </span></li>
+</ul>
+"
+                                ; polyaluminum-chloride-(PAC)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 27 Mn </span></li>
+  <li><span>Plant capacity: 30 KMT </span></li>
+  <li><span>Expected IRR: More than 12% </span></li>
+</ul>
+"
+                                ; N-PROPANOL               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>Expected investment size of USD 50 Mn </span></li>
+  <li><span>Plant capacity: 20 KMT </span></li>
+  <li><span>Expected IRR: More than 12% </span></li>
+</ul>
+"
+                                ; Methacrylic-acid-(glacial)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Adipic-Acid                ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Caprolactam               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Pseudo-cumene-(TMA)              ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Polycrystalline-Silica               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; FlUOROSILICIC-ACID-(FSA)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Ultra-pure-MDI               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Aluminum-Hydroxide-Flame-Retardant-Grade               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Resin-Compounds               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; DL-Malic-Acid-(MAL)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Thermoplastic-Polyolefin-(TPO)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Polyacrylates-Acrylamide-Homopolymers-Copolymers               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; ACRYLIC-ESTERS              ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span>The project is purely private sector investment with land lease from MODON </span></li>
+<li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials  </span></li>
+</ul>
+"
+                                ; ACID-GRADE-FLUORSPAR               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span>The project is purely private sector investment with land lease from MODON </span></li>
+<li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials  </span></li>
+</ul>
+"
+                                ; TEOS-Aerogel               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Propionaldehyde              ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Isophthalic-Acid-(IPA)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Magnesium-Chloride               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; POLYVINYL-ALCOHOL-(PVOH)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Unsaturated-Polyester-Resin-(UPR)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Tetrahydrophthalic-Anhydride               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; WATERWHITE-DCPD-RESINS               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; ZEOLITES               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; ANTI-STATIC-AGENTS-(Fatty-Acid-SaltsEsters)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; m-Phenylene-Diamine-(mPhDA)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Nitric-Acid-(HNO3)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Organophosphorus-(Flame-retardant-Plasticiser)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Para-Formaldehyde               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Phenolic-resins              ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Phosphorous-Oxychloride               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Polychloroprene               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Polyolefine-Elastomers-(POE)              ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Polyvinyl-Alcohol-Fibers               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Propionaldehyde_                ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; PROPYLENE-GLYCOL-METHYL-ETHER                ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; SEPS-Thermoplastic-Elastomers               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Silica-Gel               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Styrene-Maleic-Anhydride-(SMA)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Sulfur-dioxide              ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Sulfur-trioxide                ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Synthetic-Alcohol-(Detergent-grade)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Tetraethylorthosilicate-(TEOS)-Si(OEt)4               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; LDPE-Grafted-PolymersCopolymers               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Photovoltaic_              ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; 2-Ethyl-Hexyl-Acrylate               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; 2-Ethylhexanoic-Acid               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Acrolein_               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Aliphatic-Hydrocarbo-Resins               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Aromatic-Hydrocarbon-resins               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Aluminum-Oxide               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Chloromethane_              ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Colloidal-Silica              ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Conventional-Polyisobutylene               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Ca(OCl)2_               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; DCPD-Resins-for-Inks               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Dimethyl-terephthalate               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Dimethyl-dichloro-silane               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Ethyl-Amines-(EA)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Ethylene-Acrylic-Elastomers               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Ethylene-tetrafluoroethylene-(ETFE)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; EVOH_               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; FeCl3_              ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Fluorinated-ethylene-propylene-(FEP)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Fluor-Silicic-Acid-(FSA)               ;                ; "
+
+<ul class='bulled-list mt-3'>
+  <li><span>The project is purely private sector investment with land lease from MODON? </span></li>
+  <li><span>The capital investment size is to be determined based on the plant capacity and available feedstock materials ? </span></li>
+</ul>
+"
+                                ; Fumed-Silica               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; High-Reactivity-Polyisobutylene               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Waterwhite-Aliphatic-Hydrocarbon-Resins               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Waterwhite-Aromatic-Hydrocarbon-Resins              ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"
+                                ; Polyurethane-Systems-House               ;                ; "
+
+<ul class='bulled-list mt-3'>
+<li><span> KSA is one of the largest chemical producers in the world and contributes ~10% to the global output?</span></li>
+<li><span> KSA is strategically located at the crossroads of several markets that have high demand for chemical products ?</span></li>
+<li><span> KSA benefits from having an abundant access to raw materials and a high standard of infrastructure that is continuously being improved upon? ?</span></li>
+</ul>
+"

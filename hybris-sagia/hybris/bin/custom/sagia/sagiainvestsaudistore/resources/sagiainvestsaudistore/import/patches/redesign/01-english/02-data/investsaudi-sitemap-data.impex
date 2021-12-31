@@ -1,0 +1,108 @@
+INSERT_UPDATE InvestSaudiSiteMapLevel4   ; siteMapLevel4Id[unique = true]  ; siteMapLevel4Name[lang = en]	; siteMapLevel4Name[lang = ar]	; siteMapLevel4Url		;		          	
+										 ; conventional-energy 		       ; Conventional Energy			; الطاقة التقليدية				; /sectors-opportunities/conventional-energy	;
+									     ; energy-saving				   ; Energy Saving					; توفير الطاقة 					; /sectors-opportunities/energy-saving			;	
+									     ; renewable-energy			       ; Renewable Energy				; الطاقة المتجددة				; /sectors-opportunities/renewable-energy		;	
+																	    
+									     ; water						   ; Water							; المياه						; /sectors-opportunities/water					;	
+									     ; waste-management			       ; Waste Management				; إدارة النفايات 				; /sectors-opportunities/waste-management		;	
+			
+			                             ; digital-content                 ; Digital Content                ; المحتوى الرقمي                ; /sectors-opportunities/digital-content		;
+										 ; digital-infrastructure          ; Digital Infrastructure         ; البنية التحتية الرقمية        ; /sectors-opportunities/digital-infrastructure	;
+										 ; technology-platforms            ; Technology & Platforms         ; التكنولوجيا والمنصات          ; /sectors-opportunities/technology-platforms	;
+																																			
+										 ; tourism                         ; Tourism                        ; السياحة                       ; /sectors-opportunities/tourism				;
+										 ; culture-entertainment           ; Culture and Entertainment      ; الثقافة والترفيه              ; /sectors-opportunities/culture-entertainment	;
+										 ; sports                          ; Sports                         ; الرياضة                       ; /sectors-opportunities/sports					;
+			                             
+										 ; medical-technologies            ; Medical Technologies           ; التكنولوجيا الطبية            ; /sectors-opportunities/medical-technologies	;
+										 ; medical-services                ; Medical Services               ; الخدمات الطبية                ; /sectors-opportunities/medical-services		;
+			
+			                             ; education                       ; Education                      ; التعليم                       ; /sectors-opportunities/education				;
+										 ; innovation                      ; Innovation and Enterpreneurship; الابتكار وريادة الأعمال         ; /sectors-opportunities/innovation				;
+			
+			                             ; automotives                     ; Automotives                    ; صناعة السيارات                ; /sectors-opportunities/automotives			;
+										 ; industrial-spareparts           ; Industrial & Spare Parts       ; المعدات الصناعية وقطع الغيار  ; /sectors-opportunities/industrial-spareparts	;
+									 										 
+			
+INSERT_UPDATE InvestSaudiSiteMapLevel3   ; siteMapLevel3Id[unique = true]  ; siteMapLevel3Name[lang = en]	; siteMapLevel3Name[lang = ar]	; siteMapLevel3Url						                 ; siteMapLevel4Links(siteMapLevel4Id)	;
+									     ; riyadh-province				   ; Riyadh Province				; الرياض						; /meetTheKingdom/province/riyadh			             ;									;											
+									     ; makkah-province				   ; Makkah Province				; مكّة المكرّمة					; /meetTheKingdom/province/makkah			             ;									;											
+									     ; eastern-province				   ; Eastern Province				; المنطقة الشرقية				; /meetTheKingdom/province/eastern			             ;									;										   	
+										 ; madinah-province                ; Madinah Province               ; المدينة المنوّرة               ; /meetTheKingdom/province/medina                        ;									;
+                                         ; aseer-province                  ; Aseer Province                 ; عسير                          ; /meetTheKingdom/province/asir                          ;									;
+										 ; al-baha-province                ; Al Baha Province               ; الباحة                        ; /meetTheKingdom/province/al-baha                       ;									;
+										 ; al-jawf-province                ; Al Jawf Province               ; الجوف                         ; /meetTheKingdom/province/al-jouf                       ;									;
+										 ; northern-borders-province       ; Northern Borders Province      ; الحدود الشمالية               ; /meetTheKingdom/province/northern-borders              ;									;
+										 ; qassim-province                 ; Qassim Province                ; القصيم                        ; /meetTheKingdom/province/qassim                        ;									;
+										 ; hail-province                   ; Ha'il Province                 ; حائل                          ; /meetTheKingdom/province/hail                          ;									;
+										 ; tabuk-province                  ; Tabuk Province                 ; تبوك                          ; /meetTheKingdom/province/tabuk                         ;									;
+										 ; jazan-province                  ; Jazan Province                 ; جازان                         ; /meetTheKingdom/province/jazan                         ;									;
+										 ; najran-province                 ; Najran Province                ; نجران                         ; /meetTheKingdom/province/najran                        ;									;
+																				
+									     ; chemicals					   ; Chemicals						; الكيماويات					; /sectors-opportunities/chemicals			             ;									;											
+									     ; energy						   ; Energy						    ; الطاقة						; /sectors-opportunities/energy				             ; conventional-energy, energy-saving, renewable-energy	;
+									     ; environment-services			   ; Environmental Services		    ; الخدمات البيئية				; /sectors-opportunities/environment-services            ; water, waste-management          ;
+						                 ; info-and-tech                   ; Information and Communication Technology ; المعلومات وتقنية الاتصالات		; /sectors-opportunities/information-technology		; digital-content, digital-infrastructure, technology-platforms	;
+                                         ; tourism-culture-entertainment   ; Tourism & Quality of Life      ; السياحة وجودة الحياة          ; /sectors-opportunities/tourism-culture-entertainment   ; tourism, culture-entertainment, sports	;
+                                         ; food-processing                 ; Agriculture & Food Processing  ; الزراعة والصناعات الغذائية    ; /sectors-opportunities/food-processing                 ;									;
+										 ; real-estate                     ; Real Estate                    ; العقارات                      ; /sectors-opportunities/real-estate                     ;									;
+										 ; healthcare-life-sciences        ; Healthcare & Life Sciences     ; الرعاية الصحية وعلوم الحياة   ; /sectors-opportunities/healthcare-life-sciences        ; medical-technologies, medical-services	;
+										 ; financial                       ; Financial Services             ; الخدمات المالية               ; /sectors-opportunities/financial                       ;									;
+										 ; transport-logistics             ; Transport & Logistics          ; النقل والخدمات اللوجستية      ; /sectors-opportunities/transport-logistics             ;									;
+										 ; human-capital-innovation        ; Human Capital Innovation       ; رأس المال البشري والابتكار     ; /sectors-opportunities/human-capital-innovation        ; education, innovation			;
+										 ; industrial-manufacturing        ; Industrial and Manufacturing   ; الصناعة والتصنيع              ; /sectors-opportunities/industrial-manufacturing        ; automotives, industrial-spareparts	;
+										 ; mining-metals                   ; Mining and Metals              ; التعدين والمعادن              ; /sectors-opportunities/mining-metals                   ;									;
+										 ; pharmacuticals                  ; Pharma & Biotech               ; الأدوية والتكنولوجيا الحيوية   ; /sectors-opportunities/pharmacuticals                  ;									;
+										 ; aerospace-defense               ; Aerospace and Defense          ; الطيران والدفاع               ; /sectors-opportunities/aerospace-defense               ;									;
+
+
+INSERT_UPDATE InvestSaudiSiteMapLevel2   ; siteMapLevel2Id[unique = true]  ; siteMapLevel2Name[lang = en]	; siteMapLevel2Name[lang = ar]	; siteMapLevel2Url						                 ; siteMapLevel3Links(siteMapLevel3Id)	;
+								     	 ; home							   ; Home							; الصفحة الرئيسية				; /											             ;									;					
+
+									     ; meet-the-kingdom				   ; Meet The Kingdom				; تعرّف على المملكة 				; 											             ;									;					
+									     ; about-the-kingdom			   ; About the Kingdom				; اكتشف السعودية 				; /aboutKingdom								             ;									;					
+									     ; living-in-saudi  			   ; Living in Saudi Arabia		    ; الحياة في السعودية 			; /livingInSaudi							             ;									;					
+									     ; regions-overview	               ; Regions Overview				; المناطق						; /meetRegions								             ; riyadh-province, makkah-province, eastern-province, madinah-province, aseer-province, al-baha-province, al-jawf-province, northern-borders-province, qassim-province, hail-province, tabuk-province, jazan-province, najran-province	;
+									 									 
+									     ; invest-in-saudi 				   ; Invest In Saudi Arabia 	    ; استثمر في المملكة العربية السعودية	;											     ;									;					
+									     ; sectors	            		   ; Sectors						; القطاعات						; /sectors-opportunities					             ; chemicals, energy, environment-services, info-and-tech, tourism-culture-entertainment, food-processing, real-estate, healthcare-life-sciences, financial, transport-logistics, human-capital-innovation, industrial-manufacturing, mining-metals, pharmacuticals, aerospace-defense	;
+									     ; opportunity-search	           ; Opportunities					; الفرص							; /sectors-opportunities/opportunities					 ;									; 		       
+			                             ; regional-head-quarters          ; Regional Head Quarters         ; المقرات الإقليمية              ; /sectors-opportunities/regionalHQ                      ;									;
+			                             
+										 ; start-business                  ; Start Your Business            ; ابدأ رحلتك الاستثمارية         ;                                                        ;									;
+										 ; incentives                      ; Incentives                     ; الحوافز                       ; /investor/incentives                                   ;									;
+										 ; investment-guide                ; Investment Guide               ; دليل المستثم                  ; /investor/guide                                        ;									;
+										 
+										 ; economic-highlights             ; Economic Highlights            ; الملامح الاقتصادية الهامة       ;                                                        ;									;
+										 ; dashboard                       ; Dashboard                      ; أهم الأرقام                    ; /economicHighlights/dashboard                          ;									;
+										 ; sa-international-indices        ; SA in International Indices    ; المملكة العربية السعودية في المؤشرات الدولية    ; /economicHighlights/saInternationalIndices	;							;
+										 ; infrastructure-logistics        ; Infrastructures and Logistic   ; البُنية التحتية والخدمات اللوجستية               ; /economicHighlights/infraLogistics          ;							;
+										 ; saudi-economic-sectors          ; Saudi Economic Sectors         ; القطاعات الاقتصادية السعودية  	; /economicHighlights/saudiEconomicSectors               ;									;
+										 ; investment-data                 ; Investment Data                ; بيانات الاستثمار               ; /economicHighlights/investmentData                     ;									;
+										 
+										 ; media                           ; Media                          ; المركز الاعلامي                 ;                                                        ;									;
+										 ; media-center                    ; Media Center Overview          ; المركز الاعلامي                 ; /mediaCenter                                           ;									;
+										 ; news                            ; News                           ; الأخبار                        ; /mediaCenter/news                                      ;									;
+										 ; events                          ; Events                         ; الأنشطة والفعاليات	            ; /mediaCenter/resources                                 ;									;
+										 ; resources                       ; Resources                      ; الموارد والإصدارات             ; /mediaCenter/videos                                    ;									;
+										 ; videos                          ; Videos                         ; فيديو                         ; /mediaCenter/events                                    ;									;
+                                         
+										 ; about                           ; About                          ; من نحن                        ;                                                        ;									;                                           
+										 ; about-invest-saudi              ; About Invest Saudi             ; عن استثمر في السعودية         ; /aboutSaudi                                            ;									;                                   
+										 ; contact-us                      ; Contact Us                     ; تواصل معنا                    ; /contactUs                                             ;									;
+										
+										 ; privacy-policy                  ; Privacy Policy                 ; سياسة خاصة                    ; /privacy-policy                                        ;									;                                    
+										 ; brand-policy                    ; Brand Policy                   ; سياسة العلامة التجارية         ; /brand-policy                                          ;									;
+
+
+INSERT_UPDATE InvestSaudiSiteMap         ; mapCode[unique = true]	       ; mapName					    ; siteMapLevel1(siteMapLevel2Id); siteMapLevel2(siteMapLevel2Id)	;
+								         ; home						       ; HOME						    ; home							;									;
+								         ; meet-the-kingdom			       ; MEET THE KINGDOM			    ; meet-the-kingdom				; about-the-kingdom, living-in-saudi, regions-overview	;
+								         ; invest-in-saudi			       ; INVEST IN SAUDI ARABIA	        ; invest-in-saudi				; sectors, opportunity-search, regional-head-quarters	;
+                                         ; start-business                  ; START YOUR BUSINESS            ; start-business                ; incentives, investment-guide                          ;                            
+                                         ; economic-highlights             ; ECONOMIC HIGHLIGHTS            ; economic-highlights           ; dashboard, sa-international-indices, infrastructure-logistics, saudi-economic-sectors, investment-data;
+										 ; media                           ; MEDIA                          ; media                         ; media-center, news, events, resources, videos			;
+										 ; about                           ; ABOUT                          ; about                         ; about-invest-saudi, contact-us	;
+										 ; privacy-policy                  ; PRIVACY POLICY                 ; privacy-policy                ;									;	
+										 ; brand-policy                    ; BRAND POLICY                   ; brand-policy                  ;									;
+										 

@@ -1,0 +1,48 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalMediaCenterLandingPageTemplate
+$page = media-center
+$pageNameAr = المركز الإعلامي
+$pageTitleAr = $pageNameAr
+$pageLabel = /mediaCenter
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+				   
+INSERT_UPDATE InvestSaudiMediaCenterComponent ; uid[unique = true]   ; name                 ; mediaCenterUrl         ; isVideoComponent[default=false]  ; mediaCenterTypeName[lang = ar] ; $contentCV[unique = true]                 
+                                              ; latestnews           ; الأخبار               ; /mediaCenter/news      ;                                  ; الأخبار                         ;                           
+									          ; latestevents         ; الأنشطة والفعاليات    ; /mediaCenter/events    ;                                  ; الأنشطة والفعاليات              ;                           
+									          ; latestresources      ; الموارد والإصدارات    ; /mediaCenter/resources ;                                  ; الموارد والإصدارات              ;                           
+									          ; latestwebinar        ; مؤتمرات افتراضية     ;                        ; true                             ; مؤتمرات افتراضية               ;                           
+									          ; latestsuccessstory   ; قصص النجاح           ;                        ; true                             ; قصص النجاح                     ;                           
+
+
+INSERT_UPDATE PortalMediaCenterCarouselComponent ; uid[unique = true]   			        ; mcComponents(uid, $contentCV)                                               ; &componentRef                      ; $contentCV[unique = true]	
+												 ; portalmediaCenterCarouselComponent	    ; latestnews,latestevents,latestresources,latestwebinar,latestsuccessstory    ; portalmediaCenterCarouselComponent ; 							    
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]  	; title[lang = ar]  ; masterTemplate(uid, $contentCV); label      ; homepage; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved'] ; $contentCV[unique = true]
+                         ; $page             	; $pageTitleAr      ; $template                      ; $pageLabel ; false   ;                              ;                                            ;                          
+
+						 								
+						 
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active ; cmsComponents(&componentRef)       ; $contentCV ;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true   ; portalmediaCenterCarouselComponent ;            ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true   ; 						           ;            ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true   ;                                    ;            ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page] ; $contentCV[unique = true] ;
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;                                                       ;                           ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;                                                       ;                           ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;                                                       ;                           ;
+

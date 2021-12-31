@@ -1,0 +1,46 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]                      	 		; realFileName                    			 		; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']			 ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; medina-banner-image.png            		 		; medina-banner-image.png    				 		; $siteResource/medina-banner-image.png                                         ;                 image/png                ;                                          ; ""     ;
+					; medina-map.png                       		 		; medina-map.png               				 		; $siteResource/medina-map.png                                                  ;                 image/png                ;                                          ; ""     ;
+					; medina-religious-cultural-tourism.png       		; medina-religious-cultural-tourism.png             ; $siteResource/medina-religious-cultural-tourism.png       	                ;                 image/png                ;                                          ; ""     ;
+					; medina-logistics.png                      	   	; medina-logistics.png                          	; $siteResource/medina-logistics.png                      	                    ;                 image/png                ;                                          ; ""     ;
+					; medina-petroleum-productsmanufacturing-1.png  	; medina-petroleum-productsmanufacturing-1.png      ; $siteResource/medina-petroleum-productsmanufacturing-1.png                    ;                 image/png                ;                                          ; ""     ;
+					; medina-petroleum-productsmanufacturing.png    	; medina-petroleum-productsmanufacturing.png       	; $siteResource/medina-petroleum-productsmanufacturing.png                      ;                 image/png                ;                                          ; ""     ;   
+					; medina-mining.png                      			; medina-mining.png                      	       	; $siteResource/medina-mining.png                      		                    ;                 image/png                ;                                          ; ""     ;   
+					; medina-tradeing.png                      			; medina-tradeing.png                      	    	; $siteResource/medina-tradeing.png                      		                ;                 image/png                ;                                          ; ""     ;   
+					; medina-agriculture.png                     		; medina-agriculture.png                            ; $siteResource/medina-agriculture.png                     	                    ;                 image/png                ;                                          ; ""     ;   
+											
+					; medina-population.png        		        		; medina-population.png        		        		; $siteResource/medina-population.png        		                            ;                 image/png                ;                                          ; ""     ;   
+					; medina-active -factories.png    		     		; medina-active -factories.png    		       		; $siteResource/medina-active -factories.png    		                        ;                 image/png                ;                                          ; ""     ;   
+					; medina-economic-growth.png           	    		; medina-economic-growth.png           				; $siteResource/medina-economic-growth.png                                      ;                 image/png                ;                                          ; ""     ;   
+					; medina-airport.png              		    		; medina-airport.png              					; $siteResource/medina-airport.png              		                        ;                 image/png                ;                                          ; ""     ;   
+					; medina-private-sector-employees.png        		; medina-private-sector-employees.png  				; $siteResource/medina-private-sector-employees.png                             ;                 image/png                ;                                          ; ""     ;   
+					; medina-dams.png         				    		; medina-dams.png         				    		; $siteResource/medina-dams.png         				                        ;                 image/png                ;                                          ; ""     ;   
+					; medina-industrial-city.png  			    		; medina-industrial-city.png  			            ; $siteResource/medina-industrial-city.png  			                        ;                 image/png                ;                                          ; ""     ;   
+					; medina-hotels.png              		    		; medina-hotels.png              		    		; $siteResource/medina-hotels.png              		                         	;                 image/png                ;                                          ; ""     ;   
+					; medina-sport-city.png       			    		; medina-sport-city.png       			       		; $siteResource/medina-sport-city.png       			                        ;                 image/png                ;                                          ; ""     ;   
+					; medina-chambers-of-commerce.png		    		; medina-chambers-of-commerce.png		            ; $siteResource/medina-chambers-of-commerce.png		                            ;                 image/png                ;                                          ; ""     ;   
+					; medina-towns.png            			    		; medina-towns.png            						; $siteResource/medina-towns.png            			                        ;                 image/png                ;                                          ; ""     ;   
+					; medina-hospitals.png                       		; medina-hospitals.png                 				; $siteResource/medina-hospitals.png                                            ;                 image/png                ;                                          ; ""     ;   					
+					; medina-seaport.png					 	    	; medina-seaport.png								; $siteResource/medina-seaport.png												;                 image/png                ;										  ; ""	   ;
+					; medina-roads-length.png				    		; medina-roads-length.png							; $siteResource/medina-roads-length.png										  	;                 image/png                ;										  ; ""	   ;
+																				  
+					; medina-religious-cultural-assets.png            	; medina-religious-cultural-assets.png           	; $siteResource/medina-religious-cultural-assets.png                            ;                 image/png                ;                                          ; ""     ;   
+					; medina-yanbu-Industrial-city.png              	; medina-yanbu-Industrial-city.png              	; $siteResource/medina-yanbu-Industrial-city.png                            	;                 image/png                ;                                          ; ""     ;   	
+					; medina-logistics-yanbu-seaport.png            	; medina-logistics-yanbu-seaport.png            	; $siteResource/medina-logistics-yanbu-seaport.png                              ;                 image/png                ;                                          ; ""     ;   	
+					; medina-natural-resources-solar-gold-copper.png	; medina-natural-resources-solar-gold-copper.png	; $siteResource/medina-natural-resources-solar-gold-copper.png                  ;                 image/png                ;                                          ; ""     ;   	
+					; medina-oil-gassupply-lines.png                    ; medina-oil-gassupply-lines.png                  	; $siteResource/medina-oil-gassupply-lines.png                                  ;                 image/png                ;                                          ; ""     ;   	

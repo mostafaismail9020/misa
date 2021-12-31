@@ -1,0 +1,33 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagcrdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/ZBASIC_ORG_INFO_ENT('6000003610')",
+      "uri": "https://sagcrdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH_SRV/ZBASIC_ORG_INFO_ENT('6000003610')",
+      "type": "ZQEEMAH_SRV.ZBASIC_ORG_INFO"
+    },
+    "RefID": "6000003610",
+    "OrgName": "saptest",
+    "LegalStatus": "BRLL",
+    "MncComp": "2",
+    "LbrSize": "",
+    "Capital": "0000000000000000000999999",
+    "Ccode_Tele": "966",
+    "Telephone": "",
+    "Ccode_Mobile": "966",
+    "Mobile": "",
+    "Ccode_Fax": "",
+    "Fax": "",
+    "Website": "http://www.sap.com",
+    "Region": "18",
+    "City": "18000069",
+    "Country": "SA",
+    "Email": "roman@sap.com",
+    "CommMtd": "",
+    "Return": "",
+    "OrgName1": "اختبار",
+    "OrgName2": "",
+    "Street": "",
+    "PoBox": "24",
+    "PostalCode": "624130"
+  }
+}

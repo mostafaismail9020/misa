@@ -1,0 +1,160 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ServiceReqHDRs('1000619')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ServiceReqHDRs('1000619')",
+      "type": "ZUI5_SAGIA_SRV.ServiceReqHDR"
+    },
+    "PrevSrGuid": "00000000-0000-0000-0000-000000000000",
+    "ReApply": false,
+    "SrID": "1000619",
+    "SrGuid": "005056B1-1C89-1ED8-928B-6B1EC4A12AEC",
+    "LicID": "12822",
+    "LicGuid": "005056B1-1C89-1EE8-90F6-2C84D917C9E7",
+    "LicType": "1",
+    "LicTypeDesc": "INDUSTRIAL  صناعي",
+    "BpID": "613392",
+    "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+    "SrCrDate": "/Date(1524614400000)/",
+    "SrStCode": "E0012",
+    "SrStDesc": "Awaiting Payment",
+    "LicExDate": "/Date(1694044800000)/",
+    "ValidFrom": "/Date(1410393600000)/",
+    "TransType": "ZSR4",
+    "LicRenFlag": false,
+    "Action": "00",
+    "SrvReqToAddressNav": {
+      "__metadata": {
+        "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AddressHDRs('1000619')",
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AddressHDRs('1000619')",
+        "type": "ZUI5_SAGIA_SRV.AddressHDR"
+      },
+      "SrID": "1000619",
+      "SrGuid": "005056B1-1C89-1ED8-928B-6B1EC4A12AEC",
+      "BpID": "613392",
+      "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+      "Street": "EMAILY",
+      "Building": "2853",
+      "HouseNo": "2",
+      "Country_desc": "Saudi Arabia",
+      "Country": "SA",
+      "ZipCode": "32233",
+      "AdditNo": "9377",
+      "City": "الطائف",
+      "Period": ""
+    },
+    "SrvReqToContentNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='1000619',DocumentID='005056B11C891ED8928B6BCA10902AEC',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='1000619',DocumentID='005056B11C891ED8928B6BCA10902AEC',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "1000619",
+          "ObjectGuid": "005056B1-1C89-1ED8-928B-6B1EC4A12AEC",
+          "Filename": "Copy of Zakat and Income Tax certificate",
+          "Filesize": "0000000042",
+          "Mimetype": "application/pdf",
+          "DocumentID": "005056B11C891ED8928B6BCA10902AEC",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1524614400000)/",
+          "DocKeyID": "1324",
+          "ShDocID": "Copy of Za",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='1000619',DocumentID='005056B11C891ED8928B6BCA10902AEC',Stage='')/FollowupSrvHDR"
+            }
+          }
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='1000619',DocumentID='005056B11C891ED8928B6BCA10908AEC',Stage='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='1000619',DocumentID='005056B11C891ED8928B6BCA10908AEC',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "1000619",
+          "ObjectGuid": "005056B1-1C89-1ED8-928B-6B1EC4A12AEC",
+          "Filename": "Saudization Certificate",
+          "Filesize": "0000000042",
+          "Mimetype": "application/pdf",
+          "DocumentID": "005056B11C891ED8928B6BCA10908AEC",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1524614400000)/",
+          "DocKeyID": "1390",
+          "ShDocID": "Saudizatio",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='1000619',DocumentID='005056B11C891ED8928B6BCA10908AEC',Stage='')/FollowupSrvHDR"
+            }
+          }
+        }
+      ]
+    },
+    "SrvReqToAttachNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AttachmentHDRs(ObjectID='1000619',DocumentID='005056B11C891ED8928B6BCA1090EAEC')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AttachmentHDRs(ObjectID='1000619',DocumentID='005056B11C891ED8928B6BCA1090EAEC')",
+            "type": "ZUI5_SAGIA_SRV.AttachmentHDR"
+          },
+          "ContentType": "IMAGE",
+          "ObjectID": "1000619",
+          "ObjectGuid": "005056B1-1C89-1ED8-928B-6B1EC4A12AEC",
+          "Filename": "",
+          "Filesize": "0000000248",
+          "Mimetype": "image/jpeg",
+          "DocumentID": "005056B11C891ED8928B6BCA1090EAEC",
+          "Crtdby": "TUSER10",
+          "Crtdon": "/Date(1524614400000)/"
+        }
+      ]
+    },
+    "SrvReqToContentDetailNav": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ServiceReqHDRs('1000619')/SrvReqToContentDetailNav"
+      }
+    },
+    "SrvReqToTextNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AttachmentHDRs(ObjectID='1000619',DocumentID='005056B11C891ED8928B6BCA1090EAEC')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AttachmentHDRs(ObjectID='1000619',DocumentID='005056B11C891ED8928B6BCA1090EAEC')",
+            "type": "ZUI5_SAGIA_SRV.GetText"
+          },
+          "SrID": "1000619",
+          "SrGuid": "005056B1-1C89-1ED8-928B-6B1EC4A12AEC",
+          "CommentDate": "/Date(1524614400000)/",
+          "CommentTime": "PT10H00M00S",
+          "Zone": "zone",
+          "CommentBy": "John Doe",
+          "TdID": "300",
+          "Comments": "A comment returned by a mock file",
+          "Stage": "OK"
+        },{
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AttachmentHDRs(ObjectID='1000619',DocumentID='005056B11C891ED8928B6BCA1090EAEC')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZUI5_SAGIA_SRV/AttachmentHDRs(ObjectID='1000619',DocumentID='005056B11C891ED8928B6BCA1090EAEC')",
+            "type": "ZUI5_SAGIA_SRV.GetText"
+          },
+          "SrID": "1000619",
+          "SrGuid": "005056B1-1C89-1ED8-928B-6B1EC4A12AEC",
+          "CommentDate": "/Date(1524614400000)/",
+          "CommentTime": "PT10H00M00S",
+          "Zone": "zone",
+          "CommentBy": "John Doe",
+          "TdID": "301",
+          "Comments": "Another comment returned by a mock file",
+          "Stage": "OK"
+        }
+      ]
+    }
+  }
+}
+

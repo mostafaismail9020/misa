@@ -1,0 +1,59 @@
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+$newsTitleAr=اقتصادي / وزير الاستثمار : البيئة الاستثمارية في المملكة جاذبة
+$shortDescAr= اقتصادي / وزير الاستثمار : البيئة الاستثمارية في المملكة جاذبة
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                      		; realFileName                    				; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+                   ; news-Roche-and-misa-partnership.jpg            ; news-Roche-and-misa-partnership.jpg     		; $siteResource/news-Roche-and-misa-partnership.jpg                            ;                 image/jpg   ;                                          ; ""     ;
+                   ; news-Roche-and-misa-partnership-thumbnail.jpg	; news-Roche-and-misa-partnership-thumbnail.jpg; $siteResource/news-Roche-and-misa-partnership-thumbnail.jpg                   ;                 image/jpg   ;                                          ; ""     ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]     		; $medias                   												; $contentCV; 
+                            ; media-container-misa-partnership	; news-Roche-and-misa-partnership.jpg,news-Roche-and-misa-partnership.jpg 	;          	;
+
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true]; uid[unique = true]    ; newsTitle[lang = en]                                                               									; newsDate[dateformat = dd.MM.yyyy HH:mm:ss]    ; newsUrl	;
+                                      ;							; news-roche-and-misa	; Ministry of Investment and Roche announce new partnership to unlock opportunities in the Saudi life sciences sector 	; 08.02.2021 00:00:00                           ;			;                     
+
+
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]	; newsShortInformation[lang = en];
+									  ;							 ; news-roche-and-misa	; "The Ministry of Investment of Saudi Arabia (MISA) and Roche Products Saudi Arabia (RPSA) have signed a memorandum of understanding (MoU) to establish a new partnership that will see the two entities collaborate on initiatives to develop the kingdom's healthcare and life sciences sector."
+
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]	; newsFullDescription[lang = en];
+                               ;						  ; news-roche-and-misa ; "
+Under the MoU, RPSA will work together with MISA to enable the industry's growth potential by facilitating investment opportunities and capacity building of local talent; developing policy and regulation; and enhancing healthcare delivery in the kingdom through establishing public-private partnerships with organizations across the life sciences ecosystem.
+<p>The MoU was signed at MISA headquarters in Riyadh by representatives from MISA and RPSA in the presence of Khalid Al Falih, Minister of Investment for Saudi Arabia. During the ceremony, MISA and RPSA shed light on the strategic objectives behind the new partnership and discussed how the MOU will target Saudi Arabia's biotech and pharmaceutical manufacturing, research and development, clinical care and diagnostics offerings.</p> 
+<p>A variety of projects are already under way as part of RPSA and MISA's new collaboration, including a policy alliance to enhance the personalised healthcare and clinical trials landscapes in the kingdom and unlock their investment potential. RPSA also plans to operate a range of educational initiatives under the MOU, including a graduate program and on-site professional training at their facilities across the country.</p>
+<p>Al Falih said:Saudi Arabia's nascent biotechnology and life science industries will play a central role in driving our post-pandemic economic recovery. The Ministry of Investment is enabling these critical sectors of tomorrow through launching regulation that is designed to attract investment which harnesses and develops their untapped growth potential. The past 12 months have shown us that Saudi Arabia has one of the G20's most resilient economies - we recorded a 12% increase in FDI in the first half of 2020 despite a challenging economic backdrop. We look forward to collaborating closely with RPSA as part of this new strategic partnership to harness their world-leading expertise- develop the long-term capacity of our national healthcare landscape, and enable Saudi Arabia's continued economic transformation through Vision 2030.</p>
+<p>A multinational biotechnology and pharmaceutical giant headquartered in Switzerland, RPSA has been active in Saudi Arabia for over 30 years and became a fully operational legal entity in 2018 with the support of the Ministry of Investment. The company has already contributed significantly to developing Saudi Arabia's life sciences capacity and recently established a multi-industry consortium with other private sector healthcare providers to optimize sector innovation and enhance patient experiences.</p>
+<p>Dr Abdulrahman Sabra, General Manager of Roche Products Saudi Arabia, said: Today we celebrate our partnership with MISA, a valuable alliance that will enable us to continue in our journey to serve patients across the kingdom. As a multinational pharmaceutical company, our innovation, cutting-edge technologies and personalized approach to healthcare are the cornerstones that support us on our mission. We acknowledge the importance of having public-private partnerships, and we believe that this will be an integral part in collaborating with the authorities towards their commitment to enhance the healthcare ecosystem in Saudi Arabia and in the realisation of the kingdom's Vision 2030.</p>
+<p>Prioritised for development as a strategic industry of the future in line with Vision 2030, healthcare and life science disciplines, such as pharmaceuticals and biotechnology, are set to benefit from a range of pro-business incentives being introduced across Saudi Arabia's investment environment in the near future, such as Special Economic Zones. The latest regulations will build on previous incentives, which include 100% foreign ownership for healthcare companies, to help unlock opportunities and attract investment that enables infrastructural development and capacity building across the kingdom's nascent life sciences industry.</p>
+";
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]	; newsFullDescription[lang = ar];
+                               ;						  ; news-roche-and-misa ; "
+<p>عدّ معالي وزير الاستثمار المهندس خالد بن عبد العزيز الفالح، قطاع الرعاية الصحية وصناعات التكنولوجيا الحيوية وعلوم الحياة، أحد أهم القطاعات التي تحفل بالفرص الاستثمارية والكبيرة في المملكة، مشيراً إلى أن هذه الصناعة ستؤدي دوراً محورياً في الدفع نحو التعافي الاقتصادي في مرحلة ما بعد الجائحة، مؤكداً أن وزارة الاستثمار حريصة على تطوير وتجهيز الفرص الاستثمارية ودعم المستثمرين في هذا القطاع وغيره من القطاعات الحيوية.</p>
+<p>جاء ذلك خلال حفل توقيع وزارة الاستثمار اليوم مذكرة تفاهم مع إحدى الشركات السويسرية المتخصصة في العناية الطبية ، تهدف إلى تأسيس شراكة بين الجهتين وذلك لدعم وتعزيز البيئة الاستثمارية لقطاع الرعاية الصحية وعلوم الحياة في المملكة، وذلك بحضور معالي وزير الصحة الدكتور توفيق بن فوزان الربيعة، ومعالي الرئيس التنفيذي للهيئة العامة للغذاء والدواء الدكتور هشام بن سعد الجضعي، وسفير الاتحاد السويسري لدى المملكة الدكتور أندري شالر، وعدد من كبار المسؤولين في القطاعين الحكومي والخاص.</p>
+<p>وأفاد المهندس الفالح أن وزارة الاستثمار تضع على سلم أولوياتها تمكين قطاعات المستقبل من خلال إطلاق التشريعات لتعزيز جذب الاستثمارات لهذه القطاعات الوليدة، مشيرا إلى أن المملكة تمتلك اقتصادا قويا ومرنا وهو ما ظهر جليا خلال الأزمة التي تسببت بها الجائحة، مستشهداً بتحقيق المملكة زيادة بلغت( 12% ) في نسبة الاستثمار الأجنبي خلال الأشهر الست الأولى من العام الماضي على الرغم من الظروف الاقتصادية الصعبة التي مر بها العالم.</p>
+<p>وعبر عن تطلعاته من خلال الشراكة الاستراتيجية مع الشركة السويسرية إلى التعاون الوثيق لتسخير المعرفة والخبرات العالمية وتطوير قدرة قطاع الرعاية الصحية على المدى الطويل بما يعمل على تحقيق مستهدفات رؤية 2030.</P>
+<p>وبحسب مذكرة التفاهم، ستقوم وزارة الاستثمار بالتعاون مع الشركة السويسرية بتمكين قطاع الرعاية الصحية وعلوم الحياة من النمو وتسهيل الوصول إلى الفرص الاستثمارية وتوطين المعرفة والخبرات، وتطوير الأنظمة والسياسات وتعزيز الحصول على خدمات الرعاية الصحية من خلال الشراكة بين القطاعين العام والخاص.<p>
+<p>تأتي الاتفاقية استكمالاً للتعاون بين وزارة الاستثمار والشركة السويسرية لجذب الاستثمارات في قطاع الرعاية الصحية وتطوير السياسات الخاصة بتسهيل التجارب السريرية الطبية وبرامج الدراسات العليا والتدريب في جميع أنحاء المملكة.</p>
+<p>من جهته أكد مدير الشركة الدكتور عبد الرحمن صبرا أن الشراكة ستكون محركا مهما لتطوير العملية الاستثمارية في قطاع التكنولوجيا الحيوية والرعاية الرعاية الصحية في المملكة, مشدداً على التزام الشركة بتسخير الابتكارات والتقنيات المتطورة لتعزيز بيئة الرعاية الصحية في المملكة في ضوء الشراكة بين القطاعين العام والخاص.</p>
+";				 								   
+
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]		; newsDetailsImage(code, $contentCV)    ; newsThumbnailImage(code, $contentCV)          ; $galleryImages	; &componentRef			;   
+                                      ;                         ;news-roche-and-misa    ; news-Roche-and-misa-partnership.jpg   ; news-Roche-and-misa-partnership-thumbnail.jpg	;    				; news-roche-and-misa 	;
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]		; newsTitle[lang = ar]	; newsShortInformation[lang = ar] 	;
+									  ;							;news-roche-and-misa    ; $newsTitleAr    		; $shortDescAr						;                                                                  

@@ -1,0 +1,9 @@
+#Ant properties
+#Mon Mar 12 15:10:42 CET 2018
+builddate=20180312 1510
+description=sagiabol
+name=sagiabol
+releasedate=20171129 1517
+vendor=hybris
+version=6.6.0.3
+version.api=6.6.0

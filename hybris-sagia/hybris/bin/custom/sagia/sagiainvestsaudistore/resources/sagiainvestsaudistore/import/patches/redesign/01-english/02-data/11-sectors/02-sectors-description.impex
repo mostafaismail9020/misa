@@ -1,0 +1,636 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+    
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+
+INSERT_UPDATE Category	; code[unique = true]				; description[lang = en]                                    ;$catalogVersion                                                																													   																													   																													   
+						; renewable-energy					; "	<h3>Limitless solar and wind energy endowment</h3>
+																	<li>	Saudi Arabia is ideally located at the center of the sunbelt and has an excellent potential for sun irradiation across most of its regions.</li>
+																	<li>	Saudi Arabia is ideally located in the Hadley cell and has an excellent potential for wind energy along the northeast, central regions and mountains in the western region.</li>
+																	</ul>
+																<h3>Large unsaturated regional market</h3>
+																	 <ul>
+																	 <li>	In addition to the growing local demand, manufacturers have the opportunity to meet an energy demand of 17 GW in the GCC and 70 GW in the MENA region</li>
+																	 <li>	Energy companies in Saudi Arabia can leverage a logistical advantage, such as cheaper transportation costs and faster supply times to GCC bordering countries</li>
+																	 </ul>
+																<h3>Advanced knowledge-based market</h3>
+																	 <ul>
+																	 <li>A strong ecosystem of advanced renewables research and innovation with pioneering initiatives involving many entities.</li>
+																	 <li>The renewable energy atlas and the supplier database are two examples of comprehensive market information databases .</li>
+																	 </ul>
+																<h3>An investor centric ecosystem</h3>
+																	 <ul>
+																	 <li>	Tailored investment incentives are provided to encourage private sector investments.</li>
+																	 <li>	Facilitate the formation and expansion of businesses in order to make the investment experience as simple as possible.</li>
+																	 </ul> ";
+																													  
+					    ; conventional-energy				; "<h3>Large and growing market demand for energy</h3>
+																	 <ul>
+																	 <li> Residential, commercial, and industrial sectors are driving higher power consumption, which is expected to increase by more than 40% by 2030.</li>
+																	 <li> Natural gas will gradually replace liquid fuel generation, resulting in bigger and more attractive investment opportunities</li>
+																	 <li> Greater energy consumption will be driven by the establishment of large new projects in the Kingdom including Qiddiya, NEOM, and the Red Sea Project.</li>
+																	 </ul>
+																<h3>Robust infrastructure and foundation</h3>
+																	 <ul>
+																	 <li>	The government has a solid track record of growing the industry, with attractive incentives and a well-established regulatory framework</li>
+																	 <li> A strong local supply chain that provides the required raw materials and human resources to help companies flourish.</li>
+																	 <li> Strategically located to build energy network linkages with neighboring nations and gain access to export markets</li>
+																	 </ul>
+																<h3>Strong commitment to localization and private sector engagement</h3>
+																	 <ul>
+																	 <li> The SEC localization plan calls for the addition of 162,000 kilometers of distribution lines, raising the total number of consumers to almost 10.8 million.</li>
+																	 <li> With a considerable 129% growth in the number of local factories producing electrical equipment, SEC’s localization program is already encouraging development of local manufacturing capabilities.</li>
+																	 </ul>";
+					
+						; energy-saving		                 ; "<h3>One of the countries with largest energy consumption with increasing electricity tariffs</h3>
+																	 <ul>
+																	 <li> Saudi Arabia is the third greatest energy producer in the world, with a per capita consumption of 8,954 Kwh.</li>
+																	 <li> Electricity rates have increased twice in the past three years and are expected to further increase in the future.</li>
+																	 </ul>
+																<h3>Strong government commitment to the growth of the energy savings industry</h3>
+																	 <ul>
+																	 <li> Launch of the Saudi Energy Efficiency Center (SEEC) as the primary institution and single point of contact for the energy efficiency sector.</li>
+																	 <li> Introduction of new regulations (e.g., ESCO license, legal framework, incentives) and standards (e.g. measurements) to facilitate investments.</li>
+																	 <li> Large investments in human capital to develop technical competencies in the energy sector and raise public awareness.</li>
+																	 </ul>
+																<h3>Tarshid established to promote energy conservation in public buildings</h3>
+																	 <ul>
+																	 <li> The “Tarshid” Super ESCO, with a capital of around $500 million, was created to develop energy projects in public sector buildings by collaborating with private investors.</li>
+																	 <li> Tarshid has full authority to revamp all government institutions and public infrastructure, according to a royal order requiring all government institutions to be energy efficient.</li>
+																	 <li> Tarshid aims to supervise energy efficiency projects for more than 260,000 government buildings and more than 3 million street light poles.</li>
+																	 </ul>";	
+																																																					   																								                       
+						; water                           	; "<h3>Large and growing market demand for water</h3>
+																	 <ul>
+																	 <li>With a population of around 35 million and one of the highest water consumptions per capita in the world, the size of the Kingdom's water demand (around 15 million m3 per day for municipal and industrial use) and associated need for infrastructure is significant, with $67 billion in estimated capital investments by 2025</li>
+																	 <li>The Kingdom features a water supply capacity of around 8 million m3 of desalination and water reuse.</li>
+																	 <li>Saudi Arabia's water sector has grown at an annual rate of 5-10%, driven by robust industrial production growth and sustained population expansion.</li>
+																	 </ul>  
+																 <h3>Global leader in desalination </h3>
+																	 <ul>
+																	 <li>Saudi Arabia has the world's largest desalination market, accounting for over 20% of global capacity, with around 8 million m3 of desalinated water produced each day.</li>
+																	 <li>The Kingdom boasts over 40 available desalination units with plans to construct 5.5 million m3 per day of additional desalination capacity by 2026 to cover 90% of its potable water needs by 2030.</li>
+																	 <li>More than $10 billion is anticipated to be spent in desalination projects by 2030, creating significant possibilities for the private sector to participate.</li>
+																 <h3>Strong commitment to develop infrastructure beyond desalinatio</h3>
+																	 <ul>
+																	 <li>Growing desalination capacity to meet increasing consumption will require additional transmission capacity, with the expansion estimated at around 3,000 km by 2025.</li>
+																	 <li>Reducing network leakages to 15% by 2030 will require significant upgrades of the existing transmission and distribution lines, including digitization of the network</li>
+																	 <li>The Kingdom plans to increase its wastewater treatment capacity by 5.5 million m3 by 2030 to accommodate for the growth in demand, while increasing its sewage network coverage to over 95% by 2030.</li>
+																	 <li>Ambitious goals of 100% wastewater treatment by 2030 and 90% water reuse by 2040 have been set, with the goal of transforming current and future wastewater treatment assets into strategic water supply units for the industrial sector.</li>
+																	 <li>Multiple water reuse projects and initiatives are being implemented across the water sector, making this market very attractive to foreign investors.</li>
+																	 <li>The Kingdom has introduced water reuse initiatives to secure eco-friendly water supply while also promoting the market's long-term financial viability.</li>
+																	 </ul>
+																 <h3>Strong ambitions to further anchor water capabilities and expertise locally</h3>
+																	<ul>
+																	 <li>Saudi Arabia is at the global forefront of water technology research and innovation and aims to further anchor water technology capabilities in its local ecosystem.</li>
+																	 <li>Several players in the Kingdom's water sector are involved in multiple innovative projects such as solar-powered desalination or improved membrane technologies and are key strategic partners and co-investors to develop and commercialize the water technologies of the future.</li>
+																	 </ul>" ;
+																													 
+						; waste-management 	 				; "<h3>Large and growing need for a robust, nation-wide waste management system</h3>
+																 <ul>
+																 <li>With a population of around 35 million and a high standard of living, the Kingdom now generates over 50 million tons of waste per year.</li>
+																 <li>The country's growing population, rising standards of living, ever-growing number of visiting pilgrims and continuous urban expansion are driving strong further growth in generated waste volumes.</li>
+																 <li>Furthermore, continued efforts to diversify the country's economy by developing new industrial sectors is giving rise to growing volumes of industrial waste types requiring specialized treatment.</li>
+																 </ul>
+															  
+															  <h3>Clear government commitment to unlock the sector's full potential</h3>
+															  <ul>
+															  <li>Testimony to the government's strong commitment to unlock the sector, the National Center for Waste Management (NCWM) and the Saudi Investment Recycling Company (SIRC) have been established with the mandate to support the transformation of the Kingdom's waste management industry.</li>
+																 <li>The National Center for Waste Management provides the regulatory framework and standards across the different waste streams and offers investment incentives aiming to attract investors into the sector.</li>
+																 <li>The Saudi Investment Recycling Company is mandated to co-develop and accelerate the creation of a world-class waste management sector in the Kingdom.</li>
+															</ul> 
+															  
+															 <h3>Ambitious sustainability targets to address consumer-driven waste</h3>
+															  <ul>
+															  <li>Saudi Arabia has set ambitious long-term targets for resource conservation, aiming for >94% of municipal solid waste to be diverted from landfill by 2035</li>
+																 <li>Achieving the Kingdom's landfill diversion objectives will require a fundamental transformation of the sector's infrastructure, operations, and citizen behavior when it comes to consumer-driven waste (municipal solid waste, waste electronics and electrical equipment, batteries, etc.)</li>
+																 <li>To ensure full collection, treatment and recycling of the generated waste, the development of adequate infrastructure across the country will be required, such as material recovery facilities, composting plants, alternative fuels plants, waste-to-energy facilities, and recycling facilities.</li>
+
+															  </ul>
+															  <h3>Clear ambitions to develop a holistic waste management sector</h3>
+																 <ul>
+																 <li>In addition, the Kingdom has clear ambitions to develop a holistic waste management sector that addresses all waste streams, including the industrial and service-related waste streams, including</li>
+															<ul>
+														     <li>Industrial hazardous waste</li>
+																 <li>Medical hazardous waste</li>
+																 <li>Construction and demolition waste</li>
+																 <li>Agricultural waste</li>
+																 <li>Special waste types including tires, batteries, electronics & electrical equipment, and end-of-life vehicles</li>
+																 </ul>
+																 <li>In particular, the Kingdom's growing and increasingly diversified industrial output and associated waste by-products will drive the need for specialized technologies and facilities to be developed in proximity to the country's main industrial complexes.</li>
+																
+																 </ul>
+																 
+																 ";
+																													
+						; tourism 				 			; "<h3>A new, unexplored global tourist destination</h3>
+																	 <ul>
+																	 <li> The tourist sector in Saudi Arabia has experienced enormous boom, with a surge in incoming foreign visitors and a large increase in domestic tourism.</li>
+																	 <li> Domestic expenditure accounts for 32% of total tourist spending in Saudi Arabia, indicating that the domestic tourism industry has a lot of room for development.</li>
+																	 <li> Currently, the first phase of the National Tourism Strategy is ongoing, which focuses on developing and enhancing 38 sites across seven destinations by 2022.</li>
+																	 </ul>
+	-                                                                                                               <h3>Diverse tourism infrastructure projects with high international standards </h3>
+																	 <ul>
+																	 <li> The ambition for Saudi Arabia’s travel and tourism sector is to achieve over 10% of annual GDP by 2030, compared to 3% today.</li>
+																	 <li> Saudi Arabia’s hotel pipeline has 150,000 hotel rooms planned to be built by 2022, of which 30% will be government-funded and 70% will be driven by private sector.</li>
+																	 <li> Airport capacity to increase by over 100 million passengers per annum by 2030.</li>
+																	 </ul>
+																<h3>Exclusive destinations on the world tourism map</h3>
+																	 <ul>
+																	 <li> The Red Sea Project is the world’s most ambitious regenerative tourism project, offering an exclusive luxury experience of unparalleled diversity for discerning global travellers</li>
+																	 <li> Qiddiya is a disruptive destination offering a wide range of tourist activities within sports and wellness; nature and environment; parks and attractions; motion and mobility; and arts and culture.</li>
+																	 <li> AMAALA, hidden in plain sight on Saudi Arabia’s north western coast, is an ultra-luxury destination for self-transformation. Its three communities are easily accessible and connected to the iconic marinas of the Mediterranean Sea.</li>
+																	 <li> NEOM, a $500 billion mega city, is set to be world’s first private zone spanning three countries where tourists are set to enjoy the experience of visiting a truly state-of-the-art city.</li>
+																	 <li> Diriyah Gate is an enhanced, pedestrian friendly, walkable city, deeply rooted in the heritage and cultural equity of the Kingdom. The project is part of Saudi Arabia’s ambitious Vision 2030 program and will showcase the Kingdom’s history through a curated mix of heritage, hospitality, education, retail and dining experiences.</li>
+																	 </ul>
+																<h3>Rich ancient cultural heritage and breathtaking iconic sights</h3>
+																	 <ul>
+																	 <li> Saudi Arabia’s diverse terrain offers a wide variety of scenery, while its captivating history, rich culture and significance for Islam make it one of the most visited countries in the world.</li>
+																	 <li> Saudi Arabia is home to six UNESCO world heritage sites and more than 4,000 registered archaeological sites.</li>
+																	 <li> The historic site of Diriyah is an is an oasis and was declared a UNESCO heritage site in 2010. The site reflects the region’s rich Najd history featuring 300 years old architecture on site.</li>
+																	 <li> Madain Saleh is an archaeological site located in Al-`Ula and is one of the world’s greatest undiscovered wonders and was declared a UNESCO World Heritage Site in 2008</li>
+																	 </ul>";
+																													 
+						; culture-entertainment				; "<h3>An ambitious vision to enrich the lives of citizens and residents</h3>
+																 <ul>
+																 <li> The Saudi government intends to grow the entertainment sector to $9.6 billion by 2030, with an annual growth rate of 18%.</li>
+																 <ul> Entertainment attractions targets by 2030 include:
+																 <li> 30 theme park and water parks</li>
+																 <li> 300 family entertainment centers</li>
+																 <li> 28 mixed entertainment destinations</li>
+																 <li> 500 small to medium-sized entertainment events</li>
+																 <li> 266 large entertainment events</li>
+																 </ul>
+																 </ul>
+															 <h3>Offering enormous opportunities </h3>
+																 <ul>
+																 <li> Saudi Arabia’s family entertainment centers market size is set to increase from $290 million to $850 million by 2030, providing lead investment opportunities in commercially attractive infrastructure with lower capital expenditure requirements.</li>
+																 <li> Saudi Arabia’s water parks market size is set to increase from $90 million to $560 million by 2030, providing opportunities to partner with government and large investors in infrastructure with higher capital expenditure requirements</li>
+																 <li> A wide range of opportunities to participate in the development of commercially less attractive infrastructure which holds national significance for Saudi Arabia.</li>
+																 </ul>                                                                                                                
+															 <h3>Strong government backing to unlock the sector’s business potential</h3>
+																 <ul>
+																 <li> Saudi Arabia is dedicated to the growth of entertainment and culture through new state-of-the-art laws and regulations</li>
+																 <li> The government welcomes private sector involvement in infrastructure construction, event operations, content creation, and capability development within the sector.</li>
+																 <li> The expansion of this sector also opens up investment opportunities for the private sector through ancillary services such as food and beverages, retail, logistics, tourism and accommodation.</li>
+																 <li> The government is supporting investors by providing funding strategies, market intelligence, matchmaking and connections, location search, set-up assistance and incentives assistance.</li>
+																 <li> International investors can enjoy 100% foreign ownership in the entertainment sector.</li>
+																 </ul>";
+																													
+						; sports 							; "<h3>Ambition to become the ideal destination for major international sporting events</h3>
+																 <ul>
+																 <li> The Ministry of Sports was created to unlock the sector’s full potential.</li>
+																 <li> 23% mass participation and activity levels sports in 2019, up from 13% in 2015.</li>
+																 <li> $320 million private sector investment committed through clubs’ sponsorships until 2023</li>
+																 <li> $670 million committed to support sports clubs in achieving financial maturity and privatization</li>
+																 <li> Saudi Arabia has successfully hosted mega-events including WWE event, 3x3 FIBA, DAKAR, and Formula-E.</li>
+																 <li> The Sports Boulevard in Riyadh will include a 135-kilometer multi-sport track for activities such as cycling, jogging, and horseback riding.</li>
+																 </ul>";
+
+						; food-processing 					; "<h3>Large and growing local and regional markets</h3>
+																	 <ul>
+																	 <li> Saudi Arabia’s food and beverage (F&B) market is the largest in the Middle East. The market has a value of $42 billion and will expand at a pace of 3% up to 2030.</li>
+																	 <li> The F&B market is fueled by a growing population and an increase in the number of Hajj and Umrah pilgrims, and a growing focus on national resilience and food security.</li>
+																	 <li> The average household is reported to spend 18% of total expenditure on F&B, which is a domestic demand that amounts to 60% of the total consumption in the GCC.</li>
+																	 <li> In 2019, imports exceeded $20.4 billion, which raises the prospect of significant import-substitution opportunities for Saudi-based F&B producers to serve the untapped local demand for dairy, meat and fruit products.</li>
+																	 </ul>
+																<h3>Unique dates endowment making it a suitable market for exports</h3>
+																	 <ul>
+																	 <li> Saudi dates have a unique advantage over competitors thanks to Saudi Arabia's nutrient-rich soil which enables to produce Ajwa Madinah and Mabroum Sukari dates, resulting in excellent potential to produce high-quality and distinct dates.</li>
+																	 <li> The global date harvest is anticipated to be more than 6 million tons per year, with the Kingdom accounting for 11.5% of that with a yearly production of more than 1.5 million tons – positioning the Kingdom among the top three global producers of dates</li>
+																	 <li> The Kingdom's 31 million date palms with 123 thousand farms and produce over 400 different types of dates. Production rates are steadily increasing at a time when global demand has also picked up the pace.</li>
+																	 </ul>
+																<h3>An ocean of fish guaranteeing big catches</h3>
+																	 <ul>
+																	 <li> Saudi Arabia's seas are naturally endowed with a fish capacity of 5 million tons. Saudi Arabia is an approved supplier of seafood to the EU and can expand its large production capacities and capitalize on the export market's insatiable demand.</li>
+																	 <li> Saudi Arabia is on track to be the first country in the world to have national level Best Aquaculture Practices (BAP) certification.</li>
+																	 <li> Shrimps, mackerels, and crabs make up most of the aquaculture market demand and significant growth in aquaculture market demand have raised the need for alternative and sustainable forms of fish farming.</li>
+																	 <li> Domestic consumption of fish is expected to grow by 5% per annum until 2030, which translates to a significant increase from 310 tons to 865 tons. This is driven by rapid growth of the Kingdom’s population per capita consumption</li>
+																	 <li> Ambitious aquaculture targets have been set to increase the production of fish to 530,000 tons by 2030, </li>
+																	 <li> The aquacultural industry has a plethora of options to export high-quality seafood goods to countries that covet the rich waters of the Red Sea and Arabian Gulf.</li>
+																	 </ul>";
+																	 
+						; industrial-spareparts 			; "<h3>Rapid growth in tandem with other booming industries and value chains</h3>
+																	 <ul>
+																	 <li> The industrial equipment and spare parts industry in the Kingdom is expected to grow at a 6% CAGR over the five-year period leading up to 2023.</li>
+																	 <li> The development of a large renewable sector is creating a large market demand for machinery like generators, transformers, pumps, valves etc. </li>
+																	 <li> The growth of desalination and recycling activities is creating a large market demand for machinery to meet significant growth plans in recycling and desalination of water.</li>
+																	 </ul>
+																<h3>Localization programs enabling easier access to opportunities and ease of doing business</h3>
+																	 <ul>
+																	 <li> Local Content and Government Procurement Authority (LCGPA) is leveraging government purchasing power in partnership with the public and private sectors to develop local content and improve government procurement.</li>
+																	 <li> Saudi Aramco’s IKTVA in-Kingdom Total Value Add (IKTVA) program aims to drive domestic value creation by localizing 70% of the company’s spending and enabling 30% export of Saudi energy sector products</li>
+																	 <li> SABIC's NUSANED is assisting small and medium-sized businesses in getting started, as well as enabling more established businesses to expand, with the goal of SABIC’s localization agenda and local industry development</li>
+																	 <li> Saudi Electricity Company’s Build & Employ National Abilities (BENA) is a 3-phase initiative that aims to maximize local content and motivate Saudi-based manufacturers in the field of materials and spare parts.</li>
+																	 </ul>
+																<h3>Industrial cities offering investors highly competitive prices</h3>
+																	 <ul>
+																	 <li> One of the key contributors to the development of a healthy business ecosystem in Saudi Arabia has been the industrial cities. </li>
+																	 <li> Today, there are 35 existing industrial cities across the Kingdom overseen by the Saudi Authority for Industrial Cities and Technology Zones (MODON), ensuring a flourishing private sector as well as government-private partnerships.</li>
+																	 <li><ul> Average prices in industrial cities
+																	   <li> $1.20 per sqm per year average industrial land for lease</li>
+																	   <li> $650/sqm average standard cost of construction</li>
+																	 </ul></li>
+																	 <li><ul> Expat wages:
+																	  <li> $3.5/hour operator wage</li>
+																	  <li> $9.5/hour technical wage</li>
+																	  <li> $18/hour supervisor wage</li>
+																	  </ul></li>
+																	 <li><ul> Fuel:
+																	  <li> $1.25/MMBTU natural gas</li>
+																	  <li> $1.75/MMBTU ethane</li>
+																	  <li> $14/barrel diesel</li>
+																	  </ul></li>
+																	  <li><ul>Power:
+																	  <li> $0.048/kWh for the industrial sector</li>
+																	  <li>	$0.048 - $0.080/kWh for the commercial sector</li>
+																	  </ul></li>
+																	  <li><ul>	Water:
+																	  <li> $1.01 - $2.21 USD/m3 drinking water</li>
+																	  <li> $0.46 - $1.37 USD/m3 wastewater</li>
+																	  <li> $0.68 - $0.92 USD/m3 industrial water</li>
+																	  </ul></li>
+																	  </ul>";
+																													  
+							; automotives 					; "<h3>The regions’ most attractive manufacturing hub</h3>
+																 <ul>
+																 <li> Free Trade Agreements (FTA) agreements with the GCC and GAFTA regions</li>
+																 <li> Low costs of utilities and availability of off-the-shelf incentives.</li>
+																 <li> Strategic location of the Kingdom providing access to other regional markets.</li>
+																 <li> Young and skilled workforce.</li>
+																</ul>";
+																																																	
+							; mining-metals   				; "<h3>Large and untapped mineral reserves </h3>
+																 <ul>
+																 <li> Saudi Arabia offers access to up to $1.3 trillion worth of mineral reserves, including over 15 commercially viable minerals</li>
+																 <li> The Kingdom’s is the world’s 13th largest country by land mass, with 600,000 km² of its 2.1 million km² land mass being a major source of precious and base metals</li>
+																 <li> The largest mineral resources available in the Kingdom are phosphate, gold, and copper, respectively. These are followed by zinc, iron ore, uranium, niobium, silver, feldspar, bauxite, silica, limestone, and others</li>
+																 </ul>
+															   <h3>Large and growing local and regional markets</h3>
+																 <ul>
+																 <li> Under Saudi Arabia’s Vision 2030 ambitions, the government provides significant support to enable the sector to contribute at full potential to the national economy</li>
+																 <li> The development of the mining sector is a priority sector as it represents the third pillar of the Kingdom’s economic diversification agenda </li>
+																 <li> The Kingdom is located at the crossroad of three rapidly growing continents (Africa, Europe and Asia). This strategic location and proximity to major geographies, coupled with government support, provide investors with an advantage to export locally produced goods </li>
+																 </ul>
+																<h3>Experienced suppliers, contractors and talent pool</h3>
+																 <ul>
+																 <li> Saudi Arabia’s extensive experience in the oil, gas and chemicals industries has enabled the Kingdom to develop a diverse ecosystem that complements several aspects of the mining and metal industry </li>
+																 <li> The procurement of machinery and equipment from existing companies provides support to the sector, with established maintenance providers with transferrable skills</li>
+																 <li> World-class educational institutes such as King Fahd University of Petroleum and Minerals, King Saud University, and King Abdulaziz University provide the sector with a pool of talent for employment</li>
+																 </ul>";																													 																													 
+																													 
+							; medical-technologies   		; "<h3>Rising prevalence of chronic and infectious diseases creating a significant market demand</h3>
+																	 <ul>
+																	 <li> Saudi Arabia has a big market demand for IVDs, which are non-invasive tests performed on biological samples (such as blood, urine, or tissues) to establish a person's health status. IVDs account for 23% of public spending, totaling $270 million.</li>
+																	 <li> There is a big market demand for medical devices including products, services, or solutions that use physical means to prevent, diagnose, monitor, treat, and care for humans.</li>
+																	 <li> The industry has shifted its focus from hardware development toward digital health and emerging technologies such as AI and machine learning to help improve the quality of care with minimal human error.</li.
+																	 </ul>
+																<h3>Untapped potential for localization</h3>
+																	 <ul>
+																	 <li> Saudi Arabia’s medical technology sector has significant growth potential due to its large and growing market size, high import rates, and high potential for localization within certain segments.</li>
+																	 <li> The Saudi medical technology market is valued at $5.4 billion, is predicted to expand by 6% annually in line with rising demand and healthcare expansion.</li>
+																	 <li> Saudi Arabia imports 94% of its medical devices, representing a tremendous untapped opportunity for national and international players in the market.</li>
+																	 </ul>																													 
+																<h3>The region’s emerging medical technology hub</h3>
+																	 <ul>
+																	 <li> The medical technology sector in Saudi Arabia has great potential for growth due to a sustainable domestic market demand, high growth in regional healthcare market expansion, and inexpensive local raw materials such as steel and plastic</li>
+																	 <li> Saudi Arabia is expanding its infrastructure while leveraging its proximity and cultural and political influence to serve important export destinations: Middle East, Africa, and the Organization of Islamic Cooperation</li>
+																	 </ul>
+																<h3>A well-established regulator ensuring ease of doing business</h3>
+																	 <ul>
+																	 <li> The Saudi Food and Drug Authority is a well-established medical device regulator that follows international standards. It provides investors with transparency on regulations and clear procedures, resulting in faster and easier licensing and higher-quality products on the market.</li>
+																	 </ul>";
+																													 
+							; medical-services     			; "<h3>Sizeable market with untapped potential and significant growth ahead</h3>
+																	 <ul>
+																	 <li> The Saudi healthcare services market is expected to grow significantly, with a CAGR of 5.8% from 2017 to 2029, owing to population growth, rising chronic disease prevalence, and attractive profit margins.</li>
+																	 <li> The Saudi population is expected to reach 39.5 million by 2030. By the same year, the population of vulnerable people aged 65 and up is expected to grow by 7%, to reach nearly 5 million people</li>
+																	 <li> Saudi Arabia has more than 504 hospitals, 78,000 hospital beds, and 5,000 health clinics. In comparison to other developed countries, the Saudi healthcare market is underserved, especially in rural areas, where hospital beds per 10,000 people are 22 vs 29 in developed countries</li>
+																	 </ul>
+																<h3>Rising prevalence of chronic conditions related to age, lifestyle, and genetic makeup</h3>
+																	 <ul>
+																	 <li> Saudi Arabia has the highest percentage of diabetics in the MENA region, at 16%, and is expected to surpass 24% by 2045.</li>
+																	 <li> Obesity is the third most common case in the MENA region, with 35% of Saudi adults and one out of every four children being obese - obesity is expected to reach over 55% by 2022.</li>
+																	 <li> In the MENA region, Saudi Arabia has the fifth highest number of cancer patients. In 2018, 24,000 new cases were reported, with the number expected to double by 2040.</li>
+																	 <li> Cardiovascular diseases account for 45% of all deaths in Saudi Arabia.</li>
+																	 </ul>
+																<h3>Strong government commitment and ambitious targets to develop the sector </h3>
+																	 <ul>
+																	 <li> Saudi Arabia's Vision 2030 recognizes healthcare as one of the country's most important sectors and is committed to developing it. Saudi Arabia aims to increase the life expectancy from 74 years in 2016 to 80 years by 2030.</li>
+																	 <li> The Health Sector Transformation Program, launched in 2021, aims to improve access to health services, improve the quality and efficiency of healthcare services, promote health risk prevention, and improve traffic safety.</li>
+																	 <li> The transition of the Ministry of Health from a service provider to a regulatory body has highlighted the importance of continuity of care and the expansion of post-acute and specialized healthcare facilities to meet rising demand. </li>
+																	 </ul>
+																<h3>Unique investments enablers </h3>
+																	 <ul>
+																	  <li> Saudi Arabia has adopted a clear, non-discriminatory, consistent, and flexible legal and regulatory frameworks for healthcare services.</li>
+																	  <li> The nation has a high financial literacy regarding health insurance and its importance</li>
+																	  <li> Financial incentives are provided for healthcare infrastructure development, training of healthcare employees, payment of Saudi salaries and tax exemptions.</li>
+																	  <li> The Kingdom offers a robust and skilled human capital pool.</li>
+																	  </ul>";
+																													  
+							; pharmacuticals				; "<h3>Pharmaceuticals are in the spotlight and the market is set to skyrocket in the near future</h3>
+																	 <ul>
+																	  <li>	Saudi Arabia's pharmaceutical market is worth $8.5 billion, accounting for about 37% of the MENA market. </li>
+																	  <li> The market is expected to grow at a CAGR of 5.7% up to 2029, owing to population growth and rising demand for chronic disease treatment.</li>
+																	  <li> Non-communicable diseases (NCDs) are estimated to account for 73% of all deaths in Saudi Arabia.</li>
+																	  <li><ul> 	The Kingdom has a big market demand across several pharmaceutical segment including: 
+																		  <li> Vaccines with a market demand worth $641 million
+																		  <li> Systemic antibacterial with a market demand worth $631 million</li>
+																		  <li> 	Oncology with a market demand worth $353 million</li>
+																		  <li> Insulin and analogs with a market demand worth $341 million</li>
+																		  <li> Immunosuppressants with a market demand worth $313 million</li>
+																		  </ul></li>
+																<h3>The upcoming biotechnology and biopharmaceutical hub of the MENA region</h3>
+																	 <ul>
+																	 <li> First mover advantage given the current limited presence of local production facilities and limited presence of leading global pharmaceuticals manufacturers.</li>
+																	 <li> Investors can serve a large, unmet local demand and expand their regional footprint due to Saudi Arabia’s strategic location and favorable trade agreements with neighboring countries</li>
+																	 </ul>
+																<h3>Government commitment to unlock the sector</h3>
+																	 <ul>
+																	 <li> The Saudi Ministry of Investment, Industrial Clusters, and other key stakeholders provide market intelligence and offer matchmaking services, visa support and other set-up services to investors in this sector.</li>
+																	 </ul>";
+					
+							; digital-content   			; "<h3>Strong commitment to a booming data center market</h3>
+																 <ul>
+																  <li> Demand for data center capacity continues to rise at a rapid rate around the world.</li>
+																  <li> 	The Ministry of Communications and Information Technology (MCIT) launched an $18 billion plan to build a nationwide network of large-scale data centers to transform Saudi Arabia into a data center regional hub.</li>
+																  <li> Relevant entities are working day and night to increase the growth of co-location capacity data centers needed to attract other digital investments, such as cloud service providers, gaming publishers, video streaming service operators and content delivery network (CDN) operators to localize their services inside the Kingdom.</li>
+																  </ul>";
+							
+; technology-platforms 											;"<h3>An actionable strategy that is already bearing fruit</h3>
+																<ul>
+																<li>Saudi Arabia aims to become a global hub for data and AI, thanks to a dedicated National Data and AI Strategy. </li>
+																<li>The Kingdom is targeting to train 40% of its total workforce on basic data and AI literacy skills to produce at least 15,000 targeted local data and AI specialists and 5,000 experts by 2030.</li>
+																<li>Saudi Arabia is working to become one of the top ten countries in the Open Data Index by 2030.</li>
+																<li>By 2030, the Kingdom intends to have a high level of legislative maturity in the areas of data and AI</li>
+																<li>Saudi Arabia aims to facilitate $8 billion worth of FDI and $12 billion worth of cumulative local investments in data and AI by 2030.</li>
+																<li> Saudi Arabia intends to position itself among the top 20 countries for peer reviewed data and AI publications by 2030.</li>
+																<li>Saudi Arabia aims to establish 300 dedicated data and AI startups by 2030.</li>
+																</ul>
+																<h3>The region's largest and most lucrative e-commerce market</h3>
+																<ul>
+																<li>	Saudi Arabia's e-commerce market is valued at $13 billion in 2021, a 45% share of the GCC market.</li>
+																<li>The e-commerce market grew by 32% from 2015 to 2020 and is expected to grow at 16% CAGR by 2025, reaching $21 billion.	.</li>
+																</ul>
+																<h3>Attractive e-commerce investment destination</h3>
+																<ul>
+																<li>Strategic geographic location as a gateway to Africa, Europe, and Asia to establish fulfillment centers with the necessary infrastructure and the government's large-scale investment in mega projects.</li>
+																<li>Global e-commerce players have a huge opportunity to establish regional headquarters in Saudi Arabia to address GCC market demand and develop Arabic user interfaces to serve the local market.</li>
+																<li>With an investment of $58 million, e-commerce investor can expect to breakeven after 6 years of operation</li>
+																<li>By 2030, investors can generate $1.7 billion in net revenues in Saudi Arabia and an additional $600 million from the GCC while maintaining an EBITDA of 8%.</li>
+																</ul>
+																<h3>Big multinationals have already chosen Saudi Arabia </h3>
+																<ul>
+																<li>Amazon, the world's largest e-commerce marketplace, has been steadily expanding its presence in Saudi Arabia.</li>
+																<li>Amazon has announced plans to expand its storage capacity in Saudi Arabia by 89% with the addition of eleven new buildings. Amazon's storage capacity will total more than 867,000 square feet, which is more than ten football fields.</li>
+																<li>The expansion will also increase Amazon's area coverage in the Kingdom by 58%.</li>
+																</ul>
+																<h3>An emerging leader in cloud services </h3>
+																<ul>
+																<li>In 2018, the government issued a cloud computing regulatory framework, which resulted in an increase of 28% in cloud computing spending, reaching $1.7 billion in 2018 and $2 billion in 2019</li>
+																<li>The spending on cloud computing is expected to grow by 22% CAGR between 2021 and 2024, reaching $6 billion.</
+																</ul>
+																<h3>The FinTech industry in the Kingdom is growing at a rapid rate</h3>
+																<ul>
+																<li>Between 2017 and 2019, the value of fintech transactions increased at a rate of over 18% each year, reaching over $20 billion in 2019. </li>
+																<li>Payments account for two-third of the market and almost 98% of the user base. It is followed by personal finance which comprise over 30% of the FinTech transaction values.</li>
+																<li>The number of payments made through SADAD has increased by a CAGR of 11% between 2016-19 to reach 270 million transactions in 2019. </li>
+																<li>The value of SADAD transactions has grown by a CAGR of 24% in the corresponding period to reach $119 billion</li>
+																<li>The number of smart phone payment transactions in Saudi Arabia increased by 352% year-on-year reaching 19.7 million in April 2020, compared to 4.4 million in April 2019</li>
+																<li>The FinTech market is expected to reach transaction values of over $33 billion by 2023.</li>															
+																</ul>" 																; 			;
+
+
+						; digital-infrastructure 			   ;"<h3>Strong commitment to a booming data center marke</h3>
+															   <ul>
+															   <li>Demand for data center capacity continues to rise at a rapid rate around the world.</li>
+															   <li>The Ministry of Communications and Information Technology (MCIT) launched an $18 billion plan to build a nationwide network of large-scale data centers to transform Saudi Arabia into a data center regional hub.</li>
+															   <li>Relevant entities are working day and night to increase the growth of co-location capacity data centers needed to attract other digital investments, such as cloud service providers, gaming publishers, video streaming service operators and content delivery network (CDN) operators to localize their services inside the Kingdom.</li>
+															   </ul>
+															   <h3>A large market demand requiring a large supply</h3>
+															   <ul>
+															   <li>Telecom constitutes 59% of the Saudi ICT market size, compared to 15% of the ICT sectors in benchmark countries.</li>
+															   <li>23% in fixed broadband contribution of telecoms revenues, compared to 46% in ICT benchmark countries, signaling high growth potential.</li>
+															   <li>6.6 higher mobile data consumption in Saudi Arabia compared to ICT benchmark countries.</li>
+															   <li>3.3 higher average revenue per user for fixed internet in Saudi Arabia compared to ICT benchmark countries.</li>
+															    </ul>
+															   <h3>Long-term investments that are already paying off</h3>
+															   <ul>
+															   <li>14% investments in mobile infrastructure and services at a 5-year average capital intensity, compared to 7% in ICT benchmark countries.</li>
+															   <li>4% investments in fixed broadband infrastructure and services at a 5-year average capital intensity, compared to 9% in ICT benchmark countries.</li>
+															    </ul>
+															   <h3>Excellent quality and wide coverage ensuring access for all</h3>
+															   <ul>
+															   <li>134.7% penetration of mobile telecom services in Q2 2021</li>
+															   <li>47.16 million mobile telecom subscriptions in Q2 2021</li>
+															   <li>147.06 Mbps in average mobile internet download speed in Q2 2021</li>
+															   <li>370.12 Mbps average 5G internet download speed in Q2 2021</li>
+															   <li>60 governates in the Kingdom have access to 5G services in Q2 2021</li>
+															   <li>91.56 Mbps average high-speed fixed internet download speed in Q2 2021</li>
+															   <li>35.9% household penetration of high-speed fixed internet subscriptions in Q2 2021</li>
+															   <li>2.2 million high-speed fixed internet subscriptions in Q2 2021</li>
+															   </ul>
+															   <h3>A world-class regulator ensuring continuous excellence </h3>
+															   <ul>
+															   <li>Saudi Arabia's telecommunications sector is regulated by the Communications and Information Technology Commission (CITC), a top-ranking fifth-generation ICT regulator according to the ITU.</li>
+															   <li>There are multiple efforts focused on enhancing competition among mobile operators, with two new MVNO licenses awarded in 2021, and efforts underway to reduce STC’s dominant position in the fixed broadband.</li>
+															   </ul>"																																																																				;			;
+																													
+																														 
+							; chemicals  					; "<h3>A global leader in chemicals with a large domestic sector poised to grow significantly</h3>
+																		  <ul>
+																		  <li> Saudi Arabia has the largest chemical market in the MENA region, and it is home to the world's largest integrated chemical complex ever built in a single phase.</li>   
+																		  <li> Nine of the world’s ten largest chemical players already have operations in Saudi Arabia.</li>
+																		  <li> In 2016, investments in the sector were 40% higher than in any other global market, totaling $1 billion, increasing production capacity by 5%.</li>
+																		  <li> The Kingdom has the world's fifth largest chemical production market and accounts for 10% of total global output.</li>
+																		  <li> Saudi Arabia is the world leader in the production of several key products, including ethylene, glycol, polyethylene, and tert-butyl ether (MYBE).</li>
+																		  <li> Saudi Arabia is one of the most cost-competitive places in the world to produce ethylene, allowing the country to account for 10% of total global production.</li>
+																		  <li> Because of rising demand for basic, intermediate, and specialty chemicals, the chemicals sector is expected to double in size by 2030.</li>
+																		 </ul>
+																<h3>Modern infrastructure, cost advantages and abundant access to raw materials</h3>
+																		  <ul>
+																		  <li> Chemical companies in Saudi Arabia operate in an industry-friendly environment, with cost competitive advantages, easy access to raw materials, and a well-developed infrastructure.</li>
+																		  <li> Costs advantages include low feedstock prices, low utility expenses, and customs duty exemptions. Electricity prices are almost 50% lower than the global average.</li>
+																		  <li> Saudi Arabia has a 10% cost advantage for naphtha compared to the US and European markets.</li>
+																		  <li> Saudi Arabia offers secure access to an abundant supply of raw materials, as it is home to more than 25% of the world's proven oil reserves. This access is further enhanced by the presence of key producers such as SABIC for chemicals and Saudi Aramco for energy.</li>
+																		 </ul>
+																<h3>Reliable logistics network providing easy access to international markets</h3>
+																		  <ul>
+																		  <li> Saudi Arabia is strategically located at the crossroads of several markets with a high demand for chemical products. </li>
+																		  <li> The Asian chemicals market size is currently valued at $1.8 trillion and is expected to grow by 8% annually. European demand for chemicals stands at $750 billion per year and is expected to grow by 4% annually. Whilst in Africa, the market size is valued at $50 billion and is also expected to increase at 4% annually.</li>
+																		  <li> Saudi-based players have access to a comprehensive and well-established logistics network, which includes the largest marine network in the Middle East region and King Abdullah Port at KAEC, the world's fastest growing port.</li>
+																		  <li> Chemical industry exports account for roughly 60% of non-oil exports and are expected to grow significantly as part of the Saudi Export initiative.</li>
+																		 </ul>
+																<h3>Fully developed and advanced ecosystem supported by key local players</h3> 
+																		  <ul>
+																		  <li> Saudi Arabia boasts a solid ecosystem for the chemicals sector in the city of Jubail, which is the largest industrial city in the Middle East.</li>
+																		  <li> The Royal Commission for Jubail and Yanbu (RCJY) is in charge of developing the Saudi Arabia's chemical industry through a variety of initiatives, including talent sourcing through top local universities such as King Fahd University of Petroleum and Minerals (KFUPM) and expat relocation to Saudi Arabia from more than 40 different countries.</li>
+																		  <li> R&D and technological innovation are also high priorities for the Kingdom, with Saudi Aramco recently establishing a cutting-edge research center at King Abdullah University of Science and Technology.</li>
+																		  <li> Among the center’s accomplishments are the development of cutting-edge technologies that enable the production of high-tech products for a wide range of market applications, including Linear Alpha Olefin (LAO).</li>
+																		  <li> RCJY is also in charge of supporting services (such as waste management) and has collaborated with over 50 different companies in the city of Jubail alone.</li>
+																		  <li> RCJY oversees the rental of land for industrial use, with highly competitive rates ranging from $0.27 to $4.40 per m2/year.</li>
+																		</ul>";
+
+							; transport-logistics    		; "<h3>One of the world’s fastest growing aviation industries</h3>
+																		  <ul>
+																		  <li> $34BN aviation industry, with 99 million passengers passing through Kingdom’s the airports.</li>
+																		  <li> 90% of Saudi population lives within a 2-hour drive of the nearest airport thanks to 28 airports comprising of 6 international, 9 regional, and 12 domestic airports.</li>
+																		  <li> The Kingdom connects to 81 airports in 45 countries, with plans to increase that to 250 destinations.</li>
+																		  <li> 5 hours’ flight distance from half of the world’s population.</li>
+																		 </ul>
+																 <h3>A dominating maritime industry along one of the busiest trade routes</h3>
+																		 <ul>
+																		  <li> 13 million twenty-foot-equivalent-units (TEUs) handling capacity across 10 primary harbors for non-oil trade, including 200 piers, and 216 berths.</li>
+																		  <li> 15,000 ships received by the Kingdom’s ports annually.</li>
+																		  <li> 90% of Red Sea and 30% of East African regional trade transits dominated by Saudi ports.</li>
+																		  <li> King Abdullah Port at King Abdullah Economic City (KAEC) is the fastest growing port in the world, with an annual capacity of 4 million TEU.</li>
+																		 </ul>
+																 <h3>An extensive rail network connecting the Kingdom’s main cities</h3>
+																		  <ul>
+																		  <li> 10.4 million tons of minerals cargo transported by the North-South railway.</li>
+																		  <li> 350,000 TEU volume of container transported by the Riyadh-Dammam railway.</li>
+																		  <li> 1,065 km land bridge project is to have a direct link between the Red Sea and the Arabian Gulf.</li>
+																		 </ul>
+																 <h3>World-class road connectivity network</h3>
+																		  <ul>
+																		  <li> Saudi Arabia ranks 1st in the WEF’s road connectivity index, with 200,000 km of roads, including 66,000 km of roadways connecting major cities and providing access to railways, ports and airports.</li>
+																		  <li> 3,500 km new roads set to link the Kingdom’s main urban centers.</li>
+																		  <li> 5,000 km of highways and bridges provide extensive means of transport.</li>
+																		  <li> 138.5 million tons of goods transported via the Kingdom’s road network in 2021.</li>
+																		  <li> $587 million value of 23 road safety projects by the Ministry of Transport and Logistic Services.</li>
+																		  </ul>
+																<h3>A growing global logistics hub</h3>
+																		  <ul>
+																		  <li> $18 billion logistics market size, 55% share of the total GCC market.</li>
+																		  <li> $1.01 billion contract logistics market size in 2019, with 3% CAGR growth rate over the period 2019 to 2024.</li>
+																		  <li> 6 economic and industrial cities designated to move cargo freely between one another are under development.</li>
+																		 </ul>";																													
+																																																										
+							; real-estate   				; "<h3>Sharp demand increase in the real estate market</h3>
+																		 <ul>
+																		 <li> Greatest potential for the construction sector within the GCC driven by strong market fundamentals.</li>
+																		 <li> Rapid growth of a large and young national population, with an estimated population growth of 6 million by 2030, coupled with a middle-income class able to afford housing units.</li>
+																		 <li> The existing $20.5 billion demand for real estate services is distributed across different segments: $9.9 billion for contracting and sub-contracting services, $6.9 billion for architectural, engineering and environmental consulting services, and $3.7 billion for facilities management services.</li>
+																		 <li> Mortgage loans expected to increase from $133.3 billion to $213.3 billion over the next 10 years.</li>
+																		 </ul>
+																 <h3>Strong government support for sustainable and profitable growth</h3> 
+																		 <ul>
+																		 <li> The Real Estate Development Fund (REDF) provides accessible financing solutions to ensure proper housing to all segments of society.</li>
+																		 <li> The Saudi Real Estate Refinancing Company (SRC) was established in 2017 to enable originators to offer long and short-term financing solutions to homebuyers by refinancing loan portfolios and developing the housing finance market.</li>
+																		 <li> Etmam, a one-stop shop digital platform hosting over 35 services under one roof to empower developers, has been launched to facilitate procedures for developers and stakeholders, speed up approvals, and provide integrated consulting solutions to developers.</li>
+																		 </ul>
+																 <h3>Efficient use of technology for world-class standards</h3>
+																		<ul>
+																		 <li> In line with Vision 2030, around 400,000 units (including residential, commercial and industrial) are expected to be built using modern methods of construction (MMC) by 2025.</li>
+																		 <ul>
+																		 <li> The Building Technology Stimulus Initiative (BTSI), under Ministry of Municipal and Rural Affairs and Housing, aims at increasing the adoption of MMC to boost competitiveness and production. The initiative supports existing factories, as well as offers incentives to attract new factories through financial and non-financial means.</li>
+																		 <li> Capital, expansion, modernization financing.</li>
+																		 <li> Engineering advisory services, upskilling services.</li>
+																		 <li> Set-up financing (75% of the required capital investment as well up to 6 months of working capital requirements).</li>
+																		</ul>
+																		</ul>";
+                                                                                                           
+							; education 					; "<h3>Largest education market in the GCC expected to grow further</h3> 
+																	 <ul>
+																	 <li> With more than 8.4 million students, Saudi Arabia has the largest education market in the GCC region.</li>
+																	 <li> Saudi Arabia’s education sector is home to 6.4 million K-12 students, 1.8 million university students and 200,000 TVET students.</li>	
+																	 <li> Saudi government dedicates large amounts of spending on education year on year and is in fact currently the largest spender on education among the GCC countries.</li>																														 
+																	</ul>
+																<h3>Large untapped potential in the Saudi private education market</h3>
+																	 <ul>
+																	 <li> Saudi Arabia has the lowest share of students enrolled in private education institutions relative to the GCC region.</li>
+																	 <li> Yet, there is a big market demand for private education institutions as the demand for higher quality education is growing, creating strong opportunities for investors.</li>
+																	 <li> Publicly listed education providers in Saudi Arabia are largely profitable.</li>
+																	</ul>
+																<h3>Government commitment to support the growing education market</h3>
+																	<ul>
+																	 <li> The government is placing a strong emphasis on human capital by launching a dedicated Human Capital Development Program (HCDP) as part of the Vision 2030 realization programs.</li>
+																	 <li> The HCDP includes many ambitious commitments by 2025, including raising the percentage of children enrolled in kindergartens to 40% and increasing the number of Saudi universities ranked among the world’s top 200 to six.</li>
+																	 <li> The government has invested heavily in e-learning, with 9 million students benefiting from distance learning platforms and 300,000 children benefiting from the virtual kindergarten platform.</li>
+																	 <li> Various incentives are offered for private sector to play a key role in the Kingdom’s education reforms.</li>
+																	</ul>";
+
+							; innovation  					; "<h3>A rapidly growing ecosystem</h3>
+																	 <ul>
+																	  <li> Saudi-based startups received $179 million worth of investments in 2020, a record amount of total funding. The jump from $8 million in 2016 shows the acceleration rate and the commitment of the Kingdom to becoming the startup hub for the region.</li>
+																	  <li> Saudi Arabia has a robust infrastructure for entrepreneurs with a number of venture capital funds, accelerator programs, co-working spaces, incubators, venture studios, and full commitment from the government.</li>
+																	  <li> One out of five startups headquartered in Saudi Arabia closed one in every five transactions registered across the MENA region in H1 2021.</li>
+																	  </ul>
+																 <h3>Enabling the future of entrepreneurship</h3>
+																	   <ul>
+																	   <li> The Kingdom is committed to having the most advanced regulatory frameworks and infrastructure for entrepreneurship in the region with the introduction of new special economic zones.</li>
+																	   <li> The establishment of NEOM as an accelerator for human progress and a city of entrepreneurs, innovators, and dreamers.</li>
+																	   <li> King Abdullah University for Science and Technology (KAUST) Innovation Venturessupports founders and funds early-stage deep tech startups that are working to find solutions to our most pressing scientific and technological challenges.</li>
+																	   <li> Aramco’s entrepreneurship arm,Wa’ed, was established in 2011 to ignite the spirit of entrepreneurship in Saudi Arabia, with a focus on industry. The center assists entrepreneurs in establishing or expanding their ventures by providing a variety of financial offerings, along with the guidance and tools that develop and nurture entrepreneurs and their businesses.</li>
+																	   </ul>
+																 <h3>Government support and commitment to entrepreneurship</h3>
+																	   <ul>
+																	   <li> Vision 2030 recognizes that SMEs are among the most important agents of economic growth as they create jobs, support innovation and boost exports. One of the main goals of Vision 2030 is therefore to increase SME contribution to GDP from 20% in 2016 to 35% in 2030.</li>
+																	   <li> In 2020, Saudi Arabia committed to encourage greater international competitiveness of Micro, Small and Medium-Sized Enterprises, foster economic diversification, and strengthen international investment during it’s G20 Saudi presidency.</li>
+																	   <li> The Small and Medium Enterprise Authority (Monsha’at) was created specifically to support, develop, and sponsor the SME sector in accordance with best global practices.</li>
+																	   <li> The Public Investment Fund (PIF), one of the largest sovereign wealth funds in the world, created Jada, a Fund of Funds, with an approximate capital $1 billion to promote the development of a thriving private equity and venture capital ecosystem.</li>
+																	  </ul>
+																 <h3>Establishing a business in Saudi Arabia has never been easier</h3>
+																	   <ul>
+																	   <li> With the Ministry of Investment (MISA) Entrepreneurship License, the MISA VENTURE by INVEST SAUDI initiative, and the step-by-step support of MISA’s entrepreneurship team, entry to the Saudi market is easy, simple, and straightforward.</li>
+																	   <li> Entrepreneurship licensing fees are almost fully waived to support entrepreneurs entering the Saudi market.</li>
+																	   <li> The government launched Tayseer, an initiative aimed at improving the Saudi business environment, communicate with the private sector to overcome challenges, and position Saudi Arabia among the most competitive economies worldwide.</li>
+																	   <li> With 71% digital maturity of eGovernment services (up from 56% in 2016), investors are able to complete most governmental services online.</li>																														   
+																	   </ul>";
+																											
+							; financial     				; "<h3>Commercial and Digital Banking supporting a variety of projects and services</h3>
+																	   <ul>
+																	   <li> Commercial and Digital banks in Saudi Arabia have the opportunity to finance and capitalize giga projects through debt capital injection, re-financing, and other corporate and treasury solutions.</li>
+																	   <li> Diversification of financial products and instruments to provide suitable solutions, while increasing market liquidity through debt financing services.</li>
+																	   <li> Saudi commercial banks are expected to play a significant role in the diversification and inclusivity of the financial services sector by adopting and developing new digital banking solutions.</li>
+																	   <li> Saudi commercial banks are expected to play a significant role in the diversification and inclusivity of the financial services sector by adopting and developing new digital banking solutions.</li>
+																	   </ul>																											 
+																<h3>Investment banks ensuring debt and equity securities</h3>
+																	   <ul>
+																	   <li> Investment banking opportunities in Saudi Arabia are rapidly expanding due to high market demand, as Saudi Arabia’s Vision 2030 projects grow their investment banking needs, including fund and asset management.</li>
+																	   <li> M&As and IPOs deals are growing fast in terms of number and size of transactions, making the Kingdom the leading market in the region.</li>
+																	   <li> Debt structuring/re-structuring deals and financial custody services are also in high demand and growing on year-to-year basis.</li>
+																	  </ul>	
+																<h3>Financing companies taking on a greater role in the sector</h3>
+																	   <ul>
+																		<li> The Kingdom is aiming to increase the financing options available for small and medium projects by addressing the main challenges facing financing companies and enabling them to better compete with commercial banks.</li>
+																	   </ul>
+																<h3>Insurance is a financial institution that assuring the businesses/ individuals in multiple industries</h3>
+																		<ul>
+																		<li> As more greenfield opportunities are created as we are achieving Vision 2030, the insurance sector is having more demand than ever.</li>
+																		<li> There are couple of initiatives currently that aim to increase the ease of doing business in KSA including lowering in licensing requirements and having one body as a regulator which will make the sector policies clearer.</li>
+																		<li> Enforcing health insurance for small/medium sized companies which currently has low current coverage ratio.</li>
+																		<li> Assuming mandatory motor insurance covers all vehicles in KSA.</li>
+																		</ul>
+																<h3>MSME financing to support entrepreneurship and innovation</h3>
+																	   <ul>
+																		<li> In line with its Vision 2030 target of increasing MSME’s contribution to GDP from 20% to 35% by 2030, the government is launching several initiatives to support the MSME financing ecosystem.</li>
+																		<li> Enabling banks to increase their lending to MSMEs through improvements to the existing financial system and through financing incentives for small and medium projects.</li>
+																		</ul>
+																<h3>Funds backing the realization of mega and giga projects</h3>
+																		<ul>
+																		<li> Funds, including sovereign wealth funds, infrastructure investment funds, and private equity funds, are given high priority as they invest directly in greenfield projects, a key component of Vision 2030, in addition to their support for brownfield opportunities.</li>
+																		</ul>
+																<h3>A globally leading capital market welcoming foreign investors</h3>
+																		<ul>
+																		 <li> The Saudi Exchange (Tadawul), the largest stock exchange in the region, is now open to foreign investors, with a 49% cap on foreign ownership, potentially increasing to 100% for strategic investors.</li>
+																		 <li> The Saudi Exchange has successfully joined global indices, including MSCI, S&P’s Dow Jones, and FTSE Russell.</li>
+																		 <li> Several financial products are available in Saudi capital markets such as tradable funds, bonds, sukuks. The Derivative Market was also launched in 2020.</li>
+																		 </ul>";
+
+							; aerospace-defense  					; "<h3>A highly lucrative sector given its market size, positive economic spillover, and competitive advantages</h3>
+																		  <ul>
+																		  <li> Saudi Arabia is developing its local aerospace and defense manufacturing capabilities and has an ambitious goal of localizing 50% of the sector’s expenditure by 2030.</li>   
+																		  <li> The Saudi aerospace and defense sector is dedicated to strengthening national security forces through local manufacturing of key defense equipment and aerospace technologies including aviation services, systems and products. This offers global aerospace and defense players strategic partnership opportunities.</li>
+																		  <li> The sector’s ambitious localization agenda presesnts attractive investment opportunities for companies across the entire aerospace and defense supply chain.</li>
+																		  <li> Foreign companies operating in the sector in compliance with local content requirements have the same rights as Saudi companies, providing an equal playing field for all players.</li>
+																		  <li> Localization agenda fuels the need for the transfer of know-how and technology, presenting incredible opportunities for strategic partnerships.</li>
+																		 </ul>";
+																		 
+																		 

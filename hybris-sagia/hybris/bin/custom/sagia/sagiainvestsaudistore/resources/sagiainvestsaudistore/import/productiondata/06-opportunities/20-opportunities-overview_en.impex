@@ -1,0 +1,1616 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = en
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; description[lang = $lang]
+                                ; industry-40               ;                ; "
+
+<p>Attract leading Industry 4.0 players to enable digital transformation of industrial sector companies </p>
+"
+                                ; gaming               ;                ; "
+
+<p>Attract global gaming players to setup regional HQ in KSA localize/build games and publish games developed locally</p>
+"
+                                ; e-commerce               ;                ; "
+
+<p>Attract established international e-commerce players to setup regional HQ in KSA and maximize localization across the value chain </p>
+"
+                                ; cloud               ;                ; "
+
+<p>Attract top global Cloud Service Providers (CSP) to localize their services in KSA </p>
+"
+                                ; e-waste               ;                ; "
+
+<p>Attract a global electronic device refurbishment and resale company to establish regional hub in KSA </p>
+"
+                                ; it-services-software               ;                ; "
+
+<p>Attract IT services players to establish local/regional HQ in order to localize managed IT services as well as software customer support </p>
+"
+                                ; smart-intermodal-transport               ;                ; "
+
+<p>Attract investors to build mobility platforms in KSA, which will serve the local market with potential to serve the MENA region </p>
+"
+
+
+                                ; polytetramethylene-ether-glycol-ptmeg               ;                ; "
+
+<p>Opportunity to setup Polytetramethylene Ether Glycol (PTMEG) manufacturing plant with 35 – 40 KMT capacity. </p>
+"
+                                ; methacrylate-butadiene-styrene-mbs-resin               ;                ; "
+
+<p>Opportunity to develop a Methacrylate Butadiene Styrene (MBS) Resin production facility of ~ 25 - 40 KMT in KSA </p>
+"
+                                ; polyaluminum-chloride-pac               ;                ; "
+
+<p>Opportunity to develop a Polyaluminum Chloride (PAC) production facility of ~15 KMT in KSA to cater regional and global markets. </p>
+"
+                                ; formic-acid               ;                ; "
+
+<p>Opportunity to develop a Formic Acid production facility of ~40 - 45 KMT in KSA to cater regional and global demand.</p>
+"
+                                ; neopentyl-glycol-npg               ;                ; "
+
+<p>Opportunity to setup a NeoPentyl Glycol (NPG) production facility of ~25 - 50 KMT in KSA to cater regional and global demand. </p>
+"
+                                ; copolyester-ethers               ;                ; "
+
+<p>Opportunity to setup Copolyester Ethers manufacturing plant with 30 – 35 KMT capacity in KSA to serve regional/global market.</p>
+"
+                                ; fumaric-acid               ;                ; "
+
+<p>Opportunity to setup a production facility for Fumaric Acid plant with 20 – 25 KMT capacity in Saudi Arabia to cater local and global demand. </p>
+"
+                                ; dichlorobenzene               ;                ; "
+
+<p>Opportunity to setup dichlorobenzene manufacturing plant of 25– 30 KMT capacity in KSA to serve regional/global market. </p>
+"
+                                ; ethylene-vinyl-alcohol-evoh               ;                ; "
+
+<p>Opportunity to setup Ethylene Vinyl Alcohol (EVOH) manufacturing plant of 35 – 40 KMT capacity in KSA to serve regional/global market.</p>
+"
+                                ; monochlorobenzene               ;                ; "
+
+<p>Opportunity to setup Monochlorobenzene manufacturing plant of 25– 30 KMT capacity in KSA to serve regional/global market.</p>
+"
+                                ; mpeg-hpeoplusmeoh               ;                ; "
+
+<p>Opportunity to develop an integrated Methoxy Polyethylene Glycol (MPEG) production facility of ~45 KMT in KSA.</p>
+"
+                                ; polyamide-9t               ;                ; "
+
+<p>Opportunity to setup Polyamide 9T manufacturing plant of 35– 40 KMT capacity in KSA to serve regional and global markets.</p>
+"
+                                ; polyamide-12               ;                ; "
+
+<p>Opportunity to setup Polyamide12 manufacturing plant of 35– 40 KMT capacity in KSA to serve regional/global market.</p>
+"
+                                ; polyvinyl-butyral-pvb               ;                ; "
+
+<p>Opportunity to develop a Polyvinyl Butyral (PVB) production facility of ~50 KMT capacity in KSA to serve the regional/global market.</p>
+"
+                                ; trimethylol-propane-tmp               ;                ; "
+
+<p>Opportunity to setup a production facility for Trimethylol Propane (TMP) in Saudi Arabia to cater local and global demand.</p>
+"
+
+
+
+                                ; south-murcia-land-development-project               ;                ; "
+
+<p>Opportunity for residential (more than 9,000 units), commercial and infrastructure development in North of Riyadh.</p>
+"
+                                ; alhamadania-land-development-project               ;                ; "
+
+<p>Opportunity for residential and commercial development (4,000 housing units, education, healthcare, hospitality among
+others).</p>
+"
+                                ; albuhairat-land-development-project               ;                ; "
+
+<p>Opportunity for residential (8,200 units) and commercial development in North of Jeddah.</p>
+"
+
+
+
+
+                                ; zoos-development               ;                ; "
+<p>This opportunity entails building and operating zoos of various sizes across the Kingdom:</p>
+<ul>
+<li>Five large zoos in two large cities: Riyadh (2), Jeddah (3)</li>
+<li>Four medium zoos in two medium cities: Madinah (3), Buraydah (1)</li>
+<li>Seven small zoos in three small cities: Hail (1), Abha (4), Jazan (2)</li>
+</ul>
+<p>The total area is 50 hectares per large zoo, 15 hectares per medium zoo, and 10 hectares per small zoo</p>
+<p>The required investment is SAR 530M per large zoo, SAR 150M per medium zoo and SAR 110M per small zoo, assuming a pure private sector investment model.</p>
+<p>Recreation and entertainment are key pillars of Vision 2030, with the government aiming to increase spend on recreation from 2.9% to 6% of total spend by 2030. The establishment of zoos will attract significant spend, especially from Young Saudis (under 30) who make up approximately 50% of the total population.</p>
+<p>The serious government commitment, coupled with the large demand for zoos among young Saudis, create an attractive opportunity to establish zoos in the Kingdom</p>
+"	
+                                ; botanical-gardens-development               ;                ; "
+<p>This opportunity entails building and operating botanical gardens of various sizes across the Kingdom:</p>
+<ul>
+<li>Twelve botanical gardens in three large cities: Riyadh (4), Jeddah (5), Dammam (3)</li>
+<li>Six botanical gardens in three medium cities: Madinah (3), Tabuk (1), Buraydah (2)</li>
+<li>Fourteen botanical gardens in five small cities: Hail (1), Najran (1), Abha (7), Jazan (4), Al-Bahah (1)</li>
+</ul>
+<p>The required investment is SAR 40M to SAR 45M per garden, assuming a pure private sector investment model.</p>
+<p>Recreation and entertainment are key pillars of Vision 2030, with the government aiming to increase spend on recreation from 2.9% to 6% of total spend by 2030.</p>
+<p>The serious government commitment presents attractive opportunities to operate botanical gardens in the Kingdom</p>
+"	
+                                ; family-entertainment-centers-fecs-development               ;                ; "
+<p>This opportunity entails building and operating Family Entertainment Centers (FEC's) across the Kingdom.</p>
+<p>&nbsp;</p>
+<p>Recreation and entertainment are key pillars of Vision 2030, with the government aiming to increase spend on recreation from 2.9% to 6% of total spend by 2030. The establishment of FEC's will attract significant spend, especially from Young Saudis (under 30) who make up approximately 50% of the total population.</p>
+<p>The serious government commitment, coupled with the large demand for FEC's among young Saudis, create an attractive opportunity to establish FEC's in the Kingdom</p>
+"	
+                                ; theme-parks-development               ;                ; "
+<p>This opportunity entails building and operating theme parks of various sizes across the Kingdom:</p>
+<ul>
+<li>Five large theme parks in three large cities: Riyadh (2), Jeddah (2), Dammam (1)</li>
+<li>Three medium theme parks in three medium cities: Madinah (1), Tabuk (1), Buraydah (1)</li>
+<li>Seven small theme parks in seven small cities: Hail (1), Najran (1), Abha (1), Arar (1), Sakakah (1), Jazan (1), Al-Bahah (1)</li>
+</ul>
+<p>The required investment is SAR 1,000M per large park, SAR 300M per medium park, and SAR 75M per small park, assuming a pure private sector investment model.</p>
+<p>Recreation and entertainment are key pillars of Vision 2030, with the government aiming to increase spend on recreation from 2.9% to 6% of total spend by 2030.</p>
+<p>Theme parks are the number 1 activity that Saudis would like to see in Saudi Arabia if all entertainment activities were allowed, ranking above cinemas, waterparks, and other entertainment activities.</p>
+<p>The serious government commitment, coupled with the large appetite for theme parks among Saudis, create an attractive opportunity to establish theme parks in the Kingdom</p>
+"	
+                                ; waterparks-development               ;                ; "
+<p>This opportunity entails building and operating waterparks in various cities across the Kingdom:</p>
+<ul>
+<li>Four waterparks in three large cities: Riyadh (1), Jeddah (2), Dammam (1)</li>
+<li>One waterpark in a medium city: Madinah (1)</li>
+<li>One waterpark in a small city: Jazan (1)</li>
+</ul>
+<p>The required investment is SAR 420M to SAR 470M per waterpark, assuming a pure private sector investment model.</p>
+<p>Recreation and entertainment are key pillars of Vision 2030, with the government aiming to increase spend on recreation from 2.9% to 6% of total spend by 2030.</p>
+<p>Waterparks are one of the most-visited entertainment destinations by Saudis abroad, especially given that no such parks currently exist in the Kingdom.</p>
+<p>The serious government commitment, coupled with the large appetite for waterparks among young Saudis, create an attractive opportunity to establish waterparks in the Kingdom</p>
+"	
+                                ; aquariums-development               ;                ; "
+<p>This opportunity entails building and operating aquariums in various cities across the Kingdom:</p>
+<ul>
+<li>Four aquariums in three large cities: Riyadh (2), Jeddah (1), Dammam (1)</li>
+<li>Four aquariums in three medium cities: Madinah (2), Tabuk (1), Buraydah (1)</li>
+</ul>
+<p>The required investment is SAR 30M to SAR 35M per aquarium, assuming a pure private sector investment model.</p>
+<p>Recreation and entertainment are key pillars of Vision 2030, with the government aiming to increase spend on recreation from 2.9% to 6% of total spend by 2030.</p>
+<p>The serious government commitment, coupled with the potential to redirect spend by Saudis on Aquariums abroad back to Saudi Arabia, create an attractive opportunity to establish Aquariums in the Kingdom</p>
+"	
+                                ; film-infrastructure               ;                ; "
+
+<p>Setting up film production complex in Riyadh, Saudi Arabia for end-to-end film production.</p>
+"	
+
+
+
+                                ; bonded-zone-in-dammam               ;                ; "
+<p>Dammam 2nd IC is the has the largest occupied area of all Modon Industrial cities, in total close to 20 Km2 of industries with excellent connectivity and a very relevant existing 3PL and logistics providers.</p>
+<p>&nbsp;</p>
+<p>Both existing manufacturers that want to transform local operations with a regional reach, and 3PL that want to benefit from its location to utilize a regional market will benefit from the bonded status.</p>
+<p>&nbsp;</p>
+<p>This bonded zone will be the first of its kind to align a strong manufacturing area and broad current logistics offering source of revenue: lease of ready to use light manufacturing and warehousing buildings and lease of land for built to suit warehouses</p>
+"
+                                ; controlled-temperature-logistics-operator                ;                ; "
+<p>The opportunity is to develop a controlled temperature complex and logistics operator to service the Food and Beverage market in the western province, the investor would enter in a sub-lease agreement with Modon, where it would develop the product and commercialize it</p>
+<p>With 1,100,000 m2 of manufacturing installations devoted to the Food and Beverage market in Jeddah 2nd and 3rd industrial cities and at growth at 172,500 m2 yearly, additionally with the Umrah and Hajj visitors&rsquo; growth, demand will always be available.</p>
+<p>&nbsp;</p>
+<p>The total net leasable area is 300,000 sqm and investors could lease any area as per the master plan.</p>
+"
+                                ; wheel-manufacturing-plant-for-trains               ;                ; "
+<p>This is an opportunity to open a manufacturing plant specializing in the production of rail wheels for locomotives and wagons to satisfy both local and regional demand including GCC and North &amp; East Africa. The annual consumption of the product can reach up to 25 thousand &ndash; 27 thousand wheels p.a. covering demand from Saudi Arabia alone, despite other regional demand.</p>
+"
+                                ; al-khomrah-logistics-zone               ;                ; "
+<p>A modern logistics zone that offers commercial facilities, customs bonded zone and re-exports zones.&nbsp;</p>
+<p>&nbsp;</p>
+<p>Strategically located near the Red Sea, a major crossing point for global maritime trade amounting to 13% of global trade, making it one of the major ports of trade between Europe, Africa and Asia, covering a land area of 2,378,085 m2&nbsp; in its first phase with gross flat area of 1,382,748 m2.</p>
+<p>&nbsp;</p>
+<p>For further details, please refer to Zone`s website: http://alkhomra.mawani.gov.sa/khomra/</p>
+"
+
+
+
+                                ; open-die-forging-facilities               ;                ; "
+<p>This opportunity entails localizing the value chain of open-die forging to serve KSA and GCC energy sectors.</p>
+<p>Open-die forging is one of five metal techniques (investment casting, sand casting, closed-die forging and rolled-ring forging) used to manufacture energy products in KSA.</p>
+<p>In KSA, open-die forging is driven by turbines (Pelton, Turgo and Crossflow), electric motors (single phase and three pase AC), wellhead equipment (casing head and spools), pumps (positive displacement, impulse, velocity, gravity, steam and valve-less pumps), ball valves (single, three-piece, split, top entry and welded), gas compressors (positive displacement-reciprocating, rotary dynamic-centrifugal and axial) &amp; blowout preventers (annular and ram).</p>
+<p>In 2016, KSA demand for open-die forging was valued at USD 304 Mn (32% of all five techniques used to manufacture energy products) and estimated to be 47 Ktpa (20% of all five techniques used to manufacture energy products) broken down by the following categories: Ball valves: 13 Ktpa, Wellhead equipment: 11.2 Ktpa, Electric motors: 7.4 Ktpa, Turbines: 6.4 Ktpa, Pumps: 3.8 Ktpa, Blowout preventers (ram): 2.7 Ktpa, Blowout preventers (annular): 1.6 Ktpa and Compressor (gas): 1.3 Ktpa</p>
+<p>Demand for open-die forging in KSA is forecasted to increase at an annual growth rate of 3% to reach 62 Ktpa by 2025.</p>
+<p>Beyond the KSA market, investors in Saudi Arabia have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production (expected to increase from 44 Ktpa in 2017 to 56 Ktpa by 2025).</p>
+<p>The increase in demand for closed-die forging and the limited presence of local players coupled with the Governments push for localization presents a great opportunity for the private sector to invest in establishing state-of-the-art forging facilities (including next generation forging).</p>
+<p>Beyond forging facilities for closed-die forging, other opportunities exist&nbsp; across the value chain including:</p>
+<ul>
+<li>Establishing design offices in Saudi Arabia capable to customize for local demand</li>
+<li>Localizing production of steel billet, ingots at high scale and forging lubricants (e.g., graphite and coating based lubricants)</li>
+<li>Setting-up high scale heat treatment facilities to support local forging operations</li>
+<li>Establish maintenance, repair and operations services to serve the forging industry</li>
+</ul>
+"
+                                ; closed-die-forging-facilities                ;                ; "
+<p>This opportunity entails localizing the value chain of closed-die forging to serve KSA and GCC energy sectors.</p>
+<p>Closed-die forging is one of five metal techniques (investment casting, sand casting, open-die forging and rolled-ring forging) used to manufacture energy products in KSA.</p>
+<p>In KSA, closed-die forging is driven by turbines (Pelton, Turgo and Crossflow), vales (ball, check and gate), wellhead equipment (casing head and spools), gas compressors (positive displacement-reciprocating, rotary dynamic-centrifugal and axial), blowout preventers (ram and annular), flanges (carbon steels and stainless steel flanges) and gears (spur, helical, bevel, worm, Herringbone and rack &amp; pinion).</p>
+<p>In 2016, KSA demand for closed-die forging was valued at USD 179 Mn (17% of all five techniques used to manufacture energy products) and estimated to be 48 Ktpa (20% of all five techniques used to manufacture energy products) broken down by the following categories: flanges: 20.9 ktpa, ball valves: 6.0 ktpa, gate valves: 5.4 ktpa, turbines: 6.4 ktpa, wellhead equipment: 3.2 ktpa, gears: 2.7 ktpa, check valves: 1.6 ktpa, gas compressors: 0.8 ktpa, blowout preventers (ram): 0.7 ktpa and blowout preventers (annular): 0.4 ktpa.</p>
+<p>Demand for closed-die forging in KSA is forecasted to increase at an annual growth rate of 3% to reach 63 Ktpa by 2025.</p>
+<p>Beyond the KSA market, investors in Saudi Arabia have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production (expected to increase from 45 Ktpa in 2017 to 56 Ktpa by 2025).</p>
+<p>The increase in demand for closed-die forging and the limited presence of local players coupled with the Governments push for localization presents a great opportunity for the private sector to invest in establishing state-of-the-art forging facilities (including next generation forging).</p>
+<p>Beyond forging facilities for closed-die forging, other opportunities exist&nbsp; across the value chain including:</p>
+<ul>
+<li>Establishing design offices in Saudi Arabia capable to customize for local demand</li>
+<li>Localizing production of steel billet, ingots at high scale and forging lubricants (e.g., graphite and coating based lubricants)</li>
+<li>Setting-up high scale heat treatment facilities to support local forging operations</li>
+<li>Establish maintenance, repair and operations services to serve the forging industry</li>
+</ul>
+"
+                                ; manufacturing-plants-for-investment-casting                ;                ; "
+<p>This opportunity entails localizing the value chain of investment casting to serve KSA and GCC energy sectors.</p>
+<p>Investment casting is one of five metal techniques (closed-die forging, sand casting, open-die forging and rolled-ring forging) used to manufacture energy products in KSA.</p>
+<p>In KSA, investment casting is driven by turbines, motors (electric motors casing), pumps (casing, impellers, stuffing box, discharge head, bowl and suction pipes), gas compressors (stainless steel and nickel-based, alloy number 214), valves (gate, butterfly, globe and check valves) and gears.</p>
+<p>In 2016, KSA demand for investment casting was valued at USD 254 Mn (26% of all five techniques used to manufacture energy products) and estimated to be 79 Ktpa (33% of all five techniques used to manufacture energy products) broken down by the following categories: pump: 32.6 ktpa, electric motors: 22.1 ktpa, gate valve: 7.2 ktpa, turbines: 6.4 ktpa, butterfly valve: 2.8 ktpa, gears: 2.7 ktpa, check valve: 2.5 ktpa, globe valve: 1.6 ktpa and compressor (gas): 1.1 ktpa.</p>
+<p>Demand for investment castings in KSA is forecasted to increase at an annual growth rate of 3% to reach 119 ktpa by 2030.</p>
+<p>Beyond the KSA market, investors in Saudi Arabia have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production (expected to increase from 73 ktpa in 2017 to 107 Ktpa by 2030).</p>
+<p>The increase in demand for investment casting and the limited presence of local players coupled with the Governments push for localization presents a great opportunity for the private sector to invest in establishing manufacturing investment casting plants to serve the KSA and GCC energy sectors.</p>
+<p>Beyond manufacturing plants for investment casting, other opportunities exist across the value chain including:</p>
+<ul>
+<li>Establishing manufacturing plants for investment casting molds, leveraging the presence of ceramic and binders in Saudi Arabia</li>
+<li>Developing production plants for steel billet and ingots at high scale</li>
+<li>Establishing metal cleaning, inspection and testing facilities</li>
+<li>Setting-up heat treatment facilities</li>
+<li>Establishing CNC lathes and other precision machining equipment for finishing</li>
+</ul>
+"
+                                ; manufacturing-plants-for-sand-casting                ;                ; "
+<p>This opportunity entails localizing the value chain of sand casting to serve KSA and GCC energy sectors.</p>
+<p>Sand casting is one of five metal techniques (closed-die forging, investment casting, open-die forging and rolled-ring forging) used to manufacture energy products in KSA.</p>
+<p>In KSA, sand casting is driven by pumps (bearing brackets) and valves (ball, gate, butterfly, globe and check valves).</p>
+<p>In 2016, KSA demand for sand casting was valued at USD 178 Mn (18.5% of all five techniques used to manufacture energy products) and estimated to be 58 Ktpa (24% of all five techniques used to manufacture energy products) broken down by the following categories: gate valves: 20.1 ktpa, butterfly valves: 12.4 ktpa, ball valves: 8.7 ktpa, globe valves: 7.3 ktpa, check valves: 6.6 ktpa and pumps: 2.8 ktpa.</p>
+<p>Demand for sand castings in KSA is forecasted to increase at an annual growth rate of 3% to reach 87 ktpa.</p>
+<p>Beyond the KSA market, investors in Saudi Arabia have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production (expected to increase from 54 ktpa in 2017 to 79 Ktpa by 2030).</p>
+<p>The increase in demand for sand casting and the limited presence of local players coupled with the Governments push for localization presents a great opportunity for the private sector to invest in establishing manufacturing sand casting plants to serve the KSA and GCC energy sectors.</p>
+<p>Beyond manufacturing plants for sand casting, other opportunities exist across the value chain including:</p>
+<ul>
+<li>Establishing manufacturing plants for investment casting molds, leveraging the presence of ceramic and binders in Saudi Arabia</li>
+<li>Developing production plants for steel billet and ingots at high scale</li>
+<li>Establishing metal cleaning, inspection and testing facilities</li>
+<li>Setting-up heat treatment facilities</li>
+<li>Establishing CNC lathes and other precision machining equipment for finishing</li>
+</ul>
+"
+                                ; aluminium-foundry-alloys                ;                ; "
+<p>This opportunity entails developing the value chain for the Aluminium downstream business.</p>
+<p>Aluminium foundry alloys are used for Aluminium castings. Alloys are produced as continuous cast or mold cast ingots. Popular alloys AlSi7Mg, AlSi9Mg, AlSi11(Mg), AlSi10MgMn, AlSi5-9MgCu, AlMg3 and Al 99.5E, 99.7E, with potential application areas in Automotive and transport, Wheels, Chassis components as brake parts and suspension parts, Cylinder heads, Electrical applications Decorative / anodized applications and/or where highest corrosion resistance is sought.</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>MENA demand (Tons):</strong>&nbsp;300K</li>
+<li><strong>Ideal Capacity Size (Tons):</strong>&nbsp;25K</li>
+<li><strong>Manpower:</strong>&nbsp;100</li>
+<li><strong>Feedstock:</strong>&nbsp;Liquid metal / Ingots (Aluminium)</li>
+<li><strong>Investment Level:</strong>&nbsp;USD 10 Million</li>
+</ul>
+"
+                                ; glass-wool                ;                ; "
+<p>Fiberglass for insulation (also referred to Glass wool) is a synthetic and very finely spun bunch of fibers of glass that forms a mass resembling wool. Glass wool is made by melting sand in combination with other oxides such as lime or soda without crystallizing them.</p>
+<p>The KSA imports glass wool mainly from China and Kuwait and exports relatively small volumes of glass wool. The country has witnessed increased demand of glass wool products for building insulation, particularly for HVAC applications.</p>
+<p>At present, only 30% of buildings in the KSA have been thermally insulated. In Jeddah, an estimated 85% of the Buildings lack insulation, and the ratio in the Eastern Province and Riyadh is 72.6% and 50%, respectively. Hence, the forecast for the glass wool product demand in KSA would be close to 54KT by 2020.</p>
+<ul>
+<li><strong>Saudi demand (Tons):</strong>&nbsp;54K</li>
+<li><strong>Ideal Capacity Size (Tons):</strong>&nbsp;10K</li>
+<li><strong>Manpower:</strong>&nbsp;75</li>
+<li><strong>Feedstock:</strong>&nbsp;Recycled Glass Cullet, Sand, Soda Ash, Limestone, Borax and Binder Coatings-Phenol formaldehyde</li>
+<li><strong>Investment Level:</strong>&nbsp;USD 25 Million</li>
+</ul>
+"
+                                ; proppants-plant                ;                ; "
+<p>This opportunity entails establishing proppants plant to serve the KSA and GCC oil and gas industry, with a planned capacity of 250K tons with 2 modules.</p>
+<p>Hydraulic fracturing is used in the oil and gas industry to increase the flow of oil and/or gas from a well. The producing formation is fractured open using hydraulic pressure. Proppants (propping agents) are then pumped into the oil well with fracturing fluid to hold the fissures open so that the natural gas or crude oil can flow up the well.</p>
+<ul>
+<li><strong>Saudi demand (Tons):</strong>&nbsp;1.5Million</li>
+<li><strong>Ideal Capacity Size (Tons):</strong>&nbsp;250K</li>
+<li><strong>Manpower:</strong>&nbsp;250</li>
+<li><strong>Feedstock:</strong>&nbsp;Silica Sand &amp; Bauxite</li>
+<li><strong>Investment Level:</strong>&nbsp;USD 80 Million</li>
+</ul>
+"
+                                ; ductile-iron-pipes-dip                ;                ; "
+<p>DIP is a pipe made of ductile cast iron. As the name suggests it is cast iron but with relatively higher strength, good elongation and toughness. These properties come from the nature of the microstructure, consisting of spheroidal graphite (as compared to flakes in grey iron) within the ironmaking it an excellent candidate for applications such as water and sewage transportation.</p>
+<p>The demand for DIP comes from 3 main factors; growth in the construction market, replacement and repair of current water pipelines and growth in other sectors like irrigation and infrastructure. DIP can be used in a wide range of applications like water supply, sewer systems, drainage and irrigation pipelines, pipelines for fire-extinguisher systems and oil and gas production.</p>
+<p>Advantages of Ductile Iron Pipes: high tensile strength, corrosion resistant, flexible and leak resistant, diverse coating possibilities and excellent workability.</p>
+<ul>
+<li><strong>Domestic Supply Gap:&nbsp;</strong>120K</li>
+<li><strong>Ideal Capacity Size (Tons):</strong>&nbsp;200K</li>
+<li><strong>Manpower:&nbsp;</strong>570</li>
+<li><strong>Feedstock:&nbsp;</strong>Pig Iron + Scrap</li>
+<li><strong>Investment Level:</strong>&nbsp;USD 59 Million</li>
+</ul>
+"
+                                ; aluminium-wheels-and-casting                ;                ; "
+<p>This opportunity entails developing the value chain for the Aluminium downstream business, to develop the automotive value chain.</p>
+<p>Cast wheels are formed by pouring molten Aluminium into a mold and machining the bolt-holes and flanges into spec. Cast wheels have a uniform grain, where the molecules sit on top of each other and are held together by mechanical adhesion. Most cast wheels use A-356 Aluminium, which is only about 60% as strong as the 500 or 6000-series alloys used for forged wheels.</p>
+<p>Aluminium Alloy Wheel is made by Aluminium alloy. The Aluminium alloy wheel usually has better heat conduction and the weight is also lighter than the steel wheel</p>
+<ul>
+<li><strong>MENA demand (Tons):</strong>&nbsp;250K</li>
+<li><strong>Ideal Capacity Size (Tons):</strong>&nbsp;120K</li>
+<li><strong>Manpower:</strong>&nbsp;70</li>
+<li><strong>Feedstock:</strong>&nbsp;Liquid Metal / Ingots (A356 Aluminium)</li>
+<li><strong>Investment Level:</strong>&nbsp;USD 25 Million</li>
+</ul>
+"
+                                ; seamless-copper-tube                ;                ; "
+<p>This opportunity entails developing the value chain for copper.</p>
+<p>Seamless copper tubes are finished products that are made from copper billets (round bars) in a series of production steps. Depending on the choice of process, the main steps involve, melting, casting, piercing, extrusion, drawing, annealing and level winding. Copper tubes are a preferred material in several sectors because of the inherent properties of copper. Some of the main applications of seamless copper tubes are in ACR (Air conditioning and refrigeration), plumbing, heat exchangers, water distribution, medical gas transport etc.</p>
+<p>The proposal is to establish seamless copper tubes plant to cover the huge demand from the constructions in KSA due to new mega projects.</p>
+<ul>
+<li><strong>MENA demand (Tons):</strong>&nbsp;130K</li>
+<li><strong>Ideal Capacity Size (Tons):</strong>&nbsp;15K</li>
+<li><strong>Manpower:&nbsp;</strong>200</li>
+<li><strong>Feedstock:</strong>&nbsp;Copper Cathode, Scrap, Ingots</li>
+<li><strong>Investment Level:</strong>&nbsp;USD 60 Million</li>
+</ul>
+"
+                                ; aluminium-circles-slug                ;                ; "
+<p>This opportunity entails developing the value chain for the Aluminium downstream business.</p>
+<p>Circles, also known as flat circular sheets, are produced in a variety of diameters and thicknesses to meet specific needs. It is produced with a weight and diameter to the desired size of the customers. The slug should be free of inclusions or air pocket and with exact dimensions so that proper shape with desired pressure resistance &amp; tightness can be achieved.</p>
+<p>Aluminum slug is the basis raw material for the production of Aluminum collapsible tubes and Aluminum aerosol cans, tubes for pharmaceuticals, cosmetics, food, household products/technology and toothpaste aerosols for deodorants, perfume and cosmetics, hair care, pharmaceuticals, foods and household products.</p>
+<ul>
+<li><strong>MENA demand (Tons):</strong>&nbsp;10K</li>
+<li><strong>Ideal Capacity Size (Tons):</strong>&nbsp;20K</li>
+<li><strong>Manpower:</strong>&nbsp;25</li>
+<li><strong>Feedstock:</strong>&nbsp;Aluminium Rolled Sheet Coil 0.3 maximum thickness</li>
+<li><strong>Investment Level:</strong>&nbsp;USD 10 Million</li>
+</ul>
+"
+                                ; aluminium-powder                ;                ; "
+<p>This opportunity entails developing the value chain for the Aluminium downstream business.</p>
+<p>Aluminium powder are produced by presenting pure molten Aluminium metal to a compressed gas jet and converting it to fine droplets, which are then solidified and collected. Powders collected are subsequently graded, depending on size, specification and application.</p>
+<p>The range of particle sizes of the product made in this way can be controlled to some extent by varying the nozzle opening, the air pressure and other factors. A wide range of particle size is available from the finest, 5 microns up to 1000 microns.</p>
+<ul>
+<li><strong>MENA demand (Tons):</strong>&nbsp;20K</li>
+<li><strong>Ideal Capacity Size (Tons):</strong>&nbsp;10K</li>
+<li><strong>Manpower:</strong>&nbsp;60</li>
+<li><strong>Feedstock:</strong>&nbsp;Aluminium Ingots / Liquid Metal</li>
+<li><strong>Investment Level:</strong>&nbsp;USD 10 Million</li>
+</ul>
+"
+                                ; aluminium-forgings                ;                ; "
+<p>This opportunity entails developing the value chain for the Aluminium downstream business.</p>
+<p>Forging is a manufacturing process in which metal is pressed, pounded, or squeezed under great pressure into high-strength parts. This is usually done by heating the metal, but some forgings are produced without heat. Generally, forged components are shaped by either a hammer or a press. Forging by hammer is carried out in a succession of die impressions using repeated blows. In a press, the component is usually hit only once in each die impression.</p>
+<p>The three basic types of aluminum alloy forgings are open-die forgings, closed-die forgings, and rolled rings.</p>
+<p>In automotive applications, forged components are commonly found at points of shock and stress. Forged automobile components include connecting rods, crankshafts, wheel spindles, axle beams, pistons, gears, and steering arms.</p>
+<p>Forgings are also used in helicopters, piston-engine planes, commercial jets, and supersonic military aircraft. Many aircraft are &ldquo;designed around&rdquo; forgings and contain more than 450 structural forgings, including hundreds of forged engine parts.</p>
+<p>&ldquo;Forged&rdquo; is the mark of quality in hand tools and hardware. Pliers, hammers, sledgers, wrenches, garden implements, and surgical tools are always produced through forging.</p>
+<ul>
+<li><strong>MENA demand (Tons):</strong>&nbsp;30K</li>
+<li><strong>Ideal Capacity Size (Tons):</strong>&nbsp;6K</li>
+<li><strong>Manpower:</strong>&nbsp;100</li>
+<li><strong>Feedstock:</strong>&nbsp;Aluminium Billet / Slug</li>
+<li><strong>Investment Level:</strong>&nbsp;USD 30 Million</li>
+</ul>
+"
+                                ; brass-and-copper-plant                ;                ; "
+<p>Setup production facility of 45 KT capacity in KSA to produce copper and brass products for non electrical usage in the region</p>
+"
+                                ; copper-rod-plant                ;                ; "
+<p>Establishing copper rod plant of 115 KT capacity to supply wire / cables producers in the KSA and the rest of the Middle East region</p>
+"
+                                ; silicon-smelter                ;                ; "
+<p>Opportunity to setup a silicon metal smelter of 45 KT capacity in KSA to cater local demand and serve regional markets</p>
+"
+                                ; steelmaking                ;                ; "
+<p>Opportunity to setup steelmaking facility for specialty high value added products with 7,500 KT capacity to cater local and regional demand</p>
+"
+                                ; stainless-steel-grades-seamless-pipes-facility                ;                ; "
+<p>Opportunity to setup a manufacturing facility to produce stainless steel grade seamless pipes with 40 KT capacity in KSA</p>
+"
+                                ; tinplate-production-plant                ;                ; "
+<p>Opportunity to setup a production facility for tinplate with 400 KT capacity in KSA to cater local demand and serve the regional markets</p>
+"
+                                ; aluminum-fluoride                ;                ; "
+<p>Opportunity to setup manufacturing plant for aluminum fluoride, one of the main additives required for production of metallic aluminum</p>
+"
+                                ; aluminum-rolling-foil                ;                ; "
+<p>Opportunity to setup a 35 KT capacity manufacturing plant for aluminum rolling foil to cater local and regional demand</p>
+"
+                                ; hq-hot-rolled-coil-production-plant                ;                ; "
+<p>Opportunity to setup a 3 mtpa capacity manufacturing plant for high quality hot rolled coil to cater local and regional demand</p>
+"
+                                ; aluminum-scrap-recycling-plant                ;                ; "
+<p>Opportunity to setup aluminum scrap recycling plant of 120 KT capacity to produce processed scrap and aluminum ingots</p>
+"
+                                ; large-sizes-alloyed-seamless-pipes-production-plant                ;                ; "
+<p>Setup a manufacturing facility with a capacity of 50 ktpa to produce a high quality large sized alloyed Seamless Pipes<br />(Sizes OD &gt; 7 &rdquo;&rdquo;).</p>
+"
+                                ; calcium-ammonium-nitrate-can                ;                ; "
+<p>Setup a 500 ktpa capacity manufacturing plant for Calcium Ammonium Nitrate (CAN)</p>
+"
+                                ; heavy-profiles-marine-profiles-rails                ;                ; "
+<p>Setup a manufacturing plant with a capacity of 1.6 mtpa to produce heavy profiles, marine profiles & rails to serve the construction, maritime and rails demand</p>
+"
+                                ; processing-glass-plant                ;                ; "
+<p>Opportunity to setup a 42 ktpa capacity float glass processing plant for manufacturing safety glass, laminated safety glass and insulating  glass products</p>
+"
+
+
+
+
+                                ; precision-machining-workshop-for-downhole-equipment-tools                ;                ; "
+<p>This opportunity entails establishing precision machining workshops for downhole equipment and tools to serve the KSA and GCC oil and gas industry.</p>
+<p>From 16 downhole tools and equipment, over 40 components utilize precision machining in their manufacturing process. Precision machining requirements include boring, honing, CNC Lathe, CNC Mill, and Threading precision/CNC machining technology. Currently, precision machining for downhole equipment and tools is performed fully outside KSA, presenting a great opportunity for investors to localize production.</p>
+<p>The overall demand for precision machining for downhole tools in KSA has been growing, estimated at USD 78 Mn in 2016. Driven by the upstream oil and gas activity in the region, the demand is forecasted to further increase at an annual growth rate of ~4.7% to reach USD 108 Mn by 2022.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production, expected to increase from USD 91 Mn in 2017 to USD 112 Mn by 2022.</p>
+"
+                                ; manufacturing-of-coiled-tubing-strings                ;                ; "
+<p>This opportunity entails developing the value chain for the production of coiled tubing strings to serve the KSA and GCC oil and gas industry.</p>
+<p>In 2016, KSA demand for Coiled Tubing strings is estimated to be 130 coil units (~USD 30 million), and forecasted to increase at an annual growth rate of ~5% to reach 207 coil units by 2022. Currently, KSA demand for Coiled Tubing strings is addressed fully through imports, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production, expected to increase from 174 units (~USD 63 million) in 2017 to 214 units by 2022.</p>
+<p>In addition to the increasing demand for Coiled Tubing strings in the KSA and wider GCC region, the manufacturing process for Coiled Tubing strings is relatively simple and there exist local capabilities to support the manufacturing. Also, incentives for investors provide an advantage for procurement within Saudi, Saudi has cost advantages on labor, land and logistics, and there are various general funding and other government support incentives that investors can take advantage of.</p>
+<p>The focus of this opportunity is on the consumable part of the value chain. However, beyond the manufacturing of Coiled Tubing string, other opportunities exist across the value chain including:</p>
+<ul>
+<li>Supplies and tools: stimulation fluids, corrosion inhibitors, packers</li>
+<li>Coiled Tubing service delivery providers in KSA are potential customers of Coiled Tubing string materials</li>
+</ul>
+<p>&ndash;After-sales services such as NDE (non-destructive examination) and spooling can also be offered by SMEs to Coiled tubing strings consumers. Saudi Aramco requires coiled tubes be inspected using NDE techniques once every 6 months, and only tubes that pass testing can be used on Aramco wells</p>
+"
+                                ; production-of-drill-pipes                ;                ; "
+<p>This opportunity entails developing the value chain for the production of drill pipes to serve the KSA and GCC oil and gas industry.</p>
+<p>In 2016, KSA demand for drill pipes is estimated at 13.3 Ktpa (Kilo tons per annum), and forecasted to increase at an annual growth rate of ~4% to reach 16.7 Ktpa by 2022. Currently, the KSA demand for drill pipes is addressed fully through imports, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the rest of the regional market in the GCC which is expected to witness strong growth fueled by oil and gas production, expected to increase from 18.4 Ktpa in 2017 to 22 Ktpa by 2022. KSA market demand is expected to be ~43% of the overall GCC demand for drill pipes.</p>
+<p>Drill pipes production has high potential for localization across the value chain, from design to rental and services. Opportunities across the value chain include:</p>
+<ul>
+<li>Design: set-up design and R&amp;D facilities to engineer Drill pipes with specification needed for KSA customers</li>
+<li>Input materials: opportunity to partner with steel suppliers to produce raw materials as per the required specifications</li>
+<li>Manufacturing: set-up Drill pipes manufacturing plant in KSA</li>
+<li>Rental &amp; services: potential to offer inspection, maintenance, and repair services</li>
+</ul>
+"
+                                ; manufacturing-of-perforating-guns                ;                ; "
+<p>This opportunity entails developing the value chain for the production of perforating guns to serve the KSA and GCC oil and gas industry.</p>
+<p>The overall demand for perforating guns in KSA has been growing, estimated at 32,000 ft in 2016. Driven by a strong oil and gas outlook, the demand is forecasted to increase at an annual growth rate of ~5.1% to reach 44,682 ft units by 2022. Currently, KSA demand for perforating guns is addressed fully through imports, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional markets in the GCC which is expected to witness strong growth fueled by oil and gas production, expected to increase from 36,820 ft in 2017 to 46,234 ft by 2022. The majority of the market for perforating guns is made up of hollow carrier guns with different size varieties including: 2 7/8&rdquo;, 3 1/8&rdquo;, 3 1/2&rdquo;, and 4 1/2&rdquo;.</p>
+<p>In addition to an increasing market demand, Saudi has cost advantages on labor, land and logistics, and also provides various general funding and other government support incentives that investors can take advantage of.</p>
+<p>This opportunity focuses on establishing a fabrication shop to fabricate the hollow carriers and charge tubes for perforating guns. Manufacturing of perforating guns has high potential for localization across the value chain, from design and input materials to production and lifecycle management. Opportunities across the value chain include:</p>
+<ul>
+<li>Design: establish a Perforating guns design and R&amp;D office to develop design fit to KSA requirements</li>
+<li>Input materials: partner with local tube suppliers to localize tube manufacturing</li>
+<li>Production: establish a fabrication shop to facilitate the hollow carriers and charge tubes</li>
+<li>Production: establish a lathe/CNC shop to machine the perforating systems and other downhole equipment</li>
+<li>Testing &amp; Assembly: assemble and test perforating systems prior to use in perforating operations</li>
+<li>Lifecycle management: provide support services for perforating guns, including inventory management</li>
+</ul>
+"
+                                ; manufacturing-of-drill-collars                ;                ; "
+<p>This opportunity entails developing the value chain for the production of spiral and slick drill collars to serve the KSA and GCC oil and gas industry</p>
+<p>The overall demand for drill collars has been growing, estimated to be ~5,000 units valued at USD 12 million in 2017. Driven by the growth in onshore drilling, and well completion to maintain 2025 production targets, drill collar demand is forecasted to increase at an annual growth rate of ~5% to reach ~7,300 units valued at USD 18 million by 2025. Currently, KSA demand for drill collars is addressed fully through imports, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production, expected to increase from ~8,700 units in 2017 to ~12,700 units by 2025.</p>
+<p>In addition to an increasing market demand, Saudi has an attractive cost base including low labor, land, utilities and logistics cost. Also, there is competitive pricing of material supply, including carbon and alloy steel.</p>
+<p>The focus of this opportunity is on manufacturing of drill collars given that the demand is growing, KSA is abundant in raw material and there is currently no local manufacturing. However, there are additional opportunities for localization across the drill collars production value chain. Opportunities across the value chain include:</p>
+<ul>
+<li>Design &amp; manufacturing: design and manufacture spirals and slick drill collars based on international and Aramco standards and certifications</li>
+<li>After sales and renting: Rental services is a major opportunity for SMEs as it allows drillers access to the most advanced equipment that suit the local terrain</li>
+<li>Aftersales and renting: Aftersales services of stubbing of drill collars; potentially allowing recycled usage and repair of the drill collars</li>
+</ul>
+"
+                                ; manufacturing-of-liner-hangers                ;                ; "
+<p>This opportunity entails developing the value chain for the production of liner hangers to serve the KSA and GCC oil and gas industry.</p>
+<p>The overall demand for liner hangers in Saudi Arabia has been growing, estimated at ~1,200 units and valued at USD 95 million in 2016. Driven by strong oil and gas production activity, KSA demand is forecasted to increase at an annual growth rate of ~5% to reach 1,912 units by 2022. In 2016, demand for liner hangers was ~57% for the hydraulic type and ~25% for mechanical type and the remaining for other types. The split is expected to remain relatively the same till 2022. Currently, KSA demand for liner hangers is addressed fully through imports, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production, expected to increase from ~1,600 units valued at USD 100 million in 2017 to ~2,000 units&nbsp; by 2022.</p>
+<p>In addition to an increasing market demand, Saudi has an attractive cost base including low labor, land, utilities and logistics cost. Also, KSA plans to localize Elastomers, previously a barrier for liner hangers localization.</p>
+<p>The focus of this opportunity is on production and testing &amp; assembly of line hangers. These opportunities entail:</p>
+<ul>
+<li>Production: Establish a fabrication shop to manufacture liner hanger system components including pack-off bushing; Establish a lathe/CNC shop to fabricate slips, cones and other components; and leverage local facilities to outsource surface treatment and finishing services</li>
+<li>Testing &amp; assembly: prepare and test equipment prior to installation on site; provide liner hangers redressing services</li>
+</ul>
+<p>However, there are additional opportunities for localization across the liner hangers manufacturing value chain. Opportunities across the value chain include:</p>
+<ul>
+<li>Design: establish an office to optimize designs for Line Hangers to fit bottom hole requirements in KSA</li>
+<li>Input materials: manufacture elastomer based rubber for oil and gas applications</li>
+<li>Input materials: partner with local OCTG suppliers to upgrade casing manufacturing capabilities used in fabricating the body</li>
+<li>Lifecycle management: provide Liner hander maintenance and repair services including spare parts</li>
+</ul>
+"
+                                ; manufacturing-facility-for-packers                ;                ; "
+<p>This opportunity entails establishing a manufacturing facility for packers to serve the KSA and GCC oil and gas industry.</p>
+<p>The overall demand for packers in Saudi Arabia has been growing, estimated at 5,050 units valued at USD 173 million in 2016. Driven by the strong oil and gas production activity, demand is forecasted to increase at an annual growth rate of ~5% to reach ~8,150 units units by 2022.</p>
+<p>In 2016, demand for packers was ~80% for isolation packers and ~20% for production packers. The split is expected to remain relatively the same till 2022. Currently, KSA demand for packers is addressed fully through imports, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production, expected to increase from ~6,800 units valued at USD 180 million in 2017 to 8,430 units by 2022.</p>
+<p>In addition to an increasing market demand, Saudi has an attractive cost base including low labor, land, utilities and logistics cost. Also, KSA plans to localize Elastomers, previously a barrier for packers localization.</p>
+"
+                                ; manufacturing-of-dv-tools                ;                ; "
+<p>This opportunity entails developing the value chain for the production of DV tools to serve the KSA and GCC oil and gas industry.</p>
+<p>The overall demand for DV tools in Saudi Arabia has been growing, estimated to be 1,200 units valued at USD 64 million in 2016. Driven by strong oil and gas production outlook, demand is forecasted to increase at an annual growth rate of 2.5% to reach ~1,400 units by 2022. Currently, KSA demand for DV tools is addressed fully through imports, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production, expected to increase from 1,300 units valued at USD 133 million in 2017 to 1,400 units by 2022.</p>
+<p>In addition to an increasing market demand, Saudi has an attractive cost base including low labor, land, utilities and logistics cost.</p>
+<p>The focus of this opportunity is on manufacturing body, elastomer-based seals and components of DV tools in Saudi Arabia. However, additional opportunities with high potential for localization exist across the value chain of DV tools manufacturing. Opportunities across the value chain include:</p>
+<ul>
+<li>Design: establish a DV tool design and R&amp;D office to develop DV tools designs for KSA requirements</li>
+<li>Input materials: partner with local OCTG suppliers to upgrade casing manufacturing capabilities used in fabricating the body</li>
+<li>Production: establish a fabrication shop to manufacture DV tools system components</li>
+<li>Production: establish a lathe/CNC shop to fabricate metal components</li>
+<li>Production: establish local facilities to conduct surface treatment and finishing services</li>
+<li>Testing and Assembly: Assemble and test DV tools prior to use in stage cementing operations</li>
+</ul>
+"
+                                ; marine-finfish-cage-farming                ;                ; "
+<p>This opportunity aims at building and operating marine finfish cage farms along the Red Sea.</p>
+<p>Located along the Red Sea, KSA is an ideal location for Aquaculture with favorable geographical, environmental and climatic conditions:</p>
+<ul>
+<li>Long coastline along the Red Sea: ~1,800 KM</li>
+<li>Suitable cage depth: 20 m to 50 m</li>
+<li>Pristine water and adequate DO: 7.04 mg/l</li>
+<li>Low wave length: 0.5 m to 1 m</li>
+<li>Adequate salinity: 35 to 41 PPT depending on location</li>
+<li>Suitable water temperature: 18&deg;C to 30&deg;C - which allows for local production of a wide range of different species</li>
+</ul>
+<p>In addition to the favorable conditions, KSA has a growing local fish market and big potential for export. To capitalize on its potential, the Saudi Arabian government is committed to unlocking the sector by opening it for private investments.</p>
+<p>As such, the Ministry of Environment, Water and Agriculture (MEWA) is looking for private players to invest in the Aquaculture sector in KSA. The Ministry has identified more than 15 plots along the Red Sea, from Tabuk in the North to Jazan in the South. The area has been identified as suitable for aquaculture after rigorous exploration of the Red Sea shores.</p>
+<p>As such the area conforms to the standards adopted in the Kingdom which have been issued by the Fisheries Agency in 2017 (1438 AH). The plots area could be expanded based on the needs of the investor</p>
+"
+                                ; manufacturing-of-whipstocks                ;                ; "
+<p>This opportunity entails developing the value chain for the production of whipstocks to serve the KSA and GCC oil and gas industry.</p>
+<p>The overall demand for whipstocks in Saudi Arabia has been growing, estimated to be 510 units valued at USD 21 million. Driven by a strong outlook on multilateral well drilling, demand is forecasted to increase at an annual growth rate of ~5% to reach 770 units by 2022. Currently, KSA demand for whipstocks guns is addressed fully through imports, presenting a great opportunity for investors to localize production. In 2016, demand for whipstocks is ~90% for hydraulic whipstocks and ~10% for mechanical Whipstocks. The split is expected to remain relatively the same till 2022.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC which is expected to witness strong growth fueled by oil and gas production, expected to increase from ~640 units valued at USD 44 million in 2017 to ~800 units by 2022.</p>
+<p>In addition to an increasing market demand, Saudi has an attractive cost base including low labor, land, utilities and logistics cost.</p>
+<p>The focus of this opportunity is on production and testing &amp; assembly of whipstocks. These opportunities entail:</p>
+<ul>
+<li>Production: establish a fabrication shop to manufacture Whipstock system components</li>
+<li>Production: establish a lathe/CNC shop to fabricate metal components</li>
+<li>Production: establish local facilities to conduct surface treatment and finishing services</li>
+<li>Testing and Assembly: Set up an assembly and testing center for Whipstocks prior to use in operations</li>
+</ul>
+<p>However, there are additional opportunities for localization across the whipstocks manufacturing value chain. Opportunities across the value chain include:</p>
+<ul>
+<li>Design: establish a Whipstock design and R&amp;D office to develop Whipstock designs fit for KSA requirements</li>
+<li>Input materials: partner with steel suppliers to produce raw materials as per the required specifications</li>
+<li>Lifecycle management: Establish after-sales service centers to serve requirement for retrievable Whipstocks conducting multiple trips to drill several laterals from single wellbore</li>
+</ul>
+"
+                                ; manufacturing-of-pipe-fittings                ;                ; "
+<p>This opportunity entails developing the value chain for the production of pipe fittings to serve KSA and the broader GCC market.</p>
+<p>The overall demand for pipe fittings in Saudi Arabia has been growing, estimated to be 856,000 units valued at USD 160 million in 2016. Driven by demand from utilities, oil and gas, and water sectors, the market demand is forecasted to increase at an annual growth rate of 23% to reach 1,709,000 units by 2022.</p>
+<p>Currently, KSA demand for pipe fittings is addressed almost fully through imports (94% of total demand), presenting a great opportunity for investors to localize production. The butt weld and socket weld fitting are the two types of fitting under consideration for localization. In 2016, demand for pipe fittings is 87% for butt weld and 13% for socket weld. The split is expected to remain relatively the same till 2022.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC, expected to increase from 1,532,000 units in 2017 to 2,779,000 units by 2022. The KSA demand for pipe fittings is expected to make up ~40% of the overall GCC demand.</p>
+<p>The main focus of this opportunity is to establish manufacturing facilities to locally machine and manufacture butt weld and socket weld pipe fittings.</p>
+<p>However, there are additional opportunities for localization across the pipe fittings manufacturing value chain. These opportunities include:</p>
+<ul>
+<li>Raw materials: establish production facility for carbon steel, low alloy steel and corrosion resistant allow seamless pipes to local demand specifications</li>
+<li>Testing and distribution: provide supporting services related to non-destructive inspection, testing, logistics, sales and marketing</li>
+</ul>
+"
+                                ; manufacturing-of-heat-exchanger-tubes                ;                ; "
+<p>This opportunity entails developing the value chain for the production of heat exchanger tubes to serve energy industrial demand across KSA and the broader GCC market.</p>
+<p>Overall demand for heat exchange tubes has been increasing, estimated to be 500 units in 2017. Driven by strong upcoming industrial activity, demand for heat exchanger tubes is forecasted to increase to reach 6,250 units by 2021. In 2017, demand for heat exchanger tubes is 50% for CS tubes, 30% for SS tubes and 20% Alloy tubes. The split is expected to remain relatively the same till 2021.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC, expected to increase from 2,125 units in 2017 to 2,500 units by 2021.</p>
+<p>In addition to an increasing market demand, Saudi has an attractive cost base including low labor, land, utilities and logistics cost.</p>
+<p>The main focus of this opportunity is on the establishment of a manufacturing unit of heat exchange tubes. However, additional opportunities for localization exist across the value chain of heat exchanger tubes production. These opportunities include:&nbsp;</p>
+<ul>
+<li>Design: establish heat exchanger tube design office in Saudi Arabia capable to customize for local demand</li>
+<li>Input materials: increase localization of steel strips and coils</li>
+<li>Production: establish production facility for welded and seamless tubing for heat exchangers</li>
+<li>Testing and assembly: establish testing and certification services for hear exchange tubing</li>
+<li>Testing and assembly: establish technical assistance services for the assembly stage</li>
+<li>Lifecycle management: setup after-sales support and technical assistance services, including inspection, testing, maintenance and repair</li>
+</ul>
+"
+                                ; manufacturing-of-butterfly-valves                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of butterfly valves to serve KSA and the broader GCC market.</p>
+<p>Overall demand for butterfly valves in Saudi Arabia has been increasing, estimated to be 33,000 units in 2018, and forecasted to increase at an annual growth rate of 3% to reach 37,400 units by 2022.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC, expected to increase from 64,100 units in 2018 to 73,400 units by 2022. The KSA demand is expected to make up ~34% of the total GCC market demand.</p>
+<p>The main focus of this opportunity is to establish component and final manufacturing facilities to produce butterfly valves.</p>
+<ul>
+<li>Component manufacturing: establish manufacturing facilities for valve components (e.g., bodies, seats, stems, plugs&hellip;) by utilizing machining, cladding and heat treatment capabilities</li>
+<li>Final manufacturing and testing: setup after-sales support and technical assistance services, including storage, logistics, installation, maintenance, and other remedial work</li>
+</ul>
+<p>However, additional opportunities for localization exist across the value chain of butterfly valve production. These opportunities include:</p>
+<ul>
+<li>Design: establish a butterfly and valve design capabilities in Saudi Arabia to cater for local requirements</li>
+<li>Input materials: localize production of elastomers and coating</li>
+</ul>
+"
+                                ; manufacturing-of-plug-valves                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of plug valves to serve KSA and the broader GCC market.</p>
+<p>Overall demand for plug valves in Saudi Arabia has been increasing, estimated to be 9,900 units in 2019, and forecasted to increase at an annual growth rate of 3% to reach 11,400 units by 2022.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC, expected to increase from 13,100 units in 2018 to 14,900 units by 2022.</p>
+<p>The main focus of this opportunity is to establish component and final manufacturing facilities to produce plug valves.</p>
+<ul>
+<li>Component manufacturing: establish manufacturing facilities for valve components (e.g., bodies, seats, stems, plugs&hellip;) by utilizing machining, cladding and heat treatment capabilities</li>
+<li>Final manufacturing and testing: setup after-sales support and technical assistance services, including storage, logistics, installation, maintenance, and other remedial work</li>
+</ul>
+<p>However, additional opportunities for localization exist across the value chain of plug valve production. These opportunities include:</p>
+<ul>
+<li>Design: establish a plug and valve design capabilities in Saudi Arabia to cater for local requirements</li>
+<li>Input materials: localize production of elastomers and coating</li>
+<li>Input materials localize processing of steel and iron alloys (billets, forging, molding&hellip;) to plug valves specifications</li>
+</ul>
+"
+                                ; manufacturing-of-choke-valves                 ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of choke valves to serve KSA and the broader GCC market.</p>
+<p>The overall demand for choke valves in Saudi Arabia has been increasing, estimated to be 2,200 units, and forecasted to increase at an annual growth rate of 3% to reach 2,500 units by 2022. Currently, choke valve components are manufacture and assembled outside Saudi Arabia, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC, expected to increase from 2,900 units in 2018 to 3,300 units by 2022. The KSA market demand is expected to make up ~43% of the total GCC market demand.</p>
+<p>The main focus of this opportunity is to establish component and final manufacturing facilities to produce choke valves.</p>
+<ul>
+<li>Component manufacturing: establish manufacturing facilities for valve components (e.g., bodies, seats, stems, plugs&hellip;) by utilizing machining, cladding and heat treatment capabilities</li>
+<li>Final manufacturing and testing: setup after-sales support and technical assistance services, including storage, logistics, installation, maintenance, and other remedial work</li>
+</ul>
+<p>However, additional opportunities for localization exist across the value chain of choke valve production. These opportunities include:</p>
+<ul>
+<li>Design: establish a plug and valve design capabilities in Saudi Arabia to cater for local requirements</li>
+<li>Input materials: localize production of elastomers and coating</li>
+<li>Input materials localize processing of steel and iron alloys (billets, forging, molding&hellip;) to plug valves specifications</li>
+</ul>
+"
+                                ; manufacturing-of-industrial-gears                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of gears for industrial machinery to serve KSA and the broader GCC region.</p>
+<p>The overall demand for industrial gears in Saudi Arabia has been growing, estimated at USD 97 million in 2017. Driven by the presence of several oil and gas manufacturing companies in the Kingdom, market size is forecasted to increase at an annual growth rate of 3% to reach USD 121 million by 2025. The global gears market is dominated by spur gears and bevel gears, having 50-80% market share.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the wider regional market of the GCC. With many companies in the GCC establishing extraction and production plants, demand for gears in the region has been increasing and is expected to continue to increase from USD 106 million in 2017 to USD 151 million by 2025.</p>
+<p>The main focus of this opportunity is to establish a manufacturing facility for industrial gears.</p>
+<ul>
+<li>Manufacturing: establish outsourced services offering heat treatment, machining&hellip;</li>
+<li>Manufacturing: establish facilities to produce locally and supply manufacturing facilities</li>
+</ul>
+<p>However, additional opportunities for localization exist across the value chain of industrial gears production. These opportunities include:</p>
+<ul>
+<li>Design: potential to be part of a larger design center setup by the EPC or the OEM</li>
+<li>Raw materials: localize production of key materials such as PEEK, Delrin, brass, etc.</li>
+<li>Operations and maintenance: offer support services, including maintenance, installation and operation services</li>
+</ul>
+"
+                                ; manufacturing-of-mechanical-seals-for-industrial-equipment                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of mechanical seals for industrial equipment to serve KSA and the broader GCC region.</p>
+<p>Overall demand for mechanical seals in Saudi Arabia has been growing, estimated to be 19,000 units in 2017. Driven by upcoming energy projects by Saudi Aramco, SEC and SWCC, demand is forecasted to increase at an annual growth rate of 6.1% to reach 30,300 units by 2025. Currently, KSA demand for mechanical seals for industrial equipment is addressed mainly domestically; however, the remaining 30% is addressed through imports, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the larger regional market in the GCC. With a growing demand in the region for high-quality mechanical seals used in oil and gas, water and wastewater, and power projects, the demand in the rest of the GCC is expected to increase from 29,000 units in 2017 to 45,000 units by 2025.</p>
+<p>In addition to an increasing market demand, Saudi Arabia has competitive costs for materials, labor and logistics and offers funding and incentives to investors.</p>
+<p>The main focus of this opportunity is to establish a manufacturing facility for mechanical seals for industrial equipment.</p>
+<ul>
+<li>Manufacturing: establish mechanical seals manufacturing facility to fabricate seals components, the facility to include turning, boring, grooving, milling, drilling and tapping capabilities</li>
+<li>Finishing operations: establish workshops to deliver hard facing, grinding, lapping, polishing and welding capabilities in addition to advanced surface treatment procedures</li>
+</ul>
+<p>However, additional opportunities for localization exist across the value chain of mechanical seals production. These opportunities include:</p>
+<ul>
+<li>Design: establish a design and engineering capabilities</li>
+<li>Input materials: establish local foundries</li>
+<li>Installation and maintenance: offer support services, including quality control, assembly, and installation services</li>
+<li>Installation and maintenance: offer maintenance services and repair services for mechanical seals and installed base</li>
+</ul>
+"
+                                ; manufacturing-of-bearings-for-industrial-equipment                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of bearings for industrial equipment to serve KSA and the broader GCC region.</p>
+<p>Overall demand for bearings in Saudi Arabia has been increasing, estimated to be 1.55 million units in 2016 with an additional 1 million units of indirect demand estimated. Driven by investment in heavy machinery and technological advances in lightweight materials for high-performance products, demand is forecasted to increase at an annual growth rate of ~3% to reach 2.2 million units by 2025. Currently, KSA demand for bearings for industrial equipment is addressed fully through imports, presenting a great opportunity for investors to localize production.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the larger regional market in the GCC, expected to increase from 0.8 million units in 2016 to 1.2 million units by 2025.</p>
+<p>In addition to an increasing market demand, Saudi Arabia has an attractive cost base for materials, labor and logistics and offers funding and incentives to investors.</p>
+<p>The main focus of this opportunity is to establish a manufacturing facility for bearings for industrial equipment.</p>
+<ul>
+<li>Manufacturing: establish manufacturing facility to fabricate plain and rolling-element bearings</li>
+<li>Manufacturing: partner with local players to develop the supply chain by conducting machining, heating, grinding and cutting services</li>
+</ul>
+<p>However, additional opportunities for localization exist across the value chain of bearings production. These opportunities include:</p>
+<ul>
+<li>Design: establish a design and engineering capabilities</li>
+<li>Input materials: partner with local manufacturers to establish and enhance industrial grade steel supply</li>
+<li>Cage and assembly: establish sheet cutting, turning and plastic injection molding services</li>
+<li>Maintenance: offer support services, including quality control and maintenance services</li>
+</ul>
+"
+                                ; manufacturing-of-industrial-fan-blades                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of industrial fan blades to serve KSA and the broader GCC region.</p>
+<p>Overall demand for industrial fan blades in Saudi Arabia has been increasing, estimated at USD 92 million in 2018. Driven by the wide range of application of axial fans in industrial cooling and ventilation exhaust fans, the demand is forecasted to increase at an annual growth rate of 7% to reach USD 164 million by 2025.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the larger regional market in the GCC, expected to increase from USD 129 million in 2018 to USD 192 million by 2025.</p>
+<p>The main focus of this opportunity is on welding, assembly, and inspection, and after sales and maintenance of industrial fan blades.</p>
+<ul>
+<li>Welding, assembly and inspection: establish local facilities for welding and assembly of industrial fans</li>
+<li>Welding, assembly and inspection: establish local facilities for inspection of industrial fans</li>
+<li>After-sales, testing and maintenance: localize testing facilities, and offer support services including maintenance and after-sales services</li>
+</ul>
+<p>However, additional opportunities for localization exist across the value chain of industrial fan blades production. These opportunities include:</p>
+<ul>
+<li>Design: establish production of key material such as FRP, glass fiber, galvanized steel and epoxy resins</li>
+<li>Manufacturing: establish local manufacturing of key components such as blades, hubs, seal disks, plates and clamps</li>
+</ul>
+"
+                                ; manufacturing-of-ct-vt-instrument-transformers                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of CT-VT instrument transformers in Saudi Arabia to serve the country and the broader GCC region.</p>
+<p>The overall demand for CT-VT instrument transformers in Saudi Arabia has been growing, estimated to be 244,000 units in 2018. Driven by utilities, oil and gas and other manufacturing industries, KSA demand is forecasted to increase at an annual growth rate of 5% to reach 302,000 units by 2022. In 2018, demand for CT-VT instrument transformers is ~70% for switchgears and 30% for power transformers and the remaining for other types. The split is expected to remain relatively the same till 2022.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC, with expected increase in demand from 252,000 units in 2018 to 325,000 units by 2022. KSA market demand is expected to be ~50% the overall GCC demand for CT-VT instrument transformers.</p>
+<p>The focus of this opportunity is on final manufacturing and components manufacturing of CV-V instrument transformers. These opportunities entail:</p>
+<ul>
+<li>Components manufacturing: establish manufacturing facilities for windings, insulators and magnetic cores</li>
+<li>Final manufacturing and testing: establish facilities for final manufacturing of CT-VT instrument transformers</li>
+<li>Final manufacturing and testing: establish world scale testing facilities for transformers (ratio test, resistance measurements&hellip;)</li>
+</ul>
+<p>However, there are additional opportunities across the CV-VT instrument manufacturing value chain. Opportunities include:</p>
+<ul>
+<li>Design: establish technical facilities for design of electrical equipment</li>
+<li>Input materials: manufacture iron, silicon steel alloys, copper, epoxy to meet KSA's specifications</li>
+<li>Sales and after-sales: provide operational and after sales support (installation and commissioning, maintenance)</li>
+</ul>
+"
+                                ; manufacturing-of-electrical-fuses                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of electrical fuses to serve KSA and the broader GCC region.</p>
+<p>The overall demand for electrical fuses in Saudi Arabia has been growing, estimated at USD 25 million. Driven by utilities, oil and gas and other manufacturing industries, KSA demand is forecasted to increase at an annual growth rate of 4% to reach USD 30 million by 2022. Demand for electrical fuses is 80% for Medium Voltage and 20% for Low Voltage and the remaining for other types. The split is expected to remain relatively the same till 2022.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC, with expected increase in demand from USD 21 million in 2018 to USD 25 million by 2022. KSA market demand is expected to be ~55% the overall GCC demand for electric fuses.</p>
+<p>The focus of this opportunity is on final manufacturing and components manufacturing of electrical fuses. These opportunities entail:</p>
+<ul>
+<li>Components manufacturing: establish manufacturing facilities for metal based fuse element, conductors, wire holder, strickers, insulators&hellip;</li>
+<li>Final manufacturing and testing: establish facilities for final manufacturing of low voltage fuses</li>
+<li>Final manufacturing and testing: establish facilities for final manufacturing of medium voltage fuses made to final customer specifications</li>
+<li>Final manufacturing and testing: establish world scale testing facilities for fuses</li>
+</ul>
+<p>However, there are additional opportunities across the electrical fuses manufacturing value chain. Opportunities include:</p>
+<ul>
+<li>Design: Custom engineering fuses for medium voltage applications</li>
+<li>Input materials: manufacture copper, aluminum and to meet KSA's specifications</li>
+</ul>
+"
+                                ; manufacturing-of-circuit-breakers                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of circuit breakers to serve KSA and the broader GCC region.</p>
+<p>The overall demand for circuit breakers in Saudi Arabia has been growing, estimated at USD 370 million in 2018. Driven by utilities, oil and gas and other manufacturing industries, KSA demand is forecasted to increase at an annual growth rate of 4% to reach USD 439 million by 2022. In 2018, demand for circuit breakers is 60% for high voltage and 30% for low voltage and ~10% for medium voltage. The split is expected to remain relatively the same till 2022.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC with expected increase in demand from USD 308 million in 2018 to USD 370 million by 2022.</p>
+<p>The focus of this opportunity is on final manufacturing and components manufacturing of circuit breakers. These opportunities entail:</p>
+<ul>
+<li>Components manufacturing: establish manufacturing facilities conductors, contacts, operating mechanism and enclosures</li>
+<li>Final manufacturing and testing: establish facilities for final manufacturing of low circuit breakers</li>
+<li>Final manufacturing and testing: establish facilities for final manufacturing of medium voltage circuit breakers</li>
+<li>Final manufacturing and testing: establish world scale testing facilities for (e.g., vacuum interrupter predictive testing)</li>
+</ul>
+<p>However, there are additional opportunities across the circuit breakers manufacturing value chain. Opportunities include:</p>
+<ul>
+<li>Design: custom design and engineer circuit breakers for low and medium voltage applications for Saudi customers</li>
+<li>Input materials: manufacture copper alloys to meet KSA's specifications</li>
+</ul>
+"
+                                ; manufacturing-of-protective-relays                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of protective relays to serve KSA and the broader GCC region.</p>
+<p>The overall demand for protective relays in Saudi Arabia has been growing, estimated at USD 60 million and forecasted to increase at an annual growth rate of 3% to reach USD 67 Mn by 2022. Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC with expected increase in demand from USD 50 million in 2018 to USD 56 million by 2022. KSA market is expected to be ~54% of the overall GCC demand for protective relays.</p>
+<p>The focus of this opportunity is on final manufacturing and components manufacturing of protective relays. These opportunities entail:</p>
+<ul>
+<li>Components manufacturing: establish facilities for manufacturing of relay components such as contacts, frames, armatures, DP switches, circuits and microcontrollers (among others)</li>
+<li>Final manufacturing and testing: establish facilities for final manufacturing and testing of auxiliary, digital and contractor relays</li>
+</ul>
+<p>However, there are additional opportunities across the protective relays manufacturing value chain. Opportunities include:</p>
+<ul>
+<li>Design: custom design and engineer to meet Saudi customers technical requirements</li>
+<li>Input materials: produce steel, copper, silver cadmium oxide and silver palladium to meet KSA's specifications</li>
+</ul>
+"
+                                ; manufacturing-of-industrial-ups                 ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of Industrial UPS to serve KSA and the broader GCC region.</p>
+<p>The overall demand for UPS in Saudi Arabia has been growing, estimated at USD 146 million in 2018. Driven by demand growth from utilities, oil and gas and other manufacturing industries, demand is forecasted to increase at an annual growth rate of 10% to reach USD 213 million by 2022. Double and delta conversion are the most widely used industrial UPS in the Kingdom.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC with expected increase in demand from USD 170 million in 2018 to USD 240 million by 2022. KSA market is expected to be ~46% of the overall GCC demand for UPS.</p>
+<p>The focus of this opportunity is on the manufacturing of Industrial UPS, with a focus on lead acid batteries, inverters, rectifiers, and panels.</p>
+<p>However, there are additional opportunities across the UPS manufacturing value chain. Opportunities include:</p>
+<ul>
+<li>Design: establish design facilities to customize industrial UPS to customer needs and specifications</li>
+<li>Input materials: manufacture copper, ABS, rubber, polypropylene steel to meet the specifications needed for components</li>
+<li>Final manufacturing: SMEs to perform final manufacturing, system parts integration and testing of UPS</li>
+<li>Sales and after-sales: opportunities to provide services such as installation, inspection and maintenance of UPS and its components</li>
+</ul>
+"
+                                ; manufacturing-of-batteries-for-industrial-applications                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of batteries for industry to serve KSA and the broader GCC region.</p>
+<p>The overall demand for batteries in Saudi Arabia has been growing, estimated at USD 276 million in 2018. Driven by demand growth from utilities, oil and gas and other manufacturing industries, demand is forecasted to increase at an annual growth rate of 5% to reach USD 336 million by 2022. In 2018, demand for batteries for industrial applications is 40% for lead acid and the remaining for other types. The split is expected to remain relatively the same till 2022.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC with expected increase in demand from USD 512 million in 2018 to USD 622 million by 2022. KSA market is expected to be ~35% of the overall GCC demand for batteries for industrial applications.</p>
+<p>The focus of this opportunity is mainly on components and final manufacturing of batteries, with a focus on lead acid batteries and on Ni Cd and Li based batteries.</p>
+<p>However, there are additional opportunities across the battery manufacturing value chain. Opportunities include:</p>
+<ul>
+<li>Design: establish design facilities to customize industrial batteries to customer needs and specifications</li>
+<li>Input materials: manufacture lead, copper, synthetic rubber, polymers to meet the specifications needed for components</li>
+<li>After-sales: establish facilities to test and maintain acid filling, battery acceptance, specific gravity, terminal corrosion, connection resistance, battery voltage, cleaning terminals</li>
+</ul>
+"
+                                ; manufacturing-of-electrical-inverters                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of electrical inverters to serve KSA and the broader GCC region.</p>
+<p>The overall demand for electrical inverters in Saudi Arabia has been growing, estimated at USD 856 million in 2018 and forecasted to increase at an annual growth rate of 3% to reach USD 949 million by 2022. Pure sine wave, polar photovoltaic&nbsp; off-grid and grid connected inverters are the most widely used inverters in Saudi Arabia.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC with an expected increase in demand from USD 680 Mn in 2018 to USD 754 Mn by 2022.</p>
+<p>The focus of this opportunity is on final manufacturing and components manufacturing of electrical inverters. These opportunities entail:</p>
+<ul>
+<li>Component manufacturing: establish manufacturing facilities for electronics (including microcontrollers), enclosures and terminals</li>
+<li>Final manufacturing: establish final manufacturing and system parts integration facilities for inverters</li>
+</ul>
+<p>However, there are additional opportunities across the electrical inverters manufacturing value chain. Opportunities include:</p>
+<ul>
+<li>Design: establish design facilities to customize inverters to customer needs and specifications</li>
+<li>Input materials: establish facility to manufacture silicon, copper, aluminum, polymers to meet the specifications needed for components</li>
+<li>After-sales: establish facilities to install and test inverters</li>
+</ul>
+"
+                                ; manufacturing-of-low-voltage-motors                ;                ; "
+<p>This opportunity entails developing the value chain for the production of low voltage motors to serve KSA and the broader GCC region.</p>
+<p>The overall demand for low voltage motors in Saudi Arabia has been growing, estimated to be 585,000 units valued at USD 59 million in 2018 and forecasted to increase at an annual growth rate of 3% to reach 647,000 units by 2022. Three phase asynchronous motors are the most widely used types in the Kingdom.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC with expected increase in demand from 394,000 units valued at USD 99 million in 2018 to 436,000 by 2022. The KSA market demand is expected to be ~60% of the overall GCC demand for low voltage motors.</p>
+<p>The main focus of this opportunity is to develop manufacturing facilities for terminal boxes, fans, stators, bearings and rotors and final manufacturing and factory testing of motors.</p>
+<p>However, there are additional opportunities across the low voltage motors manufacturing value chain. These additional opportunities include:</p>
+<ul>
+<li>Design: establish design facilities to customize low voltage motors to customer needs and specifications</li>
+<li>Input materials: manufacture copper, stainless and carbon steel, aluminum, iron, intermediate elastomers and coating to meet the specifications needed for components</li>
+<li>Sales and after-sales services: establish after-sales operations for inspection, maintenance, repair and overhaul</li>
+</ul>
+"
+                                ; manufacturing-of-conduits-and-fittings                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of metallic and non-metallic conduits and fittings in KSA to serve both the country and the wider GCC region.</p>
+<p>The overall demand for conduits and fittings in Saudi Arabia has been growing, estimated at USD 98 million in 2017 and forecasted to increase at an annual growth rate of 2% to reach USD 110 million by 2022.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC with expected increase in demand from USD 82 million in 2017 to USD 92 million by 2022. The KSA market demand is expected to be ~55% of the overall GCC demand for conduits and fittings.</p>
+<p>The main focus of this opportunity is to develop manufacturing facilities for terminal boxes, fans, stators, bearings and rotors and final manufacturing and factory testing of motors.</p>
+<p>However, there are additional opportunities across the conduits and fittings manufacturing value chain. These additional opportunities include:</p>
+<ul>
+<li>Raw materials: partner wit supplier to localize production of steel, aluminum, and other metals, leveraging access to local raw materials such as polyvinylchloride</li>
+<li>Sales and after-sales: establish facilities to install and test inverters</li>
+</ul>
+"
+                                ; manufacturing-of-smart-meters                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of smart meters to serve KSA and the broader GCC region.</p>
+<p>The overall demand for smart meters in Saudi Arabia has been growing, estimated to be 400,000 units valued at USD 66 million in 2018, with 70% of value spent on smart meters and remaining 30% on other components. The market for smart meters and components is forecasted to increase at a rapid pace with an annual growth rate of 22% to reach 2.2 million units by 2022 valued at USD 404 million.</p>
+<p>Manufacturing of Smart meters has high potential for localization across the value chain. These value chain opportunities include:</p>
+<ul>
+<li>Sensors and devices: establish manufacturing plant for smart meters</li>
+<li>Sensors and devices: establish manufacturing plant for smart meters components to stimulate adoption of smart grids (line sensors, FACTS, RTUs&hellip;)</li>
+<li>Infrastructure and platforms: partner with leading IoT wireless technology providers to setup assembly and manufacturing facilities for communication and storage devices</li>
+<li>Infrastructure and platforms: partner with service providers to develop upgrades to infrastructure and platforms in-country through the setup of R&amp;D hubs</li>
+<li>Services: opportunities to offer value added services for smart grids and meters (e.g., energy management, real time billing, monitoring and controls&hellip;)</li>
+</ul>
+"
+                                ; manufacturing-of-welding-machinery                 ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of welding machinery to serve KSA and the broader GCC region.</p>
+<p>Overall market size for welding machinery in Saudi Arabia is estimated at USD 261 million in 2017 and is forecasted to reach USD 297 million by 2022. Beyond the KSA market, investors have the opportunity to tap into the larger regional market in the GCC with an expected increase in demand from USD 218 million in 2017 to USD 248 million by 2022. KSA demand for welding machinery makes up ~55% of the overall GCC market demand.</p>
+<p>This opportunity mainly focuses on welding components manufacturing and welding machinery final assembly.</p>
+<ul>
+<li>Welding components: develop manufacturing facilities for inverters, welding cables, welding torches and other welding machinery components</li>
+<li>Final assembly: establish facilities for final assembly of welding machinery</li>
+</ul>
+<p>However, additional opportunities for localization exist across the value chain of diesel generators production. These opportunities include:</p>
+<ul>
+<li>Raw materials: manufacture raw materials such as iron and steel, copper and aluminum to meet the specifications needed for welding components</li>
+<li>After-sale services: provide maintenance and repair services including repairs and spares</li>
+</ul>
+"
+                                ; manufacturing-of-welding-consumables                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of welding consumables to serve KSA and the broader GCC region.</p>
+<p>Overall market size for welding consumables in Saudi Arabia is estimated at USD 208 million in 2017 and is forecasted to reach USD 242 million by 2022. Beyond the KSA market, investors have the opportunity to tap into the larger regional market in the GCC with an expected increase in demand from USD 250 million in 2017 to USD 290 million by 2022. KSA welding electrodes market size composes ~45% of the overall GCC market size.</p>
+<p>This opportunity mainly focuses on welding consumables manufacturing.</p>
+<ul>
+<li>Consumables manufacturing: Set up new manufacturing facilities for producing welding consumables (manual welding electrodes, flux coated wires for Arc Welding FCAW, rods for Gas Tungsten Arc Welding GTAW, and wires for Submerged Arc Welding SAW). Current local production meets less than 30% of KSA demand.</li>
+</ul>
+<p>However, additional opportunities for localization exist across the value chain of diesel generators production. These opportunities include:</p>
+<ul>
+<li>Raw materials: manufacture metals such as iron, steel, copper, aluminum, brass and bronze and coating materials to welding consumables specifications</li>
+<li>Support products and services: manufacture safety related products (insulated blankets and personal protection equipment such as helmets, goggles, gloves) and other accessories such as consumables pre-heater, wire feeders and workstations</li>
+<li>Support products and services: production of Argon</li>
+<li>Support products and services: testing and inspection (liquid penetrant inspection, acoustics, radiographic, mass particle, metallurgic analysis), certification (welder qualification training, product certification), other services (consulting &ndash; welding process design and evaluation)</li>
+</ul>
+"
+                                ; manufacturing-of-diesel-generators                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of diesel generators to serve KSA and the broader GCC region.</p>
+<p>Overall demand for diesel generators in Saudi Arabia is estimated at 11,700 units in 2017 and is forecasted to grow at an annual growth rate of 8% to reach 17,600 units by 2022. Small diesel generators are expected to be the largest segment in terms of number of units in demand.</p>
+<p>Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC with expected increase in demand from 9,600 units in 2017 to 14,400 units by 2022.</p>
+<p>The main focus of this opportunity is on components and sub-assembly and final assembly of diesel generators.</p>
+<ul>
+<li>Components and sub-assembly: develop manufacturing facilities for heat exchangers, alternators and engine components</li>
+<li>Components and sub-assembly: establish facilities to manufacture diesel engine, alternator and heat exchange sub-assemblies</li>
+<li>Final assembly: establish facilities for final assembly of diesel generators, made to final customer specifications</li>
+<li>Final assembly: establish QA/QC testing facilities for generators</li>
+</ul>
+<p>However, additional opportunities for localization exist across the value chain of diesel generators production. These opportunities include:</p>
+<ul>
+<li>Input materials: manufacture steel alloys, coppers to meet specifications needed for diesel generator components</li>
+<li>Installation and after-sale services: provide after-sales support including maintenance, remedial work, and spares and parts manufacturing</li>
+</ul>
+"
+                                ; manufacturing-of-personal-protective-equipment-ppe                ;                ; "
+
+<p>This opportunity entails developing the value chain for the production of personal protective equipment (PPE) to serve KSA and the broader GCC region.</p>
+<p>Overall market size for PPE in Saudi Arabia is estimated at USD 341 million in 2017 and is forecasted to grow at an annual growth rate of 7% to reach USD 477 million by 2022. Beyond the KSA market, investors in Saudi have the opportunity to tap into the large regional market in the GCC with expected increase in demand from USD 96 million in 2017 to USD 135 million by 2022. The KSA market demand is expected to be ~70% of the overall GCC demand for PPE.</p>
+<p>The main focus of this opportunity is to develop facilities to manufacture hard hats, face and eye protection, fall protection systems, protective clothing materials and tailor fire resistant clothing to customer specifications.</p>
+<p>However, additional opportunities for localization exist across the value chain of PPE production. These opportunities include:</p>
+<ul>
+<li>Input materials: Localize manufacturing of input materials such as High density polyethylene, polyethylene, etc. to the specifications needed for PPEs</li>
+<li>Sales and Distribution: facilities to test and certify PPEs</li>
+<li>Sales and Distribution: opportunity for SMEs to provide services such as storage, logistics, distribution and repair services for PPEs.</li>
+</ul>
+"
+                                ; pumps                ;                ; "
+
+<ul>
+<li>The water pump is a centrifugal pump driven by a belt connected to the crankshaft of the engine. The pump circulates fluid whenever the engine is running using centrifugal force while it spins, causing fluid to be drawn from the center continuously.</li>
+<li>The oil pump circulates engine oil under pressure to the rotating bearings, the sliding pistons and the camshaft of the engine. It is also used as a hydraulic fluid to power small actuators.</li>
+<li>Automotive applications typically use centrifugal water pumps and rotor oil pumps. In some automobile applications a gear type oil pump is also used.</li>
+<li>Proposed Plant Capacity is 250,000 units/annum</li>
+<li><u>Market Overview</u></li>
+<li>Light Vehicle Sales Forecast is expected to jump 50% between 2017 and 2029 in the MEA region.</li>
+<li>Forecasts for the total vehicles in operation in 2029 is 10.09 million (KSA) 13.07 million (rest of GCC), 25.9 million (GAFTA), and 23.92 million (Non-GAFTA).</li>
+<li>New PV sales are expected to reach a CAGR of 8.91% from 2018 to 2025, New CV sales are expected to reach a CAGR of 10.4% from 2018 to 2025.</li>
+</ul>
+"
+                                ; fan-coil-unit-manufacturing                ;                ; "
+<p>Attract leading global players to setup Fan Coil Unit (FCU) manufacturing base in KSA</p>
+"
+                                ; air-conditioners                 ;                ; "
+<p>Attract leading global players to setup split, window or freestanding air conditioning manufacturing base in KSA</p>
+"
+                                ; air-handling-units-manufacturing                ;                ; "
+<p>Locally manufacture air handling units, a device that is used to regulate and circulate air as part of an HVAC chiller system</p>
+"
+                                ; chillers                ;                ; "
+<p>Attract leading global players to setup manufacturing base for chillers in KSA</p>
+"
+                                ; escalators                ;                ; "
+<p>Locally manufacture escalators across specs, usage and speed to cater to the domestic and the wider MENA market</p>
+"
+                                ; elevators                ;                ; "
+<p>Locally manufacture elevators across specs, usage and speed to cater to the domestic and the wider MENA market</p>
+"
+                                ; localization-of-poultry-vertical-integration                ;                ; "
+<p>Establish a broiler farm and a processing facility locally for selling in the local market and exports to regional markets</p>
+"
+                                ; localization-of-canned-tuna                ;                ; "
+<p>Support canned tuna companies to localize production in KSA (2nd order processing and packaging) to substitute imports of finished goods</p>
+"
+
+
+								
+								
+								
+								
+								
+                                ; manufacturingassembly-plant-for-solar-pv-trackers                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/assembly plant for solar PV trackers. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. Additional opportunities also exist in testing of solar PV trackers which includes structural dimension testing. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for solar PV energy of 300 MW has already been tendered and round two has been announced for 1.5 GW.</p>
+<p>KSA trackers market is forecasted to grow from USD 10 million in 2019 to reach USD 110 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 1,320 million. With forecasted market growth, multiple opportunities exist to localize the trackers production value chain. The main focus of this opportunity is on manufacturing and assembly of solar PV trackers.</p>
+<ul>
+<li>Manufacturing: head plate manufacturing, crossbar manufacturing, main runner manufacturing, mounting module profiles, drivetrain manufacturing</li>
+<li>Assembly: component pre-assembly and on-site assembly</li>
+</ul>
+"
+                                ; plant-for-module-assembly-1                ;                ; "
+
+<p>This opportunity entails setting up an assembly plant for solar PV modules. Saudi Arabia plans to significantly increase the capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for solar PV energy of 300 MW has already been tendered and round two has been announced for 1.5 GW.</p>
+<p>KSA solar PV module market is forecasted to grow from USD 149 million in 2019 to reach USD 1650 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 19,800 million. With forecasted market growth, multiple opportunities exist to localize the module production value chain. The main focus of this opportunity is on assembly of solar PV trackers.</p>
+<ul>
+<li>Assembly: frame assembly and junction box assembly</li>
+<li>Manufacturing: interlaying process on low iron glass with EVA, back sheet and solar cells, soldering of cells, lamination, curing process</li>
+<li>Testing: flash testing, water test, stress test</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-solar-pv-mounting-steel-structures                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for mounting steel structures. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for solar PV energy of 300 MW has already been tendered and round two has been announced for 1.5 GW.</p>
+<p>KSA solar PV mounting steel structure market is forecasted to grow from USD 20 million in 2019 to reach USD 220 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 2,640 million. With forecasted market growth, multiple opportunities exist to localize the mounting steel structure production value chain. The main focus of this opportunity is on manufacturing and assembly of solar PV mounting steel structures.</p>
+<ul>
+<li>Manufacturing: cutting, bending, machining, welding</li>
+<li>Assembly: final assembly</li>
+<li>Testing: dimension inspection, wind tunnel testing</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-solar-pv-inverters                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for solar inverters. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for solar PV energy of 300 MW has already been tendered and round two has been announced for 1.5 GW.</p>
+<p>KSA solar PV inverter market is forecasted to grow from USD 30 million in 2019 to reach USD 330 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 3,960 million. With forecasted market growth, multiple opportunities exist to localize the inverter production value chain. The main focus of this opportunity is on manufacturing and assembly of solar PV inverters.</p>
+<ul>
+<li>Manufacturing: PCB making, SMT chip processing, reflow soldering, mounting components, passive components manufacturing</li>
+<li>Assembly: inverter assembly &ndash; PCB modules, passive components assembly, mechanical components inspection and assembly, wiring harness assembly</li>
+<li>Testing: performance testing (AC tests, short circuit, harmonics, voltage change etc.), aging test, other tests</li>
+</ul>
+"
+                                ; assembly-of-common-substation-transformers                ;                ; "
+
+<p>This opportunity entails setting up an assembly plant for common substation transformers. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030.</p>
+<p>KSA substation transformer market is forecasted to grow from USD 7 million in 2019 to reach USD 159 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 1,911 million. With forecasted market growth, multiple opportunities exist to localize the substation transformer production value chain. The main focus of this opportunity is on assembly of common substation transformers</p>
+<ul>
+<li>Assembly: core assembly, steel tank assembly, radiator assembly, OLTC assembly, other assembly</li>
+<li>Manufacturing: core materials processing (cutting, slicing, bunching), insulation, coil windings, resin bonding</li>
+<li>Testing: current test, impedance test</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-wind-nacelle-housing                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/assembly plant for wind nacelle housing. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for wind energy of 400 MW has already been tendered. Round two has been announced for 850 MW. Additional rounds will be announced soon.</p>
+<p>KSA wind nacelle housing market is forecasted to grow from almost negligible in 2019 to reach USD 22 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 272 million. With forecasted market growth, multiple opportunities exist to localize the nacelle housing production value chain. The main focus of this opportunity is on manufacturing and assembly of wind nacelle housing</p>
+<ul>
+<li>Manufacturing: nacelle cover manufacturing, protective coating</li>
+<li>Assembly: drivetrain and gearbox assembly, pitch and yaw component assembly, generator assembly, brake assembly, internal wiring</li>
+<li>Testing: performance testing (AC tests, short circuit, harmonics, voltage change, etc.), aging test, other tests</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-wind-turbine-gearboxes                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for the production of wind turbine gearboxes. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for wind energy of 400 MW has already been tendered. Round two has been announced for 850 MW. Additional rounds will be announced soon.</p>
+<p>KSA wind turbine gearbox market is forecasted to grow from almost negligible in 2019 to reach USD 158 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 1,894 million. With forecasted market growth, multiple opportunities exist to localize the gearbox production value chain. The main focus of this opportunity is on manufacturing and assembly of wind turbine gearboxes</p>
+<ul>
+<li>Manufacturing: casting, soft machining, hardening, hard machining</li>
+<li>Assembly: final assembly</li>
+<li>Testing: standalone component testing, integrated back to back test with gearbox, complete drivetrain and nacelle test, load test, cold chamber test</li>
+</ul>
+"
+                                ; manufacturing-assembly-plant-for-wind-turbine-generators-1                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/assembly plant for wind turbine generators. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for wind energy of 400 MW has already been tendered. Round two has been announced for 850 MW. Additional rounds will be announced soon.</p>
+<p>KSA wind turbine generator market is forecasted to grow from almost negligible in 2019 to reach USD 46 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 469 million. With forecasted market growth, multiple opportunities exist to localize the wind turbine generator production value chain. The main focus of this opportunity is on manufacturing and assembly of wind turbine generators</p>
+<ul>
+<li>Manufacturing: lamination cutting, steel rolling, welding, tool making, machining, stator coil winding, painting and coating</li>
+<li>Assembly: rotor assembly, stator assembly, final generator assembly</li>
+<li>Testing: 3D scanning of the casting, rotor balance checking</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-wind-turbine-shafts                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for the production of wind turbine shafts. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for wind energy of 400 MW has already been tendered. Round two has been announced for 850 MW. Additional rounds will be announced soon.</p>
+<p>KSA wind turbine shaft market is forecasted to grow from almost negligible in 2019 to reach USD 30 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 355 million. With forecasted market growth, multiple opportunities exist to localize the wind turbine shaft production value chain. The main focus of this opportunity is on manufacturing and assembly of wind turbine shafts</p>
+<ul>
+<li>Manufacturing &amp; assembly: steel forging, welding and precision grinding, induction hardening, machined through turning and groove-cutting operations with some amounts of drilling</li>
+<li>Testing: quality is assured through the use of multiple function electronic gauges able to measure all the vital dimensions simultaneously</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-wind-turbine-converters                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for the production of wind turbine converters. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for wind energy of 400 MW has already been tendered. Round two has been announced for 850 MW. Additional rounds will be announced soon.</p>
+<p>KSA wind turbine converter market is forecasted to grow from almost negligible in 2019 to reach USD 79 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 947 million. With forecasted market growth, multiple opportunities exist to localize the wind turbine converter production value chain. The main focus of this opportunity is on manufacturing and assembly of wind turbine converters.</p>
+<ul>
+<li>Manufacturing: PCB building, laser marking, soldering, panel coating and painting</li>
+<li>Assembly: PCB component assembly, final assembly</li>
+<li>Testing: PCB testing, x-Ray inspection, water test, stress test</li>
+</ul>
+"								
+                                ; manufacturing-assembly-of-wind-turbine-bearings                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for the production of wind turbine bearings.</p>
+<p>Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for wind energy of 400 MW has already been tendered. Round two has been announced for 850 MW. Additional rounds will be announced soon.</p>
+<p>KSA wind turbine bearings market is forecasted to grow from almost negligible in 2019 to reach USD 24 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 284 million. With forecasted market growth, multiple opportunities exist to localize the wind turbine bearings production value chain. The main focus of this opportunity is on manufacturing and assembly of wind turbine bearings</p>
+<ul>
+<li>Manufacturing: cutting, heat treatment, grinding, honing</li>
+<li>Assembly: The inner and outer rings, balls and cage assembly, lubrication, final assembly with shields</li>
+<li>Testing: Test bench to simulate the static and dynamic loads and torque that are experienced in multi-MW</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-wind-turbine-towers                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for the production of wind turbine bearings.</p>
+<p>Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for wind energy of 400 MW has already been tendered. Round two has been announced for 850 MW. Additional rounds will be announced soon.</p>
+<p>KSA wind turbine bearings market is forecasted to grow from almost negligible in 2019 to reach USD 24 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 284 million. With forecasted market growth, multiple opportunities exist to localize the wind turbine bearings production value chain. The main focus of this opportunity is on manufacturing and assembly of wind turbine bearings</p>
+<ul>
+<li>Manufacturing: cutting, heat treatment, grinding, honing</li>
+<li>Assembly: The inner and outer rings, balls and cage assembly, lubrication, final assembly with shields</li>
+<li>Testing: Test bench to simulate the static and dynamic loads and torque that are experienced in multi-MW</li>
+</ul>
+"
+                                ; manufacturingassembly-of-wind-turbine-blades                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for the production of wind turbine blades.</p>
+<p>&nbsp;</p>
+<p>Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030. Round one for wind energy of 400 MW has already been tendered. Round two has been announced for 850 MW. Additional rounds will be announced soon.</p>
+<p>KSA wind turbine blades market is forecasted to grow from almost negligible in 2019 to reach USD 316 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 3,789 million. With forecasted market growth, multiple opportunities exist to localize the wind turbine blade production value chain. The main focus of this opportunity is on manufacturing and assembly of wind turbine blades</p>
+<ul>
+<li>Manufacturing: mold cavity manufacturing</li>
+<li>Assembly: layering of FRP sheets, assembling Balsa wood, application of epoxy resin, heating / curing, sanding, coating and painting, assembling of pin bolts</li>
+<li>Testing: weighing of the blades</li>
+</ul>
+"
+                                ; manufacturingassembly-of-solar-csp-pumps                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for the production of solar CSP pumps. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030.</p>
+<p>KSA solar CSP pumps market is forecasted to grow from almost negligible in 2019 to reach USD 5 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 60 million. With forecasted market growth, multiple opportunities exist to localize the solar CSP pump production value chain. The main focus of this opportunity is on manufacturing and assembly of solar CSP pumps</p>
+<ul>
+<li>Manufacturing: pattern making process, sand core making process, cast iron melting in furnace, casting process, mold breaking, sand blasting raw casting, grinding and mining, CNC machining of other pump components</li>
+<li>Assembly: final assembly, seal assembly</li>
+<li>Testing: dimension inspection, aquifer test, constant-rate test, step-drawdown test, recover tests</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-solar-csp-steam-turbines                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for the production of solar CSP steam turbines. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030.</p>
+<p>KSA solar CSP steam turbines market is forecasted to grow from almost negligible in 2019 to reach USD 102 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 1,225 million. With forecasted market growth, multiple opportunities exist to localize the solar CSP steam turbine production value chain. The main focus of this opportunity is on manufacturing and assembly of solar CSP steam turbines</p>
+<ul>
+<li>Manufacturing: blade manufacturing, cutting, CNC precision milling, shot blasting, polishing, tapering, grinding</li>
+<li>Assembly: steam turbine casing foundry and assembly, rotor and shaft assembly, bearings and couplings assembly, BOP of the steam turbine and frame assembly</li>
+<li>Testing: vibration and aerodynamics testing</li>
+</ul>
+"
+                                ; manufacturingassembly-of-solar-csp-heliostats                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/assembly plant for the production of solar CSP heliostats. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030.</p>
+<p>KSA solar CSP heliostat market is forecasted to grow from almost negligible in 2019 to reach USD 63 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 756 million. With forecasted market growth, there is an opportunity to localize the manufacturing and assembly of solar CSP heliostats</p>
+<ul>
+<li>Manufacturing: fabrication of heliostat frame/ steel trough and torque tube (in case of parabolic CSP), spiral tube manufacturing / sheet bending, welding, galvanizing</li>
+<li>Assembly: final assembly</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-solar-csp-steam-generators                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for the production of solar CSP steam generators. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030.</p>
+<p>KSA solar CSP steam generator market is forecasted to grow from almost negligible in 2019 to reach USD 79 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 953 million. With forecasted market growth, multiple opportunities exist to localize the solar CSP steam generator production value chain. The main focus of this opportunity is on manufacturing and assembly of solar CSP steam generators</p>
+<ul>
+<li>Manufacturing: plate rolling, fit up and welding, marking and finishing, sizing / expander, beveling, shot blasting, coating and painting</li>
+<li>Assembly: assembly of tubular sections, fitting and testing of accessories</li>
+<li>Testing: visual inspection all through the process, X-Ray detection, hydro test, NDT tests</li>
+</ul>
+"
+                                ; assembly-of-solar-csp-condensers                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing/ assembly plant for condensers for CSP energy plants. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030.</p>
+<p>KSA solar CSP condenser market is forecasted to grow from almost negligible in 2019 to reach USD 45 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 544 million. With forecasted market growth, multiple opportunities exist to localize the solar CSP condenser production value chain. The main focus of this opportunity is on assembly of solar CSP condensers</p>
+<ul>
+<li>Assembly: coil and fin assembly, curve vend tube assembly, manifold assembly, air handler assembly, final assembly</li>
+<li>Manufacturing: coil bending process, sheet metal stamping, aluminum sheet cutting process, aluminum sheet drilling hole process, expander machine process, gas flux process, air cleaning</li>
+<li>Testing: dimension inspection, run testing, leak detection testing</li>
+</ul>
+"
+                                ; manufacturing-plant-for-solar-pv-cells                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing plant for the production of solar PV cells. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030.</p>
+<p>KSA solar PV cells market is forecasted to grow from USD 89 million in 2019 to reach USD 990 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 11,880 million. With forecasted market growth, multiple opportunities exist to localize the PV cells production value chain. The main focus of this opportunity is on manufacturing of solar PV cells.</p>
+<ul>
+<li>Manufacturing: wafering process (involves cutting of crystal ingots, squaring and slicing), converting wafers to cells (etching, diffusing, coloring and printing)</li>
+<li>Testing: grading of cells</li>
+</ul>
+"
+                                ; assembly-plant-for-control-system-components-1                ;                ; "
+
+<p>This opportunity entails setting up an assembly plant for control system &amp; components. Saudi Arabia plans to significantly increase capacity of energy production from renewable sources. The government is strongly committed to unlocking the renewable energy sector, through increasing capacity and localization requirements. Current localization requirements stand at 30%, while future localization plans are set between 40% and 60%.</p>
+<p>Today, energy generation from renewable sources is almost negligible; however, Saudi Arabia has set a renewables target of 27.3 GW by 2024 and 58.7 GW by 2030.</p>
+<p>KSA control system and components market is forecasted to grow from USD 4 million in 2019 to reach USD 107 million by 2030. This amounts to an estimated 2019-2030 cumulative forecast of USD 1,279 million. With forecasted market growth, multiple opportunities exist to localize the control systems and components production value chain. The main focus of this opportunity is on assembly for control systems and components</p>
+<ul>
+<li>Assembly: Assembly of panels and sub-components</li>
+<li>Manufacturing: panel manufacturing</li>
+<li>Testing: current test, impedance test, durability test, IP related tests</li>
+</ul>
+"
+                                ; localize-surge-lightning-arrestors-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for the production of surge and lightning arrestors.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA surge and lightning arrestors market is estimated at USD 67 million in 2017 and is expected to grow at a CAGR of 2.7%, to reach a value of USD 95 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the surge &amp; lightning arrestors production value chain, from raw materials and manufacturing to assembly and testing. The main focus of this opportunity is on Manufacturing and Assembly of surge and lightning arrestors:</p>
+<ul>
+<li>Manufacturing: Housings, rods, metal oxide blocks</li>
+<li>Assembly: Housing assembly, mounting bracket assembly</li>
+</ul>
+<p>However, opportunities also exist in arrestors testing which includes,</p>
+<ul>
+<li>High voltage testing, lightning stress testing, energy discharge testing, short circuit testing</li>
+</ul>
+"
+                                ; localize-air-insulated-and-sandwich-type-busbar-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for air insulated and sandwich type busbars (copper and aluminum based).</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA air insulated and sandwich type busbar market is estimated at USD 73 million in 2017 and is expected to grow at a CAGR of 8%, to reach a value of USD 200 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the air insulated and sandwich type busbar production value chain. The main focus of this opportunity is on Manufacturing and Assembly of busbars:</p>
+<ul>
+<li>Manufacturing: extrusion &amp; drawing process, jointing and mounting, design and fabrication, coating, electroplating</li>
+<li>Assembly: fitting and accessories assembly, lamination, insulation</li>
+</ul>
+<p>However, opportunities also exist in busbar testing which includes,</p>
+<ul>
+<li>Surface roughness testing, ultrasonic thickness testing, partial discharge testing, dielectric testing, low inductance test</li>
+</ul>
+"
+                                ; localize-power-capacitors-and-harmonics-filters-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for power capacitors and harmonics filters.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA power capacitors and harmonic filters market is estimated at USD 60 million in 2017 and is expected to grow at a CAGR of 3.3%, to reach a value of USD 92 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the power capacitors and harmonics filters production value chain. The main focus of this opportunity is on manufacturing and assembly of capacitors and filters:</p>
+<ul>
+<li>Manufacturing: dielectric paste production, sheet formation, sheet layering and pressing, sintering/firing, winding</li>
+<li>Assembly: box encapsulation, dry assembly, welding, impregnation</li>
+</ul>
+<p>However, opportunities also exist in capacitors and filters testing which includes,</p>
+<ul>
+<li>Capacitance management, voltage test, internal discharge test, sealing test, thermal stability test, short circuit test</li>
+</ul>
+"
+                                ; localizing-aluminum-alloy-conductors-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for aluminum alloy conductors (&lt;132KV).</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA aluminum alloy conductors market is estimated at USD 327 million in 2017 and is expected to grow at a CAGR of 2.2%, to reach a value of USD 436 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the aluminum alloy conductors production value chain. The main focus of this opportunity is on manufacturing and assembly of capacitors aluminum alloy conductors:</p>
+<ul>
+<li>Manufacturing: furnace melting &ndash; aluminum rod production, rolling mill, rod drawing, wire drawing, stranding</li>
+<li>Assembly: package and storage</li>
+</ul>
+<p>However, opportunities also exist in conductors testing which includes,</p>
+<ul>
+<li>Di-electric strength test, capacitance test</li>
+</ul>
+"
+                                ; localizing-dry-transformers-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for dry transformers (up to 10 MVA).</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA dry transformers market is estimated at USD 22 million in 2017 and is expected to grow at a CAGR of 2.2%, to reach a value of USD 30 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the dry transformers production value chain. The main focus of this opportunity is on manufacturing and assembly of dry transformers:</p>
+<ul>
+<li>Manufacturing: winding process, insulation reinforcement, core construction, tank construction, painting</li>
+<li>Assembly: winding assembly, core assembly, drying process, fitting and other accessories assembly, oil filling and filtration, vacuum pressure impregnation</li>
+</ul>
+<p>However, opportunities also exist in dry transformers testing which includes,</p>
+<ul>
+<li>Loss measurement and temperature rise tests, dielectric tests, zero phase sequence, sound and short circuit tests, vacuum tests, other tests</li>
+</ul>
+"
+                                ; manufacturing-for-fuel-additives-1                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing plant for fuel additives.</p>
+<p>Fuel oil-fired generation facilities serve to power many industrial and municipal buildings and manufacturing depots. Fuel additives keep these facilities operating at peak performance while minimizing fuel-related issues that have plagued oil-fired furnace and boiler.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA fuel additives market is estimated at USD 54 million in 2017 and expected to grow at a CAGR of 3%, to reach a value of USD 76 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the fuel additives production value chain. The main focus of this opportunity is on manufacturing of fuel additives</p>
+<ul>
+<li>Fuel additive formulators: deposit control additives, Cetane improvers additives, antioxidant additives, lubricity and cold flow improver additives, corrosion inhibitor additives, other additives &ndash; stability improvers, octane improvers, anti icing additives, etc.</li>
+</ul>
+"
+                                ; manufacturing-assembly-plant-for-gas-turbines-1                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for gas turbines.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA gas turbines market is estimated at USD 1,522 million in 2017 and is expected to grow at a CAGR of 4.4%, to reach a value of USD 2,652 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the gas turbines production value chain. The main focus of this opportunity is on manufacturing and assembly of gas turbines:</p>
+<ul>
+<li>Manufacturing: blade manufacturing &ndash; forging &amp; CNC machining, compressor manufacturing, shaft manufacturing, burner manufacturing, milling &amp; finishing, welding, chamber manufacturing, thermal barrier coating, grit blasting</li>
+<li>Assembly: turbine and casting assembly, compressor assembly, exhaust assembly, air inlet assembly</li>
+</ul>
+<p>However, opportunities also exist in gas turbines testing which includes,</p>
+<ul>
+<li>Combustion test, dimensional testing</li>
+</ul>
+"
+                                ; localization-of-high-voltage-switchgear-gis-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for high voltage switchgear (GIS).</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA high voltage switchgear market is estimated at USD 377 million in 2017 and is expected to grow at a CAGR of 5%, to reach a value of USD 730 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the HV switchgear production value chain. The main focus of this opportunity is on manufacturing and assembly of HV switchgear:</p>
+<ul>
+<li>Manufacturing: metallic enclosure for SF6 gas, steel sheet fabrication, copper processing, cast resin processing, surface treatment, cable harness</li>
+<li>Assembly: assembly of components, installation of equipment like circuit-breakers and load interrupters, disconnectors earthing switches, transformers, fuses and protection equipment, wiring of built-in equipment via the cable harness and other cables</li>
+</ul>
+<p>However, opportunities also exist in HV switchgear testing which includes,</p>
+<ul>
+<li>Control panel test, HV and discharge test, mechanical operation test, radiography, HV dry tests, partial discharge tests, SF6 gas leak test</li>
+</ul>
+"
+                                ; localization-of-circuit-interrupters-production                ;                ; "
+
+<p>This opportunity entails setting up an assembly plant for Arc-fault and Ground-fault circuit interrupters.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA interrupters market is estimated at USD 83 million in 2017 and is expected to grow at a CAGR of 3%, to reach a value of USD 117 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the interrupters production value chain. The main focus of this opportunity is on the assembly of interrupters:</p>
+<ul>
+<li>Assembly: combined assembly of copper parts, PCB assembly, electrical and electronic components</li>
+</ul>
+<p>However, opportunities also exist in interrupters manufacturing and testing,</p>
+<ul>
+<li>Manufacturing: pressing, forming and winding of copper parts, spot welding, injection molding of plastics, printing, out working, PCB assembling, dipping</li>
+<li>Testing: inspection, testing for short circuit, voltage testing, quality tests</li>
+</ul>
+"
+                                ; localization-of-lv-control-gear-switches-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for LV control gear &amp; switches.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA LV control gear and switches market is estimated at USD 60 million in 2017 and is expected to grow at a CAGR of 2%, to reach a value of USD 74 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the LV control gear and switches production value chain. The main focus of this opportunity is on manufacturing and assembly of LV control gear and switches:</p>
+<ul>
+<li>Manufacturing: pressing, forming and winding of copper parts, spot welding, injection molding of plastics, printing, out working, PCB assembling, dipping</li>
+<li>Assembly: combined assembly of copper parts, PCB assembly, electrical and electronic components</li>
+</ul>
+<p>However, opportunities also exist in LV control gear and switches testing which includes,</p>
+<ul>
+<li>Inspection, testing for short circuit, voltage test, quality tests</li>
+</ul>
+"
+                                ; localization-of-low-voltage-switchgear-production                ;                ; "
+
+<p>This opportunity entails setting up an assembly plant for Low Voltage Switchgear (MCCB and ACB).</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA LV switchgear market is estimated at USD 183 million in 2017 and is expected to grow at a CAGR of 8%, to reach a value of USD 518 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the LV switchgear production value chain. The main focus of this opportunity is on manufacturing and assembly of LV switchgears:</p>
+<ul>
+<li>Manufacturing: pressing, forming and winding of copper parts, spot welding, injection molding of plastics, printing, out working, PCB assembling, dipping</li>
+<li>Assembly: combined assembly of copper parts, PCB assembly, electrical and electronic components</li>
+</ul>
+<p>However, opportunities also exist in LV switchgear testing which includes,</p>
+<ul>
+<li>Inspection, testing for short circuit, voltage test, quality tests</li>
+</ul>
+"
+                                ; localization-of-mv-breakers-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for MV breakers.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA MV breakers market is estimated at USD 293 million in 2017 and is expected to grow at a CAGR of 6.4%, to reach a value of USD 654 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the MV breakers production value chain. The main focus of this opportunity is on manufacturing and assembly of MV breakers:</p>
+<ul>
+<li>Manufacturing: vacuum interrupter manufacturing line, breaker pole making, heat sink manufacturing, mechanical linkage parts, sheet metal work, painting and coating</li>
+<li>Assembly: complete assembly of the unit, inspections</li>
+</ul>
+<p>However, opportunities also exist in MV breakers testing which includes,</p>
+<ul>
+<li>Electrical checks, operating test, dielectric withstand, electrical continuity of protection circuits, insulation resistance, short circuit test, voltage tests</li>
+</ul>
+"
+                                ; localization-of-mv-switchgear-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for MV switchgears.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA MV switchgear market is estimated at USD 293 million in 2017 and is expected to grow at a CAGR of 6.4%, to reach a value of USD 1,002 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the MV switchgear production value chain. The main focus of this opportunity is on manufacturing and assembly of MV switchgears:</p>
+<ul>
+<li>Manufacturing: steel sheet fabrication, copper processing, cast resin processing, surface treatment, pre-connecting of cables, cable harnesses</li>
+<li>Assembly: framework assembly, busbar installation, component device &amp; drawer mounting, wiring, enclosure assembly</li>
+</ul>
+<p>However, opportunities also exist in MV switchgear testing which includes,</p>
+<ul>
+<li>Conformity checks (framework, busbar, device and drawer enclosure), mechanical checks, electrical checks (operating test, dielectric withstand, electrical continuity of protection circuits, insulation resistance)</li>
+</ul>
+"
+                                ; assembly-plant-for-polymer-electrical-insulators-1                ;                ; "
+
+<p>This opportunity entails setting up an assembly plant for polymer electrical insulators (&lt;6.6 kV to 132 kV, HT &amp; LT types).</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA polymer insulator market is estimated at USD 53 million in 2017 and is expected to grow at a CAGR of 3.4%, to reach a value of USD 82 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the polymer insulator production value chain. The main focus of this opportunity is on assembly of polymer insulators:</p>
+<ul>
+<li>Assembly: jig is used for assembling, metal part made of malleable cast iron is used, cement injection process is implemented for joining the insulator with metal part</li>
+</ul>
+<p>However, opportunities also exist in polymer insulator manufacturing and testing,</p>
+<ul>
+<li>Manufacturing: ball milling, filter pressing, pug milling, pug electric dryer, shaping, drying and glazing, kilning, cutting and grinding</li>
+<li>Testing: bending test, electrical test, pressure test, tensile test</li>
+</ul>
+"
+                                ; localization-of-porcelain-electrical-insulator-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for porcelain electrical insulators (&lt;6.6 kV to 132 kV, HT &amp; LT types).</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA porcelain electrical insulator market is estimated at USD 79 million in 2017 and is expected to grow at a CAGR of 2%, to reach a value of USD 101 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the porcelain insulator production value chain. The main focus of this opportunity is on manufacturing and assembly of porcelain insulators:</p>
+<ul>
+<li>Manufacturing: ball milling, filter pressing, pug milling, pug electric dryer, shaping, drying and glazing, kilning, cutting and grinding</li>
+<li>Assembly: jig is used for assembling, metal part made of malleable cast iron is used, cement injection process is implemented for joining the insulator with metal part</li>
+</ul>
+<p>However, opportunities also exist in porcelain electrical insulator testing which includes,</p>
+<ul>
+<li>Bending test, electrical test, pressure test, tensile test</li>
+</ul>
+"
+                                ; localization-of-power-cables-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for power cables (&gt;220 KV EHV).</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA power cables market is estimated at USD 16 million in 2017 and is expected to grow at a CAGR of 8%, to reach a value of USD 45 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the power cables production value chain. The main focus of this opportunity is on manufacturing and assembly of power cables:</p>
+<ul>
+<li>Manufacturing: wire-drawing, annealing, stranding and shaping, extrusion, PVC insulation</li>
+<li>Assembly: core lay-up, inner layer sheathing, outer layer sheathing, steel armoring, cable end securing, cable end sealed against moisture</li>
+</ul>
+<p>However, opportunities also exist in power cables testing which includes,</p>
+<ul>
+<li>Quality control checks, voltage test</li>
+</ul>
+"
+                                ; localization-of-recloserautorecloser-and-sectionalizer-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for Reclosers / Autoreclosers and Sectionalizers.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA recloser and sectionalizer market is estimated at USD 114 million in 2017 and is expected to grow at a CAGR of 3%, to reach a value of USD 161 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the recloser and sectionalizer production value chain. The main focus of this opportunity is on manufacturing and assembly of reclosers and sectionalizers:</p>
+<ul>
+<li>Manufacturing &amp; assembly: contact material processing, contact rod processing, copper processing, cast resing processing, surface treatment, connecting cables, cable harnesses</li>
+</ul>
+<p>However, opportunities also exist in recloser and sectionalizer testing which includes,</p>
+<ul>
+<li>Metallography test, insulation resistance testing, dielectric withstand voltage, endurance test, vacuum test, control panel test, HV and discharge test, mechanical operation test</li>
+</ul>
+"
+                                ; localization-of-ring-main-units-rmu-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for VCB and SFU based RMUs.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA RMU market is estimated at USD 111 million in 2017 and is expected to grow at a CAGR of 6%, to reach a value of USD 247 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the RMU production value chain. The main focus of this opportunity is on manufacturing and assembly of RMUs:</p>
+<ul>
+<li>Manufacturing: PCB manufacturing, Microchip processing, outdoor metal sheet/compartment manufacture, cable connections with insulating process with gas, welding process for gas tank</li>
+<li>Assembly: PCB and chip assembly, cable assembly, outdoor compartment assembly with painting, wiring, cable box and circuit breaker assembly</li>
+</ul>
+<p>However, opportunities also exist in RMU testing which includes,</p>
+<ul>
+<li>Micro-ohm test, SF6 gas leak test, partial discharge test on gas tank, circuit breaker analyzer test, high voltage tests, other tests</li>
+</ul>
+"
+                                ; localization-of-smart-electricity-meters-production                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing / assembly plant for smart electricity meters.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA smart meter market is estimated at USD 26 million in 2017 and is expected to grow at a CAGR of 14%, to reach a value of USD 142 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the smart electricity meter production value chain. The main focus of this opportunity is on manufacturing and assembly of smart electricity meters:</p>
+<ul>
+<li>Manufacturing: PCB making , SMT chip processing, wave soldering, reflow soldering, mounting components, passive components manufacturing, specialized washing, manual soldering</li>
+<li>Assembly: pre-assembly, inspection, final assembly</li>
+</ul>
+<p>However, opportunities also exist in smart electricity meter testing which includes,</p>
+<ul>
+<li>Error calibration, creeping test, basic function test, calibration, ageing process</li>
+</ul>
+"
+                                ; assembly-plant-for-steam-condensers-heat-exchangers-1                ;                ; "
+
+<p>This opportunity entails setting up an assembly plant for steam condensers &amp; heat exchangers.</p>
+<p>KSA has massive plans to increase transmission capacity, amounting to ~69,000 Ckt km of high voltage lines and ~250,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~69,000 Ckt km for high voltage lines and ~219,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>Beyond KSA, major regional capacity additions are planned to service the double-fold regional demand growth. Plans to increase regional transmission capacity beyond KSA amount to ~259,000 Ckt km of high voltage lines and ~775,000 MVA of high voltage substations (cumulative 2017 &ndash; 2030). Similarly, planned additional distribution capacity to amount to ~1.9 million Ckt km for high voltage lines and ~819,000 MVA for high voltage substations (cumulative 2017 &ndash; 2030).</p>
+<p>The KSA steam condenser and heat exchangers market is estimated at USD 212 million in 2017 and is expected to grow at a CAGR of 3%, to reach a value of USD 324 million by 2030.</p>
+<p>With forecasted market growth, multiple opportunities exist to localize the steam condensers and heat exchangers production value chain. The main focus of this opportunity is on assembly of steam condensers and heat exchangers:</p>
+<ul>
+<li>Assembly: coil &amp; fin assembly, curve bend tube assembly, manifold assembly, air handler assembly, final assembly</li>
+</ul>
+<p>However, opportunities also exist in steam condenser and heat exchanger manufacturing and testing,</p>
+<ul>
+<li>Manufacturing: coil bending process, sheet metal stamping, sheet metal bending, aluminum sheet cutting process, sluminum sheet drilling hole process, expander machine process, gas flux process, air cleaning</li>
+<li>Testing: dimension inspection, run testing, leak detection test</li>
+</ul>
+"
+                                ; management-contracts-concession-contracts-for-water-distribution-sector                ;                ; "
+
+<p>In pursuit of achieving 2030 objectives to increase the quality of services, and take advantage of private sector skills, the water sector in the kingdom is&nbsp; going through a massive privatization journey&nbsp; cross all its value chain to activate the private sector participation. The kingdom of Saudi Arabia is committed to privatize &amp; commercialize the complete value chain of water sector covering the production, transmission, storage and distribution</p>
+<p>In light of privatization the distribution sector, Ministry of Environment, Water &amp; Agriculture (MEWA) has developed a Saudi National Water Strategy (NWS2030) that addresses water distribution main challenges through policy integrated program &amp; institutional reform initiatives. As a result, national water company has been authorized to execute the policy integrated program in order to accelerate the private sector participation.</p>
+<p>The core initiatives made by the program are:</p>
+<ul>
+<li>Restructuring into six regional distribution entities (Clusters)</li>
+<li>Implementation of private sector participation in two phases, to allow for the time needed for the necessary interventions by the Government and completion of initiatives related to institutional and legal reform, and financial sustainability:</li>
+</ul>
+<p>Phase 1: Implementation of Management, Operations &amp; Maintenance Contracts (MOM Contracts) in each Cluster of 5 to 7 years duration (the Program)</p>
+<p>&nbsp;Phase 2: Implementation of Concession Contracts or similar long-term models in each Cluster.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Location:&nbsp;</strong>Eastern Cluster (Eastern Region);&nbsp; Makkah Cluster (Makkah Region); North Cluster (Qassim, Hail, Al-Jouf and Northern Border Regions); North West Cluster (Madinah and Tabuk Regions); Riyadh Cluster (Riyadh Region); and South Cluster (Assir, Baha, Najran and Jazan Regions)</p>
+"
+                                ; commercialization-of-brine                ;                ; "
+
+<p>SWCC produces more than 1B m3 of water per year and significant bi-products (~ 65m tons of Sodium) through 28 desalination plants. SWCC made research shows that certain valuable minerals/ions are of value &amp; could be extracted from brine. The research resulted that SWCC produces approx. 3.7 billion m3 of brine in 2014 as a by-product of 1.1 billion m3 of desalinated water.</p>
+<p>&nbsp;</p>
+<p><strong>Findings:</strong></p>
+<p>1.Salts and magnesium compounds are currently techno economically feasible and candidates for by-product commercialization.</p>
+<p>2.Growing desalination industry globally driving technology innovation leading to growing focus on brine management (near ZLD) and by-product commercialization, with early indications of trending lower costs, lower energy requirements, and higher recovery of water and other resources</p>
+"
+                                ; manufacturingassembly-for-smart-water-meter                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing plant for Smart Water Meter.</p>
+<p>A smart meter is a conventional water meter connected to a data logger that allows for the continuous monitoring of water consumption. As opposed to conventional systems in which users receive the information on water usage months after consumption, a smart metering system can provide real-time water consumption or sufficient data points to determine usage patterns.</p>
+<p><strong>Market overview</strong></p>
+<p>KSA is the largest producer of desalinated water in the world, with total capacity of 8Mn m3/day and expected to increase to be 12.3 m3/day by 2035.&nbsp; Also, it has set a market size water reuse for 1.9 Mn m3/day by 2020. KSA smart water meter market sales is estimated to be&nbsp; SAR 600 million by 2020. In pursuit of Vision 2030 objectives, water sector is increasing the focus on localization to capitalize on large opportunities. All related stakeholders have kicked off various localization efforts to increase local content, to localize desalination equipment such as Smart Water Meter equipment</p>
+<p><strong>Manufacturing /Assembly&nbsp; process and components of smart Water Meter:</strong></p>
+<p>In addition to the mechanical apparatus, a smart meter in its most basic form is made up of the following components: Magnets, Sensors, Printed Circuit Boards, Microcontroller Unit, Battery, Display Screen, Transmitter, Data Loggers, Gateway</p>
+<p><strong>Assembly</strong></p>
+<p>The components of a smart water meter can be&nbsp;<strong>manufactured in-house or procured</strong>. It is generally expected that some components of the smart water meter will not be produced in house, particularly those that require specialty machinery to be produced such as semiconductors (e.g. microcontrollers, relay switches, printed circuit boards (PCBs), etc.).</p>
+<p>Nowadays, most of the manufacturing processes of smart water meters rely on modern technology, including&nbsp;<strong>robotics to assemble the different components</strong>&nbsp;with a high degree of precision, autonomous mobile robots to transport semi-finished and finished items, and robots to package boxes and pallets. An automated production process provides repeatable precision and a streamlined process, resulting in smart water meters with a near-zero failure rate.</p>
+"
+                                ; manufacturingassembly-for-electrical-ac-motor                ;                ; "
+
+<p>This opportunity entails setting up a Manufacturing/assembly plant for AC motor equipment.</p>
+<p>AC motor is an electrical device which converts electrical energy into mechanical energy. It is used in a wide range of applications such as desalination, WWTP, Brine, fruit juice ,produced water, oil industry, storm water, and dairy.</p>
+<p><strong>Market overview</strong></p>
+<p>Electrical motor is expected to witness fast growth in the coming years due to the fact that additional assets will be added to the kingdom by next mega &amp; giga&nbsp; projects (Neom, Red Sea, King Salman Park, AlOula, Amaala, King Abdullah Financial District (KAFD),Addiriyah, New Jeddah Downtown, Qiddiya, Ministry of Housing Projects). In addition to the growing markets of oil &amp; gas and water treatment, this will have the potential to boost the market growth of&nbsp; electrical motors in KSA.</p>
+<p>As of 2017, the KSA electrical market size was valued to be 2 Billion SAR.</p>
+<p><strong>Manufacturing process of AC motors :</strong></p>
+<p>Metallurgy lab, sizing, stamping, stator winding, rotor winding, stator pressing, shaft shrinking,&nbsp; dynamic balancing, assembly, testing</p>
+<p><strong>Other opportunities that can be localized throughout the value chain is rotor, stator, Commutator, brushes and terminals</strong></p>
+<p><strong>Main raw material Iron (import) &amp; copper (local)</strong></p>
+"
+                                ; manufacturingassembly-for-filtration-equipment                ;                ; "
+
+<p>This opportunity entails setting up a manufacturing plant for filtration equipment.</p>
+<p>Filtration equipment is used for seawater reverse osmosis to filter out and reduce solid particles such as sands, and clay before the seawater proceeds to the reverse osmosis membranes.</p>
+<p>Saudi Arabia plans to significantly increase investment in water sector to 50 Billion USD by 2020. KSA is the largest producer of desalinated water in the world, with total capacity of 8Mn m3/day and expected to increase to be 12.3 m3/day by 2035.&nbsp; Also, it has set a market size water reuse for 1.9 Mn m3/day by 2020. In pursuit of Vision 2030 objectives, water sector is increasing the focus on localization to capitalize on large opportunities. All related stakeholders have kicked off various localization efforts to increase local content, to localize desalination equipment such as filtration equipment, which is used for both Greenfield and rehabilitation projects.</p>
+<p>&nbsp;KSA addressable desalination market sales for filtration equipment is forecasted to grow to SAR 41 million by 2025 reaching SAR 46 million by 2035. Moreover, total yearly GCC market is SAR 148 million by 2035.</p>
+<p><strong>&nbsp;The manufacturing process of the filtration equipment as follows:</strong></p>
+<p><strong><u>Mettalic</u></strong><u>:&nbsp;</u>Structural and hydraulic design, fabrication works (sheet metal rolling, welding), surface preparation, painting, hydro testing.</p>
+<p><strong><u>Non-</u><u>Mettalic</u></strong>: Structural and hydraulic design, fabrication works (winding and gluing), surface&nbsp; preparation, painting, hydro testing</p>
+<p><u><strong>Raw Material</strong>&nbsp;:</u>FRP, SS, Duplex SS, Super Duplex SS ,Polypropylene, CS, Concrete</p>
+"
+                                ; power-transformers-1                ;                ; "
+<p>Setting up a manufacturing and assembly plant for the production of power transformers (above 100MVA) in KSA</p>
+"
+                                ; ar-rass-solar-pv-700-mw                ;                ; "
+<p>Development of a Solar PV 700MW project in Ar Rass as part of the REPDO Round 3 as an Independent Power Producer (IPP)</p>
+"
+                                ; saad-solar-pv-300-mw                ;                ; "
+<p>Development of a Solar PV 300MW project in Saad as part of the REPDO Round 3 as an Independent Power Producer (IPP)</p>
+"
+                                ; layla-solar-pv-80-mw                ;                ; "
+<p>Development of a Solar PV 80MW project in Layla as part of the REPDO Round 3 as an Independent Power Producer (IPP)</p>
+"
+                                ; wadi-aldawasir-solar-pv-120-mw                ;                ; "
+<p>Development of a Solar PV 120MW project in Wadi Aldawasir as part of the REPDO Round 3 as an Independent Power Producer (IPP)</p>
+"
+                                ; reverse-osmosis-ro-membrane                ;                ; "
+<p>Establish RO membrane manufacturing facilities to cater for local demand</p>
+"
+                                ; high-pressure-pumps-1                ;                ; "
+<p>Setting up a manufacturing and assembly plant for the production of High Pressure Pumps (Rotary Positive Displacement Pumps and Centrifugal Pumps) in KSA</p>
+"
+                                ; pressure-exchangers                ;                ; "
+<p>Setting up a manufacturing and assembly plant for the production of Pressure Exchangers in KSA</p>
+"
+                                ; dissolved-air-flotation-daf-systems                ;                ; "
+<p>Setting up a manufacturing and assembly plant for the production of Dissolved Air Flotation (DAF) in KSA.</p>
+"
+                                ; electrical-cutout-fuse                ;                ; "
+<p>Setting up a manufacturing and assembly plant for the production of Cutout Fuse (15.2 Kv, 36 Kv) 100 A in KSA.</p>
+"
+                                ; high-voltage-extra-high-voltage-gas-insulated-switchgear                ;                ; "
+<p>Setting up a manufacturing and assembly plant for the production of high voltage gas insulated switchgear (HV& EHV GIS) in KSA.</p>
+"
+                                ; energy-services-company-esco                ;                ; "
+<p>Establishing an Energy Services Company (ESCO) to help reduce energy consumption for the public and private sector facilities.</p>
+"
+                                ; electric-generators                ;                ; "
+<p>Opportunity to setup a 750 MWpa capacity manufacturing plant for electric generators (375 -750 KVA, >750 KVA).</p>
+"
+                                ; energy-audit-company                ;                ; "
+<p>Establishing an Energy Audit Company to help reducing energy consumption for the public and private sector facilities.</p>
+"
+                                ; industrial-energy-audit-company                ;                ; "
+<p>Establishing an Industrial Energy Audit Company to help reducing energy consumption for the industrial facilities.</p>
+"
+
+								
+								
+								
+								
+								
+								
+								
+								
+

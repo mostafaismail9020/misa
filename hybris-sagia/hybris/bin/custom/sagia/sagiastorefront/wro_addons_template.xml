@@ -1,0 +1,36 @@
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<groups>
+   <group name="addons_responsive">
+      	<css>/_ui/addons/sagiasecchat/responsive/common/css/sagiasecchat.css</css>
+		
+		<css>/_ui/addons/smarteditaddon/responsive/common/css/smarteditaddon.css</css>
+		
+		<css>/_ui/addons/sagiaasmaddon/responsive/common/css/sagiaasmaddon.css</css>
+		<css>/_ui/addons/sagiaasmaddon/responsive/common/css/storeFinder.css</css>
+		
+			
+      	<js>/_ui/addons/smarteditaddon/shared/common/js/webApplicationInjector.js</js>
+		<js>/_ui/addons/smarteditaddon/shared/common/js/reprocessPage.js</js>
+		<js>/_ui/addons/smarteditaddon/shared/common/js/adjustComponentRenderingToSE.js</js>
+		<js>/_ui/addons/smarteditaddon/responsive/common/js/smarteditaddon.js</js>
+		
+		<js>/_ui/addons/sagiaasmaddon/responsive/common/js/sagiaasmaddon.js</js>
+		<js>/_ui/addons/sagiaasmaddon/responsive/common/js/jquery.tablesorter.pager.js</js>
+		<js>/_ui/addons/sagiaasmaddon/responsive/common/js/jquery.tablesorter.min.js</js>
+		<js>/_ui/addons/sagiaasmaddon/responsive/common/js/Chart.min.js</js>
+		<js>/_ui/addons/sagiaasmaddon/responsive/common/js/asm.storefinder.js</js>
+
+		 <js>/_ui/addons/captchaaddon/responsive/common/js/captchaaddon.js</js>
+
+
+   </group>
+</groups>

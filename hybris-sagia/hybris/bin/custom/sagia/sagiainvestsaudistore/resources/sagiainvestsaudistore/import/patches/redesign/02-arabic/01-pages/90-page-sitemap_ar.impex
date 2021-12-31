@@ -1,0 +1,47 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = siteMapTemplate
+$page = sitemap
+$pageName = خريطة الموقع
+$pageTitleAr = $pageName
+$pageLabel = /sitemap
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media ; code[unique = true]	; realFileName        	; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+                    ; sitemap-banner.png	; sitemap-banner.png	; $siteResource/sitemap-banner.png                                   			; image/png                   ;                                          ;   ""   ;
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]		; name           ; descriptionText[lang = ar]	; descriptionText[lang = en]; buttonText[lang = en]  ; buttonText[lang = ar]    ; image(code, $contentCV)	; buttonURL(&linkRef)	; link  ; &componentRef   	; $contentCV[unique = true];
+                                        ; sitemap-banner 			; Sitemap Banner ; خريطة الموقع 				; SITEMAP					;         				 ;           				; sitemap-banner.png 		;  	  					; true  ; sitemap-banner	;		;
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      	; name                    	; simpleCMSComponents(&componentRef)	; &componentRef          	; $contentCV[unique = true];
+                                        ; sitemap-banner-container 	; Sitemap Banner Container	; sitemap-banner						; sitemap-banner-container 	;			;
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; title[lang = ar]; description[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved'];
+                         ; $page             ; $pageTitleAr    ; $pageName             ; $template                      ; $pageLabel ; false   ;                          ;                              ;				;
+
+
+#INSERT_UPDATE InvestSaudiSiteMapComponent; uid[unique = true]       ; name                    ; &componentRef         ; $contentCV[unique = true];
+#                                         ; sagia-sitemap-component  ;sagia Site Map Component ; sagia-sitemap-component
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true];
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; sitemap-banner-container    ;		;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;                                                      ;
+

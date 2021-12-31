@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- [y] hybris Platform Copyright 
+	(c) 2017 SAP SE or an SAP affiliate company. All rights reserved. This software 
+	is the confidential and proprietary information of SAP ("Confidential Information"). 
+	You shall not disclose such Confidential Information and shall use it only 
+	in accordance with the terms of the license agreement you entered into with 
+	SAP. -->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widgets.xsd">
+
+
+
+	<widget-extension widgetId="backofficeMainSlot">
+
+
+		<widget id="opportunityConditionEvaluator"
+			widgetDefinitionId="com.hybris.cockpitng.conditionevaluator"
+			slotId="cockpitWidgetChildrenInvisible" template="false">
+			<widget id="opportunities_filter"
+				widgetDefinitionId="com.sagia.backoffice.widgets.opportunityactionadapter"
+				slotId="cockpitWidgetChildrenInvisible" template="false">
+				<setting key="widgetStyleAttribute" type="String"></setting>
+				<setting key="widgetStyleClass" type="String"></setting>
+				<virtual-sockets />
+			</widget>
+			<setting key="expression" type="String">#root.id EQ
+				'customersupport_backoffice_explorerTree_opportunities'</setting>
+			<setting key="socketDataType_$T" type="String">com.hybris.cockpitng.tree.node.TypeNode
+			</setting>
+			<virtual-sockets />
+		</widget>
+		
+		<widget id="servicerequestConditionEvaluator"
+			widgetDefinitionId="com.hybris.cockpitng.conditionevaluator"
+			slotId="cockpitWidgetChildrenInvisible" template="false">
+			<widget id="servicerequest_filter"
+				widgetDefinitionId="com.sagia.backoffice.widgets.servicerequestactionadapter"
+				slotId="cockpitWidgetChildrenInvisible" template="false">
+				<setting key="widgetStyleAttribute" type="String"></setting>
+				<setting key="widgetStyleClass" type="String"></setting>
+				<virtual-sockets />
+			</widget>
+			<setting key="expression" type="String">#root.id EQ
+				'customersupport_backoffice_explorerTree_servicerequests'</setting>
+			<setting key="socketDataType_$T" type="String">com.hybris.cockpitng.tree.node.TypeNode
+			</setting>
+			<virtual-sockets />
+		</widget>
+
+	</widget-extension>
+
+	<!-- <widget-extension widgetId="backofficeMainSlot">
+
+
+		
+
+	</widget-extension> -->
+
+	<widget-connection sourceWidgetId="csExplorerTree"
+		outputId="nodeSelected" targetWidgetId="opportunityConditionEvaluator"
+		inputId="input" />
+	<widget-connection
+		sourceWidgetId="opportunityConditionEvaluator" outputId="true"
+		targetWidgetId="opportunities_filter" inputId="nodeSelected" />
+	<widget-connection
+		sourceWidgetId="opportunities_filter" outputId="outContext"
+		targetWidgetId="csAdvancedSearch" inputId="initContext" />
+
+
+	 <widget-connection sourceWidgetId="csExplorerTree"
+		outputId="nodeSelected" targetWidgetId="servicerequestConditionEvaluator"
+		inputId="input" />
+	<widget-connection
+		sourceWidgetId="servicerequestConditionEvaluator" outputId="true"
+		targetWidgetId="servicerequest_filter" inputId="nodeSelected" />
+	<widget-connection
+		sourceWidgetId="servicerequest_filter" outputId="outContext"
+		targetWidgetId="csAdvancedSearch" inputId="initContext" /> 
+
+
+</widgets>

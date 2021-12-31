@@ -1,0 +1,123 @@
+$page = news-sagia-and-jetro-promote-investment
+$template = portalGlobalTemplate
+$name = SAGIA AND JETRO PROMOTE INVESTMENT OPPORTUNITIES IN SAUDI ARABIA’S TOURISM AND ENTERTAINMENT SECTOR AMONG BUSINESS LEADERS IN TOKYO
+$titleEn = $name
+$titleAr = انطلاق فعاليات منتدى أعمال الرؤية السعودية اليابانية 2030 في طوكيو بحضور أكثر من 300 مشارك من كلا البلدين
+$shortDescEn = Saudi-Japan Vision 2030 Business Forum brings together more than 300 delegates, as SAGIA highlights the crucial role
+$shortDescAr = شهدت العاصمة اليابانية طوكيو فعاليات منتدى أعمال الرؤية السعودية اليابانية 2030، والذي تنظمه الهيئة العامة
+$pagelabel = /news/sagia-and-jetro-promote-investment-opportunities-in-saudi-arabia-s-tourism-and-entertainment-sector-among-business-leaders-in-tokyo
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; b58i3297           ; b58i3297.jpg ; $siteResource/b58i3297.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; b58i3297 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; b58i3297                          ; b58i3297                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 24.10.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>Saudi-Japan Vision 2030 Business Forum brings together&nbsp;</em><em>more than 300&nbsp;</em><em>delegates, as SAGIA highlights the crucial role that the private sector plays in unlocking Saudi Arabia&rsquo;s tourism and entertainment sectors</em></li>
+<li><em>Forum highlights emerging investment opportunities after Saudi Arabia recently launched historic tourism e-visa program</em></li>
+<li><em>12 MOUs&nbsp;</em>e<em>xchanged at the Forum, bolstering further the bilateral ties between Japan and Saudi Arabia</em></li>
+</ul>
+<p><strong>Tokyo, Japan; 23 October 2019:&nbsp;</strong>The Saudi Arabian General Investment Authority (SAGIA) welcomed business leaders and government decision-makers to the Saudi-Japan Vision 2030 Business Forum, held today in Tokyo. The event brought together more than 300 delegates, including high-ranking government officials, investors and business leaders for a series of open discussions, workshops and high-level meetings.&nbsp;</p>
+<p>Hosted in partnership with the Japan External Trade Organization (JETRO), the Saudi-Japan Vision 2030 Business Forum focused on investment opportunities being created in tourism and entertainment, as well as key reforms underway to support continued growth in these sectors.</p>
+<p>Speaking at the Forum, Dr. Majid bin Abdullah Al&nbsp;Qasabi, Saudi Arabia&rsquo;s Minister of Commerce and Investment, commented:</p>
+<p><em>&ldquo;</em><em>Japan is one of Saudi Arabia&rsquo;s most important economic partners,&nbsp;</em><em>and businesses from across our countries have a strong track record of working together</em><em>. Today&rsquo;s Forum reflects the success and strength of this enduring partnership. We established the Saudi-Japanese Vision 2030 two years ago, which seeks to drive and facilitate continued private sector involvement by establishing joint-ventures between entities across our respective countries. We believe that the future prosperity of the Kingdom depends on fostering even closer ties with our strategic partners across the globe, and we look forward to welcoming these companies as they take part in the historic transformation of our economy.&rdquo;</em></p>
+<p>Memoranda of Understanding exchanged at the Forum include:</p>
+<ul>
+<li><strong>University of Tokyo and King Fahd University of Petroleum and Minerals (KFUPM)&nbsp;</strong>&ndash;&nbsp;the academic exchange for research in renewable energy and petrochemicals</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Kyoto University Institute for Advance Study (KUIAS) and King Abdullah University for Science and Technology (KAUST)</strong>&ndash;&nbsp;to promote the exchange of scientific materials, publications, and information and exchange of faculty members and researchers, students and joint research</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>University of Tokyo and King Abdullah University for Science and Technology (KAUST) &ndash;&nbsp;</strong>to collaborate on the research and the next generation of organic and soft electronics and efficient generation of hydrogen</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Japan Patent Office (JPO) and Saudi Authority for Intellectual Property (SAIP) &ndash;&nbsp;</strong>to promote the exchange of data and best practices in the field of intellectual property protection including trademarks and patents</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Sumitomo Mitsui Banking Corporation and Saudi Arabian General Investment Authority (SAGIA) &ndash;&nbsp;</strong>to enhance investment opportunities between Japan and Saudi Arabia</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Mitsubishi UFJ Financial Group and Saudi Arabian General Investment Authority (SAGIA) &ndash;&nbsp;</strong>a framework for cooperation to enhance investment from Japan to the Kingdom of Saudi Arabia</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Toyobo and Saline Water Conversion Corporation and Arabian Japanese Membrane Company &ndash;&nbsp;</strong>to develop innovative membrane technologies and manage disposed brine water generated from seawater desalination plants for environmental sustainability</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Sojitz Corporation and AIZAWA Concrete Corporation and Al Saedan for Development &ndash;&nbsp;</strong>to explore opportunities and utilize 3D printing technology and local materials for housing construction</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Cyberdyne Group and Abdul Latif Jameel Investments &ndash;&nbsp;</strong>to collaborate and enhance Cybernic treatment and contribute to the social development of the Kingdom.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Saudi-Japan Vision Office Riyadh (VRO) and National Industrial Development and Logistics Program (NIDLP) &ndash;&nbsp;</strong>to expand collaboration and enable investments in the field of industry, mining, energy and logistics</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>TBM and SABIC &ndash;&nbsp;</strong>to build a circular economy using LIMEX</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Ministry of Economy, Trade and Industry (METI) and the National Industrial Clusters Development Program (NICDP) and the Technical and Vocational Training Corporation and Saudi-Japanese Automobile High Institute &ndash;&nbsp;</strong>to provide support and training for human capacity development for Saudi youth in the automotive sector</li>
+</ul>
+<p>&nbsp;</p>
+<p>These investments come alongside a broad series of economic reforms, which are enabling rapid growth in foreign investment in Saudi Arabia. In fact, the total number of foreign investor licenses issued in the first half of 2019 was more than double the number issued the same period a year before.</p>
+<p>These reforms have had a significant impact. According to the 2019 Global Competitiveness Report published by the World Economic Forum, Saudi Arabia&nbsp;has moved up three positions to the 36<sup>th</sup>&nbsp;place, globally, through its efforts to diversify the Kingdom&rsquo;s economy.</p>"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>شهدت العاصمة اليابانية طوكيو فعاليات منتدى أعمال الرؤية السعودية اليابانية 2030، والذي تنظمه الهيئة العامة للاستثمار ومنظمة التجارة الخارجية اليابانية (JETRO)، وذلك بحضور معالي وزير التجارة والاستثمار د. ماجد القصبي، ومعالي وزير الاقتصاد والتخطيط الأستاذ محمد التويجري، ومعالي وزير الاقتصاد والتجارة والصناعة الياباني السيد ايشو سوقاوارا، ومعالي وزير الدولة للشؤون الخارجية السيد كي ايسوكي وزوكي، وبحضور أكثر من 300 مشارك من البلدين.</p>
+<p>&nbsp;</p>
+<p>وشهدت أعمال المنتدى حلقات نقاشية تناولت موضوعات السياحة والترفيه، والابتكار والإنتاجية، وشارك فيها عدد من كبار المسؤولين الحكوميين والرؤساء التنفيذيين من الجانب السعودي والياباني، مثل صندوق التنمية الصناعية السعودية، والهيئة العامة للترفيه، والهيئة الملكية لمحافظة العلا، ووحدة التحول الرقمي، وشركة الاتصالات السعودية.</p>
+<p>&nbsp;</p>
+<p>كما شهد المنتدى توقيع 12 مذكرة تفاهم، بين الجانبين السعودي والياباني شملت مجالات البحث الأكاديمي، والدراسات، والمصرفية، والتقنية والتطوير العقاري والملكية الفكرية، والتدريب التقني.</p>
+<p>وفي خطابه خلال منتدى أعمال الرؤية السعودية اليابانية 2030، أشار معالي وزير التجارة والاستثمار د. ماجد القصبي إلى أن هذا المنتدى يهدف إلى تعزيز العلاقات الثنائية المتميزة والراسخة بين البلدين الصديقين، والتي ترتكز على أسس متينة على مدار سبعة عقود بدأت منذ عام 1950م. وأضاف معاليه بأن المملكة حرصت على تحسين بيئة الأعمال وتحفيز القطاع الخاص وزيادة فعاليته وعمله في بيئة استثمارية جاذبة وعادلة ومحفزة، حيث أطلقت حتى الآن 13 برنامجًا لتحقيق أهداف الرؤية الطموحة وحددت ما يزيد عن 300 إصلاح اقتصادي، بلغت نسبة ما تم تنفيذه منها 62%، كان من ضمنها تطوير وإصدار أنظمة وتشريعات جديدة مثل التملك الأجنبي الكامل في عدد من القطاعات الاستثمارية الاستراتيجية في المملكة، وتسهيل إجراءات ورحلة المستثمر عبر اعتماد خطوات أسرع وأقل تعقيدًا لتسجيل الأعمال.</p>
+<p>&nbsp;</p>
+<p>من جانبه ذكر وكيل محافظ الهيئة العامة للاستثمار لجذب وتطوير الاستثمار سلطان مفتي في كلمته الافتتاحية بأن منتدى أعمال الرؤية السعودية اليابانية 2030 يعد منصة مثالية لبحث فرص أكبر للتعاون مع المستثمرين اليابانيين من القطاع الخاص والعام، مؤكدًا أن الرؤية المشتركة تعد نافذة لتعزيز الشراكة الاستراتيجية بين المملكة واليابان، ومنوهًا بأن البلدين يهدفان إلى استدامة التعاون الثنائي بما يخدم الاقتصاد والازدهار في كلا البلدين، وأضاف بأن مذكرات التفاهم التي تم توقيعها خلال المنتدى تضمنت عددًا من النشاطات كان على رأسها التعاون في المجال الأكاديمي.</p>
+<p>&nbsp;</p>
+<p>يذكر أن اليابان إحدى أهم الدول الشريكة للمملكة اقتصاديا، إذ تعد ثالث أكبر الشركاء التجاريين لها؛ بحجم تبادل تجاري تجاوز 38 مليار دولار، وبنسبة نمو 20% في عام 2018 مقارنة بالعام السابق. ومنذ انطلاق رؤية المملكة 2030 في أبريل 2016؛ حققت المملكة عددا كبيرا من الإصلاحات بلغ 62%، وشملت التملك الكامل للاستثمار الأجنبي، بوجود بنية تحتية متكاملة ومتطورة من الحقوق القانونية وحماية أكبر للمستثمر الأجنبي. وتسهيل إجراءات ورحلة المستثمر عبر اعتماد إجراءات أسرع وأقل تعقيدًا لتسجيل الأعمال، بما في ذلك إصدار تأشيرات العمل خلال 24 ساعة وإصدار التراخيص في أقل من 24 ساعة، وتطوير البنية التحتية القانونية عبر تطبيق نظام الإفلاس الجديد، وإنشاء مركز تحكيم تجاري ومحاكم تجارية متخصصة، إضافة إلى تعزيز الحماية القانونية لصغار المساهمين.</p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

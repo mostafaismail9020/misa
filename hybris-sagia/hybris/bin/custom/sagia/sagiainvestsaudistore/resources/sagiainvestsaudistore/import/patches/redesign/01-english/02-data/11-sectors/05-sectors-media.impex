@@ -1,0 +1,203 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+    
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]   						; realFileName          	    		; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]			; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $catalogVersion[unique = true];
+# Sector Logo (Picture) Images
+					; energy-logo.png                    			; energy-logo.png                    	; $siteResource/energy-logo.png                                                         ; image/png                   ;                                          ;   ""   ;
+				    ; conventional-energy-logo.png       			; conventional-energy-logo.png       	; $siteResource/conventional-energy-logo.png                                            ; image/png                   ;                                          ;   ""   ;
+                    ; renewable-energy-logo.png          			; renewable-energy-logo.png          	; $siteResource/renewable-energy-logo.png                                               ; image/png                   ;                                          ;   ""   ;
+                    ; energy-saving-logo.png         				; energy-saving-logo.png         		; $siteResource/energy-saving-logo.png                                                  ; image/png                   ;                                          ;   ""   ;
+
+					; environment-services-logo.png 				; environment-services-logo.png 		; $siteResource/environment-services-logo.png   										; image/png                   ;                                          ;   ""   ;							
+                    ; water-logo.png                     			; water-logo.png                     	; $siteResource/water-logo.png                                                          ; image/png                   ;                                          ;   ""   ;
+                    ; waste-management-logo.png          			; waste-management-logo.png          	; $siteResource/waste-management-logo.png                                               ; image/png                   ;                                          ;   ""   ;
+	
+                    ; industrial-manufacturing-logo.png         	; industrial-manufacturing-logo.png     ; $siteResource/industrial-manufacturing-logo.png                                       ; image/png                   ;                                          ;   ""   ;
+                    ; automotives-logo.png       	    			; automotives-logo.png         	    	; $siteResource/automotives-logo.png                                                    ; image/png                   ;                                          ;   ""   ;
+                    ; food-processing-logo.png           			; food-processing-logo.png           	; $siteResource/food-processing-logo.png                                                ; image/png                   ;                                          ;   ""   ;
+                    ; industrial-spareparts-logo.png     			; industrial-spareparts-logo.png     	; $siteResource/industrial-spareparts-logo.png                                          ; image/png                   ;                                          ;   ""   ;
+
+                    ; healthcare-life-sciences-logo.png         	; healthcare-life-sciences-logo.png     ; $siteResource/healthcare-life-sciences-logo.png                                       ; image/png                   ;                                          ;   ""   ;
+					; medical-services-logo.png        				; medical-services-logo.png         	; $siteResource/medical-services-logo.png                                               ; image/png                   ;                                          ;   ""   ;
+                    ; medical-technologies-logo.png      			; medical-technologies-logo.png      	; $siteResource/medical-technologies-logo.png                                           ; image/png                   ;                                          ;   ""   ;
+
+                    ; pharmacuticals-logo.png    					; pharmacuticals-logo.png        		; $siteResource/pharmacuticals-logo.png                                                 ; image/png                   ;                                          ;   ""   ;
+					; chemicals-logo.png         					; chemicals-logo.png                 	; $siteResource/chemicals-logo.png                                                      ; image/png                   ;                                          ;   ""   ;														
+					; real-estate-logo.png        					; real-estate-logo.png               	; $siteResource/real-estate-logo.png                                                    ; image/png                   ;                                          ;   ""   ;
+                    ; education-logo.png          					; education-logo.png                 	; $siteResource/education-logo.png                                                      ; image/png                   ;                                          ;   ""   ;
+                    ; innovation-logo.png         					; innovation-logo.png                	; $siteResource/innovation-logo.png                                                     ; image/png                   ;                                          ;   ""   ;
+                    ; financial-logo.png          					; financial-logo.png          	    	; $siteResource/financial-logo.png                                                      ; image/png                   ;                                          ;   ""   ;
+                    ; transport-logistics-logo.png         			; transport-logistics-logo.png         	; $siteResource/transport-logistics-logo.png                                            ; image/png                   ;                                          ;   ""   ;
+                    ; mining-metals-logo.png      					; mining-metals-logo.png             	; $siteResource/mining-metals-logo.png                                                  ; image/png                   ;                                          ;   ""   ;
+
+                    ; tourism-culture-entertainment-logo.png   		; tourism-culture-entertainment-logo.png; $siteResource/tourism-culture-entertainment-logo.png         							; image/png                   ;                                          ;   ""   ;
+					; tourism-logo.png       	        			; tourism-logo.png        	        	; $siteResource/tourism-logo.png                                                        ; image/png                   ;                                          ;   ""   ;
+                    ; culture-entertainment-logo.png     			; culture-entertainment-logo.png     	; $siteResource/culture-entertainment-logo.png                                          ; image/png                   ;                                          ;   ""   ;
+                    ; sports-logo.png    		        			; sports-logo.png       	            ; $siteResource/sports-logo.png                                                         ; image/png                   ;                                          ;   ""   ;
+
+                    ; information-technology-logo.png        		; information-technology-logo.png       ; $siteResource/information-technology-logo.png                                         ; image/png                   ;                                          ;   ""   ;
+                    ; digital-content-logo.png      	    		; digital-content-logo.png        		; $siteResource/digital-content-logo.png                                                ; image/png                   ;                                          ;   ""   ;
+                    ; digital-infrastructure-logo.png    			; digital-infrastructure-logo.png    	; $siteResource/digital-infrastructure-logo.png                                         ; image/png                   ;                                          ;   ""   ;
+                    ; technology-platforms-logo.png      			; technology-platforms-logo.png      	; $siteResource/technology-platforms-logo.png                                           ; image/png                   ;                                          ;   ""   ;
+
+					; aerospace-defense-logo.png          			; aerospace-defense-logo.png        	; $siteResource/aerospace-defense-logo.png                                          	; image/png                   ;                                          ;   ""   ;
+
+# Sector Banner Images
+					; energy-banner.jpg        						; energy-banner.jpg             		; $siteResource/energy-banner.jpg                                  						; image/jpg                   ;                                          ;   ""   ;
+					; environment-services-banner.jpg 				; environment-services-banner.jpg 		; $siteResource/environment-services-banner.jpg   										; image/jpg                   ;                                          ;   ""   ;												
+					; industrial-manufacturing-banner.jpg			; industrial-manufacturing-banner.jpg	; $siteResource/industrial-manufacturing-banner.jpg										; image/jpg                   ;                                          ;   ""   ;
+					; healthcare-life-sciences-banner.jpg			; healthcare-life-sciences-banner.jpg	; $siteResource/healthcare-life-sciences-banner.jpg										; image/jpg                   ;                                          ;   ""   ;					
+					; chemicals-banner.jpg							; chemicals-banner.jpg					; $siteResource/chemicals-banner.jpg													; image/jpg                   ;                                          ;   ""   ;
+					; real-estate-banner.jpg						; real-estate-banner.jpg				; $siteResource/real-estate-banner.jpg													; image/jpg                   ;                                          ;   ""   ;
+					; education-banner.jpg							; education-banner.jpg					; $siteResource/education-banner.jpg													; image/jpg                   ;                                          ;   ""   ;
+					; innovation-banner.jpg							; innovation-banner.jpg					; $siteResource/innovation-banner.jpg													; image/jpg                   ;                                          ;   ""   ;
+					; financial-banner.jpg							; financial-banner.jpg					; $siteResource/financial-banner.jpg													; image/jpg                   ;                                          ;   ""   ;
+					; transport-logistics-banner.jpg				; transport-logistics-banner.jpg		; $siteResource/transport-logistics-banner.jpg											; image/jpg                   ;                                          ;   ""   ;
+					; mining-metals-banner.jpg						; mining-metals-banner.jpg				; $siteResource/mining-metals-banner.jpg												; image/jpg                   ;                                          ;   ""   ;
+					; tourism-culture-entertainment-banner.jpg		; tourism-culture-entertainment-banner.jpg	; $siteResource/tourism-culture-entertainment-banner.jpg							; image/jpg                   ;                                          ;   ""   ;
+					; information-technology-banner.jpg				; information-technology-banner.jpg		; $siteResource/information-technology-banner.jpg										; image/jpg                   ;                                          ;   ""   ;
+                    ; Pharmacuticals-banner.jpg                     ; Pharmacuticals-banner.jpg             ; $siteResource/Pharmacuticals-banner.jpg                           					; image/jpg                   ;                                          ;   ""   ;
+
+# Sector Thumbnail Images					
+					; conventional-energy-thumbnail.jpg  	    	; conventional-energy-thumbnail.jpg		; $siteResource/conventional-energy-thumbnail.jpg                   					; image/jpg                   ;                                          ;   ""   ;
+                    ; renewable-energy-thumbnail.jpg        		; renewable-energy-thumbnail.jpg    	; $siteResource/renewable-energy-thumbnail.jpg                      					; image/jpg                   ;                                          ;   ""   ;
+                    ; energy-savings-thumbnail.jpg      	    	; energy-savings-thumbnail.jpg     		; $siteResource/energy-savings-thumbnail.jpg                        					; image/jpg                   ;                                          ;   ""   ;
+	
+					; water-thumbnail.jpg                  			; water-thumbnail.jpg          		    ; $siteResource/water-thumbnail.jpg                                                     ; image/jpg                   ;                                          ;   ""   ;
+                    ; waste-management-thumbnail.jpg    			; waste-management-thumbnail.jpg		; $siteResource/waste-management-thumbnail.jpg                                          ; image/jpg                   ;                                          ;   ""   ;
+	
+					; automotives-thumbnail.jpg       	    		; automotives-thumbnail.jpg        	 	; $siteResource/automotives-thumbnail.jpg                                               ; image/jpg                   ;                                          ;   ""   ;
+                    ; food-processing-thumbnail.jpg           		; food-processing-thumbnail.jpg       	; $siteResource/food-processing-thumbnail.jpg                                           ; image/jpg                   ;                                          ;   ""   ;
+                    ; industrial-spareparts-thumbnail.jpg     		; industrial-spareparts-thumbnail.jpg 	; $siteResource/industrial-spareparts-thumbnail.jpg                                     ; image/jpg                   ;                                          ;   ""   ;
+	
+					; medical-services-thumbnail.jpg        		; medical-services-thumbnail.jpg        ; $siteResource/medical-services-thumbnail.jpg                                          ; image/jpg                   ;                                          ;   ""   ;
+                    ; medical-technologies-thumbnail.jpg      		; medical-technologies-thumbnail.jpg   	; $siteResource/medical-technologies-thumbnail.jpg                                      ; image/jpg                   ;                                          ;   ""   ;
+                    ; pharmacuticals-thumbnail.jpg    				; pharmacuticals-thumbnail.jpg        	; $siteResource/pharmacuticals-thumbnail.jpg                                            ; image/jpg                   ;                                          ;   ""   ;
+	
+					; tourism-thumbnail.jpg       	        		; tourism-thumbnail.jpg        	        ; $siteResource/tourism-thumbnail.jpg                                                   ; image/jpg                   ;                                          ;   ""   ;
+                    ; culture-entertainment-thumbnail.jpg     		; culture-entertainment-thumbnail.jpg   ; $siteResource/culture-entertainment-thumbnail.jpg                                     ; image/jpg                   ;                                          ;   ""   ;
+                    ; sports-thumbnail.jpg    		        		; sports-thumbnail.jpg       	        ; $siteResource/sports-thumbnail.jpg                                                    ; image/jpg                   ;                                          ;   ""   ;
+	
+                    ; digital-content-thumbnail.jpg      	   		; digital-content-thumbnail.jpg        	; $siteResource/digital-content-thumbnail.jpg                                           ; image/jpg                   ;                                          ;   ""   ;
+                    ; digital-infrastructure-thumbnail.jpg  		; digital-infrastructure-thumbnail.jpg  ; $siteResource/digital-infrastructure-thumbnail.jpg                                    ; image/jpg                   ;                                          ;   ""   ;
+                    ; technology-platforms-thumbnail.jpg    		; technology-platforms-thumbnail.jpg    ; $siteResource/technology-platforms-thumbnail.jpg                                      ; image/jpg                   ;                                          ;   ""   ;
+	
+					; chemicals-thumbnail.jpg  	    				; chemicals-thumbnail.jpg				; $siteResource/chemicals-thumbnail.jpg                   								; image/jpg                   ;                                          ;   ""   ;
+					; education-thumbnail.jpg  	    				; education-thumbnail.jpg				; $siteResource/education-thumbnail.jpg                   								; image/jpg                   ;                                          ;   ""   ;
+					; innovation-thumbnail.jpg  	    			; innovation-thumbnail.jpg				; $siteResource/innovation-thumbnail.jpg                   								; image/jpg                   ;                                          ;   ""   ;
+					; mining-metals-thumbnail.jpg  	    			; mining-metals-thumbnail.jpg			; $siteResource/mining-metals-thumbnail.jpg                 							; image/jpg                   ;                                          ;   ""   ;
+					; real-estate-thumbnail.jpg  	    			; real-estate-thumbnail.jpg				; $siteResource/real-estate-thumbnail.jpg                   							; image/jpg                   ;                                          ;   ""   ;
+					; financial-thumbnail.jpg 	    				; financial-thumbnail.jpg				; $siteResource/financial-thumbnail.jpg                   								; image/jpg                   ;                                          ;   ""   ;
+					; transport-logistics-thumbnail.jpg  	    	; transport-logistics-thumbnail.jpg		; $siteResource/transport-logistics-thumbnail.jpg           							; image/jpg                   ;                                          ;   ""   ;
+
+# Sector Small Logo Images
+					; energy.png                    				; energy.png                    		; $siteResource/energy.png                                                          	; image/png                   ;                                          ;   ""   ;
+				    ; conventional-energy.png       				; conventional-energy.png       		; $siteResource/conventional-energy.png                                             	; image/png                   ;                                          ;   ""   ;
+                    ; renewable-energy.png          				; renewable-energy.png          		; $siteResource/renewable-energy.png                                                	; image/png                   ;                                          ;   ""   ;
+                    ; energy-saving.png         					; energy-saving.png         			; $siteResource/energy-saving.png                                                   	; image/png                   ;                                          ;   ""   ;
+			
+ 					; environment-services.png 						; environment-services.png 				; $siteResource/environment-services.png   												; image/png                   ;                                          ;   ""   ;							
+                    ; water.png                     				; water.png                     		; $siteResource/water.png                                                           	; image/png                   ;                                          ;   ""   ;
+                    ; waste-management.png          				; waste-management.png          		; $siteResource/waste-management.png                                                	; image/png                   ;                                          ;   ""   ;
+				
+                    ; industrial-manufacturing.png         			; industrial-manufacturing.png      	; $siteResource/industrial-manufacturing.png                                        	; image/png                   ;                                          ;   ""   ;
+                    ; automotives.png       	    				; automotives.png         	    		; $siteResource/automotives.png                                                     	; image/png                   ;                                          ;   ""   ;
+                    ; food-processing.png           				; food-processing.png           		; $siteResource/food-processing.png                                                 	; image/png                   ;                                          ;   ""   ;
+                    ; industrial-spareparts.png     				; industrial-spareparts.png     		; $siteResource/industrial-spareparts.png                                           	; image/png                   ;                                          ;   ""   ;
+			
+                    ; healthcare-life-sciences.png         			; healthcare-life-sciences.png      	; $siteResource/healthcare-life-sciences.png                                        	; image/png                   ;                                          ;   ""   ;
+					; medical-services.png        					; medical-services.png         			; $siteResource/medical-services.png                                                	; image/png                   ;                                          ;   ""   ;
+                    ; medical-technologies.png      				; medical-technologies.png      		; $siteResource/medical-technologies.png                                            	; image/png                   ;                                          ;   ""   ;
+
+                    ; pharmacuticals.png    						; pharmacuticals.png        			; $siteResource/pharmacuticals.png                                                  	; image/png                   ;                                          ;   ""   ;
+					; chemicals.png         						; chemicals.png                 		; $siteResource/chemicals.png                                                       	; image/png                   ;                                          ;   ""   ;														
+					; real-estate.png        						; real-estate.png               		; $siteResource/real-estate.png                                                     	; image/png                   ;                                          ;   ""   ;
+                    ; education.png          						; education.png                 		; $siteResource/education.png                                                       	; image/png                   ;                                          ;   ""   ;
+                    ; innovation.png         						; innovation.png                		; $siteResource/innovation.png                                                      	; image/png                   ;                                          ;   ""   ;
+                    ; financial.png          						; financial.png          	    		; $siteResource/financial.png                                                       	; image/png                   ;                                          ;   ""   ;
+                    ; transport-logistics.png         				; transport-logistics.png          		; $siteResource/transport-logistics.png                                             	; image/png                   ;                                          ;   ""   ;
+                    ; mining-metals.png      						; mining-metals.png             		; $siteResource/mining-metals.png                                                   	; image/png                   ;                                          ;   ""   ;
+			
+                    ; tourism-culture-entertainment.png   			; tourism-culture-entertainment.png 	; $siteResource/tourism-culture-entertainment.png         								; image/png                   ;                                          ;   ""   ;
+					; tourism.png       	        				; tourism.png        	        		; $siteResource/tourism.png                                                         	; image/png                   ;                                          ;   ""   ;
+                    ; culture-entertainment.png     				; culture-entertainment.png     		; $siteResource/culture-entertainment.png                                           	; image/png                   ;                                          ;   ""   ;
+                    ; sports.png    		        				; sports.png       	            		; $siteResource/sports.png                                                          	; image/png                   ;                                          ;   ""   ;
+			
+                    ; information-technology.png        			; information-technology.png        	; $siteResource/information-technology.png                                          	; image/png                   ;                                          ;   ""   ;
+                    ; digital-content.png      	    				; digital-content.png        			; $siteResource/digital-content.png                                                 	; image/png                   ;                                          ;   ""   ;
+                    ; digital-infrastructure.png    				; digital-infrastructure.png    		; $siteResource/digital-infrastructure.png                                          	; image/png                   ;                                          ;   ""   ;
+                    ; technology-platforms.png      				; technology-platforms.png      		; $siteResource/technology-platforms.png                                            	; image/png                   ;                                          ;   ""   ;
+			
+                    ; aerospace-defense.png                    		; aerospace-defense.png            		; $siteResource/aerospace-defense.png                                               	; image/png                   ;                                          ;   ""   ;
+
+# Sector Normal Images
+					; energy-normal.png        						; energy-normal.png             		; $siteResource/energy-normal.png                                  						; image/png                   ;                                          ;   ""   ;
+					; environment-services-normal.png 				; environment-services-normal.png 		; $siteResource/environment-services-normal.png   										; image/png                   ;                                          ;   ""   ;												
+					; industrial-manufacturing-normal.png			; industrial-manufacturing-normal.png	; $siteResource/industrial-manufacturing-normal.png										; image/png                   ;                                          ;   ""   ;
+					; healthcare-life-sciences-normal.png			; healthcare-life-sciences-normal.png	; $siteResource/healthcare-life-sciences-normal.png										; image/png                   ;                                          ;   ""   ;					
+					; chemicals-normal.png							; chemicals-normal.png					; $siteResource/chemicals-normal.png													; image/png                   ;                                          ;   ""   ;
+					; real-estate-normal.png						; real-estate-normal.png				; $siteResource/real-estate-normal.png													; image/png                   ;                                          ;   ""   ;
+					; education-normal.png							; education-normal.png					; $siteResource/education-normal.png													; image/png                   ;                                          ;   ""   ;
+					; innovation-normal.png							; innovation-normal.png					; $siteResource/innovation-normal.png													; image/png                   ;                                          ;   ""   ;
+					; financial-normal.png							; financial-normal.png					; $siteResource/financial-normal.png													; image/png                   ;                                          ;   ""   ;
+					; transport-logistics-normal.png				; transport-logistics-normal.png		; $siteResource/transport-logistics-normal.png											; image/png                   ;                                          ;   ""   ;
+					; mining-metals-normal.png						; mining-metals-normal.png				; $siteResource/mining-metals-normal.png												; image/png                   ;                                          ;   ""   ;
+					; tourism-culture-entertainment-normal.png		; tourism-culture-entertainment-normal.png	; $siteResource/tourism-culture-entertainment-normal.png							; image/png                   ;                                          ;   ""   ;
+					; information-technology-normal.png				; information-technology-normal.png		; $siteResource/information-technology-normal.png										; image/png                   ;                                          ;   ""   ;
+					; food-processing-normal.png					; food-processing-normal.png			; $siteResource/food-processing-normal.png												; image/png                   ;                                          ;   ""   ;
+					; pharmacuticals-normal.png						; pharmacuticals-normal.png				; $siteResource/pharmacuticals-normal.png												; image/png                   ;                                          ;   ""   ;
+						                     
+
+INSERT_UPDATE Category	; code[unique = true]				; picture(code, $catalogVersion)			; thumbnail(code, $catalogVersion)  	; others(code, $catalogVersion)				; logo(code, $catalogVersion)			; normal(code, $catalogVersion)				; $catalogVersion	;
+						; energy                 			; energy-logo.png                       	;                                   	; energy-banner.jpg               			; energy.png							; energy-normal.png							;					;
+						; conventional-energy          		; conventional-energy-logo.png          	; conventional-energy-thumbnail.jpg 	; energy-banner.jpg                 		; conventional-energy.png				;											;					;
+						; renewable-energy             		; renewable-energy-logo.png             	; renewable-energy-thumbnail.jpg    	; energy-banner.jpg                 		; renewable-energy.png					;											;					;
+						; energy-saving            			; energy-saving-logo.png                	; energy-savings-thumbnail.jpg      	; energy-banner.jpg                 		; energy-saving.png  					;											;					;
+					
+						; environment-services				; environment-services-logo.png  			;										; environment-services-banner.jpg 			; environment-services.png				; environment-services-normal.png			;					;
+						; water                        		; water-logo.png                        	; water-thumbnail.jpg               	; environment-services-banner.jpg   		; water.png              				;											;					;
+						; waste-management             		; waste-management-logo.png             	; waste-management-thumbnail.jpg    	; environment-services-banner.jpg 			; waste-management.png					;											;					;
+			
+						; industrial-manufacturing     		; industrial-manufacturing-logo.png     	;										; industrial-manufacturing-banner.jpg		; industrial-manufacturing.png			; industrial-manufacturing-normal.png		;					;
+						; automotives                  		; automotives-logo.png                 		; automotives-thumbnail.jpg   			; industrial-manufacturing-banner.jpg		; automotives.png						;											;					;
+						; food-processing              		; food-processing-logo.png              	; food-processing-thumbnail.jpg			; industrial-manufacturing-banner.jpg		; food-processing.png					; food-processing-normal.png				;					;
+						; industrial-spareparts        		; industrial-spareparts-logo.png       		; industrial-spareparts-thumbnail.jpg	; industrial-manufacturing-banner.jpg		; industrial-spareparts.png				;											;					;
+			
+						; healthcare-life-sciences     		; healthcare-life-sciences-logo.png     	;                               		; healthcare-life-sciences-banner.jpg		; healthcare-life-sciences.png			; healthcare-life-sciences-normal.png		;					;
+						; medical-services             		; medical-services-logo.png            		; medical-services-thumbnail.jpg    	; healthcare-life-sciences-banner.jpg		; medical-services.png					;											;					;
+						; medical-technologies         		; medical-technologies-logo.png        		; medical-technologies-thumbnail.jpg	; healthcare-life-sciences-banner.jpg		; medical-technologies.png				;											;					;		  
+
+						; pharmacuticals               		; pharmacuticals-logo.png            		; pharmacuticals-thumbnail.jpg 			; Pharmacuticals-banner.jpg	            	; pharmacuticals.png 					; pharmacuticals-normal.png					;					;						
+						; chemicals                    		; chemicals-logo.png						; chemicals-thumbnail.jpg           	; chemicals-banner.jpg            			; chemicals.png							; chemicals-normal.png						;					;
+						; real-estate                  		; real-estate-logo.png                  	; real-estate-thumbnail.jpg         	; real-estate-banner.jpg		  			; real-estate.png						; real-estate-normal.png					;					;
+						; education                    		; education-logo.png                    	; education-thumbnail.jpg		    	; education-banner.jpg            			; education.png							; education-normal.png						;					;
+						; innovation                   		; innovation-logo.png                   	; innovation-thumbnail.jpg          	; innovation-banner.jpg           			; innovation.png						; innovation-normal.png						;					;
+						; financial                    		; financial-logo.png                    	; financial-thumbnail.jpg           	; financial-banner.jpg            			; financial.png							; financial-normal.png						;					;
+						; transport-logistics          		; transport-logistics-logo.png          	; transport-logistics-thumbnail.jpg 	; transport-logistics-banner.jpg  			; transport-logistics.png 				; transport-logistics-normal.png			;					;
+						; mining-metals                		; mining-metals-logo.png                	; mining-metals-thumbnail.jpg       	; mining-metals-banner.jpg        			; mining-metals.png						; mining-metals-normal.png					;					;
+			
+						; tourism-culture-entertainment 	; tourism-culture-entertainment-logo.png	;	                                	; tourism-culture-entertainment-banner.jpg	; tourism-culture-entertainment.png		; tourism-culture-entertainment-normal.png	;					;
+						; tourism                      		; tourism-logo.png                    		; tourism-thumbnail.jpg					; tourism-culture-entertainment-banner.jpg	; tourism.png							;											;					;
+						; culture-entertainment        		; culture-entertainment-logo.png 			; culture-entertainment-thumbnail.jpg   ; tourism-culture-entertainment-banner.jpg 	; culture-entertainment.png				;											;					;
+						; sports                       		; sports-logo.png                       	; sports-thumbnail.jpg					; tourism-culture-entertainment-banner.jpg	; sports.png							;											;					;
+							
+						; information-technology       		; information-technology-logo.png       	;                                    	; information-technology-banner.jpg			; information-technology.png			; information-technology-normal.png			;					;
+						; digital-content              		; digital-content-logo.png              	; digital-content-thumbnail.jpg		 	; information-technology-banner.jpg    		; digital-content.png					;											;					;
+						; digital-infrastructure       		; digital-infrastructure-logo.png       	; digital-infrastructure-thumbnail.jpg  ; information-technology-banner.jpg 		; digital-infrastructure.png			;											;					;
+						; technology-platforms         		; technology-platforms-logo.png         	; technology-platforms-thumbnail.jpg 	; information-technology-banner.jpg 		; technology-platforms.png				;											;					;
+                       
+					    ; human-capital-innovation      	; education-logo.png                    	; innovation-thumbnail.jpg              ; innovation-banner.jpg                 	; education.png                 		; education-normal.png          			;                   ;														
+						; aerospace-defense             	; aerospace-defense-logo.png            	; industrial-spareparts-thumbnail.jpg   ; industrial-manufacturing-banner.jpg		; aerospace-defense.png         		; aerospace-defense-logo.png    			;                   ;
+						

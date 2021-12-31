@@ -1,0 +1,240 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#
+# Import the CMS content for the site emails
+#
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default = $contentCatalog]), CatalogVersion.version[default = Staged])[default = $contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailPackageName = com.sap.ibso.eservices.facades.process.email.context
+$emailResource = jar:com.sap.ibso.eservices.core.setup.CoreSystemSetup&/sagiacore/import/emails
+$lang = en
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$jarResourceCms = $config-jarResourceCmsValue
+
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; CustomerRegistrationEmailTemplate ; Customer Registration Email Template    ; true ; customerRegistrationEmail ; sagia_Email_Customer_Registration_Subject ; sagia_Email_Customer_Registration_Body ; EmailPage
+; ; AppointmentEmailTemplate          ; Appointment Confirmation Email Template ; true ; appointmentEmail          ; sagia_Email_Appointment_Subject           ; sagia_Email_Appointment_Body           ; EmailPage
+; ; ContactEmailUpdateTemplate        ; Email Update Confirmation Email Template ; true ; contactUpdateEmail       ; sagia_Email_Update_Subject                ; sagia_Email_Update_Body                ; EmailPage
+; ; ForgottenPasswordEmailTemplate    ; Forgotten Password Email Template       ; true ; forgottenPasswordEmail    ; sagia_Email_Forgotten_Password_Subject    ; sagia_Email_Forgotten_Password_Body    ; EmailPage
+; ; SupportVisitEmailTemplate         ; Support Visit Email Template            ; true ; supportVisitEmail         ; sagia_Email_SupportVisit_Subject          ; sagia_Email_SupportVisit_Body          ; EmailPage
+
+# Templates for CMS Cockpit Page Edit
+UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; ; CustomerRegistrationEmailTemplate ; $jarResourceCms/structure-view/structure_customerRegistrationEmailTemplate.vm
+; ; AppointmentEmailTemplate          ; $jarResourceCms/structure-view/structure_appointmentEmailTemplate.vm
+; ; ContactEmailUpdateTemplate          ; $jarResourceCms/structure-view/structure_contactUpdateEmailTemplate.vm
+; ; SupportVisitEmailTemplate          ; $jarResourceCms/structure-view/structure_supportVisitEmailTemplate.vm
+; ; ForgottenPasswordEmailTemplate    ; $jarResourceCms/structure-view/structure_forgottenPasswordEmailTemplate.vm
+
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'CustomerRegistrationEmailTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'AppointmentEmailTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'ContactEmailUpdateTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'ForgottenPasswordEmailTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+# Create Content Slots
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; name; active
+; ; EmailTopSlot      ; Default Email Top Slot    ; true
+; ; EmailBottomSlot   ; Default Email Bottom Slot ; true
+; ; EmailSiteLogoSlot ; Default Email Site Slot   ; true
+
+# Bind Content Slots to Email Page Templates
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'CustomerRegistrationEmailTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-CustomerRegistrationEmail      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-CustomerRegistrationEmail    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-CustomerRegistrationEmail ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Bind Content Slots to Email Page Templates
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'AppointmentEmailTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-AppointmentEmail      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-AppointmentEmail    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-AppointmentEmail ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Bind Content Slots to Email Page Templates
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'ContactEmailUpdateTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-ContactUpdateEmail      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-ContactUpdateEmail    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-ContactUpdateEmail ; BottomContent ; ; EmailBottomSlot   ; true
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'ForgottenPasswordEmailTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-ForgottenPasswordEmail      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-ForgottenPasswordEmail    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-ForgottenPasswordEmail ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Bind Content Slots to Email Page Templates
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'SupportVisitEmailTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-SupportVisitEmail      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-SupportVisitEmail    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-SupportVisitEmail ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@misa.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; CustomerRegistrationEmail ; Customer Registration Email ; CustomerRegistrationEmailTemplate ; true ; ; ;
+; ; AppointmentEmail          ; Appointment Email           ; AppointmentEmailTemplate          ; true ; ; ;
+; ; ContactUpdateEmail        ; Contact Update Email        ; ContactEmailUpdateTemplate        ; true ; ; ;
+; ; SupportVisitEmail         ; SupportVisit Email          ; SupportVisitEmailTemplate         ; true ; ; ;
+; ; ForgottenPasswordEmail    ; Forgotten Password Email    ; ForgottenPasswordEmailTemplate    ; true ; ; ;
+
+# CMS components velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; sagia-CMSImageComponent-template     ; java.util.Map
+; sagia-BannerComponent-template       ; java.util.Map
+; sagia-SimpleBannerComponent-template ; java.util.Map
+; sagia-CMSLinkComponent-template      ; java.util.Map
+; sagia-CMSParagraphComponent-template ; java.util.Map
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; sagia_Email_Customer_Registration_Body    ; $emailPackageName.CustomerEmailContext
+; sagia_Email_Customer_Registration_Subject ; $emailPackageName.CustomerEmailContext
+; sagia_Email_Appointment_Body              ; $emailPackageName.AppointmentEmailContext
+; sagia_Email_Appointment_Subject           ; $emailPackageName.AppointmentEmailContext
+; sagia_Email_Update_Body                   ; $emailPackageName.ContactUpdateEmailContext
+; sagia_Email_Update_Subject                ; $emailPackageName.ContactUpdateEmailContext
+; sagia_Email_Forgotten_Password_Body       ; $emailPackageName.ForgottenPasswordEmailContext
+; sagia_Email_Forgotten_Password_Subject    ; $emailPackageName.ForgottenPasswordEmailContext
+; sagia_Email_SupportVisit_Body              ; $emailPackageName.SupportVisitEmailContext
+; sagia_Email_SupportVisit_Subject           ; $emailPackageName.SupportVisitEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; sagia-BannerComponent-template            ; "CMSBannerComponent Template"            ; $emailResource/email-bannerComponentTemplate.vm
+; sagia-CMSImageComponent-template          ; "CMSImageComponent Template"             ; $emailResource/email-cmsImageComponentTemplate.vm
+; sagia-CMSLinkComponent-template           ; "CMSLinkComponent Template"              ; $emailResource/email-cmsLinkComponentTemplate.vm
+; sagia-CMSParagraphComponent-template      ; "CMSParagraphComponent Template"         ; $emailResource/email-cmsParagraphComponentTemplate.vm
+; sagia-SimpleBannerComponent-template      ; "CMSSimpleBannerComponent Template"      ; $emailResource/email-bannerComponentTemplate.vm
+; sagia_Email_Customer_Registration_Body    ; "Customer Registration Email Body"       ; $emailResource/email-customerRegistrationBody.vm
+; sagia_Email_Customer_Registration_Subject ; "Customer Registration Email Subject"    ; $emailResource/email-customerRegistrationSubject.vm
+; sagia_Email_Appointment_Body              ; "Appointment Confirmation Email Body"    ; $emailResource/email-appointmentBody.vm
+; sagia_Email_Appointment_Subject           ; "Appointment Confirmation Email Subject" ; $emailResource/email-appointmentSubject.vm
+; sagia_Email_Update_Body                   ; "Contact Update Email Body"              ; $emailResource/email-updateEmailBody.vm
+; sagia_Email_Update_Subject                ; "Contact Update Email Subject"           ; $emailResource/email-updateEmailSubject.vm
+; sagia_Email_Forgotten_Password_Body       ; "Forgotten Password Email Body"          ; $emailResource/email-forgottenPasswordBody.vm
+; sagia_Email_Forgotten_Password_Subject    ; "Forgotten Password Email Subject"       ; $emailResource/email-forgottenPasswordSubject.vm
+; sagia_Email_SupportVisit_Body             ; "Support Visit Confirmation Email Body"    ; $emailResource/email-supportVisitBody.vm
+; sagia_Email_SupportVisit_Subject          ; "Support Visit Confirmation Email Subject" ; $emailResource/email-supportVisitSubject.vm
+
+# Preview Image for use in the CMS Cockpit
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]; mime; realfilename; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite = true]
+; ; EmailPageModel_preview ; text/gif ; EmailPageModel_preview.gif ; $jarResourceCms/preview-images/EmailPageModel_preview.gif
+
+UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; previewImage(code, $contentCV)
+; ; CustomerRegistrationEmail ; EmailPageModel_preview
+; ; AppointmentEmail          ; EmailPageModel_preview
+; ; ForgottenPasswordEmail    ; EmailPageModel_preview
+; ; SupportVisitEmail          ; EmailPageModel_preview
+
+
+################## Start EmailVerificationTemplate  #####################
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; EmailVerificationTemplate    ; Email Verification Template       ; true ; emailVerification    ; sagia_Email_Verification_Subject    ; sagia_Email_Verification_Body    ; EmailPage
+
+# Templates for CMS Cockpit Page Edit
+UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; ; EmailVerificationTemplate    ; $jarResourceCms/structure-view/structure_emailVerificationTemplate.vm
+
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'EmailVerificationTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'EmailVerificationTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-EmailVerification      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-EmailVerification    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-EmailVerification ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@misa.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; EmailVerification    ; Email Verification    ; EmailVerificationTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; sagia_Email_Verification_Body       ; $emailPackageName.EmailVerificationContext
+; sagia_Email_Verification_Subject    ; $emailPackageName.EmailVerificationContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; sagia_Email_Verification_Body       ; "Email Verification Body"          ; $emailResource/email-emailVerificationBody.vm
+; sagia_Email_Verification_Subject    ; "Email Verification Subject"       ; $emailResource/email-emailVerificationSubject.vm
+
+
+# Preview Image for use in the CMS Cockpit
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]; mime; realfilename; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite = true]
+; ; EmailPageModel_preview ; text/gif ; EmailPageModel_preview.gif ; $jarResourceCms/preview-images/EmailPageModel_preview.gif
+
+UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; previewImage(code, $contentCV)
+; ; EmailVerification ; EmailPageModel_preview
+
+################## End EmailVerificationTemplate  ##################### 
+
+################## Start Two Factor Authentication Email Template  #####################
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; TwoFactorAuthenticationTemplate    ; Two Factor Authentication Template       ; true ; TwoFactorAuthenticationTemplate    ; sagia_Email_Two_Factor_Authentication_Subject    ; sagia_Email_Two_Factor_Authentication_Body    ; EmailPage
+
+# Templates for CMS Cockpit Page Edit
+UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; ; TwoFactorAuthenticationTemplate    ; $jarResourceCms/structure-view/structure_emailTwoFactorAuthenticationTemplate.vm
+
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'TwoFactorAuthenticationTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'TwoFactorAuthenticationTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-TwoFactorAuthentication      ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-TwoFactorAuthentication    ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-TwoFactorAuthentication ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@misa.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; TwoFactorAuthentication    ; Email Two Factor Authentication    ; TwoFactorAuthenticationTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; sagia_Email_Two_Factor_Authentication_Body       ; $emailPackageName.TwoFactorAuthenticationEmailContext
+; sagia_Email_Two_Factor_Authentication_Subject    ; $emailPackageName.TwoFactorAuthenticationEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; sagia_Email_Two_Factor_Authentication_Body       ; "Email Two Factor Authentication Body"          ; $emailResource/email-emailTwoFactorAuthenticationBody.vm
+; sagia_Email_Two_Factor_Authentication_Subject    ; "Email Two Factor Authentication Subject"       ; $emailResource/email-emailTwoFactorAuthenticationSubject.vm
+
+################## End EmailVerificationTemplate  #####################

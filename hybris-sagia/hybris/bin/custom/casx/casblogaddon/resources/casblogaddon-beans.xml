@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2000-2016 hybris AG
+ All rights reserved.
+
+ This software is the confidential and proprietary information of hybris
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with hybris.
+-->
+
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+	<bean class="com.casblogaddon.data.BlogPostComponentData">
+
+		<property name="blogType" type="com.casblogaddon.enums.BlogType" />
+		<property name="title" type="java.lang.String" />
+		<property name="postUrl" type="java.lang.String" />
+		<property name="tag" type="java.lang.String" />
+		<property name="date" type="java.util.Date" />
+		<property name="promoteToIndexPage" type="java.lang.Boolean" />
+		<property name="shortContent" type="java.lang.String" />
+		<property name="extractedContent" type="java.lang.String"/>
+		<property name="startDate" type="java.util.Date"/>
+		<property name="endDate" type="java.util.Date"/>
+		<property name="uniqueCode" type="java.lang.String"/>
+		<property name="subscribedUsers" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.facades.data.BlogTicketData" extends="de.hybris.platform.customerticketingfacades.data.TicketData">
+		<property name="blogComment" type="String" />
+		<property name="blogPostComponent" type="com.casblogaddon.model.BlogPostComponentModel" />
+	</bean>
+
+	<bean class="de.hybris.platform.customerticketingfacades.data.TicketData">
+		<property name="blogInfo" type="com.casblogaddon.data.BlogPostComponentData" />
+	</bean>
+
+</beans>

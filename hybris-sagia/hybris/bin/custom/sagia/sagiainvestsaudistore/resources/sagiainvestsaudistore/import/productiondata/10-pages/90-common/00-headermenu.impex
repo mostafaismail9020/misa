@@ -1,0 +1,80 @@
+$contentCatalog = sagiaContentCatalog
+$productCatalog = sagiaProductCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$productCV = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+#Url links
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]   ; name            ; linkName[lang = en]; linkName[lang = ar]; url                          ; $contentCV[unique = true]
+                              ; language-switch-link ; Language Switch ; العربية            ; English            ; /ar                          ;
+                              ; vision-link          ; Vision 2030     ;                    ;                    ; http://vision2030.gov.sa/ar/ ;
+
+# Content Pages Menu Links, link details are in file
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]        ; name                      ; linkName[lang = en]     ; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; homepage-link             ; Homepage                  ;                         ;                    ; homepage                    ;
+                              ; sector-opportunities-link ; Sectors And Opportunities ; Sectors & Opportunities ; القطاعات والفرص    ; sectors-opportunities       ;
+                              ; why-saudi-arabia-link     ; Why Saudi Arabia          ; Why Saudi Arabia        ; الاستثمار بالمملكة ; why-saudi-arabia            ;
+                              ; investors-services-link   ; Investors Services        ; Investors Services      ; خدمات المستثمرين   ; investor-services           ;
+                              ; about-link                ; About                     ; About                   ; من نحن             ; about-invest-saudi          ;
+                              ; about-is-link             ; Invest Saudi              ; Invest Saudi            ; استثمر في السعودية ; about-invest-saudi          ;
+                              ; about-moi-link            ; Ministry Of Investment    ; Ministry Of Investment  ; وزارة الاستثمار    ; ministry-investments        ;
+                              ; about-vision-2030-link    ; Vision 2030               ; Vision 2030             ; رؤية ٢٠٣٠          ; about-vision-2030           ;
+                              ; about-brand-policy-link   ; Brand Policy              ; Brand Policy            ; سياسة الهوية       ; brand-policy                ;
+                              ; contact-link              ; Contact                   ; Contact                 ; تواصل معنا         ; contact                     ;
+                              ; videos-link               ; Videos                    ; Videos                  ; Videos             ; videos                      ;
+                              ; webinar-videos-link       ; Webinar Videos            ; Webinar                 ; Webinar            ; webinar-videos              ;
+
+# Categories Menu Links
+#INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name; category(code, $productCV); linkName[lang = en]; linkName[lang = ar]; $contentCV[unique = true]
+#                              ; sector-opportunities-link ; Sectors And Opportunities ; sector-opportunities ; Sectors & Opportunities ; القطاعات والفرص ;
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]           ; name                    ; title[lang = en]        ; title[lang = ar]        ; parent(uid, $contentCV); &nodeRef                     ; children(uid, $contentCV)[mode = append]; links(uid, $contentCV); $contentCV[unique = true]
+                               ; root                         ; Root                    ;                         ;                         ;                        ;                              ;                                         ;                       ;
+                               ; header-menu                  ; Portal Header Menu      ; Portal Header Menu      ; Portal Header Menu      ; root                   ; PortalHeaderMenu             ;                                         ;                       ;
+                               ; why-saudi-arabia-navnode     ; Why Saudi Arabia        ; Why Saudi Arabia        ; Why Saudi Arabia        ; header-menu            ; why-saudi-arabia-navnode     ;                                         ;                       ;
+                               ; sector-opportunities-navnode ; Sectors & Opportunities ; Sectors & Opportunities ; Sectors & Opportunities ; header-menu            ; sector-opportunities-navnode ;                                         ;                       ;
+                               ; investors-services-navnode   ; Investors Services      ; Investors Services      ; Investors Services      ; header-menu            ; investors-services-navnode   ;                                         ;                       ;
+                               ; about-navnode                ; About                   ; About                   ; About                   ; header-menu            ; about-navnode                ;                                         ;                       ;
+                               ; about-is-navnode             ; Invest Saudi            ; Invest Saudi            ; Invest Saudi            ; about-navnode          ; about-is-navnode             ;                                         ;                       ;
+                               ; about-moi-navnode            ; Ministry Of Investment  ; Ministry Of Investment  ; Ministry Of Investment  ; about-navnode          ; about-moi-navnode            ;                                         ;                       ;
+                               ; about-vision-2030-navnode    ; Vision 2030             ; Vision 2030             ; Vision 2030             ; about-navnode          ; about-vision-2030-navnode    ;                                         ;                       ;
+                               ; about-brand-policy-navnode   ; Brand Policy            ; Brand Policy            ; Brand Policy            ; about-navnode          ; about-brand-policy-navnode   ;                                         ;                       ;
+                               ; contact-navnode              ; Contact                 ; Contact                 ; Contact                 ; header-menu            ; contact-navnode              ;                                         ;                       ;
+                               ; videos-navnode               ; Videos                  ; Videos                  ; Videos                  ; header-menu            ; videos-navnode               ;                                         ;                       ;
+                               ; webinar-videos-navnode       ; Webinars                ; Webinars                ; Webinars                ; videos-navnode         ; webinar-videos-navnode       ;                                         ;                       ;
+                               ; language-switch-navnode      ; Language Switch         ; Language Switch         ; Language Switch         ; header-menu            ; language-switch-navnode      ;                                         ;                       ;
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true][mode = replace]; name               ; title[lang = en]   ; parent(uid, $contentCV); &nodeRef         ; children(uid, $contentCV)[mode = replace]                                                                                                             ; links(uid, $contentCV); $contentCV[unique = true]
+                               ; header-menu                       ; Portal Header Menu ; Portal Header Menu ; root                   ; PortalHeaderMenu ; why-saudi-arabia-navnode,sector-opportunities-navnode,investors-services-navnode,about-navnode,contact-navnode,videos-navnode,language-switch-navnode ;                       ;
+
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]         ; name                               ; navigationNode(&nodeRef)     ; item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV); $contentCV[unique = true]
+                                ; why-saudi-arabia-entry     ; Why Saudi Arabia Entry             ; why-saudi-arabia-navnode     ; why-saudi-arabia-link                                  ;
+                                ; sector-opportunities-entry ; Sectors And Opportunities Entry    ; sector-opportunities-navnode ; sector-opportunities-link                              ;
+                                ; investors-services-entry   ; Investors Services Entry           ; investors-services-navnode   ; investors-services-link                                ;
+                                ; about-entry                ; About Entry                        ; about-navnode                ; about-link                                             ;
+                                ; about-is-entry             ; About Invest Saudi Entry           ; about-is-navnode             ; about-is-link                                          ;
+                                ; about-moi-entry            ; About Ministry Of Investment Entry ; about-moi-navnode            ; about-moi-link                                         ;
+                                ; about-vision-2030-entry    ; About Vision 2030 Entry            ; about-vision-2030-navnode    ; about-vision-2030-link                                 ;
+                                ; about-brand-policy-entry   ; About Brand Policy Entry           ; about-brand-policy-navnode   ; about-brand-policy-link                                ;
+                                ; contact-entry              ; Contact Entry                      ; contact-navnode              ; contact-link                                           ;
+                                ; videos-entry               ; VideosEntry                        ; videos-navnode               ; videos-link                                            ;
+                                ; webinar-videos-entry       ; WebinarVideosEntry                 ; webinar-videos-navnode       ; webinar-videos-link                                    ;
+                                ; language-switch-entry      ; Language Switch Entry              ; language-switch-navnode      ; language-switch-link                                   ;
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText                             ; $contentCV[unique = true]
+                   ; logo-en.svg        ; logo-en.svg ; $siteResource/logo-en.svg                                                   ; image/svg+xml               ;                                          ; Invest Saudi                        ;
+                   ; logo-ar.svg        ; logo-ar.svg ; $siteResource/logo-ar.svg                                                   ; image/svg+xml               ;                                          ; Invest Saudi                        ;
+                   ; vision.svg         ; vision.svg  ; $siteResource/roya.svg                                                      ; image/svg+xml               ;                                          ; Go to the portal of the Vision 2030 ;
+
+
+INSERT_UPDATE InvestSaudiNavigationBarComponent; uid[unique = true] ; name               ; navigationNode(&nodeRef); logoImage(code, $contentCV)[lang = en]; logoImage(code, $contentCV)[lang = ar]; logoLink (uid, $contentCV); visionImage(code, $contentCV); visionLink(uid, $contentCV); &componentRef ; $contentCV[unique = true]
+                                               ; portal-header-menu ; Portal Header Menu ; PortalHeaderMenu        ; logo-en.svg                           ; logo-ar.svg                           ; homepage-link             ; vision.svg                   ; vision-link                ; navigationbar ;
+
+
+# Create Content Slots
+UPDATE ContentSlot; uid[unique = true]; cmsComponents(&componentRef); $contentCV[unique = true]
+                  ; PortalHeaderSlot  ; navigationbar               ;

@@ -1,0 +1,93 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ServiceBpHDRs('2000400')",
+      "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ServiceBpHDRs('2000400')",
+      "type": "ZUI5_SAGIA_SRV.ServiceBpHDR"
+    },
+    "SrID": "2000400",
+    "SrGuid": "005056B1-1C89-1EE8-8B84-11F4D5E447F3",
+    "LicID": "",
+    "LicGuid": "00000000-0000-0000-0000-000000000000",
+    "LicType": "",
+    "LicTypeDesc": "",
+    "BpID": "613392",
+    "BpGuid": "DEE7AE92-B4E7-D6F1-AA4D-0015C588C2FA",
+    "SrCrDate": "\/Date(1521504000000)\/",
+    "SrStCode": "E0001",
+    "SrStDesc": "In Process",
+    "LicExDate": null,
+    "ValidFrom": null,
+    "TransType": "ZSR1",
+    "Action": "00",
+    "BpChangeID": "GM",
+    "Changable": false,
+    "SalesrepCount": "3 ",
+    "SrvBPHdrToAttachNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='2000400',DocumentID='005056B11C891EE88B8412114A77E7F3',Stage='')",
+            "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='2000400',DocumentID='005056B11C891EE88B8412114A77E7F3',Stage='')",
+            "type": "ZUI5_SAGIA_SRV.ContentHDR"
+          },
+          "ContentType": "ATTACHMENT",
+          "ObjectId": "2000400",
+          "ObjectGuid": "005056B1-1C89-1EE8-8B84-11F4D5E447F3",
+          "Filename": "Application Signed And Stamped From CoC.pdf",
+          "Filesize": "0000001544",
+          "Mimetype": "application/pdf",
+          "DocumentID": "005056B11C891EE88B8412114A77E7F3",
+          "Crtdby": "TUSER10",
+          "Crtdon": "\/Date(1521504000000)\/",
+          "DocKeyID": "1332",
+          "ShDocID": "Applicatio",
+          "Stage": "",
+          "FollowupSrvHDR": {
+            "__deferred": {
+              "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ContentHDRs(ObjectId='2000400',DocumentID='005056B11C891EE88B8412114A77E7F3',Stage='')/FollowupSrvHDR"
+            }
+          }
+        }
+      ]
+    },
+    "SrvBPHdrToBPContactNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/BPContactDetails(SrID='',BpID='')",
+            "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/BPContactDetails(SrID='',BpID='')",
+            "type": "ZUI5_SAGIA_SRV.BPContactDetail"
+          },
+          "SrID": "",
+          "SrGuid": "00000000-0000-0000-0000-000000000000",
+          "BpID": "",
+          "BpGuid": "00000000-0000-0000-0000-000000000000",
+          "ContactType": "GM",
+          "FirstName": "Vij",
+          "MiddleName": "",
+          "LastName": "Kan",
+          "MobileNumber": "+966942324",
+          "TelNumber": "",
+          "City": "",
+          "Email": "v.j@s.com",
+          "NationalID": "12133232322",
+          "DocumentID": "005056B11C891EE88B8412114A7787F3",
+          "GosiID": "",
+          "PrimaryContact": "",
+          "Action": "",
+          "Region": "",
+          "FullName": ""
+        }
+      ]
+    },
+    "SrvBPHdrToUploadAssoNav": {
+      "__deferred": {
+        "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SAGIA_SRV/ServiceBpHDRs('2000400')/SrvBPHdrToUploadAssoNav"
+      }
+    },
+    "SrvBPHdrToTextNav": {
+      "results": []
+    }
+  }
+}

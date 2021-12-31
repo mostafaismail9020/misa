@@ -1,0 +1,261 @@
+$page = mining-metals
+$sector= mining-metals
+$template = portalSectorTemplate
+$pageName = Mining and Metals
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media						   
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources																															   
+
+INSERT_UPDATE CategoryPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); $contentCV[unique = true]; defaultPage[default = 'false']; approvalStatus(code)[default = 'approved']
+                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ;                          ;                               ;
+
+INSERT_UPDATE CMSCategoryRestriction; uid[unique = true]                               ; categories(code, $catalogVersion); $contentCV[unique = true]; pages(uid, $contentCV)
+                                    ; sector-mining-metals-restriction ; mining-metals    ;                          ; mining-metals
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; name                                ; &componentRef                           ; $contentCV[unique = true]
+                                                  ; mining-metals-paragraph ; Mining and Metals Overview ; mining-metals-paragraph ;
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = en]
+                                           ; mining-metals-paragraph ;                          ; " 
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>										   
+<h3>Overview</h3>
+<p>The Mining and Metals processing sector has grown significantly over the last few years. Going forward, it has tremendous growth opportunities in line with Saudi Vision 2030's goal to have 'a mining sector contributing to the national economy at full potential'.</p>
+<p>&nbsp;</p>
+<p>In addition, the country is going through a large industrial and economic diversification that will grow resource-heavy manufacturing sectors such as industrial machinery, electrical equipment, automotive, etc., and thus lead to an increase in demand for metal and mineral products. Moreover, Saudi Arabia's proximity to other MENA countries puts local manufacturers in a great position to export to those countries. This large demand, coupled with the abundance of resources in Saudi soil, creates significant investment opportunities for private sector investors</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]                      ; $contentCV[unique = true]; description[lang = ar]
+                                           ; mining-metals-paragraph ;                          ; " 
+<section>
+  <div class='umb-grid'>
+    <div class='grid-section'>
+      <div>
+        <div class='container'>
+          <div class='row clearfix'>
+            <div class='col-md-12 column'>
+              <div>
+<h1 class='heading text-left mb-3 mt-2'>نظرة عامة</h1>
+<p>شهد قطاع المعادن والتعدين نمواً كبيراً خلال السنوات القليلة الماضية، وسيحظى هذا القطاع مستقبلًا بفرص نمو هائلة تماشياً مع رؤية 2030 للمملكة العربية السعودية ويجسدها توجه 'مساهمة قطاع التعدين في الاقتصاد الوطني بكامل طاقاته'.</p>
+<p>بالإضافة إلى ذلك، تمر البلاد بتنوع صناعي واقتصادي كبير &nbsp;من شأنه أن ينمّي قطاعات صناعية كثيفة الموارد،مثل: الآلات الصناعية والمعدات الكهربائية والسيارات وغيرها من الصناعات، مما يؤدي إلى زيادة الطلب على المعادن والمنتجات المعدنية. فضلاً عن قرب المملكة العربية السعودية من بلدان أخرى في منطقة الشرق الأوسط وشمال أفريقيا الذي يمنح المصنّعين المحليين مكانةً ممتازةً للتصدير إلى تلك البلدان. ويقدم هذا الطلب الكبير على المنتج السعودي إلى جانب وفرة الموارد الخام في التربة السعودية ـ فرصاً استثمارية كبيرة لمستثمري القطاع الخاص.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"
+
+
+INSERT_UPDATE InvestSaudiFactsFiguresComponent; uid[unique = true]; name         ; figures; unit; facts[lang=en] ; &componentRef; $contentCV[unique = true];
+								 
+                                     ; facts-figures-1-$sector      ; Facts Figures 1 ; 17%     ; Billion USD  ;contribution to GDP (15% Mining & 85% Midstream & Downstream)                      ; facts-figures-1-$sector ;
+                                     ; facts-figures-2-$sector      ; Facts Figures 2 ; 7     ; Billion USD                                      ;Gross Exports; facts-figures-2-$sector ;
+                                     ; facts-figures-3-$sector      ; Facts Figures 3 ;48    ; Minerals        ;have been identified in the Kingdom (at least 15 minerals that are commercially viable)                ; facts-figures-3-$sector ;
+                                     ; facts-figures-4-$sector      ; Facts Figures 4 ; 545    ; Mt         ;of Ore extracted                            ; facts-figures-4-$sector;
+                                     ; facts-figures-5-$sector      ; Facts Figures 5 ; 118,000      ; km^2 ;Total license areas                           ; facts-figures-5-$sector ;
+                                     ; facts-figures-6-$sector      ; Facts Figures 6 ; 250,000     ; Jobs ;Sector Employment              ; facts-figures-6-$sector ;
+ 
+
+INSERT_UPDATE InvestSaudiFactsFiguresContainer; uid[unique = true]      ; name                     ;title[lang=en]  ; simpleCMSComponents(&componentRef)  ; &componentRef  ;$contentCV[unique = true]
+                                     ; ff-container-$sector   ; Fatcs Figures Container  ;Fatcs & Figures ; facts-figures-1-$sector, facts-figures-2-$sector, facts-figures-3-$sector,facts-figures-4-$sector,facts-figures-5-$sector,facts-figures-6-$sector ; ff-container-$sector ;
+
+INSERT_UPDATE InvestSaudiContactUsComponent; uid[unique = true]  ; $contentCV; &componentRef
+                                           ; contact-form ;           ; contact-form
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; fo-explore-all-$sector ;                          ; Explore all          ; /sectors-opportunities/opportunities/?q=&sectorIds=mining-metals
+
+
+INSERT_UPDATE InvestSaudiFeaturedOpportunitiesComponent; uid[unique = true]       ; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                       ; fo-component-$sector ; Featured Opportunities Component ; Mining and Metals Opportunities ;3; fo-explore-all-$sector ; fo-component-$sector ;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]             ; $contentCV[unique = true]; linkName  [lang = en]; url;
+                              ; ss-explore-all-$sector ;                          ; Explore all          ; /about/success-stories/?q=&sectorIds=mining-metals
+
+
+INSERT_UPDATE InvestSaudiSuccessStoriesComponent; uid[unique = true]; name    ; title[lang = en];numberItensDisplayed;exploreAllURL(uid, $contentCV); &componentRef ; $contentCV[unique = true];
+                                                ; ss-component-$sector ; Success Story Component ; Mining and Metals Success Stories ;3; ss-explore-all-$sector ; ss-component-$sector;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                       ; $contentCV[unique = true]; linkName  [lang = en]             ; linkName[lang = ar]        ; url
+                              ; sector-proposition-1-link-$sector ;                          ; Mining & Metals         ; المعادن و التعدين ;
+#                              ; sector-proposition-2-link-$sector ;                          ; Information and Technology  ;                            ;
+
+INSERT_UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; name                        ; url(uid, $contentCV)                     ; index(); &componentRef                       ; $contentCV[unique = true]
+                                                   ; sector-proposition-1-$sector ; Sector Proposition 1 ; sector-proposition-1-link-$sector ; 1      ; sector-proposition-1-$sector ;
+#                                                   ; sector-proposition-2-$sector ; Sector Proposition 2 ; sector-proposition-2-link-$sector ; 2      ; sector-proposition-2-$sector ;
+																				   
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = en];
+                                            ; sector-proposition-1-$sector ;                          ; "
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p>Saudi Arabia&rsquo;s metals and mining sector is preparing for rapid expansion in accordance with Vison 2030 objectives. As the nation embarks on its journey to diversify from oil and gas, the role of the metals and mining sector is to gain increasing importance.</p>
+<p>Large market demand for metals and mineral products already exists, particularly from regional players but also within KSA itself. The Kingdom has a healthy reserve of untapped mining potential that can comfortably compensate for the diversification from the oil and gas sector.</p>
+<p>The private sector is poised to enter this market as favorable conditions now bestow foreign investors, keen to collaborate with KSA companies. Great cost advantages await metal and mining companies that take advantage of the strong demand local utilities, raw materials, suppliers, contractors and talent pool. With significant government commitment and support to enable the sector, investors can feel confident in the future growth of the KSA mining and minerals industry.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<p>Large market demand for metals &amp; mineral product</p>
+<p>Saudi Arabia has a healthy reserve of untapped mining potential valued at SAR 4.88 trillion (USD $ 1.3 trillion), with 20 million ounces of below ground gold reserves. The Kingdom currently accounts for a sizeable 37.9% of the Middle East and Africa&rsquo;s SAR 60 billion (USD 16 billion) metals and mining industry market.</p>
+<p>&nbsp;</p>
+<p>In addition, Saudi Arabia is going through economic and industrial growth, leading to significant increase in demand for mined commodities that serve key developing sectors.</p>
+<p>&nbsp;</p>
+<p>Access to natural resources to serve local and global market</p>
+<p>Saudi Arabia is considered the largest by landmass in the Middle East and 13 in the World, with an abundant and diverse range of over 48 minerals and metal resources, which at least 15 minerals that are commercially viable. With some of the world&rsquo;s largest reserves of phosphate and tantalum, Saudi Arabia is becoming a significant market for mineral extraction and processing. The central and northern parts of the country contain large amounts of bauxite, in addition to deposits of silver, zinc, copper, magnesite, and kaolin. KSA is the largest gold producer in the Middle East with a production of around 400,000oz in 2019. The mining potential of these resources is still significantly untapped, which presents the private sector with large and lucrative investment opportunities that capitalize on and serve the under-supplied market.</p>
+<p>&nbsp;</p>
+<p>High potential for import substitution to meet local demand</p>
+<p>KSA's demand for metal and mineral products currently exceeds local supply, signifying great potential for domestic mining operations to take advantage of import substitution. Saudi Arabia is the world&rsquo;s 3rd largest net importer of copper, 4th largest net importer of Aluminum products, 5th largest net importer of ceramic products and 12th largest net importer of sodium carbonates. Furthermore, iron and steel were among the largest commodity imports to Saudi Arabia. The supply gap of mineral/metal resources translates into multi-billion dollar opportunities for local production and value chain integration.</p>
+<p>&nbsp;</p>
+<p>Great cost advantages supporting local production</p>
+<p>KSA offers businesses access to high-quality raw materials and utilities at competitive prices. Fantastic cost advantages await investors who commit to producing minerals and metals locally. For example, Saudi is one of the lowest aluminum production cost, moreover, Phosphate (Diammonium Phosphate (DAP)) production cost is also considered one of the lowest due to is the low cost of ammonia and sulphuric acid, which benefits a host of industries.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p>&nbsp;</p>
+<p>Easy access to major importing countries</p>
+<p>KSA&rsquo;s strategic location bestows it with a proximity advantage to end-user markets in major geographies (MENA, Europe and Asia). For example, India, Pakistan and Bangladesh rank respectively #1, #3 and #5 as global importers of DAP fertilizer, all of which are in close proximity to KSA. Opportunities are also available to capitalize on economies of scale for calcium chloride production through large and growing markets in the GCC. Furthermore, strong opportunities exist for the export of sodium chlorate to Asian and MENA importer markets given that they imported a total of 180 kilotons in 2015.</p>
+<p>&nbsp;</p>
+<p>Significant government commitment and support to enable the sector</p>
+<p>Saudi Vision 2030 sets a goal for the mining sector to contribute at full potential to the national economy. The development of the mining sector is therefore a priority and is listed as the third pillar of economic diversification after oil, gas and petrochemicals production. Vision 2030&rsquo;s emphasis on the sector is driven by the expectation that metals and mining are to have a significant beneficial impact on the economy. The mining sector is forecast to increase its GDP contribution to SAR 97 billion (USD 26 billion) by 2020, creating an additional 90,000 jobs in the process.</p>
+<p>&nbsp;</p>
+<p>The Saudi government is conveying considerable support to the mining and metals processing industry through multiple megaprojects. These include a 2,750 Km North&ndash;South railway connecting Al-Jalamid mine with processing facilities in Ras-al-Khair Industrial city (RIC), a 'world-class metals and minerals city' with integrated industrial complexes, ports and an end-to-end ecosystem. Waa'd Al Shamaal City includes Maaden's phosphate mining expansion and many other large world class facilities allowing for a production capacity of 16 Mt/ year. Additionally, more than SAR 90 billion (USD 25 billion) is being invested in new mining ventures and plants to process industrial ores.</p>
+<p>&nbsp;</p>
+<p>As a result, the mining sector is poised for significant growth in the next few years. The role of the private sector is also set grow, whose participation is viewed by the government as an essential means of optimizing output and developing related downstream industries. Foreign companies looking to invest in the Kingdom&rsquo;s mining sector should feel buoyed by the recent changes in Saudi Arabia&rsquo;s mining law as they have created favorable conditions allowing greater access to the sector. More specifically, these changes allow for companies to work either with Saudi&rsquo;s parastatal &lsquo;Saudi Arabian Mining Co&rsquo; (Ma&rsquo;aden) or through joint ventures with local companies.</p>
+<p>&nbsp;</p>
+<p>Experienced suppliers, contractors and talent pool</p>
+<p>Saudi Arabia&rsquo;s extensive experience in the Oil, Gas and Chemicals industries has enabled the Kingdom to develop a diverse ecosystem that complements several aspects of the mining and metal processing industry. The procurement of machinery and equipment from existing companies provides crucial support to the sector, as do well established maintenance providers with transferrable skills. Companies like SABIC with its 35K+ employees and Maaden with 6K+ offer a large pool of talent from well-established players. Educational institutions like King Fahd University of Petroleum and minerals (KFUPM) and others in the pipeline are also equipped to produce the graduates that are needed to drive this sector forward.</p>
+</div>
+</div>
+</div>
+</div>
+</div>"
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; $contentCV[unique = true]; description[lang = ar];
+                                            ; sector-proposition-1-$sector ;                          ; "  <div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p><strong>أحد أهم محاور رؤية 2030</strong></p>
+<p>بينما تبدأ المملكة رحلتها للتنوع الصناعي والاقتصادي بعيداً عن النفط والغاز، يستعد قطاع المعادن والتعدين في المملكة العربية السعودية للتوسع السريع وفقاً لأهداف رؤية 2030. ليكتسب هذا القطاع أهميةً متزايدة.</p>
+<p>وتشهد السوق طلبًا هائلاً على المعادن والمنتجات المعدنية، من الجهات الداخلية إلى جانب الجهات الإقليمية، التي لديها احتياطي مثالي من إمكانات التعدين غير المستغلة، والتي يمكن أن تعوض عن التنوع الاقتصادي.</p>
+<p>يستعد القطاع الخاص لدخول هذا السوق بفعل الظروف المواتية والمغرية الحالية للمستثمرين الأجانب الحريصين على التعاون مع شركات المملكة العربية السعودية. وتنتظر شركات المعادن والتعدين مزايا كبيرة بتكلفة زهيدة، مستفيدةً من الطلب المتزايد والمرافق المحلية والمواد الخام والموردين والمقاولين وطاقة الكفاءات للقوى العاملة بالقطاع. ومع التزام الحكومة ودعمها الكبير لتمكين القطاع، يمكن للمستثمرين الشعور بالثقة في النمو المستقبلي لصناعة التعدين والمعادن في المملكة العربية السعودية.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class='container'>
+<div class='row clearfix'>
+<div class='col-md-6 column'>
+<div>
+<p><strong>طلب كبير على المعادن والمنتجات المعدنية</strong></p>
+<p>تنعم المملكة العربية السعودية باحتياطي وفير ومتنوع من إمكانات التعدين غير المستغلة بقيمة 4.88 تريليون ريال سعودي (1.3 تريليون دولار أمريكي)، مع 20 مليون أوقية من احتياطي الذهب تحت الأرض. وتستحوذ المملكة حالياً على نسبة كبيرة تبلغ 37.9٪ من سوق المعادن والتعدين في الشرق الأوسط وإفريقيا 60 مليار ريال سعودي (16 مليار دولار).</p>
+<p>قطاع الحديد والصلب هو الأكثر ربحية في هذه الصناعة، حيث بلغ إجمالي عائداته 17.6 مليار ريال سعودي (4.7 مليار دولار أمريكي)، وهو ما يمثل 75.3 ٪ من إجمالي الناتج المحلي لصناعة التعدين في المملكة العربية السعودية. ويتبعه قطاع الألمنيوم بعائدات بلغت 4.5 مليار ريال سعودي (1.2 مليار دولار أمريكي) في عام 2016.</p>
+<p>يُضاف إلى ذلك ما تشهده المملكة العربية السعودية من نمو اقتصادي وصناعي، يدفع إلى زيادة كبيرة في الطلب على السلع التعدينية التي تخدم القطاعات النامية الرئيسة.</p>
+<p>&nbsp;</p>
+<p><strong>موارد طبيعية تفي احتياج السوق المحلية والعالمية</strong></p>
+<p>تُعد المملكة العربية السعودية الأكبر مساحةً في الشرق الأوسط وتحتلّ المرتبة 13 في العالم من حيث وفرة وتنوع المعادن والموارد المعدنية التي تزيد عن 48، وتضم ما لا يقل عن 15 معدنًا يمكن استغلالها اقتصاديًا. كما يوجد بها أكبر احتياطيات الفوسفات والتنتالوم في العالم، وقد أصبحت المملكة العربية السعودية سوقًا مهمة لاستخراج المعادن وتعدينها.</p>
+<p>تختزن المناطق الوسطى والشمالية من البلاد كميات كبيرة من خام البوكسيت، بالإضافة إلى مخزون الفضة والزنك والنحاس والمغنيسيوم والكاولين. كما تعد المملكة أكبر دولة منتِجة للذهب في الشرق الأوسط، إذ بلغ إنتاجها حوالي 400 ألف أوقية في 2019</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>إمكانات عالية لاستبدال الواردات تلبية الطلب المحلي</strong></p>
+<p>تعد المملكة العربية السعودية ثالث أكبر مستورد لمنتجات النحاس عالميًّا، ورابع أكبر مستورد لمنتجات الألمنيوم عالميًّا، وخامس أكبر مستوردي منتجات السيراميك عالميًّا، وفي المرتبة الثانية عشر كأكبر مستورد لكربونات الصوديوم عالميًّا، بالاضافة إلى ذلك، كان الحديد والصلب من بين أكبر الواردات إلى المملكة العربية السعودية. وتؤدي فجوة العرض من المنتجات المعدنية / المعادن إلى فرص متعددة بمليارات الدولارات من أجل الإنتاج المحلي وتكامل سلسلة القيمة</p>
+<p>&nbsp;</p>
+<p><strong>مزايا كبيرة بتكلفة زهيدة تدعم الإنتاج المحلي</strong></p>
+<p><strong>:&nbsp;</strong>توفر المملكة العربية السعودية للمنشآت التجارية إمكانية الوصول إلى المواد الخام عالية الجودة والمرافق بأسعار تنافسية. إذ ينتظر المستثمرون الراغبون بإنتاج المعادن والفلزات محليًا مزايا رائعة بتكلفة زهيدة، فعلى سبيل المثال يعد إنتاج الألمنيوم في المملكة من بين الأقل تكلفة بين الدول الأخرى،&nbsp; علاوة على ذلك تعتبر تكلفة إنتاج الفوسفات (ثنائي فوسفات الأمونيوم (DAP)) من بين الأقل نظرًا لانخفاض تكلفة الأمونيا وحمض الكبريتيك، ما يعود بالنفع على مجموعة من الصناعات.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class='col-md-6 column'>
+<div>
+<p>&nbsp;<strong>سهولة الوصول إلى البلدان المستوردة الرئيسة</strong></p>
+<p>تتمتع المملكة العربية السعودية بموقع استراتيجي هام كونها قرب أسواق المستخدم النهائي في المناطق الجغرافية الرئيسة (منطقة الشرق الأوسط وشمال أفريقيا وأوروبا وآسيا)، على سبيل المثال:</p>
+<p>على مقربة من بوابات الهند وباكستان وبنجلاديش، وترتيبها على التوالي رقم 1، رقم 3 ورقم 5 في قائمة المستوردين العالميين لأسمدة فوسفات، ثنائي فينيل الصوديوم. وهناك فرصة متاحة للاستفادة الاقتصادية لإنتاج كلوريد الكالسيوم، من خلال الأسواق الكبيرة والمتنامية في دول مجلس التعاون الخليجي. فضلاً عن إمكانات قوية لتصدير كلورات الصوديوم إلى أسواق آسيا ومستوردي منطقة الشرق الأوسط وشمال أفريقيا الذين استوردوا 180 كيلوطن عام 2015 على سبيل المثال.</p>
+<p>&nbsp;</p>
+<p><strong>التزامٌ حكومي كبير ودعم كامل لتمكين القطاع</strong></p>
+<p>'يساهم قطاع التعدين في الاقتصاد الوطني بكامل طاقته' حيث يعتبر قطاع التعدين ركناً أساسياً في رؤية 2030 نظراً لما له من تأثير اقتصادي كبير، ولذلك فإن الأولوية هي لتطوير قطاع التعدين وإدراجه باعتباره الركيزة الثالثة للتنوع الاقتصادي بعد إنتاج النفط والغاز والبتروكيماويات.</p>
+<p>&nbsp;</p>
+<p>ومن المتوقع أن يزيد قطاع التعدين من مساهمة الناتج المحلي الإجمالي إلى 97 مليار ريال سعودي (26 مليار دولار) بحلول عام 2020 ، مما سيوفر 90 ألف وظيفة إضافية في هذا القطاع.</p>
+<p>&nbsp;</p>
+<p>وتدعم الحكومة السعودية ـ بشكل كبير ـ التعدين ومعالجة المعادن من خلال مشاريع عملاقة ومتعددة من ضمنها إنشاء السكة الحديدية بطول 2،750 كيلومتر بين الشمال والجنوب لتربط منجم الجلاميد مع مرافق المعالجة في مدينة رأس الخير الصناعية، وهي 'مدينة عالمية للمعادن والتعدين' مع المجمعات الصناعية المتكاملة والموانئ ومناخ الأعمال المتكاملة وتقدم مدينة 'وعد الشمال' التوسع بتعدين فوسفات شركة معادن، والعديد من المرافق العالمية الكبيرة الأخرى التي تسمح بقدرة إنتاجية تصل إلى 16 مليون طن / سنة. يُضاف إلى ذلك استثمار أكثر من 90 مليار ريال سعودي (25 مليار دولار أمريكي) في مشاريع تعدين جديدة ومصانع لمعالجة الخامات الصناعية.</p>
+<p>ونتيجة لذلك، يستعد قطاع التعدين لمرحلة جديدة ونمو كبير في السنوات القليلة المقبلة. كما يتوسع دور القطاع الخاص، حيث تعتبر الحكومة مشاركته وسيلة أساسية لتحسين الإنتاج وتطوير الصناعات ذات الصلة. إن الشركات الأجنبية التي تتطلع إلى الاستثمار في قطاع التعدين في المملكة عليها أن تتباهى بالتغييرات الأخيرة في قانون التعدين بالمملكة العربية السعودية؛ ذلك لأنها خلقت ظروفاً مواتية تسمح بقدر أكبر من التحرك في هذا القطاع. وبشكل أكثر تحديدًا، تسمح هذه التغييرات للشركات بالعمل إما مع شركة التعدين العربية السعودية (معادن) الحكومية، أو من خلال المشاريع المشتركة مع الشركات المحلية.</p>
+<p>&nbsp;</p>
+<p><strong>الموردون أصحاب الخبرة، المقاولون وطاقة الكفاءات</strong></p>
+<p>نظراً للخبرة الواسعة التي تتمتع بها المملكة العربية السعودية في قطاعي النفط والغاز والكيماويات، عززت المملكة نظاماً بيئياً متقدماً يكمل عدة جوانب في قطاعي التعدين ومعالجة المعادن:</p>
+<p>إذ يوفر شراء الآلات والمعدات من الشركات القائمة دعماً حاسماً للقطاع، كما هو الحال بالنسبة لمقدمي خدمات الصيانة الراسخين ذوي المهارات القابلة للنقل. فتقدم شركات مثل الشركة السعودية للصناعات الأساسية (سابك) مع موظفيها البالغ عددهم 35 ألف موظف وشركة 'معادن' بأكثر من 6 آلاف موظف، مجموعةً كبيرة من الكفاءات والخبرات. كما تم تجهيز المؤسسات التعليمية مثل جامعة الملك فهد للبترول والمعادن، وغيرها في المستقبل، لتخريج الكفاءات المطلوبة لدفع</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+"
+
+INSERT_UPDATE Media; code[unique = true]  ; realFileName                            ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText                         ; $contentCV[unique = true]
+                   ; background_sample1.png ; background_sample1.png            ; $siteResource/background_sample1.png   ; image/png   ;; "";
+
+
+UPDATE InvestSaudiSectorPropositionComponent; uid[unique = true]                  ; description[lang = en]                                ; description[lang = ar]     ; $contentCV[unique = true]
+#                                            ; sector-proposition-2-$sector ; "Information and Communication Technology Hub " ; الاتصالات وتقنية المعلومات ;
+
+
+INSERT_UPDATE InvestSaudiSectorPropositionContainer; uid[unique = true]                          ; name                                ; backgroundImage(code, $contentCV)  ; simpleCMSComponents(&componentRef)                                      ; &componentRef                               ; $contentCV[unique = true]; title
+                                                   ; sector-proposition-container-$sector ;  Sector Proposition Container ; background_sample1.png      ; sector-proposition-1-$sector ; sector-proposition-container-$sector ;                          ; Mining And Metals Value Proposition
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)                                                                                                                                                                     ; $contentCV[unique = true]
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                                                                                                                  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; mining-metals-paragraph, ff-container-$sector, sector-proposition-container-$sector, fo-component-$sector, ss-component-$sector, contact-form ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                                                                                                                                                                                  ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;

@@ -1,0 +1,11 @@
+#Ant properties
+#Thu Nov 16 00:12:53 UTC 2017
+builddate=20171116 0012
+description=investsaudisecureportal
+group.id=de.hybris.platform
+module.name=platform-module
+name=investsaudisecureportal
+releasedate=20171115 1907
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

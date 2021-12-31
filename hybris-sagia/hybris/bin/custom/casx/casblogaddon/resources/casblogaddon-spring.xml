@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2000-2016 hybris AG
+ All rights reserved.
+
+ This software is the confidential and proprietary information of hybris
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with hybris.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config/>
+
+	<bean id="casblogaddonCoreDataImportedEventListener" parent="abstractCoreDataImportedEventListener">
+		<property name="supportedChannels">
+			<list value-type="de.hybris.platform.commerceservices.enums.SiteChannel">
+				<value>B2C</value>
+				<!--
+								<value>B2B</value>
+				-->
+			</list>
+		</property>
+		<property name="addonExtensionMetadata">
+			<bean class="de.hybris.platform.addonsupport.data.AddonExtensionMetadata">
+				<property name="suffixChannel" value="false"/>
+				<property name="baseExtensionName" value="casblogaddon"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="casblogaddonSampleDataEventListener" parent="abstractGenericAddOnSampleDataEventListener"  >
+		<property name="extensionName" value="casblogaddon" />
+	</bean>
+
+	<alias name="defaultBlogThumbnailImageSrcAttributeHandler" alias="blogThumbnailImageSrcAttributeHandler" />
+	<bean id="defaultBlogThumbnailImageSrcAttributeHandler"
+		  class="com.casblogaddon.attributehandlers.BlogThumbnailImageSrcAttributeHandler" />
+
+	<alias name="defaultBlogUniqueCodeAttributeHandler" alias="blogUniqueCodeAttributeHandler" />
+	<bean id="defaultBlogUniqueCodeAttributeHandler"
+		  class="com.casblogaddon.attributehandlers.BlogUniqueCodeAttributeHandler" />
+
+
+	<alias name="defaultBlogFeaturedPostImageSrcAttributeHandler"
+		   alias="blogFeaturedPostImageSrcAttributeHandler" />
+	<bean id="defaultBlogFeaturedPostImageSrcAttributeHandler"
+		  class="com.casblogaddon.attributehandlers.BlogFeaturedPostImageSrcAttributeHandler" />
+
+	<alias name="defaultBlogPostService" alias="blogPostService"/>
+	<bean id="defaultBlogPostService" class="com.casblogaddon.service.impl.DefaultBlogPostService"/>
+
+	<alias name="defaultNewsLetterFacade" alias="newsLetterFacade"/>
+	<bean id="defaultNewsLetterFacade" class="com.casblogaddon.facade.impl.DefaultNewsLetterFacade"/>
+
+	<alias name="defaultBlogPostDAO" alias="blogPostDAO"/>
+	<bean name="defaultBlogPostDAO"	class="com.casblogaddon.service.dao.impl.DefaultBlogPostDAO">
+		<constructor-arg value="BlogPostComponent"/>
+		<property name="paginatedFlexibleSearchService" ref="paginatedFlexibleSearchService"/>
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>
+
+	<bean id="blogPostComponentPrepareInterceptor" class="com.casblogaddon.interceptor.BlogPostComponentPrepareInterceptor"/>
+
+	<bean id="blogPostComponentPrepareInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="blogPostComponentPrepareInterceptor"/>
+		<property name="typeCode" value="BlogPostComponent"/>
+	</bean>
+
+	<alias name="defaultNewsletterSubscriptionFlagAttributeHandler"
+		   alias="newsletterSubscriptionFlagAttributeHandler" />
+	<bean id="defaultNewsletterSubscriptionFlagAttributeHandler"
+		  class="com.casblogaddon.attributehandlers.NewsletterSubscriptionFlagAttributeHandler" />
+
+
+	<alias name="blogDefaultTicketParameterPopulator" alias="blogTicketParameterPopulator"/>
+	<bean id="blogDefaultTicketParameterPopulator"
+		  class="com.casblogaddon.populator.CsBlogTicketPopulator">
+	</bean>
+
+	<alias name="blogDefaultPostContainerPopulator" alias="blogPostContainerComponentPopulator"/>
+	<bean id="blogDefaultPostContainerPopulator" class="com.casblogaddon.populator.CsBlogPostComponentPopulator">
+	</bean>
+
+
+	<alias name="defaultBlogTicketParameterConverter" alias="blogTicketParameterConverter"/>
+	<bean id="defaultBlogTicketParameterConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.casblogaddon.model.CsBlogTicketModel"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="blogTicketParameterPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias alias="sendEventsJobService" name="defaultSendEventsJobService"/>
+	<bean id="defaultSendEventsJobService" class="com.casblogaddon.service.impl.DefaultSendEventsJobService">
+	</bean>
+
+	<bean id="sendUpComingEventsJob" class="com.casblogaddon.job.SendUpComingEventsJob" parent="abstractJobPerformable">
+		<property name="sendEventsJobService" ref="sendEventsJobService"/>
+	</bean>
+
+
+	<!-- Extended and Overridden for Blacklist some BlogPostComponent fields on SmartEdit -->
+	<alias name="defaultCmsStructureTypeBlacklistAttributeMap" alias="cmsStructureTypeBlacklistAttributeMap"/>
+	<bean id="defaultCmsStructureTypeBlacklistAttributeMap" class="org.springframework.beans.factory.config.MapFactoryBean" scope="singleton">
+		<property name="sourceMap">
+			<map key-type="java.lang.String" value-type="java.lang.String">
+				<entry key="AbstractPage" value="approvalStatus, masterTemplate, defaultPage, onlyOneRestrictionMustApply, previewImage, contentSlots, type, typeCode, missingContentSlots, availableContentSlots, view, navigationNodeList, lockedBy, copyToCatalogsDisabled, localizedPages, originalPage, pageStatus, template, displayStatus"/>
+				<entry key="ContentPage" value="homepage, labelOrId, navigationNodes, linkComponents, bannerComponets, flashComponents, keywords, description"/>
+				<entry key="SimpleCMSComponent" value="containers"/>
+				<entry key="AbstractCMSComponent" value="uid, onlyOneRestrictionMustApply, type, typeCode, container, restricted, slots, actions"/>
+				<entry key="CMSItem" value="catalogVersion"/>
+				<entry key="AbstractRestriction" value="uid, type, typeCode, pages, components, inverseRestrictions"/>
+				<entry key="CMSCategoryRestriction" value="categoryCodes"/>
+				<entry key="ProductCarouselComponent" value="productCodes, categoryCodes, searchQuery, categoryCode, popup"/>
+				<entry key="NavigationComponent" value="styleClass"/>
+				<entry key="FooterNavigationComponent" value="showLanguageCurrency, notice"/>
+				<entry key="CMSProductRestriction" value="productCodes"/>
+				<entry key="CMSTimeRestriction" value="useStoreTimeZone" />
+				<entry key="CMSNavigationNode" value="children, links, pages, parent, visible" />
+				<entry key="BlogPostComponent"  value="tag, promoteToIndexPage, featuredPostImageSrc, thumbnailImageSrc, restrictedGroup, subscribedUsers"/>
+			</map>
+		</property>
+	</bean>
+
+
+	<!-- Extended and Overridden for Reordering some BlogPostComponent fields on SmartEdit -->
+	<alias name="defaultCmsStructureTypeModeAttributeFilterList" alias="cmsStructureTypeModeAttributeFilterList"/>
+	<bean id="defaultCmsStructureTypeModeAttributeFilterList" class="org.springframework.beans.factory.config.ListFactoryBean" >
+		<property name="targetListClass" value="java.util.LinkedList"/>
+		<property name="sourceList">
+			<list>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="BlogPostComponent" p:mode="DEFAULT"/>
+					</property>
+					<property name="order">
+						<list>
+							<value>uniqueCode</value>
+							<value>name</value>
+							<value>title</value>
+							<value>blogType</value>
+							<value>postUrl</value>
+							<value>startDate</value>
+							<value>endDate</value>
+							<value>shortContent</value>
+							<value>thumbnailImage</value>
+							<value>postImage</value>
+						</list>
+					</property>
+				</bean>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSItem" p:mode="DEFAULT"/>
+					</property>
+					<property name="order">
+						<list>
+							<value>name</value>
+							<value>visible</value>
+							<value>restrictions</value>
+						</list>
+					</property>
+				</bean>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="AbstractRestriction" p:mode="DEFAULT"/>
+					</property>
+					<property name="excludes">
+						<list>
+							<value>description</value>
+							<value>pages</value>
+							<value>components</value>
+							<value>inverseRestrictions</value>
+						</list>
+					</property>
+				</bean>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSTimeRestriction" p:mode="DEFAULT"/>
+					</property>
+					<property name="order">
+						<list>
+							<value>name</value>
+							<value>activeFrom</value>
+							<value>activeUntil</value>
+						</list>
+					</property>
+				</bean>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSCategoryRestriction" p:mode="DEFAULT"/>
+					</property>
+					<property name="order">
+						<list>
+							<value>name</value>
+							<value>recursive</value>
+							<value>categories</value>
+						</list>
+					</property>
+				</bean>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSUserGroupRestriction" p:mode="DEFAULT"/>
+					</property>
+					<property name="order">
+						<list>
+							<value>name</value>
+							<value>includeSubgroups</value>
+							<value>userGroups</value>
+						</list>
+					</property>
+				</bean>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="ProductCarouselComponent" p:mode="DEFAULT"/>
+					</property>
+					<property name="excludes">
+						<list>
+							<value>productCodes</value>
+							<value>categoryCodes</value>
+							<value>searchQuery</value>
+							<value>categoryCode</value>
+							<value>popup</value>
+						</list>
+					</property>
+					<property name="order">
+						<list>
+							<value>title</value>
+							<value>products</value>
+							<value>categories</value>
+							<value>scroll</value>
+						</list>
+					</property>
+				</bean>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="PreviewData" p:mode="DEFAULT"/>
+					</property>
+					<property name="order">
+						<list>
+							<value>previewCatalog</value>
+							<value>language</value>
+							<value>time</value>
+						</list>
+					</property>
+				</bean>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSLinkComponent" p:mode="DEFAULT"/>
+					</property>
+					<property name="excludes">
+						<list>
+							<value>contentPage</value>
+							<value>product</value>
+							<value>target</value>
+							<value>category</value>
+							<value>url</value>
+							<value>external</value>
+							<value>contentPageLabelOrId</value>
+							<value>productCode</value>
+							<value>categoryCode</value>
+							<value>navigationNodes</value>
+							<value>contentPagePOS</value>
+							<value>productPOS</value>
+							<value>categoryPOS</value>
+							<value>styleAttributes</value>
+						</list>
+					</property>
+					<property name="order">
+						<list>
+							<value>linkName</value>
+							<value>linkTo</value>
+						</list>
+					</property>
+				</bean>
+
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSLinkComponent" p:mode="CONTENT"/>
+					</property>
+					<property name="includes">
+						<list>
+							<value>contentPage</value>
+							<value>target</value>
+						</list>
+					</property>
+					<property name="order">
+						<list>
+							<value>linkName</value>
+							<value>linkTo</value>
+							<value>contentPage</value>
+							<value>target</value>
+						</list>
+					</property>
+				</bean>
+
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSLinkComponent" p:mode="PRODUCT"/>
+					</property>
+					<property name="includes">
+						<list>
+							<value>product</value>
+							<value>target</value>
+						</list>
+					</property>
+					<property name="order">
+						<list>
+							<value>linkName</value>
+							<value>linkTo</value>
+							<value>product</value>
+							<value>target</value>
+						</list>
+					</property>
+				</bean>
+
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSLinkComponent" p:mode="CATEGORY"/>
+					</property>
+					<property name="includes">
+						<list>
+							<value>category</value>
+							<value>target</value>
+						</list>
+					</property>
+					<property name="order">
+						<list>
+							<value>linkName</value>
+							<value>linkTo</value>
+							<value>category</value>
+							<value>target</value>
+						</list>
+					</property>
+				</bean>
+
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSLinkComponent" p:mode="EXTERNAL"/>
+					</property>
+					<property name="includes">
+						<list>
+							<value>url</value>
+							<value>target</value>
+						</list>
+					</property>
+					<property name="order">
+						<list>
+							<value>linkName</value>
+							<value>linkTo</value>
+							<value>url</value>
+							<value>target</value>
+						</list>
+					</property>
+				</bean>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSNavigationNode" p:mode="DEFAULT"/>
+					</property>
+					<property name="order">
+						<list>
+							<value>name</value>
+							<value>title</value>
+							<value>entries</value>
+						</list>
+					</property>
+					<property name="excludes">
+						<list>
+							<value>uid</value>
+						</list>
+					</property>
+				</bean>
+
+				<bean parent="cmsStructureTypeModeAttributeFilter">
+					<property name="constrainedBy">
+						<bean parent="cmsEqualsTypeAndModeBiPredicate" p:typeCode="CMSNavigationEntry" p:mode="DEFAULT"/>
+					</property>
+					<property name="excludes">
+						<list>
+							<value>uid</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+
+</beans>

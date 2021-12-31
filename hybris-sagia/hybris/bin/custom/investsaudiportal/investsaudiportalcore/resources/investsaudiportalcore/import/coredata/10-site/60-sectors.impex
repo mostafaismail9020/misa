@@ -1,0 +1,10 @@
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$siteUid = investsaudiportal
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE Category; code[unique = true]  ; description[lang = en]  ; seoKeywords[lang = en]                                                                                                 ; supercategories(code, $catalogVersion); allowedPrincipals(uid)[default = 'customergroup']; $catalogVersion; name [lang = en]        ; name [lang = ar]; picture(code, $catalogVersion); thumbnail(code, $catalogVersion)
+                      ; sector-opportunities ; Sectors & Opportunities ; "Invest Saudi,Information and Technology - Sectors & Opportunities,Sectors & Opportunities,Information and Technology" ;                                       ;                                                  ;                ; Sectors & Opportunities ; القطاعات والفرص ;

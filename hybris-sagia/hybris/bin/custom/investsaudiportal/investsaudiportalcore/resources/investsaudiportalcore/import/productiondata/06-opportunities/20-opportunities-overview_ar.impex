@@ -1,0 +1,1616 @@
+$productCatalog = investsaudiportalProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = ar
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       ; $catalogVersion; description[lang = $lang]
+                                ; industry-40               ;                ; "
+
+<p>Attract leading Industry 4.0 players to enable digital transformation of industrial sector companies </p>
+"
+                                ; gaming               ;                ; "
+
+<p>Attract leading Industry 4.0 players to enable digital transformation of industrial sector companies </p>
+"
+                                ; e-commerce               ;                ; "
+
+<p>Attract established international e-commerce players to setup regional HQ in KSA and maximize localization across the value chain </p>
+"
+                                ; cloud               ;                ; "
+
+<p>Attract top global Cloud Service Providers (CSP) to localize their services in KSA </p>
+"
+                                ; e-waste               ;                ; "
+
+<p>Attract a global electronic device refurbishment and resale company to establish regional hub in KSA </p>
+"
+                                ; it-services-software               ;                ; "
+
+<p>Attract IT services players to establish local/regional HQ in order to localize managed IT services as well as software customer support </p>
+"
+                                ; smart-intermodal-transport               ;                ; "
+
+<p>Attract investors to build mobility platforms in KSA, which will serve the local market with potential to serve the MENA region </p>
+"
+
+
+                                ; polytetramethylene-ether-glycol-ptmeg               ;                ; "
+
+<p>Opportunity to setup Polytetramethylene Ether Glycol (PTMEG) manufacturing plant with 35 – 40 KMT capacity. </p>
+"
+                                ; methacrylate-butadiene-styrene-mbs-resin               ;                ; "
+
+<p>Opportunity to develop a Methacrylate Butadiene Styrene (MBS) Resin production facility of ~ 25 - 40 KMT in KSA </p>
+"
+                                ; polyaluminum-chloride-pac               ;                ; "
+
+<p>Opportunity to develop a Polyaluminum Chloride (PAC) production facility of ~15 KMT in KSA to cater regional and global markets. </p>
+"
+                                ; formic-acid               ;                ; "
+
+<p>Opportunity to develop a Formic Acid production facility of ~40 - 45 KMT in KSA to cater regional and global demand.</p>
+"
+                                ; neopentyl-glycol-npg               ;                ; "
+
+<p>Opportunity to setup a NeoPentyl Glycol (NPG) production facility of ~25 - 50 KMT in KSA to cater regional and global demand. </p>
+"
+                                ; copolyester-ethers               ;                ; "
+
+<p>Opportunity to setup Copolyester Ethers manufacturing plant with 30 – 35 KMT capacity in KSA to serve regional/global market.</p>
+"
+                                ; fumaric-acid               ;                ; "
+
+<p>Opportunity to setup a production facility for Fumaric Acid plant with 20 – 25 KMT capacity in Saudi Arabia to cater local and global demand. </p>
+"
+                                ; dichlorobenzene               ;                ; "
+
+<p>Opportunity to setup dichlorobenzene manufacturing plant of 25– 30 KMT capacity in KSA to serve regional/global market. </p>
+"
+                                ; ethylene-vinyl-alcohol-evoh               ;                ; "
+
+<p>Opportunity to setup Ethylene Vinyl Alcohol (EVOH) manufacturing plant of 35 – 40 KMT capacity in KSA to serve regional/global market.</p>
+"
+                                ; monochlorobenzene               ;                ; "
+
+<p>Opportunity to setup Monochlorobenzene manufacturing plant of 25– 30 KMT capacity in KSA to serve regional/global market.</p>
+"
+                                ; mpeg-hpeoplusmeoh               ;                ; "
+
+<p>Opportunity to develop an integrated Methoxy Polyethylene Glycol (MPEG) production facility of ~45 KMT in KSA.</p>
+"
+                                ; polyamide-9t               ;                ; "
+
+<p>Opportunity to setup Polyamide 9T manufacturing plant of 35– 40 KMT capacity in KSA to serve regional and global markets.</p>
+"
+                                ; polyamide-12               ;                ; "
+
+<p>Opportunity to setup Polyamide12 manufacturing plant of 35– 40 KMT capacity in KSA to serve regional/global market.</p>
+"
+                                ; polyvinyl-butyral-pvb               ;                ; "
+
+<p>Opportunity to develop a Polyvinyl Butyral (PVB) production facility of ~50 KMT capacity in KSA to serve the regional/global market.</p>
+"
+                                ; trimethylol-propane-tmp               ;                ; "
+
+<p>Opportunity to setup a production facility for Trimethylol Propane (TMP) in Saudi Arabia to cater local and global demand.</p>
+"
+
+
+
+                                ; south-murcia-land-development-project               ;                ; "
+
+<p>Opportunity for residential (more than 9,000 units), commercial and infrastructure development in North of Riyadh.</p>
+"
+                                ; alhamadania-land-development-project               ;                ; "
+
+<p>Opportunity for residential and commercial development (4,000 housing units, education, healthcare, hospitality among
+others).</p>
+"
+                                ; albuhairat-land-development-project               ;                ; "
+
+<p>Opportunity for residential (8,200 units) and commercial development in North of Jeddah.</p>
+"
+
+
+
+                                ; zoos-development               ;                ; "
+<p>تتضمن الفرصة بناء وتطوير حدائق حيوان بعدة مدن في جميع أنحاء المملكة</p>
+<ul>
+<li>5 حدائق حيوان كبيرة في مدينتين رئيسية: جدة و الرياض</li>
+<li>4 حدائق حيوان متوسطة في مدينتين متوسطة: المدينة المنورة و بريدة</li>
+<li>7 حدائق حيوان صغيرة في 3 مدن صغيرة: أبها وجازان</li>
+</ul>
+<p>تبلغ المساحة الكلية 50 هكتارًا لكل حديقة حيوان كبيرة و 15 هكتارًا لكل حديقة حيوان متوسطة و 10 هكتارًا لكل حديقة حيوان صغيرة</p>
+<p>يبلغ حجم الاستثمار المطلوب 530 مليون ريال لكل حديقة حيوان كبيرة و 110 مليون ريال لكل حديقة حيوان صغيرة بافتراض نموذج استثماري صاف للقطاع الخاص</p>
+<p>ويمثل الترفيه أحد ركائز رؤية 2030، حيث تهدف الحكومة لزيادة الإنفاق على الترفيه من 2.9% إلى 6% من إجمالي الإنفاق لعام 2030 سيسهم إنشاء حدائق الحيوان إلى جذب إنفاق عالي ، خاصة من الشباب السعوديين (دون سن ال 30) والذين يشكلون حوالي 50٪ من إجمالي السكان</p>
+<p>ويسهم التزام الحكومة ورغبة السعوديين الكبيرة خصوصا الصغار منهم بحدائق الحيوان في خلق فرص جذابة لإنشاء حدائق حيوان في المملكة</p>"
+
+                                ; botanical-gardens-development               ;                ; "
+<p>تتضمن الفرصة بناء وتشغيل حدائق نباتية بمساحات مختلفة في جميع أنحاء المملكة</p>
+<ul>
+<li>12 حديقة نباتات كبيرة في 3 مدن رئيسية: الرياض وجدة والدمام</li>
+<li>6 حدائق نباتات في 3مدن متوسطة: المدينة المنورة و تبوك بريدة</li>
+<li>14 حديقة نباتات في خمس مدن صغيرة: حائل ونجران وأبها وجازان والباحة</li>
+</ul>
+<p>يبلغ حجم الاستثمار المطلوب 40 م مليون ريال- 45 مليون ريال لكل حديقة بافتراض نموذج استثماري صاف للقطاع الخاص</p>
+<p>ويمثل الترفيه أحد ركائز رؤية 2030، حيث تهدف الحكومة لزيادة الإنفاق على الترفيه من 2.9% إلى 6% من إجمالي الإنفاق لعام 2030</p>
+<p>ويسهم التزام الحكومة بطرح فرص جذابة لتشغيل الحدائق النباتية في المملكة.</p>
+" 
+                                ; family-entertainment-centers-fecs-development               ;                ; "
+<p>تتضمن الفرصة بناء وتشغيل مراكز ترفيه عائلية في جميع أنحاء المملكة</p>
+<p>&nbsp;</p>
+<p>ويمثل الترفيه أحد ركائز رؤية 2030، حيث تهدف الحكومة لزيادة الإنفاق على الترفيه من 2.9% إلى 6% من إجمالي الإنفاق لعام 2030 و سيسهم إنشاء مراكز الترفيه العائلية إلى جذب إنفاق عالي ، خاصة من الشباب السعوديين (دون سن ال 30) والذين يشكلون حوالي 50٪ من إجمالي السكان كما يسهم التزام الحكومة ورغبة السعوديين الكبيرة في مراكز الترفيه بطرح فرص جذابة لتشغيل المراكز الترفيهية في المملكة.</p>
+"  
+                                ; theme-parks-development               ;                ; "
+<p>تتضمن الفرصة بناء وتطوير المنتزهات بمختلف مساحاتها في جميع أنحاء المملكة</p>
+<ul>
+<li>خمس منتزهات كبيرة في 3 مدن رئيسية: الرياض و جدة والدمام</li>
+<li>3 منتزهات متوسطة في 3 مدن متوسطة: المدينة وتبوك وبريدة</li>
+<li>7 منتزهات صغيرة في 7 مدن صغيرة: حائل ونجران وأبها وعرعر وسكاكا وجازان والباحة</li>
+</ul>
+<p>يبلغ حجم الاستثمار للمنتزهات الكبيرة 1,000 مليون ريال و 300 مليون ريال للمنتزهات المتوسطة و75 مليون ريال للمنتزهات الصغيرة بافتراض نموذج استثماري صاف للقطاع الخاص</p>
+<p>ويمثل الترفيه أحد ركائز رؤية 2030، حيث تهدف الحكومة لزيادة الإنفاق على الترفيه من 2.9% إلى 6% من إجمالي الإنفاق لعام 2030</p>
+<p>تحتل المنتزهات المرتبة الأولى من ناحية رغبة السعوديين بها كنشاط ترفيه تليها دور السينما والحدائق الماية والأنشطة الترفيهية الأخرى</p>
+<p>ويسهم التزام الحكومة ورغبة الناس بالمنتزهات كخيار للترفيه في خلق فرص جذابة لإنشاء منتزهات في المملكة</p>
+" 
+                                ; waterparks-development               ;                ; "
+<p>تتضمن الفرصة بناء وتطوير المنتزهات المائية بعدة مدن في جميع أنحاء المملكة</p>
+<ul>
+<li>4 منتزهات كبيرة في 3 مدن رئيسية: الرياض و جدة والدمام</li>
+<li>منتزه مائي واحد في مدينة متوسطة: المدينة المنورة</li>
+<li>منتزه مائي واحد في مدينة صغيرة: جازان</li>
+</ul>
+<p>يبلغ حجم الاستثمار المطلوب 420 مليون ريال -470 لكل منتزه مائي بافتراض نموذج استثماري صاف للقطاع الخاص</p>
+<p>ويمثل الترفيه أحد ركائز رؤية 2030، حيث تهدف الحكومة لزيادة الإنفاق على الترفيه من 2.9% إلى 6% من إجمالي الإنفاق لعام 2030</p>
+<p>تعتبر المنتزهات المائية أكثر الوجهات السياحية إقبالا من السعوديين في الخارج، نظرا لعدم وجودها حاليا في المملكة العربية السعودية</p>
+<p>ويسهم التزام الحكومة ورغبة الشباب بالمنتزهات المائية في خلق فرص جذابة لإنشاء منتزهات مائية في المملكة</p>
+"
+                                ; aquariums-development               ;                ; "
+<p>تتضمن الفرصة بناء وتطوير الحدائق المائية بعدة مدن في جميع أنحاء المملكة</p>
+<ul>
+<li>4 حدائق مائية في 3 مدن رئيسية: الرياض و جدة والدمام</li>
+<li>4 حدائق مائية في مدن متوسطة: المدينة المنورة وتبوك و بريدة</li>
+</ul>
+<p>يبلغ حجم الاستثمار المطلوب 30 مليون ريال -35 مليون ريال لكل حديقة مائية بافتراض نموذج استثماري صاف للقطاع الخاص</p>
+<p>ويمثل الترفيه أحد ركائز رؤية 2030، حيث تهدف الحكومة لزيادة الإنفاق على الترفيه من 2.9% إلى 6% من إجمالي الإنفاق لعام 2030</p>
+<p>تعتبر المنتزهات المائية أكثر الوجهات السياحية إقبالا من السعوديين في الخارج، نظرا لعدم وجودها حاليا في المملكة العربية السعودية</p>
+<p>ويسهم التزام الحكومة وإمكانية إعادة توجيه إنفاق السعوديين، على الحدائق المائية في الخارج، محليا في خلق فرص جذابة لإنشاء حدائق مائية في المملكة</p>
+" 
+                                ; film-infrastructure               ;                ; "
+
+<p>Setting up film production complex in Riyadh, Saudi Arabia for end-to-end film production.</p>
+"    
+
+
+
+                                ; bonded-zone-in-dammam               ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Dammam 2nd IC is the has the largest occupied area of all Modon Industrial cities, in total close to 20 Km2 of industries with excellent connectivity and a very relevant existing 3PL and logistics providers.</p>
+<p>&nbsp;</p>
+<p>Both existing manufacturers that want to transform local operations with a regional reach, and 3PL that want to benefit from its location to utilize a regional market will benefit from the bonded status.</p>
+<p>&nbsp;</p>
+<p>This bonded zone will be the first of its kind to align a strong manufacturing area and broad current logistics offering source of revenue: lease of ready to use light manufacturing and warehousing buildings and lease of land for built to suit warehouses</p>
+"
+                                ; controlled-temperature-logistics-operator                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>The opportunity is to develop a controlled temperature complex and logistics operator to service the Food and Beverage market in the western province, the investor would enter in a sub-lease agreement with Modon, where it would develop the product and commercialize it</p>
+<p>With 1,100,000 m2 of manufacturing installations devoted to the Food and Beverage market in Jeddah 2nd and 3rd industrial cities and at growth at 172,500 m2 yearly, additionally with the Umrah and Hajj visitors&rsquo; growth, demand will always be available.</p>
+<p>&nbsp;</p>
+<p>The total net leasable area is 300,000 sqm and investors could lease any area as per the master plan.</p>
+"
+                                ; wheel-manufacturing-plant-for-trains               ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>This is an opportunity to open a manufacturing plant specializing in the production of rail wheels for locomotives and wagons to satisfy both local and regional demand including GCC and North &amp; East Africa. The annual consumption of the product can reach up to 25 thousand &ndash; 27 thousand wheels p.a. covering demand from Saudi Arabia alone, despite other regional demand.</p>
+"
+                                ; al-khomrah-logistics-zone               ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>A modern logistics zone that offers commercial facilities, customs bonded zone and re-exports zones.&nbsp;</p>
+<p>&nbsp;</p>
+<p>Strategically located near the Red Sea, a major crossing point for global maritime trade amounting to 13% of global trade, making it one of the major ports of trade between Europe, Africa and Asia, covering a land area of 2,378,085 m2&nbsp; in its first phase with gross flat area of 1,382,748 m2.</p>
+<p>&nbsp;</p>
+<p>For further details, please refer to Zone`s website: http://alkhomra.mawani.gov.sa/khomra/</p>
+"
+
+
+
+
+                                ; open-die-forging-facilities               ;                ; "
+<p>تتمثل الفرصة في توطين سلسلة القيمة لتشكيل المعادن في قوالب مفتوحة، وذلك لخدمة قطاعات المملكة، ودول مجلس التعاون الخليجي.</p>
+<p>يعد تشكيل المعادن في قوالب مفتوحة واحداً من طُرق تشكيل المعادن الخمسة (السباكة بالشمع المفقود، السباكة الرملية، تشكيل المعادن في قوالب مغلقة، وتشكيل المعادن بالدرفلة)، والمستخدمة في تصنيع منتجات الطاقة في المملكة العربية السعودية.</p>
+<p>ويتم تشكيل المعادن في قوالب مفتوحة عن طريق&nbsp; التوربينات (بلتون ، تورجو، كروس فلو)، والمحركات الكهربائية (أحادية الطور، وثلاثية الطور)، ومعدات رأس البئر ( مواسير التغليف و أنابيب التغليف)، والمضخات (مضخات الإزاحة الموجبة، المضخات الدفعية، المضخات الديناميكية، مضخات الجاذبية الأرضية، مضخات البخار، والمضخات بدون صمام)، والصمام الكروي(الأحادي، وذو الثلاثة أجزاء ،و المنقسم، &nbsp;و المفتوح والملحوم)، ضواغط الغاز (ذات الإزاحة الموجبة، و الترددية، والمركزية، والمحورية)، وموانع الاندفاع السطحي (الحلقي، والمكبسي).</p>
+<p>في عام 2016 ، بلغت قيمة طلب المملكة لعمليات تشكيل المعادن في قوالب مفتوحة 304 مليون دولار أمريكي بنسبة 32٪ من جميع التقنيات الخمسة المستخدمة لتصنيع منتجات الطاقة، والتي تقدر بـ 47 كيلوطن سنويًا بنسبة 20٪ من جميع التقنيات الخمسة المستخدمة لتصنيع منتجات الطاقة من الفئات التالية: (الصمامات الكروية: 13 كيلوطن سنوياً، معدات رأس البئر: 11.2 كيلوطن سنوياً، المحركات الكهربائية: 7.4 كيلوطن سنوياً، التوربينات: 6.4 كيلوطن سنوياً، المضخات: 3.8 كيلوطن سنوياً، مانعات الاندفاع (المكبسية): 2.7 كيلوطن، مانعات الاندفاع (الحلقية): 1.6 كيلوطن سنوياً، والضاغط (الغازي): 1.3كيلوطن سنوياً.</p>
+<p>من المتوقع أن يزداد الطلب على عمليات تشكيل المعادن في قوالب مفتوحة في المملكة بمعدل نمو سنوي يقدر بـ 3٪ ليصل إلى 62 كيلوطن سنويًا بحلول عام 2025، ويتمتع المستثمرون في المملكة بفرصة الاستفادة من السوق الإقليمية الكبيرة في دول مجلس التعاون الخليجي، والتي من المتوقع أن تشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز (يتوقع أن يرتفع من 44 كيلوطن سنويًا&nbsp; عام 2017 إلى 56 كيلوطن سنويًا بحلول عام 2025).</p>
+<p>تمثل الزيادة في الطلب على عمليات تشكيل المعادن في القوالب المفتوحة، وقلة المستثمرين المحليين، إلى جانب جهود الحكومة الحثيثة للتوطين،&nbsp; فرصة عظيمة للقطاع الخاص للاستثمار في إنشاء مرافق حديثة لتشكيل المعادن بالطرق المفتوح (بما في ذلك تشكيل المعادن للجيل القادم).</p>
+<p>كما تتوافر فرص أخرى عبر سلسلة القيمة وتشمل:</p>
+<p>-نشاء مكاتب تصميم في المملكة لتلبية الطلب المحلي.</p>
+<p>-توطين إنتاج قضبان الصلب، السبائك، ومواد التشحيم الخاصة بتشكيل المعادن على سبيل المثال: مواد التشحيم المصنوعة من الجرافيت والطلاء.</p>
+<p>-إنشاء مرافق المعالجة الحرارية على نطاق واسع؛ لدعم عمليات تشكيل المعادن المحلية.</p>
+<p>-إنشاء خدمات الصيانة والإصلاح والعمليات؛ لخدمة صناعة تشكيل المعادن.</p>
+"
+                                ; closed-die-forging-facilities               ;                ; "
+<p>تتمثل الفرصة في توطين سلسلة القيمة لتشكيل المعادن في قوالب مغلقة وذلك لخدمة قطاعات المملكة ودول مجلس التعاون الخليجي</p>
+<p>يعد تشكيل المعادن في قوالب مغلقة واحدا من طُرق تشكيل المعادن الخمسة ( السباكة بالشمع المفقود والسباكة الرملية وتشكيل المعادن في القوالب المغلقة وتشكيل المعادن بالدرفلة) و المستخدمة في تصنيع منتجات الطاقة في المملكة العربية السعودية.</p>
+<p>ويتم تشكيل المعادن في القوالب المغلقة عن طريق التوربينات من نوع (بلتون ، تورجو ، كروس فلو)، والصمامات (الكروية ، وذات الاتجاه الواحد والبوابية) ، ومعدات رأس البئر ( مواسير التغليف و أنابيب التغليف) والمضخات (مضخات الإزاحة الموجبة، والمضخات الدفعية والمضخات الديناميكية ومضخات الجاذبية الأرضية ومضخات البخار والمضخات بدون صمام) ضواغط الغاز (ضواغط الإزاحة الموجبة و الترددية والمركزية والمحورية) وموانع الاندفاع السطحي (الحلقي والمكبسي) و الفلنجات (فلنجات الفولاذ الكربوني و الفلنجات المصنوعة من الفولاذ المقاوم للصدأ) والتروس (العدلة، الحلزونية، المائلة، الدودية، المتعرجة، الجريدة المسننة)</p>
+<p>في عام 2016 ، بلغت قيمة طلب المملكة العربية السعودية لعمليات تشكيل المعادن في قوالب مغلقة 179 مليون دولار أمريكي بنسبة 17٪ من جميع التقنيات الخمسة المستخدمة لتصنيع منتجات الطاقة، والتي تقدر بـ 48 كيلو طن سنويًا بنسبة 20٪ من جميع التقنيات الخمسة المستخدمة لتصنيع منتجات الطاقة من الفئات التالية: الفلنجات: 20.9 كيلو طن سنويا ، الصمامات الكروية: 6.0 كيلو طن سنويا ، الصمامات البوابية: 5.4 كيلو طن سنويا ، التوربينات: 6.4 كيلو طن سنويا ، معدات رأس البئر: 3.2 كيلو طن سنويا ، التروس: 2.7 كيلو طن سنويا، الصمامات ذات الاتجاه الواحد: 1.6 كيلو طن سنويا ،والضواغط (الغازية): 0.8كيلو طن سنويا،&nbsp; مانعات الاندفاع (المكبسية): 0.7 كيلو طن ، مانعات الاندفاع (الحلقية): 0.4 كيلو طن سنويا.</p>
+<p>من المتوقع أن يزداد الطلب على عمليات تشكيل المعادن في قوالب مغلقة في المملكة بمعدل نمو سنوي يقدر بـ 3٪ ليصل إلى 63 كيلوطن سنويًا بحلول عام 2025، ويتمتع المستثمرون في المملكة بفرصة الاستفادة من السوق الإقليمية الكبيرة في دول مجلس التعاون الخليجي، والتي من المتوقع أن تشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز (يتوقع أن يرتفع من 45 كيلوطن سنويًا عام 2017 إلى 56 كيلوطن سنويًا بحلول عام 2025).</p>
+<p>تمثل الزيادة في الطلب على عمليات تشكيل المعادن في القوالب المغلقة، وقلة المستثمرين المحليين، إلى جانب جهود الحكومة الحثيثة للتوطين،&nbsp; فرصة عظيمة للقطاع الخاص للاستثمار في إنشاء مرافق حديثة لتشكيل المعادن في القوالب المغلقة (بما في ذلك تشكيل المعادن للجيل القادم).</p>
+<p>كما تتوافر فرص أخرى عبر سلسلة القيمة وتشمل:</p>
+<p>إنشاء مكاتب تصميم في المملكة لتلبية الطلب المحلي.</p>
+<p>توطين إنتاج قضبان الصلب، والسبائك، ومواد التشحيم الخاصة بتشكيل المعادن على سبيل المثال: مواد التشحيم المصنوعة من الجرافيت والطلاء.</p>
+<p>إنشاء مرافق المعالجة الحرارية؛ لدعم عمليات تشكيل المعادن المحلية.</p>
+<p>إنشاء خدمات الصيانة والإصلاح والعمليات؛ لخدمة صناعة تشكيل المعادن.</p>
+"
+                                ; manufacturing-plants-for-investment-casting               ;                ; "
+<p>&nbsp;</p>
+<p>تتمثل الفرصة في توطين سلسلة القيمة للسباكة بالشمع المفقود وذلك لخدمة قطاعات المملكة ودول مجلس التعاون الخليجي</p>
+<p>تعد السباكة بالشمع المفقود واحدة من طُرق تشكيل المعادن الخمسة ( السباكة بالشمع المفقود والسباكة الرملية وتشكيل المعادن بالقوالب المغلقة وتشكيل المعادن بالدرفلة) و المستخدمة في تصنيع منتجات الطاقة في المملكة العربية السعودية.</p>
+<p>تتم السباكة بالشمع المفقود عن طريق التوربينات، والمحركات( &nbsp;غطاء المحركات الكهربائية)، المضخات (الهيكل الخارجي، ودولاب المضخة ، وصندوق الحشو، و رأس التفريغ و الوعاء وأنابيب الشفط) ضواغط الغاز( السبيكة رقم 214 المصنوعة من النيكل و الفولاذ المقاوم للصدأ)الصمامات (البوابية و صمام الفراشة و الخانقة ، وذات الاتجاه الواحد )&nbsp; والتروس.</p>
+<p>في عام 2016 ، بلغت قيمة طلب المملكة العربية السعودية لعمليات السباكة بالشمع المفقود 254 مليون دولار أمريكي بنسبة 26٪ من جميع التقنيات الخمسة المستخدمة لتصنيع منتجات الطاقة والتي تقدر بـ 79 كيلو طن سنويًا بنسبة 33٪ من جميع التقنيات الخمسة المستخدمة لتصنيع منتجات الطاقة من الفئات التالية: المضخات: 32.6 كيلو طن سنويا ، المحركات الكهربائية: 22.1 كيلو طن سنويا ، الصمامات البوابية: 7.2 كيلو طن سنويا ، التوربينات: 6.4 كيلو طن سنويا ، صمامات الفراشة: 2.8كيلو طن سنويا ، التروس: 2.7 كيلو طن سنويا، الصمامات ذات الاتجاه الواحد: 2.5 كيلو طن سنويا ،الصمامات الخانقة: 1.6كيلو طن سنويا، والضواغط (الغازية): 1.1 كيلو طن سنويا.</p>
+<p>من المتوقع أن يزداد الطلب على السباكة بالشمع المفقود في المملكة بمعدل نمو سنوي يقدر بـ 3٪ ليصل إلى 119 كيلوطن سنويًا بحلول عام 2030، ويتمتع المستثمرون في المملكة بفرصة الاستفادة من السوق الإقليمية الكبيرة في دول مجلس التعاون الخليجي، والتي من المتوقع أن تشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز (يتوقع أن يرتفع من 73 كيلوطن سنويًا عام 2017 إلى 107 كيلوطن سنويًا بحلول عام 2030).</p>
+<p>تمثل الزيادة في الطلب على السباكة بالشمع المفقود، وقلة المستثمرين المحليين، إلى جانب جهود الحكومة الحثيثة للتوطين،&nbsp; فرصة عظيمة للقطاع الخاص للاستثمار في&nbsp; تصنيع مصانع السباكة بالشمع المفقود؛ لخدمة قطاعات الطاقة في المملكة ودول مجلس التعاون الخليجي.</p>
+<p>كما تتوافر فرص أخرى عبر سلسلة القيمة وتشمل:</p>
+<ul>
+<li>إنشاء مصانع لتصنيع قوالب السباكة بالشمع المفقود ، و استغلال وجود السيراميك والمواد اللاصقة في المملكة العربية السعودية</li>
+<li>ﺗﻄﻮﻳﺮ ﻣﺼﺎﻧﻊ إﻧﺘﺎج قضبان الصلب واﻟﺴﺒﺎئك</li>
+<li>إنشاء مرافق لتنظيف المعادن والكشف عنها واختبارها</li>
+<li>إعداد مرافق المعالجة الحرارية</li>
+<li>تصنيع مخرطة سي ان سي وغيرها من معدات التشغيل الدقيقة للتشطيب</li>
+</ul>
+"
+                                ; manufacturing-plants-for-sand-casting               ;                ; "
+<p>تتمثل الفرصة في توطين سلسلة التقيمة للسباكة الرملية وذلك لخدمة قطاعات المملكة ودول مجلس التعاون الخليجي</p>
+<p>تعد السباكة الرملية واحدة من طُرق تشكيل المعادن الخمسة (وتشكيل المعادن بالقوالب المغلقة ،السباكة بالشمع المفقود وتشكيل المعادن بالدرفلة) و المستخدمة في تصنيع منتجات الطاقة في المملكة العربية السعودية.</p>
+<p>تتم السباكة بالشمع المفقود عن طريق المضخات(تحمل القوس) الصمامات (البوابية و صمام الفراشة و الكروية ، وذات الاتجاه الواحد)</p>
+<p>في عام 2016 ، بلغت قيمة طلب المملكة العربية السعودية لعمليات السباكة الرملية 178 مليون دولار أمريكي بنسبة 18٪ من جميع التقنيات الخمسة المستخدمة لتصنيع منتجات الطاقة، والتي تقدر بـ 58 كيلو طن سنويًا بنسبة 24٪ من جميع التقنيات الخمسة المستخدمة لتصنيع منتجات الطاقة من الفئات التالية: الصمامات البوابية: 20.1 كيلو طن سنويا ، صمامات الفراشة: 12.4كيلو طن سنويا ، الصمامات الكروية: 8.7 كيلو طن سنويا ، الصمامات الخانقة: 7.3 كيلو طن سنويا ، صمامات الاتجاه الواحد: 6.6كيلو طن سنويا، والمضخات:2.8 كيلو طن سنويا.</p>
+<p>من المتوقع أن يزداد الطلب على عمليات السباكة الرملية في المملكة بمعدل نمو سنوي يقدر بـ 3٪ ليصل إلى 87 كيلوطن سنويًا</p>
+<p>&nbsp;ويتمتع المستثمرون في المملكة بفرصة الاستفادة من السوق الإقليمية الكبيرة في دول مجلس التعاون الخليجي، والتي من المتوقع أن تشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز (يتوقع أن يرتفع من 54 كيلوطن سنويًا عام 2017 إلى 79 كيلوطن سنويًا بحلول عام 2030).</p>
+<p>تمثل الزيادة في الطلب على السباكة الرملية، وقلة المستثمرين المحليين، إلى جانب جهود الحكومة الحثيثة للتوطين،&nbsp; فرصة عظيمة للقطاع الخاص للاستثمار في &nbsp;مصانع السباكة الرملية؛ لخدمة قطاعات الطاقة في المملكة ودول مجلس التعاون الخليجي.</p>
+<p>كما تتوافر فرص أخرى عبر سلسلة القيمة وتشمل:</p>
+<ul>
+<li>إنشاء مصانع لتصنيع قوالب السباكة الرملية ، و استغلال وجود السيراميك والمواد اللاصقة في المملكة العربية السعودية</li>
+<li>ﺗﻄﻮﻳﺮ ﻣﺼﺎﻧﻊ إﻧﺘﺎج قضبان الصلب واﻟﺴﺒﺎئك</li>
+<li>إنشاء مرافق لتنظيف المعادن والكشف عنها واختبارها</li>
+<li>إعداد مرافق المعالجة الحرارية</li>
+<li>تصنيع مخرطة سي ان سي وغيرها من معدات التشغيل الدقيقة للتشطيب</li>
+</ul>
+"
+                                ; aluminium-foundry-alloys               ;                ; "
+<p>يستلزم هذا المقترح تطوير سلسلة القيمة لمعالجة الألومنيوم.</p>
+<p>تُستخدم مركّبات مسبك الألومنيوم في صناعة سبائك الألومنيوم، ويتم إنتاج هذه المركّبات إما باستخدام طريقة السبك المستمر أو السبك في القوالب، ومن المركّبات شائعة الاستخدام في هذه العملية AlSi7Mg، وAlSi9Mg، و AlSi11(Mg)، وAlSi10MgMn، وAlSi5-9MgCu، وAlMg3، وAl 99.5E, 99.7E، ويمكن استخدام هذه المركّبات في العديد من المجالات، مثل السيارات والنقل، والعجلات وهياكل السيارات، إضافة إلى قطع الفرامل وقطع التعليق ورؤوس الأسطوانات، هذا غير التطبيقات الكهربائية وتطبيقات مقاومة الأكسدة والمجالات التي تتطلب موادًّا ذات مقاومة عالية للتآكل.</p>
+<ul>
+<li><strong>حجم الطلب على هذه المواد في منطقة الشرق الأوسط وشمال أفريقيا (بالطن):&nbsp;</strong>300 ألف طن</li>
+<li><strong>حجم القدرة الإنتاجية المثالي (بالطن):</strong>&nbsp;25 ألف طن</li>
+<li><strong>عدد القوى العاملة:&nbsp;</strong>100</li>
+<li><strong>المواد الخام المستخدمة:&nbsp;</strong>المعادن السائلة/القوالب (ألومنيوم)</li>
+<li><strong>حجم الاستثمار</strong>: 10 مليون دولار</li>
+</ul>
+"
+                                ; glass-wool               ;                ; "
+<p>&nbsp;الألياف الزجاجية المستخدمة في العزل الحراري (والمعروفة أيضاً باسم الصوف الزجاجي) هي ألياف زجاجية اصطناعية يتم نسجها بدقة للغاية على شكل كتلة تشبه الصوف، ويتم صُنع الصوف الزجاجي من خلال إذابة الرمل مع أكاسيد أخرى مثل الجير والصودا دون بلورتها.</p>
+<p>&nbsp;تستورد المملكة الصوف الزجاجي من الصين والكويت، وتُصدّر كميات صغيرة منه للخارج، ويُذكر أن المملكة شهدت ارتفاعاً ملحوظاً في معدل الطلب على منتجات الصوف الزجاجي لاستخدامها في العزل الحراري للمباني، خاصة في مجال التدفئة والتهوية وتكييف الهواء.</p>
+<p>&nbsp; تصل نسبة المباني المعزولة حراريًّا في المملكة إلى 30% فقط، ففي جدة تبلغ نسبة المباني غير المعزولة حوالي 85%، تليها المنطقة الشرقية بنسبة 72.6% ثم الرياض بنسبة 50%، لذا من المتوقع أن تصل قيمة الطلب على منتجات الصوف الزجاجي في المملكة إلى حوالي 54 ألف طن بحلول عام 2020.</p>
+<ul>
+<li><strong>حجم الطلب على هذه المواد في المملكة العربية السعودية (بالطن):&nbsp;</strong>54 ألف طن</li>
+<li><strong>حجم القدرة الإنتاجية المثالي (بالطن):</strong>&nbsp;10 آلاف طن</li>
+<li><strong>عدد القوى العاملة:</strong>&nbsp;75</li>
+<li><strong>المواد الخام المستخدمة:&nbsp;</strong>كسارة الزجاج المُعاد تدويرها &ndash; الرمل - رماد الصودا &ndash; حجر &ndash; الجير &ndash; البورق &ndash; راتنج فينول فورمالدهيد المستخدم في العزل الحراري</li>
+<li><strong>حجم الاستثمار</strong>: 25 مليون دولار</li>
+</ul>
+"
+                                ; proppants-plant               ;                ; "
+<p>تستلزم هذه الفرصة إنشاء مصنع إنتاج مواد الدعم الهيدروليكي لخدمة قطاع صناعة النفط والغاز في المملكة ودول مجلس التعاون الخليجي، إذ من المتوقع أن يمتلك المصنع قدرة إنتاجية تصل إلى 250 ألف طناً ويشتمل على وحدتين.</p>
+<p>&nbsp; تُستخدم تقنية التكسير الهيدروليكي في قطاع صناعة النفط والغاز من أجل زيادة معدل تدفق النفط والغاز من الآبار، حيث يتم إحداث كسور في الصخور التي تحتوي على النفط والغاز باستخدام الضغط الهيدروليكي، يتم بعد ذلك ضخّ مواد الدعم داخل بئر النفط مع سائل التكسير لكي تبقى التصدعات مفتوحة وبالتالي السماح للغاز الطبيعي أو النفط الخام بالتدفق خارج البئر.</p>
+<ul>
+<li><strong>حجم الطلب على هذه المواد في المملكة العربية السعودية (بالطن): 1.</strong>5 مليون طن</li>
+<li><strong>حجم القدرة الإنتاجية المثالي (بالطن):</strong>&nbsp;250 ألف طن</li>
+<li><strong>عدد القوى العاملة:&nbsp;</strong>250</li>
+<li><strong>المواد الخام المستخدمة:&nbsp;</strong>رمل السيليكا والبوكسايت</li>
+<li><strong>حجم الاستثمار</strong>: 80 مليون دولار</li>
+</ul>
+"
+                                ; ductile-iron-pipes-dip                ;                ; "
+<p>&nbsp; تُصنع أنابيب الحديد من حديد الصب الذي يتميز بقوة وصلابة كبيرة وقابلية تمدد جيدة، وذلك بفضل طبيعة تركيبته المجهرية وخصائصه الفيزيائية ، حيث يُعد هذا النوع من أفضل المواد التي يمكن استخدامها في صناعة أنابيب نقل المياه ومياه الصرف الصحي.</p>
+<p>&nbsp;ارتفاع الطلب على هذا االنوع من أنابيب الحديد هو ناتج النمو الذي يشهده سوق الإنشاءات فيها، والحاجة لاستبدال وإصلاح أنابيب المياه الحالية، والنمو الذي تشهده القطاعات الأخرى، كقطاعي الريّ والبنية التحتية، ويوجد العديد من الاستخدامات المتنوعة لهذه الأنابيب، إذ يمكن استخدامها في إمدادات المياه، وأنظمة الصرف الصحي، وأنظمة تصريف المياه، والري، وأنابيب أنظمة مكافحة الحرائق، وإنتاج النفط والغاز.</p>
+<p>تتمتع أنابيب الحديد بمقاومة عالية للشدّ ومقاومة للتآكل، ومرنة ومقاومة للتسرب، ويمكن طليها بعدة طرق مختلفة، ولها قابلية استخدام ممتازة.</p>
+<ul>
+<li><strong>الفجوة في العرض المحلي:&nbsp;</strong>120 ألف</li>
+<li><strong>حجم القدرة الإنتاجية المثالي (بالطن):</strong>&nbsp;200 ألف طن</li>
+<li><strong>عدد القوى العاملة:&nbsp;</strong>570</li>
+<li><strong>المواد الخام المستخدمة:&nbsp;</strong>الحديد الخام + الخردة</li>
+<li><strong>حجم الاستثمار</strong>: 59 مليون دولار</li>
+</ul>
+"
+                                ; aluminium-wheels-and-casting                ;                ; "
+<p>تستلزم هذه الفرصة تطوير سلسلة القيمة لمراحل الإنتاج النهائي للألومنيوم من أجل تطوير سلسلة القيمة لقطاع السيارات.</p>
+<p>يتم تصنيع العجلات المصبوبة عن طريق صبّ الألومنيوم المُذاب في قالب خاص وصُنع فتحات المسامير وحواف العجلات بحسب المواصفات المحددة، وتتميز العجلات المصبوبة باحتوائها على حبيبات موحدة، أي تكون الجزيئات متراصّة فوق بعضها وملتصقة ببعضها بفعل خاصية الالتصاق الميكانيكي، وعليه فإن غالبية العجلات المصبوبة تستخدم ألمنيوم من نوع A-356 الذي لا تتجاوز قوته 60% من قوة المركّبات التي تنتمي للفئة 500 أو 6000 والمستخدمة في العجلات المصوغة.</p>
+<p>&nbsp;ويتم تصنيع عجلات الألومنيوم المركب باستخدام مركب الألومنيوم (أو سبائك الألومنيوم) إذ تتمتع هذه العجلات عادة بقدرة أكبر على توصيل الحرارة ووزن أخف مقارنة بالعجلات المصنوعة من الفولاذ.</p>
+<ul>
+<li><strong>حجم الطلب على هذه المواد في منطقة الشرق الأوسط وشمال إفريقيا (بالطن):&nbsp;</strong>250 ألف طن</li>
+<li><strong>حجم القدرة الإنتاجية المثالي (بالطن):</strong>&nbsp;120 ألف طن</li>
+<li><strong>عدد القوى العاملة: 70</strong></li>
+<li><strong>المواد الخام المستخدمة:&nbsp;</strong>المعادن السائلة/القوالب (ألومنيوم A356)</li>
+<li><strong>حجم الاستثمار</strong>: 25 مليون دولار</li>
+</ul>
+"
+                                ; seamless-copper-tube                ;                ; "
+<p>تستلزم هذه الفرصة تطوير سلسلة قيمة للنحاس.</p>
+<p>أنابيب النحاس غير الملحومة هي منتجات نهائية تُصنع من قضبان النحاس (القضبان الدائرية) عبر سلسلة من خطوات الإنتاج التي تشمل الصهر والصبّ والثقب والبثق والسحب، والتلدين واللفّ، وتختلف هذه الخطوات اعتماداً على نوع العملية المُنفذة، تجدر الإشارة إلى أن أنابيب النحاس من المواد التي يفضل العاملون في العديد من القطاعات استخدامها بسبب المزايا التي يتمتع بها النحاس، وتشمل هذه المجالات: تكييف الهواء والتبريد، وأعمال السباكة، والمبادلات الحرارية، وتوزيع المياه، ونقل الغاز الطبي، وغيرها.</p>
+<p>ويقتضي المقترح إنشاء مصنع لإنتاج أنابيب النحاس غير الملحومة من أجل تلبية الطلب الهائل على هذا المنتج في قطاع الإنشاءات السعودي استجابة للمشاريع الضخمة الجديدة التي يتم تنفيذها في المملكة.</p>
+<ul>
+<li><strong>حجم الطلب على هذه المواد في منطقة الشرق الأوسط وشمال إفريقيا (بالطن):&nbsp;</strong>130 ألف طن</li>
+<li><strong>حجم القدرة الإنتاجية المثالي (بالطن):</strong>&nbsp;15 ألف طن</li>
+<li><strong>عدد القوى العاملة:&nbsp;</strong>200</li>
+<li><strong>المواد الخام المستخدمة:&nbsp;</strong>سبائك النحاس، والخردة، والقوالب</li>
+<li><strong>حجم الاستثمار</strong>: 60 مليون دولار</li>
+</ul>
+"
+                                ; aluminium-circles-slug                ;                ; "
+<p>تستلزم هذه الفرصة تطوير سلسلة القيمة لمعالجة للألومنيوم.</p>
+<p>&nbsp; يتم إنتاج سبائك الالمنيوم الدائرية، والمعروفة أيضاً باسم الصفائح الدائرية المسطحة، بأقطار وسماكات مختلفة لتلبية احتياجات معينة، وبأوزان وأقطار تناسب طلب الزبائن. ويجب أن تكون سبائك الألومنيوم هذه خالية من أية شوائب أو جيوب هوائية وأن يتم صنعها بناء على أبعاد محددة ودقيقة لكي يكون بالإمكان الحصول على الشكل الصحيح الذي يتمتع بالمستوى المرغوب به من تحمل الضغط والشدة.</p>
+<p>تُعتبر سبائك الألومنيوم المادة الخام الأساسية المستخدمة في إنتاج أنابيب الألومنيوم القابلة للطي، وعلب الرذاذ المصنوعة من الألومنيوم، والأنابيب المستخدمة لتعبئة الأدوية، ومواد التجميل، والطعام، والمنتجات /الأجهزة التكنولوجية المنزلية، وعبوات معجون الأسنان، وعلب الرذاذ المستخدمة لتعبئة مزيل العرق، والعطور، ومستحضرات التجميل، والعناية بالبشرة، والأدوية، والطعام، والمنتجات المنزلية.</p>
+<ul>
+<li><strong>حجم الطلب على هذه المواد في منطقة الشرق الأوسط وشمال إفريقيا (بالطن):&nbsp;</strong>10 آلاف طن</li>
+<li><strong>حجم القدرة الإنتاجية المثالي (بالطن):</strong>&nbsp;20 ألف طن</li>
+<li><strong>عدد القوى العاملة: 25</strong></li>
+<li><strong>المواد الخام المستخدمة:&nbsp;</strong>لفائف صفيحة الألمنيوم المدرفلة بسُمك يصل إلى 0.3 كحد أقصى.</li>
+<li><strong>حجم الاستثمار</strong>: 10 مليون دولار</li>
+</ul>
+"
+                                ; aluminium-powder                ;                ; "
+<p>تستلزم هذه الفرصة تطوير سلسلة القيمة لمعالجة الألومنيوم.</p>
+<p>&nbsp;يتم إنتاج مسحوق الألومنيوم من خلال تعريض معدن الألومنيوم النقي المُذاب لمنفث غاز مضغوط وتحويله إلى قطرات دقيقة ثم تحويل هذه القطرات إلى الحالة الصلبة وجمعها، بعد ذلك يتم تصنيف مساحيق الألومنيوم التي يتم جمعها وفقاً لحجمها ومواصفاتها واستخداماتها.</p>
+<p>&nbsp;يمكن إلى حدّ ما التحكم بأحجام جسيمات المنتج الذي يتم صُنعه بهذه الطريقة من خلال التحكّم بشكل الفتحة، وضغط الهواء، وغيرها من العوامل الأخرى، وتتراوح أحجام الجسيمات في هذا النوع من المنتجات بين 5 ميكرون كحد أدنى و1000 ميكرون كحد أقصى.</p>
+<ul>
+<li><strong>حجم الطلب على هذه المواد في منطقة الشرق الأوسط وشمال إفريقيا (بالطن):&nbsp;</strong>20 ألف طن</li>
+<li><strong>حجم القدرة الإنتاجية المثالي (بالطن):</strong>&nbsp;10 آلاف طن</li>
+<li><strong>عدد القوى العاملة:&nbsp;</strong>60</li>
+<li><strong>المواد الخام المُستخدمة:</strong>&nbsp;قوالب الألومنيوم/المعدن السائل</li>
+<li><strong>حجم الاستثمار</strong>: 10 مليون دولار</li>
+</ul>
+"
+                                ; aluminium-forgings                ;                ; "
+<p>تستلزم هذه الفرصة تطوير سلسلة القيمة لمعالجة للألومنيوم.</p>
+<p>الطرق هو عملية تصنيع يتم فيها ضغط المعدن، أو طرقه، أو كبسه تحت ضغط عالٍ وتحويله إلى قطع ذات قوة عالية، وعلى الرغم من أن هذه العملية عادة ما تتم عن طريق تسخين المعدن، إلا أن هناك طرق أخرى لطرق المعدن دون استخدام الحرارة، ويتم تشكيل القطع المطروقة (المُصاغة) عمومًا إما باستخدام مطرقة لتشكيل المعدن داخل قوالب طبع من خلال سلسلة من الطرقات المتتالية، أو باستخدام مكبس يتم فيه طرق المعدن مرة واحدة في كل قالب طبع.</p>
+<p>يوجد ثلاثة أنواع رئيسة من مطروقات سبائك الألومنيوم وهي المطروقات المُعدة باستخدام القوالب المفتوحة، والمطروقات المعدة باستخدام القوالب المُغلقة، والحلقات المدرفلة.</p>
+<p>&nbsp;يشيع استخدام المكونات المطروقة (المُصاغة) في قطاع السيارات حيث تدخل في صناعة قطع السيارات المُصممة لتحمّل الضغط والصدمات، من هذه القطع: أذرع التوصيل، والعمود المرفقي، ومحاور دوران العجلات، وأذرع المحور، والمكابس، والتروس، وأذرع التوجيه.</p>
+<p>&nbsp;كما تُستخدم المطروقات في الطائرات المروحية، والطائرات المزودة بمحرك ذو مكابس، والطائرات التجارية، والطائرات العسكرية الأسرع من الصوت، والعديد من الطائرات مُصممة خصيصاً لتُستخدم فيها هذه المطروقات إذ تحتوي على أكثر من 450 مطروقة هيكلية، بما فيها المئات من قطع المحرك المطروقة.</p>
+<p>&nbsp;تجدر الإشارة إلى أن علامة &quot;مطروق&quot; أو &quot;مُصاغ&quot; هي علامة جودة تُشير إلى جودة الأدوات والمعدات اليدوية التي تحملها، ويتم صُنع هذه الأدوات والمعدات، كالكمّاشات، والمطارق، والمطارق الثقيلة، ومفاتيح الربط، وأدوات العناية بالحدائق، والأدوات الجراحية، حصرياً باستخدام عملية الطرق.</p>
+<ul>
+<li><strong>حجم الطلب على هذه المواد في منطقة الشرق الأوسط وشمال إفريقيا (بالطن):&nbsp;</strong>30 ألف طن</li>
+<li><strong>حجم القدرة الإنتاجية المثالي (بالطن):</strong>&nbsp;6 آلاف طن</li>
+<li><strong>عدد القوى العاملة:&nbsp;</strong>100</li>
+<li><strong>المواد الخام المُستخدمة:&nbsp;</strong>قضبان الألومنيوم/سبائك الألومنيوم الدائرية</li>
+<li><strong>حجم الاستثمار</strong>: 30 مليون دولار</li>
+</ul>
+"
+                                ; brass-and-copper-plant                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Setup production facility of 45 KT capacity in KSA to produce copper and brass products for non electrical usage in the region</p>
+"
+                                ; copper-rod-plant                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Establishing copper rod plant of 115 KT capacity to supply wire / cables producers in the KSA and the rest of the Middle East region</p>
+"
+                                ; silicon-smelter                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Opportunity to setup a silicon metal smelter of 45 KT capacity in KSA to cater local demand and serve regional markets</p>
+"
+                                ; steelmaking                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Opportunity to setup steelmaking facility for specialty high value added products with 7,500 KT capacity to cater local and regional demand</p>
+"
+                                ; stainless-steel-grades-seamless-pipes-facility                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Opportunity to setup a manufacturing facility to produce stainless steel grade seamless pipes with 40 KT capacity in KSA</p>
+"
+                                ; tinplate-production-plant                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Opportunity to setup a production facility for tinplate with 400 KT capacity in KSA to cater local demand and serve the regional markets</p>
+"
+                                ; aluminum-fluoride                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Opportunity to setup manufacturing plant for aluminum fluoride, one of the main additives required for production of metallic aluminum</p>
+"
+                                ; aluminum-rolling-foil                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Opportunity to setup a 35 KT capacity manufacturing plant for aluminum rolling foil to cater local and regional demand</p>
+"
+                                ; hq-hot-rolled-coil-production-plant                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Opportunity to setup a 3 mtpa capacity manufacturing plant for high quality hot rolled coil to cater local and regional demand</p>
+"
+                                ; aluminum-scrap-recycling-plant                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Opportunity to setup aluminum scrap recycling plant of 120 KT capacity to produce processed scrap and aluminum ingots</p>
+"
+                                ; large-sizes-alloyed-seamless-pipes-production-plant                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Setup a manufacturing facility with a capacity of 50 ktpa to produce a high quality large sized alloyed Seamless Pipes<br />(Sizes OD &gt; 7 &rdquo;&rdquo;).</p>
+"
+                                ; calcium-ammonium-nitrate-can                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Setup a 500 ktpa capacity manufacturing plant for Calcium Ammonium Nitrate (CAN)</p>
+"
+                                ; heavy-profiles-marine-profiles-rails                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Setup a manufacturing plant with a capacity of 1.6 mtpa to produce heavy profiles, marine profiles & rails to serve the construction, maritime and rails demand</p>
+"
+                                ; processing-glass-plant                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Opportunity to setup a 42 ktpa capacity float glass processing plant for manufacturing safety glass, laminated safety glass and insulating  glass products</p>
+"
+
+
+
+                                ; precision-machining-workshop-for-downhole-equipment-tools                ;                ; "
+<p>تتضمن هذه الفرصة إنشاء ورش عمل التشكيل الدقيق لمعدات وأدوات قاع البئر، وذلك لخدمة قطاع النفط والغاز في المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>من أصل 16 من أدوات ومعدات قاع البئر، تستخدم الآلات الدقيقية أكثر من 40 مكونًا&nbsp; في عملية التصنيع، ولكي تعمل الآلات الدقيقة فهي بحاجة للحفر والشحذ، ومخرطة سي إن سي وماكينة التحكم الرقمي سي إن سي، والتسنين الدقيق/ وتقنيات معدات التشغيل الدقيقة لسي إن سي.</p>
+<p>وفي الوقت الحالي، يتم تصنيع معدات التشغيل الدقيقة لأدوات ومعدات قاع البئر بالكامل خارج المملكة، مما يوفر فرصة كبيرة أمام المستثمرين لتوطين الإنتاج.</p>
+<p>وقد ازداد الطلب الإجمالي على آلات التشغيل الدقيقة لأدوات قاع البئر في المملكة العربية السعودية، والتي تقدر بنحو 78 مليون دولار أمريكي في عام 2016، ومن المتوقع أن يزداد الطلب بمعدل نمو سنوي يقدر بـ 4.7%&nbsp; مليون دولار ليصل إلى 108 مليون دولار أمريكي بحلول عام 2020، وذلك&nbsp; بفضل نشاط النفط والغاز في المنطقة.</p>
+<p>لدى المستثمرين السعوديين فرصة للاستفادة من السوق الإقليمية الكبيرة في دول مجلس التعاون الخليجي،&nbsp; ويتوقع أن تشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز، والمتوقع أن يرتفع من 91 مليون دولار في عام 2017 إلى 112 مليون دولار بحلول عام 2022.</p>
+"
+                                ; manufacturing-of-coiled-tubing-strings                ;                ; "
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج أسلاك الأنابيب المرنة، وذلك لخدمة صناعة النفط والغاز في المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>في عام 2016، قدرت نسبة الطلب على أسلاك الأنابيب المرنة في المملكة إلى 130 وحدة (~ 30 مليون دولار أمريكي)، ويتوقع أن ترتفع بمعدل نمو سنوي يصل إلى 5٪ ليصل إلى 207 وحدة بحلول عام 2022.</p>
+<p>&nbsp;حالياً، يتم تلبية الطلب على أسلاك الأنابيب المرنة في المملكة العربية السعودية، من خلال استيرادها، مما يتيح فرصة كبيرة أمام المستثمرين لتوطين الإنتاج.</p>
+<p>&nbsp;يتمتع المستثمرون السعوديون بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، الذي من المتوقع أن يشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز، ويتوقع أن يرتفع من 174 وحدة (حوالي 63 مليون دولار أمريكي) في 2017 إلى 214 وحدة بحلول عام 2022.</p>
+<p>بالإضافة إلى الطلب المتزايد على أسلاك الأنابيب المرنة في المملكة، ودول مجلس التعاون الخليجي على نطاق أوسع، فإن عملية تصنيع أسلاك الأنابيب المرنة بسيطة نسبياً بالرغم من وجود قدرات محلية لدعم التصنيع، كذلك توفر الحوافز للمستثمرين ميزة الشراء في السعودية، حيث تتمتع المملكة بمزايا التكلفة للقوى العاملة والأرض واللوجستيات، كما يتوفر التمويل العام وحوافز الدعم الحكومية الأخرى التي يمكن للمستثمرين الاستفادة منها.</p>
+<p>تركز هذه الفرصة على الجزء المستهلك من سلسلة القيمة، ومع ذلك توجد فرص أخرى عبر سلسلة القيمة تتضمن: اللوازم والأدوات، سوائل تحفيز الآبار ، مثبطات التآكل، التعبئة</p>
+<p>ويعتبر مقدمي خدمات توصيل الأسلاك المرنة في المملكة العربية السعودية عملاء محتملين لمواد الأسلاك المرنة.</p>
+<p>كما يمكن أيضًا تقديم خدمات ما بعد البيع مثل (الفحص اللاإتلافي)والتخزين المؤقت من قِبل الشركات الصغيرة والمتوسطة إلى مستهلكي أسلاك الأنابيب المرنة.، وتطلب أرامكو السعودية فحص الأنابيب المرنة باستخدام تقنية الفحص اللاإتلافي مرة واحدة كل 6 أشهر، وتستخدم في آبار أرامكو الأنابيب التي تجتاز الاختبار فقط.</p>
+"
+                                ; production-of-drill-pipes                ;                ; "
+<p>تتضمن الفرصة تطوير سلسلة القيمة لإنتاج أنابيب الحفر لخدمة قطاع النفط والغاز في المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>في عام 2016، قدر الطلب على أنابيب الحفر في المملكة العربية السعودية بـ&nbsp; 13.3 كيلو طن سنويًا، ومن المتوقع أن يزداد بمعدل نمو سنوي يصل إلى 4٪ ليصل إلى 16.7 كيلو طن سنويًا بحلول عام 2022، في الوقت الحالي تتم تلبية الطلب على أنابيب الحفر في المملكة، من خلال استيرادها، مما يتيح فرصة كبيرة للمستثمرين لتوطين الإنتاج.</p>
+<p>يتمتع المستثمرون السعوديون بفرصة للاستفادة من بقية الأسواق الإقليمية في دول مجلس التعاون الخليجي، ويتوقع أن تشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز، ومن المتوقع أن يرتفع من 18.4 كيلو طن سنويًا في عام 2017 إلى 22 كيلو طن سنويًا بحلول عام 2022، وإمكانية بلوغ حجم&nbsp; الطلب على السوق في المملكة العربية السعودية ما نسبته 43 ٪ من إجمالي طلب دول مجلس التعاون.</p>
+<p>هناك إمكانيات عالية لتوطين إنتاج أنابيب الحفر عبر سلسلة القيمة، بدءاً بالتصميم إلى التأجير والخدمات، تشمل الفرص عبر سلسلة القيمة على ما يلي:</p>
+<ul>
+<li>التصميم: إعداد التصميم، ومرافق البحث ،والتطوير لهندسة أنابيب الحفر، بما يتوافق مع المواصفات المطلوبة لعملاء المملكة.</li>
+<li>المواد الأولية: فرصة للشراكة مع موردي الصلب لإنتاج المواد الخام وفقًا للمواصفات المطلوبة.</li>
+<li>التصنيع: إنشاء مصنع لإنتاج أنابيب الحفر في المملكة العربية السعودية.</li>
+<li>التأجير والخدمات: إمكانية تقديم خدمات الفحص والصيانة والإصلاح.</li>
+</ul>
+"
+                                ; manufacturing-of-perforating-guns                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج مسدسات التثقيب لخدمة قطاع النفط والغاز في المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على مسدسات التثقيب في المملكة العربية السعودية ، ليصل إلى 32،000 قدم في عام 2016، ونظراً للإنتاج القوي للنفط والغاز، من المتوقع أن يرتفع الطلب بمعدل نمو سنوي يبلغ 5.1٪ ليصل إلى 44،682 قدمًا بحلول عام 2022،&nbsp; في الوقت الحالي تتم تلبية طلب المملكة لمسدسات التثقيب من خلال استيرادها، مما يوفر فرصة كبيرة للمستثمرين لتوطين الإنتاج.</p>
+<p>&nbsp;يتمتع المستثمرون السعوديون بفرصة الاستفادة من الأسواق الإقليمية الكبرى في دول مجلس التعاون الخليجي التي من المتوقع أن تشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز، ويتوقع أن يرتفع من 36،820 قدم في 2017 إلى 46،234 قدم بحلول عام 2022، في حين تتكون غالبية السوق لمسدسات التثقيب من المسدسات الحاملة المجوفة بأحجام مختلفة منها: 2 7/8 &quot;، 3 1/8&quot; ، 3 1/2 &quot;، و 4 1/2&quot;.</p>
+<p>وبالإضافة إلى الطلب المتزايد على مسدسات التثقيب،&nbsp; توفر الحوافز للمستثمرين ميزة الشراء في السعودية ، حيث تتمتع المملكة بمزايا التكلفة للقوى العاملة، والأرض، واللوجستيات، كما يتوفر التمويل العام وحوافز الدعم الحكومية الأخرى التي يمكن للمستثمرين الاستفادة منها.</p>
+<p>تركز هذه الفرصة على إنشاء متجر لتصنيع الحاملات المجوفة، و أنابيب الشحن لمسدسات التثقيب، ولدى تصنيع مسدسات التثقيب فرصة عالية للتوطين عبر سلسلة القيمة، بدءً بالتصميم، والمواد الأولية إلى الإنتاج، وإدارة &nbsp;دورة الحياة</p>
+<p>&nbsp;تشمل الفرص عبر سلسلة القيمة على ما يلي:</p>
+<ul>
+<li>التصميم: إنشاء تصميم لمسدسات التثقيب، ومكتب بحث وتطوير، لتطوير التصميم الملائم لمتطلبات المملكة العربية السعودية.</li>
+<li>المواد الأولية: إقامة شراكة مع الموردين المحليين للأنابيب لتوطين صناعة الأنابيب.</li>
+<li>الإنتاج: إنشاء متجر تصنيع لتسهيل تصنيع الحاملات المجوفة وأنابيب الشحن.</li>
+<li>الإنتاج: إنشاء متجر لمخرطة سي إن سي لتشغيل نظام التثقيب وغيرها من معدات قاع البئر.</li>
+<li>الاختبار والتجميع: تجميع واختبار أنظمة التثقيب قبل استخدامها في عمليات التثقيب.</li>
+<li>إدارة دورة الحياة: تقديم خدمات الدعم لمسدسات التثقيب، بما في ذلك إدارة الموجودات</li>
+</ul>
+"
+                                ; manufacturing-of-drill-collars               ;                ; "
+<p>تتمثل الفرصة في تطوير سلسلة القيمة لإنتاج أنابيب التثقيل الحلزونية والملساء لخدمة قطاع النفط والغاز في المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على أنابيب التثقيل، حيث يقدر بنحو 5000 وحدة، بقيمة 12 مليون دولار أمريكي في عام 2017، ونظراً لنمو عمليات الحفر البري واستكمال الأبار لتحقيق أهداف الإنتاج لعام 2025، فمن المتوقع أن يزداد الطلب على أنابيب التثقيل بمعدل نمو سنوي يصل إلى ~ 7،300 وحدة بقيمة 18 مليون دولار أمريكي بحلول عام 2025؛ تتم تلبية طلب المملكة العربية السعودية لأنابيب التثقيل، من خلال استيرادها، مما يوفر فرصة كبيرة للمستثمرين لتوطين الإنتاج.</p>
+<p>&nbsp;يتمتع المستثمرون السعوديون بفرصة الاستفادة من السوق الإقليمية الكبرى في دول مجلس التعاون الخليجي التي من المتوقع أن تشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز، كما يتوقع أن يرتفع من 8،700 وحدة في عام 2017 إلى 12،700 وحدة بحلول عام 2025.</p>
+<p>بالإضافة إلى الطلب المتزايد في السوق ، تتمتع المملكة بقاعدة تكلفة جذابة، بما في ذلك انخفاض تكاليف العمالة، الأراضي، المرافق، والخدمات اللوجستية، بالإضافة للأسعار التنافسية لإمدادات المواد، بما في ذلك الكربون وسبائك الصلب.</p>
+<p>و تركز هذه الفرصة على تصنيع أنابيب التثقيل نظراً لتزايد الطلب، حيث تتمتع المملكة بوفرة المواد الخام، ولا يوجد حالياً تصنيع محلي، ومع ذلك هناك فرص للتوطين عبر سلسلة القيمة لإنتاج أنابيب التثقيل.</p>
+<p>&nbsp;تشمل الفرص عبر سلسلة القيمة على ما يلي:</p>
+<ul>
+<li>التصميم والتصنيع: تصميم وتصنيع أنابيب الحفر الحلزونية والملساء، بناء على المعايير والشهادات الدولية وأرامكو.</li>
+<li>ما بعد البيع والتأجير: تمثل خدمات التأجير فرصة كبيرة للشركات الصغيرة والمتوسطة لأن تتيح للحفارين فرصة الوصول إلى أحدث المعدات التي تتناسب مع التضاريس المحلية.</li>
+<li>ما بعد البيع والتأجير: خدمات ما بعد البيع لإستئصال أنابيب الحفر، مما يتيح فرصة إعادة تدوير أنابيب التثقيل و إصلاحها.</li>
+</ul>
+"
+                                ; manufacturing-of-liner-hangers                ;                ; "
+<p>تتضمن الفرصة تطوير سلسلة القيمة لإنتاج علاقات البطانة المختزلة، وذلك لخدمة قطاع النفط والغاز في المملكة العربية السعودية، و دول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على علاقات البطانة المختزلة في المملكة، والتي تقدر بنحو 1،200 وحدة بقيمة 95 مليون دولار أمريكي في عام 2016، ومن المتوقع أن يرتفع الطلب على المملكة نتيجة لنمو قوي في إنتاج النفط والغاز بمعدل نمو سنوي يبلغ 5 ~. ٪ ليصل إلى 1،912 وحدة بحلول عام 2022.</p>
+<p>في عام 2016، بلغ الطلب على علاقات البطانة المختزلة المنتظمة ما نسبته 57٪ للنوع الهيدروليكي و ~ 25٪ للنوع الميكانيكي والبقية لأنواع أخرى، ومن المتوقع أن تظل هذه النسب متماثلة حتى عام 2022؛ وفي الوقت الحالي يتم تلبية طلب المملكة العربية السعودية على علاقات البطانة المختزلة، من خلال استيرادها، مما يوفر فرصة كبيرة للمستثمرين لتوطين الإنتاج.</p>
+<p>&nbsp;يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، الذي من المتوقع أن يشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز، كما يتوقع أن يرتفع من 1،600 وحدة بقيمة 100 مليون دولار في عام 2017 إلى ~ 2000 وحدة بحلول عام 2022. بالإضافة إلى الطلب المتزايد تتمتع المملكة بقاعدة تكاليف جذابة تتميز بانخفاض تكلفة القوى العاملة و الأرض والمرافق واللوجستيات، وتعتزم المملكة لتوطين اللدائن التي كانت تقف عائقا أمام توطين علاقات البطانة المختزلة.</p>
+<p>تركز هذه الفرصة على إنتاج وفحص وتوزيع علاقات البطانة المختزلة. وتشمل الفرص على:</p>
+<p>الإنتاج: إنشاء ورشة تصنيع لصناعة مكونات نظام علاقة البطانة و البطانة المانعة و&nbsp; إنشاء محل لمخرطة سي إن سي وذلك لتصنيع الأقماع ، والاستفادة من المرافق المحلية للتعاقد من أجل خدمات المعالجة السطحية والتشطيبية.</p>
+<p>الفحص والتوزيع: تجهيز وفحص المعدات قبل تركيبها في الموقع،و توفير خدمات إصلاح علاقات البطانة ومع ذلك ، هناك فرص للتوطين عبر سلسلة القيمة لعلاقات البطانة المختزلة.</p>
+<p>وتشمل الفرص عبر سلسلة القيمة على م ايلي:</p>
+<ul>
+<li>التصميم: إنشاء مكتب لتحسين التصاميم لعلاقات البطانة لتلائم متطلبات فتحة القاع في المملكة العربية السعودية.</li>
+<li>المواد الأولية: تصنيع المطاط لاستخدامات النفط والغاز.</li>
+<li>المواد الأولية: إقامة شراكة مع الموردين المحليين للمعدات الأنبوبية للدول النفطية لتحسين قدرات تصنيع الغلاف المستخدمة في تصنيع الهيكل.</li>
+<li>إدارة دورة حياة: توفير خدمات الصيانة والإصلاح لعلاقة البطانة بما في ذلك قطع الغيار</li>
+</ul>
+"
+                                ; manufacturing-facility-for-packers                ;                ; "
+<p>تتضمن هذه الفرصة إنشاء مرفق لتصنيع العوازل لخدمة قطاع النفط والغاز في المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على العوازل في المملكة، حيث تقدر بنحو 5050 وحدة بقيمة 173 مليون دولار أمريكي في عام 2016، ومن المتوقع أن يرتفع الطلب نتيجة لنمو قوي في إنتاج النفط والغاز بمعدل نمو سنوي يبلغ 5٪ ليصل إلى 8،150&nbsp; بحلول عام 2022.</p>
+<p>في عام 2016، بلغت نسبة الطلب على العوازل 80٪ و&nbsp; 20٪ لعوازل الإنتاج، ويتوقع أن تظل هذه النسب متماثلة حتى عام 2022، وفي الوقت الحالي، تتم تلبية الطلب على العوازل من خلال استيرادها، مما يوفر فرصة كبيرة للمستثمرين لتوطين الإنتاج.</p>
+<p>يتمتع المستثمرون في المملكة العربية السعودية بفرصة الإستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، ومن المتوقع أن يشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز ، كما يتوقع أن يرتفع من 6،800 وحدة بقيمة 180 مليون دولار أمريكي في 2017 إلى 8،430 وحدة بحلول عام 2022.</p>
+<p>بالإضافة إلى الطلب المتزايد في السوق، تتمتع المملكة العربية السعودية بقاعدة تكلفة مميزة تتميز بانخفاض تكاليف العمالة و الأراضي و المرافق والخدمات اللوجستية. كما تخطط المملكة لتوطين اللدائن التي كانت تعتبر حاجزاً أمام توطين العوازل.</p>
+"
+                                ; manufacturing-of-dv-tools                ;                ; "
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج أدوات صمام التحويل، وذلك لخدمة قطاع&nbsp; النفط والغاز في المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على أدوات صمام التحويل في المملكة العربية السعودية، والتي تقدر بنحو 1،200 وحدة بقيمة&nbsp; 64 مليون دولار أمريكي في عام 2016، ونظراً لنمو إنتاج النفط والغاز، فمن المتوقع أن يرتفع الطلب بمعدل نمو سنوي يبلغ 2.5٪ ~ 1400 وحدة بحلول عام 2022، تتم تلبية الطلب على أداوت صمام التحويل من خلال استيرادها، مما يتيح فرصة كبيرة للمستثمرين لتوطين الإنتاج.</p>
+<p>&nbsp;يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، ومن المتوقع أن يشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز، كما يتوقع أن يرتفع من 1،300 وحدة بقيمة 133 مليون دولار أمريكي في عام 2017 إلى 1،400 الوحدات بحلول عام 2022.</p>
+<p>بالإضافة إلى الطلب المتزايد في السوق، تتمتع المملكة بقاعدة تكلفة جذابة، بما في ذلك انخفاض تكاليف العمالة والأراضي والمرافق والخدمات اللوجستية.</p>
+<p>وتركز هذه الفرصة على هيكل التصنيع، والأقفال المطاطية، ومكونات أدوات صمام التحويل في المملكة، ومع ذلك&nbsp; توجد فرص إضافية ذات إمكانات عالية للتوطين، عبر سلسلة القيمة لتصنيع أدوات صمامات التحويل.</p>
+<p>&nbsp;تشمل فرص سلسلة القيمة على ما يلي:</p>
+<p>التصميم: إنشاء تصميم لأداة صمام التحويل، ومكتب بحث وتطوير، لتطوير تصاميم أدوات صمام التحويل لملائمة متطلبات المملكة العربية السعودية.</p>
+<p>المواد الأولية: إقامة شراكة مع الموردين المحليين للمعدات الأنبوبية للدول النفطية، لتحسين قدرات تصنيع الغلاف المستخدمة في تصنيع الهيكل.</p>
+<p>الإنتاج: إنشاء متجر لتصنيع مكونات نظام أدوات صمام التحويل.</p>
+<p>الإنتاج: إنشاء متجر مخرطة سي إن سي&nbsp; لصناعة المكونات المعدنية.</p>
+<p>الإنتاج: إنشاء مرافق محلية لإجراء خدمات المعالجة السطحية والتشطيبية.</p>
+<p>الفحص والتجميع: تجميع وفحص أدوات صمام التحويل قبل استخدامها في عمليات التثبيت.</p>
+"
+                                ; marine-finfish-cage-farming                ;                ; "
+<p>تتضمن هذه الفرصة بناء وتشغيل أقفاص الاستزراع السمكي على امتداد البحر الأحمر.</p>
+<p>تمثل المملكة بامتدادها على البحر الأحمر موقعا مثالياً للاستزراع السمكي، وذلك لما تتمتع به من مقومات بيئية وجغرافية، وتتمثل في:</p>
+<ul>
+<li>سواحل طويلة على امتداد البحر الأحمر تصل إلى 1,800 كيلو متر.</li>
+<li>عمق مناسب للقفص من 20متر إلى 50 متر.</li>
+<li>مياه عذبة، ونسبة أوكسجين مذابة تبلغ 7.04 ملغم/ لتر.</li>
+<li>طول موجة منخفض تصل من 0.5 متر إلى 1 متر.</li>
+<li>ملوحة كافية تصل من 35 إلى 41 جزء لكل ألف بناء على الموقع.</li>
+<li>درجة حرارة الماء مناسبة، والتي تصل من 18 درجة مئوية إلى 30 درجة مئوية، مما يسمح بإنتاج محلي لمجموعة واسعة من الأنواع المختلفة.</li>
+</ul>
+<p>بالإضافة إلى الظروف المواتية، حيث تمتلك المملكة العربية السعودية سوقًا محليًا متزايدًا للأسماك، وإمكانية كبيرة للتصدير؛ للاستفادة من إمكاناتها، كما تلتزم الحكومة السعودية بفتح القطاع من خلال فتحه للاستثمارات الخاصة.</p>
+<p>تبحث وزارة البيئة والمياه والزراعة عن مستثمرين من القطاع الخاص للاستثمار في قطاع الاستزراع المائي في المملكة العربية السعودية، حيث حددت الوزارة أكثر من 15 قطعة أرض على طول البحر الأحمر، بدءا من تبوك في الشمال إلى جازان في الجنوب.</p>
+<p>وقد تم تحديد المنطقة بأنها مناسبة لتربية الأحياء المائية بعد استكشاف دقيق لسواحل البحر الأحمر، لذا تتوافق المنطقة مع المعايير المعتمدة في المملكة والتي تم إصدارها من قبل وكالة مصائد الأسماك في عام 2017م (1438 هـ)، و يمكن توسيع مساحة الأراضي بناء على احتياجات المستثمر.</p>
+"
+                                ; manufacturing-of-whipstocks                ;                ; "
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج مقابض السوط لخدمة قطاع النفط والغاز في المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على مقابض السوط في المملكة العربية السعودية، والتي تقدر بنحو 510 وحدة بقيمة 21 مليون دولار أمريكي، ونظراَ لإزدياد حفر الآبار متعددة الأطراف، فمن المتوقع أن يرتفع الطلب بمعدل نمو سنوي يصل إلى 5٪ ليصل إلى 770 وحدة بحلول عام 2022. وفي الوقت الحالي، يتم تلبية طلب المملكة لمقابض السوط من خلال استيرادها، مما يمثل فرصة كبيرة للمستثمرين لتوطين الإنتاج.</p>
+<p>&nbsp;في عام 2016، بلغ الطلب على مقابض السوط الهيدرولوكية&nbsp; 90٪ و 10٪ لمقابض السوط الميكانيكية، ومن المتوقع أن تبقى النسب متماثلة حتى عام 2022.</p>
+<p>يتمتع المستثمرون السعوديون بفرصة الاستفادة من السوق الإقليمي الكبير في منطقة الخليج، والذي يتوقع أن يشهد نمواً قوياً مدعوماً بإنتاج النفط والغاز، ومن المتوقع أن يرتفع من 640 وحدة بقيمة 44 مليون دولار أمريكي في 2017 إلى ~ 800 وحدة بحلول عام 2022.</p>
+<p>بالإضافة إلى الطلب المتزايد في السوق، تتمتع المملكة العربية السعودية&nbsp; بقاعدة تكلفة جذابة تشمل انخفاض تكاليف العمالة، والأراضي، والمرافق، والخدمات اللوجستية.</p>
+<p>وتركز هذه الفرصة على إنتاج وفحص وتجميع مقابض السوط وتشمل على ما يلي:</p>
+<p>الإنتاج: إنشاء متجر تصنيع لتصنيع مكونات نظام مقابض السوط.</p>
+<p>الإنتاج: إنشاء متجر لمخرطة سي إن سي لصناعة المكونات المعدنية.</p>
+<p>الإنتاج: إنشاء مرافق محلية لإجراء خدمات المعالجة السطحية والتشطيبية</p>
+<p>الفحص والتجميع:إعداد مركز لفحص واختبار مقابض السوط&nbsp; قبل استخدامها في العمليات</p>
+<p>ومع ذلك، هناك فرص إضافية للتوطين عبر سلسلة القيمة تشمل الفرص عبر سلسلة القيمة ما يلي:</p>
+<p>التصميم: إنشاء تصميم لمقابض السوط، ومكتب بحث وتطوير، لتطوير تصاميم مقابض السوط لتتناسب مع متطلبات المملكة العربية السعودية.</p>
+<p>المواد الأولية: إقامة شراكة مع موردي الصلب لإنتاج المواد الخام وفقا للمواصفات المطلوبة.</p>
+<p>إدارة دورة الحياة: إنشاء مراكز خدمة ما بعد البيع لخدمة متطلبات عمليات مقابض السوط التي تتطلب مراحل متعددة لحفر العديد من الخطوط الجانبية من حفرة واحدة.</p>
+"
+                                ; manufacturing-of-pipe-fittings                ;                ; "
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج وصلات الأنابيب لخدمة سوق المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على وصلات الأنابيب في المملكة العربية السعودية بنحو 856,000 وحدة، بقيمة 160 مليون دولار أمريكي في عام 2016. ونظرًا للطلب المتزايد من قطاعات الخدمات العامة والنفط والغاز والمياه، فمن المتوقع أن يرتفع الطلب في السوق سنوياً بمعدل نمو قدره 23٪ ليصل إلى 1,709,000وحدة بحلول عام 2022.</p>
+<p>وفي الوقت الحالي، يتم تلبية طلب المملكة والذي يقدر بـ94% من مجموع الطلب لوصلات الأنابيب من خلال استيرادها ، مما يمثل فرصة كبيرة للمستثمرين لتوطين الإنتاج.</p>
+<p>كما يتم إعادة النظر في توطين كل من&nbsp; لوازم وصل الأطراف باللحام، ووصلات اللحام المجوفة.</p>
+<p>&nbsp;في عام 2016 بلغ الطلب على وصلات الأنابيب مانسبته 87% للوازم وصل الأطراف باللحام، و13% لوصلات الأنابيب المجوفة، ومن المتوقع أن تبقى النسب مماثلة حتى عام 2020.</p>
+<p>يتمتع المستثمرون السعوديون بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، ومن المتوقع أن يرتفع من 1,532,000 وحدة عام 2017 إلى 2,779,000 وحدة بحلول عام 2022، ومن المتوقع أيضا أن يصل الطلب في المملكة العربية السعودية على وصلات الأنابيب إلى 40٪. من إجمالي الطلب في دول مجلس التعاون الخليجي.</p>
+<p>تركز هذه الفرصة على إنشاء مرفق تصنيع للتشغيل والتصنيع المحلي للوازم وصل الأطراف باللحام، ووصلات الأنابيب المجوفة، ومع ذلك فهناك فرصة للتوطين عبر سلسلة القيمة، وتتضمن هذه الفرص ما يلي:</p>
+<p>المواد الأولية: إنشاء مرفق إنتاج للصلب الكربوني والصلب منخفض السبائكية والأنابيب المقاومة للصدأ حسب مواصفات الطلب المحلية</p>
+<p>الفحص والتوزيع: تقديم خدمات الدعم المتعلقة بالفحص اللاإتلافي، والاختبار، والخدمات اللوجستية، والمبيعات والتسويق.</p>
+"
+                                ; manufacturing-of-heat-exchanger-tubes                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج أنابيب المبادلات الحرارية لخدمة قطاع الطاقة في&nbsp; المملكة العربية السعودية و أسواق دول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على أنابيب المبادلات الحرارية في المملكة العربية السعودية ، حيث تقدر بنحو 500 وحدة في عام 2017. ونظرا لتزايد النشاط الصناعي فمن المتوقع أن يرتفع الطلب على أنابيب المبادلات الحرارية ليصل إلى 6,250 وحدة بحلول عام 2021. في عام 2017 بلغت نسبة الطلب على أنابيب الصلب الكربوني ما نسبته 50% و 30%&nbsp; لأنابيب الصلب المقاومة للصدأ و 20% لأنابيب السبائك ومن المتوقع أن تبقى النسب متماثلة حتى عام 2021.</p>
+<p>يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي ، ومن المتوقع أن يرتفع من 2,125 وحدة في عام 2017 إلى 2,500 وحدة بحلول عام 2021. بالإضافة إلى الطلب المتزايد في السوق ، تتمتع المملكة العربية السعودية&nbsp; بقاعدة تكلفة جذابة تشمل انخفاض تكاليف العمالة والأراضي والمرافق والخدمات اللوجستية.</p>
+<p>وتركز هذه الفرصة على إنشاء وحدة تصنيع أنابيب المبادلات الحرارية، ومع ذلك توجد فرص للتوطين عبر سلسلة القيمة لإنتاج أنابيب المبادل الحراري، وتشمل الفرص على ما يلي:</p>
+<p>التصميم: إنشاء مكتب لتصميم أنبوب المبادل الحراري في المملكة العربية السعودية قادر على تصميم الطلب المحلي</p>
+<p>المواد الأولية: زيادة توطين الشرائح الفولاذية والملفات</p>
+<p>الإنتاج: إنشاء مرفق إنتاج للأنابيب الملحومة، وغير الملحومة للمبادلات الحرارية</p>
+<p>الفحص والتجميع: إنشاء خدمات فحص وتصديق لأنابيب المبادلات الحرارية</p>
+<p>الفحص والتجميع: إنشاء خدمات المساعدة الفنية لمرحلة التجميع</p>
+<p>إدارة دورة الحياة: إعداد خدمات دعم ما بعد البيع وخدمات المساعدة الفنية، بما في ذلك الفحص والاختبار والصيانة والإصلاح</p>
+"
+                                ; manufacturing-of-butterfly-valves                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج صمامات الفراشة لخدمة المملكة العربية السعودية وأسواق دول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على صمامات الفراشة في المملكة العربية السعودية، بنحو 33,000 وحدة في عام 2018، ومن المتوقع أن يرتفع بمعدل نمو سنوي يبلغ 3% ليصل إلى 37,400 وحدة بحلول عام 2020.</p>
+<p>يتمتع المستثمرون بالمملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، ومن المتوقع أن يرتفع من 64,100 وحدة عام 2018 إلى 73,400 وحدة بحلول عام 2022. وكذلك من المتوقع أن يشكل الطلب في المملكة حوالي 34 ٪ من إجمالي طلب السوق في دول مجلس التعاون الخليجي.</p>
+<p>تركز هذه الفرصة على إنشاء مرافق التصنيع النهائية و مرافق تصنيع المكونات لإنتاج صمامات الفراشة.</p>
+<p>تصنيع المكونات:</p>
+<ul>
+<li>تصنيع المكونات: إنشاء مرافق تصنيع لمكونات الصمامات (على سبيل المثال ، الهيكل ، قاعدة الصمام ،ساق الصمام ، السدادات ...) من خلال استخدام إمكانات المعالجة والتغليف والمعالجة الحرارية</li>
+<li>التصنيع النهائي والفحص: إعداد خدمة دعم ما بعد البيع، وخدمات المساعدة الفنية، بما في ذلك التخزين، والدعم اللوجستي، والتركيب، والصيانة، وغيرها من الأعمال الإصلاحية</li>
+</ul>
+<p>ومع ذلك ، توجد فرص إضافية للتوطين عبر سلسلة القيمة لإنتاج صمام الفراشة، و تشمل هذه الفرص على:</p>
+<p>التصميم: بناء قدرات تصميم صمام الفراشة في المملكة العربية السعودية لتلبية الاحتياجات المحلية</p>
+<ul>
+<li>المواد الأولية: توطين إنتاج اللدائن والطلاء</li>
+</ul>
+"
+                                ; manufacturing-of-plug-valves                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج الصمامات الأبرية، وذلك لخدمة سوق المملكة العربية السعودية ودول مجلس التعاون الخليجي</p>
+<p>ازداد الطلب الإجمالي&nbsp; على الصمامات الأبرية في المملكة العربية السعودية ،بنحو 9،900 وحدة في عام 2019 ، ومن المتوقع أن يزداد بمعدل نمو سنوي يبلغ 3 ٪ ليصل إلى 11،400 وحدة بحلول عام 2022.</p>
+<p>&nbsp;يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، حيث من المتوقع أن يرتفع من 13,000 وحدة في 2018 إلى 14،900 وحدة بحلول عام 2022.</p>
+<p>ويتمثل الهدف الرئيسي لهذه الفرصة في إنشاء مرافق&nbsp; المكونات و التصنيع النهائية&nbsp; لإنتاج الصمامات الأبرية.</p>
+<ul>
+<li>تصنيع المكونات: إنشاء مرافق تصنيع لمكونات الصمامات (على سبيل المثال ، الهيكل ، قاعدة الصمام ،ساق الصمام ، السدادات ...) من خلال استخدام إمكانات المعالجة والتغليف والمعالجة الحرارية</li>
+<li>التصنيع النهائي والفحص: إعداد خدمة دعم ما بعد البيع وخدمات المساعدة الفنية ، بما في ذلك التخزين ، والدعم اللوجستي ، والتركيب ، والصيانة ، وغيرها من الأعمال الإصلاحية</li>
+</ul>
+<p>ومع ذلك ، توجد فرص إضافية للتوطين عبر سلسلة القيمة لإنتاج الصمامات الأبرية وتشمل هذه الفرص على ما يلي:</p>
+<p>التصميم: بناء قدرات تصميم الصمام الأبري في المملكة العربية السعودية لتلبية الاحتياجات المحلية</p>
+<ul>
+<li>المواد الأولية: توطين إنتاج اللدائن والطلاء</li>
+<li>المواد الأولية: معالجة الصلب وسبائك الحديد (السبائك المعدنية، الطرق ، والتشكيل ...) لمواءمة مواصفات الصمام الأبري</li>
+</ul>
+"
+                                ; manufacturing-of-choke-valves                 ;                ; "
+
+<p>تتضمن الفرصة تطوير سلسلة القيمة لإنتاج الصمامات الخانقة؛ لخدمة سوق المملكة العربية السعودية ودول مجلس التعاون الخليجي</p>
+<p>ازداد الطلب الإجمالي على الصمامات الخانقة في المملكة بنحو 2,200، ومن المتوقع أن يزداد بمعدل نمو سنوي يبلغ 3 ٪ ليصل إلى 2,500 وحدة بحلول عام 2022.، حيث يتم حاليا تصنيع وتجميع الصمامات الخانقة خارج المملكة مما يتيح فرصة أمام المستثمرين لتوطين الإنتاج.</p>
+<p>&nbsp;يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، إذ أنه من المتوقع أن يرتفع من 2,900 وحدة في 2018 إلى 3,300وحدة بحلول عام 2022. فيما يتوقع أن يشكل الطلب على السوق السعودية ما نسبته 43% من إجمالي طلب سوق دول مجلس التعاون الخليجي.</p>
+<p>وتركز هذه الفرصة على&nbsp; إنشاء مرافق&nbsp; المكونات والتصنيع النهائية&nbsp; لإنتاج الصمامات الخانقة</p>
+<ul>
+<li>تصنيع المكونات: إنشاء مرافق تصنيع لمكونات الصمامات (على سبيل المثال ، الهيكل ، قاعدة الصمام ،ساق الصمام ، السدادات ...) من خلال استخدام إمكانات المعالجة والتغليف والمعالجة الحرارية</li>
+<li>التصنيع النهائي والفحص: إعداد خدمة دعم ما بعد البيع، وخدمات المساعدة الفنية، بما في ذلك التخزين، والدعم اللوجستي، والتركيب، والصيانة، وغيرها من الأعمال الإصلاحية</li>
+</ul>
+<p>ومع ذلك ، توجد فرصًا إضافية للتوطين عبر سلسلة القيمة لإنتاج الصمامات الخانقة تشمل على ما يلي:</p>
+<p>التصميم: بناءً قدرات تصميم الصمام الخانق في المملكة العربية السعودية لتلبية الاحتياجات المحلية</p>
+<ul>
+<li>المواد الأولية: توطين إنتاج اللدائن والطلاء</li>
+<li>المواد الأولية: معالجة الصلب وسبائك الحديد (السبائك المعدنية، الطرق ، والتشكيل ...) لمواءمة مواصفات الصمام الخانق</li>
+</ul>
+"
+                                ; manufacturing-of-industrial-gears                ;                ; "
+
+<p>تتضمن هذه&nbsp; الفرصة تطوير سلسلة القيمة لإنتاج التروس للأجهزة الصناعية؛ لخدمة سوق المملكة العربية السعودية ودول مجلس التعاون الخليجي</p>
+<p>ازداد الطلب الإجمالي على التروس الصناعية في المملكة بنحو 97 مليون دولار أمريكي في عام 2017 ، ونظرًا لوجود العديد من شركات تصنيع النفط والغاز في المملكة، فمن المتوقع أن يزداد حجم السوق بمعدل نمو سنوي يبلغ 3٪ ليصل إلى 121 مليون دولار بحلول عام 2025.</p>
+<p>&nbsp;ويهيمن على سوق التروس العالمية التروس العدلة والتروس المائلة التي حققت 50-80 ٪ من حصة السوق.</p>
+<p>يتمتع المستثمرون في المملكة العربية السعودية&nbsp; بفرصة الاستفادة من السوق الإقليمية في دول مجلس التعاون الخليجي، ومع وجود العديد من الشركات في دول مجلس التعاون الخليجي التي تنشئ مصانع للتعدين والإنتاج ، فقد تزايد الطلب على المعدات في المنطقة، وكذلك من المتوقع أن يستمر في الزيادة من 106 مليون دولار أمريكي في عام 2017 إلى 151 مليون دولار بحلول عام 2025.</p>
+<p>ويتمثل الهدف الرئيسي لهذه الفرصة في إنشاء مرافق&nbsp; تصنيع للتروس الصناعية</p>
+<ul>
+<li>التصنيع: إنشاء خدمات خارجية تقدم المعالجة الحرارية ، وتصنيع الآلات</li>
+<li>التصنيع: إنشاء مرافق للتصنيع المحلي وإمداد مرافق التصنيع</li>
+</ul>
+<p>توجد فرص إضافية للتوطين عبر سلسلة القيمة لإنتاج مرفق لتصنيع التروس الصناعية تشمل على ما يلي:</p>
+<ul>
+<li>التصميم: إمكانية الشراكة في إعداد مركز للتصميم من إنشاء مصنعي المعدات الأصلية أو من قبل التصنيع والشراء والتشييد</li>
+<li>المواد الخام: توطين إنتاج المواد الرئيسية مثل البولي إيثير إيثير كيتون والديلرن والنحاس وغيرها.</li>
+<li>العمليات والصيانة: تقديم خدمات الدعم، بما في ذلك خدمات الصيانة والتركيب والتشغيل</li>
+</ul>
+"
+                                ; manufacturing-of-mechanical-seals-for-industrial-equipment                ;                ; "
+
+<p>تتضمن الفرصة تطوير سلسلة القيمة لإنتاج مانعات التسرب الميكانيكية للمعدات الصناعية؛ لخدمة السوق السعودي، وسوق دول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على مانعات التسرب الميكانيكية في المملكة، بنحو 19000 وحدة في عام 2017، ونظرًا لمشاريع الطاقة القادمة من قبل أرامكو السعودية ، والشركة السعودية للكهرباء والمؤسسة العامة لتحلية المياه المالحة، فمن المتوقع أن يرتفع الطلب بمعدل نمو سنوي يبلغ 6.1٪ ليصل إلى 30،300 وحدة بحلول عام 2025. وحاليا ، يتم تلبية طلب المملكة على مانعات التسرب الميكانيكية محلياً. ومع ذلك ، تتم معالجة الـ 30٪ المتبقية من خلال الواردات ، مما يعني توفير فرصة كبيرة للمستثمرين لتوطين الإنتاج..</p>
+<p>يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي في دول مجلس التعاون الخليجي، كما يتوقع مع تزايد الطلب في المنطقة على مانعات التسرب الميكانيكية عالية الجودة المستخدمة في مشاريع النفط والغاز والمياه ومياه الصرف الصحي الطاقة أن يرتفع الطلب في بقية دول مجلس التعاون الخليجي من 29000 وحدة في عام 2017 إلى 45000 وحدة بحلول عام 2025.</p>
+<p>بالإضافة إلى الطلب المتزايد في السوق ، تتمتع المملكة بتكاليف تنافسية للمواد والعمالة واللوجيستيات وتوفيرالتمويل والحوافز للمستثمرين</p>
+<p>تركز هذه&nbsp; الفرصة على إنشاء منشأة لتصنيع مانعات التسرب الميكانيكية للمعدات الصناعية</p>
+<ul>
+<li>التصنيع: إنشاء منشأة لتصنيع مانعات التسرب الميكانيكية لصناعة مكونات المانعات ، وتوفير إمكانات التحويل والتجويف والحفر والطحن والتنقيب والاستخراج</li>
+<li>عمليات التشطيب: إقامة ورش عمل لتوفير المواد الصلبة، الطحن ، اللف ، التلميع واللحام بالإضافة إلى إجراءات المعالجة السطحية المتقدمة</li>
+</ul>
+<p>ومع ذلك، توجد فرصًا إضافية للتوطين عبر سلسلة القيمة لإنتاج مانعات التسرب الميكانيكية، وتشتمل هذه الفرص على ما يلي:</p>
+<ul>
+<li>التصميم: إنشاء قدرات التصميم والهندسة</li>
+<li>المواد الأولية: إنشاء ورش السباكة المحلية</li>
+<li>التركيب والصيانة: تقديم خدمات الدعم ، بما في ذلك مراقبة الجودة والتجميع وخدمات التركيب</li>
+<li>التركيب والصيانة: تقديم خدمات الصيانة وخدمات الإصلاح لمانعات التسرب الميكانيكية والقاعدة المثبتة</li>
+</ul>
+"
+                                ; manufacturing-of-bearings-for-industrial-equipment                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج محامل المعدات الصناعية؛ لخدمة المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على المحامل في المملكة العربية السعودية بنسبة 1.55 مليون وحدة في عام 2016، مع مليون وحدة إضافية من الطلب غير المباشر، ونظرًا للاستثمار في الآلات الثقيلة والتقدم التكنولوجي في المواد خفيفة الوزن للمنتجات عالية الأداء، فمن المتوقع أن يزداد الطلب بمعدل نمو سنوي يصل إلى 3٪ ليصل إلى 2.2 مليون وحدة بحلول عام 2025. ويتم حاليا تلبية&nbsp; الطلب في المملكة على محامل المعدات الصناعية من خلال استيرداها ، مما يتيح فرصة كبيرة للمستثمرين لتوطين الإنتاج.</p>
+<p>يتمتع المستثمرون بالمملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمية في دول مجلس التعاون الخليجي، والتي من المتوقع أن تزداد من 0.8 مليون وحدة في عام 2016 إلى 1.2 مليون وحدة بحلول عام 2025.</p>
+<p>بالإضافة إلى الطلب المتزايد على السوق ، تمتلك المملكة العربية السعودية قاعدة جذابة لتكلفة المواد والعمالة والخدمات اللوجستية، وتوفر التمويل والحوافز للمستثمرين.</p>
+<p>تركز هذه الفرصة على إنشاء منشأة لتصنيع المحامل للمعدات الصناعية.</p>
+<p>التصنيع: إنشاء منشأة تصنيع لصناعة المحامل البسيطة والمحامل ذات العناصر الدحروجية</p>
+<p>التصنيع: إقامة شراكة مع المنتجين المحليين لتطوير سلسلة التوريد عن طريق إجراء خدمات المعالجة الآلية والتسخين والشحذ والقطع</p>
+<p>ومع ذلك ، توجد فرصًا إضافية للتوطين عبر سلسلة القيمة لإنتاج المحامل، وتشتمل هذه الفرص على يلي:</p>
+<p>التصميم: إنشاء قدرات التصميم والهندسة</p>
+<p>المواد الأولية: إقامة شراكة مع الشركات المصنعة المحلية؛ لإنشاء وتعزيز إمدادات الصلب&nbsp; الصناعية</p>
+<p>التجميع : إنشاء خدمات تقطيع الصفائح، واللف، وحقن اللدائن</p>
+<p>الصيانة: تقديم خدمات الدعم ، بما في ذلك خدمات مراقبة الجودة والصيانة</p>
+"
+                                ; manufacturing-of-industrial-fan-blades                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج وتصنيع شفرات المراوح ؛ لخدمة سوق المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على شفرات المراوح الصناعية في المملكة، بنحو 92 مليون دولار أمريكي في عام 2018 ، ونظرًا للاستخدام المتزايد للمراوح المحورية في عمليات التبريد الصناعي ومراوح العادم للتهوية، فمن المتوقع أن يزداد الطلب بمعدل نمو سنوي يبلغ 7٪ ليصل إلى 164 مليون دولار بحلول عام 2025.</p>
+<p>يتمتع المستثمرون في المملكة بفرصة الاستفادة من السوق الإقليمية في دول مجلس التعاون الخليجي، والتي من المتوقع أن&nbsp; ترتفع من 129 مليون دولار أمريكي في عام 2018 إلى 192 دولار أمريكي بحلول عام 2025.</p>
+<p>تركز هذه الفرصة على التلحيم ،&nbsp; و التجميع، و التوزيع، و خدمات ما بعد البيع، وعمليات الصيانة لشفرات المراوح الصناعية.</p>
+<ul>
+<li>التلحيم والتجميع والفحص: إنشاء مرفق محلي لتلحيم، وتوزيع المراوح الصناعية</li>
+<li>التلحيم والتجميع والفحص: إنشاء مرفق محلي لفحص المراوح الصناعية</li>
+<li>خدمات ما بعد البيع والاختبار والصيانة: توطين مرافق الاختبار، وتقديم خدمات دعم تتضمن الصيانة، وخدمات مابعد البيع</li>
+</ul>
+<p>ومع ذلك تتوفر فرصًا إضافية للتوطين عبر سلسلة القيمة لإنتاج شفرات المراوح الصناعية، وتتضمن هذه الفرص ما يلي:</p>
+<p>التصميم: تحديد إنتاج المواد الأساسية مثل ألواح البلاستيك المقوى بالألياف الزجاجية، والألياف الزجاجية، والصلب المجلفن، وراتنجات الإبوكسي</p>
+<p>التصنيع: إنشاء تصنيع محلي للمواد الأساسية مثل الشفرات والموزعات&nbsp; والأقراص المانعة للتسرب وصفائح التثبيت</p>
+"
+                                ; manufacturing-of-ct-vt-instrument-transformers                ;                ; "
+
+<p>تتضمن الفرصة تطوير سلسلة القيمة لإنتاج محولات الجهد والتيار وذلك لخدمة المملكة العربية السعودية ودول مجلس التعاون الخليجي.</p>
+<p>نظرًا لازدياد الطلب الإجمالي على محولات الجهد والتيار في المملكة العربية السعودية، والتي تقدر بنحو 244,000 وحدة عام 2018 ، ونظرًا لاستخدامات المرافق العامة والنفط والغاز والصناعات التحويلية الأخرى، فإنه من المتوقع أن يزداد طلب المملكة بمعدل نمو سنوي يبلغ 5٪ ليصل لـ 302,000مليون وحدة وذلك بحلول عام 2022.</p>
+<p>في عام 2018 بلغ الطلب على القواطع الكهربائية ما نسبته 30% و 70% للمحولات، ومن المتوقع أن تبقى النسب متماثلة حتى عام 2022.</p>
+<p>يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، مع زيادة متوقعة في الطلب من 252.000 وحدة في 2018 إلى 325.000 وحدة بحلول عام 2022. كما أنه من المتوقع أن يصل معدل الطلب في السوق السعودية إلى 50 ٪ من إجمالي طلب دول مجلس التعاون الخليجي على محولات الجهد والتيار.</p>
+<p>تركز هذه الفرصة على التصنيع النهائي، وتصنيع المكونات لمحولات الجهد والتيار، وتتضمن ما يلي:</p>
+<ul>
+<li>تصنيع المكونات: إنشاء مرافق تصنيع الملفات والعوازل والنواة المغناطيسية.</li>
+<li>التصنيع النهائي والاختبار: إنشاء مرافق للتصنيع النهائي لمحولات الجهد والتيار.</li>
+<li>التصنيع النهائي والاختبار: إنشاء مرافق اختبار عالمية للمحولات (اختبار النسبة ، قياسات المقاومة ...)</li>
+</ul>
+<p>ومع ذلك تتوفر فرص إضافية للتوطين عبر سلسلة القيمة لإنتاج محولات الجهد والتيار، حيث تتضمن ما يلي:</p>
+<ul>
+<li>التصميم: إنشاء مرافق تقنية لتصميم المعدات الكهربائية.</li>
+<li>المواد الأولية: تصنيع الحديد وسبائك الصلب السليكون والنحاس والايبوكسي؛ لتلبية مواصفات المملكة العربية السعودية.</li>
+<li>المبيعات ومرحلة ما بعد البيع: توفير الدعم التشغيلي ودعم مرحلة ما بعد البيع (التركيب والتشغيل والصيانة).</li>
+</ul>
+"
+                                ; manufacturing-of-electrical-fuses                ;                ; "
+
+<p>تشمل هذه الفرصة تطوير سلسلة القيمة لإنتاج المصهرات الكهربائية؛ لخدمة&nbsp; المملكة العربية السعودية ودول مجلس التعاون الخليجي.</p>
+<p>نظرًا لازدياد الطلب الإجمالي على المصهرات الكهربائية في المملكة، والتي تقدر بنحو 25 مليون دولار أمريكي، ونظرَا لاستخدامات المرافق العامة والنفط والغاز والصناعات التحويلية الأخرى، فمن المتوقع أن يزداد طلب المملكة العربية السعودية بمعدل نمو سنوي يبلغ 4٪ ليصل إلى 30 مليون دولار أمريكي&nbsp; بحلول عام 2022. و بلغ الطلب&nbsp; على مصهرات الجهد المتوسط ما نسبته 80% و 20% لمصهرات الجهد المنخفض ومن المتوقع أن تبقى النسب متماثلة حتى عام 2022.</p>
+<p>يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة&nbsp; من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي ، مع زيادة متوقعة في الطلب من 21 مليون دولار أمريكي&nbsp; في 2018 إلى 25 مليون دولار أمريكي بحلول عام 2022، كما أنه من المتوقع أن يصل معدل الطلب في السوق السعودية إلى 55 ٪&nbsp; من إجمالي طلب دول مجلس التعاون الخليجي على المصهرات الكهربائية.</p>
+<p>تركز هذه الفرصة على التصنيع النهائي، وتصنيع المكونات للمصهرات الكهربائية، وتتضمن ما يلي:</p>
+<p>تصنيع المكونات: إنشاء مرافق تصنيع لمواد المصهرات المعدنية والموصلات وحامل الأسلاك والملصقات، العوازل.</p>
+<p>.التصنيع النهائي والاختبار: إنشاء مرافق للتصنيع النهائي للمصهرات ذات الجهد المنخفض.</p>
+<p>التصنيع النهائي والاختبار: إنشاء مرافق لتصنيع مصهرات الجهد المتوسط، وفقًا لمواصفات العميل النهائية.</p>
+<p>التصنيع النهائي والاختبار: إنشاء مرافق اختبار عالمية للمصهرات.</p>
+<p>ويبقى مع ذلك فرصًا إضافية عبر سلسلة القيمة لصناعة المصهرات الكهربائية تشمل على ما يلي:</p>
+<p>التصميم: تصميم المصهرات الهندسية لتطبيقات الجهد المتوسط.</p>
+<p>المواد الأولية: تصنيع النحاس والألومنيوم، وتلبية المواصفات المطلوبة للمملكة العربية السعودية.</p>
+"
+                                ; manufacturing-of-circuit-breakers                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج القواطع الكهربائية، لخدمة المملكة العربية السعودية، ودول مجلس التعاون الخليجي.</p>
+<p>نظرًا لازدياد الطلب الإجمالي على القواطع الكهربائية في المملكة، والتي تقدر بنحو 370 مليون دولار أمريكي عام 2018 ، ونظرًا لاستخدامات المرافق العامة والنفط والغاز و الصناعات التحويلية الأخرى ، من المتوقع أن يزداد طلب المملكة العربية السعودية بمعدل نمو سنوي يبلغ 4٪ ليصل إلى 439 مليون دولار أمريكي&nbsp; بحلول عام 2022.&nbsp; وفي عام 2018 بلغ الطلب على قواطع الجهد العالي ما نسبته 60% و 30% لقواطع الجهد المنخفض و 10% لقواطع الجهد المتوسط ومن المتوقع أن تبقى النسب متماثلة حتى عام 2022.</p>
+<p>يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة&nbsp; من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي ، مع زيادة متوقعة في الطلب من 308 مليون دولار أمريكي&nbsp; في 2018 إلى 370 مليون دولار أمريكي بحلول عام 2022.</p>
+<p>تركز هذه الفرصة على التصنيع النهائي، وكذلك تصنيع المكونات للقواطع الكهربائية، وتتضمن ما يلي:</p>
+<p>تصنيع المكونات: إنشاء مرافق تصنيع الموصلات والاتصالات وآلية التشغيل والغلاف الخارجي.</p>
+<p>التصنيع النهائي والاختبار: إنشاء مرافق للتصنيع النهائي لقواطع الجهد المنخفض.</p>
+<p>التصنيع النهائي والاختبار: إنشاء مرافق للتصنيع النهائي لقواطع الجهد المتوسط.</p>
+<p>التصنيع النهائي والاختبار: إنشاء مرافق اختبار عالمية</p>
+<p>ومع ذلك فهناك فرصًا إضافية عبر سلسلة القيمة لصناعة القواطع الكهربائية تشمل ما يلي:</p>
+<p>التصميم: تصميم قواطع&nbsp; لتطبيقات الجهد المنخفض، والمتوسط للعملاء السعوديين.</p>
+<p>المواد الأولية: تصنيع سبائك النحاس؛ لتلبية مواصفات المملكة العربية السعودية.</p>
+"
+                                ; manufacturing-of-protective-relays                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لتصنيع مرحلات الحماية؛ لخدمة المملكة العربية السعودية ودول مجلس التعاون الخليجي.</p>
+<p>نظرًا لازداد الطلب الإجمالي على مرحلات الحماية في المملكة، والتي تقدر بنحو 60 مليون دولار أمريكي، فمن المتوقع أن يترفع هذا الطلب بمعدل نمو سنوي يبلغ 3% ليصل إلى 67 مليون دولار بحلول عام 2022.</p>
+<p>يتمتع المستثمرون بفرصة الاستفادة من السوق الإقليمية في دول مجلس التعاون الخليجي بزيادة متوقعة في الطلب من 50 مليون دولار أمريكي في عام 2018 إلى 56 مليون دولار أمريكي بحلول عام 2022. ومن المتوقع أن يبلغ حجم السوق السعودية 54% من إجمالي طلب دول مجلس التعاون الخليجي على مرحلات الحماية.</p>
+<p>تركز هذه الفرصة على التصنيع النهائي وتصنيع المكونات لمرحلات الحماية وتشتمل على ما يلي:</p>
+<p>تصنيع المكونات: إنشاء مرفق لتصنيع مرحلات الحماية مثل الملامسات والإطارات والقطعة الحديدة المتحركة ومفتاح الضغط الفرقي و الدائرة و المتحكم الدقيق.</p>
+<p>التصنيع النهائي والاختبار: إنشاء مرافق للتصنيع النهائي واختبارالمرحل الرقمي و المساعد ومرحل الملامسات</p>
+<p>ومع ذلك، هناك فرص إضافية عبر سلسلة القيمة لتصنيع مرحلات الحماية تشمل على ما يلي:</p>
+<p>التصميم: التصميم والهندسة لتلبية متطلبات العملاء السعوديين.</p>
+<p>المواد الأولية: إنتاج الصلب والنحاس وأوكسيد الكامديوم الفضي والبلاديوم الفضي لتلبية مواصفات المملكة العربية السعودية.</p>
+"
+                                ; manufacturing-of-industrial-ups                 ;                ; "
+
+<p>ازداد الطلب الإجمالي على مانعات إنقطاع التيار الكهربائي، والذي يقدر بـ 146 مليون دولار أمريكي في عام 2018، مدفوعاً بنمو الطلب من قطاعات النفط والغاز، والصناعات التحويلية الأخرى، ومن المتوقع أن يرتفع الطلب بمعدل نمو سنوي يبلغ 10%، ليصل إلى 213 مليون دولار أمريكي بحلول عام 2022.</p>
+<p>يتمتع المستثمرون السعوديون بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي مع زيادة متوقعة في الطلب من 170 مليون دولار أمريكي في 2018 إلى 240 مليون دولار بحلول عام 2022، ومن المتوقع أن تبلغ نسبة السوق السعودية 46٪ إجمالي الطلب الخليجي على مانعات إنقطاع التيار الكهربائي</p>
+<p>تركز هذه الفرصة على تصنيع مانعات إنقطاع التيار الكهربائي ، مع التركيز على بطاريات الرصاص الحمضية ، المحولات العكسية، المحولات، واللوحات.</p>
+<p>ومع ذلك، هناك فرص إضافية عبر سلسلة قيمة تصنيع مانعات إنقطاع التيار الكهربائي:</p>
+<p>التصميم: إنشاء مرافق تصميم مانعات انقطاع التيار الكهربائي لتلبية احتياجات ومواصفات العملاء.</p>
+<p>مواد الأولية: تصنيع النحاس، والمطاط ، والبولي بروبيلين، والصلب لتلبية المواصفات المطلوبة للمكونات.</p>
+<p>التصنيع النهائي: الشركات الصغيرة والمتوسطة لأداء التصنيع النهائي، وتكامل أجزاء النظام واختبار مانعات انقطاع التيار الكهربائي.</p>
+<p>المبيعات وما بعد البيع: فرص لتوفير خدمات مثل التركيب والتفتيش وصيانة.</p>
+<p>المبيعات وخدمة مابعد البيع: فرصة توفير خدمات التركيب والفحص والصيانة.</p>
+"
+                                ; manufacturing-of-batteries-for-industrial-applications                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لتصنيع البطاريات، وذلك لخدمة المملكة العربية السعودية، ودول مجلس التعاون الخليجي</p>
+<p>ازداد الطلب الإجمالي على البطاريات في المملكة العربية السعودية، والذي قدر بنحو 276 مليون دولار أمريكي في عام 2018، ونظرا لنمو الطلب من المرافق، والنفط والغاز والصناعات التحويلية الأخرى فمن المتوقع أن يرتفع الطلب بمعدل نمو سنوي قدره 5 ٪ ليصل إلى 336 مليون دولار أمريكي بحلول عام 2022. وفي عام 2018،&nbsp; بلغ الطلب على البطاريات للاستخدامات الصناعية 40٪ للرصاص الحمضي والبقية للأنواع الأخرى، ومن المتوقع أن تبقى النسب متماثلة حتى عام 2022.</p>
+<p>يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي مع زيادة متوقعة في الطلب من 512 مليون دولار في عام 2018 إلى 622 مليون دولار بحلول عام 2022، ومن المتوقع أن يبلغ حجم السوق السعودية ما نسبته 35% من إجمالي طلب دول مجلس التعاون الخليجي.</p>
+<p>وتركز هذه الفرصة بشكل رئيسي على المكونات والتصنيع النهائي للبطاريات، مع التركيز على بطاريات الرصاص الحمضية وبطاريات النيكل - كادميوم و بطاريات الليثيوم.</p>
+<p>ومع ذلك، هناك فرص إضافية عبر سلسلة القيمة لصناعة البطاريات وتشمل هذه الفرص على:</p>
+<ul>
+<li>التصميم: إنشاء مرافق تصميم البطاريات الصناعية لتلبية احتياجات العملاء.</li>
+<li>المواد الأولية: تصنيع الرصاص والنحاس والمطاط الصناعي والبوليمرات لتلبية المواصفات المطلوبة للمكونات.</li>
+<li>بعد البيع: إنشاء مرافق لاختبار وحفظ الحامض ، واختبار البطارية ، والكثافة النوعية ، وتآكل الأطراف النهائية ، ومقاومة التوصيل ، وجهد البطارية ، وتنظيف الأطراف النهائية.</li>
+</ul>
+"
+                                ; manufacturing-of-electrical-inverters                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لتصنيع العاكسات الكهربائية وذلك لخدمة المملكة العربية السعودية ودول مجلس التعاون الخليجي</p>
+<p>ازداد الطلب الإجمالي على العاكسات الكهربائية في المملكة العربية السعودية ، والتي تقدر بنحو 856 مليون دولار أمريكي في عام 2018 ، ومن المتوقع أن يزداد بمعدل نمو سنوي يبلغ 3٪ ليصل إلى 949 مليون دولار بحلول عام 2022. وتعد الموجة الجيبية النقية و العاكسات الضوئية القطبية المنفصلة والمتصلة هي الأكثر استخداما في المملكة العربية السعودية.</p>
+<p>يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمية الكبرى في دول مجلس التعاون الخليجي مع زيادة متوقعة في الطلب من 680 مليون دولار في عام 2018 إلى 754 مليون دولار بحلول عام 2022.</p>
+<p>تركز هذه الفرصة على التصنيع النهائي وتصنيع مكونات العاكسات الكهربائية وتتضمن هذه الفرص على:</p>
+<ul>
+<li>تصنيع المكونات: إنشاء مرافق التصنيع للإلكترونيات (بما في ذلك المتحكمات الدقيقة) والغلاف الخارجي والأطراف</li>
+<li>التصنيع النهائي: إنشاء مرافق التصنيع النهائي وقطع غيار النظام للعاكسات</li>
+</ul>
+<p>ومع ذلك ، هناك فرص إضافية عبر سلسلة القيمة لصناعة العاكسات الكهربائية وتشمل هذه الفرص على:</p>
+<ul>
+<li>تصميم: إنشاء مرافق تصميم العاكسات لتلبية احتياجات ومواصفات العملاء</li>
+<li>المواد الأولية: إنشاء منشأة لتصنيع السيليكون والنحاس والألومنيوم والبوليمرات لتلبية المواصفات المطلوبة للمكونات</li>
+<li>بعد البيع: إنشاء مرافق لتثبيت واختبار العاكسات</li>
+</ul>
+"
+                                ; manufacturing-of-low-voltage-motors                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لتصنيع محركات الجهد المنخفض وذلك لخدمة المملكة العربية السعودية،&nbsp; ودول مجلس التعاون.</p>
+<p>ازداد الطلب الإجمالي على محركات الجهد المنخفض في المملكة العربية السعودية، والتي تقدر بنحو 585،000 وحدة بقيمة 59 مليون دولار أمريكي في عام 2018، ومن المتوقع أن ترتفع بمعدل نمو سنوي يبلغ 3٪ ليصل إلى 647،000 وحدة بحلول عام 2022،&nbsp; وتعد محركات التزامن الثلاثية الأطوار هي الأنواع الأكثر استخدامًا في المملكة.</p>
+<p>يتمتع المستثمرون السعوديون بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، مع زيادة متوقعة في الطلب من 394،000 وحدة بقيمة 99 مليون دولار في عام 2018 إلى 436،000 بحلول عام 2022، ومن المتوقع أن يكون الطلب على السوق في المملكة العربية السعودية 60٪ من إجمالي طلب دول مجلس التعاون الخليجي على المحركات ذات الجهد المنخفض.</p>
+<p>وتركز هذه الفرصة على&nbsp; تطوير مرافق التصنيع للصناديق الطرفية، المراوح، العضو الساكن، والمحامل والعضو الدوار والتصنيع النهائي واختبار المصنع للمحركات.</p>
+<p>ومع ذلك، هناك فرص إضافية عبر سلسلة القيمة لصناعة محركات الجهد المنخفض وتشمل هذه الفرص على:</p>
+<p>التصميم: إنشاء مرافق تصميم المحركات ذات الجهد المنخفض لتلبية احتياجات ومواصفات العملاء.</p>
+<p>المواد الأولية: تصنيع النحاس، الفولاذ المقاوم للصدأ والصلب الكربوني والألومنيوم، والحديد، واللدائن المتوسطة، والطلاء لتلبية المواصفات المطلوبة للمكونات</p>
+<p>البيع وخدمات ما بعد البيع: إنشاء عمليات ما بعد البيع للفحص والصيانة والإصلاح.</p>
+"
+                                ; manufacturing-of-conduits-and-fittings                ;                ; "
+
+<p>تتضمن&nbsp; هذه الفرصة تطوير سلسلة القيمة لإنتاج الأنابيب وقطع التركيب المعدنية وغير المعدنية في المملكة العربية السعودية لخدمة المملكة، ودول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على الأنابيب وقطع التركيب في المملكة العربية السعودية&nbsp; حيث قُدّر بنحو 98 مليون دولار أمريكي في عام 2017، ومن المتوقع أن يزداد بمعدل نمو سنوي يبلغ 2٪ ليصل إلى 110 مليون دولار بحلول عام 2022.</p>
+<p>يتمتع المستثمرين بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، مع زيادة متوقعة في الطلب من 82 مليون دولار أمريكي في عام 2017 إلى 92 مليون دولار بحلول عام 2022، من المتوقع أن يكون معدل الطلب على السوق في السعودية&nbsp; 55٪، من إجمالي الطلب في دول مجلس التعاون الخليجي على الأنابيب وقطع التركيب.</p>
+<p>وتركز هذه الفرصة على&nbsp; تطوير مرافق التصنيع للصناديق الطرفية، والمراوح، والعضو الساكن، والمحامل، والعضو الدوار، والتصنيع النهائي، واختبار المصنع للمحركات.</p>
+<p>ومع ذلك، هناك فرص إضافية عبر سلسلة القيمة لصناعة الأنابيب وقطع التركيب، وتشمل هذه الفرص على:</p>
+<p>المواد الخام:&nbsp; إقامة شراكة مع الموردين لتوطين إنتاج الصلب والألمنيوم والمعادن الأخرى، والاستفادة من المواد الخام المحلية مثل البولي فينيل كلورايد</p>
+<p>البيع وما بعد البيع: إنشاء مرافق لتثبيت واختبار العاكسات</p>
+"
+                                ; manufacturing-of-smart-meters                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج العدادات الذكية لخدمة المملكة العربية السعودية، ومنطقة دول مجلس التعاون الخليجي.</p>
+<p>ازداد الطلب الإجمالي على العدادات الذكية في المملكة العربية السعودية ، حيث تقدر بنحو 400،000 وحدة بقيمة 66 مليون دولار أمريكي في عام 2018 ، مع إنفاق 70٪ من القيمة على العدادات الذكية و الـ 30٪&nbsp; المتبقية على المكونات الأخرى، ومن المتوقع أن يزداد سوق العدادات والمكونات الذكية بوتيرة سريعة بمعدل نمو سنوي يبلغ 22٪ ليصل إلى 2.2 مليون وحدة بحلول عام 2022 بقيمة 404 مليون دولار.</p>
+<p>يتمتع تصنيع العدادات الذكية بإمكانية عالية للتوطين عبر سلسلة القيمة، وتشمل فرص سلسلة القيمة على ما يلي:</p>
+<p>الحساسات والأجهزة: إنشاء مصنع لتصنيع العدادات الذكية.</p>
+<p>الحساسات والأجهزة: إنشاء مصنع لتصنيع مكونات العدادات الذكية لتحفيز تبني الشبكات الذكية (حساسات الخط ووحدات التحكم الطرفية.).</p>
+<p>البنية التحتية والمنصات: إقامة شراكة&nbsp; مع مزودي التكنولوجيا اللاسلكية الرائدين في إنترنت الأشياء لإعداد مرافق التجميع والتصنيع لأجهزة الاتصال والتخزين.</p>
+<p>البنية التحتية والمنصات: التعاون مع مزودي الخدمات لتطوير ترقيات للبنية التحتية والأنظمة الأساسية داخل المملكة من خلال إعداد مراكز البحث والتطوير.</p>
+<p>الخدمات: تقديم خدمات ذات قيمة مضافة للشبكات الذكية والعدادات (على سبيل المثال ، إدارة الطاقة والرصد والمراقبة ...).</p>
+"
+                                ; manufacturing-of-welding-machinery                 ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج آلات التلحيم لخدمة المملكة العربية السعودية، و دول مجلس التعاون الخليجي.</p>
+<p>يقدر حجم السوق الإجمالي لآلات التلحيم في المملكة العربية السعودية بمبلغ 261 مليون دولار أمريكي في عام 2017 ومن المتوقع أن يصل إلى 297 مليون دولار بحلول عام 2022.</p>
+<p>يتمتع&nbsp; المستثمرون بفرصة الاستفادة من السوق الإقليمي لدول مجلس التعاون الخليجي، مع زيادة متوقعة في الطلب من 218 مليون دولار أمريكي في عام 2017 إلى 248 مليون دولار بحلول عام 2022.</p>
+<p>يمثل الطلب على آلات التلحيم في المملكة العربية السعودية حوالي 55٪ من إجمالي طلب السوق في دول مجلس التعاون الخليجي.</p>
+<p>&nbsp;تركز هذه الفرصة على التالي:</p>
+<p>&nbsp;تصنيع أجزاء التلحيم وآلات التلحيم النهائية.</p>
+<p>أجزاء التلحيم: تطوير مرافق التصنيع للعاكسات، كابلات التلحيم، مشاعل التلحيم، وغيرها من أجزاء آلات التلحيم.</p>
+<p>التجميع النهائي: إنشاء مرافق للتجميع النهائي لآلات التلحيم</p>
+<p>ومع ذلك ، توجد فرصًا إضافية للتوطين عبر سلسلة القيمة لإنتاج مولدات الديزل، تشمل على:</p>
+<p>المواد الخام: تصنيع المواد الخام مثل الحديد والصلب والنحاس والألومنيوم؛ لتلبية المواصفات المطلوبة لمكونات التلحيم.</p>
+<p>خدمات ما بعد البيع: توفير خدمات الصيانة والإصلاح بما في ذلك الإصلاحات وقطع الغيار.</p>
+"
+                                ; manufacturing-of-welding-consumables                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج مواد التلحيم الاستهلاكية لخدمة المملكة العربية السعودية ودول مجلس التعاون الخليجي</p>
+<p>يقدر حجم السوق الإجمالي لمواد التلحيم الاستهلاكية في المملكة العربية السعودية بمبلغ 208 مليون دولار أمريكي في عام 2017 ومن المتوقع أن يصل إلى 242 مليون دولار بحلول عام 2022.</p>
+<p>يتمتع المستثمرون بفرصة الاستفادة من السوق الإقليمي الأكبر في دول مجلس التعاون الخليجي مع زيادة متوقعة في الطلب من 250 مليون دولار أمريكي في عام 2017 إلى 290 مليون دولار بحلول عام 2022.</p>
+<p>يمثل حجم سوق الموصلات الكهربائية للتلحيم في المملكة 45٪ من حجم السوق الخليجي الإجمالي.</p>
+<p>وتركز هذه الفرصة على:</p>
+<p>&nbsp;تصنيع مواد التلحيم الاستهلاكية: إنشاء مرافق تصنيع جديدة لإنتاج المواد الاستهلاكية للتلحيم (اللحام اليدوي بالأقطاب، أسلاك التلحيم المغلفة و المعبأة بالمواد المصهورة، وقضبان التلحيم بغاز التنغستن، وأسلاك لحام القوس المغمور ) كما يفي الإنتاج المحلي الحالي بأقل من 30٪ من الطلب في المملكة العربية السعودية.</p>
+<p>ومع ذلك، توجد فرصًا إضافية للتوطين عبر سلسلة القيمة لإنتاج مولدات الديزل تشمل على ما يلي:</p>
+<p>المواد الخام: تصنيع المعادن مثل الحديد، الصلب، النحاس، الألومنيوم، البرونز ومواد الطلاء؛ لتلبية مواصفات مواد اللحام المستهلكة.</p>
+<p>منتجات وخدمات الدعم: وتتضمن تصنيع المنتجات المتعلقة بالسلامة مثل:(البطانيات المعزولة، ومعدات الحماية الشخصية مثل الخوذات والنظارات الواقية والقفازات)، وغيرها من الملحقات مثل المواد الاستهلاكية المسبقة التسخين ومغذيات الأسلاك ومحطات العمل</p>
+<p>منتجات وخدمات الدعم: إنتاج الأرغون</p>
+<p>منتجات وخدمات الدعم: الاختبار والفحص مثل: (فحص النفاذية السائلة، الصوتيات، التصوير الشعاعي، الجسيمات الضخمة، تحليل المعادن)، والشهادات (التدريب التأهيلي للَحامين ، شهادة المنتج)، وخدمات أخرى مثل: (الاستشارات - تصميم عملية التلحيم والتقييم)</p>
+"
+                                ; manufacturing-of-diesel-generators                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج مولدات الديزل لخدمة المملكة العربية السعودية ومنطقة دول مجلس التعاون الخليجي .</p>
+<p>يقدر إجمالي الطلب على مولدات الديزل في المملكة بنحو 11.700 وحدة في عام 2017، ومن المتوقع أن ينمو بمعدل نمو سنوي يبلغ 8٪ ليصل إلى 17،600 وحدة بحلول عام 2022، كما أنه من المتوقع أن تكون مولدات الديزل الصغيرة هي الجزء الأكبر من حيث عدد الوحدات المطلوبة.</p>
+<p>&nbsp;يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي مع زيادة متوقعة في الطلب من 9،600 وحدة في عام 2017 إلى 14،400 وحدة بحلول عام 2022.</p>
+<p>تركز هذه الفرصة على الأجزاء، والتجميع الفرعي، والتجميع النهائي لمولدات الديزل.</p>
+<p>الأجزاء والتجميع الفرعي: تطوير مرافق التصنيع للمبادلات الحرارية والمولدات ومكونات المحرك.</p>
+<p>الأجزاء والتجميع الفرعي: إنشاء مرافق لتصنيع محركات الديزل، ومولدات التيار الكهربائي، و المبادلات الحرارية.</p>
+<p>التجميع النهائي: إنشاء مرافق للتجميع النهائي لمولدات الديزل، وفقًا لمواصفات العميل النهائية.</p>
+<p>التجميع النهائي: إنشاء مرافق اختبار ضمان الجودة / مراقبة الجودة للمولدات</p>
+<p>ومع ذلك ، توجد فرصًا إضافية للتوطين عبر سلسلة القيمة لإنتاج مولدات الديزل وتشمل على:</p>
+<p>المواد الأولية: تصنيع سبائك الصلب، والنحاس لتلبية المواصفات المطلوبة لمكونات مولدات الديزل.</p>
+<p>التركيب وخدمات ما بعد البيع: توفير خدمة دعم ما بعد البيع بما في ذلك الصيانة والإصلاح وتصنيع قطع الغيار</p>
+"
+                                ; manufacturing-of-personal-protective-equipment-ppe                ;                ; "
+
+<p>تتضمن هذه الفرصة تطوير سلسلة القيمة لإنتاج معدات الوقاية الشخصية؛ لخدمة المملكة العربية السعودية ودول مجلس التعاون الخليجي.</p>
+<p>يقدر حجم السوق الإجمالي لمعدات الحماية الشخصية في المملكة بمبلغ 341 مليون دولار أمريكي في عام 2017، ومن المتوقع أن ينمو بمعدل نمو سنوي يبلغ 7٪ ليصل إلى 477 مليون دولار بحلول عام 2022.</p>
+<p>&nbsp;يتمتع المستثمرون في المملكة العربية السعودية بفرصة الاستفادة من السوق الإقليمي الكبير في دول مجلس التعاون الخليجي، مع زيادة متوقعة في الطلب من 96 مليون دولار أمريكي في عام 2017 إلى 135 مليون دولار بحلول عام 2022.</p>
+<p>&nbsp;كما أنه من المتوقع أن يكون الطلب على السوق في المملكة 70٪ من إجمالي طلب دول مجلس التعاون الخليجي على معدات الوقاية الشخصية.</p>
+<p>تركز هذه الفرصة على تطوير مرافق لتصنيع القبعات الصلبة، و حماية الوجه والعين، وأنظمة الحماية من السقوط، ومواد الملابس الواقية، والملابس المقاومة للحريق وفقاً لمواصفات العميل.</p>
+<p>ومع ذلك ، توجد فرصًا إضافية للتوطين عبر سلسلة القيمة لإنتاج معدات الوقاية الشخصية، وتشمل هذه الفرص على:</p>
+<p>المواد الأولية: توطين تصنيع المواد الأولية مثل البولي إيثيلين عالي الكثافة والبولي إثيلين، وما إلى ذلك وفقا&nbsp; للمواصفات اللازمة لمعدات الوقاية الشخصية.</p>
+<p>المبيعات والتوزيع: مرافق لاختبار، واعتماد معدات الوقاية الشخصية.</p>
+<p>المبيعات والتوزيع: فرصة للشركات الصغيرة والمتوسطة لتوفير الخدمات مثل خدمات التخزين، النقل، الإمداد، التوزيع، الإصلاح لمعدات الوقاية الشخصية.</p>
+"
+                                ; pumps                ;                ; "
+<h1 class='heading text-left my-2'>Overview</h1>
+<ul>
+<li>The water pump is a centrifugal pump driven by a belt connected to the crankshaft of the engine. The pump circulates fluid whenever the engine is running using centrifugal force while it spins, causing fluid to be drawn from the center continuously.</li>
+<li>The oil pump circulates engine oil under pressure to the rotating bearings, the sliding pistons and the camshaft of the engine. It is also used as a hydraulic fluid to power small actuators.</li>
+<li>Automotive applications typically use centrifugal water pumps and rotor oil pumps. In some automobile applications a gear type oil pump is also used.</li>
+<li>Proposed Plant Capacity is 250,000 units/annum</li>
+<li><u>Market Overview</u></li>
+<li>Light Vehicle Sales Forecast is expected to jump 50% between 2017 and 2029 in the MEA region.</li>
+<li>Forecasts for the total vehicles in operation in 2029 is 10.09 million (KSA) 13.07 million (rest of GCC), 25.9 million (GAFTA), and 23.92 million (Non-GAFTA).</li>
+<li>New PV sales are expected to reach a CAGR of 8.91% from 2018 to 2025, New CV sales are expected to reach a CAGR of 10.4% from 2018 to 2025.</li>
+</ul>
+"
+                                ; fan-coil-unit-manufacturing                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Attract leading global players to setup Fan Coil Unit (FCU) manufacturing base in KSA</p>
+"
+                                ; air-conditioners                 ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Attract leading global players to setup split, window or freestanding air conditioning manufacturing base in KSA</p>
+"
+                                ; air-handling-units-manufacturing                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Locally manufacture air handling units, a device that is used to regulate and circulate air as part of an HVAC chiller system</p>
+"
+                                ; chillers                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Attract leading global players to setup manufacturing base for chillers in KSA</p>
+"
+                                ; escalators                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Locally manufacture escalators across specs, usage and speed to cater to the domestic and the wider MENA market</p>
+"
+                                ; elevators                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Locally manufacture elevators across specs, usage and speed to cater to the domestic and the wider MENA market</p>
+"
+                                ; localization-of-poultry-vertical-integration                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Establish a broiler farm and a processing facility locally for selling in the local market and exports to regional markets</p>
+"
+                                ; localization-of-canned-tuna                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Support canned tuna companies to localize production in KSA (2nd order processing and packaging) to substitute imports of finished goods</p>
+"
+                    
+								
+								
+								
+								
+								
+								
+                                ; manufacturingassembly-plant-for-solar-pv-trackers                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتجميع&nbsp; مكثفات البخار والمبادلات الحرارية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافًا طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير&nbsp; عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع الطاقة المتجددة في المملكة التي تضمنت مشروع للطاقة الشمسية الكهروضوئية بسعة 300 ميجاواط بالإضافة الى طرح الجولة الثانية بسعة أجمالية تقدر ب 1.5 جيجاواط.</p>
+<p>لهذا من المتوقع أن ينمو سوق الوحدات الشمسية الكهروضوئية في المملكة العربية السعودية من 10 مليون دولار أمريكي عام 2019 إلى 110 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 1,320 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج الوحدات.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تجميع أجهزة المتعقبات الشمسية الكهروضوئية</p>
+<ul>
+<li>التجميع: تجميع اللفائف والزعانف، تجميع أنابيب المنحنيات، تجميع الأنابيب المتشعبة، تجميع وحدة مناولة الهواء، التجميع النهائي</li>
+<li>التصنيع: عملية ثني الملف، سك الصفيحة المعدنية، ثني الصفيحة المعدنية، عملية قطع صفيحة الألومينيوم، عملية حفر الثقوب في صفيحة الألومينيوم، عملية آلة التوسيع، عملية دفق الغاز، تنقية الهواء</li>
+<li>الاختبار: فحص الأبعاد، اختبار التشغيل، اختبار كشف التسرب</li>
+</ul>
+"
+                                ; plant-for-module-assembly-1                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتجميع الوحدات الشمسية الكهروضوئية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع الطاقة المتجددة في المملكة التي تضمنت مشروع للطاقة الشمسية الكهروضوئية بسعة 300 ميجاواط بالإضافة الى طرح الجولة الثانية بسعة أجمالية تقدر ب 1.5 جيجاواط.</p>
+<p>لهذا من المتوقع أن ينمو سوق الوحدات الشمسية الكهروضوئية في المملكة العربية السعودية من 149 مليون دولار أمريكي عام 2019 إلى 1,650 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 19,800 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج الوحدات.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تجميع أجهزة المتعقبات الشمسية الكهروضوئية.</p>
+<ul>
+<li>التجميع: تجميع الأطر وتجميع صندوق التوصيل</li>
+<li>التصنيع: عملية التركيب البيني على الزجاج منخفض الحديد مع خلات فينيل الإيثيلين والألواح الخلفية والخلايا الشمسية ولحام الخلايا والتصفيح وعملية المعالجة</li>
+<li>الاختبار: الاختبار الومضي، الاختبار المائي، اختبار الجهد</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-solar-pv-mounting-steel-structures                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع هياكل التثبيت الفولاذية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع الطاقة المتجددة في المملكة التي تضمنت مشروع للطاقة الشمسية الكهروضوئية بسعة 300 ميجاواط بالإضافة الى طرح الجولة الثانية بسعة أجمالية تقدر ب 1.5 جيجاواط.</p>
+<p>لهذا من المتوقع أن ينمو سوق الوحدات الشمسية الكهروضوئية في المملكة العربية السعودية من 20 مليون دولار أمريكي عام 2019 إلى 220 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 2,640 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج هياكل التثبيت الفولاذية.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع هياكل التثبيت الفولاذية الشمسية الكهروضوئية.</p>
+<ul>
+<li>التصنيع: القطع والثني والخرط والتلحيم</li>
+<li>التجميع: التجميع النهائي</li>
+<li>الاختبار: فحص الأبعاد، اختبار النفق الهوائي</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-solar-pv-inverters                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع محولات التيارات الشمسية الكهروضوئية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافًا طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع الطاقة المتجددة في المملكة التي تضمنت مشروع للطاقة الشمسية الكهروضوئية بسعة 300 ميجاواط بالإضافة الى طرح الجولة الثانية بسعة أجمالية تقدر ب 1.5 جيجاواط.</p>
+<p>لهذا من المتوقع أن ينمو سوق محولات التيارات الشمسية الكهروضوئية في المملكة العربية السعودية من 30 مليون دولار أمريكي عام 2019 إلى 119 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 3,960 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج محولات التيار.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع محولات التيارات الشمسية الكهروضوئية.</p>
+<ul>
+<li>التصنيع: صناعة لوحات الدوائر المطبوعة (PCB)، معالجة رقاقات تقنية التركيب السطحي (SMT)، اللحام بإعادة التدفق، مكونات التثبيت، تصنيع المكونات السلبية</li>
+<li>التجميع: تجميع محولات التيار - وحدات الدائرة المطبوعة، تجميع المكونات السلبية، فحص المكونات الميكانيكية وتجميعها، تجميع عدة التوصيلات الكهربائية</li>
+<li>الاختبار: اختبار الأداء (اختبارات التيار المتردد، الدائرة القصيرة، التوافقيات، تغير الجهد وما إلى ذلك)، اختبار التقادم واختبارات أخرى</li>
+</ul>
+"
+                                ; assembly-of-common-substation-transformers                ;                ; "
+
+<p>تتضمن هذه الفرصة على مصنع لتجميع محولات المحطة الفرعية الشائعة.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير&nbsp; عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030.</p>
+<p>لهذا من المتوقع أن ينمو سوق محولات المحطة الفرعية في المملكة العربية السعودية من 7 ملايين دولار أمريكي عام 2019 إلى 159 ملايين دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 1,911 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج محولات المحطة الفرعية.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تجميع محولات المحطة الفرعية.</p>
+<ul>
+<li>التجميع: التجميع الرئيسي، تجميع الصهريج الفولاذي، تجميع المبرد (الرادياتير)، تجميع مغير التفريع مع وجود حمل (OLTC)، وغيرها من عمليات التجميع الأخرى</li>
+<li>التصنيع: معالجة المواد الرئيسية (التقطيع والتشريح والتجميع) والعزل ولف الملفات وتعشيق الراتنج</li>
+<li>الاختبار: اختبار التيار، اختبار المعاوقة</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-wind-nacelle-housing                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع كبائن هياكل المحركات الريحية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع طاقة الرياح بسعة 400 ميجاواط بالإضافة إلى طرح الجولة الثانية بسعة أجمالية تقدر ب 850 ميجاواط، وبانتظار الإعلان عن جولات إضافية قريبًا.</p>
+<p>لهذا من المتوقع أن ينمو سوق كبائن هياكل المحركات الريحية في المملكة العربية السعودية من مستواه الذي يكاد لا يذكر عام 2019 إلى 22 مليون دولار أمريكي بحلول عام 2030. ليصل حجم السوق الإجمالي إلى 272 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج كبائن هياكل المحركات الريحية.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع كبائن هياكل المحركات الريحية.</p>
+<ul>
+<li>التصنيع: تصنيع أغطية هياكل المحركات والطبقات الواقية</li>
+<li>التجميع: تجميع مجموعة نقل القدرة وعلبة التروس، تجميع مكونات الانحدار والانعراج، تجميع المولد، تجميع المكابح، التوصيلات الداخلية</li>
+<li>الاختبار: اختبار الأداء (اختبارات التيار المتردد، الدائرة القصيرة، التوافقيات، تغير الجهد وما إلى ذلك)، اختبار التقادم واختبارات أخرى</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-wind-turbine-gearboxes                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع علب تروس التوربينات الريحية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع طاقة الرياح بسعة 400 ميجاواط بالإضافة إلى طرح الجولة الثانية بسعة أجمالية تقدر ب 850 ميجاواط، وبانتظار الإعلان عن جولات إضافية قريبًا.</p>
+<p>لهذا من المتوقع أن ينمو سوق علب تروس التوربينات الريحية في المملكة العربية السعودية من مستواه الذي يكاد لا يذكر عام 2019 إلى 158 مليون دولار أمريكي بحلول عام 2030. ليصل حجم السوق الإجمالي إلى 1,894 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج علب التروس. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع علب تروس التوربينات الريحية.</p>
+<ul>
+<li>التصنيع: القولبة، الخرط اللين، التصليب، الخرط القاسي</li>
+<li>التجميع: التجميع النهائي</li>
+<li>الاختبار: اختبار المكونات المستقلة، الاختبار المتكامل بطريقة التضاد مع علبة التروس، الاختبار الكامل لمجموعة نقل القدرة وهيكل المحرك، اختبار الحمل، اختبار الغرفة الباردة</li>
+</ul>
+"
+                                ; manufacturing-assembly-plant-for-wind-turbine-generators-1                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع مولدات التربينات الريحية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع طاقة الرياح بسعة 400 ميجاواط بالإضافة إلى طرح الجولة الثانية بسعة أجمالية تقدر ب 850 ميجاواط، وبانتظار الإعلان عن جولات إضافية قريبًا.</p>
+<p>لهذا من المتوقع أن ينمو سوق مولدات التوربينات الريحية في المملكة العربية السعودية من مستواه الذي يكاد لا يذكر عام 2019 إلى 46 مليون دولار أمريكي بحلول عام 2030. ليصل حجم السوق الإجمالي إلى 469 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج مولدات التوربينات الريحية.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع مولدات التوربينات الريحية.</p>
+<ul>
+<li>التصنيع: تقطيع الطبقات، درفلة الفولاذ، اللحام، صناعة الأدوات، الخرط، لف أسلاك الجزء الثابت من المحرك، الدهان والطلاء</li>
+<li>التجميع: تجميع الدوار، تجمع الجزء الثابت من المحرك، التجميع النهائي للمولد</li>
+<li>الاختبار: المسح ثلاثي الأبعد للصب، فحص توازن الدوار</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-wind-turbine-shafts                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع أعمدة التوربينات الريحية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع طاقة الرياح بسعة 400 ميجاواط بالإضافة إلى طرح الجولة الثانية بسعة أجمالية تقدر ب 850 ميجاواط، وبانتظار الإعلان عن جولات إضافية قريبًا.</p>
+<p>لهذا من المتوقع أن ينمو سوق أعمدة التوربينات الريحية في المملكة العربية السعودية أن ينمو من مستواه الذي يكاد لا يذكر عام 2019 إلى 30 مليون دولار أمريكي بحلول عام 2030. ليصل حجم السوق الإجمالي إلى 355 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج أعمدة التوربينات الريحية.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع أعمدة التوربينات الريحية.</p>
+<ul>
+<li>التصنيع والتجميع: الحدادة والتلحيم والتجليخ الدقيق والتقسية الحثية والخرط من خلال عمليات الخراطة وقطع الحزوز مع بعض التثقيب</li>
+<li>الاختبار: الجودة مضمونة من خلال استخدام مقاييس إلكترونية متعددة الوظائف قادرة على قياس جميع الأبعاد الحيوية في وقت واحد</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-wind-turbine-converters                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع محولات التوربينات الريحية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع طاقة الرياح بسعة 400 ميجاواط بالإضافة إلى طرح الجولة الثانية بسعة أجمالية تقدر ب 850 ميجاواط، وبانتظار الإعلان عن جولات إضافية قريبًا.</p>
+<p>لهذا من المتوقع أن ينمو سوق محولات التوربينات الريحية في المملكة العربية السعودية من مستواه الذي يكاد لا يذكر عام 2019 إلى 79 مليون دولار أمريكي بحلول عام 2030 ، ليصل حجم السوق الإجمالي إلى 947 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج محولات التوربينات الريحية.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع محولات التوربينات الريحية.</p>
+<ul>
+<li>التصنيع: صناعة لوحات الدوائر المطبوعة، وضع العلامات بالليزر، اللحام، طلاء اللوحات ودهانها</li>
+<li>التجميع: تجميع مكونات لوحة الدائرة المطبوعة، التجميع النهائي</li>
+<li>الاختبار: اختبار لوحة الدائرة المطبوعة، الفحص بالأشعة السينية، الاختبار المائي، اختبار الجهد</li>
+</ul>
+"	
+                                ; manufacturing-assembly-of-wind-turbine-bearings                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع شفرات التوربينات الريحية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع طاقة الرياح بسعة 400 ميجاواط بالإضافة إلى طرح الجولة الثانية بسعة أجمالية تقدر ب 850 ميجاواط، وبانتظار الإعلان عن جولات إضافية قريبًا.</p>
+<p>لهذا من المتوقع أن ينمو سوق حوامل التوربينات الريحية في المملكة العربية السعودية من مستواه الذي يكاد لا يذكر عام 2019 إلى 24 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 284 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج حوامل التوربينات الريحية.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع حوامل التوربينات الريحية.</p>
+<ul>
+<li>التصنيع: التقطيع، المعالجة الحرارية، التجليخ، الصقل</li>
+<li>التجميع: تجميع الحلقات الداخلية والخارجية والكرات والقفص، التزييت، التجميع النهائي مع الواقيات</li>
+<li>الاختبار: اختبار المنصة لمحاكاة الأحمال الثابتة والديناميكية وعزم الدوران المجرب متعدد الميجاواط</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-wind-turbine-towers                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع أبراج التوربينات الريحية التي تحمل هياكل المحركات والدوارات.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع طاقة الرياح بسعة 400 ميجاواط بالإضافة إلى طرح الجولة الثانية بسعة أجمالية تقدر ب 850 ميجاواط، وبانتظار الإعلان عن جولات إضافية قريبًا.</p>
+<p>لهذا من المتوقع أن ينمو سوق أبراج التوربينات الريحية في المملكة العربية السعودية أن ينمو من مستواه الذي يكاد لا يذكر عام 2019 إلى 395 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 4,736 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج أبراج التوربينات الريحية.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع أبراج التوربينات الريحية.</p>
+<ul>
+<li>التصنيع: التقطيع والتجليف ودرفلة الألواح واللحام النقطي واللحام الطولاني واللحام المحيطي للقطع والسفع الرملي والطلاء</li>
+<li>التجميع: نقل الأجزاء الفردية إلى الموقع وجمعها فيه</li>
+<li>الاختبار: الفحص بالأشعة السينية، فحص جهد المسامير</li>
+</ul>
+"
+                                ; manufacturingassembly-of-wind-turbine-blades                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع شفرات التوربينات الريحية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030، هذا وقد سبق طرح الجولة الأولى من مشاريع طاقة الرياح بسعة 400 ميجاواط بالإضافة إلى طرح الجولة الثانية بسعة أجمالية تقدر ب 850 ميجاواط، وبانتظار الإعلان عن جولات إضافية قريبًا.</p>
+<p>لهذا من المتوقع أن ينمو سوق شفرات التوربينات الريحية في المملكة العربية السعودية من مستواه الذي يكاد لا يذكر عام 2019 إلى 316 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 3,789 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية لتوطين سلسلة قيمة إنتاج شفرات التوربينات الريحية.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع شفرات التوربينات الريحية.</p>
+<ul>
+<li>التصنيع: تصنيع تجويف القالب</li>
+<li>التجميع: التقسيم الطبقي للصفائح المقواة بالألياف، تجميع خشب البالسا، وضع الراتنج الإبوكسي، التسخين/التصليب، الصنفرة، الطلاء والدهان، تجميع المسامير</li>
+<li>الاختبار: وزن الشفرات</li>
+</ul>
+"
+                                ; manufacturingassembly-of-solar-csp-pumps                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع مضخات الطاقة الشمسية المركزة.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير&nbsp; عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030.</p>
+<p>لهذا من المتوقع أن ينمو سوق مضخات الطاقة الشمسية المركزة في المملكة العربية السعودية من مستواه الذي يكاد لا يذكر عام 2019 إلى 5 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 60 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج مضخات الطاقة الشمسية المركزة.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع مضخات الطاقة الشمسية المركزة</p>
+<ul>
+<li>التصنيع: عملية صنع النماذج، عملية صنع رمل قلب المسبوك، إذابة الحديد الصب في الفرن، عملية الصب، كسر القوالب، الصب الخام للسفع الرملي، التجليخ والتعدين، المعالجة بالتحكم الرقمي باستخدام الحاسوب لعناصر المضخة الأخرى</li>
+<li>التجميع: التجميع النهائي، مجموعة مانع التسرب</li>
+<li>الاختبار: فحص الأبعاد، اختبار منبع المياه الجوفية، اختبار المعدل الثابت، اختبار سحب المياه التدريجي، اختبار الاسترجاع</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-solar-csp-steam-turbines                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع التوربينات البخارية لمضخات الطاقة الشمسية المركزة.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير&nbsp; عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030.</p>
+<p>لهذا من المتوقع أن ينمو سوق التوربينات البخارية لمضخات الطاقة الشمسية المركزة في المملكة العربية السعودية أن ينمو من مستواه الذي يكاد لا يذكر عام 2019 إلى 102 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 1,225 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج التوربينات البخارية لمضخات الطاقة الشمسية المركزة.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع التوربينات البخارية لمضخات الطاقة الشمسية المركزة.</p>
+<ul>
+<li>التصنيع: تصنيع الشفرات، التقطع، التفريز الدقيق للتحكم الرقمي باستخدام الحاسوب، السفع بالخردق، الصقل، الاستدقاق، التجليخ</li>
+<li>التجميع: سبك وتجميع أغلفة التوربينات البخارية، تجميع الدوارات والأعمدة، تجميع الحوامل والوصلات، موازنة وحدات التوربينات البخارية ومجموعة الإطار</li>
+<li>الاختبار: اختبار الاهتزاز والحركة الهوائية</li>
+</ul>
+"
+                                ; manufacturingassembly-of-solar-csp-heliostats                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع عاكسات أشعة مضخات الطاقة الشمسية المركزة.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير&nbsp; عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030.</p>
+<p>لهذا من المتوقع أن ينمو سوق عاكسات أشعة مضخات الطاقة الشمسية المركزة في المملكة العربية السعودية من مستواه الذي يكاد لا يذكر عام 2019 إلى 63 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 756 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، هنالك فرصة لتوطين تصنيع وتجميع عاكسات أشعة مضخات الطاقة الشمسية المركزة.</p>
+<ul>
+<li>التصنيع: صنع إطار عاكسات الأشعة/الحوض المعدني وأنبوب العزم (في حالة مضخات الطاقة الشمسية المركزة المكافئة)، تصنيع الأنبوب الحلزوني/ثني الصفائح، التلحيم، الغلفنة</li>
+<li>التجميع: التجميع النهائي</li>
+</ul>
+"
+                                ; manufacturing-assembly-of-solar-csp-steam-generators                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع عاكسات أشعة مضخات الطاقة الشمسية المركزة.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير&nbsp; عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030.</p>
+<p>لهذا من المتوقع أن ينمو سوق عاكسات أشعة مضخات الطاقة الشمسية المركزة في المملكة العربية السعودية من مستواه الذي يكاد لا يذكر عام 2019 إلى 63 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 756 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، هنالك فرصة لتوطين تصنيع وتجميع عاكسات أشعة مضخات الطاقة الشمسية المركزة.</p>
+<ul>
+<li>التصنيع: صنع إطار عاكسات الأشعة/الحوض المعدني وأنبوب العزم (في حالة مضخات الطاقة الشمسية المركزة المكافئة)، تصنيع الأنبوب الحلزوني/ثني الصفائح، التلحيم، الغلفنة</li>
+<li>التجميع: التجميع النهائي</li>
+</ul>
+"
+                                ; assembly-of-solar-csp-condensers                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع مكثفات مضخات الطاقة الشمسية المركزة.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير&nbsp; عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030.</p>
+<p>لهذا من المتوقع أن ينمو سوق مكثفات مضخات الطاقة الشمسية المركزة في المملكة العربية السعودية أن ينمو من مستواه الذي يكاد لا يذكر عام 2019 إلى 45 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 544 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج مكثفات مضخات الطاقة الشمسية المركزة.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تجميع مكثفات مضخات الطاقة الشمسية المركزة.</p>
+<ul>
+<li>التجميع: تجميع اللفائف والزعانف، تجميع أنابيب المنحنيات، تجميع الأنابيب المتشعبة، تجميع وحدة مناولة الهواء، التجميع النهائي</li>
+<li>التصنيع: عملية ثني الملف، سك الصفيحة المعدنية، عملية قطع صفيحة الألومينيوم، عملية حفر الثقوب في صفيحة الألومينيوم، عملية آلة التوسيع، عملية دفق الغاز، تنقية الهواء</li>
+<li>الاختبار: فحص الأبعاد، اختبار التشغيل، اختبار كشف التسرب</li>
+</ul>
+"
+                                ; manufacturing-plant-for-solar-pv-cells                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لإنتاج الخلايا الشمسية الكهروضوئية.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير&nbsp; عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030.</p>
+<p>لهذا من المتوقع أن ينمو سوق الخلايا الشمسية الكهروضوئية في المملكة العربية السعودية من 89 مليون دولار أمريكي عام 2019 إلى 990 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 11,880 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>&nbsp;ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج الخلايا الكهروضوئية.</p>
+<p>ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع الخلايا الشمسية الكهروضوئية.</p>
+<ul>
+<li>التصنيع: عملية الرق (تتضمن قطع السبائك البلورية والتسوية والقطع)، تحويل الرقاقات إلى خلايا (الحفر والنشر والتلوين والدهان)</li>
+<li>الاختبار: تدريج الخلايا</li>
+</ul>
+"
+                                ; assembly-plant-for-control-system-components-1                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتجميع نظم وعناصر التحكم.</p>
+<p>لقد حددت المملكة العربية السعودية أهدافاً طموحة لإضافة مصادر الطاقة المتجددة إلى مزيج الطاقة في المملكة بنسب تصل الى 30% من احتياجات الطاقة، حيث تحرص المملكة على فتح آفاق قطاع الطاقة المتجددة من خلال زيادة الإنتاج وتوطين الصناعات المتعلقة بسلاسل الإمدادات حيث ابتدأت نسبة التوطين المطلوبة في حزمة المشاريع الأولى لتكون 30%، في حين حددت نسب التوطين المستقبلية المطلوبة في المشاريع القادمة لتكون بين 40% و60%.</p>
+<p>لقد وضعت المملكة أهداف لتطوير&nbsp; عدة مشاريع تستهدف الوصول بالمملكة إلى مستوى إنتاج يبلغ 27.3 جيجاواط من الطاقة المتجددة بحلول عام 2024 و58.7 جيجاواط بحلول عام 2030.</p>
+<p>لهذا من المتوقع أن ينمو سوق نظم وعناصر التحكم في المملكة العربية السعودية أن ينمو من 4 مليون دولار أمريكي عام 2019 إلى 107 مليون دولار أمريكي بحلول عام 2030، ليصل حجم السوق الإجمالي إلى 1,279 مليون دولار أمريكي في الفترة بين عامي 2019 و2030.</p>
+<p>ونظرا لوتيرة النمو المتوقعة لهذا السوق، توجد العديد من الفرص الاستثمارية لتلبية توطين سلسلة قيمة إنتاج نظم وعناصر التحكم.</p>
+<p>ينصب التركيز الرئيسي لهذه الفرصة على تجميع نظم وعناصر التحكم.</p>
+<ul>
+<li>التجميع: تجميع اللوحات والعناصر الفرعية</li>
+<li>التصنيع: تصنيع الألواح</li>
+<li>الاختبار: اختبار التيار، اختبار المعاوقة الكهربائية، اختبار التحمل، الاختبارات المتعلقة بحماية الدخول (IP)</li>
+</ul>
+"
+                                ; localize-surge-lightning-arrestors-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع مانعات الصواعق وفرط الجهد الكهربائي.</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق مانعات الصواعق وفرط الجهد الكهربائي في المملكة العربية السعودية بحوالي 67 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 2.7% إلى 95 مليون دولار بحلول عام 2030.</p>
+<p>مع النمو المتوقع في السوق، تظهر العديد من الفرص لتوطين سلسلة القيمة الإنتاجية لمانعات الصواعق وفرط الجهد الكهربائي، بدءًا من المواد الخام والتصنيع وحتى التجميع والاختبار. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع مانعات الصواعق وفرط الجهد الكهربائي</p>
+<ul>
+<li>التصنيع: الكبائن، القضبان، الموانع المعدنية المؤكسدة</li>
+<li>التجميع: تجميع الكبائن، تجميع كتيفة التثبيت</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار الموانع تتضمن،</p>
+<ul>
+<li>اختبار الجهد العالي، اختبار شدة الصواعق، اختبار تفريغ الطاقة، اختبار الدائرة القصيرة</li>
+</ul>
+"
+                                ; localize-air-insulated-and-sandwich-type-busbar-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع قضبان التوصيل من النوع الشطيري المعزولة بالهواء (النحاسية والألومينيومية).</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق قضبان التوصيل من النوع الشطيري والمعزولة بالهواء في المملكة العربية السعودية بحوالي 73 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 8% إلى 200 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج قضبان التوصيل من النوع الشطيري والمعزولة بالهواء. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع قضبان التوصيل من النوع الشطيري والمعزولة بالهواء:</p>
+<ul>
+<li>التصنيع: عملية الطرد والسحب، الوصل والتثبيت، التصميم والتركيب، الطلاء، والطلاء بالكهرباء</li>
+<li>التجميع: تجميع التجهيزات والملحقات، التصفيح، والعزل</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار قضبان التوصيل تتضمن،</p>
+<ul>
+<li>اختبار خشونة السطح، اختبار السماكة بالموجات فوق الصوتية، اختبار التفريغ الجزئي، اختبار العزل الكهربائي، اختبار الحث المنخفض</li>
+</ul>
+"
+                                ; localize-power-capacitors-and-harmonics-filters-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع مكثفات القدرة ومرشحات التوافقيات.</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق مكثفات القدرة ومرشحات التوافقيات في المملكة العربية السعودية بحوالي 60 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 3.3% إلى 92 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج مكثفات القدرة ومرشحات التوافقيات. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع مكثفات القدرة ومرشحات التوافقيات:</p>
+<ul>
+<li>التصنيع: إنتاج العجينة العازلة، تشكيل الصفائح، تقسيم الصفائح إلى طبقات وكبسها، التلبيد/العزل، اللف</li>
+<li>التجميع: تغليف الصندوق، التجميع الجاف، التلحيم، التشريب</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار المكثفات والمرشحات تتضمن،</p>
+<ul>
+<li>إدارة السعة الكهربائية، اختبار الجهد الكهربائية، اختبار التفريغ الداخلي، اختبار منع التسرب، اختبار الاستقرار الحراري، اختبار الدائرة القصيرة</li>
+</ul>
+"
+                                ; localizing-aluminum-alloy-conductors-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع سبائك الألومنيوم الموصلة (&lt;132 كيلوفولط).</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق سبائك الألومينيوم الموصلة في المملكة العربية السعودية بحوالي 327 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 2.2% إلى 436 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج سبائك الألومينيوم الموصلة. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع سبائك الألومينيوم الموصلة:</p>
+<ul>
+<li>التصنيع: الإذابة في الفرن - إنتاج قضبان الألومنيوم، الدلفنة، سحب القضبان، سحب الأسلاك، الجدل</li>
+<li>التجميع: التعبئة والتغليف والتخزين</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار المكثفات تتضمن،</p>
+<ul>
+<li>اختبار قوة العزل، اختبار السعة الكهربائية</li>
+</ul>
+"
+                                ; localizing-dry-transformers-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع المحولات الجافة (حتى 10 ميجافولط أمبير)</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق المحولات الجافة في المملكة العربية السعودية بحوالي 22 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 2.2% إلى 30 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج المحولات الجافة. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع المحولات الجافة:</p>
+<ul>
+<li>التصنيع: عملية اللف، تدعيم العزل، بناء قلب الملف، بناء الحزان، الطلاء</li>
+<li>التجميع: تجميع اللفات، تجميع قلب الملف، عملية التجفيف، تجميع التجهيزات وغيرها من الملحقات، ملف الزيت والترشيح، التشريب بالضغط الفراغي</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار المحولات الجافة تتضمن،</p>
+<ul>
+<li>اختبارات قياس الفقدان وارتفاع درجة الحرارة، اختبارات العزل الكهربائي، انعدام التتابع الطوري، اختبارات الصوت وقصر الدائرة، اختبارات التفريغ الهوائي، اختبارات أخرى</li>
+</ul>
+"
+                                ; manufacturing-for-fuel-additives-1                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع المواد المضافة للوقود</p>
+<p>تعمل مرافق توليد الطاقة التي تعمل بزيت الوقود على تشغيل الكثير من المنشآت الصناعية والمباني البلدية ومجمعات التصنيع. تحافظ المواد المضافة للوقود على استمرارية تشغيل هذه المنشآت بأعلى مستويات الأداء مع تقليل المشكلات المتعلقة بالوقود التي واجهت الأفران والمراجل التي تعمل بالزيت.</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق المواد المضافة للوقود في المملكة العربية السعودية بحوالي 54 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 3% إلى 76 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج المواد المضافة للوقود. ينصب التركيز الأساسي لهذه الفرصة على تصنيع المواد المضافة للوقود</p>
+<ul>
+<li>تصنيع المواد المضافة للوقود: المواد المضافة للتحكم في الرواسب، المواد المضافة لمحسنات السيتان، المواد المضافة للأكسدة، المواد المضافة لمحسنات التزليق والتدفق البارد، المواد المضافة للعوامل المانعة للتآكل - محسنات الاستقرار، محسنات الأوكتان والمواد المضافة المانعة للتجمد وغيرها.</li>
+</ul>
+"
+                                ; manufacturing-assembly-plant-for-gas-turbines-1                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع توربينات الغاز</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق توربينات الغاز في المملكة العربية السعودية بحوالي 1,522 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 4.4% إلى 2,652 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج توربينات الغاز. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع توربينات الغاز:</p>
+<ul>
+<li>التصنيع: تصنيع الشفرات - التشكيل بالطرق والمعالجة بالتحكم الرقمي باستخدام الحاسوب، تصنيع الضاغط، تصنيع عامود الدوران، تصنيع الحارق، التفريز والتشطيب، اللحام، تصنيع الغرفة، طلاء الحاجز الحراري، الجلخ بالصاروخ</li>
+<li>التجميع: تجميع التوربينات وسبكها، تجميع الضاغط، تجميع العادم، تجميع مدخل الهواء</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار توربينات الغاز تتضمن،</p>
+<ul>
+<li>اختبار الاحتراق، واختبار الأبعاد</li>
+</ul>
+"
+                                ; localization-of-high-voltage-switchgear-gis-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع مجموعة المفاتيح الكهربائية عالية الجهد.</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق مجموعة المفاتيح الكهربائية عالية الجهد في المملكة العربية السعودية بحوالي 377 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 5% إلى 730 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج مجموعة المفاتيح الكهربائية عالية الجهد. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع مجموعة المفاتيح الكهربائية عالية الجهد:</p>
+<ul>
+<li>التصنيع: الغلاف المعدني لغاز سداسي فلوريد الكبريت (SF6)، تصنيع الصفائح الفولاذية، معالجة النحاس، معالجة الراتنج المطروق، معالجة السطح، حمالة أمان الكابلات</li>
+<li>التجميع: تجميع المكونات، تركيب المعدات مثل قواطع الدوائر وقاطعات الأحمال، مفاتيح تأريض الفواصل، المحولات، الصمامات ومعدات الحماية، أسلاك المعدات المدمجة عبر حمالة أمان الكابلات وغيرها من الكابلات الأخرى</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار مجموعة المفاتيح الكهربائية عالية الجهد تتضمن،</p>
+<ul>
+<li>اختبار لوحة التحكم، اختبار الجهد العالي والتفريغ، اختبار التشغيل الميكانيكي، التصوير بالأشعة، الاختبارات الجافة عالية الجهد، اختبارات التفريغ الجزئي، اختبار تسرب غاز سداسي فلوريد الكبريت</li>
+</ul>
+"
+                                ; localization-of-circuit-interrupters-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتجميع قواطع التيار عند أعطال القوس الكهربائي وأعطال التأريض.</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق قواطع التيار في المملكة العربية السعودية بحوالي 83 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 3% إلى 117 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج قواطع التيار. ينصب التركيز الأساسي لهذه الفرصة على تجميع قواطع التيار:</p>
+<ul>
+<li>التجميع: تجميع الأجزاء النحاسية، تجميع لوحة الدائرة المطبوعة، المكونات الكهربائية والإلكترونية</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في تصنيع واختبار قواطع التيار،</p>
+<ul>
+<li>التصنيع: ضغط الأجزاء النحاسية وتشكيلها ولفها، اللحام النقطي، القولبة بالحقن للمواد البلاستيكية، الطباعة، تجميع لوحة الدائرة المطبوعة، التغطيس</li>
+<li>الاختبار: الفحص، اختبار قصر الدائرة، اختبار الجهد الكهربائي، اختبارات الجودة</li>
+</ul>
+"
+                                ; localization-of-lv-control-gear-switches-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع مجموعة مفاتيح التحكم منخفض الجهد.</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق مجموعة مفاتيح التحكم منخفض الجهد في المملكة العربية السعودية بحوالي 60 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 2% إلى 74 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج مجموعة مفاتيح التحكم منخفض الجهد. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع مجموعة مفاتيح التحكم منخفض الجهد:</p>
+<ul>
+<li>التصنيع: ضغط الأجزاء النحاسية وتشكيلها ولفها، اللحام النقطي، القولبة بالحقن للمواد البلاستيكية، الطباعة، تجميع لوحة الدائرة المطبوعة، التغطيس</li>
+<li>التجميع: تجميع الأجزاء النحاسية، تجميع لوحة الدائرة المطبوعة، المكونات الكهربائية والإلكترونية</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار مجموعة مفاتيح التحكم منخفض الجهد تتضمن،</p>
+<ul>
+<li>الفحص، اختبار قصر الدائرة، اختبار الجهد الكهربائي، اختبارات الجودة</li>
+</ul>
+"
+                                ; localization-of-low-voltage-switchgear-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتجميع مجموعة مفاتيح التحكم منخفض الجهد (قواطع الدائرة من نوع MCCB ونوع ACB).</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق مجموعة المفاتيح الكهربائية منخفضة الجهد في المملكة العربية السعودية بحوالي 183 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 8% إلى 518 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج مجموعة المفاتيح الكهربائية منخفضة الجهد. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع مجموعة المفاتيح الكهربائية منخفضة الجهد:</p>
+<ul>
+<li>التصنيع: ضغط الأجزاء النحاسية وتشكيلها ولفها، اللحام النقطي، القولبة بالحقن للمواد البلاستيكية، الطباعة، تجميع لوحة الدائرة المطبوعة، التغطيس</li>
+<li>التجميع: تجميع الأجزاء النحاسية، تجميع لوحة الدائرة المطبوعة، المكونات الكهربائية والإلكترونية</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار مجموعة المفاتيح الكهربائية منخفضة الجهد تتضمن،</p>
+<ul>
+<li>الفحص، اختبار قصر الدائرة، اختبار الجهد الكهربائي، اختبارات الجودة</li>
+</ul>
+"
+                                ; localization-of-mv-breakers-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع قواطع دوائر الجهد المتوسط</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق قواطع دوائر الجهد المتوسط في المملكة العربية السعودية بحوالي 293 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 6.4% إلى 654 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج قواطع دوائر الجهد المتوسط. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع قواطع دوائر الجهد المتوسط:</p>
+<ul>
+<li>التصنيع: خط تصنيع قاطع الدائرة بالتفريغ الهوائي، تصنيع قضبان القاطع، تصنيع المصرف الحراري، أجزاء التوصيل الميكانيكية، تشكيل الصفائح المعدنية، والطلاء والتكسية</li>
+<li>التجميع: التجميع الكامل للوحدة، عمليات الفحص</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار قواطع دوائر الجهد المتوسط تتضمن،</p>
+<ul>
+<li>الفحص الكهربائي، اختبار التشغيل، صمود العزل الكهربائي، استمرارية حماية الدوائر الكهربائية، مقاومة العزل، اختبار قصر الدائرة، اختبارات الجهد الكهربائي</li>
+</ul>
+"
+                                ; localization-of-mv-switchgear-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع مجموعة المفاتيح الكهربائية متوسطة الجهد.</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق مجموعة المفاتيح الكهربائية متوسطة الجهد في المملكة العربية السعودية بحوالي 293 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 6.4% إلى 1,002 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج مجموعة المفاتيح الكهربائية متوسطة الجهد. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع مجموعة المفاتيح الكهربائية متوسطة الجهد:</p>
+<ul>
+<li>التصنيع: تصنيع الصفائح الفولاذية، معالجة النحاس، معالجة الراتنج المطروق، معالجة السطح، التوصيل المسبق للكابلات، حمالات أمان الكابلات</li>
+<li>التجميع: تجميع الأطر، تركيب قضبان التوصيل، تركيب المكونات ووحدة السحب، توصيل الأسلاك، تجميع الغلاف</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار مجموعة المفاتيح الكهربائية متوسطة الجهد تتضمن،</p>
+<ul>
+<li>فحص التوافق (الإطار وقضيب التوصيل والجهاز وغلاف وحدة السحب)، الفحص الميكانيكي، الفحص الكهربائي، (اختبار التشغيل ومقاومة العزل الكهربائي واستمرارية دوائر الحماية ومقاومة العزل)</li>
+</ul>
+"
+                                ; assembly-plant-for-polymer-electrical-insulators-1                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع تجميع العوازل الكهربائية البوليمرية (أكثر من 6.6 كيلوفولت إلى 132 كيلوفولت، عالية الجهد ومنخفضة الجهد)</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق العوازل الكهربائية البوليمرية في المملكة العربية السعودية بحوالي 53 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 3.4% إلى 82 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج العوازل الكهربائية البوليمرية. ينصب التركيز الأساسي لهذه الفرصة على تجميع العوازل الكهربائية البوليمرية:</p>
+<ul>
+<li>التجميع: يُستخدم دليل للتجميع، يُصنع الجزء المعدني من حديد سبك قابل للطرق، تُنفذ عملية حقن الأسمنت لربط العازل بالجزء المعدني</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في تصنيع واختبار العوازل الكهربائية البوليمرية،</p>
+<ul>
+<li>التصنيع: الطحن بالكرات، ضغط المرشح، طحن الكتلة الصلصالية الجاهزة للتشكيل، المجفف الكهربائي للكتلة الصلصالية، التشكيل، التجفيف والصقل، التجفيف في الفرن، التقطيع والتجليخ</li>
+<li>الاختبار: اختبار الثني، الاختبار الكهربائي، اختبار الضغط، اختبار الشد</li>
+</ul>
+"
+                                ; localization-of-porcelain-electrical-insulator-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع تصنيع وتجميع العوازل الكهربائية الخزفية (أكثر من 6.6 كيلوفولت إلى 132 كيلوفولت، عالية الجهد ومنخفضة الجهد)</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق العوازل الكهربائية الخزفية في المملكة العربية السعودية بحوالي 79 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 2% إلى 101 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج العوازل الكهربائية الخزفية. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع العوازل الكهربائية الخزفية:</p>
+<ul>
+<li>التصنيع: الطحن بالكرات، ضغط المرشح، طحن الكتلة الصلصالية الجاهزة للتشكيل، المجفف الكهربائي للكتلة الصلصالية، التشكيل، التجفيف والصقل، التجفيف في الفرن، التقطيع والتجليخ</li>
+<li>التجميع: يُستخدم دليل للتجميع، يُصنع الجزء المعدني من حديد سبك قابل للطرق، تُنفذ عملية حقن الأسمنت لربط العازل بالجزء المعدني</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار العوازل الكهربائية الخزفية تتضمن،</p>
+<ul>
+<li>اختبار الثني، الاختبار الكهربائي، اختبار الضغط، اختبار الشد</li>
+</ul>
+"
+                                ; localization-of-power-cables-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع الكابلات الكهربائية (الأكثر 220 كيلوفولت، الفولطية الفائقة).</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق الكابلات الكهربائية في المملكة العربية السعودية بحوالي 16 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 8% إلى 45 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج الكابلات الكهربائية. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع الكابلات الكهربائية:</p>
+<ul>
+<li>التصنيع: سحب الأسلاك، التلدين، الجدل والتشكيل، الطرح، العزل بمادة PVC</li>
+<li>التجميع: عملية توضع الطبقات الرئيسية، تغليف الطبقة الداخلية، تغليف الطبقة الخارجية، التصفيح الفولاذي، تأمين طرف الكابل، وقاية طرف الكابل من الرطوبة</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار الكابلات الكهربائية تتضمن،</p>
+<ul>
+<li>فحص مراقبة الجودة، اختبار الجهد</li>
+</ul>
+"
+                                ; localization-of-recloserautorecloser-and-sectionalizer-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع أجهزة إعادة التوصيل/إعادة التوصيل التلقائي والمقسمات.</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق أجهزة إعادة التوصيل/إعادة التوصيل التلقائي في المملكة العربية السعودية بحوالي 114 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 3% إلى 161 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج أجهزة إعادة التوصيل/إعادة التوصيل التلقائي. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع أجهزة إعادة التوصيل/إعادة التوصيل التلقائي:</p>
+<ul>
+<li>التصنيع والتجميع: معالجة مواد التوصيل، معالجة قضبان التوصيل، معالجة النحاس، معالجة الراتينج المطروق، معالجة السطح، كابلات التوصيل، حماية أمان الكابلات</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار أجهزة إعادة التوصيل والمقسمات تتضمن،</p>
+<ul>
+<li>اختبار بنية المعدن، اختبار مقاومة العزل، جهد صمود العزل، اختبار التحمل، اختبار التفريغ الهوائي، اختبار لوحة التحكم، اختبار الفولت العالي والتفريغ، اختبار التشغيل الميكانيكي</li>
+</ul>
+"
+                                ; localization-of-ring-main-units-rmu-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع وحدات الربط الحلقي (RMU) القائمة على قاطع الدائرة الهوائي ووحدة الصمام ذات المبدل (SFU).</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق وحدات الربط الحلقي في المملكة العربية السعودية بحوالي 111 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 6% إلى 247 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج وحدات الربط الحلقي. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع وحدات الربط الحلقي:</p>
+<ul>
+<li>التصنيع: تصنيع لوحة الدائرة المطبوعة، معالجة الرقاقة الإلكترونية الصغيرة، تصنيع الصفيحة المعدنية/الحجيرة، توصيلات الكابلات مع عملية العزل بالغاز، عملية اللحام لخزان الغاز</li>
+<li>التجميع: تجميع لوحة الدائرة المطبوعة والرقاقة، تجميع الكابلات، تجميع الحجيرة الخارجية مع الطلاء، وصلات الأسلاك، تجميع صندوق الكابلات وقاطع الدائرة</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار وحدات الربط الحلقي تتضمن،</p>
+<ul>
+<li>اختبار مايكرو-أوم، اختبار تسرب غاز سداسي فلوريد الكبريت، اختبار التفريغ الجزئي على خزان الغاز، اختبار محلل قاطع الدائرة، اختبارات الجهد العالي، اختبارات أخرى</li>
+</ul>
+"
+                                ; localization-of-smart-electricity-meters-production                ;                ; "
+
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتصنيع/تجميع عدادات الكهرباء الذكية.</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق عدادات الكهرباء الذكية في المملكة العربية السعودية بحوالي 26 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 14% إلى 142 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج عدادات الكهرباء الذكية. ينصب التركيز الأساسي لهذه الفرصة على تصنيع وتجميع عدادات الكهرباء الذكية:</p>
+<ul>
+<li>التصنيع: صناعة لوحات الدوائر المطبوعة (PCB)، معالجة رقاقات تقنية التركيب السطحي (SMT)، اللحام بالموجات، اللحام بإعادة التدفق، مكونات التثبيت، تصنيع المكونات السلبية، الغسيل المتخصص، اللحام اليدوي</li>
+<li>التجميع: التجميع المسبق، التجميع النهائي</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في اختبار عدادات الكهرباء الذكية تتضمن،</p>
+<ul>
+<li>معايرة الأخطاء، اختبار تغير شكل المواد بعد الخضوع لضغط أو حرارة مرتفعة، اختبار الوظائف الأساسية، المعايرة، عملية التقادم</li>
+</ul>
+"
+                                ; assembly-plant-for-steam-condensers-heat-exchangers-1                ;                ; "
+<p>تنطوي هذه الفرصة على إنشاء مصنع لتجميع مكثفات البخار والمبادلات الحرارية.</p>
+<p>للمملكة العربية السعودية خطط ضخمة لزيادة سعات نقل القدرة الكهربائية إلى حوالي 69,000 كيلو متر مربع من خطوط الجهد العالي و250،000 ميجا فولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030)، كذلك، من المقرر أن تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 69,000 كم مكعب من خطوط الجهد العالي وحوالي 219،000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>ومن المقرر إضافة المزيد من السعات الإقليمية الرئيسية لأجل خدمة نمو الطلب الإقليمي المضاعف بما يتجاوز حدود المملكة العربية السعودية، إذ تصل خطط زيادة قدرة نقل القدرة الكهربائية الإقليمية خارج حدود المملكة العربية السعودية إلى حوالي 259,000 كيلومتر مربع من خطوط الجهد العالي و775,000 ميجافولت أمبير من المحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030). كذلك تصل سعة التوزيع الإضافية المخطط لها على نحو مماثل إلى حوالي 1.9 كم مكعب من خطوط الجهد العالي و819,000 ميجا فولت أمبير للمحطات الفرعية ذات الجهد العالي (بشكل تراكمي خلال الفترة بين عامي 2017 و2030).</p>
+<p>تقدر قيمة سوق مكثفات البخار والمبادلات الحرارية في المملكة العربية السعودية بحوالي 212 مليون دولار أمريكي عام 2017 مع توقعات بنموها بمعدل سنوي مركب يبلغ 3% إلى 324 مليون دولار بحلول عام 2030.</p>
+<p>مع هذا النمو المتوقع للسوق، تظهر العديد من الفرص لتوطين سلسلة قيمة إنتاج مكثفات البخار والمبادلات الحرارية. ينصب التركيز الأساسي لهذه الفرصة على تجميع مكثفات البخار والمبادلات الحرارية:</p>
+<ul>
+<li>التجميع: تجميع اللفائف والزعانف، تجميع أنابيب المنحنيات، تجميع الأنابيب المتشعبة، تجميع وحدة مناولة الهواء، التجميع النهائي</li>
+</ul>
+<p>إلا أن هنالك فرصًا أخرى في تصنيع واختبار مكثفات البخار والمبادلات الحرارية،</p>
+<ul>
+<li>التصنيع: عملية ثني الملف، سك الصفيحة المعدنية، ثني الصفيحة المعدنية، عملية قطع صفيحة الألومينيوم، عملية حفر الثقوب في صفيحة الألومينيوم، عملية آلة التوسيع، عملية دفق الغاز، تنقية الهواء</li>
+<li>الاختبار: فحص الأبعاد، اختبار التشغيل، اختبار كشف التسرب</li>
+</ul>
+"
+                                ; management-contracts-concession-contracts-for-water-distribution-sector                ;                ; "
+
+<p>انطلاقًا من السعي المستمر في تحقيق أهداف رؤية 2030 المتمثلة في زيادة جودة الخدمات المقدمة والاستفادة من خبرات القطاع الخاص، يتجه قطاع المياه في المملكة بتسارع تجاه خصخصة تشمل منظومته الكاملة بهدف تفعيل مشاركة القطاع الخاص، إذ تلتزم المملكة العربية السعودية بخصخصة قطاع المياه وإضفاء الطابع التجاري عليه ليشمل ذلك منظومة القيمة الكاملة للقطاع التي تغطي الإنتاج والنقل والتخزين والتوزيع.</p>
+<p>وفي ضوء خصخصة قطاع التوزيع، بادرت وزارة البيئة والمياه والزراعة بتطوير إستراتيجية المياه الوطنية السعودية 2030 الرامية إلى مواجهة التحديات الرئيسة أمام قطاع توزيع المياه عبر برنامج سياسات متكامل ومبادرات الإصلاح المؤسسي.&nbsp; وعليه فقد أُوكلت إلى شركة المياه الوطنية مسؤولية تنفيذ برنامج السياسات المتكامل لتسريع مشاركة القطاع الخاص.</p>
+<p>تضمن البرنامج المبادرات الرئيسة الآتية:</p>
+<ul>
+<li>إعادة هيكلة التوزيع لتكون ستة تجمّعات إقليمية</li>
+<li>تنفيذ مبادرات مشاركة القطاع الخاص على مرحلتين؛ وذلك لإتاحة الفرصة والوقت اللازم للحكومة لاتخاذ الإجراءات والتدخلات الضرورية واستكمال المبادرات المرتبطة بالإصلاحات المؤسسية والقانونية والاستدامة المالية:</li>
+</ul>
+<p>المرحلة الأولى: تنفيذ عقود الإدارة والعمليات والصيانة في كل تجمّع لمدة تتراوح من 5 إلى 7 سنوات (البرنامج)</p>
+<p>&nbsp;المرحلة الثانية: تنفيذ عقود الامتياز أو ما يماثلها من نماذج طويلة الأجل في كل تجمّع</p>
+<p>&nbsp;</p>
+<p><strong>الموقع:</strong>&nbsp;التجمع الشرقي (المنطقة الشرقية)؛ تجمّع مكة (منطقة مكّة المكرمة)؛ تجمّع الشمال (مناطق القصيم وحائل والجوف ومنطقة الحدود الشمالية)؛ تجمّع الشمال الغربي (منطقتي المدينة المنورة وتبوك)؛ تجمّع الرياض (منطقة الرياض)؛ وتجمّع الجنوب (مناطق عسير والباحة ونجران وجازان)</p>
+"
+                                ; commercialization-of-brine                ;                ; "
+
+<p>&nbsp;</p>
+<p>تُنتج المؤسسة العامة لتحلية المياه المالحة ما يزيد على مليار متر مكعب من المياه سنويًا ومنتجات ناتجة هامّة (حوالي 65 طنًّا من الصوديوم) عبر 28 محطة تحلية، وقد أجرت المؤسسة العامة لتحلية المياه المالحة بحثًا أظهر إمكانية استخلاص معادن وأيونات ذات قيمة من المياه المالحة، وأفاد البحث بأن المؤسسة أنتجت حوالي 3.7 مليار متر مكعب من المياه المالحة في عام 2014، بالإضافة إلى 1.1 مليار متر مكعب من المياه المحلاة بصفتها منتجًا إضافيًّا.</p>
+<p><strong>النتائج:</strong></p>
+<p>.1تعد الأملاح ومركبات المغنيسيوم اليوم ذات قيمة مُجدية من الناحية التقنية والاقتصادية وهي قابلة للتسويق بصفتها منتجًا إضافيًّا.</p>
+<p>.2تنامي الاهتمام بقطاع التحلية على المستوى العالمي بصفته محفزًا للابتكار التقني يؤدي إلى زيادة التركيز على إدارة المياه المالحة (بنسبة هدر سوائل تصل إلى صفر) وتسويق المنتجات الإضافية، لا سيّما بوجود مؤشرات تؤكد على أن هذه الطريقة ستُثمر عن تكلفة ومتطلبات طاقة أقل ومعدل استرجاع&nbsp; أكبر للمياه وغيرها من الموارد.</p>
+"
+                                ; manufacturingassembly-for-smart-water-meter                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع عدّاد المياه الذكي&nbsp;</p>
+<p>العدّاد الذكي هو عداد مياه تقليدي متصل بمسجل بيانات يتيح إمكانية مراقبة استهلاك المياه باستمرار، وبخلاف الأنظمة التقليدية التي يتلقّى فيها المستخدمون معلومات استخدام المياه بعد أشهر من استهلاكها، يمكن لهذا النظام الذكي تقديم بيانات حول استهلاك المياه في الوقت الفعلي أو بيانات كافية لتحديد أنماط الاستخدام.&nbsp;</p>
+<p><strong>نبذة عن السوق:</strong></p>
+<p>المملكة العربية السعودية هي أكبر مُنتج للمياه المحلاة في العالم، بقدرة إجمالية تصل إلى 8 مليون متر مكعب يوميًا، ويتوقع أن يزيد هذا الرقم إلى 12.3 مليون متر مكعب يوميًا بحلول عام 2035. علاوة على ذلك، فقد حدّدت المملكة حجم سوق المياه المُعاد استخدامها بواقع 1.9 مليون متر مكعب يوميًا بحلول عام 2020، وتُقدّر مبيعات سوق عداد المياه الذكي في السعودية بحوالي 600 مليون ريال سعودي بحلول عام 2020، وفي إطار سعي المملكة في تحقيق أهداف رؤية 2030، فقد بدأ قطاع المياه بالتركيز بصورة أكبر على التوطين للاستفادة من الفرص القيّمة المتاحة، وقد بدأت جميع الجهات المعنية بجهود التوطين المتنوعة لزيادة المحتوى المحلي وإنتاج أجهزة التحلية محليًا مثل عداد المياه الذكي.</p>
+<p><strong>عملية تصنيع/ تجميع مكونات عداد المياه الذكي:</strong></p>
+<p>بالإضافة إلى الجهاز الميكانيكي، فإن العداد الذكي في أبسط أشكاله مصنوع من المكونات الآتية: مغناطيس، مجسّات، ألواح دائرة مطبوعة، وحدة تحكم دقيقة، شاشة عرض، ناقل، مسجل بيانات، مدخل</p>
+<p><strong>التجميع</strong>:</p>
+<p>يمكن تصنيع مكونات عداد المياه الذكي محليًا أو يمكن شراءها عمومًا، من المتوقع ألا تُنتج بعض مكونات عداد المياه الذكي محليًا، وخصوصًا تلك التي تتطلب نظامًا ميكانيكيًّا متخصصًا مثل&nbsp; أشباه الموصلات (ومثال ذلك أدوات التحكم الدقيقة ومفاتيح الترحيل وألواح الدوائر المطبوعة وغيرها)</p>
+<p>تعتمد أغلبية عمليات&nbsp; تصنيع عدادات المياه الذكية حاليًّا على التقنية الحديثة، بما في ذلك علم الروبوتات لتجميع المكونات المختلفة ضمن أعلى درجات الدقة، والروبوتات المتحركة لنقل المواد الجاهزة وشبه الجاهزة، وأيضًا الروبوتات المستخدمة لحزم الصناديق ومنصات النقل. &nbsp;تساعد عملية الإنتاج المؤتمتة على تحقيق متطلبات الدقة والنظام في كل مرة؛ الأمر الذي يثمر عن عدادات مياه ذكية بنسبة فشل تصل إلى صفر في المئة.</p>
+"
+                                ; manufacturingassembly-for-electrical-ac-motor                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع/تجميع معدات محرك التيار المتردد</p>
+<p>محرك التيار المتردد هو جهاز كهربائي يحول الطاقة الكهربائية إلى طاقة ميكانيكية، يُستخدم هذا الجهاز عبر نطاق واسع من التطبيقات مثل تحلية المياه ومحطات معالجة مياه الصرف الصحي والمياه المالحة وعصير الفواكه والمياه المنتجة وقطاع النفط ومياه الأمطار والألبان.&nbsp;&nbsp;</p>
+<p><strong>نبذة عن السوق&nbsp;</strong></p>
+<p>من المتوقع أن يشهد سوق المحرك الكهربائي نموًا سريعًا في السنوات القادمة، ويعزى ذلك لحقيقة أن المملكة ستحظى بأصول إضافية بفضل المشاريع العملاقة القادمة مثل نيوم والبحر الأحمر وحديقة الملك سلمان والأولى وأمالا ومركز الملك عبدالله المالي والدرعية وجدة داون تاون والقدية ومشاريع وزارة الإسكان، بالإضافة إلى أسواق النفط والغاز ومعالجة المياه المتنامية، ومن المحتمل أن يؤدي كل ذلك إلى تعزيز نمو سوق المحركات الكهربائية في المملكة العربية السعودية.</p>
+<p>اعتبارًا من عام 2017، فقد قُيّم سوق المحركات الكهربائية بشكل عام في السعودية بحوالي&nbsp; ملياري ريال سعودي</p>
+<p><strong>عملية تصنيع محركات التيار المتردد:</strong></p>
+<p>مختبر المعادن وتحديد الحجم والختم واللف الساكن واللف المتحرك والضغط الساكن وتقليص البدّالات والتوازن الديناميكي والتجميع والفحص.</p>
+<p><strong>أما الفرص الأخرى التي يمكن توطينها عبر سلسلة القيمة فهي التيار الساكن والإبدال والفراشي والوحدات الطرفية.</strong></p>
+<p><strong>المواد الخام الرئيسة هي الحديد (استيراد) والنحاس (محلي)</strong></p>
+"
+                                ; manufacturingassembly-for-filtration-equipment                ;                ; "
+
+<p>تتضمن هذه الفرصة إنشاء مصنع لتصنيع معدات الفلترة</p>
+<p>تُستخدم معدات الفلترة لأغراض التناضح العكسي لمياه البحر التي تثمر عن تصفية المواد الصلبة وتقليلها مثل الرمال والطين قبل أن تصل مياه البحر إلى أغشية التناضح العكسي.&nbsp;</p>
+<p>تُخطط المملكة لزيادة استثماراتها في قطاع المياه بصورة كبيرة لتصل إلى 50 مليار دولار بحلول عام 2020، إذ إن المملكة العربية السعودية أكبر مُنتج للمياه المحلاة في العالم، بقدرة إجمالية تصل إلى 8 مليون متر مكعب يوميًا، ويتوقع أن يزيد هذا الرقم إلى 12.3 مليون متر مكعب يوميًا بحلول عام 2035، علاوة على ذلك، فقد حدّدت المملكة حجم سوق المياه المُعاد استخدامها بواقع 1.9 مليون متر مكعب يوميًا بحلول عام 2020 وفي إطار سعي المملكة نحو تحقيق أهداف رؤية 2030، فقد بدأ قطاع المياه بالتركيز بصورة أكبر على التوطين للاستفادة من الفرص القيّمة المتاحة، وقد بدأت جميع الجهات المعنية مجموعة من جهود التوطين المتنوعة لزيادة المحتوى المحلي وإنتاج أجهزة التحلية محليًا مثل معدات الفلترة التي تستخدم للمشاريع الجديدة ومشاريع التأهيل.</p>
+<p>&nbsp;من المتوقع أن تنمو مبيعات سوق التحلية القابل للتحديد بالنسبة لمعدات الفلترة إلى 41 مليون ريال سعودي بحلول عام 2025 لتصل إلى 46 مليون ريال سعودي في عام 2035، إضافة إلى ذلك فإن قيمة سوق دول الخليج السنوي ستصل إلى 148 مليون ريال بحلول عام 2035.</p>
+<p><strong>تُصنّع معدات الفلترة بالشكل الآتي:</strong></p>
+<p><u><strong>أعمال متعلقة بالفلزات</strong>:&nbsp;</u>تصميم هيكلي وهيدروليكي، أعمال التشكيل (دلفنة الصفائح المعدنية، اللحام)، تجهيز السطح، الدهان، الفحص المائي.</p>
+<p><u><strong>أعمال لا ترتبط بالفلزات</strong>:</u>&nbsp;تصميم هيكلي وهيدروليكي، أعمال التشكيل (دلفنة الصفائح المعدنية، اللحام)، تجهيز السطح، الدهان، الفحص المائي.</p>
+<p><u><strong>المواد الخام</strong>:&nbsp;</u>بلاستيك مقوى بالألياف، الحديد الصلب، الحديد الصلب المزدوج، الحديد الصلب المزدوج الفائق، بولي بروبلين، CS، الأسمنت.</p>
+"
+                                ; power-transformers-1                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Setting up a manufacturing and assembly plant for the production of power transformers (above 100MVA) in KSA</p>
+"
+                                ; ar-rass-solar-pv-700-mw                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Development of a Solar PV 700MW project in Ar Rass as part of the REPDO Round 3 as an Independent Power Producer (IPP)</p>
+"
+                                ; saad-solar-pv-300-mw                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Development of a Solar PV 300MW project in Saad as part of the REPDO Round 3 as an Independent Power Producer (IPP)</p>
+"
+                                ; layla-solar-pv-80-mw                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Development of a Solar PV 80MW project in Layla as part of the REPDO Round 3 as an Independent Power Producer (IPP)</p>
+"
+                                ; wadi-aldawasir-solar-pv-120-mw                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Development of a Solar PV 120MW project in Wadi Aldawasir as part of the REPDO Round 3 as an Independent Power Producer (IPP)</p>
+"
+                                ; reverse-osmosis-ro-membrane                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Establish RO membrane manufacturing facilities to cater for local demand</p>
+"
+                                ; high-pressure-pumps-1                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Setting up a manufacturing and assembly plant for the production of High Pressure Pumps (Rotary Positive Displacement Pumps and Centrifugal Pumps) in KSA</p>
+"
+                                ; pressure-exchangers                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Setting up a manufacturing and assembly plant for the production of Pressure Exchangers in KSA</p>
+"
+                                ; dissolved-air-flotation-daf-systems                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Setting up a manufacturing and assembly plant for the production of Dissolved Air Flotation (DAF) in KSA.</p>
+"
+                                ; electrical-cutout-fuse                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Setting up a manufacturing and assembly plant for the production of Cutout Fuse (15.2 Kv, 36 Kv) 100 A in KSA.</p>
+"
+                                ; high-voltage-extra-high-voltage-gas-insulated-switchgear                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Setting up a manufacturing and assembly plant for the production of high voltage gas insulated switchgear (HV& EHV GIS) in KSA.</p>
+"
+                                ; energy-services-company-esco                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Establishing an Energy Services Company (ESCO) to help reduce energy consumption for the public and private sector facilities.</p>
+"
+                                ; electric-generators                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Opportunity to setup a 750 MWpa capacity manufacturing plant for electric generators (375 -750 KVA, >750 KVA).</p>
+"
+                                ; energy-audit-company                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Establishing an Energy Audit Company to help reducing energy consumption for the public and private sector facilities.</p>
+"
+                                ; industrial-energy-audit-company                ;                ; "<h1 class='heading text-left my-2'>Overview</h1>
+<p>Establishing an Industrial Energy Audit Company to help reducing energy consumption for the industrial facilities.</p>
+"
+					
+

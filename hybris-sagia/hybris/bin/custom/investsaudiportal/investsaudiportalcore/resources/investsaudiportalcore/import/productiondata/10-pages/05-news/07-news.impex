@@ -1,0 +1,91 @@
+$page = news-special-report-by-invest-saudi-winter
+$template = portalGlobalTemplate
+$name = INVESTMENT HIGHLIGHTS - WINTER 2020
+$titleEn = $name
+$titleAr = مستجدات الاستثمار في المملكة خلال الربع الرابع من عام 2019
+$shortDescEn = In This Fourth Edition Of Investment Highlights Brought To You By Invest
+$shortDescAr = تقرير يلخص أهم مستجدات الاستثمار في المملكة خلال الربع الرابع من عام 2019
+$pagelabel = /news/a-special-report-by-invest-saudi-winter-2020
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]         ; realFileName                    ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; investment_highlight_spring ; investment_highlight_spring.jpg ; $siteResource/investment_highlight_spring.jpg                               ;                             ;                                          ; ""     ; ;
+#                   ; newsThumbnailImage-1 ; $siteResource/newsThumbnailImage-1.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias                     ; $contentCV; ; ; ;
+                            ; media-container-$page   ; investment_highlight_spring ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; investment_highlight_spring       ; investment_highlight_spring         ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 19.01.2020 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "
+<p>In this fourth edition of &ldquo;Investment Highlights&rdquo; brought to you by Invest Saudi, we look back on a record-breaking year for investors in Saudi Arabia.</p>
+<p>2019 saw investor interest in the Kingdom reach new heights, with momentum continuing to build in the run up to 2030. More than 150 major investor deals were signed by SAGIA throughout the year, and the number of new foreign companies establishing operations in Saudi Arabia was up 54% on 2018.</p>
+<p>Drawn by the wealth of opportunity in untapped sectors and an ever more investor-friendly environment that&rsquo;s being fostered through business-centric reforms, businesses from all over the world are coming to the Kingdom, with major new investors from countries such as India, UK, USA, Egypt, France, China, and many more.</p>
+<p>Special features include opening remarks from Dr. Majid Al Qasabi, Minister of Commerce and Investment, and an exclusive interview with Prince Abdulaziz bin Turki Al Faisal, Chairman of the General Sports Authority.</p>
+<p>&nbsp;</p>
+<p>In this report:</p>
+<ul>
+<li>2019 in review</li>
+<li>New foreign investors figures</li>
+<li>Top countries of origin</li>
+<li>Timeline of pro-business reforms</li>
+<li>Major projects and opportunities</li>
+</ul>
+"
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "
+تقرير يلخص أهم مستجدات الاستثمار في المملكة خلال الربع الرابع من عام 2019
+
+ 
+
+تقدم استثمر في السعودية تقرير موجز الاستثمار للربع الرابع من عام 2019، فقد شهد العام نجاحًا على مستويات عدة كان من ضمنها الزيادة الكبيرة في تراخيص الاستثمار الأجنبي بالمملكة.
+
+حقق المشهد الاستثماري في المملكة في عام 2019 نجاحًا بارزًا، وذلك وفقًا للاهتمام المتزايد من الاستثمار الأجنبي في السوق السعودي، إذ وقعت الهيئة العامة للاستثمار خلال العام أكثر من 150 اتفاقية، كما أن عدد التراخيص الصادرة للاستثمار الأجنبي حقق زيادة بنسبة 54% في عام 2019 مقارنة مع عام 2018.
+
+كما نجحت البيئة الاستثمارية في المملكة من جذب استثمارات دولية وعالمية من مختلف دول العالم مثل الهند والمملكة المتحدة والولايات المتحدة الأمريكية ومصر وفرنسا والصين وغيرها من الدول الأخرى، ويأتي هذا نتيجة لما تتميز به المملكة من فرص استثمارية ذات قيمة عالية في القطاعات التقليدية والناشئة، ولما يتميز به السوق السعودي من بيئة استثمارية جاذبة؛ إذ أنجزت المملكة ما نسبته 54% من أكثر من 400 إصلاح اقتصادي.
+
+ويستعرض التقرير كلمة من وزير التجارة والاستثمار معالي الدكتور ماجد القصبي، إضافة إلى مقابلة حصرية مع رئيس الهيئة العامة للرياضة صاحب السمو الملكي الأمير عبد العزيز بن تركي الفيصل.   
+
+ 
+
+يتضمن التقرير:
+
+لمحة عن عام 2019
+أرقام التراخيص الجديدة
+أكبر الدول المستثمرة
+رصد زمني للإصلاحات الاقتصادية
+المشاريع الكبرى والفرص
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

@@ -1,0 +1,72 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZATT_LIST"
+        },
+        "Type": "",
+        "Subtype": "",
+        "Language": "",
+        "AttachmentName": "Application letter authenticated by COC"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZATT_LIST"
+        },
+        "Type": "",
+        "Subtype": "",
+        "Language": "",
+        "AttachmentName": "GOCI Certificate"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZATT_LIST"
+        },
+        "Type": "",
+        "Subtype": "",
+        "Language": "",
+        "AttachmentName": "Nitaqat Certificate"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZATT_LIST"
+        },
+        "Type": "",
+        "Subtype": "",
+        "Language": "",
+        "AttachmentName": "Printout from Saudi Customs for Exported Products"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZATT_LIST"
+        },
+        "Type": "",
+        "Subtype": "",
+        "Language": "",
+        "AttachmentName": "Current Classification Letter from MOMRA"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZATT_LISTSET(Type='',Subtype='')",
+          "type": "ZCLASSIFICATION_UP_SRV.ZATT_LIST"
+        },
+        "Type": "",
+        "Subtype": "",
+        "Language": "",
+        "AttachmentName": "Patent Registered in KSA"
+      }
+    ]
+  }
+}

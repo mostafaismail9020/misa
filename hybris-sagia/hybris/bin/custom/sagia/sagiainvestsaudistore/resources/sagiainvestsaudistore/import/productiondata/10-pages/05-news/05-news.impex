@@ -1,0 +1,108 @@
+$page = news-invest-saudi-continues-its-support
+$template = portalGlobalTemplate
+$name = INVEST SAUDI CONTINUES ITS SUPPORT OF SAUDI ARABIA’S TOP GOLFER
+$titleEn = $name
+$titleAr = استثمر في السعودية تجدد راعيتها للمحترف السعودي عثمان الملا
+$shortDescEn = SAGIA And UNCTAD To Co-Organize Summit In Riyadh Prior To The G20 Trade And
+$shortDescAr =
+$pagelabel = /news/invest-saudi-continues-its-support-of-saudi-arabia-s-top-golfer
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; 1                  ; 1.jpg       ; $siteResource/1.jpg                                                         ;                             ;                                          ; ""     ; ;
+#                   ; newsThumbnailImage-1 ; $siteResource/newsThumbnailImage-1.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias; $contentCV; ; ; ;
+                            ; media-container-$page   ; 1      ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; 1                                 ; 1                                   ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 30.01.2020 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "
+<ul>
+<li>
+<p><strong>KAEC, Saudi Arabia, 29 January 2020:&nbsp;</strong>The Saudi Arabian General Investment Authority (SAGIA) has reaffirmed its commitment to Othman Almulla, Saudi Arabia&rsquo;s first professional golfer, by continuing its partnership with him through Invest Saudi, the Kingdom&rsquo;s inward investment and promotion brand.</p>
+<p>&nbsp;</p>
+<p>Almulla will once again be representing Saudi Arabia at the upcoming European Tour event The Saudi International, Presented by Softbank Investment Advisors, at Royal Greens Golf &amp; Country Club in King Abdullah Economic City, which runs from January 30<sup>th&nbsp;</sup>- February 2<sup>nd</sup>. The tournament was staged for the first-time last year where it was the inaugural European Tour event to be played in Saudi Arabia.</p>
+<p>&nbsp;</p>
+<p>In line with its mission to highlight the Kingdom as a major investment destination, SAGIA has already committed to support the Saudi International, Presented by SoftBank Investment Advisors as an exclusive partner. Large scale sporting events are recognised as having a significant economic impact on the local business environment and SAGIA will look to showcase this through its partnership with the event.</p>
+<p>&nbsp;</p>
+<p>The agreement SAGIA has agreed with Almulla aims to showcase the talent that exists within Saudi Arabia&rsquo;s young population and demonstrate the ongoing economic and social transformation of the Kingdom in creating new opportunities for international business, in both sports and entertainment.</p>
+<p>&nbsp;</p>
+<p>Commenting on the sponsorship,&nbsp;<strong>Khaled Tash, Deputy Governor of Marketing and Communications at SAGIA</strong>, said:&nbsp;<em>&ldquo;Othman has gone from strength to strength over the last year, competing in some high-profile tournaments and ending the year well with some strong performances on the MENA Tour</em><em>.</em><em>&nbsp;He continues to be an inspiration to young people in Saudi Arabia and our partnership with him is based on our&nbsp;</em><em>commitment to nurturing up and coming Saudi talent. We continue to see first-hand the power of the game of golf, which has long gone hand-in-hand with business opportunities.&rdquo;</em></p>
+<p>&nbsp;</p>
+<p><strong>Othman Almulla</strong>&nbsp; also commented:</p>
+<p><em>&ldquo;I am very grateful to SAGIA for their ongoing support. I look forward to working with them to promote the Invest Saudi brand and further highlight the international opportunities that exist in Saudi Arabia&rsquo; said Almulla. &lsquo;SAGIA&rsquo;s commitment to myself and the Saudi International goes to show that golf is being fully embraced in Saudi Arabia and having been lucky enough to play my first professional tournament at the Saudi International last year, I cannot wait to tee it up there again this year.&rdquo;</em></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>His Excellency Yasir Bin Othman Al Rumayyan, Chairman of the Saudi Golf Federation</strong>, is delighted that SAGIA will once again be supporting the Saudi International:</p>
+<p><em>&ldquo;We are proud to have SAGIA as a partner of the event again, after the huge success of the inaugural event last year. Our partnership with SAGIA means that we can continue to support golf development in the Kingdom, while helping to support their work for showcasing Saudi Arabia as a destination for international business development.&rdquo;</em></p>
+<p>&nbsp;</p>
+<p>SAGIA works across the public and private sectors to enhance Saudi Arabia&rsquo;s investment environment and help businesses understand and access fast-emerging opportunities within the country&rsquo;s dynamic and diversifying economy.</p>
+<p>&nbsp;</p>
+<p>The Saudi International presented by SoftBank Investment Advisors will be staged January 30<sup>th</sup>&nbsp;to February 2<sup>nd</sup>, 2020 in King Abdullah Economic City, at the award-winning Royal Greens Golf &amp; Country Club. Current world Number one, Brooks Koepka will return to the event alongside world number five and reigning champion, Dustin Johnson.</p>
+<p>&nbsp;</p>
+<p>The event will cater for all the family, with a host of activities within the Championship Village and entertainment for all tastes and age groups. Select guests will also be treated to an exclusive hospitality programme that is expected to set a new standard in quality and experience in golf, with gourmet cuisine, private meeting areas and bespoke viewing platforms to enjoy a unique perspective of the action.</p>
+</li>
+</ul>
+"
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "
+<ul>
+<li>
+<p><strong>KAEC, Saudi Arabia, 29 January 2020:&nbsp;</strong>The Saudi Arabian General Investment Authority (SAGIA) has reaffirmed its commitment to Othman Almulla, Saudi Arabia&rsquo;s first professional golfer, by continuing its partnership with him through Invest Saudi, the Kingdom&rsquo;s inward investment and promotion brand.</p>
+<p>&nbsp;</p>
+<p>Almulla will once again be representing Saudi Arabia at the upcoming European Tour event The Saudi International, Presented by Softbank Investment Advisors, at Royal Greens Golf &amp; Country Club in King Abdullah Economic City, which runs from January 30<sup>th&nbsp;</sup>- February 2<sup>nd</sup>. The tournament was staged for the first-time last year where it was the inaugural European Tour event to be played in Saudi Arabia.</p>
+<p>&nbsp;</p>
+<p>In line with its mission to highlight the Kingdom as a major investment destination, SAGIA has already committed to support the Saudi International, Presented by SoftBank Investment Advisors as an exclusive partner. Large scale sporting events are recognised as having a significant economic impact on the local business environment and SAGIA will look to showcase this through its partnership with the event.</p>
+<p>&nbsp;</p>
+<p>The agreement SAGIA has agreed with Almulla aims to showcase the talent that exists within Saudi Arabia&rsquo;s young population and demonstrate the ongoing economic and social transformation of the Kingdom in creating new opportunities for international business, in both sports and entertainment.</p>
+<p>&nbsp;</p>
+<p>Commenting on the sponsorship,&nbsp;<strong>Khaled Tash, Deputy Governor of Marketing and Communications at SAGIA</strong>, said:&nbsp;<em>&ldquo;Othman has gone from strength to strength over the last year, competing in some high-profile tournaments and ending the year well with some strong performances on the MENA Tour</em><em>.</em><em>&nbsp;He continues to be an inspiration to young people in Saudi Arabia and our partnership with him is based on our&nbsp;</em><em>commitment to nurturing up and coming Saudi talent. We continue to see first-hand the power of the game of golf, which has long gone hand-in-hand with business opportunities.&rdquo;</em></p>
+<p>&nbsp;</p>
+<p><strong>Othman Almulla</strong>&nbsp; also commented:</p>
+<p><em>&ldquo;I am very grateful to SAGIA for their ongoing support. I look forward to working with them to promote the Invest Saudi brand and further highlight the international opportunities that exist in Saudi Arabia&rsquo; said Almulla. &lsquo;SAGIA&rsquo;s commitment to myself and the Saudi International goes to show that golf is being fully embraced in Saudi Arabia and having been lucky enough to play my first professional tournament at the Saudi International last year, I cannot wait to tee it up there again this year.&rdquo;</em></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>His Excellency Yasir Bin Othman Al Rumayyan, Chairman of the Saudi Golf Federation</strong>, is delighted that SAGIA will once again be supporting the Saudi International:</p>
+<p><em>&ldquo;We are proud to have SAGIA as a partner of the event again, after the huge success of the inaugural event last year. Our partnership with SAGIA means that we can continue to support golf development in the Kingdom, while helping to support their work for showcasing Saudi Arabia as a destination for international business development.&rdquo;</em></p>
+<p>&nbsp;</p>
+<p>SAGIA works across the public and private sectors to enhance Saudi Arabia&rsquo;s investment environment and help businesses understand and access fast-emerging opportunities within the country&rsquo;s dynamic and diversifying economy.</p>
+<p>&nbsp;</p>
+<p>The Saudi International presented by SoftBank Investment Advisors will be staged January 30<sup>th</sup>&nbsp;to February 2<sup>nd</sup>, 2020 in King Abdullah Economic City, at the award-winning Royal Greens Golf &amp; Country Club. Current world Number one, Brooks Koepka will return to the event alongside world number five and reigning champion, Dustin Johnson.</p>
+<p>&nbsp;</p>
+<p>The event will cater for all the family, with a host of activities within the Championship Village and entertainment for all tastes and age groups. Select guests will also be treated to an exclusive hospitality programme that is expected to set a new standard in quality and experience in golf, with gourmet cuisine, private meeting areas and bespoke viewing platforms to enjoy a unique perspective of the action.</p>
+</li>
+</ul>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

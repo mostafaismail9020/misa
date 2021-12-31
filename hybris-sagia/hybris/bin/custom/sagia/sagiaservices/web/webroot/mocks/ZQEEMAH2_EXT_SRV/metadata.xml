@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+           xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+           xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZQEEMAH2_EXT_SRV" xml:lang="en" sap:schema-version="1"
+                xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="QeemahGeneralQst" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Language"/>
+                    <PropertyRef Name="QuestionId"/>
+                </Key>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false"
+                          sap:label="Language" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="REFID"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="QuestionId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false"
+                          sap:label="Not More Closely Defined Area, Possibly Used for Patchlevels" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Sectionno" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false"
+                          sap:label="Version Number Component" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QuestionTxt" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false"
+                          sap:label="Char255" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="QuestionType" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false"
+                          sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavGeneralQuest" Relationship="ZQEEMAH2_EXT_SRV.AssGeQuest"
+                                    FromRole="FromRole_AssGeQuest" ToRole="ToRole_AssGeQuest"/>
+            </EntityType>
+            <EntityType Name="QeemahGeneraldd" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Zkey"/>
+                </Key>
+                <Property Name="Zkey" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false"
+                          sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false"
+                          sap:label="c" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Generalqpost" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="QuestionId"/>
+                </Key>
+                <Property Name="QuestionId" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="QUESTION_ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Answerkey" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ANSWERKEY"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QuestionTxt" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="QUESTION_TXT" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Answer" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ANSWER"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="invsidpost" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Investorid"/>
+                </Key>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="investorid" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <NavigationProperty Name="NavGeqPost" Relationship="ZQEEMAH2_EXT_SRV.AssGeqPost"
+                                    FromRole="FromRole_AssGeqPost" ToRole="ToRole_AssGeqPost"/>
+            </EntityType>
+            <EntityType Name="FinancialQues" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="QuestionId"/>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="QuestionId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false"
+                          sap:label="Not More Closely Defined Area, Possibly Used for Patchlevels" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sectionno" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false"
+                          sap:label="Version Number Component" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false"
+                          sap:label="Language" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="QuestionTxt" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false"
+                          sap:label="Char255" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="QuestionType" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false"
+                          sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavFinQues" Relationship="ZQEEMAH2_EXT_SRV.AssFinQuest"
+                                    FromRole="FromRole_AssFinQuest" ToRole="ToRole_AssFinQuest"/>
+            </EntityType>
+            <EntityType Name="FinancialQuesdd" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Zkey"/>
+                </Key>
+                <Property Name="Zkey" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false"
+                          sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false"
+                          sap:label="c" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="fininvisidpost" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Investorid"/>
+                </Key>
+                <Property Name="Investorid" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="investorid" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Zreturn" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false"
+                          sap:label="Char20" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <NavigationProperty Name="NavFinqPost" Relationship="ZQEEMAH2_EXT_SRV.AssFinqPost"
+                                    FromRole="FromRole_AssFinqPost" ToRole="ToRole_AssFinqPost"/>
+            </EntityType>
+            <EntityType Name="FinancialPost" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="QuestionId"/>
+                </Key>
+                <Property Name="QuestionId" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="QUESTION_ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Answerkey" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ANSWERKEY"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QuestionTxt" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="QUESTION_TXT" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Answer" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ANSWER"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="keyISIC" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Zkey"/>
+                </Key>
+                <Property Name="Zkey" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false"
+                          sap:label="Not More Closely Defined Area, Possibly Used for Patchlevels" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="150" sap:unicode="false"
+                          sap:label="ISIC Division Desc." sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="opp_service_creation" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Refid"/>
+                </Key>
+                <Property Name="Oppid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="investor id"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zreturn" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="return message" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="opprtunity"/>
+                <Property Name="Guid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="opp guid"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AdvLicNo" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Advance License No" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavAttach" Relationship="ZQEEMAH2_EXT_SRV.AssAttach"
+                                    FromRole="FromRole_AssAttach" ToRole="ToRole_AssAttach"/>
+            </EntityType>
+            <EntityType Name="opp_service2" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Refid"/>
+                    <PropertyRef Name="Guid"/>
+                </Key>
+                <Property Name="Oppid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="investor id"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zreturn" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="return message" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="opprtunity"/>
+                <Property Name="Guid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="opp guid"/>
+            </EntityType>
+            <EntityType Name="attachments" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Attachcode"/>
+                </Key>
+                <Property Name="Attachcode" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="ATTACHCODE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Content" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="CONTENT"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="FILENAME"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mimetype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="MIMETYPE"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="displayattachdescrip" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Refid"/>
+                </Key>
+                <Property Name="Refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="REFID"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Questiontexten" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="QUESTIONTEXTEN" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Attachcode" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="ATTACHCODE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Attachdescen" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="ATTACHDESCEN" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Attachdescar" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="ATTACHDESCAR" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Basic_org_info" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2refid"/>
+                </Key>
+                <Property Name="Q2city" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="location"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2legalstatustext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Legal status text" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2investment" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Total Investment" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2companyname" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Company name" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2qeemah" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false"
+                          sap:label="Qeemah 1 or Qeemah2" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2regiontext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="region text" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2refid" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="investor ref id" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2citytext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="city text"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2region" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="region"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2return" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="return"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2entnameEn" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Entity name English" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2entnameAr" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Entity name Arabic" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2legalstatus" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Legal status" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2laboursize" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Labour size" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2capital" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="capital"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Basic_cont_info" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2refid"/>
+                </Key>
+                <Property Name="Q2refid" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="investor ref id" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2mobilecde" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Mobilecode" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2countrytext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Country text" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2firstname" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="First anem" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2telecode" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Telephone code" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2nationaitytext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Nationality text" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2lastname" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Last name"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2gendertext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="gender text" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2gender" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Gender"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2roletext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Role text"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2country" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Country"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2nationaity" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Natinality" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2role" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="role"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2mobileno" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Mobileno"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2teleno" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="telephone no" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2email" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Emaila"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2return" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="return"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2qeemah" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false"
+                          sap:label="Qeemah 1 or Qeemah2" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Shareholder" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2refid"/>
+                    <PropertyRef Name="Q2share"/>
+                </Key>
+                <Property Name="Q2nationalityt" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="natiotext" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2refid" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="investor ref id" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2share" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Q2SHARE"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2name" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Entity name English" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2nationaity" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Entity name Arabic" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2sharetype" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Legal status" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2shareper" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Labour size" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2legalstatus" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="capital" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2return" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="return"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2qeemah" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false"
+                          sap:label="Qeemah 1 or Qeemah2" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="createmshareholder" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2share"/>
+                </Key>
+                <Property Name="Q2share" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Q2SHARE"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2name" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Q2NAME"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2nationaity" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Q2NATIONAITY" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2sharetype" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Q2SHARETYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2shareper" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Q2SHAREPER" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2legalstatus" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Q2LEGALSTATUS" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2return" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Q2RETURN"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2qeemah" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Q2QEEMAH"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Shareholderinvs" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Refid"/>
+                </Key>
+                <Property Name="Refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="investor id"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavShare" Relationship="ZQEEMAH2_EXT_SRV.AssShare"
+                                    FromRole="FromRole_AssShare" ToRole="ToRole_AssShare"/>
+            </EntityType>
+            <EntityType Name="updatelictypediv" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Refid"/>
+                </Key>
+                <Property Name="Refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="investor id"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicsec" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="isic Section"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicdiv" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISIC"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Licensetype" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="LICENSETYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ISICdetermination" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Refid"/>
+                </Key>
+                <Property Name="Refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="investor id"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicsec" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="isic Section"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicdiv" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISIC"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Licensetype" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="LICENSETYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Licesnetype" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Refid"/>
+                    <PropertyRef Name="Licensetype"/>
+                </Key>
+                <Property Name="Refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="investor id"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicsec" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="isic Section"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isicdiv" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ISIC"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Licensetype" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="LICENSETYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="LicenseType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Zkey"/>
+                </Key>
+                <Property Name="Zkey" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false"
+                          sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="LegalStatus" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Legalkey"/>
+                </Key>
+                <Property Name="Legalkey" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LEGALKEY"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Legalvalue" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="LEGALVALUE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="answeredquestiondisplay" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Qid"/>
+                </Key>
+                <Property Name="Qid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="QID"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Answerkey" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ANSWERKEY"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Question" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="QUESTION"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Answer" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ANSWER"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="DiffQeemah" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Refid"/>
+                </Key>
+                <Property Name="Refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="investor id"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Qeemah" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Qeemah 1 or Qeemah2" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="DropdownValues" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2langu"/>
+                </Key>
+                <Property Name="Q2langu" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Language"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2regiontext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="regiontext" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2legalstatus" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Legalstatus" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2uom" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="UOM"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2city" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="city code"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2legalstatustext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="legalstatus text" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2uomtext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="UOm"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2citytext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="citytext"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2product" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="product"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2natio" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Natio"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2producttext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="product text" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2natiotext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Natiotext" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2country" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Country"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2countrytext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="countrytext" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2region" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="region"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2flag" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="flag"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="UpdateISICdet" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Language"/>
+                    <PropertyRef Name="Qid"/>
+                </Key>
+                <Property Name="Language" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="language"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Investor id"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zsection" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Section"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Division" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Division"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sectiontext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Section text" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Divisiontext" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Division text" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="UpdateISIClang" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="Language" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Language"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Questionid" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Questionid" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <NavigationProperty Name="NavISIC" Relationship="ZQEEMAH2_EXT_SRV.AssISIC" FromRole="FromRole_AssISIC"
+                                    ToRole="ToRole_AssISIC"/>
+            </EntityType>
+            <EntityType Name="AnsQuesSection" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2section"/>
+                </Key>
+                <Property Name="Q2section" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Q2SECTION"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Q2REFID"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavAnsQues" Relationship="ZQEEMAH2_EXT_SRV.AssAnsQues"
+                                    FromRole="FromRole_AssAnsQues" ToRole="ToRole_AssAnsQues"/>
+            </EntityType>
+            <EntityType Name="ISIC_details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2sectionno"/>
+                </Key>
+                <Property Name="Q2sectionno" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Section number" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2sectiondesc" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Section descriptions" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2divisionno" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Division number" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2divisiondesc" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Division descriptions" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2activityno" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Activity Number" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2activitydesc" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Activity Descriptions" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2complimentaryno" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Complimentary Number" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2complimentarydesc" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Complimentary descriptions" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2licno" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Licensse number" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2licdesc" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="License descriptions" sap:creatable="false" sap:updatable="false"
+                          sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Product" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2refid"/>
+                    <PropertyRef Name="Q2sno"/>
+                    <PropertyRef Name="Q2prdcode"/>
+                </Key>
+                <Property Name="Q2refid" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="investor id"/>
+                <Property Name="Q2sno" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="sno"/>
+                <Property Name="Q2prdcode" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="PRDCODE"/>
+                <Property Name="Q2descr" Type="Edm.String" sap:unicode="false" sap:label="DESCR"/>
+                <Property Name="Q2qty" Type="Edm.String" sap:unicode="false" sap:label="QTY"/>
+                <Property Name="Q2uom" Type="Edm.String" sap:unicode="false" sap:label="UOM"/>
+                <Property Name="Q2uomtxt" Type="Edm.String" sap:unicode="false" sap:label="UOMTXT"/>
+                <Property Name="Q2return" Type="Edm.String" sap:unicode="false" sap:label="RETURN"/>
+            </EntityType>
+            <EntityType Name="Government_Contract_det" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2refid"/>
+                </Key>
+                <Property Name="Q2governConId" Type="Edm.String" sap:unicode="false" sap:label="Q2GOVERN_CON_ID"/>
+                <Property Name="Q2governConNameT" Type="Edm.String" sap:unicode="false"
+                          sap:label="Q2GOVERN_CON_NAME_T"/>
+                <Property Name="Q2governEnddate" Type="Edm.String" sap:unicode="false" sap:label="Q2GOVERN_ENDDATE"/>
+                <Property Name="Q2governConName" Type="Edm.String" sap:unicode="false" sap:label="Q2GOVERN_CON_NAME"/>
+                <Property Name="Q2governStartdate" Type="Edm.String" sap:unicode="false"
+                          sap:label="Q2GOVERN_STARTDATE"/>
+                <Property Name="Q2refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Q2REFID"/>
+            </EntityType>
+            <EntityType Name="Attachementheader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2refid"/>
+                </Key>
+                <Property Name="Q2refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="investor id"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Q2return" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="return"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavAttachments" Relationship="ZQEEMAH2_EXT_SRV.AssAttachements"
+                                    FromRole="FromRole_AssAttachements" ToRole="ToRole_AssAttachements"/>
+            </EntityType>
+            <EntityType Name="attachementupdation" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Attachcode"/>
+                </Key>
+                <Property Name="Attachcode" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="ATTACHCODE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="FILENAME"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mimetype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="MIMETYPE"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Content" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="CONTENT"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="CreatedAttachments" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Refid"/>
+                </Key>
+                <Property Name="Refid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="REFID"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Questiontexten" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="QUESTIONTEXTEN" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Attachcode" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="ATTACHCODE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Attachdescen" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="ATTACHDESCEN" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Attachdescar" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="ATTACHDESCAR" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Government_Entity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Q2entitykey"/>
+                </Key>
+                <Property Name="Q2entitykey" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Entity key" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+                <Property Name="Q2entityname" Type="Edm.String" Nullable="false" sap:unicode="false"
+                          sap:label="Entity Nmae" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+                          sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ProductId" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Productid"/>
+                </Key>
+                <Property Name="Productid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Productid"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uom" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="UOM"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uomtext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="UOM Text"
+                          sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="AssAttach" sap:content-version="1">
+                <End Type="ZQEEMAH2_EXT_SRV.opp_service_creation" Multiplicity="1" Role="FromRole_AssAttach"/>
+                <End Type="ZQEEMAH2_EXT_SRV.attachments" Multiplicity="*" Role="ToRole_AssAttach"/>
+            </Association>
+            <Association Name="AssFinQuest" sap:content-version="1">
+                <End Type="ZQEEMAH2_EXT_SRV.FinancialQues" Multiplicity="*" Role="FromRole_AssFinQuest"/>
+                <End Type="ZQEEMAH2_EXT_SRV.FinancialQuesdd" Multiplicity="*" Role="ToRole_AssFinQuest"/>
+            </Association>
+            <Association Name="AssGeqPost" sap:content-version="1">
+                <End Type="ZQEEMAH2_EXT_SRV.invsidpost" Multiplicity="1" Role="FromRole_AssGeqPost"/>
+                <End Type="ZQEEMAH2_EXT_SRV.Generalqpost" Multiplicity="*" Role="ToRole_AssGeqPost"/>
+            </Association>
+            <Association Name="AssFinqPost" sap:content-version="1">
+                <End Type="ZQEEMAH2_EXT_SRV.fininvisidpost" Multiplicity="1" Role="FromRole_AssFinqPost"/>
+                <End Type="ZQEEMAH2_EXT_SRV.FinancialPost" Multiplicity="*" Role="ToRole_AssFinqPost"/>
+            </Association>
+            <Association Name="AssGeQuest" sap:content-version="1">
+                <End Type="ZQEEMAH2_EXT_SRV.QeemahGeneralQst" Multiplicity="*" Role="FromRole_AssGeQuest"/>
+                <End Type="ZQEEMAH2_EXT_SRV.QeemahGeneraldd" Multiplicity="*" Role="ToRole_AssGeQuest"/>
+            </Association>
+            <Association Name="AssShare" sap:content-version="1">
+                <End Type="ZQEEMAH2_EXT_SRV.Shareholderinvs" Multiplicity="1" Role="FromRole_AssShare"/>
+                <End Type="ZQEEMAH2_EXT_SRV.createmshareholder" Multiplicity="*" Role="ToRole_AssShare"/>
+            </Association>
+            <Association Name="AssISIC" sap:content-version="1">
+                <End Type="ZQEEMAH2_EXT_SRV.UpdateISIClang" Multiplicity="1" Role="FromRole_AssISIC"/>
+                <End Type="ZQEEMAH2_EXT_SRV.UpdateISICdet" Multiplicity="*" Role="ToRole_AssISIC"/>
+            </Association>
+            <Association Name="AssAnsQues" sap:content-version="1">
+                <End Type="ZQEEMAH2_EXT_SRV.AnsQuesSection" Multiplicity="1" Role="FromRole_AssAnsQues"/>
+                <End Type="ZQEEMAH2_EXT_SRV.answeredquestiondisplay" Multiplicity="*" Role="ToRole_AssAnsQues"/>
+            </Association>
+            <Association Name="AssAttachements" sap:content-version="1">
+                <End Type="ZQEEMAH2_EXT_SRV.Attachementheader" Multiplicity="1" Role="FromRole_AssAttachements"/>
+                <End Type="ZQEEMAH2_EXT_SRV.attachementupdation" Multiplicity="*" Role="ToRole_AssAttachements"/>
+            </Association>
+            <EntityContainer Name="ZQEEMAH2_EXT_SRV_Entities" m:IsDefaultEntityContainer="true"
+                             sap:supported-formats="atom json xlsx">
+                <EntitySet Name="QeemahGeneralQstSet" EntityType="ZQEEMAH2_EXT_SRV.QeemahGeneralQst"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="QeemahGeneralddSet" EntityType="ZQEEMAH2_EXT_SRV.QeemahGeneraldd" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="GeneralqpostSet" EntityType="ZQEEMAH2_EXT_SRV.Generalqpost" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="invsidpostSet" EntityType="ZQEEMAH2_EXT_SRV.invsidpost" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FinancialQuesSet" EntityType="ZQEEMAH2_EXT_SRV.FinancialQues" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FinancialQuesddSet" EntityType="ZQEEMAH2_EXT_SRV.FinancialQuesdd" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="fininvisidpostSet" EntityType="ZQEEMAH2_EXT_SRV.fininvisidpost" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FinancialPostSet" EntityType="ZQEEMAH2_EXT_SRV.FinancialPost" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="keyISICSet" EntityType="ZQEEMAH2_EXT_SRV.keyISIC" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="opp_service_creationSet" EntityType="ZQEEMAH2_EXT_SRV.opp_service_creation"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="opp_service2Set" EntityType="ZQEEMAH2_EXT_SRV.opp_service2" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="attachmentsSet" EntityType="ZQEEMAH2_EXT_SRV.attachments" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="displayattachdescripSet" EntityType="ZQEEMAH2_EXT_SRV.displayattachdescrip"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="Basic_org_infoSet" EntityType="ZQEEMAH2_EXT_SRV.Basic_org_info" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Basic_cont_infoSet" EntityType="ZQEEMAH2_EXT_SRV.Basic_cont_info" sap:deletable="false"
+                           sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ShareholderSet" EntityType="ZQEEMAH2_EXT_SRV.Shareholder" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="createmshareholderSet" EntityType="ZQEEMAH2_EXT_SRV.createmshareholder"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="ShareholderinvsSet" EntityType="ZQEEMAH2_EXT_SRV.Shareholderinvs" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="updatelictypedivSet" EntityType="ZQEEMAH2_EXT_SRV.updatelictypediv"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="ISICdeterminationSet" EntityType="ZQEEMAH2_EXT_SRV.ISICdetermination"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="LicesnetypeSet" EntityType="ZQEEMAH2_EXT_SRV.Licesnetype" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="LicenseTypeSet" EntityType="ZQEEMAH2_EXT_SRV.LicenseType" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="LegalStatusSet" EntityType="ZQEEMAH2_EXT_SRV.LegalStatus" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="answeredquestiondisplaySet" EntityType="ZQEEMAH2_EXT_SRV.answeredquestiondisplay"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="DiffQeemahSet" EntityType="ZQEEMAH2_EXT_SRV.DiffQeemah" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="DropdownValuesSet" EntityType="ZQEEMAH2_EXT_SRV.DropdownValues" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="UpdateISICdetSet" EntityType="ZQEEMAH2_EXT_SRV.UpdateISICdet" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="UpdateISIClangSet" EntityType="ZQEEMAH2_EXT_SRV.UpdateISIClang" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AnsQuesSectionSet" EntityType="ZQEEMAH2_EXT_SRV.AnsQuesSection" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ISIC_detailsSet" EntityType="ZQEEMAH2_EXT_SRV.ISIC_details" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ProductSet" EntityType="ZQEEMAH2_EXT_SRV.Product" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Government_Contract_detSet" EntityType="ZQEEMAH2_EXT_SRV.Government_Contract_det"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="AttachementheaderSet" EntityType="ZQEEMAH2_EXT_SRV.Attachementheader"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="attachementupdationSet" EntityType="ZQEEMAH2_EXT_SRV.attachementupdation"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="CreatedAttachmentsSet" EntityType="ZQEEMAH2_EXT_SRV.CreatedAttachments"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="Government_EntitySet" EntityType="ZQEEMAH2_EXT_SRV.Government_Entity"
+                           sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+                           sap:content-version="1"/>
+                <EntitySet Name="ProductIdSet" EntityType="ZQEEMAH2_EXT_SRV.ProductId" sap:creatable="false"
+                           sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="AssAttachSet" Association="ZQEEMAH2_EXT_SRV.AssAttach" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="opp_service_creationSet" Role="FromRole_AssAttach"/>
+                    <End EntitySet="attachmentsSet" Role="ToRole_AssAttach"/>
+                </AssociationSet>
+                <AssociationSet Name="AssFinQuestSet" Association="ZQEEMAH2_EXT_SRV.AssFinQuest" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="FinancialQuesSet" Role="FromRole_AssFinQuest"/>
+                    <End EntitySet="FinancialQuesddSet" Role="ToRole_AssFinQuest"/>
+                </AssociationSet>
+                <AssociationSet Name="AssFinqPost_AssocSet" Association="ZQEEMAH2_EXT_SRV.AssFinqPost"
+                                sap:creatable="false" sap:updatable="false" sap:deletable="false"
+                                sap:content-version="1">
+                    <End EntitySet="fininvisidpostSet" Role="FromRole_AssFinqPost"/>
+                    <End EntitySet="FinancialPostSet" Role="ToRole_AssFinqPost"/>
+                </AssociationSet>
+                <AssociationSet Name="AssAttachmentSet" Association="ZQEEMAH2_EXT_SRV.AssAttachements"
+                                sap:creatable="false" sap:updatable="false" sap:deletable="false"
+                                sap:content-version="1">
+                    <End EntitySet="AttachementheaderSet" Role="FromRole_AssAttachements"/>
+                    <End EntitySet="attachementupdationSet" Role="ToRole_AssAttachements"/>
+                </AssociationSet>
+                <AssociationSet Name="ASSGeQuestSet" Association="ZQEEMAH2_EXT_SRV.AssGeQuest" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="QeemahGeneralQstSet" Role="FromRole_AssGeQuest"/>
+                    <End EntitySet="QeemahGeneralddSet" Role="ToRole_AssGeQuest"/>
+                </AssociationSet>
+                <AssociationSet Name="AssShareSet" Association="ZQEEMAH2_EXT_SRV.AssShare" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ShareholderinvsSet" Role="FromRole_AssShare"/>
+                    <End EntitySet="createmshareholderSet" Role="ToRole_AssShare"/>
+                </AssociationSet>
+                <AssociationSet Name="AssISICSet" Association="ZQEEMAH2_EXT_SRV.AssISIC" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="UpdateISIClangSet" Role="FromRole_AssISIC"/>
+                    <End EntitySet="UpdateISICdetSet" Role="ToRole_AssISIC"/>
+                </AssociationSet>
+                <AssociationSet Name="AssGeqPostSet" Association="ZQEEMAH2_EXT_SRV.AssGeqPost" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="invsidpostSet" Role="FromRole_AssGeqPost"/>
+                    <End EntitySet="GeneralqpostSet" Role="ToRole_AssGeqPost"/>
+                </AssociationSet>
+                <AssociationSet Name="AssAnsQuesSet" Association="ZQEEMAH2_EXT_SRV.AssAnsQues" sap:creatable="false"
+                                sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="AnsQuesSectionSet" Role="FromRole_AssAnsQues"/>
+                    <End EntitySet="answeredquestiondisplaySet" Role="ToRole_AssAnsQues"/>
+                </AssociationSet>
+                <FunctionImport Name="IsicSecDiv" ReturnType="Collection(ZQEEMAH2_EXT_SRV.keyISIC)"
+                                EntitySet="keyISICSet" m:HttpMethod="GET" sap:action-for="ZQEEMAH2_EXT_SRV.keyISIC">
+                    <Parameter Name="Zkey" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Value" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="IsicDeter" ReturnType="Collection(ZQEEMAH2_EXT_SRV.ISICdetermination)"
+                                EntitySet="ISICdeterminationSet" m:HttpMethod="GET"
+                                sap:action-for="ZQEEMAH2_EXT_SRV.ISICdetermination">
+                    <Parameter Name="Refid" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="Dropdown" ReturnType="Collection(ZQEEMAH2_EXT_SRV.DropdownValues)"
+                                EntitySet="DropdownValuesSet" m:HttpMethod="GET"
+                                sap:action-for="ZQEEMAH2_EXT_SRV.DropdownValues">
+                    <Parameter Name="Language" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Flag" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Region" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="ISICDetails" ReturnType="Collection(ZQEEMAH2_EXT_SRV.ISIC_details)"
+                                EntitySet="ISIC_detailsSet" m:HttpMethod="GET"
+                                sap:action-for="ZQEEMAH2_EXT_SRV.ISIC_details">
+                    <Parameter Name="Language" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Flag" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="lictype" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="section" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Division" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Activity" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Complimentary" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="GovEntity" ReturnType="Collection(ZQEEMAH2_EXT_SRV.Government_Entity)"
+                                EntitySet="Government_EntitySet" m:HttpMethod="GET"
+                                sap:action-for="ZQEEMAH2_EXT_SRV.Government_Entity">
+                    <Parameter Name="Language" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="ProductId" ReturnType="Collection(ZQEEMAH2_EXT_SRV.ProductId)"
+                                EntitySet="ProductIdSet" m:HttpMethod="GET" sap:action-for="ZQEEMAH2_EXT_SRV.ProductId">
+                    <Parameter Name="Productid" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Language" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link rel="self"
+                       href="https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version"
+                       href="https://sagngqap02.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/$metadata"
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

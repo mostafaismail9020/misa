@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:cache="http://www.springframework.org/schema/cache"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/cache
+		   http://www.springframework.org/schema/cache/spring-cache.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<cache:annotation-driven cache-manager="odataCacheManager"/>
+	
+	<!-- Cache manager for ODATA -->
+	<alias name="defaultODataCacheManager" alias="odataCacheManager"/>
+	<bean id="defaultODataCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+		<property name="cacheManager" ref="odataEhcache"/>
+	</bean>
+
+	<alias name="defaultODataEhcache" alias="odataEhcache"/>
+	<bean id="defaultODataEhcache" class="de.hybris.platform.webservicescommons.cache.TenantAwareEhCacheManagerFactoryBean">
+		<property name="cacheNamePrefix" value="odataCache_"/>
+		<property name="configLocation" value="/cache/ehcache.xml"/>
+	</bean>
+</beans>

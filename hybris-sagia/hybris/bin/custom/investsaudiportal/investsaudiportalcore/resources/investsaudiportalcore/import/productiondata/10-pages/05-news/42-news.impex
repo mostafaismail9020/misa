@@ -1,0 +1,81 @@
+$page = news-saudi-economic-reform
+$template = portalGlobalTemplate
+$name = SAGIA GOVERNOR: SAUDI ECONOMIC REFORM IS DELIVERING RESULTS
+$titleEn = $name
+$titleAr = الإصلاحات الاقتصادية السعودية ونتائجها الكبيرة
+$shortDescEn = Ibrahim AlOmar, governor of the Saudi Arabian General Investment Authority:
+$shortDescAr =  *المهندس إبراهيم العمر – محافظ الهيئة العامة للاستثمار
+$pagelabel = /news/saudi-economic-reform-is-delivering-results
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; wefsagiaseehof2044copy2  ; wefsagiaseehof2044copy2.jpg 				; $siteResource/wefsagiaseehof2044copy2.jpg                                        ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias            ; $contentCV; ; ; ;
+                            ; media-container-$page   ; wefsagiaseehof2044copy2 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; wefsagiaseehof2044copy2               ; wefsagiaseehof2044copy2                ; $shortDescEn                   ; $shortDescAr                   ; link-$page       ;                                 ; 21.05.2020 00:00:00                       ;                          ;media-container-$page  ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<p style='font-size: 13px;'>Saudi Arabia is currently undergoing a broad program of reforms with the aim of making it easier to invest and grow a business in the Kingdom.</p>
+<p style='font-size: 13px;'>At the center of these reforms, our aim is to enable the private sector to play a larger role in the economy and for innovative global businesses and entrepreneurs to come to Saudi Arabia and drive greater productivity and efficiency.</p>
+<p style='font-size: 13px;'>So, we were very pleased to see that the IMF argued last week that economic reforms in Saudi Arabia &lsquo;have started to yield positive results&rsquo;.</p>
+<p style='font-size: 13px;'>Following their visit to the Kingdom as part of the Article IV mission, they noted that &lsquo;non-oil growth has picked-up, female labor force participation and employment have increased, the successful introduction of the value-added tax has underpinned an increase in non-oil fiscal revenues, energy price reforms have helped reduce per capita consumption of gasoline and electricity, measures have been introduced to compensate low and middle-income households for the higher costs resulting from reforms, and fiscal transparency has increased. Reforms to the capital markets, legal framework, and business environment are progressing well.&rsquo;</p>
+<p style='font-size: 13px;'>Of course, while we are pleased with the rapid progress we have made in a short space of time, we also know it is important not to become complacent.</p>
+<p style='font-size: 13px;'>With that in mind, we have continued to pursue reforms in order to enhance the investment environment in a number of different areas.</p>
+<p style='font-size: 13px;'>For example, one area we have been keen to enhance is how easy it is for international expatriates to move to Saudi Arabia and build a long-term foundation and a network, rather than just come for a short period.</p>
+<p style='font-size: 13px;'>With this in mind, last week, Saudi Arabia&rsquo;s Council of Ministers approved the creation of a residency permit scheme for qualified international expatriates. This scheme will provide international expatriates with a range of additional rights, including enabling them to request visas for their families and own real estate. There will be two separate forms of the program, one acting as a residency permit, and one which is renewable on an annual basis.</p>
+<p style='font-size: 13px;'>Likewise, when we looked at some of the key barriers that companies were facing, one of the most important was the level of red tape around business licensing.</p>
+<p style='font-size: 13px;'>In order to address this, we created the National Licensing and Reform Program (NLRP) &ndash; which was established by &ldquo;Tayseer&rdquo;, a cross-government entity that helps to drive economic reform.</p>
+<p style='font-size: 13px;'>Through the program, the number of licensing requirements in Saudi Arabia has been reduced by more than half and the NLRP has already successfully eliminated or modified more than 60% of over 5,500 licenses selected for reform.</p>
+<p style='font-size: 13px;'>Furthermore, we have enabled 100% foreign ownership in a wide range of new sectors from courier services, to education, to healthcare and life sciences. To give you a sense of the impact of this on investors, 70% of the new international investment licenses issued in Q1 2019 were for entities with 100% foreign ownership.</p>
+<p style='font-size: 13px;'>Finally, we are not just looking to attract large multinationals, we are also looking to encourage entrepreneurs to develop their ideas and their businesses in Saudi Arabia. This past year, SAGIA also launched a specialized Entrepreneur License, which allows international entrepreneurs to launch a fully foreign-owned start-up company in Saudi Arabia. We have already seen more than 100 entrepreneur licenses issued since late 2017, with more than 45 issued in the first three months of this year alone.</p>
+<p style='font-size: 13px;'>As noted by the IMF, these reforms are beginning to have an impact. The number of new foreign business licenses issued by SAGIA in Q1 2019 was 70% higher than the same period last year and the level of FDI in 2018 was 127% higher than in 2017.</p>
+<p style='font-size: 13px;'>This momentum has come because of the reforms we have implemented, but also because international investors and stakeholders have worked with us to identify the challenges they are facing and develop solutions to them.</p>
+<p style='font-size: 13px;'>We are keen to maintain this momentum throughout this year and we look forward to hearing more from investors about the opportunities they see in the Saudi market and what we can do to help them to access it.</p> "
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page      ;                          ; "<p style='font-size: 13px;'>تعمل المملكة اليوم وفقًا لبرنامج شامل من الإصلاحات، إذ تهدف من هذه التجربة إلى تسهيل ممارسة الأعمال وتنميتها في ظل اقتصاد مستدام يستجيب لمستهدفات رؤية المملكة 2030. ويعد تمكين القطاع الخاص من تأدية دور أكبر في الازدهار الاقتصادي عنصرًا أساسياً لهذه الإصلاحات، إضافة إلى استقطاب رواد الأعمال والشركات الابتكارية العالمية لتحقيق إنتاجية أكبر وكفاءة أعلى. ونحن اليوم سعداء بإعلان صندوق النقد الدولي الأسبوع الماضي أن برنامج الإصلاحات الاقتصادية السعودي قد بدأ يؤتي ثماره.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وبناءً على البيان الصادر عن بعثة خبراء صندوق النقد الدولي؛ فقد حققت المملكة تطورًا على مستوى التنمية غير النفطية، وارتفاع معدل مشاركة المرأة في سوق العمل، وانخفاض الاستهلاك الفردي للبنزين والكهرباء نتيجة لإصلاحات أسعار الطاقة، والإجراءات التي اتخذتها المملكة لحماية الأسر منخفضة ومتوسطة الدخل من ارتفاع تكاليف الإصلاحات، إضافة إلى ارتفاع نسبة الشفافية المالية، وقد أشادت البعثة أيضًا بالتقدم الذي تشهده المملكة جراء إصلاحات الأسواق المالية وبناء الأطر القانونية وتطور بيئة الأعمال. وعلى الرغم من رضانا بما تحقق في هذه المدة القصيرة من الزمن، فإننا ماضون في طي الدروب متجهين نحو تحقيق رؤية مملكتنا الغالية 2030.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وها نحن إذ نشهد كل هذه المنجزات، فإننا ما نزال نواصل الإصلاحات لتعزيز البيئة الاستثمارية في المملكة في مختلف القطاعات المستهدفة، وقد تحقق ما كنا نصبو إليه؛ إذ تعززت سهولة ممارسة الأعمال لغير السعوديين عبر انتقالهم إلى المملكة للإقامة الدائمة من أجل تأسيس أعمالهم وتوسيع استثماراتهم بدلًا عن الزيارات القصيرة.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وقد كنا قبل هذا القرار المهم نبحث في أصعب الأمور التي تواجهها الشركات، ومن أهمها الإجراءات الطويلة لاستصدار رخصة استثمار، وللتعامل مع هذا الأمر؛ فقد قمنا من خلال 'تيسير' بإنشاء اللجنة الوطنية للتراخيص الاستثمارية. وكان من نتائج أعمال هذه اللجنة انخفاض متطلبات إصدار التراخيص في المملكة حتى النصف، وقد ألغت اللجنة أيضًا وعدلت أكثر من 60% من متطلبات 5,500 رخصة تم إخضاعها للإصلاح والمراجعة.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>واليوم نرى أثر هذه الإصلاحات التي نوَّه بها صندوق النقد الدولي، إذ ارتفع عدد تراخيص الاستثمار الأجنبي التي أصدرتها الهيئة العامة للاستثمار في الربع الأول من عام 2019 بما نسبته 70%، مقارنةً بالربع الأول من العام 2018.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وما نتج كل هذا إلا بسبب الإصلاحات التي ما نزال نطبقها، وبسبب تعاون المستثمرين الدوليين والشركاء الذين ساعدونا للتعرف على التحديات التي يواجهونها، والتي بدورنا عملنا على إزالتها.</p>
+<p style='font-size: 13px;'>&nbsp;</p>
+<p style='font-size: 13px;'>وأخيرًا فإنني أؤكد على أننا حريصون على أن نستمر في تطبيق برامج الإصلاحات، وتنفيذ خطط التغيير والتطوير على النحو الذي يعزز موقع المملكة كوجهة استثمارية رائدة عالمياً، وما زلنا نعمل مع كافة شرائح المستثمرين حول العالم، ونتحدث إليهم حول الفرص الاستثمارية التي يتطلعون إلى وجودها في السوق السعودي، وما يمكن أن نقوم به لتسهيل وصولهم إلى تلك الفرص.</p> "
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template       ; $pagelabel                     ; false ;         ;                          ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page                ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

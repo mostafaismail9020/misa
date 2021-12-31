@@ -1,0 +1,94 @@
+.modal-header {
+    
+    .baBreadcrumb {
+        margin-top: -9px;
+    }
+}
+
+.baBreadcrumb {
+    
+    padding-left: 0;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: auto;
+    margin-bottom: 12px;
+    
+    &-item {
+        display: inline-block;
+        font-size: 0;
+        font-weight: bold;
+        color: @apple;
+        flex: 0 1 auto;
+        
+        &:last-child {
+            .baBreadcrumb-link:after {
+                display: none;
+            }
+        }
+    }
+    
+    &-link {
+        font-size: 14px;
+        line-height: 19px;
+        padding-right: 26px;
+        position: relative;
+        padding: 8px 0;
+        display: block;
+        &:hover,
+        &:active,
+        &:focus {
+            outline: none;
+        }
+        
+        &.active {
+            font-weight: normal;
+            color: @dark;
+        }
+        
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: 5px;
+            background: url(../icons/sagiaNavigation-subNav-hover.svg) no-repeat center center;
+            background-size: contain;
+            transform: rotate(90deg);
+            top: 8px;
+        }
+    }
+    
+    &-subMenu {
+        position: absolute;
+        display: none;
+        border: solid 1px #a1a1a1;
+        padding: 24px 20px 20px 20px;
+        font-size: 14px;
+        max-width: 100%;
+        background: #fff;
+        z-index: 10;
+        
+        //move subMenu left for small screens
+        #media-breakpoint-down(xs, {
+            left:0;
+        }); 
+    }
+    
+    
+    &-item:hover &{
+        
+        &-link {
+            color: @dark-grey-blue;
+        }
+        
+        &-subMenu {
+            display: block;
+        }
+    }
+    
+    
+}

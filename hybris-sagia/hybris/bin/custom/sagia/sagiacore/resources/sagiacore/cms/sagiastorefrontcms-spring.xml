@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="investSaudiPortalContainerStrategy" class="com.investsaudi.portal.core.cms.container.InvestSaudiPortalContainerStrategy" />
+
+	<!-- Strategies for containers -->
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiComponentContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiIncentivesforInvestorContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="LoanProgramsforIncentiveContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="EnergynUtilityforIncentiveContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="EmploymentSupportforIncentiveContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="ExportCreditFinanceforIncentiveContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="AttractiveLandSolutionsforIncentiveContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="FinancialRnDforIncentiveContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiNumberTalkContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="MegaAndGigyaProjectsContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiNumberTalkCarouselContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiBannerContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiWhyContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiWhyDetailContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiCustomBannerContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiSectorsIconComponent"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiSectorsComponent"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiWhySideMenuContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiFactsFiguresContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiFaqContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiVideoContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiOpportunitySearchContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiSiteMapComponent"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiWebinarVideoContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiTableContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiOfficesContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiSectorPropositionContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	
+	<!-- NEW DESIGN CONTAINERS -->
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiAboutSaudiOverviewContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiAboutSaudiGoalMissionContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>	
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiAboutSaudiOurValuesContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>		
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiAboutSaudiWhatWeDoContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestSaudiLivingInSaudiComponentContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="MeetTheKingdomMacroEconomicContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="MeetTheKingdomVideoContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="MeetTheKingdomKeyReasonsContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="MeetTheKingdomMegaAndGigaProjectContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="SuccessStoriesContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="ProvinceRegionHomeContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="SectorInvestmentsHubContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestmentLicenseContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="BusinessesInvesterLicenseContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="TypeOfInvestmentLicensesContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="OnlyTwoDocumentsInvestorLicenseContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="AdditionalDocumentsLicenseContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="InvestorJourneyContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="TheKingdomGlanceContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="TheKingdomCultureContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="SupportRegionalHqContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="TestimonialsStoriesContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="ProvinceBusinessCulturalContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="UpcomingSpecialZonesContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	<bean depends-on="cmsComponentContainerStrategies" parent="mapMergeDirective">
+		<property name="key" value="EconomicCustomBannerContainer"/>
+		<property name="value" ref="investSaudiPortalContainerStrategy"/>
+	</bean>
+	
+	
+	<!-- End of Strategies for containers -->
+	
+	
+	<!-- Populators for Rich Text Editors -->
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure"
+		  p:typecode="InvestSaudiGenericParagraphComponent" p:qualifier="description">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure" 
+			p:typecode="InvestSaudiBannerComponent" p:qualifier="descriptionText">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure" 
+			p:typecode="InvestSaudiWhyDetailComponent" p:qualifier="description">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure" 
+			p:typecode="InvestSaudiSectorsIconComponent" p:qualifier="description">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure" 
+			p:typecode="InvestSaudiCookieBarComponent" p:qualifier="text">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure" 
+			p:typecode="InvestSaudiFaqComponent" p:qualifier="descriptionText">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure"
+		  p:typecode="SuccessStoryProduct" p:qualifier="quote">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure"
+		  p:typecode="InvestSaudiContactComponent" p:qualifier="descriptionText">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure"
+		  p:typecode="InvestSaudiOfficesComponent" p:qualifier="telephone">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure"
+		  p:typecode="InvestSaudiOfficesComponent" p:qualifier="buildingNumber">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure"
+		  p:typecode="InvestSaudiOfficesComponent" p:qualifier="additionalNumber">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure"
+		  p:typecode="InvestSaudiOfficesComponent" p:qualifier="postalCode">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure"
+		  p:typecode="InvestSaudiContactUsComponent" p:qualifier="successMessage">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure" 
+			p:typecode="InvestSaudiNewsComponent" p:qualifier="newsFullDescription">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<bean class="de.hybris.platform.cmsfacades.types.service.impl.DefaultComponentTypeAttributeStructure" 
+			p:typecode="InvestSaudiSectorPropositionComponent" p:qualifier="description">
+		<property name="populators">
+			<set>
+				<ref bean="richTextComponentTypeAttributePopulator" />
+				<ref bean="requiredComponentTypeAttributePopulator" />
+			</set>
+		</property>
+	</bean>
+	<!-- End of Populators for Rich Text Editors -->
+	
+	
+	<!--  Caching -->
+	<alias name="defaultCacheKeyProviders" alias="cacheKeyProviders"/>
+	<util:map id="defaultCacheKeyProviders" key-type="java.lang.String">
+		<entry key="InvestSaudiNumberTalkComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiWhyComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiWhyDetailComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiGenericParagraphComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiBannerComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiCustomBannerComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiSectorsIconComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiFooterComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiSectorsComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiCookieBarComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiFeaturedOpportunitiesComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiSuccessStoriesComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiFactsFiguresComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiFaqComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiSiteMapComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiVideoComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiWebinarVideoComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiSimpleBannerComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiWebinarSingleVideoComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiRowComponent" value-ref="cmsCacheKeyProvider"/>
+		<entry key="InvestSaudiNewsComponent" value-ref="cmsCacheKeyProvider"/>
+	</util:map>
+
+	<!-- End of Caching -->
+</beans>

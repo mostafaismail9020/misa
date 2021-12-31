@@ -1,0 +1,59 @@
+#### Impex for Resource media ####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                            ; realFileName                                 ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]    ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   
+#Resource-fall-2019
+				   
+				   ; Banner-Image-Fall-2019.jpg                     ; Banner-Image-Fall-2019.jpg                   ; $siteResource/Banner-Image-Fall-2019.jpg                                        ; image/jpg                   ;                                          ; ""     ;
+				   ; Fall-2019-Thumbnail_05.jpg                     ; Fall-2019-Thumbnail_05.jpg                   ; $siteResource/Fall-2019-Thumbnail_05.jpg                                        ; image/jpg                   ;                                          ; ""     ;
+
+#Resource-summer-2019
+
+                   ; Banner-Image-Summer-2019.jpg                   ; Banner-Image-Summer-2019.jpg                 ; $siteResource/Banner-Image-Summer-2019.jpg                                      ; image/jpg                   ;                                          ; ""     ;
+				   ; Summer-2019-Thumbnail_01.jpg                   ; Summer-2019-Thumbnail_01.jpg                 ; $siteResource/Summer-2019-Thumbnail_01.jpg										 ; image/jpg                   ;                                          ; ""     ;
+
+#Resource-spring-2019
+
+                   ; Banner-Image-Spring-2019.jpg                   ; Banner-Image-Spring-2019.jpg                 ; $siteResource/Banner-Image-Spring-2019.jpg                      				 ; image/jpg                   ;                                          ; ""     ;
+				   ; Spring-2019-Thumbnail_02.jpg                   ; Spring-2019-Thumbnail_02.jpg                 ; $siteResource/Spring-2019-Thumbnail_02.jpg                    					 ; image/jpg                   ;                                          ; ""     ;
+
+#Resource-fall-2020
+
+                   ; Banner-Image-Fall-2020.jpg                     ; Banner-Image-Fall-2020.jpg         		   ; $siteResource/Banner-Image-Fall-2020.jpg                               		 ; image/jpg   				   ;                                          ; ""     ;
+                   ; Fall-2020-Thumbnail_03.jpg                     ; Fall-2020-Thumbnail_03.jpg        		   ; $siteResource/Fall-2020-Thumbnail_03.jpg                              			 ; image/jpg   				   ;                                          ; ""     ;					
+
+#Resource-summer-2020
+
+                   ; Banner-Image-Summer-2020.jpg                   ; Banner-Image-Summer-2020.jpg                 ; $siteResource/Banner-Image-Summer-2020.jpg                                      ; image/jpg                   ;                                          ; ""     ;
+				   ; Summer-2020-Thumbnail_09.jpg                   ; Summer-2020-Thumbnail_09.jpg                 ; $siteResource/Summer-2020-Thumbnail_09.jpg                                      ; image/jpg                   ;                                          ; ""     ;
+
+#Resource-spring-2020
+
+                   ; Banner-Image-Spring-2020.jpg                   ; Banner-Image-Spring-2020.jpg                 ; $siteResource/Banner-Image-Spring-2020.jpg                                      ; image/jpg                   ;                                          ; ""     ;
+				   ; Spring-2020-Thumbnail_07.jpg                   ; Spring-2020-Thumbnail_07.jpg                 ; $siteResource/Spring-2020-Thumbnail_07.jpg                                      ; image/jpg                   ;                                          ; ""     ;
+
+#Resource-winter-2020
+
+                   ; Banner-image-Winter-2020.jpg                   ; Banner-image-Winter-2020.jpg                 ; $siteResource/Banner-image-Winter-2020.jpg                                      ; image/jpg                   ;                                          ; ""     ;
+				   ; Winter-2020-Thumbnail_08.jpg                   ; Winter-2020-Thumbnail_08.jpg                 ; $siteResource/Winter-2020-Thumbnail_08.jpg                                      ; image/jpg                   ;                                          ; ""     ;
+
+#Resource-spring-2021
+
+                   ; Banner-Image-Spring-2021.jpg                   ; Banner-Image-Spring-2021.jpg                 ; $siteResource/Banner-Image-Spring-2021.jpg                                      ; image/jpg           		   ;                                          ; ""     ;
+                   ; Spring-2021-Thumbnail_04.jpg                   ; Spring-2021-Thumbnail_04.jpg                 ; $siteResource/Spring-2021-Thumbnail_04.jpg                                      ; image/jpg           		   ;                                          ; ""     ;
+
+#Resource-winter-2021
+
+                   ; Banner-Image-Winter-2021.jpg                   ; Banner-Image-Winter-2021.jpg                 ; $siteResource/Banner-Image-Winter-2021.jpg                              		 ; image/jpg                   ;                                          ; ""     ;
+				   ; Winter-2021-Thumbnail_08.jpg					; Winter-2021-Thumbnail_08.jpg                 ; $siteResource/Winter-2021-Thumbnail_08.jpg                             		 ; image/jpg                   ;                                          ; ""     ;
+	       

@@ -1,0 +1,90 @@
+.downloadList {
+    
+    padding: 0;
+    margin: 0;
+    margin-bottom: 24px;
+    list-style: none;
+    
+    &-item {
+        padding-top: 13px;
+        padding-bottom: 7px;
+        padding-left: 20px;
+        border-bottom: solid 2px #ebedee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+        
+        &_noPadding {
+            padding-left: 0;
+        }
+    }
+    
+    &-description {
+        padding-right: 20px;
+        color: #313f4b;
+        font-size: 15px;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        flex: 1 1 auto;
+    }
+    
+    &-actions {
+        margin-left: auto;
+        text-align: right;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 1 auto;
+        
+        #media-breakpoint-up(sm, {
+           flex-wrap: nowrap;
+        }); 
+        
+        > a {
+            padding: 4px 0;
+            display: inline-block;
+            white-space: nowrap;
+            
+            & + a {
+                margin-left: 20px;
+            }
+        }
+    }
+    
+    .iconElement_pdf {
+        flex: 0 0 auto;
+    }
+    
+    
+    &_secondary {
+        padding-top: 0;
+        border-top: 0;
+        
+        .downloadList {
+            
+            
+            &-item {
+                border-bottom: solid 1px #ebedee;
+                &:last-child {
+                    border-bottom: solid 1px #ebedee;
+                }
+            }
+            
+            &-description {
+                font-size: 13px;
+            }
+            
+            &-actions {
+                
+                .link {
+                    font-size: 13px;
+                }
+            }
+        }
+        
+    }
+}

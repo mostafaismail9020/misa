@@ -1,0 +1,2 @@
+## messageSource=classpath:/investsaudisecureportal/messages/email-registrationApproved_$lang.properties
+${ctx.messages.subject}

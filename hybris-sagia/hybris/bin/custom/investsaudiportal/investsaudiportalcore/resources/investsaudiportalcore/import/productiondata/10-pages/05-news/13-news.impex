@@ -1,0 +1,90 @@
+$page = news-creating-a-platform
+$template = portalGlobalTemplate
+$name = CREATING A PLATFORM THAT CAN LAUNCH STARTUP SAUDI
+$titleEn = $name
+$titleAr = استثمر في السعودية في لشبونة لحضور أكبر حدث تقني في العالم
+$shortDescEn = Innovation Is At The Heart Of Our Vision For The Future Of The Saudi Economy. In
+$shortDescAr = تشارك الهيئة العامة للاستثمار في مؤتمر قمة الويب العالمي للتقنية
+$pagelabel = /news/creating-a-platform-that-can-launch-startup-saudi
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; img_0167           ; img_0167.jpg ; $siteResource/img_0167.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; img_0167 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; img_0167                          ; img_0167                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 07.11.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li>
+<section class='elementor-element elementor-element-cecc6c9 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section' data-id='cecc6c9' data-element_type='section'>
+<div class='elementor-container elementor-column-gap-default'>
+<div class='elementor-row'>
+<div class='elementor-element elementor-element-b1044d6 elementor-column elementor-col-100 elementor-top-column' data-id='b1044d6' data-element_type='column'>
+<div class='elementor-column-wrap  elementor-element-populated'>
+<div class='elementor-widget-wrap'>
+<div class='elementor-element elementor-element-a4ac83b elementor-widget elementor-widget-text-editor animated fadeIn' data-id='a4ac83b' data-element_type='widget' data-settings='{&quot ; _animation&quot ; :&quot ; fadeIn&quot ; ,&quot ; _animation_delay&quot ; :600}' data-widget_type='text-editor.default'>
+<div class='elementor-widget-container'>
+<div class='elementor-text-editor elementor-clearfix'>
+<p>Innovation is at the heart of our vision for the future of the Saudi economy. In recent decades the Saudi economy has grown rapidly thanks to growth in inputs. As we look to prosper in the future, that growth will increasingly be driven by higher levels of productivity. Innovation will be key to generating that productivity growth.</p>
+<p>&nbsp;</p>
+<p>Of course, innovation comes from a range of sources &ndash; from large corporates, from governments and from startups. However, in Saudi Arabia, we have developed a particular focus in recent years on encouraging entrepreneurship.</p>
+<p>&nbsp;</p>
+<p>We know from our experience that there are many Saudis with innovative ideas and the ambition and drive to turn those ideas into businesses. We also know that the Saudi market has exciting potential for international entrepreneurs looking to expand &ndash; whether to disrupt existing sectors or forge new ones.</p>
+<p>&nbsp;</p>
+<p>Saudi Arabia is a G20 economy undergoing a broad series of economic reforms. These reforms are creating new markets and dismantling barriers to entry in established sectors.</p>
+<p>&nbsp;</p>
+<p>Until now there hasn&rsquo;t been a strong ecosystem that can support new businesses. And without the right platform, it is hard for even the best ideas to launch.</p>
+<p>&nbsp;</p>
+<p>That is changing rapidly.</p>
+<p>&nbsp;</p>
+<p>We have seen a broad spread of efforts across the startup ecosystem that are transforming the environment. From developing accelerators, to establishing co-working spaces, from making it easier and cheaper to start and grow a business to introducing new funding programs.</p>
+<p>&nbsp;</p>
+<p>For example, at SAGIA, we launched a specialized Entrepreneur License, which allows international entrepreneurs to launch a fully foreign-owned start-up company in Saudi Arabia in a licensing process that takes about three hours and costs just $500. Once here, they have more than 35 accelerators, incubators, and soft landing programs to choose from. We have already seen more than 200 entrepreneur licenses issued since late 2017, with more than 100 issued in the first half of the year.</p>
+<p>&nbsp;</p>
+<p>Likewise, the launch of the VENTURE platform is expected to attract venture capital to support fast growing businesses &ndash; more than 50 venture capital firms including firms from the United States, the United Kingdom, China and France have already signed agreements under the platform.</p>
+<p>&nbsp;</p>
+<p>While we are encouraged by what has been achieved so far, we are more focused on the potential of what is to come. As Saudi and international entrepreneurs are given the opportunity to thrive, we are confident that we can see real innovation that can launch our prosperity for decades to come.</p>"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>شارك الهيئة العامة للاستثمار في مؤتمر قمة الويب العالمي للتقنية &ldquo;Web Summit&rdquo;؛ المقام في العاصمة البرتغالية لشبونة خلال الفترة من 4 وحتى 7 نوفمبر 2019، ويُعد مؤتمر قمة الويب من أهم المناسبات العالمية التي تناقش واقع التقنية وريادة الأعمال.</p>
+<p>كما يتضمن المؤتمر جلسات حوارية مختلفة تناقش عددًا من الموضوعات في كيفية خلق الابتكار في بيئة العمل وكسب مساهمة صناديق التمويل للشركات الناشئة وطرق استدامة نمو الأعمال وغيرها، كما يشهد المؤتمر سنويًّا حضورًا دوليًّا كبيرًا من عدد من ممثلي الجهات الحكومية من مختلف الدول ورواد الأعمال والمبتكرين وقادة الأعمال في شركات الاستثمار الجريء، إضافة إلى المستثمرين والباحثين عن حاضنات ومسرعات الأعمال.</p>
+<p>وتأتي أهمية مشاركة الهيئة ممثلة بقطاع الابتكار وريادة الأعمال وقطاع الاتصالات وتقنية المعلومات تحت هوية ""استثمر في السعودية""؛ ضمن سعي الهيئة لجذب الاستثمارات الأجنبية والتعريف بالخدمات التي تقدمها للمستثمرين في هذه القطاعات، وزيادة مساهمة القطاع الخاص في التحول التقني والرقمي الذي تعمل المملكة في تحقيقه، إضافة إلى سعي المملكة في تحقيق بيئة مثمرة لريادة لأعمال في السوق السعودي ودعم الشراكات بين المستثمر الأجنبي والمستثمر المحلي في المملكة.</p>
+<p>يذكر أن الهيئة العامة للاستثمار بالتعاون مع وزارة الاتصالات وتقنية المعلومات تشاركان عبر جناح استثمر في السعودية، الذي يضم عددًا كبيرًا من الجهات الحكومية مثل وزارة الثقافة والهيئة العامة للمنشآت الصغيرة والمتوسطة والاتحاد السعودي للأمن السيبراني والبرمجة والدرونز ووحدة التحول الرقمي، إضافة إلى كلية الأمير محمد بن سلمان للإدارة وريادة الأعمال وشركة حاضنات ومسرعات الأعمال (بياك)، والشركة السعودية للاستثمار الجريء والشركة السعودية للتنمية والاستثمار التقني (تقنية).</p>
+<p>كما احتضن الجناح عددًا من الشركات الناشئة مثل شركة فايفو للمنصات والتطبيقات الرقمية، وتطبيق نعناع وشركة يونيفونك، إضافة إلى شركة مرسول وشركة فودكس وصندوق رأس المال الجريء (نماء فنتشرز).</p>
+<p>وكانت الهيئة قد أعلنت سابقًا عن توقيع 18 اتفاقية مع عدد من صناديق رأس المال الجريء المحلية والدولية، حيث كانت الاتفاقيات الأخيرة امتدادًا لمبادرة الاستثمار الجريء من ""استثمر في السعودية""، التي تم إطلاقها في أبريل الماضي من العام 2019 إذ شهدت توقيع ما يزيد عن 25 اتفاقية منذ انطلاقتها، والتي تهدف إلى تسهيل دخول صناديق استثمار رأس المال الجريء وشركاتها الناشئة للسوق السعودي، مما سيسهم في زيادة عدد الشركات الناشئة في السوق المحلي ويساعد على تحفيز مستثمري رأس المال الجريء للاستثمار في الشركات الناشئة.</p>
+<p>&nbsp;</p>
+<p>يُذكر أن الهيئة العامة للاستثمار أعلنت في تقريرها للربع الثالث أن عدد تراخيص الاستثمار الأجنبي حتى نهاية الربع الثالث من العام الجاري بلغت 809 ترخيص، شملت مشاريع مشتركة مع مستثمرين محليين، وبإضافة مجموع العدد التراكمي على مدى الأرباع الثلاثة الماضية خلال العام الحالي والتي بلغت 809 ترخيص استثماري، فإن الهيئة تسجل بذلك أكبر عدد للتراخيص السنوية على مدى التسعة أعوام الماضية، أي منذ عام 2010</p>"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

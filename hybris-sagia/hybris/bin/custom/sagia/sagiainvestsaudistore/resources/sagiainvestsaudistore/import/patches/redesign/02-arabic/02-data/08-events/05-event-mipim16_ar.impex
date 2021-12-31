@@ -1,0 +1,41 @@
+############# EVENT  MIPIM16 ########################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)
+
+$eventNameAr= معرض ميبيم أكبر معرض عقاري في العالم
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE EventKeyDetails ; $contentCV[unique = true];uid[unique = true]	; keyName[lang = ar]	    					; keyValue[lang = ar];
+                              ;                          ;mipim-key-1         	; عدد الدول 									; 100
+							  ;                          ;mipim-key-2         	; عدد المتحدثون									; 480
+							  ;                        	 ;mipim-key-3          	; عدد الشركات العارضة							; 3,800	
+                              ;                        	 ;mipim-key-4          	; القطاعات										; القطاع العقاري / المعارض                
+							  ;                        	 ;mipim-key-5          	; م2											; 22,000 
+#							  ;                        	 ;mipim-key-6          	; شركة عارضة									; 3,800 
+							  ;                        	 ;mipim-key-7          	; دولة											; 100  
+							  ;                        	 ;mipim-key-8      		; موضوع رئيسي ومتحدثين							; 480   
+							  ;                        	 ;mipim-key-9      		; يُشكّل المساهمون								; 24%  
+							  ;                        	 ;mipim-key-10      	; من المساهمين رؤساء تنفيذيين وكبار المهنيين  	; 15%    
+							                          		 
+															 
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true]   ; eventName[lang = ar]   ; eventLocation[lang = ar]			;
+                                        ;                         ; event-mipim   		; $eventNameAr           ; مركز المؤتمرات في مدينة كان - فرنسا	;
+										
+										
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true]; uid[unique = true]	  ;eventShortInformation[lang = ar];
+										;						  ; event-mipim    		  ;"يجمع الحدث العقاري الرائد الجهات الفاعلة والمهمة من جميع قطاعات صناعة العقارات الدولية لمدة يومين من التواصل والتعلم والصفقات من خلال الأحداث الاستثنائية والمؤتمرات ومناطق مخصصة للمعارض"	;
+									  
+									   										   																
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventKeyDetails(uid, $contentCV);
+										;						  ;event-mipim    	 ;mipim-key-1,mipim-key-2,mipim-key-3,mipim-key-4,mipim-key-5,mipim-key-7,mipim-key-8,mipim-key-9,mipim-key-10;
+
+
+INSERT_UPDATE InvestSaudiEventsComponent;$contentCV[unique = true];uid[unique = true];eventFullDescription[lang = ar];
+										;						  ; event-mipim   	 ;								;							
+

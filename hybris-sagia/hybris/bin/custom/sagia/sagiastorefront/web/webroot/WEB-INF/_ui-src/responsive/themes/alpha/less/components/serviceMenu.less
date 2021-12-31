@@ -1,0 +1,103 @@
+.serviceMenu {
+    
+    padding: 0;
+    list-style: none;
+    margin-bottom: 8px;
+    overflow: hidden;
+	white-space: nowrap;    
+    
+    #media-breakpoint-down(sm, {
+        margin-bottom: 52px;
+    });    
+    
+    &-item {
+        margin-bottom: 16px;
+    }
+    
+    &-head {
+        font-size: 15px;
+        line-height: 1;
+        color: #313f4b;
+        text-transform: uppercase;
+        display: flex;
+        position: relative;
+        align-items: center;
+        &:hover,
+        &:focus {
+            color: @apple;
+        }
+        
+        &-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            align-self: flex-start;
+            flex: 0 0 auto;
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+        &-title {
+            flex: 0 1 auto;
+            flex: 0 1 auto;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;            
+        }
+        
+        &-action {
+            color: @apple;
+            font-weight: bold;
+            line-height: 1;
+            margin-left: 4px;
+            font-size: 22px;
+            flex: 0 0 auto;
+            align-self: flex-start;
+			//ie hack for ie11
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				line-height: 12px;
+			}	            
+        }
+    }
+    
+    &-item.active &{
+        
+        &-head-action {
+            div:first-child {
+                display: none !important;
+            }
+            div:last-child {
+                display: block !important;
+            }
+        }
+    }
+    
+    
+    //submenu
+    &-body {
+        display: none;
+        padding: 0;
+        list-style: none;
+        margin-top: 12px;
+        margin-bottom: 32px;
+        padding-left: 36px;
+        
+        &-item {
+            border-bottom: solid 1px #ccd0d4;
+        }
+        
+        &-link {
+            padding: 11px 0;
+            font-size: 14px;
+            color: #313f4b;
+            display: block;
+            &.active,
+            &:hover,
+            &:focus {
+                color: #7bd35d;    
+            }            
+        }
+    }
+}

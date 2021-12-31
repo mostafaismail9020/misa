@@ -1,0 +1,23 @@
+$contentCatalog=sagiaContentCatalog
+$contentCatalogName=Sagia Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+$siteResource=jar:com.sap.ibso.eservices.initialdata.setup.InitialDataSystemSetup&/sagiainitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$attachments=attachments(code, $contentCV)
+
+INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];altText;mime[default='image/png'];$contentCV[unique=true];folder(qualifier)[default='images']
+#;widescreen;dashboardBanner;banner.png;$siteResource/images/banner.png;"dashboard banner"
+;widescreen;dashboardInfoSmall;dashboardBanner-s.png;$siteResource/images/dashboardBanner-s.png;"dashboard info - Small"
+;widescreen;dashboardInfoSmall-ar;dashboardBanner-s-ar.png;$siteResource/images/dashboardBanner-s-ar.png;"dashboard info AR - Small"
+;widescreen;dashboardInfoMedium;dashboardBanner-m.png;$siteResource/images/dashboardBanner-m.png;"dashboard info - Medium"
+;widescreen;dashboardInfoMedium-ar;dashboardBanner-m-ar.png;$siteResource/images/dashboardBanner-m-ar.png;"dashboard info AR - Medium"
+;widescreen;dashboardInfoLarge;dashboardBanner-l.png;$siteResource/images/dashboardBanner-l.png;"dashboard info - Large"
+;widescreen;dashboardInfoLarge-ar;dashboardBanner-l-ar.png;$siteResource/images/dashboardBanner-l-ar.png;"dashboard info AR - Large"
+;widescreen;dashboardInfoExtraLarge;dashboardBanner-xl.png;$siteResource/images/dashboardBanner-xl.png;"dashboard info - xLarge"
+;widescreen;dashboardInfoExtraLarge-ar;dashboardBanner-xl-ar.png;$siteResource/images/dashboardBanner-xl-ar.png;"dashboard info  AR- xLarge"
+;widescreen;undertakingLetterSample;undertakingLetter.pdf;$siteResource/files/undertakingLetter.pdf;"undertaking letter"
+;widescreen;contactInfoTemplateSample; eServices_Contact_Info.docx;$siteResource/files/eServices_Contact_Info.docx;"contact info template";"application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+INSERT_UPDATE SagiaMedia;name[unique=true];$attachments
+;dashboard;dashboardInfoSmall,dashboardInfoSmall-ar,dashboardInfoMedium,dashboardInfoMedium-ar,dashboardInfoLarge,dashboardInfoLarge-ar,dashboardInfoExtraLarge,dashboardInfoExtraLarge-ar
+;undertakingLetter;undertakingLetterSample
+;contactInfoTemplate;contactInfoTemplateSample

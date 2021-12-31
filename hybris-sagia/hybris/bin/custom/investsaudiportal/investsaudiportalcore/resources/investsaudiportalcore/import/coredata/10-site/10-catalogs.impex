@@ -1,0 +1,36 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+#
+# Import the Content Catalog
+#
+$contentCatalog = investsaudiportalContentCatalog
+$productCatalog = investsaudiportalProductCatalog
+$classificationCatalog = investsudiPortalClassificationCatalog
+
+$languages = en, ar
+
+# Content catalog for CMS contents
+INSERT_UPDATE ContentCatalog; id[unique = true]; name[lang = en]
+                            ; $contentCatalog  ; Invest Saudi Portal Content Catalog
+
+INSERT_UPDATE Catalog; id[unique = true]; name[lang = en]
+                     ; $productCatalog  ; Invest Saudi Portal Product Catalog
+
+# Catalog versions for content catalogs
+INSERT_UPDATE CatalogVersion; catalog(id)[unique = true]; version[unique = true]; active; languages(isoCode)
+                            ; $contentCatalog           ; Staged                ; false ; $languages
+                            ; $contentCatalog           ; Online                ; true  ; $languages
+                            ; $productCatalog           ; Staged                ; false ; $languages
+                            ; $productCatalog           ; Online                ; true  ; $languages
+
+# investsaudi Classification catalog
+INSERT_UPDATE ClassificationSystem; id[unique = true]
+                                  ; $classificationCatalog
+
+# Insert Classifications System Version
+INSERT_UPDATE ClassificationSystemVersion; catalog(id)[unique = true]; version[unique = true]; active; inclPacking[virtual = true, default = true]; inclDuty[virtual = true, default = true]; inclFreight[virtual = true, default = true]; inclAssurance[virtual = true, default = true]
+                                         ; $classificationCatalog    ; 1.0                   ; true
+
+UPDATE Catalog; id[unique = true]      ; name[lang = en]
+              ; $classificationCatalog ; "Invest Saudi Portal Classification" ;

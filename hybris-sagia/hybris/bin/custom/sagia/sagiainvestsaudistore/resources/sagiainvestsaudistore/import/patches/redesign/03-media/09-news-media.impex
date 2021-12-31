@@ -1,0 +1,59 @@
+##########SAUDI ARBIAN INVESTMENT  ON ENVIROMENT##############################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                      	             ; realFileName                    			                 ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] 	; mime[default = 'image/jpeg']	; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+
+#News-investment-highlights
+                   
+				   ; news-investment-highlights.png                          ; news-investment-highlights.png     		                 ; $siteResource/news-investment-highlights.png                             		;                 image/png  	;                                          ; ""     ;
+				   ; news-investment-highlights-thumbnail.png                ; news-investment-highlights-thumbnail.png                  ; $siteResource/news-investment-highlights-thumbnail.png                           ;                 image/png     ;                                          ; ""     ;
+
+#News-saudi-arabia-tacking
+
+                   ; news-saudi-arabia-tacking-COVID-19.jpg                  ; news-saudi-arabia-tacking-COVID-19.jpg     		         ; $siteResource/news-saudi-arabia-tacking-COVID-19.jpg                             ;                 image/jpg     ;                                          ; ""     ;
+                   ; news-saudi-arabia-tacking-COVID-19-thumbnail.jpg        ; news-saudi-arabia-tacking-COVID-19-thumbnail.jpg          ; $siteResource/news-saudi-arabia-tacking-COVID-19-thumbnail.jpg                   ;                 image/jpg     ;                                          ; ""     ;
+
+#News-ministers-of-Misa-and-Malaysia
+
+                   ; news-ministers-of-Misa-and-Malaysia.jpg                 ; news-ministers-of-Misa-and-Malaysia.jpg     		         ; $siteResource/news-ministers-of-Misa-and-Malaysia.jpg                            ;                 image/jpg     ;                                          ; ""     ;
+				   ; news-ministers-of-Misa-and-Malaysia-thumbnail.jpg       ; news-ministers-of-Misa-and-Malaysia-thumbnail.jpg         ; $siteResource/news-ministers-of-Misa-and-Malaysia-thumbnail.jpg                  ;                 image/jpg     ;                                          ; ""     ;
+
+#News-national-center-fpr-waste-management
+
+                   ;news-national-center-for-waste-management.jpg            ; news-national-center-for-waste-management.jpg     		 ; $siteResource/news-national-center-for-waste-management.jpg                      ;                 image/jpg     ;                                          ; ""     ;
+				   ;news-national-center-for-waste-management-thumbnail.jpg  ; news-national-center-for-waste-management-thumbnail.jpg   ; $siteResource/news-national-center-for-waste-management-thumbnail.jpg            ;                 image/jpg     ;                                          ; ""     ;
+
+#News-saudi-uzbek
+
+                   ; news-saudi-uzbek.jpg           		                 ; news-saudi-uzbek.jpg    			                         ; $siteResource/news-saudi-uzbek.jpg                                               ;                 image/jpg     ;                                          ; ""     ;
+				   ; news-saudi-uzbek-thumbnail.jpg			                 ; news-saudi-uzbek-thumbnail.jpg	                         ; $siteResource/news-saudi-uzbek-thumbnail.jpg                                     ;                 image/jpg     ;                                          ; ""     ;
+
+#News-ministry-of-investment
+
+                   ; news-ministry-of-investment.jpg           	             ; news-ministry-of-investment.jpg     		                 ; $siteResource/news-ministry-of-investment.jpg                                    ;                 image/jpg     ;                                          ; ""     ;
+				   ; news-ministry-of-investment-thumbnail.jpg               ; news-ministry-of-investment-thumbnail.jpg                 ; $siteResource/news-ministry-of-investment-thumbnail.jpg                          ;                 image/jpg     ;                                          ; ""     ;
+
+#News-ministry-of-investment-cyprus
+
+                   ; new-ministry-of-investment-cyprus.jpg           	     ; new-ministry-of-investment-cyprus.jpg     		         ; $siteResource/new-ministry-of-investment-cyprus.jpg                              ;                 image/jpg     ;                                          ; ""     ;
+				   ; new-ministry-of-investment-cyprus-thumbnail.jpg         ; new-ministry-of-investment-cyprus-thumbnail.jpg           ; $siteResource/new-ministry-of-investment-cyprus-thumbnail.jpg                    ;                 image/jpg     ;                                          ; ""     ;
+
+#News-ministry-of-investment-attractive
+
+                   ; news-investment-attractive-Banner.png                   ; news-investment-attractive-Banner.png     	             ; $siteResource/news-investment-attractive-Banner.png                              ;                 image/png     ;                                          ; ""     ;
+				   ; news-investment-attractive-thumbnail.jpg                ; news-investment-attractive-thumbnail.jpg                  ; $siteResource/news-investment-attractive-thumbnail.jpg                           ;                 image/jpg     ;                                          ; ""     ;
+	
+#News-roche-and-misa-partnership	
+	
+	               ; news-Roche-and-misa-partnership.jpg                     ; news-Roche-and-misa-partnership.jpg     		             ; $siteResource/news-Roche-and-misa-partnership.jpg                                ;                 image/jpg     ;                                          ; ""     ;
+                   ; news-Roche-and-misa-partnership-thumbnail.jpg	         ; news-Roche-and-misa-partnership-thumbnail.jpg             ; $siteResource/news-Roche-and-misa-partnership-thumbnail.jpg                      ;                 image/jpg     ;                                          ; ""     ;

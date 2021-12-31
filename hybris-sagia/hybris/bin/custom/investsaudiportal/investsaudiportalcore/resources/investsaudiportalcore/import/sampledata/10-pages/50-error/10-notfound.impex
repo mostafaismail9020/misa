@@ -1,0 +1,80 @@
+$page = notFound
+$template = portalGlobalTemplate
+$pageName = 404
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = notfound
+
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = $mediafolder
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]         ; name                ; &componentRef              ; $contentCV[unique = true]
+                                                  ; sample-not-found-paragraph ; Not Found Paragraph ; sample-not-found-paragraph ;
+
+
+UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]         ; $contentCV[unique = true]; description[lang = en]
+                                           ; sample-not-found-paragraph ;                          ; "
+<div class='container my-auto text-center' style='min-height:500px'>
+   <div class='row'>
+      <div class='col-lg-10 mx-auto' style='margin: 10% auto;'>
+         <div contenteditable='false' style='display: inline-block'>
+            <svg id='404-SVG' width='124px' height='114px' viewBox='0 0 124 114' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' name='svg404' data-mce-svg404='svg404'>
+               <desc>Created with Sketch.</desc>
+               <defs></defs>
+               <g id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+                  <g id='Error-404' transform='translate(-658.000000, -163.000000)'>
+                     <g id='Group-5' transform='translate(659.000000, 164.000000)'>
+                        <path d='M31.2983045,101.028122 C29.7203797,104.160288 26.4762098,106.309581 22.7292551,106.309581 C18.9803268,106.309581 15.7331964,104.144992 14.1567518,101.028122 L13.1406204,101.028122 L13.1408209,102.105236 C13.1067756,107.35413 17.4137505,111.702551 22.7292551,111.702551 C28.0255168,111.702551 32.3186762,107.409885 32.3186762,102.114117 C32.3186762,107.409885 36.6118355,111.702551 41.9080972,111.702551 C47.2038654,111.702551 51.4970248,107.409885 51.4970248,102.114117 C51.4970248,107.409885 55.7901842,111.702551 61.0864459,111.702551 C66.3827075,111.702551 70.6753735,107.409885 70.6753735,102.114117 C70.6753735,107.409885 74.9685329,111.702551 80.2647945,111.702551 C85.5605628,111.702551 89.8537222,107.409885 89.8537222,102.114117 C89.8537222,107.409885 94.1473749,111.702551 99.4431432,111.702551 C104.758648,111.702551 109.066116,107.35413 109.032071,102.105236 L109.032271,101.028122 L108.015646,101.028122 C106.439202,104.144992 103.192565,106.309581 99.4431432,106.309581 C95.696682,106.309581 92.452512,104.160288 90.8745872,101.028122 L88.8333505,101.028122 C87.2554257,104.160288 84.0117492,106.309581 80.2647945,106.309581 C76.5183333,106.309581 73.2741633,104.160288 71.6962385,101.028122 L69.6554953,101.028122 C68.0775705,104.160288 64.8329071,106.309581 61.0864459,106.309581 C57.3394912,106.309581 54.0953213,104.160288 52.5173965,101.028122 L50.4766532,101.028122 C48.8987284,104.160288 45.6545584,106.309581 41.9080972,106.309581 C38.1611426,106.309581 34.917466,104.160288 33.3395412,101.028122 L31.2983045,101.028122' id='Fill-5' fill='#E6E6ED'></path>
+                        <path id='mypaath' d='M61.0864459,0.0285994987 L61.0869393,0.0285994987 C87.4572304,0.0285994987 109.032564,21.6044268 109.032564,47.9747179 L109.032564,54.2183265 L119.276247,64.519738 C122.538673,67.7999269 122.523377,73.1524373 119.243188,76.4148634 C116.480586,79.1616762 112.248116,79.5850219 109.032564,77.690328 L109.032564,102.104742 L109.033058,102.113624 C109.033058,107.409392 104.739405,111.702551 99.4436366,111.702551 C94.1478684,111.702551 89.8542156,107.409392 89.8542156,102.113624 C89.8542156,107.409392 85.5610562,111.702551 80.2652879,111.702551 C74.9690263,111.702551 70.6758669,107.409392 70.6758669,102.113624 C70.6758669,107.409392 66.3827075,111.702551 61.0869393,111.702551 L61.0864459,111.702551 C55.7906776,111.702551 51.4975182,107.409392 51.4975182,102.113624 C51.4975182,107.409392 47.2038654,111.702551 41.9080972,111.702551 C36.6123289,111.702551 32.3191696,107.409392 32.3191696,102.113624 C32.3191696,107.409392 28.0255168,111.702551 22.7297485,111.702551 C17.4339803,111.702551 13.1408209,107.409392 13.1408209,102.113624 L13.1408209,77.690328 C9.9252687,79.5850219 5.69279874,79.1616762 2.9297034,76.4148634 C-0.349992076,73.1524373 -0.365287782,67.7999269 2.89664494,64.519738 L13.1408209,54.2183265 L13.1408209,47.9747179 C13.1408209,21.6044268 34.7161548,0.0285994987 61.0864459,0.0285994987 Z M25.0690048,66.0799001 L14.8248288,76.3813116 C11.5633895,79.6615004 6.2103857,79.6767962 2.9297034,76.4148634 C-0.349992076,73.1524373 -0.365287782,67.7999269 2.89664494,64.519738 L13.1408209,54.2183265 L25.0690048,66.0799001 Z M97.1043804,66.0799001 L107.348063,76.3813116 C110.610489,79.6615004 115.962506,79.6767962 119.243188,76.4148634 C122.523377,73.1524373 122.538673,67.7999269 119.276247,64.519738 L109.032564,54.2183265 L97.1043804,66.0799001 Z' id='Stroke-6' stroke='#343A4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'></path>
+                        <path d='M65.2340493,65.0550877 L83.613074,65.0550877 L83.613074,74.2448468 C83.613074,79.2993376 79.4782992,83.4341124 74.4238084,83.4341124 C69.3693175,83.4341124 65.2340493,79.2993376 65.2340493,74.2448468 L65.2340493,65.0550877' id='Fill-8' fill='#E6E6ED'></path>
+                        <path d='M65.2335559,61.6604278 L83.6125806,61.6604278 L83.6125806,70.8501868 C83.6125806,75.9046776 79.4778058,80.0399458 74.423315,80.0399458 C69.3688241,80.0399458 65.2335559,75.9046776 65.2335559,70.8501868 L65.2335559,61.6604278' id='Fill-9' fill='#E6E6ED'></path>
+                        <path d='M65.2335559,61.6604278 L83.6125806,61.6604278 L83.6125806,70.8501868 C83.6125806,75.9046776 79.4778058,80.0399458 74.423315,80.0399458 C69.3688241,80.0399458 65.2335559,75.9046776 65.2335559,70.8501868 L65.2335559,61.6604278 Z' id='Stroke-10' stroke='#343A4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'></path>
+                        <path d='M42.9595537,30.6940236 C46.2698405,30.6940236 48.9539903,33.37768 48.9539903,36.6879668 C48.9539903,39.9987471 46.2698405,42.6824035 42.9595537,42.6824035 C39.6487733,42.6824035 36.9646236,39.9987471 36.9646236,36.6879668 C36.9646236,33.37768 39.6487733,30.6940236 42.9595537,30.6940236' id='Fill-12' fill='#E6E6ED'></path>
+                        <path d='M47.3538621,32.2941519 L38.563765,41.0842489 M47.3538621,41.0842489 L38.563765,32.2941519' id='Stroke-13' stroke='#343A4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'></path>
+                        <path d='M75.9721286,30.6940236 C79.2829089,30.6940236 81.9665652,33.37768 81.9665652,36.6879668 C81.9665652,39.9987471 79.2829089,42.6824035 75.9721286,42.6824035 C72.6613483,42.6824035 69.9771985,39.9987471 69.9771985,36.6879668 C69.9771985,33.37768 72.6613483,30.6940236 75.9721286,30.6940236' id='Fill-14' fill='#E6E6ED'></path>
+                        <path d='M80.366437,32.2941519 L71.5763399,41.0842489 M80.366437,41.0842489 L71.5758465,32.2941519' id='Stroke-15' stroke='#343A4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'></path>
+                     </g>
+                  </g>
+               </g>
+            </svg>
+         </div>
+         <div class='umb-grid'>
+            <div class='grid-section'>
+               <div >
+                  <div class='container'>
+                     <div class='row clearfix'>
+                        <div class='col-md-12 column'>
+                           <div >
+                              <div class='font-bold' style='font-size: 24px; margin: 16px auto 0;'>ERROR 404</div>
+                              <div class='dark-gray text-center notfound-text' style='font-size: 24px; margin: 5px auto;'>The page you are trying to find does not exist!</div>
+                              <p> </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>"
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef); $contentCV
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                             ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; sample-not-found-paragraph  ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+

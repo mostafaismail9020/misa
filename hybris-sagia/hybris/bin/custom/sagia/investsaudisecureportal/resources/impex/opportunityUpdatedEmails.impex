@@ -1,0 +1,40 @@
+
+$contentCatalog=investsaudiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$wideContent = CMSImageComponent, BannerComponent
+$emailfromemail=info@sagia.gov.sa
+$emailFromName=Customer Services Team
+$lang = en
+$jarResource=jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]; name; active; frontendTemplateName; subject(code); htmlTemplate(code); restrictedPageTypes(code)
+; ; opportunityUpdatedTemplate    ;Opportunity Updated Template       ; true ; opportunityUpdatedTemplate    ; opportunity_updated_Subject    ; opportunity_updated_Body    ; EmailPage
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'opportunityUpdatedTemplate']; validComponentTypes(code)
+; SiteLogo      ; ;              ; logo
+; TopContent    ; ; $wideContent ;
+; BottomContent ; ; $wideContent ;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'opportunityUpdatedTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+; ; SiteLogo-opportunityUpdated    ; SiteLogo      ; ; EmailSiteLogoSlot ; true
+; ; TopContent-opportunityUpdated   ; TopContent    ; ; EmailTopSlot      ; true
+; ; BottomContent-opportunityUpdated ; BottomContent ; ; EmailBottomSlot   ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@sagia.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+; ; opportunityUpdated   ; Opportunity Updated email page    ; opportunityUpdatedTemplate    ; true ; ; ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]; contextClass; rendererType(code)[default = 'velocity']
+; opportunity_updated_Body       ; com.investsaudi.email.context.OpportunityUpdatedEmailContext
+; opportunity_updated_Subject    ; com.investsaudi.email.context.OpportunityUpdatedEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]; description[lang = $lang]; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+; opportunity_updated_Body       ; "Opportunity Updated Email Body"          ; $jarResource/email-opportunityUpdatedBody.vm
+; opportunity_updated_Subject    ; "Opportunity Updated Email Subject"       ; $jarResource/email-opportunityUpdatedSubject.vm
+

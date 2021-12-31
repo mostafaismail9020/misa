@@ -1,0 +1,24 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/LegalStatusSet('BRFC')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/LegalStatusSet('BRFC')",
+          "type": "ZQEEMAH2_EXT_SRV.LegalStatus"
+        },
+        "Legalkey": "BRFC",
+        "Legalvalue": "Foreign Entity Branch"
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/LegalStatusSet('LLC')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/LegalStatusSet('LLC')",
+          "type": "ZQEEMAH2_EXT_SRV.LegalStatus"
+        },
+        "Legalkey": "LLC",
+        "Legalvalue": "LLC"
+      }
+    ]
+  }
+}

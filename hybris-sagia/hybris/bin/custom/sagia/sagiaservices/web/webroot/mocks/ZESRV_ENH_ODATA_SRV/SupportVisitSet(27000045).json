@@ -1,0 +1,71 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SupportVisitSet('27000040')",
+      "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/SupportVisitSet('27000040')",
+      "type": "ZESRV_ENH_ODATA_SRV.SupportVisit"
+    },
+    "SrId": "27000045",
+    "Status": "E0003",
+    "BpId": "",
+    "StatDesc": "Visit Initiated",
+    "VisitDate": "\/Date(1536710400000)\/",
+    "TextMsg": "TEXT MSG1",
+    "Tdid": "",
+    "SuppVisitToText": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/GetTextSet(SrId='27000045',Tdid='',CommentDate=datetime'2018-08-16T00%3A00%3A00',CommentTime=time'PT00H00M00S',Timezone='')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/GetTextSet(SrId='27000045',Tdid='',CommentDate=datetime'2018-08-16T00%3A00%3A00',CommentTime=time'PT00H00M00S',Timezone='')",
+            "type": "ZESRV_ENH_ODATA_SRV.GetText"
+          },
+          "SrId": "27000045",
+          "SrGuid": "00000000-0000-0000-0000-000000000000",
+          "Tdid": "",
+          "Tdline": "TEXT MSG1",
+          "CommentsBy": "",
+          "CommentDate": "\/Date(1534377600000)\/",
+          "CommentTime": "PT00H00M00S",
+          "Timezone": "",
+          "Stage": ""
+        }
+      ]
+    },
+    "SupportVstToAttachNav": {
+      "results": [
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/DocAttachSet(ObjectId='27000045',FileGuid='005056B11C891EE8A6F6B727DB0C409B')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/DocAttachSet(ObjectId='27000045',FileGuid='005056B11C891EE8A6F6B727DB0C409B')",
+            "type": "ZESRV_ENH_ODATA_SRV.DocAttach",
+            "content_type": "application/pdf",
+            "media_src": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/DocAttachSet(ObjectId='27000045',FileGuid='005056B11C891EE8A6F6B727DB0C409B')/$value"
+          },
+          "ObjectId": "27000045",
+          "FileGuid": "005056B11C891EE8A6F6B727DB0C409B",
+          "Filename": "CAP Test.pdf",
+          "Mimetype": "application/pdf",
+          "FileContent": "",
+          "ObjectType": ""
+        },
+        {
+          "__metadata": {
+            "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/DocAttachSet(ObjectId='27000045',FileGuid='005056B11C891EE8A6F6B8CF6692809B')",
+            "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/DocAttachSet(ObjectId='27000045',FileGuid='005056B11C891EE8A6F6B8CF6692809B')",
+            "type": "ZESRV_ENH_ODATA_SRV.DocAttach",
+            "content_type": "image/png",
+            "media_src": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/DocAttachSet(ObjectId='27000045',FileGuid='005056B11C891EE8A6F6B8CF6692809B')/$value"
+          },
+          "ObjectId": "27000045",
+          "FileGuid": "005056B11C891EE8A6F6B8CF6692809B",
+          "Filename": "Header.png",
+          "Mimetype": "image/png",
+          "FileContent": "",
+          "ObjectType": ""
+        }
+      ]
+    }
+  }
+}
+

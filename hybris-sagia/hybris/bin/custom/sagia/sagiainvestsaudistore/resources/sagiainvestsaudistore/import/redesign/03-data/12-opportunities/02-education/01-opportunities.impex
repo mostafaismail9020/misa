@@ -1,0 +1,30 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$classCatalogVersion = catalogVersion(catalog(id[default='sagiaClassification']), version[default='1.0'])
+
+####
+#INSERT_UPDATE OpportunityProduct; code[unique = true]       ; name [lang = en]          ; name [lang = ar]          ; featured; supercategories(code, $catalogVersion); approvalStatus(code)[default = 'approved']; $catalogVersion; seoKeywords[lang=en]
+#								; Agricultural-College        ; Agricultural College        ; Agricultural College    ; false    ; education ;     ;	;"Invest Saudi,Agricultural College - Education,Education,"
+#								; AlBaha-Region-literacy         ; Al Baha Region in literacy         ; Al Baha Region in literacy     ; false    ; education ;     ;	;"Invest Saudi,Al Baha Region in literacy - Education,Education,"
+#								; Centers-Special-Needs-Hearing-Impairment          ; Centers for Special Needs in Hearing Impairment          ; Centers for Special Needs in Hearing Impairment      ; false    ; education ;     ;	;"Invest Saudi,Centers for Special Needs in Hearing Impairment  - Education,Education,"
+#								; Centers-Special-needs-Visual-Impairment         ; Centers for Special needs in Visual Impairment         ; Centers for Special needs in Visual Impairment    ; false    ; education ;     ;	;"Invest Saudi,Centers for Special needs in Visual Impairment - Education,Education,"
+#								; Digital-Learning-Technology         ; Digital Learning and Technology         ; Digital Learning and Technology     ; false    ; education ;     ;	;"Invest Saudi,Digital Learning and Technology - Education,Education,"
+#								; Educational-Virtual-Centers         ; Educational Virtual Centers         ; Educational Virtual Centers     ; false    ; education ;     ;	;"Invest Saudi,Educational Virtual Centers - Education,Education,"
+#								; English-Institutions        ; English Institutions         ; English Institutions     ; false    ; education ;     ;	;"Invest Saudi,English Institutions - Education,Education,"
+#								; Entrepreneurship-Course-Technical-Vocational-Corporation         ; Entrepreneurship Course in Technical and Vocational Corporation         ; Al Entrepreneurship Course in Technical and Vocational Corporation     ; false    ; education ;     ;	;"Invest Saudi,Entrepreneurship Course in Technical and Vocational Corporation - Education,Education,"
+#								; Entrepreneurship-Curriculum-Universities         ; Entrepreneurship Curriculum in Universities         ; Entrepreneurship Curriculum in Universities    ; false    ; education ;     ;	;"Invest Saudi,Entrepreneurship Curriculum in Universities - Education,Education,"
+#								; Healthy-Nutrition-Schools        ; Healthy Nutrition in Schools         ; Healthy Nutrition in Schools     ; false    ; education ;     ;	;"Invest Saudi,Healthy Nutrition in Schools - Education,Education,"
+#								; Higher-Education         ; Higher Education         ; Higher Education     ; false    ; education ;     ;	;"Invest Saudi,Higher Education - Education,Education,"
+#								; International-Media-Academies         ; International Media Academies         ; International Media Academies     ; false    ; education ;     ;	;"Invest Saudi,International Media Academies - Education,Education,"
+#								; Private-Schools-Najran         ; Private Schools in Najran         ; Private Schools in Najran     ; false    ; education ;     ;	;"Invest Saudi,Private Schools in Najran - Education,Education,"
+#								; Programs-Early-Childhood-Special-Education         ; Programs in Early Childhood Special Education         ; Programs in Early Childhood Special Education    ; false    ; education ;     ;	;"Invest Saudi,Programs in Early Childhood Special Education - Education,Education,"
+#								; Promotion-Cultural-Field-Trips          ; Promotion of Cultural Field Trips         ; Promotion of Cultural Field Trips      ; false    ; education ;     ;	;"Invest Saudi,Promotion of Cultural Field Trips  - Education,Education,"
+#								; Quality-Training-Facilities         ; Quality Training Facilities         ; Quality Training Facilities     ; false    ; education ;     ;	;"Invest Saudi,Quality Training Facilities - Education,Education,"
+#								; Robotics-Artificial-Intelligence         ; Robotics and Artificial Intelligence        ; Robotics and Artificial Intelligence     ; false    ; education ;     ;	;"Invest Saudi,Robotics and Artificial Intelligence - Education,Education,"
+#								; Schools-Training-Centers-for-Students-with-Disabilities-and-Their-Families         ; Schools and Training Centers for Students with Disabilities and Their Families         ; Schools and Training Centers for Students with Disabilities and Their Families     ; false    ; education ;     ;	;"Invest Saudi,Schools and Training Centers for Students with Disabilities and Their Families - Education,Education,"
+#								; Specialized-Autism-Centers        ; Specialized Autism Centers         ; Specialized Autism Centers     ; false    ; education ;     ;	;"Invest Saudi,Specialized Autism Centers - Education,Education,"
+#								; Specialized-Mental-Disability-Centers        ; Specialized Mental Disability Centers         ; Specialized Mental Disability Centers     ; false    ; education ;     ;	;"Invest Saudi,Specialized Mental Disability Centers - Education,Education,"
+#								; STEM-Education         ; STEM Education         ; STEM Education     ; false    ; education ;     ;	;"Invest Saudi,STEM Education - Education,Education,"
+#								; Talent-Academy-Innovation-Centre         ; Talent Academy & Innovation Centre         ; Talent Academy & Innovation Centre     ; false    ; education ;     ;	;"Invest Saudi,Talent Academy & Innovation Centre - Education,Education,"
+#								; Youth-Role-Models          ; Youth Role Models          ; Youth Role Models     ; false    ; education ;     ;	;"Invest Saudi,Youth Role Models  - Education,Education,"
+		

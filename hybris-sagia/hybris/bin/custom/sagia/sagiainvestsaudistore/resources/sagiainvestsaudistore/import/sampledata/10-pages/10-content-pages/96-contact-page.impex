@@ -1,0 +1,50 @@
+$template = portalContactTemplate
+$page = sample-contact
+$pageName = Contact
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /contact
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media
+$media = media(code, $contentCV);
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]  ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Contact ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                    ; name                      ; linkName[lang = en]; linkName[lang = ar]; url                      ; $contentCV[unique = true];
+                              ; sample-contact-email-link             ; Contact Email Link        ; Email              ;                    ; InvestorCare@misa.gov.sa ;                          ;
+                              ; sample-contact-tel-local-link         ; Contact Tel Local         ; Local              ;                    ; 8002449990               ;                          ;
+                              ; sample-contact-tel-international-link ; Contact Tel International ; International      ;                    ; 00966112035777           ;                          ;
+
+INSERT_UPDATE InvestSaudiMapComponent; uid[unique = true]   ; name                 ; googleMapsAPIKey                        ; &componentRef        ; $contentCV[unique = true];
+                                     ; sample-map-component ; Sample Map Component ; AIzaSyCO_n0dr0c-px3eYyV7-H8KYTYq-hITsbA ; sample-map-component ;                          ;
+
+INSERT_UPDATE InvestSaudiContactComponent; uid[unique = true]       ; name                     ; title[lang = en]; title[lang = ar]; descriptionText[lang = en]                                                                                                                                                                                                                                                                                                                                  ; descriptionText[lang = ar]; emailURL(uid, $contentCV) ; localURL(uid, $contentCV)     ; internationalURL(uid, $contentCV)     ; &componentRef            ; $contentCV[unique = true];
+                                         ; sample-contact-component ; Sample Contact Component ; Contact MISA    ;                 ; "Contact us using this <span style=""text-decoration: underline;""><strong>(<a rel=""noopener"" href=""https://eservices.sagia.gov.sa:2443/generalenquiry/index.html?sap-client=300&amp;sap-language=EN"" target=""_blank"">Link</a>)</strong></span> if you have any questions about Sectors and Opportunities provided to the investors in Saudi Arabia." ;                           ; sample-contact-email-link ; sample-contact-tel-local-link ; sample-contact-tel-international-link ; sample-contact-component ;                          ;
+
+INSERT_UPDATE InvestSaudiOfficesComponent; uid[unique = true]; name                 ; officeName[lang = en]; officeName[lang = ar]; address                                                      ; telephone                            ; buildingNumber                            ; additionalNumber               ; postalCode                   ; dataTypeLat; dataTypeLng; buttonText[lang = en]; buttonText[lang = ar]; &componentRef   ; $contentCV[unique = true];
+                                         ; sample-office-1   ; Riyadh (Head Office) ; Riyadh (Head Office) ;                      ; Imam Saud bin Abdulazeez bin Mohamed Road – Nakheel district ; <em>Free Telephone </em>: 8002449990 ; <em>Building No. </em>: <span>3966</span> ; <em>Additional No. </em>: 6244 ; <em>Postal Code </em>: 12382 ; 24.737844  ; 46.637261  ; Show map             ;                      ; sample-office-1 ;                          ;
+                                         ; sample-office-2   ; Jeddah               ; Jeddah               ;                      ; Prince Sultan bin Abdullazeez Road – Naeem district          ; <em>Free Telephone </em>: 8002449990 ; <em>Building No. </em>: <span>7261</span> ; <em>Additional No. </em>: 2802 ; <em>Postal Code </em>: 23621 ; 21.633861  ; 39.133348  ; Show map             ;                      ; sample-office-2 ;                          ;
+                                         ; sample-office-3   ; Dammam               ; Dammam               ;                      ; King Abdul Aziz Rd - Hathm                                   ; <em>Free Telephone </em>: 8002449990 ; <em>Building No. </em>: <span>7296</span> ; <em>Additional No. </em>: 2231 ; <em>Postal Code </em>: 34227 ; 26.347885  ; 50.195358  ; Show map             ;                      ; sample-office-3 ;                          ;
+                                         ; sample-office-4   ; Madinah              ; Madinah              ;                      ; King Abdul Aziz Rd - Hathm                                   ; <em>Free Telephone </em>: 8002449990 ; <em>Building No. </em>: <span>7539</span> ; <em>Additional No. </em>: 2410 ; <em>Postal Code </em>: 42363 ; 24.482245  ; 39.572623  ; Show map             ;                      ; sample-office-4 ;                          ;
+                                         ; sample-office-5   ; Jubail               ; Jubail               ;                      ; Royal commission for Jubail and Yanbu – Al Hoilat district   ; <em>Free Telephone </em>: 8002449990 ; <em>Building No. </em>: <span>3628</span> ; <em>Additional No. </em>: 7788 ; <em>Postal Code </em>: 35718 ; 27.10196   ; 49.564776  ; Show map             ;                      ; sample-office-5 ;                          ;
+
+INSERT_UPDATE InvestSaudiOfficesContainer; uid[unique = true]      ; name             ; title[lang = en]; title[lang = ar]; simpleCMSComponents(&componentRef)                                              ; &componentRef           ; $contentCV[unique = true];
+                                         ; sample-office-container ; Office Container ; Saudi Offices   ; Saudi Offices   ; sample-office-1,sample-office-2,sample-office-3,sample-office-4,sample-office-5 ; sample-office-container ;                          ;
+
+INSERT_UPDATE ContentSlot; uid[unique = true]          ; name              ; active; cmsComponents(&componentRef); $contentCV[unique = true];
+                         ; PortalPageMapSlot-$page     ; PortalPageMap     ; true  ; sample-map-component        ;                          ;
+                         ; PortalPageContactSlot-$page ; PortalPageContact ; true  ; sample-contact-component    ;                          ;
+                         ; PortalPageOfficesSlot-$page ; PortalPageOffices ; true  ; sample-office-container     ;                          ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]      ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMap-$page     ; PortalPageMap          ; PortalPageMapSlot-$page                    ;
+                                ; PortalPageContact-$page ; PortalPageContact      ; PortalPageContactSlot-$page                ;
+                                ; PortalPageOffices-$page ; PortalPageOffices      ; PortalPageOfficesSlot-$page                ;
+

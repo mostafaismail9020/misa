@@ -1,0 +1,84 @@
+.modal-body {
+	
+//	.ticketModule {
+//		margin: 0 -10px;
+//		#media-breakpoint-up(sm, {
+//			margin: 0 -15px;
+//		})
+//	}
+}
+
+.ticketModule {
+//	background: #fbfbfc;
+	font-size: 13px;
+	
+	&-top {
+//		padding: 32px 15px;
+		padding-bottom: 24px;
+	}
+	
+	&-bottom {
+		border-top: 1px solid #d8d8d8;
+		padding-bottom: 32px;
+	}
+	
+	&-actions {
+		text-align: right;
+		padding-top: 16px;
+	}
+	
+	&-details {
+		
+		p {
+			margin-bottom: 20px;
+		}
+	}
+	
+	&-label {
+		font-weight: 700;
+		display: inline-block;
+		margin-right: 4px;
+	}
+	
+	&-documentsList {
+		
+		padding: 0;
+		margin: 0 0 0 -32px;
+		list-style-type: none;
+		
+		#media-breakpoint-up(md, {
+			margin: 0;
+		});
+		
+		&-item {
+			display: flex;
+			margin-bottom: 22px;
+			margin-left: 32px;
+			float: left;
+			height: 26px;
+			
+			#media-breakpoint-up(md, {
+				width: 100%;
+				margin-left: 0;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			});
+		}
+		
+		&-img {
+			flex: 0 0 21px;
+			margin-right: 8px;
+		}
+		
+		&-name {
+			align-self: center;
+		}
+		
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}		
+	}
+}

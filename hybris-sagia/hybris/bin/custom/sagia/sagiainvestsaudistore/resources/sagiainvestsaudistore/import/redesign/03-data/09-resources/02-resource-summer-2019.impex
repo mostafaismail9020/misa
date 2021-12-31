@@ -1,0 +1,71 @@
+#### Impex For Summer 2019 ####
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                                                 ; realFileName                                               ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]     ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; Banner-Image-Summer-2019.jpg                                        ;Banner-Image-Summer-2019.jpg                                ; $siteResource/Banner-Image-Summer-2019.jpg                                       ; image/jpg                   ;                                          ; ""     ;
+				   ; Summer-2019-Thumbnail_01.jpg                                        ;Summer-2019-Thumbnail_01.jpg                                 ; $siteResource/Summer-2019-Thumbnail_01.jpg										 ; image/jpg                   ;                             ;                                          ; ""     ;
+
+
+INSERT_UPDATE Media; code[unique = true]                                                 ; realFileName                                             ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]   ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; resource-investment-highlights-summer-2019-arabic.pdf               ;resource-investment-highlights-summer-2019-arabic.pdf     ; $siteResource/resource-investment-highlights-summer-2019-arabic.pdf			 ; application/pdf                 ;                                          ; ""     ;
+                   ; resource-investment-highlights-summer-2019-english.pdf              ;resource-investment-highlights-summer-2019-english.pdf    ; $siteResource/resource-investment-highlights-summer-2019-english.pdf           ; application/pdf                 ;                                          ; ""     ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]									 ; $medias																									    ;$contentCV ; 
+                            ; media-container-summer-2019   							 ; resource-investment-highlights-summer-2019-arabic.pdf, resource-investment-highlights-summer-2019-english.pdf;          ; 
+
+
+
+INSERT_UPDATE InvestSaudiResourceComponent 	 ;$contentCV[unique = true]			  ;uid[unique = true] 							  ;resourceUrl(uid, $contentCV) 			    ;resourceBulletPoints							;resourceDate[dateformat = dd.MM.yyyy HH:mm:ss];
+											 ;									  ;resource-investment-summer-2019    	  		  ;												;												;11.09.2019 00:00:00;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent	;$contentCV[unique = true]			  ;uid[unique = true] 	                    	  ;resourceTitle[lang = en]           			;resourceShortInformation[lang = en]	;	
+											;									  ;resource-investment-summer-2019      		  ;Investment Highlights Summer 2019    		;"Saudi Arabia's investment news in Q2 2019"	;
+
+
+INSERT_UPDATE InvestSaudiResourceComponent 	;$contentCV[unique = true]			  ;uid[unique = true]							  ;resourceTitle[lang = ar]           		 	;resourceShortInformation[lang = ar]	;
+											;									  ;resource-investment-summer-2019      		  ;$titleAr 							     	;$shortDescAr	;
+
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true]			;uid[unique = true]                   			  ; resourceDetailsImage(code, $contentCV)		; resourceThumbnailImage(code, $contentCV)    ; resourceFullReport(qualifier, $contentCV);
+                                          ;                          			;resource-investment-summer-2019              	  ;Banner-Image-Summer-2019.jpg     			; Summer-2019-Thumbnail_01.jpg               ; media-container-summer-2019 	;
+
+
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]											  ;resourceFullDescription 
+										  ;                         ;resource-investment-summer-2019                              ;"
+<p>Investment in Saudi Arabia is taking place at a faster rate today than ever before, with 291 overseas businesses granted investor licenses in the second quarter of 2019. </p>
+<p>Investors all over the world are bringing their businesses to the Kingdom, with major new investors in the last quarter from the UK, USA, France, Egypt, China, and India among many others. </p>
+<p>In this second edition of ''Investment highlights '', we present some of the most exciting updates from across Saudi Arabia's investment environment, as well as updates on the latest opportunities, reforms, and incentives. </p>
+<p>In this report:</p>
+<ul>
+<li>	New licenses figures</li>
+<li>	Top countries of origin</li>
+<li>	Top sectors of new investment</li>
+<li>    Major projects and opportunities</li>
+</ul>
+";
+
+INSERT_UPDATE InvestSaudiResourceComponent;$contentCV[unique = true];uid[unique = true]												;resourceFullDescription [lang = ar]
+										  ;							;resource-investment-fall-2019                                  ;"
+<p>أعلنت الهيئة العامة للاستثمار عن إصدار 291 رخصة استثمار أجنبي خلال الربع الثاني من عام 2019، ما يعادل أكثر من الضعف مقارنة بنفس الفترة من عام 2018، وبزيادة نسبتها( 103%) مقارنة مع الربع الأول من عام 2019، بمعدل 5 رخص استثمار أجنبي تصدر يوميًّا. </p>
+<p>وشهدت نسب النمو في رخص الاستثمار الأجنبي الصادرة في الربع الثاني من عام 2019 كافة القطاعات المستهدفة ، إذ شهد قطاع البناء إصدار 61 رخصة، إضافة إلى القطاعات الأخرى مثل قطاع الاتصالات وتقنية المعلومات الذي شهد إصدار 51 رخصة، وقطاع التصنيع الذي شهد إصدار 45 رخصة، بالإضافة إلى عدد التراخيص المتنامي في القطاعات الأخرى.</p>
+<p>كما يشهد السوق السعودي اهتمام المستثمرين من كافة أنحاء العالم، حيث تميز هذا الربع بترخيص عدد من الشركات البريطانية والأمريكية والفرنسية، إضافة إلى شركات أخرى من مصر والصين والهند وغيرها من الدول.</p>
+<p>يستعرض تقرير مستجدات الاستثمار في نسخته للربع الثاني أهم أخبار بيئة الاستثمار حول المملكة، وأحدث الفرص الاستثمارية والإصلاحات الاقتصادية والمحفزات التي تقدمها المملكة في بيئة تتميز بسهولة ممارسة الأعمال.</p>
+<ul>يتضمن التقرير:</ul>
+<li>أرقام التراخيص الجديدة</li>
+ <li>أكبر الدول المستثمرة</li>
+ <li>أكثر القطاعات استثمارًا</li>
+<li>المشاريع الكبرى والفرص</li>
+";

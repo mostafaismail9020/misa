@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:noNamespaceSchemaLocation="items.xsd">
+	<relations>
+		<relation generate="true" localized="false" code="B2BCustomer2ScpiOutboundB2BCustomerProcess"
+				  autocreate="true">
+			<sourceElement type="B2BCustomer" cardinality="one"
+						   qualifier="b2bCustomer">
+				<modifiers initial="true" optional="true" />
+			</sourceElement>
+			<targetElement type="ScpiOutB2BCustomerProcess" cardinality="many"
+						   qualifier="scpiOutB2BCustomerProcess">
+				<modifiers initial="true" optional="true" />
+			</targetElement>
+		</relation>
+		
+		<relation generate="true" localized="false" code="InvestmentOpportunity2ScpiOutboundInvestmentOpportunityProcess"
+				  autocreate="true">
+			<sourceElement type="CsTicket" cardinality="one"
+						   qualifier="csTicket">
+				<modifiers initial="true" optional="true" />
+			</sourceElement>
+			<targetElement type="ScpiOutInvestmentOpportunityProcess" cardinality="many"
+						   qualifier="scpiOutInvestmentOpportunityProcess">
+				<modifiers initial="true" optional="true" />
+			</targetElement>
+		</relation>
+		
+	</relations>
+	<itemtypes>
+
+		<itemtype code="SAPCpiOutboundCustomer" autocreate="false" generate="false" >
+			<attributes>
+
+				<attribute qualifier="entityCode" type="java.lang.String">
+					<persistence type="property"/>
+				</attribute>
+
+				<attribute qualifier="otherEntityName" type="java.lang.String">
+					<persistence type="property"/>
+				</attribute>
+
+				<attribute qualifier="department" type="java.lang.String">
+					<persistence type="property"/>
+				</attribute>
+
+				<attribute qualifier="position" type="java.lang.String">
+					<persistence type="property"/>
+				</attribute>
+
+				<attribute qualifier="phoneCountryCode" type="java.lang.String">
+					<persistence type="property"/>
+				</attribute>
+
+			</attributes>
+
+		</itemtype>
+
+		<itemtype code="ScpiOutB2BCustomerProcess" autocreate="true" generate="true"
+				  jaloclass="com.investsaudi.scpi.outbound.process.ScpiOutB2BCustomerProcess"
+				  extends="BusinessProcess">
+
+		</itemtype>
+
+		<itemtype code="ScpiOutInvestmentOpportunityProcess" autocreate="true" generate="true"
+				  jaloclass="com.investsaudi.scpi.outbound.process.ScpiOutInvestmentOpportunityProcess"
+				  extends="BusinessProcess">
+
+		</itemtype>
+
+	</itemtypes>
+</items>

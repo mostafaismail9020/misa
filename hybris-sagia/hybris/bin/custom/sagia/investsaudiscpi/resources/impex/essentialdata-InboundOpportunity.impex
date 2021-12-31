@@ -1,0 +1,11 @@
+INSERT_UPDATE IntegrationObject; code[unique = true];
+                               ; InboundOpportunity ;
+
+INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code)    ; root[default = false]; itemTypeMatch(code)
+                                   ; InboundOpportunity                    ; CsTicket           ; CsTicket      ; true                 ; ALL_SUB_AND_SUPER_TYPES ;
+                                   ; InboundOpportunity                    ; CsTicketState      ; CsTicketState ;                      ; ALL_SUBTYPES            ;
+
+INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false]
+                                            ; InboundOpportunity:CsTicket                                        ; ticketID                    ; CsTicket:ticketID                                  ;                                                           ; true                   ;
+                                            ; InboundOpportunity:CsTicket                                        ; state                       ; CsTicket:state                                     ; InboundOpportunity:CsTicketState                          ;                        ;
+                                            ; InboundOpportunity:CsTicketState                                   ; code                        ; CsTicketState:code                                 ;                                                           ; true                   ;

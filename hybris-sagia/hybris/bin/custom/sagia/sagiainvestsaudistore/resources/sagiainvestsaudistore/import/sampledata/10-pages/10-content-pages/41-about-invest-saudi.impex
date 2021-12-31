@@ -1,0 +1,77 @@
+$page = sample-about-invest-saudi
+$template = portalGlobalTemplate
+$pageName = Invest Saudi
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pagelabel = /about/about-invest-saudi
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]                      ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; Invest Saudi,Invest Saudi - About,About, ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]             ; name                              ; &componentRef                  ; $contentCV[unique = true]; description[lang = en]; description[lang = ar]
+                                                  ; sample-generic-paragraph-about ; About Generic Paragraph Component ; sample-generic-paragraph-about ;                          ; "
+<section class='container mb-5'>
+<div class='umb-grid'>
+<div class='grid-section'>
+<div>
+<div class='container page-contents'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p><strong>Invest Saudi</strong> is Saudi Arabia’s nation-wide investment brand, designed to enable the clear, unified and effective communication of the Kingdom’s investment opportunities to global and domestic investors and private sector businesses.</p>
+<p>Overseen by the Ministry of Investment (MISA), Invest Saudi is enabling closer collaboration and alignment across ministries, government authorities and the private sector to strengthen the promotion of a growing number of investment and business opportunities in the Kingdom, helping to drive sustainable national economic growth.</p>
+<p>Attracting inward investment and increasing private sector participation in the economy are key to the success of  Vision 2030.</p>
+<p>The Kingdom is living in an era where the economy is thriving and the nation is reviving. There is an ocean of untapped potential that needs to be explored. The growth of the Saudi market and a host of new and emerging sectors is opening up doors to innovative investments in a sustainable business environment.</p>
+<p>Our aim is to support you and your business needs wherever we can and create a positive impact for investors throughout their journey in Saudi Arabia.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+"                                                                                                                                                                                                          ; "
+<section class='container mb-5'>
+<div class='umb-grid'>
+<div class='grid-section'>
+<div>
+<div class='container page-contents'>
+<div class='row clearfix'>
+<div class='col-md-12 column'>
+<div>
+<p><strong>'استثمر في السعودية' </strong>هي الهوية الوطنية الموحدة لتسويق الاستثمار في المملكة العربية السعودية بموجب الأمر السام الصادر في عام 2019م ، وقد تم تطويرها وإطلاقها كإحدى مبادرات تحقيق رؤية المملكة 2030 بهدف توحيد الرسائل والجهود بين كافة الوزارات والجهات الحكومية لتعزيز مكانة المملكة كوجهة استثمارية جاذبة.</p>
+<p>ويعد الموقع الإلكتروني (investsaudi.sa) أحد أبرز القنوات التسويقية لهوية 'استثمر في السعودية' للتعريف بالبيئة الاستثمارية والمزايا التنافسية للمملكة وإبراز الفرص الاستثمارية الواعدة في كافة القطاعات ، وتسهيل التواصل مع المستثمرين محليًّا وعالميًّا.</p>
+<p>حظيت 'استثمر في السعودية' منذ إطلاقها بحضور وانتشار دولي وإقليمي ومحلي واسع النطاق من خلال المشاركة في أهم وأبرز المؤتمرات والفعاليات، كما أُطلق تحت مظلتها العديد من المبادرات الإعلامية والتسويقية.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+"
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]  ; linkName[lang = en]; linkName[lang = ar]; url                    ; $contentCV[unique = true]
+                              ; sample-about-misa   ; About Misa         ; عن وزارة الاستثمار ; ministry-of-investment ;
+                              ; sample-about-vision ; About Vision 2030  ; عن رؤية 2030       ; vision-2030            ;
+
+INSERT_UPDATE InvestSaudiAboutButtonsComponent; uid[unique = true]   ; name                 ; aboutMisa(uid, $contentCV); aboutVision(uid, $contentCV); aboutMisaText[lang = en]; aboutVisionText[lang = en]; aboutMisaText[lang = ar]; aboutVisionText[lang = ar]; &componentRef        ; $contentCV[unique = true]
+                                              ; sample-about-buttons ; Sample About Buttons ; sample-about-misa         ; sample-about-vision         ; "ABOUT MISA"            ; "ABOUT VISION 2030"       ; "عن وزارة الاستثمار"    ; "عن رؤية 2030"            ; sample-about-buttons ;
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef)                        ; $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; sample-generic-paragraph-about,sample-about-buttons ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+

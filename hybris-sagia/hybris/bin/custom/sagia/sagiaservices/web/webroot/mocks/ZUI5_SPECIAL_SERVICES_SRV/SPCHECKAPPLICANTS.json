@@ -1,0 +1,278 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "عبدالحليم أحمد ديب",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Syrian",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "604013",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "نظام الحق شير زمين",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Pakistani",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "604015",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "جمال حسن جاوه",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "604022",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "عبدالله طه بخش",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "604023",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "عبدالله خلف الغامدي",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "604024",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "جمال حسن جاوه",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1100030",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu Pradhan",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200042",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu Pradhan",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200043",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu Pradhan",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200044",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu Pradhan",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200046",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu Pradhan",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200047",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu Pradhan",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200048",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu Pradhan",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200049",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu21 Pradhan122",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200058",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu21 Pradhan122",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200059",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu21 Pradhan122",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200060",
+        "ZZAPPLY_CAT": ""
+      },
+      {
+        "__metadata": {
+          "id": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "uri": "http://sagngdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap/ZUI5_SPECIAL_SERVICES_SRV/SPCHECKAPPLICANTSSET('E')",
+          "type": "ZUI5_SPECIAL_SERVICES_SRV.SPCHECKAPPLICANTS"
+        },
+        "LANGUAGE": "E",
+        "ZZAPP_NAME": "Santanu21 Pradhan122",
+        "ZZIQAMA_NUM": "",
+        "ZZIQAMA_EXPIRY": "",
+        "ZZAPP_NATION": "Saudi",
+        "ZZNATION_NOTE": "",
+        "ZZAPP_PROF": "",
+        "ZZSAGIA_BP": "1200061",
+        "ZZAPPLY_CAT": ""
+      }
+    ]
+  }
+}

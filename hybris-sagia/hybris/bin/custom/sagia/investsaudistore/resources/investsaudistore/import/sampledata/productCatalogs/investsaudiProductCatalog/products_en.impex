@@ -1,0 +1,71 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#UTF-8: √Ø¬ø¬Ω√Ø¬ø¬Ω√Ø¬ø¬Ω
+# Localization en
+ 
+# Macros / Replacement Parameter definitions
+$productCatalog=investsaudiProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+# Language
+$lang=en
+
+INSERT_UPDATE Product;code[unique=true];name[lang=$lang];description[lang=$lang];$catalogVersion
+;200100;INVEST SAUDI LOGO MULTILINGUAL;Invest Saudi Logo in other Languages;
+;200101;SAGIA LOGO BILINGUAL;SAGIA Bilingual Logo;
+;200102;INVEST SAUDI BRAND GUIDELINE;These brand guidelines will take you through the brand elements to help you achieve creative and consistent branding;
+;200103;SAGIA BRAND GUIDELINES;SAGIA's Brand Guidelines;
+;200104; INVEST SAUDI MASTER PRESENTATION 2019 (PPT);Invest Saudi Master Presentation - Published on 17th October 2019 (Power Point file);
+;200105; INVEST SAUDI MASTER PRESENTATION 2019 (PDF);Invest Saudi Master Presentation - Published on 17th October 2019 (PDF file);
+;200106;INVESTMENT HIGHLIGHTS SPRING 2019 (ENG-DIGITAL);A special report by SAGIA published in Spring 2019. Outstanding number of new foreign investor licenses granted in Q1 2019 (Digital Copy to share);
+;200107;INVESTMENT HIGHLIGHTS SPRING 2019 (ENG-PRINTABLE);A special report by SAGIA published in Spring 2019. Outstanding number of new foreign investor licenses granted in Q1 2019 (Printable Copy);
+;200108;INVESTMENT HIGHLIGHTS SUMMER 2019 (ENG-DIGITAL);A special report by SAGIA published in Summer 2019, summarizing the latest investments in Q2 2019  (English Version - Digital Copy to share);
+;200109;INVESTMENT HIGHLIGHTS SUMMER 2019 (ARB-DIGITAL);A special report by SAGIA published in Summer 2019, summarizing the latest investments in Q2 2019 (Arabic Version - Digital Copy to share);
+;200110;INVESTMENT HIGHLIGHTS FALL 2019 (ENG-DIGITAL-HIGHRES);A special report by SAGIA published in Fall 2019, summarizing the latest investments in Q3 2019 (English Version - Digital Copy to share - High Resolution);
+;200111;INVESTMENT HIGHLIGHTS FALL 2019 (ENG-DIGITAL-LOWRES);A special report by SAGIA published in Fall 2019, summarizing the latest investments in Q3 2019 (English Version - Digital Copy to share - Low Resolution);
+;200112;INVESTMENT HIGHLIGHTS FALL 2019 (ENG-PRINTABLE);A special report by SAGIA published in Fall 2019, summarizing the latest investments in Q3 2019 (English Version - Printable Copy);
+;200113;INVESTMENT HIGHLIGHTS FALL 2019 (ARB-PRINTABLE);A special report by SAGIA published in Fall 2019, summarizing the latest investments in Q3 2019 (Arabic Version - Printable Copy);
+;200114;WHY SAUDI BROCHURE (ENG-DIGITAL-HIGHRES);Why Invest in Saudi Arabia Brochure (English Version - Digital Copy to share - High Resolution);
+;200115;WHY SAUDI BROCHURE (ENG-DIGITAL-LOWRES);Why Invest in Saudi Arabia Brochure (English Version - Digital Copy to share - Low Resolution);
+;200116;WHY SAUDI BROCHURE (RUS-DIGITAL);Why Invest in Saudi Arabia Brochure (Russian Version - Digital Copy to share);
+;200117;WHY SAUDI BROCHURE (ENG-PRINTABLE);Why Invest in Saudi Arabia Brochure (English Version - Printable Copy);
+;200118;AQUACULTURE BROCHURE (ENG-DIGITAL);Aquaculture Brochure  (English Version - Digital Copy to share);
+;200119;AQUACULTURE BROCHURE (ENG-PRINTABLE);Aquaculture Brochure  (English Version - Printable Copy);
+;200120;CHEMICALS SECTOR BROCHURE (ENG-DIGITAL);Chemicals Sector Brochure  (English Version - Digital Copy to share);
+;200121;CHEMICALS SECTOR BROCHURE (ENG-PRINTABLE);Chemicals Sector Brochure  (English Version - Printable Copy);
+;200122;CONVENTIONAL ENERGY BROCHURE (ENG-DIGITAL);Conventional Energy Brochure  (English Version - Digital Copy to share);
+;200123;CONVENTIONAL ENERGY BROCHURE (ENG-PRINTABLE);Conventional Energy Brochure  (English Version - Printable Copy);
+;200124;FOOD PROCESSING BROCHURE (ENG-DIGITAL);Food Processing Brochure  (English Version - Digital Copy to share);
+;200125;FOOD PROCESSING BROCHURE (ENG-PRINTABLE);Food Processing Brochure  (English Version - Printable Copy);
+;200126;HAJJ AND UMRAH BROCHURE (ENG-DIGITAL);Hajj and Umrah Brochure  (English Version - Digital Copy to share);
+;200127;HAJJ AND UMRAH BROCHURE (ENG-PRINTABLE);Hajj and Umrah Brochure  (English Version - Printable Copy);
+;200128;HEALTHCARE AND LIFE SCIENCES BROCHURE (ENG-DIGITAL);Healthcare and Life Sciences Brochure  (English Version - Digital Copy to share);
+;200129;HEALTHCARE AND LIFE SCIENCES BROCHURE (ENG-PRINTABLE);Healthcare and Life Sciences Brochure  (English Version - Printable Copy);
+;200130;INVESTOR GUIDE BROCHURE (ENG-DIGITAL);Investor Guide Brochure  (English Version - Digital Copy to share);
+;200131;INVESTOR GUIDE BROCHURE (ENG-PRINTABLE);Investor Guide Brochure  (English Version - Printable Copy);
+;200132;MINING AND METAL BROCHURE (ENG-DIGITAL);Mining and Metal Brochure  (English Version - Digital Copy to share);
+;200133;MINING AND METAL BROCHURE (ENG-PRINTABLE);Mining and Metal Brochure  (English Version - Printable Copy);
+;200134;RENEWABLE ENERGY BROCHURE (ENG-DIGITAL);Renewable Energy Brochure  (English Version - Digital Copy to share);
+;200135;RENEWABLE ENERGY BROCHURE (ENG-PRINTABLE);Renewable Energy Brochure  (English Version - Printable Copy);
+;200136;SPORTS BROCHURE (ENG-DIGITAL);Sports Brochure  (English Version - Digital Copy to share);
+;200137;SPORTS BROCHURE (ENG-PRINTABLE);Sports Brochure  (English Version - Printable Copy);
+;200138;TOURISM BROCHURE (ENG-DIGITAL);Tourism Brochure  (English Version - Digital Copy to share);
+;200139;TOURISM BROCHURE (ENG-PRINTABLE);Tourism Brochure  (English Version - Printable Copy);
+;200140;TRANSPORT BROCHURE (ENG-DIGITAL);Transport Brochure  (English Version - Digital Copy to share);
+;200141;TRANSPORT BROCHURE (ENG-PRINTABLE);Transport Brochure  (English Version - Printable Copy);
+;200142;WATER BROCHURE (ENG-DIGITAL);Water Brochure  (English Version - Digital Copy to share);
+;200143;WATER BROCHURE (ENG-PRINTABLE);Water Brochure  (English Version - Printable Copy);
+;200144;CORPORATE FILM; Corporate Film Video ;
+;200145;THE NEXT BIG THING;The Next Big Thing Video ;
+;200146;YOUR NEXT INVESTMENT DESTINATION; Your Next Investment Destination Video ;
+
+;200148;INVESTMENT HIGHLIGHTS WINTER 2020 Q3; Investment Highlights Winter 2020 Q3 ;
+;200149;SAGIA TVC 2020; SAGIA_TVC_2020 ;

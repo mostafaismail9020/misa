@@ -1,0 +1,140 @@
+@-webkit-keyframes autofill {
+    to {
+        background: #f7f7f7;
+    }
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+@keyframes onAutoFillStart {  from {/**/}  to {/**/}}
+@keyframes onAutoFillCancel {  from {/**/}  to {/**/}}
+input:-webkit-autofill {
+	/* Expose a hook for JavaScript when auto fill is shown. */
+	/* JavaScript can capture 'animationstart' events */
+	//animation-name: onAutoFillStart;
+	animation-name: autofill;
+	// Make the background color become yellow really slowly
+	transition: background-color 50000s ease-in-out 0s;
+}
+input:not(:-webkit-autofill) {
+	animation-name: onAutoFillCancel;
+}
+
+.placeholder-shown-polyfill {
+	display: none;
+	&:placeholder-shown {
+		text-indent: 0;
+	}
+}
+
+
+.container-fluid {
+	max-width: 1140px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-bold {
+	font-weight: 600 !important;
+}
+
+.text-clr {
+	&_steelGrey {
+		color: @steel-grey !important;
+	}
+}
+
+
+p {
+	font-size: 14px;
+}
+
+
+.control-label {
+	&_mandatory {
+		&:before {
+			content: '* ';
+		}
+	}
+}
+
+
+.uiTest {
+	padding: 10px 20px;
+	background: rgba(128,128,128,0.1);
+	border: 1px solid grey;
+	margin-bottom: 40px;
+	margin-top: 60px;
+
+	&-headline {
+		color: grey;
+		font-size: 22px;
+		margin-top: 0;
+		margin-bottom: 10px;
+		font-weight: normal;
+	}
+	
+	&-description {
+		font-size: 16px;
+		color: grey;
+	}
+	&-navigationList {
+		padding: 0;
+		position: fixed;
+		
+		li {
+			line-height: 24px;
+			padding: 0 5px;
+		}
+	}
+	&-iconList {
+		margin: 15px;
+		padding: 10px;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			width: auto;
+			height: 60px;
+			min-width: 80px;
+			padding: 3px;
+			margin: 5px;
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
+
+		div {
+			padding: 10px;
+			background-color: rgba(0,0,100,0.1);
+			text-align: center;
+		}
+		svg {
+			
+			height: 32px !important;
+			width: auto!important;
+		}
+		span {
+			text-align: center;
+		}
+	}
+}

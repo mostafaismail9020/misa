@@ -1,0 +1,63 @@
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+$newsTitleAr=اقتصادي / وزير الاستثمار : البيئة الاستثمارية في المملكة جاذبة
+$shortDescAr= اقتصادي / وزير الاستثمار : البيئة الاستثمارية في المملكة جاذبة
+
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media ; code[unique = true]                      			; realFileName                    				; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                    ; new-ministry-of-investment-cyprus.jpg           	;new-ministry-of-investment-cyprus.jpg     		; $siteResource/new-ministry-of-investment-cyprus.jpg                                      ;                 image/jpg                ;                                          ; ""     ;
+					; new-ministry-of-investment-cyprus-thumbnail.jpg   ;new-ministry-of-investment-cyprus-thumbnail.jpg; $siteResource/new-ministry-of-investment-cyprus-thumbnail.jpg                                      ;                 image/jpg                ;                                          ; ""     ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]     ; $medias                  				; $contentCV; 
+                            ; media-container-Cyprus-Saudi ; new-ministry-of-investment-cyprus.jpg	;           ; 
+             
+	
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true]; uid[unique = true]                ; newsTitle[lang = en]                                                                    																	; newsDate[dateformat = dd.MM.yyyy HH:mm:ss]    ;newsUrl
+                                      ;							; new-ministry-of-investment-cyprus	; Ministry of Investment and Cyprus-Saudi Arabia Business Association organize a webinar on Business and Investment Opportunities available in the Kingdom 	; 23.02.2021 00:00:00                           ;                     
+
+INSERT_UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]				; newsShortInformation[lang = en]
+									  ;							 ; new-ministry-of-investment-cyprus; "The Ministry of Investment and the Cyprus-Saudi Arabia Business Association organized a webinar for business and investment opportunities in the Kingdom."
+
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]					; newsFullDescription[lang = en]
+                               ;						  ; new-ministry-of-investment-cyprus 	; "
+The webinar involved the participation of the Minister of Energy, Commerce and Industry of the Republic of Cyprus, H.E. Natasa Pilides; the Saudi Ambassador to the Republic of Cyprus, H.E. Khaled bin Mohammed Al-Sharif; the Cypriot Ambassador to the Kingdom of Saudi Arabia, H.E. Stavros Avgoustides, and the Deputy of Investor Outreach at the Ministry of Investment, Nasser Al Mahasher. 
+<p>The participants discussed the attractiveness of the investment environment in the Kingdom, how to get started in the investment journey, and the ease of doing business in various promising sectors across the country.</p>
+<p>In his opening speech, MISA's Al Mahasher showcased the long-standing and growing partnership between Saudi Arabia and Cyprus, which contributed to the development of the two countries' economic prosperity in addition to the growth of their respective private sectors. Al Mahasher also noted the Kingdom's efforts to increase the participation of Cypriot companies, facilitate their access to investment opportunities in the Kingdom and help companies benefit from the ease of doing business reforms </p>
+<p>Further, he explained how the Ministry of Investment works to develop Saudi Arabia's investment environment and attract foreign direct investment (FDI) by providing competitive incentives and regulations, ultimately making the Kingdom one of the most attractive investment destinations globally.</p>
+<p>Al Mahasher also pointed at the Kingdom's exceptional and effective leadership during the COVID-19 pandemic to ensure the safety and health of the citizens and residents, while protecting jobs, business, and the economy. The Ministry of Investment worked with partners from various government agencies to ensure business continuity for the private sector during these unprecedented times, sustaining the investors' confidence on Saudi Arabia's long-term opportunities despite the global pandemic.</p>
+<p>He pointed out that the Kingdom witnessed FDI inflows worth $4.6 billion in 2020, a 7% yearly increase against a decline in global FDI, according to UNCTAD. This comes as a testament to the Kingdom's exciting potential and opportunities for investors, given its status as a G20 country and being a home to a highly educated and young population of over 30 million people, 50% of which under the age of 30.</p>
+<p>Moreover, Al Mahasher indicated that the Kingdom's unique location at the heart of global trade routes plays a key role in the attractiveness of its logistics sector, which is set to keep developing driven by population growth, increased demand for e-commerce, and the mega projects under the Kingdom's Vision 2030. The logistics market in the Kingdom is currently valued at $19 billion and is one of the fastest growing in the world, with the Red Sea intercepting around 12% of global maritime trade.</p>
+<p>Finally, Al Mahasher showcased the potential of the Saudi tourism sector, which is set to witness tremendous growth as mega projects such as the environmentally friendly Red Sea Project will transform the Kingdom's western shores into a luxury tourist destination. The Red Sea Project aims to open 16 hotels by 2023, offering unique experiences in one of the world's hidden natural treasures.</p>
+<p>H.E. Ambassador Khaled Al-Sharif touched on the strength of Saudi-Cypriot relations and the embassy's support for the efforts of the Cyprus-Saudi Arabia Business Association in encouraging investment between the two countries.</p>
+";
+
+UPDATE InvestSaudiNewsComponent; $contentCV[unique = true]; uid[unique = true]					; newsFullDescription[lang = ar]
+                               ;						  ; new-ministry-of-investment-cyprus   ; "
+<p>نظمت ‫وزارة الاستثمار‬ ومجلس الأعمال السعودي القبرصي ندوة افتضية بعنوان إتاحة فرص الأعمال والاستثمار في المملكة، بمشاركة وزيرة الطاقة والتجارة والصناعة القبرصية ناتاشا باليديس، وسفير خادم الحرمين الشريفين لدى جمهورية قبرص خالد بن محمد الشريف وسفير جمهورية قبرص لدى المملكة ستافروس أفجوستيدس ، ووكيل التواصل مع المستثمرين في وزارة الاستثمار ناصر المهاشير.</p>
+<p>وتطرق المشاركون إلى التعريف بجاذبية البيئة الاستثمارية في المملكة، وكيفية بدء رحلة الاستثمار، وسهولة ممارسة الأعمال في مختلف القطاعات الواعدة في المملكة.</p>
+<p>واستعرض المهاشير في كلمته الافتتاحية الشراكة المتنامية التي امتدت لعقود بين المملكة وقبرص، حيث أسهمت في تنمية حاجات البلدين الاقتصادية وازدهار القطاع الخاص, مشيرة إلى رغبة المملكة في زيادة مشاركة الشركات القبرصية، وتسهيل وصولها إلى الفرص الاستثمارية في المملكة، والاستفادة من الإصلاحات الكبرى التي تقوم بها لتحسين بيئة الأعمال.</p>
+<p>وأوضح أن وزارة الاستثمار تعمل على تطوير المشهد الاستثماري في المملكة وجذب الاستثمار الأجنبي المباشر، من خلال تطبيق حوافز وأنظمة تعمل على تحسين التنافسية، وتجعل من المملكة وجهة استثمارية عالمية جاذبة، بالإضافة إلى مساعدة الشركات المحلية والعالمية للوصول إلى الفرص المتنوعة عبر اقتصاد مجموعة العشرين.</p>
+<p>وأفاد المهاشير أن المملكة أظهرت خلال جائحة COVID-19، قيادة استثنائية وفعالة لضمان سلامة وصحة المواطن والمقيم وحماية الوظائف والأعمال والاقتصاد، كما عملت وزارة الاستثمار مع الشركاء من الجهات الحكومية لضمان استمرارية الأعمال للقطاع الخاص خلال هذه الأوقات غير المسبوقة، على الرغم من الاضطراب في الاقتصاد العالمي الناجم عن الوباء، ظل المستثمرون واثقين من الفرصة السعودية طويلة الأجل.</p>
+<p>وأشار إلى أن المملكة في عام 2020 شهدت زيادة بنسبة( 7 ٪ )في تدفقات الاستثمار الأجنبي المباشر الوافدة بقيمة 4.6 مليارات دولار التي سُجلت مقابل الانخفاضات العالمية الشاملة، وفقًا للأونكتاد, مبيناً أن المملكة تمتلك إمكانات وفرص مثيرة للمستثمرين، فالمملكة من دول مجموعة العشرين ويبلغ عدد سكانها من الشباب المتعلمين تعليماً عالياً أكثر من 30 مليون شخص، مع حوالي( 50٪) تحت سن ال30 .</p>
+<p>وبيّن أن موقع المملكة المتميز في قلب طرق التجارة العالمية الرئيسة يعد محركًا رئيسًا في نمو سوق الخدمات اللوجستية في المملكة، مدفوعًا أيضًا بالنمو السكاني وزيادة الطلب على التجارة الإلكترونية ومشاريع رؤية المملكة 2030 الضخمة، حيث تبلغ قيمة قطاع الخدمات اللوجستية في المملكة حاليًا 19 مليار دولار أمريكي، ومن المتوقع أن يكون سوق الخدمات اللوجستية الأسرع نموًا في العالم حيث يمثل( 12٪ )من التجارة البحرية العالمية يعبر عبر البحر الأحمر.</p>
+<p>واستعرض وكيل التواصل مع المستثمرين في وزارة الاستثمار إمكانات القطاع السياحي الذي يشهد نمو هائل ويحظى بساحل رائع على طول البحر الأحمر، إذ ستحول المشاريع الضخمة مثل مشروع البحر الأحمر الصديق للبيئة شواطئنا الغربية إلى وجهة سياحية فاخرة، مع تنفيذ مبادرات استدامة طموحة، حيث يخطط المشروع لافتتاح 16 فندقًا بحلول عام 2023، ويقدم تجارب فريدة في أحد الكنوز الطبيعية المخفية في العالم.</p>
+<p>من جانبه تطرق السفير خالد الشريف في كلمته إلى متانة العلاقات السعودية القبرصية وإلى دعم السفارة لجهود مجلس الأعمال بين البلدين، وتشجيع الاستثمار والمضي قدماً لدعم المجلس وتسهيل أعماله.</p>
+";        
+                       
+					   
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]					;newsDetailsImage(code, $contentCV)		;newsThumbnailImage(code, $contentCV)			;$galleryImages	;&componentRef   ;
+									  ;							;new-ministry-of-investment-cyprus  ;new-ministry-of-investment-cyprus.jpg	;new-ministry-of-investment-cyprus-thumbnail.jpg;  				;new-ministry-of-investment-cyprus;
+
+INSERT_UPDATE InvestSaudiNewsComponent;$contentCV[unique = true];uid[unique = true]					;newsTitle[lang = ar];newsShortInformation[lang=ar];
+									  ;							;new-ministry-of-investment-cyprus  ;$newsTitleAr        ;$shortDescAr;    
+                                                              

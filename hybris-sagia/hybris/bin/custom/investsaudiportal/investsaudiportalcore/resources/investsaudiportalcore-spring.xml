@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="investsaudiportalSystemSetup" class="com.investsaudi.portal.core.setup.InvestSaudiPortalCoreSystemSetup"
+          parent="abstractCoreSystemSetup"/>
+
+    <import resource="classpath:/investsaudiportalcore/cms/investsaudiportalcms-spring.xml"/>
+
+    <bean id="investSaudiProductService"
+          class="com.investsaudi.portal.core.service.impl.InvestSaudiProductServiceImpl"/>
+    
+    <bean id="investSaudiNewsService"
+          class="com.investsaudi.portal.core.service.impl.InvestSaudiNewsServiceImpl" />
+
+    <bean id="investSaudiOpportunityDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiOpportunityDaoImpl">
+        <constructor-arg value="OpportunityProduct"/>
+    </bean>
+
+    <bean id="investSaudiSuccessStoryDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiSuccessStoryDaoImpl">
+        <constructor-arg value="SuccessStoryProduct"/>
+    </bean>
+
+    <bean id="investSaudiProductDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiProductDaoImpl">
+        <constructor-arg value="Product"/>
+    </bean>
+    
+    <bean id="investSaudiNewsComponentDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiNewsComponentDaoImpl">
+        <constructor-arg value="InvestSaudiNewsComponent" />
+    </bean>
+
+    <bean id="contactTicketParameterPopulator" class="com.investsaudi.portal.core.populator.ContactTicketPopulator" />
+
+    <bean id="contactTicketParameterConverter" parent="abstractPopulatingConverter">
+        <property name="targetClass" value="com.investsaudi.portal.core.model.ContactTicketModel"/>
+        <property name="populators">
+            <list merge="true">
+                <ref bean="ticketParameterPopulator"/>
+                <ref bean="contactTicketParameterPopulator"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="contactTicketBusinessService" class="com.investsaudi.portal.core.service.ContactTicketBusinessService" parent="defaultTicketBusinessService" />
+
+
+    <bean id="contactRecipientTypeEntry" depends-on="recipientTypeToContextClassMap" parent="mapMergeDirective">
+        <property name="key">
+            <util:constant static-field="de.hybris.platform.ticket.enums.CsEmailRecipients.CONTACT"/>
+        </property>
+        <property name="value" value="com.investsaudi.portal.core.contact.ContactTicketContext"/>
+    </bean>
+
+    <bean id="contactTicketEventStrategy" class="de.hybris.platform.ticket.strategies.impl.DefaultTicketEventStrategy" parent="defaultTicketEventStrategy">
+        <property name="ticketCreatedType" value="contactCreationEvent"/>
+    </bean>
+
+    <bean id="sendEmailTaskRunner" class="de.hybris.platform.ticket.task.SendEmailTaskRunner" >
+        <property name="i18NService" ref="i18NService" />
+        <property name="ticketEventEmailStrategy" ref="contactTicketEventEmailStrategy"/>
+    </bean>
+
+    <bean id="contactTicketEventEmailStrategy" class="com.investsaudi.portal.core.contact.ContactTicketEventEmailStrategy" parent="defaultTicketEventEmailStrategy">
+        <property name="mediaService" ref="mediaService"/>
+        <property name="rendererService" ref="rendererService" />
+    </bean>
+    <bean id="investSaudiSiteMapDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiSiteMapDaoImpl">
+    </bean>
+
+    <bean id="investSaudiSiteMapService"
+          class="com.investsaudi.portal.core.service.impl.InvestSaudiSiteMapServiceImpl"/>
+
+    <bean id="investSaudiWebinarRegistrationService"
+          class="com.investsaudi.portal.core.service.impl.InvestSaudiWebinarRegistrationServiceImpl"/>
+
+    <bean id="investSaudiWebinarService"
+          class="com.investsaudi.portal.core.service.impl.InvestSaudiWebinarServiceImpl"/>
+
+    <bean id="investSaudiWebinarDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiWebinarDaoImpl">
+        <constructor-arg value="InvestSaudiWebinar"/>
+    </bean>
+
+    <bean id="investSaudiGenerateEmail"
+          parent="abstractGenerateEmailAction">
+        <property name="frontendTemplateName" value="WebinarRegistrationEmailTemplate"/>
+    </bean>
+
+    <bean id="InvestSaudiWebinarRegistrationProcessDefinitionResource"
+          class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+        <property name="resource" value="classpath:/investsaudiportalcore/processes/InvestSaudiWebinarRegistrationProcess.xml"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,31 @@
+INSERT_UPDATE RealSector			;name[unique=true]			    ;value      ;displayName[lang = en]   		;displayName[lang = ar] 
+                                    ;"Real GDP"       			    ;"1.8"  	;"Real GDP"						;"الناتج المحلي الإجمالي الحقيقي"			
+									;"Oil Sector"	  	 			;"-6.9"		;"Oil Sector"                   ;" القطاع النفطي"
+									;"Non-oil Sector" 	 			;"8.4"		;"Non-oil Sector"               ;"القطاع غير النفطي"
+									;"Private Sector" 	 			;"11.1"		;"Private Sector"               ;"القطاع الخاص" 
+									;"Government Sector" 			;"2.3"		;"Government Sector"            ;"القطاع الخاص" 
+									
+INSERT_UPDATE MonetarySector		;value		;label[lang = en]  ;label[lang = ar] 		;name[unique=true]			 				    ; year[lang = en]	; year[lang = ar]						;displayName[lang = en] 				;displayName[lang = ar] 			
+									;"2,238.8"	;"Billion SAR"	   ;"مليار ريال سعودي"	 		;"M3"   										;"Q2 2021"			;"الربع الثاني لعام 2021"				;"M3"                                   ;" عرض النقود" 
+									;"1,333.3"	;"Billion SAR"	   ;"مليار ريال سعودي"	 		;"Demand Deposits"  							;"Q2 2021"			;"الربع الثاني لعام 2021"				;"Demand Deposits"                      ;"الودائع تحت الطلب"
+									;"445.2"	;"Billion SAR"	   ;"مليار ريال سعودي"	 		;"Time & Savings Deposits"   					;"Q2 2021"			;"الربع الثاني لعام 2021"				;"Time & Savings Deposits"              ;"الودائع لأجل وودائع الادخار"
+									;"251.6"	;"Billion SAR"	   ;"مليار ريال سعودي"	 		;"Other Quasi-Monetary Deposits"   				;"Q2 2021"			;"الربع الثاني لعام 2021"				;"Other Quasi-Monetary Deposits"        ;"الودائع شبه النقدية الأخرى"
+									;"1,864.5"	;"Billion SAR"	   ;"مليار ريال سعودي"	 		;"Credit to private Sector"   					;"Q2 2021"			;"الربع الثاني لعام 2021"				;"Credit to private Sector"             ;" الائتمان الممنوح للقطاع الخاص"
+									;"0.6%"  	;""	    			;""	    				;"Inflation"   									;"Sep 2021"			;"Sep 2021"							    ;"Inflation"                            ;"التضخم" 
+									
+									
+INSERT_UPDATE FiscalSector			;value		;label[lang = en]  	;label[lang = ar]  		;name[unique=true]							; year[lang = en]		; year[lang = ar]						;displayName[lang = en] 				;displayName[lang = ar] 			
+									;"-0.6%"	;""	    			;""	    				;"Budget Deficit % GDP "   			        ;"2021"					;"2021"									;"Budget Deficit % GDP "                ;"نسبة العجز في الميزانية من الناتج المحلي الإجمالي" 
+									;"248.1"	;"Billion SAR"	    ;"مليار ريال سعودي"		;"Gov Rev"  								;"Q2 2021"				;"الربع الثاني لعام 2021"				;"Gov Rev"                              ;" الإيرادات الحكومية"
+									;"252.7"	;"Billion SAR"	    ;"مليار ريال سعودي"		;"Gov Exp"   								;"Q2 2021"				;"الربع الثاني لعام 2021"				;"Gov Exp"                              ;" المصروفات الحكومية"
+									;"922.8"	;"Billion SAR"	    ;"مليار ريال سعودي"		;"Debt"   									;"Q2 2021"				;"الربع الثاني لعام 2021"				;"Debt"                                 ;"الدين العام"
+									;"4.6"		;"Billion SAR"	    ;"مليار ريال سعودي"		;"Deficit/Surplus"   						;"Q2 2021"				;"الربع الثاني لعام 2021"			    ;"Deficit/Surplus"                      ;"عجز / فائض " 
+									                                                                                                                                                                                                            
+INSERT_UPDATE ExternalSector		;value			;label[lang = en] ;label[lang = ar]  	;name[unique=true]							; year[lang = en]		; year[lang = ar]						;displayName[lang = en] 				;displayName[lang = ar] 
+									;"238,623"		;"Million SAR"	  ;"مليون ريال سعودي"	  	;"Merchandise Exports"   					;"Q2-2021"				;"الربع الثاني لعام 2021"			    ;"Merchandise Exports"                  ;"الصادرات السلعية" 
+									;"140,944"		;"Million SAR"	  ;"مليون ريال سعودي"	  	;"Merchandise Imports"  	    			;"Q2-2021"				;"الربع الثاني لعام 2021"			    ;"Merchandise Imports"                  ;"الواردات السلعية"
+									;"379,567"		;"Million SAR"	  ;"مليون ريال سعودي"	  	;"Trade Volume"   							;"Q2-2021"				;"الربع الثاني لعام 2021"				;"Trade Volume"                         ;"حجم التجارة" 
+									;"97,679"		;"Million SAR"	  ;"مليون ريال سعودي"	  	;"Trade Balance"   							;"Q2-2021"				;"الربع الثاني لعام 2021"				;"Trade Balance"                        ;"الميزان التجاري" 
+									;"45,064"		;"Million SAR"	  ;"مليون ريال سعودي"	  	;"Current Account"   						;"Q2-2021"				;"الربع الثاني لعام 2021"				;"Current Account"                      ;"الحساب الجاري"
+									
+

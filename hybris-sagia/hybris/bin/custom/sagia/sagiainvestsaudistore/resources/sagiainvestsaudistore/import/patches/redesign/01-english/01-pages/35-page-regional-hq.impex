@@ -1,0 +1,357 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalRegionalHQTemplate
+$page = regional-head-quarters
+$pageName = Regional Head Quarters 
+$pageTitleEn = $pageName
+$pageLabel = /sectors-opportunities/regionalHQ
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; keywords[lang = en]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; 			     ; $pageName             ; 											 ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+############# MEDIA AND COMPONENTS START ######################
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique = true]; uid[unique = true] 									; name						  	  ; linkName  [lang = en]     ; linkName [lang = ar] 		    ;url									; &linkRef
+							   ;						  ; kingdom-culture-video-link-$page					; kingdom-culture-video 	      ;			                  ;                                 ;https://youtube.com/embed/OXm9sY1Beho 	; kingdom-culture-video-link-$page
+																																							                                                   
+							   ;						  ; lilly-success-stories-video-link-$page				; lilly-success-stories-video 	  ;  		                  ;                                 ;https://youtube.com/embed/dVd2uz7ufwQ 	; lilly-success-stories-video-link-$page
+					           ;						  ; pepsico-success-stories-video-link-$page			; pepsico-success-stories-video   ;    	                  	  ;                                 ;https://youtube.com/embed/N5zbd7lceiA 	; pepsico-success-stories-video-link-$page
+					           ;						  ; the-kingdom-glance-video-link-$page					; the-kingdom-glance-video 	      ;	Read More	              ;                                 ;https://localhost:9002/en/aboutKingdom ; the-kingdom-glance-video-link-$page
+					           ;						  ; regional-head-quarters-link-$page					; the-kingdom-glance-link 	      ;	Apply Now	              ;                                 ;https://investsaudi.sa/en/login		; regional-head-quarters-link-$page
+					          
+
+
+
+#########################################################
+
+
+INSERT_UPDATE Media	; code[unique = true]         							; realFileName             					                ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]				; mime[default = 'image/jpeg']  ; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; rhq-header-banner-image.jpg 							; rhq-header-banner-image.jpg 			                	; $siteResource/rhq-header-banner-image.jpg 	 								  			; image/png						;										   ; ""     ;
+					; RHQ-Map-animation_v3.mp4 								; RHQ-Map-animation_v3.mp4 			                		; $siteResource/RHQ-Map-animation_v3.mp4		 	 								  		; video/mp4						;										   ; ""     ;
+					; RHQ-Map-animation_v3_Arabic-v4-.mp4 					; RHQ-Map-animation_v3_Arabic-v4-.mp4 			            ; $siteResource/RHQ-Map-animation_v3_Arabic-v4-.mp4		 	 								; video/mp4						;										   ; ""     ;
+					
+					
+					; relocation-services-top-image.jpg	 					; relocation-services-top-image.jpg				            ; $siteResource/relocation-services-top-image.jpg	 								  		; image/png						;										   ; ""     ;
+					; concierge-services-top-image.jpg   					; concierge-services-top-image.jpg   	                	; $siteResource/concierge-services-top-image.jpg    								  		; image/png						;										   ; ""     ;
+					; facilitation-services-top-image.jpg 					; facilitation-services-top-image.jpg			            ; $siteResource/facilitation-services-top-image.jpg 								  		; image/png						;										   ; ""     ;
+					; professional-services-top-image.jpg					; professional-services-top-image.jpg	                	; $siteResource/professional-services-top-image.jpg 								  		; image/png						;										   ; ""     ;
+					; exclusive-discounts-top.jpg         					; exclusive-discounts-top.jpg        			            ; $siteResource/exclusive-discounts-top.jpg         								  		; image/png						;										   ; ""     ;
+						
+					; relocation-services-icon.png	 						; relocation-services-icon.png				                ; $siteResource/relocation-services-icon.png	 								  		    ; image/png						;										   ; ""     ;
+					; concierge-services-icon.png   						; concierge-services-icon.png   	                		; $siteResource/concierge-services-icon.png    								  				; image/png						;										   ; ""     ;
+					; facilitation-services-icon.png 						; facilitation-services-icon.png			                ; $siteResource/facilitation-services-icon.png 								  				; image/png						;										   ; ""     ;
+					; professional-services-icon.png						; professional-services-icon.png	                		; $siteResource/professional-services-icon.png 								  				; image/png						;										   ; ""     ;
+					; exclusive-discounts-icon.png   						; exclusive-discounts-icon.png  			                ; $siteResource/exclusive-discounts-icon.png   								  				; image/png						;										   ; ""     ;
+						
+					; lilly-success-stories-icon.jpg 		 				; lilly-success-stories-icon.jpg 					        ; $siteResource/lilly-success-stories-icon.jpg 		 								  		    ; image/png						;										   ; ""     ;
+					; eai-success-stories-icon.jpg							; eai-success-stories-icon.jpg				               	; $siteResource/eai-success-stories-icon.jpg			 								  				; image/png						;										   ; ""     ;
+					; baker-huges-success-stories-icon.png  				; baker-huges-success-stories-icon.png 			            ; $siteResource/baker-huges-success-stories-icon.png  								  				; image/png						;										   ; ""     ;
+					; pepsico-success-stories-icon.jpg 						; pepsico-success-stories-icon.jpg 		                	; $siteResource/pepsico-success-stories-icon.jpg 	 								  				; image/png						;										   ; ""     ;
+					; alderley-success-stories-icon.jpg	 					; alderley-success-stories-icon.jpg				            ; $siteResource/alderley-success-stories-icon.jpg	 								  		    ; image/png						;										   ; ""     ;
+					; gleeds-success-stories-icon.jpg		 				; gleeds-success-stories-icon.jpg					        ; $siteResource/gleeds-success-stories-icon.jpg		 								  				; image/png						;										   ; ""     ;
+					
+					; opterna-icon.png	 									; opterna-icon.png				            				; $siteResource/opterna-icon.png	 								  		    ; image/png						;										   ; ""     ;
+					; opterna-image-icon.png		 						; opterna-image-icon.png							        ; $siteResource/opterna-image-icon.png		 								  				; image/png						;										   ; ""     ;
+					; philips-sucess-stories-icon.png	 					; philips-sucess-stories-icon.png				            ; $siteResource/philips-sucess-stories-icon.png	 								  		    ; image/png						;										   ; ""     ;
+					
+					
+					; lilly-ltd-success-stories-image.jpg		 			; lilly-ltd-success-stories-image.jpg				        ; $siteResource/lilly-ltd-success-stories-image.jpg										  		    ; image/png						;										   ; ""     ;
+					; eai-systems-success-stories-image.jpg					; eai-systems-success-stories-image.jpg			           	; $siteResource/eai-systems-success-stories-image.jpg			 								  				; image/png						;										   ; ""     ;
+					; baker-hugesceo-success-stories-image.png				; baker-hugesceo-success-stories-image.png			        ; $siteResource/baker-hugesceo-success-stories-image.png	 								  				; image/png						;										   ; ""     ;
+					; pepsico-success-stories-image.jpg						; pepsico-success-stories-image.jpg			            	; $siteResource/pepsico-success-stories-image.jpg											  				; image/png						;										   ; ""     ;
+					; alderly-success-storie-image.jpg						; alderly-success-storie-image.jpg					        ; $siteResource/alderly-success-storie-image.jpg											  		    ; image/png						;										   ; ""     ;
+					; gleeds-success-stories-images.jpg			 			; gleeds-success-stories-images.jpg					        ; $siteResource/gleeds-success-stories-images.jpg											  				; image/png						;										   ; ""     ;
+					
+					; opterna-success-banner.png							; opterna-success-banner.png					        	; $siteResource/opterna-success-banner.png											  		    ; image/png						;										   ; ""     ;
+					; opterna-success-image.png			 					; opterna-success-image.png					        		; $siteResource/opterna-success-image.png											  				; image/png						;										   ; ""     ;
+					
+
+					; riyadh-background-image.jpg			                ; riyadh-background-image.jpg			                 	; $siteResource/riyadh-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; makkah-background-image.jpg			                ; makkah-background-image.jpg			                 	; $siteResource/makkah-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; medina-background-image.jpg			                ; medina-background-image.jpg			                 	; $siteResource/medina-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; qassim-background-image.jpg			                ; qassim-background-image.jpg			                 	; $siteResource/qassim-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; eastern-background-image.jpg			                ; eastern-background-image.jpg			                 	; $siteResource/eastern-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+					; asir-background-image.jpg				                ; asir-background-image.jpg				                 	; $siteResource/asir-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; tabuk-background-image.jpg				            ; tabuk-background-image.jpg				                ; $siteResource/tabuk-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; hail-background-image.jpg				                ; hail-background-image.jpg				                 	; $siteResource/hail-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; northern-borders-background-image.jpg	                ; northern-borders-background-image.jpg	                 	; $siteResource/northern-borders-background-image.jpg						  ; image/jpeg					 ;											; ""   ;
+					; jazan-background-image.jpg				            ; jazan-background-image.jpg				                ; $siteResource/jazan-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; najran-background-image.jpg			                ; najran-background-image.jpg			                 	; $siteResource/najran-background-image.jpg								  	  ; image/jpeg					 ;											; ""   ;
+					; al-baba-background-image.jpg			                ; al-baba-background-imagejpg			                 	; $siteResource/al-baba-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+					; al-jouf-background-image.jpg			                ; al-jouf-background-image.jpg			                 	; $siteResource/al-jouf-background-image.jpg								  ; image/jpeg					 ;											; ""   ;
+																			  
+					; riyadh-province-city-map.jpg			                ; riyadh-province-city-map.jpg			                 	; $siteResource/riyadh-province-city-map.jpg								  ; image/jpeg					 ;											; ""   ;
+					; riyadh_city-map-arabic.svg			                ; riyadh_city-map-arabic.svg			                 	; $siteResource/riyadh_city-map-arabic.svg								  	  ; image/svg+xml					 ;											; ""   ;
+					
+					
+					; province-cultural-events.png							        ; province-cultural-events.png							               	; $siteResource/province-cultural-events.png										  	  ; image/jpeg					 ;											; ""   ;
+					; province-music-concerts.png             			            ; province-music-concerts.png             			               	; $siteResource/province-music-concerts.png             						  	  ; image/jpeg					 ;											; ""   ;
+					; province-culinary-events.png            			            ; province-culinary-events.png            			               	; $siteResource/province-culinary-events.png            							  ; image/jpeg					 ;											; ""   ;
+					; province-world-class-sporting-events.png			            ; province-world-class-sporting-events.png			               	; $siteResource/province-world-class-sporting-events.png							  ; image/jpeg					 ;											; ""   ;
+																			  
+#					; jazan-special-economic-zone.jpg				        ; jazan-special-economic-zone.jpg				            ; $siteResource/jazan-special-economic-zone.jpg									  ; image/jpeg					 ;											; ""   ;
+#					; ras-al-khair-special-economic-zone.jpg 			    ; ras-al-khair-special-economic-zone.jpg 			        ; $siteResource/ras-al-khair-special-economic-zone.jpg 						  	  ; image/jpeg					 ;											; ""   ;
+#					; alsoudah-special-economic-zone.jpg     			    ; alsoudah-special-economic-zone.jpg     			        ; $siteResource/alsoudah-special-economic-zone.jpg     							  	  ; image/jpeg					 ;											; ""   ;
+#					; special-economic-zone-economic-city.jpg			    ; special-economic-zone-economic-city.jpg			        ; $siteResource/special-economic-zone-economic-city.jpg								  ; image/jpeg					 ;											; ""   ;
+#					; cloud-computing-informatics-area.jpg   			    ; cloud-computing-informatics-area.jpg   			        ; $siteResource/cloud-computing-informatics-area.jpg   								  ; image/jpeg					 ;											; ""   ;
+
+
+
+
+
+
+
+
+
+		
+###########################################################################
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]		 	   ; name								 ; descriptionText[lang = ar]	 ; descriptionText[lang = en]										;descriptionText2 [lang = en]		; buttonText[lang = en]    ; buttonText[lang = ar]   ; image(code, $contentCV)            ; buttonURL(&linkRef)     								; link   ; &componentRef 				  ; $contentCV[unique = true]
+										; regional-head-quarters-banner    ; regional head quarters banner 		 ; 							 	 ; SET UP YOUR REGIONAL HEAD QUARTER IN SAUDI ARABIA				; 						            ;  						   ; 						 ; rhq-header-banner-image.jpg		  ; regional-head-quarters-link-$page		   	    		; true   ; regional-head-quarters-banner  ; 
+
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true]					; content[lang=en]					;&componentRef
+								   ;					   ;regional-head-quarters-paragraph	; Regional Headquarters in the Kingdom of Saudi Arabia: is a unit of a Multinational group duly established under the laws of Saudi Arabia for the purpose of supporting, managing, and providing strategic direction to its branches, subsidiaries and affiliates operating in MENA region. RHQ program invites global companies' regional headquarters to relocate to Saudi Arabia, it was established as a joint initiative between Ministry of Investment (MISA) and Royal Commission for Riyadh City (RCRC).									; regional-head-quarters-paragraph
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true] 			  	 	   ; name 							  		  ; simpleCMSComponents(&componentRef)       ; &componentRef					   		 ; $contentCV[unique = true]
+										; regional-head-quarters-banner-container  ; regional-head-quarters banner container  ; regional-head-quarters-banner 			 ; regional-head-quarters-banner-container   ;
+
+####################################################################
+
+INSERT_UPDATE TheKingdomGlanceComponent ; uid[unique = true]  	; localizedRhqVideo(code, $contentCV)[lang = en]  ; readMore(&linkRef)						; &componentRef 		; $contentCV[unique = true]
+										; the-kingdom-glance	; RHQ-Map-animation_v3.mp4 	              		   ; the-kingdom-glance-video-link-$page		; the-kingdom-glance	;
+
+
+INSERT_UPDATE TheKingdomGlanceContainer ; uid[unique = true]     		    ; simpleCMSComponents(&componentRef) ; headerText [lang = en] 																      ; name  			     		; title[lang=en]      	    			; &componentRef    						; $contentCV[unique = true]
+										; the-kingdom-glance-container		; the-kingdom-glance				 ; Saudi Arabia is the largest economy in MENA and the 18th largest economy in the world	  ; The Kingdom at a Glance		; <p>THE KINGDOM</p> <p>AT A GLANCE</p>	; the-kingdom-glance-container			; 
+
+
+
+###############################################################
+
+INSERT_UPDATE TheKingdomCultureComponent ; uid[unique = true]   	; videoLink(&linkRef)      				; &componentRef 		; $contentCV[unique = true]
+										 ; the-kingdom-culture		; kingdom-culture-video-link-$page   	; the-kingdom-culture	;
+
+
+INSERT_UPDATE TheKingdomCultureContainer ; uid[unique = true]     		    ; simpleCMSComponents(&componentRef)  ; name  			     		 ; title[lang = en]      	   	; &componentRef    					; $contentCV[unique = true]
+										 ; kingdom-culture-container	    ; the-kingdom-culture				  ; The Kingdom Culture			 ; THE KINGDOM CULTURE			; kingdom-culture-container			;		
+
+
+###############################################################
+
+INSERT_UPDATE SupportRegionalHqComponent ; uid[unique = true]  	; headerText [lang = en]     ; image (code, $contentCV)      			 ; icon (code, $contentCV) 					; description [lang = en]																							; &componentRef 					; $contentCV[unique = true]
+										 ; regional-hq1			; Relocation Services		 ; relocation-services-top-image.jpg	     ; relocation-services-icon.png				; <P>Temporary Office Space</P> <P>Apartments or Villas</P> <P>Local Recruitment</P> <P>Arrival Essentials</P>			; regional-hq1						;
+                                         ; regional-hq2         ; Concierge Services		 ; concierge-services-top-image.jpg          ; concierge-services-icon.png              ; <P>Reservations</P> <P>Event Organizers</P> <P>Sport & Fitness</P> <P>Personal Assistant</P>                          ; regional-hq2                      ;
+                                         ; regional-hq3         ; Facilitation Services      ; facilitation-services-top-image.jpg     	 ; facilitation-services-icon.png           ; <P>Staffing</P> <P>Business Setup</P> <P>Home Labor Contractors</P>                                                   ; regional-hq3                      ;
+                                         ; regional-hq4         ; Professional Services      ; professional-services-top-image.jpg    	 ; professional-services-icon.png           ; <P>Tax Consultancy</P> <P>GRO Services</P> <P>Opening Bank Accounts</P>                                               ; regional-hq4                      ;
+                                         ; regional-hq5         ; Exclusive Discounts        ; exclusive-discounts-top.jpg               ; exclusive-discounts-icon.png             ; <P>Airlines</P> <P> Office </P> <P>Accommodation</P> <P>Schools</P>                                                   ; regional-hq5                      ;
+
+
+
+
+INSERT_UPDATE SupportRegionalHqContainer ; uid[unique = true]     		    ; simpleCMSComponents(&componentRef)  									 ; name  			     			 		; title[lang = en]      	    						; &componentRef    						; $contentCV[unique = true]
+										 ; support-regional-hq-container	; regional-hq1, regional-hq2, regional-hq3, regional-hq4, regional-hq5	 ; Support In Setting Up Regional Hq		; <p>SUPPORT IN SETTING UP YOUR</p> <p>REGIONAL HQ IN SAUD</p>	; support-regional-hq-container			; 
+
+
+##################################################################
+
+
+
+INSERT_UPDATE TestimonialsStoriesComponent  ; $contentCV[unique = true]	 ; uid[unique = true]		; video(code, $contentCV)  ; defaultVideo[default=false]   ; videoLink(&linkRef)									; poster(code, $contentCV)						; accordion(code, $contentCV)	 ; companyLogo(code, $contentCV)				; description [lang = en]																																																																																																																																																																																																																		; companyDetails[lang = en]													   				; &componentRef
+									        ;							 ; testimonials-stories1	;				  		   ;                               ; lilly-success-stories-video-link-$page					; lilly-ltd-success-stories-image.jpg			; inverted-icon.png 			 ; lilly-success-stories-icon.jpg 				; "We have been working closely with the Ministry of Investment and moved our regional headquarters to Riyadh. The move has supported Gleeds' regional offices based in Dubai, Abu Dhabi, Qatar, and Cairo as well as benefited our wider global network."																																																																																																																																																										; Dimitri Livadas, President and General Manager, Eli Lilly Ltd     						; testimonials-stories1
+									        ;							 ; testimonials-stories2	;				  		   ;                               ;                                                      	; eai-systems-success-stories-image.jpg			; inverted-icon.png 			 ; eai-success-stories-icon.jpg					; "EAI Systems is a consultancy-led systems integration business headquartered in the UK since 2006. As part of an international delegation, we initially visited Saudi Arabia two years ago. Since then, we have witnessed dazzling transformation in the Kingdom under vision 2030 roadmap and chose Riyadh as our regional headquarters this year. We'll now build our regional capability with local talent to expand our digital transformation business in the Middle East. We look forward to opportunities with Ministries, Banks and Telecoms sector to bring new digital transformation technologies across the region."																																																																; Kailas Lovlekar, CEO, EAI Systems 															; testimonials-stories2
+									        ;							 ; testimonials-stories3	;				 		   ; true                          ;                                                       	; baker-hugesceo-success-stories-image.png		; inverted-icon.png 			 ; baker-huges-success-stories-icon.png 		; "Baker Hughes has been an integral part of Saudi Arabia for more than 80 years, dating back to the Prosperity Well, Dammam #7, the first well drilled in the Kingdom in 1938. As an energy technology company, we are committed to supporting Saudi Vision 2030, with a strong focus on driving the energy transition, building a strong energy ecosystem, and supporting localization initiatives in support of Saudi Arabia's journey towards becoming a global energy hub serving the world. Additionally, expanding Saudi Arabia as one of our regional headquarters will further strengthen our efforts to take energy forward along with our customers and partners in the region - making it safer, cleaner, and more efficient for people and the planet"   																															; Lorenzo Simonelli, Chairman & CEO, Baker Hughes											; testimonials-stories3
+									        ;							 ; testimonials-stories4	;				 		   ;                               ; pepsico-success-stories-video-link-$page   			; pepsico-success-stories-image.jpg				; inverted-icon.png 			 ; pepsico-success-stories-icon.jpg 			; "The country is facilitating the simplicity of doing business and that always helps with our investment decisions. Companies like ours like simplicity, and like the incentives to keep growing and create more jobs."																																																																																																																																																																		; Ramon Laguarta, Chief Executive Officer, PepsiCo    										; testimonials-stories4
+									        ;							 ; testimonials-stories5	;				  		   ;                               ;                                             			; opterna-success-banner.png					; inverted-icon.png 			 ; philips-sucess-stories-icon.png				; "Philips has been present in KSA for more than 80 years collaborating with local stakeholders, providing state-of-the-art technologies and solutions, transferring knowledge and developing Saudi talent. We are committed to maintaining a holistic, long-term presence in the Kingdom and are therefore delighted to announce our partnership with MISA. We have signed the MoU to join the Regional Headquarters Attraction program, wherein we will allocate regional resources and capabilities to serve our strategy in The Kingdom and the larger region. As a world leading health technology company, Philips has been at the forefront in creating collaborations between the public and private sector and has contributed to many of The Kingdom's nationwide Healthcare transformation projects aimed at improving patient and clinical outcomes - aligned to Vision 2030."		; Mohammad Mostafa, General Manager, Philips Health System, Middle East & Turkey (MET)		; testimonials-stories5
+									        ;							 ; testimonials-stories6	;				  		   ;                               ;                                             			; alderly-success-storie-image.jpg				; inverted-icon.png 			 ; alderley-success-stories-icon.jpg			; "Saudi Arabia is an exciting, fast-paced, dynamic, future-focused country with a clear and ambitious long-term energy policy that offers limitless opportunity for supply chain solutions providers like Alderley to fulfill the needs of a world-class energy sector."																																																																																																																																																					; Colin Elcoate, Chief Executive Officer, Alderley 											; testimonials-stories6
+									        ;							 ; testimonials-stories7	;				  		   ;                               ;                                             			; opterna-success-image.png						; inverted-icon.png 			 ; opterna-image-icon.png			 			; "Opterna fully supports Vision 2030 initiatives, particularly the move for local content production and regional headquarters licensing. Given that Saudi Arabia accounts for over 80% of the Middle Eastern economy, and that many international companies benefit from business in the Kingdom, it's only fair that we support these initiatives fully in return." 																																																																																																																														; Najam Syed Hussain, Executive Director, Opterna Arabia 									; testimonials-stories7
+									        ;							 ; testimonials-stories8	;				  		   ;                               ;                                             			; gleeds-success-stories-images.jpg				; inverted-icon.png 			 ; gleeds-success-stories-icon.jpg			 	; "We have been working closely with the Ministry of Investment and moved our regional headquarters to Riyadh. The move has supported Gleeds' regional offices based in Dubai, Abu Dhabi, Qatar, and Cairo as well as benefited our wider global network."																																																																																																																																																									; RICHARD STEER, Chairman, Gleeds 															; testimonials-stories8
+									       
+
+
+INSERT_UPDATE TestimonialsStoriesContainer ; uid[unique = true]     	    ; simpleCMSComponents(&componentRef)																																					; name					; title[lang = en]	 ; &componentRef  					; $contentCV[unique = true]
+										   ; testimonials-stories-container ; testimonials-stories1, testimonials-stories2, testimonials-stories3, testimonials-stories4,testimonials-stories5, testimonials-stories6,testimonials-stories7, testimonials-stories8	; Testimonials			; TESTIMONIALS		 ; testimonials-stories-container	;
+
+
+#########################################################################
+
+
+INSERT_UPDATE ProvinceRegionHomeComponent 	 ;$contentCV[unique = true]	; uid[unique = true]	 	; componentId				; title [lang = en] 		; backgroundImage (code, $contentCV) 		; defaultComponent[default=false] 	; longDescription [lang=en]																																																																						   ; localizedStats (uid, $contentCV)									 	  ; &componentRef
+											 ;							; riyadh-component			; riyadh_data				; Riyadh 					; riyadh-background-image.jpg		 		;  true								; Home to the Kingdom's business capital and largest city, Riyadh is also the new rising star of GCC, offering incredible opportunities to investors from all over the world.																																	   ; riyadh-stats-1,riyadh-stats-2,riyadh-stats-3,riyadh-stats-4         	  ; riyadh-component
+											 ;							; makkah-component			; makkah_data				; Makkah					; makkah-background-image.jpg		 		;  									; Islam's holiest city draws millions of people from around the world every year. The region is home to Jeddah and King Abdullah Economic City on the Red Sea coast, where investors can leverage the international trade routes to serve consumers in the Middle East and North Africa.						   ; makkah-stats-1,makkah-stats-2,makkah-stats-3,makkah-stats-4              ; makkah-component
+											 ;							; medina-component			; medina_data				; Medina					; medina-background-image.jpg		 		;  									; Medina is home to Saudi Arabia’s first UNESCO World Heritage Site AlUla, it is also a booming business hub possessing two industrial areas with a total area of 10 million m2 and 236 factories producing petroleum products, building materials, food products, and a variety of other goods.				   ; medina-stats-1,medina-stats-2,medina-stats-3,medina-stats-4              ; medina-component
+											 ;							; qassim-component			; qassim_data				; Qassim					; qassim-background-image.jpg		 		;  									; A first-class agricultural region with an abundance of water, fertile soil, and agricultural diversity. Qassim has the best access to electricity infrastructure at the national level, a large area of agricultural land, and an outstanding production capacity in food.									   ; qassim-stats-1,qassim-stats-2,qassim-stats-3,qassim-stats-4              ; qassim-component
+											 ;							; eastern-component			; eastern_data				; Eastern					; eastern-background-image.jpg		 		;  									; A major contributor to the majority of the country's oil production and exports, Eastern Province is the largest in the Kingdom, encompassing the entire east coast.																																			   ; eastern-stats-1,eastern-stats-2,eastern-stats-3,eastern-stats-4          ; eastern-component
+											 ;							; asir-component			; asir_data					; Asir						; asir-background-image.jpg		 	 		; 									; Asir is one of the fastest rising tourist destinations in Saudi Arabia, with $3 billion of PIF projects in the pipeline for tourism and infrastructure.																																						   ; asir-stats-1,asir-stats-2,asir-stats-3,asir-stats-4 			  		  ; asir-component                    
+											 ;							; tabuk-component			; tabuk_data				; Tabuk						; tabuk-background-image.jpg		 		;  									; Known for its agricultural products, Tabuk is also an active commercial center and home to several giga-projects including NEOM and the Red Sea Project making it an attractive location for diverse investments across different sectors.																 	   ; tabuk-stats-1,tabuk-stats-2,tabuk-stats-3,tabuk-stats-4   			  	  ; tabuk-component
+											 ;							; hail-component			; hail_data					; Hail						; hail-background-image.jpg		 	 		;  									; Hail is a rapidly developing region with 259 development projects worth more than $1.5 billion. The region is also home to two UNESCO World Heritage Sites.																																					   ; hail-stats-1,hail-stats-2,hail-stats-3,hail-stats-4   			  		  ; hail-component
+											 ;							; northern-borders-component; northern-borders_data		; Northern Borders			; northern-borders-background-image.jpg 	;  									; From its phosphate mines to natural gas fields, the Northern Borders is ready to welcome investors from around the world to discover its natural resources.																																				      ; northern-stats-1,northern-stats-2,northern-stats-3,northern-stats-4      ; northern-borders-component
+											 ;							; jazan-component			; jazan_data				; Jazan						; jazan-background-image.jpg		 		;  									; Situated on the Red Sea coast, Jazan's is home to several islands. Jazan City for Basic and Downstream Industries is one of the most important industrial cities and investment destinations in the region, due to its proximity to international shipping lanes.											      ; jazan-stats-1,jazan-stats-2,jazan-stats-3,jazan-stats-4              	  ; jazan-component
+											 ;							; najran-component			; najran_data				; Najran					; najran-background-image.jpg		 		;  									; One of Saudi Arabia's fastest-growing regions in the Kingdom, Najran invites investors to a beautiul green nature rich in mineral resources and fertile in agricultural products.																															      ; najran-stats-1,najran-stats-2,najran-stats-3,najran-stats-4              ; najran-component
+											 ;							; al-baha-component			; al-baha_data				; Al-Baha					; al-baba-background-image.jpg		 		;  									; With its natural parks, archeological villages, and its wonderful nature, Al-Baha is an attractive investment region for tourism with a lot of potential.																																					      ; al-baha-stats-1,al-baha-stats-2,al-baha-stats-3,al-baha-stats-4          ; al-baha-component
+											 ;							; al-jouf-component			; al-jouf_data				; Al-Jouf					; al-jouf-background-image.jpg		 		;  									; One of the most fertile regions in Saudi Arabia, Al-Jouf region is characterized by its rich agricultural lands, diversity of crops, olive trees and mineral resources. Al-jouf is also renowned for its wind and solar endowment making it an attractive location for renewable energy investments.		      ; al-jouf-stats-1,al-jouf-stats-2,al-jouf-stats-3,al-jouf-stats-4          ; al-jouf-component
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 		;  $contentCV  ; key[lang = en] ; value[lang = en]                               
+
+###### riyadh1 				
+										; riyadh-stats-1			;			   ; 8.7M			; Population  		                             
+										; riyadh-stats-2			;			   ; 4			 	; Chambers of Commerce           	             
+										; riyadh-stats-3   			;			   ; 1				; International Airport			                 
+										; riyadh-stats-4			;			   ; 3,332			; Active factories in Q3 2021					 
+###### makkah2	 	
+										; makkah-stats-1			;			   ; 9M				; Population  		                             
+		                                ; makkah-stats-2			;			   ; 3			 	; Chambers of Commerce           	             
+		                                ; makkah-stats-3   			;			   ; 1				; International Airport			                 
+		                                ; makkah-stats-4			;			   ; 1,741			; Active factories in Q3 2021					 
+	
+###### medina3	 	
+										; medina-stats-1			;			   ; 2.2M			; Population  		                             
+		                                ; medina-stats-2			;			   ; 2			 	; Chambers of Commerce           	             
+		                                ; medina-stats-3   			;			   ; 1				; International Airport			                 
+		                                ; medina-stats-4			;			   ; 351			; Active factories in Q3 2021					 
+	
+###### qassim4	 	
+										; qassim-stats-1			;			   ; 1.5M			; Population  		                             
+		                                ; qassim-stats-2			;			   ; 4			 	; Chambers of Commerce           	             
+		                                ; qassim-stats-3   			;			   ; 1				; International Airport			                 
+		                                ; qassim-stats-4			;			   ; 332			; Active factories in Q3 2021					 
+
+###### eastern5	 	
+										; eastern-stats-1			;			   ; 5.1M			; Population  		                             
+		                                ; eastern-stats-2			;			   ; 3			 	; Chambers of Commerce           	             
+		                                ; eastern-stats-3   		;			   ; 1				; International Airport			                 
+		                                ; eastern-stats-4			;			   ; 1,877			; Active factories in Q3 2021					 
+		
+###### asir6	 	
+										; asir-stats-1				;			   ; 2.3M			; Population  		                             
+		                                ; asir-stats-2				;			   ; 171			; Dams           	             
+		                                ; asir-stats-3   			;			   ; 1				; International Airport			                 
+		                                ; asir-stats-4				;			   ; 312			; Active factories in Q3 2021					 
+			
+###### tabuk7	 	
+										; tabuk-stats-1				;			   ; 949,612		; Population  		                             
+		                                ; tabuk-stats-2				;			   ; 139,119		; number of employees           	             
+		                                ; tabuk-stats-3   			;			   ; 1				; International Airport			                 
+		                                ; tabuk-stats-4				;			   ; 76				; Active factories in Q3 2021					 
+
+###### hail8	 	
+										; hail-stats-1				;			   ; 731,147		; Population  		                             
+		                                ; hail-stats-2				;			   ; 140,712		; number of employees           	             
+		                                ; hail-stats-3   			;			   ; 1				; Domestic Airport			                 
+		                                ; hail-stats-4				;			   ; 83				; Active factories in Q3 2021					 
+	
+###### northern-borders9	 	
+										; northern-stats-1			;			   ; 383,051		; Population  		                             
+		                                ; northern-stats-2			;			   ; 1				; Chambers of Commerce           	             
+		                                ; northern-stats-3   		;			   ; 3				; Domestic Airports			                 
+		                                ; northern-stats-4			;			   ; 39				; Active factories in Q3 2021					 
+
+###### jazan10	 	
+										; jazan-stats-1				;			   ; 1.6M			; Population  		                             
+		                                ; jazan-stats-2				;			   ; 1				; industrial city           	             
+		                                ; jazan-stats-3   			;			   ; 1				; Chambers of Commerce			                 
+		                                ; jazan-stats-4				;			   ; 107			; Active factories in Q3 2021					 
+	
+###### jazan11	 	
+										; najran-stats-1			;			   ; 608,467		; Population  		                             
+		                                ; najran-stats-2			;			   ; 141,955		; number of employees           	             
+		                                ; najran-stats-3   			;			   ; 2				; Domestic Airports			                 
+		                                ; najran-stats-4			;			   ; 42				; Active factories in Q3 2021					 
+	
+###### jazan12	 	
+										; al-baha-stats-1			;			   ; 497,068		; Population  		                             
+		                                ; al-baha-stats-2			;			   ; 3				; Chambers of Commerce           	             
+		                                ; al-baha-stats-3   		;			   ; 1				; Domestic Airports			                 
+		                                ; al-baha-stats-4			;			   ; 31				; Active factories in Q3 2021					 
+
+###### jazan13	 	
+										; al-jouf-stats-1			;			   ; 531,952		; Population  		                             
+		                                ; al-jouf-stats-2			;			   ; 2				; Chambers of Commerce           	             
+		                                ; al-jouf-stats-3   		;			   ; 2				; Domestic Airports			                 
+		                                ; al-jouf-stats-4			;			   ; 68				; Active factories in Q3 2021					 
+	
+
+	
+
+INSERT_UPDATE ProvinceRegionHomeContainer  ; uid[unique = true]				 	 ; name		 				 	; title[lang = en]							; &componentRef                  		; simpleCMSComponents (&componentRef)																																																				; $contentCV[unique = true]
+										   ; province-region-region-hq-container ; Province Region Container	; <p>DISCOVER SAUDI ARABIA'S</p> <p>13 REGIONS</p>			; province-region-region-hq-container    ;  riyadh-component, makkah-component, medina-component,qassim-component,eastern-component,asir-component,tabuk-component,hail-component,northern-borders-component,jazan-component,najran-component,al-baha-component,al-jouf-component;
+
+#########################################################################
+
+INSERT_UPDATE  ProvinceVibrantCulturalComponent ; uid[unique = true]    ; image(code, $contentCV)      			 ; title[lang = en]			 		           ; $contentCV[unique = true]
+											   ; vibrant-culture-1 	    ; province-cultural-events.png					 ; Cultural Events				 	           ;
+                                               ; vibrant-culture-2      ; province-music-concerts.png                      ; Music Concerts                            ;
+                                               ; vibrant-culture-3      ; province-culinary-events.png                     ; Culinary events                           ;
+                                               ; vibrant-culture-4      ; province-world-class-sporting-events.png         ; World-class sporting events                ;
+ 
+
+
+
+INSERT_UPDATE ProvinceBusinessCulturalComponent ; uid[unique = true]    	    ; localizedMapLogo(code, $contentCV)[lang = en]     ; headerText [lang = en]									; provinceCultures(uid, $contentCV)	 											 		 			;	localizedStats (uid, $contentCV)																								; &componentRef 			    ; $contentCV[unique = true]
+												; riyadh-province-cultural		; riyadh-province-city-map.jpg	 					 ; RIYADH HAS A VIBRANT CULTURAL & ENTERTAINMENT SCENE	    ; vibrant-culture-1,vibrant-culture-2,vibrant-culture-3,vibrant-culture-4		         			;	riyadh-business-stats-1,riyadh-business-stats-2,riyadh-business-stats-3,riyadh-business-stats-4									; riyadh-province-cultural		;
+
+
+INSERT_UPDATE StrategicDetailsComponent ; uid[unique=true]	 		        ;  $contentCV  ; key[lang = en] 						; value[lang =en]                                			
+										; riyadh-business-stats-1			;			   ; 50%									; of Saudi Arabia's non-oli GDP comes from Riyadh  		                             
+										; riyadh-business-stats-2			;			   ; 2.3M	    						    ;  Workforce          	             
+										; riyadh-business-stats-3   		;			   ;18th									;  Global city in  PPP-adjusted GDP 			                 
+										; riyadh-business-stats-4			;			   ;4.5M								    ;  population  under the age of 35				 
+
+
+
+
+											  
+INSERT_UPDATE ProvinceBusinessCulturalContainer ; uid[unique = true]				 	; simpleCMSComponents(&componentRef) 		; name		 					; title [lang = en]														; &componentRef   						; $contentCV[unique = true]
+											    ; province-cultural-business-container	; riyadh-province-cultural						; Province Vibrant Cultural		; RIYADH CITY IS THE BUSINESS AND CULTURAL CENTER OF THE KINGDOM		; province-cultural-business-container	;				
+
+
+
+
+
+########################################################################
+
+#INSERT_UPDATE UpcomingSpecialZonesComponent ; uid[unique = true]    		; backgroundImage (code, $contentCV)      		; headerText [lang = en] 											; text [lang = en]											; longDescription [lang = en]																																																																; &componentRef 			 ; $contentCV[unique = true]
+#											; upcoming-special-zone1		; jazan-special-economic-zone.jpg				; Jazan Special Economic Zone										; Special Economic Zone in King Abdullah Economic City		; Jazan Special Economic Zone leverages its strategic location on the Red Sea to excel in manufacturing, food, metals, and logistics, exporting to regional and worldwide markets.																											; upcoming-special-zone1	 ;
+#											; upcoming-special-zone2        ; ras-al-khair-special-economic-zone.jpg        ; Ras Al-Khair Special Economic Zone                                ; Ras Al-Khair Special Economic Zone						; The Ras Al Khair Special Economic Zone capitalizes on Saudi Aramco's significant investments in maritime industry to create one of the world's most competitive shipbuilding clusters.                                                                                                    ; upcoming-special-zone2     ;
+#											; upcoming-special-zone3        ; special-economic-zone-economic-city.jpg       ; Special Economic Zone in King Abdullah Economic City              ; Special Economic Zone in King Abdullah Economic City		; Special Economic Zone in King Abdullah Economic City features a balance between contemporary, urban quality of life and globally competitive infrastructure for logistics, light industries, and pharmaceutical and medical device manufacturing.                                         ; upcoming-special-zone3     ;
+#											; upcoming-special-zone4        ; alsoudah-special-economic-zone.jpg        	; AlSoudah Special Economic Zone                                    ; AlSoudah Special Economic Zone							; At 3,000 meters above sea level, Alsoudah offers a variety of outdoor activities, including health and hospitality. The zone is a quintessential cultural destination for the adventurous at heart.                                                                                       ; upcoming-special-zone4     ;
+#											; upcoming-special-zone5        ; cloud-computing-informatics-area.jpg          ; Cloud Computing and Informatics Area				                ; Cloud Computing and Informatics Area						; The Cloud Special Economic Zone is a global hub for ground-breaking digital innovation. This zone, located within King Abdullah Financial District, aims to accelerate future generations' smart living solutions by empowering the world's most ambitious and forward-looking minds.     ; upcoming-special-zone5     ;
+											
+								
+								
+
+#INSERT_UPDATE UpcomingSpecialZonesContainer ; uid[unique = true]				 		; simpleCMSComponents (&componentRef) 																							; name		 					; title [lang = en]											; &componentRef   						; $contentCV[unique = true]
+#											; upcoming-special-zones-container			; upcoming-special-zone1, upcoming-special-zone2, upcoming-special-zone3, upcoming-special-zone4, upcoming-special-zone5		; Upcoming Special Zones		; UPCOMING SPECIAL ECONOMIC ZONES							; upcoming-special-zones-container		;
+
+
+############# MEDIA AND COMPONENTS END ######################
+
+                                      
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef); $contentCV;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;  ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ;	  regional-head-quarters-banner-container,regional-head-quarters-paragraph,the-kingdom-glance-container,kingdom-culture-container,support-regional-hq-container,testimonials-stories-container,province-region-region-hq-container,province-cultural-business-container     ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;  ; 
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+ 
+

@@ -1,0 +1,111 @@
+$page = news-sagia-and-unctad-announce-global-fdi-summit
+$template = portalGlobalTemplate
+$name = SAGIA AND UNCTAD ANNOUNCE GLOBAL FDI SUMMIT IN RIYADH
+$titleEn = $name
+$titleAr = هيئة الاستثمار والمنظمة الدولية UNCTAD تعلنان عن شراكتهما لتنظيم قمة الاستثمار الأجنبي المباشر في الرياض
+$shortDescEn = SAGIA And UNCTAD To Co-Organize Summit In Riyadh Prior To The G20 Trade And
+$shortDescAr = أعلنت الهيئة العامة للاستثمار ومؤتمر الأمم المتحدة للتجارة والتنمية (UNCTAD) عن
+$pagelabel = /news/sagia-and-unctad-announce-global-fdi-summit-in-riyadh
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]       ; realFileName                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; photo-2020-01-23-21-21-27 ; photo-2020-01-23-21-21-27.jpg ; $siteResource/photo-2020-01-23-21-21-27.jpg                                 ;                             ;                                          ; ""     ; ;
+#                   ; newsThumbnailImage-1 ; $siteResource/newsThumbnailImage-1.jpg                                      ;                             ;                                          ; ""     ; ;
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias                   ; $contentCV; ; ; ;
+                            ; media-container-$page   ; photo-2020-01-23-21-21-27 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; photo-2020-01-23-21-21-27         ; photo-2020-01-23-21-21-27           ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 23.01.2020 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "
+<ul>
+<li>
+<ul>
+<li>SAGIA and UNCTAD to co-organize Summit in Riyadh prior to the G20 Trade and Investment Ministerial Meeting</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>Summit aims to re-energize the global FDI landscape and stimulate global growth</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+<li>Recent reports indicate steady increase in FDI in Saudi Arabia in 2019, despite cross-border investment remaining flat globally</li>
+</ul>
+<p>&nbsp;</p>
+<p>Riyadh, [XX] January 2020 &ndash; During the 2020 World Economic Forum in Davos-Klosters, Switzerland, the Saudi Arabian General Investment Authority (SAGIA) announced its partnership with the United Nations Conference on Trade and Development (UNCTAD) to host the Gobal FDI Summit in Riyadh in October, as Saudi Arabia hosts the G20.</p>
+<p>&nbsp;</p>
+<p>Aimed at identifying and facilitating long-term solutions to challenges affecting FDI and global economic growth, the Global FDI Summit 2020 will include a series of open and candid discussions between leading decision-makers representing corporate entities, government agencies and civil society organzations. The Summit will take place alongside a broader program of G20 meetings taking place in the Kingdom under Saudi Arabia&rsquo;s G20 Presidency.</p>
+<p>&nbsp;</p>
+<p>Commenting on the launch of the Summit, His Excellency Eng. Ibrahim Al Omar, Governor of SAGIA, said: &ldquo;FDI has the potential to transform economies by fostering competition and sharing expertise &ndash; but the full potential is not currently being realized. Saudi Arabia has seen highly encouraging growth in foreign direct investment throughout 2019. This therefore presents the perfect opportunity to bring together key decision makers from across the economy at the Global FDI Summit 2020 to identify the key challenges and establish solutions to stimulate FDI on a global scale.&rdquo;</p>
+<p>&nbsp;</p>
+<p>According to Saudi Arabian Monetary Authority, the Kingdom saw an uptick of 10% in FDI during the first three quarters of 2019 &ndash; its largest increase in a decade &ndash; despite cross-border investment remaining largely flat last year globally.</p>
+<p>&nbsp;</p>
+<p>Al Omar continued: &ldquo;We are delighted to be partnering with UNCTAD on such an important event &ndash; I know that their expertise and research will be a vital part of its success. Together, we look forward to generating tangible, usable outcomes that break down the barriers hindering the growth of FDI, unlock untapped sectors, and drive economic growth for the benefit of all nations.&rdquo;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>James Zhan, Senior Director of investment and enterprise division at UNCTAD, said: &ldquo;Saudi Arabia has seen FDI increase for two consecutive years. The achievement is remarkable against the backdrop of global FDI decline to its lowest level of the past decade. It reflects the strong investor confidence in the country and the success of reforms under Vision 2030. UNCTAD is pleased to jointly organize with Saudi Arabia&rsquo;s General Investment Authority the Global FDI Summit in Riyadh in October which provides a remarkable opportunity to showcase Saudi Arabia&rsquo;s efforts at shaping the future global investment landscape during its G20 Presidency.&rdquo;</p>
+<p>&nbsp;</p>
+<p>The announcement was made during the Invest Saudi Gala Dinner at the 2020 World Economic Forum in Davos, Switzerland, at which more than 100 &nbsp;leading policy makers and business and financial sector leaders were in attendance.</p>
+<p>&nbsp;</p>
+<p>Ahead of Davos, SAGIA announced in its latest Investment Highlights report that 2019 marked a record year for foreign investment in Saudi Arabia, with more than 1,100 new international companies establishing operations in the Kingdom in 2019 &ndash; 54% more than in 2018 and three times more than in 2017. It was also revealed that in the first nine months of 2019, FDI in Saudi Arabia grew 10% compared to the previous year.</p>
+<p>&nbsp;</p>
+<p>This growth reflected the strong momentum generated by a broad series of economic reforms which saw the Kingdom ranked the world&rsquo;s top improver and reformer by the World Bank, climbing 30 places in the World Bank&rsquo;s Doing Business 2020 report &ndash; more than any other country.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>ENDS</p>
+</li>
+</ul>
+"
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "
+<ul>
+<li>
+<p>أعلنت الهيئة العامة للاستثمار ومؤتمر الأمم المتحدة للتجارة والتنمية (UNCTAD)&nbsp;عن شراكتهما لإقامة القمة العالمية للاستثمار الأجنبي المباشر في العاصمة الرياض أكتوبر المقبل، حيث جاء ذلك ضمن حفل العشاء السعودي الذي نظمته هيئة الاستثمار في دافوس تحت شعار&nbsp;""استثمر في السعودية""، وشهد حضور ما يزيد عن 100 من كبار رجال الأعمال وصناع القرار الدوليين، من أكثر من 17 دولة يمثلون ما يقارب 80 جهة.</p>
+<p>&nbsp;</p>
+<p>ومن المنتظر أن تعقد القمة العالمية للاستثمار الأجنبي المباشر 2020 في الرياض كأحد الفعاليات المصاحبة لقمة مجموعة العشرين المنعقدة في الرياض، ولتكون الرياض بذلك أول مدينة في الشرق الأوسط تُقام فيها المناسبة، حيث تجمع هذه الفعالية أكثر من 250 مشاركاً من أهم الخبراء وصناع القرار الدوليين.</p>
+<p>&nbsp;</p>
+<p>من جانبه علق محافظ الهيئة العامة للاستثمار المهندس إبراهيم العمر أن الاستثمار الأجنبي المباشر ممكّنٌ للتحول الاقتصادي عبر تعزيزه للتنافسية الاقتصادية للدول وتوفير إمكانية تبادل الخبرات، منوهًا إلى أن المملكة ما زالت تطمح لتحقيق المزيد عبر جذب الاستثمارات الأجنبية إلى المملكة، لافتاً إلى أن انعقاد القمة العالمية للاستثمار الأجنبي المباشر 2020 في الرياض سيجعل منها منصة تجمع صانعي القرار من مختلف الاقتصادات الدولية وذلك للتباحث حول التحديات الرئيسة وكيفية مواجهتها، كما أشار العمر إلى أن المملكة فخورة بالتعاون مع الأونكتاد لإقامة هذه القمة في الرياض حيث ستكون الخبرات والتجارب المشتركة إضافة مميزة لنجاح انعقادها.</p>
+<p>&nbsp;</p>
+<p>وفي إطار هذه الشراكة؛ علق مدير شعبة التجارة والاستثمار بمؤتمر الأمم المتحدة للتجارة والتنمية (الأونكتاد) جيمس زان أنه على الرغم من التراجع العالمي للاستثمار الأجنبي الذي يشهد انخفاضًا حادًّا منذ مطلع العقد الماضي؛ إلا أن المملكة حققت نجاحًا كبيرًا حيث شهدت زيادة في الاستثمار الأجنبي المباشر على مدى عامين متتالين، مشيرًا إلى أن هذه الزيادة تكشف عن ثقة المستثمرين في الاقتصاد السعودي، ونجاح الإصلاحات الاقتصادية التي نفذتها المملكة على مدار العامين الماضيين.&nbsp;</p>
+<p>&nbsp;</p>
+<p>كما أكد زان أن الأونكتاد يتطلع لإقامة القمة العالمية للاستثمار الأجنبي المباشر 2020 في أكتوبر من العام الجاري في الرياض، لاسيما في ظل مساهمة المملكة في تشكيل الاستثمار العالمي أثناء رئاستها لمجموعة العشرين 2020.</p>
+<p>&nbsp;</p>
+<p>يذكر أن الهيئة العامة للاستثمار أعلنت مؤخرًا عن دخول أكثر من 1130 شركة أجنبية للسوق السعودي خلال عام 2019، حيث شكل هذا الرقم زيادة نسبية بلغت 54% مقارنة مع العام 2018، وزيادة بثلاثة أضعاف عن عدد التراخيص الصادرة في عام 2017، كما حقق الاستثمار الأجنبي المباشر في الثلاثة أرباع من عام 2019 زيادة بلغت 10% مقارنة مع نفس الفترة من العام الماضي، إذ يشكل هذا النمو نتائج سلسلة الإصلاحات الاقتصادية التي تنفذها المملكة، والتي على غرارها قفزت المملكة 30 مرتبة وفق تقرير سهولة ممارسة الأعمال الصادر عن مجموعة البنك الدولي، حيث صنف التقرير المملكة كأكثر الدول إصلاحًا بين كافة الدول التي تضمنها التقرير.</p>
+</li>
+</ul>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

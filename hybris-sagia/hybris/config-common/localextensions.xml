@@ -1,0 +1,93 @@
+<hybrisconfig
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
+	<extensions>
+		<path dir='${HYBRIS_BIN_DIR}' autoload='false'/>
+
+		<!-- Modules -->
+		<extension name="acceleratorcms"/>
+		<extension name="b2bacceleratoraddon"/> 
+		<extension name="b2bacceleratorservices"/>
+		<extension name="b2bapprovalprocess"/>
+		<extension name="b2bcommerce"/>
+		<extension name="b2bcommercebackoffice"/>
+		<extension name="basecommercebackoffice"/> <!-- for base store configurations -->
+		<extension name="cms2"/>
+		<extension name="cms2lib"/>
+		<extension name="cmsbackoffice"/>
+		<extension name="cmssmartedit"/>
+		<extension name="cmssmarteditwebservices"/>
+		<extension name="cmswebservices"/>
+		<extension name="commerceorgaddon" />
+		<extension name="customersupportbackoffice"/>
+		<extension name="customerticketingaddon"/>
+		<extension name="hybrisdatasupplier"/>
+		<extension name="integrationservices"/>
+		<extension name="ldap"/>
+		<extension name="odata2webservices"/>
+		<extension name="pcmbackofficesamplesaddon"/>
+		<extension name="permissionswebservices"/>
+		<extension name="personalizationcmsbackoffice"/>
+		<extension name="personalizationcmsweb"/>
+		<extension name="personalizationsearchbackoffice"/>
+		<extension name="personalizationsearchsamplesaddon"/>
+		<extension name="personalizationsearchsmartedit"/>
+		<extension name="personalizationsearchweb"/>
+		<extension name="personalizationsmartedit"/>
+		<extension name='platformbackoffice' />
+		<extension name="previewwebservices"/>
+		<extension name="promotionengineservices"/>
+		<extension name="sapcore"/>
+		<extension name="sapcoretest"/>
+		<extension name="sapcoreconfigurationbackoffice"/> <!-- for SAP integration configurations -->
+		<extension name="smartedit" />
+		<extension name="smarteditaddon"/>
+		<extension name="smarteditwebservices"/>
+		<extension name="solrfacetsearch"/>
+		<extension name="solrfacetsearchbackoffice"/>
+		<extension name="solrserver"/> 
+
+		<!-- Custom extensions: Sagia -->
+		<extension name="sagiaasmaddon"/>
+		<extension name="sagiabackoffice"/>
+		<extension name="sagiabol"/>
+		<extension name="sagiainvestsaudistore"/>
+		<extension name="investsaudiportalscpi"/>
+		<extension name="sagiacore"/>
+		<extension name="sagiafacades"/>
+		<extension name="sagiainitialdata"/>
+		<extension name="sagiasecchat"/>
+		<extension name="sagiaservices"/>
+		<extension name="sagiasoapservices"/>
+		<extension name="sagiastorefront"/>
+
+		<!-- Custom extensions: Invest Saudi -->
+		<extension name="investsaudisecureportal"/> 
+		<extension name="investsaudistore"/>
+		<extension name="investsaudistorefront"/>
+
+		<!-- Custom extensions: CAS and Misa -->
+		<extension name="casblogaddon"/>
+		<extension name="casblogbackoffice"/>
+		<extension name="misawebservice"/>
+
+            <!-- SCPI Intergration -->
+
+            
+        <extension name="investsaudiscpi"/>
+        <extension name="sapcpicustomerexchangeb2b"/>
+        <extension name="sapcustomerb2b"/>
+        <extension name="sapcpiadapter"/>
+        <extension name="odata2services"/>
+        <extension name="sapcoreaddon"/>
+        <extension name="integrationbackoffice"/>
+        <extension name="sapmodelbackoffice"/>
+        <extension name="sapcustomerb2bbackoffice"/>
+
+        <extension name="captchaaddon"/>
+        <extension name="addonsupport"/>
+
+		
+		
+	</extensions>
+</hybrisconfig>

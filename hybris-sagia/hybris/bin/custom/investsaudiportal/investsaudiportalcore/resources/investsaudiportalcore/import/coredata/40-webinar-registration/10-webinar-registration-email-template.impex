@@ -1,0 +1,20 @@
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default = $contentCatalog]), CatalogVersion.version[default = Staged])[default = $contentCatalog:Staged]
+$lang = en
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalEmailResources
+$emailPackageName = $config-emailsContextPackageName
+$mediaResource = $config-portalMediaResources
+
+
+INSERT_UPDATE RendererTemplate; code[unique = true]      ; templateScript[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]; rendererType(code)[default = 'velocity']
+                              ; registrationEmailBody    ; $siteResource/email-webinar-registrationbody.vm
+                              ; registrationEmailSubject ; $siteResource/email-webinar-registrationsubject.vm
+
+INSERT_UPDATE RendererTemplate; code[unique = true]              ; contextClass; rendererType(code)[default = 'velocity']
+                              ; registrationEmailBody    ; $emailPackageName.InvestSaudiWebinarRegistrationContext
+                              ; registrationEmailSubject; $emailPackageName.InvestSaudiWebinarRegistrationContext
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]               ; name                                ; active; subject(code)            ; htmlTemplate(code)    ; restrictedPageTypes(code); frontendTemplateName;
+                               ;                          ; WebinarRegistrationEmailTemplate ; Webinar Registration Email Template ; true  ; registrationEmailSubject ; registrationEmailBody ; EmailPage                ; InvestSaudiWebinarRegistrationEmailTemplate

@@ -1,0 +1,15 @@
+INSERT_UPDATE SagiaRegion;code[unique=true];name[lang=en];name[lang=ar];country(code)
+;10;Riyadh;الرياض;SA
+;11;Makkah;جدة;SA
+;12;Eastern Province;الدمام;SA
+;13;Madinah;المدينة;SA
+;14;Hail;حائل;SA
+;15;Tabuk;تبوك;SA
+;16;Asir;أبها;SA
+;17;Jizan;جازان;SA
+;18;Najran;نجران;SA
+;19;Economic Cities;المدن الاقتصادية;SA
+;20;Northern Borders;الحدود الشمالية;SA
+;21;Bahah;الباحة;SA
+;22;Qasim;القصيم;SA
+;23;Jawf;الجوف;SA

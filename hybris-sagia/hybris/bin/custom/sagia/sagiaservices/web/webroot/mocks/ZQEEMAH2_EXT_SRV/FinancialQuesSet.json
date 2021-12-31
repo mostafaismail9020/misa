@@ -1,0 +1,307 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F10',Language='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F10',Language='')",
+          "type": "ZQEEMAH2_EXT_SRV.FinancialQues"
+        },
+        "QuestionId": "F10",
+        "Sectionno": "3",
+        "Language": "",
+        "QuestionTxt": "DOSE THE REVENUES FOR ONE OF THE SHAREHOLDERS OR THE PARENT COMPANY EXCEEDED $ 70 MILLION SAUDIS OR EQUIVALENT DURING THE 2015 OR 2016?",
+        "QuestionType": "DROP",
+        "NavFinQues": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "01",
+              "Value": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "02",
+              "Value": "No"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F11',Language='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F11',Language='')",
+          "type": "ZQEEMAH2_EXT_SRV.FinancialQues"
+        },
+        "QuestionId": "F11",
+        "Sectionno": "3",
+        "Language": "",
+        "QuestionTxt": "Dose THE ASSETS FOR ONE OF THE SHAREHOLDERS OR THE PARENT COMPANY EXCEEDED $ 100 MILLION SAUDIS OR EQUIVALENT DURING THE 2015 OR 2016?",
+        "QuestionType": "DROP",
+        "NavFinQues": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "01",
+              "Value": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "02",
+              "Value": "No"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F30',Language='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F30',Language='')",
+          "type": "ZQEEMAH2_EXT_SRV.FinancialQues"
+        },
+        "QuestionId": "F30",
+        "Sectionno": "3",
+        "Language": "",
+        "QuestionTxt": "DOSE THE NET PROFIT FOR ONE OF THE SHAREHOLDERS OR THE PARENT COMPANY EXCEEDED $ 50 MILLION SAUDIS OR EQUIVALENT DURING THE 2015 OR 2016?",
+        "QuestionType": "DROP",
+        "NavFinQues": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "01",
+              "Value": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "02",
+              "Value": "No"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F40',Language='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F40',Language='')",
+          "type": "ZQEEMAH2_EXT_SRV.FinancialQues"
+        },
+        "QuestionId": "F40",
+        "Sectionno": "3",
+        "Language": "",
+        "QuestionTxt": "DOES THE ENTITY REQUIRED LICENSE OR ONE OF THE SHAREHOLDERS 3 REGIONAL BRANCHES OUTSIDE OF THEIR COUNTRY?",
+        "QuestionType": "DROP",
+        "NavFinQues": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "01",
+              "Value": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "02",
+              "Value": "No"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F50',Language='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F50',Language='')",
+          "type": "ZQEEMAH2_EXT_SRV.FinancialQues"
+        },
+        "QuestionId": "F50",
+        "Sectionno": "4",
+        "Language": "",
+        "QuestionTxt": "IS THE PERCENT OF ENTITY EXPORT PRODUCTS IN THE HOME COUNTRY 50% OR MORE?",
+        "QuestionType": "DROP",
+        "NavFinQues": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "01",
+              "Value": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "02",
+              "Value": "No"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F60',Language='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F60',Language='')",
+          "type": "ZQEEMAH2_EXT_SRV.FinancialQues"
+        },
+        "QuestionId": "F60",
+        "Sectionno": "4",
+        "Language": "",
+        "QuestionTxt": "IS THE SIZE OF THE WORKFORCE OF THE ENTITY 10 THOUSAND PERSON OR MORE?",
+        "QuestionType": "DROP",
+        "NavFinQues": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "01",
+              "Value": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "02",
+              "Value": "No"
+            }
+          ]
+        }
+      },
+      {
+        "__metadata": {
+          "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F70',Language='')",
+          "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesSet(QuestionId='F70',Language='')",
+          "type": "ZQEEMAH2_EXT_SRV.FinancialQues"
+        },
+        "QuestionId": "F70",
+        "Sectionno": "4",
+        "Language": "",
+        "QuestionTxt": "DOES THE ENTITY REQUIRED LICENSE OR ONE OF THE SHAREHOLDERS PATENTED RELATING TO THE ACTIVITY TO BE LICENSED?",
+        "QuestionType": "DROP",
+        "NavFinQues": {
+          "results": [
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "",
+              "Value": ""
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('01')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "01",
+              "Value": "Yes"
+            },
+            {
+              "__metadata": {
+                "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZQEEMAH2_EXT_SRV/FinancialQuesddSet('02')",
+                "type": "ZQEEMAH2_EXT_SRV.FinancialQuesdd"
+              },
+              "Zkey": "02",
+              "Value": "No"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

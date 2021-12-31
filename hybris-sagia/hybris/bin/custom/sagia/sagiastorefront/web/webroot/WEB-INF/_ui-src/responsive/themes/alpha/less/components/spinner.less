@@ -1,0 +1,108 @@
+.spinner {
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);	
+	&-icon {
+		margin-right: 15px;
+	}
+	svg {
+		width: 70px;
+		height: 70px;
+		animation: spinner 0.8s steps(8, end) infinite;
+	}
+	&-message {
+		text-align: center;
+		min-height: 28px;
+		font-size: 14px;
+	}
+	&Container {
+		position: fixed;
+	    height: 100%;
+	    display: block;
+	    top: 0;
+	    width: 100%;
+	    z-index: 100000;
+		opacity: 0;
+		animation: spinner-fadeIn 0.2s ease-out 0.2s forwards;
+		@keyframes spinner-fadeIn {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+	}
+	&Container & {
+		width: 200px;
+		height: 200px;
+		border-radius: 20px;
+		top: 46%;
+		left: 50%;
+		display: flex;
+		flex-direction: column;
+		background-color: @color-white;
+		position: absolute;
+		align-items: center;
+		justify-content: space-around;
+		box-shadow: @panel-box-shadow;
+
+		svg {
+			position: relative;
+    		top: 20px;
+		}
+	}
+	&Container_top &,
+	&Container_bottom & {
+		border-radius: 0;
+		top: 0;
+		padding: 5px 15px;
+		left: 0;
+		width: 100%;
+		background-color: fade(@color-white, 90%);
+		box-shadow: 0 0 3px 1px fade(@color-white, 90%);
+		transform: none;
+		display: flex;
+		flex-direction: row;
+		align-items: auto;
+		height: auto;
+
+		svg,
+		&-icon {
+			width: 22px;
+			height: auto;
+			margin-right: 10px;
+		}
+		svg {
+			position: static;
+		}
+		&-message {
+			height: 24px;
+			line-height: 28px;
+			flex: 1;
+			text-align: left;
+		}
+
+		&Overlay {
+			display: none;
+		}
+	}
+	&Container_bottom & {
+		top: auto;
+		bottom: 0;
+	}
+	&Overlay {
+		position: absolute;
+		background-color:grey;
+		opacity: .25;
+		top:0;
+		left:0;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+@keyframes spinner {
+	0%   { transform: rotate(0deg); }
+  	100% { transform: rotate(360deg); }
+}

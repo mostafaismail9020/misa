@@ -1,0 +1,119 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media	; code[unique = true]         								; realFileName             									; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]	; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+					; meet-the-kingdom-banner.png 								; meet-the-kingdom-banner.png								; $siteResource/meet-the-kingdom-banner.png 									; 	image/png						;										   ; ""  ;
+					; population-growth.png			           				 	; population-growth.png										; $siteResource/population-growth.png		 								 	;	image/png						;										   ; ""  ;
+					; lowest-debt.png 											; lowest-debt.png											; $siteResource/lowest-debt.png								  					;	image/png						;										   ; ""  ;
+					; gdp-growth.png  											; gdp-growth.png											; $siteResource/gdp-growth.png 								  					;	image/png						;										   ; ""  ;
+					; fdi-stock.png												; fdi-stock.png												; $siteResource/fdi-stock.png 					  								;	image/png						;										   ; ""  ;
+					; largest-gdp.png											; largest-gdp.png											; $siteResource/largest-gdp.png 							 				 	;	image/png						;										   ; ""  ;
+					; government-budget.png			            				; government-budget.png										; $siteResource/government-budget.png 											;	image/png						;										   ; ""  ;
+					; foreign-assets.png			            				; foreign-assets.png										; $siteResource/foreign-assets.png 											  	;	image/png						;										   ; ""  ;
+					; fdi-inflows.png					        				; fdi-inflows.png											; $siteResource/fdi-inflows.png 											  	;	image/png						;										   ; ""  ;
+					; public-investment.png	            						; public-investment.png										; $siteResource/public-investment.png								  			;	image/png						;										   ; ""  ;
+					; foreign-assets-reserve.png								; foreign-assets-reserve.png		    					; $siteResource/foreign-assets-reserve.png										;	image/png						;										   ; ""	 ;
+					; intersection-background.png 								; intersection-background.png 								; $siteResource/intersection-background.png										;	image/png						;										   ; ""  ;
+					; macroeconomic-background.png 								; macroeconomic-background.png 								; $siteResource/macroeconomic-background.png									;	image/png						;										   ; ""  ;
+					; game-changing-opportunities.png							; game-changing-opportunities.png							; $siteResource/game-changing-opportunities.png									;	image/png						;										   ; ""	 ;
+					; ambitious-reform.png	              	  					; ambitious-reform.png     		        					; $siteResource/ambitious-reform.png                  			 				;  	image/png						;										   ; ""  ;
+					; strategic-global-location.png             				; strategic-global-location.png         					; $siteResource/strategic-global-location.png                 	 	 			;  	image/png						;										   ; ""  ;
+					; attractive-property-solutions.png         				; attractive-property-solutions.png    						; $siteResource/attractive-property-solutions.png                  	 			;  	image/png						;										   ; ""  ;
+					; young-and-skilled-workforce.png           				; young-and-skilled-workforce.png      						; $siteResource/young-and-skilled-workforce.png                   				; 	image/png						;										   ; ""  ; 
+					; expanding-quality-life.png             					; expanding-quality-life.png    							; $siteResource/expanding-quality-life.png                  		 			;  	image/png						;										   ; ""	 ;
+	                ; leading-financial-sector.png              				; leading-financial-sector.png     							; $siteResource/leading-financial-sector.png                  		 			; 	image/png						;										   ; ""  ;
+					; back-button.png											; back-button.png											; $siteResource/back-button.png													;	image/png						;										   ; ""  ;
+					; next-button.png 											; next-button.png 											; $siteResource/next-button.png													;	image/png						;										   ; ""  ;
+					; chemical-icon.png											; chemical-icon.png											; $siteResource/chemicals.png												    ;	image/png						;										   ; ""  ;
+					; education-icon.png										; education-icon.png										; $siteResource/education.png												    ;	image/png						;										   ; ""  ;
+					; energy-and-water-icon.png 								; energy-and-water-icon.png 								; $siteResource/energy-and-water-icon.png										;	image/png						;										   ; ""  ;
+					; food-processing-icon.png 									; food-processing-icon.png 									; $siteResource/food-processing.png										        ;	image/png						;										   ; ""  ;
+					; healthcare-icon.png 										; healthcare-icon.png 										; $siteResource/healthcare-life-sciences.png									;	image/png						;										   ; ""  ;
+					; innovation-icon.png 										; innovation-icon.png 										; $siteResource/innovation.png												    ;	image/png						;										   ; ""  ;
+					; inverted-icon.png 										; inverted-icon.png 										; $siteResource/inverted-icon.png												;	image/png						;										   ; ""  ;
+					; play-button.png 											; play-button.png 											; $siteResource/play-button.png													;	image/png						;										   ; ""  ;
+					; base-logo1.png 											; base-logo1.png 											; $siteResource/base-logo1.png													;	image/png						;										   ; ""  ;
+					; isuzu-logo1.png											; isuzu-logo1.png											; $siteResource/isuzu-logo1.png													;	image/png						;										   ; ""  ;
+					; danone-logo1.png											; danone-logo1.png											; $siteResource/danone-logo1.png												;	image/png						;										   ; ""  ;
+					; boeing-logo1.png											; boeing-logo1.png											; $siteResource/boeing-logo1.png												;	image/png						;										   ; ""  ;
+					; lockheed-martin-logo1.png 								; lockheed-martin-logo1.png 								; $siteResource/lockheed-martin-logo1.png										;	image/png						;										   ; ""  ;
+					; pfizer-logo1.png 											; pfizer-logo1.png 											; $siteResource/pfizer-logo1.png												;	image/png						;										   ; ""  ;
+					; accel-education.png 										; accel-education.png 										; $siteResource/accel-education.png												;	image/png						;										   ; ""  ;
+					; exxonmobil-chemical.png 									; exxonmobil-chemical.png 									; $siteResource/exxonmobil-chemical.png											;	image/png						;										   ; ""  ;
+					; fresnuis-medicalcare-asmusangelkort.png 					; fresnuis-medicalcare-asmusangelkort.png					; $siteResource/fresnuis-medicalcare-asmusangelkort.png							;	image/png						;										   ; ""  ;
+					; fresnuis-medicalcare-frankwagner.png 						; fresnuis-medicalcare-frankwagner.png 						; $siteResource/fresnuis-medicalcare-frankwagner.png							;	image/png						;										   ; ""  ; 
+					; gesaudiarabia-energy-water.png 							; gesaudiarabia-energy-water.png 							; $siteResource/gesaudiarabia-energy-water.png									;	image/png						;										   ; ""  ;
+					; globalthinkgroup-innvoation.png							; globalthinkgroup-innvoation.png							; $siteResource/globalthinkgroup-innvoation.png									;	image/png						;										   ; ""  ;
+					; nmc-healthcare.png 										; nmc-healthcare.png 										; $siteResource/nmc-healthcare.png												;	image/png						;										   ; ""  ;
+					; shelloverseas-chemicals.png 								; shelloverseas-chemicals.png 								; $siteResource/shelloverseas-chemicals.png										;	image/png						;										   ; ""  ;
+					; pepsico-foodprocessing.png 								; pepsico-foodprocessing.png								; $siteResource/pepsico-foodprocessing.png										;	image/png						;										   ; ""  ;
+					; thecityschool-education.png 								; thecityschool-education.png 								; $siteResource/thecityschool-education.png										;	image/png						;										   ; ""  ;
+					; accel-logo.png 											; accel-logo.png 											; $siteResource/accel-logo.png													;	image/png						;										   ; ""  ;
+					; city-school-saudi-logo.png 								; city-school-saudi-logo.png 								; $siteResource/city-school-saudi-logo.png										;	image/png						;										   ; ""  ;
+					; exxon-mobil-logo.png 										; exxon-mobil-logo.png 										; $siteResource/exxon-mobil-logo.png											;	image/png						;										   ; ""  ;
+					; fresnuis-medical-care-logo.png 							; fresnuis-medical-care-logo.png 							; $siteResource/fresnuis-medical-care-logo.png									;	image/png						;										   ; ""  ;
+					; gesaudi-energywater-logo.png 								; gesaudi-energywater-logo.png								; $siteResource/gesaudi-energywater-logo.png									;	image/png						;										   ; ""  ;
+					; global-think-group-logo.png 								; global-think-group-logo.png 								; $siteResource/global-think-group-logo.png										;	image/png						;										   ; ""  ;
+					; nmc-healthcare-logo.png 									; nmc-healthcare-logo.png									; $siteResource/nmc-healthcare-logo.png											;	image/png						;										   ; ""  ;
+					; pepsico-foodprocessing-logo.png 							; pepsico-foodprocessing-logo.png 							; $siteResource/pepsico-foodprocessing-logo.png									;	image/png						;										   ; ""  ;
+					; play-button.svg 											; play-button.svg 											; $siteResource/play-button.svg													;	image/svg+xml					;										   ; ""  ;
+					
+					; astrazeneca-logo.png 										; astrazeneca-logo.png 										; $siteResource/astrazeneca-logo.png											;	image/png						;										   ; ""  ;
+					; janssen-logo.png 											; janssen-logo.png 											; $siteResource/janssen-logo.png												;	image/png						;										   ; ""  ;
+					; lilly-logo.png 											; lilly-logo.png 											; $siteResource/lilly-logo.png													;	image/png						;										   ; ""  ;
+					; novartis-logo.png 										; novartis-logo.png 										; $siteResource/novartis-logo.png												;	image/png						;										   ; ""  ;
+					; astrazeneca-success-stories.png 							; astrazeneca-success-stories.png 							; $siteResource/astrazeneca-success-stories.png									;	image/png						;										   ; ""  ;
+					; jansen-emea-success-stories.png 							; jansen-emea-success-stories.png 							; $siteResource/jansen-emea-success-stories.png									;	image/png						;										   ; ""  ;
+					; lilly-ltd-success-stories.png 							; lilly-ltd-success-stories.png 							; $siteResource/lilly-ltd-success-stories.png									;	image/png						;										   ; ""  ;
+					; novartis-oncology-success-stories.png 					; novartis-oncology-success-stories.png 					; $siteResource/novartis-oncology-success-stories.png							;	image/png						;										   ; ""  ;
+										
+					; shell-chemicals-logo.png 									; shell-chemicals-logo.png 									; $siteResource/shell-chemicals-logo.png										;	image/png						;										   ; ""  ;
+					; international-rankings-1.mp4 								; international-rankings-1.mp4 							    ; $siteResource/international-rankings-1.mp4									;	video/mp4						;										   ; ""  ;
+					; international-rankings_arabic.mp4 						; international-rankings_arabic.mp4 						; $siteResource/international-rankings_arabic.mp4								;	video/mp4						;										   ; ""  ;
+										
+# MEGA AND GIGA CONTENT LOGO
+					; neom_logo.png 								            ; neom_logo.png								                ; $siteResource/neom_logo.png										            ;	image/png						;										   ; ""  ;
+					; the_red_sea_logo.png 							            ; the_red_sea_logo.png 									    ; $siteResource/the_red_sea_logo.png											;	image/png						;										   ; ""  ;
+					; qiddiya_logo.png 								            ; qiddiya_logo.png 								            ; $siteResource/qiddiya_logo.png										        ;	image/png						;										   ; ""  ;
+					; amaala_logo.png 								            ; amaala_logo.png 										    ; $siteResource/amaala_logo.png											        ;	image/png						;										   ; ""  ;
+					; diriyah_gate_logo.png 						            ; diriyah_gate_logo.png 							        ; $siteResource/diriyah_gate_logo.png									        ;	image/png						;										   ; ""  ;
+					; roya_commission_for_allula.png 				            ; roya_commission_for_allula.png							; $siteResource/roya_commission_for_allula.png									;	image/png						;										   ; ""  ;
+					; kafd_logo.png 								            ; kafd_logo.png 								            ; $siteResource/kafd_logo.png										            ;	image/png						;										   ; ""  ;
+					; soudah_development_company_logo.png 			            ; soudah_development_company_logo.png						; $siteResource/soudah_development_company_logo.png								;	image/png						;										   ; ""  ;
+					; roshn_logo.png 							                ; roshn_logo.png 							                ; $siteResource/roshn_logo.png									                ;	image/png						;										   ; ""  ;
+					; kaec_logo.png 								            ; kaec_logo.png 											; $siteResource/kaec_logo.png													;	image/png					    ;										   ; ""  ;
+					; knowledge_economic_city.png 					            ; knowledge_economic_city.png 								; $siteResource/knowledge_economic_city.png										;	image/png						;										   ; ""  ;
+					; royal_commission_for_jubali_and_yanbu.png 	            ; royal_commission_for_jubali_and_yanbu.png 				; $siteResource/royal_commission_for_jubali_and_yanbu.png						;	image/png						;										   ; ""  ;
+					; king_salman_park_logo.png 							    ; king_salman_park_logo.png 								; $siteResource/king_salman_park_logo.png									    ;	image/png						;										   ; ""  ;
+					; king_salman_energy_park_logo.png 							; king_salman_energy_park_logo.png 							; $siteResource/king_salman_energy_park_logo.png							    ;	image/png						;										   ; ""  ;
+					; king_salman_international_complex_logo.png 				; king_salman_international_complex_logo.png 				; $siteResource/king_salman_international_complex_logo.png						;	image/png						;										   ; ""  ;
+
+# MEGA AND GIGA CONTENT BACKGROUND IMAGES
+					; neom_img.jpg 								                ; neom_img.jpg								                ; $siteResource/neom_img.jpg										            ;	image/jpeg						;										   ; ""  ;
+					; the_red_sea_img.jpg 							            ; the_red_sea_img.jpg 									    ; $siteResource/the_red_sea_img.jpg											    ;	image/jpeg						;										   ; ""  ;
+					; qiddiya_img.jpg 								            ; qiddiya_img.jpg 								            ; $siteResource/qiddiya_img.jpg										            ;	image/jpeg						;										   ; ""  ;
+					; amaala_img.jpg 								            ; amaala_img.jpg 										    ; $siteResource/amaala_img.jpg											        ;	image/jpeg						;										   ; ""  ;
+					; diriyah_gate_img.jpg 						                ; diriyah_gate_img.jpg 							            ; $siteResource/diriyah_gate_img.jpg									        ;	image/jpeg						;										   ; ""  ;
+					; roya_commission_for_allula_img.jpg 				        ; roya_commission_for_allula_img.jpg						; $siteResource/roya_commission_for_allula_img.jpg								;	image/jpeg						;										   ; ""  ;
+					; kafd_img.jpg 								                ; kafd_img.jpg 								                ; $siteResource/kafd_img.jpg										            ;	image/jpeg						;										   ; ""  ;
+					; soudah_development_company_img.jpg 			            ; soudah_development_company_img.jpg						; $siteResource/soudah_development_company_img.jpg								;	image/jpeg						;										   ; ""  ;
+					; roshn_img.jpg 							                ; roshn_img.jpg 							                ; $siteResource/roshn_img.jpg									                ;	image/jpeg						;										   ; ""  ;
+					; kaec_img.jpg 								                ; kaec_img.jpg 											    ; $siteResource/kaec_img.jpg													;	image/jpeg					    ;										   ; ""  ;
+					; knowledge_economic_city_img.jpg 					        ; knowledge_economic_city_img.jpg 							; $siteResource/knowledge_economic_city_img.jpg									;	image/jpeg						;										   ; ""  ;
+					; royal_commission_for_jubali_and_yanbu_img.jpg 	        ; royal_commission_for_jubali_and_yanbu_img.jpg 			; $siteResource/royal_commission_for_jubali_and_yanbu_img.jpg					;	image/jpeg						;										   ; ""  ;
+                    ; king_salman_park_img.jpg 							        ; king_salman_park_img.jpg 								    ; $siteResource/king_salman_park_img.jpg										;	image/jpeg						;										   ; ""  ;
+					; king_salman_energy_park.jpg 								; king_salman_energy_park.jpg 								; $siteResource/king_salman_energy_park.jpg										;	image/jpeg						;										   ; ""  ;
+					; king_salman_international_complex_img.jpg 				; king_salman_international_complex_img.jpg 				; $siteResource/king_salman_international_complex_img.jpg						;	image/jpeg						;										   ; ""  ;
+

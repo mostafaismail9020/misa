@@ -1,0 +1,37 @@
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$lang = en
+
+INSERT_UPDATE OpportunityProduct; code[unique = true]       			; $catalogVersion			; description[lang = $lang]
+								; SPORTS-BOULEVARD 						; 							; " <p>Mixed-use development of Riyadh Sports Facility including infrastructure, residential, retail, hospitality, offices and venues development.</p>"
+								; YANBU-WATERFRONT-AND-CITY-CENTER 		; 							; " <p>Opportunity to develop and operate a Commercial Center (strip mall), mixed-use development building in Yanbu City Center, and development of a residential complex</p>"
+								;RESIDENTIA-RETAIL-DEVELOPMENT-IN-RIYADH ; 							;" <p>Development of convenience retail & 41 residential units.</p>"
+								;RESIDENTIAL-DEVELOPMENT-IN-RIYADH		; 							;" <p>: Development of 28 compound residential units in a land area of 2,008 sqm .</p>"
+								;RETAIL-HOSPITALITY-DEVELOPMENT-IN-ABHA; 							; " <p>: Retail & Hospitality development of serviced apartments, villas, and neighborhood retail. </p>"
+								;RETAIL-DEVELOPMENT-IN-ALAHSA			; 							; " <p>Opportunity to develop an innovative retail offering in Al Ahsa in the midst of a garden area</p>"
+								;RETAIL-DEVELOPMENT-IN-ALBAHA			; 							; " <p>:Opportunity to develop an innovative retail offering in Al Baha.</p>"
+								;RETAIL-DEVELOPMENT-IN-ALJAWF			; 							; " <p>: Opportunity for 3-star hotel development in Al Jawf.</p>"
+								;RETAIL-DEVELOPMENT-IN-HAIL; 			; 							 ;" <p>:Opportunity to develop a retail offering in Hail.</p>"
+								;RETAIL-DEVELOPMENT-IN-JEDDAH			;							 ; " <p>:Opportunity to develop a retail offering in Jeddah near Historical District.</p>"
+								;RETAIL-DEVELOPMENT-IN-ALQASEEM			; 							; " <p>Development of a Retail center in Buraidah city with an area pf 3,185 sqm.</p>"
+								;RETAIL-DEVELOPMENT-IN-NAJRAN			; 						    ; " <p>Opportunity to develop a retail center in the heart of Najran city with an area of 3,027 sqm.</p>"
+								;RETAIL-DEVELOPMENT-IN-NORTHERN-BOUNDARIES; 						; " <p>Opportunity to develop a retail center in Arar city with an area of 6,200 sqm.</p>"
+
+
+#### real-estate - miral
+INSERT_UPDATE OpportunityProduct; code[unique = true]       		; $catalogVersion; description[lang = $lang]
+                                ; HEALTHCARE-&-RETAIL-IN-ALMADINAH ;         		 ; "<p>An opportunity for developing a private hospital & retail. </p>"								
+                                ; HEALTHCARE-&-RETAIL-TABUK ;                		 ; "<p>Development of a private hospital in tabuk with an area of 25,000 sqm & retail. </p>"								
+                                ; HEALTHCARE-DEVELOPMENT-IN-JAZA   ;        		 ; "<p>Opportunity to develop a private hospital in Jazan </p>"								
+                                ; HEALTHCARE-MAKKAH         ;                		 ; "<p>Opportunity to develop a private hospital in Makkah with an area of 20,000 sqm. </p>"								
+                                ; PILGRIM-ACCOMMODATION-&-RETAIL   ;         		 ; "<p>Opportunity for pilgrim accommodation with a retail component. </p>"								
+                                ; BOARD-OF-GRIEVANCES-PLOT        ;          		 ; "<p>The State Properties General Authority (SPGA) manages this governmental plot on behalf of the Ministry of Justice; which plans to develop a new board of grievances building on Old Princess Nora plot University in Riyadh as part of a master planned development. </p>"								
+                                ; NHC-DHAHIYAT-ALFURSAN        ;             		; "<p>Opportunity to develop new landmark city in Riyadh. The development includes various types of residential units, education buildings, commercial buildings, retail, mixed use, research & development centers </p>"								
+                                ; JEDDAH-COURTHOUSE-PLOT        ;            		; "<p>The State Properties General Authority (SPGA) manages this governmental plot on behalf of the Organization of Islamic Cooperation; which plans to develop a new OIC building in Jeddah near Al Shatea District. </p>"								
+                                ; MAKKAH-COURTHOUSE-PLOT        ;            		 ; "<p>The State Properties General Authority (SPGA) manages this governmental plot on behalf of the Ministry of Justice; which plans to develop new courthouses in Makkah. </p>"								
+                                ; MEWA-HEAD-OFFICE-COMPLEX-RIYADH-PLOT  ;    		; "<p>The State Properties General Authority (SPGA) manages this governmental plot on behalf of the Ministry of Environment, Water, and Agriculture; which plans to develop a new MEWA Complex in Riyadh near Princess Nora University north of the city. </p>"								
+                                ; OIC-HEAD-OFFICE-PLOT        ;              		; "<p>The State Properties General Authority (SPGA) manages this governmental plot on behalf of the Organization of Islamic Cooperation; which plans to develop a new OIC building in Jeddah near Al Shatea District. </p>"								
+                                ; PUBLIC-PROSECUTION-PLOT        ;           		; "<p>The State Property General Authority (SPGA) manages this governmental plot on behalf of the Ministry of Justice; which plans to develop a new public prosecution building on Old Princess Nora University plot in Riyadh as part of a master planned development. </p>"								
+                                ; RIYADH-COURTHOUSE-PLOT         ;           		; "<p>The State Properties General Authority (SPGA) manages this governmental plot on behalf of the Ministry of Justice; which plans to develop new courthouses in Riyadh on Old Princess Nora University plot in the city as part of a master planned development. </p>"
+
+																

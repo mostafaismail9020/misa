@@ -1,0 +1,18 @@
+{
+  "d": {
+    "__metadata": {
+      "id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZCLASS_DETSET('0007000177')",
+      "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZCLASS_DETSET('0007000177')",
+      "type": "ZCLASSIFICATION_UP_SRV.ZCLASS_DET"
+    },
+    "ObjectID": "0007000177",
+    "Class": "A+",
+    "Appeal": "C",
+    "Entity": "",
+    "ZCLASSATT": {
+      "__deferred": {
+        "uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZCLASSIFICATION_UP_SRV/ZCLASS_DETSET('0007000177')/ZCLASSATT"
+      }
+    }
+  }
+}

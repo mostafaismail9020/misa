@@ -1,0 +1,160 @@
+img.round-borders {
+  border-radius: 0 32px;
+  box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.08);
+}
+
+.featureDiv,
+.blogContainerDiv {
+  &:hover {
+    .featureBack,
+    .blogContainerBackGround {
+      .blogPostTitle {
+        a {
+          color: #5CC83B;
+        }
+      }
+    }
+  }
+
+  a.blog-post-link {
+    color: black;
+    position: relative;
+    display: block;
+
+    .floating-date {
+      position: absolute;
+      bottom: -10px;
+      right: 15px;
+      background-color: #E6E6ED;
+      display: flex;
+      align-items: center;
+      border-radius: 1px 8px 0;
+      box-shadow: 0 6px 23px 0 rgba(0, 0, 0, 0.11);
+
+      .start-date,
+      .end-date {
+        padding: 5px;
+        color: #7B838C;
+
+        .day {
+          font-size: 26px;
+          color: #343A4A;
+        }
+
+        .month,
+        .year {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .blogContainerBackGround,
+  .featureBack {
+    background-color: white;
+
+    .blogPostTitle {
+      a {
+        color: #343A4A;
+        transition: all ease-out .3s;
+        -webkit-transition: all ease-out .3s;
+        -moz-transition: all ease-out 0.3s;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    .blogExtract {
+      font-size: 16px
+    }
+  }
+
+  .blogContainerBackGround {
+    .blogPostTitle {
+      a {
+        font-size: 16px
+      }
+    }
+  }
+}
+
+.calendarContainerDiv {
+  .range-calendar.default-theme {
+    background-color: #f1f1f1;
+
+    .range-bar {
+      background-color: #7bd35d;
+    }
+
+    .months .cell.selected {
+      background-color: #7bd35d;
+    }
+  }
+}
+
+h2.popularPostHeading {
+  background-color: #1C242C;
+  border-radius: 0 10px;
+}
+
+div.blog--search-area {
+  .blog--search-wrapper {
+    .blog--search-btn {
+      font-size: 16px;
+      padding: 0 6px;
+      background-color: #7bd35d;
+
+      &:hover {
+        background-color: #3cdc0f;
+        border-color: #3cdc0f;
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.most-popular-area {
+  ul.list-unstyled > li {
+    .blogPostTitle {
+      a {
+        font-size: 16px;
+        color: #343A4A;
+        transition: all ease-out .3s;
+        -webkit-transition: all ease-out .3s;
+        -moz-transition: all ease-out 0.3s;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    &:hover {
+      .blogPostTitle {
+        a {
+          color: #7bd35d;
+        }
+      }
+    }
+  }
+}
+
+.blogPostDiv {
+  .blogContent {
+    font-size: 16px;
+    color: #7B838C;
+    text-align: justify;
+  }
+}
+
+.newsletterDiv {
+  .newsletterHeading {
+    p {
+      margin: 0;
+    }
+  }
+  .newsletterContainer {
+    padding: 0;
+  }
+}

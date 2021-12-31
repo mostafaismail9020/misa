@@ -1,0 +1,166 @@
+$contentCatalog = sagiaContentCatalog
+$productCatalog = sagiaProductCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$productCV = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$catalogVersion = catalogversion(catalog(id[default=$contentCatalog]), version[default='Staged'])[unique=true, default=$contentCatalog:Staged]
+$mediafolder = portal-media
+$medias = medias(code, $contentCV)[mode=replace]
+$logosContainer = logosContainer(qualifier, $catalogVersion)
+$logos = logos(code, $contentCV)[mode=replace]
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+# Footer Navigation Links
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]               ; name                      ; linkName[lang = en]     ; linkName[lang = ar]   ; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; footer-link                      ; Footer Link               ;                         ;                       ;                             ;
+                              ; footer-sector-opportunities-link ; Sectors And Opportunities ; Sectors & Opportunities ; القطاعات والفرص       ; sectors-opportunities       ;
+                              ; footer-why-saudi-arabia-link     ; Why Saudi Arabia          ; Why Saudi Arabia        ; الاستثمار بالمملكة    ; why-saudi-arabia            ;
+                              ; footer-investors-services-link   ; Investor Services         ; Investors Services      ; خدمات المستثمرين      ; investor-services           ;
+                              ; footer-about-link                ; About                     ; About                   ; من نحن                ; about-invest-saudi          ;
+                              ; footer-about-is-link             ; Invest Saudi              ; Invest Saudi            ; استثمر في السعودية    ; about-invest-saudi          ;
+                              ; footer-about-moi-link            ; Ministry Of Investment    ; Ministry Of Investment  ; وزارة الاستثمار       ; ministry-investments        ;
+                              ; footer-contact-link              ; Contact                   ; Contact                 ; تواصل معنا            ; contact                     ;
+                              ; footer-faq-link                  ; FAQ                       ; FAQ                     ; الأسئلة الأكثر شيوعاً ; faq                         ;
+                              ; footer-videos-link               ; Videos                    ; Videos                  ; Videos                ; videos                      ;
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]                  ; name                    ; title[lang = en]        ; title[lang = ar]        ; parent(uid, $contentCV); &nodeRef                            ; children(uid, $contentCV)[mode = replace]                                                                                                                                                        ; links(uid, $contentCV); $contentCV[unique = true]
+                               ; footer-menu                         ; Portal Footer Menu      ; Portal Footer Menu      ; Portal Footer Menu      ; root                   ; PortalFooterMenu                    ; footer-why-saudi-arabia-navnode, footer-sector-opportunities-navnode, footer-investors-services-navnode, footer-about-navnode, footer-contact-navnode, footer-faq-navnode, footer-videos-navnode ;                       ;
+                               ; footer-why-saudi-arabia-navnode     ; Why Saudi Arabia        ; Why Saudi Arabia        ; Why Saudi Arabia        ; footer-menu            ; footer-why-saudi-arabia-navnode     ;                                                                                                                                                                                                  ;                       ;
+                               ; footer-sector-opportunities-navnode ; Sectors & Opportunities ; Sectors & Opportunities ; Sectors & Opportunities ; footer-menu            ; footer-sector-opportunities-navnode ;                                                                                                                                                                                                  ;                       ;
+                               ; footer-investors-services-navnode   ; Investors Services      ; Investors Services      ; Investors Services      ; footer-menu            ; footer-investors-services-navnode   ;                                                                                                                                                                                                  ;                       ;
+                               ; footer-about-navnode                ; About                   ; About                   ; About                   ; footer-menu            ; footer-about-navnode                ;                                                                                                                                                                                                  ;                       ;
+                               ; footer-about-is-navnode             ; Invest Saudi            ; Invest Saudi            ; Invest Saudi            ; footer-about-navnode   ; footer-about-is-navnode             ;                                                                                                                                                                                                  ;                       ;
+                               ; footer-about-moi-navnode            ; Ministry Of Investment  ; Ministry Of Investment  ; Ministry Of Investment  ; footer-about-navnode   ; footer-about-moi-navnode            ;                                                                                                                                                                                                  ;                       ;
+                               ; footer-contact-navnode              ; Contact                 ; Contact                 ; Contact                 ; footer-menu            ; footer-contact-navnode              ;                                                                                                                                                                                                  ;                       ;
+                               ; footer-faq-navnode                  ; FAQ                     ; FAQ                     ; FAQ                     ; footer-menu            ; footer-faq-navnode                  ;                                                                                                                                                                                                  ;                       ;
+                               ; footer-videos-navnode               ; Videos                  ; Videos                  ; Videos                  ; footer-menu            ; footer-videos-navnode               ;                                                                                                                                                                                                  ;                       ;
+
+
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]                ; name                               ; navigationNode(&nodeRef)            ; item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV); $contentCV[unique = true]
+                                ; footer-entry                      ; Footer Entry                       ; PortalFooterMenu                    ; footer-link
+                                ; footer-why-saudi-arabia-entry     ; Why Saudi Arabia Entry             ; footer-why-saudi-arabia-navnode     ; footer-why-saudi-arabia-link                           ;
+                                ; footer-sector-opportunities-entry ; Sectors And Opportunities Entry    ; footer-sector-opportunities-navnode ; footer-sector-opportunities-link                       ;
+                                ; footer-investors-services-entry   ; Sectors And Opportunities Entry    ; footer-investors-services-navnode   ; footer-investors-services-link                         ;
+                                ; footer-about-entry                ; About Entry                        ; footer-about-navnode                ; footer-about-link                                      ;
+                                ; footer-about-is-entry             ; About Invest Saudi Entry           ; footer-about-is-navnode             ; footer-about-is-link                                   ;
+                                ; footer-about-moi-entry            ; About Ministry Of Investment Entry ; footer-about-moi-navnode            ; footer-about-moi-link                                  ;
+                                ; footer-contact-entry              ; Contact Entry                      ; footer-contact-navnode              ; footer-contact-link                                    ;
+                                ; footer-faq-entry                  ; FAQ                                ; footer-faq-navnode                  ; footer-faq-link                                        ;
+                                ; footer-videos-entry               ; VideosEntry                        ; footer-videos-navnode               ; footer-videos-link                                     ;
+
+
+
+
+# Footer Sectors & Industries Navigation Nodes
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                 ; name                               ; linkName[lang = en]                ; linkName[lang = ar]         ; category(code, $productCV)    ; $contentCV[unique = true]
+                              ; sectors-industries-link            ; Sectors & Industries               ; Sectors & Industries               ; القطاعات والصناعات          ;                               ;
+                              ; chemicals-link                     ; Chemicals                          ; Chemicals                          ; مواد كيميائية               ; chemicals                     ;
+                              ; information-technology-link        ; Information and Technology         ; Information and Technology         ; المعلومات والتكنولوجيا      ; information-technology        ;
+                              ; energy-water-link                  ; Energy and Water                   ; Energy and Water                   ; الطاقة والمياه              ; energy-water                  ;
+                              ; industrial-manufacturing-link      ; Industrial and Manufacturing       ; Industrial and Manufacturing       ; الصناعة والتصنيع            ; industrial-manufacturing      ;
+                              ; healthcare-life-sciences-link      ; Healthcare and Life Sciences       ; Healthcare and Life Sciences       ; الرعاية الصحية وعلوم الحياة ; healthcare-life-sciences      ;
+                              ; mining-metals-link                 ; Mining and Metals                  ; Mining and Metals                  ; التعدين والمعادن            ; mining-metals                 ;
+                              ; transport-logistics-link           ; Transport and Logistics            ; Transport and Logistics            ; النقل والخدمات اللوجستية    ; transport-logistics           ;
+                              ; tourism-culture-entertainment-link ; Tourism, Culture and Entertainment ; Tourism, Culture and Entertainment ; السياحة والثقافة والترفيه   ; tourism-culture-entertainment ;
+                              ; real-estate-link                   ; Real Estate                        ; Real Estate                        ; العقارات                    ; real-estate                   ;
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]                    ; name                               ; title[lang = en]                   ; title[lang = ar]                   ; parent(uid, $contentCV); &nodeRef                              ; children(uid, $contentCV)[mode = replace]                                                                                                                                                                                                                   ; links(uid, $contentCV); $contentCV[unique = true];
+                               ; sectors-industries                    ; Sectors & Industries               ; Sectors & Industries               ; Sectors & Industries               ; root                   ; SectorsIndustriesNavigation           ; chemicals-navnode, information-technology-navnode, energy-water-navnode, industrial-manufacturing-navnode, healthcare-life-sciences-navnode, mining-metals-navnode, transport-logistics-navnode, tourism-culture-entertainment-navnode, real-estate-navnode ;                       ;
+                               ; chemicals-navnode                     ; Chemicals                          ; Chemicals                          ; Chemicals                          ; sectors-industries     ; chemicals-navnode                     ;                                                                                                                                                                                                                                                             ;                       ;
+                               ; information-technology-navnode        ; Information and Technology         ; Information and Technology         ; Information and Technology         ; sectors-industries     ; information-technology-navnode        ;                                                                                                                                                                                                                                                             ;                       ;
+                               ; energy-water-navnode                  ; Energy and Water                   ; Energy and Water                   ; Energy and Water                   ; sectors-industries     ; energy-water-navnode                  ;                                                                                                                                                                                                                                                             ;                       ;
+                               ; industrial-manufacturing-navnode      ; Industrial and Manufacturing       ; Industrial and Manufacturing       ; Industrial and Manufacturing       ; sectors-industries     ; industrial-manufacturing-navnode      ;                                                                                                                                                                                                                                                             ;                       ;
+                               ; healthcare-life-sciences-navnode      ; Healthcare and Life Sciences       ; Healthcare and Life Sciences       ; Healthcare and Life Sciences       ; sectors-industries     ; healthcare-life-sciences-navnode      ;                                                                                                                                                                                                                                                             ;                       ;
+                               ; mining-metals-navnode                 ; Mining and Metals                  ; Mining and Metals                  ; Mining and Metals                  ; sectors-industries     ; mining-metals-navnode                 ;                                                                                                                                                                                                                                                             ;                       ;
+                               ; transport-logistics-navnode           ; Transport and Logistics            ; Transport and Logistics            ; Transport and Logistics            ; sectors-industries     ; transport-logistics-navnode           ;                                                                                                                                                                                                                                                             ;                       ;
+                               ; tourism-culture-entertainment-navnode ; Tourism, Culture and Entertainment ; Tourism, Culture and Entertainment ; Tourism, Culture and Entertainment ; sectors-industries     ; tourism-culture-entertainment-navnode ;                                                                                                                                                                                                                                                             ;                       ;
+                               ; real-estate-navnode                   ; Real Estate                        ; Real Estate                        ; Real Estate                        ; sectors-industries     ; real-estate-navnode                   ;                                                                                                                                                                                                                                                             ;                       ;
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]                  ; name                                     ; navigationNode(&nodeRef)              ; item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV); $contentCV[unique = true]
+                                ; sectors-industries-entry            ; Sectors & Industries Entry               ; SectorsIndustriesNavigation           ; sectors-industries-link                                ;
+                                ; chemicals-entry                     ; Chemicals Entry                          ; chemicals-navnode                     ; chemicals-link                                         ;
+                                ; information-technology-entry        ; Information and Technology Entry         ; information-technology-navnode        ; information-technology-link                            ;
+                                ; energy-water-entry                  ; Energy and Water Entry                   ; energy-water-navnode                  ; energy-water-link                                      ;
+                                ; industrial-manufacturing-entry      ; Industrial and Manufacturing Entry       ; industrial-manufacturing-navnode      ; industrial-manufacturing-link                          ;
+                                ; healthcare-life-sciences-entry      ; Healthcare and Life Sciences Entry       ; healthcare-life-sciences-navnode      ; healthcare-life-sciences-link                          ;
+                                ; mining-metals-entry                 ; Mining and Metals Entry                  ; mining-metals-navnode                 ; mining-metals-link                                     ;
+                                ; transport-logistics-entry           ; Transport and Logistics Entry            ; transport-logistics-navnode           ; transport-logistics-link                               ;
+                                ; tourism-culture-entertainment-entry ; Tourism, Culture and Entertainment Entry ; tourism-culture-entertainment-navnode ; tourism-culture-entertainment-link                     ;
+                                ; real-estate-entry                   ; Real Estate Entry                        ; real-estate-navnode                   ; real-estate-link                                       ;
+
+# Footer Follow US Navigation Nodes
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name      ; linkName[lang = en]                 ; linkName[lang = ar]                 ; url                                          ; $contentCV[unique = true]; target(code)[default = 'newWindow']
+                              ; follow-us-link    ; Follow Us ; Follow Us                           ; تابعنا                              ;                                              ;                          ;
+                              ; linkedin-link     ; Linkedin  ; <span class="icon icon-linked-in"/> ; <span class="icon icon-linked-in"/> ; https://www.linkedin.com/company/investsaudi ;                          ;
+                              ; twitter-link      ; Twitter   ; <span class="icon icon-twitter"/>   ; <span class="icon icon-twitter"/>   ; https://twitter.com/InvestSaudi              ;                          ;
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; parent(uid, $contentCV); &nodeRef           ; children(uid, $contentCV)[mode = replace]; links(uid, $contentCV); $contentCV[unique = true]
+                               ; follow-us         ; Follow Us ; Follow Us       ; Follow Us       ; root                   ; FollowUsNavigation ; linkedin-navnode, twitter-navnode        ;                       ;
+                               ; linkedin-navnode  ; Linkedin  ; Linkedin        ; Linkedin        ; follow-us              ; linkedin-navnode   ;                                          ;                       ;
+                               ; twitter-navnode   ; Twitter   ; Twitter         ; Twitter         ; follow-us              ; twitter-navnode    ;                                          ;                       ;
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]; name            ; navigationNode(&nodeRef); item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV); $contentCV[unique = true]
+                                ; follow-us-entry   ; Follow Us Entry ; FollowUsNavigation      ; follow-us-link                                         ;
+                                ; linkedin-entry    ; Linkedin        ; linkedin-navnode        ; linkedin-link                                          ;
+                                ; twitter-entry     ; Twitter         ; twitter-navnode         ; twitter-link                                           ;
+
+# Sitemap and Policies Navigation Nodes
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]  ; name                 ; linkName[lang = en]; linkName[lang = ar]    ; contentPage(uid, $contentCV); $contentCV[unique = true];
+                              ; map-policy-link     ; Sitemap and Policies ;                    ;                        ;                             ;
+                              ; sitemap-link        ; Sitemap              ; Sitemap            ; خريطة الموقع           ; sitemap                     ;
+                              ; privacy-policy-link ; Privacy Policy       ; Privacy Policy     ; سياسة خاصة             ; privacy-policy              ;
+                              ; brand-policy-link   ; Brand Policy         ; Brand Policy       ; سياسة العلامة التجارية ; brand-policy                ;
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true][mode = replace]; name                 ; title[lang = en]     ; title[lang = ar]     ; parent(uid, $contentCV); &nodeRef               ; children(uid, $contentCV)[mode = replace]                   ; links(uid, $contentCV); $contentCV[unique = true]
+                               ; map-policy                        ; Sitemap and Policies ; Sitemap and Policies ; Sitemap and Policies ; root                   ; MapPolicyNavigation    ; brand-policy-navnode,privacy-policy-navnode,sitemap-navnode ;                       ;
+                               ; sitemap-navnode                   ; Sitemap              ; Sitemap              ; Sitemap              ; map-policy             ; sitemap-navnode        ;                                                             ;                       ;
+                               ; privacy-policy-navnode            ; Privacy Policy       ; Privacy Policy       ; Privacy Policy       ; map-policy             ; privacy-policy-navnode ;                                                             ;                       ;
+                               ; brand-policy-navnode              ; Brand Policy         ; Brand Policy         ; Brand Policy         ; map-policy             ; brand-policy-navnode   ;                                                             ;                       ;
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]   ; name                       ; navigationNode(&nodeRef); item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV); $contentCV[unique = true]
+                                ; map-policy-entry     ; Sitemap and Policies Entry ; MapPolicyNavigation     ; map-policy-link                                        ;
+                                ; sitemap-entry        ; Sitemap                    ; sitemap-navnode         ; sitemap-link                                           ;
+                                ; privacy-policy-entry ; Privacy Policy             ; privacy-policy-navnode  ; privacy-policy-link                                    ;
+                                ; brand-policy-entry   ; Brand Policy               ; brand-policy-navnode    ; brand-policy-link                                      ;
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText      ; $contentCV[unique = true]
+                   ; logo-en.svg        ; logo-en.svg ; $siteResource/logo-en.svg                                                   ; image/svg+xml               ;                                          ; Invest Saudi ;
+                   ; logo-ar.svg        ; logo-ar.svg ; $siteResource/logo-ar.svg                                                   ; image/svg+xml               ;                                          ; Invest Saudi ;
+                   ; gia-en.png         ; gia-en.png  ; $siteResource/GIA-en.png
+                   ; gia-ar.png         ; gia-ar.png  ; $siteResource/GIA-ar.png
+                   ; vision.svg         ; vision.svg  ; $siteResource/roya.svg                                                      ; image/svg+xml               ;                                          ;              ; ; image/png ; ; ;
+
+# Logo Footer Links
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name        ; linkName[lang = en]; linkName[lang = ar]; url                          ; $contentCV[unique = true]; &linkRef
+                              ; logo1-link        ; Logo 1 Link ; Logo 1             ; Logo 1             ; /                            ;                          ; logo1-link
+                              ; logo2-link        ; Logo 2 Link ; Logo 2             ; Logo 2             ; /                            ;                          ; logo2-link
+                              ; logo3-link        ; Logo 3 Link ; Logo 3             ; Logo 3             ; http://vision2030.gov.sa/ar/ ;                          ; logo3-link
+
+
+INSERT_UPDATE InvestSaudiFooterComponent; uid[unique = true]; name          ; navigationLinks(&nodeRef); navigationFollowUs(&nodeRef); navigationSector(&nodeRef)  ; navigationMapPolicy(&nodeRef); copyrightText[lang = en]                  ; &componentRef ; $contentCV[unique = true]
+                                        ; portal-footer     ; Portal Footer ; PortalFooterMenu         ; FollowUsNavigation          ; SectorsIndustriesNavigation ; MapPolicyNavigation          ; © 2020 Invest Saudi. All rights reserved. ; portal-footer ;
+
+UPDATE InvestSaudiFooterComponent; uid[unique = true]; logo1(code, $contentCV)[lang = en]; logo1(code, $contentCV)[lang = ar]; logo2(code, $contentCV)[lang = en]; logo2(code, $contentCV)[lang = ar]; logo3(code, $contentCV)[lang = en]; logoLink1(&linkRef); logoLink2(&linkRef); logoLink3(&linkRef); $contentCV[unique = true]
+                                 ; portal-footer     ; logo-en.svg                       ; logo-ar.svg                       ; gia-en.png                        ; gia-ar.png                        ; vision.svg                        ; logo1-link         ; logo2-link         ; logo3-link         ;
+
+# Hanging Login Urls
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name         ; linkName[lang = en]; linkName[lang = ar]; url                                                                          ; $contentCV[unique = true]; &linkRef
+                              ; register-url-link ; Register Url ; Apply Now          ; قدم الآن           ; https://eservices.sagia.gov.sa/en/login#register-apply ;                          ; register-url-link
+                              ; login-url-link    ; Login Url    ; Account Login      ; تسجل الدخول        ; https://eservices.sagia.gov.sa/                                              ;                          ; login-url-link
+
+
+UPDATE InvestSaudiFooterComponent; uid[unique = true]; registerUrl(&linkRef); loginUrl(&linkRef); $contentCV[unique = true]
+                                 ; portal-footer     ; register-url-link    ; login-url-link ;
+
+
+INSERT_UPDATE InvestSaudiCookieBarComponent; uid[unique = true]; name                 ; &componentRef; $contentCV[unique = true]; text[lang = en]
+                                           ; cookie-bar        ; Cookie Bar Component ; cookie-bar   ;                          ; <p>Our site uses cookies to help us improve the user experience. By using the site, you consent to the use of these cookies.</p>To learn more about cookies, please read our privacy policy <a href="/en/privacy-policy/" class="alert-link"><u>here</u></a>
+
+
+
+# Create Content Slots
+UPDATE ContentSlot; uid[unique = true]; cmsComponents(&componentRef)           ; $contentCV[unique = true]
+                  ; PortalFooterSlot  ; portal-footer,cookie-bar;
+

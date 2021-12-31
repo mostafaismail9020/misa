@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<project name="quality" xmlns:jacoco="antlib:org.jacoco.ant">
+	<description>
+		Quality related targets.
+		@author adrien.missemer
+	</description>
+	
+	<!-- findbugs tasks -->
+	<property name="findbugs.home.dir" location="build/resources/bin/findbugs-3.0.0" />
+	<property name="report.findbugs.dir" location="hybris/log/findbugs" />
+	<property name="jacoco.agent.jar.path" location="build/resources/lib/jacocoagent.jar" />
+	<!-- By default the following plugins are excluded in preview mode "devcockpit, jira, pdfreport, views, report, buildstability, buildbreaker", but we need buildbreaker though -->
+	<property name="sonar.preview.excludePlugins" value="devcockpit, jira, pdfreport, views, report, buildstability" />
+	<property name="sonar.jacoco.reportPath" location="${HYBRIS_TEMP_DIR}/.sonar/jacoco.exec" />
+	<property name="sonar.jacoco.reportMissing.force.zero" value="true" />
+	<property name="sonar.junit.reportsPath" location="${HYBRIS_LOG_DIR}/junit" />
+	<!-- sonar project version defaults to the project.version -->
+	<property name="sonar.projectVersion" value="${project.version}" />
+	<property name="standalone.test.javaoptions">-Xmx1g -XX:MaxPermSize=400M -javaagent:"${jacoco.agent.jar.path}"=destfile="${sonar.jacoco.reportPath}"</property>
+ 	
+	<macrodef name="findbugs_start">
+		<attribute name="extensions" default="${test.custom.extensions}"/>
+         <sequential>	
+			<property name="findbugs.extensions" value="@{extensions}" />
+ 			<propertyregex property="findbugs.extensions.clean" input="${findbugs.extensions}" regexp=";" replace="," global="true" defaultValue="${findbugs.extensions}" />		
+			
+        	<echo level="info" message=" " />
+			<echo level="info" message="*************************************************" />
+			<echo level="info" message="- Executing Findbugs for Custom extensions" />
+			<echo level="info" message="-------------------------------------------------" />
+			<echo level="info" message="- findbugs.extensions        : ${findbugs.extensions.clean}" />
+ 			<echo level="info" message="*************************************************" />
+			<echo level="info" message=" " />
+        	
+			<for list="${findbugs.extensions.clean}" param="extname" delimiter=",">
+				<sequential>
+					<antcall target="findbugs_logic">
+						 <param name="findbugs.extension.name" value="@{extname}"/>
+					</antcall>						
+				</sequential>
+			</for>								
+		</sequential>
+   </macrodef>			
+	
+   <target name="findbugs_logic" depends="install" description="Run code analysis over code to check for problems.">		
+
+		<!-- Fail this target if FindBugs is not installed. -->
+		<available file="${findbugs.home.dir}/lib/findbugs.jar" property="findbugs.available" />
+		
+		<fail unless="findbugs.available" message="Error: FINDBUGS_HOME not set or findbugs.jar not found." />
+		
+		<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpath="${findbugs.home.dir}/lib/findbugs-ant.jar" />
+
+
+		<!-- Run FindBugs. -->
+		<mkdir dir="${report.findbugs.dir}" />
+		<findbugs home="${findbugs.home.dir}" workHard="true" output="xml:withMessages" outputFile="${report.findbugs.dir}/findbugs_${findbugs.extension.name}.xml" excludeFilter="build/resources/ant/hybris_findbugsfilter.xml">						
+			<class location="${HYBRIS_CUSTOM_DIR}/${findbugs.extension.name}/classes" />
+ 			<auxClasspath>
+				<fileset dir="${findbugs.home.dir}/lib" includes="*.jar" />
+			</auxClasspath>					
+		</findbugs>
+	</target>
+	
+	<target name="findbugs">
+	    <findbugs_start/>
+	</target>
+	
+	
+	<!-- JAva COde COverage (JACOCO) properties -->
+ 	 
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+	    <classpath location="build/resources/bin/jacoco-0.7.3/lib/jacocoant.jar"/>
+	</taskdef>
+	
+	<available file="${HYBRIS_LOG_DIR}/jacoco/jacoco.exec" property="jacocoreport.present" />
+
+	<target name="jacocoreport" if="jacocoreport.present" >		
+	    <echo level="info" message="custom dir: ${HYBRIS_CUSTOM_DIR}" />
+		<jacoco:report>	
+			<executiondata>		
+				<file file="${HYBRIS_LOG_DIR}/jacoco/jacoco.exec" />
+			</executiondata>
+			<!--  the class files and optional source files ...  -->			
+			<structure name="Code Coverage">
+				<classfiles>
+					<fileset dir="${HYBRIS_CUSTOM_DIR}" casesensitive="yes">
+					  <include name="**/classes/**/*.class"/>
+					  <exclude name="**/classes/**/*Test.class"/>					
+					  <exclude name="**/classes/**/jalo/**"/>
+					  <exclude name="**/classes/**/actions/**"/>
+					  <exclude name="**/classes/**/constants/**"/>
+					  <exclude name="**/classes/**/*Standalone.class"/>
+					  <exclude name="**/classes/**/*Generated*.class"/>
+					  <exclude name="**/classes/**/*Extension.class"/>
+					</fileset>				    									        
+				</classfiles>
+				<sourcefiles encoding="UTF-8">
+					<fileset dir="${HYBRIS_CUSTOM_DIR}" casesensitive="yes">
+						<include name="**/src/**/*.java"/>
+						<exclude name="**/src/**/*Test.java"/>
+						<exclude name="**/src/**/jalo/**"/>
+						<exclude name="**/src/**/actions/**"/>
+						<exclude name="**/src/**/constants/**"/>
+						<exclude name="**/src/**/*Standalone.java"/>
+						<exclude name="**/src/**/*Generated*.java"/>
+						<exclude name="**/src/**/*Extension.java"/>
+					</fileset>														
+ 				</sourcefiles>
+			</structure>
+			<!--  to produce reports in different formats.  -->
+			<html destdir="${HYBRIS_LOG_DIR}/jacoco" />
+			<csv destfile="${HYBRIS_LOG_DIR}/jacoco/java_code_coverage.csv" />
+			<xml destfile="${HYBRIS_LOG_DIR}/jacoco/java_code_coverage.xml" />
+		</jacoco:report>
+	</target>
+	
+	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpath="${findbugs.home.dir}/lib/findbugs-ant.jar" />
+
+    <target name="cpd">
+    	<path id="cpd.classpath">
+        	<fileset dir="${platformhome}/resources/ant/lib">
+                <include name="*.jar"/>
+        	</fileset>
+	        <fileset dir="${bundled.tomcat.home}/lib/">
+		        <include name="*.jar"/>
+	        </fileset>
+	        <path path="${build.classpath}" />
+         </path>
+
+    	 <taskdef name="cpd" classname="net.sourceforge.pmd.cpd.CPDTask" classpathref="cpd.classpath"/>
+    	 <mkdir dir="${HYBRIS_LOG_DIR}/cpd"/>
+
+	    
+	     <cpd  minimumTokenCount="100" outputFile="${HYBRIS_LOG_DIR}/cpd/cpd.xml" format="xml" >
+	        <fileset dir="${HYBRIS_CUSTOM_DIR}">
+	             <include name="**/*.java"/>
+	        </fileset>
+	     </cpd>
+	</target>
+	
+	<target name="qacode" description="Triggers Code quality analytics tools">
+		<antcall target="allcustomtestswithcoverage"/>
+		<antcall target="custompmd"/>
+		<antcall target="cpd"/>
+		<antcall target="findbugs"/>	
+        <antcall target="jacocoreport"/>
+		<antcall target="sonar"/>
+	</target>
+	
+	<!-- Running junits and collecting code coverage-->
+	<target name="allcustomtestswithcoverage">
+		<!-- this is a way to set the jacoco javaagent in the jvmargs of the test target -->
+		<echo level="info" message="Before testing, standalone.javaoptions = ${standalone.javaoptions}" />
+		<property name="standalone.javaoptions.original" value="${standalone.javaoptions}" />
+		<var unset="true" name="standalone.javaoptions" />
+		<property name="standalone.javaoptions" value="${standalone.test.javaoptions}" />
+		<echo level="info" message="Running tests with standalone.javaoptions = ${standalone.javaoptions}" />
+
+		<antcall target="allcustomtests" />
+
+		<!-- it is good to reset the standalone.javaoptions to its original value -->
+		<var unset="true" name="standalone.javaoptions" />
+		<property name="standalone.javaoptions" value="${standalone.javaoptions.original}" />
+		<echo level="info" message="After testing, standalone.javaoptions = ${standalone.javaoptions}" />
+	</target>
+    
+	<!-- PMD rules only for customized extensions -->
+	<target name="custompmd" description="Tests the source code with the pmd rules.">
+		<pmd_start extensions="${test.custom.extensions}"/>
+    </target>
+
+	<target name="sonar" description="Executes sonar to check all custom extensions with the sonar rules.">
+		<echo level="info" message="sonar.jacoco.reportPath = ${sonar.jacoco.reportPath}" />
+		<echo level="info" message="sonar.junit.reportsPath = ${sonar.junit.reportsPath}" />
+		<property name="sonar.language" value="java" />
+		<property name="sonar.projectKey" value="${sonar.projectName}-${sonar.language}" />
+		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+			<classpath> 
+				<path path="build/resources/ant/lib/sonar-ant-task-2.3.jar" />
+			</classpath>
+		</taskdef>
+		<sonar extensions="${test.custom.extensions}"/>
+    </target>
+	
+	<target name="precommit" description="Executes precommit checks">
+		<property name="sonar.issuesReport.console.enable" value="true" />
+		<property name="sonar.issuesReport.html.enable" value="true" />
+		<property name="sonar.issuesReport.lightModeOnly" value="true" />
+		<property name="sonar.analysis.mode" value="incremental" />
+		<property name="sonar.language" value="java" />
+		<property name="sonar.projectKey" value="${sonar.projectName}-${sonar.language}" />
+		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+			<classpath> 
+				<path path="build/resources/lib/sonar-ant-task-2.3.jar" />
+			</classpath>
+		</taskdef>
+		<sonar extensions="${test.custom.extensions}"/>
+	</target>
+	
+</project>

@@ -1,0 +1,11 @@
+#Ant properties
+#Mon Nov 20 20:28:36 UTC 2017
+builddate=20171120 2028
+description=sagiasecchatbackoffice
+group.id=de.hybris.platform
+module.name=platform-module
+name=sagiasecchatbackoffice
+releasedate=20171118 1516
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

@@ -1,0 +1,14 @@
+$contentCatalog = investsaudiportalContentCatalog
+$productCatalog = investsaudiportalProductCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$productCV = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$mediafolder = portal-media
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE Media; code[unique = true]; realFileName       ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText  ; $contentCV[unique = true]
+                   ; sample-meta-investsaudi_brandlogo.png ; investsaudi_brandlogo.png ; $siteResource/investsaudi_brandlogo.png                                                 ; image/png               ;                   ; Invest Saudi                        ;
+
+INSERT_UPDATE CMSSite; uid[unique = true]; metaImage(code, $contentCV)
+                     ; investsaudiportal ; sample-meta-investsaudi_brandlogo.png

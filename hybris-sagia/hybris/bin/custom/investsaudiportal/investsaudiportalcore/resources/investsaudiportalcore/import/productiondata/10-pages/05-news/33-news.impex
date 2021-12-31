@@ -1,0 +1,99 @@
+$page = news-sagia-announces-mous-and-agreements
+$template = portalGlobalTemplate
+$name = SAGIA Announces MoUs And Agreements With Public And Private Sector Entities Under Saudi-Japan Vision 2030
+$titleEn = $name
+$titleAr = توقيع عدد من مذكرات التفاهم والاتفاقيات بين الشركات السعودية واليابانية في منتدى أعمال الرؤية السعودية اليابانية 2030
+$shortDescEn = These announcements follow the Saudi-Japan Vision 2030 Business Forum in Tokyo
+$shortDescAr = أعلنت الهيئة العامة للاستثمار عن توقيع عدد من مذكرات التفاهم والاتفاقيات
+$pagelabel = /news/sagia-announces-mous-and-agreements-with-public-and-private-sector-entities-under-saudi-japan-vision-2030
+$contentCatalog = investsaudiportalContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = investsaudiportal
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; 47                 ; 47.jpg      ; $siteResource/47.jpg                                                        ;                             ;                                          ; ""     ; ;
+#                   ; file2  				; $siteResource/file2.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias; $contentCV; ; ; ;
+                            ; media-container-$page   ; 47     ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; 47                                ; 47                                  ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 19.06.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<ul>
+<li><em>These announcements follow the Saudi-Japan Vision 2030 Business Forum in Tokyo</em></li>
+</ul>
+<p><em>&nbsp;</em></p>
+<ul>
+<li><em>MoUs and agreements represent key strategic sectors, including finance, education, industrial and manufacturing</em></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Tokyo, Japan &ndash; 19 June 2019:&nbsp;</strong>The Saudi Arabian General Investment Authority (SAGIA) announces the signing of multiple memorandums of understanding (MOUs) and agreements with leading Japanese investors, as well as new business licenses also awarded to Japanese businesses, permitting them to establish operations in Saudi Arabia.</p>
+<p>These deals highlight the breadth of opportunities being created by Saudi Arabia&rsquo;s Vision 2030 plan, as well as the interest within the Kingdom&rsquo;s long-standing partners, such as Japan, in investment in the Kingdom. They span a number of strategic sectors including finance, education, industrial and manufacturing. The deals also involve a number of major Japanese firms including MUFG Bank, Yokogawa Electric Corporation and Mizuho Bank, among others.</p>
+<p>His Excellency Ibrahim Al-Omar, Governor of SAGIA, commented:</p>
+<p><em>&ldquo;Saudi Arabia is open for business and we are delighted to announce these agreements. Japan is one of our most important economic partners &ndash; and we are excited by the potential to expand our partnership as our economy undergoes a wide range of investor-friendly reforms. We look forward to welcoming these companies and many more in the years to come.&rdquo;</em></p>
+<p>Agreements of note that were signed include:</p>
+<ul>
+<li>Agreements between SAGIA and leading Japanese financial institutions Mizuho Bank and MUFG Bank to explore investment opportunities</li>
+<li>Memorandum of Understanding outlining an exchange agreement between National University Corporation Oita University and Alfaisal University</li>
+<li>Agreement between Yokogawa Electric Corporation and Saudi Basic Industries Corporation (&ldquo;SABIC&rdquo;) to establish a local center of excellence</li>
+<li>Memorandum of Understanding between Sumitomo Mitsui Banking Corporation and Saudi Industrial Development Fund (SIDF) on cooperating on financing opportunities and human capital development</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>These announcements follow the Saudi-Japan Vision 2030 Forum, which was held this week Tokyo, ahead of the upcoming G20 Summit due to take place in Osaka, Japan, later this month.</p>
+<p>Organized in partnership between SAGIA and the Japan External Trade Organization (JETRO), the event brought together more than&nbsp;300&nbsp;delegates, including high-ranking government officials, investors and business leaders for a series of open discussions, sectorial workshops and bilateral meetings.</p>
+<p>Japan is one of Saudi Arabia&rsquo;s most important economic partners &ndash; it is the Kingdom&rsquo;s second largest source of foreign capital and third-largest trading partner, with total trade exceeding US $39 billion.</p>
+<p>Since 2016, the Saudi Arabian government has delivered 45% of over 500 planned reforms, including the introduction of 100% foreign ownership rights, enhancing legal infrastructure and offering greater protection for shareholders.&nbsp; As a result, Saudi Arabia is climbing international competitiveness and ease-of-doing-business rankings and investors are increasingly towards to the Kingdom, with FDI inflows increasing by 127% in 2018 and the number of new companies entering Saudi Arabia rose 70% on a year-on-year basis in Q1 2019.</p>
+<p>For more information about investment opportunities in Saudi Arabia, visit:&nbsp;<a href='http://www.investsaudi.sa/'>www.investsaudi.sa</a>&nbsp;&nbsp;</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>ENDS</strong></p>
+<p><strong>Contact</strong></p>
+<p><a href='mailto:mediacenter@sagia.gov.sa'>mediacenter@sagia.gov.sa</a></p>
+<p><strong>About SAGIA</strong></p>
+<p>The Saudi Arabian General Investment Authority (SAGIA) works in collaboration with other government entities to attract, retain and expand high-value investments for the benefit of sustainable national economic growth.</p>
+<p>SAGIA works across the public and private sectors to help businesses and investors access fast-emerging opportunities across Saudi Arabia. It identifies and develops investment opportunities and supports regulatory improvements to increase competitiveness, unleash the capabilities of promising economic sectors, and open new opportunities for foreign investments.</p>
+<p>SAGIA supports businesses throughout the investment journey: from identifying opportunities, to conducting feasibility studies and connecting with potential partners, to setting-up operations.</p>
+<p>SAGIA has a particular focus on nine priority sectors identified within Saudi Arabia&rsquo;s Vision 2030: chemicals, information &amp; technology, energy &amp; water, industrial &amp; manufacturing, mining &amp; metals, healthcare &amp; life sciences, transport &amp; logistics, tourism, culture &amp; entertainment, and emerging sectors.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>أعلنت الهيئة العامة للاستثمار عن توقيع عدد من مذكرات التفاهم والاتفاقيات مع عدد الجهات الاستثمارية في اليابان، إضافة إلى تسليم رخص لعدد من الشركات اليابانية لبدء أعمالها في المملكة، وذلك على هامش فعاليات منتدى أعمال الرؤية السعودية اليابانية 2030.</p>
+<p>وكشفت الهيئة أن هذه الاتفاقيات تأتي كأحد مخرجات رؤية السعودية 2030 في صناعة فرص استثمارية في المملكة، مشيرة إلى اهتمام شركاء المملكة من مختلف الدول مثل اليابان للاستثمار فيها والتوسع وبدء أعمالها في السوق السعودي، حيث شملت مذكرات التفاهم والاتفاقيات التي تم توقيعها اليوم عددًا من القطاعات الإستراتيجية؛ مثل قطاع التمويل والتعليم والصناعة والتصنيع، مع كبريات الشركات اليابانية مثل بنك إم يو إف جي (MUFG Bank) وشركة يوكوجاوا الإلكترونية (Yokogawa Electric Copmany) وبنك ميزوهو (Mizuho Bank) إضافة إلى شركات يابانية أخرى.</p>
+<p>من جانبه علق معالي محافظ الهيئة العامة للاستثمار المهندس إبراهيم العمر على أن توقيع مذكرات التفاهم والاتفاقيات اليوم يؤكد انفتاح المملكة على جذب الاستثمارات الأجنبية واحتفائها بتوقيع المذكرات والاتفاقيات، لافتاً إلى أن اليابان تُعد إحدى أهم الشركاء الاقتصاديين للمملكة، لاسيما أن مخرجات اللقاء مع الشركاء من الجانب الياباني قد أكدت على أن هناك فرصاً كبيرة لتوسيع آفاق الشراكة بين البلدين في ظل الإصلاحات الاقتصادية، والتقدم المستمر على صعيد سهولة ممارسة الأعمال التي تشهدها المملكة، مضيفاً بأن المملكة تتطلع إلى بدء أعمال الشركات اليابانية التي تم التوقيع معها في المنتدى، وتوسيع آفاق الشراكة بين البلدين عبر استقطاب عدد أكبر من الشركات اليابانية مستقبلًا.</p>
+<p>وتضمنت الاتفاقيات التي تم توقيعها في منتدى أعمال الرؤية السعودية اليابانية 2030، الذي عُقد في العاصمة طوكيو قبيل قمة مجموعة العشرين المزمع انعقادها في أوساكا نهاية الشهر الجاري، اتفاقية تعاون بين الهيئة العامة للاستثمار وبنك ميزوهو، وبين الهيئة العامة للاستثمار وبنك إم يو إف جي، وذلك لبحث الفرص الاستثمارية التي توفرها المملكة وبدء الأعمال فيها، ومذكرة تفاهم لتبادل اتفاقية بين جامعة الفيصل وجامعة أويتا الوطنية، واتفاقية بين سابك وشركة يوكوجاوا الإلكترونية لتأسيس مركز امتياز محلي، ومذكرة</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>تفاهم بين صندوق التنمية الصناعية السعودي وشركة سوميتومو ميتسوي المصرفية للتعاون في تمويل الفرص وتطوير رأس المال البشري.</p>
+<p>وقد شهد المنتدى الذي تم تنظميه من الهيئة العامة للاستثمار ومنظمة التجارة الخارجية اليابانية (JETRO) حضور أكثر من 300 من ممثلي الجهات الحكومية والشركات والمستثمرين ورجال الأعمال من البلدين، حيث تضمنت فعالياته حلقات نقاش مفتوحة وورش عمل للقطاعات واجتماعات جانبية.</p>
+<p>يذكر أن اليابان إحدى أهم الدول الشريكة في الاقتصاد السعودي؛ إذ تعد ثاني أكبر مصادر المملكة لرأس المال الأجنبي وثالث أكبر الشركاء التجاريين لها؛ بإجمالي مبالغ تجارية تصل إلى أكثر من 39 مليار دولار. ومنذ انطلاق رؤية السعودية 2030 في أبريل 2016؛ فقد حققت المملكة ما نسبته 45% من 500 إصلاح اقتصادي، إذ تضمنت الإصلاحات التملك الكامل للاستثمار الأجنبي، خاصة بوجود بنية تحتية متكاملة ومتطورة من الحقوق القانونية وحماية أكبر للمستثمر الأجنبي، ونتيجة لهذا فقد حققت المملكة المرتبة الرابعة ضمن مجموعة العشرين وفقًا لتقرير سهولة ممارسة الأعمال الصادر من البنك الدولي، وما تزال المملكة تنافس عالميًّا بتحقيق أعلى المراتب؛ إذ بلغ تدفق الاستثمار الأجنبي في عام 2018 ما نسبته 127%، إضافة إلى هذا فإن المملكة ما تزال تحقق طموحات برنامج رؤية السعودية 2030؛ إذ بلغت زيادة الشركات الأجنبية التي بدأت أعمالها في المملكة في الربع الأول من عام 2019 ما نسبته 70% بالمقارنة مع الربع الأول من العام الماضي.</p>
+<p><strong>انتهى</strong></p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

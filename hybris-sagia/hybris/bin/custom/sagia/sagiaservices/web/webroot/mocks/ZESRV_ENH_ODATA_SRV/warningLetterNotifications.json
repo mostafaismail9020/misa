@@ -1,0 +1,36 @@
+{
+	"d": {
+		"results": [
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='0000526439',NotificationType='WL')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='0000526439',NotificationType='WL')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "0000526439",
+				"NotificationType": "WL",
+				"NotificationPriority": "M",
+				"ExpiryDate": null,
+				"NotificationText": "Investor has a notification letter for request 526439 with expiry date",
+				"CreatedBy": "System Notification",
+				"CreatedOn": null
+			},
+			{
+				"__metadata": {
+					"id": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='0000526440',NotificationType='WL')",
+					"uri": "https://sagngdap03.hec.sagia.gov.sa:44300/sap/opu/odata/sap/ZESRV_ENH_ODATA_SRV/InvestorNotificationSet(InvestorId='614140',TransactionId='0000526440',NotificationType='WL')",
+					"type": "ZESRV_ENH_ODATA_SRV.InvestorNotification"
+				},
+				"InvestorId": "614140",
+				"TransactionId": "0000526440",
+				"NotificationType": "WL",
+				"NotificationPriority": "M",
+				"ExpiryDate": null,
+				"NotificationText": "Investor has a notification letter for request 526440 with expiry date",
+				"CreatedBy": "System Notification",
+				"CreatedOn": null
+			}
+		]
+	}
+}

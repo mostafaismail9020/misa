@@ -1,0 +1,31 @@
+$productCatalog = sagiaProductCatalog
+$contentCatalog = sagiaContentCatalog
+$classificationCatalog = sagiaClassification
+
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$siteUid = sagia
+$languages = en,ar
+
+#UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+#$siteResource = $config-portalMediaResources
+
+
+# Classification catalog
+INSERT_UPDATE ClassificationSystem; id[unique = true]
+                                  ; $classificationCatalog
+
+# Insert Classifications System Version
+INSERT_UPDATE ClassificationSystemVersion; catalog(id)[unique = true]; version[unique = true]; active; inclPacking[virtual = true, default = true]; inclDuty[virtual = true, default = true]; inclFreight[virtual = true, default = true]; inclAssurance[virtual = true, default = true]
+                                         ; $classificationCatalog    ; 1.0                   ; true
+
+UPDATE Catalog; id[unique = true]      ; name[lang = en]
+              ; $classificationCatalog ; "Sagia Product Classification" ;
+
+
+INSERT_UPDATE Category; code[unique = true]  ; description[lang = en]  ; seoKeywords[lang = en]                                                                                                 ; supercategories(code, $catalogVersion); allowedPrincipals(uid)[default = 'customergroup']; $catalogVersion; name [lang = en]        ; name [lang = ar]; picture(code, $catalogVersion); thumbnail(code, $catalogVersion)
+                      ; sector-opportunities ; Sectors & Opportunities ; "Invest Saudi,Information and Technology - Sectors & Opportunities,Sectors & Opportunities,Information and Technology" ;                                       ;                                                  ;                ; Sectors & Opportunities ; القطاعات والفرص ;
+
+
+INSERT_UPDATE MediaFolder; qualifier[unique = true]; path[unique = true]
+                         ; portal-media            ; portal-media
+                         ; portal-media-email      ; portal-media-email

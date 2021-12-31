@@ -1,0 +1,67 @@
+$page = news-sagia-hosts-saudi-chinese-symposium
+$template = portalGlobalTemplate
+$name = SAGIA Hosts Saudi-Chinese Symposium To Explore Valuable Investment Opportunities In Saudi Arabia
+$titleEn = $name
+$titleAr = هيئة الاستثمار توقع مذكرة تفاهم مع يوني-بايو وشريكتها السعودية إضافات بقيمة 200 مليون دولار
+$shortDescEn = Saudi Arabia General Investment Authority (SAGIA) had the honor of hosting the Saudi-Chinese Trade and Investment Symposium
+$shortDescAr = وقعت الهيئة العامة للاستثمار، بمقرها الرئيس اليوم مذكرة تفاهم بقيمة 200 مليون
+$pagelabel = /news/sagia-hosts-saudi-chinese-symposium-to-explore-valuable-investment-opportunities-in-saudi-arabia
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$galleryImages = galleryImages(qualifier, $contentCV)
+
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$siteResource = $config-portalMediaResources
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]; name  ; linkName[lang = en]; linkName[lang = ar]; contentPage(uid, $contentCV); $contentCV[unique = true]
+                              ; link-$page        ; $name ; $titleEn           ; $titleAr           ; $page                       ;
+
+
+INSERT_UPDATE Media; code[unique = true]; realFileName ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; au8i1422           ; au8i1422.jpg ; $siteResource/au8i1422.jpg                                                  ;                             ;                                          ; ""     ; ;
+#                   ; a21i7015 ; $siteResource/a21i7015.jpg                                      ;                             ;                                          ; ""     ; ;
+#                   ; pdf-3                ; $siteResource/news-report-3.pdf                                          ;                             ;                                          ; ""     ; ;
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias  ; $contentCV; ; ; ;
+                            ; media-container-$page   ; au8i1422 ;           ; ; ; ;
+
+INSERT_UPDATE InvestSaudiNewsComponent; uid[unique = true]; name   ; newsTitle[lang = en]; newsTitle[lang = ar]; newsDetailsImage(code, $contentCV); newsThumbnailImage(code, $contentCV); newsShortDescription[lang = en]; newsShortDescription[lang = ar]; newsUrl(uid, $contentCV); newsFullReport(code, $contentCV); newsDate[dateformat = dd.MM.yyyy HH:mm:ss]; $contentCV[unique = true]; $galleryImages        ; &componentRef
+                                      ; component-$page   ; news 1 ; $titleEn            ; $titleAr            ; au8i1422                          ; au8i1422                            ; $shortDescEn                   ; $shortDescAr                   ; link-$page              ;                                 ; 28.07.2019 00:00:00                       ;                          ; media-container-$page ; component-$page ;
+
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = en]
+                               ; component-$page   ;                          ; "<p>In July 2019, the Saudi Arabia General Investment Authority (SAGIA) had the honor of hosting the Saudi-Chinese Trade and Investment Symposium. At its headquarters in Riyadh, SAGIA welcomed a Chinese delegation of more than 40 delegates, representing the public and private sector. The delegation was headed by the Chairman of the Council for the Promotion of Cooperation with Southern Countries and the Chinese Ambassador to the Kingdom.</p>
+<p>&nbsp;</p>
+<p>SAGIA team outlined promising investment opportunities in the targeted sectors in the Kingdom, in addition to the consultation services provided by SAGIA to investors in order to facilitate their entry and start their business in the Saudi market.</p>
+<p>&nbsp;</p>
+<p>Contributing with about 9% of the total global foreign direct investment and one fifth of the total investment inflow to the Kingdom, China is a strategic partner in SAGIA&rsquo;s pursuit of the Saudi Vision 2030 China. The Kingdom is also a key partner to China in realizing the Belt and Road Initiative through the Saudi-Chinese Joint Committee.</p>
+<p>&nbsp;</p>
+<p>Recently, Saudi Arabia has seen a sharp uptick in the number of Chinese companies setting up in the Kingdom. The first half of 2019 saw a 100% increase in the number of Chinese companies setting up their operations in the Kingdom, when compared to the same period in 2018.</p>
+"
+
+UPDATE InvestSaudiNewsComponent; uid[unique = true]; $contentCV[unique = true]; newsFullDescription[lang = ar]
+                               ; component-$page   ;                          ; "<p>أقامت هيئة الاستثمار الندوة السعودية الصينية للتجارة والاستثمار، إذ استقبلت في مقرها بالرياض وفدًا صينيًّا ضم أكثر من 40 ممثلًا من القطاع الحكومي والخاص، وقد رأس الوفد الزائر معالي رئيس مجلس تعزيز التعاون للدول الجنوبية وسعادة سفير الصين في المملكة.</p>
+<p>&nbsp;</p>
+<p>وقد أقيمت هذه الندوة في سياق التعاون والشراكة المستمرة بين البلدين على الصعيد الاقتصادي والتجاري والتنموي، إذ استعرض فريق الهيئة الفرص الاستثمارية الواعدة التي تزخر بها المملكة في القطاعات المستهدفة، إضافة إلى الخدمات والاستشارات التي تقدمها الهيئة للمستثمرين لتسهيل دخولهم وبدء أعمالهم في السوق السعودي.</p>
+<p>&nbsp;</p>
+<p>يُذكر أن النصف الأول من عام 2019 شهد زيادة بنسبة 100% في عدد الشركات الصينية التي أسست لبدء أعمالها في المملكة، مقارنةً بالفترة نفسها من عام 2018، إذ إن الصين شريك إستراتيجي في سعي الهيئة لتحقيق طموحات رؤية السعودية 2030، فالصين تحرز مساهمة بنحو 9% من إجمالي الاستثمارات الأجنبية المباشرة عالميًّا، في حين مساهمتها بنحو الخُمس من إجمالي الاستثمارات القادمة في المملكة، كما تعد المملكة بالمقابل شريكًّا رئيسًا للصين في تحقيق مبادرة الحزام والطريق عبر اللجنة السعودية الصينية المشتركة.</p>
+"
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name  ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $name ; $titleEn        ; $titleAr        ; $template                      ; $pagelabel ; false   ;                          ;                              ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]   ; name           ; active; cmsComponents(&componentRef); $contentCV[unique = true]
+                         ; PortalPageMain-$page ; PortalPageMain ; true  ; component-$page             ;
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]   ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageMain-$page ; PortalPageMain         ; PortalPageMain-$page                       ;
+
+
+
+

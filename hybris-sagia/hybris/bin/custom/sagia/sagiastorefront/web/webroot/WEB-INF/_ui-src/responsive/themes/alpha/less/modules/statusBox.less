@@ -1,0 +1,40 @@
+.statusBox {
+    display: flex;
+//    border-bottom: solid 1px #ebedee;
+    padding: 0;
+    margin-bottom: 24px;
+    
+    #media-breakpoint-down(xs, {
+        flex-direction: column-reverse;
+    });         
+    
+    &-description {
+        flex: 1 1 auto;
+        display: flex;
+        font-size: 15px;
+        color: #313f4b;
+        ul&{
+            list-style: none;
+        }
+    }
+    
+    &-info {
+        margin-right: 60px;
+        flex: 0 0 auto;
+        line-height: 18px;
+        
+        span {  
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            margin-left: 9px;
+            vertical-align: -4px;
+            text-align: center;
+            
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

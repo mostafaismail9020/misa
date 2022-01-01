@@ -14,6 +14,12 @@
 	if(window.location.pathname === "/" || window.location.pathname === ""){
 		window.location.href = window.location.href + lang;
 	}
+	
+	if(window.location.href.indexOf('recaptchaChallangeAnswered=false') >= 0){
+		 var errorModal = $('#errorResponseModal');
+         errorModal.find('.modal-description').text('Invalid Captcha, Please try again');
+         errorModal.modal('show');	
+	}
 
 	// Smooth scroll for the navigation menu and links with .scrollto classes
 	var scrolltoOffset = $('#header').outerHeight() - 1;
@@ -3603,6 +3609,7 @@ $(document).ready(function () {
 			type: "POST",
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
+			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
 			data: JSON.stringify({
 				name: $.trim($("#crName").val()),
 				email: $.trim($("#crEmail").val()),
@@ -3722,6 +3729,7 @@ function onPopupContactSubmit() {
 			type: "POST",
 			contentType: "application/json",
 			dataType: "json",
+			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
 			data: JSON.stringify({
 				name: $.trim($("#popup_crFirstName").val())+" "+$.trim($("#popup_crLastName").val()),
 				email: $.trim($("#popup_crEmail").val()),
@@ -3735,9 +3743,16 @@ function onPopupContactSubmit() {
 			}),
 			success: function (data) {
 				console.log(data);
+				if(data.indexOf('captcha')>= 0){
+					$("#downloadModal").css("z-index","1300");
+					 var errorModal = $('#errorResponseModal');
+                   errorModal.find('.modal-description').text(data);
+				errorModal.css("z-index","1400");
+                   errorModal.modal('show');					
+				}else{
 				$("#downloadModal").modal("toggle");
 				$("#popup-contact-form input").val('').change();
-				$("#pdfDownloadTrigerrer")[0].click();
+				$("#pdfDownloadTrigerrer")[0].click();}
 			// if( buttonId === 'download' &&  $("#pdfDownloadTrigerrer").length > 0 ){
 					
 			// 	}
@@ -4119,16 +4134,7 @@ var script = document.createElement('script');
         });
     }
 
-// function ScreenResize
-window.addEventListener("resize", ScreenResize);
-function ScreenResize(){
-	setTimeout(function () {
-		KeyReasonCarousel();
-		ManageKeyReasonHeight();
-	}, 100);
-}
 
-//----code End-----
 
 //sectors-opportunities  ----- 
 	

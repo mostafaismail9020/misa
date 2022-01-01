@@ -75,6 +75,10 @@
     <div class="accountLogin-content-formSubmitSection">
       
       <div class="login_button_outer">
+      
+      <input type="hidden" id="recaptchaChallangeAnswered"
+							value="${requestScope.recaptchaChallangeAnswered}" />
+      <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
         
         <ycommerce:testId code="loginAndCheckoutButton">
             <button type="submit" class="btn btn_wide font-weight-bold" id="sagiaLoginBtn"><spring:theme code="${actionNameKey}"/></button>

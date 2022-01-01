@@ -17,10 +17,8 @@ ACC.captcha = {
 					$(html).appendTo('.js-recaptcha-captchaaddon');
 					$.getScript('https://www.google.com/recaptcha/api.js?hl=' + document.documentElement.lang, function ()
 					{
-						if ($('#recaptchaChallangeAnswered').val() == 'false')
-						{
-							$('#g-recaptcha_incorrect').show();
-						}
+						$('#g-recaptcha_incorrect').hide();
+						
 					});
 				}
 			}
@@ -30,7 +28,7 @@ ACC.captcha = {
 
 $(document).ready(function ()
 {
-	if ($('#sagiaRegisterFormQuickRegistration').html() != null || $('#updateEmailForm').html() != null || $('#sagiaAuthenticationForm').html() != null || $('#sagiaLoginForm').html() != null)
+	if ($('#contact-us-page-contact-us-form').html() != null || $('#sagiaRegisterFormQuickRegistration').html() != null || $('#updateEmailForm').html() != null || $('#corForm').html() != null)
 	{
 		ACC.captcha.bindAll();
 	}

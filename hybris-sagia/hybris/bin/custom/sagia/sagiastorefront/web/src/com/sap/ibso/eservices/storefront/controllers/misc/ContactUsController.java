@@ -19,18 +19,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import de.hybris.platform.ticket.model.CsTicketModel;
+import org.springframework.validation.BindingResult;
 
 @Controller
 public class ContactUsController extends AbstractController {
 
-    private final static Logger log = LoggerFactory.getLogger(ContactUsController.class);
+    private static final String ERROR_INVALID_CAPTCHA = "error : invalid captcha.";
+
+	private final static Logger log = LoggerFactory.getLogger(ContactUsController.class);
 
     @Autowired
     private ContactTicketFacade contactTicketFacade;
 
     @RequestMapping(value = "/contactus", method = {RequestMethod.POST,RequestMethod.GET}, consumes = {"application/json"})
     public @ResponseBody String contactus(@RequestBody ContactTicketData ticket
-                            ) {
+                            ,HttpServletRequest request, HttpServletResponse response,  final BindingResult bindingResult) {
+    	
+    	if (bindingResult.hasErrors()) {
+    		 log.error("Invalid Captcha");
+			
+			return ERROR_INVALID_CAPTCHA;
+
+        }
 
         try {
             CsTicketModel contactTicket  = contactTicketFacade.saveTicket(ticket);

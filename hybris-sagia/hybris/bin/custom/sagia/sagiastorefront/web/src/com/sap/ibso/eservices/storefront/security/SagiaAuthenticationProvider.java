@@ -11,6 +11,12 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.util.StringUtils;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import org.apache.commons.lang3.BooleanUtils;
+import javax.servlet.http.HttpServletRequest;
+import java.lang.Boolean;
+
 
 import java.util.Locale;
 
@@ -40,6 +46,17 @@ public class SagiaAuthenticationProvider extends AcceleratorAuthenticationProvid
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException
     {
+    	if (RequestContextHolder.getRequestAttributes() instanceof ServletRequestAttributes)
+		{
+			final ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder
+					.getRequestAttributes();
+			HttpServletRequest request = requestAttributes.getRequest();
+			if(request.getAttribute("recaptchaChallangeAnswered") != null && BooleanUtils.isFalse((Boolean)request.getAttribute("recaptchaChallangeAnswered"))) {
+				 LOGGER.info("Invalid captcha, Please Try Again");
+	            throw new SagiaAuthenticationException("Invalid captcha, Please Try Again"); // technical issue occurred
+
+			}
+		}
 
         LOGGER.info("Before login for user: " + authentication.getName());
         if (!(authentication instanceof UsernamePasswordAuthenticationToken) ||

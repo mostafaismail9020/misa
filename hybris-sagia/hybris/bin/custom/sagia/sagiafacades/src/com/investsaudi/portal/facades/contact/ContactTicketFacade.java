@@ -95,7 +95,7 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
         }
         if(userService.isAnonymousUser(user));
         {
-           // user= CheckIfUserExistElseCreateUser(ticketData);
+			user= CheckIfUserExistElseCreateUser(ticketData);
         }
         ticketParameter.setCustomer(user);
         ticketParameter.setAttachments(ticketData.getAttachments());

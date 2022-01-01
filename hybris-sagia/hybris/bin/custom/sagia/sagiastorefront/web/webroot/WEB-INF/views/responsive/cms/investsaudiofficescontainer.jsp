@@ -88,7 +88,7 @@
 
                           --%>
                            <h3 class="col-md-8 m-auto pb-5"><spring:theme code="portal.contactus.form.text"/></h3>
-                                <form:form class="contact-form pt-3" action = "${encodedContextPath}/about/contactUs" modelAttribute="contactUsFormData" enctype="multipart/form-data">
+                                <form:form class="contact-form pt-3" id="contact-us-page-contact-us-form" action = "${encodedContextPath}/about/contactUs" modelAttribute="contactUsFormData" enctype="multipart/form-data">
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />	
                                   <div class="form-row">
                                     <div class="form-group col-md-6 form-normal-item">
@@ -160,6 +160,11 @@
                                           <spring:theme code="portal.contactus.form.agree.submit.label"/>
                                         </div>
                                       </div>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-12">
+                                      <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
+						              <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
                                     </div>
                                   </div>
                                   <div class="row form-action-btn">

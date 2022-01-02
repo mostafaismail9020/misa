@@ -8,60 +8,79 @@
 
 <c:if test="${component.visible}">
 	<%-- <c:forEach items="${component.navigationNode.children}" var="childLevel1">
-								<c:forEach items="${childLevel1.children}" step="${component.wrapAfter}" varStatus="i">
-								   <div class="footer__nav--container col-xs-12">
-									   <c:choose>
-										   <c:when test="${component.wrapAfter > i.index}">
-											   <div class="title">${fn:escapeXml(childLevel1.title)}</div>
-										   </c:when>
-										   <c:otherwise>
-											   <div class="empty-title title" style="opacity: 0;">empty title</div>
-										   </c:otherwise>
-									   </c:choose>
-									   <ul class="footer__nav--links">
-										   <c:forEach items="${childLevel1.children}" var="childLevel2" begin="${i.index}" end="${i.index + component.wrapAfter - 1}">
-												<c:forEach items="${childLevel2.entries}" var="childlink" >
-													<cms:component component="${childlink.item}" evaluateRestriction="true" element="li" class="footer__link"/>
-												</c:forEach>
-										   </c:forEach>
-									   </ul>
-								   </div>
-								</c:forEach>
-							</c:forEach> --%>
-	
+		<c:forEach items="${childLevel1.children}" step="${component.wrapAfter}" varStatus="i">
+				<div class="footer__nav--container col-xs-12">
+					<c:choose>
+						<c:when test="${component.wrapAfter > i.index}">
+							<div class="title">${fn:escapeXml(childLevel1.title)}</div>
+						</c:when>
+						<c:otherwise>
+							<div class="empty-title title" style="opacity: 0;">empty title</div>
+						</c:otherwise>
+					</c:choose>
+					<ul class="footer__nav--links">
+						<c:forEach items="${childLevel1.children}" var="childLevel2" begin="${i.index}" end="${i.index + component.wrapAfter - 1}">
+						<c:forEach items="${childLevel2.entries}" var="childlink" >
+							<cms:component component="${childlink.item}" evaluateRestriction="true" element="li" class="footer__link"/>
+						</c:forEach>
+						</c:forEach>
+					</ul>
+				</div>
+		</c:forEach>
+	</c:forEach> --%>
 
-	<div class="">
-	    <div class="footer__top mt-5">
-	        <div class="container">
-				<div class="row footer-wrapper">
-					<div class="footer__left logos pl-0">
-						<%-- <img src="${commonResourcePath}/images/logo-en.svg" alt="" width="80px">
-						<img src="${commonResourcePath}/images/GIA-en.png" alt="" width="80px"> --%>
-						<img src="${commonResourcePath}/images/logo_green.png" alt="" >
+	<div class="footer text-center" id="footer">
+		<div class="text-center my-login-part">
+			</div>
+
+		<section class="footer-menu-faq">
+			<div class="footerContent">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
+							<h2 class="text-uppercase display-7">Invest in Saudi</h2>
+							<p class="text">Discover the unlimited opportunities available in the Kingdom</p>
+							<p><a class="link text-uppercase px-0" href="/en/sectors-opportunities/opportunities">Explore Opportunities &nbsp; &nbsp;
+									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+							</p>
+						</div>
+						<div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
+							<h2 class="text-uppercase display-7">Set up your Regional Hq's in Saudi Arabia</h2>
+							<p class="text ">Start your Headquarter journey now and enjoy the list of benefits the Kingdom offer</p>
+							<p><a class="link text-uppercase px-0" href="/en/sectors-opportunities/regionalHQ">Start now &nbsp; &nbsp;
+									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+							</p>
+						</div>
+						<div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
+							<h2 class="text-uppercase display-7">Business Support</h2>
+							<p class="text">All that you need to set up your business in Saudi Arabia</p>
+							<p><a class="link text-uppercase px-0" href="/en/investor/guide">Investment Guide &nbsp; &nbsp;
+									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+							</p>
+						</div>
+						<div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
+							<h2 class="text-uppercase display-7">Apply for your License</h2>
+							<p class="text">Your success journey Start here</p>
+							<ul class="list-unstyled list-inline">
+								<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button">Login</a></li>
+								<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button">Register</a></li>
+								<li class="list-inline-item border-0"><a class="text-uppercase" href="/en/contactUs" role="button">Contact Us</a></li>
+							</ul>
+						</div>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="footer-menu-links footer__top mt-5 pt-4 pb-5">
+			<div class="container my-5">
+				<div class="row no-gutters footer-wrapper">
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mb-5 mb-lg-0 float-left text-left ft-logo">
+						<img src="${commonResourcePath}/images/logo_green.png" alt=""  class="footer_logo">
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 float-left text-left first-list">
+
 					<div class="footer__left links">
-						<div class=" ">
-							<%-- <c:forEach items="${component.navigationNode.children}" var="childLevel1">
-								<c:forEach items="${childLevel1.children}" step="${component.wrapAfter}" varStatus="i">
-								   <div class="footer__nav--container col-xs-12">
-									   <c:choose>
-										   <c:when test="${component.wrapAfter > i.index}">
-											   <div class="title">${fn:escapeXml(childLevel1.title)}</div>
-										   </c:when>
-										   <c:otherwise>
-											   <div class="empty-title title" style="opacity: 0;">empty title</div>
-										   </c:otherwise>
-									   </c:choose>
-									   <ul class="footer__nav--links">
-										   <c:forEach items="${childLevel1.children}" var="childLevel2" begin="${i.index}" end="${i.index + component.wrapAfter - 1}">
-												<c:forEach items="${childLevel2.entries}" var="childlink" >
-													<cms:component component="${childlink.item}" evaluateRestriction="true" element="li" class="footer__link"/>
-												</c:forEach>
-										   </c:forEach>
-									   </ul>
-								   </div>
-								</c:forEach>
-							</c:forEach> --%>
 							<div class="footer__nav--container">
 								<ul class="footer__nav--links">
 									<li class="footer__link">
@@ -79,10 +98,13 @@
 									<li class="footer__link">
 										<a href="https://investsaudi.sa/en/aboutSaudi" title="" target = "_blank">About</a>
 									</li>
-								</ul> 
+								</ul>
 							</div>
-					   </div>
 					</div>
+
+					</div>
+
+					<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 float-left text-left">
 					<div class="footer__left links">
 						<div class=" ">
 							<%-- <c:forEach items="${component.navigationNode.children}" var="childLevel1">
@@ -123,12 +145,14 @@
 									<li class="footer__link">
 										<a href="https://investsaudi.sa/en/sectors-opportunities" title="" target = "_blank"><span class="fw-normal">Explore More</span></a>
 									</li>
-								</ul> 
+								</ul>
 							</div>
 					   </div>
 					</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 float-left text-left">
 					<div class="footer__left links">
-						<div class=" "> 
+						<div class=" ">
 							<div class="footer__nav--container col-xs-12">
 								<ul class="footer__nav--links">
 									<li class="footer__link">
@@ -146,83 +170,116 @@
 									<li class="footer__link">
 										<a href="http://vision2030.gov.sa/ar/" title="" target = "_blank"><span class="fw-normal">Incentive & Support</span></a>
 									</li>
-								</ul> 
+								</ul>
 							</div>
 					   </div>
-					</div> 
-					<%--<div class="footer__left contact">
-						<p>How can we help you?</p>
-							 <div class="contact-panel-wrapper">
-							<a class="contact-panel" href="#">
-								<div>
-									<div class="contact-panel-title">Call Us</div>
-									<div class="contact-panel-content">Let us help you with any question you have.</div>
-									<div class="contact-panel-content">Local / International</div>
-									<div class="contact-panel-title">+966 11 203 5777</div>
-									
-								</div>
-							</a>
-							<a class="contact-panel" href="#">
-								<div>
-									<div class="contact-panel-title">Make an Enquiry</div>
-									<div class="contact-panel-content">Do you have a question? Let us help you.</div>
-								</div>
-							</a> 
-							<a class="contact-panel" href="mailto:bsu@investsaudi.sa">
-								<div>
-									<div class="contact-panel-title">Email Us</div>
-									<div class="contact-panel-content">Email us with comments, questions or feedback</div>
-								</div>
-							</a>
-						</div>   
-					</div>--%>
-					<div class="footer__left social">
-						<div class="follow_us_on">Follow us on</div>
-						<div class="text-center">
-							<!--<a href="https://www.linkedin.com/company/investsaudi/" target="_blank"><span class="icon-linkedin"></span></a>-->
-							<a href="#" target="_blank"><span class="icon-linkedin"></span></a>
-							<a href="https://twitter.com/InvestSaudi" target="_blank"><span class="icon-twitter"></span></a>
-						</div>
 					</div>
-					<div class="footer__right hidden">
-						<c:if test="${false}">
-						   <div class="row">
-							   <div class="col-xs-6 col-md-6 footer__dropdown">
-								   <footer:languageSelector languages="${languages}" currentLanguage="${currentLanguage}" />
-							   </div>
-							   <div class="col-xs-6 col-md-6 footer__dropdown">
-								   <footer:currencySelector currencies="${currencies}" currentCurrency="${currentCurrency}" />
-							   </div>
-						   </div>
-					   </c:if>
+						</div>
+					<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 ft-social-logo">
+						<div class="follow-us">Follow Us</div>
+						<ul class="social-links clearfix">
+							<li>
+								<a href=""><img src="/_ui/responsive/common/images/facebook-square.png" alt="facebook" class=""></a>
+							</li>
+							<li>
+								<a href="https://twitter.com/InvestSaudi"><img src="/_ui/responsive/common/images/twitter-square.png" alt="twitter" class=""></a>
+							</li>
+						 </ul>
+					 </div>
+				 </div>
+			 </div>
+		 </section>
+	</div>
+
+	<div class="copyright py-4 text-center text-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-6 copyrightText">
+          <h6><span class="footer_bottom_copy">&copy; 2021 Invest Saudi. All rights reserved.</span></h6>
+        </div>
+				<div class="col-md-6 col-sm-6">
+					<ul class="nav-bottom-footer clearfix">
+						<li class="yCmsComponent nav-item"><a href="${termsAndConditions}">Brand Policy</a></li>
+            <li class="yCmsComponent nav-item"><a href="${termsAndConditions}">Privacy Policy</a></li>
+            <li class="yCmsComponent nav-item"><a href="${termsAndConditions}">Sitemap</a></li></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+  <button class="float-button">Invest Now</button>
+	<div class="popup">
+		<footer id="footer" class="footer-popup">
+			<section class="footer-menu-faq">
+				<div class="footerContent">
+					<div class="container">
+						<div class="row">
+							<div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
+						<h2 class="text-uppercase display-7">Invest in Saudi</h2>
+								<p class="text">Discover the unlimited opportunities available in the Kingdom</p>
+								<p><a class="link text-uppercase px-0" href="/en/sectors-opportunities/opportunities">Explore Opportunities &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</p>
+						</div>
+						<div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
+								<h2 class="text-uppercase display-7">Set up your Regional Hq's in Saudi Arabia</h2>
+								<p class="text ">Start your Headquarter journey now and enjoy the list of benefits the Kingdom offer</p>
+								<p><a class="link text-uppercase px-0" href="/en/sectors-opportunities/regionalHQ">Start now &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</p>
+						</div>
+						<div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
+								<h2 class="text-uppercase display-7">Business Support</h2>
+								<p class="text">All that you need to set up your business in Saudi Arabia</p>
+								<p><a class="link text-uppercase px-0" href="/en/investor/guide">Investment Guide &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</p>
+						</div>
+						<div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
+								<h2 class="text-uppercase display-7">Apply for your License</h2>
+								<p class="text">Your success journey Start here</p>
+								<ul class="list-unstyled list-inline">
+									<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button">Login</a></li>
+									<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button">Register</a></li>
+									<li class="list-inline-item border-0"><a class="text-uppercase" href="/en/contactUs" role="button">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
-	        </div>
-	    </div>
-	</div>
-	
-	<div class="footer__bottom">
-	    <div class="footer__copyright">
-			<div class="container footer__copyright"> 
-				<div class="row">
-					<div class="col-lg-12  p-0"></div>
-						<!--<span>${fn:escapeXml(notice)}</span>-->
-						<div class="col-lg-6 col-6 pull-left">
-							<h6><span class="footer_bottom_copy">&copy; 2021 Invest Saudi. All rights reserved.</span></h6>
-						</div>
-						<%-- <div class="col-lg-6 col-6  pull-right text-right">
-						<c:url var="termsAndConditions" value="/termsAndConditions"/>
-							<h6 style="float: right;">
-								<span class="pr-2 pl-2 footer_bottom_copy"><a href="${termsAndConditions}">Brand Policy</a></span> 
-								<span class="pr-2 pl-2 footer_bottom_copy"><a href="${termsAndConditions}">Privacy Policy</a></span> 
-								<span class="pr-2 pl-2 footer_bottom_copy"><a href="${termsAndConditions}">Sitemap</a></span>
-							</h6>
-						</div> --%> 
-					</div>
-				</div> 
-			</div>
-	    </div>
+			</section>
+		</footer>
 	</div>
 </c:if>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+
+<!-- --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+	$(document).ready(function () {
+		var overflow = "hidden";
+		var footerHeight
+		$(".float-button").click(function () {
+			$(".popup").toggleClass("popup-up");
+			$(".float-button").toggleClass("float-button-up");
+			$(".full-bg").fadeToggle();
+			$(this).html($(this).text() == 'Invest Now' ? "<img class='img-floatclose' src='${commonResourcePath}/images/float-close.png'>": 'Invest Now');
+			/*
+			$("body").css("overflow", overflow);
+			$(this).html($(this).text() == 'Invest Now' ? "<img width='40' src='./images/close.png'>" : 'Invest Now');
+			$(this).html($(this).text() == "<img width='40' src='./img/close.png'>" ? 'Invest Now' : 'Invest Now');*/
+			overflow = (overflow == "hidden") ? "visible" : "hidden";
+		})
+
+		$(window).on('scroll', function () {
+			footerHeight = $("#footer").offset().top - 800;
+			console.log($(this).scrollTop())
+			if ($(this).scrollTop() >= footerHeight) {
+				$('.float-button').css("opacity", "1");
+			}
+			else {
+				$('.float-button').css("opacity", "1");
+			}
+		})
+	});
+
+</script>

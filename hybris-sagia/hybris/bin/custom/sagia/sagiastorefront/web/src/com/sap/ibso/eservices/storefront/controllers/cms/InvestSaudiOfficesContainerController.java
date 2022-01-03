@@ -35,16 +35,16 @@ public class InvestSaudiOfficesContainerController extends AbstractAcceleratorCM
 		
 		LOG.info("Inside InvestSaudiOfficesContainerController");
         model.addAttribute("components", component.getSimpleCMSComponents());
-        ContactUsFormData contactUsFormData = sagiaComplaintFacade.getContactUsFormData();
+        
+        //ContactUsFormData contactUsFormData = sagiaComplaintFacade.getContactUsFormData();
         /*if(contactUsFormData != null) {
         Collection<CategorizationSchemaGetListData> categoryOne = contactUsFormData.getCategoryOne();
         if(categoryOne != null) {
 			for (CategorizationSchemaGetListData schema : categoryOne) {
 				LOG.debug("Cat ID : "+ schema.getCatID() + " cat Desc : " + schema.getCatDesc() + "_______________" );
 			}
-		}
-        
+		}        
         }*/
-	   model.addAttribute("contactUsFormData", contactUsFormData);
+	   //model.addAttribute("contactUsFormData", contactUsFormData);
     }
 }

@@ -6,7 +6,7 @@
 <%@ taglib prefix="product" tagdir="/WEB-INF/tags/responsive/product" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
+<%-- <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>--%>
 
 <template:portalpage pageTitle="${pageTitle}">
 

@@ -21,8 +21,8 @@
 			<img class="js-responsive-image"  data-media='{${imagerData}}' alt='${altText}' title='${altText}' style="">
 		</c:when>
 		<c:otherwise>
-			<a href="${encodedUrl}"><img src="${commonResourcePath}/images/logo-en.svg" >
-        <img class="js-responsive-image"  data-media='{${imagerData}}' title='${altText}' alt='${altText}' style="">
+			<a href="${encodedUrl}">
+				<img class="js-responsive-image"  data-media='{${imagerData}}' title='${altText}' alt='${altText}' style="">
 			</a>
 		</c:otherwise>
 	</c:choose>

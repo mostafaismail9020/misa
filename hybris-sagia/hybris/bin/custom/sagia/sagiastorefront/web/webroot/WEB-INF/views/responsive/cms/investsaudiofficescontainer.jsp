@@ -1,11 +1,11 @@
 <%@ page trimDirectiveWhitespaces="true" %>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-      <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
-        <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
-          <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-            <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
-              <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
+<%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
                 <!-- Contact form section  -->
                 <section id="contactpage-form" class="contactpage-form">
@@ -81,12 +81,12 @@
                       <div class="tab-content w-100" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home1" role="tabpanel"
                           aria-labelledby="pills-home-tab">
-                          <%--
+                          
                           <h3 class="col-md-8 m-auto pb-5" dir="ltr">
                             <spring:theme code="portal.contact.us.contact.misa.link" />
                           </h3>
 
-                          --%>
+                         <!--
                            <h3 class="col-md-8 m-auto pb-5"><spring:theme code="portal.contactus.form.text"/></h3>
                                 <form:form class="contact-form pt-3" id="contact-us-page-contact-us-form" action = "${encodedContextPath}/about/contactUs" modelAttribute="contactUsFormData" enctype="multipart/form-data">
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />	
@@ -108,8 +108,7 @@
                                         <input type="text" class="form-control" name="email" id="email" maxlength="500" onblur="return validateEmailReg(event)" required/>
                                         <span id="lblError" class="mandatory"></span>
                                     </div>
-                                    
-                                                  
+                                                                                      
                                     <div class="form-group col-md-6 form-normal-item-select">
                                         <label class="control-label" for="selectedEnquiryType"><spring:theme code="portal.contactus.form.enquirytype.label"/><span class="mandatory">* </span></label>
                                         <form:select path="selectedEnquiryType" class="form-control required error contact-us-enquirytype" onchange="OnChangeEnquiryType()" aria-required="true" required="true">
@@ -125,13 +124,16 @@
                                           <form:options items="${contactUsFormData.categoryOne}" itemValue="catID" itemLabel="catDesc" htmlEscape="true"/>
                                       </form:select>
                                       <i class="caret"></i>
-                                    </div>     
-                                    
+                                    </div>     -->
+                                     
+									 
                               <%-- <form:select path="categoryTwo">
                                 <option value="0"><spring:theme code="complaints.category2"/></option>
                                 <form:options items="${contactUsFormData.categoryTwo}" itemValue="catDesc" itemLabel="catDesc" htmlEscape="true" />
                               </form:select> --%>
-                              <br />             
+							  
+							  <!--
+                              <br />             							  
                                     <div class="form-group col-md-12 form-normal-item-textarea">
                                       <label class="control-label" for="message"><spring:theme code="portal.contactus.form.your.message.label"/></label>
                                       <textarea class="form-control" id="message" name="message" style="height: 190px" ></textarea>
@@ -176,7 +178,7 @@
                               <p><spring:theme code="portal.contactus.form.receive.enquiry.label"/></p>
                           </div>                          
                                 </form:form>             
-                                
+                                -->
                         </div>
 
 

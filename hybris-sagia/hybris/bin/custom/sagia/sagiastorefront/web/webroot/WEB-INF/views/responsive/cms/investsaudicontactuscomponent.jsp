@@ -107,8 +107,8 @@
                          <div class="form-group form-floating col-md-12 form-normal-item">
                             <input type="hidden" id="recaptchaChallangeAnswered"
 							value="${requestScope.recaptchaChallangeAnswered}" />
-                         <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
-        
+                         <div class="form_field-elements control-group js-recaptcha-captchaaddon sector-page-captcha"></div>
+                         <span id="lblSectorErrorCaptcha" class="mandatory"></span>
                         </div>
                          
                             

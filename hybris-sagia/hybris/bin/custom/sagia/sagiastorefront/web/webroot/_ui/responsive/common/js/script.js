@@ -1271,6 +1271,13 @@ $(document).ready(function () {
 			}
 		}
 
+		var recaptcha = $(".sector-page-captcha .g-recaptcha-response").val();
+		$("#lblSectorErrorCaptcha").text("");
+		if (recaptcha == "") {
+			$("#lblSectorErrorCaptcha").text("Please fill reCAPTCHA");
+			valid = false;
+		}
+		
 		return valid;
 	}
 	var element = document.getElementsByClassName('btn-contact');

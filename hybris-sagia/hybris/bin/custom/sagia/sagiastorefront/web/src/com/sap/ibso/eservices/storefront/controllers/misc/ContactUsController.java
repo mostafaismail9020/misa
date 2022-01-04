@@ -35,10 +35,10 @@ public class ContactUsController extends AbstractController {
     public @ResponseBody String contactus(@RequestBody ContactTicketData ticket
                             ,HttpServletRequest request, HttpServletResponse response,  final BindingResult bindingResult) {
     	
-    	//if (bindingResult.hasErrors()) {
-    	//	 log.error("Invalid Captcha");			
-		//	return ERROR_INVALID_CAPTCHA;
-        //}
+    	if (bindingResult.hasErrors()) {
+    		 log.error("Invalid Captcha");			
+			return ERROR_INVALID_CAPTCHA;
+        }
 
         try {
             CsTicketModel contactTicket  = contactTicketFacade.saveTicket(ticket);

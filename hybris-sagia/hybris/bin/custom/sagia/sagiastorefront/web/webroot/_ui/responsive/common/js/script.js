@@ -3616,7 +3616,7 @@ $(document).ready(function () {
 			type: "POST",
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
-			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
+			headers : {"g-recaptcha-response": grecaptcha.getResponse(1)},
 			data: JSON.stringify({
 				name: $.trim($("#crName").val()),
 				email: $.trim($("#crEmail").val()),
@@ -3663,6 +3663,10 @@ $(document).ready(function () {
 
 				if (data.indexOf('error') >= 0 || data.indexOf('Error') >= 0) {
 					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().formSubmissionFailed + "</span></em>");
+				}
+				
+				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
+					$('#opp-contact-form').find('#g-recaptcha_incorrect').show();
 				}
 
 				// element[0].disabled = false;
@@ -3752,10 +3756,7 @@ function onPopupContactSubmit() {
 				console.log(data);
 				if(data.indexOf('captcha')>= 0){
 					$("#downloadModal").css("z-index","1300");
-					 var errorModal = $('#errorResponseModal');
-                   errorModal.find('.modal-description').text(data);
-				errorModal.css("z-index","1400");
-                   errorModal.modal('show');					
+					 $('#g-recaptcha_incorrect').show();					
 				}else{
 				$("#downloadModal").modal("toggle");
 				$("#popup-contact-form input").val('').change();

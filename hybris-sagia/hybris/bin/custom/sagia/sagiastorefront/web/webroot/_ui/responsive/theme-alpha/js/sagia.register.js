@@ -1366,6 +1366,13 @@ $(function () {
         $("#sagiaRegisterFormQuickRegistration").ajaxForm({
             beforeSubmit: function (arr, $form, options) {
                 var valid = $form.valid();
+                var recaptcha = $("#sagiaRegisterFormQuickRegistration .g-recaptcha-response").val();	
+                var lblErrorCaptcha = document.getElementById("lblErrorCaptcha");
+                lblErrorCaptcha.innerHTML = "";
+                if (recaptcha == "") {
+                    lblErrorCaptcha.innerHTML = "Please fill reCAPTCHA";
+                    valid = false;
+                }	
                 if (!valid) {
                     return false;
                 }

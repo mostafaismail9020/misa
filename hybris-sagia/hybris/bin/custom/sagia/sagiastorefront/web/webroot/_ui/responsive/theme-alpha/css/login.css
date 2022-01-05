@@ -128,3 +128,10 @@ z-index: 0;
   color: red;
   display: none;
 }
+
+[dir="ltr"] #lblErrorCaptcha{
+	float: left;
+}
+[dir="rtl"] #lblErrorCaptcha{
+	float: right;
+}

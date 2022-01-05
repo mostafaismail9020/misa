@@ -3604,6 +3604,7 @@ $(document).ready(function () {
 		$("#opp-contact-form input").val('').change();
 		$("#opp-contact-form textarea").val('').change();
 		$('#opp-contact-form select option:first').prop('selected',true);
+		grecaptcha.reset(1);
 	});
 	// Vidopop up - Meet the kingdom 7 key reasons
 
@@ -3718,6 +3719,7 @@ $(document).ready(function () {
 	$("#popup-btn-contact-cancel").on("click", function () {
 		// alert(1);
         $("#popup-contact-form input").val('').change();
+		grecaptcha.reset(0);
     });
 	
 	

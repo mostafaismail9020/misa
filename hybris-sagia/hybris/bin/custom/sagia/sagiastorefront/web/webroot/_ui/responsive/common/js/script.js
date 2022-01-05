@@ -4617,3 +4617,11 @@ $("#contact-us-form-cancel").on('click',function(e){
   .prop('checked', false)
   .prop('selected', false);
 })
+
+
+
+$('#downloadModal').on('hidden.bs.modal', function (e) {
+	$("#popup-contact-form input").val('').change();
+	$("#popup-contact-form input").prop('checked', false);
+	grecaptcha.reset(0);
+})

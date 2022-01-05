@@ -108,7 +108,7 @@
                             <input type="hidden" id="recaptchaChallangeAnswered"
 							value="${requestScope.recaptchaChallangeAnswered}" />
                          <div class="form_field-elements control-group js-recaptcha-captchaaddon sector-page-captcha"></div>
-                         <span id="lblSectorErrorCaptcha" class="mandatory"></span>
+                         <span id="lblSectorPageErrorCaptcha" class="mandatory"></span>
                         </div>
                          
                             

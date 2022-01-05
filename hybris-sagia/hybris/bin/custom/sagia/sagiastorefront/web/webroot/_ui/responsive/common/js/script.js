@@ -1271,11 +1271,23 @@ $(document).ready(function () {
 			}
 		}
 
-		var recaptcha = $(".sector-page-captcha .g-recaptcha-response").val();
-		$("#lblSectorErrorCaptcha").text("");
-		if (recaptcha == "") {
-			$("#lblSectorErrorCaptcha").text("Please fill reCAPTCHA");
-			valid = false;
+		if(ctrl[0].id === "popup-contact-form"){
+			var recaptcha = $(".sector-page-download-captcha .g-recaptcha-response").val();		
+			var lblSectorErrorCaptcha = document.getElementById("lblSectorErrorCaptcha");
+			lblSectorErrorCaptcha.innerHTML = "";
+			if (recaptcha == "") {
+				lblSectorErrorCaptcha.innerHTML = "Please fill reCAPTCHA";
+				valid = false;
+			}
+		}
+		else if(ctrl[0].id === "corForm"){
+			var recaptcha = $(".sector-page-captcha .g-recaptcha-response").val();		
+			var lblSectorErrorCaptcha = document.getElementById("lblSectorPageErrorCaptcha");
+			lblSectorErrorCaptcha.innerHTML = "";
+			if (recaptcha == "") {
+				lblSectorErrorCaptcha.innerHTML = "Please fill reCAPTCHA";
+				valid = false;
+			}
 		}
 		
 		return valid;

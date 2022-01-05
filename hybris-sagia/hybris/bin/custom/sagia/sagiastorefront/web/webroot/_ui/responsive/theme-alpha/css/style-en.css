@@ -8436,6 +8436,7 @@ a.pvcy-policy:focus {
 
 .mandatory {
 	color: #ff0000;
+	float: left;
 }
 
 .custom-file {

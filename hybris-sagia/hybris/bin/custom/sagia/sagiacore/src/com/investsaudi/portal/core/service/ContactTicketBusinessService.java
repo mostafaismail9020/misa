@@ -123,7 +123,7 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
         	opportunityUserEmailProcessModel.setStore(baseStoreService.getBaseStoreForUid(SagiaCoreConstants.SITE));
         }
 		else {
-			opportunityUserEmailProcessModel.setIsNewCustomer(true);
+			opportunityUserEmailProcessModel.setIsNewCustomer(sessionService.getAttribute("isNewCustomer"));
 			opportunityUserEmailProcessModel.setSite(cmsSiteService.getCurrentSite());
 			opportunityUserEmailProcessModel.setStore(baseStoreService.getCurrentBaseStore());
 		}

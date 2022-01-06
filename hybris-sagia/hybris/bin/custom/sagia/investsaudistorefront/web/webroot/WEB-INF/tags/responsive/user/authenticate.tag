@@ -46,6 +46,8 @@
                     <spring:theme code='${actionNameKey}'/>
                 </button>
             </ycommerce:testId>
+			<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}"/>
+                 <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
             <c:url value="/login-second-step/resend" var="resendCodeUrl"/>
             <a id="resendBtn" class="btn btn-secondary" href="${resendCodeUrl}"><spring:theme code="text.resend.code.button"/></a>
         </div>

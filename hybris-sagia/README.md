@@ -1,4 +1,4 @@
-# Welcome to SAGIA Hybris project.
+ Welcome to SAGIA Hybris project.
 
 ## Repository usage
 

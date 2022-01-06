@@ -32,6 +32,8 @@
                               labelKey="text.authenticate.code.input" path="code" inputCSS="form-control"
                               mandatory="true" autocomplete="off"/>
     <div class="accountLogin-content-formSubmitSection">
+    <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}"/>
+    <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
         <div class="contentModule-actions contentModule-actions_centered">
             <ycommerce:testId code="authenticate_Code_button">
                 <button type="submit" class="btn btn-block">
@@ -46,8 +48,6 @@
                     <spring:theme code='${actionNameKey}'/>
                 </button>
             </ycommerce:testId>
-			<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}"/>
-                 <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
             <c:url value="/login-second-step/resend" var="resendCodeUrl"/>
             <a id="resendBtn" class="btn btn-secondary" href="${resendCodeUrl}"><spring:theme code="text.resend.code.button"/></a>
         </div>

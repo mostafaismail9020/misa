@@ -46,19 +46,25 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
 
     @Resource(name = "commentService")
     private CommentService commentService;
+    
     @Resource(name = "sessionService")
     private SessionService sessionService;
 
     @Resource
     private CMSSiteService cmsSiteService;
+    
     @Resource
     private BaseStoreService baseStoreService;
+    
     @Resource
     private CommonI18NService commonI18NService;
+    
     @Resource
     private EventService eventService;
+    
     @Resource
     private TicketService ticketService;
+    
 	@Resource
     private BaseSiteService baseSiteService;
 
@@ -103,20 +109,25 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
     }
 
     public void sendOpportunityUserDetails(String id, UserModel customer, String initialPassword,boolean isMigratedCustomer) {
-        final OpportunityUserEmailProcessModel opportunityUserEmailProcessModel =(OpportunityUserEmailProcessModel) businessProcessService.createProcess("opportunityUserEmailProcess-" + id+ "-" + System.currentTimeMillis(), "opportunityUserEmailProcess");
+        final OpportunityUserEmailProcessModel opportunityUserEmailProcessModel = 
+        		(OpportunityUserEmailProcessModel) businessProcessService.createProcess("opportunityUserEmailProcess-" + id+ "-" 
+        				+ System.currentTimeMillis(), "opportunityUserEmailProcess");
+        
         opportunityUserEmailProcessModel.setCustomer((CustomerModel) customer);
         opportunityUserEmailProcessModel.setOpportunityId(id);
         opportunityUserEmailProcessModel.setInitialPassword(initialPassword);
-        if(isMigratedCustomer){
-        opportunityUserEmailProcessModel.setIsNewCustomer(true);
-        opportunityUserEmailProcessModel.setSite(baseSiteService.getBaseSiteForUID(SagiaCoreConstants.SITE));
-        opportunityUserEmailProcessModel.setStore(baseStoreService.getBaseStoreForUid(SagiaCoreConstants.SITE));
+        
+        if (isMigratedCustomer) {
+        	opportunityUserEmailProcessModel.setIsNewCustomer(true);
+        	opportunityUserEmailProcessModel.setSite(baseSiteService.getBaseSiteForUID(SagiaCoreConstants.SITE));
+        	opportunityUserEmailProcessModel.setStore(baseStoreService.getBaseStoreForUid(SagiaCoreConstants.SITE));
         }
 		else {
-        opportunityUserEmailProcessModel.setIsNewCustomer(sessionService.getAttribute("isNewCustomer"));
-        opportunityUserEmailProcessModel.setSite(cmsSiteService.getCurrentSite());
-        opportunityUserEmailProcessModel.setStore(baseStoreService.getCurrentBaseStore());
-       }
+			opportunityUserEmailProcessModel.setIsNewCustomer(true);
+			opportunityUserEmailProcessModel.setSite(cmsSiteService.getCurrentSite());
+			opportunityUserEmailProcessModel.setStore(baseStoreService.getCurrentBaseStore());
+		}
+        
         opportunityUserEmailProcessModel.setLanguage(commonI18NService.getCurrentLanguage());
         opportunityUserEmailProcessModel.setCurrency(commonI18NService.getCurrentCurrency());
 

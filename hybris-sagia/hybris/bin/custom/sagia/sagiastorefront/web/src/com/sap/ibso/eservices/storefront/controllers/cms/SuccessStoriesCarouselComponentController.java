@@ -17,9 +17,9 @@ public class SuccessStoriesCarouselComponentController extends AbstractAccelerat
 	@Override
 	protected void fillModel(final HttpServletRequest request, final Model model, final SuccessStoriesCarouselComponentModel component)
 	{
-		LOGGER.info(" Entered into SuccessStoriesCarouselComponentController ");
+		LOGGER.debug(" Entered into SuccessStoriesCarouselComponentController ");
 		model.addAttribute("Videos", component.getVideoComponents());
-		LOGGER.info(" Exit into SuccessStoriesCarouselComponentController ");
+		LOGGER.debug(" Exit into SuccessStoriesCarouselComponentController ");
 	}
 		
 }

@@ -1507,3 +1507,8 @@ var _updateSlot = function (picker, data) {
 //     _updateSlot(picker, dataAttr);
 // };
 // -- END Remove-Content --
+
+
+function recaptchaCallback(){
+	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');	
+}

@@ -4625,3 +4625,9 @@ $('#downloadModal').on('hidden.bs.modal', function (e) {
 	$("#popup-contact-form input").prop('checked', false);
 	grecaptcha.reset(0);
 })
+
+
+function recaptchaCallback(){
+	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorPageErrorCaptcha').text('')
+	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorErrorCaptcha').text('');		
+}

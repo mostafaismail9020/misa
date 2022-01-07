@@ -31,10 +31,13 @@ import de.hybris.platform.processengine.BusinessProcessService;
 import de.hybris.platform.util.Config;
 // added by c4p\mpop - lead management - end
 
+
 public class ContactTicketBusinessService extends DefaultTicketBusinessService {
 
     private static final Logger log = LoggerFactory.getLogger(ContactTicketBusinessService.class);
 
+    private static final String IS_NEW_CUSTOMER = "isNewCustomer";
+    
     @Resource(name = "businessProcessService")
     private BusinessProcessService businessProcessService;
 
@@ -123,7 +126,14 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
         	opportunityUserEmailProcessModel.setStore(baseStoreService.getBaseStoreForUid(SagiaCoreConstants.SITE));
         }
 		else {
-			opportunityUserEmailProcessModel.setIsNewCustomer(sessionService.getAttribute("isNewCustomer"));
+			log.info("IS_NEW_CUSTOMER sessionService= " + sessionService.getAttribute(IS_NEW_CUSTOMER));
+			if (null != sessionService.getAttribute(IS_NEW_CUSTOMER))
+			{
+				opportunityUserEmailProcessModel.setIsNewCustomer(sessionService.getAttribute(IS_NEW_CUSTOMER));
+			}
+			else {
+				opportunityUserEmailProcessModel.setIsNewCustomer(true);
+			}
 			opportunityUserEmailProcessModel.setSite(cmsSiteService.getCurrentSite());
 			opportunityUserEmailProcessModel.setStore(baseStoreService.getCurrentBaseStore());
 		}

@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParameterNotNull;
 import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParameterNotNullStandardMessage;
 
 /**
@@ -232,7 +233,24 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
         return sagiaUserService.getUserRaisedOpportunities(contactEmail);
     }
 
-    public SagiaConfigurationFacade getSagiaConfigurationFacade() {
+    /**
+     * Get customer details based on mobileNumber and mobileCountryCode
+     * @param mobileNumber
+     * @param mobileCountryCode
+     * @return
+     */
+   public CustomerData getCustomerByMobileNumber(final String mobileNumber, final String mobileCountryCode)
+    {
+        Assert.hasText(mobileNumber, "The field [mobileNumber] cannot be empty");
+        CustomerModel customer = sagiaUserService.getCustomerByMobileNumber(mobileNumber,mobileCountryCode);
+        validateParameterNotNull(customer, "No customer available in system with this phone number" );
+        if(customer != null) {
+            return getCustomerConverter().convert(customer);
+        }
+        throw new UnknownIdentifierException("Cannot find user with propertyValue '" + mobileNumber + "'");
+    }
+
+        public SagiaConfigurationFacade getSagiaConfigurationFacade() {
         return sagiaConfigurationFacade;
     }
 

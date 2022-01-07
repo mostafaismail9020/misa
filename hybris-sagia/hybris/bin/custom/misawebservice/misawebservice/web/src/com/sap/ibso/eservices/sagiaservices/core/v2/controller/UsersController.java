@@ -10,12 +10,14 @@
  */
 package com.sap.ibso.eservices.sagiaservices.core.v2.controller;
 
+import com.sap.ibso.eservices.facades.user.impl.SagiaCustomerFacade;
 import de.hybris.platform.commercefacades.customer.CustomerFacade;
 import de.hybris.platform.commercefacades.customergroups.CustomerGroupFacade;
 import de.hybris.platform.commercefacades.user.data.CustomerData;
 import de.hybris.platform.commercefacades.user.data.RegisterData;
 import de.hybris.platform.commercefacades.user.data.UserGroupDataList;
 import de.hybris.platform.commerceservices.customer.DuplicateUidException;
+import de.hybris.platform.commercewebservicescommons.annotation.SiteChannelRestriction;
 import de.hybris.platform.commercewebservicescommons.dto.user.UserGroupListWsDTO;
 import de.hybris.platform.commercewebservicescommons.dto.user.UserSignUpWsDTO;
 import de.hybris.platform.commercewebservicescommons.dto.user.UserWsDTO;
@@ -72,6 +74,7 @@ import io.swagger.annotations.ApiParam;
 public class UsersController extends BaseCommerceController
 {
 	private static final Logger LOG = LoggerFactory.getLogger(UsersController.class);
+	private static final String API_COMPATIBILITY_B2C_CHANNELS = "api.compatibility.b2c.channels";
 
 	@Resource(name = "wsCustomerFacade")
 	private CustomerFacade customerFacade;
@@ -89,6 +92,8 @@ public class UsersController extends BaseCommerceController
 	private Validator guestConvertingDTOValidator;
 	@Resource(name = "passwordStrengthValidator")
 	private Validator passwordStrengthValidator;
+	@Resource(name = "sagiaCustomerFacade")
+	private SagiaCustomerFacade sagiaCustomerFacade;
 
 	@Secured({ "ROLE_CLIENT", "ROLE_TRUSTED_CLIENT", "ROLE_CUSTOMERMANAGERGROUP" })
 	@RequestMapping(method = RequestMethod.POST)
@@ -247,6 +252,7 @@ public class UsersController extends BaseCommerceController
 	@ApiBaseSiteIdAndUserIdParam
 	public UserWsDTO getUser(@ApiFieldsParam @RequestParam(defaultValue = DEFAULT_FIELD_SET) final String fields)
 	{
+		LOG.info("entered to missetrvices SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
 		final CustomerData customerData = customerFacade.getCurrentCustomer();
 		return getDataMapper().map(customerData, UserWsDTO.class, fields);
 	}
@@ -427,4 +433,21 @@ public class UsersController extends BaseCommerceController
 		userGroupDataList.setUserGroups(customerGroupFacade.getCustomerGroupsForUser(userId));
 		return getDataMapper().map(userGroupDataList, UserGroupListWsDTO.class, fields);
 	}
+
+	@Secured(
+			{ "ROLE_CUSTOMERGROUP", "ROLE_TRUSTED_CLIENT", "ROLE_CUSTOMERMANAGERGROUP" })
+	@RequestMapping(value = "/{userId}/{mobileNumber}/{mobileCountryCode}", method = RequestMethod.GET)
+	@SiteChannelRestriction(allowedSiteChannelsProperty = API_COMPATIBILITY_B2C_CHANNELS)
+	@ApiOperation(nickname = "getCustomerByMobileNumber", value = "Get customer by moible number", notes = "Returns customer profile.")
+	@ResponseBody
+	@ApiBaseSiteIdAndUserIdParam
+	public UserWsDTO getUserByPhoneNumber(@ApiParam(value = "user id", required = true) @PathVariable final String userId,
+										  @ApiParam(value = "Mobile number.", required = true) @PathVariable final String mobileNumber,
+										  @ApiParam(value = "Mobile country code.", required = true) @PathVariable final String mobileCountryCode,
+										  @ApiFieldsParam @RequestParam(defaultValue = DEFAULT_FIELD_SET) final String fields)
+	{
+		final CustomerData customerData = sagiaCustomerFacade.getCustomerByMobileNumber(mobileNumber, mobileCountryCode);
+		return getDataMapper().map(customerData, UserWsDTO.class, fields);
+	}
+
 }

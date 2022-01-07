@@ -846,7 +846,7 @@
 	
 	<bean id="saudiUnEmpConverterMapping" 
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping" 
-		  p:mapping="nonsaudiEmployment" 
+		  p:mapping="saudiUnemployment" 
 		  p:converter-ref="saudiUnEmpConverter"/>
 		  
 	<bean id="saudiUnEmpConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">

@@ -10,6 +10,7 @@
 <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
+<div class="managerchildUser_page"> 
 <div id="global-alerts" class="global-alerts">
     <c:if test="${not empty errorMessageKey}">
         <div class="alert alert-danger alert-dismissable getAccAlert">
@@ -33,13 +34,13 @@
     <div class="row">
     <div class="col-md-12">
         <%-- this start of manager user page --%>
-        <div class="headline" style="font-weight: 700;"> <spring:theme code="text.account.childUnits.manage.user.title" text="Manage Users" /></div>
+        <div class="headline header-account"> <spring:theme code="text.account.childUnits.manage.user.title" text="Manage Users" /></div>
         <div class="row">
             <div class="form-group" style = "float:right;">
-                <button style = "width:200px; background-color:gray;" style = "width:200px;" class="btn btn-sagia btn-sagia-green" type="button" id="lockUser">
+                <button  class="btn btn-sagia btn-sagia-green lock_button" type="button" id="lockUser">
                     <spring:theme code="text.account.childUnits.lock.button.label" text="Lock User" />
                 </button>
-                <button style = "width:200px;" class="btn btn-sagia btn-sagia-green" type="button" id="unLockUser">
+                <button class="btn btn-sagia btn-sagia-green unlock_button" type="button" id="unLockUser">
                     <spring:theme code="text.account.childUnits.unlock.button.label" text="Unlock User" />
                 </button>
             </div>

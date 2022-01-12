@@ -20,6 +20,9 @@
 	<c:when test="${wro4jEnabled}">
 	  	<script type="text/javascript" src="${contextPath}/wro/all_responsive.js${version}"></script>
 	  	<script type="text/javascript" src="${contextPath}/wro/addons_responsive.js${version}"></script>
+		<script type="text/javascript" src="${themeResourcePath}/js/owl.carousel.js"></script>
+		<script type="text/javascript" src="${themeResourcePath}/js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="${themeResourcePath}/js/bootstrap.min.js"></script>
 	</c:when>
 	<c:otherwise>
 		<script type="text/javascript" src="${themeResourcePath}/js/polyfill.js${version}"></script>

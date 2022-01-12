@@ -22377,3 +22377,32 @@ table,th,tr,td{
 	cursor: pointer !important; 
 	border-radius: 30px;
 }
+
+
+#contact-us-form-success{
+	display: block;
+    text-align: center;
+    margin-bottom: 10%;
+    margin-top: 5%;
+	font-size: 25px;
+}
+.contact-us-form-ticket{
+	color: #00a6be;
+}
+
+.form-mand-text{
+	text-align: right;
+}
+#contact-us-upload-file{
+	text-align: right;
+}
+.custom-file-label::after{
+	right: initial;
+	left: 0;
+}
+.custom-file-input:lang(ar)~.custom-file-label::after {
+    content: "+";
+    color: #ffff;
+    font-size: 50px;
+    text-align: center;
+}

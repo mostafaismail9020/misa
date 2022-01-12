@@ -81,12 +81,12 @@
                   <div class="tab-content w-100" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home1" role="tabpanel"
                       aria-labelledby="pills-home-tab">
-                      
+                      <%-- 
                       <h3 class="col-md-8 m-auto pb-5" dir="ltr">
                         <spring:theme code="portal.contact.us.contact.misa.link" />
                       </h3>
-
-                     <%--
+                      --%>
+                   
                        <h3 class="col-md-8 m-auto pb-5"><spring:theme code="portal.contactus.form.text"/></h3>
                             <form:form class="contact-form pt-3" id="contact-us-page-contact-us-form" action = "${encodedContextPath}/about/contactUs" modelAttribute="contactUsFormData" enctype="multipart/form-data">
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />	
@@ -124,7 +124,7 @@
                                       <form:options items="${contactUsFormData.categoryOne}" itemValue="catID" itemLabel="catDesc" htmlEscape="true"/>
                                   </form:select>
                                   <i class="caret"></i>
-                                </div>     --%>
+                                </div>     
                                  
 					 
                           <%-- <form:select path="categoryTwo">
@@ -132,7 +132,7 @@
                             <form:options items="${contactUsFormData.categoryTwo}" itemValue="catDesc" itemLabel="catDesc" htmlEscape="true" />
                           </form:select> --%>
 			  
-			 			 <%--
+			 			 
                           <br />             							  
                                 <div class="form-group col-md-12 form-normal-item-textarea">
                                   <label class="control-label" for="message"><spring:theme code="portal.contactus.form.your.message.label"/></label>
@@ -178,7 +178,7 @@
                           <p><spring:theme code="portal.contactus.form.receive.enquiry.label"/></p>
                       </div>                          
                             </form:form>             
-                           --%>
+                           
                     </div>
 
 

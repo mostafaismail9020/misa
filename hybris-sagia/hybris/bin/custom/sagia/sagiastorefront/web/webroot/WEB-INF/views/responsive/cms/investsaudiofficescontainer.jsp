@@ -141,7 +141,8 @@
                                 <div class="form-group col-md-12">
                                   <div class="custom-file mb-3">
                                     <input type="file" class="custom-file-input" id="contactfile" name="contactfile">
-                                    <label class="custom-file-label" for="contactfile"><spring:theme code="portal.contactus.form.drag.file.label"/> 
+                                    <!-- <label class="custom-file-label" for="contactfile"><spring:theme code="portal.contactus.form.drag.file.label"/>  -->
+                                      <label class="custom-file-label" for="contactfile" id="contact-us-upload-file"><spring:theme code="portal.contactus.form.drag.file.label"/> 
                                     <span class="pvcy-policy"><spring:theme code="portal.contactus.form.browse.label"/></span></label>
                                   </div>
                                 </div>
@@ -176,9 +177,14 @@
                               <div class="formSuccess d-none">
                           <p class="font-bold"><spring:theme code="portal.contactus.form.thank.message.label"/></p>
                           <p><spring:theme code="portal.contactus.form.receive.enquiry.label"/></p>
-                      </div>                          
+                      </div>   
+                      <input type="hidden" id="CRMResponse" value="${CRMResponse}"/>
+                            <input type="hidden" id="CRMObjectId" value="${CRMObjectId}"/>                        
                             </form:form>             
-                           
+                            <div id="contact-us-form-success" class="d-none" dir="ltr">
+                              <p>We received your enquiry, and we will get back to you shortly.</p>
+                              <p class="contact-us-form-ticket"></p>                            
+                            </div>
                     </div>
 
 

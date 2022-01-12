@@ -4641,12 +4641,12 @@ $('#contactfile').change(function() {
 });
 
 $(document).ready(function(){
-	if($("#CRMResponse").val() === 'true'){
+	// if($("#CRMResponse").val() === 'true'){
 		if ($("#CRMObjectId").val() !== null) {
 			$("#contact-us-form-success").removeClass("d-none");
 			$('.contact-us-form-ticket').text("Your enquiry reference number : " + $("#CRMObjectId").val());
 		}
-	}
+	// }
 })
 
 

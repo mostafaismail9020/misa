@@ -385,3 +385,113 @@ $(document).on("click", "#setCompanyPhotoAnchor", function () {
     });
     return false;
 });
+
+
+/*----dashboard-carousel---*/
+$(document).ready(function() {
+    $.fn.andSelf = function() {
+        return this.addBack.apply(this, arguments);
+      }
+$('#dashboard-carousel').owlCarousel({
+    loop: true,
+    margin: 20,
+     /*
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    */
+    responsiveClass: true,
+    autoplayTimeout: 7000,
+    smartSpeed: 800,
+    nav: true,
+    dots: true,
+    navText:["<img src='/_ui/responsive/common/images/dashboard-media/Banner-icons/Left-arrow.png'/>", "<img src='/_ui/responsive/common/images/dashboard-media/Banner-icons/Right-arrow.png''/>"],
+    responsive: {
+      0: {
+        items: 1
+      },
+  
+      600: {
+        items: 1
+      },
+  
+      1024: {
+        items: 1
+      },
+  
+      1366: {
+        items: 1
+      }
+    }
+  });
+});
+$(document).ready(function () {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+    var overflow = "hidden";
+    var footerHeight
+    $(".float-button").click(function () { 
+        $(".popup").toggleClass("popup-up");
+        $(".float-button").toggleClass("float-button-up");
+        $(".full-bg").fadeToggle();
+        $(this).html($(this).text() == 'Invest Now' ? "<img width='40' src=''>": 'Invest Now');
+        /*
+        $("body").css("overflow", overflow); 
+        $(this).html($(this).text() == 'Invest Now' ? "<img width='40' src='./images/close.png'>" : 'Invest Now');
+        $(this).html($(this).text() == "<img width='40' src='./img/close.png'>" ? 'Invest Now' : 'Invest Now');*/
+        overflow = (overflow == "hidden") ? "visible" : "hidden";
+    });
+
+    $(window).on('scroll', function () {
+		footerHeight = $("#footer").offset().top - 800;
+		// console.log($(this).scrollTop())
+		if ($(this).scrollTop() >= footerHeight) {
+			$('.float-button').css({"display":"none","opacity": "0"});
+		}
+		else {
+			$('.float-button').css({"display":"block","opacity": "1"});
+		}
+	});
+});
+
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+$(document).ready(function(){
+    // Floating Button 
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 100) {
+		  $('#header').addClass('header-scrolled');
+		  $('#topbar').addClass('topbar-scrolled');
+		  $('#login-Navigation').addClass('login-scrolled');
+		} else {
+		  $('#header').removeClass('header-scrolled');
+		  $('#topbar').removeClass('topbar-scrolled');
+		  $('#login-Navigation').removeClass('login-scrolled');
+		}
+	  });
+	
+	  if ($(window).scrollTop() > 100) {
+		$('#header').addClass('header-scrolled');
+		$('#topbar').addClass('topbar-scrolled');
+		$('#login-Navigation').addClass('login-scrolled');
+	  }
+
+   // Video Modal Popup
+	var url = $("#cartoonVideo").attr('src');
+    $("#videoModal").on('hide.bs.modal', function(){
+        $("#cartoonVideo").attr('src', '');
+    });
+    $("#videoModal").on('show.bs.modal', function(){
+        $("#cartoonVideo").attr('src', url);
+    });
+
+    //sub-menu show
+    $('.get_submenus').mouseover(function(){ 
+		$('.dropdown-large').addClass("show_height"); 
+	}).mouseout(function(){ 
+		$('.dropdown-large').removeClass("show_height"); 
+	}); 
+});
+
+

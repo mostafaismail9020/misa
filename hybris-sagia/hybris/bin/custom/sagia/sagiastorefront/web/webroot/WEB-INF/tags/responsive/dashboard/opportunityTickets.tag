@@ -5,17 +5,12 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 
-<div class="col col-12" id="yourOpportunities">
-                        <div class="dashboardWidget js-dashboardWidget">
-                            <div class="dashboardWidget-headline js-dashboardWidget-headline">
-                                <span>
-<!--                                     <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect" -->
-<!--                                        style="text-decoration: inherit;color: inherit"> -->
+<div class="col col-12 p-0" id="yourOpportunities">
+                        <div class="js-dashboardWidget">
+                            <h1 class="dashboard-headline js-dashboardWidget-headline text-center mt-5 mb-3">
                                     <spring:theme code="dashboard.myopportunity.section"/>
-                                    </a>
-                                </span>
-                            </div>
-                            <div class="dashboardWidget-body">
+                            </h1>
+                            <div class="card dashboardWidget-body mb-5">
                                 <div class="dashboardWidgetTickets">
                                     <div class="tableModule tableModule_slim dashboardWidgetTickets-table">
                                         <table class="tableModule-table">

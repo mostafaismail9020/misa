@@ -10,7 +10,48 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
-    <div class="mainSection mainSection mainSection_dark mainSection_noPaddingBottom">
+
+<div class="mainSection mainSection">
+    
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image1.jpg" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="appointments.appointmentoverview"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <div class=""><img alt="" class="profile-icon-images" src="${commonResourcePath}/images/eservices/Calender-active.png"/>
+                    <img alt="" class="profile-icon-images d-none" src="${commonResourcePath}/images/esrvices/Calender-in-active.png"/>
+                </div>
+                
+                <!-- <div class="messages "><img alt="" class=" profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/message.png" /> </div> -->
+                <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub mr-5">
+                    <c:if test="${hasLicense or hasAwaitingPayment}">
+                        <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
+                            <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                            <img alt="" class="" src="${commonResourcePath}/images/eservices/message-in-active.png" />
+                            <img alt="" class="d-none" src="${commonResourcePath}/images/eservices/Calender-active-1.png" />
+                        </button>
+                    </c:if>
+                    <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                    <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible">
+                        <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                        <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                        <div class="sagiaNavigation-subPane-actions">
+                            <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class=""><img class="profile-icon-images" alt="" src="${commonResourcePath}/images/eservices/Profile-in-active.png" /> </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+    <div class="mainSection mainSection mainSection_noPaddingBottom mt-5">
         <!-- Appointment Overview -->
         <div class="container">
             <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
@@ -20,24 +61,24 @@
 
                 <form action="${encodedContextPath}/appointments">
                 <div class="searchInputBox searchInputBox_limited">
-                    <input name="searchParameter" id="searchParameter" class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>" value="${searchParameter}"/>
-                    <button class="btn btn_link searchInputBox-switchModeBtn" type="submit">Search</button>
+                    <input name="searchParameter" id="searchParameter" class="searchInputBox-input" type="text" placeholder="" value="${searchParameter}"/>
+                    <button class="btn btn_link searchInputBox-switchModeBtn no-background" type="submit">Search</button>
                 </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <div class="mainSection mainSection mainSection_dark mainSection_xsmallPaddingTop">
+    <div class="mainSection mainSection mainSection_xsmallPaddingTop">
         <div class="container">
             <%--<c:set var="listLimit" value="${5}"/>--%>
             <%--<c:if test="${listLimit < 1 || listLimit > fn:length(appointments)}">--%>
                 <%--<c:set var="listLimit" value="${fn:length(appointments)}"/>--%>
             <%--</c:if>--%>
             <c:set var="detailsDemoItem" value="${appointments}[0]"/>
-            <div class="panelModule panelModule_halfRadius">
-                <div class="contentModule-actions">
-                    <div class="contentModule-headline"><icon:calendarDate/> <spring:theme code="appointments.appointmentoverview"/> </div>
+            <div class="panelModule">
+                <div class="contentModule-actions d-block">
+                    <h2 class="clr_gld text-center text-uppercase"><spring:theme code="appointments.appointmentoverview"/> </h2>
                 </div>
                 <div class="contentModule-filter">
                     <select id="appointmentSort" class="js-select2-oneColumn form-control" onchange="sortAppointments()">
@@ -87,7 +128,7 @@
                                     <div class="appointmentList-subTitle">${item.branchDescription}</div>
                                 </td>
                                 <td data-location="Moscow, Russia">
-                                    <button class="btn btn_link appointmentList-locationBtn">
+                                    <button class="btn_link appointmentList-locationBtn">
                                         <icon:location-pin/>
                                     </button>
                                     <span class="appointmentList-label">${item.branchDescription}</span>
@@ -101,9 +142,8 @@
                                 	<c:choose>
 											<c:when test="${item.status eq 'E0012'}">
 												<a href="${encodedContextPath}/appointments/details/${item.appointmentID}"
-			                                       class="btn btn_link appointmentList-viewBtn appointmentList-icon_view">
+			                                       class="btn_link appointmentList-viewBtn appointmentList-icon_view">
 			                                        <span><spring:theme code="appointments.appointmentdetails.view"/></span>
-			                                        <icon:view/>
 			                                    </a>
 											</c:when>
 											<c:when test="${item.status eq 'E0001'}">
@@ -130,21 +170,23 @@
                 <div class="paginationModule">
                     <div class="paginationModule-wrapper">
                         <button class="paginationModule-control paginationModule-control_left" disabled>
-                            <icon:arrow_green_right/>
+                            <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
+                            <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;">
                         </button>
 
                         <div class="paginationModule-items">
-                            <div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link appointment active">1</a></div>
-                            <c:forEach begin="2" end="${appointmentsPageNumber}" varStatus="loop">
+                            <div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link appointment active">0</a></div>
+                            <c:forEach begin="1" end="${appointmentsPageNumber}" varStatus="loop">
                                 <div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link appointment">${loop.index}</a></div>
                             </c:forEach>
                         </div>
 
                         <button class="paginationModule-control paginationModule-control_right">
-                            <icon:arrow_green_right/>
+                            <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive" id="ss_right_arrow">
                         </button>
                     </div>
                 </div>
+                  
                 <%--<p>${listLimit} / ${fn:length(appointments)}</p>--%>
             </div>
             <div class="appointmentControl-calendar">

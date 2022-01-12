@@ -8,7 +8,7 @@
     "start": "gulp",
     "watch": "gulp watch",
     "dev": "gulp watch",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions"
   },
   "dependencies": {
     "autoprefixer": "7.1.2",

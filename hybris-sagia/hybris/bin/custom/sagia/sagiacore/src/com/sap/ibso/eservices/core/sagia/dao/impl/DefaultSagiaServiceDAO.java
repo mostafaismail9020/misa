@@ -1,11 +1,14 @@
 package com.sap.ibso.eservices.core.sagia.dao.impl;
 
+import com.sap.ibso.eservices.core.model.SagiaCategoryModel;
 import com.sap.ibso.eservices.core.model.SagiaServiceModel;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaServiceDAO;
 import de.hybris.platform.servicelayer.internal.dao.DefaultGenericDao;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
+import de.hybris.platform.servicelayer.search.SearchResult;
 import org.apache.commons.collections.CollectionUtils;
 
+import javax.annotation.Nonnull;
 import java.util.*;
 
 import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParameterNotNull;
@@ -75,6 +78,25 @@ public class DefaultSagiaServiceDAO  extends DefaultGenericDao<SagiaServiceModel
         return query;
     }
 
+    /**
+     * Method to fetch sagia categories by category label
+     *
+     * @param categoryLabel
+     * @return
+     */
+    @Override
+    public List<SagiaCategoryModel> getSagiaCategoriesByLabel(@Nonnull final String categoryLabel) {
 
+        Objects.requireNonNull(categoryLabel, "categoryLabel is required");
+        FlexibleSearchQuery query = new FlexibleSearchQuery("SELECT {"+ SagiaCategoryModel.PK +"} FROM {"+
+                SagiaCategoryModel._TYPECODE +"} WHERE {"+ SagiaCategoryModel.LABEL +"} = ?categoryLabel");
+        Map<String, String> params = new HashMap<>();
+        params.put("categoryLabel", categoryLabel);
+        query.addQueryParameter("categoryLabel", categoryLabel);
+        final SearchResult<SagiaCategoryModel> searchResult = getFlexibleSearchService().search(query);
+        final List<SagiaCategoryModel> sagiaCategoryModels = searchResult.getResult();
+        return sagiaCategoryModels;
+
+    }
 
 }

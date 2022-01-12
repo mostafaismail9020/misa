@@ -9,6 +9,7 @@ import com.sap.ibso.eservices.facades.data.SagiaServiceTabData;
 import com.sap.ibso.eservices.facades.data.categories.SagiaCategoryData;
 import com.sap.ibso.eservices.facades.sagia.SagiaSearchFacade;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
+import org.apache.commons.collections.CollectionUtils;
 
 import java.util.*;
 
@@ -116,6 +117,52 @@ public class DefaultSagiaSearchFacade implements SagiaSearchFacade {
 
     private HashMap<String,List<SagiaServiceData>> createServiceMap(Set<SagiaServiceModel> sagiaServiceModelSet){
         HashMap<String,List<SagiaServiceData>> resultListMap = new HashMap<>();
+        List<SagiaServiceData> resultList;
+        for(SagiaServiceModel service : sagiaServiceModelSet){
+            if(service.getCategory()!= null){
+                if(resultListMap.get(service.getCategory().getName()) != null){
+                    resultList = resultListMap.get(service.getCategory().getName());
+                } else {
+                    resultList = new ArrayList<>();
+                }
+                resultList.add(getSagiaServiceConverter().convert(service));
+                resultListMap.put(service.getCategory().getName(),resultList);
+            }
+        }
+        return resultListMap;
+    }
+
+    /**
+     * Method to retrieve sagia services data by category label
+     *
+     * @param categoryLabel
+     * @return
+     */
+    @Override
+    public Map<String,List<SagiaServiceData>> getSagiaServicesByCategoryLabel(final String categoryLabel) {
+
+        Set<SagiaServiceModel> sagiaServiceSet = new HashSet<>();
+        HashMap<String,List<SagiaServiceData>> sagiaCategoryServices = new HashMap<>();
+        Set<SagiaCategoryModel> sagiaServiceModelSet = getSagiaSearchService().getSagiaCategoriesByLabel(categoryLabel);
+        if(CollectionUtils.isNotEmpty(sagiaServiceModelSet)) {
+            for(SagiaCategoryModel sagiaCategoryModel : sagiaServiceModelSet) {
+                sagiaServiceSet =  sagiaCategoryModel.getServices() == null || sagiaCategoryModel.getServices().isEmpty() ?
+                        Collections.emptySet() : new HashSet<>(sagiaCategoryModel.getServices());
+                sagiaCategoryServices = this.createCategoryServiceMap(sagiaServiceSet, sagiaCategoryServices);
+            }
+        }
+        return sagiaCategoryServices;
+    }
+
+    /**
+     * Method to map services to categories
+     *
+     * @param sagiaServiceModelSet
+     * @param resultListMap
+     * @return
+     */
+    private HashMap<String,List<SagiaServiceData>> createCategoryServiceMap(Set<SagiaServiceModel> sagiaServiceModelSet,
+                                                  HashMap<String,List<SagiaServiceData>> resultListMap){
         List<SagiaServiceData> resultList;
         for(SagiaServiceModel service : sagiaServiceModelSet){
             if(service.getCategory()!= null){

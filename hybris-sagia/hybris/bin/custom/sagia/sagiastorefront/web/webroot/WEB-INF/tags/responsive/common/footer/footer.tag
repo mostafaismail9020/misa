@@ -5,11 +5,11 @@
 <%@ taglib prefix="modal" tagdir="/WEB-INF/tags/responsive/modals" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<cms:pageSlot position="Footer" var="feature">
+<cms:pageSlot position="SagiaFooter" var="feature">
     <cms:component component="${feature}"/>
 </cms:pageSlot>
 
-<c:if test="${currentLanguage.isocode == 'en'}">
+<!-- <c:if test="${currentLanguage.isocode == 'en'}">
     <div class="investsaudiFooter">
         <footer class="footer">
             <div class="container">
@@ -88,9 +88,9 @@
             </div>
         </div>
     </div>
-</c:if>
+</c:if> -->
 
-<c:if test="${currentLanguage.isocode == 'ar'}">
+<!-- <c:if test="${currentLanguage.isocode == 'ar'}">
     <div class="investsaudiFooter">
         <footer class="footer">
             <div class="container">
@@ -206,7 +206,7 @@
             </div>
         </div>
     </div>
-</c:if>
+</c:if> -->
 <div id="reviewRating">
     <input type="hidden" id="requestFeedback" value="${requestFeedback}"/>
     <modal:ratingWithComments/>

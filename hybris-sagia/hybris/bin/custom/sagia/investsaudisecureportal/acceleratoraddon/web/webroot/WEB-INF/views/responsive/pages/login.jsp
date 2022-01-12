@@ -14,13 +14,14 @@
                     <cms:component component="${logo}"/>
                 </cms:pageSlot>
             </div>
-            <div class="login-area-wrapper">
-                <div class="paragraph-wrapper">
+            <!-- <div class="login-area-wrapper"> -->
+            <div class="row container-fluid login-container justify-content-center">
+                <div class="col-md-6 paragraph-wrapper">
                     <cms:pageSlot position="LeftContentSlot" var="feature">
-                        <cms:component component="${feature}"/>
+                        <cms:component component="${feature}" class=""/>
                     </cms:pageSlot>
                 </div>
-                <div class="login-wrapper">
+                <div class="col-md-6 login-wrapper">
                     <div class="login-section">
                         <c:url value="/j_spring_security_check" var="loginActionUrl"/>
                         <spuser:login actionNameKey="login.login" action="${loginActionUrl}"/>

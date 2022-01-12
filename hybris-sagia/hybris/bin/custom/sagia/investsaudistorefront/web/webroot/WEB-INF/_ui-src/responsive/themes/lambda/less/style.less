@@ -5,3 +5,403 @@
 @import "../../../lib/ybase-0.1.0/less/ybase.less";
 @import "../../../lib/ybase-0.1.0/less/addons.less";
 @import "variables.less";
+
+
+
+
+
+/*Registration & Login*/
+
+.form-control:focus { /*2555 & 17456*/
+	border-color: #00A6BE;
+  }
+  
+  
+  
+  
+  .login-right-wrapper{
+	  border: 1px solid #00A6BE ;
+	  background: #FFFFFF 0% 0% no-repeat padding-box;
+	  box-shadow: 0px 26px 35px #0000007A;
+	  border: 1px solid #00A6BE;
+	  border-radius: 30px;
+	  opacity: 1;
+	  height: 893px;
+	  width: 700px;
+  }
+  .login-screen .login-right-wrapper{
+	height: 750px;
+	width: 590px;
+  }
+  .login-register-text{
+	top:50px;
+	text-align: center;
+	color: #BF9B2E;
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: 500;
+	position: relative;
+  }
+  .register-role-selection{
+	text-align: center;
+	top: 10%;
+	position: relative;
+  }
+  .register-user-info{
+	position: relative;
+	top:20%;
+	width: 96%;
+	align-items: center;
+	margin: auto;
+  }
+  .register-user-info input:focus
+  {
+	outline: none;
+  }
+  .register-user-details{
+	  background: #FFFFFF 0% 0% no-repeat padding-box;
+	  box-shadow: 0px 19px 47px #00000029;
+	  border-radius: 113px;
+	  height: 50px;
+	  padding: 20px 24px 12px;
+	  font-size: 16px;
+	  display: block;
+	  width: 100%;
+	  line-height: 1.5;
+	  opacity: 1;
+  }
+  .register-user-info-label.focused ,.register-user-info-label.focused-country{
+	opacity: 1;
+	color: #BF9B2E;
+	font-size: 12px;
+	transform: translate3d(0,0, 0) scale(1);
+	right: initial;
+  }
+  .register-user-info-label{
+	display: block;
+	font-size: 16px;
+	font-weight: 400;
+	opacity: 1;
+	pointer-events: none;
+	position: absolute;
+	transform: translate3d(0, 16px, 0) scale(1);
+	transform-origin: left top;
+	transition: 240ms;
+	line-height: 24px;
+	color: #707070;
+	margin-left: 25px;
+  }
+  
+  .login-buttons{
+	position: relative;
+	top: 30%;
+	margin-top: 22px;
+  }
+  .login-buttons div{
+	justify-content: center;
+	  display: flex;
+  }
+  .login-btn, #forgottenPwdForm .btn{
+	  font-size: 16px;
+	  font-weight: 600;
+	  width:34%;
+	  height: 50px;
+	  border-radius: 27px !important;
+	width: 195px;
+	  cursor: pointer;
+	display: block;
+  }
+  .login-entry-register, .login-btn-cancel{
+	background-color: #fff; 
+	  border: 1px solid #00A6BE;
+	  color: #00A6BE;  
+  }
+  .login-btn-cancel,.login-btn-next{
+	padding-top: 12px;
+	text-align: center;
+  }
+  /* .login-btn-next{
+	text-align: center;
+  } */
+  .login-btn-next , #forgottenPwdForm .btn{  
+	background: #00A6BE 0% 0% no-repeat padding-box;
+	border: none;
+	color: #FFF;
+  }
+  .login-forgot{
+	font: normal normal 600 16px/18px TheSans B6;
+	letter-spacing: 0px;
+	position: relative;
+	top: 40%;
+	align-items: center;
+	margin: auto;
+	justify-content: center;
+	text-align: center;
+	font-size: 16px;
+  }
+  .login-forgot a, .login-btn:hover,a, a:hover, .login-back,.accountLogin-content-formSubmitSection a, .accountLogin-content-formSubmitSection a:hover{
+	  color: #00A6BE;
+	}
+  .register-user-info div:nth-child(2){
+	margin-top: 5%;
+  }
+  .headline,.paragraph-wrapper p,.dottedList.dottedList_green{
+	color: #FFFFFF;
+	text-align: left;
+  }
+  .accountLogin-content-headline{
+	font-weight: 700 !important;
+	font-size: 50px !important;
+	letter-spacing: 2.16px;  
+	line-height: 1;
+  }
+  .accountLogin-content-headline_sub{
+	margin-top: 2%;
+	letter-spacing: 0.72px;
+	font-weight: 500;
+	line-height: 1.3;
+  }
+  .dottedList.dottedList_green .dottedList-item:before{
+	background-color: #00A6BE;
+  }
+  #cboxOverlay{
+	height: 100vh;
+  }
+  #colorbox .forgotten-password .btn-primary{
+	margin: 2% auto auto;
+	width: 100% !important;
+  }
+  .next-hide,.d-none{
+	display: none !important;
+  }
+  .r-sn .login-right-wrapper{
+	height: 805px;
+	width: 600px;
+  }
+  .login-screen .login-right-wrapper{
+	height: 665px;
+	width: 530px;
+  }
+  .register-account-partner-screen3{
+	margin-top: -10%;
+	position: relative;
+  }
+  .register-account-partner-screen3 .login-right-wrapper{
+	height: 900px;
+	width: 600px;
+  }
+  .register-account-partner-screen3 .register-role-selection{
+	top: 7%;
+  }
+  .register-account-partner-screen3 .register-progress{
+	top: 23%;
+  }
+  .register-account-partner-screen3 .login-register-role{
+	top: 28%;
+  }
+  .register-account-partner-screen3 .register-user-info{
+	margin-top: 16%;
+  }
+  .register-progress{
+	  display: flex;
+	  width: 270px;
+	  top: 33%;
+	  position: sticky;
+	  margin: auto;
+	}
+	.circle {
+	  height: 40px;
+	  width: 40px;
+	  border: 1px solid #F2F2F2;
+	  border-radius: 50%;
+	  display: inline-block;
+	  opacity: 1;
+	  text-align: center;
+	  font-size: 20px;
+	  color: #707070;
+	  padding-top: 3px;
+	}
+	.register-progress hr{
+	  width: 75px;
+	  height: 0px;
+	  border: 1px solid #CACACA;
+	}
+	.register-progress-selection{
+	  background: #00A6BE 0% 0% no-repeat padding-box;
+	  color: #F2F2F2;
+	  opacity: 1;
+	}
+	.progress-completion{
+	  background: #025635 0% 0% no-repeat padding-box;
+	  color: #FFF;
+	}
+	.progress-completion div{
+	  width: 20px;
+	  height: 16px;
+	  margin-top: 8px;
+	  display: inline-block;
+	  background:#FFF;
+	  -webkit-mask:url("/investsaudistorefront/_ui/responsive/common/images/Icon ionic-ios-checkmark.png") center/contain;
+			  mask:url("/investsaudistorefront/_ui/responsive/common/images/Icon ionic-ios-checkmark.png") center/contain;
+	}
+	.login-register-role{
+	  position: sticky;
+	  top:45%;
+	  text-align: center;
+	  color: #BF9B2E;
+	  text-transform: uppercase;
+	  font-size: 20px;
+	  font-weight: 500; 
+  }
+  .login-role-selection{
+	  position: sticky;
+	  top:50%;
+	  display: flex;
+	  justify-content: center;
+	}
+  .login-role-selection-box{
+	background: #F2F2F2 0% 0% no-repeat padding-box;
+	border-radius: 15px;
+	width:150px;
+	height: 140px;
+	margin: 0 4%;
+	cursor: pointer;
+	}
+	.login-role-selection-box img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top:16px;
+	position: relative;
+	height: 60px;
+	}
+	.role-text{
+	font-size: 20px;
+	font-weight: 700;
+	color: #00A6BE;
+	text-align: center;
+	position: relative;
+	top: 35px;
+	}
+	.login-role-selection-box.active{
+	  background: #00A6BE 0% 0% no-repeat padding-box;
+		border: none;
+	}
+	.login-role-selection-box.active .role-text, .login-btn.active:hover{
+	  color: #FFF;
+	  }
+  
+	.function-userGroup .role-text{
+	  text-align: center;
+	  font: normal normal normal 14px/20px TheSans;
+	  letter-spacing: 0.5px;
+	}
+	.function-userGroup .login-role-selection-box{
+	  width: 196px;
+	  height: 149px;
+	}
+	.function-selected{
+	  margin-left: 50px;
+	  width: 45px;
+	}
+  
+	.register-user-info div:nth-child(2){
+	  margin-top: initial;
+	}
+	
+  
+	.register-account-partner-screen3 .register-form-action{
+	  margin-top: 0px;
+	}
+	
+	.login-btn-next.btn-block{
+	  padding-top: 0px;
+	}
+	.second-step-auth{
+	  margin: auto;
+	  padding-top: 0px !important;
+	}
+  .login-screen2 .login-right-wrapper{
+	width: 501px;
+	height: 653px;
+  }
+  .login-screen2 .login-register-role{
+	top: 40%;
+  }
+  .login-screen2 .register-user-info{
+	top: 20%;
+	text-align: center;
+	letter-spacing: 0px;
+	color: #979797;
+  }
+  .auth-screen-height{
+	height: 750px;
+  }
+  .formError-auth{
+	  padding-left: 0 !important;
+	  display: flex;
+	  position: relative !important;
+	float: left;
+	color: red;
+	margin-top: -12%;
+	}
+	.formError-auth svg{
+	  width: 50px;
+  }
+  .formError-auth span{
+	  position: relative;
+	  left: 0px;
+	  top: 5px;
+	  width: 90%;
+  }
+  .a-button{
+	  padding: 10px;
+	}
+  
+	.mobile-code-wrapper{
+	  width: 100%;
+	  margin: auto;
+	  margin-top: 20%;
+	  }
+	  .mobile-code-label{
+	  font-size: 20px;
+	  font-weight: 400;
+	  opacity: 1;
+	  pointer-events: none;
+	  position: absolute;
+	  transform: translate3d(0, 10px, 0) scale(1);
+	  transform-origin: left top;
+	  transition: 240ms;
+	  line-height: 24px;
+	  color: #00A6BE;
+	  left: 30%;
+	  justify-content: center;
+	  margin: auto;
+	  top: 36%;
+	  }
+  .mobile-code-text{
+	border: none !important;
+	border-bottom: 1px solid #979797 !important;
+	margin: 20% auto auto !important;
+	padding: 20px 24px 14px 75px !important;
+	font-size: 16px !important;
+	display: block !important;
+	width: 42% !important;
+	line-height: 1.5 !important;
+	opacity: 1 !important;
+	background: none;
+	box-shadow: none;
+	border-radius: initial;
+	}
+  .success-circle{
+	justify-content: center;
+	text-align: center;
+	margin-top: 8% !important;
+  }
+  .register-success-msg span{
+	text-align: center;
+	font: normal normal normal 23px/28px TheSans;
+	letter-spacing: 0px;
+	color: #025635;
+	margin-top: 8% !important;
+  }

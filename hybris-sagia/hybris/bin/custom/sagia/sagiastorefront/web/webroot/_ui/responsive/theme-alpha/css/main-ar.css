@@ -3287,3 +3287,315 @@ li a.about-us-nav {
 .about-link-button-padding{
     padding: 0px 5px;
 }
+
+
+
+
+
+
+
+/*Register & Login*/
+
+.login-role[src=""]{
+    display: none;
+  }
+  
+  
+  .background {
+      background-color: rgba(29, 36, 44, 0.12);
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+      background-attachment: fixed;
+      background-image: url(/_ui/responsive/common/images/B2C/background1.jpg);
+      min-height: 100vh;
+    opacity: 1;
+  }
+  .login-logo{
+    width: 198px;
+    height: 120px;
+  }
+  .login-left-wrapper{
+    margin-top: 3%;
+    margin-left: 10%;
+  }
+  .login-text-heading{
+    font-weight: 700;
+    width: 70%;
+    margin-top: 5%;
+    font-size: 60px;
+    letter-spacing: 2.16px;
+    color: #FFFFFF;
+    line-height: 1;
+  }
+  .login-text-para{
+    margin-top: 15%;
+    font-size: 20px;
+    width: 80%;
+    letter-spacing: 0.72px;
+    color: #F2F2F2;
+    opacity: 1;
+  }
+  .login-right-wrapper{
+    border: 1px solid var(--unnamed-color-00a6be);
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 26px 35px #0000007A;
+    border: 1px solid #00A6BE;
+    border-radius: 30px;
+    opacity: 1;
+    height: 630px;
+    width: 520px;
+    margin: auto;
+  }
+  
+  
+  .login-register-text{
+    top:50px;
+    text-align: center;
+    color: #BF9B2E;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .login-register-role{
+    top:36%;
+    text-align: center;
+    color: #BF9B2E;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    position: sticky;
+  }
+  
+  .login-role-selection{
+    position: sticky;
+    top:42%;
+    display: flex;
+    justify-content: center;
+  }
+  .login-role-selection-box{
+    background: #F2F2F2 0% 0% no-repeat padding-box;
+    border-radius: 15px;
+    width:150px;
+    height: 140px;
+    margin: 0 4%;
+    cursor: pointer;
+  }
+  
+  .login-role-selection-box img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top:16px;
+    position: relative;
+    height: 60px;
+  }
+  .role-text{
+    font-size: 20px;
+    font-weight: 700;
+    color: #00A6BE;
+    text-align: center;
+    position: relative;
+    top: 35px;
+  }
+  .login-buttons{
+    position: sticky;
+    top:70%;
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+  }
+  .login-buttons div:first-child{
+    justify-content: flex-end;
+    display: flex;
+  }
+  .login-buttons div:last-child{
+    justify-content: flex-start;
+    display: flex;
+  }
+  .login-btn{
+    font-size: 16px;
+    font-weight: 600;
+    width:34%;
+    height: 50px;;
+  }
+  
+  .login-cancel{ 
+    background-color: #fff; 
+    border: 1px solid #00A6BE;
+    border-radius: 27px;
+    color: #00A6BE;  
+    width: 195px;
+    cursor: pointer;
+  }
+  .login-btn-next{  
+    background: #BAC4C5 0% 0% no-repeat padding-box;
+    border: 1px solid #F2F2F2;
+    border-radius: 27px;
+    color: #FFF;
+    width: 195px;
+    cursor: pointer;
+  }
+  .login-btn-next.active,.login-role-selection-box.active{
+    background: #00A6BE 0% 0% no-repeat padding-box;
+  }
+  
+  .login-role-selection-box.active .role-text{
+    color: #FFF;
+  }
+  .register-role-selection{
+    text-align: center;
+    top: 10%;
+    position: relative;
+  }
+  .login-container{
+    flex-wrap: initial;
+    height: 100%;
+    margin: auto;
+    min-height: 100vh;
+    padding-left: initial;
+    padding-right: initial;
+  }
+  .login-account-screen{
+    padding-left: initial;
+    padding-right: initial;
+    margin-left: initial;
+    margin-right: initial;
+  }
+  .login-btn-next svg{
+    transform: scaleX(-1);
+  }
+  @media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height:1366px) and (max-height:1366px) {
+    .background{
+      position: relative;
+      top: -16vh;
+    }
+    .login-buttons{
+      top: 65%;
+    }
+    .login-register-role{
+      top: 42%;
+    }
+    .login-role-selection{
+      top: 46%;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 768px) {
+    .login-register-role{
+      top: 36%;
+    }
+    .login-role-selection{
+      top: 43%;
+    }
+  }
+  
+  
+  @media (min-width:1201px) and (max-width:1919px) and (max-height:900px){
+    .login-right-wrapper{
+      height: 600px;
+      width: 470px;
+    }
+  }
+  @media (min-width:1500px) and (max-width:1919px) and (max-height:900px) {/*110% - 125%*/
+    .login-register-role{
+      top: 36%;
+    }
+    .login-role-selection{
+      top: 43%;
+    }
+    .login-buttons{
+      top: 74%;
+    }
+  }
+  
+  @media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150% resolution*/
+    .login-register-role{
+      top: 30%;
+    }
+    .login-buttons{
+      top: 78%;
+    }
+  }
+  
+  @media (min-width:2000px) and (max-width:2400px) and (max-height:1250px) {/*80% - 90% resolution*/
+    .login-register-role{
+      top: 40%;
+    }
+    .login-role-selection{
+      top: 44%;
+    }
+    .login-buttons{
+      top: 66%;
+    }
+  }
+  
+  @media (max-width:599px) {
+   .login-right-wrapper{
+      width: 346px;
+      min-height: 540px;
+      max-height: 893px;
+      height: auto;
+    }
+    .register-role-selection{
+      margin-top: 14%;
+    }
+  }
+  @media (max-width:640px) {
+    .login-register-text{
+      top: 24px;
+      font-size: 20px;
+    }
+    .login-buttons{
+      top: 68%;
+      margin: auto;
+      display: grid;
+    }
+    .login-btn-next,.login-cancel{
+      width: 241px;
+    }
+    
+    .login-buttons div:nth-child(1){
+      order:2;
+    }
+    .login-buttons div:nth-child(2){
+      margin-bottom: 10px;
+      order:1
+    }
+  }
+  @media (min-width:641px) and (max-width:991px) {
+  
+  }
+  @media (min-width:992px) and (max-width:1200px) {
+    .login-left-wrapper{
+      margin-left: 5%;
+    }
+    .login-text-heading{
+      font-size: 50px;
+      line-height: 1.2;
+      letter-spacing:initial;
+      width: 100%;
+    }
+    .login-text-para{
+      width: 100%;
+    } 
+  }
+  
+  
+  @media (min-width:992px) and (max-width:1200px) {
+    .login-account-screen{
+      max-width: 100%;
+    }
+  }
+  
+  @media (min-width:992px) {
+    .login-account-screen{
+      display: flex;
+      justify-content: center;
+      margin: auto;
+    }
+  }

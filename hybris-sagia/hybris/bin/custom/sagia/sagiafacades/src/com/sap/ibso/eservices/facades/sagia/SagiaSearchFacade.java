@@ -29,4 +29,6 @@ public interface SagiaSearchFacade {
      * @return services Map
      */
     Map<String, List<SagiaServiceData>> getAllServices();
+
+    Map<String,List<SagiaServiceData>> getSagiaServicesByCategoryLabel(String categoryLabel);
 }

@@ -27,8 +27,8 @@
 
 <c:set var="pageIsDashboard" value="${fn:containsIgnoreCase(requestScope['javax.servlet.forward.request_uri'], 'dashboard')}"/>
 
-<section class="mainSection mainSection_grey mainSection_noPadding">
-    <form:form id="bannerUploadForm" action="dashboard/update-dashboardPic" method="post" enctype="multipart/form-data">
+<section class="mainSection_grey mainSection_noPadding">
+    <!-- <form:form id="bannerUploadForm" action="dashboard/update-dashboardPic" method="post" enctype="multipart/form-data">
         <input id="file" name="file" class="form-control js-inputFile dashboardBannerUpload" type="file" value="" accept="image/jpeg,application/pdf" style="display: none;">
             <c:choose>
                 <c:when test="${empty dashboardBanner and (not user.shouldDisplaySetCompanyPhotoOption)}">
@@ -57,7 +57,18 @@
                 </c:choose>
             </label>
         </div>
-    </form:form>
+    </form:form> -->
+    <div class="row">
+        <div class="col-12 owl-slider">
+            <div class="owl-carousel owl-theme" id="dashboard-carousel">
+                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image1.jpg"></div>
+                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image2.jpg"></div>
+                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image3.jpg"></div>
+                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image4.jpg"></div>
+                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image5.jpg"></div>
+            </div>
+        </div>
+    </div>
  
     <div class="globalMessage-holder" id="awaitingPaymentDiv" style="display: none;">
         <div class="container">
@@ -86,6 +97,8 @@
         </div>
     </div>
 </section>
+
+
 
 <section class="mainSection mainSection_grey mainSection_noPadding">
     <div class="container">
@@ -155,6 +168,184 @@
             <a href="${encodedContextPath}/dashboard-edit" class="btn btn_link btn_link_slim">
                 <span class="iconElement iconElement_pin"><icon:pin/></span> <spring:theme code="dashboard.customize"/>
             </a>
+        </div>
+    </div>
+</section>
+
+<section class="mainSection mainSection_grey mainSection_noPadding">
+    <div class="container">
+            <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
+                <div class="dashboard-tabs">
+                    <ul class="nav nav-tabs mb-0" role="tablist">
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#mylicense" role="tab" data-toggle="tab"><spring:theme code="myLicense.title"/></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#payments" role="tab" data-toggle="tab">Payments</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#servicerequest" role="tab" data-toggle="tab">My Service Request overview</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#incompleterequest" role="tab" data-toggle="tab">My Incomplete Request</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#tickets" role="tab" data-toggle="tab">My Tickets</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Tab panes -->
+                    <div class="tab-content dashboard-tab-body">
+                        <div role="tabpanel" class="tab-pane fade in active show" id="mylicense">
+                            <dashboard:myLicense/>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="payments">
+                            <div class="dashboardWidget js-dashboardWidget">
+                                <div class="dashboardWidget-headline js-dashboardWidget-headline">
+                                    <a href="" data-redirect="payments-overview" class="js-page-redirect"
+                                       style="text-decoration: inherit;color: inherit">
+                                        <spring:theme code="payments.page.title"/>
+                                    </a>
+                                    <div class="dashboardWidget-headline-icon">
+                                        <a href="" data-redirect="payments-overview" class="js-page-redirect"><icon:payments/></a>
+                                    </div>
+                                    <div class="dashboardWidget-filter">
+                                        <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
+                                            <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
+                                            <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.ascending"/> </option>
+                                            <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.descending"/> </option>
+                                            <option value="amount_asc"><spring:theme code="sagia.sort.lowest"/> </option>
+                                            <option value="amount_desc"><spring:theme code="sagia.sort.highest"/> </option>
+                                            <option value="date_asc" data-sort="asc"><spring:theme code="sagia.sort.oldest"/></option>
+                                            <option value="date_desc" data-sort="desc"><spring:theme code="sagia.sort.latest"/></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="dashboardWidget-body">
+                                    <div class="dashboardWidgetPayments">
+                                        <div class="tableModule tableModule_slim tableModule_striped">
+                                            <table class="tableModule-table">
+                                                <thead class="tableModule-head">
+                                                    <tr>
+                                                        <th><spring:theme code="dashboard.payments.date"/></th>
+                                                        <th><spring:theme code="dashboard.payments.name"/></th>
+                                                        <th><spring:theme code="dashboard.payments.status"/></th>
+                                                        <th class="dashboardWidgetPayments-lastCol"><spring:theme code="dashboard.payments.amount"/></th>
+                                                        <th><spring:theme code="payment.pay" /></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="tableModule-body" id="paymentsTable"></tbody>
+                                            </table>
+                                        </div>
+                                        <div class="paginationModule paginationModule_loading">
+                                            <c:if test="${!pageIsDashboard}">
+                                                <div style="width: 150px; position: absolute">
+                                                    <select class="paginationPicker js-select2-oneColumn form-control"></select>
+                                                </div>
+                                            </c:if>
+                                            <div class="paginationModule-wrapper">
+                                                <button class="paginationModule-control paginationModule-control_left" disabled>
+                                                    <icon:arrow_green_right/>
+                                                </button>
+                                                <div class="paginationModule-items">
+                                                    <div class="loadingModule">
+                                                        <div class="loadingModule-icon"><icon:loading-spinner /></div>
+                                                        <div class="loadingModule-msg">Loading content ...</div>
+                                                    </div>
+                                                </div>
+                                                <button class="paginationModule-control paginationModule-control_right">
+                                                    <icon:arrow_green_right/>
+                                                </button>
+                                            </div>
+                                                <div class="tableModule-headline">
+                                                    <a href="" data-redirect="payments-overview" class="js-page-redirect">
+                                                        <spring:theme code="dashboard.viewall" text="View all"/>
+                                                    </a>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="servicerequest">
+                            <dashboard:servicesRequest/>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="incompleterequest">
+                            <dashboard:savedDrafts/>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tickets">
+                            <div class="dashboardWidget js-dashboardWidget">
+                                <div class="dashboardWidget-headline js-dashboardWidget-headline">
+                                    <span>
+                                        <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"
+                                           style="text-decoration: inherit;color: inherit">
+                                        <spring:theme code="dashboard.ticket.yourtickets"/>
+                                        </a>
+                                    </span>
+                                    <div class="dashboardWidget-headline-icon">
+                                        <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"><icon:your-tickets/></a>
+                                    </div>
+                                    <div class="dashboardWidget-filter">
+                                        <select id="ticketSort" title="tickets" class="js-select2-oneColumn form-control" onchange="sortTickets()">
+                                            <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
+                                            <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
+                                            <option value="status_desc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
+                                            <option value="number_asc" data-sort="asc"><spring:theme code="sagia.sort.ticketNumber"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
+                                            <option value="number_desc" data-sort="desc"><spring:theme code="sagia.sort.ticketNumber"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
+                                            <option value="date_asc" data-sort="asc"><spring:theme code="sagia.sort.date"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
+                                            <option value="date_desc" data-sort="desc"><spring:theme code="sagia.sort.date"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="dashboardWidget-body">
+                                    <div class="dashboardWidgetTickets">
+                                        <div class="tableModule tableModule_slim dashboardWidgetTickets-table">
+                                            <table class="tableModule-table">
+                                                <thead class="tableModule-head">
+                                                <tr>
+                                                    <th><spring:theme code="dashboard.ticket.lastupdate"/></th>
+                                                    <th><spring:theme code="dashboard.ticket.ticketnumber"/></th>
+                                                    <th><spring:theme code="dashboard.ticket.status"/></th>
+                                                    <th><spring:theme code="dashboard.ticket.options"/></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody class="tableModule-body" id="ticketsTable"></tbody>
+                                            </table>
+                                        </div>
+                                        <div class="paginationModule paginationModule_loading">
+                                            <c:if test="${!pageIsDashboard}">
+                                                <div style="width: 150px; position: absolute">
+                                                    <select class="paginationPicker js-select2-oneColumn form-control"></select>
+                                                </div>
+                                            </c:if>
+                                            <div class="paginationModule-wrapper">
+                                                <button class="paginationModule-control paginationModule-control_left" disabled>
+                                                    <icon:arrow_green_right/>
+                                                </button>
+                                                <div class="paginationModule-items">
+                                                    <div class="loadingModule">
+                                                        <div class="loadingModule-icon"><icon:loading-spinner /></div>
+                                                        <div class="loadingModule-msg">Loading content ...</div>
+                                                    </div>
+                                                </div>
+                                                <button class="paginationModule-control paginationModule-control_right">
+                                                    <icon:arrow_green_right/>
+                                                </button>
+                                            </div>
+                                            <c:if test="${pageIsDashboard}">
+                                                <div class="tableModule-headline">
+                                                    <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect">
+                                                        <spring:theme code="dashboard.viewall" text="View all"/>
+                                                    </a>
+                                                </div>
+                                            </c:if>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </section>

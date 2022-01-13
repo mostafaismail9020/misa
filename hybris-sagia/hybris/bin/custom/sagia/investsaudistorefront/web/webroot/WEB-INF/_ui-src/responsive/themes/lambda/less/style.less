@@ -17524,6 +17524,7 @@ select.form-control {
   calc(100% - 15px) calc(1em + 2px),
   calc(100% - 2.5em) 0.5em;
   background-repeat: no-repeat;
+  padding-left:33px;
 }
 .form-control[disabled],
 .form-control[readonly],
@@ -27700,20 +27701,22 @@ select.form-control option {
 	  background: #FFFFFF 0% 0% no-repeat padding-box;
 	  box-shadow: 0px 19px 47px #00000029;
 	  border-radius: 113px;
-	  height: 50px;
+	  height: 80px;
 	  padding: 20px 24px 12px;
 	  font-size: 16px;
 	  display: block;
 	  width: 100%;
 	  line-height: 1.5;
 	  opacity: 1;
+	  padding-left:33px
   }
   .register-user-info-label.focused ,.register-user-info-label.focused-country{
 	opacity: 1;
 	color: #BF9B2E;
 	font-size: 12px;
-	transform: translate3d(0,0, 0) scale(1);
+	transform: translate3d(0,0, 0) scale(0.9);
 	right: initial;
+	left:6px;
   }
   .register-user-info-label{
 	display: block;
@@ -27760,6 +27763,7 @@ select.form-control option {
 .login-btn-next {
   /* padding-top: 12px; */
   text-align: center;
+  padding:15px 0px;
 }
   /* .login-btn-next{
 	text-align: center;
@@ -27824,16 +27828,17 @@ select.form-control option {
   width: 100%;    
   padding-bottom: 50px;
 }
-  .login-screen .login-right-wrapper{
-	height: 665px;
-	width: 530px;
+  .login-screen .login-right-wrapper{ 
+	  height: 100%;
+	  /* height: 805px; */ 
+	  width: 100%;    
   }
   .register-account-partner-screen3{
 	margin-top: -10%;
 	position: relative;
   }
   .register-account-partner-screen3 .login-right-wrapper{
-	height: 900px;
+	height: 100%;
 	width: 600px;
   }
   /*.register-account-partner-screen3 .register-role-selection{
@@ -27901,8 +27906,8 @@ select.form-control option {
 	  font-weight: 500;
 	}
   .login-role-selection{
-	  position: sticky;
-	  top:50%;
+	  /*position: sticky;
+	  top:50%;*/
 	  display: flex;
 	  justify-content: center;
 	}

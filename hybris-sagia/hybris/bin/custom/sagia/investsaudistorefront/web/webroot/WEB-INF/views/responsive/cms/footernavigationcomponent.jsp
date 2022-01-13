@@ -54,7 +54,7 @@
 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 							<h2 class="text-uppercase display-7">RESOURCES</h2>
 							<p class="text">Explore all the resoureces you need to work with us</p>
-							<p><a class="link text-uppercase px-0" href="/CONTENT-HUB/c/100000">Investment Guide &nbsp; &nbsp;
+							<p><a class="link text-uppercase px-0" href="/CONTENT-HUB/c/100000">CONTENT HUB &nbsp; &nbsp;
 									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
 							</p>
 						</div> 
@@ -238,7 +238,7 @@
 							<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 								<h2 class="text-uppercase display-7">RESOURCES</h2>
 								<p class="text">Explore all the resoureces you need to work with us</p>
-								<p><a class="link text-uppercase px-0" href="/CONTENT-HUB/c/100000">Investment Guide &nbsp; &nbsp;
+								<p><a class="link text-uppercase px-0" href="/CONTENT-HUB/c/100000">CONTENT HUB &nbsp; &nbsp;
 										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
 								</p>
 							</div> 

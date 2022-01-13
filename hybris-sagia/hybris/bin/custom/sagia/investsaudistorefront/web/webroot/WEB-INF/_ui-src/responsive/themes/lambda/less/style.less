@@ -14573,7 +14573,7 @@ form .forgotten-password {
   position: absolute;
 }
 .register-form-action .formCheckBox .form-control:checked + input[type=hidden] + .control-label span {
-  background-color: #5cc83b;
+  background-color: #00A6BE;
 }
 .register-form-action .formCheckBox .control-label {
   padding-left: 21px;
@@ -14583,7 +14583,7 @@ form .forgotten-password {
 }
 .register-form-action .formCheckBox .control-label span {
   left: 0;
-  border: solid 1px #79c551;
+  border: solid 1px #00A6BE;
   background: #fff;
   position: absolute;
   top: 2px;
@@ -17512,8 +17512,8 @@ select.form-control {
   background: #FFFFFF;
   box-shadow: 0px 0px 10px #00000029;
   border: 1px solid #CACACA;
-  border-radius: 15px;
-  height: 66px;
+  border-radius: 115px;
+  height: 80px;
   font-size: 18px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -24905,6 +24905,8 @@ footer {
   background: #ffffff;
   color: #707070;
   font-weight: 300;
+ padding-top: 0px !important;
+  margin-top: 0px !important;
 }
 .footer__top .footer__nav--container .footer__nav--links a{
   /* font-size: 19px;
@@ -26900,8 +26902,8 @@ ul li {
 
 @media (max-width: 640px) and (min-width: 100px) {
   .float-button {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 60px;
     box-shadow: 0px 4px 8px #0000003b;
     background-color: #0097a9;
@@ -26910,7 +26912,7 @@ ul li {
     justify-content: center;
     align-items: center;
     position: fixed;
-    font-size: 12px;
+    font-size: 9px;
     text-transform: uppercase;
     bottom: 22px;
     right: 30px;
@@ -27660,24 +27662,29 @@ select.form-control option {
 	  height: 893px;
 	  width: 700px;
   }
-  .login-screen .login-right-wrapper{
-	height: 750px;
-	width: 590px;
-  }
-  .login-register-text{
-	top:50px;
-	text-align: center;
-	color: #BF9B2E;
-	text-transform: uppercase;
-	font-size: 30px;
-	font-weight: 500;
-	position: relative;
-  }
-  .register-role-selection{
-	text-align: center;
-	top: 10%;
-	position: relative;
-  }
+.login-screen .login-right-wrapper {
+  /* height: 750px; */
+  height: 100%;
+  width: 590px;
+}
+.login-register-text {
+  /* top: 50px; */
+  text-align: center;
+  color: #BF9B2E;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 500;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 25px;
+} 
+
+.register-role-selection {
+   text-align: center;
+  /*top: 10%;
+  position: relative; */
+  padding-bottom: 40px; 
+}
   .register-user-info{
 	position: relative;
 	top:20%;
@@ -27723,11 +27730,13 @@ select.form-control option {
 	margin-left: 25px;
   }
   
-  .login-buttons{
-	position: relative;
-	top: 30%;
-	margin-top: 22px;
-  }
+.login-buttons {
+    /* position: relative; */
+    /* top: 30%; */
+    /* margin-top: 22px; */
+    margin-bottom: 25px;
+    padding: 25px 50px;
+}
   .login-buttons div{
 	justify-content: center;
 	  display: flex;
@@ -27747,10 +27756,11 @@ select.form-control option {
 	  border: 1px solid #00A6BE;
 	  color: #00A6BE;  
   }
-  .login-btn-cancel,.login-btn-next{
-	padding-top: 12px;
-	text-align: center;
-  }
+.login-btn-cancel,
+.login-btn-next {
+  /* padding-top: 12px; */
+  text-align: center;
+}
   /* .login-btn-next{
 	text-align: center;
   } */
@@ -27759,17 +27769,19 @@ select.form-control option {
 	border: none;
 	color: #FFF;
   }
-  .login-forgot{
-	font: normal normal 600 16px/18px TheSans B6;
-	letter-spacing: 0px;
-	position: relative;
-	top: 40%;
-	align-items: center;
-	margin: auto;
-	justify-content: center;
-	text-align: center;
-	font-size: 16px;
-  }
+  .login-forgot {
+	  /* font: normal normal 600 16px/18px TheSans B6;
+	  position: relative;
+	  top: 40%; */
+	  font-size:16px;
+	  font-weight: 600;
+	  letter-spacing: 0px;
+	  align-items: center;
+	  margin: auto;
+	  justify-content: center;
+	  text-align: center; 
+		  padding: 40px;
+	}
   .login-forgot a, .login-btn:hover,a, a:hover, .login-back,.accountLogin-content-formSubmitSection a, .accountLogin-content-formSubmitSection a:hover{
 	  color: #00A6BE;
 	}
@@ -27805,10 +27817,13 @@ select.form-control option {
   .next-hide,.d-none{
 	display: none !important;
   }
-  .r-sn .login-right-wrapper{
-	height: 805px;
-	width: 600px;
-  }
+  
+.r-sn .login-right-wrapper {
+  height: 100%;
+  /* height: 805px; */ 
+  width: 100%;    
+  padding-bottom: 50px;
+}
   .login-screen .login-right-wrapper{
 	height: 665px;
 	width: 530px;
@@ -27821,7 +27836,7 @@ select.form-control option {
 	height: 900px;
 	width: 600px;
   }
-  .register-account-partner-screen3 .register-role-selection{
+  /*.register-account-partner-screen3 .register-role-selection{
 	top: 7%;
   }
   .register-account-partner-screen3 .register-progress{
@@ -27832,15 +27847,15 @@ select.form-control option {
   }
   .register-account-partner-screen3 .register-user-info{
 	margin-top: 16%;
-  }
-  .register-progress{
-	  display: flex;
-	  width: 270px;
-	  top: 33%;
-	  position: sticky;
-	  margin: auto;
-	}
-	.circle {
+  }*/
+.register-progress {
+  display: flex;
+  width: 270px;
+  /* top: 33%;
+  position: sticky; */
+  margin: auto;
+}
+.circle {
 	  height: 40px;
 	  width: 40px;
 	  border: 1px solid #F2F2F2;
@@ -27875,15 +27890,16 @@ select.form-control option {
 	  -webkit-mask:url("/investsaudistorefront/_ui/responsive/common/images/Icon ionic-ios-checkmark.png") center/contain;
 			  mask:url("/investsaudistorefront/_ui/responsive/common/images/Icon ionic-ios-checkmark.png") center/contain;
 	}
-	.login-register-role{
-	  position: sticky;
-	  top:45%;
+	.login-register-role {
+	  /* position: sticky;
+	  top: 45%; */
+	  padding: 20px;
 	  text-align: center;
 	  color: #BF9B2E;
 	  text-transform: uppercase;
 	  font-size: 20px;
-	  font-weight: 500; 
-  }
+	  font-weight: 500;
+	}
   .login-role-selection{
 	  position: sticky;
 	  top:50%;
@@ -27922,14 +27938,15 @@ select.form-control option {
 	  color: #FFF;
 	  }
   
-	.function-userGroup .role-text{
-	  text-align: center;
-	  font: normal normal normal 14px/20px TheSans;
+	.function-userGroup .role-text {
+	  text-align: center; 
+	  font-size: 14px;
+	  font-weight: 600;
 	  letter-spacing: 0.5px;
 	}
 	.function-userGroup .login-role-selection-box{
 	  width: 196px;
-	  height: 149px;
+	  height: 170px;
 	}
 	.function-selected{
 	  margin-left: 50px;
@@ -27945,9 +27962,9 @@ select.form-control option {
 	  margin-top: 0px;
 	}
 	
-	.login-btn-next.btn-block{
+	/*.login-btn-next.btn-block{
 	  padding-top: 0px;
-	}
+	}*/
 	.second-step-auth{
 	  margin: auto;
 	  padding-top: 0px !important;
@@ -28048,4 +28065,35 @@ select.form-control option {
 }
 .download_Icons:hover svg path{
   fill:#00a6be;
+}
+/**13-01-2022**/
+.accountLogin-content-formSubmitSection-checkbox.formCheckBox.js-secureportal-terms{
+  padding: 0px 20px;
+}
+.accountLogin-content-formSubmitSection-checkbox.formCheckBox.js-secureportal-terms .control-label span {
+  left: 0;
+  border: solid 1px #00A6BE;
+  background: #fff;
+  position: absolute;
+  top: 13px;
+  width: 14px;
+  height: 14px;
+}
+
+.register-user-info .text-center{
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  padding: 40px; 
+}
+.footer__top .footer__nav--container .footer__nav--links{
+  font-size: 14px;
+  font-weight: bold;
+}
+footer .footer-wrapper .links .footer__nav--container:first-child ul a{
+  font-size: 14px !important;
 }

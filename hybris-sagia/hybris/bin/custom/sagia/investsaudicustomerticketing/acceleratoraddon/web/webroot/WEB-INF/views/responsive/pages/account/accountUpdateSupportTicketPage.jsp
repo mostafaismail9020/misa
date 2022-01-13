@@ -192,125 +192,124 @@
     </div>
   </form:form>
 </c:if>
-<div class="container Opportunity_Request_Detail">
-    <div class="row customer-ticketing-body">
-    <div class="col-md-12">
-        <%-- <div class="account-section-header account-section-header-secondary">
-        <spring:theme code="text.account.supporttickets.messages" text="Messages" />
-        <cms:component uid="AddMessageButtonComponent" evaluateRestriction="true" />
-        </div> --%>
 
-    <div class="cts-msg-history">
-        <div style="display:none" id="ct-overlay-title">
-        <div class="headline">
-            <span class="headline-text">
-            <spring:theme code="text.account.supporttickets.updateTicket.addMessage" text="Add Message" />
-            </span>
-        </div>
-        </div>
+<div class="row customer-ticketing-body">
+  <div class="col-md-12">
+    <%-- <div class="account-section-header account-section-header-secondary">
+      <spring:theme code="text.account.supporttickets.messages" text="Messages" />
+      <cms:component uid="AddMessageButtonComponent" evaluateRestriction="true" />
+    </div> --%>
 
-        <spring:hasBindErrors name="supportTicketForm">
-        <div class="updateSupportTicketValidationErrors"></div>
-        </spring:hasBindErrors>
-
-        <div style="display: none">
-        <span id="supporttickets-tryLater">
-            <spring:theme code="text.account.supporttickets.tryLater" />
+  <div class="cts-msg-history">
+    <div style="display:none" id="ct-overlay-title">
+      <div class="headline">
+        <span class="headline-text">
+          <spring:theme code="text.account.supporttickets.updateTicket.addMessage" text="Add Message" />
         </span>
-        <span id="attachment-file-max-size-exceeded-error-message">
-            <spring:theme code="text.account.supporttickets.fileMaxSizeExceeded" />
-        </span>
-        <span id="file-too-large-message">
-            <spring:theme code="text.account.supporttickets.file.is.large.than" arguments="${maxUploadSizeMB}" />
-        </span>
-        <span id="opportunity-approve-message">
-            <spring:theme code="text.account.opportunity.approve.confirmation.message" arguments="${ticketData.id}" />
-        </span>
-        <span id="opportunity-reject-message">
-            <spring:theme code="text.account.opportunity.reject.confirmation.message" arguments="${ticketData.id}" />
-        </span>
-        </div>
-        <common:globalMessagesTemplates />
+      </div>
+    </div>
 
-        <div style="display:none;" id="ct-add-new-msg">
-        <div id="customer-ticketing-alerts"></div>
-        <div id="global-alerts" class="global-alerts"></div>
-        <c:if test="${woagUserGroup ne 'WOAGUserGroup'}">
-            <form:form method="post" modelAttribute="supportTicketForm" enctype="multipart/form-data">
+    <spring:hasBindErrors name="supportTicketForm">
+      <div class="updateSupportTicketValidationErrors"></div>
+    </spring:hasBindErrors>
 
-            <form:hidden path="subject" value="${ticketData.subject}" />
-            <input id="currentTicketStatus" type="hidden" value="${ticketData.status.id}">
-            <form:hidden path="id" value="${ticketData.id}" />
-            <%-- <formElement:formTextArea idKey="createTicket-message"
-                labelKey="text.account.supporttickets.createTicket.message" path="message"
-                areaCSS="form-control js-add-message" labelCSS="control-label" /> --%>
-            <formElement:formTextArea idKey="message" labelKey="text.account.supporttickets.createTicket.message"
-                path="message" areaCSS="form-control js-add-message" labelCSS="control-label" />
+    <div style="display: none">
+      <span id="supporttickets-tryLater">
+        <spring:theme code="text.account.supporttickets.tryLater" />
+      </span>
+      <span id="attachment-file-max-size-exceeded-error-message">
+        <spring:theme code="text.account.supporttickets.fileMaxSizeExceeded" />
+      </span>
+      <span id="file-too-large-message">
+        <spring:theme code="text.account.supporttickets.file.is.large.than" arguments="${maxUploadSizeMB}" />
+      </span>
+      <span id="opportunity-approve-message">
+        <spring:theme code="text.account.opportunity.approve.confirmation.message" arguments="${ticketData.id}" />
+      </span>
+      <span id="opportunity-reject-message">
+        <spring:theme code="text.account.opportunity.reject.confirmation.message" arguments="${ticketData.id}" />
+      </span>
+    </div>
+    <common:globalMessagesTemplates />
 
-            <div class="has-error">
-                <div id="NotEmpty-supportTicketForm-message" class="help-block" style="display: none;"></div>
-                <div id="Size-supportTicketForm-message" class="help-block" style="display: none;"></div>
-            </div>
-            <div class="form-group">
-                <form:hidden path="status" value="${ticketData.status.id}" />
-            </div>
+    <div style="display:none;" id="ct-add-new-msg">
+      <div id="customer-ticketing-alerts"></div>
+      <div id="global-alerts" class="global-alerts"></div>
+      <c:if test="${woagUserGroup ne 'WOAGUserGroup'}">
+        <form:form method="post" modelAttribute="supportTicketForm" enctype="multipart/form-data">
 
-            <div style="display:block;" class="cs_file_upload form-group file-upload js-file-upload">
-                <label class="control-label file-upload__label" for="files">
-                <spring:theme code="text.account.supporttickets.createTicket.selectFile" text="Select a file" />
-                </label>
-                <div class="file-upload__wrapper btn btn-sagia btn-small">
-                <span>
-                    <spring:theme code="text.account.supporttickets.createTicket.chooseFile" text="Choose file" />
-                </span>
-                <input type="file" name="files" id="attachmentFiles" multiple size="60"
-                    class="file-upload__input js-file-upload__input" data-max-upload-size="${maxUploadSize}" />
-                </div>
-                <span class="file-upload__file-name js-file-upload__file-name">
-                <spring:theme code="text.account.supporttickets.createTicket.noFileChosen" />
-                </span>
-            </div>
+          <form:hidden path="subject" value="${ticketData.subject}" />
+          <input id="currentTicketStatus" type="hidden" value="${ticketData.status.id}">
+          <form:hidden path="id" value="${ticketData.id}" />
+          <%-- <formElement:formTextArea idKey="createTicket-message"
+            labelKey="text.account.supporttickets.createTicket.message" path="message"
+            areaCSS="form-control js-add-message" labelCSS="control-label" /> --%>
+          <formElement:formTextArea idKey="message" labelKey="text.account.supporttickets.createTicket.message"
+            path="message" areaCSS="form-control js-add-message" labelCSS="control-label" />
 
-            <div class="modal-actions row">
-                <div class="col-xs-12 col-sm-6 col-sm-push-6">
-                <ycommerce:testId code="supportTicket_update_button">
-                    <button class="btn btn-sagia btn-sagia-green btn-block" id="updateTicket" type="submit">
-                    <spring:theme code="text.account.supporttickets.createTicket.submit" text="Submit" />
-                    </button>
-                </ycommerce:testId>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-sm-pull-6">
-                <a class="btn btn-sagia btn-block">
-                    <spring:theme code="text.account.supporttickets.cancel" text="Cancel" />
-                </a>
-                </div>
-            </div>
-            </form:form>
-        </c:if>
-        </div>
+          <div class="has-error">
+            <div id="NotEmpty-supportTicketForm-message" class="help-block" style="display: none;"></div>
+            <div id="Size-supportTicketForm-message" class="help-block" style="display: none;"></div>
+          </div>
+          <div class="form-group">
+            <form:hidden path="status" value="${ticketData.status.id}" />
+          </div>
 
-        <c:choose>
-        <c:when test="${not empty ticketData.messageHistory}">
-            <div class="form-group">
-            <label class="control-label">
-                <spring:message code="text.account.supporttickets.createTicket.message.history" />
+          <div style="display:block;" class="cs_file_upload form-group file-upload js-file-upload">
+            <label class="control-label file-upload__label" for="files">
+              <spring:theme code="text.account.supporttickets.createTicket.selectFile" text="Select a file" />
             </label>
-            <p class="form-control-static">${ticketData.messageHistory}</p>
+            <div class="file-upload__wrapper btn btn-sagia btn-small">
+              <span>
+                <spring:theme code="text.account.supporttickets.createTicket.chooseFile" text="Choose file" />
+              </span>
+              <input type="file" name="files" id="attachmentFiles" multiple size="60"
+                class="file-upload__input js-file-upload__input" data-max-upload-size="${maxUploadSize}" />
             </div>
-        </c:when>
-        <c:otherwise>
-            <c:choose>
-            <c:when test="${woagUserGroup eq 'WOAGUserGroup'}">
-                <cts:ticketEvents ticketData="${ticketData}" isWoapUser="true" />
-            </c:when>
-            <c:otherwise>
-                <cts:ticketEvents ticketData="${ticketData}" isWoapUser="false" />
-            </c:otherwise>
-            </c:choose>
-        </c:otherwise>
+            <span class="file-upload__file-name js-file-upload__file-name">
+              <spring:theme code="text.account.supporttickets.createTicket.noFileChosen" />
+            </span>
+          </div>
+
+          <div class="modal-actions row">
+            <div class="col-xs-12 col-sm-6 col-sm-push-6">
+              <ycommerce:testId code="supportTicket_update_button">
+                <button class="btn btn-sagia btn-sagia-green btn-block" id="updateTicket" type="submit">
+                  <spring:theme code="text.account.supporttickets.createTicket.submit" text="Submit" />
+                </button>
+              </ycommerce:testId>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-sm-pull-6">
+              <a class="btn btn-sagia btn-block">
+                <spring:theme code="text.account.supporttickets.cancel" text="Cancel" />
+              </a>
+            </div>
+          </div>
+        </form:form>
+      </c:if>
+    </div>
+
+    <c:choose>
+      <c:when test="${not empty ticketData.messageHistory}">
+        <div class="form-group">
+          <label class="control-label">
+            <spring:message code="text.account.supporttickets.createTicket.message.history" />
+          </label>
+          <p class="form-control-static">${ticketData.messageHistory}</p>
+        </div>
+      </c:when>
+      <c:otherwise>
+        <c:choose>
+          <c:when test="${woagUserGroup eq 'WOAGUserGroup'}">
+            <cts:ticketEvents ticketData="${ticketData}" isWoapUser="true" />
+          </c:when>
+          <c:otherwise>
+            <cts:ticketEvents ticketData="${ticketData}" isWoapUser="false" />
+          </c:otherwise>
         </c:choose>
-    </div>
-    </div>
+      </c:otherwise>
+    </c:choose>
+  </div>
 </div>
 </div>
 <common:confirmationModal/>

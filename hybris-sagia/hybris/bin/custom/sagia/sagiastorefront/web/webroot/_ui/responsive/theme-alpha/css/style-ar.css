@@ -22406,3 +22406,21 @@ table,th,tr,td{
     font-size: 50px;
     text-align: center;
 }
+
+@media (max-width:400px) {
+	.contact-form{
+		width: 90%;
+		margin-left: 15px;
+    	margin-right: 15px;
+	}
+	.contact-form .form-check input[type="checkbox"]{
+		width: 50px;
+	}
+	.contact-form .form-action-btn div:nth-child(1){
+		order:2;
+	}
+	.contact-form .form-action-btn div:nth-child(2){
+		order:1;
+		margin-bottom: 10px;
+	}
+}

@@ -4611,12 +4611,18 @@ function OnChangeEnquiryType() {
 
 $("#contact-us-form-cancel").on('click',function(e){
 	e.preventDefault();
-	$(':input','#contact-us-form')
+	var lblError = document.getElementById("lblError");
+	lblError.innerHTML = "";
+
+  grecaptcha.reset(0);
+
+	$(':input','#contact-us-page-contact-us-form')
   .not(':button, :submit, :reset, :hidden')
-  .val('')
   .prop('checked', false)
-  .prop('selected', false);
+  .prop('selectedIndex', 0)
+  .val('').change()  	
 })
+
 
 
 
@@ -4629,7 +4635,8 @@ $('#downloadModal').on('hidden.bs.modal', function (e) {
 
 function recaptchaCallback(){
 	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorPageErrorCaptcha').text('')
-	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorErrorCaptcha').text('');		
+	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorErrorCaptcha').text('');	
+	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');			
 }
 
 
@@ -4642,7 +4649,7 @@ $('#contactfile').change(function() {
 
 $(document).ready(function(){
 	// if($("#CRMResponse").val() === 'true'){
-		if ($("#CRMObjectId").val() !== null) {
+		if ($("#CRMObjectId").val() !== null && $("#CRMObjectId").val() !== "" && $("#CRMObjectId").val() !== undefined) {
 			$("#contact-us-form-success").removeClass("d-none");
 			$('.contact-us-form-ticket').text("Your enquiry reference number : " + $("#CRMObjectId").val());
 		}

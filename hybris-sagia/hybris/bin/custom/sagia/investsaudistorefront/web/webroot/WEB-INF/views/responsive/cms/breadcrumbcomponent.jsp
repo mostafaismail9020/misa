@@ -7,7 +7,7 @@
 </header>
 <c:if test="${fn:length(breadcrumbs) > 0}">
   <div class="breadcrumb-section">
-    <div class="account-section">
+    <div class="container">
       <div class="row banner-heading">
         <h1>
           <c:forEach items="${breadcrumbs}" var="breadcrumb" varStatus="status">

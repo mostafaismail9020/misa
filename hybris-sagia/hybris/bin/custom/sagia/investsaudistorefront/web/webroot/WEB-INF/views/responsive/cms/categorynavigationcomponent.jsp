@@ -57,7 +57,7 @@
               <ul>
                 <c:forEach items="${component.navigationNode.children}" var="childLevel1" varStatus="childLevel1index">
                   <c:set var="childlevel1link" value="${childLevel1.cmsLink}" />
-                  <li class="nav-item dropdown" >
+                  <li class="nav-item dropdown">
                     <c:choose>
                       <c:when test="${not empty childlevel1link.url}">
                         <img src="/investsaudistorefront/_ui/responsive/common/images/mobile-navarrow.png" class="d-none mobile-nav">
@@ -76,7 +76,6 @@
                           <img class="img-fluid w-100" src="${fn:escapeXml(childLevel1.nodeImage.url)}" alt="">
                           <p>${childLevel1.nodeDescription}</p>
                         </div>
-
                         <div class="col-md-4 menu-img-item">
                         <c:if test="${not empty childLevel1.children}">
                           <c:forEach items="${childLevel1.children}" var="childLevel2" varStatus="childLevel2index">
@@ -125,7 +124,6 @@
                         </c:forEach>
                     </c:if>
                         </div>
-
                       </div>
                     </ul>
                   </li>
@@ -143,14 +141,25 @@
 
 <script src="/investsaudistorefront/_ui/responsive/common/js/jquery-3.2.1.min.js"></script>
 <script>
-  $(document).ready(function () {
-    $('nav-item.dropdown li').load(function (e) {
-      $("nav-item.dropdown").addClass('d-none');
+  $(function() {
+    $('body').click(function(){
+      $(".nav-item.dropdown.open", this).removeClass('open')
     });
+    $('.nav-item.dropdown').click(function(){
+      $('.mt-breadcrumb').addClass('z-none');
+      $('body:not(.page-homepage) .banner-heading').addClass('z-none');
+    });
+    /* $('main').click(function(){
+      if($('.nav-item.dropdown').hasClass('open')) {
+        $(".mt-breadcrumb.z-none").removeClass('z-none');
+        $("body:not(.page-homepage) .banner-heading.z-none").removeClass('z-none');
+      }
+    }); */
   });
   $(document).ready(function () {
+    $(".breadcrumb-plp").addClass('d-none');
     if ($('.nav-item.dropdown div').length > 0) {
-      $(".nav-item.dropdown mobile").addClass('d-none');
+      $("nav-item.dropdown").addClass('d-none');
     }
   });
   $(document).ready(function(){
@@ -159,16 +168,19 @@
         $(".navigation__overflow").addClass("header-banner").fadeIn('slow');
         $(".breadcrumb-section").addClass("mt-breadcrumb").fadeIn('slow');
         $("body:not(.page-homepage) .banner-heading").addClass("d-none").fadeIn('slow');
+        $(".main__inner-wrapper").addClass("scrolled-body").fadeIn('slow');
       } else {
         $(".navigation__overflow").removeClass("header-banner").fadeIn('slow');
         $(".breadcrumb-section").removeClass("mt-breadcrumb").fadeIn('slow');
         $("body:not(.page-homepage) .banner-heading").removeClass("d-none").fadeIn('slow');
+        $(".main__inner-wrapper").removeClass("scrolled-body").fadeIn('slow');
       }
     });
     if ($(window).scrollTop() > 100) {
       $(".navigation__overflow").addClass("header-banner").fadeIn('slow');
       $(".breadcrumb-section").addClass("mt-breadcrumb").fadeIn('slow');
       $("body:not(.page-homepage) .banner-heading").addClass("d-none").fadeIn('slow');
+      $(".main__inner-wrapper").addClass("scrolled-body").fadeIn('slow');
     }
   });
 </script>

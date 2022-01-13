@@ -40,14 +40,14 @@
 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll">
 							<h2 class="text-uppercase display-7">OPPORTUNITIES</h2>
 							<p class="text">Explore all the Opportunities raised by yourself and others</p>
-							<p><a class="link text-uppercase px-0" href="https://www.investsaudi.sa/en/sectors-opportunities/opportunities">Opportunities &nbsp; &nbsp;
+							<p><a class="link text-uppercase px-0" href="/investsaudistorefront/investsaudi/en/my-account/support-tickets">Opportunities &nbsp; &nbsp;
 									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
 							</p>
 						</div>
 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 							<h2 class="text-uppercase display-7">PARTICIPATE</h2>
 							<p class="text ">Explore all the events that you can participate with us.</p>
-							<p><a class="link text-uppercase px-0" href="events">EVENTS &nbsp; &nbsp;
+							<p><a class="link text-uppercase px-0" href="/investsaudistorefront/investsaudi/en/events">EVENTS &nbsp; &nbsp;
 									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
 							</p>
 						</div>
@@ -61,7 +61,7 @@
 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 							<h2 class="text-uppercase display-7">BUSINESS SUPPORT</h2>
 							<p class="text">Link to the enquires raised by yourself</p>
-							<p><a class="link text-uppercase px-0" href="/CONTENT-HUB/c/100000">SUPPORT TICKET &nbsp; &nbsp;
+							<p><a class="link text-uppercase px-0" href="/investsaudistorefront/investsaudi/en/my-account/support-tickets">SUPPORT TICKET &nbsp; &nbsp;
 									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
 							</p>
 						</div> 

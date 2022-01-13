@@ -72,7 +72,7 @@
 								<!-- <li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button">EMAIL</a></li>
 								<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button">Login</a></li>
 								<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button">Register</a></li> -->
-								<li class="list-inline-item border-0"><a class="text-uppercase" href="/en/contactUs" role="button">Contact Us</a></li>
+								<li class="list-inline-item border-0"><a class="text-uppercase" href="/investsaudistorefront/investsaudi/en/contact" role="button">Contact Us</a></li>
 							</ul>
 						</div>
 					</div>

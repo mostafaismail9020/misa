@@ -99,9 +99,16 @@
                                     <label class="control-label" for="lastName"><spring:theme code="portal.contactus.form.lastname.label"/> <span class="mandatory">* </span></label>
                                     <input type="text" class="form-control" name="lastName" id="lastName" maxlength="300" onkeypress="return onlyAlphabets(event)" required/>
                                 </div>
-                                <div class="form-group form-floating col-md-6 form-normal-item">
+                                <!-- <div class="form-group form-floating col-md-6 form-normal-item">
                                     <label class="control-label" for="phoneNumber"><spring:theme code="portal.contactus.form.phoneno.label"/> <span class="mandatory">* </span></label>
                                     <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" maxlength="20" onkeypress="return isNumber(event)" required/>
+                                </div> -->
+                                <div class="form-group form-floating col-md-6 form-normal-item country-code-mobile">
+                                  <input type="text" class="ddl-countryCode form-control" placeholder="+966" autocomplete="off">
+                                  <div class="input-wrapper">
+                                    <label class="control-label" for="phoneNumber"><spring:theme code="portal.contactus.form.phoneno.label"/><span class="mandatory">* </span></label>
+                                    <input type="text"  class="form-control r" id="phoneNumber" name="phoneNumber"  type="number" maxlength="20" onkeypress="return isNumber(event)" required/>
+                                  </div>    
                                 </div>
                                 <div class="form-group form-floating col-md-6 form-normal-item">
                                     <label class="control-label" for="email"><spring:theme code="portal.contactus.form.email.label"/> <span class="mandatory">* </span></label>

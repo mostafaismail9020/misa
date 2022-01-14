@@ -13,7 +13,8 @@
 <form:form action="" method="post" modelAttribute="organizationInformationExtended" onsubmit="javascript:return false;">
 <div class="contentModule-section" id="basicInformationExtendedSection" style="display: none">
     <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.basicInformationExtendedSection.basicInformation"/></div>
-    <div class="row">
+   <hr class="hr"/>
+    <div class="row mt-5">
         <div class="col-md-6">
             <formElement:formInputBox idKey="basicInformationExtendedEntityName"
                                       labelKey="profile.company.entityName" path="entityName"
@@ -165,7 +166,7 @@
                 <div class="help-block"></div>
             </div>
         </div>
-        
+
         <div class="col-md-6">
             <div class="formSelectBox">
                 <div class="form-group">

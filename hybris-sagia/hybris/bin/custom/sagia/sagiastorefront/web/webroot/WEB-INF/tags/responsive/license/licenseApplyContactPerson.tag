@@ -33,12 +33,12 @@
 
         <div class="contentModule-actions contentModule-actions_spaceBetween">
             <span>
-                <button id="contactPersonBackButton" type="button" class="btn btn-secondary"><spring:theme code="licenseApply.contactPerson.button.back.text"/></button>
-                <button id="contactPersonCancelButton" type="button" class="btn btn-secondary btn_link btn_bold"><spring:theme code="licenseApply.contactPerson.button.cancel.text"/></button>
+                <button id="contactPersonBackButton" type="button" class="btn btn-normal btn-ctrl btn-bg btn_bold"><spring:theme code="licenseApply.contactPerson.button.back.text"/></button>
+                <button id="contactPersonCancelButton" type="button" class="btn btn-normal btn-ctrl btn-outline btn_link btn_bold"><spring:theme code="licenseApply.contactPerson.button.cancel.text"/></button>
             </span>
             <span>
                 <%--<button type="button" class="btn btn-secondary btn_link btn_bold">Skip</button>--%>
-                <button id="contactPersonNextButton" type="button" class="btn"><spring:theme code="licenseApply.contactPerson.button.next.text"/></button>
+                <button id="contactPersonNextButton" type="button" class="btn btn-normal btn-ctrl btn-bg btn_bold"><spring:theme code="licenseApply.contactPerson.button.next.text"/></button>
             </span>
         </div>
     </div>

@@ -18,21 +18,23 @@
                data-application="${surveyData.applicationId}"
                data-transaction-id="${surveyData.transactionId}"
                data-isFetchedFromNotificationService="${surveyData.isFetchedFromNotificationService}">
+                  <div>
+                <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab"
+                	class="btn btn_leftIconLink btn_darkLink btn-outline btn_bold p-2 pl-5 pr-5 text-uppercase"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.participate.backtoallquestionaires"/></a>
+            </div>
         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-            <div class="contentModule-headline">
-                <span class="iconElement iconElement_questionaires"><icon:questionaires/></span>${surveyData.surveytitle}
+            <div class="contentModule-headline  ml-0">
+                <!--<span class="iconElement iconElement_questionaires"><icon:questionaires/></span>-->${surveyData.surveytitle}
             </div>
-            <div>
-                <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab" 
-                	class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.participate.backtoallquestionaires"/></a>
-            </div>
+              <hr class="hr w-100"/>
+
         </div>
 
         <c:forEach items="${surveyData.sections}" var="section" varStatus="sectionStatus">
             <div class="contentModule-section contentModule-section_slimDivider contentModule-section_noDivider">
-                <div class="contentModule-headline contentModule-headline_survey">${section.header}</div>
+                <div class="contentModule-headline_survey contentModule-headline_survey_operation">${section.header}</div>
                 <c:forEach items="${section.sections}" var="subsection" varStatus="subsectionStatus">
-                    <div class="contentModule-subheadline">${subsection.header}</div>
+                    <div class="contentModule-headline_survey_operation contentModule-subheadline border-0">${subsection.header}</div>
                     <div class="row">
                         <c:forEach items="${subsection.questions}" varStatus="questionStatus" var="question">
                             <c:choose>
@@ -192,7 +194,7 @@
                                         </div>
                                     </div>
                                 </c:when>
-                                
+
                                <c:when test="${question.answType == '2'}">
                                     <c:forEach items="${question.answers}" var="answer" varStatus="answerStatus">
                                         <div class="col-md-12">
@@ -200,7 +202,7 @@
                                                 <div class="form-group">
                                                     <textarea id="${answer.controlID}"
                                                            class="form-control form-control_slim <c:if test="${question.mandquest}">js-required</c:if>"
-                                                           placeholder="." 
+                                                           placeholder="."
                                                            data-answer="${answer.ansID}"
                                                            data-question-type="${question.answType}"
                                                            data-control="${answer.controlID}"
@@ -213,8 +215,8 @@
                                         </div>
                                     </c:forEach>
                                 </c:when>
-                               
-                               
+
+
                             </c:choose>
                         </c:forEach>
                     </div>
@@ -223,7 +225,7 @@
         </c:forEach>
 
         <div class="contentModule-actions contentModule-actions_centered">
-            <button class="btn"><spring:theme code="text.account.questionnaries.send.feedback"/></button>
+            <button class="btn btn_bold btn-bg btn-normal w-25 pl-2 pr-2"><spring:theme code="text.account.questionnaries.send.feedback"/></button>
         </div>
     </form:form>
 </div>

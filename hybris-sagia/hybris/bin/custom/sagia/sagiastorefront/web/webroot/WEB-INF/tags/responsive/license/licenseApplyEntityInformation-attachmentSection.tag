@@ -12,7 +12,7 @@
 <!--  Attachment  -->
 <div class="contentModule-section" id="attachmentSection" style="display: none">
     <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.attachmentSection.attachment"/></div>
-
+<hr class="hr">
     <div class="row">
         <div class="col-md-6">
             <div class="formInputFile">

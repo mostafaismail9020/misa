@@ -16,8 +16,23 @@
         <span class="iconElement iconElement_shareholderProfile text-center"><icon:shareholderProfile/></span>
         <p class="text-center"><spring:theme code="licence.apply.noshareholder"/></p>
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <button type="button" class="addExistingButton btn">+ <spring:theme code="license.apply.review.existing.shareholder"/></button>
-            <button type="button" class="addNewButton btn">+ <spring:theme code="license.apply.review.new.shareholder"/></button>
+    <button type="button" class="addExistingButton btn btn-bg btn_bold btn-normal"><span class="icon-bg icon-ele"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="existing" transform="translate(-222.936 -1127.936)">
+    <circle id="Ellipse_35" data-name="Ellipse 35" cx="16" cy="16" r="16" transform="translate(222.936 1127.936)" fill="#1ac4dc"/>
+    <path id="Path_1887" data-name="Path 1887" d="M221.668,850.239l3.6,3a.125.125,0,0,0,.174-.013l7.727-8.753" transform="translate(11.755 294.682)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>
+</span> <spring:theme code="license.apply.review.existing.shareholder"/></button>
+    <button type="button" class="addNewButton btn btn_bold btn-outline taggle-button btn-normal"><span class="icon-bg"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="add-new" transform="translate(-222.936 -1127.936)">
+    <circle id="Ellipse_35" data-name="Ellipse 35" cx="16" cy="16" r="16" transform="translate(222.936 1127.936)" fill="#1ac4dc"/>
+    <g id="Group_1067" data-name="Group 1067" transform="translate(-5.5)">
+      <path id="Path_1956" data-name="Path 1956" d="M0,12V0" transform="translate(244.436 1137.436)" fill="#1ac4dc" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+      <path id="Path_1957" data-name="Path 1957" d="M0,12V0" transform="translate(250.436 1143.436) rotate(90)" fill="#1ac4dc" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
+</span><spring:theme code="license.apply.review.new.shareholder"/></button>
         </div>
     </div>
 
@@ -42,14 +57,30 @@
         </div>
 
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <button type="button" class="addExistingButton btn">+ <spring:theme code="license.apply.review.existing.shareholder"/></button>
-            <button type="button" class="addNewButton btn">+ <spring:theme code="license.apply.review.new.shareholder"/></button>
+            <button type="button" class="btn btn-bg btn_bold addExistingButton btn-normal"><span class="icon-bg icon-ele"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="ORGANIZATION" transform="translate(-222.936 -1127.936)">
+    <g id="Ellipse_35" data-name="Ellipse 35" transform="translate(222.936 1127.936)" fill="#1ac4dc" stroke="#00a6be" stroke-width="1">
+      <circle cx="16" cy="16" r="16" stroke="none"/>
+      <circle cx="16" cy="16" r="15.5" fill="none"/>
+    </g>
+    <path id="Path_2180" data-name="Path 2180" d="M221.668,850.239l3.6,3a.125.125,0,0,0,.174-.013l7.727-8.753" transform="translate(11.768 294.961)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg></span>  <spring:theme code="license.apply.review.existing.shareholder"/></button>
+            <button type="button" class="btn btn-outline btn_bold addNewButton taggle-button btn-normal"><span class="icon-bg"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="add-new" transform="translate(-222.936 -1127.936)">
+    <circle id="Ellipse_35" data-name="Ellipse 35" cx="16" cy="16" r="16" transform="translate(222.936 1127.936)" fill="#1ac4dc"></circle>
+    <g id="Group_1067" data-name="Group 1067" transform="translate(-5.5)">
+      <path id="Path_1956" data-name="Path 1956" d="M0,12V0" transform="translate(244.436 1137.436)" fill="#1ac4dc" stroke="#fff" stroke-linecap="round" stroke-width="2"></path>
+      <path id="Path_1957" data-name="Path 1957" d="M0,12V0" transform="translate(250.436 1143.436) rotate(90)" fill="#1ac4dc" stroke="#fff" stroke-linecap="round" stroke-width="2"></path>
+    </g>
+  </g>
+</svg></span> <spring:theme code="license.apply.review.new.shareholder"/></button>
         </div>
     </div>
 
     <div class="contentModule-section" id="addShareholderQM1ExistingSection" style="display: none">
         <div class="contentModule-headline"><spring:theme code="license.apply.review.existing.shareholder"/></div>
-
+     <hr class="hr"/>
         <div class="row">
             <div class="col-md-6">
                 <div class="formInputBox">
@@ -114,27 +145,45 @@
         </div>
 
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <button type="button" class="cancelButton btn btn_outline"><spring:theme code="general.cancel"/></button>
-            <button id="validateAddShareholder" type="button" class="addButton btn"><spring:theme code="licence.apply.validate.add"/></button>
+            <button type="button" class="cancelButton btn btn-normal btn_bold btn-outline w-25"><spring:theme code="general.cancel"/></button>
+            <button id="validateAddShareholder" type="button" class="addButton btn btn-normal btn-bg btn-bg btn_bold w-25"><spring:theme code="licence.apply.validate.add"/></button>
         </div>
     </div>
 
     <div class="contentModule-section" id="addShareholderQM1NewSection">
         <div class="contentModule-headline"><spring:theme code="license.apply.review.new.shareholder"/></div>
-
+    <hr class="hr"/>
         <div class="row">
-            <div class="col-md-6">
-                <div class="formRadioBox" id="shareholderType">
-                    <div class="form-group">
+            <div class="col-md-12">
+                <div class="formRadioBox pt-3" id="shareholderType">
+                    <div class="form-group justify-content-center">
                         <div class="formRadioBox-label control-label_mandatory"><spring:theme code="licence.apply.shareholder.type"/></div>
                         <div class="form-item">
                             <input id="personType" name="ShareholderRadioBox01" class="form-control" type="radio" value="Person"/>
-                            <label for="personType" class="control-label"><spring:theme code="license.apply.shareholder.person"/></label>
+                            <label for="personType" class="btn btn-bg btn-normal btn_bold person-type control-label"><span class="icon-bg icon-ele"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="ORGANIZATION" transform="translate(-222.936 -1127.936)">
+    <g id="Ellipse_35" data-name="Ellipse 35" transform="translate(222.936 1127.936)" fill="#1ac4dc" stroke="#00a6be" stroke-width="1">
+      <circle cx="16" cy="16" r="16" stroke="none"/>
+      <circle cx="16" cy="16" r="15.5" fill="none"/>
+    </g>
+    <path id="Path_2180" data-name="Path 2180" d="M221.668,850.239l3.6,3a.125.125,0,0,0,.174-.013l7.727-8.753" transform="translate(11.768 294.961)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>
+</span><span><spring:theme code="license.apply.shareholder.person"/></span></label>
                         </div>
 
                         <div class="form-item">
                             <input id="organizationType" name="ShareholderRadioBox01" class="form-control" type="radio" value="Organization"/>
-                            <label for="organizationType" class="control-label"><spring:theme code="general.organization"/></label>
+                            <label for="organizationType" class="btn btn-outline btn-normal btn_bold control-label organization-type"><span class="icon-bg icon-ele"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Person-inactive" transform="translate(-222.936 -1127.936)">
+    <g id="Ellipse_35" data-name="Ellipse 35" transform="translate(222.936 1127.936)" fill="none" stroke="#00a6be" stroke-width="1">
+      <circle cx="16" cy="16" r="16" stroke="none"/>
+      <circle cx="16" cy="16" r="15.5" fill="none"/>
+    </g>
+    <path id="Path_1887" data-name="Path 1887" d="M221.668,850.239l3.6,3a.125.125,0,0,0,.174-.013l7.727-8.753" transform="translate(11.755 294.682)" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>
+</span><span><spring:theme code="general.organization"/></span></label>
                         </div>
                     </div>
                 </div>
@@ -142,7 +191,7 @@
         </div>
 
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <button class="cancelButton btn btn_outline"><spring:theme code="general.cancel"/></button>
+            <button class="cancelButton btn btn-normal btn_bold btn-outline w-25"><spring:theme code="general.cancel"/></button>
         </div>
     </div>
 
@@ -150,19 +199,20 @@
     <div id="addShareholderQM1NewPersonSection" style="display: none">
         <div class="contentModule-section">
             <div class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details"/></div>
+          <hr class="mb-5 hr"/>
             <div class="row">
                 <div class="col-md-6">
                     <div id="shareholderTitle" class="formRadioBox">
                         <div class="form-group">
                             <div class="formRadioBox-label"><spring:theme code="general.license.title"/></div>
-                            <div class="form-item">
+                            <div class="form-item mt-2 mb-4">
                                 <input id="personTitle" name="title" class="form-control" type="radio" value="Mr."/>
-                                <label for="personTitle" class="control-label"><spring:theme code="general.mr"/></label>
+                                <label for="personTitle" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="general.mr"/></label>
                             </div>
 
-                            <div class="form-item">
+                            <div class="form-item mt-2 mb-4">
                                 <input id="organizationTitle" name="title" class="form-control" type="radio" value="Mrs."/>
-                                <label for="organizationTitle" class="control-label"><spring:theme code="general.mrs"/></label>
+                                <label for="organizationTitle" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="general.mrs"/></label>
                             </div>
                         </div>
                         <div class="help-block"></div>
@@ -245,7 +295,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4">
                     <div class="formInputBox formInputBox_group ">
                         <div class="form-group">
                             <input id="passportIssueDate" name="passportIssueDate" class="form-control js-form-control_date" placeholder="." value="" type="text"/>
@@ -258,7 +308,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4">
                     <div class="formInputBox formInputBox_group ">
                         <div class="form-group">
                             <input id="passportExpiryDate" name="passportExpiryDate" class="form-control js-form-control_date" placeholder="." value="" type="text"/>
@@ -271,7 +321,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                     <div class="formSelectBox">
                         <div class="form-group">
                             <select id="currentNationality" name="currentNationality" class="js-select2-oneColumn form-control"></select>
@@ -281,7 +331,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                     <div class="formSelectBox">
                         <div class="form-group">
                             <select id="previousNationality" name="previousNationality" class="js-select2-oneColumn form-control"></select>
@@ -300,7 +350,7 @@
                         <div class="help-block"></div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="formSelectBox">
                         <div class="form-group">
@@ -320,7 +370,7 @@
                         <div class="help-block"></div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="formInputBox">
                         <div class="form-group">
@@ -395,7 +445,7 @@
         <!--  Attachment  -->
         <div class="contentModule-section">
             <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="general.attachments"/></div>
-
+           <hr class="hr"/>
             <div class="row">
                 <div class="col-md-6">
                     <div class="formInputFile">
@@ -420,14 +470,14 @@
                         </div>
                         <div class="help-block"></div>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
-        
+
         <license:licenseApplyShareholders-delegate shareholderType="Person"/>
-        <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-                <button type="button" class="cancelButton btn btn_outline"><spring:theme code="general.cancel"/></button>
-                <button type="button" class="addButton btn"><spring:theme code="licence.apply.savenewshareholder"/></button>
+        <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection pb-4">
+                <button type="button" class="cancelButton btn  btn-normal btn_outline btn_bold w-25"><spring:theme code="general.cancel"/></button>
+                <button type="button" class="addButton btn btn-bg btn-normal btn_bold w-25"><spring:theme code="licence.apply.savenewshareholder"/></button>
        </div>
     </div>
 
@@ -435,7 +485,7 @@
     <div id="addShareholderQM1NewOrganizationSection" style="display: none">
         <div class="contentModule-section">
             <div class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details"/></div>
-
+            <hr class="hr"/>
             <div class="row">
                 <div class="col-md-6">
                     <div class="formInputBox">
@@ -605,7 +655,7 @@
                         <div class="help-block"></div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="formInputBox-split">
                         <div class="formInputBox">
@@ -665,6 +715,7 @@
        <!--  Attachment  -->
         <div class="contentModule-section">
             <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="general.attachments"/></div>
+          <hr class="hr"/>
             <div class="row">
                 <div class="col-md-6">
                     <div class="formInputFile">
@@ -672,7 +723,11 @@
                             <input id="companyRegistrationFile" name="" class="form-control js-inputFile" type="file" accept="application/pdf" value=""/>
                             <input id="companyRegistrationFileName" name="companyRegistrationFileName" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
                             <label class="control-label control-label_mandatory" for="companyRegistrationFileName"><spring:theme code="licence.apply.commercial.registration.copy"/></label>
-                            <div class="form-icon form-icon_browse"><icon:upload/></div>
+                            <div class="form-icon form-icon_browse"><svg id="Upload-icon" xmlns="http://www.w3.org/2000/svg" width="30.222" height="31.179" viewBox="0 0 30.222 31.179">
+  <path id="Path_1958" data-name="Path 1958" d="M680.545,1506.881a1,1,0,0,0-1,1v13.074H653.323v-13.074a1,1,0,0,0-2,0v15.074h30.222v-15.074A1,1,0,0,0,680.545,1506.881Z" transform="translate(-651.323 -1491.776)" fill="#fff"/>
+  <path id="Path_1959" data-name="Path 1959" d="M660.183,1500.854l5.251-5.251v17.622a1,1,0,0,0,2,0v-17.618l5.247,5.247a1,1,0,0,0,1.414-1.414l-7.663-7.664-7.663,7.664a1,1,0,0,0,1.414,1.414Z" transform="translate(-651.323 -1491.776)" fill="#fff"/>
+</svg>
+</div>
                             <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
                         </div>
                         <div class="help-block"></div>
@@ -684,7 +739,11 @@
                             <input id="companyFinancialStatementFile" name="" class="form-control js-inputFile" type="file" accept="application/pdf" value=""/>
                             <input id="companyFinancialStatementFileName" name="companyFinancialStatementFileName" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
                             <label class="control-label control-label_mandatory" for="companyFinancialStatementFileName"><spring:theme code="licence.apply.commercial.financialstatement"/> </label>
-                            <div class="form-icon form-icon_browse"><icon:upload/></div>
+                            <div class="form-icon form-icon_browse"><svg id="Upload-icon" xmlns="http://www.w3.org/2000/svg" width="30.222" height="31.179" viewBox="0 0 30.222 31.179">
+  <path id="Path_1958" data-name="Path 1958" d="M680.545,1506.881a1,1,0,0,0-1,1v13.074H653.323v-13.074a1,1,0,0,0-2,0v15.074h30.222v-15.074A1,1,0,0,0,680.545,1506.881Z" transform="translate(-651.323 -1491.776)" fill="#fff"/>
+  <path id="Path_1959" data-name="Path 1959" d="M660.183,1500.854l5.251-5.251v17.622a1,1,0,0,0,2,0v-17.618l5.247,5.247a1,1,0,0,0,1.414-1.414l-7.663-7.664-7.663,7.664a1,1,0,0,0,1.414,1.414Z" transform="translate(-651.323 -1491.776)" fill="#fff"/>
+</svg>
+</div>
                             <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
                         </div>
                         <div class="help-block"></div>
@@ -704,12 +763,12 @@
                 </div>
             </div>
 
-           
+
         </div>
         <license:licenseApplyShareholders-delegate shareholderType="Organization"/>
-         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-                <button class="cancelButton btn btn_outline"><spring:theme code="general.cancel"/></button>
-                <a class="addButton btn"><spring:theme code="licence.apply.savenewshareholder"/></a>
+         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection pb-4">
+                <button class="cancelButton btn btn-outline btn-normal btn_bold w-25"><spring:theme code="general.cancel"/></button>
+                <button class="addButton btn btn-bg btn-normal btn_bold w-25"><spring:theme code="licence.apply.savenewshareholder"/></button>
             </div>
 	</div>
 </div>

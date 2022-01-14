@@ -22,9 +22,9 @@
             <div class="contentModule">
                 <div class="contentModule-section">
                     <div class="contentModule-headline">
-                        <span class="iconElement iconElement_enquiry3"><icon:enquiry3/></span><spring:theme code="profile.enquiry.new"/>
+                      <!-- <span class="iconElement iconElement_enquiry3"><icon:enquiry3/></span>--><spring:theme code="profile.enquiry.new"/>
                     </div>
-
+                    <hr class="hr"/>
                     <div id="complaintInProgress" style="display: none">${complaintInProgress}</div>
                     <form:form id="createComplantForm" action="${encodedContextPath}/complaints/create" enctype="multipart/form-data" method="post" modelAttribute="complaintFormData">
                         <div class="row">
@@ -94,7 +94,14 @@
                                         <input id="file0" name="files[0]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
                                         <input id="text05" name="text05" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
                                         <label class="control-label"><spring:theme code="general.labelforfile"/></label>
-                                        <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                        <div class="form-icon form-icon_browse"><svg xmlns="http://www.w3.org/2000/svg" class="mt-4" width="29" height="29" viewBox="0 0 29 29">
+  <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
+    <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    <path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    <path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+  </g>
+</svg></div>
+
                                         <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
                                     </div>
                                 </div>
@@ -106,7 +113,13 @@
                                         <input id="file1" name="files[1]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
                                         <input id="text02" name="text02" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
                                         <label class="control-label"><spring:theme code="general.labelforfile"/></label>
-                                        <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                        <div class="form-icon form-icon_browse"><!--<icon:upload/>--><svg xmlns="http://www.w3.org/2000/svg" class="mt-4" width="29" height="29" viewBox="0 0 29 29">
+  <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
+    <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    <path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    <path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+  </g>
+</svg></div>
                                         <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
                                     </div>
                                 </div>
@@ -118,7 +131,13 @@
                                         <input id="file2" name="files[2]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
                                         <input id="text03" name="text03" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
                                         <label class="control-label"><spring:theme code="general.labelforfile"/></label>
-                                        <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                        <div class="form-icon form-icon_browse"><svg xmlns="http://www.w3.org/2000/svg" class="mt-4" width="29" height="29" viewBox="0 0 29 29">
+  <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
+    <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    <path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    <path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+  </g>
+</svg></div>
                                         <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
                                     </div>
                                 </div>
@@ -130,7 +149,13 @@
                                         <input id="file3" name="files[3]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
                                         <input id="text04" name="text04" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
                                         <label class="control-label"><spring:theme code="general.labelforfile"/></label>
-                                        <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                        <div class="form-icon form-icon_browse"><svg xmlns="http://www.w3.org/2000/svg" class="mt-4" width="29" height="29" viewBox="0 0 29 29">
+  <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
+    <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    <path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    <path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+  </g>
+</svg></div>
                                         <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
                                     </div>
                                 </div>
@@ -138,18 +163,17 @@
                         </div>
 
                         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-                            <button class="btn" type="submit" value="SUBMIT"><spring:theme code="profile.enquiry.create"/></button>
+                            <button class="btn btn_bold text-uppercase btn-bg w-25 pt-2 pb-2" type="submit" value="SUBMIT"><spring:theme code="profile.enquiry.create"/></button>
                         </div>
                     </form:form>
                 </div>
 
                 <div class="contentModule-section" id="ticketsSection">
-                    <div class="contentModule-headline contentModule-headline_flex">
+                    <div class="contentModule-headline contentModule-headline_flex pt-2">
                         <div class="contentModule-headline-title">
-                            <span class="iconElement iconElement_your-tickets"><icon:your-tickets/></span>
+                           <!-- <span class="iconElement iconElement_your-tickets"><icon:your-tickets/></span>-->
                             <spring:theme code="profile.yourTickets"/>
                         </div>
-
                         <div class="serviceTime" style="display: none">
                             <div class="serviceTime-label"><spring:theme code="average.service.time"/></div>
                             <div class="serviceTime-detail">
@@ -170,7 +194,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="contentModule-filter">
+                     <hr class="hr"/>
+                    <div class="contentModule-filter p-2 mb-4">
                         <select id="profileTicketSort" title="profileTicketSort" class="js-select2-oneColumn form-control" onchange="sortProfileTickets()">
                             <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
                             <option value="status_desc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
@@ -198,20 +223,35 @@
                     <div class="paginationModule paginationModule_loading">
                         <c:if test="${!pageIsDashboard}">
                             <div class="dashboardWidget-filter">
-                                <div style="width: 150px; position: absolute">
+                                <diV>
                                     <select class="paginationPicker js-select2-oneColumn form-control"></select>
                                 </div>
                             </div>
                         </c:if>
                         <div class="paginationModule-wrapper">
-                            <button class="paginationModule-control paginationModule-control_left" disabled><icon:arrow_green_right/></button>
+                            <button class="paginationModule-control paginationModule-control_left" disabled><!--<icon:arrow_green_right/>--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30.822" viewBox="0 0 30 30.822">
+  <g id="Icon_feather-arrow-left" data-name="Icon feather-arrow-left" transform="translate(1 1.411)" opacity="0.4">
+    <path id="Path_55" data-name="Path 55" d="M35.5,18H7.5" transform="translate(-7.5 -4)" fill="none" stroke="#8c8b8b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_56" data-name="Path 56" d="M23.534,35.5,7.5,21.5l16.034-14" transform="translate(-7.5 -7.5)" fill="none" stroke="#8c8b8b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>
+</button>
                             <div class="paginationModule-items">
                                 <div class="loadingModule">
                                     <div class="loadingModule-icon"><icon:loading-spinner /></div>
                                     <div class="loadingModule-msg">Loading content ...</div>
                                 </div>
                             </div>
-                            <button class="paginationModule-control paginationModule-control_right"><icon:arrow_green_right/></button>
+                            <button class="paginationModule-control paginationModule-control_right"><!--<icon:arrow_green_right/>-->
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30.822" viewBox="0 0 30 30.822">
+  <g id="Icon_feather-arrow-left" data-name="Icon feather-arrow-left" transform="translate(1 1.411)">
+    <path id="Path_55" data-name="Path 55" d="M7.5,18h28" transform="translate(-7.5 -4)" fill="none" stroke="#0489a3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_56" data-name="Path 56" d="M7.5,35.5l16.034-14L7.5,7.5" transform="translate(4.466 -7.5)" fill="none" stroke="#0489a3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>
+
+
+                            </button>
                         </div>
                     </div>
                 </div>

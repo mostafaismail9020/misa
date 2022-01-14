@@ -16,14 +16,14 @@
                 <div class="formRadioBox" id="qm1Title">
                     <div class="form-group">
                         <div class="formRadioBox-label control-label_mandatory"><spring:theme code="licenseApply.contactPerson.qm1.title"/></div>
-                        <div class="form-item">
+                        <div class="form-item pt-2 pb-5">
                             <input id="mrTitle" name="title" class="form-control" type="radio" value="Mr"/>
-                            <label for="mrTitle" class="control-label"><spring:theme code="licenseApply.contactPerson.qm1.mr"/></label>
+                            <label for="mrTitle" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="licenseApply.contactPerson.qm1.mr"/></label>
                         </div>
 
-                        <div class="form-item">
+                        <div class="form-item pt-2 pb-5">
                             <input id="mrsTitle" name="title" class="form-control" type="radio" value="Mrs"/>
-                            <label for="mrsTitle" class="control-label"><spring:theme code="licenseApply.contactPerson.qm1.mrs"/></label>
+                            <label for="mrsTitle" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="licenseApply.contactPerson.qm1.mrs"/></label>
                         </div>
                     </div>
                     <div class="help-block"></div>
@@ -123,6 +123,7 @@
 
     <div class="contentModule-section">
         <div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.qm1.contactInformation"/></div>
+       <hr class="hr">
         <div class="row">
             <div class="col-md-6">
                 <div class="formSelectBox">

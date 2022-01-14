@@ -5,21 +5,21 @@
 <%@ attribute name="editable" required="false" type="java.lang.Boolean"%>
 <%@ taglib prefix="dashboard" tagdir="/WEB-INF/tags/responsive/dashboard" %>
 
-<div class="dashboardWidget js-dashboardWidget">
+<div class="dashboardWidget js-dashboardWidget no-border">
     <c:if test="${editable}"><dashboard:addAndRemoveComponent checkboxIndex="1"/></c:if>
     <div class="dashboardWidget-headline js-dashboardWidget-headline">
         <div class="dashboardWidget-headline-text"><spring:theme code="myLicense.title"/></div>
         <div class="dashboardWidget-headline-icon"><icon:my-license/></div>
         <div class="dashboardWidget-headline-action">
-            <a href="${encodedContextPath}/my-sagia/license/convert" class="dashboardWidget-headline-action-link">
+            <!-- <a href="${encodedContextPath}/my-sagia/license/convert" class="dashboardWidget-headline-action-link">
                 <spring:theme code="convertlicense.converttonational"/><icon:convert-to-national/>
+            </a> -->
+            <a href="${encodedContextPath}/my-sagia/license/print" class="btn-outline dashboardWidget-headline-action-link" download>
+                <spring:theme code="text.account.followup.download"/><img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Download.png" alt=""/>
             </a>
-            <a href="${encodedContextPath}/my-sagia/license/print" class="dashboardWidget-headline-action-link" download>
-                <spring:theme code="text.account.followup.download"/><icon:download/>
-            </a>
-           <%-- <a href="${encodedContextPath}/my-sagia/license/cancel" class="dashboardWidget-headline-action-link">
+           <!-- <a href="${encodedContextPath}/my-sagia/license/cancel" class="dashboardWidget-headline-action-link">
                 <spring:theme code="licenseCancellation.text"/><icon:cancel/>
-            </a>--%>
+            </a> -->
         </div>
     </div>
 

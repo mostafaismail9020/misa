@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="infoModalClose" type="button" class="btn btn_slim" data-dismiss="modal">Close</button>
+                <button id="infoModalClose" type="button" class="btn btn-bg pt-2 pb-2 w-50 mb-5 text-uppercase" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

@@ -10,8 +10,9 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 <form:form action="" method="post" modelAttribute="sagiaLicenseApplyForm">
 <div class="contentModule-section" id="licenseTypeSection" style="display: none">
-    <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.title"/></div>
-    <div class="row">
+   <div class="contentModule-headline contentModule-headline_smallMargin w-25"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.title"/></div>
+   <hr class="hr"/>
+    <div class="row mt-3">
         <div class="col-md-6">
             <formElement:formSelectBox idKey="licenseTypes"
                                        labelKey="license.apply.licenseType"
@@ -23,7 +24,7 @@
                                        skipBlankMessageKey="form.select.empty"
                                        selectCSSClass="form-control"/>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <a class="btn btn_link btn_formAligned js-tip" data-tip-id="demoTooltipListId" data-tip-width="auto" data-trigger="click"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.typeOfLicense"/></a>
             <div class="tooltip_content" id="demoTooltipListId">
                 <ul class="tooltip-list tooltip-list_collapsible">

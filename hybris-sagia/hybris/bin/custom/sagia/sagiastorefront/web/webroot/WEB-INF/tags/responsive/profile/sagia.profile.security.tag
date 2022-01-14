@@ -15,20 +15,25 @@
         <div class="contentModule">
             <div class="contentModule-section">
                 <div class="contentModule-headline">
-                    <span class="iconElement iconElement_password"><icon:password/></span><spring:theme code="profile.my.password"/>
+                    <!--<span class="iconElement iconElement_password"><icon:password/></span>--><spring:theme code="profile.my.password"/>
                 </div>
+                  <hr class="hr">
                 <account:updatePwd/>
+
             </div>
+
             <div class="contentModule-section">
                 <div class="contentModule-headline">
-                    <span class="iconElement iconElement_password"><icon:accountSettings02/></span><spring:theme code="profile.my.username"/>
+                    <!--<span class="iconElement iconElement_password"><icon:accountSettings02/></span>--><spring:theme code="profile.my.username"/>
                 </div>
+                 <hr class="hr">
                 <account:updateUsername/>
             </div>
             <div class="contentModule-section">
                 <div class="contentModule-headline">
-                    <span class="iconElement iconElement_password"><icon:my-email/></span><spring:theme code="profile.my.email"/>
+                    <!--<span class="iconElement iconElement_password"><icon:my-email/></span>--><spring:theme code="profile.my.email"/>
                 </div>
+                 <hr class="hr">
                 <account:updateEmail/>
             </div>
         </div>

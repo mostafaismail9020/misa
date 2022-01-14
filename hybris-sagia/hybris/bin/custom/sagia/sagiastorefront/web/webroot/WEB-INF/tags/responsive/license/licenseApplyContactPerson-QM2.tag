@@ -15,14 +15,14 @@
             <div class="formRadioBox" id="qm2Title">
                 <div class="form-group">
                     <div class="formRadioBox-label control-label_mandatory"><spring:theme code="licenseApply.contactPerson.qm2.title"/></div>
-                    <div class="form-item">
+                    <div class="form-item pt-2 pb-5">
                         <input id="qm2MrTitle" name="gender" class="form-control" type="radio" value="Mr"/>
-                        <label for="qm2MrTitle" class="control-label"><spring:theme code="licenseApply.contactPerson.qm2.mr"/></label>
+                        <label for="qm2MrTitle" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="licenseApply.contactPerson.qm2.mr"/></label>
                     </div>
 
-                    <div class="form-item">
+                    <div class="form-item pt-2 pb-5">
                         <input id="qm2MrsTitle" name="gender" class="form-control" type="radio" value="Mrs"/>
-                        <label for="qm2MrsTitle" class="control-label"><spring:theme code="licenseApply.contactPerson.qm2.mrs"/></label>
+                        <label for="qm2MrsTitle" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="licenseApply.contactPerson.qm2.mrs"/></label>
                     </div>
                 </div>
                 <div class="help-block"></div>

@@ -30,11 +30,11 @@
     <license:licenseApplyShareholders-QM2/>
     <div class="contentModule-actions contentModule-actions_spaceBetween">
         <span>
-            <button id="shareholdersBackButton" type="button" class="btn btn-secondary"><spring:theme code="general.back"/></button>
-            <button id="shareholdersCancelButton" type="button" class="btn btn-secondary btn_link btn_bold"><spring:theme code="general.cancel"/></button>
+            <button id="shareholdersBackButton" type="button" class="btn btn-normal btn-ctrl btn-bg btn_bold"><spring:theme code="general.back"/></button>
+            <button id="shareholdersCancelButton" type="button" class="btn btn-normal btn-ctrl btn-bg btn_bold btn-outline btn_link"><spring:theme code="general.cancel"/></button>
         </span>
         <span>
-            <button id="shareholdersNextButton" type="button" class="btn"><spring:theme code="general.next"/></button>
+            <button id="shareholdersNextButton" type="button" class="btn btn-normal btn-ctrl btn-bg btn_bold"><spring:theme code="general.next"/></button>
         </span>
     </div>
 </div>

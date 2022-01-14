@@ -11,7 +11,7 @@
 
 <div class="contentModule-section" id="businessActivitiesSection">
     <div class="contentModule-headline"><spring:theme code="license.apply.business.activities"/></div>
-
+ <hr class="hr"/>
 <%--     <div id="businessTypeSection" class="row">
         <div class="col-md-6">
             <div class="formSelectBox">
@@ -27,13 +27,17 @@
         <span class="iconElement iconElement_business text-center"><icon:business/></span>
         <p class="text-center"><spring:theme code="license.apply.activities.question"/></p>
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <button type="button" class="btn" data-toggle="modal" data-target="#businessActivitiesModal">+ <spring:theme code="license.apply.business.activities"/></button>
+            <button type="button" class="btn btn-normal btn-bg btn_bold w-25" data-toggle="modal" data-target="#businessActivitiesModal">+ <spring:theme code="license.apply.business.activities"/></button>
         </div>
         <div class="help-block"></div>
     </div>
 
     <div id="businessActivitiesTable" style="display: none;">
         <div class="tableModule tableModule_striped">
+
+        <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection justify-content-lg-end">
+            <button type="button" class="btn btn-bg btn_bold w-25 btn-normal" data-toggle="modal" data-target="#businessActivitiesModal"><spring:theme code="licence.apply.addedit.activities"/></button>
+        </div>
             <table class="tableModule-table">
                 <thead class="tableModule-head">
                     <tr>
@@ -47,11 +51,8 @@
             </table>
         </div>
 
-        <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <button type="button" class="btn" data-toggle="modal" data-target="#businessActivitiesModal"><spring:theme code="licence.apply.addedit.activities"/></button>
-        </div>
     </div>
-    
+
     <!--Modal: Use (data-toggle="modal" data-target="#businessActivities") on link or button to call it-->
     <div class="modal fade" id="businessActivitiesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow: auto !important;">
         <div class="modal-dialog modal-dialog-centered modal-dialog_businessActivities" role="document">
@@ -225,34 +226,34 @@
                         </div>
                     </div>
                     <div class="modal-footer modal-footer_centered">
-                        <button type="button" type="submit" class="btn btn_outline btn_slim" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
-                        <button id="nextButton" type="button" type="submit" class="btn btn_slim"><spring:theme code="general.next"/></button>
+                        <button type="button" type="submit" class="btn btn-ctrl btn-outline btn_slim btn-normal btn_bold" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
+                        <button id="nextButton" type="button" type="submit" class="btn btn-ctrl btn-bg btn_slim btn-normal btn_bold"><spring:theme code="general.next"/></button>
                     </div>
                 </form>
             </div>
         </div>
-        
+
     </div>
-    
+
       <!-- Requirement Modal -->
      <div class="modal fade" id="typeRequirementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog_businessActivities" role="document">
             <div class="modal-content requirement-modal-content">
-                 
+
                      <div class="modal-header">
                         <div class="modal-title"><spring:theme code="licenseApply.contactPerson.typeRequirement"/></div>
                         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                             <icon:close/>
                         </button>
                            </div>
-                
+
                 <div class="modal-body requirement-body" ></div>
 
             </div>
         </div>
     </div>
-    
-	
+
+
 </div>
 
 
@@ -261,12 +262,12 @@
     <div class="formInputBox" >
       <div class="form-group">
 <%--      	<div class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary"/></div> --%>
-   
+
  	    <textarea id="temporaryLicenseTextBoxContent" class="form-control js-quote-entry-comments" rows="10" placeholder="." value=""
- 		style="width: 100%;font-size: 14px;font-family: MyriadPro; height: 250px !important"></textarea> 
-		<label class="control-label control-label_mandatory" for="temporaryLicenseTextBoxContent"><spring:theme code="license.apply.business.activities.temporary"/></label>         
+ 		style="width: 100%;font-size: 14px;font-family: MyriadPro; height: 250px !important"></textarea>
+		<label class="control-label control-label_mandatory" for="temporaryLicenseTextBoxContent"><spring:theme code="license.apply.business.activities.temporary"/></label>
 	 </div>
 	 <div class="help-block"></div>
 	</div>
 </div>
- 
+

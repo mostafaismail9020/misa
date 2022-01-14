@@ -9,12 +9,12 @@
 <spring:url value="/my-sagia/update-email" var="updateEmailURL"/>
 
 <form id="changeEmail" name="changeEmail">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="contentModule-headline contentModule-headline_small">
-                <spring:theme code="updateEmail.current"/>&nbsp;
-                <span id="currentEmail"></span>
+<div class="user-status pt-3 pb-5">
+  <spring:theme code="updateEmail.current"/>&nbsp;
+                 <span id="currentEmail"></span>
             </div>
+    <div class="row">
+        <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
                     <input id="email" name="email" class="form-control" type="text" value="" required="required"/>
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
                     <input id="chkEmail" name="chkEmail" class="form-control" type="text" value=""/>
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
                     <input id="passwordForChangeEmail" name="passwordForChangeEmail" class="form-control" type="password" value=""/>
@@ -47,8 +47,8 @@
     </div>
 
     <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-        <button id="cancelUpdateEmailButton" type="button" class="btn btn-secondary"><spring:theme code="text.account.profile.cancel" text="Cancel"/></button>
-        <button id="updateEmail" type="button" class="btn"><spring:theme code="text.account.profile.saveUpdates" text="Save Updates"/></button>
+        <button id="cancelUpdateEmailButton" type="button" class="btn btn_bold btn-outline pt-2 pb-2 w-25 text-uppercase"><spring:theme code="text.account.profile.cancel" text="Cancel"/></button>
+        <button id="updateEmail" type="button" class="btn btn-bg pt-2 pb-2 btn_bold w-25 text-uppercase"><spring:theme code="text.account.profile.saveUpdates" text="Save Updates"/></button>
     </div>
 </form>
 

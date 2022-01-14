@@ -14,14 +14,14 @@
     <div class="panelModule panelModule_halfRadius">
         <div class="contentModule">
             <div class="contentModule-section">
-                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap mb-0">
                     <div class="contentModule-headline">
-                        <span class="iconElement iconElement_accountSettings02"><icon:accountSettings02/></span><spring:theme code="profile.settings"/>
+                     <!--  <span class="iconElement iconElement_accountSettings02"><icon:accountSettings02/></span>--><spring:theme code="profile.settings"/>
                     </div>
                     <div>
-                        <button class="js-myAccount-edit btn btn_link btn_edit">
-                            <div class="js-myAccount-edit-text"><spring:theme code="general.edit"/>
-                                <span class="iconElement iconElement_edit02"><icon:edit/></span>
+                        <button class="js-myAccount-edit btn_link btn_edit border-0">
+                            <div class="js-myAccount-edit-text"><!--<spring:theme code="general.edit"/>-->
+                                <span class="iconElement iconElement_edit02 pr-0"><icon:edit/></span>
                             </div>
                             <div class="js-myAccount-edit-text hidden">
                                 <span class="iconElement iconElement_closeEdit" aria-hidden="true">&times;</span><spring:theme code="profile.exit.editMode"/>
@@ -29,7 +29,7 @@
                         </button>
                     </div>
                 </div>
-
+                <hr class="hr">
                 <div class="myAccount-edit-toggle js-myAccount-edit-toggle">
                     <div class="myAccount-profilImage">
                         <div class="myAccount-profilImage-img"><div class="profilePicture js-profilePicture"></div></div>
@@ -37,7 +37,7 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <dl class="dlList dlList_separated">
+                            <dl class="dlList dlList_separated border-0">
                                 <dt><spring:theme code="profile.personal.title"/></dt>
                                 <dd id="sagiaProfilePersonalFormTitle"></dd>
                             </dl>
@@ -46,7 +46,7 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <dl class="dlList dlList_separated">
+                            <dl class="dlList dlList_separated border-0">
                                 <dt><spring:theme code="general.firstname"/></dt>
                                 <dd id="sagiaProfilePersonalFormFirstName"></dd>
                                 <dt><spring:theme code="general.country"/></dt>
@@ -58,7 +58,7 @@
                             </dl>
                         </div>
                         <div class="col-md-6">
-                            <dl class="dlList dlList_separated">
+                            <dl class="dlList dlList_separated border-0">
                                 <dt><spring:theme code="general.lastname"/></dt>
                                 <dd id="sagiaProfilePersonalFormLastName"></dd>
                                 <dt><spring:theme code="general.company"/></dt>
@@ -72,8 +72,17 @@
 
                 <div class="myAccount-edit-toggle js-myAccount-edit-toggle" style="display: none;">
                     <div class="myAccount-profilImage">
-                        <div class="myAccount-profilImage-img"><div class="profilePicture js-profilePicture" ></div></div>
-                        <a href="#" class="myAccount-profilImage-change" data-toggle="modal" data-target="#uploadFilePicture"><spring:theme code="company.changeprofilepicture"/></a>
+                       <!-- <div class="myAccount-profilImage-img"><div class="profilePicture js-profilePicture" ></div></div>-->
+                        <a href="#" class="myAccount-profilImage-change w-50 p-4 pt-4 pl-3 pr-3 mt-4" data-toggle="modal" data-target="#uploadFilePicture"><spring:theme code="company.changeprofilepicture"/>
+                        <span class="uploadFile text-center pr-2"><svg xmlns="http://www.w3.org/2000/svg" class="mt-3" width="29" height="29" viewBox="0 0 29 29">
+  <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
+    <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>
+</span>
+                        </a>
                     </div>
 
                     <!--Modal: Use (data-toggle="modal" data-target="#uploadFilePicture") on link or button to call it-->
@@ -208,12 +217,12 @@
                             </div>
                         </div>
 
-                        <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
+                        <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection justify-content-end">
                             <ycommerce:testId code="personalDetails_cancelPersonalDetails_button">
-                                <button id="sagiaProfilePersonalFormCancelUpdates" type="button" class="btn btn-secondary"><spring:theme code="text.account.profile.cancel" text="Cancel"/></button>
+                                <button id="sagiaProfilePersonalFormCancelUpdates" type="button" class="btn btn_bold btn-outline pt-2 pb-2 w-25 text-uppercase"><spring:theme code="text.account.profile.cancel" text="Cancel"/></button>
                             </ycommerce:testId>
                             <ycommerce:testId code="personalDetails_savePersonalDetails_button">
-                                <button id="sagiaProfilePersonalFormSaveUpdates" type="button" class="btn"><spring:theme code="text.account.profile.saveUpdates" text="Save Updates"/></button>
+                                <button id="sagiaProfilePersonalFormSaveUpdates" type="button" class="btn btn_bold btn-bg pt-2 pb-2 w-25 text-uppercase"><spring:theme code="text.account.profile.saveUpdates" text="Save Updates"/></button>
                             </ycommerce:testId>
                         </div>
                     </form>

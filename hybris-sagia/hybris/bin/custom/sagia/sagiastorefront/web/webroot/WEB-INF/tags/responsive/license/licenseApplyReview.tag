@@ -19,7 +19,7 @@
 <div class="panelTabs-body" id="reviewContent">
     <div class="contentModule">
         <div class="contentModule-actions contentModule-actions_right">
-            <button id="printButton" class="btn btn_outline btn_round btn_slim"><spring:theme code="general.print"/>
+            <button id="printButton" class="border-0 bg-transparent btn_round btn_slim"><spring:theme code="general.print"/>
                 <span class="iconElement iconElement_print"><icon:print/></span>
             </button>
         </div>
@@ -27,7 +27,7 @@
         <div class="contentModule-section contentModule-section_noDivider">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
                 <div class="contentModule-headline"><spring:theme code="licenseApplyEntityInformation.entityInformation.title"/></div>
-                <button id="editEntityInformationButton" type="button" class="btn btn_link iconElement iconElement_edit03"><icon:edit/></button>
+                <button id="editEntityInformationButton" type="button" class="iconElement_edit03"><icon:edit/></button>
             </div>
 
             <div class="row" id="reviewHasSagiaLicenseSection">
@@ -109,7 +109,7 @@
 
                 <hr class="contentModule-separator"/>
             </div>
-            
+
             <div id="reviewAdvanceLicenseNrSection">
                 <div class="row">
                     <div class="col-md-6">
@@ -400,8 +400,8 @@
 
         <div class="contentModule-section contentModule-section_noDivider" id="reviewShareholdersSection">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
-                <div class="contentModule-headline"><spring:theme code="license.apply.review.shareholders"/></div>
-                <button id="editShareholdersButton" type="button" class="btn btn_link iconElement iconElement_edit03"><icon:edit/>
+                <div class="contentModule-headline test"><spring:theme code="license.apply.review.shareholders"/></div>
+                <button id="editShareholdersButton" type="button" class="iconElement_edit03"><icon:edit/>
                 </button>
             </div>
 
@@ -426,7 +426,7 @@
         <div class="contentModule-section" id="reviewContactQeemah1Section">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
                 <div class="contentModule-headline"><spring:theme code="license.apply.review.contactperson"/></div>
-                <button type="button" class="editContactPersonButton btn btn_link iconElement iconElement_edit03"><icon:edit/></button>
+                <button type="button" class="editContactPersonButton iconElement iconElement_edit03"><icon:edit/></button>
             </div>
 
             <div class="row">
@@ -525,34 +525,34 @@
                 <a id="unifiedLicenseUrl" target="_blank" href="#"><spring:theme code="licenseApply.contactPerson.unifiedLicenseUrl"/></a>
             </h3>
         </div>
-        
+<hr/>
         <div   id="typeRequirementSection">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
             <div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.typeRequirement"/></div>
             </div>
-        
-                
+
+
         <h3 style="color:red"> <spring:theme code="licenseApply.contactPerson.readAllRequirement"/></h3>
                 <div class="scrollWrapper" id="scrollWrapperTypeRequirement">
                     <div class="scrollWrapper-inner" id="scrolltypeRequirement" >
                         <div id="requirementContent" class="requirement-content"  >
                             <dd id="contentRequirement"></dd>
                         </div>
-                       
+
                     </div>
                 </div>
 
-            
-          
-            
+
+
+
             <div class="contentModule-actions contentModule-actions_spaceBetween">
             <span>
                 <button id="requirementSubmitButton" type="button" class="btn" disabled="disabled"><spring:theme code="text.consent.button.accept"/></button>
-                
+
             </span>
-            
+
             </div>
-        
+
         </div>
 
         <%--<div class="contentModule-actions contentModule-actions_spaceBetween">--%>
@@ -575,9 +575,9 @@
 
         <div class="contentModule-actions contentModule-actions_spaceBetween">
             <span>
-                <button id="reviewBackButton" type="button" class="btn btn-secondary"><spring:theme code="license.apply.review.back"/></button>
+                <button id="reviewBackButton" type="button" class="btn btn_bold btn-normal btn-bg"><spring:theme code="license.apply.review.back"/></button>
                 <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
-                    <button id="reviewCancelButton" type="button" class="btn btn-secondary btn_link btn_bold"><spring:theme code="license.apply.review.cancel"/></button>
+                    <button id="reviewCancelButton" type="button" class="btn btn-ctrl btn_link btn_bold btn-outline"><spring:theme code="license.apply.review.cancel"/></button>
                 </sec:authorize>
             </span>
             <%--<button id="reviewPayButton" type="button" class="btn" data-toggle="modal" onclick="requestPaymentDetails()">(TEST) Pay Again</button>--%>

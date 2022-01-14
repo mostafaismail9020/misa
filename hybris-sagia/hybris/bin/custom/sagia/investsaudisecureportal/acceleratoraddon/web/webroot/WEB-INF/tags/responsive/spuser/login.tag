@@ -8,9 +8,9 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 
 <spring:htmlEscape defaultHtmlEscape="true"/>
-<div class="headline">
+<!--<div class="headline">
    &nbsp; <%-- <spring:theme code="login.title"/> --%>
-</div>
+</div>-->
 
 <form:form action="${action}" method="post" modelAttribute="loginForm">
     <c:if test="${not empty message}">

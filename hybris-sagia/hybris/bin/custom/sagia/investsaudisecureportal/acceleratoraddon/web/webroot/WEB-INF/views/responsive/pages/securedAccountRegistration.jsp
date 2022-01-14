@@ -55,10 +55,10 @@
                         </div>
                        
                         <div class="login-buttons">
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-6 col-sm-6 col-12">
                                 <a class="login-btn login-btn-cancel">CANCEL</a>
                             </div>
-                            <div class="col-md-6 col-12">													
+                            <div class="col-md-6 col-sm-6 col-12">													
                                 <a class="login-btn login-btn-next active" >NEXT &nbsp;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561">
                                         <path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
@@ -100,10 +100,10 @@
                             </div>
                         </div>
                         <div class="login-buttons">
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-6 col-sm-6 col-12">
                                 <a class="login-btn login-btn-cancel register-investor-screen2-btn-back">BACK</a>
                             </div>
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-6 col-sm-6 col-12">
                                 <a class="login-btn login-btn-next register-investor-screen2-btn-next active">NEXT&nbsp;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="15.835"
                                         height="10.561" viewBox="0 0 15.835 10.561"

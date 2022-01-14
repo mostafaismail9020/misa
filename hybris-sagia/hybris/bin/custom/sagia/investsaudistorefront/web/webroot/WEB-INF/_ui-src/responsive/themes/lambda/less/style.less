@@ -17519,10 +17519,7 @@ select.form-control {
   -moz-appearance: none;
   text-indent: 1px;
   background-image: url('../../common/images/down-arrow.png');
-  background-position:
-  calc(100% - 15px) calc(1em + 5px),
-  calc(100% - 15px) calc(1em + 2px),
-  calc(100% - 2.5em) 0.5em;
+  background-position: calc(100% - 15px) calc(1em + 5px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em !important;  
   background-repeat: no-repeat;
   padding-left:33px;
 }
@@ -19142,7 +19139,7 @@ body.page-contact .tabs_container ul li span {
   line-height: 1.4em;
 }
 body.page-contact p {
-  margin-bottom: 0;
+  margin-bottom: initial;
 }
 body.page-contact .tabs_container input:checked + label {
   color: #5CC83B;
@@ -22761,8 +22758,8 @@ body.page-contact .funkyradio-info input[type="checkbox"]:checked ~ label:before
 }*/
 .navigation__overflow {
   display: flex;
-  /* align-items: center;
-  background-color: #00A6BE; */
+  align-items: flex-start;
+  background-color: transparent;
   position: fixed;
   left: 0;
   right: 0;
@@ -22771,6 +22768,8 @@ body.page-contact .funkyradio-info input[type="checkbox"]:checked ~ label:before
   top: 0px;
   border-bottom: 1px solid #dddddd38;
   z-index: 1;
+  box-shadow:none;
+  border:none;
  /*  padding-bottom: 10px; */
 }
 .navigation__overflow .nav__right.login-area {
@@ -28416,4 +28415,183 @@ body:is(.page-productGrid) .breadcrumb-section.mt-breadcrumb {
   height: 100%;
   width:60%;
   margin: 0px auto;
+}
+
+@media only screen and (min-width: 1586px){
+  body.page-contact .container {
+      max-width: 1400px;
+  }
+}
+
+
+
+
+
+
+
+.banner__component.simple-banner{
+  top: 20px;
+}
+.register-account-partner-screen3 { 
+  margin: 0px auto;
+  width: 80%;
+}
+.page-login .login-logo .banner__component.simple-banner {
+  text-align: left;
+  float: none;
+  justify-content: left;
+  margin: 10px auto;
+  width: 100%; 
+  left: 0px;
+  position: initial;
+}
+.page-SecureCustomerPortalRegisterPage .content, .page-updatePassword .content, .page-login .content{
+  margin-left: 10px;
+}
+.dottedList .dottedList-item::before {
+  border-radius: 50%;
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 7px;
+  left: -1px;
+}
+.dottedList.dottedList_green .dottedList-item::before {
+  background-color: #FFF;
+}
+.register-user-info-label.focused, .register-user-info-label.focused-country{ 
+  left: 15px  !important;
+}
+.registerForm .register-user-info-label.focused, .register-user-info-label{ 
+  left: 6px  !important;
+}
+.extension .control-label.register-user-info-label.focused{ 
+  left: 15px  !important;
+  font-size: 9px !important;
+}
+.extension .control-label.register-user-info-label.focused-country.focused{ 
+  left: 15px  !important;
+  font-size: 9px !important;
+} 
+.phone .control-label.control-label_mandatory.register-user-info-label.focused{ 
+  left: 15px  !important;
+}
+@media  (max-width:768px ){  
+  .login-container .content p{display: none;}
+  .login-container .content .dottedList.dottedList_green{display: none;}
+  .login-container .content{padding-bottom: 30px;}
+  .login-container .login-logo .banner__component.simple-banner{display: block;}
+  .login-logo .banner__component.simple-banner{
+    display: block !important;
+  }
+  .login-buttons { 
+    margin-top: 40px;
+  } 
+  .register-account-partner-screen3 { 
+    margin: 0px auto;
+    width: 85%;
+  }
+  #registerForm-BDUserGroup .js-secureportal-register-button.login-btn.login-btn-next{
+    margin: 0px auto;
+  }
+}
+.login-container .login-btn {margin-bottom: 10px;}
+.login-btn{width:160px;margin-bottom: 10px; }
+.login-buttons { 
+  margin-bottom: 50px !important; 
+}
+.page-SecureCustomerPortalRegisterPage .item_container {
+  padding: 25px 20px 20px 0px;
+  color: #fff;
+}
+.page-SecureCustomerPortalRegisterPage .content, .page-updatePassword .content, .page-login .content {
+  margin-left: 5px;
+}
+.page-SecureCustomerPortalRegisterPage .content .headline.accountLogin-content-headline, .page-updatePassword .content .headline.accountLogin-content-headline, .page-login .content .headline.accountLogin-content-headline {
+  margin-top: 45px;
+}
+@media  (max-width:320px ){  
+  .register-account-partner-screen3 {
+    margin: 0px auto;
+    width: 110%;
+    margin-left: -15px;
+  }
+  .accountLogin-content-headline { 
+    font-size: 40px !important;
+  }
+  .page-SecureCustomerPortalRegisterPage .item_container {
+    margin-left: -10px;
+  }
+}
+/*** mobile**/
+  select.form-control {
+    background-position: calc(90%) calc(2em), calc(93%) calc(3em), calc(97.5%) 0.5em;
+    padding-right: 53px;
+  }
+  
+  
+.register-user-info {
+  width: 96%;
+  align-items: center;
+  margin: auto;
+}
+
+.mobile-code-label {
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 1;
+  pointer-events: none;
+  line-height: 24px;
+  color: #00A6BE;
+  justify-content: center;
+  margin: auto;
+}
+.mobile-code-text {
+  border: none !important;
+  border-bottom: 1px solid #979797 !important;
+  margin: 2% auto auto !important;
+  padding: 20px 24px 14px 75px !important;
+  font-size: 16px !important;
+  display: block !important;
+  width: 42% !important;
+  line-height: 1.5 !important;
+  opacity: 1 !important;
+  background: none;
+  box-shadow: none;
+  border-radius: initial;
+}
+
+.formError-auth {
+  display: flex;
+  float: none;
+  color: red;
+  justify-content: center;
+  padding: 20px;
+}
+.formError-auth svg {
+  width: 50px;
+}
+.formError-auth span {
+  width: 90%;
+  margin:0px auto;
+}
+
+.login-screen2 .login-right-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.login-section {
+  max-width: 100% !important;
+}
+
+.product-category-slide-area .carousel .item .item__name, .product-category-slide-area .carousel__component--carousel .item .item__name, .product-category-slide-area .carousel .carousel__item .item__name, .product-category-slide-area .carousel__component--carousel .carousel__item .item__name, .product-category-slide-area .carousel .item .carousel__item--name, .product-category-slide-area .carousel__component--carousel .item .carousel__item--name, .product-category-slide-area .carousel .carousel__item .carousel__item--name, .product-category-slide-area .carousel__component--carousel .carousel__item .carousel__item--name{
+  height: auto;
+  min-height: 1rem;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }

@@ -8,18 +8,20 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 <sptemplate:page pageTitle="${pageTitle}">
 	<jsp:body>
-        <div class="main__inner-wrapper">
-            <div class="login-logo">
-                <cms:pageSlot position="SiteLogo" var="logo" limit="1">
-                    <cms:component component="${logo}"/>
-                </cms:pageSlot>
-            </div>
+        <div class="main__inner-wrapper" style="margin: 0px;">
+           
             <!-- <div class="login-area-wrapper"> -->
             <div class="row container-fluid login-container justify-content-center">
-                <div class="col-md-6 paragraph-wrapper">
-                    <cms:pageSlot position="LeftContentSlot" var="feature">
-                        <cms:component component="${feature}" class=""/>
+                
+                <div class="col-md-6 paragraph-wrapper"> 
+                <div class="login-logo" style="margin-top: -10px;">
+                    <cms:pageSlot position="SiteLogo" var="logo" limit="1">
+                        <cms:component component="${logo}"/>
                     </cms:pageSlot>
+                </div>
+                <cms:pageSlot position="LeftContentSlot" var="feature">
+                    <cms:component component="${feature}" class=""/>
+                </cms:pageSlot>
                 </div>
                 <div class="col-md-6 login-wrapper">
                     <div class="login-section">

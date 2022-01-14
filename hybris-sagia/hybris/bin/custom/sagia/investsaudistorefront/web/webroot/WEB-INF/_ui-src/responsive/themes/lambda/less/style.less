@@ -12504,6 +12504,8 @@ a.product__listing .product__listing--promo:focus {
   margin-top: 25px;
   padding: 0 20px;
   color: #929292;
+  font-size: 18px; 
+  font-weight: 600;
 }
 .pagination-bar.bottom .pagination-toolbar {
   padding-top: 30px;
@@ -28543,6 +28545,12 @@ body:is(.page-productGrid) .breadcrumb-section.mt-breadcrumb {
   font-weight: 400;
   opacity: 1;
   pointer-events: none;
+  position: unset !important;
+ top: 0px !important;
+ left: 0px !important;
+  transform: translate3d(0, 10px, 0) scale(1);
+  transform-origin: left top;
+  transition: 240ms;
   line-height: 24px;
   color: #00A6BE;
   justify-content: center;
@@ -28569,6 +28577,7 @@ body:is(.page-productGrid) .breadcrumb-section.mt-breadcrumb {
   color: red;
   justify-content: center;
   padding: 20px;
+  margin-top: 0px !important;
 }
 .formError-auth svg {
   width: 50px;

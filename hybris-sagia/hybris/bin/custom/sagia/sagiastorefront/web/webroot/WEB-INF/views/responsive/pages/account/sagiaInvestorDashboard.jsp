@@ -70,6 +70,86 @@
         </div>
     </div>
  
+</section>
+
+
+
+<section class="mainSection mainSection_grey mainSection_noPadding account-details-section">
+    <div class="container">
+        <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
+            <div class="dashboardUser-wrapper col-md-12 mr-0 pt-3 px-0">
+                <div class="dashboardUser-left col-md-6 pr-0">
+                    <div class="col">
+                        <div class="dashboardUser-image">
+                            <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">
+                                <button type="button"  id="btnfile" class="dashboardUser-image-add"><icon:plus/><span id="fname"></span></button>
+                                
+                                <div class="myAccount-profilImage">
+                                    <div class="myAccount-profilImage-img">
+                                        <div class="profilePicture js-profilePicture" style="background-image:url(${profilePicture})"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboardUser-col">
+                                <div class="dashboardUser-entry ml-3">
+                                    <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
+                                    <div>Last Login: <span class="clr_gld">02/11/2021 10:00AM</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboardUser-right col-md-6 px-0">
+                    <div class="col-6">
+                        <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
+                                <!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
+                                <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-value h5"><c:out value='${user.name}'/></span></div>
+                                <div class="dashboardUser-label profile-detail"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
+                                <div class="dashboardUser-label profile-detail"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex">
+                        <div class=" user-icon mr-3">
+                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/>
+                        </div>
+                        <div class=" user-icon mr-3">
+                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/>
+                        </div>
+                        <div class=" user-icon mr-1">
+                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mainSection mainSection_grey mainSection_noPadding account-details-section">
+    <div class="container">
+        <h1 class="dashboard-headline js-dashboardWidget-headline text-center mt-5 pt-5 mb-5">
+            Services
+        </h1>
+        <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
+            <div class="service-card-wrapper">
+                <div class="service-card">
+                    <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
+                    <span>Licensing Services</span>
+                </div>
+                <div class="service-card">
+                    <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
+                    <span>Licensing Services</span>
+                </div>
+                <div class="service-card">
+                    <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
+                    <span>Licensing Services</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <div class="globalMessage-holder" id="awaitingPaymentDiv" style="display: none;">
         <div class="container">
             <div class="globalMessage">
@@ -96,77 +176,12 @@
             </div>
         </div>
     </div>
-</section>
-
-
-
-<section class="mainSection mainSection_grey mainSection_noPadding">
-    <div class="container">
-        <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
-            <div class="dashboardUser-wrapper">
-                <div class="dashboardUser-left">
-                    <div class="row">
-                        <div class="col">
-                            <div class="dashboardUser-image">
-                                <button class="btn btn_link dashboardUser-image-add"><icon:plus/></button>
-                                <div class="myAccount-profilImage">
-                                    <div class="myAccount-profilImage-img">
-                                        <div class="profilePicture js-profilePicture" style="background-image:url(${profilePicture})"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="dashboardUser-col">
-                                <div class="dashboardUser-entry">
-                                    <div class="dashboardUser-label dashboardUser-label-xs">Company</div>
-                                    <div class="dashboardUser-value"><c:out value='${user.company}'/></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                 
-                </div>
-                <div class="dashboardUser-right">
-                    <div class="row">   
-                        <div class="col">
-                            <div class="dashboardUser-col">
-                                <div class="dashboardUser-entry">
-                                    <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div>
-                                    <div class="dashboardUser-label dashboardUser-label-xs"><spring:theme code="general.name"/></div>
-                                    <div class="dashboardUser-value"><c:out value='${user.name}'/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="dashboardUser-col">
-                                <div class="dashboardUser-entry">
-                                    <div class="dashboardUser-label"><spring:theme code="general.email"/></div>
-                                    <div class="dashboardUser-value"><c:out value='${user.email}'/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="dashboardUser-col">
-                                <div class="dashboardUser-entry">
-                                    <div class="dashboardUser-label"><spring:theme code="general.mobilenumber"/></div>
-                                    <div class="dashboardUser-value">
-                                        <c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="mainSection mainSection_grey mainSection_xsmallPaddingTop mainSection_noPaddingBottom">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
-            <a href="${encodedContextPath}/dashboard-edit" class="btn btn_link btn_link_slim">
-                <span class="iconElement iconElement_pin"><icon:pin/></span> <spring:theme code="dashboard.customize"/>
+            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard btn_link_slim">
+                <spring:theme code="dashboard.customize"/> <span class="iconElement iconElement_pin"><icon:pin/></span> 
             </a>
         </div>
     </div>
@@ -196,7 +211,7 @@
                     
                     <!-- Tab panes -->
                     <div class="tab-content dashboard-tab-body">
-                        <div role="tabpanel" class="tab-pane fade in active show" id="mylicense">
+                        <div role="tabpanel" class="license tab-pane fade in active show" id="mylicense">
                             <dashboard:myLicense/>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="payments">

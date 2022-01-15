@@ -143,11 +143,11 @@
 		<property name="header">
 			<value>#{defaultImpexProductHeader}
 				# InterestRate data
-					INSERT_UPDATE InterestRate			;value      ;valueLabel[lang = en];valueLabel[lang = ar]       ;percentage 	;percentageLabel[lang = en];percentageLabel[lang = ar] ;displayName	[lang = en];displayName[lang = ar];name[unique=true] ;calenderValue[lang = en];calenderValue[lang = ar] ;currencyValue
+					INSERT_UPDATE InterestRate			;value[lang = en];value[lang = ar]      ;valueLabel[lang = en];valueLabel[lang = ar]       ;percentage 	;percentageLabel[lang = en];percentageLabel[lang = ar] ;displayName	[lang = en];displayName[lang = ar];name[unique=true] ;calenderValue[lang = en];calenderValue[lang = ar] ;currencyValue
 			</value>
 		</property>
 		<property name="impexRow">
-			<value>;{0};{1};{2};{3};{4};{5};{6};{7};{+8};{9};{10};{11};{S}</value>
+			<value>;{0};{1};{2};{3};{4};{5};{6};{7};{+8};{9};{10};{11};{12};{S}</value>
 		</property>
 	</bean>
 	

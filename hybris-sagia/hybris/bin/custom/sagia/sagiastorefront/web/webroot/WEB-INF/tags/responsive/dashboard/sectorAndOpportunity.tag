@@ -46,11 +46,25 @@
                             <p>${sector.sectorDetails}</p>
                          </div>
 				</div>
+				<c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}">
+				
+				<div class="col-md-12 col-lg-5 section-counts sect-right-panel">
+								<c:forEach var="sectorFactsFigures" items="${customerSectorCategory.sectorFactsFigures}">  
+									<div class="count-item">
+										<h5><span class="unit">${sectorFactsFigures.figures}${sectorFactsFigures.unit}</span></h5>
+										<p class="description">${sectorFactsFigures.facts}</p>
+									</div>  
+								</c:forEach>
+							</div>
+				</c:if>
+				
 				<div class="row justify-content-center">
-				<c:if test="${sector.sectorName ne 'Others'}">
+				<c:if test="${sector.sectorCode ne 'Others'}">
                      		 <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/> </a> </div>
                       </c:if>
+                <c:if test="${sector.sectorCode eq 'Others'}">
                       <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/opportunities/" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/></a></div>
+                 </c:if>
                    </div>
                    </div>
                 </div>
@@ -60,3 +74,64 @@
       </div>
    </div>
 </div>
+
+<c:if test="${not empty customerSectorCategory}">
+<section class="Inc-energyoppertunities">
+    <div class="container">
+        <div class="Inc-title-header">
+            <h1 class="Inc-secdetil-enop-header ">
+            	<c:if test="${language eq 'en'}">
+            		<span class="clr_gld">${customerSectorCategory.name}</span>&nbsp;<spring:theme code="portal.sector.opportunity.label"/>
+            	</c:if>
+            	<c:if test="${language eq 'ar'}">
+            		<span class="clr_gld"><spring:theme code="portal.sector.featured.opportunity.label"/>&nbsp;${customerSectorCategory.name}</span>
+            	</c:if>
+            </h1>
+            <button  class="btn btn-sector-primary responsive-btn-sector">
+            	<c:if test="${empty featuredOpportunities}">
+            		<a href="${encodedContextPath}/sectors-opportunities/opportunities">Explore all&nbsp;
+            		<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
+            	</c:if>
+            	<c:if test="${not empty featuredOpportunities}">
+            		<a href="${encodedContextPath}/sectors-opportunities/${customerSectorCategory.code}">Explore all&nbsp;
+            		<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
+            	</c:if>
+            	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
+            </button>
+        </div>
+        <c:if test="${empty featuredOpportunities}">
+        	<div class="page-main-content mt-0 text-center">
+	            <div class="no-opportunities-text"><spring:theme code="portal.sector.opportunity.not.available.label"/></div>
+			</div>
+        </c:if>
+        <c:if test="${not empty featuredOpportunities}">
+	        <div class="page-main-content mt-0">
+	            <div class="row">                                   
+	                 <c:forEach var="featuredOpportunity" items="${featuredOpportunities}" varStatus="status">
+	                     <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+	                         <a href="${encodedContextPath}${featuredOpportunity.opportunity.url}">
+	                             <div class=" Inc-fearured-opp">
+	                                 <h2 class="Inc-fearured-opp-headtitle" title="${featuredOpportunity.opportunity.name}">${featuredOpportunity.opportunity.name}</h2>
+	                                 <h3 class="Inc-fearured-opp-type">${featuredOpportunity.parentCategory.name}</h3>
+	                                 <button class="btn btn-sector-primary mx-auto">
+	                                 	<spring:theme code="portal.opportunity.know.more.button"/>
+	                                 	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
+	                                 </button>
+	                                 <button class="btn btn-sector-outline mx-auto">
+	                                 	<spring:theme code="portal.opportunity.iam.interested.button"/>
+	                                 	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/btn-sector-outline.png" alt="">
+	                                 </button>
+	                                 <!-- <span class="Inc-sector-icon-mini">
+	                                 	<img class="img-fluid" src="${featuredOpportunity.parentCategory.picture.url}" 
+	                                 			alt="${featuredOpportunity.parentCategory.picture.altText}" />
+	                                 </span> -->
+	                             </div>
+	                         </a>
+	                     </div>
+	                 </c:forEach>                                       
+	            </div>
+	        </div>
+        </c:if>
+    </div>
+</section>
+</c:if>

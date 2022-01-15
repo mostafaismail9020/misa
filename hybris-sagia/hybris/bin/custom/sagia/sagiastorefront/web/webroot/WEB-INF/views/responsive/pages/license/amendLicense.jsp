@@ -88,6 +88,56 @@
 	</div>
 </div>
 
+<h5> Service overview </h5>
+<c:choose>
+    <c:when test="${empty sagiaService.description}">
+        <div class="serviceList-description"><p>N/A</p></div>
+    </c:when>
+    <c:otherwise>
+        <div class="serviceList-description"><p>${sagiaService.description}</p></div>
+    </c:otherwise>
+</c:choose>
+
+<h5> Service document </h5>
+<c:choose>
+    <c:when test="${empty sagiaService.serviceDocuments}">
+        <div class="serviceList-description"><p>N/A</p></div><br>
+    </c:when>
+    <c:otherwise>
+        <div class="serviceList-description"><p>${sagiaService.serviceDocuments}</p></div>
+    </c:otherwise>
+</c:choose>
+
+<h5> Rules & Restriction </h5>
+<c:choose>
+    <c:when test="${empty sagiaService.rulesRestrictions}">
+        <div class="serviceList-description"><p>N/A</p></div><br>
+    </c:when>
+    <c:otherwise>
+        <div class="serviceList-description"><p>${sagiaService.rulesRestrictions}</p></div>
+    </c:otherwise>
+</c:choose>
+
+<h5> Financial FEE </h5>
+<c:choose>
+    <c:when test="${empty sagiaService.serviceFinancialFees}">
+        <div class="serviceList-description"><p>N/A</p></div><br>
+    </c:when>
+    <c:otherwise>
+        <div class="serviceList-description"><p>${sagiaService.serviceFinancialFees}</p></div>
+    </c:otherwise>
+</c:choose>
+
+<h5> Duration </h5>
+<c:choose>
+    <c:when test="${empty sagiaService.serviceDuration}">
+        <div class="serviceList-description"><p>N/A</p></div><br>
+    </c:when>
+    <c:otherwise>
+        <div class="serviceList-description"><p>${sagiaService.serviceDuration}</p></div>
+    </c:otherwise>
+</c:choose>
+
 <div
 	class="mainSection mainSection_white mainSection_narrow mainSection_xsmallPaddingTop">
 	<div class="container">

@@ -133,6 +133,8 @@ public class SagiaServicesController extends SagiaAbstractPageController {
         if (CollectionUtils.isNotEmpty(serviceList)) {
             model.addAttribute("firstServiceId", Iterables.get(serviceList, 0).getSrID());
         }
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(serviceUrl);
+        model.addAttribute("sagiaService", sagiaService);
         return getView(model, SAGIA_SERVICES_CMS_PAGE);
     }
 

@@ -1447,6 +1447,86 @@
                         <persistence type="property"/>
                         <defaultvalue>"2"</defaultvalue>
                     </attribute>
+                    <attribute qualifier="serviceDocuments" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="rulesRestrictions" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="serviceFinancialFees" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="serviceDuration" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
                 </attributes>
                 <indexes>
                     <index name="codeIndex" unique="true">

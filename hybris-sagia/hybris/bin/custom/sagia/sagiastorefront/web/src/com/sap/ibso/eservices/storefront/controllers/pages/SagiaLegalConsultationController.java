@@ -124,6 +124,8 @@ public class SagiaLegalConsultationController extends SagiaAbstractPageControlle
         }
 
         model.addAttribute("serviceDescription", getServiceDescription(request.getServletPath()));
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SERVICE_ID);
+        model.addAttribute("sagiaService", sagiaService);
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_LEGAL_CONSULTATION_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_LEGAL_CONSULTATION_CMS_PAGE));
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);

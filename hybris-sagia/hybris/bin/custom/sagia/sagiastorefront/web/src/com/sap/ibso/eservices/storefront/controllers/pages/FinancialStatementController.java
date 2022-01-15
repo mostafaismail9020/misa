@@ -135,7 +135,9 @@ public class FinancialStatementController extends SagiaAbstractPageController {
             model.addAttribute("latestFinancialStatement", latestFinancialStatement);
         }
 
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SERVICE_ID);
         model.addAttribute("serviceDescription", getServiceDescription(request.getServletPath()));
+        model.addAttribute("sagiaService", sagiaService);
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_FINANCIAL_STATEMENT_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_FINANCIAL_STATEMENT_CMS_PAGE));
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);

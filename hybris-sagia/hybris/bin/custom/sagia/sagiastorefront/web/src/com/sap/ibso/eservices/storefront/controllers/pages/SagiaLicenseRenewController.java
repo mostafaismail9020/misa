@@ -231,6 +231,8 @@ public class SagiaLicenseRenewController extends SagiaAbstractPageController {
         if (request.getRequestURI().contains("renew-redirect")) {
             model.addAttribute("fromRenewSubmitPage", true);
         }
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SAGIA_LICENSE_RENEW_SERVICE_ID);
+        model.addAttribute("sagiaService", sagiaService);
         model.addAttribute("serviceDescription", getServiceDescription(request.getServletPath()));
         return getViewForPage(model);
     }

@@ -74,7 +74,7 @@
 
 
 
-<section class="mainSection mainSection_grey mainSection_noPadding account-details-section">
+<section class="mainSection mainSection_noPadding">
     <div class="container">
         <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
             <div class="dashboardUser-wrapper col-md-12 mr-0 pt-3 px-0">
@@ -111,13 +111,33 @@
                     </div>
                     <div class="col-6 d-flex">
                         <div class=" user-icon mr-3">
-                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/>
+                            <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
+                            <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/>
+                            </a>
                         </div>
                         <div class=" user-icon mr-3">
-                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/>
+                            <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/> -->
+                            <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                                <c:if test="${hasLicense or hasAwaitingPayment}">
+                                    <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
+                                        <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                        <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/>
+                                    </button>
+                                </c:if>
+                                <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                                <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible ">
+                                    <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                                    <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                                    <div class="sagiaNavigation-subPane-actions">
+                                        <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class=" user-icon mr-1">
-                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
+                            <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>"
+                            class="sagiaNavigation-btn sagiaNavigation-user"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/></a>
                         </div>
                     </div>
                 </div>
@@ -126,12 +146,12 @@
     </div>
 </section>
 
-<section class="mainSection mainSection_grey mainSection_noPadding account-details-section">
+<section class="mainSection mainSection_noPadding">
     <div class="container">
         <h1 class="dashboard-headline js-dashboardWidget-headline text-center mt-5 pt-5 mb-5">
             Services
         </h1>
-        <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
+        <div class="dashboardUser_slim dashboardUser_noBorder pb-5">
             <div class="service-card-wrapper">
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
@@ -177,53 +197,50 @@
         </div>
     </div>
 
-<section class="mainSection mainSection_grey mainSection_xsmallPaddingTop mainSection_noPaddingBottom">
-    <div class="container">
-        <div class="mainSection-linkActions mainSection-linkActions_right">
-            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard btn_link_slim">
-                <spring:theme code="dashboard.customize"/> <span class="iconElement iconElement_pin"><icon:pin/></span> 
-            </a>
-        </div>
+<section class="mainSection mainSection_xsmallPaddingTop">
+    <div class="container license-customize-align">
+      <div> <h1 class="dashboard-headline js-dashboardWidget-headline text-center m-0 p-0">Licenses</h1></div>
+     <div> <span class="mainSection-linkActions mainSection-linkActions_right">
+                <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard btn_link_slim">
+                    <spring:theme code="dashboard.customize"/> <span class="iconElement iconElement_pin pl-3"></span> 
+                </a>
+            </span></div>
+        
     </div>
 </section>
 
-<section class="mainSection mainSection_grey mainSection_noPadding">
+<section class="mainSection mainSection_noPadding">
     <div class="container">
             <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
                 <div class="dashboard-tabs">
                     <ul class="nav nav-tabs mb-0" role="tablist">
-                        <li class="nav-item">
-                        <a class="nav-link active" href="#mylicense" role="tab" data-toggle="tab"><spring:theme code="myLicense.title"/></a>
+                        <li class="nav-item" id="myLicense"> <a class="nav-link active" href="#myLicense" role="tab" data-toggle="tab"><spring:theme code="myLicense.title"/></a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#payments" role="tab" data-toggle="tab">Payments</a>
+                        <li class="nav-item"><a class="nav-link" href="#payments" role="tab" data-toggle="tab"><spring:theme code="payments.page.title"/></a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#servicerequest" role="tab" data-toggle="tab">My Service Request overview</a>
+                        <li class="nav-item"> <a class="nav-link" href="#servicerequest" role="tab" data-toggle="tab"> <spring:theme code="dashboard.servicesRequest.title"/></a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#incompleterequest" role="tab" data-toggle="tab">My Incomplete Request</a>
+                        <li class="nav-item"><a class="nav-link" href="#savedDrafts" role="tab" data-toggle="tab"><spring:theme code="dashboard.savedDrafts.title"/></a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#tickets" role="tab" data-toggle="tab">My Tickets</a>
+                        <li class="nav-item"><a class="nav-link" href="#yourTickets" role="tab" data-toggle="tab"><spring:theme code="dashboard.ticket.yourtickets"/></a>
                         </li>
                     </ul>
                     
                     <!-- Tab panes -->
-                    <div class="tab-content dashboard-tab-body">
-                        <div role="tabpanel" class="license tab-pane fade in active show" id="mylicense">
+                    <div class="tab-content dashboard-tab-body license">
+                        <div role="tabpanel" class=" tab-pane fade in active show" id="myLicense">
                             <dashboard:myLicense/>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="payments">
                             <div class="dashboardWidget js-dashboardWidget">
                                 <div class="dashboardWidget-headline js-dashboardWidget-headline">
-                                    <a href="" data-redirect="payments-overview" class="js-page-redirect"
+                                    <!-- <a href="" data-redirect="payments-overview" class="js-page-redirect"
                                        style="text-decoration: inherit;color: inherit">
-                                        <spring:theme code="payments.page.title"/>
-                                    </a>
-                                    <div class="dashboardWidget-headline-icon">
+                                        <spring:theme code="payments.page.title"/> 
+                                    </a> 
+                                     <div class="dashboardWidget-headline-icon">
                                         <a href="" data-redirect="payments-overview" class="js-page-redirect"><icon:payments/></a>
-                                    </div>
+                                    </div> -->
                                     <div class="dashboardWidget-filter">
                                         <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
                                             <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
@@ -285,11 +302,11 @@
                         <div role="tabpanel" class="tab-pane fade" id="servicerequest">
                             <dashboard:servicesRequest/>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="incompleterequest">
+                        <div role="tabpanel" class="tab-pane fade" id="savedDrafts">
                             <dashboard:savedDrafts/>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="tickets">
-                            <div class="dashboardWidget js-dashboardWidget">
+                        <div role="tabpanel" class="tab-pane fade" id="yourTickets">
+                            <div class="dashboardWidget js-dashboardWidget no-border">
                                 <div class="dashboardWidget-headline js-dashboardWidget-headline">
                                     <span>
                                         <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"
@@ -365,12 +382,22 @@
     </div>
 </section>
 
-<section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
+<section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
+    <div class="container">
+        <div class="row">
+            <dashboard:opportunityTickets></dashboard:opportunityTickets>
+        </div>
+    </div>
+</section>
+
+<%-- <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">
         <div class="row">
             <ul id="draggableComponentsList" class="dashboardWidgetList">
                 <li class="dashboardWidgetListComponent js-component" style="display: none">
-                    <div class="col col-12" id="myLicense"><dashboard:myLicense/></div>
+                    <div class="col col-12" id="myLicense">
+                        <dashboard:myLicense/>
+                    </div>
                 </li>
                 <li class="dashboardWidgetListComponent js-component" style="display: none">
                     <div class="col col-12" id="dashboardImage">
@@ -546,7 +573,7 @@
             </ul>
         </div>
     </div>
-</section>
+</section> --%>
 
 <table class="paymentTemplateWrapper" style="display:none;">
     <tr>

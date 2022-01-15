@@ -29,7 +29,7 @@
                 <!-- <div class="messages "><img alt="" class=" profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/message.png" /> </div> -->
                 <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub mr-5">
                     <c:if test="${hasLicense or hasAwaitingPayment}">
-                        <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
+                        <button class="sagiaNavigation-btn js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
                             <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
                             <img alt="" class="" src="${commonResourcePath}/images/eservices/message-in-active.png" />
                             <img alt="" class="d-none" src="${commonResourcePath}/images/eservices/Calender-active-1.png" />

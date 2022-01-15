@@ -1,6 +1,17 @@
 .page-dashboard-without-license h1{
     font-size: 45px;
 }
+.page-dashboard-without-license .my-license-block{
+	background: #FFFFFF;
+    box-shadow: 0px 0px 35px #0000003D;
+	border-radius: 5px;
+}
+.page-dashboard-without-license .dashboardWidget_inner{
+	border-radius: 22px;
+}
+.page-dashboard-without-license .no-border{
+	border-radius: 0;
+}
 .no-license-page .card {
 	background: #fff;
 	border-radius: 22px;
@@ -46,9 +57,7 @@
   .dashboard-login{
 	  padding: 20px;
   }
-  .dashboard-container{
-      padding: 0 70px;
-  }
+  
   .dashboardUser-entry{
 	  padding-left: 8rem;
   }
@@ -253,7 +262,7 @@
 /* ...... No License dashboard ends .........*/
 /**** Licese Dashboard CSS Starts ****/
 @media (min-width: 1200px){
-	.page-dashboard .container {
+	.page-dashboard .container, .page-dashboard-without-license .container{
 		max-width: 1366px;
 	}
   }
@@ -304,7 +313,7 @@
     width: 277px;
     height: 294px;
     background: #FFFFFF;
-    box-shadow: 0px 30px 75px #00000029;
+    box-shadow: 0px 10px 15px #00000029;
     border-radius: 30px;
     margin-right: 62px;
     padding: 30px 25px 60px;
@@ -327,6 +336,7 @@
 .btn-dashboard{
     height: 45px;
     background: #00A6BE !important;
+    color: #FFFFFF;
     border-radius: 27px;
     opacity: 1;
     margin: 0;
@@ -336,6 +346,10 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
 }
 .btn-outline{
     background: #FFFFFF !important;
@@ -353,6 +367,35 @@
     color: #00A6BE !important;
     border-bottom: 4px solid;
     padding-bottom: 20px;
+}
+.btn-dashboard:hover{
+	color: #FFFFFF !important;
+	text-decoration: none !important;
+}
+.license-customize-align{
+	display: flex;
+    align-items: center;
+    float: right;
+    justify-content: space-around;
+	padding-bottom: 30px;
+}
+/* [dir=ltr] .dashboard-tabs .nav-tabs .nav-link:nth-last-child(1){
+	margin-right: 0;
+} */
+
+.license .tableModule-headline, .license .link{
+	color:#00A6BE;
+}
+[dir] .dashboardWidgetTickets-count{
+	background: #00A6BE;
+}
+.license .tableModule{
+	overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.page-dashboard .dashboardUser{
+	border: none;
 }
 .license .dashboardWidgetLicense-list-label{
     color:  #BF9B2E;
@@ -375,4 +418,49 @@
 }
 .font-14{
     font-size: 14px;
+}
+.license-customize-align{
+	display: flex;
+    align-items: center;
+    float: right;
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+[dir=rtl] .license-customize-align{
+    float: left;
+}
+.page-dashboard .sagiaNavigation-btn{
+	padding: 0;
+	margin: 0;
+	width: auto !important;
+}
+.page-dashboard-without-license .dashboardWidgetNoLicense{
+	overflow: visible;
+}
+.page-dashboard-without-license .dashboardWidgetBanner-tabs-content{
+	display: flex;
+}
+.page-dashboard-without-license .dashboardWidget_inner .dashboardWidgetBanner .dashboardWidgetBanner-tabs ul{
+	display: none;
+}
+.page-dashboard-without-license .dashboardWidget_inner .invest-us-header{
+	color: #bf9b2e !important;
+	justify-content: left !important;
+	padding-left: 44px;
+}
+
+.extended-left-block{
+	padding-right: 20px;
+	border-right: 2px solid #FFFFFF;
+	height: 118px;
+}
+.extended-block-data{
+	text-align: center;
+	font-size: 43px;
+	letter-spacing: 0px;
+	color: #BF9B2E;
+}
+.extended-block-text{
+	text-align: center;
+	color: #FFFFFF;
 }

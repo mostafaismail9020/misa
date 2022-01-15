@@ -167,7 +167,7 @@
                         </c:if>
                         <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
                             <c:if test="${hasLicense or hasAwaitingPayment}">
-                                <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <button class="sagiaNavigation-btn js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
                                     <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span><icon:mail/>
                                 </button>
                             </c:if>

@@ -4,17 +4,29 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 
-<div class="dashboardWidget js-dashboardWidget">
-   <div class="dashboardWidget-headline js-dashboardWidget-headline">
+<div class="Inc-title-header py-5">
+   <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
+       <c:if test="${language eq 'en'}">
+           <span class="clr_gld">${category.name}</span>&nbsp; <spring:theme code="text.dashboard.without.license.sectorAndOpportunities"/>
+       </c:if>
+       <c:if test="${language eq 'ar'}">
+           <span class="clr_gld"> <spring:theme code="text.dashboard.without.license.sectorAndOpportunities"/>&nbsp;${category.name}</span>
+       </c:if>
+       <a href="/${language}/sectors-opportunities/opportunities" class="btn-dashboard float-right text-uppercase"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/> <img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/></a>
+   </h1>
+ </div>
+                   
+<div class="js-dashboardWidget">
+    <%--<div class="dashboardWidget-headline js-dashboardWidget-headline">
        <spring:theme code="text.dashboard.without.license.sectorAndOpportunities"/>
-      <div class="dashboardWidget-headline-icon">
+     <div class="dashboardWidget-headline-icon">
          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="24px" viewBox="0 0 22 24" enable-background="new 0 0 22 24" xml:space="preserve">
             <path fill="#32465A" d="M21.707,17L21,17.707l-1-1V23h-2v-4h-4v4h-2v-6.293l-1,1L10.293,17L16,11.293L21.707,17z"></path>
             <path fill="#5CC83B" d="M11,19.121V21H0V0h11l5,5v4.879L8.879,17L11,19.121z M3,8h10V7H3V8z M3,11h10v-1H3V11z M3,14h6v-1H3V14z"></path>
             <path fill="#32465A" d="M11,0l5,5h-5V0z"></path>
          </svg>
       </div>
-   </div>
+   </div> --%>
    <div class="dashboardWidget-body">
       <div class="dashboardWidgetNoLicense">
          <div class="dashboardWidgetNoLicense-tabs">
@@ -36,40 +48,50 @@
 <!-- 				</ul> -->
             <div class="dashboardWidgetNoLicense-body">
                <div class="dashboardWidget js-dashboardWidget dashboardWidget_dark dashboardWidget_inner">
-				<div class="dashboardWidget-headline js-dashboardWidget-headline dashboardWidget-headline_apple">
-					${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/>
-				</div>
-				 <div class="dashboardWidget-body">
-                   <div class="dashboardWidgetBanner">
-                      <div class="dashboardWidgetBanner-tabs js-dashboardWidgetBanner-tabs">
-                         <div class="dashboardWidgetBanner-tabs-body">
-                            <p>${sector.sectorDetails}</p>
-                         </div>
-				</div>
-				<c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}">
+                  <div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header">
+                     ${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/>
+                  </div>
+                  <div class="dashboardWidget-body">
+                     <div class="dashboardWidgetBanner">
+                        <div class="dashboardWidgetBanner-tabs js-dashboardWidgetBanner-tabs ">
+                           <div class="dashboardWidgetBanner-tabs-body col-8">
+                              <p>${sector.sectorDetails}</p>
+                           </div>
+                        </div>
+                        <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}">
 				
-				<div class="col-md-12 col-lg-5 section-counts sect-right-panel">
-								<c:forEach var="sectorFactsFigures" items="${customerSectorCategory.sectorFactsFigures}">  
-									<div class="count-item">
-										<h5><span class="unit">${sectorFactsFigures.figures}${sectorFactsFigures.unit}</span></h5>
-										<p class="description">${sectorFactsFigures.facts}</p>
-									</div>  
-								</c:forEach>
-							</div>
-				</c:if>
-				
-				<div class="row justify-content-center">
-				<c:if test="${sector.sectorCode ne 'Others'}">
-                     		 <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/> </a> </div>
-                      </c:if>
-                <c:if test="${sector.sectorCode eq 'Others'}">
-                      <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/opportunities/" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/></a></div>
-                 </c:if>
-                   </div>
-                   </div>
-                </div>
-               </div>
-            </div>
+                        <div class="col-md-12 col-lg-5 section-counts sect-right-panel">
+                                    <c:forEach var="sectorFactsFigures" items="${customerSectorCategory.sectorFactsFigures}">  
+                                       <div class="count-item">
+                                          <h5><span class="unit">${sectorFactsFigures.figures}${sectorFactsFigures.unit}</span></h5>
+                                          <p class="description">${sectorFactsFigures.facts}</p>
+                                       </div>  
+                                    </c:forEach>
+                                 </div>
+                        </c:if>
+                           <div class="d-flex col-4">
+                              <div class="extended-left-block">
+                                 <div class="extended-block-data">100%</div>
+                                 <div class="extended-block-text">of the population will be covered by the unified digital medical records system by 2025</div>
+                              </div>
+                              <div class="extended-right-block pl-3">
+                                 <div class="extended-block-data">$5.4BN</div>
+                                 <div class="extended-block-text">medical technology market size in 2021</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">	
+                           <c:if test="${sector.sectorCode ne 'Others'}">
+                                          <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/> </a> </div>
+                           </c:if>
+                           <c:if test="${sector.sectorCode eq 'Others'}">
+                                 <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/opportunities/" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/></a></div>
+                           </c:if>
+                        </div>
+                     </div>
+                  </div>
+                 </div>
+              </div>
          </div>
       </div>
    </div>

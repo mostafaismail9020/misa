@@ -17,6 +17,11 @@ $oDataPassword = sagia@123
 $httpCRMDestinationName = CRM
 $crmODataTargetURL = http://sagcrdap03.hec.sagia.gov.sa:8000/sap/opu/odata/sap
 
+$httpSmsDestinationName = SMS
+$smsProviderTargetURL = https://xservices.rich.sa/RiCHClientServiceREST.svc/SendSmsConfirmationGet?
+$smsProviderUser = admin@misa.gov.sa
+$smsProviderPassword = u4XnpkJj@G
+
 # Create CRM RFC destination
 INSERT_UPDATE SAPRFCDestination ; rfcDestinationName[unique = true] ; client     ; backendType(code, itemtype(code)) ; connectionType ; sid     ; targetHost     ; instance     ; userid   ; password     ; pooledConnectionMode
                                 ; $rfcDestinationName               ; $rfcClient ; CRM:BackendType                   ; true           ; $rfcSID ; $rfcTargetHost ; $rfcInstance ; $rfcUser ; $rfcPassword ; true                
@@ -25,7 +30,9 @@ INSERT_UPDATE SAPRFCDestination ; rfcDestinationName[unique = true] ; client    
 INSERT_UPDATE SAPHTTPDestination ; httpDestinationName[unique = true] ; targetURL          ; userid     ; password      ;  
                                  ; $httpDestinationName               ; $oDataTargetURL    ; $oDataUser ; $oDataPassword
                                  ; $httpCRMDestinationName            ; $crmODataTargetURL ; $oDataUser ; $oDataPassword
-								                         
+                                 ; $httpSmsDestinationName            ; $smsProviderTargetURL ; $smsProviderUser ; $smsProviderPassword
+
+
 # Assign CRM RFC destination to SAP base store configuration
 INSERT_UPDATE SAPConfiguration ; core_name[unique = true]       ; sapRfcDestination(rfcDestinationName)
                                ; $sapBaseStoreConfigurationName ; $rfcDestinationName                  

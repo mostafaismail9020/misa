@@ -369,7 +369,7 @@ public class VerificationController extends AbstractLoginPageController {
 			model.addAttribute(AUTH_CODE_FORM_ERROR, SMS_SERVICE_ERROR);
 		}
 
-		LOG.warn("Generated code: "+ session.getAttribute(AUTH_CODE));
+		LOG.debug("Generated code: "+ session.getAttribute(AUTH_CODE));
 	}
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
@@ -648,7 +648,7 @@ public class VerificationController extends AbstractLoginPageController {
 			model.addAttribute(AUTH_CODE_FORM_ERROR, SMS_SERVICE_ERROR);
 		}
 
-		LOG.warn("Generated code: "+ session.getAttribute(AUTH_CODE));
+		LOG.debug("Generated code: "+ session.getAttribute(AUTH_CODE));
 	}
 
 	public Validator getSagiaAuthenticateCodeFormValidator() {

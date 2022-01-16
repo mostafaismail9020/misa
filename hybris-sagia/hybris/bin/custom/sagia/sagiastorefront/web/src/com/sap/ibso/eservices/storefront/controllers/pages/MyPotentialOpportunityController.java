@@ -9,7 +9,7 @@ import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.sap.ibso.eservices.facades.potentialopportunity.MyPotentialOpportunityFacade;
+//import com.sap.ibso.eservices.facades.potentialopportunity.MyPotentialOpportunityFacade;
 import com.sap.ibso.eservices.facades.sagia.impl.SagiaVerificationFacade;
 import com.sap.ibso.eservices.facades.user.SagiaUserFacade;
 import com.sap.ibso.eservices.sagiaservices.services.SagiaConfigurationFacade;

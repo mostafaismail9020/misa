@@ -10,62 +10,70 @@
 <%@ taglib prefix="userTags" tagdir="/WEB-INF/tags/responsive/user" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 
-	<div class="contentModule-headline contentModule-headline_small">
-	<c:if test="${empty isEnableTwoFactorAuthService}">
-		<spring:theme code="text.authenticate.code.description"/>
-	</c:if>
-	</div>
-		<div class="messageList-message">
+
+		<div class="contentModule-headline contentModule-headline_small mobile-verify-text auth-mobile">
+		<c:if test="${empty isEnableTwoFactorAuthService}">
+			<spring:theme code="text.authenticate.code.description"/>
+		</c:if>
+		</div>
+		<div class="messageList-message row reg-para-text">
 			<c:if test="${isEnableTwoFactorAuthService}">
 				<spring:theme code="text.twofactor.authentication.code.description" arguments="${maskedPhoneNumber},${maskedEmailID}"/>
 			</c:if>
 		</div>
-	<form:form modelAttribute="sagiaAuthenticateCodeForm" action="${action}" id="sagiaAuthenticationForm" method="POST">
-	    <c:if test="${not empty sagiaAuthenticateCodeFormError}">
-	        <div class="formError">
-	            <icon:messageError/><spring:theme code="${sagiaAuthenticateCodeFormError}" arguments=""/>
-	        </div>
-	    </c:if>
-	    <c:if test="${not empty sagiaAuthenticateCodeIncorrectError}">
-	        <div class="formError">
-	            <icon:messageError/><spring:theme code="${sagiaAuthenticateCodeIncorrectError}" arguments=""/>
-	        </div>
-	    </c:if>
-	    <formElement:formInputBox idKey="authenticate.code"
-	                              labelKey="text.authenticate.code.input" path="code" inputCSS="form-control"
-	                              mandatory="true" autocomplete="off"/>
-	    <div class="accountLogin-content-formSubmitSection">
-	    <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}"/>
-         <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
-	        <div class="contentModule-actions contentModule-actions_centered">
-	            <ycommerce:testId code="authenticate_Code_button">
-	                <button type="submit" class="btn btn-default btn-block">
-		               	<c:choose>
-						    <c:when test="${isVerificationPage}">
-						    	Confirm
-						    </c:when>    
-						    <c:otherwise>
-						        Login
-						    </c:otherwise>
-						</c:choose>
-	                    <%-- <spring:theme code='${actionNameKey}'/> --%>
-	                </button>
-	            </ycommerce:testId>
-	            <c:choose>
-				    <c:when test="${isVerificationPage}">
-				    	<c:url value="/verification/resend" var="resendCodeUrl"/>
-				    </c:when>
-				    <c:when test="${isEnableTwoFactorAuthService}">
-				    	<c:url value="/verification/twoFactorAuth" var="resendCodeUrl"/>
-				    </c:when>
-				    <c:otherwise>
-				        <c:url value="/login-second-step/resend" var="resendCodeUrl"/>
-				    </c:otherwise>
-				</c:choose>
-	            <a id="resendBtn" class="btn btn-secondary" href="${resendCodeUrl}"><spring:theme code="text.resend.code.button"/></a>
-	        </div>
-	        <spring:theme code="text.otp.expiry.message.description"/>
-	        	<br/> <p><spring:theme code="register.login.problem"/> &nbsp<a href="https://misa.gov.sa/ar/contact-us/" ><spring:theme code="register.login.problem.contact"/></a></p>
-	    </div>
-	</form:form>
-	
+		<form:form modelAttribute="sagiaAuthenticateCodeForm" action="${action}" method="POST">
+			<c:if test="${not empty sagiaAuthenticateCodeFormError}">
+				<div class="row"> 
+					<div class="formError reg-form-error">
+						<icon:messageError/><spring:theme code="${sagiaAuthenticateCodeFormError}" arguments=""/>
+					</div>
+				</div>
+			</c:if>
+			<c:if test="${not empty sagiaAuthenticateCodeIncorrectError}">
+				<div class="row"> 
+					<div class="formError reg-form-error">
+						<icon:messageError/><spring:theme code="${sagiaAuthenticateCodeIncorrectError}" arguments=""/>
+					</div>
+				</div>
+			</c:if>
+			
+			<div class="mobile-code-wrapper">
+				<formElement:formInputBox idKey="authenticate.code" path="code" labelKey="text.authenticate.code.input" labelCSS="mobile-code-label" inputCSS="form-control mobile-code-text validate-mobile mobile-number" mandatory="true" autocomplete="off"/>
+			</div>	
+			
+			<div class="accountLogin-content-formSubmitSection">
+				<div class="contentModule-actions contentModule-actions_centered">
+					<ycommerce:testId code="authenticate_Code_button">
+						<button type="submit" class="login-btn login-btn-next active btn-block">
+							<c:choose>
+								<c:when test="${isVerificationPage}">
+									Confirm
+								</c:when>    
+								<c:otherwise>
+									<%--Login--%>
+									<spring:theme code="${actionNameKey}"/>
+								</c:otherwise>
+							</c:choose>
+							<%-- <spring:theme code='${actionNameKey}'/> --%>
+						</button>
+					</ycommerce:testId>
+					<c:choose>
+						<c:when test="${isVerificationPage}">
+							<c:url value="/verification/resend" var="resendCodeUrl"/>
+						</c:when>
+						<c:when test="${isEnableTwoFactorAuthService}">
+							<c:url value="/verification/twoFactorAuth" var="resendCodeUrl"/>
+						</c:when>
+						<c:otherwise>
+							<c:url value="/login-second-step/resend" var="resendCodeUrl"/>
+						</c:otherwise>
+					</c:choose>
+					
+					<a id="resendBtn" class="login-btn login-entry-cancel padding-top-10" href="${resendCodeUrl}"><spring:theme code="text.resend.code.button"/></a>
+				</div>
+				<div class="trouble-contact-us"><spring:theme code="text.otp.expiry.message.description"/></div>
+				<br/> 
+				<p class="trouble-contact-us margin-top-30"><spring:theme code="register.login.problem"/> &nbsp<a href="https://misa.gov.sa/ar/contact-us/" class="login-forgot d-inline-block"><spring:theme code="register.login.problem.contact"/></a></p>
+				<div><a id="backtoLogin" class="login-btn login-entry-cancel padding-top-10" href="/en/login">Back to Login</a></div>
+			</div>
+		</form:form>>

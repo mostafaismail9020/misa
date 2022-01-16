@@ -1380,14 +1380,16 @@ $(function () {
             success: function (data, status, xhr, form) {
                 var validator = form.validate();
                 validator.resetForm();
+                $(".register-account-investor-screen5").removeClass('next-hide');
+                $(".register-account-investor-screen4").addClass('next-hide');
 
-                var body = $("body");
-                body.toggleClass('page-login-register');
-                $('.accountLogin').show();
+                // var body = $("body");
+                // body.toggleClass('page-login-register');
+                // $('.accountLogin').show();
 
-                var $submitModal = $("#requestSubmittedApply");
-                $submitModal.appendTo('body');
-                $submitModal.modal('show');
+                // var $submitModal = $("#requestSubmittedApply");
+                // $submitModal.appendTo('body');
+                // $submitModal.modal('show');
             }
         });
 

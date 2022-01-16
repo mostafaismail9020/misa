@@ -43,7 +43,7 @@
 
                         <div class="accountLogin-buttonWrapper">
                             <ycommerce:testId code="login_forgotPasswordSubmit_button">
-                                <button class="btn" type="submit">
+                                <button class="login-btn login-btn-next active" type="submit">
                                     <spring:theme code="forgottenPwd.title"/>
                                 </button>
                             </ycommerce:testId>

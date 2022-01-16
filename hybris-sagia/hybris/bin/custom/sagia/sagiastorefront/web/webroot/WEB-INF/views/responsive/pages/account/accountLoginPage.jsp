@@ -15,17 +15,15 @@
                         </jsp:attribute>
                         <jsp:body>
                             <div class=" accountLogin accountLogin_outer " style="display: none">
-                                <div class="accountLogin-headline t">
-                                    <a href="${encodedContextPath}/" class="accountLogin-headline-logo">
-                                        <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png">
-                                    </a>
+                                <div class="row login-container justify-content-center">
+                                    <cms:pageSlot position="LeftContentSlot" var="feature" element="div" class="container-fluid">
+                                        <cms:component component="${feature}" element="div" class="panelModule_halfRadius accountLogin-content accountLogin-content_small mt-0" />
+                                        <%-- <cms:component component="${feature}" element="div" class="panelModule panelModule_halfRadius accountLogin-content accountLogin-content_small" /> --%>
+                                    </cms:pageSlot>
+                                    <cms:pageSlot position="RightContentSlot" var="feature" element="div" class="">
+                                        <cms:component component="${feature}" element="div" class="js-panelTabs panelTabs panelTabs_transparent panelTabs_iconsAndLabel accountLogin-content" />
+                                    </cms:pageSlot>
                                 </div>
-                                <cms:pageSlot position="LeftContentSlot" var="feature" element="div" class="">
-                                    <cms:component component="${feature}" element="div" class="panelModule panelModule_halfRadius accountLogin-content accountLogin-content_small" />
-                                </cms:pageSlot>
-                                <cms:pageSlot position="RightContentSlot" var="feature" element="div" class="">
-                                    <cms:component component="${feature}" element="div" class="js-panelTabs panelTabs panelTabs_transparent panelTabs_iconsAndLabel accountLogin-content" />
-                                </cms:pageSlot>
                             </div>
                         </jsp:body>
                     </template:page>

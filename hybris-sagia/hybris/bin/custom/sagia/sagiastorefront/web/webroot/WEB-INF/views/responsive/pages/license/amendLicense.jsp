@@ -34,8 +34,7 @@
 	</div>
 </div>
 
-<div
-	class="mainSection mainSection_white mainSection_narrow mainSection_noPadding">
+<div class="mainSection mainSection_white mainSection_narrow mainSection_noPadding">
 	<div class="container">
 		<div class="mainSection-header">
 			<h1 class="mainSection-headline">
@@ -70,8 +69,7 @@
 	</div>
 </div>
 
-<div
-	class="mainSection mainSection_white mainSection_narrow mainSection_noPadding">
+<div class="mainSection mainSection_white mainSection_narrow mainSection_noPadding">
 	<div class="container">
 		<div class="mainSection-linkActions mainSection-linkActions_right">
 			<button id="saveDraftBtnId" class="btn btn_round">
@@ -87,265 +85,378 @@
 		</div>
 	</div>
 </div>
-
-<h5> Service overview </h5>
-<c:choose>
-    <c:when test="${empty sagiaService.description}">
-        <div class="serviceList-description"><p>N/A</p></div>
-    </c:when>
-    <c:otherwise>
-        <div class="serviceList-description"><p>${sagiaService.description}</p></div>
-    </c:otherwise>
-</c:choose>
-
-<h5> Service document </h5>
-<c:choose>
-    <c:when test="${empty sagiaService.serviceDocuments}">
-        <div class="serviceList-description"><p>N/A</p></div><br>
-    </c:when>
-    <c:otherwise>
-        <div class="serviceList-description"><p>${sagiaService.serviceDocuments}</p></div>
-    </c:otherwise>
-</c:choose>
-
-<h5> Rules & Restriction </h5>
-<c:choose>
-    <c:when test="${empty sagiaService.rulesRestrictions}">
-        <div class="serviceList-description"><p>N/A</p></div><br>
-    </c:when>
-    <c:otherwise>
-        <div class="serviceList-description"><p>${sagiaService.rulesRestrictions}</p></div>
-    </c:otherwise>
-</c:choose>
-
-<h5> Financial FEE </h5>
-<c:choose>
-    <c:when test="${empty sagiaService.serviceFinancialFees}">
-        <div class="serviceList-description"><p>N/A</p></div><br>
-    </c:when>
-    <c:otherwise>
-        <div class="serviceList-description"><p>${sagiaService.serviceFinancialFees}</p></div>
-    </c:otherwise>
-</c:choose>
-
-<h5> Duration </h5>
-<c:choose>
-    <c:when test="${empty sagiaService.serviceDuration}">
-        <div class="serviceList-description"><p>N/A</p></div><br>
-    </c:when>
-    <c:otherwise>
-        <div class="serviceList-description"><p>${sagiaService.serviceDuration}</p></div>
-    </c:otherwise>
-</c:choose>
-
-<div
-	class="mainSection mainSection_white mainSection_narrow mainSection_xsmallPaddingTop">
-	<div class="container">
-		<div class="expandableContent expandableContent_upLg" id="expand01">
-			<div class="expandableContent-aside">
-				<div class="panelModule panelModule_halfRadius">
-					<div class="contentModule">
-						<div
-							class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-							<div class="contentModule-headline">
-								<span class="iconElement iconElement_history"><icon:history /></span>
-								<spring:theme code="text.account.followup.history" />
+<div class="service-wrapper service-wrapper-info">
+	<div class="serviceModule serviceModule_list mx-5 pt-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> Service overview </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.description}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.description}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> Service document </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceDocuments}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.serviceDocuments}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> Rules & Restriction </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.rulesRestrictions}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.rulesRestrictions}</p></div></div>
+						</c:otherwise>
+					</c:choose>					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> Financial FEE </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceFinancialFees}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.serviceFinancialFees}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5 pb-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> Duration </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceDuration}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.serviceDuration}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="service-wrapper service-wrapper-info mt-5">
+	<div class="mainSection mainSection_white mainSection_narrow mainSection_xsmallPaddingTop service-request">
+		<div class="container">
+			<div class="expandableContent expandableContent_upLg" id="expand01">
+				<div class="expandableContent-aside">
+					<div class="panelModule panelModule_halfRadius">
+						<div class="contentModule">
+							<div
+								class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
+								<div class="contentModule-headline">
+									<span class="iconElement iconElement_history"><icon:history /></span>
+									<spring:theme code="text.account.followup.history" />
+								</div>
+								<div class="searchInputBox searchInputBox_slim">
+									<input onkeyup="filterHistory(this)" id="convertSearchBox"
+										class="searchInputBox-input" type="text"
+										placeholder="<spring:theme code='storeFinder.search'/>" />
+								</div>
+								<ul id="history-list" class="historyList"></ul>
 							</div>
-							<div class="searchInputBox searchInputBox_slim">
-								<input onkeyup="filterHistory(this)" id="convertSearchBox"
-									class="searchInputBox-input" type="text"
-									placeholder="<spring:theme code='storeFinder.search'/>" />
-							</div>
-							<ul id="history-list" class="historyList"></ul>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="expandableContent-main">
-				<div
-					class="js-panelTabs panelTabs panelTabs_iconsAndLabel panelTabs_separated panelTabs_tip_none  panelTabs_noPanelInBody panelTabs_white panelTabs_whiteNavigation panelTabs_noPaddingTop">
-					<div class="panelTabs-head" id="tab1">
-						<icon:registerinTab />
-						<span class="panelTabs-label"><spring:theme
-								code="license.entity" /></span>
-					</div>
-					<div class="panelTabs-body">
-						<div id="entityAmendTabId" class="contentModule">
-							<form:form id="entityFormId">
-								<div class="contentModule-section">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="formInputBox">
-												<div class="formInputBox_group">
-													<div class="form-group">
-														<input id="capitalId" name="capital" class="form-control"
-															placeholder="." value="" type="text" maxlength="20">
-														<label class="control-label" for=""> <spring:theme
-																code="general.capital" />
-														</label>
-														<div class="formInputBox-append">
-															<span class="formInputBox-text"><spring:theme
-																	code="general.sar" /></span>
+				<div class="expandableContent-main">
+					<div
+						class="js-panelTabs panelTabs panelTabs_iconsAndLabel panelTabs_separated panelTabs_tip_none  panelTabs_noPanelInBody panelTabs_white panelTabs_whiteNavigation panelTabs_noPaddingTop">
+						<div class="panelTabs-head" id="tab1">
+							<icon:registerinTab />
+							<span class="panelTabs-label"><spring:theme
+									code="license.entity" /></span>
+						</div>
+						<div class="panelTabs-body">
+							<div id="entityAmendTabId" class="contentModule">
+								<form:form id="entityFormId">
+									<div class="contentModule-section">
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="formInputBox">
+													<div class="formInputBox_group">
+														<div class="form-group">
+															<input id="capitalId" name="capital" class="form-control"
+																placeholder="." value="" type="text" maxlength="20">
+															<label class="control-label" for=""> <spring:theme
+																	code="general.capital" />
+															</label>
+															<div class="formInputBox-append">
+																<span class="formInputBox-text"><spring:theme
+																		code="general.sar" /></span>
+															</div>
 														</div>
 													</div>
-												</div>
-												<div class="help-block"></div>
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="formInputBox">
-												<div class="form-group">
-													<input id="labourId" name="labour" class="form-control"
-														placeholder="." value="" type="text" maxlength="20">
-													<label class="control-label" for=""> <spring:theme
-															code="license.labour" />
-													</label>
 													<div class="help-block"></div>
 												</div>
 											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="formInputBox">
-												<div class="form-group">
-													<input id="entityNameId" name="entityName"
-														class="form-control" placeholder="." value="" type="text"
-														<%--style="text-align: right;"--%>
-                                                           dir="rtl"
-														maxlength="80"> <label class="control-label"
-														for=""> <spring:theme code="license.entityname" />
-													</label>
-													<div class="help-block"></div>
+											<div class="col-sm-6">
+												<div class="formInputBox">
+													<div class="form-group">
+														<input id="labourId" name="labour" class="form-control"
+															placeholder="." value="" type="text" maxlength="20">
+														<label class="control-label" for=""> <spring:theme
+																code="license.labour" />
+														</label>
+														<div class="help-block"></div>
+													</div>
 												</div>
 											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="formSelectBox">
-												<div class="form-group">
-													<select id="legalStatusId" name="legalStatusId"
-														class="js-select2-oneColumn form-control">
-														<option></option>
-														<option value="ESTB" selected><spring:theme
-																code="license.estb" /></option>
-														<option value="LLC"><spring:theme
-																code="license.llc" /></option>
-														<option value="ILLC"><spring:theme
-																code="license.individualllc" /></option>
-													</select> <label class="control-label" for="legalStatusId"><spring:theme
-															code="license.legalstatus" /></label>
+											<div class="col-sm-6">
+												<div class="formInputBox">
+													<div class="form-group">
+														<input id="entityNameId" name="entityName"
+															class="form-control" placeholder="." value="" type="text"
+															<%--style="text-align: right;"--%>
+															dir="rtl"
+															maxlength="80"> <label class="control-label"
+															for=""> <spring:theme code="license.entityname" />
+														</label>
+														<div class="help-block"></div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="formSelectBox">
+													<div class="form-group">
+														<select id="legalStatusId" name="legalStatusId"
+															class="js-select2-oneColumn form-control">
+															<option></option>
+															<option value="ESTB" selected><spring:theme
+																	code="license.estb" /></option>
+															<option value="LLC"><spring:theme
+																	code="license.llc" /></option>
+															<option value="ILLC"><spring:theme
+																	code="license.individualllc" /></option>
+														</select> <label class="control-label" for="legalStatusId"><spring:theme
+																code="license.legalstatus" /></label>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
+								</form:form>
+								<div
+									class="contentModule-actions contentModule-actions_spaceBetween">
+									<button type="button"
+										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+										<spring:theme code="general.cancel" />
+									</button>
+									<button id="nextTabEntityBtnId" type="button"
+										class="btn btn-primary newAmendmentBtn">
+										<spring:theme code="general.proceed" />
+									</button>
 								</div>
-							</form:form>
+							</div>
+
+							<div id="entityHistoryTabId" class="contentModule">
+								<div class="contentModule-section" style="font-size: 15px;">
+									<div class="row">
+										<div class="col-sm-4" style="text-align: right">
+											<spring:theme code="general.capital" />
+										</div>
+										<div id="capitalNewId" class="col-sm-4"></div>
+										<div id="capitalOldId" class="col-sm-4"></div>
+									</div>
+
+									<div class="row">
+										<div class="col-sm-4" style="text-align: right">
+											<spring:theme code="license.labour" />
+										</div>
+										<div id="labourNewId" class="col-sm-4"></div>
+										<div id="labourOldId" class="col-sm-4"></div>
+									</div>
+
+									<div class="row">
+										<div class="col-sm-4" style="text-align: right">
+											<spring:theme code="license.entityname" />
+										</div>
+										<div id="entitynameNewId" class="col-sm-4"></div>
+										<div id="entitynameOldId" class="col-sm-4"></div>
+									</div>
+
+									<div class="row">
+										<div class="col-sm-4" style="text-align: right">
+											<spring:theme code="license.legalstatus" />
+										</div>
+										<div id="legalstatusNewId" class="col-sm-4"></div>
+										<div id="legalstatusOldId" class="col-sm-4"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="panelTabs-head" id="">
+							<icon:isic-activity />
+							<span class="panelTabs-label"><spring:theme
+									code="license.isicactivity" /></span>
+						</div>
+						<div class="panelTabs-body">
+							<p id="oldActivitiesId"></p>
+							<license:licenseBusinessActivitiesSection />
 							<div
 								class="contentModule-actions contentModule-actions_spaceBetween">
 								<button type="button"
 									class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
 									<spring:theme code="general.cancel" />
 								</button>
-								<button id="nextTabEntityBtnId" type="button"
+								<button id="nextTabIsicBtnId" type="button"
 									class="btn btn-primary newAmendmentBtn">
 									<spring:theme code="general.proceed" />
 								</button>
 							</div>
 						</div>
 
-						<div id="entityHistoryTabId" class="contentModule">
-							<div class="contentModule-section" style="font-size: 15px;">
-								<div class="row">
-									<div class="col-sm-4" style="text-align: right">
-										<spring:theme code="general.capital" />
+						<div class="panelTabs-head" id="tab2">
+							<icon:shareholder />
+							<span class="panelTabs-label"><spring:theme
+									code="license.apply.shareholders" /></span>
+						</div>
+						<div class="panelTabs-body">
+							<div class="contentModule">
+								<div class="contentModule-section">
+									<div class="tableModule tableModule_noOverflow">
+										<table class="tableModule-table">
+											<thead class="tableModule-head">
+												<tr>
+													<th><spring:theme code="general.name" /></th>
+													<th><spring:theme code="license.type" /></th>
+													<th><spring:theme code="license.percentage" /></th>
+													<th><spring:theme
+															code="text.account.profile.license.shareholders.nationality" /></th>
+													<th><spring:theme
+															code="text.account.profile.license.shareholders.legalStatus" /></th>
+													<th id="shareholderBtnColumnId"></th>
+												</tr>
+											</thead>
+											<tbody id="shareholdersId" class="tableModule-body">
+												<tr class="shareholderTemplate">
+													<td></td>
+													<td class="type"></td>
+													<td class="percentage"></td>
+													<td></td>
+													<td></td>
+													<td class="tableModule-bodyItem-action">
+														<button type="button"
+															class="btn btn_link editShareholderBtn"
+															data-toggle="modal"
+															<%--                                                        data-target="#shareholderEditModalId" data-backdrop="static"--%>
+															data-target="#shareholderModalId"
+															data-backdrop="static" data-keyboard="false">
+															<icon:edit />
+														</button>
+														<div class="deleteDropdown js-deleteDropdown">
+															<button type="button"
+																class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn">
+																<icon:remove />
+															</button>
+															<div class="deleteDropdown-drop">
+																<div class="deleteDropdown-text">
+																	<spring:theme
+																		code="text.account.profile.license.shareholders.deleteShareholder" />
+																</div>
+																<div class="deleteDropdown-actions">
+																	<button type="button"
+																		class="btn btn_outline btn_slim js-deleteDropdown-cancel">
+																		<spring:theme code="general.cancel" />
+																	</button>
+																	<button type="button"
+																		class="btn btn_slim removeShareholderBtn">
+																		<spring:theme code="general.delete" />
+																	</button>
+																</div>
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
-									<div id="capitalNewId" class="col-sm-4"></div>
-									<div id="capitalOldId" class="col-sm-4"></div>
+									<div
+										class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
+										<button type="button" class="btn btn-primary newShareholderBtn"
+											data-toggle="modal" data-target="#shareholderModalId"
+											data-backdrop="static" data-keyboard="false">
+											<spring:theme
+												code="text.account.profile.license.shareholders.newShareholder" />
+										</button>
+									</div>
 								</div>
 
-								<div class="row">
-									<div class="col-sm-4" style="text-align: right">
-										<spring:theme code="license.labour" />
-									</div>
-									<div id="labourNewId" class="col-sm-4"></div>
-									<div id="labourOldId" class="col-sm-4"></div>
-								</div>
-
-								<div class="row">
-									<div class="col-sm-4" style="text-align: right">
-										<spring:theme code="license.entityname" />
-									</div>
-									<div id="entitynameNewId" class="col-sm-4"></div>
-									<div id="entitynameOldId" class="col-sm-4"></div>
-								</div>
-
-								<div class="row">
-									<div class="col-sm-4" style="text-align: right">
-										<spring:theme code="license.legalstatus" />
-									</div>
-									<div id="legalstatusNewId" class="col-sm-4"></div>
-									<div id="legalstatusOldId" class="col-sm-4"></div>
+								<div
+									class="contentModule-actions contentModule-actions_spaceBetween">
+									<button type="button"
+										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+										<spring:theme code="general.cancel" />
+									</button>
+									<button id="nextTabShareholdersBtnId" type="button"
+										class="btn newAmendmentBtn">
+										<spring:theme code="general.proceed" />
+									</button>
 								</div>
 							</div>
 						</div>
-					</div>
-
-					<div class="panelTabs-head" id="">
-						<icon:isic-activity />
-						<span class="panelTabs-label"><spring:theme
-								code="license.isicactivity" /></span>
-					</div>
-					<div class="panelTabs-body">
-						<p id="oldActivitiesId"></p>
-						<license:licenseBusinessActivitiesSection />
-						<div
-							class="contentModule-actions contentModule-actions_spaceBetween">
-							<button type="button"
-								class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
-								<spring:theme code="general.cancel" />
-							</button>
-							<button id="nextTabIsicBtnId" type="button"
-								class="btn btn-primary newAmendmentBtn">
-								<spring:theme code="general.proceed" />
-							</button>
+						<div class="panelTabs-head" id="tab3">
+							<icon:branch />
+							<span class="panelTabs-label"><spring:theme
+									code="general.branch" /></span>
 						</div>
-					</div>
-
-					<div class="panelTabs-head" id="tab2">
-						<icon:shareholder />
-						<span class="panelTabs-label"><spring:theme
-								code="license.apply.shareholders" /></span>
-					</div>
-					<div class="panelTabs-body">
-						<div class="contentModule">
-							<div class="contentModule-section">
-								<div class="tableModule tableModule_noOverflow">
-									<table class="tableModule-table">
-										<thead class="tableModule-head">
-											<tr>
-												<th><spring:theme code="general.name" /></th>
-												<th><spring:theme code="license.type" /></th>
-												<th><spring:theme code="license.percentage" /></th>
-												<th><spring:theme
-														code="text.account.profile.license.shareholders.nationality" /></th>
-												<th><spring:theme
-														code="text.account.profile.license.shareholders.legalStatus" /></th>
-												<th id="shareholderBtnColumnId"></th>
-											</tr>
-										</thead>
-										<tbody id="shareholdersId" class="tableModule-body">
-											<tr class="shareholderTemplate">
+						<div class="panelTabs-body">
+							<div class="contentModule">
+								<div class="contentModule-section">
+									<div class="tableModule">
+										<table>
+											<tr class="branchTemplate">
+												<td><strong></strong></td>
 												<td></td>
-												<td class="type"></td>
-												<td class="percentage"></td>
 												<td></td>
 												<td></td>
 												<td class="tableModule-bodyItem-action">
-													<button type="button"
-														class="btn btn_link editShareholderBtn"
-														data-toggle="modal"
-														<%--                                                        data-target="#shareholderEditModalId" data-backdrop="static"--%>
-                                                        data-target="#shareholderModalId"
+													<button type="button" class="btn btn_link editBranchBtn"
+														data-toggle="modal" data-target="#branchModalId"
 														data-backdrop="static" data-keyboard="false">
 														<icon:edit />
+													</button>
+													<button type="button" class="btn btn_link viewBranchBtn"
+														data-toggle="modal" data-target="#branchModalId"
+														data-backdrop="static" data-keyboard="false">
+														<icon:view />
 													</button>
 													<div class="deleteDropdown js-deleteDropdown">
 														<button type="button"
@@ -355,7 +466,7 @@
 														<div class="deleteDropdown-drop">
 															<div class="deleteDropdown-text">
 																<spring:theme
-																	code="text.account.profile.license.shareholders.deleteShareholder" />
+																	code="text.account.profile.license.branches.deletethebranch" />
 															</div>
 															<div class="deleteDropdown-actions">
 																<button type="button"
@@ -363,7 +474,7 @@
 																	<spring:theme code="general.cancel" />
 																</button>
 																<button type="button"
-																	class="btn btn_slim removeShareholderBtn">
+																	class="btn btn_slim removeBranchBtn">
 																	<spring:theme code="general.delete" />
 																</button>
 															</div>
@@ -371,230 +482,154 @@
 													</div>
 												</td>
 											</tr>
-										</tbody>
-									</table>
+										</table>
+										<table id="branchesTableId" class="tableModule-table">
+											<thead class="tableModule-head">
+												<tr>
+													<th><spring:theme
+															code="text.account.profile.license.branches.type" /> <span
+														class="sort-icon"></span></th>
+													<th><spring:theme
+															code="text.account.profile.license.branches.name" /> <span
+														class="sort-icon"></span></th>
+													<th><spring:theme code="general.city" /> <span
+														class="sort-icon"></span></th>
+													<th><spring:theme
+															code="text.account.profile.license.branches.number" /> <span
+														class="sort-icon"></span></th>
+													<th id="branchesBtnColumnId"></th>
+												</tr>
+											</thead>
+											<tbody id="branchesId" class="tableModule-body"></tbody>
+										</table>
+									</div>
+									<div
+										class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
+										<button type="button" class="btn btn-primary newBranchBtn"
+											data-toggle="modal" data-target="#branchModalId"
+											data-backdrop="static" data-keyboard="false">
+											<spring:theme
+												code="text.account.profile.license.branches.newbranch" />
+										</button>
+									</div>
 								</div>
 								<div
-									class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-									<button type="button" class="btn btn-primary newShareholderBtn"
-										data-toggle="modal" data-target="#shareholderModalId"
-										data-backdrop="static" data-keyboard="false">
-										<spring:theme
-											code="text.account.profile.license.shareholders.newShareholder" />
+									class="contentModule-actions contentModule-actions_spaceBetween">
+									<button type="button"
+										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+										<spring:theme code="general.cancel" />
+									</button>
+									<button id="nextTabBranchesBtnId" type="button"
+										class="btn newAmendmentBtn">
+										<spring:theme code="general.proceed" />
 									</button>
 								</div>
 							</div>
-
-							<div
-								class="contentModule-actions contentModule-actions_spaceBetween">
-								<button type="button"
-									class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
-									<spring:theme code="general.cancel" />
-								</button>
-								<button id="nextTabShareholdersBtnId" type="button"
-									class="btn newAmendmentBtn">
-									<spring:theme code="general.proceed" />
-								</button>
-							</div>
 						</div>
-					</div>
-					<div class="panelTabs-head" id="tab3">
-						<icon:branch />
-						<span class="panelTabs-label"><spring:theme
-								code="general.branch" /></span>
-					</div>
-					<div class="panelTabs-body">
-						<div class="contentModule">
-							<div class="contentModule-section">
-								<div class="tableModule">
-									<table>
-										<tr class="branchTemplate">
-											<td><strong></strong></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td class="tableModule-bodyItem-action">
-												<button type="button" class="btn btn_link editBranchBtn"
-													data-toggle="modal" data-target="#branchModalId"
-													data-backdrop="static" data-keyboard="false">
-													<icon:edit />
-												</button>
-												<button type="button" class="btn btn_link viewBranchBtn"
-													data-toggle="modal" data-target="#branchModalId"
-													data-backdrop="static" data-keyboard="false">
-													<icon:view />
-												</button>
-												<div class="deleteDropdown js-deleteDropdown">
-													<button type="button"
-														class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn">
-														<icon:remove />
-													</button>
-													<div class="deleteDropdown-drop">
-														<div class="deleteDropdown-text">
-															<spring:theme
-																code="text.account.profile.license.branches.deletethebranch" />
-														</div>
-														<div class="deleteDropdown-actions">
-															<button type="button"
-																class="btn btn_outline btn_slim js-deleteDropdown-cancel">
-																<spring:theme code="general.cancel" />
-															</button>
-															<button type="button"
-																class="btn btn_slim removeBranchBtn">
-																<spring:theme code="general.delete" />
-															</button>
-														</div>
-													</div>
-												</div>
-											</td>
-										</tr>
-									</table>
-									<table id="branchesTableId" class="tableModule-table">
-										<thead class="tableModule-head">
-											<tr>
-												<th><spring:theme
-														code="text.account.profile.license.branches.type" /> <span
-													class="sort-icon"></span></th>
-												<th><spring:theme
-														code="text.account.profile.license.branches.name" /> <span
-													class="sort-icon"></span></th>
-												<th><spring:theme code="general.city" /> <span
-													class="sort-icon"></span></th>
-												<th><spring:theme
-														code="text.account.profile.license.branches.number" /> <span
-													class="sort-icon"></span></th>
-												<th id="branchesBtnColumnId"></th>
-											</tr>
-										</thead>
-										<tbody id="branchesId" class="tableModule-body"></tbody>
-									</table>
-								</div>
-								<div
-									class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-									<button type="button" class="btn btn-primary newBranchBtn"
-										data-toggle="modal" data-target="#branchModalId"
-										data-backdrop="static" data-keyboard="false">
-										<spring:theme
-											code="text.account.profile.license.branches.newbranch" />
-									</button>
-								</div>
-							</div>
-							<div
-								class="contentModule-actions contentModule-actions_spaceBetween">
-								<button type="button"
-									class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
-									<spring:theme code="general.cancel" />
-								</button>
-								<button id="nextTabBranchesBtnId" type="button"
-									class="btn newAmendmentBtn">
-									<spring:theme code="general.proceed" />
-								</button>
-							</div>
-						</div>
-					</div>
 
-					<div class="panelTabs-head" id="tab4">
-						<icon:productinTab />
-						<span class="panelTabs-label"><spring:theme
-								code="products.products" /></span>
-					</div>
-					<div class="panelTabs-body">
-						<div class="contentModule">
-							<div class="contentModule-section">
-								<div class="tableModule">
-									<table class="tableModule-table">
-										<thead class="tableModule-head">
-											<tr>
-												<th><spring:theme code="products.productid" /></th>
-												<th><spring:theme code="products.productdescription" /></th>
-												<th><spring:theme code="products.qty" /></th>
-												<th><spring:theme code="products.unit" /></th>
-												<th id="productsBtnColumnId"></th>
-											</tr>
-										</thead>
-										<tbody id="productsId" class="tableModule-body">
-											<tr class="productTemplate">
-												<td><strong></strong></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td class="tableModule-bodyItem-action">
-													<button type="button" class="btn btn_link editProductBtn"
-														data-toggle="modal" data-target="#productModalId"
-														data-backdrop="static" data-keyboard="false">
-														<icon:edit />
-													</button>
-													<div class="deleteDropdown js-deleteDropdown">
-														<button type="button"
-															class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn">
-															<icon:remove />
+						<div class="panelTabs-head" id="tab4">
+							<icon:productinTab />
+							<span class="panelTabs-label"><spring:theme
+									code="products.products" /></span>
+						</div>
+						<div class="panelTabs-body">
+							<div class="contentModule">
+								<div class="contentModule-section">
+									<div class="tableModule">
+										<table class="tableModule-table">
+											<thead class="tableModule-head">
+												<tr>
+													<th><spring:theme code="products.productid" /></th>
+													<th><spring:theme code="products.productdescription" /></th>
+													<th><spring:theme code="products.qty" /></th>
+													<th><spring:theme code="products.unit" /></th>
+													<th id="productsBtnColumnId"></th>
+												</tr>
+											</thead>
+											<tbody id="productsId" class="tableModule-body">
+												<tr class="productTemplate">
+													<td><strong></strong></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="tableModule-bodyItem-action">
+														<button type="button" class="btn btn_link editProductBtn"
+															data-toggle="modal" data-target="#productModalId"
+															data-backdrop="static" data-keyboard="false">
+															<icon:edit />
 														</button>
-														<div class="deleteDropdown-drop">
-															<div class="deleteDropdown-text">
-																<spring:theme code="products.deleteproduct" />
-															</div>
-															<div class="deleteDropdown-actions">
-																<button type="button"
-																	class="btn btn_outline btn_slim js-deleteDropdown-cancel">
-																	<spring:theme code="general.cancel" />
-																</button>
-																<button type="button"
-																	class="btn btn_slim removeProductBtn">
-																	<spring:theme code="general.delete" />
-																</button>
+														<div class="deleteDropdown js-deleteDropdown">
+															<button type="button"
+																class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn">
+																<icon:remove />
+															</button>
+															<div class="deleteDropdown-drop">
+																<div class="deleteDropdown-text">
+																	<spring:theme code="products.deleteproduct" />
+																</div>
+																<div class="deleteDropdown-actions">
+																	<button type="button"
+																		class="btn btn_outline btn_slim js-deleteDropdown-cancel">
+																		<spring:theme code="general.cancel" />
+																	</button>
+																	<button type="button"
+																		class="btn btn_slim removeProductBtn">
+																		<spring:theme code="general.delete" />
+																	</button>
+																</div>
 															</div>
 														</div>
-													</div>
-												</td>
-											</tr>
-										</tbody>
-									</table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div
+										class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
+										<button type="button" class="btn btn-primary newProductBtn">
+											<spring:theme code="license.newproduct" />
+										</button>
+										<input id="licenseType" type="hidden" />
+									</div>
 								</div>
 								<div
-									class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-									<button type="button" class="btn btn-primary newProductBtn">
-										<spring:theme code="license.newproduct" />
+									class="contentModule-actions contentModule-actions_spaceBetween">
+									<button type="button"
+										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+										<spring:theme code="general.cancel" />
 									</button>
-									<input id="licenseType" type="hidden" />
+									<button type="button"
+										class="btn validateLicenseBtn newAmendmentBtn">
+										<spring:theme code="general.submit" />
+									</button>
 								</div>
 							</div>
-							<div
-								class="contentModule-actions contentModule-actions_spaceBetween">
-								<button type="button"
-									class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
-									<spring:theme code="general.cancel" />
-								</button>
-								<button type="button"
-									class="btn validateLicenseBtn newAmendmentBtn">
-									<spring:theme code="general.submit" />
-								</button>
-							</div>
+
 						</div>
-
 					</div>
-				</div>
 
-				<div class="contentModule-commentsSection" id="ammendComments"
-					style="display: none;">
-					<div class="contentModule-headline contentModule-headline_small ">
-						<spring:theme code="text.account.followup.comments" />
-					</div>
-					<div class="commentModule">
-						<div class="commentModule-window">
-							<ul id="messagesListUL" class="messageList">
-								<li class="messageList-item">
-									<div class="messageList-img">
-										<span class="iconElement iconElement_expertProfile_white">
-											<icon:expertProfile />
-										</span>
-									</div>
-									<div class="messageList-content">
-										<div class="messageList-message">
-											<p id="commentMessage"></p>
+					<div class="contentModule-commentsSection" id="ammendComments"
+						style="display: none;">
+						<div class="contentModule-headline contentModule-headline_small ">
+							<spring:theme code="text.account.followup.comments" />
+						</div>
+						<div class="commentModule">
+							<div class="commentModule-window">
+								<ul id="messagesListUL" class="messageList">
+									<li class="messageList-item">
+										<div class="messageList-img">
+											<span class="iconElement iconElement_expertProfile_white">
+												<icon:expertProfile />
+											</span>
 										</div>
-									</div>
-								</li>
-							</ul>
+										<div class="messageList-content">
+											<div class="messageList-message">
+												<p id="commentMessage"></p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>

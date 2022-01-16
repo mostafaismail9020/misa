@@ -12314,7 +12314,7 @@ a.product__listing .product__listing--promo:focus {
   margin-top: 0;
   padding-top: 0;
 }
-.page-searchGrid .breadcrumb-section:not(.breadcrumb-plp),
+// .page-searchGrid .breadcrumb-section:not(.breadcrumb-plp),
 .page-productGrid .breadcrumb-section:not(.breadcrumb-plp) {
   display: none;
 }
@@ -14644,10 +14644,11 @@ form .forgotten-password {
 .page-updatePassword .login-logo a img {
   width: 160px;
 }
+// .page-updatePassword header,
+// .page-updatePassword footer,
 .page-login header,
-.page-updatePassword header,
-.page-login footer,
-.page-updatePassword footer {
+.page-login footer
+ {
   display: none;
 }
 .main__inner-wrapper {
@@ -28715,4 +28716,18 @@ select.form-control {
     transform: rotateX(180deg);
     width: 11px;
   }
+}
+.password-container{
+  border: 1px solid #CACACA;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.page-updatePassword .main__inner-wrapper .account-section{
+  margin-top: 0px;
+}
+
+.page-updatePassword{
+  background-color:#fff !important;
+  background-image:none !important;
 }

@@ -182,23 +182,80 @@ $(function() {
         if(menuData && menuData.navcategories && menuData.navservices) {
             //please also add adjustments to mobile navigation below accordingly
             var uiMenu = $(".sagiaNavigation-subNav").empty();
-            if(uiMenu.length) {
+            var uiServices = $(".sagiaNavigation-services").empty();
+            var uiServicesDesktop = $(".desktop_services").empty();
+            // var css = window.matchMedia("(max-width:768px)").matches ? "col-md-12" : "col-4";
+            var css = "col-md-4 col-12";
+            if(uiMenu.length || uiServices.length) {
+                
                 if (menuData.navcategories.FIRST && menuData.navcategories.FIRST.length) {
                     uiMenu.append('' +
                         '<li class="sagiaNavigation-subNav-title">' +
                         '   <a href="' + ACC.config.encodedContextPath + '/service-search"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="24px" viewBox="0 0 21 24" enable-background="new 0 0 21 24" xml:space="preserve"><path fill="#5CC83B" d="M18.098,13.83c-1.061-1.364-2.716-2.241-4.576-2.241c-3.201,0-5.795,2.594-5.795,5.794c0,2.099,1.116,3.937,2.787,4.954l-1.294,1.451H0V0h19.824v11.894L18.098,13.83z M16.458,4.484H3.163v1.4h13.295V4.484zM16.458,8.475H3.163v1.4h13.295V8.475z M6.8,12.338H3.163v1.4H6.8V12.338z M5.834,16.2H3.163v1.4h2.671V16.2z"></path> <path fill="#1C242C" d="M13.521,21.947c-2.517,0-4.564-2.047-4.564-4.563s2.047-4.563,4.564-4.563c2.516,0,4.562,2.047,4.562,4.563S16.037,21.947,13.521,21.947z M13.521,14.221c-1.744,0-3.164,1.419-3.164,3.163s1.419,3.163,3.164,3.163s3.162-1.419,3.162-3.163S15.266,14.221,13.521,14.221z"></path> <path fill="#1C242C" d="M18.805,23.685l-3.444-3.638l1.017-0.962l3.444,3.638L18.805,23.685z"></path></svg>'+getI18nText('navigation.text.overview')+'</a>' +
                         '</li>');
                     uiMenu.append(getCategoriesHtml(menuData.navcategories.FIRST));
+
+                    // console.log('--->',menuData.navcategories?.FIRST[0].description)
+                    // console.log('--->',menuData.navcategories["GOVERNMENTAL SERVICES"])
+                    console.log('--->',menuData.navservices["License Services"])
+                    var license_services = menuData.navservices["License Services"];
+                    
+
+                    var serviceInfo = "";
+                    console.log(license_services);
+                    var serviceInfo = "";
+                    for(var x=0;x<license_services.length;x++){
+                        serviceInfo += '<div id="serviceModule" class="serviceModule serviceModule_list mx-5">'
+                        serviceInfo += '    <div class="serviceModule-section">'
+                        serviceInfo += '        <div class="serviceModule-content">'
+                        serviceInfo += '            <div class="serviceModule-icon">'
+                        serviceInfo += '                <img src="${category.value[0].category.icon.url}">'
+                        serviceInfo += '            </div>'
+                        serviceInfo += '            <div class="serviceModule-description">'
+                        serviceInfo += '                <span class="serviceModule-headline cursor-pointer">' + license_services[x].name + '</span>'
+                        serviceInfo += '                <div class="serviceModule-detail">'
+                        serviceInfo += '                    <div class="w-75">'
+                        serviceInfo += '                        <p>'+ license_services[x].description  +'</p>'
+                        serviceInfo += '                    </div>'
+                        serviceInfo += '                    <div class=" w-25 serviceModule-request">'
+                        serviceInfo += '                        <a class="text-uppercase request-service" href="'+ license_services[x].menuUrl  +'">Request A Service</a>'
+                        serviceInfo += '                    </div>'
+                        serviceInfo += '                </div>'
+                        serviceInfo += '            </div>'
+                        serviceInfo += '        </div>'
+                        serviceInfo += ''
+                        serviceInfo += '    </div>'
+                        serviceInfo += '</div>'
+                    }
+
+                    uiServices.append('<li class="nav-item '+ css +'"> <div class="service-wrapper mx-3"> <a class="nav-link active" id="pills-licensing-tab" data-toggle="pill" href="#licensing-service" role="tab" aria-controls="pills-licensing" aria-selected="true"> <div class="INS_EPM_border_set text-center p-3"> <img src="/_ui/responsive/common/images/B2C/Services icon 1.png" alt="LICENSING SERVICES" class="text-center service-icon-1"/><img src="/_ui/responsive/common/images/B2C/Services icon 2.png" alt="LICENSING SERVICES" class="text-center service-icon-2"/><span>' + menuData.navcategories.FIRST[0].name + '</span>  </div> </a></li>');
+                    uiServices.append('<li class="mobile_services"><div class="tab-content" id="pills-tabContent"><div class="tab-pane fade service-wrapper show active service_tab_pane_show" id="licensing-service-1" role="tabpanel" aria-labelledby="pills-licensing-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">'+ menuData.navcategories?.FIRST[0].description + '</p>'+ serviceInfo +'</div></div></div></li>')
+                    uiServicesDesktop.append('<div class="tab-pane fade service-wrapper show service_tab_pane_show active" id="licensing-service" role="tabpanel" aria-labelledby="pills-licensing-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">'+ menuData.navcategories?.FIRST[0].description + '</p>'+ serviceInfo +'</div></div>')
                 }
 
                 if (menuData.navcategories["GOVERNMENTAL SERVICES"] && menuData.navcategories["GOVERNMENTAL SERVICES"].length) {
                     uiMenu.append('<li class="sagiaNavigation-subNav-subtitle">'+getI18nText("sagia.governmental.services")+'</li>');
                     uiMenu.append(getCategoriesHtml(menuData.navcategories["GOVERNMENTAL SERVICES"]));
+
+
+                    var serviceInfo = "";
+
+
+                    uiServices.append('<li class="nav-item '+ css +'"> <div class="service-wrapper mx-3"> <a class="nav-link " id="pills-govt-tab" data-toggle="pill" href="#govt-service" role="tab" aria-controls="pills-govt" aria-selected="true"> <div class="INS_EPM_border_set text-center p-3"> <img src="/_ui/responsive/common/images/B2C/Services icon 1.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-1"/><img src="/_ui/responsive/common/images/B2C/Services icon 2.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-2"/><span>' + getI18nText("sagia.governmental.services") + '</span>  </div> </a></li>');
+                    uiServices.append('<li class="mobile_services"><div class="tab-content" id="pills-tabContent"><div class="tab-pane fade service-wrapper show  service_tab_pane_show" id="govt-service-1" role="tabpanel" aria-labelledby="pills-govt-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the GOVERNMENTAL SERVICES</p>'+ serviceInfo +'</div></div></div></li>')
+                    uiServicesDesktop.append('<div class="tab-pane fade service-wrapper show service_tab_pane_show" id="govt-service" role="tabpanel" aria-labelledby="pills-govt-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the GOVERNMENTAL SERVICES</p>'+ serviceInfo +'</div></div> ')
                 }
 
                 if (menuData.navcategories["SAGIA SERVICES"] && menuData.navcategories["SAGIA SERVICES"].length) {
                     uiMenu.append('<li class="sagiaNavigation-subNav-subtitle">'+getI18nText("sagia.services")+'</li>');
                     uiMenu.append(getCategoriesHtml(menuData.navcategories["SAGIA SERVICES"]));
+
+
+                    var serviceInfo = "";
+
+                    uiServices.append('<li class="nav-item '+ css +'"><div class="service-wrapper mx-3"> <a class="nav-link " id="pills-misa-tab" data-toggle="pill" href="#misa-service" role="tab" aria-controls="pills-misa" aria-selected="true"> <div class="INS_EPM_border_set text-center p-3"> <img src="/_ui/responsive/common/images/B2C/Services icon 1.png" alt="MISA SERVICES" class="text-center service-icon-1"/><img src="/_ui/responsive/common/images/B2C/Services icon 2.png" alt="MISA SERVICES" class="text-center service-icon-2"/><span>' + getI18nText("sagia.services") + '</span></div></a></li>');
+                    uiServices.append('<li class="mobile_services"><div class="tab-content" id="pills-tabContent"><div class="tab-pane fade service-wrapper show service_tab_pane_show" id="misa-service-1" role="tabpanel" aria-labelledby="pills-misa-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the MISA SERVICES</p>'+ serviceInfo +'</div></div></div></li>')
+                    uiServicesDesktop.append('<div class="tab-pane fade service-wrapper show service_tab_pane_show" id="misa-service" role="tabpanel" aria-labelledby="pills-misa-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the MISA SERVICES</p>'+ serviceInfo +'</div></div>')
                 }
             }
 
@@ -207,6 +264,7 @@ $(function() {
                 for(var indexNavServices in menuData.navservices) {
                     if(menuData.navservices.hasOwnProperty(indexNavServices)) {
                         var navServices = menuData.navservices[indexNavServices];
+                        // console.log('navServices==>',navServices)
                         var htmlContentForNavServices = '<div class="sagiaNavigation-subRight-pane js-sagiaNavigation-subRight-pane" data-submenu="' + indexNavServices + '">';
                         for(var indexNavServiceItem in navServices) {
                             if(navServices.hasOwnProperty(indexNavServiceItem)) {
@@ -271,7 +329,7 @@ $(function() {
                 }
             }          
 
-            if(uiMenu.length || uiMenuRight.length) {
+            if(uiMenu.length || uiMenuRight.length || uiServices.length) {
                 SAGIA.sagiaNavigation.init();
                 $('.sagiaNavigation-list-hasSub .sagiaNavigation-subPane .temporaryLoadingMessage').remove();
             }
@@ -566,3 +624,11 @@ $(function() {
 });
 
 
+$(document).on('click',".services-category-list .nav .nav-link",function(){
+  $(".service_tab_pane_show").removeClass("show").removeClass("active");
+    $("#"+$(this).attr('href').replace("#","")).addClass("show").addClass("active");
+    $("#"+$(this).attr('href').replace("#","")+"1").addClass("show").addClass("active");
+
+    $(".services-category-list .nav .nav-link").removeClass("active");
+    $(this).addClass("active");
+});

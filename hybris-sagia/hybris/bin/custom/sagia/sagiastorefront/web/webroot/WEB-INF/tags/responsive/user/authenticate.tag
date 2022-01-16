@@ -11,10 +11,10 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 
 
-		<div class="contentModule-headline contentModule-headline_small mobile-verify-text auth-mobile">
-		<c:if test="${empty isEnableTwoFactorAuthService}">
+		<div class="contentModule-headline_1 contentModule-headline_small mobile-verify-text auth-mobile">
+		<!-- <c:if test="${empty isEnableTwoFactorAuthService}">
 			<spring:theme code="text.authenticate.code.description"/>
-		</c:if>
+		</c:if> -->
 		</div>
 		<div class="messageList-message row reg-para-text">
 			<c:if test="${isEnableTwoFactorAuthService}">

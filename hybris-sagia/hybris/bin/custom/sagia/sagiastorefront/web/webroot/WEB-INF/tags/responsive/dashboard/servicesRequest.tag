@@ -7,7 +7,7 @@
 
 <c:set var="pageIsDashboard" value="${fn:containsIgnoreCase(requestScope['javax.servlet.forward.request_uri'], 'dashboard')}"/>
 
-<div class="dashboardWidget js-dashboardWidget">
+<div class="dashboardWidget js-dashboardWidget no-border">
     <c:if test="${editable}">
         <dashboard:addAndRemoveComponent checkboxIndex="3"/>
     </c:if>

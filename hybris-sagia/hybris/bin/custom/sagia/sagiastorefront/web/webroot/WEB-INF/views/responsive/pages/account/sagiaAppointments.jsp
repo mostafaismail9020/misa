@@ -56,13 +56,13 @@
         <div class="container">
             <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
                 <div>
-                    <a href="${encodedContextPath}/appointments/create" class="btn btn--primary btn--half-radius btn--small"><spring:theme code="appointments.makeanappointment"/></a>
+                    <a href="${encodedContextPath}/appointments/create" class="btn-dashboard"><spring:theme code="appointments.makeanappointment"/></a>
                 </div>
 
                 <form action="${encodedContextPath}/appointments">
                 <div class="searchInputBox searchInputBox_limited">
                     <input name="searchParameter" id="searchParameter" class="searchInputBox-input" type="text" placeholder="" value="${searchParameter}"/>
-                    <button class="btn btn_link searchInputBox-switchModeBtn no-background" type="submit">Search</button>
+                    <button class="btn-search searchInputBox-switchModeBtn no-background" type="submit">Search</button>
                 </div>
                 </form>
             </div>

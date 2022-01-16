@@ -4,7 +4,7 @@
 <%@ taglib prefix="dashboard" tagdir="/WEB-INF/tags/responsive/dashboard" %>
 <%@ attribute name="editable" required="false" type="java.lang.Boolean"%>
 
-<div class="dashboardWidget js-dashboardWidget">
+<div class="dashboardWidget js-dashboardWidget no-border">
     <c:if test="${editable}">
         <dashboard:addAndRemoveComponent checkboxIndex="7"/>
     </c:if>

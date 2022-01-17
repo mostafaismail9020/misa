@@ -14,12 +14,12 @@
     border-radius: @border-radius;
     opacity: 1;
 
-    > img{
+    img{
         display: flex;
         margin: auto;
     }
 
-    > span{
+    span.licensing-heading{
         text-align: center;
         font-weight: 600;
         font-size: 30px;
@@ -33,7 +33,7 @@
         margin-top: 12%;
     }
 
-    > .nav-link::after{
+    .nav-link::after{
         content: "+";
         position: absolute;
         left: 45%;
@@ -51,7 +51,7 @@
         align-items: center;
         cursor: pointer;
     }
-    > .nav-link{
+    .nav-link{
         .service-icon-1{
             display: block;
         }
@@ -60,14 +60,14 @@
         }
     }
 
-    > .nav-link.active:after{
+    .nav-link.active:after{
         content: "-";
         position: absolute;
         background: @color-primary 0% 0% no-repeat padding-box;
         box-shadow: 0px 0px 10px #0000007d;
         color: #ffffff;
     }
-    > .nav-link.active{
+    .nav-link.active{
         border: 1px solid @color-primary;
         border-radius: @border-radius;
 

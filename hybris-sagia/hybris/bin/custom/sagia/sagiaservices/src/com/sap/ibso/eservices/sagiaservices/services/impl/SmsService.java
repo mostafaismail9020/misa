@@ -16,6 +16,11 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 
+import de.hybris.platform.sap.core.configuration.http.HTTPDestinationService;
+import de.hybris.platform.sap.core.configuration.http.impl.HTTPDestinationServiceImpl;
+import de.hybris.platform.sap.core.configuration.model.SAPHTTPDestinationModel;
+import javax.annotation.Resource;
+
 /**
  * SmsService
  * @package com.sap.ibso.eservices.sagiaservices.services.impl
@@ -28,6 +33,11 @@ public class SmsService {
     private HttpURLConnectionService httpURLConnectionService;
     private SagiaConfigurationFacade sagiaConfigurationFacade;
 
+    @Resource(name="sapCoreHTTPDestinationService")
+    HTTPDestinationServiceImpl httpDestinationService;
+
+    private static String sagiaSMSDestinationSystem = "SMS";
+
     private static final String REQUEST_TYPE_GET = "GET";
 
     /**
@@ -37,15 +47,27 @@ public class SmsService {
      * @throws IOException exception
      */
     public void send(String mobileNumber, String code) throws IOException {
-        String urlString = new StringBuilder(sagiaConfigurationFacade.getSmsServiceUrl())
+
+        SAPHTTPDestinationModel sapHttpDestination = httpDestinationService.getHttpDestinationsByName(sagiaSMSDestinationSystem);
+
+       /* String urlString = new StringBuilder(sagiaConfigurationFacade.getSmsServiceUrl())
                 .append("username=").append(sagiaConfigurationFacade.getSmsServiceUser())
                 .append("&password=").append(sagiaConfigurationFacade.getSmsServicePassword())
                 .append("&Sender=").append("MISA")
                 .append("&Text=").append("Your%20OTP%20code%20is%3A").append(code)
                 .append("%20to%20login%20Investor%20Eservices")
                 .append("&number=").append(mobileNumber).toString();
-                
-                
+         */
+
+
+        String urlString = new StringBuilder(sapHttpDestination.getTargetURL())
+                .append("username=").append(sapHttpDestination.getUserid())
+                .append("&password=").append(sapHttpDestination.getPassword())
+                .append("&Sender=").append("MISA")
+                .append("&Text=").append("Your%20OTP%20code%20is%3A").append(code)
+                .append("%20to%20login%20Investor%20Eservices")
+                .append("&number=").append(mobileNumber).toString();
+
 //        HttpURLConnectionResponse httpURLConnectionResponse =
 //                httpURLConnectionService.execute(new HttpURLConnectionRequest(REQUEST_TYPE_GET, new URL(url)));
 //        String response = new String(httpURLConnectionResponse.getPayload());
@@ -54,37 +76,37 @@ public class SmsService {
 //                || httpURLConnectionResponse.getResponseCode() != 200) {
 //            throw new IOException("SMS Could not be sent");
 //        }
-        LOG.info("The SMS URL formed for Phone number " +mobileNumber+ " is "+ urlString);
+        LOG.info("The SMS URL is Created for Phone number " +mobileNumber);
         URL url = new URL(urlString);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
-       
+
         // By default it is GET request
         con.setRequestMethod(REQUEST_TYPE_GET);
-       
+
         //add request header
         //con.setRequestProperty("User-Agent", USER_AGENT);
-       
+
         int responseCode = con.getResponseCode();
         LOG.info("Response code : "+ responseCode);
         if(responseCode != 200) {
-    	  	throw new IOException("SMS Could not be sent");
-  		}
-       
+            throw new IOException("SMS Could not be sent");
+        }
+
         // Reading response from input Stream
 //        BufferedReader in = new BufferedReader(
 //                new InputStreamReader(con.getInputStream()));
 //        String output;
 //        StringBuffer response = new StringBuffer();
-//       
+//
 //        while ((output = in.readLine()) != null) {
 //         response.append(output);
 //        }
 //        in.close();
-//       
+//
 //        //printing result from response
 //        LOG.info(response.toString());
     }
-    
+
     /**
      * sends sms
      * @param mobileNumber mobileNumber
@@ -92,30 +114,41 @@ public class SmsService {
      * @throws IOException exception
      */
     public void sendSmsInvestSaudi(String mobileNumber, String code) throws IOException {
-        String urlString = new StringBuilder(sagiaConfigurationFacade.getSmsServiceUrl())
+
+        SAPHTTPDestinationModel sapHttpDestination = httpDestinationService.getHttpDestinationsByName(sagiaSMSDestinationSystem);
+
+/*        String urlString = new StringBuilder(sagiaConfigurationFacade.getSmsServiceUrl())
                 .append("username=").append(sagiaConfigurationFacade.getSmsServiceUser())
                 .append("&password=").append(sagiaConfigurationFacade.getSmsServicePassword())
                 .append("&Sender=").append("MISA")
                 .append("&Text=").append("Your%20OTP%20code%20is%3A").append(code)
                 .append("%20to%20login%20Invest%20Saudi")
+                .append("&number=").append(mobileNumber).toString();*/
+
+        String urlString = new StringBuilder(sapHttpDestination.getTargetURL())
+                .append("username=").append(sapHttpDestination.getUserid())
+                .append("&password=").append(sapHttpDestination.getPassword())
+                .append("&Sender=").append("MISA")
+                .append("&Text=").append("Your%20OTP%20code%20is%3A").append(code)
+                .append("%20to%20login%20Investor%20Eservices")
                 .append("&number=").append(mobileNumber).toString();
-                
-        LOG.info("The SMS URL formed for Phone number " +mobileNumber+ " is "+ urlString);
+
+        LOG.info("The SMS URL is Created for Phone number " +mobileNumber);
         URL url = new URL(urlString);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
-       
+
         // By default it is GET request
         con.setRequestMethod(REQUEST_TYPE_GET);
-       
+
         //add request header
         //con.setRequestProperty("User-Agent", USER_AGENT);
-       
+
         int responseCode = con.getResponseCode();
         LOG.info("Response code : "+ responseCode);
         if(responseCode != 200) {
-    	  	throw new IOException("SMS Could not be sent");
-  		}
-       
+            throw new IOException("SMS Could not be sent");
+        }
+
     }
 
     /**

@@ -46,93 +46,93 @@
 						</div>
 					</div>
 					<div class="second" id="header">
-			            <div class="nav-menu">
-			              	<div class="logo mr-auto">
-				                <cms:pageSlot position="SiteLogo" var="logo" limit="1">
-				                  <cms:component component="${logo}" element="div" class="yComponentWrapper"/>
-				                </cms:pageSlot>
-				            </div>
-			         		<ul>
-				                <c:forEach items="${component.navigationNode.children}" var="childLevel1" varStatus="childLevel1index">
-				                  	<c:set var="childlevel1link" value="${childLevel1.cmsLink}" />
-				                  	<li class="nav-item dropdown" >
-					                    <c:choose>
-					                      	<c:when test="${not empty childlevel1link.url}">
-						                        <img src="/investsaudistorefront/_ui/responsive/common/images/mobile-navarrow.png" class="d-none mobile-nav">
-						                        <cms:component component="${childlevel1link}" evaluateRestriction="true" element="div"
-						                        		class="nav-link dropdown dropdown-toggle" />
-					                      	</c:when>
-					                      	<c:otherwise>
-					                        	<img src="/investsaudistorefront/_ui/responsive/common/images/mobile-navarrow.png" class="d-none mobile-nav">
-					                        	<cms:component component="${childlevel1link}" evaluateRestriction="true" element="div"
-					                          			class="nav-link dropdown-toggle" />
-					                      	</c:otherwise>
-					                    </c:choose>
-					                    <ul class="dropdown-menu dropdown-large">
-					                      	<div class="row g-3">
-						                        <div class="col-md-5 menu-img-item">
-						                          	<img class="img-fluid w-100" src="${fn:escapeXml(childLevel1.nodeImage.url)}" alt="">
-						                          	<p>${childLevel1.nodeDescription}</p>
-						                        </div>
-	
-												<div class="col-md-4 menu-img-item">
-							                        <c:if test="${not empty childLevel1.children}">
-							                          	<c:forEach items="${childLevel1.children}" var="childLevel2" varStatus="childLevel2index">
-							                            	<c:set var="childlevel2link" value="${childLevel2.cmsLink}" />
-							                            	<c:choose>
-							                              		<c:when test="${not empty childlevel2link.url}">
-							                                		<li class="third-menu">
-							                                			<c:if test="${childlevel2link.linkName eq 'VIRTUAL MEETINGS'}">
-									                                		<a class="get_submenus" href="${childlevel2link.url}"
-									                                    			title="${childlevel2link.linkName}">${childlevel2link.linkName}</a>
-									                                    </c:if>        
-									                                    <c:if test="${childlevel2link.linkName ne 'VIRTUAL MEETINGS'}">
-									                                    	<a class="get_submenus" href="${encodedContextPath}${childlevel2link.url}"
-									                                    			title="${childlevel2link.linkName}">${childlevel2link.linkName}</a>
-									                                    </c:if>                    
-									                                  	<c:if test="${not empty childLevel2.links}">
-									                                    	<ul class="thirdlevel-menu">
-									                                      		<c:forEach items="${childLevel2.links}" var="childlevel3link">
-											                                        <c:choose>
-											                                          	<c:when test="${not empty childlevel3link.url}">
-											                                            	<li><a class="get_submenus" href="${encodedContextPath}${childlevel3link.url}">${childlevel3link.linkName}</a></li>                                            
-											                                          	</c:when>
-											                                          	<c:otherwise>
-											                                            	<li><a class="get_submenus" href="${encodedContextPath}${portal.cmsLinkUrl(childlevel3link)}">${childlevel3link.linkName}</a></li>
-											                                          	</c:otherwise>
-											                                        </c:choose>
-									                                      		</c:forEach>
-									                                    	</ul>
-					                                  					</c:if>
-					                                				</li>
-					                              				</c:when>
-						                              			<c:otherwise>
-								                              		<li>
-										                                <cms:component component="${childlevel2link}" evaluateRestriction="true" element="span" class="get_submenus" />
-										                                <c:if test="${not empty childLevel2.links}">
-										                                  	<ul class="submenu dropdown-menu get_submenus">
-										                                    	<c:forEach items="${childLevel2.links}" var="childlevel3link">
-											                                      	<c:choose>
-												                                        <c:when test="${not empty childlevel3link.url}">
-												                                          	<li><a class="get_submenus" href="${encodedContextPath}${childlevel3link.url}">${childlevel3link.linkName}</a></li>
-												                                        </c:when>
-												                                        <c:otherwise>
-												                                          	<li><a class="get_submenus" href="${encodedContextPath}${portal.cmsLinkUrl(childlevel3link)}">${childlevel3link.linkName}</a></li>
-												                                        </c:otherwise>
-												                                      </c:choose>
-											                                    </c:forEach>
-										                                  	</ul>
-										                                </c:if>
-								                              		</li>
-								                            	</c:otherwise>
-								                          	</c:choose>
-								                        </c:forEach>
-								                    </c:if>
-								            	</div>
-				                      		</div>
-				                    	</ul>
-				                  	</li>
-				                </c:forEach>
+								<div class="nav-menu">
+										<div class="logo mr-auto">
+											<cms:pageSlot position="SiteLogo" var="logo" limit="1">
+												<cms:component component="${logo}" element="div" class="yComponentWrapper"/>
+											</cms:pageSlot>
+									</div>
+								<ul>
+								<c:forEach items="${component.navigationNode.children}" var="childLevel1" varStatus="childLevel1index">
+										<c:set var="childlevel1link" value="${childLevel1.cmsLink}" />
+										<li class="nav-item dropdown" >
+											<c:choose>
+													<c:when test="${not empty childlevel1link.url}">
+														<img src="/investsaudistorefront/_ui/responsive/common/images/mobile-navarrow.png" class="d-none mobile-nav">
+														<cms:component component="${childlevel1link}" evaluateRestriction="true" element="div"
+																class="nav-link dropdown dropdown-toggle" />
+													</c:when>
+													<c:otherwise>
+														<img src="/investsaudistorefront/_ui/responsive/common/images/mobile-navarrow.png" class="d-none mobile-nav">
+														<cms:component component="${childlevel1link}" evaluateRestriction="true" element="div"
+																	class="nav-link dropdown-toggle" />
+													</c:otherwise>
+											</c:choose>
+											<ul class="dropdown-menu dropdown-large">
+													<div class="row g-3">
+														<div class="col-md-5 menu-img-item">
+																<img class="img-fluid w-100" src="${fn:escapeXml(childLevel1.nodeImage.url)}" alt="">
+																<p>${childLevel1.nodeDescription}</p>
+														</div>
+
+								<div class="col-md-4 menu-img-item">
+															<c:if test="${not empty childLevel1.children}">
+																	<c:forEach items="${childLevel1.children}" var="childLevel2" varStatus="childLevel2index">
+																		<c:set var="childlevel2link" value="${childLevel2.cmsLink}" />
+																		<c:choose>
+																				<c:when test="${not empty childlevel2link.url}">
+																					<li class="third-menu">
+																						<c:if test="${childlevel2link.linkName eq 'VIRTUAL MEETINGS'}">
+																							<a class="get_submenus" href="${childlevel2link.url}"
+																										title="${childlevel2link.linkName}">${childlevel2link.linkName}</a>
+																							</c:if>
+																							<c:if test="${childlevel2link.linkName ne 'VIRTUAL MEETINGS'}">
+																								<a class="get_submenus" href="${encodedContextPath}${childlevel2link.url}"
+																										title="${childlevel2link.linkName}">${childlevel2link.linkName}</a>
+																							</c:if>
+																							<c:if test="${not empty childLevel2.links}">
+																								<ul class="thirdlevel-menu">
+																										<c:forEach items="${childLevel2.links}" var="childlevel3link">
+																											<c:choose>
+																													<c:when test="${not empty childlevel3link.url}">
+																														<li><a class="get_submenus" href="${encodedContextPath}${childlevel3link.url}">${childlevel3link.linkName}</a></li>
+																													</c:when>
+																													<c:otherwise>
+																														<li><a class="get_submenus" href="${encodedContextPath}${portal.cmsLinkUrl(childlevel3link)}">${childlevel3link.linkName}</a></li>
+																													</c:otherwise>
+																											</c:choose>
+																										</c:forEach>
+																								</ul>
+																							</c:if>
+																					</li>
+																				</c:when>
+																				<c:otherwise>
+																					<li>
+																						<cms:component component="${childlevel2link}" evaluateRestriction="true" element="span" class="get_submenus" />
+																						<c:if test="${not empty childLevel2.links}">
+																								<ul class="submenu dropdown-menu get_submenus">
+																									<c:forEach items="${childLevel2.links}" var="childlevel3link">
+																											<c:choose>
+																												<c:when test="${not empty childlevel3link.url}">
+																														<li><a class="get_submenus" href="${encodedContextPath}${childlevel3link.url}">${childlevel3link.linkName}</a></li>
+																												</c:when>
+																												<c:otherwise>
+																														<li><a class="get_submenus" href="${encodedContextPath}${portal.cmsLinkUrl(childlevel3link)}">${childlevel3link.linkName}</a></li>
+																												</c:otherwise>
+																											</c:choose>
+																									</c:forEach>
+																								</ul>
+																						</c:if>
+																					</li>
+																			</c:otherwise>
+																		</c:choose>
+																</c:forEach>
+														</c:if>
+											</div>
+													</div>
+											</ul>
+										</li>
+								</c:forEach>
 							</ul>
 						</div>
 					</div>
@@ -152,18 +152,16 @@
       $('.mt-breadcrumb').addClass('z-none');
       $('body:not(.page-homepage) .banner-heading').addClass('z-none');
     });
-    /* $('main').click(function(){
-      if($('.nav-item.dropdown').hasClass('open')) {
-        $(".mt-breadcrumb.z-none").removeClass('z-none');
-        $("body:not(.page-homepage) .banner-heading.z-none").removeClass('z-none');
-      }
-    }); */
   });
   $(document).ready(function () {
     $(".breadcrumb-plp").addClass('d-none');
-    if ($('.nav-item.dropdown div').length > 0) {
-      $("nav-item.dropdown").addClass('d-none');
-    }
+    var header_menu = $("#header .nav-menu >ul >li");
+		for(var i=0;i<header_menu.length;i++){
+		var $this = $(header_menu)[i];
+		var size = $($this).children('div.nav-link.dropdown.dropdown-toggle').length;
+		if (size === 0)
+			$($this).hide();
+		}
   });
   $(document).ready(function(){
     $(window).scroll(function() {

@@ -330,6 +330,8 @@ public class InvestorDashboardController extends SagiaAbstractPageController {
         }
         model.addAttribute("MIGS_Session_JS", configurationService.getConfiguration().getString(SagiaConstants.MIGS_SESSION_URL));
         model.addAttribute("userOpportunityTickets", sagiaCustomerFacade.getUserRaisedOpportunities(((CustomerModel) userService.getCurrentUser()).getContactEmail()));
+        CustomerModel customerModel = (CustomerModel) userService.getCurrentUser();
+        model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_DASHBOARD_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_DASHBOARD_CMS_PAGE));
         return getViewForPage(model);

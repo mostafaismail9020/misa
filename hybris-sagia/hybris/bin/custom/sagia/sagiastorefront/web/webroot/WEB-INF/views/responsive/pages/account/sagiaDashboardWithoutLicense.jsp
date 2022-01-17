@@ -54,7 +54,7 @@
                             <div class="dashboardUser-entry">
                                 <div class="dashboardUser-label dashboardUser-label-xs"><spring:theme code="general.company"/></div>
                                 <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                                <div>Last Login: <span class="clr_gld">02/11/2021 10:00AM</span></div>
+                                <div>Last Login: <span class="clr_gld">${customerLastLogon}</span></div>
                             </div>
                         </div>
                     </div>

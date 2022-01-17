@@ -59,9 +59,7 @@ public class ServiceSearchController extends SagiaAbstractPageController {
             throws  CMSItemNotFoundException {
 
         Map<String, List<SagiaServiceData>> serviceResultList = sagiaSearchFacade.getSagiaServicesByCategoryLabel(categoryLabel);
-        CustomerModel customerModel = (CustomerModel) userService.getCurrentUser();
         model.addAttribute("SagiaServices",serviceResultList);
-        model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());
         storeCmsPageInModel(model, getContentPageForLabelOrId(SERVICE_SEARCH_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SERVICE_SEARCH_CMS_PAGE));
         return getViewForPage(model);

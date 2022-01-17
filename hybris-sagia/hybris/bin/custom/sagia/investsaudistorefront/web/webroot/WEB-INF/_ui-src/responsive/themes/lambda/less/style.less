@@ -5026,10 +5026,20 @@ a.thumbnail.active {
   color: #3c3c3c;
 }
 .alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 0;
+  height: 120px;
+  background-color: #D1E4FF;
+  font-size: 26px;
+  line-height: 30px;
+  width: 90%;
+  margin: auto auto 20px auto;
+  border-radius: 18px;
+  justify-content: center;
+  text-align: left;
+  padding: 26px;
+
+  >img{
+    margin-right: 20px;
+  }
 }
 .alert h4 {
   margin-top: 0;
@@ -5052,8 +5062,11 @@ a.thumbnail.active {
 .alert-dismissable .close,
 .alert-dismissible .close {
   position: relative;
-  top: -2px;
-  right: -21px;
+  // top: -2px;
+  // right: -21px;
+  opacity: 1;
+  top: -16px !important;
+  right: -16px !important;
   color: inherit;
 }
 .alert-success {
@@ -12314,8 +12327,9 @@ a.product__listing .product__listing--promo:focus {
   margin-top: 0;
   padding-top: 0;
 }
-// .page-searchGrid .breadcrumb-section:not(.breadcrumb-plp),
-.page-productGrid .breadcrumb-section:not(.breadcrumb-plp) {
+// .page-productGrid .breadcrumb-section:not(.breadcrumb-plp)
+.page-searchGrid .breadcrumb-section:not(.breadcrumb-plp)
+ {
   display: none;
 }
 .product__facet {
@@ -14630,8 +14644,8 @@ form .forgotten-password {
     margin-bottom: 45px;
   }
 }
-.page-login,
-.page-updatePassword {
+// .page-updatePassword {
+  .page-login{
   padding-top: 50px !important;
   background-color: rgba(29, 36, 44, 0.12);
   background-position: bottom center;
@@ -14645,10 +14659,10 @@ form .forgotten-password {
   width: 160px;
 }
 // .page-updatePassword header,
-// .page-updatePassword footer,
+// .page-updatePassword footer ,
 .page-login header,
 .page-login footer
- {
+{
   display: none;
 }
 .main__inner-wrapper {
@@ -28717,6 +28731,7 @@ select.form-control {
     width: 11px;
   }
 }
+
 .password-container{
   border: 1px solid #CACACA;
   border-bottom-left-radius: 15px;
@@ -28726,12 +28741,6 @@ select.form-control {
 .page-updatePassword .main__inner-wrapper .account-section{
   margin-top: 0px;
 }
-
-.page-updatePassword{
-  background-color:#fff !important;
-  background-image:none !important;
-}
-
 
 .most-popular-area .blogDate{
   display: none;

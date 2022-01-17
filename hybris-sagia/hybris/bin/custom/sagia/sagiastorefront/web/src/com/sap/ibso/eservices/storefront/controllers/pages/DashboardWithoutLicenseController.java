@@ -128,7 +128,8 @@ public class DashboardWithoutLicenseController extends SagiaAbstractPageControll
         model.addAttribute("userOpportunityTickets", sagiaCustomerFacade.getUserRaisedOpportunities(((CustomerModel) userService.getCurrentUser()).getContactEmail()));
 
         //model.addAttribute("displayTutorial", sagiaCustomerFacade.displayDashboardNoLicenseTutorial());
-
+        CustomerModel customerModel = (CustomerModel) userService.getCurrentUser();
+        model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());
         return getViewForPage(model);
     }
 

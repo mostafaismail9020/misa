@@ -6,9 +6,18 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-
-<div class="col col-12" id="yourOpportunities">
-                        <div class="dashboardWidget js-dashboardWidget">
+<div class="Inc-title-header py-5">
+   <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
+       <c:if test="${language eq 'en'}">
+           <span class="clr_gld">${category.name}</span>&nbsp;<spring:theme code="dashboard.myopportunity.section"/>
+       </c:if>
+       <c:if test="${language eq 'ar'}">
+           <span class="clr_gld"> <spring:theme code="dashboard.myopportunity.section"/>&nbsp;${category.name}</span>
+       </c:if>
+   </h1>
+ </div>
+<div class="col col-12 p-0" id="yourOpportunities">
+                        <div class="dashboardWidget  potential-opportunities js-dashboardWidget">
                             <div class="dashboardWidget-headline js-dashboardWidget-headline">
                                 <span>
 <!--                                     <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect" -->

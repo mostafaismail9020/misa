@@ -8,9 +8,18 @@
 }
 .page-dashboard-without-license .dashboardWidget_inner{
 	border-radius: 22px;
+    background: #000;
+    opacity: 0.65;
+    padding: 60px 0;
 }
 .page-dashboard-without-license .no-border{
 	border-radius: 0;
+}
+.page-dashboard .potential-opportunities, .page-dashboard-without-license .potential-opportunities{
+	border-radius: 22px !important;
+}
+.page-dashboard .potential-opportunities .dashboardWidget-headline,.page-dashboard-without-license .potential-opportunities .dashboardWidget-headline {
+    display: none;
 }
 .no-license-page .card {
 	background: #fff;
@@ -206,7 +215,7 @@
 	-webkit-transition: all ease .5s;
 	-moz-transition: all ease 0.5s;
 	padding: 45px 20px 50px;
-	box-shadow: 0px 30px 75px #00000029;
+	box-shadow: 0px 15px 21px #00000029;
 	display: flex;
 	flex-direction: column;
 	border-radius: 30px;
@@ -225,7 +234,7 @@
         max-width: 300px;
         margin: 0 auto;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px !important;
         height: 4.5rem;
     }
 
@@ -341,11 +350,10 @@
     opacity: 1;
     margin: 0;
     text-align: center;
-    padding: 9px 24px 7px;
-    border-radius: 113px;
+    padding: 5px 24px 7px;
     cursor: pointer;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -357,11 +365,11 @@
     border-radius: 27px;
     margin: 0;
     text-align: center;
-    padding: 9px 24px 7px;
-    border-radius: 113px;
+    padding: 5px 24px 7px;
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
+	height: 45px;
 }
 [dir] .license .tabs-list li.dashboardTabs-current a{
     color: #00A6BE !important;
@@ -410,7 +418,7 @@
 .license .dashboardWidget{
     padding-top: 100px
 }
-.license .dashboardWidget-headline-text,.license .dashboardWidget-headline-icon {
+.license .dashboardWidget-headline-text,.license .dashboardWidget-headline-icon{
     display: none;
 }
 .dashboardWidgetLicense-list-value_green{

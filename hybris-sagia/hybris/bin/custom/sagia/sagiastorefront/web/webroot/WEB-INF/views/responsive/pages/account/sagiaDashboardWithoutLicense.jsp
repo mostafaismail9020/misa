@@ -37,7 +37,7 @@
     
     
     <div class="mainSection_grey mainSection_noPadding">
-        <div class="row">
+        <div class="container">
             <div class="dashboardUser-wrapper col-12 dashboard-login">
                 <div class="dashboardUser-left col-6">
                     <div class="dashboard-login">
@@ -69,7 +69,7 @@
 
 
     <div class="globalMessage-holder" style="background: url(${commonResourcePath}/images/dashboard-media/Apply-license/Apply-license-bg.png) no-repeat center center;  padding: 20px 0; background-size: cover;">
-        <div class="dashboard-container">
+        <div class="container">
             <div class="globalMessage">
             	<a href="${encodedContextPath}/my-sagia/license/entity" id="applyNewLicenseAfterTnC" data-skip-popup="${(applicationStatus != null && not empty applicationStatus.entityId) || hasUserAppliedForLicense}" style="display: none;" class="btn btn_round" ><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></a>
                 <c:choose>
@@ -131,10 +131,10 @@
                                 </div>
                             </c:when>
                             <c:otherwise>
-                                <div class="globalMessage-action">
-                                   <a href="${encodedContextPath}/simulator/license-apply" id="dashboardNoLicenseHelper" class="btn btn_round btn-primary btn_outline text-uppercase"><spring:theme code="dashboard.withoutlicense.startsimulation"/><img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/></a>
-                                    <button class="btn btn_round btn-dashboard text-uppercase" onclick="applyNewTnC(event,'NewApply');"><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></button>
-                                 </div>
+                                <div class="globalMessage-action d-flex">
+                                    <a href="${encodedContextPath}/simulator/license-apply" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5"><spring:theme code="dashboard.withoutlicense.startsimulation"/><img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/></a>
+                                     <button class="btn-dashboard text-uppercase" onclick="applyNewTnC(event,'NewApply');"><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></button>
+                                  </div>
 
                                 <div class="globalMessage-msg">
                                     <img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/>
@@ -150,14 +150,14 @@
 </section>
 
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
-    <div class="dashboard-container">
+    <div class="container">
      <dashboard:opportunityTickets></dashboard:opportunityTickets>
      <div class="js-dashboardWidget">
         <h1 class="dashboard-headline js-dashboardWidget-headline text-center mt-5 pt-5 mb-5">
             <spring:theme code="myLicense.title"/>
         </h1>
         <div class="card dashboardWidget-body mb-5 p-0 globalMessage">
-            <ul  class="nav nav-tabs">
+            <ul  class="nav nav-tabs w-100">
                 <li class="col-6 text-center active" ><img class="pr-3" src="${commonResourcePath}/images/dashboard-media/MY-LICENSE/Apply-for-license.png"/><a  href="#1a" data-toggle="tab">Apply For a Misa License</a>
                 </li>
                 <li class="col-6 text-center"><img class="pr-3" src="${commonResourcePath}/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png"/><a href="#2a" data-toggle="tab">Apply for a Bidding Certificate</a>
@@ -233,7 +233,9 @@
     <dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>
 
     
-    <!-- OPPOTUNITIES START-->
+     <!-- OPPOTUNITIES START-->
+     <section class="mainSection mainSection_grey js-dashboard">
+        <div class="container">
                 <div class="mb-5">
                      <div class="Inc-title-header">
                         <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
@@ -243,7 +245,7 @@
                             <c:if test="${language eq 'ar'}">
                                 <span class="clr_gld"><spring:theme code="portal.sector.featured.opportunity.label"/>&nbsp;${category.name}</span>
                             </c:if>
-                            <a href="/${language}/sectors-opportunities/opportunitie" class="btn btn_round btn-primary btn-dashboard float-right text-uppercase"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/> <img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/></a>
+                            <a href="/${language}/sectors-opportunities/opportunitie" class="btn-dashboard float-right text-uppercase"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/> <img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/></a>
                         </h1>
                       </div>
                     <!-- <c:if test="${empty featuredOpportunities}"> -->
@@ -308,9 +310,11 @@
                             </div>
                         </div>
                 </div>
+            </div>
+        </section>
     <!-- OPPOTUNITIES END-->
-    <div id="newsandupdates" class="newsAndUpdateContainer">
-	    <div class="dashboard-container">
+    <section id="newsandupdates" class="newsAndUpdateContainer">
+	    <div class="container">
 	        <div class="row titleContainer">
 	            <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
 	                <h1 class="section-title text-center clr_gld">NEWS &amp; UPDATES</h1>
@@ -363,7 +367,7 @@
 					</div>
 				</div>
     	</div>
-	</div>
+	</section>
         <!-- <div class="row mt-5">
             <div class="col-md-8 ">
                 <div class="js-dashboardWidget dashboardWidget_noRadiusRight">

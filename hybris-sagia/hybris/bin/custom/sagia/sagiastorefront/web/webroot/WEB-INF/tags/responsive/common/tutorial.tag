@@ -44,8 +44,8 @@
                 <div class="modal-description modal-description_eService"></div>
             </div>
             <div class="modal-footer modal-footer_wrap">
-                <button type="button" class="btn btn_slim js-eServiceTour-start" data-dismiss="modal"><spring:theme code="dashboard.tutorial.modal.button.text"/></button>
-                <a class="btn btn_slim btn_link btn_inFooterModal js-skipTutorial" data-dismiss="modal" onclick="dismissTutorial();"><spring:theme code="general.dont.show.this.message.again"/></a>
+                <button type="button" class="btn-outline js-eServiceTour-start" data-dismiss="modal"><spring:theme code="dashboard.tutorial.modal.button.text"/></button>
+                <a class=" btn_inFooterModal js-skipTutorial" data-dismiss="modal" onclick="dismissTutorial();"><spring:theme code="general.dont.show.this.message.again"/></a>
             </div>
         </div>
     </div>

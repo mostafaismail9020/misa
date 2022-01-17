@@ -178,6 +178,14 @@
 			<value code="Z02"/>
 			<value code="NA"/>
 		</enumtype>
+		<enumtype generate="true" code="PartnerType" autocreate="true" dynamic="true">
+            <value code="Enabler"/>
+            <value code="Accelerator"/>
+            <value code="Incubator"/>
+        </enumtype>
+        <enumtype code="CsInterventionType" dynamic="true" autocreate="false" generate="false">
+            <value code="NotesForCustomer" />
+        </enumtype>
     </enumtypes>
 	
 	
@@ -418,7 +426,15 @@
 				<modifiers read="true" write="true" search="true" optional="true" />
 			</targetElement>
 		</relation>	
-		
+		<relation code="OpportunityProduct2OpportunityPartner" generate="true" autocreate="true"  localized="false" >
+			<deployment table="productPartner" typecode="30211" />
+			<sourceElement qualifier="product" type="OpportunityProduct" cardinality="many">
+				<modifiers />
+			</sourceElement>
+			<targetElement qualifier="partner" type="OpportunityPartner" cardinality="many" collectiontype="list" ordered="true">
+				<modifiers />
+			</targetElement>
+		</relation>	
 		<!-- Invest Saudi Changes Ends  -->	
 	</relations>
 	
@@ -3645,7 +3661,30 @@
                         <modifiers/>
                     </attribute>
                 </attributes>
-            </itemtype>                       
+            </itemtype>   
+
+			<itemtype code="OpportunityPartner" generate="true" autocreate="true">
+                <description>To identify list of partners available to a product</description>
+                <deployment table="OpportunityPartner" typecode="30210"/>
+                <attributes>
+                    <attribute qualifier="partnerType " type="PartnerType">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="productId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers optional="false" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="partnerRowId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers optional="false" unique="true"/>
+                    </attribute>
+					<attribute qualifier="customer" type="Customer">
+					  <persistence type="property" />
+					  <modifiers optional="false" />
+				    </attribute>
+                </attributes>
+            </itemtype>			
         </typegroup>
 		
 		<typegroup name="investsaudiportalcms">

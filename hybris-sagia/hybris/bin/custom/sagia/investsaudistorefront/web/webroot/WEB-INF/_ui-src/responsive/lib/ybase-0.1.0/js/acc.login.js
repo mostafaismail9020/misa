@@ -63,7 +63,7 @@ $(".function-userGroup .login-role-selection-box").on('click',function(){
 
         $(".item_container.group1").removeClass('next-hide');
         $(".item_container.group2").addClass('next-hide');
-        $("register-function-group").val("1");
+        $("#register-function-group").val("1");
 	}
 	if($(this).hasClass('function-MarCommUserGroup active')){
 		$('.img-function-active').removeClass('d-none');
@@ -74,7 +74,7 @@ $(".function-userGroup .login-role-selection-box").on('click',function(){
 
         $(".item_container.group1").addClass('next-hide');
         $(".item_container.group2").removeClass('next-hide');
-        $("register-function-group").val("2");
+        $("#register-function-group").val("2");
 	}
     var src = $(".function-userGroup .login-role-selection-box.active img.img-function-inactive").attr('src')
     $('.function-selected').attr('src',src)

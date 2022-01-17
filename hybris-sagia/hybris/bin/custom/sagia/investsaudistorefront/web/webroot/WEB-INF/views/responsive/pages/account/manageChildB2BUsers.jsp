@@ -11,16 +11,22 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
 <div class="managerchildUser_page"> 
-<div id="global-alerts" class="global-alerts">
-    <c:if test="${not empty errorMessageKey}">
-        <div class="alert alert-danger alert-dismissable getAccAlert">
-            <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">x</button><spring:theme code="${errorMessageKey}"/></div>
-    </c:if>
-    <c:if test="${createSuccess}">
-        <div class="alert alert-info alert-dismissable getAccAlert">
-            <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">x</button>User created successfully</div>
-    </c:if>
-</div>
+    <div id="global-alerts" class="global-alerts">
+        <c:if test="${not empty errorMessageKey}">
+            <div class="alert alert-danger alert-dismissable getAccAlert">
+                <img src="/investsaudistorefront/_ui/responsive/common/images/danger.png">
+                <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
+                    <img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
+                </button><spring:theme code="${errorMessageKey}"/></div>
+        </c:if>
+        <c:if test="${createSuccess}">
+            <div class="alert alert-info alert-dismissable getAccAlert">
+                <img src="/investsaudistorefront/_ui/responsive/common/images/success.png">
+                <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
+                    <img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
+                </button>User created successfully</div>
+        </c:if>
+    </div>
 
 <c:url value = "#" var="manageUserForm" />
 <div id="global-alerts" class="global-alerts"></div>

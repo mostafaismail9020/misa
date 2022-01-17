@@ -271,7 +271,8 @@ ACC.investsaudicustomerticketing = {
             }
             $('.ticket-questions-area').parents('.account-section-content').find('.global-alerts').append('' +
                 '<div class="question-messages"><div class="alert alert-danger alert-dismissable getAccAlert">' +
-                '<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">×</button>' +
+                '<img src="/investsaudistorefront/_ui/responsive/common/images/danger.png" />'+
+                '<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button"><img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png"/></button>' +
                 'Please fill all required questions.</div></div>');
         }
 
@@ -304,7 +305,7 @@ ACC.investsaudicustomerticketing = {
         if (error) {
             form.parents('.account-section-content').find('.global-alerts').append('' +
                 '<div class="question-messages"><div class="alert alert-danger alert-dismissable getAccAlert">' +
-                '<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">×</button>' +
+                '<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button"><img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png"></button>' +
                 'Please fill all required fields.</div></div>');
         }
 

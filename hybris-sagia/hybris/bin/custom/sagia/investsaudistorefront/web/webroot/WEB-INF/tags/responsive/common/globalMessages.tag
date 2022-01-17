@@ -10,7 +10,10 @@
 		<c:if test="${not empty accConfMsgs}">
 			<c:forEach items="${accConfMsgs}" var="msg">
 				<div class="alert alert-info alert-dismissable getAccAlert">
-					<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">&times;</button>
+					<img src="/investsaudistorefront/_ui/responsive/common/images/primary.png">
+					<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
+						<img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
+					</button>
 					<spring:theme code="${msg.code}" arguments="${msg.attributes}"/>
 				</div>
 			</c:forEach>
@@ -20,7 +23,10 @@
 		<c:if test="${not empty accInfoMsgs}">
 			<c:forEach items="${accInfoMsgs}" var="msg">
 				<div class="alert alert-warning alert-dismissable getAccAlert">
-					<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">&times;</button>
+				    <img src="/investsaudistorefront/_ui/responsive/common/images/warning.png">
+					<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
+						<img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
+					</button>
 					<spring:theme code="${msg.code}" arguments="${msg.attributes}"/>
 				</div>
 			</c:forEach>
@@ -30,7 +36,10 @@
 		<c:if test="${not empty accErrorMsgs}">
 			<c:forEach items="${accErrorMsgs}" var="msg">
 				<div class="alert alert-danger alert-dismissable getAccAlert">
-					<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">&times;</button>
+					<img src="/investsaudistorefront/_ui/responsive/common/images/danger.png">
+					<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
+						<img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
+					</button>
 					<spring:theme code="${msg.code}" arguments="${msg.attributes}"/>
 				</div>
 			</c:forEach>

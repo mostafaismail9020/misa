@@ -86,6 +86,95 @@
         </div>
     </div>
 </div>
+
+<div class="service-wrapper service-wrapper-info">
+	<div class="serviceModule serviceModule_list mx-5 pt-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> Service overview </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.description}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.description}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> Service document </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceDocuments}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.serviceDocuments}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> Rules & Restriction </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.rulesRestrictions}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.rulesRestrictions}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> Financial FEE </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceFinancialFees}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.serviceFinancialFees}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5 pb-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> Duration </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceDuration}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.serviceDuration}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="mainSection mainSection_dark mainSection_pdt16">
     <div class="container">
         <div class="expandableContent expanded" id="expand01">

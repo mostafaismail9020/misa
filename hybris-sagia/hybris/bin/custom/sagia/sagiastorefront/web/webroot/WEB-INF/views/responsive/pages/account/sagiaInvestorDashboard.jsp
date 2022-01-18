@@ -420,7 +420,7 @@
                                 </div>
                                 <div class="card-box p-3 pr-5 home-news-updates-content">
                                     <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
-                                    <h2>${currentNews.newsTitle}</h2>
+                                    <h3>${fn:substring(currentNews.newsTitle,0,29)} ...</h3>
                                     <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
                                     <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img src=""></a></p>
                                 </div>
@@ -439,29 +439,29 @@
         <div class="firstBlock">
             <div class="firstBlock-widget">
                 <h1 class="text-center text-uppercase clr_gld">
-                    LET US HELP YOU
+                    <spring:theme code="dashboard.license.letus.help.you.heading.name"/>
                 </h1>
                 <span class="firstBlock-text">
-                    INVEST SAUDI is ready to assist you 24/7 . We are happy to answer your questions in the following languages ( English, German, Japanese, French, Spanish, Korean , and Chinese)
+                   <spring:theme code="dashboard.license.letus.help.you.text"/>
                 </span>
             </div>
             <div class="firstBlock-contact d-flex">
                 <div class="firstBlock-contact-local">
                     <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>
                     <span class="firstBlock-contact-local-label">
-                        Local
+                        <spring:theme code="dashboard.license.letus.help.you.local"/>
                     </span>
                     <span class="firstBlock-contact-local-number">
-                        8002449990
+                        <spring:theme code="dashboard.license.letus.help.you.local.number"/>
                     </span>
                 </div>
                 <div class="firstBlock-contact-local">
                     <img  alt="" src="${commonResourcePath}/images/Contact-us/International.png"/>
                     <span class="firstBlock-contact-local-label">
-                        International
+                        <spring:theme code="dashboard.license.letus.help.you.International"/>
                     </span>
                     <span class="firstBlock-contact-local-number">
-                        00966112035777
+                        <spring:theme code="dashboard.license.letus.help.you.International.number"/>
                     </span>
                 </div>
             </div>
@@ -469,20 +469,20 @@
         <div class="emailBlock">
             <div class="firstBlock-widget">
                 <h1 class="text-center text-uppercase clr_gld">
-                    EMAIL US !
+                    <spring:theme code="dashboard.license.letus.help.you.emailus.heading.name"/>
                 </h1>
                 <span class="firstBlock-text">
-                    You can also mail us and will be pleased to assist you. We are available for you 24 hrs, 7 days a week
+                    <spring:theme code="dashboard.license.letus.help.you.emailus.text"/>
                 </span>
             </div>
             <div class="emailBlock-contact">
                 <div class="emailBlock-contact-international">
                     <span class="firstBlock-contact-local-email">
-                        InvestorCare@misa.gov.sa
+                        <spring:theme code="dashboard.license.letus.help.you.emailus.email"/>
                     </span>
                     <div class="email-buttons">
-                        <button class="btn-outline mr-5">show me around</button>
-                        <button class="btn-dashboard">make an enquiry</button>
+                        <button class="btn-outline mr-5"><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"/></button>
+                        <button class="btn-dashboard"><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"/></button>
                     </div>
                 </div>
             </div>

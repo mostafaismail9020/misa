@@ -47,69 +47,78 @@
 <!-- 				   </li> -->
 <!-- 				</ul> -->
             <div class="dashboardWidgetNoLicense-body">
-               <div class="dashboardWidget js-dashboardWidget dashboardWidget_dark dashboardWidget_inner">
-                  <div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header">
-                     ${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/>
-                  </div>
-                  <div class="dashboardWidget-body">
-                     <div class="dashboardWidgetBanner">
-                        <div class="dashboardWidgetBanner-tabs js-dashboardWidgetBanner-tabs ">
+               <div class="dashboardWidget js-dashboardWidget dashboardWidget_dark no-border">
+                  <div class="dashboardWidget_inner noLicenseBody">
+                     <div class="dashboardWidget-body">
+                        
+                        <div class="dashboardWidgetBanner">
+                           <div class="dashboardWidgetBanner-tabs js-dashboardWidgetBanner-tabs ">
                            <div class="dashboardWidgetBanner-tabs-body col-8">
-                              <p>${sector.sectorDetails}</p>
-                           </div>
-                        </div>
-                        <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}">
-				
-                        <div class="col-md-12 col-lg-5 section-counts sect-right-panel">
-                                    <c:forEach var="sectorFactsFigures" items="${customerSectorCategory.sectorFactsFigures}">  
-                                       <div class="count-item">
-                                          <h5><span class="unit">${sectorFactsFigures.figures}${sectorFactsFigures.unit}</span></h5>
-                                          <p class="description">${sectorFactsFigures.facts}</p>
-                                       </div>  
-                                    </c:forEach>
+                              <div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header clr_gld">
+                                 ${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/>
+                              </div>
+                                    <p>${sector.sectorDetails}</p>
+                                    <div class="row">	
+                                       <c:if test="${sector.sectorCode ne 'Others'}">
+                                                      <div class="dashboardWidgetBanner-action ml-3"><a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn-dashboard"><spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/><img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/> </a> </div>
+                                       </c:if>
+                                       <c:if test="${sector.sectorCode eq 'Others'}">
+                                             <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/opportunities/" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/></a></div>
+                                       </c:if>
+                                    </div>
                                  </div>
-                        </c:if>
-                           <div class="d-flex col-4">
-                              <div class="extended-left-block">
-                                 <div class="extended-block-data">100%</div>
-                                 <div class="extended-block-text">of the population will be covered by the unified digital medical records system by 2025</div>
-                              </div>
-                              <div class="extended-right-block pl-3">
-                                 <div class="extended-block-data">$5.4BN</div>
-                                 <div class="extended-block-text">medical technology market size in 2021</div>
+                                 <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}">
+                                 <div class="col-md-12 col-lg-5 section-counts sect-right-panel">
+                                       <c:forEach var="sectorFactsFigures" items="${customerSectorCategory.sectorFactsFigures}">  
+                                          <div class="count-item">
+                                             <h5><span class="unit">${sectorFactsFigures.figures}${sectorFactsFigures.unit}</span></h5>
+                                             <p class="description">${sectorFactsFigures.facts}</p>
+                                          </div>  
+                                       </c:forEach>
+                                    </div>
+                                 </c:if>
+                              <div class="d-flex col-4 withLicenseBodyBg">
+                                 <div class="extended-left-block">
+                                    <div class="extended-block-data">100%</div>
+                                    <div class="extended-block-text">of the population will be covered by the unified digital medical records system by 2025</div>
+                                 </div>
+                                 <div class="extended-right-block pl-3">
+                                    <div class="extended-block-data">$5.4BN</div>
+                                    <div class="extended-block-text">medical technology market size in 2021</div>
+                                 </div>
                               </div>
                            </div>
-                        </div>
-                        <div class="row">	
-                           <c:if test="${sector.sectorCode ne 'Others'}">
-                                          <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/> </a> </div>
-                           </c:if>
-                           <c:if test="${sector.sectorCode eq 'Others'}">
-                                 <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/opportunities/" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/></a></div>
-                           </c:if>
+                           <%--<div class="row">	
+                              <c:if test="${sector.sectorCode ne 'Others'}">
+                                             <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/> </a> </div>
+                              </c:if>
+                              <c:if test="${sector.sectorCode eq 'Others'}">
+                                    <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/opportunities/" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/></a></div>
+                              </c:if>
+                           </div>--%>
                         </div>
                      </div>
-                  </div>
                  </div>
               </div>
+            </div>
          </div>
       </div>
    </div>
 </div>
 
 <c:if test="${not empty customerSectorCategory}">
-<section class="Inc-energyoppertunities">
+<section class="Inc-energyoppertunities mt-5">
     <div class="container">
-        <div class="Inc-title-header">
-            <h1 class="Inc-secdetil-enop-header ">
+        <div class="Inc-title-header d-flex">
+            <h1 class="Inc-secdetil-enop-header text-uppercase clr_gld">
             	<c:if test="${language eq 'en'}">
-            		<span class="clr_gld">${customerSectorCategory.name}</span>&nbsp;<spring:theme code="portal.sector.opportunity.label"/>
+            		${customerSectorCategory.name}&nbsp;<spring:theme code="portal.sector.opportunity.label"/>
             	</c:if>
             	<c:if test="${language eq 'ar'}">
-            		<span class="clr_gld"><spring:theme code="portal.sector.featured.opportunity.label"/>&nbsp;${customerSectorCategory.name}</span>
+            		<spring:theme code="portal.sector.featured.opportunity.label"/>&nbsp;${customerSectorCategory.name}
             	</c:if>
             </h1>
-            <button  class="btn btn-sector-primary responsive-btn-sector">
+            <button  class="btn-dashboard responsive-btn-sector">
             	<c:if test="${empty featuredOpportunities}">
             		<a href="${encodedContextPath}/sectors-opportunities/opportunities">Explore all&nbsp;
             		<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>

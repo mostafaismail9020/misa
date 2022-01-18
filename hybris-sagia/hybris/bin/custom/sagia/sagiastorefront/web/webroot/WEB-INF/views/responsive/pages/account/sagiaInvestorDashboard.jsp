@@ -155,15 +155,15 @@
             <div class="service-card-wrapper">
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
-                    <span><spring:theme code="dashboard.license.service.name"/></span>
+                    <span>Licensing Services</span>
                 </div>
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
-                    <span><spring:theme code="dashboard.governmental.service.name"/></span>
+                    <span>Licensing Services</span>
                 </div>
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
-                    <span><spring:theme code="dashboard.misa.service.name"/></span>
+                    <span>Licensing Services</span>
                 </div>
             </div>
         </div>
@@ -384,50 +384,111 @@
 
 <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">
-        <div class="row">
-            <dashboard:opportunityTickets></dashboard:opportunityTickets>
-        </div>
+        <dashboard:opportunityTickets></dashboard:opportunityTickets>
+    </div>
+</section>
+<section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
+    <div class="container">
+        <dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>
     </div>
 </section>
 
-<dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>
 
- <!--News Section Start-->
-    <div id="newsandupdates" class="newsAndUpdateContainer">
-	    <div class="dashboard-container">
-	        <div class="row titleContainer">
-	            <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
-	                <h1 class="section-title text-center clr_gld">NEWS &amp; UPDATES</h1>
-					<a href="/en/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">
-						Explore All&nbsp;
-						<img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
-					
-				</div>
-			</div>
-			
-			<c:if test="${not empty lastNews}">
-           	<div class="row contentWrapper">
-           	<c:url value="/mediaCenter/news" var="newsUrl"/>
-           	<c:forEach var="currentNews" items="${lastNews}" varStatus="status">
-           		<div class="col-lg-4 col-md-6 card-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
-			        	<div class="flip-card">
-			            	<div class="card-img">
-			                	<img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
-			              	</div>
-			              	<div class="card-box p-3 pr-5 home-news-updates-content">
-			               		<strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
-			                  	<h2>${currentNews.newsTitle}</h2>
-			                  	<p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
-	                  			<p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img src=""></a></p>
-	                      	</div>
-						</div>
-					</div>
-					</c:forEach>
-			
-				</div>
-				</c:if>
-    	</div>
-	</div>
+<section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
+    <div class="container">
+    <!--News Section Start-->
+        <div id="newsandupdates" class="newsAndUpdateContainer">
+            <div class="dashboard-container">
+                <div class="row titleContainer">
+                    <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
+                        <h1 class="section-title text-center clr_gld">NEWS &amp; UPDATES</h1>
+                        <a href="/en/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">
+                            Explore All&nbsp;
+                            <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
+                        
+                    </div>
+                </div>
+                
+                <c:if test="${not empty lastNews}">
+                <div class="row contentWrapper">
+                <c:url value="/mediaCenter/news" var="newsUrl"/>
+                <c:forEach var="currentNews" items="${lastNews}" varStatus="status">
+                    <div class="col-lg-4 col-md-6 card-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
+                            <div class="flip-card">
+                                <div class="card-img">
+                                    <img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
+                                </div>
+                                <div class="card-box p-3 pr-5 home-news-updates-content">
+                                    <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
+                                    <h2>${currentNews.newsTitle}</h2>
+                                    <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
+                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img src=""></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        </c:forEach>
+                
+                    </div>
+                    </c:if>
+            </div>
+	    </div>
+    </div>
+</section>
+<section class="helpSection">
+    <div class="container innerContainer">
+        <div class="firstBlock">
+            <div class="firstBlock-widget">
+                <h1 class="text-center text-uppercase clr_gld">
+                    LET US HELP YOU
+                </h1>
+                <span class="firstBlock-text">
+                    INVEST SAUDI is ready to assist you 24/7 . We are happy to answer your questions in the following languages ( English, German, Japanese, French, Spanish, Korean , and Chinese)
+                </span>
+            </div>
+            <div class="firstBlock-contact d-flex">
+                <div class="firstBlock-contact-local">
+                    <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>
+                    <span class="firstBlock-contact-local-label">
+                        Local
+                    </span>
+                    <span class="firstBlock-contact-local-number">
+                        8002449990
+                    </span>
+                </div>
+                <div class="firstBlock-contact-local">
+                    <img  alt="" src="${commonResourcePath}/images/Contact-us/International.png"/>
+                    <span class="firstBlock-contact-local-label">
+                        International
+                    </span>
+                    <span class="firstBlock-contact-local-number">
+                        00966112035777
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="emailBlock">
+            <div class="firstBlock-widget">
+                <h1 class="text-center text-uppercase clr_gld">
+                    EMAIL US !
+                </h1>
+                <span class="firstBlock-text">
+                    You can also mail us and will be pleased to assist you. We are available for you 24 hrs, 7 days a week
+                </span>
+            </div>
+            <div class="emailBlock-contact">
+                <div class="emailBlock-contact-international">
+                    <span class="firstBlock-contact-local-email">
+                        InvestorCare@misa.gov.sa
+                    </span>
+                    <div class="email-buttons">
+                        <button class="btn-outline mr-5">show me around</button>
+                        <button class="btn-dashboard">make an enquiry</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 	<div class="container">
 	<div class="row mt-5">
             <div class="col-md-8 ">
@@ -503,7 +564,9 @@
                 </div>
             </div>
         </div> 
-        </div>	
+    </div>	
+
+
 
 <%-- <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">

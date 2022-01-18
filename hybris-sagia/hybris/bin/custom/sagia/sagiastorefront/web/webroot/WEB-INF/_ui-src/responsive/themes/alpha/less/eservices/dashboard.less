@@ -1,24 +1,16 @@
-.page-dashboard-without-license h1{
-    font-size: 45px;
-}
-.page-dashboard-without-license .my-license-block{
-	background: #FFFFFF;
-    box-shadow: 0px 0px 35px #0000003D;
-	border-radius: 5px;
+
+.page-dashboard-without-license .no-border, .page-dashboard .no-border{
+	border-radius: 0;
 }
 .page-dashboard-without-license .dashboardWidget_inner{
 	border-radius: 22px;
-    background: #000;
+    padding: 30px 20px;
+}
+.page-dashboard-without-license .dashboardWidget_inner.noLicenseBody{
+	background: #000000;
     opacity: 0.65;
-    padding: 60px 0;
 }
-.page-dashboard-without-license .no-border{
-	border-radius: 0;
-}
-.page-dashboard .potential-opportunities, .page-dashboard-without-license .potential-opportunities{
-	border-radius: 22px !important;
-}
-.page-dashboard .potential-opportunities .dashboardWidget-headline,.page-dashboard-without-license .potential-opportunities .dashboardWidget-headline {
+.page-dashboard-without-license .dashboardWidget_inner .dashboardWidgetBanner .dashboardWidget_inner .dashboardWidgetBanner-tabs ul{
     display: none;
 }
 .no-license-page .card {
@@ -31,7 +23,32 @@
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 	border-radius: 10px;
 	padding:40px;
-  }
+}
+.page-dashboard-without-license .dashboardWidgetNoLicense{
+	overflow: visible;
+}
+.page-dashboard-without-license .dashboardWidgetBanner-tabs-content{
+	display: flex;
+}
+.page-dashboard-without-license .dashboardWidget_inner .dashboardWidgetBanner .dashboardWidgetBanner-tabs ul{
+	display: none;
+}
+.page-dashboard-without-license .dashboardWidget_inner .invest-us-header{
+	color: #bf9b2e !important;
+	justify-content: left !important;
+}
+.page-dashboard-without-license h1{
+    font-size: 45px;
+}
+.page-dashboard-without-license .my-license-block{
+	background: #FFFFFF;
+    box-shadow: 0px 0px 35px #0000003D;
+	border-radius: 5px;
+}
+
+.page-dashboard-without-license .no-border{
+	border-radius: 0;
+}
 
   .dashboard-container .globalMessage .globalMessage-msg{
       padding-left: 50px;
@@ -442,21 +459,44 @@
 	margin: 0;
 	width: auto !important;
 }
-.page-dashboard-without-license .dashboardWidgetNoLicense{
-	overflow: visible;
+
+.page-dashboard .potential-opportunities, .page-dashboard-without-license .potential-opportunities{
+	border-radius: 22px !important;
 }
-.page-dashboard-without-license .dashboardWidgetBanner-tabs-content{
+.page-dashboard .potential-opportunities .dashboardWidget-headline,.page-dashboard-without-license .potential-opportunities .dashboardWidget-headline {
+    display: none;
+}
+.page-dashboard .dashboardWidget_inner .dashboardWidgetBanner  .dashboardWidgetBanner-tabs ul{
+    display: none;
+}
+.page-dashboard .dashboardWidgetBanner-tabs-content{
 	display: flex;
-}
-.page-dashboard-without-license .dashboardWidget_inner .dashboardWidgetBanner .dashboardWidgetBanner-tabs ul{
-	display: none;
 }
 .page-dashboard-without-license .dashboardWidget_inner .invest-us-header{
 	color: #bf9b2e !important;
 	justify-content: left !important;
-	padding-left: 44px;
+}
+.page-dashboard .dashboardWidget_inner{
+	border-radius: 22px;
+    padding: 30px 20px;
 }
 
+.page-dashboard .dashboardWidget_inner .dashboardWidgetBanner  .dashboardWidgetBanner-tabs .dashboardWidgetBanner-tabs-body{
+    padding: 0 20px;
+}
+.page-dashboard .dashboardWidget_inner .dashboardWidgetBanner  .dashboardWidgetBanner-tabs .dashboardWidgetBanner-tabs-content .withLicenseBodyBg {
+    background: #000000;
+    opacity: 0.65;
+	align-items: center;
+}
+.page-dashboard .dashboardWidget_inner .dashboardWidgetBanner  .dashboardWidgetBanner-tabs .dashboardWidgetBanner-tabs-body .dashboardWidget-headline{
+	color:  #BF9B2E !important;
+	text-align: left;
+}
+.page-dashboard .dashboardWidget_inner{
+	border-radius: 22px;
+    padding: 30px 20px;
+}
 .extended-left-block{
 	padding-right: 20px;
 	border-right: 2px solid #FFFFFF;
@@ -471,4 +511,76 @@
 .extended-block-text{
 	text-align: center;
 	color: #FFFFFF;
+}
+
+/*contact-block*/
+
+.helpSection{
+	padding: 0 60px;
+	margin: 0 auto;
+	background: url('../img/Living-in-Saudi.png') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.helpSection .innerContainer{
+	padding: 60px 250px;
+}
+.helpSection .innerContainer .firstBlock-contact{
+	padding-top: 50px;
+}
+.firstBlock-text{
+	margin-top: 50px;
+	display: block;
+	color: #484848;
+	font-size: 22px;
+	text-align: center;
+}
+.firstBlock-contact{
+	display: flex;
+	justify-content: space-evenly;
+}
+.firstBlock-contact-local{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+    align-items: center;
+}
+.firstBlock-contact-local-label{
+	color: #707070;
+	font-size: 25px;
+}
+.firstBlock-contact-local-label img{
+	height: 40px;
+    width: 40px;
+}
+
+.firstBlock-contact-local-email{
+	color: #00A6BE;
+	font-size: 25px;
+	text-align: center;
+	margin-top: 30px;
+	display: block;
+}
+.firstBlock-contact-local-number{
+	color: #00A6BE;
+	font-size: 25px;
+}
+.firstBlock-contact-international{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.emailBlock{
+	margin-top: 100px;
+}
+.emailBlock-contact{
+	display: flex;
+	justify-content: center;
+}
+.email-buttons{
+	margin-top: 60px;
+	display: flex;
+	justify-content: space-evenly;
 }

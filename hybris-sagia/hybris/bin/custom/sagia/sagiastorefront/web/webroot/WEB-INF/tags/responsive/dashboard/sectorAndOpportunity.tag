@@ -47,8 +47,7 @@
 <!-- 				   </li> -->
 <!-- 				</ul> -->
             <div class="dashboardWidgetNoLicense-body">
-               <div class="dashboardWidget js-dashboardWidget dashboardWidget_dark no-border">
-                <div class="dashboardWidget_inner">
+               <div class="dashboardWidget js-dashboardWidget dashboardWidget_dark dashboardWidget_inner">
                   <div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header">
                      ${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/>
                   </div>
@@ -69,27 +68,15 @@
                                        </div>  
                                     </c:forEach>
                                  </div>
+                        </c:if>
+                           <div class="d-flex col-4">
+                              <div class="extended-left-block">
+                                 <div class="extended-block-data">100%</div>
+                                 <div class="extended-block-text">of the population will be covered by the unified digital medical records system by 2025</div>
                               </div>
-                                 <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}">
-                                    <div class="col-md-12 col-lg-5 section-counts sect-right-panel">
-                                       <c:forEach var="sectorFactsFigures" items="${customerSectorCategory.sectorFactsFigures}">  
-                                          <div class="count-item">
-                                             <h5><span class="unit">${sectorFactsFigures.figures}${sectorFactsFigures.unit}</span></h5>
-                                             <p class="description">${sectorFactsFigures.facts}</p>
-                                          </div>  
-                                       </c:forEach>
-                                    </div>
-                                 </c:if>
-                                 <div class="d-flex col-4">
-                                    <div class="extended-left-block">
-                                       <div class="extended-block-data">100%</div>
-                                       <div class="extended-block-text">of the population will be covered by the unified digital medical records system by 2025</div>
-                                    </div>
-                                    <div class="extended-right-block pl-3">
-                                       <div class="extended-block-data">$5.4BN</div>
-                                       <div class="extended-block-text">medical technology market size in 2021</div>
-                                    </div>
-                                 </div>
+                              <div class="extended-right-block pl-3">
+                                 <div class="extended-block-data">$5.4BN</div>
+                                 <div class="extended-block-text">medical technology market size in 2021</div>
                               </div>
                            </div>
                         </div>

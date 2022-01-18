@@ -258,7 +258,7 @@
 			              	</div>
 			              	<div class="card-box p-3 pr-5 home-news-updates-content">
 			               		<strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
-			                  	<h2>${currentNews.newsTitle}</h2>
+			                  	<h3>${fn:substring(currentNews.newsTitle,0,29)} ...</h3>
 			                  	<p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
 	                  			<p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img src=""></a></p>
 	                      	</div>

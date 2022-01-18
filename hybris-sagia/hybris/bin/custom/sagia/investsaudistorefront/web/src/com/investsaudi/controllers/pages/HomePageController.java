@@ -22,6 +22,7 @@ import de.hybris.platform.servicelayer.user.UserService;
 import java.util.Set;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +30,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+
 
 
 /**
@@ -43,6 +46,9 @@ public class HomePageController extends AbstractPageController
 	private static final String ACCOUNT_CONFIRMATION_CLOSE_TITLE = "account.confirmation.close.title";
 	private static final String BUSINESS_DEVELOPMENT_USER_GROUP = "BDUserGroup";
 	private static final String WORKFLOW_BUSINESS_DEVELOPMENT_USER_GROUP = "WOBDUserGroup";
+	private static final String NIPC_USER_GROUP = "NIPCUserGroup";
+	private static final String MarComm_USER_GROUP = "MarCommUserGroup";
+	private static final String PIF_USER_GROUP = "WOAdminGroup";
 	
 	
    @Resource(name = "userService")
@@ -50,7 +56,7 @@ public class HomePageController extends AbstractPageController
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String home(@RequestParam(value = WebConstants.CLOSE_ACCOUNT, defaultValue = "false") final boolean closeAcc,
-			@RequestParam(value = LOGOUT, defaultValue = "false") final boolean logout, final Model model,
+			@RequestParam(value = LOGOUT, defaultValue = "false") final boolean logout, final Model model, final HttpSession session,
 			final RedirectAttributes redirectModel) throws CMSItemNotFoundException
 	{
 		if (logout)
@@ -61,6 +67,9 @@ public class HomePageController extends AbstractPageController
 				message = ACCOUNT_CONFIRMATION_CLOSE_TITLE;
 			}
 			GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.INFO_MESSAGES_HOLDER, message);
+			session.removeAttribute("BDUser");
+			session.removeAttribute("NIPCUser");
+			session.removeAttribute("MarCommUser");
 			return REDIRECT_PREFIX + ROOT;
 		}
 
@@ -72,6 +81,15 @@ public class HomePageController extends AbstractPageController
 		if(currentUser != null) {
 			Set<PrincipalGroupModel> curGroups = currentUser.getGroups();
 			for(PrincipalGroupModel curGroup : curGroups) {
+				if(BUSINESS_DEVELOPMENT_USER_GROUP.equalsIgnoreCase(curGroup.getUid()) || WORKFLOW_BUSINESS_DEVELOPMENT_USER_GROUP.equalsIgnoreCase(curGroup.getUid()) || PIF_USER_GROUP.equalsIgnoreCase(curGroup.getUid())) {
+					session.setAttribute("BDUser", true);
+				}
+				if(NIPC_USER_GROUP.equalsIgnoreCase(curGroup.getUid())) {
+					session.setAttribute("NIPCUser", true);
+				}
+				if(MarComm_USER_GROUP.equalsIgnoreCase(curGroup.getUid())) {
+					session.setAttribute("MarCommUser", true);
+				}
 				if(BUSINESS_DEVELOPMENT_USER_GROUP.equalsIgnoreCase(curGroup.getUid()) || WORKFLOW_BUSINESS_DEVELOPMENT_USER_GROUP.equalsIgnoreCase(curGroup.getUid())) {
 					model.addAttribute("bdUserGroup", BUSINESS_DEVELOPMENT_USER_GROUP);
 					return "redirect:/my-account/support-tickets";

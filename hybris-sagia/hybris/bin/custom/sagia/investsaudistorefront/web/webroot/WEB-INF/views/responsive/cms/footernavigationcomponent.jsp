@@ -38,36 +38,69 @@
 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll">
 							<h2 class="text-uppercase display-7">OPPORTUNITIES</h2>
 							<p class="text">Explore all the Opportunities raised by yourself and others.</p>
-							<p><a class="link text-uppercase px-0" href="${encodedContextPath}/my-account/support-tickets">OPPORTUNITIES &nbsp; &nbsp;
-									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
-							</p>
+							<p>
+							<c:if test="${NIPCUser || MarCommUser || BDUser}">
+								      <a class="link text-uppercase px-0" href="https://www.investsaudi.sa/en/sectors-opportunities/opportunities">Explore Opportunities &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+							</c:if>
+                             </p>
 						</div>
 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 							<h2 class="text-uppercase display-7">PARTICIPATE</h2>
 							<p class="text ">Explore all the events that you can participate with us.</p>
-							<p><a class="link text-uppercase px-0" href="${encodedContextPath}/events">EVENTS &nbsp; &nbsp;
-									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+							<p>
+							<c:choose>
+								<c:when test="${NIPCUser || MarCommUser}">
+								      <a class="link text-uppercase px-0" href="${encodedContextPath}/events">Events &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+								<c:when test="${BDUser}">
+								      <a class="link text-uppercase px-0" href="https://www.investsaudi.sa/en/mediaCenter/events">Events &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+							</c:choose>
 							</p>
 						</div>
 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 							<h2 class="text-uppercase display-7">RESOURCES</h2>
 							<p class="text">Explore all the resources you need to work with us.</p>
-							<p><a class="link text-uppercase px-0" href="${encodedContextPath}/CONTENT-HUB/c/100000">CONTENT HUB &nbsp; &nbsp;
-									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+							<p>
+							<c:choose>
+								<c:when test="${NIPCUser || MarCommUser}">
+								      <a class="link text-uppercase px-0" href="${encodedContextPath}/CONTENT-HUB/c/100000">Resources &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+								<c:when test="${BDUser}">
+								      <a class="link text-uppercase px-0" href="https://www.investsaudi.sa/en/mediaCenter/resources">Resources &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+							</c:choose>
 							</p>
 						</div> 
 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 							<h2 class="text-uppercase display-7">BUSINESS SUPPORT</h2>
 							<p class="text">Link to the enquires raised by yourself.</p>
-							<p><a class="link text-uppercase px-0" href="${encodedContextPath}/my-account/support-tickets">SUPPORT TICKET &nbsp; &nbsp;
-									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+							<p>
+							<c:if test="${NIPCUser || MarCommUser || BDUser}">
+								      <a class="link text-uppercase px-0" href="${encodedContextPath}/my-account/support-tickets">Support Ticket &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+							</c:if>
 							</p>
 						</div> 
 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 							<h2 class="text-uppercase display-7">CONTACT US</h2>
 							<p class="text">We love to connect with you.</p>
-							<p><a class="link text-uppercase px-0" href="${encodedContextPath}/contact">CONTACT US &nbsp; &nbsp;
-									<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+							<p>
+							<c:choose>
+								<c:when test="${NIPCUser || MarCommUser}">
+								      <a class="link text-uppercase px-0" href="${encodedContextPath}/contact">CONTACT US &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+								<c:when test="${BDUser}">
+								      <a class="link text-uppercase px-0" href="https://www.investsaudi.sa/en/contactUs">CONTACT US &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+							</c:choose>
 							</p>
 						</div>
 					</div>
@@ -216,36 +249,69 @@
 							<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll">
 								<h2 class="text-uppercase display-7">OPPORTUNITIES</h2>
 								<p class="text">Explore all the Opportunities raised by yourself and others.</p>
-								<p><a class="link text-uppercase px-0" href="${encodedContextPath}/my-account/support-tickets">OPPORTUNITIES &nbsp; &nbsp;
+								<p>
+								<c:if test="${NIPCUser || MarCommUser || BDUser}">
+								      <a class="link text-uppercase px-0" href="https://www.investsaudi.sa/en/sectors-opportunities/opportunities">Explore Opportunities &nbsp; &nbsp;
 										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:if>
 								</p>
 							</div>
 							<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 								<h2 class="text-uppercase display-7">PARTICIPATE</h2>
 								<p class="text ">Explore all the events that you can participate with us.</p>
-								<p><a class="link text-uppercase px-0" href="${encodedContextPath}/events">EVENTS &nbsp; &nbsp;
+								<p>
+								<c:choose>
+								<c:when test="${NIPCUser || MarCommUser}">
+								      <a class="link text-uppercase px-0" href="${encodedContextPath}/events">Events &nbsp; &nbsp;
 										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+								<c:when test="${BDUser}">
+								      <a class="link text-uppercase px-0" href="https://www.investsaudi.sa/en/mediaCenter/events">Events &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+								</c:choose>
 								</p>
 							</div>
 							<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 								<h2 class="text-uppercase display-7">RESOURCES</h2>
 								<p class="text">Explore all the resources you need to work with us.</p>
-								<p><a class="link text-uppercase px-0" href="${encodedContextPath}/CONTENT-HUB/c/100000">CONTENT HUB &nbsp; &nbsp;
+								<p>
+								<c:choose>
+								<c:when test="${NIPCUser || MarCommUser}">
+								      <a class="link text-uppercase px-0" href="${encodedContextPath}/CONTENT-HUB/c/100000">Resources &nbsp; &nbsp;
 										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+								<c:when test="${BDUser}">
+								      <a class="link text-uppercase px-0" href="https://www.investsaudi.sa/en/mediaCenter/resources">Resources &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+								</c:choose>
 								</p>
 							</div> 
 							<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 								<h2 class="text-uppercase display-7">BUSINESS SUPPORT</h2>
 								<p class="text">Link to the enquires raised by yourself.</p>
-								<p><a class="link text-uppercase px-0" href="${encodedContextPath}/my-account/support-tickets">SUPPORT TICKET &nbsp; &nbsp;
+								<p>
+								<c:if test="${NIPCUser || MarCommUser || BDUser}">
+								      <a class="link text-uppercase px-0" href="${encodedContextPath}/my-account/support-tickets">Support Ticket &nbsp; &nbsp;
 										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:if>
 								</p>
 							</div> 
 							<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 								<h2 class="text-uppercase display-7">CONTACT US</h2>
 								<p class="text">We love to connect with you.</p>
-								<p><a class="link text-uppercase px-0" href="${encodedContextPath}/contact">CONTACT US &nbsp; &nbsp;
+								<p>
+								<c:choose>
+								<c:when test="${NIPCUser || MarCommUser}">
+								      <a class="link text-uppercase px-0" href="${encodedContextPath}/contact">CONTACT US &nbsp; &nbsp;
 										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+								<c:when test="${BDUser}">
+								      <a class="link text-uppercase px-0" href="https://www.investsaudi.sa/en/contactUs">CONTACT US &nbsp; &nbsp;
+										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+								</c:when>
+								</c:choose>
 								</p>
 							</div>
 						</div>

@@ -12,6 +12,7 @@
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsApplyModal.tag" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%--@elvariable id="dashboardBanner" type="java.lang.String"--%>
 <%--@elvariable id="encodedContextPath" type="java.lang.String"--%>
@@ -232,89 +233,10 @@
      <!-- <div id="dashboardNoLicenseHelper"></div> -->
     <dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>
 
-    
-     <!-- OPPOTUNITIES START-->
-     <section class="mainSection mainSection_grey js-dashboard">
-        <div class="container">
-                <div class="mb-5">
-                     <div class="Inc-title-header">
-                        <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
-                            <c:if test="${language eq 'en'}">
-                                <span class="clr_gld">${category.name}</span>&nbsp;<spring:theme code="portal.sector.opportunity.label"/>
-                            </c:if>
-                            <c:if test="${language eq 'ar'}">
-                                <span class="clr_gld"><spring:theme code="portal.sector.featured.opportunity.label"/>&nbsp;${category.name}</span>
-                            </c:if>
-                            <a href="/${language}/sectors-opportunities/opportunitie" class="btn-dashboard float-right text-uppercase"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/> <img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/></a>
-                        </h1>
-                      </div>
-                    <!-- <c:if test="${empty featuredOpportunities}"> -->
-                        <!-- <div class="page-main-content mt-0 text-center">
-                            <div class="no-opportunities-text"><spring:theme code="portal.sector.opportunity.not.available.label"/></div>
-                        </div> -->
-                    <!-- </c:if> -->
-                    <div class="row">                                   
-                        <div class="col-lg-4 col-md-6 col-sm-12 my-4">
-                                <a href="/en/sectors-opportunities/chemicals/polyaluminum-chloride-pac">
-                                    <div class="Inc-fearured-opp">
-                                        <h2 class="Inc-fearured-opp-headtitle" title="Polyaluminum Chloride (PAC)">Polyaluminum Chloride (PAC)</h2>
-                                        <h3 class="Inc-fearured-opp-type">Chemicals</h3>
-                                        <button class="btn btn_round btn-primary btn-dashboard text-center mx-auto">
-                                            KNOW MORE<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
-                                        </button>
-                                        <button class="btn btn_round btn-primary btn_outline text-uppercase mx-auto">
-                                            I AM INTERESTED<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/btn-sector-outline.png" alt="">
-                                        </button>
-                                        <!-- <span class="Inc-sector-icon-mini">
-                                            <img class="img-fluid" src="/medias/chemicals-logo.png?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw5ODJ8aW1hZ2UvcG5nfHBvcnRhbC1tZWRpYS9oMTIvaDJkLzg4MTE5OTM3MjcwMDYucG5nfDgyZmE2MmQ2YTAyOWFiNTI2YmI1MDMxZWUyMjkwY2YxMGRkMWYzMGM2ZmU0MjlkYTQyNGI0NTRjNTVkMWYyNjc" 
-                                                    alt="" />
-                                        </span> -->
-                                    </div>
-                                </a>
-                            </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 my-4">
-                                <a href="/en/sectors-opportunities/chemicals/methacrylate-butadiene-styrene-mbs-resin">
-                                    <div class="Inc-fearured-opp">
-                                        <h2 class="Inc-fearured-opp-headtitle" title="Methacrylate Butadiene Styrene (MBS) Resin">Methacrylate Butadiene Styrene (MBS) Resin</h2>
-                                        <h3 class="Inc-fearured-opp-type">Chemicals</h3>
-                                        <button class="btn btn_round btn-primary btn-dashboard text-center mx-auto">
-                                            KNOW MORE<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
-                                        </button>
-                                        <button class="btn btn_round btn-primary btn_outline text-uppercase mx-auto">
-                                            I AM INTERESTED<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/btn-sector-outline.png" alt="">
-                                        </button>
-                                        <!-- <span class="Inc-sector-icon-mini">
-                                            <img class="img-fluid" src="/medias/chemicals-logo.png?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw5ODJ8aW1hZ2UvcG5nfHBvcnRhbC1tZWRpYS9oMTIvaDJkLzg4MTE5OTM3MjcwMDYucG5nfDgyZmE2MmQ2YTAyOWFiNTI2YmI1MDMxZWUyMjkwY2YxMGRkMWYzMGM2ZmU0MjlkYTQyNGI0NTRjNTVkMWYyNjc" 
-                                                    alt="" />
-                                        </span> -->
-                                    </div>
-                                </a>
-                            </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 my-4">
-                                <a href="/en/sectors-opportunities/chemicals/polytetramethylene-ether-glycol-ptmeg">
-                                    <div class="Inc-fearured-opp">
-                                        <h2 class="Inc-fearured-opp-headtitle" title="Polytetramethylene Ether Glycol (PTMEG)">Polytetramethylene Ether Glycol (PTMEG)</h2>
-                                        <h3 class="Inc-fearured-opp-type">Chemicals</h3>
-                                        <button class="btn btn_round btn-primary btn-dashboard text-center mx-auto">
-                                            KNOW MORE<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
-                                        </button>
-                                        <button class="btn btn_round btn-primary btn_outline text-uppercase mx-auto">
-                                            I AM INTERESTED<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/btn-sector-outline.png" alt="">
-                                        </button>
-                                        <!-- <span class="Inc-sector-icon-mini">
-                                            <img class="img-fluid" src="/medias/chemicals-logo.png?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw5ODJ8aW1hZ2UvcG5nfHBvcnRhbC1tZWRpYS9oMTIvaDJkLzg4MTE5OTM3MjcwMDYucG5nfDgyZmE2MmQ2YTAyOWFiNTI2YmI1MDMxZWUyMjkwY2YxMGRkMWYzMGM2ZmU0MjlkYTQyNGI0NTRjNTVkMWYyNjc" 
-                                                    alt="" />
-                                        </span> -->
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </section>
-    <!-- OPPOTUNITIES END-->
-    <section id="newsandupdates" class="newsAndUpdateContainer">
-	    <div class="container">
+
+    <!--News Section Start-->
+    <div id="newsandupdates" class="newsAndUpdateContainer">
+	    <div class="dashboard-container">
 	        <div class="row titleContainer">
 	            <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
 	                <h1 class="section-title text-center clr_gld">NEWS &amp; UPDATES</h1>
@@ -325,50 +247,30 @@
 				</div>
 			</div>
 			
+			<c:if test="${not empty lastNews}">
            	<div class="row contentWrapper">
+           	<c:url value="/mediaCenter/news" var="newsUrl"/>
+           	<c:forEach var="currentNews" items="${lastNews}" varStatus="status">
            		<div class="col-lg-4 col-md-6 card-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
 			        	<div class="flip-card">
 			            	<div class="card-img">
-			                	<img class="img-fluid" src="/medias/news-national-center-for-waste-management.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NjgyM3xpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oNjUvaDkxLzg4MTE5ODAxMjgyODYuanBnfDYyNjlmZDU5NTMzYWQ4ZTAwZDM0ZjQxNjJkZGI5M2Q0NmJiNjlmNjU2MTMxMWY4MDQ2NzIyMmM1NTQyMzU5MmY" alt="">
+			                	<img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
 			              	</div>
 			              	<div class="card-box p-3 pr-5 home-news-updates-content">
-			               		<strong>9&nbsp;November</strong>
-			                  	<h2>The Ministry of Investment and the National Center for Waste Management sign a cooperation agreement to activate investments in the waste management sector</h2>
-			                  	<p class="home-news-updates-content-p">Saudi Arabia's Ministry of Investment has inked a cooperation agreement with the kingdom's National.</p>
-	                  			<p><a class="know-more-link" href="/en/mediaCenter/news/news-national-center-for-waste-management">Know more&nbsp;<img src=""></a></p>
+			               		<strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
+			                  	<h2>${currentNews.newsTitle}</h2>
+			                  	<p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
+	                  			<p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img src=""></a></p>
 	                      	</div>
 						</div>
 					</div>
-				<div class="col-lg-4 col-md-6 card-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-delay="150">
-			        	<div class="flip-card">
-			            	<div class="card-img">
-			                	<img class="img-fluid" src="/medias/news-investment-attractive-Banner.png?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwyOTg0MjB8aW1hZ2UvcG5nfHBvcnRhbC1tZWRpYS9oZGEvaDM3Lzg4MTE5ODEwNDU3OTAucG5nfGM5NmE0MjVjNDkyM2Y4ZjVhNjI2YWM0MDIzODI5ZjI0ZjBmZDFmYTg1OTY2OGFiYTVhYWUwOWY3MWI4YmYyNjQ" alt="">
-			              	</div>
-			              	<div class="card-box p-3 pr-5 home-news-updates-content">
-			               		<strong>10&nbsp;September</strong>
-			                  	<h2>Minister of Investment: The Kingdom and Germany have enormous potential to expand investments between them</h2>
-			                  	<p class="home-news-updates-content-p">Minister of Investment, Eng. Khalid Al-Falih, today outlined the.</p>
-	                  			<p><a class="know-more-link" href="/en/mediaCenter/news/news-ministry-of-investment">Know more&nbsp;<img src=""></a></p>
-	                      	</div>
-						</div>
-					</div>
-				<div class="col-lg-4 col-md-6 card-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-			        	<div class="flip-card">
-			            	<div class="card-img">
-			                	<img class="img-fluid" src="/medias/news-ministers-of-Misa-and-Malaysia.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NTI0NDJ8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDFjL2hjMi84ODExOTc5ODk4OTEwLmpwZ3xhOWZjNGRiMmQ4NmFlZDIyNTM3YTRmYmM1Yjk0M2UxYzUyMzY1Nzc0ZTZlODIyZDdjYWIyMGI4NTZkNTkyNTRl" alt="">
-			              	</div>
-			              	<div class="card-box p-3 pr-5 home-news-updates-content">
-			               		<strong>3&nbsp;May</strong>
-			                  	<h2>Minister of Investment, Malaysian Minister of International Trade Discuss Enhancing Cooperation and Investment Opportunities</h2>
-			                  	<p class="home-news-updates-content-p">Minister of Investment Eng. Khalid bin Abdulaziz Al-Falih met here yesterday with Malaysian Minister of International a.</p>
-	                  			<p><a class="know-more-link" href="/en/mediaCenter/news/news-ministers-of-Misa-and-Malaysia">Know more&nbsp;<img src=""></a></p>
-	                      	</div>
-						</div>
-					</div>
+					</c:forEach>
+			
 				</div>
+				</c:if>
     	</div>
-	</section>
-        <!-- <div class="row mt-5">
+	</div>
+         <div class="row mt-5">
             <div class="col-md-8 ">
                 <div class="js-dashboardWidget dashboardWidget_noRadiusRight">
                     <div class="dashboardWidget-headline js-dashboardWidget-headline">
@@ -472,7 +374,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div> 
     </div>
 </section>
 

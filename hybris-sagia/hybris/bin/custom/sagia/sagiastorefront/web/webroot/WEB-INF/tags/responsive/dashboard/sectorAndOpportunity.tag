@@ -52,18 +52,22 @@
                   <div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header">
                      ${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/>
                   </div>
-                     <div class="dashboardWidget-body">
-                        <div class="dashboardWidgetBanner">
-                           <div class="dashboardWidgetBanner-tabs js-dashboardWidgetBanner-tabs ">
-                              <div class="dashboardWidgetBanner-tabs-body col-8">
-                                 <p>${sector.sectorDetails}</p>
-                                  <div class="row">	
-                                    <c:if test="${sector.sectorCode ne 'Others'}">
-                                                   <div class="dashboardWidgetBanner-action ml-3"><a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn-dashboard"><spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/><img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/> </a> </div>
-                                    </c:if>
-                                    <c:if test="${sector.sectorCode eq 'Others'}">
-                                          <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/opportunities/" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/></a></div>
-                                    </c:if>
+                  <div class="dashboardWidget-body">
+                     <div class="dashboardWidgetBanner">
+                        <div class="dashboardWidgetBanner-tabs js-dashboardWidgetBanner-tabs ">
+                           <div class="dashboardWidgetBanner-tabs-body col-8">
+                              <p>${sector.sectorDetails}</p>
+                           </div>
+                        </div>
+                        <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}">
+				
+                        <div class="col-md-12 col-lg-5 section-counts sect-right-panel">
+                                    <c:forEach var="sectorFactsFigures" items="${customerSectorCategory.sectorFactsFigures}">  
+                                       <div class="count-item">
+                                          <h5><span class="unit">${sectorFactsFigures.figures}${sectorFactsFigures.unit}</span></h5>
+                                          <p class="description">${sectorFactsFigures.facts}</p>
+                                       </div>  
+                                    </c:forEach>
                                  </div>
                               </div>
                                  <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}">
@@ -88,9 +92,17 @@
                                  </div>
                               </div>
                            </div>
-                          
+                        </div>
+                        <div class="row">	
+                           <c:if test="${sector.sectorCode ne 'Others'}">
+                                          <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/> </a> </div>
+                           </c:if>
+                           <c:if test="${sector.sectorCode eq 'Others'}">
+                                 <div class="dashboardWidgetBanner-action"><a href="https://investsaudi.sa/en/sectors-opportunities/opportunities/" class="btn btn_round btn_outline"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/></a></div>
+                           </c:if>
                         </div>
                      </div>
+                  </div>
                  </div>
               </div>
          </div>
@@ -137,7 +149,7 @@
 	                                 <h2 class="Inc-fearured-opp-headtitle" title="${featuredOpportunity.opportunity.name}">${featuredOpportunity.opportunity.name}</h2>
 	                                 <h3 class="Inc-fearured-opp-type">${featuredOpportunity.parentCategory.name}</h3>
 	                                 <button class="btn btn-sector-primary mx-auto">
-	                                 	<spring:theme code="portal.opportunity.know.more.button"/>
+	                                 	<spring:theme code="portal.sector.opportunity.know.more.label"/>
 	                                 	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
 	                                 </button>
 	                                 <button class="btn btn-sector-outline mx-auto">

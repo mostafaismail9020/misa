@@ -1,6 +1,7 @@
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
 import com.sap.ibso.eservices.facades.sagia.SagiaDashboardWithoutLicenseFacade;
+import com.investsaudi.portal.core.service.InvestSaudiMediaCenterService;
 import com.sap.ibso.eservices.facades.user.impl.SagiaCustomerFacade;
 import com.sap.ibso.eservices.sagiaservices.data.zqeemah.ApplicationStatusData;
 import com.sap.ibso.eservices.sagiaservices.investor.InvestorMappingService;
@@ -43,6 +44,7 @@ public class DashboardWithoutLicenseController extends SagiaAbstractPageControll
 
     private static final String SAGIA_DASHBOARD_CMS_PAGE = "dashboard-without-license";
     private static final String REDIRECT_TO_DASHBOARD = REDIRECT_PREFIX + "/dashboard";
+    private static final int NUMBER_OF_NEWS = 3;
 
     @Resource(name = "sagiaCustomerFacade")
     private SagiaCustomerFacade sagiaCustomerFacade;
@@ -64,6 +66,9 @@ public class DashboardWithoutLicenseController extends SagiaAbstractPageControll
     
     @Resource
     private InvestSaudiProductFacade investSaudiProductFacade;
+    
+    @Resource
+    private InvestSaudiMediaCenterService investSaudiMediaCenterService;
 
     @Resource(name = "userService")
     private UserService userService;
@@ -127,6 +132,7 @@ public class DashboardWithoutLicenseController extends SagiaAbstractPageControll
         model.addAttribute("hasUserAppliedForLicense", hasUserAppliedForLicense);
         model.addAttribute("userOpportunityTickets", sagiaCustomerFacade.getUserRaisedOpportunities(((CustomerModel) userService.getCurrentUser()).getContactEmail()));
 
+        model.addAttribute("lastNews", investSaudiMediaCenterService.getNews(NUMBER_OF_NEWS));
         //model.addAttribute("displayTutorial", sagiaCustomerFacade.displayDashboardNoLicenseTutorial());
         CustomerModel customerModel = (CustomerModel) userService.getCurrentUser();
         model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());

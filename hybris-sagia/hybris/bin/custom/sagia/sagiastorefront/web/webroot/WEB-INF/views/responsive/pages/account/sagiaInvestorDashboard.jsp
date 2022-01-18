@@ -155,15 +155,15 @@
             <div class="service-card-wrapper">
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
-                    <span>Licensing Services</span>
+                    <span><spring:theme code="dashboard.license.service.name"/></span>
                 </div>
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
-                    <span>Licensing Services</span>
+                    <span><spring:theme code="dashboard.governmental.service.name"/></span>
                 </div>
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
-                    <span>Licensing Services</span>
+                    <span><spring:theme code="dashboard.misa.service.name"/></span>
                 </div>
             </div>
         </div>

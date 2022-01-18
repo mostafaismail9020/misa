@@ -55,7 +55,7 @@
                             <div class="dashboardUser-entry">
                                 <div class="dashboardUser-label dashboardUser-label-xs"><spring:theme code="general.company"/></div>
                                 <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                                <div>Last Login: <span class="clr_gld">${customerLastLogon}</span></div>
+                                <span class="last-login">Last Login:<span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
                             </div>
                         </div>
                     </div>

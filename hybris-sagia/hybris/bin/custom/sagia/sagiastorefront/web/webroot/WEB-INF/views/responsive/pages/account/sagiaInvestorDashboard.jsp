@@ -74,7 +74,7 @@
 
 
 
-<section class="mainSection mainSection_noPadding">
+<section class="mainSection mainSection_noPadding userDetail-block">
     <div class="container">
         <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
             <div class="dashboardUser-wrapper col-md-12 mr-0 pt-3 px-0">
@@ -94,7 +94,7 @@
                             <div class="dashboardUser-col">
                                 <div class="dashboardUser-entry ml-3">
                                     <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                                    <div>Last Login: <span class="clr_gld">${customerLastLogon}</span></div>
+                                    <span class="last-login">Last Login:<span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
                                 </div>
                             </div>
                         </div>

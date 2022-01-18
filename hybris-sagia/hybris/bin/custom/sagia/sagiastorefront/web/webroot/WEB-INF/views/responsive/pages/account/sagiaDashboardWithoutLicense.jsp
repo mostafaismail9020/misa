@@ -270,7 +270,7 @@
 				</c:if>
     	</div>
 	</div>
-         <div class="row mt-5">
+         <%-- <div class="row mt-5">
             <div class="col-md-8 ">
                 <div class="js-dashboardWidget dashboardWidget_noRadiusRight">
                     <div class="dashboardWidget-headline js-dashboardWidget-headline">
@@ -284,11 +284,11 @@
                                 <div class="col-lg-7">
                                     <div class="dashboardWidgetAskOurExpert-headline"><spring:theme code="dashboard.support.helpQuestion"/></div>
                                     <ul class="dashboardWidgetAskOurExpert-list">
-                                        <%--<li>
+                                        <li>
                                             <a href="${encodedContextPath}/my-sagia/sagia-profile" class="dashboardWidgetAskOurExpert-link">
                                                 <icon:account-settings/><spring:theme code="dashboard.support.accountSettings"/>
                                             </a>
-                                        </li>--%>
+                                        </li>
                                         <li>
                                             <a href="" data-toggle="modal" data-target="#eServiceTour" class="dashboardWidgetAskOurExpert-link dashboardWidgetAskOurExpert-link_stroke">
                                                 <icon:first-steps/><spring:theme code="dashboard.support.firstSteps"/>
@@ -307,11 +307,11 @@
                                                 </a>
                                             </li>
 
-                                            <%-- <li>
+                                            <li>
                                                 <a href="#" class="js-realTimeOnlineSupportChatList-open dashboardWidgetAskOurExpert-link dashboardWidgetAskOurExpert-link_stroke">
                                                     <icon:chat/><spring:theme code="realTimeOnlineSupportChatList.title"/>
                                                 </a>
-                                            </li> --%>
+                                            </li>
 
                                             <li>
                                                 <a href="#" class="js-realtimeOnlineSupportEmailUs dashboardWidgetAskOurExpert-link dashboardWidgetAskOurExpert-link_stroke">
@@ -319,19 +319,19 @@
                                                 </a>
                                             </li>
 
-                                        <%--<li>
+                                        <li>
                                             <a href="${encodedContextPath}/my-sagia/license/bidding" class="dashboardWidgetAskOurExpert-link">
                                                 <icon:bidding-certificates/><spring:theme code="dashboard.support.biddingCertificates"/>
                                             </a>
-                                        </li>--%>
-                                        <%--<li>
+                                        </li>
+                                        <li>
                                            <a href="${encodedContextPath}/service-search" class="dashboardWidgetAskOurExpert-link">
                                                 <icon:services/><spring:theme code="dashboard.support.services"/>
                                             </a>
-                                        </li>--%>
+                                        </li>
                                     </ul>                               
                                 </div>
-                               <%-- <div class="col-lg-5 dashboardWidgetAskOurExpert-seperator">
+                               <div class="col-lg-5 dashboardWidgetAskOurExpert-seperator">
                                     <div class="dashboardWidgetAskOurExpert-headline">
                                         <spring:theme code="dashboard.support.ask"/>
                                     </div>
@@ -341,7 +341,7 @@
                                         <li><icon:chat/><a href="#" id="liveChatButton"><spring:theme code="support.livechat"/></a></li>
                                         <li><icon:enquiry/><a href="#" id="makeAnEnquiry"><spring:theme code="support.makeenquiry"/></a></li>
                                     </ul>
-                                </div>--%>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -374,7 +374,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>  --%>
     </div>
 </section>
 

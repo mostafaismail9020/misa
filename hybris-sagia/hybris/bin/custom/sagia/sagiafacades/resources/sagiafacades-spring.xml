@@ -1713,6 +1713,7 @@
 
 	<bean id="investSaudiOpportunityPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiOpportunityPopulator">
 		<property name="imageConverter" ref="imageConverter"/>
+		<property name="productReferenceConverter" ref="productReferenceConverter"/>
 	</bean>
 
 	<bean id="investSaudiSuccessStoryPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiSuccessStoryPopulator">

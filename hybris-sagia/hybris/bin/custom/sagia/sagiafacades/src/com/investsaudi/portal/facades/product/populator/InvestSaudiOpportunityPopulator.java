@@ -3,11 +3,13 @@ package com.investsaudi.portal.facades.product.populator;
 import com.investsaudi.portal.core.model.OpportunityProductModel;
 import de.hybris.platform.catalog.model.KeywordModel;
 import de.hybris.platform.catalog.model.ProductFeatureModel;
+import de.hybris.platform.catalog.model.ProductReferenceModel;
 import de.hybris.platform.catalog.model.classification.ClassAttributeAssignmentModel;
 import de.hybris.platform.catalog.model.classification.ClassificationClassModel;
 import de.hybris.platform.category.model.CategoryModel;
 import de.hybris.platform.commercefacades.product.data.ImageData;
 import de.hybris.platform.commercefacades.product.data.ProductData;
+import de.hybris.platform.commercefacades.product.data.ProductReferenceData;
 import de.hybris.platform.converters.Populator;
 import de.hybris.platform.core.model.c2l.LanguageModel;
 import de.hybris.platform.core.model.media.MediaModel;
@@ -26,12 +28,15 @@ import java.util.Optional;
 
 import static org.apache.commons.collections4.CollectionUtils.emptyIfNull;
 
+
 public class InvestSaudiOpportunityPopulator implements Populator<ProductData, OpportunityProductModel> {
 
     private static final String SECTOR_URL = "/sectors-opportunities/";
     private static final String TYPE = "OpportunityProduct";
 
     private Converter<MediaModel, ImageData> imageConverter;
+    
+    private Converter<ProductReferenceModel, ProductReferenceData> productReferenceConverter;
 
     @Resource
     private I18NService i18NService;
@@ -52,6 +57,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         productData.setFeatureMap(extractProductFeatures(productModel.getFeatures()));
         productData.setSummary(productModel.getSummary());
         productData.setProductType(TYPE);
+        productData.setProductReferences(populateProductReference(productModel.getProductReferences()));
         
         final MediaModel overviewImage = productModel.getPicture();
         if (overviewImage != null) {
@@ -98,7 +104,6 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 
 
     private String extractMediaUrl(Collection<MediaModel> mediaModels) {
-
         Optional<MediaModel> mediaModelOptional = emptyIfNull(mediaModels).stream().findFirst();
         return mediaModelOptional.isPresent() ? mediaModelOptional.get().getURL() : StringUtils.EMPTY;
     }
@@ -111,19 +116,17 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         }
 
         return map;
-
     }
 
     private String extractTitle(ProductModel productModel) {
-
         Optional<ProductFeatureModel> productFeatureModelOptional = productModel.getFeatures().stream().findFirst();
         return productFeatureModelOptional.isPresent() ?
             validateTitleField(productFeatureModelOptional.get().getClassificationAttributeAssignment()) : StringUtils.EMPTY;
     }
 
     private String extractClassAttributeName(ProductFeatureModel featureModel) {
-
-        return (featureModel.getClassificationAttributeAssignment() != null && featureModel.getClassificationAttributeAssignment().getClassificationAttribute() != null) ?
+        return (featureModel.getClassificationAttributeAssignment() != null && 
+        		featureModel.getClassificationAttributeAssignment().getClassificationAttribute() != null) ?
             featureModel.getClassificationAttributeAssignment().getClassificationAttribute().getName() : StringUtils.EMPTY;
     }
 
@@ -132,18 +135,11 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
             classAttributeAssignmentModel.getClassificationClass().getName() : StringUtils.EMPTY;
     }
 
-    public Converter<MediaModel, ImageData> getImageConverter() {
-        return imageConverter;
-    }
-
-    @Required
-    public void setImageConverter(final Converter<MediaModel, ImageData> imageConverter) {
-        this.imageConverter = imageConverter;
-    }
-
     private List<ProductFeatureModel> getProductFeaturesForCurrentLanguage(List<ProductFeatureModel> featureModels) {
         String currentIso = i18NService.getCurrentLocale().getLanguage();
-        return emptyIfNull(featureModels).stream().filter(featureModel -> validateLanguage(featureModel).equalsIgnoreCase(currentIso)).collect(Collectors.toList());
+        
+        return emptyIfNull(featureModels).stream().filter(featureModel -> 
+        	validateLanguage(featureModel).equalsIgnoreCase(currentIso)).collect(Collectors.toList());
     }
 
     private String validateLanguage(ProductFeatureModel featureModel) {
@@ -153,4 +149,49 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
             return StringUtils.EMPTY;
         }
     }
+    
+    private List<ProductReferenceData> populateProductReference(Collection<ProductReferenceModel> references)
+	{
+    	List<ProductReferenceData> productReferences = new ArrayList<ProductReferenceData>();
+    	ProductReferenceData productRefData = null;
+    	
+    	for (final ProductReferenceModel productRefer : references)
+		{
+    		productRefData = getProductReferenceConverter().convert(productRefer);
+    		
+    		ProductModel opportunity = productRefer.getTarget();
+    		if (null != opportunity) {
+	    		final Optional<CategoryModel> parentCategory = emptyIfNull(opportunity.getSupercategories()).stream().findFirst();
+		        if (parentCategory.isPresent()) {
+		        	productRefData.getTarget().setParentCategory(parentCategory.get().getName());
+		        	productRefData.getTarget().setUrl(SECTOR_URL + parentCategory.get().getCode() + "/" + opportunity.getCode());
+		        }
+    		}
+    		
+			productReferences.add(productRefData);
+		}
+    	return productReferences;
+	}
+    
+    
+    public Converter<MediaModel, ImageData> getImageConverter() {
+        return imageConverter;
+    }
+
+    @Required
+    public void setImageConverter(final Converter<MediaModel, ImageData> imageConverter) {
+        this.imageConverter = imageConverter;
+    }
+    
+    public Converter<ProductReferenceModel, ProductReferenceData> getProductReferenceConverter()
+	{
+		return productReferenceConverter;
+	}
+    
+    @Required
+	public void setProductReferenceConverter(final Converter<ProductReferenceModel, ProductReferenceData> productReferenceConverter)
+	{
+		this.productReferenceConverter = productReferenceConverter;
+	}
+	
 }

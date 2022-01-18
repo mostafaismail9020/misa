@@ -6,7 +6,7 @@
 <%@ taglib prefix="product" tagdir="/WEB-INF/tags/responsive/product" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%-- <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>--%>
+
 
 <template:portalpage pageTitle="${pageTitle}">
 
@@ -20,7 +20,49 @@
                 <product:investSaudiSuccessStoryProduct />
             </c:otherwise>
         </c:choose>
-		
+	
+		<c:if test="${not empty productData.productReferences}">
+			<section class="Inc-energyoppertunities">
+			    <div class="container">
+			        <div class="Inc-title-header">
+			            <h1 class="Inc-secdetil-enop-header ">
+			            	<span class="clr_gld"><spring:theme code="portal.similar.opportunities.text"/>&nbsp;</span>			            	
+			            </h1>			            
+			            <c:url value="/sectors-opportunities/opportunities/?q=&sectorIds=" var="exploreAllUrl"/>
+			            <button  class="btn btn-sector-primary responsive-btn-sector">
+			            	<a href="${exploreAllUrl}${categoryCode}"><spring:theme code="portal.exploreall.button.text"/>&nbsp;
+			            		<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
+			            		<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
+			            	</a>
+			            </button>
+			        </div>			
+				
+					<div class="page-main-content mt-0">
+			           <div class="row">                                   
+			                <c:forEach items="${productData.productReferences}" var="references">
+			                    <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+			                        <a href="${encodedContextPath}${references.target.url}">
+			                            <div class=" Inc-fearured-opp">
+			                                <h2 class="Inc-fearured-opp-headtitle" title="${references.target.name}">${references.target.name}</h2>
+			                                <h3 class="Inc-fearured-opp-type">${references.target.parentCategory}</h3>
+			                                <button class="btn btn-sector-primary mx-auto">
+			                                	<spring:theme code="portal.opportunity.know.more.button"/>
+			                                	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
+			                                </button>
+			                                <button class="btn btn-sector-outline mx-auto">
+			                                	<spring:theme code="portal.opportunity.iam.interested.button"/>
+			                                	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/btn-sector-outline.png" alt="">
+			                                </button>	                               
+			                            </div>
+			                        </a>
+			                    </div>
+							</c:forEach>
+						</div>
+					</div>									
+				</div>
+			</section>
+		</c:if>
+				
 		<div class="Inc-sector-panel">
 			<h1 class="Inc-sector-panel-header"><spring:theme code="portal.sector.explore.other.label"/></h1>								
 			<div class="hexagon-portal">
@@ -33,8 +75,7 @@
 										data-alt="${fn:escapeXml(allCategories.logo.url)}" alt=""/>
 								<h2><c:out value="${allCategories.name}"/></h2>
 							</a>
-						</figure>
-						
+						</figure>						
 					</article>						
 				</c:forEach>
 			</div>

@@ -174,7 +174,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn js-close-btn" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
+                <a class="btn js-close-btn btn js-close-btn" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
             </div>
         </div>
     </div>

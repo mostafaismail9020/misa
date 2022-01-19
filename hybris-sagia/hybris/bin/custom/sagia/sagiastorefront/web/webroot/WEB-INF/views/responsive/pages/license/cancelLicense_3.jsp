@@ -23,16 +23,39 @@
             <div class="mainSection-headline">
                 <spring:theme code="licenseCancellation.title"/>
             </div>
-            <div>
-                <button class="btn btn_round btn_slim js-save-draft" data-target-form="${formName}"><spring:theme code="general.savedraft"/>
-                    <span class="iconElement iconElement_save"><icon:save/></span></button>
+        </div>
+    </div>
+</div>
 
-                <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if> data-target-form="${formName}"><spring:theme code="general.loaddraft"/>
-                    <span class="iconElement iconElement_save"><icon:upload/></span></button>
+<div class="container mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+    <div class="m-5">
+        <div class="row w-100">
+            <div class="col-md-3 px-0">
+                <button class="btn btn_round back_to_service btn_leftIconLink">
+                    <icon:arrow_green_right/> Back to All Services
+                    <span class="iconElement iconElement_save"></span>
+                </button>
+            </div>
+            <div class="col-md-3">
+                <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
+            </div>	
+        </div>	
+        <div class="row w-100 d-flex mt-4">
+            <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
+                <div class="btn-drafts_list">
+                    <button class="btn btn_round btn_slim js-save-draft" data-target-form="${formName}"><spring:theme code="general.savedraft"/>
+                        <span class="iconElement iconElement_save"><icon:save/></span></button>
+    
+                    <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if> data-target-form="${formName}"><spring:theme code="general.loaddraft"/>
+                        <span class="iconElement iconElement_save"><icon:upload/></span></button>
+                </div>               
             </div>
         </div>
     </div>
 </div>
+
+
+
 
 <div class="mainSection mainSection_noPadding">
     <div class="container">
@@ -118,14 +141,15 @@
                 </c:choose>
 
                 <div class="contentModule-actions contentModule-actions_spaceBetween">
-                    <button type="button" class="btn btn-secondary btn-back">
-                        <spring:theme code="licenseCancellation.back"/>
-                    </button>
                     <div class="formCheckBox formCheckBox_belowPanel">
                         <div class="form-group">
                             <formElement:termsAndConditionsCheckbox event="LICENSE_SERVICES" id="termsAndConditions3" path="termsAndConditionsChecked"/>
                         </div>
                     </div>
+                    <button type="button" class="btn btn-secondary btn-back">
+                        <spring:theme code="licenseCancellation.back"/>
+                    </button>
+                    
                     <button type="submit" class="btn">
                         <spring:theme code="licenseCancellation.next"/>
                     </button>
@@ -149,7 +173,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn js-close-btn" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
+                <a class="btn js-close-btn btn_outline btn_slim" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
             </div>
         </div>
     </div>

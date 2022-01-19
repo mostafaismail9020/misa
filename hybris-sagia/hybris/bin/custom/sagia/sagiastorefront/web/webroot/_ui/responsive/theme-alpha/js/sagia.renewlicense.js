@@ -298,40 +298,43 @@ $(function () {
                 url: ACC.config.contextPath + '/draft?formId=' + serviceId
             }).done(function (response) {
                 var fileCodes = [];
-                response.parameters.forEach(function (parameter) {
-                    if (parameter.name === "img" && parameter.type === "hidden") {
-                        fileCodes.push(parameter);
-                    } else if (parameter.name !== "CSRFToken" && parameter.type !== 'hidden' && parameter.name !== '_termsAndConditionsChecked') {
-                        var domElement = $("[name='" + parameter.name + "']");
-                        if (domElement.hasClass('realEstate-type')) {
-                            domElement.attr("selectedValue", parameter.value);
-                            domElement.val(parameter.value).trigger('change', [{files: response.files}])
-                        } else {
-                            domElement.attr("selectedValue", parameter.value);
-                            domElement.val(parameter.value).trigger('change')
+                if(response.parameters !== undefined){
+                    response.parameters.forEach(function (parameter) {
+                        if (parameter.name === "img" && parameter.type === "hidden") {
+                            fileCodes.push(parameter);
+                        } else if (parameter.name !== "CSRFToken" && parameter.type !== 'hidden' && parameter.name !== '_termsAndConditionsChecked') {
+                            var domElement = $("[name='" + parameter.name + "']");
+                            if (domElement.hasClass('realEstate-type')) {
+                                domElement.attr("selectedValue", parameter.value);
+                                domElement.val(parameter.value).trigger('change', [{files: response.files}])
+                            } else {
+                                domElement.attr("selectedValue", parameter.value);
+                                domElement.val(parameter.value).trigger('change')
+                            }
                         }
-                    }
-                });
+                    });
+                }
+                if(response.files !== undefined){
+                    response.files.forEach(function (file, index) {
+                        var fileInput = $('[name="' + file.attachmentInputName + '"]');
+                        var textInput = fileInput.next('input:text'),
+                            rootElement = fileInput.closest('.formInputFile');
 
-                response.files.forEach(function (file, index) {
-                    var fileInput = $('[name="' + file.attachmentInputName + '"]');
-                    var textInput = fileInput.next('input:text'),
-                        rootElement = fileInput.closest('.formInputFile');
-
-                    textInput.attr('placeholder', file.name);
-                    //var fileIndex = fileInput.data('id');
-                    var mockFileInput = fileInput.closest('.formInputFile').find('.js-mock-input');
-                    mockFileInput.val(file.id);
-                    /* var mockFileInput = '<input name="draftFiles[' + index +  ']" file-id="' + fileIndex +
-                                '" class="form-control js-mock-input" style="display:none;" type="text" value="' + file.id + '">';*/
-                    textInput.after(mockFileInput);
-                    fileInput.val('');
-                    if (fileInput.length > 0) {
-                        rootElement.addClass('active');
-                    } else {
-                        rootElement.removeClass('active');
-                    }
-                });
+                        textInput.attr('placeholder', file.name);
+                        //var fileIndex = fileInput.data('id');
+                        var mockFileInput = fileInput.closest('.formInputFile').find('.js-mock-input');
+                        mockFileInput.val(file.id);
+                        /* var mockFileInput = '<input name="draftFiles[' + index +  ']" file-id="' + fileIndex +
+                                    '" class="form-control js-mock-input" style="display:none;" type="text" value="' + file.id + '">';*/
+                        textInput.after(mockFileInput);
+                        fileInput.val('');
+                        if (fileInput.length > 0) {
+                            rootElement.addClass('active');
+                        } else {
+                            rootElement.removeClass('active');
+                        }
+                    });
+                }
 
                 var fileInput = $('.js-upload-files-list[data-files-name="img"]');
                 fileInput.trigger('addFile', [fileCodes, false]);

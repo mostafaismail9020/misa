@@ -22,6 +22,8 @@
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="convertlicense.converttonational" /></h1>
+        </div>
+        <div class="row service-time">
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
                     <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
@@ -39,41 +41,55 @@
                                 <span class="serviceTime-highlight">${processingTime.seconds}</span>
                                 <spring:theme code="average.processingTime.seconds"/>
                             </c:when>
-                        </c:choose>                    </div>
+                        </c:choose>                    
+                    </div>
                 </div>
             </c:if>
         </div>
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
-    <div class="container">
-        <div class="mainSection-linkActions mainSection-linkActions_right">
-        	<div>
-        	 <c:choose>
-               <c:when test ="${isInstant}">
-        		<a class="btn btn_slim btn-warning btn_outline" href="${encodedContextPath}/my-sagia/license/convert/new">
-                    <spring:theme code="convertlicense.instant.convert"/>
-                </a>
-               </c:when>
-               <c:otherwise>
-               	<button class="btn btn_slim" onclick="window.location.href='${encodedContextPath}/my-sagia/license/convert/new'">
-                    <spring:theme code="convertlicense.convert"/>
+<div class="container mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+    <div class="m-5">
+        <div class="row w-100">
+            <div class="col-md-3 px-0">
+                <button class="btn btn_round back_to_service btn_leftIconLink">
+                    <icon:arrow_green_right/> Back to All Services
+                    <span class="iconElement iconElement_save"></span>
                 </button>
-               </c:otherwise>
-              </c:choose>
-        	</div>
-            <%-- <div>
-                <button class="btn btn_slim" onclick="window.location.href='${encodedContextPath}/my-sagia/license/convert/new'">
-                    <spring:theme code="convertlicense.convert"/>
-                </button>
-            </div> --%>
+            </div>
+            <div class="col-md-3">
+                <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
+            </div>	
+        </div>	
+        <div class="row w-100 d-flex mt-4">
+            <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
+                <div>
+                <c:choose>
+                <c:when test ="${isInstant}">
+                    <a class="btn btn_slim btn-warning btn_outline" href="${encodedContextPath}/my-sagia/license/convert/new">
+                        <spring:theme code="convertlicense.instant.convert"/>
+                    </a>
+                </c:when>
+                <c:otherwise>
+                    <button class="btn btn_slim" onclick="window.location.href='${encodedContextPath}/my-sagia/license/convert/new'">
+                        <spring:theme code="convertlicense.convert"/>
+                    </button>
+                </c:otherwise>
+                </c:choose>
+                </div>
+                <%-- <div>
+                    <button class="btn btn_slim" onclick="window.location.href='${encodedContextPath}/my-sagia/license/convert/new'">
+                        <spring:theme code="convertlicense.convert"/>
+                    </button>
+                </div> --%>
+            </div>
         </div>
     </div>
 </div>
 
 
-<div class="mainSection mainSection_dark mainSection_noPadding">
+<!-- <div class="container mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
@@ -85,9 +101,9 @@
             </c:if>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="service-wrapper service-wrapper-info">
+<div class="container service-wrapper service-wrapper-info">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -175,16 +191,29 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 mb-3">
     <div class="container">
+        <div class="container mainSection mainSection_dark mainSection_noPadding">
+            <div class="container">
+                <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
+                    <c:if test="${fn:length(convertToNationals_list) gt 1}"> 
+                        <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
+                            <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span>&#x27f6;</span></div>
+                            <div><spring:theme code="text.account.followup.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
+                        </button>
+                    </c:if>
+                </div>
+            </div>
+        </div>
+
         <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(convertToNationals_list) gt 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                <span class="iconElement iconElement_history"><icon:history/></span>
+                                <div class="contentModule-headline contentModule-headline-history">
+                                <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                     <spring:theme code="text.account.followup.history"/></div>
                                 <div class="searchInputBox searchInputBox_slim">
                                     <input id = "convertSearchBox" class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
@@ -220,7 +249,7 @@
                     <div class="contentModule">
                         <div class="contentModule-section" id = "detailedConvertToNationalsContent">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline">
+                                <div class="contentModule-headline contentModule-headline-service-info">
                                     <span class="iconElement iconElement_info"><icon:info/></span>
                                     <span id= "currentID">${latestConvToNationals.srID}</span>
                                     <span style="display: none;" id= "currentGUID">${latestConvToNationals.srGuid}</span>
@@ -257,7 +286,7 @@
 
                         <c:if test="${fn:length(convertToNationals_list) gt 0}">
                             <div class="contentModule-section">
-                                <div class="contentModule-headline contentModule-headline_small "><spring:theme code="text.account.followup.comments"/></div>
+                                <div class="contentModule-headline contentModule-headline_small serviceModule"><span class="serviceModule-headline"><spring:theme code="text.account.followup.comments"/></span></div>
                                 <div class="commentModule">
                                     <div class="commentModule-window">
                                         <ul id="messagesListUL" class="messageList">
@@ -290,9 +319,9 @@
                         <div class="contentModule">
                             <div class="contentModule-section" id="attachedFilesDivContent">
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered">
-                                    <div class="contentModule-headline">
+                                    <div class="contentModule-headline serviceModule">
                                         <span class="iconElement iconElement_documents"><icon:documents/></span>
-                                        <spring:theme code="text.account.followup.supportDocuments"/>
+                                        <span class="serviceModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
                                     </div>
                                     <div>
                                         <button type="submit" value="SUBMIT" class="btn btn_outline btn_slim" id="resubmitButton" data-toggle="modal"
@@ -405,7 +434,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn js-close-btn" href="${encodedContextPath}/dashboard">Close</a>
+                <a class="btn js-close-btn btn_slim" href="${encodedContextPath}/dashboard">Close</a>
             </div>
         </div>
     </div>

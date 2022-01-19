@@ -21,9 +21,15 @@
     <a href="#" class="dashboardPrintButton btn btn_outline btn_round btn_slim" style="float: right;"><spring:theme code="payment.pay" /></a>
 </div> --%>
 <div class="mainSection mainSection_grey">
-    <div class="container">
+    <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image1.jpg" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up mainSection-headline">
+                   <spring:theme code="payments.page.title"/>
+                </h1>
+            </div>
         <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="payments.page.title"/></h1>
+            
 
             <div class="col col-12" id="payments">
                 <div class="dashboardWidget js-dashboardWidget"
@@ -33,10 +39,10 @@
                      data-eServiceTutorial-borderradius='<spring:theme code="dashboard.tutorial.step1.border.radius" />'
                      data-eServiceTutorial-borderradius-sm='[0,13,0,13]'>
                     <div class="dashboardWidget-headline js-dashboardWidget-headline">
-                        <spring:theme code="payments.page.title"/>
+                        <%--<spring:theme code="payments.page.title"/>
                         <div class="dashboardWidget-headline-icon">
                             <a href="" class="js-page-redirect" data-redirect="payments"><icon:payments/></a>
-                        </div>
+                        </div>--%>
                         <div class="dashboardWidget-filter">
                             <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control"
                                     onchange="sortPayments()">
@@ -128,8 +134,8 @@
             <div class="dashboardWidgetPayments-status-icon"><icon:status-complete/></div>
         </td>
         <td>
-            <div class="dashboardWidgetPayments-amount"></div>
-            <div class="dashboardWidgetPayments-currency"></div>
+            <span class="dashboardWidgetPayments-amount"></span>
+            <span class="dashboardWidgetPayments-currency"></span>
         </td>
         <td>
             <div class="dashboardWidgetPayments-pay">

@@ -61,8 +61,7 @@ SAGIA.payments = {
                                     '       </div>' +
                                     '    </td>' +
                                     '    <td>' +
-                                    '       <div class="dashboardWidgetPayments-amount">' + (payment.amount ? payment.amount.toLocaleString('en-US', {maximumFractionDigits: 2}) : 0) + "</div>" +
-                                    '       <div class="dashboardWidgetPayments-currency">' + payment.currency + "</div>" +
+                                    '       <span class="dashboardWidgetPayments-amount">' + (payment.amount ? payment.amount.toLocaleString('en-US', {maximumFractionDigits: 2}) : 0)+ "&nbsp;" + payment.currency  +"</span>" +
                                     '    </td>' +
                                     '    <td><div class="dashboardWidgetPayments-pay">';
                                 if (payment.status == 'E0003' && payment.hybrisStatusDescription != 'Paid') {

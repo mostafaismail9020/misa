@@ -32,8 +32,8 @@
 								<a class="header-link" href="<c:url value="/login"/>">Login</a>
 							</sec:authorize>
 							<img src="${commonResourcePath}/images/vision-2030.png" class="padd_left_10">
-						</div>
-						<c:if test="${bdUserGroup ne 'BDUserGroup'}">
+						</div>						
+						<c:if test="${NIPCUser || MarCommUser}">
 							<div class="nav__right text-center header-search-area">
 								<svg class="search-results-highlight_svg" xmlns="http://www.w3.org/2000/svg" width="19.931" height="19.931" viewBox="0 0 19.931 19.931"><g transform="translate(20.3 -3.7)"><path d="M20.736,12.618A8.118,8.118,0,1,1,12.618,4.5,8.118,8.118,0,0,1,20.736,12.618Z" transform="translate(-24 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/><path d="M28.812,28.812l-3.837-3.837" transform="translate(-30.312 -6.312)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></g></svg>
 							</div>

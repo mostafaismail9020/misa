@@ -23,6 +23,9 @@
 
                 <spring:theme code="licenseCancellation.title"/>
             </div>
+           
+        </div>
+        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="mainSection-action">
                 <button class="btn btn_round"><spring:theme code="licenseCancellation.save.draft"/>
                     <icon:save/></button>
@@ -194,7 +197,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn js-close-btn" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
+                <a class="btn js-close-btn btn_outline" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
             </div>
         </div>
     </div>

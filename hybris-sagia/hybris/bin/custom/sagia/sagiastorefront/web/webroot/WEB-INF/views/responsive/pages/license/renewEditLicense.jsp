@@ -12,16 +12,37 @@
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
 
 <script>
-    var configuredFileSize = ${maxUploadSize};
+    // var configuredFileSize = ${maxUploadSize};
     var autoRenewal = "${autoRenewal}";
     var autoRenewalClearance = "${autoRenewalClearance}";
 </script>
+
+
 
 <div class="mainSection mainSection_dark">
 	<div class="container">
 		<div class="mainSection-header">
 			<h1 class="mainSection-headline mainSection-header-action" ><spring:theme code="renewlicense.licenserenewal"/></h1>
-			<div id="draft-buttons">
+		</div>
+	</div>
+</div>
+
+<div class="container mainSection mainSection_dark mainSection_noPadding">
+	<div class="m-5">
+		<div class="row w-100">
+            <div class="col-md-3 px-0">
+                <button class="btn btn_round back_to_service btn_leftIconLink">
+                    <icon:arrow_green_right/> Back to All Services
+                    <span class="iconElement iconElement_save"></span>
+                </button>
+            </div>
+            <div class="col-md-3">
+                <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
+            </div>	
+        </div>
+		<div class="row w-100 d-flex mt-4">
+			<div class="mainSection-linkActions mainSection-linkActions_spaceBetween btn-drafts_list amend-service-link">
+				<!-- <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a> -->
 				<button class="btn btn_round js-save-draft"
 						data-target-form="renewLicenceId"
 						data-service-id="${serviceId}">
@@ -36,16 +57,9 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 
-<div class="mainSection mainSection_dark mainSection_noPadding">
-	<div class="container">
-		<div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-			<a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
-		</div>
-	</div>
-</div>
+
 
 <div class="mainSection mainSection_dark mainSection_pdt16">
 	<div class="container">
@@ -58,7 +72,7 @@
 			<div class="panelModule panelModule_halfRadius">
 				<div class="contentModule">
 					<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-						<div class="contentModule-headline"><icon:locationPin_filled/><spring:theme code="renewlicense.wasseladdress"/></div>
+						<div class="contentModule-headline headline-text"><icon:locationPin_filled/><spring:theme code="renewlicense.wasseladdress"/></div>
 					</div>
 					<hr class="contentModule-separator">
 					<div class="contentModule-section contentModule-section_paddingSide">
@@ -129,7 +143,7 @@
 					</div>
 
 					<%-- <div class="contentModule-section contentModule-section_paddingSide">
-						<div class="contentModule-headline contentModule-headline_smallMargin"><icon:documents/><spring:theme code="general.images"/></div>
+						<div class="contentModule-headline contentModule-headline_smallMargin  headline-text"><icon:documents/><spring:theme code="general.images"/></div>
                         <div class="documentModule js-upload-files-list" data-files-name="img">
 
 
@@ -206,7 +220,7 @@
 					</div> --%>
 					
 					<div class="contentModule-section contentModule-section_paddingSide">
-						<div class="contentModule-headline contentModule-headline_smallMargin"><icon:documents/><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></div>
+						<div class="contentModule-headline contentModule-headline_smallMargin  headline-text"><icon:documents/><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></div>
                         <div class="documentModule js-upload-files-list" data-files-name="img">
                                
                              
@@ -241,7 +255,7 @@
 					
 
 					<div class="contentModule-section contentModule-section_paddingSide">
-						<div class="contentModule-headline contentModule-headline_smallMargin"><icon:documents/><spring:theme code="text.account.followup.supportDocuments"/></div>
+						<div class="contentModule-headline contentModule-headline_smallMargin  headline-text"><icon:documents/><spring:theme code="text.account.followup.supportDocuments"/></div>
 						<div class="row">
 							<div class="col-md-6">
 								<c:choose>
@@ -294,17 +308,15 @@
 				</div>
 			</div>
 
-			<div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
+			<div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
 				<c:url var="back" value="/my-sagia/license/renew"/>
-		  		  <a class="btn btn-secondary" href="${back}">
-					<spring:theme code="general.cancel"/>
-				</a>
-				<div class="formCheckBox formCheckBox_belowPanel">
+				<div class="formCheckBox formCheckBox_belowPanel w-100">
 					<div class="form-group">
 						<formElement:termsAndConditionsCheckbox event="LICENSE_SERVICES" id="termsAndConditions" path="termsAndConditionsChecked"/>
 					</div>
 				</div>
-				<input type="submit" class="btn btn-primary" value="<spring:theme code="general.submit"/>" id="submit"/>
+				<a class="btn btn_slim btn_outline" href="${back}"><spring:theme code="general.cancel"/></a>				
+				<input type="submit" class="btn" value="<spring:theme code="general.submit"/>" id="submit"/>
 			</div>
 			<input type="hidden" id="serviceId"/>
 		</form:form>

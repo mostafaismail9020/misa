@@ -195,30 +195,31 @@ $(function() {
                         '</li>');
                     uiMenu.append(getCategoriesHtml(menuData.navcategories.FIRST));
 
-                    // console.log('--->',menuData.navcategories?.FIRST[0].description)
+                    // console.log('--->',menuData.navcategories.FIRST[0].description)
                     // console.log('--->',menuData.navcategories["GOVERNMENTAL SERVICES"])
                     console.log('--->',menuData.navservices["License Services"])
                     var license_services = menuData.navservices["License Services"];
                     
 
                     var serviceInfo = "";
-                    console.log(license_services);
+                    // console.log(license_services);
                     var serviceInfo = "";
                     for(var x=0;x<license_services.length;x++){
-                        serviceInfo += '<div id="serviceModule" class="serviceModule serviceModule_list mx-5">'
+                        serviceInfo += '<div id="serviceModule" class="serviceModule serviceModule_list mr-5">'
                         serviceInfo += '    <div class="serviceModule-section">'
                         serviceInfo += '        <div class="serviceModule-content">'
-                        serviceInfo += '            <div class="serviceModule-icon">'
-                        serviceInfo += '                <img src="${category.value[0].category.icon.url}">'
-                        serviceInfo += '            </div>'
+                        // serviceInfo += '            <div class="serviceModule-icon">'
+                        // serviceInfo += '                <img src="${category.value[0].category.icon.url}">'
+                        // serviceInfo += '            </div>'
                         serviceInfo += '            <div class="serviceModule-description">'
                         serviceInfo += '                <span class="serviceModule-headline cursor-pointer">' + license_services[x].name + '</span>'
                         serviceInfo += '                <div class="serviceModule-detail">'
                         serviceInfo += '                    <div class="w-75">'
                         serviceInfo += '                        <p>'+ license_services[x].description  +'</p>'
                         serviceInfo += '                    </div>'
-                        serviceInfo += '                    <div class=" w-25 serviceModule-request">'
+                        serviceInfo += '                    <div class="w-25 serviceModule-request">'
                         serviceInfo += '                        <a class="text-uppercase request-service" href="'+ license_services[x].menuUrl  +'">Request A Service</a>'
+                        // serviceInfo += '                        <a class="text-uppercase request-service" href="'+ license_services[x].menuUrl  +'">Request A Service</a>'
                         serviceInfo += '                    </div>'
                         serviceInfo += '                </div>'
                         serviceInfo += '            </div>'
@@ -229,8 +230,8 @@ $(function() {
                     }
 
                     uiServices.append('<li class="nav-item '+ css +'"> <div class="service-wrapper mx-3"> <a class="nav-link active" id="pills-licensing-tab" data-toggle="pill" href="#licensing-service" role="tab" aria-controls="pills-licensing" aria-selected="true"> <div class="INS_EPM_border_set text-center p-3"> <img src="/_ui/responsive/common/images/B2C/Services icon 1.png" alt="LICENSING SERVICES" class="text-center service-icon-1"/><img src="/_ui/responsive/common/images/B2C/Services icon 2.png" alt="LICENSING SERVICES" class="text-center service-icon-2"/><span class="licensing-heading">' + menuData.navcategories.FIRST[0].name + '</span>  </div> </a></li>');
-                    uiServices.append('<li class="mobile_services"><div class="tab-content" id="pills-tabContent"><div class="tab-pane fade service-wrapper show active service_tab_pane_show" id="licensing-service-1" role="tabpanel" aria-labelledby="pills-licensing-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">'+ menuData.navcategories?.FIRST[0].description + '</p>'+ serviceInfo +'</div></div></div></li>')
-                    uiServicesDesktop.append('<div class="tab-pane fade service-wrapper show service_tab_pane_show active" id="licensing-service" role="tabpanel" aria-labelledby="pills-licensing-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">'+ menuData.navcategories?.FIRST[0].description + '</p>'+ serviceInfo +'</div></div>')
+                    uiServices.append('<li class="mobile_services"><div class="tab-content" id="pills-tabContent"><div class="tab-pane fade service-wrapper show active service_tab_pane_show" id="licensing-service-1" role="tabpanel" aria-labelledby="pills-licensing-tab"><div class="p-4 serviceModule-detail m-5"><p class="INS_letter_set_para pb-3 mb-3">'+ menuData.navcategories.FIRST[0].description + '</p>'+ serviceInfo +'</div></div></div></li>')
+                    uiServicesDesktop.append('<div class="tab-pane fade service-wrapper show service_tab_pane_show active" id="licensing-service" role="tabpanel" aria-labelledby="pills-licensing-tab"><div class="p-4 serviceModule-detail m-5"><p class="INS_letter_set_para pb-3 mb-3">'+ menuData.navcategories.FIRST[0].description + '</p>'+ serviceInfo +'</div></div>')
                 }
 
                 if (menuData.navcategories["GOVERNMENTAL SERVICES"] && menuData.navcategories["GOVERNMENTAL SERVICES"].length) {
@@ -242,8 +243,8 @@ $(function() {
 
 
                     uiServices.append('<li class="nav-item '+ css +'"> <div class="service-wrapper mx-3"> <a class="nav-link " id="pills-govt-tab" data-toggle="pill" href="#govt-service" role="tab" aria-controls="pills-govt" aria-selected="true"> <div class="INS_EPM_border_set text-center p-3"> <img src="/_ui/responsive/common/images/B2C/Services icon 1.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-1"/><img src="/_ui/responsive/common/images/B2C/Services icon 2.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-2"/><span class="licensing-heading">' + getI18nText("sagia.governmental.services") + '</span>  </div> </a></li>');
-                    uiServices.append('<li class="mobile_services"><div class="tab-content" id="pills-tabContent"><div class="tab-pane fade service-wrapper show  service_tab_pane_show" id="govt-service-1" role="tabpanel" aria-labelledby="pills-govt-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the GOVERNMENTAL SERVICES</p>'+ serviceInfo +'</div></div></div></li>')
-                    uiServicesDesktop.append('<div class="tab-pane fade service-wrapper show service_tab_pane_show" id="govt-service" role="tabpanel" aria-labelledby="pills-govt-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the GOVERNMENTAL SERVICES</p>'+ serviceInfo +'</div></div> ')
+                    uiServices.append('<li class="mobile_services"><div class="tab-content" id="pills-tabContent"><div class="tab-pane fade service-wrapper show  service_tab_pane_show" id="govt-service-1" role="tabpanel" aria-labelledby="pills-govt-tab"><div class="p-4 serviceModule-detail m-5"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the GOVERNMENTAL SERVICES</p>'+ serviceInfo +'</div></div></div></li>')
+                    uiServicesDesktop.append('<div class="tab-pane fade service-wrapper show service_tab_pane_show" id="govt-service" role="tabpanel" aria-labelledby="pills-govt-tab"><div class="p-4 serviceModule-detail m-5"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the GOVERNMENTAL SERVICES</p>'+ serviceInfo +'</div></div> ')
                 }
 
                 if (menuData.navcategories["SAGIA SERVICES"] && menuData.navcategories["SAGIA SERVICES"].length) {
@@ -254,8 +255,8 @@ $(function() {
                     var serviceInfo = "";
 
                     uiServices.append('<li class="nav-item '+ css +'"><div class="service-wrapper mx-3"> <a class="nav-link " id="pills-misa-tab" data-toggle="pill" href="#misa-service" role="tab" aria-controls="pills-misa" aria-selected="true"> <div class="INS_EPM_border_set text-center p-3"> <img src="/_ui/responsive/common/images/B2C/Services icon 1.png" alt="MISA SERVICES" class="text-center service-icon-1"/><img src="/_ui/responsive/common/images/B2C/Services icon 2.png" alt="MISA SERVICES" class="text-center service-icon-2"/><span class="licensing-heading">' + getI18nText("sagia.services") + '</span></div></a></li>');
-                    uiServices.append('<li class="mobile_services"><div class="tab-content" id="pills-tabContent"><div class="tab-pane fade service-wrapper show service_tab_pane_show" id="misa-service-1" role="tabpanel" aria-labelledby="pills-misa-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the MISA SERVICES</p>'+ serviceInfo +'</div></div></div></li>')
-                    uiServicesDesktop.append('<div class="tab-pane fade service-wrapper show service_tab_pane_show" id="misa-service" role="tabpanel" aria-labelledby="pills-misa-tab"><div class="p-4 m-5 serviceModule-detail"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the MISA SERVICES</p>'+ serviceInfo +'</div></div>')
+                    uiServices.append('<li class="mobile_services"><div class="tab-content" id="pills-tabContent"><div class="tab-pane fade service-wrapper show service_tab_pane_show" id="misa-service-1" role="tabpanel" aria-labelledby="pills-misa-tab"><div class="p-4 serviceModule-detail m-5"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the MISA SERVICES</p>'+ serviceInfo +'</div></div></div></li>')
+                    uiServicesDesktop.append('<div class="tab-pane fade service-wrapper show service_tab_pane_show" id="misa-service" role="tabpanel" aria-labelledby="pills-misa-tab"><div class="p-4 serviceModule-detail m-5"><p class="INS_letter_set_para pb-3 mb-3">Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the MISA SERVICES</p>'+ serviceInfo +'</div></div>')
                 }
             }
 

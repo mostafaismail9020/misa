@@ -4,13 +4,22 @@
 	font-weight: normal;
 	font-size: 45px;
     letter-spacing: 0px;
-    color: #BF9B2E;
+    color: @color-golden;
     text-transform: uppercase;
     opacity: 1;
+    width: 100%;
 }
+.service-time{
+    justify-content: flex-end;
+}
+.btn:hover:not([disabled]), .btn[hover]:not([disabled]) {
+    color: @color-white !important;
+    background-color: @color-primary !important;
+    border-color: @color-primary !important;
+  }
 .service-wrapper{
-	background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 30px 75px #00000029;
+	background: @color-white 0% 0% no-repeat padding-box;
+    box-shadow: 0px 18px 36px #00000029;
     border-radius: @border-radius;
     opacity: 1;
 
@@ -45,7 +54,7 @@
         font-weight: bold;
         display: flex;
         bottom: -20px;
-        background: #ffffff 0% 0% no-repeat padding-box;
+        background: @color-white 0% 0% no-repeat padding-box;
         box-shadow: 0px 0px 10px #0000007d;
         justify-content: center;
         align-items: center;
@@ -65,7 +74,7 @@
         position: absolute;
         background: @color-primary 0% 0% no-repeat padding-box;
         box-shadow: 0px 0px 10px #0000007d;
-        color: #ffffff;
+        color: @color-white;
     }
     .nav-link.active{
         border: 1px solid @color-primary;
@@ -85,16 +94,18 @@
 
 .serviceModule{
     .serviceModule-headline{
-        background: #BF9B2E 0% 0% no-repeat padding-box;
-        color: #fff;
+        background: @color-golden 0% 0% no-repeat padding-box;
+        color: @color-white;
         padding: 1%;
         margin-top: initial;
         font-size: 20px;
         min-height: 3rem;
     }
     .serviceModule-detail{
-        border-top: solid 1px #BF9B2E !important;
+        border-top: solid 1px @color-golden !important;
         margin-top: initial !important;
+        width: 95%;
+        // margin: 3%;
     }
     .serviceModule-request a.request-service{
         font-size: 16px;
@@ -107,20 +118,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #fff;
+        background-color: @color-white;
         color: @color-primary;
-        border: 1px solid #00A6BE;
+        border: 1px solid @color-primary;
         text-decoration: none;
     }
 }
-
-
 .service-wrapper-selected{
     border: 1px solid @color-primary;
     color:@color-primary;
 }
 .service-details-wrapper{
-	background: #FFFFFF 0% 0% no-repeat padding-box;
+	background: @color-white 0% 0% no-repeat padding-box;
 	box-shadow: 0px 30px 75px #00000029;
 	border: 1px solid @color-primary;
 	border-radius: @border-radius;
@@ -130,14 +139,19 @@
 	font-weight: 600;
 	font-size: 25px;
 	letter-spacing: 0px;
-	color: #707070;
+	color: @color-text;
 }
-.serviceModule-detail p{
-	text-align: left;
-	font-weight:600;
-	font-size: 20px;
-	letter-spacing: 0px;
-	color: #707070;
+.serviceModule-detail {
+    p,li{
+        text-align: left;
+        font-weight:600;
+        font-size: 20px;
+        letter-spacing: 0px;
+        color: @color-text;
+    }
+    ol{
+        padding-left: 1.5rem;
+    }
 }
 .serviceModule-request{
 	display: flex;
@@ -153,19 +167,35 @@
         fill: @color-primary;
     }
 }
+.btn_greenLink{
+    color:@color-primary !important;
+}
 .btn.btn-secondary:hover{
     color: @color-primary;
 }
-.btn.btn-primary:hover,.btn.newAmendmentBtn:hover{
+.btn.btn-primary:hover,.btn.newAmendmentBtn:hover,.btn.btn_slim:hover{
     color: @color-white;
     background-color: @color-primary;
 }
+.btn_slim{
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-decoration: none !important;
+}
 .iconElement.iconElement_closeBack{
-    color: #FFF;
+    color: @color-white;
 }
 .service-wrapper-info{
     width: 90%;
     margin: auto;
+
+    .mainSection_narrow{
+        max-width: 100% !important;
+    }
 }
 .service-wrapper-info .service-request{
     overflow: hidden;
@@ -194,8 +224,110 @@
         }
     }
 }
+.mainSection,.modal-dialog_businessActivities{
+    .expandableContent.expanded{
+        display: flex !important;
+
+        .expandableContent-aside{
+            width: 30%;
+        }
+    }
+    .service-history{
+        
+    }    
+    .dlList_separated dt{
+        border-bottom:none;
+    }
+    .searchInputBox{
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #707070;
+        border-radius: 30px;
+        height: 45px;
+    }
+    .searchInputBox-input::placeholder{
+        text-align: right;
+        color: @color-primary;
+    }
+    .historyList-id{
+        font-size: 20px;
+        color: @color-primary;
+    }
+    .contentModule{
+        .dlList.dlList_separated{
+            border-left: none;
+        }
+        .historyList-date,.dlList.dlList_separated dt{
+            font-size: 16px;
+            color: @color-text;
+        }
+        .statusBox-info{
+            margin-right: 10px;
+        }
+        .statusBox-details{
+            a{color: @color-primary;}
+        }
+    }
+    
+    .renewal-services{
+        display: flex;
+        a{
+            width: 300px;
+        }
+        #renewalButtons{
+            display: contents;
+            font-size: 20px !important;
+        }
+    }
+    .contentModule-actions_spaceBetween{
+        margin-top: 0px;
+    }
+    #srID{
+        color: @color-golden;
+        font-size: 30px;
+    }
+    #currentStatus{
+        font-weight: 600;
+        font-size: 20px;
+        color: @color-text;
+    }
+}
+.contentModule-actions .contentModule-headline{
+    max-width: 70%;
+}
+.contentModule-headline-service-info{
+    background: none !important;
+    color: @color-text;
+}
+.contentModule-headline, .contentModule-headline-service-info{        
+    text-align: left;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 100%;
+}
+.contentModule-headline{        
+    background: none;       
+}
+.contentModule-headline-history{
+    color: @color-golden !important;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 600;
+    background: none !important;
+    text-transform: uppercase;
+}
+.historyList-item_current{
+    background: #E7FCFF 0% 0% no-repeat padding-box;
+}
+.search-history-services{
+    ::-webkit-input-placeholder { text-align:right; }
+    :-moz-placeholder { text-align:right; }
+}
 .cursor-pointer{
     cursor: pointer;
+}
+.bg-white{
+    background-color: @color-white !important;
 }
 @media (min-width: 1200px) {
 	.container{
@@ -230,4 +362,100 @@
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
 	background-color: initial;
+}
+
+.back_to_service {
+    width: 250px;
+    svg{
+        transform: scaleX(-1);
+    }
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #0097A9;
+}
+
+.historyList-status_E0012, .historyList-status_inprocess, .historyList-status_process{
+    font-size: 16px;
+}
+.baModule-headline span{
+    font-size: 20px;
+}
+.baModule-search{
+    .searchInputBox:before{
+        background: transparent url(../../common/images/Infrastructures_and_Logistics/search.png) center !important;
+    }
+}
+.modal-dialog_businessActivities{
+    #nextButton{
+        background-color:@color-primary;
+    }
+
+}
+.amend-btns-list{
+    display: flex;
+    justify-content: space-around;
+}
+.amend-service-link{
+    width: 80%;
+    justify-content: flex-start;
+}
+.btn-drafts_list{
+    display: flex;
+    width: 100%;
+    > button{
+        margin-right: 4%;
+    }
+}
+
+// .contentModule-headline{
+//     background: @color-golden 0% 0% no-repeat padding-box;
+//     color: @color-white;
+//     padding: 1%;
+//     margin-top: initial;
+//     font-size: 20px;
+//     min-height: 3rem;
+// }
+
+.mainSection_dark{
+    background-color: @color-white;
+}
+
+.dataTables_wrapper{
+    margin-top: 20px;
+}
+
+.stepModule-icon.stepModule-icon_normal,.headline-text{
+    svg {
+        path{
+            fill: @color-primary;
+        }
+    }
+}
+.stepModule-item.active{
+    background-image: radial-gradient(circle at 44% 41%,@color-primary,@color-primary 74%,@color-primary) !important;
+    box-shadow: 0 15px 20px 0 #9fdce5;
+}
+.stepModule-item.active:after{
+    border-left-color:@color-primary;
+}
+.contentModule-actions{
+    .formCheckBox{
+        margin-left: 10px !important;
+        .control-label span{
+            width: 24px;
+            height: 24px;
+            top: 2px !important;
+            left: -12px;
+        }
+    }
+}
+.headline-text{
+    color: @color-text !important;
+}
+
+.mainSection-linkActions_flexend{
+    justify-content: flex-end;
 }

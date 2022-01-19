@@ -11,11 +11,13 @@
 package com.sap.ibso.eservices.sagiaservices.core.v2.filter;
 
 import de.hybris.platform.commerceservices.user.UserMatchingService;
+import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.servicelayer.session.SessionService;
 import de.hybris.platform.servicelayer.user.UserService;
 
+import javax.annotation.Resource;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
@@ -31,6 +34,8 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+
+import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
 
 
 /**
@@ -51,6 +56,9 @@ public class UserMatchingFilter extends AbstractUrlMatchingFilter
 	private UserService userService;
 	private SessionService sessionService;
 	private UserMatchingService userMatchingService;
+	
+	 @Resource
+	private SagiaUserService sagiaUserService;
 
 	@Override
 	protected void doFilterInternal(final HttpServletRequest request, final HttpServletResponse response,
@@ -120,9 +128,22 @@ public class UserMatchingFilter extends AbstractUrlMatchingFilter
 		}
 		catch (final UnknownIdentifierException ex)
 		{
-			LOG.debug(ex.getMessage(), ex);
-			throw ex;
+			try 
+			{
+					CustomerModel customer = sagiaUserService.getCustomerByMobileNumber(id, "");
+					setCurrentUser(customer);
+			} 
+			catch (final UnknownIdentifierException exc) 
+			{
+				LOG.debug(exc.getMessage(), exc);
+				if (StringUtils.isNumeric(id)) 
+				{
+					throw new UnknownIdentifierException("Cannot find user with propertyValue '" + id + "'");
+				}
+			throw exc;
+			}
 		}
+		
 	}
 
 	protected void setCurrentUser(final UserModel user)

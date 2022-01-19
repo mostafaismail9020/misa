@@ -25,6 +25,9 @@ import de.hybris.platform.servicelayer.search.SearchResult;
 import de.hybris.platform.ticket.model.CsTicketModel;
 
 import javax.annotation.Resource;
+
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -110,12 +113,24 @@ public class DefaultSagiaUserDao extends DefaultGenericDao<CustomerModel> implem
 	public List<CustomerModel> getCustomerByMobileNumber(final String mobileNumber,  final String mobileCountryCode) {
 		validateParameterNotNull(mobileNumber, "User mobileNumber cannot be null");
 		validateParameterNotNull(mobileCountryCode, "User mobileCountryCode cannot be null");
+		final String query ;
+		final Map<String, String> parameters;
 
-		final String query = "SELECT {PK} FROM {Customer} WHERE {mobileNumber} = ?mobileNumberValue AND {mobileCountryCode} = ?mobileCountryCode";
-		final Map<String, String> parameters = new HashMap<>();
+		if(StringUtils.isNotEmpty(mobileCountryCode))
+		{
+		query = "SELECT {PK} FROM {Customer} WHERE {mobileNumber} = ?mobileNumberValue AND {mobileCountryCode} = ?mobileCountryCode";
+		parameters = new HashMap<>();
 		parameters.put(CUSTOMER_TABLE, CustomerModel._TYPECODE);
 		parameters.put(MOBILE_NUMBER_VALUE, mobileNumber);
 		parameters.put(MOBILE_COUNTRY_CODE, mobileCountryCode);
+		}
+		else
+		{
+			query = "SELECT {PK} FROM {Customer} WHERE {mobileNumber} = ?mobileNumberValue";
+			parameters = new HashMap<>();
+			parameters.put(CUSTOMER_TABLE, CustomerModel._TYPECODE);
+			parameters.put(MOBILE_NUMBER_VALUE, mobileNumber);
+		}
 
 		return getResults(query, parameters, CustomerModel.class);
 	}

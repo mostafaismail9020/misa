@@ -23683,10 +23683,10 @@ body.offcanvas .navigation .navigation__overflow .search-area form input {
   box-shadow: 0 2px 30px 0 rgba(28, 36, 44, 0.12), 0 10px 40px 0 rgba(0, 0, 0, 0.27);
 }
 [dir=ltr] .modal-content {
-  border-radius: 0 40px;
+  border-radius: 25px;
 }
 [dir=rtl] .modal-content {
-  border-radius: 40px 0;
+  border-radius: 25px;
 }
 .modal-backdrop {
   position: fixed;
@@ -26448,7 +26448,13 @@ label {
   border: 1px solid #00A6BE;
   color: #00a6be;
 }
-.goBackLinkNews a{ color: #00a6be;}
+.goBackLinkNews a{ 
+  color: #00a6be;
+  font-size: 18px; 
+  padding: 7px 20px; 
+  border-radius: 27px !important;
+  border: 1px solid #00A6BE;
+ }
 .goBackLinkNews a:hover{ color: #00a6be; font-weight: 600;}
 .pagination > .active > a,
 .pagination > .active > span,
@@ -28744,4 +28750,13 @@ select.form-control {
 
 .most-popular-area .blogDate{
   display: none;
+}
+/**19/01/2022**/
+
+.modal-content .information_message.bg-success span.c-global-message__text{
+  font-size: 18px;
+  font-weight:500;
+}
+.footer-menu-faq .footerContent .col-12.col-md-2.col-lg-2.col-xl-3.mx-auto.pt-3.pb-3.f-coll{
+	padding-right:0!important;
 }

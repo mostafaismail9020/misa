@@ -38,9 +38,9 @@ import org.apache.log4j.Logger;
  * Handler designed for injecting the required javascript files for each page.
  */
 public class SagiaBeforeViewHandler implements BeforeViewHandler {
-	
+
 	private static final Logger LOG = Logger.getLogger(SagiaBeforeViewHandler.class);
-	
+
     private static final String SAGIA_I18N_LIST = "sagia.I18n.js";
     private static final String SAGIA_DASHBOARD_JS = "sagia.dashboardsCommon.js";
     private static final String SAGIA_LICENSE_REPLACEMENT_JS = "sagia.license.replacement.js";
@@ -75,9 +75,9 @@ public class SagiaBeforeViewHandler implements BeforeViewHandler {
 
 	@Resource(name = "userService")
 	private UserService userService;
-    
+
     private L10NService l10NService;
-    
+
     private I18NService i18NService;
 
     @Override
@@ -93,26 +93,26 @@ public class SagiaBeforeViewHandler implements BeforeViewHandler {
         modelAndView.addObject(SAGIA_JS_TEXTS, jsTexts);
         modelAndView.addObject("environment",Config.getString("sagia.environment", ""));
         modelAndView.addObject("staticResourceVersion",Config.getString("sagia.staticresource.buildversion", ""));
-        
+
         String name = null;
         AbstractPageModel requestedPage = (AbstractPageModel) modelAndView.getModel().get(AbstractPageController.CMS_PAGE_MODEL);
         if (requestedPage != null) {
         	if (requestedPage instanceof ContentPageModel) {
         		name = ((ContentPageModel) requestedPage).getLabel();
-        	        	            
+
 	            List<String> javascripts = new ArrayList<>();
 	            updateJavascripts(name, javascripts);
 	            modelAndView.addObject(SAGIA_JAVASCRIPTS, javascripts);
 	            LOG.info("******* name: "+name);
 	            if (name.contains("login")
-	                    || name.contains("logout") || name.contains("questionnaire") 
-	                    || name.contains("payments-overview") || name.contains("financial-statement") 
-	                    || name.contains("payments-success") || name.contains("payments-failure") 
+	                    || name.contains("logout") || name.contains("questionnaire")
+	                    || name.contains("payments-overview") || name.contains("financial-statement")
+	                    || name.contains("payments-success") || name.contains("payments-failure")
 	                    || name.contains("sagia-generic-exception")) {
 	                return;
 	            }
 	        }
-            
+
             if(isURLAllowed(request))
             {
             	if(!sagiaDashboardWithoutLicenseFacade.hasLicense()){
@@ -128,7 +128,7 @@ public class SagiaBeforeViewHandler implements BeforeViewHandler {
             		}
             	}
             }
-            
+
             if (("true").equalsIgnoreCase(sagiaConfigurationFacade.getMandatorySurvey())) {
                 HomeHDRData homeHDR = zui5SagiaFacade.getHomeHDRData();
                 MandatorySurveyIndicators mandatorySurveyIndicators = sagiaAccountFacade.getMandatorySurveyIndicators(homeHDR);
@@ -138,7 +138,7 @@ public class SagiaBeforeViewHandler implements BeforeViewHandler {
             }
         }
     }
-    
+
 	private boolean isURLAllowed(final HttpServletRequest request) {
 		String header = request.getHeader("x-requested-with");
 		boolean isAjaxRequest = header != null && header.equalsIgnoreCase("XMLHttpRequest");
@@ -276,7 +276,11 @@ public class SagiaBeforeViewHandler implements BeforeViewHandler {
                         "jquery.dataTables.min.js", "sagia.license.amendment.util.js", "sagia.license.businessActivities.js", "sagia.license.amendment.js", "sagia.license.amendment.shareholder.js", "sagia.license.amendment.branch.js", "sagia.license.amendment.product.js", "sagia.license.amendment.validation.js"));
                 break;
             }
-
+            case "financial-survey": {
+                javascripts.addAll(Arrays.asList(
+                        "jquery.dataTables.min.js", "sagia.license.amendment.util.js", "sagia.financial.survey.businessActivities.js", "sagia.financial.survey.js", "sagia.financial.survey.shareholder.js", "sagia.financial.survey.affiliate.js", "sagia.financial.survey.branch.js","sagia.financial.survey.subsidiary.js", "sagia.financial.survey.validation.js"));
+                break;
+            }
             case "license-replace": {
                 javascripts.add(SAGIA_LICENSE_REPLACEMENT_JS);
                 break;

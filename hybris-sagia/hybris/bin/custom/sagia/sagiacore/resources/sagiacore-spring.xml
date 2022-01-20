@@ -29,7 +29,7 @@
 
     <!-- SystemSetup for the SagiaCore -->
     <bean id="acceleratorCoreSystemSetup" class="com.sap.ibso.eservices.core.setup.CoreSystemSetup" parent="abstractCoreSystemSetup"/>
-	
+
     <!-- Solr field value providers -->
 
     <!--<bean id="volumeAwareProductPriceValueProvider" class="com.sap.ibso.eservices.core.search.solrfacetsearch.provider.impl.VolumeAwareProductPriceValueProvider" parent="abstractPropertyFieldValueProvider">-->
@@ -219,7 +219,7 @@
         <property name="modelService" ref="modelService"/>
         <property name="sagiaTermsAndConditionsService" ref="sagiaTermsAndConditionsService"/>
     </bean>
-    
+
     <bean id="sagiaPublishLicenseEventListner" class="com.sap.ibso.eservices.core.event.SagiaPublishLicenseEventListner" parent="abstractEventListener">
         <property name="modelService" ref="modelService"/>
         <property name="businessProcessService" ref="businessProcessService"/>
@@ -230,7 +230,7 @@
     </bean>
 
     <bean id="sagiaPaymentSessionEmailEventListener" class="com.sap.ibso.eservices.core.event.SagiaPaymentSessionEmailEventListener" />
-	
+
 	<bean id="UserGroupUpdateEventListener" class="com.sap.ibso.eservices.core.event.CustomerUserGroupUpdateEventListener" parent="abstractAcceleratorSiteEventListener">
         <property name="modelService" ref="modelService"/>
         <property name="businessProcessService" ref="businessProcessService"/>
@@ -347,11 +347,11 @@
     <bean id="sendNotPickedUpConsignmentCanceledEmailProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
         <property name="resource" value="classpath:/sagiacore/processes/sendNotPickedUpConsignmentCanceledEmailProcess.xml"/>
     </bean>
-    
+
     <bean id="sagiaPublishLicenseProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
         <property name="resource" value="classpath:/sagiacore/processes/sagiaPublishLicenseProcess.xml"/>
     </bean>
-    
+
     <bean id="emailTwofactorAuthenticationProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
         <property name="resource" value="classpath:/sagiacore/processes/emailTwoFactorAuthenticationProcess.xml"/>
     </bean>
@@ -392,7 +392,7 @@
     <bean id="generateForgottenPasswordEmail" parent="abstractGenerateEmailAction">
         <property name="frontendTemplateName" value="ForgottenPasswordEmailTemplate"/>
     </bean>
-    
+
     <bean id="generateEmailVerificationEmail" parent="abstractGenerateEmailAction">
         <property name="frontendTemplateName" value="EmailVerificationTemplate"/>
     </bean>
@@ -426,11 +426,11 @@
     <bean id="generateNotPickedUpConsignmentCanceledEmail" parent="abstractGenerateEmailAction">
         <property name="frontendTemplateName" value="NotPickedUpConsignmentCanceledEmailTemplate"/>
     </bean>
-    
+
     <bean id="generateTwoFactorAuthenticationEmail" parent="abstractGenerateEmailAction">
         <property name="frontendTemplateName" value="TwoFactorAuthenticationTemplate"/>
     </bean>
-    
+
     <bean id="removeSentEmail" class="de.hybris.platform.acceleratorservices.process.email.actions.RemoveSentEmailAction" parent="abstractAction">
         <property name="modelService" ref="modelService"/>
     </bean>
@@ -438,7 +438,7 @@
     <bean id="markQuoteNotificationAsSent" class="com.sap.ibso.eservices.core.actions.quote.MarkQuoteNotificationAsSentAction" parent="abstractAction" abstract="true">
         <property name="quoteService" ref="quoteService"/>
     </bean>
-   
+
     <!-- Simple Suggestion Service -->
     <!-- <alias alias="simpleSuggestionService" name="defaultSimpleSuggestionService"/>
     <bean id="defaultSimpleSuggestionService" class="com.sap.ibso.eservices.core.suggestion.impl.DefaultSimpleSuggestionService">
@@ -656,10 +656,10 @@
         <property name="sagiaCountryConverter" ref="sagiaCountryConverter"/>
         <property name="sagiaSectorConverter" ref="sagiaSectorConverter"/>
     </bean>
-    
+
      <bean id="ticketQuestionPopulator" class="com.sap.ibso.eservices.core.populator.TicketQuestionPopulator">
     </bean>
-    
+
     <bean id="ticketQuestionConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="de.hybris.platform.customerticketingfacades.data.TicketQuestionData" />
 
@@ -669,10 +669,10 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	  <bean id="ticketConfigurationPopulator" class="com.sap.ibso.eservices.core.populator.TicketConfigurationPopulator">
     </bean>
-    
+
     <bean id="ticketConfigurationConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="de.hybris.platform.customerticketingfacades.data.TicketConfigurationData" />
 
@@ -682,7 +682,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	 <bean id="ticketSectorPopulator" class="com.sap.ibso.eservices.core.populator.TicketSectorPopulator">
     </bean>
 	<bean id="ticketSectorConverter" parent="abstractPopulatingConverter">
@@ -878,11 +878,11 @@
     <bean id="defaultSagiaServiceDAO" class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultSagiaServiceDAO">
         <constructor-arg value="SagiaService"/>
     </bean>
-    
+
      <alias alias="sagiaLicenseTypeRequirementDAO" name="defaultSagiaLicenseTypeRequirementDAO"/>
     <bean id="defaultSagiaLicenseTypeRequirementDAO" class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultSagiaLicenseTypeRequirementDAO">
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
-        <constructor-arg value="SagiaLicenseTypeRequirement"/>                           
+        <constructor-arg value="SagiaLicenseTypeRequirement"/>
     </bean>
 
     <alias alias="sagiaTutorialDAO" name="defaultSagiaTutorialDAO"/>
@@ -989,41 +989,41 @@
     <bean id="defaultSagiaStatusService" class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaStatusService">
         <property name="sagiaStatusDAO" ref="sagiaStatusDAO"/>
     </bean>
-    
-    
+
+
     <alias alias="sagiaLicenseTypeRequirementService" name="defaultSagiaLicenseTypeRequirementService"/>
     <bean id="defaultSagiaLicenseTypeRequirementService" class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaLicenseTypeRequirementService">
         <property name="sagiaLicenseTypeRequirementDAO" ref="sagiaLicenseTypeRequirementDAO"/>
     </bean>
-    
-    
+
+
     <bean id="ticketConfigurationDAO" class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultTicketConfigurationDAO">
 	</bean>
-	
+
 	<alias alias="ticketQuestionDAO" name="defaultTicketQuestionDAO"/>
 	 <bean id="defaultTicketQuestionDAO" class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultTicketQuestionDAO">
 		<constructor-arg value="TicketQuestion"/>
 	</bean>
-	
-	
-	
+
+
+
 	<bean id="ticketConfigurationService" class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultTicketConfigurationService">
 	</bean>
-	
+
 	<bean id="sagiaTicketSectorService" class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaTicketSectorService">
 	</bean>
-	
+
 	<alias alias="sagiaTicketService" name="defaultSagiaTicketService"/>
 	<bean id="defaultSagiaTicketService" class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaTicketService" parent="defaultTicketService">
 		<property name="sagiaTicketDao" ref="sagiaTicketDao"/>
 	</bean>
-	
+
 	<alias alias="sagiaTicketDao" name="defaultSagiaTicketDao"/>
 	<bean id="defaultSagiaTicketDao" class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultSagiaTicketDao" parent="defaultTicketDao" scope="tenant">
 		<property name="searchRestrictionService" ref="searchRestrictionService" />
 		<!-- <property name="pagedFlexibleSearchService" ref="pagedFlexibleSearchService" /> -->
 	</bean>
-	
+
 
     <alias name="defaultSagiaBlogTicketBusinessService" alias="blogTicketBusinessService"/>
     <bean id="defaultSagiaBlogTicketBusinessService" class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaBlogTicketBusinessService" parent="defaultTicketBusinessService">
@@ -1037,7 +1037,7 @@
         <property name="workflowProcessingService" ref="workflowProcessingService"/>
         <property name="ticketStatusService" ref="ticketStatusService"/>
     </bean>
-	
+
 	<bean id="sagiaNotificationService" class="com.sap.ibso.eservices.core.sagia.services.impl.SagiaNotificationServiceImpl"/>
 
     <bean id="answersAndQuestionsHandler" class="com.sap.ibso.eservices.core.handlers.AnswersAndQuestionsHandler">
@@ -1049,24 +1049,24 @@
     <bean id="subSectorHandler" class="com.sap.ibso.eservices.core.handlers.SubSectorHandler">
     </bean>
 
-    <bean id="defaultSagiaCsTicketPrepareInterceptor" class="com.sap.ibso.eservices.core.interceptors.DefaultSagiaCsTicketPrepareInterceptor" scope="tenant" parent="CsTicketPrepareInterceptor"> 
- 	</bean> 
- 	
- 	
+    <bean id="defaultSagiaCsTicketPrepareInterceptor" class="com.sap.ibso.eservices.core.interceptors.DefaultSagiaCsTicketPrepareInterceptor" scope="tenant" parent="CsTicketPrepareInterceptor">
+ 	</bean>
+
+
  	<bean id="defaultSagiaCsTicketPrepareInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping" scope="tenant">
 		<property name="interceptor" ref="defaultSagiaCsTicketPrepareInterceptor"/>
 		<property name="typeCode" value="CsTicket"/>
 		<property name="replacedInterceptors" ref="CsTicketPrepareInterceptor"/>
 	</bean>
-	
-	
+
+
 	<alias name="defaultSagiaTicketUpdateStrategy" alias="ticketUpdateStrategy"/>
 	<bean id="defaultSagiaTicketUpdateStrategy" class="com.sap.ibso.eservices.core.strategies.DefaultSagiaTicketUpdateStrategy"
 		  parent="defaultTicketUpdateStrategy" scope="tenant">
         <property name="ticketStatusService" ref="ticketStatusService"/>
         <property name="workflowService" ref="newestWorkflowService"/>
 	</bean>
-	
+
 	<alias name="sagiaStatusMapping" alias="statusMapping"/>
 	<util:map id="sagiaStatusMapping">
 
@@ -1090,7 +1090,7 @@
         <entry key="SubCommitteeRejected" value-ref="ticket_subcommitteerejected"/>
         <entry key="Ready" value-ref="ticket_ready"/>
         <entry key="Published" value-ref="ticket_published"/>
-		
+
 		<!--Opportunity Status -->
         <entry key="Uploaded" value-ref="ticket_uploaded"/>
         <entry key="MISAInitialReview" value-ref="ticket_misainitialreview"/>
@@ -1148,7 +1148,7 @@
     <bean id="ticket_published" class="de.hybris.platform.customerticketingfacades.data.StatusData">
         <property name="id" value="PUBLISHED"/>
     </bean>
-	
+
 	<!-- Adding WOAG Approval related status -->
     <bean id="ticket_woagapproved" class="de.hybris.platform.customerticketingfacades.data.StatusData">
         <property name="id" value="WOAGAPPROVED"/>
@@ -1354,9 +1354,9 @@
             </list>
         </entry>
     </util:map>
-	
-	
-	
+
+
+
 	<alias alias="licenseApplyDAO" name="defaultLicenseApplyDAO"/>
 	<bean id="defaultLicenseApplyDAO" class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultLicenseApplyDAO">
 		<property name="flexibleSearchService" ref="flexibleSearchService"/>
@@ -1364,7 +1364,7 @@
 	<alias alias="ticketSectorDAO" name="defaultTicketSectorDAO"/>
 	<bean id="defaultTicketSectorDAO" class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultTicketSectorDAO"/>
 
-   
+
 	<alias alias="licenseApplyService" name="defaultLicenseApplyService"/>
 	<bean id="defaultLicenseApplyService" class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultLicenseApplyService">
         <property name="keyGenerator" ref="licenseCodeGenerator"/>
@@ -1378,7 +1378,7 @@
         <property name="type" value="${keygen.license.code.type}"/>
         <property name="template" value="${keygen.license.code.template}"/>
     </bean>
-    
+
     <!-- shareholder -->
 	<bean id="shareHolderCodeGenerator" class="de.hybris.platform.servicelayer.keygenerator.impl.PersistentKeyGenerator">
 		<property name="key" value="${keygen.shareholder.code.name}"/>
@@ -1395,20 +1395,20 @@
         <property name="userService" ref="userService"/>
         <property name="modelService" ref="modelService"/>
     </bean>
-    
+
     <!-- Invest Saudi Start -->
-    
+
     <!-- <bean id="investsaudiportalSystemSetup" class="com.investsaudi.portal.core.setup.InvestSaudiPortalCoreSystemSetup"
           parent="abstractCoreSystemSetup"/> -->
-    
+
 	<import resource="classpath:/sagiacore/cms/sagiastorefrontcms-spring.xml"/>
- 
+
     <bean id="investSaudiProductService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiProductServiceImpl"/>
-    
+
     <bean id="investSaudiMediaCenterService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiMediaCenterServiceImpl" />
-          
+
     <bean id="investSaudiProvinceRegionService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiProvinceRegionServiceImpl" />
 
@@ -1423,11 +1423,11 @@
     <bean id="investSaudiProductDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiProductDaoImpl">
         <constructor-arg value="Product"/>
     </bean>
-    
+
     <bean id="investSaudiMediaCenterDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiMediaCenterDaoImpl">
         <constructor-arg value="InvestSaudiNewsComponent" />
     </bean>
-    
+
     <bean id="investSaudiProvinceRegionDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiProvinceRegionDaoImpl">
         <constructor-arg value="ProvinceComponent" />
     </bean>
@@ -1442,7 +1442,7 @@
                 <ref bean="contactTicketParameterPopulator"/>
             </list>
         </property>
-    </bean> 
+    </bean>
 
     <bean id="contactTicketBusinessService" class="com.investsaudi.portal.core.service.ContactTicketBusinessService" parent="defaultTicketBusinessService" />
 
@@ -1488,77 +1488,109 @@
         <property name="frontendTemplateName" value="WebinarRegistrationEmailTemplate"/>
     </bean>
 
-	<!--  
+	<!--
     <bean id="InvestSaudiWebinarRegistrationProcessDefinitionResource"
           class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
         <property name="resource" value="classpath:/investsaudiportalcore/processes/InvestSaudiWebinarRegistrationProcess.xml"/>
     </bean>
     -->
-	
+
 	<!-- ================ DAO Definitions ======================= -->
     <alias name="investSaudiBusinessProcessServiceDao" alias="businessProcessServiceDao"/>
     <bean id="investSaudiBusinessProcessServiceDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiBusinessProcessServiceDao">
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
-    
+
     <!-- Invest Saudi End -->
-	
+
 	  <!-- Economic Highlights Changes Starts -->
-     
+
     <bean id="economicService"
 		  class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultEconomicService">
 		  <property name="economicDAO" ref="economicDAO"/>
-		  
+
 	</bean>
-	
+
 	<bean id="economicDAO"
 		  class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultEconomicDAO">
 		  <property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
-	
+
 	<bean id="saInternationalIndicesService"
 		  class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultSAInternationalIndicesService">
 		  <property name="saInternationalIndicesDAO" ref="saInternationalIndicesDAO"/>
-		  
+
 	</bean>
-	
+
 	<bean id="saInternationalIndicesDAO"
 		  class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultSAInternationalIndicesDAO">
 		  <property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
-	
+
 	<bean id="infraLogisticsService"
 		  class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultInfraLogisticsService">
 		  <property name="infraLogisticsDAO" ref="infraLogisticsDAO"/>
 	</bean>
-	
+
 	<bean id="infraLogisticsDAO"
 		  class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultInfraLogisticsDAO">
 		  <property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
-	
+
 	<bean id="saudiEconomicSectorsService"
 		  class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultSaudiEconomicSectorsService">
 		  <property name="saudiEconomicSectorsDAO" ref="saudiEconomicSectorsDAO"/>
-		  
+
 	</bean>
-	
+
 	<bean id="saudiEconomicSectorsDAO"
 		  class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultSaudiEconomicSectorsDAO">
 		  <property name="flexibleSearchService" ref="flexibleSearchService"/>
-		  
+
 	</bean>
-	
+
 	<bean id="investmentDataService"
 		  class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultInvestmentDataService">
 		  <property name="investmentDataDAO" ref="investmentDataDAO"/>
 	</bean>
-	
+
 	<bean id="investmentDataDAO"
 		  class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultInvestmentDataDAO">
 		  <property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
-	
+
     <!-- Economic Highlights Changes Ends -->
+
+    <bean id="financialSurveyDao"
+          class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultFinancialSurveyDAO">
+        <constructor-arg value="FinancialSurvey"/>
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+
+    <bean id="financialSurveyQuarterDAO"
+          class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultFinancialSurveyQuarterDAO">
+        <constructor-arg value="FinancialSurveyQuarter"/>
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+
+
+    <bean id="financialSurveyBranchDAO"
+          class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultFinancialSurveyBranchDAO">
+        <constructor-arg value="FinancialSurveyBranch"/>
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+
+    <bean id="financialSurveyShareholderDAO"
+          class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultFinancialSurveyShareholderDAO">
+        <constructor-arg value="FinancialSurveyShareholder"/>
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+
+
+    <bean id="financialSurveySubsidiaryDAO"
+          class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultFinancialSurveySubsidiaryDAO">
+        <constructor-arg value="SagiaSubsidiary"/>
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
 
 </beans>

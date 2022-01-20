@@ -78,6 +78,8 @@ public class DefaultSagiaUserDao extends DefaultGenericDao<CustomerModel> implem
 			+ " WHERE {desiredgroups:uid} IN (?usergroups) AND {b2bcustomer:active} = "+Boolean.TRUE+"}})"
 			+ " }})";
 
+	private static final String QUERY_CONTACT_TICKET = "SELECT {p:pk} FROM {ContactTicket AS p} WHERE {p.ticketID} = ?ticketId";
+
 	private FlexibleSearchService flexibleSearchService;
 
 	public DefaultSagiaUserDao(final String typecode)
@@ -171,6 +173,15 @@ public class DefaultSagiaUserDao extends DefaultGenericDao<CustomerModel> implem
 		final Map<String, String> parameters = new HashMap<>();
 		parameters.put(CONTACT_EMAIL, contactEmail);
 		return getResults(query, parameters, ContactTicketModel.class);
+	}
+
+	@Override
+	public ContactTicketModel getContactTicketForTicketId(String ticketId) {
+		final Map<String, Object> params = new HashMap<String, Object>();
+		params.put("ticketId", ticketId);
+		final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(QUERY_CONTACT_TICKET, params);
+		final SearchResult<ContactTicketModel> resultList = flexibleSearchService.search(searchQuery);
+		return (null != resultList && resultList.getResult().size() > 0) ? resultList.getResult().get(0) : null;
 	}
 
 	public <T> List<T> getResults(final String queryString,

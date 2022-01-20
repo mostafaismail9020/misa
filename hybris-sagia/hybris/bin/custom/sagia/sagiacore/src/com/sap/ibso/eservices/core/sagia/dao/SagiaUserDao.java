@@ -35,4 +35,5 @@ public interface SagiaUserDao
 	List<CsTicketModel> getAllTicketsByCustomerUnderGiveUserGroup(String userGroupUid);
 	List<B2BCustomerModel> getAllWOBDCustomerWithNoTickets(String userGroupUid);
 	List<ContactTicketModel> getUserRaisedOpportunities(String contactEmail);
+	ContactTicketModel getContactTicketForTicketId(String ticketId);
 }

@@ -167,6 +167,11 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
         return sagiaUserDao.getUserRaisedOpportunities(contactEmail);
     }
 
+    @Override
+    public ContactTicketModel getContactTicketForTicketId(String ticketId) {
+        return sagiaUserDao.getContactTicketForTicketId(ticketId);
+    }
+
     public SagiaUserDao getSagiaUserDao() {
         return sagiaUserDao;
     }

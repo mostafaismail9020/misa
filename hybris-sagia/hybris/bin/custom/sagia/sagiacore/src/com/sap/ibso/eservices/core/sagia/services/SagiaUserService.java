@@ -87,4 +87,6 @@ public interface SagiaUserService extends UserService
 	 * @return all the tickets raised by the customer
 	 */
 	List<ContactTicketModel> getUserRaisedOpportunities(String contactEmail);
+
+	ContactTicketModel getContactTicketForTicketId(String ticketId);
 }

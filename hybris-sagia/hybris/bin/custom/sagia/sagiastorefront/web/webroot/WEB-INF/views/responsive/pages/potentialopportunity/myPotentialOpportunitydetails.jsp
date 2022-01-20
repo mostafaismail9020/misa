@@ -1,1 +1,0 @@
-My Potential Opportunity details Page

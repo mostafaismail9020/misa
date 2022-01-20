@@ -556,7 +556,7 @@ SAGIA.dashboardWithLicense = {
                 }
             });
         }
-        
+
         var serviceRequestsTable = $("#serviceRequestsTable");
         var secriceRequestSection = $("#servicesRequest");
         if(secriceRequestSection.closest('.js-component').css('display') !== 'none') {

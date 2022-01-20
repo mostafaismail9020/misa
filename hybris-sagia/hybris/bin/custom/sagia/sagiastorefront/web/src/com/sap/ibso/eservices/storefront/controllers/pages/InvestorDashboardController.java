@@ -1,6 +1,7 @@
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
 import com.sap.ibso.eservices.core.sagia.format.SagiaDateData;
+import com.sap.ibso.eservices.facades.data.FinancialSurveyData;
 import com.sap.ibso.eservices.core.sagia.services.SagiaDashboardSectionsService;
 import com.sap.ibso.eservices.facades.data.*;
 import com.sap.ibso.eservices.facades.data.draft.DraftInfo;
@@ -97,12 +98,15 @@ public class InvestorDashboardController extends SagiaAbstractPageController {
 
     @Resource(name = "sagiaAccountFacade")
     private SagiaAccountFacade sagiaAccountFacade;
-    
+
     @Resource(name = "configurationService")
     private ConfigurationService configurationService;
 
     @Resource(name = "userService")
     private UserService userService;
+
+    @Resource(name = "defaultFinancialSurveyFacade")
+    private SagiaFinancialSurveyFacade sagiaFinancialSurveyFacade;
 
     @RequestMapping(value = "/serviceRequests/print/{srId}", method = RequestMethod.GET)
     @RequireHardLogIn
@@ -286,6 +290,19 @@ public class InvestorDashboardController extends SagiaAbstractPageController {
         return responseMap;
     }
 
+
+    @RequestMapping(method = RequestMethod.GET, value = "/financialSurveys")
+    @RequireHardLogIn
+    @ResponseBody
+    public Map<String, Object> getFinancialSurveys() {
+        List<FinancialSurveyData> financialSurveyList =  sagiaFinancialSurveyFacade.getFinancialSurveyList();
+        Map<String, Object> responseMap = new HashMap<>();
+        getSessionService().setAttribute("Surveys", financialSurveyList);
+        responseMap.put("surveys",financialSurveyList);
+        return responseMap;
+    }
+
+
     @RequestMapping(method = RequestMethod.GET, value = "/tickets/{itemsPerPage}")
     @RequireHardLogIn
     @ResponseBody
@@ -347,7 +364,7 @@ public class InvestorDashboardController extends SagiaAbstractPageController {
         sagiaCustomerFacade.updateDashboardPicture(file);
         return REDIRECT_TO_DASHBOARD_PAGE;
     }
-    
+
 	@RequestMapping(value = "/shouldSetNowCompanyPhoto", method = RequestMethod.POST, headers = "Accept=application/json")
 	@ResponseStatus(HttpStatus.OK)
 	@RequireHardLogIn

@@ -58,7 +58,7 @@
             </label>
         </div>
     </form:form>
- 
+
     <div class="globalMessage-holder" id="awaitingPaymentDiv" style="display: none;">
         <div class="container">
             <div class="globalMessage">
@@ -111,10 +111,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                 
+                    </div>
                 </div>
                 <div class="dashboardUser-right">
-                    <div class="row">   
+                    <div class="row">
                         <div class="col">
                             <div class="dashboardUser-col">
                                 <div class="dashboardUser-entry">
@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                
+                    </div>
                 </div>
             </div>
         </div>
@@ -328,6 +328,41 @@
                                                 </a>
                                             </div>
                                         </c:if>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dashboardWidgetListComponent js-component" style="display: none">
+                    <div class="col col-12" id="yourFinancialSurveys">
+                        <div class="dashboardWidget js-dashboardWidget">
+                            <div class="dashboardWidget-headline js-dashboardWidget-headline">
+                                <span>
+                                    <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"
+                                       style="text-decoration: inherit;color: inherit">
+                                    <spring:theme code="dashboard.yourfinancialsurveys"/>
+                                    </a>
+                                </span>
+                                <div class="dashboardWidget-headline-icon">
+                                    <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"><icon:your-tickets/></a>
+                                </div>
+                            </div>
+                            <div class="dashboardWidget-body">
+                                <div class="dashboardWidgetTickets">
+                                    <div class="tableModule tableModule_slim dashboardWidgetTickets-table">
+                                        <table class="tableModule-table">
+                                            <thead class="tableModule-head">
+                                            <tr>
+                                                <th><spring:theme code="dashboard.financialsurveys.quarter"/></th>
+                                                <th><spring:theme code="dashboard.financialsurveys.lastupdate"/></th>
+                                                <th><spring:theme code="dashboard.financialsurveys.status"/></th>
+                                                <th><spring:theme code="dashboard.financialsurveys.connectWithUs"/></th>
+                                                <th><spring:theme code="dashboard.financialsurveys.completesurvey"/></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="tableModule-body" id="financialSurveysTable"></tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

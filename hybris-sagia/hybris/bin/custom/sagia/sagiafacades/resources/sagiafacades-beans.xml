@@ -41,7 +41,93 @@
 		<property name="otherUserEntity" type="String"/>
 		<property name="role" type="String" />
 	</bean>
-	
+
+
+	<bean class="de.hybris.platform.commercefacades.user.data.CompanyProfileData">
+		<property name="companyName" type="String"/>
+		<property name="commercialRegistrationNo" type="String"/>
+		<property name="unifiedNo700" type="String"/>
+		<property name="financeManagerName" type="java.lang.String"/>
+		<property name="financeManagerEmail" type="java.lang.String"/>
+		<property name="financeManagerTelephone" type="java.lang.String"/>
+		<property name="crIssueDate" type="java.lang.String"/>
+		<property name="incorporationDate" type="java.lang.String"/>
+		<property name="legalStatus" type="java.lang.String"/>
+
+
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.user.data.FinancialSurvey">
+		<property name="companyProfile" type="de.hybris.platform.commercefacades.user.data.CompanyProfileData"/>
+		<property name="shareholderEquity" type="de.hybris.platform.commercefacades.user.data.ShareholderEquity"/>
+		<property name="action" type="java.lang.String"/>
+		<property name="id" type="java.lang.String"/>
+		<property name="bpId" type="java.lang.String"/>
+		<property name="status" type="java.lang.String"/>
+		<property name="createdDate" type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData"/>
+		<property name="entity" type="com.sap.ibso.eservices.facades.data.license.amendment.Entity" />
+		<property name="shareholders" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.finance.survey.Shareholder&gt;" />
+		<property name="affiliates" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.finance.survey.Affiliate&gt;" />
+		<property name="branches" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.Branch&gt;" />
+		<property name="subsidiaries" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.Subsidiary&gt;" />
+		<property name="attachments" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.LicenseAmendmentAttachment&gt;" />
+		<property name="businessActivities" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.BusinessActivity&gt;" />
+		<property name="errors" type="java.util.Set&lt;java.lang.String&gt;" />
+		<property name="quarterCode" type="java.lang.String"/>
+		<property name="companyStatus" type="java.lang.String"/>
+		<property name="suspensionDate" type="java.lang.String"/>
+		<property name="messages" type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.Messsage&gt;" />
+		<property name="disclosureCurrency" type="java.lang.String"/>
+		<property name="paidUpCapitalCurrentQuarter" type="java.lang.String"/>
+		<property name="annualFinancialStatementFile" type="java.lang.String"/>
+		<property name="annualFinancialStatementFileName" type="java.lang.String"/>
+		<property name="annualFinancialStatementFileType" type="java.lang.String"/>
+		<property name="letterOfSupportFileName" type="java.lang.String"/>
+		<property name="letterOfSupportFileMimeType" type="java.lang.String"/>
+		<property name="isConsolidated" type="Boolean"/>
+
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.user.data.Messsage">
+		<property name="commentBy" type="java.lang.String"/>
+		<property name="content" type="java.lang.String"/>
+		<property name="commentDate" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.user.data.ShareholderEquity">
+		<property name="paidUpCapitalCurrentQuarter" type="java.lang.String"/>
+		<property name="paidUpCapitalPreviousQuarter" type="java.lang.String"/>
+		<property name="additionalPaidUpCapitalCurrentQuarter" type="java.lang.String"/>
+		<property name="additionalPaidUpCapitalPreviousQuarter" type="java.lang.String"/>
+		<property name="retainedEarningsIncludeCurrentQuarter" type="java.lang.String"/>
+		<property name="retainedEarningsIncludePreviousQuarter" type="java.lang.String"/>
+		<property name="profitLossQuarterCurrentQuarter" type="java.lang.String"/>
+		<property name="profitLossQuarterPreviousQuarter" type="java.lang.String"/>
+		<property name="totalReservesCurrentQuarter" type="java.lang.String"/>
+		<property name="totalReservesPreviousQuarter" type="java.lang.String"/>
+		<property name="treasurySharesCurrentQuarter" type="java.lang.String"/>
+		<property name="treasurySharesPreviousQuarter" type="java.lang.String"/>
+		<property name="headOfficeAccountInBranchCurrentQuarter" type="java.lang.String"/>
+		<property name="headOfficeAccountInBranchPreviousQuarter" type="java.lang.String"/>
+		<property name="shareholderEquityOthersCurrentQuarter" type="java.lang.String"/>
+		<property name="shareholderEquityOthersPreviousQuarter" type="java.lang.String"/>
+		<property name="minorityRightsCurrentQuarter" type="java.lang.String"/>
+		<property name="minorityRightsPreviousQuarter" type="java.lang.String"/>
+		<property name="totalShareholderEquityCurrentQuarter" type="java.lang.String"/>
+		<property name="totalShareholderEquityPreviousQuarter" type="java.lang.String"/>
+		<property name="cashTransactionIncrease" type="java.lang.Boolean"/>
+		<property name="profitsIncrease" type="java.lang.Boolean"/>
+		<property name="reservesIncrease" type="java.lang.Boolean"/>
+		<property name="shareholdersCreditIncrease" type="java.lang.Boolean"/>
+		<property name="mergersIncrease" type="java.lang.Boolean"/>
+		<property name="acquisitionsIncrease" type="java.lang.Boolean"/>
+		<property name="assetsInKindIncrease" type="java.lang.Boolean"/>
+		<property name="othersIncrease" type="java.lang.Boolean"/>
+		<property name="lossesDecrease" type="java.lang.Boolean"/>
+		<property name="treasurySharesDecrease" type="java.lang.Boolean"/>
+		<property name="othersDecrease" type="java.lang.Boolean"/>
+	</bean>
+
 	<bean class="com.sap.ibso.eservices.facades.data.ProfileData">
 		<property name="profileCompanyData" type="com.sap.ibso.eservices.facades.data.ProfileCompanyData"/>
 		<property name="profilePersonalData" type="com.sap.ibso.eservices.facades.data.ProfilePersonalData"/>
@@ -246,6 +332,15 @@
 		<property name="statusKey" type="String"/>
 	</bean>
 
+	<bean class="com.sap.ibso.eservices.facades.data.FinancialSurveyData">
+		<property name="quarterCode" type="String"/>
+		<property name="quarter" type="String"/>
+		<property name="lastUpdate" type="java.time.LocalDateTime"/>
+		<property name="lastUpdateData" type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData"/>
+		<property name="status" type="String"/>
+		<property name="statusKey" type="String"/>
+	</bean>
+
 	<bean class="com.sap.ibso.eservices.facades.data.ProfileFeedbackData">
 		<property name="subject" type="String"/>
 		<property name="message" type="String"/>
@@ -426,7 +521,7 @@
 		<property name="userEmail" type="java.lang.String"/>
 		<property name="notes" type="String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.TimeSlot">
 		<property name="dateStart" type="java.lang.String"/>
 		<property name="timeStart" type="java.lang.String"/>
@@ -497,7 +592,7 @@
 		<property name="action" type="java.lang.String" />
 		<property name="termsAndConditionsChecked" type="java.lang.Boolean" />
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.MOJInheritSet">
 		<property name="deedNumber" type="java.lang.String"/>
 		<property name="deceasedId" type="java.lang.String"/>
@@ -664,7 +759,7 @@
 		<property name="description" type="java.lang.String"/>
 		<property name="steps" type="java.util.Collection&lt;com.sap.ibso.eservices.facades.data.tutorial.SagiaTutorialStepData&gt;"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.tutorial.SagiaTutorialStepData">
 		<property name="name" type="java.lang.String"/>
 		<property name="selector" type="java.lang.String"/>
@@ -707,7 +802,7 @@
 		<property name="contactChInd" type="java.lang.String"/>
 		<property name="nonChangable" type="java.lang.Boolean"/>
 		<property name="termCond" type="java.lang.Boolean"/>
-				<property name="supportedAttachments"
+		<property name="supportedAttachments"
 				  type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.replace.LicenseReplacementAttachmentToBeUploaded&gt;" />
 		<property name="messages"
 				  type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.replace.LicenseReplacementMessages&gt;" />
@@ -762,10 +857,10 @@
 		<property name="stage" type="java.lang.String"/>
 		<property name="fullFileName" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--  Complaints And Enquiry entities -->
 	<bean
-		class="com.sap.ibso.eservices.facades.data.complaints.ComplaintAndEnquiry">
+			class="com.sap.ibso.eservices.facades.data.complaints.ComplaintAndEnquiry">
 		<property name="srID" type="String" />
 		<property name="srGuid" type="String" />
 		<property name="licID" type="String" />
@@ -784,12 +879,12 @@
 		<property name="bpName" type="String" />
 		<property name="actionType" type="java.lang.Boolean" />
 		<property name="supportedAttachments"
-			type="java.util.List&lt;com.sap.ibso.eservices.facades.data.complaints.ComplaintAttachmentToBeUploaded&gt;" />
+				  type="java.util.List&lt;com.sap.ibso.eservices.facades.data.complaints.ComplaintAttachmentToBeUploaded&gt;" />
 		<property name="details" type="ComplaintAndEnquiryDetails" />
 		<property name="messages"
-			type="java.util.List&lt;com.sap.ibso.eservices.facades.data.complaints.ComplaintAndEnquiryMessages&gt;" />
+				  type="java.util.List&lt;com.sap.ibso.eservices.facades.data.complaints.ComplaintAndEnquiryMessages&gt;" />
 		<property name="uploadedAttachments"
-			type="java.util.List&lt;com.sap.ibso.eservices.facades.data.complaints.ComplaintAndEnquiryAttachments&gt;" />
+				  type="java.util.List&lt;com.sap.ibso.eservices.facades.data.complaints.ComplaintAndEnquiryAttachments&gt;" />
 	</bean>
 
 	<bean
@@ -923,7 +1018,7 @@
 		<property name="name" type="java.lang.String"/>
 		<property name="code" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.LicenseAmendmentTypeData">
 		<property name="ShReQu" type="java.lang.String"/>
 		<property name="ShRem" type="java.lang.String"/>
@@ -933,7 +1028,7 @@
 		<property name="BrClose" type="java.lang.String"/>
 		<property name="EnLocCh" type="java.lang.String"/>
 		<property name="PrAddReCh" type="java.lang.String"/>
-        <property name="PrDescChange" type="java.lang.String"/>
+		<property name="PrDescChange" type="java.lang.String"/>
 		<property name="EnActCh" type="java.lang.String"/>
 		<property name="EnCapIncr" type="java.lang.String"/>
 		<property name="EnCapRed" type="java.lang.String"/>
@@ -943,17 +1038,17 @@
 		<property name="EnLegalstatToIllc" type="java.lang.String"/>
 		<property name="newBranchesCount" type=" java.lang.Integer"/>
 	</bean>
-	
-    <bean class="com.sap.ibso.eservices.facades.data.license.amendment.LicenseAmendmentAttachment">
-        <property name="name" type="java.lang.String"/>
-        <property name="content" type="java.lang.String"/>
+
+	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.LicenseAmendmentAttachment">
+		<property name="name" type="java.lang.String"/>
+		<property name="content" type="java.lang.String"/>
 		<property name="dockeyId" type="java.lang.String"/>
-    </bean>
-    
+	</bean>
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.Text">
 		<property name="comment" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.LicenseAmendment">
 		<property name="action" type="java.lang.String"/>
 		<property name="instantAmendment" type="java.lang.Boolean"/>
@@ -977,13 +1072,13 @@
         <property name="errors" type="java.util.Set&lt;java.lang.String&gt;" />
         <property name="simulatedPrices" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.simulation.SimulatedPriceData&gt;"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.simulation.SimulatedPriceData">
         <property name="serviceName" type="java.lang.String"/>
         <property name="netValue" type="java.lang.String"/>
 		<property name="currency" type="java.lang.String"/>
     </bean>
-    
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.Entity">
         <property name="action" type="java.lang.String"/>
         <property name="bpId" type="java.lang.String"/>
@@ -998,7 +1093,7 @@
 		<property name="activity" type="java.lang.String" />
 		<property name="activityOld" type="java.lang.String" />
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.Shareholder">
 		<property name="action" type="java.lang.String"/>
 		<property name="srId" type="java.lang.String"/>
@@ -1052,7 +1147,115 @@
 		<property name="isMojVerified" type="java.lang.String"/>
 		<property name="delegate" type="com.sap.ibso.eservices.facades.data.zqeemah.DelegateInfo"/>
 	</bean>
-	
+
+	<bean class="com.sap.ibso.eservices.facades.data.finance.survey.Shareholder">
+		<property name="action" type="java.lang.String"/>
+		<property name="srId" type="java.lang.String"/>
+		<property name="shareholderType" type="java.lang.String"/>
+		<property name="companyCountry" type="java.lang.String"/>
+		<property name="shareholderNameEnglish" type="java.lang.String"/>
+		<property name="shareholderSector" type="java.lang.String"/>
+		<property name="shareholderSubsector" type="java.lang.String"/>
+		<property name="shareholderGender" type="java.lang.String"/>
+		<property name="shareholderNationalityCurrent" type="java.lang.String"/>
+		<property name="shareholderCountry" type="java.lang.String"/>
+		<property name="shareholderPercentage" type="java.lang.String"/>
+		<property name="shareholderCapital" type="java.lang.String"/>
+		<property name="shareholderIsVotingPower" type="java.lang.Boolean"/>
+		<property name="shareholderVotingPower" type="java.lang.String"/>
+		<property name="shareholderHasPreferredShares" type="java.lang.Boolean"/>
+		<property name="shareholderPreferredShares" type="java.lang.String"/>
+		<property name="shareholderHaveReverseInvestment" type="java.lang.Boolean"/>
+		<property name="valueOfReverseInvestment" type="java.lang.String"/>
+		<property name="shareholderMultinationalCompany" type="java.lang.String"/>
+		<property name="transaction" type="com.sap.ibso.eservices.facades.data.license.amendment.Transaction"/>
+	</bean>
+
+
+	<bean class="com.sap.ibso.eservices.facades.data.finance.survey.Affiliate">
+		<property name="action" type="java.lang.String"/>
+		<property name="srId" type="java.lang.String"/>
+		<property name="affiliateType" type="java.lang.String"/>
+		<property name="companyCountry" type="java.lang.String"/>
+		<property name="affiliateNameEnglish" type="java.lang.String"/>
+		<property name="affiliateSector" type="java.lang.String"/>
+		<property name="affiliateSubsector" type="java.lang.String"/>
+		<property name="affiliateGender" type="java.lang.String"/>
+		<property name="affiliateNationalityCurrent" type="java.lang.String"/>
+		<property name="affiliateCountry" type="java.lang.String"/>
+		<property name="affiliateMultinationalCompany" type="java.lang.String"/>
+		<property name="transaction" type="com.sap.ibso.eservices.facades.data.license.amendment.Transaction"/>
+	</bean>
+
+
+	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.Transaction">
+
+		<property name="tradeDebitCurrentQuarter" type="java.lang.String"/>
+		<property name="tradeDebitPreviousQuarter" type="java.lang.String"/>
+		<property name="tradeCreditCurrentQuarter" type="java.lang.String"/>
+		<property name="tradeCreditPreviousQuarter" type="java.lang.String"/>
+
+		<property name="loansAssetsCurrentQuarter" type="java.lang.String"/>
+		<property name="loansAssetsPreviousQuarter" type="java.lang.String"/>
+		<property name="loansLiabilitiesCurrentQuarter" type="java.lang.String"/>
+		<property name="loansLiabilitiesPreviousQuarter" type="java.lang.String"/>
+
+		<property name="interestReceivedCurrentQuarter" type="java.lang.String"/>
+		<property name="interestReceivedPreviousQuarter" type="java.lang.String"/>
+		<property name="interestPayableCurrentQuarter" type="java.lang.String"/>
+		<property name="interestPayablePreviousQuarter" type="java.lang.String"/>
+
+		<property name="dividendsReceivedCurrentQuarter" type="java.lang.String"/>
+		<property name="dividendsReceivedPreviousQuarter" type="java.lang.String"/>
+		<property name="dividendsPaidCurrentQuarter" type="java.lang.String"/>
+		<property name="dividendsPaidPreviousQuarter" type="java.lang.String"/>
+
+		<property name="expensesReceivedCurrentQuarter" type="java.lang.String"/>
+		<property name="expensesReceivedPreviousQuarter" type="java.lang.String"/>
+		<property name="expensesPaidCurrentQuarter" type="java.lang.String"/>
+		<property name="expensesPaidPreviousQuarter" type="java.lang.String"/>
+
+		<property name="sellProductionSuppliesCurrentQuarter" type="java.lang.String"/>
+		<property name="sellProductionSuppliesPreviousQuarter" type="java.lang.String"/>
+		<property name="purchaseProductionSuppliesCurrentQuarter" type="java.lang.String"/>
+		<property name="purchaseProductionSuppliesPreviousQuarter" type="java.lang.String"/>
+
+		<property name="sellMachineryCurrentQuarter" type="java.lang.String"/>
+		<property name="sellMachineryPreviousQuarter" type="java.lang.String"/>
+		<property name="purchaseMachineryCurrentQuarter" type="java.lang.String"/>
+		<property name="purchaseMachineryPreviousQuarter" type="java.lang.String"/>
+
+		<property name="currentDebitAccountCurrentQuarter" type="java.lang.String"/>
+		<property name="currentDebitAccountPreviousQuarter" type="java.lang.String"/>
+		<property name="currentCreditAccountCurrentQuarter" type="java.lang.String"/>
+		<property name="currentCreditAccountPreviousQuarter" type="java.lang.String"/>
+
+
+		<property name="expensesReceivableCurrentQuarter" type="java.lang.String"/>
+		<property name="expensesReceivablePreviousQuarter" type="java.lang.String"/>
+		<property name="expensesPayableCurrentQuarter" type="java.lang.String"/>
+		<property name="expensesPayablePreviousQuarter" type="java.lang.String"/>
+
+		<property name="insuranceCommissionReceivableCurrentQuarter" type="java.lang.String"/>
+		<property name="insuranceCommissionReceivablePreviousQuarter" type="java.lang.String"/>
+		<property name="insuranceCommissionPayableCurrentQuarter" type="java.lang.String"/>
+		<property name="insuranceCommissionPayablePreviousQuarter" type="java.lang.String"/>
+
+
+		<property name="otherDebitCurrentQuarter" type="java.lang.String"/>
+		<property name="otherDebitPreviousQuarter" type="java.lang.String"/>
+		<property name="otherCreditCurrentQuarter" type="java.lang.String"/>
+		<property name="otherCreditPreviousQuarter" type="java.lang.String"/>
+
+
+		<property name="totalDebitCurrentQuarter" type="java.lang.String"/>
+		<property name="totalDebitPreviousQuarter" type="java.lang.String"/>
+		<property name="totalCreditCurrentQuarter" type="java.lang.String"/>
+		<property name="totalCreditPreviousQuarter" type="java.lang.String"/>
+
+	</bean>
+
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.Branch">
 		<property name="action" type="java.lang.String"/>
 		<property name="srId" type="java.lang.String"/>
@@ -1062,14 +1265,27 @@
 		<property name="type" type="java.lang.String" />
         <property name="typeDescription" type="java.lang.String" />
 		<property name="name" type="java.lang.String" />
-        <property name="addrNumber" type="java.lang.String" />
+		<property name="addrNumber" type="java.lang.String" />
+		<property name="volumeWeight" type="java.lang.String" />
 		<property name="address" type="com.sap.ibso.eservices.facades.data.license.amendment.Address" />
 	</bean>
-	
+
+	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.Subsidiary">
+		<property name="action" type="java.lang.String"/>
+		<property name="srId" type="java.lang.String"/>
+		<property name="bpId" type="java.lang.String"/>
+		<property name="newItemId" type="java.lang.String"/>
+		<property name="dataIncludedInHeadOffice" type="java.lang.Boolean"/>
+		<property name="subsidiaryName" type="java.lang.String" />
+		<property name="registrationName" type="java.lang.String" />
+		<property name="unifiedNo" type="java.lang.String" />
+		<property name="contribution" type="java.lang.String" />
+	</bean>
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.Product">
 		<property name="action" type="java.lang.String"/>
 		<property name="srId" type="java.lang.String"/>
-        <property name="bpId" type="java.lang.String"/>
+		<property name="bpId" type="java.lang.String"/>
 		<property name="newItemId" type="java.lang.String"/>
 		<property name="changed" type="java.lang.Boolean"/>
 		<property name="id" type="java.lang.String" />
@@ -1079,7 +1295,7 @@
 		<property name="unit" type="java.lang.String" />
 		<property name="unitDescription" type="java.lang.String" />
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.Address">
 		<property name="street" type="java.lang.String"/>
 		<property name="number" type="java.lang.String"/>
@@ -1094,7 +1310,7 @@
 		<property name="email" type="java.lang.String"/>
 		<property name="website" type="java.lang.String"/>
 	</bean>
-	
+
     <bean class="com.sap.ibso.eservices.facades.data.license.amendment.BusinessActivity">
         <property name="id" type="java.lang.String"/>
         <property name="description" type="java.lang.String"/>
@@ -1115,18 +1331,18 @@
 		<property name="attachments" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.listItem.AttachmentListItem&gt;" />
 		<property name="premiumResident" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItem&gt;" />
     </bean>
-    
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItem">
 		<property name="id" type="java.lang.String"/>
 		<property name="name" type="java.lang.String"/>
 	</bean>
-	
+
     <bean class="com.sap.ibso.eservices.facades.data.license.amendment.listItem.SubListItem">
         <property name="parentId" type="java.lang.String"/>
         <property name="name" type="java.lang.String"/>
         <property name="id" type="java.lang.String"/>
     </bean>
-    
+
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.listItem.AttachmentListItem">
 		<property name="longDescription" type="java.lang.String"/>
 		<property name="name" type="java.lang.String"/>
@@ -1152,24 +1368,24 @@
 		<property name="id" type="java.lang.String" />
 		<property name="attachments" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.TemporaryBiddingLicenseAttachment&gt;"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.TemporaryBiddingLicenseAttachment">
 		<property name="id" type="java.lang.String" />
 		<property name="filename" type="java.lang.String" />
 		<property name="mimeType" type="java.lang.String" />
 		<property name="content" type="java.lang.String" />
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.TemporaryBiddingLicenseCountry">
 		<property name="code" type="java.lang.String" />
 		<property name="name" type="java.lang.String" />
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.LicenseDuration">
 		<property name="code" type="java.lang.String" />
 		<property name="name" type="java.lang.String" />
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.TemporaryBiddingLicenseGovernmentEntity">
 		<property name="code" type="java.lang.String" />
 		<property name="name" type="java.lang.String" />
@@ -1189,12 +1405,12 @@
         <property name="description" type="java.lang.String"/>
         <property name="date" type="java.time.LocalDate"/>
 		<property name="dateData" type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData"/>
-        <property name="status" type="java.lang.String"/>
-        <property name="comments" type="java.lang.String"/>
-        <property name="language" type="java.lang.String"/>
-        <property name="creationAllowed" type="java.lang.String" />
-        <property name="errorMessage" type="java.lang.String" />
-    </bean>
+		<property name="status" type="java.lang.String"/>
+		<property name="comments" type="java.lang.String"/>
+		<property name="language" type="java.lang.String"/>
+		<property name="creationAllowed" type="java.lang.String" />
+		<property name="errorMessage" type="java.lang.String" />
+	</bean>
 
 	<bean class="com.sap.ibso.eservices.facades.data.specialservices.Country">
 		<property name="language" type="java.lang.String" />
@@ -1250,7 +1466,7 @@
         <property name="attachedImages" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.ContentHDRImage&gt;"/>
 		<property name="comments" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.ServiceRequestComment&gt;"/>
     </bean>
-    
+
 	<bean class="com.sap.ibso.eservices.facades.data.AddressHDR">
 		<property name="srID" type="java.lang.String"/>
 		<property name="srGuid" type="java.lang.String"/>
@@ -1266,7 +1482,7 @@
 		<property name="city" type="java.lang.String"/>
 		<property name="period" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.ServiceRequestComment">
 		<property name="serviceId" type="java.lang.String"/>
 		<property name="guid" type="java.lang.String"/>
@@ -1279,7 +1495,7 @@
 		<property name="comments" type="java.lang.String"/>
 		<property name="stage" type="java.lang.String"/>
 	</bean>
-	
+
     <bean class="com.sap.ibso.eservices.facades.data.ContentHDRDocument">
         <property name="documentID" type="java.lang.String"/>
         <property name="objectId" type="java.lang.String"/>
@@ -1296,7 +1512,7 @@
         <property name="fullFileName" type="java.lang.String"/>
 		<property name="fileContentString" type="java.lang.String" />
     </bean>
-    
+
     <bean class="com.sap.ibso.eservices.facades.data.ContentHDRImage">
         <property name="documentID" type="java.lang.String"/>
         <property name="objectID" type="java.lang.String"/>
@@ -1378,7 +1594,7 @@
 		<property name="contentHdr" type="java.util.Set&lt;com.sap.ibso.eservices.facades.data.ContentHDRDocument&gt;"/>
 		<property name="followText" type="java.util.Set&lt;com.sap.ibso.eservices.facades.data.specialservices.TextData&gt;"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.specialservices.TextData">
 		<property name="srID" type="java.lang.String" />
 		<property name="commentDate" type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData" />
@@ -1594,7 +1810,7 @@
 		<property name="crIssueDate" type="java.lang.String"/>
 		<property name="crExpiryDate" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.services.govt.SagiaLabourService"
 		  extends="com.sap.ibso.eservices.facades.data.services.SagiaServiceData">
 		<property name="molNumber" type="java.lang.String"/>
@@ -1636,7 +1852,7 @@
 		<property name="total" type="java.lang.String"/>
 		<property name="currency" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.sagiaservices.data.payment.PaymentDetailsItemData">
 		<property name="serviceName" type="java.lang.String"/>
 		<property name="netValue" type="java.lang.String"/>
@@ -1721,7 +1937,7 @@
 		<property name="contentHDRSet" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.zesrvEnhOData.ContentHDR&gt;"/>
 		<property name="attachmantHDRSet" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.zesrvEnhOData.AttachmantHDR&gt;"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zesrvEnhOData.FinancialStatementHDR">
 		<property name="srId" type="java.lang.String"/>
 		<property name="srGuid" type="java.lang.String"/>
@@ -1808,31 +2024,31 @@
         <property name="sectionId" type="java.lang.String"/>
         <property name="description" type="java.lang.String"/>
     </bean>
-    
+
     <bean class="com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicDivision">
         <property name="divisionId" type="java.lang.String"/>
         <property name="sectionId" type="java.lang.String"/>
         <property name="description" type="java.lang.String"/>
     </bean>
-    
+
     <bean class="com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicGroup">
         <property name="groupId" type="java.lang.String"/>
         <property name="divisionId" type="java.lang.String"/>
         <property name="description" type="java.lang.String"/>
     </bean>
-    
+
     <bean class="com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicClass">
         <property name="classId" type="java.lang.String"/>
         <property name="groupId" type="java.lang.String"/>
         <property name="description" type="java.lang.String"/>
     </bean>
-    
+
     <bean class="com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicBranch">
         <property name="branchId" type="java.lang.String"/>
         <property name="classId" type="java.lang.String"/>
         <property name="description" type="java.lang.String"/>
     </bean>
-    
+
     <bean class="com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicActivity">
         <property name="activityId" type="java.lang.String"/>
         <property name="branchId" type="java.lang.String"/>
@@ -1843,7 +2059,7 @@
 		<property name="sectionId" type="java.lang.String"/>
 		<property name="classId" type="java.lang.String"/>
 		<property name="divisionId" type="java.lang.String"/>
-    </bean>
+	</bean>
 
 	<bean class="com.sap.ibso.eservices.sagiaservices.data.reopenfacility.ReopenFacilityAddress">
 		<property name="bpId" type="java.lang.String"/>
@@ -1896,7 +2112,7 @@
 		<property name="fileContent" type="java.lang.String"/>
 		<property name="objectType" type="java.lang.String"/>
 	</bean>
- 
+
     <bean class="com.sap.ibso.eservices.facades.data.zesrvEnhOData.LegalInquiryType">
         <property name="id" type="java.lang.String"/>
         <property name="description" type="java.lang.String"/>
@@ -1915,7 +2131,7 @@
 		<property name="select" type="java.lang.String"/>
 		<property name="changeType" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.Notification">
 		<property name="id" type="java.lang.String"/>
 		<property name="collection" type="java.lang.String"/>
@@ -1925,14 +2141,14 @@
 		<property name="entriesOfInterest" type="java.lang.Integer"/>
 		<property name="recipient" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.Submit">
 		<property name="refId" type="java.lang.String"/>
 		<property name="guid" type="java.lang.String"/>
 		<property name="returnProperty" type="java.lang.String"/>
 		<property name="leadId" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.ProductId">
 		<property name="productId" type="java.lang.String">
 			<description>Product Id</description>
@@ -1944,7 +2160,7 @@
 			<description>uomText</description>
 		</property>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.LicenseTypeAttachments">
 		<property name="license" type="java.lang.String">
 			<description>License</description>
@@ -1958,7 +2174,7 @@
 		<property name="attachments" type="java.lang.String"/>
 		<property name="question" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.Reapply">
 		<property name="investorId" type="java.lang.String">
 			<description>Investor ID</description>
@@ -1967,7 +2183,7 @@
 			<description>Return Details</description>
 		</property>
 	</bean>
-	
+
 	<!-- ORG
     <bean class="com.sap.ibso.eservices.facades.data.zqeemah.OrgInfo">
         <property name="refId" type="java.lang.String"/>
@@ -1995,7 +2211,7 @@
         <property name="region" type="java.lang.String"/>
         <property name="returnProperty" type="java.lang.String"/>
     </bean>-->
-    
+
 	<!--ZBASIC_ORG_INFO : existed-->
 	<bean class="com.sap.ibso.eservices.facades.data.OrganizationInformation">
 		<property name="entityName" type="java.lang.String"/>
@@ -2017,7 +2233,7 @@
 		<property name="investment" type="java.lang.String"/>
 		<property name="licenseDuration" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--ZBASIC_CONT_INFO : existed-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.BasicContactInformation">
 		<property name="refID" type="java.lang.String"/>
@@ -2048,7 +2264,7 @@
 		<property name="education" type="java.lang.String"/>
 		<property name="passportIssueDate" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--REGISTER_USER : existed-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.UserRegister">
 		<property name="userId" type="java.lang.String"/>
@@ -2062,7 +2278,7 @@
 		<property name="contactPersonName" type="java.lang.String"/>
 		<property name="returnProperty" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--ZBASIC_CONT_FILE-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.BasicContactFile">
 		<property name="refId" type="java.lang.String"/>
@@ -2072,7 +2288,7 @@
 		<property name="returnProperty" type="java.lang.String"/>
 		<!--<NavigationProperty Name="InfoToPoa" Relationship="ZQEEMAH_SRV.InfoToPoa" FromRole="ToRole_InfoToPoa" ToRole="FromRole_InfoToPoa"/>-->
 	</bean>
-	
+
 	<!--ZCONT_INFO_HEADER-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.ContactInformationHeader">
 		<property name="refID" type="java.lang.String"/>
@@ -2108,7 +2324,7 @@
 		<property name="attachments" type="java.lang.String"/>
 		<property name="question" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--LOGON_ENT-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.LogonEntity">
 		<property name="flag" type="java.lang.String"/>
@@ -2117,7 +2333,7 @@
 		<property name="email" type="java.lang.String"/>
 		<property name="mobilePhone" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.UserRegistration">
 		<property name="flag" type="java.lang.String"/>
 		<property name="userId" type="java.lang.String"/>
@@ -2129,7 +2345,7 @@
 		<property name="firstName" type="java.lang.String"/>
 		<property name="lastName" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--CrmIdStatusData : existed-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.ApplicationStatus">
 		<property name="entityId" type="java.lang.String"/>
@@ -2142,7 +2358,7 @@
 		<property name="statusDescription" type="java.lang.String"/>
 		<property name="qeemah" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--PASSWORD_RESET-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.ResetPassword">
 		<property name="currentPassword" type="java.lang.String"/>
@@ -2152,7 +2368,7 @@
 		<property name="returnProperty" type="java.lang.String"/>
 		<property name="status" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--PASSWORD_FORGOT-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.ForgotPassword">
 		<property name="userId" type="java.lang.String"/>
@@ -2162,21 +2378,21 @@
 		<property name="returnProperty" type="java.lang.String"/>
 		<property name="status" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--ZCRM_TELECODE : existed-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.Telecode">
 		<property name="countryCode" type="java.lang.String"/>
 		<property name="lvStatus" type="java.lang.String"/>
 		<property name="prefix" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--ZCRM_SHAREHOLER-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.Shareholder">
 		<property name="bpNumber" type="java.lang.String"/>
 		<property name="bpName" type="java.lang.String"/>
 		<property name="returnProperty" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.InvestorDetails">
 		<property name="investorId" type="java.lang.String"/>
 		<property name="email" type="java.lang.String"/>
@@ -2185,7 +2401,7 @@
 		<property name="mobilePhone" type="java.lang.String"/>
 		<property name="status" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--ZCRM_ISIC_LIST-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.IsicList">
 		<property name="treeGuid" type="java.lang.String"/>
@@ -2196,7 +2412,7 @@
 		<property name="hLvl" type="java.lang.String"/>
 		<property name="key1" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--ZCRM_DROPDOWN_LIST : existed -->
 	<bean class="com.sap.ibso.eservices.facades.data.BasicCompanyDictionary">
 		<property name="bland_cty" type="String"/>
@@ -2230,7 +2446,7 @@
 		<property name="lvkey" type="String"/>
 		<property name="selected" type="boolean"/>
 	</bean>
-	
+
 	<!--ZCRM_SURVEY_QUESTN-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.SurveyQuestion">
 		<property name="imLanguage" type="java.lang.String"/>
@@ -2297,7 +2513,7 @@
 		<property name="units_fin" type="java.lang.String"/>
 		<property name="shTxt_fin" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--ZCRM_LIC_TYPE-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.LicenseType">
 		<property name="language" type="java.lang.String"/>
@@ -2306,7 +2522,7 @@
 		<property name="description20" type="java.lang.String"/>
 		<property name="description" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--ZQEEMAH_SUBMIT-->
     <bean class="com.sap.ibso.eservices.facades.data.zqeemah.BusinessActivity">
         <property name="licenseType" type="java.lang.String"/>
@@ -2320,19 +2536,19 @@
         <property name="activityId" type="java.lang.String"/>
         <property name="description" type="java.lang.String"/>
     </bean>
-    
+
     <bean class="com.sap.ibso.eservices.facades.data.zqeemah.BusinessType">
         <property name="businessType" type="java.lang.String"/>
         <property name="businessTypeText" type="java.lang.String"/>
     </bean>
-    
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.QeemahSubmit">
 		<property name="refId" type="java.lang.String"/>
 		<property name="returnProperty" type="java.lang.String"/>
 		<property name="leadId" type="java.lang.String"/>
 		<property name="guid" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.IsicDetPsSet">
 		<property name="investorId" type="java.lang.String"/>
 		<property name="license" type="java.lang.String"/>
@@ -2347,7 +2563,7 @@
 		<property name="actDescription" type="java.lang.String"/>
 		<property name="licans" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.ValidateSareholder">
 		<property name="bpNumber" type="java.lang.String"/>
 		<property name="bpType" type="java.lang.String"/>
@@ -2356,13 +2572,13 @@
 		<property name="companyCountry" type="java.lang.String"/>
 		<property name="companyCountryText" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.ValidateMofaNumber">
 		<property name="mofaNumber" type="java.lang.String"/>
 		<property name="mofaAgentName" type="java.lang.String"/>
 		<property name="isMofaVerified" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.sagiaservices.data.ProdPsSet">
 		<property name="investorId" type="java.lang.String"/>
 		<property name="productCode" type="java.lang.String"/>
@@ -2371,7 +2587,7 @@
 		<property name="uom" type="java.lang.String"/>
 		<property name="oomText" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.Preview">
 		<property name="id" type="java.lang.String">
 			<description>Id</description>
@@ -2380,7 +2596,7 @@
 			<description>Description</description>
 		</property>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.Product">
 		<property name="sNo" type="java.lang.String"/>
 		<property name="investorId" type="java.lang.String"/>
@@ -2391,7 +2607,7 @@
 		<property name="uomText" type="java.lang.String"/>
 		<property name="returnProperty" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--ProdDel-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.ProductDelete">
 		<property name="sNo" type="java.lang.String"/>
@@ -2403,7 +2619,7 @@
 		<property name="uomText" type="java.lang.String"/>
 		<property name="returnProperty" type="java.lang.String"/>
 	</bean>
-	
+
 	<!--NOT FOUND IN QEEMAH 1 ENTITIES LIST ($metadate) : existed-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.ShareholderInfo">
 		<property name="id" type="java.lang.String"/>
@@ -2482,7 +2698,7 @@
 		<property name="mofaNumber" type="java.lang.String"/>
 		<property name="mofaNumberVerified" type="java.lang.String"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah.DelegateInfo">
 		<property name="refID" type="java.lang.String"/>
 		<property name="EntityNo" type="java.lang.String"/>
@@ -2511,9 +2727,9 @@
 		<property name="idCopyFile" type="java.lang.String"/>
 		<property name="authorizationLetterFileName" type="java.lang.String"/>
 		<property name="authorizationLetterFile" type="java.lang.String"/>
-		<property  name="delegateAttachments" type="java.util.Collection&lt;com.sap.ibso.eservices.facades.data.zqeemah.DelegateAttachment&gt;" />	
+		<property  name="delegateAttachments" type="java.util.Collection&lt;com.sap.ibso.eservices.facades.data.zqeemah.DelegateAttachment&gt;" />
     </bean>
-    
+
     <bean class="com.sap.ibso.eservices.facades.data.zqeemah.ShareholderAttachment">
         <property name="refId" type="java.lang.String"/>
         <property name="entityNumber" type="java.lang.String"/>
@@ -2522,11 +2738,11 @@
         <property name="fileContent" type="java.lang.String"/>
         <property name="fileMimeType" type="java.lang.String"/>
     </bean>
-    
-    <bean class="com.sap.ibso.eservices.facades.data.zqeemah.DelegateAttachment" 
-    		extends="com.sap.ibso.eservices.facades.data.zqeemah.ShareholderAttachment">       
+
+    <bean class="com.sap.ibso.eservices.facades.data.zqeemah.DelegateAttachment"
+    		extends="com.sap.ibso.eservices.facades.data.zqeemah.ShareholderAttachment">
     </bean>
-    
+
    <bean class="com.sap.ibso.eservices.facades.data.zqeemah.ShareholderCurrentNationality">
         <property name="val" type="java.lang.String"/>
         <property name="text" type="java.lang.String"/>
@@ -2809,15 +3025,15 @@
 		<property name="advancedLicenseNumber" type="java.lang.String"/>
 		<property name="attachments" type="java.util.Collection&lt;com.sap.ibso.eservices.facades.data.zqeemah2.Attachment&gt;"/>
 	</bean>
-		
-   <!--odata_service_creation-->
+
+	<!--odata_service_creation-->
 	<bean class="com.sap.ibso.eservices.facades.data.odata.ServiceRequestCreation">
 		<property name="Objectid" type="java.lang.String"/>
 		<property name="Return" type="java.lang.String"/>
 		<property name="Refid" type="java.lang.String"/>
 		<property name="Guid" type="java.lang.String"/>
 		<property name="Advlicno" type="java.lang.String"/>
-		</bean>
+	</bean>
 
 	<!--attachments-->
 	<bean class="com.sap.ibso.eservices.facades.data.zqeemah2.Attachment">
@@ -2859,7 +3075,7 @@
 		<property name="companyRepresentativesChanges" type="java.lang.Integer"/>
 		<property name="updatedContacts" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.ProfileCompanyRepresentativeData&gt;"/>
 		<property name="attachedDocuments" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.ContentHDRDocument&gt;"/>
-        <property name="comments" type="java.util.Set&lt;com.sap.ibso.eservices.facades.data.license.replace.ContactUpdateMessages&gt;"/>
+		<property name="comments" type="java.util.Set&lt;com.sap.ibso.eservices.facades.data.license.replace.ContactUpdateMessages&gt;"/>
 	</bean>
 
 	<bean class="com.sap.ibso.eservices.facades.data.account.ContactUpdateForm">
@@ -2900,7 +3116,7 @@
 		<property name="amountPayed" type="String"/>
 		<property name="paymentMethod" type="java.time.LocalDateTime"/>
 	</bean>
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.SagiaLicenseTypeRequirementData">
 		<property name="content" type="String" />
 		<property name="id" type="String" />
@@ -2915,7 +3131,7 @@
 		<property name="opportunityMessage" type="java.lang.String" />
 		<property name="customerName" type="java.lang.String" />
 	</bean>
-	
+
 	<bean class="de.hybris.platform.ticketsystem.data.CsTicketParameter">
 		<property name="sector" type="String" />
 		<property name="location" type="String" />
@@ -3002,9 +3218,9 @@
 		<property name="gosiCertificateFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="gosiCertificateFileAdded" type="boolean"/>
 		<property name="noObjectionCertificateFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
-		<property name="noObjectionCertificateFileAdded" type="boolean"/>		
+		<property name="noObjectionCertificateFileAdded" type="boolean"/>
 	</bean>
-	
+
 	<!-- Shareholder -->
 	<bean class="com.sap.ibso.eservices.facades.data.ShareHoldersData">
 		<property name="code" type="String"/>
@@ -3017,7 +3233,7 @@
 		<property name="mainName" type="String"/>
         <property name="entityNumber" type="String"/>
 	</bean>
-	
+
 	<!-- Delegate Information -->
 	<bean class="com.sap.ibso.eservices.facades.data.DelegateInformationData">
 		<property name="shareholder" type="com.sap.ibso.eservices.facades.data.ShareHoldersData"/>
@@ -3048,10 +3264,10 @@
 		<property name="nicVerified" type="boolean"/>
 		<property name="mofaNumberVerified" type="boolean"/>
 	</bean>
-	
+
 	<!-- ExistingShareholder -->
-	<bean class="com.sap.ibso.eservices.facades.data.ExistingShareholderData" 
-			extends="com.sap.ibso.eservices.facades.data.ShareHoldersData">
+	<bean class="com.sap.ibso.eservices.facades.data.ExistingShareholderData"
+		  extends="com.sap.ibso.eservices.facades.data.ShareHoldersData">
 		<property name="shareHolderEntityNumber" type="String"/>
 		<property name="shareHolderName" type="String"/>
 		<property name="parentCompanyCountry" type="String"/>
@@ -3063,10 +3279,10 @@
 		<property name="professionalLicenseCertificate" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="professionalLicenseFileAdded" type="boolean"/>
 	</bean>
-	
+
 	<!-- PersonShareholder -->
-	<bean class="com.sap.ibso.eservices.facades.data.PersonShareholderData" 
-			extends="com.sap.ibso.eservices.facades.data.ShareHoldersData">
+	<bean class="com.sap.ibso.eservices.facades.data.PersonShareholderData"
+		  extends="com.sap.ibso.eservices.facades.data.ShareHoldersData">
 		<property name="shareHolderTitle" type="String"/>
 		<property name="academicTitle" type="String"/>
 		<property name="firstNameArabic" type="String"/>
@@ -3096,12 +3312,12 @@
 		<property name="professionalLicenseCertificate" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="professionalLicenseFileAdded" type="boolean"/>
 		<property name="mofaNumber" type="String"/>
-		<property name="mofaNumberVerified" type="boolean"/>		
+		<property name="mofaNumberVerified" type="boolean"/>
 	</bean>
-	
+
 	<!-- OrganizationShareholder -->
-	<bean class="com.sap.ibso.eservices.facades.data.OrganizationShareholderData" 
-			extends="com.sap.ibso.eservices.facades.data.ShareHoldersData">
+	<bean class="com.sap.ibso.eservices.facades.data.OrganizationShareholderData"
+		  extends="com.sap.ibso.eservices.facades.data.ShareHoldersData">
 		<property name="organizationName" type="String"/>
 		<property name="organizationNameArabic" type="String"/>
 		<property name="legalStatus" type="String"/>
@@ -3136,9 +3352,9 @@
 		<property name="professionalLicenseCr" type="String"/>
 		<property name="professionalLicenseCrVerified" type="boolean"/>
 		<property name="mofaNumber" type="String"/>
-		<property name="mofaNumberVerified" type="boolean"/>			
+		<property name="mofaNumberVerified" type="boolean"/>
 	</bean>
-	
+
 	<!-- ContactPersons -->
 	<bean class="com.sap.ibso.eservices.facades.data.ContactPersonsData">
 		<property name="title" type="String"/>
@@ -3164,7 +3380,7 @@
 		<property name="contacts" type="String"/>
 		<property name="idType" type="String"/>
 	</bean>
-	
+
 	<!-- SagiaLicense -->
 	<bean class="com.sap.ibso.eservices.facades.data.SagiaLicenseData">
 		<property name="code" type="String"/>
@@ -3173,9 +3389,9 @@
 		<property name="contactPerson" type="com.sap.ibso.eservices.facades.data.ContactPersonsData"/>
 		<property name="shareholders" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.ShareHoldersData&gt;" />
 		<property name="isicActivities" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicActivity&gt;"/>
-		
+
 	</bean>
-	
+
 	<!-- Start InvestSaudiPortalFacades extensioninfo.xml -->
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
         <property name="investmentModel" type="java.lang.String"/>
@@ -3201,7 +3417,7 @@
         <property name="unit" type="java.lang.String"/>
         <property name="facts" type="java.lang.String"/>
     </bean>
-           
+
     <bean class="de.hybris.platform.commercefacades.product.data.CategoryData">
         <property name="picture" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
         <property name="thumbnail" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
@@ -3228,7 +3444,7 @@
         <property name="code" type="java.lang.String"/>
         <property name="label" type="java.lang.String"/>
     </bean>
-    
+
     <bean class="de.hybris.platform.commercefacades.product.data.SiteMapItemData">
         <property name="url" type="java.lang.String"/>
         <property name="name" type="java.lang.String"/>
@@ -3250,7 +3466,7 @@
         <property name="sectorCode" type="java.lang.String"/>
     </bean>
 
-    <bean class="de.hybris.platform.ticketsystem.data.ContactTicketParameter" 
+    <bean class="de.hybris.platform.ticketsystem.data.ContactTicketParameter"
     		extends="de.hybris.platform.ticketsystem.data.CsTicketParameter">
         <property name="name" type="java.lang.String"/>
         <property name="company" type="java.lang.String"/>
@@ -3267,7 +3483,7 @@
 		<property name="c4CAccountID" type="java.lang.String"/>
     </bean>
     <!-- InvestSaudiPortalFacades extensioninfo.xml end -->
-	
+
 	<!-- Economic Highlights Changes Starts -->
 	<bean class="com.sap.ibso.eservices.facades.data.RealGDPData">
 		<property name="value" type="java.lang.String" />
@@ -3312,10 +3528,10 @@
 		<property name="displayName" type="java.lang.String" />
 		<property name="calenderValue" type="java.lang.String" />
 		<property name="currenyValue" type="java.lang.String" />
-			</bean>
+	</bean>
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.SaudiStockMarketData">
+			class="com.sap.ibso.eservices.facades.data.SaudiStockMarketData">
 		<property name="value" type="java.lang.String" />
 		<property name="valueLabel" type="java.lang.String" />
 		<property name="percentage" type="java.lang.String" />
@@ -3371,7 +3587,7 @@
 	</bean>
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.GovernmentReserveData">
+			class="com.sap.ibso.eservices.facades.data.GovernmentReserveData">
 		<property name="value" type="java.lang.String" />
 		<property name="valueLabel" type="java.lang.String" />
 		<property name="percentage" type="java.lang.String" />
@@ -3441,7 +3657,7 @@
 	</bean>
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.BudgetDeficitData">
+			class="com.sap.ibso.eservices.facades.data.BudgetDeficitData">
 		<property name="value" type="java.lang.String" />
 		<property name="valueLabel" type="java.lang.String" />
 		<property name="percentage" type="java.lang.String" />
@@ -3451,8 +3667,8 @@
 		<property name="calenderValue" type="java.lang.String" />
 		<property name="currenyValue" type="java.lang.String" />
 	</bean>
-	
-	
+
+
 	<bean
 		class="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData">
 		<property name="frequency" type="java.lang.String" />
@@ -3460,7 +3676,7 @@
 		<property name="scoreValue" type="java.lang.Double" />
 		<property name="year" type="java.lang.Integer" />
 	</bean>
-	
+
 		<bean
 		class="com.sap.ibso.eservices.facades.data.InfraLogisticsLandingData">
 		<property name="internationalAirportslabel" type="java.lang.String" />
@@ -3560,7 +3776,7 @@
 		<property name="displayName" type="java.lang.String" />
 	</bean>
 
-	
+
 	<bean class="com.sap.ibso.eservices.facades.data.RealSectorData">
 		<property name="name" type="java.lang.String" />
 		<property name="value" type="java.lang.String" />
@@ -3568,7 +3784,7 @@
 	</bean>
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.MonetarySectorData">
+			class="com.sap.ibso.eservices.facades.data.MonetarySectorData">
 		<property name="name" type="java.lang.String" />
 		<property name="value" type="java.lang.String" />
 		<property name="label" type="java.lang.String" />
@@ -3605,7 +3821,7 @@
 	</bean>
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.SaudiPopulationData">
+			class="com.sap.ibso.eservices.facades.data.SaudiPopulationData">
 		<property name="year" type="java.lang.Integer" />
 		<property name="saudi" type="java.lang.String" />
 		<property name="nonSaudi" type="java.lang.String" />
@@ -3615,7 +3831,7 @@
 	</bean>
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.PopulationByRegionData">
+			class="com.sap.ibso.eservices.facades.data.PopulationByRegionData">
 		<property name="year" type="java.lang.Integer" />
 		<property name="riyadhValue" type="java.lang.String" />
 		<property name="riyadhPercentage" type="java.lang.String" />
@@ -3645,7 +3861,7 @@
 		<property name="aljawfPercentage" type="java.lang.String" />
 		<property name="totalPopulation" type="java.lang.String" />
 	</bean>
-	
+
 <bean
 		class="com.sap.ibso.eservices.facades.data.SaudiEmploymentByRegionData">
 		<property name="year" type="java.lang.Integer" />
@@ -3679,7 +3895,7 @@
 	</bean>
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.NonSaudiEmploymentByRegionData">
+			class="com.sap.ibso.eservices.facades.data.NonSaudiEmploymentByRegionData">
 		<property name="year" type="java.lang.Integer" />
 		<property name="riyadhValue" type="java.lang.String" />
 		<property name="riyadhPercentage" type="java.lang.String" />
@@ -3710,75 +3926,75 @@
 		<property name="totalPopulation" type="java.lang.String" />
 	</bean>
 
-	
+
 	<bean
-		class="com.sap.ibso.eservices.facades.data.SaudiEmploymentData">
+			class="com.sap.ibso.eservices.facades.data.SaudiEmploymentData">
 		<property name="year" type="java.lang.Integer" />
 		<property name="males" type="java.lang.Integer" />
 		<property name="females" type="java.lang.Integer" />
-		<property name="total" type="java.lang.Integer" />		
+		<property name="total" type="java.lang.Integer" />
 	</bean>
-	
+
 	<bean
-		class="com.sap.ibso.eservices.facades.data.NonSaudiEmploymentData">
+			class="com.sap.ibso.eservices.facades.data.NonSaudiEmploymentData">
 		<property name="year" type="java.lang.Integer" />
 		<property name="males" type="java.lang.Integer" />
 		<property name="females" type="java.lang.Integer" />
-		<property name="total" type="java.lang.String" />		
+		<property name="total" type="java.lang.String" />
 	</bean>
-	
+
 	<bean
-		class="com.sap.ibso.eservices.facades.data.AvgMonthlyWagesData">
+			class="com.sap.ibso.eservices.facades.data.AvgMonthlyWagesData">
 		<property name="year" type="java.lang.Integer" />
 		<property name="males" type="java.lang.Integer" />
 		<property name="females" type="java.lang.Integer" />
-		<property name="total" type="java.lang.Integer" />		
+		<property name="total" type="java.lang.Integer" />
 	</bean>
-	
+
 	<bean
-		class="com.sap.ibso.eservices.facades.data.GrowthrateWagesData">
+			class="com.sap.ibso.eservices.facades.data.GrowthrateWagesData">
 		<property name="year" type="java.lang.Integer" />
 		<property name="males" type="java.lang.Double" />
 		<property name="females" type="java.lang.Double" />
-		<property name="total" type="java.lang.Double" />		
+		<property name="total" type="java.lang.Double" />
 	</bean>
-	
+
 	<bean
-		class="com.sap.ibso.eservices.facades.data.LabourPrivateSectorData">
+			class="com.sap.ibso.eservices.facades.data.LabourPrivateSectorData">
 		<property name="year" type="java.lang.Integer" />
 		<property name="saudi" type="java.lang.Double" />
 		<property name="nonSaudi" type="java.lang.Double" />
 		<property name="totalLabour" type="java.lang.Double" />
 		<property name="saudiPercentagelabour" type="java.lang.Double" />
-		<property name="nonSaudiPercentageLabour" type="java.lang.Double" />				
+		<property name="nonSaudiPercentageLabour" type="java.lang.Double" />
 	</bean>
-	
+
 	<bean
-		class="com.sap.ibso.eservices.facades.data.SaudiUnemploymentData">
+			class="com.sap.ibso.eservices.facades.data.SaudiUnemploymentData">
 		<property name="year" type="java.lang.String" />
 		<property name="males" type="java.lang.Double" />
 		<property name="females" type="java.lang.Double" />
-		<property name="total" type="java.lang.Double" />			
+		<property name="total" type="java.lang.Double" />
 	</bean>
-	
+
 	<bean
-		class="com.sap.ibso.eservices.facades.data.NonSaudiUnemploymentData">
+			class="com.sap.ibso.eservices.facades.data.NonSaudiUnemploymentData">
 		<property name="year" type="java.lang.String" />
 		<property name="males" type="java.lang.Double" />
 		<property name="females" type="java.lang.Double" />
-		<property name="total" type="java.lang.Double" />			
+		<property name="total" type="java.lang.Double" />
 	</bean>
-	
+
 	<bean
-		class="com.sap.ibso.eservices.facades.data.OverallUnemploymentData">
+			class="com.sap.ibso.eservices.facades.data.OverallUnemploymentData">
 		<property name="year" type="java.lang.String" />
 		<property name="males" type="java.lang.String" />
 		<property name="females" type="java.lang.String" />
-		<property name="total" type="java.lang.String" />			
+		<property name="total" type="java.lang.String" />
 	</bean>
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.AnnualValueData">
+			class="com.sap.ibso.eservices.facades.data.AnnualValueData">
 		<property name="year" type="java.lang.String" />
 		<property name="saudiInvestmentsAbroad" type="java.lang.String" />
 		<property name="incomingForeignInvestment" type="java.lang.String" />
@@ -3807,8 +4023,8 @@
 		<property name="nonOilGdp" type="java.lang.String" />
 	</bean>
 
-<bean
-		class="com.sap.ibso.eservices.facades.data.AnnualGrowthData">
+	<bean
+			class="com.sap.ibso.eservices.facades.data.AnnualGrowthData">
 		<property name="year" type="java.lang.String" />
 		<property name="saudiInvestmentsAbroad" type="java.lang.String" />
 		<property name="incomingForeignInvestment" type="java.lang.String" />
@@ -3837,7 +4053,7 @@
 	</bean>
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.QuarterlyValueData">
+			class="com.sap.ibso.eservices.facades.data.QuarterlyValueData">
 		<property name="year" type="java.lang.String" />
 		<property name="saudiInvestmentsAbroad" type="java.lang.String" />
 		<property name="incomingForeignInvestment" type="java.lang.String" />
@@ -3865,9 +4081,9 @@
 		<property name="activitiesOfExtraterritorialOrganizationLicenses" type="java.lang.String" />
 		<property name="nonOilGdp" type="java.lang.String" />
 	</bean>
-	
+
 	<bean
-		class="com.sap.ibso.eservices.facades.data.QuarterlyGrowthData">
+			class="com.sap.ibso.eservices.facades.data.QuarterlyGrowthData">
 		<property name="year" type="java.lang.String" />
 		<property name="saudiInvestmentsAbroad" type="java.lang.String" />
 		<property name="incomingForeignInvestment" type="java.lang.String" />
@@ -3894,8 +4110,8 @@
 		<property name="publicAdministrationDefenceCompuLicenses" type="java.lang.String" />
 		<property name="activitiesOfExtraterritorialOrganizationLicenses" type="java.lang.String" />
 	</bean>
-	
-	
+
+
 	<bean
 		class="com.sap.ibso.eservices.facades.data.ForeignInvestmentValueData">
 		<property name="value1" type="java.lang.String" />
@@ -3905,7 +4121,7 @@
 		<property name="label2" type="java.lang.String" />
 		<property name="label3" type="java.lang.String" />
 	</bean>
-	
+
 		<bean
 		class="com.sap.ibso.eservices.facades.data.ForeignInvestmentGrowthData">
 		<property name="value1" type="java.lang.String" />
@@ -3915,29 +4131,29 @@
 		<property name="label2" type="java.lang.String" />
 		<property name="label3" type="java.lang.String" />
 	</bean>
-	
-		
+
+
 	<bean
 		class="com.sap.ibso.eservices.facades.data.NumberOfCommercialRegisterData">
 		<property name="year" type="java.lang.String" />
 		<property name="noOfCommercialRegisters" type="java.lang.String" />
 		<property name="growthRate" type="java.lang.String" />
 	</bean>
-	
+
 	<bean
 		class="com.sap.ibso.eservices.facades.data.CapitalOfCommercialRegisterData">
 		<property name="year" type="java.lang.String" />
 		<property name="capitalOfCommercialRegisters" type="java.lang.String" />
 		<property name="growthRate" type="java.lang.String" />
 	</bean>
-	
+
 			<bean
 		class="com.sap.ibso.eservices.facades.data.CapitalInformationData">
 		<property name="year" type="java.lang.String" />
 		<property name="grossFixed" type="java.lang.String" />
 		<property name="growthrateOfGrossFixed" type="java.lang.String" />
 	</bean>
-	
+
 		<bean
 		class="com.sap.ibso.eservices.facades.data.AnnualFundAssetsData">
 		<property name="year" type="java.lang.String" />
@@ -3946,7 +4162,7 @@
 		<property name="foreignInvestmentFund" type="java.lang.String" />
 		<property name="domesticInvestmentFund" type="java.lang.String" />
 	</bean>
-	
+
 			<bean
 		class="com.sap.ibso.eservices.facades.data.QuarterlyFundAssetsData">
 		<property name="period" type="java.lang.String" />
@@ -3957,7 +4173,7 @@
 	</bean>
 
 	<!-- Economic Highlights Changes Ends -->
-	
+
 	<!-- Site Map Changes Starts -->
 
     <bean class="com.sap.ibso.eservices.facades.data.InvestSaudiSiteMapLevel4Data">

@@ -468,6 +468,28 @@
         <property name="mojInheritPopulator" ref="mojInheritPopulator" />
 	</bean>
 
+	<alias name="defaultFinancialSurveyFacade" alias="sagiaFinancialSurveyFacade"/>
+	<bean id="defaultFinancialSurveyFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultFinancialSurveyFacade">
+		<property name="sagiaFinancialSurveyService" ref="sagiaFinancialSurveyService" />
+		<property name="licenseAmendmentService" ref="licenseAmendmentService" />
+		<property name="licenseAmendmentShareholderService" ref="licenseAmendmentShareholderService"/>
+		<property name="customizationListService" ref="customizationListService" />
+		<property name="amendProductsService" ref="amendProductsService"/>
+		<property name="globalValsService" ref="globalValsService"/>
+		<property name="priceSimulationService" ref="sagiaEServicesPriceSimulationService"/>
+		<property name="licenseAmendmentPopulator" ref="licenseAmendmentPopulator"/>
+		<property name="licenseAmendmentReversePopulator" ref="licenseAmendmentReversePopulator"/>
+		<property name="shareholderPopulator" ref="sagiaShareholderPopulator" />
+		<property name="listItemPopulator" ref="sagiaLicenseAmendListItemPopulator"/>
+		<property name="subListItemPopulator" ref="sagiaLicenseAmendSubListItemPopulator"/>
+		<property name="attachmentListItemPopulator" ref="sagiaLicenseAmendAttachmentListItemPopulator"/>
+		<property name="messageSource" ref="messageSource"/>
+		<property name="i18nService" ref="i18nService"/>
+		<property name="mojInheritService" ref="mojInheritService" />
+		<property name="mojInheritPopulator" ref="mojInheritPopulator" />
+		<property name="financialSurveyReversePopulator" ref="financialSurveyReversePopulator"/>
+	</bean>
+
 	<bean id="sagiaTemporaryBiddingLicenseReversePopulator" class="com.sap.ibso.eservices.facades.populators.TemporaryBiddingLicenseReversePopulator" />
 	<bean id="sagiaTemporaryBiddingLicenseCountryPopulator" class="com.sap.ibso.eservices.facades.populators.TemporaryBiddingLicenseCountryPopulator" />
 	<bean id="sagiaTemporaryBiddingLicenseGovernmentEntityPopulator" class="com.sap.ibso.eservices.facades.populators.TemporaryBiddingLicenseGovernmentEntityPopulator" />

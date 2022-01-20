@@ -23,10 +23,42 @@
 </script>
 <script src="${MIGS_Session_JS}"></script>
 
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="license.apply.sagialicenseapplication"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="mainSection mainSection_narrow mainSection_white">
-    <div class="container">      
+    <div class="container">
         <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="license.apply.sagialicenseapplication"/></h1>
+            <!-- <h1 class="mainSection-headline"><spring:theme code="license.apply.sagialicenseapplication"/></h1> -->
             <div>
                 <c:if test="${'/simulator' ne controllerUrl}">
                     <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
@@ -61,7 +93,7 @@
                     </c:choose>
                 </div>
             </div>
-        </c:if>         
+        </c:if>
     </div>
     <c:if test="${'/simulator' eq controllerUrl}">
         <div class="container">
@@ -224,18 +256,18 @@
 						<tbody>
 						</tbody>
 			        </table>
-					                    
+
 					<%-- <h2 style="color: red;"><spring:theme code="license.apply.payment.entrepreneur.certificate.title"/></h2>
 					<ul>
 					  <li><spring:theme code="license.apply.payment.entrepreneur.line1"/></li>
 					  <li><spring:theme code="license.apply.payment.entrepreneur.line2"/></li>
-					</ul> 
-					
+					</ul>
+
 					<h2 style="color: red;"><spring:theme code="license.apply.payment.other.certificate.title"/></h2>
 					<ul>
 					  <li><spring:theme code="license.apply.payment.other.line1"/></li>
 					  <li><spring:theme code="license.apply.payment.other.line2"/></li>
-					</ul> --%> 
+					</ul> --%>
 
                     <div class="tableModule tableModule_footer" style="display:none;">
                         <table class="tableModule-table" id="paymentModal">

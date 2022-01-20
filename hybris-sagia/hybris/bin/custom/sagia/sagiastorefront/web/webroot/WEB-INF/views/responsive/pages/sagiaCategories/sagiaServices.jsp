@@ -12,6 +12,38 @@
 <c:set var="serviceUrl" value="${splitURI[fn:length(splitURI)-1]}"/>
 <c:set var="categoryUrl" value="${splitURI[fn:length(splitURI)-2]}"/>
 
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="average.service.time" />
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="mainSection mainSection_dark">
     <div class="container">
@@ -19,7 +51,7 @@
             <h1 class="mainSection-headline">${serviceName}</h1>
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
-                    <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
+                    <!-- <div class="serviceTime-label"><spring:theme code="average.service.time" /></div> -->
                     <div class="serviceTime-detail">
                         <c:choose>
                             <c:when test="${(processingTime.days > 0)  ||  (processingTime.hours > 0)}">
@@ -197,7 +229,7 @@
                 <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
             </button>
         </c:if>
-        
+
         <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(serviceList) gt 1}">
                 <div class="expandableContent-aside">

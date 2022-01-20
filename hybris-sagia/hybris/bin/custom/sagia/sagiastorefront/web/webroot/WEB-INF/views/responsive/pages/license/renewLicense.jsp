@@ -29,6 +29,39 @@
     var autoRenewalClearance = "${autoRenewalClearance}";
 </script>
 
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="convertlicense.converttonational" />
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="mainSection mainSection_dark bg-white">
     <div class="container">
         <div class="mainSection-header row service-time">
@@ -114,7 +147,7 @@
                 <a class="btn btn_slim jqCreateRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
                     <spring:theme code="dashboard.myLicense.renew"/>
                 </a>
-            </div>      
+            </div>
         </div>
     </div>
 </div> -->
@@ -129,7 +162,7 @@
                 <div class="col-md-3">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
                 </div>
-            
+
             <!-- <div class="mainSection-linkActions mainSection-linkActions_right"> -->
                 <div id="renewalButtons" style="display: none;">
                     <div class="col-md-3">
@@ -151,7 +184,7 @@
                             <spring:theme code="dashboard.myLicense.renew"/>
                         </a>
                     </div>
-                </div>   
+                </div>
             </div>
                 <div class="d-flex">
                     <div id="renewalButtons" style="display: none;" class="renewal-services row">
@@ -197,8 +230,8 @@
                                 </c:otherwise>
                             </c:choose>
                         </div>
-                    </div> 
-                </div>  
+                    </div>
+                </div>
             <!-- </div> -->
         </div>
     </div>
@@ -331,7 +364,7 @@
                                                     <div class="historyList-date">
                                                     ${licenseItem.dateData.dateFormatted}
                                                 </div>
-                                                <div class="historyList-status 
+                                                <div class="historyList-status
                                                   <c:choose>
         												<c:when test ="${fn:containsIgnoreCase(licenseItem.statusDescription, status_in_process)}">historyList-status_inprocess</c:when>
         												<c:when test ="${fn:containsIgnoreCase(licenseItem.statusDescription, status_rejected)}">historyList-status_rejected</c:when>
@@ -499,20 +532,20 @@
 			</div>
 		 	<div class="modal-body">
 			 <div class="contentModule-section contentModule-section_paddingSide">
-						
+
                         <div class="documentModule js-upload-files-list" data-files-name="img">
-                            
+
                                <div class="formSelectBox">
 									<div class="form-group">
-									    
+
 										<select id="durationSelectInstant" name="durationSelectInstant" class="js-select2-oneColumn select2-hidden-accessible"  aria-hidden="true" onChange="updateExpiryDate(this, event)">
-										      <option></option>  
+										      <option></option>
 										       <c:forEach items="${durations}" var="duration">
-                                                        <option value="${duration.code}"> ${duration.name} </option>                                        
+                                                        <option value="${duration.code}"> ${duration.name} </option>
                                               </c:forEach>
 									    </select>
 									    <label class="control-label control-label_mandatory" for="durationSelectInstant"><spring:theme code="license.apply.entity.licenseYear"/></label>
-									    
+
 									</div>
 									<div class="help-block"></div>
 									 <span class="renewMessage" > <spring:theme code="license.apply.licenseYear.warning"/> </span>
@@ -531,9 +564,9 @@
 			<div class="modal-footer">
 				<button type="button" id="jqInstantRenewalSubmit" class="btn btn_slim" data-dismiss="modal"><spring:theme code="general.submit"/></button>
 				<button type="button" class="btn btn-secondary js-cancel-create-realEstate" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
-				
+
 			</div>
-			
+
 		</div>
 	</div>
 </div>

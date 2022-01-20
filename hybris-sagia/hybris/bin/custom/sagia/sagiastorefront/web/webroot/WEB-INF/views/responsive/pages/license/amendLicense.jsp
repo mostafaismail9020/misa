@@ -14,15 +14,49 @@
 		maxUploadSize
 	};
 </script>
+
+<div class="mainSection mainSection">
+	<div class="achievement_header">
+			<img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+			<div class="container">
+					<div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+							<h1 data-aos="fade-up">
+								<spring:theme code="license.amendlicense" />
+							</h1>
+					</div>
+					<div class="profile-icons float-right">
+							<c:if test="${hasLicense or hasAwaitingPayment}">
+									<div class="calendar">
+											<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+													<span></span>
+											</a>
+									</div>
+									<div class="calendar notification">
+											<div class="count-notification">123</div>
+											<a href="${encodedContextPath}/my-sagia/notifications">
+													<span></span>
+											</a>
+									</div>
+							</c:if>
+							<div class="profile">
+									<a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+											<span></span>
+									</a>
+							</div>
+					</div>
+			</div>
+	</div>
+</div>
+
 <div class="container">
 
 	<div class="mainSection mainSection_white mainSection_narrow mainSection_noPadding">
 		<div class="container">
-			<div class="mainSection-header">
+			<!-- <div class="mainSection-header">
 				<h1 class="mainSection-headline">
 					<spring:theme code="license.amendlicense" />
 				</h1>
-			</div>
+			</div> -->
 			<div class="row service-time">
 				<c:if test="${not empty processingTime}">
 					<div class="serviceTime">
@@ -64,8 +98,8 @@
 				</div>
 				<div class="col-md-3">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
-                </div>	
-			</div>		
+                </div>
+			</div>
 			<div class="row w-100 d-flex mt-4	">
 				<div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
 					<div class="col-md-3">
@@ -133,7 +167,7 @@
 							<c:otherwise>
 								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.rulesRestrictions}</p></div></div>
 							</c:otherwise>
-						</c:choose>					
+						</c:choose>
 					</div>
 				</div>
 			</div>
@@ -193,7 +227,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="expandableContent expandableContent_upLg" id="expand01">
 				<div class="expandableContent-aside">
 					<div class="panelModule panelModule_halfRadius">
@@ -1157,16 +1191,16 @@
 									</div>
 								</div>
 							</div>
-							
-							
+
+
 							<div id="inheritsection"  style="display: none">
-							
+
 								<div class="contentModule-separator"></div>
-		
+
 								<div class="contentModule-headline">
 									<spring:theme code="license.inheritverification" />
 								</div>
-		
+
 								<div class="row">
 									<div class="col-md-4">
 										<div class="formInputBox">
@@ -1213,7 +1247,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 
 							<div class="contentModule-separator"></div>
 
@@ -1399,7 +1433,7 @@
 																	${not empty data.delegateInfo && data.delegateInfo.delegate != false && data.delegateInfo.delegateYourself eq true ? 'checked="checked"' : ''} />
 																<label for="hasDelegateYES" id="hasDelegateYESLabel"
 																	class="control-label"><spring:theme
-																		code="text.account.profile.license.shareholders.hasDelegate.no" /></label> 
+																		code="text.account.profile.license.shareholders.hasDelegate.no" /></label>
 															</div>
 															<div class="form-item">
 																<input type="radio" name="delegateInfo.delegateYourself"

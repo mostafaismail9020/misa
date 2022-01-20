@@ -13,7 +13,40 @@
 </script>
 
 <div class="mainSection mainSection">
-    
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="account.notifications.title"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="mainSection mainSection">
     <div class="achievement_header">
         <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image1.jpg" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
         <div class="container">
@@ -24,7 +57,6 @@
             </div>
             <div class="profile-icons float-right">
                 <div class="calendar"><img alt="" class=" profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender.png" /> </div>
-                <!-- <div class="messages "><img alt="" class=" profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/message.png" /> </div> -->
                 <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
                     <c:if test="${hasLicense or hasAwaitingPayment}">
                         <button class="sagiaNavigation-btn js-sagiaNavigationToggle btnNotifications messages" title="<spring:message code='account.notifications.yourMessages'/>">
@@ -40,12 +72,11 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="profile"><img alt="" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png" /> </div>
             </div>
         </div>
-    </div> 
-</div>
+    </div>
+</div> -->
 
 <div class="mainSection mainSection_noPaddingTop mt-5">
     <div class="container">

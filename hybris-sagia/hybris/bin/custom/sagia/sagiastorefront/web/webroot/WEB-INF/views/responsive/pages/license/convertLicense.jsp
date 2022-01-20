@@ -18,11 +18,45 @@
     var isReApply = ${latestConvToNationals.reApply};
 </script>
 <input type="hidden" id="serviceId" value="${latestConvToNationals.srID}"/>
+
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="convertlicense.converttonational" />
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
+        <!-- <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="convertlicense.converttonational" /></h1>
-        </div>
+        </div> -->
         <div class="row service-time">
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
@@ -41,7 +75,7 @@
                                 <span class="serviceTime-highlight">${processingTime.seconds}</span>
                                 <spring:theme code="average.processingTime.seconds"/>
                             </c:when>
-                        </c:choose>                    
+                        </c:choose>
                     </div>
                 </div>
             </c:if>
@@ -60,8 +94,8 @@
             </div>
             <div class="col-md-3">
                 <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
-            </div>	
-        </div>	
+            </div>
+        </div>
         <div class="row w-100 d-flex mt-4">
             <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
                 <div>
@@ -93,7 +127,7 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(convertToNationals_list) gt 1}"> 
+            <c:if test="${fn:length(convertToNationals_list) gt 1}">
                 <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
                     <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span>&#x27f6;</span></div>
                     <div><spring:theme code="text.account.followup.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
@@ -196,7 +230,7 @@
         <div class="container mainSection mainSection_dark mainSection_noPadding">
             <div class="container">
                 <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-                    <c:if test="${fn:length(convertToNationals_list) gt 1}"> 
+                    <c:if test="${fn:length(convertToNationals_list) gt 1}">
                         <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
                             <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span>&#x27f6;</span></div>
                             <div><spring:theme code="text.account.followup.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
@@ -271,7 +305,7 @@
                             <div class="statusBox">
                                 <div class="statusBox-description">
                                     <div class="statusBox-info"><spring:theme code="convertlicense.info"/>
-                                        <span class="iconElement iconElement_headlineTooltip js-tip" 
+                                        <span class="iconElement iconElement_headlineTooltip js-tip"
                                         		data-tip-title="${serviceDescription}"
                                         		data-original-title="" >
                                             <icon:tipInfo/>
@@ -376,7 +410,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="modal fade" id="uploadFileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">
                             <div class="modal-content">
@@ -479,7 +513,7 @@
 		    <span class="iconElement iconElement_pdf"><icon:pdf /></span>{{filename}}
 	    </div>
 	    <div class="downloadList-actions" style="cursor: pointer;" data-target data-object-id="{{objectId}}" data-document-id="{{documentID}}" data-file-name="{{filename}}">
-		    <a id="downloadAnchorTag" class="link link_nowrap" href="{{downloadUrl}}" 
+		    <a id="downloadAnchorTag" class="link link_nowrap" href="{{downloadUrl}}"
 				 download="{{fullFileName}}">
                 <span class="iconElement iconElement_cloud"><icon:download /></span><spring:theme code="text.account.followup.download"/>
             </a>

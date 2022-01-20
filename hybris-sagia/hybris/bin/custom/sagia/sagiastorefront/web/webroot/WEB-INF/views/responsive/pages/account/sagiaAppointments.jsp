@@ -12,7 +12,38 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 
 <div class="mainSection mainSection">
-    
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="appointments.appointmentoverview"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="mainSection mainSection">
     <div class="achievement_header">
         <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image1.jpg" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
         <div class="container">
@@ -25,8 +56,6 @@
                 <div class=""><img alt="" class="profile-icon-images" src="${commonResourcePath}/images/eservices/Calender-active.png"/>
                     <img alt="" class="profile-icon-images d-none" src="${commonResourcePath}/images/esrvices/Calender-in-active.png"/>
                 </div>
-                
-                <!-- <div class="messages "><img alt="" class=" profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/message.png" /> </div> -->
                 <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub mr-5">
                     <c:if test="${hasLicense or hasAwaitingPayment}">
                         <button class="sagiaNavigation-btn js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
@@ -44,12 +73,11 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class=""><img class="profile-icon-images" alt="" src="${commonResourcePath}/images/eservices/Profile-in-active.png" /> </div>
             </div>
         </div>
-    </div> 
-</div>
+    </div>
+</div> -->
 
     <div class="mainSection mainSection mainSection_noPaddingBottom mt-5">
         <!-- Appointment Overview -->
@@ -90,7 +118,7 @@
                         <option value="branch_asc" data-sort="asc"><spring:theme code="sagia.sort.branch"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
                         <option value="branch_desc" data-sort="desc"><spring:theme code="sagia.sort.branch"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
                     </select>
-                </div>                
+                </div>
                 <%--<c:set var="listEntryClass" value="appointmentList-entry"/>--%>
                 <div class="tableModule">
                     <table class="tableModule-table appointmentList appointmentList_hasTopBoder" id="appointmentList">
@@ -108,7 +136,7 @@
                             <%--</c:if>--%>
                             <fmt:parseDate value="${item.date}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateAppt" type="both" />
                             <fmt:parseDate value="${item.timeStart}" pattern="HH:mm" var="parsedTimeAppt" type="time" />
-                            <%--<fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${ parsedDateTime }" />--%> 
+                            <%--<fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${ parsedDateTime }" />--%>
                             <tr class="appointmentList-entry">
                                 <td class="appointmentList-date"
                                     data-date="<fmt:formatDate value='${parsedDateAppt}' pattern='yyyy-MM-dd' />"
@@ -164,7 +192,7 @@
                             </tr>
                         </c:forEach>
                         </tbody>
-                    </table>                    
+                    </table>
                 </div>
 
                 <div class="paginationModule">
@@ -186,7 +214,7 @@
                         </button>
                     </div>
                 </div>
-                  
+
                 <%--<p>${listLimit} / ${fn:length(appointments)}</p>--%>
             </div>
             <div class="appointmentControl-calendar">
@@ -464,7 +492,7 @@
         </td>
         <td class="appointmentList-time">
             <span class="appointmentList-date-time"></span>
-        </td>        
+        </td>
         <td class="displayName" data-displayname="">
             <div class="appointmentList-title"></div>
             <div class="appointmentList-subTitle"></div>

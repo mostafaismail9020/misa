@@ -10,42 +10,75 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="services.services"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="mainSection mainSection_grey">
     <div class="container">
 
-        <div class="mainSection-header">
+        <!-- <div class="mainSection-header">
             <h1 class="mainSection-headline mb-3"><spring:theme code="services.services"/></h1>
-        </div>
+        </div> -->
         <div class="col-xs-12 col-md-12 services-category-list">
             <ul class="nav nav-pills sagiaNavigation-services" id="pills-tab" role="tablist">
-                <li class="nav-item col-md-4 col-12"> 
-                    <div class="service-wrapper mx-3"> 
-                        <a class="nav-link active" id="pills-licensing-tab" data-toggle="pill" href="#licensing-service" role="tab" aria-controls="pills-licensing" aria-selected="true"> 
-                            <div class="INS_EPM_border_set text-center p-3"> 
+                <li class="nav-item col-md-4 col-12">
+                    <div class="service-wrapper mx-3">
+                        <a class="nav-link active" id="pills-licensing-tab" data-toggle="pill" href="#licensing-service" role="tab" aria-controls="pills-licensing" aria-selected="true">
+                            <div class="INS_EPM_border_set text-center p-3">
                                 <img src="/_ui/responsive/common/images/B2C/Services icon 1.png" alt="LICENSING SERVICES" class="text-center service-icon-1"/>
                                 <img src="/_ui/responsive/common/images/B2C/Services icon 2.png" alt="LICENSING SERVICES" class="text-center service-icon-2"/>
-                                <span class="licensing-heading">LICENSING SERVICES</span>  
-                            </div> 
-                        </a>
-                    </div>
-                </li>
-
-                <li class="nav-item col-md-4 col-12"> 
-                    <div class="service-wrapper mx-3"> 
-                        <a class="nav-link " id="pills-govt-tab" data-toggle="pill" href="#govt-service" role="tab" aria-controls="pills-govt" aria-selected="true"> 
-                            <div class="INS_EPM_border_set text-center p-3"> 
-                                <img src="/_ui/responsive/common/images/B2C/Services icon 1.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-1"/>
-                                <img src="/_ui/responsive/common/images/B2C/Services icon 2.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-2"/>
-                                <span class="licensing-heading">GOVERNMENTAL SERVICES</span>  
-                            </div> 
+                                <span class="licensing-heading">LICENSING SERVICES</span>
+                            </div>
                         </a>
                     </div>
                 </li>
 
                 <li class="nav-item col-md-4 col-12">
                     <div class="service-wrapper mx-3">
-                        <a class="nav-link " id="pills-misa-tab" data-toggle="pill" href="#misa-service" role="tab" aria-controls="pills-misa" aria-selected="true"> 
-                            <div class="INS_EPM_border_set text-center p-3"> 
+                        <a class="nav-link " id="pills-govt-tab" data-toggle="pill" href="#govt-service" role="tab" aria-controls="pills-govt" aria-selected="true">
+                            <div class="INS_EPM_border_set text-center p-3">
+                                <img src="/_ui/responsive/common/images/B2C/Services icon 1.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-1"/>
+                                <img src="/_ui/responsive/common/images/B2C/Services icon 2.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-2"/>
+                                <span class="licensing-heading">GOVERNMENTAL SERVICES</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="nav-item col-md-4 col-12">
+                    <div class="service-wrapper mx-3">
+                        <a class="nav-link " id="pills-misa-tab" data-toggle="pill" href="#misa-service" role="tab" aria-controls="pills-misa" aria-selected="true">
+                            <div class="INS_EPM_border_set text-center p-3">
                                 <img src="/_ui/responsive/common/images/B2C/Services icon 1.png" alt="MISA SERVICES" class="text-center service-icon-1"/>
                                 <img src="/_ui/responsive/common/images/B2C/Services icon 2.png" alt="MISA SERVICES" class="text-center service-icon-2"/>
                                 <span class="licensing-heading">MISA SERVICES</span>
@@ -82,9 +115,9 @@
                                     </div>
                                 </div>
                             </c:forEach>
-                        </c:forEach>             
-                    </li>   
-            </ul> 
+                        </c:forEach>
+                    </li>
+            </ul>
             <div class="tab-content desktop_services services-container-tabcontent" id="pills-tabContent">
                 <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
                     <c:if test="${category.key=='Licensing Services'}">
@@ -108,8 +141,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> 
-                                </c:forEach>                                
+                                    </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </c:if>
@@ -129,11 +162,11 @@
                                         ${category.key}
                                     </h5>
                                     </div>
-                                
+
                                     <div id="collapse-${loop.index}" class="collapse" aria-labelledby="service-heading-${loop.index}" data-parent="#govtServices">
                                         <div class="card-body serviceModule-detail">
                                             <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
+                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
                                                 remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                                                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                             </p>
@@ -155,11 +188,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div> 
-                                            </c:forEach> 
+                                                </div>
+                                            </c:forEach>
                                         </div>
                                     </div>
-                                </div>    
+                                </div>
                             </div>
                         </c:forEach>
                     </div>
@@ -177,11 +210,11 @@
                                         ${category.key}
                                     </h5>
                                     </div>
-                                
+
                                     <div id="collapse-${loop.index}" class="collapse" aria-labelledby="service-heading-${loop.index}" data-parent="#misaServices">
                                         <div class="card-body serviceModule-detail">
                                             <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
+                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
                                                 remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                                                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                             </p>
@@ -203,11 +236,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div> 
-                                            </c:forEach> 
+                                                </div>
+                                            </c:forEach>
                                         </div>
                                     </div>
-                                </div>    
+                                </div>
                             </div>
                         </c:forEach>
                     </div>

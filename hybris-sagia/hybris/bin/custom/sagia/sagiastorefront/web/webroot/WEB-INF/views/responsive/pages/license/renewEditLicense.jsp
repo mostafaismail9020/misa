@@ -17,15 +17,46 @@
     var autoRenewalClearance = "${autoRenewalClearance}";
 </script>
 
+<div class="mainSection mainSection">
+	<div class="achievement_header">
+			<img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+			<div class="container">
+					<div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+							<h1 data-aos="fade-up">
+								<spring:theme code="renewlicense.licenserenewal"/>
+							</h1>
+					</div>
+					<div class="profile-icons float-right">
+							<c:if test="${hasLicense or hasAwaitingPayment}">
+									<div class="calendar">
+											<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+													<span></span>
+											</a>
+									</div>
+									<div class="calendar notification">
+											<div class="count-notification">123</div>
+											<a href="${encodedContextPath}/my-sagia/notifications">
+													<span></span>
+											</a>
+									</div>
+							</c:if>
+							<div class="profile">
+									<a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+											<span></span>
+									</a>
+							</div>
+					</div>
+			</div>
+	</div>
+</div>
 
-
-<div class="mainSection mainSection_dark">
+<!-- <div class="mainSection mainSection_dark">
 	<div class="container">
 		<div class="mainSection-header">
 			<h1 class="mainSection-headline mainSection-header-action" ><spring:theme code="renewlicense.licenserenewal"/></h1>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="container mainSection mainSection_dark mainSection_noPadding">
 	<div class="m-5">
@@ -38,7 +69,7 @@
             </div>
             <div class="col-md-3">
                 <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
-            </div>	
+            </div>
         </div>
 		<div class="row w-100 d-flex mt-4">
 			<div class="mainSection-linkActions mainSection-linkActions_spaceBetween btn-drafts_list amend-service-link">
@@ -218,17 +249,17 @@
                             </div>
                         </div>
 					</div> --%>
-					
+
 					<div class="contentModule-section contentModule-section_paddingSide">
 						<div class="contentModule-headline contentModule-headline_smallMargin  headline-text"><icon:documents/><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></div>
                         <div class="documentModule js-upload-files-list" data-files-name="img">
-                               
-                             
-                             
+
+
+
                                <div class="formSelectBox">
-                               
+
 									<div class="form-group">
-									    
+
 										<form:select path="duration" cssClass="js-select2-oneColumn" onChange="updateExpiryDate(this, event)">
 											<option></option>
 											<form:options items="${durations}" itemValue="${not empty itemValue ? itemValue :'code'}" itemLabel="${not empty itemLabel ? itemLabel :'name'}"  htmlEscape="true"/>
@@ -236,7 +267,7 @@
 										<label class="control-label control-label_mandatory" for="duration"><spring:theme code="license.apply.entity.licenseYear"/></label>
 									</div>
 									<div class="help-block"></div>
-									
+
 									 <span class="renewMessage" id="expDateTag" style="display: none"></span>
 									 <input class="renewMessage" id="expDate" style="display: none" value="${licExDateData.date}"/>
 									 <input class="renewMessage" id="dateUIPattern" style="display: none" value="${licExDateData.dateUIPattern}"/>
@@ -249,10 +280,10 @@
 								</div>
                         </div>
 					</div>
-					
-					
-					
-					
+
+
+
+
 
 					<div class="contentModule-section contentModule-section_paddingSide">
 						<div class="contentModule-headline contentModule-headline_smallMargin  headline-text"><icon:documents/><spring:theme code="text.account.followup.supportDocuments"/></div>
@@ -315,7 +346,7 @@
 						<formElement:termsAndConditionsCheckbox event="LICENSE_SERVICES" id="termsAndConditions" path="termsAndConditionsChecked"/>
 					</div>
 				</div>
-				<a class="btn btn_slim btn_outline" href="${back}"><spring:theme code="general.cancel"/></a>				
+				<a class="btn btn_slim btn_outline" href="${back}"><spring:theme code="general.cancel"/></a>
 				<input type="submit" class="btn" value="<spring:theme code="general.submit"/>" id="submit"/>
 			</div>
 			<input type="hidden" id="serviceId"/>

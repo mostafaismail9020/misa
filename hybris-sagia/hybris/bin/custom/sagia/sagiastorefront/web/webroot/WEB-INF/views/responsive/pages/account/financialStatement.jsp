@@ -10,7 +10,7 @@
 
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
+        <div class="mainSection-header row service-time">
             <h1 class="mainSection-headline"><spring:theme code="fiancial.statement"/></h1>
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
@@ -41,18 +41,12 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="fiancial.back"/></a>
-            <c:if test="${fn:length(financialEntities) gt 1}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand02">
-                    <div class="hidden"><spring:theme code="fiancial.showHistory"/><span>&#x27f6;</span></div>
-                    <div><spring:theme code="fiancial.hideHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+            <a href="" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="fiancial.back"/></a>
         </div>
     </div>
 </div>
 
-<div class="service-wrapper service-wrapper-info">
+<div class="container service-wrapper service-wrapper-info">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -140,16 +134,22 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_xsmallPaddingTop">
+<div class="mainSection mainSection_dark mainSection_xsmallPaddingTop mt-5">
     <div class="container">
+        <c:if test="${fn:length(financialEntities) gt 1}">
+            <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand02">
+                <div class="hidden"><spring:theme code="fiancial.showHistory"/><span>&#x27f6;</span></div>
+                <div><spring:theme code="fiancial.hideHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
+            </button>
+        </c:if>
         <div class="expandableContent expanded" id="expand02">
             <c:if test="${fn:length(financialEntities) gt 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_history"><icon:history/></span>
+                                <div class="contentModule-headline contentModule-headline-history">
+                                    <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                     History</div>
                                 <div class="searchInputBox searchInputBox_slim searchInputBox_spaceTop">
                                     <input onkeyup="filterHistory(this)" class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
@@ -202,7 +202,7 @@
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                    <div class="contentModule-headline">
+                                    <div class="contentModule-headline headline-text">
                                         <icon:generalManager/>
                                         <spring:theme code="fiancial.data"/>
                                     </div>
@@ -264,7 +264,7 @@
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                    <div class="contentModule-headline">
+                                    <div class="contentModule-headline headline-text">
                                         <icon:generalManager/>
                                         <spring:theme code="fiancial.data"/>
                                     </div>
@@ -352,7 +352,7 @@
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                    <div class="contentModule-headline">
+                                    <div class="contentModule-headline headline-text">
                                         <icon:documents/>
                                         <spring:theme code="fiancial.data"/>
                                     </div>
@@ -393,7 +393,7 @@
                         <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
+                                <div class="contentModule-headline headline-text">
                                     <icon:documents/>
                                     <spring:theme code="fiancial.incomeStatement.supportingDocuments"/>
                                 </div>

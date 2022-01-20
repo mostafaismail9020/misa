@@ -21,7 +21,18 @@
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="legalConsultationCreate.title"/> </h1>
-            <div>
+        </div>
+    </div>
+</div>
+<div class="mainSection mainSection_dark mainSection_noPadding">
+    <div class="container">
+        <div class="d-flex row renewal-services w-100">
+            <div class="col-md-3">
+                <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink back_to_service">
+                    <span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="legalConsultationCreate.backToAccountOverview.text"/>
+                </a>
+            </div>
+            <div class="col-md-9 d-flex btn-drafts_list amend-service-link">
                 <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="${serviceId}"
                         data-service-id="${serviceId}"><spring:theme code="general.savedraft"/><span
@@ -35,13 +46,6 @@
         </div>
     </div>
 </div>
-<div class="mainSection mainSection_dark mainSection_noPadding">
-    <div class="container">
-        <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink">
-            <span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="legalConsultationCreate.backToAccountOverview.text"/>
-        </a>
-    </div>
-</div>
 
 <div class="mainSection mainSection_dark mainSection_pdt16">
     <div class="container">
@@ -49,7 +53,7 @@
             <div class="panelModule panelModule_halfRadius">
                 <div class="contentModule">
                     <div class="contentModule-section">
-                        <div class="contentModule-headline">
+                        <div class="contentModule-headline headline-text">
                             <span class="iconElement iconElement_enquiry3"><icon:info/></span><spring:theme code="legalConsultationCreate.reqInformations.text"/>
                         </div>
 
@@ -75,7 +79,7 @@
                         <form:hidden id="typeDescriptionId" path="legEnqDesc" />
                     </div>
                     <div class="contentModule-section">
-                        <div class="contentModule-headline">
+                        <div class="contentModule-headline headline-text">
                             <icon:documents/>Attachments
                         </div>
 
@@ -137,13 +141,15 @@
                     </div>
                 </div>
             </div>
-            <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
-                <button type="reset" class="btn btn-secondary" onclick="window.location.href='${encodedContextPath}">
-                    <spring:theme code="general.cancel"/>
-                </button>
-                <div class="formCheckBox formCheckBox_belowPanel">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+                <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <formElement:termsAndConditionsCheckbox event="LEGAL_CONSULTATION" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
                 </div>
+
+                <button type="reset" class="btn btn_leftIconLink btn_outline" onclick="window.location.href='${encodedContextPath}">
+                    <spring:theme code="general.cancel"/>
+                </button>
+                
                 <button type="submit" value="Submit request" class="btn js-submit-legalconsultation"><spring:theme code="general.submit"/></button>
             </div>
         </form:form>

@@ -21,7 +21,7 @@
 
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
+        <div class="mainSection-header row service-time">
             <h1 class="mainSection-headline"><spring:theme code="legalConsultationCreate.title" /></h1>
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
@@ -64,7 +64,7 @@
 </div>
 <!-- </div> -->
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+<!-- <div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <div>
@@ -75,23 +75,31 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(legalConsultations) gt 1}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
-                    <div class="hidden"><spring:theme code="legalConsultation.showServiceHistory"/><span>&#x27f6;</span></div>
-                    <div><spring:theme code="legalConsultation.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+            <div class="d-flex row renewal-services w-100">
+                <div class="col-md-3">
+                    <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
+                </div>
+                <div class="col-md-3">
+                    <div class="mainSection-linkActions mainSection-linkActions_right">
+                        <div>
+                            <button class="btn btn_slim"
+                                    onclick="window.location.href='${encodedContextPath}/legalconsultations/new'">
+                                <spring:theme code="legalConsultation.create"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="service-wrapper service-wrapper-info">
+<div class="container service-wrapper service-wrapper-info">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -179,16 +187,22 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
     <div class="container">
+        <c:if test="${fn:length(legalConsultations) gt 1}">
+            <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
+                <div class="hidden"><spring:theme code="legalConsultation.showServiceHistory"/><span>&#x27f6;</span></div>
+                <div><spring:theme code="legalConsultation.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
+            </button>
+        </c:if>
         <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(legalConsultations) gt 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                <span class="iconElement iconElement_history"><icon:history/></span>
+                                <div class="contentModule-headline contentModule-headline-history">
+                                <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                     <spring:theme code="legalConsultation.history"/></div>
                                 <div class="searchInputBox searchInputBox_slim">
                                     <input onkeyup="filterHistory(this)" class="searchInputBox-input" type="text"
@@ -226,7 +240,7 @@
                             <div class="contentModule-section" id = "detailedLegalConsultationContent">
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                    <div  class="contentModule-headline">
+                                    <div  class="contentModule-headline contentModule-headline-service-info">
                                     <span class="iconElement iconElement_info"><icon:info/></span>
                                     <span id= "currentID">${latestLegalConsultation.srId}</span>
                                     <span style="display: none;" id= "currentGUID">${latestLegalConsultation.srGuid}</span>
@@ -262,7 +276,7 @@
                             </div>
                             <c:if test="${fn:length(legalConsultations) gt 0}">
                                 <div class="contentModule-section">
-                                    <div class="contentModule-headline contentModule-headline_small "><spring:theme code="legalConsultation.comments"/></div>
+                                    <div class="contentModule-headline contentModule-headline-service-info contentModule-headline_small "><spring:theme code="legalConsultation.comments"/></div>
                                     <div class="commentModule">
                                         <div class="commentModule-window">
                                             <ul id="messagesListUL" class="messageList">
@@ -295,7 +309,7 @@
                             <div class="contentModule-section" id = "attachedFilesDivContent">
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered">
-                                    <div  class="contentModule-headline">
+                                    <div  class="contentModule-headline contentModule-headline-service-info">
                                         <span class="iconElement iconElement_documents"><icon:documents/></span>
                                         <spring:theme code="legalConsultation.supportDocuments"/>
                                     </div>
@@ -338,7 +352,7 @@
  <script id="expandedLegalConsultationTemplate" type="text/template">
     <div class="contentModule-section" id = "detailedLegalConsultationContent">
     <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-     <div  class="contentModule-headline">
+     <div  class="contentModule-headline contentModule-headline-service-info">
      <span class="iconElement iconElement_info"><icon:info/></span>
      <span id= "currentID">{{srId}}</span>
     </div>

@@ -15,7 +15,7 @@
 
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
+        <div class="mainSection-header  row service-time">
             <h1 class="mainSection-headline">${serviceName}</h1>
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
@@ -51,7 +51,7 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+<!-- <div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <div id="serviceUrl">
@@ -68,25 +68,37 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard"
-               class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard" /></a>
-            <c:if test="${fn:length(serviceList) gt 1}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent"
-                        data-expand-target="expand01">
-                    <div><spring:theme code="text.account.followup.hideServiceHistory"/><span>&#x27f6;</span></div>
-                    <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+            <div class="d-flex row renewal-services w-100">
+                <div class="col-md-3">
+                    <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard" /></a>
+                </div>
+                <div class="col-md-3">
+                    <div class="mainSection-linkActions mainSection-linkActions_right">
+                        <div id="serviceUrl">
+                            <c:url value="/services/government/${categoryUrl}/${serviceUrl}/create" var="url">
+                                <c:param name="serviceName" value="${serviceName}"/>
+                                <c:if test="${fn:length(serviceList) gt 0}">
+                                    <c:param name="srID" value="${serviceList[0].srID}"/>
+                                </c:if>
+                            </c:url>
+                            <button class="btn btn_slim" id="createGovtServiceButton">
+                                <input id="createGovtServUrl" type="hidden" value="${url}">
+                                <spring:theme code="create.govtServices"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="service-wrapper service-wrapper-info">
+<div class="container service-wrapper service-wrapper-info">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -174,16 +186,26 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
     <div class="container">
+        <c:if test="${fn:length(serviceList) gt 1}">
+            <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent"
+                    data-expand-target="expand01">
+                <div><spring:theme code="text.account.followup.hideServiceHistory"/>
+                    <!-- <span>&#x27f6;</span> -->
+                </div>
+                <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
+            </button>
+        </c:if>
+        
         <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(serviceList) gt 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_history"><svg
+                                <div class="contentModule-headline contentModule-headline-history">
+                                    <!-- <span class="iconElement iconElement_history"><svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24"
                                             viewBox="0 0 24 24"><g
@@ -192,7 +214,7 @@
                                                                                            stroke-width="2"></circle><path
                                             class="iconElement-colorSecondary_stroke" stroke-linecap="round"
                                             stroke-linejoin="round"
-                                            d="M10.542 4.125v8.25m0 0l5.5-1.833"></path></g></svg></span>
+                                            d="M10.542 4.125v8.25m0 0l5.5-1.833"></path></g></svg></span> -->
                                     <spring:theme code="text.specialservices.history"/>
                                 </div>
                                 <div class="searchInputBox searchInputBox_slim">

@@ -26,20 +26,7 @@
 <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
-            <h1 class="mainSection-headline">${serviceNameDecoded}</h1>
-            <div>
-                <button class="btn btn_round btn_slim js-save-draft"
-                        data-target-form="${formName}"
-                        data-service-id="${serviceId}"><spring:theme code="general.savedraft"/>
-                    <span class="iconElement iconElement_save"><icon:save/></span>
-                </button>
-
-                <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if>
-                        data-target-form="${formName}"
-                        data-service-id="${serviceUrl}"><spring:theme code="general.loaddraft"/>
-                    <span class="iconElement iconElement_save"><icon:upload/></span>
-                </button>
-            </div>
+            <h1 class="mainSection-headline">${serviceNameDecoded}</h1>            
         </div>
     </div>
 </div>
@@ -48,10 +35,27 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${request.contextPath}/services/government/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}" class="btn btn_leftIconLink btn_darkLink">
-                <span class="iconElement iconElement_closeBack"><icon:close/></span>
-                <spring:theme code="createGovtServices.backToServiceDetails.text"/>
-            </a>
+            <div class="d-flex row renewal-services w-100">
+                <div class="col-md-3">
+                    <a href="${request.contextPath}/services/government/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}" class="btn btn_leftIconLink btn_darkLink back_to_service">
+                        <span class="iconElement iconElement_closeBack"><icon:close/></span>
+                        <spring:theme code="createGovtServices.backToServiceDetails.text"/>
+                    </a>
+                </div>
+                <div class="amend-service-link btn-drafts_list col-md-9 d-flex">
+                    <button class="btn btn_round btn_slim js-save-draft"
+                            data-target-form="${formName}"
+                            data-service-id="${serviceId}"><spring:theme code="general.savedraft"/>
+                        <span class="iconElement iconElement_save"><icon:save/></span>
+                    </button>
+
+                    <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if>
+                            data-target-form="${formName}"
+                            data-service-id="${serviceUrl}"><spring:theme code="general.loaddraft"/>
+                        <span class="iconElement iconElement_save"><icon:upload/></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -125,7 +129,7 @@
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule">
                         <div class="contentModule-section">
-                            <div class="contentModule-headline">
+                            <div class="contentModule-headline contentModule-headline-service-info">
                                 <icon:documents/>
                                 <spring:theme code="text.account.followup.supportDocuments"/>
                                 <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="<spring:theme code="text.account.followup.supportDocuments.mandatory"/>" data-original-title="" title=""><icon:tipInfo/></span>
@@ -168,15 +172,16 @@
                 </div>
             </c:if>
 
-            <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
-                <button type="button" class="btn btn-secondary" onclick="window.location.href='${request.contextPath}/services/government/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}'">
-                    <spring:theme code="general.cancel"/>
-                </button>
-                <div class="formCheckBox formCheckBox_belowPanel">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+                <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
                         <formElement:termsAndConditionsCheckbox event="LABOUR" id="termsAndConditions" path="termsAndConditionsChecked"/>
                     </div>
                 </div>
+                <button type="button" class="btn btn_leftIconLink btn_outline" onclick="window.location.href='${request.contextPath}/services/government/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}'">
+                    <spring:theme code="general.cancel"/>
+                </button>
+
                 <button type="submit" class="btn js-submit-governamentalDocuments">
                     <spring:theme code="general.submit"/>
                 </button>

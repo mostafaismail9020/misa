@@ -459,3 +459,47 @@
 .mainSection-linkActions_flexend{
     justify-content: flex-end;
 }
+
+.services-container-tabcontent{
+    .accordion{
+        .card{
+            border: none;
+            .card-header{
+                background: @color-primary 0% 0% no-repeat padding-box;
+                border: 1px solid @color-primary;
+                width: 90%;
+                margin: auto;
+                height: 75px;
+                h5{
+                    color: @color-white;
+                    font-size: 24px;
+                    font-weight: 600;
+                }                
+            }
+            .card-header::after{
+                transform: translate(0px, -100%);
+            }
+        }
+        .card.collapsed{
+            .card-header{
+                background: @color-white 0% 0% no-repeat padding-box;
+                border: 1px solid @color-primary;
+                h5{
+                    color: @color-primary;
+                }
+            }
+            .card-header::after{
+                content: url(../../theme-alpha/img/plus.png);
+            }
+        }
+        .collapse{
+            width: 90%;
+            margin: auto;
+            background: #F6F6F6 0% 0% no-repeat padding-box;
+            border: 1px solid @color-primary;
+        }
+    }
+    .service_tab_pane_show{
+        width: 92%;
+    }
+}

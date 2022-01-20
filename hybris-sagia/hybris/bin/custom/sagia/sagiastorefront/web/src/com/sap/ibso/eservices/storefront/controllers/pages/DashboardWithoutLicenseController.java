@@ -123,19 +123,25 @@ public class DashboardWithoutLicenseController extends SagiaAbstractPageControll
         }
         model.addAttribute("getEntityStatusDescription", entityStatusDescription);
         model.addAttribute("currentCustomerSector", customerData.getSector());
-        if(Objects.nonNull(customerData.getSector()) && Objects.nonNull(customerData.getSector().getSectorCode()) && !customerData.getSector().getSectorCode().isEmpty()){
-        	model.addAttribute("customerSectorCategory",investSaudiCategoryFacade.getCategoryForCode(customerData.getSector().getSectorCode()));
-        	List<OpportunityData> featuredOpportunities = investSaudiProductFacade.getFeaturedOpportunitiesByCategory(3, customerData.getSector().getSectorCode() );
+        if (Objects.nonNull(customerData.getSector()) && Objects.nonNull(customerData.getSector().getSectorCode()) 
+        		&& !customerData.getSector().getSectorCode().isEmpty()){
+        	model.addAttribute("customerSectorCategory", investSaudiCategoryFacade.getCategoryForCode(customerData.getSector().getSectorCode()));
+        	List<OpportunityData> featuredOpportunities = investSaudiProductFacade.getFeaturedOpportunitiesByCategory(3, 
+        			customerData.getSector().getSectorCode() );
         	model.addAttribute("featuredOpportunities", featuredOpportunities);
         }
-        boolean hasUserAppliedForLicense = StringUtils.hasLength(((CustomerModel) userService.getCurrentUser()).getApplicationServiceRequestID());
-        model.addAttribute("hasUserAppliedForLicense", hasUserAppliedForLicense);
-        model.addAttribute("userOpportunityTickets", sagiaCustomerFacade.getUserRaisedOpportunities(((CustomerModel) userService.getCurrentUser()).getContactEmail()));
-
+        
         model.addAttribute("lastNews", investSaudiMediaCenterService.getNews(NUMBER_OF_NEWS));
         //model.addAttribute("displayTutorial", sagiaCustomerFacade.displayDashboardNoLicenseTutorial());
+        
         CustomerModel customerModel = (CustomerModel) userService.getCurrentUser();
-        model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());
+        if (null != customerModel) { 
+	        boolean hasUserAppliedForLicense = StringUtils.hasLength(customerModel.getApplicationServiceRequestID());
+	        model.addAttribute("hasUserAppliedForLicense", hasUserAppliedForLicense);
+	        model.addAttribute("userOpportunityTickets", sagiaCustomerFacade.getUserRaisedOpportunities(customerModel.getUserNameEmail()));               
+	        model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());
+        }
+        
         return getViewForPage(model);
     }
 

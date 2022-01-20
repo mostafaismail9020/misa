@@ -26,6 +26,8 @@ import de.hybris.platform.servicelayer.config.ConfigurationService;
 import com.sap.ibso.eservices.storefront.controllers.SagiaConstants;
 import de.hybris.platform.servicelayer.i18n.CommonI18NService;
 import de.hybris.platform.servicelayer.user.UserService;
+import com.investsaudi.portal.core.model.ContactTicketModel;
+
 import org.apache.commons.collections.MapUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -39,6 +41,7 @@ import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
 import com.investsaudi.portal.facades.product.InvestSaudiProductFacade;
 import java.util.List;
 import java.util.Objects;
+import org.apache.log4j.Logger;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -49,6 +52,9 @@ import com.investsaudi.portal.core.service.InvestSaudiMediaCenterService;
 @Controller
 @RequestMapping(value = "/dashboard")
 public class InvestorDashboardController extends SagiaAbstractPageController {
+	
+	private static final Logger LOG = Logger.getLogger(InvestorDashboardController.class);
+			
     private static final int NUMBER_OF_NEWS = 3;
 	private static final String SAGIA_DASHBOARD_CMS_PAGE = "dashboard";
     private static final String SAGIA_FIRST_PAGE_INDEX = "1";
@@ -122,6 +128,7 @@ public class InvestorDashboardController extends SagiaAbstractPageController {
     @Resource(name = "userService")
     private UserService userService;
 
+    
     @RequestMapping(value = "/serviceRequests/print/{srId}", method = RequestMethod.GET)
     @RequireHardLogIn
     public void printDocument(final Model model, HttpServletRequest request, final HttpServletResponse response, @PathVariable(name = "srId", required = false) String srId) {
@@ -348,15 +355,23 @@ public class InvestorDashboardController extends SagiaAbstractPageController {
         }
         model.addAttribute("MIGS_Session_JS", configurationService.getConfiguration().getString(SagiaConstants.MIGS_SESSION_URL));
         model.addAttribute("currentCustomerSector", customerData.getSector());
-        if(Objects.nonNull(customerData.getSector()) && Objects.nonNull(customerData.getSector().getSectorCode()) && !customerData.getSector().getSectorCode().isEmpty()){
-        	model.addAttribute("customerSectorCategory",investSaudiCategoryFacade.getCategoryForCode(customerData.getSector().getSectorCode()));
-        	List<OpportunityData> featuredOpportunities = investSaudiProductFacade.getFeaturedOpportunitiesByCategory(3, customerData.getSector().getSectorCode() );
+        if (Objects.nonNull(customerData.getSector()) && Objects.nonNull(customerData.getSector().getSectorCode()) 
+        		&& !customerData.getSector().getSectorCode().isEmpty()) {
+        	model.addAttribute("customerSectorCategory", investSaudiCategoryFacade.getCategoryForCode(customerData.getSector().getSectorCode()));
+        	List<OpportunityData> featuredOpportunities = investSaudiProductFacade.getFeaturedOpportunitiesByCategory(3, 
+        			customerData.getSector().getSectorCode() );
         	model.addAttribute("featuredOpportunities", featuredOpportunities);
         }
         model.addAttribute("lastNews", investSaudiMediaCenterService.getNews(NUMBER_OF_NEWS));
-        model.addAttribute("userOpportunityTickets", sagiaCustomerFacade.getUserRaisedOpportunities(((CustomerModel) userService.getCurrentUser()).getContactEmail()));
+        
         CustomerModel customerModel = (CustomerModel) userService.getCurrentUser();
-        model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());
+        if (null != customerModel) {
+        	List<ContactTicketModel> contactTicketList = sagiaCustomerFacade.getUserRaisedOpportunities(customerModel.getUserNameEmail());
+        	LOG.debug("-------contactTicketList="+contactTicketList.size());
+        	model.addAttribute("userOpportunityTickets", contactTicketList);        
+        	model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());
+        }
+        
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_DASHBOARD_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_DASHBOARD_CMS_PAGE));
         return getViewForPage(model);

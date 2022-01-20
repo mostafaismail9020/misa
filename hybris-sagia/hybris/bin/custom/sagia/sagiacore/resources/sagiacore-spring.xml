@@ -1561,6 +1561,12 @@
 
     <!-- Economic Highlights Changes Ends -->
 
+    <alias name="defaultSagiaCompanyProfileDAO" alias="sagiaCompanyProfileDAO"/>
+    <bean id="defaultSagiaCompanyProfileDAO" class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultSagiaCompanyProfileDAO">
+        <constructor-arg value="SagiaCompanyProfile"/>
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+    
     <bean id="financialSurveyDao"
           class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultFinancialSurveyDAO">
         <constructor-arg value="FinancialSurvey"/>

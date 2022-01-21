@@ -17,14 +17,20 @@
 <div class="newsletterDiv" >
 	<div style="display: none;">
 		<div id="newsLetterSubscribeSuccess"
-			class="information_message bg-success text-white" style="padding: 20px">
+			class="information_message bg-success text-white" style="padding: 20px;background-color: #ffffff;">
+			<div class="text-center pb-4">
+			 <img src="/investsaudistorefront/_ui/responsive/common/images/success.png" style="width: 60px;height:65px;margin:0px auto;">
+			</div>
 			<i class="icon-success"></i> <span class="c-global-message__text"><spring:theme
 					code="blog.newsLetter.subscribe.save.success" /></span>
 		</div>
 
 		<div id="newsLetterUnsubscribeSuccess"
-			class="information_message bg-success text-white" style="padding: 20px">
-			<i class="icon-success"></i> <span class="c-global-message__text"><spring:theme
+			class="information_message bg-success text-white" style="padding: 20px;background-color: #ffffff;">
+			<div class="text-center pb-4">
+				<img src="/investsaudistorefront/_ui/responsive/common/images/danger.png"  style="width: 60px;height:65px;margin:0px auto;">
+			</div>
+		<i class="icon-success"></i> <span class="c-global-message__text"><spring:theme
 					code="blog.newsLetter.unsubscribe.save.success" /></span>
 		</div>
 
@@ -53,8 +59,8 @@
 				<div class="modal-body" style="padding: 20px">
 
 				</div>
-				<div class="modal-body-footer text-right" style="padding: 0 20px 20px 20px;">
-					<button type="button" class="btn btn-sagia" data-dismiss="modal">Close</button>
+				<div class="modal-body-footer text-center" style="padding: 0 20px 20px 20px;">
+					<button type="button" class="btn btn-sagia  btn-sagia-green" data-dismiss="modal">Go black to detail page</button>
 				</div>
 			</div>
 		</div>

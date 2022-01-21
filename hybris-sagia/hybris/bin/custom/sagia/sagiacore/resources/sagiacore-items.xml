@@ -723,12 +723,12 @@
 				 <attribute qualifier="companyWebsite" type="java.lang.String">
                     <persistence type="property"/>
                     <description>Company website URL</description>
-                    <modifiers/>
+                    <modifiers read="true" write="true" search="true" optional="true"/>
                 </attribute>
                 <attribute qualifier="companyLogo" type="Media">
                     <persistence type="property" />
                     <description>To assign company logo</description>
-                    <modifiers/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
                 </attribute>
             </attributes>
             <indexes>

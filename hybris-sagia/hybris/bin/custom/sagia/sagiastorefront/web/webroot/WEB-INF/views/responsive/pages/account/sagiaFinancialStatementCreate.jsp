@@ -17,10 +17,43 @@
     var configuredFileSize = ${maxUploadSize};
 </script>
 
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="header.financialStatement.text" />
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="header.financialStatement.text" /> </h1>
+            <!-- <h1 class="mainSection-headline"><spring:theme code="header.financialStatement.text" /> </h1> -->
             <div>
                 <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="${serviceId}"
@@ -45,7 +78,7 @@
 
 <div class="mainSection mainSection_dark mainSection_pdt16">
     <div class="container">
-    
+
     	<div class="expandableContent-main" id="expandedContentParent">
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div id="detailedConvertToNationalsContent" class="contentModule">
@@ -70,8 +103,8 @@
                 </div>
             </div>
         </div>
-    
-    
+
+
         <form:form id="${serviceId}" action="${encodedContextPath}/financial-statement/create" enctype="multipart/form-data" method="post" modelAttribute="financialStatementForm" class="js-financialStatement-create">
             <div class="panelModule panelModule_halfRadius">
                 <div class="contentModule">
@@ -93,7 +126,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
 						 <div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
                     </div>

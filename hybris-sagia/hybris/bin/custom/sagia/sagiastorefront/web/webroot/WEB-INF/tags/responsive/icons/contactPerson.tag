@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="53.635" height="38.424" viewBox="0 0 53.635 38.424">
-  <g id="contact-person-whiat" transform="translate(-214.641 -1244.225)">
+  <g id="Contact_person-black" data-name="Contact person-black" transform="translate(-214.641 -1244.225)">
     <g id="Group_902" data-name="Group 902" transform="translate(214.641 1244.225)">
       <g id="Group_898" data-name="Group 898" transform="translate(26.087)">
         <g id="Group_895" data-name="Group 895" transform="translate(0 4.887)">

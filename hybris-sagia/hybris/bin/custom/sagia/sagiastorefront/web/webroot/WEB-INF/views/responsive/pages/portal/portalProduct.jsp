@@ -62,6 +62,21 @@
 				</div>
 			</section>
 		</c:if>
+		
+		<c:if test="${not empty productData.partnerMap}">
+			<c:forEach var="partnerMap" items="${productData.partnerMap}">
+				<c:if test="${partnerMap.value.size() gt 0}">
+					<div class=""><h5>${partnerMap.key}</h5></div>
+					<c:forEach var="partnerLogo" items="${partnerMap.value}">
+						<img class="sector-item-icon" src="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
+								data-norm="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
+								data-alt="${fn:escapeXml(partnerLogo.companyLogo.url)}" alt=""/>
+						<h5><a href="${partnerLogo.companyWebsite}" target="_blank"><c:out value="${partnerLogo.companyWebsite}"/></a></h5>
+					</c:forEach>
+				</c:if>
+				</br></br>
+			</c:forEach>
+		</c:if>
 				
 		<div class="Inc-sector-panel">
 			<h1 class="Inc-sector-panel-header"><spring:theme code="portal.sector.explore.other.label"/></h1>								

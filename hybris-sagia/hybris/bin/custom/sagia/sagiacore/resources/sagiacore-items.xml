@@ -178,18 +178,19 @@
 			<value code="Z02"/>
 			<value code="NA"/>
 		</enumtype>
+		
 		<enumtype generate="true" code="PartnerType" autocreate="true" dynamic="true">
             <value code="Enabler"/>
             <value code="Accelerator"/>
             <value code="Incubator"/>
         </enumtype>
+        
         <enumtype code="CsInterventionType" dynamic="true" autocreate="false" generate="false">
             <value code="NotesForCustomer" />
         </enumtype>
     </enumtypes>
 	
-	
-	
+		
     <maptypes>
 		<maptype code="Integer2LivingInSaudiAchievementMape"
                argumenttype="java.lang.Integer"
@@ -1623,11 +1624,13 @@
                       jaloclass="com.sap.ibso.eservices.core.jalo.SagiaRealTimeOnlineSupportComponent">
                 <description>Sagia Real Time Online Support Component</description>
             </itemtype>
+            
 			<itemtype code="SagiaDashboardBannerCarouselComponent"
                       autocreate="true" generate="true" extends="SimpleCMSComponent"
                       jaloclass="com.sap.ibso.eservices.core.jalo.SagiaDashboardBannerCarouselComponent">
                 <description>Sagia Dashboard Banner Carousel Component</description>
             </itemtype>
+            
             <itemtype code="SagiaCommerceIndustryService" extends="SagiaService"
                       jaloclass="com.sap.ibso.eservices.core.jalo.SagiaCommerceIndustryService">
                 <attributes>
@@ -3579,123 +3582,12 @@
                     </attribute>
                 </attributes>
             </itemtype> 
-            
-            <itemtype code="C4C2CommerceOpportunity" generate="true" autocreate="true">
-                <description>Invest Saudi C4C to Commerce Opportunity</description>
-                <deployment table="C4C2CommerceOpportunity" typecode="30501"/>
-                <attributes>
-                    <attribute qualifier="opportunityId" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="opportunityName" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="processingTypeCode" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="processingTypeCodeText" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="lifeCycleStatusCode" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="LifeCycleStatusCodeText" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>                    
-                    <attribute qualifier="salesCycleCode" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="salesCycleCodeText" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>                    
-                    <attribute qualifier="salesCyclePhaseCode" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="salesCyclePhaseCodeText" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>                    
-                    <attribute qualifier="prospectPartyId" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="prospectPartyName" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="sectorId" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="sectorName" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="subSectorId" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="subSectorName" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="customerId" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="customerName" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>                    
-                    <attribute qualifier="approvalStatusCode" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="approvalStatusCodeText" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>                    
-                    <attribute qualifier="creationDateTime" type="java.util.Date">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="lastChangeDateTime" type="java.util.Date">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>                    
-                    <attribute qualifier="mainEmployeeResponsiblePartyId" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="mainEmployeeResponsiblePartyName" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="productCode" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute qualifier="productName" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                </attributes>
-            </itemtype>   
-
+                        
 			<itemtype code="OpportunityPartner" generate="true" autocreate="true">
                 <description>To identify list of partners available to a product</description>
                 <deployment table="OpportunityPartner" typecode="30210"/>
                 <attributes>
-                    <attribute qualifier="partnerType " type="PartnerType">
+                    <attribute qualifier="partnerType" type="PartnerType">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>

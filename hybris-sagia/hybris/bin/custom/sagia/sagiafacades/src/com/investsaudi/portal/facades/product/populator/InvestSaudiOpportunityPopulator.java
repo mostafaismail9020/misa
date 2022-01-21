@@ -1,6 +1,8 @@
 package com.investsaudi.portal.facades.product.populator;
 
 import com.investsaudi.portal.core.model.OpportunityProductModel;
+import com.sap.ibso.eservices.core.model.OpportunityPartnerModel;
+
 import de.hybris.platform.catalog.model.KeywordModel;
 import de.hybris.platform.catalog.model.ProductFeatureModel;
 import de.hybris.platform.catalog.model.ProductReferenceModel;
@@ -14,9 +16,11 @@ import de.hybris.platform.converters.Populator;
 import de.hybris.platform.core.model.c2l.LanguageModel;
 import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.product.ProductModel;
+import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.dto.converter.ConversionException;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
 import de.hybris.platform.servicelayer.i18n.I18NService;
+import com.sap.ibso.eservices.facades.data.OpportunityPartnerData;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Required;
@@ -34,6 +38,11 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
     private static final String SECTOR_URL = "/sectors-opportunities/";
     private static final String TYPE = "OpportunityProduct";
 
+    private static final String PARTNER_ENABLER = "Enabler";
+    private static final String PARTNER_ACCELERATOR = "Accelerator";
+    private static final String PARTNER_INCUBATOR = "Incubator";
+    
+    
     private Converter<MediaModel, ImageData> imageConverter;
     
     private Converter<ProductReferenceModel, ProductReferenceData> productReferenceConverter;
@@ -58,6 +67,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         productData.setSummary(productModel.getSummary());
         productData.setProductType(TYPE);
         productData.setProductReferences(populateProductReference(productModel.getProductReferences()));
+        productData.setPartnerMap(populateProductPartnerDetails(productModel.getPartner()));
         
         final MediaModel overviewImage = productModel.getPicture();
         if (overviewImage != null) {
@@ -173,6 +183,57 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
     	return productReferences;
 	}
     
+    private Map<String, List<OpportunityPartnerData>> populateProductPartnerDetails(List<OpportunityPartnerModel> partners) 
+    {
+    	String website = null;
+    	OpportunityPartnerData partnerData = null;
+    	List<OpportunityPartnerData> enablerPartners = new ArrayList<OpportunityPartnerData>();
+    	List<OpportunityPartnerData> acceleratorPartners = new ArrayList<OpportunityPartnerData>();
+    	List<OpportunityPartnerData> incubatorPartners = new ArrayList<OpportunityPartnerData>();
+    	Map<String, List<OpportunityPartnerData>> partnersMap = new HashMap<String, List<OpportunityPartnerData>>();
+    	
+    	for (final OpportunityPartnerModel partnerModel : partners)
+		{
+    		if (partnerModel.getPartnerType().getCode().equals(PARTNER_ENABLER)) {
+    			CustomerModel customer = partnerModel.getCustomer();
+        		if (null != customer) {
+        			partnerData = new OpportunityPartnerData();
+        			if (null != customer.getCompanyLogo()) {     			
+        				partnerData.setCompanyLogo(getImageConverter().convert(customer.getCompanyLogo()));
+        			}
+        			partnerData.setCompanyWebsite(customer.getCompanyWebsite());
+        			enablerPartners.add(partnerData);
+        		}
+    		}
+    		if (partnerModel.getPartnerType().getCode().equals(PARTNER_ACCELERATOR)) {
+    			CustomerModel customer = partnerModel.getCustomer();
+        		if (null != customer) {
+        			partnerData = new OpportunityPartnerData();
+        			if (null != customer.getCompanyLogo()) {
+        				partnerData.setCompanyLogo(getImageConverter().convert(customer.getCompanyLogo()));
+        			}
+        			partnerData.setCompanyWebsite(customer.getCompanyWebsite());
+        			acceleratorPartners.add(partnerData);
+        		}
+    		}
+    		if (partnerModel.getPartnerType().getCode().equals(PARTNER_INCUBATOR)) {
+    			CustomerModel customer = partnerModel.getCustomer();
+        		if (null != customer) {
+        			partnerData = new OpportunityPartnerData();
+        			if (null != customer.getCompanyLogo()) {     			
+        				partnerData.setCompanyLogo(getImageConverter().convert(customer.getCompanyLogo()));
+        			}
+        			partnerData.setCompanyWebsite(customer.getCompanyWebsite());
+        			incubatorPartners.add(partnerData);
+        		}
+    		}
+		}
+    	partnersMap.put(PARTNER_ENABLER, enablerPartners);
+    	partnersMap.put(PARTNER_ACCELERATOR, acceleratorPartners);
+    	partnersMap.put(PARTNER_INCUBATOR, incubatorPartners);
+    	
+    	return partnersMap;
+    }
     
     public Converter<MediaModel, ImageData> getImageConverter() {
         return imageConverter;

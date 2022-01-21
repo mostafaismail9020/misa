@@ -778,6 +778,7 @@ span {
 #businessActivitiesModal .modal-footer .btn_slim {
     padding: 0px;
 }
+
 /*.......popup.....*/
 
 [dir] .scrollWrapper {
@@ -1035,7 +1036,7 @@ button:focus {
 .modal-description_smallText {
     font-size: 16px;
 }
-/*.......5-tabs.....*/
+/*.......licence-investment-application-tabs.....*/
 
 .page-sagia-profile .control-label {
     font-size: 16px;
@@ -1477,7 +1478,7 @@ button:focus {
     background-color: transparent !important;
 }
 
-.panelTabs-content {
+.panelTabs_noPanelInBody .panelTabs-content {
     max-width: 960px !important;
 }
 
@@ -1598,6 +1599,70 @@ button:focus {
     width: 75%;
 }
 
+
+#licenseTypeSection .select2-container .select2-selection--single .select2-selection__rendered,
+#licenseYearSection .select2-container--disabled .select2-selection--single .select2-selection__rendered {
+    top: 0px;
+    left: 20px;
+}
+
+[dir] .select2-dropdown_oneColumn_hasFilter .select2-search:after {
+    background: none;
+}
+
+[dir] #entityInformationCancelButton,
+[dir] #contactPersonBackButton {
+    background-color: transparent !important;
+}
+
+#addShareholderQM1NewPersonSection .saveNew,
+#addShareholderQM1NewOrganizationSection .saveNew,
+#addShareholderQM1NewPersonSection .cancelButton,
+#addShareholderQM1NewOrganizationSection .cancelButton {
+    height: 45px;
+}
+
+#delegateSectionQuestion .btn:hover:not([disabled]) {
+    color: #707070 !important;
+    background-color: transparent !important;
+}
+
+.formInputBox .form-control:focus {
+    border-color: #00A6BE !important;
+}
+
+.formInputBox .help-block,
+.formInputBox-split .help-block,
+[dir=ltr] .formSelectBox .help-block {
+    font-size: 14px;
+    text-align: left;
+    line-height: normal;
+}
+
+.page-license-apply .contentModule-section:not(:last-child) {
+    margin-bottom: 0 !important;
+}
+
+.contentModule-actions .addExistingButton,
+.contentModule-actions .addNewButton {
+    height: 45px;
+}
+
+.form-group .form-item .uncased {
+    font-weight: 600 !important;
+}
+
+.page-license-apply::-webkit-scrollbar-thumb {
+    background-color: transparent !important;
+}
+
+[dir] button:focus {
+    outline: none;
+}
+
+#sagiaApplyReviewForm .form-group .form-item .uncased span {
+    top: 10px;
+}
 
 @media (max-width: 575px) {
     .page-sagia-profile .contentModule-actions_insideSection {
@@ -1845,5 +1910,22 @@ button:focus {
     .page-sagia-profile #companyRepresentativeForm1 .js-myAccount-edit-toggle .formInputBox .form-group .control-label {
         top: -30px;
     }
+    #addShareholderQM1NewPersonSection .saveNew,
+    #addShareholderQM1NewOrganizationSection .saveNew {
+        width: 30% !important;
+    }
+    #sagiaLicenseApplyForm .btn_formAligned {
+        padding-left: 25px;
+    }
+
+    .page-license-apply .contentModule-actions .addExistingButton,
+    .page-license-apply .contentModule-actions .addNewButton {
+        padding-left: 5px;
+    }
+    #shareholderType .form-item {
+        padding: 0;
+        margin: 0 7px;
+    }
+
 }
 

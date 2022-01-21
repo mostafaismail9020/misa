@@ -12,7 +12,7 @@
 <div class="contentModule-section" id="licenseTypeSection" style="display: none">
    <div class="contentModule-headline contentModule-headline_smallMargin w-25"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.title"/></div>
    <hr class="hr"/>
-    <div class="row mt-3">
+    <div class="row mt-5">
         <div class="col-md-6">
             <formElement:formSelectBox idKey="licenseTypes"
                                        labelKey="license.apply.licenseType"

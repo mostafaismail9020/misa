@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><g stroke="#a1a1a1" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M16 15.545c0 .805-.66 1.455-1.474 1.455h-11.052a1.464 1.464 0 0 1-1.474-1.455v-13.09h14v13.09zm-14-10.181h14M4.21 2.455c0-.805.66-1.455 1.475-1.455s1.474.65 1.474 1.455c0 .803-.66 1.454-1.474 1.454m5.157-1.454c0-.804.66-1.455 1.474-1.455s1.473.65 1.473 1.455c0 .803-.66 1.454-1.473 1.454"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="21.8" height="24" viewBox="0 0 21.8 24">
+  <g id="calendar" transform="translate(-3.5 -2)">
+    <path id="Path_2181" data-name="Path 2181" d="M6.7,6H22.1a2.2,2.2,0,0,1,2.2,2.2V23.6a2.2,2.2,0,0,1-2.2,2.2H6.7a2.2,2.2,0,0,1-2.2-2.2V8.2A2.2,2.2,0,0,1,6.7,6Z" transform="translate(0 -0.8)" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_2182" data-name="Path 2182" d="M24,3V7.4" transform="translate(-5.2)" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_2183" data-name="Path 2183" d="M12,3V7.4" transform="translate(-2)" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_2184" data-name="Path 2184" d="M4.5,15H24.3" transform="translate(0 -3.2)" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>

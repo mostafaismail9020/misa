@@ -477,7 +477,7 @@
         <license:licenseApplyShareholders-delegate shareholderType="Person"/>
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection pb-4">
                 <button type="button" class="cancelButton btn  btn-normal btn_outline btn_bold w-25"><spring:theme code="general.cancel"/></button>
-                <button type="button" class="addButton btn btn-bg btn-normal btn_bold w-25"><spring:theme code="licence.apply.savenewshareholder"/></button>
+                <button type="button" class="saveNew btn btn-bg btn-normal btn_bold w-25"><spring:theme code="licence.apply.savenewshareholder"/></button>
        </div>
     </div>
 
@@ -768,7 +768,7 @@
         <license:licenseApplyShareholders-delegate shareholderType="Organization"/>
          <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection pb-4">
                 <button class="cancelButton btn btn-outline btn-normal btn_bold w-25"><spring:theme code="general.cancel"/></button>
-                <button class="addButton btn btn-bg btn-normal btn_bold w-25"><spring:theme code="licence.apply.savenewshareholder"/></button>
+                <button class="saveNew btn btn-bg btn-normal btn_bold w-25"><spring:theme code="licence.apply.savenewshareholder"/></button>
             </div>
 	</div>
 </div>

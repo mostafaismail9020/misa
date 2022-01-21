@@ -19,7 +19,8 @@
 <div class="panelTabs-body" id="reviewContent">
     <div class="contentModule">
         <div class="contentModule-actions contentModule-actions_right">
-            <button id="printButton" class="border-0 bg-transparent btn_round btn_slim"><spring:theme code="general.print"/>
+            <button id="printButton" class="border-0 bg-transparent btn_round btn_slim">
+           <!-- <spring:theme code="general.print"/>-->
                 <span class="iconElement iconElement_print"><icon:print/></span>
             </button>
         </div>
@@ -577,7 +578,7 @@
             <span>
                 <button id="reviewBackButton" type="button" class="btn btn_bold btn-normal btn-bg"><spring:theme code="license.apply.review.back"/></button>
                 <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
-                    <button id="reviewCancelButton" type="button" class="btn btn-ctrl btn_link btn_bold btn-outline"><spring:theme code="license.apply.review.cancel"/></button>
+                    <button id="reviewCancelButton" type="button" class="btn btn-normal btn-ctrl btn_link btn_bold btn-outline"><spring:theme code="license.apply.review.cancel"/></button>
                 </sec:authorize>
             </span>
             <%--<button id="reviewPayButton" type="button" class="btn" data-toggle="modal" onclick="requestPaymentDetails()">(TEST) Pay Again</button>--%>

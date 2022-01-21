@@ -15,7 +15,7 @@
 			code="licenseApplyEntityInformation.licenseYearSection.title" />
 	</div>
 	<hr class="hr"/>
-	<div class="row">
+	<div class="row mt-5">
 		<div class="col-md-6">
 			<div class="formSelectBox">
 				<div class="form-group">

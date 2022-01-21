@@ -138,7 +138,7 @@
                 <spring:theme code="licenseApplyEntityInformation.button.back" text="Back"/>
             </button>
         </ycommerce:testId>
-        <button id="entityInformationCancelButton" type="button" class="btn btn-normal btn-ctrl btn-bg btn_bold">
+        <button id="entityInformationCancelButton" type="button" class="btn btn-normal btn-ctrl btn-outline btn_bold bg-transparant">
             <spring:theme code="licenseApplyEntityInformation.button.cancel"/>
         </button>
     </span>

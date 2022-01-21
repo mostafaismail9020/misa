@@ -54,8 +54,10 @@
     margin-bottom: 1rem;
 	list-style-type: none;
 }
-.footer .footer-menu li a {
+.footer .footer-menu li a, .footer .footer-menu li p{
     color: #707070;
+    font-size: 19px;
+    font-weight: 500;
 }
 .footer-menu-links .no-gutters :nth-child(3) ul li:nth-child(5) a {
     color: #00a6be;
@@ -157,6 +159,10 @@
     cursor: pointer;
     transition: all 0.4s ease;
     z-index: 9999;
+}
+[dir] .float-button:focus{
+    border: transparent;
+    outline: transparent;
 }
 .float-button-up {
     bottom: 210px;

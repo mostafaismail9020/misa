@@ -154,15 +154,15 @@
         <div class="dashboardUser_slim dashboardUser_noBorder pb-5">
             <div class="service-card-wrapper">
                 <div class="service-card">
-                    <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
+                    <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
                     <span><spring:theme code="dashboard.license.service.name"/></span>
                 </div>
                 <div class="service-card">
-                    <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
+                    <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
                     <span><spring:theme code="dashboard.governmental.service.name"/></span>
                 </div>
                 <div class="service-card">
-                    <img  alt="" src="${commonResourcePath}/images/dashboard-media/Investment-license-application/Entity information-black.png"/>
+                    <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
                     <span><spring:theme code="dashboard.misa.service.name"/></span>
                 </div>
             </div>
@@ -196,18 +196,37 @@
             </div>
         </div>
     </div>
-
-<section class="mainSection mainSection_xsmallPaddingTop">
-    <div class="container license-customize-align">
-      <div> <h1 class="dashboard-headline js-dashboardWidget-headline text-center m-0 p-0">Licenses</h1></div>
-     <div> <span class="mainSection-linkActions mainSection-linkActions_right">
-                <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard btn_link_slim">
-                    <spring:theme code="dashboard.customize"/> <span class="iconElement iconElement_pin pl-3"></span> 
-                </a>
-            </span></div>
-        
+<!-- 
+<section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
+    <div class="container">
+        <div class="Inc-title-header py-5">
+            <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
+                LICENSES
+                
+            </h1>
+            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard btn_link_slim">
+                <spring:theme code="dashboard.customize"/> <span class="iconElement iconElement_pin pl-3"></span> 
+            </a>
+        </div>
+    </div>
+</section> -->
+<section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
+    <div class="container">
+        <div class="Inc-title-header py-5">
+            <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
+                <c:if test="${language eq 'en'}">
+                    LICENSES
+                </c:if>
+                <c:if test="${language eq 'ar'}">
+                     LICENSES
+                </c:if>
+                <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase"><spring:theme code="dashboard.customize"/> <img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/></a>
+            </h1>
+          </div>
     </div>
 </section>
+
+
 
 <section class="mainSection mainSection_noPadding">
     <div class="container">
@@ -401,7 +420,7 @@
             <div class="dashboard-container">
                 <div class="row titleContainer">
                     <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
-                        <h1 class="section-title text-center clr_gld">NEWS &amp; UPDATES</h1>
+                        <h1 class="section-title text-center clr_gld py-5">NEWS &amp; UPDATES</h1>
                         <a href="/en/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">
                             Explore All&nbsp;
                             <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
@@ -420,9 +439,9 @@
                                 </div>
                                 <div class="card-box p-3 pr-5 home-news-updates-content">
                                     <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
-                                    <h3>${fn:substring(currentNews.newsTitle,0,29)} ...</h3>
-                                    <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
-                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img src=""></a></p>
+                                    <h3 class="my-3">${fn:substring(currentNews.newsTitle,0,29)} ...</h3>
+                                    <!-- <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p> -->
+                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
                                 </div>
                             </div>
                         </div>
@@ -489,7 +508,7 @@
         </div>
     </div>
 </section>
-	<div class="container">
+	<!-- <%--<div class="container">
 	<div class="row mt-5">
             <div class="col-md-8 ">
                 <div class="js-dashboardWidget dashboardWidget_noRadiusRight">
@@ -502,11 +521,11 @@
                         <div class="dashboardWidgetAskOurExpert">
                                     <div class="dashboardWidgetAskOurExpert-headline"><spring:theme code="dashboard.support.helpQuestion"/></div>
                                     <ul class="dashboardWidgetAskOurExpert-list">
-                                        <%--<li>
+                                        <li>
                                             <a href="${encodedContextPath}/my-sagia/sagia-profile" class="dashboardWidgetAskOurExpert-link">
                                                 <icon:account-settings/><spring:theme code="dashboard.support.accountSettings"/>
                                             </a>
-                                        </li>--%>
+                                        </li>
                                         <li>
                                             <a href="" data-toggle="modal" data-target="#eServiceTour" class="dashboardWidgetAskOurExpert-link dashboardWidgetAskOurExpert-link_stroke">
                                                 <icon:first-steps/><spring:theme code="dashboard.support.firstSteps"/>
@@ -525,11 +544,11 @@
                                                 </a>
                                             </li>
 
-                                            <%-- <li>
+                                             <li>
                                                 <a href="#" class="js-realTimeOnlineSupportChatList-open dashboardWidgetAskOurExpert-link dashboardWidgetAskOurExpert-link_stroke">
                                                     <icon:chat/><spring:theme code="realTimeOnlineSupportChatList.title"/>
                                                 </a>
-                                            </li> --%>
+                                            </li>
 
                                             <li>
                                                 <a href="#" class="js-realtimeOnlineSupportEmailUs dashboardWidgetAskOurExpert-link dashboardWidgetAskOurExpert-link_stroke">
@@ -537,18 +556,18 @@
                                                 </a>
                                             </li>
 
-                                        <%--<li>
+                                        <li>
                                             <a href="${encodedContextPath}/my-sagia/license/bidding" class="dashboardWidgetAskOurExpert-link">
                                                 <icon:bidding-certificates/><spring:theme code="dashboard.support.biddingCertificates"/>
                                             </a>
-                                        </li>--%>
-                                        <%--<li>
+                                        </li>
+                                        <li>
                                            <a href="${encodedContextPath}/service-search" class="dashboardWidgetAskOurExpert-link">
                                                 <icon:services/><spring:theme code="dashboard.support.services"/>
                                             </a>
-                                        </li>--%>
+                                        </li>
                                     </ul>  
-                               <%-- <div class="col-lg-5 dashboardWidgetAskOurExpert-seperator">
+                               <div class="col-lg-5 dashboardWidgetAskOurExpert-seperator">
                                     <div class="dashboardWidgetAskOurExpert-headline">
                                         <spring:theme code="dashboard.support.ask"/>
                                     </div>
@@ -558,13 +577,13 @@
                                         <li><icon:chat/><a href="#" id="liveChatButton"><spring:theme code="support.livechat"/></a></li>
                                         <li><icon:enquiry/><a href="#" id="makeAnEnquiry"><spring:theme code="support.makeenquiry"/></a></li>
                                     </ul>
-                                </div>--%>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div> 
-    </div>	
+    </div>	--%> -->
 
 
 

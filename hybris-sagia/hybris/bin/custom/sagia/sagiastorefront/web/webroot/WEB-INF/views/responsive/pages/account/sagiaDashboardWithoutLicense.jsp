@@ -217,42 +217,46 @@
     <dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>
 
 
-    <!--News Section Start-->
-    <div id="newsandupdates" class="newsAndUpdateContainer">
-	    <div class="dashboard-container">
-	        <div class="row titleContainer">
-	            <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
-	                <h1 class="section-title text-center clr_gld">NEWS &amp; UPDATES</h1>
-					<a href="/en/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">
-						Explore All&nbsp;
-						<img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
-					
-				</div>
-			</div>
-			
-			<c:if test="${not empty lastNews}">
-           	<div class="row contentWrapper">
-           	<c:url value="/mediaCenter/news" var="newsUrl"/>
-           	<c:forEach var="currentNews" items="${lastNews}" varStatus="status">
-           		<div class="col-lg-4 col-md-6 card-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
-			        	<div class="flip-card">
-			            	<div class="card-img">
-			                	<img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
-			              	</div>
-			              	<div class="card-box p-3 pr-5 home-news-updates-content">
-			               		<strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
-			                  	<h3>${fn:substring(currentNews.newsTitle,0,29)} ...</h3>
-			                  	<p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
-	                  			<p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img src=""></a></p>
-	                      	</div>
-						</div>
-					</div>
-					</c:forEach>
-			
-				</div>
-				</c:if>
-    	</div>
-	</div>
+    <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
+        <div class="container">
+        <!--News Section Start-->
+            <div id="newsandupdates" class="newsAndUpdateContainer">
+                <div class="dashboard-container">
+                    <div class="row titleContainer">
+                        <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
+                            <h1 class="section-title text-center clr_gld py-5">NEWS &amp; UPDATES</h1>
+                            <a href="/en/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">
+                                Explore All&nbsp;
+                                <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
+                            
+                        </div>
+                    </div>
+                    
+                    <c:if test="${not empty lastNews}">
+                    <div class="row contentWrapper">
+                    <c:url value="/mediaCenter/news" var="newsUrl"/>
+                    <c:forEach var="currentNews" items="${lastNews}" varStatus="status">
+                        <div class="col-lg-4 col-md-6 card-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
+                                <div class="flip-card">
+                                    <div class="card-img">
+                                        <img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
+                                    </div>
+                                    <div class="card-box p-3 pr-5 home-news-updates-content">
+                                        <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
+                                        <h3 class="my-3">${fn:substring(currentNews.newsTitle,0,29)} ...</h3>
+                                        <!-- <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p> -->
+                                        <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </c:forEach>
+                    
+                        </div>
+                        </c:if>
+                </div>
+            </div>
+        </div>
+    </section>
          <%-- <div class="row mt-5">
             <div class="col-md-8 ">
                 <div class="js-dashboardWidget dashboardWidget_noRadiusRight">

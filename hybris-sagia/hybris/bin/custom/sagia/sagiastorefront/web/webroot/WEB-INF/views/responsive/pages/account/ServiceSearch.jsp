@@ -5,9 +5,6 @@
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <div class="mainSection mainSection">
@@ -91,7 +88,7 @@
                     <c:forEach items="${SagiaServices}" var="category">
                         <c:forEach items="${category.value}" var="service">
                                 <div class="tab-content" id="pills-tabContent">
-                                    <div class="tab-pane fade service-wrapper show active service_tab_pane_show pb-3" id="licensing-service-1" role="tabpanel" aria-labelledby="pills-licensing-tab">
+                                    <div class="tab-pane fade service-wrapper show active service_tab_pane_show pb-3 m-auto" id="licensing-service-1" role="tabpanel" aria-labelledby="pills-licensing-tab">
                                         <div class="p-4 serviceModule-detail m-5">
                                             <p class="INS_letter_set_para pb-3 mb-3">${category.value[0].category.description}</p>
                                             <div id="serviceModule" class="serviceModule serviceModule_list mr-5">
@@ -121,7 +118,7 @@
             <div class="tab-content desktop_services services-container-tabcontent" id="pills-tabContent">
                 <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
                     <c:if test="${category.key=='Licensing Services'}">
-                        <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5" id="licensing-service" role="tabpanel" aria-labelledby="pills-licensing-tab">
+                        <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5 m-auto" id="licensing-service" role="tabpanel" aria-labelledby="pills-licensing-tab">
                             <div class="p-4 serviceModule-detail m-5">
                                 <p class="INS_letter_set_para pb-3 mb-3">${category.value[0].category.description}</p>
                                 <c:forEach items="${category.value}" var="service">
@@ -148,7 +145,7 @@
                     </c:if>
                 </c:forEach>
                 <!-- <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">                 -->
-                    <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5" id="govt-service" role="tabpanel" aria-labelledby="pills-govt-tab">
+                    <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5 m-auto" id="govt-service" role="tabpanel" aria-labelledby="pills-govt-tab">
                         <div class="p-4 serviceModule-detail m-5">
                             <p class="INS_letter_set_para pb-3 mb-3">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -156,17 +153,17 @@
                         </div>
                         <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
                             <div class="accordion pb-1" id="govtServices">
-                                <div class="card collapsed" data-toggle="collapse" data-target="#collapse-${loop.index}" aria-expanded="true" aria-controls="collapse-${loop.index}">
-                                    <div class="card-header" id="service-heading-${loop.index}">
+                                <div class="card collapsed" data-toggle="collapse" data-target="#collapse-g${loop.index}" aria-expanded="true" aria-controls="collapse-g${loop.index}">
+                                    <div class="card-header" id="service-heading-g${loop.index}">
                                     <h5 class="mb-0">
                                         ${category.key}
                                     </h5>
                                     </div>
-
-                                    <div id="collapse-${loop.index}" class="collapse" aria-labelledby="service-heading-${loop.index}" data-parent="#govtServices">
+                                
+                                    <div id="collapse-g${loop.index}" class="collapse" aria-labelledby="service-heading-g${loop.index}" data-parent="#govtServices">
                                         <div class="card-body serviceModule-detail">
                                             <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
                                                 remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                                                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                             </p>
@@ -196,7 +193,7 @@
                             </div>
                         </c:forEach>
                     </div>
-                    <div class="tab-pane fade service-wrapper show service_tab_pane_show active" id="misa-service" role="tabpanel" aria-labelledby="pills-misa-tab">
+                    <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5 m-auto" id="misa-service" role="tabpanel" aria-labelledby="pills-misa-tab">
                         <div class="p-4 serviceModule-detail m-5">
                             <p class="INS_letter_set_para pb-3 mb-3 ">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -204,17 +201,17 @@
                         </div>
                         <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
                             <div class="accordion pb-1" id="misaServices">
-                                <div class="card collapsed" data-toggle="collapse" data-target="#collapse-${loop.index}" aria-expanded="true" aria-controls="collapse-${loop.index}">
-                                    <div class="card-header" id="service-heading-${loop.index}">
+                                <div class="card collapsed" data-toggle="collapse" data-target="#collapse-m${loop.index}" aria-expanded="true" aria-controls="collapse-m${loop.index}">
+                                    <div class="card-header" id="service-heading-m${loop.index}">
                                     <h5 class="mb-0">
                                         ${category.key}
                                     </h5>
                                     </div>
-
-                                    <div id="collapse-${loop.index}" class="collapse" aria-labelledby="service-heading-${loop.index}" data-parent="#misaServices">
+                                
+                                    <div id="collapse-m${loop.index}" class="collapse" aria-labelledby="service-heading-m${loop.index}" data-parent="#misaServices">
                                         <div class="card-body serviceModule-detail">
                                             <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
                                                 remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                                                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                             </p>

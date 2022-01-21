@@ -44,8 +44,10 @@
 
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
-            <!-- <h1 class="mainSection-headline"><spring:theme code="general.governmentdocuments" /></h1> -->
+        <div class="mainSection-header row service-time">
+           <!-- <h1 class="mainSection-headline">
+                <spring:theme code="general.governmentdocuments" />
+            </h1> -->
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
                     <div class="serviceTime-label">
@@ -73,13 +75,12 @@
     </div>
 </div>
 <div class="mainSection mainSection_dark mainSection_noPadding">
-    <div class="container">
-        <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink"><span
-                class="iconElement iconElement_closeBack">
-                <icon:close />
-            </span>
-            <spring:theme code="govDocs.backToAccountOverview" />
-        </a>
+    <div class="container ">
+        <div class="d-flex row renewal-services w-100">
+            <div class="col-md-3">
+                <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink w-auto"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="govDocs.backToAccountOverview" /></a>
+            </div>
+        </div>
     </div>
 </div>
 <div class="mainSection mainSection_dark mainSection_pdt16">
@@ -206,22 +207,16 @@
             </div>
 
 
-            <div
-                class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding p-0">
-                <button type="reset" class="btn btn-outline btn_bold btn-normal">
-                    Cancel
-                </button>
-                <div class="formCheckBox formCheckBox_belowPanel">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+                <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
-                        <formElement:termsAndConditionsCheckbox event="GOVERNMENT_DOCUMENTS" id="termsAndConditions"
-                            path="termsAndConditionsChecked" containerCssClass="terms-and-condition"
-                            disabled="${disabledTnC}" />
+                        <formElement:termsAndConditionsCheckbox event="GOVERNMENT_DOCUMENTS" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition" disabled="${disabledTnC}" />
                     </div>
                 </div>
+                <button type="reset" class="btn btn_leftIconLink btn_outline">Cancel</button>
+                
                 <ycommerce:testId code="nextButton">
-                    <button type="submit" class="btn btn-bg btn_bold btn-normal">
-                        <spring:theme code="govDocs.nextButton" />
-                    </button>
+                    <button type="submit" class="btn btn-bg btn_bold btn-normal"><spring:theme code="govDocs.nextButton" /></button>
                 </ycommerce:testId>
             </div>
 

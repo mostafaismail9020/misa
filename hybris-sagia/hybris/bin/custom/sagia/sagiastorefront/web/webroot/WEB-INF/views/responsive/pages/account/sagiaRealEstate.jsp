@@ -232,7 +232,7 @@
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                    <div class="contentModule-headline contentModule-headline-service-info">
+                                    <div class="contentModule-headline headline-text">
                                         <icon:info/>
                                         <spring:theme code="realEstateDetails.serviceInfo" text="Service Info: "/>
                                         <span id="reiObjectId"> ${firstElement.objectId}</span>

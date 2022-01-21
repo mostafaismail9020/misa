@@ -273,7 +273,7 @@
                             <div class="contentModule-section" id = "detailedLegalConsultationContent">
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                    <div  class="contentModule-headline contentModule-headline-service-info">
+                                    <div  class="contentModule-headline contentModule-headline-service-info headline-text">
                                     <span class="iconElement iconElement_info"><icon:info/></span>
                                     <span id= "currentID">${latestLegalConsultation.srId}</span>
                                     <span style="display: none;" id= "currentGUID">${latestLegalConsultation.srGuid}</span>

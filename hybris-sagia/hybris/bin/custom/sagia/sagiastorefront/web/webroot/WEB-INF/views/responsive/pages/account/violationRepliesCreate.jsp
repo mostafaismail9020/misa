@@ -42,10 +42,10 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark">
+<!-- <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
-            <!-- <h1 class="mainSection-headline"><spring:theme code="text.account.followup.violationReplies"/></h1> -->
+            <h1 class="mainSection-headline"><spring:theme code="text.account.followup.violationReplies"/></h1>
             <div>
                 <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="${formName}"
@@ -58,10 +58,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
-<div class="mainSection mainSection_dark mainSection_noPadding">
+<div class="container mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <a href="./" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme
@@ -71,8 +71,8 @@
 </div>
 
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
-    <div class="container">
+<div class="container mainSection mainSection_dark mainSection_pdt16">
+    <div class="">
 
         <form:form action="" id="${formName}" class="js-followup-form" modelAttribute="violationReplyForm">
           <input type="hidden" id="serviceId"/>
@@ -80,7 +80,7 @@
                 <div class="contentModule">
                     <div class="contentModule-section">
                         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                            <div class="contentModule-headline">
+                            <div class="contentModule-headline headline-text">
                                 <span class="iconElement iconElement_info"><icon:info/></span>
                                 <spring:theme code="text.account.followup.info"/>
                             </div>
@@ -119,7 +119,7 @@
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
                         <div class="contentModule-actions contentModule-actions_spaceBetween">
-                            <div class="contentModule-headline">
+                            <div class="contentModule-headline headline-text">
                                 <span class="iconElement iconElement_loading"><icon:loading/></span>
                                 <spring:theme code="violation.violationstatus"/>
                             </div>
@@ -170,7 +170,7 @@
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
                         <div class="contentModule-actions contentModule-actions_spaceBetween">
-                            <div class="contentModule-headline">
+                            <div class="contentModule-headline headline-text">
                                 <span class="iconElement iconElement_chat"><icon:chat/></span>
                                 <spring:theme code="text.account.followup.comments"/>
                             </div>
@@ -194,7 +194,7 @@
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
                         <div class="contentModule-actions contentModule-actions_spaceBetween">
-                            <div class="contentModule-headline">
+                            <div class="contentModule-headline headline-text">
                                 <icon:documents/>
                                 <spring:theme code="text.account.followup.supportDocuments"/>
                             </div>
@@ -207,18 +207,18 @@
             </div>
 
 
-            <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
                 <button type="button" class="btn btn-secondary" onclick="window.history.back()">
                     <spring:theme code="general.cancel"/>
+                </button>
+                <button type="submit" class="btn btn-primary js-followup-vr-create">
+                    <spring:theme code="general.submit"/>
                 </button>
                 <div class="formCheckBox formCheckBox_belowPanel">
                     <div class="form-group">
                         <formElement:termsAndConditionsCheckbox event="FOLLOW_UP" id="termsAndConditions" path="termsAndConditionsChecked"/>
                     </div>
-                </div>
-                <button type="submit" class="btn btn-primary js-followup-vr-create">
-                    <spring:theme code="general.submit"/>
-                </button>
+                </div>                
             </div>
         </form:form>
     </div>

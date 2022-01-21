@@ -41,8 +41,8 @@
 
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
-            <!-- <h1 class="mainSection-headline"><spring:theme code="text.account.followup.violationReplies"/></h1> -->
+        <div class="mainSection-header row service-time">
+            <h1 class="mainSection-headline"><spring:theme code="text.account.followup.violationReplies"/></h1>
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
                     <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
@@ -68,7 +68,7 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+<!-- <div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <div>
@@ -78,32 +78,43 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme
-                    code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(replies) > 1}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
-                    <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span>&#x27f6;</span></div>
-                    <div><spring:theme code="text.account.followup.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+            <div class="d-flex row renewal-services w-100">
+                <div class="col-md-3">
+                    <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink m-auto"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme
+                            code="general.backtodashboard"/></a>
+                </div>
+                <div class="col-md-3">
+                    <div class="mainSection-linkActions mainSection-linkActions_right">
+                            <a href="violation-replies/create" class="btn btn_slim js-create-violation-reply">
+                                <spring:theme code="text.account.followup.create"/>
+                            </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <div class="mainSection mainSection_dark mainSection_pdt16">
     <div class="container">
+        <c:if test="${fn:length(replies) > 1}">
+            <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
+                <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span>&#x27f6;</span></div>
+                <div><spring:theme code="text.account.followup.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
+            </button>
+        </c:if>
         <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(replies) > 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_history"><icon:history/></span>
+                                <div class="contentModule-headline headline-text">
+                                    <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                     <spring:theme code="text.account.followup.history"/></div>
                                 <div class="searchInputBox searchInputBox_slim">
                                     <input class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
@@ -140,7 +151,7 @@
                     <div class="contentModule">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline">
+                                <div class="contentModule-headline headline-text">
                                     <icon:info/>
                                     <spring:theme code="text.account.followup.info"/>:&nbsp;${selectedItem.srId}
                                 </div>
@@ -214,7 +225,7 @@
                             </div>
                         </c:if>
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                            <div class="contentModule-headline contentModule-headline_small">
+                            <div class="contentModule-headline contentModule-headline_small headline-text">
                                 <spring:theme code="text.account.followup.attachments"/>
                             </div>
                             <div class="documentModule">
@@ -258,9 +269,9 @@
                 <div class="modal-title js-message"><spring:theme code="text.account.followup.error"/></div>
             </div>
             <div class="modal-body modal-body-center">
-                <div class="modal-heroImage image-medium">
+                <!-- <div class="modal-heroImage image-medium">
                     <icon:status-cancelled/>
-                </div>
+                </div> -->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn_slim" data-dismiss="modal"><spring:theme code="text.account.followup.close"/></button>

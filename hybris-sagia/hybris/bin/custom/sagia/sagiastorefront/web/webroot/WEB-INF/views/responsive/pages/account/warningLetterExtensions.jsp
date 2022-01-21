@@ -38,7 +38,7 @@
 
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
+        <div class="mainSection-header row service-time">
             <h1 class="mainSection-headline"><spring:theme code="warningletter.extension"/></h1>
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
@@ -65,38 +65,40 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
-    <div class="container">
-        <div class="mainSection-linkActions mainSection-linkActions_right">
-            <a href="warning-letters/create" type="submit" class="btn btn_slim js-create-warning-letter">
-                <spring:theme code="text.account.followup.create"/>
-            </a>
-        </div>
-    </div>
-</div>
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(warningLetters) > 1}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
-                    <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span>&#x27f6;</span></div>
-                    <div><spring:theme code="text.account.followup.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+            <div class="d-flex row renewal-services w-100">
+                <div class="col-md-3">
+                    <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
+                </div>
+                <div class="col-md-3">
+                    <div class="mainSection-linkActions mainSection-linkActions_right">
+                        <a href="warning-letters/create" type="submit" class="btn btn_slim js-create-warning-letter">
+                            <spring:theme code="text.account.followup.create"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <div class="mainSection mainSection_dark mainSection_pdt16">
     <div class="container">
+    <c:if test="${fn:length(warningLetters) > 1}">
+            <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
+                <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span>&#x27f6;</span></div>
+                <div><spring:theme code="text.account.followup.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
+            </button>
+        </c:if>
         <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(warningLetters) > 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
+                                <div class="contentModule-headline headline-text">
                                     <span class="iconElement iconElement_history"><icon:history/></span>
                                     <spring:theme code="text.account.followup.history"/>
                                 </div>
@@ -133,7 +135,7 @@
                     <div class="contentModule">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline">
+                                <div class="contentModule-headline headline-text">
                                     <icon:info/>
                                     <spring:theme code="text.account.followup.info"/>: ${selectedItem.srId}
                                 </div>
@@ -221,7 +223,7 @@
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
 
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                <div class="contentModule-headline contentModule-headline_bordered">
+                                <div class="contentModule-headline contentModule-headline_bordered headline-text">
                                     <icon:documents/>
                                     <spring:theme code="text.account.followup.supportDocuments"/>
                                 </div>

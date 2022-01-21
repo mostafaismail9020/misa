@@ -19,24 +19,7 @@
 <%--@elvariable id="profilePicture" type="java.lang.String"--%>
 <%--@elvariable id="user" type="de.hybris.platform.commercefacades.user.data.CustomerData"--%>
 
-<section class="mainSection_grey mainSection_noPadding">
-    
-    <div class="row">
-        <div class="col-12 owl-slider">
-            <div class="owl-carousel owl-theme" id="dashboard-carousel">
-                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image1.jpg"></div>
-                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image2.jpg"></div>
-                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image3.jpg"></div>
-                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image4.jpg"></div>
-                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image5.jpg"></div>
-            </div>
-        </div>
-    </div>
-  
 
-    
-    
-    
     <div class="mainSection_grey mainSection_noPadding">
         <div class="container">
             <div class="dashboardUser-wrapper col-12 dashboard-login">
@@ -148,7 +131,7 @@
             </div>
         </div>
     </div>
-</section>
+
 
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">

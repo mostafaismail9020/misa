@@ -15,6 +15,8 @@
 <cms:pageSlot position="TopHeader" var="component" element="div">
     <cms:component component="${component}"/>
 </cms:pageSlot>
+
+
 <c:url value="/dashboard" var="dashboardUrl"/>
 <c:url value="/dashboard-without-license" var="dashboardWithoutLicenceUrl"/>
 

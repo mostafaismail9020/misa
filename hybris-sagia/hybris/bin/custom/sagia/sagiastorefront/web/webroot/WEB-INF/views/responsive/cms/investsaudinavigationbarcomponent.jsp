@@ -4,7 +4,12 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<c:url value="false" var="userLoggedIn"/>
+<sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
+    <c:url value="true" var="userLoggedIn"/>
+</sec:authorize>
 
 <c:if test="${component.visible}">
 	<c:set var="pageLabel" value="${cmsPage.itemtype eq 'ContentPage' ? cmsPage.label : ''}" />
@@ -24,9 +29,20 @@
 						<label class="btn lang-btn" onclick="LanguageToggle('ar')"><input type="radio" name="options" id="option2" autocomplete="off"><img src="${commonResourcePath}/images/ar_text.png"/></label>
 					</span>
 				</a>
-				<a href="/en/investsaudi-login" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.login.label"/></span></a>
-				<a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
-				<a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+				<c:choose>
+				<c:when test="${userLoggedIn}">
+				      <a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"
+                           class="sagiaNavigation-btn sagiaNavigation-user"><icon:person_stroke/></a>
+                           <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="sagiaNavigation-btn sagiaNavigation-logout">Logout</a>
+				      <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
+				      <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+				</c:when>
+				<c:otherwise>
+				      <a href="/en/investsaudi-login" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.login.label"/></span></a>
+				      <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
+				      <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+			    </c:otherwise>
+				</c:choose>
 			</div>
 		</div>
 	</div>
@@ -40,6 +56,31 @@
 			</div>
 			<nav class="nav-menu d-none d-lg-block ">
 				<ul>
+				    <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" title=""><spring:theme code="portal.header.dashboard"/></a>
+					<ul class="dropdown-menu dropdown-large ">
+					     <div class="row g-3">
+										<div class="col-5 menu-img-item">
+											<img class="img-fluid w-100" src="${commonResourcePath}/images/B2C/background1.jpg" alt="">
+											<p>Text  for MY DASHBOARD Page</p>
+										</div>
+							            <div class="col-4 sub-items">
+							            <li>
+							            <c:if test="${hasLicense}">
+							            <a class="dropdown-item get_submenus" href="/dashboard" 
+																	title="My Dashboard"><spring:theme code="portal.header.mydashboard"/></a>
+									    </c:if>
+									    <c:if test="${!hasLicense}">
+									    <a class="dropdown-item get_submenus" href="/dashboard-without-license" 
+																	title="My Dashboard"><spring:theme code="portal.header.mydashboard"/></a>
+										</c:if>
+										</li>
+							            </div>
+						</div>
+						</ul>
+					</li>
+					</sec:authorize>
 					<c:forEach items="${component.navigationNode.children}" var="childLevel1" varStatus="childLevel1index">
 						<!-- <li class="nav-item dropdown"> -->
 						<%-- <c:choose>
@@ -118,3 +159,27 @@
 		</div>
 	</header>
 </c:if>
+
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
+        <div class="modal-content">
+            <form action="" class="js-formInputFileBox">
+                <div class="modal-header modal-header_smallPDB">
+                    <div class="modal-title"><spring:message code="text.logout.title"/></div>
+                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                        <icon:close/>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-description modal-description_largeMargin modal-description_smallText">
+                        <spring:message code="text.logout.description"/>
+                    </div>
+                </div>
+               <div class="modal-footer modal-footer_spaceBetween">
+                    <button type="button" class="btn btn-ctrl btn-warning noButton btn-outline p-0" data-dismiss="modal"><spring:message code="text.logout.no"/></button>
+                    <button type="button" class="btn btn-ctrl btn-bg p-0 yesButton"><spring:message code="text.logout.yes"/></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -27,7 +27,7 @@
 
 <c:set var="pageIsDashboard" value="${fn:containsIgnoreCase(requestScope['javax.servlet.forward.request_uri'], 'dashboard')}"/>
 
-<section class="mainSection_grey mainSection_noPadding">
+<%-- <section class="mainSection_grey mainSection_noPadding">
     <!-- <form:form id="bannerUploadForm" action="dashboard/update-dashboardPic" method="post" enctype="multipart/form-data">
         <input id="file" name="file" class="form-control js-inputFile dashboardBannerUpload" type="file" value="" accept="image/jpeg,application/pdf" style="display: none;">
             <c:choose>
@@ -70,7 +70,7 @@
         </div>
     </div>
  
-</section>
+</section> --%>
 
 
 

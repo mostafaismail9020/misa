@@ -436,6 +436,19 @@
 			</targetElement>
 		</relation>	
 		<!-- Invest Saudi Changes Ends  -->	
+		
+		<!-- Sagia Dashboard Changes Starts  -->
+		<relation code="SagiaDashboardBannerCarousel" generate="true" localized="false" autocreate="true">
+			<deployment table="BannersForSagiaDashboard" typecode="30215" />
+			<sourceElement qualifier="carouselBanners" type="SagiaDashboardBannerCarouselComponent" cardinality="many">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</sourceElement>
+			<targetElement qualifier="bannerImage" type="Media" cardinality="many" collectiontype="list" ordered="true">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</targetElement>
+		</relation>
+		<!-- Sagia Dashboard Changes Ends  -->
+		
 	</relations>
 	
 
@@ -1609,6 +1622,11 @@
                       autocreate="true" generate="true" extends="SimpleCMSComponent"
                       jaloclass="com.sap.ibso.eservices.core.jalo.SagiaRealTimeOnlineSupportComponent">
                 <description>Sagia Real Time Online Support Component</description>
+            </itemtype>
+			<itemtype code="SagiaDashboardBannerCarouselComponent"
+                      autocreate="true" generate="true" extends="SimpleCMSComponent"
+                      jaloclass="com.sap.ibso.eservices.core.jalo.SagiaDashboardBannerCarouselComponent">
+                <description>Sagia Dashboard Banner Carousel Component</description>
             </itemtype>
             <itemtype code="SagiaCommerceIndustryService" extends="SagiaService"
                       jaloclass="com.sap.ibso.eservices.core.jalo.SagiaCommerceIndustryService">

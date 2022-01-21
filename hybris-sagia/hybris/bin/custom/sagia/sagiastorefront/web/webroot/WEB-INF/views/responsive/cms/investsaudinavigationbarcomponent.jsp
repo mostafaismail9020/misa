@@ -23,18 +23,17 @@
 				 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr"> A-</span>
 				 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
 				<a href="#" class="skype">
-					<span class="btn-group btn-group-toggle btn-trans" data-toggle="buttons">
+					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
 						<!-- <label class="btn lang-btn lang-en active"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label> -->
-						<label class="btn lang-btn lang-en active" onclick="LanguageToggle('en')"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label>
-						<label class="btn lang-btn" onclick="LanguageToggle('ar')"><input type="radio" name="options" id="option2" autocomplete="off"><img src="${commonResourcePath}/images/ar_text.png"/></label>
+						<label class="lang-btn lang-en active mr-3" onclick="LanguageToggle('en')">EN</label>
+						<label class="lang-btn" onclick="LanguageToggle('ar')"><img src="${commonResourcePath}/images/ar_text.png"/></label>
 					</span>
 				</a>
 				<c:choose>
 				<c:when test="${userLoggedIn}">
-				      <a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"
-                           class="sagiaNavigation-btn sagiaNavigation-user"><icon:person_stroke/></a>
-                           <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="sagiaNavigation-btn sagiaNavigation-logout">Logout</a>
-				      <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
+				      <a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user"><img class="pr-3" src="${commonResourcePath}/images/User-icon.svg" /><span>${user.name}</span></a>
+                      <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout"><span>Logout</span></a>
+				      <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
 				      <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
 				</c:when>
 				<c:otherwise>

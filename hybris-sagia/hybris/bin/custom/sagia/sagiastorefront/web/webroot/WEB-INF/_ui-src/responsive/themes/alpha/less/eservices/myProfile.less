@@ -1460,6 +1460,144 @@ button:focus {
 .formRadioButton .form-control:checked+.control-label span:before {
     background: #00A6BE !important;
 }
+.page-license-apply .panelTabs-navigation {
+    display: flex !important;
+}
+
+[dir] .contentModule-headline {
+    font-size: 20px;
+    width: 27% !important;
+    text-transform: capitalize;
+    text-align: center !important;
+    background-color: #bf9b2e !important;
+}
+
+#licenseTypeSection .btn:hover:not([disabled]) {
+    color: #707070 !important;
+    background-color: transparent !important;
+}
+
+.panelTabs-content {
+    max-width: 960px !important;
+}
+
+#businessActivitiesModal .baModule-search .searchInputBox:before {
+    background-repeat: no-repeat !important;
+}
+
+#businessActivitiesModal .baModule-header .searchInputBox {
+    border: 1px solid #707070;
+}
+
+#businessActivitiesModal .baModule-header ::placeholder {
+    color: #707070;
+    font-size: 20px;
+}
+
+#businessActivitiesModal .baBreadcrumb-link:after {
+    top: 10px;
+}
+
+#businessActivitiesModal #nextButton:hover {
+    color: #00a6be !important;
+    background: transparent !important;
+}
+
+#businessActivitiesModal .contentModule-headline {
+    width: 100% !important;
+    text-align: left !important;
+    background-color: transparent !important;
+}
+
+#businessActivitiesTable .tableModule-head th {
+    font-size: 20px;
+    font-weight: 600;
+    color: #707070;
+    background-color: transparent;
+}
+
+#businessActivitiesTable .tableModule-head,
+#businessActivitiesTable .tableModule-body {
+    border-bottom: 1px solid #cacaca;
+}
+
+#businessActivitiesTable .tableModule-head {
+    border: none;
+    background-color: transparent;
+}
+
+#shareholderQM1TableSection .tableModule-head th {
+    font-weight: 600;
+    color: #707070;
+    background-color: transparent;
+}
+
+#reviewShareholdersSection .tableModule-head th {
+    font-size: 20px;
+    font-weight: 600;
+    color: #707070;
+    background: #F7F7F7;
+    border: 1px solid #EDEDED;
+}
+
+#shareholderType .btn .icon-ele svg path {
+    fill: none;
+}
+
+#delegateSectionQuestion #PersonDelegateYESLable,
+#delegateSectionQuestion #OrganizationDelegateYESLable {
+    padding-top: 0;
+}
+
+#addShareholderQM1NewPersonSection #shareholderTitle .formRadioBox-label,
+#contactPersonQM1 #qm1Title .formRadioBox-label {
+    font-size: 20px;
+    top: -15px;
+    color: #707070;
+    text-transform: capitalize;
+}
+
+#reviewContent .contentModule-actions .contentModule-headline,
+#reviewShareholdersSection .contentModule-actions .contentModule-headline,
+#reviewContactQeemah1Section .contentModule-actions .contentModule-headline,
+#reviewContactQeemah2Section .contentModule-actions .contentModule-headline {
+    max-width: 30%;
+}
+
+[dir] .formInputFile .form-control[type=file]:active+.form-control[type=text],
+[dir] .formInputFile .form-control[type=file]:focus+.form-control[type=text] {
+    border-color: #00A6BE !important;
+}
+
+[dir=ltr] .formInputFile .form-control+.control-label {
+    font-size: 18px;
+    color: #707070;
+    margin-left: 15px;
+}
+
+[dir] .globalMessage-holder .globalMessage .globalMessage-action .btn {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px 15px !important;
+}
+
+[dir=ltr] .tooltip-listItem-header {
+    font-size: 16px;
+    color: #707070;
+}
+
+[dir=ltr] .tooltip-listItem-header .tooltip-listItem-trigger {
+    width: 100%;
+    text-align: right;
+}
+
+[dir=ltr] .formSelectBox .control-label,
+[dir=ltr] .formSelectBox .select2.select2-container--disabled+.control-label,
+[dir=ltr] .formInputFile .form-control+.control-label {
+    width: 75%;
+}
+
 
 @media (max-width: 575px) {
     .page-sagia-profile .contentModule-actions_insideSection {
@@ -1587,6 +1725,26 @@ button:focus {
     #addShareholderQM1NewOrganizationSection .addButton {
         width: auto !important;
     }
+    [dir=ltr] .baModule-headline span {
+        margin-left: 0;
+    }
+    .page-license-apply .panelTabs-navigation {
+        display: none !important;
+    }
+    [dir] .contentModule-headline {
+        width: 100% !important;
+    }
+    [dir] .modal-dialog_businessActivities .modal-footer {
+        padding: 15px 5px !important;
+    }
+    .contentModule-actions #reviewBackButton,
+    .contentModule-actions #reviewCancelButton {
+        width: 159px !important;
+    }
+    #addShareholderQM1NewPersonSection #shareholderTitle .formRadioBox-label,
+    #contactPersonQM1 #qm1Title .formRadioBox-label {
+        top: -8px;
+    }
 }
 
 @media (min-width: 768px) and (max-width:991px) {
@@ -1661,6 +1819,10 @@ button:focus {
         padding-left: 0;
         padding-right: 0;
     }
+    .contentModule-actions .addExistingButton,
+    .contentModule-actions .addNewButton {
+        padding: 9px 24px 7px;
+    }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
@@ -1684,3 +1846,4 @@ button:focus {
         top: -30px;
     }
 }
+

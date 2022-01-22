@@ -64,18 +64,32 @@
 		</c:if>
 		
 		<c:if test="${not empty productData.partnerMap}">
-			<c:forEach var="partnerMap" items="${productData.partnerMap}">
-				<c:if test="${partnerMap.value.size() gt 0}">
-					<div class=""><h5>${partnerMap.key}</h5></div>
-					<c:forEach var="partnerLogo" items="${partnerMap.value}">
-						<img class="sector-item-icon" src="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
-								data-norm="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
-								data-alt="${fn:escapeXml(partnerLogo.companyLogo.url)}" alt=""/>
-						<h5><a href="${partnerLogo.companyWebsite}" target="_blank"><c:out value="${partnerLogo.companyWebsite}"/></a></h5>
-					</c:forEach>
-				</c:if>
-				</br></br>
-			</c:forEach>
+			<div class="Inc-sector-panel">
+				<div class="container py-5">
+						<div class="">
+						<c:forEach var="partnerMap" items="${productData.partnerMap}">
+							<c:if test="${partnerMap.value.size() gt 0}">
+								<div class="mt-5">
+									<h1 class="clr_gld text-center text-uppercase pb-3">${partnerMap.key}</h1>
+									<div class="d-flex justify-content-center">
+										<c:forEach var="partnerLogo" items="${partnerMap.value}">
+											<div class="col-4">
+												<div class="product-card text-center">
+													<img class="sector-item-icon pb-3" src="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
+													data-norm="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
+													data-alt="${fn:escapeXml(partnerLogo.companyLogo.url)}" alt=""/>
+													<a href="${partnerLogo.companyWebsite}" target="_blank">know more - visit website
+													</a>
+												</div>
+											</div>
+										</c:forEach>
+									</div>
+								</div>
+							</c:if>
+						</c:forEach>
+					</div>
+				</div>
+			</div>
 		</c:if>
 				
 		<div class="Inc-sector-panel">

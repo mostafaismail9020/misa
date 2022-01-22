@@ -67,6 +67,22 @@
 
 <h5> ZOOS DEVELOPMENT </h5>
 
+</br>
+
+<h5> Comments </h5>
+
+<button onclick="commentTextArea()">Add a new comment</button>
+
+<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
+
+</br>
+<form:form action="${ticketId}" modelAttribute="contactTicketForm">
+  <input type="text" name="comment" />
+  <button type="button">Cancel</button>
+  <input type="submit" value="Submit" />
+</form:form>
+
+
 <div class="container service-wrapper service-wrapper-info">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">

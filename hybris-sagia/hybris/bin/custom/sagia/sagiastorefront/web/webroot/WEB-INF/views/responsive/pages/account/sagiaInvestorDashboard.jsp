@@ -309,7 +309,7 @@
                                                 </button>
                                             </div>
                                                 <div class="tableModule-headline">
-                                                    <a href="" data-redirect="payments-overview" class="js-page-redirect">
+                                                    <a href="" data-redirect="payments-overview" class="btn-dashboard btn-view-all js-page-redirect">
                                                         <spring:theme code="dashboard.viewall" text="View all"/>
                                                     </a>
                                                 </div>
@@ -681,7 +681,7 @@
                                             </button>
                                         </div>
                                             <div class="tableModule-headline">
-                                                <a href="" data-redirect="payments-overview" class="js-page-redirect">
+                                                <a href="" data-redirect="payments-overview" class="btn-dashboard js-page-redirect">
                                                     <spring:theme code="dashboard.viewall" text="View all"/>
                                                 </a>
                                             </div>
@@ -696,7 +696,7 @@
                         <div class="dashboardWidget js-dashboardWidget">
                             <div class="dashboardWidget-headline js-dashboardWidget-headline">
                                 <span>
-                                    <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"
+                                    <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="btn-dashboard js-page-redirect"
                                        style="text-decoration: inherit;color: inherit">
                                     <spring:theme code="dashboard.ticket.yourtickets"/>
                                     </a>
@@ -753,7 +753,7 @@
                                         </div>
                                         <c:if test="${pageIsDashboard}">
                                             <div class="tableModule-headline">
-                                                <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect">
+                                                <a  href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="btn-dashboard js-page-redirect ">
                                                     <spring:theme code="dashboard.viewall" text="View all"/>
                                                 </a>
                                             </div>
@@ -790,11 +790,14 @@
             <div class="dashboardWidgetPayments-status-icon"><icon:status-complete/></div>
         </td>
         <td>
-            <div class="dashboardWidgetPayments-amount"></div>
-            <div class="dashboardWidgetPayments-currency"></div>
+            <div class="d-flex">
+                <span class="dashboardWidgetPayments-amount mr-1"></span>
+                <span class="dashboardWidgetPayments-currency"></span>
+            </div>
+            
         </td>
         <td>
-            <div class="dashboardWidgetPayments-pay">
+            <div class="dashboardWidgetPayments-pay payment-link">
             	<a onclick="" class="" style=""></a>
             </div>
         </td>

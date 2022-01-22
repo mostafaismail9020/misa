@@ -79,7 +79,7 @@
     </div>
 </div> -->
 
-    <div class="mainSection mainSection mainSection_noPaddingBottom mt-5">
+    <div class="mainSection mainSection mainSection_noPaddingBottom mt-5  pb-5">
         <!-- Appointment Overview -->
         <div class="container">
             <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">

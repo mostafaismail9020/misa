@@ -296,7 +296,8 @@
                                             </c:if>
                                             <div class="paginationModule-wrapper">
                                                 <button class="paginationModule-control paginationModule-control_left" disabled>
-                                                    <icon:arrow_green_right/>
+                                                    <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
+                                                    <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;">
                                                 </button>
                                                 <div class="paginationModule-items">
                                                     <div class="loadingModule">
@@ -305,7 +306,7 @@
                                                     </div>
                                                 </div>
                                                 <button class="paginationModule-control paginationModule-control_right">
-                                                    <icon:arrow_green_right/>
+                                                    <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive" id="ss_right_arrow">
                                                 </button>
                                             </div>
                                                 <div class="tableModule-headline">

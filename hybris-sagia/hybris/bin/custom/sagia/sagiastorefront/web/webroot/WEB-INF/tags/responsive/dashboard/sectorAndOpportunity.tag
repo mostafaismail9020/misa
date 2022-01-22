@@ -110,7 +110,7 @@
 <section class="Inc-energyoppertunities mt-5">
     <div class="container">
         <div class="Inc-title-header d-flex">
-            <h1 class="Inc-secdetil-enop-header text-uppercase clr_gld">
+            <h1 class="Inc-secdetil-enop-header text-uppercase clr_gld col-10">
             	<c:if test="${language eq 'en'}">
             		${customerSectorCategory.name}&nbsp;<spring:theme code="portal.sector.opportunity.label"/>
             	</c:if>
@@ -118,13 +118,13 @@
             		<spring:theme code="portal.sector.featured.opportunity.label"/>&nbsp;${customerSectorCategory.name}
             	</c:if>
             </h1>
-            <button  class="btn-dashboard responsive-btn-sector">
+            <button  class="btn-dashboard responsive-btn-sector col-2">
             	<c:if test="${empty featuredOpportunities}">
-            		<a href="${encodedContextPath}/sectors-opportunities/opportunities">Explore all&nbsp;
+            		<a class="text-white" href="${encodedContextPath}/sectors-opportunities/opportunities">Explore all&nbsp;
             		<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
             	</c:if>
             	<c:if test="${not empty featuredOpportunities}">
-            		<a href="${encodedContextPath}/sectors-opportunities/${customerSectorCategory.code}">Explore all&nbsp;
+            		<a class="text-white" href="${encodedContextPath}/sectors-opportunities/${customerSectorCategory.code}">Explore all&nbsp;
             		<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
             	</c:if>
             	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">

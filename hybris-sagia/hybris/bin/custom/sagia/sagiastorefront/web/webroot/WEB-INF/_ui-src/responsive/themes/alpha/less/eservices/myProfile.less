@@ -1110,7 +1110,6 @@ button:focus {
 }
 
 .page-sagia-profile .formInputBox .control-label {
-    left: 0;
     padding-left: 20px;
 }
 
@@ -1664,7 +1663,82 @@ button:focus {
     top: 10px;
 }
 
+.js-myAccount-edit .js-myAccount-edit-text {
+    font-size: 20px;
+}
+
+.js-myAccount-edit .js-myAccount-edit-text span {
+    padding-top: 4px;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.myAccount-profilImage {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.page-sagia-profile .myAccount-profilImage-change {
+    line-height: 15px;
+}
+
+.page-sagia-profile #sagiaProfilePersonalForm .formSelectBox {
+    padding-bottom: 30px;
+}
+
+.page-sagia-profile .formInputBox .control-label {
+    padding-left: 40px !important;
+}
+
+.page-sagia-profile #sagiaProfilePersonalForm .select2-container .select2-selection--single .select2-selection__rendered {
+    top: 0;
+}
+
+.page-sagia-profile #sagiaProfilePersonalForm .formSelectBox .select2.select2-container.select2-container--disabled.select2Container_selected+.control-label {
+    left: 20px !important;
+}
+
+.page-sagia-profile .formSelectBox .form-group .select2-container--disabled {
+    margin-top: 0 !important;
+}
+
+.myAccount-profilImage-change {
+    width: 48.8% !important;
+}
+
+.page-sagia-profile #sagiaProfilePersonalForm .formInputBox .control-label {
+    top: -35px;
+}
+
+.page-sagia-profile .formSelectBox .form-group .select2.select2-container.select2Container_selected+.control-label {
+    top: -20px !important;
+}
+
+[dir] .select2.select2-container .select2-selection:after {
+    top: 3px;
+}
+
+.page-sagia-profile #companyTabData .dlList dt,
+.page-sagia-profile #myProfileTabData .dlList dt {
+    padding-bottom: 0;
+}
+
+.page-sagia-profile #sagiaProfilePersonalForm .error {
+    float: none;
+    padding-left: 30px;
+    margin-left: 0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 575px) {
+    .page-sagia-profile #myProfileTabData .contentModule-actions .profile-settings {
+        max-width: 100% !important;
+    }
+    .page-sagia-profile #sagiaProfilePersonalForm .formInputBox .control-label{
+        top:-25px;
+    }
+
     .page-sagia-profile .contentModule-actions_insideSection {
         justify-content: center !important;
     }
@@ -1813,6 +1887,13 @@ button:focus {
 }
 
 @media (min-width: 768px) and (max-width:991px) {
+    .page-sagia-profile #sagiaProfilePersonalForm .select2-container .select2-selection--single .select2-selection__rendered{
+        width: 75% !important;
+        overflow: hidden;
+    }
+    .page-sagia-profile  #myProfileTabData .contentModule-actions .profile-settings {
+        max-width: 30% !important;
+    }
     .page-sagia-profile .myAccount-profilImage-change {
         width: 100% !important;
     }

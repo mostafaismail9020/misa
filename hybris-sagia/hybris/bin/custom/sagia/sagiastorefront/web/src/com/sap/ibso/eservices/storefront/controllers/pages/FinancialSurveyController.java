@@ -61,6 +61,7 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     private static final String ENTITY_NAME = "AmendHeaders";
     private static final Integer BATCH_SIZE_FOR_PRODUCTS_SEARCH = 100;
     private static final String SAGIA_FINANCIAL_SURVEY_DRAFT = "FSURVEY_";
+    private static final String MAX_FILE_IN_MB = "2";
     private static final String PDF = "pdf";
 
     @Resource(name = "averageProcessingTimeFacade")
@@ -98,7 +99,8 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
 
         model.addAttribute("controllerUrl", "/my-sagia/financial-survey");
         SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SERVICE_ID);
-        model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
+       // model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
+        model.addAttribute("maxUploadSize", MAX_FILE_IN_MB);
         model.addAttribute("financialStatementForm", new FinancialStatementForm());
 
         if (request.getRequestURI().contains("display")) {

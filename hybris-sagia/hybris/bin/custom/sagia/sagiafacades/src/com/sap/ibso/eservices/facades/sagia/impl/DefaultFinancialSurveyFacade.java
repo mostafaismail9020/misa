@@ -163,7 +163,7 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
             financialSurveyData.setStatusKey("Open");
             financialSurveyData.setQuarter(financialSurveyModel.getQuarter().getName());
             financialSurveyData.setQuarterCode(financialSurveyModel.getQuarter().getCode());
-           // financialSurveyData.setLastUpdate(financialSurveyModel.getModifiedtime());
+            // financialSurveyData.setLastUpdate(financialSurveyModel.getModifiedtime());
             financialSurveyDataList.add(financialSurveyData);
         }
         return financialSurveyDataList;
@@ -259,7 +259,7 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
                     break;
 
                 case PREMIUMRESIDENT:
-                	premiumResident.add(getListItem(data));
+                    premiumResident.add(getListItem(data));
                     break;
 
                 case UNIT:
@@ -291,8 +291,17 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         cities.sort(Comparator.comparing(SubListItem::getName));
         listItemsResult.setCities(cities);
 
-        branchTypes.sort(Comparator.comparing(ListItem::getName));
-        listItemsResult.setBranchTypes(branchTypes);
+        List<ListItem> custombranchTypes = new ArrayList<>();
+        ListItem listItem =  new ListItem() ;
+        listItem.setId("head_office");
+        listItem.setName(getLocalizedValue("type.head.office"));
+
+        ListItem listItem2 =  new ListItem() ;
+        listItem2.setId("branch");
+        listItem2.setName(getLocalizedValue("type.branch"));
+        custombranchTypes.add(listItem );
+        custombranchTypes.add(listItem2 );
+        listItemsResult.setBranchTypes(custombranchTypes);
 
         gender.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setGender(gender);

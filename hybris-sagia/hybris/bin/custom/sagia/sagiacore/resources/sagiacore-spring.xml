@@ -314,6 +314,13 @@
     <bean id="contactUpdateEmailProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
         <property name="resource" value="classpath:/sagiacore/processes/updateContactEmailProcess.xml"/>
     </bean>
+    <bean id="sendNewFinancialSurveyEmailProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+        <property name="resource" value="classpath:/sagiacore/processes/sendNewFinancialSurveyEmailProcess.xml"/>
+    </bean>
+
+    <bean id="generateNewFinancialSurveyEmail" parent="abstractGenerateEmailAction">
+        <property name="frontendTemplateName" value="NewFinancialSurveyEmailTemplate"/>
+    </bean>
     <bean id="supportVisitEmailProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
         <property name="resource" value="classpath:/sagiacore/processes/supportVisitEmailGenerationProcess.xml"/>
     </bean>

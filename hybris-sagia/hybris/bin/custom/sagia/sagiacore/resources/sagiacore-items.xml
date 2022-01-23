@@ -10474,6 +10474,20 @@
                 </attributes>
             </itemtype>
 
+            <itemtype code="SagiaNewFinancialSurveyProcess" extends="StoreFrontCustomerProcess"
+                      autocreate="true" generate="true"
+                      jaloclass="de.hybris.platform.commerceservices.jalo.process.SagiaNewFinancialSurveyProcess">
+                <description>publish license store front business process.</description>
+                <attributes>
+                    <attribute qualifier="financialSurvey" type="FinancialSurvey">
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" unique="false" initial="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+
+            </itemtype>
+
 
             <itemtype code="FinancialSurveyQuarter" autocreate="true" generate="true">
                 <description>Financial Survey Quarter</description>

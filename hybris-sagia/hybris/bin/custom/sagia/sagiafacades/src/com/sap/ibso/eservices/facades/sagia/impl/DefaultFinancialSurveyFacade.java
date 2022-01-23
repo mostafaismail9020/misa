@@ -22,6 +22,7 @@ import com.sap.ibso.eservices.sagiaservices.services.impl.GlobalValsService;
 import de.hybris.platform.commercefacades.user.data.CompanyProfileData;
 import de.hybris.platform.commercefacades.user.data.FinancialSurvey;
 import de.hybris.platform.commercefacades.user.data.Messsage;
+import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.servicelayer.i18n.I18NService;
 import org.springframework.context.MessageSource;
 
@@ -163,7 +164,7 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
             financialSurveyData.setStatusKey("Open");
             financialSurveyData.setQuarter(financialSurveyModel.getQuarter().getName());
             financialSurveyData.setQuarterCode(financialSurveyModel.getQuarter().getCode());
-            // financialSurveyData.setLastUpdate(financialSurveyModel.getModifiedtime());
+           // financialSurveyData.setLastUpdate(financialSurveyModel.getModifiedtime());
             financialSurveyDataList.add(financialSurveyData);
         }
         return financialSurveyDataList;
@@ -178,6 +179,13 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
     public void saveFinancialSurveyShareholders(FinancialSurvey financialSurvey) {
         sagiaFinancialSurveyService.saveFinancialSurveyShareholders(financialSurvey);
     }
+
+    @Override
+    public void submitFinancialSurveyForReview(MediaModel mediaModel,String quarterCode) {
+        sagiaFinancialSurveyService.submitFinancialSurveyForReview( mediaModel, quarterCode);
+    }
+
+
 
 
 
@@ -259,7 +267,7 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
                     break;
 
                 case PREMIUMRESIDENT:
-                    premiumResident.add(getListItem(data));
+                	premiumResident.add(getListItem(data));
                     break;
 
                 case UNIT:

@@ -4,6 +4,7 @@ import com.sap.ibso.eservices.facades.data.FinancialSurveyData;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItems;
 import de.hybris.platform.commercefacades.user.data.FinancialSurvey;
 import de.hybris.platform.commercefacades.user.data.Messsage;
+import de.hybris.platform.core.model.media.MediaModel;
 
 import java.util.List;
 
@@ -46,4 +47,6 @@ public interface SagiaFinancialSurveyFacade {
     void saveShareholderEquity(FinancialSurvey financialSurvey);
 
     void saveFinancialSurveyShareholders(FinancialSurvey financialSurvey);
+
+    void submitFinancialSurveyForReview(MediaModel mediaModel, String quarterCode);
 }

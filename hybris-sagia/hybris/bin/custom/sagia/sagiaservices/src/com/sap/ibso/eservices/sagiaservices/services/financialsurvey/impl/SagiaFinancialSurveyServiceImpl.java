@@ -1,6 +1,7 @@
 package com.sap.ibso.eservices.sagiaservices.services.financialsurvey.impl;
 
 import com.sap.ibso.eservices.core.enums.FinancialSurveyCompanyStatus;
+import com.sap.ibso.eservices.core.enums.FinancialSurveyStatus;
 import com.sap.ibso.eservices.core.model.FinancialSurveyAffiliateModel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyBranchModel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
@@ -25,13 +26,19 @@ import com.sap.ibso.eservices.facades.data.license.amendment.Transaction;
 import com.sap.ibso.eservices.sagiaservices.services.financialsurvey.SagiaFinancialSurveyService;
 import de.hybris.platform.commercefacades.user.data.CompanyProfileData;
 import de.hybris.platform.commercefacades.user.data.FinancialSurvey;
+import de.hybris.platform.commerceservices.model.process.SagiaNewFinancialSurveyProcessModel;
 import de.hybris.platform.core.PK;
+import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.security.PrincipalModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserModel;
+import de.hybris.platform.processengine.BusinessProcessService;
 import de.hybris.platform.servicelayer.dto.converter.ConversionException;
+import de.hybris.platform.servicelayer.i18n.CommonI18NService;
 import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.user.UserService;
+import de.hybris.platform.site.BaseSiteService;
+import de.hybris.platform.store.services.BaseStoreService;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -52,6 +59,15 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     private FinancialSurveyQuarterDAO financialSurveyQuarterDAO;
     @Resource
     private SagiaFormatProvider sagiaFormatProvider;
+    @Resource
+    private BusinessProcessService businessProcessService;
+    @Resource
+    private BaseStoreService baseStoreService;
+    @Resource
+    private BaseSiteService baseSiteService;
+    @Resource
+    private CommonI18NService commonI18NService;
+
 
 
 
@@ -315,6 +331,28 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         saveShareholders(financialSurveyData,financialSurveyModel);
         saveAffiliates(financialSurveyData,financialSurveyModel);
 
+    }
+
+
+    @Override
+    public void submitFinancialSurveyForReview(MediaModel mediaModel,String quarterCode) {
+
+        // fetch the FinancialSurvey for the given quarter
+        FinancialSurveyModel financialSurveyModel = getFinancialSurvey(quarterCode);
+        financialSurveyModel.setAnnualFinancialStatementFile(mediaModel);
+        financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.SUBMITTED);
+        modelService.save(financialSurveyModel);
+        final SagiaNewFinancialSurveyProcessModel sagiaNewFinancialSurveyProcess =
+                businessProcessService.createProcess("sendNewFinancialSurveyEmailProcess-"
+                        + financialSurveyModel.getUser().getUid()+"-"+System.currentTimeMillis(),"sendNewFinancialSurveyEmailProcess");
+        sagiaNewFinancialSurveyProcess.setSite(baseSiteService.getCurrentBaseSite());
+        sagiaNewFinancialSurveyProcess.setCustomer(financialSurveyModel.getUser());
+        sagiaNewFinancialSurveyProcess.setLanguage(commonI18NService.getCurrentLanguage());
+        sagiaNewFinancialSurveyProcess.setCurrency(commonI18NService.getCurrentCurrency());
+        sagiaNewFinancialSurveyProcess.setStore(baseStoreService.getCurrentBaseStore());
+        sagiaNewFinancialSurveyProcess.setFinancialSurvey(financialSurveyModel);
+        modelService.save(sagiaNewFinancialSurveyProcess);
+        businessProcessService.startProcess(sagiaNewFinancialSurveyProcess);
     }
 
 

@@ -21061,3 +21061,32 @@ table,th,tr,td{
 		margin-bottom: 10px;
 	}
 }
+
+.page-portal .product-card{
+	background: #fff;
+    cursor: pointer;
+    padding: 45px 20px 50px;
+    -webkit-box-shadow: 0 15px 21px #00000029;
+    box-shadow: 0 15px 21px #00000029;
+    border-radius: 30px;
+}
+.page-portal .product-header{
+	background: #BF9B2E 0% 0% no-repeat padding-box;
+	opacity: 1;
+	padding: 10px 17px;
+	color: #fff;
+	width: max-content;
+}
+.page-portal .product-card a{
+	display: block;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bold;
+    color: #00a6be;
+    text-transform: uppercase;
+	margin-top: 10px;
+}
+.page-portal .product-card a:hover{
+	text-decoration: none;
+	color: #555;
+}

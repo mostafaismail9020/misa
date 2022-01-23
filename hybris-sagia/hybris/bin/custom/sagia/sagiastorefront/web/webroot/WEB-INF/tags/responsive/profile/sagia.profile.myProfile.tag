@@ -15,7 +15,7 @@
         <div class="contentModule">
             <div class="contentModule-section">
                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap mb-0">
-                    <div class="contentModule-headline">
+                    <div class="contentModule-headline profile-settings">
                      <!--  <span class="iconElement iconElement_accountSettings02"><icon:accountSettings02/></span>--><spring:theme code="profile.settings"/>
                     </div>
                     <div>

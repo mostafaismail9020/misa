@@ -67,11 +67,11 @@
 							            <div class="col-4 sub-items">
 							            <li>
 							            <c:if test="${hasLicense}">
-							            <a class="dropdown-item get_submenus" href="/dashboard" 
+							            <a class="dropdown-item get_submenus" href="/dashboard"
 																	title="My Dashboard"><spring:theme code="portal.header.mydashboard"/></a>
 									    </c:if>
 									    <c:if test="${!hasLicense}">
-									    <a class="dropdown-item get_submenus" href="/dashboard-without-license" 
+									    <a class="dropdown-item get_submenus" href="/dashboard-without-license"
 																	title="My Dashboard"><spring:theme code="portal.header.mydashboard"/></a>
 										</c:if>
 										</li>
@@ -88,11 +88,11 @@
 							<li class="nav-item dropdown">
 								<c:choose>
 									<c:when test="${not empty childlevel1link.url}">
-										<a class="nav-link dropdown-toggle" href="${childlevel1link.url}" 
+										<a class="nav-link dropdown-toggle" href="${childlevel1link.url}"
 											data-toggle="dropdown" title="${childLevel1.title}">${childLevel1.title}</a>
 									</c:when>
 									<c:otherwise>
-										<cms:component component="${childlevel1link}" evaluateRestriction="true" element="span" 
+										<cms:component component="${childlevel1link}" evaluateRestriction="true" element="span"
 											class="nav-link dropdown-toggle" />
 									</c:otherwise>
 								</c:choose>
@@ -108,7 +108,7 @@
 													<c:set var="childlevel2link" value="${childLevel2.cmsLink}" />
 													<c:choose>
 														<c:when test="${not empty childlevel2link.url}">
-															<li><a class="dropdown-item get_submenus" href="${childlevel2link.url}" 
+															<li><a class="dropdown-item get_submenus" href="${childlevel2link.url}"
 																	title="${childLevel2.title}">${childLevel2.title}</a>
 																<c:if test="${not empty childLevel2.links}">
 																	<ul class="submenu dropdown-menu get_submenus">
@@ -117,7 +117,7 @@
 																				<c:when test="${not empty childlevel3link.url}">
 																					<li><a class="dropdown-item" href="${childlevel3link.url}">${childlevel3link.linkName}</a></li>
 																				</c:when>
-																				<c:otherwise>                                                                                             
+																				<c:otherwise>
 																					<li><a class="dropdown-item" href="${portal.cmsLinkUrl(childlevel3link)}">${childlevel3link.linkName}</a></li>
 																				</c:otherwise>
 																			</c:choose>
@@ -136,7 +136,7 @@
 																			<c:when test="${not empty childlevel3link.url}">
 																				<li><a class="dropdown-item" href="/${language}${childlevel3link.url}">${childlevel3link.linkName}</a></li>
 																			</c:when>
-																			<c:otherwise>                                                                                             
+																			<c:otherwise>
 																				<li><a class="dropdown-item" href="${portal.cmsLinkUrl(childlevel3link)}">${childlevel3link.linkName}</a></li>
 																			</c:otherwise>
 																		</c:choose>
@@ -153,7 +153,7 @@
 							</ul>
 						</li>
 					</c:forEach>
-				</ul>                                   
+				</ul>
 			</nav>
 		</div>
 	</header>
@@ -182,3 +182,26 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="${commonResourcePath}/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 100) {
+				$('#header').addClass('header-scrolled');
+				$('#topbar').addClass('topbar-scrolled');
+				$('#login-Navigation').addClass('login-scrolled');
+			} else {
+				$('#header').removeClass('header-scrolled');
+				$('#topbar').removeClass('topbar-scrolled');
+				$('#login-Navigation').removeClass('login-scrolled');
+			}
+		});
+
+		if ($(window).scrollTop() > 100) {
+			$('#header').addClass('header-scrolled');
+			$('#topbar').addClass('topbar-scrolled');
+			$('#login-Navigation').addClass('login-scrolled');
+		}
+	});
+</script>

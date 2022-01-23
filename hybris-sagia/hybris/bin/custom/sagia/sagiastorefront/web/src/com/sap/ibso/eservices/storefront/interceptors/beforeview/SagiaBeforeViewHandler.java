@@ -278,7 +278,7 @@ public class SagiaBeforeViewHandler implements BeforeViewHandler {
             }
             case "financial-survey": {
                 javascripts.addAll(Arrays.asList(
-                        "jquery.dataTables.min.js", "sagia.license.amendment.util.js", "sagia.financial.survey.businessActivities.js", "sagia.financial.survey.js", "sagia.financial.survey.shareholder.js", "sagia.financial.survey.affiliate.js", "sagia.financial.survey.branch.js","sagia.financial.survey.subsidiary.js", "sagia.financial.survey.validation.js"));
+                        "jquery.dataTables.min.js", "sagia.license.amendment.util.js", "sagia.financial.survey.businessActivities.js", "sagia.financial.survey.js", "sagia.financial.survey.shareholder.js", "sagia.financial.survey.affiliate.js", "sagia.financial.survey.branch.js","sagia.financial.survey.subsidiary.js", "sagia.financial.survey.validation.js","sagia.financial.survey.attachement.js"));
                 break;
             }
             case "license-replace": {

@@ -350,7 +350,8 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         sagiaNewFinancialSurveyProcess.setLanguage(commonI18NService.getCurrentLanguage());
         sagiaNewFinancialSurveyProcess.setCurrency(commonI18NService.getCurrentCurrency());
         sagiaNewFinancialSurveyProcess.setStore(baseStoreService.getCurrentBaseStore());
-        sagiaNewFinancialSurveyProcess.setFinancialSurvey(financialSurveyModel);
+        sagiaNewFinancialSurveyProcess.setQuarterCode(quarterCode);
+        sagiaNewFinancialSurveyProcess.setQuarterDescription(quarterCode);
         modelService.save(sagiaNewFinancialSurveyProcess);
         businessProcessService.startProcess(sagiaNewFinancialSurveyProcess);
     }

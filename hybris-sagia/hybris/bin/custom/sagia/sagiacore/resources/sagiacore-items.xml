@@ -10479,13 +10479,17 @@
                       jaloclass="de.hybris.platform.commerceservices.jalo.process.SagiaNewFinancialSurveyProcess">
                 <description>publish license store front business process.</description>
                 <attributes>
-                    <attribute qualifier="financialSurvey" type="FinancialSurvey">
+                    <attribute qualifier="quarterCode" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" unique="false" initial="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="quarterDescription" type="java.lang.String">
                         <modifiers read="true" write="true" search="true"
                                    optional="true" unique="false" initial="true"/>
                         <persistence type="property"/>
                     </attribute>
                 </attributes>
-
             </itemtype>
 
 

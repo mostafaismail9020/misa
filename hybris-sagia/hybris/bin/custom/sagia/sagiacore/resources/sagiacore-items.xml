@@ -10480,14 +10480,24 @@
                 <description>publish license store front business process.</description>
                 <attributes>
                     <attribute qualifier="quarterCode" type="java.lang.String">
+                        <persistence type="property">
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <description>quarterCode</description>
                         <modifiers read="true" write="true" search="true"
                                    optional="true" unique="false" initial="true"/>
-                        <persistence type="property"/>
                     </attribute>
                     <attribute qualifier="quarterDescription" type="java.lang.String">
+                        <persistence type="property">
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <description>quarter Description</description>
                         <modifiers read="true" write="true" search="true"
                                    optional="true" unique="false" initial="true"/>
-                        <persistence type="property"/>
                     </attribute>
                 </attributes>
             </itemtype>

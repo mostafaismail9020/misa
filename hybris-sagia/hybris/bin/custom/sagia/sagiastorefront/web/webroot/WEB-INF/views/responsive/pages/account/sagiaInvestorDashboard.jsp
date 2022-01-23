@@ -418,6 +418,27 @@
     </tr>
 </table>
 
+<table class="financialSurveyTemplateWrapper" style="display:none;">
+    <tr>
+        <td id="quarter-id" class="quarter"></td>
+        <td class="lastUpdate"></td>
+        <td><div class="dashboardWidgetTickets-status-open"></div></td>
+        <%--<td>
+            <a href="javascript:void(0)" class="link dashboardWidgetFinancialSurvey-btn"><spring:theme code="dashboard.financialsurveys.completesurvey"/></a>
+        </td>--%>
+
+        <td>
+            <a href="javascript:void(0)" class="link dashboardWidgetFinancialSurveys-btn"><spring:theme code="dashboard.financial.survey.connectWithUs"/></a>
+        </td>
+        <td>
+            <div class="dashboardWidgetFinancialSurvey-btn">
+                <a href="" class="" style=""></a>
+            </div>
+        </td>
+
+    </tr>
+</table>
+
 <div class="statusIcons" style="display: none">
     <div class="ERROR"><icon:status-cancelled/></div>
     <div class="PENDING"><icon:status-open/></div>

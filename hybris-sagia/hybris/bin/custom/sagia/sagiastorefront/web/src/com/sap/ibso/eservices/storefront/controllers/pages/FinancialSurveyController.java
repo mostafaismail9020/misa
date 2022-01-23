@@ -1,5 +1,8 @@
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
+import atg.taglib.json.util.JSONException;
+import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
+import com.sap.ibso.eservices.core.model.SagiaServiceModel;
 import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
 import com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaDraftService;
 import com.sap.ibso.eservices.facades.data.license.amendment.Shareholder;
@@ -10,33 +13,41 @@ import com.sap.ibso.eservices.facades.sagia.SagiaFinancialSurveyFacade;
 import com.sap.ibso.eservices.facades.sagia.SagiaIsicFacade;
 import com.sap.ibso.eservices.facades.sagia.SagiaTermsAndConditionsFacade;
 import com.sap.ibso.eservices.sagiaservices.services.complaints.dto.UpdatableComplaintDetails;
+import com.sap.ibso.eservices.sagiaservices.services.legalconsultation.dto.FinancialStatementForm;
 import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
 import com.sap.ibso.eservices.storefront.forms.validation.SagiaFinancialSurveyValidator;
 import com.sap.ibso.eservices.storefront.interceptors.beforecontroller.LicenseRequired;
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.commercefacades.user.data.FinancialSurvey;
+import de.hybris.platform.core.model.media.MediaModel;
+import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.user.UserService;
+import de.hybris.platform.ticket.service.TicketAttachmentsService;
+import de.hybris.platform.util.localization.Localization;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -73,6 +84,12 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     @Resource(name = "defaultSagiaIsicFacade")
     private SagiaIsicFacade sagiaIsicFacade;
 
+    @Resource(name = "defaultTicketAttachmentsService")
+    private TicketAttachmentsService ticketAttachmentsService;
+
+
+    private static final String SERVICE_ID = "ZS11";
+    private static final String FORM_GLOBAL_ERROR = "form.global.error";
 
     @RequestMapping(value = {"", "/display/{quarterCode}"}, method = RequestMethod.GET)
     @LicenseRequired
@@ -80,9 +97,10 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     public String completeFinancialSurvey(final Model model, final HttpServletRequest request, @PathVariable(name="quarterCode", required = false) String quarterCode) throws CMSItemNotFoundException {
 
         model.addAttribute("controllerUrl", "/my-sagia/financial-survey");
-        //  model.addAttribute("draftExists", sagiaDraftFacade.isJsonDraftExists(SAGIA_FINANCIAL_SURVEY_DRAFT+quarterCode));
-        //SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SAGIA_LICENSE_AMEND);
-        // model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SERVICE_ID);
+        model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
+        model.addAttribute("financialStatementForm", new FinancialStatementForm());
+
         if (request.getRequestURI().contains("display")) {
             model.addAttribute("quarterCode", quarterCode != null ? quarterCode : "");
         }
@@ -263,20 +281,68 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
 
 
 
-    @RequestMapping(value = "/saveAttachment", method = RequestMethod.POST, headers = ("content-type=multipart/*"))
-    public void saveDraftMultipartData(
-            @RequestParam(value = "letterOfSupportFile", required = false) MultipartFile file,
-            @RequestParam(value = "CustomField") String id,
-            MultipartHttpServletRequest request, HttpServletResponse response
-    ) {
 
+    /**
+     * Create a Financial Statement request
+     * @param model
+     * @param financialStatementForm request payload
+     * @param result
+     */
+    @RequestMapping(value="/saveAttachment", method = RequestMethod.POST, headers = ("content-type=multipart/form-data") )
+    @RequireHardLogIn
+    public String submit(final Model model,  @ModelAttribute("financialStatementForm") final FinancialStatementForm financialStatementForm,
+                         final BindingResult result, RedirectAttributes redirectModel)  throws JSONException {
+        //financialStatementValidator.validate(financialStatementForm, result);
+        if (financialStatementForm.getFiles().size() <= 0) {
+            GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER, Localization.getLocalizedString(FORM_GLOBAL_ERROR));
+            //throw new IllegalArgumentException("Please upload only the requested files");
+            getSessionService().setAttribute("financialStatementForm", financialStatementForm);
+            redirectModel.addFlashAttribute("org.springframework.validation.BindingResult.financialStatementForm", result);
+            return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete";
+        }
 
-        id.toUpperCase();
-        file.getName();
+        if (result.hasErrors()) {
+            getSessionService().setAttribute("financialStatementForm", financialStatementForm);
+            redirectModel.addFlashAttribute("org.springframework.validation.BindingResult.financialStatementForm", result);
+            return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete";
+        }
 
+        try {
 
-        // sagiaDraftFacade.save(draftData, id);
+            List<MediaModel> attachments = null;
+            if (CollectionUtils.isNotEmpty(financialStatementForm.getFiles()))
+            {
+
+                for (final MultipartFile file : financialStatementForm.getFiles())
+                {
+                    try
+                    {
+                        MediaModel mediaModel =  ticketAttachmentsService.createAttachment(file.getOriginalFilename(), file.getContentType(),
+                                file.getBytes(), userService.getCurrentUser());
+                        // submit Financial Survey for Review
+                        sagiaFinancialSurveyFacade.submitFinancialSurveyForReview(mediaModel,financialStatementForm.getSrId());
+                    }
+                    catch (final IOException e)
+                    {
+                        LOG.error(e.getMessage(), e);
+                    }
+                }
+            }
+
+            sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel) userService.getCurrentUser(), TermsAndConditionsAcceptanceEventEnum.FINANCIAL_STATEMENT);
+            redirectModel.addFlashAttribute("requestFeedback", "true");
+        } catch (Exception e) {
+            LOG.warn(e.getMessage(),e);
+        }
+        return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete";
     }
+
+
+    @ModelAttribute("financialStatementForm")
+    public FinancialStatementForm getFinancialStatementForm() {
+        return new FinancialStatementForm();
+    }
+
 
 
 

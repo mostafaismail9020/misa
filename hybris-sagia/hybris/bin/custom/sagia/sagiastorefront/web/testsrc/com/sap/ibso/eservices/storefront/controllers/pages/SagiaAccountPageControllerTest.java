@@ -216,7 +216,7 @@ public class SagiaAccountPageControllerTest extends AbstractCmsContentPageSetupU
     public void handleFileUploadTest(){
         try {
             doNothing().when(sagiaCustomerFacade).updateProfilePicture(multipartFile);
-            assertEquals("redirect:/my-sagia/sagia-profile", sagiaAccountPageController.handleFileUpload(multipartFile,false));
+            assertEquals("redirect:/my-sagia/sagia-profile", sagiaAccountPageController.handleFileUpload(multipartFile));
         } catch (Exception e) {
             Assert.fail(UNEXPECTED_EXCEPTION + e.getMessage());
         }

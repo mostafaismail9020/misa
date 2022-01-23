@@ -75,7 +75,7 @@
                     <div class="row">
                         <div class="myAccount-profilImage">
                         <h4 id="sagia_companyLogo_picture_title"></h4>
-                        <div class="myAccount-profilImage-img"><div class="profilePicture js-companyLogo"></div></div>
+                        <div class="myAccount-profilImage-img"><div class="companyLogo js-companyLogo"></div></div>
                     </div></div>
                     
                 </div>
@@ -101,7 +101,7 @@
                         <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent"
                              role="document">
                             <div class="modal-content">
-                                <form:form action="abcdefgh" id="modalPictureUploadForm" method="post" enctype="multipart/form-data" class="js-formInputFileBox">
+                                <form:form action="dummy" id="modalPictureUploadForm" method="post" enctype="multipart/form-data" class="js-formInputFileBox">
                                     <div class="modal-header">
                                         <div class="modal-title"><spring:theme code="company.uploadyourdocument"/></div>
                                     </div>
@@ -109,7 +109,7 @@
                                         <div class="formInputFileBox">
                                             <div class="form-group">
                                                 <div class="form-icon form-icon_browse"><icon:upload/></div>
-                                                <input id="fileBoxModalPicture" class="form-control js-inputFile" type="file" name="file" accept="image/jpeg" value=""/>
+                                                <input id="fileBoxModalPicture" class="form-control js-inputFile" type="file" name="file" accept="image/jpeg,image/png" value=""/>
                                                 <label class="control-label" for="fileBoxModalPicture">
                                                     <spring:theme code="company.choseapicture"/><span class="formInputFileBox-dragndrop"> <spring:theme code ="company.dragpicture"/></span>.
                                                 </label>
@@ -228,7 +228,7 @@
                             <div class="col-md-6">
                                 <div class="formInputBox">
                                     <div class="form-group">
-                                        <input id="sagiaProfilePersonalFormSelectCompanyWebsite" title="companyWebsite" name="companyWebsite" class="form-control" type="number" value=""/>
+                                        <input id="sagiaProfilePersonalFormSelectCompanyWebsite" title="companyWebsite" name="companyWebsite" class="form-control" type="text" value=""/>
                                         <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectCompanyWebsite">
                                             Company Website
                                         </label>
@@ -238,7 +238,7 @@
                              <div class="col-md-12">
                              <div class="myAccount-profilImage">
                        <!-- <div class="myAccount-profilImage-img"><div class="profilePicture js-profilePicture" ></div></div>-->
-                        <a href="#" class="myAccount-profilImage-change w-50 p-4 pt-4 pl-3 pr-3 mt-4" data-toggle="modal" data-target="#uploadFilePicture" data-action="update-profilePic?companyLogo=true">Change company logo
+                        <a href="#" class="myAccount-profilImage-change w-50 p-4 pt-4 pl-3 pr-3 mt-4" data-toggle="modal" data-target="#uploadFilePicture" data-action="update-companyLogo">Change company logo
                         <span class="uploadFile text-center pr-2"><svg xmlns="http://www.w3.org/2000/svg" class="mt-3" width="29" height="29" viewBox="0 0 29 29">
   <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
     <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>

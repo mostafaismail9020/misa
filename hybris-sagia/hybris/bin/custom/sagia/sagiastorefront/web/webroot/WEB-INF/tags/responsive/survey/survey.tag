@@ -29,6 +29,7 @@
             </div>
               <hr class="hr w-100"/>
 
+
         </div>
 
         <c:forEach items="${surveyData.sections}" var="section" varStatus="sectionStatus">

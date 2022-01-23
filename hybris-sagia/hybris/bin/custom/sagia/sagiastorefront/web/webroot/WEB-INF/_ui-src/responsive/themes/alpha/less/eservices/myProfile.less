@@ -1290,6 +1290,7 @@ button:focus {
 
 .page-sagia-profile .contentModule-filter .select2-container .select2-selection--single .select2-selection__rendered {
     font-size: 19px;
+    padding-top: 15px;
     padding-left: 0;
 }
 
@@ -1320,6 +1321,8 @@ button:focus {
 
 .page-sagia-profile .dashboardWidget-filter .select2-selection--single {
     height: 45px;
+    padding-top: 5px;
+    text-align: center;
     border-radius: 27px;
     background-color: #00A6BE;
 }
@@ -1731,6 +1734,44 @@ button:focus {
     margin-bottom: 20px;
 }
 
+
+.page-sagia-profile .panelTabs-navigation {
+    width: 1320px;
+    padding: 0;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.page-sagia-profile .panelTabs_slim .panelTabs-navigation .tabs-list {
+    max-width: 100%;
+}
+
+.page-sagia-profile .panelTabs-content {
+    border: 1px solid #00A6BE;
+}
+
+.page-sagia-profile .panelTabs-content .panelModule_halfRadius {
+    box-shadow: none;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 0 !important;
+}
+
+.page-sagia-profile .panelTabs_slim .panelTabs-navigation .tabs-list {
+    margin-bottom: 0;
+}
+
+.page-sagia-profile .panelTabs_slim .panelTabs-navigation a {
+    border: none;
+}
+.page-sagia-profile #enquiriesTabData .contentModule-filter .select2.select2-container{
+    padding: 0 10px;
+
+}
+.page-sagia-profile #enquiriesTabData .contentModule-filter .select2.select2-container .select2-selection:after{
+    top: 10px;
+}
+
 @media (max-width: 575px) {
     .page-sagia-profile #myProfileTabData .contentModule-actions .profile-settings {
         max-width: 100% !important;
@@ -1884,6 +1925,10 @@ button:focus {
     #contactPersonQM1 #qm1Title .formRadioBox-label {
         top: -8px;
     }
+
+    .page-sagia-profile .panelTabs .panelTabs-content {
+        border: none;
+    }
 }
 
 @media (min-width: 768px) and (max-width:991px) {
@@ -1969,6 +2014,13 @@ button:focus {
     .contentModule-actions .addNewButton {
         padding: 9px 24px 7px;
     }
+    .page-sagia-profile .panelTabs-navigation {
+        width: 100% !important;
+        padding: 0 15px !important;
+    }
+    #surveyForm .backToall {
+        width: 50% !important;
+    }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
@@ -2006,6 +2058,26 @@ button:focus {
     #shareholderType .form-item {
         padding: 0;
         margin: 0 7px;
+    }
+    .page-sagia-profile .panelTabs-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .page-sagia-profile .panelTabs-navigation {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .page-sagia-profile .panelTabs-navigation ul li:first-child {
+        padding-left: 0;
+    }
+    .page-sagia-profile .panelTabs-navigation ul li:last-child {
+        padding-right: 0;
+    }
+    .page-sagia-profile .panelTabs-navigation {
+        display: block !important;
+    }
+    .page-single-questionnaire #surveyForm .fdi {
+        max-width: 30% !important;
     }
 
 }

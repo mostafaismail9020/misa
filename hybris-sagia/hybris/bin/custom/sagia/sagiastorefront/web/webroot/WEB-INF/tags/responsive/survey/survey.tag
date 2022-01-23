@@ -20,10 +20,11 @@
                data-isFetchedFromNotificationService="${surveyData.isFetchedFromNotificationService}">
                   <div>
                 <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab"
-                	class="btn btn_leftIconLink btn_darkLink btn-outline btn_bold p-2 pl-5 pr-5 text-uppercase"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.participate.backtoallquestionaires"/></a>
+                	class="btn btn-ctrl btn-outline btn_bold text-uppercase w-25 mb-5 backToall">
+                    <!--<span class="iconElement iconElement_closeBack"><icon:close/></span>--><spring:theme code="general.participate.backtoallquestionaires"/></a>
             </div>
         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-            <div class="contentModule-headline  ml-0">
+            <div class="contentModule-headline fdi ml-0">
                 <!--<span class="iconElement iconElement_questionaires"><icon:questionaires/></span>-->${surveyData.surveytitle}
             </div>
               <hr class="hr w-100"/>

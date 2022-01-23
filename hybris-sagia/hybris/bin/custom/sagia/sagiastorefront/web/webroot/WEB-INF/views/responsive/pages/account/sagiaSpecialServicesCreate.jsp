@@ -14,7 +14,44 @@
 </script>
 
 <spring:url value="/special-services/${serviceType}" var="returnUrl" htmlEscape="false"/>
-<div class="mainSection mainSection_dark">
+
+
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="text.specialservices.${serviceType}"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="text.specialservices.${serviceType}"/></h1>
@@ -34,28 +71,47 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${returnUrl}" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="specialservices.back.to.service.details"/></a>
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-12">
+                   <a href="${returnUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="specialservices.back.to.service.details"/></a>
+                </div>
+                <div class="col-xl-9 col-12 btn-drafts_list amend-service-link">
+                    <button class="btn btn_round btn_slim js-save-draft"
+                        data-target-form="specialServiceHeaderId"
+                        data-service-id="${serviceId}">
+                    <spring:theme code="general.savedraft"/>
+                    <span class="iconElement iconElement_save"><icon:save/></span>
+                </button>
+                <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if>
+                        data-target-form="specialServiceHeaderId"
+                        data-service-id="${serviceId}">
+                    <spring:theme code="general.loaddraft"/>
+                    <span class="iconElement iconElement_save"><icon:upload/></span>
+                </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 service-main">
     <div class="container">
         <c:if test='${serviceType eq "transfer-of-iqama" or serviceType eq "final-exit-visa"}'>
             <c:if test='${fn:length(existingApplicants) gt 0}'>
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule">
-                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                            <div class="contentModule-headline">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                            <!-- <div class="contentModule-headline">
                                 <icon:person/>
                                 <spring:theme code="text.specialservices.applicants.list"/>
                                 <c:if test="${not empty specialServiceHeader.id}">: ${specialServiceHeader.id}</c:if>
-                            </div>
+                            </div> -->
+                            <span class="headline-background"><spring:theme code="text.specialservices.applicants.list"/> <c:if test="${not empty specialServiceHeader.id}">: ${specialServiceHeader.id}</c:if> </span>
                         </div>
                         <div class="tableModule tableModule_slim">
                             <table id="existingApplicants" class="tableModule-table">
@@ -106,8 +162,11 @@
             <div class="contentModule">
                 <form:form method="post" action="${encodedContextPath}/special-services/${serviceType}/add-applicant" modelAttribute="serviceApplicant">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                        <div class="contentModule-headline">
+                        <!-- <div class="contentModule-headline">
                             <icon:info/> <spring:theme code="text.specialservices.applicants.details"/>
+                        </div> -->
+                        <div class="contentModule-actions contentModule-actions_wrap headline-background-wrapper">
+                            <span class="headline-background"><spring:theme code="text.specialservices.applicants.details"/></span>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -205,12 +264,13 @@
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                <div class="contentModule-headline">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                                <!-- <div class="contentModule-headline">
                                     <icon:person/>
                                     <spring:theme code="text.specialservices.applicants.list"/>
                                     <c:if test="${not empty specialServiceHeader.id}">: ${specialServiceHeader.id}</c:if>
-                                </div>
+                                </div> -->
+                                <span class="headline-background"><spring:theme code="text.specialservices.applicants.list"/><c:if test="${not empty specialServiceHeader.id}">: ${specialServiceHeader.id}</c:if></span>
                             </div>
 
                             <div class="tableModule tableModule_slim">
@@ -261,9 +321,12 @@
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                        <div class="contentModule-headline">
+                        <!-- <div class="contentModule-headline">
                             <icon:contact-details/>
                             <spring:theme code="text.specialservices.contact.details"/>
+                        </div> -->
+                        <div class="contentModule-actions contentModule-actions_wrap headline-background-wrapper">
+                            <span class="headline-background"><spring:theme code="text.specialservices.contact.details"/></span>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -333,9 +396,12 @@
                             </c:if>
                         </div>
                         <div class="contentModule-separator"></div>
-                        <div class="contentModule-headline">
+                        <!-- <div class="contentModule-headline">
                             <icon:enquiry3/>
                             <spring:theme code="text.specialservices.reasonforapplication"/>
+                        </div> -->
+                        <div class="contentModule-actions contentModule-actions_wrap headline-background-wrapper">
+                            <span class="headline-background"><spring:theme code="text.specialservices.reasonforapplication"/></span>
                         </div>
                         <div class="formTextArea">
                             <div class="form-group">
@@ -346,11 +412,14 @@
                             </div>
                         </div>
                         <div class="contentModule-separator"></div>
-                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                            <div class="contentModule-headline">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                            <!-- <div class="contentModule-headline">
                                 <icon:documents/>
                                 <spring:theme code="text.specialservices.attachments"/>
-                            </div>
+                            </div> -->
+                            
+                            <span class="headline-background"><spring:theme code="text.specialservices.attachments"/></span>
+                          
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
@@ -379,7 +448,7 @@
                                         <p><spring:theme code="specialservices.upload.required.documents.download"/><a href="javascript:;" class="downloadUndertakingLetterButton"><spring:theme code="specialservices.undertaking.letter"/></a> </p>
                                         <p><spring:theme code="specialservices.upload.required.documents"/></p>
                                     </div>
-                                    <button type="button" id="downloadUndertakingLetterButton" class="btn btn_outline btn_round downloadUndertakingLetterButton">
+                                    <button type="button" id="downloadUndertakingLetterButton" class="btn btn_leftIconLink btn_outline downloadUndertakingLetterButton">
                                         <spring:theme code="text.account.followup.download"/> <icon:download/>
                                     </button>
                                 </div>
@@ -388,14 +457,15 @@
                     </div>
                 </div>
             </div>
-            <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
-                <button type="button" class="btn btn-secondary"><spring:theme code="general.cancel"/></button>
-                <div class="formCheckBox formCheckBox_belowPanel">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+                <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
                         <formElement:termsAndConditionsCheckbox event="SPECIAL_SERVICES" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary ${serviceType}"><spring:theme code="general.submit"/></button>
+                <button type="button" class="btn btn_leftIconLink btn_outline full-width-responsive"><spring:theme code="general.cancel"/></button>
+               
+                <button type="submit" class="btn full-width-responsive ${serviceType}"><spring:theme code="general.submit"/></button>
             </div>
         <input type="hidden" id="serviceId"/>
         <input type="hidden" name="csrfToken" value="${_csrf.token}" />

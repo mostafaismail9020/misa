@@ -19,8 +19,8 @@
 		http://www.springframework.org/schema/util/spring-util.xsd
 		http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-		
-	<context:annotation-config/> 
+
+	<context:annotation-config/>
 
 	<!-- tenant scoped filter -->
 	<bean id="storefrontTenantFilterChain" class="com.sap.ibso.eservices.storefront.filters.UrlPathFilter" >
@@ -39,7 +39,7 @@
 	<util:list id="defaultStorefrontTenantDefaultFilterChainList">
 		<!-- filter for handling session failover -->
     	<ref bean="hybrisSpringSessionFilter"/>
-	
+
 		<!-- generic platform filters -->
 		<ref bean="log4jFilter"/>
 		<ref bean="storefrontSessionFilter"/>
@@ -73,20 +73,20 @@
 		<!-- filter to restore customer preferred location -->
 		<ref bean="customerLocationRestorationFilter"/>
 	</util:list>
-	
+
 	<bean id="storefrontTenantDefaultFilterChain" class="de.hybris.platform.servicelayer.web.PlatformFilterChain" >
 		<constructor-arg>
 			<ref bean="storefrontTenantDefaultFilterChainList"/>
 		</constructor-arg>
 	</bean>
-	
+
 	<alias name="defaultIntegrationTenantFilterChainList" alias="integrationTenantFilterChainList" />
 	<util:list id="defaultIntegrationTenantFilterChainList">
 		<!-- generic platform filters -->
 		<ref bean="storefrontSessionFilter"/>
 		<ref bean="addOnDevelopmentFilter"/>
 		<!-- filter to log the current request -->
-		<ref bean="requestLoggerFilter"/>	
+		<ref bean="requestLoggerFilter"/>
 	</util:list>
 
 	<bean id="integrationTenantFilterChain" class="de.hybris.platform.servicelayer.web.PlatformFilterChain" >
@@ -113,7 +113,7 @@
 	</bean>
 
 	<bean id="addOnDevelopmentFilter" class="com.sap.ibso.eservices.storefront.filters.AcceleratorAddOnFilter" >
-		<property name="configurationService" ref="configurationService"/>	
+		<property name="configurationService" ref="configurationService"/>
 	</bean>
 
 	<bean id="requestLoggerFilter" class="com.sap.ibso.eservices.storefront.filters.RequestLoggerFilter"/>
@@ -129,11 +129,11 @@
 		<property name="cmsPageContextService" ref="cmsPageContextService"/>
 		<property name="siteChannelValidationStrategy" ref="acceleratorSiteChannelValidationStrategy"/>
 	</bean>
-	
+
 	<bean id="acceleratorSiteChannelValidationStrategy" class="de.hybris.platform.acceleratorservices.site.strategies.impl.DefaultSiteChannelValidationStrategy">
 		<property name="supportedSiteChannels" ref="acceleratorSiteChannels" />
 	</bean>
-	
+
 	<alias name="b2cAcceleratorSiteChannels" alias="acceleratorSiteChannels"/>
 	<util:set id="b2cAcceleratorSiteChannels" value-type="de.hybris.platform.commerceservices.enums.SiteChannel">
 		<ref bean="SiteChannel.B2C"/>
@@ -143,21 +143,21 @@
 	<util:set id="defaultRefererExcludeUrlSet" value-type="java.lang.String">
 		<value>/**/cart/export</value>
 	</util:set>
-	
+
 	<bean id="storefrontFilter" class="com.sap.ibso.eservices.storefront.filters.StorefrontFilter" >
 		<property name="storeSessionFacade" ref="storeSessionFacade"/>
 		<property name="browseHistory" ref="browseHistory"/>
 		<property name="refererExcludeUrlSet" ref="refererExcludeUrlSet"/>
 		<property name="pathMatcher" ref="defaultPathMatcher"/>
 	</bean>
-	
+
 	<bean id="cartRestorationFilter" class="com.sap.ibso.eservices.storefront.filters.CartRestorationFilter" >
 		<property name="baseSiteService" ref="baseSiteService"/>
 		<property name="cartService" ref="cartService"/>
 		<property name="cartFacade" ref="cartFacade"/>
 		<property name="cartRestoreCookieGenerator" ref="cartRestoreCookieGenerator"/>
 		<property name="userService" ref="userService"/>
-		<property name="sessionService" ref="sessionService"/>	
+		<property name="sessionService" ref="sessionService"/>
 	</bean>
 
 	<bean id="anonymousCheckoutFilter" class="com.sap.ibso.eservices.storefront.filters.AnonymousCheckoutFilter" >
@@ -198,6 +198,7 @@
 		<entry key="/financial-statement/create" value-ref="importMultipartFilter"/>
 		<entry key="/support-visits/create" value-ref="importMultipartFilter"/>
 		<entry key="/draft/save" value-ref="importMultipartFilter"/>
+		<entry key="/my-sagia/financial-survey/complete/saveAttachment" value-ref="importMultipartFilter"/>
 	</util:map>
 
 	<bean id="fileUploadFilter" class="com.sap.ibso.eservices.storefront.filters.FileUploadFilter" >
@@ -215,7 +216,7 @@
 		<property name="useDefaultPath" value="false"/>
 		<property name="httpOnly" value="true"/>
 	</bean>
-	
+
 	<alias name="defaultCartRestoreCookieGenerator" alias="cartRestoreCookieGenerator"/>
 	<bean id="defaultCartRestoreCookieGenerator" class="com.sap.ibso.eservices.storefront.security.cookie.CartRestoreCookieGenerator" >
 		<property name="cookieSecure" value="true"/>
@@ -233,14 +234,14 @@
 		<property name="httpOnly" value="true"/>
 		<property name="baseSiteService" ref="baseSiteService"/>
 	</bean>
-	
+
 	<alias name="defaultCookieNotificationCookieGenerator" alias="cookieNotificationCookieGenerator"/>
 	<bean id="defaultCookieNotificationCookieGenerator" class="com.sap.ibso.eservices.storefront.security.cookie.CookieNotificationCookieGenerator" >
 		<property name="cookieSecure" value="true"/>
 		<property name="cookieMaxAge" value="360000000"/>
 		<property name="useDefaultPath" value="true"/>
 	</bean>
-	
+
 	<bean id="importCSVMultipartFilter" class="org.springframework.web.multipart.support.MultipartFilter">
 		<property name="multipartResolverBeanName" value="importCSVMultipartResolver"/>
 	</bean>
@@ -248,14 +249,14 @@
 	<bean id="importCSVMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="#{configurationService.configuration.getProperty('import.csv.max.upload.size.bytes')}" />
 	</bean>
-	
+
 	<bean id="importMultipartFilter"
 		class="org.springframework.web.multipart.support.MultipartFilter">
 		<property name="multipartResolverBeanName" value="multipartResolver" />
 	</bean>
-		
+
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="#{configurationService.configuration.getProperty('import.max.file.upload.size.bytes')}" /> 
-        <property name="maxInMemorySize" value="1048576" /> 
+        <property name="maxUploadSize" value="#{configurationService.configuration.getProperty('import.max.file.upload.size.bytes')}" />
+        <property name="maxInMemorySize" value="1048576" />
     </bean>
 </beans>

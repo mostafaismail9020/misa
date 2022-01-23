@@ -187,6 +187,7 @@ public class SagiaAccountPageController extends SagiaAbstractPageController {
             customerData.setMobileNumber(profilePersonalData.getMobileNumber());
             customerData.setSector(profilePersonalData.getSector());
             customerData.setCountry(profilePersonalData.getCountry());
+            customerData.setCompanyWebsite(profilePersonalData.getCompanyWebsite());
 
             try {
                 sagiaCustomerFacade.updateProfile(customerData);
@@ -365,6 +366,9 @@ public class SagiaAccountPageController extends SagiaAbstractPageController {
         if (customerData.getProfilePicture() != null) {
             responseMap.put("profilePicture", customerData.getProfilePicture().getUrl());
         }
+        if (customerData.getCompanyLogo() != null) {
+            responseMap.put("companyLogo", customerData.getCompanyLogo().getUrl());
+        }
         if (customerData.getCustomerId() != null) {
             ProfileData profileData = new ProfileData();
             ProfilePersonalData profilePersonalData = new ProfilePersonalData();
@@ -376,6 +380,7 @@ public class SagiaAccountPageController extends SagiaAbstractPageController {
             profilePersonalData.setMobileNumber(customerData.getMobileNumber());
             profilePersonalData.setCompany(customerData.getCompany());
             profilePersonalData.setCountry(customerData.getCountry());
+            profilePersonalData.setCompanyWebsite(customerData.getCompanyWebsite());
             profileData.setProfilePersonalData(profilePersonalData);
             responseMap.put("sagiaProfilePersonalForm", profileData.getProfilePersonalData());
         }
@@ -495,9 +500,14 @@ public class SagiaAccountPageController extends SagiaAbstractPageController {
      */
     @RequestMapping(value = "/update-profilePic", method = RequestMethod.POST, consumes = "multipart/form-data")
     @RequireHardLogIn
-    public String handleFileUpload(@RequestParam("file") MultipartFile file) {
+    public String handleFileUpload(@RequestParam("file") MultipartFile file,@RequestParam(value="companyLogo",defaultValue="false") boolean companyLogo) {
         try {
+        	if(companyLogo) {
+        		sagiaCustomerFacade.updateCompanyLogo(file);
+        	}else {
             sagiaCustomerFacade.updateProfilePicture(file);
+            }
+            
         } catch(IOException e) {
             LOG.error(e.getMessage(), e);
         }

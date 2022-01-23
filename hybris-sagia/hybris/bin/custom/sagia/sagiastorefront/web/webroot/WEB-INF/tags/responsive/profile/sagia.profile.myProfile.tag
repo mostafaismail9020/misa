@@ -55,8 +55,12 @@
                                 <dd id="sagiaProfilePersonalFormSectorName"></dd>
                                 <dt><spring:theme code="general.mobilenumber"/></dt>
                                 <dd id="sagiaProfilePersonalFormMobileNumber"></dd>
+                                <dt><spring:theme code="general.companyWebsite"/></dt>
+                                <dd id="sagiaProfilePersonalFormCompanyWebsite"></dd>
+                                
                             </dl>
                         </div>
+                       
                         <div class="col-md-6">
                             <dl class="dlList dlList_separated border-0">
                                 <dt><spring:theme code="general.lastname"/></dt>
@@ -68,12 +72,18 @@
                             </dl>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="myAccount-profilImage">
+                        <h4 id="sagia_companyLogo_picture_title"></h4>
+                        <div class="myAccount-profilImage-img"><div class="profilePicture js-companyLogo"></div></div>
+                    </div></div>
+                    
                 </div>
 
                 <div class="myAccount-edit-toggle js-myAccount-edit-toggle" style="display: none;">
                     <div class="myAccount-profilImage">
                        <!-- <div class="myAccount-profilImage-img"><div class="profilePicture js-profilePicture" ></div></div>-->
-                        <a href="#" class="myAccount-profilImage-change w-50 p-4 pt-4 pl-3 pr-3 mt-4" data-toggle="modal" data-target="#uploadFilePicture"><spring:theme code="company.changeprofilepicture"/>
+                        <a href="#" class="myAccount-profilImage-change w-50 p-4 pt-4 pl-3 pr-3 mt-4" data-toggle="modal" data-target="#uploadFilePicture" data-action="update-profilePic"><spring:theme code="company.changeprofilepicture"/>
                         <span class="uploadFile text-center pr-2"><svg xmlns="http://www.w3.org/2000/svg" class="mt-3" width="29" height="29" viewBox="0 0 29 29">
   <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
     <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -87,11 +97,11 @@
 
                     <!--Modal: Use (data-toggle="modal" data-target="#uploadFilePicture") on link or button to call it-->
                     <div class="modal fade" id="uploadFilePicture" tabindex="-1" role="dialog"
-                         aria-labelledby="uploadFilePicture" aria-hidden="true">
+                         aria-labelledby="uploadFilePicture" aria-hidden="true" >
                         <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent"
                              role="document">
                             <div class="modal-content">
-                                <form:form action="update-profilePic" method="post" enctype="multipart/form-data" class="js-formInputFileBox">
+                                <form:form action="abcdefgh" id="modalPictureUploadForm" method="post" enctype="multipart/form-data" class="js-formInputFileBox">
                                     <div class="modal-header">
                                         <div class="modal-title"><spring:theme code="company.uploadyourdocument"/></div>
                                     </div>
@@ -215,6 +225,32 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="formInputBox">
+                                    <div class="form-group">
+                                        <input id="sagiaProfilePersonalFormSelectCompanyWebsite" title="companyWebsite" name="companyWebsite" class="form-control" type="number" value=""/>
+                                        <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectCompanyWebsite">
+                                            Company Website
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-md-12">
+                             <div class="myAccount-profilImage">
+                       <!-- <div class="myAccount-profilImage-img"><div class="profilePicture js-profilePicture" ></div></div>-->
+                        <a href="#" class="myAccount-profilImage-change w-50 p-4 pt-4 pl-3 pr-3 mt-4" data-toggle="modal" data-target="#uploadFilePicture" data-action="update-profilePic?companyLogo=true">Change company logo
+                        <span class="uploadFile text-center pr-2"><svg xmlns="http://www.w3.org/2000/svg" class="mt-3" width="29" height="29" viewBox="0 0 29 29">
+  <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
+    <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>
+</span>
+                        </a>
+                    </div>
+                    </div>
+                   
                         </div>
 
                         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection justify-content-end">

@@ -500,13 +500,29 @@ public class SagiaAccountPageController extends SagiaAbstractPageController {
      */
     @RequestMapping(value = "/update-profilePic", method = RequestMethod.POST, consumes = "multipart/form-data")
     @RequireHardLogIn
-    public String handleFileUpload(@RequestParam("file") MultipartFile file,@RequestParam(value="companyLogo",defaultValue="false") boolean companyLogo) {
+    public String handleFileUpload(@RequestParam("file") MultipartFile file) {
         try {
-        	if(companyLogo) {
-        		sagiaCustomerFacade.updateCompanyLogo(file);
-        	}else {
+        	
             sagiaCustomerFacade.updateProfilePicture(file);
-            }
+            
+            
+        } catch(IOException e) {
+            LOG.error(e.getMessage(), e);
+        }
+        return REDIRECT_TO_PROFILE_PAGE;
+    }
+    
+    /**
+     * controller method, that updates the profile picture for current user and redirects to profile page.
+     *
+     * @param file to upload
+     */
+    @RequestMapping(value = "/update-companyLogo", method = RequestMethod.POST, consumes = "multipart/form-data")
+    @RequireHardLogIn
+    public String updateCompanyLogo(@RequestParam("file") MultipartFile file) {
+        try {
+        	sagiaCustomerFacade.updateCompanyLogo(file);
+        
             
         } catch(IOException e) {
             LOG.error(e.getMessage(), e);

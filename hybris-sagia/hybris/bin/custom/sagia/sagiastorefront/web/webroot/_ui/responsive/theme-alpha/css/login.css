@@ -61,7 +61,7 @@ z-index: 0;
 }
 #businessActivitiesModal > .modal-dialog.modal-dialog-centered{
 	min-width:82%;
-}	
+}
 #typeRequirementModal{
 	z-index:999999;
 }
@@ -85,6 +85,22 @@ z-index: 0;
 }
 #shareholderModalId > #shareholderFormId > .modal-dialog.modal-dialog-centered{
 	min-width:65%;
+}
+
+
+#affiliateModalId{
+	z-index:99999;
+}
+#affiliateModalId > #affiliateFormId > .modal-dialog.modal-dialog-centered{
+	min-width:65%;
+}
+
+#subsidiaryModalId{
+	z-index:99999;
+}
+
+#subsidiaryModalId > .modal-dialog.modal-dialog-centered{
+	min-width:60%;
 }
 
 #branchModalId{
@@ -121,7 +137,7 @@ z-index: 0;
 
 .js-recaptcha-captchaaddon {
   margin: 20px 0;
-  
+
 }
 
 #g-recaptcha_incorrect {

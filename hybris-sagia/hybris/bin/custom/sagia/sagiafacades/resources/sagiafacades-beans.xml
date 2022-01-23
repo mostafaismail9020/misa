@@ -1168,6 +1168,17 @@
 		<property name="shareholderHaveReverseInvestment" type="java.lang.Boolean"/>
 		<property name="valueOfReverseInvestment" type="java.lang.String"/>
 		<property name="shareholderMultinationalCompany" type="java.lang.String"/>
+
+		<property name="paidUpCapitalCurrentQuarter" type="java.lang.String"/>
+		<property name="additionalPaidUpCapitalCurrentQuarter" type="java.lang.String"/>
+		<property name="retainedEarningsIncludeCurrentQuarter" type="java.lang.String"/>
+		<property name="profitLossQuarterCurrentQuarter" type="java.lang.String"/>
+		<property name="totalReservesCurrentQuarter" type="java.lang.String"/>
+		<property name="treasurySharesCurrentQuarter" type="java.lang.String"/>
+		<property name="headOfficeAccountInBranchCurrentQuarter" type="java.lang.String"/>
+		<property name="shareholderEquityOthersCurrentQuarter" type="java.lang.String"/>
+		<property name="minorityRightsCurrentQuarter" type="java.lang.String"/>
+		<property name="totalShareholderEquityCurrentQuarter" type="java.lang.String"/>
 		<property name="transaction" type="com.sap.ibso.eservices.facades.data.license.amendment.Transaction"/>
 	</bean>
 

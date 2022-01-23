@@ -94,7 +94,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
     private void saveFinancialSurveyModel(FinancialSurvey financialSurveyData, FinancialSurveyModel financialSurveyModel) {
         financialSurveyModel.setCompanyStatus( FinancialSurveyCompanyStatus.valueOf(financialSurveyData.getCompanyStatus()));
-        if(!FinancialSurveyCompanyStatus.ACTIVE.getCode().equals(financialSurveyData.getCompanyStatus())){
+        if(!"".equals(financialSurveyData.getSuspensionDate()) && !FinancialSurveyCompanyStatus.ACTIVE.getCode().equals(financialSurveyData.getCompanyStatus())){
             financialSurveyModel.setSuspensionDate(sagiaFormatProvider.formatUIStrToBackDate(financialSurveyData.getSuspensionDate()));
         }else{
             financialSurveyModel.setSuspensionDate(null);
@@ -102,6 +102,11 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         //financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getPaidUpCapitalCurrentQuarter());
         financialSurveyModel.setIsConsolidated(financialSurveyData.getIsConsolidated());
         financialSurveyModel.setDisclosureCurrency(financialSurveyData.getDisclosureCurrency());
+        financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getPaidUpCapitalCurrentQuarter());
+        modelService.save(financialSurveyModel);
+    }
+
+    private void saveShareholderEquity(FinancialSurvey financialSurveyData, FinancialSurveyModel financialSurveyModel){
         financialSurveyModel.setAdditionalPaidUpCapitalCurrentQuarter(financialSurveyData.getShareholderEquity().getAdditionalPaidUpCapitalCurrentQuarter());
         financialSurveyModel.setRetainedEarningsIncludeCurrentQuarter(financialSurveyData.getShareholderEquity().getRetainedEarningsIncludeCurrentQuarter());
         financialSurveyModel.setProfitLossQuarterCurrentQuarter(financialSurveyData.getShareholderEquity().getProfitLossQuarterCurrentQuarter());
@@ -119,7 +124,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         if(financialSurveyData.getSubsidiaries().size() > 0 ) {
             for (Subsidiary subsidiary : financialSurveyData.getSubsidiaries() ) {
                 // Delete exiting branches
-                if (subsidiary.getAction().equals("03")) {
+                if ("03".equals(subsidiary.getAction())) {
                     // Found and deleted the branch.
                     modelService.remove(PK.parse(subsidiary.getSrId()));
                 } else { // Update or add a new branch
@@ -142,7 +147,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
     private void saveShareholders(FinancialSurvey financialSurveyData, FinancialSurveyModel financialSurveyModel) {
         if(financialSurveyData.getShareholders().size() > 0 ) {
-            for (Shareholder shareholder : financialSurveyData.getShareholders() ) {
+            for (Shareholder shareholder : financialSurveyData.getShareholders()) {
                 // Delete exiting branches
                 if (shareholder.getAction().equals("03")) {
                     // Found and deleted the branch.
@@ -161,6 +166,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                     financialSurveyShareholderModel.setTransaction(sagiaSurveyTransactionModel);
                     financialSurveyShareholderModel.setFinancialSurvey(financialSurveyModel);
                     modelService.save(sagiaSurveyTransactionModel);
+
                     modelService.save(financialSurveyShareholderModel);
                 }
             }
@@ -198,7 +204,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         if(financialSurveyData.getBranches().size() > 0 ) {
             for (Branch branch : financialSurveyData.getBranches() ) {
                 // Delete exiting branches
-                if (branch.getAction().equals("03")) {
+                if ("03".equals(branch.getAction())) {
                     // Found and deleted the branch.
                     modelService.remove(PK.parse(branch.getSrId()));
                 } else { // Update or add a new branch
@@ -207,7 +213,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                     if (branch.getSrId() != null  ) {
                         financialSurveyBranchModel = modelService.get(PK.parse(branch.getSrId()));
                     }
-                    financialSurveyBranchModel.setWeight("");
+                    financialSurveyBranchModel.setWeight(branch.getVolumeWeight());
                     financialSurveyBranchModel.setName(branch.getName());
                     financialSurveyBranchModel.setIsHeadOffice(true);
                     financialSurveyBranchModel.setMain(true);
@@ -271,6 +277,55 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         return sagiaCompanyProfileDAO.getSagiaCompanyProfile(currentUser.getPk().getLong().toString());
     }
 
+    @Override
+    public void saveFinancialSurveyCompanyProfile(FinancialSurvey financialSurveyData) {
+
+        //save company Profile master data
+        saveCompanyProfile(financialSurveyData.getCompanyProfile()) ;
+
+        // fetch the FinancialSurvey for the given quarter
+        FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurveyData.getQuarterCode());
+        savetBusinessActivities(financialSurveyData, financialSurveyModel);
+        saveFinancialSurveyModel(financialSurveyData, financialSurveyModel);
+
+        if(financialSurveyModel == null ){
+            financialSurveyModel = initiateFinancialSurveyModel(financialSurveyData);
+        }
+
+
+    }
+
+    @Override
+    public void saveFinancialSurveyBranchesAndSubsidiaries(FinancialSurvey financialSurveyData) {
+
+        // fetch the FinancialSurvey for the given quarter
+        FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurveyData.getQuarterCode());
+
+        saveBranches(financialSurveyData, financialSurveyModel);
+        saveSubsidiaries(financialSurveyData, financialSurveyModel);
+
+    }
+
+    @Override
+    public void saveFinancialSurveyShareholders(FinancialSurvey financialSurveyData) {
+
+        // fetch the FinancialSurvey for the given quarter
+        FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurveyData.getQuarterCode());
+
+        saveShareholders(financialSurveyData,financialSurveyModel);
+        saveAffiliates(financialSurveyData,financialSurveyModel);
+
+    }
+
+
+
+
+    @Override
+    public void saveFinancialSurveyShareholderEquity(FinancialSurvey financialSurvey) {
+        FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurvey.getQuarterCode());
+        saveShareholderEquity(financialSurvey,financialSurveyModel);
+    }
+
 
     @Override
     public List<FinancialSurveyModel> getFinancialSurveys() {
@@ -327,6 +382,17 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyShareholderModel.setShareholderCountry(shareholder.getShareholderCountry());
         financialSurveyShareholderModel.setShareholderPercentage(shareholder.getShareholderPercentage());
         financialSurveyShareholderModel.setShareholderCapital(shareholder.getShareholderCapital());
+        financialSurveyShareholderModel.setPaidUpCapitalCurrentQuarter(shareholder.getPaidUpCapitalCurrentQuarter());
+        financialSurveyShareholderModel.setAdditionalPaidUpCapitalCurrentQuarter(shareholder.getAdditionalPaidUpCapitalCurrentQuarter());
+        financialSurveyShareholderModel.setRetainedEarningsIncludeCurrentQuarter(shareholder.getRetainedEarningsIncludeCurrentQuarter());
+        financialSurveyShareholderModel.setProfitLossQuarterCurrentQuarter(shareholder.getProfitLossQuarterCurrentQuarter());
+        financialSurveyShareholderModel.setTotalReservesCurrentQuarter(shareholder.getTotalReservesCurrentQuarter());
+        financialSurveyShareholderModel.setTreasurySharesCurrentQuarter(shareholder.getTreasurySharesCurrentQuarter());
+        financialSurveyShareholderModel.setHeadOfficeAccountInBranchCurrentQuarter(shareholder.getHeadOfficeAccountInBranchCurrentQuarter());
+        financialSurveyShareholderModel.setShareholderEquityOthersCurrentQuarter(shareholder.getShareholderEquityOthersCurrentQuarter());
+        financialSurveyShareholderModel.setMinorityRightsCurrentQuarter(shareholder.getMinorityRightsCurrentQuarter());
+        financialSurveyShareholderModel.setTotalShareholderEquityCurrentQuarter(shareholder.getTotalShareholderEquityCurrentQuarter());
+
         if(shareholder.getShareholderIsVotingPower() != null ){
             financialSurveyShareholderModel.setShareholderIsVotingPower(shareholder.getShareholderIsVotingPower());
         }

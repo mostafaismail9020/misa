@@ -36,6 +36,19 @@ public class FinancialSurveyShareholderPopulator implements Populator<FinancialS
         shareholder.setShareholderHaveReverseInvestment(financialSurveyShareholderModel.isShareholderHaveReverseInvestment());
         shareholder.setValueOfReverseInvestment(financialSurveyShareholderModel.getValueOfReverseInvestment());
         shareholder.setShareholderMultinationalCompany(financialSurveyShareholderModel.getShareholderMultinationalCompany());
+
+
+        shareholder.setPaidUpCapitalCurrentQuarter(financialSurveyShareholderModel.getPaidUpCapitalCurrentQuarter());
+        shareholder.setAdditionalPaidUpCapitalCurrentQuarter(financialSurveyShareholderModel.getAdditionalPaidUpCapitalCurrentQuarter());
+        shareholder.setRetainedEarningsIncludeCurrentQuarter(financialSurveyShareholderModel.getRetainedEarningsIncludeCurrentQuarter());
+        shareholder.setProfitLossQuarterCurrentQuarter(financialSurveyShareholderModel.getProfitLossQuarterCurrentQuarter());
+        shareholder.setTotalReservesCurrentQuarter(financialSurveyShareholderModel.getTotalReservesCurrentQuarter());
+        shareholder.setTreasurySharesCurrentQuarter(financialSurveyShareholderModel.getTreasurySharesCurrentQuarter());
+        shareholder.setHeadOfficeAccountInBranchCurrentQuarter(financialSurveyShareholderModel.getHeadOfficeAccountInBranchCurrentQuarter());
+        shareholder.setShareholderEquityOthersCurrentQuarter(financialSurveyShareholderModel.getShareholderEquityOthersCurrentQuarter());
+        shareholder.setMinorityRightsCurrentQuarter(financialSurveyShareholderModel.getMinorityRightsCurrentQuarter());
+        shareholder.setTotalShareholderEquityCurrentQuarter(financialSurveyShareholderModel.getTotalShareholderEquityCurrentQuarter());
+
         Transaction transaction = new Transaction ();
         financialSurveyTransactionPopulator.populate(financialSurveyShareholderModel.getTransaction(),transaction);
         shareholder.setTransaction(transaction);

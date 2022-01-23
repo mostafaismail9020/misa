@@ -20,6 +20,7 @@ public class FinancialSurveyBranchPopulator implements Populator<FinancialSurvey
         branch.setAddrNumber(financialSurveyBranchModel.getAddrNumber());
         branch.setName(financialSurveyBranchModel.getName());
         branch.setType(financialSurveyBranchModel.getType());
+        branch.setVolumeWeight(financialSurveyBranchModel.getWeight());
         branch.setTypeDescription(financialSurveyBranchModel.getTypeDescription());
         branch.setMain(financialSurveyBranchModel.getMain());
         Address address = new  Address();

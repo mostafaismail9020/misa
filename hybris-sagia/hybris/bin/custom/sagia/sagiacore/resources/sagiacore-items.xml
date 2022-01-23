@@ -10626,6 +10626,7 @@
                 <description>Financial Survey Shareholder</description>
                 <deployment table="FinSurShareholder" typecode="32529"/>
 
+
                 <attributes>
                     <attribute qualifier="transaction" type="SagiaSurveyTransaction">
                         <description>transaction</description>
@@ -10693,6 +10694,72 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+
+                    <attribute qualifier="paidUpCapitalCurrentQuarter" type="java.lang.String">
+                        <description>paidUpCapitalCurrentQuarter</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="additionalPaidUpCapitalCurrentQuarter" type="java.lang.String">
+                        <description>additionalPaidUpCapitalCurrentQuarter</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="retainedEarningsIncludeCurrentQuarter" type="java.lang.String">
+                        <description>retainedEarningsIncludeCurrentQuarter</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+                    <attribute qualifier="profitLossQuarterCurrentQuarter" type="java.lang.String">
+                        <description>profitLossQuarterCurrentQuarter</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+                    <attribute qualifier="totalReservesCurrentQuarter" type="java.lang.String">
+                        <description>totalReservesCurrentQuarter</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="treasurySharesCurrentQuarter" type="java.lang.String">
+                        <description>treasurySharesCurrentQuarter</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="headOfficeAccountInBranchCurrentQuarter" type="java.lang.String">
+                        <description>headOfficeAccountInBranchCurrentQuarter</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="shareholderEquityOthersCurrentQuarter" type="java.lang.String">
+                        <description>shareholderEquityOthersCurrentQuarter</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="minorityRightsCurrentQuarter" type="java.lang.String">
+                        <description>minorityRightsCurrentQuarter</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="totalShareholderEquityCurrentQuarter" type="java.lang.String">
+                        <description>totalShareholderEquityCurrentQuarter</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+
+
                     <attribute qualifier="shareholderIsVotingPower" type="boolean">
                         <description>shareholderIsVotingPower</description>
                         <modifiers optional="false"/>

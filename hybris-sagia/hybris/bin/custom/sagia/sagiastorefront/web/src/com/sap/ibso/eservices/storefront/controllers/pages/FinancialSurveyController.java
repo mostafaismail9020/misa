@@ -1,11 +1,7 @@
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
-import com.google.gson.Gson;
-import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
 import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
 import com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaDraftService;
-import com.sap.ibso.eservices.facades.data.MOJInheritSet;
-import com.sap.ibso.eservices.facades.data.license.amendment.LicenseAmendment;
 import com.sap.ibso.eservices.facades.data.license.amendment.Shareholder;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItems;
 import com.sap.ibso.eservices.facades.sagia.AverageProcessingTimeFacade;
@@ -13,17 +9,14 @@ import com.sap.ibso.eservices.facades.sagia.SagiaDraftFacade;
 import com.sap.ibso.eservices.facades.sagia.SagiaFinancialSurveyFacade;
 import com.sap.ibso.eservices.facades.sagia.SagiaIsicFacade;
 import com.sap.ibso.eservices.facades.sagia.SagiaTermsAndConditionsFacade;
-import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ProductData;
 import com.sap.ibso.eservices.sagiaservices.services.complaints.dto.UpdatableComplaintDetails;
 import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
-import com.sap.ibso.eservices.storefront.forms.validation.SagiaLicenseAmendmentValidator;
+import com.sap.ibso.eservices.storefront.forms.validation.SagiaFinancialSurveyValidator;
 import com.sap.ibso.eservices.storefront.interceptors.beforecontroller.LicenseRequired;
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.commercefacades.user.data.FinancialSurvey;
 import de.hybris.platform.servicelayer.user.UserService;
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -44,9 +37,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -83,8 +73,6 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     @Resource(name = "defaultSagiaIsicFacade")
     private SagiaIsicFacade sagiaIsicFacade;
 
-    @Resource(name = "licenseApplyService")
-    private LicenseApplyService licenseApplyService;
 
     @RequestMapping(value = {"", "/display/{quarterCode}"}, method = RequestMethod.GET)
     @LicenseRequired
@@ -92,9 +80,9 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     public String completeFinancialSurvey(final Model model, final HttpServletRequest request, @PathVariable(name="quarterCode", required = false) String quarterCode) throws CMSItemNotFoundException {
 
         model.addAttribute("controllerUrl", "/my-sagia/financial-survey");
-        model.addAttribute("draftExists", sagiaDraftFacade.isJsonDraftExists(SAGIA_FINANCIAL_SURVEY_DRAFT+quarterCode));
-		//SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SAGIA_LICENSE_AMEND);
-       // model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
+        //  model.addAttribute("draftExists", sagiaDraftFacade.isJsonDraftExists(SAGIA_FINANCIAL_SURVEY_DRAFT+quarterCode));
+        //SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SAGIA_LICENSE_AMEND);
+        // model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
         if (request.getRequestURI().contains("display")) {
             model.addAttribute("quarterCode", quarterCode != null ? quarterCode : "");
         }
@@ -120,18 +108,75 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
             return financialSurvey;
         }*/
 
-       // sagiaFinancialSurveyFacade.saveLicenseAmendment(financialSurvey);
-     //   sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel)userService.getCurrentUser(),TermsAndConditionsAcceptanceEventEnum.LICENSE_SERVICES);
-        sagiaDraftFacade.removeJsonDraft(SAGIA_FINANCIAL_SURVEY_DRAFT);
+        // sagiaFinancialSurveyFacade.saveLicenseAmendment(financialSurvey);
+        //   sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel)userService.getCurrentUser(),TermsAndConditionsAcceptanceEventEnum.LICENSE_SERVICES);
+        // sagiaDraftFacade.removeJsonDraft(SAGIA_FINANCIAL_SURVEY_DRAFT);
         return financialSurvey;
     }
 
-    @RequestMapping(value = "/history", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/saveCompanyProfile" , method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @RequireHardLogIn
     @ResponseBody
-    public List<LicenseAmendment> amendLicenseHeaders() {
-        return sagiaFinancialSurveyFacade.getLicenseAmendmentsHeaders();
+    public FinancialSurvey saveFinancialSurveyCompanyProfileSection(@RequestBody FinancialSurvey financialSurvey) {
+
+        Set<String> errors = new SagiaFinancialSurveyValidator().validateEntity(financialSurvey);
+        if (!errors.isEmpty()) {
+            financialSurvey.setErrors(errors);
+            return financialSurvey;
+        }
+        sagiaFinancialSurveyFacade.saveFinancialSurveyCompanyProfile(financialSurvey);
+
+        return financialSurvey;
     }
+
+
+    @RequestMapping(value = "/saveShareholderEquity" , method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequireHardLogIn
+    @ResponseBody
+    public FinancialSurvey saveShareholderEquity(@RequestBody FinancialSurvey financialSurvey) {
+
+        Set<String> errors = new SagiaFinancialSurveyValidator().validateEntity(financialSurvey);//TODO Change by Equity validator
+        if (!errors.isEmpty()) {
+            financialSurvey.setErrors(errors);
+            return financialSurvey;
+        }
+        sagiaFinancialSurveyFacade.saveShareholderEquity(financialSurvey);
+
+        return financialSurvey;
+    }
+
+
+    @RequestMapping(value = "/saveBrnachesAndSubsidiaries" , method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequireHardLogIn
+    @ResponseBody
+    public FinancialSurvey saveBrnachesAndSubsidiaries(@RequestBody FinancialSurvey financialSurvey) {
+
+        Set<String> errors = new SagiaFinancialSurveyValidator().validateBranchesAndSubsidiaries(financialSurvey);
+        if (!errors.isEmpty()) {
+            financialSurvey.setErrors(errors);
+            return financialSurvey;
+        }
+        sagiaFinancialSurveyFacade.saveFinancialSurveyBranchesAndSubsidiaries(financialSurvey);
+
+        return financialSurvey;
+    }
+
+    @RequestMapping(value = "/saveShareholders" , method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequireHardLogIn
+    @ResponseBody
+    public FinancialSurvey saveShareholders(@RequestBody FinancialSurvey financialSurvey) {
+
+        /*Set<String> errors = new SagiaFinancialSurveyValidator().validateBranchesAndSubsidiaries(financialSurvey);
+        if (!errors.isEmpty()) {
+            financialSurvey.setErrors(errors);
+            return financialSurvey;
+        }*/
+        sagiaFinancialSurveyFacade.saveFinancialSurveyShareholders(financialSurvey);
+
+        return financialSurvey;
+    }
+
 
 
     @RequestMapping(value = "/{quarterCode}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -141,27 +186,7 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
         return sagiaFinancialSurveyFacade.getFinancialSurvey(quarterCode);
     }
 
-    @RequestMapping(value = "/amendmentTypes", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @RequireHardLogIn
-    @ResponseBody
-    public LicenseAmendment getAmendmentTypes(@RequestBody LicenseAmendment licenseAmendment) {
-        licenseAmendment.setErrors(new HashSet<>());
 
-        Set<String> errors = new SagiaLicenseAmendmentValidator().validate(licenseAmendment);
-        if (!errors.isEmpty()) {
-            licenseAmendment.setErrors(errors);
-            return licenseAmendment;
-        }
-
-        LicenseAmendment licenseWithAmendmentTypes = sagiaFinancialSurveyFacade.getLicenseAmendmentTypes(licenseAmendment);
-
-        licenseWithAmendmentTypes.setNoChanges(false);
-        Set<String> businessValidationErrors = licenseWithAmendmentTypes.getErrors();
-        if (businessValidationErrors.isEmpty() && licenseWithAmendmentTypes.getAmendmentTypesView().isEmpty()) {
-            licenseWithAmendmentTypes.setNoChanges(true);
-        }
-        return licenseWithAmendmentTypes;
-    }
 
     @RequestMapping(value = "/listItems", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @RequireHardLogIn
@@ -174,56 +199,15 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     @RequireHardLogIn
     @ResponseBody
     public Shareholder getShareholder(@PathVariable String shareholderId) {
-        return sagiaFinancialSurveyFacade.getShareholder(shareholderId);
+        return null ;//sagiaFinancialSurveyFacade.getShareholder(shareholderId);
     }
 
-    @RequestMapping(value = "/verifyInherit/{deceasedId}/{deedNumber}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    @RequireHardLogIn
-    public MOJInheritSet getVerifyInherit(@PathVariable("deceasedId") String deceasedId, @PathVariable("deedNumber") String deedNumber, final Model model) {
-    	boolean mojVerified = false;
-    	MOJInheritSet mojInherit = sagiaFinancialSurveyFacade.getVerifyInherit(deceasedId, deedNumber);
-    	if("X".equalsIgnoreCase(mojInherit.getIsMojVerified())) {
-    		mojVerified = true;
-    	}
-    	model.addAttribute("isMojVerified", mojVerified);
-    	model.addAttribute("mojDeceasedName", mojInherit.getDeceasedName());
-    	return mojInherit;
-    }
-
-    @RequestMapping(value = "/products", method = RequestMethod.POST)
-    @ResponseBody
-    public String getFiltersForProducts(@RequestBody Map<String, String> filtersList) {
-        String top = String.valueOf(BATCH_SIZE_FOR_PRODUCTS_SEARCH);
-
-        String skip;
-        if (filtersList.get(BATCHNO) != null && Integer.parseInt(filtersList.get(BATCHNO)) > 0) {
-            skip = String.valueOf(((Integer.parseInt(filtersList.get(BATCHNO)) - 1) * BATCH_SIZE_FOR_PRODUCTS_SEARCH) - 1);
-        } else {
-            skip = "0";
-        }
-        Collection<ProductData> productsList;
-        if ((filtersList.get(USERINPUT)) != null && !filtersList.get(USERINPUT).isEmpty()) {
-            if (StringUtils.isNumeric(filtersList.get(USERINPUT))) {
-                productsList = sagiaFinancialSurveyFacade.getAmendProductsListWithId(filtersList.get(USERINPUT), skip, top);
-            } else {
-                productsList = sagiaFinancialSurveyFacade.getAmendProductsListWithDescription(filtersList.get(USERINPUT), skip, top);
-            }
-        } else {
-            productsList = sagiaFinancialSurveyFacade.getAmendProductsList(skip, top);
-        }
-
-        if (CollectionUtils.isNotEmpty(productsList)) {
-            return  new Gson().toJson(productsList);
-        }
-        return "[]";
-    }
 
 
     @RequestMapping(value = "/isic/{licenseType}", method = RequestMethod.GET)
     @ResponseBody
     public Map getIsic(@PathVariable String licenseType, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
-       // validateUser(request, response);
+        // validateUser(request, response);
         //return sagiaIsicFacade.getIsicFromMasterData(licenseType);
         return sagiaIsicFacade.getIsic(licenseType);
     }
@@ -263,13 +247,13 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     @RequireHardLogIn
     public @ResponseBody
     FinancialSurvey updateComplaint(@PathVariable("srID") String srID,
-                                                 @RequestBody UpdatableComplaintDetails detailsToUpdate, HttpServletRequest request, final BindingResult result) {
+                                    @RequestBody UpdatableComplaintDetails detailsToUpdate, HttpServletRequest request, final BindingResult result) {
 
-       // sagiaComplaintDetailsValidator.validate(detailsToUpdate, result);
+        // sagiaComplaintDetailsValidator.validate(detailsToUpdate, result);
 
         if (result.hasErrors()) {
-        //    return complaintsAndEnquiryService.getComplaintBy(srID);
-          return null;
+            //    return complaintsAndEnquiryService.getComplaintBy(srID);
+            return null;
         } else {
             sagiaFinancialSurveyFacade.addFinancialSurveyMessage(detailsToUpdate.getTextMsg(), srID);
             FinancialSurvey financialSurvey = sagiaFinancialSurveyFacade.getFinancialSurvey(srID);
@@ -291,7 +275,7 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
         file.getName();
 
 
-       // sagiaDraftFacade.save(draftData, id);
+        // sagiaDraftFacade.save(draftData, id);
     }
 
 

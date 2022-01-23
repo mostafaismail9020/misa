@@ -22,6 +22,35 @@ function caluculateTotalCapital() {
     $('#totalShareholderEquityCurrentQuarterId').val(sum);
 }
 
+function calculateShareholderEquity() {
+
+    var sharePercentage = $('#shareholderPercentageId').val();
+    if (sharePercentage <= 0  || sharePercentage > 100) {
+        return;
+    }
+    var retainedEarningsIncludeCurrentQuarter = (financialSurvey.shareholderEquity.retainedEarningsIncludeCurrentQuarter /100)  * sharePercentage ;
+    var paidUpCapitalCurrentQuarter = (financialSurvey.paidUpCapitalCurrentQuarter /100)  * sharePercentage ;
+    var additionalPaidUpCapitalCurrentQuarter = (financialSurvey.shareholderEquity.additionalPaidUpCapitalCurrentQuarter /100)  * sharePercentage ;
+    var profitLossQuarterCurrentQuarter = (financialSurvey.shareholderEquity.profitLossQuarterCurrentQuarter /100)  * sharePercentage ;
+    var totalReservesCurrentQuarter = (financialSurvey.shareholderEquity.totalReservesCurrentQuarter /100)  * sharePercentage ;
+    var treasurySharesCurrentQuarter = (financialSurvey.shareholderEquity.treasurySharesCurrentQuarter /100)  * sharePercentage ;
+    var headOfficeAccountInBranchCurrentQuarter = (financialSurvey.shareholderEquity.headOfficeAccountInBranchCurrentQuarter /100)  * sharePercentage ;
+    var shareholderEquityOthersCurrentQuarter = (financialSurvey.shareholderEquity.shareholderEquityOthersCurrentQuarter /100)  * sharePercentage ;
+    var minorityRightsCurrentQuarter = (financialSurvey.shareholderEquity.minorityRightsCurrentQuarter /100)  * sharePercentage ;
+    var totalShareholderEquityCurrentQuarter = (financialSurvey.shareholderEquity.totalShareholderEquityCurrentQuarter /100)  * sharePercentage ;
+
+    $('#shareholderRetainedEarningsIncludeCurrentQuarterId').val(Math.ceil(retainedEarningsIncludeCurrentQuarter));
+    $('#shareholderAdditionalPaidUpCapitalCurrentQuarterId').val(Math.ceil(additionalPaidUpCapitalCurrentQuarter));
+    $('#shareholderCapitalId').val(Math.ceil((paidUpCapitalCurrentQuarter)));
+    $('#shareholderProfitLossQuarterCurrentQuarterId').val(Math.ceil(profitLossQuarterCurrentQuarter));
+    $('#shareholderTotalReservesCurrentQuarterId').val(Math.ceil(totalReservesCurrentQuarter));
+    $('#shareholderTreasurySharesCurrentQuarterId').val(Math.ceil(treasurySharesCurrentQuarter));
+    $('#shareholderHeadOfficeAccountInBranchCurrentQuarterId').val(Math.ceil(headOfficeAccountInBranchCurrentQuarter));
+    $('#shareholderShareholderEquityOthersCurrentQuarterId').val(Math.ceil(shareholderEquityOthersCurrentQuarter));
+    $('#shareholderMinorityRightsCurrentQuarterId').val(Math.ceil(minorityRightsCurrentQuarter));
+    $('#shareholderTotalShareholderEquityCurrentQuarterId').val(Math.ceil(totalShareholderEquityCurrentQuarter));
+}
+
 $(document).ready(function () {
 
 
@@ -180,8 +209,11 @@ $(document).ready(function () {
         $("input[name='consolidatedStandloneRadioBox']").click(function () {
             if ($(this).val() === "true") {
                 $('#subsidiarySection').hide();
+                financialSurvey.isConsolidated = false;
+
             } else {
                 $('#subsidiarySection').show();
+                financialSurvey.isConsolidated = true;
             }
         });
 
@@ -226,11 +258,16 @@ $(document).ready(function () {
                 $('a[href="#accessibletabscontent0-0"]').click();
                 return;
             }
-            $('a[href="#accessibletabscontent0-1"]').click();
+            submitFinancialSurveyCompanyProfile();
         });
 
         $(document).on("click", "#nextTabSubsidiariesBtnId", function () {
-            $('a[href="#accessibletabscontent0-2"]').click();
+            /*var validator = entityValidator();
+            if (!validator.form()) {
+                $('a[href="#accessibletabscontent0-1"]').click();
+                return;
+            }*/
+            submitFinancialSurveyBrnachesAndSubsidiaries();
         });
 
         $(document).on("click", "#nextTabShareholdersEquityBtnId", function () {
@@ -240,51 +277,28 @@ $(document).ready(function () {
                 return;
             }else {
                 caluculateTotalCapital();
+                submitFinancialSurveyEquity();
             }
 
-            $('a[href="#accessibletabscontent0-3"]').click();
+
 
         });
 
         $(document).on("click", "#nextTabShareholdersBtnId", function () {
-
-            validateShareHoldersSumPercentage();
-
+            submitFinancialSurveyShareholders();
         });
+
 
 
         // Cancel amendment
         $(document).on("click", ".cancelAmendmentBtn", function () {
-            var dirty = SAGIA.financialSurvey.dirtyAmendment;
-            if (!dirty) {
-                var labour = financialSurvey.entity.labour;
-                var labourOld = financialSurvey.entity.labourOld;
-                dirty = $('#labourId').val() !== labour || labour !== labourOld;
 
-                var capital = financialSurvey.entity.capital;
-                var capitalOld = financialSurvey.entity.capitalOld;
-                dirty = dirty || $('#capitalId').val() !== capital || capital !== capitalOld;
-
-                var name = financialSurvey.entity.name;
-                var nameOld = financialSurvey.entity.nameOld;
-                dirty = dirty || $('#entityNameId').val() !== name || name !== nameOld;
-
-                var legalStatus = financialSurvey.entity.legalStatus;
-                var legalStatusOld = financialSurvey.entity.legalStatusOld;
-                dirty = dirty || $('#legalStatusId option:selected').val() !== legalStatus || legalStatus !== legalStatusOld;
-            }
-
-            if (dirty) {
-                $('#unsavedChangesModalId').modal({backdrop: "static", keyboard: false});
-            } else {
-              //  $('#expandAmendmentHistoryBtnId').click();
-                // Go back to dashboard
                 window.location.href = ACC.config.encodedContextPath + "/dashboard";
-            }
+
         });
 
         $(document).on("click", "#dismissChangesBtnId, .showHistoryBtn", function () {
-            $('#expandAmendmentHistoryBtnId').click();
+            window.location.href = ACC.config.encodedContextPath + "/dashboard";
         });
 
         $(document).on("click", "#submitChangesBtnId", function () {
@@ -457,6 +471,28 @@ var validateShareHoldersSumPercentage = function () {
 
 }
 
+
+var validateBranchesSumPercentage = function () {
+    var sum = 0;
+    if (financialSurvey.branches.length == 0 ){
+           return;
+    }
+    financialSurvey.branches.forEach(function(branch) {
+        if(branch.volumeWeight != null && branch.action != null && branch.action !== '03') {
+            sum = Math.round((sum + Number(branch.volumeWeight)) * 1e12) / 1e12 ;
+        }
+    });
+    if (sum !== 100) {
+        $('#licenseAmendmentValidationDialogId').modal({
+            backdrop: "static",
+            keyboard: false
+        }).find('.modal-description').empty().text(getI18nText('validation.sharePerc.sum'));
+       // $('a[href="#accessibletabscontent0-1"]').click();
+        return;
+    }
+
+}
+
 var validateLicense = function () {
 
 
@@ -597,6 +633,7 @@ function fillShareholderEquityData( shareholderEquity ) {
     $('#headOfficeAccountInBranchCurrentQuarterId').val(shareholderEquity.headOfficeAccountInBranchCurrentQuarter);
     $('#shareholderEquityOthersCurrentQuarterId').val(shareholderEquity.shareholderEquityOthersCurrentQuarter);
     $('#minorityRightsCurrentQuarterId').val(shareholderEquity.minorityRightsCurrentQuarter);
+    $('#totalShareholderEquityCurrentQuarterId').val(shareholderEquity.totalShareholderEquityCurrentQuarter);
 }
 
 
@@ -620,7 +657,7 @@ function populateShareholderEquity() {
     financialSurvey.shareholderEquity.shareholderEquityOthersPreviousQuarter = $('#shareholderEquityOthersPreviousQuarterId').val();
     financialSurvey.shareholderEquity.minorityRightsCurrentQuarter = $('#minorityRightsCurrentQuarterId').val();
     financialSurvey.shareholderEquity.minorityRightsPreviousQuarter = $('#minorityRightsPreviousQuarterId').val();
-    // financialSurvey.shareholderEquity.totalShareholderEquityCurrentQuarter = $('#totalShareholderEquityCurrentQuarterId').val();
+     financialSurvey.shareholderEquity.totalShareholderEquityCurrentQuarter = $('#totalShareholderEquityCurrentQuarterId').val();
     //  financialSurvey.shareholderEquity.totalShareholderEquityPreviousQuarter = $('#totalShareholderEquityPreviousQuarterId').val();
     /*financialSurvey.shareholderEquity.cashTransactionIncrease = $('#cashTransactionIncreaseId').is(':checked');
     financialSurvey.shareholderEquity.profitsIncrease = $('#profitsIncreaseId').is(':checked');
@@ -751,6 +788,225 @@ function submitLicenseWithAttachments() {
     });
 }
 
+
+var submitFinancialSurveyShareholders = function () {
+
+
+    var sum = 0;
+    financialSurvey.shareholders.forEach(function(shareholder) {
+        if(shareholder.shareholderPercentage != null && shareholder.action != null && shareholder.action !== '03') {
+            sum = Math.round((sum + Number(shareholder.shareholderPercentage)) * 1e12) / 1e12 ;
+        }
+    });
+    if (sum !== 100) {
+        $('#licenseAmendmentValidationDialogId').modal({
+            backdrop: "static",
+            keyboard: false
+        }).find('.modal-description').empty().text(getI18nText('validation.sharePerc.sum'));
+        return;
+    }
+
+    var token = $('input[name="CSRFToken"]').attr('value');
+    $.ajax(ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/saveShareholders", {
+        method: "POST",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader('CSRFToken', token);
+        },
+        data: JSON.stringify(financialSurvey),
+        success: function () {
+            if (financialSurvey.errors && financialSurvey.errors.length) {
+                var $modalDescription = $('#licenseAmendmentValidationDialogId').modal({
+                    backdrop: "static",
+                    keyboard: false
+                }).find('.modal-description');
+                $modalDescription.empty();
+                financialSurvey.errors.forEach(function (error) {
+                    $modalDescription.append('<p>' + error + '</p>');
+                });
+            } else {
+                $('a[href="#accessibletabscontent0-5"]').click();
+                return
+            }
+        },
+        error: function () {
+            $('#docsmodalId').modal('hide');
+            $('#requestErrorDialogId').modal({
+                backdrop: "static",
+                keyboard: false
+            }).find('.globalMessage-msg').text(getI18nText("finance.survey.submit.error"));
+        }
+    });
+
+};
+var submitFinancialSurveyBrnachesAndSubsidiaries = function () {
+
+    var sum = 0;
+    var numberOfBranches = 0;
+
+    financialSurvey.branches.forEach(function(branch) {
+        if(branch.volumeWeight != null  && branch.action !== '03') {
+            sum = Math.round((sum + Number(branch.volumeWeight)) * 1e12) / 1e12 ;
+            numberOfBranches ++;
+        }
+    });
+    if (sum !== 100 && numberOfBranches !== 0 ) {
+        $('#licenseAmendmentValidationDialogId').modal({
+            backdrop: "static",
+            keyboard: false
+        }).find('.modal-description').empty().text(getI18nText('finance.survey.validation.branchPerc.sum'));
+        return;
+    }
+
+    var numberOfSubsidiaries = 0;
+    financialSurvey.subsidiaries.forEach(function(subsidiary) {
+        if( subsidiary.action !== '03') {
+            numberOfSubsidiaries ++;
+        }
+    });
+
+
+    if (numberOfSubsidiaries == 0 &&  financialSurvey.isConsolidated ){
+        $('#licenseAmendmentValidationDialogId').modal({
+            backdrop: "static",
+            keyboard: false
+        }).find('.modal-description').empty().text(getI18nText('finance.survey.validation.subsidiaries'));
+        return;
+    }
+
+    var token = $('input[name="CSRFToken"]').attr('value');
+    $.ajax(ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/saveBrnachesAndSubsidiaries", {
+        method: "POST",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader('CSRFToken', token);
+        },
+        data: JSON.stringify(financialSurvey),
+        success: function () {
+            if (financialSurvey.errors && financialSurvey.errors.length) {
+                var $modalDescription = $('#licenseAmendmentValidationDialogId').modal({
+                    backdrop: "static",
+                    keyboard: false
+                }).find('.modal-description');
+                $modalDescription.empty();
+                financialSurvey.errors.forEach(function (error) {
+                    $modalDescription.append('<p>' + error + '</p>');
+                });
+            } else {
+                $('a[href="#accessibletabscontent0-2"]').click();
+                return
+            }
+        },
+        error: function () {
+            $('#docsmodalId').modal('hide');
+            $('#requestErrorDialogId').modal({
+                backdrop: "static",
+                keyboard: false
+            }).find('.globalMessage-msg').text(getI18nText("finance.survey.submit.error"));
+        }
+    });
+};
+
+var submitFinancialSurveyCompanyProfile = function () {
+
+    populateCompanyProfile();
+
+    var selectedActivities = SAGIA.financialSurvey.businessActivities.selectedActivities;
+    var selectedActivitiesIds = [];
+    selectedActivities.forEach(function(activity) {
+        selectedActivitiesIds.push(activity.activityId);
+    });
+
+    financialSurvey.businessActivities = [];
+    selectedActivities.forEach(function (activity) {
+        financialSurvey.businessActivities.push({
+            id: activity.activityId,
+            description: activity.description
+        });
+    });
+
+   // var timerId = setInterval(function () {
+        var token = $('input[name="CSRFToken"]').attr('value');
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/saveCompanyProfile", {
+            method: "POST",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Accept", "application/json");
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader('CSRFToken', token);
+            },
+            data: JSON.stringify(financialSurvey),
+            success: function () {
+                if (financialSurvey.errors && financialSurvey.errors.length) {
+                    var $modalDescription = $('#licenseAmendmentValidationDialogId').modal({
+                        backdrop: "static",
+                        keyboard: false
+                    }).find('.modal-description');
+                    $modalDescription.empty();
+                    financialSurvey.errors.forEach(function (error) {
+                        $modalDescription.append('<p>' + error + '</p>');
+                    });
+                } else {
+                    $('a[href="#accessibletabscontent0-1"]').click();
+                    return
+                }
+            },
+            error: function () {
+                $('#docsmodalId').modal('hide');
+                $('#requestErrorDialogId').modal({
+                    backdrop: "static",
+                    keyboard: false
+                }).find('.globalMessage-msg').text(getI18nText("finance.survey.submit.error"));
+            }
+        });
+   // }, 1000);
+};
+
+
+
+var submitFinancialSurveyEquity = function () {
+
+    populateShareholderEquity();
+
+    // var timerId = setInterval(function () {
+    var token = $('input[name="CSRFToken"]').attr('value');
+    $.ajax(ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/saveShareholderEquity", {
+        method: "POST",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader('CSRFToken', token);
+        },
+        data: JSON.stringify(financialSurvey),
+        success: function () {
+            if (financialSurvey.errors && financialSurvey.errors.length) {
+                var $modalDescription = $('#licenseAmendmentValidationDialogId').modal({
+                    backdrop: "static",
+                    keyboard: false
+                }).find('.modal-description');
+                $modalDescription.empty();
+                financialSurvey.errors.forEach(function (error) {
+                    $modalDescription.append('<p>' + error + '</p>');
+                });
+            } else {
+                $('a[href="#accessibletabscontent0-3"]').click();
+                return
+            }
+        },
+        error: function () {
+            $('#docsmodalId').modal('hide');
+            $('#requestErrorDialogId').modal({
+                backdrop: "static",
+                keyboard: false
+            }).find('.globalMessage-msg').text(getI18nText("finance.survey.submit.error"));
+        }
+    });
+    // }, 1000);
+};
+
+
+
 function setLicenseData(data, history) {
     financialSurvey = data;
 
@@ -765,15 +1021,27 @@ function setLicenseData(data, history) {
     $('#financeManagerTelephoneId').val(companyProfile.financeManagerTelephone);
     $('#crIssueDate').val(companyProfile.crIssueDate);
     $('#incorporationDate').val(companyProfile.incorporationDate);
+    $('#comppanyPaidUpCapitalCurrentQuarterId').val(financialSurvey.paidUpCapitalCurrentQuarter);
+
     fillShareholderEquityData(financialSurvey.shareholderEquity)
 
-    var companyStatus = financialSurvey.companyStatus ;
-    if (!companyStatus){
-        companyStatus = 'ACTIVE';
-    }
-    updateDropDown('#companyStatusId', companyStatus);
+    updateDropDown('#companyStatusId', financialSurvey.companyStatus);
+    updateDropDown('#disclosureCurrencyId', financialSurvey.disclosureCurrency);
+
+    $('#suspensionDateId').val(financialSurvey.suspensionDate);
 
   //  updateDropDown('#legalStatusId', companyProfile.legalStatus);
+    if (financialSurvey.isConsolidated) {
+        $("#standloneId").prop('checked',false);
+        $("#consolidatedId").prop('checked',true);
+        $('#subsidiarySection').show();
+    }else {
+        $("#standloneId").prop('checked',true);
+        $("#consolidatedId").prop('checked',false);
+        $('#subsidiarySection').hide();
+    }
+
+
 
     var DELETE_ACTION = '03';
 
@@ -842,22 +1110,23 @@ function setLicenseData(data, history) {
         if (branch.action !== DELETE_ACTION) {
             var typeDescription = branch.typeDescription;
             var name = branch.name;
+            var volumeWeight = branch.volumeWeight;
             var city = branch.address.cityDescription;
             var addrNumber = branch.addrNumber;
             var $branchRow = $branchRowTemplate.clone(true).show();
-            $branchRow.attr("id", branch.srId).children().first().html(typeDescription).next().text(name).next().text(city).next().text(addrNumber);
+            $branchRow.attr("id", branch.srId).children().first().html(typeDescription).next().text(name).next().text(city).next().text(volumeWeight);
             setColorForDraftRow($branchRow, branch.action);
-            if (!history) {
-                if (branch.main) { // Main branch, can edit, can't be removed
-                    $branchRow.find('.viewBranchBtn').hide();
-                    $branchRow.find('.editBranchBtn').show();
-                    $branchRow.find('.deleteDropdown').hide();
-                } else { // Can be removed
+
+          //  if (branch.main) { // Main branch, can edit, can't be removed
                     $branchRow.find('.viewBranchBtn').show();
-                    $branchRow.find('.editBranchBtn').hide();
+                    $branchRow.find('.editBranchBtn').show();
                     $branchRow.find('.deleteDropdown').show();
-                }
-            }
+          //      } else { // Can be removed
+         //           $branchRow.find('.viewBranchBtn').show();
+         //           $branchRow.find('.editBranchBtn').hide();
+        //            $branchRow.find('.deleteDropdown').show();
+        //    }
+
 
             $branchesTable.append($branchRow);
         }

@@ -184,12 +184,13 @@ var saveBranch = function () {
     if (branchSrId) { // edit branch
         branchRow = $('#' + branchSrId);
         branchRow.children().first().html(typeDescription)
-            .next().text(name).next().text(cityDescription);
+            .next().text(name).next().text(cityDescription).next().text(volumeWeight);
 
         var rowData = SAGIA.financialSurvey.branch.dataTable.row(branchRow).data();
         rowData[0] = typeDescription;
         rowData[1] = name;
         rowData[2] = cityDescription;
+        rowData[3] = volumeWeight;
         SAGIA.financialSurvey.branch.dataTable.row(branchRow).data(rowData).invalidate();
 
         var branchIndex = financialSurvey.branches.findIndex(function (branch) {

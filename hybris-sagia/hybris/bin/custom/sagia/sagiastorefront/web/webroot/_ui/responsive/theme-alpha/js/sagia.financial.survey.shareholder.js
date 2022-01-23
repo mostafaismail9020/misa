@@ -545,7 +545,7 @@ var editShareholder = function () {
     fillShareholderForm(selectedShareholder);
     $('.saveShareholderBtn').attr('id', selectedShareholder.srId || selectedShareholder.newItemId);
     SAGIA.formElements.placeholderPolyfill();
-    prepareVisibleItemsEdit(selectedShareholder);
+    prepareShareholderVisibleItemsEdit(selectedShareholder);
     /*if(selectedShareholder.idType !== '4' ){
     	disableNICFields();
 
@@ -557,7 +557,7 @@ var editShareholder = function () {
 
 };
 
-function prepareVisibleItemsEdit(selectedShareholder) {
+function prepareShareholderVisibleItemsEdit(selectedShareholder) {
     $('#shareholderFormId').find('.contentModule-headline').show();
 
     $('#shareholderValidationDetails').hide();
@@ -686,6 +686,15 @@ function fillShareholderForm(selectedShareholder) {
     $('#shareholderPreferredSharesId').val(selectedShareholder.shareholderPreferredShares);
     $('#shareholderValueOfReverseInvestmentId').val(selectedShareholder.valueOfReverseInvestment);
 
+    $('#shareholderRetainedEarningsIncludeCurrentQuarterId').val(selectedShareholder.retainedEarningsIncludeCurrentQuarter);
+    $('#shareholderAdditionalPaidUpCapitalCurrentQuarterId').val(selectedShareholder.additionalPaidUpCapitalCurrentQuarter);
+    $('#shareholderProfitLossQuarterCurrentQuarterId').val(selectedShareholder.profitLossQuarterCurrentQuarter);
+    $('#shareholderTotalReservesCurrentQuarterId').val(selectedShareholder.totalReservesCurrentQuarter);
+    $('#shareholderTreasurySharesCurrentQuarterId').val(selectedShareholder.treasurySharesCurrentQuarter);
+    $('#shareholderHeadOfficeAccountInBranchCurrentQuarterId').val(selectedShareholder.headOfficeAccountInBranchCurrentQuarter);
+    $('#shareholderShareholderEquityOthersCurrentQuarterId').val(selectedShareholder.shareholderEquityOthersCurrentQuarter);
+    $('#shareholderMinorityRightsCurrentQuarterId').val(selectedShareholder.minorityRightsCurrentQuarter);
+    $('#shareholderTotalShareholderEquityCurrentQuarterId').val(selectedShareholder.totalShareholderEquityCurrentQuarter);
 
     $('#tradeDebitCurrentQuarterId').val(selectedShareholder.transaction.tradeDebitCurrentQuarter);
     $('#tradeCreditCurrentQuarterId').val(selectedShareholder.transaction.tradeCreditCurrentQuarter);
@@ -794,6 +803,19 @@ var saveShareholder = function (existingBp, bpId) {
     var $shareholderCountry = $('#shareholderCountryId option:selected');
     var shareholderCountry = $shareholderCountry.val();
     var shareholderCountryDescription = $shareholderCountry.text();
+
+    var retainedEarningsIncludeCurrentQuarter = $('#shareholderRetainedEarningsIncludeCurrentQuarterId').val();
+    var additionalPaidUpCapitalCurrentQuarter = $('#shareholderAdditionalPaidUpCapitalCurrentQuarterId').val();
+    var profitLossQuarterCurrentQuarter = $('#shareholderProfitLossQuarterCurrentQuarterId').val();
+    var totalReservesCurrentQuarter = $('#shareholderTotalReservesCurrentQuarterId').val();
+    var treasurySharesCurrentQuarter = $('#shareholderTreasurySharesCurrentQuarterId').val();
+    var headOfficeAccountInBranchCurrentQuarter = $('#shareholderHeadOfficeAccountInBranchCurrentQuarterId').val();
+    var shareholderEquityOthersCurrentQuarter = $('#shareholderShareholderEquityOthersCurrentQuarterId').val();
+    var minorityRightsCurrentQuarter =  $('#shareholderMinorityRightsCurrentQuarterId').val();
+    var totalShareholderEquityCurrentQuarter =  $('#shareholderTotalShareholderEquityCurrentQuarterId').val();
+
+
+
     var shareholderIndex = financialSurvey.shareholders.findIndex(function (shareholder) {
         return shareholderSrId && (shareholder.srId == shareholderSrId || shareholder.newItemId == parseInt(shareholderSrId));
     });
@@ -802,6 +824,10 @@ var saveShareholder = function (existingBp, bpId) {
     var percentageRow = (percentage.length > 5 ? percentage.substring(0, 5) : percentage) + '%';
     var shareholderVotingPowerRow = (shareholderVotingPower.length > 5 ? shareholderVotingPower.substring(0, 5) : shareholderVotingPower) + '%';
     var capitalRow = capital;
+
+
+
+
 
 
     // transaction
@@ -879,6 +905,17 @@ var saveShareholder = function (existingBp, bpId) {
         selectedShareholder.transaction.totalDebitCurrentQuarter =transaction.totalDebitCurrentQuarter ;
         selectedShareholder.transaction.totalCreditCurrentQuarter =transaction.totalCreditCurrentQuarter ;
 
+
+        selectedShareholder.retainedEarningsIncludeCurrentQuarter =  retainedEarningsIncludeCurrentQuarter ;
+        selectedShareholder.additionalPaidUpCapitalCurrentQuarter  = additionalPaidUpCapitalCurrentQuarter ;
+        selectedShareholder.profitLossQuarterCurrentQuarter  = profitLossQuarterCurrentQuarter  ;
+        selectedShareholder.totalReservesCurrentQuarter  = totalReservesCurrentQuarter  ;
+        selectedShareholder.treasurySharesCurrentQuarter  = treasurySharesCurrentQuarter  ;
+        selectedShareholder.headOfficeAccountInBranchCurrentQuarter  = headOfficeAccountInBranchCurrentQuarter  ;
+        selectedShareholder.shareholderEquityOthersCurrentQuarter  = shareholderEquityOthersCurrentQuarter  ;
+        selectedShareholder.minorityRightsCurrentQuarter  = minorityRightsCurrentQuarter  ;
+        selectedShareholder.totalShareholderEquityCurrentQuarter  = totalShareholderEquityCurrentQuarter  ;
+
         if (selectedShareholder.newItemId) { // Edit added shareholder - save all fields
             if (gender) { // edit individual shareholder
 
@@ -933,6 +970,16 @@ var saveShareholder = function (existingBp, bpId) {
             shareholderMultinationalCompany: '',
             shareholderPreferredShares: '',
 
+            retainedEarningsIncludeCurrentQuarter : '',
+            additionalPaidUpCapitalCurrentQuarter  : '',
+            profitLossQuarterCurrentQuarter  : '',
+            totalReservesCurrentQuarter  : '',
+            treasurySharesCurrentQuarter : '',
+            headOfficeAccountInBranchCurrentQuarter  : '',
+            shareholderEquityOthersCurrentQuarter  : '',
+            minorityRightsCurrentQuarter  : '',
+            totalShareholderEquityCurrentQuarter  : '',
+
             transaction: {
                  tradeDebitCurrentQuarter: '',
                  tradeCreditCurrentQuarter: '',
@@ -976,6 +1023,16 @@ var saveShareholder = function (existingBp, bpId) {
             shareholder.shareholderCountry = shareholderCountry;
             shareholder.shareholderCountryDescription = shareholderCountryDescription;
 
+            shareholder.retainedEarningsIncludeCurrentQuarter =  retainedEarningsIncludeCurrentQuarter ;
+            shareholder.additionalPaidUpCapitalCurrentQuarter  = additionalPaidUpCapitalCurrentQuarter ;
+            shareholder.profitLossQuarterCurrentQuarter  = profitLossQuarterCurrentQuarter  ;
+            shareholder.totalReservesCurrentQuarter  = totalReservesCurrentQuarter  ;
+            shareholder.treasurySharesCurrentQuarter  = treasurySharesCurrentQuarter  ;
+            shareholder.headOfficeAccountInBranchCurrentQuarter  = headOfficeAccountInBranchCurrentQuarter  ;
+            shareholder.shareholderEquityOthersCurrentQuarter  = shareholderEquityOthersCurrentQuarter  ;
+            shareholder.minorityRightsCurrentQuarter  = minorityRightsCurrentQuarter  ;
+            shareholder.totalShareholderEquityCurrentQuarter  = totalShareholderEquityCurrentQuarter  ;
+
 
         } else { // entity shareholder
             shareholderRow.attr("id", newItemId).children().first().html(name)
@@ -998,6 +1055,9 @@ var saveShareholder = function (existingBp, bpId) {
         shareholder.shareholderIsVotingPower = shareholderIsVotingPower;
         shareholder.shareholderHasPreferredShares = shareholderHasPreferredShares;
         shareholder.shareholderHaveReverseInvestment = shareholderHaveReverseInvestment;
+
+
+
 
         //transaction
             shareholder.transaction.currentDebitAccountCurrentQuarter = transaction.currentDebitAccountCurrentQuarter;
@@ -1115,6 +1175,19 @@ function clearShareholderForm() {
     $('#shareholderTelephoneId').val('');
     $('#shareholderEmailId').val('');
     $('#shareholderWebsiteId').val('');
+
+
+    $('#shareholderRetainedEarningsIncludeCurrentQuarterId').val('');
+    $('#shareholderAdditionalPaidUpCapitalCurrentQuarterId').val('');
+    $('#shareholderProfitLossQuarterCurrentQuarterId').val('');
+    $('#shareholderTotalReservesCurrentQuarterId').val('');
+    $('#shareholderTreasurySharesCurrentQuarterId').val('');
+    $('#shareholderHeadOfficeAccountInBranchCurrentQuarterId').val('');
+    $('#shareholderShareholderEquityOthersCurrentQuarterId').val('');
+    $('#shareholderMinorityRightsCurrentQuarterId').val('');
+    $('#shareholderTotalShareholderEquityCurrentQuarterId').val('');
+
+
     $('.saveShareholderBtn').removeAttr('id');
 
     $('#shareholderFirstNameId').removeAttr('disabled');

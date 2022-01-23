@@ -106,6 +106,7 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
         }
 
         financialSurvey.setIsConsolidated(financialSurveyModel.isIsConsolidated());
+        financialSurvey.setPaidUpCapitalCurrentQuarter(financialSurveyModel.getPaidUpCapitalCurrentQuarter());
         financialSurvey.setDisclosureCurrency(financialSurveyModel.getDisclosureCurrency());
         financialSurvey.setSuspensionDate(financialSurveyModel.getSuspensionDate()!=null?sagiaFormatProvider.formatBackEndDateToUIStr(financialSurveyModel.getSuspensionDate()):null);
      //   financialSurvey.setLicenseType(financialSurveyModel.getL);
@@ -118,7 +119,7 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
         shareholderEquity.setHeadOfficeAccountInBranchCurrentQuarter(financialSurveyModel.getHeadOfficeAccountInBranchCurrentQuarter());
         shareholderEquity.setShareholderEquityOthersCurrentQuarter(financialSurveyModel.getShareholderEquityOthersCurrentQuarter());
         shareholderEquity.setMinorityRightsCurrentQuarter(financialSurveyModel.getMinorityRightsCurrentQuarter());
-        shareholderEquity.setTotalShareholderEquityCurrentQuarter(financialSurveyModel.getShareholderEquityOthersCurrentQuarter());
+        shareholderEquity.setTotalShareholderEquityCurrentQuarter(financialSurveyModel.getTotalShareholderEquityCurrentQuarter());
         financialSurvey.setShareholderEquity(shareholderEquity);
     }
 

@@ -1,6 +1,6 @@
 $(document).on("click", "#financialSurveyNewMessageBtn", function (event) {
    // var srId = $(this).data('current-srid');
-    var srId = "Q4_2021" ;
+    var srId = "test3" ;
     var token = $('input[name="CSRFToken"]').attr('value')
     var inputMessage = $('#financialSurveyInputNewMessage').val();
 

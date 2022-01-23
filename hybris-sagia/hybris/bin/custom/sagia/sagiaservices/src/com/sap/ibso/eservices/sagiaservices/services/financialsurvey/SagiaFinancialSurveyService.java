@@ -17,7 +17,16 @@ public interface SagiaFinancialSurveyService {
 
     FinancialSurveyModel getFinancialSurvey(String quarter);
 
+    void saveFinancialSurveyShareholderEquity(FinancialSurvey financialSurvey);
+
     List<FinancialSurveyModel> getFinancialSurveys();
 
     SagiaCompanyProfileModel getCompanyProfile();
+
+    void saveFinancialSurveyCompanyProfile(FinancialSurvey financialSurveyData);
+
+    void saveFinancialSurveyBranchesAndSubsidiaries(FinancialSurvey financialSurveyData);
+
+
+    void saveFinancialSurveyShareholders(FinancialSurvey financialSurvey);
 }

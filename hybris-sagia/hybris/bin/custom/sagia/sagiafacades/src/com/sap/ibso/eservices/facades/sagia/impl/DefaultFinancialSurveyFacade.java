@@ -3,47 +3,22 @@ package com.sap.ibso.eservices.facades.sagia.impl;
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
 import com.sap.ibso.eservices.core.model.SagiaCompanyProfileModel;
 import com.sap.ibso.eservices.facades.data.FinancialSurveyData;
-import com.sap.ibso.eservices.facades.data.MOJInheritSet;
-import com.sap.ibso.eservices.facades.data.license.amendment.Branch;
-import com.sap.ibso.eservices.facades.data.license.amendment.BusinessActivity;
-import com.sap.ibso.eservices.facades.data.license.amendment.Entity;
-import com.sap.ibso.eservices.facades.data.license.amendment.LicenseAmendment;
-import com.sap.ibso.eservices.facades.data.license.amendment.LicenseAmendmentTypeData;
-import com.sap.ibso.eservices.facades.data.license.amendment.LicenseAmendmentTypeView;
-import com.sap.ibso.eservices.facades.data.license.amendment.Shareholder;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.AttachmentListItem;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItem;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItems;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.SubListItem;
-import com.sap.ibso.eservices.facades.data.license.simulation.SimulatedPriceData;
 import com.sap.ibso.eservices.facades.populators.financial.survey.CompanyProfilePopulator;
 import com.sap.ibso.eservices.facades.populators.financial.survey.FinancialSurveyPopulator;
 import com.sap.ibso.eservices.facades.populators.financial.survey.FinancialSurveyReversePopulator;
 import com.sap.ibso.eservices.facades.populators.license.amendment.AttachmentListItemPopulator;
-import com.sap.ibso.eservices.facades.populators.license.amendment.LicenseAmendmentPopulator;
-import com.sap.ibso.eservices.facades.populators.license.amendment.LicenseAmendmentReversePopulator;
 import com.sap.ibso.eservices.facades.populators.license.amendment.ListItemPopulator;
-import com.sap.ibso.eservices.facades.populators.license.amendment.MOJInheritPopulator;
 import com.sap.ibso.eservices.facades.populators.license.amendment.ShareholderPopulator;
 import com.sap.ibso.eservices.facades.populators.license.amendment.SubListItemPopulator;
 import com.sap.ibso.eservices.facades.sagia.SagiaFinancialSurveyFacade;
-import com.sap.ibso.eservices.sagiaservices.converters.simulation.SimulatedPriceParamsConverter;
-import com.sap.ibso.eservices.sagiaservices.data.moj.MOJInheritSetData;
-import com.sap.ibso.eservices.sagiaservices.data.price.PriceSimulationData;
-import com.sap.ibso.eservices.sagiaservices.data.price.PriceSimulationItemData;
 import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.CustomizingGetData;
-import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.LicenseAmendmentData;
-import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ProductData;
-import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ShareholderData;
-import com.sap.ibso.eservices.sagiaservices.price.AmendmentParam;
-import com.sap.ibso.eservices.sagiaservices.price.PriceSimulationService;
 import com.sap.ibso.eservices.sagiaservices.services.financialsurvey.SagiaFinancialSurveyService;
-import com.sap.ibso.eservices.sagiaservices.services.impl.AmendProductsService;
 import com.sap.ibso.eservices.sagiaservices.services.impl.CustomizationListService;
 import com.sap.ibso.eservices.sagiaservices.services.impl.GlobalValsService;
-import com.sap.ibso.eservices.sagiaservices.services.impl.LicenseAmendmentService;
-import com.sap.ibso.eservices.sagiaservices.services.impl.LicenseAmendmentShareholderService;
-import com.sap.ibso.eservices.sagiaservices.services.impl.MojInheritService;
 import de.hybris.platform.commercefacades.user.data.CompanyProfileData;
 import de.hybris.platform.commercefacades.user.data.FinancialSurvey;
 import de.hybris.platform.commercefacades.user.data.Messsage;
@@ -51,17 +26,12 @@ import de.hybris.platform.servicelayer.i18n.I18NService;
 import org.springframework.context.MessageSource;
 
 import javax.annotation.Resource;
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 /**
- * DefaultLicenseAmendmentFacade
+ * DefaultFinancialSurveyFacade
  */
 public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade {
 
@@ -94,20 +64,8 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
 
     private SagiaFinancialSurveyService sagiaFinancialSurveyService;
 
-    private LicenseAmendmentService licenseAmendmentService;
-
-
-
-    private LicenseAmendmentShareholderService licenseAmendmentShareholderService;
-    private AmendProductsService amendProductsService;
     private CustomizationListService customizationListService;
     private GlobalValsService globalValsService;
-    private PriceSimulationService priceSimulationService;
-    private MojInheritService mojInheritService;
-
-    private MOJInheritPopulator mojInheritPopulator;
-    private LicenseAmendmentPopulator licenseAmendmentPopulator;
-    private LicenseAmendmentReversePopulator licenseAmendmentReversePopulator;
 
     @Resource
     private FinancialSurveyPopulator financialSurveyPopulator;
@@ -129,7 +87,6 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
 
         FinancialSurveyModel financialSurveyModel = sagiaFinancialSurveyService.getFinancialSurvey(quarterCode);
         FinancialSurvey financialSurvey = new FinancialSurvey();
-
         financialSurveyPopulator.populate(financialSurveyModel,financialSurvey);
         financialSurvey.setQuarterCode(quarterCode);
 
@@ -143,21 +100,12 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
                     messsageList.add(message);
                 }
         );
-
         financialSurvey.setMessages(messsageList);
-
-
-
-
-
         CompanyProfileData companyProfileData = new CompanyProfileData();
-
         SagiaCompanyProfileModel companyProfileModel = sagiaFinancialSurveyService.getCompanyProfile();
         if (companyProfileModel != null ){
             companyProfilePopulator.populate(companyProfileModel,companyProfileData);
         }
-
-
         financialSurvey.setCompanyProfile(companyProfileData);
 
         return financialSurvey;
@@ -203,50 +151,6 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         return messsageList;
     }
 
-    @Override
-    public List<LicenseAmendment> getLicenseAmendmentsHeaders() {
-        List<LicenseAmendment> licenseAmendmentsHeaders = new ArrayList<>();
-       Collection<LicenseAmendmentData> licenseAmendmentsHeadersData = licenseAmendmentService.getCollection(LicenseAmendmentData.class);
-       // Collection<LicenseAmendmentData> licenseAmendmentsHeadersData = null;
-        if (licenseAmendmentsHeadersData != null && !licenseAmendmentsHeadersData.isEmpty()) {
-            for (LicenseAmendmentData licenseAmendmentHeaderData : licenseAmendmentsHeadersData) {
-                LicenseAmendment licenseAmendmentHeader = new LicenseAmendment();
-                licenseAmendmentPopulator.populate(licenseAmendmentHeaderData, licenseAmendmentHeader);
-                licenseAmendmentsHeaders.add(licenseAmendmentHeader);
-            }
-        }
-        return licenseAmendmentsHeaders;
-    }
-
-    @Override
-    public Shareholder getShareholder(String shareholderId) {
-        Shareholder shareholder = new Shareholder();
-        ShareholderData shareholderData = licenseAmendmentShareholderService.getLicenseAmendmentShareholder(shareholderId);
-        shareholderPopulator.populate(shareholderData, shareholder);
-        shareholder.setShBpId(shareholderData.getBpID()); // temp fix; should be fixed in crm
-        return shareholder;
-    }
-
-    @Override
-    public MOJInheritSet getVerifyInherit(String deceasedId, String deedNumber) {
-    	Collection<MOJInheritSetData> mojInheritData = mojInheritService.get(deceasedId, deedNumber);
-    	MOJInheritSetData mojInheritDataItem = new MOJInheritSetData();
-    	if(mojInheritData.stream().findFirst().isPresent()){
-        	mojInheritDataItem = mojInheritData.stream().findFirst().get();
-    	}
-
-//    	MOJInheritSetData mojInheritDataItem = new MOJInheritSetData();
-//    	mojInheritDataItem.setDeceasedId("12345");
-//    	mojInheritDataItem.setDeceasedName("test");
-//    	mojInheritDataItem.setDeedNumber("67890");
-//    	mojInheritDataItem.setIsMojVerified("X");
-
-
-    	MOJInheritSet mojInherit = new MOJInheritSet();
-    	mojInheritPopulator.populate(mojInheritDataItem, mojInherit);
-
-    	return mojInherit;
-    }
 
     @Override
     public List<FinancialSurveyData> getFinancialSurveyList() {
@@ -266,294 +170,33 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
     }
 
     @Override
+    public void saveFinancialSurveyBranchesAndSubsidiaries(FinancialSurvey financialSurvey) {
+        sagiaFinancialSurveyService.saveFinancialSurveyBranchesAndSubsidiaries(financialSurvey);
+    }
+
+    @Override
+    public void saveFinancialSurveyShareholders(FinancialSurvey financialSurvey) {
+        sagiaFinancialSurveyService.saveFinancialSurveyShareholders(financialSurvey);
+    }
+
+
+
+    @Override
+    public void saveShareholderEquity(FinancialSurvey financialSurvey) {
+        sagiaFinancialSurveyService.saveFinancialSurveyShareholderEquity(financialSurvey);
+    }
+
+    @Override
     public void saveFinancialSurvey(FinancialSurvey financialSurveyData) {
-
-
         sagiaFinancialSurveyService.saveFinancialSurvey(financialSurveyData);
-      //  FinancialSurveyData financialSurveyData = new FinancialSurveyData();
-      //    financialSurveyReversePopulator.populate(financialSurvey, licenseAmendmentData);
-      //  licenseAmendmentReversePopulator.populate(financialSurvey, licenseAmendmentData);
-     //   sagiaFinancialSurveyService.save(financialSurveyData);
     }
 
     @Override
-    public boolean isInstantAmendment(LicenseAmendment licenseAmendment) {
-        licenseAmendment.setAction(ACTION_05);
-
-        LicenseAmendmentData licenseAmendmentData = new LicenseAmendmentData();
-        licenseAmendmentReversePopulator.populate(licenseAmendment, licenseAmendmentData);
-       // return licenseAmendmentService.isInstantAmendment(licenseAmendmentData);
-        return true;
+    public void saveFinancialSurveyCompanyProfile(FinancialSurvey financialSurveyData) {
+        sagiaFinancialSurveyService.saveFinancialSurveyCompanyProfile(financialSurveyData);
     }
 
-    @Override
-    public LicenseAmendment getLicenseAmendmentTypes(LicenseAmendment modifiedLicenseAmendment) {
-        List<LicenseAmendmentTypeView> amendmentTypesView = new ArrayList<>();
-        LicenseAmendmentTypeData amendmentTypesData = new LicenseAmendmentTypeData();
 
-        // Products: if license type 1 or 5 at least one product
-        // Max 5 branches in one amendment
-
-        // Validate status change
-        if (!validateStatusChange(modifiedLicenseAmendment)) {
-            return modifiedLicenseAmendment;
-        }
-
-        Entity entity = modifiedLicenseAmendment.getEntity();
-        entity.setAction("");
-
-        modifyBrandName(amendmentTypesView, amendmentTypesData, entity);
-        setCapitalReductionAndIncrease(amendmentTypesView, amendmentTypesData, entity);
-        setIncreaseWorkforce(amendmentTypesView, amendmentTypesData, entity);
-        setActivityChange(modifiedLicenseAmendment, amendmentTypesView, amendmentTypesData, entity);
-        setShareholders(modifiedLicenseAmendment.getShareholders(), amendmentTypesView, amendmentTypesData);
-        setConverters(modifiedLicenseAmendment, amendmentTypesView, amendmentTypesData);
-        setBranches(modifiedLicenseAmendment, amendmentTypesView, amendmentTypesData);
-        setProductAmendment(modifiedLicenseAmendment, amendmentTypesView, amendmentTypesData);
-
-        modifiedLicenseAmendment.setAmendmentTypesData(amendmentTypesData);
-        modifiedLicenseAmendment.setAmendmentTypesView(amendmentTypesView);
-
-        modifiedLicenseAmendment.setInstantAmendment(isInstantAmendment(modifiedLicenseAmendment));
-        modifiedLicenseAmendment.setSimulatedPrices(computeSimulatedPrices(modifiedLicenseAmendment));
-
-        return modifiedLicenseAmendment;
-    }
-
-    private boolean validateStatusChange(LicenseAmendment modifiedLicenseAmendment) {
-        String legalStatus = modifiedLicenseAmendment.getEntity().getLegalStatus();
-        String legalStatusOld = modifiedLicenseAmendment.getEntity().getLegalStatusOld();
-
-        Set<String> errors = new HashSet<>();
-        modifiedLicenseAmendment.setErrors(errors);
-        if (ESTB.equals(legalStatusOld)) {
-            long activeShareholdersCount = modifiedLicenseAmendment.getShareholders().stream().filter(s -> !DELETE.equals(s.getAction())).count();
-            long activeShareholdersPersonCount = modifiedLicenseAmendment.getShareholders().stream().filter(s -> !DELETE.equals(s.getAction()) && INDIVIDUAL_SHAREHOLDER_TYPE.equals(s.getBpType())).count();
-            if (LLC.equals(legalStatus) && activeShareholdersCount < 2L) {
-                errors.add(getLocalizedValue("license.amend.type.convertEstablishment.validation"));
-                return false;
-            } else if (ILLC.equals(legalStatus) && activeShareholdersPersonCount != 1L) {
-                errors.add(getLocalizedValue("license.amend.type.convertIndividual.validation"));
-                return false;
-            }
-
-        }
-        return true;
-    }
-
-    private List<SimulatedPriceData> computeSimulatedPrices(LicenseAmendment modifiedLicenseAmendment) {
-		AmendmentParam functionParams = SimulatedPriceParamsConverter.from(modifiedLicenseAmendment.getAmendmentTypesData());
-		PriceSimulationData simulationData = priceSimulationService.getPriceSimulationDataForAmendment(ZSR5,  functionParams);
-        List<PriceSimulationItemData> simulatedPrices = simulationData.getPriceSimulationItems();
-        return SimulatedPriceParamsConverter.from(simulatedPrices);
-    }
-
-    private void setConverters(LicenseAmendment modifiedLicenseAmendment, List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData) {
-
-        long activeShareholdersCount = modifiedLicenseAmendment.getShareholders().stream().filter(s -> !DELETE.equals(s.getAction())).count();
-        String legalStatus = modifiedLicenseAmendment.getEntity().getLegalStatus();
-        String legalStatusOld = modifiedLicenseAmendment.getEntity().getLegalStatusOld();
-
-        if (activeShareholdersCount > 1L && (ESTB.equals(legalStatusOld) || ILLC.equals(legalStatusOld))) {
-            modifiedLicenseAmendment.getEntity().setAction(MODIFY);
-            amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.convertEstablishment"), "60"));
-            amendmentTypesData.setEnEstToLlc(AMEND_TYPE_VALUE);
-        } else if (activeShareholdersCount == 1L && ESTB.equals(legalStatusOld) && ILLC.equals(legalStatus)) {
-            Optional<Shareholder> uniqueShareholder = modifiedLicenseAmendment.getShareholders().stream().filter(s -> !DELETE.equals(s.getAction())).findFirst();
-            if (uniqueShareholder.isPresent() && INDIVIDUAL_SHAREHOLDER_TYPE.equals(uniqueShareholder.get().getBpType())) {
-                modifiedLicenseAmendment.getEntity().setAction(MODIFY);
-                amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.convertIndividual"), "170"));
-                amendmentTypesData.setEnLegalstatToIllc(AMEND_TYPE_VALUE);
-            }
-        } else {
-            modifiedLicenseAmendment.getEntity().setLegalStatus(legalStatusOld);
-        }
-    }
-
-    private void setProductAmendment(LicenseAmendment modifiedLicenseAmendment, List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData) {
-        boolean modifiedProducts = modifiedLicenseAmendment.getProducts().stream().anyMatch(p -> p.getAction() != null && !p.getAction().isEmpty());
-        if (modifiedProducts) {
-            String licenseType = modifiedLicenseAmendment.getLicenseType();
-            if (INDUSTRIAL_LICENSE.equals(licenseType) || AGRICULTURAL_LICENSE.equals(licenseType)) {
-                amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.productAmendment"), "110"));
-                amendmentTypesData.setPrAddReCh(AMEND_TYPE_VALUE);
-
-                if (modifiedLicenseAmendment.getProducts().stream().anyMatch(p -> p.getDescriptionChanged() != null && p.getDescriptionChanged())) {
-                    amendmentTypesData.setPrDescChange(AMEND_TYPE_VALUE);
-                }
-            }
-        }
-    }
-
-    private void setIncreaseWorkforce(List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData, Entity entity) {
-        BigDecimal currentWorkforce = new BigDecimal(entity.getLabourOld());
-        BigDecimal modifiedWorkforce = new BigDecimal(entity.getLabour());
-        if (currentWorkforce.compareTo(modifiedWorkforce) < 0) {
-            entity.setAction(MODIFY);
-            amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.increaseWorkforce"), "140"));
-            amendmentTypesData.setEnIncrWf(AMEND_TYPE_VALUE);
-        }
-    }
-
-    private void setActivityChange(LicenseAmendment modifiedLicenseAmendment, List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData, Entity entity) {
-        List<BusinessActivity> businessActivities = modifiedLicenseAmendment.getBusinessActivities();
-        if (businessActivities != null && !businessActivities.isEmpty()) {
-            amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.activityAmendment"), "100"));
-            amendmentTypesData.setEnActCh(AMEND_TYPE_VALUE);
-        }
-    }
-
-    private void setCapitalReductionAndIncrease(List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData, Entity entity) {
-        BigDecimal currentCapital = new BigDecimal(entity.getCapitalOld());
-        BigDecimal modifiedCapital = new BigDecimal(entity.getCapital());
-        if (currentCapital.compareTo(modifiedCapital) < 0) {
-            entity.setAction(MODIFY);
-            amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.capitalIncrease"), "130"));
-            amendmentTypesData.setEnCapIncr(AMEND_TYPE_VALUE);
-        } else if (currentCapital.compareTo(modifiedCapital) > 0) {
-            entity.setAction(MODIFY);
-            amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.capitalReduction"), "120"));
-            amendmentTypesData.setEnCapRed(AMEND_TYPE_VALUE);
-        }
-    }
-
-    private void modifyBrandName(List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData, Entity entity) {
-        String currentName = entity.getNameOld();
-        String modifiedName = entity.getName();
-        if (!currentName.equals(modifiedName)) {
-            entity.setAction(MODIFY);
-            amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.modifyBrand"), "160"));
-            amendmentTypesData.setEnNameCh(AMEND_TYPE_VALUE);
-        }
-    }
-
-    private void setShareholders(List<Shareholder> shareholders, List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData) {
-
-        boolean newShareholder = false;
-        boolean newCompany = false;
-        boolean ownershipToInheritors = false;
-        boolean reDistributionOfQuotas = false;
-        boolean shareholderExit = false;
-
-        for (Shareholder shareholder : shareholders) {
-
-            if (ADD.equals(shareholder.getAction())) {
-                amendmentTypesData.setShAddExNew(AMEND_TYPE_VALUE);
-
-                if (INDIVIDUAL_SHAREHOLDER_TYPE.equals(shareholder.getBpType()) && !newShareholder) {
-                    amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.newShareholder"), "30"));
-                    if("Y".equalsIgnoreCase(shareholder.getPremiumResident())) {
-                    	amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.newShareholder.premiumResident"), "190"));
-                    }
-                    if(shareholder.getDelegate()!=null) {
-                    	amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.newShareholder.delegate"), "200"));
-                    }
-                    newShareholder = true;
-                } else if (!newCompany) {
-                    amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.newCompany"), "50"));
-                    newCompany = true;
-                }
-
-                if (shareholder.getInheritedProperty() && !ownershipToInheritors) {
-                    setShInProp(amendmentTypesView, amendmentTypesData);
-                    ownershipToInheritors = true;
-                }
-            } else if (MODIFY.equals(shareholder.getAction())) {
-                setShReQu(amendmentTypesView, amendmentTypesData, reDistributionOfQuotas);
-                reDistributionOfQuotas = true;
-
-            } else if (DELETE.equals(shareholder.getAction())) {
-                setShRem(amendmentTypesView, amendmentTypesData, shareholderExit);
-                shareholderExit = true;
-            }
-
-        }
-    }
-
-    private void setShInProp(List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData) {
-        amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.ownershipToInheritors"), "70"));
-        amendmentTypesData.setShInProp(AMEND_TYPE_VALUE);
-    }
-
-    private void setShReQu(List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData, boolean reDistributionOfQuotas) {
-        if (!reDistributionOfQuotas) {
-            amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.redistributionOfQuotas"), "10"));
-            amendmentTypesData.setShReQu(AMEND_TYPE_VALUE);
-        }
-    }
-
-    private void setShRem(List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData, boolean shareholderExit) {
-        if (!shareholderExit) {
-            amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.shareholderExit"), "20"));
-            amendmentTypesData.setShRem(AMEND_TYPE_VALUE);
-        }
-    }
-
-    /*
-     * Suppress sonar warning (squid:S1151 | "switch case" clauses should not have too many lines of code
-     * The structure of this method is not difficult to understand in the given context.
-     */
-    @SuppressWarnings({"squid:S1151"})
-    private void setBranches(LicenseAmendment modifiedLicenseAmendment, List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData) {
-
-        boolean openBranch = false;
-        boolean locationAmendment = false;
-        boolean closeBranch = false;
-        int newBranchesCount = 0;
-        for (Branch b : modifiedLicenseAmendment.getBranches()) {
-            switch (b.getAction() == null ? "" : b.getAction()) {
-                case ADD:
-                    if (!openBranch) {
-                        setBrOpen(amendmentTypesView, amendmentTypesData);
-                        openBranch = true;
-                    }
-                    newBranchesCount++;
-                    break;
-                case MODIFY:
-                    if (!locationAmendment) {
-                        setEnLocCh(amendmentTypesView, amendmentTypesData);
-                        locationAmendment = true;
-                    }
-                    break;
-                case DELETE:
-                    if (!closeBranch) {
-                        setBrClose(amendmentTypesView, amendmentTypesData);
-                        closeBranch = true;
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-      amendmentTypesData.setNewBranchesCount(newBranchesCount);
-    }
-
-    private void setBrClose(List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData) {
-        amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.closeBranch"), "90"));
-        amendmentTypesData.setBrClose(AMEND_TYPE_VALUE);
-    }
-
-    private void setEnLocCh(List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData) {
-        amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.locationAmendment"), "150"));
-        amendmentTypesData.setEnLocCh(AMEND_TYPE_VALUE);
-    }
-
-    private void setBrOpen(List<LicenseAmendmentTypeView> amendmentTypesView, LicenseAmendmentTypeData amendmentTypesData) {
-        amendmentTypesView.add(getLicenseAmendmentType(getLocalizedValue("license.amend.type.openBranch"), "80"));
-        amendmentTypesData.setBrOpen(AMEND_TYPE_VALUE);
-    }
-
-    @Override
-    public void checkLicenseAmendmentAvailability() {
-        globalValsService.checkLicenseAmendmentAvailability();
-    }
-
-    private LicenseAmendmentTypeView getLicenseAmendmentType(String name, String code) {
-        LicenseAmendmentTypeView licenseAmendmentType = new LicenseAmendmentTypeView();
-        licenseAmendmentType.setName(name);
-        licenseAmendmentType.setCode(code);
-        return licenseAmendmentType;
-    }
 
     @Override
     /*
@@ -707,27 +350,6 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         return listItem;
     }
 
-    @Override
-    public Collection<ProductData> getAmendProductsListWithId(String productId, String skip, String top) {
-        return amendProductsService.getAmendProductsWithId(productId, skip, top);
-    }
-
-    @Override
-    public Collection<ProductData> getAmendProductsListWithDescription(String productDescription, String skip, String top) {
-        return amendProductsService.getAmendProductsWithDescription(productDescription, skip, top);
-    }
-
-    @Override
-    public Collection<ProductData> getAmendProductsList(String skip, String top) {
-        return amendProductsService.getAmendProductsWithDescription(skip, top);
-    }
-
-    /**
-     * @return
-     */
-    public AmendProductsService getAmendProductsService() {
-        return amendProductsService;
-    }
 
     /**
      * @return
@@ -742,35 +364,6 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
     public void setGlobalValsService(GlobalValsService globalValsService) {
         this.globalValsService = globalValsService;
     }
-
-    /**
-     * @return
-     */
-    public PriceSimulationService getPriceSimulationService() {
-        return priceSimulationService;
-    }
-
-    /**
-     * @param
-     */
-    public void setPriceSimulationService(PriceSimulationService priceSimulationService) {
-        this.priceSimulationService = priceSimulationService;
-    }
-
-    /**
-     * @return
-     */
-    public LicenseAmendmentPopulator getLicenseAmendmentPopulator() {
-        return licenseAmendmentPopulator;
-    }
-
-    /**
-     * @param licenseAmendmentPopulator
-     */
-    public void setLicenseAmendmentPopulator(LicenseAmendmentPopulator licenseAmendmentPopulator) {
-        this.licenseAmendmentPopulator = licenseAmendmentPopulator;
-    }
-
 
     public SagiaFinancialSurveyService getSagiaFinancialSurveyService() {
         return sagiaFinancialSurveyService;
@@ -822,19 +415,6 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         this.subListItemPopulator = subListItemPopulator;
     }
 
-    /**
-     * @return
-     */
-    public LicenseAmendmentShareholderService getLicenseAmendmentShareholderService() {
-        return licenseAmendmentShareholderService;
-    }
-
-    /**
-     * @param licenseAmendmentShareholderService
-     */
-    public void setLicenseAmendmentShareholderService(LicenseAmendmentShareholderService licenseAmendmentShareholderService) {
-        this.licenseAmendmentShareholderService = licenseAmendmentShareholderService;
-    }
 
     /**
      * @return
@@ -864,34 +444,6 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         this.attachmentListItemPopulator = attachmentListItemPopulator;
     }
 
-    /**
-     * @return
-     */
-    public LicenseAmendmentReversePopulator getLicenseAmendmentReversePopulator() {
-        return licenseAmendmentReversePopulator;
-    }
-
-    /**
-     * @param licenseAmendmentReversePopulator
-     */
-    public void setLicenseAmendmentReversePopulator(LicenseAmendmentReversePopulator licenseAmendmentReversePopulator) {
-        this.licenseAmendmentReversePopulator = licenseAmendmentReversePopulator;
-    }
-
-    /**
-     * @param amendProductsService
-     */
-    public void setAmendProductsService(AmendProductsService amendProductsService) {
-        this.amendProductsService = amendProductsService;
-    }
-
-    public LicenseAmendmentService getLicenseAmendmentService() {
-        return licenseAmendmentService;
-    }
-
-    public void setLicenseAmendmentService(LicenseAmendmentService licenseAmendmentService) {
-        this.licenseAmendmentService = licenseAmendmentService;
-    }
 
     public FinancialSurveyReversePopulator getFinancialSurveyReversePopulator() {
         return financialSurveyReversePopulator;
@@ -917,20 +469,6 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         this.i18nService = i18nService;
     }
 
-	public MojInheritService getMojInheritService() {
-		return mojInheritService;
-	}
 
-	public void setMojInheritService(MojInheritService mojInheritService) {
-		this.mojInheritService = mojInheritService;
-	}
-
-	public MOJInheritPopulator getMojInheritPopulator() {
-		return mojInheritPopulator;
-	}
-
-	public void setMojInheritPopulator(MOJInheritPopulator mojInheritPopulator) {
-		this.mojInheritPopulator = mojInheritPopulator;
-	}
 
 }

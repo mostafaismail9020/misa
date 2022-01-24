@@ -57,7 +57,7 @@
                               <div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header clr_gld">
                                  ${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/>
                               </div>
-                                    <p>${sector.sectorDetails}</p>
+                                    <p class"invest-with-us-description">${sector.sectorDetails}</p>
                                     <div class="row">	
                                        <c:if test="${sector.sectorCode ne 'Others'}">
                                                       <div class="dashboardWidgetBanner-action ml-3"><a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn-dashboard"><spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/><img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/> </a> </div>

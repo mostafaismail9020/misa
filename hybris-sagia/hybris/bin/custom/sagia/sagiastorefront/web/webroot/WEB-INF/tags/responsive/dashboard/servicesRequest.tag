@@ -12,7 +12,7 @@
         <dashboard:addAndRemoveComponent checkboxIndex="3"/>
     </c:if>
     <div class="dashboardWidget-headline js-dashboardWidget-headline">
-        <a href="" data-redirect="service-requests-overview" class="js-page-redirect" style="text-decoration: inherit;color: inherit">
+        <a href="" data-redirect="service-requests-overview" class="service-request-header js-page-redirect" style="text-decoration: inherit;color: inherit">
             <spring:theme code="dashboard.servicesRequest.title"/>
         </a>
         <div class="dashboardWidget-headline-icon">

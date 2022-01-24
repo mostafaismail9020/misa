@@ -131,7 +131,7 @@
     </div>
     
 	<!-- Floating button -->
-   	<button class="float-button"><spring:theme code="portal.footer.invest.now.label"/></button>
+   	<button class="float-button"><spring:theme code="portal.footer.contact.us.label"/></button>
    	<div class="popup">
 		<footer id="footer" class="footer-popup">
 			<section class="footer-menu-faq">

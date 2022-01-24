@@ -155,15 +155,15 @@
             <div class="service-card-wrapper">
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
-                    <span><spring:theme code="dashboard.license.service.name"/></span>
+                    <span><a href="${encodedContextPath}/service-search/FIRST"><spring:theme code="dashboard.license.service.name"/></span>
                 </div>
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
-                    <span><spring:theme code="dashboard.governmental.service.name"/></span>
+                    <span><a href="${encodedContextPath}/service-search/GOVERNMENTAL SERVICES"><spring:theme code="dashboard.governmental.service.name"/></span>
                 </div>
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
-                    <span><spring:theme code="dashboard.misa.service.name"/></span>
+                    <span><a href="${encodedContextPath}/service-search/SAGIA SERVICES"><spring:theme code="dashboard.misa.service.name"/></span>
                 </div>
             </div>
         </div>

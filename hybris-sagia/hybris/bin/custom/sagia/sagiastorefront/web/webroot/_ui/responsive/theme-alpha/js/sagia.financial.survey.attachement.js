@@ -1,7 +1,19 @@
 $(function () {
     var $modal = $('#enquiryDetail');
     var $modalBody = $modal.find('.modal-dialog');
-    
+
+    if(Boolean($('#requestFeedback').val())){
+
+        var requestSubmittedCommentModal = $('#requestSubmittedComment');
+        requestSubmittedCommentModal.find('.modal-secondaryContent').hide();
+        requestSubmittedCommentModal.modal().open;
+
+    } else if ($('#financialStatementErrorMessage').val()) {
+        var errorModal = $('#errorResponseModal');
+        errorModal.find('.modal-description').text($('#financialStatementErrorMessage').val());
+        errorModal.modal('show');
+    }
+
     $(document).on("change", ".js-inputFile", function(e) {
     	var fileInput = $(this),
             textInput = $(this).next('input:text'),
@@ -9,7 +21,7 @@ $(function () {
             rootElement = $(this).closest('.formInputFile');
     	var fileSize = e.target.files[0].size;
 		 textInput.attr('placeholder', fileName);
-		 $(this).parent().removeClass("has-error"); 
+		 $(this).parent().removeClass("has-error");
 		 rootElement.find(".help-block").hide();
 			if (fileInput.length > 0 && fileSize > 0) {
 				rootElement.addClass('active');
@@ -23,7 +35,7 @@ $(function () {
 				rootElement.removeClass('active');
 			}
     });
-    
+
     $modal.on('shown.bs.modal', function (e) {
         var $financialStatementId = $(e.relatedTarget).data('financialStatementId');
         $modalBody.load(ACC.config.encodedContextPath +"/financial-statement/" + $financialStatementId);

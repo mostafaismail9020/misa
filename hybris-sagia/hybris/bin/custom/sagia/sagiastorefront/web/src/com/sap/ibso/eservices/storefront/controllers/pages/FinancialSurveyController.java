@@ -2,7 +2,6 @@ package com.sap.ibso.eservices.storefront.controllers.pages;
 
 import atg.taglib.json.util.JSONException;
 import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
-import com.sap.ibso.eservices.core.model.SagiaServiceModel;
 import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
 import com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaDraftService;
 import com.sap.ibso.eservices.facades.data.license.amendment.Shareholder;
@@ -56,12 +55,8 @@ import java.util.Set;
 public class FinancialSurveyController extends SagiaAbstractPageController {
     private static final Logger LOG = Logger.getLogger(DefaultSagiaDraftService.class);
     private static final String SAGIA_FINANCIAL_SURVEY_CMS_PAGE = "financial-survey";
-    private static final String BATCHNO = "batchNo";
-    private static final String USERINPUT = "userInput";
-    private static final String ENTITY_NAME = "AmendHeaders";
-    private static final Integer BATCH_SIZE_FOR_PRODUCTS_SEARCH = 100;
-    private static final String SAGIA_FINANCIAL_SURVEY_DRAFT = "FSURVEY_";
     private static final String MAX_FILE_IN_MB = "2";
+    private static final String SAGIA_FINANCIAL_SURVEY_DRAFT = "FSURVEY_";
     private static final String PDF = "pdf";
 
     @Resource(name = "averageProcessingTimeFacade")
@@ -98,8 +93,6 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     public String completeFinancialSurvey(final Model model, final HttpServletRequest request, @PathVariable(name="quarterCode", required = false) String quarterCode) throws CMSItemNotFoundException {
 
         model.addAttribute("controllerUrl", "/my-sagia/financial-survey");
-        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SERVICE_ID);
-       // model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
         model.addAttribute("maxUploadSize", MAX_FILE_IN_MB);
         model.addAttribute("financialStatementForm", new FinancialStatementForm());
 
@@ -300,13 +293,13 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
             //throw new IllegalArgumentException("Please upload only the requested files");
             getSessionService().setAttribute("financialStatementForm", financialStatementForm);
             redirectModel.addFlashAttribute("org.springframework.validation.BindingResult.financialStatementForm", result);
-            return REDIRECT_PREFIX + "/dashboard";
+            return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab5";
         }
 
         if (result.hasErrors()) {
             getSessionService().setAttribute("financialStatementForm", financialStatementForm);
             redirectModel.addFlashAttribute("org.springframework.validation.BindingResult.financialStatementForm", result);
-            return REDIRECT_PREFIX + "/dashboard";
+            return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab5";
         }
 
         try {
@@ -336,7 +329,7 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
         } catch (Exception e) {
             LOG.warn(e.getMessage(),e);
         }
-        return REDIRECT_PREFIX + "/dashboard";
+        return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab5";
     }
 
 

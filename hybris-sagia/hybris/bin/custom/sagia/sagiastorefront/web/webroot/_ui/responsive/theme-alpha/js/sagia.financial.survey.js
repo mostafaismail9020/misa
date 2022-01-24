@@ -13,7 +13,7 @@ function caluculateTotalCapital() {
     sum = sum +  1*($('#paidUpCapitalCurrentQuarterId').val());
     sum = sum +  1*($('#retainedEarningsIncludeCurrentQuarterId').val());
     sum = sum +  1*($('#additionalPaidUpCapitalCurrentQuarterId').val());
-    // sum = sum +  1*($('#profitLossQuarterCurrentQuarterId').val());
+   // sum = sum +  1*($('#profitLossQuarterCurrentQuarterId').val());
     sum = sum +  1*($('#totalReservesCurrentQuarterId').val());
     sum = sum +  1*($('#treasurySharesCurrentQuarterId').val());
     sum = sum +  1*($('#headOfficeAccountInBranchCurrentQuarterId').val());
@@ -55,35 +55,23 @@ $(document).ready(function () {
 
 
 
-    //show submit window when closing T&C
-    $("#termsAndConditionsResponseModal").on("hidden.bs.modal", function () {
-        $('#docsmodalId').modal('show');
-        $('.modal:visible').length && $(document.body).addClass('modal-open');
-    });
-
-    //hide submit modal when opening T&C
-    $("#termsAndConditionsResponseModal").on("show.bs.modal", function () {
-        $('#docsmodalId').modal('hide');
-        $('.modal:visible').length && $(document.body).addClass('modal-open');
-    });
-
     if ($('body').hasClass("page-financial-survey")) {
 
 
 
-        /*   var attachmentSection = $("#attachmentSection");
-           attachmentSection.find("#letterOfSupportFile").on("change", function () {
-               SAGIA.financialSurvey.data.letterOfSupportFile = $(this).val();
-               var fileReader = new FileReader();
-               fileReader.onload = function (event) {
-                   SAGIA.financialSurvey.data.letterOfSupportFileMimeType = event.target._TYPE;
-                   SAGIA.financialSurvey.data.letterOfSupportFileName = SAGIA.financialSurvey.data.letterOfSupportFile;
-                  // SAGIA.financialSurvey.data.letterOfSupportFile = removeBase64prefix(event.target._TYPE, event.target.result);
-               };
-               fileReader._TYPE = $(this)[0].files[0].type;
-               fileReader.readAsDataURL($(this)[0].files[0]);
-           });
-   */
+     /*   var attachmentSection = $("#attachmentSection");
+        attachmentSection.find("#letterOfSupportFile").on("change", function () {
+            SAGIA.financialSurvey.data.letterOfSupportFile = $(this).val();
+            var fileReader = new FileReader();
+            fileReader.onload = function (event) {
+                SAGIA.financialSurvey.data.letterOfSupportFileMimeType = event.target._TYPE;
+                SAGIA.financialSurvey.data.letterOfSupportFileName = SAGIA.financialSurvey.data.letterOfSupportFile;
+               // SAGIA.financialSurvey.data.letterOfSupportFile = removeBase64prefix(event.target._TYPE, event.target.result);
+            };
+            fileReader._TYPE = $(this)[0].files[0].type;
+            fileReader.readAsDataURL($(this)[0].files[0]);
+        });
+*/
         var attachmentSection = $("#attachmentSection");
         var letterOfSupportFile = attachmentSection.find("#letterOfSupportFile").val();
         if(letterOfSupportFile) {
@@ -92,7 +80,7 @@ $(document).ready(function () {
                 SAGIA.financialSurvey.data.letterOfSupportFileMimeType = event.target._TYPE;
                 SAGIA.financialSurvey.data.letterOfSupportFile = removeBase64prefix(event.target._TYPE, event.target.result);
                 SAGIA.financialSurvey.data.letterOfSupportFileName = attachmentSection.find("#letterOfSupportFileName").val();
-                //  newIdCopyFileReady = true;
+              //  newIdCopyFileReady = true;
             };
             fileReaderLetterOfSupportFile._TYPE = attachmentSection.find("#letterOfSupportFile")[0].files[0].type;
             fileReaderLetterOfSupportFile.readAsDataURL(attachmentSection.find("#letterOfSupportFile")[0].files[0]);
@@ -293,7 +281,7 @@ $(document).ready(function () {
         // Cancel amendment
         $(document).on("click", ".cancelAmendmentBtn", function () {
 
-            window.location.href = ACC.config.encodedContextPath + "/dashboard";
+                window.location.href = ACC.config.encodedContextPath + "/dashboard";
 
         });
 
@@ -405,12 +393,12 @@ function updateIsic(data) {
     var licenseActivities = [];
     if (data.businessActivities) {
         data.businessActivities.forEach(function(activity) {
-            var currentActivityId = activity.id;
-            var currentActivityDescription = activity.description;
-            if (currentActivityId && /^([0-9]+)$/.test(currentActivityId)) {
-                licenseActivities.push({id: currentActivityId, description: currentActivityDescription});
-            }
-        })
+                    var currentActivityId = activity.id;
+                    var currentActivityDescription = activity.description;
+                    if (currentActivityId && /^([0-9]+)$/.test(currentActivityId)) {
+                        licenseActivities.push({id: currentActivityId, description: currentActivityDescription});
+                    }
+            })
     }
 
 
@@ -475,7 +463,7 @@ var validateShareHoldersSumPercentage = function () {
 var validateBranchesSumPercentage = function () {
     var sum = 0;
     if (financialSurvey.branches.length == 0 ){
-        return;
+           return;
     }
     financialSurvey.branches.forEach(function(branch) {
         if(branch.volumeWeight != null && branch.action != null && branch.action !== '03') {
@@ -487,7 +475,7 @@ var validateBranchesSumPercentage = function () {
             backdrop: "static",
             keyboard: false
         }).find('.modal-description').empty().text(getI18nText('validation.sharePerc.sum'));
-        // $('a[href="#accessibletabscontent0-1"]').click();
+       // $('a[href="#accessibletabscontent0-1"]').click();
         return;
     }
 
@@ -498,12 +486,12 @@ var validateLicense = function () {
 
     // validate attechament
 
-    var letterOfSupportFile = $("#letterOfSupportFile");
-    letterOfSupportFile.closest('.form-group').removeClass("has-error").parent().find(".help-block").text('');
-    if(!letterOfSupportFile.val()) {
-        letterOfSupportFile.closest('.form-group').addClass('has-error').parent().find(".help-block").text(getI18nText("validation.attachment"));
-        isValid = false;
-    }
+       var letterOfSupportFile = $("#letterOfSupportFile");
+        letterOfSupportFile.closest('.form-group').removeClass("has-error").parent().find(".help-block").text('');
+        if(!letterOfSupportFile.val()) {
+            letterOfSupportFile.closest('.form-group').addClass('has-error').parent().find(".help-block").text(getI18nText("validation.attachment"));
+            isValid = false;
+        }
 
 
 
@@ -513,26 +501,26 @@ var validateLicense = function () {
         return;
     }
 
-    //  financialSurvey.entity.activity = financialSurvey.entity.activity || '';
-    //   var currentActivitiesIds = financialSurvey.entity.activity.match(/\d+/g) || [];
-    var selectedActivities = SAGIA.financialSurvey.businessActivities.selectedActivities;
+  //  financialSurvey.entity.activity = financialSurvey.entity.activity || '';
+ //   var currentActivitiesIds = financialSurvey.entity.activity.match(/\d+/g) || [];
+     var selectedActivities = SAGIA.financialSurvey.businessActivities.selectedActivities;
     var selectedActivitiesIds = [];
     selectedActivities.forEach(function(activity) {
         selectedActivitiesIds.push(activity.activityId);
     });
 
-    //   var equalActivities = currentActivitiesIds.length === selectedActivitiesIds.length
-    //       && currentActivitiesIds.sort().every(function(value, index) { return value == selectedActivitiesIds.sort()[index]});
+ //   var equalActivities = currentActivitiesIds.length === selectedActivitiesIds.length
+ //       && currentActivitiesIds.sort().every(function(value, index) { return value == selectedActivitiesIds.sort()[index]});
 
-    //  if (!equalActivities) {
-    financialSurvey.businessActivities = [];
-    selectedActivities.forEach(function (activity) {
-        financialSurvey.businessActivities.push({
-            id: activity.activityId,
-            description: activity.description
+  //  if (!equalActivities) {
+        financialSurvey.businessActivities = [];
+        selectedActivities.forEach(function (activity) {
+            financialSurvey.businessActivities.push({
+                id: activity.activityId,
+                description: activity.description
+            });
         });
-    });
-    //   }
+ //   }
 
     if (financialSurvey.businessActivities.length < 1) {
         $('#licenseAmendmentValidationDialogId').modal({
@@ -657,7 +645,7 @@ function populateShareholderEquity() {
     financialSurvey.shareholderEquity.shareholderEquityOthersPreviousQuarter = $('#shareholderEquityOthersPreviousQuarterId').val();
     financialSurvey.shareholderEquity.minorityRightsCurrentQuarter = $('#minorityRightsCurrentQuarterId').val();
     financialSurvey.shareholderEquity.minorityRightsPreviousQuarter = $('#minorityRightsPreviousQuarterId').val();
-    financialSurvey.shareholderEquity.totalShareholderEquityCurrentQuarter = $('#totalShareholderEquityCurrentQuarterId').val();
+     financialSurvey.shareholderEquity.totalShareholderEquityCurrentQuarter = $('#totalShareholderEquityCurrentQuarterId').val();
     //  financialSurvey.shareholderEquity.totalShareholderEquityPreviousQuarter = $('#totalShareholderEquityPreviousQuarterId').val();
     /*financialSurvey.shareholderEquity.cashTransactionIncrease = $('#cashTransactionIncreaseId').is(':checked');
     financialSurvey.shareholderEquity.profitsIncrease = $('#profitsIncreaseId').is(':checked');
@@ -697,25 +685,25 @@ var submitLicense = function () {
 
 
     // licenseAmendment.entity.activity = licenseAmendment.entity.activity || '';
-    // var currentActivitiesIds = licenseAmendment.entity.activity.match(/\d+/g) || [];
+   // var currentActivitiesIds = licenseAmendment.entity.activity.match(/\d+/g) || [];
     var selectedActivities = SAGIA.financialSurvey.businessActivities.selectedActivities;
     var selectedActivitiesIds = [];
     selectedActivities.forEach(function(activity) {
         selectedActivitiesIds.push(activity.activityId);
     });
 
-    //  var equalActivities = currentActivitiesIds.length === selectedActivitiesIds.length
-    //      && currentActivitiesIds.sort().every(function(value, index) { return value == selectedActivitiesIds.sort()[index]});
+  //  var equalActivities = currentActivitiesIds.length === selectedActivitiesIds.length
+  //      && currentActivitiesIds.sort().every(function(value, index) { return value == selectedActivitiesIds.sort()[index]});
 
-    /// if (!equalActivities) {
-    financialSurvey.businessActivities = [];
-    selectedActivities.forEach(function (activity) {
-        financialSurvey.businessActivities.push({
-            id: activity.activityId,
-            description: activity.description
+   /// if (!equalActivities) {
+        financialSurvey.businessActivities = [];
+        selectedActivities.forEach(function (activity) {
+            financialSurvey.businessActivities.push({
+                id: activity.activityId,
+                description: activity.description
+            });
         });
-    });
-    //  }
+  //  }
 
 
     var generatedDocuments = SAGIA.financialSurvey.generatedDocuments;
@@ -927,40 +915,40 @@ var submitFinancialSurveyCompanyProfile = function () {
         });
     });
 
-    // var timerId = setInterval(function () {
-    var token = $('input[name="CSRFToken"]').attr('value');
-    $.ajax(ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/saveCompanyProfile", {
-        method: "POST",
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader("Accept", "application/json");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.setRequestHeader('CSRFToken', token);
-        },
-        data: JSON.stringify(financialSurvey),
-        success: function () {
-            if (financialSurvey.errors && financialSurvey.errors.length) {
-                var $modalDescription = $('#licenseAmendmentValidationDialogId').modal({
+   // var timerId = setInterval(function () {
+        var token = $('input[name="CSRFToken"]').attr('value');
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/saveCompanyProfile", {
+            method: "POST",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Accept", "application/json");
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader('CSRFToken', token);
+            },
+            data: JSON.stringify(financialSurvey),
+            success: function () {
+                if (financialSurvey.errors && financialSurvey.errors.length) {
+                    var $modalDescription = $('#licenseAmendmentValidationDialogId').modal({
+                        backdrop: "static",
+                        keyboard: false
+                    }).find('.modal-description');
+                    $modalDescription.empty();
+                    financialSurvey.errors.forEach(function (error) {
+                        $modalDescription.append('<p>' + error + '</p>');
+                    });
+                } else {
+                    $('a[href="#accessibletabscontent0-1"]').click();
+                    return
+                }
+            },
+            error: function () {
+                $('#docsmodalId').modal('hide');
+                $('#requestErrorDialogId').modal({
                     backdrop: "static",
                     keyboard: false
-                }).find('.modal-description');
-                $modalDescription.empty();
-                financialSurvey.errors.forEach(function (error) {
-                    $modalDescription.append('<p>' + error + '</p>');
-                });
-            } else {
-                $('a[href="#accessibletabscontent0-1"]').click();
-                return
+                }).find('.globalMessage-msg').text(getI18nText("finance.survey.submit.error"));
             }
-        },
-        error: function () {
-            $('#docsmodalId').modal('hide');
-            $('#requestErrorDialogId').modal({
-                backdrop: "static",
-                keyboard: false
-            }).find('.globalMessage-msg').text(getI18nText("finance.survey.submit.error"));
-        }
-    });
-    // }, 1000);
+        });
+   // }, 1000);
 };
 
 
@@ -1030,7 +1018,7 @@ function setLicenseData(data, history) {
 
     $('#suspensionDateId').val(financialSurvey.suspensionDate);
 
-    //  updateDropDown('#legalStatusId', companyProfile.legalStatus);
+  //  updateDropDown('#legalStatusId', companyProfile.legalStatus);
     if (financialSurvey.isConsolidated) {
         $("#standloneId").prop('checked',false);
         $("#consolidatedId").prop('checked',true);
@@ -1081,16 +1069,9 @@ function setLicenseData(data, history) {
             var name = affiliate.name;
             var type = affiliate.affiliateType === '1' ? getI18nText("general.individual") : getI18nText("general.entity");
 
-            var shareValue = affiliate.affiliateCapital ;
-
-            var affiliateVotingPower = 0;
-            if(affiliate.affiliateVotingPower != null) {
-                affiliateVotingPower = (affiliate.affiliateVotingPower.length > 5 ? affiliate.affiliateVotingPower.substring(0, 5) : affiliate.affiliateVotingPower) + '%';
-            }
 
             var $affiliateRow = $affiliateRowTemplate.clone(true).show();
-            $affiliateRow.attr("id", affiliate.srId ? affiliate.srId : affiliate.newItemId).children().first().text(name).next().text(type)
-                .next().text(percentage).next().text(shareValue).next().text(affiliateVotingPower);
+            $affiliateRow.attr("id", affiliate.srId ? affiliate.srId : affiliate.newItemId).children().first().text(name).next().text(type);
             setColorForDraftRow($affiliateRow, affiliate.action);
             $affiliatesTable.append($affiliateRow);
         }
@@ -1117,15 +1098,15 @@ function setLicenseData(data, history) {
             $branchRow.attr("id", branch.srId).children().first().html(typeDescription).next().text(name).next().text(city).next().text(volumeWeight);
             setColorForDraftRow($branchRow, branch.action);
 
-            //  if (branch.main) { // Main branch, can edit, can't be removed
-            $branchRow.find('.viewBranchBtn').show();
-            $branchRow.find('.editBranchBtn').show();
-            $branchRow.find('.deleteDropdown').show();
-            //      } else { // Can be removed
-            //           $branchRow.find('.viewBranchBtn').show();
-            //           $branchRow.find('.editBranchBtn').hide();
-            //            $branchRow.find('.deleteDropdown').show();
-            //    }
+          //  if (branch.main) { // Main branch, can edit, can't be removed
+                    $branchRow.find('.viewBranchBtn').show();
+                    $branchRow.find('.editBranchBtn').show();
+                    $branchRow.find('.deleteDropdown').show();
+          //      } else { // Can be removed
+         //           $branchRow.find('.viewBranchBtn').show();
+         //           $branchRow.find('.editBranchBtn').hide();
+        //            $branchRow.find('.deleteDropdown').show();
+        //    }
 
 
             $branchesTable.append($branchRow);
@@ -1155,9 +1136,9 @@ function setLicenseData(data, history) {
                 $subsidiaryRow.find('.viewSubsidiaryBtn').show();
                 $subsidiaryRow.find('.editSubsidiaryBtn').hide();
                 $subsidiaryRow.find('.deleteDropdown').show();
-            }
+                }
 
-            $subsidiariesTable.append($subsidiaryRow);
+        $subsidiariesTable.append($subsidiaryRow);
         }
     });
 

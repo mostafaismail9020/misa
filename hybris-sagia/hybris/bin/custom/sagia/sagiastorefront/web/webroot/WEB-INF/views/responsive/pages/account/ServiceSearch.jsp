@@ -56,7 +56,7 @@
                             <div class="INS_EPM_border_set text-center p-3">
                                 <img src="${commonResourcePath}/images/B2C/Services icon 1.png" alt="LICENSING SERVICES" class="text-center service-icon-1"/>
                                 <img src="${commonResourcePath}/images/B2C/Services icon 2.png" alt="LICENSING SERVICES" class="text-center service-icon-2"/>
-                                <span class="licensing-heading">LICENSING SERVICES</span>
+                                <span class="licensing-heading"><a href="${encodedContextPath}/service-search/FIRST"><spring:theme code="dashboard.license.service.name"/></span>
                             </div>
                         </a>
                     </div>
@@ -100,7 +100,7 @@
                             <div class="INS_EPM_border_set text-center p-3">
                                 <img src="${commonResourcePath}/images/B2C/Services icon 1.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-1"/>
                                 <img src="${commonResourcePath}/images/B2C/Services icon 2.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-2"/>
-                                <span class="licensing-heading">GOVERNMENTAL SERVICES</span>
+                                <span class="licensing-heading"><a href="${encodedContextPath}/service-search/GOVERNMENTAL SERVICES"><spring:theme code="dashboard.governmental.service.name"/></span>
                             </div>
                         </a>
                     </div>
@@ -164,7 +164,7 @@
                             <div class="INS_EPM_border_set text-center p-3">
                                 <img src="${commonResourcePath}/images/B2C/Services icon 1.png" alt="MISA SERVICES" class="text-center service-icon-1"/>
                                 <img src="${commonResourcePath}/images/B2C/Services icon 2.png" alt="MISA SERVICES" class="text-center service-icon-2"/>
-                                <span class="licensing-heading">MISA SERVICES</span>
+                                <span class="licensing-heading"><a href="${encodedContextPath}/service-search/SAGIA SERVICES"><spring:theme code="dashboard.misa.service.name"/></span>
                             </div>
                         </a>
                     </div>

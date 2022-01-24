@@ -335,8 +335,8 @@
 	<bean class="com.sap.ibso.eservices.facades.data.FinancialSurveyData">
 		<property name="quarterCode" type="String"/>
 		<property name="quarter" type="String"/>
-		<property name="lastUpdate" type="java.time.LocalDateTime"/>
-		<property name="lastUpdateData" type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData"/>
+		<property name="lastUpdate" type="String"/>
+		<property name="lastUpdateData" type="String"/>
 		<property name="status" type="String"/>
 		<property name="statusKey" type="String"/>
 	</bean>

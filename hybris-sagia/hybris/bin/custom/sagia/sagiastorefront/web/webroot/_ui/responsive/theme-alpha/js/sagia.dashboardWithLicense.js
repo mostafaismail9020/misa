@@ -520,22 +520,22 @@ SAGIA.dashboardWithLicense = {
                                 var template = $(".financialSurveyTemplateWrapper").find("tbody").clone();
                                 //template.find(".lastUpdate").html(ticket.lastUpdateData.dateFormatted);
                                 template.find(".quarter").html(survey.quarter);
-                                template.find(".lastUpdate").html("14-01-2022");
+                                template.find(".lastUpdate").html(survey.lastUpdate);
                                 template.find(".dashboardWidgetTickets-status-open").html(survey.status);
                                 template.find(".dashboardWidgetTickets-status-open").addClass(function () {
                                     switch (survey.status) {
                                         case 'Resolved':
                                             return 'dashboardWidgetTickets-status_code01';
-                                        case 'Open':
-                                        case 'In Process':
+                                        case 'OPEN':
+                                        case 'SUBMITTED':
                                             return 'dashboardWidgetTickets-status_code02';
-                                        case 'Closed':
+                                        case 'WAITING_FOR_CUSTOMER_ACTION':
                                         default:
                                             return 'dashboardWidgetTickets-status_code03';
                                     }
                                 });
 
-                                if (survey.status == 'Open') {
+                                if (survey.status == 'OPEN') {
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text("Fill This Survey");
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("class","btn btn_slim draftContinueBtn");
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("style","float: left;");

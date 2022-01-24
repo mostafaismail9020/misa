@@ -2,6 +2,7 @@ package com.sap.ibso.eservices.facades.sagia.impl;
 
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
 import com.sap.ibso.eservices.core.model.SagiaCompanyProfileModel;
+import com.sap.ibso.eservices.core.sagia.services.SagiaFormatProvider;
 import com.sap.ibso.eservices.facades.data.FinancialSurveyData;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.AttachmentListItem;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItem;
@@ -62,6 +63,9 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
     private static final String ACTION_01 = "01";
     private static final String ZSR5 = "ZSR5";
     private static final String ACTION_05 = "05";
+
+    @Resource
+    private SagiaFormatProvider sagiaFormatProvider ;
 
     private SagiaFinancialSurveyService sagiaFinancialSurveyService;
 
@@ -160,11 +164,11 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         List<FinancialSurveyModel> financialSurveyModelList = sagiaFinancialSurveyService.getFinancialSurveys();
         for (FinancialSurveyModel financialSurveyModel: financialSurveyModelList ) {
             FinancialSurveyData financialSurveyData = new FinancialSurveyData();
-            financialSurveyData.setStatus("Open");
-            financialSurveyData.setStatusKey("Open");
+            financialSurveyData.setStatus(financialSurveyModel.getSurveyStatus().getCode());
+            financialSurveyData.setStatusKey(financialSurveyModel.getSurveyStatus().getCode());
             financialSurveyData.setQuarter(financialSurveyModel.getQuarter().getName());
             financialSurveyData.setQuarterCode(financialSurveyModel.getQuarter().getCode());
-           // financialSurveyData.setLastUpdate(financialSurveyModel.getModifiedtime());
+            financialSurveyData.setLastUpdate(sagiaFormatProvider.formatBackEndDateToUIStr(financialSurveyModel.getModifiedtime()));
             financialSurveyDataList.add(financialSurveyData);
         }
         return financialSurveyDataList;
@@ -267,7 +271,7 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
                     break;
 
                 case PREMIUMRESIDENT:
-                	premiumResident.add(getListItem(data));
+                    premiumResident.add(getListItem(data));
                     break;
 
                 case UNIT:

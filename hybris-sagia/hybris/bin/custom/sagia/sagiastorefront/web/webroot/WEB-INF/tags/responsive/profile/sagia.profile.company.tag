@@ -20,12 +20,15 @@
             <div class="contentModule">
                 <div class="contentModule-section">
 
-                    <%--<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">--%>
-                        <%--<div class="contentModule-headline">--%>
+                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
+                        <div class="contentModule-headline mw0 ml-0">
                             <%--<span class="iconElement iconElement_info"><icon:info/></span>--%>
-                            <%--<spring:theme code="general.basicinformation"/>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
+                            <spring:theme code="general.basicinformation"/>
+                        </div>
+                             <hr class="hr w-100"/>
+
+                    </div>
+
 
                     <div class="js-myAccount-edit-toggle">
                         <div class="row">
@@ -111,7 +114,7 @@
                 </div>
 
                 <div class="contentModule-section">
-                    <div class="contentModule-headline">
+                    <div class="contentModule-headline mw1">
                         <!--<span class="iconElement iconElement_governmentDocuments"><icon:governmentDocuments/></span>-->
                         <spring:theme code="general.governmentdocuments"/>
                     </div>
@@ -124,7 +127,7 @@
                 </div>
 
                 <div class="contentModule-section" id="branchesSection">
-                    <div class="contentModule-headline">
+                    <div class="contentModule-headline mw0">
                         <c:set var="countBranches" value="${fn:length(branches)}"/>
                        <!-- <span class="iconElement iconElement_branches"><icon:branches/></span>--> <spring:theme code="general.branches"/>(${countBranches})
                     </div>
@@ -154,7 +157,7 @@
                     <!-- general manager -->
                     <div class="contentModule-section">
                         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap mb-0">
-                            <div class="contentModule-headline">
+                            <div class="contentModule-headline mw2">
                                 <!--<span class="iconElement iconElement_generalManager"><icon:generalManager/></span>--><spring:theme code="profileCompany.generalManager.title"/>
                             </div>
                             <div>
@@ -174,7 +177,7 @@
                         </div>
                         <hr class="hr"/>
                         <div class="js-myAccount-edit-toggle">
-                            <div class="row">
+                            <div class="row mt-5 pt-4">
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated">
                                         <dt><spring:theme code="general.firstname"/></dt>
@@ -218,7 +221,7 @@
                         </div>
 
                         <div class="js-myAccount-edit-toggle" style="display: none;">
-                            <div class="row">
+                            <div class="row mt-5 pt-4">
                                 <div class="col-md-6">
                                     <div class="formInputBox">
                                         <div class="form-group">
@@ -359,7 +362,7 @@
 
                 <!-- primary contact-->
                 <div class="contentModule-section primary-contact">
-                    <div class="contentModule-headline">
+                    <div class="contentModule-headline mw0">
                         <!--<span class="iconElement iconElement_generalManager"><icon:login-quick/></span>--><spring:theme code="general.primary.contact"/>
                     </div>
                     <hr class="hr"/>
@@ -394,7 +397,7 @@
                 <div class="js-myAccount-edit-toggle">
                     <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
                         <c:url var="historyUrl" value="/contacts/history"/>
-                        <a href="${historyUrl}" class="btn btn-bg btn_bold btn-normal w-25"><spring:theme code="profileCompany.contactUpdate.history"/></a>
+                        <a href="${historyUrl}" class="btn btn-ctrl btn_slim btn-bg btn_bold btn-normal w-25"><spring:theme code="profileCompany.contactUpdate.history"/></a>
                     </div>
                 </div>
 
@@ -499,7 +502,7 @@
             <div class="contentModule-headline w-50"></div>
             <hr class="hr"/>
             <input name="bpId" class="bpId form-control" placeholder="." type="hidden" value=""/>
-            <div class="row">
+            <div class="row mt-5 pt-4">
                 <div class="col-md-6">
                     <div class="formInputBox">
                         <div class="form-group">

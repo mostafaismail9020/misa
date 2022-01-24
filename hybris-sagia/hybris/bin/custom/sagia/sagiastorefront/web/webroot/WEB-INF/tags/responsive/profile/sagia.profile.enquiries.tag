@@ -21,12 +21,12 @@
         <div class="panelModule panelModule_halfRadius">
             <div class="contentModule">
                 <div class="contentModule-section">
-                    <div class="contentModule-headline">
+                    <div class="contentModule-headline mw0">
                       <!-- <span class="iconElement iconElement_enquiry3"><icon:enquiry3/></span>--><spring:theme code="profile.enquiry.new"/>
                     </div>
                     <hr class="hr"/>
                     <div id="complaintInProgress" style="display: none">${complaintInProgress}</div>
-                    <form:form id="createComplantForm" action="${encodedContextPath}/complaints/create" enctype="multipart/form-data" method="post" modelAttribute="complaintFormData">
+                    <form:form id="createComplantForm" class="pt-4" action="${encodedContextPath}/complaints/create" enctype="multipart/form-data" method="post" modelAttribute="complaintFormData">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="formSelectBox">
@@ -57,7 +57,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="formSelectBox">
+                                <div class="formSelectBox pb-3">
                                     <spring:bind path="details.Category2">
                                         <div class="form-group <c:if test="${status.error}">has-error</c:if>">
                                             <form:select class="js-select2-oneColumn" id="categoriesTwoList" path="details.Category2" mandatory = "true">
@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="formSelectBox">
+                                <div class="formSelectBox pb-3">
                                     <div class="form-group">
                                         <form:select class="js-select2-oneColumn" path="details.Branch" mandatory = "true">
                                              <!-- population is making in sagia.profile.js - reason for which I cut itemValue="description" itemLabel="description" -->
@@ -86,10 +86,10 @@
 
                         <formElement:formInputBox idKey="details.Subject" labelKey="profile.enquiry.subject" path="details.Subject" inputCSS="text" labelCSS="control-label_mandatory" mandatory="true"/>
                         <formElement:formTextArea idKey="details.TextMsg" labelKey="profile.enquiry.message" path="details.TextMsg" labelCSS="control-label_mandatory"  areaCSS="form-control" mandatory="true"/>
-                        <div class="row enquiryFiles">
+                        <div class="row enquiryFiles pt-5 mt-4 pb-4 mb-5">
                             <div class="col-md-6">
                                 <!-- todo: formInputFile tag needs to be added -->
-                                <div class="formInputFile">
+                                <div class="formInputFile mb-5">
                                     <div class="form-group">
                                         <input id="file0" name="files[0]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
                                         <input id="text05" name="text05" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
@@ -169,8 +169,8 @@
                 </div>
 
                 <div class="contentModule-section" id="ticketsSection">
-                    <div class="contentModule-headline contentModule-headline_flex pt-2">
-                        <div class="contentModule-headline-title">
+
+                        <div class="contentModule-headline mw0">
                            <!-- <span class="iconElement iconElement_your-tickets"><icon:your-tickets/></span>-->
                             <spring:theme code="profile.yourTickets"/>
                         </div>
@@ -193,7 +193,7 @@
                                 </c:choose>
                             </div>
                         </div>
-                    </div>
+
                      <hr class="hr"/>
                     <div class="contentModule-filter p-2 mb-4">
                         <select id="profileTicketSort" title="profileTicketSort" class="js-select2-oneColumn form-control" onchange="sortProfileTickets()">

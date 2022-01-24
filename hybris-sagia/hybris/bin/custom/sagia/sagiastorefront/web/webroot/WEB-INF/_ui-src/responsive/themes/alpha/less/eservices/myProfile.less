@@ -23,6 +23,8 @@
 }
 
 .notifyCount {
+    position: relative;
+    top: -10px;
     background-color: #00A6BE !important;
 }
 
@@ -146,6 +148,7 @@ span {
 
 .panelTabs-navigation li.active a .notifyCount {
     color: #00A6BE;
+    background-color: #fff !important;
 }
 
 .formRadioBox .form-item {
@@ -727,6 +730,7 @@ span {
     color: #00A6BE;
     width: 21px !important;
     height: 21px !important;
+    margin-right: 32px;
 }
 
 .btn_leftIconLink {
@@ -1101,6 +1105,7 @@ button:focus {
 
 .page-sagia-profile .formSelectBox .form-group .select2.select2-container.select2Container_selected+.control-label {
     font-size: 16px;
+    font-weight: 600;
     left: 20px;
     top: -15px !important;
 }
@@ -1115,6 +1120,7 @@ button:focus {
 
 .page-sagia-profile .formInputBox .form-control {
     font-size: 20px;
+    font-weight: 600;
     color: #707070;
     padding-left: 30px;
     margin-top: 10px;
@@ -1435,7 +1441,6 @@ button:focus {
 
 .page-sagia-profile #companyRepresentativeForm1 .js-myAccount-edit-toggle .formInputBox .form-group .control-label,
 .page-sagia-profile #generalManagerForm .js-myAccount-edit-toggle .formInputBox .form-group .control-label {
-    font-weight: 600;
     padding-left: 30px;
 }
 
@@ -1710,6 +1715,7 @@ button:focus {
 }
 
 .page-sagia-profile #sagiaProfilePersonalForm .formInputBox .control-label {
+    font-weight: 600;
     top: -35px;
 }
 
@@ -1772,7 +1778,76 @@ button:focus {
 .page-sagia-profile #enquiriesTabData .contentModule-filter .select2.select2-container .select2-selection:after{
     top: 10px;
 }
+.page-sagia-profile .js-contactUpdate-edit .iconElement_edit02{
+    vertical-align: 0;
+}
+.mw0 {
+    max-width: 15% !important;
+}
 
+.mw1 {
+    max-width: 22%;
+}
+
+.mw2 {
+    max-width: 18% !important;
+}
+
+#enquiriesTabData #createComplantForm .formSelectBox {
+    padding-bottom: 30px;
+}
+
+#enquiriesTabData #createComplantForm .formSelectBox .form-group .select2.select2-container.select2Container_selected+.control-label,
+#enquiriesTabData #createComplantForm .formInputBox .control-label,
+#enquiriesTabData #createComplantForm .formTextArea .form-control:placeholder-shown+.control-label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#enquiriesTabData #createComplantForm .formTextArea .form-group .form-control {
+    font-weight: 600;
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+#enquiriesTabData #createComplantForm .formTextArea .form-group .control-label {
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 40px;
+}
+
+#enquiriesTabData #createComplantForm .formInputBox .control-label {
+    top: -10px;
+    padding-left: 30px !important;
+}
+
+#enquiriesTabData #createComplantForm .formTextArea .form-control:placeholder-shown+.control-label {
+    top: 26px;
+    padding-left: 30px !important;
+}
+
+#enquiriesTabData #createComplantForm .formInputFile .form-control+.control-label {
+    margin-left: 10px !important;
+}
+
+#companyTabData #generalManagerForm .formInputBox .control-label,
+#companyTabData #companyRepresentativeForm2,
+.formInputBox .control-label,
+#companyTabData #companyRepresentativeForm3,
+.formInputBox .control-label {
+    top: -35px !important;
+    font-weight: 400;
+}
+
+#companyRepresentativeSection #companyRepresentativeForm1,
+.formInputBox .control-label {
+    font-weight: 400 !important;
+}
+
+.page-sagia-profile .contentModule-section .btn_edit:hover {
+    color: #00a6be !important;
+    background-color: transparent !important;
+}
 @media (max-width: 575px) {
     .page-sagia-profile #myProfileTabData .contentModule-actions .profile-settings {
         max-width: 100% !important;
@@ -1930,6 +2005,21 @@ button:focus {
     .page-sagia-profile .panelTabs .panelTabs-content {
         border: none;
     }
+    #generalManagerForm .contentModule-actions .contentModule-headline{
+        max-width: 30% !important;
+    }
+    .page-sagia-profile .contentModule-section .mw0,
+    .page-sagia-profile .contentModule-section .mw1,
+    .page-sagia-profile .contentModule-section .mw2 {
+                max-width: 100% !important;
+    }
+    .page-sagia-profile .panelTabs-content .panelModule_halfRadius {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .page-sagia-profile #updatePwdForm {
+        padding-top: 30px;
+    }
 }
 
 @media (min-width: 768px) and (max-width:991px) {
@@ -2022,11 +2112,34 @@ button:focus {
     #surveyForm .backToall {
         width: 50% !important;
     }
+
+    .page-sagia-profile .panelTabs-navigation {
+        display: block !important;
+    }
+    .page-sagia-profile .contentModule-section .mw0,
+    .page-sagia-profile .contentModule-section .mw1,
+    .page-sagia-profile .contentModule-section .mw2 {
+        max-width: 50% !important;
+        width: 50% !important;
+    }
+    .page-sagia-profile #updatePwdForm {
+        padding-top: 30px;
+    }
+    #companyRepresentativeSection #companyRepresentativeForm1 .contentModule-headline,
+    #companyRepresentativeSection #companyRepresentativeForm2 .contentModule-headline,
+    #companyRepresentativeSection #companyRepresentativeForm3 .contentModule-headline {
+        width: 75% !important;
+    }
+
 }
 
 @media (min-width:992px) and (max-width:1199px) {
     .select2.select2-container .select2-selection:after {
         right: 0;
+    }
+
+    .page-sagia-profile .panelTabs-navigation {
+        display: block !important;
     }
 }
 

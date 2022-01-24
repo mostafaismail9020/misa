@@ -300,13 +300,13 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
             //throw new IllegalArgumentException("Please upload only the requested files");
             getSessionService().setAttribute("financialStatementForm", financialStatementForm);
             redirectModel.addFlashAttribute("org.springframework.validation.BindingResult.financialStatementForm", result);
-            return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete";
+            return REDIRECT_PREFIX + "/dashboard";
         }
 
         if (result.hasErrors()) {
             getSessionService().setAttribute("financialStatementForm", financialStatementForm);
             redirectModel.addFlashAttribute("org.springframework.validation.BindingResult.financialStatementForm", result);
-            return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete";
+            return REDIRECT_PREFIX + "/dashboard";
         }
 
         try {
@@ -336,7 +336,7 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
         } catch (Exception e) {
             LOG.warn(e.getMessage(),e);
         }
-        return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete";
+        return REDIRECT_PREFIX + "/dashboard";
     }
 
 

@@ -26,7 +26,6 @@ import com.sap.ibso.eservices.facades.data.license.amendment.Transaction;
 import com.sap.ibso.eservices.sagiaservices.services.financialsurvey.SagiaFinancialSurveyService;
 import de.hybris.platform.commercefacades.user.data.CompanyProfileData;
 import de.hybris.platform.commercefacades.user.data.FinancialSurvey;
-import de.hybris.platform.commerceservices.model.process.SagiaNewFinancialSurveyProcessModel;
 import de.hybris.platform.core.PK;
 import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.security.PrincipalModel;
@@ -165,9 +164,14 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         if(financialSurveyData.getShareholders().size() > 0 ) {
             for (Shareholder shareholder : financialSurveyData.getShareholders()) {
                 // Delete exiting branches
-                if (shareholder.getAction().equals("03")) {
+                if ("03".equals(shareholder.getAction())) {
                     // Found and deleted the branch.
-                    modelService.remove(PK.parse(shareholder.getSrId()));
+                    try {
+                        modelService.remove(PK.parse(shareholder.getSrId()));
+                    }catch(Exception e){
+                        // log errror.
+                    }
+
                 } else { // Update or add a new branch
 
                     FinancialSurveyShareholderModel financialSurveyShareholderModel = new FinancialSurveyShareholderModel();
@@ -193,9 +197,14 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         if(financialSurveyData.getAffiliates().size() > 0 ) {
             for (Affiliate affiliate : financialSurveyData.getAffiliates() ) {
                 // Delete exiting branches
-                if (affiliate.getAction().equals("03")) {
+                if ("03".equals(affiliate.getAction())) {
                     // Found and deleted the branch.
-                    modelService.remove(PK.parse(affiliate.getSrId()));
+                    try{
+                        modelService.remove(PK.parse(affiliate.getSrId()));
+                    }catch(Exception e) {
+                        // TODO log error
+                    }
+
                 } else { // Update or add a new branch
 
                     FinancialSurveyAffiliateModel financialSurveyAffiliateModel = new FinancialSurveyAffiliateModel();
@@ -342,7 +351,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyModel.setAnnualFinancialStatementFile(mediaModel);
         financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.SUBMITTED);
         modelService.save(financialSurveyModel);
-        final SagiaNewFinancialSurveyProcessModel sagiaNewFinancialSurveyProcess =
+        /*final SagiaNewFinancialSurveyProcessModel sagiaNewFinancialSurveyProcess =
                 businessProcessService.createProcess("sendNewFinancialSurveyEmailProcess-"
                         + financialSurveyModel.getUser().getUid()+"-"+System.currentTimeMillis(),"sendNewFinancialSurveyEmailProcess");
         sagiaNewFinancialSurveyProcess.setSite(baseSiteService.getCurrentBaseSite());
@@ -350,10 +359,10 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         sagiaNewFinancialSurveyProcess.setLanguage(commonI18NService.getCurrentLanguage());
         sagiaNewFinancialSurveyProcess.setCurrency(commonI18NService.getCurrentCurrency());
         sagiaNewFinancialSurveyProcess.setStore(baseStoreService.getCurrentBaseStore());
-        sagiaNewFinancialSurveyProcess.setQuarterCode(quarterCode);
-        sagiaNewFinancialSurveyProcess.setQuarterDescription(quarterCode);
+        //sagiaNewFinancialSurveyProcess.setQuarterCode(quarterCode);
+        //sagiaNewFinancialSurveyProcess.setQuarterDescription(quarterCode);
         modelService.save(sagiaNewFinancialSurveyProcess);
-        businessProcessService.startProcess(sagiaNewFinancialSurveyProcess);
+        businessProcessService.startProcess(sagiaNewFinancialSurveyProcess);*/
     }
 
 

@@ -15,13 +15,6 @@ $(document).ready(function () {
         $('#bpNumberGroupId').hide();
         $('#entityAffiliateId').hide();
 
-        //hide optionals
-        $('#affiliateVotingPowerSectionId').hide();
-        $('#affiliatePreferredSharesSectionId').hide();
-        $('#affiliateValueOfReverseInvestmentSectionId').hide();
-
-
-
 
         //$('#contentNewAffiliateForm').hide();
         loadAffiliatePersonForm();
@@ -96,47 +89,6 @@ $(document).ready(function () {
         });
 
 
-
-        $("input[name='affiliateIsVotingPower']").click(function () {
-
-        	var affiliateIsVotingPower = $('#affiliateIsVotingPowerId').is(':checked');
-            if (affiliateIsVotingPower ) {
-            	$('#affiliateVotingPowerSectionId').show();
-
-            } else {
-            	$('#affiliateVotingPowerSectionId').hide();
-                $('#affiliateVotingPowerId').val(null);
-            	//resetVerifyInherit();
-            }
-        });
-
-        $("input[name='affiliateHasPreferredShares']").click(function () {
-
-            var affiliateHasPreferredShares = $('#affiliateHasPreferredSharesId').is(':checked');
-            if (affiliateHasPreferredShares ) {
-                $('#affiliatePreferredSharesSectionId').show();
-
-            } else {
-                $('#affiliatePreferredSharesSectionId').hide();
-                $('#affiliatePreferredSharesId').val(null);
-                //resetVerifyInherit();
-            }
-        });
-
-        $("input[name='affiliateHaveReverseInvestment']").click(function () {
-
-            var affiliateHaveReverseInvestment = $('#affiliateHaveReverseInvestmentId').is(':checked');
-            if (affiliateHaveReverseInvestment ) {
-                $('#affiliateValueOfReverseInvestmentSectionId').show();
-
-            } else {
-                $('#affiliateValueOfReverseInvestmentSectionId').hide();
-                $('#affiliateValueOfReverseInvestmentId').val(null);
-                //resetVerifyInherit();
-            }
-        });
-
-
         resetAffiliateFormOnModalClose()
     }
 });
@@ -187,73 +139,6 @@ var resetAffiliateDetails = function(element, type)
 
 
 
-var onchangeOfIdType = function(element, type) {
-
-    var elementIdType = element.find("#idType");
-    var elementDateofBirth = element.find("#delegateDateofBirth");
-    var delegateBirthDateId = element.find("#delegateBirthDateId");
-
-    var elementDelegateExpiryDate = element.find("#delegateExpiryDate");
-    var elementDelegateIssueDate = element.find("#delegateIssueDate");
-
-    bindNormalCal(elementDelegateExpiryDate);
-    bindNormalCal(elementDelegateIssueDate);
-
-    toggleUmmAlQuraOrNormalCalInDelegateSection(elementIdType, elementDateofBirth);
-    toggleUmmAlQuraOrNormalCalInDelegateSection(elementIdType, delegateBirthDateId);
-
-    element.find("#nicVerifyBtnSection").show();
-    element.find("#delegateDateofBirthSection").show();
-    resetDelegateDetails(element, type);
-
-
-    // show and hide the special fields
-    if(elementIdType.val()==="1"){
-    	$("#delegateCountryDiv").hide();
-    	$("#delegateNationalityDiv").hide();
-
-    }
-    else
-    {
-
-    	$("#delegateCountryDiv").show();
-    	$("#delegateNationalityDiv").show();
-
-    }
-
-
-};
-
-
-
-
-
-var toggleUmmAlQuraOrNormalCalInDelegateSection = function(elementIdType, elementDateofBirth){
-    if(elementIdType.val()==="1"){
-        bindUmmAlQuraCal(elementDateofBirth);
-    }
-    else if(elementDateofBirth.hasClass("ummAlQura"))
-    {
-        bindNormalCal(elementDateofBirth);
-    }
-};
-var bindUmmAlQuraCal = function(element){
-    element.addClass("ummAlQura");
-    var flatPickrInstance = element.get(0)._flatpickr;
-
-    flatPickrInstance.destroy();
-
-    element.prop('readonly',true);
-
-    bindCalendarsPickerToInput(element);
-};
-var bindNormalCal = function(element){
-    element.removeClass("ummAlQura");
-
-    element.calendarsPicker('destroy');
-
-    bindCustomFlatpickr(element);
-};
 
 var enableDisableAffiliateFormSection = function (enable) {
     if(enable) {
@@ -279,9 +164,6 @@ var enableDisablePassportIdAffiliateForm = function (enable) {
 var resetCompanyCountriesSection = function () {
     var entitySection = $('#entityAffiliateId');
 
-    entitySection.find("#inputCRNumber").attr("disabled", true);
-    entitySection.find("#inputCRNumber").val("");
-
     entitySection.find("#load-investor").attr("disabled", true);
 
 };
@@ -289,7 +171,6 @@ var resetCompanyCountriesSection = function () {
 var loadAffiliateOrganizationForm = function () {
     $('#affiliateValidationSection').show();
     $('#affiliateValidationDetails').hide();
-    $('#inheritsection').hide();
 
     $('#contentNewAffiliateForm').show();
     $('#individualAffiliateId').hide();
@@ -339,62 +220,9 @@ var loadAffiliatePersonForm = function () {
     $('#inheritsection').hide();
 
 
-    bindAffiliateCalendarsToInput(
-        $("#affiliateValidationDetails").find("#affiliateIdType"),
-        $("#affiliateValidationDetails").find("#affiliateDateofBirth")
-    );
-
-    bindAffiliateCalendarsToInput(
-            $("#affiliateValidationDetails").find("#affiliateIdType"),
-            $("#contentNewAffiliateForm").find("#birthDateId")
-        );
-
-    bindAffiliateCalendarsToInput(
-        $("#delegate").find("#idType"),
-        $("#delegate").find("#delegateDateofBirth")
-    );
-
-    // Delegate section
-    $('#delegateDivSection').show();
-    $('#delegate').show();
 };
 
-var bindAffiliateCalendarsToInput = function (elementIdType, elementDateofBirth) {
-    var isUmmAlQura = false;
 
-    if(elementIdType.val() === "1"){
-        isUmmAlQura = true;
-    }
-
-    if (isUmmAlQura) {
-        bindCalendarsPickerToInput(elementDateofBirth);
-    } else {
-        bindCustomFlatpickr(elementDateofBirth);
-    }
-};
-
-var bindCalendarsPickerToInput = function (element) {
-    var calendar = $.calendars.instance('ummalqura', SAGIA.locale === 'en' ? '' : SAGIA.locale);
-    element.prop('readonly',true);
-    element.calendarsPicker($.extend({
-            showOtherMonths: true,
-            changeMonth: true,
-            selectOtherMonths: true,
-            showSpeed: "800",
-            useMouseWheel: false,
-            yearRange: 'any'
-        }, $.calendarsPicker.regionalOptions[SAGIA.locale === 'en' ? '' : SAGIA.locale])
-    ).calendarsPicker('option', {
-        calendar: calendar,
-        dateFormat: ACC.formatUIDateUAQ,
-        prevText: "<svg version=\"1.0\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M15.758.374c.365-.365.955-.365 1.319 0 .364.364.363.954-.001 1.319l-7.789 10.31 7.789 10.305c.364.365.365.955.001 1.319s-.954.364-1.319 0l-9.108-11.624 9.108-11.629z\"/></svg>",
-        nextText: "<svg version=\"1.0\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M8.242.374c-.365-.365-.956-.365-1.319 0-.364.364-.363.954 0 1.319l7.79 10.311-7.79 10.305c-.364.365-.364.955 0 1.319s.955.364 1.319 0l9.107-11.624-9.107-11.63z\"/></svg>",
-    });
-};
-
-var bindCustomFlatpickr = function (element) {
-    ACC.calendarcommons.bindFlatpickr(element);
-};
 
 
 var removeAffiliate = function () {
@@ -548,7 +376,7 @@ function prepareVisibleItemsEdit(selectedAffiliate) {
 
 
     //if an Entity
-    if (selectedAffiliate.bpType === '2') {
+    if (selectedAffiliate.affiliateType === '2') {
     	 $('#affiliateEntityBasicInformation').show();
     	 $('#showDelegateQuestionOrganization').show();
     	 $('#showDelegateQuestion').hide();
@@ -615,26 +443,26 @@ function prepareVisibleItemsEdit(selectedAffiliate) {
 }
 
 function fillAffiliateForm(selectedAffiliate) {
-    if (selectedAffiliate.bpType === '2') {
+    if (selectedAffiliate.affiliateType === '2') {
         $('#individualAffiliateId').hide();
         $('#entityAffiliateId').show();
-        $('#affiliateNameEnglishId').val(selectedAffiliate.name);
+        $('#affiliateNameEnglishId').val(selectedAffiliate.affiliateNameEnglish);
         $('#inputCRNumber').val(selectedAffiliate.inputCRNumber);
 
-        updateDropDown('#affiliateCompanyCountry', selectedAffiliate.companyCountry);
-        updateDropDown('#affiliateSectorId', selectedAffiliate.industry);
-        updateDropDown('#affiliateMultinationalCompanyId', selectedAffiliate.multinationalCompany);
+        updateDropDown('#affiliateCompanyCountry', selectedAffiliate.affiliateCountry);
+        updateDropDown('#affiliateSectorId', selectedAffiliate.affiliateSector);
+        updateDropDown('#affiliateMultinationalCompanyId', selectedAffiliate.affiliateMultinationalCompany);
         updateDropDown('#affiliateLegalStatusId', selectedAffiliate.legalStatus);
-        $('#affiliateSubsectorId').val(selectedAffiliate.subsector);
+        $('#affiliateSubsectorId').val(selectedAffiliate.affiliateSubsector);
     } else {
 
         $('#entityAffiliateId').hide();
         $('#individualAffiliateId').show();
-        $('#individualAffiliateNameEnglishId').val(selectedAffiliate.name);
-        updateDropDown('#affiliateGenderId', selectedAffiliate.gender);
+        $('#individualAffiliateNameEnglishId').val(selectedAffiliate.affiliateNameEnglish);
+        updateDropDown('#affiliateGenderId', selectedAffiliate.affiliateGender);
         updateDropDown('#affiliateMaritalStatusId', selectedAffiliate.maritalStatus);
-        updateDropDown('#affiliateNationalityCurrentId', selectedAffiliate.nationalityCurrent);
-        updateDropDown('#affiliateCountryId', selectedAffiliate.country);
+        updateDropDown('#affiliateNationalityCurrentId', selectedAffiliate.affiliateNationalityCurrent);
+        updateDropDown('#affiliateCountryId', selectedAffiliate.affiliateCountry);
 
     }
 
@@ -813,11 +641,35 @@ var saveAffiliate = function (existingBp, bpId) {
         selectedAffiliate.transaction.totalDebitCurrentQuarter =transaction.totalDebitCurrentQuarter ;
         selectedAffiliate.transaction.totalCreditCurrentQuarter =transaction.totalCreditCurrentQuarter ;
 
+
+        if (gender) { // edit individual affiliate
+
+            selectedAffiliate.affiliateNameEnglish = individualAffiliateName;
+            selectedAffiliate.affiliateGender = gender;
+            selectedAffiliate.genderDescription = genderDescription;
+            selectedAffiliate.maritalStatus = maritalStatus;
+            selectedAffiliate.maritalStatusDescription = maritalStatusDescription;
+            selectedAffiliate.affiliateNationalityCurrent = nationalityCurrent;
+            selectedAffiliate.nationalityCurrentDescription = nationalityCurrentDescription;
+            selectedAffiliate.affiliateCountry = affiliateCountry;
+            selectedAffiliate.affiliateCountryDescription = affiliateCountryDescription;
+        } else { // edit entity affiliate
+            selectedAffiliate.companyCountry = companyCountry;
+            selectedAffiliate.companyCountryDescription = companyCountryDescription;
+            selectedAffiliate.affiliateNameEnglish = name;
+            selectedAffiliate.industry = industry;
+            selectedAffiliate.industryDescription = industryDescription;
+            selectedAffiliate.affiliateMultinationalCompany = multinationalCompany;
+            selectedAffiliate.affiliateSubsector = subsector;
+        }
+
+
+
         if (selectedAffiliate.newItemId) { // Edit added affiliate - save all fields
             if (gender) { // edit individual affiliate
 
                 selectedAffiliate.affiliateNameEnglish = individualAffiliateName;
-                selectedAffiliate.gender = gender;
+                selectedAffiliate.affiliateGender = gender;
                 selectedAffiliate.genderDescription = genderDescription;
                 selectedAffiliate.maritalStatus = maritalStatus;
                 selectedAffiliate.maritalStatusDescription = maritalStatusDescription;
@@ -900,13 +752,13 @@ var saveAffiliate = function (existingBp, bpId) {
             affiliateRow.attr("id", newItemId).children().first().html(individualAffiliateName)
                 .next().text(getI18nText("general.individual")).next().text(affiliateCountryDescription);
 
-            affiliate.bpType = '1';
-            affiliate.name = individualAffiliateName;
-            affiliate.gender = gender;
+            affiliate.affiliateType = '1';
+            affiliate.affiliateNameEnglish = individualAffiliateName;
+            affiliate.affiliateGender = gender;
             affiliate.genderDescription = genderDescription;
             affiliate.maritalStatus = maritalStatus;
             affiliate.maritalStatusDescription = maritalStatusDescription;
-            affiliate.nationalityCurrent = nationalityCurrent;
+            affiliate.affiliateNationalityCurrent = nationalityCurrent;
             affiliate.nationalityCurrentDescription = nationalityCurrentDescription;
             affiliate.affiliateCountry = affiliateCountry;
             affiliate.affiliateCountryDescription = affiliateCountryDescription;
@@ -915,13 +767,13 @@ var saveAffiliate = function (existingBp, bpId) {
         } else { // entity affiliate
             affiliateRow.attr("id", newItemId).children().first().html(name)
                 .next().text(getI18nText("general.entity")).next().text(companyCountryDescription);
-            affiliate.bpType = '2';
-            affiliate.name = name;
-            affiliate.industry = industry;
+            affiliate.affiliateType = '2';
+            affiliate.affiliateNameEnglish = name;
+            affiliate.affiliateSector = industry;
             affiliate.industryDescription = industryDescription;
-            affiliate.multinationalCompany = multinationalCompany;
-            affiliate.subsector = subsector;
-            affiliate.companyCountry = companyCountry;
+            affiliate.affiliateMultinationalCompany = multinationalCompany;
+            affiliate.affiliateSubsector = subsector;
+            affiliate.affiliateCountry = companyCountry;
             affiliate.companyCountryDescription = companyCountryDescription;
         }
 

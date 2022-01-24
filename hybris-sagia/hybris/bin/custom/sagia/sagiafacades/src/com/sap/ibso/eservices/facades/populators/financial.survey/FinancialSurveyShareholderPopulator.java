@@ -25,6 +25,7 @@ public class FinancialSurveyShareholderPopulator implements Populator<FinancialS
         shareholder.setCompanyCountry(financialSurveyShareholderModel.getCompanyCountry());
         shareholder.setShareholderNameEnglish(financialSurveyShareholderModel.getShareholderNameEnglish());
         shareholder.setShareholderSector(financialSurveyShareholderModel.getShareholderSector());
+        shareholder.setShareholderSubsector(financialSurveyShareholderModel.getShareholderSubsector());
         shareholder.setShareholderGender(financialSurveyShareholderModel.getShareholderGender());
         shareholder.setShareholderNationalityCurrent(financialSurveyShareholderModel.getShareholderNationalityCurrent());
         shareholder.setShareholderCountry(financialSurveyShareholderModel.getShareholderCountry());
@@ -36,6 +37,7 @@ public class FinancialSurveyShareholderPopulator implements Populator<FinancialS
         shareholder.setShareholderHaveReverseInvestment(financialSurveyShareholderModel.isShareholderHaveReverseInvestment());
         shareholder.setValueOfReverseInvestment(financialSurveyShareholderModel.getValueOfReverseInvestment());
         shareholder.setShareholderMultinationalCompany(financialSurveyShareholderModel.getShareholderMultinationalCompany());
+
 
 
         shareholder.setPaidUpCapitalCurrentQuarter(financialSurveyShareholderModel.getPaidUpCapitalCurrentQuarter());

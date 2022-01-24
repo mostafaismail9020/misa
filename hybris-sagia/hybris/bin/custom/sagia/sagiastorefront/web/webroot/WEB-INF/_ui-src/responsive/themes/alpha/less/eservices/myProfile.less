@@ -1105,7 +1105,6 @@ button:focus {
 
 .page-sagia-profile .formSelectBox .form-group .select2.select2-container.select2Container_selected+.control-label {
     font-size: 16px;
-    font-weight: 600;
     left: 20px;
     top: -15px !important;
 }
@@ -1443,7 +1442,9 @@ button:focus {
 .page-sagia-profile #generalManagerForm .js-myAccount-edit-toggle .formInputBox .form-group .control-label {
     padding-left: 30px;
 }
-
+.page-sagia-profile #generalManagerForm .formInputFile .control-label {
+    padding-left: 20px !important;
+}
 .page-sagia-profile .formTextArea .form-control:placeholder-shown+.control-label {
     font-size: 20px;
     padding-left: 15px;
@@ -1700,6 +1701,7 @@ button:focus {
 
 .page-sagia-profile #sagiaProfilePersonalForm .select2-container .select2-selection--single .select2-selection__rendered {
     top: 0;
+    font-weight: normal !important;
 }
 
 .page-sagia-profile #sagiaProfilePersonalForm .formSelectBox .select2.select2-container.select2-container--disabled.select2Container_selected+.control-label {
@@ -1715,11 +1717,12 @@ button:focus {
 }
 
 .page-sagia-profile #sagiaProfilePersonalForm .formInputBox .control-label {
-    font-weight: 600;
+    font-weight: normal !important;
     top: -35px;
 }
 
 .page-sagia-profile .formSelectBox .form-group .select2.select2-container.select2Container_selected+.control-label {
+    font-weight: normal;
     top: -20px !important;
 }
 
@@ -1781,15 +1784,15 @@ button:focus {
 .page-sagia-profile .js-contactUpdate-edit .iconElement_edit02{
     vertical-align: 0;
 }
-.mw0 {
+.page-sagia-profile .contentModule-section .mw0 {
     max-width: 15% !important;
 }
 
-.mw1 {
+.page-sagia-profile .contentModule-section .mw1 {
     max-width: 22%;
 }
 
-.mw2 {
+.page-sagia-profile .contentModule-section .mw2 {
     max-width: 18% !important;
 }
 
@@ -1801,13 +1804,18 @@ button:focus {
 #enquiriesTabData #createComplantForm .formInputBox .control-label,
 #enquiriesTabData #createComplantForm .formTextArea .form-control:placeholder-shown+.control-label {
     font-size: 16px;
-    font-weight: 600;
+    left: 0;
+    font-weight: normal;
 }
 
 #enquiriesTabData #createComplantForm .formTextArea .form-group .form-control {
     font-weight: 600;
     margin-top: 10px;
     padding-left: 30px;
+}
+#enquiriesTabData #createComplantForm .formTextArea .form-control:placeholder-shown+.control-label {
+    top: 26px;
+    padding-left: 30px !important;
 }
 
 #enquiriesTabData #createComplantForm .formTextArea .form-group .control-label {
@@ -1821,20 +1829,14 @@ button:focus {
     padding-left: 30px !important;
 }
 
-#enquiriesTabData #createComplantForm .formTextArea .form-control:placeholder-shown+.control-label {
-    top: 26px;
-    padding-left: 30px !important;
-}
 
 #enquiriesTabData #createComplantForm .formInputFile .form-control+.control-label {
     margin-left: 10px !important;
 }
 
 #companyTabData #generalManagerForm .formInputBox .control-label,
-#companyTabData #companyRepresentativeForm2,
-.formInputBox .control-label,
-#companyTabData #companyRepresentativeForm3,
-.formInputBox .control-label {
+#companyTabData #companyRepresentativeForm2 .formInputBox .control-label,
+#companyTabData #companyRepresentativeForm3 .formInputBox .control-label {
     top: -35px !important;
     font-weight: 400;
 }
@@ -1847,6 +1849,21 @@ button:focus {
 .page-sagia-profile .contentModule-section .btn_edit:hover {
     color: #00a6be !important;
     background-color: transparent !important;
+}
+.page-sagia-profile .formInputBox .has-error .form-control{
+    margin-bottom: 30px !important;
+
+}
+.page-sagia-profile #createComplantForm .formInputBox .control-label, .page-sagia-profile #updatePwdForm .formInputBox .control-label, .page-sagia-profile #changeUsername .formInputBox .control-label,
+.page-sagia-profile #changeEmail .formInputBox .control-label {
+    top: -15px!important;
+}
+.page-sagia-profile #sagiaProfilePersonalForm .select2-container .select2-selection--single .select2-selection__rendered{
+    padding-left: 0 !important;
+}
+.page-sagia-profile #sagiaProfilePersonalForm .formSelectBox .select2Container_selected+.control-label{
+    padding-left: 10px !important;
+
 }
 @media (max-width: 575px) {
     .page-sagia-profile #myProfileTabData .contentModule-actions .profile-settings {
@@ -2020,6 +2037,13 @@ button:focus {
     .page-sagia-profile #updatePwdForm {
         padding-top: 30px;
     }
+    .page-sagia-profile #generalManagerForm .mw2{
+        max-width: 100% !important;
+
+    }
+    .page-sagia-profile #generalManagerForm  .js-contactUpdate-edit .close-edit{
+        right: 0 !important;
+    }
 }
 
 @media (min-width: 768px) and (max-width:991px) {
@@ -2130,7 +2154,13 @@ button:focus {
     #companyRepresentativeSection #companyRepresentativeForm3 .contentModule-headline {
         width: 75% !important;
     }
-
+    .page-sagia-profile .dashboardWidget-filter .select2-selection--single .select2-selection__rendered{
+        margin-left: 0;
+        line-height: 35px;
+    }
+    .notifyCount{
+        top: 0;;
+    }
 }
 
 @media (min-width:992px) and (max-width:1199px) {

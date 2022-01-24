@@ -221,7 +221,7 @@
                         </div>
 
                         <div class="js-myAccount-edit-toggle" style="display: none;">
-                            <div class="row mt-5 pt-4">
+                            <div class="row mt-5 pt-4 pb-2">
                                 <div class="col-md-6">
                                     <div class="formInputBox">
                                         <div class="form-group">

@@ -57,10 +57,10 @@
                                 <dd id="sagiaProfilePersonalFormMobileNumber"></dd>
                                 <dt><spring:theme code="general.companyWebsite"/></dt>
                                 <dd id="sagiaProfilePersonalFormCompanyWebsite"></dd>
-                                
+
                             </dl>
                         </div>
-                       
+
                         <div class="col-md-6">
                             <dl class="dlList dlList_separated border-0">
                                 <dt><spring:theme code="general.lastname"/></dt>
@@ -77,7 +77,7 @@
                         <h4 id="sagia_companyLogo_picture_title"></h4>
                         <div class="myAccount-profilImage-img"><div class="companyLogo js-companyLogo"></div></div>
                     </div></div>
-                    
+
                 </div>
 
                 <div class="myAccount-edit-toggle js-myAccount-edit-toggle" style="display: none;">
@@ -236,7 +236,7 @@
                                 </div>
                             </div>
                              <div class="col-md-12">
-                             <div class="myAccount-profilImage">
+                             <div class="myAccount-profilImage mt-0">
                        <!-- <div class="myAccount-profilImage-img"><div class="profilePicture js-profilePicture" ></div></div>-->
                         <a href="#" class="myAccount-profilImage-change w-50 p-4 pt-4 pl-3 pr-3 mt-4" data-toggle="modal" data-target="#uploadFilePicture" data-action="update-companyLogo">Change company logo
                         <span class="uploadFile text-center pr-2"><svg xmlns="http://www.w3.org/2000/svg" class="mt-3" width="29" height="29" viewBox="0 0 29 29">
@@ -250,7 +250,7 @@
                         </a>
                     </div>
                     </div>
-                   
+
                         </div>
 
                         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection justify-content-end">

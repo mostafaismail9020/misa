@@ -7,7 +7,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true"/>
 
-<form id="updatePwdForm pt-3">
+<form id="updatePwdForm" class="mt-5">
     <div class="row">
         <div class="col-md-6">
             <div class="formInputBox">

@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 
         //$('#contentNewShareholderForm').hide();
-        loadPersonForm();
+        loadPersonShareholderForm();
 
         $(".removeShareholderBtn").on('click', removeShareholder);
         $(".newShareholderBtn, #newShareholderId").on('click', newShareholder);
@@ -37,34 +37,34 @@ $(document).ready(function () {
             clearShareholderForm();
         });
         $('#personId').on('click', clickPersonID);
-       //$('#shareholderAcademicTitleId').on('change', removeShareholderErrorsIfExists);
+        //$('#shareholderAcademicTitleId').on('change', removeShareholderErrorsIfExists);
         //$('#shareholderMaritalStatusId').on('change', removeShareholderErrorsIfExists);
         //$('#shareholderPremiumResidentId').on('change', removeShareholderErrorsIfExists);
         $('#shareholderGenderId').on('change', removeShareholderErrorsIfExists);
         $('#shareholderNationalityCurrentId').on('change', removeShareholderErrorsIfExists);
-       // $('#shareholderNationalityPreviousId').on('change', removeShareholderErrorsIfExists);
+        // $('#shareholderNationalityPreviousId').on('change', removeShareholderErrorsIfExists);
         $('#shareholderCountryId').on('change', removeShareholderErrorsIfExists);
         //$('#existingShareholderId').on('click', removePreviousErrors);
         //$('#newShareholderId').on('click', removePreviousErrors);
         $('#entityId').on('click', removePreviousErrors);
 
         $('.saveShareholderBtn').on('click', function() {
-                saveShareholder(false);
+            saveShareholder(false);
         });
 
         $('#shareholderPersonEntityTypeId').show();
-       // $('#bpNumberGroupId').hide();
+        // $('#bpNumberGroupId').hide();
         clearShareholderForm();
         enableShareholderForm();
         $('#shareholderValidationDetails').show();
         enableDisableShareholderFormSection(false);
         $('#entityShareholderId').show();
-     //   $('#companyVerificationSection').hide();
+        //   $('#companyVerificationSection').hide();
 
 
         $("input[name='shareholderPersonEntityRadioBox']").click(function () {
             if ($(this).val() === "true") {
-                loadPersonForm();
+                loadPersonShareholderForm();
                 //For passport
                 var type = "Person";
                 var element = $("#shareholderValidationDetails");
@@ -72,7 +72,7 @@ $(document).ready(function () {
                 enableDisablePassportIdShareholderForm(true);
                 resetShareholderDetails(element, type);
             } else {
-                loadOrganizationForm();
+                loadShareholderOrganizationForm();
                 loadOrganizationFormFields();
             }
         });
@@ -96,14 +96,14 @@ $(document).ready(function () {
 
         $("input[name='shareholderIsVotingPower']").click(function () {
 
-        	var shareholderIsVotingPower = $('#shareholderIsVotingPowerId').is(':checked');
+            var shareholderIsVotingPower = $('#shareholderIsVotingPowerId').is(':checked');
             if (shareholderIsVotingPower ) {
-            	$('#shareholderVotingPowerSectionId').show();
+                $('#shareholderVotingPowerSectionId').show();
 
             } else {
-            	$('#shareholderVotingPowerSectionId').hide();
+                $('#shareholderVotingPowerSectionId').hide();
                 $('#shareholderVotingPowerId').val(null);
-            	//resetVerifyInherit();
+                //resetVerifyInherit();
             }
         });
 
@@ -179,7 +179,7 @@ var setAndDisableFieldIfValueNotBlank = function(element, value){
 var resetShareholderDetails = function(element, type)
 {
     clearShareholderForm();
-   // toggleTheNICFieldsEditable(element, type, true);
+    // toggleTheNICFieldsEditable(element, type, true);
 };
 
 
@@ -206,15 +206,15 @@ var onchangeOfIdType = function(element, type) {
 
     // show and hide the special fields
     if(elementIdType.val()==="1"){
-    	$("#delegateCountryDiv").hide();
-    	$("#delegateNationalityDiv").hide();
+        $("#delegateCountryDiv").hide();
+        $("#delegateNationalityDiv").hide();
 
     }
     else
     {
 
-    	$("#delegateCountryDiv").show();
-    	$("#delegateNationalityDiv").show();
+        $("#delegateCountryDiv").show();
+        $("#delegateNationalityDiv").show();
 
     }
 
@@ -261,7 +261,7 @@ var enableDisableShareholderFormSection = function (enable) {
     } else {
         $('#contentNewShareholderForm').hide();
         $('#individualShareholderId').hide();
-        $('#shareholderAddressId').hide();
+        $('#shareholderAddressId').show();
     }
 };
 
@@ -283,7 +283,7 @@ var resetCompanyCountriesSection = function () {
 
 };
 
-var loadOrganizationForm = function () {
+var loadShareholderOrganizationForm = function () {
     $('#shareholderValidationSection').show();
     $('#shareholderValidationDetails').hide();
 
@@ -294,7 +294,7 @@ var loadOrganizationForm = function () {
     $('#entityBasicInformation2').hide();
 
     $('.contentModule-headline').hide();
-    $('#shareholderAddressId').hide();
+    $('#shareholderAddressId').show();
 
     $('#companyVerificationSection').show();
 
@@ -318,7 +318,7 @@ var loadOrganizationFormFields = function () {
     loadShareholderIdTypeDropDown(false);
 };
 
-var loadPersonForm = function () {
+var loadPersonShareholderForm = function () {
     $('#shareholderValidationSection').show();
     $('#shareholderValidationDetails').show();
     $('#entityBasicInformation2').show();
@@ -333,9 +333,9 @@ var loadPersonForm = function () {
     );
 
     bindShareholderCalendarsToInput(
-            $("#shareholderValidationDetails").find("#shareholderIdType"),
-            $("#contentNewShareholderForm").find("#birthDateId")
-        );
+        $("#shareholderValidationDetails").find("#shareholderIdType"),
+        $("#contentNewShareholderForm").find("#birthDateId")
+    );
 
     bindShareholderCalendarsToInput(
         $("#delegate").find("#idType"),
@@ -397,9 +397,9 @@ var loadShareholderIdTypeDropDown = function (isPerson) {
     personDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.iqamaId"), "2", false, false));
     personDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.gccId"), "3", false, false));
     if(!isPerson){
-    	personDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.passportId"), "4", false, false));
+        personDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.passportId"), "4", false, false));
     }
-  //
+    //
 
 
 };
@@ -425,8 +425,8 @@ var removeShareholder = function () {
 
 var newShareholder = function () {
 
-	 $('#showDelegateQuestionOrganization').hide();
-	 $('#showDelegateQuestion').show();
+    $('#showDelegateQuestionOrganization').hide();
+    $('#showDelegateQuestion').show();
     clearShareholderValidation();
     $('#shareholderNewExistingTypeId').show();
     $('#shareholderPersonEntityTypeId').show();
@@ -458,7 +458,7 @@ function disableShareholderForm() {
 
 
 function disableMCFields() {
-	$("#shareholderNameEnglishId").attr("disabled", true);
+    $("#shareholderNameEnglishId").attr("disabled", true);
     $("#shareholderNameId").attr("disabled", true);
     $("#shareholderCapitalId").attr("disabled", true);
 
@@ -466,7 +466,7 @@ function disableMCFields() {
 }
 
 function enableMCFields() {
-	$("#shareholderNameEnglishId").attr("disabled", false);
+    $("#shareholderNameEnglishId").attr("disabled", false);
     $("#shareholderNameId").attr("disabled", false);
     $("#shareholderCapitalId").attr("disabled", false);
 
@@ -541,7 +541,7 @@ var editShareholder = function () {
     $('#shareholderPersonEntityTypeId').hide();
     $('#bpNumberGroupId').hide();
 
-     enableShareholderForm();
+    enableShareholderForm();
     fillShareholderForm(selectedShareholder);
     $('.saveShareholderBtn').attr('id', selectedShareholder.srId || selectedShareholder.newItemId);
     SAGIA.formElements.placeholderPolyfill();
@@ -562,37 +562,24 @@ function prepareShareholderVisibleItemsEdit(selectedShareholder) {
 
     $('#shareholderValidationDetails').hide();
     $('#contentNewShareholderForm').show();
-
-    if (selectedShareholder.srId || (!selectedShareholder.srId && selectedShareholder.idType !== '4')) {
-        // Delegate section
-        $('#delegateDivSection').hide();
-        $('#delegate').hide();
-    } else {
-        // Delegate section
-        $('#delegateDivSection').show();
-        $('#delegate').show();
-    }
+    $('#shareholderAddressId').show();
 
 
 
     //if an Entity
-    if (selectedShareholder.bpType === '2') {
-    	 $('#entityBasicInformation').show();
-    	 $('#showDelegateQuestionOrganization').show();
-    	 $('#showDelegateQuestion').hide();
+    if (selectedShareholder.shareholderType === '2') {
+        $('#entityBasicInformation').show();
+        $('#showDelegateQuestionOrganization').show();
+        $('#showDelegateQuestion').hide();
+        $('#companyCountry').attr("disabled", true);
+        $('#inputCRNumber').attr("disabled", true);
+        $('#load-investor').attr("disabled", true);
 
-    	 $('#shareholderAddressId').show();
-    	 $('#companyCountry').attr("disabled", true);
-    	 $('#inputCRNumber').attr("disabled", true);
-    	 $('#load-investor').attr("disabled", true);
 
-    	 $('#delegateDivSection').show();
-         $('#delegate').show();
-
-    	if (selectedShareholder.isCrVerified ) { // verified Entity
+        if (selectedShareholder.isCrVerified ) { // verified Entity
             // Delegate section
-        //    $('#entityBasicInformation').show();
-           // $('#delegate').hide();
+            //    $('#entityBasicInformation').show();
+            // $('#delegate').hide();
 
             disableMCFields();
         } else{     // Not Verified Entity
@@ -602,27 +589,27 @@ function prepareShareholderVisibleItemsEdit(selectedShareholder) {
             //enableMCFields() ;
         }
 
-    	if (selectedShareholder.srId){  // hide delegate section for existing enity
-    		     $('#delegateDivSection').hide();
-    	         $('#delegate').hide();
-    	}else {
+        if (selectedShareholder.srId){  // hide delegate section for existing enity
+            $('#delegateDivSection').hide();
+            $('#delegate').hide();
+        }else {
 
 
-    		if(selectedShareholder.companyCountry !== 'SA' ){
-    		   	 $('#delegateDivSection').show();
+            if(selectedShareholder.companyCountry !== 'SA' ){
+                $('#delegateDivSection').show();
 
-    		   }else {
-    		   	 $('#delegateDivSection').hide();
-    		   }
+            }else {
+                $('#delegateDivSection').hide();
+            }
 
-    	}
+        }
 
     }else {
 
 
-    	if(!selectedShareholder.srId && selectedShareholder.idNumber  !== '' ) {
-   		 $('#shareholderValidationDetails').show();
-      	     $('#shareholderIdTypeSection').hide();
+        if(!selectedShareholder.srId && selectedShareholder.idNumber  !== '' ) {
+            $('#shareholderValidationDetails').show();
+            $('#shareholderIdTypeSection').hide();
 
             $('#shareholderIdNumber').val(selectedShareholder.idNumber);
             if (selectedShareholder.birthDateString) {
@@ -635,7 +622,7 @@ function prepareShareholderVisibleItemsEdit(selectedShareholder) {
             $('#shareholderDateofBirth').attr('disabled','disabled');
             $('#shareholderIdNumber').attr('disabled','disabled');
 
-      	  }
+        }
 
 
     }
@@ -643,7 +630,7 @@ function prepareShareholderVisibleItemsEdit(selectedShareholder) {
 }
 
 function fillShareholderForm(selectedShareholder) {
-    if (selectedShareholder.bpType === '2') {
+    if (selectedShareholder.shareholderType === '2') {
         $('#individualShareholderId').hide();
         $('#entityShareholderId').show();
         $('#shareholderNameEnglishId').val(selectedShareholder.name);
@@ -832,30 +819,30 @@ var saveShareholder = function (existingBp, bpId) {
 
     // transaction
     var transaction = {};
-     transaction.tradeDebitCurrentQuarter = $('#tradeDebitCurrentQuarterId').val() ;
-     transaction.tradeCreditCurrentQuarter = $('#tradeCreditCurrentQuarterId').val() ;
-     transaction.loansAssetsCurrentQuarter =  $('#loansAssetsCurrentQuarterId').val() ;
-     transaction.loansLiabilitiesCurrentQuarter =  $('#loansLiabilitiesCurrentQuarterId').val() ;
-     transaction.interestReceivedCurrentQuarter = $('#interestReceivedCurrentQuarterId').val() ;
-     transaction.interestPayableCurrentQuarter = $('#interestPayableCurrentQuarterId').val() ;
-     transaction.dividendsReceivedCurrentQuarter = $('#dividendsReceivedCurrentQuarterId').val() ;
-     transaction.dividendsPaidCurrentQuarter = $('#dividendsPaidCurrentQuarterId').val() ;
-     transaction.expensesReceivedCurrentQuarter = $('#expensesReceivedCurrentQuarterId').val() ;
-     transaction.expensesPaidCurrentQuarter = $('#expensesPaidCurrentQuarterId').val() ;
-     transaction.sellProductionSuppliesCurrentQuarter = $('#sellProductionSuppliesCurrentQuarterId').val() ;
-     transaction.purchaseProductionSuppliesCurrentQuarter = $('#purchaseProductionSuppliesCurrentQuarterId').val() ;
-     transaction.sellMachineryCurrentQuarter = $('#sellMachineryCurrentQuarterId').val() ;
-     transaction.purchaseMachineryCurrentQuarter = $('#purchaseMachineryCurrentQuarterId').val() ;
-     transaction.currentDebitAccountCurrentQuarter = $('#currentDebitAccountCurrentQuarterId').val() ;
-     transaction.currentCreditAccountCurrentQuarter = $('#currentCreditAccountCurrentQuarterId').val() ;
-     transaction.expensesReceivableCurrentQuarter = $('#expensesReceivableCurrentQuarterId').val() ;
-     transaction.expensesPayableCurrentQuarter = $('#expensesPayableCurrentQuarterId').val() ;
-     transaction.insuranceCommissionReceivableCurrentQuarter = $('#insuranceCommissionReceivableCurrentQuarterId').val() ;
-     transaction.insuranceCommissionPayableCurrentQuarter = $('#insuranceCommissionPayableCurrentQuarterId').val() ;
-     transaction.otherDebitCurrentQuarter = $('#otherDebitCurrentQuarterId').val() ;
-     transaction.otherCreditCurrentQuarter = $('#otherCreditCurrentQuarterId').val() ;
-     transaction.totalDebitCurrentQuarter = $('#totalDebitCurrentQuarterId').val() ;
-     transaction.totalCreditCurrentQuarter = $('#totalCreditCurrentQuarterId').val() ;
+    transaction.tradeDebitCurrentQuarter = $('#tradeDebitCurrentQuarterId').val() ;
+    transaction.tradeCreditCurrentQuarter = $('#tradeCreditCurrentQuarterId').val() ;
+    transaction.loansAssetsCurrentQuarter =  $('#loansAssetsCurrentQuarterId').val() ;
+    transaction.loansLiabilitiesCurrentQuarter =  $('#loansLiabilitiesCurrentQuarterId').val() ;
+    transaction.interestReceivedCurrentQuarter = $('#interestReceivedCurrentQuarterId').val() ;
+    transaction.interestPayableCurrentQuarter = $('#interestPayableCurrentQuarterId').val() ;
+    transaction.dividendsReceivedCurrentQuarter = $('#dividendsReceivedCurrentQuarterId').val() ;
+    transaction.dividendsPaidCurrentQuarter = $('#dividendsPaidCurrentQuarterId').val() ;
+    transaction.expensesReceivedCurrentQuarter = $('#expensesReceivedCurrentQuarterId').val() ;
+    transaction.expensesPaidCurrentQuarter = $('#expensesPaidCurrentQuarterId').val() ;
+    transaction.sellProductionSuppliesCurrentQuarter = $('#sellProductionSuppliesCurrentQuarterId').val() ;
+    transaction.purchaseProductionSuppliesCurrentQuarter = $('#purchaseProductionSuppliesCurrentQuarterId').val() ;
+    transaction.sellMachineryCurrentQuarter = $('#sellMachineryCurrentQuarterId').val() ;
+    transaction.purchaseMachineryCurrentQuarter = $('#purchaseMachineryCurrentQuarterId').val() ;
+    transaction.currentDebitAccountCurrentQuarter = $('#currentDebitAccountCurrentQuarterId').val() ;
+    transaction.currentCreditAccountCurrentQuarter = $('#currentCreditAccountCurrentQuarterId').val() ;
+    transaction.expensesReceivableCurrentQuarter = $('#expensesReceivableCurrentQuarterId').val() ;
+    transaction.expensesPayableCurrentQuarter = $('#expensesPayableCurrentQuarterId').val() ;
+    transaction.insuranceCommissionReceivableCurrentQuarter = $('#insuranceCommissionReceivableCurrentQuarterId').val() ;
+    transaction.insuranceCommissionPayableCurrentQuarter = $('#insuranceCommissionPayableCurrentQuarterId').val() ;
+    transaction.otherDebitCurrentQuarter = $('#otherDebitCurrentQuarterId').val() ;
+    transaction.otherCreditCurrentQuarter = $('#otherCreditCurrentQuarterId').val() ;
+    transaction.totalDebitCurrentQuarter = $('#totalDebitCurrentQuarterId').val() ;
+    transaction.totalCreditCurrentQuarter = $('#totalCreditCurrentQuarterId').val() ;
 
 
 
@@ -921,6 +908,7 @@ var saveShareholder = function (existingBp, bpId) {
 
                 selectedShareholder.shareholderNameEnglish = individualShareholderName;
                 selectedShareholder.gender = gender;
+                selectedShareholder.shareholderType = '1' ; // person
                 selectedShareholder.genderDescription = genderDescription;
                 selectedShareholder.maritalStatus = maritalStatus;
                 selectedShareholder.maritalStatusDescription = maritalStatusDescription;
@@ -930,6 +918,7 @@ var saveShareholder = function (existingBp, bpId) {
                 selectedShareholder.shareholderCountryDescription = shareholderCountryDescription;
             } else { // edit entity shareholder
                 selectedShareholder.companyCountry = companyCountry;
+                selectedShareholder.shareholderType = '2' ;
                 selectedShareholder.companyCountryDescription = companyCountryDescription;
                 selectedShareholder.shareholderNameEnglish = name;
                 selectedShareholder.industry = industry;
@@ -981,30 +970,30 @@ var saveShareholder = function (existingBp, bpId) {
             totalShareholderEquityCurrentQuarter  : '',
 
             transaction: {
-                 tradeDebitCurrentQuarter: '',
-                 tradeCreditCurrentQuarter: '',
-                 loansAssetsCurrentQuarter: '',
-                 loansLiabilitiesCurrentQuarter: '',
-                 interestReceivedCurrentQuarter: '',
-                 interestPayableCurrentQuarter : '',
-                 dividendsReceivedCurrentQuarter : '',
-                 dividendsPaidCurrentQuarter : '',
-                 expensesReceivedCurrentQuarter  : '',
-                 expensesPaidCurrentQuarter : '',
-                 sellProductionSuppliesCurrentQuarter : '',
-                 purchaseProductionSuppliesCurrentQuarter : '',
-                 sellMachineryCurrentQuarter : '',
-                 purchaseMachineryCurrentQuarter : '',
-                 currentDebitAccountCurrentQuarter : '',
-                 currentCreditAccountCurrentQuarter : '',
-                 expensesReceivableCurrentQuarter : '',
-                 expensesPayableCurrentQuarter : '',
-                 insuranceCommissionReceivableCurrentQuarter : '',
-                 insuranceCommissionPayableCurrentQuarter : '',
-                 otherDebitCurrentQuarter : '',
-                 otherCreditCurrentQuarter : '',
-                 totalDebitCurrentQuarter  : '',
-                 totalCreditCurrentQuarter : ''
+                tradeDebitCurrentQuarter: '',
+                tradeCreditCurrentQuarter: '',
+                loansAssetsCurrentQuarter: '',
+                loansLiabilitiesCurrentQuarter: '',
+                interestReceivedCurrentQuarter: '',
+                interestPayableCurrentQuarter : '',
+                dividendsReceivedCurrentQuarter : '',
+                dividendsPaidCurrentQuarter : '',
+                expensesReceivedCurrentQuarter  : '',
+                expensesPaidCurrentQuarter : '',
+                sellProductionSuppliesCurrentQuarter : '',
+                purchaseProductionSuppliesCurrentQuarter : '',
+                sellMachineryCurrentQuarter : '',
+                purchaseMachineryCurrentQuarter : '',
+                currentDebitAccountCurrentQuarter : '',
+                currentCreditAccountCurrentQuarter : '',
+                expensesReceivableCurrentQuarter : '',
+                expensesPayableCurrentQuarter : '',
+                insuranceCommissionReceivableCurrentQuarter : '',
+                insuranceCommissionPayableCurrentQuarter : '',
+                otherDebitCurrentQuarter : '',
+                otherCreditCurrentQuarter : '',
+                totalDebitCurrentQuarter  : '',
+                totalCreditCurrentQuarter : ''
             }
         };
 
@@ -1012,8 +1001,8 @@ var saveShareholder = function (existingBp, bpId) {
             shareholderRow.attr("id", newItemId).children().first().html(individualShareholderName)
                 .next().text(getI18nText("general.individual")).next().text(percentageRow).next().text(capitalRow).next().text(shareholderVotingPowerRow);;
 
-            shareholder.bpType = '1';
-            shareholder.name = individualShareholderName;
+            shareholder.shareholderType = '1';
+            shareholder.shareholderNameEnglish = individualShareholderName;
             shareholder.gender = gender;
             shareholder.genderDescription = genderDescription;
             shareholder.maritalStatus = maritalStatus;
@@ -1037,8 +1026,8 @@ var saveShareholder = function (existingBp, bpId) {
         } else { // entity shareholder
             shareholderRow.attr("id", newItemId).children().first().html(name)
                 .next().text(getI18nText("general.entity")).next().text(percentageRow).next().text(capitalRow).next().text(shareholderVotingPowerRow);;
-            shareholder.bpType = '2';
-            shareholder.name = name;
+            shareholder.shareholderType = '2';
+            shareholder.shareholderNameEnglish = name;
             shareholder.industry = industry;
             shareholder.industryDescription = industryDescription;
             shareholder.multinationalCompany = multinationalCompany;
@@ -1060,31 +1049,31 @@ var saveShareholder = function (existingBp, bpId) {
 
 
         //transaction
-            shareholder.transaction.currentDebitAccountCurrentQuarter = transaction.currentDebitAccountCurrentQuarter;
-            shareholder.transaction.tradeDebitCurrentQuarter= transaction.tradeDebitCurrentQuarter;
-            shareholder.transaction.tradeCreditCurrentQuarter = transaction.tradeCreditCurrentQuarter;
-            shareholder.transaction.loansAssetsCurrentQuarter = transaction.loansAssetsCurrentQuarter;
-            shareholder.transaction.loansLiabilitiesCurrentQuarter = transaction.loansLiabilitiesCurrentQuarter;
-            shareholder.transaction.interestReceivedCurrentQuarter = transaction.interestReceivedCurrentQuarter;
-            shareholder.transaction.interestPayableCurrentQuarter  = transaction.interestPayableCurrentQuarter;
-            shareholder.transaction.dividendsReceivedCurrentQuarter  = transaction.dividendsReceivedCurrentQuarter;
-            shareholder.transaction.dividendsPaidCurrentQuarter  = transaction.dividendsPaidCurrentQuarter;
-            shareholder.transaction.expensesReceivedCurrentQuarter   = transaction.expensesReceivedCurrentQuarter;
-            shareholder.transaction.expensesPaidCurrentQuarter  = transaction.expensesPaidCurrentQuarter;
-            shareholder.transaction.sellProductionSuppliesCurrentQuarter  = transaction.sellProductionSuppliesCurrentQuarter;
-            shareholder.transaction.purchaseProductionSuppliesCurrentQuarter  = transaction.purchaseProductionSuppliesCurrentQuarter;
-            shareholder.transaction.sellMachineryCurrentQuarter  = transaction.sellMachineryCurrentQuarter;
-            shareholder.transaction.purchaseMachineryCurrentQuarter  = transaction.purchaseMachineryCurrentQuarter;
-            shareholder.transaction.currentDebitAccountCurrentQuarter  = transaction.currentDebitAccountCurrentQuarter;
-            shareholder.transaction.currentCreditAccountCurrentQuarter  = transaction.currentCreditAccountCurrentQuarter;
-            shareholder.transaction.expensesReceivableCurrentQuarter  = transaction.expensesReceivableCurrentQuarter;
-            shareholder.transaction.expensesPayableCurrentQuarter  = transaction.expensesPayableCurrentQuarter;
-            shareholder.transaction.insuranceCommissionReceivableCurrentQuarter  = transaction.insuranceCommissionReceivableCurrentQuarter;
-            shareholder.transaction.insuranceCommissionPayableCurrentQuarter  = transaction.insuranceCommissionPayableCurrentQuarter;
-            shareholder.transaction.otherDebitCurrentQuarter  = transaction.otherDebitCurrentQuarter;
-            shareholder.transaction.otherCreditCurrentQuarter  = transaction.otherCreditCurrentQuarter ;
-            shareholder.transaction.totalDebitCurrentQuarter   = transaction.totalDebitCurrentQuarter;
-            shareholder.transaction.totalCreditCurrentQuarter =   transaction.totalCreditCurrentQuarter;
+        shareholder.transaction.currentDebitAccountCurrentQuarter = transaction.currentDebitAccountCurrentQuarter;
+        shareholder.transaction.tradeDebitCurrentQuarter= transaction.tradeDebitCurrentQuarter;
+        shareholder.transaction.tradeCreditCurrentQuarter = transaction.tradeCreditCurrentQuarter;
+        shareholder.transaction.loansAssetsCurrentQuarter = transaction.loansAssetsCurrentQuarter;
+        shareholder.transaction.loansLiabilitiesCurrentQuarter = transaction.loansLiabilitiesCurrentQuarter;
+        shareholder.transaction.interestReceivedCurrentQuarter = transaction.interestReceivedCurrentQuarter;
+        shareholder.transaction.interestPayableCurrentQuarter  = transaction.interestPayableCurrentQuarter;
+        shareholder.transaction.dividendsReceivedCurrentQuarter  = transaction.dividendsReceivedCurrentQuarter;
+        shareholder.transaction.dividendsPaidCurrentQuarter  = transaction.dividendsPaidCurrentQuarter;
+        shareholder.transaction.expensesReceivedCurrentQuarter   = transaction.expensesReceivedCurrentQuarter;
+        shareholder.transaction.expensesPaidCurrentQuarter  = transaction.expensesPaidCurrentQuarter;
+        shareholder.transaction.sellProductionSuppliesCurrentQuarter  = transaction.sellProductionSuppliesCurrentQuarter;
+        shareholder.transaction.purchaseProductionSuppliesCurrentQuarter  = transaction.purchaseProductionSuppliesCurrentQuarter;
+        shareholder.transaction.sellMachineryCurrentQuarter  = transaction.sellMachineryCurrentQuarter;
+        shareholder.transaction.purchaseMachineryCurrentQuarter  = transaction.purchaseMachineryCurrentQuarter;
+        shareholder.transaction.currentDebitAccountCurrentQuarter  = transaction.currentDebitAccountCurrentQuarter;
+        shareholder.transaction.currentCreditAccountCurrentQuarter  = transaction.currentCreditAccountCurrentQuarter;
+        shareholder.transaction.expensesReceivableCurrentQuarter  = transaction.expensesReceivableCurrentQuarter;
+        shareholder.transaction.expensesPayableCurrentQuarter  = transaction.expensesPayableCurrentQuarter;
+        shareholder.transaction.insuranceCommissionReceivableCurrentQuarter  = transaction.insuranceCommissionReceivableCurrentQuarter;
+        shareholder.transaction.insuranceCommissionPayableCurrentQuarter  = transaction.insuranceCommissionPayableCurrentQuarter;
+        shareholder.transaction.otherDebitCurrentQuarter  = transaction.otherDebitCurrentQuarter;
+        shareholder.transaction.otherCreditCurrentQuarter  = transaction.otherCreditCurrentQuarter ;
+        shareholder.transaction.totalDebitCurrentQuarter   = transaction.totalDebitCurrentQuarter;
+        shareholder.transaction.totalCreditCurrentQuarter =   transaction.totalCreditCurrentQuarter;
 
 
 
@@ -1107,14 +1096,14 @@ var saveShareholder = function (existingBp, bpId) {
 function resetFormOnModalClose() {
     $('#shareholderModalId').on('hidden.bs.modal', function () {
         $("#identityNumberCopy").parents('.col-md-6').remove();
-        loadPersonForm();
+        loadPersonShareholderForm();
         $('#delegateDetails').hide();
         $('#verifyDelegateDetails').hide();
     });
 }
 
 function resetVerifyInherit() {
-	$('#deedNumber').val(null);
+    $('#deedNumber').val(null);
     $('#deceasedId').val(null);
     $('#deceasedName').val(null);
     $('#isMojVerified').val(null);
@@ -1262,18 +1251,18 @@ var removeShareholderErrorsIfExists = function () {
 
 var clickPersonID = function () {
 //	 $('#showDelegateQuestionOrganization').show();
-	$('#showDelegateQuestionOrganization').hide();
-	 $('#showDelegateQuestion').show();
+    $('#showDelegateQuestionOrganization').hide();
+    $('#showDelegateQuestion').show();
 };
 
 
 
 var removePreviousErrors = function () {
-	 $('#showDelegateQuestionOrganization').show();
-	 $('#showDelegateQuestion').hide();
-	clearShareholderForm();
+    $('#showDelegateQuestionOrganization').show();
+    $('#showDelegateQuestion').hide();
+    clearShareholderForm();
 
-	 $("#contentNewShareholderForm").find("#hasDelegateYES").click();
+    $("#contentNewShareholderForm").find("#hasDelegateYES").click();
 
     $('.form-group').each(function (i, obj) {
         if ($(this).hasClass('has-error')) {
@@ -1299,24 +1288,24 @@ var removePreviousErrors = function () {
 $("#shareholderTelephoneId").keypress(function (e) {
     //if the letter is not digit then display error and don't type anything
     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-       //display error message
-       $("#errmsg").html("Digits Only").show().fadeOut("slow");
-              return false;
-   }
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+        return false;
+    }
 });
 $("#shareholderZipCodeId").keypress(function (e) {
     //if the letter is not digit then display error and don't type anything
     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-       //display error message
-       $("#errmsg").html("Digits Only").show().fadeOut("slow");
-              return false;
-   }
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+        return false;
+    }
 });
 $("#shareholderNumberId").keypress(function (e) {
     //if the letter is not digit then display error and don't type anything
     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-       //display error message
-       $("#errmsg").html("Digits Only").show().fadeOut("slow");
-              return false;
-   }
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+        return false;
+    }
 });

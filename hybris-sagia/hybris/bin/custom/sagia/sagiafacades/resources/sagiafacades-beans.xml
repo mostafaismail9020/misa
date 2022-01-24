@@ -21,6 +21,8 @@
 		<property name="mobileNumber" type="String"/>
 		<property name="sector" type="com.sap.ibso.eservices.facades.data.SagiaSectorData"/>
 		<property name="company" type="String"/>
+		<property name="companyWebsite" type="String"/>
+		<property name="companyLogo" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
 		<property name="country" type="com.sap.ibso.eservices.facades.data.SagiaCountryData"/>
 		<property name="dashboardMedia" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="shouldDisplaySetCompanyPhotoOption" type="boolean"/>
@@ -122,6 +124,9 @@
         <property name="mobileCountryCode" type="String"/>
 		<property name="mobileNumber" type="String"/>
 		<property name="country" type="com.sap.ibso.eservices.facades.data.SagiaCountryData"/>
+		<property name="companyWebsite" type="String"/>
+		<property name="companyLogo" type="String"/>
+		
 	</bean>
 
 	<bean class="com.sap.ibso.eservices.facades.data.ProfileGeneralManagerData">

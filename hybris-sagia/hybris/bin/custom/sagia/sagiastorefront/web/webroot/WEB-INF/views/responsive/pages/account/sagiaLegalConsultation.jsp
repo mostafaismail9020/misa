@@ -113,14 +113,14 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <div class="d-flex row renewal-services w-100">
-                <div class="col-md-3">
+            <div class=" row renewal-services w-100">
+                <div class="col-xl-3 col-12">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xl-3 col-12">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
                         <div>
-                            <button class="btn btn_slim"
+                            <button class="btn btn_slim back_to_service"
                                     onclick="window.location.href='${encodedContextPath}/legalconsultations/new'">
                                 <spring:theme code="legalConsultation.create"/>
                             </button>
@@ -220,7 +220,7 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 service-main">
     <div class="container">
         <c:if test="${fn:length(legalConsultations) gt 1}">
             <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
@@ -274,7 +274,7 @@
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
                                     <div  class="contentModule-headline contentModule-headline-service-info headline-text">
-                                    <span class="iconElement iconElement_info"><icon:info/></span>
+                                    <!-- <span class="iconElement iconElement_info"><icon:info/></span> -->
                                     <span id= "currentID">${latestLegalConsultation.srId}</span>
                                     <span style="display: none;" id= "currentGUID">${latestLegalConsultation.srGuid}</span>
                                 </div>
@@ -342,8 +342,8 @@
                             <div class="contentModule-section" id = "attachedFilesDivContent">
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered">
-                                    <div  class="contentModule-headline contentModule-headline-service-info">
-                                        <span class="iconElement iconElement_documents"><icon:documents/></span>
+                                    <div  class="contentModule-headline headline-text">
+                                        <!-- <span class="iconElement iconElement_documents"><icon:documents/></span> -->
                                         <spring:theme code="legalConsultation.supportDocuments"/>
                                     </div>
                                 </div>

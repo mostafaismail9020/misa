@@ -35,7 +35,7 @@
         <div class="container">
             <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
                 <h1 data-aos="fade-up">
-                    <spring:theme code="convertlicense.converttonational" />
+                    <spring:theme code="renewlicense.licenserenewal"/>
                 </h1>
             </div>
             <div class="profile-icons float-right">
@@ -65,7 +65,7 @@
 <div class="mainSection mainSection_dark bg-white">
     <div class="container">
         <div class="mainSection-header row service-time">
-            <h1 class="mainSection-headline"><spring:theme code="renewlicense.licenserenewal"/></h1>
+            <!-- <h1 class="mainSection-headline"><spring:theme code="renewlicense.licenserenewal"/></h1> -->
             <input type="hidden" id="serviceId"/>
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
@@ -155,17 +155,17 @@
 <div class="mainSection mainSection_dark mainSection_noPadding bg-white">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween d-flex">
-            <div class="d-flex row renewal-services">
-                <div class="col-md-3">
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-12">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service"><icon:arrow_green_right/></span><spring:theme code="general.backtodashboard"/></a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xl-3 col-12">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
                 </div>
 
             <!-- <div class="mainSection-linkActions mainSection-linkActions_right"> -->
                 <div id="renewalButtons" style="display: none;">
-                    <div class="col-md-3">
+                    <div class="col-xl-3 col-12">
                         <c:choose>
                             <c:when test ="${autoRenewal}">
                                 <a class="btn btn_slim btn_outline jqInstantRenewal" href="javascript:void(0);">
@@ -179,7 +179,7 @@
                             </c:otherwise>
                         </c:choose>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-xl-3 col-12">
                         <a class="btn btn_slim jqCreateRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
                             <spring:theme code="dashboard.myLicense.renew"/>
                         </a>
@@ -188,7 +188,7 @@
             </div>
                 <div class="d-flex">
                     <div id="renewalButtons" style="display: none;" class="renewal-services row">
-                        <div class="col-md-4">
+                        <div class="col-xl-4 col-12">
                             <c:choose>
                                 <c:when test ="${autoRenewalClearance}">
                                     <a class="btn btn_slim btn-warning btn_outline jqInstantClearanceRenewal" href="javascript:void(0);">
@@ -202,7 +202,7 @@
                                 </c:otherwise>
                             </c:choose>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-xl-4 col-12">
                             <c:choose>
                                 <c:when test ="${governmentDocumentsCheck}">
                                     <a class="btn btn_slim btn-warning btn_outline jqGovDocsCheck" href="javascript:void(0);">
@@ -216,7 +216,7 @@
                                 </c:otherwise>
                             </c:choose>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-xl-4 col-12">
                             <c:choose>
                                 <c:when test ="${clearanceCheck}">
                                     <a class="btn btn_slim btn-warning btn_outline jqClearanceCheck" href="javascript:void(0);">
@@ -325,7 +325,7 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16 bg-white mt-5">
+<div class="mainSection mainSection_dark mainSection_pdt16 bg-white mt-5 service-main">
     <div class="container">
         <c:if test="${fn:length(licenseRenew) > 1}">
             <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" id="historyList" data-expand-target="expand01">

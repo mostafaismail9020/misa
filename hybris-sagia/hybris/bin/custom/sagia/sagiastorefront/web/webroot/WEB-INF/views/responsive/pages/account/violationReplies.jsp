@@ -83,12 +83,12 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <div class="d-flex row renewal-services w-100">
-                <div class="col-md-3">
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-12">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink m-auto"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme
                             code="general.backtodashboard"/></a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xl-3 col-12">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
                             <a href="violation-replies/create" class="btn btn_slim js-create-violation-reply">
                                 <spring:theme code="text.account.followup.create"/>
@@ -152,7 +152,7 @@
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
                                 <div class="contentModule-headline headline-text">
-                                    <icon:info/>
+                                    <!-- <icon:info/> -->
                                     <spring:theme code="text.account.followup.info"/>:&nbsp;${selectedItem.srId}
                                 </div>
 <!--

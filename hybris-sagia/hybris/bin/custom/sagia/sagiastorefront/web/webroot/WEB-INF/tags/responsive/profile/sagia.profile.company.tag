@@ -107,6 +107,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="contentModule-section">
@@ -115,9 +116,8 @@
                         <spring:theme code="general.governmentdocuments"/>
                     </div>
                     <hr class="hr"/>
-
                     <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-                        <a href="${encodedContextPath}/governmentDocuments" class="btn btn-bg btn_bold">
+                        <a href="${encodedContextPath}/governmentDocuments" class="btn-normal btn btn-bg btn_bold w-25 btn_slim">
                             <spring:theme code="general.governmentdocuments"/>
                         </a>
                     </div>

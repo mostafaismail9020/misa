@@ -74,7 +74,11 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="fiancial.back"/></a>
+            <div class="row w-100">
+                <div class="col-md-3 col-12 px-0">
+                    <a href="" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="fiancial.back"/></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -175,7 +179,7 @@
                 <div><spring:theme code="fiancial.hideHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
             </button>
         </c:if>
-        <div class="expandableContent expanded" id="expand02">
+        <div class="expandableContent expanded financial-statement-details" id="expand02">
             <c:if test="${fn:length(financialEntities) gt 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
@@ -219,55 +223,48 @@
 
 
             <div class="expandableContent-main">
-
-
                 <div class="js-panelTabs panelTabs panelTabs_withHistory panelTabs_iconsAndLabel panelTabs_separated panelTabs_tip_right financialStatement">
                     <div class="panelTabs-head">
-                        <icon:financialStatement-income/>
+                        <!-- <icon:financialStatement-income/> -->
                         <span class="panelTabs-label"><spring:theme code="fiancial.incomeStatement.title"/></span>
                     </div>
-                    <div class="panelTabs-body panelModule panelModule_halfRadius">
-
-
-
-
-
+                    <div class="panelTabs-body panelModule panelModule_noRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                    <div class="contentModule-headline headline-text">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                                    <!-- <div class="contentModule-headline headline-text">
                                         <icon:generalManager/>
                                         <spring:theme code="fiancial.data"/>
-                                    </div>
+                                    </div> -->
+                                    <!-- <span class="contentModule-headline headline-text headline-background"><spring:theme code="fiancial.data"/></span> -->
+                                    <span class="headline-background"><spring:theme code="fiancial.data"/></span>
                                 </div>
-
-
                                 <div class="row">
                                     <div class="col-md-6">
                                         <dl class="dlList dlList_separated dlList_marginBottom">
-                                            <dt><spring:theme code="fiancial.incomeStatement.revenue"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="fiancial.incomeStatement.revenue"/></dt>
                                             <dd><span name="revenue"><c:out value="${first.incomeStat.revenue}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.incomeStatement.grossIncome"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="fiancial.incomeStatement.grossIncome"/></dt>
                                             <dd><span name="grossIncome"><c:out value="${first.incomeStat.grossIncome}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.incomeStatement.incomeMainOperations"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="fiancial.incomeStatement.incomeMainOperations"/></dt>
                                             <dd><span name="mainOperatingIncome"><c:out value="${first.incomeStat.mainOperatingIncome}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.incomeStatement.netIncomeBeforeTax"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="fiancial.incomeStatement.netIncomeBeforeTax"/></dt>
                                             <dd><span name="incomeBeforeZakat"><c:out value="${first.incomeStat.incomeBeforeZakat}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.incomeStatement.tax"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="fiancial.incomeStatement.tax"/></dt>
                                             <dd><span name="taxAmount"><c:out value="${first.incomeStat.taxAmount}"/></span>&nbsp;${currency}</dd>
                                         </dl>
                                     </div>
                                     <div class="col-md-6">
                                         <dl class="dlList dlList_separated dlList_lineThrough">
-                                            <dt><spring:theme code="fiancial.incomeStatement.costOfSales"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="fiancial.incomeStatement.costOfSales"/></dt>
                                             <dd><span name="salesCost"><c:out value="${first.incomeStat.salesCost}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.incomeStatement.totalOperatingExpenses"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="fiancial.incomeStatement.totalOperatingExpenses"/></dt>
                                             <dd><span name="totalOperatingCost"><c:out value="${first.incomeStat.totalOperatingCost}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.incomeStatement.totalOtherIncomes"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="fiancial.incomeStatement.totalOtherIncomes"/></dt>
                                             <dd><span name="totalOtherIncome"><c:out value="${first.incomeStat.totalOtherIncome}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.incomeStatement.zakat"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="fiancial.incomeStatement.zakat"/></dt>
                                             <dd><span name="zakatAmount"><c:out value="${first.incomeStat.zakatAmount}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.incomeStatement.netIncome"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="fiancial.incomeStatement.netIncome"/></dt>
                                             <dd><span name="netIncome"><c:out value="${first.incomeStat.netIncome}"/></span>&nbsp;${currency}</dd>
                                         </dl>
                                     </div>
@@ -276,7 +273,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <dl class="dlList dlList_separated">
-                                            <dt>
+                                            <dt class="headline-text-dark">
                                                 <spring:theme code="text.account.profile.license.contact"/>
                                             </dt>
                                         </dl>
@@ -288,19 +285,20 @@
 
                     </div>
                     <div class="panelTabs-head">
-                        <icon:financialStatement-balance/>
+                        <!-- <icon:financialStatement-balance/> -->
                         <span class="panelTabs-label"><spring:theme code="fiancial.balanceSheet.title"/></span>
                     </div>
-                    <div class="panelTabs-body panelModule panelModule_halfRadius">
+                    <div class="panelTabs-body panelModule panelModule_noRadius">
 
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
 
-                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                    <div class="contentModule-headline headline-text">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                                    <!-- <div class="contentModule-headline headline-text">
                                         <icon:generalManager/>
                                         <spring:theme code="fiancial.data"/>
-                                    </div>
+                                    </div> -->
+                                    <span class="headline-background"><spring:theme code="fiancial.data"/></span>
                                 </div>
 
 
@@ -311,15 +309,15 @@
                                             <spring:theme code="fiancial.balanceSheet.assets"/>
                                         </div>
                                         <dl class="dlList dlList_separated dlList_marginBottom">
-                                            <dt><spring:theme code="fiancial.balanceSheet.totalCurrentAssets"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.totalCurrentAssets"/></dt>
                                             <dd><span name="currentAssets"><c:out value="${first.balanceSheet.currentAssets}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.balanceSheet.totalNonCurrentAssets"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.totalNonCurrentAssets"/></dt>
                                             <dd><span name="nonCurrentAssets"><c:out value="${first.balanceSheet.nonCurrentAssets}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.balanceSheet.otherAssets"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.otherAssets"/></dt>
                                             <dd><span name="otherAssets"><c:out value="${first.balanceSheet.otherAssets}"/></span>&nbsp;${currency}</dd>
-                                            <dt><strong><spring:theme code="fiancial.balanceSheet.totalAssets"/></strong></dt>
+                                            <dt  class="headline-golden"><strong><spring:theme code="fiancial.balanceSheet.totalAssets"/></strong></dt>
                                             <dd><strong><span name="totalAssets"><c:out value="${first.balanceSheet.totalAssets}"/></span>&nbsp;${currency}</strong></dd>
-                                            <dt><spring:theme code="fiancial.balanceSheet.tax"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.tax"/></dt>
                                             <dd><span name="taxAmount"><c:out value="${first.incomeStat.taxAmount}"/></span>&nbsp;${currency}</dd>
                                         </dl>
                                     </div>
@@ -328,15 +326,15 @@
                                             <spring:theme code="fiancial.balanceSheet.liabilities"/>
                                         </div>
                                         <dl class="dlList dlList_separated dlList_lineThrough">
-                                            <dt><spring:theme code="fiancial.balanceSheet.totalCurrentLiabilities"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.totalCurrentLiabilities"/></dt>
                                             <dd><span name="currentLiabilities"><c:out value="${first.balanceSheet.currentLiabilities}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.balanceSheet.totalNonCurrentLiabilities"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.totalNonCurrentLiabilities"/></dt>
                                             <dd><span name="nonCurrentLiabilities"><c:out value="${first.balanceSheet.nonCurrentLiabilities}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.balanceSheet.otherLiabilities"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.otherLiabilities"/></dt>
                                             <dd><span name="otherLiabilities"><c:out value="${first.balanceSheet.otherLiabilities}"/></span>&nbsp;${currency}</dd>
-                                            <dt><strong><spring:theme code="fiancial.balanceSheet.totalLiabilities"/></strong></dt>
+                                            <dt  class="headline-golden"><strong><spring:theme code="fiancial.balanceSheet.totalLiabilities"/></strong></dt>
                                             <dd><strong><span name="totalLiabilities"><c:out value="${first.balanceSheet.totalLiabilities}"/></span>&nbsp;${currency}</strong></dd>
-                                            <dt><spring:theme code="fiancial.balanceSheet.netIncome"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.netIncome"/></dt>
                                             <dd><span name="netIncome"><c:out value="${first.incomeStat.netIncome}"/></span>&nbsp;${currency}</dd>
                                         </dl>
                                     </div>
@@ -348,21 +346,21 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <dl class="dlList dlList_separated dlList_marginBottom">
-                                            <dt><spring:theme code="fiancial.balanceSheet.capital"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.capital"/></dt>
                                             <dd><span name="capital"><c:out value="${first.balanceSheet.capital}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.balanceSheet.retainedEarnings"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.retainedEarnings"/></dt>
                                             <dd><span name="retainedEarnings"><c:out value="${first.balanceSheet.retainedEarnings}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.balanceSheet.totalShareholdersEquity"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.totalShareholdersEquity"/></dt>
                                             <dd><span name="shareholdersEquity"><c:out value="${first.balanceSheet.shareholdersEquity}"/></span>&nbsp;${currency}</dd>
                                         </dl>
                                     </div>
                                     <div class="col-md-6">
                                         <dl class="dlList dlList_separated dlList_lineThrough">
-                                            <dt><spring:theme code="fiancial.balanceSheet.partnersDrawingAccounts"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.partnersDrawingAccounts"/></dt>
                                             <dd><span name="partnersDrawAccs"><c:out value="${first.balanceSheet.partnersDrawAccs}"/></span>&nbsp;${currency}</dd>
-                                            <dt><spring:theme code="fiancial.balanceSheet.others"/></dt>
+                                            <dt  class="headline-golden"><spring:theme code="fiancial.balanceSheet.others"/></dt>
                                             <dd><span name="others"><c:out value="${first.balanceSheet.others}"/></span>&nbsp;${currency}</dd>
-                                            <dt class="dlList-empty">&nbsp;</dt>
+                                            <dt  class="headline-golden" class="dlList-empty">&nbsp;</dt>
                                             <dd class="dlList-empty">&nbsp;</dd>
                                         </dl>
                                     </div>
@@ -375,20 +373,21 @@
 
 
                     <div class="panelTabs-head">
-                        <icon:financialStatement-equity/>
+                        <!-- <icon:financialStatement-equity/> -->
                         <span class="panelTabs-label"><spring:theme code="fiancial.equityChange.title"/></span>
                     </div>
-                    <div class="panelTabs-body panelModule panelModule_halfRadius">
+                    <div class="panelTabs-body panelModule panelModule_noRadius">
 
 
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
 
-                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                    <div class="contentModule-headline headline-text">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                                    <!-- <div class="contentModule-headline headline-text">
                                         <icon:documents/>
                                         <spring:theme code="fiancial.data"/>
-                                    </div>
+                                    </div> -->
+                                    <span class="headline-background"><spring:theme code="fiancial.data"/></span>
                                 </div>
 
                                 <div class="tableModule">
@@ -427,7 +426,7 @@
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
                                 <div class="contentModule-headline headline-text">
-                                    <icon:documents/>
+                                    <!-- <icon:documents/> -->
                                     <spring:theme code="fiancial.incomeStatement.supportingDocuments"/>
                                 </div>
                                 <ul class="downloadList downloadList_maxHeight" id="documents-container">

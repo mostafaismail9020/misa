@@ -16,7 +16,40 @@
 <input type="hidden" id="serviceId">
 <c:set var="formName" value="supportVisit"/>
 
-<div class="mainSection mainSection_dark">
+
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="text.account.followup.supportVisits"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="text.account.followup.supportVisitRequest"/></h1>
@@ -35,15 +68,36 @@
             </button>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink">
-                <span class="iconElement iconElement_closeBack"><icon:close/></span>
-                <spring:theme code="general.backtodashboard"/>
-            </a>
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-12">
+                    <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink">
+                        <span class="iconElement iconElement_closeBack"><icon:close/></span>
+                        <spring:theme code="general.backtodashboard"/>
+                    </a>
+                </div>
+            </div>
+            <div class="row renewal-services w-100">
+                <div class="col-xl-12 col-12 btn-drafts_list amend-service-link">
+                    <button class="btn btn_round btn_slim js-save-draft"
+                        data-target-form="supportVisitForm"
+                        data-service-id="${serviceId}">
+                        <spring:theme code="general.savedraft"/>
+                        <span class="iconElement iconElement_save"><icon:save/></span>
+                    </button>
+
+                    <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if>
+                        data-target-form="supportVisitForm"
+                        data-service-id="${serviceId}">
+                        <spring:theme code="general.loaddraft"/>
+                        <span class="iconElement iconElement_save"><icon:upload/></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -56,9 +110,11 @@
                 <div class="appointmentDetails appointmentDetails_forms">
                     <div class="contentModule">
                         <div class="contentModule-section">
-                            <div class="contentModule-headline"><icon:calendarText/>
+                            <div class="contentModule-headline">
+                                <!-- <icon:calendarText/> -->
                                 <spring:theme code="text.account.followup.supportVisitRequest"/>
                             </div>
+                            <hr class="hr" />
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
                                     <div class="formInputBox formInputBox_group">

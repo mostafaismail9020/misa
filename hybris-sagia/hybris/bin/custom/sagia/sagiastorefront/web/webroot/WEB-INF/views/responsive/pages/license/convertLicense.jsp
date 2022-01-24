@@ -85,18 +85,18 @@
 
 <div class="container mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
     <div class="m-5">
-        <div class="row w-100">
-            <div class="col-md-3 px-0">
+        <div class="row w-100 renewal-services">
+            <div class="col-xl-3 col-12">
                 <button class="btn btn_round back_to_service btn_leftIconLink">
                     <icon:arrow_green_right/> Back to All Services
                     <span class="iconElement iconElement_save"></span>
                 </button>
             </div>
-            <div class="col-md-3">
+            <div class="col-xl-3 col-12">
                 <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
             </div>
         </div>
-        <div class="row w-100 d-flex mt-4">
+        <div class="row w-100 mt-4">
             <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
                 <div>
                 <c:choose>
@@ -225,7 +225,7 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 mb-3">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 mb-3 service-main">
     <div class="container">
         <div class="container mainSection mainSection_dark mainSection_noPadding">
             <div class="container">

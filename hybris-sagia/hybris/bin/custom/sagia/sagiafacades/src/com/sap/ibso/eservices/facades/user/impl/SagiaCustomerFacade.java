@@ -295,6 +295,7 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
         customer.setMobileCountryCode(customerData.getMobileCountryCode());
         customer.setMobileNumber(customerData.getMobileNumber());
         customer.setUserNameEmail(customerData.getEmail());
+        customer.setCompanyWebsite(customerData.getCompanyWebsite());
 
         try {
             getCustomerAccountService().updateProfile(customer, customerData.getTitleCode(), name, customerData.getUid());
@@ -355,6 +356,29 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
         //add it to user
         userModel.setProfilePicture(mediaModel);
         getModelService().save(userModel);
+    }
+    
+    /**
+     * update the media item that represents company logo picture attached to the current user.
+     * userId represents the media code and will be replaced with new image each time user updates it.
+     *
+     * @param file file
+     * @throws IOException exception
+     */
+
+    public void updateCompanyLogo(MultipartFile file) throws IOException {
+        UserModel userModel = getUserService().getCurrentUser();
+        // create media
+        if(userModel instanceof CustomerModel) {
+        	CustomerModel customer = (CustomerModel)userModel;
+        	String mediaCode = userModel.getUid();
+            MediaModel mediaModel = getMediaModel(mediaCode);
+            getMediaService().setDataForMedia(mediaModel, file.getBytes());
+            //add it to user
+            customer.setCompanyLogo(mediaModel);
+            getModelService().save(customer);
+        	
+        }
     }
 
     /**

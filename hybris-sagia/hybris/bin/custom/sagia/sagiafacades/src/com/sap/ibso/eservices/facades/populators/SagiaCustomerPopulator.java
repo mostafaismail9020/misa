@@ -7,6 +7,7 @@ import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.dto.converter.ConversionException;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
+import de.hybris.platform.core.model.user.CustomerModel;
 
 /*
  * Suppress sonar warning (squid:RedundantThrowsDeclarationCheck | "throws" declarations should not be superfluous
@@ -34,5 +35,13 @@ public class SagiaCustomerPopulator implements Populator<UserModel, CustomerData
     @Override
     public void populate(UserModel userModel, CustomerData customerData) throws ConversionException {
         customerData.setProfilePicture(getMediaImageConverter().convert(userModel.getProfilePicture()));
+        if(userModel instanceof CustomerModel) {
+        	CustomerModel customer = (CustomerModel) userModel;
+        	customerData.setCompanyWebsite(customer.getCompanyWebsite());
+        	if(customer.getCompanyLogo() != null) {
+        	customerData.setCompanyLogo(getMediaImageConverter().convert(customer.getCompanyLogo()));
+        	}
+        }
+        
     }
 }

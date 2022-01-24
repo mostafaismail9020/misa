@@ -163,9 +163,9 @@
 .btn{
     height: 50px;
     width: 195px;
-    svg path{
-        fill: @color-primary;
-    }
+    // svg path{
+    //     fill: @color-primary;
+    // }
 }
 .btn_greenLink{
     color:@color-primary !important;
@@ -232,9 +232,6 @@
             width: 30%;
         }
     }
-    .service-history{
-        
-    }    
     .dlList_separated dt{
         border-bottom:none;
     }
@@ -271,7 +268,7 @@
     .renewal-services{
         display: flex;
         a{
-            width: 300px;
+            width: 300px !important;
         }
         #renewalButtons{
             display: contents;
@@ -297,6 +294,7 @@
 .contentModule-headline-service-info{
     background: none !important;
     color: @color-text;
+    text-align: left !important;
 }
 .contentModule-headline, .contentModule-headline-service-info{        
     text-align: left;
@@ -311,10 +309,10 @@
 .contentModule-headline-history{
     color: @color-golden !important;
     text-align: left;
-    font-size: 30px;
+    font-size: 30px !important;
     font-weight: 600;
     background: none !important;
-    text-transform: uppercase;
+    text-transform: uppercase !important;
 }
 .historyList-item_current{
     background: #E7FCFF 0% 0% no-repeat padding-box;
@@ -340,7 +338,7 @@
 		overflow-y: auto;
 	}
 }
-@media (max-width: 768.1px) {
+@media (max-width: 991px) {
 	.desktop_services {
 		display: none;
 	}
@@ -348,14 +346,72 @@
 		display: block;
 		width: 100%;
 	}
-	.service-wrapper span{
+	.service-wrapper > span{
 		min-height: 5rem;
 	}
 	.service-wrapper{
 		margin-bottom: 8%;
 	}
     .service-wrapper .nav-link::after{
-        bottom: 15px;
+        bottom: 28px;
+    }
+    .services-container-tabcontent{
+        .accordion-item{
+            .accordion-button{
+                    height: auto !important;
+            }
+        }        
+    }
+    .mainSection .expandableContent.expanded .expandableContent-aside{
+        width: 100%;
+    }
+    .renewal-services{
+        // display: block;
+        >div{
+            margin-bottom: 10px;
+        }
+        .mainSection-linkActions_right{
+            justify-content:flex-start;
+        }
+    }
+    .amend-service-link{
+        display: block !important;
+        button{
+            width: 300px;
+            margin-bottom: 10px;
+        }
+    }
+    .service-main.mainSection{
+        .expandableContent.expanded{
+            display: block !important;
+        }
+        .expandableContent.expanded .expandableContent-main{
+            width: 100%;
+        }
+    }
+    .full-width-responsive{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .govt-doc-edit.modal-dialog{
+        max-width: 100% !important;
+    }
+    .amend-service-link{
+        width: 100%;
+        .btn-drafts_list{
+            display: block;
+        }
+    }
+    .amend-ddl-list{
+        .panelTabs-label{
+            min-height: 3vh;
+        }
+    }
+    .amend-btns-list{
+        display: block;
+    }
+    .mob-heading-responsive{
+        display: inline-table;
     }
 }
 
@@ -365,7 +421,7 @@
 }
 
 .back_to_service {
-    width: 250px;
+    width: 300px !important;
     svg{
         transform: scaleX(-1);
     }
@@ -397,8 +453,13 @@
 .amend-btns-list{
     display: flex;
     justify-content: space-around;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 .amend-service-link{
+    display: flex;
     width: 80%;
     justify-content: flex-start;
 }
@@ -427,13 +488,13 @@
     margin-top: 20px;
 }
 
-.stepModule-icon.stepModule-icon_normal,.headline-text{
-    svg {
-        path{
-            fill: @color-primary;
-        }
-    }
-}
+// .stepModule-icon.stepModule-icon_normal,.headline-text{
+//     svg {
+//         path{
+//             fill: @color-primary;
+//         }
+//     }
+// }
 .stepModule-item.active{
     background-image: radial-gradient(circle at 44% 41%,@color-primary,@color-primary 74%,@color-primary) !important;
     box-shadow: 0 15px 20px 0 #9fdce5;
@@ -453,7 +514,16 @@
     }
 }
 .headline-text{
+    // color: @color-white !important;
     color: @color-text !important;
+    text-align: left !important;
+    background:none !important;
+    font-size: 30px !important;
+    text-transform: uppercase !important;
+    span{
+        font-size: 30px !important;
+        text-transform: uppercase !important;
+    }
 }
 
 .mainSection-linkActions_flexend{
@@ -461,45 +531,227 @@
 }
 
 .services-container-tabcontent{
-    .accordion{
-        .card{
-            border: none;
-            .card-header{
+    .accordion-item{
+        margin: auto;
+        justify-content: center;
+        width: 90%;
+        .accordion-button{
+            border: none;   
+            cursor: pointer;
+            width: 100%;        
                 background: @color-primary 0% 0% no-repeat padding-box;
                 border: 1px solid @color-primary;
-                width: 90%;
                 margin: auto;
-                height: 75px;
+                height: 70px;
+                display: flex;
+                align-items: center;
                 h5{
                     color: @color-white;
                     font-size: 24px;
                     font-weight: 600;
-                }                
+                    text-align: left;
+                    width: 93%;
+                }   
+            .plus-minus-icon{
+                width: 7%;
             }
-            .card-header::after{
-                transform: translate(0px, -100%);
+            .plus-minus-icon::after{
+                content: url(../../common/images/dashboard-media/minus-icons.png);
             }
         }
-        .card.collapsed{
-            .card-header{
+        .accordion-button::after{
+            transform: translate(0px, -100%);            
+        }
+        .accordion-button.collapsed{
+            width: 100%;
                 background: @color-white 0% 0% no-repeat padding-box;
                 border: 1px solid @color-primary;
+                margin-bottom: 10px;
                 h5{
                     color: @color-primary;
                 }
+            .plus-minus-icon::after{
+                content: url(../../common/images/dashboard-media/plus-icons.png);
             }
-            .card-header::after{
-                content: url(../../theme-alpha/img/plus.png);
-            }
+            
         }
         .collapse{
-            width: 90%;
             margin: auto;
             background: #F6F6F6 0% 0% no-repeat padding-box;
             border: 1px solid @color-primary;
+            .accordion-body{
+                width: 90%;
+                margin: auto;
+                .serviceModule-detail{
+                    width: 100%;
+                }
+            }
         }
     }
     .service_tab_pane_show{
         width: 92%;
     }
+}
+
+@media (max-width:1000px) {
+    .serviceModule .serviceModule-detail{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 640px){
+    .service-wrapper .nav-link::after {
+        bottom: 6px;
+    }
+    
+}
+
+.page-financial{
+    .panelTabs_tip_right .panelTabs-navigation .tabs-list li a:after{
+        display: none !important;
+    }
+}
+.financial-statement-details{
+    .panelTabs-navigation{
+        margin-left: 0px;
+        margin-right: 0px;
+        background: none;
+
+        ul li{
+            padding-bottom: 0px;
+            .panelTabs-label{
+                margin: auto;
+            }
+        }        
+    }
+    .panelTabs_withHistory .panelTabs-content{
+        padding-top: 0px !important;
+    }
+    .panelTabs_withHistory .panelTabs-navigation .tabs-list li{
+        padding-bottom: 0px !important;
+    }
+}
+.panelModule_noRadius{
+    border-radius: none !important;
+    background: @color-white 0% 0% no-repeat padding-box;
+    border: 1px solid @color-primary;
+}
+.headline-background-wrapper{
+    border-bottom: 1px solid @color-golden;
+}
+.headline-background{
+    background: @color-golden 0% 0% no-repeat padding-box;
+    color: @color-white;
+    padding: 1%;
+    margin-top: initial;
+    font-size: 20px;
+    min-height: 3rem;
+    margin:0px !important;
+}
+.headline-golden{
+    font-size: 20px !important;
+    font-weight: bold !important;
+    letter-spacing: 0px !important;
+    text-transform: uppercase !important;
+    color:@color-golden !important;
+    padding-bottom: 6px !important;
+    line-height: 1.5 !important;
+}
+.text-golden{
+    color:@color-golden !important;
+}
+.text-primary-color{
+    color:@color-primary !important;
+}
+
+.headline-text-dark{
+    color:@color-text !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    line-height: 1.5 !important;
+}
+
+.financialStatement {
+    .panelTabs-navigation{
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: auto !important;
+        padding: initial !important;
+        ul.tabs-list{
+            width: 100%;
+            li.first{
+                padding-left: 0px;
+                padding-right: 20px;
+            }
+            li.last{
+                padding-left: 20px;
+                padding-right: 0px;
+            }
+        }
+    }
+}
+.link{
+    color: @color-primary !important;
+}
+
+.full-width{
+    width: 100% !important;
+    max-width: 100% !important;
+    // margin: auto !important;
+    // padding: initial !important;
+}
+
+
+
+.tableModule{
+    .tableModule-head{
+        th{
+            background: #F7F7F7 0% 0% no-repeat padding-box;
+            border: 1px solid #EDEDED;
+            text-align: left;
+            font-size:20px;
+            font-weight:600;
+            letter-spacing: 0px;
+            color: #707070;
+        }
+    }
+    .tableModule-body{
+        td{
+            text-align: left;
+            letter-spacing: 0px;
+            color: #707070;
+            font-size: 20px;
+        }
+    }
+}
+.formInputBox .form-control:placeholder-shown+.control-label,
+.formInputFile .form-control+.control-label, 
+.formSelectBox .control-label, 
+.formSelectBox .select2.select2-container--disabled+.control-label{
+    font-size: 16px;
+    padding-left: 30px;
+}
+.formInputBox .control-label,
+.formTextArea .control-label,
+.formSelectBox .select2.select2-container.select2Container_selected+.control-label{
+    font-size: 16px;
+    padding-left: 30px;
+    top: -18px;
+    font-weight: 600;
+}
+.formInputBox .form-control,.formTextArea .form-control,.formRadioButton .control-label{
+    letter-spacing: 0px;
+    color: #707070;
+    font-size: 20px;
+    padding-left: 30px;
+}
+.select2-container .select2-selection--single .select2-selection__rendered{
+    margin-left: 20px;
+}
+button.btn.btn_link.btn-edit-branch:hover{
+    background: none !important;
+}
+.govt-doc-edit.modal-dialog{
+    max-width: 50%;
 }

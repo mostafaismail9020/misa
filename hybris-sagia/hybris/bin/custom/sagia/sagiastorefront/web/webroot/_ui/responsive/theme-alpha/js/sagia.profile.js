@@ -537,6 +537,11 @@ SAGIA.profile = {
 //                        myProfileTabData.find(".profilePicture").attr("src", profileData.profilePicture);
                         myProfileTabData.find(".js-profilePicture").css("background-image", 'url(' + profileData.profilePicture + ')');
                     }
+                if (profileData.companyLogo) {
+                   
+						$('#sagia_companyLogo_picture_title').text('Company Logo');
+                        myProfileTabData.find(".js-companyLogo").css("background-image", 'url(' + profileData.companyLogo + ')');
+                    }
                     if (profileData.sagiaProfilePersonalForm && profileData.titles && profileData.countries && profileData.sectors) {
                         var sagiaProfilePersonalFormData = profileData.sagiaProfilePersonalForm;
                         myProfileTabData.find("#sagiaProfilePersonalFormTitle").text(sagiaProfilePersonalFormData.title.name);
@@ -547,6 +552,7 @@ SAGIA.profile = {
                         myProfileTabData.find("#sagiaProfilePersonalFormLastName").text(sagiaProfilePersonalFormData.lastName);
                         myProfileTabData.find("#sagiaProfilePersonalFormCompany").text(sagiaProfilePersonalFormData.company);
                         myProfileTabData.find("#sagiaProfilePersonalFormMobileCountryCode").text(sagiaProfilePersonalFormData.mobileCountryCode);
+						myProfileTabData.find("#sagiaProfilePersonalFormCompanyWebsite").text(sagiaProfilePersonalFormData.companyWebsite);
 
                         var sagiaProfilePersonalForm = $("#sagiaProfilePersonalForm");
                         var sagiaProfilePersonalFormTitle = sagiaProfilePersonalForm.find("#sagiaProfilePersonalFormSelectTitle");
@@ -594,6 +600,9 @@ SAGIA.profile = {
                         var sagiaProfilePersonalFormSelectMobileNumber = sagiaProfilePersonalForm.find("#sagiaProfilePersonalFormSelectMobileNumber");
                         sagiaProfilePersonalFormSelectMobileNumber.val(sagiaProfilePersonalFormData.mobileNumber);
 
+                          var sagiaProfilePersonalFormSelectCompanyWebsite = sagiaProfilePersonalForm.find("#sagiaProfilePersonalFormSelectCompanyWebsite");
+                          sagiaProfilePersonalFormSelectCompanyWebsite.val(sagiaProfilePersonalFormData.companyWebsite);
+
                         $("#sagiaProfilePersonalFormCancelUpdates").on("click", function () {
                             $(".js-myAccount-edit").trigger("click");
                         });
@@ -616,7 +625,8 @@ SAGIA.profile = {
                                     name: sagiaProfilePersonalFormSector.find(":selected").text()
                                 },
                                 mobileCountryCode: sagiaProfilePersonalFormSelectMobileCountryCode.val(),
-                                mobileNumber: sagiaProfilePersonalFormSelectMobileNumber.val()
+                                mobileNumber: sagiaProfilePersonalFormSelectMobileNumber.val(),
+ 								companyWebsite : sagiaProfilePersonalFormSelectCompanyWebsite.val()
                             };
                             $.ajax(ACC.config.encodedContextPath + "/my-sagia/update-my-profile", {
                                 beforeSend: function beforeSend(xhr) {
@@ -627,7 +637,7 @@ SAGIA.profile = {
                                 method: 'POST',
                                 data: JSON.stringify(objectToPost),
                                 success: function success() {
-                                    var infoModal = $('#infoResponseModal');
+                                    var infoModal = $('#infoResponseModal'); 
                                     infoModal.find('.modal-description').text(getI18nText('general.details.updated'));
                                     infoModal.modal('show');
 
@@ -639,6 +649,7 @@ SAGIA.profile = {
                                     myProfileTabData.find("#sagiaProfilePersonalFormLastName").text(objectToPost.lastName);
                                     myProfileTabData.find("#sagiaProfilePersonalFormCompany").text(objectToPost.company);
                                     myProfileTabData.find("#sagiaProfilePersonalFormMobileCountryCode").text(objectToPost.mobileCountryCode);
+									myProfileTabData.find("#sagiaProfilePersonalFormCompanyWebsite").text(objectToPost.companyWebsite);
                                 },
                                 error: function error() {
                                     var errorModal = $('#errorResponseModal');
@@ -1372,3 +1383,11 @@ $(function () {
 
     SAGIA.profile.init();
 });
+
+$(document).on("click", ".myAccount-profilImage-change", function () {
+     var actionUrl = $(this).data('action');
+     $('#modalPictureUploadForm').attr('action',actionUrl);
+console.log(actionUrl);
+      $('#uploadFilePicture').modal('show');
+});
+

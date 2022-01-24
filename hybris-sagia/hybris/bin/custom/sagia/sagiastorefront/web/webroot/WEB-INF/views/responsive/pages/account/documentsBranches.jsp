@@ -14,26 +14,60 @@
     </c:otherwise>
 </c:choose>
 
-<div class="mainSection mainSection_dark">
+
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="general.governmentdocuments" />
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline">Government documents</h1>
         </div>
     </div>
-</div>
+</div> -->
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <a href="${encodedContextPath}/my-sagia/sagia-profile"
-           class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span>Back to Account Overview</a>
+           class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span>Back to Account Overview</a>
     </div>
 </div>
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
     <div class="container">
         <div class="panelModule panelModule_halfRadius">
             <div class="contentModule">
                 <div class="contentModule-section">
                     <div class="contentModule-headline">
-                        <span class="iconElement iconElement_branches"><icon:branches/></span>
+                        <!-- <span class="iconElement iconElement_branches"><icon:branches/></span> -->
                         <spring:theme code="dashboard.myLicense.branches"/>
                         ${pageType}
                     </div>
@@ -95,10 +129,10 @@
 
 <div class="modal fade" id="branchEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered govt-doc-edit" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="modal-title">Edit <span id="branchName"></span></div>
+                <div class="modal-title">Edit : <span id="branchName" class="modal-title"></span></div>
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                     <icon:close/>
                 </button>
@@ -107,10 +141,11 @@
             <div class="modal-body modal-body_bordered">
                 <div class="contentModule">
                     <div class="contentModule-section">
-                        <div class="contentModule-headline">
-                            <span class="iconElement iconElement_register02"><icon:register02/></span>
-                            Commercial register
+                        <div class="contentModule-headline headline-background-wrapper">
+                            <!-- <span class="iconElement iconElement_register02"><icon:register02/></span> -->
+                            <span class="headline-background">Commercial register</span> 
                         </div>
+                        <hr class="hr">
                         <div class="row">
                             <div class="col">
                                 <div class="formRadioButton">
@@ -154,10 +189,11 @@
                     </div>
 
                     <div class="contentModule-section">
-                        <div class="contentModule-headline">
-                            <span class="iconElement iconElement_momra"><icon:momra/></span>
-                            Momra
+                        <div class="contentModule-headline headline-background-wrapper">
+                            <!-- <span class="iconElement iconElement_momra"><icon:momra/></span> -->
+                            <span class="headline-background">Momra</span> 
                         </div>
+                        <hr class="hr">
                         <div class="row">
                             <div class="col">
                                 <div class="formRadioButton">
@@ -226,10 +262,12 @@
                         <div class="row">
 
                             <div class="col-md-5">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_momra"><icon:momra/></span>
-                                    Wassel
+                                <div class="contentModule-headline headline-background-wrapper">
+                                    <!-- <span class="iconElement iconElement_momra"><icon:momra/></span> -->
+                                    <span class="headline-background">Wassel</span> 
                                 </div>
+                                <hr class="hr">
+                                
                                 <div class="formRadioButton formRadioButton_block formRadioButton_slim">
                                     <div class="form-group">
 
@@ -257,10 +295,15 @@
                             </div>
 
                             <div class="col-md-7" id="mapContainer">
-                                <div class="contentModule-headline">
+                                <!-- <div class="contentModule-headline">
                                     <span class="iconElement iconElement_locationPin_filled"><icon:locationPin_filled/></span>
                                     Physical address
+                                </div> -->
+                                <div class="contentModule-headline headline-background-wrapper">
+                                    <!-- <span class="iconElement iconElement_locationPin_filled"><icon:locationPin_filled/></span> -->
+                                    <span class="headline-background">Physical address</span> 
                                 </div>
+                                <hr class="hr">
                                 <div class="mapsModule">
                                     <div id="map" style="height: 350px"></div>
                                 </div>
@@ -284,10 +327,10 @@
             </div>
 
             <div class="modal-footer modal-footer_centered">
-                <button type="reset" class="btn btn_outline" data-dismiss="modal">
+                <button type="reset" class="btn btn_outline full-width-responsive" data-dismiss="modal">
                     Cancel
                 </button>
-                <button type="button" class="btn" onclick="saveBranch()" ${disabled}>
+                <button type="button" class="btn full-width-responsive" onclick="saveBranch()" ${disabled}>
                     <spring:theme code="govDocs.saveButton"/>
                 </button>
             </div>

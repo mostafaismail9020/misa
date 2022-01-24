@@ -51,13 +51,13 @@
 </div>
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
-        <div class="d-flex row renewal-services w-100">
-            <div class="col-md-3">
+        <div class="row renewal-services w-100">
+            <div class="col-xl-3 col-12">
                 <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink">
                     <span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="legalConsultationCreate.backToAccountOverview.text"/>
                 </a>
             </div>
-            <div class="col-md-9 d-flex btn-drafts_list amend-service-link">
+            <div class="col-xl-9 col-12 btn-drafts_list amend-service-link">
                 <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="${serviceId}"
                         data-service-id="${serviceId}"><spring:theme code="general.savedraft"/><span
@@ -65,8 +65,8 @@
                 <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if>
                         data-target-form="${serviceId}"
                         data-service-id="${serviceId}">
-                    <spring:theme code="general.loaddraft"/><span
-                        class="iconElement iconElement_save"><icon:upload/></span></button>
+                    <spring:theme code="general.loaddraft"/>
+                    <span class="iconElement iconElement_save"><icon:upload/></span></button>
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
 </div>
 -->
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 service-main">
     <div class="container">
 
     	<div class="expandableContent-main" id="expandedContentParent">
@@ -114,7 +114,8 @@
                 <div class="contentModule">
                     <div class="contentModule-section">
                         <div class="contentModule-headline headline-text">
-                            <icon:documents/><spring:theme code="general.attachments"/>
+                            <!-- <icon:documents/> -->
+                            <spring:theme code="general.attachments"/>
                         </div>
 
                         <div class="row">
@@ -140,11 +141,11 @@
                 <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <formElement:termsAndConditionsCheckbox event="FINANCIAL_STATEMENT" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
                 </div>
-                <button type="reset" class="btn btn_leftIconLink btn_outline" onclick="window.location.href='${encodedContextPath}">
+                <button type="reset" class="btn btn_leftIconLink btn_outline full-width-responsive" onclick="window.location.href='${encodedContextPath}">
                     <spring:theme code="general.cancel"/>
                 </button>
                 
-                <button type="submit" value="Submit request" class="btn js-submit-financialStatement" disabled><spring:theme code="general.submit"/></button>
+                <button type="submit" value="Submit request" class="btn js-submit-financialStatement full-width-responsive" disabled><spring:theme code="general.submit"/></button>
             </div>
         </form:form>
     </div>

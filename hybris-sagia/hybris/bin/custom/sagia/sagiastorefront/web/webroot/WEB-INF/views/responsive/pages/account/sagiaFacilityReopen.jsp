@@ -6,15 +6,52 @@
 <script>
     var createRequestEnabled = ${reopenFacilityRequests.createRequestEnabled};
 </script>
+
+
+
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="facilityReopen.title"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
 <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="facilityReopen.title"/></h1>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+<!-- <div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <c:if test="${reopenFacilityRequests.createRequestEnabled}">
@@ -36,17 +73,49 @@
             </c:if>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-12">
             <a href="${encodedContextPath}/dashboard"
                class="btn btn_leftIconLink btn_darkLink"><span>&times;</span><spring:theme
                     code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(reopenFacilityRequests.serviceRequests) gt 0}">
+                </div>
+                <div class="col-xl-6 col-12 d-flex">
+                    <c:if test="${reopenFacilityRequests.createRequestEnabled}">
+                        <a href="${encodedContextPath}/facility-reopen/create"
+                           class="btn btn_slim">
+                            <spring:theme code="text.specialservices.create"/>
+                        </a>
+                    </c:if>
+                    <c:if test="${not reopenFacilityRequests.createRequestEnabled}">
+                        <div class="col-xl-1 col-1">
+                        <span class="iconElement iconElement_headlineTooltip js-tip"
+                              data-tip-title="${serviceDescription}"
+                              data-original-title="" title="">
+                         <icon:tipInfo/>
+                         </span>
+                        </div>
+                        <a href="javascript:;"
+                           class="btn btn_slim" disabled="disabled">
+                            <spring:theme code="text.specialservices.create"/>
+                        </a>
+                    </c:if>         
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+
+
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 service-main">
+    <div class="container">
+        <c:if test="${fn:length(reopenFacilityRequests.serviceRequests) gt 0}">
                 <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent"
                         data-expand-target="expand01">
                     <div class="hidden">
@@ -57,21 +126,14 @@
                     </div>
                 </button>
             </c:if>
-        </div>
-    </div>
-</div>
-
-
-<div class="mainSection mainSection_dark mainSection_pdt16">
-    <div class="container">
         <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(reopenFacilityRequests.serviceRequests) gt 0}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_history"><icon:history/></span>
+                                <div class="contentModule-headline contentModule-headline-history">
+                                    <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                     <spring:theme code="text.account.followup.history"/>
                                 </div>
                                 <div class="searchInputBox searchInputBox_slim">
@@ -101,10 +163,12 @@
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule">
                         <div class="contentModule-section">
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                <div class="contentModule-headline">
-                                    <icon:info/><spring:theme code="facilityReopen.entityInformation.text"/>
-                                </div>
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                                <!-- <div class="contentModule-headline">
+                                    <icon:info/>
+                                    <spring:theme code="facilityReopen.entityInformation.text"/>
+                                </div> -->
+                                <span class="headline-background"><spring:theme code="facilityReopen.entityInformation.text"/></span>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -145,10 +209,12 @@
                             </div>
                         </div>
                         <div class="contentModule-section">
-                            <div class="contentModule-actions contentModule-actions_noMargin contentModule-actions_wrap">
-                                <div class="contentModule-headline contentModule-headline_smallMargin">
-                                    <icon:enquiry2/><spring:theme code="facilityReopen.comment.text"/>
-                                </div>
+                            <div class="contentModule-actions contentModule-actions_noMargin contentModule-actions_wrap headline-background-wrapper">
+                                <!-- <div class="contentModule-headline contentModule-headline_smallMargin">
+                                    <icon:enquiry2/>
+                                    <spring:theme code="facilityReopen.comment.text"/>
+                                </div> -->
+                                <span class="headline-background"><spring:theme code="facilityReopen.comment.text"/></span>
                             </div>
                             <div class="row">
                                 <div class="col">
@@ -166,10 +232,15 @@
                 <div class="panelModule panelModule_halfRadius">
                     <div class="contentModule">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                            <div class="contentModule-headline">
+                            <!-- <div class="contentModule-headline">
                                 <icon:documents/>
                                 <spring:theme code="facilityReopen.documents.text"/>
+                            </div> -->
+                            
+                            <div class="contentModule-actions contentModule-actions_wrap headline-background-wrapper">
+                                <span class="headline-background"><spring:theme code="facilityReopen.documents.text"/></span>
                             </div>
+
                             <div class="jqDownloadList">
                                 <c:if test="${fn:length(reopenFacility.attachments) gt 0}">
                                     <ul class="downloadList" id="documents-container">

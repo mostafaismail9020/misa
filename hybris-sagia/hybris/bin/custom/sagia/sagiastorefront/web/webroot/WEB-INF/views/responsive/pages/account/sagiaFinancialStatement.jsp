@@ -97,13 +97,13 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <div class="d-flex row renewal-services w-100">
-                <div class="col-md-3">
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-12">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
                 </div>
-                <div class="col-md-3">
-                    <div class="mainSection-linkActions mainSection-linkActions_right">
-                        <button class="btn btn_slim" onclick="window.location.href='${encodedContextPath}/financial-statement/new'">
+                <div class="col-xl-3 col-12">
+                    <div class="mainSection-linkActions mainSection-linkActions_right back_to_service">
+                        <button class="btn btn_slim back_to_service full-width" onclick="window.location.href='${encodedContextPath}/financial-statement/new'">
                             <spring:theme code="legalConsultation.create"/>
                         </button>
                     </div>
@@ -112,7 +112,7 @@
         </div>
     </div>
 </div>
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
     <div class="container">
         <c:if test="${fn:length(financialStatements) gt 1}">
             <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
@@ -166,7 +166,7 @@
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
                                     <div  class="contentModule-headline headline-text">
-                                    <span class="iconElement iconElement_info"><icon:info/></span>
+                                    <!-- <span class="iconElement iconElement_info"><icon:info/></span> -->
                                     <span id= "currentID">${latestFinancialStatement.srId}</span>
                                     <span style="display: none;" id= "currentGUID">${latestFinancialStatement.srGuid}</span>
                                 </div>
@@ -209,7 +209,7 @@
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered">
                                     <div  class="contentModule-headline  headline-text">
-                                        <span class="iconElement iconElement_documents"><icon:documents/></span>
+                                        <!-- <span class="iconElement iconElement_documents"><icon:documents/></span> -->
                                         <spring:theme code="legalConsultation.supportDocuments"/>
                                     </div>
                                 </div>

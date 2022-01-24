@@ -8,10 +8,45 @@
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
 
+
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="text.account.followup.supportVisits"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="text.account.followup.supportVisits"/></h1>
+        <div class="mainSection-header service-time">
+            <!-- <h1 class="mainSection-headline"><spring:theme code="text.account.followup.supportVisits"/></h1> -->
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
                     <div class="serviceTime-label"><spring:theme code="average.service.time"/></div>
@@ -38,7 +73,7 @@
 </div>
 
                                    
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+<!-- <div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <div>
@@ -48,16 +83,31 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-12">
             <a href="${encodedContextPath}/dashboard"
                class="btn btn_leftIconLink btn_darkLink"><span>&times;</span><spring:theme
                     code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(supportVisits) > 1}">
+                </div>
+                <div class="col-xl-3 col-12">
+
+                    <a href="${encodedContextPath}/support-visits/create" class="btn btn_slim">
+                        <spring:theme code="text.account.followup.create"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 service-main">
+    <div class="container">
+        <c:if test="${fn:length(supportVisits) > 1}">
                 <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent"
                         data-expand-target="expand01">
                     <div class="hidden"><spring:theme
@@ -65,19 +115,14 @@
                     <div><spring:theme code="text.account.followup.hideServiceHistory"/><span>&#x27f6;</span></div>
                 </button>
             </c:if>
-        </div>
-    </div>
-</div>
-<div class="mainSection mainSection_dark mainSection_pdt16">
-    <div class="container">
         <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(supportVisits) > 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_history"><icon:history/></span>
+                                <div class="contentModule-headline contentModule-headline-history">
+                                    <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                     <spring:theme code="text.account.followup.history"/></div>
                                 <div class="searchInputBox searchInputBox_slim">
                                     <input onkeyup="filterHistory(this)" id="convertSearchBox"
@@ -127,7 +172,7 @@
 
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                    <div class="contentModule-headline">
+                                    <div class="contentModule-headline headline-text">
                                         <icon:info/>
 
                                         <spring:theme code="text.account.followup.info"/>:&nbsp;<span id="supportVisitId">${selectedSupportVisit.srId}</span>
@@ -169,7 +214,7 @@
                     <div id="supportVisitsComments"
                          <c:if test="${!hasComments}">hidden</c:if>
                          class="contentModule-section">
-                        <div class="contentModule-headline contentModule-headline_small "><spring:theme
+                        <div class="contentModule-headline contentModule-headline_small headline-text"><spring:theme
                                 code="text.account.followup.comments"/></div>
                         <div class="commentModule">
                             <div class="commentModule-window">
@@ -209,7 +254,7 @@
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                    <div class="contentModule-headline contentModule-headline_bordered">
+                                    <div class="contentModule-headline contentModule-headline_bordered headline-text">
                                         <icon:documents/>
                                         <spring:theme code="text.account.followup.supportDocuments"/>
                                     </div>

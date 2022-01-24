@@ -211,10 +211,10 @@
                 <button type="button" class="btn btn-secondary" onclick="window.history.back()">
                     <spring:theme code="general.cancel"/>
                 </button>
-                <button type="submit" class="btn btn-primary js-followup-vr-create">
+                <button type="submit" class="btn btn-primary js-followup-vr-create full-width-responsive">
                     <spring:theme code="general.submit"/>
                 </button>
-                <div class="formCheckBox formCheckBox_belowPanel">
+                <div class="formCheckBox formCheckBox_belowPanel full-width-responsive">
                     <div class="form-group">
                         <formElement:termsAndConditionsCheckbox event="FOLLOW_UP" id="termsAndConditions" path="termsAndConditionsChecked"/>
                     </div>

@@ -69,11 +69,11 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <div class="d-flex row renewal-services w-100">
-                <div class="col-md-3">
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-12">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xl-3 col-12">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
                         <a href="warning-letters/create" type="submit" class="btn btn_slim js-create-warning-letter">
                             <spring:theme code="text.account.followup.create"/>
@@ -136,7 +136,7 @@
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
                                 <div class="contentModule-headline headline-text">
-                                    <icon:info/>
+                                    <!-- <icon:info/> -->
                                     <spring:theme code="text.account.followup.info"/>: ${selectedItem.srId}
                                 </div>
 <!--
@@ -159,11 +159,11 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated">
-                                        <dt>
+                                        <dt class="headline-golden">
                                             <spring:theme code="text.account.followup.requestedDaysNumber"/>
                                         </dt>
                                         <dd>${selectedItem.noOfDaysExtension}</dd>
-                                        <dt>
+                                        <dt class="headline-golden">
                                             <spring:theme code="text.account.followup.extendedDate"/>
                                         </dt>
                                         <dd>${selectedItem.extWlDate.dateFormatted}</dd>
@@ -171,11 +171,11 @@
                                 </div>
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated">
-                                        <dt>
+                                        <dt class="headline-golden">
                                             <spring:theme code="text.account.followup.approvedDaysNumber"/>
                                         </dt>
                                         <dd>${selectedItem.noOfApprDaysExtn}</dd>
-                                        <dt>
+                                        <dt class="headline-golden">
                                             <spring:theme code="text.account.followup.extendedEndDate"/>
                                         </dt>
                                         <dd>${selectedItem.extWlEndDate.dateFormatted}</dd>
@@ -224,7 +224,7 @@
 
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
                                 <div class="contentModule-headline contentModule-headline_bordered headline-text">
-                                    <icon:documents/>
+                                    <!-- <icon:documents/> -->
                                     <spring:theme code="text.account.followup.supportDocuments"/>
                                 </div>
                             </div>

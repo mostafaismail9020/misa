@@ -89,26 +89,26 @@
 
 	<div class="container mainSection mainSection_white mainSection_narrow mainSection_noPadding">
 		<div class="m-5">
-			<div class="row w-100">
-				<div class="col-md-3">
+			<div class="row w-100 renewal-services">
+				<div class="col-xl-3 col-12">
 					<button class="btn btn_round back_to_service btn_leftIconLink">
 						<icon:arrow_green_right/> Back to All Services
 						<span class="iconElement iconElement_save"></span>
 					</button>
 				</div>
-				<div class="col-md-3">
+				<div class="col-xl-3 col-12 px-0">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
                 </div>
 			</div>
 			<div class="row w-100 d-flex mt-4	">
 				<div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
-					<div class="col-md-3">
+					<div class="col-xl-3 col-12">
 						<button id="saveDraftBtnId" class="btn btn_round">
 							<spring:theme code="general.savedraft" />
 							<span class="iconElement iconElement_save"><icon:save /></span>
 						</button>
 					</div>
-					<div class="col-md-6 mx-0 px-0 amend-btns-list">
+					<div class="col-xl-6 col-12 amend-btns-list">
 						<button id="loadDraftBtnId"
 							class="btn btn_round btn_slim js-load-draft"
 							<c:if test="${!draftExists}">style="display: none"</c:if>>
@@ -247,10 +247,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="expandableContent-main">
+				<div class="expandableContent-main amend-ddl-list">
 					<div class="js-panelTabs panelTabs panelTabs_iconsAndLabel panelTabs_separated panelTabs_tip_none  panelTabs_noPanelInBody panelTabs_white panelTabs_whiteNavigation panelTabs_noPaddingTop">
 						<div class="panelTabs-head" id="tab1">
-							<icon:registerinTab />
+							<!-- <icon:registerinTab /> -->
 							<span class="panelTabs-label"><spring:theme
 									code="license.entity" /></span>
 						</div>
@@ -326,11 +326,11 @@
 								<div
 									class="contentModule-actions contentModule-actions_spaceBetween">
 									<button type="button"
-										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
 									</button>
 									<button id="nextTabEntityBtnId" type="button"
-										class="btn btn-primary newAmendmentBtn">
+										class="btn btn-primary newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.proceed" />
 									</button>
 								</div>
@@ -374,7 +374,7 @@
 						</div>
 
 						<div class="panelTabs-head" id="">
-							<icon:isic-activity />
+							<!-- <icon:isic-activity /> -->
 							<span class="panelTabs-label"><spring:theme
 									code="license.isicactivity" /></span>
 						</div>
@@ -384,18 +384,18 @@
 							<div
 								class="contentModule-actions contentModule-actions_spaceBetween">
 								<button type="button"
-									class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+									class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 									<spring:theme code="general.cancel" />
 								</button>
 								<button id="nextTabIsicBtnId" type="button"
-									class="btn btn-primary newAmendmentBtn">
+									class="btn btn-primary newAmendmentBtn full-width-responsive">
 									<spring:theme code="general.proceed" />
 								</button>
 							</div>
 						</div>
 
 						<div class="panelTabs-head" id="tab2">
-							<icon:shareholder />
+							<!-- <icon:shareholder /> -->
 							<span class="panelTabs-label"><spring:theme
 									code="license.apply.shareholders" /></span>
 						</div>
@@ -473,18 +473,18 @@
 								<div
 									class="contentModule-actions contentModule-actions_spaceBetween">
 									<button type="button"
-										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
 									</button>
 									<button id="nextTabShareholdersBtnId" type="button"
-										class="btn newAmendmentBtn">
+										class="btn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.proceed" />
 									</button>
 								</div>
 							</div>
 						</div>
 						<div class="panelTabs-head" id="tab3">
-							<icon:branch />
+							<!-- <icon:branch /> -->
 							<span class="panelTabs-label"><spring:theme
 									code="general.branch" /></span>
 						</div>
@@ -567,11 +567,11 @@
 								<div
 									class="contentModule-actions contentModule-actions_spaceBetween">
 									<button type="button"
-										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
 									</button>
 									<button id="nextTabBranchesBtnId" type="button"
-										class="btn newAmendmentBtn">
+										class="btn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.proceed" />
 									</button>
 								</div>
@@ -579,7 +579,7 @@
 						</div>
 
 						<div class="panelTabs-head" id="tab4">
-							<icon:productinTab />
+							<!-- <icon:productinTab /> -->
 							<span class="panelTabs-label"><spring:theme
 									code="products.products" /></span>
 						</div>
@@ -646,11 +646,11 @@
 								<div
 									class="contentModule-actions contentModule-actions_spaceBetween">
 									<button type="button"
-										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
 									</button>
 									<button type="button"
-										class="btn validateLicenseBtn newAmendmentBtn">
+										class="btn validateLicenseBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.submit" />
 									</button>
 								</div>

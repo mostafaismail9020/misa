@@ -65,11 +65,11 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <div class="d-flex row renewal-services w-100">
-                <div class="col-md-3">
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-12">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xl-3 col-12">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
                         <div>
                             <a id="realEstateCreateBtn" data-entity-status="${entityStatus}" href="${encodedContextPath}/real-estate/create" class="btn btn_slim"><spring:theme code="text.realEstate.create"/></a>
@@ -170,7 +170,7 @@
 </div>
 
 <c:if test="${not empty realEstateHistory}">
-    <div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
+    <div class="mainSection mainSection_dark mainSection_pdt16 mt-5 service-main">
         <div class="container">
             <c:if test="${fn:length(realEstateHistory) gt 1}">
                 <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent"
@@ -232,8 +232,8 @@
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                    <div class="contentModule-headline headline-text">
-                                        <icon:info/>
+                                    <div class="contentModule-headline headline-text mob-heading-responsive">
+                                        <!-- <icon:info/> -->
                                         <spring:theme code="realEstateDetails.serviceInfo" text="Service Info: "/>
                                         <span id="reiObjectId"> ${firstElement.objectId}</span>
                                     </div>
@@ -260,50 +260,50 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <dl class="dlList dlList_separated">
-                                            <dt><spring:theme code="realEstateDetails.requestType" text="Request Type:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.requestType" text="Request Type:"/></dt>
                                             <dd id="reiRequestType">${firstElement.requestType}</dd>
-                                            <dt><spring:theme code="realEstateDetails.plotNo" text="Plot No:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.plotNo" text="Plot No:"/></dt>
                                             <dd id="reiPlotNo">${firstElement.plotNo}
                                                 <c:if test="${not empty firstElement.plotNo2}">|${firstElement.plotNo2}</c:if>
                                                 <c:if test="${not empty firstElement.plotNo3}">|${firstElement.plotNo3}</c:if>
                                                 <c:if test="${not empty firstElement.plotNo4}">|${firstElement.plotNo4}</c:if>
                                                 <c:if test="${not empty firstElement.plotNo5}">|${firstElement.plotNo5}</c:if>
                                             </dd>
-                                            <dt><spring:theme code="realEstateDetails.deedNo" text="Deed No:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.deedNo" text="Deed No:"/></dt>
                                             <dd id="reiDeedNo">${firstElement.deedNo}</dd>
-                                            <dt><spring:theme code="realEstateDetails.outsideMakkah" text="Outside Makkah:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.outsideMakkah" text="Outside Makkah:"/></dt>
                                             <dd id="reiOutsideMakkah">${firstElement.outsideMakkah}</dd>
-                                            <dt><spring:theme code="realEstateDetails.projectValue" text="Project Value:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.projectValue" text="Project Value:"/></dt>
                                             <dd id="reiProjectValue">${firstElement.projectValue}</dd>
-                                            <dt><spring:theme code="realEstateDetails.region" text="Region:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.region" text="Region:"/></dt>
                                             <dd id="reiRegion">${firstElement.region}</dd>
-                                            <dt><spring:theme code="realEstateDetails.housingType" text="Housing Type:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.housingType" text="Housing Type:"/></dt>
                                             <dd id="reiHousingType">${firstElement.housingType}</dd>
-                                            <dt><spring:theme code="realEstateDetails.unitNo" text="Unit No:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.unitNo" text="Unit No:"/></dt>
                                             <dd id="reiUnitNo">${firstElement.unitNo}</dd>
-                                            <dt><spring:theme code="realEstateDetails.additionalDetails" text="Additional Details:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.additionalDetails" text="Additional Details:"/></dt>
                                             <dd id="reiRemarks">${firstElement.remarks}</dd>
                                         </dl>
                                     </div>
                                     <div class="col-md-6">
                                         <dl class="dlList dlList_separated">
-                                            <dt><spring:theme code="realEstateDetails.realEstatetype" text="Real Estate Type:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.realEstatetype" text="Real Estate Type:"/></dt>
                                             <dd id="reiPurchaseType">${firstElement.purchaseType}</dd>
-                                            <dt><spring:theme code="realEstateDetails.plotArea" text="Plot Area:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.plotArea" text="Plot Area:"/></dt>
                                             <dd id="reiPlotArea">${firstElement.plotArea}</dd>
-                                            <dt><spring:theme code="realEstateDetails.deedDate" text="Deed date:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.deedDate" text="Deed date:"/></dt>
                                             <dd id="reiPurchaseDate">${firstElement.sagiaPurchaseDate.dateFormatted}</dd>
-                                            <dt><spring:theme code="realEstateDetails.approvedIndustrial" text="Approved Industrial:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.approvedIndustrial" text="Approved Industrial:"/></dt>
                                             <dd id="reiApprovedIndustrial">${firstElement.approvedIndustrial}</dd>
-                                            <dt><spring:theme code="realEstateDetails.price" text="Price:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.price" text="Price:"/></dt>
                                             <dd id="reiPrice">${firstElement.price}</dd>
-                                            <dt><spring:theme code="realEstateDetails.city" text="City:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.city" text="City:"/></dt>
                                             <dd id="reiCity">${firstElement.city}</dd>
-                                            <dt><spring:theme code="realEstateDetails.district" text="District:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.district" text="District:"/></dt>
                                             <dd id="reiDistrict">${firstElement.district}</dd>
-                                            <dt><spring:theme code="realEstateDetails.blockNo" text="Block No:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.blockNo" text="Block No:"/></dt>
                                             <dd id="reiBlockNo">${firstElement.blockNo}</dd>
-                                            <dt><spring:theme code="realEstateDetails.moreThan30" text="More than 30:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.moreThan30" text="More than 30:"/></dt>
                                             <dd id="reiThirtyMore">${firstElement.thirtyMore}</dd>
                                         </dl>
                                     </div>
@@ -325,7 +325,7 @@
                                 <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
                                     <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
                                         <div class="contentModule-headline headline-text contentModule-headline_bordered">
-                                            <icon:documents/>
+                                            <!-- <icon:documents/> -->
                                             <spring:theme code="text.account.followup.supportDocuments"/>
                                         </div>
                                     </div>

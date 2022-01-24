@@ -82,6 +82,23 @@
   <input type="submit" value="Submit" />
 </form:form>
 
+</br>
+
+
+<c:forEach items="${comments}" var="comment" >
+  <c:if test="${comment.interventionType eq 'NotesForCustomer'}">
+    <c:set var="misaComment" value="${comment.text}"/>
+    Misa Comment -> ${misaComment} </br>
+  </c:if>
+  <c:if test="${comment.interventionType eq 'TicketMessage'}">
+     <c:set var="customerComment" value="${comment.text}"/>
+     Customer Comment -> ${customerComment} </br>
+  </c:if>
+</c:forEach>
+
+
+</br>
+</br>
 
 <div class="container service-wrapper service-wrapper-info">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">

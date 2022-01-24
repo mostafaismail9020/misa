@@ -96,12 +96,12 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween d-flex">
-            <div class="d-flex row renewal-services w-100">
-                <div class="col-md-3">
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-12">
                     <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">
                         <span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xl-3 col-12">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
                         <div>                                
                             <a id="specialServiceCreateBtn" data-entity-status="${entityStatus}"
@@ -119,7 +119,7 @@
         </div>
     </div>
 </div>
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
     <div class="container">
         <c:if test="${fn:length(specialServices) > 0}">
             <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent"
@@ -136,8 +136,8 @@
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline headline-text">
-                                    <span class="iconElement iconElement_history"><icon:history/></span>
+                                <div class="contentModule-headline headline-text text-golden">
+                                    <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                     <spring:theme code="text.specialservices.history"/></div>
                                 <div class="searchInputBox searchInputBox_slim">
                                     <input onkeyup="filterHistory(this)" class="searchInputBox-input" type="text"
@@ -174,16 +174,17 @@
                     <div class="contentModule">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline applicantList headline-text">
-                                    <icon:info/>
+                                <div class="contentModule-headline applicantList headline-text text-golden">
+                                    <!-- <icon:info/> -->
+                                    <img src="${commonResourcePath}/images/dashboard-media/Setting.png" alt="setting" />
                                     <spring:theme
                                             code="text.specialservices.applicants.list"/>:&nbsp;${specialServiceHeader.id}
                                 </div>
 
                                 <c:if test="${fn:length(specialServices) > 0}">
-                                    <div class="statusIndicator statusIndicator_${fn:toLowerCase(specialServiceHeader.status)}">
+                                    <div class="statusIndicator statusIndicator_${fn:toLowerCase(specialServiceHeader.status)}" id="currentStatus">
                                         <spring:theme code="text.account.followup.status"/> :
-                                        <span>${specialServiceHeader.status}</span>
+                                        <span id="statusText" class="text-golden">${specialServiceHeader.status}</span>
                                     </div>
                                 </c:if>
                             </div>
@@ -256,7 +257,7 @@
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                    <div class="contentModule-headline headline-text">
+                                    <div class="contentModule-headline headline-text text-golden">
                                         <icon:contactPerson/>
                                         <spring:theme code="text.specialservices.contact.details"/>
                                     </div>
@@ -270,15 +271,15 @@
                             <div class="row specialServicesDetails">
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated dlList_marginBottom">
-                                        <dt><spring:theme code="text.specialservices.region"/></dt>
+                                        <dt class="headline-golden"><spring:theme code="text.specialservices.region"/></dt>
                                         <dd id="specialServiceRegion">${specialServiceHeader.serviceRegion}</dd>
-                                        <dt><spring:theme code="text.specialservices.contactphonenumber"/></dt>
+                                        <dt class="headline-golden"><spring:theme code="text.specialservices.contactphonenumber"/></dt>
                                         <dd id="specialServicesEmail">${specialServiceHeader.email}</dd>
                                     </dl>
                                 </div>
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated dlList_lineThrough">
-                                        <dt><spring:theme code="text.specialservices.contactemailaddress"/></dt>
+                                        <dt class="headline-golden"><spring:theme code="text.specialservices.contactemailaddress"/></dt>
                                         <dd id="specialServicesPhone">${specialServiceHeader.phoneNumber}</dd>
                                     </dl>
                                 </div>
@@ -305,9 +306,10 @@
                                                 </div>
                                                 <div class="downloadList-actions">
                                                     <a href="${encodedContextPath}/special-services/pdf/ATTACHMENTDETAILSSET/${element.objectId}/${element.documentGuid}"
-                                                       class="link link_nowrap" download="${element.fullFileName}"><span class="iconElement iconElement_cloud02">
-                                                        <icon:download/>
-                                                    </span>
+                                                       class="link link_nowrap text-primary-color" download="${element.fullFileName}">
+                                                       <span class="iconElement iconElement_cloud02">
+                                                            <icon:download/>
+                                                       </span>
                                                         <spring:theme code="text.specialservices.download"/>
                                                     </a>
                                                 </div>

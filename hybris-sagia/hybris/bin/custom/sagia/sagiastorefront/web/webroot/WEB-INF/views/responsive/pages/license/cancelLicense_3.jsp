@@ -28,19 +28,19 @@
 </div>
 
 <div class="container mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
-    <div class="m-5">
-        <div class="row w-100">
-            <div class="col-md-3 px-0">
+    <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
+        <div class="row w-100 renewal-services">
+            <div class="col-xl-3 col-12 px-0">
                 <button class="btn btn_round back_to_service btn_leftIconLink">
                     <icon:arrow_green_right/> Back to All Services
                     <span class="iconElement iconElement_save"></span>
                 </button>
             </div>
-            <div class="col-md-3">
+            <div class="col-xl-3 col-12 px-0">
                 <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
             </div>	
         </div>	
-        <div class="row w-100 d-flex mt-4">
+        <div class="row w-100 mt-4">
             <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
                 <div class="btn-drafts_list">
                     <button class="btn btn_round btn_slim js-save-draft" data-target-form="${formName}"><spring:theme code="general.savedraft"/>
@@ -146,11 +146,11 @@
                             <formElement:termsAndConditionsCheckbox event="LICENSE_SERVICES" id="termsAndConditions3" path="termsAndConditionsChecked"/>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-secondary btn-back">
+                    <button type="button" class="btn btn-secondary btn-back full-width-responsive">
                         <spring:theme code="licenseCancellation.back"/>
                     </button>
                     
-                    <button type="submit" class="btn">
+                    <button type="submit" class="btn full-width-responsive">
                         <spring:theme code="licenseCancellation.next"/>
                     </button>
                 </div>

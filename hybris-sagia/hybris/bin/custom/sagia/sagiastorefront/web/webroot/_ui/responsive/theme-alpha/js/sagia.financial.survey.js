@@ -826,7 +826,7 @@ var submitFinancialSurveyShareholders = function () {
                     $modalDescription.append('<p>' + error + '</p>');
                 });
             } else {
-                $('a[href="#accessibletabscontent0-5"]').click();
+                $('a[href="#accessibletabscontent0-4"]').click();
                 return
             }
         },

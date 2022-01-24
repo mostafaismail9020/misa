@@ -379,6 +379,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                 financialSurveyModel = new FinancialSurveyModel();
                 financialSurveyModel.setQuarter(quarter);
                 financialSurveyModel.setUser((CustomerModel) currentUser);
+                financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.OPEN);
                 modelService.save(financialSurveyModel);
             }
             financialSurveyModelList.add(financialSurveyModel);

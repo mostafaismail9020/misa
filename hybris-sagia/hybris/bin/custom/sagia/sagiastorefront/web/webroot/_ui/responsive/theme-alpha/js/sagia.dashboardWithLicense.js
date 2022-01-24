@@ -542,6 +542,7 @@ SAGIA.dashboardWithLicense = {
 
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr('href', ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/display/" + survey.quarterCode);
                                 }
+                                template.find(".dashboardWidgetFinancialSurveys-btn").attr("data-complaint-Id", survey.quarterCode);
                                 financialSurveysTable.append(template.html());
                             }
                         }

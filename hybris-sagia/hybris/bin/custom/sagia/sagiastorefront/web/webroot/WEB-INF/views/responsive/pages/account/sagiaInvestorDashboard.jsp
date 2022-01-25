@@ -178,19 +178,130 @@
         <h1 class="dashboard-headline js-dashboardWidget-headline text-center pt-5 mb-5">
             Services
         </h1>
-        <div class="dashboardUser_slim dashboardUser_noBorder pb-5">
-            <div class="service-card-wrapper">
-                <div class="service-card" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
-                    <img src="${commonResourcePath}/images/dashboard-media/services/License-Services-Yellow-100x100.png" alt="LICENSING SERVICES" class="text-center"/>
-                    <span class="licensing-heading cursor-pointer"><spring:theme code="dashboard.license.service.name"/></span>
+        
+        <div class="col-xs-12 col-md-12 services-category-list">
+            <ul class="nav nav-pills sagiaNavigation-services" id="pills-tab" role="tablist">
+                <li class="nav-item col-lg-4 col-md-12">
+                    <div class="service-wrapper mx-3">
+                        <a class="nav-link active" id="pills-licensing-tab" data-toggle="pill" href="#licensing" role="tab" aria-controls="pills-licensing" aria-selected="true">
+                            <div class="INS_EPM_border_set text-center">
+                                <img src="${commonResourcePath}/images/dashboard-media/services/License-Services-Yellow-100x100.png" alt="LICENSING SERVICES" class="text-center service-icon-1"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/services/License-Services-blue-100x100.png" alt="LICENSING SERVICES" class="text-center service-icon-2"/>
+                                <span class="licensing-heading"><spring:theme code="dashboard.license.service.name"/></span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="mobile_services mb-5">
+                    <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
+                        <div class="tab-pane fade service_tab_pane_show show active pb-5 m-auto" id="licensing1" role="tabpanel" aria-labelledby="pills-licensing-tab">
+                            <div class="p-4 dashboard-service-wrapper serviceModule-detail">
+                                <div class="content-wrapper">
+                                    <p class="INS_letter_set_para pb-3 mb-3">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                                        industry's standard dummy text ever since the 1500s,
+                                    </p>
+                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/FIRST';">Know more </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item col-lg-4 col-md-12">
+                    <div class="service-wrapper mx-3">
+                        <a class="nav-link " id="pills-govt-tab" data-toggle="pill" href="#govt-service" role="tab" aria-controls="pills-govt" aria-selected="true">
+                            <div class="INS_EPM_border_set text-center">
+                                <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-Yellow-100x100.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-1"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-blue-100x100.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-2"/>
+                                <span class="licensing-heading">
+                                    <spring:theme code="dashboard.governmental.service.name" />
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="mobile_services mb-5">
+                    <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
+                        <div class="tab-pane fade service_tab_pane_show show active pb-5 m-auto" id="govt-service1" role="tabpanel" aria-labelledby="pills-govt-tab">
+                            <div class="p-4 dashboard-service-wrapper serviceModule-detail">
+                                <div class="content-wrapper">
+                                    <p class="INS_letter_set_para pb-3 mb-3">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                                        industry's standard dummy text ever since the 1500s,
+                                    </p>
+                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">Know more </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item col-lg-4 col-md-12">
+                    <div class="service-wrapper mx-3">
+                        <a class="nav-link " id="pills-misa-tab" data-toggle="pill" href="#sagia-services" role="tab"
+                            aria-controls="pills-misa" aria-selected="true">
+                            <div class="INS_EPM_border_set text-center">
+                                <img src="${commonResourcePath}/images/dashboard-media/services/MISA Services.png" alt="MISA SERVICES" class="text-center service-icon-1"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/services/MISA Services-blue-100x100.png" alt="MISA SERVICES" class="text-center service-icon-2"/>
+                                <span class="licensing-heading">
+                                    <spring:theme code="dashboard.misa.service.name" />
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="mobile_services mb-5">
+                    <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
+                        <div class="tab-pane fade service_tab_pane_show show active pb-5 m-auto" id="sagia-services1" role="tabpanel" aria-labelledby="pills-misa-tab">
+                            <div class="p-4 dashboard-service-wrapper serviceModule-detail">
+                                <div class="content-wrapper">
+                                    <p class="INS_letter_set_para pb-3 mb-3">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                                        industry's standard dummy text ever since the 1500s,
+                                    </p>
+                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">Know more </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="tab-content desktop_services services-container-tabcontent" id="pills-tabContent">
+                <div class="tab-pane fade show service_tab_pane_show active m-auto" id="licensing" role="tabpanel"
+                    aria-labelledby="pills-licensing-tab">
+                    <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5">
+                        <div class="content-wrapper">
+                            <p class="INS_letter_set_para pb-3 mb-3">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                                industry's standard dummy text ever since the 1500s,
+                            </p>
+                            <button class="btn-dashboard text-uppercase"
+                                onclick="location.href='${encodedContextPath}/service-search/FIRST';">Know more </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
-                    <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-Yellow-100x100.png" alt="GOVERNMENTAL SERVICES" class="text-center"/>
-                    <span class="licensing-heading cursor-pointer"><spring:theme code="dashboard.governmental.service.name"/></span>
+                <div class="tab-pane fade show service_tab_pane_show m-auto" id="govt-service" role="tabpanel"
+                    aria-labelledby="pills-govt-tab" role="tablist">
+                    <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5">
+                        <div class="content-wrapper">
+                            <p class="INS_letter_set_para pb-3 mb-3">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                                industry's standard dummy text ever since the 1500s,
+                            </p>
+                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">Know more
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
-                    <img src="${commonResourcePath}/images/dashboard-media/services/MISA Services.png" alt="MISA SERVICES" class="text-center"/>
-                    <span class="licensing-heading cursor-pointer"><spring:theme code="dashboard.misa.service.name"/></span>
+                <div class="tab-pane fade show service_tab_pane_show m-auto" id="sagia-services" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
+                    <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5">
+                        <div class="content-wrapper">
+                            <p class="INS_letter_set_para pb-3 mb-3">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                                industry's standard dummy text ever since the 1500s,
+                            </p>
+                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">Know more </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

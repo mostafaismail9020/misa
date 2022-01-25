@@ -327,93 +327,6 @@
 .bg-white{
     background-color: @color-white !important;
 }
-@media (min-width: 1200px) {
-	.container{
-		max-width: 1320px !important;
-	}
-}
-@media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height:1366px) and (max-height:1366px) { /*ipad pro*/
-	.mainSection_grey{
-		height: 34vh;
-		overflow-y: auto;
-	}
-}
-@media (max-width: 991px) {
-	.desktop_services {
-		display: none;
-	}
-	.mobile_services {
-		display: block;
-		width: 100%;
-	}
-	.service-wrapper > span{
-		min-height: 5rem;
-	}
-	.service-wrapper{
-		margin-bottom: 8%;
-	}
-    .service-wrapper .nav-link::after{
-        bottom: 28px;
-    }
-    .services-container-tabcontent{
-        .accordion-item{
-            .accordion-button{
-                    height: auto !important;
-            }
-        }        
-    }
-    .mainSection .expandableContent.expanded .expandableContent-aside{
-        width: 100%;
-    }
-    .renewal-services{
-        // display: block;
-        >div{
-            margin-bottom: 10px;
-        }
-        .mainSection-linkActions_right{
-            justify-content:flex-start;
-        }
-    }
-    .amend-service-link{
-        display: block !important;
-        button{
-            width: 300px;
-            margin-bottom: 10px;
-        }
-    }
-    .service-main.mainSection{
-        .expandableContent.expanded{
-            display: block !important;
-        }
-        .expandableContent.expanded .expandableContent-main{
-            width: 100%;
-        }
-    }
-    .full-width-responsive{
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-    .govt-doc-edit.modal-dialog{
-        max-width: 100% !important;
-    }
-    .amend-service-link{
-        width: 100%;
-        .btn-drafts_list{
-            display: block;
-        }
-    }
-    .amend-ddl-list{
-        .panelTabs-label{
-            min-height: 3vh;
-        }
-    }
-    .amend-btns-list{
-        display: block;
-    }
-    .mob-heading-responsive{
-        display: inline-table;
-    }
-}
 
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
@@ -605,29 +518,6 @@
     }
 }
 
-@media (max-width:1000px) {
-    .serviceModule .serviceModule-detail{
-        width: 100%;
-    }
-    
-}
-
-@media (max-width: 640px){
-    .service-wrapper .nav-link::after {
-        bottom: 6px;
-    }
-    .services-container-tabcontent{
-        .accordion-item{
-            .accordion-button{
-                .plus-minus-icon{
-                    width: 10%;
-                }
-            }
-
-        }
-    }
-    
-}
 
 .page-financial{
     .panelTabs_tip_right .panelTabs-navigation .tabs-list li a:after{
@@ -780,4 +670,156 @@ button.btn.btn_link.btn-edit-branch:hover{
 .services-category-img{
     margin-right: 20px !important;
     margin-left: 10px !important;
+}
+
+
+
+.dashboard-service-wrapper{
+    height: 350px;
+    background: @color-white 0% 0% no-repeat padding-box;
+    box-shadow: 0px 30px 75px #00000029;
+    border: 1px solid @color-primary;
+    border-radius: 40px;
+    .content-wrapper{
+        transform: translate(0%, 50%);
+        .INS_letter_set_para{
+            font-size: 25px;
+            text-align: center;
+        }
+        >button{
+            margin: auto;
+            width: 175px;
+        }
+    }
+}
+.sagiaNavigation-services{
+    .service-wrapper{
+        .nav-link{
+            .INS_EPM_border_set{
+                padding: 30px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+	.container{
+		max-width: 1320px !important;
+	}
+}
+@media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height:1366px) and (max-height:1366px) { /*ipad pro*/
+	.mainSection_grey{
+		height: 34vh;
+		overflow-y: auto;
+	}
+}
+@media (max-width: 991px) {
+	.desktop_services {
+		display: none;
+	}
+	.mobile_services {
+		display: block;
+		width: 100%;
+	}
+	.service-wrapper > span{
+		min-height: 5rem;
+	}
+	.service-wrapper{
+		margin-bottom: 8%;
+	}
+    .service-wrapper .nav-link::after{
+        bottom: 28px;
+    }
+    .services-container-tabcontent{
+        .accordion-item{
+            .accordion-button{
+                    height: auto !important;
+            }
+        }        
+    }
+    .mainSection .expandableContent.expanded .expandableContent-aside{
+        width: 100%;
+    }
+    .renewal-services{
+        // display: block;
+        >div{
+            margin-bottom: 10px;
+        }
+        .mainSection-linkActions_right{
+            justify-content:flex-start;
+        }
+    }
+    .amend-service-link{
+        display: block !important;
+        button{
+            width: 300px;
+            margin-bottom: 10px;
+        }
+    }
+    .service-main.mainSection{
+        .expandableContent.expanded{
+            display: block !important;
+        }
+        .expandableContent.expanded .expandableContent-main{
+            width: 100%;
+        }
+    }
+    .full-width-responsive{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .govt-doc-edit.modal-dialog{
+        max-width: 100% !important;
+    }
+    .amend-service-link{
+        width: 100%;
+        .btn-drafts_list{
+            display: block;
+        }
+    }
+    .amend-ddl-list{
+        .panelTabs-label{
+            min-height: 3vh;
+        }
+    }
+    .amend-btns-list{
+        display: block;
+    }
+    .mob-heading-responsive{
+        display: inline-table;
+    }
+
+    .dashboard-service-wrapper {
+        .content-wrapper{
+            transform: translate(0,20%);
+        }
+    }
+    
+}
+
+@media (max-width:1000px) {
+    .serviceModule .serviceModule-detail{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 640px){
+    .service-wrapper .nav-link::after {
+        bottom: 6px;
+    }
+    .services-container-tabcontent{
+        .accordion-item{
+            .accordion-button{
+                .plus-minus-icon{
+                    width: 10%;
+                }
+            }
+
+        }
+    }
+    .dashboard-service-wrapper{
+        height: 500px;
+    }
+    
 }

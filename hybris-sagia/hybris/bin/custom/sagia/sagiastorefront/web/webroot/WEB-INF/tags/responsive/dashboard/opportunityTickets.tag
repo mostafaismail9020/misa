@@ -30,6 +30,8 @@
 		<div class="dashboardWidget-body">
 		    <div class="dashboardWidgetTickets">
 		        <div class="tableModule tableModule_slim dashboardWidgetTickets-table">
+		        <c:choose>
+                  <c:when test="${fn:length(userOpportunityTickets)>0}">
 		            <table class="tableModule-table">
 		                <thead class="tableModule-head">
 		                	<tr>
@@ -41,6 +43,7 @@
 					           	<th><spring:theme code="dashboard.myopportunity.ticketdetails"/></th>
 					       	</tr>
 						</thead>
+
                         <tbody class="tableModule-body" id="ticketsTable">
                         	<c:forEach items="${userOpportunityTickets}" var="leadTickets">
                             	<tr>
@@ -61,8 +64,13 @@
 								</tr>
                            </c:forEach>
 						</tbody>
-                 	</table>
-				</div>
+                   </table>
+                </c:when>
+            <c:otherwise>
+              <spring:theme code="dashboard.license.no.data.available"/>
+            </c:otherwise>
+          </c:choose>
+		</div>
                                     
                 <div class="paginationModule paginationModule_loading">
                    <%--  <c:if test="${!pageIsDashboard}">

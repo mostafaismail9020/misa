@@ -101,7 +101,7 @@
                     <div class="col-6">
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
                         	<!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
-                            <div class="account-manager"><h4 class="clr_gld">Account Manager</h4></div>
+                            <div class="account-manager"><h4 class="clr_gld"><spring:theme code="dashboard.license.account.manager.title"/></h4></div>
                             <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-value h5"><c:out value='${user.name}'/></span></div>
                             <div class="dashboardUser-label profile-detail"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
                             <div class="dashboardUser-label profile-detail"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
@@ -176,7 +176,7 @@
 <section class="mainSection mainSection_noPadding">
     <div class="container">
         <h1 class="dashboard-headline js-dashboardWidget-headline text-center pt-5 mb-5">
-            Services
+            <spring:theme code="dashboard.license.services.title"/>
         </h1>
         
         <div class="col-xs-12 col-md-12 services-category-list">
@@ -313,7 +313,7 @@
     <div class="container">
         <div class="Inc-title-header py-5">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
-                LICENSES
+                <spring:theme code="dashboard.license.licenses.title"/>
                 
             </h1>
             <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard btn_link_slim">
@@ -329,10 +329,10 @@
         <div class="Inc-title-header py-5">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
                 <c:if test="${language eq 'en'}">
-                    LICENSES
+                    <spring:theme code="dashboard.license.licenses.title"/>
                 </c:if>
                 <c:if test="${language eq 'ar'}">
-                     LICENSES
+                     <spring:theme code="dashboard.license.licenses.title"/>
                 </c:if>
             </h1>
 		</div>
@@ -415,7 +415,7 @@
                                                 <div class="paginationModule-items">
                                                     <div class="loadingModule">
                                                         <div class="loadingModule-icon"><icon:loading-spinner /></div>
-                                                        <div class="loadingModule-msg">Loading content ...</div>
+                                                        <div class="loadingModule-msg"><spring:theme code="dashboard.license.loading.content.title"/></div>
                                                     </div>
                                                 </div>
                                                 <button class="paginationModule-control paginationModule-control_right">
@@ -490,7 +490,7 @@
                                                 <div class="paginationModule-items">
                                                     <div class="loadingModule">
                                                         <div class="loadingModule-icon"><icon:loading-spinner /></div>
-                                                        <div class="loadingModule-msg">Loading content ...</div>
+                                                        <div class="loadingModule-msg"><spring:theme code="dashboard.license.loading.content.title"/></div>
                                                     </div>
                                                 </div>
                                                 <button class="paginationModule-control paginationModule-control_right">
@@ -534,7 +534,7 @@
             <div class="dashboard-container">
                 <div class="row titleContainer">
                     <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
-                        <h1 class="section-title text-center clr_gld py-5">NEWS &amp; UPDATES</h1>
+                        <h1 class="section-title text-center clr_gld py-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
                         <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp;
                             <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
                     	</a>
@@ -786,7 +786,7 @@
                                             <div class="paginationModule-items">
                                                 <div class="loadingModule">
                                                     <div class="loadingModule-icon"><icon:loading-spinner /></div>
-                                                    <div class="loadingModule-msg">Loading content ...</div>
+                                                    <div class="loadingModule-msg"><spring:theme code="dashboard.license.loading.content.title"/></div>
                                                 </div>
                                             </div>
                                             <button class="paginationModule-control paginationModule-control_right">
@@ -857,7 +857,7 @@
                                             <div class="paginationModule-items">
                                                 <div class="loadingModule">
                                                     <div class="loadingModule-icon"><icon:loading-spinner /></div>
-                                                    <div class="loadingModule-msg">Loading content ...</div>
+                                                    <div class="loadingModule-msg"><spring:theme code="dashboard.license.loading.content.title"/></div>
                                                 </div>
                                             </div>
                                             <button class="paginationModule-control paginationModule-control_right">

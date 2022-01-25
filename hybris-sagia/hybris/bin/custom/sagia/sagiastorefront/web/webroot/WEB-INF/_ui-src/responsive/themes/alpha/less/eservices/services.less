@@ -12,11 +12,16 @@
 .service-time{
     justify-content: flex-end;
 }
-.btn:hover:not([disabled]), .btn[hover]:not([disabled]) {
-    color: @color-white !important;
-    background-color: @color-primary !important;
-    border-color: @color-primary !important;
-  }
+// .btn:hover:not([disabled]), .btn[hover]:not([disabled]) {
+//     color: @color-white !important;
+//     background-color: @color-primary !important;
+//     border-color: @color-primary !important;
+//   }
+
+.image-pos{
+    margin-right: 40px;
+    margin-top: -20px;
+}
 .service-wrapper{
 	background: @color-white 0% 0% no-repeat padding-box;
     box-shadow: 0px 18px 36px #00000029;
@@ -30,7 +35,7 @@
 
     span.licensing-heading{
         text-align: center;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 30px;
         letter-spacing: 0px;
         color: #8C8B8B;
@@ -51,7 +56,7 @@
         border-radius: 100px;
         color: @color-primary;
         font-size: 42px;
-        font-weight: bold;
+        font-weight: 600;
         display: flex;
         bottom: -20px;
         background: @color-white 0% 0% no-repeat padding-box;
@@ -109,7 +114,7 @@
     }
     .serviceModule-request a.request-service{
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 500;
         width:34%;
         height: 50px;
         border-radius: @border-radius;
@@ -136,7 +141,7 @@
 }
 .service-details-wrapper p{
 	text-align: center;
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 25px;
 	letter-spacing: 0px;
 	color: @color-text;
@@ -144,7 +149,7 @@
 .serviceModule-detail {
     p,li{
         text-align: left;
-        font-weight:600;
+        font-weight:500;
         font-size: 20px;
         letter-spacing: 0px;
         color: @color-text;
@@ -179,7 +184,7 @@
 }
 .btn_slim{
     font-size: 16px !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     cursor: pointer;
     display: flex !important;
     justify-content: center !important;
@@ -283,7 +288,7 @@
         font-size: 30px;
     }
     #currentStatus{
-        font-weight: 600;
+        font-weight: 500;
         font-size: 20px;
         color: @color-text;
     }
@@ -299,7 +304,7 @@
 .contentModule-headline, .contentModule-headline-service-info{        
     text-align: left;
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     width: 100%;
 }
@@ -310,7 +315,7 @@
     color: @color-golden !important;
     text-align: left;
     font-size: 30px !important;
-    font-weight: 600;
+    font-weight: 500;
     background: none !important;
     text-transform: uppercase !important;
 }
@@ -338,6 +343,9 @@
     svg{
         transform: scaleX(-1);
     }
+}
+.back_to_service:hover{
+    background-color: @color-white !important;
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -467,7 +475,7 @@
                 h5{
                     color: @color-white;
                     font-size: 24px;
-                    font-weight: 600;
+                    font-weight: 500;
                     text-align: left;
                     width: 93%;
                 }   
@@ -563,7 +571,7 @@
 }
 .headline-golden{
     font-size: 20px !important;
-    font-weight: bold !important;
+    font-weight: 600 !important;
     letter-spacing: 0px !important;
     text-transform: uppercase !important;
     color:@color-golden !important;
@@ -580,7 +588,7 @@
 .headline-text-dark{
     color:@color-text !important;
     font-size: 20px !important;
-    font-weight: bold !important;
+    font-weight: 600 !important;
     line-height: 1.5 !important;
 }
 
@@ -623,7 +631,7 @@
             border: 1px solid #EDEDED;
             text-align: left;
             font-size:20px;
-            font-weight:600;
+            font-weight:500;
             letter-spacing: 0px;
             color: #707070;
         }
@@ -650,7 +658,7 @@
     font-size: 16px;
     padding-left: 30px;
     top: -18px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .formInputBox .form-control ~.register-form label.focused,.formTextArea .form-control,.formRadioButton .control-label{
     letter-spacing: 0px;

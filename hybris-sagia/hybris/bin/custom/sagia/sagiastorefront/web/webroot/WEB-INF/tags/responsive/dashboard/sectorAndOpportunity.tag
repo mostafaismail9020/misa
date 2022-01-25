@@ -12,8 +12,8 @@
        <c:if test="${language eq 'ar'}">
            <span class="clr_gld"> <spring:theme code="text.dashboard.without.license.sectorAndOpportunities"/>&nbsp;${category.name}</span>
        </c:if>
-       <a href="/${language}/sectors-opportunities/opportunities" class="btn-dashboard float-right text-uppercase"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/> <img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/></a>
    </h1>
+   <a href="/${language}/sectors-opportunities/opportunities" class="btn-dashboard dashboard-invest-btn text-uppercase"><spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/> <img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/></a>
  </div>
                    
 <div class="js-dashboardWidget">

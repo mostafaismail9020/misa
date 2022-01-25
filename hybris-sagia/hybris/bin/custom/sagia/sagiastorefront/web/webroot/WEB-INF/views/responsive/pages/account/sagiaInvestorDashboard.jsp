@@ -166,7 +166,7 @@
                 <a href="${encodedContextPath}/my-sagia/notifications" class="btn btn_round"><spring:theme code="account.notifications.title"/></a>
             </div>
             <div class="globalMessage-msg">
-                <div class="globalMessage-icon"><icon:warning/></div>
+                <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/></div>
                 <spring:theme code="dashboard.message.text"/>
             </div>
         </div>
@@ -323,6 +323,7 @@
     </div>
 </section> -->
 
+
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">
         <div class="Inc-title-header py-5">
@@ -333,9 +334,9 @@
                 <c:if test="${language eq 'ar'}">
                      LICENSES
                 </c:if>
-                <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
             </h1>
 		</div>
+        <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard dashboard-exportall-btn text-uppercase"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
     </div>
 </section>
 
@@ -612,8 +613,8 @@
                         <spring:theme code="dashboard.license.letus.help.you.emailus.email"/>
                     </span>
                     <div class="email-buttons">
-                        <button class="btn-outline mr-5"><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"/></button>
-                        <button class="btn-dashboard"><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"/></button>
+                        <button class="btn-outline mr-5 js-eServiceTour-start"><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"/></button>
+                        <a class="btn-dashboard" href="/${language}/my-sagia/sagia-profile#enquiriesTab"><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"/></a>
                     </div>
                 </div>
             </div>

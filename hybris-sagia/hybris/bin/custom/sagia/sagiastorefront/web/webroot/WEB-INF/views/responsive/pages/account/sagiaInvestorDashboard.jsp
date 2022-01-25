@@ -91,7 +91,7 @@
                             <div class="dashboardUser-col">
                                 <div class="dashboardUser-entry ml-3">
                                     <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                                    <span class="last-login">Last Login:<span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
+                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/> &nbsp; <span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
                                 </div>
                             </div>
                         </div>

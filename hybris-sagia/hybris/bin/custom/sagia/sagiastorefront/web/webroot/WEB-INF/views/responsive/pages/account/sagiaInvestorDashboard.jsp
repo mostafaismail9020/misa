@@ -146,57 +146,57 @@
     </div>
 </section>
 
+<div class="globalMessage-holder" id="awaitingPaymentDiv" style="display: none;">
+    <div class="container">
+        <div class="globalMessage">
+            <div class="globalMessage-action">
+                <a onclick="awaitingPayment()" class="btn btn_round"><spring:theme code="awaiting.payment.pay" /></a>
+            </div>
+            <div class="globalMessage-msg">
+                <div class="globalMessage-icon"><icon:warning/></div>
+                <spring:theme code="dashboard.message.awaitingpayment.text"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="globalMessage-holder" id="globalMessageDivHeader" style="display: none;">
+    <div class="container">
+        <div class="globalMessage">
+            <div class="globalMessage-action">
+                <a href="${encodedContextPath}/my-sagia/notifications" class="btn btn_round"><spring:theme code="account.notifications.title"/></a>
+            </div>
+            <div class="globalMessage-msg">
+                <div class="globalMessage-icon"><icon:warning/></div>
+                <spring:theme code="dashboard.message.text"/>
+            </div>
+        </div>
+    </div>
+</div>
+
 <section class="mainSection mainSection_noPadding">
     <div class="container">
-        <h1 class="dashboard-headline js-dashboardWidget-headline text-center mt-5 pt-5 mb-5">
+        <h1 class="dashboard-headline js-dashboardWidget-headline text-center pt-5 mb-5">
             Services
         </h1>
         <div class="dashboardUser_slim dashboardUser_noBorder pb-5">
             <div class="service-card-wrapper">
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
-                    <span><a href="${encodedContextPath}/service-search/FIRST"><spring:theme code="dashboard.license.service.name"/></span>
+                    <a href="${encodedContextPath}/service-search/FIRST"><spring:theme code="dashboard.license.service.name"/></a>
                 </div>
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
-                    <span><a href="${encodedContextPath}/service-search/GOVERNMENTAL SERVICES"><spring:theme code="dashboard.governmental.service.name"/></span>
+                    <a href="${encodedContextPath}/service-search/GOVERNMENTAL SERVICES"><spring:theme code="dashboard.governmental.service.name"/></a>
                 </div>
                 <div class="service-card">
                     <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
-                    <span><a href="${encodedContextPath}/service-search/SAGIA SERVICES"><spring:theme code="dashboard.misa.service.name"/></span>
+                    <a href="${encodedContextPath}/service-search/SAGIA SERVICES"><spring:theme code="dashboard.misa.service.name"/></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-    <div class="globalMessage-holder" id="awaitingPaymentDiv" style="display: none;">
-        <div class="container">
-            <div class="globalMessage">
-                <div class="globalMessage-action">
-                    <a onclick="awaitingPayment()" class="btn btn_round"><spring:theme code="awaiting.payment.pay" /></a>
-                </div>
-                <div class="globalMessage-msg">
-                    <div class="globalMessage-icon"><icon:warning/></div>
-                    <spring:theme code="dashboard.message.awaitingpayment.text"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="globalMessage-holder" id="globalMessageDivHeader" style="display: none;">
-        <div class="container">
-            <div class="globalMessage">
-                <div class="globalMessage-action">
-                    <a href="${encodedContextPath}/my-sagia/notifications" class="btn btn_round"><spring:theme code="account.notifications.title"/></a>
-                </div>
-                <div class="globalMessage-msg">
-                    <div class="globalMessage-icon"><icon:warning/></div>
-                    <spring:theme code="dashboard.message.text"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    
 <!-- 
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">

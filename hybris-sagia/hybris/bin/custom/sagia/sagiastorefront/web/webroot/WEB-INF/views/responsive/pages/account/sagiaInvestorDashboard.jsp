@@ -24,7 +24,6 @@
 <%--@elvariable id="user" type="de.hybris.platform.commercefacades.user.data.CustomerData"--%>
 
 <script src = "${MIGS_Session_JS}"></script>
-
 <c:set var="pageIsDashboard" value="${fn:containsIgnoreCase(requestScope['javax.servlet.forward.request_uri'], 'dashboard')}"/>
 
 <%-- <section class="mainSection_grey mainSection_noPadding">
@@ -69,9 +68,7 @@
             </div>
         </div>
     </div>
- 
 </section> --%>
-
 
 
 <section class="mainSection mainSection_noPadding userDetail-block">
@@ -103,12 +100,12 @@
                 <div class="dashboardUser-right col-md-6 px-0">
                     <div class="col-6">
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
-                                <!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
-                                <div class="account-manager"><h4 class="clr_gld">Account Manager</h4></div>
-                                <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-value h5"><c:out value='${user.name}'/></span></div>
-                                <div class="dashboardUser-label profile-detail"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
-                                <div class="dashboardUser-label profile-detail"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
-                                <button class="btn-dashboard text-uppercase">service request</button>
+                        	<!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
+                            <div class="account-manager"><h4 class="clr_gld">Account Manager</h4></div>
+                            <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-value h5"><c:out value='${user.name}'/></span></div>
+                            <div class="dashboardUser-label profile-detail"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
+                            <div class="dashboardUser-label profile-detail"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
+                            <!--  <button class="btn-dashboard text-uppercase">service request</button> -->
                         </div>
                     </div>
                     <div class="col-6 d-flex">
@@ -132,14 +129,15 @@
                                     <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
                                     <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
                                     <div class="sagiaNavigation-subPane-actions">
-                                        <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                                        <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class=" user-icon mr-1">
-                            <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>"
-                            class="sagiaNavigation-btn sagiaNavigation-user"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/></a>
+                            <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
+                            	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -198,6 +196,7 @@
             </div>
         </div>
     </div>
+    
 <!-- 
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">
@@ -212,6 +211,7 @@
         </div>
     </div>
 </section> -->
+
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">
         <div class="Inc-title-header py-5">
@@ -222,12 +222,11 @@
                 <c:if test="${language eq 'ar'}">
                      LICENSES
                 </c:if>
-                <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase"><spring:theme code="dashboard.customize"/> <img class="pl-3"  src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
+                <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
             </h1>
-          </div>
+		</div>
     </div>
 </section>
-
 
 
 <section class="mainSection mainSection_noPadding">
@@ -409,12 +408,12 @@
         <dashboard:opportunityTickets></dashboard:opportunityTickets>
     </div>
 </section>
+
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">
         <dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>
     </div>
 </section>
-
 
 <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">
@@ -424,38 +423,37 @@
                 <div class="row titleContainer">
                     <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
                         <h1 class="section-title text-center clr_gld py-5">NEWS &amp; UPDATES</h1>
-                        <a href="/en/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">
-                            Explore All&nbsp;
-                            <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
-                        
+                        <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp;
+                            <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
+                    	</a>
                     </div>
                 </div>
                 
                 <c:if test="${not empty lastNews}">
-                <div class="row contentWrapper">
-                <c:url value="/mediaCenter/news" var="newsUrl"/>
-                <c:forEach var="currentNews" items="${lastNews}" varStatus="status">
-                    <div class="col-lg-4 col-md-6 card-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
-                            <div class="flip-card">
-                                <div class="card-img">
-                                    <img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
-                                </div>
-                                <div class="card-box p-3 pr-5 home-news-updates-content">
-                                    <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
-                                    <h3 class="my-3">${fn:substring(currentNews.newsTitle,0,29)} ...</h3>
-                                    <!-- <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p> -->
-                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
-                                </div>
-                            </div>
-                        </div>
-                        </c:forEach>
-                
-                    </div>
-                    </c:if>
+	                <div class="row contentWrapper">
+		                <c:url value="/mediaCenter/news" var="newsUrl"/>
+		                <c:forEach var="currentNews" items="${lastNews}" varStatus="status">
+		                    <div class="col-lg-4 col-md-6 card-wrapper aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
+	                            <div class="flip-card">
+	                                <div class="card-img">
+	                                    <img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
+	                                </div>
+	                                <div class="card-box p-3 pr-5 home-news-updates-content">
+	                                    <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
+	                                    <h3 class="my-3">${fn:substring(currentNews.newsTitle,0,29)} ...</h3>
+	                                    <!-- <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p> -->
+	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
+	                                </div>
+	                            </div>
+	                        </div>
+						</c:forEach>
+	          		</div>
+           		</c:if>
             </div>
 	    </div>
     </div>
 </section>
+
 <section class="helpSection">
     <div class="container innerContainer">
         <div class="firstBlock">
@@ -511,6 +509,7 @@
         </div>
     </div>
 </section>
+
 	<!-- <%--<div class="container">
 	<div class="row mt-5">
             <div class="col-md-8 ">
@@ -587,7 +586,6 @@
             </div>
         </div> 
     </div>	--%> -->
-
 
 
 <%-- <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">

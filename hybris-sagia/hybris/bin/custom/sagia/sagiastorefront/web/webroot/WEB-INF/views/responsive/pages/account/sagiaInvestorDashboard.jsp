@@ -180,17 +180,17 @@
         </h1>
         <div class="dashboardUser_slim dashboardUser_noBorder pb-5">
             <div class="service-card-wrapper">
-                <div class="service-card">
-                    <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
-                    <a href="${encodedContextPath}/service-search/FIRST"><spring:theme code="dashboard.license.service.name"/></a>
+                <div class="service-card" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
+                    <img src="${commonResourcePath}/images/dashboard-media/services/License-Services-Yellow-100x100.png" alt="LICENSING SERVICES" class="text-center"/>
+                    <span class="licensing-heading cursor-pointer"><spring:theme code="dashboard.license.service.name"/></span>
                 </div>
-                <div class="service-card">
-                    <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
-                    <a href="${encodedContextPath}/service-search/GOVERNMENTAL SERVICES"><spring:theme code="dashboard.governmental.service.name"/></a>
+                <div class="service-card" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
+                    <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-Yellow-100x100.png" alt="GOVERNMENTAL SERVICES" class="text-center"/>
+                    <span class="licensing-heading cursor-pointer"><spring:theme code="dashboard.governmental.service.name"/></span>
                 </div>
-                <div class="service-card">
-                    <img  alt="" src="${commonResourcePath}/images/B2C/Services icon 1.png"/>
-                    <a href="${encodedContextPath}/service-search/SAGIA SERVICES"><spring:theme code="dashboard.misa.service.name"/></a>
+                <div class="service-card" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
+                    <img src="${commonResourcePath}/images/dashboard-media/services/MISA Services.png" alt="MISA SERVICES" class="text-center"/>
+                    <span class="licensing-heading cursor-pointer"><spring:theme code="dashboard.misa.service.name"/></span>
                 </div>
             </div>
         </div>

@@ -258,7 +258,6 @@ $(document).on('focus blur change click', '.formSelectBox', function (e) {
 
 
 $(document).on('focus blur change keyup', '.formInputBox .register-user-details', function (e) {
-    console.log('e',e);
 	var $currEl = $(this);
     $currEl.parent().addClass('focus-on-change');
 	if (e.type === "keyup") {

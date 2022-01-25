@@ -545,6 +545,12 @@
                 height: 70px;
                 display: flex;
                 align-items: center;
+                >img.services-category-img.icon-1{
+                    display: none;
+                }
+                >img.services-category-img.icon-2{
+                    display: block;
+                }
                 h5{
                     color: @color-white;
                     font-size: 24px;
@@ -567,6 +573,12 @@
                 background: @color-white 0% 0% no-repeat padding-box;
                 border: 1px solid @color-primary;
                 margin-bottom: 10px;
+                >img.services-category-img.icon-1{
+                    display: block;
+                }
+                >img.services-category-img.icon-2{
+                    display: none;
+                }
                 h5{
                     color: @color-primary;
                 }
@@ -603,6 +615,16 @@
 @media (max-width: 640px){
     .service-wrapper .nav-link::after {
         bottom: 6px;
+    }
+    .services-container-tabcontent{
+        .accordion-item{
+            .accordion-button{
+                .plus-minus-icon{
+                    width: 10%;
+                }
+            }
+
+        }
     }
     
 }
@@ -740,7 +762,7 @@
     top: -18px;
     font-weight: 600;
 }
-.formInputBox .form-control,.formTextArea .form-control,.formRadioButton .control-label{
+.formInputBox .form-control ~.register-form label.focused,.formTextArea .form-control,.formRadioButton .control-label{
     letter-spacing: 0px;
     color: #707070;
     font-size: 20px;
@@ -754,4 +776,8 @@ button.btn.btn_link.btn-edit-branch:hover{
 }
 .govt-doc-edit.modal-dialog{
     max-width: 50%;
+}
+.services-category-img{
+    margin-right: 20px !important;
+    margin-left: 10px !important;
 }

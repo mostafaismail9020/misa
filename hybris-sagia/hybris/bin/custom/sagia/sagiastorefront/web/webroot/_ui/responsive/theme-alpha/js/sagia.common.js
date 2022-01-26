@@ -576,34 +576,36 @@ function expandServiceTab(code){
                 xhr.setRequestHeader("Content-Type", "application/json");
             },
             success: function (data) {
-                data = JSON.parse(data);
                 $('#service-tab').empty();
-                if (data.length) {
-                    var service = "";
-                    data.forEach(function (info) {
-                    service += '<div class="serviceModule serviceModule_list mx-5 pt-4">';
-                    service += '    <div class="serviceModule-section">';
-                    service += '        <div class="serviceModule-content">';
-                    service += '            <div class="serviceModule-description">';
-                    service += '                <span class="serviceModule-headline"> ' + info.title + ' </span>';
-                   if(info.content === "")
-                    service += '                        <div cladata.contentss="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>';
-                  else
-                    service += '                        <div class="serviceModule-detail serviceList-description"><div class="w-75"><p>' + info.content + '</p></div></div>';
-                   
-                    service += '            </div>';
-                    service += '        </div>';
-                    service += '    </div>';
-                    service += '</div>';
+                if (data !== "") {
+                    data = JSON.parse(data);
+                    if (data.length) {
+                        var service = "";
+                        data.forEach(function (info) {
+                            service += '<div class="serviceModule serviceModule_list mx-5 pt-4">';
+                            service += '    <div class="serviceModule-section">';
+                            service += '        <div class="serviceModule-content">';
+                            service += '            <div class="serviceModule-description">';
+                            service += '                <span class="serviceModule-headline"> ' + info.title + ' </span>';
+                            if (info.content === "")
+                                service += '                        <div cladata.contentss="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>';
+                            else
+                                service += '                        <div class="serviceModule-detail serviceList-description"><div class="w-75"><p>' + info.content + '</p></div></div>';
 
-                    })
+                            service += '            </div>';
+                            service += '        </div>';
+                            service += '    </div>';
+                            service += '</div>';
 
-                    $('#service-tab').append(service);
-                    $('#service-tab').addClass('expanded');
-                    $('#service-tab').show();
-                    $(".serviceTab").text('Hide Service Tab')
+                        })
 
-                } else {
+                        $('#service-tab').append(service);
+                        $('#service-tab').addClass('expanded');
+                        $('#service-tab').show();
+                        $(".serviceTab").text('Hide Service Tab')
+
+                    }
+                }else {
                     $('#service-tab').empty();
                     $('#service-tab').removeClass('expanded');
                     $('#service-tab').hide();

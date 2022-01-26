@@ -70,7 +70,7 @@
             <div class="d-flex row renewal-services w-100">
                 <div class="col-md-3">
                     <a href="${request.contextPath}/services/government/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}" class="btn btn_leftIconLink btn_darkLink back_to_service">
-                        <span class="iconElement iconElement_closeBack"><icon:close/></span>
+                        <span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>
                         <spring:theme code="createGovtServices.backToServiceDetails.text"/>
                     </a>
                 </div>
@@ -92,10 +92,10 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
     <div class="container">
 
-        <div class="expandableContent-main" id="expandedContentParent" style="${serviceList.size() == 0 ? 'visibility:hidden;' : ''}">
+        <div class="expandableContent-main mt-4" id="expandedContentParent" style="${serviceList.size() == 0 ? 'visibility:hidden;' : ''}">
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div id="detailedConvertToNationalsContent" class="contentModule">
                     <div class="contentModule-section">
@@ -162,7 +162,7 @@
                     <div class="contentModule">
                         <div class="contentModule-section">
                             <div class="contentModule-headline contentModule-headline-service-info">
-                                <icon:documents/>
+                                <!-- <icon:documents/> -->
                                 <spring:theme code="text.account.followup.supportDocuments"/>
                                 <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="<spring:theme code="text.account.followup.supportDocuments.mandatory"/>" data-original-title="" title=""><icon:tipInfo/></span>
                             </div>

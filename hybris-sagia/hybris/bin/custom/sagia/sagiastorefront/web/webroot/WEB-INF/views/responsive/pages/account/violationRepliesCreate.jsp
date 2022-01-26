@@ -64,7 +64,7 @@
 <div class="container mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="./" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme
+            <a href="./" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span></span><spring:theme
                     code="text.account.followup.backViolationReplies"/></a>
         </div>
     </div>

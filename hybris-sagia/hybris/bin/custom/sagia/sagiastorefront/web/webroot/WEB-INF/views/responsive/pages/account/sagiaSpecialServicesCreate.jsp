@@ -78,7 +78,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="row renewal-services w-100">
                 <div class="col-xl-3 col-12">
-                   <a href="${returnUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="specialservices.back.to.service.details"/></a>
+                   <a href="${returnUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="specialservices.back.to.service.details"/></a>
                 </div>
                 <div class="col-xl-9 col-12 btn-drafts_list amend-service-link">
                     <button class="btn btn_round btn_slim js-save-draft"
@@ -103,7 +103,7 @@
     <div class="container">
         <c:if test='${serviceType eq "transfer-of-iqama" or serviceType eq "final-exit-visa"}'>
             <c:if test='${fn:length(existingApplicants) gt 0}'>
-                <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
+                <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-3">
                     <div class="contentModule">
                         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
                             <!-- <div class="contentModule-headline">
@@ -158,7 +158,7 @@
                 </div>
             </c:if>
         </c:if>
-        <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
+        <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-3">
             <div class="contentModule">
                 <form:form method="post" action="${encodedContextPath}/special-services/${serviceType}/add-applicant" modelAttribute="serviceApplicant">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">

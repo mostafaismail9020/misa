@@ -58,7 +58,7 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <a href="${encodedContextPath}/my-sagia/sagia-profile"
-           class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span>Back to Account Overview</a>
+           class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to Account Overview</a>
     </div>
 </div>
 <div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
@@ -299,7 +299,7 @@
                                     <span class="iconElement iconElement_locationPin_filled"><icon:locationPin_filled/></span>
                                     Physical address
                                 </div> -->
-                                <div class="contentModule-headline headline-background-wrapper">
+                                <div class="contentModule-headline headline-background-wrapper w-50">
                                     <!-- <span class="iconElement iconElement_locationPin_filled"><icon:locationPin_filled/></span> -->
                                     <span class="headline-background">Physical address</span> 
                                 </div>

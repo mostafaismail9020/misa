@@ -64,7 +64,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="d-flex row renewal-services w-100">
                 <div class="col-md-3">
-                    <a href="${request.contextPath}/real-estate" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span>
+                    <a href="${request.contextPath}/real-estate" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span></span>
                         <spring:theme code="text.specialservices.backToServiceDetails"/>
                     </a>
                 </div>
@@ -91,9 +91,9 @@
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
                     <div class="contentModule-section">
-                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-headline_bordered w-100">
                             <div class="contentModule-headline headline-text">
-                                <icon:info/>
+                                <!-- <icon:info/> -->
                                 <spring:theme code="text.headertext.info"/>
                             </div>
                         </div>
@@ -182,9 +182,9 @@
             <div id="realEstateAddInputDetails" hidden="true">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule">
-                        <div class="contentModule-section">
+                        <div class="contentModule-section contentModule-actions_wrap contentModule-headline_bordered w-100">
                         	<div class="contentModule-headline headline-text">
-                                <icon:info/>
+                                <!-- <icon:info/> -->
                                 <spring:theme code="realEstate.headertext.propinfo"/>
                             </div>
                             <div class="tableModule tableModule_striped" >
@@ -472,9 +472,9 @@
             <div id="realEstateDocuments" hidden="true">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule">
-                        <div class="contentModule-section">
+                        <div class="contentModule-section contentModule-actions_wrap contentModule-headline_bordered w-100">
                             <div class="contentModule-headline headline-text">
-                                <icon:documents/>
+                                <!-- <icon:documents/> -->
                                 <spring:theme code="text.account.followup.supportDocuments"/>
                                 <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
                             </div>

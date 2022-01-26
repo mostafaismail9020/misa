@@ -8,6 +8,8 @@ import com.sap.ibso.eservices.sagiaservices.services.SagiaConfigurationFacade;
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractPageController;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
+import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.servicelayer.user.UserService;
 import org.apache.commons.collections.MapUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +35,8 @@ public class InvestorDashboardEditController extends AbstractPageController {
     @Resource(name = "sagiaDashboardSectionsService")
     private SagiaDashboardSectionsService sagiaDashboardSectionsService;
 
+    @Resource(name = "userService")
+    private UserService userService;
 
     private static final String SAGIA_DASHBOARD_EDIT_CMS_PAGE = "dashboard-edit";
     private static final String REDIRECT_TO_DASHBOARD_WITHOUT_LICENSE = REDIRECT_PREFIX + "/dashboard-without-license";
@@ -56,6 +60,8 @@ public class InvestorDashboardEditController extends AbstractPageController {
 
         model.addAttribute("enableSalaryAndEmployment", sagiaConfigurationFacade.isEnabledSalaryAndEmploymentOnDashboard());
 
+        CustomerModel customerModel = (CustomerModel) userService.getCurrentUser();
+        model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());
 
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_DASHBOARD_EDIT_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_DASHBOARD_EDIT_CMS_PAGE));

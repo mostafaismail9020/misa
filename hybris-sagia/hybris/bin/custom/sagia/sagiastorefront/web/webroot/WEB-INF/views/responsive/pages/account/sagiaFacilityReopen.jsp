@@ -81,10 +81,11 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="row renewal-services w-100">
+                <div class="col-md-3 col-12 px-0">
+                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
+                </div>
                 <div class="col-xl-3 col-12">
-            <a href="${encodedContextPath}/dashboard"
-               class="btn btn_leftIconLink btn_darkLink"><span>&times;</span><spring:theme
-                    code="general.backtodashboard"/></a>
+                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')">Show Service Tabs</button>
                 </div>
                 <div class="col-xl-6 col-12 d-flex">
                     <c:if test="${reopenFacilityRequests.createRequestEnabled}">
@@ -112,21 +113,22 @@
     </div>
 </div>
 
-
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
+    <div class="container">
+        <div class="expandableContent" id="service-tab">
+            
+        </div>
+    </div>
+</div>
 <div class="mainSection mainSection_dark mainSection_pdt16 mt-5 service-main">
     <div class="container">
         <c:if test="${fn:length(reopenFacilityRequests.serviceRequests) gt 0}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent"
-                        data-expand-target="expand01">
-                    <div class="hidden">
-                        <span><spring:theme code="text.account.followup.showServiceHistory"/>&#x27f6;</span>
-                    </div>
-                    <div>
-                        <span><spring:theme code="text.account.followup.hideServiceHistory"/>&#x27f6;</span>
-                    </div>
-                </button>
+            <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand02">
+                <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+            </button>
             </c:if>
-        <div class="expandableContent expanded" id="expand01">
+        <div class="expandableContent expanded mt-3" id="expand01">
             <c:if test="${fn:length(reopenFacilityRequests.serviceRequests) gt 0}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
@@ -163,7 +165,7 @@
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule">
                         <div class="contentModule-section">
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper w-100">
                                 <!-- <div class="contentModule-headline">
                                     <icon:info/>
                                     <spring:theme code="facilityReopen.entityInformation.text"/>
@@ -209,7 +211,7 @@
                             </div>
                         </div>
                         <div class="contentModule-section">
-                            <div class="contentModule-actions contentModule-actions_noMargin contentModule-actions_wrap headline-background-wrapper">
+                            <div class="contentModule-actions contentModule-actions_noMargin contentModule-actions_wrap headline-background-wrapper w-100">
                                 <!-- <div class="contentModule-headline contentModule-headline_smallMargin">
                                     <icon:enquiry2/>
                                     <spring:theme code="facilityReopen.comment.text"/>
@@ -237,7 +239,7 @@
                                 <spring:theme code="facilityReopen.documents.text"/>
                             </div> -->
                             
-                            <div class="contentModule-actions contentModule-actions_wrap headline-background-wrapper">
+                            <div class="contentModule-actions contentModule-actions_wrap headline-background-wrapper w-100">
                                 <span class="headline-background"><spring:theme code="facilityReopen.documents.text"/></span>
                             </div>
 

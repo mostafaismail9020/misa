@@ -75,10 +75,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="row renewal-services w-100">
                 <div class="col-xl-3 col-12">
-                    <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink">
-                        <span class="iconElement iconElement_closeBack"><icon:close/></span>
-                        <spring:theme code="general.backtodashboard"/>
-                    </a>
+                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
                 </div>
             </div>
             <div class="row renewal-services w-100">

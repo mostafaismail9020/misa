@@ -111,7 +111,7 @@
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent1">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="GOVERNMENTAL SERVICES1" role="tabpanel" aria-labelledby="pills-govt-tab" role="tablist">
                             <div class="p-4 serviceModule-detail">
-                                <p class="INS_letter_set_para pb-3 mb-3">
+                                <p class="INS_letter_set_para pb-3 mb-3 service-para">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                                 </p>
                             </div>
@@ -128,10 +128,8 @@
                                         </h2>
                                         <div id="collapse-g${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-g${loop.index}" data-parent="#govtServices1" data-bs-parent="#govtServices1">
                                           <div class="accordion-body serviceModule-detail">
-                                            <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
-                                                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                                                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                            <p class="service-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
                                             </p>
                                             <c:forEach items="${category.value}" var="service">
                                                     <div id="serviceModule" class="serviceModule serviceModule_list">
@@ -177,7 +175,7 @@
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent1">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES1" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
                             <div class="p-4 serviceModule-detail">
-                                <p class="INS_letter_set_para pb-3 mb-3">
+                                <p class="INS_letter_set_para pb-3 mb-3 service-para">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                                 </p>
                             </div>
@@ -194,10 +192,8 @@
                                         </h2>
                                         <div id="collapse-m${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-m${loop.index}" data-parent="#misaServices1" data-bs-parent="#misaServices1">
                                           <div class="accordion-body serviceModule-detail">
-                                            <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
-                                                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                                                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                            <p class="service-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
                                             </p>
                                             <c:forEach items="${category.value}" var="service">
                                                     <div id="serviceModule" class="serviceModule serviceModule_list">
@@ -233,7 +229,7 @@
                 <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
                     <c:if test="${category.key=='Licensing Services'}">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5 m-auto" id="FIRST" role="tabpanel" aria-labelledby="pills-licensing-tab">
-                            <div class="p-4 serviceModule-detail m-5">
+                            <div class="p-4 serviceModule-detail mt-5 mx-2">
                                 <p class="INS_letter_set_para pb-3 mb-3">${category.value[0].category.description}</p>
                                 <c:forEach items="${category.value}" var="service">
                                     <div id="serviceModule" class="serviceModule serviceModule_list mr-5">
@@ -260,8 +256,8 @@
                 </c:forEach>
                 
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="GOVERNMENTAL SERVICES" role="tabpanel" aria-labelledby="pills-govt-tab" role="tablist">
-                        <div class="p-4 serviceModule-detail m-5">
-                            <p class="INS_letter_set_para pb-3 mb-3">
+                        <div class="p-4 serviceModule-detail mt-5 mx-2">
+                            <p class="INS_letter_set_para pb-3 mb-3 service-para">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>
                         </div>
@@ -278,10 +274,8 @@
                                     </h2>
                                     <div id="collapse-g${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-g${loop.index}" data-parent="#govtServices" data-bs-parent="#govtServices">
                                       <div class="accordion-body serviceModule-detail">
-                                        <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
-                                            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                                            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                        <p class="service-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
                                         </p>
                                         <c:forEach items="${category.value}" var="service">
                                                 <div id="serviceModule" class="serviceModule serviceModule_list">
@@ -314,8 +308,8 @@
                    
 
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
-                        <div class="p-4 serviceModule-detail m-5">
-                            <p class="INS_letter_set_para pb-3 mb-3">
+                        <div class="p-4 serviceModule-detail mt-5 mx-2">
+                            <p class="INS_letter_set_para pb-3 mb-3 service-para">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>
                         </div>
@@ -332,10 +326,8 @@
                                     </h2>
                                     <div id="collapse-m${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-m${loop.index}" data-parent="#misaServices" data-bs-parent="#misaServices">
                                       <div class="accordion-body serviceModule-detail">
-                                        <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
-                                            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                                            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                        <p class="service-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
                                         </p>
                                         <c:forEach items="${category.value}" var="service">
                                                 <div id="serviceModule" class="serviceModule serviceModule_list">

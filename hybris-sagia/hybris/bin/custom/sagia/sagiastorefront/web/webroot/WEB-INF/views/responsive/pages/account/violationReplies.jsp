@@ -42,7 +42,7 @@
 <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header row service-time">
-            <h1 class="mainSection-headline"><spring:theme code="text.account.followup.violationReplies"/></h1>
+            <!-- <h1 class="mainSection-headline"><spring:theme code="text.account.followup.violationReplies"/></h1> -->
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
                     <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
@@ -84,9 +84,11 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="row renewal-services w-100">
+                <div class="col-md-3 col-12 px-0">
+                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
+                </div>
                 <div class="col-xl-3 col-12">
-                    <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink m-auto"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme
-                            code="general.backtodashboard"/></a>
+                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')">Show Service Tabs</button>
                 </div>
                 <div class="col-xl-3 col-12">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
@@ -99,12 +101,19 @@
         </div>
     </div>
 </div>
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
+    <div class="container">
+        <div class="expandableContent" id="service-tab">
+            
+        </div>
+    </div>
+</div>
 <div class="mainSection mainSection_dark mainSection_pdt16">
     <div class="container">
         <c:if test="${fn:length(replies) > 1}">
-            <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
-                <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span>&#x27f6;</span></div>
-                <div><spring:theme code="text.account.followup.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
+            <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand02">
+                <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
         </c:if>
         <div class="expandableContent expanded" id="expand01">

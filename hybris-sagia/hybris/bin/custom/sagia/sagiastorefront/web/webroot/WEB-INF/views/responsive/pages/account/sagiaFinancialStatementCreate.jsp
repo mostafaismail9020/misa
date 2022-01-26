@@ -54,7 +54,7 @@
         <div class="row renewal-services w-100">
             <div class="col-xl-3 col-12">
                 <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink">
-                    <span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="legalConsultationCreate.backToAccountOverview.text"/>
+                    <span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="legalConsultationCreate.backToAccountOverview.text"/>
                 </a>
             </div>
             <div class="col-xl-9 col-12 btn-drafts_list amend-service-link">

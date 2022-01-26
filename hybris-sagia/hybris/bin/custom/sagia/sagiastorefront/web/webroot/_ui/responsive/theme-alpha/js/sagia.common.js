@@ -567,8 +567,6 @@ $(function() {
     // }
 });
 
-
-
 $(document).on('click',".services-category-list .nav .nav-link",function(){
     $(".service_tab_pane_show").removeClass("show").removeClass("active");
       $("#"+$(this).attr('href').replace("#","")).addClass("show").addClass("active");
@@ -589,6 +587,11 @@ $(document).on('click',".services-category-list .nav .nav-link",function(){
       
               $(".services-category-list .nav .nav-link").removeClass("active");
               $(this).addClass('active');
+  
+              let active_attr = $('[aria-labelledby="'+ $(this)[0].id +'"]');
+  
+              $(active_attr).addClass('show');
+              $(active_attr).addClass('d-block');
           }
       })
   })
@@ -598,3 +601,68 @@ $(document).on('click',".services-category-list .nav .nav-link",function(){
           location = requestURL;
       }
   }
+
+  
+function expandServiceTab(code){
+    if (!$('#service-tab').hasClass('expanded')) {
+        $.ajax(ACC.config.encodedContextPath + "/service-search/serviceDetails/"+code, {
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Accept", "application/json");
+                xhr.setRequestHeader("Content-Type", "application/json");
+            },
+            success: function (data) {
+                data = JSON.parse(data);
+                $('#service-tab').empty();
+                if (data.length) {
+                    var service = "";
+                    data.forEach(function (info) {
+                    service += '<div class="serviceModule serviceModule_list mx-5 pt-4">';
+                    service += '    <div class="serviceModule-section">';
+                    service += '        <div class="serviceModule-content">';
+                    service += '            <div class="serviceModule-description">';
+                    service += '                <span class="serviceModule-headline"> ' + info.title + ' </span>';
+                   if(info.content === "")
+                    service += '                        <div cladata.contentss="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>';
+                  else
+                    service += '                        <div class="serviceModule-detail serviceList-description"><div class="w-75"><p>' + info.content + '</p></div></div>';
+                   
+                    service += '            </div>';
+                    service += '        </div>';
+                    service += '    </div>';
+                    service += '</div>';
+
+                    })
+
+                    $('#service-tab').append(service);
+                    $('#service-tab').addClass('expanded');
+                    $('#service-tab').show();
+                    $(".serviceTab").text('Hide Service Tab')
+
+                } else {
+                    $('#service-tab').empty();
+                    $('#service-tab').removeClass('expanded');
+                    $('#service-tab').hide();
+                    $(".serviceTab").text('Show Service Tab');
+                }
+            }
+        });
+    }
+    else{
+        $('#service-tab').empty();
+        $('#service-tab').removeClass('expanded');
+        $('#service-tab').hide();
+        $(".serviceTab").text('Show Service Tab');
+    }
+}
+
+$('.btn_show_hide_service').on('click',function(){
+    $(this).children('div').each(function(){
+        if($(this).is(":visible")) {
+            $(this).addClass('hidden').hide();
+            $("#expand-03").hide();
+        } else {
+            $(this).removeClass('hidden').show();
+            $("#expand-03").show();
+        }				
+    });
+})

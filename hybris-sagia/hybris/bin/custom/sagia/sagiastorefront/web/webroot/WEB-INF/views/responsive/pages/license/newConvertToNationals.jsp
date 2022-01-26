@@ -17,7 +17,39 @@
     var isInstant = ${isInstant};
 </script>
 
-<div class="mainSection mainSection_dark">
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="convertlicense.converttonational" />
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification">123</div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="convertlicense.converttonational"/></h1>
@@ -38,17 +70,42 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
+            <!-- <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a> -->
+            <div class="row w-100 renewal-services">
+                <div class="col-md-3 col-12 px-0">
+                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
+                </div>
+            </div>
+            <div class="row w-100 mt-4">
+                <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
+                    <button class="btn btn_round btn_slim js-save-draft" data-target-form="formNewConvertToNationals" data-service-id="${serviceId}">
+                        <spring:theme code="general.savedraft"/>
+                        <span class="iconElement iconElement_save"><icon:save/></span>
+                    </button>
+                    <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if>
+                            data-target-form="formNewConvertToNationals"
+                            data-service-id="${serviceId}">
+                        <spring:theme code="general.loaddraft"/>
+                        <span class="iconElement iconElement_save"><icon:upload/></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
+    <div class="container">
+        <div class="expandableContent" id="service-tab">
+            
+        </div>
+    </div>
+</div>
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-3">
     <div class="container">
         <form:form action="${encodedContextPath}/convertToNationals/create" enctype="multipart/form-data" method="post" id="formNewConvertToNationals" modelAttribute="convertToNationalsFormData">
             <input type="hidden" id="isInstant" name="isInstant" value="${isInstant}" />
@@ -65,7 +122,7 @@
                	<c:otherwise>
                     <div class="contentModule-section">
                         <div class="contentModule-headline">
-                            <span class="iconElement iconElement_documents"><icon:documents/></span>
+                            <!-- <span class="iconElement iconElement_documents"><icon:documents/></span> -->
                             <spring:theme code="text.account.followup.supportDocuments"/>
                         </div>
                         <div class="row">
@@ -96,16 +153,17 @@
                 </div>
             </div>
 
-            <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
-                <button type="reset" class="btn btn-secondary" id="cancelNewConvertToNationalsButton">   <%-- TODO for MinIon: find proper way to reset form --%>
-                    <spring:theme code="general.cancel"/>
-                </button>
-                <div class="formCheckBox formCheckBox_belowPanel">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+                <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
                         <formElement:termsAndConditionsCheckbox path="termsAndConditionsChecked" event="LICENSE_SERVICES" id="checkbox01" name="checkbox01name" cssClass="js-terms-agree"/>
                     </div>
                 </div>
-                <button id="convertSubmitButton" type="submit" value = "SUBMIT" class="btn btn-primary" disabled="disabled">
+                <button type="reset" class="btn btn_leftIconLink btn_outline" id="cancelNewConvertToNationalsButton">   <%-- TODO for MinIon: find proper way to reset form --%>
+                    <spring:theme code="general.cancel"/>
+                </button>
+                
+                <button id="convertSubmitButton" type="submit" value = "SUBMIT" class="btn" disabled="disabled">
                     <spring:theme code="general.submit"/>
                 </button>
             </div>

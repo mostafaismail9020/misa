@@ -31,7 +31,7 @@
 				</a>
 				<c:choose>
 				<c:when test="${userLoggedIn}">
-				      <a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user"><img class="pr-3" src="${commonResourcePath}/images/User-icon.svg" /><span>${user.name}</span></a>
+				      <a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details profile-edit sagiaNavigation-user"><img class="pr-3" src="${commonResourcePath}/images/User-icon.svg" /><span>${user.name}</span></a>
                       <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer"><span>Logout</span></a>
 				      <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
 				      <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>

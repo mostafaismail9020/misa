@@ -21,7 +21,7 @@
                         {{description}}
                     </div>
                     <div class="eServiceTutorial-actions mt-5">
-                        <a class="btn-dashboard js-eServiceTour-next"><spring:theme code="dashboard.tutorial.next"/></a>
+                        <a class="btn-dashboard btn-view-all js-eServiceTour-next"><spring:theme code="dashboard.tutorial.next"/></a>
                     </div>
                 </div>
             </div>

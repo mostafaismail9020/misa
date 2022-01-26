@@ -175,7 +175,7 @@
 
 <section class="mainSection mainSection_noPadding">
     <div class="container">
-        <h1 class="dashboard-headline js-dashboardWidget-headline text-center pt-5 mb-5">
+        <h1 class="dashboard-headline services-headline js-dashboardWidget-headline text-center pt-5 mb-5">
             Services
         </h1>
         <!-- <div class="dashboardUser_slim dashboardUser_noBorder pb-5">
@@ -361,11 +361,11 @@
             <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
                 <div class="dashboard-tabs">
                     <ul class="nav nav-tabs mb-0" role="tablist">
-                        <li class="nav-item" id="myLicense"> <a class="nav-link active" href="#myLicense" role="tab" data-toggle="tab"><spring:theme code="myLicense.title"/></a>
+                        <li class="nav-item" id="js-myLicense"> <a class="nav-link active" href="#myLicense" role="tab" data-toggle="tab"><spring:theme code="myLicense.title"/></a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#payments" role="tab" data-toggle="tab"><spring:theme code="payments.page.title"/></a>
                         </li>
-                        <li class="nav-item"> <a class="nav-link" href="#servicerequest" role="tab" data-toggle="tab"> <spring:theme code="dashboard.servicesRequest.title"/></a>
+                        <li class="nav-item" id="servicesRequest"> <a class="nav-link" href="#servicerequest" role="tab" data-toggle="tab"> <spring:theme code="dashboard.servicesRequest.title"/></a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#savedDrafts" role="tab" data-toggle="tab"><spring:theme code="dashboard.savedDrafts.title"/></a>
                         </li>

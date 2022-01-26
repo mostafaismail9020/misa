@@ -15,11 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 public class SagiaDashboardBannerCarouselComponentController extends AbstractCMSComponentController<SagiaDashboardBannerCarouselComponentModel> {
 
 	private static final Logger LOGGER = Logger.getLogger(SagiaDashboardBannerCarouselComponentController.class);
+	
 	@Override
     protected void fillModel(final HttpServletRequest request, final Model model, final SagiaDashboardBannerCarouselComponentModel component) {
-		LOGGER.info(" Entered into SagiaDashboardBannerCarouselComponentController ");
+		LOGGER.debug(" Entered into SagiaDashboardBannerCarouselComponentController ");
 		model.addAttribute("bannerImages", component.getBannerImage());
-		LOGGER.info(" Exit into SagiaDashboardBannerCarouselComponentController ");
+		LOGGER.debug(" Exit into SagiaDashboardBannerCarouselComponentController ");
     }
 	
 	@Override

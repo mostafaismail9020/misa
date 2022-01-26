@@ -91,7 +91,9 @@
                             <div class="dashboardUser-col">
                                 <div class="dashboardUser-entry ml-3">
                                     <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/> &nbsp; <span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
+                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>&nbsp;<span class="clr_gld">
+                                    	<fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -102,9 +104,18 @@
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
                         	<!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
                             <div class="account-manager"><h4 class="clr_gld"><spring:theme code="dashboard.license.account.manager.title"/></h4></div>
-                            <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-value h5"><c:out value='${user.name}'/></span></div>
-                            <div class="dashboardUser-label profile-detail"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
-                            <div class="dashboardUser-label profile-detail"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
+                            <div class="dashboardUser-label profile-detail dashboardUser-label-xs">
+                            	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/>
+                            	<span class="dashboardUser-value h5"><c:out value='${user.name}'/></span>
+                            </div>
+                            <div class="dashboardUser-label profile-detail">
+                            	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/>
+                            	<span class="dashboardUser-value"><c:out value='${user.email}'/></span>
+                            </div>
+                            <div class="dashboardUser-label profile-detail">
+                            	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/>
+                            	<span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span>
+                            </div>
                             <!--  <button class="btn-dashboard text-uppercase">service request</button> -->
                         </div>
                     </div>
@@ -126,10 +137,14 @@
                                 </c:if>
                                 <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
                                 <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible ">
-                                    <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                                    <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen">
+                                    	<spring:message code="header.mostRecent.text"/>
+                                    </div>
                                     <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
                                     <div class="sagiaNavigation-subPane-actions">
-                                        <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                                        <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications">
+                                        	<spring:message code="header.viewAll.text"/>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +181,9 @@
                 <a href="${encodedContextPath}/my-sagia/notifications" class="btn btn_round"><spring:theme code="account.notifications.title"/></a>
             </div>
             <div class="globalMessage-msg">
-                <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/></div>
+                <div class="globalMessage-icon">
+                	<img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/>
+                </div>
                 <spring:theme code="dashboard.message.text"/>
             </div>
         </div>
@@ -201,7 +218,9 @@
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                         industry's standard dummy text ever since the 1500s,
                                     </p>
-                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/FIRST';">Know more </button>
+                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
+                                    	<spring:theme code="portal.media.know.more" />
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -229,7 +248,9 @@
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                         industry's standard dummy text ever since the 1500s,
                                     </p>
-                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">Know more </button>
+                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
+                                    	<spring:theme code="portal.media.know.more" />
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -258,7 +279,9 @@
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                         industry's standard dummy text ever since the 1500s,
                                     </p>
-                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">Know more </button>
+                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
+                                    	<spring:theme code="portal.media.know.more" />
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +298,7 @@
                                 industry's standard dummy text ever since the 1500s,
                             </p>
                             <button class="btn-dashboard text-uppercase"
-                                onclick="location.href='${encodedContextPath}/service-search/FIRST';">Know more </button>
+                                onclick="location.href='${encodedContextPath}/service-search/FIRST';"><spring:theme code="portal.media.know.more" /></button>
                         </div>
                     </div>
                 </div>
@@ -287,7 +310,8 @@
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                 industry's standard dummy text ever since the 1500s,
                             </p>
-                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">Know more
+                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
+                            	<spring:theme code="portal.media.know.more" />
                             </button>
                         </div>
                     </div>
@@ -299,7 +323,9 @@
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                 industry's standard dummy text ever since the 1500s,
                             </p>
-                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">Know more </button>
+                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
+                            	<spring:theme code="portal.media.know.more" />
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -336,98 +362,105 @@
                 </c:if>
             </h1>
 		</div>
-        <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard dashboard-exportall-btn text-uppercase"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
+        <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard dashboard-exportall-btn text-uppercase">
+        	<spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/>
+        </a>
     </div>
 </section>
 
 
 <section class="mainSection mainSection_noPadding">
     <div class="container">
-            <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
-                <div class="dashboard-tabs">
-                    <ul class="nav nav-tabs mb-0" role="tablist">
-                        <li class="nav-item" id="myLicense"> <a class="nav-link active" href="#myLicense" role="tab" data-toggle="tab"><spring:theme code="myLicense.title"/></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#payments" role="tab" data-toggle="tab"><spring:theme code="payments.page.title"/></a>
-                        </li>
-                        <li class="nav-item"> <a class="nav-link" href="#servicerequest" role="tab" data-toggle="tab"> <spring:theme code="dashboard.servicesRequest.title"/></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#savedDrafts" role="tab" data-toggle="tab"><spring:theme code="dashboard.savedDrafts.title"/></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#yourTickets" role="tab" data-toggle="tab"><spring:theme code="dashboard.ticket.yourtickets"/></a>
-                        </li>
-                    </ul>
+		<div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
+        	<div class="dashboard-tabs">
+            	<ul class="nav nav-tabs mb-0" role="tablist">
+                	<li class="nav-item" id="myLicense"> <a class="nav-link active" href="#myLicense" role="tab" data-toggle="tab">
+                		<spring:theme code="myLicense.title"/></a>
+                   	</li>
+                   	<li class="nav-item"><a class="nav-link" href="#payments" role="tab" data-toggle="tab">
+                   		<spring:theme code="payments.page.title"/></a>
+                   	</li>
+                   	<li class="nav-item"><a class="nav-link" href="#servicerequest" role="tab" data-toggle="tab">
+                   		<spring:theme code="dashboard.servicesRequest.title"/></a>
+                   	</li>
+                   	<li class="nav-item"><a class="nav-link" href="#savedDrafts" role="tab" data-toggle="tab">
+                   		<spring:theme code="dashboard.savedDrafts.title"/></a>
+                   	</li>
+                   	<li class="nav-item"><a class="nav-link" href="#yourTickets" role="tab" data-toggle="tab">
+                   		<spring:theme code="dashboard.ticket.yourtickets"/></a>
+                   	</li>
+               </ul>
                     
-                    <!-- Tab panes -->
-                    <div class="tab-content dashboard-tab-body license">
-                        <div role="tabpanel" class=" tab-pane fade in active show" id="myLicense">
-                            <dashboard:myLicense/>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="payments">
-                            <div class="dashboardWidget js-dashboardWidget">
-                                <div class="dashboardWidget-headline js-dashboardWidget-headline">
-                                    <!-- <a href="" data-redirect="payments-overview" class="js-page-redirect"
-                                       style="text-decoration: inherit;color: inherit">
-                                        <spring:theme code="payments.page.title"/> 
-                                    </a> 
-                                     <div class="dashboardWidget-headline-icon">
-                                        <a href="" data-redirect="payments-overview" class="js-page-redirect"><icon:payments/></a>
-                                    </div> -->
-                                    <div class="dashboardWidget-filter">
-                                        <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
-                                            <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
-                                            <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.ascending"/> </option>
-                                            <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.descending"/> </option>
-                                            <option value="amount_asc"><spring:theme code="sagia.sort.lowest"/> </option>
-                                            <option value="amount_desc"><spring:theme code="sagia.sort.highest"/> </option>
-                                            <option value="date_asc" data-sort="asc"><spring:theme code="sagia.sort.oldest"/></option>
-                                            <option value="date_desc" data-sort="desc"><spring:theme code="sagia.sort.latest"/></option>
-                                        </select>
+               <!-- Tab panes -->
+               <div class="tab-content dashboard-tab-body license">
+                   <div role="tabpanel" class=" tab-pane fade in active show" id="myLicense">
+                       <dashboard:myLicense/>
+                   </div>
+                   <div role="tabpanel" class="tab-pane fade" id="payments">
+                       <div class="dashboardWidget js-dashboardWidget">
+                           <div class="dashboardWidget-headline js-dashboardWidget-headline">
+                               <!-- <a href="" data-redirect="payments-overview" class="js-page-redirect"
+                                  style="text-decoration: inherit;color: inherit">
+                                   <spring:theme code="payments.page.title"/> 
+                               </a> 
+                                <div class="dashboardWidget-headline-icon">
+                                   <a href="" data-redirect="payments-overview" class="js-page-redirect"><icon:payments/></a>
+                               </div> -->
+                               <div class="dashboardWidget-filter">
+                                   <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
+                                       <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
+                                       <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.ascending"/></option>
+                                       <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.descending"/></option>
+                                       <option value="amount_asc"><spring:theme code="sagia.sort.lowest"/> </option>
+                                       <option value="amount_desc"><spring:theme code="sagia.sort.highest"/> </option>
+                                       <option value="date_asc" data-sort="asc"><spring:theme code="sagia.sort.oldest"/></option>
+                                       <option value="date_desc" data-sort="desc"><spring:theme code="sagia.sort.latest"/></option>
+                                   </select>
+                               </div>
+                           </div>
+                           <div class="dashboardWidget-body">
+                               <div class="dashboardWidgetPayments">
+                                   <div class="tableModule tableModule_slim tableModule_striped">
+                                       <table class="tableModule-table">
+                                           <thead class="tableModule-head">
+                                               <tr>
+                                                   <th><spring:theme code="dashboard.payments.date"/></th>
+                                                   <th><spring:theme code="dashboard.payments.name"/></th>
+                                                   <th><spring:theme code="dashboard.payments.status"/></th>
+                                                   <th class="dashboardWidgetPayments-lastCol"><spring:theme code="dashboard.payments.amount"/></th>
+                                                   <th><spring:theme code="payment.pay" /></th>
+                                               </tr>
+                                           </thead>
+                                           <tbody class="tableModule-body" id="paymentsTable"></tbody>
+                                       </table>
+                                   </div>
+                                   <div class="paginationModule paginationModule_loading">
+                                       <c:if test="${!pageIsDashboard}">
+                                           <div style="width: 150px; position: absolute">
+                                               <select class="paginationPicker js-select2-oneColumn form-control"></select>
+                                           </div>
+                                       </c:if>
+                                       <div class="paginationModule-wrapper">
+                                           <button class="paginationModule-control paginationModule-control_left" disabled>
+                                               <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
+                                               <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;">
+                                           </button>
+                                           <div class="paginationModule-items">
+                                               <div class="loadingModule">
+                                                   <div class="loadingModule-icon"><icon:loading-spinner /></div>
+                                                   <div class="loadingModule-msg"><spring:theme code="dashboard.license.loading.content.title"/></div>
+                                               </div>
+                                           </div>
+                                           <button class="paginationModule-control paginationModule-control_right">
+                                               <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive" id="ss_right_arrow">
+                                           </button>
+                                       </div>
+                                       <div class="tableModule-headline">
+                                           <a href="" data-redirect="payments-overview" class="btn-dashboard btn-view-all js-page-redirect">
+                                               <spring:theme code="dashboard.viewall" text="View all"/>
+                                           </a>
+                                       </div>
                                     </div>
-                                </div>
-                                <div class="dashboardWidget-body">
-                                    <div class="dashboardWidgetPayments">
-                                        <div class="tableModule tableModule_slim tableModule_striped">
-                                            <table class="tableModule-table">
-                                                <thead class="tableModule-head">
-                                                    <tr>
-                                                        <th><spring:theme code="dashboard.payments.date"/></th>
-                                                        <th><spring:theme code="dashboard.payments.name"/></th>
-                                                        <th><spring:theme code="dashboard.payments.status"/></th>
-                                                        <th class="dashboardWidgetPayments-lastCol"><spring:theme code="dashboard.payments.amount"/></th>
-                                                        <th><spring:theme code="payment.pay" /></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="tableModule-body" id="paymentsTable"></tbody>
-                                            </table>
-                                        </div>
-                                        <div class="paginationModule paginationModule_loading">
-                                            <c:if test="${!pageIsDashboard}">
-                                                <div style="width: 150px; position: absolute">
-                                                    <select class="paginationPicker js-select2-oneColumn form-control"></select>
-                                                </div>
-                                            </c:if>
-                                            <div class="paginationModule-wrapper">
-                                                <button class="paginationModule-control paginationModule-control_left" disabled>
-                                                    <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
-                                                    <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;">
-                                                </button>
-                                                <div class="paginationModule-items">
-                                                    <div class="loadingModule">
-                                                        <div class="loadingModule-icon"><icon:loading-spinner /></div>
-                                                        <div class="loadingModule-msg"><spring:theme code="dashboard.license.loading.content.title"/></div>
-                                                    </div>
-                                                </div>
-                                                <button class="paginationModule-control paginationModule-control_right">
-                                                    <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive" id="ss_right_arrow">
-                                                </button>
-                                            </div>
-                                                <div class="tableModule-headline">
-                                                    <a href="" data-redirect="payments-overview" class="btn-dashboard btn-view-all js-page-redirect">
-                                                        <spring:theme code="dashboard.viewall" text="View all"/>
-                                                    </a>
-                                                </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -535,7 +568,8 @@
                 <div class="row titleContainer">
                     <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
                         <h1 class="section-title text-center clr_gld py-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
-                        <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp;
+                        <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">
+                        	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
                             <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
                     	</a>
                     </div>

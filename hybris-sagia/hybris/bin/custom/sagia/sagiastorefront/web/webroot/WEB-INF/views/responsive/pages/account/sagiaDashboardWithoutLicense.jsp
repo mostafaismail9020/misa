@@ -37,7 +37,9 @@
                         <div class="dashboardUser-entry">
                             <div class="dashboardUser-label dashboardUser-label-xs"><spring:theme code="general.company"/></div>
                             <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                            <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/><span class="clr_gld">&nbsp;<fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
+                            <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>
+                            	<span class="clr_gld">&nbsp;<fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -55,7 +57,9 @@
 <div class="globalMessage-holder" style="background: url(${commonResourcePath}/images/dashboard-media/Apply-license/Apply-license-bg.png) no-repeat center center;  padding: 20px 0; background-size: cover;">
     <div class="container">
         <div class="globalMessage">
-        	<a href="${encodedContextPath}/my-sagia/license/entity" id="applyNewLicenseAfterTnC" data-skip-popup="${(applicationStatus != null && not empty applicationStatus.entityId) || hasUserAppliedForLicense}" style="display: none;" class="btn btn_round" ><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></a>
+        	<a href="${encodedContextPath}/my-sagia/license/entity" id="applyNewLicenseAfterTnC" data-skip-popup="${(applicationStatus != null && not empty applicationStatus.entityId) || hasUserAppliedForLicense}" style="display: none;" class="btn btn_round" >
+        		<spring:theme code="dashboard.withoutlicense.applyfornewlicense"/>
+        	</a>
             <c:choose>
                 <c:when test="${applicationStatus != null && not empty applicationStatus.entityId}">
                     <div class="globalMessage-msg">
@@ -72,17 +76,21 @@
                         <c:if test="${entityStatusDescription != null && not empty entityStatusDescription}">
                             <c:out value="${entityStatusDescription}"/>&nbsp;
                             <c:if test = "${fn:containsIgnoreCase(entityStatusDescription, 'rejected')}">
-                               <div class="globalMessage-action">
-                                 <a href="${encodedContextPath}/simulator/license-apply" class="btn btn_round btn-warning btn_outline"><spring:theme code="dashboard.withoutlicense.startsimulation"/></a>
-                                 <button class="btn btn_round" onclick="applyNewTnC(event,'NewApply');"><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></button>
-                                  </div>
+                               	<div class="globalMessage-action">
+                               		<a href="${encodedContextPath}/simulator/license-apply" class="btn btn_round btn-warning btn_outline">
+                               			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
+                               		</a>
+                                 	<button class="btn btn_round" onclick="applyNewTnC(event,'NewApply');"><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></button>
+                          		</div>
                             </c:if>
                         </c:if>
                     </div>
                     <c:if test="${hasAwaitingPayment}">
-                    <div class="globalMessage-action">
-                        <a href="#" class="dashboardPrintButton btn btn_outline btn_round btn_slim" style="float: right;"><spring:theme code="payment.pay" /></a>
-                    </div>
+	                    <div class="globalMessage-action">
+	                        <a href="#" class="dashboardPrintButton btn btn_outline btn_round btn_slim" style="float: right;">
+	                        	<spring:theme code="payment.pay" />
+	                        </a>
+	                    </div>
                     </c:if>
                 </c:when>
                 <c:otherwise>
@@ -92,37 +100,45 @@
                                 <div class="globalMessage-icon"><icon:info/></div>
                                 <spring:theme code="dashboard.withoutlicense.appliedforlicense"/>&nbsp;
                                 <c:if test="${applicationStatus.statusDesc != null && not empty applicationStatus.statusDesc}">
-                                      <c:out value="${applicationStatus.leadId}"/>&nbsp;
-                                      <c:out value="${applicationStatus.statusDesc}"/>&nbsp;
-                                      <c:out value="${applicationStatus.lvDate}"/>&nbsp;                                     
+                                	<c:out value="${applicationStatus.leadId}"/>&nbsp;
+                                    <c:out value="${applicationStatus.statusDesc}"/>&nbsp;
+                                    <c:out value="${applicationStatus.lvDate}"/>&nbsp;                                     
                                 </c:if>
                             </div>
                         </c:when>                                                                                   
                         <c:when test="${hasUserAppliedForLicense && fn:containsIgnoreCase(applicationStatus.statusDesc, 'rejected') }">
                             <div class="globalMessage-action">
-                               <a href="${encodedContextPath}/simulator/license-apply" class="btn btn_round btn-warning btn_outline"><spring:theme code="dashboard.withoutlicense.startsimulation"/></a>
-                                <button class="btn btn_round" onclick="applyNewTnC(event,'NewApply');"><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></button>
+                               	<a href="${encodedContextPath}/simulator/license-apply" class="btn btn_round btn-warning btn_outline">
+                               		<spring:theme code="dashboard.withoutlicense.startsimulation"/>
+                               	</a>
+                                <button class="btn btn_round" onclick="applyNewTnC(event,'NewApply');">
+                                	<spring:theme code="dashboard.withoutlicense.applyfornewlicense"/>
+                                </button>
                              </div>
 
                             <div class="globalMessage-msg">
                                 <div class="globalMessage-icon"><icon:warning/></div>
                                 <spring:theme code="dashboard.withoutlicense.appliedforlicense"/>&nbsp;
                                 <c:if test="${applicationStatus.statusDesc != null && not empty applicationStatus.statusDesc}">
-                                      <c:out value="${applicationStatus.leadId}"/>&nbsp;
-                                      <c:out value="${applicationStatus.statusDesc}"/>&nbsp;
-                                      <c:out value="${applicationStatus.lvDate}"/>&nbsp;                                      
+                                	<c:out value="${applicationStatus.leadId}"/>&nbsp;
+                                    <c:out value="${applicationStatus.statusDesc}"/>&nbsp;
+                                    <c:out value="${applicationStatus.lvDate}"/>&nbsp;                                      
                                 </c:if>
                             </div>
                         </c:when>
                         <c:otherwise>
-                            <div class="globalMessage-action d-flex">
-                                <a href="${encodedContextPath}/simulator/license-apply" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5"><spring:theme code="dashboard.withoutlicense.startsimulation"/><img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/></a>
-                                 <button class="btn-dashboard text-uppercase" onclick="applyNewTnC(event,'NewApply');"><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></button>
-                              </div>
-
+                        	<div class="globalMessage-action d-flex">
+                        		<a href="${encodedContextPath}/simulator/license-apply" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5">
+                        			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
+                        			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/>
+                        		</a>
+                                <button class="btn-dashboard text-uppercase" onclick="applyNewTnC(event,'NewApply');">
+                                	<spring:theme code="dashboard.withoutlicense.applyfornewlicense"/>
+                                </button>
+                        	</div>
                             <div class="globalMessage-msg">
                             	<img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/>
-                              	<h5 class="pl-3"> <spring:theme code="dashboard.withoutlicense.notappliedforlicenseyet"/></h5>
+                              	<h5 class="pl-3"><spring:theme code="dashboard.withoutlicense.notappliedforlicenseyet"/></h5>
                             </div>
                         </c:otherwise>
                     </c:choose>
@@ -151,8 +167,9 @@
 	                <div class="dashboard-container">
 	                    <div class="row titleContainer">
 	                        <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
-	                            <h1 class="section-title text-center clr_gld py-5">NEWS &amp; UPDATES</h1>
-		                        <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp;
+	                            <h1 class="section-title text-center clr_gld py-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
+		                        <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">
+		                        	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
 		                            <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
 		                    	</a>
 	                        </div>

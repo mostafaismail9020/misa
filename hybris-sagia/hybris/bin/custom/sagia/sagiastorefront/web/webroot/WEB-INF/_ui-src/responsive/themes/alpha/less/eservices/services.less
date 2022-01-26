@@ -293,7 +293,7 @@
     .contentModule-actions_spaceBetween{
         margin-top: 0px;
     }
-    #srID{
+    #srID,.srId{
         color: @color-golden;
         font-size: 30px;
     }
@@ -569,7 +569,7 @@
 }
 .headline-background-wrapper{
     border-bottom: 1px solid @color-golden;
-    width:50% !important
+    width:100% !important
 }
 .headline-background{
     background: @color-golden 0% 0% no-repeat padding-box;
@@ -734,6 +734,14 @@ button.btn.btn_link.btn-edit-branch:hover{
 }
 .select2-results__options{
     display: table-row;
+}
+.stepModule{
+    .stepModule-item{
+        border-radius: 8px 8px 0 0;
+    }
+    .stepModule-item:after{
+        display: none;
+    }
 }
 @media (min-width: 1200px) {
 	.container{

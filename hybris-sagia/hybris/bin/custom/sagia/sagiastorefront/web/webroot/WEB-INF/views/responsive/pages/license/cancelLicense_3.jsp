@@ -32,7 +32,7 @@
         <div class="row w-100 renewal-services">
             <div class="col-xl-3 col-12 px-0">
                 <button class="btn btn_round back_to_service btn_leftIconLink">
-                    <icon:arrow_green_right/> Back to All Services
+                    <span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span> Back to All Services
                     <span class="iconElement iconElement_save"></span>
                 </button>
             </div>

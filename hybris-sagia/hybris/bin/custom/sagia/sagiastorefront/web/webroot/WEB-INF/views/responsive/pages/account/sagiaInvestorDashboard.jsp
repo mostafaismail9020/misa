@@ -161,14 +161,14 @@
     </div>
 </section>
 
-<div class="globalMessage-holder" id="awaitingPaymentDiv" style="display: none;">
+<div class="globalMessage-holder pt-5" id="awaitingPaymentDiv" style="display: none;">
     <div class="container">
         <div class="globalMessage">
             <div class="globalMessage-action">
                 <a onclick="awaitingPayment()" class="btn btn_round"><spring:theme code="awaiting.payment.pay" /></a>
             </div>
             <div class="globalMessage-msg">
-                <div class="globalMessage-icon"><icon:warning/></div>
+                <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/></div>
                 <spring:theme code="dashboard.message.awaitingpayment.text"/>
             </div>
         </div>

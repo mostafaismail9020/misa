@@ -32,7 +32,7 @@
 	                              			<div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header clr_gld">
                                  				${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/>
                               				</div>
-		                                    <p class"invest-with-us-description">${sector.sectorDetails}</p>
+		                                    <p class="invest-with-us-description">${sector.sectorDetails}</p>
 		                                    <div class="row">	
 		                                       	<c:if test="${sector.sectorCode ne 'Others'}">
 		                                   			<div class="dashboardWidgetBanner-action ml-3">
@@ -126,7 +126,7 @@
 		                             <div class=" Inc-fearured-opp">
 		                                 <h2 class="Inc-fearured-opp-headtitle" title="${featuredOpportunity.opportunity.name}">${featuredOpportunity.opportunity.name}</h2>
 		                                 <h3 class="Inc-fearured-opp-type">${featuredOpportunity.parentCategory.name}</h3>
-		                                 <button class="btn btn-sector-primary mx-auto">
+		                                 <button class="btn btn-sector-primary text-uppercase mx-auto">
 		                                 	<spring:theme code="portal.sector.opportunity.know.more.label"/>
 		                                 	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
 		                                 </button>

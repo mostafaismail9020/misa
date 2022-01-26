@@ -67,7 +67,7 @@
                    </table>
                 </c:when>
             <c:otherwise>
-              <spring:theme code="dashboard.license.no.data.available"/>
+              <div class="text-center"> <span class="h5 text-center"><spring:theme code="dashboard.license.no.data.available"/></span></div>
             </c:otherwise>
           </c:choose>
 		</div>

@@ -62,23 +62,41 @@
   .card .nav-tabs{
       border-bottom: none;
   }
-  .card .nav-tabs li{
-      background-color:darkgray ;
-      padding: 40px 20px 20px;
-      font: normal normal normal 25px/34px TheSans;
-  }
-  .card .nav-tabs li a, .card .nav-tabs li a:hover{
-    color: #7b838c;
-    text-decoration: none;
-  }
-  .card .nav-tabs li.active a, .card .nav-tabs li.active a:hover{
-    color: #00A6BE;
-    text-decoration: none;
-  }
-  .card .nav-tabs li.active{
+  
+//   .card .nav-tabs li{
+//       background-color:darkgray ;
+//       padding: 40px 20px 20px;
+//       font: normal normal normal 25px/34px TheSans;
+//   }
+//   .card .nav-tabs li a, .card .nav-tabs li a:hover{
+//     color: #7b838c;
+//     text-decoration: none;
+//   }
+.dashboard-invest-btn{
+	display: inline-flex;
+    float: right;
+    margin-top: -55px !important;
+}
+.card .nav-tabs .nav-item .nav-link.active{
     background-color: #fff;
     padding: 40px 20px 20px;
+    letter-spacing: 0px;
+    color: #00A6BE !important;
+    font-size: 25px;
+    line-height: 34px;
    
+  }
+  .card .nav-tabs  .nav-item .nav-link{
+    background-color: #0000003D;
+    padding: 40px 20px 20px;
+	color: #707070;
+    border-color: none;
+  }
+  .card .nav-tabs  .nav-item .nav-link.active:hover{
+	color: #707070 !important;
+  }
+  .card .nav-tabs  .nav-item .nav-link:hover{
+	  color: #707070 !important;
   }
   .dashboard-login{
 	  padding: 20px;
@@ -383,10 +401,10 @@
     border-radius: 27px;
     margin: 0;
     text-align: center;
-    padding: 5px 24px 7px;
+    padding: 10px 24px 14px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 	height: 45px;
 }
 [dir] .license .tabs-list li.dashboardTabs-current a{
@@ -715,7 +733,7 @@ margin-right: 0;
     float: right;
     margin-top: -100px !important;
 }
-.page-dashboard .dashboard-invest-btn{
+ .dashboard-invest-btn{
 	display: inline-flex;
     float: right;
     margin-top: -55px !important;

@@ -84,7 +84,7 @@
                                                     <div class="container">
                                                         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
                                                             <div>
-                                                                <a href="${encodedContextPath}/appointments/create" class="btn-dashboard text-uppercase pl-5 pr-5">
+                                                                <a href="${encodedContextPath}/appointments/create" class="btn-dashboard btn_bold text-uppercase pl-5 pr-5">
                                                                     <spring:theme code="appointments.makeanappointment" />
                                                                 </a>
                                                             </div>

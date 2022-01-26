@@ -228,7 +228,7 @@
                         <button class="btn btn_plain">+ Add Row</button>
                     </div>--%>
 
-                                                                                <div class="contentModule-headline mt-5">
+                                                                                <div class="contentModule-headline mw0 mt-5">
                                                                                     <spring:theme code="appointments.availableslots" />
                                                                                 </div>
                                                                                 <hr class="hr" />

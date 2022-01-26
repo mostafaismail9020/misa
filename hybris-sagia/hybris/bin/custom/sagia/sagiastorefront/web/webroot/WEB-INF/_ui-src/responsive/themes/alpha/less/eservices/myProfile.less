@@ -1784,7 +1784,7 @@ button:focus {
 .page-sagia-profile .js-contactUpdate-edit .iconElement_edit02{
     vertical-align: 0;
 }
-.page-sagia-profile .contentModule-section .mw0, .page-appointment-details .contentModule-section .mw0 {
+.page-sagia-profile .contentModule-section .mw0, .page-appointment-details .contentModule-section .mw0, .page-appointment-create .mw0 {
     max-width: 15% !important;
 }
 
@@ -1874,7 +1874,6 @@ button:focus {
     text-transform: uppercase;
 }
 .page-appointments .panelModule{
-
     border-radius: 25px;
     box-shadow: 0px 18px 36px #00000029;
 }
@@ -1886,6 +1885,8 @@ button:focus {
     background-image: url(../img/search.svg);
 }
 .page-appointments .searchInputBox .btn-search{
+    position: relative;
+    right: 15px;
     font-size: 20px;
     font-weight: 600;
 }
@@ -1894,6 +1895,10 @@ button:focus {
 }
 .page-appointments .contentModule-filter{
     margin-bottom: 40px;
+}
+.page-appointments a:active, .page-appointments a:focus, .page-appointments a:hover{
+    color: #00a6be;
+
 }
 .page-appointments .contentModule-filter .select2.select2-container{
     border: 1px solid #BEBEBE;
@@ -2090,11 +2095,13 @@ button:focus {
     margin-top: 0;
 }
 .page-appointment-create .formSelectBox .select2.select2-container.select2-container--disabled+.control-label{
+    color: #707070;
     top:-20px !important;
 
 }
 .page-appointment-create .formSelectBox .control-label{
     font-weight: 600;
+    color: #707070;
 }
 .page-appointment-create hr.contentModule-section-rowDelimiter{
 
@@ -2107,10 +2114,14 @@ button:focus {
     top: 15px;
 }
 .page-appointment-create .formInputBox .form-control:placeholder-shown+.control-label{
+    color: #707070;
     font-weight: 600 !important;
 }
 .page-appointment-create .formInputBox .control-label{
     font-weight: 600 !important;
+}
+.page-appointment-create #appointmentModel .formTextArea .control-label{
+    font-weight: 600;
 
 }
 
@@ -2288,7 +2299,7 @@ button:focus {
     .page-sagia-profile .contentModule-section .mw0,
     .page-sagia-profile .contentModule-section .mw1,
     .page-sagia-profile .contentModule-section .mw2,
-    .page-appointment-create .mw2, .page-appointment-create .mw3
+    .page-appointment-create .mw0, .page-appointment-create .mw2, .page-appointment-create .mw3,
     .page-appointment-details .contentModule-section .mw0 {
                 max-width: 100% !important;
     }
@@ -2412,7 +2423,7 @@ button:focus {
     .page-sagia-profile .contentModule-section .mw0,
     .page-sagia-profile .contentModule-section .mw1,
     .page-sagia-profile .contentModule-section .mw2,
-    .page-appointment-create .mw2, .page-appointment-create .mw3
+    .page-appointment-create .mw0, .page-appointment-create .mw2, .page-appointment-create .mw3,
     .page-appointment-details .contentModule-section .mw0 {
         max-width: 50% !important;
         width: 50% !important;

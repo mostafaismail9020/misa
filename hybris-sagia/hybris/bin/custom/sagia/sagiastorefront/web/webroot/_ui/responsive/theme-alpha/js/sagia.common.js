@@ -666,3 +666,13 @@ $('.btn_show_hide_service').on('click',function(){
         }				
     });
 })
+
+ /**my potential**/ 
+function commentTextArea() {
+    var x = document.getElementById("comment_box_form");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}

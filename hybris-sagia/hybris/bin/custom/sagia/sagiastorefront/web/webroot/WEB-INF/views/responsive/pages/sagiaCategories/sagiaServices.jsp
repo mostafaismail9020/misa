@@ -18,7 +18,7 @@
         <div class="container">
             <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
                 <h1 data-aos="fade-up">
-                    <spring:theme code="average.service.time" />
+                    ${serviceName}
                 </h1>
             </div>
             <div class="profile-icons float-right">
@@ -48,10 +48,10 @@
 <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header  row service-time">
-            <h1 class="mainSection-headline">${serviceName}</h1>
+            <!-- <h1 class="mainSection-headline">${serviceName}</h1> -->
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
-                    <!-- <div class="serviceTime-label"><spring:theme code="average.service.time" /></div> -->
+                    <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
                     <div class="serviceTime-detail">
                         <c:choose>
                             <c:when test="${(processingTime.days > 0)  ||  (processingTime.hours > 0)}">
@@ -107,7 +107,10 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="d-flex row renewal-services w-100">
                 <div class="col-md-3">
-                    <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard" /></a>
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink w-auto"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
+                </div>
+                <div class="col-xl-3 col-12">
+                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')">Show Service Tabs</button>
                 </div>
                 <div class="col-md-3">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
@@ -129,8 +132,20 @@
         </div>
     </div>
 </div>
-
-<div class="container service-wrapper service-wrapper-info">
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
+    <div class="container">
+        <div class="expandableContent" id="service-tab">
+            
+        </div>
+    </div>
+</div>
+<div class="container">
+    <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
+        <div class="hidden "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> Show Service Overview</div>
+        <div class=""><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span>Hide Service Overview</div>
+    </button>
+</div>
+<div class="container service-wrapper service-wrapper-info"  id="expand-03">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -221,12 +236,9 @@
 <div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
     <div class="container">
         <c:if test="${fn:length(serviceList) gt 1}">
-            <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent"
-                    data-expand-target="expand01">
-                <div><spring:theme code="text.account.followup.hideServiceHistory"/>
-                    <!-- <span>&#x27f6;</span> -->
-                </div>
-                <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
+            <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
+                <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
         </c:if>
 
@@ -286,36 +298,17 @@
             </c:if>
             <div class="expandableContent-main" id="expandedContentParent"
                  style="${serviceList.size() == 0 ? 'visibility:hidden;' : ''}">
-                <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
+                <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-3">
                     <div id="detailedConvertToNationalsContent" class="contentModule">
                         <div class="contentModule-section">
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_info"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                                    width="24" height="24"
-                                                                                    viewBox="0 0 24 24"><g
-                                            fill="#5CC83B" fill-rule="evenodd"><path
-                                            d="M11.956 21.702c-5.375 0-9.746-4.371-9.746-9.746s4.37-9.746 9.746-9.746c5.375 0 9.746 4.37 9.746 9.746 0 5.375-4.371 9.746-9.746 9.746zm0-21.702c-6.58 0-11.956 5.375-11.956 11.956 0 6.58 5.375 11.906 11.956 11.906 6.58 0 11.906-5.325 11.906-11.906 0-6.58-5.325-11.956-11.906-11.956zM13.387 16.213l-1.005.452 1.306-6.681c.15-.703-.603-1.457-1.407-1.005l-2.461 1.357c-.452.25-.603.853-.352 1.306.251.452.854.602 1.306.351l.603-.301-1.256 6.38c-.1.552.352 1.155.955 1.155.15 0 .301-.05.402-.1l2.662-1.156c.503-.2.703-.753.503-1.256-.201-.502-.754-.703-1.256-.502m-.662-8.953a1.35 1.35 0 0 0 1.356-1.356 1.35 1.35 0 0 0-1.356-1.357 1.35 1.35 0 0 0-1.357 1.357 1.35 1.35 0 0 0 1.357 1.356"></path></g></svg></span>
-                                    <span id="currentID">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                                    <span id="currentID" class="headline-background">
                                         <c:if test="${fn:length(serviceList) gt 0}">
-                                            ${serviceList[0].srID}
+                                             ${serviceList[0].srID}
                                         </c:if>
                                     </span>
-                                </div>
-<!--
-                                <div id="serviceUrl">
-                                    <c:url value="/services/government/${categoryUrl}/${serviceUrl}/create" var="url">
-                                        <c:param name="serviceName" value="${serviceName}"/>
-                                        <c:if test="${fn:length(serviceList) gt 0}">
-                                            <c:param name="srID" value="${serviceList[0].srID}"/>
-                                        </c:if>
-                                    </c:url>
-                                    <button class="btn btn_slim" id="createGovtServiceButton">
-                                        <input id="createGovtServUrl" type="hidden" value="${url}">
-                                        <spring:theme code="create.govtServices"/>
-                                    </button>
-                                </div>
--->
+                                
                                 <c:if test="${fn:length(serviceList) gt 0}">
                                     <div id="currentStatus" class="statusIndicator
                                     <c:if test="${fn:length(serviceList) gt 0}">
@@ -327,15 +320,17 @@
                                             <c:otherwise>statusIndicator_process</c:otherwise>
                                         </c:choose>
                                     </c:if>
-                                    ">
-                                        <spring:theme code="convertlicense.status"/><span id="statusText">
+                                
+                                        <spring:theme code="convertlicense.status"/>
+                                        <span id="statusText">
                                                 <c:if test="${fn:length(serviceList) gt 0}">
                                                     ${serviceList[0].srStDesc}
                                                 </c:if>
-                                            </span>
-                                    </div>
-                                </c:if>
+                                        </span>
                             </div>
+                        </div>
+                                </c:if>
+                        </div>
 
                             <div class="statusBox">
                                 <div class="statusBox-description">

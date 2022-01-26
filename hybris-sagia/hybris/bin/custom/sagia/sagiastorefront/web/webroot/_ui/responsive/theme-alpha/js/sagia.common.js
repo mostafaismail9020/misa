@@ -567,41 +567,6 @@ $(function() {
     // }
 });
 
-$(document).on('click',".services-category-list .nav .nav-link",function(){
-    $(".service_tab_pane_show").removeClass("show").removeClass("active");
-      $("#"+$(this).attr('href').replace("#","")).addClass("show").addClass("active");
-      $("#"+$(this).attr('href').replace("#","")+"1").addClass("show").addClass("active");
-  
-      $(".services-category-list .nav .nav-link").removeClass("active");
-      $(this).addClass("active");
-  });
-  
-  $(function(){
-      var current = location.hash ? location.hash : location.pathname.split('/')[3];
-      current = current === "" ? $($('.services-category-list .nav .nav-link')[0]).attr('href') : current;
-      $('.services-category-list .nav .nav-link').each(function(){      
-          if($(this).attr('href').indexOf(decodeURI(current)) !== -1){
-              $(".service_tab_pane_show").removeClass("show").removeClass("active");
-              $("#"+$(this).attr('href').replace("#","")).addClass("show").addClass("active");
-              $("#"+$(this).attr('href').replace("#","")+"1").addClass("show").addClass("active");
-      
-              $(".services-category-list .nav .nav-link").removeClass("active");
-              $(this).addClass('active');
-  
-              let active_attr = $('[aria-labelledby="'+ $(this)[0].id +'"]');
-  
-              $(active_attr).addClass('show');
-              $(active_attr).addClass('d-block');
-          }
-      })
-  })
-  
-  function RequestService(requestURL){    
-      if(!$.isNumeric(requestURL)){
-          location = requestURL;
-      }
-  }
-
   
 function expandServiceTab(code){
     if (!$('#service-tab').hasClass('expanded')) {
@@ -611,34 +576,36 @@ function expandServiceTab(code){
                 xhr.setRequestHeader("Content-Type", "application/json");
             },
             success: function (data) {
-                data = JSON.parse(data);
                 $('#service-tab').empty();
-                if (data.length) {
-                    var service = "";
-                    data.forEach(function (info) {
-                    service += '<div class="serviceModule serviceModule_list mx-5 pt-4">';
-                    service += '    <div class="serviceModule-section">';
-                    service += '        <div class="serviceModule-content">';
-                    service += '            <div class="serviceModule-description">';
-                    service += '                <span class="serviceModule-headline"> ' + info.title + ' </span>';
-                   if(info.content === "")
-                    service += '                        <div cladata.contentss="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>';
-                  else
-                    service += '                        <div class="serviceModule-detail serviceList-description"><div class="w-75"><p>' + info.content + '</p></div></div>';
-                   
-                    service += '            </div>';
-                    service += '        </div>';
-                    service += '    </div>';
-                    service += '</div>';
+                if (data !== "") {
+                    data = JSON.parse(data);
+                    if (data.length) {
+                        var service = "";
+                        data.forEach(function (info) {
+                            service += '<div class="serviceModule serviceModule_list mx-5 pt-4">';
+                            service += '    <div class="serviceModule-section">';
+                            service += '        <div class="serviceModule-content">';
+                            service += '            <div class="serviceModule-description">';
+                            service += '                <span class="serviceModule-headline"> ' + info.title + ' </span>';
+                            if (info.content === "")
+                            service += '                        <div cladata.contentss="serviceModule-detail serviceList-description"><div class="w-100"><p>N/A</p></div></div>';
+                            else
+                            service += '                        <div class="serviceModule-detail serviceList-description"><div class="w-75 service-info-anchor"><p>' + info.content + '</p></div></div>';
 
-                    })
+                            service += '            </div>';
+                            service += '        </div>';
+                            service += '    </div>';
+                            service += '</div>';
 
-                    $('#service-tab').append(service);
-                    $('#service-tab').addClass('expanded');
-                    $('#service-tab').show();
-                    $(".serviceTab").text('Hide Service Tab')
+                        })
 
-                } else {
+                        $('#service-tab').append(service);
+                        $('#service-tab').addClass('expanded');
+                        $('#service-tab').show();
+                        $(".serviceTab").text('Hide Service Tab')
+
+                    }
+                }else {
                     $('#service-tab').empty();
                     $('#service-tab').removeClass('expanded');
                     $('#service-tab').hide();

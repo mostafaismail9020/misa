@@ -80,7 +80,7 @@
                                                                     <p>${service.description}</p>
                                                                 </div>   
                                                                 <div class=" serviceModule-request">
-                                                                    <a class="text-uppercase request-service" href=${service.url}>Request A Service</a>
+                                                                    <a class="text-uppercase request-service" href=/${service.url}>Request A Service</a>
                                                                 </div>                                                         
                                                             </div>
                                                         </div>
@@ -142,8 +142,8 @@
                                                                             <p>${service.description}</p>
                                                                         </div>
                                                                         <div class=" serviceModule-request">
-                                                                            <!-- <a class="text-uppercase request-service" href=${service.url}>Request A Service</a> -->
-                                                                            <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('${service.url}')">Request A Service</a>
+                                                                            <a class="text-uppercase request-service" href=/services/government/${service.category.code}/${service.code}>Request A Service</a>
+                                                                            <!-- <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('${service.url}')">Request A Service</a> -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -206,8 +206,8 @@
                                                                             <p>${service.description}</p>
                                                                         </div>
                                                                         <div class=" serviceModule-request">
-                                                                            <!-- <a class="text-uppercase request-service" href=${service.url}>Request A Service</a> -->
-                                                                            <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('${service.url}')">Request A Service</a>
+                                                                            <a class="text-uppercase request-service" href=/${service.url}>Request A Service</a>
+                                                                            <!-- <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('${service.url}')">Request A Service</a> -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -242,7 +242,7 @@
                                                             <p>${service.description}</p>
                                                         </div>
                                                         <div class="w-25 serviceModule-request">
-                                                            <a class="text-uppercase request-service" href=${service.url}>Request A Service</a>
+                                                            <a class="text-uppercase request-service" href=/${service.url}>Request A Service</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -288,8 +288,8 @@
                                                                         <p>${service.description}</p>
                                                                     </div>
                                                                     <div class="w-25 serviceModule-request">
-                                                                        <!-- <a class="text-uppercase request-service" href=${service.url}>Request A Service</a> -->
-                                                                        <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('${service.url}')">Request A Service</a>
+                                                                        <a class="text-uppercase request-service" href=/services/government/${service.category.code}/${service.code}>Request A Service</a>
+                                                                        <!-- <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('services/government/${service.category.code}/${service.code}')">Request A Service</a> -->
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -340,8 +340,8 @@
                                                                         <p>${service.description}</p>
                                                                     </div>
                                                                     <div class="w-25 serviceModule-request">
-                                                                        <!-- <a class="text-uppercase request-service" href=${service.url}>Request A Service</a> -->
-                                                                        <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('${service.url}')">Request A Service</a>
+                                                                        <a class="text-uppercase request-service" href=/${service.url}>Request A Service</a>
+                                                                        <!-- <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('${service.url}')">Request A Service</a> -->
                                                                     </div>
                                                                 </div>
                                                             </div>

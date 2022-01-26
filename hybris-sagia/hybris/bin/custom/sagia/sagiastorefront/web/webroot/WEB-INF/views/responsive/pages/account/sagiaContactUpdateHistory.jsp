@@ -70,27 +70,31 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <c:url value="/my-sagia/sagia-profile" var="profileUrl"/>
-            <a href="${profileUrl}" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="profileCompany.button.back.text"/></a>
-            <c:if test="${fn:length(contactUpdateHistory) gt 1}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand02">
-                    <div class="hidden"><spring:theme code="fiancial.showHistory"/><span>&#x27f6;</span></div>
-                    <div><spring:theme code="fiancial.hideHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+            <div class="row w-100 renewal-services">
+                <div class="col-xl-3 col-12 px-0">
+                    <a href="${profileUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="profileCompany.button.back.text"/></a>
+                </div>
+            </div>            
         </div>
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
     <div class="container">
+        <c:if test="${fn:length(contactUpdateHistory) gt 1}">
+            <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand02">
+                <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+            </button>
+            </c:if>
         <div class="expandableContent expanded" id="expand02">
             <c:if test="${fn:length(contactUpdateHistory) gt 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_history"><icon:history/></span>
+                                <div class="contentModule-headline contentModule-headline-history">
+                                    <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                     <spring:theme code="profileCompany.contactUpdateHistory.history"/></div>
                                 <div class="searchInputBox searchInputBox_slim searchInputBox_spaceTop">
                                     <input onkeyup="filterHistory(this)" class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
@@ -152,9 +156,9 @@
                     <div class="contentModule" id="supportVisitDetails">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline">
-                                    <icon:info/>
-                                    <spring:theme code="text.account.followup.info"/>:&nbsp;<span id="contact-update-history-id">${first.srId}</span>
+                                <div class="contentModule-headline contentModule-headline-service-info">
+                                    <!-- <icon:info/> -->
+                                    <spring:theme code="text.account.followup.info"/>:&nbsp;<span id="contact-update-history-id" class="srId">${first.srId}</span>
                                 </div>
                                 <c:choose>
                                     <c:when test="${fn:contains(first.status, 'E0001')}">
@@ -181,61 +185,65 @@
                                 <c:set var="attachmentIndex" value="0"/>
                                 <div class="contentModule-section">
                                     <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                        <div class="contentModule-headline">
-                                            <c:choose>
-                                                <c:when test="${fn:contains(contactUpdate.contactType, 'GM')}">
-                                                    <span class="iconElement iconElement_generalManager"><icon:generalManager/></span><spring:theme code="profileCompany.generalManager.title"/>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <span class="iconElement iconElement_generalManager"><icon:person/></span><spring:theme code="profileCompany.companyRepresentative.title"/>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </div>
+                                        <!-- <div class="contentModule-headline"> -->
+                                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">                                            
+                                                <c:choose>
+                                                    <c:when test="${fn:contains(contactUpdate.contactType, 'GM')}">
+                                                        <span class="headline-background"><spring:theme code="profileCompany.generalManager.title"/></span>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <span class="headline-background"><spring:theme code="profileCompany.companyRepresentative.title"/></span>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </div>
+                                        <!-- </div> -->
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <dl class="dlList dlList_separated">
-                                                <dt><spring:theme code="general.firstname"/></dt>
+                                                <dt class="headline-golden"><spring:theme code="general.firstname"/></dt>
                                                 <dd>${contactUpdate.firstName}</dd>
                                             </dl>
                                         </div>
 
                                         <div class="col-md-6">
                                             <dl class="dlList dlList_separated">
-                                                <dt><spring:theme code="general.middlename"/></dt>
+                                                <dt class="headline-golden"><spring:theme code="general.middlename"/></dt>
                                                 <dd>${contactUpdate.middleName}</dd>
                                             </dl>
                                         </div>
 
                                         <div class="col-md-6">
                                             <dl class="dlList dlList_separated">
-                                                <dt><spring:theme code="general.lastname"/></dt>
+                                                <dt class="headline-golden"><spring:theme code="general.lastname"/></dt>
                                                 <dd>${contactUpdate.lastName}</dd>
                                             </dl>
                                         </div>
 
                                         <div class="col-md-6">
                                             <dl class="dlList dlList_separated">
-                                                <dt><spring:theme code="general.mobilenumber"/></dt>
+                                                <dt class="headline-golden"><spring:theme code="general.mobilenumber"/></dt>
                                                 <dd>${contactUpdate.mobileNumber}</dd>
                                             </dl>
                                         </div>
                                         <div class="col-md-6">
                                             <dl class="dlList dlList_separated">
-                                                <dt><spring:theme code="general.email"/></dt>
+                                                <dt class="headline-golden"><spring:theme code="general.email"/></dt>
                                                 <dd>${contactUpdate.email}</dd>
                                             </dl>
                                         </div>
                                         <div class="col-md-6">
                                             <dl class="dlList dlList_separated">
-                                                <dt><spring:theme code="general.nationalid"/></dt>
+                                                <dt class="headline-golden"><spring:theme code="general.nationalid"/></dt>
                                                 <dd>${contactUpdate.nationality}</dd>
                                             </dl>
                                         </div>
                                     </div>
 
-                                    <div class="documentSection">
-                                        <div class="documentSection-headline"><spring:theme code="general.documents"/></div>
+                                    <div class="documentSection">                                            
+                                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                                            <span class="headline-background"><spring:theme code="general.documents"/></span>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="documentSection-item">
@@ -271,10 +279,13 @@
                             </c:forEach>
                             <%--CONTACT UPDATE CHANGE END--%>
 
-                            <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
+                            <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin ">
+                                <!-- <div class="contentModule-headline headline-text">
                                     <icon:documents/>
                                     <spring:theme code="profileCompany.supportingDocuments"/>
+                                </div> -->
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper">
+                                    <span class="headline-background"><spring:theme code="profileCompany.supportingDocuments"/></span>
                                 </div>
                                 <ul class="downloadList downloadList_maxHeight" id="documents-container">
                                     <c:forEach items="${first.attachedDocuments}" var="document">

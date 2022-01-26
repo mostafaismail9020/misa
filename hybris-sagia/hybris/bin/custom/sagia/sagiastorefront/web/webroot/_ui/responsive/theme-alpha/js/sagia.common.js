@@ -588,9 +588,9 @@ function expandServiceTab(code){
                             service += '            <div class="serviceModule-description">';
                             service += '                <span class="serviceModule-headline"> ' + info.title + ' </span>';
                             if (info.content === "")
-                                service += '                        <div cladata.contentss="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>';
+                            service += '                        <div cladata.contentss="serviceModule-detail serviceList-description"><div class="w-100"><p>N/A</p></div></div>';
                             else
-                                service += '                        <div class="serviceModule-detail serviceList-description"><div class="w-75"><p>' + info.content + '</p></div></div>';
+                            service += '                        <div class="serviceModule-detail serviceList-description"><div class="w-75 service-info-anchor"><p>' + info.content + '</p></div></div>';
 
                             service += '            </div>';
                             service += '        </div>';

@@ -1,0 +1,5 @@
+
+INSERT_UPDATE ComponentTypeGroups2ComponentType; source(code)[unique = true]; target(code)[unique = true]	;
+                                               ; portalwide                 ; InvestSaudiEventsComponent	;
+											   ; portalwide                 ; InvestSaudiResourceComponent	;									 
+											   ; portalwide                 ; InvestSaudiWebinarVideoComponent;

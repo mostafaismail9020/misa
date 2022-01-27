@@ -1,0 +1,99 @@
+#################### Apply License ###################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]            ; name                             	; masterTemplate(uid, $contentCV); label				      ; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']; previewImage(code, $contentCV)[default = 'ContentPageModel__function_preview'];
+                         ;                          ; dashboard-without-license     ; Dashboard Without License         ; SagiaTemplate                  ; dashboard-without-license  ;
+
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                            ; name                                	; active; cmsComponents(&componentRef)                           ;
+                         ;                          ; MCM_CMS_OtherSlot-DashboardNoLicenseSlot      ; Dashboard No License Slot             ; true  ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent  ;
+
+
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]                      		; position[unique = true]	; page(uid, $contentCV)[unique = true]; contentSlot(uid, $contentCV)[unique = true]	;
+                                ;                          ; MCM_CMS_OtherSlot-DashboardNoLicenseSlot       ; MCM_CMS_OTHER             ; dashboard-without-license           ; MCM_CMS_OtherSlot-DashboardNoLicenseSlot    ;
+
+
+
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                                          ; name                                                          ; &componentRef                                               ; content[lang = en]; content[lang = ar]
+                                   ;                          ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent       ; Sagia CMS Paragraph Dashboard No License Component            ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent       ; "
+<div class=""js-dashboardWidget"">
+        <h1 class=""dashboard-headline js-dashboardWidget-headline text-center mt-5 pt-5 mb-5"">
+            <spring:theme code=""myLicense.title""/>
+        </h1>
+        <div class=""card dashboardWidget-body mb-5 p-0 globalMessage"">
+            <ul  class=""nav nav-tabs w-100"">
+                <li class=""col-6 text-center active"" ><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-license.png""/><a  href=""#1a"" data-toggle=""tab"">Apply For a Misa License</a>
+                </li>
+                <li class=""col-6 text-center""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png""/><a href=""#2a"" data-toggle=""tab"">Apply for a Bidding Certificate</a>
+                </li>
+            </ul>
+              <div class=""process tab-content clearfix"">
+                  <div class=""tab-pane active"" id=""1a"">
+                      <div class=""text-center"">
+                        <h4 class=""pt-5 dashboard-heading-title-color"">How to Apply for a New License</h4>
+                        <h5 class=""pt-5 dashboard-paragraph-color""> In order to start in saudi arabia, investors must first obtain an investor license, MISA is the autority
+                            concerned with providing all seervices to  investors, Types of investment license vary each with its own requirement
+                            such as minimum acceptable capital and maximum capital. Investors can apply for a license online on a MISA e-portal
+                        </h5>
+                      </div>
+                      <div class=""d-flex pt-5"">
+                          <div class=""process-step col-3 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Register-icon.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""mt-3"">01</div>
+                                <div class=""mt-1"">Register</div>
+                            </div>
+                          </div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+
+                          <div class=""process-step col-3 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Complete-our-application-form.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""mt-3"">02</div>
+                                <div class=""mt-1"">Complete Our Application Form</div>
+                            </div>
+                          </div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+
+                          <div class=""process-step col-3 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Waiting-the-approval.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""mt-3"">03</div>
+                                <div class=""mt-1"">Waiting for the Approval</div>
+                            </div>
+                          </div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+
+                          <div class=""process-step col-3 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Payment.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""mt-3"">04</div>
+                                <div class=""mt-1"">Payment</div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class=""text-center mt-5""><button  class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">apply<img class=""pl-3""  src=""/_ui/responsive/common/images/arow_btn.png""/></button></div>
+              </div>
+        </div>
+    </div>"

@@ -351,7 +351,7 @@
                 </c:if>
             </h1>
 		</div>
-        <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard .dashboard-exportall-btn text-uppercase"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
+        <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard dashboard-exportall-btn text-uppercase"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
     </div>
 </section>
 

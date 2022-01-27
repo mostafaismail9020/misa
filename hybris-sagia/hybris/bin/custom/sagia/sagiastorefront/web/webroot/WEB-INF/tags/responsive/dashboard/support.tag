@@ -9,7 +9,7 @@
 
 <div style="${editable ? 'margin-left:-15px; margin-right: -15px;' : 'width:auto; '}height:auto;" class="row">
     <%--<div class="col-12 col-md-8">--%>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-12">
         <%-- start Ask our expert --%>
         <div class="dashboardWidget js-dashboardWidget dashboardWidget_noRadiusRight"
                       data-eServiceTutorial-index="3"
@@ -187,7 +187,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <%--<div class="row">
             <div class="col-12 col-md-12">
                 <div class="dashboardWidget dashboardWidget_bg dashboardWidget_noRadiusLeft">
                     <div class="dashboardWidget-headline js-dashboardWidget-headline">
@@ -215,7 +215,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
     </div>
 </div>
 

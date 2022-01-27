@@ -141,7 +141,7 @@
 								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
 							</c:when>
 							<c:otherwise>
-								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.description}</p></div></div>
+								<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
 							</c:otherwise>
 						</c:choose>
 					</div>
@@ -158,7 +158,7 @@
 								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
 							</c:when>
 							<c:otherwise>
-								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.serviceDocuments}</p></div></div>
+								<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDocuments}</p></div></div>
 							</c:otherwise>
 						</c:choose>
 					</div>
@@ -175,7 +175,7 @@
 								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
 							</c:when>
 							<c:otherwise>
-								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.rulesRestrictions}</p></div></div>
+								<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.rulesRestrictions}</p></div></div>
 							</c:otherwise>
 						</c:choose>
 					</div>
@@ -192,7 +192,7 @@
 								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
 							</c:when>
 							<c:otherwise>
-								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.serviceFinancialFees}</p></div></div>
+								<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceFinancialFees}</p></div></div>
 							</c:otherwise>
 						</c:choose>
 					</div>
@@ -209,7 +209,7 @@
 								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
 							</c:when>
 							<c:otherwise>
-								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${sagiaService.serviceDuration}</p></div></div>
+								<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
 							</c:otherwise>
 						</c:choose>
 					</div>

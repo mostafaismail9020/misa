@@ -160,10 +160,11 @@
                     <div class="contentModule">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline headline-text">
-                                    <!-- <icon:info/> -->
+                                <!-- <icon:info/> -->
+                                <!-- <div class="contentModule-headline headline-text">
                                     <spring:theme code="text.account.followup.info"/>:&nbsp;${selectedItem.srId}
-                                </div>
+                                </div> -->
+                                <span class="contentModule-headline contentModule-headline_small "><spring:theme code="text.account.followup.info"/>:&nbsp;${selectedItem.srId}</span>
 <!--
                                 <a type="submit" href="violation-replies/create" class="btn btn_slim js-create-violation-reply">
                                     <spring:theme code="text.account.followup.create"/>
@@ -180,7 +181,7 @@
                                 </c:if>
                             </div>
 
-                            <div class="tableModule">
+                            <div class="tableModule commentModule">
                                 <table class="tableModule-table">
                                     <thead class="tableModule-head">
                                     <tr>
@@ -234,10 +235,10 @@
                             </div>
                         </c:if>
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                            <div class="contentModule-headline contentModule-headline_small headline-text">
+                            <div class="contentModule-headline contentModule-headline_small">
                                 <spring:theme code="text.account.followup.attachments"/>
                             </div>
-                            <div class="documentModule">
+                            <div class="documentModule commentModule">
                                 <c:forEach items="${selectedItem.contentHdr}" var="element">
                                     <div class="row">
                                         <div class="col-md-6">

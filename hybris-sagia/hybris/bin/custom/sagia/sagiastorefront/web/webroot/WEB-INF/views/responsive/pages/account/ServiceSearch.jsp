@@ -238,7 +238,7 @@
                                                 <div class="serviceModule-description">
                                                     <span class="serviceModule-headline cursor-pointer">${service.name}</span>
                                                     <div class="serviceModule-detail">
-                                                        <div class="w-75">
+                                                        <div class="w-100">
                                                             <p>${service.description}</p>
                                                         </div>
                                                         <div class="w-25 serviceModule-request">
@@ -284,7 +284,7 @@
                                                             <div class="serviceModule-description">
                                                                 <span class="serviceModule-headline cursor-pointer">${service.name}</span>
                                                                 <div class="serviceModule-detail">
-                                                                    <div class="w-75">
+                                                                    <div class="w-100">
                                                                         <p>${service.description}</p>
                                                                     </div>
                                                                     <div class="w-25 serviceModule-request">
@@ -336,7 +336,7 @@
                                                             <div class="serviceModule-description">
                                                                 <span class="serviceModule-headline cursor-pointer">${service.name}</span>
                                                                 <div class="serviceModule-detail">
-                                                                    <div class="w-75">
+                                                                    <div class="w-100">
                                                                         <p>${service.description}</p>
                                                                     </div>
                                                                     <div class="w-25 serviceModule-request">

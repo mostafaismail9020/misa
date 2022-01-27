@@ -2300,7 +2300,8 @@
 	padding-top: 0px !important;
 }
 [dir] .page-header-image {
-	height: 350px;
+	// height: 350px;
+	height: 52vh;
 }
 .banner-container {
 	top: 28% !important;
@@ -2308,6 +2309,7 @@
 .banner-container h1 {
 	font-weight: normal !important;
 	text-transform: uppercase;
+	line-height: 70px;
 }
 [dir=ltr] .profile-icons {
 	position: relative !important;
@@ -2381,6 +2383,7 @@
 	height: 63px;
 	display: inline-block;
 	margin: -3px 0px 0px -7px;
+	position: absolute;
 }
 [dir=ltr] .profile-icons .notification a span:hover {
 	background-image: url('../../common/images/dashboard-media/Profile-bar/message-active.png');
@@ -2391,5 +2394,16 @@
 	width: 57px;
 	height: 57px;
 	display: inline-block;
-	margin: 0px 0px 0px -4px;
+	margin: -3px 0px 0px -4px;
+	position: absolute;
+}
+.count-notification{
+	position: absolute;
+    top: -23px;
+    right: 75px;
+    background: @color-primary;
+    border-radius: 40px;
+    color: @color-white;
+    padding: 5px;
+    z-index: 1;
 }

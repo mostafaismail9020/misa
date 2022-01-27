@@ -10,14 +10,16 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
-
-
+   	 
 <div class="mainSection mainSection potential_opportunity_section">
+
     <div class="achievement_header">
-        <img class="achievement_header_icon  page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
         <div class="container">
             <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
-                <h1 data-aos="fade-up">My Potential Opportunity</h1>
+                <h1 data-aos="fade-up">
+                    My Potential Opportunity
+                </h1>
             </div>
             <div class="profile-icons float-right">
 				<div class="dashboardUser-right col-md-6">
@@ -63,7 +65,10 @@
 	<div class="row">
 		<div class="col-md-3">
 			<a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">
-				<span class="iconElement iconElement_closeBack"><icon:close/></span>
+				<!-- <span class="iconElement iconElement_closeBack"><icon:close/></span> -->
+				<svg class="potential_svg_arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="17.116" viewBox="0 0 10 17.116">
+					<path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M14.265,14.749l6.618-6.471a1.2,1.2,0,0,0,0-1.727,1.275,1.275,0,0,0-1.77,0l-7.5,7.332a1.2,1.2,0,0,0-.036,1.687l7.53,7.383a1.277,1.277,0,0,0,1.77,0,1.2,1.2,0,0,0,0-1.727Z" transform="translate(-11.251 -6.194)" fill="#00a6be"/>
+				  </svg>
 				<spring:theme code="general.backtodashboard" />
 			</a>
 		</div>
@@ -71,43 +76,24 @@
 </div> 
 
 <div class="container">
-	<div class="row">
-		<!--<div class="pull-left col-4 showdowbox_potential">
-			<div class="history_it">
-				<h5 class="history_letter pb-2">History</h5> 
-				<div class="main pt-2">
-					<div class="form-group has-search"> 
-						<svg xmlns="http://www.w3.org/2000/svg" width="10.931" height="10.931" viewBox="0 0 19.931 19.931" class="form-control-feedback">
-							<g transform="translate(20.3 -3.7)">
-								<path d="M20.736,12.618A8.118,8.118,0,1,1,12.618,4.5,8.118,8.118,0,0,1,20.736,12.618Z" transform="translate(-24 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
-								<path d="M28.812,28.812l-3.837-3.837" transform="translate(-30.312 -6.312)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
-							</g>
-						</svg> 
-						<input type="text" class="form-control shas_search" placeholder="Search">
-					</div> 		
-				</div>  
-			</div>
-		</div>-->
+	<div class="row"> 
 		<div class="pull-right col-12 p-0"> 
 			<div class="showdowbox_potential col-12 text_potential">
 				<div class="stauts_potential">
-					<h5 class="h5_posNUMBER">INVESTMENT OPPORTUNITY NUMBER: <span class="goldcolor"> ${contactTicketDetails.ticketID}</span></h5> 
-					<h5 class="status"><span class="goldcolor">${contactTicketDetails.sectorCategoryName}
-						<c:if test="${not empty opportunityDetails.name}">
-							- ${opportunityDetails.name}
-						</c:if>
-					</span></h5> 
+					<h5 class="h5_posNUMBER"> INVESTMENT OPPORTUNITY NUMBER :  <span class="goldcolor"> ${contactTicketDetails.ticketID}</span> </h5> 
+					<h5 class="status"><span class="goldcolor"> ZOOS DEVELOPMENT </span></h5> 
 					<hr style="width:96%;margin: 25px auto;border-width: 2px;"></hr>
 				</div>
-				<!--  
 				<div class="stauts_potential">
-					<h5 class="h5_status text-center">Status:<span class="yellocolor"> In Progress - NDA Needed</span> </h5>					
+					<h5 class="h5_status text-center">Status:<span class="yellocolor"> In Progress - NDA Needed</span> </h5> 
+					
 				</div>
 				<div class="circle_potential">
+ 
 					<div class="tabs">
 						<ul class="nav nav-tabs mb-0" role="tablist">
 							<li class="nav-item active show d-in-table"> 
-								<a class="nav-link active" href="#Interest" role="tab" data-toggle="tab" aria-selected="false">Interest</a>
+								<a class="nav-link" href="#Interest" role="tab" data-toggle="tab" aria-selected="false">Interest</a>
 								<img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive">
 							</li>
 							<li class="nav-item  d-in-table">
@@ -125,13 +111,14 @@
 							<li class="nav-item d-in-table">
 								<a class="nav-link" href="#Deal" role="tab" data-toggle="tab" aria-selected="false">Deal</a>
 							</li>
-						</ul>												
+						</ul>
+						
+						
 					</div> 
+
 				</div>
-				-->
 			</div>
 			
-			<%-- 
 			<div class="showdowbox_potential col-12 text_potential mt-5 mb-2">
 				<!-- Tab panes -->
 				<div class="tab-content dashboard-tab-body license">
@@ -217,7 +204,6 @@
 					</div>
 				</div>
 			</div>
-			 --%>
 		</div>
 	</div>
 </div>
@@ -230,12 +216,11 @@
 				<!--<input type="submit" value="refresh" id="submit"  onClick="window.location.reload();" class="btn btn_submit_whitess"/>-->
 				
 				<h5 class="serviceModule-description"> <span class="serviceModule-headline">Comments</span>
-					<button onclick="commentTextArea()" class="btn-dashboard text-uppercase">Add a new comment</button>
+					<button onclick="commentTextArea()" class="btn-dashboard text-uppercase"> Add a new comment</button>
  				</h5> 
 				<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
 				<div class="comment_box_form" id="comment_box_form" style="display: none;">
-					<c:set var="today" value="<%=new java.util.Date()%>" />
-					<label class="new_comment">New comments <b>as on <fmt:formatDate type="date" value="${today}" /></b></label>
+					<label class="new_comment">New comments <b>as on Dec 16 2021</b></label>
 					<form:form action="${ticketId}" modelAttribute="contactTicketForm">
 						<input type="text" name="comment" class="form-control reply_here" placeholder="Enter your reply here" required/>
 						<div class="d-inline float-right">
@@ -278,8 +263,7 @@
 											  
 										</div> 
 										<div class="comment_misa_message_word">
-											<h6 class="misateam"><span class="green_team">Misa Sales team </span>
-											<b class="pl-2">Commented on <fmt:formatDate type="date" value="${comment.startDateTime}" /></b></h6>
+											<h6 class="misateam"><span class="green_team">Misa Sales team </span><b class="pl-2">Commented on Dec 16 2021</b></h6>
 											<p class="text_message">
 												<c:set var="misaComment" value="${comment.text}"/> 
 												<!-- Misa Comment ->   -->${misaComment} 
@@ -294,8 +278,8 @@
 							<div class="row"> 
 								<div class="col-12 d-inline"> 
 									<div class="comment_misa_message_word">
-										<h6 class="misateam"><span class="gold_team">You Commented on</span>
-										<b class="pl-2"><fmt:formatDate type="date" value="${comment.startDateTime}" /></b></h6>
+										<h6 class="misateam"><span class="gold_team">You Commented
+											 </span><b class="pl-2"> on Dec 16 2021</b></h6>
 										<p class="text_message"> 
 											<c:set var="customerComment" value="${comment.text}"/>
 											<!-- Customer Comment -> --> ${customerComment}
@@ -318,7 +302,7 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline">Opportunity Overview</span>
+					<span class="serviceModule-headline"> Opportunity Overview </span>
 					<c:choose>
 						<c:when test="${empty opportunityDetails.description}">
 							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
@@ -335,7 +319,7 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline">Opportunity Highlights</span>
+					<span class="serviceModule-headline"> Opportunity Highlights </span>
 					<c:choose>
 						<c:when test="${empty opportunityDetails.highlights}">
 							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
@@ -348,32 +332,6 @@
 			</div>
 		</div>
 	</div>
-	
-	<div class="serviceModule serviceModule_list mx-5">
-		<div class="serviceModule-section">
-			<div class="serviceModule-content">
-				<div class="serviceModule-description">					  
-					<c:forEach var="partnerMap" items="${opportunityDetails.partnerMap}">
-						<c:if test="${partnerMap.value.size() gt 0}">							
-							<span class="serviceModule-headline">${partnerMap.key}</span>								
-							<c:forEach var="partnerLogo" items="${partnerMap.value}">
-								<div class="serviceModule-detail serviceList-description">
-									<div class="w-75">
-										<img class="sector-item-icon pb-3" src="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
-												data-norm="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
-												data-alt="${fn:escapeXml(partnerLogo.companyLogo.url)}" alt=""/>
-										<a href="${partnerLogo.companyWebsite}" target="_blank">know More - visit website</a>
-									</div>
-								</div>
-							</c:forEach>							
-						</c:if>
-					</c:forEach>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!--  
 	<div class="serviceModule serviceModule_list mx-5">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -425,5 +383,4 @@
 			</div>
 		</div>
 	</div>
-	-->	
 </div>  

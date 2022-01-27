@@ -6,6 +6,21 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<style>
+	#topbar span{
+		font-size: 12px !important;
+	}
+	label.lang-btn{
+		margin-bottom: 2px;
+	}
+	.page-dashboard #dashboard-carousel .owl-nav .owl-prev {
+		left: 9% !important;
+	}
+	.page-dashboard #dashboard-carousel .owl-nav .owl-next {
+		right: 8% !important;
+	}
+</style>
+
 <c:url value="false" var="userLoggedIn"/>
 <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
     <c:url value="true" var="userLoggedIn"/>
@@ -20,7 +35,7 @@
 				<!-- <a href="#" class="search_item"><img src="${commonResourcePath}/images/Search_icon.png" /></a>
 				<a href="#" class="Font_enlargment"><span class=" btn-trans"><img src="${commonResourcePath}/images/Aa.png"/></span></a>
 				 -->
-				 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr"> A-</span>
+				 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
 				 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
 				<a href="#" class="skype">
 					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
@@ -31,7 +46,7 @@
 				</a>
 				<c:choose>
 				<c:when test="${userLoggedIn}">
-				      <a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details profile-edit sagiaNavigation-user"><img class="pr-3" src="${commonResourcePath}/images/User-icon.svg" /><span>${user.name}</span></a>
+				      <a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user"><img class="pr-3" src="${commonResourcePath}/images/User-icon.svg" /><span>${user.name}</span></a>
                       <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer"><span>Logout</span></a>
 				      <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
 				      <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
@@ -187,7 +202,7 @@
 <script>
 	$(document).ready(function(){
 		$(window).scroll(function() {
-			if ($(this).scrollTop() > 100) {
+			if ($(this).scrollTop() > 10) {
 				$('#header').addClass('header-scrolled');
 				$('#topbar').addClass('topbar-scrolled');
 				$('#login-Navigation').addClass('login-scrolled');
@@ -198,7 +213,7 @@
 			}
 		});
 
-		if ($(window).scrollTop() > 100) {
+		if ($(window).scrollTop() > 10) {
 			$('#header').addClass('header-scrolled');
 			$('#topbar').addClass('topbar-scrolled');
 			$('#login-Navigation').addClass('login-scrolled');

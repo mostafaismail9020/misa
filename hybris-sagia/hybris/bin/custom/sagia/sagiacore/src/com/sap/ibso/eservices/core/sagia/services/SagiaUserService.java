@@ -82,11 +82,24 @@ public interface SagiaUserService extends UserService
 	Set<B2BCustomerModel> getAllChildB2BCustomers();
 
 	/**
-	 * Gets Opportunities Created by the customer
+	 * Gets ContactTicket Created by the customer
 	 * @param contactEmail contactEmail
 	 * @return all the tickets raised by the customer
 	 */
 	List<ContactTicketModel> getUserRaisedOpportunities(String contactEmail);
 
+	/**
+	 * Gets ContactTicket Created by the customer
+	 * @param ticketId ticketId
+	 * @return the ticket raised by the customer
+	 */
 	ContactTicketModel getContactTicketForTicketId(String ticketId);
+	
+	/**
+	 * Add comments to ContactTicket
+	 * @param ticketId ticketId
+	 * @param comments comments
+	 * @return the ticket raised by the customer
+	 */
+	ContactTicketModel addContactTicketComments(String ticketId, String comments);
 }

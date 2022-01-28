@@ -29,6 +29,14 @@ import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.user.UserService;
 import de.hybris.platform.servicelayer.user.exceptions.PasswordEncoderNotFoundException;
 import de.hybris.platform.servicelayer.user.impl.DefaultUserService;
+
+import de.hybris.platform.comments.model.CommentModel;
+import de.hybris.platform.ticket.strategies.TicketEventStrategy;
+import de.hybris.platform.ticket.model.CsTicketModel;
+import de.hybris.platform.ticket.enums.CsEventReason;
+import de.hybris.platform.ticket.enums.CsInterventionType;
+import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
+
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
 import org.fest.util.Strings;
@@ -55,9 +63,14 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
 
     @Resource
     UserService userService;
-
+    
+    @Resource(name = "contactTicketEventStrategy")
+	private TicketEventStrategy ticketEventStrategy;
+    
+    
     @Override
-    public List<ValidationError> validateUniqueUserAttributes(final String uid, final String mobileNumber, final String mobileCountryCode, final String email) {
+    public List<ValidationError> validateUniqueUserAttributes(final String uid, final String mobileNumber, 
+    		final String mobileCountryCode, final String email) {
         final List<ValidationError> result = new ArrayList<>();
         final List<CustomerModel> customers = sagiaUserDao.getCustomers(uid, mobileNumber, mobileCountryCode, email);
         if (!CollectionUtils.isEmpty(customers)) {
@@ -170,6 +183,24 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     @Override
     public ContactTicketModel getContactTicketForTicketId(String ticketId) {
         return sagiaUserDao.getContactTicketForTicketId(ticketId);
+    }
+    
+    
+    public ContactTicketModel addContactTicketComments(String ticketId, String comments) {    	
+    	ContactTicketModel contactTicket = sagiaUserDao.getContactTicketForTicketId(ticketId);
+    	
+    	if (null != contactTicket && null != comments) {    		    		
+	    	CsTicketModel ticket = (CsTicketModel) contactTicket;
+			CsCustomerEventModel ticketComment = ticketEventStrategy.createCreationEventForTicket(ticket,
+					CsEventReason.FIRSTCONTACT, CsInterventionType.TICKETMESSAGE, comments);
+						
+			List<CommentModel> commentsList = new ArrayList<CommentModel>();
+			commentsList.add(ticketComment);
+			contactTicket.setComments(commentsList);
+			getModelService().refresh(contactTicket);
+    	}
+    	
+        return contactTicket;
     }
 
     public SagiaUserDao getSagiaUserDao() {

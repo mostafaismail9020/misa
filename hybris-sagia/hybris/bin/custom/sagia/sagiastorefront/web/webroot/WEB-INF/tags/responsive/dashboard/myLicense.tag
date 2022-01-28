@@ -14,7 +14,7 @@
             <!-- <a href="${encodedContextPath}/my-sagia/license/convert" class="dashboardWidget-headline-action-link">
                 <spring:theme code="convertlicense.converttonational"/><icon:convert-to-national/>
             </a> -->
-            <a href="${encodedContextPath}/my-sagia/license/print" class="btn-outline dashboardWidget-headline-action-link" download>
+            <a href="${encodedContextPath}/my-sagia/license/print" class="btn-outline dashboardWidget-headline-action-link download-payment" download>
                 <spring:theme code="text.account.followup.download"/><img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Download.png" alt=""/>
             </a>
            <!-- <a href="${encodedContextPath}/my-sagia/license/cancel" class="dashboardWidget-headline-action-link">

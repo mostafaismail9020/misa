@@ -132,7 +132,7 @@
                         			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
                         			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/>
                         		</a>
-                                <button class="btn-dashboard text-uppercase" onclick="applyNewTnC(event,'NewApply');">
+                                <button class="btn-dashboard text-uppercase js-license-apply" onclick="applyNewTnC(event,'NewApply');">
                                 	<spring:theme code="dashboard.withoutlicense.applyfornewlicense"/>
                                 </button>
                         	</div>

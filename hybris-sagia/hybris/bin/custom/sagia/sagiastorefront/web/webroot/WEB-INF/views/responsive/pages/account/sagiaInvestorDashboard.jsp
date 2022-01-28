@@ -347,13 +347,13 @@
                     <ul class="nav nav-tabs mb-0 dashboard-licenses-navs" role="tablist">
                         <li class="nav-item" id="js-myLicense"> <a class="nav-link active" href="#myLicense" role="tab" data-toggle="tab"><spring:theme code="myLicense.title"/></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#payments" role="tab" data-toggle="tab"><spring:theme code="payments.page.title"/></a>
+                        <li class="nav-item" id="js-paymentsDetails"><a class="nav-link" href="#payments" role="tab" data-toggle="tab"><spring:theme code="payments.page.title"/></a>
                         </li>
-                        <li class="nav-item" id="servicesRequest"> <a class="nav-link" href="#servicerequest" role="tab" data-toggle="tab"> <spring:theme code="dashboard.servicesRequest.title"/></a>
+                        <li class="nav-item" id="js-servicesRequest"> <a class="nav-link" href="#servicerequest" role="tab" data-toggle="tab"> <spring:theme code="dashboard.servicesRequest.title"/></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#savedDrafts" role="tab" data-toggle="tab"><spring:theme code="dashboard.savedDrafts.title"/></a>
+                        <li class="nav-item" id="js-incompleRequest"><a class="nav-link" href="#savedDrafts" role="tab" data-toggle="tab"><spring:theme code="dashboard.savedDrafts.title"/></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#yourTickets" role="tab" data-toggle="tab"><spring:theme code="dashboard.ticket.yourtickets"/></a>
+                        <li class="nav-item" id="js-serviceTickets"><a class="nav-link" href="#yourTickets" role="tab" data-toggle="tab"><spring:theme code="dashboard.ticket.yourtickets"/></a>
                         </li>
                     </ul>
                     
@@ -589,7 +589,7 @@
                         </span>
                     </div>
                     <div>
-                        <span class="firstBlock-contact-local-number">
+                        <span class="firstBlock-contact-local-number local-connect">
                             <spring:theme code="dashboard.license.letus.help.you.local.number"/>
                         </span>
                     </div>
@@ -599,7 +599,7 @@
                         <img  alt="" src="${commonResourcePath}/images/Contact-us/International.png"/>
                     </div>
                     <div>
-                        <span class="firstBlock-contact-local-label">
+                        <span class="firstBlock-contact-local-label international-connect">
                             <spring:theme code="dashboard.license.letus.help.you.International"/>
                         </span>
                     </div>

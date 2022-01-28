@@ -12,6 +12,7 @@ import de.hybris.platform.ticket.enums.CsInterventionType;
 import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import de.hybris.platform.ticket.model.CsTicketModel;
 import de.hybris.platform.ticket.strategies.TicketEventStrategy;
+
 import org.apache.log4j.Logger;
 import org.codehaus.plexus.util.StringUtils;
 import org.springframework.stereotype.Controller;
@@ -46,6 +47,7 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 
 	@Resource(name = "contactTicketEventStrategy")
 	private TicketEventStrategy ticketEventStrategy;
+	
 
 	@RequestMapping(value = PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	@RequireHardLogIn
@@ -61,30 +63,37 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 		}
 		storeCmsPageInModel(model, getContentPageForLabelOrId(POTENTIAL_OPPORTUNITY_CMS_PAGE));
 		setUpMetaDataForContentPage(model, getContentPageForLabelOrId(POTENTIAL_OPPORTUNITY_CMS_PAGE));
+		
 		return getViewForPage(model);
 	}
 
 
 	@RequestMapping(value = PATH_VARIABLE_PATTERN)
-	public String setCommentsToContactTicket(@ModelAttribute("contactTicketForm") ContactTicketForm contactTicketForm, final Model model, @PathVariable("ticketId") final String ticketId)
+	public String setCommentsToContactTicket(@ModelAttribute("contactTicketForm") ContactTicketForm contactTicketForm, 
+			final Model model, @PathVariable("ticketId") final String ticketId)
 			throws CMSItemNotFoundException {
 
-		List<CommentModel> comments = new ArrayList<>();
-		ContactTicketModel contactTicketModel = sagiaUserService.getContactTicketForTicketId(ticketId);
-		CsTicketModel ticket = (CsTicketModel)contactTicketModel;
-		CsCustomerEventModel comment = ticketEventStrategy.createCreationEventForTicket(ticket,
-				CsEventReason.FIRSTCONTACT, CsInterventionType.TICKETMESSAGE, contactTicketForm.getComment());
-		comments.add(comment);
-		contactTicketModel.setComments(comments);
-
-		model.addAttribute("comments", contactTicketModel.getComments());
-		model.addAttribute("contactTicketDetails", contactTicketModel);
-		if(StringUtils.isNotEmpty(contactTicketModel.getOpportunityCode())) {
-			ProductData opportunityProductDetails = investSaudiProductFacade.getProductForCode(contactTicketModel.getOpportunityCode());
-			model.addAttribute("opportunityDetails", opportunityProductDetails);
+//		List<CommentModel> comments = new ArrayList<>();
+//		ContactTicketModel contactTicketModel = sagiaUserService.getContactTicketForTicketId(ticketId);
+//		CsTicketModel ticket = (CsTicketModel)contactTicketModel;
+//		CsCustomerEventModel comment = ticketEventStrategy.createCreationEventForTicket(ticket,
+//				CsEventReason.FIRSTCONTACT, CsInterventionType.TICKETMESSAGE, contactTicketForm.getComment());
+//		comments.add(comment);
+//		contactTicketModel.setComments(comments);
+		
+		ContactTicketModel contactTicket = sagiaUserService.addContactTicketComments(ticketId, contactTicketForm.getComment());		
+		if (null != contactTicket) {
+			model.addAttribute("comments", contactTicket.getComments());
+			model.addAttribute("contactTicketDetails", contactTicket);
+			if (StringUtils.isNotEmpty(contactTicket.getOpportunityCode())) {
+				ProductData opportunityProductDetails = investSaudiProductFacade.getProductForCode(contactTicket.getOpportunityCode());
+				model.addAttribute("opportunityDetails", opportunityProductDetails);
+			}
 		}
+		
 		storeCmsPageInModel(model, getContentPageForLabelOrId(POTENTIAL_OPPORTUNITY_CMS_PAGE));
 		setUpMetaDataForContentPage(model, getContentPageForLabelOrId(POTENTIAL_OPPORTUNITY_CMS_PAGE));
+		
 		return getViewForPage(model);
 	}
 

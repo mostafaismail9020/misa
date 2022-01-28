@@ -37,12 +37,12 @@
     <div class="contentModule-actions contentModule-actions_spaceBetween">
         <c:url value="/my-sagia/license/entity" var="backUrl"/>
         <span>
-            <a id="shareholdersBackButton" type="button" class="btn btn-secondary" href="${backUrl}"><spring:theme code="general.back"/></a>
-<%--            <button id="shareholdersCancelButton" type="button" class="btn btn-secondary btn_link btn_bold"><spring:theme code="general.cancel"/></button>--%>
+            <a id="shareholdersBackButton" type="button" class="btn btn-normal btn-ctrl btn_bold btn-outline" href="${backUrl}"><spring:theme code="general.back"/></a>
+<%--            <button id="shareholdersCancelButton" type="button" class="btn btn-normal btn-ctrl btn-bg btn_bold btn-outline btn_link"><spring:theme code="general.cancel"/></button>--%>
         </span>
         <c:url value="/my-sagia/license/contactperson" var="nextUrl"/>
         <span>
-            <button id="shareholdersNextButton" type="button" class="btn" data-url="${nextUrl}"><spring:theme code="general.next"/></button>
+            <button id="shareholdersNextButton" type="button" class="btn btn-normal btn-ctrl btn-bg btn_bold" data-url="${nextUrl}"><spring:theme code="general.next"/></button>
         </span>
     </div>
 </div>

@@ -366,7 +366,7 @@ SAGIA.eServiceTour = {
 					//enough space in viewport for full size panel
 					if (bodyWidth > maxPanelWidth) {
 
-						if(focusDimensions.left >= (bodyWidth - focusDimensions.right)) {
+						if(focusDimensions.left >= (bodyWidth - focusDimensions.right) && bodyWidth <= focusDimensions.right) {
 							//left space > right space
 							leftValue = '0';
 							

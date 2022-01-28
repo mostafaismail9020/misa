@@ -377,6 +377,7 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
             if(mediaModel == null) {
             	mediaModel = getModelService().create(MediaModel.class) ;
             	mediaModel.setCode(customer.getUid()+COMPANY+System.currentTimeMillis());
+            	getModelService().save(mediaModel);
             }
             getMediaService().setDataForMedia(mediaModel, file.getBytes());
             getModelService().save(mediaModel);

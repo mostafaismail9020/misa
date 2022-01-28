@@ -59,6 +59,7 @@ import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParamete
 public class SagiaCustomerFacade extends DefaultCustomerFacade {
     private static final Logger LOG = Logger.getLogger(SagiaCustomerFacade.class);
     private static final String UPDATE_PASS_INVALID = "updatePwd.pwd.invalid";
+    private static final String COMPANY = "_COMPANY_";
 
     private SagiaCountryService sagiaCountryService;
     private SagiaSectorService sagiaSectorService;
@@ -359,7 +360,7 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
     }
     
     /**
-     * update the media item that represents company logo picture attached to the current user.
+     * update the media item that represents company logs picture attached to the current user.
      * userId represents the media code and will be replaced with new image each time user updates it.
      *
      * @param file file
@@ -371,9 +372,14 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
         // create media
         if(userModel instanceof CustomerModel) {
         	CustomerModel customer = (CustomerModel)userModel;
-        	String mediaCode = userModel.getUid();
-            MediaModel mediaModel = getMediaModel(mediaCode);
+        	
+            MediaModel mediaModel = customer.getCompanyLogo() ; 
+            if(mediaModel == null) {
+            	mediaModel = getModelService().create(MediaModel.class) ;
+            	mediaModel.setCode(customer.getUid()+COMPANY+System.currentTimeMillis());
+            }
             getMediaService().setDataForMedia(mediaModel, file.getBytes());
+            getModelService().save(mediaModel);
             //add it to user
             customer.setCompanyLogo(mediaModel);
             getModelService().save(customer);

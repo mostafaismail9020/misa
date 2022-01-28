@@ -27,8 +27,7 @@
 		<div class="contentModule-headline">
 			<spring:theme code="licence.apply.shareholder.details" />
 		</div>
-
-
+<hr class="hr">
 		<div class="contentModule-section row" id="shareholderIdTypeSection">
 
 
@@ -74,7 +73,7 @@
 
 
 			<div class="col-md-6" id="nicShareholderVerifyBtnSection">
-				<a style="margin-top: 15px" class="btn"
+				<a href="#" class="btn btn-bg btn-normal btn_bold btn-ctrl w-50 mt-4"
 					id="verifyShareholderDetailsShow" data-nic-verified="false"><spring:theme
 						code="license.apply.shareholder.verify" /></a>
 			</div>
@@ -82,29 +81,25 @@
 
 		</div>
 		<div class="row" style="display: none" id="dataSection">
-
-
-
-
 			<div class="col-md-6">
 				<div id="shareholderTitle" class="formRadioBox">
 					<div class="form-group">
 						<div class="formRadioBox-label">
 							<spring:theme code="general.license.title" />
 						</div>
-						<div class="form-item">
+						<div class="form-item mt-2 pr-0 mb-4">
 							<input id="personTitle" name="shareHolderTitle"
 								class="form-control" type="radio" value="Mr."
 								${sagiaApplyPersonShareholderForm.shareHolderTitle eq 'Mr.' ? 'checked="checked"' : ''} />
-							<label for="personTitle" class="control-label"><spring:theme
+							<label for="personTitle" class="btn-ctrl btn_bold control-label"><spring:theme
 									code="general.mr" /></label>
 						</div>
 
-						<div class="form-item">
+						<div class="form-item mt-2 mb-4 pl-0">
 							<input id="organizationTitle" name="shareHolderTitle"
 								class="form-control" type="radio" value="Mrs."
 								${sagiaApplyPersonShareholderForm.shareHolderTitle eq 'Mrs.' ? 'checked="checked"' : ''} />
-							<label for="organizationTitle" class="control-label"><spring:theme
+							<label for="organizationTitle" class="btn-ctrl btn_bold control-label"><spring:theme
 									code="general.mrs" /></label>
 						</div>
 					</div>
@@ -219,7 +214,7 @@
 					path="passportIssueDate" labelCSS="control-label_mandatory"
 					inputBoxCode="${calendar}" inputBoxCSS="formInputBox_group"
 					inputCSS="js-form-control_date validate__mandatory" />
-				
+
 			</div>
 
 			<div class="col-md-6">
@@ -434,18 +429,18 @@
                     </span>
                 </c:set>
                 <formElement:formInputBoxCustom idKey="mofaNumber" labelKey="license.apply.shareholder.mofaNumber"
-                                                path="mofaNumber" inputBoxCode="${mofaNumberTooltip}" inputBoxCSS="formInputBox_group" 
+                                                path="mofaNumber" inputBoxCode="${mofaNumberTooltip}" inputBoxCSS="formInputBox_group"
                                                 inputCSS="validate__numbers-only" maxlength="13"/>
                 <!-- <div class="help-block" id="mofaNumber-error"></div> -->
                 <input type="hidden" id="isMofaVerified" name="mofaNumberVerified" value="${sagiaApplyPersonShareholderForm.mofaNumberVerified}">
                 <%-- <input type="hidden" id="isMofaVerifiedPer" name="mofaNumberVerified" value="${sagiaApplyPersonShareholderForm.mofaNumberVerified}"> --%>
 			</div>
-			
-			
+
+
 
 		</div>
 
-        
+
 		<!--  Attachment  -->
 		<div class="contentModule-section" id="attachmentSection"
 			style="display: none">
@@ -511,7 +506,7 @@
 						<div class="help-block">${otherErrors}</div>
 					</div>
 				</div> --%>
-				
+
 				<div class="col-md-6" id="professionalLicenseFileAttachment"
 					style="display: none">
 					<div
@@ -542,7 +537,7 @@
 						<div class="help-block">${professionalLicenseErrors}</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 
@@ -556,10 +551,10 @@
 
 	<div
 		class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-		<button type="button" class="cancelButton btn btn_outline">
+		<button type="button" class="cancelButton btn btn-outline btn-normal btn_bold w-25">
 			<spring:theme code="general.cancel" />
 		</button>
-		<button type="button" class="addButton btn">
+		<button type="button" class="saveNew btn btn-bg btn-normal btn_bold w-25">
 			<spring:theme code="licence.apply.savenewshareholder" />
 		</button>
 	</div>

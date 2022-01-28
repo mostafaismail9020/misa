@@ -41,7 +41,7 @@
         <span class="iconElement iconElement_business text-center"><icon:business/></span>
         <p class="text-center"><spring:theme code="license.apply.activities.question"/></p>
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <button type="button" class="btn" data-toggle="modal" data-target="#businessActivitiesModal">+ <spring:theme code="license.apply.business.activities"/></button>
+            <button type="button" class="btn w-25" data-toggle="modal" data-target="#businessActivitiesModal">+ <spring:theme code="license.apply.business.activities"/></button>
         </div>
         <div class="help-block"></div>
     </div>
@@ -62,7 +62,7 @@
         </div>
 
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <button type="button" class="btn" data-toggle="modal" data-target="#businessActivitiesModal"><spring:theme code="licence.apply.addedit.activities"/></button>
+            <button type="button" class="btn w-25" data-toggle="modal" data-target="#businessActivitiesModal"><spring:theme code="licence.apply.addedit.activities"/></button>
         </div>
     </div>
 

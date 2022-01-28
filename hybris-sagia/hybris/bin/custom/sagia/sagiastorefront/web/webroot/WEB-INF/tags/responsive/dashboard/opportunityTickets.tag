@@ -71,7 +71,7 @@
             </c:otherwise>
           </c:choose>
 		</div>
-                                    
+        	<c:if test="${fn:length(userOpportunityTickets) > 5}">      
                 <div class="paginationModule paginationModule_loading">
                    <%--  <c:if test="${!pageIsDashboard}">
                         <div style="width: 150px; position: absolute">
@@ -79,24 +79,25 @@
                         </div>
                     </c:if> --%>
                 	<div class="paginationModule-wrapper">
-                        <button class="paginationModule-control paginationModule-control_left" disabled>
-                            <icon:arrow_green_right/>
-                        </button>
+						<button class="paginationModule-control paginationModule-control_left" disabled>
+							<img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive" id="firstimg">
+						</button>
                         <div class="paginationModule-items">
                             <%-- <div class="loadingModule">
                                 <div class="loadingModule-icon"><icon:loading-spinner /></div>
                                 <div class="loadingModule-msg">Loading content ...</div>
                             </div> --%>
-                        </div>
-                        <button class="paginationModule-control paginationModule-control_right">
-                            <icon:arrow_green_right/>
-                        </button>
                     </div>
+					<button class="paginationModule-control paginationModule-control_right">
+						<img src="/_ui/responsive/common/images/arrow-left.png" class="img-responsive">
+					</button>
+				</div>
+			</c:if>    
 					<%--   <div class="tableModule-headline">
-                                                <a href="" data-redirect="payments-overview" class="js-page-redirect">
-                                                    <spring:theme code="dashboard.viewall" text="View all"/>
-                                                </a>
-                                            </div>
+						<a href="" data-redirect="payments-overview" class="js-page-redirect">
+							<spring:theme code="dashboard.viewall" text="View all"/>
+						</a>
+					</div>
  					--%>                                    
  				</div>
             </div>

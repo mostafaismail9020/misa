@@ -37,7 +37,7 @@
             </a>--%>
         </div>  
        
-        <div class="dashboardWidgetLicense">
+        <div class="dashboardWidgetLicense d-license-widget">
             <div class="dashboardTabs js-dashboardTabs">
             <%-- start dashboardTabs 1 --%>
                 <div class="dashboardTabs-head"><spring:theme code="dashboard.myLicense.details"/></div>
@@ -103,15 +103,21 @@
                             </table>
                         </div>
                     </div>
-                    <div class="paginationModule">
+                    <div class="paginationModule d-license-branch">
                         <div class="paginationModule-wrapper">
-                            <button class="paginationModule-control paginationModule-control_left" disabled><icon:arrow_green_right/></button>
+                            <!-- <button class="paginationModule-control paginationModule-control_left" disabled><icon:arrow_green_right/></button> -->
+                            <button class="paginationModule-control paginationModule-control_left" disabled>
+                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive" id="firstimg">
+                            </button>
                             <div class="paginationModule-items" id="branchesPagesSection">
                                 <div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link branch active">1</a></div>
                             </div>
                             <button class="paginationModule-control paginationModule-control_right">
-                                <icon:arrow_green_right/>
+                                <img src="/_ui/responsive/common/images/arrow-left.png" class="img-responsive">
                             </button>
+                            <!-- <button class="paginationModule-control paginationModule-control_right">
+                                <icon:arrow_green_right/>
+                            </button> -->
                         </div>
                     </div>
                 </div>
@@ -155,8 +161,34 @@
 
                 <div class="dashboardTabs-head"><spring:theme code="text.account.profile.license.generalmanager"/></div>
                 <div class="dashboardTabs-body">
-                    <div class="dashboardWidgetLicense-list dashboardWidgetLicense-list_4col">
-                        <div class="dashboardWidgetLicense-list-entry">
+                    <div class="tableModule tableModule_slim">
+                        <table class="tableModule-table">
+                            <thead class="tableModule-head">
+                            <tr>
+                                <th><spring:theme code="text.account.profile.license.generalManager.name"/></th>
+                                <th><spring:theme code="text.account.profile.license.generalManager.mobileNumber"/></th>
+                                <th><spring:theme code="text.account.profile.license.generalManager.email"/></th>
+                            </tr>
+                            </thead>
+                            <tbody class="tableModule-body">
+                                <tr>
+                                    <td>
+                                        <div id="generalManagerName" class="dashboardWidgetLicense-list-value">
+                                            <c:out value="${license.generalManager.firstName}"/> <c:out value="${license.generalManager.lastName}"/>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id="generalManagerMobileNumber" class="dashboardWidgetLicense-list-value">
+                                            <c:out value="${license.generalManager.firstName}"/> <c:out value="${license.generalManager.lastName}"/>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id="generalManagerEmail" class="dashboardWidgetLicense-list-value"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- <div class="dashboardWidgetLicense-list-entry">
                             <div class="dashboardWidgetLicense-list-label"><spring:theme code="text.account.profile.license.generalManager.name"/></div>
                             <div id="generalManagerName" class="dashboardWidgetLicense-list-value">
                                 <c:out value="${license.generalManager.firstName}"/> <c:out value="${license.generalManager.lastName}"/>
@@ -169,7 +201,7 @@
                         <div class="dashboardWidgetLicense-list-entry">
                             <div class="dashboardWidgetLicense-list-label"><spring:theme code="text.account.profile.license.generalManager.email"/></div>
                             <div id="generalManagerEmail" class="dashboardWidgetLicense-list-value"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

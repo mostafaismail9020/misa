@@ -173,7 +173,7 @@
     </div>
 </div>
 
-<section class="mainSection mainSection_noPadding">
+<section class="mainSection mainSection_noPadding bg-white">
     <div class="container">
         <h1 class="dashboard-headline services-headline js-dashboardWidget-headline text-center pt-5 mb-5">
             Services
@@ -284,7 +284,7 @@
             <div class="tab-content desktop_services services-container-tabcontent" id="pills-tabContent">
                 <div class="tab-pane fade show service_tab_pane_show active m-auto" id="licensing" role="tabpanel"
                     aria-labelledby="pills-licensing-tab">
-                    <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5">
+                    <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
                         <div class="content-wrapper">
                             <p class="INS_letter_set_para pb-3 mb-3">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -297,7 +297,7 @@
                 </div>
                 <div class="tab-pane fade show service_tab_pane_show m-auto" id="govt-service" role="tabpanel"
                     aria-labelledby="pills-govt-tab" role="tablist">
-                    <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5">
+                    <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
                         <div class="content-wrapper">
                             <p class="INS_letter_set_para pb-3 mb-3">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -309,7 +309,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade show service_tab_pane_show m-auto" id="sagia-services" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
-                    <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5">
+                    <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
                         <div class="content-wrapper">
                             <p class="INS_letter_set_para pb-3 mb-3">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -323,25 +323,9 @@
         </div>
     </div>
 </section>
-
-<!-- 
-<section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
+<section class="container mainSection_noPaddingTop js-dashboard">
     <div class="container">
-        <div class="Inc-title-header py-5">
-            <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
-                LICENSES
-                
-            </h1>
-            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard btn_link_slim">
-                <spring:theme code="dashboard.customize"/> <span class="iconElement iconElement_pin pl-3"></span> 
-            </a>
-        </div>
-    </div>
-</section> -->
-
-<section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
-    <div class="container">
-        <div class="Inc-title-header py-5">
+        <div class="Inc-title-header pt-5">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
                 <c:if test="${language eq 'en'}">
                     LICENSES
@@ -351,16 +335,16 @@
                 </c:if>
             </h1>
 		</div>
-        <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard dashboard-exportall-btn text-uppercase"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
+        <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-5"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
     </div>
 </section>
 
 
-<section class="mainSection mainSection_noPadding">
-    <div class="container">
-            <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
+<section class="container mainSection mainSection_noPadding bg-white">
+    <div class="">
+            <div class="container dashboardUser dashboardUser_slim dashboardUser_noBorder">
                 <div class="dashboard-tabs">
-                    <ul class="nav nav-tabs mb-0" role="tablist">
+                    <ul class="nav nav-tabs mb-0 dashboard-licenses-navs" role="tablist">
                         <li class="nav-item" id="js-myLicense"> <a class="nav-link active" href="#myLicense" role="tab" data-toggle="tab"><spring:theme code="myLicense.title"/></a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#payments" role="tab" data-toggle="tab"><spring:theme code="payments.page.title"/></a>
@@ -549,8 +533,9 @@
             <div class="dashboard-container">
                 <div class="row titleContainer">
                     <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
-                        <h1 class="section-title text-center clr_gld py-5">NEWS &amp; UPDATES</h1>
-                        <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp;
+                        <h1 class="section-title text-center clr_gld pt-5">NEWS &amp; UPDATES</h1>
+                        <!-- <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp; -->
+                        <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-5">Explore All&nbsp;
                             <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
                     	</a>
                     </div>
@@ -566,8 +551,9 @@
 	                                    <img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
 	                                </div>
 	                                <div class="card-box p-3 pr-5 home-news-updates-content">
-	                                    <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
-	                                    <h3 class="my-3">${fn:substring(currentNews.newsTitle,0,29)} ...</h3>
+	                                    <!-- <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong> -->
+	                                    <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMM" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /></span>
+	                                    <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,70)} ...</h3>
 	                                    <!-- <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p> -->
 	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
 	                                </div>
@@ -582,44 +568,71 @@
 </section>
 
 <section class="helpSection">
-    <div class="container innerContainer">
+    <div class="container mt-5">
         <div class="firstBlock">
             <div class="firstBlock-widget">
                 <h1 class="text-center text-uppercase clr_gld">
                     <spring:theme code="dashboard.license.letus.help.you.heading.name"/>
                 </h1>
-                <span class="firstBlock-text">
+                <span class="firstBlock-text d-contact-help-text">
                    <spring:theme code="dashboard.license.letus.help.you.text"/>
                 </span>
             </div>
-            <div class="firstBlock-contact d-flex">
-                <div class="firstBlock-contact-local">
-                    <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>
-                    <span class="firstBlock-contact-local-label">
-                        <spring:theme code="dashboard.license.letus.help.you.local"/>
-                    </span>
-                    <span class="firstBlock-contact-local-number">
-                        <spring:theme code="dashboard.license.letus.help.you.local.number"/>
-                    </span>
+            <div class="firstBlock-contact d-flex row my-5">
+                <div class="firstBlock-contact-local line-after col-md-4">
+                    <div>
+                        <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>
+                    </div>
+                    <div>
+                        <span class="firstBlock-contact-local-label">
+                            <spring:theme code="dashboard.license.letus.help.you.local"/>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="firstBlock-contact-local-number">
+                            <spring:theme code="dashboard.license.letus.help.you.local.number"/>
+                        </span>
+                    </div>
                 </div>
-                <div class="firstBlock-contact-local">
-                    <img  alt="" src="${commonResourcePath}/images/Contact-us/International.png"/>
-                    <span class="firstBlock-contact-local-label">
-                        <spring:theme code="dashboard.license.letus.help.you.International"/>
-                    </span>
-                    <span class="firstBlock-contact-local-number">
-                        <spring:theme code="dashboard.license.letus.help.you.International.number"/>
-                    </span>
+                <div class="firstBlock-contact-local line-after col-md-4">
+                    <div>
+                        <img  alt="" src="${commonResourcePath}/images/Contact-us/International.png"/>
+                    </div>
+                    <div>
+                        <span class="firstBlock-contact-local-label">
+                            <spring:theme code="dashboard.license.letus.help.you.International"/>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="firstBlock-contact-local-number">
+                            <spring:theme code="dashboard.license.letus.help.you.International.number"/>
+                        </span>
+                    </div>
+                </div>
+                <div class="firstBlock-contact-local col-md-4">
+                    <div>
+                        <img  alt="" src="${commonResourcePath}/images/Contact-us/email.png"/>
+                    </div>
+                    <div>
+                        <span class="firstBlock-contact-local-label">&nbsp;
+                            <!-- <spring:theme code="dashboard.license.letus.help.you.International"/> -->
+                        </span>
+                    </div>
+                    <div>
+                        <span class="firstBlock-contact-local-number">
+                            InvestorCare@misa.gov.sa
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="emailBlock">
+        <!-- <div class="emailBlock">
             <div class="firstBlock-widget">
                 <h1 class="text-center text-uppercase clr_gld">
                     <spring:theme code="dashboard.license.letus.help.you.emailus.heading.name"/>
                 </h1>
                 <span class="firstBlock-text">
-                    <spring:theme code="dashboard.license.letus.help.you.emailus.text"/>
+                    <   
                 </span>
             </div>
             <div class="emailBlock-contact">
@@ -633,7 +646,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>
 

@@ -128,7 +128,7 @@
                         </c:when>
                         <c:otherwise>
                         	<div class="globalMessage-action d-flex">
-                        		<a href="${encodedContextPath}/simulator/license-apply" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5">
+                        		<a href="${encodedContextPath}/simulator/license-apply" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 btn-simulator">
                         			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
                         			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/>
                         		</a>
@@ -168,8 +168,8 @@
 	                <div class="dashboard-container">
 	                    <div class="row titleContainer">
 	                        <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
-	                            <h1 class="section-title text-center clr_gld py-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
-		                        <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">
+	                            <h1 class="section-title text-center clr_gld pt-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
+		                        <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-5">
 		                        	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
 		                            <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
 		                    	</a>
@@ -186,8 +186,9 @@
 		                                        <img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
 		                                    </div>
 		                                    <div class="card-box p-3 pr-5 home-news-updates-content">
-		                                        <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong>
-		                                        <h3 class="my-3">${fn:substring(currentNews.newsTitle,0,29)} ...</h3>
+		                                        <!-- <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong> -->
+		                                        <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMM" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /></span>
+                                                <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,70)} ...</h3>
 		                                        <!-- <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p> -->
 		                                        <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
 		                                    </div>
@@ -202,38 +203,65 @@
 	    </section>
     
 	    <section class="helpSection">
-		    <div class="container innerContainer">
+		    <div class="container mt-5">
 		        <div class="firstBlock">
-		            <div class="firstBlock-widget">
+		            <div class="firstBlock-widget"> 
 		                <h1 class="text-center text-uppercase clr_gld">
 		                    <spring:theme code="dashboard.license.letus.help.you.heading.name"/>
 		                </h1>
-		                <span class="firstBlock-text">
+		                <span class="firstBlock-text d-contact-help-text">
 		                   <spring:theme code="dashboard.license.letus.help.you.text"/>
 		                </span>
 		            </div>
-		            <div class="firstBlock-contact d-flex">
-		                <div class="firstBlock-contact-local">
-		                    <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>
-		                    <span class="firstBlock-contact-local-label">
-		                        <spring:theme code="dashboard.license.letus.help.you.local"/>
-		                    </span>
-		                    <span class="firstBlock-contact-local-number">
-		                        <spring:theme code="dashboard.license.letus.help.you.local.number"/>
-		                    </span>
-		                </div>
-		                <div class="firstBlock-contact-local">
-		                    <img  alt="" src="${commonResourcePath}/images/Contact-us/International.png"/>
-		                    <span class="firstBlock-contact-local-label">
-		                        <spring:theme code="dashboard.license.letus.help.you.International"/>
-		                    </span>
-		                    <span class="firstBlock-contact-local-number">
-		                        <spring:theme code="dashboard.license.letus.help.you.International.number"/>
-		                    </span>
-		                </div>
+		            <div class="firstBlock-contact d-flex row my-5">
+                        <div class="firstBlock-contact-local line-after col-md-4">
+                            <div>
+                                <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>
+                            </div>
+                            <div>
+                                <span class="firstBlock-contact-local-label">
+                                    <spring:theme code="dashboard.license.letus.help.you.local"/>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="firstBlock-contact-local-number">
+                                    <spring:theme code="dashboard.license.letus.help.you.local.number"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="firstBlock-contact-local line-after col-md-4">
+                            <div>
+                                <img  alt="" src="${commonResourcePath}/images/Contact-us/International.png"/>
+                            </div>
+                            <div>
+                                <span class="firstBlock-contact-local-label">
+                                    <spring:theme code="dashboard.license.letus.help.you.International"/>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="firstBlock-contact-local-number">
+                                    <spring:theme code="dashboard.license.letus.help.you.International.number"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="firstBlock-contact-local col-md-4">
+                            <div>
+                                <img  alt="" src="${commonResourcePath}/images/Contact-us/email.png"/>
+                            </div>
+                            <div>
+                                <span class="firstBlock-contact-local-label">&nbsp;
+                                    <!-- <spring:theme code="dashboard.license.letus.help.you.International"/> -->
+                                </span>
+                            </div>
+                            <div>
+                                <span class="firstBlock-contact-local-number">
+                                    InvestorCare@misa.gov.sa
+                                </span>
+                            </div>
+                        </div>
 		            </div>
 		        </div>
-		        <div class="emailBlock">
+		        <!-- <div class="emailBlock">
 		            <div class="firstBlock-widget">
 		                <h1 class="text-center text-uppercase clr_gld">
 		                    <spring:theme code="dashboard.license.letus.help.you.emailus.heading.name"/>
@@ -253,7 +281,7 @@
 		                    </div>
 		                </div>
 		            </div>
-		        </div>
+		        </div> -->
 		    </div>
 		</section>
     

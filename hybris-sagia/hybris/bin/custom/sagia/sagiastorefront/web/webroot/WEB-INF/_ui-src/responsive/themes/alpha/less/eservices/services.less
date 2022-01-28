@@ -17,7 +17,9 @@
 //     background-color: @color-primary !important;
 //     border-color: @color-primary !important;
 //   }
-
+.btn{
+    text-transform: uppercase !important;
+}
 .btn:hover{
     color: @color-white !important;
     background-color: @color-primary !important;
@@ -185,8 +187,8 @@
 .btn_greenLink{
     color:@color-primary !important;
 }
-.btn.btn-secondary:hover{
-    color: @color-primary;
+.btn.btn-secondary:hover,.btn-outline.btn-simulator:hover{
+    color: @color-primary !important;
 }
 .btn.btn-primary:hover,.btn.newAmendmentBtn:hover,.btn.btn_slim:hover{
     color: @color-white;
@@ -473,7 +475,7 @@
                 background: @color-primary 0% 0% no-repeat padding-box;
                 border: 1px solid @color-primary;
                 margin: auto;
-                height: 70px;
+                height: 100px;
                 display: flex;
                 align-items: center;
                 >img.services-category-img.icon-1{
@@ -485,7 +487,7 @@
                 h5{
                     color: @color-white;
                     font-size: 24px;
-                    font-weight: 500;
+                    font-weight: 600;
                     text-align: left;
                     width: 93%;
                 }   
@@ -759,6 +761,9 @@ button.btn.btn_link.btn-edit-branch:hover{
         text-decoration: none;
     }
 }
+.shadow-none{
+    box-shadow: none !important;
+}
 @media (min-width: 1200px) {
 	.container{
 		max-width: 1320px !important;
@@ -883,4 +888,9 @@ button.btn.btn_link.btn-edit-branch:hover{
         height: 500px;
     }
     
+}
+
+
+.payment-detail-overview-btn{
+    width: 375px !important;
 }

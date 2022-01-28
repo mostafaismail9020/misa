@@ -495,3 +495,14 @@ $(document).ready(function(){
 });
 
 
+
+
+
+$(document).on('click',".services-category-list .nav .nav-link",function(){
+    $(".service_tab_pane_show").removeClass("show").removeClass("active");
+      $("#"+$(this).attr('href').replace("#","")).addClass("show").addClass("active");
+      $("#"+$(this).attr('href').replace("#","")+"1").addClass("show").addClass("active");
+
+      $(".services-category-list .nav .nav-link").removeClass("active");
+      $(this).addClass("active");
+  });

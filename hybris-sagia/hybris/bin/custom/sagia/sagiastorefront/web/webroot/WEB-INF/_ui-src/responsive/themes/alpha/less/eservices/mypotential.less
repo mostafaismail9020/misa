@@ -227,11 +227,20 @@ label.new_comment b{color: #000000;}
 	width: 20%;
 } 
 .circle_potential .tabs .nav-tabs .nav-item.show .nav-link{ 
-	border: 3px solid #00A6BE;
+	border: 1px solid #00A6BE;
 	text-align: center; 
 	vertical-align: middle; 
 	display: table-cell;
-	color: #00A6BE !important;
+	// color: #00A6BE !important;
+	background: @color-primary 0% 0% no-repeat padding-box;
+	box-shadow: 0px 18px 33px #00000029;
+	color: @color-white !important;
+}
+.circle_potential .tabs .nav-tabs .nav-item img.img-pot-opp{
+	visibility: hidden;
+}
+.circle_potential .tabs .nav-tabs .nav-item.show img.img-pot-opp{
+	visibility: visible;
 }
 .circle_potential .tabs .nav-tabs .nav-item .nav-link{ 
 	color: #707070;
@@ -255,13 +264,14 @@ label.new_comment b{color: #000000;}
 	text-align: center; 
 	vertical-align: middle; 
 	display: table-cell;
-	width: 35px;
-	height: 35px;
+	width: 25px;
+	// height: 35px;
 	position: relative;
-	top: -50%;
-	left: 70%; 
-	filter: grayscale(0.5) brightness(0.5);
-	opacity: 0.2;
+	// top: -50%;
+	top: -35%;
+	left: 75%; 
+	// filter: grayscale(0.5) brightness(0.5);
+	// opacity: 0.2;
 }
 .circle_potential .tabs .nav-tabs {
 	border-bottom: 0px solid #dee2e6;
@@ -390,4 +400,15 @@ label.new_comment b{color: #000000;}
     .circle_potential .tabs .nav-tabs .nav-item {
         width: 50%;
     } 
+}
+
+
+img.img-pot-opp{
+	// position: absolute;
+    margin-top: -45px;
+    margin-left: 50px;
+	left: 5% !important;
+    top: 0% !important;
+	filter: none !important;
+	opacity: 1;
 }

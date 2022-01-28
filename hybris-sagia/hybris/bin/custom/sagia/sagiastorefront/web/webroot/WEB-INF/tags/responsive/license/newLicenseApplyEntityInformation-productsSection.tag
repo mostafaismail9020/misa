@@ -134,12 +134,12 @@
 <div class="contentModule-actions contentModule-actions_spaceBetween">
     <span>
         <ycommerce:testId code="personalDetails_cancelPersonalDetails_button">
-            <button id="entityInformationBackButton" disabled="disabled" type="button" class="btn btn-secondary">
+            <button id="entityInformationBackButton" disabled="disabled" type="button" class="btn btn-normal btn-ctrl btn-outline btn_bold">
                 <spring:theme code="licenseApplyEntityInformation.button.back" text="Back"/>
             </button>
         </ycommerce:testId>
-        <button id="entityInformationCancelButton" type="button" class="btn btn-secondary btn_link btn_bold">
-<%--            <spring:theme code="licenseApplyEntityInformation.button.cancel"/>--%>
+        <button id="entityInformationCancelButton" type="button" class="btn btn-normal btn-ctrl btn-outline btn_bold bg-transparant">
+<spring:theme code="licenseApplyEntityInformation.button.cancel"/>
         </button>
     </span>
     <span>
@@ -150,7 +150,7 @@
             </button>
         </ycommerce:testId>
 
-        <button type="button" class="btn entity-info-submit">
+        <button type="button" class="entity-info-submit btn btn-normal btn-ctrl btn-bg btn_bold">
             <spring:theme code="licenseApplyEntityInformation.button.next" text="Next"/>
         </button>
     </span>

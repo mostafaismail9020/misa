@@ -13,17 +13,17 @@
     <div class="contentModule-section">
         <div class="row">
             <div class="col-md-6">
-                <div class="formRadioBox" id="qm1Title">
+                <div class="formRadioBox ml-4 pl-2" id="qm1Title">
                     <div class="form-group">
                         <div class="formRadioBox-label control-label_mandatory"><spring:theme code="licenseApply.contactPerson.qm1.title"/></div>
                         <div class="form-item pt-2 pb-5">
                             <input id="mrTitle" name="title" class="form-control" type="radio" value="Mr"/>
-                            <label for="mrTitle" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="licenseApply.contactPerson.qm1.mr"/></label>
+                            <label for="mrTitle" class="btn-ctrl btn_bold control-label"><spring:theme code="licenseApply.contactPerson.qm1.mr"/></label>
                         </div>
 
                         <div class="form-item pt-2 pb-5">
                             <input id="mrsTitle" name="title" class="form-control" type="radio" value="Mrs"/>
-                            <label for="mrsTitle" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="licenseApply.contactPerson.qm1.mrs"/></label>
+                            <label for="mrsTitle" class="btn-ctrl btn_bold control-label"><spring:theme code="licenseApply.contactPerson.qm1.mrs"/></label>
                         </div>
                     </div>
                     <div class="help-block"></div>

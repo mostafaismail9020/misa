@@ -50,13 +50,18 @@ span {
 #addShareholderQM1NewPersonSection label,
 #addShareholderQM1NewOrganizationSection label,
 #addShareholderQM1ExistingSection label,
+#addShareholderQM1NewOrganizationSection label,
 #contactPersonQM1 label,
 #contactPersonQM2 label,
+#basicInformationExtendedSection lael,
 #sagiaLicenseApplyForm .formSelectBox .form-group label,
 #licenseYearSection .formSelectBox .form-group label {
-    font-size: 20px !important;
-    text-transform: inherit !important;
-    margin-left: 15px !important;
+    font-size: 16px !important;
+    left: 30px !important;
+    color: #707070;
+    padding-left: 0;
+    margin-left: 0;
+
 }
 
 #contactPersonQM1 .formRadioBox .form-group label,
@@ -64,25 +69,36 @@ span {
     font-size: 16px !important;
     margin-left: 0 !important;
 }
+#contactPersonQM1 #contactPersonBackButton{
+    color: #00A6BE !important;
+}
+#reviewContent .dlList dd{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .formSelectBox .select2.select2-container.select2-container--disabled+.control-label {
     top: 0 !important;
 }
 
-#organizationInformationExtended .formInputBox,
+#organizationInformationExtended .formInputBox
 #addShareholderQM1ExistingSection .formInputBox {
     margin-bottom: 30px;
 }
 
 #addShareholderQM1NewPersonSection .formSelectBox,
-#addShareholderQM1NewPersonSection .formInputBox,
-#addShareholderQM1NewOrganizationSection .formSelectBox,
-#addShareholderQM1NewOrganizationSection .formInputBox,
 #contactPersonQM1 .formSelectBox,
 #contactPersonQM1 .formInputBox,
 #contactPersonQM2 .formInputBox,
 #contactPersonQM2 .formSelectBox {
+    margin-top: 10px;
     padding-bottom: 30px;
+}
+#addShareholderQM1NewOrganizationSection .formSelectBox,
+#addShareholderQM1NewOrganizationSection .formInputBox{
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #addShareholderQM1NewOrganizationSection .formSelectBox .form-group,
@@ -92,6 +108,22 @@ span {
 #contactPersonQM2 .formInputBox .form-group,
 #contactPersonQM2 .formSelectBox .form-group {
     margin-bottom: 0;
+}
+#addShareholderQM1NewPersonSection .formInputBox .form-control,
+#addShareholderQM1ExistingSection .formInputBox .form-control,
+#organizationInformationExtended .formInputBox .form-control,
+#addShareholderQM1NewOrganizationSection .form-control,
+#contactPersonQM1 .formInputBox .form-control,
+#contactPersonQM2 .formInputBox .form-control,
+.page-new-license-apply #basicInformationExtendedEntityName .form-control{
+    font-size: 20px;
+    color: #707070;
+    margin-top: 10px;
+    padding-left: 30px;
+    text-transform: uppercase;
+}
+.page-license-apply .formInputBox .form-control:placeholder-shown+.control-label{
+    top:40px;
 }
 
 #addShareholderQM1NewPersonSection #shareholderTitle label.control-label {
@@ -108,10 +140,6 @@ span {
     border: 0 solid transparent;
     border-radius: 113px;
     cursor: pointer;
-}
-
-.globalMessage-action a:hover {
-    color: #fff !important;
 }
 
 .formSelectBox .select2.select2-container.select2-container--focus+.control-label,
@@ -490,7 +518,7 @@ span {
 }
 
 #entityInformationCancelButton {
-    color: #fff;
+    color: #00A6BE;
     background-color: #00A6BE !important;
 }
 
@@ -659,8 +687,10 @@ span {
 #licenseInformationSection .formRadioBox .form-item label,
 #delegateSectionQuestion .formRadioBox .form-item label {
     font-size: 16px !important;
+    color: #00A6BE;
     text-transform: uppercase !important;
     margin-left: 0 !important;
+    border: 1px solid #00A6BE;
 }
 
 .globalMessage-holder .globalMessage .globalMessage-action .btn {
@@ -1562,6 +1592,7 @@ button:focus {
 #contactPersonQM1 #qm1Title .formRadioBox-label {
     font-size: 20px;
     top: -15px;
+    left: 30px;
     color: #707070;
     text-transform: capitalize;
 }
@@ -1647,7 +1678,7 @@ button:focus {
     line-height: normal;
 }
 
-.page-license-apply .contentModule-section:not(:last-child) {
+.page-license-apply .contentModule-section:not(:last-child), .page-new-license-apply .contentModule-section:not(:last-child) {
     margin-bottom: 0 !important;
 }
 
@@ -1663,7 +1694,43 @@ button:focus {
 .page-license-apply::-webkit-scrollbar-thumb {
     background-color: transparent !important;
 }
-
+.page-license-apply .tooltip {
+    opacity: 1 !important;
+    z-index: 99999;
+}
+.page-license-apply .tooltip-listItem-header{
+    width: 18rem;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.page-license-apply  .tooltip-listItem_expanded .tooltip-listItem-body{
+    display: none;
+}
+.page-license-apply .tooltip-listItem:first-child{
+    border-top: none;
+}
+.page-license-apply .tooltip-listItem .tooltip-listItem-header .tooltip-listItem-trigger:hover{
+    background-color: transparent !important;
+}
+.page-license-apply #organizationInformationExtended .formInputBox .form-control,
+.page-new-license-apply #basicInformationExtendedSection .formInputBox .form-control{
+    color: #707070;
+    margin-top: 10px;
+}
+.page-license-apply #entityInformationCancelButton:hover{
+    color: #00a6be !important;
+}
+#addShareholderQM1NewPersonSection #shareholderTitle label, #contactPersonQM1 #qm1Title .formRadioBox-label{
+    color: #707070 !important;
+    border:none !important;
+    box-shadow: 0px 19px 47px #00000029;
+    background-color: transparent !important;
+}
+#addShareholderQM1NewPersonSection #shareholderTitle #personTitle +label,
+#contactPersonQM1 #qm1Title #mrTitle +label {
+    left: 0px !important;
+}
 [dir] button:focus {
     outline: none;
 }
@@ -1784,7 +1851,9 @@ button:focus {
 .page-sagia-profile .js-contactUpdate-edit .iconElement_edit02{
     vertical-align: 0;
 }
-.page-sagia-profile .contentModule-section .mw0, .page-appointment-details .contentModule-section .mw0, .page-appointment-create .mw0 {
+.page-sagia-profile .contentModule-section .mw0,
+.page-appointment-details .contentModule-section .mw0,
+.page-appointment-create .mw0, .page-license-apply .mw0 {
     max-width: 15% !important;
 }
 
@@ -1792,7 +1861,8 @@ button:focus {
     max-width: 22%;
 }
 
-.page-sagia-profile .contentModule-section .mw2, .page-appointment-create .mw2 {
+.page-sagia-profile .contentModule-section .mw2,
+.page-appointment-create .mw2, .page-license-apply .mw2, .page-new-license-apply .mw2{
     max-width: 18% !important;
 }
 .page-appointment-create .mw3 {
@@ -1858,9 +1928,11 @@ button:focus {
     margin-bottom: 30px !important;
 
 }
-.page-sagia-profile #createComplantForm .formInputBox .control-label, .page-sagia-profile #updatePwdForm .formInputBox .control-label, .page-sagia-profile #changeUsername .formInputBox .control-label,
-.page-sagia-profile #changeEmail .formInputBox .control-label {
+.page-sagia-profile #createComplantForm .formInputBox .control-label, .page-sagia-profile #updatePwdForm .formInputBox .control-label,
+.page-sagia-profile #changeUsername .formInputBox .control-label,
+.page-sagia-profile #changeEmail .formInputBox .control-label, .page-new-license-apply .formInputBox .control-label{
     top: -15px!important;
+    color: #707070;
 }
 .page-sagia-profile #sagiaProfilePersonalForm .select2-container .select2-selection--single .select2-selection__rendered{
     padding-left: 0 !important;
@@ -2122,10 +2194,118 @@ button:focus {
 }
 .page-appointment-create #appointmentModel .formTextArea .control-label{
     font-weight: 600;
+}
+.page-dashboard .myMessage, .page-dashboard .myMessage .dashboardUser {
+    overflow: visible;
+}
+.page-dashboard .myMessage .sagiaNavigation-entry-hasSub.active .sagiaNavigation-subPane{
+    padding: 10px;
+}
+.page-dashboard .myMessage #popupNotificationHistoryList {
+    max-width: 100%;
+    padding: 0 10px;
+}
+.page-dashboard .myMessage .sagiaNavigation-entry .sagiaNavigation-subPane .sagiaNavigation-subPane-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #BF9B2E;
+    border-bottom:1px solid #E4E4E4;
+}
+.myMessage #popupNotificationHistoryList .notificationList-item{
+    border-bottom: 1px dashed #707070 ;
+    padding: 0;
+}
+.myMessage #popupNotificationHistoryList .notificationList-item .notificationList-link{
+    padding-left: 0;
+    padding-right: 0;
+}
+.myMessage #popupNotificationHistoryList .notificationList-item:after{
+    background-color: transparent;
+}
 
+.myMessage #popupNotificationHistoryList .notificationList-item .notificationList-link .notificationList-thumb svg path{
+    fill: #00A6BE;
+}
+.myMessage .notificationList-item .notificationList-link .notificationList-note .notificationList-details .notificationList-name{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.myMessage .notificationList-item .notificationList-link .notificationList-note .notificationList-details .notificationList-title{
+    font-size: 18px;
+    line-height: normal;
+    padding-bottom: 10px;
+
+}
+.panelTabs-navigation{
+    display: block !important;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.page-new-license-apply  .formInputBox .form-control{
+    font-size: 20px;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+#entityForm #licenseTypeSection .select2-container .select2-selection--single .select2-selection__rendered{
+    margin-left: 0;
+}
+.page-new-license-apply #entityForm .formSelectBox .form-group{
+    padding-top: 20px;
+}
+.page-new-license-apply #entityForm .formSelectBox .select2.select2-container.select2-container--focus+.control-label{
+    font-size: 16px;
+    color: #707070;
+
+}
+.page-new-license-apply .formInputBox .control-label{
+    font-size: 16px !important;
+    color: #707070;
+    left: 0 !important;
+}
+
+.page-new-license-apply .formSelectBox .select2.select2-container.select2-container--open+.control-label,
+ .page-new-license-apply .formInputBox .control-label{
+    font-size: 16px;
+}
+.page-new-license-apply .formInputBox-split .formInputBox .control-label{
+    padding-left: 20px;
+}
+.page-new-license-apply .formSelectBox .select2.select2-container.select2Container_selected+.control-label{
+    font-size: 16px;
+
+}
+.page-new-license-apply .contentModule-headline{
+    text-align: left !important;
+    padding-left: 20px;
+}
+.page-new-license-apply .formInputBox_group .formInputBox-text{
+    font-size: 16px;
+    position: relative;
+    left: -5px;
+    top:25px;
+}
+.page-new-license-apply #basicInformationExtendedSection .select2.select2-container.select2.select2-container--disabled{
+    margin-top: 0;
+}
+.page-new-license-apply .formSelectBox .select2.select2-container.select2-container--disabled.select2Container_selected+.control-label{
+    top:-20px !important;
+}
+.page-new-license-apply #entityForm #licenseTypeSection .btn_formAligned{
+    font-size: 18px;
+}
+.page-new-license-apply #entityForm #licenseInformationSection .formRadioBox-wrapper span{
+    text-align: left;
+}
+.page-new-license-apply .baModule-header .searchInputBox-input{
+    position: relative;
+    right: 30px;
 }
 
 @media (max-width: 575px) {
+    .panelTabs-navigation{
+        display: none !important;
+    }
   .page-appointment-create .appointmentDetails .contentModule-actions .btn{
       width: 100% !important;
 
@@ -2299,8 +2479,11 @@ button:focus {
     .page-sagia-profile .contentModule-section .mw0,
     .page-sagia-profile .contentModule-section .mw1,
     .page-sagia-profile .contentModule-section .mw2,
-    .page-appointment-create .mw0, .page-appointment-create .mw2, .page-appointment-create .mw3,
-    .page-appointment-details .contentModule-section .mw0 {
+    .page-appointment-create .mw0, .page-appointment-create .mw2,
+    .page-appointment-create .mw3, .page-license-apply .mw2,
+    .page-new-license-apply .mw2,
+    .page-appointment-details .contentModule-section .mw0,
+    .page-license-apply .mw0, .page-new-license-apply .mw0 {
                 max-width: 100% !important;
     }
     .page-sagia-profile .panelTabs-content .panelModule_halfRadius {
@@ -2423,8 +2606,9 @@ button:focus {
     .page-sagia-profile .contentModule-section .mw0,
     .page-sagia-profile .contentModule-section .mw1,
     .page-sagia-profile .contentModule-section .mw2,
-    .page-appointment-create .mw0, .page-appointment-create .mw2, .page-appointment-create .mw3,
-    .page-appointment-details .contentModule-section .mw0 {
+    .page-appointment-create .mw0, .page-appointment-create .mw2,
+    .page-appointment-create .mw3, .page-appointment-details .contentModule-section .mw0,
+    .page-license-apply .mw0, .page-new-license-apply .mw0, .page-license-apply .mw2, .page-new-license-apply .mw2 {
         max-width: 50% !important;
         width: 50% !important;
     }
@@ -2473,7 +2657,7 @@ button:focus {
     #addShareholderQM1NewOrganizationSection .saveNew {
         width: 30% !important;
     }
-    #sagiaLicenseApplyForm .btn_formAligned {
+    #sagiaLicenseApplyForm .btn_formAligned, #entityForm .btn_formAligned {
         padding-left: 25px;
     }
 

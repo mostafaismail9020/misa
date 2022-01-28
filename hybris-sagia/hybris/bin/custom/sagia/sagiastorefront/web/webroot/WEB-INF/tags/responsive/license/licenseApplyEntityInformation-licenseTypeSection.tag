@@ -10,7 +10,7 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 <form:form action="" method="post" modelAttribute="sagiaLicenseApplyForm">
 <div class="contentModule-section" id="licenseTypeSection" style="display: none">
-   <div class="contentModule-headline contentModule-headline_smallMargin w-25"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.title"/></div>
+   <div class="contentModule-headline contentModule-headline_smallMargin mw2"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.title"/></div>
    <hr class="hr"/>
     <div class="row mt-5">
         <div class="col-md-6">

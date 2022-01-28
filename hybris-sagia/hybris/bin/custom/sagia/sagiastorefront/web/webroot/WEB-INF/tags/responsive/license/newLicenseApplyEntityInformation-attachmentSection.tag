@@ -11,8 +11,9 @@
 
 <!--  Attachment  -->
 <div class="contentModule-section" id="attachmentSection" style="display: none" ${not empty sagiaApplyEntityInfoForm.licenseType ? "data-existingentity" : ""}>
-    <div class="contentModule-headline contentModule-headline_smallMargin" id="attachmentSectionTitle"><spring:theme code="licenseApplyEntityInformation.attachmentSection.attachment"/></div>
+    <div class="contentModule-headline contentModule-headline_smallMargin mw2" id="attachmentSectionTitle"><spring:theme code="licenseApplyEntityInformation.attachmentSection.attachment"/></div>
 	<div id="entrepreneurAttachment" style="display: none">
+   <hr class="hr">
     <div class="row">
         <div class="col-md-6">
             <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.boardResolutionFile ? "active" : ""}">
@@ -42,8 +43,8 @@
         </div>
     </div>
     </div>
-    
-    
+
+
    <div id="entityListedInStockMarketAttachment" style="display: none">
 	    <div class="row">
 	        <div class="col-md-6">
@@ -77,7 +78,7 @@
 	            </div>
 	        </div>
     	</div>
-    </div>    
+    </div>
    <div id="entityRevenueAttachment" style="display: none">
 	    <div class="row">
 	        <div class="col-md-6">
@@ -94,8 +95,8 @@
 	            </div>
 	        </div>
     	</div>
-    </div>    
-  
+    </div>
+
 	  <div id="entityBranchAttachment" style="display: none">
 	    <div class="row">
 	        <div class="col-md-6">
@@ -152,8 +153,8 @@
 	        </div>
 	    </div>
 	  </div>
-    
-    
+
+
     <div id="branchAttachment" style="display: none">
     <div class="row">
         <div class="col-md-6">
@@ -197,7 +198,7 @@
         </div>
     </div>
     </div>
-    
+
     <div id="preApprovalNrAttachment" style="display: none">
     <div class="row">
         <div class="col-md-6">

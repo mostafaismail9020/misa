@@ -25,7 +25,7 @@
 
 <div class="contentModule-section" id="businessActivitiesSection" style="display: none;">
     <div class="contentModule-headline"><spring:theme code="license.apply.business.activities"/></div>
-
+<hr class="hr">
 <%--     <div id="businessTypeSection" class="row">
         <div class="col-md-6">
             <div class="formSelectBox">
@@ -65,7 +65,7 @@
             <button type="button" class="btn" data-toggle="modal" data-target="#businessActivitiesModal"><spring:theme code="licence.apply.addedit.activities"/></button>
         </div>
     </div>
-    
+
     <!--Modal: Use (data-toggle="modal" data-target="#businessActivities") on link or button to call it-->
     <div class="modal fade" id="businessActivitiesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow: auto !important;">
         <div class="modal-dialog modal-dialog-centered modal-dialog_businessActivities" role="document">
@@ -245,28 +245,28 @@
                 </form>
             </div>
         </div>
-        
+
     </div>
-    
+
       <!-- Requirement Modal -->
      <div class="modal fade" id="typeRequirementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog_businessActivities" role="document">
             <div class="modal-content requirement-modal-content">
-                 
+
                      <div class="modal-header">
                         <div class="modal-title"><spring:theme code="licenseApply.contactPerson.typeRequirement"/></div>
                         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                             <icon:close/>
                         </button>
                            </div>
-                
+
                 <div class="modal-body requirement-body" ></div>
 
             </div>
         </div>
     </div>
-    
-	
+
+
 </div>
 
 
@@ -275,12 +275,12 @@
     <div class="formInputBox" >
       <div class="form-group">
 <%--      	<div class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary"/></div> --%>
-   
+
  	    <textarea id="temporaryLicenseTextBoxContent" class="form-control js-quote-entry-comments" rows="10" placeholder="." value=""
- 		style="width: 100%;font-size: 14px;font-family: MyriadPro; height: 250px !important"></textarea> 
-		<label class="control-label control-label_mandatory" for="temporaryLicenseTextBoxContent"><spring:theme code="license.apply.business.activities.temporary"/></label>         
+ 		style="width: 100%;font-size: 14px;font-family: MyriadPro; height: 250px !important"></textarea>
+		<label class="control-label control-label_mandatory" for="temporaryLicenseTextBoxContent"><spring:theme code="license.apply.business.activities.temporary"/></label>
 	 </div>
 	 <div class="help-block"></div>
 	</div>
 </div>
- 
+

@@ -81,8 +81,8 @@
     <div class="contentModule-section" id="addShareholderQM1ExistingSection" style="display: none">
         <div class="contentModule-headline"><spring:theme code="license.apply.review.existing.shareholder"/></div>
      <hr class="hr"/>
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row mt-5">
+            <div class="col-md-6 mb-2">
                 <div class="formInputBox">
                     <div class="form-group">
                         <input id="existingShareholderEntityNumber" class="form-control" placeholder="." value="" type="text"/>
@@ -98,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-2">
                 <div class="formSelectBox">
                     <div class="form-group">
                         <select id="existingShareholderParentCompanyCountry" name="existingShareholderParentCompanyCountry" class="js-select2-oneColumn form-control" disabled="disabled"></select>
@@ -112,7 +112,7 @@
                         <input id="existingShareholderSharesPercentage" name = "existingShareholderSharesPercentage" class="form-control" placeholder="." value="" type="text"/>
                         <label class="control-label" for="existingShareholderSharesPercentage"><spring:theme code="license.apply.review.shares.percentage"/></label>
                         <div class="formInputBox-append">
-                            <span class="formInputBox-text">%</span>
+                          <!--  <span class="formInputBox-text">%</span>-->
                         </div>
                     </div>
                     <div class="help-block"></div>
@@ -205,14 +205,14 @@
                     <div id="shareholderTitle" class="formRadioBox">
                         <div class="form-group">
                             <div class="formRadioBox-label"><spring:theme code="general.license.title"/></div>
-                            <div class="form-item mt-2 mb-4">
+                            <div class="form-item mt-2 pr-0 mb-4">
                                 <input id="personTitle" name="title" class="form-control" type="radio" value="Mr."/>
-                                <label for="personTitle" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="general.mr"/></label>
+                                <label for="personTitle" class="btn-ctrl btn_bold control-label"><spring:theme code="general.mr"/></label>
                             </div>
 
-                            <div class="form-item mt-2 mb-4">
+                            <div class="form-item mt-2 mb-4 pl-0">
                                 <input id="organizationTitle" name="title" class="form-control" type="radio" value="Mrs."/>
-                                <label for="organizationTitle" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="general.mrs"/></label>
+                                <label for="organizationTitle" class="btn-ctrl btn_bold control-label"><spring:theme code="general.mrs"/></label>
                             </div>
                         </div>
                         <div class="help-block"></div>
@@ -265,7 +265,7 @@
                             <input id="personSharesPercentage" name="sharesPercentage" class="form-control" placeholder="." value="" type="text"/>
                             <label class="control-label control-label_mandatory" for="personSharesPercentage"><spring:theme code="license.apply.review.shares.percentage"/></label>
                             <div class="formInputBox-append">
-                                <span class="formInputBox-text">%</span>
+                               <!-- <span class="formInputBox-text">%</span>-->
                             </div>
                         </div>
                         <div class="help-block"></div>
@@ -444,7 +444,7 @@
 
         <!--  Attachment  -->
         <div class="contentModule-section">
-            <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="general.attachments"/></div>
+            <div class="contentModule-headline contentModule-headline_smallMargin mw2"><spring:theme code="general.attachments"/></div>
            <hr class="hr"/>
             <div class="row">
                 <div class="col-md-6">

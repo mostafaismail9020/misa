@@ -93,12 +93,12 @@
 <div class="mainSection mainSection_noPaddingTop">
     <div class="container contentModule d-flex">
         <hr class="contentModule-separator contentModule-separator_green"/>
-        <div class="expandableContent expanded">
+        <div class="expandableContent expanded col-4 p-0">
             <div class="expandableContent-aside d-block">
                 <div class="panelModule sagia-subPane">
                     <div class="contentModule m--30">
                         <div class="contentModule-section_noDivider contentModule-section_noMargin m-0">
-                            <h2 class=" contentModule-headline_noMargin clr_gld text-uppercase px-5"><spring:theme code="account.notifications.yourMessages"/></div>
+                            <h2 class=" contentModule-headline_noMargin clr_gld text-uppercase px-5 pb-3"><spring:theme code="account.notifications.yourMessages"/></div>
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_right contentModule-actions_noMargin px-5">
                                 <a id="readAllNotificationsButton" class=" btn_link_text"><spring:theme code="account.notifications.markAll"/></a>
                             </div>
@@ -140,10 +140,12 @@
                                                 </div>
                                             </div>
                                             <div class="notificationList-details">
-                                                <div class="notificationList-title">
-                                                        ${notifItem.notificationText}
-                                                </div>
-                                                <div class="notificationList-status"></div>
+                                                <span class="notificationList-title font-14">
+                                                   <span class="clr_gld ">Request ID:</span>&nbsp;${notifItem.notificationText.replaceAll("\\D+","")}
+                                                </span>
+                                                <span class="notificationList-status font-14">Service Name: &nbsp; ${notifItem.notificationText.replaceAll("\\d","")}
+
+                                                </span>
                                             </div>
                                         </div>
                                         <img class="message-right-arrow ml-3" alt="" src="${commonResourcePath}/images/arrow-left.png"/>
@@ -156,8 +158,8 @@
                 </div>
             </div>
 
-            <div class="expandableContent-main">
-                <div class="panelModule sagia-subPane panelModule_smallMargin">
+            <div class="expandableContent-main col-8 p-0">
+                <div class="panelModule sagia-subPane panelModule_smallMargin notification-body">
                     <div class="contentModule">
                         <div class="contentModule-section_noDivider contentModule-section_noMargin">
                             <ul class="messageList">

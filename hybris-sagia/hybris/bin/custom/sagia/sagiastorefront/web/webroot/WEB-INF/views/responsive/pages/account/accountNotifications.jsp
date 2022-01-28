@@ -120,10 +120,10 @@
                                                     <span class="iconElement iconElement_expertProfile_green"><icon:expertProfile/></span>
                                                 </c:when>
                                                 <c:when test="${notifItem.notificationType eq 'SY' || notifItem.notificationType eq 'Rest'}">
-                                                    <span class="iconElement"> <img alt="" src="${commonResourcePath}/images/eservices/Survey-list-icon.png"/></span>
+                                                    <span class="iconElement"> <img alt="" src="${commonResourcePath}/images/Survey-list-icon.png"/></span>
                                                 </c:when>
                                                 <c:when test="${notifItem.notificationType eq 'VI'}">
-                                                    <span class="iconElement"><img alt="" src="${commonResourcePath}/images/eservices/Appointment-list-icon.png"/></span>
+                                                    <span class="iconElement"><img alt="" src="${commonResourcePath}/images/Appointment-list-icon.png"/></span>
                                                 </c:when>
                                                 <c:when test="${notifItem.notificationType eq 'PY'}">
                                                     <span class="iconElement"><icon:payments/></span>
@@ -146,7 +146,7 @@
                                                 <div class="notificationList-status"></div>
                                             </div>
                                         </div>
-                                        <img class="message-right-arrow ml-3" alt="" src="${commonResourcePath}/images/eservices/arrow-left.png"/>
+                                        <img class="message-right-arrow ml-3" alt="" src="${commonResourcePath}/images/arrow-left.png"/>
                                     </a>
                                     </li>
                                 </c:forEach>

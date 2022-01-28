@@ -50,7 +50,7 @@ SAGIA.payment = {
         var amount = Math.round(payableAmount * 100) / 100;
         SAGIA.payment.salesOrders.push(amount);
         
-        $("#paymentModal").find(".js-wrapper").append('<span>'+ billDescription +'</span>'+'<span>'+ currency +' '+ amount +'</span>');
+        $("#paymentModal").find(".js-wrapper").append('<div class="d-flex flex-direction-column my-1 justify-content-between"> <span>'+ billDescription +'</span>'+'<span>'+ currency +' '+ amount +'</span></div>');
         
         $('#total').text(currency+ ' '+ Math.round(payableAmount * 100) / 100 );
         $('#total').attr("total",Math.round(payableAmount * 100) / 100);

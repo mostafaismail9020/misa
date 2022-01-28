@@ -141,10 +141,8 @@
                     <div class="tableModule">
 
                         <div class="d-block " id="paymentModal">
-                            <span class="clr_gld text-left d-block">License Fee</span>
-                            <div class="d-flex flex-direction-column my-1 justify-content-between js-wrapper">
-                                <span > License Name</span>
-                                <span>SAR 10000</span>
+                            <div class="js-wrapper">
+                            
                             </div>
                             <hr>
                             <div class="d-flex flex-direction-column justify-content-between">

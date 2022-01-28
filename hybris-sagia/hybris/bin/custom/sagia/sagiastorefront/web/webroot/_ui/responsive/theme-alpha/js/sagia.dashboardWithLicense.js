@@ -279,6 +279,10 @@ SAGIA.dashboardWithLicense = {
 
                     if (licenseAndEmployee.license && licenseAndEmployee.license.branches) {
                         var branchesTable = $("#branchesTable").empty();
+                        if(licenseAndEmployee.license.branches.length > 5) 
+                        $(".d-license-branch").show();
+                        else
+                        $(".d-license-branch").hide();
                         for (var indexBranches in licenseAndEmployee.license.branches) {
                             if (licenseAndEmployee.license.branches.hasOwnProperty(indexBranches)) {
                                 var branch = licenseAndEmployee.license.branches[indexBranches];

@@ -141,9 +141,9 @@
                                             </div>
                                             <div class="notificationList-details">
                                                 <span class="notificationList-title font-14">
-                                                   <span class="clr_gld ">Request ID:</span>&nbsp;${notifItem.notificationText.replaceAll("\\D+","")}
+                                                  Request ID:&nbsp; <span class="clr_gld font-14">${notifItem.notificationText.replaceAll("\\D+","")}</span>
                                                 </span>
-                                                <span class="notificationList-status font-14">Service Name: &nbsp; ${notifItem.notificationText.replaceAll("\\d","")}
+                                                Service Name: &nbsp;<span class="notificationList-status text-uppercase clr_gld font-14"> ${notifItem.notificationText.replaceAll("\\d","")}</span>
 
                                                 </span>
                                             </div>

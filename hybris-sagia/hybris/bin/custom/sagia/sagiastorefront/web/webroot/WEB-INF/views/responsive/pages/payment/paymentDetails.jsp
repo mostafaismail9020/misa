@@ -53,7 +53,7 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <c:url value="/dashboard" var="dashboardUrl"></c:url>
-            <a href="${dashboardUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="payments.details.back"/></a>
+            <a href="${dashboardUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service payment-detail-overview-btn"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="payments.details.back"/></a>
         </div>
     </div>
 </div>
@@ -64,7 +64,7 @@
             <div class="contentModule">
                 <!-- <div class="contentModule-headline contentModule-headline_big"> -->
                 <div class="contentModule-actions contentModule-actions_wrap w-100">
-                    <span class="contentModule-headline contentModule-headline_small"><spring:theme code="payments.details.subscriptionFee"/>&nbsp;<c:out value="${paymentData.serviceDescription}"/></span>                    
+                    <span class="contentModule-headline_small headline-text"><spring:theme code="payments.details.subscriptionFee"/>&nbsp;<c:out value="${paymentData.serviceDescription}"/></span>                    
                 </div>
                     <!-- </div> -->
                 <div class="contentModule-section">

@@ -33,6 +33,7 @@
 		<collectiontype code="InvestSaudiSiteMapLevel2List" elementtype="InvestSaudiSiteMapLevel2" autocreate="true" type="list"/>
         <collectiontype code="InvestSaudiSiteMapLevel3List" elementtype="InvestSaudiSiteMapLevel3" autocreate="true" type="list"/>
         <collectiontype code="InvestSaudiSiteMapLevel4List" elementtype="InvestSaudiSiteMapLevel4" autocreate="true" type="list"/>
+		<collectiontype code="ServiceRequest4Ticket" elementtype="ServiceRequest" autocreate="true" type="list"/>
   
     </collectiontypes>
 
@@ -188,6 +189,23 @@
         <enumtype code="CsInterventionType" dynamic="true" autocreate="false" generate="false">
             <value code="NotesForCustomer" />
         </enumtype>
+		<enumtype generate="true" code="IncidentCategory" autocreate="true" dynamic="true">
+          <value code="CA_2"/>
+          <value code="CA_3"/>
+          <value code="CA_4"/>
+          <value code="CA_5"/>
+          <value code="CA_6"/>
+          <value code="CA_7"/>
+      </enumtype>
+      <enumtype generate="true" code="ServiceCategory" autocreate="true" dynamic="true">
+         <value code="CA_1"/>
+      </enumtype>
+      <enumtype code="Priority" dynamic="true" autocreate="true" generate="true">
+          <value code="LOW" />
+          <value code="NORMAL" />
+          <value code="URGENT" />
+          <value code="IMMEDIATE" />
+      </enumtype>
     </enumtypes>
 	
 		
@@ -742,6 +760,76 @@
                 </index>
             </indexes>
         </itemtype>
+		
+		<itemtype code="ServiceRequest" generate="true"  autocreate="true"
+          jaloclass="com.investsaudi.portal.core.jalo.ServiceRequest">
+    <description>To assign request to the ticket</description>
+    <deployment table="ServiceRequest" typecode="30212"/>
+    <attributes>
+        <attribute qualifier="partnerType " type="PartnerType">
+            <persistence type="property"/>
+            <modifiers read="true" write="true" search="true" optional="true"/>
+        </attribute>
+        <attribute qualifier="subject" type="localized:java.lang.String">
+            <modifiers read="true" write="true" search="true"
+                       optional="true"/>
+            <persistence type="property">
+                <columntype database="oracle">
+                    <value>CLOB</value>
+                </columntype>
+                <columntype database="mysql">
+                    <value>TEXT</value>
+                </columntype>
+                <columntype database="sqlserver">
+                    <value>TEXT</value>
+                </columntype>
+                <columntype database="sap">
+                    <value>NCLOB</value>
+                </columntype>
+                <columntype>
+                    <value>HYBRIS.LONG_STRING</value>
+                </columntype>
+            </persistence>
+        </attribute>
+        <attribute qualifier="description" type="localized:java.lang.String">
+            <modifiers read="true" write="true" search="true"
+                       optional="true"/>
+            <persistence type="property">
+                <columntype database="oracle">
+                    <value>CLOB</value>
+                </columntype>
+                <columntype database="mysql">
+                    <value>TEXT</value>
+                </columntype>
+                <columntype database="sqlserver">
+                    <value>TEXT</value>
+                </columntype>
+                <columntype database="sap">
+                    <value>NCLOB</value>
+                </columntype>
+                <columntype>
+                    <value>HYBRIS.LONG_STRING</value>
+                </columntype>
+            </persistence>
+        </attribute>
+        <attribute qualifier="priority" type="Priority">
+            <modifiers read="true" write="true" search="true" optional="true" />
+            <persistence type="property" />
+        </attribute>
+        <attribute qualifier="incidentCategory" type="IncidentCategory">
+            <modifiers read="true" write="true" search="true" optional="true"/>
+            <persistence type="property" />
+        </attribute>
+        <attribute qualifier="serviceCategory" type="ServiceCategory">
+            <modifiers read="true" write="true" search="true" optional="true"/>
+            <persistence type="property" />
+        </attribute>
+        <attribute qualifier="id" type="java.lang.String">
+            <persistence type="property"/>
+            <modifiers optional="false" unique="true" read="true" write="true" search="true"/>
+        </attribute>
+    </attributes>
+</itemtype>
 
         <itemtype code="SagiaBEServiceType"
                 jaloclass="com.sap.ibso.eservices.core.jalo.SagiaBEServiceType"
@@ -3579,6 +3667,11 @@
                     <attribute qualifier="c4CAccountID" type="java.lang.String">
                         <persistence type="property"/>
                         <modifiers/>
+                    </attribute>
+					<attribute qualifier="serviceRequests" type="ServiceRequest4Ticket">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>Service Requests</description>
                     </attribute>
                 </attributes>
             </itemtype> 

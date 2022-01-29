@@ -15,6 +15,7 @@ package com.sap.ibso.eservices.core.sagia.services.impl;
 
 import com.investsaudi.data.SagiaB2BUnitData;
 import com.investsaudi.portal.core.model.ContactTicketModel;
+import com.investsaudi.portal.core.model.ServiceRequestModel;
 import com.sap.ibso.eservices.core.constants.SagiaCoreConstants;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaUserDao;
 import com.sap.ibso.eservices.core.sagia.enums.ValidationError;
@@ -210,4 +211,22 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     public void setSagiaUserDao(final SagiaUserDao sagiaUserDao) {
         this.sagiaUserDao = sagiaUserDao;
     }
+
+    @Override
+    public boolean attachServiceRequestToContactTicket(final ServiceRequestModel serviceRequest, final String ticketId) {
+    	
+    	try {
+    		ContactTicketModel contactTicket = sagiaUserDao.getContactTicketForTicketId(ticketId);
+        	
+        	getModelService().save(serviceRequest);
+        	
+        	List<ServiceRequestModel> serviceRequests = contactTicket.getServiceRequests();
+        	serviceRequests.add(serviceRequest);
+        	contactTicket.setServiceRequests(serviceRequests);
+        	getModelService().save(contactTicket);
+        	return true;
+    	}catch(Exception e) {
+    		return false;
+    	}
+     }
 }

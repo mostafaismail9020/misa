@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.investsaudi.portal.core.model.ContactTicketModel;
+import com.investsaudi.portal.core.model.ServiceRequestModel;
 import com.sap.ibso.eservices.core.sagia.enums.ValidationError;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
@@ -102,4 +103,6 @@ public interface SagiaUserService extends UserService
 	 * @return the ticket raised by the customer
 	 */
 	ContactTicketModel addContactTicketComments(String ticketId, String comments);
+
+        boolean attachServiceRequestToContactTicket(ServiceRequestModel serviceRequest, String ticketId);
 }

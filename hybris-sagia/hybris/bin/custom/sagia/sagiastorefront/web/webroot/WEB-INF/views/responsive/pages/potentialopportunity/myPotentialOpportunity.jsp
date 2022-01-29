@@ -99,31 +99,31 @@
 						<div class="tabs">
 							<ul class="nav nav-tabs mb-0" role="tablist">								
 								<li class="nav-item active show d-in-table"> 
-									<span class="nav-link" href="#Interest" role="tab" data-toggle="tab" aria-selected="false">Interest</span>
+									<span class="nav-link" role="tab" aria-selected="false">Interest</span>
 									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 									<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 								</li>								
 								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02'}">
 									<li class="nav-item  d-in-table">
-										<span class="nav-link" href="#NDA" role="tab" data-toggle="tab" aria-selected="false">NDA</span>
+										<span class="nav-link"  role="tab" aria-selected="false">NDA</span>
 										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 										<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 									</li>
 								</c:if>
 								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02' or investorlead eq 'Z06'}">
 									<li class="nav-item d-in-table"> 
-										<span class="nav-link" href="#Letter_of_intent" role="tab" data-toggle="tab" aria-selected="false">Letter of intent</span>
+										<span class="nav-link" role="tab" aria-selected="false">Letter of intent</span>
 										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 										<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 									</li>
 								</c:if>								
 								<li class="nav-item d-in-table">
-									<span class="nav-link" href="#Business_plan" role="tab" data-toggle="tab" aria-selected="false">Business plan</span>
+									<span class="nav-link" role="tab" aria-selected="false">Business plan</span>
 									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 									<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 								</li>								
 								<li class="nav-item d-in-table">
-									<span class="nav-link" href="#Deal" role="tab" data-toggle="tab" aria-selected="false">Deal</span>
+									<span class="nav-link" role="tab" aria-selected="false">Deal</span>
 									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 								</li>								
 							</ul>

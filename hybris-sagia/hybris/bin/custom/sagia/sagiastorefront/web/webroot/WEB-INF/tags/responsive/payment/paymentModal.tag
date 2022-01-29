@@ -38,24 +38,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4">
-                            <!--                            <div class="formInputBox formInputBox_group">-->
-                            <div class="formInputBox">
-                                <div class="form-group">
-                                    <input id="security-code" class="input-field form-control" placeholder="" value="" type="text" readonly>
-                                    <label class="control-label" for="security-code"><spring:theme code="payment.cvv"/></label>
-                                    <!--
-                                    <div class="formInputBox-append">
-                                    <span class="formInputBox-text formInputBox-text_tip js-tip"
-                                          style="position: relative;z-index: 1000;"
-                                          data-tip-title="Tooltip Information to be shown to the user."
-                                          data-original-title="" title=""><icon:tipInfo/>
-                                    </span>
-                                    </div>
--->
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="col-md-4">
                             <div class="formInputBox formInputBox_group ">
                                 <div class="form-group">
@@ -78,7 +61,24 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="col-md-4">
+                            <!--                            <div class="formInputBox formInputBox_group">-->
+                            <div class="formInputBox">
+                                <div class="form-group">
+                                    <input id="security-code" class="input-field form-control" placeholder="" value="" type="text" readonly>
+                                    <label class="control-label" for="security-code"><spring:theme code="payment.cvv"/></label>
+                                    <!--
+                                    <div class="formInputBox-append">
+                                    <span class="formInputBox-text formInputBox-text_tip js-tip"
+                                          style="position: relative;z-index: 1000;"
+                                          data-tip-title="Tooltip Information to be shown to the user."
+                                          data-original-title="" title=""><icon:tipInfo/>
+                                    </span>
+                                    </div>
+-->
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

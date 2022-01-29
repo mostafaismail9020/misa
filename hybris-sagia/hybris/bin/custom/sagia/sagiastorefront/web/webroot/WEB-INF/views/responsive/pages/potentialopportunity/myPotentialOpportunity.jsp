@@ -17,7 +17,7 @@
         <img class="achievement_header_icon page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
         <div class="container">
             <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
-                <h1 data-aos="fade-up">My Potential Opportunity</h1>
+                <h1 data-aos="fade-up"><spring:theme code="my.potential.opportunity.label"/></h1>
             </div>
             <div class="profile-icons float-right">
 				<div class="dashboardUser-right col-md-6">
@@ -42,7 +42,7 @@
 									<div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
 									<ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
 									<div class="sagiaNavigation-subPane-actions">
-										<a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+										<a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
 									</div>
 								</div>
 							</div>
@@ -79,7 +79,10 @@
 		<div class="pull-right col-12 p-0"> 
 			<div class="showdowbox_potential col-12 text_potential">
 				<div class="stauts_potential">
-					<h5 class="h5_posNUMBER">INVESTMENT OPPORTUNITY NUMBER: <span class="goldcolor">${contactTicketDetails.ticketID}</span> </h5> 
+					<h5 class="h5_posNUMBER">
+						<spring:theme code="my.potential.opportunity.number.label"/>&nbsp;
+						<span class="goldcolor">${contactTicketDetails.ticketID}</span>
+					</h5> 
 					<h5 class="status"><span class="goldcolor">
 						${contactTicketDetails.sectorCategoryName}
 						<c:if test="${not empty opportunityDetails.name}">
@@ -88,42 +91,53 @@
 					</span></h5>
 					<hr style="width:96%;margin: 25px auto;border-width: 2px;"></hr>
 				</div>
-				<!-- 
-				<div class="stauts_potential">
-					<h5 class="h5_status text-center">Status:<span class="yellocolor">In Progress - NDA Needed</span> </h5>					
-				</div>
-				 -->				 				
+							 				
 				<c:if test="${empty contactTicketDetails.investorlead or contactTicketDetails.investorlead ne 'NA'}">
+					<!-- 
+					<div class="stauts_potential">
+						<h5 class="h5_status text-center">Status:<span class="yellocolor">In Progress - NDA Needed</span> </h5>					
+					</div>
+					 -->
 					<c:set var="investorlead" value="${contactTicketDetails.investorlead.code}" />
 					<div class="circle_potential">
-						<div class="tabs">
+						<div class="tabs">							
 							<ul class="nav nav-tabs mb-0" role="tablist">								
 								<li class="nav-item active show d-in-table"> 
-									<span class="nav-link" role="tab" aria-selected="false">Interest</span>
+									<span class="nav-link" href="#Interest" role="tab" data-toggle="tab" aria-selected="false">
+										<spring:theme code="my.potential.opportunity.phase.interest"/>
+									</span>
 									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 									<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 								</li>								
 								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02'}">
-									<li class="nav-item  d-in-table">
-										<span class="nav-link"  role="tab" aria-selected="false">NDA</span>
+									<li class="nav-item active d-in-table">
+										<span class="nav-link" href="#NDA" role="tab" data-toggle="tab" aria-selected="false">
+											<spring:theme code="my.potential.opportunity.phase.nda"/>
+										</span>
 										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 										<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 									</li>
 								</c:if>
 								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02' or investorlead eq 'Z06'}">
 									<li class="nav-item d-in-table"> 
-										<span class="nav-link" role="tab" aria-selected="false">Letter of intent</span>
+										<span class="nav-link" href="#Letter_of_intent" role="tab" data-toggle="tab" aria-selected="false">
+											<spring:theme code="my.potential.opportunity.phase.letter"/>
+										</span>
 										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 										<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 									</li>
 								</c:if>								
 								<li class="nav-item d-in-table">
-									<span class="nav-link" role="tab" aria-selected="false">Business plan</span>
+									<span class="nav-link" href="#Business_plan" role="tab" data-toggle="tab" aria-selected="false">
+										<spring:theme code="my.potential.opportunity.phase.business"/>
+									</span>
 									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 									<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 								</li>								
 								<li class="nav-item d-in-table">
-									<span class="nav-link" role="tab" aria-selected="false">Deal</span>
+									<span class="nav-link" href="#Deal" role="tab" data-toggle="tab" aria-selected="false">
+										<spring:theme code="my.potential.opportunity.phase.deal"/>
+									</span>
 									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 								</li>								
 							</ul>
@@ -132,6 +146,7 @@
 				</c:if>
 			</div>
 			
+			<%-- 
 			<div class="showdowbox_potential col-12 text_potential mt-5 mb-2">
 				<!-- Tab panes -->
 				<div class="tab-content dashboard-tab-body license">
@@ -217,6 +232,7 @@
 					</div>
 				</div>
 			</div>
+			 --%>
 		</div>
 	</div>
 </div>
@@ -227,18 +243,21 @@
 			<div class="mx-5">				
 				<!--<input type="submit" value="refresh" id="submit"  onClick="window.location.reload();" class="btn btn_submit_whitess"/>-->
 				
-				<h5 class="serviceModule-description"> <span class="serviceModule-headline">Comments</span>
-					<button onclick="commentTextArea()" class="btn-dashboard text-uppercase">Add a new comment</button>
+				<h5 class="serviceModule-description">
+					<span class="serviceModule-headline"><spring:theme code="my.potential.opportunity.comments.label"/></span>
+					<button onclick="commentTextArea()" class="btn-dashboard text-uppercase">
+						<spring:theme code="my.potential.opportunity.add.comments"/>
+					</button>
  				</h5> 
 				<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
 				<div class="comment_box_form" id="comment_box_form" style="display: none;">
 					<c:set var="today" value="<%=new java.util.Date()%>" />
 					<label class="new_comment">New comments <b>as on <fmt:formatDate type="date" value="${today}" /></b></label>
 					<form:form action="${ticketId}" modelAttribute="contactTicketForm">
-						<input type="text" name="comment" class="form-control reply_here" placeholder="Enter your reply here" required/>
+						<input type="text" name="comment" class="form-control reply_here" placeholder="<spring:theme code="my.potential.opportunity.enter.reply"/>" required/>
 						<div class="d-inline float-right">
-							<button type="button" class="btn btn_cancel_whitess">Cancel</button>
-							<input type="submit" value="Submit" class="btn btn_submit_whitess"/>
+							<button type="button" class="btn btn_cancel_whitess"><spring:theme code="portal.contactus.form.cancel.button"/></button>
+							<input type="submit" value="<spring:theme code="portal.contactus.form.submit.button"/>" class="btn btn_submit_whitess"/>
 						</div>
 					</form:form> 
 				</div>
@@ -275,8 +294,10 @@
 											</svg>
 										</div> 
 										<div class="comment_misa_message_word">
-											<h6 class="misateam"><span class="green_team">Misa Sales team </span>											
-											<b class="pl-2">Commented on <fmt:formatDate type="date" value="${comment.startDateTime}" /></b></h6>
+											<h6 class="misateam">
+												<span class="green_team"><spring:theme code="my.potential.opportunity.misa.sales"/></span>											
+												<b class="pl-2"><spring:theme code="my.potential.opportunity.commented"/>&nbsp;<fmt:formatDate type="date" value="${comment.startDateTime}" /></b>
+											</h6>
 											<p class="text_message">
 												<c:set var="misaComment" value="${comment.text}"/> 
 												<!-- Misa Comment ->   -->${misaComment} 
@@ -292,7 +313,8 @@
 								<div class="row"> 
 									<div class="col-12 d-inline"> 
 										<div class="comment_misa_message_word">
-											<h6 class="misateam"><span class="gold_team">You Commented on </span>												 
+											<h6 class="misateam">
+												<span class="gold_team"><spring:theme code="my.potential.opportunity.you.commented"/></span>												 
 												<b class="pl-2"><fmt:formatDate type="date" value="${comment.startDateTime}" /></b>
 											</h6>
 											<p class="text_message"> 
@@ -317,13 +339,15 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline">Opportunity Overview</span>
+					<span class="serviceModule-headline"><spring:theme code="my.potential.opportunity.opportunity.overview"/></span>
 					<c:choose>
 						<c:when test="${empty opportunityDetails.description}">
-							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>NA</p></div></div>
 						</c:when>
 						<c:otherwise>
-							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${opportunityDetails.description}</p></div></div>
+							<div class="serviceModule-detail serviceList-description">
+								<div class="w-75"><p>${opportunityDetails.description}</p></div>
+							</div>
 						</c:otherwise>
 					</c:choose>
 				</div>
@@ -334,13 +358,15 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline">Opportunity Highlights</span>
+					<span class="serviceModule-headline"><spring:theme code="my.potential.opportunity.opportunity.highlights"/></span>
 					<c:choose>
 						<c:when test="${empty opportunityDetails.highlights}">
-							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>NA</p></div></div><br>
 						</c:when>
 						<c:otherwise>
-							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>${opportunityDetails.highlights}</p></div></div>
+							<div class="serviceModule-detail serviceList-description">
+								<div class="w-75"><p>${opportunityDetails.highlights}</p></div>
+							</div>
 						</c:otherwise>
 					</c:choose>
 				</div>
@@ -361,7 +387,7 @@
 										<img class="sector-item-icon pb-3" src="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
 												data-norm="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
 												data-alt="${fn:escapeXml(partnerLogo.companyLogo.url)}" alt=""/>
-										<a href="${partnerLogo.companyWebsite}" target="_blank">know More - visit website</a>
+										<a href="${partnerLogo.companyWebsite}" target="_blank"><spring:theme code="my.potential.opportunity.know.more"/></a>
 									</div>
 								</div>
 							</c:forEach>							
@@ -372,4 +398,4 @@
 		</div>
 	</div>
 	
-</div>  
+</div>

@@ -163,7 +163,7 @@
                 <button class="btn btn_round" onclick="location.href='${encodedContextPath}/my-sagia/notifications'">Action</button>
             </div>
             <div class="globalMessage-msg">
-                <div class="globalMessage-icon"><icon:warning/></div>
+                <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/></div>
                 <spring:theme code="dashboard.message.text"/>
             </div>
         </div>

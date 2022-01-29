@@ -41,6 +41,8 @@ import java.io.InputStream;
 import java.io.IOException;
 import de.hybris.platform.core.model.media.MediaContainerModel;
 
+import de.hybris.platform.acceleratorstorefrontcommons.util.XSSFilterUtil;
+
 @Controller
 @RequestMapping(value = "/mediaCenter")
 public class MediaCenterPageController extends AbstractPageController {
@@ -146,7 +148,7 @@ public class MediaCenterPageController extends AbstractPageController {
     	List<InvestSaudiResourceComponentModel> recentResourceDetails = null;
     	
         if (null != resourceCode) {
-	        resourceDetails = investSaudiMediaCenterService.getResourceDetails(resourceCode);
+	        resourceDetails = investSaudiMediaCenterService.getResourceDetails(XSSFilterUtil.filter(resourceCode));
 	        if (null != resourceDetails) {
 	        	recentResourceDetails= investSaudiMediaCenterService.getrecentResourceDetails(resourceDetails.getResourceDate());
 	        }
@@ -196,7 +198,8 @@ public class MediaCenterPageController extends AbstractPageController {
     	InvestSaudiEventsComponentModel eventDetails = null;
     	List<InvestSaudiEventsComponentModel> recentEventDetails = null;
         if (null != eventCode) {
-        	eventDetails= investSaudiMediaCenterService.getEventDetails(eventCode);
+        	
+        	eventDetails= investSaudiMediaCenterService.getEventDetails(XSSFilterUtil.filter((eventCode)));
         	if (null != eventDetails) {
         		recentEventDetails = investSaudiMediaCenterService.getrecentEventDetails(eventDetails.getEventStartDate());
         	}
@@ -266,7 +269,7 @@ public class MediaCenterPageController extends AbstractPageController {
     	InvestSaudiNewsComponentModel newsDetails = null;
     	List<InvestSaudiNewsComponentModel> recentNews = null;
         if (null != newsCode) {
-        	newsDetails = investSaudiMediaCenterService.getNewsDetailsPage(newsCode);
+        	newsDetails = investSaudiMediaCenterService.getNewsDetailsPage(XSSFilterUtil.filter(newsCode));
         	if (null != newsDetails) {
         		recentNews = investSaudiMediaCenterService.getRecentNews(newsDetails.getNewsDate());
         	}

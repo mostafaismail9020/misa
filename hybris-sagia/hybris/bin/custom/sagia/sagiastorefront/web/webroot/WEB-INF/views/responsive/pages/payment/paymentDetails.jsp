@@ -82,7 +82,7 @@
                         <c:if test="${paymentData.status == 'E0003' && paymentData.hybrisStatusDescription != 'Paid'}">
 	                        <div class="col-md-6">
 	                            <div style="text-align: right;">
-			                        <a onclick="SAGIA.payment.requestCreditBillPayment(${paymentData.serviceId},'${paymentData.serviceDescription}',${paymentData.amount},'${paymentData.currency}')" target="_blank" class="btn btn_round btn_outline">
+			                        <a onclick="SAGIA.payment.requestCreditBillPayment(${paymentData.serviceId},'${paymentData.serviceDescription}',${paymentData.amount},'${paymentData.currency}')" target="_blank" class="btn-outline">
 			                            <spring:theme code="license.apply.paywithcc" />
 			                        </a>
 	                			</div>

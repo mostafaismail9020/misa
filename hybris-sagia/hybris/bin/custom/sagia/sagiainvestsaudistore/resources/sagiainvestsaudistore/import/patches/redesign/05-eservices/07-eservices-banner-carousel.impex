@@ -6,29 +6,29 @@ $siteResource =jar:com.sagia.investsaudi.portal.core.setup.Sagiainvestsaudistore
 
 
 # Banner images for Sagia Dashbard with and without License
-INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]  ; mime[default = 'image/jpeg']  ; realfilename             ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; folder(qualifier)[default = $mediafolder]; altText;
-                   ;                          ; header-banner-image1 ; image/jpg                     ; Header-banner-image1.jpg ; $siteResource/Header-banner-image1.jpg                                       ;                                          ; ""     ;
-                   ;                          ; header-banner-image2 ; image/jpg                     ; Header-banner-image2.jpg ; $siteResource/Header-banner-image2.jpg                                       ;                                          ; ""     ;
-                   ;                          ; header-banner-image3 ; image/jpg                     ; Header-banner-image3.jpg ; $siteResource/Header-banner-image3.jpg                                       ;                                          ; ""     ;
-                   ;                          ; header-banner-image4 ; image/jpg                     ; Header-banner-image4.jpg ; $siteResource/Header-banner-image4.jpg                                       ;                                          ; ""     ;
-                   ;                          ; header-banner-image5 ; image/jpg                     ; Header-banner-image5.jpg ; $siteResource/Header-banner-image5.jpg                                       ;                                          ; ""     ;
+#INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]  ; mime[default = 'image/jpeg']  ; realfilename             ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; folder(qualifier)[default = $mediafolder]; altText;
+#                   ;                          ; header-banner-image1 ; image/jpg                     ; Header-banner-image1.jpg ; $siteResource/Header-banner-image1.jpg                                       ;                                          ; ""     ;
+#                   ;                          ; header-banner-image2 ; image/jpg                     ; Header-banner-image2.jpg ; $siteResource/Header-banner-image2.jpg                                       ;                                          ; ""     ;
+#                   ;                          ; header-banner-image3 ; image/jpg                     ; Header-banner-image3.jpg ; $siteResource/Header-banner-image3.jpg                                       ;                                          ; ""     ;
+#                   ;                          ; header-banner-image4 ; image/jpg                     ; Header-banner-image4.jpg ; $siteResource/Header-banner-image4.jpg                                       ;                                          ; ""     ;
+#                   ;                          ; header-banner-image5 ; image/jpg                     ; Header-banner-image5.jpg ; $siteResource/Header-banner-image5.jpg                                       ;                                          ; ""     ;
 
 
-INSERT_UPDATE SagiaDashboardBannerCarouselComponent	; $contentCV[unique = true]	; uid[unique = true]   			  ; bannerImage(code, $contentCV)[mode=replace]																	; &componentRef
-												    ; 							; sagiaDashboardCarouselComponent ; header-banner-image1,header-banner-image2,header-banner-image3,header-banner-image4,header-banner-image5	; sagiaDashboardCarouselComponent
+#INSERT_UPDATE SagiaDashboardBannerCarouselComponent; $contentCV[unique = true]	; uid[unique = true]   			  ; bannerImage(code, $contentCV)[mode=replace]																	; &componentRef
+#												    ; 							; sagiaDashboardCarouselComponent ; header-banner-image1,header-banner-image2,header-banner-image3,header-banner-image4,header-banner-image5	; sagiaDashboardCarouselComponent
 
 
-INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                            	; name                                       ; page                                                                        ; actions(uid, $contentCV); &componentRef			;
-                                 ;                          ; SagiaDashboardComponent                       	; Sagia Dashboard                            ; /WEB-INF/views/responsive/pages/account/sagiaInvestorDashboard.jsp          ;                         ; SagiaDashboardComponent	;
-                                 ;                          ; SagiaDashboardWithoutLicenseComponent				; Sagia Dashboard Without License            ; /WEB-INF/views/responsive/pages/account/sagiaDashboardWithoutLicense.jsp    ;                         ; SagiaDashboardWithoutLicenseComponent;
+#INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                            	; name                                       ; page                                                                        ; actions(uid, $contentCV); &componentRef			;
+#                                 ;                          ; SagiaDashboardComponent                       	; Sagia Dashboard                            ; /WEB-INF/views/responsive/pages/account/sagiaInvestorDashboard.jsp          ;                         ; SagiaDashboardComponent	;
+#                                 ;                          ; SagiaDashboardWithoutLicenseComponent			; Sagia Dashboard Without License            ; /WEB-INF/views/responsive/pages/account/sagiaDashboardWithoutLicense.jsp    ;                         ; SagiaDashboardWithoutLicenseComponent;
 
 
-INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                                   		; name                                     		; active; cmsComponents(&componentRef)[mode = replace]                                  ; ; ;
-                         ;                          ; InnerPageContentSlot-Dashboard                       		; SAGIA INVESTOR DASHBOARD                 		; true  ; sagiaDashboardCarouselComponent,SagiaDashboardComponent                       ; ; ;
-                         ;                          ; InnerPageContentSlot-Dashboard-Without-License       		; SAGIA DASHBOARD WITHOUT LICENCE          		; true  ; sagiaDashboardCarouselComponent,SagiaDashboardWithoutLicenseComponent         ; ; ;
+#INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                                   	; name                                     		; active; cmsComponents(&componentRef)[mode = replace]                                  ; ; ;
+#                         ;                          ; InnerPageContentSlot-Dashboard                       	; SAGIA INVESTOR DASHBOARD                 		; true  ; sagiaDashboardCarouselComponent,SagiaDashboardComponent                       ; ; ;
+#                         ;                          ; InnerPageContentSlot-Dashboard-Without-License       	; SAGIA DASHBOARD WITHOUT LICENCE          		; true  ; sagiaDashboardCarouselComponent,SagiaDashboardWithoutLicenseComponent         ; ; ;
 
 
-INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]                                 ; position[unique = true]; page(uid, $contentCV)[unique = true]; contentSlot(uid, $contentCV)[unique = true]          ; ; ;
-                                ;                          ; InnerPageContentSlot-Dashboard                     ; InnerPageContentSlot   ; dashboard                           ; InnerPageContentSlot-Dashboard                       ; ; ;
-                                ;                          ; InnerPageContentSlot-Dashboard-Without-License     ; InnerPageContentSlot   ; dashboard-without-license           ; InnerPageContentSlot-Dashboard-Without-License       ; ; ;
+#INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]                                ; position[unique = true]; page(uid, $contentCV)[unique = true]; contentSlot(uid, $contentCV)[unique = true]          ; ; ;
+#                                ;                          ; InnerPageContentSlot-Dashboard                    ; InnerPageContentSlot   ; dashboard                           ; InnerPageContentSlot-Dashboard                       ; ; ;
+#                                ;                          ; InnerPageContentSlot-Dashboard-Without-License    ; InnerPageContentSlot   ; dashboard-without-license           ; InnerPageContentSlot-Dashboard-Without-License       ; ; ;
 

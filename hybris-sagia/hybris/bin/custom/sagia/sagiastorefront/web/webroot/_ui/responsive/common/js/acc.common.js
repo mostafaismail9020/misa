@@ -158,3 +158,23 @@ function acceptNewLinceseTCAction(){
 }
 
 
+
+$(document).on('focus blur change keyup', '.form-control', function (e) { 
+    var $currEl = $(this); 
+    $currEl.parent().addClass('focus-on-change'); 
+
+    if (e.type === "keyup") {
+        $(this).removeClass('required');
+    }    
+    if ($($currEl)[0].value !== undefined && $($currEl)[0].value.trim() !== "") {
+        $currEl.parents('.focus-on-change').children('label').addClass('focused');
+    }
+    else if (e.type === "focusin") {
+        $currEl.parents('.focus-on-change').children('label').addClass('focused'); 
+    }
+    else {
+        $currEl.parents('.focus-on-change').children('label').toggleClass('focused');
+    }
+}).trigger('blur');
+
+

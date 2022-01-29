@@ -144,7 +144,8 @@
         </ul>
     </div>
     <div class="panelTabs-content container">
-        <license:newLicenseApplyContactPerson/>
+		<div class="licensecontactperson_bottomboarder"><div class="contentModule-headline">Contact Person</div></div>
+		<license:newLicenseApplyContactPerson/>
     </div>
 <%--    <license:newLicenseApplyEntityInformation/>--%>
 <%--    <license:licenseApplyContactPerson/>--%>

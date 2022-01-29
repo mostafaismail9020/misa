@@ -109,9 +109,11 @@
                 <div class="col-md-3">
                     <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink w-auto"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
                 </div>
-                <div class="col-xl-3 col-12">
-                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')">Show Service Tabs</button>
-                </div>
+                <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                    <div class="col-xl-3 col-12">
+                        <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')">Show Service Tabs</button>
+                    </div>
+                </c:if>
                 <div class="col-md-3">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
                         <div id="serviceUrl">

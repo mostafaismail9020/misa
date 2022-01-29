@@ -43,12 +43,6 @@
 
 <div class="mainSection mainSection_grey">
     <div class="container">
-
-        <!-- <div class="mainSection-header">
-            <h1 class="mainSection-headline mb-3"><spring:theme code="services.services"/></h1>
-        </div> -->
-
-        <!-- ${encodedContextPath}/service-search/FIRST -->
         <div class="col-xs-12 col-md-12 services-category-list">
             <ul class="nav nav-pills sagiaNavigation-services" id="pills-tab" role="tablist">
                 <li class="nav-item col-lg-4 col-md-12" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
@@ -128,9 +122,7 @@
                                         </h2>
                                         <div id="collapse-g${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-g${loop.index}" data-parent="#govtServices1" data-bs-parent="#govtServices1">
                                           <div class="accordion-body serviceModule-detail">
-                                            <p class="service-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-                                            </p>
+                                            <p class="service-para">${category.value[0].category.description}</p>
                                             <c:forEach items="${category.value}" var="service">
                                                     <div id="serviceModule" class="serviceModule serviceModule_list">
                                                         <div class="serviceModule-section">
@@ -143,7 +135,6 @@
                                                                         </div>
                                                                         <div class=" serviceModule-request">
                                                                             <a class="text-uppercase request-service" href=/services/government/${service.category.code}/${service.code}>Request A Service</a>
-                                                                            <!-- <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('${service.url}')">Request A Service</a> -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -192,9 +183,7 @@
                                         </h2>
                                         <div id="collapse-m${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-m${loop.index}" data-parent="#misaServices1" data-bs-parent="#misaServices1">
                                           <div class="accordion-body serviceModule-detail">
-                                            <p class="service-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                                            </p>
+                                            <p class="service-para">${category.value[0].category.description}</p>
                                             <c:forEach items="${category.value}" var="service">
                                                     <div id="serviceModule" class="serviceModule serviceModule_list">
                                                         <div class="serviceModule-section">
@@ -207,7 +196,6 @@
                                                                         </div>
                                                                         <div class=" serviceModule-request">
                                                                             <a class="text-uppercase request-service" href=/${service.url}>Request A Service</a>
-                                                                            <!-- <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('${service.url}')">Request A Service</a> -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -274,9 +262,7 @@
                                     </h2>
                                     <div id="collapse-g${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-g${loop.index}" data-parent="#govtServices" data-bs-parent="#govtServices">
                                       <div class="accordion-body serviceModule-detail">
-                                        <p class="service-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                                        </p>
+                                        <p class="service-para">${category.value[0].category.description}</p>
                                         <c:forEach items="${category.value}" var="service">
                                                 <div id="serviceModule" class="serviceModule serviceModule_list">
                                                     <div class="serviceModule-section">
@@ -289,7 +275,6 @@
                                                                     </div>
                                                                     <div class="w-25 serviceModule-request">
                                                                         <a class="text-uppercase request-service" href=/services/government/${service.category.code}/${service.code}>Request A Service</a>
-                                                                        <!-- <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('services/government/${service.category.code}/${service.code}')">Request A Service</a> -->
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -326,9 +311,7 @@
                                     </h2>
                                     <div id="collapse-m${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-m${loop.index}" data-parent="#misaServices" data-bs-parent="#misaServices">
                                       <div class="accordion-body serviceModule-detail">
-                                        <p class="service-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-                                        </p>
+                                        <p class="service-para">${category.value[0].category.description}</p>
                                         <c:forEach items="${category.value}" var="service">
                                                 <div id="serviceModule" class="serviceModule serviceModule_list">
                                                     <div class="serviceModule-section">
@@ -341,7 +324,6 @@
                                                                     </div>
                                                                     <div class="w-25 serviceModule-request">
                                                                         <a class="text-uppercase request-service" href=/${service.url}>Request A Service</a>
-                                                                        <!-- <a class="text-uppercase request-service" data-code="${service.code}" data-name="${service.name}" data-url="${service.url}" onclick="RequestService('${service.url}')">Request A Service</a> -->
                                                                     </div>
                                                                 </div>
                                                             </div>

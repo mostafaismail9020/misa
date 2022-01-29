@@ -194,11 +194,14 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
 	    	CsTicketModel ticket = (CsTicketModel) contactTicket;
 			CsCustomerEventModel ticketComment = ticketEventStrategy.createCreationEventForTicket(ticket,
 					CsEventReason.FIRSTCONTACT, CsInterventionType.TICKETMESSAGE, comments);
-						
-			List<CommentModel> commentsList = new ArrayList<CommentModel>();
+
+			/*List<CommentModel> commentsList = new ArrayList<CommentModel>();
 			commentsList.add(ticketComment);
 			contactTicket.setComments(commentsList);
-			getModelService().refresh(contactTicket);
+			getModelService().refresh(contactTicket);*/
+
+            List<CommentModel> commentsList = new ArrayList<>(contactTicket.getComments());
+            contactTicket.setComments(commentsList);
     	}
     	
         return contactTicket;

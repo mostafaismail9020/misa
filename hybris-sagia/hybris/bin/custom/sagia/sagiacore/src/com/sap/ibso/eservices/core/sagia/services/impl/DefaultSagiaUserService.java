@@ -23,6 +23,7 @@ import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
 import de.hybris.platform.b2b.services.B2BUnitService;
+import de.hybris.platform.cms2.model.contents.components.AbstractCMSComponentModel;
 import de.hybris.platform.core.model.security.PrincipalModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserGroupModel;
@@ -220,15 +221,21 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     	
     	try {
     		ContactTicketModel contactTicket = sagiaUserDao.getContactTicketForTicketId(ticketId);
-        	
         	getModelService().save(serviceRequest);
-        	
         	List<ServiceRequestModel> serviceRequests = contactTicket.getServiceRequests();
-        	serviceRequests.add(serviceRequest);
-        	contactTicket.setServiceRequests(serviceRequests);
+        	if(null != serviceRequests && CollectionUtils.isNotEmpty(serviceRequests)) {
+        		List<ServiceRequestModel> ServiceRequestsList = new ArrayList<ServiceRequestModel>(serviceRequests);
+        		ServiceRequestsList.add(serviceRequest);
+        		contactTicket.setServiceRequests(ServiceRequestsList);
+        	}else{
+        		List<ServiceRequestModel> newServiceRequests = new ArrayList<ServiceRequestModel>();
+        		newServiceRequests.add(serviceRequest);
+        		contactTicket.setServiceRequests(newServiceRequests);
+        	}
         	getModelService().save(contactTicket);
         	return true;
     	}catch(Exception e) {
+    		LOG.error(e.getMessage(), e);
     		return false;
     	}
      }

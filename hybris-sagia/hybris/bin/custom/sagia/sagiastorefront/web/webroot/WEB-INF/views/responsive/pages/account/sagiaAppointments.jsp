@@ -208,7 +208,7 @@
                                                                                         </div>
 
                                                                                         <button class="paginationModule-control paginationModule-control_right">
-                                           <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive" id="ss_right_arrow">
+                                           <img src="${commonResourcePath}/images/arrow-left.svg" class="img-responsive" id="ss_right_arrow" style="transform: rotate(180deg);">
                         </button>
                                                                                     </div>
                                                                                 </div>

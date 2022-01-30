@@ -40,7 +40,7 @@
                 </c:if>
             </div>
         </div>
-        <c:if test="${not empty processingTime}">
+ <%--       <c:if test="${not empty processingTime}">
             <div class="serviceTime">
                 <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
                 <div class="serviceTime-detail">
@@ -60,7 +60,7 @@
                     </c:choose>
                 </div>
             </div>
-        </c:if>         
+        </c:if> --%>         
     </div>
     <c:if test="${'/simulator' eq controllerUrl}">
         <div class="container">

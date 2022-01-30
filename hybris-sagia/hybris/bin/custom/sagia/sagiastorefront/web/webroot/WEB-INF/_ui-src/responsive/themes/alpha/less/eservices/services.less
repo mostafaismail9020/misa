@@ -195,8 +195,8 @@
     background-color: @color-primary;
 }
 .btn_slim{
-    font-size: 16px !important;
-    font-weight: 500 !important;
+    // font-size: 16px !important;
+    // font-weight: 500 !important;
     cursor: pointer;
     display: flex !important;
     justify-content: center !important;
@@ -208,7 +208,7 @@
 }
 .service-wrapper-info{
     width: 90%;
-    margin: auto;
+    // margin: auto;
 
     .mainSection_narrow{
         max-width: 100% !important;
@@ -241,6 +241,7 @@
         }
     }
 }
+
 .mainSection,.modal-dialog_businessActivities{
     .expandableContent.expanded{
         display: flex !important;
@@ -284,9 +285,9 @@
     
     .renewal-services{
         display: flex;
-        a{
-            width: 300px !important;
-        }
+        // a{
+        //     width: 300px !important;
+        // }
         #renewalButtons{
             display: contents;
             font-size: 20px !important;
@@ -349,6 +350,9 @@
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
 	background-color: initial;
 }
+.back_to_profile{
+    width: 390px !important;
+}
 
 .back_to_service {
     width: 300px !important;
@@ -356,7 +360,7 @@
         transform: scaleX(-1);
     }
 }
-.back_to_service:hover{
+.back_to_service:hover,.back_to_profile:hover{
     background-color: @color-white !important;
 }
 ::-webkit-scrollbar {
@@ -388,8 +392,11 @@
     justify-content: space-around;
     margin-left: 0px;
     margin-right: 0px;
-    padding-left: 0px;
+    padding-left: 3px;
     padding-right: 0px;
+    button.btn.btn_round{
+        width: 300px !important;
+    }
 }
 .amend-service-link{
     display: flex;
@@ -605,7 +612,7 @@
     line-height: 1.5 !important;
 }
 
-.financialStatement {
+.financialStatement,.page-license-amend {
     .panelTabs-navigation{
         width: 100% !important;
         max-width: 100% !important;
@@ -621,6 +628,42 @@
                 padding-left: 20px;
                 padding-right: 0px;
             }
+        }
+    }
+}
+.page-license-amend{
+    .panelTabs_noPanelInBody .panelTabs-navigation .tabs-list{
+        max-width: initial !important
+    }
+    .panelTabs_separated .panelTabs-navigation .tabs-list{
+        width: ~"calc(100% + 10px)";
+        margin-right: 0px !important;
+    }
+    .panelTabs_separated .panelTabs-navigation{ 
+        .tabs-list li{
+            padding-left: 10px !important;
+            padding-right: 0px !important;
+            padding-bottom: 0px !important;
+            a{
+                justify-content: center;
+                display: block;
+            }
+        }        
+    }
+    .panelTabs_noPanelInBody .panelTabs-content{
+        width: 100% !important;
+        max-width: 100% !important;
+        border: 1px solid #00a6be;
+        padding: 30px;
+    }
+
+}
+.amend-shareholder-wrapper{
+    .formRadioBox{
+        .control-label{
+            border: 1px solid #00A6BE;
+            border-radius: 27px;
+            width: 260px;
         }
     }
 }
@@ -682,7 +725,7 @@
 .select2-container .select2-selection--single .select2-selection__rendered{
     margin-left: 20px;
 }
-button.btn.btn_link.btn-edit-branch:hover{
+button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover{
     background: none !important;
 }
 .govt-doc-edit.modal-dialog{
@@ -693,8 +736,31 @@ button.btn.btn_link.btn-edit-branch:hover{
     margin-left: 10px !important;
 }
 
-
-
+.btn-tooltip,.btn-tooltip:hover{
+    background-color: @color-primary !important;
+    color: @color-white !important;
+}
+.btn-tooltip{
+    display: inline-table !important;
+    width: 400px;
+    font-size: 15px !important;
+}
+.tooltip.show{
+    // >.tooltip-inner.delegateToolTip{
+        z-index: 99999;
+    // }
+    p{
+        margin: 10px;
+        color: @color-text;
+        font-size: 16px;
+    }
+}
+.deligate-info-form{
+    .control-label{
+        width: 100px;
+        border-radius: @border-radius;
+    }
+}
 .dashboard-service-wrapper{
     height: 350px;
     background: @color-white 0% 0% no-repeat padding-box;
@@ -859,7 +925,7 @@ button.btn.btn_link.btn-edit-branch:hover{
     
 }
 .btn_slim{
-    font-size: 20px!important;
+    // font-size: 20px!important;
     font-weight: 600!important;
 }
 
@@ -893,4 +959,18 @@ button.btn.btn_link.btn-edit-branch:hover{
 
 .payment-detail-overview-btn{
     width: 375px !important;
+}
+.editProductBtn:hover,.deleteDropdown-btn:hover,.viewBranchBtn:hover{
+    background: none !important;
+}
+.dataTables_filter.searchInputBox{
+    margin-bottom: 20px;
+    width: 25%;
+    float: right;
+}
+
+.dashboard-detail-text{
+    font-size: 18px!important;
+    font-weight: 500;
+    color:@color-primary;
 }

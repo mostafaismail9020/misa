@@ -126,7 +126,7 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 			final List<String> listOfCorporateActivities = new ArrayList<String>();
 			for (String corporateActivities : source.getListOfCorporateActivties())
 			{
-				listOfCorporateActivities.add(licenseApplyDAO.getActivityDetailsForCode(corporateActivities).getId());
+				listOfCorporateActivities.add(licenseApplyDAO.getActivityDetailsCodeForName(corporateActivities).getId());
 			}
 			target.setListOfCorporateActivities(listOfCorporateActivities);
 		}
@@ -135,7 +135,7 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 			final List<String> listOfStrategicActivities = new ArrayList<String>();
 			for (String strategicActivities : source.getListOfStrategicActivties())
 			{
-				listOfStrategicActivities.add(licenseApplyDAO.getActivityDetailsForCode(strategicActivities).getId());
+				listOfStrategicActivities.add(licenseApplyDAO.getActivityDetailsCodeForName(strategicActivities).getId());
 			}
 			target.setListOfStrategicActivities(listOfStrategicActivities);
 		}
@@ -144,7 +144,7 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 			final List<String> listOfManagementActivities = new ArrayList<String>();
 			for (String managementActivities : source.getListOfCorporateActivties())
 			{
-				listOfManagementActivities.add(licenseApplyDAO.getActivityDetailsForCode(managementActivities).getId());
+				listOfManagementActivities.add(licenseApplyDAO.getActivityDetailsCodeForName(managementActivities).getId());
 			}
 			target.setListOfManagementActivities(listOfManagementActivities);
 		}

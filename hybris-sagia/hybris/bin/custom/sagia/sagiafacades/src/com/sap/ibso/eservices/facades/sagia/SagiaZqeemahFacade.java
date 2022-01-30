@@ -1,11 +1,6 @@
 package com.sap.ibso.eservices.facades.sagia;
 
-import com.sap.ibso.eservices.core.jalo.ShareHolder;
-import com.sap.ibso.eservices.core.model.ContactPersonModel;
-import com.sap.ibso.eservices.core.model.EntityInformationModel;
-import com.sap.ibso.eservices.core.model.IsicMasterModel;
-import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
-import com.sap.ibso.eservices.core.model.ShareHolderModel;
+import com.sap.ibso.eservices.core.model.*;
 import com.sap.ibso.eservices.facades.data.BasicCompanyData;
 import com.sap.ibso.eservices.facades.data.OrganizationInformation;
 import com.sap.ibso.eservices.facades.data.zqeemah.*;
@@ -218,6 +213,10 @@ public interface SagiaZqeemahFacade {
      * @return List of DropdownValue
      * */
 	List<DropdownValue> getRhqRegionsList();
+
+    List<DropdownValue> getCorporateActivities();
+    List<DropdownValue> getStrategicActivities();
+    List<DropdownValue> getManagementActivities();
 	
     
 }

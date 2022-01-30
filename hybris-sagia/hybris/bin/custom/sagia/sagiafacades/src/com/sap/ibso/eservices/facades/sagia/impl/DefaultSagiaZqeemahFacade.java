@@ -1,15 +1,12 @@
 package com.sap.ibso.eservices.facades.sagia.impl;
 
-import com.sap.ibso.eservices.core.jalo.ShareHolder;
-import com.sap.ibso.eservices.core.model.ContactPersonModel;
-import com.sap.ibso.eservices.core.model.DelegateInfoModel;
-import com.sap.ibso.eservices.core.model.EntityInformationModel;
-import com.sap.ibso.eservices.core.model.IsicMasterModel;
-import com.sap.ibso.eservices.core.model.ShareHolderModel;
+import com.sap.ibso.eservices.core.model.*;
+import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
 import com.sap.ibso.eservices.core.sagia.services.SagiaFormatProvider;
 import com.sap.ibso.eservices.facades.data.BasicCompanyData;
 import com.sap.ibso.eservices.facades.data.OrganizationInformation;
 import com.sap.ibso.eservices.facades.data.zqeemah.*;
+import com.sap.ibso.eservices.facades.populators.SagiaRhqActivitiesPopulator;
 import com.sap.ibso.eservices.facades.populators.zqeemah.*;
 import com.sap.ibso.eservices.facades.sagia.*;
 import com.sap.ibso.eservices.sagiaservices.data.zqeemah.*;
@@ -22,6 +19,7 @@ import com.sap.ibso.eservices.sagiaservices.services.license.application.odata.U
 import com.sap.ibso.eservices.sagiaservices.services.odata.BasicContactInformationService;
 import com.sap.nic.NICUserData;
 import com.sap.nic.soapservices.NicService;
+
 
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
@@ -119,8 +117,11 @@ public class DefaultSagiaZqeemahFacade implements SagiaZqeemahFacade {
     
     @Resource
     private BasicContactInformationService odataBasicContactInformationService ;
-    
-    
+
+    @Resource
+    private LicenseApplyService licenseApplyService;
+    @Resource
+    private SagiaRhqActivitiesPopulator sagiaRhqActivitiesPopulator;
     
     
     
@@ -290,7 +291,7 @@ public class DefaultSagiaZqeemahFacade implements SagiaZqeemahFacade {
     
     /**
      * uploads DelegatesDocuments
-     * @param delegatesInfo delegatesInfo
+     * @param
      */
     public void uploadDelegatesDocuments(Collection<ShareholderInfo> shareholderInfo){
     	if (CollectionUtils.isNotEmpty(shareholderInfo)) {
@@ -423,6 +424,45 @@ public class DefaultSagiaZqeemahFacade implements SagiaZqeemahFacade {
     @Override
     public List<DropdownValue> getRhqRegionsList() {
         return getSagiaRegionFacade().getRhqRegionsList();
+    }
+
+    @Override
+    public List<DropdownValue> getCorporateActivities() {
+        final List<RhqActivitiesModel> activities =licenseApplyService.getCorporateActivities();
+        List<DropdownValue> corporateActivityList = new ArrayList<>();
+        for (RhqActivitiesModel activity : activities) {
+
+            DropdownValue dropdownValue = new DropdownValue();
+            sagiaRhqActivitiesPopulator.populate(activity, dropdownValue);
+            corporateActivityList.add(dropdownValue);
+        }
+        return corporateActivityList;
+    }
+
+    @Override
+    public List<DropdownValue> getStrategicActivities() {
+        final List<RhqActivitiesModel> activities =licenseApplyService.getStrategicActivities();
+        List<DropdownValue> strategicActivityList = new ArrayList<>();
+        for (RhqActivitiesModel activity : activities) {
+
+            DropdownValue dropdownValue = new DropdownValue();
+            sagiaRhqActivitiesPopulator.populate(activity, dropdownValue);
+            strategicActivityList.add(dropdownValue);
+        }
+        return strategicActivityList;
+    }
+
+    @Override
+    public List<DropdownValue> getManagementActivities() {
+        final List<RhqActivitiesModel> activities = licenseApplyService.getManagementActivities();
+        List<DropdownValue> managementActivityList = new ArrayList<>();
+        for (RhqActivitiesModel activity : activities) {
+
+            DropdownValue dropdownValue = new DropdownValue();
+            sagiaRhqActivitiesPopulator.populate(activity, dropdownValue);
+            managementActivityList.add(dropdownValue);
+        }
+        return managementActivityList;
     }
 
     @Override

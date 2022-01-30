@@ -1181,6 +1181,9 @@
 	<bean id="sagiaRegionPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaRegionPopulator"/>
 	<bean id="sagiaRhqRegionPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaRhqRegionPopulator"/>
 
+	<bean id="sagiaRhqActivitiesPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaRhqActivitiesPopulator"/>
+
+
 	<bean id="sagiaRegionFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaRegionFacade">
 		<property name="sagiaRegionService" ref="sagiaRegionService"/>
 		<property name="sagiaRegionPopulator" ref="sagiaRegionPopulator"/>

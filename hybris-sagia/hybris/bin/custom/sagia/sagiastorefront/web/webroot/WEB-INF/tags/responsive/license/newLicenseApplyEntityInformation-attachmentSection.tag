@@ -155,49 +155,106 @@
     
     
     <div id="branchAttachment" style="display: none">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.mainBranchCR ? "active" : ""}">
-                <div class="form-group">
-                    <input id="mainBranchCRFile" name="customMainBranchCRFile" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>
-                    <input id="mainBranchCRFileName" name="mainBranchCRFileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.mainBranchCR.fileName}" readonly tabindex="-1"/>
-                    <label class="control-label control-label_mandatory" for="mainBranchCRFileName"><spring:theme code="licenseApplyEntityInformation.attachmentSection.mainBranchCR"/></label>
-                    <div class="form-icon form-icon_browse"><icon:upload/></div>
-                    <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
-<%--                    <div style="text-align: right;">${sagiaApplyEntityInfoForm.boardResolutionFile.code}</div>--%>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.mainBranchCR ? "active" : ""}">
+                            <div class="form-group">
+                                <input id="mainBranchCRFile" name="customMainBranchCRFile" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>
+                                <input id="mainBranchCRFileName" name="mainBranchCRFileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.mainBranchCR.fileName}" readonly tabindex="-1"/>
+                                <label class="control-label control-label_mandatory" for="mainBranchCRFileName"><spring:theme code="licenseApplyEntityInformation.attachmentSection.mainBranchCR"/></label>
+                                <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
+            <%--                    <div style="text-align: right;">${sagiaApplyEntityInfoForm.boardResolutionFile.code}</div>--%>
+                            </div>
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.otherBranchCR1 ? "active" : ""}">
+                            <div class="form-group">
+                                <input id="otherBranchCR1File" name="customOtherBranchCR1File" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>
+                                <input id="otherBranchCR1FileName" name="otherBranchCR1FileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.otherBranchCR1.fileName}" readonly tabindex="-1"/>
+                                <label class="control-label control-label_mandatory" for="otherBranchCR1FileName"><spring:theme code="licenseApplyEntityInformation.attachmentSection.otherBranchCR1"/></label>
+                                <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
+            <%--                    <div style="text-align: right;">${sagiaApplyEntityInfoForm.letterOfSupportFile.code}</div>--%>
+                            </div>
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                            <div class="col-md-6">
+                        <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.otherBranchCR2 ? "active" : ""}">
+                            <div class="form-group">
+                                <input id="otherBranchCR2File" name="customOtherBranchCR2File" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>
+                                <input id="otherBranchCR2FileName" name="otherBranchCR2FileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.otherBranchCR2.fileName}" readonly tabindex="-1"/>
+                                <label class="control-label control-label_mandatory" for="otherBranchCR2FileName"><spring:theme code="licenseApplyEntityInformation.attachmentSection.otherBranchCR2"/></label>
+                                <div class="form-icon form-icon_browse"><icon:upload/></div>
+                                <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
+            <%--                    <div style="text-align: right;">${sagiaApplyEntityInfoForm.letterOfSupportFile.code}</div>--%>
+                            </div>
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="help-block"></div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.otherBranchCR1 ? "active" : ""}">
-                <div class="form-group">
-                    <input id="otherBranchCR1File" name="customOtherBranchCR1File" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>
-                    <input id="otherBranchCR1FileName" name="otherBranchCR1FileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.otherBranchCR1.fileName}" readonly tabindex="-1"/>
-                    <label class="control-label control-label_mandatory" for="otherBranchCR1FileName"><spring:theme code="licenseApplyEntityInformation.attachmentSection.otherBranchCR1"/></label>
-                    <div class="form-icon form-icon_browse"><icon:upload/></div>
-                    <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
-<%--                    <div style="text-align: right;">${sagiaApplyEntityInfoForm.letterOfSupportFile.code}</div>--%>
                 </div>
-                <div class="help-block"></div>
-            </div>
-        </div>
-                <div class="col-md-6">
-            <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.otherBranchCR2 ? "active" : ""}">
-                <div class="form-group">
-                    <input id="otherBranchCR2File" name="customOtherBranchCR2File" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>
-                    <input id="otherBranchCR2FileName" name="otherBranchCR2FileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.otherBranchCR2.fileName}" readonly tabindex="-1"/>
-                    <label class="control-label control-label_mandatory" for="otherBranchCR2FileName"><spring:theme code="licenseApplyEntityInformation.attachmentSection.otherBranchCR2"/></label>
-                    <div class="form-icon form-icon_browse"><icon:upload/></div>
-                    <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
-<%--                    <div style="text-align: right;">${sagiaApplyEntityInfoForm.letterOfSupportFile.code}</div>--%>
+
+    <div id="branchAttachmentNewRhq" style="display: none">
+       <div class="row">
+          <div class="col-md-6">
+             <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.entityFinancialStatementFile ? "active" : ""}">
+             <div class="form-group">
+                <input id="entityFinancialStatementFile" name="customEntityFinancialStatementFile" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>
+                <input id="entityFinancialStatementFileName" name="entityFinancialStatementFileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.mainBranchCR.fileName}" readonly tabindex="-1"/>
+                <label class="control-label control-label_mandatory" for="entityFinancialStatementFileName">
+                   <spring:theme code="licenseApplyEntityInformation.attachmentSection.entityFinancialStatementFile"/>
+                </label>
+                <div class="form-icon form-icon_browse">
+                   <icon:upload/>
                 </div>
-                <div class="help-block"></div>
-            </div>
-        </div>
+                <div class="form-icon form-icon_reset js-inputFile-reset">
+                   <icon:cross/>
+                </div>
+             </div>
+             <div class="help-block"></div>
+          </div>
+       </div>
+       <div class="col-md-6">
+          <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.commercialRegMainEntryFile ? "active" : ""}">
+          <div class="form-group">
+             <input id="commercialRegMainEntryFile" name="customCommercialRegMainEntryFile" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>
+             <input id="commercialRegMainEntryFileName" name="commercialRegMainEntryFileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.otherBranchCR1.fileName}" readonly tabindex="-1"/>
+             <label class="control-label control-label_mandatory" for="commercialRegMainEntryFileName">
+                <spring:theme code="licenseApplyEntityInformation.attachmentSection.commercialRegMainEntryFile"/>
+             </label>
+             <div class="form-icon form-icon_browse">
+                <icon:upload/>
+             </div>
+             <div class="form-icon form-icon_reset js-inputFile-reset">
+                <icon:cross/>
+             </div>
+          </div>
+          <div class="help-block"></div>
+       </div>
     </div>
+    <div class="col-md-6">
+       <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.commercialRegOtherEntryFile ? "active" : ""}">
+       <div class="form-group">
+          <input id="commercialRegOtherEntryFile" name="customCommercialRegOtherEntryFile" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>
+          <input id="commercialRegOtherEntryFileName" name="commercialRegOtherEntryFileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.otherBranchCR2.fileName}" readonly tabindex="-1"/>
+          <label class="control-label control-label_mandatory" for="commercialRegOtherEntryFileName">
+             <spring:theme code="licenseApplyEntityInformation.attachmentSection.commercialRegOtherEntryFile"/>
+          </label>
+          <div class="form-icon form-icon_browse">
+             <icon:upload/>
+          </div>
+          <div class="form-icon form-icon_reset js-inputFile-reset">
+             <icon:cross/>
+          </div>
+       </div>
+       <div class="help-block"></div>
     </div>
-    
+
+
     <div id="preApprovalNrAttachment" style="display: none">
     <div class="row">
         <div class="col-md-6">

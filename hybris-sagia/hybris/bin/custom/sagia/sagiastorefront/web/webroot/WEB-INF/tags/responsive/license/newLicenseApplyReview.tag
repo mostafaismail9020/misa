@@ -296,9 +296,9 @@
                     </div>
                 </div>
 
-                <hr class="contentModule-separator"/>
+
             </div>
-            
+
             <div id="reviewAdvanceLicenseNrSection" style="display: ${entityInformation.hasAdvanceLicenseNr?'block':'none'};">
                 <div class="row">
                     <div class="col-md-6">
@@ -310,6 +310,164 @@
                 </div>
 				<hr class="contentModule-separator"/>
             </div>
+
+            <div id="reviewLicenseYearSection">
+                <div class="row">
+                    <div class="col-md-6">
+                        <dl class="dlList">
+                            <dt>Optional/Functions/Corporate Activities</dt>
+                                	<dd>Sales and Marketing Support, Accounting, Logistics and Supply Chain Management</dd>
+                       </dl>
+                    </div>
+                     <div class="col-md-6">
+                        <dl class="dlList">
+                            <dt>Strategic direction includes</dt>
+                                	<dd>Formulate and monitor the regional strategy</dd>
+                       </dl>
+                    </div>
+                     <div class="col-md-6">
+                        <dl class="dlList">
+                            <dt>Management functions include</dt>
+                                	<dd>Business planning</dd>
+                       </dl>
+                    </div>
+                     <div class="col-md-6">
+                        <dl class="dlList">
+                            <dt>Center of Administrative</dt>
+                                	<dd>MENA</dd>
+                       </dl>
+                    </div>
+                     <div class="col-md-6">
+                        <dl class="dlList">
+                            <dt> RHQ Regions</dt>
+                                	<dd>North America</dd>
+                       </dl>
+                    </div>
+                     <div class="col-md-6">
+                        <dl class="dlList">
+                            <dt>MNC subsidiaries or branch presence</dt>
+                                	<dd>Only one country</dd>
+                       </dl>
+                    </div>
+                </div>
+                 <hr class="contentModule-separator"/>
+            </div>
+
+
+            <div class="contentModule-section contentModule-section_noDivider" id="reviewMncBranchSection">
+            <div class=" contentModule-actions_spaceBetween contentModule-actions_wrap ">
+                <dl class="dlList""> <dt>MNC Branches</dt></dl>
+            </div>
+
+            <div class="tableModule">
+                <table class="tableModule-table">
+                    <thead class="tableModule-head">
+                    <tr>
+                        <th>Company Name</th>
+                        <th>Country</th>
+                        <th>Business</th>
+                        <th>Industry</th>
+                        <th>Operations</th>
+                        <th>HRQ Activity Provided</th>
+
+                    </tr>
+                    </thead>
+                    <tbody class="tableModule-body">
+
+                            <tr>
+                                <td>test</td>
+                                <td >India</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                            </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+           <div class="contentModule-section contentModule-section_noDivider" id="reviewMncBranchSection">
+            <div class=" contentModule-actions_spaceBetween contentModule-actions_wrap ">
+                <dl class="dlList""> <dt>MNC Brand</dt></dl>
+            </div>
+
+            <div class="tableModule">
+                <table class="tableModule-table">
+                    <thead class="tableModule-head">
+                    <tr>
+                        <th>Brand Name</th>
+                        <th>Country</th>
+                        <th>Industry</th>
+                        <th>Company owning the brand in MENA</th>
+                        <th>RHQ activity Provided</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody class="tableModule-body">
+                            <tr>
+                                <td>test</td>
+                                <td >India</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+           <div class=" contentModule-section_noDivider" id="reviewMncBranchSection">
+            <div class=" contentModule-actions_spaceBetween contentModule-actions_wrap ">
+                <dl class="dlList""> <dt>Estimated operating costs for the RHQ</dt></dl>
+            </div>
+
+            <div class="tableModule">
+                <table class="tableModule-table">
+                    <thead class="tableModule-head">
+                    <tr>
+                        <th>Item</th>
+                        <th>Unit Cost</th>
+                        <th>Number of units</th>
+                        <th>Number of units</th>
+                        <th>Year 2022</th>
+                        <th>Year 2023</th>
+                        <th>Year 2024</th>
+                    </tr>
+                    </thead>
+                    <tbody class="tableModule-body">
+                            <tr>
+                                <td>Nestle Biscuit</td>
+                                <td >10</td>
+                                <td>500000000</td>
+                                <td>7</td>
+                                <td>100000000</td>
+                                <td>5000000</td>
+                                <td>25000000</td>
+                            </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                        <td style=""></td>
+                        <td style=""></td>
+                        <td style=""></td>
+                        <td class="sum-row">Total</td>
+                        <td class="sum-row" id="rhqCostTable-sum1">100000000</td>
+	                    <td class="sum-row" id="rhqCostTable-sum2">5000000</td>
+	                    <td class="sum-row" id="rhqCostTable-sum3">25000000</td>
+
+                        </tr>
+                     </tfoot>
+                </table>
+            </div>
+        </div>
+
 
             <div id="reviewBasicInformationExtendedSection">
                 <div class="row">
@@ -553,7 +711,7 @@
             </div>
         </div>
 
-                    
+
         <div class="contentModule-section" id="reviewContactQeemah1Section">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
                 <div class="contentModule-headline"><spring:theme code="license.apply.review.contactperson"/></div>
@@ -615,31 +773,31 @@
                 <a id="unifiedLicenseUrl" target="_blank" href="https://sagia.meras.gov.sa/"><spring:theme code="licenseApply.contactPerson.unifiedLicenseUrl"/></a>
             </h3>
         </div>
-        
+
         <div   id="typeRequirementSection" style="display: none;">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
             		<div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.typeRequirement"/></div>
         	</div>
-        
-                
+
+
       		<h3 style="color:red;font-size:15px;"> <spring:theme code="licenseApply.contactPerson.readAllRequirement"/></h3>
             <div class="scrollWrapper" id="scrollWrapperTypeRequirement">
                 <div class="scrollWrapper-inner" id="scrolltypeRequirement" >
                     <div id="requirementContent" class="requirement-content"  >
                         <dd id="contentRequirement"></dd>
                     </div>
-                   
+
                 </div>
             </div>
 
             <div class="contentModule-actions contentModule-actions_spaceBetween">
             <span>
                 <button id="requirementSubmitButton" type="button" class="btn" disabled="disabled"><spring:theme code="text.consent.button.accept"/></button>
-                
+
             </span>
-            
+
             </div>
-        
+
         </div>
 
         <%--<div class="contentModule-actions contentModule-actions_spaceBetween">--%>
@@ -796,3 +954,9 @@
         </div>
     </div>
 </div>
+
+<style>
+.sum-row{
+     padding: 26px 10px 25px;border-bottom:solid 1px #ebedee ;
+}
+</style>

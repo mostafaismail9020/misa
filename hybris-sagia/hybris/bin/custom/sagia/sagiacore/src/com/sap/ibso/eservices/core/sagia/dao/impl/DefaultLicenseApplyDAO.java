@@ -11,10 +11,14 @@ import de.hybris.platform.enumeration.EnumerationService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.SearchResult;
+import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParameterNotNull;
 
 public class DefaultLicenseApplyDAO implements LicenseApplyDAO {
 
@@ -90,6 +94,84 @@ public class DefaultLicenseApplyDAO implements LicenseApplyDAO {
 		List<SagiaLicenseModel> listSagiaLicense = searchResult.getResult();
 
 		return listSagiaLicense ;
+	}
+
+	@Override
+	public List<RhqActivitiesModel> getCorporateActivities() {
+		final String queryString = "SELECT {" + RhqActivitiesModel.PK + "} FROM {" + RhqActivitiesModel._TYPECODE +"} where {isCorporate} = ?isCorporate";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
+		query.addQueryParameter("isCorporate",true);
+		SearchResult<RhqActivitiesModel> searchResult = flexibleSearchService.search(query);
+		List<RhqActivitiesModel> rhqActivitiesModel = searchResult.getResult();
+		return rhqActivitiesModel;
+	}
+
+	@Override
+	public List<RhqActivitiesModel> getStrategicActivities() {
+		final String queryString = "SELECT {" + RhqActivitiesModel.PK + "} FROM {" + RhqActivitiesModel._TYPECODE +"} where {isStrategic} = ?isStrategic";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
+		query.addQueryParameter("isStrategic",true);
+		SearchResult<RhqActivitiesModel> searchResult = flexibleSearchService.search(query);
+		List<RhqActivitiesModel> rhqActivitiesModel = searchResult.getResult();
+		return rhqActivitiesModel;
+	}
+
+	@Override
+	public List<RhqActivitiesModel> getManagementActivities() {
+		final String queryString = "SELECT {" + RhqActivitiesModel.PK + "} FROM {" + RhqActivitiesModel._TYPECODE +"} where {isManagement} = ?isManagement";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
+		query.addQueryParameter("isManagement",true);
+		SearchResult<RhqActivitiesModel> searchResult = flexibleSearchService.search(query);
+		List<RhqActivitiesModel> rhqActivitiesModel = searchResult.getResult();
+		return rhqActivitiesModel;
+	}
+
+	@Override
+	public RhqActivitiesModel getActivityDetailsForCode(String code) {
+		validateParameterNotNull(code, "Sagia Activity code must not be null!");
+
+		final StringBuilder query = new StringBuilder();
+
+		query.append(" SELECT {PK} FROM ");
+		query.append(" { ");
+		query.append("  RhqActivities");
+		query.append(" } ");
+		query.append(" WHERE {id} = ?code ");
+
+
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("code", code);
+
+		final SearchResult<RhqActivitiesModel> result = getFlexibleSearchService().search(query.toString(), parameters);
+		if(CollectionUtils.isNotEmpty(result.getResult())){
+			return (RhqActivitiesModel) result.getResult().get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public RhqActivitiesModel getActivityDetailsCodeForName(String details) {
+		validateParameterNotNull(details, "Sagia Activity code must not be null!");
+
+		final StringBuilder query = new StringBuilder();
+
+		query.append(" SELECT {PK} FROM ");
+		query.append(" { ");
+		query.append("  RhqActivities");
+		query.append(" } ");
+		query.append(" WHERE {details} = ?details ");
+
+
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("details", details);
+
+		final SearchResult<RhqActivitiesModel> result = getFlexibleSearchService().search(query.toString(), parameters);
+		if(CollectionUtils.isNotEmpty(result.getResult())){
+			return (RhqActivitiesModel) result.getResult().get(0);
+		} else {
+			return null;
+		}
 	}
 
 	@Override

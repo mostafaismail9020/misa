@@ -329,6 +329,26 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         return new Gson().toJson(sagiaZqeemahFacade.getRhqRegionsList());
     }
 
+    @RequestMapping(path = "/dropdownsQeemah1/corporateActivities", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getDropdownsForCorporateActivties(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        return new Gson().toJson(sagiaZqeemahFacade.getCorporateActivities());
+    }
+
+    @RequestMapping(path = "/dropdownsQeemah1/strategicActivities", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getDropdownsForStrategicActivties(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        return new Gson().toJson(sagiaZqeemahFacade.getStrategicActivities());
+    }
+    @RequestMapping(path = "/dropdownsQeemah1/managementActivities", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getDropdownsForManagementActivties(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        return new Gson().toJson(sagiaZqeemahFacade.getManagementActivities());
+    }
+
     @RequestMapping(path = "/dropdownsQeemah1/cities/{region}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String getCitiesQeemah1(@PathVariable String region, final HttpServletRequest request, final HttpServletResponse response) throws IOException {

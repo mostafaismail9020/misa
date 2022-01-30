@@ -5,15 +5,11 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import com.sap.ibso.eservices.core.model.EntityInformationModel;
-import com.sap.ibso.eservices.core.model.IsicMasterModel;
-import com.sap.ibso.eservices.core.model.SagiaCountryModel;
-import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
+import com.sap.ibso.eservices.core.model.*;
+import com.sap.ibso.eservices.core.sagia.dao.LicenseApplyDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaCountryDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaRegionDAO;
-import com.sap.ibso.eservices.facades.data.EntityInformationData;
-import com.sap.ibso.eservices.facades.data.SagiaCountryData;
-import com.sap.ibso.eservices.facades.data.SagiaLicenseData;
+import com.sap.ibso.eservices.facades.data.*;
 import com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicActivity;
 import com.sap.ibso.eservices.facades.data.zqeemah.LicenseType;
 import com.sap.ibso.eservices.facades.sagia.SagiaLicenseTypeFacade;
@@ -47,6 +43,9 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 
 	@Resource
 	private SagiaRegionDAO sagiaRegionDAO;
+
+	@Resource
+	private LicenseApplyDAO licenseApplyDAO;
 
 	@Override
 	public void populate(EntityInformationModel source, EntityInformationData target) throws ConversionException {
@@ -120,7 +119,114 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 		}
 			
 		//RHQ Requirement END
-	
+
+//New RHQ Start
+		if(!source.getListOfCorporateActivties().isEmpty())
+		{
+			final List<String> listOfCorporateActivities = new ArrayList<String>();
+			for (String corporateActivities : source.getListOfCorporateActivties())
+			{
+				listOfCorporateActivities.add(licenseApplyDAO.getActivityDetailsForCode(corporateActivities).getId());
+			}
+			target.setListOfCorporateActivities(listOfCorporateActivities);
+		}
+		if(!source.getListOfStrategicActivties().isEmpty())
+		{
+			final List<String> listOfStrategicActivities = new ArrayList<String>();
+			for (String strategicActivities : source.getListOfStrategicActivties())
+			{
+				listOfStrategicActivities.add(licenseApplyDAO.getActivityDetailsForCode(strategicActivities).getId());
+			}
+			target.setListOfStrategicActivities(listOfStrategicActivities);
+		}
+		if(!source.getListOfManagementActivties().isEmpty())
+		{
+			final List<String> listOfManagementActivities = new ArrayList<String>();
+			for (String managementActivities : source.getListOfCorporateActivties())
+			{
+				listOfManagementActivities.add(licenseApplyDAO.getActivityDetailsForCode(managementActivities).getId());
+			}
+			target.setListOfManagementActivities(listOfManagementActivities);
+		}
+
+		if(!source.getListOfEntitiesManagedByRhq().isEmpty())
+		{
+			final List<EntitiesManagedByRhq> entitiesManagedByRhqList = new ArrayList<EntitiesManagedByRhq>();
+			EntitiesManagedByRhq entityData = new EntitiesManagedByRhq();
+			for (EntitiesManagedByRhqModel entityModel : source.getListOfEntitiesManagedByRhq())
+			{
+				entityData.setCompanyName(entityModel.getCompanyName());
+				entityData.setCountry(entityModel.getCountry());
+				entityData.setBusinessRelationshipType(entityModel.getBusinessRelationshipType());
+				entityData.setIndustry(entityModel.getIndustry());
+				entityData.setOperations(entityModel.getOperations());
+				entityData.setRhqActivityProvided(entityModel.getRhqActivityProvided());
+			}
+			target.setListOfEntitiesManagedByRhq(entitiesManagedByRhqList);
+		}
+
+		if(!source.getListOfBrandPresenceInMENARegion().isEmpty())
+		{
+			final List<BrandPresenceInMENARegion> brandPresenceInMENARegionList = new ArrayList<BrandPresenceInMENARegion>();
+			BrandPresenceInMENARegion brandData = new BrandPresenceInMENARegion();
+			for (BrandPresenceModel brandModel : source.getListOfBrandPresenceInMENARegion())
+			{
+				brandData.setBrandName(brandModel.getBrandName());
+				brandData.setCountry(brandModel.getCountry());
+				brandData.setIndustry(brandModel.getIndustry());
+				brandData.setCompanyOwningBrandInMENA(brandModel.getCompanyOwningBrandInMENA());
+				brandData.setRhqActivityProvided(brandModel.getRhqActivityProvided());
+			}
+			target.setListOfBrandPresenceInMENARegion(brandPresenceInMENARegionList);
+		}
+
+		if(!source.getListOfEstimatedOperatingCostForRhq().isEmpty())
+		{
+			final List<EstimatedOperatingCostForRhq> operatingCostList = new ArrayList<EstimatedOperatingCostForRhq>();
+			EstimatedOperatingCostForRhq operatingCostData = new EstimatedOperatingCostForRhq();
+			for (OperatingCostForRhqModel operatingCostModel : source.getListOfEstimatedOperatingCostForRhq())
+			{
+				operatingCostModel.setItem(operatingCostData.getItem());
+				operatingCostModel.setUnitCost(operatingCostData.getUnitCost());
+				operatingCostModel.setNoOfUnits(operatingCostData.getNoOfUnits());
+				operatingCostModel.setCostFrequency(operatingCostData.getCostFrequency());
+				operatingCostModel.setYear2022(operatingCostData.getYear2022());
+				operatingCostModel.setYear2023(operatingCostData.getYear2023());
+				operatingCostModel.setYear2024(operatingCostData.getYear2024());
+			}
+			target.setListOfEstimatedOperatingCostForRhq(operatingCostList);
+		}
+		if(!source.getRhqCenterAdmin().isEmpty())
+		{
+			final List<String> rhqCenterAdmin = new ArrayList<String>();
+			for (String center : source.getRhqCenterAdmin())
+			{
+				rhqCenterAdmin.add(center);
+			}
+			target.setRhqCenterAdmin(rhqCenterAdmin);
+		}
+		if(!source.getRhqSubsidiaryPresence().isEmpty())
+		{
+			final List<String> rhqSubsidiaryPresence = new ArrayList<String>();
+			for (String subsidiary : source.getRhqSubsidiaryPresence())
+			{
+				rhqSubsidiaryPresence.add(subsidiary);
+			}
+			target.setRhqSubsidiaryPresence(rhqSubsidiaryPresence);
+		}
+
+		if (source.getEntityFinancialStatementFile() != null) {
+			target.setEntityFinancialStatementFile(getMediaConverter().convert(source.getEntityFinancialStatementFile()));
+		}
+
+		if (source.getCommercialRegMainEntryFile() != null) {
+			target.setCommercialRegMainEntryFile(getMediaConverter().convert(source.getCommercialRegMainEntryFile()));
+		}
+
+		if (source.getCommercialRegOtherEntryFile() != null) {
+			target.setCommercialRegOtherEntryFile(getMediaConverter().convert(source.getCommercialRegOtherEntryFile()));
+		}
+//New RHQ End
 		if (source.getBoardResolutionFile() != null) {
 			target.setBoardResolutionFile(getMediaConverter().convert(source.getBoardResolutionFile()));
 		}

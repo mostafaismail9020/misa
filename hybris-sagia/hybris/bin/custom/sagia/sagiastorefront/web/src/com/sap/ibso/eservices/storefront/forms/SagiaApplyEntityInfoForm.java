@@ -1,5 +1,10 @@
 package com.sap.ibso.eservices.storefront.forms;
 
+import com.sap.ibso.eservices.facades.data.BrandPresenceInMENARegion;
+import com.sap.ibso.eservices.facades.data.EntitiesManagedByRhq;
+import com.sap.ibso.eservices.facades.data.EstimatedOperatingCostForRhq;
+import com.sap.ibso.eservices.facades.data.RhqActivities;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -25,7 +30,22 @@ public class SagiaApplyEntityInfoForm implements Serializable{
     private String branchCR2FileName;
     private String branchCR3FileName;
     private String branchCR4FileName;
+
+    // New RHQ Requirememt Start
+    private List<EntitiesManagedByRhq> listOfEntitiesManagedByRhq;
+    private List<BrandPresenceInMENARegion> listOfBrandPresenceInMENARegion;
+    private List<EstimatedOperatingCostForRhq> listOfEstimatedOperatingCostForRhq;
+    private List<String> listOfCorporateActivities;
+    private List<String> listOfStrategicActivities;
+    private List<String> listOfManagementActivities;
+
+    private List<String> rhqCenterAdmin;
+    private List<String> rhqSubsidiaryPresence;
     private List<String> listOfRhqRegions;
+
+    private String entityFinancialStatementFileName;
+    private String commercialRegMainEntryFileName;
+    private String commercialRegOtherEntryFileName;
 
     private String licenseYear;
     private String iSINCode;

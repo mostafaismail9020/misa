@@ -43,7 +43,7 @@
             </div>
             <license:newLicenseApplyEntityInformation-licenseTypeSection/>
             <license:newLicenseApplyEntityInformation-licenseInformationSection/>
-            <license:newLicenseApplyEntityInformation-branchInformationSection/>
+           <license:newLicenseApplyEntityInformation-branchInformationSection/>
             <license:newLicenseApplyEntityInformation-attachmentSection/>
             <license:newLicenseApplyEntityInformation-licenseYearsSection/>
             <license:licenseApplyEntityInformation-stockMarketSection/>

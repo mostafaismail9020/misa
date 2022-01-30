@@ -174,7 +174,12 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			{
 				saveEntityRevenueFileOnEntityInfo(request, entityInformationModel);
 			}
-
+			if(entityInformationData.getLicenseType().equalsIgnoreCase("11"))
+			{
+				saveEntityFinancialStatementEntityInfo(request, entityInformationModel);
+				saveCommercialRegMainEntryEntityInfo(request, entityInformationModel);
+				saveCommercialRegOtherEntryEntityInfo(request, entityInformationModel);
+			}
 			licenseApplyService.saveEntityInformation(entityInformationModel);
 		} else {
 			licenseEntityInformationReversePopulator.populate(entityInformationData, entityInformationModel);
@@ -256,6 +261,18 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			{
 				List<ShareHolderModel> shareHolders=licenseApplyService.getShareHolders();
 				modelService.removeAll(shareHolders);
+			}
+			if(entityInformationModel.getLicenseType().getCode().equals("11"))
+			{
+				saveEntityFinancialStatementEntityInfo(request, entityInformationModel);
+				saveCommercialRegMainEntryEntityInfo(request, entityInformationModel);
+				saveCommercialRegOtherEntryEntityInfo(request, entityInformationModel);
+			}
+			else
+			{
+				entityInformationModel.setEntityFinancialStatementFile(null);
+				entityInformationModel.setCommercialRegMainEntryFile(null);
+				entityInformationModel.setCommercialRegOtherEntryFile(null);
 			}
 			modelService.save(entityInformationModel);
 		}
@@ -849,6 +866,93 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 					String fileName = "branchCR4FileName_" + nowTime.getTime() + "_" + file.getOriginalFilename();
 					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
 					entityInformationModel.setRhqCR4(media);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+	/**
+	 * Check if EntityFinancialStatement PDF file is present in request and if so, set in EntityInformationModel
+	 * @param request
+	 * @param entityInformationModel
+	 */
+	public void saveEntityFinancialStatementEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
+
+		if (request instanceof MultipartHttpServletRequest) {
+			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customEntityFinancialStatementFile");
+
+			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+			try {
+				if (file.isEmpty() || file.getContentType() == null) {
+					return;
+				}
+				final Date nowTime = new Date();
+				if (extension.equals(PDF)) {
+					String fileName = "entityFinancialStatementFile_" + nowTime.getTime() + "_" + file.getOriginalFilename();
+					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
+					entityInformationModel.setEntityFinancialStatementFile(media);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+	/**
+	 * Check if CommercialRegMainEntry PDF file is present in request and if so, set in EntityInformationModel
+	 * @param request
+	 * @param entityInformationModel
+	 */
+	public void saveCommercialRegMainEntryEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
+
+		if (request instanceof MultipartHttpServletRequest) {
+			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customCommercialRegMainEntryFile");
+
+			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+			try {
+				if (file.isEmpty() || file.getContentType() == null) {
+					return;
+				}
+				final Date nowTime = new Date();
+				if (extension.equals(PDF)) {
+					String fileName = "commercialRegMainEntryFile_" + nowTime.getTime() + "_" + file.getOriginalFilename();
+					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
+					entityInformationModel.setCommercialRegMainEntryFile(media);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+	/**
+	 * Check if CommercialRegOtherEntry PDF file is present in request and if so, set in EntityInformationModel
+	 * @param request
+	 * @param entityInformationModel
+	 */
+	public void saveCommercialRegOtherEntryEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
+
+		if (request instanceof MultipartHttpServletRequest) {
+			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customCommercialRegOtherEntryFile");
+
+			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+			try {
+				if (file.isEmpty() || file.getContentType() == null) {
+					return;
+				}
+				final Date nowTime = new Date();
+				if (extension.equals(PDF)) {
+					String fileName = "commercialRegOtherEntry_" + nowTime.getTime() + "_" + file.getOriginalFilename();
+					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
+					entityInformationModel.setCommercialRegOtherEntryFile(media);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

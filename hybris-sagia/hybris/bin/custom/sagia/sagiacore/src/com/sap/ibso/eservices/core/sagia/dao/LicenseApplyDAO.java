@@ -19,5 +19,11 @@ public interface LicenseApplyDAO {
 	ShareHolderModel getShareHolder(String code);
 
 	List<SagiaLicenseModel> getPendingLicenses();
+	List<RhqActivitiesModel> getCorporateActivities();
+	List<RhqActivitiesModel> getStrategicActivities();
+	List<RhqActivitiesModel> getManagementActivities();
+
+	RhqActivitiesModel getActivityDetailsForCode(String code);
+	RhqActivitiesModel getActivityDetailsCodeForName(String name);
 	
 }

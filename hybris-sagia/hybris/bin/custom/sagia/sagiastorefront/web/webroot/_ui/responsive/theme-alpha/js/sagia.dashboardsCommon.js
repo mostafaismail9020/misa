@@ -506,3 +506,32 @@ $(document).on('click',".services-category-list .nav .nav-link",function(){
       $(".services-category-list .nav .nav-link").removeClass("active");
       $(this).addClass("active");
   });
+
+
+
+  
+
+$(document).ready(function () {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+    var overflow = "hidden";
+    var footerHeight
+    $(".float-button").click(function () {
+        $(".popup").toggleClass("popup-up");
+        $(".float-button").toggleClass("float-button-up");
+        $(".full-bg").fadeToggle();
+        $(this).html($(this).text() == 'Contact Us' ? "<img width='40' src=''>": 'Contact Us');
+        overflow = (overflow == "hidden") ? "visible" : "hidden";
+    });
+
+    $(window).on('scroll', function () {
+        footerHeight = $("#footer").offset().top - 800;
+        if ($(this).scrollTop() >= footerHeight) {
+            $('.float-button').css({"display":"none","opacity": "0"});
+        }
+        else {
+            $('.float-button').css({"display":"block","opacity": "1"});
+        }
+    });
+});

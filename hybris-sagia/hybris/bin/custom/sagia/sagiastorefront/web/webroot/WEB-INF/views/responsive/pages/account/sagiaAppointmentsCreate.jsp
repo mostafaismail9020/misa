@@ -56,9 +56,14 @@
                                                         <div class="mainSection mainSection mainSection_dark mainSection_noPadding">
                                                             <div class="container">
                                                                 <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-                                                                    <div class="w-25">
-                                                                        <a href="${encodedContextPath}/appointments" class="w-75 btn btn_leftIconLink btn_darkLink appointmentControl-backBtn"><span class="iconElement iconElement_closeBack"><icon:close/></span><span
-                        class="w-75 appointmentControl-backBtn-label"><spring:theme code="appointments.backToOverview"/></span></a>
+                                                                    <div class="w-25 appointments_create">
+                                                                        <a href="${encodedContextPath}/appointments" class="w-100 btn btn_leftIconLink btn_darkLink appointmentControl-backBtn">
+                                                                            <!--<span class="iconElement iconElement_closeBack"><icon:close/></span>-->
+                                                                            <svg class="potential_svg_arrow3" xmlns="http://www.w3.org/2000/svg" width="10" height="17.116" viewBox="0 0 10 17.116">
+                                                                                <path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M14.265,14.749l6.618-6.471a1.2,1.2,0,0,0,0-1.727,1.275,1.275,0,0,0-1.77,0l-7.5,7.332a1.2,1.2,0,0,0-.036,1.687l7.53,7.383a1.277,1.277,0,0,0,1.77,0,1.2,1.2,0,0,0,0-1.727Z" transform="translate(-11.251 -6.194)" fill="#00a6be"></path>
+                                                                            </svg>
+                                                                            <span class="w-75 appointmentControl-backBtn-label"><spring:theme code="appointments.backToOverview"/></span>
+                                                                        </a>
                                                                     </div>
                                                                     <%--<div>
                 <a class="btn btn--primary btn--half-radius btn--small" href="#"><spring:theme code="appointments.makeanappointment"/></a>

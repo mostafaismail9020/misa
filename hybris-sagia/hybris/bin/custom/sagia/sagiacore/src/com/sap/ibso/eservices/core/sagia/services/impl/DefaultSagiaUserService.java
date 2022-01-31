@@ -16,6 +16,7 @@ package com.sap.ibso.eservices.core.sagia.services.impl;
 import com.investsaudi.data.SagiaB2BUnitData;
 import com.investsaudi.portal.core.model.ContactTicketModel;
 import com.investsaudi.portal.core.model.ServiceRequestModel;
+import com.investsaudi.portal.core.service.ContactTicketBusinessService;
 import com.sap.ibso.eservices.core.constants.SagiaCoreConstants;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaUserDao;
 import com.sap.ibso.eservices.core.sagia.enums.ValidationError;
@@ -67,6 +68,10 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     
     @Resource(name = "contactTicketEventStrategy")
 	private TicketEventStrategy ticketEventStrategy;
+	
+	@Resource(name="contactTicketBusinessService")
+	private ContactTicketBusinessService contactTicketBusinessService;
+
     
     
     @Override
@@ -194,7 +199,7 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
 	    	CsTicketModel ticket = (CsTicketModel) contactTicket;
 			CsCustomerEventModel ticketComment = ticketEventStrategy.createCreationEventForTicket(ticket,
 					CsEventReason.FIRSTCONTACT, CsInterventionType.TICKETMESSAGE, comments);
-
+            contactTicketBusinessService.customerEvent2SCPI(ticketComment);
 			/*List<CommentModel> commentsList = new ArrayList<CommentModel>();
 			commentsList.add(ticketComment);
 			contactTicket.setComments(commentsList);

@@ -8,18 +8,19 @@ INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; cod
 ; InboundAccount	; Title       	; Title       	; 	; ALL_SUB_AND_SUPER_TYPES	;  
  
 INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
-; InboundAccount:Customer    	; company          	; Customer:company          	;                            	; 	;  
-; InboundAccount:Customer    	; name             	; Customer:name             	;                            	; 	;  
 ; InboundAccount:Customer    	; mobileNumber     	; Customer:mobileNumber     	;                            	; true	;  
-; InboundAccount:Customer    	; c4cAccountID     	; Customer:c4cAccountID     	;                            	; true	;  
+; InboundAccount:Customer    	; uid              	; Customer:uid              	;                            	; true	;  
 ; InboundAccount:Customer    	; userNameEmail    	; Customer:userNameEmail    	;                            	; true	;  
+; InboundAccount:Customer    	; sector           	; Customer:sector           	; InboundAccount:SagiaSector 	; 	;  
+; InboundAccount:Customer    	; systemOrigin     	; Customer:systemOrigin     	;                            	; 	;  
+; InboundAccount:Customer    	; company          	; Customer:company          	;                            	; 	;  
+; InboundAccount:Customer    	; companyWebsite   	; Customer:companyWebsite   	;                            	; 	;  
+; InboundAccount:Customer    	; internetUserID   	; Customer:internetUserID   	;                            	; 	;  
+; InboundAccount:Customer    	; c4cAccountID     	; Customer:c4cAccountID     	;                            	; 	;  
+; InboundAccount:Customer    	; name             	; Customer:name             	;                            	; 	;  
 ; InboundAccount:Customer    	; title            	; Customer:title            	; InboundAccount:Title       	; 	;  
 ; InboundAccount:Customer    	; mobileCountryCode	; Customer:mobileCountryCode	;                            	; true	;  
-; InboundAccount:Customer    	; systemOrigin     	; Customer:systemOrigin     	;                            	; 	;  
-; InboundAccount:Customer    	; sector           	; Customer:sector           	; InboundAccount:SagiaSector 	; 	;  
-; InboundAccount:Customer    	; uid              	; Customer:uid              	;                            	; true	;  
 ; InboundAccount:Customer    	; country          	; Customer:country          	; InboundAccount:SagiaCountry	; 	;  
-; InboundAccount:Customer    	; internetUserID   	; Customer:internetUserID   	;                            	; 	;  
 ; InboundAccount:SagiaSector 	; code             	; SagiaSector:code          	;                            	; true	;  
 ; InboundAccount:SagiaCountry	; code             	; SagiaCountry:code         	;                            	; true	;  
 ; InboundAccount:Title       	; code             	; Title:code                	;                            	; true	;  

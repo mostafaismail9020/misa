@@ -24,7 +24,7 @@
 				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfCorporateActivities}">
 
 			</select>
-			<label class="control-label" for="rhqCheckbox">* Optional/Functions/Corporate Activities</label>
+			<label class="control-label" for="rhqCheckbox"><spring:theme code="rhq.investor.activities.corporate.label"/></label>
 		</div>
 		<div class="help-block"></div>
 	</div>
@@ -38,7 +38,7 @@
 				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfStrategicActivities}">
 
 			</select>
-			<label class="control-label" for="rhqStrategicCheckbox">* Strategic direction includes</label>
+			<label class="control-label" for="rhqStrategicCheckbox"><spring:theme code="rhq.investor.activities.strategic.label"/></label>
 		</div>
 		<div class="help-block"></div>
 	</div>
@@ -51,7 +51,7 @@
 				class="js-select2-multi form-control select2-hidden-accessible"
 				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfManagementActivities}">
 			</select>
-			<label class="control-label" for="rhqManagementFunCheckbox">* Management functions include</label>
+			<label class="control-label" for="rhqManagementFunCheckbox"><spring:theme code="rhq.investor.activities.management.label"/></label>
 		</div>
 		<div class="help-block"></div>
 	</div>
@@ -68,18 +68,27 @@
                      <option value="MENA">MENA</option>
                      <option value="Middle East (ME)">Middle East (ME)</option>
 				</select>
-				<label class="control-label" for="rhqCenterAdmin">* Center of Administrative</label>
+				<label class="control-label" for="rhqCenterAdmin"><spring:theme code="rhq.investor.activities.center.of.administrative.label"/></label>
 				<div id="rhqCenterAdmin-error" class="help-block"></div>
 			</div>
 		</div>
 
+        <div class="formSelectBox">
+                <div class="form-group">
+                    <select id="branchInformationRhqCountry" name="listOfRhqCountries"
+                        class="js-select2-multi form-control select2-hidden-accessible"
+                        multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfRhqCountries}">
+                    </select> <label class="control-label" for="branchInformationRhqCountry"><spring:theme code="profile.rhq.countries" /></label>
+                </div>
+                <div class="help-block"></div>
+            </div>
 
 		<div class="formSelectBox" id="rhqCountryRegion" >
 		<div class="form-group">
 			<select id="branchInformationRhqRegionsSection" name="listOfRhqRegions"
 				class="js-select2-multi form-control select2-hidden-accessible"
 				multiple="" tabindex="-1" aria-hidden="true" data-value="">
-			</select> <label class="control-label" for="branchInformationRhqRegionsSection">* RHQ Regions</label>
+			</select> <label class="control-label" for="branchInformationRhqRegionsSection"><spring:theme code="profile.rhq.regions" /></label>
 		</div>
 		<div class="help-block"></div>
 	</div>
@@ -91,7 +100,7 @@
 				class="js-select2-multi form-control select2-hidden-accessible"
 				multiple="" tabindex="-1" aria-hidden="true" data-value="">
 			</select>
-			<label class="control-label" for="rhqSubsidiaryPresence">* MNC subsidiaries or branch presence</label>
+			<label class="control-label" for="rhqSubsidiaryPresence"><spring:theme code="rhq.mnc.subsidiaries.presence" /></label>
 		</div>
 		<div class="help-block"></div>
 	</div>
@@ -107,12 +116,10 @@
 	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<div class="modal-title">Edit Branch</div>
+				<div class="modal-title"><spring:theme code="rhq.edit.branch.label" /></div>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
-
-
 					<form action="">
 						<div class="row">
 							<div class="col-md-6">
@@ -120,7 +127,7 @@
 		                        <div class="form-group">
 			                    <input id="editBranchName" name="editBranchName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Company
+				                <spring:theme code="rhq.company.label" />
 			                    </label>
                                 <div class="help-block"></div>
 		                        </div>
@@ -130,16 +137,9 @@
 							<div class="formSelectBox">
 			<div class="form-group">
 				<select id="editBranchCountry" name="editBranchCountry" class="js-select2-search form-control" data-search-placeholder="Select a country">
-					<option></option>
-                    <option value="Kingdom of Saudi Arabia">Kingdom of Saudi Arabia</option>
-					<option value="Romania">Romania</option>
-                    <option value="Germany">Germany</option>
-                    <option value="India">India</option>
-                    <option value="Andorra">Andorra</option>
-                    <option value=">United Arab Emirates">United Arab Emirates</option>
-                    <option value="Afghanistan">Afghanistan</option>
+
 				</select>
-				<label class="control-label" for="">* Country</label>
+				<label class="control-label" for=""><spring:theme code="rhq.country.label" /></label>
 				<div id="editBranchCountry-error" class="help-block"></div>
 			</div>
 		</div>
@@ -157,7 +157,7 @@
                      <option value="Distributor">Distributor</option>
                      <option value="Others">Others</option>
 				</select>
-				<label class="control-label" for="">* Business Relationship Type</label>
+				<label class="control-label" for=""><spring:theme code="rhq.business.relationship.type.label" /></label>
 				<div id="editBranchBuz-error" class="help-block"></div>
 			</div>
 		</div>
@@ -167,7 +167,7 @@
 		                        <div class="form-group">
 			                    <input id="editBranchIndustry" name="editBranchIndustry"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Industry
+				                <spring:theme code="rhq.industry.label" />
 			                    </label>
 								<div id="editBranchIndustry-error" class="help-block"></div>
 		                        </div>
@@ -184,7 +184,7 @@
                     <option value="Assembly">Assembly</option>
                     <option value="Others">Others</option>
 				</select>
-				<label class="control-label" for="">* Operations</label>
+				<label class="control-label" for=""><spring:theme code="rhq.operation.label" /></label>
 				<div id="editBranchOperation-error" class="help-block"></div>
 			</div>
 		</div>
@@ -194,7 +194,7 @@
 		                        <div class="form-group">
 			                    <input id="editBranchRhqActivity" name="editBranchRhqActivity" class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				               * RHQ Activity
+				               <spring:theme code="rhq.rhq.activity.label" />
 			                    </label>
 								<div id="editBranchRhqActivity-error" class="help-block"></div>
 		                        </div>
@@ -205,7 +205,7 @@
 				</div>
 			</div>
 			<div class="modal-footer modal-footer_centered">
-				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityEditBranch">Update</button>
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityEditBranch"><spring:theme code="rhq.update.label" /></button>
 			</div>
 		</div>
 	</div>
@@ -220,7 +220,7 @@
 	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<div class="modal-title">Add New Branch</div>
+				<div class="modal-title"><spring:theme code="rhq.add.new.branch.label" /></div>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -233,7 +233,7 @@
 		                        <div class="form-group">
 			                    <input id="addBranchName" name="addBranchName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Company
+			                    <spring:theme code="rhq.company.label" />
 			                    </label>
                                 <div class="help-block">
 
@@ -245,16 +245,9 @@
 							<div class="formSelectBox">
 			<div class="form-group">
 				<select id="addBranchCountry" name="addBranchCountry" class="js-select2-search form-control" data-search-placeholder="">
-					<option></option>
-                    <option value="Kingdom of Saudi Arabia">Kingdom of Saudi Arabia</option>
-					<option value="Romania">Romania</option>
-                    <option value="Germany">Germany</option>
-                    <option value="India">India</option>
-                    <option value="Andorra">Andorra</option>
-                    <option value="United Arab Emirates">United Arab Emirates</option>
-                    <option value="Afghanistan">Afghanistan</option>
+
 				</select>
-				<label class="control-label" for="">* Country</label>
+				<label class="control-label" for=""><spring:theme code="rhq.country.label" /></label>
 				<div id="addBranchCountry-error" class="help-block"></div>
 			</div>
 		</div>
@@ -272,7 +265,7 @@
                      <option value="Distributor">Distributor</option>
                      <option value="Others">Others</option>
 				</select>
-				<label class="control-label" for="">* Business Relationship Type</label>
+				<label class="control-label" for=""><spring:theme code="rhq.business.relationship.type.label" /></label>
 				<div id="addBranchBuz-error" class="help-block"></div>
 			</div>
 		</div>
@@ -282,7 +275,7 @@
 		                        <div class="form-group">
 			                    <input id="addBranchIndustry" name="addBranchIndustry"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Industry
+			                    <spring:theme code="rhq.industry.label" />
 			                    </label>
 								<div id="addBranchIndustry-error" class="help-block"></div>
 		                        </div>
@@ -299,7 +292,7 @@
                     <option value="Assembly">Assembly</option>
                     <option value="Others">Others</option>
 				</select>
-				<label class="control-label" for="">* Operations</label>
+				<label class="control-label" for=""><spring:theme code="rhq.operation.label" /></label>
 				<div id="addBranchOperation-error" class="help-block"></div>
 			</div>
 		</div>
@@ -309,7 +302,7 @@
 		                        <div class="form-group">
 			                    <input id="addBranchRhqActivity" name="addBranchRhqActivity" class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				               * RHQ Activity
+			                    <spring:theme code="rhq.rhq.activity.label" />
 			                    </label>
 								<div id="addBranchRhqActivity-error" class="help-block"></div>
 		                        </div>
@@ -335,7 +328,7 @@
 	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<div class="modal-title">Add New Brand</div>
+				<div class="modal-title"><spring:theme code="rhq.add.new.brand.label" /></div>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -348,7 +341,7 @@
 		                        <div class="form-group ">
 			                    <input id="addBrandName" name="addBrandName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Brand Name
+				                <spring:theme code="rhq.brand.name.label" />
 			                    </label>
                                 <div class="help-block">
 					</div>
@@ -359,16 +352,8 @@
 							<div class="formSelectBox">
 			<div class="form-group">
 				<select id="addBrandCountry" name="addBrandCountry" class="js-select2-search form-control" data-search-placeholder="">
-					<option></option>
-                    <option value="Kingdom of Saudi Arabia">Kingdom of Saudi Arabia</option>
-					<option value="Romania">Romania</option>
-                    <option value="Germany">Germany</option>
-                    <option value="India">India</option>
-                    <option value="Andorra">Andorra</option>
-                    <option value="United Arab Emirates">United Arab Emirates</option>
-                    <option value="Afghanistan">Afghanistan</option>
 				</select>
-				<label class="control-label" for="">* Country</label>
+				<label class="control-label" for=""><spring:theme code="rhq.country.label" /></label>
 				<div id="addBrandCountry-error" class="help-block"></div>
 			</div>
 		</div>
@@ -381,7 +366,7 @@
 		                        <div class="form-group">
 			                    <input id="addBrandIndustry" name="addBrandIndustry"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Industry
+			                    <spring:theme code="rhq.industry.label" />
 			                    </label>
 								<div id="addBrandIndustry-error" class="help-block"></div>
 		                        </div>
@@ -392,7 +377,7 @@
 		                        <div class="form-group">
 			                    <input id="addBrandMena" name="addBrandMena"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                 Company owning the brand in MENA
+				                 <spring:theme code="rhq.company.brand.in.mena.region.label" />
 			                    </label>
 								<div id="addBrandMena-error" class="help-block"></div>
 		                        </div>
@@ -407,7 +392,7 @@
 		                        <div class="form-group">
 			                    <input id="addBrandProvider" name="addBrandProvider"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                 RHQ activity Provided
+				                 <spring:theme code="rhq.rhq.activity.label" />
 			                    </label>
 								<div id="addBrandProvider-error" class="help-block"></div>
 		                        </div>
@@ -433,7 +418,7 @@
 	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<div class="modal-title">Edit Brand</div>
+				<div class="modal-title"><spring:theme code="rhq.edit.brand.label" /></div>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -446,7 +431,7 @@
 		                        <div class="form-group">
 			                    <input id="editBrandName" name="editBrandName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Brand Name
+				                <spring:theme code="rhq.brand.name.label" />
 			                    </label>
                                 <div class="help-block">
 
@@ -458,16 +443,8 @@
 							<div class="formSelectBox">
 			<div class="form-group">
 				<select id="editBrandCountry" name="editBrandCountry" class="js-select2-search form-control" data-search-placeholder="">
-					<option></option>
-                    <option value="Kingdom of Saudi Arabia">Kingdom of Saudi Arabia</option>
-					<option value="Romania">Romania</option>
-                    <option value="Germany">Germany</option>
-                    <option value="India">India</option>
-                    <option value="Andorra">Andorra</option>
-                    <option value=">United Arab Emirates">United Arab Emirates</option>
-                    <option value="Afghanistan">Afghanistan</option>
 				</select>
-				<label class="control-label" for="">* Country</label>
+				<label class="control-label" for=""><spring:theme code="rhq.country.label" /></label>
 				<div id="editBrandCountry-error" class="help-block"></div>
 			</div>
 		</div>
@@ -480,7 +457,7 @@
 		                        <div class="form-group">
 			                    <input id="editBrandIndustry" name="editBrandIndustry"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Industry
+				                <spring:theme code="rhq.industry.label" />
 			                    </label>
 								<div id="editBrandIndustry-error" class="help-block"></div>
 		                        </div>
@@ -491,7 +468,7 @@
 		                        <div class="form-group">
 			                    <input id="editBrandMena" name="editBrandMena"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                 Company owning the brand in MENA
+				                 <spring:theme code="rhq.company.brand.in.mena.region.label" />
 			                    </label>
 								<div id="editBrandMena-error" class="help-block"></div>
 		                        </div>
@@ -506,7 +483,7 @@
 		                        <div class="form-group">
 			                    <input id="editBrandProvider" name="editBrandProvider"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                 RHQ activity Provided
+				                 <spring:theme code="rhq.rhq.activity.label" />
 			                    </label>
 								<div id="editBrandProvider-error" class="help-block"></div>
 		                        </div>
@@ -530,7 +507,7 @@
 	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<div class="modal-title">Add Estimated operating costs for the RHQ</div>
+				<div class="modal-title"><spring:theme code="rhq.add.estimated.cost.label" /></div>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -543,7 +520,7 @@
 		                        <div class="form-group">
 			                    <input id="addItemName" name="addItemName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Item Name
+				                <spring:theme code="rhq.item.name.label" />
 			                    </label>
                                 <div class="help-block">
 
@@ -556,7 +533,7 @@
 		                        <div class="form-group ">
 			                    <input id="addUnitCost" name="addUnitCost" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Unit Cost
+				                <spring:theme code="rhq.unit.cost.label" />
 			                    </label>
 
 		                        </div>
@@ -570,7 +547,7 @@
 		                        <div class="form-group ">
 			                    <input id="addNoUnits" name="addNoUnits" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Number of Units
+				                <spring:theme code="rhq.no.of.units.label" />
 			                    </label>
 
 		                        </div>
@@ -581,7 +558,7 @@
 		                        <div class="form-group ">
 			                    <input id="addCostFreq" name="addCostFreq" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Cost frequency
+				                <spring:theme code="rhq.cost.frequency.label" />
 			                    </label>
 
 		                        </div>
@@ -596,7 +573,7 @@
 		                        <div class="form-group ">
 			                    <input id="addYear1" name="addYear1" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Year 2022
+				                <spring:theme code="rhq.year.2022.label" />
 			                    </label>
 
 		                        </div>
@@ -607,7 +584,7 @@
 		                        <div class="form-group ">
 			                    <input id="addYear2" name="addYear2" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Year 2023
+				                <spring:theme code="rhq.year.2023.label" />
 			                    </label>
 
 		                        </div>
@@ -620,7 +597,7 @@
 		                        <div class="form-group ">
 			                    <input id="addYear3" name="addYear3" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Year 2024
+				                <spring:theme code="rhq.year.2024.label" />
 			                    </label>
 
 		                        </div>
@@ -646,7 +623,7 @@
 	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<div class="modal-title">Edit Estimated operating costs for the RHQ</div>
+				<div class="modal-title"><spring:theme code="rhq.edit.estimated.cost.label" /></div>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -659,7 +636,7 @@
 		                        <div class="form-group">
 			                    <input id="editItemName" name="editItemName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Item Name
+				                <spring:theme code="rhq.item.name.label" />
 			                    </label>
                                 <div class="help-block">
 
@@ -672,7 +649,7 @@
 		                        <div class="form-group ">
 			                    <input id="editUnitCost" name="editUnitCost" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Unit Cost
+				                <spring:theme code="rhq.unit.cost.label" />
 			                    </label>
 
 		                        </div>
@@ -686,7 +663,7 @@
 		                        <div class="form-group ">
 			                    <input id="editNoUnits" name="editNoUnits" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Number of Units
+				               <spring:theme code="rhq.no.of.units.label" />
 			                    </label>
 
 		                        </div>
@@ -697,7 +674,7 @@
 		                        <div class="form-group ">
 			                    <input id="editCostFreq" name="editCostFreq" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Cost frequency
+				                <spring:theme code="rhq.cost.frequency.label" />
 			                    </label>
 
 		                        </div>
@@ -712,7 +689,7 @@
 		                        <div class="form-group ">
 			                    <input id="editYear1" name="editYear1" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Year 2022
+				                <spring:theme code="rhq.year.2022.label" />
 			                    </label>
 
 		                        </div>
@@ -723,7 +700,7 @@
 		                        <div class="form-group ">
 			                    <input id="editYear2" name="editYear2" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Year 2023
+				                <spring:theme code="rhq.year.2023.label" />
 			                    </label>
 
 		                        </div>
@@ -736,7 +713,7 @@
 		                        <div class="form-group ">
 			                    <input id="editYear3" name="editYear3" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Year 2023
+				                <spring:theme code="rhq.year.2024.label" />
 			                    </label>
 
 		                        </div>
@@ -757,7 +734,7 @@
 
 <div class="rqh-tables" style="display:none">
 
-<div class="contentModule-headline contentModule-headline_smallMargin">* MNC Branches</div>
+<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.mnc.branches.label" /></div>
 <div class="tableModule" >
 
 <div class="formInputBox">
@@ -779,28 +756,6 @@
 	  </tr>
 	</thead>
 	<tbody class="tableModule-body">
-<!--	<tr>
-    <td>Lorem Ipsum is simply dummy text </td>
-    <td>Lorem Ipsum </td>
-    <td>Lorem Ipsum </td>
-    <td>Lorem Ipsum </td>
-    <td>Lorem Ipsum </td>
-    <td>Lorem Ipsum</td>
-    <td><a  class="btn btn_link iconElement iconElement_edit02 edit_btn_click" data-toggle="modal" data-target="#EditBranchTable">
-	<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg>
-    </a>
-<button type="" class="btn btn_link iconElement iconElement_edit02 delete_btn_click">
-      <svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
-    </svg>
-      </button>
-    </td>
-    </tr>
-
-	-->
-
-
-
 	</tbody>
   </table>
   <input type="hidden" id="rowToDelete" name="rowToDelete" value="0">
@@ -808,7 +763,7 @@
 				<a href="#" data-toggle="modal" data-target="#addBranchTable" style="margin-top: 16px; color: #73c859;display:flex;align-items:center;">
 				<svg class="icon icon-add" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
       <path  fill="#5CC83B" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-    </svg> Add New</a>
+    </svg> <spring:theme code="rhq.add.new.label" /></a>
 				</div>
 </div>
 
@@ -816,7 +771,7 @@
 
 <!--MNC Brand Start-->
 <div class="rqh-tables" style="display:none">
-<div class="contentModule-headline contentModule-headline_smallMargin">* MNC Brand</div>
+<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.mnc.brand.label" /></div>
 <div class="tableModule" >
 
 <div class="formInputBox">
@@ -848,7 +803,7 @@
 				<a href="#" data-toggle="modal" data-target="#addBrandTable" style="margin-top: 16px; color: #73c859;display:flex;align-items:center;">
 				<svg class="icon icon-add" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
       <path  fill="#5CC83B" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-    </svg>Add New</a>
+    </svg><spring:theme code="rhq.add.new.label" /></a>
 				</div>
 </div>
 </div>
@@ -857,7 +812,7 @@
 
 <!--rhqCostTable-->
 <div class="rqh-tables" style="display:none">
-<div class="contentModule-headline contentModule-headline_smallMargin">* Estimated operating costs for the RHQ</div>
+<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.estimated.cost.label" /></div>
 <div class="tableModule" >
 
 <div class="formInputBox">
@@ -902,7 +857,7 @@
 			 <a href="#" data-toggle="modal" data-target="#addrhqCostTable" style="margin-top: 16px; color: #73c859;display:flex;align-items:center;">
 				<svg class="icon icon-add" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
       <path  fill="#5CC83B" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-    </svg>Add New</a>
+    </svg><spring:theme code="rhq.add.new.label" /></a>
 				</div>
 </div>
 </div>

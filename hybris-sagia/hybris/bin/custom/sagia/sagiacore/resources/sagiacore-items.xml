@@ -2685,7 +2685,10 @@
                     <attribute qualifier="commercialRegMainEntryFile" type="Media">
                         <persistence type="property"/>
                     </attribute>
-                    <attribute qualifier="commercialRegOtherEntryFile" type="Media">
+                    <attribute qualifier="commercialRegBranch1File" type="Media">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="commercialRegBranch2File" type="Media">
                         <persistence type="property"/>
                     </attribute>
                     <attribute qualifier="rhqCenterAdmin" type="StringsList">

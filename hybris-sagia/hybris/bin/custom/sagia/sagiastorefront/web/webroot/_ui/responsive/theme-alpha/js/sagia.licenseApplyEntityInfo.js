@@ -324,7 +324,7 @@ bindRhqCountryInformationEvents: function () {
                     hasBranchErrors = false;
 
                     if (addBranchName.length == 0) {
-                        $('#addBranchName').parents('.formInputBox').find('.help-block').text(getI18nText("this field is required"));
+                        $('#addBranchName').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.mandatory.field"));
                         $('#addBranchName').parents('.form-group').addClass('has-error');
                         hasBranchErrors = true;
                     } else {
@@ -333,7 +333,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addBranchCountry.length == 0) {
-                        $('#addBranchCountry-error').text(getI18nText("this field is required"));
+                        $('#addBranchCountry-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addBranchCountry').parents('.form-group').addClass('has-error');
                         hasBranchErrors = true;
                     } else {
@@ -342,7 +342,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addBranchBuz.length == 0) {
-                        $('#addBranchBuz-error').text(getI18nText("this field is required"));
+                        $('#addBranchBuz-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addBranchBuz').parents('.form-group').addClass('has-error');
                         hasBranchErrors = true;
                     } else {
@@ -351,7 +351,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addBranchIndustry.length == 0) {
-                        $('#addBranchIndustry-error').text(getI18nText("this field is required"));
+                        $('#addBranchIndustry-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addBranchIndustry').parents('.form-group').addClass('has-error');
                         hasBranchErrors = true;
                     } else {
@@ -360,7 +360,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addBranchOperation.length == 0) {
-                        $('#addBranchOperation-error').text(getI18nText("this field is required"));
+                        $('#addBranchOperation-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addBranchOperation').parents('.form-group').addClass('has-error');
                         hasBranchErrors = true;
                     } else {
@@ -369,7 +369,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addBranchRhqActivity.length == 0) {
-                        $('#addBranchRhqActivity-error').text(getI18nText("this field is required"));
+                        $('#addBranchRhqActivity-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addBranchRhqActivity').parents('.form-group').addClass('has-error');
                         hasBranchErrors = true;
                     } else {
@@ -391,6 +391,15 @@ bindRhqCountryInformationEvents: function () {
                         });
                         console.log(objectBranches.length);
                         console.log(JSON.stringify(objectBranches).replace(/"/g, "'"));
+
+
+                        if(objectBranches.length <1){
+                            $('#mncBranchTable-error').text(getI18nText("rhq.entities.managed.by.rhq.validation"));
+                            $('#mncBranchTable-error').parents('.form-group').addClass('has-error');
+                        } else {
+                            $('#mncBranchTable-error').text(getI18nText(""));
+                            $('#mncBranchTable-error').removeClass('has-error');
+                        }
 
 
                         $("#mncBranchTable tbody").append('<tr><td>' + addBranchName + '</td><td>' + addBranchCountry + '</td><td>' + addBranchBuz + '</td><td>' + addBranchIndustry + '</td><td>' + addBranchOperation + '</td><td>' + addBranchRhqActivity + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBranchBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
@@ -430,7 +439,7 @@ bindRhqCountryInformationEvents: function () {
                     hasEditBranchErrors = false;
 
                     if (editBranchName.length == 0) {
-                        $('#editBranchName').parents('.formInputBox').find('.help-block').text(getI18nText("this field is required"));
+                        $('#editBranchName').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.mandatory.field"));
                         $('#editBranchName').parents('.form-group').addClass('has-error');
                         hasEditBranchErrors = true;
                     } else {
@@ -439,7 +448,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editBranchCountry.length == 0) {
-                        $('#editBranchCountry-error').text(getI18nText("this field is required"));
+                        $('#editBranchCountry-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editBranchCountry').parents('.form-group').addClass('has-error');
                         hasEditBranchErrors = true;
                     } else {
@@ -448,7 +457,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editBranchBuz.length == 0) {
-                        $('#editBranchBuz-error').text(getI18nText("this field is required"));
+                        $('#editBranchBuz-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editBranchBuz').parents('.form-group').addClass('has-error');
                         hasEditBranchErrors = true;
                     } else {
@@ -457,7 +466,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editBranchIndustry.length == 0) {
-                        $('#editBranchIndustry-error').text(getI18nText("this field is required"));
+                        $('#editBranchIndustry-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editBranchIndustry').parents('.form-group').addClass('has-error');
                         hasEditBranchErrors = true;
                     } else {
@@ -466,7 +475,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editBranchOperation.length == 0) {
-                        $('#editBranchOperation-error').text(getI18nText("this field is required"));
+                        $('#editBranchOperation-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editBranchOperation').parents('.form-group').addClass('has-error');
                         hasEditBranchErrors = true;
                     } else {
@@ -475,7 +484,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editBranchRhqActivity.length == 0) {
-                        $('#editBranchRhqActivity-error').text(getI18nText("this field is required"));
+                        $('#editBranchRhqActivity-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editBranchRhqActivity').parents('.form-group').addClass('has-error');
                         hasEditBranchErrors = true;
                     } else {
@@ -510,6 +519,14 @@ bindRhqCountryInformationEvents: function () {
                     $(this).parents("tr").remove();
                     console.log("after removed" + objectBranches.length);
 
+                    if(objectBranches.length <1){
+                        $('#mncBranchTable-error').text(getI18nText("rhq.entities.managed.by.rhq.validation"));
+                        $('#mncBranchTable-error').addClass('has-error');
+                    } else {
+                        $('#mncBranchTable-error').text(getI18nText(""));
+                        $('#mncBranchTable-error').removeClass('has-error');
+                    }
+
                 });
 
                 // MNC Branches - End
@@ -532,7 +549,7 @@ bindRhqCountryInformationEvents: function () {
                     hasBrandErrors = false;
 
                     if (addBrandName.length == 0) {
-                        $('#addBrandName').parents('.formInputBox').find('.help-block').text(getI18nText("this field is required"));
+                        $('#addBrandName').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.mandatory.field"));
                         $('#addBrandName').parents('.form-group').addClass('has-error');
                         hasBrandErrors = true;
                     } else {
@@ -541,7 +558,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addBrandCountry.length == 0) {
-                        $('#addBrandCountry-error').text(getI18nText("this field is required"));
+                        $('#addBrandCountry-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addBrandCountry').parents('.form-group').addClass('has-error');
                         hasBrandErrors = true;
                     } else {
@@ -550,7 +567,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addBrandIndustry.length == 0) {
-                        $('#addBrandIndustry-error').text(getI18nText("this field is required"));
+                        $('#addBrandIndustry-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addBrandIndustry').parents('.form-group').addClass('has-error');
                         hasBrandErrors = true;
                     } else {
@@ -559,7 +576,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addBrandMena.length == 0) {
-                        $('#addBrandMena-error').text(getI18nText("this field is required"));
+                        $('#addBrandMena-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addBrandMena').parents('.form-group').addClass('has-error');
                         hasBrandErrors = true;
                     } else {
@@ -568,7 +585,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addBrandProvider.length == 0) {
-                        $('#addBrandProvider-error').text(getI18nText("this field is required"));
+                        $('#addBrandProvider-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addBrandProvider').parents('.form-group').addClass('has-error');
                         hasBrandErrors = true;
                     } else {
@@ -589,6 +606,13 @@ bindRhqCountryInformationEvents: function () {
                             'RhqActivityProvided': $('#addBrandProvider').val()
                         });
 
+                        if(objectBrands.length <1){
+                            $('#mncBrandTable-error').text(getI18nText("rhq.brand.presence.validation"));
+                            $('#mncBrandTable-error').addClass('has-error');
+                        } else {
+                            $('#mncBrandTable-error').text(getI18nText(""));
+                            $('#mncBrandTable-error').removeClass('has-error');
+                        }
                         console.log(objectBrands.length);
                         console.log(JSON.stringify(objectBrands).replace(/"/g, "'"));
 
@@ -625,7 +649,7 @@ bindRhqCountryInformationEvents: function () {
                     hasEditBrandErrors = false;
 
                     if (editBrandName.length == 0) {
-                        $('#editBrandName').parents('.formInputBox').find('.help-block').text(getI18nText("this field is required"));
+                        $('#editBrandName').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.mandatory.field"));
                         $('#editBrandName').parents('.form-group').addClass('has-error');
                         hasEditBrandErrors = true;
                     } else {
@@ -634,7 +658,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editBrandCountry.length == 0) {
-                        $('#editBrandCountry-error').text(getI18nText("this field is required"));
+                        $('#editBrandCountry-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editBrandCountry').parents('.form-group').addClass('has-error');
                         hasEditBrandErrors = true;
                     } else {
@@ -643,7 +667,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editBrandIndustry.length == 0) {
-                        $('#editBrandIndustry-error').text(getI18nText("this field is required"));
+                        $('#editBrandIndustry-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editBrandIndustry').parents('.form-group').addClass('has-error');
                         hasEditBrandErrors = true;
                     } else {
@@ -652,7 +676,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editBrandMena.length == 0) {
-                        $('#editBrandMena-error').text(getI18nText("this field is required"));
+                        $('#editBrandMena-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editBrandMena').parents('.form-group').addClass('has-error');
                         hasEditBrandErrors = true;
                     } else {
@@ -661,7 +685,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editBrandProvider.length == 0) {
-                        $('#editBrandProvider-error').text(getI18nText("this field is required"));
+                        $('#editBrandProvider-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editBrandProvider').parents('.form-group').addClass('has-error');
                         hasEditBrandErrors = true;
                     } else {
@@ -709,6 +733,14 @@ bindRhqCountryInformationEvents: function () {
                     $(this).parents("tr").remove();
                     console.log("after removed" + objectBrands.length);
 
+                    if(objectBrands.length <1){
+                        $('#mncBrandTable-error').text(getI18nText("rhq.brand.presence.validation"));
+                        $('#mncBrandTable-error').addClass('has-error');
+                    } else {
+                        $('#mncBrandTable-error').text(getI18nText(""));
+                        $('#mncBrandTable-error').removeClass('has-error');
+                    }
+
                 });
 
 
@@ -734,7 +766,7 @@ bindRhqCountryInformationEvents: function () {
                     hasCostErrors = false;
 
                     if (addItemName.length == 0) {
-                        $('#addItemName').parents('.formInputBox').find('.help-block').text(getI18nText("this field is required"));
+                        $('#addItemName').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.mandatory.field"));
                         $('#addItemName').parents('.form-group').addClass('has-error');
                         hasCostErrors = true;
                     } else {
@@ -743,7 +775,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addUnitCost.length == 0) {
-                        $('#addUnitCost-error').text(getI18nText("this field is required"));
+                        $('#addUnitCost-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addUnitCost').parents('.form-group').addClass('has-error');
                         hasCostErrors = true;
                     } else {
@@ -752,7 +784,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addNoUnits.length == 0) {
-                        $('#addNoUnits-error').text(getI18nText("this field is required"));
+                        $('#addNoUnits-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addNoUnits').parents('.form-group').addClass('has-error');
                         hasCostErrors = true;
                     } else {
@@ -761,7 +793,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addCostFreq.length == 0) {
-                        $('#addCostFreq-error').text(getI18nText("this field is required"));
+                        $('#addCostFreq-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addCostFreq').parents('.form-group').addClass('has-error');
                         hasCostErrors = true;
                     } else {
@@ -770,7 +802,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addYear1.length == 0) {
-                        $('#addYear1-error').text(getI18nText("this field is required"));
+                        $('#addYear1-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addYear1').parents('.form-group').addClass('has-error');
                         hasCostErrors = true;
                     } else {
@@ -779,7 +811,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addYear2.length == 0) {
-                        $('#addYear2-error').text(getI18nText("this field is required"));
+                        $('#addYear2-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addYear2').parents('.form-group').addClass('has-error');
                         hasCostErrors = true;
                     } else {
@@ -788,7 +820,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (addYear3.length == 0) {
-                        $('#addYear3-error').text(getI18nText("this field is required"));
+                        $('#addYear3-error').text(getI18nText("rhq.mandatory.field"));
                         $('#addYear3').parents('.form-group').addClass('has-error');
                         hasCostErrors = true;
                     } else {
@@ -810,6 +842,15 @@ bindRhqCountryInformationEvents: function () {
                             'year2023': $('#addYear2').val(),
                             'year2024': $('#addYear3').val()
                         });
+
+                        if(objectCost.length <1){
+                            $('#rhqCostTable-error').text(getI18nText("rhq.estimatied.operating.cost.validation"));
+                            $('#rhqCostTable-error').addClass('has-error');
+                        } else {
+                            $('#rhqCostTable-error').text(getI18nText(""));
+                            $('#rhqCostTable-error').removeClass('has-error');
+                        }
+
                         console.log(objectCost.length);
                         console.log(JSON.stringify(objectCost).replace(/"/g, "'"));
 
@@ -857,7 +898,7 @@ bindRhqCountryInformationEvents: function () {
                     hasEditCostErrors = false;
 
                     if (editItemName.length == 0) {
-                        $('#editItemName').parents('.formInputBox').find('.help-block').text(getI18nText("this field is required"));
+                        $('#editItemName').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.mandatory.field"));
                         $('#editItemName').parents('.form-group').addClass('has-error');
                         hasEditCostErrors = true;
                     } else {
@@ -866,7 +907,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editUnitCost.length == 0) {
-                        $('#editUnitCost-error').text(getI18nText("this field is required"));
+                        $('#editUnitCost-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editUnitCost').parents('.form-group').addClass('has-error');
                         hasEditCostErrors = true;
                     } else {
@@ -875,7 +916,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editNoUnits.length == 0) {
-                        $('#editNoUnits-error').text(getI18nText("this field is required"));
+                        $('#editNoUnits-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editNoUnits').parents('.form-group').addClass('has-error');
                         hasEditCostErrors = true;
                     } else {
@@ -884,7 +925,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editCostFreq.length == 0) {
-                        $('#editCostFreq-error').text(getI18nText("this field is required"));
+                        $('#editCostFreq-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editCostFreq').parents('.form-group').addClass('has-error');
                         hasEditCostErrors = true;
                     } else {
@@ -893,7 +934,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editYear1.length == 0) {
-                        $('#editYear1-error').text(getI18nText("this field is required"));
+                        $('#editYear1-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editYear1').parents('.form-group').addClass('has-error');
                         hasEditCostErrors = true;
                     } else {
@@ -902,7 +943,7 @@ bindRhqCountryInformationEvents: function () {
                     }
 
                     if (editYear2.length == 0) {
-                        $('#editYear2-error').text(getI18nText("this field is required"));
+                        $('#editYear2-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editYear2').parents('.form-group').addClass('has-error');
                         hasEditCostErrors = true;
                     } else {
@@ -912,7 +953,7 @@ bindRhqCountryInformationEvents: function () {
 
 
                     if (editYear3.length == 0) {
-                        $('#editYear3-error').text(getI18nText("this field is required"));
+                        $('#editYear3-error').text(getI18nText("rhq.mandatory.field"));
                         $('#editYear3').parents('.form-group').addClass('has-error');
                         hasEditCostErrors = true;
                     } else {
@@ -964,6 +1005,14 @@ bindRhqCountryInformationEvents: function () {
                     console.log("after removed" + objectCost.length);
                     calculateCostTotal();
 
+                    if(objectCost.length <1){
+                        $('#rhqCostTable-error').text(getI18nText("rhq.estimatied.operating.cost.validation"));
+                        $('#rhqCostTable-error').addClass('has-error');
+                    } else {
+                        $('#rhqCostTable-error').text(getI18nText(""));
+                        $('#rhqCostTable-error').removeClass('has-error');
+                    }
+
                 });
 
                 Array.prototype.sum = function (prop) {
@@ -975,9 +1024,16 @@ bindRhqCountryInformationEvents: function () {
                 }
 
                 calculateCostTotal = function () {
-                    $('#rhqCostTable-sum1').text(objectCost.sum("year2022"));
-                    $('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
-                    $('#rhqCostTable-sum3').text(objectCost.sum("year2024"));
+                    if (objectCost.length < 1) {
+                        $('#rhqCostTable-sum1').text('');
+                        $('#rhqCostTable-sum2').text('');
+                        $('#rhqCostTable-sum3').text('');
+                    }
+                    else {
+                        $('#rhqCostTable-sum1').text(objectCost.sum("year2022"));
+                        $('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
+                        $('#rhqCostTable-sum3').text(objectCost.sum("year2024"));
+                    }
 
                 };
 
@@ -992,7 +1048,7 @@ bindRhqCountryInformationEvents: function () {
 				//self.attachmentSection.show();
        			 //self.branchAttachment.show();
 				//self.bindRHQCountriesLimitEvent();
-				self.licenseInformationSection.show();
+				self.licenseInformationSection.hide();
         		self.preApprovalNumberNoEvent();
         		self.hasProfessionalLicenseSection.hide();
         		self.professionalLicenseCrSection.hide();
@@ -1201,19 +1257,19 @@ bindRhqCountryInformationEvents: function () {
 
 
               //set country values
-              var addBrandCountry = self.basicInformationExtendedSection.find("#addBrandCountry");
+              var addBrandCountry = $("#addBrandCountry");
               addBrandCountry.find("option").remove();
               addBrandCountry.append(new Option("", "", false, false));
 
-              var editBrandCountry = self.basicInformationExtendedSection.find("#editBrandCountry");
+              var editBrandCountry = $("#editBrandCountry");
               editBrandCountry.find("option").remove();
               editBrandCountry.append(new Option("", "", false, false));
 
-              var addBranchCountry = self.basicInformationExtendedSection.find("#addBranchCountry");
+              var addBranchCountry = $("#addBranchCountry");
               addBranchCountry.find("option").remove();
               addBranchCountry.append(new Option("", "", false, false));
 
-              var editBranchCountry = self.basicInformationExtendedSection.find("#editBranchCountry");
+              var editBranchCountry = $("#editBranchCountry");
               editBranchCountry.find("option").remove();
               editBranchCountry.append(new Option("", "", false, false));
 
@@ -1224,7 +1280,7 @@ bindRhqCountryInformationEvents: function () {
                 editBranchCountry.append(new Option(currentValue.countryText, currentValue.country, false, false));
 
             });
-
+             addBranchCountry.val(null);
 
 
 		}});
@@ -1610,6 +1666,12 @@ if($("#licenseTypes").val() === "11"){
                 $('.mncCostTableJsonInputs').html('');
                 var element = $('<input/>').prop('type', 'hidden').prop('name', 'EstimatedOperatingCostForRhq').val(JSON.stringify(objectCost).replace(/"/g, "'"));
                 $('#entityForm .mncCostTableJsonInputs').append(element);
+                //print form values
+
+                data_array = $("#entityForm").serialize();
+                console.log(data_array);
+
+
 
             }
             $('.businessActivitiesJsonInputs').html('');
@@ -1643,7 +1705,7 @@ if($("#licenseTypes").val() === "11"){
             action += "?CSRFToken="+$('input[name="CSRFToken"]').val();
             $(this).parents('form').prop('action', action);
 
-            $(this).parents('form').submit();
+
 
             //if on firefox 1.0+
             var isFirefox = typeof InstallTrigger !== 'undefined';
@@ -1899,25 +1961,25 @@ if($("#licenseTypes").val() === "11"){
         if(self.licenseTypeSection.find('#licenseTypes').val() == "11"){
         if ($('#rhqCheckbox').val().length < 3) {
             hasErrors = true;
-            $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("Please select atleast 3 options"));
+            $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.corporate.activity.validation"));
             $('#rhqCheckbox').parents('.form-group').addClass('has-error');
         } else {
             $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
             $('#rhqCheckbox').parents('.form-group').removeClass('has-error');
         }
 
-        if($('#rhqStrategicCheckbox').val().length <1){
+        if($('#rhqStrategicCheckbox').val().length <5){
             hasErrors = true;
-            $('#rhqStrategicCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("Please select atleast 1 options"));
+            $('#rhqStrategicCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.strategic.activity.validation"));
             $('#rhqStrategicCheckbox').parents('.form-group').addClass('has-error');
         } else {
             $('#rhqStrategicCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
             $('#rhqStrategicCheckbox').parents('.form-group').removeClass('has-error');
         }
 
-        if($('#rhqManagementFunCheckbox').val().length <1){
+        if($('#rhqManagementFunCheckbox').val().length <7){
             hasErrors = true;
-            $('#rhqManagementFunCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("Please select atleast 1 options"));
+            $('#rhqManagementFunCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.management.activity.validation"));
             $('#rhqManagementFunCheckbox').parents('.form-group').addClass('has-error');
         } else {
             $('#rhqManagementFunCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
@@ -1926,7 +1988,7 @@ if($("#licenseTypes").val() === "11"){
 
         if($('#branchInformationRhqRegionsSection').val().length <1){
             hasErrors = true;
-            $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText("Please select atleast 1 options"));
+            $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.region.validation"));
             $('#branchInformationRhqRegionsSection').parents('.form-group').addClass('has-error');
         } else {
             $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
@@ -1936,7 +1998,7 @@ if($("#licenseTypes").val() === "11"){
 
         if($('#rhqSubsidiaryPresence').val().length <1){
             hasErrors = true;
-            $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText("Please select atleast 1 options"));
+            $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
             $('#rhqSubsidiaryPresence').parents('.form-group').addClass('has-error');
         } else {
             $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
@@ -1945,7 +2007,7 @@ if($("#licenseTypes").val() === "11"){
 
         if($('#rhqCenterAdmin').val().length <1){
             hasErrors = true;
-            $('#rhqCenterAdmin').parents('.formSelectBox').find('.help-block').text(getI18nText("Please select atleast 1 options"));
+            $('#rhqCenterAdmin').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.center.of.administration.validation"));
             $('#rhqCenterAdmin').parents('.form-group').addClass('has-error');
         } else {
             $('#rhqCenterAdmin').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
@@ -1955,7 +2017,7 @@ if($("#licenseTypes").val() === "11"){
 
         if(objectBranches.length <1){
             hasErrors = false;
-            $('#mncBranchTable-error').parents('.formInputBox').find('.help-block').text(getI18nText("Please add atleast 1 branch"));
+            $('#mncBranchTable-error').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.entities.managed.by.rhq.validation"));
             $('#mncBranchTable-error').parents('.form-group').addClass('has-error');
         } else {
             $('#mncBranchTable-error').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
@@ -1964,7 +2026,7 @@ if($("#licenseTypes").val() === "11"){
 
         if(objectBrands.length <1){
              hasErrors = false;
-             $('#mncBrandTable-error').parents('.formInputBox').find('.help-block').text(getI18nText("Please add atleast 1 brand"));
+             $('#mncBrandTable-error').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.brand.presence.validation"));
              $('#mncBrandTable-error').parents('.form-group').addClass('has-error');
          } else {
              $('#mncBrandTable-error').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
@@ -1973,7 +2035,7 @@ if($("#licenseTypes").val() === "11"){
 
          if(objectCost.length <1){
              hasErrors = false;
-             $('#rhqCostTable-error').parents('.formInputBox').find('.help-block').text(getI18nText("Please add atleast 1 record"));
+             $('#rhqCostTable-error').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.estimatied.operating.cost.validation"));
              $('#rhqCostTable-error').parents('.form-group').addClass('has-error');
          } else {
              $('#rhqCostTable-error').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
@@ -1982,22 +2044,101 @@ if($("#licenseTypes").val() === "11"){
 
          if( document.getElementById("entityFinancialStatementFile").files.length == 0 ){
             hasErrors = true;
-            $('#entityFinancialStatementFile-helper').text(getI18nText("Please add this file"));
+            $('#entityFinancialStatementFile-helper').text(getI18nText("rhq.attachment.validation"));
             $('#entityFinancialStatementFile').parents('.form-group').addClass('has-error');
         }
         if( document.getElementById("commercialRegMainEntryFile").files.length == 0 ){
             hasErrors = true;
-            $('#commercialRegMainEntryFile-helper').text(getI18nText("Please add this file"));
+            $('#commercialRegMainEntryFile-helper').text(getI18nText("rhq.attachment.validation"));
             $('#commercialRegMainEntryFile').parents('.form-group').addClass('has-error');
         }
-        if( document.getElementById("commercialRegOtherEntryFile").files.length == 0 ){
+        if( document.getElementById("commercialRegBranch1File").files.length == 0 ){
             hasErrors = true;
-            $('#commercialRegOtherEntryFile-helper').text(getI18nText("Please add this file"));
-            $('#commercialRegOtherEntryFile').parents('.form-group').addClass('has-error');
+            $('#commercialRegBranch1File-helper').text(getI18nText("rhq.attachment.validation"));
+            $('#commercialRegBranch1File').parents('.form-group').addClass('has-error');
         }
+        if( document.getElementById("commercialRegBranch2File").files.length == 0 ){
+                    hasErrors = true;
+                    $('#commercialRegBranch2File-helper').text(getI18nText("rhq.attachment.validation"));
+                    $('#commercialRegBranch2File').parents('.form-group').addClass('has-error');
+                }
 
 
         }
+
+        //onchanges validation start
+
+
+
+        $(document.body).on('change', '#rhqCheckbox', function () {
+            if ($('#rhqCheckbox').val().length < 3) {
+                $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.corporate.activity.validation"));
+                $('#rhqCheckbox').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqCheckbox').parents('.form-group').removeClass('has-error');
+            }
+
+        });
+
+        $(document.body).on('change', '#rhqStrategicCheckbox', function () {
+            if ($('#rhqStrategicCheckbox').val().length < 5) {
+                $('#rhqStrategicCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.strategic.activity.validation"));
+                $('#rhqStrategicCheckbox').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqStrategicCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqStrategicCheckbox').parents('.form-group').removeClass('has-error');
+            }
+
+        });
+        $(document.body).on('change', '#rhqManagementFunCheckbox', function () {
+
+        if($('#rhqManagementFunCheckbox').val().length <7){
+            $('#rhqManagementFunCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.management.activity.validation"));
+            $('#rhqManagementFunCheckbox').parents('.form-group').addClass('has-error');
+        } else {
+            $('#rhqManagementFunCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+            $('#rhqManagementFunCheckbox').parents('.form-group').removeClass('has-error');
+        }
+
+        });
+
+        $(document.body).on('change', '#branchInformationRhqRegionsSection', function () {
+            if($('#branchInformationRhqRegionsSection').val().length <1){
+                $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.global.presence.validation"));
+                $('#branchInformationRhqRegionsSection').parents('.form-group').addClass('has-error');
+            } else {
+                $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#branchInformationRhqRegionsSection').parents('.form-group').removeClass('has-error');
+            }
+
+
+        });
+
+        $(document.body).on('change', '#rhqSubsidiaryPresence', function () {
+            if($('#rhqSubsidiaryPresence').val().length <1){
+                $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
+                $('#rhqSubsidiaryPresence').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqSubsidiaryPresence').parents('.form-group').removeClass('has-error');
+            }
+
+        });
+
+        $(document.body).on('change', '#rhqCenterAdmin', function () {
+            if($('#rhqCenterAdmin').val().length <1){
+                $('#rhqCenterAdmin').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.center.of.administration.validation"));
+                $('#rhqCenterAdmin').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqCenterAdmin').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqCenterAdmin').parents('.form-group').removeClass('has-error');
+            }
+
+        });
+
+
+        //onchanges validation End
         //Deenz- JS Validation - End
 
         if (!entityForm.find('[name=hasGCCNationality]').filter(':checked').val()) {

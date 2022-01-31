@@ -178,7 +178,8 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			{
 				saveEntityFinancialStatementEntityInfo(request, entityInformationModel);
 				saveCommercialRegMainEntryEntityInfo(request, entityInformationModel);
-				saveCommercialRegOtherEntryEntityInfo(request, entityInformationModel);
+				saveCommercialRegBranch1EntryEntityInfo(request, entityInformationModel);
+				saveCommercialRegBranch2EntryEntityInfo(request, entityInformationModel);
 			}
 			licenseApplyService.saveEntityInformation(entityInformationModel);
 		} else {
@@ -266,13 +267,14 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			{
 				saveEntityFinancialStatementEntityInfo(request, entityInformationModel);
 				saveCommercialRegMainEntryEntityInfo(request, entityInformationModel);
-				saveCommercialRegOtherEntryEntityInfo(request, entityInformationModel);
-			}
+				saveCommercialRegBranch1EntryEntityInfo(request, entityInformationModel);
+				saveCommercialRegBranch2EntryEntityInfo(request, entityInformationModel);			}
 			else
 			{
 				entityInformationModel.setEntityFinancialStatementFile(null);
 				entityInformationModel.setCommercialRegMainEntryFile(null);
-				entityInformationModel.setCommercialRegOtherEntryFile(null);
+				entityInformationModel.setCommercialRegBranch1File(null);
+				entityInformationModel.setCommercialRegBranch2File(null);
 			}
 			modelService.save(entityInformationModel);
 		}
@@ -937,10 +939,10 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 	 * @param request
 	 * @param entityInformationModel
 	 */
-	public void saveCommercialRegOtherEntryEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
+	public void saveCommercialRegBranch1EntryEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
 
 		if (request instanceof MultipartHttpServletRequest) {
-			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customCommercialRegOtherEntryFile");
+			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customCommercialRegBranch1File");
 
 			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
 
@@ -950,9 +952,9 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				}
 				final Date nowTime = new Date();
 				if (extension.equals(PDF)) {
-					String fileName = "commercialRegOtherEntry_" + nowTime.getTime() + "_" + file.getOriginalFilename();
+					String fileName = "commercialRegBranch1Entry_" + nowTime.getTime() + "_" + file.getOriginalFilename();
 					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
-					entityInformationModel.setCommercialRegOtherEntryFile(media);
+					entityInformationModel.setCommercialRegBranch1File(media);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -960,7 +962,31 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 
 		}
 	}
-	
+
+	public void saveCommercialRegBranch2EntryEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
+
+		if (request instanceof MultipartHttpServletRequest) {
+			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customCommercialRegBranch2File");
+
+			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+			try {
+				if (file.isEmpty() || file.getContentType() == null) {
+					return;
+				}
+				final Date nowTime = new Date();
+				if (extension.equals(PDF)) {
+					String fileName = "commercialRegBranch2Entry_" + nowTime.getTime() + "_" + file.getOriginalFilename();
+					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
+					entityInformationModel.setCommercialRegBranch2File(media);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+
 	/**
 	 * Get Share Holders from Current User License
 	 */

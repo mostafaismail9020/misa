@@ -305,11 +305,17 @@ public class LicenseEntityInformationReversePopulator
 			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
 			target.setCommercialRegMainEntryFile(mediaModel);
 		}
-		if (source.getCommercialRegOtherEntryFile() != null) {
+		if (source.getCommercialRegBranch1File() != null) {
 			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getCommercialRegOtherEntryFile();
+			MediaData mediaData = source.getCommercialRegBranch1File();
 			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setCommercialRegOtherEntryFile(mediaModel);
+			target.setCommercialRegBranch1File(mediaModel);
+		}
+		if (source.getCommercialRegBranch2File() != null) {
+			MediaModel mediaModel = getModelService().create(MediaModel.class);
+			MediaData mediaData = source.getCommercialRegBranch2File();
+			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
+			target.setCommercialRegBranch2File(mediaModel);
 		}
 		
 		target.setLicenseDuration(source.getLicenseDuration());

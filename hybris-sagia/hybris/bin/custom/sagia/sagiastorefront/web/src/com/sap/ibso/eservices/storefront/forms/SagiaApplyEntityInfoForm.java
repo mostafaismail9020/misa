@@ -42,10 +42,12 @@ public class SagiaApplyEntityInfoForm implements Serializable{
     private List<String> rhqCenterAdmin;
     private List<String> rhqSubsidiaryPresence;
     private List<String> listOfRhqRegions;
+    private List<String> listOfRhqCountries;
 
     private String entityFinancialStatementFileName;
     private String commercialRegMainEntryFileName;
-    private String commercialRegOtherEntryFileName;
+    private String commercialRegBranch1FileName;
+    private String commercialRegBranch2FileName;
 
     private String licenseYear;
     private String iSINCode;

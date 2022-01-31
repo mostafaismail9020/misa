@@ -223,8 +223,11 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 			target.setCommercialRegMainEntryFile(getMediaConverter().convert(source.getCommercialRegMainEntryFile()));
 		}
 
-		if (source.getCommercialRegOtherEntryFile() != null) {
-			target.setCommercialRegOtherEntryFile(getMediaConverter().convert(source.getCommercialRegOtherEntryFile()));
+		if (source.getCommercialRegBranch1File() != null) {
+			target.setCommercialRegBranch1File(getMediaConverter().convert(source.getCommercialRegBranch1File()));
+		}
+		if (source.getCommercialRegBranch2File() != null) {
+			target.setCommercialRegBranch2File(getMediaConverter().convert(source.getCommercialRegBranch2File()));
 		}
 //New RHQ End
 		if (source.getBoardResolutionFile() != null) {

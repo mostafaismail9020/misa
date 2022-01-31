@@ -3016,10 +3016,12 @@
 		<property name="listOfRhqRegions" type="java.util.List&lt;String>"/>
 		<property name="entityFinancialStatementFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="commercialRegMainEntryFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
-		<property name="commercialRegOtherEntryFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
+		<property name="commercialRegBranch1File" type="de.hybris.platform.cmsfacades.data.MediaData"/>
+		<property name="commercialRegBranch2File" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="entityFinancialStatementFileAdded" type="boolean"/>
 		<property name="commercialRegMainEntryFileAdded" type="boolean"/>
-		<property name="commercialRegOtherEntryFileAdded" type="boolean"/>
+		<property name="commercialRegBranch1FileAdded" type="boolean"/>
+		<property name="commercialRegBranch2FileAdded" type="boolean"/>
 	</bean>
 
 	<!-- Shareholder -->

@@ -128,10 +128,10 @@
                         </c:when>
                         <c:otherwise>
                         	<div class="globalMessage-action d-flex">
-                        		<a href="${encodedContextPath}/simulator/license-apply" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 btn-simulator">
+                        		<button data-target="#license-application-simulator" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 btn-simulator" data-toggle="modal">
                         			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
                         			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/>
-                        		</a>
+                        		</button> 
                                 <button class="btn-dashboard text-uppercase js-license-apply" onclick="applyNewTnC(event,'NewApply');">
                                 	<spring:theme code="dashboard.withoutlicense.applyfornewlicense"/>
                                 </button>

@@ -1,0 +1,14 @@
+
+<process xmlns="http://www.hybris.de/xsd/processdefinition" start="sendCsCustomerEvent" name="scpiOutCsCustomerEventProcess"
+         processClass="com.sap.ibso.eservices.core.model.ScpiOutCsCustomerEventProcessModel" onError="error">
+
+    <action id="sendCsCustomerEvent" bean="sendCsCustomerEventToScpiAction">
+        <transition name="OK" to="success"/>
+        <transition name="NOK" to="error"/>
+    </action>
+
+    <end id="error" state="ERROR">Something went wrong while sending CustomerEvent to SCPI.</end>
+    <end id="failed" state="FAILED">Process failed while sending CustomerEvent to SCPI.</end>
+    <end id="success" state="SUCCEEDED">CustomerEvent sent successfully to SCPI.</end>
+
+</process>

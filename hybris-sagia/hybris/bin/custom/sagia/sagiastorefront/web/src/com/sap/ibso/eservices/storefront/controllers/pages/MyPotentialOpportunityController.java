@@ -26,7 +26,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
+import de.hybris.platform.servicelayer.i18n.I18NService;
 
 import javax.annotation.Resource;
 import org.springframework.validation.BindingResult;
@@ -34,7 +36,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Collections;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
+import java.util.UUID;
+import java.util.EnumSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -49,9 +55,10 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 	private static final String POTENTIAL_OPPORTUNITY_CMS_PAGE = "potential-opportunity";
 	private static final String PATH_VARIABLE_PATTERN = "/{ticketId}";
 	private static final String SERVICE_REQUEST_CMS_PAGE = "service-request";
+        private static final String THIS_CONTROLLER_REDIRECTION_URL = "/potentialOpportunity/";
 	private static final String CA_1 = "CA_1";
 	
-    @Resource(name = "sagiaUserService")
+        @Resource(name = "sagiaUserService")
 	private SagiaUserService sagiaUserService;
 
 	@Resource(name = "investSaudiProductFacade")
@@ -62,6 +69,9 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 
 	@Resource(name = "modelService")
 	private ModelService modelService;
+
+        @Resource(name = "i18nService")
+        private I18NService i18nService;
 
 
 	@RequestMapping(value = PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
@@ -152,10 +162,11 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 		}
 		
 		ServiceRequestModel serviceRequest = new ServiceRequestModel();
+		serviceRequest.setId(UUID.randomUUID().toString());
     	if(null != sagiaServiceRquestForm.getSubject()) {
-    		serviceRequest.setSubject(sagiaServiceRquestForm.getSubject());
+    		serviceRequest.setSubject(sagiaServiceRquestForm.getSubject(), i18nService.getCurrentLocale());
     	}if(null != sagiaServiceRquestForm.getDescription()) {
-    		serviceRequest.setDescription(sagiaServiceRquestForm.getDescription());
+    		serviceRequest.setDescription(sagiaServiceRquestForm.getDescription(), i18nService.getCurrentLocale());
     	}if(null != sagiaServiceRquestForm.getIncidentCategory()) {
     		serviceRequest.setIncidentCategory(sagiaServiceRquestForm.getIncidentCategory());
     	}if(null != sagiaServiceRquestForm.getServiceCategory()) {
@@ -164,18 +175,19 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
     		serviceRequest.setPriority(sagiaServiceRquestForm.getPriority());
     	}
 		boolean attachRequestToTicket = sagiaUserService.attachServiceRequestToContactTicket(serviceRequest, ticketId);
-		LOG.info("attachRequestToTicket : "+attachRequestToTicket);
-		LOG.info("Hit Successfully POST Service Request Controller");
+		LOG.debug("attachRequestToTicket : "+attachRequestToTicket);
+		LOG.debug("Hit Successfully POST Service Request Controller");
 		if(Objects.nonNull(sagiaServiceRquestForm)) {
-			LOG.info("Subject : "+sagiaServiceRquestForm.getSubject());
-			LOG.info("Description : "+sagiaServiceRquestForm.getDescription());
-			LOG.info("Incident Category : "+sagiaServiceRquestForm.getIncidentCategory());
-			LOG.info("ServiceCategory : "+sagiaServiceRquestForm.getServiceCategory());
-			LOG.info("Priority : "+sagiaServiceRquestForm.getPriority());
+			LOG.debug("Subject : "+sagiaServiceRquestForm.getSubject());
+			LOG.debug("Description : "+sagiaServiceRquestForm.getDescription());
+			LOG.debug("Incident Category : "+sagiaServiceRquestForm.getIncidentCategory());
+			LOG.debug("ServiceCategory : "+sagiaServiceRquestForm.getServiceCategory());
+			LOG.debug("Priority : "+sagiaServiceRquestForm.getPriority());
 		}
-		storeCmsPageInModel(model, getContentPageForLabelOrId(SERVICE_REQUEST_CMS_PAGE));
-		setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SERVICE_REQUEST_CMS_PAGE));
-		return getViewForPage(model);
+		if(attachRequestToTicket) {
+			GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER, "Service Request added successfully to Contact Ticket");
+		}
+		return "redirect:"+THIS_CONTROLLER_REDIRECTION_URL+ticketId;
 	}
 
 }

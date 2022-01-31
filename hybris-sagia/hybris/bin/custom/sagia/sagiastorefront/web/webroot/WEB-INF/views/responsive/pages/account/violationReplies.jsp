@@ -85,14 +85,16 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="row renewal-services w-100">
                 <div class="col-md-3 col-12 px-0">
-                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
+                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
-                <div class="col-xl-3 col-12">
-                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')">Show Service Tabs</button>
-                </div>
+                <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                    <div class="col-xl-3 col-12">
+                        <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+                    </div>
+                </c:if>
                 <div class="col-xl-3 col-12">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
-                            <a href="violation-replies/create" class="btn btn_slim js-create-violation-reply">
+                            <a href="violation-replies/create" class="btn btn_slim js-create-violation-reply back_to_service">
                                 <spring:theme code="text.account.followup.create"/>
                             </a>
                     </div>
@@ -116,7 +118,7 @@
                 <div><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
         </c:if>
-        <div class="expandableContent expanded" id="expand01">
+        <div class="expandableContent expanded mt-3" id="expand01">
             <c:if test="${fn:length(replies) > 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
@@ -157,9 +159,9 @@
             </c:if>
             <div class="expandableContent-main js-violation-replies">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
-                        <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
+                    <div class="contentModule contentModule-wrap">
+                        <div class=" contentModule-section_noDivider contentModule-section_slimDivider">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
                                 <!-- <icon:info/> -->
                                 <!-- <div class="contentModule-headline headline-text">
                                     <spring:theme code="text.account.followup.info"/>:&nbsp;${selectedItem.srId}

@@ -19,7 +19,7 @@
 </script>
 <input type="hidden" id="serviceId" value="${latestConvToNationals.srID}"/>
 
-<div class="mainSection mainSection">
+<div class="mainSection mainSection bg-white">
     <div class="achievement_header">
         <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
         <div class="container">
@@ -87,23 +87,25 @@
     <div class="m-5">
         <div class="row w-100 renewal-services">
             <div class="col-md-3 col-12 px-0">
-                <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
+                <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
             </div>
-            <div class="col-xl-3 col-12">
-                <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')">Show Service Tabs</button>
-            </div>
+            <c:if test="${fn:length(sagiaService.tabs) > 0}">
+					<div class="col-xl-3 col-12 ml-1">
+						<button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+					</div>
+				</c:if>
         </div>
         <div class="row w-100 mt-4">
             <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
                 <div>
                 <c:choose>
                 <c:when test ="${isInstant}">
-                    <a class="btn btn_slim btn-warning btn_outline" href="${encodedContextPath}/my-sagia/license/convert/new">
+                    <a class="btn btn_slim btn-warning btn_outline back_to_service " href="${encodedContextPath}/my-sagia/license/convert/new">
                         <spring:theme code="convertlicense.instant.convert"/>
                     </a>
                 </c:when>
                 <c:otherwise>
-                    <button class="btn btn_slim" onclick="window.location.href='${encodedContextPath}/my-sagia/license/convert/new'">
+                    <button class="btn btn_slim back_to_service" onclick="window.location.href='${encodedContextPath}/my-sagia/license/convert/new'">
                         <spring:theme code="convertlicense.convert"/>
                     </button>
                 </c:otherwise>
@@ -141,8 +143,8 @@
 </div> -->
 <div class="container">
     <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
-        <div class="hidden "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> Show Service Overview</div>
-        <div class=""><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span>Hide Service Overview</div>
+        <div class="hidden "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
+        <div class=""><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
     </button>
 </div>
 <div class="container service-wrapper service-wrapper-info" id="expand-03">

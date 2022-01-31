@@ -16482,6 +16482,12 @@ padding-left: 40px;
 		right: 0;
 		margin: auto;
 	}
+	.page-province .Inc-mediaCenter-sectionwrapper .title.service-title .explore-btn {
+		top: 83%;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
 	.page-media-center .Inc-mediaCenter-sectionwrapper h1 a.webinar-service-btn {
 		bottom: unset;
 	}
@@ -19560,6 +19566,12 @@ padding-left: 40px;
 		font-size: 32px;
 	}
 	.page-media-center .Inc-mediaCenter-sectionwrapper .title.service-title .explore-btn {
+		top: 83%;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	.page-province .Inc-mediaCenter-sectionwrapper .title.service-title .explore-btn {
 		top: 83%;
 		left: 0;
 		right: 0;

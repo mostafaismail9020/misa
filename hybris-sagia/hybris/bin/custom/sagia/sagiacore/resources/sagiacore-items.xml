@@ -419,6 +419,47 @@
 			</targetElement>
 		</relation>	
 		
+		<relation code="ProvinceNewsRel" generate="true" localized="false" autocreate="true">
+			<deployment table="ProvinceNewsRel" typecode="30301" />
+			<sourceElement qualifier="region" type="ProvinceComponent" cardinality="many" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</sourceElement>
+			<targetElement qualifier="news" type="InvestSaudiNewsComponent" cardinality="many" collectiontype="list" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</targetElement>
+		</relation>
+		
+		<relation code="ProvinceResourcesRel" generate="true" localized="false" autocreate="true">
+			<deployment table="ProvinceResourcesRel" typecode="30302" />
+			<sourceElement qualifier="region" type="ProvinceComponent" cardinality="many" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</sourceElement>
+			<targetElement qualifier="resources" type="InvestSaudiResourceComponent" cardinality="many" collectiontype="list" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</targetElement>
+		</relation>
+		
+		<relation code="ProvinceEventsRel" generate="true" localized="false" autocreate="true">
+			<deployment table="ProvinceEventsRel" typecode="30303" />
+			<sourceElement qualifier="region" type="ProvinceComponent" cardinality="many" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</sourceElement>
+			<targetElement qualifier="events" type="InvestSaudiEventsComponent" cardinality="many" collectiontype="list" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</targetElement>
+		</relation>
+		
+		<relation code="ProvinceProductsRel" generate="true" localized="false" autocreate="true">
+			<deployment table="ProvinceProductsRel" typecode="30304" />
+			<sourceElement qualifier="region" type="ProvinceComponent" cardinality="many" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</sourceElement>
+			<targetElement qualifier="products" type="OpportunityProduct" cardinality="many" collectiontype="list" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</targetElement>
+		</relation>
+		
+				
 		<!-- Invest Saudi Changes Ends  -->	
 	</relations>
 	
@@ -3214,6 +3255,11 @@
 						<description>To identify the source system</description>
 						<modifiers read="true" write="true" search="true" optional="true"/>
 					</attribute>
+					<attribute qualifier="regionSpecific" type="java.lang.Boolean">
+                        <defaultvalue>Boolean.TRUE</defaultvalue>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
                 </attributes>
             </itemtype>
 
@@ -5165,6 +5211,11 @@
                         <modifiers/>
                         <description>News quotation</description>
                     </attribute>
+                    <attribute qualifier="regionSpecific" type="java.lang.Boolean">
+                        <defaultvalue>Boolean.TRUE</defaultvalue>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
                 </attributes>
             </itemtype>
 			
@@ -5733,7 +5784,12 @@
                     <attribute qualifier="eventGalleryImages" type="MediaContainer">
                         <persistence type="property"/>
                         <description>It is a media container with additional images for the events</description>
-                    </attribute>                                       
+                    </attribute>  
+                    <attribute qualifier="regionSpecific" type="java.lang.Boolean">
+                        <defaultvalue>Boolean.TRUE</defaultvalue>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>                                     
                 </attributes>
             </itemtype>
                                    
@@ -5897,6 +5953,11 @@
                         <persistence type="property"/>
                         <modifiers/>
 						<description>Resource quotation</description>
+                    </attribute>
+                    <attribute qualifier="regionSpecific" type="java.lang.Boolean">
+                        <defaultvalue>Boolean.TRUE</defaultvalue>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
                     </attribute>                       		
                 </attributes>
             </itemtype>
@@ -6625,6 +6686,35 @@
                         <modifiers/>
                         <description>Opportunities Details</description>
                     </attribute>
+                    <attribute qualifier="videoLink" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="aboutRegionHeader" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>About Region Header</description>
+                    </attribute>
+                    <attribute qualifier="aboutRegionText" type="localized:java.lang.String">
+	                    <persistence type="property">
+	                        <columntype database="oracle">
+	                            <value>CLOB</value>
+	                        </columntype>
+	                        <columntype database="mysql">
+	                            <value>TEXT</value>
+	                        </columntype>
+	                        <columntype database="sqlserver">
+	                            <value>nvarchar(max)</value>
+	                        </columntype>
+	                        <columntype database="sap">
+	                            <value>NCLOB</value>
+	                        </columntype>
+	                        <columntype>
+	                            <value>HYBRIS.LONG_STRING</value>
+	                        </columntype>
+	                    </persistence>
+	                    <modifiers dontOptimize="true"/>
+	            	</attribute>
                 </attributes>
 			</itemtype>
 				

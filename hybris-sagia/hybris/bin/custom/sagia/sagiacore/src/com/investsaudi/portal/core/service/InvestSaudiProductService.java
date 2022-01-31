@@ -3,6 +3,7 @@ package com.investsaudi.portal.core.service;
 import com.investsaudi.portal.core.model.OpportunityProductModel;
 import com.investsaudi.portal.core.model.SuccessStoryProductModel;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
+import de.hybris.platform.core.servicelayer.data.PaginationData;
 
 import java.io.Serializable;
 import java.util.List;
@@ -87,4 +88,6 @@ public interface InvestSaudiProductService extends Serializable {
      * @return
      */
     String getProductTypeForCode(String code);
+    
+    SearchPageData<OpportunityProductModel> searchOpportunityByRegion(PaginationData paginationData, String regionId);
 }

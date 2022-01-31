@@ -41,4 +41,6 @@ public interface InvestSaudiOpportunityDao extends Dao {
      * @return SearchPageData<OpportunityProductModel> SearchPageData for OpportunityProductModel
      */
     SearchPageData<OpportunityProductModel> searchOpportunityByNameAndSectors(String text, List<String> categories, PaginationData paginationData);
+    
+    SearchPageData<OpportunityProductModel> searchOpportunityByRegion(PaginationData paginationData, String provinceId);
 }

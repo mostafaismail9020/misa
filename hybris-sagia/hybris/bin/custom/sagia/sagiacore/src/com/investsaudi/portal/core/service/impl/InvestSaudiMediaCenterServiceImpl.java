@@ -82,4 +82,19 @@ public class InvestSaudiMediaCenterServiceImpl implements InvestSaudiMediaCenter
    {
 	   return investSaudiMediaCenterDao.getrecentEventDetails(eventStartDate);
    }
+   
+   @Override
+   public SearchPageData<InvestSaudiNewsComponentModel> getRegionNews(PaginationData paginationData, String regionId) {
+       return investSaudiMediaCenterDao.getRegionNews(paginationData, regionId);
+   }
+   
+   @Override
+   public SearchPageData<InvestSaudiResourceComponentModel> getRegionResources(PaginationData paginationData, String regionId) {
+       return investSaudiMediaCenterDao.getRegionResources(paginationData, regionId);
+   }
+   
+   @Override
+   public SearchPageData<InvestSaudiEventsComponentModel> getRegionEvents(PaginationData paginationData, String regionId) {
+       return investSaudiMediaCenterDao.getRegionEvents(paginationData, regionId);
+   }
 }

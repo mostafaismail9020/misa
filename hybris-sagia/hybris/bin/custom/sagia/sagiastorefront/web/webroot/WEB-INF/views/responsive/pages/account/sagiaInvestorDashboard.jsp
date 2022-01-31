@@ -627,6 +627,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row mb-3">
+                <div class="col-6 justify-content-end d-flex">
+                    <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
+                </div>
+                <div class="col-6">
+                    <a class="btn " href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
+                </div>
+            </div>
         </div>
         <!-- <div class="emailBlock">
             <div class="firstBlock-widget">

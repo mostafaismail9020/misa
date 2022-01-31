@@ -260,6 +260,11 @@
                             </div>
                         </div>
 		            </div>
+                    <div class="row ">
+                        <div class="col-12 text-center">                            
+                            <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
+                        </div>
+                    </div>
 		        </div>
 		        <!-- <div class="emailBlock">
 		            <div class="firstBlock-widget">
@@ -393,6 +398,22 @@
         </div>  --%>
     </div>
 </section>
+
+
+<div class="modal fade show" id="license-application-simulator"  tabindex="-1" role="dialog" aria-labelledby="license-application" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent license-application-simulator" role="document">
+        <div class="modal-content dashboard-pop-up">
+            <div class="modal-header">
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe width="560" height="400" src="https://www.youtube.com/embed/u3sQ7TDFUWs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 
 <%--Modal: Use (data-toggle="modal" data-target="#eServiceTour") on link or button to call it--%>
 <%--<div class="modal fade" id="eServiceTour"  tabindex="-1" role="dialog" aria-labelledby="eServiceTour" aria-hidden="true">

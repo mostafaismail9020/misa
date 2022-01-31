@@ -181,11 +181,14 @@
 
             <div id="realEstateAddInputDetails" hidden="true">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
-                        <div class="contentModule-section contentModule-actions_wrap contentModule-headline_bordered w-100">
-                        	<div class="contentModule-headline headline-text">
-                                <!-- <icon:info/> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-section contentModule-actions_wrap">
+                        	<!-- <span class="contentModule-headline">
                                 <spring:theme code="realEstate.headertext.propinfo"/>
+                            </span> -->
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="realEstate.headertext.propinfo"/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
                             <div class="tableModule tableModule_striped" >
 					            <table class="tableModule-table" id="deedTable">
@@ -211,16 +214,19 @@
 
             <div id="realEstateDetails" hidden="true">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
+                    <div class="contentModule contentModule-wrap">
                         <div class="contentModule-section">
-                            <div class="contentModule-headline headline-text">
-                                <icon:documents/>
-                                <div id="realEstateTypeTitle" style="display:inline-block;"></div>
-                                <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline" id="realEstateTypeTitle" style="display:inline-block;"></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
+                            <!-- <div class="contentModule-headline headline-text">
+                                <div id="realEstateTypeTitle" style="display:inline-block;"></div>
+                            </div> -->
+                            <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
 							<!-- <input type="hidden" name="isMojVerified" id="isMojVerified" /> -->
 							<form:hidden id="isMojVerified" path="mojVerified"/>
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo1">
                                         <div class="form-group" style="position: relative;">
@@ -241,9 +247,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label id="addPlotNo" class="btn btn_link btn_inForm js-addPlot">
-                                        <span>&#43;</span><spring:theme code="realestate.addplotno"/>
+                                <div class="col-md-6 d-flex align-items-center ">
+                                    <label id="addPlotNo" class="btn btn_inForm js-addPlot py-2">
+                                        <span class="text-white">&#43;</span><spring:theme code="realestate.addplotno"/>
                                     </label>
                                 </div>
                             </div>
@@ -471,15 +477,18 @@
 
             <div id="realEstateDocuments" hidden="true">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
-                        <div class="contentModule-section contentModule-actions_wrap contentModule-headline_bordered w-100">
-                            <div class="contentModule-headline headline-text">
-                                <!-- <icon:documents/> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-section contentModule-actions_wrap">
+                            <!-- <span class="contentModule-headline">
                                 <spring:theme code="text.account.followup.supportDocuments"/>
-                                <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
+                            </span> -->
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
+                            <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
 
-                            <div id="realEstateupload_placeholder" class="js-inputFile">
+                            <div id="realEstateupload_placeholder w-100" class="js-inputFile">
                                 <c:if test="${not empty realEstate.documentsToUpload}">
                                     <c:forEach items="${realEstate.documentsToUpload}" var="document" varStatus="count">
                                         <div class="col-md-6">

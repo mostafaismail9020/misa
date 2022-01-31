@@ -16,6 +16,7 @@ package com.sap.ibso.eservices.core.sagia.services.impl;
 import com.investsaudi.data.SagiaB2BUnitData;
 import com.investsaudi.portal.core.model.ContactTicketModel;
 import com.investsaudi.portal.core.model.ServiceRequestModel;
+import com.investsaudi.portal.core.service.ContactTicketBusinessService;
 import com.sap.ibso.eservices.core.constants.SagiaCoreConstants;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaUserDao;
 import com.sap.ibso.eservices.core.sagia.enums.ValidationError;
@@ -23,6 +24,7 @@ import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
 import de.hybris.platform.b2b.services.B2BUnitService;
+import de.hybris.platform.cms2.model.contents.components.AbstractCMSComponentModel;
 import de.hybris.platform.core.model.security.PrincipalModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserGroupModel;
@@ -67,6 +69,10 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     
     @Resource(name = "contactTicketEventStrategy")
 	private TicketEventStrategy ticketEventStrategy;
+	
+	@Resource(name="contactTicketBusinessService")
+	private ContactTicketBusinessService contactTicketBusinessService;
+
     
     
     @Override
@@ -194,7 +200,7 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
 	    	CsTicketModel ticket = (CsTicketModel) contactTicket;
 			CsCustomerEventModel ticketComment = ticketEventStrategy.createCreationEventForTicket(ticket,
 					CsEventReason.FIRSTCONTACT, CsInterventionType.TICKETMESSAGE, comments);
-
+            contactTicketBusinessService.customerEvent2SCPI(ticketComment);
 			/*List<CommentModel> commentsList = new ArrayList<CommentModel>();
 			commentsList.add(ticketComment);
 			contactTicket.setComments(commentsList);
@@ -220,15 +226,21 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     	
     	try {
     		ContactTicketModel contactTicket = sagiaUserDao.getContactTicketForTicketId(ticketId);
-        	
         	getModelService().save(serviceRequest);
-        	
         	List<ServiceRequestModel> serviceRequests = contactTicket.getServiceRequests();
-        	serviceRequests.add(serviceRequest);
-        	contactTicket.setServiceRequests(serviceRequests);
+        	if(null != serviceRequests && CollectionUtils.isNotEmpty(serviceRequests)) {
+        		List<ServiceRequestModel> ServiceRequestsList = new ArrayList<ServiceRequestModel>(serviceRequests);
+        		ServiceRequestsList.add(serviceRequest);
+        		contactTicket.setServiceRequests(ServiceRequestsList);
+        	}else{
+        		List<ServiceRequestModel> newServiceRequests = new ArrayList<ServiceRequestModel>();
+        		newServiceRequests.add(serviceRequest);
+        		contactTicket.setServiceRequests(newServiceRequests);
+        	}
         	getModelService().save(contactTicket);
         	return true;
     	}catch(Exception e) {
+    		LOG.error(e.getMessage(), e);
     		return false;
     	}
      }

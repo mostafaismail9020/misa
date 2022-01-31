@@ -29,7 +29,7 @@
     var autoRenewalClearance = "${autoRenewalClearance}";
 </script>
 
-<div class="mainSection mainSection">
+<div class="mainSection mainSection bg-white">
     <div class="achievement_header">
         <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
         <div class="container">
@@ -157,30 +157,32 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween d-flex">
             <div class="row renewal-services w-100">
                 <div class="col-md-3 col-12 px-0">
-                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
+                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
-                <div class="col-xl-3 col-12">
-                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')">Show Service Tabs</button>
-                </div>
+                <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                    <div class="col-xl-3 col-12">
+                        <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+                    </div>
+                </c:if>
 
             <!-- <div class="mainSection-linkActions mainSection-linkActions_right"> -->
                 <div id="renewalButtons" style="display: none;">
                     <div class="col-xl-3 col-12">
                         <c:choose>
                             <c:when test ="${autoRenewal}">
-                                <a class="btn btn_slim btn_outline jqInstantRenewal" href="javascript:void(0);">
+                                <a class="btn btn_slim btn_outline back_to_service jqInstantRenewal" href="javascript:void(0);">
                                     <spring:theme code="renewlicense.instantrenew"/>
                                 </a>&nbsp;
                             </c:when>
                             <c:otherwise>
-                                <a class="btn btn_slim btn_outline jqInstantRenewal" href="javascript:void(0);" style="display: none;">
+                                <a class="btn btn_slim btn_outline back_to_service jqInstantRenewal" href="javascript:void(0);" style="display: none;">
                                     <spring:theme code="renewlicense.instantrenew"/>
                                 </a>&nbsp;
                             </c:otherwise>
                         </c:choose>
                     </div>
                     <div class="col-xl-3 col-12">
-                        <a class="btn btn_slim btn_outline jqCreateRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
+                        <a class="btn btn_slim btn_outline back_to_service jqCreateRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
                             <spring:theme code="dashboard.myLicense.renew"/>
                         </a>
                     </div>
@@ -245,12 +247,12 @@
 </div>
 <div class="container">
     <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
-        <div class="hidden "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> Show Service Overview</div>
-        <div class=""><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span>Hide Service Overview</div>
+        <div class="hidden "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="service.overview.show"/></div>
+        <div class=""><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
     </button>
 </div>
 <!-- ${sagiaService.code} -->
-<div class="container service-wrapper service-wrapper-info" id="expand-03">
+<div class="container service-wrapper service-wrapper-info mb-5" id="expand-03">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -338,7 +340,7 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16 bg-white mt-5 service-main">
+<div class="mainSection mainSection_dark mainSection_pdt16 bg-white service-main">
     <div class="container">
         <c:if test="${fn:length(licenseRenew) > 1}">
             <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
@@ -496,12 +498,10 @@
                     </div>
                 </div>
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
+                    <div class="contentModule contentModule-wrap">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                            <div class="contentModule-headline contentModule-headline_bordered serviceModule">
-                                <span class="serviceModule-headline"><spring:theme code="general.pictures"/></span>
-                            </div>
-                            <div id="documents-container1"></div>
+                            <span class="contentModule-headline contentModule-headline_bordered"><spring:theme code="general.pictures"/></span>
+                            <div id="documents-container1 contentModule-headline-border"></div>
                             <ul class="pictureGrid" id="images-container">
                                 <c:forEach items="${license.attachedImages}" var="image">
                                     <li><img id="image" src="${encodedContextPath}/my-sagia/license/image/${image.objectID}/${image.documentID}"/></li>
@@ -511,10 +511,10 @@
                     </div>
                 </div>
                 <div class="panelModule panelModule_halfRadius">
-                    <div class="contentModule">
+                    <div class="contentModule contentModule-wrap">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                            <div class="contentModule-headline contentModule-headline_bordered serviceModule"><span class="serviceModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span></div>
-                            <ul class="downloadList" id="documents-container">
+                            <span class="contentModule-headline contentModule-headline_bordered"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                            <ul class="downloadList contentModule-headline-border" id="documents-container">
                                 <c:forEach items="${license.attachedDocuments}" var="document">
                                     <li class="downloadList-item js-download-service-attachment">
                                         <div class="downloadList-description">
@@ -576,9 +576,9 @@
                         </div>
 					</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" id="jqInstantRenewalSubmit" class="btn btn_slim" data-dismiss="modal"><spring:theme code="general.submit"/></button>
-				<button type="button" class="btn btn-secondary js-cancel-create-realEstate" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
+			<div class="modal-footer1 mb-3">
+				<button type="button" class="btn btn-outline js-cancel-create-realEstate" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
+				<button type="button" id="jqInstantRenewalSubmit" class="btn btn-primary" data-dismiss="modal"><spring:theme code="general.submit"/></button>
 
 			</div>
 

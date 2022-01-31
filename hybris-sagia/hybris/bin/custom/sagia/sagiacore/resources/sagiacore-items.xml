@@ -467,6 +467,12 @@
 			</targetElement>
 		</relation>
 		<!-- Sagia Dashboard Changes Ends  -->
+		 <relation generate="true" localized="false" code="CustomerEvent2ScpiOutNotesFromCustomerProcess"
+                  autocreate="true">
+            <sourceElement type="CsCustomerEvent" cardinality="one" qualifier="csCustomerEvent"></sourceElement>
+            <targetElement type="ScpiOutCsCustomerEventProcess" cardinality="many" qualifier="scpiOutCsCustomerEventProcess">
+            </targetElement>
+        </relation>
 		
 	</relations>
 	
@@ -10623,6 +10629,10 @@
                     </attribute>
                 </attributes>
             </itemtype>
+        </typegroup>
+		 
+		<typegroup name="Outbound">
+            <itemtype code="ScpiOutCsCustomerEventProcess" autocreate="true" generate="true" extends="BusinessProcess"/>
         </typegroup>
 		
 		<!-- SiteMap Changes Ends -->

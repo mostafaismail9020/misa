@@ -1,30 +1,27 @@
-
-
 INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
 ; InboundOpportunityPartner; INBOUND 
  
 INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code) 
+; InboundOpportunityPartner	; OpportunityProduct	; OpportunityProduct	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityPartner	; CatalogVersion    	; CatalogVersion    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityPartner	; Catalog           	; Catalog           	; 	; ALL_SUB_AND_SUPER_TYPES	;  
 ; InboundOpportunityPartner	; Customer          	; Customer          	; 	; ALL_SUB_AND_SUPER_TYPES	;  
 ; InboundOpportunityPartner	; OpportunityPartner	; OpportunityPartner	; true	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityPartner	; CatalogVersion    	; CatalogVersion    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityPartner	; OpportunityProduct	; OpportunityProduct	; 	; ALL_SUB_AND_SUPER_TYPES	;  
 ; InboundOpportunityPartner	; PartnerType       	; PartnerType       	; 	; ALL_SUBTYPES           	;  
-; InboundOpportunityPartner	; Catalog           	; Catalog           	; 	; ALL_SUB_AND_SUPER_TYPES	;  
  
 INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
-; InboundOpportunityPartner:Customer          	; userNameEmail    	; Customer:userNameEmail           	;                                             	; true	;  
-; InboundOpportunityPartner:Customer          	; uid              	; Customer:uid                     	;                                             	; true	;  
-; InboundOpportunityPartner:Customer          	; mobileCountryCode	; Customer:mobileCountryCode       	;                                             	; true	;  
-; InboundOpportunityPartner:Customer          	; mobileNumber     	; Customer:mobileNumber            	;                                             	; true	;  
-; InboundOpportunityPartner:OpportunityPartner	; partnerRowId     	; OpportunityPartner:partnerRowId  	;                                             	; true	;  
-; InboundOpportunityPartner:OpportunityPartner	; customer         	; OpportunityPartner:customer      	; InboundOpportunityPartner:Customer          	; 	;  
-; InboundOpportunityPartner:OpportunityPartner	; productId        	; OpportunityPartner:productId     	;                                             	; true	;  
-; InboundOpportunityPartner:OpportunityPartner	; product          	; OpportunityPartner:product       	; InboundOpportunityPartner:OpportunityProduct	; 	;  
-; InboundOpportunityPartner:OpportunityPartner	; partnerType      	; OpportunityPartner:partnerType   	; InboundOpportunityPartner:PartnerType       	; 	;  
-; InboundOpportunityPartner:CatalogVersion    	; catalog          	; CatalogVersion:catalog           	; InboundOpportunityPartner:Catalog           	; true	;  
-; InboundOpportunityPartner:CatalogVersion    	; version          	; CatalogVersion:version           	;                                             	; true	;  
 ; InboundOpportunityPartner:OpportunityProduct	; catalogVersion   	; OpportunityProduct:catalogVersion	; InboundOpportunityPartner:CatalogVersion    	; true	;  
 ; InboundOpportunityPartner:OpportunityProduct	; code             	; OpportunityProduct:code          	;                                             	; true	;  
-; InboundOpportunityPartner:PartnerType       	; code             	; PartnerType:code                 	;                                             	; true	;  
+; InboundOpportunityPartner:CatalogVersion    	; catalog          	; CatalogVersion:catalog           	; InboundOpportunityPartner:Catalog           	; true	;  
+; InboundOpportunityPartner:CatalogVersion    	; version          	; CatalogVersion:version           	;                                             	; true	;  
 ; InboundOpportunityPartner:Catalog           	; id               	; Catalog:id                       	;                                             	; true	;  
-	
+; InboundOpportunityPartner:Customer          	; mobileNumber     	; Customer:mobileNumber            	;                                             	; true	;  
+; InboundOpportunityPartner:Customer          	; mobileCountryCode	; Customer:mobileCountryCode       	;                                             	; true	;  
+; InboundOpportunityPartner:Customer          	; uid              	; Customer:uid                     	;                                             	; true	;  
+; InboundOpportunityPartner:Customer          	; userNameEmail    	; Customer:userNameEmail           	;                                             	; true	;  
+; InboundOpportunityPartner:OpportunityPartner	; partnerRowId     	; OpportunityPartner:partnerRowId  	;                                             	; true	;  
+; InboundOpportunityPartner:OpportunityPartner	; partnerType      	; OpportunityPartner:partnerType   	; InboundOpportunityPartner:PartnerType       	; 	;  
+; InboundOpportunityPartner:OpportunityPartner	; product          	; OpportunityPartner:product       	; InboundOpportunityPartner:OpportunityProduct	; 	;  
+; InboundOpportunityPartner:OpportunityPartner	; productId        	; OpportunityPartner:productId     	;                                             	; true	;  
+; InboundOpportunityPartner:OpportunityPartner	; customer         	; OpportunityPartner:customer      	; InboundOpportunityPartner:Customer          	; 	;  
+; InboundOpportunityPartner:PartnerType       	; code             	; PartnerType:code                 	;                                             	; true	;  

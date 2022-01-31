@@ -32,7 +32,7 @@
                 <hr class="hr">
                 <div class="myAccount-edit-toggle js-myAccount-edit-toggle">
                     <div class="myAccount-profilImage">
-					<h4 id="sagia_profile_picture_title"></span><spring:theme code="profile.my.profile.picture"/></h4>
+					<h4 id="sagia_profile_picture_title" class="sagia_profile_picture_title"></span><spring:theme code="profile.my.profile.picture"/></h4>
                         <div class="myAccount-profilImage-img"><div class="profilePicture js-profilePicture"></div></div>
                     </div>
 
@@ -75,7 +75,7 @@
                     </div>
                     <div class="row">
                         <div class="myAccount-profilImage">
-                        <h4 id="sagia_companyLogo_picture_title"></h4>
+                        <h4 id="sagia_companyLogo_picture_title"  class="sagia_profile_picture_title"></h4>
                         <div class="myAccount-profilImage-img"><div class="companyLogo js-companyLogo"></div></div>
                     </div></div>
 

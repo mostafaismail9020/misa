@@ -17,7 +17,7 @@
     var configuredFileSize = ${maxUploadSize};
 </script>
 
-<div class="mainSection mainSection">
+<div class="mainSection mainSection bg-white">
     <div class="achievement_header">
         <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
         <div class="container">
@@ -68,7 +68,7 @@
                         <spring:theme code="text.specialservices.backToServiceDetails"/>
                     </a>
                 </div>
-                <div class="col-md-9 d-flex btn-drafts_list amend-service-link">
+                <div class="col-md-9 d-flex btn-drafts_list amend-service-link amend-btns-list">
                     <button class="btn btn_round btn_slim js-save-draft" data-target-form="createRealEstateForm"
                             data-service-id="${serviceId}">
                         <spring:theme code="general.savedraft"/><span class="iconElement iconElement_save"><icon:save/></span>
@@ -88,7 +88,7 @@
     <div class="container">
         <c:url value="/real-estate/save" var="createRealEstateUrl"/>
         <form:form id="createRealEstateForm" method="post" modelAttribute="realEstate" action="${createRealEstateUrl}" enctype="multipart/form-data">
-            <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
+            <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-3">
                 <div class="contentModule">
                     <div class="contentModule-section">
                         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-headline_bordered w-100">

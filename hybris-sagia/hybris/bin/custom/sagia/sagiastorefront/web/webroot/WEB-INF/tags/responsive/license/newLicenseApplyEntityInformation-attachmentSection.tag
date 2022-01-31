@@ -215,7 +215,7 @@
                    <icon:cross/>
                 </div>
              </div>
-             <div class="help-block"></div>
+             <div class="help-block" id="entityFinancialStatementFile-helper"></div>
           </div>
        </div>
        <div class="col-md-6">
@@ -233,7 +233,7 @@
                 <icon:cross/>
              </div>
           </div>
-          <div class="help-block"></div>
+          <div class="help-block" id="commercialRegMainEntryFile-helper"></div>
        </div>
     </div>
     <div class="col-md-6">
@@ -251,9 +251,11 @@
              <icon:cross/>
           </div>
        </div>
-       <div class="help-block"></div>
+       <div class="help-block" id="commercialRegOtherEntryFile-helper"></div>
     </div>
-
+</div>
+</div>
+</div>
 
     <div id="preApprovalNrAttachment" style="display: none">
     <div class="row">

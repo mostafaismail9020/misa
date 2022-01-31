@@ -12,6 +12,10 @@
 <!--Basic information extended-->
 <div>
 <div class="rhqSelectBoxes" style="display:none">
+<div class="mncBranchTableJsonInputs"></div>
+<div class="mncBrandTableJsonInputs"></div>
+<div class="mncCostTableJsonInputs"></div>
+
 <!--Optional/Functions/Corporate  Activities start-->
 <div class="formSelectBox">
 		<div class="form-group optionalActivity">
@@ -70,12 +74,12 @@
 		</div>
 
 
-		<div class="formSelectBox" id="rhqCountryRegion" style="display:none">
+		<div class="formSelectBox" id="rhqCountryRegion" >
 		<div class="form-group">
-			<select id="centerAdminRhqRegionsSection" name="centerAdminRhqRegionsSection"
+			<select id="branchInformationRhqRegionsSection" name="listOfRhqRegions"
 				class="js-select2-multi form-control select2-hidden-accessible"
 				multiple="" tabindex="-1" aria-hidden="true" data-value="">
-			</select> <label class="control-label" for="centerAdminRhqRegionsSection">* RHQ Regions</label>
+			</select> <label class="control-label" for="branchInformationRhqRegionsSection">* RHQ Regions</label>
 		</div>
 		<div class="help-block"></div>
 	</div>
@@ -125,7 +129,7 @@
 							<div class="col-md-6">
 							<div class="formSelectBox">
 			<div class="form-group">
-				<select id="editBranchCountry" name="editBranchCountry" class="js-select2-search form-control" data-search-placeholder="Filter by Product ID / Product Description">
+				<select id="editBranchCountry" name="editBranchCountry" class="js-select2-search form-control" data-search-placeholder="Select a country">
 					<option></option>
                     <option value="Kingdom of Saudi Arabia">Kingdom of Saudi Arabia</option>
 					<option value="Romania">Romania</option>
@@ -174,7 +178,7 @@
                         	<div class="col-md-6">
 							<div class="formSelectBox">
 			<div class="form-group">
-				<select id="editBranchOperation" name="editBranchOperation" class="js-select2-search form-control" data-search-placeholder="Filter by Product ID / Product Description">
+				<select id="editBranchOperation" name="editBranchOperation" class="js-select2-search form-control" data-search-placeholder="">
 					<option></option>
 					 <option value="Manufacturing">Manufacturing</option>
                     <option value="Assembly">Assembly</option>
@@ -240,7 +244,7 @@
 							<div class="col-md-6">
 							<div class="formSelectBox">
 			<div class="form-group">
-				<select id="addBranchCountry" name="addBranchCountry" class="js-select2-search form-control" data-search-placeholder="Filter by Product ID / Product Description">
+				<select id="addBranchCountry" name="addBranchCountry" class="js-select2-search form-control" data-search-placeholder="">
 					<option></option>
                     <option value="Kingdom of Saudi Arabia">Kingdom of Saudi Arabia</option>
 					<option value="Romania">Romania</option>
@@ -289,7 +293,7 @@
                         	<div class="col-md-6">
 							<div class="formSelectBox">
 			<div class="form-group">
-				<select id="addBranchOperation" name="addBranchOperation" class="js-select2-search form-control" data-search-placeholder="Filter by Product ID / Product Description">
+				<select id="addBranchOperation" name="addBranchOperation" class="js-select2-search form-control" data-search-placeholder="">
 					<option></option>
 					 <option value="Manufacturing">Manufacturing</option>
                     <option value="Assembly">Assembly</option>
@@ -354,7 +358,7 @@
 							<div class="col-md-6">
 							<div class="formSelectBox">
 			<div class="form-group">
-				<select id="addBrandCountry" name="addBrandCountry" class="js-select2-search form-control" data-search-placeholder="Filter by Product ID / Product Description">
+				<select id="addBrandCountry" name="addBrandCountry" class="js-select2-search form-control" data-search-placeholder="">
 					<option></option>
                     <option value="Kingdom of Saudi Arabia">Kingdom of Saudi Arabia</option>
 					<option value="Romania">Romania</option>
@@ -453,7 +457,7 @@
 							<div class="col-md-6">
 							<div class="formSelectBox">
 			<div class="form-group">
-				<select id="editBrandCountry" name="editBrandCountry" class="js-select2-search form-control" data-search-placeholder="Filter by Product ID / Product Description">
+				<select id="editBrandCountry" name="editBrandCountry" class="js-select2-search form-control" data-search-placeholder="">
 					<option></option>
                     <option value="Kingdom of Saudi Arabia">Kingdom of Saudi Arabia</option>
 					<option value="Romania">Romania</option>
@@ -616,7 +620,7 @@
 		                        <div class="form-group ">
 			                    <input id="addYear3" name="addYear3" class="form-control" placeholder="." value="" type="number" autocomplete="off">
 			                    <label class="control-label" for="">
-				                * Year 2023
+				                * Year 2024
 			                    </label>
 
 		                        </div>

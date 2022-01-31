@@ -278,10 +278,10 @@ bindRhqCountryInformationEvents: function () {
                    $('#rhqCountryRegion').show();
                 });
 
-                let objectCenterAdminRhqRegionsOptions = new Array("","North America","Central America","South America","Europe","North Africa","Central & South Africa","Middle East","Indian Subcontinent","CIS","East Asia","Southeast Asia","Oceania");
-                for(var i = 1; i < objectCenterAdminRhqRegionsOptions.length; i++) {
-                    $('#centerAdminRhqRegionsSection').append('<option value='+i+'>'+objectCenterAdminRhqRegionsOptions[i]+'</option>');
-                }
+                // let objectCenterAdminRhqRegionsOptions = new Array("","North America","Central America","South America","Europe","North Africa","Central & South Africa","Middle East","Indian Subcontinent","CIS","East Asia","Southeast Asia","Oceania");
+                // for(var i = 1; i < objectCenterAdminRhqRegionsOptions.length; i++) {
+                //     $('#centerAdminRhqRegionsSection').append('<option value='+i+'>'+objectCenterAdminRhqRegionsOptions[i]+'</option>');
+                // }
 
                  let objectRhqSubsidiaryOptions = new Array("","Only one country","2 to 5 countries","6 to 10 countries","over 10 countries");
                 for(var i = 1; i < objectRhqSubsidiaryOptions.length; i++) {
@@ -290,7 +290,10 @@ bindRhqCountryInformationEvents: function () {
 
                 //22-Jan-22 - End
 
-                $('.rqh-tables').css("display", "block")
+                $('.rqh-tables').css("display", "block");
+                $('#branchAttachmentNewRhq').css("display", "block")
+
+
                 $('.rhqSelectBoxes').css("display", "block")
                 // styles for the z-index existing sagia issue fix
 
@@ -378,8 +381,17 @@ bindRhqCountryInformationEvents: function () {
                     }
                     else {
                         //pusing the new branch into Javascript array for backend db submission
-                        objectBranches.push({ "name": $('#addBranchName').val(), 'country': $('#addBranchCountry').val(), 'type': $('#addBranchBuz').val(), "industry": $('#addBranchIndustry').val(), 'operation': $('#addBranchOperation').val(), 'activity': $('#addBranchRhqActivity').val() });
+                        objectBranches.push({
+                            "companyName": $('#addBranchName').val(),
+                            'country': $('#addBranchCountry').val(),
+                            'businessRelationshipType': $('#addBranchBuz').val(),
+                            "industry": $('#addBranchIndustry').val(),
+                            'operations': $('#addBranchOperation').val(),
+                            'RhqActivityProvided': $('#addBranchRhqActivity').val()
+                        });
                         console.log(objectBranches.length);
+                        console.log(JSON.stringify(objectBranches).replace(/"/g, "'"));
+
 
                         $("#mncBranchTable tbody").append('<tr><td>' + addBranchName + '</td><td>' + addBranchCountry + '</td><td>' + addBranchBuz + '</td><td>' + addBranchIndustry + '</td><td>' + addBranchOperation + '</td><td>' + addBranchRhqActivity + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBranchBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
                         $('#addBranchForm')[0].reset();
@@ -395,12 +407,12 @@ bindRhqCountryInformationEvents: function () {
                     editBranchIndex = $(this).closest('tr').index();
                     BranchCurrentRow = $(this).parents('tr');
                     let idx = $(this).closest('tr').index();
-                    $('#editBranchName').val(objectBranches[idx]['name']);
+                    $('#editBranchName').val(objectBranches[idx]['companyName']);
                     $('#editBranchCountry').val(objectBranches[idx]['country']).trigger('change');
-                    $('#editBranchBuz').val(objectBranches[idx]['type']).trigger('change');
+                    $('#editBranchBuz').val(objectBranches[idx]['businessRelationshipType']).trigger('change');
                     $('#editBranchIndustry').val(objectBranches[idx]['industry']);
-                    $('#editBranchOperation').val(objectBranches[idx]['operation']).trigger('change');
-                    $('#editBranchRhqActivity').val(objectBranches[idx]['activity']);
+                    $('#editBranchOperation').val(objectBranches[idx]['operations']).trigger('change');
+                    $('#editBranchRhqActivity').val(objectBranches[idx]['RhqActivityProvided']);
                 });
 
 
@@ -475,7 +487,7 @@ bindRhqCountryInformationEvents: function () {
                     }
                     else {
                         //pusing the new branch into Javascript array for backend db submission
-                        let updateditem = { "name": $('#editBranchName').val(), 'country': $('#editBranchCountry').val(), 'type': $('#editBranchBuz').val(), "industry": $('#editBranchIndustry').val(), 'operation': $('#editBranchOperation').val(), 'activity': $('#editBranchRhqActivity').val() };
+                        let updateditem = { "companyName": $('#editBranchName').val(), 'country': $('#editBranchCountry').val(), 'businessRelationshipType': $('#editBranchBuz').val(), "industry": $('#editBranchIndustry').val(), 'operations': $('#editBranchOperation').val(), 'RhqActivityProvided': $('#editBranchRhqActivity').val() };
                         objectBranches[editBranchIndex] = updateditem;
 
                         $("#mncBranchTable  > tbody").find($(BranchCurrentRow)).replaceWith('<tr><td>' + editBranchName + '</td><td>' + editBranchCountry + '</td><td>' + editBranchBuz + '</td><td>' + editBranchIndustry + '</td><td>' + editBranchOperation + '</td><td>' + editBranchRhqActivity + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBranchBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
@@ -569,10 +581,17 @@ bindRhqCountryInformationEvents: function () {
                         return false;
                     }
                     else {
-                        //  var objectBranches = [{"name": "My  Branch", 'country': "India", 'industry': "Joint Venture","mena": "Chemical", 'provider': "manufacturing"}]
-                        //pusing the new branch into Javascript array for backend db submission
-                        objectBrands.push({ "name": $('#addBrandName').val(), 'country': $('#addBrandCountry').val(), 'industry': $('#addBrandIndustry').val(), "mena": $('#addBrandMena').val(), 'provider': $('#addBrandProvider').val() });
+                        objectBrands.push({
+                            "brandName": $('#addBrandName').val(),
+                            'country': $('#addBrandCountry').val(),
+                            'industry': $('#addBrandIndustry').val(),
+                             "companyOwningBrandInMENA": $('#addBrandMena').val(),
+                            'RhqActivityProvided': $('#addBrandProvider').val()
+                        });
+
                         console.log(objectBrands.length);
+                        console.log(JSON.stringify(objectBrands).replace(/"/g, "'"));
+
 
                         $("#mncBrandTable tbody").append('<tr><td>' + addBrandName + '</td><td>' + addBrandCountry + '</td><td>' + addBrandIndustry + '</td><td>' + addBrandMena + '</td><td>' + addBrandProvider + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBrandBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
                         $('#addBrandForm')[0].reset();
@@ -586,13 +605,12 @@ bindRhqCountryInformationEvents: function () {
                     BrandCurrentRow = $(this).parents('tr');
                     editBrandIndex = $(this).closest('tr').index();
                     let idx = $(this).closest('tr').index();
-                    $('#editBrandName').val(objectBrands[idx]['name']);
+                    $('#editBrandName').val(objectBrands[idx]['brandName']);
                     $('#editBrandCountry').val(objectBrands[idx]['country']).trigger('change');
                     $('#editBrandIndustry').val(objectBrands[idx]['industry'])
-                    $('#editBrandMena').val(objectBrands[idx]['mena']);
-                    $('#editBrandProvider').val(objectBrands[idx]['provider'])
+                    $('#editBrandMena').val(objectBrands[idx]['companyOwningBrandInMENA']);
+                    $('#editBrandProvider').val(objectBrands[idx]['RhqActivityProvided'])
                 });
-
 
                 $('#entityEditBrand').click(function () {
 
@@ -658,7 +676,13 @@ bindRhqCountryInformationEvents: function () {
                     else {
                         //pusing the new branch into Javascript array for backend db submission
                         //  var objectBranches = [{"name": "My  Branch", 'country': "India", 'industry': "Joint Venture","mena": "Chemical", 'provider': "manufacturing"}]
-                        let updateditem = { "name": $('#editBrandName').val(), 'country': $('#editBrandCountry').val(), 'industry': $('#editBrandIndustry').val(), "mena": $('#editBrandMena').val(), 'provider': $('#editBrandProvider').val() };
+                        let updateditem = {
+                            "brandName": $('#editBrandName').val(),
+                            'country': $('#editBrandCountry').val(),
+                            'industry': $('#editBrandIndustry').val(),
+                            "companyOwningBrandInMENA": $('#editBrandMena').val(),
+                            'RhqActivityProvided': $('#editBrandProvider').val()
+                        };
                         $("#mncBrandTable  > tbody").find($(BrandCurrentRow)).replaceWith('<tr><td>' + editBrandName + '</td><td>' + editBrandCountry + '</td><td>' + editBrandIndustry + '</td><td>' + editBrandMena + '</td><td>' + editBrandProvider + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBrandBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
 
                         objectBrands[editBrandIndex] = updateditem;
@@ -680,11 +704,6 @@ bindRhqCountryInformationEvents: function () {
                     console.log("before removed" + objectBrands.length);
                     console.log($(this).html());
                     console.log($(this).index());
-
-                    //  alert("HTML: " +$(this).html());
-                    //alert("Cell Index: " + $(this).index());
-                    //alert("Row Index: " + $(this).closest('tr').index());
-                    //  delete objectBranches[1];
                     console.log('going to delete the index..' + $(this).closest('tr').index());
                     objectBrands.remove($(this).closest('tr').index());
                     $(this).parents("tr").remove();
@@ -782,10 +801,18 @@ bindRhqCountryInformationEvents: function () {
                         return false;
                     }
                     else {
-                        //  var objectCost = [{"name": "My  Branch", 'unitcost': "India", 'numunits': "Joint Venture","costFreq": "Chemical", 'addYear1': "manufacturing, 'addYear2': "manufacturing, 'addYear3': "manufacturing"}]
-                        //pusing the new branch into Javascript array for backend db submission
-                        objectCost.push({ "name": $('#addItemName').val(), 'unitcost': $('#addUnitCost').val(), 'numunits': $('#addNoUnits').val(), "costFreq": $('#addCostFreq').val(), 'addYear1': $('#addYear1').val(), 'addYear2': $('#addYear2').val(), 'addYear3': $('#addYear3').val() });
+                        objectCost.push({
+                            "item": $('#addItemName').val(),
+                            'unitCost': $('#addUnitCost').val(),
+                            'noOfUnits': $('#addNoUnits').val(),
+                            "costFrequency": $('#addCostFreq').val(),
+                            'year2022': $('#addYear1').val(),
+                            'year2023': $('#addYear2').val(),
+                            'year2024': $('#addYear3').val()
+                        });
                         console.log(objectCost.length);
+                        console.log(JSON.stringify(objectCost).replace(/"/g, "'"));
+
 
                         $("#rhqCostTable tbody").append('<tr><td>' + addItemName + '</td><td>' + addUnitCost + '</td><td>' + addNoUnits + '</td><td>' + addCostFreq + '</td><td>' + addYear1 + '</td><td>' + addYear2 + '</td><td>' + addYear3 + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditCostBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
                         $('#addItemForm')[0].reset();
@@ -804,15 +831,14 @@ bindRhqCountryInformationEvents: function () {
                     CostCurrentRow = $(this).parents('tr');
                     editCostIndex = $(this).closest('tr').index();
                     let idx = $(this).closest('tr').index();
-                    $('#editItemName').val(objectCost[idx]['name']);
-                    $('#editUnitCost').val(objectCost[idx]['unitcost']);
-                    $('#editNoUnits').val(objectCost[idx]['numunits'])
-                    $('#editCostFreq').val(objectCost[idx]['costFreq']);
-                    $('#editYear1').val(objectCost[idx]['addYear1'])
-                    $('#editYear2').val(objectCost[idx]['addYear2'])
-                    $('#editYear3').val(objectCost[idx]['addYear3'])
+                    $('#editItemName').val(objectCost[idx]['item']);
+                    $('#editUnitCost').val(objectCost[idx]['unitCost']);
+                    $('#editNoUnits').val(objectCost[idx]['noOfUnits'])
+                    $('#editCostFreq').val(objectCost[idx]['costFrequency']);
+                    $('#editYear1').val(objectCost[idx]['year2022'])
+                    $('#editYear2').val(objectCost[idx]['year2023'])
+                    $('#editYear3').val(objectCost[idx]['year2024'])
                 });
-
 
 
 
@@ -900,9 +926,15 @@ bindRhqCountryInformationEvents: function () {
                         return false;
                     }
                     else {
-                        //pusing the new branch into Javascript array for backend db submission
-                        //  var objectCost = [{"name": "My  Branch", 'unitcost': "India", 'numunits': "Joint Venture","costFreq": "Chemical", 'addYear1': "manufacturing, 'addYear2': "manufacturing, 'addYear3': "manufacturing"}]
-                        let updateditem = { "name": $('#editItemName').val(), 'unitcost': $('#editUnitCost').val(), 'numunits': $('#editNoUnits').val(), "costFreq": $('#editCostFreq').val(), 'addYear1': $('#editYear1').val(), 'addYear2': $('#editYear2').val(), 'addYear3': $('#editYear3').val() };
+                        let updateditem = {
+                            "item": $('#editItemName').val(),
+                            'unitCost': $('#editUnitCost').val(),
+                            'noOfUnits': $('#editNoUnits').val(),
+                            "costFrequency": $('#editCostFreq').val(),
+                            'year2022': $('#editYear1').val(),
+                            'year2023': $('#editYear2').val(),
+                            'year2024': $('#editYear3').val()
+                        };
                         $("#rhqCostTable  > tbody").find($(CostCurrentRow)).replaceWith('<tr><td>' + editItemName + '</td><td>' + editUnitCost + '</td><td>' + editNoUnits + '</td><td>' + editCostFreq + '</td><td>' + editYear1 + '</td><td>' + editYear2 + '</td><td>' + editYear3 + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditCostBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
 
                         objectCost[editCostIndex] = updateditem;
@@ -943,9 +975,9 @@ bindRhqCountryInformationEvents: function () {
                 }
 
                 calculateCostTotal = function () {
-                    $('#rhqCostTable-sum1').text(objectCost.sum("addYear1"));
-                    $('#rhqCostTable-sum2').text(objectCost.sum("addYear2"));
-                    $('#rhqCostTable-sum3').text(objectCost.sum("addYear3"));
+                    $('#rhqCostTable-sum1').text(objectCost.sum("year2022"));
+                    $('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
+                    $('#rhqCostTable-sum3').text(objectCost.sum("year2024"));
 
                 };
 
@@ -977,9 +1009,10 @@ bindRhqCountryInformationEvents: function () {
 				self.branchInformationSection.show();
 				self.branchInformationYesEvent();
 				self.licenseInformationNoEvent();
-        		self.setRHQActivities();
+        	//	self.setRHQActivities();
 				self.setRHQLegalStatus("setRHQLegalStatusValues");
                 self.setCorporateActivities();
+                self.setRegionRHQ();
                 self.setStrategicActivities();
                 self.setManagementActivities();
 				self.entrepreneurAttachment.hide();
@@ -1139,6 +1172,7 @@ bindRhqCountryInformationEvents: function () {
 
  setRHQLegalStatus: function (status)
  {
+     countyList =[];
 	 var self = this;
         $.ajax(ACC.config.encodedContextPath + controllerUrl + "/dropdownsQeemah1",
 		{
@@ -1151,6 +1185,7 @@ bindRhqCountryInformationEvents: function () {
 				 var legalStatus = self.basicInformationExtendedSection.find("#basicInformationExtendedLegalStatus");
                 legalStatus.find("option").remove();
                 legalStatus.append(new Option("", "", false, false));
+                countyList = jsonData.countries;
                 jsonData.legalStatus.forEach(function (currentValue) {
                     if (status == "setRHQLegalStatusValues") {
                         if (currentValue.legalStatus == "LLC" || currentValue.legalStatus == "ILLC" || currentValue.legalStatus == "BRFC") { legalStatus.append(new Option(currentValue.legalStatusText, currentValue.legalStatus, false, false)); }
@@ -1163,6 +1198,34 @@ bindRhqCountryInformationEvents: function () {
                 });
                 legalStatus.attr("disabled", false);
               //  legalStatus.val("BRFC").trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
+
+
+              //set country values
+              var addBrandCountry = self.basicInformationExtendedSection.find("#addBrandCountry");
+              addBrandCountry.find("option").remove();
+              addBrandCountry.append(new Option("", "", false, false));
+
+              var editBrandCountry = self.basicInformationExtendedSection.find("#editBrandCountry");
+              editBrandCountry.find("option").remove();
+              editBrandCountry.append(new Option("", "", false, false));
+
+              var addBranchCountry = self.basicInformationExtendedSection.find("#addBranchCountry");
+              addBranchCountry.find("option").remove();
+              addBranchCountry.append(new Option("", "", false, false));
+
+              var editBranchCountry = self.basicInformationExtendedSection.find("#editBranchCountry");
+              editBranchCountry.find("option").remove();
+              editBranchCountry.append(new Option("", "", false, false));
+
+              jsonData.countries.forEach(function (currentValue) {
+                addBrandCountry.append(new Option(currentValue.countryText, currentValue.country, false, false));
+                editBrandCountry.append(new Option(currentValue.countryText, currentValue.country, false, false));
+                addBranchCountry.append(new Option(currentValue.countryText, currentValue.country, false, false));
+                editBranchCountry.append(new Option(currentValue.countryText, currentValue.country, false, false));
+
+            });
+
+
 
 		}});
 	},
@@ -1187,6 +1250,29 @@ bindRhqCountryInformationEvents: function () {
                 }
             });
     },
+
+    setRegionRHQ: function () {
+        var self = this;
+        $.ajax(ACC.config.encodedContextPath + controllerUrl + "/dropdownsQeemah1/rhqRegions",
+            {
+                type: "GET",
+                responseType: "application/json;charset=utf-8",
+                contentType: "application/json;charset=utf-8",
+                cache: false,
+                success: function (data) {
+                    var jsonData = JSON.parse(data);
+                    var RhqRegionsSection  = self.basicInformationExtendedSection.find("#branchInformationRhqRegionsSection");
+                    RhqRegionsSection .find("option").remove();
+                    RhqRegionsSection .append(new Option("", "", false, false));
+                    jsonData.forEach(function (currentValue) {
+                        $('#branchInformationRhqRegionsSection').append('<option value='+currentValue.region+'>'+currentValue.regionText+'</option>');
+                    });
+                    self.updateSelectValues(self.basicInformationExtendedSection.find("#branchInformationRhqRegionsSection"));
+                }
+            });
+    },
+
+
 
         // /dropdownsQeemah1/strategicActivities
         setStrategicActivities: function () {
@@ -1508,7 +1594,24 @@ if($("#licenseTypes").val() === "11"){
                 $(this).prop('disabled', false);
                 return false;
             }
+            if ($('#entityForm #licenseTypes').val() == "11") {
 
+                console.log(JSON.stringify(objectBranches).replace(/"/g, "'"));
+                $('.mncBranchTableJsonInputs').html('');
+                var element = $('<input/>').prop('type', 'hidden').prop('name', 'EntitiesManagedByRhq').val(JSON.stringify(objectBranches).replace(/"/g, "'"));
+                $('#entityForm .mncBranchTableJsonInputs').append(element);
+
+                console.log(JSON.stringify(objectBrands).replace(/"/g, "'"));
+                $('.mncBrandTableJsonInputs').html('');
+                var element = $('<input/>').prop('type', 'hidden').prop('name', 'BrandPresenceInMENARegion').val(JSON.stringify(objectBrands).replace(/"/g, "'"));
+                $('#entityForm .mncBrandTableJsonInputs').append(element);
+
+                console.log(JSON.stringify(objectCost).replace(/"/g, "'"));
+                $('.mncCostTableJsonInputs').html('');
+                var element = $('<input/>').prop('type', 'hidden').prop('name', 'EstimatedOperatingCostForRhq').val(JSON.stringify(objectCost).replace(/"/g, "'"));
+                $('#entityForm .mncCostTableJsonInputs').append(element);
+
+            }
             $('.businessActivitiesJsonInputs').html('');
 
             if ($('#entityForm #licenseTypes').val() !== "6") {
@@ -1821,13 +1924,13 @@ if($("#licenseTypes").val() === "11"){
             $('#rhqManagementFunCheckbox').parents('.form-group').removeClass('has-error');
         }
 
-        if($('#centerAdminRhqRegionsSection').val().length <1){
+        if($('#branchInformationRhqRegionsSection').val().length <1){
             hasErrors = true;
-            $('#centerAdminRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText("Please select atleast 1 options"));
-            $('#centerAdminRhqRegionsSection').parents('.form-group').addClass('has-error');
+            $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText("Please select atleast 1 options"));
+            $('#branchInformationRhqRegionsSection').parents('.form-group').addClass('has-error');
         } else {
-            $('#centerAdminRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
-            $('#centerAdminRhqRegionsSection').parents('.form-group').removeClass('has-error');
+            $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+            $('#branchInformationRhqRegionsSection').parents('.form-group').removeClass('has-error');
         }
 
 
@@ -1876,6 +1979,24 @@ if($("#licenseTypes").val() === "11"){
              $('#rhqCostTable-error').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
              $('#rhqCostTable-error').parents('.form-group').removeClass('has-error');
          }
+
+         if( document.getElementById("entityFinancialStatementFile").files.length == 0 ){
+            hasErrors = true;
+            $('#entityFinancialStatementFile-helper').text(getI18nText("Please add this file"));
+            $('#entityFinancialStatementFile').parents('.form-group').addClass('has-error');
+        }
+        if( document.getElementById("commercialRegMainEntryFile").files.length == 0 ){
+            hasErrors = true;
+            $('#commercialRegMainEntryFile-helper').text(getI18nText("Please add this file"));
+            $('#commercialRegMainEntryFile').parents('.form-group').addClass('has-error');
+        }
+        if( document.getElementById("commercialRegOtherEntryFile").files.length == 0 ){
+            hasErrors = true;
+            $('#commercialRegOtherEntryFile-helper').text(getI18nText("Please add this file"));
+            $('#commercialRegOtherEntryFile').parents('.form-group').addClass('has-error');
+        }
+
+
         }
         //Deenz- JS Validation - End
 
@@ -1953,11 +2074,11 @@ if($("#licenseTypes").val() === "11"){
              })
          }
 if((typeof $("#branchAttachment").attr("style") === 'undefined' || $("#branchAttachment").attr("style").indexOf("display: none") === -1)) {
-             entityForm.find('#mainBranchCRFile, #otherBranchCR1File, #otherBranchCR2File').each(function () {
-            		 if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
-                         hasErrors = true;
-                     }
-             })
+            //  entityForm.find('#mainBranchCRFile, #otherBranchCR1File, #otherBranchCR2File').each(function () {
+            // 		 if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+            //              hasErrors = true;
+            //          }
+            //  })
          }
 
          if((typeof $("#preApprovalNrAttachment").attr("style") === 'undefined' || $("#preApprovalNrAttachment").attr("style").indexOf("display: none") === -1)) {
@@ -1984,32 +2105,32 @@ if((typeof $("#branchAttachment").attr("style") === 'undefined' || $("#branchAtt
 //			console.log("2 error")
 //            hasErrors = true;
 //        }
-		if (entityForm.find('[name=isEntityListedInStockMarket]').filter(':checked').val() === "no" &&
-			entityForm.find('[name=isEntityRevenueMoreThanThreshold]').filter(':checked').val() === "no" &&
-			entityForm.find('[name=isEntityAssetMoreThanThreshold]').filter(':checked').val() === "no" &&
-			entityForm.find('[name=isMoreThan6Branch]').filter(':checked').val() === "no"
-		) {
-			entityForm.find('[name=isEntityListedInStockMarket]').parents('.form-group').addClass('has-error');
-			entityForm.find('[name=isEntityRevenueMoreThanThreshold]').parents('.form-group').addClass('has-error');
-			entityForm.find('[name=isEntityAssetMoreThanThreshold]').parents('.form-group').addClass('has-error');
-			entityForm.find('[name=isMoreThan6Branch]').parents('.form-group').addClass('has-error');
-            self.errorForBranchSectionMandatory();
-		    hasErrors = true;
-			}
-		if(entityForm.find('#branchInformationRhqCountry').val().length < 8){
-        	entityForm.find('[id=branchInformationRhqCountry]').parents('.formSelectBox').find('.help-block').text(getI18nText("validation.rhq.countries.minimum"));
-        	entityForm.find('[id=branchInformationRhqCountry]').parents('.form-group').addClass('has-error');
-			hasErrors = true;
-			}
+		// if (entityForm.find('[name=isEntityListedInStockMarket]').filter(':checked').val() === "no" &&
+		// 	entityForm.find('[name=isEntityRevenueMoreThanThreshold]').filter(':checked').val() === "no" &&
+		// 	entityForm.find('[name=isEntityAssetMoreThanThreshold]').filter(':checked').val() === "no" &&
+		// 	entityForm.find('[name=isMoreThan6Branch]').filter(':checked').val() === "no"
+		// ) {
+		// 	entityForm.find('[name=isEntityListedInStockMarket]').parents('.form-group').addClass('has-error');
+		// 	entityForm.find('[name=isEntityRevenueMoreThanThreshold]').parents('.form-group').addClass('has-error');
+		// 	entityForm.find('[name=isEntityAssetMoreThanThreshold]').parents('.form-group').addClass('has-error');
+		// 	entityForm.find('[name=isMoreThan6Branch]').parents('.form-group').addClass('has-error');
+        //     self.errorForBranchSectionMandatory();
+		//     hasErrors = true;
+		// 	}
+		// if(entityForm.find('#branchInformationRhqCountry').val().length < 8){
+        // 	entityForm.find('[id=branchInformationRhqCountry]').parents('.formSelectBox').find('.help-block').text(getI18nText("validation.rhq.countries.minimum"));
+        // 	entityForm.find('[id=branchInformationRhqCountry]').parents('.form-group').addClass('has-error');
+		// 	hasErrors = true;
+		// 	}
 
-        if(entityForm.find('#branchInformationRhqRegionsSection').val().length < 1){
-         entityForm.find('[id=branchInformationRhqRegionsSection]').parents('.form-group').addClass('has-error');
-          hasErrors = true;
-		}
-		if(entityForm.find('[name=isMoreThan2Branch]').filter(':checked').val() === "no"){
-			self.errorForMoreThan2Branches();
-			 hasErrors = true;
-		}
+        // if(entityForm.find('#branchInformationRhqRegionsSection').val().length < 1){
+        //  entityForm.find('[id=branchInformationRhqRegionsSection]').parents('.form-group').addClass('has-error');
+        //   hasErrors = true;
+		// }
+		// if(entityForm.find('[name=isMoreThan2Branch]').filter(':checked').val() === "no"){
+		// 	self.errorForMoreThan2Branches();
+		// 	 hasErrors = true;
+		// }
 
 
 		}

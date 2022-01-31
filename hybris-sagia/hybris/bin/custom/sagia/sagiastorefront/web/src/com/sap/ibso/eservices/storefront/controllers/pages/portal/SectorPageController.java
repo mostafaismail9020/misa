@@ -205,13 +205,10 @@ public class SectorPageController extends AbstractCategoryPageController {
             sectorIds = new ArrayList<>();
         }
       else {
-        	
         	  for(String sectorId:sectorIds)	{
-        	sectoridlist.add(XSSFilterUtil.filter(sectorId));
-        		  
+        	sectoridlist.add(XSSFilterUtil.filter(sectorId));      		  
         	    }
-        	    LOG.info("encoding sectorids" +sectoridlist);
-			
+        	    LOG.info("encoding sectorids" +sectoridlist);			
         }
 
         SearchPageData<OpportunityData> searchPageData = investSaudiProductFacade.

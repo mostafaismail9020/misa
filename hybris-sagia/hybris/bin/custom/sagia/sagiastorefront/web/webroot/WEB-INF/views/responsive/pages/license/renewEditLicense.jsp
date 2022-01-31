@@ -17,7 +17,7 @@
     var autoRenewalClearance = "${autoRenewalClearance}";
 </script>
 
-<div class="mainSection mainSection">
+<div class="mainSection mainSection bg-white">
 	<div class="achievement_header">
 			<img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
 			<div class="container">
@@ -61,20 +61,14 @@
 <div class="container mainSection mainSection_dark mainSection_noPadding">
 	<div class="m-5">
 		<div class="row w-100">
-            <div class="col-md-3 px-0">
-                <button class="btn btn_round back_to_service btn_leftIconLink">
-                    <icon:arrow_green_right/> Back to All Services
-                    <span class="iconElement iconElement_save"></span>
-                </button>
-            </div>
-            <div class="col-md-3">
-                <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">Service Tabs</a>
-            </div>
+            <div class="col-md-3 col-12 px-0">
+				<a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+			</div>
         </div>
 		<div class="row w-100 d-flex mt-4">
-			<div class="mainSection-linkActions mainSection-linkActions_spaceBetween btn-drafts_list amend-service-link">
+			<div class="mainSection-linkActions mainSection-linkActions_spaceBetween btn-drafts_list amend-service-link amend-btns-list">
 				<!-- <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a> -->
-				<button class="btn btn_round js-save-draft"
+				<button class="btn btn_round js-save-draft ml-0"
 						data-target-form="renewLicenceId"
 						data-service-id="${serviceId}">
 					<spring:theme code="general.savedraft"/>
@@ -92,7 +86,7 @@
 
 
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-3">
 	<div class="container">
 		<c:choose>
 			<c:when test='${reapply}'><c:set value="${encodedContextPath}/my-sagia/license/renew/reapply/${reapplyId}" var="actionUrl"></c:set></c:when>
@@ -100,10 +94,11 @@
 		</c:choose>
 
 		<form:form id="renewLicenceId"  method="post" action="${actionUrl}" modelAttribute="licenseRenewalForm" enctype="multipart/form-data">
-			<div class="panelModule panelModule_halfRadius">
-				<div class="contentModule">
-					<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-						<div class="contentModule-headline headline-text"><icon:locationPin_filled/><spring:theme code="renewlicense.wasseladdress"/></div>
+			<div class="panelModule panelModule_halfRadius mt-3">
+				<div class="contentModule contentModule-wrap">
+					<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap ">
+						<span class="contentModule-headline"><spring:theme code="renewlicense.wasseladdress"/></span>
+						<div class="contentModule-headline-border"></div>
 					</div>
 					<hr class="contentModule-separator">
 					<div class="contentModule-section contentModule-section_paddingSide">
@@ -174,7 +169,7 @@
 					</div>
 
 					<%-- <div class="contentModule-section contentModule-section_paddingSide">
-						<div class="contentModule-headline contentModule-headline_smallMargin  headline-text"><icon:documents/><spring:theme code="general.images"/></div>
+						<span class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="general.images"/></span>
                         <div class="documentModule js-upload-files-list" data-files-name="img">
 
 
@@ -251,8 +246,8 @@
 					</div> --%>
 
 					<div class="contentModule-section contentModule-section_paddingSide">
-						<div class="contentModule-headline contentModule-headline_smallMargin  headline-text"><icon:documents/><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></div>
-                        <div class="documentModule js-upload-files-list" data-files-name="img">
+						<span class="contentModule-headline contentModule-headline_smallMargin "><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></span>
+                        <div class="documentModule contentModule-headline-border js-upload-files-list" data-files-name="img">
 
 
 
@@ -286,8 +281,8 @@
 
 
 					<div class="contentModule-section contentModule-section_paddingSide">
-						<div class="contentModule-headline contentModule-headline_smallMargin  headline-text"><icon:documents/><spring:theme code="text.account.followup.supportDocuments"/></div>
-						<div class="row">
+						<span class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="text.account.followup.supportDocuments"/></span>
+						<div class="row contentModule-headline-border">
 							<div class="col-md-6">
 								<c:choose>
 									<c:when test="${reapply}">

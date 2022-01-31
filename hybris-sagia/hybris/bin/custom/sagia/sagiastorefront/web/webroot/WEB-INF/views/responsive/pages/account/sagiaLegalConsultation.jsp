@@ -19,7 +19,7 @@
     <input type="hidden" id="serviceId" value="${latestLegalConsultation.srId}"/>
 </c:if>
 
-<div class="mainSection mainSection">
+<div class="mainSection mainSection bg-white">
     <div class="achievement_header">
         <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
         <div class="container">
@@ -115,11 +115,13 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class=" row renewal-services w-100">
                 <div class="col-md-3 col-12 px-0">
-                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
+                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
-                <div class="col-xl-3 col-12">
-                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')">Show Service Tabs</button>
-                </div>
+                <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                    <div class="col-xl-3 col-12">
+                        <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+                    </div>
+                </c:if>
                 <div class="col-xl-3 col-12">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
                         <div>
@@ -143,11 +145,11 @@
 </div>
 <div class="container">
     <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
-        <div class="hidden "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> Show Service Overview</div>
-        <div class=""><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span>Hide Service Overview</div>
+        <div class="hidden "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="service.overview.show"/></div>
+        <div class=""><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
     </button>
 </div>
-<div class="container service-wrapper service-wrapper-info" id="expand-03">
+<div class="container service-wrapper service-wrapper-info mb-5" id="expand-03">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -235,7 +237,7 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 service-main">
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
     <div class="container">
         <c:if test="${fn:length(legalConsultations) gt 1}">
             <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand02">

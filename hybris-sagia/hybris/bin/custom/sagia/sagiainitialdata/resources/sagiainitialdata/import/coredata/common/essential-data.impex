@@ -117,13 +117,13 @@ INSERT_UPDATE Governmentlead ;code[unique=true];name
 ;Z02;Pre-feasibility Study
 ;Z06;Opportunity Finalization
 ;Z07;Campaign Ready
-;NA;NA
+;NA;Not Applicable
 
 INSERT_UPDATE Investorlead ;code[unique=true];name
 ;Z08;Identify Opportunity & Proposal
 ;Z02;Pre-feasibility Study
 ;Z06;Opportunity Finalization
-;NA ; NA
+;NA ; Not Applicable
 
 INSERT_UPDATE PartnerType ;code[unique=true];name
 ;Enabler;Enabler

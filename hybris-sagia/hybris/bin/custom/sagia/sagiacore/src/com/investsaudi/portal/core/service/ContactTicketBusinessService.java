@@ -3,6 +3,7 @@ package com.investsaudi.portal.core.service;
 import com.investsaudi.model.OpportunityUserEmailProcessModel;
 import com.investsaudi.portal.core.model.ContactTicketModel;
 import com.sap.ibso.eservices.core.constants.SagiaCoreConstants;
+import com.sap.ibso.eservices.core.model.ScpiOutCsCustomerEventProcessModel;
 import de.hybris.platform.cms2.servicelayer.services.CMSSiteService;
 import de.hybris.platform.comments.services.CommentService;
 import de.hybris.platform.core.model.user.CustomerModel;
@@ -143,5 +144,18 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
 
         getModelService().save(opportunityUserEmailProcessModel);
         businessProcessService.startProcess(opportunityUserEmailProcessModel);
+    }
+	
+	public void customerEvent2SCPI(CsCustomerEventModel customerEvent){
+        if (Config.getBoolean("customerEvent.scpi.interface.enable", true)) {
+            final ScpiOutCsCustomerEventProcessModel scpiOutCsCustomerEventProcessModel =
+                    (ScpiOutCsCustomerEventProcessModel) businessProcessService
+                    .createProcess("scpiOutCsCustomerEventProcess-" + customerEvent.getCode()
+                            + "-" + System.currentTimeMillis(), "scpiOutCsCustomerEventProcess");
+            scpiOutCsCustomerEventProcessModel.setCsCustomerEvent(customerEvent);
+            getModelService().save(scpiOutCsCustomerEventProcessModel);
+            businessProcessService.startProcess(scpiOutCsCustomerEventProcessModel);
+            sessionService.setAttribute("partnerSystem",null);
+        }
     }
 }

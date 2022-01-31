@@ -1,23 +1,13 @@
 
 package com.investsaudiportal.scpi.outbound.services;
 
-import com.investsaudiportal.scpi.outbound.actions.SendLeadTicketToScpiAction;
-import de.hybris.platform.comments.model.CommentAttachmentModel;
-import de.hybris.platform.core.model.media.MediaModel;
-import de.hybris.platform.sap.sapcpiadapter.model.SAPCpiOutboundB2BCustomerModel;
 import de.hybris.platform.sap.sapcpiadapter.service.SapCpiOutboundService;
 import de.hybris.platform.sap.sapcpiadapter.service.impl.SapCpiOutboundServiceImpl;
-import de.hybris.platform.servicelayer.media.MediaService;
-import de.hybris.platform.ticket.events.model.CsTicketEventModel;
+import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import de.hybris.platform.ticket.model.CsTicketModel;
-import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.ResponseEntity;
-import rx.Observable;
 
-import javax.annotation.Resource;
-import java.util.*;
 
 public class ScpiOutboundServiceImpl extends SapCpiOutboundServiceImpl {
 
@@ -26,6 +16,9 @@ public class ScpiOutboundServiceImpl extends SapCpiOutboundServiceImpl {
     // Lead Ticket Outbounds
     private static final String OUTBOUND_LEAD_TICKET_OBJECT = "LeadTicket";
     private static final String OUTBOUND_LEAD_TICKET_DESTINATION = "scpiLeadTicketDestination";
+	 private static final String OUTBOUND_CUSTOMER_EVENT_OBJECT = "CsCustomerEvent";
+    private static final String OUTBOUND_CUSTOMER_EVENT_DESTINATION = "scpiCsCustomerEventDestination";
+
 
     public void sendLeadTicket(CsTicketModel leadTicket) {
 
@@ -51,6 +44,28 @@ public class ScpiOutboundServiceImpl extends SapCpiOutboundServiceImpl {
                             leadTicket.getTicketID(), error.getMessage(), error);
                 }
 
+        );
+    }
+	
+	public void sendCsCustomerEvent(CsCustomerEventModel csCustomerEvent) {
+        getOutboundServiceFacade().send(csCustomerEvent, OUTBOUND_CUSTOMER_EVENT_OBJECT, OUTBOUND_CUSTOMER_EVENT_DESTINATION).subscribe(
+                // onNext
+                responseEntityMap -> {
+                    if (SapCpiOutboundService.isSentSuccessfully(responseEntityMap)) {
+
+                        LOG.info("CsCustomerEvent [{}] has been sent to C4C through SCPI! {}",
+                                csCustomerEvent.getCode(), SapCpiOutboundService.getPropertyValue(responseEntityMap, RESPONSE_MESSAGE));
+                    } else {
+
+                        LOG.error("CsCustomerEvent  [{}] has not been sent to C4C! {}",
+                                csCustomerEvent.getCode(), SapCpiOutboundService.getPropertyValue(responseEntityMap, RESPONSE_MESSAGE));
+                    }
+                }
+                // onError
+                , error -> {
+                    LOG.error("CsCustomerEvent [{}] has not been sent to C4C through SCPI! {}",
+                            csCustomerEvent.getCode(), error.getMessage(), error);
+                }
         );
     }
 }

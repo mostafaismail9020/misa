@@ -84,6 +84,13 @@
 
 	<bean id="defaultScpiOutboundService" class="com.investsaudiportal.scpi.outbound.services.ScpiOutboundServiceImpl" parent="sapCpiDefaultOutboundService">
 	</bean>
+	
+	<bean id="scpiOutCsCustomerEventProcessDefResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+		<property name="resource" value="classpath:/investsaudiportalscpi/processes/scpiOutCsCustomerEventProcess.xml"/>
+	</bean>
+
+	<bean id="sendCsCustomerEventToScpiAction" class="com.investsaudiportal.scpi.outbound.actions.SendCsCustomerEventToScpiAction" parent="abstractAction"/>
+
 
 			
 </beans>

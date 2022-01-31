@@ -576,9 +576,9 @@
                         </div>
 					</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" id="jqInstantRenewalSubmit" class="btn btn_slim" data-dismiss="modal"><spring:theme code="general.submit"/></button>
-				<button type="button" class="btn btn-secondary js-cancel-create-realEstate" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
+			<div class="modal-footer1 mb-3">
+				<button type="button" class="btn btn-outline js-cancel-create-realEstate" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
+				<button type="button" id="jqInstantRenewalSubmit" class="btn btn-primary" data-dismiss="modal"><spring:theme code="general.submit"/></button>
 
 			</div>
 

@@ -180,8 +180,8 @@
             <form action="" class="js-formInputFileBox">
                 <div class="modal-header modal-header_smallPDB">
                     <div class="modal-title"><spring:message code="text.logout.title"/></div>
-                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-                        <icon:close/>
+                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"> 
+                        <svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"></path></svg>
                     </button>
                 </div>
                 <div class="modal-body">

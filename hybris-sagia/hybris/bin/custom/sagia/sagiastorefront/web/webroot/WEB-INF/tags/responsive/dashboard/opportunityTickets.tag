@@ -54,7 +54,7 @@
 											</td>
 											<td>${leadTickets.message}</td>
 											<td>${leadTickets.state}</td>
-											<td><a href="/potentialOpportunity/${leadTickets.ticketID}" class="link dashboardWidgetTickets-btn"><spring:theme code="dashboard.ticket.details"/></a></td>
+											<td><a href="/potentialOpportunity/${leadTickets.ticketID}" class="link dashboardWidgetTickets-btn dashboard-detail-text"><spring:theme code="dashboard.ticket.details"/></a></td>
 											<!-- <td>
 												<a href="javascript:void(0)" class="link dashboardWidgetTickets-btn"><spring:theme code="dashboard.ticket.details"/></a>
 													<div class="dashboardWidgetTickets-count">1</div>

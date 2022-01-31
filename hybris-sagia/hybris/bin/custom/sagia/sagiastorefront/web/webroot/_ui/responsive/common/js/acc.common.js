@@ -159,7 +159,7 @@ function acceptNewLinceseTCAction(){
 
 
 
-$(document).on('focus blur change keyup', '.form-control', function (e) { 
+$(document).on('focus blur change keyup', '.text', function (e) { 
     var $currEl = $(this); 
     $currEl.parent().addClass('focus-on-change'); 
 

@@ -56,8 +56,6 @@
                                 <dd id="sagiaProfilePersonalFormSectorName"></dd>
                                 <dt><spring:theme code="general.mobilenumber"/></dt>
                                 <dd id="sagiaProfilePersonalFormMobileNumber"></dd>
-                                <dt><spring:theme code="general.companyWebsite"/></dt>
-                                <dd id="sagiaProfilePersonalFormCompanyWebsite"></dd>
 
                             </dl>
                         </div>
@@ -70,6 +68,8 @@
                                 <dd id="sagiaProfilePersonalFormCompany"></dd>
                                 <dt><spring:theme code="general.countrycode"/></dt>
                                 <dd id="sagiaProfilePersonalFormMobileCountryCode"></dd>
+                                <dt><spring:theme code="general.companyWebsite"/></dt>
+                                <dd id="sagiaProfilePersonalFormCompanyWebsite"></dd>
                             </dl>
                         </div>
                     </div>

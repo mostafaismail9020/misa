@@ -77,7 +77,7 @@
                 </div>
                 <c:if test="${pageIsDashboard}">
                     <div class="tableModule-headline">
-                        <a href="" data-redirect="service-requests-overview" class="js-page-redirect">
+                        <a href="" data-redirect="service-requests-overview" class=" btn-dashboard btn-view-all js-page-redirect ">
                             <spring:theme code="dashboard.viewall" text="View all"/>
                         </a>
                     </div>

@@ -614,4 +614,87 @@ INSERT_UPDATE SagiaCategory	; code[unique = true]	; label ; services(code)		;
 							
 							; 5						; SAGIA SERVICES		; ZFLUP_02,ZSVR,ZFLUP_03;
 
-							   
+
+#Production Data
+
+UPDATE SagiaCategory       ; code[unique = true]  ; name[lang = $langen]                               ; categoryUrl ;
+                           ; 7                    ; Rules & Regulation Advisory                        ; caturl      ;
+                           ; 6                    ; Government Data Update Service                     ; caturl      ;
+                           ; 4                    ; Property Ownership and Sale                        ; caturl      ;
+                           ; 2                    ; MISA Special Services                              ; caturl      ;
+                           ; 5                    ; Follow Up Services                                 ; caturl      ;
+                           ; 3                    ; Financial Statement                                ; caturl      ;
+                           ; labour               ; Ministry of Human Resource and Social Development  ; ZMOL        ;
+                           ; commerceAndIndustry  ; Ministry of Commerce                               ; ZMOCI       ;
+                           ; interiorAndPassport  ; General Department of Passports                    ; ZMOIP       ;
+                           ; 1                    ; Licensing Services                                 ; caturl      ;
+
+							
+
+INSERT_UPDATE SagiaServiceTab; code[unique = true] ; content[lang = $langen]                                                                                                                                                                       ; largeContent[lang = $langen]                                                                                                                                                                      ; title[lang = $langen]          ;
+                             ; 20                  ; "<h2> Forms </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831421841438&attachment=true"" style=""font-size: 14px""> Download Form </a>"                                                                ; "<h2> Conversion of company of one person from sole establishment to company </h2> <a target=""_blank"" href=""https://eservices.sagia.gov.sa/medias/Attachment-1.doc?context=bWFzdGVyfHJvb3R8ODI0MzJ8YXBwbGljYXRpb24vbXN3b3JkfGgyMS9oZmYvODg4OTAyNTkyMTA1NC5kb2N8ZWNiZjliYTVkZGE2MjhkZjE1NzdhOTE1MWFjNTc4OTFiZDA2YTVkMDE1NGJhYjg4ZjMyYjNlMDE4NWYwYmRhYQ&attachment=true"" style=""font-size: 14px""> Download Form </a>   <h2> Limited Liability company </h2> <a target=""_blank"" href=""https://eservices.sagia.gov.sa/medias/Attachment-2.docx?context=bWFzdGVyfHJvb3R8MzI1MTN8YXBwbGljYXRpb24vdm5kLm9wZW54bWxmb3JtYXRzLW9mZmljZWRvY3VtZW50LndvcmRwcm9jZXNzaW5nbWwuZG9jdW1lbnR8aDQ2L2gxYS84ODg5MDI2NTEwODc4LmJpbnw1YTNhMDA0NGMwYWRmM2UxNzdjM2NhMGQ5YWFjNDBjNWNlMDFiNTc3NmQ4ZGEzYzZiNDI2MjA5YWE3ODAxZDk1&attachment=true"" style=""font-size: 14px""> Download Form </a>   <h2> Company of one person </h2> <a target=""_blank"" href=""https://eservices.sagia.gov.sa/medias/Attachment-3.doc?context=bWFzdGVyfHJvb3R8ODI5NDR8YXBwbGljYXRpb24vbXN3b3JkfGhhMi9oZDUvODg4OTAyNjgzODU1OC5kb2N8YWYzMDQ0N2FkYWJhYzRmZjkwNjM4MjZkMGY0ZTVlMDEyMmE4NGJjODNiYTVkZWQ4OTg4NDE5MjJhMDc5NTdkYw&attachment=true"" style=""font-size: 14px""> Download Form </a> ";Forms;
+                             ; 52                  ; "<iframe width=""560"" height=""315"" src=""https://www.youtube.com/embed/9nucPYIuAwE"" frameborder=""0"" allow=""accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"" allowfullscreen></iframe>"                 ; "<iframe width=""560"" height=""315"" src=""https://www.youtube.com/embed/9nucPYIuAwE"" frameborder=""0"" allow=""accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"" allowfullscreen></iframe>"                                                           ;  Service Video                  ;
+							 ; 16                  ; "<h2> Trade name reservation </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831422627870&attachment=true"" style=""font-size: 14px""> Click Here </a>"         ; "<h2> Trade name reservation </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831422627870&attachment=true"" style=""font-size: 14px""> Click Here </a>"             ; Trade name reservation         ;
+                             ; 18                  ; "<h2> Service Request form </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831421841438&attachment=true"" style=""font-size: 14px""> Click Here </a>"           ; "<h2> Service Request form </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831421841438&attachment=true"" style=""font-size: 14px""> Download Form </a>"            ; Service Request Form           ;
+                             ; 13                  ;                                                                                                                                                                                                                                        ;                                                                                                                                                                                                                                                                                  ;  Attachments                    ;
+                             ; 12                  ; "<h2> Assigning account manager form </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831301091358&attachment=true"" style=""font-size: 14px""> Click Here </a>"                                          ; "<h2> Assigning account manager form </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831301091358&attachment=true"" style=""font-size: 14px""> Click Here </a>"                                                                                    ;  Attachments                    ;
+                             ; 11                  ; "<h2> To know more about this Service please check the Investor manual </h2> <a target=""_blank"" href=""https://misa.gov.sa/media/1279/misa-service-manual-v2-8th-edition-en-v6.pdf"" style=""font-size: 14px""> Click Here </a> "    ; "<h2> To know more about this Service please check the Investor manual </h2> <a target=""_blank"" href=""https://misa.gov.sa/media/1279/misa-service-manual-v2-8th-edition-en-v6.pdf"" style=""font-size: 14px""> Click Here </a>"                                               ;  Service Details                ;
+
+
+UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	                                                           ; tabs(code)
+							; ZMOCI_22										; Ministry of commerce service forms;	
+							; ZMOIP_23										; Transfer KAFALA for GM of Branch of foreigner comp;	
+							; ZMOIP_21										; Wavier of Son or daughter;	
+							; ZMOIP_18										; Cancellation of Iqama for Person who has leaved and has not returned;	
+							; ZMOIP_17										; Issuance of replacement Copy of Damaged Passport;	
+							; ZMOIP_15										; Dismissal of an Subordinates Holding Separate Iqama;	
+							; ZMOIP_14										; Amendment of Entity Name;	
+							; ZMOIP_13										; Amendment of Passport Data modification;	
+							; ZMOIP_12										; Extension of Travel Visa Period;	
+							; ZMOIP_10										; Exit and Return Visa for Accompaniers;	
+							; ZMOIP_11										; Cancellation of Exit and Return Visa;	
+							; ZMOIP_09										; Issuance of replacement Copy of Damaged Iqama;	
+							; ZMOIP_08										; Addition of Subordinates to Paterfamilias;	                                        11, 52
+							; ZMOIP_07										; Issuance of Iqama for Private Driver or Maid;	
+							; ZMOIP_06										; Sponsorship Transfer and Profession Amendment for General Manager of Foreign Companies Branch;	
+							; ZMOIP_02										; Renewal of Iqama;	
+							; ZMOIP_05										; Information transfer;	
+							; ZMOIP_03										; Exit and Return Visa;	
+							; ZMOIP_01										; Issuance of New Iqama;	
+							; ZMOIR_02										; Recruitment of High Professionsâ€™ Families;	
+							; ZMOIR_01										; Recruitment for investors Families;	
+							; ZMOL_03										; Transfer of an Expatriate's Services;	
+							; ZMOL_11										; Data Updating;	
+							; ZMOCI_21										; Registration of Company Branch;	
+							; ZMOCI_20										; Conversion of Commercial Registration from Sole establishment to Company;	
+							; ZMOCI_19										; Renewal of Est.'s Commercial Register;	
+							; ZMOCI_18										; Renewal of Commercial Registration for Companies;	
+							; ZMOCI_17										; Issuance of Commercial Registration for Company;	
+							; ZMOCI_15										; Study of a New Company's Memorandum of Association;	
+							; ZMOCI_11										; Changing the Establishment's address;	
+							; ZMOCI_09										; Amendment of a Establishment's CR;	
+							; ZMOCI_10										; Changing the Company's Address;	
+							; ZMOCI_08										; Amendment of a Company's Commercial Register;	
+							; ZMOCI_07										; Registration of a new Est.'s branch;	
+							; ZMOCI_03										; Replacement of Company's damaged CR;	
+							; ZMOCI_04										; Replacement of Est.'s Damaged CR;	
+							; ZMOCI_05										; Replacement of Company's Lost CR;	
+							; ZMOCI_02										; Issuance of a New CR for Establishment;	
+							; ZS20											; Rules and regulations;	
+							; ZSR5											; Amendment Of License;	
+							; ZSVR											; Support Visits;	
+							; ZS14											; Government Documents;	
+							; ZFLUP_03										; Extension of The Written Notification Deadline;	
+							; ZFLUP_02										; Reply to the Written Notification;	
+							; ZRES											; Buy and sell Real Estate;	
+							; ZSR6											; Voluntary Cancellation of License;	
+							; ZS11											; Financial Statement;	
+							; ZSR9											; Cancellation Support Letter;	
+							; ZSR1											; Investor Information Update;	
+							; ZSR7											; Conversion of a Foreign Entity to a 100% National Entity;	
+							; ZSR4											; Renewal of License;	
+							; ZSPLJAWA03									; Transfer of Sponsorship of the Foreign Investor;	
+							; ZSPLJAWA01									; Exit-Re-Entry Visas of the Investor whose License is Cancelled;	
+							; ZSPLJAWA04									; Final Exit of the Investor whose License is Cancelled;	
+							; ZSPLJAWA02									; Renewal of Residence Permit of the Investor whose License is Cancelled;	
+							   							   

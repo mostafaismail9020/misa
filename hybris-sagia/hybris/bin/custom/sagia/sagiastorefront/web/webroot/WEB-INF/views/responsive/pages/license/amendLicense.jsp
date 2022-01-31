@@ -1,5 +1,6 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -9,13 +10,10 @@
 <%--<%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>--%>
 
 <script>
-	var configuredFileSize = $
-	{
-		maxUploadSize
-	};
+	var configuredFileSize = ${maxUploadSize};
 </script>
 
-<div class="mainSection mainSection">
+<div class="mainSection bg-white">
 	<div class="achievement_header">
 			<img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
 			<div class="container">
@@ -91,21 +89,23 @@
 		<div class="m-5">
 			<div class="row w-100 renewal-services">
 				<div class="col-md-3 col-12 px-0">
-                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
+                    <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
-                <div class="col-xl-3 col-12">
-                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')">Show Service Tabs</button>
-                </div>
+				<c:if test="${fn:length(sagiaService.tabs) > 0}">
+					<div class="col-xl-3 col-12 ml-1">
+						<button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+					</div>
+				</c:if>
 			</div>
 			<div class="row w-100 d-flex mt-4	">
 				<div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
-					<div class="col-xl-3 col-12">
-						<button id="saveDraftBtnId" class="btn btn_round">
+					<div class="col-xl-12 col-12 amend-btns-list">
+						<button id="saveDraftBtnId" class="btn btn_round btn_slim">
 							<spring:theme code="general.savedraft" />
 							<span class="iconElement iconElement_save"><icon:save /></span>
 						</button>
-					</div>
-					<div class="col-xl-6 col-12 amend-btns-list">
+					<!-- </div>
+					<div class="col-xl-6 col-12 amend-btns-list"> -->
 						<button id="loadDraftBtnId"
 							class="btn btn_round btn_slim js-load-draft"
 							<c:if test="${!draftExists}">style="display: none"</c:if>>
@@ -117,20 +117,20 @@
 			</div>
 		</div>
 	</div>
-	<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
-		<div class="container">
+	<div class="container mainSection mainSection_dark mainSection_pdt16 service-main">
+		<div class="">
 			<div class="expandableContent" id="service-tab">
 				
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container ml-4">
 		<button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
-			<div class="hidden "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> Show Service Overview</div>
-			<div class=""><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span>Hide Service Overview</div>
+			<div class="hidden "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
+			<div class=""><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
 		</button>
 	</div>
-	<div class="service-wrapper service-wrapper-info w-100" id="expand-03">
+	<div class="service-wrapper service-wrapper-info mb-5  w-100 mx-5" id="expand-03">
 		<div class="serviceModule serviceModule_list mx-5 pt-4">
 			<div class="serviceModule-section">
 				<div class="serviceModule-content">
@@ -224,12 +224,12 @@
 		</div>
 	</div> -->
 	<!-- <div class="mainSection mainSection_white mainSection_narrow mainSection_xsmallPaddingTop service-request service-wrapper service-wrapper-info mw-100 w-100 mt-5 mb-3"> -->
-		<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 mb-3 service-main">
-		<div class="container">
+		<div class="container mainSection mainSection_dark mainSection_pdt16 mb-3 ml-4 service-main">
+		<div class="">
 			<div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
 				<button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
-					<div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
-					<div><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+					<div ><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+					<div class="hidden"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
 				</button>
 			</div>
 
@@ -239,7 +239,7 @@
 						<div class="contentModule">
 							<div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
 								<div class="contentModule-headline contentModule-headline-history">
-									<span class="iconElement iconElement_history"><icon:history /></span>
+									<!-- <span class="iconElement iconElement_history"><icon:history /></span> -->
 									<spring:theme code="text.account.followup.history" />
 								</div>
 								<div class="searchInputBox searchInputBox_slim">
@@ -331,7 +331,7 @@
 								<div
 									class="contentModule-actions contentModule-actions_spaceBetween">
 									<button type="button"
-										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn full-width-responsive">
+										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
 									</button>
 									<button id="nextTabEntityBtnId" type="button"
@@ -389,7 +389,7 @@
 							<div
 								class="contentModule-actions contentModule-actions_spaceBetween">
 								<button type="button"
-									class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn full-width-responsive">
+									class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 									<spring:theme code="general.cancel" />
 								</button>
 								<button id="nextTabIsicBtnId" type="button"
@@ -453,7 +453,7 @@
 																		<spring:theme code="general.cancel" />
 																	</button>
 																	<button type="button"
-																		class="btn btn_slim removeShareholderBtn">
+																		class="btn btn_slim removeShareholderBtn mt-2">
 																		<spring:theme code="general.delete" />
 																	</button>
 																</div>
@@ -478,7 +478,7 @@
 								<div
 									class="contentModule-actions contentModule-actions_spaceBetween">
 									<button type="button"
-										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn full-width-responsive">
+										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
 									</button>
 									<button id="nextTabShareholdersBtnId" type="button"
@@ -530,7 +530,7 @@
 																	<spring:theme code="general.cancel" />
 																</button>
 																<button type="button"
-																	class="btn btn_slim removeBranchBtn">
+																	class="btn btn_slim removeBranchBtn mt-2">
 																	<spring:theme code="general.delete" />
 																</button>
 															</div>
@@ -572,7 +572,7 @@
 								<div
 									class="contentModule-actions contentModule-actions_spaceBetween">
 									<button type="button"
-										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn full-width-responsive">
+										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
 									</button>
 									<button id="nextTabBranchesBtnId" type="button"
@@ -651,7 +651,7 @@
 								<div
 									class="contentModule-actions contentModule-actions_spaceBetween">
 									<button type="button"
-										class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn full-width-responsive">
+										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
 									</button>
 									<button type="button"
@@ -719,7 +719,7 @@
 					<div
 						class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
 						<button type="button"
-							class="btn btn-slim btn_outline cancelShareholderBtn"
+							class="btn btn-sector-outline mx-auto cancelShareholderBtn"
 							data-dismiss="modal">
 							<spring:theme code="general.cancel" />
 						</button>
@@ -740,8 +740,8 @@
 					<div class="contentModule-headline">
 						<spring:theme code="license.shareholder" />
 					</div>
-					<div id="shareholderNewExistingTypeId" class="row">
-						<div class="col-md-8">
+					<div id="shareholderNewExistingTypeId" class="row amend-shareholder-wrapper">
+						<div class="col-md-12">
 							<div class="formRadioBox">
 								<div class="form-group">
 									<div class="form-item">
@@ -765,8 +765,8 @@
 						</div>
 					</div>
 
-					<div id="shareholderPersonEntityTypeId" class="row">
-						<div class="col-md-8">
+					<div id="shareholderPersonEntityTypeId" class="row amend-shareholder-wrapper">
+						<div class="col-md-12">
 							<div class="formRadioBox">
 								<div class="form-group">
 									<div class="form-item">
@@ -850,10 +850,9 @@
 								</div>
 							</div>
 							<div class="col-md-6" id="nicShareholderVerifyBtnSection">
-								<a style="margin-top: 15px" class="btn"
-									id="verifyShareholderDetailsShow" data-nic-verified="false"><spring:theme
-										code="license.apply.shareholder.verify" /></a> <input
-									type="checkbox" id="isShareholderNicVerified"
+								<a style="margin-top: 15px" class="btn btn_slim btn-bg btn_bold btn-normal w-auto"
+									id="verifyShareholderDetailsShow" data-nic-verified="false"><spring:theme code="license.apply.shareholder.verify" /></a> 
+									<input type="checkbox" id="isShareholderNicVerified"
 									name="delegateInfo.shareholderNicVerified" value="true"
 									class="hidden"
 									${data.delegateInfo.shareholderNicVerified ? "checked=checked" : 0}>
@@ -877,7 +876,7 @@
 							<%--Entity shareholder--%>
 							<div id="entityShareholderId">
 								<div class="row" id="companyVerificationSection">
-									<div class="col-md-6">
+									<div class="col-md-6 mt-3">
 										<div class="formInputBox">
 											<div class="form-group">
 												<select id="companyCountry" name="companyCountry"
@@ -1037,7 +1036,7 @@
 							</div>
 
 							<%--Individual shareholder--%>
-							<div id="individualShareholderId" class="row">
+							<div id="individualShareholderId" class="row mt-3">
 								<div class="col-md-6">
 									<div class="formInputBox">
 										<div class="form-group">
@@ -1206,7 +1205,7 @@
 									<spring:theme code="license.inheritverification" />
 								</div>
 
-								<div class="row">
+								<div class="row mt-3">
 									<div class="col-md-4">
 										<div class="formInputBox">
 											<div class="form-group">
@@ -1261,7 +1260,7 @@
 							</div>
 
 							<div id="shareholderAddressId" class="row">
-								<div class="col-md-6">
+								<div class="col-md-6 mt-3">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderCountryId" name="shareholderCountry"
@@ -1372,34 +1371,34 @@
 							<div id="delegateDivSection" style="display: none">
 								<div class="contentModule-section">
 									<div class="contentModule-separator"></div>
-									<div
-										class="contentModule-headline contentModule-headline_smallMargin">
-										<spring:theme code="license.apply.shareholder.delegate" />
-										<a class="btn btn_link js-tip" style="padding-top: 10px;"
-											data-container="body" data-tip-id="delegateToolTip"
-											data-tip-class="delegateToolTip" data-trigger="click"><spring:theme
-												code="text.account.profile.license.shareholders.tooltip.heading" /></a>
-										<div class="tooltip_content" id="delegateToolTip">
-											<h2>
-												<span><spring:theme
-														code="text.account.profile.license.shareholders.tooltip.heading" /></span>
-											</h2>
-											<p style="margin: 10px">
-												<spring:theme
-													code="text.account.profile.license.shareholders.tooltip.body" />
-											</p>
+									<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
+										<span class="contentModule-headline contentModule-headline_small "> <spring:theme code="license.apply.shareholder.delegate" /></span>
+										<div class="row mt-3">
+											<a class="btn btn_link js-tip btn-tooltip" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip" data-tip-class="delegateToolTip" data-trigger="click">
+												<spring:theme code="text.account.profile.license.shareholders.tooltip.heading" />
+											</a>
+											<div class="tooltip_content service_tooltip_content" id="delegateToolTip">
+												<h2>
+													<span><spring:theme
+															code="text.account.profile.license.shareholders.tooltip.heading" /></span>
+												</h2>
+												<p >
+													<spring:theme code="text.account.profile.license.shareholders.tooltip.body" />
+												</p>
+											</div>
 										</div>
 									</div>
+
 									<div id="delegateSection">
 										<div class="formRadioBox-wrapper" id="showDelegateQuestion"
 											${shareholderType eq "Organization" ? 'style="display: none"' : ''}>
 											<div class="row">
-												<div class="col-md-6">
+												<div class="col-md-12">
 													<span><spring:theme
 															code="text.account.profile.license.shareholders.isDelegate" /></span>
 												</div>
-												<div class="col-md-6">
-													<div class="formRadioBox">
+												<div class="col-md-12">
+													<div class="formRadioBox deligate-info-form">
 														<div class="form-group">
 															<div class="form-item">
 																<input type="radio" name="delegateInfo.delegateYourself"
@@ -1412,7 +1411,7 @@
 															<div class="form-item">
 																<input type="radio" name="delegateInfo.delegateYourself"
 																	id="hasDelegateNO" value="false" class="form-control"
-																	${not empty data.delegateInfo && data.delegateInfo.delegate != false && data.delegateInfo.delegateYourself eq false ? 'checked="checked"' : ''} />
+																	${not empty data.delegateInfo && data.delegateInfo.delegate != false && data.delegateInfo.delegateYourself eq false ? 'checked="checked"' : 'checked'} />
 																<label for="hasDelegateNO" id="hasDelegateNOLabel"
 																	class="control-label"><spring:theme
 																		code="text.account.profile.license.shareholders.hasDelegate.no" /></label>
@@ -1430,12 +1429,12 @@
 															code="text.account.profile.license.shareholders.que.wantdelegate" /></span>
 												</div>
 												<div class="col-md-6">
-													<div class="formRadioBox">
+													<div class="formRadioBox deligate-info-form">
 														<div class="form-group">
 															<div class="form-item">
 																<input type="radio" name="delegateInfo.delegateYourself"
 																	id="hasDelegateYES" value="true" class="form-control"
-																	${not empty data.delegateInfo && data.delegateInfo.delegate != false && data.delegateInfo.delegateYourself eq true ? 'checked="checked"' : ''} />
+																	${not empty data.delegateInfo && data.delegateInfo.delegate != false && data.delegateInfo.delegateYourself eq true ? 'checked="checked"' : 'checked'} />
 																<label for="hasDelegateYES" id="hasDelegateYESLabel"
 																	class="control-label"><spring:theme
 																		code="text.account.profile.license.shareholders.hasDelegate.no" /></label>
@@ -1507,7 +1506,7 @@
 													</div>
 												</div>
 												<div class="col-md-6" id="nicVerifyBtnSection">
-													<a style="margin-top: 15px" class="btn"
+													<a style="margin-top: 15px" class="btn "
 														id="verifyDetailsShow" data-nic-verified="false"><spring:theme
 															code="license.apply.shareholder.verify" /></a> <input
 														type="checkbox" id="isNicVerified"
@@ -1789,7 +1788,7 @@
 						<div
 							class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
 							<button type="button"
-								class="btn btn-slim btn_outline cancelShareholderBtn"
+								class="btn btn-sector-outline mx-auto cancelShareholderBtn"
 								data-dismiss="modal">
 								<spring:theme code="general.cancel" />
 							</button>
@@ -1989,7 +1988,7 @@
 						<spring:theme code="general.edit" />
 					</div>
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-12">
 							<div class="formSelectBox">
 								<div class="form-group">
 									<select id="productId" name="productId"

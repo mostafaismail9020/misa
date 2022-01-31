@@ -324,8 +324,8 @@
     </div>
 </section>
 <section class="container mainSection_noPaddingTop js-dashboard">
-    <div class="container">
-        <div class="Inc-title-header pt-5">
+    <div class="container row">
+        <div class="Inc-title-header pt-5 col-12">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
                 <c:if test="${language eq 'en'}">
                     LICENSES
@@ -335,7 +335,9 @@
                 </c:if>
             </h1>
 		</div>
-        <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-5"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
+        <div class="col-12">
+            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-5"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
+        </div>
     </div>
 </section>
 
@@ -498,7 +500,7 @@
                                             </div>
                                             <c:if test="${pageIsDashboard}">
                                                 <div class="tableModule-headline">
-                                                    <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect">
+                                                    <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="btn-dashboard btn-view-all js-page-redirect">
                                                         <spring:theme code="dashboard.viewall" text="View all"/>
                                                     </a>
                                                 </div>
@@ -951,7 +953,7 @@
         <td class="ticketNumber"></td>
         <td><div class="dashboardWidgetTickets-status-open"></div></td>
         <td>
-            <a href="javascript:void(0)" class="link dashboardWidgetTickets-btn"><spring:theme code="dashboard.ticket.details"/></a>
+            <a href="javascript:void(0)" class="link dashboardWidgetTickets-btn dashboard-detail-text"><spring:theme code="dashboard.ticket.details"/></a>
             <div class="dashboardWidgetTickets-count">1</div>
         </td>
     </tr>

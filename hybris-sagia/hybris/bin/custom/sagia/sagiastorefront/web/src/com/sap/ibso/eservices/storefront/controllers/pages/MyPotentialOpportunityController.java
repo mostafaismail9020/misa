@@ -12,10 +12,7 @@ import com.sap.ibso.eservices.storefront.forms.SagiaServiceRequestForm;
 import com.sap.ibso.eservices.core.enums.IncidentCategory;
 import com.sap.ibso.eservices.core.enums.ServiceCategory;
 import com.sap.ibso.eservices.core.enums.Priority;
-import de.hybris.platform.ticket.enums.CsEventReason;
-import de.hybris.platform.ticket.enums.CsInterventionType;
-import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
-import de.hybris.platform.ticket.model.CsTicketModel;
+import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.ticket.strategies.TicketEventStrategy;
 import de.hybris.platform.enumeration.EnumerationService;
 import de.hybris.platform.core.Registry;
@@ -34,11 +31,10 @@ import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import javax.annotation.Resource;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Collections;
 import java.util.Objects;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
-import java.util.EnumSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -63,7 +59,10 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 
 	@Resource(name = "contactTicketEventStrategy")
 	private TicketEventStrategy ticketEventStrategy;
-	
+
+	@Resource(name = "modelService")
+	private ModelService modelService;
+
 
 	@RequestMapping(value = PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	@RequireHardLogIn
@@ -96,9 +95,12 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 //		comments.add(comment);
 //		contactTicketModel.setComments(comments);
 		
-		ContactTicketModel contactTicket = sagiaUserService.addContactTicketComments(ticketId, contactTicketForm.getComment());		
+		ContactTicketModel contactTicket = sagiaUserService.addContactTicketComments(ticketId, contactTicketForm.getComment());
 		if (null != contactTicket) {
-			model.addAttribute("comments", contactTicket.getComments());
+			List<CommentModel> comments = contactTicket.getComments();
+			Collections.reverse(comments);
+			modelService.save(contactTicket);
+			model.addAttribute("comments", comments);
 			model.addAttribute("contactTicketDetails", contactTicket);
 			if (StringUtils.isNotEmpty(contactTicket.getOpportunityCode())) {
 				ProductData opportunityProductDetails = investSaudiProductFacade.getProductForCode(contactTicket.getOpportunityCode());

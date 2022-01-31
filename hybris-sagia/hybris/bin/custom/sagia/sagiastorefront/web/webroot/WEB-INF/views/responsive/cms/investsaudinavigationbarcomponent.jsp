@@ -190,7 +190,7 @@
                     </div>
                 </div>
                <div class="modal-footer modal-footer_spaceBetween">
-                    <button type="button" class="btn btn-ctrl btn-warning noButton btn-outline p-0" data-dismiss="modal"><spring:message code="text.logout.no"/></button>
+                    <button type="button" class="btn-ctrl btn-warning noButton btn-outline p-0" data-dismiss="modal"><spring:message code="text.logout.no"/></button>
                     <button type="button" class="btn btn-ctrl btn-bg p-0 yesButton"><spring:message code="text.logout.yes"/></button>
                 </div>
             </form>

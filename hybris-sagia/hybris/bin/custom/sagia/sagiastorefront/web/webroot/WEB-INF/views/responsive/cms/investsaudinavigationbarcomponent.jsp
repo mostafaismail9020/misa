@@ -181,7 +181,7 @@
                 <div class="modal-header modal-header_smallPDB">
                     <div class="modal-title"><spring:message code="text.logout.title"/></div>
                     <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-                        <icon:close/>
+						<img class="" src="${commonResourcePath}/images/Close.png"/>
                     </button>
                 </div>
                 <div class="modal-body">

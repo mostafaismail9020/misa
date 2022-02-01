@@ -156,8 +156,7 @@ function acceptNewLinceseTCAction(){
     	$("#spinnerMainDiv").removeClass("hidden");
     }
 }
-
-
+ 
 
 $(document).on('focus blur change keyup', '.text', function (e) { 
     var $currEl = $(this); 

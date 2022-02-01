@@ -16,7 +16,7 @@
 <form:form id="existingShareholderForm" action="${existingShareholderFormAction}" method="post" modelAttribute="sagiaApplyExistingShareholderForm" enctype="multipart/form-data">
     <input type="hidden" name="code" value="${sagiaApplyExistingShareholderForm.code}">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 pb-4">
             <formElement:formInputBox idKey="existingShareholderEntityNumber"
                                       labelKey="licence.apply.entershareholderentitynumber"
                                       path="shareHolderEntityNumber" inputCSS="validate__mandatory validate__numbers-only"/>
@@ -27,7 +27,7 @@
 <%--                </div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 pb-4">
             <formElement:formInputBox idKey="existingShareholderName" labelKey="license.apply.review.name"
                                       path="shareHolderName" disabled="true" inputCSS="validate__mandatory" />
 <%--            <div class="formInputBox">--%>
@@ -49,11 +49,11 @@
 <%--                </div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 pb-5 mt-3">
             <formElement:formInputBoxCustom idKey="existingShareholderSharesPercentage"
                                             labelKey="license.apply.review.shares.percentage" path="sharesPercentage"
                                             inputBoxAppendKey="%" inputBoxCSS="formInputBox_group" inputCSS="validate__mandatory validate__float-numbers-only-sharespercentage"/>
-<%--            <div class="formInputBox formInputBox_group">--%>
+<%--            <div class="formInputBox formInputBox_group mt-3">--%>
 <%--                <div class="form-group">--%>
 <%--                    <input id="existingShareholderSharesPercentage" name = "sharesPercentage" class="form-control" placeholder="." value="" type="text"/>--%>
 <%--                    <label class="control-label" for="existingShareholderSharesPercentage"><spring:theme code="license.apply.review.shares.percentage"/></label>--%>

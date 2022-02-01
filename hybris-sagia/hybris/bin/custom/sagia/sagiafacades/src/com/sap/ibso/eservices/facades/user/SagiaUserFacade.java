@@ -14,6 +14,11 @@
 package com.sap.ibso.eservices.facades.user;
 
 import de.hybris.platform.commercefacades.user.data.CustomerData;
+import com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData;
+import com.sap.ibso.eservices.core.enums.IncidentCategory;
+import com.sap.ibso.eservices.core.enums.ServiceCategory;
+import com.sap.ibso.eservices.core.enums.Priority;
+
 
 import java.util.List;
 
@@ -43,4 +48,12 @@ public interface SagiaUserFacade
 	 * @return the all child b 2 b customers
 	 */
 	List<CustomerData> getAllChildB2BCustomers();
+	
+	boolean validateSagiaUerFormData(final SagiaServiceRequestFormData sagiaServiceRequestFormData, final String ticketId);
+	
+	List<IncidentCategory> getIncidentCategoryEnumValues();
+	
+	List<ServiceCategory> getServiceCategoryEnumValues();
+	
+	List<Priority> getPriorityEnumValues();
 }

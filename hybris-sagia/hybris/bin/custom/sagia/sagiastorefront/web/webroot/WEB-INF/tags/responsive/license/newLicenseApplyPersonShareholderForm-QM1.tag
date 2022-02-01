@@ -28,7 +28,7 @@
 			<spring:theme code="licence.apply.shareholder.details" />
 		</div>
 <hr class="hr">
-		<div class="contentModule-section row" id="shareholderIdTypeSection">
+		<div class="contentModule-section row mt-5" id="shareholderIdTypeSection">
 
 
 			<div class="col-md-6">

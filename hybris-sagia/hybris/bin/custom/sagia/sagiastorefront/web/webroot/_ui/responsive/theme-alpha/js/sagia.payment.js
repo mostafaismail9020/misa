@@ -81,7 +81,7 @@ SAGIA.payment = {
                     "<td width='40%'>" + getI18nText("license.apply.payment.subscription.fee.entrepreneur.price."+SAGIA.license.apply.data.licenseYear) + "</td>" +
                     "</tr>" + 
                     "<tr>" +
-                    "<td width='60%'><span style='color:green;font-size:12px'>" + getI18nText("license.apply.payment.entrepreneur.description") + "</span></td>" +
+                    "<td width='60%'><span style='color:#0097a9;font-size:18px'>" + getI18nText("license.apply.payment.entrepreneur.description") + "</span></td>" +
                     "<td width='20%'>" + "</td>" +
                     "<td width='20%'>" + "</td>" +
                     "</tr>" + 
@@ -267,7 +267,7 @@ $(function(){
         PaymentSession.setFocus('card.number');
 
         PaymentSession.setFocusStyle(["card.number","card.securityCode"], {
-            borderColor: '#a0ed98',
+            borderColor: '#0097a9',
             borderWidth: '1px',
             boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.05), inset 0 1px 3px 0 rgba(241, 242, 242, 0.6)',
             height: '39px'

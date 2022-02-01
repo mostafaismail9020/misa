@@ -223,25 +223,19 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
 
     @Override
     public boolean attachServiceRequestToContactTicket(final ServiceRequestModel serviceRequest, final String ticketId) {
-    	
+    	boolean attachRequest = false;
     	try {
     		ContactTicketModel contactTicket = sagiaUserDao.getContactTicketForTicketId(ticketId);
-        	getModelService().save(serviceRequest);
-        	List<ServiceRequestModel> serviceRequests = contactTicket.getServiceRequests();
-        	if(null != serviceRequests && CollectionUtils.isNotEmpty(serviceRequests)) {
-        		List<ServiceRequestModel> ServiceRequestsList = new ArrayList<ServiceRequestModel>(serviceRequests);
-        		ServiceRequestsList.add(serviceRequest);
-        		contactTicket.setServiceRequests(ServiceRequestsList);
-        	}else{
-        		List<ServiceRequestModel> newServiceRequests = new ArrayList<ServiceRequestModel>();
-        		newServiceRequests.add(serviceRequest);
-        		contactTicket.setServiceRequests(newServiceRequests);
-        	}
-        	getModelService().save(contactTicket);
-        	return true;
-    	}catch(Exception e) {
+    		if(null != contactTicket) {
+    			serviceRequest.setContactTicket(contactTicket);
+    			getModelService().save(serviceRequest);
+    			getModelService().save(contactTicket);
+            	attachRequest = true;
+    		}
+        }catch(Exception e) {
     		LOG.error(e.getMessage(), e);
-    		return false;
+    		return attachRequest;
     	}
+    	return attachRequest;
      }
 }

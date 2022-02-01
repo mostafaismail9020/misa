@@ -316,11 +316,11 @@
             <div class="modal-secondaryContent pay-buttons" style="display: none">
                 <div class="modal-footer modal-footer_centered modal-footer_iconButton">
                     <div class="text-center">
-                        <span class="iconElement iconElement_iconButton"><icon:creditCard/></span>
+                       <!--<span class="iconElement iconElement_iconButton"><icon:creditCard/></span>-->
                         <button type="button" class="btn btn_slim" data-dismiss="modal" onclick="displayPaymentModel()"><spring:theme code="license.apply.paywithcc"/></button>
                     </div>
                     <div class="text-center">
-                        <span class="iconElement iconElement_iconButton"><icon:sadad/></span>
+                        <!--<span class="iconElement iconElement_iconButton"><icon:sadad/></span>-->
                         <button type="button" class="btn btn_slim" data-dismiss="modal" onclick="SAGIA.payment.displayPayWithSadadMessage()"><spring:theme code="license.apply.paywithsadad"/></button>
                     </div>
                 </div>
@@ -328,7 +328,7 @@
             <div class="modal-secondaryContent apply" style="display: none">
                 <div class="modal-footer modal-footer_centered modal-footer_iconButton">
                     <div class="text-center">
-                        <span class="iconElement iconElement_iconButton"><icon:licensing/></span>
+                        <!--<span class="iconElement iconElement_iconButton"><icon:licensing/></span>-->
                         <button type="button" class="btn btn_slim btn-apply" data-dismiss="modal"><spring:theme code="register.submit"/></button>
                     </div>
                 </div>

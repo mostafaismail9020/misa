@@ -4,6 +4,7 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 
 <c:if test="${component.visible}">
@@ -23,6 +24,11 @@
                 </a> -->
              </c:if> --%>                               
 		</div>
+		
+		<c:url value="false" var="userLoggedIn"/>
+		<sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
+		    <c:url value="true" var="userLoggedIn"/>
+		</sec:authorize>
 		
         <section class="footer-menu-faq">
             <div class="footerContent">
@@ -53,8 +59,10 @@
                             <h2 class="text-uppercase display-7"><spring:theme code="portal.footer.apply.license.label"/></h2>
                             <p class="text"><spring:theme code="portal.footer.journey.start.text"/></p>
                             <ul class="list-unstyled list-inline">
-                                <li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
-                                <li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>
+                            	<c:if test="${userLoggedIn eq 'false'}">
+                                	<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
+                                	<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>
+                                </c:if>
                                 <li class="list-inline-item border-0"><a class="text-uppercase" href="/${language}/contactUs" role="button"><spring:theme code="portal.footer.contact.us.label"/></a></li>
                             </ul>
                         </div>
@@ -163,8 +171,10 @@
                                	<h2 class="text-uppercase display-7"><spring:theme code="portal.footer.apply.license.label"/></h2>
                                	<p class="text"><spring:theme code="portal.footer.journey.start.text"/></p>
                                	<ul class="list-unstyled list-inline">
-                                   	<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
-                                   	<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>
+                                   	<c:if test="${userLoggedIn eq 'false'}">
+                                   		<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
+                                   		<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>
+                                   	</c:if>
                                    	<li class="list-inline-item border-0"><a class="text-uppercase" href="/${language}/contactUs" role="button"><spring:theme code="portal.footer.contact.us.label"/></a></li>
                                	</ul>
                            	</div>

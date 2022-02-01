@@ -134,7 +134,7 @@
                                                                             <p>${service.description}</p>
                                                                         </div>
                                                                         <div class=" serviceModule-request">
-                                                                            <a class="text-uppercase request-service" href=/services/government/${service.category.code}/${service.code}>Request A Service</a>
+                                                                            <a class="text-uppercase request-service" href=${encodedContextPath}/services/government/${service.category.code}/${service.code}>Request A Service</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -274,7 +274,7 @@
                                                                         <p>${service.description}</p>
                                                                     </div>
                                                                     <div class="w-25 serviceModule-request">
-                                                                        <a class="text-uppercase request-service" href=/services/government/${service.category.code}/${service.code}>Request A Service</a>
+                                                                        <a class="text-uppercase request-service" href=${encodedContextPath}/services/government/${service.category.code}/${service.code}>Request A Service</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

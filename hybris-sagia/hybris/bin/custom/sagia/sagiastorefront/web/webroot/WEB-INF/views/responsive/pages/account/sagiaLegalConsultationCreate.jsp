@@ -62,10 +62,10 @@
         <div class="d-flex row renewal-services w-100">
             <div class="col-md-3">
                 <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink back_to_service">
-                    <span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="legalConsultationCreate.backToAccountOverview.text"/>
+                    <span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="legalConsultationCreate.backToAccountOverview.text"/>
                 </a>
             </div>
-            <div class="col-md-9 d-flex btn-drafts_list amend-service-link">
+            <div class="col-md-9 d-flex btn-drafts_list amend-service-link amend-btns-list">
                 <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="${serviceId}"
                         data-service-id="${serviceId}"><spring:theme code="general.savedraft"/><span
@@ -84,13 +84,17 @@
     <div class="container">
         <form:form id="${serviceId}" action="${encodedContextPath}/legalconsultations/create" enctype="multipart/form-data" method="post" modelAttribute="legalConsultationFormData" class="js-legalconsultation-create">
             <div class="panelModule panelModule_halfRadius">
-                <div class="contentModule">
+                <div class="contentModule contentModule-wrap">
                     <div class="contentModule-section">
-                        <div class="contentModule-headline headline-text">
+                        <!-- <div class="contentModule-headline headline-text">
                             <span class="iconElement iconElement_enquiry3"><icon:info/></span><spring:theme code="legalConsultationCreate.reqInformations.text"/>
+                        </div> -->
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="legalConsultationCreate.reqInformations.text"/></span>
+                            <div class="contentModule-headline-border"></div>
                         </div>
 
-                        <div class="formSelectBox">
+                        <div class="formSelectBox w-100">
                             <div class="form-group <c:if test="${status.error}">has-error</c:if>">
                                 <form:select class="js-select2-oneColumn" id="legalInquiryTypeId" path="legEnqTitle">
                                     <form:option value=""/>
@@ -101,7 +105,7 @@
                             </div>
                         </div>
 
-                        <div class="formTextArea">
+                        <div class="formTextArea w-100">
                             <div class="form-group <c:if test="${status.error}">has-error</c:if>">
                                 <form:textarea id="" class="form-control form-control_slim" placeholder="." path="textMsg"/>
                                 <form:label class="control-label control-label_mandatory" for="" path="textMsg">Message</form:label>
@@ -112,8 +116,12 @@
                         <form:hidden id="typeDescriptionId" path="legEnqDesc" />
                     </div>
                     <div class="contentModule-section">
-                        <div class="contentModule-headline headline-text">
+                        <!-- <div class="contentModule-headline headline-text">
                             <icon:documents/>Attachments
+                        </div> -->
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="general.attachments"/></span>
+                            <div class="contentModule-headline-border"></div>
                         </div>
 
                         <div class="row">

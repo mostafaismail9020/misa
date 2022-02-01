@@ -48,7 +48,7 @@
         <td class="draftDate"></td>
         <td class="action">
             <div>
-                <a role="button" class="btn btn_slim draftContinueBtn">
+                <a role="button" class="btn btn_slim draftContinueBtn text-white">
                     <spring:theme code="drafts.continue"/>
                 </a>
             </div>

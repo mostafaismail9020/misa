@@ -80,7 +80,7 @@
                             <div class="paginationModule paginationModule_loading">
                                 <c:if test="${!pageIsDashboard}">
                                     <div class="dashboardWidget-filter">
-                                        <div style="width: 150px; position: absolute">
+                                        <div class="payment-overview-viewall-filter">
                                             <select class="paginationPicker js-select2-oneColumn form-control"></select>
                                         </div>
                                     </div>

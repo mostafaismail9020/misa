@@ -79,7 +79,7 @@
                 </div>
             </div>
             <div class="row renewal-services w-100">
-                <div class="col-xl-12 col-12 btn-drafts_list amend-service-link">
+                <div class="col-xl-12 col-12 btn-drafts_list amend-service-link amend-btns-list">
                     <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="supportVisitForm"
                         data-service-id="${serviceId}">
@@ -182,7 +182,7 @@
 							<div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
 
                             <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-                                <button type="submit" class="btn btn--primary btn--half-radius"><spring:theme code="text.account.followup.supportVisitRequest"/></button>
+                                <button type="submit" class="btn btn--primary btn--half-radius w-50"><spring:theme code="text.account.followup.supportVisitRequest"/></button>
                             </div>
                         </div>
                     </div>

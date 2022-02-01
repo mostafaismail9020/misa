@@ -77,7 +77,7 @@ SAGIA.payments = {
                         }
                         $(".dashboardWidgetPayments .paginationModule-items").empty().append(paginationHtml);
                         new CreatePagination($(".dashboardWidgetPayments .paginationModule"));
-                        $(".dashboardWidgetPayments .paginationPicker").append("<option selected='selected' value='" + payments.paymentsItemsPerPage + "'>" + getI18nText("dashboard.servicesRequest.viewAll") + "</option>")
+                        $(".dashboardWidgetPayments .paginationPicker").append("<option selected='selected' value='" + payments.paymentsItemsPerPage + "'>" + getI18nText("No of Items") + "</option>")
 
 
                         if(payments.showItemsPerPage != null && payments.showItemsPerPage.length > 0){

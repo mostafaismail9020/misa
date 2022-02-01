@@ -7,6 +7,7 @@ SAGIA.dashboardWithLicense = {
     ],
 
     bar: function (dataArray) {
+        document.getElementById("js-dashboardWidgetCharts-chart") !== null &&
         new Chart(document.getElementById("js-dashboardWidgetCharts-chart"), {
             type: 'bar',
             options: {

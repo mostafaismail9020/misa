@@ -103,7 +103,7 @@
 						<div class="tabs">							
 							<ul class="nav nav-tabs mb-0" role="tablist">								
 								<li class="nav-item active show d-in-table"> 
-									<span class="nav-link" href="#Interest" role="tab" data-toggle="tab" aria-selected="false">
+									<span class="nav-link" href="#Interest" role="tab" aria-selected="false">
 										<spring:theme code="my.potential.opportunity.phase.interest"/>
 									</span>
 									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
@@ -111,7 +111,7 @@
 								</li>								
 								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02'}">
 									<li class="nav-item active d-in-table">
-										<span class="nav-link" href="#NDA" role="tab" data-toggle="tab" aria-selected="false">
+										<span class="nav-link" href="#NDA" role="tab" aria-selected="false">
 											<spring:theme code="my.potential.opportunity.phase.nda"/>
 										</span>
 										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
@@ -120,7 +120,7 @@
 								</c:if>
 								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02' or investorlead eq 'Z06'}">
 									<li class="nav-item d-in-table"> 
-										<span class="nav-link" href="#Letter_of_intent" role="tab" data-toggle="tab" aria-selected="false">
+										<span class="nav-link" href="#Letter_of_intent" role="tab" aria-selected="false">
 											<spring:theme code="my.potential.opportunity.phase.letter"/>
 										</span>
 										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
@@ -128,14 +128,14 @@
 									</li>
 								</c:if>								
 								<li class="nav-item d-in-table">
-									<span class="nav-link" href="#Business_plan" role="tab" data-toggle="tab" aria-selected="false">
+									<span class="nav-link" href="#Business_plan" role="tab" aria-selected="false">
 										<spring:theme code="my.potential.opportunity.phase.business"/>
 									</span>
 									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 									<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 								</li>								
 								<li class="nav-item d-in-table">
-									<span class="nav-link" href="#Deal" role="tab" data-toggle="tab" aria-selected="false">
+									<span class="nav-link" href="#Deal" role="tab" aria-selected="false">
 										<spring:theme code="my.potential.opportunity.phase.deal"/>
 									</span>
 									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">

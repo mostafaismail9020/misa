@@ -107,15 +107,15 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="d-flex row renewal-services w-100">
                 <div class="col-md-3">
-                    <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink w-auto back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink w-auto back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="profileCompany.button.back.text"/></a>
                 </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
                     <div class="col-xl-3 col-12">
                         <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
                     </div>
                 </c:if>
-                <div class="col-md-3">
-                    <div class="mainSection-linkActions mainSection-linkActions_right">
+                <div class="col-md-6">
+                    <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
                         <div id="serviceUrl">
                             <c:url value="/services/government/${categoryUrl}/${serviceUrl}/create" var="url">
                                 <c:param name="serviceName" value="${serviceName}"/>
@@ -123,7 +123,7 @@
                                     <c:param name="srID" value="${serviceList[0].srID}"/>
                                 </c:if>
                             </c:url>
-                            <button class="btn btn_slim" id="createGovtServiceButton">
+                            <button class="btn btn_slim back_to_service" id="createGovtServiceButton">
                                 <input id="createGovtServUrl" type="hidden" value="${url}">
                                 <spring:theme code="create.govtServices"/>
                             </button>

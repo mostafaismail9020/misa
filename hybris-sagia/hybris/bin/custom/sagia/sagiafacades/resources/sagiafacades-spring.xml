@@ -243,6 +243,8 @@
 	<bean id="defaultSagiaUserFacade" class="com.sap.ibso.eservices.facades.user.impl.DefaultSagiaUserFacade">
 		<property name="sagiaUserService" ref="sagiaUserService"/>
 		<property name="b2BCustomerConverter" ref="b2BCustomerConverter"/>
+		<property name="enumerationService" ref="enumerationService"/>
+		<property name="sagiaServiceRequestReversePopulator" ref="sagiaServiceRequestReversePopulator"/>
 	</bean>
 
 
@@ -891,6 +893,10 @@
 
 	<bean name="licensePopulator" class="com.sap.ibso.eservices.facades.populators.license.LicensePopulator">
 		<property name="sagiaFormatProvider" ref="sagiaFormatProvider" />
+	</bean>
+	
+	<bean name="sagiaServiceRequestReversePopulator" class="com.sap.ibso.eservices.facades.populators.SagiaServiceRequestReversePopulator">
+	    <property name="i18nService" ref="i18NService" />
 	</bean>
 
 	<bean name="shareholdersPopulator" class="com.sap.ibso.eservices.facades.populators.license.ShareholdersPopulator"/>

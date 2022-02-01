@@ -313,7 +313,8 @@ $(function() {
     //SAGIA NOTIFICATIONS HANDLING START
     SAGIA.notifications = SAGIA.notifications || {};
     SAGIA.notifications.updateNotificationsCount = function(notificationsCount) {
-        var unreadNotificationSpan = $('#unreadNotificationSpan');
+        // var unreadNotificationSpan = $('#unreadNotificationSpan');
+        var unreadNotificationSpan = $('.count-notification');
         if (notificationsCount === 0) {
             unreadNotificationSpan.css('display', 'none');
         } else if (notificationsCount > 0) {

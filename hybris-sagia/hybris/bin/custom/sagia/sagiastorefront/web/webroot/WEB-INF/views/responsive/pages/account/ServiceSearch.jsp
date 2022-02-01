@@ -24,7 +24,7 @@
                         </a>
                     </div>
                     <div class="calendar notification">
-                        <div class="count-notification">123</div>
+                        <div class="count-notification" id="unreadNotificationSpan"></div>
                         <a href="${encodedContextPath}/my-sagia/notifications">
                             <span></span>
                         </a>

@@ -3181,6 +3181,17 @@
 		
 	</bean>
 	
+	<!-- New Service Request -->
+	
+	<bean class="com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData">
+		<property name="code" type="java.lang.String"/>
+		<property name="subject" type="java.lang.String"/>
+		<property name="description" type="java.lang.String"/>
+		<property name="priority" type="com.sap.ibso.eservices.core.enums.Priority"/>
+		<property name="incidentCategory" type="com.sap.ibso.eservices.core.enums.IncidentCategory" />
+		<property name="serviceCategory" type="com.sap.ibso.eservices.core.enums.ServiceCategory"/>
+	</bean>
+	
 	<!-- Start InvestSaudiPortalFacades extensioninfo.xml -->
 	
 	<bean class="com.sap.ibso.eservices.facades.data.OpportunityPartnerData">

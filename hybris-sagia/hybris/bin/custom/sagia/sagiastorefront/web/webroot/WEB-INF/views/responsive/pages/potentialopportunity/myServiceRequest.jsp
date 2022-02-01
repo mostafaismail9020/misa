@@ -82,7 +82,7 @@
 		<div class="licensecontactperson_bottomboarder">
 			<div class="contentModule-headline">Basic Information</div>
 		</div>
-		<form:form class="contact-form pt-3" action="${submitServiceRequestAction}" method="post" modelAttribute="sagiaServiceRquestForm">
+		<form:form class="contact-form pt-3" action="${submitServiceRequestAction}" method="post" modelAttribute="sagiaServiceRequestFormData">
 			<div class="row pb-5"> 
 				<div class="col-md-6 pb-5">
 					<div class="formInputBox ">

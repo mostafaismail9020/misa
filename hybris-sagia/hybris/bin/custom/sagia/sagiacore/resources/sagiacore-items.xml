@@ -33,7 +33,6 @@
 		<collectiontype code="InvestSaudiSiteMapLevel2List" elementtype="InvestSaudiSiteMapLevel2" autocreate="true" type="list"/>
         <collectiontype code="InvestSaudiSiteMapLevel3List" elementtype="InvestSaudiSiteMapLevel3" autocreate="true" type="list"/>
         <collectiontype code="InvestSaudiSiteMapLevel4List" elementtype="InvestSaudiSiteMapLevel4" autocreate="true" type="list"/>
-		<collectiontype code="ServiceRequest4Ticket" elementtype="ServiceRequest" autocreate="true" type="list"/>
   
     </collectiontypes>
 
@@ -233,6 +232,12 @@
         <relation code="ServiceTypeCategoryToServiceTypeCategory" localized="false">
             <sourceElement cardinality="one" qualifier="parentCategory" type="ServiceTypeCategory"/>
             <targetElement cardinality="many" qualifier="subCategories" type="ServiceTypeCategory"/>
+        </relation>
+		
+		<relation generate="true" localized="false" code="ContactTicket2ServiceRequest" autocreate="true">
+           <sourceElement type="ContactTicket" cardinality="one" qualifier="contactTicket"></sourceElement>
+           <targetElement type="ServiceRequest" cardinality="many" qualifier="serviceRequest">
+           </targetElement>
         </relation>
 
         <relation code="SagiaCategoryToSagiaCategoryRelation" localized="false">
@@ -3673,11 +3678,6 @@
                     <attribute qualifier="c4CAccountID" type="java.lang.String">
                         <persistence type="property"/>
                         <modifiers/>
-                    </attribute>
-					<attribute qualifier="serviceRequests" type="ServiceRequest4Ticket">
-                        <persistence type="property"/>
-                        <modifiers/>
-                        <description>Service Requests</description>
                     </attribute>
                 </attributes>
             </itemtype> 

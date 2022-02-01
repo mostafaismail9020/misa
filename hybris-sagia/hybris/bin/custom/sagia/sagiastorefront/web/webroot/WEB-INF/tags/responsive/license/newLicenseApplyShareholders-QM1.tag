@@ -20,7 +20,7 @@
         <p class="text-center"><spring:theme code="licence.apply.noshareholder"/></p>
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
             <c:if test="${entityInformationData.licenseType ne 11}">
-                <button type="button" class="addExistingButton btn btn-bg btn_bold btn-normal" data-url="<c:url value="/my-sagia/license/existing-shareholder-form"/>"><span class="icon-bg icon-ele"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <button type="button" class="addExistingButton btn btn_bold btn-normal btn-outline bg-transparent" data-url="<c:url value="/my-sagia/license/existing-shareholder-form"/>"><span class="icon-bg icon-ele"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
   <g id="existing" transform="translate(-222.936 -1127.936)">
     <circle id="Ellipse_35" data-name="Ellipse 35" cx="16" cy="16" r="16" transform="translate(222.936 1127.936)" fill="#1ac4dc"></circle>
     <path id="Path_1887" data-name="Path 1887" d="M221.668,850.239l3.6,3a.125.125,0,0,0,.174-.013l7.727-8.753" transform="translate(11.755 294.682)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"></path>
@@ -85,7 +85,7 @@
 
         <div class="contentModule-headline"><spring:theme code="license.apply.review.existing.shareholder"/></div>
      <hr class="hr">
-        <div class="existingShareholdersForm-wrapper mt-4 pt-2">
+        <div class="existingShareholdersForm-wrapper mt-5 pt-2">
 <%--            <license:newLicenseApplyExistingShareholderForm-QM1/>--%>
         </div>
 
@@ -105,7 +105,7 @@
                         <div class="formRadioBox-label control-label_mandatory"><spring:theme code="licence.apply.shareholder.type"/></div>
                         <div class="form-item ${entityInformationData.legalStatus eq 'BRFC' ? 'hidden' : ''}">
                             <input id="personType" name="ShareholderRadioBox01" class="form-control" type="radio" value="Person"/>
-                            <label for="personType" class="btn btn-bg btn-normal btn_bold person-type control-label">
+                            <label for="personType" class=" btn-normal btn_bold btn_outline bg-transparent person-type control-label">
                                                  <span class="icon-bg icon-ele">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
   <g id="ORGANIZATION" transform="translate(-222.936 -1127.936)">
@@ -124,7 +124,7 @@
 
                         <div class="form-item">
                             <input id="organizationType" name="ShareholderRadioBox01" class="form-control" type="radio" value="Organization"/>
-                            <label for="organizationType" class="btn btn-outline btn-normal btn_bold control-label organization-type">
+                            <label for="organizationType" class="btn-outline btn-normal btn_bold control-label organization-type">
                             <span class="icon-bg icon-ele"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
   <g id="Person-inactive" transform="translate(-222.936 -1127.936)">
     <g id="Ellipse_35" data-name="Ellipse 35" transform="translate(222.936 1127.936)" fill="none" stroke="#00a6be" stroke-width="1">

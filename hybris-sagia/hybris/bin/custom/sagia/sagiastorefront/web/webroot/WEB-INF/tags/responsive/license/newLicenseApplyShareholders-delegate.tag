@@ -24,7 +24,7 @@
     <hr class="hr">
     <div class="row">
     <div class="col-md-12 justify-content-center pt-5 pb-5">
-    <a class="btn btn_link js-tip" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip"
+    <a class="btn btn_link js-tip d-block w-100 delegate-entity" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip"
            data-tip-class="delegateToolTip" data-trigger="click"><spring:theme
                 code="text.account.profile.license.shareholders.tooltip.heading"/></a>
         <div class="tooltip_content" id="delegateToolTip">
@@ -129,7 +129,7 @@
 <%--                    </div>--%>
                 </div>
                 <div class="col-md-6" id="nicVerifyBtnSection">
-                    <a style="margin-top: 15px" class="btn" id="verifyDetailsShow" data-nic-verified="false"><spring:theme code="license.apply.shareholder.verify"/></a>
+                    <a class="btn btn_bold pt-2 mt-5" id="verifyDetailsShow" data-nic-verified="false"><spring:theme code="license.apply.shareholder.verify"/></a>
                     <input type="checkbox" id="isNicVerified" name="delegateInfo.nicVerified" value="true" class="hidden" ${data.delegateInfo.nicVerified ? "checked=checked" : 0}>
                     <div class="inputValidationError" style="display: none;color: #ff4c4a;line-height: 1.2;margin-top: 10px;">
                         <spring:theme code="validation.licenseApply.shareholder.invalidInputValidation"

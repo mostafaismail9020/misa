@@ -134,9 +134,9 @@
 <div class="contentModule-actions contentModule-actions_spaceBetween">
     <span>
         <ycommerce:testId code="personalDetails_cancelPersonalDetails_button">
-            <button id="entityInformationBackButton" disabled="disabled" type="button" class="btn btn-normal btn-ctrl btn-outline btn_bold">
+         <!---   <button id="entityInformationBackButton" disabled="disabled" type="button" class="btn btn-normal btn-ctrl btn-outline btn_bold">
                 <spring:theme code="licenseApplyEntityInformation.button.back" text="Back"/>
-            </button>
+            </button>-->
         </ycommerce:testId>
         <button id="entityInformationCancelButton" type="button" class="btn btn-normal btn-ctrl btn-outline btn_bold bg-transparant">
 <spring:theme code="licenseApplyEntityInformation.button.cancel"/>

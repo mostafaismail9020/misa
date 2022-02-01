@@ -279,22 +279,6 @@ span {
     background: #1AC4DC !important;
 }
 
-#shareholderType .person-type,
-#shareholderType .organization-type {
-    width: 100%;
-    height: 45px;
-    color: #fff;
-    text-align: left;
-    padding: 5px;
-    border-radius: 27px;
-    background-color: #00A6BE !important;
-}
-
-#shareholderType .organization-type {
-    color: #00A6BE !important;
-    background-color: #fff !important;
-}
-
 #shareholderType .organization-type span {
     color: #00A6BE !important;
     background: transparent !important;
@@ -765,12 +749,12 @@ span {
 }
 
 .btn_leftIconLink {
-    // font-size: 20px !important; 
+    // font-size: 20px !important; //MMJ
     color: #00A6BE !important;
     font-weight: 600 !important;
     border-radius: 25px !important;
     border: 1px solid #00A6BE !important;
-    padding: 14px 10px !important; 
+    padding: 14px 10px !important;
 }
 
 .page-government-documents .form-group .form-item .uncased span {
@@ -1130,14 +1114,8 @@ button:focus {
     border: none;
 }
 
-// #myProfileTabData .myAccount-profilImage-img:before {
-//     background: url(../img/my-profile-icon.svg);
-// }
-
-.sagia_profile_picture_title{
-    font-size: 20px;
-    font-weight: 600;
-	color: #bf9b2e;
+#myProfileTabData .myAccount-profilImage-img:before {
+    background: url(../img/my-profile-icon.svg);
 }
 
 .page-sagia-profile .formSelectBox .form-group .select2.select2-container.select2Container_selected+.control-label {
@@ -1720,8 +1698,7 @@ button:focus {
 .page-license-apply .tooltip-listItem .tooltip-listItem-header .tooltip-listItem-trigger:hover{
     background-color: transparent !important;
 }
-.page-license-apply #organizationInformationExtended .formInputBox .form-control,
-.page-new-license-apply #basicInformationExtendedSection .formInputBox .form-control{
+.page-license-apply #organizationInformationExtended .formInputBox .form-control{
     color: #707070;
     margin-top: 10px;
 }
@@ -1937,7 +1914,7 @@ button:focus {
 }
 .page-sagia-profile #createComplantForm .formInputBox .control-label, .page-sagia-profile #updatePwdForm .formInputBox .control-label,
 .page-sagia-profile #changeUsername .formInputBox .control-label,
-.page-sagia-profile #changeEmail .formInputBox .control-label, .page-new-license-apply .formInputBox .control-label{
+.page-sagia-profile #changeEmail .formInputBox .control-label{
     top: -15px!important;
     color: #707070;
 }
@@ -2251,8 +2228,13 @@ button:focus {
 }
 .page-new-license-apply  .formInputBox .form-control{
     font-size: 20px;
+    color: #707070;
     padding-left: 20px;
     margin-top: 10px;
+}
+.page-new-license-apply  .formInputBox .form-control:placeholder-shown+.control-label{
+    padding-left: 0;
+    top:-20px;
 }
 #entityForm #licenseTypeSection .select2-container .select2-selection--single .select2-selection__rendered{
     margin-left: 0;
@@ -2263,16 +2245,25 @@ button:focus {
 .page-new-license-apply #entityForm .formSelectBox .select2.select2-container.select2-container--focus+.control-label{
     font-size: 16px;
     color: #707070;
-
 }
 .page-new-license-apply .formInputBox .control-label{
     font-size: 16px !important;
     color: #707070;
-    left: 0 !important;
+    left:30px !important;
+    padding-left: 0;
+    margin-left: 0;
 }
+.page-new-license-apply .control-label_mandatory.focused,  .page-new-license-apply .formInputBox .form-control:placeholder-shown+.control-label.focused{
+    transform: translate3d(0,0px,0) scale(1)!important;
 
- .page-new-license-apply .formSelectBox .select2.select2-container.select2-container--open+.control-label,
- .page-new-license-apply .formInputBox .control-label{
+}
+.page-new-license-apply #hasAdvanceLicenseNumberSection .formInputBox .form-control:placeholder-shown+.control-label{
+    top:10px;
+}
+.page-new-license-apply .formInputBox .form-control{
+    padding-left: 30px;
+}
+ .page-new-license-apply .formSelectBox .select2.select2-container.select2-container--open+.control-label{
     font-size: 16px;
 }
 .page-new-license-apply .formInputBox-split .formInputBox .control-label{
@@ -2302,8 +2293,9 @@ button:focus {
 .page-shareholder-apply #addShareholderQM1NewPersonSection .formSelectBox .select2.select2-container.select2Container_selected+.control-label{
     top:-20px;
 }
-.page-shareholder-apply #shareholderIdTypeSection .select2-container .select2-selection--single .select2-selection__rendered{
-    top:0px;
+.page-shareholder-apply #shareholderIdTypeSection .select2-container .select2-selection--single .select2-selection__rendered,
+.page-new-license-apply .select2-container .select2-selection--single .select2-selection__rendered{
+    top:0;
 }
 .page-new-license-apply #basicInformationExtendedSection .select2.select2-container.select2.select2-container--disabled{
     margin-top: 0;
@@ -2311,8 +2303,12 @@ button:focus {
 .page-new-license-apply .formSelectBox .select2.select2-container.select2-container--disabled.select2Container_selected+.control-label{
     top:-20px !important;
 }
-.page-new-license-apply #entityForm #licenseTypeSection .btn_formAligned{
+.page-new-license-apply .select2-container .select2-selection--single .select2-selection__rendered{
+    margin-left: 10px !important;
+}
+.page-new-license-apply #entityForm .btn_formAligned{
     font-size: 18px;
+    text-transform: inherit !important;
 }
 .page-new-license-apply #entityForm #licenseInformationSection .formRadioBox-wrapper span{
     text-align: left;
@@ -2321,14 +2317,139 @@ button:focus {
     position: relative;
     right: 30px;
 }
-// .page-shareholder-apply .hidden{
-//     display: block !important;
-// }
+.page-shareholder-apply .hidden{
+    display: block !important;
+}
 .page-shareholder-apply #addShareholderQM1NewPersonSection #shareholderIdTypeSection .formSelectBox label{
-top:30px;
+    top:-30px;
+}
+#termsAndConditionsResponseApplyModal .tc-footer  button:nth-child(2):hover{
+    color: #00a6be !important;
+}
+
+#basicInformationExtendedSection .form-group.focus-on-change{
+    padding-top: 15px;
+}
+
+#termsAndConditionsResponseApplyModal .tc-footer button:nth-child(2):hover {
+    color: #00a6be !important;
+}
+
+.page-shareholder-apply #shareholderType .person-type,
+.page-shareholder-apply #shareholderType .organization-type {
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid #00a6be!important;
+    border-radius: 113px !important;
+}
+.page-shareholder-apply #shareholderType .organization-type:hover{
+    background-color: transparent !important;
+}
+.page-shareholder-apply #shareholderType .organization-type span+span,
+.page-shareholder-apply #shareholderType .person-type span+span {
+    color: #00a6be !important;
+}
+
+.page-shareholder-apply #shareholderType .person-type,
+.page-shareholder-apply #shareholderType .organization-type {
+    color: #00a6be !important;
+    text-align: left;
+    height: 45px;
+    padding-top: 5px !important;
+    padding-left: 10px;
+    border: 1px solid #00a6be!important;
+    border-radius: 113px !important;
+}
+
+.page-shareholder-apply #shareholderType .form-control:checked+.control-label>span+span {
+    color: #fff !important;
+}
+
+.page-shareholder-apply #shareholderType .form-control+.control-label:hover svg {
+    border-radius: 113px;
+    background-color: #fff;
+}
+
+.page-shareholder-apply #shareholderType .form-control:checked+.control-label svg {
+    border-radius: 113px;
+    background-color: #fff;
+}
+
+.page-shareholder-apply #shareholderType .form-control:checked+.control-label:hover span+span {
+    color: #fff;
+}
+#delegateDivSection .delegate-entity, #dataSectionDelegate .delegate-entity{
+
+    font-size: 20px;
+    color: #707070;
+    text-transform: inherit !important;
+}
+#delegateDivSection .delegate-entity:hover,  #dataSectionDelegate .delegate-entity:hover{
+    color:#00a6be !important;
+    background-color: transparent !important;
+}
+#showDelegateQuestion .formRadioBox .form-item #hasDelegateNOLabel{
+    color:#00a6be;
+    border:1px solid #00a6be;
+}
+.page-shareholder-apply #addShareholderQM1NewOrganizationSection .formInputBox{
+    padding-bottom: 30px;
+}
+
+.page-shareholder-apply #dataSectionAttachment .formInputFile.formInputFile.active .form-control+.control-label,
+.page-shareholder-apply #existingProfessionalLicenseFileAttachment .formInputFile.formInputFile.active .form-control+.control-label{
+    top:-40px;
+}
+
+.page-shareholder-apply .addShareholderQM1NewPersonSection #shareholderTitle .form-item .form-control:checked+.control-label {
+    color: #fff !important;
+    background-color:#00a6be !important;
+}
+.page-shareholder-apply #delegate #nicVerifyBtnSection #isNicVerified{
+    appearance: none;
+}
+.numInputWrapper span.arrowDown{
+    top:40%;
+}
+.numInputWrapper span.arrowUp{
+    top:-20%;
+}
+.numInputWrapper span.arrowUp:after, .numInputWrapper span.arrowDown:after{
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+.numInputWrapper span.arrowDown:after{
+    border-top-color:#Fff !important;
+    border-top: 7px solid transparent;
+}
+.page-new-license-apply #entityForm .btn_formAligned:hover{
+    color: #707070 !important;
+    background-color: transparent !important;
+
 }
 
 @media (max-width: 575px) {
+    #sectionItems .baModule-search {
+        max-width: 100%;
+    }
+    .panelTabs_lightNavigation .panelTabs-navigation {
+        display: none !important;
+    }
+    #basicInformationExtendedSection #select2-basicInformationExtendedInvestment-container {
+        overflow: hidden;
+    }
+    #entityForm #licenseTypeSection .select2-container .select2-selection--single .select2-selection__rendered {
+        width: 90%;
+        overflow: hidden;
+    }
+    .modal-dialog_businessActivities .modal-footer {
+        flex-wrap: nowrap;
+    }
+    #entityForm #isPreApprovalNumberSection,
+    #entityForm #hasAdvanceLicenseNumberSection {
+        margin-top: 15px;
+    }
     .panelTabs-navigation{
         display: none !important;
     }
@@ -2530,6 +2651,28 @@ top:30px;
 
 @media (min-width: 768px) and (max-width:991px) {
 
+    .page-new-license-apply #entityForm #hasSagiaLicenseSection .formRadioBox-wrapper .formRadioBox .form-item,
+    .page-new-license-apply #entityForm #advanceLicenseNumberSection,
+    .formRadioBox-wrapper .formRadioBox .form-item {
+        margin-bottom: 15px;
+    }
+    #entityForm #licenseTypeSection .select2-container .select2-selection--single .select2-selection__rendered {
+        width: 75% !important;
+        overflow: hidden;
+    }
+    .page-new-license-apply #entityForm #licenseTypeSection .btn_formAligned {
+        padding-left: 20px;
+    }
+    .page-new-license-apply .contentModule-headline {
+        padding-left: 10px;
+    }
+    .page-new-license-apply #businessActivitiesTable .btn {
+        width: 40% !important;
+    }
+    #basicInformationExtendedSection #select2-basicInformationExtendedInvestment-container {
+        overflow: hidden;
+    }
+
     .page-appointment-create .appointmentDetails .contentModule-actions .btn{
         width: 50% !important;
       }
@@ -2688,7 +2831,8 @@ top:30px;
     }
 
     .page-license-apply .contentModule-actions .addExistingButton,
-    .page-license-apply .contentModule-actions .addNewButton {
+    .page-license-apply .contentModule-actions .addNewButton,
+    .page-shareholder-apply .contentModule-actions .person-type, .page-shareholder-apply .contentModule-actions .organization-type {
         padding-left: 5px;
     }
     #shareholderType .form-item {
@@ -2717,4 +2861,3 @@ top:30px;
     }
 
 }
-

@@ -21,7 +21,7 @@
     <div class="contentModule-section">
         <div class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details"/></div>
 <hr class="hr">
-		<div class="row" style= ${not empty sagiaApplyOrganizationShareholderForm.division ? "display:none" : ""} >
+		<div class="row mt-5" style= ${not empty sagiaApplyOrganizationShareholderForm.division ? "display:none" : ""} >
 		  <div class="col-md-6">
                 <%--TODO: create companyCountryData--%>
                 <formElement:formSelectBoxCustom idKey="companyCountry" labelKey="general.country"

@@ -2,7 +2,7 @@ var timePickerFrom;
 $(function () {
 	//var $modal = $('#appointmentDisclaimer');
     //$modal.modal('toggle');
-		
+    formOptionsJSON = JSON.parse(formOptionsJSON);
     $(".service-selection .service-type").change(function () {
         var me = this;
         var serviceType = formOptionsJSON.serviceTypes.find(function (x) {

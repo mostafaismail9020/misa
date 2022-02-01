@@ -66,8 +66,8 @@
                                                                         </a>
                                                                     </div>
                                                                     <%--<div>
-                <a class="btn btn--primary btn--half-radius btn--small" href="#"><spring:theme code="appointments.makeanappointment"/></a>
-            </div>--%>
+                                                                            <a class="btn btn--primary btn--half-radius btn--small" href="#"><spring:theme code="appointments.makeanappointment"/></a>
+                                                                        </div>--%>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -130,7 +130,7 @@
                                                                                     <div class="formSelectBox">
                                                                                         <div class="form-group">
                                                                                             <form:select path="ministry1" cssClass="js-select2-oneColumn ministry ministry-group" disabled="true">
-                                                                                                <option></option>
+                                                                                                <option>SELECT MINISTRY TYPE</option>
                                                                                                 <form:options items="${ministries}" itemValue="${not empty itemValue ? itemValue :'FieldKey'}" itemLabel="${not empty itemLabel ? itemLabel :'Description'}" htmlEscape="true" />
                                                                                             </form:select>
                                                                                             <label class="control-label control-label_mandatory" for="ministry1"><spring:theme code="appointments.ministry"/></label>
@@ -142,7 +142,7 @@
                                                                                     <div class="formSelectBox">
                                                                                         <div class="form-group">
                                                                                             <form:select path="service1" cssClass="js-select2-oneColumn service service-group" disabled="true">
-                                                                                                <option></option>
+                                                                                                <option>SELECT SERVICE TYPE</option>
                                                                                                 <form:options items="${services}" itemValue="${not empty itemValue ? itemValue :'FieldKey'}" itemLabel="${not empty itemLabel ? itemLabel :'Description'}" htmlEscape="true" />
                                                                                             </form:select>
                                                                                             <label class="control-label control-label_mandatory" for="service1"><spring:theme code="appointments.enquirytype"/></label>
@@ -169,7 +169,7 @@
                                                                                     <div class="formSelectBox">
                                                                                         <div class="form-group">
                                                                                             <form:select path="ministry2" cssClass="js-select2-oneColumn ministry ministry-group" disabled="true">
-                                                                                                <option></option>
+                                                                                                <option>SELECT MINISTRY TYPE</option>
                                                                                                 <form:options items="${ministries}" itemValue="${not empty itemValue ? itemValue :'FieldKey'}" itemLabel="${not empty itemLabel ? itemLabel :'Description'}" htmlEscape="true" />
                                                                                             </form:select>
                                                                                             <label class="control-label control-label_mandatory" for="ministry2"><spring:theme code="appointments.ministry"/></label>
@@ -181,7 +181,7 @@
                                                                                     <div class="formSelectBox">
                                                                                         <div class="form-group">
                                                                                             <form:select path="service2" cssClass="js-select2-oneColumn service service-group" disabled="true">
-                                                                                                <option></option>
+                                                                                                <option>SELECT SERVICE TYPE</option>
                                                                                                 <form:options items="${services}" itemValue="${not empty itemValue ? itemValue :'FieldKey'}" itemLabel="${not empty itemLabel ? itemLabel :'Description'}" htmlEscape="true" />
                                                                                             </form:select>
                                                                                             <label class="control-label control-label_mandatory" for="service2"><spring:theme code="appointments.enquirytype"/></label>
@@ -208,7 +208,7 @@
                                                                                     <div class="formSelectBox">
                                                                                         <div class="form-group">
                                                                                             <form:select path="ministry3" cssClass="js-select2-oneColumn ministry ministry-group" disabled="true">
-                                                                                                <option></option>
+                                                                                                <option>SELECT MINISTRY TYPE</option>
                                                                                                 <form:options items="${ministries}" itemValue="${not empty itemValue ? itemValue :'FieldKey'}" itemLabel="${not empty itemLabel ? itemLabel :'Description'}" htmlEscape="true" />
                                                                                             </form:select>
                                                                                             <label class="control-label control-label_mandatory" for="ministry3"><spring:theme code="appointments.ministry"/></label>
@@ -220,7 +220,7 @@
                                                                                     <div class="formSelectBox">
                                                                                         <div class="form-group">
                                                                                             <form:select path="service3" cssClass="js-select2-oneColumn service service-group" disabled="true">
-                                                                                                <option></option>
+                                                                                                <option>SELECT SERVICE TYPE</option>
                                                                                                 <form:options items="${services}" itemValue="${not empty itemValue ? itemValue :'FieldKey'}" itemLabel="${not empty itemLabel ? itemLabel :'Description'}" htmlEscape="true" />
                                                                                             </form:select>
                                                                                             <label class="control-label control-label_mandatory" for="service3"><spring:theme code="appointments.enquirytype"/></label>
@@ -349,14 +349,8 @@
                                                             </div>
                                                         </div>
                                                         <script>
-                                                            var appointmentsJson = $ {
-                                                                appointmentsJson
-                                                            };
-                                                            var appointmentJson = $ {
-                                                                appointmentJson
-                                                            };
-                                                            var formOptionsJSON = $ {
-                                                                formOptionsJSON
-                                                            };
+                                                            var appointmentsJson = '${appointmentsJson}';
+                                                            var appointmentJson = '${appointmentJson}';
+                                                            var formOptionsJSON = '${formOptionsJSON}';
                                                             var appointmentId = '${appointmentId}';
                                                         </script>

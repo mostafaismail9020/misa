@@ -98,7 +98,8 @@
 		<div class="licensecontactperson_bottomboarder">
 			<div class="contentModule-headline">Basic Information</div>
 		</div>
-		<form:form class="contact-form pt-3" action="${submitServiceRequestAction}" method="post" modelAttribute="sagiaServiceRequestFormData">
+		<form:form class="contact-form pt-3" action="${submitServiceRequestAction}" id="js-quick-tialoppor_new" method="post" modelAttribute="sagiaServiceRequestFormData">
+			<!-- onsubmit="return validateFormsetting()" id="js-quick-tialoppor_new" -->
 			<div class="row pb-5"> 
 				
 			    <div class="col-md-6 pb-3">
@@ -147,77 +148,69 @@
 				<div class="col-md-6 pb-5">
 					<div class="formInputBox ">
 						<div class="form-group">
-							<input type="text" class="text form-control"
-							name="subject" id="subject"
-							onkeypress="return onlyAlphabets(event)" required /> 
+							<input type="text" class="js-quick-tialoppor_new text form-control"
+							name="subject" id="subject" /> 
+							<!-- onkeypress="return onlyAlphabets(event)" -->
 							<label class="control-label control-label_mandatory" for="Subject ">
 								Subject 
 							</label> 
+							<div class="help-block"></div>
 						</div> 
 					</div> 
 			   </div>
 			   <div class="col-md-12 pb-5">
 				   <div class="formInputBox ">
 					   <div class="form-group">
-						<textarea type="text" class="text description form-control"
-						name="description" id="description"
-						onkeypress="return onlyAlphabets(event)" required /></textarea>
+						<textarea type="text" class="js-quick-tialoppor_description text description form-control"
+						name="description" id="description" required /></textarea>	
+						<!-- onkeypress="return onlyAlphabets(event)"  -->
 						   <label class="control-label control-label_mandatory" for="Description">
 							Description 
 						   </label> 
+						   <div class="help-block"></div>
 					   </div> 
 				   </div> 
-			  </div>
-			<!-- <div class="form-group col-md-6 form-normal-item">
-				<label class="control-label" for="subject"> 
-					Subject <span class="mandatory">* </span></label> 
-					<input type="text" class="form-control"
-					name="subject" id="subject" maxlength="300"
-					onkeypress="return onlyAlphabets(event)" required />
-			</div> -->
-			<!-- <div class="form-group form-floating col-md-6 form-normal-item">
-				<label class="control-label" for="description"> Description <span
-					class="mandatory">* </span></label> <input type="text" class="form-control"
-					name="description" id="description" maxlength="300"
-					onkeypress="return onlyAlphabets(event)" required />
-			</div>-->
-			<!-- <div class="form-group col-md-6 form-normal-item-select">
-				<label class="control-label" for="incidentCategory"> Incident Category <span
-					class="mandatory">* </span></label>
-				<form:select path="incidentCategory" id="incidentCategory">
-					<c:forEach var="incidentCategoryValue" items="${incidentCategories}">
-						<form:option value="${incidentCategoryValue}">${incidentCategoryValue}</form:option>
-					</c:forEach>
-				</form:select>
-				<i class="caret"></i>
-			</div> -->
-				<!-- <div class="form-group col-md-6 form-normal-item-select">
-					<label class="control-label" for="serviceCategory"> Service Category <span
-						class="mandatory">* </span></label>
-						<%-- <select id="serviceCategory" title="Service Category" disabled="true">
-							<option value="${sagiaServiceRquestForm.serviceCategory}">${sagiaServiceRquestForm.serviceCategory} </option>
-						</select> --%>
-					<form:select path="serviceCategory" id="serviceCategory" disabled="true">
-						<c:forEach var="serviceCategoryValue" items="${serviceCategories}">
-							<form:option value="${serviceCategoryValue}">${serviceCategoryValue}</form:option>
-						</c:forEach>
-					</form:select> 
-					<i class="caret"></i>
-				</div> -->   
-				
-				<!-- <div class="form-group col-md-6 form-normal-item-select">
-					<label class="control-label" for="priority"> Priority <span
-						class="mandatory">* </span></label>
-					<form:select path="priority" id="priority">
-						<c:forEach var="priorityValue" items="${priorities}">
-							<form:option value="${priorityValue}">${priorityValue}</form:option>
-						</c:forEach>
-					</form:select>
-					<i class="caret"></i>
-				</div> -->
+			  </div> 
 
-				<button class="btn btn-block btn-primary positive adv_search_button w-25 m-auto mb-5" type="submit">Submit</button>
+				<!-- <button class="btn btn-block btn-primary positive adv_search_button w-25 m-auto mb-5" type="submit">
+					Submit
+				</button> -->
+				
+				<input type="submit" class="btn btn-block btn-primary positive adv_search_button w-25 m-auto mb-5" value="Submit"   onclick="validateFormsetting()" />
 			</div>
 		</form:form>
 	</div>
 </div>
+
+
+<script>  
+	function validateFormsetting() { 
+		//alert('1w3'); 
+		//var x = document.forms["js-quick-tialoppor_new"]["subject"].value;
+		var subject = document.forms["js-quick-tialoppor_new"]["subject"].value;
+		if (subject == "") { 
+			$('.help-block').html("<span class='error'>Please fill out this field</span>"); 
+			return false;
+		}  
+		var description = document.forms["js-quick-tialoppor_description"]["description"].value;
+		if (description == "") { 
+			$('.help-block').html("<span class='error'>Please fill out this field</span>"); 
+			return false;
+		}   
+		
+	} 
+	$(".js-quick-tialoppor_new").on("keydown", function(e) {  
+		$('.help-block').html("");  
+        var keyCode = (e.keyCode ? e.keyCode : e.which);
+        if(keyCode === 32) {
+           return false;
+        }
+    });
+	$(".js-quick-tialoppor_description").on("keydown", function(e) {  
+		$('.help-block').html("");  
+        var keyCode = (e.keyCode ? e.keyCode : e.which);
+        if(keyCode === 32) {
+           return false;
+        }
+    });
+</script>

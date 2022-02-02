@@ -38,6 +38,13 @@
 									</button>
 								</c:if>
 								<div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+								<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible ">
+									<div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+									<ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+									<div class="sagiaNavigation-subPane-actions">
+										<a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class=" user-icon mr-1">
@@ -51,15 +58,6 @@
             </div> 
         </div>
     </div>
-</div>
-
-
-<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup-otherpage my-msg-popup">
-	<div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
-	<ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
-	<div class="sagiaNavigation-subPane-actions">
-		<a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
-	</div>
 </div>
  
 <div class="container mb-3 pb-2">
@@ -266,15 +264,13 @@
 						
 							<div class="form-group">
 								<input type="text" name="comment" class="js-quick-tialoppor_newcomment form-control reply_here" placeholder="<spring:theme code="my.potential.opportunity.enter.reply"/>"/>
-								<label class="control-label control-label_mandatory register-user-info-label">
+								<!-- <label class="control-label control-label_mandatory">
 									<spring:theme code="my.potential.opportunity.enter.reply"/>
-								</label>
-								<!-- <span class="js-quick-tialoppor_newcomment_error">hi</span>  -->
+								</label>  -->
 								<div class="help-block"></div>
 								<div class="success-message-block"></div>
 							</div>
-							<div class="error-msg"></div>
-						<div class="formInputBox "></div>
+							<div class="error-msg"></div> 
 						
 						<div class="d-inline float-right">
 							<button type="button" class="btn btn_cancel_whitess"  onclick="commentTextArea()" >
@@ -451,9 +447,15 @@
 	function validateForm() { 
 		var x = document.forms["js-quick-tialoppor_newcomment"]["comment"].value;
 		if (x == "") {
-            $('.help-block').html("<span class='error'>please-fill-out-this-field</span>"); 
+            $('.help-block').html("<span class='error'>please fill out this field</span>"); 
 			return false;
 		} 
-	} 
-
+	}  
+	$(".js-quick-tialoppor_newcomment").on("keydown", function(e) { 
+		$('.help-block').html("");  
+        var keyCode = (e.keyCode ? e.keyCode : e.which);
+        if(keyCode === 32) {
+           return false;
+        }
+    });
 </script>

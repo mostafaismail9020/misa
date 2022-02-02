@@ -24,6 +24,17 @@
 <div class="panelTabs-head" id="register-quick">
 	<icon:register/><span class="panelTabs-label"><spring:theme code="quickRegistration.label"/></span> 
 </div>
+ 
+<style>
+[dir] .right_arrowdd .select2.select2-container .select2-selection:after{
+	right: -8px;
+}
+[dir='rtl'] .right_arrowdd .select2.select2-container .select2-selection:after{
+	left: 0 !important;
+	right: auto;
+}
+[dir='rtl'] .select2.select2-container .select2-selection:after { left: 0 !important;right: auto; }
+</style>
 
 <c:url value="/register/ajax" var="registerAction" />
 <c:url value="/register/apply" var="applyAction" />
@@ -168,7 +179,7 @@
 						</div>
 						--%>
 						<div class="col-md-12 register-form register-form-names ">
-							<div class="col-xl-2 col-md-12 col-12 register-form focus-on-change register-forms-select px-0">
+							<div class="col-xl-2 col-md-12 col-12 register-form focus-on-change register-forms-select px-0 right_arrowdd">
 								<formElement:formSelectBox idKey="quickregistration.register.title"
 										labelKey="register.title" selectCSSClass="form-control jqTitle js-select-required register-user-details"
 										path="titleCode" mandatory="true" skipBlank="false" labelCSS="register-user-info-label select-label-mandatory"

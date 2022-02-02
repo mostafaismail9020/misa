@@ -554,7 +554,7 @@
 		<button type="button" class="cancelButton btn btn-outline btn-normal btn_bold w-25">
 			<spring:theme code="general.cancel" />
 		</button>
-		<button type="button" class="saveNew btn btn-bg btn-normal btn_bold w-25">
+		<button type="button" class="addButton btn btn-bg btn-normal btn_bold w-25">
 			<spring:theme code="licence.apply.savenewshareholder" />
 		</button>
 	</div>

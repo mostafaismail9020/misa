@@ -35,8 +35,10 @@
 				<!-- <a href="#" class="search_item"><img src="${commonResourcePath}/images/Search_icon.png" /></a>
 				<a href="#" class="Font_enlargment"><span class=" btn-trans"><img src="${commonResourcePath}/images/Aa.png"/></span></a>
 				 -->
-				 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
-				 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
+				 <c:if test="${userLoggedIn eq 'false'}">
+					 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
+					 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
+				 </c:if>
 				<a href="#" class="skype">
 					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
 						<!-- <label class="btn lang-btn lang-en active"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label> -->
@@ -45,17 +47,17 @@
 					</span>
 				</a>
 				<c:choose>
-				<c:when test="${userLoggedIn}">
-				      <a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user"><img class="pr-3" src="${commonResourcePath}/images/User-icon.svg" /><span>${user.name}</span></a>
-                      <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer"><span>Logout</span></a>
-				      <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
-				      <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
-				</c:when>
-				<c:otherwise>
-				      <a href="/en/investsaudi-login" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.login.label"/></span></a>
-				      <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
-				      <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
-			    </c:otherwise>
+					<c:when test="${userLoggedIn}">
+					      <a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user"><img class="pr-3" src="${commonResourcePath}/images/User-icon.svg" /><span>${user.name}</span></a>
+	                      <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer"><span>Logout</span></a>
+					      <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
+					      <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+					</c:when>
+					<c:otherwise>
+					      <a href="/en/investsaudi-login" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.login.label"/></span></a>
+					      <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
+					      <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+				    </c:otherwise>
 				</c:choose>
 			</div>
 		</div>

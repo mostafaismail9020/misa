@@ -10,10 +10,9 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
+
 <spring:htmlEscape defaultHtmlEscape="true"/>
-
 <c:set var="hideDescription" value="checkout.login.loginAndCheckout"/>
-
 
 <form:form action="${action}" method="post" modelAttribute="loginForm" name="sagiaLoginForm" id="sagiaLoginForm" onsubmit="return validateLoginForm()">
     <c:if test="${not empty message}">
@@ -35,6 +34,7 @@
                     <formElement:formInputBox idKey="j_username" labelKey="login.username" labelCSS="control-label_mandatory register-user-info-label" inputCSS ="register-user-details" path="j_username" mandatory="true"/>
                     <div class="error-msg"></div>
                 </div>
+                
                 <div class="col-md-12 register-form">
                    <!-- <label class="register-user-info-label" for="j_password">Password<span class="mandatory">*</span></label>
                     <input type="password" class="register-user-details" data-val="true" data-val-required="Required"	id="j_password" name="password" maxlength="30" /> -->
@@ -78,7 +78,7 @@
             </div>
             <div class="login-buttons accountLogin-content-formSubmitSection">
                 <div class="col-md-6 col-12">
-                    <button class="login-btn login-entry-cancel cancel-disabled">CANCEL</button>
+                    <button class="login-btn login-entry-cancel cancel-disabled"><spring:theme code="investor.registration.cancel.button"/></button>
                 </div>
                 <div class="col-md-6 col-12">													
                     <!--<button class="login-btn login-btn-next" >LOGIN</button>-->
@@ -88,20 +88,21 @@
                 </div>
             </div>
             <div class="col-md-12 login-register">
-                <span>If you are a New User?</span>
+                <span><spring:theme code="login.if.new.user.label"/></span>
                 <!--<span id="e-service-register">Register Here.</span>-->
                 
                 <span id="sagiaRegisterBtn">
                 <a class="accountLogin-content-toggleBtn">
                     <ycommerce:testId code="registerButton">
-                         <spring:theme code="register.register"/>&nbsp<spring:theme code="register.here"/> 
+                         <spring:theme code="register.register"/>&nbsp;<spring:theme code="register.here"/> 
                         <!-- <button type="button" id="sagiaRegisterBtn"><spring:theme code="register.register"/>&nbsp<spring:theme code="register.here"/></button> -->                      
                     </ycommerce:testId>
                 </a>  
                  </span>  
             </div>
             <div class="col-md-12 login-forgot accountLogin-content-formSubmitSection">
-                <%-- <button type="button" data-toggle="modal" data-target="#forgotPassword"><span>Forgot Password ?</span></button>|<span><a href="https://misa.gov.sa/ar/contact-us/" target="_blank">Trouble Logging in Contact Us</a></span> --%>
+                <%-- <button type="button" data-toggle="modal" data-target="#forgotPassword"><span>Forgot Password ?</span></button>|<span>
+                <a href="https://misa.gov.sa/ar/contact-us/" target="_blank">Trouble Logging in Contact Us</a></span> --%>
                 <%--<span data-toggle="modal" data-target="#forgotPassword">Forgot Password ?</span> --%>
                 <span class="accountLogin-content-formSubmitSection-forgottenPassword forgotten-password">
                     <ycommerce:testId code="login_forgotPassword_link">
@@ -110,16 +111,20 @@
                             <a href="${forgot}" class="js-password-forgotten" data-cbox-title="<spring:theme code="forgottenPwd.title"/>">
                                 <spring:theme code="login.link.forgottenPwd"/>
                             </a><br> 
-                            <!--<p><spring:theme code="register.login.problem"/> &nbsp<a href="https://misa.gov.sa/ar/contact-us/" class="contact_link"><spring:theme code="register.login.problem.contact"/></a></p>-->
+                            <!--<p><spring:theme code="register.login.problem"/> &nbsp<a href="https://misa.gov.sa/ar/contact-us/" class="contact_link">
+                            <spring:theme code="register.login.problem.contact"/></a></p>-->
                         </div>
                     </ycommerce:testId>
                 </span>
                 <span>|</span>
                 <span class="accountLogin-content-formSubmitSection-forgottenPassword">
-                <spring:theme code="register.login.problem"/> &nbsp <a href="https://misa.gov.sa/ar/contact-us/" target="_blank"><spring:theme code="register.login.problem.contact"/></a></span>
-
-                 <c:if test="${expressCheckoutAllowed}">
-                    <button type="submit" class="btn btn-default btn-block expressCheckoutButton"><spring:theme code="text.expresscheckout.header"/></button>
+                	<spring:theme code="register.login.problem"/> &nbsp; 
+                	<a href="https://misa.gov.sa/ar/contact-us/" target="_blank"><spring:theme code="register.login.problem.contact"/></a>
+                </span>
+				<c:if test="${expressCheckoutAllowed}">
+                    <button type="submit" class="btn btn-default btn-block expressCheckoutButton">
+                    	<spring:theme code="text.expresscheckout.header"/>
+                    </button>
                     <input id="expressCheckoutCheckbox" name="expressCheckoutEnabled" type="checkbox" class="form left doExpressCheckout display-none"/>
                 </c:if>
             </div>
@@ -190,23 +195,20 @@
 	</table>
     <div class="accountLogin-content-formSubmitSection">
       
-      <div class="login_button_outer">
-      
+      <div class="login_button_outer">      
       <input type="hidden" id="recaptchaChallangeAnswered"
 							value="${requestScope.recaptchaChallangeAnswered}" />
       <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
         
         <ycommerce:testId code="loginAndCheckoutButton">
             <button type="submit" class="btn btn_wide font-weight-bold" id="sagiaLoginBtn"><spring:theme code="${actionNameKey}"/></button>
-        </ycommerce:testId>
-                
+        </ycommerce:testId>                
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 
         <a class="accountLogin-content-toggleBtn">
         <ycommerce:testId code="registerButton">
             <button type="button" class="btn btn_outline font-weight-bold" id="sagiaRegisterBtn"><spring:theme code="register.register"/>&nbsp<spring:theme code="register.here"/></button>
-        </ycommerce:testId></a>          
-        
+        </ycommerce:testId></a>                  
 		</div>
 
         <div class="accountLogin-content-formSubmitSection-forgottenPassword forgotten-password">
@@ -227,6 +229,5 @@
         </c:if>
     </div>
 </form:form>
-
 
 --%>

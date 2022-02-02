@@ -535,3 +535,9 @@ $(document).ready(function () {
         }
     });
 });
+
+
+
+function biddingCertificate(e){
+    window.location = ACC.config.encodedContextPath +  "/my-sagia/license/bidding?loadDraft=false";
+}

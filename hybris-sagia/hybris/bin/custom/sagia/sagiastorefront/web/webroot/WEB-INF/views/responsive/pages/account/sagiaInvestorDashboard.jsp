@@ -117,6 +117,8 @@
                         </div>
                         <div class=" user-icon mr-3">
                             <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/> -->
+                            
+
                             <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
                                 <c:if test="${hasLicense or hasAwaitingPayment}">
                                     <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">

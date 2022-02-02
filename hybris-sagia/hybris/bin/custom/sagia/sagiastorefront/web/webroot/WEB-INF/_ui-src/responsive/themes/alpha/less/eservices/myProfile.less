@@ -2317,9 +2317,9 @@ button:focus {
     position: relative;
     right: 30px;
 }
-.page-shareholder-apply .hidden{
-    display: block !important;
-}
+// .page-shareholder-apply .hidden{
+//     display: block !important;
+// }
 .page-shareholder-apply #addShareholderQM1NewPersonSection #shareholderIdTypeSection .formSelectBox label{
     top:-30px;
 }
@@ -2428,7 +2428,24 @@ button:focus {
     background-color: transparent !important;
 
 }
-
+.sagia_profile_picture_title{
+    font-weight: 600;
+    font-size: 20px;
+    color: #bf9b2e;
+}
+.myAccount-profilImage h4.sagia_profile_picture_title {
+    font-size: 20px;
+    color: #bf9b2e;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 15px;
+}
+.page-new-license-apply #licenseTypeSection .select2-container .select2-selection--single .select2-selection__rendered{
+    left: 0;
+}
+.page-new-license-apply #licenseTypeSection .formSelectBox .select2.select2-container.select2Container_selected+.control-label{
+    display: none;
+}
 @media (max-width: 575px) {
     #sectionItems .baModule-search {
         max-width: 100%;
@@ -2809,6 +2826,9 @@ button:focus {
 }
 
 @media (min-width:1200px) {
+    .page-sagia-profile .panelTabs-content{
+        max-width: 960px !important;
+    }
     .page-sagia-profile #enquiryDetail .modal-dialog {
         max-width: 50%;
     }

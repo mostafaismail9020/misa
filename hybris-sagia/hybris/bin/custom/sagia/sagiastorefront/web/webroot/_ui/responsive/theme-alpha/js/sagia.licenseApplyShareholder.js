@@ -58,6 +58,7 @@ SAGIA.licenseApplyShareholder = {
         var existingBtn = $("button.addExistingButton");
 
         existingBtn.on('click', function () {
+            $(this).removeClass('btn-outline');
             self.getExistingShareholderForm();
         })
     },
@@ -148,6 +149,7 @@ SAGIA.licenseApplyShareholder = {
         var newButton = $('button.addNewButton');
 
         newButton.on('click', function () {
+            $(this).removeClass('btn-outline');
             self.getNewShareholderSection();
         });
     },
@@ -201,6 +203,7 @@ SAGIA.licenseApplyShareholder = {
     bindCancelButtonExistingShareholder: function () {
         var self = this;
         $(document).on('click', "#addShareholderQM1ExistingSection .cancelButton", function () {
+            $('button.addExistingButton').addClass('btn-outline');
             self.addShareholderQM1ExistingSection.hide();
             self.toggleShareholderTypeChoiceButtons(false);
         })
@@ -216,7 +219,8 @@ SAGIA.licenseApplyShareholder = {
             self.addShareholderQM1NewOrganizationSection.hide();
             self.toggleShareholderTypeChoiceButtons(false);
             $('#addShareholderQM1NewSection [name=ShareholderRadioBox01]').prop('checked', false);
-            $('#shareholderNewGlobalMessage').hide()
+            $('#shareholderNewGlobalMessage').hide();
+            $('button.addNewButton').addClass('btn-outline');
         })
     },
 
@@ -608,6 +612,7 @@ SAGIA.licenseApplyShareholder = {
             $(this).parents('#shareholderQM1TableSection')
                 .find('.addExistingButton, .addNewButton').prop('disabled', true);
             $('#shareholdersNextButton').prop('disabled', true);
+            $(this).removeClass('btn-outline');
 
             if (code) {
                 switch (type.toLowerCase()) {

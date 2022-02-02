@@ -18,7 +18,9 @@
                 </div>
                 <div class="eServiceTutorial-body flex-column">
                     <div class="eServiceTutorial-description">
-                        {{description}}
+                     <c:if test="${not empty description}">
+                             {{description}}
+                        </c:if>
                     </div>
                     <div class="eServiceTutorial-actions mt-5">
                         <a class="btn-dashboard popup-btn-width js-eServiceTour-next"><spring:theme code="dashboard.tutorial.next"/></a>

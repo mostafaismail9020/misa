@@ -39,7 +39,7 @@
                         </a>
                     </div>
                     <div class="calendar notification">
-                        <div class="count-notification">123</div>
+                        <div class="count-notification" id="unreadNotificationSpan"></div>
                         <a href="${encodedContextPath}/my-sagia/notifications">
                             <span></span>
                         </a>
@@ -63,18 +63,19 @@
     </div>
 </div> -->
 
-
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
-        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <div class="d-flex row renewal-services w-100">
-                <div class="col-md-3">
-                    <a href="${request.contextPath}/services/government/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}" class="btn btn_leftIconLink btn_darkLink back_to_service">
-                        <span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>
-                        <spring:theme code="createGovtServices.backToServiceDetails.text"/>
-                    </a>
-                </div>
-                <div class="amend-service-link btn-drafts_list col-md-9 d-flex">
+        <div class="row w-100 renewal-services">
+            <div class="col-md-3">
+                <a href="${request.contextPath}/services/government/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}" class="btn btn_leftIconLink btn_darkLink back_to_service">
+                    <span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>
+                    <spring:theme code="createGovtServices.backToServiceDetails.text"/>
+                </a>
+            </div>
+        </div>
+        <div class="row w-100 d-flex mt-4">
+            <div class="amend-service-link btn-drafts_list">
+                <div class="col-xl-12 col-12 amend-btns-list">
                     <button class="btn btn_round btn_slim js-save-draft"
                             data-target-form="${formName}"
                             data-service-id="${serviceId}"><spring:theme code="general.savedraft"/>

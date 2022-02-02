@@ -8,13 +8,13 @@
 <%@ taglib prefix="account" tagdir="/WEB-INF/tags/responsive/user" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
- <a class="btn btn_link btn_formAligned js-tip" data-tip-id="demoTooltipListId" data-tip-width="auto" data-trigger="click"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.typeOfLicense"/></a>
+
 <div class="contentModule-section" id="licenseTypeSection" style="display: none">
     <div class="contentModule-headline contentModule-headline_smallMargin mw2"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.title"/></div>
     <hr class="hr"/>
-
     <div class="row mt-5">
         <div class="col-md-6">
+        <a class="btn btn_link btn_formAligned js-tip" data-tip-id="demoTooltipListId" data-tip-width="auto" data-trigger="click"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.typeOfLicense"/></a>
             <formElement:formSelectBox idKey="licenseTypes"
                                        labelKey="license.apply.licenseType"
                                        path="licenseType"

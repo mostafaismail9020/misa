@@ -36,7 +36,7 @@
                         </a>
                     </div>
                     <div class="calendar notification">
-                        <div class="count-notification">123</div>
+                        <div class="count-notification" id="unreadNotificationSpan"></div>
                         <a href="${encodedContextPath}/my-sagia/notifications">
                             <span></span>
                         </a>
@@ -87,7 +87,7 @@
     <div class="m-5">
         <div class="row w-100 renewal-services">
             <div class="col-md-3 col-12 px-0">
-                <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
             </div>
             <c:if test="${fn:length(sagiaService.tabs) > 0}">
 					<div class="col-xl-3 col-12 ml-1">

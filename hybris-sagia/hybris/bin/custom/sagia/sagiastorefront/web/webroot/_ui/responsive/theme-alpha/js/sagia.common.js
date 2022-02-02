@@ -353,23 +353,61 @@ $(function() {
                             '           <span class="iconElement iconElement_expertProfile_green">' +
                             '               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="iconElement-colorPrimary_fill" d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12-12-5.373-12-12 5.373-12 12-12z"/><path class="iconElement-colorSecondary_fill" d="M21.086 19.824c-2.201 2.553-5.451 4.176-9.086 4.176-3.567 0-6.761-1.565-8.959-4.036.846-.884 3.309-2.132 6.244-3.323v-1.8c-.166-.118-.343-.292-.512-.533-.39-.555-.63-1.336-.674-2.375-.441-.247-.715-.847-.765-1.503-.051-.676.158-1.267.616-1.538l-.174-.42c-.093-.231-.167-.44-.227-.642-.186-.62-.011-1.034.186-1.436.226-.459.395-.961 1.033-.912 1.205-2.449 6.619-2.044 7.297.671.204.815.776 1.56.44 2.416l-.125.296c.424.312.615.901.56 1.568-.056.656-.329 1.252-.769 1.499-.043 1.04-.284 1.821-.674 2.375-.168.241-.346.415-.512.533v1.8c2.786 1.131 5.143 2.311 6.101 3.184z"/></svg>' +
                             '           </span>';
-                    } else if (notification.notificationType === 'SY' || notification.notificationType === 'Rest') {
-                        notificationsForPopupHtml +=
-                            '           <span class="iconElement">' +
-                            '               <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="1 1 44 44" enable-background="new 1 1 44 44"><path fill="#5BC83A" d="M22.787 28.315c-2.724.001-4.933-2.207-4.934-4.932s2.208-4.934 4.932-4.934h.001c2.725 0 4.932 2.209 4.932 4.934.001 2.724-2.206 4.931-4.931 4.932zm14.624-3.153v-3.56l-4.085-1.208c-.235-.827-.562-1.613-.974-2.349l2.033-3.745-2.516-2.516-3.745 2.033c-.742-.415-1.531-.741-2.349-.973l-1.21-4.087h-3.558l-1.211 4.086c-.827.234-1.613.562-2.349.972l-3.745-2.032-2.514 2.517 2.033 3.745c-.411.734-.739 1.521-.973 2.349l-4.085 1.211v3.558l4.085 1.211c.235.826.561 1.612.973 2.348l-2.034 3.745 2.517 2.516 3.745-2.033c.734.411 1.522.738 2.349.974l1.211 4.085h3.558l1.21-4.085c.817-.232 1.606-.559 2.349-.974l3.745 2.033 2.516-2.516-2.033-3.745c.411-.734.739-1.521.974-2.348l4.083-1.212z"/></svg>' +
-                            '           </span>';
-                    } else if (notification.notificationType === 'VI') {
-                        notificationsForPopupHtml +=
-                            '           <span class="iconElement">' +
-                            '               <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0.5 1 44 44" enable-background="new 0.5 1 44 44"><path stroke="#5CC83B" stroke-linecap="round" stroke-linejoin="round" d="M15.63 12.035c0-1.234 1.014-2.235 2.263-2.235 1.251 0 2.265 1 2.265 2.235 0 1.235-1.014 2.235-2.265 2.235m7.926-2.235c0-1.234 1.014-2.235 2.265-2.235 1.25 0 2.263 1 2.263 2.235 0 1.235-1.013 2.235-2.263 2.235" fill="none"/><path fill="#5CC83B" d="M33.465 11.535h-21.232c-.276 0-.5.224-.5.5v19.468999999999998c0 1.27 1.202 2.264 2.735 2.264h16.763c1.533 0 2.733-.994 2.733-2.264v-19.47c.001-.276-.223-.499-.499-.499zm-9.618 14.795c0 .954-.291 1.658-.871 2.109-.581.453-1.337.679-2.271.679-.987 0-1.735-.235-2.245-.703-.51-.47-.766-.996-.766-1.581 0-.243.061-.411.183-.503.122-.091.333-.138.629-.138.34 0 .571.044.694.131.121.088.183.237.183.446 0 .285.122.508.367.673.245.163.576.244.995.244.489 0 .844-.108 1.067-.321.222-.214.334-.559.334-1.036v-.239c0-.794-.48-1.191-1.44-1.191-.333 0-.498-.215-.498-.642s.169-.641.506-.641c.381 0 .676-.08.884-.243.207-.163.312-.489.312-.98 0-.733-.384-1.1-1.152-1.1-.777 0-1.166.28-1.166.837 0 .417-.271.626-.812.626-.367 0-.604-.049-.714-.145-.108-.095-.163-.28-.163-.556 0-.244.048-.485.144-.723.096-.241.247-.474.452-.702.206-.227.504-.412.896-.554.393-.144.852-.215 1.375-.215 1.85 0 2.774.753 2.774 2.257 0 .5-.09.936-.271 1.307-.181.372-.434.628-.76.77.888.334 1.332.969 1.332 1.896v.238zm4.475 2.199c0 .159-.084.285-.254.377-.184.095-.39.143-.597.137-.233 0-.437-.046-.603-.137-.166-.092-.248-.218-.248-.377v-6.708l-.419.403c-.087.075-.2.115-.314.112-.154.001-.302-.074-.392-.201-.103-.128-.158-.287-.156-.452 0-.26.106-.457.326-.59l1.545-1.131c.1-.081.224-.125.354-.125.191 0 .367.051.522.151.157.101.235.226.235.376v8.165zm4.643-12.524h-20.232v-3.471h20.231v3.471z"/></svg>' +
-                            '           </span>';
-                    }
-                    else if (notification.notificationType === 'PY') {
-                        notificationsForPopupHtml +=
-                            '           <span class="iconElement">' +
-                            '               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"> <path fill="#5CC83B" d="M24,17.715C24,18.977,23.065,20,21.913,20H2.87C0.935,20,0,18.977,0,17.715V6.286C0,5.023,0.935,4,2.087,4h19.826C23.065,4,24,5.023,24,6.286V17.715z"></path> <path fill="#FFFFFF" d="M5,14.5H2c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h3c0.276,0,0.5,0.224,0.5,0.5S5.276,14.5,5,14.5zM15.5,14c0-0.276-0.224-0.5-0.5-0.5H7c-0.276,0-0.5,0.224-0.5,0.5s0.224,0.5,0.5,0.5h8C15.276,14.5,15.5,14.276,15.5,14zM12.346,16.666c0-0.276-0.224-0.5-0.5-0.5H2c-0.276,0-0.5,0.224-0.5,0.5s0.224,0.5,0.5,0.5h9.846C12.123,17.166,12.346,16.942,12.346,16.666z"></path> <path fill="#1C242C" d="M0,6h24v4H0V6z"></path></svg>'+
-                            '           </span>';
-                    }
+                        } else if (notification.notificationType === 'SY' || notification.notificationType === 'Rest') {
+                            notificationsForPopupHtml +=
+                                '           <span class="iconElement">' +
+                                '               <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">' +
+                                '                   <g id="Icon_feather-settings" data-name="Icon feather-settings" transform="translate(-0.5 -0.5)">' +
+                                '                   <path id="Path_2154" data-name="Path 2154" d="M22.5,18A4.5,4.5,0,1,1,18,13.5,4.5,4.5,0,0,1,22.5,18Z" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>' +
+                                '                   <path id="Path_2155" data-name="Path 2155" d="M29.1,22.5a2.475,2.475,0,0,0,.495,2.73l.09.09a3,3,0,1,1-4.245,4.245l-.09-.09a2.5,2.5,0,0,0-4.23,1.77V31.5a3,3,0,1,1-6,0v-.135A2.475,2.475,0,0,0,13.5,29.1a2.475,2.475,0,0,0-2.73.495l-.09.09A3,3,0,1,1,6.435,25.44l.09-.09a2.5,2.5,0,0,0-1.77-4.23H4.5a3,3,0,1,1,0-6h.135A2.475,2.475,0,0,0,6.9,13.5a2.475,2.475,0,0,0-.5-2.73l-.09-.09A3,3,0,1,1,10.56,6.435l.09.09a2.475,2.475,0,0,0,2.73.495h.12A2.475,2.475,0,0,0,15,4.755V4.5a3,3,0,0,1,6,0v.135a2.5,2.5,0,0,0,4.23,1.77l.09-.09a3,3,0,1,1,4.245,4.245l-.09.09a2.475,2.475,0,0,0-.5,2.73v.12A2.475,2.475,0,0,0,31.245,15H31.5a3,3,0,0,1,0,6h-.135A2.475,2.475,0,0,0,29.1,22.5Z" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>' +
+                                '                   </g> '+
+                                '               </svg>' +
+                                '           </span>';
+                        } else if (notification.notificationType === 'VI') {
+                            notificationsForPopupHtml +=
+                                '           <span class="iconElement">' +
+                                '               <svg xmlns="http://www.w3.org/2000/svg" width="35.856" height="35.5" viewBox="0 0 35.856 35.5">' +
+                                '                   <g id="Appointment_Details" data-name="Appointment Details" transform="translate(0.364 0)">' +
+                                '                   <g id="Group_1707" data-name="Group 1707" transform="translate(0.136 0)">' +
+                                '                       <path id="Path_2344" data-name="Path 2344" d="M23.51,61.483H.5V31.49H32.051V51.125" transform="translate(-0.5 -28.526)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <path id="Path_2345" data-name="Path 2345" d="M235.872,234.059a6.639,6.639,0,0,1,.309,2.008,6.736,6.736,0,1,1-1.552-4.271" transform="translate(-201.497 -207.772)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <path id="Path_2346" data-name="Path 2346" d="M268.33,238.923l2.429,2.5,7.092-7.21" transform="translate(-242.851 -212.166)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_559" data-name="Line 559" y1="6.04" transform="translate(6.323)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_560" data-name="Line 560" y1="6.04" transform="translate(15.601)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_561" data-name="Line 561" y1="6.04" transform="translate(24.977)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_562" data-name="Line 562" x2="31.551" transform="translate(0 9.333)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_563" data-name="Line 563" x2="5.076" transform="translate(4.672 15.125)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_564" data-name="Line 564" x2="5.076" transform="translate(13.052 15.125)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_565" data-name="Line 565" x2="5.076" transform="translate(21.502 15.125)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_566" data-name="Line 566" x2="5.076" transform="translate(4.672 20.46)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_567" data-name="Line 567" x2="5.076" transform="translate(4.672 25.875)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_568" data-name="Line 568" x2="5.076" transform="translate(13.047 25.875)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_569" data-name="Line 569" x2="5.076" transform="translate(13.052 20.46)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                       <line id="Line_570" data-name="Line 570" x2="5.076" transform="translate(21.502 20.46)" fill="none" stroke="#00a6be" stroke-width="1"/>' +
+                                '                   </g>' +
+                                '                   </g>' +
+                                '               </svg>' +
+                                '           </span>';
+                        }
+                        else if (notification.notificationType === 'PY') {
+                            notificationsForPopupHtml +=
+                                '           <span class="iconElement">' +
+                                '               <svg xmlns="http://www.w3.org/2000/svg" width="36.022" height="36.004" viewBox="0 0 36.022 36.004">'+
+                                '                   <g id="My_Payments" data-name="My Payments" transform="translate(0.188 0.191)">'+
+                                 '                   <g id="Group_1691" data-name="Group 1691" transform="translate(0.312 0.313)">'+
+                                 '                       <rect id="Rectangle_1208" data-name="Rectangle 1208" width="29.558" height="20.789" rx="2" transform="translate(0 14.211)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>'+
+                                 '                       <rect id="Rectangle_1209" data-name="Rectangle 1209" width="6.487" height="4.639" transform="translate(3.878 22.726)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>'+
+                                 '                       <line id="Line_537" data-name="Line 537" x2="4.536" transform="translate(2.683 30.909)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>'+
+                                 '                       <line id="Line_538" data-name="Line 538" x2="4.52" transform="translate(9.154 30.909)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>'+
+                                 '                       <line id="Line_539" data-name="Line 539" x2="4.487" transform="translate(15.608 30.909)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>'+
+                                 '                       <line id="Line_540" data-name="Line 540" x2="4.569" transform="translate(22.031 30.909)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>'+
+                                 '                       <path id="Path_2307" data-name="Path 2307" d="M43.766,15.139,45.718,2.259a1.31,1.31,0,0,1,1.494-1.231L73.647,7.147a1.546,1.546,0,0,1,1.008,1.814l-2.968,17.43a1.3,1.3,0,0,1-1.489,1.2l-.959-.222" transform="translate(-39.681 -1.001)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>'+
+                                 '                       <line id="Line_541" data-name="Line 541" x2="28.823" y2="6.533" transform="translate(5.524 5.109)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>'+
+                                 '                  </g>'+
+                                 '              </g>'+
+                                 '              </svg> '+
+                                '           </span>';
+                        }
 
                     var createdBy = replaceWithEmptyIfNotPresent(notification.createdBy);
                     var createdOn = replaceWithEmptyIfNotPresent(notification.createdOn.dateFormatted);

@@ -73,8 +73,6 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
 	@Resource(name="contactTicketBusinessService")
 	private ContactTicketBusinessService contactTicketBusinessService;
 
-    
-    
     @Override
     public List<ValidationError> validateUniqueUserAttributes(final String uid, final String mobileNumber, 
     		final String mobileCountryCode, final String email) {
@@ -230,6 +228,7 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     			serviceRequest.setContactTicket(contactTicket);
     			getModelService().save(serviceRequest);
     			getModelService().save(contactTicket);
+				contactTicketBusinessService.servicerequest2SCPI(serviceRequest);
             	attachRequest = true;
     		}
         }catch(Exception e) {

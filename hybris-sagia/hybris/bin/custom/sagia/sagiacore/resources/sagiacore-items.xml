@@ -478,7 +478,12 @@
             <targetElement type="ScpiOutCsCustomerEventProcess" cardinality="many" qualifier="scpiOutCsCustomerEventProcess">
             </targetElement>
         </relation>
-		
+		<relation generate="true" localized="false" code="ServiceRequest2ScpiOutServicerequestProcess"
+                  autocreate="true">
+            <sourceElement type="ServiceRequest" cardinality="one" qualifier="serviceRequest"></sourceElement>
+            <targetElement type="ScpiOutServiceRequestProcess" cardinality="many" qualifier="scpiOutServiceRequestProcess">
+            </targetElement>
+        </relation>
 	</relations>
 	
 
@@ -10633,6 +10638,7 @@
 		 
 		<typegroup name="Outbound">
             <itemtype code="ScpiOutCsCustomerEventProcess" autocreate="true" generate="true" extends="BusinessProcess"/>
+			<itemtype code="ScpiOutServiceRequestProcess" autocreate="true" generate="true" extends="BusinessProcess"/>
         </typegroup>
 		
 		<!-- SiteMap Changes Ends -->

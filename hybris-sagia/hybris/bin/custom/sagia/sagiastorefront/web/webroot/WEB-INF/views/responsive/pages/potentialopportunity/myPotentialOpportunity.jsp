@@ -62,13 +62,19 @@
  
 <div class="container mb-3 pb-2">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-6 pull-left">
 			<a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">
 				<!-- <span class="iconElement iconElement_closeBack"><icon:close/></span> -->
 				<svg class="potential_svg_arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="17.116" viewBox="0 0 10 17.116">
 					<path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M14.265,14.749l6.618-6.471a1.2,1.2,0,0,0,0-1.727,1.275,1.275,0,0,0-1.77,0l-7.5,7.332a1.2,1.2,0,0,0-.036,1.687l7.53,7.383a1.277,1.277,0,0,0,1.77,0,1.2,1.2,0,0,0,0-1.727Z" transform="translate(-11.251 -6.194)" fill="#00a6be"/>
 				  </svg>
 				<spring:theme code="general.backtodashboard" />
+			</a>
+		</div>
+		<div class="col-md-6  pull-right text-right">
+			<c:url value="/potentialOpportunity/${contactTicketDetails.ticketID}/serviceRequest" var="serviceRequestURL"/>
+			<a href="${serviceRequestURL}" class="btn-dashboard text-uppercase w-50" style="float: right;"> 
+				Create Service Request
 			</a>
 		</div>
 	</div>
@@ -253,11 +259,26 @@
 				<div class="comment_box_form" id="comment_box_form" style="display: none;">
 					<c:set var="today" value="<%=new java.util.Date()%>" />
 					<label class="new_comment">New comments <b>as on <fmt:formatDate type="date" value="${today}" /></b></label>
-					<form:form action="${ticketId}" modelAttribute="contactTicketForm">
-						<input type="text" name="comment" class="form-control reply_here" placeholder="<spring:theme code="my.potential.opportunity.enter.reply"/>" required/>
+					<form:form action="${ticketId}" modelAttribute="contactTicketForm" id="js-quick-tialoppor_newcomment"  onsubmit="return validateForm()" >
+						
+						
+							<div class="form-group">
+								<input type="text" name="comment" class="js-quick-tialoppor_newcomment form-control reply_here" placeholder="<spring:theme code="my.potential.opportunity.enter.reply"/>"/>
+								<label class="control-label control-label_mandatory register-user-info-label">
+									<spring:theme code="my.potential.opportunity.enter.reply"/>
+								</label>
+								<!-- <span class="js-quick-tialoppor_newcomment_error">hi</span>  -->
+								<div class="help-block"></div>
+								<div class="success-message-block"></div>
+							</div>
+							<div class="error-msg"></div>
+						<div class="formInputBox "></div>
+						
 						<div class="d-inline float-right">
-							<button type="button" class="btn btn_cancel_whitess"><spring:theme code="portal.contactus.form.cancel.button"/></button>
-							<input type="submit" value="<spring:theme code="portal.contactus.form.submit.button"/>" class="btn btn_submit_whitess"/>
+							<button type="button" class="btn btn_cancel_whitess"  onclick="commentTextArea()" >
+								<spring:theme code="portal.contactus.form.cancel.button"/>
+							</button>
+							<input type="submit" class="btn btn_submit_whitess" value="<spring:theme code="portal.contactus.form.submit.button"/>" />
 						</div>
 					</form:form> 
 				</div>
@@ -342,7 +363,8 @@
 					<span class="serviceModule-headline"><spring:theme code="my.potential.opportunity.opportunity.overview"/></span>
 					<c:choose>
 						<c:when test="${empty opportunityDetails.description}">
-							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>NA</p></div></div>
+							<div class="serviceModule-detail serviceList-description">
+								<div class="w-75"><p>NA</p></div></div>
 						</c:when>
 						<c:otherwise>
 							<div class="serviceModule-detail serviceList-description">
@@ -373,7 +395,23 @@
 			</div>
 		</div>
 	</div>
-	
+	<style>
+		.mypotentialpp_showdow{
+			background: #FFFFFF 0% 0% no-repeat padding-box;
+			box-shadow: 0px 13px 20px #00000029;
+			border-radius: 10px;
+			padding: 20px 10px;
+			text-align: center;
+			margin: 10px 0px;
+		}
+		.mypotentialpp_showdow a{
+			color: #00a6be;
+			font-weight: 600;
+		}
+		.mypotentialpp_showdow a:hover{
+			color: #00a6be;
+		}
+	</style>
 	<div class="serviceModule serviceModule_list mx-5">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -381,16 +419,22 @@
 					<c:forEach var="partnerMap" items="${opportunityDetails.partnerMap}">
 						<c:if test="${partnerMap.value.size() gt 0}">							
 							<span class="serviceModule-headline">${partnerMap.key}</span>								
-							<c:forEach var="partnerLogo" items="${partnerMap.value}">
-								<div class="serviceModule-detail serviceList-description">
-									<div class="w-75">
-										<img class="sector-item-icon pb-3" src="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
-												data-norm="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
-												data-alt="${fn:escapeXml(partnerLogo.companyLogo.url)}" alt=""/>
-										<a href="${partnerLogo.companyWebsite}" target="_blank"><spring:theme code="my.potential.opportunity.know.more"/></a>
-									</div>
+							<div class="serviceModule-detail serviceList-description"> 
+								<div class="row pt-3">
+									<c:forEach var="partnerLogo" items="${partnerMap.value}"> 
+										<div class="col-md-3 col-sm-6">
+											<div class="mypotentialpp_showdow">
+											<img class="sector-item-icon pb-3 img-fluid" src="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
+													data-norm="${fn:escapeXml(partnerLogo.companyLogo.url)}" 
+													data-alt="${fn:escapeXml(partnerLogo.companyLogo.url)}" alt=""/>
+												<a href="${partnerLogo.companyWebsite}" target="_blank">
+													<spring:theme code="my.potential.opportunity.know.more"/>
+												</a>
+											</div>
+										</div>
+									</c:forEach>
 								</div>
-							</c:forEach>							
+							</div>							
 						</c:if>
 					</c:forEach>
 				</div>
@@ -399,3 +443,15 @@
 	</div>
 	
 </div>
+ 
+
+<script>  
+	function validateForm() { 
+		var x = document.forms["js-quick-tialoppor_newcomment"]["comment"].value;
+		if (x == "") {
+            $('.help-block').html("<span class='error'>please-fill-out-this-field</span>"); 
+			return false;
+		} 
+	} 
+
+</script>

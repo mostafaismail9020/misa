@@ -113,7 +113,7 @@
                                 <div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link branch active">1</a></div>
                             </div>
                             <button class="paginationModule-control paginationModule-control_right">
-                                <img src="/_ui/responsive/common/images/arrow-left.png" class="img-responsive">
+                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive">
                             </button>
                             <!-- <button class="paginationModule-control paginationModule-control_right">
                                 <icon:arrow_green_right/>

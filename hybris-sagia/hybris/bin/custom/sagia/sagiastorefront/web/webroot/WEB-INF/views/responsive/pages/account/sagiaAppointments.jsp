@@ -196,9 +196,10 @@
                                                                                 <div class="paginationModule">
                                                                                     <div class="paginationModule-wrapper">
                                                                                         <button class="paginationModule-control paginationModule-control_left" disabled>
-                            <img src="${commonResourcePath}/images/arrow-left.svg" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
-                            <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;">
-                        </button>
+                                                                                            <!-- <img src="${commonResourcePath}/images/arrow-left.svg" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
+                                                                                            <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;"> -->
+                                                                                            <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
+                                                                                        </button>
 
                                                                                         <div class="paginationModule-items">
                                                                                             <div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link appointment active">0</a></div>
@@ -208,8 +209,9 @@
                                                                                         </div>
 
                                                                                         <button class="paginationModule-control paginationModule-control_right">
-                                           <img src="${commonResourcePath}/images/arrow-left.svg" class="img-responsive" id="ss_right_arrow" style="transform: rotate(180deg);">
-                        </button>
+                                                                                            <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" id="ss_right_arrow">
+                                                                                                        <!-- <img src="${commonResourcePath}/images/arrow-left.svg" class="img-responsive" id="ss_right_arrow" style="transform: rotate(180deg);"> -->
+                                                                                        </button>
                                                                                     </div>
                                                                                 </div>
 

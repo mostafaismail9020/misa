@@ -229,13 +229,9 @@
                             </div>
                         </c:if>
                         <div class="paginationModule-wrapper">
-                            <button class="paginationModule-control paginationModule-control_left" disabled><!--<icon:arrow_green_right/>--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30.822" viewBox="0 0 30 30.822">
-  <g id="Icon_feather-arrow-left" data-name="Icon feather-arrow-left" transform="translate(1 1.411)" opacity="0.4">
-    <path id="Path_55" data-name="Path 55" d="M35.5,18H7.5" transform="translate(-7.5 -4)" fill="none" stroke="#8c8b8b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    <path id="Path_56" data-name="Path 56" d="M23.534,35.5,7.5,21.5l16.034-14" transform="translate(-7.5 -7.5)" fill="none" stroke="#8c8b8b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-  </g>
-</svg>
-</button>
+                            <button class="paginationModule-control paginationModule-control_left" disabled><!--<icon:arrow_green_right/>-->
+                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
+                                </button>
                             <div class="paginationModule-items">
                                 <div class="loadingModule">
                                     <div class="loadingModule-icon"><icon:loading-spinner /></div>
@@ -243,14 +239,7 @@
                                 </div>
                             </div>
                             <button class="paginationModule-control paginationModule-control_right"><!--<icon:arrow_green_right/>-->
-                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30.822" viewBox="0 0 30 30.822">
-  <g id="Icon_feather-arrow-left" data-name="Icon feather-arrow-left" transform="translate(1 1.411)">
-    <path id="Path_55" data-name="Path 55" d="M7.5,18h28" transform="translate(-7.5 -4)" fill="none" stroke="#0489a3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    <path id="Path_56" data-name="Path 56" d="M7.5,35.5l16.034-14L7.5,7.5" transform="translate(4.466 -7.5)" fill="none" stroke="#0489a3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-  </g>
-</svg>
-
-
+                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive">
                             </button>
                         </div>
                     </div>

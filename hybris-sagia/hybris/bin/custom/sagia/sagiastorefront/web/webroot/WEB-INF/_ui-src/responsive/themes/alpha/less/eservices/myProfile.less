@@ -1837,7 +1837,8 @@ button:focus {
 }
 .page-sagia-profile .contentModule-section .mw0,
 .page-appointment-details .contentModule-section .mw0,
-.page-appointment-create .mw0, .page-license-apply .mw0 {
+.page-appointment-create .mw0, .page-license-apply .mw0,
+.page-shareholder-apply #addShareholderQM1NewPersonSection #attachmentSection .mw0 {
     max-width: 15% !important;
 }
 
@@ -2397,7 +2398,8 @@ button:focus {
 }
 
 .page-shareholder-apply #dataSectionAttachment .formInputFile.formInputFile.active .form-control+.control-label,
-.page-shareholder-apply #existingProfessionalLicenseFileAttachment .formInputFile.formInputFile.active .form-control+.control-label{
+.page-shareholder-apply #existingProfessionalLicenseFileAttachment .formInputFile.formInputFile.active .form-control+.control-label,
+.page-shareholder-apply #attachmentSection .formInputFile.formInputFile.active .form-control+.control-label{
     top:-40px;
 }
 
@@ -2538,7 +2540,40 @@ button:focus {
     overflow: hidden;
 }
 
+.page-shareholder-apply #addShareholderQM1NewPersonSection #attachmentSection #passportFileAttachment {
+    padding-top: 15px;
+
+}
+.page-shareholder-apply  #addShareholderQM1NewPersonSection #attachmentSection #passportFileAttachment .formInputFile .form-control:focus{
+    border-color: #00a6be !important;
+}
+.page-shareholder-apply #addShareholderQM1NewPersonSection #attachmentSection #passportFileAttachment .formInputFile .form-control {
+    padding-left: 30px;
+}
+
 @media (max-width: 575px) {
+
+    .page-license-bidding .achievement_header .banner-container h1{
+        font-size: 40px;
+    }
+    .page-license-bidding .achievement_header .banner-container{
+        top:15% !important;
+    }
+    .page-license-bidding .mainSection-header{
+        max-width: 100%;
+    }
+    .page-license-bidding .mainSection-header .btn{
+        font-size: 12px !important;
+        width: 40%;
+        height: auto;
+        margin: 10px 5px !important;
+        padding: 10px !important;
+        margin: 0 5px;
+    }
+    .page-license-bidding .contentModule-actions_right  .btn_slim.btn_outline{
+
+        padding: 0 !important;
+    }
     #sectionItems .baModule-search {
         max-width: 100%;
     }
@@ -2739,7 +2774,8 @@ button:focus {
     .page-appointment-create .mw3, .page-license-apply .mw2,
     .page-new-license-apply .mw2,
     .page-appointment-details .contentModule-section .mw0,
-    .page-license-apply .mw0, .page-new-license-apply .mw0 {
+    .page-license-apply .mw0, .page-new-license-apply .mw0,
+    .page-shareholder-apply #addShareholderQM1NewPersonSection #attachmentSection .mw0 {
                 max-width: 100% !important;
     }
     .page-sagia-profile .panelTabs-content .panelModule_halfRadius {
@@ -2756,6 +2792,38 @@ button:focus {
     .page-sagia-profile #generalManagerForm  .js-contactUpdate-edit .close-edit{
         right: 0 !important;
     }
+}
+@media (min-width:576px) and (max-width:767px) {
+    .page-license-bidding .mainSection-header{
+        margin-top: 60px;
+    }
+
+    .page-license-bidding .contentModule-actions_spaceBetween  .btn{
+        width: 195px !important;
+
+    }
+    .page-license-bidding .mainSection-header .btn{
+        width: 30%;
+        height: auto;
+        font-size: 12px !important;
+        padding: 10px !important;
+        margin: 10px 5px;
+    }
+    .page-license-bidding .contentModule-actions_right  .btn_slim.btn_outline{
+        padding: 0 !important;
+    }
+    .page-license-bidding #temporaryBiddingLicenseFormId .panelTabs_formFlow .tabhead{
+        margin-bottom: 30px;
+
+    }
+    .page-license-bidding #temporaryBiddingLicenseFormId #nextFirstTabButtonId{
+        width: 195px !important;
+    }
+
+    .page-license-bidding #temporaryBiddingLicenseFormId .mw1{
+        max-width: 30%;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width:991px) {
@@ -2886,10 +2954,13 @@ button:focus {
     .page-sagia-profile .contentModule-section .mw2,
     .page-appointment-create .mw0, .page-appointment-create .mw2,
     .page-appointment-create .mw3, .page-appointment-details .contentModule-section .mw0,
-    .page-license-apply .mw0, .page-new-license-apply .mw0, .page-license-apply .mw2, .page-new-license-apply .mw2 {
+    .page-license-apply .mw0, .page-new-license-apply .mw0,
+    .page-license-apply .mw2, .page-new-license-apply .mw2, .page-shareholder-apply
+    #addShareholderQM1NewPersonSection #attachmentSection .mw0 {
         max-width: 50% !important;
         width: 50% !important;
     }
+
     .page-sagia-profile #updatePwdForm {
         padding-top: 30px;
     }
@@ -2905,6 +2976,20 @@ button:focus {
     .notifyCount{
         top: 0;;
     }
+    .page-license-bidding #temporaryBiddingLicenseFormId .mw1{
+        max-width: 30%;
+    }
+    .page-license-bidding #temporaryBiddingLicenseFormId{
+        margin: 10px;
+    }
+
+    .page-license-bidding .achievement_header .banner-container h1{
+        font-size: 40px;
+    }
+    .page-license-bidding .achievement_header .banner-container{
+        top:13% !important;
+    }
+
 }
 
 @media (min-width:992px) and (max-width:1199px) {
@@ -2914,6 +2999,12 @@ button:focus {
 
     .page-sagia-profile .panelTabs-navigation {
         display: block !important;
+    }
+    .page-license-bidding .achievement_header .banner-container h1{
+        font-size: 40px;
+    }
+    .page-license-bidding .achievement_header .banner-container{
+        top:20% !important;
     }
 }
 

@@ -61,4 +61,8 @@
     <c:if test="${displayTutorial}">
         displayTutorial = ${displayTutorial};
     </c:if>
+    $("#btn-show-me-around").on('click',function(){
+        displayTutorial = true;
+        SAGIA.eServiceTour.init();
+    })
 </script>

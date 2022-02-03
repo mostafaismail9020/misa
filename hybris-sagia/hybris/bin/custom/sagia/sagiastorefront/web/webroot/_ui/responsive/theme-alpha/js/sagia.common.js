@@ -712,3 +712,14 @@ $(document).ready(function () {
         }
     });
 });
+
+$("#dashboardNoLicenseHelper").on('click',function(){
+    $("#license-application-simulator").show();
+})
+   
+$("#simulator-close").on('click',function(){
+    var video=$('#simulator-video').attr("src");
+    $('#simulator-video').attr("src",video);
+    $("#license-application-simulator").hide();
+})
+   

@@ -128,7 +128,7 @@
                         </c:when>
                         <c:otherwise>
                         	<div class="globalMessage-action d-flex">
-                        		<button data-target="#license-application-simulator" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 btn-simulator" data-toggle="modal">
+                        		<button data-target="#license-application-simulator" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 btn-simulator">
                         			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
                         			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/>
                         		</button> 
@@ -400,17 +400,17 @@
 </section>
 
 
-<div class="modal fade show" id="license-application-simulator"  tabindex="-1" role="dialog" aria-labelledby="license-application" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent license-application-simulator" role="document">
-        <div class="modal-content dashboard-pop-up">
-            <div class="modal-header">
-                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-                    <icon:close/>
-                </button>
+<div id="license-application-simulator" class="container" style="display:none;">
+    <div class="row">
+        <div class="col-md-10 ">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe id="simulator-video" class="embed-responsive-item" src="https://www.youtube.com/embed/u3sQ7TDFUWs" allowfullscreen></iframe>
             </div>
-            <div class="modal-body">
-                <iframe width="560" height="400" src="https://www.youtube.com/embed/u3sQ7TDFUWs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+        </div>
+        <div class="col-md-2"> 
+            <button type="button" id="simulator-close" class="modal-close  top-0 end-0">
+                <icon:close/>
+            </button>
         </div>
     </div>
 </div>

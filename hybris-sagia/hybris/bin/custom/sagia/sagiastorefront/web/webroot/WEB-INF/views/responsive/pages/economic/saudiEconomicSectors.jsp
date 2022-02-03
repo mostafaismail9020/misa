@@ -76,37 +76,43 @@
     </div>
   </div> 
 </div>
-<div class="row pt-5 pb-5">
+<div class="row">
  
-  <div class="col-md-9 realSectorDiv" style="height: 380px;position: relative;top: 25%;display: table-cell;vertical-align: middle;transform: translatey(25%);">
-    <div class="row posRelDiv">
-      <div class="col-md-3 mx-auto">
+  <!-- <div class="col-md-9 realSectorDiv" style="height: 380px;position: relative;top: 25%;display: table-cell;vertical-align: middle;transform: translatey(25%);">
+    <div class="row posRelDiv"> -->
+      <div class="col-12 col-lg-3 mx-auto">
         <div class="INL_SD_Real_Sector">
           <h4 class="INL_SD_Real_Sector_header">${realSector[0].value}</h4>
           <p class="INL_SD_Real_Sector_paper">${realSector[0].displayName}</p> 
         </div>    
       </div> 
-      <div class="col-md-3 mx-auto">
+      <div class="col-12 col-lg-3 mx-auto">
         <div class="INL_SD_Real_Sector">
           <h4 class="INL_SD_Real_Sector_header">${realSector[1].value}</h4>
           <p class="INL_SD_Real_Sector_paper">${realSector[1].displayName}</p>
         </div>    
       </div> 
-      <div class="col-md-3 mx-auto">
+      <div class="col-12 col-lg-3 mx-auto">
         <div class="INL_SD_Real_Sector">
           <h4 class="INL_SD_Real_Sector_header">${realSector[2].value}</h4>
           <p class="INL_SD_Real_Sector_paper">${realSector[2].displayName}</p>
         </div>    
-      </div> 
-      <div class="col-md-3 mx-auto INL_Arrow_bg_log d-none d-md-block">
+      </div>
+	<div class="col-12 col-lg-3 mx-auto">
+        <div class="INL_SD_Real_Sector">
+          <h4 class="INL_SD_Real_Sector_header">${realSector[3].value}</h4>
+          <p class="INL_SD_Real_Sector_paper">${realSector[3].displayName}</p>
+        </div>   
+      </div>	  
+     <!-- <div class="col-md-3 mx-auto INL_Arrow_bg_log d-none d-md-block">
             
       </div> 
       <div class="col-md-3 mx-auto d-block d-md-none mobArrowDiv">
             <img src="${commonResourcePath}/images/sector_arrow.png">
-      </div>  
-    </div>  
-  </div>
-  <div class="col-12 col-md-3 realSectorDivHeight" style="height: 380px;">
+      </div> --> 
+  <!--  </div> 
+  </div>  -->
+  <!-- <div class="col-12 col-md-3 realSectorDivHeight" style="height: 380px;">
      <div class="row responsMt">
       <div class="col-6 col-md-12 mx-auto">
         <div class="INL_SD_Real_Sector">
@@ -121,7 +127,7 @@
         </div>   
       </div> 
     </div>
-  </div>
+  </div> -->
 </div>
                                                         <div class="chart-bottom-link pb-4 pr-2">
                                                             <a href="#" target="_blank" class="anchor-link"><spring:theme code="economic.saudieconomic.source.text"/><span><spring:theme code="economic.saudieconomic.gastat.text"/></span></a>

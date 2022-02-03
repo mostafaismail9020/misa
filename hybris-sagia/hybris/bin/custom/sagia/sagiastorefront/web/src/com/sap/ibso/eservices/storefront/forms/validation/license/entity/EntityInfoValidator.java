@@ -149,17 +149,11 @@ public class EntityInfoValidator implements Validator {
 
         final boolean boardResolutionFileAdded = entityInformationData.isBoardResolutionFileAdded();
         final boolean letterOfSupportFileAdded = entityInformationData.isLetterOfSupportFileAdded();
-        final boolean mainBranchCRFileAdded = entityInformationData.isMainBranchCRFileAdded();
-        final boolean otherBranchCR1FileAdded = entityInformationData.isOtherBranchCR1FileAdded();
-        final boolean otherBranchCR2FileAdded = entityInformationData.isOtherBranchCR2FileAdded();
-        
-        /*final boolean rhqStockMarketAttachmentFileAdded = entityInformationData.isRhqStockMarketAttachmentFileAdded();
-        final boolean rhqEntityAssetAttachmentFileAdded = entityInformationData.isRhqEntityAssetAttachmentFileAdded();
-        final boolean rhqEntityRevenueAttachmentFileAdded = entityInformationData.isRhqEntityRevenueAttachmentFileAdded();
-        final boolean rhqCR1FileAdded = entityInformationData.isRhqCR1FileAdded();
-        final boolean rhqCR2FileAdded = entityInformationData.isRhqCR2FileAdded();
-        final boolean rhqCR3FileAdded = entityInformationData.isRhqCR3FileAdded();
-        final boolean rhqCR4FileAdded = entityInformationData.isRhqCR4FileAdded();*/
+        final boolean entityFinancialFileAdded = entityInformationData.isEntityFinancialStatementFileAdded();
+        final boolean commercialRegMainEntryFileAdded = entityInformationData.isCommercialRegMainEntryFileAdded();
+        final boolean commercialRegBranch1EntryFileAdded = entityInformationData.isCommercialRegBranch1FileAdded();
+        final boolean commercialRegBranch2EntryFileAdded = entityInformationData.isCommercialRegBranch2FileAdded();
+
 
         final boolean financialStatementFileAdded = entityInformationData.isFinancialStatementFileAdded();
         final boolean iqamaFileAdded = entityInformationData.isIqamaFileAdded();
@@ -206,36 +200,18 @@ public class EntityInfoValidator implements Validator {
             }
         }
         if(entityInformationData.getLicenseType() != null && entityInformationData.getLicenseType().equals("11")) {
-            if (!mainBranchCRFileAdded) {
-                errors.rejectValue("mainBranchCRFileAdded", "validation.basicinformation.file");
+            if (!entityFinancialFileAdded) {
+                errors.rejectValue("entityFinancialStatementFileAdded", "validation.basicinformation.file");
             }
-            if (!otherBranchCR1FileAdded) {
-                errors.rejectValue("otherBranchCR1FileAdded", "validation.basicinformation.file");
+            if (!commercialRegMainEntryFileAdded) {
+                errors.rejectValue("commercialRegMainEntryFileAdded", "validation.basicinformation.file");
             }
-            if (!otherBranchCR2FileAdded) {
-                errors.rejectValue("otherBranchCR2FileAdded", "validation.basicinformation.file");
+            if (!commercialRegBranch1EntryFileAdded) {
+                errors.rejectValue("commercialRegBranch1FileAdded", "validation.basicinformation.file");
             }
-          /*if (!rhqStockMarketAttachmentFileAdded) {
-              errors.rejectValue("rhqStockMarketAttachmentFileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqEntityAssetAttachmentFileAdded) {
-              errors.rejectValue("rhqEntityAssetAttachmentFileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqEntityRevenueAttachmentFileAdded) {
-              errors.rejectValue("rhqEntityRevenueAttachmentFileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqCR1FileAdded) {
-              errors.rejectValue("rhqCR1FileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqCR2FileAdded) {
-              errors.rejectValue("rhqCR2FileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqCR3FileAdded) {
-              errors.rejectValue("rhqCR3FileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqCR4FileAdded) {
-              errors.rejectValue("rhqCR4FileAdded", "validation.basicinformation.file");
-          }*/
+            if (!commercialRegBranch2EntryFileAdded) {
+                errors.rejectValue("commercialRegBranch2FileAdded", "validation.basicinformation.file");
+            }
         }
 
     }

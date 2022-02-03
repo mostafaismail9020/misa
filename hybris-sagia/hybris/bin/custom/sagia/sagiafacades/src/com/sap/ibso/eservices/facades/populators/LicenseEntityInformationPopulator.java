@@ -61,42 +61,6 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 		target.setIsEntrepreneur(source.isIsEntrepreneur());
 		
 		//RHQ Requirement START
-		
-		target.setIsMoreThan2Branch(source.isIsMoreThan2Branch());
-		target.setIsMoreThan6Branch(source.isIsMoreThan6Branch());
-		target.setIsEntityAssetMoreThanThreshold(source.isIsEntityAssetMoreThanThreshold());
-		target.setIsEntityListedInStockMarket(source.isIsEntityListedInStockMarket());
-		target.setIsEntityRevenueMoreThanThreshold(source.isIsEntityRevenueMoreThanThreshold());
-		if (source.getMainBranchCR() != null) {
-			target.setMainBranchCR(getMediaConverter().convert(source.getMainBranchCR()));
-		}
-		if (source.getOtherBranchCR1() != null) {
-			target.setOtherBranchCR1(getMediaConverter().convert(source.getOtherBranchCR1()));
-		}
-		if (source.getOtherBranchCR2() != null) {
-			target.setOtherBranchCR2(getMediaConverter().convert(source.getOtherBranchCR2()));
-		}
-		if (source.getRhqStockMarketAttachment() != null) {
-			target.setRhqStockMarketAttachment(getMediaConverter().convert(source.getRhqStockMarketAttachment()));
-		}
-		if (source.getRhqEntityAssetAttachment() != null) {
-			target.setRhqEntityAssetAttachment(getMediaConverter().convert(source.getRhqEntityAssetAttachment()));
-		}
-		if (source.getRhqEntityRevenueAttachment() != null) {
-			target.setRhqEntityRevenueAttachment(getMediaConverter().convert(source.getRhqEntityRevenueAttachment()));
-		}
-		if (source.getRhqCR1() != null) {
-			target.setRhqCR1(getMediaConverter().convert(source.getRhqCR1()));
-		}
-		if (source.getRhqCR2() != null) {
-			target.setRhqCR2(getMediaConverter().convert(source.getRhqCR2()));
-		}
-		if (source.getRhqCR3() != null) {
-			target.setRhqCR3(getMediaConverter().convert(source.getRhqCR3()));
-		}
-		if (source.getRhqCR4() != null) {
-			target.setRhqCR4(getMediaConverter().convert(source.getRhqCR4()));
-		}
 
 		if(!source.getListOfRhqCountries().isEmpty())
 		{
@@ -161,6 +125,7 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 				entityData.setIndustry(entityModel.getIndustry());
 				entityData.setOperations(entityModel.getOperations());
 				entityData.setRhqActivityProvided(entityModel.getRhqActivityProvided());
+				entitiesManagedByRhqList.add(entityData);
 			}
 			target.setListOfEntitiesManagedByRhq(entitiesManagedByRhqList);
 		}
@@ -176,6 +141,7 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 				brandData.setIndustry(brandModel.getIndustry());
 				brandData.setCompanyOwningBrandInMENA(brandModel.getCompanyOwningBrandInMENA());
 				brandData.setRhqActivityProvided(brandModel.getRhqActivityProvided());
+				brandPresenceInMENARegionList.add(brandData);
 			}
 			target.setListOfBrandPresenceInMENARegion(brandPresenceInMENARegionList);
 		}
@@ -186,13 +152,14 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 			EstimatedOperatingCostForRhq operatingCostData = new EstimatedOperatingCostForRhq();
 			for (OperatingCostForRhqModel operatingCostModel : source.getListOfEstimatedOperatingCostForRhq())
 			{
-				operatingCostModel.setItem(operatingCostData.getItem());
-				operatingCostModel.setUnitCost(operatingCostData.getUnitCost());
-				operatingCostModel.setNoOfUnits(operatingCostData.getNoOfUnits());
-				operatingCostModel.setCostFrequency(operatingCostData.getCostFrequency());
-				operatingCostModel.setYear2022(operatingCostData.getYear2022());
-				operatingCostModel.setYear2023(operatingCostData.getYear2023());
-				operatingCostModel.setYear2024(operatingCostData.getYear2024());
+				operatingCostData.setItem(operatingCostModel.getItem());
+				operatingCostData.setUnitCost(operatingCostModel.getUnitCost());
+				operatingCostData.setNoOfUnits(operatingCostModel.getNoOfUnits());
+				operatingCostData.setCostFrequency(operatingCostModel.getCostFrequency());
+				operatingCostData.setYear2022(operatingCostModel.getYear2022());
+				operatingCostData.setYear2023(operatingCostModel.getYear2023());
+				operatingCostData.setYear2024(operatingCostModel.getYear2024());
+				operatingCostList.add(operatingCostData);
 			}
 			target.setListOfEstimatedOperatingCostForRhq(operatingCostList);
 		}

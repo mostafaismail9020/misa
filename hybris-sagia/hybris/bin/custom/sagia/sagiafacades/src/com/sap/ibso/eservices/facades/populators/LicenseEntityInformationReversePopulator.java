@@ -10,6 +10,7 @@ import de.hybris.platform.converters.Populator;
 import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.servicelayer.dto.converter.ConversionException;
 import de.hybris.platform.servicelayer.model.ModelService;
+import org.apache.tools.ant.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -68,11 +69,11 @@ public class LicenseEntityInformationReversePopulator
 		target.setHasAdvanceLicenseNr(source.isHasAdvanceLicenseNr());
 		target.setAdvanceLicenseNr(source.getAdvanceLicenseNr());
 		target.setIsEntrepreneur(source.isIsEntrepreneur());
-		target.setIsMoreThan2Branch(source.isIsMoreThan2Branch());
-		target.setIsMoreThan6Branch(source.isIsMoreThan6Branch());
-		target.setIsEntityAssetMoreThanThreshold(source.isIsEntityAssetMoreThanThreshold());
-		target.setIsEntityListedInStockMarket(source.isIsEntityListedInStockMarket());
-		target.setIsEntityRevenueMoreThanThreshold(source.isIsEntityRevenueMoreThanThreshold());
+		//target.setIsMoreThan2Branch(source.isIsMoreThan2Branch());
+		//target.setIsMoreThan6Branch(source.isIsMoreThan6Branch());
+		//target.setIsEntityAssetMoreThanThreshold(source.isIsEntityAssetMoreThanThreshold());
+		//target.setIsEntityListedInStockMarket(source.isIsEntityListedInStockMarket());
+		//target.setIsEntityRevenueMoreThanThreshold(source.isIsEntityRevenueMoreThanThreshold());
 		if(null!=source.getListOfRhqCountries())
 		{
 			final List<String> listOfRhqCountries = new ArrayList<String>();
@@ -145,7 +146,8 @@ public class LicenseEntityInformationReversePopulator
 		if(null!=source.getListOfEntitiesManagedByRhq())
 		{
 			final List<EntitiesManagedByRhqModel> entitiesManagedByRhqList = new ArrayList<EntitiesManagedByRhqModel>();
-			final EntitiesManagedByRhqModel entityModel = null;
+			target.setListOfEntitiesManagedByRhq(null);
+			final EntitiesManagedByRhqModel entityModel=modelService.create(EntitiesManagedByRhqModel.class);
 			for (EntitiesManagedByRhq entityData : source.getListOfEntitiesManagedByRhq())
 			{
 				entityModel.setCompanyName(entityData.getCompanyName());
@@ -154,6 +156,7 @@ public class LicenseEntityInformationReversePopulator
 				entityModel.setIndustry(entityData.getIndustry());
 				entityModel.setOperations(entityData.getOperations());
 				entityModel.setRhqActivityProvided(entityData.getRhqActivityProvided());
+				entitiesManagedByRhqList.add(entityModel);
 			}
 			target.setListOfEntitiesManagedByRhq(entitiesManagedByRhqList);
 		}
@@ -164,7 +167,8 @@ public class LicenseEntityInformationReversePopulator
 		if(null!=source.getListOfBrandPresenceInMENARegion())
 		{
 			final List<BrandPresenceModel> brandPresenceInMENARegionList = new ArrayList<BrandPresenceModel>();
-			final BrandPresenceModel brandModel = null;
+			target.setListOfBrandPresenceInMENARegion(null);
+			final BrandPresenceModel brandModel = modelService.create(BrandPresenceModel.class);
 			for (BrandPresenceInMENARegion brandData : source.getListOfBrandPresenceInMENARegion())
 			{
 				brandModel.setBrandName(brandData.getBrandName());
@@ -172,6 +176,7 @@ public class LicenseEntityInformationReversePopulator
 				brandModel.setIndustry(brandData.getIndustry());
 				brandModel.setCompanyOwningBrandInMENA(brandData.getCompanyOwningBrandInMENA());
 				brandModel.setRhqActivityProvided(brandData.getRhqActivityProvided());
+				brandPresenceInMENARegionList.add(brandModel);
 			}
 			target.setListOfBrandPresenceInMENARegion(brandPresenceInMENARegionList);
 		}
@@ -182,7 +187,8 @@ public class LicenseEntityInformationReversePopulator
 		if(null!=source.getListOfEstimatedOperatingCostForRhq())
 		{
 			final List<OperatingCostForRhqModel> operatingCostList = new ArrayList<OperatingCostForRhqModel>();
-			final OperatingCostForRhqModel operatingCostModel = null;
+			target.setListOfEstimatedOperatingCostForRhq(null);
+			final OperatingCostForRhqModel operatingCostModel = modelService.create(OperatingCostForRhqModel.class);
 			for (EstimatedOperatingCostForRhq operatingCostData : source.getListOfEstimatedOperatingCostForRhq())
 			{
 				operatingCostModel.setItem(operatingCostData.getItem());
@@ -192,6 +198,7 @@ public class LicenseEntityInformationReversePopulator
 				operatingCostModel.setYear2022(operatingCostData.getYear2022());
 				operatingCostModel.setYear2023(operatingCostData.getYear2023());
 				operatingCostModel.setYear2024(operatingCostData.getYear2024());
+				operatingCostList.add(operatingCostModel);
 			}
 			target.setListOfEstimatedOperatingCostForRhq(operatingCostList);
 		}
@@ -231,66 +238,6 @@ public class LicenseEntityInformationReversePopulator
 			MediaData mediaData = source.getLetterOfSupportFile();
 			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
 			target.setLetterOfSupportFile(mediaModel);
-		}
-		if (source.getMainBranchCR() != null) {
-			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getMainBranchCR();
-			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setBoardResolutionFile(mediaModel);
-		}
-		if (source.getOtherBranchCR1() != null) {
-			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getOtherBranchCR1();
-			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setBoardResolutionFile(mediaModel);
-		}
-		if (source.getOtherBranchCR2() != null) {
-			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getOtherBranchCR2();
-			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setBoardResolutionFile(mediaModel);
-		}
-		if (source.getRhqStockMarketAttachment() != null) {
-			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getRhqStockMarketAttachment();
-			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setBoardResolutionFile(mediaModel);
-		}
-		if (source.getRhqEntityAssetAttachment() != null) {
-			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getRhqEntityAssetAttachment();
-			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setBoardResolutionFile(mediaModel);
-		}
-		if (source.getRhqEntityRevenueAttachment() != null) {
-			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getRhqEntityRevenueAttachment();
-			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setBoardResolutionFile(mediaModel);
-		}
-		if (source.getRhqCR1() != null) {
-			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getRhqCR1();
-			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setBoardResolutionFile(mediaModel);
-		}
-		if (source.getRhqCR2() != null) {
-			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getRhqCR2();
-			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setBoardResolutionFile(mediaModel);
-		}
-		if (source.getRhqCR3() != null) {
-			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getRhqCR3();
-			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setBoardResolutionFile(mediaModel);
-		}
-		if (source.getRhqCR4() != null) {
-			MediaModel mediaModel = getModelService().create(MediaModel.class);
-			MediaData mediaData = source.getRhqCR4();
-			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
-			target.setBoardResolutionFile(mediaModel);
 		}
 
 		if (source.getEntityFinancialStatementFile() != null) {

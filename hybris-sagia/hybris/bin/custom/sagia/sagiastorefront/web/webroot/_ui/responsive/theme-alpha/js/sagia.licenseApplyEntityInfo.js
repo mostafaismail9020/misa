@@ -283,9 +283,12 @@ bindRhqCountryInformationEvents: function () {
                 //     $('#centerAdminRhqRegionsSection').append('<option value='+i+'>'+objectCenterAdminRhqRegionsOptions[i]+'</option>');
                 // }
 
-                 let objectRhqSubsidiaryOptions = new Array("","Only one country","2 to 5 countries","6 to 10 countries","over 10 countries");
-                for(var i = 1; i < objectRhqSubsidiaryOptions.length; i++) {
-                    $('#rhqSubsidiaryPresence').append('<option value='+i+'>'+objectRhqSubsidiaryOptions[i]+'</option>');
+                 let objectRhqSubsidiaryOptions = new Array("Only one country","2 to 5 countries","6 to 10 countries","over 10 countries");
+                for(var i = 0; i < objectRhqSubsidiaryOptions.length; i++) {
+                   // $('#rhqSubsidiaryPresence').append('<div class="form-item"><input type="radio" name="rhqSubsidiaryPresence" value='+i+'>'+objectRhqSubsidiaryOptions[i]+'</input></div>');
+
+                    $('#rhqSubsidiaryPresence').append('<div class="form-item"><input name="rhqSubsidiaryPresence" class="form-control" type="radio" id=' + i + ' value=' + i + '><label  class="control-label" for=' + i + '><span></span> ' + objectRhqSubsidiaryOptions[i] + '</label></div>');
+
                  }
 
                 //22-Jan-22 - End
@@ -1273,11 +1276,18 @@ bindRhqCountryInformationEvents: function () {
               editBranchCountry.find("option").remove();
               editBranchCountry.append(new Option("", "", false, false));
 
+              var branchInformationRhqCountry = $("#branchInformationRhqCountry");
+              branchInformationRhqCountry.find("option").remove();
+
+
+
               jsonData.countries.forEach(function (currentValue) {
+                branchInformationRhqCountry.append(new Option(currentValue.countryText, currentValue.country, false, false));
                 addBrandCountry.append(new Option(currentValue.countryText, currentValue.country, false, false));
                 editBrandCountry.append(new Option(currentValue.countryText, currentValue.country, false, false));
                 addBranchCountry.append(new Option(currentValue.countryText, currentValue.country, false, false));
                 editBranchCountry.append(new Option(currentValue.countryText, currentValue.country, false, false));
+
 
             });
              addBranchCountry.val(null);
@@ -1654,17 +1664,17 @@ if($("#licenseTypes").val() === "11"){
 
                 console.log(JSON.stringify(objectBranches).replace(/"/g, "'"));
                 $('.mncBranchTableJsonInputs').html('');
-                var element = $('<input/>').prop('type', 'hidden').prop('name', 'EntitiesManagedByRhq').val(JSON.stringify(objectBranches).replace(/"/g, "'"));
+                var element = $('<input/>').prop('type', 'hidden').prop('name', 'entitiesManagedByRhq').val(JSON.stringify(objectBranches).replace(/"/g, "'"));
                 $('#entityForm .mncBranchTableJsonInputs').append(element);
 
                 console.log(JSON.stringify(objectBrands).replace(/"/g, "'"));
                 $('.mncBrandTableJsonInputs').html('');
-                var element = $('<input/>').prop('type', 'hidden').prop('name', 'BrandPresenceInMENARegion').val(JSON.stringify(objectBrands).replace(/"/g, "'"));
+                var element = $('<input/>').prop('type', 'hidden').prop('name', 'brandPresenceInMENARegion').val(JSON.stringify(objectBrands).replace(/"/g, "'"));
                 $('#entityForm .mncBrandTableJsonInputs').append(element);
 
                 console.log(JSON.stringify(objectCost).replace(/"/g, "'"));
                 $('.mncCostTableJsonInputs').html('');
-                var element = $('<input/>').prop('type', 'hidden').prop('name', 'EstimatedOperatingCostForRhq').val(JSON.stringify(objectCost).replace(/"/g, "'"));
+                var element = $('<input/>').prop('type', 'hidden').prop('name', 'estimatedOperatingCostForRhq').val(JSON.stringify(objectCost).replace(/"/g, "'"));
                 $('#entityForm .mncCostTableJsonInputs').append(element);
                 //print form values
 
@@ -1704,6 +1714,7 @@ if($("#licenseTypes").val() === "11"){
             var action =  $(this).parents('form').prop('action');
             action += "?CSRFToken="+$('input[name="CSRFToken"]').val();
             $(this).parents('form').prop('action', action);
+            $(this).parents('form').submit();
 
 
 
@@ -1996,14 +2007,24 @@ if($("#licenseTypes").val() === "11"){
         }
 
 
-        if($('#rhqSubsidiaryPresence').val().length <1){
+        // if($('#rhqSubsidiaryPresence').val().length <1){
+        //     hasErrors = true;
+        //     $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
+        //     $('#rhqSubsidiaryPresence').parents('.form-group').addClass('has-error');
+        // } else {
+        //     $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+        //     $('#rhqSubsidiaryPresence').parents('.form-group').removeClass('has-error');
+        // }
+
+        if (typeof ($('input[type=radio][name=rhqSubsidiaryPresence]:checked').val()) == "undefined") {
             hasErrors = true;
-            $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
-            $('#rhqSubsidiaryPresence').parents('.form-group').addClass('has-error');
-        } else {
-            $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
-            $('#rhqSubsidiaryPresence').parents('.form-group').removeClass('has-error');
-        }
+                $('#rhqSubsidiaryPresence').parents('.formRadioButton').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
+                $('#rhqSubsidiaryPresence').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqSubsidiaryPresence').parents('.formRadioButton').find('.help-block').text(getI18nText(""));
+                $('#rhqSubsidiaryPresence').parents('.form-group').removeClass('has-error');
+            }
+
 
         if($('#rhqCenterAdmin').val().length <1){
             hasErrors = true;
@@ -2115,15 +2136,25 @@ if($("#licenseTypes").val() === "11"){
 
         });
 
-        $(document.body).on('change', '#rhqSubsidiaryPresence', function () {
-            if($('#rhqSubsidiaryPresence').val().length <1){
-                $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
+        // $(document.body).on('change', '#rhqSubsidiaryPresence', function () {
+        //     if($('#rhqSubsidiaryPresence').val().length <1){
+        //         $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
+        //         $('#rhqSubsidiaryPresence').parents('.form-group').addClass('has-error');
+        //     } else {
+        //         $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+        //         $('#rhqSubsidiaryPresence').parents('.form-group').removeClass('has-error');
+        //     }
+
+        // });
+
+        $('input[type=radio][name=rhqSubsidiaryPresence]').change(function() {
+            if (typeof ($('input[type=radio][name=rhqSubsidiaryPresence]:checked').val()) == "undefined") {
+                $('#rhqSubsidiaryPresence').parents('.formRadioButton').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
                 $('#rhqSubsidiaryPresence').parents('.form-group').addClass('has-error');
             } else {
-                $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqSubsidiaryPresence').parents('.formRadioButton').find('.help-block').text(getI18nText(""));
                 $('#rhqSubsidiaryPresence').parents('.form-group').removeClass('has-error');
             }
-
         });
 
         $(document.body).on('change', '#rhqCenterAdmin', function () {

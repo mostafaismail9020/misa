@@ -62,8 +62,7 @@
 
 	<div class="formSelectBox">
 			<div class="form-group">
-				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="js-select2-search form-control" >
-					<option></option>
+				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="js-select2-multi form-control" multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.rhqCenterAdmin}">
 					 <option value="GCC">GCC</option>
                      <option value="MENA">MENA</option>
                      <option value="Middle East (ME)">Middle East (ME)</option>
@@ -93,18 +92,15 @@
 		<div class="help-block"></div>
 	</div>
 
-	<!--MNC Subsidiaries start-->
-<div class="formSelectBox">
-		<div class="form-group optionalActivity">
-			<select id="rhqSubsidiaryPresence" name="rhqSubsidiaryPresence"
-				class="js-select2-multi form-control select2-hidden-accessible"
-				multiple="" tabindex="-1" aria-hidden="true" data-value="">
-			</select>
-			<label class="control-label" for="rhqSubsidiaryPresence"><spring:theme code="rhq.mnc.subsidiaries.presence" /></label>
-		</div>
+     <div class="formRadioButton">
+         <div class="form-group optionalActivity ">
+		 <label class="control-label" for="rhqSubsidiaryPresence"><spring:theme code="rhq.mnc.subsidiaries.presence" /></label>
+		 <div id="rhqSubsidiaryPresence">
+
+		  </div>
+        </div>
 		<div class="help-block"></div>
-	</div>
-<!--MNC Subsidiaries End-->
+     </div>
 
 
 <!--Center of Administrative End-->

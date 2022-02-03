@@ -1,28 +1,62 @@
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
-import java.io.IOException;
-import java.net.URLDecoder;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Optional;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import atg.taglib.json.util.JSONArray;
+import atg.taglib.json.util.JSONException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.internal.LinkedTreeMap;
+import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
+import com.sap.ibso.eservices.core.event.SagiaPublishLicenseEvent;
+import com.sap.ibso.eservices.core.model.IsicMasterModel;
+import com.sap.ibso.eservices.core.model.PersonShareholderModel;
+import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
+import com.sap.ibso.eservices.core.model.ShareHolderModel;
+import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
 import com.sap.ibso.eservices.facades.data.*;
+import com.sap.ibso.eservices.facades.data.odata.ServiceRequestCreation;
+import com.sap.ibso.eservices.facades.data.zqeemah.DropdownValue;
+import com.sap.ibso.eservices.facades.data.zqeemah.Product;
+import com.sap.ibso.eservices.facades.data.zqeemah.*;
+import com.sap.ibso.eservices.facades.data.zqeemah2.*;
 import com.sap.ibso.eservices.facades.sagia.*;
 import com.sap.ibso.eservices.facades.sagia.impl.DefautSagiaLicenseApplyFacade;
+import com.sap.ibso.eservices.facades.user.impl.SagiaCustomerFacade;
+import com.sap.ibso.eservices.sagiaservices.data.zqeemah.ApplicationStatusData;
+import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ProductData;
+import com.sap.ibso.eservices.sagiaservices.investor.InvestorMappingService;
+import com.sap.ibso.eservices.sagiaservices.services.license.application.ZQeemahService;
+import com.sap.ibso.eservices.sagiaservices.utils.ObjectUtils;
 import com.sap.ibso.eservices.storefront.controllers.ControllerConstants;
+import com.sap.ibso.eservices.storefront.controllers.SagiaConstants;
+import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
+import com.sap.ibso.eservices.storefront.forms.SagiaApplyReviewForm;
+import com.sap.ibso.eservices.storefront.forms.validation.license.SagiaLicenseApplyValidator;
 import com.sap.ibso.eservices.storefront.forms.validation.license.contact.ContactPersonValidator;
+import com.sap.ibso.eservices.storefront.forms.validation.license.entity.EntityInfoValidator;
 import com.sap.ibso.eservices.storefront.forms.validation.license.shareholder.ExistingShareHoldersValidator;
 import com.sap.ibso.eservices.storefront.forms.validation.license.shareholder.OrganizationShareHoldersValidator;
 import com.sap.ibso.eservices.storefront.forms.validation.license.shareholder.PersonShareHoldersValidator;
+import com.sap.ibso.eservices.storefront.util.SagiaContextFormErrorsConverter;
+import com.sap.nic.NICUserData;
+import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.ThirdPartyConstants;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
+import de.hybris.platform.acceleratorstorefrontcommons.util.XSSFilterUtil;
+import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
+import de.hybris.platform.core.Constants;
+import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.servicelayer.config.ConfigurationService;
+import de.hybris.platform.servicelayer.event.EventService;
+import de.hybris.platform.servicelayer.i18n.I18NService;
+import de.hybris.platform.servicelayer.model.ModelService;
+import de.hybris.platform.servicelayer.user.UserService;
+import de.hybris.platform.site.BaseSiteService;
+import de.hybris.platform.util.Config;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.IOUtils;
@@ -45,63 +79,13 @@ import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.reflect.TypeToken;
-import com.google.gson.Gson;
-import com.google.gson.internal.LinkedTreeMap;
-import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
-import com.sap.ibso.eservices.core.event.SagiaPublishLicenseEvent;
-import com.sap.ibso.eservices.core.model.IsicMasterModel;
-import com.sap.ibso.eservices.core.model.PersonShareholderModel;
-import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
-import com.sap.ibso.eservices.core.model.ShareHolderModel;
-import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
-import com.sap.ibso.eservices.facades.data.zqeemah.BasicContactInformation;
-import com.sap.ibso.eservices.facades.data.zqeemah.BusinessActivity;
-import com.sap.ibso.eservices.facades.data.zqeemah.DelegateAttachment;
-import com.sap.ibso.eservices.facades.data.zqeemah.DropdownValue;
-import com.sap.ibso.eservices.facades.data.zqeemah.IsicDetails;
-import com.sap.ibso.eservices.facades.data.zqeemah.Product;
-import com.sap.ibso.eservices.facades.data.zqeemah.ShareholderAttachment;
-import com.sap.ibso.eservices.facades.data.zqeemah.ShareholderInfo;
-import com.sap.ibso.eservices.facades.data.zqeemah2.Attachment;
-import com.sap.ibso.eservices.facades.data.zqeemah2.BasicOrganizationInformation;
-import com.sap.ibso.eservices.facades.data.zqeemah2.FinancialPost;
-import com.sap.ibso.eservices.facades.data.zqeemah2.FinancialQuestion;
-import com.sap.ibso.eservices.facades.data.zqeemah2.FininvisidPost;
-import com.sap.ibso.eservices.facades.data.zqeemah2.GeneralQuestionPost;
-import com.sap.ibso.eservices.facades.data.zqeemah2.ISICDetails;
-import com.sap.ibso.eservices.facades.data.zqeemah2.InvsIdPost;
-import com.sap.ibso.eservices.facades.data.odata.ServiceRequestCreation;
-import com.sap.ibso.eservices.facades.user.impl.SagiaCustomerFacade;
-import com.sap.ibso.eservices.sagiaservices.data.zqeemah.ApplicationStatusData;
-import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ProductData;
-import com.sap.ibso.eservices.sagiaservices.investor.InvestorMappingService;
-import com.sap.ibso.eservices.sagiaservices.services.license.application.ZQeemahService;
-import com.sap.ibso.eservices.sagiaservices.utils.ObjectUtils;
-import com.sap.ibso.eservices.storefront.controllers.SagiaConstants;
-import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
-import com.sap.ibso.eservices.storefront.forms.SagiaApplyReviewForm;
-import com.sap.ibso.eservices.storefront.forms.validation.license.entity.EntityInfoValidator;
-import com.sap.ibso.eservices.storefront.forms.validation.license.SagiaLicenseApplyValidator;
-import com.sap.ibso.eservices.storefront.util.SagiaContextFormErrorsConverter;
-import com.sap.nic.NICUserData;
-
-import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
-import de.hybris.platform.acceleratorstorefrontcommons.controllers.ThirdPartyConstants;
-import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
-import de.hybris.platform.acceleratorstorefrontcommons.util.XSSFilterUtil;
-import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
-import de.hybris.platform.core.Constants;
-import de.hybris.platform.core.model.user.CustomerModel;
-import de.hybris.platform.servicelayer.config.ConfigurationService;
-import de.hybris.platform.servicelayer.event.EventService;
-import de.hybris.platform.servicelayer.i18n.I18NService;
-import de.hybris.platform.servicelayer.model.ModelService;
-import de.hybris.platform.servicelayer.user.UserService;
-import de.hybris.platform.site.BaseSiteService;
-import de.hybris.platform.util.Config;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.net.URLDecoder;
+import java.util.*;
 
 @Controller
 @RequestMapping("/my-sagia/license")
@@ -923,10 +907,16 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
                                   final BindingResult result,
                                   final Model model, final RedirectAttributes redirectAttributes,
                                   HttpServletRequest request,
+                                  @RequestParam(name="entitiesManagedByRhq", required = false) String entitiesManagedByRhq,
+                                  @RequestParam(name="brandPresenceInMENARegion", required = false) String brandPresenceInMENARegion,
+                                  @RequestParam(name="estimatedOperatingCostForRhq", required = false) String estimatedOperatingCostForRhq,
                                   @RequestParam(name="businessActivities", required = false) String[] businessActivities,
                                   @RequestParam(name="businessActivities", required = false) String singleBusinessActivity,
-                                  @RequestParam(required = false) String businessActivitiesCounter, BindingResult bindingResult) throws CMSItemNotFoundException {
+                                  @RequestParam(required = false) String businessActivitiesCounter, BindingResult bindingResult) throws CMSItemNotFoundException, JsonProcessingException, JSONException {
         List<HashMap<String, String>> businessActivitiesListUnfiltered = new ArrayList<>();
+        List<EntitiesManagedByRhq> entityList = null;
+        List<BrandPresenceInMENARegion> brandList = null;
+        List<EstimatedOperatingCostForRhq> estimatedList = null;
         List<HashMap<String, String>> businessActivitiesList = new ArrayList<>();
         Gson gson = new Gson();
         
@@ -961,6 +951,27 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             }
         }
 
+        if(null!=entitiesManagedByRhq)
+        {
+            Type type = new TypeToken< List<EntitiesManagedByRhq> >(){}.getType();
+            entityList = gson.fromJson( entitiesManagedByRhq, type );
+            sagiaApplyEntityInfoForm.setListOfEntitiesManagedByRhq(entityList);
+        }
+        if(null!=brandPresenceInMENARegion)
+        {
+            Type type = new TypeToken< List<BrandPresenceInMENARegion> >(){}.getType();
+            brandList = gson.fromJson( brandPresenceInMENARegion, type );
+            sagiaApplyEntityInfoForm.setListOfBrandPresenceInMENARegion(brandList);
+
+        }
+        if(null!=estimatedOperatingCostForRhq)
+        {
+            Type type = new TypeToken< List<EstimatedOperatingCostForRhq> >(){}.getType();
+            estimatedList = gson.fromJson( estimatedOperatingCostForRhq, type );
+            sagiaApplyEntityInfoForm.setListOfEstimatedOperatingCostForRhq(estimatedList);
+        }
+
+
         sagiaLicenseApplyFacade.validateMediasFromEntityInfo(sagiaApplyEntityInfoForm, request);
         entityInfoValidator.validate(sagiaApplyEntityInfoForm, bindingResult);
 
@@ -969,6 +980,15 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
             for (HashMap<String, String> isicActivity : businessActivitiesList) {
                 jsonStringifiedList.add(gson.toJson(isicActivity));
+            }
+            for (EntitiesManagedByRhq entities : entityList) {
+                jsonStringifiedList.add(gson.toJson(entities));
+            }
+            for (BrandPresenceInMENARegion brand : brandList) {
+                jsonStringifiedList.add(gson.toJson(brand));
+            }
+            for (EstimatedOperatingCostForRhq cost : estimatedList) {
+                jsonStringifiedList.add(gson.toJson(cost));
             }
 
             sagiaLicenseApplyFacade.repopulateEntityInfoMediaOnFormError(sagiaApplyEntityInfoForm);
@@ -1046,9 +1066,22 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             List<String> isicActivities = sagiaLicenseApplyFacade.prepareBusinessActivitiesHashMap(sagiaApplyEntityInfoForm.getIsicActivities());
             model.addAttribute("isicActivities", isicActivities);
         }
+        if (!sagiaApplyEntityInfoForm.getListOfEntitiesManagedByRhq().isEmpty())
+        {
+            List<String> entitiesManagedByRhq = sagiaLicenseApplyFacade.prepareEntitiesManagedByRhqHashMap( sagiaApplyEntityInfoForm.getListOfEntitiesManagedByRhq());
+            model.addAttribute("entitiesManagedByRhq", new Gson().toJson(entitiesManagedByRhq));
+        }
+            if(!sagiaApplyEntityInfoForm.getListOfBrandPresenceInMENARegion().isEmpty())
+        {
+            List<String> brandPresenceInMENARegion = sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegionHashMap( sagiaApplyEntityInfoForm.getListOfBrandPresenceInMENARegion());
+            model.addAttribute("brandPresenceInMENARegion", new Gson().toJson(brandPresenceInMENARegion));
+        }
+        if(!sagiaApplyEntityInfoForm.getListOfEstimatedOperatingCostForRhq().isEmpty())
+        {
+            List<String> estimatedOperatingCostForRhq = sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhqHashMap( sagiaApplyEntityInfoForm.getListOfEstimatedOperatingCostForRhq());
+            model.addAttribute("estimatedOperatingCostForRhq", new Gson().toJson(estimatedOperatingCostForRhq));
+        }
 
-        
-        
         model.addAttribute("basicOrganizationInformation", new BasicOrganizationInformation());
         model.addAttribute("organizationInformationExtended", new OrganizationInformation());
         model.addAttribute("sagiaLicenseApplyForm", new ProfileCompanyData());

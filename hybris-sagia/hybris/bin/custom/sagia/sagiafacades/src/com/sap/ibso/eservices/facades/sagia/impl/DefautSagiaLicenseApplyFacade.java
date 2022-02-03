@@ -149,31 +149,7 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				saveGosiCertificateFileOnEntityInfo(request, entityInformationModel);
 				saveNoObjectionCertificateFileOnEntityInfo(request, entityInformationModel);
 			}
-			if(entityInformationData.isIsMoreThan2Branch())
-			{
-				saveMainBranchCRFileOnEntityInfo(request, entityInformationModel);
-				saveOtherBranchCR1FileOnEntityInfo(request, entityInformationModel);
-				saveOtherBranchCR2FileOnEntityInfo(request, entityInformationModel);
-			}
-			if(entityInformationData.isIsMoreThan6Branch())
-			{
-				saveEntityBranchCR1FileOnEntityInfo(request, entityInformationModel);
-				saveEntityBranchCR2FileOnEntityInfo(request, entityInformationModel);
-				saveEntityBranchCR3FileOnEntityInfo(request, entityInformationModel);
-				saveEntityBranchCR4FileOnEntityInfo(request, entityInformationModel);
-			}
-			if(entityInformationData.isIsEntityListedInStockMarket()) 
-			{
-				saveEntityListedInStockMarketFileOnEntityInfo(request, entityInformationModel);
-			}
-			if(entityInformationData.isIsEntityAssetMoreThanThreshold())
-			{
-				saveEntityAssetFileOnEntityInfo(request, entityInformationModel);
-			}
-			if(entityInformationData.isIsEntityRevenueMoreThanThreshold())
-			{
-				saveEntityRevenueFileOnEntityInfo(request, entityInformationModel);
-			}
+
 			if(entityInformationData.getLicenseType().equalsIgnoreCase("11"))
 			{
 				saveEntityFinancialStatementEntityInfo(request, entityInformationModel);
@@ -207,57 +183,7 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				entityInformationModel.setGosiCertificateFile(null);
 				entityInformationModel.setNoObjectionCertificateFile(null);
 			}
-			
-			if(entityInformationData.isIsMoreThan2Branch())
-			{
-				saveMainBranchCRFileOnEntityInfo(request, entityInformationModel);
-				saveOtherBranchCR1FileOnEntityInfo(request, entityInformationModel);
-				saveOtherBranchCR2FileOnEntityInfo(request, entityInformationModel);
-			}
-			else
-			{
-				entityInformationModel.setMainBranchCR(null);
-				entityInformationModel.setOtherBranchCR1(null);
-				entityInformationModel.setOtherBranchCR2(null);
-			}
-			if(entityInformationData.isIsMoreThan6Branch())
-			{
-				saveEntityBranchCR1FileOnEntityInfo(request, entityInformationModel);
-				saveEntityBranchCR2FileOnEntityInfo(request, entityInformationModel);
-				saveEntityBranchCR3FileOnEntityInfo(request, entityInformationModel);
-				saveEntityBranchCR4FileOnEntityInfo(request, entityInformationModel);
-			}
-			else
-			{
-				entityInformationModel.setRhqCR1(null);
-				entityInformationModel.setRhqCR2(null);
-				entityInformationModel.setRhqCR3(null);
-				entityInformationModel.setRhqCR4(null);
-			}
-			if(entityInformationData.isIsEntityListedInStockMarket()) 
-			{
-				saveEntityListedInStockMarketFileOnEntityInfo(request, entityInformationModel);
-			}
-			else
-			{
-				entityInformationModel.setRhqStockMarketAttachment(null);
-			}
-			if(entityInformationData.isIsEntityAssetMoreThanThreshold())
-			{
-				saveEntityAssetFileOnEntityInfo(request, entityInformationModel);
-			}
-			else
-			{
-				entityInformationModel.setRhqEntityAssetAttachment(null);
-			}
-			if(entityInformationData.isIsEntityRevenueMoreThanThreshold())
-			{
-				saveEntityRevenueFileOnEntityInfo(request, entityInformationModel);
-			}
-			else
-			{
-				entityInformationModel.setRhqEntityRevenueAttachment(null);
-			}
+
 			if(entityInformationModel.getLicenseType().getCode().equals("11"))
 			{
 				List<ShareHolderModel> shareHolders=licenseApplyService.getShareHolders();
@@ -1705,42 +1631,35 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 
 			EntityInformationData editingForm = getEntityInformationData();
 
-			boolean validationNotRequired  =  editingForm != null && editingForm.getBoardResolutionFile() != null;
+			boolean validationNotRequired = editingForm != null && editingForm.getBoardResolutionFile() != null;
 			boolean validationNotRequired1 = editingForm != null && editingForm.getLetterOfSupportFile() != null;
-			
+
 			boolean checkFinancialStatementFile = editingForm != null && editingForm.getFinancialStatementFile() != null;
 			boolean checkIqamaFile = editingForm != null && editingForm.getIqamaFile() != null;
 			boolean checkCrCertificateFile = editingForm != null && editingForm.getCrCertificateFile() != null;
 			boolean checkGosiCertificateFile = editingForm != null && editingForm.getGosiCertificateFile() != null;
 			boolean checkNoObjectionCertificateFile = editingForm != null && editingForm.getNoObjectionCertificateFile() != null;
+			boolean checkEntityFinancialFile = editingForm != null && editingForm.getEntityFinancialStatementFile() != null;
+			boolean checkCommericaRegMainEntryFile = editingForm != null && editingForm.getCommercialRegMainEntryFile() != null;
+			boolean checkCommericaRegBranch1EntryFile = editingForm != null && editingForm.getCommercialRegBranch1File() != null;
+			boolean checkCommericaRegBranch2EntryFile = editingForm != null && editingForm.getCommercialRegBranch2File() != null;
 
-			boolean mainBranchCR = editingForm != null && editingForm.getMainBranchCR() != null;
-			boolean otherBranchCR1 = editingForm != null && editingForm.getOtherBranchCR1() != null;
-			boolean otherBranchCR2 = editingForm != null && editingForm.getOtherBranchCR2() != null;
-			boolean rhqCR1 = editingForm != null && editingForm.getRhqCR1() != null;
-			boolean rhqCR2 = editingForm != null && editingForm.getRhqCR2() != null;
-			boolean rhqCR3 = editingForm != null && editingForm.getRhqCR3() != null;
-			boolean rhqCR4 = editingForm != null && editingForm.getRhqCR4() != null;
-			boolean rhqEntityAsset = editingForm != null && editingForm.getRhqEntityAssetAttachment() != null;
-			boolean rhqEnityRevenue = editingForm != null && editingForm.getRhqEntityRevenueAttachment() != null;
-			boolean rhqStockMarket = editingForm != null && editingForm.getRhqStockMarketAttachment() != null;
+			if (sagiaApplyEntityInfoForm.isIsEntrepreneur()) {
 
-			if(sagiaApplyEntityInfoForm.isIsEntrepreneur()){
+				MultipartFile file1 = ((MultipartHttpServletRequest) request).getFile("customBoardResolutionFile");
 
-					MultipartFile file1 = ((MultipartHttpServletRequest) request).getFile("customBoardResolutionFile");
-
-					if ((file1 != null && !file1.isEmpty()) || validationNotRequired) {
-						sagiaApplyEntityInfoForm.setBoardResolutionFileAdded(true);
-					}
-
-
-					MultipartFile file2 = ((MultipartHttpServletRequest) request).getFile("customLetterOfSupportFile");
-
-					if ((file2 != null && !file2.isEmpty()) || validationNotRequired1) {
-						sagiaApplyEntityInfoForm.setLetterOfSupportFileAdded(true);
-					}
+				if ((file1 != null && !file1.isEmpty()) || validationNotRequired) {
+					sagiaApplyEntityInfoForm.setBoardResolutionFileAdded(true);
 				}
-			if(sagiaApplyEntityInfoForm.isIsPreApprovalNumber()){
+
+
+				MultipartFile file2 = ((MultipartHttpServletRequest) request).getFile("customLetterOfSupportFile");
+
+				if ((file2 != null && !file2.isEmpty()) || validationNotRequired1) {
+					sagiaApplyEntityInfoForm.setLetterOfSupportFileAdded(true);
+				}
+			}
+			if (sagiaApplyEntityInfoForm.isIsPreApprovalNumber()) {
 
 				MultipartFile financialStatementFile = ((MultipartHttpServletRequest) request).getFile("customFinancialStatementFile");
 				if ((financialStatementFile != null && !financialStatementFile.isEmpty()) || checkFinancialStatementFile) {
@@ -1751,99 +1670,47 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				if ((iqamaFile != null && !iqamaFile.isEmpty()) || checkIqamaFile) {
 					sagiaApplyEntityInfoForm.setIqamaFileAdded(true);
 				}
-				
+
 				MultipartFile crCertificateFile = ((MultipartHttpServletRequest) request).getFile("customCrCertificateFile");
 				if ((crCertificateFile != null && !crCertificateFile.isEmpty()) || checkCrCertificateFile) {
 					sagiaApplyEntityInfoForm.setCrCertificateFileAdded(true);
 				}
-				
+
 				MultipartFile gosiCertificateFile = ((MultipartHttpServletRequest) request).getFile("customGosiCertificateFile");
 				if ((gosiCertificateFile != null && !gosiCertificateFile.isEmpty()) || checkGosiCertificateFile) {
 					sagiaApplyEntityInfoForm.setGosiCertificateFileAdded(true);
 				}
-				
+
 				MultipartFile noObjectionCertificateFile = ((MultipartHttpServletRequest) request).getFile("customNoObjectionCertificateFile");
 				if ((noObjectionCertificateFile != null && !noObjectionCertificateFile.isEmpty()) || checkNoObjectionCertificateFile) {
 					sagiaApplyEntityInfoForm.setNoObjectionCertificateFileAdded(true);
 				}
 			}
-			
-			if(sagiaApplyEntityInfoForm.isIsMoreThan2Branch()){
-
-				MultipartFile mainBranchCRFile = ((MultipartHttpServletRequest) request).getFile("customMainBranchCRFile");
-
-				if ((mainBranchCRFile != null && !mainBranchCRFile.isEmpty()) || mainBranchCR) {
-					sagiaApplyEntityInfoForm.setMainBranchCRFileAdded(true);
-				}
-				
-				MultipartFile otherBranchCR1File = ((MultipartHttpServletRequest) request).getFile("customOtherBranchCR1File");
-
-				if ((otherBranchCR1File != null && !otherBranchCR1File.isEmpty()) || otherBranchCR1) {
-					sagiaApplyEntityInfoForm.setOtherBranchCR1FileAdded(true);
-				}
-
-				MultipartFile otherBranchCR2File = ((MultipartHttpServletRequest) request).getFile("customOtherBranchCR2File");
-
-				if ((otherBranchCR2File != null && !otherBranchCR2File.isEmpty()) || otherBranchCR2) {
-					sagiaApplyEntityInfoForm.setOtherBranchCR2FileAdded(true);
-				}
+			MultipartFile gosiCertificateFile = ((MultipartHttpServletRequest) request).getFile("customGosiCertificateFile");
+			if ((gosiCertificateFile != null && !gosiCertificateFile.isEmpty()) || checkGosiCertificateFile) {
+				sagiaApplyEntityInfoForm.setGosiCertificateFileAdded(true);
 			}
-			
-			if(sagiaApplyEntityInfoForm.isIsEntityAssetMoreThanThreshold()){
 
-				MultipartFile entityAssetFileName = ((MultipartHttpServletRequest) request).getFile("customEntityAssetFileName");
-
-				if ((entityAssetFileName != null && !entityAssetFileName.isEmpty()) || rhqEntityAsset) {
-					sagiaApplyEntityInfoForm.setIsEntityAssetMoreThanThreshold(true);
-				}
+			MultipartFile entityFinancialStatementFile = ((MultipartHttpServletRequest) request).getFile("customEntityFinancialStatementFile");
+			if ((entityFinancialStatementFile != null && !entityFinancialStatementFile.isEmpty()) || checkEntityFinancialFile) {
+				sagiaApplyEntityInfoForm.setEntityFinancialStatementFileAdded(true);
 			}
-			
-			if(sagiaApplyEntityInfoForm.isIsEntityListedInStockMarket()){
 
-				MultipartFile entityListedInStockMarketFile = ((MultipartHttpServletRequest) request).getFile("customEntityListedInStockMarketFile");
-
-				if ((entityListedInStockMarketFile != null && !entityListedInStockMarketFile.isEmpty()) || rhqStockMarket) {
-					sagiaApplyEntityInfoForm.setRhqStockMarketAttachmentFileAdded(true);
-				}
+			MultipartFile commercialRegMainEntryFile = ((MultipartHttpServletRequest) request).getFile("customCommercialRegMainEntryFile");
+			if ((commercialRegMainEntryFile != null && !commercialRegMainEntryFile.isEmpty()) || checkCommericaRegMainEntryFile) {
+				sagiaApplyEntityInfoForm.setCommercialRegMainEntryFileAdded(true);
 			}
-			
-			if(sagiaApplyEntityInfoForm.isIsEntityRevenueMoreThanThreshold()){
 
-				MultipartFile entityRevenueFileName = ((MultipartHttpServletRequest) request).getFile("customEntityRevenueFileName");
-
-				if ((entityRevenueFileName != null && !entityRevenueFileName.isEmpty()) || rhqEnityRevenue) {
-					sagiaApplyEntityInfoForm.setRhqEntityRevenueAttachmentFileAdded(true);
-				}
+			MultipartFile commercialRegBranch1File = ((MultipartHttpServletRequest) request).getFile("customCommercialRegBranch1File");
+			if ((commercialRegBranch1File != null && !commercialRegBranch1File.isEmpty()) || checkCommericaRegBranch1EntryFile) {
+				sagiaApplyEntityInfoForm.setCommercialRegBranch1FileAdded(true);
 			}
-			
-			if(sagiaApplyEntityInfoForm.isIsMoreThan6Branch()){
-
-				MultipartFile branchCR1FileName = ((MultipartHttpServletRequest) request).getFile("customBranchCR1FileName");
-
-				if ((branchCR1FileName != null && !branchCR1FileName.isEmpty()) || rhqCR1) {
-					sagiaApplyEntityInfoForm.setRhqCR1FileAdded(true);
-				}
-				
-				MultipartFile branchCR2FileName = ((MultipartHttpServletRequest) request).getFile("customBranchCR2FileName");
-
-				if ((branchCR2FileName != null && !branchCR2FileName.isEmpty()) || rhqCR2) {
-					sagiaApplyEntityInfoForm.setRhqCR2FileAdded(true);
-				}
-				
-				MultipartFile branchCR3FileName = ((MultipartHttpServletRequest) request).getFile("customBranchCR3FileName");
-
-				if ((branchCR3FileName != null && !branchCR3FileName.isEmpty()) || rhqCR3) {
-					sagiaApplyEntityInfoForm.setRhqCR3FileAdded(true);
-				}
-				
-				MultipartFile branchCR4FileName = ((MultipartHttpServletRequest) request).getFile("customBranchCR4FileName");
-
-				if ((branchCR4FileName != null && !branchCR4FileName.isEmpty()) || rhqCR4) {
-					sagiaApplyEntityInfoForm.setRhqCR4FileAdded(true);
-				}
+			MultipartFile commercialRegBranch2File = ((MultipartHttpServletRequest) request).getFile("customCommercialRegBranch2File");
+			if ((commercialRegBranch2File != null && !commercialRegBranch2File.isEmpty()) || checkCommericaRegBranch2EntryFile) {
+				sagiaApplyEntityInfoForm.setCommercialRegBranch2FileAdded(true);
 			}
-			
-			}
+
+		}
 	}
 
 	public void validateMediasFromExistingShareHolder(ExistingShareholderData existingShareholderForm, HttpServletRequest request) {
@@ -2116,37 +1983,18 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				entityInformationForm.setBoardResolutionFile(entity.getBoardResolutionFile());
 			}
 			
-			if (entity.getMainBranchCR() != null) {
-				entityInformationForm.setMainBranchCR(entity.getMainBranchCR());
+			if (entity.getEntityFinancialStatementFile() != null) {
+				entityInformationForm.setEntityFinancialStatementFile(entity.getEntityFinancialStatementFile());
 			}
-			if (entity.getOtherBranchCR1() != null) {
-				entityInformationForm.setOtherBranchCR1(entity.getOtherBranchCR1());
+			if (entity.getCommercialRegMainEntryFile() != null) {
+				entityInformationForm.setCommercialRegMainEntryFile(entity.getCommercialRegMainEntryFile());
 			}
-			if (entity.getOtherBranchCR2() != null) {
-				entityInformationForm.setOtherBranchCR2(entity.getOtherBranchCR2());
+			if (entity.getCommercialRegBranch1File() != null) {
+				entityInformationForm.setCommercialRegBranch1File(entity.getCommercialRegBranch1File());
 			}
-			if (entity.getRhqEntityAssetAttachment() != null) {
-				entityInformationForm.setRhqEntityAssetAttachment(entity.getRhqEntityAssetAttachment());
+			if (entity.getCommercialRegBranch2File()!= null) {
+				entityInformationForm.setCommercialRegBranch2File(entity.getCommercialRegBranch2File());
 			}
-			if (entity.getRhqEntityRevenueAttachment() != null) {
-				entityInformationForm.setRhqEntityRevenueAttachment(entity.getRhqEntityRevenueAttachment());
-			}
-			if (entity.getRhqStockMarketAttachment() != null) {
-				entityInformationForm.setRhqStockMarketAttachment(entity.getRhqStockMarketAttachment());
-			}
-			if (entity.getRhqCR1() != null) {
-				entityInformationForm.setRhqCR1(entity.getRhqCR1());
-			}
-			if (entity.getRhqCR2() != null) {
-				entityInformationForm.setRhqCR2(entity.getRhqCR2());
-			}
-			if (entity.getRhqCR3() != null) {
-				entityInformationForm.setRhqCR3(entity.getRhqCR3());
-			}
-			if (entity.getRhqCR4() != null) {
-				entityInformationForm.setRhqCR4(entity.getRhqCR4());
-			}
-			
 		}
 	}
 
@@ -2158,6 +2006,61 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 		return licenseApplyService.cloneLicense(originalLicense);		
 		
 				 
+	}
+
+	public List<String> prepareEntitiesManagedByRhqHashMap (List<EntitiesManagedByRhq> entitiesManagedByRhqList) {
+		List<String> entitiesManagedByRhq = new ArrayList<>();
+		Gson gson = new Gson();
+
+		for (EntitiesManagedByRhq entity : entitiesManagedByRhqList) {
+			HashMap<String, String> entitiesManagedByRhqmap = new HashMap<>();
+
+			entitiesManagedByRhqmap.put("companyName", entity.getCompanyName());
+			entitiesManagedByRhqmap.put("country", entity.getCountry());
+			entitiesManagedByRhqmap.put("businessRelationshipType", entity.getBusinessRelationshipType());
+			entitiesManagedByRhqmap.put("industry", entity.getIndustry());
+			entitiesManagedByRhqmap.put("operations", entity.getOperations());
+			entitiesManagedByRhqmap.put("RhqActivityProvided", entity.getRhqActivityProvided());
+
+			entitiesManagedByRhq.add(gson.toJson(entitiesManagedByRhqmap));
+		}
+		return entitiesManagedByRhq;
+	}
+	public List<String> prepareBrandPresenceInMENARegionHashMap (List<BrandPresenceInMENARegion> BrandPresenceList) {
+		List<String> brandPresenceInMena = new ArrayList<>();
+		Gson gson = new Gson();
+
+		for (BrandPresenceInMENARegion brand : BrandPresenceList) {
+			HashMap<String, String> brandPresenceInMenaMap = new HashMap<>();
+
+			brandPresenceInMenaMap.put("brandName", brand.getBrandName());
+			brandPresenceInMenaMap.put("country", brand.getCountry());
+			brandPresenceInMenaMap.put("industry", brand.getIndustry());
+			brandPresenceInMenaMap.put("companyOwningBrandInMENA", brand.getCompanyOwningBrandInMENA());
+			brandPresenceInMenaMap.put("RhqActivityProvided", brand.getRhqActivityProvided());
+
+			brandPresenceInMena.add(gson.toJson(brandPresenceInMenaMap));
+		}
+		return brandPresenceInMena;
+	}
+	public List<String> prepareEstimatedOperatingCostForRhqHashMap (List<EstimatedOperatingCostForRhq> estimatedOperatingCostForRhqList) {
+		List<String> estimatedOperatingCost = new ArrayList<>();
+		Gson gson = new Gson();
+
+		for (EstimatedOperatingCostForRhq cost : estimatedOperatingCostForRhqList) {
+			HashMap<String, String> estimatedOperatingCostMap = new HashMap<>();
+
+			estimatedOperatingCostMap.put("item", cost.getItem());
+			estimatedOperatingCostMap.put("unitCost", cost.getUnitCost());
+			estimatedOperatingCostMap.put("noOfUnits", cost.getNoOfUnits());
+			estimatedOperatingCostMap.put("costFrequency", cost.getCostFrequency());
+			estimatedOperatingCostMap.put("year2022", cost.getYear2022());
+			estimatedOperatingCostMap.put("year2023", cost.getYear2023());
+			estimatedOperatingCostMap.put("year2024", cost.getYear2024());
+
+			estimatedOperatingCost.add(gson.toJson(estimatedOperatingCostMap));
+		}
+		return estimatedOperatingCost;
 	}
 
 }

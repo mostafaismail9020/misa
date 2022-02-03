@@ -250,7 +250,7 @@
 								--%>
 								<formElement:formInputBox idKey="quickregistration.register.mobileCountryCode"
 											labelKey="register.mobileCountryCode" path="mobileCountryCode" labelCSS="ddl-countrycode-label"
-											inputCSS="js-quickregister-countrycode form-control_preNumber js-mobile-coutry-code ddl-countryCode register-user-details register-contry-info"/>
+											inputCSS="js-quickregister-countrycode form-control_preNumber js-mobile-coutry-code ddl-countryCode register-user-details register-contry-info" readonly = "true" />
 								<div class="input-wrapper focus-on-change">
 									<formElement:formInputBox idKey="quickregistration.register.mobileNumber"
 												labelKey="register.mobileNumber" path="mobileNumber"

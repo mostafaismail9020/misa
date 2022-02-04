@@ -533,9 +533,6 @@ SAGIA.licenseApply = {
 };
 
 
-
-
-
 $('.plus-icon').hide();
 $(".my-button").on('click', function () {
     var obj = $(this).find('.my-icon');

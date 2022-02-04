@@ -514,3 +514,46 @@ border-bottom: none !important;
 .page-appointment-create .formSelectBox .select2.select2-container.select2Container_selected+.control-label{
 	font-size: 16px;
 }
+
+
+.btn-trans label.lang-btn {
+	padding: 0;
+	color: #b9b9b9;
+	font-size: 10px;
+	margin: 0 10px;
+	border: 0;
+	line-height: 16px;	
+	cursor: pointer;
+}
+
+.btn-trans label.btn.lang-btn.active {
+	color: #fff;
+}
+
+.lang-btn.focus,
+.lang-btn:focus {
+	outline: 0;
+	box-shadow: none;
+}
+
+
+.lang-en {
+	top: 2px;
+	position: relative;
+}
+
+.lang-en:before {
+	position: absolute;
+	content: "";
+	right: -10px;
+	top: 0px;
+	width: 1px;
+	height: 15px;
+	background-color: #707070;
+	cursor: none;
+}
+
+
+[dir="rtl"] .lang-en:before {
+	right: 17px;
+}

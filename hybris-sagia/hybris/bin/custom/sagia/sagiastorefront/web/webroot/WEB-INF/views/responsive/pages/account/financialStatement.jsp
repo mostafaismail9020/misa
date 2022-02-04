@@ -103,7 +103,7 @@
     </button>
 </div>
 <div class="container service-wrapper service-wrapper-info mb-5" id="expand-03">
-	<div class="serviceModule serviceModule_list mx-5 pt-4">
+	<div class="serviceModule serviceModule_list mx-1 mx-md-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
@@ -120,7 +120,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="serviceModule serviceModule_list mx-5">
+	<div class="serviceModule serviceModule_list mx-1 mx-md-5">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
@@ -137,7 +137,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="serviceModule serviceModule_list mx-5">
+	<div class="serviceModule serviceModule_list mx-1 mx-md-5">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
@@ -154,7 +154,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="serviceModule serviceModule_list mx-5">
+	<div class="serviceModule serviceModule_list mx-1 mx-md-5">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
@@ -171,7 +171,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="serviceModule serviceModule_list mx-5 pb-4">
+	<div class="serviceModule serviceModule_list mx-1 mx-md-5 pb-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">

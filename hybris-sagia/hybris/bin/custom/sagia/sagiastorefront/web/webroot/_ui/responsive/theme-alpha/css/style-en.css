@@ -695,7 +695,7 @@ ul.dropdown-list li a {
 	padding: 6px 10px;
 }
 
-.btn-trans label.btn.lang-btn {
+.btn-trans label.lang-btn {
 	padding: 0;
 	color: #b9b9b9;
 	font-size: 10px;
@@ -704,7 +704,7 @@ ul.dropdown-list li a {
 	line-height: 16px;
 }
 
-.btn-trans label.btn.lang-btn.active {
+.btn-trans label.lang-btn.active {
 	color: #fff;
 }
 

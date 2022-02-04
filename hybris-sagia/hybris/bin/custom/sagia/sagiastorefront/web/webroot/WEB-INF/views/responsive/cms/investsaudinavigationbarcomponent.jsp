@@ -42,7 +42,7 @@
 				<a href="#" class="skype">
 					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
 						<!-- <label class="btn lang-btn lang-en active"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label> -->
-						<label class="lang-btn lang-en active mr-3" onclick="LanguageToggle('en')">EN</label>
+						<label class="lang-btn lang-en active" onclick="LanguageToggle('en')">EN</label>
 						<label class="lang-btn" onclick="LanguageToggle('ar')"><img src="${commonResourcePath}/images/ar_text.png"/></label>
 					</span>
 				</a>

@@ -9,8 +9,12 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
+
+
 <!--Basic information extended-->
 <div>
+
+
 <div class="rhqSelectBoxes" style="display:none">
 <div class="mncBranchTableJsonInputs"></div>
 <div class="mncBrandTableJsonInputs"></div>
@@ -62,7 +66,7 @@
 
 	<div class="formSelectBox">
 			<div class="form-group">
-				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="js-select2-multi form-control" multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.rhqCenterAdmin}">
+				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="js-select2-multi form-control" multiple="" tabindex="-1" aria-hidden="true" data-value="(${sagiaApplyEntityInfoForm.rhqCenterAdmin}).toString()">
 					 <option value="GCC">GCC</option>
                      <option value="MENA">MENA</option>
                      <option value="Middle East (ME)">Middle East (ME)</option>
@@ -86,7 +90,7 @@
 		<div class="form-group">
 			<select id="branchInformationRhqRegionsSection" name="listOfRhqRegions"
 				class="js-select2-multi form-control select2-hidden-accessible"
-				multiple="" tabindex="-1" aria-hidden="true" data-value="">
+				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfRhqRegions}">
 			</select> <label class="control-label" for="branchInformationRhqRegionsSection"><spring:theme code="profile.rhq.regions" /></label>
 		</div>
 		<div class="help-block"></div>
@@ -1112,3 +1116,41 @@
 }
 
 </style>
+
+
+
+
+<script>
+
+
+
+	  objectBranchesString =  ('${entitiesManagedByRhq}');
+      objectBranchesString1 = objectBranchesString.replace(/("{)/g, '{');
+	  objectBranchesString2 = objectBranchesString1.replace(/(}")/g, '}');
+
+  	  console.log(objectBranchesString2);
+	  objectBranches = [];
+      objectBranches =  JSON.parse(objectBranchesString2);
+	  console.log(objectBranches);
+
+	  objectBrandString =  ('${brandPresenceInMENARegion}');
+      objectBrandString1 = objectBrandString.replace(/("{)/g, '{');
+	  objectBrandString2 = objectBrandString1.replace(/(}")/g, '}');
+
+	  console.log(objectBrandString2);
+	  objectBrands = [];
+      objectBrands =  JSON.parse(objectBrandString2);
+	  console.log(objectBrands);
+
+	  objectCostsString =  ('${estimatedOperatingCostForRhq}');
+      objectCostsString1 = objectCostsString.replace(/("{)/g, '{');
+	  objectCostsString2 = objectCostsString1.replace(/(}")/g, '}');
+
+	  console.log(objectCostsString2);
+	  objectCost = [];
+      objectCost =  JSON.parse(objectCostsString2);
+	  console.log(objectCost);
+
+
+
+</script>

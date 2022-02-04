@@ -472,11 +472,8 @@
 				<modifiers read="true" write="true" search="true" optional="true" />
 			</targetElement>
 		</relation>
-		
-				
+
 		<!-- Invest Saudi Changes Ends  -->	
-	</relations>
-	
 
         <relation code="FinancialSurvey2Shareholders" generate="true" localized="false" autocreate="true">
             <sourceElement type="FinancialSurvey" cardinality="one" qualifier="financialSurvey">
@@ -520,14 +517,6 @@
                 <modifiers read="true" write="true" search="true" optional="true" partof="true"/>
             </targetElement>
         </relation>
-
-
-
-
-
-
-
-
         <!-- Invest Saudi Changes Ends  -->
     </relations>
 

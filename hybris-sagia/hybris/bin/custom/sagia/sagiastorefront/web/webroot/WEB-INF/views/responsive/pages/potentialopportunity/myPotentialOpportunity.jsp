@@ -267,7 +267,7 @@
 				<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
 				<div class="comment_box_form" id="comment_box_form" style="display: none;">
 					<c:set var="today" value="<%=new java.util.Date()%>" />
-					<label class="new_comment">New comments <b>as on <fmt:formatDate type="date" value="${today}" /></b></label>
+					<label class="new_comment">New Comments <b>as on <fmt:formatDate type="date" value="${today}" /></b></label>
 					<form:form action="${ticketId}" modelAttribute="contactTicketForm" id="js-quick-tialoppor_newcomment"  onsubmit="return validateForm()">
 						<div class="form-group">
 							<input type="text" name="comment" class="js-quick-tialoppor_newcomment form-control reply_here" placeholder="<spring:theme code="my.potential.opportunity.enter.reply"/>"/>
@@ -452,15 +452,11 @@
 	function validateForm() { 
 		var x = document.forms["js-quick-tialoppor_newcomment"]["comment"].value;
 		if (x == "") {
-            $('.help-block').html("<span class='error'>please fill out this field</span>"); 
+            $('.help-block').html("<span class='error'>Please fill out this field</span>"); 
 			return false;
 		} 
 	}  
 	$(".js-quick-tialoppor_newcomment").on("keydown", function(e) { 
-		$('.help-block').html("");  
-        var keyCode = (e.keyCode ? e.keyCode : e.which);
-        if(keyCode === 32) {
-           return false;
-        }
+		$('.help-block').html(""); 
     });
 </script>

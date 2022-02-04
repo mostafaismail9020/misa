@@ -159,7 +159,7 @@
 							<input type="text" class="js-quick-tialoppor_new text form-control"
 							name="subject" id="subject" /> 
 							<!-- onkeypress="return onlyAlphabets(event)" -->
-							<label class="control-label control-label_mandatory" for="Subject ">
+							<label class="control-label control-label_mandatory" for="Subject " required>
 								Subject 
 							</label> 
 							<div class="help-block"></div>
@@ -175,7 +175,7 @@
 						   <label class="control-label control-label_mandatory" for="Description">
 							Description 
 						   </label> 
-						   <div class="help-block"></div>
+						   <div class="help-block1"></div>
 					   </div> 
 				   </div> 
 			  </div> 
@@ -184,41 +184,44 @@
 					Submit
 				</button> -->
 				
-				<input type="submit" class="btn btn-block btn-primary positive adv_search_button w-25 m-auto mb-5" value="Submit"   onclick="validateFormsetting()" />
+				<input type="submit"  id="submit" class="btn btn-block btn-primary positive adv_search_button w-25 m-auto mb-5" value="Submit"   onclick="validateFormsetting()" />
 			</div>
 		</form:form>
 	</div>
 </div>
 
 
-<script>  
-	function validateFormsetting() { 
-		//alert('1w3'); 
-		//var x = document.forms["js-quick-tialoppor_new"]["subject"].value;
-		var subject = document.forms["js-quick-tialoppor_new"]["subject"].value;
-		if (subject == "") { 
-			$('.help-block').html("<span class='error'>Please fill out this field</span>"); 
-			return false;
-		}  
-		var description = document.forms["js-quick-tialoppor_description"]["description"].value;
-		if (description == "") { 
-			$('.help-block').html("<span class='error'>Please fill out this field</span>"); 
-			return false;
-		}   
-		
-	} 
+<script>   
 	$(".js-quick-tialoppor_new").on("keydown", function(e) {  
 		$('.help-block').html("");  
-        var keyCode = (e.keyCode ? e.keyCode : e.which);
-        if(keyCode === 32) {
-           return false;
-        }
     });
 	$(".js-quick-tialoppor_description").on("keydown", function(e) {  
-		$('.help-block').html("");  
-        var keyCode = (e.keyCode ? e.keyCode : e.which);
-        if(keyCode === 32) {
-           return false;
-        }
+		$('.help-block1').html("");   
     });
+
+	
+function validateFormsetting(){
+    var subject = $("#subject");
+    var description = $("#description");  
+	
+    subject.removeClass('hasError');
+    description.removeClass('hasError');
+    var valid = true;
+
+	if (subject.val() === "" ){       
+        subject.addClass('hasError'); 
+		//submit.addClass('visabless'); 
+		$('.help-block').html("<span class='error'>Please fill out this field</span>"); 
+		valid = false;
+	}
+    if(description.val() === "" ){
+        description.addClass('hasError'); 
+		$('.help-block1').html("<span class='error'>Please fill out this field</span>"); 
+		//submit.addClass('visabless'); 
+        valid = false;
+    }  
+
+    return valid;
+}
+
 </script>

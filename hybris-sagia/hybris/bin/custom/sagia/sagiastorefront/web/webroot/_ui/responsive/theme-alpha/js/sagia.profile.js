@@ -537,11 +537,11 @@ SAGIA.profile = {
 //                        myProfileTabData.find(".profilePicture").attr("src", profileData.profilePicture);
                         myProfileTabData.find(".js-profilePicture").css("background-image", 'url(' + profileData.profilePicture + ')');
                     }
-                if (profileData.companyLogo) {
-                   
-						$('#sagia_companyLogo_picture_title').text('Company Logo');
-                        myProfileTabData.find(".js-companyLogo").css("background-image", 'url(' + profileData.companyLogo + ')');
-                    }
+                    $('#sagia_companyLogo_picture_title').text('Company Logo');
+
+                    if (profileData.companyLogo) {
+                         myProfileTabData.find(".js-companyLogo").css("background-image", 'url(' + profileData.companyLogo + ')');
+                     }
                     if (profileData.sagiaProfilePersonalForm && profileData.titles && profileData.countries && profileData.sectors) {
                         var sagiaProfilePersonalFormData = profileData.sagiaProfilePersonalForm;
                         myProfileTabData.find("#sagiaProfilePersonalFormTitle").text(sagiaProfilePersonalFormData.title.name);

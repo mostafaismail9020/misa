@@ -279,6 +279,7 @@ span {
     background: #1AC4DC !important;
 }
 
+#shareholderType .person-type span,
 #shareholderType .organization-type span {
     color: #00A6BE !important;
     background: transparent !important;
@@ -2343,9 +2344,9 @@ button:focus {
     border: 1px solid #00a6be!important;
     border-radius: 113px !important;
 }
-.page-shareholder-apply #shareholderType .organization-type:hover{
-    background-color: transparent !important;
-}
+// .page-shareholder-apply #shareholderType .organization-type:hover{
+//     background-color: transparent !important;
+// }
 .page-shareholder-apply #shareholderType .organization-type span+span,
 .page-shareholder-apply #shareholderType .person-type span+span {
     color: #00a6be !important;
@@ -3062,4 +3063,10 @@ button:focus {
     .page-single-questionnaire #surveyForm .fdi {
         max-width: 30% !important;
     }
+}
+
+
+
+.organization-type:hover,.person-type:hover{
+    color: @color-primary;
 }

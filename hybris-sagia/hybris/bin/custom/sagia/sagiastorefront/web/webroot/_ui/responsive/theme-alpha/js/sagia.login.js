@@ -211,7 +211,8 @@ $(function() {
 
 
 function recaptchaCallback(){
-	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');			
+	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');	
+	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptchareg').text('');			
 }
 
 
@@ -417,6 +418,19 @@ function validateRegisterUserInfo(){
 		$($(".register-account-investor-screen4 .register-progress span")[3]).html('4')
 	}
 }
+
+function validateRegisterForm(){
+	var valid = true;
+    var recaptcha = document.forms["sagiaRegisterFormQuickRegistration"]["g-recaptcha-response"].value;
+	if(recaptcha === ""){ 
+		$("#lblErrorCaptchareg").text("Please fill reCAPTCHA");
+		valid = false;
+	} 
+	return valid;
+} 
+/*$(".g-recaptcha-response").on("keydown", function(e) { 
+	$("#lblErrorCaptchareg").text(""); 
+});*/
 $(".register-investor-screen5-btn-next").on('click',function(){
 	if ($(this).hasClass('active')) {		
 		$(".register-account-investor-screen5").addClass('next-hide');

@@ -74,7 +74,7 @@
 		<div class="col-md-6  pull-right text-right">
 			<c:url value="/potentialOpportunity/${contactTicketDetails.ticketID}/serviceRequest" var="serviceRequestURL"/>
 			<a href="${serviceRequestURL}" class="btn-dashboard text-uppercase w-50" style="float: right;"> 
-				Create Service Request
+				<spring:theme code="my.potential.opportunity.service.request.button" />
 			</a>
 		</div>
 	</div>
@@ -97,8 +97,8 @@
 					</span></h5>
 					<hr style="width:96%;margin: 25px auto;border-width: 2px;"></hr>
 				</div>
-							 				
-				<c:if test="${empty contactTicketDetails.investorlead or contactTicketDetails.investorlead ne 'NA'}">
+				
+				<c:if test="${not empty contactTicketDetails.investorlead and contactTicketDetails.investorlead ne 'NA'}">
 					<!-- 
 					<div class="stauts_potential">
 						<h5 class="h5_status text-center">Status:<span class="yellocolor">In Progress - NDA Needed</span> </h5>					
@@ -114,25 +114,34 @@
 									</span>
 									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 									<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
-								</li>								
+								</li>
+								
 								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02'}">
 									<li class="nav-item active d-in-table">
+								</c:if>
+								<c:if test="${investorlead eq 'Z06'}">
+									<li class="nav-item active show d-in-table">
+								</c:if>
 										<span class="nav-link" href="#NDA" role="tab" aria-selected="false">
 											<spring:theme code="my.potential.opportunity.phase.nda"/>
 										</span>
 										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 										<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 									</li>
+									
+								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02'}">
+									<li class="nav-item d-in-table">
 								</c:if>
-								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02' or investorlead eq 'Z06'}">
-									<li class="nav-item d-in-table"> 
+								<c:if test="${investorlead eq 'Z06'}">
+									<li class="nav-item active d-in-table">
+								</c:if>							
 										<span class="nav-link" href="#Letter_of_intent" role="tab" aria-selected="false">
 											<spring:theme code="my.potential.opportunity.phase.letter"/>
 										</span>
 										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
 										<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
 									</li>
-								</c:if>								
+									
 								<li class="nav-item d-in-table">
 									<span class="nav-link" href="#Business_plan" role="tab" aria-selected="false">
 										<spring:theme code="my.potential.opportunity.phase.business"/>
@@ -258,20 +267,17 @@
 				<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
 				<div class="comment_box_form" id="comment_box_form" style="display: none;">
 					<c:set var="today" value="<%=new java.util.Date()%>" />
-					<label class="new_comment">New comments <b>as on <fmt:formatDate type="date" value="${today}" /></b></label>
-					<form:form action="${ticketId}" modelAttribute="contactTicketForm" id="js-quick-tialoppor_newcomment"  onsubmit="return validateForm()" >
-						
-						
-							<div class="form-group">
-								<input type="text" name="comment" class="js-quick-tialoppor_newcomment form-control reply_here" placeholder="<spring:theme code="my.potential.opportunity.enter.reply"/>"/>
-								<!-- <label class="control-label control-label_mandatory">
-									<spring:theme code="my.potential.opportunity.enter.reply"/>
-								</label>  -->
-								<div class="help-block"></div>
-								<div class="success-message-block"></div>
-							</div>
-							<div class="error-msg"></div> 
-						
+					<label class="new_comment">New Comments <b>as on <fmt:formatDate type="date" value="${today}" /></b></label>
+					<form:form action="${ticketId}" modelAttribute="contactTicketForm" id="js-quick-tialoppor_newcomment"  onsubmit="return validateForm()">
+						<div class="form-group">
+							<input type="text" name="comment" class="js-quick-tialoppor_newcomment form-control reply_here" placeholder="<spring:theme code="my.potential.opportunity.enter.reply"/>"/>
+							<!-- <label class="control-label control-label_mandatory">
+								<spring:theme code="my.potential.opportunity.enter.reply"/>
+							</label>  -->
+							<div class="help-block"></div>
+							<div class="success-message-block"></div>
+						</div>
+						<div class="error-msg"></div>
 						<div class="d-inline float-right">
 							<button type="button" class="btn btn_cancel_whitess"  onclick="commentTextArea()" >
 								<spring:theme code="portal.contactus.form.cancel.button"/>
@@ -352,7 +358,6 @@
 	</div>
 </div>
 
- 
 <div class="container service-wrapper service-wrapper-info  pt-5 pb-5 mb-5">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
@@ -393,6 +398,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<style>
 		.mypotentialpp_showdow{
 			background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -410,6 +416,7 @@
 			color: #00a6be;
 		}
 	</style>
+	
 	<div class="serviceModule serviceModule_list mx-5">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -438,24 +445,18 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	
+	</div>	
 </div>
- 
 
 <script>  
 	function validateForm() { 
 		var x = document.forms["js-quick-tialoppor_newcomment"]["comment"].value;
 		if (x == "") {
-            $('.help-block').html("<span class='error'>please fill out this field</span>"); 
+            $('.help-block').html("<span class='error'>Please fill out this field</span>"); 
 			return false;
 		} 
 	}  
 	$(".js-quick-tialoppor_newcomment").on("keydown", function(e) { 
-		$('.help-block').html("");  
-        var keyCode = (e.keyCode ? e.keyCode : e.which);
-        if(keyCode === 32) {
-           return false;
-        }
+		$('.help-block').html(""); 
     });
 </script>

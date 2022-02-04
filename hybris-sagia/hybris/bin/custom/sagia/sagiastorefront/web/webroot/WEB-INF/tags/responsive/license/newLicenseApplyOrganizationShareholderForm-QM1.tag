@@ -455,6 +455,6 @@
 
     <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
         <button class="cancelButton btn btn-outline btn-normal btn_bold w-25" type="button"><spring:theme code="general.cancel"/></button>
-        <a class="saveNew btn btn-ctrl btn-bg btn-normal btn_bold w-25"><spring:theme code="licence.apply.savenewshareholder"/></a>
+        <a class="addButton btn btn-ctrl btn-bg btn-normal btn_bold w-25"><spring:theme code="licence.apply.savenewshareholder"/></a>
     </div>
 </form:form>

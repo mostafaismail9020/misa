@@ -531,3 +531,37 @@ SAGIA.licenseApply = {
         return getI18nText("validate.licenseApply."+type+fieldName+".error");
     }
 };
+
+
+
+
+
+$('.plus-icon').hide();
+$(".my-button").on('click', function () {
+    var obj = $(this).find('.my-icon');
+    $(obj[0]).hide();
+    $(obj[1]).show();
+    $('.my-button-handler').removeClass('my-button');
+})
+
+$(document).on('click','.cancelButton', function(){
+    $('.add-icon').show();
+    $('.plus-icon').hide();
+    $('.person-type').removeClass('active');
+    $('.organization-type').removeClass('active');
+    $('.label-name').removeClass('label-name-active').addClass('label-name-inactive')
+});
+$('.shareholder-types1').on('click', function(){
+    $('.organization-type').removeClass('active');
+    $('.person-type').removeClass('active');
+    $('.label-name').removeClass('label-name-active').addClass('label-name-inactive');
+    if($(this).hasClass('active')){
+        var tempObj = $(this).children().eq(1);
+        $(tempObj).removeClass('label-name-active').addClass('label-name-inactive')
+        $(this).removeClass('active');
+    }else{
+        var tempObj = $(this).children().eq(1);
+        $(tempObj).removeClass('label-name-inactive').addClass('label-name-active')
+        $(this).addClass('active');
+    }  
+});

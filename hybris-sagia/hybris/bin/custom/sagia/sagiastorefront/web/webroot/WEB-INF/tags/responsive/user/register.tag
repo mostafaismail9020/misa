@@ -26,7 +26,7 @@
 </div>
  
 <style>
-[dir] .right_arrowdd .select2.select2-container .select2-selection:after{
+.right_arrowdd .select2.select2-container .select2-selection:after{
 	right: -8px;
 }
 [dir='rtl'] .right_arrowdd .select2.select2-container .select2-selection:after{
@@ -49,7 +49,7 @@
 	</div>
 	
 	<div class="col-md-6">
-		<form:form method="post" id="sagiaRegisterFormQuickRegistration" modelAttribute="sagiaRegisterForm" action="${registerAction}#register-quick">
+		<form:form method="post" id="sagiaRegisterFormQuickRegistration" name="sagiaRegisterFormQuickRegistration"  modelAttribute="sagiaRegisterForm" action="${registerAction}#register-quick" onsubmit="return validateRegisterForm()">
 			<div class="row col-lg-12 col-xl-12 col-12 register-account-screen r-sn ">
 				<div class="login-right-wrapper">
 					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
@@ -250,7 +250,7 @@
 								--%>
 								<formElement:formInputBox idKey="quickregistration.register.mobileCountryCode"
 											labelKey="register.mobileCountryCode" path="mobileCountryCode" labelCSS="ddl-countrycode-label"
-											inputCSS="js-quickregister-countrycode form-control_preNumber js-mobile-coutry-code ddl-countryCode register-user-details register-contry-info"/>
+											inputCSS="js-quickregister-countrycode form-control_preNumber js-mobile-coutry-code ddl-countryCode register-user-details register-contry-info" readonly = "true" />
 								<div class="input-wrapper focus-on-change">
 									<formElement:formInputBox idKey="quickregistration.register.mobileNumber"
 												labelKey="register.mobileNumber" path="mobileNumber"
@@ -367,6 +367,7 @@
 						<div class="col-md-12 ">
 							<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
 							<div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
+							<span id="lblErrorCaptchareg" class="mandatory"></span>
 						</div>
 					</div>
 					<div class="login-buttons user-info-buttons">

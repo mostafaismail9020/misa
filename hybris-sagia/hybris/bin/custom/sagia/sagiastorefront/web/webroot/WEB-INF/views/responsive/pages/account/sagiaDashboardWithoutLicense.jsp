@@ -148,6 +148,21 @@
     </div>
 </div>
 
+<div id="license-application-simulator" class="container" style="display:none;">
+    <div class="row">
+        <div class="col-md-10 ">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe id="simulator-video" class="embed-responsive-item" src="https://www.youtube.com/embed/u3sQ7TDFUWs" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-2"> 
+            <button type="button" id="simulator-close" class="modal-close  top-0 end-0">
+                <icon:close/>
+            </button>
+        </div>
+    </div>
+</div>
+
 
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">
@@ -399,21 +414,6 @@
     </div>
 </section>
 
-
-<div id="license-application-simulator" class="container" style="display:none;">
-    <div class="row">
-        <div class="col-md-10 ">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe id="simulator-video" class="embed-responsive-item" src="https://www.youtube.com/embed/u3sQ7TDFUWs" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="col-md-2"> 
-            <button type="button" id="simulator-close" class="modal-close  top-0 end-0">
-                <icon:close/>
-            </button>
-        </div>
-    </div>
-</div>
 
 <%--Modal: Use (data-toggle="modal" data-target="#eServiceTour") on link or button to call it--%>
 <%--<div class="modal fade" id="eServiceTour"  tabindex="-1" role="dialog" aria-labelledby="eServiceTour" aria-hidden="true">

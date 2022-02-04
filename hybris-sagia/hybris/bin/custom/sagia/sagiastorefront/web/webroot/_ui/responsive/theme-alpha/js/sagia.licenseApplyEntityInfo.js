@@ -215,9 +215,10 @@ bindRhqCountryInformationEvents: function () {
                     countries.append(new Option(currentValue.countryText, currentValue.country, false, false));
                 });
               //  self.updateSelectValues($("#branchInformationRhqCountry"));
-                self.CountryUpdateSelectValues($("#branchInformationRhqCountry"));
+         //       self.CountryUpdateSelectValues($("#branchInformationRhqCountry"));
                 //countries.attr("disabled", true);
                 //countries.val("SA").trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
+
 			}
 		});
 	},
@@ -257,6 +258,7 @@ bindRhqCountryInformationEvents: function () {
 				self.licenseInformationSection.find('input[name=isEntrepreneur]').prop("disabled", false);
 				self.licenseInformationSection.find('input[name=isPreApprovalNumber]').prop("disabled", false);
         	}else if($(this).val() == "11"){
+
                 //22-Jan-22 - Start
 
                 // let objectActivityOptions = new Array("","Sales and Marketing Support","Human Resources,and Personnel Management","Training Services","Financial Management, Foreign Exchange, and Treasury Centre Services","Compliance and Internal Control","Accounting","Legal","Auditing","Research and Analysis","Advisory Services","Operations Control","Logistics and Supply Chain Management","International Trading","Technical Support or Engineering Assistance","Network Operations for IT System","Research and Development","Intellectual Property Rights Management","Production Management","Sourcing of Raw Materials and Parts");
@@ -279,6 +281,11 @@ bindRhqCountryInformationEvents: function () {
                 $('#rhqCenterAdmin').on('change', function () {
                    $('#rhqCountryRegion').show();
                 });
+
+
+
+
+
 
                 // let objectCenterAdminRhqRegionsOptions = new Array("","North America","Central America","South America","Europe","North Africa","Central & South Africa","Middle East","Indian Subcontinent","CIS","East Asia","Southeast Asia","Oceania");
                 // for(var i = 1; i < objectCenterAdminRhqRegionsOptions.length; i++) {
@@ -1105,6 +1112,9 @@ bindRhqCountryInformationEvents: function () {
                 self.setStrategicActivities();
                 self.setManagementActivities();
                 self.setrhqCenterAdmin();
+                self.setSelectedManagementActivities();
+                self.setRhqSubsidiaryPresence();
+                self.setSelectedRhqCountries();
 				self.entrepreneurAttachment.hide();
         	}
             else{
@@ -1175,16 +1185,9 @@ bindRhqCountryInformationEvents: function () {
     	self.loadYearsDropDownForRHQ();
 	//	this.attachmentsOnLoad();
 
-		if(listOfRhqCountriesInJS != ""){
-			var selectedCountriesSplit1 = listOfRhqCountriesInJS.split("[");
-			var selectedCountriesSplit2 = selectedCountriesSplit1[1].split("]");
-			var selectedCountries = selectedCountriesSplit2[0];
-			$.each(selectedCountries.split(","), function(i ,e){
-				$("#branchInformationRhqCountry option[value='" + e.trimLeft() + "']").prop("selected", true);
-			});
-		}
-      //  self.updateSelectValues($("#branchInformationRhqCountry"));
-        self.CountryUpdateSelectValues($("#branchInformationRhqCountry"));
+
+       //   self.updateSelectValues($("#branchInformationRhqCountry"));
+        //self.CountryUpdateSelectValues($("#branchInformationRhqCountry"));
     },
 
 	attachmentsOnLoad: function(){
@@ -1324,7 +1327,7 @@ bindRhqCountryInformationEvents: function () {
 
             });
           //  self.updateSelectValues($("#branchInformationRhqCountry"));
-            self.CountryUpdateSelectValues($("#branchInformationRhqCountry"));
+          //  self.CountryUpdateSelectValues($("#branchInformationRhqCountry"));
              addBranchCountry.val(null);
 
 
@@ -1348,6 +1351,10 @@ bindRhqCountryInformationEvents: function () {
                         $('#rhqCheckbox').append('<option value='+currentValue.id+'>'+currentValue.details+'</option>');
                     });
                     self.updateSelectValues($("#rhqCheckbox"));
+                    $('#rhqCheckbox').trigger({
+                        type: 'select2:select',
+
+                    });
                 }
             });
     },
@@ -1369,6 +1376,10 @@ bindRhqCountryInformationEvents: function () {
                         $('#branchInformationRhqRegionsSection').append('<option value='+currentValue.region+'>'+currentValue.regionText+'</option>');
                     });
                     self.updateSelectValues($("#branchInformationRhqRegionsSection"));
+                    $('#branchInformationRhqRegionsSection').trigger({
+                        type: 'select2:select',
+
+                    });
                 }
             });
     },
@@ -1385,13 +1396,6 @@ bindRhqCountryInformationEvents: function () {
                     contentType: "application/json;charset=utf-8",
                     cache: false,
                     success: function (data) {
-
-                        //These lines will be removed once integarted with actual api data
-                        //let objectRhqStrategicOptions = new Array("","Formulate and monitor the regional strategy","Coordinate strategic alignment","Embed products and/or services in the region","Support acquisitions, mergers and divestments","Review financial performance");
-                        // for(var i = 1; i < objectRhqStrategicOptions.length; i++) {
-                        //     $('#rhqStrategicCheckbox').append('<option value='+i+'>'+objectRhqStrategicOptions[i]+'</option>');
-                        //  }
-
                         var jsonData = JSON.parse(data);
                         var strategicActivities = self.basicInformationExtendedSection.find("#rhqStrategicCheckbox");
                         strategicActivities.find("option").remove();
@@ -1400,6 +1404,10 @@ bindRhqCountryInformationEvents: function () {
                             $('#rhqStrategicCheckbox').append('<option value='+currentValue.id+'>'+currentValue.details+'</option>');
                         });
                         self.updateSelectValues($("#rhqStrategicCheckbox"));
+                        $('#rhqStrategicCheckbox').trigger({
+                            type: 'select2:select',
+
+                        });
 
                     }
                 });
@@ -1415,13 +1423,6 @@ bindRhqCountryInformationEvents: function () {
                         contentType: "application/json;charset=utf-8",
                         cache: false,
                         success: function (data) {
-
-                            //These lines will be removed once integarted with actual api data
-                            // let objectRhqManagementFunOptions = new Array("","Business planning","Budgeting","Business coordination","Identification of new market opportunities","Monitoring of the regional market, competitors, and operations","Marketing plan for the region","Operational and financial reporting");
-                            // for(var i = 1; i < objectRhqManagementFunOptions.length; i++) {
-                            //     $('#rhqManagementFunCheckbox').append('<option value='+i+'>'+objectRhqManagementFunOptions[i]+'</option>');
-
-                            //  }
                             var jsonData = JSON.parse(data);
                             var managementActivities = self.basicInformationExtendedSection.find("#rhqManagementFunCheckbox");
                             managementActivities.find("option").remove();
@@ -1429,20 +1430,104 @@ bindRhqCountryInformationEvents: function () {
                             jsonData.forEach(function (currentValue) {
                                 $('#rhqManagementFunCheckbox').append('<option value='+currentValue.id+'>'+currentValue.details+'</option>');
                             });
-                            self.updateSelectValues($("#rhqManagementFunCheckbox"));
+                         //   self.updateSelectValues($("#rhqManagementFunCheckbox"));
                         }
                     });
-    }, setrhqCenterAdmin: function () {
+    }, setSelectedManagementActivities: function () {
         var self = this;
-      //  self.updateSelectValues($("#rhqCenterAdmin"));
-      //   console.log($('#rhqCenterAdmin').select2('data'));
-      self.updateSelectValues($("#rhqCenterAdmin"));
-     // console.log(rhqCenterAdminStringarrayInJS);
-      // $('#rhqCenterAdmin').select2().val(["GCC", "MENA", "Middle East (ME)"]).trigger('change')
+        try {
+            managementActivitiesParsedList = []
+            var selectedManagementListSplit1 = listOfManagementActivitiesInJS.split("[");
+            var selectedManagementListSplit2 = selectedManagementListSplit1[1].split("]");
+            var selectedManagementList = selectedManagementListSplit2[0];
+            $.each(selectedManagementList.split(","), function (i, e) {
+                managementActivitiesParsedList.push(e.trimLeft())
+
+            });
+
+            console.log(managementActivitiesParsedList);
+            $('#rhqManagementFunCheckbox').select2().val(managementActivitiesParsedList).trigger('change');
+            $('#rhqManagementFunCheckbox').trigger({
+                type: 'select2:select',
+
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
+    },setrhqCenterAdmin: function () {
+        var self = this;
+        try {
+            RHQCenterfinalParsedList = []
+            var selectedrhqCenterAdminSplit1 = rhqCenterAdminInJS.split("[");
+            var selectedrhqCenterAdminSplit2 = selectedrhqCenterAdminSplit1[1].split("]");
+            var selectedRhqCenterAdmin = selectedrhqCenterAdminSplit2[0];
+            $.each(selectedRhqCenterAdmin.split(","), function (i, e) {
+                RHQCenterfinalParsedList.push(e.trimLeft())
+
+            });
+
+            console.log(RHQCenterfinalParsedList);
+            $('#rhqCenterAdmin').select2().val(RHQCenterfinalParsedList).trigger('change')
+            $('#rhqCenterAdmin').trigger({
+                type: 'select2:select',
+
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
+
+      },setRhqSubsidiaryPresence: function () {
+        var self = this;
+        try {
+            rhqSubsidiaryPresenceList = []
+            var rhqSubsidiaryPresenceInJSSplit1 = rhqSubsidiaryPresenceInJS.split("[");
+            var rhqSubsidiaryPresenceInJSSplit2 = rhqSubsidiaryPresenceInJSSplit1[1].split("]");
+            var selectedRhqSubsidiaryPresence = rhqSubsidiaryPresenceInJSSplit2[0];
+            $.each(selectedRhqSubsidiaryPresence.split(","), function (i, e) {
+                rhqSubsidiaryPresenceList.push(e.trimLeft())
+
+            });
+            console.log(rhqSubsidiaryPresenceList);
+            if(rhqSubsidiaryPresenceList?.length > 0){
+                $("input[type=radio][name=rhqSubsidiaryPresence][value=" + rhqSubsidiaryPresenceList[0] + "]").prop('checked', true);
+            }
+
+        }
+        catch (err) {
+            console.log(err);
+        }
+    },setSelectedRhqCountries: function () {
+
+                  setTimeout(function () {
+                      var self = this;
+                      try {
+                          selectedRhqCountrieseList = []
+                          var listOfSelectedRhqCountriesInJSSplit1 = listOfRhqCountriesInJS.split("[");
+                          var listOfSelectedRhqCountriesInJSSplit2 = listOfSelectedRhqCountriesInJSSplit1[1].split("]");
+                          var selectedRhqCountriesInJSSplit = listOfSelectedRhqCountriesInJSSplit2[0];
+                          $.each(selectedRhqCountriesInJSSplit.split(","), function (i, e) {
+                              selectedRhqCountrieseList.push(e.trimLeft())
+
+                          });
+                          console.log(selectedRhqCountrieseList);
+                          if (selectedRhqCountrieseList?.length > 0) {
+                              $('#branchInformationRhqCountry').select2().val(selectedRhqCountrieseList).trigger('change');
+                          }
+                          $('#branchInformationRhqCountry').trigger({
+                            type: 'select2:select',
+
+                        });
+
+                      }
+                      catch (err) {
+                          console.log(err);
+                      }
+                  }, 5000);
+
 
     },
-
-
 
     resetRHQActivities: function () {
 
@@ -2062,14 +2147,7 @@ if($("#licenseTypes").val() === "11"){
         }
 
 
-        // if($('#rhqSubsidiaryPresence').val().length <1){
-        //     hasErrors = true;
-        //     $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
-        //     $('#rhqSubsidiaryPresence').parents('.form-group').addClass('has-error');
-        // } else {
-        //     $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
-        //     $('#rhqSubsidiaryPresence').parents('.form-group').removeClass('has-error');
-        // }
+
 
         if (typeof ($('input[type=radio][name=rhqSubsidiaryPresence]:checked').val()) == "undefined") {
             hasErrors = true;
@@ -2142,8 +2220,19 @@ if($("#licenseTypes").val() === "11"){
 
         }
 
+
         //onchanges validation start
 
+        $(document.body).on('change', '#rhqCheckbox', function () {
+            if ($('#rhqCheckbox').val().length < 3) {
+                $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.corporate.activity.validation"));
+                $('#rhqCheckbox').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqCheckbox').parents('.form-group').removeClass('has-error');
+            }
+
+        });
 
 
         $(document.body).on('change', '#rhqCheckbox', function () {
@@ -2191,16 +2280,7 @@ if($("#licenseTypes").val() === "11"){
 
         });
 
-        // $(document.body).on('change', '#rhqSubsidiaryPresence', function () {
-        //     if($('#rhqSubsidiaryPresence').val().length <1){
-        //         $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
-        //         $('#rhqSubsidiaryPresence').parents('.form-group').addClass('has-error');
-        //     } else {
-        //         $('#rhqSubsidiaryPresence').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
-        //         $('#rhqSubsidiaryPresence').parents('.form-group').removeClass('has-error');
-        //     }
 
-        // });
 
         $('input[type=radio][name=rhqSubsidiaryPresence]').change(function() {
             if (typeof ($('input[type=radio][name=rhqSubsidiaryPresence]:checked').val()) == "undefined") {

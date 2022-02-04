@@ -66,7 +66,7 @@
 
 	<div class="formSelectBox">
 			<div class="form-group">
-				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="js-select2-multi form-control" multiple="" tabindex="-1" aria-hidden="true" data-value="(${sagiaApplyEntityInfoForm.rhqCenterAdmin}).toString()">
+				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="js-select2-multi form-control" multiple="" tabindex="-1" aria-hidden="true" data-value="">
 					 <option value="GCC">GCC</option>
                      <option value="MENA">MENA</option>
                      <option value="Middle East (ME)">Middle East (ME)</option>
@@ -1121,9 +1121,6 @@
 
 
 <script>
-
-
-
 	  objectBranchesString =  ('${entitiesManagedByRhq}');
       objectBranchesString1 = objectBranchesString.replace(/("{)/g, '{');
 	  objectBranchesString2 = objectBranchesString1.replace(/(}")/g, '}');
@@ -1150,6 +1147,11 @@
 	  objectCost = [];
       objectCost =  JSON.parse(objectCostsString2);
 	  console.log(objectCost);
+
+	var listOfRhqCountriesInJS =  '${sagiaApplyEntityInfoForm.listOfRhqCountries}';
+	var rhqCenterAdminInJS =  '${sagiaApplyEntityInfoForm.rhqCenterAdmin}';
+	var rhqSubsidiaryPresenceInJS =  '${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}';
+	var listOfManagementActivitiesInJS = ' ${sagiaApplyEntityInfoForm.listOfManagementActivities}';
 
 
 

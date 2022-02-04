@@ -147,9 +147,9 @@ public class LicenseEntityInformationReversePopulator
 		{
 			final List<EntitiesManagedByRhqModel> entitiesManagedByRhqList = new ArrayList<EntitiesManagedByRhqModel>();
 			target.setListOfEntitiesManagedByRhq(null);
-			final EntitiesManagedByRhqModel entityModel=modelService.create(EntitiesManagedByRhqModel.class);
 			for (EntitiesManagedByRhq entityData : source.getListOfEntitiesManagedByRhq())
 			{
+				final EntitiesManagedByRhqModel entityModel=modelService.create(EntitiesManagedByRhqModel.class);
 				entityModel.setCompanyName(entityData.getCompanyName());
 				entityModel.setCountry(entityData.getCountry());
 				entityModel.setBusinessRelationshipType(entityData.getBusinessRelationshipType());
@@ -168,9 +168,9 @@ public class LicenseEntityInformationReversePopulator
 		{
 			final List<BrandPresenceModel> brandPresenceInMENARegionList = new ArrayList<BrandPresenceModel>();
 			target.setListOfBrandPresenceInMENARegion(null);
-			final BrandPresenceModel brandModel = modelService.create(BrandPresenceModel.class);
 			for (BrandPresenceInMENARegion brandData : source.getListOfBrandPresenceInMENARegion())
 			{
+				final BrandPresenceModel brandModel = modelService.create(BrandPresenceModel.class);
 				brandModel.setBrandName(brandData.getBrandName());
 				brandModel.setCountry(brandData.getCountry());
 				brandModel.setIndustry(brandData.getIndustry());
@@ -188,9 +188,9 @@ public class LicenseEntityInformationReversePopulator
 		{
 			final List<OperatingCostForRhqModel> operatingCostList = new ArrayList<OperatingCostForRhqModel>();
 			target.setListOfEstimatedOperatingCostForRhq(null);
-			final OperatingCostForRhqModel operatingCostModel = modelService.create(OperatingCostForRhqModel.class);
 			for (EstimatedOperatingCostForRhq operatingCostData : source.getListOfEstimatedOperatingCostForRhq())
 			{
+				final OperatingCostForRhqModel operatingCostModel = modelService.create(OperatingCostForRhqModel.class);
 				operatingCostModel.setItem(operatingCostData.getItem());
 				operatingCostModel.setUnitCost(operatingCostData.getUnitCost());
 				operatingCostModel.setNoOfUnits(operatingCostData.getNoOfUnits());

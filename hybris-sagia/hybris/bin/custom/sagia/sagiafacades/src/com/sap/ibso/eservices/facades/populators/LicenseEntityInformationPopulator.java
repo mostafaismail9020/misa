@@ -106,7 +106,7 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 		if(!source.getListOfManagementActivties().isEmpty())
 		{
 			final List<String> listOfManagementActivities = new ArrayList<String>();
-			for (String managementActivities : source.getListOfCorporateActivties())
+			for (String managementActivities : source.getListOfManagementActivties())
 			{
 				listOfManagementActivities.add(licenseApplyDAO.getActivityDetailsCodeForName(managementActivities).getId());
 			}

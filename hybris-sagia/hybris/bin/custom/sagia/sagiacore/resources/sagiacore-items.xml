@@ -5841,7 +5841,12 @@
                     <attribute qualifier="eventGalleryImages" type="MediaContainer">
                         <persistence type="property"/>
                         <description>It is a media container with additional images for the events</description>
-                    </attribute>                                       
+                    </attribute>
+                    <attribute qualifier="regionSpecific" type="java.lang.Boolean">
+                        <defaultvalue>Boolean.TRUE</defaultvalue>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
                 </attributes>
             </itemtype>
 
@@ -6005,7 +6010,12 @@
                         <persistence type="property"/>
                         <modifiers/>
 						<description>Resource quotation</description>
-                    </attribute>                       		
+                    </attribute>
+                    <attribute qualifier="regionSpecific" type="java.lang.Boolean">
+                        <defaultvalue>Boolean.TRUE</defaultvalue>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
                 </attributes>
             </itemtype>
 

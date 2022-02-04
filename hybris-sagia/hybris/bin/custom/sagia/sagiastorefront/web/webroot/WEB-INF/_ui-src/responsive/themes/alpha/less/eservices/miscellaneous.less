@@ -557,3 +557,38 @@ border-bottom: none !important;
 [dir="rtl"] .lang-en:before {
 	right: 17px;
 }
+/*** show me around responsive***/
+
+@media (max-width: 767px){
+	[dir=ltr] #eServiceTour .modal-dialog{
+		left: calc(0%);
+	}
+	.modal-heroImage {
+		margin-bottom: 32px;
+		height: 50px;
+		width: auto;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+	}
+	#eServiceTour .modal-dialog .modal-title{
+		font-size: 20px;
+	}
+	.modal-description{
+		font-size: 18px;
+	}
+	.eServiceTutorial-panelInner{
+		width: auto;
+	}
+}
+	
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	[dir=ltr] #eServiceTour .modal-dialog{
+		left: calc(10%);
+	}
+	.eServiceTutorial-panelInner{
+		width: auto;
+	}
+}
+
+/*** show me around responsive***/

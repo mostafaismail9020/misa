@@ -260,7 +260,7 @@
 			</section>
 		</c:if> --%>
 		
-	<c:if test="${not empty regionProductsData}">
+	<c:if test="${not empty regionProductsData.results}">
 	<section class="Inc-energyoppertunities">
     <div class="container">
     	<!-- <div class="container"> -->
@@ -284,12 +284,12 @@
             </h1> --%>
             
             <button class="btn btn-sector-primary responsive-btn-sector">
-            	<c:if test="${empty regionProductsData}">
+            	<c:if test="${empty regionProductsData.results}">
             		<a href="/${language}/sectors-opportunities/opportunities">
             		<%-- <a href="/${language}/sectors-opportunities/opportunities">${component.exploreAllURL.linkName}&nbsp; --%>
             		<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
             	</c:if>
-            	<c:if test="${not empty regionProductsData}">
+            	<c:if test="${not empty regionProductsData.results}">
             		<%-- <a href="/${language}/sectors-opportunities/opportunities" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
                           	<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561">
                               	<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward" d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z" transform="translate(-7.875 -11.252)" fill="#fff"></path>
@@ -303,12 +303,12 @@
             	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
             </button>
         </div>
-        <c:if test="${empty regionProductsData}">
+        <c:if test="${empty regionProductsData.results}">
         	<div class="page-main-content mt-0 text-center">
 	            <div class="no-opportunities-text"><spring:theme code="portal.sector.opportunity.not.available.label"/></div>
 			</div>
         </c:if>
-        <c:if test="${not empty regionProductsData}">
+        <c:if test="${not empty regionProductsData.results}">
 	        <div class="page-main-content mt-0">
 	            <div class="row">                                   
 	                 <c:forEach var="featuredOpportunity" items="${regionProductsData.results}" varStatus="status">

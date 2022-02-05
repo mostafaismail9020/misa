@@ -11,6 +11,26 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
 
+<style>
+.login-screen .register-user-info {
+    top: 10%;
+}
+[dir] .login-error-form .formError {
+    margin: auto;
+    margin-top: 22%;
+}
+[dir] .accountLogin-content-formSubmitSection {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) and (max-width: 820px){
+    .login-screen .register-user-info {
+    top: 10%;
+    }
+}
+</style>
+
 <spring:htmlEscape defaultHtmlEscape="true"/>
 <c:set var="hideDescription" value="checkout.login.loginAndCheckout"/>
 
@@ -22,10 +42,10 @@
     <div class="row col-lg-12 col-xl-12 col-12 login-screen r-sn">
         <div class="login-right-wrapper">
             <div class="login-register-text">LOGIN</div>
-            <%--<div class="register-role-selection">
-                <img src="" alt="Investor" class="img-fluid login-role" />
-            </div>	
-            --%>
+            <div class="register-role-selection"> 
+                <img src="${commonResourcePath}/images/B2C/Partner.png" alt="Investor" class="img-fluid img-partner-active login-role" />
+			</div>	 
+            
             
             <div class="row register-user-info ">
                 <div class="col-md-12 register-form">

@@ -2032,7 +2032,7 @@
                                         <input id="branchStreetId" name="branchStreet"
                                                class="form-control form-control_labeled" placeholder="."
                                                value="" type="text"> <label
-                                            class="control-label control-label_mandatory"
+                                            class="control-label"
                                             for="branchStreetId"> <spring:theme
                                             code="license.street"/>
                                     </label>
@@ -2044,7 +2044,7 @@
                                         <input id="branchNumberId" name="branchNumber"
                                                class="form-control form-control_preNumber" placeholder="."
                                                value="" type="text"> <label
-                                            class="control-label control-label_mandatory"
+                                            class="control-label"
                                             for="branchNumberId"> <spring:theme
                                             code="general.no.number"/>
                                     </label>

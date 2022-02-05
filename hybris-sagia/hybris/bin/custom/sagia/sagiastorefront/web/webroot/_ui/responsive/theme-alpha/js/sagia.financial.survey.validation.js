@@ -555,8 +555,6 @@ function branchValidator() {
         rules: {
             branchType: "required",
             branchName: "required",
-            branchStreet: "required",
-            branchNumber: "required",
             branchRegion: "required",
             branchCity: "required",
             branchTelephone: "required",
@@ -575,12 +573,6 @@ function branchValidator() {
             },
             branchName: {
                 required: getI18nText("validation.branchName")
-            },
-            branchStreet: {
-                required: getI18nText("validation.streetName")
-            },
-            branchNumber: {
-                required: getI18nText("validation.streetNumber")
             },
             branchRegion: {
                 required: getI18nText("validation.region")

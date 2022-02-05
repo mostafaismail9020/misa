@@ -1066,17 +1066,17 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             List<String> isicActivities = sagiaLicenseApplyFacade.prepareBusinessActivitiesHashMap(sagiaApplyEntityInfoForm.getIsicActivities());
             model.addAttribute("isicActivities", isicActivities);
         }
-        if (!sagiaApplyEntityInfoForm.getListOfEntitiesManagedByRhq().isEmpty())
+        if (null!=sagiaApplyEntityInfoForm.getListOfEntitiesManagedByRhq())
         {
             List<String> entitiesManagedByRhq = sagiaLicenseApplyFacade.prepareEntitiesManagedByRhqHashMap( sagiaApplyEntityInfoForm.getListOfEntitiesManagedByRhq());
             model.addAttribute("entitiesManagedByRhq", new Gson().toJson(entitiesManagedByRhq));
         }
-            if(!sagiaApplyEntityInfoForm.getListOfBrandPresenceInMENARegion().isEmpty())
+            if(null!=sagiaApplyEntityInfoForm.getListOfBrandPresenceInMENARegion())
         {
             List<String> brandPresenceInMENARegion = sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegionHashMap( sagiaApplyEntityInfoForm.getListOfBrandPresenceInMENARegion());
             model.addAttribute("brandPresenceInMENARegion", new Gson().toJson(brandPresenceInMENARegion));
         }
-        if(!sagiaApplyEntityInfoForm.getListOfEstimatedOperatingCostForRhq().isEmpty())
+        if(null!=sagiaApplyEntityInfoForm.getListOfEstimatedOperatingCostForRhq())
         {
             List<String> estimatedOperatingCostForRhq = sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhqHashMap( sagiaApplyEntityInfoForm.getListOfEstimatedOperatingCostForRhq());
             model.addAttribute("estimatedOperatingCostForRhq", new Gson().toJson(estimatedOperatingCostForRhq));

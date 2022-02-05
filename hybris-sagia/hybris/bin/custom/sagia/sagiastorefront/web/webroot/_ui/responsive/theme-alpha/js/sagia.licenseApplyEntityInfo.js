@@ -294,7 +294,8 @@ bindRhqCountryInformationEvents: function () {
 
                 //  let objectRhqSubsidiaryOptions = new Array("Only one country","2 to 5 countries","6 to 10 countries","over 10 countries");
                  let objectRhqSubsidiaryOptions = [{"value":"only_one_country","text":"Only one country"}, {"value":"2_to_5_countries","text":"2 to 5 countries"}, {"value":"6_to_10_countries","text":"6 to 10 countries"},{"value":"over_10_countries","text":"over 10 countries"}]
-                for(var i = 0; i < objectRhqSubsidiaryOptions.length; i++) {
+                 $('#rhqSubsidiaryPresence').html('');
+                 for(var i = 0; i < objectRhqSubsidiaryOptions.length; i++) {
                    // $('#rhqSubsidiaryPresence').append('<div class="form-item"><input type="radio" name="rhqSubsidiaryPresence" value='+i+'>'+objectRhqSubsidiaryOptions[i]+'</input></div>');
 
                     $('#rhqSubsidiaryPresence').append('<div class="form-item"><input name="rhqSubsidiaryPresence" class="form-control" type="radio" id=' + (objectRhqSubsidiaryOptions[i]['value'])  + ' value=' + (objectRhqSubsidiaryOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqSubsidiaryOptions[i]['value'])  + '><span></span> ' + (objectRhqSubsidiaryOptions[i]['text'])  + '</label></div>');
@@ -320,6 +321,7 @@ bindRhqCountryInformationEvents: function () {
 
                 // MNC Branches - Start
                  // objectBranches = [];
+                 $("#mncBranchTable tbody").html('');
                 if (objectBranches?.length > 0) {
                     for (var idx = 0; idx < objectBranches.length; idx++) {
                         $("#mncBranchTable tbody").append('<tr><td>' + objectBranches[idx]['companyName'] + '</td><td>' + objectBranches[idx]['country'] + '</td><td>' + objectBranches[idx]['businessRelationshipType'] + '</td><td>' + objectBranches[idx]['industry'] + '</td><td>' + objectBranches[idx]['operations'] + '</td><td>' + objectBranches[idx]['RhqActivityProvided'] + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBranchBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
@@ -551,6 +553,7 @@ bindRhqCountryInformationEvents: function () {
 
                 // MNC Brand - Start
                //  objectBrands = [];
+               $("#mncBrandTable tbody").html('');
                  if (objectBrands?.length > 0) {
                     for (var idx = 0; idx < objectBrands.length; idx++) {
                         $("#mncBrandTable tbody").append('<tr><td>' + objectBrands[idx]['brandName'] + '</td><td>' + objectBrands[idx]['country'] + '</td><td>' + objectBrands[idx]['industry'] + '</td><td>' + objectBrands[idx]['companyOwningBrandInMENA'] + '</td><td>' + objectBrands[idx]['RhqActivityProvided'] + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBrandBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
@@ -772,6 +775,7 @@ bindRhqCountryInformationEvents: function () {
 
                 // Operating Costs - Start
                 // objectCost = [];
+                $("#rhqCostTable tbody").html('');
                  if (objectCost?.length > 0) {
                     for (var idx = 0; idx < objectCost.length; idx++) {
                         $("#rhqCostTable tbody").append('<tr><td>' + objectCost[idx]['item'] + '</td><td>' + objectCost[idx]['unitCost'] + '</td><td>' + objectCost[idx]['noOfUnits'] + '</td><td>' + objectCost[idx]['costFrequency'] + '</td><td>' + objectCost[idx]['year2022'] + '</td><td>' + objectCost[idx]['year2023'] + '</td><td>' + objectCost[idx]['year2024'] + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditCostBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
@@ -1446,11 +1450,14 @@ bindRhqCountryInformationEvents: function () {
             });
 
             console.log(managementActivitiesParsedList);
-            $('#rhqManagementFunCheckbox').select2().val(managementActivitiesParsedList).trigger('change');
-            $('#rhqManagementFunCheckbox').trigger({
-                type: 'select2:select',
+            setTimeout(function () {
+                $('#rhqManagementFunCheckbox').select2().val(managementActivitiesParsedList).trigger('change');
+                $('#rhqManagementFunCheckbox').trigger({
+                    type: 'select2:select',
 
-            });
+                });
+            },2500);
+
         }
         catch (err) {
             console.log(err);
@@ -1551,6 +1558,13 @@ bindRhqCountryInformationEvents: function () {
         $('.rqh-tables').css("display", "none");
         $('.rhqSelectBoxes').css("display", "none");
         self.setRHQLegalStatus("resetRHQLegalStatusValues");
+        $('#rhqCheckbox').html('');
+        $('#rhqStrategicCheckbox').html('');
+        $('#rhqManagementFunCheckbox').html('');
+        $('#branchInformationRhqRegionsSection').html('');
+
+
+
     },
     updateActivities: function () {
         var element = $('.businessActivitiesJsonInputs');
@@ -2196,26 +2210,36 @@ if($("#licenseTypes").val() === "11"){
              $('#rhqCostTable-error').parents('.form-group').removeClass('has-error');
          }
 
-         if( document.getElementById("entityFinancialStatementFile").files.length == 0 ){
-            hasErrors = true;
-            $('#entityFinancialStatementFile-helper').text(getI18nText("rhq.attachment.validation"));
-            $('#entityFinancialStatementFile').parents('.form-group').addClass('has-error');
-        }
-        if( document.getElementById("commercialRegMainEntryFile").files.length == 0 ){
-            hasErrors = true;
-            $('#commercialRegMainEntryFile-helper').text(getI18nText("rhq.attachment.validation"));
-            $('#commercialRegMainEntryFile').parents('.form-group').addClass('has-error');
-        }
-        if( document.getElementById("commercialRegBranch1File").files.length == 0 ){
-            hasErrors = true;
-            $('#commercialRegBranch1File-helper').text(getI18nText("rhq.attachment.validation"));
-            $('#commercialRegBranch1File').parents('.form-group').addClass('has-error');
-        }
-        if( document.getElementById("commercialRegBranch2File").files.length == 0 ){
+            entityForm.find('#entityFinancialStatementFile').each(function () {
+                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                    hasErrors = true;
+                    $('#entityFinancialStatementFile-helper').text(getI18nText("rhq.attachment.validation"));
+                    $('#entityFinancialStatementFile').parents('.form-group').addClass('has-error');
+                }
+            })
+            entityForm.find('#commercialRegMainEntryFile').each(function () {
+                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                    hasErrors = true;
+                    $('#commercialRegMainEntryFile-helper').text(getI18nText("rhq.attachment.validation"));
+                    $('#commercialRegMainEntryFile').parents('.form-group').addClass('has-error');
+                }
+            })
+            entityForm.find('#commercialRegBranch1File').each(function () {
+                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                    hasErrors = true;
+                    $('#commercialRegBranch1File-helper').text(getI18nText("rhq.attachment.validation"));
+                    $('#commercialRegBranch1File').parents('.form-group').addClass('has-error');
+                }
+            })
+            entityForm.find('#commercialRegBranch2File').each(function () {
+                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
                     hasErrors = true;
                     $('#commercialRegBranch2File-helper').text(getI18nText("rhq.attachment.validation"));
                     $('#commercialRegBranch2File').parents('.form-group').addClass('has-error');
                 }
+            })
+
+
 
 
         }

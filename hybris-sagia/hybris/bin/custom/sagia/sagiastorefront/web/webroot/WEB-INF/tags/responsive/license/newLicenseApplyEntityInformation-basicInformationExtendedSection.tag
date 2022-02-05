@@ -1118,8 +1118,6 @@
 </style>
 
 
-
-
 <script>
 	  objectBranchesString =  ('${entitiesManagedByRhq}');
       objectBranchesString1 = objectBranchesString.replace(/("{)/g, '{');

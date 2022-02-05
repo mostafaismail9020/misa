@@ -215,6 +215,10 @@ public class LicenseEntityInformationReversePopulator
 			}
 			target.setRhqCenterAdmin(rhqCenterAdmin);
 		}
+		else
+		{
+			target.setRhqCenterAdmin(null);
+		}
 		if(null!=source.getRhqSubsidiaryPresence())
 		{
 			final List<String> rhqSubsidiaryPresence = new ArrayList<String>();
@@ -223,6 +227,10 @@ public class LicenseEntityInformationReversePopulator
 				rhqSubsidiaryPresence.add(subsidiary);
 			}
 			target.setRhqSubsidiaryPresence(rhqSubsidiaryPresence);
+		}
+		else
+		{
+			target.setRhqSubsidiaryPresence(null);
 		}
 //New RHQ end
 		

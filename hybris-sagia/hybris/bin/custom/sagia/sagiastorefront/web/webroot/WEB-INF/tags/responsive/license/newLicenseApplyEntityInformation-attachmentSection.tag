@@ -42,8 +42,8 @@
         </div>
     </div>
     </div>
-    
-    
+
+
    <div id="entityListedInStockMarketAttachment" style="display: none">
 	    <div class="row">
 	        <div class="col-md-6">
@@ -77,7 +77,7 @@
 	            </div>
 	        </div>
     	</div>
-    </div>    
+    </div>
    <div id="entityRevenueAttachment" style="display: none">
 	    <div class="row">
 	        <div class="col-md-6">
@@ -94,8 +94,8 @@
 	            </div>
 	        </div>
     	</div>
-    </div>    
-  
+    </div>
+
 	  <div id="entityBranchAttachment" style="display: none">
 	    <div class="row">
 	        <div class="col-md-6">
@@ -152,8 +152,8 @@
 	        </div>
 	    </div>
 	  </div>
-    
-    
+
+
     <div id="branchAttachment" style="display: none">
                 <div class="row">
                     <div class="col-md-6">
@@ -350,3 +350,4 @@
     </div>
 </div>
 
+</div>

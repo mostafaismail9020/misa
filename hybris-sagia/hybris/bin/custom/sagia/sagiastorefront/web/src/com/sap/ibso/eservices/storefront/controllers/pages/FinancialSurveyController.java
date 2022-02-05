@@ -221,8 +221,8 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     @ResponseBody
     public Map getIsic(@PathVariable String licenseType, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
         // validateUser(request, response);
-        //return sagiaIsicFacade.getIsicFromMasterData(licenseType);
-        return sagiaIsicFacade.getIsic(licenseType);
+       // return sagiaIsicFacade.getIsicFromMasterData(licenseType);
+        return sagiaIsicFacade.getAllIsic();
     }
 
 

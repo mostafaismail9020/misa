@@ -24,22 +24,26 @@ public class IsicMasterDataService extends AbstractSagiaService<IsicMasterSetDat
         return sagiaIsicMasterDataDAO.getAllIsicMasterByLicenseType(licenseType);
     }
 
+    public Collection<IsicMasterModel> getAllIsicMasterForAllLicenseType(){
+        return sagiaIsicMasterDataDAO.getAllIsicMasterForAllLicenseType();
+    }
+
     public Collection<IsicMasterModel> getAllIsicMaster(List<String> isicActivityCodes){
         return sagiaIsicMasterDataDAO.getAllIsicMaster(isicActivityCodes);
     }
-    
+
     public List<IsicTextsModel> getTextsDataFromType(String type, List<String> ids) {
         return sagiaIsicMasterDataDAO.getTextsDataFromType(type, ids);
     }
-    
+
     public List<IsicTextsModel> getActiveISICSection() {
         return sagiaIsicMasterDataDAO.getActiveISICSection();
     }
-    
+
     public List<IsicTextsModel> getActiveISICDivision(String sectionID) {
         return sagiaIsicMasterDataDAO.getActiveISICDivision(sectionID);
     }
-    
+
     //TODO dont need to use all this methods above
 /*    public Collection<IsicMasterModel>  getAllSectionsByLicenseType(String licenseType){
         return sagiaIsicMasterDataDAO.getAllSectionsByLicenseType(licenseType);
@@ -69,11 +73,11 @@ public class IsicMasterDataService extends AbstractSagiaService<IsicMasterSetDat
         QueryOptionsBuilder query = new QueryOptionsBuilder().filter("Delta eq 'X'");
         return super.getCollection(IsicMasterSetData.class, query.build());
     }
-    
+
     public Collection<IsicMasterSetData> getCollection(){
         return super.getCollection(IsicMasterSetData.class);
     }
-    
+
     public SagiaIsicMasterDataDAO getSagiaIsicMasterDataDAO() {
         return sagiaIsicMasterDataDAO;
     }

@@ -155,8 +155,6 @@ function shareholderValidator() {
             // bpNumber: "required",delegateCountry delegateNationality
             shareholderNameEnglish: "required",
             companyCountry: "required",
-            shareholderSector: "required",
-            shareholderSubsector: "required",
             shareholderMultinationalCompany: "required",
             shareholderGender: "required",
             shareholderNationalityCurrent: "required",
@@ -208,12 +206,6 @@ function shareholderValidator() {
             },
             shareholderNameEnglish: {
                 required: getI18nText("validation.nameEnglish")
-            },
-            shareholderSector: {
-                required: getI18nText("validation.sector")
-            },
-            shareholderSubsector: {
-                required: getI18nText("validation.subsector")
             },
             shareholderMultinationalCompany: {
                 required: getI18nText("validation.multiNatCompany")
@@ -323,8 +315,6 @@ function affiliateValidator() {
             // bpNumber: "required",delegateCountry delegateNationality
             affiliateNameEnglish: "required",
             companyCountry: "required",
-            affiliateSector: "required",
-            affiliateSubsector: "required",
             affiliateMultinationalCompany: "required",
             affiliateGender: "required",
             affiliateNationalityCurrent: "required",
@@ -376,12 +366,6 @@ function affiliateValidator() {
             },
             affiliateNameEnglish: {
                 required: getI18nText("validation.nameEnglish")
-            },
-            affiliateSector: {
-                required: getI18nText("validation.sector")
-            },
-            affiliateSubsector: {
-                required: getI18nText("validation.subsector")
             },
             affiliateMultinationalCompany: {
                 required: getI18nText("validation.multiNatCompany")

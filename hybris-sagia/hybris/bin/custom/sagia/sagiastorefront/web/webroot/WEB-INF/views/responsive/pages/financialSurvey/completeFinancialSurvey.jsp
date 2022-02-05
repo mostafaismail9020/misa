@@ -1546,7 +1546,7 @@
                                         <div class="form-group">
                                             <select id="shareholderSectorId" name="shareholderSector"
                                                     class="js-select2-oneColumn form-control"></select> <label
-                                                class="control-label control-label_mandatory"
+                                                class="control-label"
                                                 for="shareholderSectorId"><spring:theme
                                                 code="license.sector"/></label>
                                         </div>
@@ -1559,7 +1559,7 @@
                                             <input id="shareholderSubsectorId"
                                                    name="shareholderSubsector" class="form-control"
                                                    placeholder="." value="" type="text" maxlength="20"> <label
-                                                class="control-label control-label_mandatory" for="">
+                                                class="control-label" for="">
                                             <spring:theme code="license.subsector"/>
                                         </label>
                                             <div class="help-block"></div>
@@ -2511,7 +2511,7 @@
                                         <div class="form-group">
                                             <select id="affiliateSectorId" name="affiliateSector"
                                                     class="js-select2-oneColumn form-control"></select> <label
-                                                class="control-label control-label_mandatory"
+                                                class="control-label"
                                                 for="affiliateSectorId"><spring:theme
                                                 code="license.sector"/></label>
                                         </div>
@@ -2524,7 +2524,7 @@
                                             <input id="affiliateSubsectorId"
                                                    name="affiliateSubsector" class="form-control"
                                                    placeholder="." value="" type="text" maxlength="20"> <label
-                                                class="control-label control-label_mandatory" for="">
+                                                class="control-label" for="">
                                             <spring:theme code="license.subsector"/>
                                         </label>
                                             <div class="help-block"></div>

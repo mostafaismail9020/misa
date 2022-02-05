@@ -231,7 +231,7 @@
                                     <div class="form-group">
                                         <input id="sagiaProfilePersonalFormSelectCompanyWebsite" title="companyWebsite" name="companyWebsite" class="form-control" type="text" value=""/>
                                         <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectCompanyWebsite">
-                                            Company Website
+                                            <spring:theme code="general.companyWebsite"/>
                                         </label>
                                     </div>
                                 </div>
@@ -239,7 +239,7 @@
                              <div class="col-md-12">
                              <div class="myAccount-profilImage mt-0">
                        <!-- <div class="myAccount-profilImage-img"><div class="profilePicture js-profilePicture" ></div></div>-->
-                        <a href="#" class="myAccount-profilImage-change w-50 p-4 pt-4 pl-3 pr-3 mt-4" data-toggle="modal" data-target="#uploadFilePicture" data-action="update-companyLogo">Change company logo
+                        <a href="#" class="myAccount-profilImage-change w-50 p-4 pt-4 pl-3 pr-3 mt-4" data-toggle="modal" data-target="#uploadFilePicture" data-action="update-companyLogo"><spring:theme code="general.change.companylogo"/>
                         <span class="uploadFile text-center pr-2"><svg xmlns="http://www.w3.org/2000/svg" class="mt-3" width="29" height="29" viewBox="0 0 29 29">
   <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
     <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>

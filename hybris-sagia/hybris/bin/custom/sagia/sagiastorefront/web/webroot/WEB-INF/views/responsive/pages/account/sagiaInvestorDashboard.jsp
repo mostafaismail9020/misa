@@ -91,7 +91,7 @@
                             <div class="dashboardUser-col">
                                 <div class="dashboardUser-entry ml-3">
                                     <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                                    <span class="last-login">Last Login:<span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
+                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/><span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                     <div class="col-6">
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
                         	<!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
-                            <div class="account-manager"><h4 class="clr_gld">Account Manager</h4></div>
+                            <div class="account-manager"><h4 class="clr_gld"><spring:theme code="dashboard.license.account.manager.title"/></h4></div>
                             <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-value h5"><c:out value='${user.name}'/></span></div>
                             <div class="dashboardUser-label profile-detail"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
                             <div class="dashboardUser-label profile-detail"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
@@ -179,7 +179,7 @@
 <section class="mainSection mainSection_noPadding bg-white">
     <div class="container">
         <h1 class="dashboard-headline services-headline js-dashboardWidget-headline text-center pt-5 mb-5">
-            Services
+            <spring:theme code="dashboard.license.services.title"/>
         </h1>
         <!-- <div class="dashboardUser_slim dashboardUser_noBorder pb-5">
             <div class="service-card-wrapper">

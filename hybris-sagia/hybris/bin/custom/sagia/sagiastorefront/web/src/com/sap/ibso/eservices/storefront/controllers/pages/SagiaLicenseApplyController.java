@@ -2089,7 +2089,10 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         model.addAttribute("temporaryLicenseConstant", temporaryLicenseConstant);
         model.addAttribute("regularQeemahChannel", regularQeemahChannel);
         model.addAttribute("immediateQeemahChannel", immediateQeemahChannel);
-    	
+        model.addAttribute("entitiesManagedByRhq", new Gson().toJson(sagiaLicenseApplyFacade.prepareEntitiesManagedByRhqHashMap(sagiaLicenseApplyFacade.prepareEntitiesManagedByRhq())));
+        model.addAttribute("brandPresenceInMENARegion", new Gson().toJson(sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegionHashMap(sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegion())));
+        model.addAttribute("estimatedOperatingCostForRhq", new Gson().toJson(sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhqHashMap(sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhq())));
+
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_LICENSE_REVIEW_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_LICENSE_REVIEW_CMS_PAGE));
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);

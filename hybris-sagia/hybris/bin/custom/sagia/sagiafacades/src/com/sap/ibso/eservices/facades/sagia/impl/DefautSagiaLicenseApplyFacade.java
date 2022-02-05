@@ -2063,4 +2063,66 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 		return estimatedOperatingCost;
 	}
 
+	public List<EntitiesManagedByRhq> prepareEntitiesManagedByRhq() {
+		EntityInformationModel entityInformation = licenseApplyService.getEntityInformation();
+		if(entityInformation != null && !Collections.isEmpty(entityInformation.getListOfEntitiesManagedByRhq()))
+		{
+			final List<EntitiesManagedByRhq> entitiesManagedByRhqList = new ArrayList<EntitiesManagedByRhq>();
+			for (EntitiesManagedByRhqModel entityModel : entityInformation.getListOfEntitiesManagedByRhq())
+			{
+				EntitiesManagedByRhq entityData = new EntitiesManagedByRhq();
+				entityData.setCompanyName(entityModel.getCompanyName());
+				entityData.setCountry(entityModel.getCountry());
+				entityData.setBusinessRelationshipType(entityModel.getBusinessRelationshipType());
+				entityData.setIndustry(entityModel.getIndustry());
+				entityData.setOperations(entityModel.getOperations());
+				entityData.setRhqActivityProvided(entityModel.getRhqActivityProvided());
+				entitiesManagedByRhqList.add(entityData);
+			}
+			return entitiesManagedByRhqList;
+		}
+		return null;
+	}
+	public List<BrandPresenceInMENARegion> prepareBrandPresenceInMENARegion() {
+		EntityInformationModel entityInformation = licenseApplyService.getEntityInformation();
+		if(entityInformation != null && !Collections.isEmpty(entityInformation.getListOfBrandPresenceInMENARegion()))
+		{
+			final List<BrandPresenceInMENARegion> brandPresenceInMENARegionList = new ArrayList<BrandPresenceInMENARegion>();
+			for (BrandPresenceModel brandModel : entityInformation.getListOfBrandPresenceInMENARegion())
+			{
+				BrandPresenceInMENARegion brandData = new BrandPresenceInMENARegion();
+				brandData.setBrandName(brandModel.getBrandName());
+				brandData.setCountry(brandModel.getCountry());
+				brandData.setIndustry(brandModel.getIndustry());
+				brandData.setCompanyOwningBrandInMENA(brandModel.getCompanyOwningBrandInMENA());
+				brandData.setRhqActivityProvided(brandModel.getRhqActivityProvided());
+				brandPresenceInMENARegionList.add(brandData);
+			}
+			return brandPresenceInMENARegionList;
+		}
+		return null;
+	}
+	public List<EstimatedOperatingCostForRhq> prepareEstimatedOperatingCostForRhq() {
+		EntityInformationModel entityInformation = licenseApplyService.getEntityInformation();
+		if(entityInformation != null && !Collections.isEmpty(entityInformation.getListOfEstimatedOperatingCostForRhq()))
+		{
+			final List<EstimatedOperatingCostForRhq> operatingCostList = new ArrayList<EstimatedOperatingCostForRhq>();
+			for (OperatingCostForRhqModel operatingCostModel : entityInformation.getListOfEstimatedOperatingCostForRhq())
+			{
+				EstimatedOperatingCostForRhq operatingCostData = new EstimatedOperatingCostForRhq();
+				operatingCostData.setItem(operatingCostModel.getItem());
+				operatingCostData.setUnitCost(operatingCostModel.getUnitCost());
+				operatingCostData.setNoOfUnits(operatingCostModel.getNoOfUnits());
+				operatingCostData.setCostFrequency(operatingCostModel.getCostFrequency());
+				operatingCostData.setYear2022(operatingCostModel.getYear2022());
+				operatingCostData.setYear2023(operatingCostModel.getYear2023());
+				operatingCostData.setYear2024(operatingCostModel.getYear2024());
+				operatingCostList.add(operatingCostData);
+			}
+			return operatingCostList;
+		}
+		return null;
+	}
+
+
 }

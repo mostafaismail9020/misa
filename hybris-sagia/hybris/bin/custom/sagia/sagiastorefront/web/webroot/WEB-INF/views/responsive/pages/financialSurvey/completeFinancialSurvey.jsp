@@ -1373,7 +1373,7 @@
                                                             <input id="srId" data-id="0" name="srId"  type="text"  value="${quarterCode}" hidden="hidden"/>
                                                             <input id="file0" data-id="0" name="files[0]" class="form-control js-inputFile" type="file" accept="application/pdf" value=""/>
                                                             <input id="text05" name="text05" class="form-control control-label_mandatory" type="text" value="" placeholder="" readonly="" tabindex="-1"/>
-                                                            <label class="control-label control-label_mandatory" for=""><spring:theme code="header.financialStatement.text"/></label>
+                                                            <label class="control-label" for=""><spring:theme code="header.financialStatement.text"/></label>
                                                             <div class="form-icon form-icon_browse"><icon:upload/></div>
                                                             <div class="form-icon form-icon_reset js-inputFile-reset" id="file0_reset"><icon:cross/></div>
                                                             <div class="help-block"></div>

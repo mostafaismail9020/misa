@@ -305,17 +305,20 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
         try {
 
             List<MediaModel> attachments = null;
+            MediaModel mediaModel = null;
             if (CollectionUtils.isNotEmpty(financialStatementForm.getFiles()))
             {
 
                 for (final MultipartFile file : financialStatementForm.getFiles())
                 {
+                    if (file.getSize() == 0) { //no file added
+                        continue;
+                     }
                     try
                     {
-                        MediaModel mediaModel =  ticketAttachmentsService.createAttachment(file.getOriginalFilename(), file.getContentType(),
+                        mediaModel = ticketAttachmentsService.createAttachment(file.getOriginalFilename(), file.getContentType(),
                                 file.getBytes(), userService.getCurrentUser());
                         // submit Financial Survey for Review
-                        sagiaFinancialSurveyFacade.submitFinancialSurveyForReview(mediaModel,financialStatementForm.getSrId());
                     }
                     catch (final IOException e)
                     {
@@ -323,7 +326,7 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
                     }
                 }
             }
-
+            sagiaFinancialSurveyFacade.submitFinancialSurveyForReview(mediaModel,financialStatementForm.getSrId());
             sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel) userService.getCurrentUser(), TermsAndConditionsAcceptanceEventEnum.FINANCIAL_STATEMENT);
             redirectModel.addFlashAttribute("requestFeedback", "true");
         } catch (Exception e) {

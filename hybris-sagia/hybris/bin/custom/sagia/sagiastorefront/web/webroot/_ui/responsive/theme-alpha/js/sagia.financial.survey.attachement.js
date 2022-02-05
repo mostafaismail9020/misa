@@ -103,11 +103,12 @@ $(function () {
 
     $('#termsAndConditions').on('change', function (e) {
         if ($(this).is(":checked")) {
-        	if($('#file0').val() != 0){
+        	/*if($('#file0').val() != 0){
         		$('.js-submit-financialStatement').attr('disabled', false);
         	}else{
         		$('.js-submit-financialStatement').attr('disabled', true);
-        	}
+        	}*/
+            $('.js-submit-financialStatement').attr('disabled', false);
             if ($(this).parents('.form-item').find('#termsAndConditionsChecked-error').length > 0)
                 $(this).parents('.form-item').find('#termsAndConditionsChecked-error').remove();
         }else{

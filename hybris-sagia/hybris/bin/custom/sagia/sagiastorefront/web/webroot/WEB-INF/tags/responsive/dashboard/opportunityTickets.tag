@@ -26,7 +26,7 @@
 		</div>
 		
 		<div class="dashboardWidget-body">
-		    <div class="dashboardWidgetTickets">
+		    <div class="dashboardWidgetTickets-opp">
 		        <div class="tableModule tableModule_slim dashboardWidgetTickets-table">
 					<c:choose>
 						<c:when test="${fn:length(userOpportunityTickets)>0}">
@@ -69,7 +69,7 @@
 						</c:otherwise>
 					</c:choose>
 				</div>
-				<c:if test="${fn:length(userOpportunityTickets) > 5}">      
+			   
 					<div class="paginationModule paginationModule_loading">
 					
 						<div class="paginationModule-wrapper">
@@ -83,7 +83,7 @@
 							</button>
 						</div>
 					</div>
-				</c:if>                                   
+			                                 
  			</div>
         </div>
     </div>

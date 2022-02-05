@@ -250,7 +250,7 @@
                 <icon:close/>
             </button>
             <div class="modal-body">
-                <div class="modal-heroImage"><icon:payment01/></div>
+                <!-- <div class="modal-heroImage"><icon:payment01/></div> -->
                 <div class="modal-description" style="text-align: initial !important;">
 					<table class="table table-striped" id="tblGrid" style="width:100%">
 						<tbody>

@@ -489,13 +489,13 @@ SAGIA.dashboardWithLicense = {
                         for (var i = 2; i <= tickets.TicketsPagesNumber; i++) {
                             paginationHtml += '<div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link ticket">' + i + '</a></div>';
                         }
-                        $(".dashboardWidgetTickets .paginationModule-items").empty().append(paginationHtml);
-                        new CreatePagination($(".dashboardWidgetTickets .paginationModule"), tickets.ticketsItemsPerPage);
+                        $(".dashboardWidgetTickets-opp .paginationModule-items").empty().append(paginationHtml);
+                        new CreatePagination($(".dashboardWidgetTickets-opp .paginationModule"), tickets.ticketsItemsPerPage);
                         // $(".dashboardWidgetTickets .paginationPicker").append("<option selected='selected' value='" + tickets.ticketsItemsPerPage + "'>" + tickets.ticketsItemsPerPage + "</option>")
                         // $(".dashboardWidgetTickets .paginationPicker").append("<option value='10000'>View All</option>");
                     }
-                    $('.dashboardWidgetTickets .loadingModule').addClass('loadingModule_loaded');
-                    $('.dashboardWidgetTickets .paginationModule').removeClass('paginationModule_loading');
+                    $('.dashboardWidgetTickets-opp .loadingModule').addClass('loadingModule_loaded');
+                    $('.dashboardWidgetTickets-opp .paginationModule').removeClass('paginationModule_loading');
                 },
                 error: function () {
                     //ticketsTable.empty();
@@ -503,8 +503,8 @@ SAGIA.dashboardWithLicense = {
                     var errorModal = $('#errorResponseModal');
                     errorModal.find('.modal-description').html(getI18nText("general.couldnot.load.tickets"));
                     errorModal.modal('show');
-                    $('.dashboardWidgetTickets .loadingModule .loadingModule-icon').hide();
-                    $('.dashboardWidgetTickets .loadingModule .loadingModule-msg').html("<svg width=\"68\" height=\"60\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 68 60\"><g transform=\"translate(2 2)\" fill=\"none\" fill-rule=\"evenodd\"><path stroke=\"#5CC83B\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M63.173 55.36H.8l10.077-17.845h.003L31.987.134l21.109 37.381h.002z\"></path><path d=\"M32 17c-1.104 0-2 .902-2 2.018v18.146c0 1.116.896 2.018 2 2.018s2-.902 2-2.018V19.018A2.009 2.009 0 0 0 32 17z\" fill=\"#32465A\" fill-rule=\"nonzero\"></path><circle fill=\"#32465A\" cx=\"32\" cy=\"46\" r=\"2\"></circle></g></svg>&nbsp;<span>"+getI18nText('general.couldnot.load.tickets')+"</span>");
+                    $('.dashboardWidgetTickets-opp .loadingModule .loadingModule-icon').hide();
+                    $('.dashboardWidgetTickets-opp .loadingModule .loadingModule-msg').html("<svg width=\"68\" height=\"60\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 68 60\"><g transform=\"translate(2 2)\" fill=\"none\" fill-rule=\"evenodd\"><path stroke=\"#5CC83B\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M63.173 55.36H.8l10.077-17.845h.003L31.987.134l21.109 37.381h.002z\"></path><path d=\"M32 17c-1.104 0-2 .902-2 2.018v18.146c0 1.116.896 2.018 2 2.018s2-.902 2-2.018V19.018A2.009 2.009 0 0 0 32 17z\" fill=\"#32465A\" fill-rule=\"nonzero\"></path><circle fill=\"#32465A\" cx=\"32\" cy=\"46\" r=\"2\"></circle></g></svg>&nbsp;<span>"+getI18nText('general.couldnot.load.tickets')+"</span>");
                 }
             });
         }

@@ -1307,8 +1307,15 @@ var submitFinancialSurveyBrnachesAndSubsidiaries = function () {
 
 var submitFinancialSurveyCompanyProfile = function () {
 
-    populateCompanyProfile();
+    if (SAGIA.financialSurvey.businessActivities.selectedActivities.length == 0) {
+        $('#licenseAmendmentValidationDialogId').modal({
+            backdrop: "static",
+            keyboard: false
+        }).find('.modal-description').empty().text(getI18nText('financial.survey.validation.businessActivities'));
+        return;
+    }
 
+    populateCompanyProfile();
     var selectedActivities = SAGIA.financialSurvey.businessActivities.selectedActivities;
     var selectedActivitiesIds = [];
     selectedActivities.forEach(function(activity) {

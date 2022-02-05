@@ -164,7 +164,12 @@ $(document).ready(function () {
         });
         $("#retainedEarningsIncludeCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#retainedEarningsIncludeCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -172,7 +177,12 @@ $(document).ready(function () {
         });
         $("#profitLossQuarterCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#profitLossQuarterCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -180,7 +190,12 @@ $(document).ready(function () {
         });
         $("#totalReservesCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#totalReservesCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -188,7 +203,7 @@ $(document).ready(function () {
         });
         $("#treasurySharesCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (  e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 &&  e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -200,7 +215,12 @@ $(document).ready(function () {
         });
         $("#headOfficeAccountInBranchCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#headOfficeAccountInBranchCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -208,7 +228,12 @@ $(document).ready(function () {
         });
         $("#shareholderEquityOthersCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#shareholderEquityOthersCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -216,7 +241,12 @@ $(document).ready(function () {
         });
         $("#minorityRightsCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#minorityRightsCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -224,7 +254,12 @@ $(document).ready(function () {
         });
         $("#totalShareholderEquityCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#totalShareholderEquityCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -249,7 +284,12 @@ $(document).ready(function () {
         });
         $("#shareholderRetainedEarningsIncludeCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#shareholderRetainedEarningsIncludeCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -257,7 +297,12 @@ $(document).ready(function () {
         });
         $("#shareholderProfitLossQuarterCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#shareholderProfitLossQuarterCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -265,7 +310,12 @@ $(document).ready(function () {
         });
         $("#shareholderTotalReservesCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#shareholderTotalReservesCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -273,7 +323,12 @@ $(document).ready(function () {
         });
         $("#shareholderHeadOfficeAccountInBranchCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#shareholderHeadOfficeAccountInBranchCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -281,7 +336,12 @@ $(document).ready(function () {
         });
         $("#shareholderShareholderEquityOthersCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#shareholderShareholderEquityOthersCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
@@ -289,7 +349,12 @@ $(document).ready(function () {
         });
         $("#shareholderMinorityRightsCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+            if ( $("#shareholderMinorityRightsCurrentQuarterId").val() != '' && e.which == 45 ) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;

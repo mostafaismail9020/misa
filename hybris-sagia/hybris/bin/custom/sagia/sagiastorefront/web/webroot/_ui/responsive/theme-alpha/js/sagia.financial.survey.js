@@ -22,6 +22,39 @@ function caluculateTotalCapital() {
     $('#totalShareholderEquityCurrentQuarterId').val(sum);
 }
 
+function caluculateTotalTansactionDebit() {
+    var sum = 0 ;
+    sum = sum +  1*($('#tradeDebitCurrentQuarterId').val());
+    sum = sum +  1*($('#loansAssetsCurrentQuarterId').val());
+    sum = sum +  1*($('#interestReceivedCurrentQuarterId').val());
+    sum = sum +  1*($('#dividendsReceivedCurrentQuarterId').val());
+    sum = sum +  1*($('#expensesReceivedCurrentQuarterId').val());
+    sum = sum +  1*($('#sellProductionSuppliesCurrentQuarterId').val());
+    sum = sum +  1*($('#sellMachineryCurrentQuarterId').val());
+    sum = sum +  1*($('#currentDebitAccountCurrentQuarterId').val());
+    sum = sum +  1*($('#expensesReceivableCurrentQuarterId').val());
+    sum = sum +  1*($('#insuranceCommissionReceivableCurrentQuarterId').val());
+    sum = sum +  1*($('#otherDebitCurrentQuarterId').val());
+    $('#totalDebitCurrentQuarterId').val(sum);
+}
+
+function calculateTotalTansactionCredit() {
+    var sum = 0 ;
+
+    sum = sum +  1*($('#tradeCreditCurrentQuarterId').val());
+    sum = sum +  1*($('#loansLiabilitiesCurrentQuarterId').val());
+    sum = sum +  1*($('#interestPayableCurrentQuarterId').val());
+    sum = sum +  1*($('#dividendsPaidCurrentQuarterId').val());
+    sum = sum +  1*($('#expensesPaidCurrentQuarterId').val());
+    sum = sum +  1*($('#purchaseProductionSuppliesCurrentQuarterId').val());
+    sum = sum +  1*($('#currentCreditAccountCurrentQuarterId').val());
+    sum = sum +  1*($('#expensesPayableCurrentQuarterId').val());
+    sum = sum +  1*($('#insuranceCommissionPayableCurrentQuarterId').val());
+    sum = sum +  1*($('#otherCreditCurrentQuarterId').val());
+    sum = sum +  1*($('#purchaseMachineryCurrentQuarterId').val());
+    $('#totalCreditCurrentQuarterId').val(sum);
+}
+
 function calculateShareholderEquity() {
 
     var sharePercentage = $('#shareholderPercentageId').val();

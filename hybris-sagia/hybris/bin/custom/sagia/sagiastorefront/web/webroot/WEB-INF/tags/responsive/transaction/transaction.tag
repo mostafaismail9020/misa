@@ -20,7 +20,7 @@
     <div class="col-md-6">
         <div class="formInputBox">
             <div class="form-group">
-                <input id="tradeDebitCurrentQuarterId" name="tradeDebitCurrentQuarter"
+                <input id="tradeDebitCurrentQuarterId" name="tradeDebitCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="tradeDebitCurrentQuarterId">
@@ -55,7 +55,7 @@
     <div class="col-md-6">
         <div class="formInputBox">
             <div class="form-group">
-                <input id="loansAssetsCurrentQuarterId" name="loansAssetsCurrentQuarter"
+                <input id="loansAssetsCurrentQuarterId" name="loansAssetsCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="loansAssetsCurrentQuarterId">
@@ -91,7 +91,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="interestReceivedCurrentQuarterId"
-                       name="interestReceivedCurrentQuarter"
+                       name="interestReceivedCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="interestReceivedCurrentQuarterId">
@@ -128,7 +128,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="dividendsReceivedCurrentQuarterId"
-                       name="dividendsReceivedCurrentQuarter"
+                       name="dividendsReceivedCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="dividendsReceivedCurrentQuarterId">
@@ -165,7 +165,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="expensesReceivedCurrentQuarterId"
-                       name="expensesReceivedCurrentQuarter"
+                       name="expensesReceivedCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="expensesReceivedCurrentQuarterId">
@@ -202,7 +202,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="sellProductionSuppliesCurrentQuarterId"
-                       name="sellProductionSuppliesCurrentQuarter"
+                       name="sellProductionSuppliesCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="sellProductionSuppliesCurrentQuarterId">
@@ -239,7 +239,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="sellMachineryCurrentQuarterId"
-                       name="sellMachineryCurrentQuarter"
+                       name="sellMachineryCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="sellMachineryCurrentQuarterId">
@@ -276,7 +276,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="currentDebitAccountCurrentQuarterId"
-                       name="currentDebitAccountCurrentQuarter"
+                       name="currentDebitAccountCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="currentDebitAccountCurrentQuarterId">
@@ -313,7 +313,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="expensesReceivableCurrentQuarterId"
-                       name="expensesReceivableCurrentQuarter"
+                       name="expensesReceivableCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="expensesReceivableCurrentQuarterId">
@@ -351,7 +351,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="insuranceCommissionReceivableCurrentQuarterId"
-                       name="insuranceCommissionReceivableCurrentQuarter"
+                       name="insuranceCommissionReceivableCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="insuranceCommissionReceivableCurrentQuarterId">
@@ -389,7 +389,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="otherDebitCurrentQuarterId"
-                       name="otherDebitCurrentQuarter"
+                       name="otherDebitCurrentQuarter" onchange="caluculateTotalTansactionDebit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="otherDebitCurrentQuarterId">
@@ -428,7 +428,7 @@
             <div class="form-group">
                 <input id="totalDebitCurrentQuarterId"
                        name="totalDebitCurrentQuarter"
-                       class="form-control" placeholder="." value="" type="text">
+                       class="form-control" placeholder="." value="" type="text" disabled="true" >
                 <label class="control-label "
                        for="totalDebitCurrentQuarterId">
                     <spring:theme code="financial.survey.transaction.assets.currentQuarter"/>
@@ -473,7 +473,7 @@
     <div class="col-md-6">
         <div class="formInputBox">
             <div class="form-group">
-                <input id="tradeCreditCurrentQuarterId" name="tradeCreditCurrentQuarter"
+                <input id="tradeCreditCurrentQuarterId" name="tradeCreditCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="tradeCreditCurrentQuarterId">
@@ -510,7 +510,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="loansLiabilitiesCurrentQuarterId"
-                       name="loansLiabilitiesCurrentQuarter"
+                       name="loansLiabilitiesCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="loansLiabilitiesCurrentQuarterId">
@@ -548,7 +548,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="interestPayableCurrentQuarterId"
-                       name="interestPayableCurrentQuarter"
+                       name="interestPayableCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="interestPayableCurrentQuarterId">
@@ -586,7 +586,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="dividendsPaidCurrentQuarterId"
-                       name="dividendsPaidCurrentQuarter"
+                       name="dividendsPaidCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="dividendsPaidCurrentQuarterId">
@@ -624,7 +624,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="expensesPaidCurrentQuarterId"
-                       name="expensesPaidCurrentQuarter"
+                       name="expensesPaidCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="expensesPaidCurrentQuarterId">
@@ -662,7 +662,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="purchaseProductionSuppliesCurrentQuarterId"
-                       name="purchaseProductionSuppliesCurrentQuarter"
+                       name="purchaseProductionSuppliesCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="expensesPaidCurrentQuarterId">
@@ -700,7 +700,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="purchaseMachineryCurrentQuarterId"
-                       name="purchaseMachineryCurrentQuarter"
+                       name="purchaseMachineryCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="purchaseMachineryCurrentQuarterId">
@@ -738,7 +738,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="currentCreditAccountCurrentQuarterId"
-                       name="currentCreditAccountCurrentQuarter"
+                       name="currentCreditAccountCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="currentCreditAccountCurrentQuarterId">
@@ -776,7 +776,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="expensesPayableCurrentQuarterId"
-                       name="expensesPayableCurrentQuarter"
+                       name="expensesPayableCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="expensesPayableCurrentQuarterId">
@@ -814,7 +814,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="insuranceCommissionPayableCurrentQuarterId"
-                       name="insuranceCommissionPayableCurrentQuarter"
+                       name="insuranceCommissionPayableCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="insuranceCommissionPayableCurrentQuarterId">
@@ -852,7 +852,7 @@
         <div class="formInputBox">
             <div class="form-group">
                 <input id="otherCreditCurrentQuarterId"
-                       name="otherCreditCurrentQuarter"
+                       name="otherCreditCurrentQuarter" onchange="calculateTotalTansactionCredit()"
                        class="form-control" placeholder="." value="" type="text">
                 <label class="control-label "
                        for="otherCreditCurrentQuarterId">
@@ -891,7 +891,7 @@
             <div class="form-group">
                 <input id="totalCreditCurrentQuarterId"
                        name="totalCreditCurrentQuarter"
-                       class="form-control" placeholder="." value="" type="text">
+                       class="form-control" placeholder="." value="" type="text" disabled="true">
                 <label class="control-label "
                        for="totalCreditCurrentQuarterId">
                     <spring:theme code="financial.survey.transaction.assets.currentQuarter"/>

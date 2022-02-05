@@ -258,7 +258,17 @@ bindRhqCountryInformationEvents: function () {
 				self.licenseInformationSection.find('input[name=isEntrepreneur]').prop("disabled", false);
 				self.licenseInformationSection.find('input[name=isPreApprovalNumber]').prop("disabled", false);
         	}else if($(this).val() == "11"){
+                    if (typeof objectBranches == "undefined") {
+                         objectBranches = [];
+                    }
 
+                    if (typeof objectBrands == "undefined") {
+                        objectBrands = [];
+                    }
+
+                    if (typeof objectCost == "undefined") {
+                        objectCost = [];
+                    }
                 //22-Jan-22 - Start
 
                 // let objectActivityOptions = new Array("","Sales and Marketing Support","Human Resources,and Personnel Management","Training Services","Financial Management, Foreign Exchange, and Treasury Centre Services","Compliance and Internal Control","Accounting","Legal","Auditing","Research and Analysis","Advisory Services","Operations Control","Logistics and Supply Chain Management","International Trading","Technical Support or Engineering Assistance","Network Operations for IT System","Research and Development","Intellectual Property Rights Management","Production Management","Sourcing of Raw Materials and Parts");
@@ -629,25 +639,28 @@ bindRhqCountryInformationEvents: function () {
                         return false;
                     }
                     else {
-                        objectBrands.push({
-                            "brandName": $('#addBrandName').val(),
-                            'country': $('#addBrandCountry').val(),
-                            'industry': $('#addBrandIndustry').val(),
-                             "companyOwningBrandInMENA": $('#addBrandMena').val(),
-                            'RhqActivityProvided': $('#addBrandProvider').val()
-                        });
+                        try {
+                        			objectBrands.push({
+                                                    "brandName": $('#addBrandName').val(),
+                                                    'country': $('#addBrandCountry').val(),
+                                                    'industry': $('#addBrandIndustry').val(),
+                                                     "companyOwningBrandInMENA": $('#addBrandMena').val(),
+                                                    'RhqActivityProvided': $('#addBrandProvider').val()
+                                                });
 
-                        if(objectBrands.length <1){
-                            $('#mncBrandTable-error').text(getI18nText("rhq.brand.presence.validation"));
-                            $('#mncBrandTable-error').addClass('has-error');
-                        } else {
-                            $('#mncBrandTable-error').text(getI18nText(""));
-                            $('#mncBrandTable-error').removeClass('has-error');
-                        }
-                        console.log(objectBrands.length);
+                                                if(objectBrands.length <1){
+                                                    $('#mncBrandTable-error').text(getI18nText("rhq.brand.presence.validation"));
+                                                    $('#mncBrandTable-error').addClass('has-error');
+                                                } else {
+                                                    $('#mncBrandTable-error').text(getI18nText(""));
+                                                    $('#mncBrandTable-error').removeClass('has-error');
+                                                }
+                                                console.log(objectBrands.length);
+                                            }
+                                       catch (err) {
+                                           console.log(err);
+                                       }
                         console.log(JSON.stringify(objectBrands).replace(/"/g, "'"));
-
-
                         $("#mncBrandTable tbody").append('<tr><td>' + addBrandName + '</td><td>' + addBrandCountry + '</td><td>' + addBrandIndustry + '</td><td>' + addBrandMena + '</td><td>' + addBrandProvider + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBrandBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
                         $('#addBrandForm')[0].reset();
                         $("#addBrandCountry").val(null).trigger("change");
@@ -885,28 +898,32 @@ bindRhqCountryInformationEvents: function () {
                         return false;
                     }
                     else {
-                        objectCost.push({
-                            "item": $('#addItemName').val(),
-                            'unitCost': $('#addUnitCost').val(),
-                            'noOfUnits': $('#addNoUnits').val(),
-                            "costFrequency": $('#addCostFreq').val(),
-                            'year2022': $('#addYear1').val(),
-                            'year2023': $('#addYear2').val(),
-                            'year2024': $('#addYear3').val()
-                        });
+                        try {
+                        			objectCost.push({
+                                                    "item": $('#addItemName').val(),
+                                                    'unitCost': $('#addUnitCost').val(),
+                                                    'noOfUnits': $('#addNoUnits').val(),
+                                                    "costFrequency": $('#addCostFreq').val(),
+                                                    'year2022': $('#addYear1').val(),
+                                                    'year2023': $('#addYear2').val(),
+                                                    'year2024': $('#addYear3').val()
+                                                });
 
-                        if(objectCost.length <1){
-                            $('#rhqCostTable-error').text(getI18nText("rhq.estimatied.operating.cost.validation"));
-                            $('#rhqCostTable-error').addClass('has-error');
-                        } else {
-                            $('#rhqCostTable-error').text(getI18nText(""));
-                            $('#rhqCostTable-error').removeClass('has-error');
-                        }
+                                                if(objectCost.length <1){
+                                                    $('#rhqCostTable-error').text(getI18nText("rhq.estimatied.operating.cost.validation"));
+                                                    $('#rhqCostTable-error').addClass('has-error');
+                                                } else {
+                                                    $('#rhqCostTable-error').text(getI18nText(""));
+                                                    $('#rhqCostTable-error').removeClass('has-error');
+                                                }
 
-                        console.log(objectCost.length);
+                                                console.log(objectCost.length);
+
+                                            }
+                                       catch (err) {
+                                           console.log(err);
+                                       }
                         console.log(JSON.stringify(objectCost).replace(/"/g, "'"));
-
-
                         $("#rhqCostTable tbody").append('<tr><td>' + addItemName + '</td><td>' + addUnitCost + '</td><td>' + addNoUnits + '</td><td>' + addCostFreq + '</td><td>' + addYear1 + '</td><td>' + addYear2 + '</td><td>' + addYear3 + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditCostBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
                         $('#addItemForm')[0].reset();
                         calculateCostTotal();

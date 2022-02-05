@@ -1,0 +1,73 @@
+[dir ="rtl"] {    
+    .page-license-bidding #temporaryBiddingLicenseFormId .formInputFile .form-control{
+        background: #f2f2f2;
+    }
+    .page-license-bidding #temporaryBiddingLicenseFormId .formInputFile .form-icon{
+        top: 0;
+        width: 64px;
+        height: 64px;
+        left: auto;
+        right: 0;
+    }
+    .page-license-bidding #temporaryBiddingLicenseFormId  .formInputFile .form-control {
+        height: 64px;
+        margin-left: 0;
+        background: #f2f2f2;
+    }
+    .page-license-bidding #temporaryBiddingLicenseFormId .formInputFile_group .form-control+.control-label{
+        width: 75%;
+    }
+    .page-license-bidding .profile-icons{
+        position: relative;
+        right: 0 !important;
+        bottom: 30px;
+    }
+    .page-license-bidding  .profile-icons .profile a span{
+        background-image:url(../../common/images/dashboard-media/Profile-bar/Account-User-icon.png);
+        background-position:center;
+        background-size:contain;
+        background-repeat:no-repeat;
+        opacity:1;
+        width:63px;
+        height:63px;
+        display:inline-block;
+        margin:-3px 0 0 -7px;
+    }
+    .page-license-bidding .banner-container{
+        top:15% !important;
+    }
+    .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection:after{
+        left: 0 !important;
+        right:inherit;
+    }
+    @media  (max-width:575px) {
+
+        .page-license-bidding #temporaryBiddingLicenseFormId .formInputBox .form-control+.control-label{
+            width: 90%;
+        }
+        .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection {
+            text-align: left;
+        }
+    }
+    @media (min-width: 576px) and (max-width:767px) {
+        .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection,
+        .page-license-bidding #temporaryBiddingLicenseFormId .select2-container .select2-selection--single .select2-selection__rendered {
+        text-align: right;
+    }
+    }
+
+    @media (min-width: 768px) and (max-width:991px) {
+        .page-license-bidding #temporaryBiddingLicenseFormId .contentModule-section .formInputBox .form-control:placeholder-shown+.control-label{
+            width: 75%;
+        }
+
+        .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection{
+            text-align: left;
+        }
+    }
+    @media (min-width:992px) and (max-width:1199px) {
+        .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection{
+            text-align: left;
+        }
+    }
+}

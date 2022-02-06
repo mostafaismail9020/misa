@@ -1,57 +1,58 @@
 <%@ page trimDirectiveWhitespaces="true" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template" %>
-            <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
-                <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-                    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-                        <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
-                            <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
-                                <%@ taglib prefix="account" tagdir="/WEB-INF/tags/responsive/user" %>
-                                    <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
-                                        <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
-                                            <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template" %>
+<%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
+<%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
+<%@ taglib prefix="account" tagdir="/WEB-INF/tags/responsive/user" %>
+<%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
+<%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
+<%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
 
-                                                <script>
-                                                    var configuredFileSize = $ {
-                                                        maxUploadSize
-                                                    };
-                                                </script>
+<script>
+    var configuredFileSize = $ {
+        maxUploadSize
+    };
+</script>
 
-                                                <div class="mainSection mainSection_white">
-                                                    <div class="achievement_header">
-                                                        <img class="achievement_header_icon  page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
-                                                        <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
-                                                            <h1 data-aos="fade-up">
-                                                                <spring:theme code="temporaryBiddingLicense.title" />
-                                                            </h1>
-                                                        </div>
-                                                        <div class="profile-icons float-right">
-                                                            <div class="calendar">
-                                                                <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
-                                                                    <img class="profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender.png" />
-                                                                </a>
-                                                            </div>
-                                                            <!-- <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
-                                                                <c:if test="${hasLicense or hasAwaitingPayment}">
-                                                                    <button class="sagiaNavigation-btn js-sagiaNavigationToggle btnNotifications messages" title="<spring:message code='account.notifications.yourMessages'/>">
-                                                                        <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span><img alt="" class="" src="${commonResourcePath}/images/dashboard-media/Profile-bar/message.png" />
-                                                                    </button>
-                                                                </c:if>
-                                                                <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications">
-                                                                    <spring:message code="header.viewAll.text" />
-                                                                </a>
-                                                            </div>-->
+<div class="mainSection mainSection_white">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="temporaryBiddingLicense.title" />
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <div class="calendar">
+                    <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                        <img class="profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender.png" />
+                    </a>
+                </div>
+                <!-- <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                    <c:if test="${hasLicense or hasAwaitingPayment}">
+                        <button class="sagiaNavigation-btn js-sagiaNavigationToggle btnNotifications messages" title="<spring:message code='account.notifications.yourMessages'/>">
+                            <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span><img alt="" class="" src="${commonResourcePath}/images/dashboard-media/Profile-bar/message.png" />
+                        </button>
+                    </c:if>
+                    <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications">
+                        <spring:message code="header.viewAll.text" />
+                    </a>
+                </div>-->
 
-                                                            <div class="profile">
-                                                                <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
-                                                                    <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-icon.png" />-->
-                                                                    <span></span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-icon.png" />-->
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
                                                 <div class="js-panelTabs panelTabs panelTabtemporaryBiddingLicenseFormIds_white panelTabs_white panelTabs_lightNavigation panelTabs_noPanelInBody panelTabs_iconsAndLabel panelTabs_formFlow panelTabs_separated panelTabs_tip_none">
                                                     <div class="container">

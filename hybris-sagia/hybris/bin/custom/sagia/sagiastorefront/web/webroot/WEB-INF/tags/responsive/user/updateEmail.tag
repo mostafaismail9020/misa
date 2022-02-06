@@ -17,7 +17,7 @@
         <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
-                    <input id="email" name="email" class="form-control" type="text" value="" required="required"/>
+                    <input id="email" name="email" class="form-control" type="text" value="" required="required" placeholder="."/>
                     <label class="control-label control-label_mandatory" for="email">
                         <spring:theme code="profile.change.email"/>
                     </label>
@@ -27,7 +27,7 @@
         <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
-                    <input id="chkEmail" name="chkEmail" class="form-control" type="text" value=""/>
+                    <input id="chkEmail" name="chkEmail" class="form-control" type="text" value="" placeholder="."/>
                     <label class="control-label control-label_mandatory" for="chkEmail">
                         <spring:theme code="profile.change.chkEmail"/>
                     </label>
@@ -37,7 +37,7 @@
         <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
-                    <input id="passwordForChangeEmail" name="passwordForChangeEmail" class="form-control" type="password" value=""/>
+                    <input id="passwordForChangeEmail" name="passwordForChangeEmail" class="form-control" type="password" value="" placeholder="."/>
                     <label class="control-label control-label_mandatory" for="passwordForChangeEmail">
                         <spring:theme code="profile.password"/>
                     </label>

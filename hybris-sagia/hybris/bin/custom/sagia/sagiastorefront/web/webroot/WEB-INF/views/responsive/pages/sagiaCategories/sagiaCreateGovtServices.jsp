@@ -168,7 +168,7 @@
                                 <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="<spring:theme code="text.account.followup.supportDocuments.mandatory"/>" data-original-title="" title=""><icon:tipInfo/></span>
                             </div>
 
-                            <div class="row">
+                            <div class="row mt-5">
                                 <c:forEach items="${createGovtService.documentsToUpload}" var="document" varStatus="count">
                                     <div class="col-md-6">
                                         <div class="formInputFile">

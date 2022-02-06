@@ -16,7 +16,7 @@
         <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
-                    <input id="username" name="username" class="form-control" type="text" value=""/>
+                    <input id="username" name="username" class="form-control" type="text" value="" placeholder="."/>
                     <label class="control-label control-label_mandatory" for="username">
                         <spring:theme code="profile.change.username"/>
                     </label>
@@ -26,7 +26,7 @@
         <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
-                    <input id="checkUsername" name="checkUsername" class="form-control" type="text" value=""/>
+                    <input id="checkUsername" name="checkUsername" class="form-control" type="text" value="" placeholder="."/>
                     <label class="control-label control-label_mandatory" for="checkUsername">
                         <spring:theme code="profile.change.checkUsername"/>
                     </label>
@@ -36,7 +36,7 @@
         <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
-                    <input id="passwordForChangeUsername" name="passwordForChangeUsername" class="form-control" type="password" value=""/>
+                    <input id="passwordForChangeUsername" name="passwordForChangeUsername" class="form-control" type="password" value="" placeholder="."/>
                     <label class="control-label control-label_mandatory" for="passwordForChangeUsername">
                         <spring:theme code="profile.password"/>
                     </label>

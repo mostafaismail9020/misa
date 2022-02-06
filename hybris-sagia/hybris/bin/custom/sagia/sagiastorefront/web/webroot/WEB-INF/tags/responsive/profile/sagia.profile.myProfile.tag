@@ -110,7 +110,7 @@
                                         <div class="formInputFileBox">
                                             <div class="form-group">
                                                 <div class="form-icon form-icon_browse"><icon:upload/></div>
-                                                <input id="fileBoxModalPicture" class="form-control js-inputFile" type="file" name="file" accept="image/jpeg,image/png" value=""/>
+                                                <input id="fileBoxModalPicture" class="form-control js-inputFile" type="file" name="file" accept="image/jpeg,image/png" value="" placeholder="."/>
                                                 <label class="control-label" for="fileBoxModalPicture">
                                                     <spring:theme code="company.choseapicture"/><span class="formInputFileBox-dragndrop"> <spring:theme code ="company.dragpicture"/></span>.
                                                 </label>
@@ -147,7 +147,7 @@
                             <div class="col-md-6">
                                 <div class="formInputBox">
                                     <div class="form-group">
-                                        <input id="sagiaProfilePersonalFormSelectFirstName" name="firstName" class="form-control" type="text" value=""/>
+                                        <input id="sagiaProfilePersonalFormSelectFirstName" name="firstName" class="form-control" type="text" value="" placeholder="."/>
                                         <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectFirstName">
                                             <spring:theme code="profile.personal.firstName"/>
                                         </label>
@@ -157,7 +157,7 @@
                             <div class="col-md-6">
                                 <div class="formInputBox">
                                     <div class="form-group">
-                                        <input id="sagiaProfilePersonalFormSelectLastName" name="lastName" class="form-control" type="text" value=""/>
+                                        <input id="sagiaProfilePersonalFormSelectLastName" name="lastName" class="form-control" type="text" value="" placeholder="."/>
                                         <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectLastName">
                                             <spring:theme code="profile.personal.lastName"/>
                                         </label>
@@ -167,7 +167,7 @@
                             <div class="col-md-6" style="display: none">
                                 <div class="formInputBox">
                                     <div class="form-group">
-                                        <input id="sagiaProfilePersonalFormSelectEmail" name="email" class="form-control" type="text" value="" readonly="readonly" disabled="disabled"/>
+                                        <input id="sagiaProfilePersonalFormSelectEmail" name="email" class="form-control" type="text" value="" readonly="readonly" disabled="disabled" placeholder="."/>
                                         <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectEmail">
                                             <spring:theme code="profile.personal.email"/>
                                         </label>
@@ -188,7 +188,7 @@
                             <div class="col-md-6">
                                 <div class="formInputBox">
                                     <div class="form-group">
-                                        <input id="sagiaProfilePersonalFormSelectCompany" name="company" class="form-control" type="text" value=""/>
+                                        <input id="sagiaProfilePersonalFormSelectCompany" name="company" class="form-control" type="text" value="" placeholder="."/>
                                         <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectCompany">
                                             <spring:theme code="profile.personal.company"/>
                                         </label>
@@ -209,7 +209,7 @@
                             <div class="col-md-6">
                                 <div class="formInputBox">
                                     <div class="form-group">
-                                        <input id="sagiaProfilePersonalFormSelectMobileCountryCode" title="mobileCountryCode" name="mobileCountryCode" class="form-control" type="text" maxLength="4" value=""/>
+                                        <input id="sagiaProfilePersonalFormSelectMobileCountryCode" title="mobileCountryCode" name="mobileCountryCode" class="form-control" type="text" maxLength="4" value="" placeholder="."/>
                                         <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectMobileCountryCode">
                                             <spring:theme code="profile.personal.mobileCountryCode"/>
                                         </label>
@@ -219,7 +219,7 @@
                             <div class="col-md-6">
                                 <div class="formInputBox">
                                     <div class="form-group">
-                                        <input id="sagiaProfilePersonalFormSelectMobileNumber" title="mobileNumber" name="mobileNumber" class="form-control" type="number" value=""/>
+                                        <input id="sagiaProfilePersonalFormSelectMobileNumber" title="mobileNumber" name="mobileNumber" class="form-control" type="number" value="" placeholder="."/>
                                         <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectMobileNumber">
                                             <spring:theme code="profile.personal.mobileNumber"/>
                                         </label>
@@ -229,7 +229,7 @@
                             <div class="col-md-6">
                                 <div class="formInputBox">
                                     <div class="form-group">
-                                        <input id="sagiaProfilePersonalFormSelectCompanyWebsite" title="companyWebsite" name="companyWebsite" class="form-control" type="text" value=""/>
+                                        <input id="sagiaProfilePersonalFormSelectCompanyWebsite" title="companyWebsite" name="companyWebsite" class="form-control" type="text" value="" placeholder="."/>
                                         <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectCompanyWebsite">
                                             <spring:theme code="general.companyWebsite"/>
                                         </label>
@@ -241,13 +241,13 @@
                        <!-- <div class="myAccount-profilImage-img"><div class="profilePicture js-profilePicture" ></div></div>-->
                         <a href="#" class="myAccount-profilImage-change w-50 p-4 pt-4 pl-3 pr-3 mt-4" data-toggle="modal" data-target="#uploadFilePicture" data-action="update-companyLogo"><spring:theme code="general.change.companylogo"/>
                         <span class="uploadFile text-center pr-2"><svg xmlns="http://www.w3.org/2000/svg" class="mt-3" width="29" height="29" viewBox="0 0 29 29">
-  <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
-    <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    <path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    <path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-  </g>
-</svg>
-</span>
+                            <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
+                                <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                <path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                <path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                             </g>
+                            </svg>
+                        </span>
                         </a>
                     </div>
                     </div>

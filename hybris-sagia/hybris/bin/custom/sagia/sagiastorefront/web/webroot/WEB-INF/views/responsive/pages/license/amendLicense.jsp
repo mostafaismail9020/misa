@@ -1259,7 +1259,7 @@
 							</div>
 
 							<div id="shareholderAddressId" class="row">
-								<div class="col-md-6 mt-3">
+								<div class="col-md-6 mt-5">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderCountryId" name="shareholderCountry"
@@ -1271,7 +1271,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-6 mt-5">
 									<div class="formInputBox-split">
 										<div class="formInputBox formInputBox_big">
 											<div class="form-group">
@@ -1791,7 +1791,7 @@
 								data-dismiss="modal">
 								<spring:theme code="general.cancel" />
 							</button>
-							<button type="button" class="btn btn-slim saveShareholderBtn">
+							<button type="button" class="btn btn-slim saveShareholderBtn  mx-auto">
 								<spring:theme code="general.save" />
 							</button>
 						</div>

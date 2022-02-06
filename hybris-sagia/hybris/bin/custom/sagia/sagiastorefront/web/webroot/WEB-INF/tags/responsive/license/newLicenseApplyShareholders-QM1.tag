@@ -92,9 +92,51 @@
 
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
         	<c:if test="${entityInformationData.licenseType ne 11}">
-           		 <button type="button" class="addExistingButton btn">+ <spring:theme code="license.apply.review.existing.shareholder"/></button>
+           		 <button type="button" class="addExistingButton btn btn_bold btn-outline btn-normal my-button my-button-handler">
+                    <span class="icon-bg add-icon my-icon" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <g id="add-new" transform="translate(-222.936 -1127.936)">
+                                <circle id="Ellipse_35" data-name="Ellipse 35" cx="16" cy="16" r="16" transform="translate(222.936 1127.936)" fill="#1ac4dc"></circle>
+                                <g id="Group_1067" data-name="Group 1067" transform="translate(-5.5)">
+                                    <path id="Path_1956" data-name="Path 1956" d="M0,12V0" transform="translate(244.436 1137.436)" fill="#1ac4dc" stroke="#fff" stroke-linecap="round" stroke-width="2"></path>
+                                    <path id="Path_1957" data-name="Path 1957" d="M0,12V0" transform="translate(250.436 1143.436) rotate(90)" fill="#1ac4dc" stroke="#fff" stroke-linecap="round" stroke-width="2"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="icon-bg plus-icon my-icon" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <g id="existing" transform="translate(-222.936 -1127.936)">
+                                <circle id="Ellipse_35" data-name="Ellipse 35" cx="16" cy="16" r="16" transform="translate(222.936 1127.936)" fill="#1ac4dc"></circle>
+                                <path id="Path_1887" data-name="Path 1887" d="M221.668,850.239l3.6,3a.125.125,0,0,0,.174-.013l7.727-8.753" transform="translate(11.755 294.682)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"></path>
+                            </g>
+                        </svg>
+                    </span>
+                    <spring:theme code="license.apply.review.existing.shareholder"/>
+                </button>
             </c:if>
-            <button type="button" class="addNewButton btn">+ <spring:theme code="license.apply.review.new.shareholder"/></button>
+            <button type="button" class="addNewButton btn btn_bold btn-outline btn-normal my-button my-button-handler">
+                <span class="icon-bg add-icon my-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <g id="add-new" transform="translate(-222.936 -1127.936)">
+                        <circle id="Ellipse_35" data-name="Ellipse 35" cx="16" cy="16" r="16" transform="translate(222.936 1127.936)" fill="#1ac4dc"></circle>
+                        <g id="Group_1067" data-name="Group 1067" transform="translate(-5.5)">
+                            <path id="Path_1956" data-name="Path 1956" d="M0,12V0" transform="translate(244.436 1137.436)" fill="#1ac4dc" stroke="#fff" stroke-linecap="round" stroke-width="2"></path>
+                            <path id="Path_1957" data-name="Path 1957" d="M0,12V0" transform="translate(250.436 1143.436) rotate(90)" fill="#1ac4dc" stroke="#fff" stroke-linecap="round" stroke-width="2"></path>
+                        </g>
+                        </g>
+                    </svg>
+              </span>              
+              <span class="icon-bg plus-icon my-icon" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <g id="existing" transform="translate(-222.936 -1127.936)">
+                        <circle id="Ellipse_35" data-name="Ellipse 35" cx="16" cy="16" r="16" transform="translate(222.936 1127.936)" fill="#1ac4dc"></circle>
+                        <path id="Path_1887" data-name="Path 1887" d="M221.668,850.239l3.6,3a.125.125,0,0,0,.174-.013l7.727-8.753" transform="translate(11.755 294.682)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"></path>
+                    </g>
+                </svg>
+              </span>
+              <spring:theme code="license.apply.review.new.shareholder"/>
+            </button>
         </div>
     </div>
 

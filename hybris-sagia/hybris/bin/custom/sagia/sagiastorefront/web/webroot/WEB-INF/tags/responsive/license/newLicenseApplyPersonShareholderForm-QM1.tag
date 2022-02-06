@@ -88,19 +88,13 @@
 							<spring:theme code="general.license.title" />
 						</div>
 						<div class="form-item mt-2 pr-0 mb-4">
-							<input id="personTitle" name="shareHolderTitle"
-								class="form-control" type="radio" value="Mr."
-								${sagiaApplyPersonShareholderForm.shareHolderTitle eq 'Mr.' ? 'checked="checked"' : ''} />
-							<label for="personTitle" class="btn-ctrl btn_bold control-label"><spring:theme
-									code="general.mr" /></label>
+							<input id="personTitle" name="shareHolderTitle" class="form-control" type="radio" value="Mr." ${sagiaApplyPersonShareholderForm.shareHolderTitle eq 'Mr.' ? 'checked="checked"' : ''} />
+							<label for="personTitle" class="btn-ctrl control-label"><spring:theme code="general.mr" /></label>
 						</div>
 
 						<div class="form-item mt-2 mb-4 pl-0">
-							<input id="organizationTitle" name="shareHolderTitle"
-								class="form-control" type="radio" value="Mrs."
-								${sagiaApplyPersonShareholderForm.shareHolderTitle eq 'Mrs.' ? 'checked="checked"' : ''} />
-							<label for="organizationTitle" class="btn-ctrl btn_bold control-label"><spring:theme
-									code="general.mrs" /></label>
+							<input id="organizationTitle" name="shareHolderTitle" class="form-control" type="radio" value="Mrs." ${sagiaApplyPersonShareholderForm.shareHolderTitle eq 'Mrs.' ? 'checked="checked"' : ''} />
+							<label for="organizationTitle" class="btn-ctrl control-label"><spring:theme code="general.mrs" /></label>
 						</div>
 					</div>
 					<div class="help-block"></div>

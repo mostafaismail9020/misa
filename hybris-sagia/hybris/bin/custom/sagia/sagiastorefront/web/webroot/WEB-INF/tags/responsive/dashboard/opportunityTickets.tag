@@ -26,7 +26,7 @@
 		</div>
 		
 		<div class="dashboardWidget-body">
-		    <div class="dashboardWidgetTickets-opp">
+		    <div class="dashboardWidgetTickets">
 		        <div class="tableModule tableModule_slim dashboardWidgetTickets-table">
 					<c:choose>
 						<c:when test="${fn:length(userOpportunityTickets) > 0}">

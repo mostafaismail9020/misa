@@ -1181,6 +1181,8 @@ $(function() {
             updateActivities(true);
         } else if (visibleSectionId === "activityItems") {
             SAGIA.license.apply.updateIsicTable();
+            $(".modal-backdrop").remove();
+            $('#businessActivitiesSection #businessActivitiesModal').modal('toggle');
         }
     });
 

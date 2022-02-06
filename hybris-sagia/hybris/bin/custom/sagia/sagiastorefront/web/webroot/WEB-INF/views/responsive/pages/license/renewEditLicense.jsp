@@ -102,7 +102,7 @@
 					</div>
 					<hr class="contentModule-separator">
 					<div class="contentModule-section contentModule-section_paddingSide">
-						<div class="row">
+						<div class="row w-100">
 							<div class="col-md-6">
 								<div class="formInputBox-split">
 									<div class="formInputBox formInputBox_big">
@@ -283,7 +283,7 @@
 					<div class="contentModule-section contentModule-section_paddingSide">
 						<span class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="text.account.followup.supportDocuments"/></span>
 						<div class="row contentModule-headline-border">
-							<div class="col-md-6">
+							<div class="col-md-6 mt-5">
 								<c:choose>
 									<c:when test="${reapply}">
 										<c:forEach items="${resubmittedDocuments}" var="attachment" varStatus="counter">

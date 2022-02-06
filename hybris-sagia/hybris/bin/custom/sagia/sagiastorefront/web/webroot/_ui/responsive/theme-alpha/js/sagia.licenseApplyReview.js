@@ -314,7 +314,7 @@ SAGIA.licenseApplyReview = {
 					"<td width='40%'>" + getI18nText("license.apply.payment.subscription.fee.entrepreneur.price."+sagiaData.licenseYear) + "</td>" +
 					"</tr>" +
 					"<tr>" +
-					"<td width='60%'><span style='color:green;font-size:12px'>" + getI18nText("license.apply.payment.entrepreneur.description") + "</span></td>" +
+					"<td width='60%'><span style='color:#00A6BE;font-size:14px'>" + getI18nText("license.apply.payment.entrepreneur.description") + "</span></td>" +
 					"<td width='20%'>" + "</td>" +
 					"<td width='20%'>" + "</td>" +
 					"</tr>" +

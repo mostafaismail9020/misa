@@ -12,7 +12,7 @@
         <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
-                    <input id="oldPwd" name="oldPwd" class="form-control" type="password" value=""/>
+                    <input id="oldPwd" name="oldPwd" class="form-control" type="password" value="" placeholder="."/>
                     <label class="control-label control-label_mandatory" for="oldPwd">
                         <spring:theme code="updatePwd.pwd.old"/>
                     </label>
@@ -22,7 +22,7 @@
         <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
-                    <input id="pwd" name="pwd" class="form-control" type="password" value=""/>
+                    <input id="pwd" name="pwd" class="form-control" type="password" value="" placeholder="."/>
                     <label class="control-label control-label_mandatory" for="pwd">
                         <spring:theme code="updatePwd.pwd"/>
                     </label>
@@ -33,7 +33,7 @@
         <div class="col-md-6">
             <div class="formInputBox">
                 <div class="form-group">
-                    <input id="checkPwd" name="checkPwd" class="form-control mb-4" type="password" value=""/>
+                    <input id="checkPwd" name="checkPwd" class="form-control mb-4" type="password" value="" placeholder="."/>
                     <label class="control-label control-label_mandatory" for="checkPwd">
                         <spring:theme code="updatePwd.checkPwd"/>
                     </label>

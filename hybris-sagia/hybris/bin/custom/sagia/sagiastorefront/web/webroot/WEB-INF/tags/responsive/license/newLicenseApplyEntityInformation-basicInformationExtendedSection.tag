@@ -14,7 +14,7 @@
     <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.basicInformationExtendedSection.basicInformation"/></div>
    <hr class="hr">
     <div class="row mt-5 pt-3">
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6">
             <formElement:formInputBoxCustom idKey="basicInformationExtendedEntityName"
                                       labelKey="profile.company.entityName" path="entityName"
                                       labelCSS="control-label_mandatory"
@@ -25,7 +25,7 @@
                                       labelKey="profile.company.entityNameArabic"
                                       path="entityNameArabic" inputCSS="text validate__arabic-only" maxlength="80" />
         </div>
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6">
             <formElement:formSelectBoxCustom idKey="basicInformationExtendedLegalStatus"
                                        labelKey="licenseApplyEntityInformation.basicInformationExtendedSection.legalStatus"
                                        path="legalStatus" labelCSS="control-label control-label_mandatory"
@@ -53,7 +53,7 @@
 <%--                <div class="help-block"></div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6 pt-3 pb-5">
+        <div class="col-md-6">
             <formElement:formInputBoxCustom idKey="basicInformationExtendedCapital"
                                       labelKey="licenseApplyEntityInformation.basicInformationExtendedSection.capital" path="capital"
                                       labelCSS="control-label control-label_mandatory"
@@ -70,7 +70,7 @@
 <%--                <div class="help-block"></div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6  pt-3 pb-5">
+        <div class="col-md-6">
             <formElement:formInputBoxCustom idKey="basicInformationExtendedEmail"
                                       labelKey="licenseApplyEntityInformation.basicInformationExtendedSection.email" path="email"
                                       labelCSS="control-label control-label_mandatory"
@@ -83,7 +83,7 @@
 <%--                <div class="help-block"></div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6 pb-5">
+        <div class="col-md-6">
             <div class="formInputBox-split">
                 <formElement:formInputBoxCustom idKey="basicInformationExtendedCountryCodeForTelephone" maxlength="5"
                                                 labelKey="licenseApplyEntityInformation.basicInformationExtendedSection.countryCode"
@@ -111,7 +111,7 @@
 <%--                </div>--%>
             </div>
         </div>
-        <div class="col-md-6 pb-4">
+        <div class="col-md-6">
             <div class="formInputBox-split">
                 <formElement:formInputBoxCustom idKey="basicInformationExtendedCountryCodeForMobilePhone" maxlength="5"
                                                 labelKey="licenseApplyEntityInformation.basicInformationExtendedSection.countryCode"
@@ -139,7 +139,7 @@
 <%--                </div>--%>
             </div>
         </div>
-        <div class="col-md-6 pb-4">
+        <div class="col-md-6">
             <formElement:formInputBoxCustom idKey="basicInformationExtendedWebsite"
                                             labelKey="licenseApplyEntityInformation.basicInformationExtendedSection.website" path="website"
                                             labelCSS="control-label control-label_mandatory"
@@ -170,7 +170,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 pb-5">
+        <div class="col-md-6">
             <formElement:formSelectBoxCustom idKey="basicInformationExtendedRegion"
                                        labelKey="profile.company.region"
                                        path="region" labelCSS="control-label control-label_mandatory"
@@ -184,7 +184,7 @@
 <%--                <div class="help-block"></div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6 pb-4">
+        <div class="col-md-6">
             <formElement:formSelectBoxCustom idKey="basicInformationExtendedCity"
                                        labelKey="profile.company.city"
                                        path="city" labelCSS="control-label control-label_mandatory"
@@ -198,7 +198,7 @@
 <%--                <div class="help-block"></div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6 pb-5">
+        <div class="col-md-6">
             <formElement:formInputBoxCustom idKey="basicInformationExtendedAddress"
                                       labelKey="licenseApplyEntityInformation.basicInformationExtendedSection.address"
                                       labelCSS="control-label control-label_mandatory" maxlength="60" path="address"
@@ -211,7 +211,7 @@
 <%--                <div class="help-block"></div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6 pb-3">
+        <div class="col-md-6">
             <formElement:formInputBoxCustom idKey="basicInformationExtendedPOBox"
                                       labelKey="licenseApplyEntityInformation.basicInformationExtendedSection.poBox" path="poBox"
                                       labelCSS="control-label control-label_mandatory"

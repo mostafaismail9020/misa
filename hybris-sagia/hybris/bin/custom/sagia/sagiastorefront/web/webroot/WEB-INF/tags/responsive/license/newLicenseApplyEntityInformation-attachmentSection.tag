@@ -157,7 +157,7 @@
 
     <div id="branchAttachment" style="display: none">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mt-5">
             <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.mainBranchCR ? "active" : ""}">
                 <div class="form-group">
                     <input id="mainBranchCRFile" name="customMainBranchCRFile" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>

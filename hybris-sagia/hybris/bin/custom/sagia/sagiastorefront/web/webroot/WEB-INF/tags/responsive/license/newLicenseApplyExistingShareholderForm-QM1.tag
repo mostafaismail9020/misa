@@ -49,7 +49,7 @@
 <%--                </div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6 pb-5 mt-3">
+        <div class="col-md-6 pb-5">
             <formElement:formInputBoxCustom idKey="existingShareholderSharesPercentage"
                                             labelKey="license.apply.review.shares.percentage" path="sharesPercentage"
                                             inputBoxAppendKey="%" inputBoxCSS="formInputBox_group" inputCSS="validate__mandatory validate__float-numbers-only-sharespercentage"/>

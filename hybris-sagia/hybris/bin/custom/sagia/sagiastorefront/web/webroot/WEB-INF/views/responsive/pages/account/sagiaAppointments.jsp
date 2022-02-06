@@ -106,7 +106,7 @@
                                                                 <%--<c:set var="listLimit" value="${fn:length(appointments)}"/>--%>
                                                                     <%--</c:if>--%>
                                                                         <c:set var="detailsDemoItem" value="${appointments}[0]" />
-                                                                        <div class="panelModule">
+                                                                        <div class="panelModule mt-3">
                                                                             <div class="contentModule-actions d-block">
                                                                                 <h2 class="clr_gld text-center text-uppercase">
                                                                                     <spring:theme code="appointments.appointmentoverview" /> </h2>

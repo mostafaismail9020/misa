@@ -10,7 +10,7 @@
 	</div>
   <hr class="hr"/>
 	<div class="formRadioBox-wrapper" id="delegateSectionQuestion">
-	<div class="row"><div class="col-md-12 justify-content-center pt-5 pb-5"><a class="btn btn_link js-tip delegate-entity" data-container="body" data-tip-id="delegateToolTip" data-tip-class="delegateToolTip" data-trigger="click" ><spring:theme code="text.account.profile.license.shareholders.tooltip.heading" /></a>
+	<div class="row"><div class="col-md-12 justify-content-center"><a class="btn btn_link js-tip delegate-entity" data-container="body" data-tip-id="delegateToolTip" data-tip-class="delegateToolTip" data-trigger="click" ><spring:theme code="text.account.profile.license.shareholders.tooltip.heading" /></a>
         <div class="tooltip_content" id="delegateToolTip" >
             <h2><span><spring:theme code="text.account.profile.license.shareholders.tooltip.heading" /></span></h2>
             <p style="margin: 10px">

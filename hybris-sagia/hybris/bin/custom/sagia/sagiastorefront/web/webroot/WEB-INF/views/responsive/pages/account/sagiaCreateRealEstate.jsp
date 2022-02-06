@@ -254,7 +254,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo2" hidden>
                                         <div class="form-group">
@@ -264,7 +264,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo3" hidden>
                                         <div class="form-group">
@@ -274,7 +274,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo4" hidden>
                                         <div class="form-group">
@@ -284,7 +284,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo5" hidden>
                                         <div class="form-group">
@@ -294,7 +294,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6" id="plotArea">
                                     <formElement:formInputBox idKey="realEstate.plotArea" labelKey="realEstate.plotArea" labelCSS="control-label_mandatory" path="plotArea"/>
                                 </div>

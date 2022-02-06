@@ -1387,10 +1387,10 @@ SAGIA.licenseApplyShareholderCommons = {
 				var licenseType = isicSectionsElement.parents('#shareholdersQM1').attr('data-licensetype') ? isicSectionsElement.parents('#shareholdersQM1').attr('data-licensetype') : 1;
 					 if(licenseType === "11")
 					{
-						var sharesPercentage = shareholdersQM1.find("#companySharesPercentage");
+						//var sharesPercentage = shareholdersQM1.find("#companySharesPercentage");
 						var professionalLicense = shareholdersQM1.find("#companyProfessionalLicense");
-						sharesPercentage.attr("disabled", true);
-	                	sharesPercentage.val("100").trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
+						//sharesPercentage.attr("disabled", true);
+	                	//sharesPercentage.val("100").trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
 	                	professionalLicense.attr("disabled", true);
 	                	professionalLicense.val('no').trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
 					}

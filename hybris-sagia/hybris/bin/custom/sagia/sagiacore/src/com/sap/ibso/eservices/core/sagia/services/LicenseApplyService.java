@@ -44,11 +44,7 @@ public interface LicenseApplyService {
 	List<RhqActivitiesModel> getCorporateActivities();
 	List<RhqActivitiesModel> getStrategicActivities();
 	List<RhqActivitiesModel> getManagementActivities();
-
-	
-	
-
-
-
-	
+	String getSelectedCorporateActivities(String activity);
+	String getSelectedStrategicActivities(String activity);
+	String getSelectedManagementActivities(String activity);
 }

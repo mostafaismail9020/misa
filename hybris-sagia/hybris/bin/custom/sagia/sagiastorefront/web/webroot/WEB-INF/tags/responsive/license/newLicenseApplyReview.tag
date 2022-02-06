@@ -267,7 +267,7 @@
                 <c:url value="/my-sagia/license/entity" var="entityInfoLink"/>
                 <a id="editEntityInformationButton" type="button" class="btn btn_link iconElement iconElement_edit03" href="${entityInfoLink}"><icon:edit/></a>
             </div>
-            
+
             <div id="reviewLicenseTypeSection">
                 <div class="row">
                     <div class="col-md-6">
@@ -284,14 +284,7 @@
                     <div class="col-md-6">
                         <dl class="dlList">
                             <dt><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></dt>
-                            <c:choose>
-                                <c:when test="${entityInformation.licenseType eq '11'}">
-                                   <dd><spring:theme code="license.entity.rhq.year.${entityInformation.licenseDuration}"/></dd>
-                                </c:when>
-                                <c:otherwise>
                                 	<dd><spring:theme code="license.entity.year.${entityInformation.licenseDuration}"/></dd>
-                                </c:otherwise>
-                             </c:choose>
                        </dl>
                     </div>
                 </div>
@@ -310,43 +303,63 @@
                 </div>
 				<hr class="contentModule-separator"/>
             </div>
-
-            <div id="reviewLicenseYearSection">
+            <div id="rhq-review-section">
+            <div id="reviewLicenseYearSection" class="rhq-review-items">
                 <div class="row">
                     <div class="col-md-6">
                         <dl class="dlList">
-                            <dt>Optional/Functions/Corporate Activities</dt>
-                                	<dd>Sales and Marketing Support, Accounting, Logistics and Supply Chain Management</dd>
+                            <dt><spring:theme code="review.rhq.investor.activities.corporate.label"/></dt>
+                            <c:forEach items="${selectedListOfCorporateActivities}" var="corporateActivity">
+                                	<dd>${corporateActivity}</dd>
+                            </c:forEach>
                        </dl>
                     </div>
                      <div class="col-md-6">
                         <dl class="dlList">
-                            <dt>Strategic direction includes</dt>
-                                	<dd>Formulate and monitor the regional strategy</dd>
+                            <dt><spring:theme code="review.rhq.investor.activities.strategic.label"/></dt>
+                        <c:forEach items="${selectedListOfStrategicActivities}" var="strategicActivity">
+                                <dd>${strategicActivity}</dd>
+                        </c:forEach>
                        </dl>
                     </div>
                      <div class="col-md-6">
                         <dl class="dlList">
-                            <dt>Management functions include</dt>
-                                	<dd>Business planning</dd>
+                            <dt><spring:theme code="review.rhq.investor.activities.management.label"/></dt>
+                                <c:forEach items="${selectedListOfManagementActivities}" var="managementActivity">
+                                        <dd>${managementActivity}</dd>
+                                </c:forEach>
                        </dl>
                     </div>
                      <div class="col-md-6">
                         <dl class="dlList">
-                            <dt>Center of Administrative</dt>
-                                	<dd>MENA</dd>
+                            <dt><spring:theme code="review.rhq.investor.activities.center.of.administrative.label"/></dt>
+                            <c:forEach items="${entityInformation.rhqCenterAdmin}" var="centerOfAdmin">
+                                <dd>${centerOfAdmin}</dd>
+                            </c:forEach>
+                       </dl>
+                    </div>
+                    <div class="col-md-6">
+                        <dl class="dlList">
+                            <dt><spring:theme code="review.profile.rhq.countries"/></dt>
+                                <c:forEach items="${selectedListOfCountries}" var="selectedCountries">
+                                        <dd>${selectedCountries}</dd>
+                                </c:forEach>
                        </dl>
                     </div>
                      <div class="col-md-6">
                         <dl class="dlList">
-                            <dt> RHQ Regions</dt>
-                                	<dd>North America</dd>
+                            <dt><spring:theme code="review.profile.rhq.regions"/></dt>
+                        <c:forEach items="${selectedListOfRegions}" var="selectedRegions">
+                                <dd>${selectedRegions}</dd>
+                        </c:forEach>
                        </dl>
                     </div>
                      <div class="col-md-6">
                         <dl class="dlList">
-                            <dt>MNC subsidiaries or branch presence</dt>
-                                	<dd>Only one country</dd>
+                            <dt><spring:theme code="review.rhq.mnc.subsidiaries.presence"/></dt>
+                            <c:forEach items="${entityInformation.rhqSubsidiaryPresence}" var="subsidiary">
+                                    <dd>${subsidiary}</dd>
+                            </c:forEach>
                        </dl>
                     </div>
                 </div>
@@ -356,34 +369,23 @@
 
             <div class="contentModule-section contentModule-section_noDivider" id="reviewMncBranchSection">
             <div class=" contentModule-actions_spaceBetween contentModule-actions_wrap ">
-                <dl class="dlList""> <dt>MNC Branches</dt></dl>
+                <dl class="dlList""> <dt><spring:theme code="review.rhq.mnc.branches.label"/></dt></dl>
             </div>
 
             <div class="tableModule">
-                <table class="tableModule-table">
+                <table class="tableModule-table" id="reviewRHQBranchesTable">
                     <thead class="tableModule-head">
                     <tr>
-                        <th>Company Name</th>
-                        <th>Country</th>
-                        <th>Business</th>
-                        <th>Industry</th>
-                        <th>Operations</th>
-                        <th>HRQ Activity Provided</th>
+                        <th><spring:theme code="review.rhq.company.name.label"/></th>
+                        <th><spring:theme code="review.rhq.country.label"/></th>
+                        <th><spring:theme code="review.rhq.business.label"/></th>
+                        <th><spring:theme code="review.rhq.industry.label"/></th>
+                        <th><spring:theme code="review.rhq.operations.label"/></th>
+                        <th><spring:theme code="review.rhq.rhq.activity.label"/></th>
 
                     </tr>
                     </thead>
                     <tbody class="tableModule-body">
-
-                            <tr>
-                                <td>test</td>
-                                <td >India</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-
-
                     </tbody>
                 </table>
             </div>
@@ -393,30 +395,24 @@
 
            <div class="contentModule-section contentModule-section_noDivider" id="reviewMncBranchSection">
             <div class=" contentModule-actions_spaceBetween contentModule-actions_wrap ">
-                <dl class="dlList""> <dt>MNC Brand</dt></dl>
+                <dl class="dlList""> <dt><spring:theme code="review.rhq.mnc.brand.label"/></dt></dl>
             </div>
 
             <div class="tableModule">
-                <table class="tableModule-table">
+                <table class="tableModule-table" id="reviewMncBrandTable">
                     <thead class="tableModule-head">
                     <tr>
-                        <th>Brand Name</th>
-                        <th>Country</th>
-                        <th>Industry</th>
-                        <th>Company owning the brand in MENA</th>
-                        <th>RHQ activity Provided</th>
+                        <th><spring:theme code="review.rhq.brand.name.label"/></th>
+                        <th><spring:theme code="review.rhq.country.label"/></th>
+                        <th><spring:theme code="review.rhq.industry.label"/></th>
+                        <th><spring:theme code="review.rhq.company.brand.in.mena.region.label"/></th>
+                        <th><spring:theme code="review.rhq.rhq.activity.label"/></th>
 
 
                     </tr>
                     </thead>
                     <tbody class="tableModule-body">
-                            <tr>
-                                <td>test</td>
-                                <td >India</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -425,42 +421,34 @@
 
            <div class=" contentModule-section_noDivider" id="reviewMncBranchSection">
             <div class=" contentModule-actions_spaceBetween contentModule-actions_wrap ">
-                <dl class="dlList""> <dt>Estimated operating costs for the RHQ</dt></dl>
+                <dl class="dlList""> <dt><spring:theme code="review.rhq.estimated.cost.label"/></dt></dl>
             </div>
 
             <div class="tableModule">
-                <table class="tableModule-table">
+                <table class="tableModule-table" id="reviewMncCostTable">
                     <thead class="tableModule-head">
                     <tr>
-                        <th>Item</th>
-                        <th>Unit Cost</th>
-                        <th>Number of units</th>
-                        <th>Number of units</th>
-                        <th>Year 2022</th>
-                        <th>Year 2023</th>
-                        <th>Year 2024</th>
+                        <th><spring:theme code="review.rhq.item.name.label"/></th>
+                        <th><spring:theme code="review.rhq.unit.cost.label"/></th>
+                        <th><spring:theme code="review.rhq.no.of.units.label"/></th>
+                        <th><spring:theme code="review.rhq.cost.frequency.label"/></th>
+                        <th><spring:theme code="review.rhq.year.2022.label"/></th>
+                        <th><spring:theme code="review.rhq.year.2023.label"/></th>
+                        <th><spring:theme code="review.rhq.year.2024.label"/></th>
                     </tr>
                     </thead>
                     <tbody class="tableModule-body">
-                            <tr>
-                                <td>Nestle Biscuit</td>
-                                <td >10</td>
-                                <td>500000000</td>
-                                <td>7</td>
-                                <td>100000000</td>
-                                <td>5000000</td>
-                                <td>25000000</td>
-                            </tr>
+
                     </tbody>
                     <tfoot>
                         <tr>
                         <td style=""></td>
                         <td style=""></td>
                         <td style=""></td>
-                        <td class="sum-row">Total</td>
-                        <td class="sum-row" id="rhqCostTable-sum1">100000000</td>
-	                    <td class="sum-row" id="rhqCostTable-sum2">5000000</td>
-	                    <td class="sum-row" id="rhqCostTable-sum3">25000000</td>
+                        <td class="sum-row"></td>
+                        <td class="sum-row" id="rhqCostTable-sum1"></td>
+	                    <td class="sum-row" id="rhqCostTable-sum2"></td>
+	                    <td class="sum-row" id="rhqCostTable-sum3"></td>
 
                         </tr>
                      </tfoot>
@@ -955,8 +943,43 @@
     </div>
 </div>
 
+
 <style>
 .sum-row{
      padding: 26px 10px 25px;border-bottom:solid 1px #ebedee ;
 }
 </style>
+
+<script>
+	try{
+      objectBranchesString =  ('${entitiesManagedByRhq}');
+      objectBranchesString1 = objectBranchesString.replace(/("{)/g, '{');
+	  objectBranchesString2 = objectBranchesString1.replace(/(}")/g, '}');
+
+  	  console.log(objectBranchesString2);
+	  objectBranches = [];
+      objectBranches =  JSON.parse(objectBranchesString2);
+	  console.log(objectBranches);
+
+	  objectBrandString =  ('${brandPresenceInMENARegion}');
+      objectBrandString1 = objectBrandString.replace(/("{)/g, '{');
+	  objectBrandString2 = objectBrandString1.replace(/(}")/g, '}');
+
+	  console.log(objectBrandString2);
+	  objectBrands = [];
+      objectBrands =  JSON.parse(objectBrandString2);
+	  console.log(objectBrands);
+
+	  objectCostsString =  ('${estimatedOperatingCostForRhq}');
+      objectCostsString1 = objectCostsString.replace(/("{)/g, '{');
+	  objectCostsString2 = objectCostsString1.replace(/(}")/g, '}');
+
+	  console.log(objectCostsString2);
+	  objectCost = [];
+      objectCost =  JSON.parse(objectCostsString2);
+	  console.log(objectCost);
+    }
+        catch(error){
+        console.log(error);
+        }
+</script>

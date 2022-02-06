@@ -2092,6 +2092,11 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         model.addAttribute("entitiesManagedByRhq", new Gson().toJson(sagiaLicenseApplyFacade.prepareEntitiesManagedByRhqHashMap(sagiaLicenseApplyFacade.prepareEntitiesManagedByRhq())));
         model.addAttribute("brandPresenceInMENARegion", new Gson().toJson(sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegionHashMap(sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegion())));
         model.addAttribute("estimatedOperatingCostForRhq", new Gson().toJson(sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhqHashMap(sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhq())));
+        model.addAttribute("selectedListOfCorporateActivities", sagiaLicenseApplyFacade.getSelectedListOfCorporateActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfCorporateActivities()));
+        model.addAttribute("selectedListOfStrategicActivities", sagiaLicenseApplyFacade.getSelectedListOfStrategicActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfStrategicActivities()));
+        model.addAttribute("selectedListOfManagementActivities", sagiaLicenseApplyFacade.getSelectedListOfManagementActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfManagementActivities()));
+        model.addAttribute("selectedListOfRegions", sagiaLicenseApplyFacade.getSelectedListOfRegions(sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqRegions()));
+        model.addAttribute("selectedListOfCountries", sagiaLicenseApplyFacade.getSelectedListOfCountries(sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqCountries()));
 
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_LICENSE_REVIEW_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_LICENSE_REVIEW_CMS_PAGE));

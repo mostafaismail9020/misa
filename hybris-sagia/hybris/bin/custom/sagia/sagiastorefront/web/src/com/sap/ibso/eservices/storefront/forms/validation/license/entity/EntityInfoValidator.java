@@ -56,10 +56,10 @@ public class EntityInfoValidator implements Validator {
                 || !sagiaLicenseFieldsUtils.isMaxLength(entityInformationData.getEntityNameArabic(), 80))) {
             errors.rejectValue("entityNameArabic", "validation.basicinformation.entityNameArabic");
         }
-        if(entityInformationData.getLicenseType().toString().equals("11"))
+        /*if(entityInformationData.getLicenseType().toString().equals("11"))
         {
             entityInformationData.setLegalStatus("BRFC");
-        }
+        }*/
         entityInformationData.setLegalStatus(XSSFilterUtil.filter(entityInformationData.getLegalStatus()));
         
         if(StringUtils.isEmpty(entityInformationData.getLegalStatus())) {

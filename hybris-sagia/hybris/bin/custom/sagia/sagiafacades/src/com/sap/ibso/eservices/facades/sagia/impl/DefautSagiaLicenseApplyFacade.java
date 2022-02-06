@@ -14,8 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import com.google.gson.Gson;
 import com.sap.ibso.eservices.core.enums.LicenseStatus;
 import com.sap.ibso.eservices.core.model.*;
+import com.sap.ibso.eservices.core.sagia.services.SagiaCountryService;
+import com.sap.ibso.eservices.core.sagia.services.SagiaRegionService;
 import com.sap.ibso.eservices.facades.data.*;
 import com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicActivity;
+import com.sap.ibso.eservices.facades.data.zqeemah.DropdownValue;
 import com.sap.ibso.eservices.facades.populators.*;
 import com.sap.ibso.eservices.sagiaservices.services.isic.IsicMasterDataService;
 import de.hybris.platform.cmsfacades.data.MediaData;
@@ -102,6 +105,13 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 
     @Resource(name = "defaultSagiaIsicFacade")
     private SagiaIsicFacade sagiaIsicFacade;
+
+	@Resource
+	private SagiaRegionService sagiaRegionService;
+	@Resource
+	private SagiaCountryService sagiaCountryService;
+
+
 
 	/**
 	 * GET Entity Information
@@ -2124,5 +2134,62 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 		return null;
 	}
 
+	public List<String> getSelectedListOfCorporateActivities(List<String> selectedListOfCorporateActivities) {
+		if (selectedListOfCorporateActivities != null) {
+			final List<String> listOfSelectedCorporateActivities = new ArrayList<String>();
+			for (String activity : selectedListOfCorporateActivities) {
+				listOfSelectedCorporateActivities.add(licenseApplyService.getSelectedCorporateActivities(activity));
+
+			}
+			return listOfSelectedCorporateActivities;
+		}
+		return null;
+	}
+
+	public List<String> getSelectedListOfStrategicActivities(List<String> selectedListOfStrategicActivities) {
+		if (selectedListOfStrategicActivities != null) {
+			final List<String> listOfSelectedStrategicActivities = new ArrayList<String>();
+			for (String activity : selectedListOfStrategicActivities) {
+				listOfSelectedStrategicActivities.add(licenseApplyService.getSelectedStrategicActivities(activity));
+
+			}
+			return listOfSelectedStrategicActivities;
+		}
+		return null;
+	}
+
+	public List<String> getSelectedListOfManagementActivities(List<String> selectedListOfManagementActivities) {
+		if (selectedListOfManagementActivities != null) {
+			final List<String> listOfSelectedManagementActivities = new ArrayList<String>();
+			for (String activity : selectedListOfManagementActivities) {
+				listOfSelectedManagementActivities.add(licenseApplyService.getSelectedManagementActivities(activity));
+
+			}
+			return listOfSelectedManagementActivities;
+		}
+		return null;
+	}
+
+	public List<String> getSelectedListOfRegions(List<String> selectedListOfRegions) {
+		if (selectedListOfRegions != null) {
+			final List<String> listOfSelectedListOfRegions = new ArrayList<String>();
+			for (String regionCode : selectedListOfRegions) {
+				listOfSelectedListOfRegions.add(sagiaRegionService.getRhqRegionForCode(regionCode));
+			}
+			return listOfSelectedListOfRegions;
+		}
+		return null;
+	}
+
+	public List<String> getSelectedListOfCountries(List<String> selectedListOfCountries) {
+		if (selectedListOfCountries != null) {
+			final List<String> listOfSelectedCountries = new ArrayList<String>();
+			for (String countryCode : selectedListOfCountries) {
+				listOfSelectedCountries.add(sagiaCountryService.getCountryForCode(countryCode).getName());
+			}
+			return listOfSelectedCountries;
+		}
+		return null;
+	}
 
 }

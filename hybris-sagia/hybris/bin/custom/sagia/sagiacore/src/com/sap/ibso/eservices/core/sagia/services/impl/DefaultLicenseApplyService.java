@@ -223,6 +223,21 @@ public class DefaultLicenseApplyService implements LicenseApplyService {
 		return licenseApplyDAO.getManagementActivities();
 	}
 
+	@Override
+	public String getSelectedCorporateActivities(String activity) {
+		return licenseApplyDAO.getActivityDetailsForCode(activity).getDetails();
+	}
+
+	@Override
+	public String getSelectedStrategicActivities(String activity) {
+		return licenseApplyDAO.getActivityDetailsForCode(activity).getDetails();
+	}
+
+	@Override
+	public String getSelectedManagementActivities(String activity) {
+		return licenseApplyDAO.getActivityDetailsForCode(activity).getDetails();
+	}
+
 	private String generateLicenseCode(){
 		final Object generatedValue = keyGenerator.generate();
 		if (generatedValue instanceof String)

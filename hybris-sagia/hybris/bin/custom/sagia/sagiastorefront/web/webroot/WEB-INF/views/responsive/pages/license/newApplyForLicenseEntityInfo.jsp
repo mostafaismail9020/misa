@@ -73,23 +73,25 @@
             </div>
         </div>
         <c:if test="${not empty processingTime}">
-            <div class="serviceTime">
-                <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
-                <div class="serviceTime-detail">
-                    <c:choose>
-                        <c:when test="${(processingTime.days > 0)  ||  (processingTime.hours > 0)}">
-                            <span class="serviceTime-highlight">${processingTime.days}</span>
-                            <spring:theme code="average.processingTime.days"/>
-                            <span class="serviceTime-highlight">${processingTime.hours}</span>
-                            <spring:theme code="average.processingTime.hours"/>
-                        </c:when>
-                        <c:when test="${(processingTime.minutes > 0)  ||  (processingTime.seconds > 0)}">
-                            <span class="serviceTime-highlight">${processingTime.minutes}</span>
-                            <spring:theme code="average.processingTime.minutes"/>
-                            <span class="serviceTime-highlight">${processingTime.seconds}</span>
-                            <spring:theme code="average.processingTime.seconds"/>
-                        </c:when>
-                    </c:choose>
+            <div class="mainSection-header row service-time">
+                <div class="serviceTime">
+                    <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
+                    <div class="serviceTime-detail">
+                        <c:choose>
+                            <c:when test="${(processingTime.days > 0)  ||  (processingTime.hours > 0)}">
+                                <span class="serviceTime-highlight">${processingTime.days}</span>
+                                <spring:theme code="average.processingTime.days"/>
+                                <span class="serviceTime-highlight">${processingTime.hours}</span>
+                                <spring:theme code="average.processingTime.hours"/>
+                            </c:when>
+                            <c:when test="${(processingTime.minutes > 0)  ||  (processingTime.seconds > 0)}">
+                                <span class="serviceTime-highlight">${processingTime.minutes}</span>
+                                <spring:theme code="average.processingTime.minutes"/>
+                                <span class="serviceTime-highlight">${processingTime.seconds}</span>
+                                <spring:theme code="average.processingTime.seconds"/>
+                            </c:when>
+                        </c:choose>
+                    </div>
                 </div>
             </div>
         </c:if>

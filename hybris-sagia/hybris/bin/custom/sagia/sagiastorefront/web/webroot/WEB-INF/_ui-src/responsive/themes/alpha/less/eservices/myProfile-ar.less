@@ -22,7 +22,9 @@
         right: 0 !important;
         bottom: 30px;
     }
-    .page-license-bidding  .profile-icons .profile a span{
+    .page-license-bidding  .profile-icons .profile a span,
+    .page-appointments  .profile-icons .profile a span,
+    .ppage-appointment-create  .profile-icons .profile a span{
         background-image:url(../../common/images/dashboard-media/Profile-bar/Account-User-icon.png);
         background-position:center;
         background-size:contain;
@@ -33,13 +35,74 @@
         display:inline-block;
         margin:-3px 0 0 -7px;
     }
-    .page-license-bidding .banner-container{
+    .page-license-bidding .banner-container, .page-appointments .banner-container{
         top:15% !important;
     }
-    .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection:after{
+    .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection:after,
+    .page-appointments .contentModule-filter .select2.select2-container .select2-selection:after,
+    .page-appointment-create .formSelectBox .select2.select2-container .select2-selection:after {
         left: 0 !important;
         right:inherit;
     }
+    .profile-icons .notification a span {
+        background-image: url(../../common/images/dashboard-media/Profile-bar/message-in-active.png) !important;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 1;
+        width: 63px;
+        height: 63px;
+        display: inline-block;
+        margin: -3px 0 0 -7px;
+        position: absolute;
+    }
+    .profile-icons .calendar a span {
+        background-image: url(../../common/images/dashboard-media/Profile-bar/Calender-in-active.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 1;
+        width: 63px;
+        height: 63px;
+        display: inline-block;
+        margin: -3px -4px -1px -7px;
+    }
+
+    .page-appointments .paginationModule-control[disabled],
+    .page-appointments .paginationModule-control_right,
+    .page-appointments .paginationModule-left{
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+    .modal-content{
+        border-radius: 25px;
+    }
+    .page-appointments .appointmentList_hasTopBoder .appointmentList-entry .appointmentList-status button {
+        position: relative;
+    }
+
+    .page-appointments .appointmentList_hasTopBoder .appointmentList-entry .appointmentList-status .appointmentList-icon_after:after {
+        position: absolute;
+        top: 0;
+        right: auto;
+    }
+
+    .page-appointments .appointmentList_hasTopBoder .appointmentList-entry .appointmentList-label {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .page-appointment-create .appointments_create .appointmentControl-backBtn{
+        position: relative;
+    }
+
+    .page-appointment-create .appointments_create .appointmentControl-backBtn svg{
+        position: absolute;
+        left: 10%;
+        top: 35%;
+    }
+
+
+
     @media  (max-width:575px) {
 
         .page-license-bidding #temporaryBiddingLicenseFormId .formInputBox .form-control+.control-label{
@@ -48,12 +111,42 @@
         .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection {
             text-align: left;
         }
+        .page-appointments .appointmentList_hasTopBoder .appointmentList-entry .appointmentList-view span{
+            padding-right: 30px;
+        }
+        .page-appointment-details .mainSection-linkActions .appointmentControl-backBtn{
+            margin-top: 60px;
+        }
+        .page-license-bidding #temporaryBiddingLicenseFormId .formInputBox .form-control+.control-label{
+            width: 90%;
+        }
+        .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection {
+            text-align: left;
+        }
+        .page-appointment-create .profile-icons{
+            position: relative!important;
+            bottom: 30px;
+            right: 0!important;
+        }
+        .page-appointments .mainSection-linkActions>div {
+            width: 70%;
+        }
     }
     @media (min-width: 576px) and (max-width:767px) {
         .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection,
         .page-license-bidding #temporaryBiddingLicenseFormId .select2-container .select2-selection--single .select2-selection__rendered {
-        text-align: right;
-    }
+            text-align: right;
+        }
+        .page-appointments .appointmentList_hasTopBoder .appointmentList-entry .appointmentList-view span{
+            padding-right: 30px;
+        }
+    
+        .page-appointments .mainSection-linkActions>div {
+            margin-top: 30px;
+        }
+        .page-appointment-details .mainSection-linkActions .appointmentControl-backBtn{
+            margin-top: 60px;
+        }
     }
 
     @media (min-width: 768px) and (max-width:991px) {
@@ -61,6 +154,9 @@
             width: 75%;
         }
 
+        .page-appointments .appointmentList_hasTopBoder .appointmentList-entry .appointmentList-view span{
+            padding-right: 30px;
+        }
         .page-license-bidding #temporaryBiddingLicenseFormId .formSelectBox .select2.select2-container .select2-selection{
             text-align: left;
         }
@@ -70,4 +166,7 @@
             text-align: left;
         }
     }
+
+    #topbar .social-links a {margin-right: 8px;}
+    .btn_leftIconLink span img {transform: rotate(180deg);margin-top: -3px;}
 }

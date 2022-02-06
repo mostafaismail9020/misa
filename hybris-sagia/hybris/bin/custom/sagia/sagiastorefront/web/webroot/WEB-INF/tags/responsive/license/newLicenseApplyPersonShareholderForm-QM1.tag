@@ -72,7 +72,7 @@
 		     </div>
 
 
-			<div class="col-md-6" id="nicShareholderVerifyBtnSection">
+			<div class="col-md-6 mt-2" id="nicShareholderVerifyBtnSection">
 				<a href="#" class="btn btn-bg btn-normal btn_bold btn-ctrl w-50 mt-4"
 					id="verifyShareholderDetailsShow" data-nic-verified="false"><spring:theme
 						code="license.apply.shareholder.verify" /></a>

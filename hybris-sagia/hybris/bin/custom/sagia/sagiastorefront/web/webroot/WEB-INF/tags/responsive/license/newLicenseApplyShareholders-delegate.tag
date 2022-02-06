@@ -57,7 +57,7 @@
         </div>
     </div>
     <div id="delegateSection">
-        <div class="formRadioBox-wrapper pt-5 mt-5" id="showDelegateQuestion" >
+        <div class="formRadioBox-wrapper" id="showDelegateQuestion" >
             <div class="row">
                 <div class="col-md-6">
 					<span><spring:theme code="text.account.profile.license.shareholders.isDelegate"/></span>
@@ -80,7 +80,7 @@
         </div>
         <div id="delegate">
             <div class="row" id="delegateDetails" >
-                <div class="col-md-6">
+                <div class="col-md-6 pt-2">
 					<formElement:formSelectBoxCustom idKey="idType" labelKey="license.apply.shareholder.idType"
 													 path="delegateInfo.delegateIdentityType"
 													 selectCSSClass="js-select2-oneColumn validate__delegate-mandatory" labelCSS="control-label_mandatory"
@@ -128,7 +128,7 @@
 <%--                        <div class="help-block"></div>--%>
 <%--                    </div>--%>
                 </div>
-                <div class="col-md-6" id="nicVerifyBtnSection">
+                <div class="col-md-6 pt-2" id="nicVerifyBtnSection">
                     <a class="btn btn_bold pt-2 mt-5" id="verifyDetailsShow" data-nic-verified="false"><spring:theme code="license.apply.shareholder.verify"/></a>
                     <input type="checkbox" id="isNicVerified" name="delegateInfo.nicVerified" value="true" class="hidden" ${data.delegateInfo.nicVerified ? "checked=checked" : 0}>
                     <div class="inputValidationError" style="display: none;color: #ff4c4a;line-height: 1.2;margin-top: 10px;">

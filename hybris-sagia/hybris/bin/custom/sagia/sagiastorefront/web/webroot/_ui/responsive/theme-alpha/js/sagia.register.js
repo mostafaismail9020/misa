@@ -1275,10 +1275,20 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-apply-email");
+                
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.email.ok'));
-                    messageElements.show();
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.email.ok'));
+                    // messageElements.show();
+
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
                     return true;
                 }
                 else {
@@ -1301,10 +1311,20 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-apply-mobile-number");
+
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.mobileNumber.ok'));
-                    messageElements.show();
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.mobileNumber.ok'));
+                    // messageElements.show();
+
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
                     return true;
                 }
                 else {
@@ -1322,10 +1342,20 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-apply-user-name");
+                
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.userName.ok'));
-                    messageElements.show();
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.userName.ok'));
+                    // messageElements.show();
+                    
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
                     return true;
                 }
                 else {
@@ -1399,8 +1429,21 @@ $(function () {
                 var formValidation = $("#sagiaRegisterFormQuickRegistration, #sagiaRegisterFormApplyLicense").validate();
                 var hasNoError = (formValidation.errorMap === undefined) || (formValidation.errorMap.pwd === undefined && !formValidation.invalid.pwd);
                 hasNoError = hasNoError && $("#sagiaRegisterFormQuickRegistration").validate().element(".quickregistrationPwd");
+
+                var $element = $(".quickregistrationPwd");
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').siblings('.fa-eye').removeClass('reg-password-success');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (hasNoError) {
-                    passwordSuccessDiv.text(getI18nText('register.validation.psw.ok'));
+                    // passwordSuccessDiv.text(getI18nText('register.validation.psw.ok'));
+                    
+                    $($element).closest('.formInputBox').find("input").css('width','90%');
+                    $($element).closest('.formInputBox').siblings('.fa-eye').addClass('reg-password-success');
+                    $($element).closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($($element).closest('.formInputBox').find('input'));
+
                 } else {
                     passwordSuccessDiv.empty();
                 }
@@ -1419,8 +1462,19 @@ $(function () {
                 var formValidation = $("#sagiaRegisterFormQuickRegistration, #sagiaRegisterFormApplyLicense").validate();
                 var hasNoError = (formValidation.errorMap === undefined) || (formValidation.errorMap.pwd === undefined && !formValidation.invalid.checkPwd);
                 hasNoError = hasNoError && $("#sagiaRegisterFormQuickRegistration").validate().element(".quickregistrationCheckPwd");
+
+                var $element = $(".quickregistrationCheckPwd");
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').siblings('.fa-eye').removeClass('reg-password-success');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (hasNoError) {
-                    passwordSuccessDiv.text(getI18nText('register.validation.psw.ok2'));
+                    // passwordSuccessDiv.text(getI18nText('register.validation.psw.ok2'));
+                    $($element).closest('.formInputBox').find("input").css('width','90%');
+                    $($element).closest('.formInputBox').siblings('.fa-eye').addClass('reg-password-success');
+                    $($element).closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($($element).closest('.formInputBox').find('input'));
                 } else {
                     passwordSuccessDiv.empty();
                 }

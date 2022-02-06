@@ -8,13 +8,13 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 
 <style type="text/css">
-.investsaudiHeader,
-.sagiaNavigation,
-.investsaudiFooter,
-.sagiaHead-paddingHelper,
-.sagiaHead {
-display: none;
-}
+	.investsaudiHeader,
+	.sagiaNavigation,
+	.investsaudiFooter,
+	.sagiaHead-paddingHelper,
+	.sagiaHead ,#topbar ,#header{
+		display: none !important;
+	}
 </style>
 
 <template:page pageTitle="${pageTitle}">

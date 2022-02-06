@@ -1192,10 +1192,20 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-register-quick-email");
+
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.email.ok'));
-                    messageElements.show();
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.email.ok'));
+                    // messageElements.show();
+
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
                     return true;
                 } else {
                     $element.closest('.formInputBox').find(".js-help-block-success").empty();
@@ -1217,10 +1227,20 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-quick-mobile-number");
+
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.mobileNumber.ok'));
-                    messageElements.show();
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.mobileNumber.ok'));
+                    // messageElements.show();
+
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
                     return true;
                 }
                 else {
@@ -1238,10 +1258,21 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-register-quick-user-name");
+
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.userName.ok'));
-                    messageElements.show();
+
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.userName.ok'));
+                    // messageElements.show();
+
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+                    
                     return true;
                 }
                 else {

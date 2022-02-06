@@ -4,7 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 
-<div class="Inc-title-header py-5">
+<div class="Inc-title-header py-5 Inc-title-header-mobile">
    	<h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
     	<c:if test="${language eq 'en'}">
         	<span class="clr_gld">${category.name}</span>&nbsp; <spring:theme code="text.dashboard.without.license.sectorAndOpportunities"/>

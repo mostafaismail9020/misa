@@ -21,21 +21,21 @@ INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true] 
 INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                                          ; name                                                          ; &componentRef                                               ; content[lang = en]; content[lang = ar]
                                    ;                          ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent       ; Sagia CMS Paragraph Dashboard No License Component            ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent       ; "
 <div class=""js-dashboardWidget"">
-        <div class=""card dashboardWidget-body mb-5 p-0 no-border dashboardWidget-body-shadow"">
+        <div class=""card dashboardWidget-body mb-md-5 p-0 no-border dashboardWidget-body-shadow"">
             <ul  class=""nav nav-tabs w-100"">
-                <li class=""nav-item  col-6 p-0""> <a class="" nav-link text-center active"" href=""#1a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-license.png""/>Apply For a MISA License</a></li>
-                 <li class=""nav-item  col-6 p-0""><a class=""nav-link text-center"" href=""#2a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png""/>Apply for a Bidding Certificate</a></li>
+                <li class=""nav-item  col-md-6  col-xs-12 p-0""> <a class="" nav-link text-center active"" href=""#1a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-license.png""/>Apply For a MISA License</a></li>
+                 <li class=""nav-item  col-md-6 col-xs-12 p-0""><a class=""nav-link text-center"" href=""#2a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png""/>Apply for a Bidding Certificate</a></li>
             </ul>
               <div class=""process tab-content clearfix"">
                   <div class=""tab-pane active"" id=""1a"">
-                      <div class=""text-center"">
+                      <div class=""text-center py-3 py-md-0"">
                         <h4 class=""apply-license-header pt-5 dashboard-heading-title-color"">How to Apply for a New License</h4>
-                        <h5 class=""pt-5 dashboard-paragraph-color""> In order to start in saudi arabia, investors must first obtain an investor license, MISA is the autority
+                        <h5 class=""pt-md-5 dashboard-paragraph-color""> In order to start in saudi arabia, investors must first obtain an investor license, MISA is the autority
                             concerned with providing all seervices to  investors, Types of investment license vary each with its own requirement
                             such as minimum acceptable capital and maximum capital. Investors can apply for a license online on a MISA e-portal
                         </h5>
                       </div>
-                      <div class=""d-flex justify-content-around pt-5"">
+                      <div class=""d-flex justify-content-around pt-md-5"">
                           <div class=""process-step col-2 col-xs-12"">
                             <div class=""process-card"">
                                 <div class=""process-card-step"">

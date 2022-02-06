@@ -6,6 +6,7 @@ import com.sap.ibso.eservices.core.model.EntityInformationModel;
 import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
 import com.sap.ibso.eservices.core.model.ShareHolderModel;
 import de.hybris.platform.core.model.media.MediaModel;
+import com.sap.ibso.eservices.core.model.SagiaCMSParagraphMediaComponentModel;
 
 import java.io.InputStream;
 import java.util.List;
@@ -46,6 +47,7 @@ public interface LicenseApplyService {
 	public SagiaLicenseModel cloneLicense(SagiaLicenseModel originalLicense) ;
 	
 	
+	SagiaCMSParagraphMediaComponentModel getParagraphLicenseMedia(String uid);
 
 
 

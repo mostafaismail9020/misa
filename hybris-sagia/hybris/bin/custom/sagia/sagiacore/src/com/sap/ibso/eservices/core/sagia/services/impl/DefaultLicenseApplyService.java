@@ -27,6 +27,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import com.sap.ibso.eservices.core.model.SagiaCMSParagraphMediaComponentModel;
+
+
 public class DefaultLicenseApplyService implements LicenseApplyService {
 
 	private final static Logger LOG = Logger.getLogger(DefaultLicenseApplyService.class.getName());
@@ -307,6 +310,9 @@ public class DefaultLicenseApplyService implements LicenseApplyService {
 		return licenseApplyDAO.getPendingLicenses();
 	}
 
-	
+	public SagiaCMSParagraphMediaComponentModel getParagraphLicenseMedia(String uid)
+	{
+		return licenseApplyDAO.getParagraphLicenseMedia(uid);
+	}
 
 }

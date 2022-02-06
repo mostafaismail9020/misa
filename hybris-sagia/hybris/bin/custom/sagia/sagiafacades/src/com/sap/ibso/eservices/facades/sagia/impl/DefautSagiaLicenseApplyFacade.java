@@ -35,6 +35,8 @@ import de.hybris.platform.servicelayer.model.ModelService;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.sap.ibso.eservices.core.model.SagiaCMSParagraphMediaComponentModel;
+
 public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 
 	private static final String PDF = "pdf";
@@ -2029,5 +2031,10 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 		
 				 
 	}
-
+	
+	public SagiaCMSParagraphMediaComponentModel getParagraphLicenseMedia(String uid)
+	{
+		return licenseApplyService.getParagraphLicenseMedia(uid);
+	}
+	
 }

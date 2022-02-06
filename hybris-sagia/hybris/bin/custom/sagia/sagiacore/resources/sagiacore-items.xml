@@ -10634,6 +10634,18 @@
                     </attribute>
                 </attributes>
             </itemtype>
+            
+            <itemtype code="SagiaCMSParagraphMediaComponent" generate="true"
+                      extends="CMSParagraphComponent" autocreate="true">                     
+                <description>Sagia CMSParagraph Media Component</description>
+                <attributes>                   					
+                   <attribute qualifier="attachment" type="localized:Media">
+                        <persistence type="property"/>
+                        <description>Localized Attachement</description>
+                    </attribute>                 
+             </attributes>
+           </itemtype>		
+                        
         </typegroup>
 		 
 		<typegroup name="Outbound">

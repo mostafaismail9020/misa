@@ -22,7 +22,7 @@
 							<div class="login-role-selection-box role-investor">
 									<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid img-ivestor-inactive" />
 									<img src="${commonResourcePath}/images/B2C/Investor-icons.png" alt="Investor" class="img-fluid img-ivestor-active d-none" />
-									<p class="role-text"><spring:theme code="partner.select.role.label"/></p>
+									<p class="role-text"><spring:theme code="investor.select.role.label"/></p>
 							</div>
 							<div class="login-role-selection-box role-partner">
 								<img src="${commonResourcePath}/images/B2C/Partner.png" alt="Partner" class="img-fluid img-partner-inactive" />

@@ -61,7 +61,7 @@
 					</c:when>
 					<c:otherwise>
 					    <a href="/en/investsaudi-login" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener">
-					      	<span><spring:theme code="portal.header.logout.label"/></span>
+					      	<span><spring:theme code="portal.header.login.label"/></span>
 						</a>
 					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener">
 					    	<span><spring:theme code="portal.header.feedback.label"/></span>

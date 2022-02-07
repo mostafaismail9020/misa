@@ -10,13 +10,14 @@
         	<span class="clr_gld">${category.name}</span>&nbsp; <spring:theme code="text.dashboard.without.license.sectorAndOpportunities"/>
        	</c:if>
        	<c:if test="${language eq 'ar'}">
-           <span class="clr_gld"><spring:theme code="text.dashboard.without.license.sectorAndOpportunities"/>&nbsp;${category.name}</span>
+           <spring:theme code="text.dashboard.without.license.sectorAndOpportunities"/><span class="clr_gld">&nbsp;${category.name}</span>
        	</c:if>
-   	</h1>	
+   	</h1>
+	<a href="/${language}/sectors-opportunities/opportunities" class="btn-dashboard dashboard-invest-btn text-uppercase">
+		<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/><img class="pl-3 transform-180-degree" src="${commonResourcePath}/images/arow_btn.png"/>
+	</a>	
 </div>
-<a href="/${language}/sectors-opportunities/opportunities" class="btn-dashboard dashboard-invest-btn text-uppercase">
-   		<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/><img class="pl-3" src="${commonResourcePath}/images/arow_btn.png"/>
-</a>
+
                    
 <div class="js-dashboardWidget">
 	<div class="dashboardWidget-body">
@@ -38,7 +39,7 @@
 		                                   			<div class="dashboardWidgetBanner-action">
 		                                   				<a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn-dashboard">
 		                                   					<spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/>
-		                                   					<img class="pl-3"  src="${commonResourcePath}/images/arow_btn.png"/>
+		                                   					<img class="pl-3 transform-180-degree"  src="${commonResourcePath}/images/arow_btn.png"/>
 		                                   				</a>
 		                                   			</div>
 		                                       	</c:if>
@@ -85,9 +86,9 @@
 </div>
 
 <c:if test="${not empty customerSectorCategory}">
-	<section class="Inc-energyoppertunities mt-5">
+	<section class="Inc-energyoppertunities ">
 	    <div class="container">
-	        <div class="Inc-title-header py-5">
+	        <div class="Inc-title-header py-3 py-md-5">
 	            <h1 class="Inc-secdetil-enop-header text-uppercase clr_gld col-12 mt-3 text-center">
 	            	<c:if test="${language eq 'en'}">
 	            		${customerSectorCategory.name} &nbsp; <spring:theme code="portal.sector.opportunity.label"/>
@@ -101,13 +102,13 @@
 				<c:if test="${empty featuredOpportunities}">
 					<a class="text-white text-uppercase" href="${encodedContextPath}/sectors-opportunities/opportunities" >
 						<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
-						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
+						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree">
 					</a>
 				</c:if>
 				<c:if test="${not empty featuredOpportunities}">
 					<a class="text-white text-uppercase" href="${encodedContextPath}/sectors-opportunities/${customerSectorCategory.code}">
 						<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
-						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
+						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree">
 					</a>
 				</c:if>
 				<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">

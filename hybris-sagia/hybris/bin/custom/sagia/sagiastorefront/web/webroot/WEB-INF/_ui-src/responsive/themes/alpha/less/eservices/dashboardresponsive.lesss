@@ -1,0 +1,59 @@
+[dir=rtl] .transform-180-degree{
+	transform: rotate(180deg);
+	padding-right: 10px;
+}
+.explore-all-btn{
+	float: right;
+}
+[dir=rtl] .explore-all-btn{
+	float: left;
+}
+[dir=rtl] .waring-text-ar{
+	padding-right: 20px;
+}
+[dir=rtl] .btn-simulator{
+	margin-left: 20px !important;
+}
+@media (max-width: 767px){
+	.explore-all-btn{
+		text-align: center !important;
+		float: none;
+		width: max-content;
+		margin: 0 auto 15px !important;
+	}
+	
+	[dir] .page-dashboard-without-license .dashboardUser-right {
+		margin-top: 50px;
+	}
+	.card{
+		border: none !important;
+	}
+	.panel-group .panel{
+		margin-bottom: 20px;
+		padding: 0 10px;
+	}
+	.panel-group .panel-heading{
+		display: flex;
+		padding: 20px;
+		margin-bottom: 20px;
+		box-shadow: 0px 10px 25px #00000029;
+	}
+	.panel-group .panel-body{
+		padding: 0 20px;
+	}
+	.panel-group .panel-heading .panel-title a, .panel-group .panel-heading .panel-title a:hover{
+		color: #0489A3;
+		text-transform: none;
+		text-decoration: none;
+	}
+
+	[dir=rtl] #eServiceTour .modal-dialog{
+		right: calc(0%) !important;
+	}
+	[dir=rtl] .footer img.footer_logo {
+		right: 10;
+		left: auto;
+		position: relative;
+		display: block;
+	}
+}

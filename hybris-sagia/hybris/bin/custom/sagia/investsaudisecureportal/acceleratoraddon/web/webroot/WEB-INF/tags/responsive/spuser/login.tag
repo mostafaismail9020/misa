@@ -33,6 +33,11 @@
                 <formElement:formPasswordBox idKey="j_password" labelKey="login.password" path="j_password" inputCSS="form-control register-user-details" labelCSS="register-user-info-label" mandatory="true"/>
                     <%--<i toggle="#password-field" class="fa fa-eye toggle-password" aria-hidden="true"  id="togglePassword"></i>--%>
             </div>
+            	
+            	<div class="col-md-12 register-form">
+						<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
+		        <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
+		     </div>
         </div>	
 
     <div class="login-buttons accountLogin-content-formSubmitSection">

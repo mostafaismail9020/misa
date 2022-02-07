@@ -1183,6 +1183,7 @@ $(function() {
             SAGIA.license.apply.updateIsicTable();
             $(".modal-backdrop").remove();
             $('#businessActivitiesSection #businessActivitiesModal').modal('toggle');
+            $("#businessActivitiesSection").scrollIntoView();
         }
     });
 

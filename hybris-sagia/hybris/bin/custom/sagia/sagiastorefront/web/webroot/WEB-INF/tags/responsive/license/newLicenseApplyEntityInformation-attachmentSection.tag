@@ -12,8 +12,8 @@
 <!--  Attachment  -->
 <div class="contentModule-section" id="attachmentSection" style="display: none" ${not empty sagiaApplyEntityInfoForm.licenseType ? "data-existingentity" : ""}>
     <div class="contentModule-headline contentModule-headline_smallMargin mw2" id="attachmentSectionTitle"><spring:theme code="licenseApplyEntityInformation.attachmentSection.attachment"/></div>
+    <hr class="hr">
 	<div id="entrepreneurAttachment" style="display: none">
-   <hr class="hr">
     <div class="row">
         <div class="col-md-6">
             <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.boardResolutionFile ? "active" : ""}">
@@ -170,7 +170,7 @@
                 <div class="help-block"></div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 mt-5">
             <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.otherBranchCR1 ? "active" : ""}">
                 <div class="form-group">
                     <input id="otherBranchCR1File" name="customOtherBranchCR1File" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>

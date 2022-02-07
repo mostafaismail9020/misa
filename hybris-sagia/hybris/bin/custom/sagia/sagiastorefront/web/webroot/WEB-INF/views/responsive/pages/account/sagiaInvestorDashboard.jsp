@@ -162,6 +162,7 @@
         </div>
     </div>
 </div>
+
 <div class="globalMessage-holder" id="globalMessageDivHeader" style="display: none;">
     <div class="container">
         <div class="globalMessage">
@@ -220,7 +221,9 @@
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                         industry's standard dummy text ever since the 1500s,
                                     </p>
-                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/FIRST';">Know more </button>
+                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
+                                    	<spring:theme code="portal.sector.opportunity.know.more.label"/>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -248,7 +251,9 @@
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                         industry's standard dummy text ever since the 1500s,
                                     </p>
-                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">Know more </button>
+                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
+                                    	<spring:theme code="portal.sector.opportunity.know.more.label"/>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -277,7 +282,9 @@
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                         industry's standard dummy text ever since the 1500s,
                                     </p>
-                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">Know more </button>
+                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
+                                    	<spring:theme code="portal.sector.opportunity.know.more.label"/> 
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -293,8 +300,9 @@
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                 industry's standard dummy text ever since the 1500s,
                             </p>
-                            <button class="btn-dashboard text-uppercase"
-                                onclick="location.href='${encodedContextPath}/service-search/FIRST';">Know more </button>
+                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
+                               <spring:theme code="portal.sector.opportunity.know.more.label"/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -306,7 +314,8 @@
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                 industry's standard dummy text ever since the 1500s,
                             </p>
-                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">Know more
+                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
+                            	<spring:theme code="portal.sector.opportunity.know.more.label"/>
                             </button>
                         </div>
                     </div>
@@ -318,7 +327,9 @@
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                 industry's standard dummy text ever since the 1500s,
                             </p>
-                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">Know more </button>
+                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
+                            	<spring:theme code="portal.sector.opportunity.know.more.label"/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -326,24 +337,21 @@
         </div>
     </div>
 </section>
+
 <section class="container mainSection_noPaddingTop js-dashboard">
     <div class="container row">
         <div class="Inc-title-header pt-5 col-12">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
-                <c:if test="${language eq 'en'}">
-                    LICENSES
-                </c:if>
-                <c:if test="${language eq 'ar'}">
-                     LICENSES
-                </c:if>
+               <spring:theme code="sagia.services.licenses.label"/>
             </h1>
 		</div>
         <div class="col-12">
-            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-5"><spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/></a>
+            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-5">
+            	<spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/>
+            </a>
         </div>
     </div>
 </section>
-
 
 <section class="container mainSection mainSection_noPadding bg-white">
     <div class="">
@@ -428,11 +436,11 @@
                                                     <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" id="ss_right_arrow">
                                                 </button>
                                             </div>
-                                                <div class="tableModule-headline">
-                                                    <a href="" data-redirect="payments-overview" class="btn-dashboard btn-view-all js-page-redirect">
-                                                        <spring:theme code="dashboard.viewall" text="View all"/>
-                                                    </a>
-                                                </div>
+                                            <div class="tableModule-headline">
+                                                <a href="" data-redirect="payments-overview" class="btn-dashboard btn-view-all js-page-redirect">
+                                                    <spring:theme code="dashboard.viewall" text="View all"/>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -540,9 +548,10 @@
             <div class="dashboard-container">
                 <div class="row titleContainer">
                     <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
-                        <h1 class="section-title text-center clr_gld pt-5">NEWS &amp; UPDATES</h1>
+                        <h1 class="section-title text-center clr_gld pt-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
                         <!-- <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp; -->
-                        <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-5">Explore All&nbsp;
+                        <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-5">
+                        	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
                             <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
                     	</a>
                     </div>

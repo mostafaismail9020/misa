@@ -1986,7 +1986,7 @@
 					<div class="contentModule-headline">
 						<spring:theme code="general.edit" />
 					</div>
-					<div class="row">
+					<div class="row mt-3">
 						<div class="col-md-12">
 							<div class="formSelectBox">
 								<div class="form-group">
@@ -2097,31 +2097,42 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="docsmodalId" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+	<div class="modal fade" id="docsmodalId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog amend-doc-submit" role="document">
 			<div class="modal-content panelModule panelModule_halfRadius">
-				<div class="contentModule">
+				<div class="contentModule contentModule-wrap">
 					<form:form id="docsFormId">
-						<div id="amendmentTypeId"
+						<!-- <div id="amendmentTypeId"
 							class="contentModule-headline contentModule-headline_big contentModule-headline_bordered">
 							<spring:theme code="license.amend.documents" />
+						</div> -->
+						<div id="amendmentTypeId" class="contentModule-actions w-100">
+							<span class="headline-text"><spring:theme code="license.amend.documents" /></span>
 						</div>
 
-						<div
+						<!-- <div
 							class="contentModule-headline contentModule-headline_marginBottom">
 							<spring:theme code="license.amend.amendment.types" />
+						</div> -->
+						<div id="amendmentTypeId" class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+							<span class="contentModule-headline"><spring:theme code="license.amend.amendment.types" /></span>
+							<div class="contentModule-headline-border"></div>
 						</div>
 						<div id="amendmentTypesId" class="row"></div>
 
 						<div id="regularAmendmentDocsId">
 							<div class="contentModule-separator"></div>
-							<div class="contentModule-headline">
+							<!-- <div class="contentModule-headline">
 								<spring:theme code="license.amend.supporting.documents" />
+							</div> -->
+							<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+								<span class="contentModule-headline"><spring:theme code="license.amend.supporting.documents" /></span>
+								<div class="contentModule-headline-border"></div>
 							</div>
+
 							<div id="documentsId" class="row"></div>
 						</div>
-						<div class="col-sm-6 docTemplate">
+						<div class="col-sm-12 docTemplate mt-3">
 							<div class="formInputFile">
 								<div class="form-group">
 									<input id="fileId" name="file" class="form-control js-inputFile"
@@ -2142,13 +2153,13 @@
 						<%-- <div class="contentModule-separator"></div>
 					<div id="simulatedPriceDivContent" class="contentModule-headline contentModule-headline_marginBottom"><spring:theme code="license.amend.totalPrice"/></div>
 						<div id="simulatedPriceRow" class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-12 mt-3">
 							<ul class="dottedList dottedList_green dottedList_big">
 							<li class="dottedList-item" id="simulatedPriceNetValue"></li></ul></div>
 					</div> --%>
-						<div class="acceptTerms acceptTerms-no-margin">
+						<div class="acceptTerms-no-margin">
 							<div class="row">
-								<div class="col-md-12">
+								<div class="col-md-12 mt-3">
 									<div class="formCheckBox">
 										<div class="form-group">
 											<div class="form-item">
@@ -2169,15 +2180,19 @@
 						</div>
 
 						<div
-							class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-							<button type="button"
-								class="btn btn-slim btn_outline cancelAmendmentDialogBtn">
-								<spring:theme code="general.cancel" />
-							</button>
-							<button id="submitAmendmentBtnId" type="button"
-								class="btn btn-slim submitAmendmentBtn">
-								<spring:theme code="general.submit" />
-							</button>
+							class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection row">
+							<div class="col-md-12 mx-0 px-0 d-flex">
+								<div class="col-md-6">
+									<button type="button" class="btn btn-slim btn_outline cancelAmendmentDialogBtn">
+										<spring:theme code="general.cancel" />
+									</button>
+								</div>
+								<div class="col-md-6">								
+									<button id="submitAmendmentBtnId" type="button" class="btn btn-slim submitAmendmentBtn">
+										<spring:theme code="general.submit" />
+									</button>
+								</div>
+							</div>
 						</div>
 					</form:form>
 				</div>

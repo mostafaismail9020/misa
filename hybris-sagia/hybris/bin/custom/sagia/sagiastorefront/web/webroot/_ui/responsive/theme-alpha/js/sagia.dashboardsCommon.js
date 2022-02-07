@@ -395,7 +395,7 @@ $(document).ready(function() {
 $('#dashboard-carousel').owlCarousel({
     loop: true,
     margin: 20,
-    rtl:true,
+    // rtl:true,
      /*
     animateOut: 'fadeOut',
     animateIn: 'fadeIn',
@@ -403,9 +403,11 @@ $('#dashboard-carousel').owlCarousel({
     responsiveClass: true,
     autoplayTimeout: 7000,
     smartSpeed: 800,
-    nav: true,
+    nav: false,
     dots: true,
-    navText:["<img src='/_ui/responsive/common/images/dashboard-media/Banner-icons/Left-arrow.png'/>", "<img src='/_ui/responsive/common/images/dashboard-media/Banner-icons/Right-arrow.png''/>"],
+    autoplay:true,
+    autoplayHoverPause:false,
+    // navText:["<img src='/_ui/responsive/common/images/dashboard-media/Banner-icons/Left-arrow.png'/>", "<img src='/_ui/responsive/common/images/dashboard-media/Banner-icons/Right-arrow.png''/>"],
     responsive: {
       0: {
         items: 1

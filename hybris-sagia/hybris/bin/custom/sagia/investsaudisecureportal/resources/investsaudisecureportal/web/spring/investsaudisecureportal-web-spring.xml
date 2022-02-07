@@ -173,4 +173,28 @@
 	<!-- Controllers & Mappings (necessary to override controllers with the same mappings in the target storefront) -->
 	<bean name="registerPageController" class="com.investsaudi.controllers.B2BRegistrationController"/>
 	
+	<aop:config proxy-target-class="true" expose-proxy="true">
+		<aop:aspect id="prepB2BLoginReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="prepare"
+			            pointcut="execution(* com.investsaudi.controllers.pages.LoginPageController.doLogin(..))"/>
+		</aop:aspect>
+		<aop:aspect id="prepB2BRegistratonReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="prepare"
+			            pointcut="execution(* com.investsaudi..controllers..*.showRegistrationPage(..))"/>
+		</aop:aspect>
+		<aop:aspect id="b2BLoginReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="advise"
+			            pointcut="execution(* com.investsaudi.security.AcceleratorAuthenticationProvider.authenticate(..)))"/>
+		</aop:aspect>
+		<aop:aspect id="b2BRegistratonReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="advise"
+			            pointcut="execution(* com.investsaudi..controllers..*.submitRegistration(..))"/>
+		</aop:aspect>
+		<aop:aspect id="b2BRegistratonReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="advise"
+			            pointcut="execution(* de.hybris.platform.b2bacceleratoraddon.security.B2BAcceleratorAuthenticationProvider.authenticate(..))"/>
+		</aop:aspect>
+		</aop:config>
+	
 </beans>
+

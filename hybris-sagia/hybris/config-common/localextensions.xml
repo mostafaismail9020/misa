@@ -86,6 +86,7 @@
 
         <extension name="captchaaddon"/>
         <extension name="addonsupport"/>
+		<extension name="investsaudicaptchaddon"/>
 
 		
 		

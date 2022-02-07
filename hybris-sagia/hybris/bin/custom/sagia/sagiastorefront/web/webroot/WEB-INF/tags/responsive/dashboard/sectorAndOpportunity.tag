@@ -13,7 +13,7 @@
            <spring:theme code="text.dashboard.without.license.sectorAndOpportunities"/><span class="clr_gld">&nbsp;${category.name}</span>
        	</c:if>
    	</h1>
-	<a href="/${language}/sectors-opportunities/opportunities" class="btn-dashboard dashboard-invest-btn text-uppercase">
+	<a href="/${language}/sectors-opportunities/opportunities" class="btn-dashboard text-uppercase  explore-all-btn">
 		<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/><img class="pl-3 transform-180-degree" src="${commonResourcePath}/images/arow_btn.png"/>
 	</a>	
 </div>

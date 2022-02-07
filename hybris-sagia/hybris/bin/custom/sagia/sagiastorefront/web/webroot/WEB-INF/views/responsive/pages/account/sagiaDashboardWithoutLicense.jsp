@@ -167,7 +167,7 @@
     <div class="container">
     	<dashboard:opportunityTickets></dashboard:opportunityTickets>
     	</br>
-        <h1 class="section-title text-center clr_gld py-5"><spring:theme code="dashboard.license.my.license.title"/></h1>
+        <h1 class="section-title text-center clr_gld py-3 py-md-5"><spring:theme code="dashboard.license.my.license.title"/></h1>
         <cms:pageSlot position="MCM_CMS_OTHER" var="component">
         	<cms:component component="${component}"/>
      	</cms:pageSlot>
@@ -183,7 +183,7 @@
 	                    <div class="row titleContainer">
 	                        <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
 	                            <h1 class="section-title text-center clr_gld pt-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
-		                        <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-5">
+		                        <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5  explore-all-btn">
 		                        	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
 		                            <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
 		                    	</a>
@@ -262,9 +262,9 @@
                             <div>
                                 <img  alt="" src="${commonResourcePath}/images/Contact-us/email.png"/>
                             </div>
-                            <div>
+                            <div class="d-none d-md-block">
                                 <span class="firstBlock-contact-local-label">&nbsp;
-                                    <!-- <spring:theme code="dashboard.license.letus.help.you.International"/> -->
+                                   <!-- <spring:theme code="dashboard.license.letus.help.you.International"/> -->
                                 </span>
                             </div>
                             <div>

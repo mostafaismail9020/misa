@@ -461,7 +461,7 @@ var validateLicense = function () {
                     var $documents = $docsModal.find('#documentsId');
                     SAGIA.licenseAmendment.generatedDocuments = [];
                     data.amendmentTypesView.forEach(function (amendmentType) {
-                        $amendmentTypes.append('<div class="col-sm-6"><ul class="dottedList dottedList_green dottedList_big">' +
+                        $amendmentTypes.append('<div class="col-sm-12"><ul class="dottedList dottedList_green dottedList_big">' +
                             '<li class="dottedList-item">' + amendmentType.name + '</li>' +
                             '</ul></div>');
                         if (!data.instantAmendment) {

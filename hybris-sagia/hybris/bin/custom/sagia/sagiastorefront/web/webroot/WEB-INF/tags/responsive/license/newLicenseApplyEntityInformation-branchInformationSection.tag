@@ -12,7 +12,7 @@
 <!--  License Information  -->
 <div class="contentModule-section" id="branchInformationSection" style="display: none">
     <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.branchInformationSection.title"/></div>
-
+<hr class="hr">
     <div class="formRadioBox-wrapper">
         <div class="row">
             <div class="col-md-6"><span><spring:theme code="licenseApplyEntityInformation.branchInformationSection.more.than.2.branch.text"/></span></div>
@@ -21,12 +21,12 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="isMoreThan2Branch" id="isMoreThan2BranchYES" value="yes" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isMoreThan2Branch == true ? 'checked' : ''}/>
-                            <label for="isMoreThan2BranchYES" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
+                            <label for="isMoreThan2BranchYES" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="isMoreThan2Branch" id="isMoreThan2BranchNO" value="no" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isMoreThan2Branch == false ? 'checked' : ''}/>
-                            <label for="isMoreThan2BranchNO" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
+                            <label for="isMoreThan2BranchNO" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
                         </div>
                     </div>
                 </div>
@@ -41,12 +41,12 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="isEntityListedInStockMarket" id="isEntityListedInStockMarketYES" value="yes" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isEntityListedInStockMarket == true ? 'checked' : ''}/>
-                            <label for="isEntityListedInStockMarketYES" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
+                            <label for="isEntityListedInStockMarketYES" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="isEntityListedInStockMarket" id="isEntityListedInStockMarketNO" value="no" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isEntityListedInStockMarket == false ? 'checked' : ''}/>
-                            <label for="isEntityListedInStockMarketNO" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
+                            <label for="isEntityListedInStockMarketNO" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
                         </div>
                     </div>
                 </div>
@@ -61,12 +61,12 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="isEntityRevenueMoreThanThreshold" id="isEntityRevenueMoreThanThresholdYES" value="yes" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isEntityRevenueMoreThanThreshold == true ? 'checked' : ''}/>
-                            <label for="isEntityRevenueMoreThanThresholdYES" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
+                            <label for="isEntityRevenueMoreThanThresholdYES" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="isEntityRevenueMoreThanThreshold" id="isEntityRevenueMoreThanThresholdNO" value="no" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isEntityRevenueMoreThanThreshold == false ? 'checked' : ''}/>
-                            <label for="isEntityRevenueMoreThanThresholdNO" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
+                            <label for="isEntityRevenueMoreThanThresholdNO" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
                         </div>
                     </div>
                 </div>
@@ -81,12 +81,12 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="isEntityAssetMoreThanThreshold" id="isEntityAssetMoreThanThresholdYES" value="yes" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isEntityAssetMoreThanThreshold == true ? 'checked' : ''}/>
-                            <label for="isEntityAssetMoreThanThresholdYES" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
+                            <label for="isEntityAssetMoreThanThresholdYES" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="isEntityAssetMoreThanThreshold" id="isEntityAssetMoreThanThresholdNO" value="no" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isEntityAssetMoreThanThreshold == false ? 'checked' : ''}/>
-                            <label for="isEntityAssetMoreThanThresholdNO" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
+                            <label for="isEntityAssetMoreThanThresholdNO" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
                         </div>
                     </div>
                 </div>
@@ -101,12 +101,12 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="isMoreThan6Branch" id="isMoreThan6BranchYES" value="yes" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isMoreThan6Branch == true ? 'checked' : ''}/>
-                            <label for="isMoreThan6BranchYES" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
+                            <label for="isMoreThan6BranchYES" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="isMoreThan6Branch" id="isMoreThan6BranchNO" value="no" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isMoreThan6Branch == false ? 'checked' : ''}/>
-                            <label for="isMoreThan6BranchNO" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
+                            <label for="isMoreThan6BranchNO" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
                         </div>
                     </div>
                 </div>

@@ -163,7 +163,6 @@
     </div>
 </div>
 
-
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
     <div class="container">
     	<dashboard:opportunityTickets></dashboard:opportunityTickets>

@@ -36,12 +36,12 @@
 
 <form:form action="${action}" method="post" modelAttribute="loginForm" name="sagiaLoginForm" id="sagiaLoginForm" onsubmit="return validateLoginForm()">
     <c:if test="${not empty message}">
-        <span class="has-error"> <spring:theme code="${message}"/></span>
+        <span class="has-error"><spring:theme code="${message}"/></span>
     </c:if>
 
     <div class="row col-lg-12 col-xl-12 col-12 login-screen r-sn">
         <div class="login-right-wrapper">
-            <div class="login-register-text">LOGIN</div>
+            <div class="login-register-text"><spring:theme code="dashboard.login.label"/></div>
             <div class="register-role-selection"> 
                 <img src="${commonResourcePath}/images/B2C/Partner.png" alt="Investor" class="img-fluid img-partner-active login-role" />
 			</div>	 

@@ -41,6 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 import java.util.EnumSet;
+import java.util.concurrent.CopyOnWriteArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -79,7 +80,12 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 			throws CMSItemNotFoundException {
 
 		ContactTicketModel contactTicketDetails = sagiaUserService.getContactTicketForTicketId(ticketId);
-		model.addAttribute("comments", contactTicketDetails.getComments());
+		List<CommentModel> comments = contactTicketDetails.getComments();
+		CopyOnWriteArrayList<CommentModel> commentsModified = new CopyOnWriteArrayList<>(comments);
+		LOG.info("comments before sorting "+commentsModified);
+		Collections.reverse(commentsModified);
+		LOG.info("comments after sorting "+commentsModified);
+		model.addAttribute("comments", commentsModified);
 		model.addAttribute("contactTicketDetails", contactTicketDetails);
 		if(StringUtils.isNotEmpty(contactTicketDetails.getOpportunityCode())) {
 			ProductData opportunityProductDetails = investSaudiProductFacade.getProductForCode(contactTicketDetails.getOpportunityCode());
@@ -108,7 +114,6 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 		if (null != contactTicket) {
 			List<CommentModel> comments = contactTicket.getComments();
 			Collections.reverse(comments);
-			modelService.save(contactTicket);
 			model.addAttribute("comments", comments);
 			model.addAttribute("contactTicketDetails", contactTicket);
 			if (StringUtils.isNotEmpty(contactTicket.getOpportunityCode())) {

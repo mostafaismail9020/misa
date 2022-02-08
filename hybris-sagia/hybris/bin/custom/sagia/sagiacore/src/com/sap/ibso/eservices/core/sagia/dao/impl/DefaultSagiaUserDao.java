@@ -80,7 +80,7 @@ public class DefaultSagiaUserDao extends DefaultGenericDao<CustomerModel> implem
 
 	private static final String QUERY_CONTACT_TICKET_LIST = "SELECT {ct:pk} FROM "
 			+ " {ContactTicket AS ct JOIN Customer AS cu ON {ct:customer} = {cu:pk}}"
-			+ " WHERE {cu:userNameEmail} = ?userNameEmail";
+			+ " WHERE {cu:userNameEmail} = ?userNameEmail ORDER BY {ct:modifiedtime} DESC";
 		
 	private static final String QUERY_CONTACT_TICKET = "SELECT {p:pk} FROM {ContactTicket AS p} WHERE {p.ticketID} = ?ticketId";
 

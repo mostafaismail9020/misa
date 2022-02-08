@@ -311,6 +311,12 @@ SAGIA.licenseApplyReview = {
 			objectCost = [];
 		}
 
+		if (typeof subsidiaryString == "undefined") {
+			subsidiaryString = '';
+		}
+
+
+
 		$("#reviewRHQBranchesTable tbody").html('');
 		try {
 			if (objectBranches?.length > 0) {
@@ -357,6 +363,32 @@ SAGIA.licenseApplyReview = {
 				$('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
 				$('#rhqCostTable-sum3').text(objectCost.sum("year2024"));
 			}
+		}
+		catch (err) {
+			console.log(err);
+		}
+
+		$("#rhqSubsidiaryPresenceDiv").html('');
+		try {
+
+			$('#rhqSubsidiaryPresenceDiv').html(subsidiaryString);
+			switch (subsidiaryString) {
+				case "only_one_country":
+					$('#rhqSubsidiaryPresenceDiv').html('Only one country');
+					break;
+				case "2_to_5_countries":
+					$('#rhqSubsidiaryPresenceDiv').html('2 to 5 countries');
+					break;
+				case "6_to_10_countries":
+					$('#rhqSubsidiaryPresenceDiv').html('6 to 10 countries');
+					break;
+				case "over_10_countries":
+					$('#rhqSubsidiaryPresenceDiv').html('over 10 countries');
+					break;
+				default:
+					$("#rhqSubsidiaryPresenceDiv").html('');
+			}
+
 		}
 		catch (err) {
 			console.log(err);

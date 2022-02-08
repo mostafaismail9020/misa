@@ -194,11 +194,11 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				entityInformationModel.setNoObjectionCertificateFile(null);
 			}
 
-			if(entityInformationModel.getLicenseType().getCode().equals("11"))
+			/*if(entityInformationModel.getLicenseType().getCode().equals("11"))
 			{
 				List<ShareHolderModel> shareHolders=licenseApplyService.getShareHolders();
 				modelService.removeAll(shareHolders);
-			}
+			}*/
 			if(entityInformationModel.getLicenseType().getCode().equals("11"))
 			{
 				saveEntityFinancialStatementEntityInfo(request, entityInformationModel);

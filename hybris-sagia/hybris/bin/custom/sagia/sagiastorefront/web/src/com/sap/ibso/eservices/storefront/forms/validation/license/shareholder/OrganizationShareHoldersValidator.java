@@ -5,6 +5,7 @@ package com.sap.ibso.eservices.storefront.forms.validation.license.shareholder;
 
 import com.sap.ibso.eservices.core.model.SagiaCountryModel;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaCountryDAO;
+import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
 import com.sap.ibso.eservices.facades.data.DelegateInformationData;
 import com.sap.ibso.eservices.facades.data.OrganizationShareholderData;
 import com.sap.ibso.eservices.storefront.forms.validation.SagiaValidationUtil;
@@ -35,6 +36,9 @@ public class OrganizationShareHoldersValidator implements Validator {
 
 	@Resource
 	private SagiaCountryDAO sagiaCountryDAO;
+
+	@Resource
+	private LicenseApplyService licenseApplyService;
 
 	@Resource
 	private DelegateInfoShareHoldersValidator delegateInfoShareHoldersValidator;
@@ -232,8 +236,8 @@ public class OrganizationShareHoldersValidator implements Validator {
 			if (!commercialRegCopyFileAdded && !"SA".equals(companyCountry)) {
 				errors.rejectValue("commercialRegCopy", "validation.shareholder.organization.companyRegistrationFile");
 			}
-
-			if (!lastYearFinStatementFileAdded) {
+			if((!licenseApplyService.getEntityInformation().getLicenseType().getCode().equals("11")) && (!lastYearFinStatementFileAdded))
+			{
 				errors.rejectValue("lastYearFinStatement", "validation.shareholder.organization.companyFinancialStatementFile");
 			}
 		}

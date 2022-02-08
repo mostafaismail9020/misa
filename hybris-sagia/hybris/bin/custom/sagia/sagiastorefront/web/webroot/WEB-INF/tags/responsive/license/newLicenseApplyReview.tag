@@ -310,7 +310,7 @@
                         <dl class="dlList">
                             <dt><spring:theme code="review.rhq.investor.activities.corporate.label"/></dt>
                             <c:forEach items="${selectedListOfCorporateActivities}" var="corporateActivity">
-                                	<dd>${corporateActivity}</dd>
+                                	<dd class="rhqListItems">${corporateActivity}</dd>
                             </c:forEach>
                        </dl>
                     </div>
@@ -318,7 +318,7 @@
                         <dl class="dlList">
                             <dt><spring:theme code="review.rhq.investor.activities.strategic.label"/></dt>
                         <c:forEach items="${selectedListOfStrategicActivities}" var="strategicActivity">
-                                <dd>${strategicActivity}</dd>
+                                <dd class="rhqListItems">${strategicActivity}</dd>
                         </c:forEach>
                        </dl>
                     </div>
@@ -326,7 +326,7 @@
                         <dl class="dlList">
                             <dt><spring:theme code="review.rhq.investor.activities.management.label"/></dt>
                                 <c:forEach items="${selectedListOfManagementActivities}" var="managementActivity">
-                                        <dd>${managementActivity}</dd>
+                                        <dd class="rhqListItems">${managementActivity}</dd>
                                 </c:forEach>
                        </dl>
                     </div>
@@ -334,7 +334,7 @@
                         <dl class="dlList">
                             <dt><spring:theme code="review.rhq.investor.activities.center.of.administrative.label"/></dt>
                             <c:forEach items="${entityInformation.rhqCenterAdmin}" var="centerOfAdmin">
-                                <dd>${centerOfAdmin}</dd>
+                                <dd class="rhqListItems">${centerOfAdmin}</dd>
                             </c:forEach>
                        </dl>
                     </div>
@@ -342,7 +342,7 @@
                         <dl class="dlList">
                             <dt><spring:theme code="review.profile.rhq.countries"/></dt>
                                 <c:forEach items="${selectedListOfCountries}" var="selectedCountries">
-                                        <dd>${selectedCountries}</dd>
+                                        <dd class="rhqListItems">${selectedCountries}</dd>
                                 </c:forEach>
                        </dl>
                     </div>
@@ -350,7 +350,7 @@
                         <dl class="dlList">
                             <dt><spring:theme code="review.profile.rhq.regions"/></dt>
                         <c:forEach items="${selectedListOfRegions}" var="selectedRegions">
-                                <dd>${selectedRegions}</dd>
+                                <dd class="rhqListItems">${selectedRegions}</dd>
                         </c:forEach>
                        </dl>
                     </div>
@@ -358,7 +358,7 @@
                         <dl class="dlList">
                             <dt><spring:theme code="review.rhq.mnc.subsidiaries.presence"/></dt>
                             <c:forEach items="${entityInformation.rhqSubsidiaryPresence}" var="subsidiary">
-                                    <dd>${subsidiary}</dd>
+                                    <dd class="rhqListItems"        id="rhqSubsidiaryPresenceDiv">${subsidiary}</dd>
                             </c:forEach>
                        </dl>
                     </div>
@@ -946,9 +946,17 @@
 
 <style>
 .sum-row{
-     padding: 26px 10px 25px;border-bottom:solid 1px #ebedee ;
+    padding: 15px 10px 15px;border-bottom:solid 1px #ebedee ;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1c242c;
+}
+
+.rhqListItems{
+    margin-bottom:0px !important;
 }
 </style>
+
 
 <script>
 	try{
@@ -978,6 +986,10 @@
 	  objectCost = [];
       objectCost =  JSON.parse(objectCostsString2);
 	  console.log(objectCost);
+
+      subsidiaryString ='';
+      subsidiaryString =  '${entityInformation.rhqSubsidiaryPresence[0]}';
+
     }
         catch(error){
         console.log(error);

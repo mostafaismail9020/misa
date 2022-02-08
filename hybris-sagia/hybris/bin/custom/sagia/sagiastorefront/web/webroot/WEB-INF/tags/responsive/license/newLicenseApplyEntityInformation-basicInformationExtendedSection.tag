@@ -1115,6 +1115,13 @@
 	z-index:999999;
 }
 
+#rhqCostTable-sum1,#rhqCostTable-sum2,#rhqCostTable-sum3{
+	font-weight: 600;
+    font-size: 14px;
+    color: #1c242c;
+	padding: 15px 10px 15px;
+}
+
 </style>
 
 

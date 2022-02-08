@@ -18,8 +18,8 @@ INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true] 
 
 
 
-INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                                          ; name                                                          ; &componentRef  				                          ; content[lang = en]                     ;content[lang = ar]
-                                   ;                          ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent       ; Sagia CMS Paragraph Dashboard No License Component            ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent   ;										    ;"
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                                          ; name                                                          ; &componentRef  				                          ; content[lang = ar]	;
+                                   ;                          ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent       ; Sagia CMS Paragraph Dashboard No License Component            ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent   ;	"
 <div class=""js-dashboardWidget"">
         <div class=""card dashboardWidget-body mb-5 p-0 no-border dashboardWidget-body-shadow"">
             <ul  class=""nav nav-tabs w-100"">
@@ -141,24 +141,10 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                 <div class=""process-card-step-header mt-3"">03</div>
                                 <div class=""process-card-step-description mt-1""> في انتظار الموافقة</div>
                             </div>
-                          </div>
-                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
-
-                          <div class=""process-step col-2 col-xs-12"">
-                            <div class=""process-card"">
-                                <div class=""process-card-step"">
-                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Payment.png""/>
-                                </div>
-                            </div>
-                            <div  class=""text-center"">
-                                <div class=""process-card-step-header mt-3"">04</div>
-                                <div class=""process-card-step-description mt-1""> دفع المقابل المالي</div>
-                            </div>
-                          </div>
-                          
+                          </div>                          
                       </div>
                   </div>
                   <div class=""text-center mt-5""><button onclick=""biddingCertificate(event);"" class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">apply<img class=""pl-3""  src=""/_ui/responsive/common/images/arow_btn.png""/></button></div>
               </div>
         </div>
-    </div>"
+    </div>";

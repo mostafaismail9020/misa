@@ -6,7 +6,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-
+<c:if test="${requestScope.captchaEnabledForCurrentStore}">
 	<div id="g-recaptcha_incorrect"><spring:theme code="recaptcha.challenge.field.invalid"/></div>
 	<div id="g-recaptcha_widget" class="g-recaptcha" data-sitekey="${fn:escapeXml(requestScope.recaptchaPublicKey)}"></div>
-
+</c:if>

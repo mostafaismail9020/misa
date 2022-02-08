@@ -100,9 +100,7 @@
                                        labelKey="text.secureportal.register.message" path="message"
                                        areaCSS="textarea form-control" mandatory="false"/>
       --%>
-        <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}"/>
-
-        <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
+        
 
 
         <div class="register-form-action row">
@@ -112,8 +110,14 @@
                                                             cssClass="termsAndConditionsRegister"
                                                             path="termsAndConditionsChecked" event="REGISTRATION"/>
                 </div>
+            <div class="col-xs-12">
+                 <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}"/>
+
+        <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
+                 </div>
             </div>
             <div class="col-xs-12 col-md-4 col-md-offset-4">
+           
                 <ycommerce:testId code="register_Register_button">
                     <button data-theme="b"
                             class="js-secureportal-register-button login-btn login-btn-next active btn-block">

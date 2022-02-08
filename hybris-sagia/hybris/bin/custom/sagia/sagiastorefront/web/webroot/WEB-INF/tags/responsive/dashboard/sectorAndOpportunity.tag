@@ -31,9 +31,12 @@
 	                           		<div class="dashboardWidgetBanner-tabs js-dashboardWidgetBanner-tabs ">
 	                           			<div class="dashboardWidgetBanner-tabs-body col-12">
 	                              			<div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header clr_gld">
-                                 				${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/>
+                                 				<!-- ${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/> -->
                               				</div>
-		                                    <p class="invest-with-us-description">${sector.sectorDetails}</p>
+											  <c:if test="${not empty customerSectorCategory}">
+		                                            <p class="invest-with-us-description">${customerSectorCategory.overview} </p>
+		                                       	</c:if>
+		                                    <!-- <p class="invest-with-us-description">${sector.sectorDetails}</p> -->
 		                                    <div class="row m-auto justify-content-center">	
 		                                       	<c:if test="${sector.sectorCode ne 'Others'}">
 		                                   			<div class="dashboardWidgetBanner-action">

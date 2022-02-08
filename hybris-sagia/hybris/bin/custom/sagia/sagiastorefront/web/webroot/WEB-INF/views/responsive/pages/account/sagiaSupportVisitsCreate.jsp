@@ -72,7 +72,7 @@
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
-        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
+        <div class="mainSection-linkActions my-4 mainSection-linkActions_spaceBetween">
             <div class="row renewal-services w-100">
                 <div class="col-xl-3 col-12">
                     <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
@@ -182,7 +182,7 @@
 							<div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
 
                             <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-                                <button type="submit" class="btn btn--primary btn--half-radius w-50"><spring:theme code="text.account.followup.supportVisitRequest"/></button>
+                                <button type="submit" class="btn btn--primary btn--half-radius btn_auto"><spring:theme code="text.account.followup.supportVisitRequest"/></button>
                             </div>
                         </div>
                     </div>

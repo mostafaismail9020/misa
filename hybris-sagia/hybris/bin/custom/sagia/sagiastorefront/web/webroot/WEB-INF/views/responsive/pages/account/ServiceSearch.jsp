@@ -43,10 +43,10 @@
 
 <div class="mainSection mainSection_grey">
     <div class="container">
-        <div class="col-xs-12 col-md-12 services-category-list">
+        <div class="col-xs-12 col-md-12 services-category-list p-0 p-md-2">
             <ul class="nav nav-pills sagiaNavigation-services" id="pills-tab" role="tablist">
                 <li class="nav-item col-lg-4 col-md-12" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
-                    <div class="service-wrapper mx-3">
+                    <div class="service-wrapper mx-1 mx-md-3">
                         <a class="nav-link active" id="pills-licensing-tab" data-toggle="pill" href="#FIRST" role="tab" aria-controls="pills-licensing" aria-selected="true">
                             <div class="INS_EPM_border_set text-center p-3">
                                 <img src="${commonResourcePath}/images/dashboard-media/services/License-Services-Yellow-100x100.png" alt="LICENSING SERVICES" class="text-center service-icon-1"/>
@@ -90,7 +90,7 @@
                 </li>
 
                 <li class="nav-item col-lg-4 col-md-12" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
-                    <div class="service-wrapper mx-3">
+                    <div class="service-wrapper mx-1 mx-md-3">
                         <a class="nav-link " id="pills-govt-tab" data-toggle="pill" href="#GOVERNMENTAL SERVICES" role="tab" aria-controls="pills-govt" aria-selected="true">
                             <div class="INS_EPM_border_set text-center p-3">
                                 <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-Yellow-100x100.png" alt="GOVERNMENTAL SERVICES" class="text-center service-icon-1"/>
@@ -152,7 +152,7 @@
                 </li>
 
                 <li class="nav-item col-lg-4 col-md-12"  onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
-                    <div class="service-wrapper mx-3">
+                    <div class="service-wrapper mx-1 mx-md-3">
                         <a class="nav-link " id="pills-misa-tab" data-toggle="pill" href="#SAGIA SERVICES" role="tab" aria-controls="pills-misa" aria-selected="true">
                             <div class="INS_EPM_border_set text-center p-3">
                                 <img src="${commonResourcePath}/images/dashboard-media/services/MISA Services.png" alt="MISA SERVICES" class="text-center service-icon-1"/>

@@ -74,7 +74,7 @@
 <section class="mainSection mainSection_noPadding userDetail-block">
     <div class="container">
         <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
-            <div class="dashboardUser-wrapper col-md-12 mr-0 pt-3 px-0">
+            <div class="dashboardUser-wrapper col-md-12 mr-0 pt-md-3 px-0">
                 <div class="dashboardUser-left col-md-6 pr-0">
                     <div class="col">
                         <div class="dashboardUser-image">
@@ -89,7 +89,7 @@
                             </div>
                             
                             <div class="dashboardUser-col">
-                                <div class="dashboardUser-entry ml-3">
+                                <div class="dashboardUser-entry ml-md-3">
                                     <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
                                     <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/><span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
                                 </div>
@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <div class="dashboardUser-right col-md-6 px-0">
-                    <div class="col-6">
+                    <div class="col-6 p-0 px-md-3">
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
                         	<!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
                             <div class="account-manager"><h4 class="clr_gld"><spring:theme code="dashboard.license.account.manager.title"/></h4></div>
@@ -108,14 +108,14 @@
                             <!--  <button class="btn-dashboard text-uppercase">service request</button> -->
                         </div>
                     </div>
-                    <div class="col-6 d-flex">
-                        <div class=" user-icon mr-3">
+                    <div class="col-6 d-flex p-0">
+                        <div class=" user-icon mr-1 mr-md-3">
                             <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
                             <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
                                 <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/>
                             </a>
                         </div>
-                        <div class=" user-icon mr-3">
+                        <div class=" user-icon mr-1 mr-md-3">
                             <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/> -->
                             
 
@@ -179,7 +179,7 @@
 
 <section class="mainSection mainSection_noPadding bg-white">
     <div class="container">
-        <h1 class="dashboard-headline services-headline js-dashboardWidget-headline text-center pt-5 mb-5">
+        <h1 class="dashboard-headline services-headline js-dashboardWidget-headline text-center py-md-5 py-3">
             <spring:theme code="dashboard.license.services.title"/>
         </h1>
         <!-- <div class="dashboardUser_slim dashboardUser_noBorder pb-5">
@@ -346,7 +346,7 @@
             </h1>
 		</div>
         <div class="col-12">
-            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-5">
+            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
             	<spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/>
             </a>
         </div>
@@ -357,7 +357,7 @@
     <div class="">
             <div class="container dashboardUser dashboardUser_slim dashboardUser_noBorder">
                 <div class="dashboard-tabs">
-                    <ul class="nav nav-tabs mb-0 dashboard-licenses-navs" role="tablist">
+                    <ul class="nav nav-tabs mb-0 dashboard-licenses-navs" role="tablist" id="tabsDasboard">
                         <li class="nav-item" id="js-myLicense"> <a class="nav-link active" href="#myLicense" role="tab" data-toggle="tab"><spring:theme code="myLicense.title"/></a>
                         </li>
                         <li class="nav-item" id="js-paymentsDetails"><a class="nav-link" href="#payments" role="tab" data-toggle="tab"><spring:theme code="payments.page.title"/></a>
@@ -378,11 +378,11 @@
                         <div role="tabpanel" class="tab-pane fade" id="payments">
                             <div class="dashboardWidget js-dashboardWidget">
                                 <div class="dashboardWidget-headline js-dashboardWidget-headline">
-                                    <!-- <a href="" data-redirect="payments-overview" class="js-page-redirect"
+                                     <a href="" data-redirect="payments-overview" class="d-block d-md-none js-page-redirect"
                                        style="text-decoration: inherit;color: inherit">
                                         <spring:theme code="payments.page.title"/> 
                                     </a> 
-                                     <div class="dashboardWidget-headline-icon">
+                                    <!-- <div class="dashboardWidget-headline-icon">
                                         <a href="" data-redirect="payments-overview" class="js-page-redirect"><icon:payments/></a>
                                     </div> -->
                                     <div class="dashboardWidget-filter">
@@ -524,6 +524,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="panel-group" id="accordionDashboard" role="tablist" aria-multiselectable="true"></div>
                 </div>
         </div>
     </div>
@@ -550,7 +551,7 @@
                     <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
                         <h1 class="section-title text-center clr_gld pt-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
                         <!-- <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp; -->
-                        <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-5">
+                        <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
                         	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
                             <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
                     	</a>
@@ -629,9 +630,9 @@
                     <div>
                         <img  alt="" src="${commonResourcePath}/images/Contact-us/email.png"/>
                     </div>
-                    <div>
+                    <div class="d-none d-md-block">
                         <span class="firstBlock-contact-local-label">&nbsp;
-                            <!-- <spring:theme code="dashboard.license.letus.help.you.International"/> -->
+                           <!-- <spring:theme code="dashboard.license.letus.help.you.International"/> -->
                         </span>
                     </div>
                     <div>
@@ -643,10 +644,10 @@
             </div>
 
             <div class="row mb-3">
-                <div class="col-6 justify-content-end d-flex">
+                <div class="col-md-6 col-xs-12">
                     <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6 col-xs-12 pt-3 pt-md-0">
                     <a class="btn " href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
                 </div>
             </div>
@@ -997,4 +998,7 @@
 <script type="application/javascript">
     //var displayTutorial = ${displayTutorial};
     variableEditable = false;
+    $(document).ready(function(){
+        getAccordionWithLicense("#tabsDasboard",768);
+    });
 </script>

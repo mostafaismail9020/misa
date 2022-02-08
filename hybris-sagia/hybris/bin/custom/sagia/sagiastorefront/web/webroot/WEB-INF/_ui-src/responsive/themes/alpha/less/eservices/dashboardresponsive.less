@@ -24,6 +24,7 @@
 		float: none !important;
 		width: max-content;
 		margin: 0 auto 15px !important;
+		display: block;
 	}
 	
 	[dir] .page-dashboard-without-license .dashboardUser-right {
@@ -60,11 +61,92 @@
 		position: relative;
 		display: block;
 	}
-	.footer-popup .footerContent .f-coll .display-7 {
-		min-height: initial;
+}
+/******** licensed dashboard responsive***/
+@media (max-width: 767px){
+	.page-dashboard .dashboardUser-entry, .page-dashboard-edit .dashboardUser-entry {
+		display: block;
+		text-align: left;
 	}
-	.footer-popup .footerContent .f-coll p.text {
-		min-height: initial;
-		padding: 10px 0px;
+	.page-dashboard .dashboardUser-entry h2, .page-dashboard-edit .dashboardUser-entry h2{
+		font-size: 25px;
+	}
+	.page-dashboard .dashboardUser-label, .page-dashboard-edit .dashboardUser-label{
+		width: auto;
+	}
+	.page-dashboard .dashboardUser-right, .page-dashboard-edit .dashboardUser-right{
+		padding-bottom: 20px;
+	}
+	.page-dashboard .globalMessage-msg, .page-dashboard-edit .globalMessage-msg{
+		padding-left: 80px !important;
+		padding-right: 0;
+	}
+	.page-dashboard .globalMessage-icon, .page-dashboard-edit .globalMessage-icon{
+		left: 20px;
+	}
+	h1{
+		font-size: 25px !important;
+	}
+	.page-dashboard .dashboardWidget-body{
+		display: block;
+	}
+	.dashboardWidgetLicense-action .btn+.btn{
+		margin-left: 0 !important;
+	}
+	.page-dashboard .dashboardWidget-body{
+	   display: block;
+   }
+   .user-icon img{
+	   height: 50px;
+   }
+   .page-dashboard .dashboardUser-right{
+	   border-top: 1px solid #707070;
+	   padding-top: 10px;
+   }
+   .page-dashboard .licensing-heading{
+	   font-size: 25px !important;
+   }
+   .sagiaNavigation-services .service-wrapper .nav-link .INS_EPM_border_set{
+	   padding: 10px 0 0 !important;
+   }
+
+   #creditCardPayment .modal-dialog, #licenseApplicationPayment .modal-dialog{
+	   width: auto;
+	   padding: 0 20px !important;
+   }
+   [dir] .modal-dialog .modal-header, [dir] .modal-dialog .modal-secondaryContent{
+	   padding: 60px 15px 15px;
+   }
+	.modal-close{
+	   top: 15px;
+   }
+	.tableModule, .modal-description{
+	   margin-bottom: 0 !important;
+   }
+   [dir] #licenseApplicationPayment .modal-dialog .payment-btn{
+	   padding: 5px 12px !important;
+	   margin-right: 0 !important;
+	   width: 100%;
+	   align-items: center;
+   }
+   .pay-with-salad{
+	   padding-right: 10px;
+   }
+}
+/******** licensed dashboard responsive arabic***/ 
+@media (max-width: 767px){
+	[dir=rtl].page-dashboard .dashboardUser-entry{
+		text-align: right;
+	}
+	[dir=rtl] .page-dashboard .globalMessage-msg{
+		padding-right: 80px !important;
+		padding-left: 0;
+	}
+	[dir=rtl] .page-dashboard .globalMessage-icon{
+		right: 20px;
+		left: auto;
 	}
 }
+
+/******** licensed dashboard responsive ends***/
+

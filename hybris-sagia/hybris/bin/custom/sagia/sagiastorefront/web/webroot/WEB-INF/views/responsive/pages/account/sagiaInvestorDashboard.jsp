@@ -79,7 +79,7 @@
                     <div class="col">
                         <div class="dashboardUser-image">
                             <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">
-                                <button type="button"  id="btnfile" class="dashboardUser-image-add"><icon:plus/><span id="fname"></span></button>
+                                <button type="button"  id="btnfile" class="dashboardUser-image-add"><img src="${commonResourcePath}/images/change-profile-icon.png"/><span id="fname"></span></button>
                                 
                                 <div class="myAccount-profilImage">
                                     <div class="myAccount-profilImage-img">

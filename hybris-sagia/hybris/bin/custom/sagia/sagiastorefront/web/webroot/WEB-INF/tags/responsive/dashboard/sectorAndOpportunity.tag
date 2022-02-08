@@ -130,13 +130,13 @@
 		                                 <a href="${encodedContextPath}${featuredOpportunity.opportunity.url}" class="m-auto">
 											<button class="btn btn-sector-primary text-uppercase mx-auto">
 												<spring:theme code="portal.sector.opportunity.know.more.label"/>
-												<img class="img-fluid arrow-icon" src="/_ui/responsive/common/images/know-more.png" alt="">
+												<img class="img-fluid arrow-icon transform-180-degree" src="/_ui/responsive/common/images/know-more.png" alt="">
 											</button>
 										</a>
 										<a href="${encodedContextPath}${featuredOpportunity.opportunity.url}/?scrollTo=contact" class="m-auto">
 		                                 <button class="btn btn-sector-outline mx-auto">
 		                                 	<spring:theme code="portal.opportunity.iam.interested.button"/>
-		                                 	<img class="img-fluid arrow-icon" src="/_ui/responsive/common/images/btn-sector-outline.png" alt="">
+		                                 	<img class="img-fluid arrow-icon transform-180-degree" src="/_ui/responsive/common/images/btn-sector-outline.png" alt="">
 		                                 </button>
 										</a>
 		                                 <!-- <span class="Inc-sector-icon-mini">

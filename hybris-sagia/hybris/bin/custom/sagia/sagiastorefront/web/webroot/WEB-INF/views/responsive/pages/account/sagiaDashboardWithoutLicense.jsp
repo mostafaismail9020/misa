@@ -268,7 +268,7 @@
                                 </span>
                             </div>
                             <div>
-                                <span class="firstBlock-contact-local-number">
+                                <span class="firstBlock-contact-local-number emailBlock">
                                     InvestorCare@misa.gov.sa
                                 </span>
                             </div>

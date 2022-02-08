@@ -584,3 +584,305 @@ label.btn.lang-btn.active {
     white-space: nowrap;
     overflow: hidden;
 }
+
+/****** footer mobile screen css *****/
+@media (max-width: 640px) {
+	.footer {
+		position: relative;
+		padding-top: 1rem;
+     	padding-bottom: 0.5rem;
+	}
+    [dir=ltr] .ft-logo {
+		left: 10%;
+		right: 0;
+		left: 0;
+	}
+	.footer .my-login-part {
+		position: absolute;
+		top: 30px;
+		right: 15px !important;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+		width: auto !important;
+	}
+
+	.footerContent .f-coll .display-7 {
+		font-size: 20px;
+		color: #026a37;
+		text-align: center !important;
+		min-height: 4rem;
+	}
+	.footerContent .f-coll p {
+		padding-bottom: 0px;
+		text-align: center !important;
+		padding-bottom: 35px;
+	}
+	.footer img.footer_logo {
+		width: 93px;
+		position: relative;
+		left: 12%;
+		top: -2px;
+		margin-bottom: 0;
+	}
+	.ft-logo {
+		position: absolute !important;
+		bottom: 0px;
+		left: 10%;
+		right: 0;
+		width: 100%;
+		display: block;
+		align-items: center;
+		justify-content: center;
+		border-bottom: none !important;
+		left: 0;
+	}
+	.footer .footer-menu {
+		padding: 0;
+		margin-top: 12px;
+        color: #707070;
+		text-align: center;
+	}
+	.footer .text-left {
+		border-bottom: 1px solid #707070;
+	}
+	.ft-social-logo {
+		position: relative;
+		margin-left: auto;
+	}
+	.follow-us {
+		font-size: 14px;
+		text-align: center;
+		color: #141414;
+		padding-left: 50%;
+		margin-top: 20px;
+		margin-bottom: 0;
+		letter-spacing: 0.34px;
+	}
+	.footer-menu-links .social-links {
+		padding-left: 50%;
+	}
+	.social-links li {
+		margin-right: 0.4em;
+		margin-top: 13px;
+	}
+	.footer-menu-links .social-links li {
+		float: none;
+	}
+    .copyright {
+		line-height: 1.2;
+		padding-top: 1rem !important;
+		height: auto;
+		padding-bottom: 0.5rem !important;
+	}
+	.copyright .container {
+		max-width: 100% !important;
+	}
+	.copyright div {
+		margin: 0 auto;
+		text-align: center !important;
+		font-weight: 400;
+    	font-size: 16px;
+	}
+	.copyright div .nav-bottom-footer {
+		margin: 0.5rem auto;
+		padding: 0;
+	}
+	.copyright div .nav-bottom-footer li {
+		float: none;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.copyright .nav-bottom-footer li a {
+		padding: 0;
+		margin-right: 12px;
+	}
+    
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.footer {
+		position: relative;
+	}
+	[dir] .footer .footer-menu{
+		text-align: center !important;
+	}
+	.footerContent .f-coll .display-7 {
+		font-size: 18px;
+		text-align: center !important;
+	}
+	[dir=ltr] .footerContent .f-coll p{
+		text-align: center !important;
+	}
+	.footerContent .f-coll .link, .footerContent .f-coll ul li a {
+		font-size: 12px;
+		font-weight: unset;
+	}
+	.ft-logo {
+		position: absolute !important;
+		bottom: 0px;
+		left: 10%;
+		right: 0;
+		width: 100%;
+		display: block;
+		align-items: center;
+		justify-content: center;
+		border-bottom: none !important;
+		margin-bottom: 0 !important;
+	}
+	.ft-social-logo {
+		position: relative;
+		margin-left: auto;
+	}
+	.follow-us {
+		white-space: nowrap;
+		padding: 0;
+		font-size: 14px;
+		text-align: center;
+		color: #141414;
+		margin-top: 20px;
+		margin-bottom: 0;
+		letter-spacing: 0.34px;
+	}
+	
+	.social-links {
+		white-space: nowrap;
+		padding-left: 0 !important;
+	}
+	.social-links li {
+		width: 28px;
+		margin-right: 0.1rem;
+	}
+	.footer-menu-links .social-links li {
+		float: none;
+	}
+	.copyright {
+		font-size: 14px;
+	}
+	
+}
+@media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height:1366px) and (max-height:1366px) {
+    .ft-logo {
+        position: inherit;
+    }
+}
+/****** footer responsive screen css ends *****/
+/****** float footer responsive ***///
+
+@media (max-width: 767px){
+	.float-button {
+		width: 60px;
+		height: 60px;
+		border-radius: 60px;
+		box-shadow: 0px 4px 8px #0000003b;
+		background-color: #0097a9;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		font-size: 10px;
+		text-transform: uppercase;
+		bottom: 22px;
+		right: 30px !important;
+		border: 0;
+		cursor: pointer;
+		transition: all 0.4s ease;
+		z-index: 99;
+	}
+	.float-button-up {
+		bottom: 0;
+		transition: all 0.4s ease;
+		background-color: white !important;
+		color: #fff !important;
+		z-index: 999999999;
+		top: 0;
+	}
+	.footerContent .f-coll p {
+		padding-bottom: 0px;
+		text-align: center;
+		padding-bottom: 35px;
+	}
+	.footerContent .f-coll p {
+		padding-bottom: 0px;
+		text-align: center;
+		padding-bottom: 35px;
+	}
+    .footerContent .f-coll ul li::after {
+		padding-right: 20px;
+	}
+	.popup-up {
+		bottom: -41px;
+		transition: all 0.4s ease;
+		opacity: 1;
+		height: 100%;
+		z-index: 99999;
+	}
+} 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.float-button {
+		width: 60px;
+		height: 60px;
+		border-radius: 60px;
+		box-shadow: 0px 4px 8px #0000003b;
+		background-color: #0097a9;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		font-size: 12px;
+		text-transform: uppercase;
+		bottom: 22px;
+		right: 30px;
+		border: 0;
+		cursor: pointer;
+		transition: all 0.4s ease;
+		z-index: 99;
+	}
+	.float-button-up {
+		bottom: 210px;
+		transition: all 0.4s ease;
+		background-color: white !important;
+		color: #fff !important;
+	}
+	.footerContent .f-coll p {
+		padding-bottom: 0px;
+		text-align: center;
+		padding-bottom: 35px;
+	}
+	.footerContent .f-coll p {
+		padding-bottom: 0px;
+		text-align: center;
+		padding-bottom: 35px;
+	}
+    .popup-up{
+		bottom: -3px;
+	}
+	.float-button-up{
+		bottom: 25% !important;
+	}
+} 
+@media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height:1366px) and (max-height:1366px) {
+	[dir=ltr] .ft-logo{
+		left: auto;
+		position:relative !important;
+	}
+
+    .float-button-up {
+		bottom: 286px;
+	}
+}
+.popup-up .footer-popup .footerContent {
+    padding-top: 30px;
+}
+.footerContent .f-coll .link, .footerContent .f-coll ul li a {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.28px;
+    color: #0489a3;
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+/****** float footer responsive ***///

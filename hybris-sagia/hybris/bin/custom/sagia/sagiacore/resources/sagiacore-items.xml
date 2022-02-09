@@ -3445,6 +3445,28 @@
 						<description>To identify the source system</description>
 						<modifiers read="true" write="true" search="true" optional="true"/>
 					</attribute>
+					<attribute autocreate="true" qualifier="mediaAttachmentUrl" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <custom-properties>
+                            <property name="hmcIndexField">
+                                <value>"thefield"</value>
+                            </property>
+                        </custom-properties>
+                    </attribute>
                 </attributes>
             </itemtype>
 

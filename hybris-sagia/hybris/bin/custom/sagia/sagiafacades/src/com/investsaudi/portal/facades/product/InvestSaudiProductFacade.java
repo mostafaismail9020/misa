@@ -74,4 +74,5 @@ public interface InvestSaudiProductFacade extends Serializable {
      */
     SearchPageData<SuccessStoryData> searchSuccessStoriesByNameAndSectors(String text, List<String> categories, int currentPage, int pageSize);
 
+    void uploadPdfForOpportunity(String productCode);
 }

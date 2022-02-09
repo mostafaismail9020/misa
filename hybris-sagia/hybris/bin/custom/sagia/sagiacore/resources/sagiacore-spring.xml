@@ -1408,6 +1408,11 @@
     
     <bean id="investSaudiMediaCenterService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiMediaCenterServiceImpl" />
+		  
+    <bean id="opportunityProductMediaRestApiService" class="com.investsaudi.portal.core.service.impl.OpportunityProductMediaRestApiServiceImpl">
+          <property name="modelService" ref="modelService"/>
+          <property name="mediaService" ref="mediaService"/>
+    </bean>
           
     <bean id="investSaudiProvinceRegionService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiProvinceRegionServiceImpl" />

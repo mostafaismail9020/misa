@@ -1715,7 +1715,11 @@
 
 	<bean id="investSaudiCategoryFacade" class="com.investsaudi.portal.facades.category.impl.InvestSaudiCategoryFacadeImpl"/>
 
-	<bean id="investSaudiProductFacade" class="com.investsaudi.portal.facades.product.impl.InvestSaudiProductFacadeImpl"/>
+	<bean id="investSaudiProductFacade" class="com.investsaudi.portal.facades.product.impl.InvestSaudiProductFacadeImpl">
+	    <property name="modelService" ref="modelService"/>
+		<property name="opportunityProductMediaRestApiService" ref="opportunityProductMediaRestApiService"/>
+		<property name="catalogVersionService" ref="catalogVersionService" />
+	</bean>
 
 	<bean id="investSaudiOpportunityPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiOpportunityPopulator">
 		<property name="imageConverter" ref="imageConverter"/>

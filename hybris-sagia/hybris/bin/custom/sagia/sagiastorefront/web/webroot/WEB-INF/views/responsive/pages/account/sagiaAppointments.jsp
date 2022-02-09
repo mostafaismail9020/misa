@@ -465,19 +465,26 @@
                                                         <td class="appointmentList-view">
                                                             <a href="${encodedContextPath}/appointments/details/" class="btn btn_link appointmentList-viewBtn appointmentList-icon_view">
                                                                 <span><spring:theme code="appointments.viewDetails"/></span>
-                                                                <icon:view/>
+                                                                <!-- <icon:view/>-->
                                                             </a>
                                                         </td>
                                                     </tr>
                                                 </table>
 
                                                 <script>
-                                                    var appointmentsJson = ${appointmentsJson};                                                       
-                                                    
-                                                    var formOptionsJSON = ${formOptionsJSON};
-                                                                                                          
-                                                    var notificationsJson = ${notificationsJson};
-                                                                                                           
-                                                    var calendarLabelsJson = ${calendarLabelsJson};                                                       
-                                                    
+                                                    var appointmentsJson = $ {
+                                                        appointmentsJson
+                                                    };
+
+                                                    var formOptionsJSON = $ {
+                                                        formOptionsJSON
+                                                    };
+
+                                                    var notificationsJson = $ {
+                                                        notificationsJson
+                                                    };
+
+                                                    var calendarLabelsJson = $ {
+                                                        calendarLabelsJson
+                                                    };
                                                 </script>

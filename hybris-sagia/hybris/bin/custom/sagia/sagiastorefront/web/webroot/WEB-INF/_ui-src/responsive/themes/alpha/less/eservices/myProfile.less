@@ -61,6 +61,7 @@ span {
 #reviewContent .dlList dd{
     width: 100%;
     overflow: hidden;
+    padding-left: 0;
     text-overflow: ellipsis;
 }
 .formSelectBox .select2.select2-container.select2-container--disabled+.control-label {
@@ -2108,6 +2109,290 @@ button:focus {
     color: @color-primary;
 }
 
+.page-new-apply-contactperson #contactPersonForm{
+    #contactDetails{
+        #qm1Title{
+            margin-left: 40px;
+            #mrTitle+label{
+            width: 110px;
+            border-radius: 25px;
+            }
+            #mrsTitle+label{
+                width: 110px;
+                border-radius: 25px;
+            }
+        }
+    }
+}
+.page-new-apply-review .contentModule-actions+h3{
+    font-size:20px !important;
+}
+.page-appointment-create{
+    #requestSubmittedApply{
+        .modal-footer{
+            .js-close-btn{
+                font-weight: 600;
+                padding-top: 15px;
+            }
+        }
+    }
+}
+.page-appointment-create .appointmentDetails {
+    .formTextArea {
+         .control-label{
+          font-size: 16px;
+          top: 20px !important;
+           left:20px;
+       }
+
+       .form-control:placeholder-shown+.control-label{
+           padding-left: 10px;
+      }
+    }
+    .formInputBox .form-control{
+           font-size: 16px;
+
+    }
+    .formInputBox .form-control:placeholder-shown+.control-label{
+           font-size: 16px;
+    }
+    .formSelectBox .select2.select2-container.select2-container--disabled+.control-label{
+           font-weight: normal;
+           top:30px !important;
+           left: 20px !important;
+    }
+    .formSelectBox .form-group label{
+         font-weight: normal;
+  }
+}
+
+.page-appointment-create .appointmentDetails {
+    .formTextArea {
+         .control-label{
+          font-size: 16px;
+          top: 20px !important;
+          left:20px;
+       }
+
+    .form-control:placeholder-shown+.control-label{
+          padding-left: 10px;
+      }
+    }
+    .formInputBox .form-control{
+          font-size: 16px;
+
+    }
+    .formInputBox .form-control:placeholder-shown+.control-label{
+           font-size: 16px;
+    }
+    .formSelectBox .select2.select2-container.select2-container--disabled+.control-label{
+        font-weight: normal;
+        top:30px !important;
+        left: 20px !important;
+    }
+    .formSelectBox .form-group label{
+     font-weight: normal;
+  }
+}
+.page-appointments{
+    .btn-dashboard {
+        &:active{
+            color: #FFF;
+        }
+    }
+    .panelModule{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .searchInputBox{
+        max-width: 100%;
+    }
+    .btn-search{
+        float:right;
+        right: 0;
+        font-weight: normal;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    .appointmentList-entry {
+        .appointmentList-status {
+            .appointmentList-status-value{
+                padding: 0 !important;
+            }
+        }
+        span.appointmentList-label{
+            padding: 10px;
+
+        }
+        .appointmentList-viewBtn{
+            width: 100%;
+            text-align: right;
+            span{
+            margin-right: 0;
+            text-transform: capitalize;
+            }
+          }
+    }
+}
+.page-appointment-details{
+    .appointmentDetails{
+        .service-main-div{
+           .service-hr-line{
+            margin-left: 0;
+            margin-right: 0;
+            .dlList_separated{
+                dt{
+                    font-size: 20px;
+                    display: block;
+                    width: 100%;
+                    margin-left: 0;
+                }
+                dd{
+                    font-weight: 500;
+                    display: block;
+                    width: 100%;
+              }
+            }
+            .dlList_lineThrough{
+                dt{
+                    font-size: 20px;
+                    display: block;
+                    width: 100%;
+                    margin-left: 0;
+                }
+                dd{
+
+                    font-weight: 500;
+                    display: block;
+                    width: 100%;
+              }
+            }
+          }
+        }
+        .dlList{
+            dt{
+                width: 20%;
+            }
+            dd{
+                width: 60%;
+            }
+        }
+        .appointmentDetails-properties{
+            .appointmentList-location{
+                padding: 0;
+            }
+            .appointmentList-status{
+                margin-top: 0;
+
+            }
+            .appointmentList-date{
+                width: 120px;
+                svg{
+                    top:0;
+                }
+                .appointmentList-date-month{
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                .appointmentList-date-day{
+                    display: inline-block;
+                    vertical-align: top;
+
+                }
+                .appointmentList-date-time{
+                    display: block;
+                    line-height: normal;
+                    margin-top: -15px;
+                    margin-left: -2px;
+                }
+            }
+            .appointmentDetails-property_delimiter{
+                    top:5px;
+            }
+        }
+    }
+}
+.page-new-license-apply{
+    .service-time{
+        .serviceTime-label{
+            display: none;
+        }
+        .serviceTime-detail{
+            display: none;
+        }
+    }
+}
+.page-payments-overview{
+    #payments{
+        .dashboardWidget{
+            .dashboardWidgetPayments{
+                .tableModule-table{
+                    .tableModule-body{
+                        .dashboardWidgetPayments-pay{
+                            a{
+                                &:hover{
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #creditCardPayment{
+        .modal-content {
+            .modal-header{
+                margin: 0 60px;
+                margin-bottom: 60px;
+                border-bottom: 2px dashed #707070;
+                .modal-title{
+                    font-size: 40px;
+                }
+            }
+            .modal-close{
+                right: 53px;
+            }
+            .modal-body{
+                .modal-description{
+                    .formInputBox{
+                        .form-group{
+                            input{
+                                border: none !important;
+                                margin-bottom: 50px;
+                               -webkit-box-shadow: 0px 19px 47px #00000029 !important;
+                                box-shadow: 0px 19px 47px #00000029 !important;
+                                border-radius: 113px !important;
+                            }
+                            iframe{
+                                border: none !important;
+                               -webkit-box-shadow: 0px 19px 47px #00000029 !important;
+                                box-shadow: 0px 19px 47px #00000029 !important;
+                            }
+                            .control-label{
+                                margin-left: 0 !important;
+                            }
+                        }
+                    }
+                }
+                .formRadioPayment{
+                    .modal-footer{
+                        padding: 0;
+                        justify-content:flex-end;
+                        #PayButton{
+                            width: 50%;
+                            margin-right: 25px;
+                            margin-bottom: 60px;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media (min-width: 992px){
     .page-shareholder-apply,.page-shareholder-apply,.page-new-apply-contactperson,.page-new-apply-review,.page-sagia-profile,.page-license-bidding
     {
@@ -2159,70 +2444,5 @@ button:focus {
 .formRadioBox{
     .form-control:disabled, .form-control[readonly]{
         opacity: 0 !important;
-    }
-}
-
-.page-appointment-create .appointmentDetails {
-    .formTextArea {
-         .control-label{
-          font-size: 16px;
-          top: 20px !important;
-          left:20px;
-       }
-
-    .form-control:placeholder-shown+.control-label{
-          padding-left: 10px;
-      }
-    }
-    .formInputBox .form-control{
-          font-size: 16px;
-
-    }
-    .formInputBox .form-control:placeholder-shown+.control-label{
-           font-size: 16px;
-    }
-    .formSelectBox .select2.select2-container.select2-container--disabled+.control-label{
-        font-weight: normal;
-        top:30px !important;
-        left: 20px !important;
-    }
-    .formSelectBox .form-group label{
-     font-weight: normal;
-  }
-}
-.page-appointments{
-    .panelModule{
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-    .searchInputBox{
-        max-width: 100%;
-    }
-    .btn-search{
-        float:right;
-        right: 0;
-        font-weight: normal;
-        &:hover{
-            text-decoration: none;
-        }
-    }
-    .appointmentList-entry {
-        .appointmentList-status {
-            .appointmentList-status-value{
-                padding: 0 !important;
-            }
-        }
-        span.appointmentList-label{
-            padding: 10px;
-
-        }
-        .appointmentList-viewBtn{
-            width: 100%;
-            text-align: right;
-            span{
-            margin-right: 0;
-            text-transform: capitalize;
-            }
-          }
     }
 }

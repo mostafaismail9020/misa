@@ -1,16 +1,13 @@
-$langen = en
-$langar = ar
 
 $contentCatalog = sagiaContentCatalog
 $contentCatalogName = Sagia Content Catalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$siteResource = jar:com.sap.ibso.eservices.initialdata.setup.InitialDataSystemSetup&/sagiainitialdata/import/sampledata/contentCatalogs/$contentCatalog
+
 $icon = icon(code, $contentCV)
 $menuIcon = menuIcon(code, $contentCV)
 $sagiaCategory = category(code)
 
-
-
+$langen = en
 
  
 INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $langen]               							  											; description[lang = $langen]																																																																																																																																								 
@@ -387,7 +384,7 @@ UPDATE SagiaService              ; code[unique = true]           ; rulesRestrict
 																																																																																																																		
 																																																																																																																		
 																																																																																																																			
-							 ; ZMOCI_15							   ;"1- The entity shall present a draft of the Articles of Association of the company in WORD version."													 																																		
+							; ZMOCI_15							   ;"1- The entity shall present a draft of the Articles of Association of the company in WORD version."													 																																		
 																																																																																																																			
 																																																																																																																			
 																																																																																																																	
@@ -396,28 +393,26 @@ UPDATE SagiaService              ; code[unique = true]           ; rulesRestrict
 																																																																																																																	
 																																																																																																																	
 																																																																																																																	
-						   ;	ZMOCI_20						   ;"<p>1.The company is committed to make an electronic publication through the portal of 'my business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</p>" 																							
+							;	ZMOCI_20						   ;"<p>1.The company is committed to make an electronic publication through the portal of 'my business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</p>" 																							
 																																																																																																																	
 																																																																																																																	
 																																																																																																																		
-				          ;	ZMOCI_08								;"<p>1.The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</p>"																								
+							;	ZMOCI_08							;"<p>1.The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</p>"																								
 																																																																																																																	
 																																																																																																																	
 																																																																																																																			 
-						 ;	ZMOCI_10								;"<ol start= '1'>																																																																				
+							;	ZMOCI_10							;"<ol start= '1'>																																																																				
 																	  <li> The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</li>
 																	  <li>If the address is changed to another city, a copy of the Memorandum of Association shall be required after the amendment.</li>
 																	  </ol>" ;
 
 																																																																																																																			 
-							;ZFLUP_02								   ;"<ol start= '1'>																																									
+							;ZFLUP_02								;"<ol start= '1'>																																									
 																	     <li>The application shall be submitted during the grace period given in the written notification stating justification for the request in the designated box</li>
 																	     <li>If there is a request from the entity under study, it cannot submit a new application until deciding on the pending application.</li>
 																	     <li>The request to extend the grace period given in the written notification shall not be accepted except for one time only.</li>
 																	     </ol>"
-			             																																																																																																																 
-																																																																																																																			
-																																																																																																																			
+
 																																																																																															
 						;ZFLUP_03										;"<ol start= '1'>																																						
 																		 <li>The application shall be submitted during the grace period given in the written notification stating justification for the request in the designated box</li>
@@ -542,18 +537,19 @@ UPDATE SagiaService              ; code[unique = true]           ; rulesRestrict
 																		  <li> If the amendment is from a company to an sole establishment, a shareholders' waiver letter of their respective shares in employees authenticated by the Commerce Chamber shall be submitted.</li>									
 																		  </ol>"
 																		  
-UPDATE SagiaService        ; code[unique = true]						;serviceFinancialFees[lang = $langen] 								;serviceDuration[lang = $langen]
+																		  
+UPDATE SagiaService        ; code[unique = true]						;serviceFinancialFees[lang = $langen] 								;serviceDuration[lang = $langen]	;
 								  ; ZSR6								;																	;Notification for The Purpose of Voluntary Cancellation of the License:Two working days.Apply of voluntary cancellation of the license:Immediate
 								  ; ZSR7								;																    ;Immediate							
 								  ; ZSR5 						 	    ;                                  									;Immediate/one working day																																
-								  ; ZSPLJAWA03								;																	;Three working day				
+								  ; ZSPLJAWA03							;																	;Three working day				
 								  ; ZSR4 							    ;"<ul>														  																																				
                                                                          <li> Payment of license fee of two thousand (2000) Saudi Riyals annual for 5 years as maximum.</li>
                                                                          <li>Payment of ten thousand (60,000) Riyals for each year.
                                                                          <li>Service fees shall be paid within (60) days from the date of bill issuance. In case of the payment's delay within the identified period, the service will be cancelled and the applicant have to apply again </li>
                                                                          </ul> "															;Immediate
-								 ; ZSPLJAWA02								;																	;Three working day																	 
-								 ; ZSPLJAWA01							;																	; Three working day
+								 ; ZSPLJAWA02							;																	;Three working day																	 
+								 ; ZSPLJAWA01							;																	;Three working day
 								 ; ZSPLJAWA04							;																	;Three working day.							
 								 ; ZMOL_11								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day								
 								 ; ZMOL_03								;<ul><li>Payment of fees for the service provider.</li></ul> 		;Two working day							
@@ -578,7 +574,7 @@ UPDATE SagiaService        ; code[unique = true]						;serviceFinancialFees[lang
                                 ; ZMOIP_01								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day
                                 ; ZMOIP_07								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day				
                                 ; ZMOIP_15								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
-                                ; ZMOIP_02							;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
+                                ; ZMOIP_02								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
                                 ; ZMOIP_18								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
                                 ; ZMOIP_09  							;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day   				
                                 ; ZMOIP_08								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
@@ -588,7 +584,7 @@ UPDATE SagiaService        ; code[unique = true]						;serviceFinancialFees[lang
                                 ; ZMOIP_06								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
                                 ; ZMOIP_21								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
                                 ; ZMOIP_23								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day	
-                                ;ZMOIP_14								;																	;Two  working day		
+                                ; ZMOIP_14								;																	;Two  working day		
                                 			
                   																		  
 
@@ -613,6 +609,7 @@ INSERT_UPDATE SagiaCategory	; code[unique = true]	; label ; services(code)		;
 							; 4						; SAGIA SERVICES		; ZRES;
 							
 							; 5						; SAGIA SERVICES		; ZFLUP_02,ZSVR,ZFLUP_03;
+
 
 
 #Production Data
@@ -641,7 +638,7 @@ INSERT_UPDATE SagiaServiceTab; code[unique = true] ; content[lang = $langen]    
                              ; 11                  ; "<h2> To know more about this Service please check the Investor manual </h2> <a target=""_blank"" href=""https://misa.gov.sa/media/1279/misa-service-manual-v2-8th-edition-en-v6.pdf"" style=""font-size: 14px""> Click Here </a> "    ; "<h2> To know more about this Service please check the Investor manual </h2> <a target=""_blank"" href=""https://misa.gov.sa/media/1279/misa-service-manual-v2-8th-edition-en-v6.pdf"" style=""font-size: 14px""> Click Here </a>"                                               ;  Service Details                ;
 
 
-UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	                                                           ; tabs(code)
+UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	                                                           ; tabs(code)	;
 							; ZMOCI_22										; Ministry of commerce service forms;	
 							; ZMOIP_23										; Transfer KAFALA for GM of Branch of foreigner comp;	
 							; ZMOIP_21										; Wavier of Son or daughter;	

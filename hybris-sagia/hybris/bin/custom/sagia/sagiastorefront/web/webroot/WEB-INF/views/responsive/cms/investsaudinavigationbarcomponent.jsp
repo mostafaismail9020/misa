@@ -19,6 +19,12 @@
 	.page-dashboard #dashboard-carousel .owl-nav .owl-next {
 		right: 8% !important;
 	}
+	#logoutModal .js-formInputFileBox .modal-close.bttn_close{
+		border-radius: 25px!important;
+    	border: 0px solid #00a6be!important;
+		top: 5px;
+    	right: 10px;
+	}
 </style>
 
 <c:url value="false" var="userLoggedIn"/>
@@ -192,7 +198,7 @@
             <form action="" class="js-formInputFileBox">
                 <div class="modal-header modal-header_smallPDB">
                     <div class="modal-title"><spring:message code="text.logout.title"/></div>
-                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"> 
+                    <button type="button" class="modal-close bttn_close" data-dismiss="modal" aria-label="Close"> 
                         <svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"></path></svg>
                     </button>
                 </div>

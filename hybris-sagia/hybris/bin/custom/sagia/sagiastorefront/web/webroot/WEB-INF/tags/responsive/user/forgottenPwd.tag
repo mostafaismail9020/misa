@@ -12,7 +12,7 @@
     .sagiaNavigation,
     .investsaudiFooter,
     .sagiaHead-paddingHelper,
-    .sagiaHead {
+    .sagiaHead,.accountLogin-headline {
         display: none;
     }
 </style>
@@ -30,14 +30,14 @@
 
             <div class="panelModule panelModule_halfRadius accountLogin-content accountLogin-content_small">
                 <div class="login-section">
-                    <h1 class="accountLogin-title headline login-page__headline text-center"><spring:theme code="password.forgottenpassword"/></h1>
+                    <h1 class="accountLogin-title headline login-page__headline text-center text-uppercase headline-golden"><spring:theme code="password.forgottenpassword"/></h1>
 
                     <form:form method="post" modelAttribute="forgottenPwdForm">
                         <ycommerce:testId code="login_forgotPasswordEmail_input">
                             <formElement:formInputBox idKey="forgottenPwd.email" labelKey="forgottenPwd.email" path="email" mandatory="true"/>
                         </ycommerce:testId>
                         <div class="accountLogin-copyWrapper">
-                            <p><spring:theme code="forgottenPwd.description"/></p>
+                            <p class="mt-5"><spring:theme code="forgottenPwd.description"/></p>
                         </div>
 
 

@@ -20,7 +20,7 @@
                                         <cms:component component="${feature}" element="div" class="panelModule_halfRadius accountLogin-content accountLogin-content_small mt-0" />
                                         <%-- <cms:component component="${feature}" element="div" class="panelModule panelModule_halfRadius accountLogin-content accountLogin-content_small" /> --%>
                                     </cms:pageSlot>
-                                    <cms:pageSlot position="RightContentSlot" var="feature" element="div" class="">
+                                    <cms:pageSlot position="RightContentSlot" var="feature" element="div" class="w-100">
                                         <cms:component component="${feature}" element="div" class="js-panelTabs panelTabs panelTabs_transparent panelTabs_iconsAndLabel accountLogin-content" />
                                     </cms:pageSlot>
                                 </div>

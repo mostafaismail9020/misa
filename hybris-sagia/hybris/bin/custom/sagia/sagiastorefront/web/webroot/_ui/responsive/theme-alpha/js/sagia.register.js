@@ -1454,7 +1454,7 @@ $(function () {
             }
         });
 
-        $(".quickregistrationPwd").on('focus blur keyup', function () {
+        $(".quickregistrationPwd").on('focus blur keyup change', function () {
             var passwordSuccessDiv = $(this).closest('.formInputBox').find(".success-message-block");
             setTimeout(function() {
                 var formValidation = $("#sagiaRegisterFormQuickRegistration, #sagiaRegisterFormApplyLicense").validate();
@@ -1464,16 +1464,27 @@ $(function () {
                 var $element = $(".quickregistrationPwd");
                 $element.closest('.formInputBox').find('input').css('width','100%');
                 $element.closest('.formInputBox').find('.form-group').css('display','block');
-                $($element).closest('.formInputBox').siblings('.fa-eye').removeClass('reg-password-success');
+                $($element).closest('.formInputBox').siblings('.toggle-password1').removeClass('reg-password-success');
                 $($element).closest('.formInputBox').find('.verified').remove();
+                $(".quickregistrationCheckPwd").attr('disabled',true);
+
+                if(e.type === "change"){
+                    var $element = $(".quickregistrationCheckPwd");
+                    $element.closest('.formInputBox').find('input').css('width','100%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','block');
+                    $($element).closest('.formInputBox').siblings('.toggle-password2').removeClass('reg-password-success');
+                    $($element).closest('.formInputBox').find('.verified').remove();
+                }
 
                 if (hasNoError) {
                     // passwordSuccessDiv.text(getI18nText('register.validation.psw.ok'));
                     
                     $($element).closest('.formInputBox').find("input").css('width','90%');
-                    $($element).closest('.formInputBox').siblings('.fa-eye').addClass('reg-password-success');
+                    $($element).closest('.formInputBox').siblings('.toggle-password1').addClass('reg-password-success');
                     $($element).closest('.formInputBox').find('.form-group').css('display','flex');
                     $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($($element).closest('.formInputBox').find('input'));
+                    
+                    $(".quickregistrationCheckPwd").removeAttr('disabled');
 
                 } else {
                     passwordSuccessDiv.empty();
@@ -1497,13 +1508,13 @@ $(function () {
                 var $element = $(".quickregistrationCheckPwd");
                 $element.closest('.formInputBox').find('input').css('width','100%');
                 $element.closest('.formInputBox').find('.form-group').css('display','block');
-                $($element).closest('.formInputBox').siblings('.fa-eye').removeClass('reg-password-success');
+                $($element).closest('.formInputBox').siblings('.toggle-password2').removeClass('reg-password-success');
                 $($element).closest('.formInputBox').find('.verified').remove();
 
                 if (hasNoError) {
                     // passwordSuccessDiv.text(getI18nText('register.validation.psw.ok2'));
                     $($element).closest('.formInputBox').find("input").css('width','90%');
-                    $($element).closest('.formInputBox').siblings('.fa-eye').addClass('reg-password-success');
+                    $($element).closest('.formInputBox').siblings('.toggle-password2').addClass('reg-password-success');
                     $($element).closest('.formInputBox').find('.form-group').css('display','flex');
                     $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($($element).closest('.formInputBox').find('input'));
                 } else {

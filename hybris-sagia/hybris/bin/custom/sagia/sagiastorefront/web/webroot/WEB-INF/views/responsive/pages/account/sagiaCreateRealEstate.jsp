@@ -68,7 +68,7 @@
                         <spring:theme code="text.specialservices.backToServiceDetails"/>
                     </a>
                 </div>
-                <div class="col-xl-9 d-flex btn-drafts_list amend-service-link amend-btns-list">
+                <div class="col-xl-9 d-none btn-drafts_list amend-service-link amend-btns-list mt-3 mt-xl-0">
                     <button class="btn btn_round btn_slim js-save-draft" data-target-form="createRealEstateForm"
                             data-service-id="${serviceId}">
                         <spring:theme code="general.savedraft"/><span class="iconElement iconElement_save"><icon:save/></span>
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                         <div class="row" id="realEstateAddInputs">
-                        	<div class="col-md-3">
+                        	<div class="col-md-6 col-lg-3">
 								<div class="formSelectBox">
 									<div class="form-group">
                                         <form:select path="identityType" cssClass="js-select2-oneColumn identity-type" id="identityType">
@@ -140,7 +140,7 @@
 									<div class="help-block"></div>
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-6 col-lg-3">
 								<div class="formInputBox">
 									<div class="form-group">
 										<form:input path="identityNumber" id="identityNumber" name="identityNumber" class="form-control"
@@ -151,7 +151,7 @@
 									<div class="help-block"></div>
 								</div>
 							</div>
-							<div class="col-md-3" id="deedNumberDiv">
+							<div class="col-md-6 col-lg-3" id="deedNumberDiv">
 								<div class="formInputBox">
 									<div class="form-group">
 										<form:input path="deedNumber" id="deedNumber" name="deedNumber" class="form-control"
@@ -162,7 +162,7 @@
 									<div class="help-block"></div>
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-6 col-lg-3">
 								<%-- <div class="col-6 col-md-2" id = "align" style="padding:15px">
 									<button type="submit" class="btn btn_round" name="smsverify" id="mobileBtn"><spring:theme code="text.verification.verify.mobile"/></button>
 								</div> --%>
@@ -254,7 +254,7 @@
                                 </div>
                             </div>
 
-                            <div class="row w-100">
+                            <div class="row ">
                                 <div class="col-md-6">
                                     <div id="plotNo2" hidden>
                                         <div class="form-group">
@@ -264,7 +264,7 @@
                                 </div>
                             </div>
 
-                            <div class="row w-100">
+                            <div class="row ">
                                 <div class="col-md-6">
                                     <div id="plotNo3" hidden>
                                         <div class="form-group">
@@ -274,7 +274,7 @@
                                 </div>
                             </div>
 
-                            <div class="row w-100">
+                            <div class="row ">
                                 <div class="col-md-6">
                                     <div id="plotNo4" hidden>
                                         <div class="form-group">
@@ -284,7 +284,7 @@
                                 </div>
                             </div>
 
-                            <div class="row w-100">
+                            <div class="row ">
                                 <div class="col-md-6">
                                     <div id="plotNo5" hidden>
                                         <div class="form-group">
@@ -294,7 +294,7 @@
                                 </div>
                             </div>
 
-                            <div class="row w-100">
+                            <div class="row ">
                                 <div class="col-md-6" id="plotArea">
                                     <formElement:formInputBox idKey="realEstate.plotArea" labelKey="realEstate.plotArea" labelCSS="control-label_mandatory" path="plotArea"/>
                                 </div>

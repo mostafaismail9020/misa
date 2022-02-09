@@ -156,18 +156,18 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween d-flex">
             <div class="row renewal-services w-100">
-                <div class="col-md-3 col-12 px-0">
+                <div class="col-md-6 col-lg-4 col-12 ">
                     <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
-                    <div class="col-xl-3 col-12">
+                    <div class="col-md-6 col-lg-4 col-12">
                         <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
                     </div>
                 </c:if>
 
             <!-- <div class="mainSection-linkActions mainSection-linkActions_right"> -->
                 <div id="renewalButtons" style="display: none;">
-                    <div class="col-xl-3 col-12">
+                    <div class="col-md-6 col-lg-4 col-12">
                         <c:choose>
                             <c:when test ="${autoRenewal}">
                                 <a class="btn btn_slim btn_outline back_to_service jqInstantRenewal" href="javascript:void(0);">
@@ -181,7 +181,7 @@
                             </c:otherwise>
                         </c:choose>
                     </div>
-                    <div class="col-xl-3 col-12">
+                    <div class="col-md-6 col-lg-4 col-12">
                         <a class="btn btn_slim btn_outline back_to_service jqCreateRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
                             <spring:theme code="dashboard.myLicense.renew"/>
                         </a>

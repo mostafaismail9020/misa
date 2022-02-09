@@ -10,6 +10,11 @@
 <%@ taglib prefix="userTags" tagdir="/WEB-INF/tags/responsive/user" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 
+<style type="text/css">
+    .footer,.copyright {
+        display: none;
+    }
+</style>	
 
 <div class="contentModule-headline_1 contentModule-headline_small mobile-verify-text auth-mobile">
 <!-- <c:if test="${empty isEnableTwoFactorAuthService}">
@@ -76,6 +81,6 @@
 		<p class="trouble-contact-us margin-top-30"><spring:theme code="register.login.problem"/> &nbsp;
 			<a href="https://misa.gov.sa/ar/contact-us/" class="login-forgot d-inline-block"><spring:theme code="register.login.problem.contact"/></a>
 		</p>
-		<div><a id="backtoLogin" class="login-btn login-entry-cancel padding-top-10" href="/en/login"><spring:theme code="register.back.login.label"/></a></div>
+		<div><a id="backtoLogin" class="login-btn login-entry-cancel padding-top-10" href="/en/login"><spring:theme code="register.back.login"/></a></div>
 	</div>
 </form:form>>

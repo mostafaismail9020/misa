@@ -604,7 +604,8 @@ SAGIA.profile = {
                           sagiaProfilePersonalFormSelectCompanyWebsite.val(sagiaProfilePersonalFormData.companyWebsite);
 
                         $("#sagiaProfilePersonalFormCancelUpdates").on("click", function () {
-                            $(".js-myAccount-edit").trigger("click");
+                            $(".js-myAccount-edit").trigger("click"); 
+                            window.scrollTo({top: 0, behavior: 'smooth' });
                         });
                         $("#sagiaProfilePersonalFormSaveUpdates").on("click", function () {
                             var objectToPost = {

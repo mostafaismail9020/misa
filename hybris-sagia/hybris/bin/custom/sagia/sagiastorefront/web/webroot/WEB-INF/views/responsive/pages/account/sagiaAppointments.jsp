@@ -472,16 +472,12 @@
                                                 </table>
 
                                                 <script>
-                                                    var appointmentsJson = $ {
-                                                        appointmentsJson
-                                                    };
-                                                    var formOptionsJSON = $ {
-                                                        formOptionsJSON
-                                                    };
-                                                    var notificationsJson = $ {
-                                                        notificationsJson
-                                                    };
-                                                    var calendarLabelsJson = $ {
-                                                        calendarLabelsJson
-                                                    };
+                                                    var appointmentsJson = ${appointmentsJson};                                                       
+                                                    
+                                                    var formOptionsJSON = ${formOptionsJSON};
+                                                                                                          
+                                                    var notificationsJson = ${notificationsJson};
+                                                                                                           
+                                                    var calendarLabelsJson = ${calendarLabelsJson};                                                       
+                                                    
                                                 </script>

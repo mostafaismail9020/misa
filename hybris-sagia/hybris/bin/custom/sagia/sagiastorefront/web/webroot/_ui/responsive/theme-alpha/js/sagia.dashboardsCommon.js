@@ -395,7 +395,7 @@ $(document).ready(function() {
 $('#dashboard-carousel').owlCarousel({
     loop: true,
     margin: 20,
-    // rtl:true,
+    rtl:true,
      /*
     animateOut: 'fadeOut',
     animateIn: 'fadeIn',

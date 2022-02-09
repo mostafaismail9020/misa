@@ -39,7 +39,7 @@
 <c:url value="/register/ajax" var="registerAction" />
 <c:url value="/register/apply" var="applyAction" />
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-5">
 		<div class="login-logo">
 			<a href="https://eservices.sagia.gov.sa/en">
 				<img src="${commonResourcePath}/images/B2C/Login-logo.svg" alt="logo" class="img-fluid w-100" />
@@ -48,7 +48,7 @@
 		<div id="sagia-cms-help-quick-registration-helper"></div>
 	</div>
 	
-	<div class="col-md-6">
+	<div class="col-md-7">
 		<form:form method="post" id="sagiaRegisterFormQuickRegistration" name="sagiaRegisterFormQuickRegistration"  modelAttribute="sagiaRegisterForm" action="${registerAction}#register-quick" onsubmit="return validateRegisterForm()">
 			<div class="row col-lg-12 col-xl-12 col-12 register-account-screen r-sn ">
 				<div class="login-right-wrapper">
@@ -205,7 +205,7 @@
 							</div>
 							<div class="error-msg"></div>
 						</div>
-						<div class="col-md-12 register-form focus-on-change">
+						<div class="col-md-6 register-form focus-on-change">
 							<%--
 							<label class="register-user-info-label" for="reg-Company">Company<span class="mandatory">*</span></label>
 							<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-Company" name="Company" />
@@ -215,12 +215,12 @@
 										mandatory="true" />
 							<div class="error-msg"></div>
 						</div>
-						<div class="col-md-12 register-form focus-on-change register-forms-select">
+						<div class="col-md-6 register-form focus-on-change register-forms-select">
 							<formElement:formSelectBox idKey="quickregistration.register.sector" 
 										labelKey="register.sector" selectCSSClass="form-control jqSector js-select-required register-user-details" path="sector"
 									   	items="${sectors}" itemLabel="name"  labelCSS="register-user-info-label select-label-mandatory"/>	
 						</div>
-						<div class="col-md-12 register-form focus-on-change">
+						<div class="col-md-6 register-form focus-on-change">
 							<%--
 							<label class="register-user-info-label" for="reg-EmailId">Email Id<span class="mandatory">*</span></label>
 							<input type="text" class="register-user-details js-register-quick-email" data-val="true" data-val-required="Required"	id="reg-EmailId" name="EmailId" />
@@ -231,7 +231,7 @@
 										mandatory="true" />
 							<div class="error-msg"></div>
 						</div>
-						<div class="col-md-12 register-form focus-on-change register-forms-select">
+						<div class="col-md-6 register-form focus-on-change register-forms-select">
 							<formElement:formSelectBox idKey="quickregistration.register.country"
 									   labelKey="register.country" selectCSSClass="form-control countriesselect jqCountry js-select2-searchBegining js-select2-sortAlphabetically register-user-details" 
 									   labelCSS="control-label_mandatory register-user-info-label"
@@ -254,7 +254,7 @@
 								<div class="input-wrapper focus-on-change">
 									<formElement:formInputBox idKey="quickregistration.register.mobileNumber"
 												labelKey="register.mobileNumber" path="mobileNumber"
-												helpBlockSuccessCSS="js-help-block-success"
+												helpBlockSuccessCSS="js-help-block-success"  maxlength="15"
 												inputCSS="js-quick-mobile-number register-user-details validate-mobile mobile-number" labelCSS="control-label_mandatory register-user-info-label" inputBoxCSS="formInputBox_big"
 												mandatory="true"/>
 								</div>								
@@ -328,7 +328,7 @@
 										labelKey="register.pwd" path="pwd"
 										inputCSS=" quickregistrationPwd register-user-details" labelCSS="control-label_mandatory register-user-info-label"																
 										mandatory="true"/>
-							<i toggle="#password-field" class="fa fa-eye toggle-password1" aria-hidden="true"  id="togglePassword"></i>
+							<i toggle="#password-field" class="fa fa-eye-slash toggle-password1" aria-hidden="true"  id="togglePassword"></i>
 							<meter max="4" id="password-strength-meter" value="0" class=""></meter>
 							<div class="error-msg"></div>
 						</div>
@@ -338,10 +338,10 @@
 							<input type="password" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-cpassword" name="cpassword" maxlength="30" />
 							<i class="far fa-eye" id="toggleCPassword"></i>
 							--%>
-							<formElement:formPasswordBox idKey="quickregistration.register.checkPwd" 
+							<formElement:formPasswordBox idKey="quickregistration.register.checkPwd"
 										labelKey="register.checkPwd" path="checkPwd" inputCSS="quickregistrationCheckPwd register-user-details" labelCSS="control-label_mandatory register-user-info-label" 
 										mandatory="true" />
-							<i toggle="#password-field" class="fa fa-eye toggle-password2" aria-hidden="true"  id="toggleCPassword"></i>
+							<i toggle="#password-field" class="fa fa-eye-slash toggle-password2" aria-hidden="true"  id="toggleCPassword"></i>
 							<div class="error-msg"></div>
 						</div>
 						<div class="col-md-12 register-form focus-on-change">
@@ -364,9 +364,9 @@
 								<div class="help-block"></div>
 							</div>
 						</div>
-						<div class="col-md-12 ">
+						<div class="col-md-12 captcha-pos">
 							<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
-							<div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
+							<div class="form_field-elements control-group js-recaptcha-captchaaddon" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
 							<span id="lblErrorCaptchareg" class="mandatory"></span>
 						</div>
 					</div>
@@ -478,7 +478,7 @@
 						<formElement:formInputBox idKey="quickregistration.register.mobileNumber"
 												  labelKey="register.mobileNumber" path="mobileNumber"
 												  helpBlockSuccessCSS="js-help-block-success"
-												  inputCSS="form-control js-quick-mobile-number" labelCSS="control-label_mandatory" inputBoxCSS="formInputBox_big"
+												  inputCSS="form-control js-quick-mobile-number" labelCSS="control-label_mandatory" inputBoxCSS="formInputBox_big" maxlength="15"
 												  mandatory="true"/>
 					</div>
 

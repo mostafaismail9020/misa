@@ -5,10 +5,18 @@
 #sagiaVerificationForm{
     .register-user-details.validate-mobile {
         padding-right: 32px !important;
+		border-radius: 113px;
     }
+	.register-user-details.validate-email {
+		border-radius: 113px;
+    }
+	.register-user-info-label.validate-mobile-label{
+		left: 150px !important;
+	}
+		
 }
 #sagiaAuthenticateCodeForm {
-     .validate-mobile {
+     .validate-mobile{
         box-shadow: none;
         border-radius: 0;
         padding-bottom: 0 !important;
@@ -23,7 +31,7 @@
     }
 }
 .accountLogin-content-formSubmitSection {
-    margin-bottom : 25px;
+    margin-bottom : 50px;
 }
 #backtoLogin {
     padding-left: 30px;
@@ -33,19 +41,15 @@
  .mobile-code-wrapper {
 	.help-block{
 		left: 23%;
-		position: relative;
 	}
     .span{
-        color: #FF0000 !important;
+        color: @color-warning !important;
         padding-left: 5px !important;
-        font-size: 12px !important;
+        font-size: var(--error-font) !important;
     }
 }
-// .modal-body svg path{
-// 	stroke: #00A6BE;
-// }
 .btn.btn_slim:hover, .dottedList_green .dottedList-item:before{
-	background: #00A6BE 0% 0% no-repeat padding-box !important;
+	background: @color-primary 0% 0% no-repeat padding-box !important;
 }
 
 .page-login{
@@ -64,29 +68,22 @@
 	display: none;
 }
 #spinner svg path{
-	fill: #00A6BE !important;
+	fill: @color-primary !important;
 }
 .login-right-wrapper{
 	border: 1px solid var(--unnamed-color-00a6be);
 	background: #FFFFFF 0% 0% no-repeat padding-box;
-	box-shadow: 0px 26px 35px #0000007A;
-	border: 1px solid #00A6BE;
+	// box-shadow: 0px 26px 35px #0000007A;
+	border: 1px solid @color-primary;
 	border-radius: 30px;
 	opacity: 1;
-	height: 893px;
-	width: 800px;
 }
 .login-container{
 	flex-wrap: initial;
-	height: 100%;
 	margin-left: initial !important;
 	margin-right: initial !important;
-	min-height: 100vh;
 	padding-left: initial;
 	padding-right: initial;
-}
-.register-account-investor-screen3  .login-right-wrapper,.register-account-investor-screen4  .login-right-wrapper{
-    height: 1000px;
 }
 
 .accountLogin-content .login-section{
@@ -96,8 +93,7 @@
 .login-logo{
 	width: 198px;
 	height: 120px;
-	position: relative;
-	left: 100px;
+	margin-left: 100px;
   }
   .login-left-wrapper{
 	margin-top: 3%;
@@ -105,79 +101,98 @@
   }
   .accountLogin-content-headline{
 	font-weight: 700;
-	margin-top: 5%;
-	font-size: 60px;
+	font-size: var(--heading-big-font);
 	letter-spacing: 2.16px;
 	color: #FFFFFF;
 	line-height: 1;
   }
   #sagia-cms-help-quick-registration-helper h3{
 	margin-top: 2%;
-    font-size: 25px;
+    font-size: var(--content-big-font);
     letter-spacing: 0.72px;
     font-weight: 500;
   }
   #sagia-cms-help-quick-registration-helper p, #sagia-cms-help-quick-registration-helper ul{
-	margin-top: 2%;
-	font-size: 20px;
+	font-size: var(--content-font);
 	width: 80%;
 	letter-spacing: 0.72px;
   }
   .login-right-wrapper{
 	border: 1px solid var(--unnamed-color-00a6be) !important;
 	background: #FFFFFF 0% 0% no-repeat padding-box !important;
-	box-shadow: 0px 26px 35px #0000007A !important;
-	border: 1px solid #00A6BE !important;
+	// box-shadow: 0px 26px 35px #0000007A !important;
+	border: 1px solid @color-primary !important;
 	border-radius: 30px !important;
-	height: 893px;
-	width: 700px;
+	margin-top: 15px;
   }
-  .login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper{
-	height: 860px;
+  .login-right-wrapper,.login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper{
     width: 590px;
   }
-  .auth-acreen-height{
-	height: 750px;
+  .register-account-investor-screen4{
+	.login-right-wrapper{
+		width: 700px;
+	}
+  }
+  
+  .register-account-investor-screen3{
+	.login-right-wrapper{
+		width: 800px;
+	}
+  }
+
+  .register-account-investor-screen3,.register-account-investor-screen4{	
+	.select2.select2-container .select2-selection:after{
+		top: 16%!important;
+	}
+	.formSelectBox .select2.select2-container.select2-container--focus+.control-label, .formSelectBox .select2.select2-container.select2-container--open+.control-label{
+		transform: translate3d(-6px,27px, 0) scale(1);
+		color: @color-golden;
+		font-size: var(--label-focused-font);
+	}
+
+	
+  }
+  .register-account-investor-screen5{
+	.register-user-info{
+		margin-top: 10% !important;
+	}
+	.login-buttons{
+		margin-top: 20%;
+	}
+	a.register-investor-screen5-btn-next{
+		padding: 14px !important;
+	}
+  }
+  .page-login{
+	.select2-dropdown{
+		overflow-y: scroll;
+		height: 200px;
+	}
   }
   .login-register-text{
-	top:50px;
+	margin-top:50px;
 	text-align: center;
-	color: #BF9B2E;
+	color: @color-golden;
 	text-transform: uppercase;
-	font-size: 30px;
+	font-size: var(--heading-font);
 	font-weight: 500;
-	position: relative;
   }
   .login-register-role{
-	top:26%;
 	text-align: center;
-	color: #BF9B2E;
+	color: @color-golden;
 	text-transform: uppercase;
-	font-size: 20px;
+	font-size: var(--content-font);
 	font-weight: 500;
-	position: relative;
+	margin-top: 8%;
   }
-  .register-account-investor-screen2 .login-register-role{
-	  top: 37%;
-	}
-	.register-account-investor-screen3 .login-register-role{
-        top: 13%;
-	}
-    .register-account-investor-screen3 .register-user-info{
-        top: 14%;
-    }
-	.register-account-investor-screen4 .login-register-role{
-        top: 15%;
-	}
     .register-account-investor-screen3 .select2-container .select2-selection--single .select2-selection__rendered{
         padding: 10px;;
     }
 
   .login-role-selection{
-	position: relative;
-	top:30%;
 	display: flex;
 	justify-content: center;
+	margin-top: 30px;
   }
   .login-role-selection-box{
 	background: #F2F2F2 0% 0% no-repeat padding-box;
@@ -192,30 +207,27 @@
 	margin-left: auto;
 	margin-right: auto;
 	top:16px;
-	position: relative;
 	height: 60px;
+	margin-top: 25px;
   }
   .role-text{
-	font-size: 20px;
+	font-size: var(--content-font);
 	font-weight: 700;
-	color: #00A6BE;
+	color: @color-primary;
 	text-align: center;
-	position: relative;
 	top: 35px;
   }
   .login-buttons{
-	position: relative;
-	top:58%;
 	display: flex;
 	text-align: center;
 	justify-content: space-evenly;
 	text-transform: uppercase;
+	margin-bottom: 50px;
   }
-  .register-account-investor-screen3 .login-buttons{
-    top: 15%;
-  }
-  .register-account-investor-screen4 .login-buttons{
-    top: 20%;
+  .register-account-screen{
+	.login-buttons{
+		margin-top: 20%;
+	}
   }
   .login-buttons div:first-child{
 	justify-content: flex-end;
@@ -226,7 +238,7 @@
 	display: flex;
   }
   .login-btn{
-	font-size: 16px;
+	font-size: var(--button-font);
 	font-weight: 600;
 	width:34%;
 	height: 50px;
@@ -244,9 +256,9 @@
   }
   .login-cancel,.login-entry-cancel,.login-btn-cancel,.register-investor-screen2-btn-back,.register-investor-screen3-btn-back,.register-investor-screen4-btn-back,.register-investor-screen5-btn-back {
 	background-color: #fff !important;
-	border: 1px solid #00A6BE !important;
+	border: 1px solid @color-primary !important;
 	border-radius: 27px !important;
-	color: #00A6BE !important;
+	color: @color-primary !important;
 	width: 195px !important;
 	cursor: pointer !important;
   }
@@ -271,7 +283,7 @@
   .register-investor-screen3-btn-next.active,
   .register-investor-screen4-btn-next.active,
   .register-investor-screen5-btn-next.active{
-	background: #00A6BE 0% 0% no-repeat padding-box !important;
+	background: @color-primary 0% 0% no-repeat padding-box !important;
 	border: none !important;
   }
   .login-role-selection-box.active .role-text{
@@ -285,21 +297,19 @@
   }
   .role-selected-text{
 	text-align: left;
-	font-size: 18px;
+	font-size: var(--content-small-font);
 	font-weight: 500;
 	letter-spacing: 0.58px;
 	color: #646464;
 	opacity: 0.72;
 	width: 384px;
 	margin: auto;
-	top:58%;
+	// top:58%;
   }
 
   .register-progress{
 	display: flex;
 	width: 270px;
-	top: 10%;
-	position: relative;
 	margin: auto;
   }
   .circle {
@@ -309,117 +319,44 @@
 	border-radius: 50%;
 	display: inline-block;
 	text-align: center;
-	font-size: 20px;
+	font-size: var(--content-font);
 	color: #707070;
-	padding-top: 3px;
+	padding-top: 6px;
   }
   .register-progress hr{
 	width: 75px;
 	height: 0px;
-	border: 1px solid #CACACA;
   }
   .register-progress-selection{
-	background: #00A6BE 0% 0% no-repeat padding-box;
+	background: @color-primary 0% 0% no-repeat padding-box;
 	color: #F2F2F2;
   }
+
+  .register-progress{
+	margin-top: 14%;
+}
+.register-account-investor-screen3,.register-account-investor-screen4{
+	.register-progress{
+		margin-top: 7%;
+	}
+	.login-register-role{
+		margin-top: 5%;
+	}
+}
   .register-role-selection{
 	text-align: center;
-	top: 7%;
-	position: relative;
+	margin-top: 10px;
   }
   .progress-completion{
 	background: #025635 0% 0% no-repeat padding-box;
 	color: #FFF;
   }
-  .bussiness-sector{
-	width:660px;
-	min-height: 440px;
-	overflow-x: hidden;
-	overflow-y: auto;
-	height: 440px;
-  }
-  .bussiness-sector .bussiness-sector-btn{
-	display: inline-flex;
-	padding: 9px 14px;
-	margin: 30px 4px 0px 4px;
-	background: #fff;
-	border: 1px solid #F2F2F2;
-	border-radius: 74px;
-	box-shadow: 0px 20px 32px #37373724;
-	width: 150px;
-	height: 60px;
-	cursor: pointer;
-	color:#00A6BE;
-	font-size: 9px;
-	font-weight: 600;
-  }
-  .bussiness-sector .bussiness-sector-btn img{
-	margin:auto 0;
-  }
-  .bussiness-sector .bussiness-sector-btn.selected{
-	background: #00A6BE 0% 0% no-repeat padding-box;
-	box-shadow: 0px 20px 32px #37373724;
-	color: #FFFFFF;
-	position: relative;
-  }
-  .bussiness-sector-item-icon{
-	width: 30px;
-	height: 30px;
-  }
-  .bussiness-sector-list-text{
-	text-align: left;
-	letter-spacing: 0px;
-	margin: auto;
-	font-size: 12px;
-	margin-left: 5px;
-	line-height: 1.2;
-	-webkit-box-orient: vertical;
-	display: -webkit-box;
-	overflow: hidden !important;
-	text-overflow: ellipsis;
-	-webkit-line-clamp: 3;
-  }
-  .bussiness-sector .bussiness-sector-btn .bussiness-sector-close-icon{
-	display: none;
-  }
-  .bussiness-sector .bussiness-sector-btn.selected .bussiness-sector-close-icon{
-	display: block;
-	position: absolute;
-	top: -8px;
-	right: -12px;
-	width: 40px;
-  }
-  .bussiness-sector-selected[src=""]{
-	display:none;
-  }
-  .bussiness-sector-selected{
-	width: 40px;
-	height: 40px;
-	margin-left: 6%;
-  }
-  .register-user-details{
-	background: #FFFFFF 0% 0% no-repeat padding-box !important;
-	box-shadow: 0px 19px 47px #00000029 !important;
-	border-radius: 113px !important;
-	height: 65px !important;
-	border: none !important;
-	padding: 20px 24px 14px !important;
-	font-size: 16px !important;
-	display: block !important;
-	width: 100% !important;
-	line-height: 1.5 !important;
-	padding-left: 10px;
-  }
   .register-account-investor-screen3 .select2-container .select2-selection--single .select2-selection__rendered{
 	margin-left: 0px !important;
   }
-   .register-account-investor-screen4 .register-user-info{
-		top: 16%;
-   }
   .register-user-info{
-	position: relative;
-	top:31%;
 	width: 96%;
+	margin-top: 10px;
 	align-items: center;
 	margin: auto !important;
   }
@@ -433,7 +370,7 @@
     border-radius: 100px;
     padding: 20px 25px 14px;
     color: transparent !important;
-    font-size: 19px;
+    font-size: var(--content-font);
   }
   .js-quick-mobile-number{
 	border-top-left-radius: 2px !important;
@@ -441,20 +378,6 @@
   }
   .country-code-mobile{
 	display: flex;
-  }
-  .register-user-info-label{
-	font-size: 16px !important;
-	font-weight: 400 !important;
-	pointer-events: none !important;
-	position: absolute !important;
-	transform: translate3d(0, 25px, 0) scale(1) !important;
-	transform-origin: left top !important;
-	transition: 240ms !important;
-	line-height: 24px !important;
-	color: #707070 !important;
-	// margin-left: 25px !important;//06.02
-    top: 0 !important;
-	// padding-left: 10px !important;//06.02
   }
   [dir="rtl"] .register-user-info-label{
 	margin-left: initial !important;
@@ -473,23 +396,17 @@
   [dir="ltr"] .ddl-countrycode-label{
 	padding-left: 25px;
   }
-  .ddl-countrycode-label.focused{
-	top: 5px !important;
-	left: 10px !important;
-  }
   .register-form-terms-condition{
 	margin-top: 3%;
   }
   .register-contact-ddl{
-	position: relative;
 	display: inline-block;
   }
   .register-contry-info{
 	box-shadow: 0 0 5pt 0.5pt #d3d3d3 !important;
-	height: 65px !important;
+	height: 64px !important;
 	border-radius: 100px !important;
 	padding: 28px 34px 14px !important;
-	font-size: 19px !important;
 	border-top-right-radius: 2px !important;
 	border-bottom-right-radius: 2px !important;
 	width: 125px !important;
@@ -499,23 +416,27 @@
 	border-top-left-radius: 2px !important;
 	border-bottom-left-radius: 2px !important;
   }
-  .register-form label.focused{
-	color: #BF9B2E !important;
-	font-size: 12px !important;
-	transform: translate3d(-22px,8px, 0) scale(1) !important;//06.02
-	// transform: translate3d(0, 16px, 0) scale(1) !important;//06.02
-	right: initial !important;
-	padding-left: 10px !important;
+  .formInputBox .register-user-details:placeholder-shown ~ .register-user-info-label.control-label, .formSelectBox .register-user-details:placeholder-shown ~  .select2.select2-container.select2Container_selected ~ .register-user-info-label.control-label, .formTextArea .register-user-details:placeholder-shown ~  .register-user-info-label.control-label{
+	transform: none;
+	color: @color-text;
   }
-  [dir="rtl"] .register-form label.focused{
-	right: -10px !important;
-	left: initial !important
+  .formInputBox .register-user-details:focus ~ .register-user-info-label.control-label,  .formTextArea .register-user-details:focus ~  .register-user-info-label.control-label{
+	transform: translate3d(-6px,27px, 0) scale(1);
+	color: @color-golden;
+	font-size: var(--label-focused-font);
   }
-  .register-form .select2-selection__rendered{
-      font-size: 16px !important;
+
+  .control-label.ddl-countrycode-label.focused{
+	transform: translate3d(-6px,-8px,0) scale(1);
+	color: @color-golden;
+	font-size: var(--label-focused-font);
+  }
+.formInputBox .register-user-details ~ .register-user-info-label.control-label, .formSelectBox .register-user-details ~  .select2.select2-container.select2Container_selected ~ .register-user-info-label.control-label, .formTextArea .register-user-details ~  .register-user-info-label.control-label{
+	transform: translate3d(-6px,27px, 0) scale(1);
+	color: @color-golden;
+	font-size: var(--label-focused-font);
   }
   .register-language{
-	float: revert;
 	text-align: right;
 	display: flex;
 	justify-content: end;
@@ -526,9 +447,9 @@
   .register-language span{
 	margin-right: 8%;
 	margin-top: 4%;
+	font-size: var(--label-font);
   }
   .register-form .switch {
-	position: relative;
 	display: inline-block;
 	width: 76px;
 	height: 36px;
@@ -541,14 +462,12 @@
   .register-form .slider {
 	position: absolute;
 	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	background: #FFFFFF 0% 0% no-repeat padding-box;
 	box-shadow: 0px 19px 47px #00000029;
 	border: 1px solid #CACACA;
 	border-radius: 8px;
+	width: 75px;
+    height: 35px;
   }
 
   .register-form .slider:before {
@@ -563,9 +482,9 @@
 	text-align: left;
 	letter-spacing: 0px;
 	color: #FFFFFF;
-	background: #00A6BE 0% 0% no-repeat padding-box;
+	background: @color-primary 0% 0% no-repeat padding-box;
 	border-radius: 8px;
-	font-size: 16px;
+	font-size: var(--label-font);
 	padding-top: 4px;
   }
   .register-form input:checked + .slider:before {
@@ -575,7 +494,7 @@
   .register-form input:checked + .slider:after {
 
 	color: #FFFFFF;
-	background: #00A6BE 0% 0% no-repeat padding-box;
+	background: @color-primary 0% 0% no-repeat padding-box;
   }
   .register-form .slider:after
   {
@@ -590,16 +509,15 @@
 	padding-left: 6px;
 	padding-top: 6px;
 	color: #979797;
-	font-size: 16px;
 	font-weight: 500;
 	letter-spacing: 0px;
-	font-size: 16px;
+	font-size: var(--label-font);
 	border-radius: 8px;
 	transition: .4s;
   }
   .register-terms{
 	text-align: left;
-	font-size: 16px;
+	font-size: var(--label-font);
 	font-weight: 500;
 	letter-spacing: 0px;
 	color: #646464;
@@ -628,22 +546,22 @@
   .register-terms-link{
 	text-align: left;
 	text-decoration: underline;
-	font-size: 14px;
+	font-size: var(--info-font);
 	font-weight: 500;
 	letter-spacing: 0px;
-	color: #00A6BE;
+	color: @color-primary;
   }
   .register-form-terms-condition{
 	display: flex;
   }
   .reg-terms-checked {
-	background: #00A6BE !important;
+	background: @color-primary !important;
   }
   .register-success-msg{
 	width: 340px;
-	font-size: 23px;
+	// font-size: 23px;
 	text-align: center;
-	font-size: 23px;
+	font-size: var(--content-big-font);
 	font-weight: 500;
 	letter-spacing: 0px;
 	color: #025635;
@@ -651,7 +569,7 @@
   }
   .register-success-msg span{
 	text-align: center;
-    font-size: 23px;
+    font-size: var(--content-big-font);
 	font-weight: 500;
     letter-spacing: 0px;
 	display: block;
@@ -672,7 +590,7 @@
   }
   .login-from-registration{
 	width: 197px;
-	background: #00A6BE 0% 0% no-repeat padding-box;
+	background: @color-primary 0% 0% no-repeat padding-box;
   }
   .register-form-names{
 	display: flex;
@@ -710,26 +628,22 @@
 
   meter[value="0"]{display: none;}
   meter[value="1"]::-webkit-meter-optimum-value { background: linear-gradient(to right,  #ff0000 0%,#ff0000 25%,#fff 25%,#fff 100%); }
-  meter[value="2"]::-webkit-meter-optimum-value { background: linear-gradient(to right,  #BF9B2E 0%,#BF9B2E 50%,#fff 50%,#fff 100%); }
+  meter[value="2"]::-webkit-meter-optimum-value { background: linear-gradient(to right,  @color-golden 0%,@color-golden 50%,#fff 50%,#fff 100%); }
   meter[value="3"]::-webkit-meter-optimum-value { background: linear-gradient(to right,  #025635 0%,#025635 100%,#fff 100%,#fff 100%); }
   meter[value="1"]::-moz-meter-bar { background: linear-gradient(to right,  #ff0000 0%,#ff0000 25%,#fff 25%,#fff 100%); }
-  meter[value="2"]::-moz-meter-bar { background: linear-gradient(to right,  #BF9B2E 0%,#BF9B2E 50%,#fff 50%,#fff 100%); }
+  meter[value="2"]::-moz-meter-bar { background: linear-gradient(to right,  @color-golden 0%,@color-golden 50%,#fff 50%,#fff 100%); }
   meter[value="3"]::-moz-meter-bar { background: green; }
   meter[value="1"] { background:  linear-gradient(to right,  #ff0000 0%,#ff0000 25%,#fff 25%,#fff 100%); }
-  meter[value="2"] { background: linear-gradient(to right,  #BF9B2E 0%,#BF9B2E 50%,#fff 50%,#fff 100%); }
+  meter[value="2"] { background: linear-gradient(to right,  @color-golden 0%,@color-golden 50%,#fff 50%,#fff 100%); }
   meter[value="3"] { background: linear-gradient(to right,  #025635 0%,#025635 100%,#fff 100%,#fff 100%);}
 
-  .reg-sucess{
-	top: 20%;
-	// top: 26%;
-  }
 
   .register-user-info .fa-eye, .register-user-info .fa-eye-slash{
 	display: block;
   }
 
   .register-user-info .fa-eye:before, .register-user-info .fa-eye-slash:before{
-	font-size: 25px;
+	font-size: var(--content-big-font);
 	position: absolute;
     top:34px;
     right: 40px;
@@ -738,13 +652,6 @@
 	float: left;
 	margin-left: 30px;
   }
-  .login-screen .register-user-info{
-	top: 18%;
-  }
-  .register-account-investor-screen5 .register-user-info{
-	top: 26%;
-	// top: 38%;
-  }
   .login-screen .login-buttons{
 	top: 0;
   }
@@ -752,11 +659,8 @@
 	float: left;
 	text-align: left;
 	justify-content: space-evenly;
-	margin-top: 20px;
   }
   .login-register{
-	position: relative;
-	top: 5%;
 	align-items: center;
 	margin: auto;
 	justify-content: center;
@@ -764,34 +668,28 @@
   }
   .login-register span:nth-child(1){
 	text-align: left;
-	font-size: 16px;
 	font-weight: 500;
 	letter-spacing: 0px;
 	color: #707070;
-	font-size: 20px;
+	font-size: var(--content-font);
 	margin-right: 2%;
   }
   .login-register span:nth-child(2){
 	text-align: left;
-	font-size: 16px;
 	font-weight: 600;
 	letter-spacing: 0px;
-	color: #00A6BE;
-	font-size: 20px;
+	color: @color-primary;
+	font-size: var(--content-font);
 	cursor: pointer;
   }
   .login-forgot{
-    font-size: 16px;
+    font-size: var(--label-font);
 	letter-spacing: 0px;
-	color: #00A6BE !important;
-	position: relative;
-	top: 7%;
+	color: @color-primary !important;
 	align-items: center;
-	margin: auto;
-	justify-content: center;
+	justify-content: center;	
 	text-align: center;
 	display: flex;
-	font-size: 16px !important;
   }
   .login-forgot span:nth-child(1){
 	margin-right: 2%;
@@ -809,19 +707,25 @@
 	margin-right: 2%;
   }
   .login-forgot a{
-	color: #00A6BE;
+	color: @color-primary;
   }
   .cancel-disabled{
 	border: 1px solid #F2F2F2;
 	color: #CACACA;
 	background: none;
   }
-  .login-screen2 .login-register-role{
-	margin-top: 15% !important;
+  .login-screen2{
+	.login-register-role{
+		margin-top: 15% !important;
+	}
+	.register-user-info{
+		margin-top: 10% !important;
+	}
+	.login-right-wrapper{
+		width: 700px;
+	}
   }
-  .login-screen2 .register-user-info{
-	margin-top: 10% !important;
-  }
+  
   .verify-mobile{
 	margin-top: 5% !important;
 	margin-bottom: 5% !important;
@@ -841,21 +745,15 @@
 	  border-top: 1px dashed #CACACA !important;
 	  display: block;
 	  width: 80%;
-	  margin-top: 6%;
-	  margin-bottom: 6%;
-  }
-  .login-screen-verify-mobile .login-register-role, .login-screen-verify-email .login-register-role{
-	top: 28%;
-  }
-  .login-screen-verify-mobile .register-user-info, .login-screen-verify-email .register-user-info{
-	top: 36%;
+	  margin-top: 3%;
+	  margin-bottom: 3%;
   }
   .mobile-code-wrapper{
 	width: 100%;
 	margin: auto;
   }
   .mobile-code-label{
-	font-size: 20px !important;
+	font-size: var(--label-font) !important;
 	font-weight: 400 !important;
 	pointer-events: none !important;
 	position: absolute !important;
@@ -863,43 +761,35 @@
 	transform-origin: left top !important;
 	transition: 240ms !important;
 	line-height: 24px !important;
-	color: #00A6BE !important;
-	left: 30% !important;
+	color: @color-primary !important;	
 	justify-content: center !important;
 	margin: auto !important;
 	top: -11px !important;
   }
+ 
   [dir="rtl"] .mobile-code-label{
 	right: 30% !important;
 	left: initial !important;
-  }
-  .padding-top-10{
-	  padding-top: 10px !important;
   }
   .a-button{
 	padding: 10px;
   }
   .login-error-form .formError{
 	margin: auto;
-    position: relative;
-    margin-top: 28%;
 	margin-left: 20px;
     margin-right: 20px;
   }
   .formError-auth{
 	padding-left: 0 !important;
 	display: flex;
-	position: relative !important;
   }
   .formError-auth svg{
 	width: 50px;
 	height: 50px;
 	padding-top: 25px;
 	margin: auto;
-	position: relative !important;
 }
 .formError-auth span{
-	position: relative;
 	left: 0px;
 	top: 5px;
 	width: 90%;
@@ -909,7 +799,7 @@
 	border-bottom: 1px solid #979797 !important;
 	margin: auto !important;
 	padding: 20px 24px 14px 75px !important;
-	font-size: 16px !important;
+	font-size: var(--label-font) !important;
 	display: block !important;
 	width: 42% !important;
 	line-height: 1.5 !important;
@@ -920,7 +810,7 @@
 	text-align: center;
 	letter-spacing: 0px;
 	color: #979797;
-	font-size: 20px;
+	font-size: var(--label-font);
   }
   .email-verify-text{
 	margin: auto;
@@ -928,12 +818,12 @@
 	text-align: center;
 	letter-spacing: 0px;
 	color: #979797;
-	font-size: 20px;
+	font-size: var(--content-font);
 	margin-bottom: 1rem;
 	display: block;
   }
   .reg-para-text{
-	font-size: 14px;
+	font-size: var(--info-font);
 	color: #979797;
 	text-align: center;
 	margin: auto;
@@ -950,13 +840,9 @@
 	  margin-top:100px !important;
 	  justify-content: center;
   }
-  .mobile-verify-btn{
-	top: 58%;
-  }
   .trouble-contact-us{
-	font-size: 18px !important;
+	font-size: var(--content-small-font) !important;
 	font-weight: 500 !important;
-	top: 80%;
 	color: #979797;
   }
   #mobile-no-for-verification .mobile-no{
@@ -980,20 +866,20 @@
 	padding: 0;
   }
   .verification-info i.fa-info-circle{
-	font-size: 16px;
+	font-size: var(--label-font);
   }
   .verification-info span{
 	text-align: left;
-	font-size: 12px;
+	font-size: var(--error-font);
 	font-weight: 500;
 	letter-spacing: 0px;
-	color: #FF0000;
+	color: @color-warning;
 	margin-left: 10px;
   }
   #forgotPassword{
 	background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 26px 35px #0000007a;
-    border: 1px solid #00A6BE;
+    border: 1px solid @color-primary;
     border-radius: 30px;
   }
   #forgotPassword .modal-header,#forgotPassword .modal-footer{
@@ -1003,15 +889,15 @@
 	text-align: center;
 	margin: auto;
 	width: 100%;
-	color: #BF9B2E;
-	font-size: 30px;
+	color: @color-golden;
+	font-size: var(--heading-font);
   }
   #forgotPassword .modal-body{
 	width: 70%;
 	margin: 2% auto;
   }
   #forgotPassword .modal-body span{
-	font-size: 16px;
+	font-size: var(--label-font);
 	display: block;
 	color: #707070;
   }
@@ -1023,7 +909,7 @@
   }
   .forgot-password-contact{
 	margin: 2% auto 6%;
-	font-size: 16px;
+	font-size: var(--label-font);
 	font-weight: 600;
 	letter-spacing: 0px;
   }
@@ -1043,9 +929,9 @@
 			mask:url("/_ui/responsive/common/images/B2C/Icon ionic-ios-checkmark.png") center/contain;
   }
   .mandatory,.error {
-	color: #FF0000;
+	color: @color-warning;
 	padding-left: 5px;
-    font-size: 12px;
+    font-size: var(--error-font);
   }
   .control-label_mandatory:before{
 	  content: "" !important;
@@ -1061,8 +947,8 @@
   }
 
   .formError{
-	top: 25%;
-    color: red !important;
+	// top: 25%;
+    color: @color-warning !important;
   }
   .hasError{
     background: #fec3c3 !important;
@@ -1077,7 +963,7 @@
     margin-left: 5%;
   }
   .accountLogin-content-formSubmitSection a.accountLogin-content-toggleBtn:hover, .accountLogin-content-formSubmitSection a:hover{
-	  color: #00A6BE !important;
+	  color: @color-primary !important;
   }
   #forgotPassword{
     margin-top: 25vh !important;
@@ -1088,29 +974,27 @@
   .login-screen2{
 	  margin-top: 2% !important;
   }
-  .login-screen2 .register-user-info{
-	top: 20%;
-  }
   .register-user-details.validate-mobile{
-	border-top-left-radius: 2px !important;
-    border-bottom-left-radius: 2px !important;
+	border-top-left-radius: 1px !important;
+    border-bottom-left-radius: 1px !important;
 	padding: 20px 110px 14px 24px !important;
   }
 
   [dir="rtl"] .register-user-details.validate-mobile{
 	border-radius: 113px !important;
-	border-top-right-radius: 2px !important;
-    border-bottom-right-radius: 2px !important;
+	border-top-right-radius: 1px !important;
+    border-bottom-right-radius: 1px !important;
   }
   [dir="ltr"] .captcha-pos{
       margin-left: 1rem;
+	  transform: translateX(50%);
   }
   [dir="rtl"] .captcha-pos{
       margin-right: 1rem;
   }
 
   #editCountryCode{
-	margin-left: 0px !important;
+	margin-left: -1px !important;
   }
   .validate-email{
 	padding: 20px 100px 14px 24px !important;
@@ -1119,13 +1003,13 @@
 	  left:112px !important;
   }
   #editMobile svg path{
-	  fill: #00A6BE !important;
+	  fill: @color-primary !important;
   }
   #editMobile{
 	  display: block;
   }
   #editMobile .formInputBox-text{
-	position: relative;
+	// position: relative;
     right: 45px;
     top: 25px;
   }
@@ -1142,7 +1026,7 @@
 	border-radius: 30px !important;
 	background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 26px 35px #0000007a;
-    border: 1px solid #00A6BE;
+    border: 1px solid @color-primary;
   }
 .pt-50{
 	padding-top: 50px !important;
@@ -1155,9 +1039,6 @@
 }
 
 @media (min-width:1024px) and (max-width:1024px) and (min-height:768px) and (max-height:768px) {
-    .register-account-investor-screen3 .login-right-wrapper, .register-account-investor-screen4 .login-right-wrapper{
-        height: 1400px;
-    }
     .register-form-names{
         display: block;
         .register-forms-select{
@@ -1168,32 +1049,10 @@
             padding-right: 0px;
         }
     }
-    .register-account-investor-screen5 {
-        .login-buttons{
-            top : 40%;
-        }
-        .register-user-info{
-            top : 20%;
-        }
-        .login-register-role {
-            top : 15%;
-        }
-    }
 }
 
   @media (min-width:992px) and (max-width:1200px) {
-	.login-register-role{
-	  top: 38%;
-	}
-	.login-role-selection{
-	  top: 44%;
-	}
-	.role-selected-text{
-	  top: 64%;
-	}
 	.bussiness-sector{
-	  height: 300px;
-	  min-height: 300px;
 	  width: 384px;
 	}
 	.country-code-mobile{
@@ -1215,39 +1074,20 @@
 	.register-form{
 	  margin-bottom: 1rem;
 	}
-    .login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper {
-        height: 950px;
-    }
-	.login-screen2 .register-user-info{
-	  top: 10%;
-	}
 	.verification-info{
 	  text-align: center;
 	  margin-top: 10px;
 	}
-	.verify-mobile,.verify-emailId{
-	  top: 49% !important;
-	}
 	.verify-email-box{
 	  display: block;
 	}
-	.trouble-contact-us{
-	  top: 84%;
-	}
-	.mobile-verify-btn{
-	  top: 62%;
-	}
 	.mobile-verify-text{
-		font-size: 12px;
+		font-size: var(--label-focused-font);
 		margin-top: 5px;
 		margin-bottom: 0px !important;
 	}
-	.login-screen2 .login-register-text{
-		top: 24px;
-	}
 	.verification-info{
 		display: inline;
-    	top: 15px;
 	}
 	.login-screen2 .panelModule{
 		padding: 32px 15px !important;
@@ -1255,9 +1095,6 @@
 	.dotted-lines{
 		margin-top: 2%;
 		margin-bottom: -8%;
-	}
-	.login-screen2 .trouble-contact-us{
-		top: 44%;
 	}
   }
   @media (min-width:641px) and (max-width:991px) {
@@ -1274,27 +1111,7 @@
 	  margin: 0;
 	  padding: 0;
 	}
-	.register-progress{
-	  top: 50%;
-	}
-	.login-register-role{
-	  top: 54%;
-	}
-	.login-role-selection{
-	  top: 58%;
-	}
-	.role-selected-text{
-	  top: 70%;
-	}
-	.register-role-selection{
-	  top: 8%;
-	}
-	.login-buttons{
-	  top: 92%;
-	}
-	.register-user-info{
-	  top: 60%;
-	}
+	
 	.country-code-mobile{
 	  display: block;
 	}
@@ -1324,92 +1141,30 @@
 		padding-left: 0px !important;
 		padding-right: 0px !important;
 	}
-	.register-progress{
-	  top: 15%;
-	}
-	.login-register-role {
-	  top: 26%;
-	}
-	.login-role-selection{
-	  top: 30%;
-	}
-	.role-selected-text{
-	  top: 42%;
-	}
-	.login-buttons{
-	  top: 54%;
-	}
-	.register-role-selection{
-	  top: 7%;
-	}
-	.register-user-info{
-	  top: 30%;
-	}
+	
 	.register-form{
 	  margin-bottom: 0rem;
 	}
-	.register-user-info-label{
-	  transform: translate3d(0, 12px, 0) scale(1) !important;
-	}
 	.register-user-details,.register-contry-info{
 	  height: 50px !important;
-	}
-	.register-account-investor-screen5 .login-register-role{
-		top: 17%;
-	}
-	.register-account-investor-screen5 .register-user-info{
-		top: 24%;
-	}
-	.register-account-investor-screen5{
-		top: 46%;
 	}
 	.register-account-investor-screen3 .formInputBox .form-group,
 	.register-account-investor-screen3 .formSelectBox .form-group,
 	.register-account-investor-screen4 .formInputBox .form-group{
 		padding-top: 0px !important;
 	}
-	.register-account-investor-screen3 .login-register-role{
-		top: 18%;
-	}
-	.register-account-investor-screen3 .register-user-info{
-		top: 20%;
-	}
   }
 
   @media screen and (min-width:1366px) and (max-width:1366px) and (min-height: 1024px) and (max-height: 1024px){
-	.login-screen2 .trouble-contact-us{
-		top: 77%;
-	}
+	
 	.login-screen2 .login-right-wrapper{
-		height: 830px;
     	width: 780px;
-	}
-	.login-screen2 .login-register-text{
-		top: 38px;
-	}
-	.login-screen2 .register-user-info{
-		top: 16%;
 	}
 	.dotted-lines{
 		margin-bottom: -5%;
 	}
-	.login-screen2 .trouble-contact-us{
-		top: 73%;
-	}
-	.register-account-investor-screen5 .register-user-info {
-		top: 40%;
-	}
-	.register-account-investor-screen5 .login-buttons{
-		top: 80%;
-	}
   }
   @media screen  and (max-width: 820px){
-      .verify-email-box .register-user-info-label.focused {
-        top : -8px !important;
-      }
-      .country-code-mobile .register-user-info-label.focused {
-        top : -24px !important;
-      }
       .accountLogin-content-slot.accountLogin-content-slot_left{
         h3,p,ul{
             display: none;
@@ -1431,9 +1186,6 @@
             max-width: 100%;
         }
     }
-    .register-account-investor-screen3 .login-right-wrapper, .register-account-investor-screen4 .login-right-wrapper{
-        height: 1400px;
-    }
   }
   @media screen and (min-width: 768px) and (max-width: 820px) {/*ipad*/
     .register-account-investor-screen5 .register-user-info{
@@ -1443,54 +1195,16 @@
 	.login-right-wrapper{
 	  margin-bottom: 30%;
 	}
-	.login-register-role{
-	  top: 26%;
-	}
-	.login-role-selection{
-	  top: 32%;
-	}
-	.register-progress{
-       top: 10%;
-	}
-	.role-selected-text{
-	  top: 64%;
-	}
-	.login-buttons{
-	  top: 56%;
-	}
-	.register-user-info{
-	  top: 54%;
-	}
-	.login-screen .register-user-info{
-        top: 18%;
-	}
+	
 	.login-screen .register-language{
 	  justify-content: flex-start;
 	}
-	.login-screen2 .login-register-role,.login-screen-verify-mobile .login-register-role,.login-screen-verify-email .login-register-role{
-	  top: 46%;
-	}
-	.login-screen2 .register-user-info{
-	  top: 16%;
-	}
-	.verify-mobile{
-	  top: 40%;
-	}
-	.trouble-contact-us{
-	  top: 75%;
-	}
+	
 	.verify-email-box{
 	  display: block;
 	}
-	.login-screen-verify-mobile .register-user-info, .login-screen-verify-email .register-user-info{
-	  top: 52%;
-	}
-	.mobile-verify-btn{
-	  top: 66%;
-	}
 	.login-screen2 .login-right-wrapper{
 		width: 692px;
-		height: 850px;
 	}
 	.verification-info{
 		margin:auto;
@@ -1499,9 +1213,6 @@
 	}
 	.dotted-lines{
 		margin-bottom: -7%;
-	}
-	.login-register-text{
-		top: 32px;
 	}
 	.verify-email-box{
 		margin-bottom: 0px !important;
@@ -1514,48 +1225,22 @@
 
   }
   @media (min-width:1700px) and (max-width:1919px) and (max-height:900px) {/*110%*/
-	.bussiness-sector{
-	  min-height: 388px;
-	  height: 388px;
+	
+	.login-right-wrapper,.login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper{
+		width: 530px;
 	}
-	.register-user-info{
-	  top: 40%;
+	.login-btn{
+		height: 45px;
 	}
 	.margin-top-30{
 		margin-top: 20% !important;
 	}
-	.register-account-investor-screen3 .register-user-info{
-		top: 13%;
-	}
-	.login-right-wrapper{
-		height: 600px;
-		width: 470px;
-	}
-    .register-account-investor-screen5 {
-        .login-right-wrapper{
-            height: 900px;
-        }
-    }
-	.register-account-screen .login-right-wrapper,
-	.register-account-investor-screen2 .login-right-wrapper ,
-	.register-account-investor-screen3 .login-right-wrapper ,
-	.register-account-investor-screen4 .login-right-wrapper ,
-	.register-account-investor-screen5 .login-right-wrapper{
-    	width: 600px;
-	}
-	.login-screen2 .login-right-wrapper{
-		height: 660px;
-		width: 470px;
-	}
+	
 	.login-screen2 .login-register-text{
-		top: 16px;
-		font-size: 20px;
+		font-size: var(--heading-font);;
 	}
 	.login-screen2 .panelModule{
 		padding: 32px 15px !important;
-	}
-	.register-form label.focused{
-		font-size: 10px !important;
 	}
 	.register-user-details.validate-mobile{
 		padding:20px 0px 14px 24px !important;
@@ -1566,11 +1251,7 @@
 	.validate-mobile-label {
 		left: 90px !important;
 	}
-	.mobile-verify-text{
-		font-size: 11px;
-	}
 	.login-screen2 .register-user-info{
-		top: 16%;
 		margin-top: 7% !important;
 	}
 	.dotted-lines{
@@ -1580,70 +1261,66 @@
 	.verify-email-box{
 		margin-bottom: 0px !important;
 	}
-	.login-screen2 .trouble-contact-us{
-		top: 66%;
-	}
 	.login-screen2 .margin-top-30{
 		margin-top: 6% !important;
-	}
-	.register-contry-info{
-		font-size: 16px !important;
 	}
 	.verification-info span{
 		display: flex;
 	}
   }
   @media (min-width:1500px) and (max-width:1669px) and (max-height:800px) {/*125%*/
-    .register-account-screen .login-right-wrapper{
-        height: 700px;
-    }
-    .register-account-investor-screen5 {
-        .login-right-wrapper{
-            height: 900px;
-        }
-    }
-    .login-screen2 {
-        .login-right-wrapper{
-            height: 620px;
-        }
-    }
+	.r-sn .form-control, .formInputBox .form-control {
+		padding-left: 20px;
+	}
+	
+	.login-screen2{
+		.login-right-wrapper{
+			width: 530px;
+		}
+	  }
+
+	.login-right-wrapper,.login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper{
+		
+		width: 470px;
+	}
+		.login-btn{
+			height: 45px;
+		}
+		.captcha-pos{
+			transform: translateX(30%);
+		}
+		
+	.register-account-investor-screen3{
+		.login-right-wrapper{
+			width: 700px;
+		}
+	}
+	.register-account-investor-screen4{
+		.login-right-wrapper{
+			width: 600px;
+		}
+	}
+	
     #sagiaVerificationForm{
         .login-screen2 .register-contry-info{
             width: 120px!important;
         }
+		.register-user-info-label.validate-mobile-label{
+			left: 125px !important;
+		}
     }
-    .register-account-investor-screen3 .login-right-wrapper, .register-account-investor-screen4 .login-right-wrapper{
-        height: 1000px;
-        width: 600px;
-    }
-	.role-selected-text{
-	  top: 59%;
-	}
-	.bussiness-sector{
-	  min-height: 340px;
-	  height: 340px;
-	}
-	.register-user-info{
-	  top: 40%;
+		
+	.register-account-investor-screen3 .select2.select2-container .select2-selection:after {
+		top: 6%!important;
 	}
 	.register-contry-info{
 		padding: 28px 34px 12px !important;
 	}
-	.register-account-investor-screen3 .formInputBox .form-control:placeholder-shown+.control-label:not(.ddl-countrycode-label),
-	.register-account-investor-screen4 .formInputBox .form-control:placeholder-shown+.control-label:not(.ddl-countrycode-label),
-	.register-account-investor-screen3 .formSelectBox .control-label,
-	.register-account-investor-screen4 .formSelectBox .control-label,
-	.formSelectBox .select2.select2-container--disabled+.control-label{
-		top: 2px !important;
-		left: -16px !important;
-	}
+	
 	.margin-top-30{
 		margin-top: 5% !important;
 	}
-	.login-right-wrapper{
-		height: 590px;
-		width: 470px;
-	}
+	
 	.login-screen2 .login-register-text{
 		top: 16px;
 	}
@@ -1659,23 +1336,19 @@
 	.validate-mobile-label {
 		left: 90px !important;
 	}
-	.mobile-verify-text{
-		font-size: 11px;
-	}
+	
 	.login-screen2 .register-user-info{
 		top: 16%;
 		margin-top: 7% !important;
 	}
 	.dotted-lines{
-		margin-top: 3%;
+		margin-top: 0%;
     	margin-bottom: -5%;
 	}
 	.verify-email-box{
 		margin-bottom: 0px !important;
 	}
-	.login-screen2 .trouble-contact-us{
-		top: 66%;
-	}
+	
 	.login-screen2 .margin-top-30{
 		margin-top: 0% !important;
 	}
@@ -1685,19 +1358,10 @@
 	.ddl-countrycode-label{
 		top: 18px !important;
 	}
-	.register-user-details,.register-form .slider:before,.register-form .slider:after{
-		font-size: 14px !important;
-	}
-	/*.padding-top-10 {
-		padding-top: 6px !important;
-	}*/
-	.login-buttons{
-		top: 50%;
-	}
+	
 	.register-progress .circle{
 		height: 30px;
 		width: 30px;
-		font-size: 14px;
 	  }
 	  .register-progress hr{
 		  width: 90px;
@@ -1707,6 +1371,18 @@
 		  top: -6px;
 		  position: relative;
 	  }
+
+	  .register-form .slider{
+		width: 75px;
+		height: 30px;
+		&:before{
+			height: 30px;
+			padding-top: 6px;
+		}
+		&:after{
+			height: 30px;
+		}
+	  }
 	.register-form .slider:after{
 		left: 80%;
 	}
@@ -1715,42 +1391,37 @@
 	}
 	.register-language span{
 		margin-top: 6%;
-		font-size: 14px;
-	}
-	.register-form label.focused{
-		transform: translate3d(0, 6px, 0) scale(1) !important;
-	}
-	.formSelectBox .control-label.focused, .formSelectBox .select2.select2-container--disabled+.control-label.focused{
-		padding: 0px 10px 10px 10px !important;
 	}
 	.login-register-text{
 		top: 40px;
-	}
-	.formInputBox .form-control:placeholder-shown+.control-label{
-		top: 6px;
 	}
 	.reg-terms-checkbox-span span{
 		width: 20px;
 		height: 20px;
 	}
-	.login-error-form .formError{
-		margin-top: 30%;
-	}
   }
   @media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150% resolution*/
-	/*.padding-top-10 {
-		padding-top: 6px !important;
-	}*/
-    .login-screen2 {
-        .login-right-wrapper{
-            height: 720px;
-        }
-    }
-    .register-account-investor-screen5 {
-        .login-right-wrapper{
-            height: 900px;
-        }
-    }
+	.login-screen2{
+		.login-right-wrapper{
+			width: 530px;
+		}
+	  }
+	.register-account-investor-screen3,.register-account-investor-screen4{
+		.login-right-wrapper{
+			width: 650px;
+		}
+	}
+	.login-right-wrapper,.login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper{
+		
+		width: 440px;
+	}
+	.login-buttons{
+		margin-bottom: 30px;
+	}
+	  .login-btn{
+		  height: 40px;
+	  }
+
 	.accountLogin-content{
 		padding-top: 22px !important;
 		margin-bottom:0px !important;
@@ -1760,25 +1431,15 @@
 	}
 	.login-register-text{
 	  top: 40px;
-	  font-size: 22px;
 	}
 	.accountLogin-content-headline{
 	  width: 80%;
-	  font-size: 38px;
 	}
-	#sagia-cms-help-quick-registration-helper h3{
-		font-size: 20px;
+	.accountLogin-content-formSubmitSection{
+		margin-bottom: 30px;
 	}
 	#sagia-cms-help-quick-registration-helper p, #sagia-cms-help-quick-registration-helper ul{
 	  margin-top: 0%;
-	  font-size: 16px;
-	}
-	.dottedList-item{
-		font-size: 12px;
-	}
-	.login-right-wrapper{
-	  height: 700px;
-	  width: 670px;
 	}
 	.register-account-investor-screen5 .login-register-role{
 		top: 28%;
@@ -1802,18 +1463,12 @@
 	.register-progress .circle{
 	  height: 30px;
 	  width: 30px;
-	  font-size: 14px;
 	}
-	.register-progress hr{
-		width: 90px;
-	}
-	.bussiness-sector{
-	  min-height: 290px;
-	  height: 290px;
-	  width: 380px;
+	.register-form .slider{
+		width: 50px;
+		height: 27px;
 	}
 	.register-form .slider:before,.register-form .slider:after{
-	  font-size: 12px;
 	  height: 26px;
 	  width: 26px;
 	  padding-left: 4px;
@@ -1836,11 +1491,7 @@
 	.register-form{
 	  margin-bottom: 0px;
 	}
-	.verification-info i.fa-info-circle{
-	  font-size: 12px;
-	}
 	.verification-info span{
-	  font-size: 10px;
 	  font-weight: 500;
 	  margin-left: 0px;
 	}
@@ -1860,12 +1511,9 @@
 	.margin-top-30{
 		margin-top: 5% !important;
 	}
-	/*.padding-top-10{
-		padding-top: 7px;
-	}*/
 	.login-screen2 .login-register-text{
 		top: 14px;
-    	font-size: 22px;
+    	// font-size: 22px;
 	}
 	.login-screen2 .panelModule{
 		padding: 32px 15px !important;
@@ -1879,9 +1527,6 @@
 	.validate-mobile-label {
 		left: 90px !important;
 	}
-	.mobile-verify-text{
-		font-size: 11px;
-	}
 	.dotted-lines{
 		margin-top: 4%;
     	margin-bottom: -6%;
@@ -1894,9 +1539,6 @@
 	}
 	.ddl-countrycode-label{
 		top: 18px !important;
-	}
-	.register-account-investor-screen3 .register-form label.focused, .register-account-investor-screen4 .register-form label.focused{
-		top: -30px;
 	}
 	.register-contry-info{
 		padding: 28px 34px 12px !important;
@@ -1912,26 +1554,10 @@
 	}
 	.register-language span{
 		margin-top: 6%;
-		font-size: 14px;
-	}
-	.register-form label.focused{
-		transform: translate3d(0, 12px, 0) scale(1) !important;
-	}
-	.formSelectBox .control-label, .formSelectBox .select2.select2-container--disabled+.control-label{
-		padding: 0px 10px 10px 10px !important;
-	}
-	.login-register-text{
-		top: 40px;
-	}
-	.formInputBox .form-control:placeholder-shown+.control-label{
-		top: 6px;
 	}
 	.reg-terms-checkbox-span span{
 		width: 20px;
 		height: 20px;
-	}
-	.login-error-form .formError{
-		margin-top: 24%;
 	}
   }
 
@@ -1942,25 +1568,34 @@
 	.register-role-selection{
 	  top: 8%;
 	}
-	#sagia-cms-help-quick-registration-helper h3{
-		font-size: 32px;
+	.register-account-investor-screen3{
+		.login-right-wrapper{
+			width: 800px;
+		}
 	}
-	#sagia-cms-help-quick-registration-helper p, #sagia-cms-help-quick-registration-helper ul{
-		font-size: 26px;
+	.register-account-investor-screen4{
+		.login-right-wrapper{
+			width: 700px;
+		}
 	}
-	.dottedList-item{
-		font-size: 20px;
-	}
-	.register-account-screen .login-right-wrapper,
-	.register-account-investor-screen2 .login-right-wrapper ,
-	.register-account-investor-screen3 .login-right-wrapper ,
-	.register-account-investor-screen4 .login-right-wrapper ,
-	.register-account-investor-screen5 .login-right-wrapper{
-		height: 1000px;
-    	width: 700px;
+	.login-right-wrapper,.login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper{
+		width: 550px;
 	}
   }
   @media (min-width:2201px) and (max-width:2400px) and (max-height:1250px) {/*80% resolution*/
+	.login-right-wrapper,.login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper{
+		width: 550px;
+	}
+	.register-account-investor-screen3{
+		.login-right-wrapper{
+			width: 800px;
+		}
+	}
+	.register-account-investor-screen4{
+		.login-right-wrapper{
+			width: 700px;
+		}
+	}
 	.accountLogin-content{
 		padding-top: 100px !important;
 	}
@@ -2000,15 +1635,6 @@
 		margin-top: 10%;
     	margin-bottom: -6%;
 	}
-	#sagia-cms-help-quick-registration-helper h3{
-		font-size: 32px;
-	}
-	#sagia-cms-help-quick-registration-helper p, #sagia-cms-help-quick-registration-helper ul{
-		font-size: 26px;
-	}
-	.dottedList-item{
-		font-size: 20px;
-	}
 	.register-user-info{
 		top: 34%;
 	}
@@ -2024,19 +1650,11 @@
     .accountLogin-content-headline {
         color: #fff !important;
     }
-    .register-account-investor-screen3 .login-right-wrapper{
-        height: 1500px;
-        max-height: 1500px;
-    }
     .reg-terms-checkbox-span{
         max-width : 50px;
     }
     .login-register-role, .login-role-selection{
         margin-top:10%;
-    }
-    .register-account-investor-screen4 .login-right-wrapper {
-        height: 1200px;
-        max-height: 1200px;
     }
     .register-form-terms-condition{
         margin-top: 10% !important;
@@ -2055,7 +1673,7 @@
 		border-radius: 30px;
 	}
 	.accountLogin-content-headline{
-	  font-size: 42px;
+	//   font-size: 42px;
 	  margin-top: 10%;
 	  line-height: 1.2;
 	  letter-spacing:initial;
@@ -2078,16 +1696,13 @@
 	}
 	.login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper{
 	  width: 346px;
-	  min-height: 540px;
-	  max-height: 893px;
-	  height: auto;
 	}
 	.register-role-selection{
 	  top: 6%;
 	}
 	.login-register-text{
 	  top: 24px;
-	  font-size: 20px;
+	//   font-size: 20px;
 	}
     .register-account-investor-screen5 {
         .login-buttons {
@@ -2095,9 +1710,6 @@
         }
         .register-user-info {
             text-align: center;;
-        }
-        .login-right-wrapper{
-            height : 700px;
         }
         .register-user-info{
             top : 15%;
@@ -2109,27 +1721,19 @@
 	.register-progress{
       margin-top: 10%;
 	  top:10%;
-	  position: relative;
+	//   position: relative;
 	}
 	.login-register-role{
 	  top:14%;
-	  position: relative;
-	  font-size: 16px;
 	}
 	.role-text{
 	  top: 25px;
 	}
 	.login-role-selection{
 	  top:16%;
-	  position: relative;
 	  margin: auto;
 	  text-align: center;
 	}
-	  .bussiness-sector{
-		min-height: initial;
-		overflow: hidden;
-		height: initial;
-	  }
 	.login-role-selection span{
 	  text-align: left;
 	}
@@ -2152,21 +1756,14 @@
 	}
 	.register-user-info{
 	  top:16%;
-	  position: relative;
 	}
 	.register-form-names div{
 	  padding-left: 0px;
 	  padding-right: 0px;
 	}
-	.register-success-msg span{
-	  font-size: 21px;
-	}
 	.success-circle {
 	  height: 87px;
 	  width: 87px;
-	}
-	.sucess-checkmark{
-	  font-size: 44px;
 	}
 	.login-buttons div:nth-child(1){
 	  order:2;
@@ -2203,17 +1800,11 @@
 	  margin: 0 2% 0 0;
 	  padding: 0 4% 0 0;
 	}
-	.bussiness-sector .bussiness-sector-btn{
-	  box-shadow: none;
-	}
 	.login-screen .register-user-info{
 	  top: 12%;
 	}
 	.page-verification{
 		overflow-y: auto;
-	}
-	.login-screen2 .login-right-wrapper{
-		height: 750px;
 	}
 	.login-screen2 .register-contry-info{
 		width: 98px !important;
@@ -2225,20 +1816,11 @@
 	.login-screen2 .country-code-mobile{
 		padding:0px !important
 	}
-	.login-screen2 .register-form label.focused{
-		font-size: 9px !important;
-	}
 	.validate-mobile-label{
 		left: 76px !important;
 	}
 	.login-screen2 .register-user-details.validate-mobile{
 		padding: 20px 10px 14px 13px !important;
-	}
-	.mobile-verify-text{
-		font-size: 14px;
-	}
-	.login-screen2 .login-buttons{
-		position: initial !important;
 	}
 	.verification-info{
 		margin-top: 5px !important;
@@ -2260,7 +1842,7 @@
 	  margin-left: 5%;
 	}
 	.accountLogin-content-headline{
-	  font-size: 50px;
+	//   font-size: 50px;
 	  line-height: 1.2;
 	  letter-spacing:initial;
 	  width: 100%;
@@ -2269,7 +1851,7 @@
 	  width: 100%;
 	}
 	.login-right-wrapper{
-	  height: 800px;
+	//   height: 800px;
 	  width: 500px;
 	}
   }
@@ -2288,13 +1870,13 @@
 	}
 	.login-container{
 	  flex-wrap: initial;
-	  height: 100%;
+	//   height: 100%;
 	  margin: auto;
-	  min-height: 100vh;
+	//   min-height: 100vh;
 	}
 	.register-account-investor-screen2,.register-account-investor-screen3,.register-account-investor-screen4,.register-account-investor-screen5{
 	  align-items: center;
-	  height: 100%;
+	//   height: 100%;
 	}
   }
 

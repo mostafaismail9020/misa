@@ -236,50 +236,54 @@ $(document).ready(function(){
 })
 
 
-$(document).on('focus blur change click', '.formSelectBox', function (e) {
-    var $currEl = $(this).find('.register-user-details');
-    $currEl.parent().addClass('focus-on-change');
-    if ($currEl.is('select')) {
-        if($($currEl)[0].value !== undefined && $($currEl)[0].value.trim() !== ""){
-            $currEl.parents('.focus-on-change').children('label').addClass('focused');
-       }
-       else if (e.type === "focusin") {
-            $currEl.parents('.focus-on-change').children('label').addClass('focused');
-        }
-        else{ 
-			if ($(".select2-results__options").is(':visible')) {
-				$currEl.parents('.focus-on-change').children('label').addClass('focused');
-			}
-			else {
-				$currEl.parents('.focus-on-change').children('label').removeClass('focused');
-			}
-        }
-	}
-})
+// $(document).on('focus blur change click', '.formSelectBox', function (e) {
+//     var $currEl = $(this).find('.register-user-details');
+//     $currEl.parent().addClass('focus-on-change');
+//     if ($currEl.is('select')) {
+//         if($($currEl)[0].value !== undefined && $($currEl)[0].value.trim() !== ""){
+//             $currEl.parents('.focus-on-change').children('label').addClass('focused');
+//        }
+//        else if (e.type === "focusin") {
+//             $currEl.parents('.focus-on-change').children('label').addClass('focused');
+//         }
+//         else{ 
+// 			if ($(".select2-results__options").is(':visible')) {
+// 				$currEl.parents('.focus-on-change').children('label').addClass('focused');
+// 			}
+// 			else {
+// 				$currEl.parents('.focus-on-change').children('label').removeClass('focused');
+// 			}
+//         }
+// 	}
+// })
 
 
-$(document).on('focus blur change keyup', '.formInputBox .register-user-details', function (e) {
-	var $currEl = $(this);
-    $currEl.parent().addClass('focus-on-change');
-	if (e.type === "keyup") {
-		$(this).removeClass('required');
-	}    
-	if ($($currEl)[0].value !== undefined && $($currEl)[0].value.trim() !== "") {
-		$currEl.parents('.focus-on-change').children('label').addClass('focused');
-	}
-	else if (e.type === "focusin") {
-		$currEl.parents('.focus-on-change').children('label').addClass('focused');
-	}
-	else {
-		$currEl.parents('.focus-on-change').children('label').toggleClass('focused');
-	}
+// $(document).on('focus blur change keyup', '.formInputBox .register-user-details', function (e) {
+// 	var $currEl = $(this);
+//     $currEl.parent().addClass('focus-on-change');
+// 	if (e.type === "keyup") {
+// 		$(this).removeClass('required');
+// 	}    
+// 	if ($($currEl)[0].value !== undefined && $($currEl)[0].value.trim() !== "") {
+// 		$currEl.parents('.focus-on-change').children('label').addClass('focused');
+// 	}
+// 	else if (e.type === "focusin") {
+// 		$currEl.parents('.focus-on-change').children('label').addClass('focused');
+// 	}
+// 	else {
+// 		$currEl.parents('.focus-on-change').children('label').toggleClass('focused');
+// 	}
 
 
-    if($currEl.val() !== ""){
-        $(this).removeClass('hasError');
-    }
+//     if($currEl.val() !== ""){
+//         $(this).removeClass('hasError');
+//     }
     
-}).trigger('blur');
+// }).trigger('blur');
+
+$(".countriesselect").on('change',function(){
+	$(".ddl-countrycode-label").addClass('focused')
+})
 
 $('.quickregistrationPwd').on('change paste keyup',function(e){
 	// if($($currEl)[0].classList.contains("quickregistrationPwd")){
@@ -363,8 +367,10 @@ $(".register-account-investor-screen3 .register-form input").on('change',functio
 	var $EmailId = $("#quickregistrationEmail").val();
 	var $country = $(".js-quickregister-countrycode").val();
 	var $mobile = $(".js-quick-mobile-number").val();
+	var $error = $(".error").text() === "" ? true : false; 
 
-	if($fName && $lName && $Company && $EmailId && $country && $mobile){
+
+	if($fName && $lName && $Company && $EmailId && $country && $mobile&& $error){
 		$('.register-investor-screen3-btn-next').addClass('active')
 		$(".register-investor-screen3-btn-next svg").removeClass('next-hide');
 	}
@@ -379,6 +385,8 @@ $(".register-investor-screen3-btn-next").on('click',function(){
 	if ($(this).hasClass('active')) {
 		$('.register-account-investor-screen3').addClass('next-hide');
 		$('.register-account-investor-screen4').removeClass('next-hide');
+		
+		$(".quickregistrationCheckPwd").attr('disabled',true);
 	}
 })
 
@@ -407,7 +415,9 @@ function validateRegisterUserInfo(){
 	var $cpassword = $(".quickregistrationCheckPwd").val();
 	var checkbox = $(".register-form-terms-condition").find('input[type="checkbox"]');
 
-	if($username && $password && $cpassword && checkbox.prop('checked')){
+	var $error = $(".error").text() === "" ? true : false; 
+
+	if($username && $password && $cpassword && checkbox.prop('checked') && $error){
 		$('.register-account-investor-screen4 .register-investor-screen4-btn-next').addClass('active')
 		$(".register-account-investor-screen4 .register-investor-screen4-btn-next svg").removeClass('next-hide');
 		$($(".register-account-investor-screen4 .register-progress span")[3]).html('&#10003;')
@@ -489,3 +499,5 @@ $(".toggle-password2").on('click',function(){
 $("#backtoLogin").on('click',function(){
     window.location="/en/login"
 })
+
+$("#sagia-cms-help-quick-login-helper").load(ACC.config.encodedContextPath + '/cms/sagia-cms-help-quick-registration main');

@@ -195,7 +195,7 @@
                         </div>
 
                      <hr class="hr"/>
-                    <div class="contentModule-filter p-2 mb-4">
+                    <div class="contentModule-filter p-2 mb-4 border-0">
                         <select id="profileTicketSort" title="profileTicketSort" class="js-select2-oneColumn form-control" onchange="sortProfileTickets()">
                             <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
                             <option value="status_desc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
@@ -223,8 +223,9 @@
                     <div class="paginationModule paginationModule_loading">
                         <c:if test="${!pageIsDashboard}">
                             <div class="dashboardWidget-filter">
-                                <diV>
-                                    <select class="paginationPicker js-select2-oneColumn form-control"></select>
+                                <div class="list_of_number_in_page">
+                                    <select class="paginationPicker js-select2-oneColumn form-control border-0">
+                                    </select>
                                 </div>
                             </div>
                         </c:if>

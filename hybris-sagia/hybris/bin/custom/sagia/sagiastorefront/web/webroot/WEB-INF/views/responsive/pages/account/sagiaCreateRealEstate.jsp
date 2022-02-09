@@ -63,12 +63,12 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="d-flex row renewal-services w-100">
-                <div class="col-md-3">
+                <div class="col-xl-3">
                     <a href="${request.contextPath}/real-estate" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span></span>
                         <spring:theme code="text.specialservices.backToServiceDetails"/>
                     </a>
                 </div>
-                <div class="col-md-9 d-flex btn-drafts_list amend-service-link amend-btns-list">
+                <div class="col-xl-9 d-flex btn-drafts_list amend-service-link amend-btns-list">
                     <button class="btn btn_round btn_slim js-save-draft" data-target-form="createRealEstateForm"
                             data-service-id="${serviceId}">
                         <spring:theme code="general.savedraft"/><span class="iconElement iconElement_save"><icon:save/></span>

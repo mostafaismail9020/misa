@@ -122,7 +122,8 @@ z-index: 0;
 }
 
 .js-recaptcha-captchaaddon {
-  margin: 20px 0;
+  /* margin: 20px 0; */
+  margin: 10px 0 0 10px;
 
 }
 
@@ -132,10 +133,10 @@ z-index: 0;
 }
 
 [dir="ltr"] #lblErrorCaptcha{
-	float: left;
+	float: left;    margin-bottom: 25px;
 }
 [dir="rtl"] #lblErrorCaptcha{
-	float: right;
+	float: right;    margin-bottom: 25px;
 }
 .mandatory {
 	color: #FF0000;

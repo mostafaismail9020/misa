@@ -7,7 +7,6 @@ $icon = icon(code, $contentCV)
 $menuIcon = menuIcon(code, $contentCV)
 $sagiaCategory = category(code)
 
-$langen = en
 $langar = ar
 
 
@@ -336,7 +335,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true]					;serviceFinancialFee
                  							
 
 
-INSERT_UPDATE SagiaService       ; code[unique = true]          ; rulesRestrictions[lang = $langar]																																	;serviceFinancialFees[lang = $langen]										;serviceDuration[lang = $langen] 																																	   
+INSERT_UPDATE SagiaService       ; code[unique = true]          ; rulesRestrictions[lang = $langar]																																	;serviceFinancialFees[lang = $langar]										;serviceDuration[lang = $langar] 																																	   
 								 ; ZSR6             			 ;"<ol start= '1'>
 																   <p>خدمة إفادة لغرض الغاء الترخيص اختياريا:</p>																				    																	
 																   <li>  تصفية العمالة.</li>                                                                                                                                                                                                                                                                                                                                                                      
@@ -580,8 +579,8 @@ INSERT_UPDATE SagiaService       ; code[unique = true]          ; rulesRestricti
 
 
 
-INSERT_UPDATE SagiaCategory	; code[unique = true]	; label ; services(code)		;
-							; 1						; FIRST	; ZSR6,ZSR5,ZSR7,ZSR4	;
+INSERT_UPDATE SagiaCategory	; code[unique = true]	; label 				; services(code)		;
+							; 1						; FIRST					; ZSR6,ZSR5,ZSR7,ZSR4	;
 							
 							; interiorAndPassport	; GOVERNMENTAL SERVICES	;  ZMOIP_08,ZMOIP_05,ZMOIP_10,ZMOIP_17,ZMOIP_21,ZMOIP_23,ZMOIP_15,ZMOIP_06,ZMOIP_01,ZMOIP_14,ZMOIP_13,ZMOIP_09,ZMOIP_03,ZMOIP_02,ZMOIP_11,ZMOIP_18,ZMOIP_07;
 

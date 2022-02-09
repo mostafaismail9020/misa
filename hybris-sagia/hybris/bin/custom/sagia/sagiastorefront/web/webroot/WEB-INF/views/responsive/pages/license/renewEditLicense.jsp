@@ -59,13 +59,13 @@
 </div> -->
 
 <div class="container mainSection mainSection_dark mainSection_noPadding">
-	<div class="m-5">
+	<div class="m-0 m-xl-5">
 		<div class="row w-100">
-            <div class="col-md-3 col-12 px-0">
+            <div class="col-md-6 col-12 px-0">
 				<a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
 			</div>
         </div>
-		<div class="row w-100 d-flex mt-4">
+		<div class="row w-100 d-none mt-4 lg-btn">
 			<div class="mainSection-linkActions mainSection-linkActions_spaceBetween btn-drafts_list amend-service-link amend-btns-list">
 				<!-- <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a> -->
 				<button class="btn btn_round js-save-draft ml-0"
@@ -102,7 +102,7 @@
 					</div>
 					<hr class="contentModule-separator">
 					<div class="contentModule-section contentModule-section_paddingSide">
-						<div class="row w-100">
+						<div class="row">
 							<div class="col-md-6">
 								<div class="formInputBox-split">
 									<div class="formInputBox formInputBox_big">
@@ -283,7 +283,7 @@
 					<div class="contentModule-section contentModule-section_paddingSide">
 						<span class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="text.account.followup.supportDocuments"/></span>
 						<div class="row contentModule-headline-border">
-							<div class="col-md-6 mt-5">
+							<div class="col-md-6">
 								<c:choose>
 									<c:when test="${reapply}">
 										<c:forEach items="${resubmittedDocuments}" var="attachment" varStatus="counter">

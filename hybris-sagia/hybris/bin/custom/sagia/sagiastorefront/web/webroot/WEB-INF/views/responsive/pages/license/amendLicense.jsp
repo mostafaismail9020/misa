@@ -86,9 +86,9 @@
 	</div>
 
 	<div class="container mainSection mainSection_white mainSection_narrow mainSection_noPadding">
-		<div class="m-5">
+		<div class="m-0 m-md-5">
 			<div class="row w-100 renewal-services">
-				<div class="col-md-3 col-12 px-0">
+				<div class="col-md-6 col-12">
                     <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
 				<c:if test="${fn:length(sagiaService.tabs) > 0}">
@@ -97,17 +97,17 @@
 					</div>
 				</c:if>
 			</div>
-			<div class="row w-100 d-flex mt-4	">
+			<div class="row w-100 d-none mt-4	">
 				<div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
 					<div class="col-xl-12 col-12 amend-btns-list">
-						<button id="saveDraftBtnId" class="btn btn_round btn_slim">
+						<button id="saveDraftBtnId" class="btn btn_round btn_slim mr-0 mr-md-2">
 							<spring:theme code="general.savedraft" />
 							<span class="iconElement iconElement_save"><icon:save /></span>
 						</button>
 					<!-- </div>
 					<div class="col-xl-6 col-12 amend-btns-list"> -->
 						<button id="loadDraftBtnId"
-							class="btn btn_round btn_slim js-load-draft"
+							class="btn btn_round btn_slim js-load-draft mr-0 mr-md-2"
 							<c:if test="${!draftExists}">style="display: none"</c:if>>
 							<spring:theme code="general.loaddraft" />
 							<span class="iconElement iconElement_save"><icon:upload /></span>
@@ -130,7 +130,7 @@
 			<div class=""><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
 		</button>
 	</div>
-	<div class="service-wrapper service-wrapper-info mb-5 mx-5" id="expand-03">
+	<div class="service-wrapper service-wrapper-info mb-5 mx-0 mx-md-5" id="expand-03">
 		<div class="serviceModule serviceModule_list mx-5 pt-4">
 			<div class="serviceModule-section">
 				<div class="serviceModule-content">
@@ -224,7 +224,7 @@
 		</div>
 	</div> -->
 	<!-- <div class="mainSection mainSection_white mainSection_narrow mainSection_xsmallPaddingTop service-request service-wrapper service-wrapper-info mw-100 w-100 mt-5 mb-3"> -->
-		<div class="container mainSection mainSection_dark mainSection_pdt16 mb-3 ml-4 service-main">
+		<div class="container mainSection mainSection_dark mainSection_pdt16 mb-3 ml-0 ml-md-4 service-main">
 		<div class="">
 			<div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
 				<button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
@@ -739,6 +739,7 @@
 					<div class="contentModule-headline">
 						<spring:theme code="license.shareholder" />
 					</div>
+					<div class="border-top-line">
 					<div id="shareholderNewExistingTypeId" class="row amend-shareholder-wrapper">
 						<div class="col-md-12">
 							<div class="formRadioBox">
@@ -762,7 +763,9 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					
+
+				
 
 					<div id="shareholderPersonEntityTypeId" class="row amend-shareholder-wrapper">
 						<div class="col-md-12">
@@ -803,6 +806,8 @@
 					</div>
 
 					<div class="contentModule-separator"></div>
+
+				</div>
 
 					<div id="shareholderValidationSection">
 						<div class="row" id="shareholderValidationDetails">
@@ -871,6 +876,8 @@
 							<div class="contentModule-headline">
 								<spring:theme code="license.basicinformation" />
 							</div>
+
+							<div class="border-top-line">
 
 							<%--Entity shareholder--%>
 							<div id="entityShareholderId">
@@ -1253,13 +1260,14 @@
 
 
 							<div class="contentModule-separator"></div>
+						</div>
 
 							<div class="contentModule-headline">
 								<spring:theme code="license.contactinformation" />
 							</div>
-
+							<div class="border-top-line">
 							<div id="shareholderAddressId" class="row">
-								<div class="col-md-6 mt-5">
+								<div class="col-md-6 mt-3">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderCountryId" name="shareholderCountry"
@@ -1271,7 +1279,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6 mt-5">
+								<div class="col-md-6">
 									<div class="formInputBox-split">
 										<div class="formInputBox formInputBox_big">
 											<div class="form-group">
@@ -1783,15 +1791,17 @@
 
 						</div>
 
+						</div>
+
 
 						<div
-							class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
+							class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection mt-5">
 							<button type="button"
 								class="btn btn-sector-outline mx-auto cancelShareholderBtn"
 								data-dismiss="modal">
 								<spring:theme code="general.cancel" />
 							</button>
-							<button type="button" class="btn btn-slim saveShareholderBtn  mx-auto">
+							<button type="button" class="btn btn-slim saveShareholderBtn">
 								<spring:theme code="general.save" />
 							</button>
 						</div>
@@ -1806,14 +1816,14 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content panelModule panelModule_halfRadius">
 				<form id="branchFormId">
-					<div class="contentModule-headline">
+					<!-- <div class="contentModule-headline">
 						<spring:theme code="general.branch" />
-					</div>
+					</div> -->
 
 					<div class="contentModule-headline">
 						<spring:theme code="license.branchdetails" />
 					</div>
-
+					<div class="border-top-line">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="formSelectBox">
@@ -1840,12 +1850,13 @@
 							</div>
 						</div>
 					</div>
+					</div>
 
 					<div class="contentModule-separator"></div>
 					<div class="contentModule-headline">
 						<spring:theme code="license.contactinformation" />
 					</div>
-
+					<div class="border-top-line">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="formSelectBox">
@@ -1957,6 +1968,7 @@
 							</div>
 						</div>
 					</div>
+					</div>
 
 					<div
 						class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
@@ -1986,7 +1998,7 @@
 					<div class="contentModule-headline">
 						<spring:theme code="general.edit" />
 					</div>
-					<div class="row mt-3">
+					<div class="row">
 						<div class="col-md-12">
 							<div class="formSelectBox">
 								<div class="form-group">
@@ -2097,42 +2109,31 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="docsmodalId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog amend-doc-submit" role="document">
+	<div class="modal fade" id="docsmodalId" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
 			<div class="modal-content panelModule panelModule_halfRadius">
-				<div class="contentModule contentModule-wrap">
+				<div class="contentModule">
 					<form:form id="docsFormId">
-						<!-- <div id="amendmentTypeId"
+						<div id="amendmentTypeId"
 							class="contentModule-headline contentModule-headline_big contentModule-headline_bordered">
 							<spring:theme code="license.amend.documents" />
-						</div> -->
-						<div id="amendmentTypeId" class="contentModule-actions w-100">
-							<span class="headline-text"><spring:theme code="license.amend.documents" /></span>
 						</div>
 
-						<!-- <div
+						<div
 							class="contentModule-headline contentModule-headline_marginBottom">
 							<spring:theme code="license.amend.amendment.types" />
-						</div> -->
-						<div id="amendmentTypeId" class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
-							<span class="contentModule-headline"><spring:theme code="license.amend.amendment.types" /></span>
-							<div class="contentModule-headline-border"></div>
 						</div>
 						<div id="amendmentTypesId" class="row"></div>
 
 						<div id="regularAmendmentDocsId">
 							<div class="contentModule-separator"></div>
-							<!-- <div class="contentModule-headline">
+							<div class="contentModule-headline">
 								<spring:theme code="license.amend.supporting.documents" />
-							</div> -->
-							<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
-								<span class="contentModule-headline"><spring:theme code="license.amend.supporting.documents" /></span>
-								<div class="contentModule-headline-border"></div>
 							</div>
-
 							<div id="documentsId" class="row"></div>
 						</div>
-						<div class="col-sm-12 docTemplate mt-3">
+						<div class="col-sm-6 docTemplate">
 							<div class="formInputFile">
 								<div class="form-group">
 									<input id="fileId" name="file" class="form-control js-inputFile"
@@ -2153,13 +2154,13 @@
 						<%-- <div class="contentModule-separator"></div>
 					<div id="simulatedPriceDivContent" class="contentModule-headline contentModule-headline_marginBottom"><spring:theme code="license.amend.totalPrice"/></div>
 						<div id="simulatedPriceRow" class="row">
-							<div class="col-sm-12 mt-3">
+							<div class="col-sm-6">
 							<ul class="dottedList dottedList_green dottedList_big">
 							<li class="dottedList-item" id="simulatedPriceNetValue"></li></ul></div>
 					</div> --%>
-						<div class="acceptTerms-no-margin">
+						<div class="acceptTerms acceptTerms-no-margin">
 							<div class="row">
-								<div class="col-md-12 mt-3">
+								<div class="col-md-12">
 									<div class="formCheckBox">
 										<div class="form-group">
 											<div class="form-item">
@@ -2180,19 +2181,15 @@
 						</div>
 
 						<div
-							class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection row">
-							<div class="col-md-12 mx-0 px-0 d-flex">
-								<div class="col-md-6">
-									<button type="button" class="btn btn-slim btn_outline cancelAmendmentDialogBtn">
-										<spring:theme code="general.cancel" />
-									</button>
-								</div>
-								<div class="col-md-6">								
-									<button id="submitAmendmentBtnId" type="button" class="btn btn-slim submitAmendmentBtn">
-										<spring:theme code="general.submit" />
-									</button>
-								</div>
-							</div>
+							class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
+							<button type="button"
+								class="btn btn-slim btn_outline cancelAmendmentDialogBtn">
+								<spring:theme code="general.cancel" />
+							</button>
+							<button id="submitAmendmentBtnId" type="button"
+								class="btn btn-slim submitAmendmentBtn">
+								<spring:theme code="general.submit" />
+							</button>
 						</div>
 					</form:form>
 				</div>

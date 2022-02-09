@@ -1469,11 +1469,11 @@ $(function () {
                 $(".quickregistrationCheckPwd").attr('disabled',true);
 
                 if(e.type === "change"){
-                    var $element = $(".quickregistrationCheckPwd");
-                    $element.closest('.formInputBox').find('input').css('width','100%');
-                    $element.closest('.formInputBox').find('.form-group').css('display','block');
-                    $($element).closest('.formInputBox').siblings('.toggle-password2').removeClass('reg-password-success');
-                    $($element).closest('.formInputBox').find('.verified').remove();
+                    var $elementCPwd = $(".quickregistrationCheckPwd");
+                    $elementCPwd.closest('.formInputBox').find('input').css('width','100%');
+                    $elementCPwd.closest('.formInputBox').find('.form-group').css('display','block');
+                    $($elementCPwd).closest('.formInputBox').siblings('.toggle-password2').removeClass('reg-password-success');
+                    $($elementCPwd).closest('.formInputBox').find('.verified').remove();
                 }
 
                 if (hasNoError) {

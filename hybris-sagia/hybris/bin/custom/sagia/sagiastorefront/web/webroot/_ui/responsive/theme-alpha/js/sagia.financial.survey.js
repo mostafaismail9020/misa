@@ -1202,6 +1202,23 @@ var submitFinancialSurveyShareholders = function () {
         return;
     }
 
+    //Voting Sum
+    var sumVoting = 0;
+    financialSurvey.shareholders.forEach(function(shareholder) {
+        if(shareholder.shareholderPercentage != null && shareholder.action != null && shareholder.action !== '03') {
+            sumVoting = Math.round((sumVoting + Number(shareholder.shareholderVotingPower)) * 1e12) / 1e12 ;
+        }
+    });
+    if (sumVoting !== 100) {
+        $('#licenseAmendmentValidationDialogId').modal({
+            backdrop: "static",
+            keyboard: false
+        }).find('.modal-description').empty().text(getI18nText('validation.votingPerc.sum'));
+        return;
+    }
+
+    // End Voting Sum
+
     var token = $('input[name="CSRFToken"]').attr('value');
     $.ajax(ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/saveShareholders", {
         method: "POST",
@@ -1433,7 +1450,7 @@ function setLicenseData(data, history) {
 
     $('#suspensionDateId').val(financialSurvey.suspensionDate);
 
-  //  updateDropDown('#legalStatusId', companyProfile.legalStatus);
+    updateDropDown('#legalStatusId', companyProfile.legalStatus);
     if (financialSurvey.isConsolidated) {
         $("#standloneId").prop('checked',false);
         $("#consolidatedId").prop('checked',true);
@@ -1621,8 +1638,10 @@ function setupDropDowns(data) {
         $affiliateSectorSelect.append(new Option(sector.name, sector.id, false, false));
     });
 
-    var $legalStatusSelect = $('#shareholderLegalStatusId').append(new Option('', '', false, false));
+    //var $legalStatusSelect = $('#shareholderLegalStatusId').append(new Option('', '', false, false));
     var $affiliateLegalStatusSelect = $('#affiliateLegalStatusId').append(new Option('', '', false, false));
+    var $legalStatusSelect = $('#legalStatusId').append(new Option('', '', false, false));
+
     data.legalStatus.forEach(function (legalStatus) {
         $legalStatusSelect.append(new Option(legalStatus.name, legalStatus.id, false, false));
         $affiliateLegalStatusSelect.append(new Option(legalStatus.name, legalStatus.id, false, false));

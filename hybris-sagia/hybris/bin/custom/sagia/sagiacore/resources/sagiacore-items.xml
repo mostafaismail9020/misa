@@ -431,8 +431,8 @@
 			<targetElement qualifier="mcComponents" type="InvestSaudiMediaCenterComponent" cardinality="many" collectiontype="list" ordered="true">
 				<modifiers read="true" write="true" search="true" optional="true" />
 			</targetElement>
-		</relation>	
-		
+		</relation>
+
 		<relation code="ProvinceNewsRel" generate="true" localized="false" autocreate="true">
 			<deployment table="ProvinceNewsRel" typecode="30301" />
 			<sourceElement qualifier="region" type="ProvinceComponent" cardinality="many" ordered="false">
@@ -442,7 +442,7 @@
 				<modifiers read="true" write="true" search="true" optional="true" />
 			</targetElement>
 		</relation>
-		
+
 		<relation code="ProvinceResourcesRel" generate="true" localized="false" autocreate="true">
 			<deployment table="ProvinceResourcesRel" typecode="30302" />
 			<sourceElement qualifier="region" type="ProvinceComponent" cardinality="many" ordered="false">
@@ -452,7 +452,7 @@
 				<modifiers read="true" write="true" search="true" optional="true" />
 			</targetElement>
 		</relation>
-		
+
 		<relation code="ProvinceEventsRel" generate="true" localized="false" autocreate="true">
 			<deployment table="ProvinceEventsRel" typecode="30303" />
 			<sourceElement qualifier="region" type="ProvinceComponent" cardinality="many" ordered="false">
@@ -462,7 +462,7 @@
 				<modifiers read="true" write="true" search="true" optional="true" />
 			</targetElement>
 		</relation>
-		
+
 		<relation code="ProvinceProductsRel" generate="true" localized="false" autocreate="true">
 			<deployment table="ProvinceProductsRel" typecode="30304" />
 			<sourceElement qualifier="region" type="ProvinceComponent" cardinality="many" ordered="false">
@@ -473,7 +473,7 @@
 			</targetElement>
 		</relation>
 
-		<!-- Invest Saudi Changes Ends  -->	
+		<!-- Invest Saudi Changes Ends  -->
 
         <relation code="FinancialSurvey2Shareholders" generate="true" localized="false" autocreate="true">
             <sourceElement type="FinancialSurvey" cardinality="one" qualifier="financialSurvey">
@@ -11548,6 +11548,9 @@
                     <attribute qualifier="financialManagerTelephone" type="java.lang.String">
                         <description>Financial Manager Telephone</description>
                         <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="legalStatus" type="SagiaLegalStatus">
                         <persistence type="property"/>
                     </attribute>
                 </attributes>

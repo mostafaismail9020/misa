@@ -15,6 +15,7 @@ import com.sap.ibso.eservices.core.model.SagiaSurveyTransactionModel;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyDAO;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyQuarterDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaCompanyProfileDAO;
+import com.sap.ibso.eservices.core.sagia.dao.SagiaLegalStatusDAO;
 import com.sap.ibso.eservices.core.sagia.services.SagiaFormatProvider;
 import com.sap.ibso.eservices.facades.data.finance.survey.Affiliate;
 import com.sap.ibso.eservices.facades.data.finance.survey.Shareholder;
@@ -66,6 +67,8 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     private BaseSiteService baseSiteService;
     @Resource
     private CommonI18NService commonI18NService;
+    @Resource
+    private SagiaLegalStatusDAO  sagiaLegalStatusDAO;
 
 
 
@@ -415,6 +418,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         companyProfile.setFinancialManagerEmail(companyProfileData.getFinanceManagerEmail());
         companyProfile.setFinancialManagerName(companyProfileData.getFinanceManagerName());
         companyProfile.setFinancialManagerTelephone(companyProfileData.getFinanceManagerTelephone());
+        companyProfile.setLegalStatus(sagiaLegalStatusDAO.getLegalStatusForCode(companyProfileData.getLegalStatus()));
         companyProfile.setCrIssueDate(sagiaFormatProvider.formatUIStrToBackDate(companyProfileData.getCrIssueDate()));
         companyProfile.setIncorporationDate(sagiaFormatProvider.formatUIStrToBackDate(companyProfileData.getIncorporationDate()));
         modelService.save(companyProfile);

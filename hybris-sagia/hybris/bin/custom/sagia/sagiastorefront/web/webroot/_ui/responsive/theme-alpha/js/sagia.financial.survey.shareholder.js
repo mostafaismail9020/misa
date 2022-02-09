@@ -776,6 +776,9 @@ var saveShareholder = function (existingBp, bpId) {
     var capital = $('#shareholderCapitalId').val();
     var percentage = $('#shareholderPercentageId').val();
     var shareholderVotingPower = $('#shareholderVotingPowerId').val();
+    if($('#shareholderVotingPowerId').val() == ''){
+        shareholderVotingPower = percentage;
+    }
     var shareholderPreferredShares = $('#shareholderPreferredSharesId').val();
     var shareholderValueOfReverseInvestment = $('#shareholderValueOfReverseInvestmentId').val();
     var shareholderIsVotingPower = $('#shareholderIsVotingPowerId').is(':checked');

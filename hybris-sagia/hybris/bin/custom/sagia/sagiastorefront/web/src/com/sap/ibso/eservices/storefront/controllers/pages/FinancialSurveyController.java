@@ -134,6 +134,7 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     public FinancialSurvey saveFinancialSurveyCompanyProfileSection(@RequestBody FinancialSurvey financialSurvey) {
 
         Set<String> errors = new SagiaFinancialSurveyValidator().validateEntity(financialSurvey);
+
         if (!errors.isEmpty()) {
             financialSurvey.setErrors(errors);
             return financialSurvey;

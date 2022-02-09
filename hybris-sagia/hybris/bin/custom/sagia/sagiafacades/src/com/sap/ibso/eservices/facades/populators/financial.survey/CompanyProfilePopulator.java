@@ -27,5 +27,6 @@ public class CompanyProfilePopulator implements Populator<SagiaCompanyProfileMod
         companyProfile.setFinanceManagerEmail(companyProfileModel.getFinancialManagerEmail());
         companyProfile.setFinanceManagerName(companyProfileModel.getFinancialManagerName());
         companyProfile.setFinanceManagerTelephone(companyProfileModel.getFinancialManagerTelephone());
+        companyProfile.setLegalStatus(companyProfileModel.getLegalStatus().getCode());
     }
 }

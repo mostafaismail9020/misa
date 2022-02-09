@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="license" tagdir="/WEB-INF/tags/responsive/license" %>
+<%@ taglib prefix="survey" tagdir="/WEB-INF/tags/responsive/survey" %>
 <%@ taglib prefix="modals" tagdir="/WEB-INF/tags/responsive/common" %>
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
 <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
@@ -405,7 +406,7 @@
                                         </div>
                                     </div>
 
-                                    <license:licenseBusinessActivitiesSection/>
+                                    <survey:surveyBusinessActivitiesSection/>
 
                                 </form:form>
 

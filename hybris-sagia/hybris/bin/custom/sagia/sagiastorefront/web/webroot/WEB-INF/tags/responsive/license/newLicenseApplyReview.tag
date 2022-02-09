@@ -267,7 +267,7 @@
                 <c:url value="/my-sagia/license/entity" var="entityInfoLink"/>
                 <a id="editEntityInformationButton" type="button" class="btn btn_link iconElement iconElement_edit03" href="${entityInfoLink}"><icon:edit/></a>
             </div>
-            
+
             <div id="reviewLicenseTypeSection">
                 <div class="row">
                     <div class="col-md-6">
@@ -298,7 +298,7 @@
 
                 <hr class="contentModule-separator"/>
             </div>
-            
+
             <div id="reviewAdvanceLicenseNrSection" style="display: ${entityInformation.hasAdvanceLicenseNr?'block':'none'};">
                 <div class="row">
                     <div class="col-md-6">
@@ -553,7 +553,7 @@
             </div>
         </div>
 
-                    
+
         <div class="contentModule-section" id="reviewContactQeemah1Section">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
                 <div class="contentModule-headline"><spring:theme code="license.apply.review.contactperson"/></div>
@@ -605,7 +605,7 @@
             </div>
         </div>
 
-        <div class="contentModule-section">
+        <div class="contentModule-section" style="display:none;">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
                 <div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.unifiedLicenseUrl"/></div>
             </div>
@@ -615,31 +615,31 @@
                 <a id="unifiedLicenseUrl" target="_blank" href="https://sagia.meras.gov.sa/"><spring:theme code="licenseApply.contactPerson.unifiedLicenseUrl"/></a>
             </h3>
         </div>
-        
+
         <div   id="typeRequirementSection" style="display: none;">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
             		<div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.typeRequirement"/></div>
         	</div>
-        
-                
+
+
       		<h3 style="color:red;font-size:15px;"> <spring:theme code="licenseApply.contactPerson.readAllRequirement"/></h3>
             <div class="scrollWrapper" id="scrollWrapperTypeRequirement">
                 <div class="scrollWrapper-inner" id="scrolltypeRequirement" >
                     <div id="requirementContent" class="requirement-content"  >
                         <dd id="contentRequirement"></dd>
                     </div>
-                   
+
                 </div>
             </div>
 
             <div class="contentModule-actions contentModule-actions_spaceBetween">
             <span>
                 <button id="requirementSubmitButton" type="button" class="btn" disabled="disabled"><spring:theme code="text.consent.button.accept"/></button>
-                
+
             </span>
-            
+
             </div>
-        
+
         </div>
 
         <%--<div class="contentModule-actions contentModule-actions_spaceBetween">--%>

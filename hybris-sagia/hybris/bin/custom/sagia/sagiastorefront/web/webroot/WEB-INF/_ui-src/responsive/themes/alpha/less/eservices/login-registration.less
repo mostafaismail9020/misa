@@ -420,11 +420,11 @@
 	transform: none;
 	color: @color-text;
   }
-  .formInputBox .register-user-details:focus ~ .register-user-info-label.control-label,  .formTextArea .register-user-details:focus ~  .register-user-info-label.control-label{
-	transform: translate3d(-6px,27px, 0) scale(1);
-	color: @color-golden;
-	font-size: var(--label-focused-font);
-  }
+//   .formInputBox .register-user-details:focus ~ .register-user-info-label.control-label,  .formTextArea .register-user-details:focus ~  .register-user-info-label.control-label{
+// 	transform: translate3d(-6px,27px, 0) scale(1);
+// 	color: @color-golden;
+// 	font-size: var(--label-focused-font);
+//   }
 
   .control-label.ddl-countrycode-label.focused{
 	transform: translate3d(-6px,-8px,0) scale(1);
@@ -987,7 +987,7 @@
   }
   [dir="ltr"] .captcha-pos{
       margin-left: 1rem;
-	  transform: translateX(50%);
+	  transform: translateX(35%);
   }
   [dir="rtl"] .captcha-pos{
       margin-right: 1rem;
@@ -1049,11 +1049,20 @@
             padding-right: 0px;
         }
     }
+	.login-logo{
+		margin-left: 50px;
+	}
+	.accountLogin-content-slot_left{
+		padding: 15px 0 30px 45px!important;
+	}
 }
 
   @media (min-width:992px) and (max-width:1200px) {
-	.bussiness-sector{
-	  width: 384px;
+	.captcha-pos{
+		transform: translateX(20%);
+	}
+	.right_arrowdd .select2.select2-container .select2-selection:after{
+		right: 15px;
 	}
 	.country-code-mobile{
 	  display: block;
@@ -1071,9 +1080,9 @@
 	.reg-terms-checkbox-span{
 	  margin-right: 10px;
 	}
-	.register-form{
-	  margin-bottom: 1rem;
-	}
+	// .register-form{
+	//   margin-bottom: 1rem;
+	// }
 	.verification-info{
 	  text-align: center;
 	  margin-top: 10px;
@@ -1270,7 +1279,7 @@
   }
   @media (min-width:1500px) and (max-width:1669px) and (max-height:800px) {/*125%*/
 	.r-sn .form-control, .formInputBox .form-control {
-		padding-left: 20px;
+		padding-left: 20px !important;
 	}
 	
 	.login-screen2{
@@ -1287,12 +1296,15 @@
 			height: 45px;
 		}
 		.captcha-pos{
-			transform: translateX(30%);
+			transform: translateX(20%);
 		}
 		
 	.register-account-investor-screen3{
 		.login-right-wrapper{
 			width: 700px;
+		}
+		.select2-container .select2-selection--single .select2-selection__rendered{
+			padding: 4px 0px 0px 0px;
 		}
 	}
 	.register-account-investor-screen4{
@@ -1406,6 +1418,9 @@
 			width: 530px;
 		}
 	  }
+	  .captcha-pos{
+		transform: translateX(25%);
+	}
 	.register-account-investor-screen3,.register-account-investor-screen4{
 		.login-right-wrapper{
 			width: 650px;

@@ -366,7 +366,7 @@
 						</div>
 						<div class="col-md-12 captcha-pos">
 							<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
-							<div class="form_field-elements control-group js-recaptcha-captchaaddon" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+							<div class="form_field-elements control-group js-recaptcha-captchaaddon" style="transform:scale(0.88);-webkit-transform:scale(0.88);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
 							<span id="lblErrorCaptchareg" class="mandatory"></span>
 						</div>
 					</div>

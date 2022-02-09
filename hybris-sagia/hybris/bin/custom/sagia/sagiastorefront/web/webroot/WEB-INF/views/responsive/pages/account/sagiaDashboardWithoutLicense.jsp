@@ -238,7 +238,7 @@
                                 </span>
                             </div>
                             <div>
-                                <span class="firstBlock-contact-local-number">
+                                <span class="firstBlock-contact-local-number local-connect-number">
                                     <spring:theme code="dashboard.license.letus.help.you.local.number"/>
                                 </span>
                             </div>
@@ -253,7 +253,7 @@
                                 </span>
                             </div>
                             <div>
-                                <span class="firstBlock-contact-local-number">
+                                <span class="firstBlock-contact-local-number international-connect-number">
                                     <spring:theme code="dashboard.license.letus.help.you.International.number"/>
                                 </span>
                             </div>
@@ -268,7 +268,7 @@
                                 </span>
                             </div>
                             <div>
-                                <span class="firstBlock-contact-local-number emailBlock">
+                                <span class="firstBlock-contact-local-number emailBlock d-email-id">
                                     InvestorCare@misa.gov.sa
                                 </span>
                             </div>

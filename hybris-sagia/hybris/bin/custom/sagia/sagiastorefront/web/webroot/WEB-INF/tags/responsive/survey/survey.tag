@@ -18,12 +18,13 @@
                data-application="${surveyData.applicationId}"
                data-transaction-id="${surveyData.transactionId}"
                data-isFetchedFromNotificationService="${surveyData.isFetchedFromNotificationService}">
-                  <div>
-                <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab"
-                	class="btn btn-ctrl btn-outline btn_bold text-uppercase w-25 mb-5 backToall">
-                    <!--<span class="iconElement iconElement_closeBack"><icon:close/></span>--><spring:theme code="general.participate.backtoallquestionaires"/></a>
+                <div class="row">
+                    
+				<div class="col-md-3 col-12 px-0">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="general.participate.backtoallquestionaires"/></a>
+                </div>
             </div>
-        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
+        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap mt-3 ">
             <div class="contentModule-headline fdi ml-0">
                 <!--<span class="iconElement iconElement_questionaires"><icon:questionaires/></span>-->${surveyData.surveytitle}
             </div>

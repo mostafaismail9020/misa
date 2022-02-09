@@ -1044,3 +1044,37 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
         color: @color-primary !important;
     }
 }
+
+
+.potential-opportunities{
+    .tableModule{
+        overflow-y: scroll;
+    }
+    .dashboardWidgetTickets-table{
+        max-height: 400px;
+
+        .tableModule-head{
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .tableModule-body{
+            &::-webkit-scrollbar {
+                width: 6px;
+                background: #fff;
+                border-radius: 12px;
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                background: @color-primary;
+                border-radius: 12px;
+            }
+        }
+    }
+}
+
+.page-verification{
+    .global-message-position .global-alerts{
+        top:0px !important;
+    }
+}

@@ -338,10 +338,11 @@
 
                 <!-- company representative-->
                 <div class="contentModule-section" id="companyRepresentativeSection">
-                   <!--<div class="contentModule-headline">
-                        <span class="iconElement iconElement_generalManager"><icon:person/></span>
+                   <div class="contentModule-headline">
+                        <!---<span class="iconElement iconElement_generalManager"><icon:person/></span>--->
                         <spring:theme code="profileCompany.companyRepresentative.title"/>
-                    </div>-->
+                    </div>
+                    <hr class="hr">
                     <div class="js-myAccount-edit-toggle">
                         <div class="tableModule tableModule_slim">
                             <table class="tableModule-table" id="representativeTable">
@@ -442,8 +443,12 @@
             <div class="modal-content">
                 <div class="contentModule">
                     <div class="modal-header">
-                        <div class="modal-title">
-                            <!--<span class="iconElement iconElement_generalManager"><icon:person/></span>--><spring:theme code="profileCompany.companyRepresentative.title"/>
+                        <div class="modal-title w-100">
+                            <div class="contentModule-headline w-50">
+                                <!--<span class="iconElement iconElement_generalManager"><icon:person/></span>-->
+                                <spring:theme code="profileCompany.companyRepresentative.title"/>
+                            </div>
+                            <hr class="hr">
                         </div>
                         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                             <icon:close/>
@@ -490,8 +495,13 @@
                                 </div>
                             </div>
                         </div>
+                    </div> 
+                    <div class="modal-footer modal-footer_right text-center">
+                    
+                        <button type="button" class="btn btn-dashboard text-uppercase w-50 mx-auto" data-dismiss="modal" aria-label="Close" style="background: #00a6be !important;color: #fff;">
+                            Close
+                        </button>
                     </div>
-                    <div class="modal-footer modal-footer_right"></div>
                 </div>
             </div>
         </div>

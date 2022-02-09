@@ -12,7 +12,7 @@
 	.sagiaNavigation,
 	.investsaudiFooter,
 	.sagiaHead-paddingHelper,
-	.sagiaHead ,#topbar ,#header{
+	.sagiaHead ,#topbar ,#header,.footer,.copyright{
 		display: none !important;
 	}
 </style>
@@ -42,7 +42,7 @@
 											<div class="col-md-10 col-12">
 												<div class="formInputBox formInputBox_group ">
 													<div class="form-group">
-														<form:input path="countryCode" cssClass=" ddl-countryCode register-user-details register-contry-info"
+														<form:input path="countryCode" cssClass=" ddl-countryCode register-user-details register-contry-info form-control"
 															placeholder="." maxlength="5" id="countryCode" disabled="true" />
 														<label
 															class="control-label register-user-info-label focused"
@@ -51,7 +51,7 @@
 														</label>
 														<div class="formInputBox-append" id="editCountryCode">
 															<form:input path="mobile"
-																cssClass="register-user-details validate-mobile mobile-number"
+																cssClass="register-user-details validate-mobile mobile-number form-control"
 																placeholder="."
 																maxlength="15"
 																disabled="true"
@@ -94,7 +94,7 @@
 												<spring:theme code="text.verification.mobile.adaptive" />
 											</label>
 										</div>
-										<div class="help-block"></div>
+										<div class="help-block has-error"></div>
 										<div class="row d-block login-buttons verify-mobile m-auto">
 											<div class="col-md-12 col-12">
 												<button class="login-btn login-btn-next active" name="smsverify" id="mobileBtn">
@@ -111,7 +111,7 @@
 											<div class="col-12 col-md-10">
 												<div class="formInputBox formInputBox_group ">
 													<div class="form-group">
-														<form:input path="regEmail" cssClass="register-user-details validate-email" placeholder="." maxlength="60" disabled="true" id="regEmail" />
+														<form:input path="regEmail" cssClass="register-user-details validate-email form-control" placeholder="." maxlength="60" disabled="true" id="regEmail" />
 														<label class="control-label register-user-info-label focused" for="regEmail">
 															<spring:theme code="text.verification.email.register" />
 														</label>
@@ -174,7 +174,7 @@
 															<%-- <span class="formInputBox-text"><icon:edit /></span> --%>
 														</div>
 													</div>
-													<div class="help-block" id="emailQ">
+													<div class="help-block has-error" id="emailQ">
 													</div>
 												</div>
 											</div>

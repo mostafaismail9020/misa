@@ -643,11 +643,11 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
-                <div class="col-md-6 col-xs-12">
+            <div class="row mb-3 helpSectionBtn">
+                <div class="mr-md-5 pb-3 pb-md-0">
                     <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
                 </div>
-                <div class="col-md-6 col-xs-12 pt-3 pt-md-0">
+                <div class="mr-md-5-ar">
                     <a class="btn " href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
                 </div>
             </div>

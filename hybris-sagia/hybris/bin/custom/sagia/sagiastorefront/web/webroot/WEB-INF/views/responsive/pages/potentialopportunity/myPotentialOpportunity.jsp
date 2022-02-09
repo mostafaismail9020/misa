@@ -73,7 +73,7 @@
 		</div>
 		<div class="col-md-6  pull-right text-right">
 			<c:url value="/potentialOpportunity/${contactTicketDetails.ticketID}/serviceRequest" var="serviceRequestURL"/>
-			<a href="${serviceRequestURL}" class="btn-dashboard text-uppercase w-50" style="float: right;"> 
+			<a href="${serviceRequestURL}" class="btn-dashboard text-uppercase potentialOpportunityServiceReq" style="float: right;"> 
 				<spring:theme code="my.potential.opportunity.service.request.button" />
 			</a>
 		</div>
@@ -255,12 +255,12 @@
 <div class="container  service-wrapper-info pt-5 pb-5">
 	<div class="row serviceModule serviceModule_list ">
 		<div class="pull-left col-12 showdowbox_potential">
-			<div class="mx-5">				
+			<div class="mx-5 potentialOpportunityChatBox">				
 				<!--<input type="submit" value="refresh" id="submit"  onClick="window.location.reload();" class="btn btn_submit_whitess"/>-->
 				
 				<h5 class="serviceModule-description">
 					<span class="serviceModule-headline"><spring:theme code="my.potential.opportunity.comments.label"/></span>
-					<button onclick="commentTextArea()" class="btn-dashboard text-uppercase">
+					<button onclick="commentTextArea()" class="btn-dashboard text-uppercase my-3 my-md-0">
 						<spring:theme code="my.potential.opportunity.add.comments"/>
 					</button>
  				</h5> 
@@ -278,7 +278,7 @@
 							<div class="success-message-block"></div>
 						</div>
 						<div class="error-msg"></div>
-						<div class="d-inline float-right">
+						<div class="potentialOpportunityNewChat float-right">
 							<button type="button" class="btn btn_cancel_whitess"  onclick="commentTextArea()" >
 								<spring:theme code="portal.contactus.form.cancel.button"/>
 							</button>

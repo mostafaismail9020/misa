@@ -114,7 +114,7 @@
 						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree">
 					</a>
 				</c:if>
-				<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
+				<img class="img-fluid arrow-icon transform-180-degree" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
 			</button>
 	        <c:if test="${empty featuredOpportunities}">
 	        	<div class="page-main-content mt-0 text-center">

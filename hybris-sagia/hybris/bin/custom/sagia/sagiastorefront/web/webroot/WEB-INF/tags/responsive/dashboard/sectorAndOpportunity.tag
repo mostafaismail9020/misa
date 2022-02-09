@@ -19,7 +19,7 @@
 </div>
 
                    
-<div class="js-dashboardWidget">
+<div class="js-dashboardWidget sectorAndOpportunitiesSection">
 	<div class="dashboardWidget-body">
     	<div class="dashboardWidgetNoLicense">
         	<div class="dashboardWidgetNoLicense-tabs">
@@ -101,7 +101,7 @@
 	            	</c:if>
 	            </h1>	            
 	        </div>
-			<button  class="btn-dashboard responsive-btn-sector col-2 dashboard-invest-btn">
+			<button  class="btn-dashboard responsive-btn-sector dashboard-invest-btn explore-all-btn">
 				<c:if test="${empty featuredOpportunities}">
 					<a class="text-white text-uppercase" href="${encodedContextPath}/sectors-opportunities/opportunities" >
 						<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;

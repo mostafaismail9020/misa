@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="dashboardWidget-body">
+    <div class="dashboardWidget-body myLicenseBody">
     <%-- start dashboardWidgetLicense --%>
         <div class="dashboardWidget-headline-action">
             <a href="${encodedContextPath}/my-sagia/license/convert" class="dashboardWidget-headline-action-link">

@@ -38,21 +38,21 @@
                             <h2 class="text-uppercase display-7"><spring:theme code="portal.footer.invest.saudi.label"/></h2>
                             <p class="text"><spring:theme code="portal.footer.invest.saudi.text"/></p>
                             <p><a class="link text-uppercase px-0" href="/${language}/sectors-opportunities/opportunities"><spring:theme code="portal.footer.explore.opportunities.label"/> &nbsp; &nbsp;
-						    		<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+						    		<img class="transform-180-degree p-0" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                             </p>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                             <h2 class="text-uppercase display-7"><spring:theme code="portal.footer.regional.hq.label"/></h2>
                             <p class="text "><spring:theme code="portal.footer.regional.hq.text"/></p>
                             <p><a class="link text-uppercase px-0" href="/${language}/sectors-opportunities/regionalHQ"><spring:theme code="portal.footer.start.now.label"/> &nbsp; &nbsp;
-                            		<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+                            		<img class="transform-180-degree p-0" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                             </p>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                             <h2 class="text-uppercase display-7"><spring:theme code="portal.footer.business.support.label"/></h2>
                             <p class="text"><spring:theme code="portal.footer.business.support.text"/></p>
                             <p><a class="link text-uppercase px-0" href="/${language}/investor/guide"><spring:theme code="portal.footer.investment.guide.label"/> &nbsp; &nbsp;
-                            		<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+                            		<img class="transform-180-degree p-0" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                             </p>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
@@ -150,21 +150,21 @@
                             	<h2 class="text-uppercase display-7"><spring:theme code="portal.footer.invest.saudi.label"/></h2>
                                	<p class="text"><spring:theme code="portal.footer.invest.saudi.text"/></p>
                                	<p><a class="link text-uppercase px-0" href="/${language}/sectors-opportunities/opportunities"><spring:theme code="portal.footer.explore.opportunities.label"/> &nbsp; &nbsp;
-               							<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+               							<img class="transform-180-degree" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                                	</p>
                            </div>
                            <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                                	<h2 class="text-uppercase display-7"><spring:theme code="portal.footer.regional.hq.label"/></h2>
                                	<p class="text "><spring:theme code="portal.footer.regional.hq.text"/></p>
                                	<p><a class="link text-uppercase px-0" href="/${language}/sectors-opportunities/regionalHQ"><spring:theme code="portal.footer.start.now.label"/> &nbsp; &nbsp;
-                               			<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+                               			<img class="transform-180-degree" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                                	</p>
                            </div>
                            <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                                	<h2 class="text-uppercase display-7"><spring:theme code="portal.footer.business.support.label"/></h2>
                                	<p class="text"><spring:theme code="portal.footer.business.support.text"/></p>
                                	<p><a class="link text-uppercase px-0" href="/${language}/investor/guide"><spring:theme code="portal.footer.investment.guide.label"/> &nbsp; &nbsp;
-                               			<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+                               			<img class="transform-180-degree" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                                	</p>
                            </div>
                            <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">

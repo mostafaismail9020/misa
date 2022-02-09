@@ -1307,6 +1307,7 @@ bindRhqCountryInformationEvents: function () {
             success: function (data) {
                 var jsonData = JSON.parse(data);
 				 var legalStatus = self.basicInformationExtendedSection.find("#basicInformationExtendedLegalStatus");
+                 var previousLegalStatus = legalStatus.attr('data-value');
                 legalStatus.find("option").remove();
                 legalStatus.append(new Option("", "", false, false));
                 countyList = jsonData.countries;
@@ -1314,15 +1315,21 @@ bindRhqCountryInformationEvents: function () {
                     if (status == "setRHQLegalStatusValues") {
                         if (currentValue.legalStatus == "LLC" || currentValue.legalStatus == "ILLC" || currentValue.legalStatus == "BRFC") { legalStatus.append(new Option(currentValue.legalStatusText, currentValue.legalStatus, false, false)); }
                         legalStatus.attr("disabled", false);
-                        legalStatus.val("BRFC").trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
+                      //  legalStatus.val($('#basicInformationExtendedLegalStatus').select2('data')).trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
                     }
                     if (status == "resetRHQLegalStatusValues") {
                         legalStatus.append(new Option(currentValue.legalStatusText, currentValue.legalStatus, false, false));
                     }
                 });
-                legalStatus.attr("disabled", false);
-              //  legalStatus.val("BRFC").trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
 
+                legalStatus.attr("disabled", false);
+               if(previousLegalStatus) {
+                	legalStatus.val(previousLegalStatus).trigger("blur").trigger('change');
+                } else {
+                	legalStatus.val(null);
+                }
+               //console.log(previousLegalStatus);
+              // console.log($('#basicInformationExtendedLegalStatus').select2('data'));
 
               //set country values
               var addBrandCountry = $("#addBrandCountry");

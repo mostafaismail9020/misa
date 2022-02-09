@@ -412,7 +412,7 @@
                     <div class="form-group ${not empty lastYearFinStatementErrors ? 'has-error' : ''}">
                         <input id="companyFinancialStatementFile" name="companyFinancialStatementFile" class="form-control js-inputFile  validate__file" data-maxsize="5" type="file" accept="application/pdf" value=""/>
                         <input id="companyFinancialStatementFileName" name="companyFinancialStatementFileName" class="form-control" type="text" value="" placeholder="${sagiaApplyOrganizationShareholderForm.lastYearFinStatement.fileName}" readonly tabindex="-1"/>
-                        <label class="control-label control-label_mandatory" for="companyFinancialStatementFileName"><spring:theme code="licence.apply.commercial.financialstatement"/> </label>
+                        <label class="control-label control-label_mandatory" for="companyFinancialStatementFileName" id="labelForCompanyFinancialStatementFileName"><spring:theme code="licence.apply.commercial.financialstatement"/> </label>
                         <div class="form-icon form-icon_browse"><icon:upload/></div>
                         <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
                     </div>

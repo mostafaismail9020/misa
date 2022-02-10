@@ -111,8 +111,8 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
                 if (null != opportunityProductModel) {
                 	Collection<MediaModel> productDetails = new ArrayList<>();
                 	if(CollectionUtils.isEmpty(opportunityProductModel.getDetail())) {
-                		if(null != opportunityProductModel.getMediaAttachmentUrl()) {
-            			MediaModel media = getOpportunityProductMediaRestApiService().uploadMediaAttachmentAsProduct(opportunityProductModel.getMediaAttachmentUrl(), productCode);
+                		if(null != opportunityProductModel.getDownloadUrl()) {
+            			MediaModel media = getOpportunityProductMediaRestApiService().uploadMediaAttachmentAsProduct(opportunityProductModel.getDownloadUrl(), productCode);
             			productDetails.add(media);
             			opportunityProductModel.setDetail(productDetails);
             			getModelService().save(opportunityProductModel);

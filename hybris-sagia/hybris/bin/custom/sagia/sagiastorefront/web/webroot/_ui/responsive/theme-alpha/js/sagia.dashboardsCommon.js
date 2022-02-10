@@ -554,13 +554,11 @@ function getAccordion(element_id,screen)
 
 	if ($(window).width() < screen) 
 	{
-        console.log('1111');
 		var concat = '';
 		obj_tabs = $( element_id + " li" ).toArray();
 		obj_cont = $( ".tab-content .tab-pane" ).toArray();
 		jQuery.each( obj_tabs, function( n, val ) 
 		{
-            console.log('222');
 			concat += '<div id="' + n + '" class="panel panel-default">';
 			concat += '<div class="panel-heading" role="tab" id="heading' + n + '">';
 			concat += '<h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h4>';
@@ -585,13 +583,11 @@ function getAccordionWithLicense(element_id,screen)
 
 	if ($(window).width() < screen) 
 	{
-        console.log('1111');
 		var concat = '';
 		obj_tabs = $( element_id + " li" ).toArray();
 		obj_cont = $( ".dashboard-tabs .tab-content .tab-pane" ).toArray();
 		jQuery.each( obj_tabs, function( n, val ) 
 		{
-            console.log('222');
 			concat += '<div id="' + n + '" class="panel panel-default">';
 			concat += '<div class="panel-heading" role="tab" id="heading' + n + '">';
 			concat += '<h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h4>';

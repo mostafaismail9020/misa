@@ -3445,7 +3445,7 @@
 						<description>To identify the source system</description>
 						<modifiers read="true" write="true" search="true" optional="true"/>
 					</attribute>
-					<attribute autocreate="true" qualifier="mediaAttachmentUrl" type="java.lang.String">
+					<attribute autocreate="true" qualifier="downloadUrl" type="java.lang.String">
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property">
                             <columntype database="oracle">

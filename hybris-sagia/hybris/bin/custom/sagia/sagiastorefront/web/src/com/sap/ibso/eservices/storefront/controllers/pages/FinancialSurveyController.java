@@ -59,6 +59,7 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     private static final String SAGIA_FINANCIAL_SURVEY_DRAFT = "FSURVEY_";
     private static final String PDF = "pdf";
 
+
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
 

@@ -1076,6 +1076,7 @@ function populateCompanyProfile() {
     financialSurvey.companyProfile.incorporationDate = $('#incorporationDate').val();
     financialSurvey.companyProfile.financeManagerName = $('#financeManagerNameId').val();
     financialSurvey.companyProfile.financeManagerEmail = $('#financeManagerEmailId').val();
+    financialSurvey.companyProfile.legalStatus = $('#legalStatusId').val();
     financialSurvey.companyProfile.financeManagerTelephone = $('#financeManagerTelephoneId').val();
     financialSurvey.companyStatus = $('#companyStatusId').val();
     financialSurvey.suspensionDate = $('#suspensionDateId').val();

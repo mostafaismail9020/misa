@@ -3,6 +3,7 @@ package com.sap.ibso.eservices.facades.sagia.impl;
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
 import com.sap.ibso.eservices.core.model.SagiaCompanyProfileModel;
 import com.sap.ibso.eservices.core.sagia.services.SagiaFormatProvider;
+import com.sap.ibso.eservices.core.sagia.services.SagiaLegalStatusService;
 import com.sap.ibso.eservices.core.sagia.services.SagiaRegionService;
 import com.sap.ibso.eservices.facades.data.FinancialSurveyData;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.AttachmentListItem;
@@ -71,6 +72,9 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
 
     @Resource(name = "sagiaRegionService")
     private SagiaRegionService sagiaRegionService;
+
+    @Resource(name = "sagiaLegalStatusService")
+    private SagiaLegalStatusService sagiaLegalStatusService;
 
     private SagiaFinancialSurveyService sagiaFinancialSurveyService;
 
@@ -260,7 +264,7 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
                     break;
 
                 case LEGALSTATUS:
-                    legalStatus.add(getListItem(data));
+                    //legalStatus.add(getListItem(data));
                     break;
 
                 case GENDER:
@@ -306,9 +310,15 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
 
 
         sagiaRegionService.getAllRegions().stream().forEach(regionModel -> {ListItem item = new ListItem() ;item.setId(regionModel.getCode());item.setName(regionModel.getName()); regions.add(item) ;}  );
-
         regions.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setRegions(regions);
+
+
+
+        sagiaLegalStatusService.getAllLegalStatus().stream().forEach(legalStatusModel -> {ListItem item = new ListItem() ;item.setId(legalStatusModel.getCode());item.setName(legalStatusModel.getName()); legalStatus.add(item) ;} );
+        legalStatus.sort(Comparator.comparing(ListItem::getName));
+        listItemsResult.setLegalStatus(legalStatus);
+
 
         cities.sort(Comparator.comparing(SubListItem::getName));
         listItemsResult.setCities(cities);
@@ -346,8 +356,7 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         multinationalCompany.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setMultinationalCompany(multinationalCompany);
 
-        legalStatus.sort(Comparator.comparing(ListItem::getName));
-        listItemsResult.setLegalStatus(legalStatus);
+
 
         countries.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setCountries(countries);

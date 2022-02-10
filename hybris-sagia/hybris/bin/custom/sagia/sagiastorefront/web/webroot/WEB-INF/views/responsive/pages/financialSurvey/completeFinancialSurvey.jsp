@@ -201,12 +201,6 @@
                                                         <select id="legalStatusId" name="legalStatus"
                                                                 class="js-select2-oneColumn form-control">
                                                             <option></option>
-                                                            <option value="ESTB" selected><spring:theme
-                                                                    code="license.estb"/></option>
-                                                            <option value="LLC"><spring:theme
-                                                                    code="license.llc"/></option>
-                                                            <option value="ILLC"><spring:theme
-                                                                    code="license.individualllc"/></option>
                                                         </select> <label class="control-label"
                                                                          for="legalStatusId"><spring:theme
                                                             code="license.legalstatus"/></label>

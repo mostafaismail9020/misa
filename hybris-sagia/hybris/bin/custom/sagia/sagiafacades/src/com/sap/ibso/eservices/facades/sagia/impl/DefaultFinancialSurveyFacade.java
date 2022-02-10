@@ -3,6 +3,7 @@ package com.sap.ibso.eservices.facades.sagia.impl;
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
 import com.sap.ibso.eservices.core.model.SagiaCompanyProfileModel;
 import com.sap.ibso.eservices.core.sagia.services.SagiaFormatProvider;
+import com.sap.ibso.eservices.core.sagia.services.SagiaRegionService;
 import com.sap.ibso.eservices.facades.data.FinancialSurveyData;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.AttachmentListItem;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItem;
@@ -66,6 +67,10 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
 
     @Resource
     private SagiaFormatProvider sagiaFormatProvider ;
+
+
+    @Resource(name = "sagiaRegionService")
+    private SagiaRegionService sagiaRegionService;
 
     private SagiaFinancialSurveyService sagiaFinancialSurveyService;
 
@@ -243,7 +248,7 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
                     break;
 
                 case REGION:
-                    regions.add(getListItem(data));
+                    //regions.add(getListItem(data));
                     break;
 
                 case CITY:
@@ -296,6 +301,11 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
             }
         }
         ListItems listItemsResult = new ListItems();
+
+
+
+
+        sagiaRegionService.getAllRegions().stream().forEach(regionModel -> {ListItem item = new ListItem() ;item.setId(regionModel.getCode());item.setName(regionModel.getName()); regions.add(item) ;}  );
 
         regions.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setRegions(regions);

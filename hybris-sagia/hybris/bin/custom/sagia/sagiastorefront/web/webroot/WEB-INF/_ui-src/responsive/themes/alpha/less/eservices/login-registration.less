@@ -1056,7 +1056,14 @@
 		padding: 15px 0 30px 45px!important;
 	}
 }
+@media (max-width:1200px) {
+	.formInputBox .register-user-details:focus ~ .register-user-info-label.control-label,  .formTextArea .register-user-details:focus ~  .register-user-info-label.control-label{
+		transform: translate3d(-6px,27px, 0) scale(1);
+		color: @color-golden;
+		font-size: var(--label-focused-font);
+	  }
 
+}
   @media (min-width:992px) and (max-width:1200px) {
 	.captcha-pos{
 		transform: translateX(20%);
@@ -1277,6 +1284,14 @@
 		display: flex;
 	}
   }
+  @media (min-width:1700px) and (min-height:801px) { 
+	.formInputBox .register-user-details:focus ~ .register-user-info-label.control-label,  .formTextArea .register-user-details:focus ~  .register-user-info-label.control-label{
+	  transform: translate3d(-6px,27px, 0) scale(1);
+	  color: @color-golden;
+	  font-size: var(--label-focused-font);
+	}
+}
+
   @media (min-width:1500px) and (max-width:1669px) and (max-height:800px) {/*125%*/
 	.r-sn .form-control, .formInputBox .form-control {
 		padding-left: 20px !important;

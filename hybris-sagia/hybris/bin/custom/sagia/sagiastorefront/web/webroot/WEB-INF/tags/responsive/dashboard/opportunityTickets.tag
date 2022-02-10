@@ -53,7 +53,7 @@
 											</td>
 											<td>${leadTickets.message}</td>
 											<td>${leadTickets.state}</td>
-											<td><a href="/potentialOpportunity/${leadTickets.ticketID}" class="link dashboardWidgetTickets-btn dashboard-detail-text">
+											<td><a href="/${language}/potentialOpportunity/${leadTickets.ticketID}" class="link dashboardWidgetTickets-btn dashboard-detail-text">
 												<spring:theme code="dashboard.ticket.details"/></a>
 											</td>
 											<!-- <td>

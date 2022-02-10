@@ -214,7 +214,7 @@
                                 <th><spring:theme code="general.ticketNumber"/></th>
                                 <%--<th><spring:theme code="general.enquiry.type"/></th>--%>
                                 <th><spring:theme code="general.status"/></th>
-                                <th><spring:theme code="general.options"/></th>
+                                <th><spring:theme code="general.details"/></th>
                             </tr>
                             </thead>
                             <tbody class="tableModule-body" id="ticketsTable"></tbody>

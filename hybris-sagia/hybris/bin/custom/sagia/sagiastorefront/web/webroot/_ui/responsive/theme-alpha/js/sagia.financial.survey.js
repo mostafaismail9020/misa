@@ -627,9 +627,8 @@ $(document).ready(function () {
         $('.productTemplate').hide();
         $('.docTemplate').hide();
         $('#entityHistoryTabId').hide();
-
-        getFinancialSurveyData();
         getDropDownsData();
+        //getFinancialSurveyData();
         setupBranchesTable();
         setupSubsidiariesTable();
         SAGIA.formElements.placeholderPolyfill();
@@ -834,6 +833,8 @@ function getDropDownsData() {
         success: function (data) {
             if (data) {
                 setupDropDowns(data);
+                getFinancialSurveyData();
+
             }
         }
     });

@@ -52,6 +52,9 @@ function entityValidator() {
             },
             financeManagerTelephone: {
                 required: true,
+            },
+            legalStatus: {
+                required: true,
             }
         },
 
@@ -85,6 +88,9 @@ function entityValidator() {
                 required: getI18nText("validation.empty"),
             },
             incorporationDate: {
+                required: getI18nText("validation.empty"),
+            },
+            legalStatus: {
                 required: getI18nText("validation.empty"),
             }
 

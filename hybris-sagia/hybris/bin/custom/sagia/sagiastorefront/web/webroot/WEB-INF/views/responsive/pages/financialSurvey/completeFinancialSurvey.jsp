@@ -201,7 +201,7 @@
                                                         <select id="legalStatusId" name="legalStatus"
                                                                 class="js-select2-oneColumn form-control">
                                                             <option></option>
-                                                        </select> <label class="control-label"
+                                                        </select> <label class="control-label control-label_mandatory"
                                                                          for="legalStatusId"><spring:theme
                                                             code="license.legalstatus"/></label>
                                                     </div>

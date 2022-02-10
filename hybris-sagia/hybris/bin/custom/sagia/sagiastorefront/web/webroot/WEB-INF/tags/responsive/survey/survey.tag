@@ -91,7 +91,7 @@
                                     <div class="col-md-12">
                                         <div class="formRadioButton formRadioButton_block formRadioButton_slim">
                                             <div class="form-group">
-                                                <div class="formRadioButton-label">${question.questTXT}<c:if test="${question.mandquest}">*</c:if></div>
+                                                <div class="formRadioButton-label label_yellow_surveyss">${question.questTXT}<c:if test="${question.mandquest}">*</c:if></div>
                                                 <c:forEach items="${question.answers}" var="answer" varStatus="answerStatus">
                                                     <div class="form-item">
                                                         <input id="${answer.controlID}"
@@ -102,7 +102,7 @@
                                                                data-control="${answer.controlID}"
                                                                data-question="${answer.questID}"
                                                                value="${answer.controlID}" >
-                                                        <label for="${answer.controlID}" class="control-label">
+                                                        <label for="${answer.controlID}" class="control-label radio_label_surveyss">
                                                             <span></span> ${answer.ansText}
                                                         </label>
                                                     </div>

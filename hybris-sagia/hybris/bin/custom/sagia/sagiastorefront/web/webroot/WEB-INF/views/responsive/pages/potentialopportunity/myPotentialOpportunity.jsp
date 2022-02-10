@@ -267,7 +267,9 @@
 				<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
 				<div class="comment_box_form" id="comment_box_form" style="display: none;">
 					<c:set var="today" value="<%=new java.util.Date()%>" />
-					<label class="new_comment">New Comments <b>as on <fmt:formatDate type="date" value="${today}" /></b></label>
+					<label class="new_comment"><spring:theme code="my.potential.opportunity.new.comments"/>
+						<b> <spring:theme code="my.potential.opportunity.ason.comments"/> <fmt:formatDate type="date" value="${today}" /></b>
+					</label>
 					<form:form action="${ticketId}" modelAttribute="contactTicketForm" id="js-quick-tialoppor_newcomment"  onsubmit="return validateForm()">
 						<div class="form-group">
 							<input type="text" name="comment" class="js-quick-tialoppor_newcomment form-control reply_here" placeholder="<spring:theme code="my.potential.opportunity.enter.reply"/>"/>

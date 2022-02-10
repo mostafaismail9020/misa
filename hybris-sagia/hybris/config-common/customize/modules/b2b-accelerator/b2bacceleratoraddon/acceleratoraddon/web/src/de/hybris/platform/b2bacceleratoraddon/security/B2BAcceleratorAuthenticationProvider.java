@@ -21,7 +21,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.apache.commons.lang3.BooleanUtils;
-import de.hybris.platform.b2bacceleratoraddon.security.InvestSaudiAuthenticationException;
 
 
 
@@ -97,7 +96,7 @@ public class B2BAcceleratorAuthenticationProvider extends AbstractAcceleratorAut
 		this.b2bUserGroupProvider = b2bUserGroupProvider;
 	}
 	
-	private void handleInvalidCaptcha() throws InvestSaudiAuthenticationException {
+	private void handleInvalidCaptcha() throws BadCredentialsException {
 		if (RequestContextHolder.getRequestAttributes() instanceof ServletRequestAttributes)
 		{
 			final ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder
@@ -107,7 +106,7 @@ public class B2BAcceleratorAuthenticationProvider extends AbstractAcceleratorAut
 			//This check for J_SPRING_SECURITY_CHECK is added, so that the captcha is checked only for login and not for 2-factor authentication
 			if(request.getServletPath().contains(J_SPRING_SECURITY_CHECK) && request.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED) != null && BooleanUtils.isFalse((Boolean)request.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED))) {
 				
-	            throw new InvestSaudiAuthenticationException("Invalid captcha, Please Try Again"); // technical issue occurred
+	            throw new BadCredentialsException("Invalid captcha, Please Try Again"); // technical issue occurred
 
 			}
 		}

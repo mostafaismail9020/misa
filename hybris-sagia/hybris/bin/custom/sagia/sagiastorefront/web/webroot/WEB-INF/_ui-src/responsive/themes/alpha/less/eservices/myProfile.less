@@ -2202,6 +2202,154 @@ button:focus {
             }
           }
     }
+
+
+    .btn-dashboard {
+        color: #FFF !important;
+        &:active{
+            color: #FFF !important;
+        }
+    }
+    .panelModule{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .searchInputBox{
+        max-width: 100%;
+    }
+    .btn-search{
+        float:right;
+        right: 0;
+        font-weight: normal;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    .appointmentList-entry {
+        .appointmentList-status {
+            .appointmentList-status-value{
+                padding: 0 !important;
+            }
+        }
+        span.appointmentList-label{
+            padding: 10px;
+
+        }
+        .appointmentList-viewBtn{
+            width: 100%;
+            text-align: right;
+            span{
+            margin-right: 0;
+            text-transform: capitalize;
+            }
+          }
+    }
+    .appointmentControl-calendar{
+        #appointmentCalendar{
+                padding: 50px;
+                border-radius: 25px;
+                box-shadow: 0px 18px 36px #00000029;
+            .calendar-control-bar{
+                padding-bottom: 32px;
+                border-bottom:1px solid #E4E4E4;
+            .calendar-control-widget{
+                 .control-button{
+                    font-size: 16px;
+                    font-weight: 600;
+                    svg{
+                        width: 10px;
+                        height: 17px;
+                         path{
+                         fill: #00A6BE;
+                       }
+                    }
+                 }
+                 .active{
+                     color: #fff !important;
+                 }
+                 .control-bar-title{
+                    font-size: 25px;
+                    color: #707070;
+                }
+                 .calendar-action-today{
+                    font-size: 16px;
+                    font-weight: 600;
+                    padding: 7px 30px;
+                    text-transform: uppercase;
+                 }
+              }
+            }
+            .calendar-wrapper{
+                border-radius: 0;
+                box-shadow: none;
+                border: 1px solid #F2EBD1;
+                .calendar-table{
+                    border: none;
+                    .js-cal-weekday-row{
+                        .js-cal-weekday{
+                            border-right:1px solid #f2ebd1;
+                            span{
+                                font-size: 25px;
+                                color: #BF9B2E;
+                            }
+                            &:last-child{
+                                border-right: none;
+                            }
+                        }
+                    }
+                    .js-cal-row{
+                        .js-cal-col{
+                            border-right: none;
+                            border-bottom: none;
+                            border: 1px solid #F2EBD1;
+                            span{
+                                font-size: 25px;
+                                color: #707070;
+                            }
+                        }
+                        .cell-today{
+                          .cell-number{
+                            color: #fff;
+                            padding: 5px;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 25px;
+                         }
+                        }
+                        .notinmonth{
+                                background-color: #f7f7f7;
+                        }
+                    }
+                    .cal-week-day-row{
+                        .cal-week-day-col{
+                            .cal-week-day-sep{
+                                font-size: 20px;
+                                color: #707070;
+                                padding-left: 15px;
+                            }
+                            .col-week-day-container{
+                                .cal-week-day-no-event-col{
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .calendar-legend{
+                padding: 15px;
+                margin-top: 40px;
+                 li.js-event-gov{
+                    font-size: 25px;
+                    color: #BF9B2E;
+                    &::before{
+                        top:0;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
 }
 .page-appointment-details{
     .appointmentDetails{
@@ -2476,3 +2624,72 @@ button:focus {
       opacity: 0;
     }
   }
+  .page-new-license-apply{
+    #entityForm{
+        #attachmentSection{
+            #entrepreneurAttachment{
+                .formInputFile{
+                    .form-control{
+                        height: 64px;
+                        margin-right: 0;
+                        background: #f2f2f2;
+                    }
+                    .form-icon{
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-shareholder-apply {
+  .select2.select2-container{
+      .select2-selection{
+          &::after{
+              left: 15px;
+              right: auto;
+          }
+      }
+  }
+  .formInputFile{
+      .form-control{
+          height: 64px;
+          margin-left: 0;
+          margin-right: 0;
+          background: #f2f2f2;
+      }
+      .form-icon{
+          margin-left: 0;
+      }
+  }
+}
+
+
+
+
+.page-shareholder-apply{
+    #addShareholderQM1NewPersonSection{
+        #delegate{
+            #delegateDetails{
+                #nicVerifyBtnSection{
+                    #verifyDetailsShow{
+                        padding-top: 13px !important;
+                    }
+                }
+            }
+        }
+    }
+    #addShareholderQM1NewOrganizationSection{
+        #delegate{
+                #nicVerifyBtnSection{
+                    #verifyDetailsShow{
+                        padding-top: 13px !important;
+                    }
+                }
+                #delegateAttachments{
+                    margin-bottom: 20px;
+               }
+        }
+    }
+}

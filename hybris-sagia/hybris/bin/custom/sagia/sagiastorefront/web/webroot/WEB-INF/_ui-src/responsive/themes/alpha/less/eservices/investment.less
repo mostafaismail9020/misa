@@ -452,7 +452,130 @@
             width: 100% !important;
         }
     }
+
+    .page-new-apply-contactperson {
+        .banner-container{
+            top: 15% !important;
+            h1{
+                font-size:40px;
+              }
+        }
+        #contactDetails{
+            #qm1Title{
+                margin-left: 20px !important;
+            }
+        }
+    
+        #contactPersonTabData{
+            .contentModule-actions{
+                span{
+                    display: block;
+                    width: 100%;
+                    a#contactPersonBackButton{
+                        display: block;
+                        width: 100% !important;
+                    }
+                }
+                span{
+                    display: block;
+                    width: 100%;
+                    button#contactPersonNextButton{
+                        display: block;
+                        margin-top: 15px;
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+     }
+    
+     .page-new-apply-review{
+        .banner-container{
+            top: 20% !important;
+            h1{
+                font-size:40px !important;
+              }
+        }
+    
+        #reviewContent{
+            .contentModule-actions{
+                #printButton{
+                    padding-left: 30px;
+                }
+                #reviewSubmitButton{
+                    width: 100%;
+                }
+                span{
+                    display: block;
+                    width: 100%;
+                    a#reviewBackButton{
+                        display: block;
+                        font-weight: 600;
+                        width: 100% !important;
+                    }
+                }
+                button#contactPersonNextButton{
+                        display: block;
+                        font-weight: 600;
+                        margin-top: 15px;
+                        width: 100% !important;
+                    }
+            }
+        }
+     }
+    
+    .page-new-license-apply{
+        .service-time{
+            .serviceTime-label{
+                display: none;
+            }
+            .serviceTime-detail{
+                display: none;
+            }
+        }
+        #businessActivitiesModal{
+            .modal-header{
+                .modal-title{
+                    font-size: 28px;
+                }
+                .modal-close{
+                    top:15px;
+                    right: 15px;
+                }
+            }
+        }
+      }
+    
+      .page-shareholder-apply{
+        #shareholdersQM1{
+            .addExistingButton{
+                width: 100% !important;
+            }
+            .addNewButton{
+                width: 100% !important;
+            }
+    
+        }
+        #addShareholderQM1NewPersonSection{
+            #personShareholderForm{
+                #attachmentSection{
+                    .mw0{
+                        max-width: 100% !important;
+                    }
+                }
+    
+            }
+        }
+        #addShareholderQM1ExistingSection{
+          #existingShareholderForm{
+            .formInputBox {
+                margin-bottom: 0 !important;
+            }
+          }
+        }
+     }
 }
+
 @media (min-width:576px) and (max-width:767px) {
     .page-license-bidding .profile-icons{
         float: none !important;
@@ -813,6 +936,74 @@
         }
     }
 
+    .page-new-license-apply{
+        #entityForm{
+            #basicInformationExtendedSection{
+                .select2-container{
+                    .select2-selection--single{
+                        .select2-selection__rendered{
+                            width: 75% !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .page-shareholder-apply{
+        #addShareholderQM1NewPersonSection{
+            #personShareholderForm {
+                #shareholderIdTypeSection{
+                     #nicShareholderVerifyBtnSection{
+                         #verifyShareholderDetailsShow{
+                             width: 75% !important;
+                         }
+                   }
+                }
+            }
+        }
+    }
+
+    .page-shareholder-apply{
+        #shareholdersQM1{
+            .addExistingButton{
+                width: 45% !important;
+            }
+            .addNewButton{
+                width: 45% !important;
+            }
+
+        }
+        #addShareholderQM1NewPersonSection{
+            #personShareholderForm{
+                #attachmentSection{
+                    .mw0{
+                        max-width: 30% !important;
+                    }
+                }
+                #delegateDivSection{
+                    .formRadioBox-wrapper{
+                        .formRadioBox{
+                            .form-item{
+                                width: 50% !important;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        #addShareholderQM1NewOrganizationSection{
+            #organizationShareholderForm{
+                    .formRadioBox-wrapper{
+                        .formRadioBox{
+                            .form-item{
+                                width: 50% !important;
+                            }
+                        }
+                 }
+            }
+        }
+    }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
@@ -888,4 +1079,5 @@
 @media (min-width: 1201px) and (max-width: 1499px) and (max-height: 700px) {
     [dir] .formSelectBox .control-label {padding: 10px !important;}
 }
+
 

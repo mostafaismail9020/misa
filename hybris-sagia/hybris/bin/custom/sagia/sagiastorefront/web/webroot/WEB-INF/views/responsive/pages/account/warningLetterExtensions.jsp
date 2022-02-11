@@ -144,13 +144,14 @@
             </c:if>
             <div class="expandableContent-main js-warning-letters">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
+                    <div class="contentModule contentModule-wrap">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline headline-text">
-                                    <!-- <icon:info/> -->
+
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline">
                                     <spring:theme code="text.account.followup.info"/>: ${selectedItem.srId}
-                                </div>
+                                </span>
+                                
 <!--
                                 <a href="warning-letters/create" type="submit" class="btn btn_slim js-create-warning-letter">
                                     <spring:theme code="text.account.followup.create"/>
@@ -165,6 +166,7 @@
                                         <spring:theme code="text.account.followup.status"/>: <span>${selectedItem.srStDesc}</span>
                                     </div>
                                 </c:if>
+                                <div class="contentModule-headline-border"></div>
                             </div>
 
 
@@ -234,11 +236,14 @@
                     <div class="contentModule">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
 
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
+                            <!-- <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
                                 <div class="contentModule-headline contentModule-headline_bordered headline-text">
-                                    <!-- <icon:documents/> -->
                                     <spring:theme code="text.account.followup.supportDocuments"/>
                                 </div>
+                            </div> -->
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
 
                             <ul class="downloadList downloadList_maxHeight">

@@ -73,7 +73,7 @@
                 </a>
             </div>
         </div>
-        <div class="row w-100 d-flex mt-4">
+        <div class="row w-100 d-none mt-4">
             <div class="amend-service-link btn-drafts_list">
                 <div class="col-xl-12 col-12 amend-btns-list">
                     <button class="btn btn_round btn_slim js-save-draft"

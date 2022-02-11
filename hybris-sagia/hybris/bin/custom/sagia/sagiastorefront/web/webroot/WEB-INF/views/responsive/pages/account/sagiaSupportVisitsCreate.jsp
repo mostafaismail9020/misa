@@ -182,7 +182,7 @@
 							<div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
 
                             <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-                                <button type="submit" class="btn btn--primary btn--half-radius btn_auto"><spring:theme code="text.account.followup.supportVisitRequest"/></button>
+                                <button type="submit" class="btn btn--primary btn--half-radius btn_auto w-25"><spring:theme code="text.account.followup.supportVisitRequest"/></button>
                             </div>
                         </div>
                     </div>

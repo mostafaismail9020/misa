@@ -416,9 +416,12 @@
 													<th><spring:theme code="license.percentage" /></th>
 													<th><spring:theme
 															code="text.account.profile.license.shareholders.nationality" /></th>
-													<th><spring:theme
-															code="text.account.profile.license.shareholders.legalStatus" /></th>
-													<th id="shareholderBtnColumnId"></th>
+															<th><spring:theme
+																code="text.account.profile.license.shareholders.legalStatus" /></th>
+																<th><spring:theme
+																	code="general.edit" /></th>
+																	<th><spring:theme
+																		code="general.delete" /></th>
 												</tr>
 											</thead>
 											<tbody id="shareholdersId" class="tableModule-body">
@@ -429,7 +432,7 @@
 													<td></td>
 													<td></td>
 													<td class="tableModule-bodyItem-action">
-														<button type="button"
+														<button type="button" style="width: 30px !important;"
 															class="btn btn_link editShareholderBtn"
 															data-toggle="modal"
 															<%--                                                        data-target="#shareholderEditModalId" data-backdrop="static"--%>
@@ -437,8 +440,10 @@
 															data-backdrop="static" data-keyboard="false">
 															<icon:edit />
 														</button>
+													</td>
+													<td>
 														<div class="deleteDropdown js-deleteDropdown">
-															<button type="button"
+															<button type="button" style="width:30px !important"
 																class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn">
 																<icon:remove />
 															</button>
@@ -504,18 +509,20 @@
 												<td></td>
 												<td></td>
 												<td class="tableModule-bodyItem-action">
-													<button type="button" class="btn btn_link editBranchBtn"
+													<button type="button" style="width:30px !important" class="btn btn_link editBranchBtn"
 														data-toggle="modal" data-target="#branchModalId"
 														data-backdrop="static" data-keyboard="false">
 														<icon:edit />
 													</button>
-													<button type="button" class="btn btn_link viewBranchBtn"
+													<button type="button" style="width:30px !important" class="btn btn_link viewBranchBtn"
 														data-toggle="modal" data-target="#branchModalId"
 														data-backdrop="static" data-keyboard="false">
 														<icon:view />
 													</button>
+													</td>
+													<td>
 													<div class="deleteDropdown js-deleteDropdown">
-														<button type="button"
+														<button type="button" style="width:30px !important"
 															class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn">
 															<icon:remove />
 														</button>
@@ -553,6 +560,10 @@
 													<th><spring:theme
 															code="text.account.profile.license.branches.number" /> <span
 														class="sort-icon"></span></th>
+														<th><spring:theme
+															code="general.edit" /> </th>
+														<th><spring:theme
+															code="general.delete" /> </th>
 													<th id="branchesBtnColumnId"></th>
 												</tr>
 											</thead>
@@ -599,6 +610,8 @@
 													<th><spring:theme code="products.productdescription" /></th>
 													<th><spring:theme code="products.qty" /></th>
 													<th><spring:theme code="products.unit" /></th>
+													<th><spring:theme code="general.edit" /></th>
+													<th><spring:theme code="general.delete" /></th>
 													<th id="productsBtnColumnId"></th>
 												</tr>
 											</thead>
@@ -609,13 +622,15 @@
 													<td></td>
 													<td></td>
 													<td class="tableModule-bodyItem-action">
-														<button type="button" class="btn btn_link editProductBtn"
+														<button type="button" style="width: 30px !important;" class="btn btn_link editProductBtn"
 															data-toggle="modal" data-target="#productModalId"
 															data-backdrop="static" data-keyboard="false">
 															<icon:edit />
 														</button>
+														</td>
+														<td>
 														<div class="deleteDropdown js-deleteDropdown">
-															<button type="button"
+															<button type="button" style="width: 30px !important;"
 																class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn">
 																<icon:remove />
 															</button>

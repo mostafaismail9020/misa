@@ -75,7 +75,7 @@
                         <icon:messageError/><spring:theme code="govDocs.error.branchesNotCompleted"/>
                     </div>
 
-                    <div class="tableModule">
+                    <div class="tableModule mt-3">
                         <table class="tableModule-table">
                             <thead class="tableModule-head">
                             <tr>
@@ -92,7 +92,7 @@
                                     <td><c:out value="${branch.type}"/></td>
                                     <td><c:out value="${branch.city}"/></td>
                                     <td class="tableModule-bodyItem-action">
-                                        <button class="btn btn_link hidden" data-completed-index="${loop.index}">
+                                        <button class="btn btn_link no_background hidden" data-completed-index="${loop.index}">
                                             <icon:status-complete/>
                                         </button>
                                         <button class="btn btn_link btn-edit-branch" data-toggle="modal"
@@ -309,8 +309,7 @@
                                 </div>
                                 <div class="formInputBox">
                                     <div class="form-group" id="gMap-group">
-                                        <input id="gMapAddress" class="form-control" placeholder="." value=""
-                                               type="text" readonly="true" >
+                                        <input id="gMapAddress" class="form-control" placeholder="." value="" type="text" readonly="true" >
                                         <label class="control-label control-label_mandatory" for="gMapAddress">
                                             your address
                                         </label>

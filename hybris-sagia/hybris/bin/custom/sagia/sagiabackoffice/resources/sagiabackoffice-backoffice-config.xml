@@ -106,6 +106,10 @@
 										 code="SagiaCountry" />
 				<explorer-tree:type-node id="SagiaMedia"
 										 code="SagiaMedia" />
+				<explorer-tree:type-node id="FinancialSurveyQuarter"
+										 code="FinancialSurveyQuarter" />
+				<explorer-tree:type-node id="FinancialSurvey"
+										 code="FinancialSurvey" />
 				<explorer-tree:type-node
 						id="SagiaConfiguration" code="SagiaConfiguration">
 					<explorer-tree:type-node
@@ -153,6 +157,34 @@
 			<list:column qualifier="isShareHolderCheck" />
 		</list:list-view>
 	</context>
+
+	<context type="FinancialSurveyQuarter" component="listview"
+			 merge-by="type">
+		<list:list-view>
+			<list:column qualifier="code" />
+			<list:column qualifier="name" />
+		</list:list-view>
+	</context>
+
+	<context type="FinancialSurvey" component="listview"
+			 merge-by="type">
+		<list:list-view>
+			<list:column qualifier="quarter" />
+			<list:column qualifier="user" />
+		</list:list-view>
+	</context>
+
+	<context type="FinancialSurveyShareholder" component="listview"
+			 merge-by="type">
+		<list:list-view>
+			<list:column qualifier="firstName" />
+			<list:column qualifier="nationalityCurrentDescription" />
+			<list:column qualifier="percentage" />
+		</list:list-view>
+	</context>
+
+
+
 
 	<context type="SagiaSector" component="listview"
 			 merge-by="type">
@@ -507,6 +539,24 @@
 		</y:base>
 	</context>
 
+	<context type="FinancialSurveyQuarter" component="base" merge-by="type"
+			 parent="GenericItem">
+		<y:base>
+			<y:labels>
+				<y:label>name</y:label>
+			</y:labels>
+		</y:base>
+	</context>
+
+	<context type="FinancialSurvey" component="base" merge-by="type"
+			 parent="GenericItem">
+		<y:base>
+			<y:labels>
+				<y:label>name</y:label>
+			</y:labels>
+		</y:base>
+	</context>
+
 	<context type="SagiaLicenseTypeRequirement" component="base"
 			 merge-by="type" parent="GenericItem">
 		<y:base>
@@ -538,6 +588,78 @@
 							qualifier="isShareHolderCheck" />
 				</editorArea:section>
 			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+
+	<context type="FinancialSurveyQuarter" component="editor-area"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="FinancialSurveyQuarterTab">
+				<editorArea:section name="FinancialSurveyQuarterSection">
+					<editorArea:attribute qualifier="code" />
+					<editorArea:attribute qualifier="name" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="FinancialSurvey" component="editor-area"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="FinancialSurveyTab">
+				<editorArea:section name="FinancialSurveyStatusSection">
+					<editorArea:attribute qualifier="surveyStatus" />
+				</editorArea:section>
+				<editorArea:section name="FinancialSurveySection">
+					<editorArea:attribute qualifier="user" />
+					<editorArea:attribute qualifier="quarter" />
+					<editorArea:attribute qualifier="businessActivityId" />
+					<editorArea:attribute qualifier="businessActivityDescription" />
+					<editorArea:attribute qualifier="companyStatus" />
+					<editorArea:attribute qualifier="isConsolidated" />
+					<editorArea:attribute qualifier="disclosureCurrency" />
+				</editorArea:section>
+			</editorArea:tab>
+			<editorArea:tab name="FinancialSurveyEquityTab" position="10">
+				<editorArea:section name="FinancialSurveyEquitySection">
+					<editorArea:attribute qualifier="paidUpCapitalCurrentQuarter" />
+					<editorArea:attribute qualifier="additionalPaidUpCapitalCurrentQuarter" />
+					<editorArea:attribute qualifier="retainedEarningsIncludeCurrentQuarter" />
+					<editorArea:attribute qualifier="profitLossQuarterCurrentQuarter" />
+					<editorArea:attribute qualifier="totalReservesCurrentQuarter" />
+					<editorArea:attribute qualifier="treasurySharesCurrentQuarter" />
+					<editorArea:attribute qualifier="headOfficeAccountInBranchCurrentQuarter" />
+					<editorArea:attribute qualifier="shareholderEquityOthersCurrentQuarter" />
+					<editorArea:attribute qualifier="minorityRightsCurrentQuarter" />
+					<editorArea:attribute qualifier="totalShareholderEquityCurrentQuarter" />
+				</editorArea:section>
+			</editorArea:tab>
+			<editorArea:tab name="ShareholdersTab"
+							position="22">
+				<editorArea:section
+						name="FinancialSurveyShareholdersSection">
+					<editorArea:panel
+							name="hmc.tab.question.questions.panel1">
+						<editorArea:attribute qualifier="shareholders"
+											  editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor">
+							<editorArea:editor-parameter>
+								<editorArea:name>listConfigContext</editorArea:name>
+								<editorArea:value>myConfigFinancialSurveyShareholder</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>inlineEditing</editorArea:name>
+								<editorArea:value>false</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>pageSize</editorArea:name>
+								<editorArea:value>10</editorArea:value>
+							</editorArea:editor-parameter>
+						</editorArea:attribute>
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+
 		</editorArea:editorArea>
 	</context>
 
@@ -1206,6 +1328,17 @@
 		</list-view:list-view>
 	</context>
 
+	<context type="FinancialSurveyShareholder" component="myConfigFinancialSurveyShareholder">
+		<list-view:list-view
+				xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
+			<list-view:column qualifier="shareholderNameEnglish" />
+			<list-view:column qualifier="shareholderCapital" />
+			<list-view:column qualifier="shareholderPercentage" />
+			<list-view:column qualifier="shareholderVotingPower" />
+
+		</list-view:list-view>
+	</context>
+
 	<context component="explorer-tree" merge-by="module">
 		<explorer-tree:explorer-tree>
 			<explorer-tree:navigation-node
@@ -1216,6 +1349,12 @@
 										 code="SagiaSector" />
 				<explorer-tree:type-node id="SagiaCountry"
 										 code="SagiaCountry" />
+
+				<explorer-tree:type-node id="FinancialSurveyQuarter"
+										 code="FinancialSurveyQuarter" />
+
+				<explorer-tree:type-node id="FinancialSurvey"
+										 code="FinancialSurvey" />
 				<explorer-tree:type-node id="SagiaMedia"
 										 code="SagiaMedia" />
 				<explorer-tree:type-node
@@ -1413,7 +1552,7 @@
 				    <editorArea:attribute qualifier="location" label="customersupport_backoffice_tickets_location" merge-mode="add" readonly="true"   />
 
                     <editorArea:attribute  qualifier="configuration"  label="customersupport_backoffice_ticketForm.configuration" merge-mode="add" readonly="true"  />
-                     
+
                      <editorArea:attribute qualifier="order" label="hmc.section.customer.tickets.associateTo" merge-mode="remove" />
 
                                     <editorArea:attribute qualifier="state" merge-mode="add" editor="com.sagia.backoffice.editor.ticket.state" label="customersupport_backoffice_tickets_status"/>
@@ -1426,17 +1565,17 @@
 	 <context component="cs-listview" type="CsTicket" module="customersupportbackoffice">
         <list-view:list-view>
             <list-view:column qualifier="headline"  label="customersupport_backoffice_tickets_headline"/>
-            <list-view:column qualifier="configuration" label="customersupport_backoffice_ticketForm.configuration"/>            
+            <list-view:column qualifier="configuration" label="customersupport_backoffice_ticketForm.configuration"/>
             <list-view:column qualifier="baseSite" merge-mode="remove"  label="customersupport_backoffice_tickets_site"/>
             <list-view:column qualifier="priority" merge-mode="remove"  label="customersupport_backoffice_tickets_priority"/>
             <list-view:column qualifier="category" merge-mode="remove"  label="customersupport_backoffice_tickets_category"/>
-            <list-view:column qualifier="location"  label="customersupport_backoffice_tickets_location"/>          
+            <list-view:column qualifier="location"  label="customersupport_backoffice_tickets_location"/>
             <list-view:column qualifier="assignedAgent.name"  label="customersupport_backoffice_tickets_assigned_agent"/>
             <list-view:column qualifier="assignedGroup.name"  label="customersupport_backoffice_tickets_assigned_group"/>
             <list-view:column qualifier="answersAndQuestions" label="customersupport_backoffice_tickets_discuss"/>
         </list-view:list-view>
     </context>
-	
+
 	<context type="TicketConfiguration" component="base">
         <y:base xmlns:y="http://www.hybris.com/cockpit/config/hybris">
             <y:labels>
@@ -1444,7 +1583,7 @@
             </y:labels>
         </y:base>
     </context>
-    
+
 	<context merge-by="type" parent="GenericItem" type="CsTicket" component="advanced-search">
         <advanced-search:advanced-search>
             <advanced-search:field-list>
@@ -1452,8 +1591,8 @@
             </advanced-search:field-list>
         </advanced-search:advanced-search>
     </context>
-    
-    
+
+
     <context merge-by="type" parent="User" type="Customer"  component="listview" >
         <list-view:list-view>
             <list-view:column  qualifier="creationtime" label="customersupport_creationtime"  />
@@ -1484,9 +1623,9 @@
 			<list-view:column qualifier="lastSuccessLogin" label="customersupport_backoffice_customers_last_success_login" />
 		</list-view:list-view>
 	</context>
-         
+
         <!--Invest Saudi Portal Backoffice changes start -->
-	
+
 	<context principal="portal-cmsmanagerrole" parent="auto" component="explorer-tree">
         <explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
             <explorer-tree:navigation-node id="backoffice_dashboard" position="0"/>
@@ -1501,7 +1640,7 @@
                 <explorer-tree:type-node code="Media" id="Media"/>
                 <explorer-tree:type-node code="MediaContainer" id="MediaContainer"/>
             </explorer-tree:navigation-node>
-            <!-- 
+            <!--
             <explorer-tree:navigation-node id="hmc.portal.webinars">
                 <explorer-tree:type-node code="InvestSaudiWebinar" id="InvestSaudiWebinar"/>
                 <explorer-tree:type-node code="InvestSaudiWebinarRegistration" id="InvestSaudiWebinarRegistration"/>
@@ -1542,7 +1681,7 @@
                 <explorer-tree:type-node code="OpportunityProduct" id="hmc.opportunity.product" />
                 <explorer-tree:type-node code="SuccessStoryProduct" id="hmc.success.story.product"/>
                 <explorer-tree:type-node code="Category" id="hmc.sectors.category"/>
-                <!-- 
+                <!--
                 <explorer-tree:type-node code="InvestSaudiWebinar" id="InvestSaudiWebinar"/>
                 <explorer-tree:type-node code="InvestSaudiWebinarRegistration" id="InvestSaudiWebinarRegistration"/>
                 <explorer-tree:type-node code="InvestSaudiWebinarRegistrationProcess" id="InvestSaudiWebinarRegistrationProcess"/>
@@ -1895,7 +2034,7 @@
             </editorArea:tab>
         </editorArea:editorArea>
     </context>
-    
+
     <context type="ContactTicketPurpose" component="listview"
              principal="portal-cmsmanagerrole">
         <list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
@@ -2062,7 +2201,7 @@
         </editorArea:editorArea>
     </context>
 
-	<!-- 
+	<!--
     <context type="InvestSaudiWebinarRegistrationProcess" component="listview"
              principal="portal-cmsmanagerrole">
         <list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">

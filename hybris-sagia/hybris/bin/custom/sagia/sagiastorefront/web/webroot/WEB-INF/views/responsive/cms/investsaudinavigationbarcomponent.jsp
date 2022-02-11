@@ -86,6 +86,7 @@
 					<img class="hd-scroll" src="${fn:escapeXml(component.visionImage.url)}" />
 				</a>
 			</div>
+			<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
 			<nav class="nav-menu d-none d-lg-block ">
 				<ul>
 				    <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">

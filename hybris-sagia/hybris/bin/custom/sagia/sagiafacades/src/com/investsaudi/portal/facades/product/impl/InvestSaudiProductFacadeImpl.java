@@ -100,13 +100,6 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
  		if(productType != null) {
             if (productType.equals(OpportunityProductModel._TYPECODE)) {
                 OpportunityProductModel opportunityProductModel = investSaudiProductService.getOpportunityForCode(productCode);
-                final CatalogVersionModel stagedCatalogVersion = getCatalogVersionService().getCatalogVersion(SAGIA_PRODUCT_CATALOG, STAGED_CATALOG_VERSION);
-                OpportunityProductModel opportunityStagedProductModel = investSaudiProductService.getOpportunityForCodeAndCatalogVersion(stagedCatalogVersion, productCode);
-                if(null != opportunityStagedProductModel) {
-                	LOG.info("Staged productCode -"+opportunityStagedProductModel.getCode());
-                }else {
-                	LOG.info("opportunityStagedProductModel is null");
-                }
                 
                 if (null != opportunityProductModel) {
                 	Collection<MediaModel> productDetails = new ArrayList<>();

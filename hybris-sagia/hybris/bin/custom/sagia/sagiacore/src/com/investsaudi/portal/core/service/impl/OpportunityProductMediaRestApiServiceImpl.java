@@ -38,7 +38,7 @@ public class OpportunityProductMediaRestApiServiceImpl implements OpportunityPro
 	private static final String ONLINE_CATALOG_VERSION = "Online";
 	private static final String PDF_FILENAME_SUFFIX = ".pdf";
 	private static final String OPPORTUNITY_MEDIA_REST_API_USERNAME = Config.getString("opportunitymedia.restapi.username", "naveenp");
-	private static final String OPPORTUNITY_MEDIA_REST_API_PASSWORD = Config.getString("opportunitymedia.restapi.password", "Anjala@28");
+	private static final String OPPORTUNITY_MEDIA_REST_API_PASSWORD = Config.getString("opportunitymedia.restapi.password", "Anjala@92");
 	
 	private MediaService mediaService;
 	

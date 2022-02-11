@@ -124,8 +124,8 @@
     <div class="copyright py-4 text-center text-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 copyrightText">${component.copyrightText}</div>
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-6 col-sm-6 copyrightText  d-flex d-sm-block">${component.copyrightText}</div>
+                <div class="col-md-6 col-sm-6  d-flex d-sm-block">
                     <ul class="nav-bottom-footer clearfix">
                         <c:forEach items="${component.navigationMapPolicy.children}" var="childLevel1" varStatus="childLevel1index">                       
                             <c:forEach items="${childLevel1.entries}" var="childlink1">

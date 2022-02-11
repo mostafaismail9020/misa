@@ -359,6 +359,7 @@ SAGIA.licenseApplyReview = {
 					}
 					return total
 				}
+				$('#rhqCostTable-totalText').text('Total');
 				$('#rhqCostTable-sum1').text(objectCost.sum("year2022"));
 				$('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
 				$('#rhqCostTable-sum3').text(objectCost.sum("year2024"));

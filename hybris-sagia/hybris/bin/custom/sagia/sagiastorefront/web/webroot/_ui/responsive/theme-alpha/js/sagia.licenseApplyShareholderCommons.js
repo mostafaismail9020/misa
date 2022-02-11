@@ -158,12 +158,36 @@ SAGIA.licenseApplyShareholderCommons = {
                         setTimeout(function () {
                             $("#companyFinancialStatementFile").removeClass('validate__file');
                             $("#labelForCompanyFinancialStatementFileName").removeClass('control-label_mandatory');
-                            console.log("companyFinancialStatementFile validation & Mandatory is removed");
+                            // console.log("companyFinancialStatementFile validation & Mandatory is removed");
                         }, 1500);
 
                 }
                 catch (error) { console.log(error) }
                 }
+                if($('#organizationType').val() === "Organization"){
+                try{
+                    var newFileSection = $("#companyCheckFileAttachment");
+                    // if($("#companyCountry").val()) {
+                     //   SAGIA.licenseApplyShareholderCommons.loadNewFile($("#companyCountry"), newFileSection);
+                        $.ajax(ACC.config.encodedContextPath + controllerUrl + "/shareHolderCountryCheck", {
+                            type: "GET",
+                            responseType: "application/json;charset=utf-8",
+                            contentType: "application/json;charset=utf-8",
+                            cache: false,
+                            success: function (data) {
+                                var jsonData = JSON.parse(data);
+                                var selectedCountry = $("#companyCountry").val();
+                                jsonData.forEach(function (currentValue) {
+                                    if(selectedCountry == currentValue.code){
+                                        newFileSection.show();
+                                        $("#companyMemoAssociationFile").addClass('validate__file');
+
+                                    }
+                                });
+                            }
+                        });
+                   // }
+                }catch(error){console.log(error)} }
 
                 jsonData.countries.forEach(function (currentValue) {
                   if(isRHQ === true && currentValue.country === "SA"){

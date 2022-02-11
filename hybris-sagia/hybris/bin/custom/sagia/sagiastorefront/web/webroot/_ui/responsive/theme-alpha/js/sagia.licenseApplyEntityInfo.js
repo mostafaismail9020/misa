@@ -806,6 +806,7 @@ bindRhqCountryInformationEvents: function () {
                                         }
                                         return total
                                     }
+                                    $('#rhqCostTable-totalText').text('Total');
                                     $('#rhqCostTable-sum1').text(objectCost.sum("year2022"));
                                     $('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
                                     $('#rhqCostTable-sum3').text(objectCost.sum("year2024"));
@@ -1094,11 +1095,13 @@ bindRhqCountryInformationEvents: function () {
 
                 calculateCostTotal = function () {
                     if (objectCost.length < 1) {
+                        $('#rhqCostTable-totalText').text('');
                         $('#rhqCostTable-sum1').text('');
                         $('#rhqCostTable-sum2').text('');
                         $('#rhqCostTable-sum3').text('');
                     }
                     else {
+                        $('#rhqCostTable-totalText').text('Total');
                         $('#rhqCostTable-sum1').text(objectCost.sum("year2022"));
                         $('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
                         $('#rhqCostTable-sum3').text(objectCost.sum("year2024"));

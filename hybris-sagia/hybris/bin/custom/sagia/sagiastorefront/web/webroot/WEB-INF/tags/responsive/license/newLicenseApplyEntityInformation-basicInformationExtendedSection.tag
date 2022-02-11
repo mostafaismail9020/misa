@@ -811,7 +811,7 @@
 
 
 <!--rhqCostTable-->
-<div class="rqh-tables" style="display:none">
+<div class="rqh-tables" style="display:none;border-bottom: 1px solid #ccd0d4;margin-bottom: 48px;padding-bottom: 24px;">
 <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.estimated.cost.label" /></div>
 <div class="tableModule" >
 
@@ -844,7 +844,7 @@
     <th></th>
     <th></th>
     <th></th>
-    <th></th>
+    <th id="rhqCostTable-totalText">Total</th>
     <th id="rhqCostTable-sum1"></th>
 	<th id="rhqCostTable-sum2"></th>
 	<th id="rhqCostTable-sum3"></th>
@@ -1115,7 +1115,7 @@
 	z-index:999999;
 }
 
-#rhqCostTable-sum1,#rhqCostTable-sum2,#rhqCostTable-sum3{
+#rhqCostTable-sum1,#rhqCostTable-sum2,#rhqCostTable-sum3,#rhqCostTable-totalText{
 	font-weight: 600;
     font-size: 14px;
     color: #1c242c;

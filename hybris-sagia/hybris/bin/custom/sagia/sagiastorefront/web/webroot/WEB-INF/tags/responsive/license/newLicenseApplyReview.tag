@@ -425,7 +425,7 @@
             </div>
 
             <div class="tableModule">
-                <table class="tableModule-table" id="reviewMncCostTable">
+                <table class="tableModule-table" id="reviewMncCostTable" style="margin-bottom: 48px;">
                     <thead class="tableModule-head">
                     <tr>
                         <th><spring:theme code="review.rhq.item.name.label"/></th>
@@ -445,7 +445,7 @@
                         <td style=""></td>
                         <td style=""></td>
                         <td style=""></td>
-                        <td class="sum-row"></td>
+                        <td class="sum-row" id="rhqCostTable-totalText"></td>
                         <td class="sum-row" id="rhqCostTable-sum1"></td>
 	                    <td class="sum-row" id="rhqCostTable-sum2"></td>
 	                    <td class="sum-row" id="rhqCostTable-sum3"></td>
@@ -453,6 +453,7 @@
                         </tr>
                      </tfoot>
                 </table>
+                <hr class="contentModule-separator">
             </div>
         </div>
 

@@ -163,13 +163,13 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
 	
 	public void servicerequest2SCPI(ServiceRequestModel serviceRequest){
         if (Config.getBoolean("serviceRequest.scpi.interface.enable", true)) {
-            final ScpiOutServiceRequestProcessModel scpiOutServiceRequestEventProcessModel =
+            final ScpiOutServiceRequestProcessModel scpiOutServiceRequestProcessModel =
                     (ScpiOutServiceRequestProcessModel) businessProcessService
                             .createProcess("scpiOutServiceRequestProcess-" + serviceRequest.getId()
                                     + "-" + System.currentTimeMillis(), "scpiOutServiceRequestProcess");
-            scpiOutServiceRequestEventProcessModel.setServiceRequest(serviceRequest);
-            getModelService().save(scpiOutServiceRequestEventProcessModel);
-            businessProcessService.startProcess(scpiOutServiceRequestEventProcessModel);
+            scpiOutServiceRequestProcessModel.setServiceRequest(serviceRequest);
+            getModelService().save(scpiOutServiceRequestProcessModel);
+            businessProcessService.startProcess(scpiOutServiceRequestProcessModel);
             sessionService.setAttribute("partnerSystem",null);
         }
     }

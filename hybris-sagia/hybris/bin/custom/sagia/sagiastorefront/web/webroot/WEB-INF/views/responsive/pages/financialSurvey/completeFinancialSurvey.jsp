@@ -413,7 +413,7 @@
                                 </button>
                                 <button id="nextTabEntityBtnId" type="button"
                                         class="btn btn-primary newAmendmentBtn">
-                                    <spring:theme code="general.proceed"/>
+                                    <spring:theme code="survey.proceed"/>
                                 </button>
                             </div>
 
@@ -589,7 +589,7 @@
                                 </button>
                                 <button id="nextTabSubsidiariesBtnId" type="button"
                                         class="btn newAmendmentBtn">
-                                    <spring:theme code="general.proceed"/>
+                                    <spring:theme code="survey.proceed"/>
                                 </button>
                             </div>
 
@@ -1174,7 +1174,7 @@
 
                                 <button id="nextTabShareholdersEquityBtnId" type="button"
                                         class="btn newAmendmentBtn">
-                                    <spring:theme code="general.proceed"/>
+                                    <spring:theme code="survey.proceed"/>
                                 </button>
                             </div>
                         </div>
@@ -1335,7 +1335,7 @@
                                 </button>
                                 <button id="nextTabShareholdersBtnId" type="button"
                                         class="btn btn-primary newAmendmentBtn">
-                                    <spring:theme code="general.proceed"/>
+                                    <spring:theme code="survey.proceed"/>
                                 </button>
                             </div>
                         </div>
@@ -1543,7 +1543,7 @@
                                                     class="js-select2-oneColumn form-control"></select> <label
                                                 class="control-label"
                                                 for="shareholderSectorId"><spring:theme
-                                                code="license.sector"/></label>
+                                                code="survey.sector"/></label>
                                         </div>
                                         <div class="help-block"></div>
                                     </div>
@@ -1551,28 +1551,12 @@
                                 <div class="col-md-6">
                                     <div class="formInputBox">
                                         <div class="form-group">
-                                            <input id="shareholderSubsectorId"
-                                                   name="shareholderSubsector" class="form-control"
-                                                   placeholder="." value="" type="text" maxlength="20"> <label
-                                                class="control-label" for="">
-                                            <spring:theme code="license.subsector"/>
-                                        </label>
-                                            <div class="help-block"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="formSelectBox">
-                                        <div class="form-group">
-                                            <select id="shareholderMultinationalCompanyId"
-                                                    name="shareholderMultinationalCompany"
+                                            <select id="nationalityOfUCPId" name="nationalityOfUCP"
                                                     class="js-select2-oneColumn form-control"></select> <label
                                                 class="control-label control-label_mandatory"
-                                                for="shareholderMultinationalCompanyId"><spring:theme
-                                                code="license.multinational"/></label>
+                                                for="nationalityOfUCPId"><spring:theme
+                                                code="survey.ucp.country"/></label>
                                         </div>
-                                        <div class="help-block"></div>
                                     </div>
                                 </div>
 
@@ -1951,9 +1935,6 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content panelModule panelModule_halfRadius">
                 <form id="branchFormId">
-                    <div class="contentModule-headline">
-                        <spring:theme code="general.branch"/>
-                    </div>
 
                     <div class="contentModule-headline">
                         <spring:theme code="license.branchdetails"/>
@@ -2144,9 +2125,6 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content panelModule panelModule_halfRadius">
                 <form id="subsidiaryFormId">
-                    <div class="contentModule-headline">
-                        <spring:theme code="general.subsidiary"/>
-                    </div>
 
                     <div class="contentModule-headline">
                         <spring:theme code="license.subsidiary.details"/>

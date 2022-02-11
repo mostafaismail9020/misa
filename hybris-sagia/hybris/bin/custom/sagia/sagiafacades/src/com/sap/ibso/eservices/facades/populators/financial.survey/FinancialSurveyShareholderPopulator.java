@@ -21,6 +21,7 @@ public class FinancialSurveyShareholderPopulator implements Populator<FinancialS
     public void populate(FinancialSurveyShareholderModel financialSurveyShareholderModel, Shareholder shareholder) throws ConversionException {
 
         shareholder.setSrId(financialSurveyShareholderModel.getPk().getLong().toString());
+        shareholder.setAction("2");
         shareholder.setShareholderType(financialSurveyShareholderModel.getShareholderType());
         shareholder.setCompanyCountry(financialSurveyShareholderModel.getCompanyCountry());
         shareholder.setShareholderNameEnglish(financialSurveyShareholderModel.getShareholderNameEnglish());
@@ -37,7 +38,7 @@ public class FinancialSurveyShareholderPopulator implements Populator<FinancialS
         shareholder.setShareholderHaveReverseInvestment(financialSurveyShareholderModel.isShareholderHaveReverseInvestment());
         shareholder.setValueOfReverseInvestment(financialSurveyShareholderModel.getValueOfReverseInvestment());
         shareholder.setShareholderMultinationalCompany(financialSurveyShareholderModel.getShareholderMultinationalCompany());
-
+        shareholder.setNationalityOfUCP(financialSurveyShareholderModel.getNationalityOfUCP());
 
 
         shareholder.setPaidUpCapitalCurrentQuarter(financialSurveyShareholderModel.getPaidUpCapitalCurrentQuarter());

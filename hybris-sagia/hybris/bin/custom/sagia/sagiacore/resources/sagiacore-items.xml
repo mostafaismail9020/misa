@@ -10868,7 +10868,12 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
-
+                    <attribute qualifier="nationalityOfUCP" type="java.lang.String">
+                        <description>nationalityOfUCP</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
 
 
                     <attribute qualifier="shareholderIsVotingPower" type="boolean">

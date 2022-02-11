@@ -1621,6 +1621,7 @@ function setupDropDowns(data) {
     var $affiliateCountrySelect = $('#affiliateCountryId').append(new Option('', '', false, false));
     var affiliateCompanyCountry = $('#affiliateCompanyCountry').append(new Option('', '', false, false));
     var $companyCountrySelect = $('#companyCountry').append(new Option('', '', false, false));
+    var nationalityOfUCPId = $('#nationalityOfUCPId').append(new Option('', '', false, false));
 
     data.countries.forEach(function (country) {
         $currentNationalitySelect.append(new Option(country.name, country.id, false, false));
@@ -1631,6 +1632,7 @@ function setupDropDowns(data) {
         $affiliatePreviousNationalitySelect.append(new Option(country.name, country.id, false, false));
         $affiliateCountrySelect.append(new Option(country.name, country.id, false, false));
         $companyCountrySelect.append(new Option(country.name, country.id, false, false));
+        nationalityOfUCPId.append(new Option(country.name, country.id, false, false));
     });
 
     var $sectorSelect = $('#shareholderSectorId').append(new Option('', '', false, false));

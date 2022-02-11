@@ -430,6 +430,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyShareholderModel.setShareholderNameEnglish(shareholder.getShareholderNameEnglish());
         financialSurveyShareholderModel.setShareholderSector(shareholder.getShareholderSector());
         financialSurveyShareholderModel.setShareholderSubsector(shareholder.getShareholderSubsector());
+        financialSurveyShareholderModel.setNationalityOfUCP(shareholder.getNationalityOfUCP());
         financialSurveyShareholderModel.setShareholderGender(shareholder.getShareholderGender());
         financialSurveyShareholderModel.setShareholderNationalityCurrent(shareholder.getShareholderNationalityCurrent());
         financialSurveyShareholderModel.setShareholderCountry(shareholder.getShareholderCountry());

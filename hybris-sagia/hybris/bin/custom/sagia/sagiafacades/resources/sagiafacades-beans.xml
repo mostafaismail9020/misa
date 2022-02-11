@@ -1153,6 +1153,7 @@
 		<property name="srId" type="java.lang.String"/>
 		<property name="shareholderType" type="java.lang.String"/>
 		<property name="companyCountry" type="java.lang.String"/>
+		<property name="nationalityOfUCP" type="java.lang.String"/>
 		<property name="shareholderNameEnglish" type="java.lang.String"/>
 		<property name="shareholderSector" type="java.lang.String"/>
 		<property name="shareholderSubsector" type="java.lang.String"/>

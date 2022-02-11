@@ -17,6 +17,7 @@ public class FinancialSurveyBranchPopulator implements Populator<FinancialSurvey
     @Override
     public void populate(FinancialSurveyBranchModel financialSurveyBranchModel, Branch branch) throws ConversionException {
         branch.setSrId(financialSurveyBranchModel.getPk().getLongValueAsString());
+        branch.setAction("2");
         branch.setAddrNumber(financialSurveyBranchModel.getAddrNumber());
         branch.setName(financialSurveyBranchModel.getName());
         branch.setType(financialSurveyBranchModel.getType());

@@ -12,6 +12,7 @@ public class FinancialSurveySubsidiaryPopulator implements Populator<SagiaSubsid
     public void populate(SagiaSubsidiaryModel sagiaSubsidiaryModel, Subsidiary subsidiary) throws ConversionException {
 
         subsidiary.setSubsidiaryName(sagiaSubsidiaryModel.getName());
+        subsidiary.setAction("2");
         subsidiary.setSrId(sagiaSubsidiaryModel.getPk().getLong().toString());
         subsidiary.setContribution(sagiaSubsidiaryModel.getContribution());
         subsidiary.setDataIncludedInHeadOffice(sagiaSubsidiaryModel.getIsDataIncludedInHeadOffice());

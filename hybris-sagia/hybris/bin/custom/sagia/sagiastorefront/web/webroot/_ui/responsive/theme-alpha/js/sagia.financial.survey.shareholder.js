@@ -640,6 +640,7 @@ function fillShareholderForm(selectedShareholder) {
         updateDropDown('#shareholderSectorId', selectedShareholder.industry);
         updateDropDown('#shareholderMultinationalCompanyId', selectedShareholder.shareholderMultinationalCompany);
         updateDropDown('#shareholderLegalStatusId', selectedShareholder.legalStatus);
+        updateDropDown('#nationalityOfUCPId', selectedShareholder.nationalityOfUCP);
         $('#shareholderSubsectorId').val(selectedShareholder.subsector);
     } else {
 
@@ -769,6 +770,10 @@ var saveShareholder = function (existingBp, bpId) {
     saveShareholderBtn.removeAttr('id');
     var $companyCountry = $('#companyCountry option:selected');
     var companyCountry = $companyCountry.val();
+
+    var $nationalityOfUCP = $('#nationalityOfUCPId option:selected');
+    var nationalityOfUCP = $nationalityOfUCP.val();
+
     var companyCountryDescription = $companyCountry.text();
     var name = $('#shareholderNameEnglishId').val();
     var individualShareholderName = $('#individualShareholderNameEnglishId').val();
@@ -932,6 +937,8 @@ var saveShareholder = function (existingBp, bpId) {
             selectedShareholder.shareholderCountryDescription = shareholderCountryDescription;
         } else { // edit entity shareholder
             selectedShareholder.companyCountry = companyCountry;
+            selectedShareholder.nationalityOfUCP = nationalityOfUCP;
+
             selectedShareholder.shareholderType = '2' ;
             selectedShareholder.companyCountryDescription = companyCountryDescription;
             selectedShareholder.shareholderNameEnglish = name;
@@ -959,6 +966,7 @@ var saveShareholder = function (existingBp, bpId) {
                 selectedShareholder.shareholderCountryDescription = shareholderCountryDescription;
             } else { // edit entity shareholder
                 selectedShareholder.companyCountry = companyCountry;
+                selectedShareholder.nationalityOfUCP = nationalityOfUCP;
                 selectedShareholder.shareholderType = '2' ;
                 selectedShareholder.companyCountryDescription = companyCountryDescription;
                 selectedShareholder.shareholderNameEnglish = name;
@@ -982,6 +990,7 @@ var saveShareholder = function (existingBp, bpId) {
             firstName: '',
             secondName: '',
             companyCountry: '',
+            nationalityOfUCP: '',
             shareholderNameEnglish: '',
             shareholderSector: '',
             shareholderSubsector: '',
@@ -1075,6 +1084,7 @@ var saveShareholder = function (existingBp, bpId) {
             shareholder.shareholderMultinationalCompany = shareholderMultinationalCompany;
             shareholder.shareholderSubsector = shareholderSubsector;
             shareholder.companyCountry = companyCountry;
+            shareholder.nationalityOfUCP = nationalityOfUCP;
             shareholder.companyCountryDescription = companyCountryDescription;
         }
 

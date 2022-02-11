@@ -19,6 +19,7 @@ public class FinancialSurveyAffiliatePopulator implements Populator<FinancialSur
     public void populate(FinancialSurveyAffiliateModel financialSurveyAffiliateModel, Affiliate affiliate) throws ConversionException {
 
         affiliate.setSrId(financialSurveyAffiliateModel.getPk().getLong().toString());
+        affiliate.setAction("2");
         affiliate.setAffiliateType(financialSurveyAffiliateModel.getAffiliateType());
         affiliate.setCompanyCountry(financialSurveyAffiliateModel.getCompanyCountry());
         affiliate.setAffiliateNameEnglish(financialSurveyAffiliateModel.getAffiliateNameEnglish());

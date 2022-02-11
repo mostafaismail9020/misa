@@ -16,7 +16,7 @@
     var cancellationMessage = '${licenseCancellationMessage}';
 </script>
 
-<div class="mainSection mainSection_white">
+<!-- <div class="mainSection mainSection_white">
     <div class="container">
         <div class="mainSection-header">
             <div class="mainSection-headline">
@@ -26,6 +26,62 @@
             <div class="mainSection-action">
                 <button class="btn btn_round"><spring:theme code="licenseCancellation.save.draft"/>
                     <icon:save/></button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="mainSection mainSection bg-white">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="licenseCancellation.title"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification">
+                        <div class="count-notification" id="unreadNotificationSpan"></div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+    <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
+        <div class="row w-100 renewal-services">
+            <div class="col-md-3 col-12 px-0">
+                <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+            </div>
+            <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                <div class="col-xl-3 col-12 ml-1">
+                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+                </div>
+            </c:if>
+        </div>	
+        <div class="row w-100 mt-4">
+            <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link amend-btns-list">
+                <div class="btn-drafts_list">
+                    <button class="btn btn_round"><spring:theme code="licenseCancellation.save.draft"/>
+                        <icon:save/></button>
+                </div>               
             </div>
         </div>
     </div>

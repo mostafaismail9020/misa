@@ -274,7 +274,7 @@
         }
         .historyList-date,.dlList.dlList_separated dt{
             font-size: 14px;
-            padding-left: 20px;
+            // padding-left: 50px;
             padding-bottom: 10px !important; 
             color: @color-text;
         }
@@ -722,7 +722,7 @@
     font-size: 20px;
     padding-left: 30px;
 }
-button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.editButton:hover,button.removeButton:hover{
+button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.editButton:hover,button.removeButton:hover,.no_background:hover{
     background: none !important;
 }
 .govt-doc-edit.modal-dialog{
@@ -1015,7 +1015,9 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
         transform: translate(-50%,0%);
         left: 50%;
     }
-    .global-alerts + .page-content-position .js-panelTabs{
+    .global-alerts + .page-content-position .js-panelTabs,
+    .global-alerts + .page-content-position  .mainSection:nth-of-type(2n)
+    {
         margin-top: 80px
     }
 }
@@ -1087,4 +1089,10 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     -ms-flex-align: center!important;
     align-items: center!important;
     text-decoration: none!important;
+}
+
+.govt-service-label-span{
+    span{
+        font-size: var(--label-font);
+    }
 }

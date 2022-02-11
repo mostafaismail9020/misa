@@ -1056,6 +1056,21 @@
 		padding: 15px 0 30px 45px!important;
 	}
 }
+@media (width:1180px) and (max-height:820px) {/*iPad Air*/
+	.accountLogin-content-slot_left {
+		padding: 20px 0 30px 50px!important
+	}
+	.login-logo {
+		margin-left: 50px;
+	}
+	.register-form-names div:nth-child(1), .register-form-names div:nth-child(2){
+		margin-left: 0px;
+		padding-left: 0px;
+		margin-right: 0px;
+		padding-right: 0px;
+	}
+
+}
 @media (max-width:1200px) {
 	.formInputBox .register-user-details:focus ~ .register-user-info-label.control-label,  .formTextArea .register-user-details:focus ~  .register-user-info-label.control-label{
 		transform: translate3d(-6px,27px, 0) scale(1);
@@ -1428,13 +1443,16 @@
 	}
   }
   @media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150% resolution*/
+	.r-sn .form-control, .formInputBox .form-control {
+		padding-left: 20px !important;
+	}
 	.login-screen2{
 		.login-right-wrapper{
 			width: 530px;
 		}
 	  }
 	  .captcha-pos{
-		transform: translateX(25%);
+		transform: translateX(20%);
 	}
 	.register-account-investor-screen3,.register-account-investor-screen4{
 		.login-right-wrapper{
@@ -1670,7 +1688,9 @@
 	}
   }
   @media (max-width:640px) {
-
+	.captcha-pos {
+		transform: translateX(8%);
+	}
     .accountLogin-content-slot_left{
         padding: 0 !important;
     }
@@ -1776,9 +1796,9 @@
 	  margin: 6% 4% 10% 4%;
 	}
 	.login-buttons{
-	  margin: auto;
+	//   margin: auto;
 	  display: grid;
-      margin-top:20%;
+    //   margin-top:20%;
 	}
 
 	.register-form-names{
@@ -2016,9 +2036,9 @@
 
 .count-notification{
 	position: absolute;
-    top: -23px;
+    top: -20px;
     right: 75px;
-    background: @color-primary;
+    background: @color-golden;
     color: @color-white;
     z-index: 1;
 	min-width: 30px;

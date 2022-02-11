@@ -324,7 +324,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
 
-                                        <div class="contentModule-subheadline">
+                                        <div class="contentModule-subheadline headline-text ml-2">
                                             <spring:theme code="fiancial.balanceSheet.assets"/>
                                         </div>
                                         <dl class="dlList dlList_separated dlList_marginBottom">
@@ -341,7 +341,7 @@
                                         </dl>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="contentModule-subheadline">
+                                        <div class="contentModule-subheadline headline-text">
                                             <spring:theme code="fiancial.balanceSheet.liabilities"/>
                                         </div>
                                         <dl class="dlList dlList_separated dlList_lineThrough">
@@ -359,7 +359,7 @@
                                     </div>
                                 </div>
 
-                                <div class="contentModule-subheadline">
+                                <div class="contentModule-subheadline headline-text ml-2">
                                     <spring:theme code="fiancial.balanceSheet.additionalData"/>
                                 </div>
                                 <div class="row">

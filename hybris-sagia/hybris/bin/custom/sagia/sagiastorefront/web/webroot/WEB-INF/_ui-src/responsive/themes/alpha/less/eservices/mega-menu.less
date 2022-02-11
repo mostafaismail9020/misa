@@ -41,10 +41,7 @@
 	.col-5.menu-img-item {
 		display: none;
 	}
-	#topbar .social-links a {
-		font-size: 8px;
-		margin-left: 8px;
-	}
+	
 	.Header_vs_logo {
 		margin-left: 20px !important;
 	}
@@ -53,6 +50,47 @@
 		right: auto;
 		top: 30px;
 	}
+    #topbar .social-links a {
+		font-size: 8px !important;
+		margin-left: 0px !important;
+	}
+
+	#topbar {
+		top: 0px;
+		height: 50px;
+		z-index: 9999;
+	}
+	.mobile-nav-toggle {
+		height: 40px;
+		width: 30px;
+		background-image: url(../img/listView_blue.svg);
+		background-repeat: no-repeat;
+		top: 55px !important;
+	}
+
+	#header {
+		top: 0;
+		padding: 15px 0;
+		background: transparent;
+	}
+	#header {
+    	border-bottom: unset;
+	}
+	#topbar span {
+		font-size: 8px !important;
+	}
+	[dir] .social-links .skype .language-toggle{
+		padding: 6px 0px 6px 6px;
+	}
+	[dir=ltr] #topbar .social-links a {
+		margin-left: 8px !important;
+	}
+}
+
+#header.header-scrolled {
+    top: 0;
+    background: #f7f7f7;
+    box-shadow: 0px 2px #000000;
 }
 .social-links {
     margin: 0;

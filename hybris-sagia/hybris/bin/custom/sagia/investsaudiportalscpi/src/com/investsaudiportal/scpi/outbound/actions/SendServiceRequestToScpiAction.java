@@ -24,15 +24,15 @@ public class SendServiceRequestToScpiAction extends AbstractAction<ScpiOutServic
     }
 
     @Override
-    public String execute(ScpiOutServiceRequestProcessModel scpiOutServiceRequestEventProcessModel) throws RetryLaterException, Exception {
+    public String execute(ScpiOutServiceRequestProcessModel scpiOutServiceRequestProcessModel) throws RetryLaterException, Exception {
 
         try {
-             ServiceRequestModel serviceRequest = scpiOutServiceRequestEventProcessModel.getServiceRequest();
+             ServiceRequestModel serviceRequest = scpiOutServiceRequestProcessModel.getServiceRequest();
             scpiOutboundService.sendServiceRequest(serviceRequest);
             return("OK");
         }
         catch (Exception e) {
-          LOG.error("Error while sending customerEvent: " + scpiOutServiceRequestEventProcessModel.getServiceRequest().getId()+" to SCPI ",e);
+          LOG.error("Error while sending customerEvent: " + scpiOutServiceRequestProcessModel.getServiceRequest().getId()+" to SCPI ",e);
             return("NOK");
         }
 

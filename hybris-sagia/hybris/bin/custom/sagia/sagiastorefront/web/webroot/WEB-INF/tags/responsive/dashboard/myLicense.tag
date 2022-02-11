@@ -11,9 +11,9 @@
         <div class="dashboardWidget-headline-text"><spring:theme code="myLicense.title"/></div>
         <div class="dashboardWidget-headline-icon"><icon:my-license/></div>
         <div class="dashboardWidget-headline-action">
-            <!-- <a href="${encodedContextPath}/my-sagia/license/convert" class="dashboardWidget-headline-action-link">
+            <a href="${encodedContextPath}/my-sagia/license/convert" class="btn-outline dashboardWidget-headline-action-link">
                 <spring:theme code="convertlicense.converttonational"/><icon:convert-to-national/>
-            </a> -->
+            </a>
             <a href="${encodedContextPath}/my-sagia/license/print" class="btn-outline dashboardWidget-headline-action-link download-payment" download>
                 <spring:theme code="text.account.followup.download"/><img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Download.png" alt=""/>
             </a>

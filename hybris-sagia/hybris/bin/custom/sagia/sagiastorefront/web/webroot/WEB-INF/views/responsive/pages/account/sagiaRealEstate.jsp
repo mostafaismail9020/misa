@@ -337,14 +337,17 @@
 
                     <div id="realEstateDocuments" <c:if test="${empty firstElement.attachmentsSet}">hidden</c:if>>
                         <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                            <div class="contentModule">
+                            <div class="contentModule contentModule-wrap">
                                 <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-headline_bordered w-100">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
+                                    <!-- <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-headline_bordered w-100">
                                         <div class="contentModule-headline headline-text">
-                                            <!-- <icon:documents/> -->
                                             <spring:theme code="text.account.followup.supportDocuments"/>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <ul id="realEstateAttachmentList" class="downloadList downloadList_maxHeight">
                                         <c:forEach items="${firstElement.attachmentsSet}" var="attachment">

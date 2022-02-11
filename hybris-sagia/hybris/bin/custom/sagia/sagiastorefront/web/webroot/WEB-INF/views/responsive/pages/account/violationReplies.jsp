@@ -181,9 +181,10 @@
                                         <spring:theme code="text.account.followup.status"/> : <span>${selectedItem.srStDesc}</span>
                                     </div>
                                 </c:if>
+                                <div class="contentModule-headline-border"></div>
                             </div>
 
-                            <div class="tableModule commentModule">
+                            <div class="tableModule commentModule1">
                                 <table class="tableModule-table">
                                     <thead class="tableModule-head">
                                     <tr>
@@ -237,8 +238,12 @@
                             </div>
                         </c:if>
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                            <div class="contentModule-headline contentModule-headline_small">
+                            <!-- <div class="contentModule-headline contentModule-headline_small">
                                 <spring:theme code="text.account.followup.attachments"/>
+                            </div> -->
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="text.account.followup.attachments"/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
                             <div class="documentModule commentModule">
                                 <c:forEach items="${selectedItem.contentHdr}" var="element">

@@ -1454,7 +1454,7 @@ $(function () {
             }
         });
 
-        $(".quickregistrationPwd").on('focus blur keyup change', function () {
+        $(".quickregistrationPwd").on('focus blur keyup change', function (e) {
             var passwordSuccessDiv = $(this).closest('.formInputBox').find(".success-message-block");
             setTimeout(function() {
                 var formValidation = $("#sagiaRegisterFormQuickRegistration, #sagiaRegisterFormApplyLicense").validate();

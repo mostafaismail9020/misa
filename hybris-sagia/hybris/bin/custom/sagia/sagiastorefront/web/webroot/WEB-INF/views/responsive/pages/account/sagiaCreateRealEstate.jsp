@@ -90,11 +90,16 @@
         <form:form id="createRealEstateForm" method="post" modelAttribute="realEstate" action="${createRealEstateUrl}" enctype="multipart/form-data">
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-3">
                 <div class="contentModule">
-                    <div class="contentModule-section">
-                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-headline_bordered w-100">
-                            <div class="contentModule-headline headline-text">
-                                <!-- <icon:info/> -->
-                                <spring:theme code="text.headertext.info"/>
+                    <div class="contentModule-section mb-0">
+
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-section mb-0">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                    <span class="contentModule-headline">
+                                        <spring:theme code="text.headertext.info"/>
+                                    </span>
+                                    <div class="contentModule-headline-border"></div>
+                                </div>
                             </div>
                         </div>
 
@@ -491,7 +496,7 @@
                             <div id="realEstateupload_placeholder w-100" class="js-inputFile">
                                 <c:if test="${not empty realEstate.documentsToUpload}">
                                     <c:forEach items="${realEstate.documentsToUpload}" var="document" varStatus="count">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="formInputFile <c:if test="${not empty document.resubmittedFileName}">active</c:if>">
                                                 <div class="form-group <c:if test="${hasErrors && empty document.fileText}">has-error</c:if>">
                                                     <input id="fileId_${count.index}" name="files[${count.index}]" class="form-control js-inputFile" value="" type="file" accept="image/jpeg,application/pdf">

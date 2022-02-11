@@ -59,13 +59,13 @@
 </div> -->
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
-        <div class="d-flex row renewal-services w-100">
+        <div class="d-flex row renewal-services w-100 mb--4">
             <div class="col-md-3">
                 <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink back_to_service">
                     <span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="legalConsultationCreate.backToAccountOverview.text"/>
                 </a>
             </div>
-            <div class="col-md-9 d-flex btn-drafts_list amend-service-link amend-btns-list">
+            <div class="col-md-9 d-none btn-drafts_list amend-service-link amend-btns-list">
                 <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="${serviceId}"
                         data-service-id="${serviceId}"><spring:theme code="general.savedraft"/><span
@@ -94,7 +94,7 @@
                             <div class="contentModule-headline-border"></div>
                         </div>
 
-                        <div class="formSelectBox w-100">
+                        <div class="custominput formSelectBox w-100">
                             <div class="form-group <c:if test="${status.error}">has-error</c:if>">
                                 <form:select class="js-select2-oneColumn" id="legalInquiryTypeId" path="legEnqTitle">
                                     <form:option value=""/>
@@ -124,7 +124,7 @@
                             <div class="contentModule-headline-border"></div>
                         </div>
 
-                        <div class="row">
+                        <div class="row custominput w-100">
                             <div class="col-md-6">
                                 <!-- todo: formInputFile tag needs to be added -->
                                 <div class="formInputFile">
@@ -187,7 +187,7 @@
                     <formElement:termsAndConditionsCheckbox event="LEGAL_CONSULTATION" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
                 </div>
 
-                <button type="reset" class="btn btn_leftIconLink btn_outline" onclick="window.location.href='${encodedContextPath}">
+                <button type="reset" style="width: 195px!important" class="btn btn_leftIconLink btn_outline" onclick="window.location.href='${encodedContextPath}">
                     <spring:theme code="general.cancel"/>
                 </button>
 

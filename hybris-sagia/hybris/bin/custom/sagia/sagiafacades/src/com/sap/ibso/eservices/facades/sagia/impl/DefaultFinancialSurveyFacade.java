@@ -334,6 +334,21 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         listItemsResult.setCountries(countries);
 
 
+        ListItem itemGender1 =  new ListItem() ;
+        itemGender1.setId("male");
+        itemGender1.setName(getLocalizedValue("type.male"));
+
+        ListItem itemGender2 =  new ListItem() ;
+        itemGender2.setId("female");
+        itemGender2.setName(getLocalizedValue("type.female"));
+
+        gender.add(itemGender2);
+        gender.add(itemGender1);
+
+        gender.sort(Comparator.comparing(ListItem::getName));
+        listItemsResult.setGender(gender);
+
+
         List<ListItem> custombranchTypes = new ArrayList<>();
         ListItem listItem =  new ListItem() ;
         listItem.setId("head_office");
@@ -342,12 +357,12 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         ListItem listItem2 =  new ListItem() ;
         listItem2.setId("branch");
         listItem2.setName(getLocalizedValue("type.branch"));
+
         custombranchTypes.add(listItem );
         custombranchTypes.add(listItem2 );
         listItemsResult.setBranchTypes(custombranchTypes);
 
-        gender.sort(Comparator.comparing(ListItem::getName));
-        listItemsResult.setGender(gender);
+
 
         status.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setStatus(status);

@@ -2,9 +2,12 @@ package com.sap.ibso.eservices.facades.sagia.impl;
 
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
 import com.sap.ibso.eservices.core.model.SagiaCompanyProfileModel;
+import com.sap.ibso.eservices.core.sagia.services.SagiaCityService;
+import com.sap.ibso.eservices.core.sagia.services.SagiaCountryService;
 import com.sap.ibso.eservices.core.sagia.services.SagiaFormatProvider;
 import com.sap.ibso.eservices.core.sagia.services.SagiaLegalStatusService;
 import com.sap.ibso.eservices.core.sagia.services.SagiaRegionService;
+import com.sap.ibso.eservices.core.sagia.services.SagiaSectorService;
 import com.sap.ibso.eservices.facades.data.FinancialSurveyData;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.AttachmentListItem;
 import com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItem;
@@ -52,19 +55,6 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
     private static final String LEGALSTATUS = "LEGALSTATUS";
     private static final String COUNTRY = "COUNTRY";
     private static final String ATTACHMENT = "ATTACHMENT";
-    private static final String ADD = "01";
-    private static final String MODIFY = "02";
-    private static final String DELETE = "03";
-    private static final String AMEND_TYPE_VALUE = "X";
-    private static final String INDUSTRIAL_LICENSE = "1";
-    private static final String AGRICULTURAL_LICENSE = "5";
-    private static final String ESTB = "ESTB";
-    private static final String LLC = "LLC";
-    private static final String ILLC = "ILLC";
-    private static final String INDIVIDUAL_SHAREHOLDER_TYPE = "1";
-    private static final String ACTION_01 = "01";
-    private static final String ZSR5 = "ZSR5";
-    private static final String ACTION_05 = "05";
 
     @Resource
     private SagiaFormatProvider sagiaFormatProvider ;
@@ -75,6 +65,15 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
 
     @Resource(name = "sagiaLegalStatusService")
     private SagiaLegalStatusService sagiaLegalStatusService;
+
+    @Resource(name = "sagiaCityService")
+    private SagiaCityService sagiaCityService;
+
+    @Resource(name = "sagiaSectorService")
+    private SagiaSectorService sagiaSectorService;
+
+    @Resource(name = "sagiaCountryService")
+    private SagiaCountryService sagiaCountryService;
 
     private SagiaFinancialSurveyService sagiaFinancialSurveyService;
 
@@ -243,7 +242,7 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         List<AttachmentListItem> attachments = new ArrayList<>();
 
 
-        for (CustomizingGetData data : customizationListService.getLicenseAmendmentListItems()) {
+        /*for (CustomizingGetData data : customizationListService.getLicenseAmendmentListItems()) {
 
             switch (data.getFieldname() == null ? "" : data.getFieldname()) {
 
@@ -256,11 +255,11 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
                     break;
 
                 case CITY:
-                    cities.add(getSubListItem(data));
+                  //  cities.add(getSubListItem(data));
                     break;
 
                 case INDUSTRY:
-                    sectors.add(getListItem(data));
+                    //sectors.add(getListItem(data));
                     break;
 
                 case LEGALSTATUS:
@@ -292,18 +291,20 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
                     break;
 
                 case COUNTRY:
-                    countries.add(getListItem(data));
+                    //countries.add(getListItem(data));
                     break;
 
                 case ATTACHMENT:
-                    attachments.add(getAttachmentListItem(data));
+                    //attachments.add(getAttachmentListItem(data));
                     break;
 
                 default:
                     break;
 
             }
-        }
+        }*/
+
+
         ListItems listItemsResult = new ListItems();
 
 
@@ -320,8 +321,18 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         listItemsResult.setLegalStatus(legalStatus);
 
 
+        sagiaCityService.getAllCities().stream().forEach(cityModel -> {SubListItem item = new SubListItem() ;item.setId(cityModel.getCode());item.setName(cityModel.getName());item.setParentId(cityModel.getRegion().getCode()); cities.add(item) ;}  );
         cities.sort(Comparator.comparing(SubListItem::getName));
         listItemsResult.setCities(cities);
+
+        sagiaSectorService.getSectors().stream().forEach(sectorModel -> {ListItem item = new ListItem() ;item.setId(sectorModel.getCode());item.setName(sectorModel.getName()); sectors.add(item) ;}  );
+        sectors.sort(Comparator.comparing(ListItem::getName));
+        listItemsResult.setSectors(sectors);
+
+        sagiaCountryService.getCountries().stream().forEach(countryModel -> {ListItem item = new ListItem() ;item.setId(countryModel.getCode());item.setName(countryModel.getName()); countries.add(item) ;}  );
+        countries.sort(Comparator.comparing(ListItem::getName));
+        listItemsResult.setCountries(countries);
+
 
         List<ListItem> custombranchTypes = new ArrayList<>();
         ListItem listItem =  new ListItem() ;
@@ -350,16 +361,10 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         unit.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setUnit(unit);
 
-        sectors.sort(Comparator.comparing(ListItem::getName));
-        listItemsResult.setSectors(sectors);
 
         multinationalCompany.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setMultinationalCompany(multinationalCompany);
 
-
-
-        countries.sort(Comparator.comparing(ListItem::getName));
-        listItemsResult.setCountries(countries);
 
         attachments.sort(Comparator.comparing(AttachmentListItem::getName));
         listItemsResult.setAttachments(attachments);

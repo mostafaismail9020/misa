@@ -1253,7 +1253,7 @@
                                             data-toggle="modal" data-target="#shareholderModalId"
                                             data-backdrop="static" data-keyboard="false">
                                         <spring:theme
-                                                code="text.account.profile.license.shareholders.newShareholder"/>
+                                                code="financial.survey.shareholders.newShareholder"/>
                                     </button>
                                 </div>
                             </div>
@@ -1434,7 +1434,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content panelModule panelModule_halfRadius">
                 <div class="contentModule-headline">
-                    <spring:theme code="license.shareholder"/>
+                    <spring:theme code="financial.survey.shareholder"/>
                 </div>
 
 
@@ -1475,7 +1475,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content panelModule panelModule_halfRadius">
                     <div class="contentModule-headline">
-                        <spring:theme code="license.shareholder"/>
+                        <spring:theme code="financial.survey.shareholder"/>
                     </div>
                     <div id="shareholderPersonEntityTypeId" class="row">
                         <div class="col-md-8">
@@ -1485,14 +1485,14 @@
                                         <input id="personId" name="shareholderPersonEntityRadioBox"
                                                class="form-control" value="true" type="radio" checked>
                                         <label for="personId" class="control-label"> <spring:theme
-                                                code="general.person"/>
+                                                code="financial.survey.person"/>
                                         </label>
                                     </div>
                                     <div class="form-item">
                                         <input id="entityId" name="shareholderPersonEntityRadioBox"
                                                class="form-control" value="false" type="radio"> <label
                                             for="entityId" class="control-label"> <spring:theme
-                                            code="license.entity"/>
+                                            code="financial.survey.entity"/>
                                     </label>
                                     </div>
                                 </div>
@@ -2057,7 +2057,7 @@
                                 <div class="form-group">
                                     <input id="branchTelephoneId" name="branchTelephone"
                                            class="form-control" placeholder="." value="" type="text">
-                                    <label class="control-label control-label_mandatory"
+                                    <label class="control-label"
                                            for="branchTelephoneId"> <spring:theme
                                             code="license.telephoneno"/>
                                     </label>
@@ -2070,7 +2070,7 @@
                                 <div class="form-group">
                                     <input id="branchEmailId" name="branchEmail"
                                            class="form-control" placeholder="." value="" type="text">
-                                    <label class="control-label control-label_mandatory"
+                                    <label class="control-label"
                                            for="branchEmailId"> <spring:theme code="license.email"/>
                                     </label>
                                     <div class="help-block" id="branchEmailValidation"></div>
@@ -2083,7 +2083,7 @@
                                     <input id="branchWebsiteId" name="branchWebsite"
                                            class="form-control website" placeholder="." value=""
                                            type="text"> <label
-                                        class="control-label control-label_mandatory"
+                                        class="control-label"
                                         for="branchWebsiteId"> <spring:theme
                                         code="license.website"/>
                                 </label>
@@ -2428,14 +2428,14 @@
                                         <input id="affiliatePersonId" name="affiliatePersonEntityRadioBox"
                                                class="form-control" value="true" type="radio" checked>
                                         <label for="affiliatePersonId" class="control-label"> <spring:theme
-                                                code="general.person"/>
+                                                code="financial.survey.person"/>
                                         </label>
                                     </div>
                                     <div class="form-item">
                                         <input id="affiliateEntityId" name="affiliatePersonEntityRadioBox"
                                                class="form-control" value="false" type="radio"> <label
                                             for="affiliateEntityId" class="control-label"> <spring:theme
-                                            code="license.entity"/>
+                                            code="financial.survey.entity"/>
                                     </label>
                                     </div>
                                 </div>

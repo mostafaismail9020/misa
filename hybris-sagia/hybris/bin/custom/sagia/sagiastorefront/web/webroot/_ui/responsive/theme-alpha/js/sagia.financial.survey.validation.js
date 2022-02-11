@@ -547,9 +547,6 @@ function branchValidator() {
             branchName: "required",
             branchRegion: "required",
             branchCity: "required",
-            branchTelephone: "required",
-            branchEmail: "required",
-            branchWebsite: "required",
             volumeWeight: {
                 required: true,
                 number: true,
@@ -569,15 +566,6 @@ function branchValidator() {
             },
             branchCity: {
                 required: getI18nText("validation.city")
-            },
-            branchTelephone: {
-                required: getI18nText("validation.telephoneNumber")
-            },
-            branchEmail: {
-                required: getI18nText("validation.email")
-            },
-            branchWebsite: {
-                required: getI18nText("validation.url")
             },
             volumeWeight: {
                 required: getI18nText("validation.sharePerc"),

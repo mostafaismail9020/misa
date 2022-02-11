@@ -10,7 +10,7 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
 <div class="contentModule-section" id="businessActivitiesSection">
-    <div class="contentModule-headline"><spring:theme code="license.apply.business.activities"/></div>
+    <div class="contentModule-headline"><spring:theme code="financial.survey.business.activities"/></div>
 
 <%--     <div id="businessTypeSection" class="row">
         <div class="col-md-6">
@@ -27,7 +27,7 @@
         <span class="iconElement iconElement_business text-center"><icon:business/></span>
         <p class="text-center"><spring:theme code="survey.activities.question"/></p>
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <button type="button" class="btn" data-toggle="modal" data-target="#businessActivitiesModal">+ <spring:theme code="license.apply.business.activities"/></button>
+            <button type="button" class="btn" data-toggle="modal" data-target="#businessActivitiesModal">+ <spring:theme code="financial.survey.business.activities"/></button>
         </div>
         <div class="help-block"></div>
     </div>
@@ -58,7 +58,7 @@
             <div class="modal-content">
                 <form action="" class="">
                     <div class="modal-header">
-                        <div class="modal-title"><spring:theme code="license.apply.business.activities"/></div>
+                        <div class="modal-title"><spring:theme code="financial.survey.business.activities"/></div>
                         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                             <icon:close/>
                         </button>

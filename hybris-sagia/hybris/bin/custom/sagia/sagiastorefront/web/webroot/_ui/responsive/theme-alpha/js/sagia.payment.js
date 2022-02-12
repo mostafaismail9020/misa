@@ -159,7 +159,7 @@ SAGIA.payment = {
     },
     displayPayWithSadadMessage: function() {
         $("#licenseApplicationPayment").modal("hide");
-        SAGIA.showError(getI18nText("payments.sadad.clicked"));
+        SAGIA.showSuccess(getI18nText("payments.sadad.clicked"));
     }
 };
 

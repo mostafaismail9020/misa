@@ -186,7 +186,7 @@
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
                                 <div class="contentModule-headline applicantList headline-text text-golden">
                                     <!-- <icon:info/> -->
-                                    <img src="${commonResourcePath}/images/dashboard-media/Setting.png" alt="setting" />
+                                    <img src="${commonResourcePath}/images/dashboard-media/Setting.png" alt="setting" class="mr-2"/>
                                     <spring:theme
                                             code="text.specialservices.applicants.list"/>:&nbsp;${specialServiceHeader.id}
                                 </div>
@@ -269,7 +269,7 @@
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
                                     <div class="contentModule-headline headline-text text-golden">
                                         <!-- <icon:contactPerson/> -->
-                                        <img src="${commonResourcePath}/images/dashboard-media/services/Contact Details.png" alt="Contact Details" />
+                                        <img src="${commonResourcePath}/images/dashboard-media/services/Contact Details.png" alt="Contact Details" class="mr-2"/>
                                         <spring:theme code="text.specialservices.contact.details"/>
                                     </div>
                                     <%--<a href="${currentUrl}/edit/${specialServiceHeader.id}"

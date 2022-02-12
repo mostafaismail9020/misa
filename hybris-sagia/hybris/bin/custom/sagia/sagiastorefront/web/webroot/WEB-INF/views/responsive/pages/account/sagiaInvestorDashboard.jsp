@@ -12,6 +12,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
+<%@ include file="/WEB-INF/tags/responsive/common/successModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/infoModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/confirmationModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>

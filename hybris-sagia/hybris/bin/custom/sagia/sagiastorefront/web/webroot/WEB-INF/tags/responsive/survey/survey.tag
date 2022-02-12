@@ -10,6 +10,7 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 <%@ taglib prefix="survey" tagdir="/WEB-INF/tags/responsive/survey" %>
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
+<%@ include file="/WEB-INF/tags/responsive/common/successModal.tag" %>
 
 <div class="contentModule">
     <form:form id="surveyForm" class="js-survey" action=""

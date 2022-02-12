@@ -107,7 +107,7 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline"> Service overview </span>
+					<span class="serviceModule-headline"><spring:theme code="sagia.services.service.overview"/></span>
 					<c:choose>
 						<c:when test="${empty sagiaService.description}">
 							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
@@ -124,7 +124,7 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline"> Service document </span>
+					<span class="serviceModule-headline"><spring:theme code="sagia.services.service.document"/></span>
 					<c:choose>
 						<c:when test="${empty sagiaService.serviceDocuments}">
 							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
@@ -141,7 +141,7 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline"> Rules & Restriction </span>
+					<span class="serviceModule-headline"><spring:theme code="sagia.services.rules.restrictions"/></span>
 					<c:choose>
 						<c:when test="${empty sagiaService.rulesRestrictions}">
 							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
@@ -158,7 +158,7 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline"> Financial FEE </span>
+					<span class="serviceModule-headline"><spring:theme code="sagia.services.financial.fees"/></span>
 					<c:choose>
 						<c:when test="${empty sagiaService.serviceFinancialFees}">
 							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
@@ -175,7 +175,7 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline"> Duration </span>
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.duration"/> </span>
 					<c:choose>
 						<c:when test="${empty sagiaService.serviceDuration}">
 							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>

@@ -96,9 +96,9 @@
 
         $.postJsonData(ACC.config.encodedContextPath + "/my-sagia/questionnaires/send-survey-data", data)
             .done(function(response){
-                $('#errorResponseModal').find('.modal-description').text(getI18nText("general.request.submitted"));
-                $('#errorResponseModal').modal('show');
-                $('#errorResponseModal').on('hide.bs.modal', function () {
+                $('#successResponseModal').find('.modal-description').text(getI18nText("general.request.submitted"));
+                $('#successResponseModal').modal('show');
+                $('#successResponseModal').on('hide.bs.modal', function () {
                     window.location.href = window.location.href = ACC.config.encodedContextPath + "/my-sagia/sagia-profile#questionnairesTab";
                 });
             })

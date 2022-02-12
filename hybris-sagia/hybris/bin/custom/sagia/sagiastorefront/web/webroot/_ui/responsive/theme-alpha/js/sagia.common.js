@@ -9,7 +9,14 @@ $(function() {
             scrollToSelectedElement(container,element);
         }
     }
-
+    SAGIA.showSuccess = function(message) {
+        var successModal = $('#successResponseModal');
+        if(message) {
+            successModal.find('.modal-description').html(message);
+        }
+        successModal.modal('show');
+    };
+    
     SAGIA.showError = function(message) {
         var errorModal = $('#errorResponseModal');
         if(message) {

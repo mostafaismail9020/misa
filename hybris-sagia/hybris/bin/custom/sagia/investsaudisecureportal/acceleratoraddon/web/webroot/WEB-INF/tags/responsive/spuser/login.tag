@@ -12,7 +12,48 @@
    &nbsp; <%-- <spring:theme code="login.title"/> --%>
 </div>-->
 
-<form:form action="${action}" method="post" modelAttribute="loginForm">
+<script>
+function validateLoginForm(){
+    var username = $("#j_username");
+    var password = $("#j_password");
+    var recaptcha = document.forms["loginForm"]["g-recaptcha-response"].value;
+    
+    username.removeClass('hasError');
+    password.removeClass('hasError');
+    var valid = true;
+ 
+    if (username.val() === "" ){       
+        username.addClass('hasError');
+        valid = false;
+    }
+    if(password.val() === "" ){
+        password.addClass('hasError');
+        valid = false;
+    }
+    if(recaptcha === ""){
+        $("#lblErrorCaptcha").text("Please fill reCAPTCHA");
+        valid = false;
+    }
+    return valid;
+}
+
+function recaptchaCallback(){
+    $(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');           
+}
+
+</script>
+<style>
+.mandatory{
+color:#ff0000;
+font-size:12px;
+}
+.hasError{
+background:#fec3c3;
+border-color:#fd7b7b;
+}
+</style>
+
+<form:form action="${action}" method="post" modelAttribute="loginForm" name="loginForm" onsubmit="return validateLoginForm()" >
     <c:if test="${not empty message}">
 		<span class="has-error"> <spring:theme code="${message}"/></span>
     </c:if>
@@ -37,6 +78,7 @@
             	<div class="col-md-12 register-form">
 						<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
 		        <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
+		        <span id="lblErrorCaptcha" class="mandatory d-flex"></span>
 		     </div>
         </div>	
 

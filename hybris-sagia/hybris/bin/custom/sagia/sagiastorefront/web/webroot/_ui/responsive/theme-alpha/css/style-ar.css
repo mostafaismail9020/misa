@@ -22453,3 +22453,35 @@ table,th,tr,td{
 	text-decoration: none;
 	color: #555;
 }
+
+
+.selected-flag{
+	top: -10px;
+}
+#contactusformModal .modal-dialog{
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+div#contactusformModal .modal-content{
+	background: #fff;
+    box-shadow: 0 18px 33px #00000029;
+    border: 1px solid #fff;
+    border-radius: 25px;
+}
+div#contactusformModal .modal-body{
+	color: #707070;
+    font-size: 25px;
+    line-height: 35px;
+    padding: 60px;
+    text-align: center;
+}
+
+#btnContactModalClose{
+	background-color: #00a6be;
+    color: #fff;
+    width: 200px;
+    border-radius: 113px;
+	padding: 10px;
+}

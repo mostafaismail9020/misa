@@ -18,7 +18,7 @@
 </div>
 
 <div class="col col-12 p-0" id="yourOpportunities">
-	<div class="dashboardWidget  potential-opportunities js-dashboardWidget">
+	<div class="dashboardWidget  potential-opportunities js-dashboardWidget pt-3">
     	<div class="dashboardWidget-headline js-dashboardWidget-headline">
         	<span>
 				<spring:theme code="dashboard.myopportunity.section"/>        

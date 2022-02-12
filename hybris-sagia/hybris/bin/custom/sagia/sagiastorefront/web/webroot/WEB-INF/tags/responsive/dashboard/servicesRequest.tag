@@ -11,7 +11,7 @@
     <c:if test="${editable}">
         <dashboard:addAndRemoveComponent checkboxIndex="3"/>
     </c:if>
-    <div class="dashboardWidget-headline js-dashboardWidget-headline">
+    <div class="dashboardWidget-headline js-dashboardWidget-headline  d-none d-sm-block">
         <a href="" data-redirect="service-requests-overview" class="service-request-header js-page-redirect" style="text-decoration: inherit;color: inherit">
             <spring:theme code="dashboard.servicesRequest.title"/>
         </a>

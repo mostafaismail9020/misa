@@ -7,7 +7,7 @@
 
 <div class="dashboardWidget js-dashboardWidget no-border">
     <c:if test="${editable}"><dashboard:addAndRemoveComponent checkboxIndex="1"/></c:if>
-    <div class="dashboardWidget-headline js-dashboardWidget-headline">
+    <div class="dashboardWidget-headline js-dashboardWidget-headline d-none">
         <div class="dashboardWidget-headline-text"><spring:theme code="myLicense.title"/></div>
         <div class="dashboardWidget-headline-icon"><icon:my-license/></div>
         <div class="dashboardWidget-headline-action">
@@ -22,7 +22,14 @@
             </a> -->
         </div>
     </div>
-
+    <div class="text-right my-md-5 d-none d-sm-block">
+        <a href="${encodedContextPath}/my-sagia/license/convert" class="btn-outline dashboardWidget-headline-action-link">
+            <spring:theme code="convertlicense.converttonational"/><icon:convert-to-national/>
+        </a>
+        <a href="${encodedContextPath}/my-sagia/license/print" class="btn-outline dashboardWidget-headline-action-link download-payment" download>
+            <spring:theme code="text.account.followup.download"/><img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Download.png" alt=""/>
+        </a>
+    </div>
     <div class="dashboardWidget-body myLicenseBody">
     <%-- start dashboardWidgetLicense --%>
         <div class="dashboardWidget-headline-action">

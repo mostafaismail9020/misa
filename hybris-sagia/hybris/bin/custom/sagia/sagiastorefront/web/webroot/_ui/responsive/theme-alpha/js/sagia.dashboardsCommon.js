@@ -563,11 +563,12 @@ function getAccordion(element_id,screen)
 		var concat = '';
 		obj_tabs = $( element_id + " li" ).toArray();
 		obj_cont = $( ".tab-content .tab-pane" ).toArray();
+        
 		jQuery.each( obj_tabs, function( n, val ) 
 		{
 			concat += '<div id="' + n + '" class="panel panel-default">';
 			concat += '<div class="panel-heading dashboardWidget-headline js-dashboardWidget-headline" role="tab" id="heading' + n + '">';
-			concat += '<h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h4>';
+			concat += '<h5 class="panel-title"><img class="imageCertifcate" src="'+$(val).find("img").attr("src")+'" /><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h5>';
 			concat += '</div>';
 			concat += '<div id="collapse' + n + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading' + n + '">';
 			concat += '<div class="panel-body">' + obj_cont[n].innerHTML + '</div>';
@@ -595,8 +596,8 @@ function getAccordionWithLicense(element_id,screen)
 		jQuery.each( obj_tabs, function( n, val ) 
 		{
 			concat += '<div id="' + n + '" class="panel panel-default">';
-			concat += '<div class="panel-heading dashboardWidget-headline js-dashboardWidget-headline" role="tab" id="heading' + n + '">';
-			concat += '<h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h4>';
+			concat += '<div class="panel-heading  dashboardWidget-headline js-dashboardWidget-headline" role="tab" id="heading' + n + '">';
+			concat += '<h5 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h5>';
 			concat += '</div>';
 			concat += '<div id="collapse' + n + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading' + n + '">';
 			concat += '<div class="panel-body">' + obj_cont[n].innerHTML + '</div>';

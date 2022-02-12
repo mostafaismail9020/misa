@@ -378,7 +378,7 @@
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="payments">
                             <div class="dashboardWidget js-dashboardWidget">
-                                <div class="dashboardWidget-headline js-dashboardWidget-headline">
+                                <div class="dashboardWidget-headline js-dashboardWidget-headline d-none d-sm-block">
                                      <a href="" data-redirect="payments-overview" class="d-block d-md-none js-page-redirect"
                                        style="text-decoration: inherit;color: inherit">
                                         <spring:theme code="payments.page.title"/> 
@@ -455,7 +455,7 @@
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="yourTickets">
                             <div class="dashboardWidget js-dashboardWidget no-border">
-                                <div class="dashboardWidget-headline js-dashboardWidget-headline">
+                                <div class="dashboardWidget-headline js-dashboardWidget-headline d-none d-sm-block">
                                     <span>
                                         <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"
                                            style="text-decoration: inherit;color: inherit">
@@ -479,7 +479,7 @@
                                 </div>
                                 <div class="dashboardWidget-body">
                                     <div class="dashboardWidgetTickets">
-                                        <div class="tableModule tableModule_slim dashboardWidgetTickets-table">
+                                        <div class="tableModule tableModule_slim dashboardWidgetTickets-table overflow-y-hidden">
                                             <table class="tableModule-table">
                                                 <thead class="tableModule-head">
                                                 <tr>

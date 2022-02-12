@@ -660,6 +660,31 @@
 				</editorArea:section>
 			</editorArea:tab>
 
+			<editorArea:tab name="AffiliatesTab"
+							position="23">
+				<editorArea:section
+						name="FinancialSurveyAffiliatesSection">
+					<editorArea:panel
+							name="hmc.tab.question.questions.panel1">
+						<editorArea:attribute qualifier="affiliates"
+											  editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor">
+							<editorArea:editor-parameter>
+								<editorArea:name>listConfigContext</editorArea:name>
+								<editorArea:value>myConfigFinancialSurveyAffiliate</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>inlineEditing</editorArea:name>
+								<editorArea:value>false</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>pageSize</editorArea:name>
+								<editorArea:value>10</editorArea:value>
+							</editorArea:editor-parameter>
+						</editorArea:attribute>
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+
 		</editorArea:editorArea>
 	</context>
 
@@ -1335,6 +1360,17 @@
 			<list-view:column qualifier="shareholderCapital" />
 			<list-view:column qualifier="shareholderPercentage" />
 			<list-view:column qualifier="shareholderVotingPower" />
+
+		</list-view:list-view>
+	</context>
+
+	<context type="FinancialSurveyAffiliate" component="myConfigFinancialSurveyAffiliate">
+		<list-view:list-view
+				xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
+			<list-view:column qualifier="affiliateNameEnglish" />
+			<list-view:column qualifier="affiliateType" />
+			<list-view:column qualifier="affiliateSector" />
+			<list-view:column qualifier="affiliateCountry" />
 
 		</list-view:list-view>
 	</context>

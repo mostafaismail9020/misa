@@ -29,7 +29,7 @@
                      		<div class="dashboardWidget-body">                        
                         		<div class="dashboardWidgetBanner">
 	                           		<div class="dashboardWidgetBanner-tabs js-dashboardWidgetBanner-tabs ">
-	                           			<div class="dashboardWidgetBanner-tabs-body col-12">
+	                           			<div class="dashboardWidgetBanner-tabs-body col-12 d-invest-with-us">
 	                              			<div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header clr_gld">
                                  				<!-- ${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/> -->
                               				</div>

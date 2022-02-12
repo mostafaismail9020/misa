@@ -375,7 +375,7 @@
 							<a class="login-btn register-investor-screen4-btn-back padding-top-10"><spring:theme code="investor.registration.back.button"/></a>
 						</div>
 						<div class="col-md-6 col-12">
-							<button class="login-btn register-investor-screen4-btn-next"><spring:theme code="investor.registration.submit.button"/> &nbsp;
+							<button class="login-btn register-investor-screen4-btn-next" disabled><spring:theme code="investor.registration.submit.button"/> &nbsp;
 								<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561" class="next-hide">
 									<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
 										d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"

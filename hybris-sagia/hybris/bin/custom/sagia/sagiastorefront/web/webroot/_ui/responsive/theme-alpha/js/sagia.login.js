@@ -38,8 +38,7 @@ $(function() {
     	/*$("#sagiaLoginBtn").attr("disabled", true);
         return true;*/
 		$('#j_username').val($('#j_username').val().toLowerCase());
-        $("#sagiaLoginBtn", this)
-          .attr('disabled', 'disabled');
+        // $("#sagiaLoginBtn", this).attr('disabled', 'disabled');
         return true;
       });
 
@@ -421,11 +420,13 @@ function validateRegisterUserInfo(){
 		$('.register-account-investor-screen4 .register-investor-screen4-btn-next').addClass('active')
 		$(".register-account-investor-screen4 .register-investor-screen4-btn-next svg").removeClass('next-hide');
 		$($(".register-account-investor-screen4 .register-progress span")[3]).html('&#10003;')
+		$('.register-account-investor-screen4 .register-investor-screen4-btn-next').removeAttr('disabled')
 	}
 	else{
 		$('.register-account-investor-screen4 .register-investor-screen4-btn-next').removeClass('active')
 		$(".register-account-investor-screen4 .register-investor-screen4-btn-next svg").addClass('next-hide');
 		$($(".register-account-investor-screen4 .register-progress span")[3]).html('4')
+		$('.register-account-investor-screen4 .register-investor-screen4-btn-next').attr('disabled')
 	}
 }
 

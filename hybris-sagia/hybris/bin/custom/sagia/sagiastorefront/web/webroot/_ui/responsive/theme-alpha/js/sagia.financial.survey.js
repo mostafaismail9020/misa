@@ -1563,14 +1563,17 @@ function setLicenseData(data, history) {
             var registrationNumber = subsidiary.registrationName;
             var contribution = subsidiary.contribution;
             var unifiedNo = subsidiary.unifiedNo;
+            var dataIncludedInHeadOffice = subsidiary.dataIncludedInHeadOffice;
+            var dataIncludedInHeadOfficeDisplay = getI18nText("finance.survey.subsidiary.dataIncludedInHeadOffice.no");
+            if(dataIncludedInHeadOffice == 'true'){
+                dataIncludedInHeadOfficeDisplay = getI18nText("finance.survey.subsidiary.dataIncludedInHeadOffice.yes");
+            }
+
             var $subsidiaryRow = $subsidiaryRowTemplate.clone(true).show();
-            $subsidiaryRow.attr("id", subsidiary.srId).children().first().html(name).next().text(registrationNumber).next().text(unifiedNo);
+            $subsidiaryRow.attr("id", subsidiary.srId).children().first().html(name).next().text(registrationNumber).next().text(dataIncludedInHeadOfficeDisplay);
             setColorForDraftRow($subsidiaryRow, subsidiary.action);
-            if (!history) {
-                $subsidiaryRow.find('.viewSubsidiaryBtn').show();
-                $subsidiaryRow.find('.editSubsidiaryBtn').hide();
-                $subsidiaryRow.find('.deleteDropdown').show();
-                }
+            $subsidiaryRow.find('.editSubsidiaryBtn').show();
+            $subsidiaryRow.find('.deleteDropdown').show();
 
         $subsidiariesTable.append($subsidiaryRow);
         }

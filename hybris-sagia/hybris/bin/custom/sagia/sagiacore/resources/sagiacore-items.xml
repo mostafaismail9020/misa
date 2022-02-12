@@ -509,6 +509,9 @@
             </targetElement>
         </relation>
 
+
+
+
         <relation code="FinancialSurvey2Messages" generate="true" localized="false" autocreate="true">
             <sourceElement type="FinancialSurvey" cardinality="one" qualifier="financialSurvey">
                 <modifiers read="true" write="true" search="true" optional="false"/>
@@ -11068,11 +11071,11 @@
 
             <itemtype code="SagiaSubsidiary" autocreate="true" generate="true">
                 <description>Financial Survey Subsidiary</description>
-                <deployment table="SagiaSubsidiary" typecode="32609"/>
+                <deployment table="SagiaSubsidiaries" typecode="32619"/>
                 <attributes>
                     <attribute qualifier="name" type="java.lang.String">
                         <description>Subsidiary name</description>
-                        <modifiers read="true" write="true" search="true" unique="true"
+                        <modifiers read="true" write="true" search="true"
                                    optional="false" initial="true"/>
                         <persistence type="property"/>
                     </attribute>

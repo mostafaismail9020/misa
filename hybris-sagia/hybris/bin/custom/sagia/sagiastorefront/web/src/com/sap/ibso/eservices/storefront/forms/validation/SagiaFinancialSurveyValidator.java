@@ -108,15 +108,15 @@ public class SagiaFinancialSurveyValidator {
             if (ADDED_ACTION.equals(branch.getAction())) {
                 validateRequiredField(branch.getName(), errors, REQUIRED_FIELD_BRANCH);
                 validateRequiredField(branch.getType(), errors, REQUIRED_FIELD_BRANCH);
-                validateRequiredField(branch.getTypeDescription(), errors, REQUIRED_FIELD_BRANCH);
-                validateRequiredField(branch.getAddress().getStreet(), errors, REQUIRED_FIELD_BRANCH);
-                validateRequiredField(branch.getAddress().getNumber(), errors, REQUIRED_FIELD_BRANCH);
-                validateRequiredField(branch.getAddress().getRegion(), errors, REQUIRED_FIELD_BRANCH);
-                validateRequiredField(branch.getAddress().getRegionDescription(), errors, REQUIRED_FIELD_BRANCH);
-                validateRequiredField(branch.getAddress().getCity(), errors, REQUIRED_FIELD_BRANCH);
-                validateRequiredField(branch.getAddress().getCityDescription(), errors, REQUIRED_FIELD_BRANCH);
-                validateRequiredField(branch.getAddress().getTelephone(), errors, REQUIRED_FIELD_BRANCH);
-                validateRequiredField(branch.getAddress().getEmail(), errors, REQUIRED_FIELD_BRANCH);
+             //   validateRequiredField(branch.getTypeDescription(), errors, REQUIRED_FIELD_BRANCH);
+             //   validateRequiredField(branch.getAddress().getStreet(), errors, REQUIRED_FIELD_BRANCH);
+              //  validateRequiredField(branch.getAddress().getNumber(), errors, REQUIRED_FIELD_BRANCH);
+              //  validateRequiredField(branch.getAddress().getRegion(), errors, REQUIRED_FIELD_BRANCH);
+             //   validateRequiredField(branch.getAddress().getRegionDescription(), errors, REQUIRED_FIELD_BRANCH);
+            //    validateRequiredField(branch.getAddress().getCity(), errors, REQUIRED_FIELD_BRANCH);
+              //  validateRequiredField(branch.getAddress().getCityDescription(), errors, REQUIRED_FIELD_BRANCH);
+               // validateRequiredField(branch.getAddress().getTelephone(), errors, REQUIRED_FIELD_BRANCH);
+                //alidateRequiredField(branch.getAddress().getEmail(), errors, REQUIRED_FIELD_BRANCH);
 
                 if (!errors.isEmpty()) {
                     break;

@@ -70,7 +70,7 @@ var removeSubsidiary = function () {
     SAGIA.financialSurvey.dirtyAmendment = true;
     var $subsidiaryRow = $(this).closest('tr');
     $subsidiaryRow.remove();
-    SAGIA.financialSurvey.subsidiary.dataTable.row($subsidiaryRow).remove().draw(false);
+    //SAGIA.financialSurvey.subsidiary.dataTable.row($subsidiaryRow).remove().draw(false);
 
     var subsidiaryId = parseInt($subsidiaryRow.attr('id'));
     var subsidiaries = financialSurvey.subsidiaries;
@@ -129,6 +129,14 @@ function updateSubsidiaryForm(selectedSubsidiaryId) {
     $('#registrationNameId').val(selectedSubsidiary.registrationName);
     $('#unifiedNoId').val(selectedSubsidiary.unifiedNo);
     $('#contributionId').val(selectedSubsidiary.contribution);
+    //$('#contributionId').val(selectedSubsidiary.contribution);
+    if (selectedSubsidiary.dataIncludedInHeadOffice == 'true') {
+        $("#yesId").prop('checked',true);
+        $("#noId").prop('checked',false);
+    }else {
+        $("#yesId").prop('checked',false);
+        $("#noId").prop('checked',true);
+    }
     $('.saveSubsidiaryBtn').attr('id', selectedSubsidiary.srId || selectedSubsidiary.newItemId);
 }
 
@@ -147,18 +155,23 @@ var saveSubsidiary = function () {
     var registrationName = $('#registrationNameId').val();
     var unifiedNo = $('#unifiedNoId').val();
     var contribution = $('#contributionId').val();
+    var dataIncludedInHeadOffice = $('input[name="subsidiaryIncludedInHeadOfficeRadioBox"]:checked').val();
+    var dataIncludedInHeadOfficeDisplay = getI18nText("finance.survey.subsidiary.dataIncludedInHeadOffice.no");
+    if(dataIncludedInHeadOffice == 'true'){
+        dataIncludedInHeadOfficeDisplay = getI18nText("finance.survey.subsidiary.dataIncludedInHeadOffice.yes");
+    }
 
     var subsidiaryRow;
     if (subsidiarySrId) { // edit subsidiary
         subsidiaryRow = $('#' + subsidiarySrId);
         subsidiaryRow.children().first().html(subsidiaryName)
-            .next().text(name).next().text(registrationName);
+            .next().text(registrationName).next().text(dataIncludedInHeadOfficeDisplay);
 
-        var rowData = SAGIA.financialSurvey.subsidiary.dataTable.row(subsidiaryRow).data();
-        rowData[0] = subsidiaryName;
-        rowData[1] = registrationName;
-        rowData[2] = unifiedNo;
-        SAGIA.financialSurvey.subsidiary.dataTable.row(subsidiaryRow).data(rowData).invalidate();
+       // var rowData = SAGIA.financialSurvey.subsidiary.dataTable.row(subsidiaryRow).data();
+       // rowData[0] = subsidiaryName;
+       // rowData[1] = registrationName;
+       // rowData[2] = dataIncludedInHeadOffice;
+      //  SAGIA.financialSurvey.subsidiary.dataTable.row(subsidiaryRow).data(rowData).invalidate();
 
         var subsidiaryIndex = financialSurvey.subsidiaries.findIndex(function (subsidiary) {
             return subsidiary.srId === subsidiarySrId || subsidiary.newItemId === parseInt(subsidiarySrId);
@@ -172,24 +185,26 @@ var saveSubsidiary = function () {
         subsidiary.registrationName = registrationName;
         subsidiary.unifiedNo = unifiedNo;
         subsidiary.contribution = contribution;
+        subsidiary.dataIncludedInHeadOffice = dataIncludedInHeadOffice;
     } else { // new subsidiary
         subsidiaryRow = $('.subsidiaryTemplate').first().clone();
         subsidiaryRow.show();
+
         subsidiaryRow.attr("id", newItemId).children().first().html(subsidiaryName)
-            .next().text(registrationName).next().text(unifiedNo);
+            .next().text(registrationName).next().text(dataIncludedInHeadOfficeDisplay);
         setColorForNewRow(subsidiaryRow);
 
         subsidiaryRow.find('.viewSubsidiaryBtn').hide();
 
         $('#subsidiariesId').append(subsidiaryRow);
-        SAGIA.financialSurvey.subsidiary.dataTable.row.add(subsidiaryRow).draw();
-        financialSurvey.subsidiaries = [];
+        //SAGIA.financialSurvey.subsidiary.dataTable.row.add(subsidiaryRow).draw();
         financialSurvey.subsidiaries.push({
             action: '01',
             subsidiaryName: subsidiaryName,
             registrationName: registrationName,
             unifiedNo: unifiedNo,
             contribution: contribution,
+            dataIncludedInHeadOffice: dataIncludedInHeadOffice,
             newItemId: newItemId++
         });
     }
@@ -232,6 +247,8 @@ $("#subsidiaryNumberId").keypress(function (e) {
               return false;
    }
 });
+
+
 
 $("#subsidiaryEmailId").focusout(function() {
    	var emailValue = $('#subsidiaryEmailId').val();

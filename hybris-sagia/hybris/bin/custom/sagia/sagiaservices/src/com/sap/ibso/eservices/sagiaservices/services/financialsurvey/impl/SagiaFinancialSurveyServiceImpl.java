@@ -144,7 +144,11 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                 // Delete exiting branches
                 if ("03".equals(subsidiary.getAction())) {
                     // Found and deleted the branch.
-                    modelService.remove(PK.parse(subsidiary.getSrId()));
+                    try {
+                        modelService.remove(PK.parse(subsidiary.getSrId()));
+                    }catch (Exception e) {
+
+                    }
                 } else { // Update or add a new branch
 
                     SagiaSubsidiaryModel sagiaSubsidiaryModel = new SagiaSubsidiaryModel();
@@ -154,7 +158,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                     sagiaSubsidiaryModel.setCommercialRegistrationNo(subsidiary.getRegistrationName());
                     sagiaSubsidiaryModel.setUnifiedNo700(subsidiary.getUnifiedNo());
                     sagiaSubsidiaryModel.setContribution(subsidiary.getContribution());
-                    sagiaSubsidiaryModel.setIsDataIncludedInHeadOffice(false);
+                    sagiaSubsidiaryModel.setIsDataIncludedInHeadOffice(subsidiary.getDataIncludedInHeadOffice());
                     sagiaSubsidiaryModel.setName(subsidiary.getSubsidiaryName());
                     sagiaSubsidiaryModel.setFinancialSurvey(financialSurveyModel);
                     modelService.save(sagiaSubsidiaryModel);
@@ -234,7 +238,11 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                 // Delete exiting branches
                 if ("03".equals(branch.getAction())) {
                     // Found and deleted the branch.
-                    modelService.remove(PK.parse(branch.getSrId()));
+                    try {
+                        modelService.remove(PK.parse(branch.getSrId()));
+                    }catch (Exception e){
+
+                    }
                 } else { // Update or add a new branch
 
                     FinancialSurveyBranchModel financialSurveyBranchModel = new FinancialSurveyBranchModel();

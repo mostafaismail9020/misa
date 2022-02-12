@@ -85,6 +85,26 @@
 	[dir=ltr] #topbar .social-links a {
 		margin-left: 8px !important;
 	}
+    [dir=rtl] #header .logo img {
+		top: 10px;
+		right: 0;
+		left: auto;
+	}
+	[dir=rtl] #header .logo img {
+		position: absolute;
+		
+	}
+    .dropdown-menu.dropdown-large>.row.g-3 {
+        justify-content: space-between;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    [dir=rtl] #header.header-scrolled{
+        height: 85px !important;
+    }
+    [dir] .globalMessage:last-child{
+		border: none !important;
+	}
 }
 
 #header.header-scrolled {

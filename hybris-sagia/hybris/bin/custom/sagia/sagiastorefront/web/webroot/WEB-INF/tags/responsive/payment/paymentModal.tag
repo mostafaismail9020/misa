@@ -170,8 +170,8 @@
                 <div class="modal-footer modal-footer_centered modal-footer_iconButton mb-5 mt-3">
                     <div class="d-flex justify-center flex-column flex-md-row">
                         <!-- <div class="text-center p-0 d-flex"> -->
-                           <div class="mr-3"> <button type="button" class="btn-outline payment-btn" data-dismiss="modal" onclick="SAGIA.payment.displayPaymentModel()"><span class="pl-3 pr-md-3"><icon:creditCard/></span><spring:theme code="license.apply.paywithcc"/></button></div>
-                           <div> <button type="button" class="btn-outline payment-btn mt-3 mt-md-0" data-dismiss="modal" onclick="SAGIA.payment.displayPayWithSadadMessage()"><span class="pay-with-salad"><icon:sadad/></span><spring:theme code="license.apply.paywithsadad"/></button></div>
+                           <div class="mr-3"> <button type="button" class="btn-outline payment-btn" data-dismiss="modal" onclick="SAGIA.payment.displayPaymentModel()"><span class="pr-md-3"><icon:creditCard/></span><spring:theme code="license.apply.paywithcc"/></button></div>
+                           <div> <button type="button" class="btn-outline payment-btn mt-3 mt-md-0" data-dismiss="modal" onclick="SAGIA.payment.displayPayWithSadadMessage()"><span class="pr-md-3 pay-with-salad"><icon:sadad/></span><spring:theme code="license.apply.paywithsadad"/></button></div>
                         <!-- </div> -->
                         <!-- <div class="text-center">
                             <span class="iconElement iconElement_iconButton"></span>

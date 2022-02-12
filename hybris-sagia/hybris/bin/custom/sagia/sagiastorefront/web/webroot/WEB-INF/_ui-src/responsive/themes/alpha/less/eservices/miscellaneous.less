@@ -308,8 +308,15 @@ ul.notificationList{
 #licenseApplicationPayment .modal-dialog .payment-btn{
 	padding: 22px 40px !important;
     display: flex;
-    height: auto !important;
+	height: 50px !important;
     border-radius: 46px;
+
+	align-items: center;
+    display: inline-flex;
+	svg{
+		align-items: center;
+		display: inherit;
+	}
 } 
 #licenseApplicationPayment .modal-dialog .payment-btn:hover{
 	background: #00a6be !important;
@@ -373,7 +380,7 @@ ul.notificationList{
 	border: 1px solid #0489A3 !important;
 }
 
-.dashboardWidgetPayments-title a{
+.dashboardWidgetPayments-title a ,.dashboardWidgetPayments-title a span{
 	font-size: 18px;
 	color: #00A6BE !important;
 }

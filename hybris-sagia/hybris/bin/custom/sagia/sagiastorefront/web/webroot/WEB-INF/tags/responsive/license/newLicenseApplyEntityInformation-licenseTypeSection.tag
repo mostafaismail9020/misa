@@ -14,7 +14,7 @@
     <hr class="hr"/>
     <div class="row mt-5">
         <div class="col-md-6">
-        <a class="btn btn_link btn_formAligned js-tip" data-tip-id="demoTooltipListId" data-tip-width="auto" data-trigger="click"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.typeOfLicense"/></a>
+        <a class="btn btn_link btn_formAligned js-tip" data-tip-id="demoTooltipListId" data-tip-width="auto" data-trigger="click"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.typeOfLicense"/><icon:tipInfo/></a>
             <formElement:formSelectBox idKey="licenseTypes"
                                        labelKey="license.apply.licenseType"
                                        path="licenseType"

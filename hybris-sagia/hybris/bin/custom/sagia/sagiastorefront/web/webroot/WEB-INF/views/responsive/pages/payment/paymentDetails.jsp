@@ -157,11 +157,11 @@
                         SADAD Payment Information
                      </div>
                     <div class="row commentModule mx-0">
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-3">
                             <div class="contentModule-headline contentModule-headline_small">
                                 SADAD Bill Payment Information
                             </div>
-                            <dl class="dlList dlList_separated">
+                            <dl class="dlList dlList_separated mt-3">
                                 <dt class="headline-golden">SADAD Bill Status</dt>
                                 <dd>${paymentData.sadadBillStatus}</dd>
                                 <dt class="headline-golden">SADAD Bill Number</dt>
@@ -176,11 +176,11 @@
                                 <dd>${paymentData.sadadAmountPaid}</dd>
                             </dl>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-3">
                             <div class="contentModule-headline contentModule-headline_small">
                                 SADAD Bill Bank Information
                             </div>
-                            <dl class="dlList dlList_separated">
+                            <dl class="dlList dlList_separated mt-3">
                                 <dt class="headline-golden">SADAD Transaction Date</dt>
                                 <dd>${paymentData.sadadTransDate}</dd>
                                 <dt class="headline-golden">SADAD Transaction Number</dt>

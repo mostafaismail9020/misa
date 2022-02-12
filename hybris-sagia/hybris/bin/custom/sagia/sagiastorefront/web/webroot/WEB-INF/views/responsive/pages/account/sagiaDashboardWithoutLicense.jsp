@@ -26,7 +26,7 @@
             <div class="dashboardUser-left col-md-6 col-9">
                 <div class="dashboard-login">
                     <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">
-                        <button type="button" id="btnfile" class="dashboardUser-image-add"><img src="${commonResourcePath}/images/change-profile-icon.png"/><span id="fname"></span></button>                        
+                        <button type="button" id="btnfile" class="dashboardUser-image-add cursor-pointer"><img src="${commonResourcePath}/images/change-profile-icon.png"/><span id="fname"></span></button>                        
                         <div class="myAccount-profilImage">
                             <div class="myAccount-profilImage-img">
                                 <div class="profilePicture js-profilePicture" style="background-image:url(${profilePicture})"></div>

@@ -141,11 +141,11 @@
             <div class="modal-body modal-body_bordered">
                 <div class="contentModule">
                     <div class="contentModule-section">
-                        <div class="contentModule-headline headline-background-wrapper">
-                            <!-- <span class="iconElement iconElement_register02"><icon:register02/></span> -->
-                            <span class="headline-background">Commercial register</span> 
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper w-100">
+                                <span class="headline-background">Commercial register</span>
+                            </div>
                         </div>
-                        <hr class="hr">
                         <div class="row">
                             <div class="col">
                                 <div class="formRadioButton">

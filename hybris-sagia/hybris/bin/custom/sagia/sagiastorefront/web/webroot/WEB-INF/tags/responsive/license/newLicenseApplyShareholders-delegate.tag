@@ -26,7 +26,7 @@
     <div class="col-md-12 justify-content-center">
     <a class="btn btn_link js-tip d-block w-100 delegate-entity" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip"
            data-tip-class="delegateToolTip" data-trigger="click"><spring:theme
-                code="text.account.profile.license.shareholders.tooltip.heading"/></a>
+                code="text.account.profile.license.shareholders.tooltip.heading"/><icon:tipInfo/></a>
         <div class="tooltip_content" id="delegateToolTip">
             <h2><span><spring:theme code="text.account.profile.license.shareholders.tooltip.heading"/></span></h2>
             <p style="margin: 10px">

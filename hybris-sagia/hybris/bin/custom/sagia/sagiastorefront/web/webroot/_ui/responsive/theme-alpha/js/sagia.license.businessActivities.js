@@ -364,14 +364,16 @@ $(function() {
         if (uiSelectedSection) {
             SAGIA.license.businessActivities.selectedSection = "" + uiSelectedSection.data("sectionId");
             SAGIA.license.businessActivities.selectedSectionName = uiSelectedSection.find("a").html();
+            var uiSelectedSection_a = uiSelectedSection.find("a");
             $("#businessActivitiesSection #businessActivitiesModal #sectionItems .baList .baList-item").css({
                 "text-decoration": "none",
                 "color": "default"
             });
             uiSelectedSection.css({
-                "text-decoration": "underline",
-                "color": "#7bd35d"
+                "background": "#00A6BE"
             });
+            uiSelectedSection_a.addClass('amnend-select-b-activities');
+
             $("#businessActivitiesSection #businessActivitiesModal #sectionList a.baBreadcrumb-link").removeClass("active");
             $("#businessActivitiesSection #businessActivitiesModal #sectionList .baBreadcrumb-subMenu").remove();
             $("#businessActivitiesSection #businessActivitiesModal #sectionList").append("" +

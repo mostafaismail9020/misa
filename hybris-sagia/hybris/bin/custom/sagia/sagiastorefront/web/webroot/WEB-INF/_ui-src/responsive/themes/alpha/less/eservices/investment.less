@@ -574,6 +574,139 @@
           }
         }
      }
+
+     .page-sagia-profile{
+        .page-content-position{
+          .panelTabs-navigation{
+              display: none !important;
+          }
+          .mainSection{
+              .achievement_header{
+                  .banner-container{
+                      top:15% !important;
+                      h1{
+                          font-size: 40px !important;
+                      }
+                  }
+                  .profile-icons{
+                      float: none !important;
+                      justify-content: center;
+                  }
+              }
+          }
+  
+          #companyTabData, #passwordTabData, #enquiriesTabData, #questionnairesTabData{
+              .panelModule_halfRadius{
+                  padding-left: 30px;
+                  padding-right: 30px;
+                  .contentModule-section{
+                      .mw0{
+                          max-width: 100% !important;
+                      }
+                  }
+                 #generalManagerForm {
+                     .btn_edit{
+                         margin-bottom: 10px;
+                     }
+                  }
+              }
+              .dashboardWidget-filter, .contentModule-filter {
+                  width: 100%;
+               }
+               .paginationModule-wrapper{
+                   top:1rem;
+                   justify-content: center !important;
+               }
+               #surveysSection{
+                         .contentModule-headline{
+                             max-width: 100% !important;
+                          }
+                   .myAccount-questionnaire-action{
+                       float: none !important;
+                       padding: 0 !important;
+                       .surveyLink{
+                           display: block !important;
+                           text-align: left;
+                           padding: 0 !important;
+  
+                       }
+                   }
+               }
+          }
+          #myProfileTabData{
+              .panelModule_halfRadius{
+                  padding-left: 30px;
+                  padding-right: 30px;
+  
+              .myAccount-profilImage{
+                  margin-bottom: 0;;
+              }
+              .js-myAccount-edit{
+                  .js-myAccount-edit-text{
+                      margin-top: 10px;
+                  }
+              }
+              #sagiaProfilePersonalForm{
+                  .select2-container{
+                      .select2-selection--single{
+                          .select2-selection__rendered{
+                              width: 75% !important;
+                          }
+                      }
+                  }
+              }
+           }
+          }
+          #passwordTabData{
+              .user-status {
+                  span{
+                      font-size: 24px;
+              }
+            }
+          }
+      }
+      #enquiryDetail{
+          .modal-ticket-wrapper{
+              width: 100% !important;
+              .modal-header{
+                  margin-top: 50px;
+                  .modal-close{
+                      margin-top: 0 !important;
+  
+                  }
+              }
+          }
+      }
+   }
+   .page-single-questionnaire{
+      .mainSection{
+          .achievement_header{
+              .banner-container{
+                  top:15% !important;
+                  h1{
+                      font-size: 40px !important;
+                  }
+              }
+              .profile-icons{
+                  float: none !important;
+                  justify-content: center;
+              }
+          }
+          .panelModule_halfRadius{
+              #surveyForm{
+                  .contentModule-headline{
+                      font-size: 16px;
+                      max-width: 100% !important;
+                  }
+                  .contentModule-actions{
+                      .btn-bg{
+                          height: 50px !important;
+                      }
+                  }
+              }
+          }
+      }
+   }
 }
 
 @media (min-width:576px) and (max-width:767px) {
@@ -698,6 +831,103 @@
    .page-shareholder-apply #nicVerifyBtnSection{
         #verifyDetailsShow{
             width: 100% !important;
+        }
+    }
+    .page-sagia-profile{
+        .panelTabs-content{
+            border: none;
+        }
+        .panelTabs-navigation{
+            display: none !important;
+        }
+        .banner-container{
+            top:15% !important;
+            h1{
+                font-size: 40px !important;
+            }
+        }
+        .profile-icons{
+            float: none !important;
+            justify-content: center;
+        }
+        #companyTabData, #passwordTabData, #enquiriesTabData{
+            .panelModule_halfRadius{
+                padding-left: 0;
+                padding-right: 0;
+                .contentModule-section{
+                    .mw0, .mw1, .mw2{
+                        max-width: 50% !important;
+                    }
+                    .mw0{
+                        width: 35%;
+                    }
+                    .mw1{
+                        width: 50%;
+                    }
+
+                }
+               #generalManagerForm {
+                   .btn_edit{
+                       margin-bottom: 10px;
+                   }
+                }
+              .dashboardWidget-filter, .contentModule-filter {
+                width: 100%;
+              }
+              .paginationModule-wrapper{
+                 top:1rem;
+                 justify-content: center !important;
+              }
+
+              .js-myAccount-edit-toggle{
+                    .btn{
+                        width: 50% !important;
+                    }
+                }
+                #createComplantForm{
+                    .contentModule-actions{
+                        .btn-bg{
+                            width: 50% !important;
+                        }
+                    }
+                }
+
+            }
+        }
+        #myProfileTabData{
+            .profile-settings{
+             max-width: 40% !important;
+            }
+            .myAccount-profilImage-change{
+             width: 100% !important;
+            }
+        }
+        #enquiryDetail{
+            .modal-ticket-wrapper{
+                width: 100% !important;
+                .modal-header{
+                    margin-top: 50px;
+                    .contentModule-headline{
+                        width: 75% !important;
+
+                    }
+                    .modal-close{
+                        margin-top: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-single-questionnaire{
+        .panelModule_halfRadius{
+            #surveyForm{
+                .contentModule-actions{
+                    .btn-bg{
+                        width: 50% !important;
+                    }
+                }
+            }
         }
     }
 }
@@ -1004,6 +1234,64 @@
             }
         }
     }
+    .page-sagia-profile{
+        #companyTabData{
+            .panelModule_halfRadius{
+                padding-left: 0;
+                padding-right: 0;
+                .contentModule-section{
+                    .mw0, .mw1, .mw2{
+                        text-align: left !important;
+                        padding-left: 20px;
+                        max-width: 30% !important;
+                    }
+                    .contentModule-headline{
+                        width: 40%;
+                        text-align: left !important;
+                        padding-left: 20px;
+                    }
+                }
+               #generalManagerForm {
+                   .btn_edit{
+                       margin-bottom: 10px;
+                   }
+                   .js-myAccount-edit-toggle{
+                       .btn{
+                           width: 50% !important;
+                       }
+                   }
+                }
+            }
+        }
+        #companyTabData,#passwordTabData, #enquiriesTabData{
+            .panelModule_halfRadius{
+                .contentModule-section{
+                    .mw0, .mw1, .mw2{
+                        text-align: left !important;
+                        padding-left: 20px;
+                        max-width: 30% !important;
+                    }
+                    .contentModule-headline{
+                        width: 40%;
+                        text-align: left !important;
+                        padding-left: 20px;
+                    }
+                }
+            }
+            .contentModule-filter{
+                width: 50%;
+            }
+
+        .dashboardWidget-filter{
+            position: static;
+            width: 50%;
+         }
+         .paginationModule-wrapper{
+             top:3rem;
+         }
+
+        }
+    }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
@@ -1020,6 +1308,26 @@
 
     .page-sagia-profile .panelTabs-navigation {
         display: block !important;
+    }
+    .page-sagia-profile{
+        .page-content-position{
+            .panelModule_halfRadius{
+                .contentModule-section{
+                    .mw0, .mw1, .mw2{
+                        text-align: left !important;
+                        padding-left: 20px;
+                        width: 30% !important;
+                        max-width: 30% !important;
+                    }
+                    .contentModule-headline{
+                        width: 40%;
+                        text-align: left !important;
+                        padding-left: 20px;
+                    }
+                }
+            }
+
+        }
     }
 }
 

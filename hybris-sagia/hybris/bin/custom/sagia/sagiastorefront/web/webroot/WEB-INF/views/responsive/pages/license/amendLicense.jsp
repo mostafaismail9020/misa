@@ -224,7 +224,7 @@
 		</div>
 	</div> -->
 	<!-- <div class="mainSection mainSection_white mainSection_narrow mainSection_xsmallPaddingTop service-request service-wrapper service-wrapper-info mw-100 w-100 mt-5 mb-3"> -->
-		<div class="container mainSection mainSection_dark mainSection_pdt16 mb-3 ml-0 ml-md-4 service-main">
+	<div class="container mainSection mainSection_dark mainSection_pdt16 mb-3 ml-0 ml-md-4 service-main">
 		<div class="">
 			<div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
 				<button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
@@ -414,14 +414,12 @@
 													<th><spring:theme code="general.name" /></th>
 													<th><spring:theme code="license.type" /></th>
 													<th><spring:theme code="license.percentage" /></th>
-													<th><spring:theme
-															code="text.account.profile.license.shareholders.nationality" /></th>
-															<th><spring:theme
-																code="text.account.profile.license.shareholders.legalStatus" /></th>
-																<th><spring:theme
-																	code="general.edit" /></th>
-																	<th><spring:theme
-																		code="general.delete" /></th>
+													<th><spring:theme code="text.account.profile.license.shareholders.nationality" /></th>
+													<th><spring:theme code="text.account.profile.license.shareholders.legalStatus" /></th>
+													<th id="shareholderBtnColumnId"><spring:theme code="general.edit" /></th>
+													<th id="shareholderBtnColumnId"><spring:theme code="general.delete" /></th>
+
+													<!-- <th id="shareholderBtnColumnId"></th> -->
 												</tr>
 											</thead>
 											<tbody id="shareholdersId" class="tableModule-body">
@@ -435,11 +433,13 @@
 														<button type="button" style="width: 30px !important;"
 															class="btn btn_link editShareholderBtn"
 															data-toggle="modal"
-															<%--                                                        data-target="#shareholderEditModalId" data-backdrop="static"--%>
+															<%-- data-target="#shareholderEditModalId" data-backdrop="static"--%>
 															data-target="#shareholderModalId"
 															data-backdrop="static" data-keyboard="false">
 															<icon:edit />
 														</button>
+														
+														
 													</td>
 													<td>
 														<div class="deleteDropdown js-deleteDropdown">
@@ -549,22 +549,13 @@
 										<table id="branchesTableId" class="tableModule-table">
 											<thead class="tableModule-head">
 												<tr>
-													<th><spring:theme
-															code="text.account.profile.license.branches.type" /> <span
-														class="sort-icon"></span></th>
-													<th><spring:theme
-															code="text.account.profile.license.branches.name" /> <span
-														class="sort-icon"></span></th>
-													<th><spring:theme code="general.city" /> <span
-														class="sort-icon"></span></th>
-													<th><spring:theme
-															code="text.account.profile.license.branches.number" /> <span
-														class="sort-icon"></span></th>
-														<th><spring:theme
-															code="general.edit" /> </th>
-														<th><spring:theme
-															code="general.delete" /> </th>
-													<th id="branchesBtnColumnId"></th>
+													<th><spring:theme code="text.account.profile.license.branches.type" /> <span class="sort-icon"></span></th>
+													<th><spring:theme code="text.account.profile.license.branches.name" /> <span class="sort-icon"></span></th>
+													<th><spring:theme code="general.city" /> <span class="sort-icon"></span></th>
+													<th><spring:theme code="text.account.profile.license.branches.number" /> <span class="sort-icon"></span></th>
+													<th id="branchesBtnColumnId"><spring:theme code="general.edit" /> </th>
+													<th id="branchesBtnColumnId"><spring:theme code="general.delete" /> </th>
+													<!-- <th id="branchesBtnColumnId"></th> -->
 												</tr>
 											</thead>
 											<tbody id="branchesId" class="tableModule-body"></tbody>
@@ -610,9 +601,9 @@
 													<th><spring:theme code="products.productdescription" /></th>
 													<th><spring:theme code="products.qty" /></th>
 													<th><spring:theme code="products.unit" /></th>
-													<th><spring:theme code="general.edit" /></th>
-													<th><spring:theme code="general.delete" /></th>
-													<th id="productsBtnColumnId"></th>
+													<th id="productsBtnColumnId"><spring:theme code="general.edit" /></th>
+													<th id="productsBtnColumnId"><spring:theme code="general.delete" /></th>
+													<!-- <th id="productsBtnColumnId"></th> -->
 												</tr>
 											</thead>
 											<tbody id="productsId" class="tableModule-body">
@@ -755,74 +746,74 @@
 						<spring:theme code="license.shareholder" />
 					</div>
 					<div class="border-top-line">
-					<div id="shareholderNewExistingTypeId" class="row amend-shareholder-wrapper">
-						<div class="col-md-12">
-							<div class="formRadioBox">
-								<div class="form-group">
-									<div class="form-item">
-										<input id="newShareholderId"
-											name="shareholderNewExistingRadioBox" class="form-control"
-											value="true" type="radio" checked> <label
-											for="newShareholderId" class="control-label"> <spring:theme
-												code="license.newshareholder" />
-										</label>
-									</div>
-									<div class="form-item">
-										<input id="existingShareholderId"
-											name="shareholderNewExistingRadioBox" class="form-control"
-											value="false" type="radio"> <label
-											for="existingShareholderId" class="control-label"> <spring:theme
-												code="license.existingshareholder" />
-										</label>
+						<div id="shareholderNewExistingTypeId" class="row amend-shareholder-wrapper">
+							<div class="col-md-12">
+								<div class="formRadioBox">
+									<div class="form-group">
+										<div class="form-item">
+											<input id="newShareholderId"
+												name="shareholderNewExistingRadioBox" class="form-control"
+												value="true" type="radio" checked> <label
+												for="newShareholderId" class="control-label"> <spring:theme
+													code="license.newshareholder" />
+											</label>
+										</div>
+										<div class="form-item">
+											<input id="existingShareholderId"
+												name="shareholderNewExistingRadioBox" class="form-control"
+												value="false" type="radio"> <label
+												for="existingShareholderId" class="control-label"> <spring:theme
+													code="license.existingshareholder" />
+											</label>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					
 
 				
 
-					<div id="shareholderPersonEntityTypeId" class="row amend-shareholder-wrapper">
-						<div class="col-md-12">
-							<div class="formRadioBox">
-								<div class="form-group">
-									<div class="form-item">
-										<input id="personId" name="shareholderPersonEntityRadioBox"
-											class="form-control" value="true" type="radio" checked>
-										<label for="personId" class="control-label"> <spring:theme
-												code="general.person" />
-										</label>
-									</div>
-									<div class="form-item">
-										<input id="entityId" name="shareholderPersonEntityRadioBox"
-											class="form-control" value="false" type="radio"> <label
-											for="entityId" class="control-label"> <spring:theme
-												code="license.entity" />
-										</label>
+						<div id="shareholderPersonEntityTypeId" class="row amend-shareholder-wrapper">
+							<div class="col-md-12">
+								<div class="formRadioBox">
+									<div class="form-group">
+										<div class="form-item">
+											<input id="personId" name="shareholderPersonEntityRadioBox"
+												class="form-control" value="true" type="radio" checked>
+											<label for="personId" class="control-label"> <spring:theme
+													code="general.person" />
+											</label>
+										</div>
+										<div class="form-item">
+											<input id="entityId" name="shareholderPersonEntityRadioBox"
+												class="form-control" value="false" type="radio"> <label
+												for="entityId" class="control-label"> <spring:theme
+													code="license.entity" />
+											</label>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
-					<div id="bpNumberGroupId" class="row">
-						<div class="col-md-8">
-							<div class="formInputBox">
-								<div class="form-group">
-									<input id="bpNumberId" class="form-control" placeholder="."
-										value="" type="text" name="bpNumber"> <label
-										class="control-label control-label_mandatory" for=""> <spring:theme
-											code="license.bpnumber" />
-									</label>
-									<div class="help-block"></div>
+						<div id="bpNumberGroupId" class="row">
+							<div class="col-md-8">
+								<div class="formInputBox">
+									<div class="form-group">
+										<input id="bpNumberId" class="form-control" placeholder="."
+											value="" type="text" name="bpNumber"> <label
+											class="control-label control-label_mandatory" for=""> <spring:theme
+												code="license.bpnumber" />
+										</label>
+										<div class="help-block"></div>
+									</div>
 								</div>
 							</div>
 						</div>
+
+						<div class="contentModule-separator"></div>
+
 					</div>
-
-					<div class="contentModule-separator"></div>
-
-				</div>
 
 					<div id="shareholderValidationSection">
 						<div class="row" id="shareholderValidationDetails">
@@ -2209,8 +2200,8 @@
 					</form:form>
 				</div>
 			</div>
-		</div>
 	</div>
+	
 
 	<div class="modal fade" id="requestSubmittedDialogId" tabindex="-1"
 		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

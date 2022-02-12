@@ -407,7 +407,6 @@ $('#dashboard-carousel').owlCarousel({
     dots: true,
     autoplay:true,
     autoplayHoverPause:false,
-    rtl: true,
     // navText:["<img src='/_ui/responsive/common/images/dashboard-media/Banner-icons/Left-arrow.png'/>", "<img src='/_ui/responsive/common/images/dashboard-media/Banner-icons/Right-arrow.png''/>"],
     responsive: {
       0: {

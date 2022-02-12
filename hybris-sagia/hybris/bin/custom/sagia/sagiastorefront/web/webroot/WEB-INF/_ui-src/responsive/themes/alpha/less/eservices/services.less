@@ -370,7 +370,7 @@
     width: 5px;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: darkgrey;
+    background-color: #0097A9;
 }
 
 .historyList-status_E0012, .historyList-status_inprocess, .historyList-status_process{
@@ -1075,7 +1075,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
             }
             
             &::-webkit-scrollbar-thumb {
-                background: darkgrey;
+                background: @color-primary;
                 border-radius: 12px;
             }
         }
@@ -1104,10 +1104,82 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     }
 }
 
-
 .no-notification-icon{
     svg{
         width: 200px;
         height: 50px;
     }
+}
+
+ul.footer-menu{
+    li>a[title="Explore More"]{
+        color: @color-blue-dark;
+    }
+}
+
+#instantRenewal{
+    .modal-content{
+        width: 700px;
+    }
+    .modal-header{
+        padding: 40px 60px 20px;
+    }
+    .documentModule{
+        border-top:0px;
+        padding-top: 0px;
+    }
+}
+
+.dashboardWidget-pictureSet{
+    display: none;
+}
+
+
+
+
+
+
+
+
+.contentModule-headline,  .page-shareholder-apply #addShareholderQM1NewPersonSection #attachmentSection .mw0 {
+    padding: 0 30px !important;
+	width:auto !important;
+	display: inline-block;
+}
+
+#nicVerifyBtnSection a, .contentModule-actions_insideSection a {
+    color: #fff;
+    padding: 14px 20px !important;
+}
+a.btn:not([href]):not([tabindex]) {
+    color: #7b838c;
+	text-align: inherit !important;
+}
+label~#registerQuickSelectLanguageDiv label {
+    left: 10px!important;
+}
+
+
+body ::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+}
+#delegateDivSection{
+    a.btn.delegate-entity{
+        color: @color-primary !important;
+    }
+}
+#licenseTypeSection{
+    a.btn.js-tip,a.btn.js-tip:hover{
+        color: @color-primary !important;
+    }
+}
+
+.formInputBox textarea.form-control{
+    border-radius: 40px;
+}
+.amnend-select-b-activities,.amnend-select-b-activities:hover{
+    color:#fff !important;
+}
+#shareholderInheritedPropertyId:disabled{
+    opacity: 0;
 }

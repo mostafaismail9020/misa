@@ -2557,6 +2557,130 @@ button:focus {
 .modal-header .modal-title{
     font-size: 30px;
 }
+
+
+.page-contact-update-history{
+    .supportVisitDetails{
+        #history-container{
+            .dlList_separated{
+                dt{
+                    padding-left: 0;
+                }
+            }
+        }
+
+    }
+}
+.page-sagia-profile{
+    #myProfileTabData{
+       h4.sagia_profile_picture_title{
+            padding-left: 0;
+        }
+        .myAccount-profilImage{
+            h4#sagia_companyLogo_picture_title{
+                padding-left: 20px !important;
+            }
+            .companyLogo{
+                background-color: transparent;
+            }
+        }
+        .myAccount-profilImage-change{
+          height:64px !important;
+          .uploadFile{
+              height: 64px !important;
+          }
+        }
+        .dlList{
+            padding-left: 0;
+        }
+        #uploadFilePicture{
+            .modal-footer{
+                #updateProfilePicBtn{
+                    &:hover{
+                        color: #00a6be !important;
+                    }
+                }
+            }
+        }
+    }
+    #createComplantForm{
+        .formSelectBox{
+            .select2-container{
+                .select2-selection{
+                    &::after{
+                        top:0% !important;
+                    }
+
+                }
+            }
+        }
+
+        .enquiryFiles{
+            .formInputFile{
+                margin-bottom: 0 !important;
+                .form-control{
+                    height: 64px !important;
+                }
+            }
+        }
+    }
+    #ticketsSection{
+        .contentModule-filter{
+            .select2-container{
+                .select2-selection--single{
+                    .select2-selection__rendered{
+                        font-size: 16px;
+                        font-weight: 600;
+                        padding-top: 10px !important;
+                    }
+                }
+            }
+        }
+        .dashboardWidget-filter{
+            position: relative;
+            top:35px;
+            .select2-container{
+                .select2-selection--single{
+                    .select2-selection__rendered{
+                        top:0 !important;
+                        font-size: 16px;
+                        font-weight: 600 !important;
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+.page-license-bidding {
+    .panelTabs_noPanelInBody{
+        .panelTabs-navigation{
+            .tabs-list{
+                max-width: 100%;
+            }
+        }
+     .panelTabs-content{
+         .headerDrafts{
+             .js-save-draft, .js-load-draft, .js-clear-draft{
+                 display: none !important;
+             }
+          }
+        }
+    }
+    .profile-icons{
+        .calendar{
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+
+
 .formRadioBox{
     .form-control:disabled, .form-control[readonly]{
         opacity: 0 !important;
@@ -2572,7 +2696,7 @@ button:focus {
 @media (min-width:1500px) and (max-width:1669px) and (max-height:800px) {/*125%*/
     .formInputBox .form-control,.formSelectBox .form-group .select2-container--default,.formInputFile .form-control
     ,.page-sagia-profile .myAccount-profilImage-change,.register-contry-info,.register-user-details.validate-mobile
-    ,.uploadFile{
+    ,.uploadFile,.formInputFile .form-icon{
         height: 50px !important;
     }
     .formInputBox .form-control:placeholder-shown+.control-label{
@@ -2593,11 +2717,14 @@ button:focus {
 	.formSelectBox .form-group label{
 		left: 17px!important;
 	}
+    .select2.select2-container .select2-selection:after{
+        top: 0px !important;
+    }
 }
 @media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150% resolution*/
     .formInputBox .form-control,.formSelectBox .form-group .select2-container--default,.formInputFile .form-control
     ,.page-sagia-profile .myAccount-profilImage-change,.register-contry-info,.register-user-details.validate-mobile
-    ,.uploadFile{
+    ,.uploadFile,.formInputFile .form-icon{
         height: 45px !important;
     }
     .formInputBox .form-control:placeholder-shown+.control-label{
@@ -2611,6 +2738,9 @@ button:focus {
     }
     .formInputBox .form-control:placeholder-shown+.control-label, .formInputFile .form-control+.control-label, .formSelectBox .control-label, .formSelectBox .select2.select2-container--disabled+.control-label{
         font-size: var(--label-font) !important;
+    }
+    .select2.select2-container .select2-selection:after{
+        top: 0px !important;
     }
 }
 .mobile-code-wrapper{
@@ -2642,29 +2772,6 @@ button:focus {
         }
     }
 }
-
-.page-shareholder-apply {
-  .select2.select2-container{
-      .select2-selection{
-          &::after{
-              left: 15px;
-              right: auto;
-          }
-      }
-  }
-  .formInputFile{
-      .form-control{
-          height: 64px;
-          margin-left: 0;
-          margin-right: 0;
-          background: #f2f2f2;
-      }
-      .form-icon{
-          margin-left: 0;
-      }
-  }
-}
-
 
 
 

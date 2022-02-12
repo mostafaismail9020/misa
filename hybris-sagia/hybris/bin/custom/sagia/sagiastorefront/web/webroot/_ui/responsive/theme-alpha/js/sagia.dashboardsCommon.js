@@ -395,7 +395,7 @@ $(document).ready(function() {
 $('#dashboard-carousel').owlCarousel({
     loop: true,
     margin: 20,
-    rtl:true,
+    rtl:$("html").attr('lang') === 'en' ? false : true,
      /*
     animateOut: 'fadeOut',
     animateIn: 'fadeIn',
@@ -427,6 +427,12 @@ $('#dashboard-carousel').owlCarousel({
       }
     }
   });
+  if($("html").attr('lang') === 'en'){
+    $('#dashboard-carousel').removeClass('owl-rtl')
+}
+else{
+      $('#dashboard-carousel').addClass('owl-rtl');
+  }
 });
 $(document).ready(function () {
     window.onbeforeunload = function () {

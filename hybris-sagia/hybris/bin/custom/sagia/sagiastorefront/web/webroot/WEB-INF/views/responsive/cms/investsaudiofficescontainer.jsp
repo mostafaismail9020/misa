@@ -63,7 +63,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" id="pills-appt-tab" href="https://investsaudi.sa/appt"
+                      <a class="nav-link" id="pills-appt-tab" href="https://investsaudi.sa/appt"
                         target="_blank" role="tab" aria-controls="pills-home" aria-selected="true">
                         <svg xmlns="http://www.w3.org/2000/svg" width="45.589" height="45.599"
                           viewBox="0 0 45.589 45.599">
@@ -93,11 +93,13 @@
                               <div class="form-row">
                                 <div class="form-group col-md-6 form-normal-item">
                                     <label class="control-label" for="firstName"><spring:theme code="portal.contactus.form.firstname.label"/> <span class="mandatory">* </span></label>
-                                    <input type="text" class="form-control" name="firstName" id="firstName" maxlength="300" onkeypress="return onlyAlphabets(event)" required/>
+                                    <input type="text" class="form-control" name="firstName" id="firstName" maxlength="300" onkeypress="return onlyAlphabets(event)" onCopy="return false" onpaste="return false;"/>
+                                    <em><span id="lblErrorfirstName" class="error-msg"></span></em>
                                 </div>
                                 <div class="form-group form-floating col-md-6 form-normal-item">
                                     <label class="control-label" for="lastName"><spring:theme code="portal.contactus.form.lastname.label"/> <span class="mandatory">* </span></label>
-                                    <input type="text" class="form-control" name="lastName" id="lastName" maxlength="300" onkeypress="return onlyAlphabets(event)" required/>
+                                    <input type="text" class="form-control" name="lastName" id="lastName" maxlength="300" onkeypress="return onlyAlphabets(event)" onCopy="return false" onpaste="return false;"/>
+                                    <em><span id="lblErrorlastName" class="error-msg"></span></em>
                                 </div>
                                 <!-- <div class="form-group form-floating col-md-6 form-normal-item">
                                     <label class="control-label" for="phoneNumber"><spring:theme code="portal.contactus.form.phoneno.label"/> <span class="mandatory">* </span></label>
@@ -107,30 +109,33 @@
                                   <input type="text" class="ddl-countryCode form-control" placeholder="+966" autocomplete="off">
                                   <div class="input-wrapper">
                                     <label class="control-label" for="phoneNumber"><spring:theme code="portal.contactus.form.phoneno.label"/><span class="mandatory">* </span></label>
-                                    <input type="text"  class="form-control r" id="phoneNumber" name="phoneNumber"  type="number" maxlength="20" onkeypress="return isNumber(event)" required/>
+                                    <input type="text"  class="form-control r" id="phoneNumber" name="phoneNumber"  type="number" maxlength="20" onkeypress="return isNumber(event)" onCopy="return false" onpaste="return false;"/>
+                                    <em><span id="lblErrorPhoneNumber" class="error-msg"></span></em>
                                   </div>    
                                 </div>
                                 <div class="form-group form-floating col-md-6 form-normal-item">
                                     <label class="control-label" for="email"><spring:theme code="portal.contactus.form.email.label"/> <span class="mandatory">* </span></label>
-                                    <input type="text" class="form-control" name="email" id="email" maxlength="500" onblur="return validateEmailReg(event)" required/>
-                                    <span id="lblError" class="mandatory"></span>
+                                    <input type="text" class="form-control" name="email" id="email" maxlength="500" onblur="return validateEmailReg(event)" />
+                                    <em><span id="lblError" class="mandatory"></span></em>
                                 </div>
                                                                                   
                                 <div class="form-group col-md-6 form-normal-item-select">
                                     <label class="control-label" for="selectedEnquiryType"><spring:theme code="portal.contactus.form.enquirytype.label"/><span class="mandatory">* </span></label>
-                                    <form:select path="selectedEnquiryType" class="form-control required error contact-us-enquirytype" onchange="OnChangeEnquiryType()" aria-required="true" required="true">
+                                    <form:select path="selectedEnquiryType" id="selectedEnquiryType" class="form-control required error contact-us-enquirytype" onchange="OnChangeEnquiryType()" aria-required="true" >
                                         <option value=""><spring:theme code="portal.contactus.form.enquirytype.label"/></option>                       	
                                         <form:options items="${contactUsFormData.enquiryTypes}" itemValue="catID" itemLabel="catDesc" htmlEscape="true" id="enquiryList" />                    	
                                     </form:select>
                                   <i class="caret"></i>
+                                  <em><span id="lblErrorselectedEnquiryType" class="error-msg"></span></em>
                                 </div>     
                                 <div class="form-group col-md-6 form-normal-item-select">
                                   <label class="control-label" for="selectedCategoryOne"><spring:theme code="portal.contactus.form.category.label"/><span class="mandatory">* </span></label>
-                                  <form:select path="selectedCategoryOne" class="form-control required error contact-us-enquiry-category" aria-required="true" required="true">
+                                  <form:select path="selectedCategoryOne" id="selectedCategoryOne" class="form-control required error contact-us-enquiry-category" aria-required="true" >
                                       <option value=""><spring:theme code="portal.contactus.form.category.label"/></option>
                                       <form:options items="${contactUsFormData.categoryOne}" itemValue="catID" itemLabel="catDesc" htmlEscape="true"/>
                                   </form:select>
                                   <i class="caret"></i>
+                                  <em><span id="lblErrorselectedCategoryOne" class="error-msg"></span></em>
                                 </div>     
                                  
 					 
@@ -154,14 +159,14 @@
                                   </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                  <label for="floatingInput " class="mand-field-text"><span class="mandatory">* </span>
-                                  <spring:theme code="portal.contactus.form.fill.fields.label"/></label>
+                                  <!-- <label for="floatingInput " class="mand-field-text"><span class="mandatory">* </span>
+                                  <spring:theme code="portal.contactus.form.fill.fields.label"/></label> -->
                                   <div class="form-check p-0 d-flex align-items-center mb-3">
                                   
                                     <div class="invalid-feedback"><spring:theme code="portal.contactus.form.agree.submit.label"/></div>
                                   </div>
                                   <div class="form-check p-0 d-flex align-items-center mb-3">
-                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
                                     <label class="form-check-label mand-field-text" for="invalidCheck">
                                       <spring:theme code="portal.contactus.form.terms.service.label"/> 
                                       <a class="pvcy-policy" href="/${language}/privacy-policy"><spring:theme code="portal.contactus.form.privacy.policy.label"/></a>
@@ -170,12 +175,13 @@
                                       <spring:theme code="portal.contactus.form.agree.submit.label"/>
                                     </div>
                                   </div>
+                                  <em><span id="lblErrorinvalidCheck" class="error-msg"></span></em>
                                 </div>
                                 
                                 <div class="form-group col-md-12">
                                   <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
 		                              <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
-                                  <span id="lblErrorCaptcha" class="mandatory"></span>
+                                  <em><span id="lblErrorCaptcha" class="error-msg"></span></em>
                                 </div>
                               </div>
                               <div class="row form-action-btn">
@@ -189,10 +195,10 @@
                       <input type="hidden" id="CRMResponse" value="${CRMResponse}"/>
                             <input type="hidden" id="CRMObjectId" value="${CRMObjectId}"/>                        
                             </form:form>             
-                            <div id="contact-us-form-success" class="d-none" dir="ltr">
+                            <!-- <div id="contact-us-form-success" class="d-none" dir="ltr">
                               <p>We received your enquiry, and we will get back to you shortly.</p>
                               <p class="contact-us-form-ticket"></p>                            
-                            </div>
+                            </div> -->
                     </div>
 
 
@@ -470,6 +476,19 @@
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="contactusformModal" class="modal fade bootstrap-modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <p>We received your enquiry, and we will get back to you shortly.</p>
+                      <p class="contact-us-form-ticket"></p>    
+                    </div>
+                    <div class="modal-body-footer text-center" style="padding: 0 20px 20px 20px;">
+                      <button type="button" id="btnContactModalClose" class="btn btn-sagia" data-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>

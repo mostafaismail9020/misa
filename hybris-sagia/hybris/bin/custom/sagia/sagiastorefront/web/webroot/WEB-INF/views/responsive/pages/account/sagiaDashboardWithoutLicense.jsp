@@ -23,7 +23,7 @@
 <div class="mainSection_grey mainSection_noPadding">
     <div class="container">
         <div class="dashboardUser-wrapper col-12 dashboard-login">
-            <div class="dashboardUser-left col-6">
+            <div class="dashboardUser-left col-md-6 col-9">
                 <div class="dashboard-login">
                     <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">
                         <button type="button" id="btnfile" class="dashboardUser-image-add"><img src="${commonResourcePath}/images/change-profile-icon.png"/><span id="fname"></span></button>                        
@@ -35,7 +35,7 @@
                     </div>
                     <div class="dashboardUser-col">
                         <div class="dashboardUser-entry">
-                            <div class="dashboardUser-label dashboardUser-label-xs"><spring:theme code="general.company"/></div>
+                            <div class="dashboardUser-label d-none"><spring:theme code="general.company"/></div>
                             <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
                             <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>
                             	<span class="clr_gld">&nbsp;<fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>            
-            <div class="dashboardUser-right col-6 pl-0 user-icon">
+            <div class="dashboardUser-right col-md-6 col-3 pl-0 user-icon">
             	<a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
                 	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
                 </a>

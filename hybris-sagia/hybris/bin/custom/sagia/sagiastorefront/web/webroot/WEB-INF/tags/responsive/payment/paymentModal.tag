@@ -166,7 +166,7 @@
                 </div>
             </div>
             <div class="modal-secondaryContent pay-buttons p-3 border-top-0" style="display: none">
-                <h4 class="clr_gld">PAY WITH</h4>
+                <h4 class="clr_gld"><spring:theme code="license.apply.paywith"/></h4>
                 <div class="modal-footer modal-footer_centered modal-footer_iconButton mb-5 mt-3">
                     <div class="d-flex justify-center flex-column flex-md-row">
                         <!-- <div class="text-center p-0 d-flex"> -->

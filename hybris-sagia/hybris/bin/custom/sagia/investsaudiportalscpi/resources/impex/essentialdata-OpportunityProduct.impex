@@ -20,6 +20,7 @@ INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationO
 ; InboundOpportunityProduct:OpportunityProduct	; name            	; OpportunityProduct:name            	;                                         	; 	;  
 ; InboundOpportunityProduct:OpportunityProduct	; c4cOpportunityId	; OpportunityProduct:c4cOpportunityId	;                                         	; true	;  
 ; InboundOpportunityProduct:OpportunityProduct	; catalogVersion  	; OpportunityProduct:catalogVersion  	; InboundOpportunityProduct:CatalogVersion	; true	;  
+; InboundOpportunityProduct:OpportunityProduct	; downloadUrl     	; OpportunityProduct:downloadUrl     	;                                         	; 	;  
 ; InboundOpportunityProduct:Unit              	; code            	; Unit:code                          	;                                         	; true	;  
 ; InboundOpportunityProduct:Media             	; catalogVersion  	; Media:catalogVersion               	; InboundOpportunityProduct:CatalogVersion	; true	;  
 ; InboundOpportunityProduct:Media             	; code            	; Media:code                         	;                                         	; true	;  

@@ -25,5 +25,5 @@ INSERT_UPDATE Endpoint; id[unique = true]       ; version[unique = true]; specUr
 INSERT_UPDATE ConsumedDestination; id[unique = true]          ; url                                                              ; endpoint(id, version)           ; credential(id)      ; additionalProperties(key, value)[map-delimiter = |]; destinationTarget(id)[default = scpiDestinationTarget]
                                  ; scpiLeadTicketDestination ; "$leadTicketUrl;$leadTicketVersion/CsTickets" ; scpiLeadTicketEndpoint:unknown ; scpiOauthCredential ; "csrfURL->$leadTicketUrl;$leadTicketVersion/"    ;
                                  ; scpiCsCustomerEventDestination ; "$cusomerEventUrl;$leadTicketVersion/CsCustomerEvents" ; scpiCustomerEventEndpoint:unknown ; scpiOauthCredential ; "csrfURL->$cusomerEventUrl;$leadTicketVersion/"    ;
-                                 ; scpiServiceRequestEventDestination ; "$serviceRequestUrl;$leadTicketVersion/CsTickets" ; scpiLeadTicketEndpoint:unknown ; scpiOauthCredential ; "csrfURL->$serviceRequestUrl;$leadTicketVersion/"    ;
+                                 ; scpiServiceRequestEventDestination ; "$serviceRequestUrl;$leadTicketVersion/CsTickets" ; scpiServiceRequestEndpoint:unknown ; scpiOauthCredential ; "csrfURL->$serviceRequestUrl;$leadTicketVersion/"    ;
                                 

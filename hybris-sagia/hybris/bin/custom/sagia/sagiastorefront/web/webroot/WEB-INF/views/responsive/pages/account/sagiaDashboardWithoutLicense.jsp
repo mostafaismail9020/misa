@@ -243,7 +243,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="firstBlock-contact-local line-after col-md-4">
+                        <div class="firstBlock-contact-local line-after col-md-4 mt-3 mt-sm-0">
                             <div>
                                 <img  alt="" src="${commonResourcePath}/images/Contact-us/International.png"/>
                             </div>
@@ -258,7 +258,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="firstBlock-contact-local col-md-4">
+                        <div class="firstBlock-contact-local col-md-4 mt-3 mt-sm-0">
                             <div>
                                 <img  alt="" src="${commonResourcePath}/images/Contact-us/email.png"/>
                             </div>

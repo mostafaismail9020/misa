@@ -237,6 +237,12 @@
 	.page-dashboard .dashboardWidget-body .dashboardWidgetTickets .overflow-y-hidden{
 		overflow-y: hidden !important;
 	}
+	[dir=ltr] .line-after::after{
+		border-left: none !important;
+	}
+	[dir=rtl] .line-after::after{
+		border-left: none !important;
+	}
 }
 /******** licensed dashboard responsive arabic***/ 
 @media (max-width: 767px){
@@ -291,3 +297,6 @@
 	width: 20px;
 	margin-right: 10px;
 }
+[dir=rtl] .line-after::after{
+	border-left: 2px solid #ededed;
+  }

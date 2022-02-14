@@ -44,7 +44,7 @@
     span.licensing-heading{
         text-align: center;
         font-weight: 500;
-        font-size: 30px;
+        font-size: var(--heading-font);
         letter-spacing: 0px;
         color: #8C8B8B;
         text-transform: uppercase;
@@ -111,7 +111,7 @@
         color: @color-white;
         padding: 1%;
         margin-top: initial;
-        font-size: 20px;
+        font-size: var(--content-big-font);
         min-height: 3rem;
     }
     .serviceModule-detail{
@@ -150,7 +150,7 @@
 .service-details-wrapper p{
 	text-align: center;
 	font-weight: 500;
-	font-size: 25px;
+	font-size: var(--content-h-font);
 	letter-spacing: 0px;
 	color: @color-text;
 }
@@ -158,7 +158,7 @@
     p,li,h2{
         text-align: left;
         font-weight:500;
-        font-size: 20px;
+        font-size: var(--content-big-font);
         letter-spacing: 0px;
         color: @color-text;
     }
@@ -169,7 +169,7 @@
 .service-para{
     text-align: center !important;
     margin-top: 30px !important;
-    font-size: 25px !important;
+    font-size: var(--content-h-font) !important;
 }
 .serviceModule-request{
 	display: flex;
@@ -265,7 +265,7 @@
         color: @color-primary;
     }
     .historyList-id{
-        font-size: 20px;
+        font-size: var(--content-big-font);
         color: @color-primary;
     }
     .contentModule{
@@ -293,7 +293,7 @@
         // }
         #renewalButtons{
             display: contents;
-            font-size: 20px !important;
+            font-size: var(--content-big-font) !important;
         }
     }
     .contentModule-actions_spaceBetween{
@@ -301,11 +301,11 @@
     }
     #srID,.srId{
         color: @color-golden;
-        font-size: 30px;
+        font-size: var(--heading-font);
     }
     #currentStatus{
         font-weight: 500;
-        font-size: 20px;
+        font-size: var(--content-big-font);
         color: @color-text;
     }
 }
@@ -319,7 +319,7 @@
 }
 .contentModule-headline, .contentModule-headline-service-info{        
     text-align: left;
-    font-size: 30px;
+    font-size: var(--heading-font);
     font-weight: 500;
     text-transform: uppercase;
     width: 100%;
@@ -330,7 +330,7 @@
 .contentModule-headline-history{
     color: @color-golden !important;
     text-align: left;
-    font-size: 30px !important;
+    font-size: var(--heading-font) !important;
     font-weight: 500;
     background: none !important;
     text-transform: uppercase !important;
@@ -374,10 +374,10 @@
 }
 
 .historyList-status_E0012, .historyList-status_inprocess, .historyList-status_process{
-    font-size: 16px;
+    font-size: var(--content-font);
 }
 .baModule-headline span{
-    font-size: 20px;
+    font-size: var(--content-big-font);
 }
 .baModule-search{
     .searchInputBox:before{
@@ -419,7 +419,7 @@
 //     color: @color-white;
 //     padding: 1%;
 //     margin-top: initial;
-//     font-size: 20px;
+//     font-size: var(--content-big-font);
 //     min-height: 3rem;
 // }
 
@@ -461,10 +461,10 @@
     color: @color-text !important;
     text-align: left !important;
     background:none !important;
-    font-size: 30px !important;
+    font-size: var(--heading-font) !important;
     text-transform: uppercase !important;
     span{
-        font-size: 30px !important;
+        font-size: var(--heading-font) !important;
         text-transform: uppercase !important;
     }
 }
@@ -588,12 +588,12 @@
     color: @color-white;
     padding: 1%;
     margin-top: initial;
-    font-size: 20px;
+    font-size: var(--content-big-font);
     min-height: 3rem;
     margin:0px !important;
 }
 .headline-golden{
-    font-size: 20px !important;
+    font-size: var(--content-big-font) !important;
     font-weight: 600 !important;
     letter-spacing: 0px !important;
     text-transform: uppercase !important;
@@ -610,7 +610,7 @@
 
 .headline-text-dark{
     color:@color-text !important;
-    font-size: 20px !important;
+    font-size: var(--content-big-font) !important;
     font-weight: 600 !important;
     line-height: 1.5 !important;
 }
@@ -689,7 +689,7 @@
             background: #F7F7F7 0% 0% no-repeat padding-box;
             border: 1px solid #EDEDED;
             text-align: left;
-            font-size:20px;
+            font-size:var(--content-big-font);
             font-weight:600;
             letter-spacing: 0px;
             color: #707070;
@@ -700,7 +700,7 @@
             text-align: left;
             letter-spacing: 0px;
             color: #707070;
-            font-size: 20px;
+            font-size: var(--content-big-font);
         }
     }
 }
@@ -719,7 +719,7 @@
 .formInputBox .form-control ~.register-form label.focused,.formTextArea .form-control,.formRadioButton .control-label{
     letter-spacing: 0px;
     color: #707070;
-    font-size: 20px;
+    font-size: var(--content-big-font);
     padding-left: 30px;
 }
 button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.editButton:hover,button.removeButton:hover,.no_background:hover{
@@ -749,7 +749,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     p{
         margin: 10px;
         color: @color-text;
-        font-size: 16px;
+        font-size: var(--content-font);
     }
 }
 .deligate-info-form{
@@ -767,7 +767,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     .content-wrapper{
         transform: translate(0%, 50%);
         .INS_letter_set_para{
-            font-size: 25px;
+            font-size: var(--content-h-font);
             text-align: center;
         }
         >button{
@@ -809,7 +809,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     }
 }
 .statusBox-description{
-    font-size: 20px !important;
+    font-size: var(--content-big-font) !important;
 }
 .service-info-anchor{
     >a{
@@ -819,7 +819,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
         cursor: pointer;
         background-color: #fff;
         display: inline-block;
-        font-size: 20px !important;
+        font-size: var(--content-big-font) !important;
         color: @color-primary !important;
         text-decoration: none;
     }
@@ -838,7 +838,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
         margin-right: auto;
         padding: 1.5%;
         margin-top: initial;
-        font-size: 20px;
+        font-size: var(--content-big-font);
         line-height: 24px;
         font-weight: 400;
         padding-right: 12px;
@@ -949,7 +949,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     
 }
 .btn_slim{
-    // font-size: 20px!important;
+    // font-size: var(--content-big-font)!important;
     font-weight: 600!important;
 }
 
@@ -1042,7 +1042,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
 .amend-doc-submit{
     max-width: 600px !important;
     #amendmentTypeId{
-        font-size: 30px;
+        font-size: var(--heading-font);
         color: @color-golden;
         text-align: center;
     }
@@ -1142,7 +1142,7 @@ ul.footer-menu{
 
 
 .contentModule-headline,  .page-shareholder-apply #addShareholderQM1NewPersonSection #attachmentSection .mw0 {
-    padding: 0 30px !important;
+    // padding: 0 30px !important;//chk
 	width:auto !important;
 	display: inline-block;
 }
@@ -1182,4 +1182,16 @@ body ::-webkit-scrollbar-thumb {
 }
 #shareholderInheritedPropertyId:disabled{
     opacity: 0;
+}
+
+
+.modal#docsmodalId{
+    .modal-content{
+        width: 600px;
+    }
+}
+
+#businessActivitiesTable .tableModule-head th {
+    background: #f7f7f7 0 0 no-repeat padding-box;
+    text-align: left;
 }

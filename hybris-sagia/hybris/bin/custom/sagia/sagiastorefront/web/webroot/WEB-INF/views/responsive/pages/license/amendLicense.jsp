@@ -2115,31 +2115,37 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="docsmodalId" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="docsmodalId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content panelModule panelModule_halfRadius">
 				<div class="contentModule">
 					<form:form id="docsFormId">
-						<div id="amendmentTypeId"
-							class="contentModule-headline contentModule-headline_big contentModule-headline_bordered">
-							<spring:theme code="license.amend.documents" />
+						<div class="contentModule contentModule-wrap">
+							<div id="amendmentTypeId" class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100 contentModule-headline">
+								<span class="contentModule-headline"><spring:theme code="license.amend.documents" /></span>
+								<div class="contentModule-headline-border"></div>
+							</div>
 						</div>
 
-						<div
-							class="contentModule-headline contentModule-headline_marginBottom">
-							<spring:theme code="license.amend.amendment.types" />
-						</div>
+						<div class="contentModule contentModule-wrap">
+							<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+								<span class="contentModule-headline"><spring:theme code="license.amend.amendment.types" /></span>
+								<div class="contentModule-headline-border"></div>
+							</div>
+						</div>							
+
 						<div id="amendmentTypesId" class="row"></div>
 
 						<div id="regularAmendmentDocsId">
-							<div class="contentModule-separator"></div>
-							<div class="contentModule-headline">
-								<spring:theme code="license.amend.supporting.documents" />
+							<div class="contentModule contentModule-wrap">
+								<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+									<span class="contentModule-headline"><spring:theme code="license.amend.supporting.documents" /></span>
+									<div class="contentModule-headline-border"></div>
+								</div>
 							</div>
 							<div id="documentsId" class="row"></div>
 						</div>
-						<div class="col-sm-6 docTemplate">
+						<div class="col-sm-12 docTemplate">
 							<div class="formInputFile">
 								<div class="form-group">
 									<input id="fileId" name="file" class="form-control js-inputFile"
@@ -2157,13 +2163,6 @@
 								</div>
 							</div>
 						</div>
-						<%-- <div class="contentModule-separator"></div>
-					<div id="simulatedPriceDivContent" class="contentModule-headline contentModule-headline_marginBottom"><spring:theme code="license.amend.totalPrice"/></div>
-						<div id="simulatedPriceRow" class="row">
-							<div class="col-sm-6">
-							<ul class="dottedList dottedList_green dottedList_big">
-							<li class="dottedList-item" id="simulatedPriceNetValue"></li></ul></div>
-					</div> --%>
 						<div class="acceptTerms acceptTerms-no-margin">
 							<div class="row">
 								<div class="col-md-12">
@@ -2200,7 +2199,9 @@
 					</form:form>
 				</div>
 			</div>
+		</div>
 	</div>
+	
 	
 
 	<div class="modal fade" id="requestSubmittedDialogId" tabindex="-1"
@@ -2220,7 +2221,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn_slim showHistoryBtn"
+					<button type="button" class="btn btn_slim showHistoryBtn w-100"
 						data-dismiss="modal">
 						<spring:theme code="license.gotoamendmenthistory" />
 					</button>
@@ -2246,7 +2247,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn_slim showHistoryBtn"
+					<button type="button" class="btn btn_slim showHistoryBtn w-100"
 						data-dismiss="modal">
 						<spring:theme code="license.gotoamendmenthistory" />
 					</button>

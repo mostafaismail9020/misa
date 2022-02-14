@@ -2053,3 +2053,24 @@
 .reg-password-success:before{
 	right:100px !important;
 }
+
+@media screen and (min-width: 748px) and (max-width: 820px){
+	.login-right-wrapper, .login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper {
+		width: 490px;
+	}
+	[dir=ltr] .captcha-pos { 
+		-webkit-transform: translateX(20%);
+		transform: translateX(20%);
+	}
+	.register-account-investor-screen3 .login-right-wrapper {
+		width: 710px !important;
+	}
+}
+@media (max-width: 640px){
+	.login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper {
+		width: 100%;
+	}
+	.register-account-investor-screen3 .login-right-wrapper {
+		width: 100% !important;
+	}
+} 

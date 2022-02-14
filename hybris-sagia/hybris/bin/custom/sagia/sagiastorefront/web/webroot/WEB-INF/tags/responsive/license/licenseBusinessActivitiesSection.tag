@@ -44,7 +44,7 @@
                         <th class="tableModule-headItem tableModule-headItem_isicCode"><spring:theme code="licence.apply.isicCode"/></th>
                         <th><spring:theme code="licence.apply.crbusinessactivity"/></th>
 <%--                         <th id="supportDocumentsThId"><spring:theme code="licence.apply.doc.required"/></th> --%>
-                        <th id="actionsThId" class="tableModule-headItem tableModule-headItem_actionsCount_1"></th>
+                        <th id="actionsThId" class="tableModule-headItem tableModule-headItem_actionsCount_1"><spring:theme code ="general.delete"/></th>
                     </tr>
                 </thead>
                 <tbody class="tableModule-body"></tbody>

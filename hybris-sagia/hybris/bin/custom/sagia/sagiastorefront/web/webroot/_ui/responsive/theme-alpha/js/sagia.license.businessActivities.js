@@ -365,6 +365,8 @@ $(function() {
             SAGIA.license.businessActivities.selectedSection = "" + uiSelectedSection.data("sectionId");
             SAGIA.license.businessActivities.selectedSectionName = uiSelectedSection.find("a").html();
             var uiSelectedSection_a = uiSelectedSection.find("a");
+            $(".baList-item a").removeClass('amnend-select-b-activities');
+            $(".baList-item").css({"background": "#FFF"})
             $("#businessActivitiesSection #businessActivitiesModal #sectionItems .baList .baList-item").css({
                 "text-decoration": "none",
                 "color": "default"

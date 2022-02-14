@@ -926,7 +926,7 @@ function setFont() {
 }
 
 function increaseFontSize(isSet = 0) {
-    console.log(increment)
+  
     var p = document.querySelectorAll('body div,body p,body span');
 	var s;
 	if (increment < 3) {
@@ -951,7 +951,7 @@ function increaseFontSize(isSet = 0) {
 }
 function decreaseFontSize(isSet = 0) {
     var p = document.querySelectorAll('body div,body p,body span');	
-	console.log(increment)
+	
 	if (increment > 0) {
 		increment = isSet === 0 ? (increment - 1) : parseFloat(getCookie("f_increment"));
 		for (i = 0; i < p.length; i++) {

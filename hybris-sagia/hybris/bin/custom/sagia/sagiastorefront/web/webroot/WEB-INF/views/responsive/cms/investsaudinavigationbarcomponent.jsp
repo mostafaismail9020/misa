@@ -41,10 +41,14 @@
 				<!-- <a href="#" class="search_item"><img src="${commonResourcePath}/images/Search_icon.png" /></a>
 				<a href="#" class="Font_enlargment"><span class=" btn-trans"><img src="${commonResourcePath}/images/Aa.png"/></span></a>
 				 -->
-				 <c:if test="${userLoggedIn eq 'false'}">
+				 <a href="#" class="skype">
+					<span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
+					<span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
+				</a>
+				 <!-- <c:if test="${userLoggedIn eq 'false'}">
 					 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
 					 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
-				 </c:if>
+				 </c:if> -->
 				<a href="#" class="skype">
 					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
 						<!-- <label class="btn lang-btn lang-en active"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label> -->

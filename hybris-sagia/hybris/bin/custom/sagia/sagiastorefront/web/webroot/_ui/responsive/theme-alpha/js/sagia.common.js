@@ -907,3 +907,89 @@ function LanguageToggle(lang){
 
   })(jQuery);
 //  ------------------------------------------------------------------------------------------------------------------------- 
+
+
+/* --------- Font-size JS --------*/
+
+var original = 16;
+var increment = 0, decrement = 3;
+
+setFont();
+
+setFont();
+function setFont() {
+	var inc = getCookie("f_increment");
+	// $("#font-decrement").hide();
+	if(inc !== null && inc !== ""){
+		increaseFontSize(1)
+	}
+}
+
+function increaseFontSize(isSet = 0) {
+    console.log(increment)
+    var p = document.querySelectorAll('body div,body p,body span');
+	var s;
+	if (increment < 3) {
+		increment = isSet === 0 ? (increment + 1) : parseFloat(getCookie("f_increment"));	
+		for (let i = 0; i < p.length; i++) {
+			if ($(p[i]).css('font-size')) {
+				s = parseFloat($(p[i]).css('font-size'));
+			} else {
+				s = original;
+			}
+			original = isSet === 0 ? (s + 0.5) : (s + increment *0.5);
+			$(p[i]).css('font-size', original + "px");
+		}
+		setCookie("f_increment", increment, 30);
+	}
+	// if(increment >=3){
+	// 	$("#font-increment").hide();
+	// }
+	// if(increment > 0){
+	// 	$("#font-decrement").show();
+	// }
+}
+function decreaseFontSize(isSet = 0) {
+    var p = document.querySelectorAll('body div,body p,body span');	
+	console.log(increment)
+	if (increment > 0) {
+		increment = isSet === 0 ? (increment - 1) : parseFloat(getCookie("f_increment"));
+		for (i = 0; i < p.length; i++) {
+			if ($(p[i]).css('font-size')) {
+				var s = parseFloat($(p[i]).css('font-size'));
+			} else {
+				var s = original;
+			}
+			original = isSet === 0 ? (s - 0.5) : (s - increment);
+			$(p[i]).css('font-size', original + "px");
+		}
+		setCookie("f_increment", increment, 30);
+	}
+	// if(increment <=0){
+	// 	$("#font-decrement").hide();
+	// }
+	// if(increment < 3){
+	// 	$("#font-increment").show();
+	// }
+}
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}

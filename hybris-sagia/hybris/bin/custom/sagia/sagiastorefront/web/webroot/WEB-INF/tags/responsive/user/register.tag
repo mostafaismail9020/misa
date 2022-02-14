@@ -41,7 +41,7 @@
 <div class="row">
 	<div class="col-md-5">
 		<div class="login-logo">
-			<a href="https://eservices.sagia.gov.sa/en">
+			<a href="/${language}">
 				<img src="${commonResourcePath}/images/B2C/Login-logo.svg" alt="logo" class="img-fluid w-100" />
 			</a>
 		</div>
@@ -254,7 +254,7 @@
 								<div class="input-wrapper focus-on-change">
 									<formElement:formInputBox idKey="quickregistration.register.mobileNumber"
 												labelKey="register.mobileNumber" path="mobileNumber"
-												helpBlockSuccessCSS="js-help-block-success"  maxlength="15"
+												helpBlockSuccessCSS="js-help-block-success"  maxlength="10"
 												inputCSS="js-quick-mobile-number register-user-details validate-mobile mobile-number" labelCSS="control-label_mandatory register-user-info-label" inputBoxCSS="formInputBox_big"
 												mandatory="true"/>
 								</div>								

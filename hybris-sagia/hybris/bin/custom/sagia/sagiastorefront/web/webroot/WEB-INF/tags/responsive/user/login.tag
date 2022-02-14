@@ -18,7 +18,7 @@
 <div class="row">
 	<div class="col-md-5">
 		<div class="login-logo">
-			<a href="https://eservices.sagia.gov.sa/en">
+			<a href="/${language}">
 				<img src="${commonResourcePath}/images/B2C/Login-logo.svg" alt="logo" class="img-fluid w-100" />
 			</a>
 		</div>

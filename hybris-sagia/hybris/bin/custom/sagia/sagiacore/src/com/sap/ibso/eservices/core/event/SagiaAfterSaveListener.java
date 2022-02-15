@@ -1,22 +1,28 @@
 package com.sap.ibso.eservices.core.event;
 
+import com.investsaudi.portal.core.model.OpportunityProductModel;
 import com.investsaudi.portal.core.service.ContactTicketBusinessService;
+import com.investsaudi.portal.core.service.InvestSaudiProductService;
+import com.investsaudi.portal.core.service.OpportunityProductMediaRestApiService;
 import com.sap.ibso.eservices.core.constants.SagiaCoreConstants;
 import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
 import com.sap.ibso.eservices.core.sagia.services.SagiaTermsAndConditionsService;
 import de.hybris.platform.cms2.model.contents.components.CMSParagraphComponentModel;
 import de.hybris.platform.cms2.servicelayer.services.CMSSiteService;
 import de.hybris.platform.core.PK;
+import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.tx.AfterSaveEvent;
 import de.hybris.platform.tx.AfterSaveListener;
 import de.hybris.platform.util.Config;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class SagiaAfterSaveListener implements AfterSaveListener {
@@ -43,6 +49,10 @@ public class SagiaAfterSaveListener implements AfterSaveListener {
     private CMSSiteService cmsSiteService;
     @Autowired
     private ContactTicketBusinessService contactTicketBusinessService;
+    @Resource
+    private InvestSaudiProductService investSaudiProductService;
+    @Resource
+    private OpportunityProductMediaRestApiService opportunityProductMediaRestApiService;
 
     @Override
     public void afterSave(Collection<AfterSaveEvent> collection) {
@@ -68,8 +78,31 @@ public class SagiaAfterSaveListener implements AfterSaveListener {
                    contactTicketBusinessService.sendOpportunityUserDetails(null, (UserModel) object, initialPassword,
 				      SagiaCoreConstants.ORIGINSYSTEM.equalsIgnoreCase(((CustomerModel) object).getSystemOrigin()));
                 }
+                if(object instanceof OpportunityProductModel){
+                    uploadPdfForOpportunity(((OpportunityProductModel) object));
+                }
             }
         }
+    }
+
+    /**
+     * To update media
+     * @param opportunityProductModel
+     */
+    public void uploadPdfForOpportunity(OpportunityProductModel opportunityProductModel) {
+            if (opportunityProductModel.getItemtype().equals(OpportunityProductModel._TYPECODE)) {
+                if (null != opportunityProductModel) {
+                    Collection<MediaModel> productDetails = new ArrayList<>();
+                    if(CollectionUtils.isEmpty(opportunityProductModel.getDetail())) {
+                        if(null != opportunityProductModel.getDownloadUrl()) {
+                            MediaModel media = opportunityProductMediaRestApiService.uploadMediaAttachmentAsProduct(opportunityProductModel.getDownloadUrl(), opportunityProductModel.getCode(),opportunityProductModel.getCatalogVersion());
+                            productDetails.add(media);
+                            opportunityProductModel.setDetail(productDetails);
+                            getModelService().save(opportunityProductModel);
+                        }
+                    }
+                }
+            }
     }
 
     /*

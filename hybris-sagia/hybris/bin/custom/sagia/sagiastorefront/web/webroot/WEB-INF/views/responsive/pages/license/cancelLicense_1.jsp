@@ -51,11 +51,13 @@
                             <span></span>
                         </a>
                     </div>
-                    <div class="calendar notification">
-                        <div class="count-notification" id="unreadNotificationSpan"></div>
-                        <a href="${encodedContextPath}/my-sagia/notifications">
-                            <span></span>
-                        </a>
+                    <div class="calendar notification p-0">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" style="margin-top: -3px;margin-left: -3px;"/>
+                            </button>
+                        </c:if>
                     </div>
                 </c:if>
                 <div class="profile">
@@ -65,6 +67,13 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup" style="top:55%;right:10%">
+    <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+    <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+    <div class="sagiaNavigation-subPane-actions">
+        <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
     </div>
 </div>
 

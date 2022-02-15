@@ -32,7 +32,7 @@ public class SendServiceRequestToScpiAction extends AbstractAction<ScpiOutServic
             return("OK");
         }
         catch (Exception e) {
-          LOG.error("Error while sending customerEvent: " + scpiOutServiceRequestProcessModel.getServiceRequest().getId()+" to SCPI ",e);
+          LOG.error("Error while sending serviceRequest: " + scpiOutServiceRequestProcessModel.getServiceRequest().getId()+" to SCPI ",e);
             return("NOK");
         }
 

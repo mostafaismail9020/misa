@@ -69,23 +69,18 @@ public class OpportunityProductMediaRestApiServiceImpl implements OpportunityPro
     }
 	
 	@Override
-    public MediaModel uploadMediaAttachmentAsProduct(String url, String productCode) {
-		
+    public MediaModel uploadMediaAttachmentAsProduct(String url, String productCode,CatalogVersionModel catalogVersion) {
 		final MediaModel mediaModel = new MediaModel();
 		if(null != url) {
 			LOG.info("url: "+url);
 				byte[] bytes = getMediaAttachmentPdf(url);
 				if (null != bytes) {
 				        final InputStream inputStream = new ByteArrayInputStream(bytes);
-				        final String currentCatalogVersion = cmsSiteService.getCurrentSite().getContentCatalogs().get(0).getId();
-				 		final CatalogVersionModel catalogVersionModel = catalogService.getCatalogVersion(SAGIA_CONTENT_CATALOG, ONLINE_CATALOG_VERSION);
-				 		mediaModel.setCode(productCode+UUID.randomUUID().toString());
-				 		mediaModel.setCatalogVersion(catalogVersionModel);
+				         mediaModel.setCode(productCode+UUID.randomUUID().toString());
+				 		mediaModel.setCatalogVersion(catalogVersion);
 				 		mediaModel.setRealFileName(productCode+PDF_FILENAME_SUFFIX);
 				 		getModelService().saveAll(mediaModel);
-				 		
 						getMediaService().setStreamForMedia(mediaModel, inputStream);
-                        
 				 		try
 				 		{
 				 			inputStream.close();

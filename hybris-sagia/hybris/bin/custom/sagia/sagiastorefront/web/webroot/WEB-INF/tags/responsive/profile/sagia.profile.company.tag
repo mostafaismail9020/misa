@@ -364,7 +364,8 @@
                 <!-- primary contact-->
                 <div class="contentModule-section primary-contact">
                     <div class="contentModule-headline mw0">
-                        <!--<span class="iconElement iconElement_generalManager"><icon:login-quick/></span>--><spring:theme code="general.primary.contact"/>
+                        <!--<span class="iconElement iconElement_generalManager"><icon:login-quick/></span>-->
+                        <spring:theme code="general.primary.contact"/>
                     </div>
                     <hr class="hr"/>
                     <div class="js-myAccount-edit-toggle">

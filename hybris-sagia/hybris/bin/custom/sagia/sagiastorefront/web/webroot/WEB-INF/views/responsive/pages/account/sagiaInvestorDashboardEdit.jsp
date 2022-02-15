@@ -31,7 +31,7 @@
                     <div class="col">
                         <div class="dashboardUser-image">
                             <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">
-                                <button type="button"  id="btnfile" class="dashboardUser-image-add cursor-pointer"><img src="${commonResourcePath}/images/change-profile-icon.png"/><span id="fname"></span></button>
+                                <button type="button"  id="btnfile" class="dashboardUser-image-add"><icon:plus/><span id="fname"></span></button>
                                 
                                 <div class="myAccount-profilImage">
                                     <div class="myAccount-profilImage-img">
@@ -191,7 +191,7 @@
 	                <dashboard:myLicense editable="${true}"/>
 	            </div>
             </li>
-            <li class="dashboardWidgetListComponent js-component">
+           <!-- <li class="dashboardWidgetListComponent js-component">
 	            <div class="drag col col-12 p-0" id="dashboardImage">
 	                <div class="dashboardWidget dashboardWidget_banner">
 	                    <div class="simple-banner banner__component--responsive">
@@ -199,7 +199,7 @@
 	                    </div>
 	                </div>
 	            </div>
-            </li>
+            </li>-->
             <li class="dashboardWidgetListComponent js-component">
 	            <div class="drag col col-12 p-0" id="salaryAndEmployment" <c:if test="${!enableSalaryAndEmployment}">style="display:none;"</c:if>><dashboard:salaryAndEmployment editable="${true}"/></div>
             </li>

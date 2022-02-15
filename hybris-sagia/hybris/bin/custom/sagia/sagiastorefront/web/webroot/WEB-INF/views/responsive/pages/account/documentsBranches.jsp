@@ -14,10 +14,9 @@
     </c:otherwise>
 </c:choose>
 
-
 <div class="mainSection mainSection">
     <div class="achievement_header">
-        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <img class="achievement_header_icon  page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
         <div class="container">
             <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
                 <h1 data-aos="fade-up">
@@ -66,8 +65,11 @@
 </div> -->
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
-        <a href="${encodedContextPath}/my-sagia/sagia-profile"
-           class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to Account Overview</a>
+		<a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink back_to_service">
+           	<span class="iconElement iconElement_closeBack image-pos">
+           		<img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/>
+           	</span>Back to Account Overview
+		</a>
     </div>
 </div>
 <div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
@@ -91,7 +93,9 @@
                                 <th><spring:theme code="text.account.profile.license.branches.name"/></th>
                                 <th><spring:theme code="text.account.profile.license.branches.type"/></th>
                                 <th><spring:theme code="text.account.profile.license.branches.city"/></th>
-                                <th class="tableModule-headItem tableModule-headItem_actionsCount_2"><%--<spring:theme code="dashboard.myLicense.branches.actions"/>--%></th>
+                                <th class="tableModule-headItem tableModule-headItem_actionsCount_2">
+                                	<%--<spring:theme code="dashboard.myLicense.branches.actions"/>--%>
+                                </th>
                             </tr>
                             </thead>
                             <tbody class="tableModule-body">
@@ -126,11 +130,10 @@
             </div>
         </div>
 
-
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
             <c:url value="/governmentDocuments" var="governmentDocs"/>
             <button type="submit" class="btn" onclick="sendBranches()" ${disabled}>Submit</button>
- 	<input type="hidden" id="serviceId"/>
+ 			<input type="hidden" id="serviceId"/>
         </div>
     </div>
 </div>
@@ -152,7 +155,7 @@
                     <div class="contentModule-section">
                         <div class="contentModule contentModule-wrap">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper w-100">
-                                <span class="headline-background">Commercial register</span>
+                                <span class="headline-background"><spring:theme code="general.governmentdocuments.commercialregister"/></span>
                             </div>
                         </div>
                         <div class="row">
@@ -200,7 +203,7 @@
                     <div class="contentModule-section">
                         <div class="contentModule-headline headline-background-wrapper">
                             <!-- <span class="iconElement iconElement_momra"><icon:momra/></span> -->
-                            <span class="headline-background">Momra</span> 
+                            <span class="headline-background"><spring:theme code="govDocs.Momra"/></span> 
                         </div>
                         <hr class="hr">
                         <div class="row">
@@ -212,7 +215,7 @@
                                                    name="aahasMomra" type="radio" value="true"
                                                    onchange="handleMomraRadioChange()" ${disabled}>
                                             <label for="aahasMomra1" class="control-label">
-                                                <span></span> <spring:theme code="govDocs.momraY"/></label>
+                                            	<span></span><spring:theme code="govDocs.momraY"/></label>
                                         </div>
 
                                         <div class="form-item">
@@ -220,7 +223,7 @@
                                                    name="aahasMomra" type="radio" value="false"
                                                    onchange="handleMomraRadioChange()" ${disabled}>
                                             <label for="aahasMomra2" class="control-label">
-                                                <span></span><spring:theme code="govDocs.momraN"/></label>
+                                            	<span></span><spring:theme code="govDocs.momraN"/></label>
                                         </div>
                                     </div>
                                 </div>
@@ -267,16 +270,13 @@
 
 
                     <div class="contentModule-section contentModule-section_slimDivider">
-
                         <div class="row">
-
                             <div class="col-md-5">
                                 <div class="contentModule-headline headline-background-wrapper">
                                     <!-- <span class="iconElement iconElement_momra"><icon:momra/></span> -->
                                     <span class="headline-background">Wassel</span> 
                                 </div>
-                                <hr class="hr">
-                                
+                                <hr class="hr">                                
                                 <div class="formRadioButton formRadioButton_block formRadioButton_slim">
                                     <div class="form-group">
 
@@ -395,7 +395,6 @@
     </div>
 </div>
 
-
 <div class="modal fade" id="wassel-check" tabindex="-1" role="dialog" aria-labelledby="requestSubmittedApply" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
         <div class="modal-content">
@@ -420,7 +419,6 @@
     </div>
 </div>
 
-
 <script>
     var notNullError = '<spring:theme code="govDocs.error.notEmpty"/>';
     var notNumberError = '<spring:theme code="govDocs.error.notNumber"/>';
@@ -429,6 +427,5 @@
     var branchesJson = ${branchesJSON};
     var mainBranchJson = ${mainBranchJSON};
     var selectedBranch;
-
 </script>
 

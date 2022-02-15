@@ -70,7 +70,7 @@
                             <c:if test="${category.key=='Licensing Services'}">
                                 <div class="tab-pane fade service-wrapper service_tab_pane_show show active pb-5 m-auto" id="FIRST1" role="tabpanel" aria-labelledby="pills-licensing-tab">
                                     <div class="p-4 serviceModule-detail">
-                                        <p class="INS_letter_set_para pb-3 mb-3">${category.value[0].category.description}</p>
+                                        <p class="INS_letter_set_para pb-3 mb-3 text-center">${category.value[0].category.description}</p>
                                         <c:forEach items="${category.value}" var="service">
                                             <div id="serviceModule" class="serviceModule serviceModule_list">
                                                 <div class="serviceModule-section">
@@ -113,7 +113,7 @@
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent1">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="GOVERNMENTAL SERVICES1" role="tabpanel" aria-labelledby="pills-govt-tab" role="tablist">
                             <div class="p-4 serviceModule-detail">
-                                <p class="INS_letter_set_para pb-3 mb-3 service-para">
+                                <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                                 </p>
                             </div>
@@ -174,7 +174,7 @@
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent1">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES1" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
                             <div class="p-4 serviceModule-detail">
-                                <p class="INS_letter_set_para pb-3 mb-3 service-para">
+                                <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                                 </p>
                             </div>
@@ -226,15 +226,15 @@
                     <c:if test="${category.key=='Licensing Services'}">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5 m-auto" id="FIRST" role="tabpanel" aria-labelledby="pills-licensing-tab">
                             <div class="p-4 serviceModule-detail mt-5 mx-2">
-                                <p class="INS_letter_set_para pb-3 mb-3">${category.value[0].category.description}</p>
+                                <p class="INS_letter_set_para pb-3 mb-3 text-center">${category.value[0].category.description}</p>
                                 <c:forEach items="${category.value}" var="service">
                                     <div id="serviceModule" class="serviceModule serviceModule_list mr-5">
                                         <div class="serviceModule-section">
                                             <div class="serviceModule-content">
                                                 <div class="serviceModule-description">
                                                     <span class="serviceModule-headline cursor-pointer">${service.name}</span>
-                                                    <div class="serviceModule-detail">
-                                                        <div class="w-100 mr-2">
+                                                    <div class="serviceModule-detail service-search-module">
+                                                        <div class="w-75 mr-2">
                                                             <p>${service.description}</p>
                                                         </div>
                                                         <div class="w-25 serviceModule-request">
@@ -253,7 +253,7 @@
                 
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="GOVERNMENTAL SERVICES" role="tabpanel" aria-labelledby="pills-govt-tab" role="tablist">
                         <div class="p-4 serviceModule-detail mt-5 mx-2">
-                            <p class="INS_letter_set_para pb-3 mb-3 service-para">
+                            <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>
                         </div>
@@ -277,8 +277,8 @@
                                                         <div class="serviceModule-content">
                                                             <div class="serviceModule-description">
                                                                 <span class="serviceModule-headline cursor-pointer">${service.name}</span>
-                                                                <div class="serviceModule-detail">
-                                                                    <div class="w-100">
+                                                                <div class="serviceModule-detail service-search-module">
+                                                                    <div class="w-75">
                                                                         <p>${service.description}</p>
                                                                     </div>
                                                                     <div class="w-25 serviceModule-request">
@@ -302,7 +302,7 @@
 
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
                         <div class="p-4 serviceModule-detail mt-5 mx-2">
-                            <p class="INS_letter_set_para pb-3 mb-3 service-para">
+                            <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>
                         </div>
@@ -326,8 +326,8 @@
                                                         <div class="serviceModule-content">
                                                             <div class="serviceModule-description">
                                                                 <span class="serviceModule-headline cursor-pointer">${service.name}</span>
-                                                                <div class="serviceModule-detail">
-                                                                    <div class="w-100">
+                                                                <div class="serviceModule-detail service-search-module">
+                                                                    <div class="w-75">
                                                                         <p>${service.description}</p>
                                                                     </div>
                                                                     <div class="w-25 serviceModule-request">

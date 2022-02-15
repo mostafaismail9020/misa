@@ -5,6 +5,23 @@
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
 
+<style>
+   .page-dashboard  .ticketModule-top .ticketModule-details p span {
+        font-weight: 600;
+        color: #bf9b2e;
+    }
+    .page-dashboard  .ticketModule-top .ticketModule-details p { 
+        color: #707070;
+    }
+    .page-dashboard  .modal-body .downloadList .downloadList-description {
+        font-size: 16px;
+        font-weight: 600;
+        color: #707070;
+    }
+    .dashboardUser-image-add{
+        cursor: pointer;
+    }
+</style>
 <div class="modal-content modal-ticket-wrapper">
     <div class="modal-header">
         <div class="modal-title view-title modal-ticket-heading w-100" id="exampleModalLabel">
@@ -75,7 +92,7 @@
                                 </c:forEach>
                             </ul>
                             
-                            <div class="formTextArea ">
+                            <div class="formTextArea">
                                 <div class="form-group ">
                                     <textarea id="inputNewMessage " class="form-control form-control_slim " placeholder=". " style="height: 183px;"></textarea>
                                     <label class="control-label " for="inputNewMessage ">
@@ -84,11 +101,11 @@
                                 </div>
                             </div>
                             <div class="ticketModule-actions text-center">
-                                <button class="btn btn-bg btn_bold " id="newMessageBtn " data-current-srid="${expandedComplaintFormData.srID} " <c:if test="${expandedComplaintFormData.srStCode=='E0010' } "> disabled </c:if>><spring:theme code="general.send.message"/>
+                                <button class="btn btn-bg btn_bold " id="newMessageBtn" data-current-srid="${expandedComplaintFormData.srID} " <c:if test="${expandedComplaintFormData.srStCode=='E0010' } "> disabled </c:if>><spring:theme code="general.send.message"/>
                                 </button>
                             </div>
 
-                            <input type="hidden " name="csrfToken "  class="w-50 mh-50 pt-3 pb-3 " value="${_csrf.token} " style="visibility: hidden;"/>
+                            <input type="hidden " name="csrfToken"  class="w-50 mh-50 pt-3 pb-3 " value="${_csrf.token} " style="visibility: hidden;"/>
 
                         </div> 
                     </div>

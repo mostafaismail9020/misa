@@ -156,8 +156,8 @@
             </div>
         </div>
         <div class="col-md-2"> 
-            <button type="button" id="simulator-close" class="modal-close  top-0 end-0">
-                <icon:close/>
+            <button type="button" id="simulator-close" class="license-simulator-modal-close right-close  top-0 end-0">
+                <img class="" src="${commonResourcePath}/images/Close.png"/>
             </button>
         </div>
     </div>

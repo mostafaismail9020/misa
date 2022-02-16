@@ -7,9 +7,9 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <style>
-	#topbar span{
+	/* #topbar span{
 		font-size: 12px !important;
-	}
+	} */
 	label.lang-btn{
 		margin-bottom: 2px;
 	}
@@ -41,7 +41,7 @@
 				<!-- <a href="#" class="search_item"><img src="${commonResourcePath}/images/Search_icon.png" /></a>
 				<a href="#" class="Font_enlargment"><span class=" btn-trans"><img src="${commonResourcePath}/images/Aa.png"/></span></a>
 				 -->
-				 <a href="#" class="skype">
+				 <a href="#" class="skype d-none d-sm-inline">
 					<span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
 					<span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
 				</a>

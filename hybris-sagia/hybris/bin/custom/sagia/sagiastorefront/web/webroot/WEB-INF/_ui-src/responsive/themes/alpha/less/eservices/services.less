@@ -543,9 +543,9 @@
             }
         }
     }
-    .service_tab_pane_show{
-        width: 92%;
-    }
+    // .service_tab_pane_show{
+    //     width: 92%;
+    // }
 }
 
 
@@ -1183,8 +1183,6 @@ body ::-webkit-scrollbar-thumb {
 #shareholderInheritedPropertyId:disabled{
     opacity: 0;
 }
-
-
 .modal#docsmodalId{
     .modal-content{
         width: 600px;
@@ -1194,4 +1192,35 @@ body ::-webkit-scrollbar-thumb {
 #businessActivitiesTable .tableModule-head th {
     background: #f7f7f7 0 0 no-repeat padding-box;
     text-align: left;
+}
+.contentModule-headline{
+    padding: 0 2%;
+}
+
+@media (min-width:1200px) {
+    .sagiaNavigation-services{
+        margin: auto 6rem;
+    }
+    .service-search-module{
+        display: flex;
+        padding-top: 0px;
+        .w-25{
+            justify-content: flex-end;
+            align-items: center;
+
+        }
+    }
+    .select2-dropdown_oneColumn .select2-results__option{
+        width: 500px;
+    }
+}
+@media (-webkit-device-pixel-ratio: 1.25) {
+    body {
+            zoom: 0.8;
+        }
+  }
+@media (-webkit-device-pixel-ratio: 1.50) {
+    body {
+      zoom: 0.7;
+    }
 }

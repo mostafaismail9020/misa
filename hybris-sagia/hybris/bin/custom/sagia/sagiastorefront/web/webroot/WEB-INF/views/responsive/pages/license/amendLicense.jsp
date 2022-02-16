@@ -237,7 +237,7 @@
 	<div class="container mainSection mainSection_dark mainSection_pdt16 mb-3 ml-0 ml-md-4 service-main">
 		<div class="">
 			<div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
-				<button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
+				<button id="expandAmendmentHistoryBtnId" class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
 					<div ><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
 					<div class="hidden"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
 				</button>

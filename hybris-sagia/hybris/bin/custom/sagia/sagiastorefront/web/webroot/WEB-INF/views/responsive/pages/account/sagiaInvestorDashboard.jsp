@@ -154,7 +154,7 @@
     <div class="container">
         <div class="globalMessage">
             <div class="globalMessage-action">
-                <a onclick="awaitingPayment()" class="btn btn_round"><spring:theme code="awaiting.payment.pay" /></a>
+                <a onclick="awaitingPayment()" class="btn btn_round d-flex justify-content-center"><spring:theme code="awaiting.payment.pay" /></a>
             </div>
             <div class="globalMessage-msg">
                 <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/></div>
@@ -549,7 +549,7 @@
         <div id="newsandupdates" class="newsAndUpdateContainer">
             <div class="dashboard-container">
                 <div class="row titleContainer">
-                    <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
+                    <div class="col-md-12 title-heading aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
                         <h1 class="section-title text-center clr_gld pt-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
                         <!-- <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp; -->
                         <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
@@ -649,7 +649,7 @@
                     <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
                 </div>
                 <div class="mr-md-5">
-                    <a class="btn make-an-enquiry" href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
+                    <a class="btn make-an-enquiry  d-flex align-items-center" href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
                 </div>
             </div>
         </div>

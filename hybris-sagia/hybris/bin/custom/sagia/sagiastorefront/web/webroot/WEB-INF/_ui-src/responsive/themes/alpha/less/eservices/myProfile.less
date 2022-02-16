@@ -2814,7 +2814,7 @@ button:focus {
 		left: 30% !important;
 	}
   }
-  
+
 .formRadioButton{
     .form-control:disabled{
       opacity: 0;
@@ -2865,4 +2865,43 @@ button:focus {
                }
         }
     }
+}
+
+@media  (max-width:767px) {
+    .page-new-apply-contactperson .panelTabs_separated, .page-new-license-apply .panelTabs_separated,
+    .page-shareholder-apply .panelTabs_separated, .page-new-apply-review .panelTabs_separated{
+        .panelTabs-navigation{
+         display:block !important;
+         padding-left: 3px;
+         padding-right: 3px;
+         padding-bottom: 30px;
+         .tabs-list{
+             width: 100%;
+             margin: 0;
+             max-width: 100%;
+             display: -webkit-box;
+             li{
+                 float: left;
+                 display: block;
+                 padding-left: 0;
+                 padding-right: 0;
+                 margin: 0 2px;
+                 a{
+                     display: block;
+                     padding-left: 0;
+                     padding-right:0;
+                     svg{
+                         display: inline;
+                     }
+                     .panelTabs-label{
+                         font-size: 14px;
+                         display: block;
+                         text-align: center;
+                         padding-left: 0;
+                     }
+                 }
+             }
+         }
+       }
+     }
 }

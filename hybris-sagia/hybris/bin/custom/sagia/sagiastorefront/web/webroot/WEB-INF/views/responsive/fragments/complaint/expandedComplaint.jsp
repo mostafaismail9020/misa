@@ -26,7 +26,7 @@
     <div class="modal-header">
         <div class="modal-title view-title modal-ticket-heading w-100" id="exampleModalLabel">
             <div class="contentModule-headline w-50"> 
-                <spring:theme code="general.ticketNumber" /> ${expandedComplaintFormData.srID}
+                <spring:theme code="general.ticketNumber" /> : ${expandedComplaintFormData.srID}
             </div>
             <hr class="hr">
         </div>
@@ -67,7 +67,7 @@
                                         <div class="downloadList-actions">
                                             <a href="${encodedContextPath}/attachment/pdf/${attachment.objectId}/${attachment.documentID}" download="${attachment.fullFileName}"  class="link link_nowrap ">
                                                 <span class="iconElement iconElement_cloud02 "><icon:download/></span>
-                                                <spring:theme code="general.download "/>
+                                                <spring:theme code="general.download"/>
                                             </a>
                                         </div>
                                     </li>

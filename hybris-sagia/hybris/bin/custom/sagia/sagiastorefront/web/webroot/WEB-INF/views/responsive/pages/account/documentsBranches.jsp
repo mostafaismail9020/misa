@@ -68,7 +68,7 @@
 		<a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink back_to_service">
            	<span class="iconElement iconElement_closeBack image-pos">
            		<img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/>
-           	</span>Back to Account Overview
+           	</span><spring:message code="myprofile.account.overview"/>
 		</a>
     </div>
 </div>
@@ -144,7 +144,7 @@
     <div class="modal-dialog modal-dialog-centered govt-doc-edit" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="modal-title">Edit : <span id="branchName" class="modal-title"></span></div>
+                <div class="modal-title"><spring:theme code="myprofile.edit"/><span id="branchName" class="modal-title"></span></div>
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                     <icon:close/>
                 </button>
@@ -274,7 +274,7 @@
                             <div class="col-md-5">
                                 <div class="contentModule-headline headline-background-wrapper">
                                     <!-- <span class="iconElement iconElement_momra"><icon:momra/></span> -->
-                                    <span class="headline-background">Wassel</span> 
+                                    <span class="headline-background"><spring:message code="myprofile.wassel"/></span> 
                                 </div>
                                 <hr class="hr">                                
                                 <div class="formRadioButton formRadioButton_block formRadioButton_slim">
@@ -310,7 +310,7 @@
                                 </div> -->
                                 <div class="contentModule-headline headline-background-wrapper w-50">
                                     <!-- <span class="iconElement iconElement_locationPin_filled"><icon:locationPin_filled/></span> -->
-                                    <span class="headline-background">Physical address</span> 
+                                    <span class="headline-background"><spring:message code="myprofile.physical.address"/></span> 
                                 </div>
                                 <hr class="hr">
                                 <div class="mapsModule">
@@ -320,7 +320,7 @@
                                     <div class="form-group" id="gMap-group">
                                         <input id="gMapAddress" class="form-control" placeholder="." value="" type="text" readonly="true" >
                                         <label class="control-label control-label_mandatory" for="gMapAddress">
-                                            your address
+                                            <spring:message code="myprofile.your.address"/>
                                         </label>
                                         <div class="help-block">
                                             <span id="govDocs-gMap-error"></span>
@@ -336,7 +336,7 @@
 
             <div class="modal-footer modal-footer_centered">
                 <button type="reset" class="btn btn_outline full-width-responsive" data-dismiss="modal">
-                    Cancel
+                    <spring:message code="myprofile.cancel"/>
                 </button>
                 <button type="button" class="btn full-width-responsive" onclick="saveBranch()" ${disabled}>
                     <spring:theme code="govDocs.saveButton"/>
@@ -389,7 +389,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn_slim" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn_slim" data-dismiss="modal"><spring:message code="myprofile.close"/></button>
             </div>
         </div>
     </div>
@@ -413,7 +413,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="infoModalClose" type="button" class="btn btn_slim" data-dismiss="modal">Close</button>
+                <button id="infoModalClose" type="button" class="btn btn_slim" data-dismiss="modal"><spring:message code="myprofile.close"/></button>
             </div>
         </div>
     </div>

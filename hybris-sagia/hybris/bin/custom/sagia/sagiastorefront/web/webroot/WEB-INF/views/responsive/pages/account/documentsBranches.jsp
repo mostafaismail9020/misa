@@ -132,7 +132,7 @@
 
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
             <c:url value="/governmentDocuments" var="governmentDocs"/>
-            <button type="submit" class="btn" onclick="sendBranches()" ${disabled}>Submit</button>
+            <button type="submit" class="btn" onclick="sendBranches()" ${disabled}><spring:theme code="myprofile.submit"/></button>
  			<input type="hidden" id="serviceId"/>
         </div>
     </div>

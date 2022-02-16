@@ -178,7 +178,7 @@
     </div>
 </div>
 
-<section class="mainSection mainSection_noPadding bg-white">
+<section class="mainSection mainSection_noPadding bg-white scale-on-resize">
     <div class="container">
         <h1 class="dashboard-headline services-headline js-dashboardWidget-headline text-center py-md-5 py-3">
             <spring:theme code="dashboard.license.services.title"/>
@@ -339,7 +339,7 @@
     </div>
 </section>
 
-<section class="container mainSection_noPaddingTop js-dashboard">
+<section class="container mainSection_noPaddingTop js-dashboard scale-on-resize">
     <div class="container row">
         <div class="Inc-title-header pt-5 col-12">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
@@ -531,7 +531,7 @@
     </div>
 </section>
 
-<section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
+<section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard scale-on-resize">
     <div class="container">
         <dashboard:opportunityTickets></dashboard:opportunityTickets>
     </div>

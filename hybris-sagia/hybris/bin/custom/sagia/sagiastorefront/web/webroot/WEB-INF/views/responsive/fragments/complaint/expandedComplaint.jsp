@@ -79,7 +79,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <ul id="messagesList " class="messageList ">
-                                <c:forEach items="${messages} " var="message ">
+                                <c:forEach items="${messages} " var="message">
                                     <li class="messageList-item ">
                                         <div class="messageList-content ">
                                             <h2 class="messageList-name ">${message.commentBy}</h2>
@@ -93,8 +93,8 @@
                             </ul>
                             
                             <div class="formTextArea">
-                                <div class="form-group ">
-                                    <textarea id="inputNewMessage " class="form-control form-control_slim " placeholder=". " style="height: 183px;"></textarea>
+                                <div class="form-group">
+                                    <textarea id="inputNewMessage" class="form-control form-control_slim " placeholder=". " style="height: 183px;"></textarea>
                                     <label class="control-label " for="inputNewMessage ">
                                         <spring:theme code="general.comments"/>
                                     </label>

@@ -6,6 +6,7 @@ import com.investsaudi.portal.core.model.ServiceRequestModel;
 import com.sap.ibso.eservices.core.constants.SagiaCoreConstants;
 import com.sap.ibso.eservices.core.model.ScpiOutCsCustomerEventProcessModel;
 import com.sap.ibso.eservices.core.model.ScpiOutServiceRequestProcessModel;
+import com.sap.ibso.eservices.core.model.ScpiOutTicketAttachmentProcessModel;
 import de.hybris.platform.cms2.servicelayer.services.CMSSiteService;
 import de.hybris.platform.comments.services.CommentService;
 import de.hybris.platform.core.model.user.CustomerModel;
@@ -170,6 +171,19 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
             scpiOutServiceRequestProcessModel.setServiceRequest(serviceRequest);
             getModelService().save(scpiOutServiceRequestProcessModel);
             businessProcessService.startProcess(scpiOutServiceRequestProcessModel);
+            sessionService.setAttribute("partnerSystem",null);
+        }
+    }
+	
+	  public void ticketAttachment2SCPI(ContactTicketModel contactTicket){
+        if (Config.getBoolean("ticketAttachment.scpi.interface.enable", true)) {
+            final ScpiOutTicketAttachmentProcessModel scpiOutTicketAttachmentProcessModel =
+                    (ScpiOutTicketAttachmentProcessModel) businessProcessService
+                            .createProcess("scpiOutTicketAttachmentProcess-" + contactTicket.getTicketID()
+                                    + "-" + System.currentTimeMillis(), "scpiOutTicketAttachmentProcess");
+            scpiOutTicketAttachmentProcessModel.setContactTicket(contactTicket);
+            getModelService().save(scpiOutTicketAttachmentProcessModel);
+            businessProcessService.startProcess(scpiOutTicketAttachmentProcessModel);
             sessionService.setAttribute("partnerSystem",null);
         }
     }

@@ -19,7 +19,7 @@
 </div>
 
                    
-<div class="js-dashboardWidget sectorAndOpportunitiesSection">
+<div class="js-dashboardWidget sectorAndOpportunitiesSection scale-on-resize">
 	<div class="dashboardWidget-body">
     	<div class="dashboardWidgetNoLicense">
         	<div class="dashboardWidgetNoLicense-tabs">
@@ -89,7 +89,7 @@
 </div>
 
 <c:if test="${not empty customerSectorCategory}">
-	<section class="Inc-energyoppertunities ">
+	<section class="Inc-energyoppertunities scale-on-resize">
 	    <div class="container">
 	        <div class="Inc-title-header py-3 py-md-5">
 	            <h1 class="Inc-secdetil-enop-header text-uppercase clr_gld col-12 mt-3 text-center">

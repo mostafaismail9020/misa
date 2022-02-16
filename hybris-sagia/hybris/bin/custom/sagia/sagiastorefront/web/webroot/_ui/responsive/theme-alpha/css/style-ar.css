@@ -22485,3 +22485,9 @@ div#contactusformModal .modal-body{
     border-radius: 113px;
 	padding: 10px;
 }
+
+@media (width:1280px) and (height:646px) {
+	.nav-menu a{
+		font-size: 10px;
+	}
+}

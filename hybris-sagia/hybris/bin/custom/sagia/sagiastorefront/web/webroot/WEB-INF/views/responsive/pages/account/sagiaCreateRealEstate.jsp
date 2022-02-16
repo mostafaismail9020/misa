@@ -502,7 +502,7 @@
                             </div>
                             <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
 
-                            <div id="realEstateupload_placeholder w-100" class="js-inputFile">
+                            <div id="realEstateupload_placeholder" class="js-inputFile w-100">
                                 <c:if test="${not empty realEstate.documentsToUpload}">
                                     <c:forEach items="${realEstate.documentsToUpload}" var="document" varStatus="count">
                                         <div class="col-md-12">
@@ -567,4 +567,5 @@
 
 <script>
     var serviceCategoryTypeCode = "${serviceCategoryTypeCode}";
+    $("#realEstateTypeTitle").html($(".realEstate-type option:selected").text());
 </script>

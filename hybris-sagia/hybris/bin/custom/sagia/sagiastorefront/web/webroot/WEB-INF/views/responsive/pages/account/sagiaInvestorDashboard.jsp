@@ -649,7 +649,7 @@
                     <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
                 </div>
                 <div class="mr-md-5">
-                    <a class="btn make-an-enquiry" href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
+                    <a class="btn make-an-enquiry  d-flex align-items-center" href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
                 </div>
             </div>
         </div>

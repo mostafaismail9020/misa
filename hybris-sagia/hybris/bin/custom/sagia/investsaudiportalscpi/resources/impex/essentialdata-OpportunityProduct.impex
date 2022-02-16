@@ -1,3 +1,5 @@
+#To create product in hybris from cpi
+
 INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
 ; InboundOpportunityProduct; INBOUND 
  

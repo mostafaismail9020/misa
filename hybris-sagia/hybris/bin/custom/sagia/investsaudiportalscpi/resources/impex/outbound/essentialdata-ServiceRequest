@@ -1,3 +1,5 @@
+#To send serviceRequest to cpi from commerce
+
 INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
 ; InboundServiceRequest; INBOUND 
  

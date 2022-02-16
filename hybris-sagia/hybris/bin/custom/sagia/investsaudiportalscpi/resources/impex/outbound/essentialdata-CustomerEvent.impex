@@ -1,3 +1,4 @@
+#To send Notes from customer to cpi from hybris
 INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
 ; CsCustomerEvent; INBOUND 
  

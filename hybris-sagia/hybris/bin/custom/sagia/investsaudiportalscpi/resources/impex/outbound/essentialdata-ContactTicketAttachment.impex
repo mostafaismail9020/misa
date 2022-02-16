@@ -1,0 +1,19 @@
+#To send attachment to copi from hybris
+
+INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
+; OpportunityMedia; INBOUND 
+ 
+INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code) 
+; OpportunityMedia	; CatalogVersion	; CatalogVersion	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; OpportunityMedia	; Media         	; Media         	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; OpportunityMedia	; Catalog       	; Catalog       	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; OpportunityMedia	; ContactTicket 	; ContactTicket 	; true	; ALL_SUB_AND_SUPER_TYPES	;  
+ 
+INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
+; OpportunityMedia:CatalogVersion	; catalog       	; CatalogVersion:catalog   	; OpportunityMedia:Catalog       	; true	;  
+; OpportunityMedia:CatalogVersion	; version       	; CatalogVersion:version   	;                                	; true	;  
+; OpportunityMedia:Media         	; catalogVersion	; Media:catalogVersion     	; OpportunityMedia:CatalogVersion	; true	;  
+; OpportunityMedia:Media         	; code          	; Media:code               	;                                	; true	;  
+; OpportunityMedia:Catalog       	; id            	; Catalog:id               	;                                	; true	;  
+; OpportunityMedia:ContactTicket 	; ticketID      	; ContactTicket:ticketID   	;                                	; true	;  
+; OpportunityMedia:ContactTicket 	; attachments   	; ContactTicket:attachments	; OpportunityMedia:Media         	; 	;  

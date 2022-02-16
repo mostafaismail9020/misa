@@ -2,32 +2,21 @@ INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code)
 ; LeadTicket; INBOUND 
  
 INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code) 
-; LeadTicket	; User            	; User            	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; LeadTicket	; CsTicketCategory	; CsTicketCategory	; 	; ALL_SUBTYPES           	;  
-; LeadTicket	; CsTicketPriority	; CsTicketPriority	; 	; ALL_SUBTYPES           	;  
-; LeadTicket	; ContactTicket   	; ContactTicket   	; true	; ALL_SUB_AND_SUPER_TYPES	;  
+; LeadTicket	; ContactTicket	; ContactTicket	; true	; ALL_SUB_AND_SUPER_TYPES	;  
  
 INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
-; LeadTicket:User            	; uid               	; User:uid                        	;                            	; true	;  
-; LeadTicket:CsTicketCategory	; code              	; CsTicketCategory:code           	;                            	; true	;  
-; LeadTicket:CsTicketPriority	; code              	; CsTicketPriority:code           	;                            	; true	;  
-; LeadTicket:ContactTicket   	; ticketID          	; ContactTicket:ticketID          	;                            	; true	;  
-; LeadTicket:ContactTicket   	; customer          	; ContactTicket:customer          	; LeadTicket:User            	; 	;  
-; LeadTicket:ContactTicket   	; sourceCode        	; ContactTicket:sourceCode        	;                            	; 	;  
-; LeadTicket:ContactTicket   	; commerceUserID    	; ContactTicket:commerceUserID    	;                            	; 	;  
-; LeadTicket:ContactTicket   	; sectorCategoryCode	; ContactTicket:sectorCategoryCode	;                            	; 	;  
-; LeadTicket:ContactTicket   	; email             	; ContactTicket:email             	;                            	; 	;  
-; LeadTicket:ContactTicket   	; c4CAccountID      	; ContactTicket:c4CAccountID      	;                            	; 	;  
-; LeadTicket:ContactTicket   	; opportunityCode   	; ContactTicket:opportunityCode   	;                            	; 	;  
-; LeadTicket:ContactTicket   	; jobTitle          	; ContactTicket:jobTitle          	;                            	; 	;  
-; LeadTicket:ContactTicket   	; headline          	; ContactTicket:headline          	;                            	; 	;  
-; LeadTicket:ContactTicket   	; category          	; ContactTicket:category          	; LeadTicket:CsTicketCategory	; 	;  
-; LeadTicket:ContactTicket   	; mobile            	; ContactTicket:mobile            	;                            	; 	;  
-; LeadTicket:ContactTicket   	; sectorCategoryName	; ContactTicket:sectorCategoryName	;                            	; 	;  
-; LeadTicket:ContactTicket   	; company           	; ContactTicket:company           	;                            	; 	;  
-; LeadTicket:ContactTicket   	; priority          	; ContactTicket:priority          	; LeadTicket:CsTicketPriority	; 	;  
-; LeadTicket:ContactTicket   	; opportunityName   	; ContactTicket:opportunityName   	;                            	; 	;  
-; LeadTicket:ContactTicket   	; contactSubject    	; ContactTicket:contactSubject    	;                            	; 	;  
-; LeadTicket:ContactTicket   	; name              	; ContactTicket:name              	;                            	; 	;  
-; LeadTicket:ContactTicket   	; message           	; ContactTicket:message           	;                            	; 	;  
-; LeadTicket:ContactTicket   	; sectorCategory    	; ContactTicket:sectorCategory    	;                            	; 	;  
+; LeadTicket:ContactTicket	; jobTitle          	; ContactTicket:jobTitle          	;            	; 	;  
+; LeadTicket:ContactTicket	; c4CAccountID      	; ContactTicket:c4CAccountID      	;            	; 	;  
+; LeadTicket:ContactTicket	; sectorCategory    	; ContactTicket:sectorCategory    	;            	; 	;  
+; LeadTicket:ContactTicket	; sectorCategoryName	; ContactTicket:sectorCategoryName	;            	; 	;  
+; LeadTicket:ContactTicket	; sourceCode        	; ContactTicket:sourceCode        	;            	; 	;  
+; LeadTicket:ContactTicket	; email             	; ContactTicket:email             	;            	; 	;  
+; LeadTicket:ContactTicket	; mobile            	; ContactTicket:mobile            	;            	; 	;  
+; LeadTicket:ContactTicket	; ticketID          	; ContactTicket:ticketID          	;            	; true	;  
+; LeadTicket:ContactTicket	; message           	; ContactTicket:message           	;            	; 	;  
+; LeadTicket:ContactTicket	; commerceUserID    	; ContactTicket:commerceUserID    	;            	; 	;  
+; LeadTicket:ContactTicket	; company           	; ContactTicket:company           	;            	; 	;  
+; LeadTicket:ContactTicket	; sectorCategoryCode	; ContactTicket:sectorCategoryCode	;            	; 	;  
+; LeadTicket:ContactTicket	; contactSubject    	; ContactTicket:contactSubject    	;            	; 	;  
+; LeadTicket:ContactTicket	; opportunityCode   	; ContactTicket:opportunityCode   	;            	; 	;  
+; LeadTicket:ContactTicket	; name              	; ContactTicket:name              	;            	; 	;  

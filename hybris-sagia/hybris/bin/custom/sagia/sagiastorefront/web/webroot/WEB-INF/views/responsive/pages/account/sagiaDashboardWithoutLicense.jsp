@@ -163,7 +163,7 @@
     </div>
 </div>
 
-<section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
+<section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard scale-on-resize">
     <div class="container">
     	<dashboard:opportunityTickets></dashboard:opportunityTickets>
     	</br>
@@ -506,7 +506,7 @@
     // var displayTutorial = ${displayTutorial};
     // var displayTutorial = false;
     $(document).ready(function(){
-    getAccordion("#tabs",768);
-});
+        getAccordion("#tabs",768);
+    });
 </script>
 

@@ -492,7 +492,7 @@
                                                 <tbody class="tableModule-body" id="ticketsTable"></tbody>
                                             </table>
                                         </div>
-                                        <div class="paginationModule paginationModule_loading">
+                                        <div class="paginationModule paginationModule_loading  mytickets-view-pagination">
                                             <c:if test="${!pageIsDashboard}">
                                                 <div style="width: 150px; position: absolute">
                                                     <select class="paginationPicker js-select2-oneColumn form-control"></select>
@@ -500,7 +500,7 @@
                                             </c:if>
                                             <div class="paginationModule-wrapper">
                                                 <button class="paginationModule-control paginationModule-control_left" disabled>
-                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
+                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
                                                 </button>
                                                 <div class="paginationModule-items">
                                                     <div class="loadingModule">
@@ -509,7 +509,7 @@
                                                     </div>
                                                 </div>
                                                 <button class="paginationModule-control paginationModule-control_right">
-                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" >
+                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" >
                                                 </button>
                                             </div>
                                             <c:if test="${pageIsDashboard}">

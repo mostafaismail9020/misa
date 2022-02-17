@@ -1,72 +1,84 @@
-[dir=rtl] .transform-180-degree{
-	transform: rotate(180deg);
-	padding-right: 10px;
-}
+
 .explore-all-btn{
 	float: right;
 }
-[dir=rtl] .explore-all-btn{
-	float: left !important;
-}
-[dir=rtl] .waring-text-ar{
-	padding-right: 20px;
-}
-[dir=rtl] .btn-simulator{
-	margin-left: 20px !important;
-}
-[dir=rtl] .text-right-ar{
-	text-align: right !important;
-	float: right !important;
-}
-@media (max-width: 767px){
-	.explore-all-btn{
-		text-align: center !important;
-		float: none !important;
-		width: max-content;
-		margin: 0 auto 15px !important;
-		display: flex;
-	}
-	
-	.card{
-		border: none !important;
-	}
-	.panel-group .panel{
-		margin-bottom: 20px;
-		padding: 0 10px;
-	}
-	.panel-group .panel-heading{
-		display: flex;
-		padding: 20px;
-		margin-bottom: 20px;
-		box-shadow: 0px 10px 25px #00000029;
-	}
-	.panel-group .panel-body{
-		padding: 0 20px;
-	}
-	.panel-group .panel-heading .panel-title a, .panel-group .panel-heading .panel-title a:hover{
-		color: #0489A3;
-		text-transform: none;
-		text-decoration: none;
-	}
 
-	[dir=rtl] #eServiceTour .modal-dialog{
-		right: calc(0%) !important;
-	}
-	[dir=rtl] .footer img.footer_logo {
-		right: 10;
-		left: auto;
-		position: relative;
-		display: block;
-	}
-	.page-dashboard-without-license .myAccount-profilImage{
-		margin-top:  0 !important;
-	}
-	.account-manager h4{
-		font-size: 20px !important;
-	}
+.potentialOpportunityServiceReq{
+	float: right;
+}
+ 
+.helpSectionBtn{
+	justify-content: center;
+}
+.imageCertifcate{
+	height: 20px;
+	width: 20px;
+	margin-right: 10px;
+}
+.Incenergyopportunities .container .dashboard-invest-btn{
+	display: inline-flex;
+    float: right;
+    margin-top: -55px;
 }
 /******** licensed dashboard responsive***/
 @media (max-width: 767px){
+	.dashboardUser-left:after {
+		content: '';
+		position: absolute;
+		top: 0px !important;
+		bottom: 0px !important;
+		width: 1px;
+	}
+	.explore-all-btn{
+		text-align: center;
+		float: none !important;
+		width: max-content;
+		margin: 0 auto 15px;
+		display: flex;
+	}
+	
+	.panel-group{
+		.panel{
+			margin-bottom: 20px;
+			padding: 0 10px;
+			&-heading{
+				display: flex;
+				padding: 20px;
+				margin-bottom: 20px;
+				box-shadow: 0px 10px 25px #00000029;
+			}
+			&-body{
+				padding: 0 20px;
+			}
+		}
+	} 
+	
+	.panel-group{
+		.panel-heading{
+			.panel-title a{
+				color: #0489A3;
+				text-transform: none;
+				text-decoration: none;
+				&:hover{
+					color: #0489A3;
+					text-transform: none;
+					text-decoration: none;
+				}
+			}
+		}
+	}  
+
+	.page-dashboard-without-license{
+		.myAccount-profilImage{
+			margin-top:  0 !important;
+		}
+		.card{
+			border: none !important;
+		}
+	} 
+	.account-manager h4{
+		font-size: 20px !important;
+	}
 	.page-dashboard .dashboardUser-entry, .page-dashboard-edit .dashboardUser-entry {
 		display: block;
 		text-align: left;
@@ -96,19 +108,34 @@
 	.dashboardWidgetLicense-action .btn+.btn{
 		margin-left: 0 !important;
 	}
-	.page-dashboard .dashboardWidget-body{
-	   display: block;
-   }
+	.page-dashboard{
+		.dashboardWidget-body{
+			display: block;
+			margin-bottom: 0;
+		}
+		
+		.dashboardUser-right{
+			border-top: 1px solid #707070;
+			padding-top: 10px;
+		}
+		.licensing-heading{
+			font-size: 25px !important;
+		}
+		.myLicenseBody .dashboardWidget-body {
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		.license .dashboardWidget{
+			padding-top: 0;	
+		}
+		.mainSection_grey{
+			padding-bottom: 0;
+		}
+	}
    .user-icon img{
 	   height: 50px;
    }
-   .page-dashboard .dashboardUser-right{
-	   border-top: 1px solid #707070;
-	   padding-top: 10px;
-   }
-   .page-dashboard .licensing-heading{
-	   font-size: 25px !important;
-   }
+   
    .sagiaNavigation-services .service-wrapper .nav-link .INS_EPM_border_set{
 	   padding: 10px 0 0 !important;
    }
@@ -117,7 +144,7 @@
 	   width: auto !important;
 	   padding: 0 20px !important;
    }
-   [dir] .modal-dialog .modal-header, [dir] .modal-dialog .modal-secondaryContent{
+   .modal-dialog .modal-header, [dir] .modal-dialog .modal-secondaryContent{
 	   padding: 60px 15px 15px;
    }
 	.modal-close{
@@ -126,7 +153,7 @@
 	.tableModule, .modal-description{
 	   margin-bottom: 0 !important;
    }
-   [dir] #licenseApplicationPayment .modal-dialog .payment-btn{
+    #licenseApplicationPayment .modal-dialog .payment-btn{
 	   padding: 5px 12px !important;
 	   margin-right: 0 !important;
 	   width: 100%;
@@ -135,13 +162,7 @@
    .pay-with-salad{
 	   padding-right: 10px;
    }
-   [dir] .page-dashboard .license .dashboardWidget{
-	padding-top: 0;	
-	}
-	.page-dashboard  .myLicenseBody .dashboardWidget-body {
-		margin-left: 15px;
-		margin-right: 15px;
-	}
+	
 	.page-dashboard .sectorAndOpportunitiesSection .dashboardWidget_inner .dashboardWidgetBanner  .dashboardWidgetBanner-tabs .dashboardWidgetBanner-tabs-body{
 		padding: 0 !important;
 	}
@@ -153,7 +174,7 @@
 		overflow-y: auto !important;
 	}
 	.dashboardWidgetTickets .tableModule::-webkit-scrollbar {
-		width: 1em;
+		width: 0.5em;
 	}
 	.dashboardWidgetTickets .tableModule::-webkit-scrollbar-track {
 		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -187,29 +208,32 @@
 	.panel-group {
 		font-size: 14px;
 	}
-	[dir] .panel-group .panel-heading {
-		padding: 20px;
-		margin-bottom: 0 !important;
-		-webkit-box-shadow: 0 10px 25px #00000029;
-		box-shadow:none !important;
-		border-radius: 0 !important;
-		border-top: 1px solid #707070;
-		border-bottom: 1px solid #707070;
-		color: #00a6be;
-		background-color: #ededed;
+	.panel-group {
+		.panel-heading {
+			padding: 20px;
+			margin-bottom: 0 !important;
+			-webkit-box-shadow: 0 10px 25px #00000029;
+			box-shadow:none !important;
+			border-radius: 0 !important;
+			border-top: 1px solid #707070;
+			border-bottom: 1px solid #707070;
+			color: #00a6be;
+			background-color: #ededed;
+		}
+		.dashboardWidget_open .panel-heading {
+			background-color: #00a6be;
+		}
+		.panel {
+			margin-bottom: 0 !important;
+		}
+		.panel-body{
+			margin: 0 -5px !important;
+		}
 	}
-	.panel-group .dashboardWidget_open .panel-heading {
-		background-color: #00a6be;
-	}
-	[dir] .panel-group .panel {
-		margin-bottom: 0 !important;
-	}
+	
 	 .dashboardWidget-headline{
 		 margin-top: 0 !important;
 	 }
-	.panel-group .panel-body{
-		margin: 0 -5px !important;
-	}
 	
 	.panel-group .panel-heading .panel-title a, .panel-group .panel-heading .panel-title a:hover{
 		font-size: 16px;
@@ -219,24 +243,31 @@
 		color: #fff !important;
 		font-size: 18px;
 	}
-	.user-icons-header{
+	.user-icons{
+		
+		&-header{
 		justify-content: center;
 		background-color: #f7f7f7;
 		border-bottom: 2px solid #707070;
 		border-top: 2px solid #707070;
 		margin-top: 20px;
 		margin-bottom: -20px;
+		}
+
+		img{
+			height: 45px;
+			margin-right: 10px;
+		}
+
+		&-block{
+			margin-top: 10px;
+			border-top: 1px dashed #707070;
+			justify-content: center;
+		}
+
 	}
-	.user-icons-header .user-icon img{
-		height: 45px;
-		margin-right: 10px;
-	}
-	.user-icons-block{
-		margin-top: 10px;
-		border-top: 1px dashed #707070;
-		justify-content: center;
-	}
-	[dir] .page-dashboard .dashboardUser-right, [dir] .page-dashboard-edit .dashboardUser-right{
+	 
+	.page-dashboard .dashboardUser-right, [dir] .page-dashboard-edit .dashboardUser-right{
 		box-shadow: 0 10px #707070;
 	}
 	.owl-carousel .owl-dots button.owl-dot{
@@ -244,55 +275,77 @@
 		height: 15px;
 	}
 	
-	[dir] .mainSection_grey{
-		padding-bottom: 0;
-	}
-	.page-dashboard .dashboardWidget-body{
-		margin-bottom: 0;
-	}
-	.apply-bidding-license-section .dashboardWidget-body-shadow{
-		box-shadow: none !important;
+	.page-dashboard-without-license {
+		.apply-bidding-license-section {
+			.dashboardWidget-body-shadow{
+				box-shadow: none;
+			}
+		}
+		.dashboardUser-wrapper{
+			.user-icon-without-license{
+				display: flex;
+				justify-content: center;
+				margin: 15px 0;
+				border-top: 1px dashed #707070;
+				padding: 15px 0;
+			}
+		}
 	}
 	.mytickets-view-pagination{
 		display: flex;
         flex-direction: row-reverse;
 	}
-	[dir=rtl] .text-ar-left{
-		text-align:justify  !important;
-	}
+	
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-	.page-dashboard .userDetail-block .container{
-		padding: 0 !important;
+	.page-dashboard {
+		.userDetail-block {
+			.container{
+				padding: 0;
+			}
+		}
+		.dashboard-tabs .nav-tabs .nav-item .nav-link{
+			font-size: 13px;
+			line-height: 15px;
+		}
+		.license .dashboardWidget{
+			padding-top: 20px;	
+		}
+		.dashboardWidget-body .dashboardWidgetTickets .overflow-y-hidden{
+			overflow-y: hidden !important;
+		}
+		h1{
+			font-size: 30px;
+		}
 	}
-	 .dashboard-tabs .nav-tabs .nav-item .nav-link{
-		 font-size: 13px;
-		 line-height: 15px;
-	 }
-	 h1{
-		 font-size: 30px;
-	 }
-	 [dir] .page-dashboard .license .dashboardWidget{
-		padding-top: 20px;	
+	 
+	
+	
+	.dashboardWidgetTickets{
+		.tableModule {
+			margin: 0 10px;
+			overflow-x: visible;
+			white-space: nowrap;
+			max-width: 100%;
+			overflow-y: auto !important;
+
+			&::-webkit-scrollbar {
+				width: 1em;
+
+				&-track{
+					box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+				}
+				&-thumb{
+					background-color: darkgrey;
+					outline: 1px solid slategrey;
+				}
+			}
+			&-table{
+				max-height: initial;
+			}
+		}
 	}
-	.dashboardWidgetTickets .tableModule {
-		margin: 0 10px;
-		overflow-x: visible;
-		white-space: nowrap;
-		max-width: 100%;
-		overflow-y: auto !important;
-	}
-	.dashboardWidgetTickets .tableModule::-webkit-scrollbar {
-		width: 1em;
-	  }
-	.dashboardWidgetTickets .tableModule::-webkit-scrollbar-track {
-		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-	  }
-	.dashboardWidgetTickets .tableModule::-webkit-scrollbar-thumb {
-		background-color: darkgrey;
-		outline: 1px solid slategrey;
-	  }
-	  .potentialOpportunityServiceReq{
+	.potentialOpportunityServiceReq{
 		width: auto !important;
 	}
 	.potentialOpportunityChatBox{
@@ -303,102 +356,12 @@
 		width: 100%;
 		justify-content: center;
 		padding-top: 10px;
-	}
-	.potentialOpportunityNewChat .btn{
-		padding: 0 25px !important;
-	}
-	.page-dashboard .dashboardWidget-body .dashboardWidgetTickets .overflow-y-hidden{
-		overflow-y: hidden !important;
-	}
-	[dir=ltr] .line-after::after{
-		border-left: none !important;
-	}
-	[dir=rtl] .line-after::after{
-		border-left: none !important;
-	}
-	.dashboardWidgetTickets-table{
-		max-height: initial;
+
+		.btn{
+			padding: 0 25px !important;
+		}
 	}
 }
-/******** licensed dashboard responsive arabic***/ 
-@media (max-width: 767px){
-	[dir=rtl].page-dashboard .dashboardUser-entry{
-		text-align: right;
-	}
-	[dir=rtl] .page-dashboard .globalMessage-msg{
-		padding-right: 80px !important;
-		padding-left: 0;
-		line-height: 25px;
-	}
-	[dir=rtl] .page-dashboard .globalMessage-icon{
-		right: 20px;
-		left: auto;
-	}
-	[dir=ltr] .line-after::after{
-		border-left: none !important;
-	}
-	[dir=rtl] .line-after::after{
-		border-left: none !important;
-	}
-	
-	[dir=rtl] .transform-180-degree{
-		padding-right: 0 !important;
-	}
-}
-[dir=rtl] .profile-icons{
-	position: relative !important;
-	bottom: 30px;
-	left: 0 !important;
-	float: left !important;
-}
-[dir=rtl] .mr-ar-5{
-	margin-right: 0 !important;
-	margin-left: 3rem !important
-}
-[dir=rtl] .profile-icons{
-	position: relative !important;
-	bottom: 30px;
-	left: 0 !important;
-	float: left !important;
-}
-[dir=rtl] .mr-ar-5{
-	margin-right: 0 !important;
-	margin-left: 3rem !important
-}
-.potentialOpportunityServiceReq{
-	float: right;
-}
-[dir=rtl] .potentialOpportunityServiceReq{
-	float: left;
-}
-[dir=rtl] .page-potential-opportunity .potential_svg_arrow{
-	transform: rotate(180deg)!important;
-}
+
 /******** licensed dashboard responsive ends***/
 
-.helpSectionBtn{
-	justify-content: center;
-}
-.imageCertifcate{
-	height: 20px;
-	width: 20px;
-	margin-right: 10px;
-}
-[dir=rtl] .line-after::after{
-	border-left: 2px solid #ededed;
-  }
-
-[dir=ltr] .license-simulator-modal-close{
-	right: 0 !important;
-	position: initial !important;
-	cursor: pointer;
-   border: none !important;
-   background: none !important;
-}
-[dir=rtl] .text-ar-left{
-	text-align: left !important;
-}
-[dir=rtl] .pl-ar-3{
-	padding-left: 0 !important;
-	padding-right: 1rem !important;
-}

@@ -33,6 +33,11 @@ function validateLoginForm(){
     if(recaptcha === ""){
         $("#lblErrorCaptcha").text("Please fill reCAPTCHA");
         valid = false;
+       }
+    if(valid === false){
+    	 $(this).find('button[type=submit]').prop("disabled", false);
+    }else{
+    	 $(this).find('button[type=submit]').prop("disabled", true);
     }
     return valid;
 }
@@ -91,7 +96,7 @@ border-color:#fd7b7b;
 
         <div class="${loginBtnClasses}">
             <ycommerce:testId code="login_Login_button">
-                <button type="submit" class="login-btn login-btn-next active">
+                <button type="submit" class="login-btn login-btn-next active"  >
                     <spring:theme code="${actionNameKey}"/>
                 </button>
             </ycommerce:testId>

@@ -6,7 +6,7 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 <%@ taglib prefix="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-<div class="Inc-title-header  py-3 py-md-5">
+<div class="Inc-title-header  py-3 py-sm-5 mt-3 mt-sm-0">
    <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
        <c:if test="${language eq 'en'}">
            <span class="clr_gld">${category.name}</span>&nbsp;<spring:theme code="dashboard.myopportunity.section"/>

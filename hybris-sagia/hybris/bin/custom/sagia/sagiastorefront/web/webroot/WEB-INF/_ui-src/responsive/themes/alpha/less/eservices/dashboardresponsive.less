@@ -206,7 +206,6 @@
 	}
 	[dir] .panel-group .panel {
 		margin-bottom: 0 !important;
-		padding: 0 !important;
 	}
 	 .dashboardWidget-headline{
 		 margin-top: 0 !important;
@@ -217,7 +216,8 @@
 	
 	.panel-group .panel-heading .panel-title a, .panel-group .panel-heading .panel-title a:hover{
 		font-size: 16px;
-		color: #00a6be !important;
+		color: #707070 !important;
+		font-weight: 600;
 	}
 	.panel-group .dashboardWidget_open  .panel-heading .panel-title a, .panel-group .dashboardWidget_open .panel-heading .panel-title a:hover{
 		color: #fff !important;
@@ -248,11 +248,12 @@
 		width: 15px;
 		height: 15px;
 	}
-	[dir=ltr] .line-after::after{
-		border-left: none !important;
+	
+	[dir] .mainSection_grey{
+		padding-bottom: 0;
 	}
-	[dir=rtl] .line-after::after{
-		border-left: none !important;
+	.page-dashboard .dashboardWidget-body{
+		margin-bottom: 0;
 	}
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -320,10 +321,17 @@
 	[dir=rtl] .page-dashboard .globalMessage-msg{
 		padding-right: 80px !important;
 		padding-left: 0;
+		line-height: 25px;
 	}
 	[dir=rtl] .page-dashboard .globalMessage-icon{
 		right: 20px;
 		left: auto;
+	}
+	[dir=ltr] .line-after::after{
+		border-left: none !important;
+	}
+	[dir=rtl] .line-after::after{
+		border-left: none !important;
 	}
 }
 [dir=rtl] .profile-icons{

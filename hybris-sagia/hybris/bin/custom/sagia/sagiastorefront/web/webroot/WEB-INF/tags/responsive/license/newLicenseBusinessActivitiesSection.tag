@@ -9,14 +9,13 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
-<div class="contentModule-section" id="temporaryLicenseTextBox" style="display: none;">
+<div class="contentModule-section license-business-activities" id="temporaryLicenseTextBox" style="display: none;">
     <div class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary.title"/></div>
     <div class="formInputBox" >
         <div class="form-group">
             <%--      	<div class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary"/></div> --%>
 
-            <textarea id="temporaryLicenseTextBoxContent" class="form-control js-quote-entry-comments" name="temporaryLicenseText" rows="10" placeholder="." value=""
-                      style="width: 100%;font-size: 14px;font-family: MyriadPro; height: 250px !important">${sagiaApplyEntityInfoForm.temporaryLicenseText}</textarea>
+            <textarea id="temporaryLicenseTextBoxContent" class="form-control js-quote-entry-comments temp-license-content" name="temporaryLicenseText" rows="10" placeholder="." value="">${sagiaApplyEntityInfoForm.temporaryLicenseText}</textarea>
             <label class="control-label control-label_mandatory" for="temporaryLicenseTextBoxContent"><spring:theme code="license.apply.business.activities.temporary"/></label>
         </div>
         <div class="help-block"></div>
@@ -67,7 +66,7 @@
     </div>
 
     <!--Modal: Use (data-toggle="modal" data-target="#businessActivities") on link or button to call it-->
-    <div class="modal fade" id="businessActivitiesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow: auto !important;">
+    <div class="modal fade overflow-auto" id="businessActivitiesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog_businessActivities" role="document">
             <div class="modal-content">
                 <form action="" class="">
@@ -271,13 +270,12 @@
 
 
 <div class="contentModule-section" id="temporaryLicenseTextBox" style="display: none;">
-<div class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary.title"/></div>
+<div class="contentModule-headline "><spring:theme code="license.apply.business.activities.temporary.title"/></div>
     <div class="formInputBox" >
-      <div class="form-group">
+      <div class="form-group license-business-activities">
 <%--      	<div class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary"/></div> --%>
 
- 	    <textarea id="temporaryLicenseTextBoxContent" class="form-control js-quote-entry-comments" rows="10" placeholder="." value=""
- 		style="width: 100%;font-size: 14px;font-family: MyriadPro; height: 250px !important"></textarea>
+ 	    <textarea id="temporaryLicenseTextBoxContent" class="form-control js-quote-entry-comments temp-license-content" rows="10" placeholder="." value=""></textarea>
 		<label class="control-label control-label_mandatory" for="temporaryLicenseTextBoxContent"><spring:theme code="license.apply.business.activities.temporary"/></label>
 	 </div>
 	 <div class="help-block"></div>

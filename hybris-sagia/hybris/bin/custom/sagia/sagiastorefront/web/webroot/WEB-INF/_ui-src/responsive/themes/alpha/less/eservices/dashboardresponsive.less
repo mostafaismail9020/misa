@@ -27,9 +27,6 @@
 		display: flex;
 	}
 	
-	[dir] .page-dashboard-without-license .dashboardUser-right {
-		margin-top: 50px;
-	}
 	.card{
 		border: none !important;
 	}
@@ -199,7 +196,7 @@
 		border-top: 1px solid #707070;
 		border-bottom: 1px solid #707070;
 		color: #00a6be;
-		background-color: #ccc;
+		background-color: #ededed;
 	}
 	.panel-group .dashboardWidget_open .panel-heading {
 		background-color: #00a6be;
@@ -217,12 +214,10 @@
 	.panel-group .panel-heading .panel-title a, .panel-group .panel-heading .panel-title a:hover{
 		font-size: 16px;
 		color: #707070 !important;
-		font-weight: 600;
 	}
 	.panel-group .dashboardWidget_open  .panel-heading .panel-title a, .panel-group .dashboardWidget_open .panel-heading .panel-title a:hover{
 		color: #fff !important;
 		font-size: 18px;
-		
 	}
 	.user-icons-header{
 		justify-content: center;
@@ -254,6 +249,16 @@
 	}
 	.page-dashboard .dashboardWidget-body{
 		margin-bottom: 0;
+	}
+	.apply-bidding-license-section .dashboardWidget-body-shadow{
+		box-shadow: none !important;
+	}
+	.mytickets-view-pagination{
+		display: flex;
+        flex-direction: row-reverse;
+	}
+	[dir=rtl] .text-ar-left{
+		text-align:justify  !important;
 	}
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -383,4 +388,11 @@
 	cursor: pointer;
    border: none !important;
    background: none !important;
+}
+[dir=rtl] .text-ar-left{
+	text-align: left !important;
+}
+[dir=rtl] .pl-ar-3{
+	padding-left: 0 !important;
+	padding-right: 1rem !important;
 }

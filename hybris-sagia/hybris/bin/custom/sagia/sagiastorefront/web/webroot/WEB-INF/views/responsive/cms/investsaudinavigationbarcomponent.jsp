@@ -197,9 +197,11 @@
 		<div id="user-icons" class="user-icons-header p-0 d-none">
 			<div class=" user-icon mr-1 mr-md-3">
 				<!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
-				<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
-					<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/>
-				</a>
+				<c:if test="${hasLicense or hasAwaitingPayment}">
+					<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
+						<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/>
+					</a>
+				</c:if>
 			</div>
 			<div class=" user-icon mr-1 mr-md-3">
 				<!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/> -->

@@ -217,7 +217,7 @@
                 <button type="button" class="btn" onclick="window.location.href='${encodedContextPath}/my-sagia/license/amend'">
                     <spring:theme code='dashboard.myLicense.amend'/><icon:edit/>
                 </button>
-                <button type="button" class="btn" onclick="window.location.href='${encodedContextPath}/my-sagia/license/renew'">
+                <button type="button" class="btn pt-3 pt-sm-0" onclick="window.location.href='${encodedContextPath}/my-sagia/license/renew'">
                     <spring:theme code='dashboard.myLicense.renew'/><icon:renew/>
                 </button>
             </div>

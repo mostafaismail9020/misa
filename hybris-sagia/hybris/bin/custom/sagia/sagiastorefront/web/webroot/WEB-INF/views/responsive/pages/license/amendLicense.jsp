@@ -33,7 +33,7 @@
 										<c:if test="${hasLicense or hasAwaitingPayment}">
 											<button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
 												<span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-												<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" style="margin-top: -3px;margin-left: -3px;"/>
+												<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
 											</button>
 										</c:if>
 									</div>
@@ -47,7 +47,7 @@
 			</div>
 	</div>
 </div>
-<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup" style="top:55%;right:10%">
+<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
     <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
     <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
     <div class="sagiaNavigation-subPane-actions">
@@ -352,9 +352,9 @@
 							</div>
 
 							<div id="entityHistoryTabId" class="contentModule">
-								<div class="contentModule-section" style="font-size: 15px;">
+								<div class="contentModule-section service-content-history">
 									<div class="row">
-										<div class="col-sm-4" style="text-align: right">
+										<div class="col-sm-4 text-right">
 											<spring:theme code="general.capital" />
 										</div>
 										<div id="capitalNewId" class="col-sm-4"></div>
@@ -362,7 +362,7 @@
 									</div>
 
 									<div class="row">
-										<div class="col-sm-4" style="text-align: right">
+										<div class="col-sm-4 text-right">
 											<spring:theme code="license.labour" />
 										</div>
 										<div id="labourNewId" class="col-sm-4"></div>
@@ -370,7 +370,7 @@
 									</div>
 
 									<div class="row">
-										<div class="col-sm-4" style="text-align: right">
+										<div class="col-sm-4 text-right">
 											<spring:theme code="license.entityname" />
 										</div>
 										<div id="entitynameNewId" class="col-sm-4"></div>
@@ -378,7 +378,7 @@
 									</div>
 
 									<div class="row">
-										<div class="col-sm-4" style="text-align: right">
+										<div class="col-sm-4 text-right">
 											<spring:theme code="license.legalstatus" />
 										</div>
 										<div id="legalstatusNewId" class="col-sm-4"></div>
@@ -432,7 +432,7 @@
 													<!-- <th id="shareholderBtnColumnId"></th> -->
 												</tr>
 											</thead>
-											<tbody id="shareholdersId" class="tableModule-body">
+											<tbody id="shareholdersId" class="tableModule-body service-share-holder-table">
 												<tr class="shareholderTemplate">
 													<td></td>
 													<td class="type"></td>
@@ -440,7 +440,7 @@
 													<td></td>
 													<td></td>
 													<td class="tableModule-bodyItem-action">
-														<button type="button" style="width: 30px !important;"
+														<button type="button service_action_btn"
 															class="btn btn_link editShareholderBtn"
 															data-toggle="modal"
 															<%-- data-target="#shareholderEditModalId" data-backdrop="static"--%>
@@ -453,7 +453,7 @@
 													</td>
 													<td>
 														<div class="deleteDropdown js-deleteDropdown">
-															<button type="button" style="width:30px !important"
+															<button type="button service_action_btn"
 																class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn">
 																<icon:remove />
 															</button>
@@ -512,19 +512,19 @@
 							<div class="contentModule">
 								<div class="contentModule-section">
 									<div class="tableModule">
-										<table>
+										<table class="service-share-holder-table">
 											<tr class="branchTemplate">
 												<td><strong></strong></td>
 												<td></td>
 												<td></td>
 												<td></td>
 												<td class="tableModule-bodyItem-action">
-													<button type="button" style="width:30px !important" class="btn btn_link editBranchBtn"
+													<button type="button" class="btn btn_link editBranchBtn service_action_btn"
 														data-toggle="modal" data-target="#branchModalId"
 														data-backdrop="static" data-keyboard="false">
 														<icon:edit />
 													</button>
-													<button type="button" style="width:30px !important" class="btn btn_link viewBranchBtn"
+													<button type="button" class="btn btn_link viewBranchBtn service_action_btn"
 														data-toggle="modal" data-target="#branchModalId"
 														data-backdrop="static" data-keyboard="false">
 														<icon:view />
@@ -532,8 +532,7 @@
 													</td>
 													<td>
 													<div class="deleteDropdown js-deleteDropdown">
-														<button type="button" style="width:30px !important"
-															class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn">
+														<button type="button" class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn service_action_btn">
 															<icon:remove />
 														</button>
 														<div class="deleteDropdown-drop">
@@ -616,14 +615,14 @@
 													<!-- <th id="productsBtnColumnId"></th> -->
 												</tr>
 											</thead>
-											<tbody id="productsId" class="tableModule-body">
+											<tbody id="productsId" class="tableModule-body service-share-holder-table">
 												<tr class="productTemplate">
 													<td><strong></strong></td>
 													<td></td>
 													<td></td>
 													<td></td>
 													<td class="tableModule-bodyItem-action">
-														<button type="button" style="width: 30px !important;" class="btn btn_link editProductBtn"
+														<button type="button" class="btn btn_link editProductBtn service_action_btn"
 															data-toggle="modal" data-target="#productModalId"
 															data-backdrop="static" data-keyboard="false">
 															<icon:edit />
@@ -631,8 +630,7 @@
 														</td>
 														<td>
 														<div class="deleteDropdown js-deleteDropdown">
-															<button type="button" style="width: 30px !important;"
-																class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn">
+															<button type="button"class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn service_action_btn">
 																<icon:remove />
 															</button>
 															<div class="deleteDropdown-drop">
@@ -1379,8 +1377,7 @@
 												<spring:theme code="license.website" />
 											</label>
 											<div class="formInputBox-append">
-												<span class="formInputBox-text formInputBox-text_tip js-tip"
-													style="position: relative; z-index: 1000;"
+												<span class="formInputBox-text formInputBox-text_tip js-tip tool-tip-info"
 													data-tip-title="Tooltip Information to be shown to the user."
 													data-original-title="" title=""> <icon:tipInfo />
 												</span>
@@ -1974,8 +1971,7 @@
 											code="license.website" />
 									</label>
 									<div class="formInputBox-append">
-										<span class="formInputBox-text formInputBox-text_tip js-tip"
-											style="position: relative; z-index: 1000;"
+										<span class="formInputBox-text formInputBox-text_tip js-tip tool-tip-info"
 											data-tip-title="Tooltip Information to be shown to the user."
 											data-original-title="" title=""><icon:tipInfo /> </span>
 									</div>

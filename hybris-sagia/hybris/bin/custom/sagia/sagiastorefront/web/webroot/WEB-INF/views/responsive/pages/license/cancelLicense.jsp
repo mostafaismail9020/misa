@@ -127,14 +127,14 @@
                     <ul id="attachmentList" class="downloadList">
                         <c:forEach items="${uploadedAttachments}" var="attachment">
                             <li class="downloadList-item">
-                                <div style="cursor: pointer;" class="downloadList-description"
+                                <div class="downloadList-description cursor-pointer"
                                      data-view-attachment-target data-object-id = "${attachment.objectId}"
                                      data-file-name="${attachment.filename}"
                                      data-document-id = "${attachment.documentID}">
                                     <span class="iconElement iconElement_pdf"><icon:pdf /></span>
                                         ${attachment.filename}
                                 </div>
-                                <div id = "attachmentsActionsDIV" class="downloadList-actions" style="cursor: pointer;"
+                                <div id = "attachmentsActionsDIV" class="downloadList-actions cursor-pointer"
                                      data-target
                                      data-object-id="${attachment.objectId}"
                                      data-document-id="${attachment.documentID}"

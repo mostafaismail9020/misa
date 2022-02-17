@@ -270,7 +270,7 @@
                                 </div>
                                 <ul id="history-list" class="historyList">
                                     <c:forEach items="${serviceList}" var="service">
-                                        <li class="historyList-item serviceItem" style="cursor: pointer;"
+                                        <li class="historyList-item serviceItem cursor-pointer"
                                             data-expand-target="expand01" data-param1="${service.srID}">
                                             <input type="hidden" id="category" value="${categoryUrl}"/>
                                             <input type="hidden" id="service" value="${serviceUrl}"/>
@@ -298,9 +298,8 @@
                     </div>
                 </div>
             </c:if>
-            <div class="expandableContent-main" id="expandedContentParent"
-                 style="${serviceList.size() == 0 ? 'visibility:hidden;' : ''}">
-                <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-3 d-none">
+            <div class="expandableContent-main" id="expandedContentParent" style="${serviceList.size() == 0 ? 'visibility:hidden;' : ''}">
+                <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div id="detailedConvertToNationalsContent" class="contentModule">
                         <div class="contentModule-section">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">

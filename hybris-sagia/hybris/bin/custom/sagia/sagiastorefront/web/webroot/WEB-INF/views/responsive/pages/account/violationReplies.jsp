@@ -26,7 +26,7 @@
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" style="margin-top: -3px;margin-left: -3px;"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
                         </c:if>
                     </div>
@@ -40,7 +40,7 @@
         </div>
     </div>
 </div>
-<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup" style="top:55%;right:10%">
+<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
     <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
     <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
     <div class="sagiaNavigation-subPane-actions">
@@ -270,10 +270,9 @@
                                                             d="M5.581 24.498h-.725v-4.573H6.17c.182 0 .409.046.59.091s.363.136.499.272c.136.135.272.271.362.452.09.181.136.363.136.589 0 .226-.045.453-.136.634-.09.18-.181.362-.317.453-.136.09-.317.271-.544.316-.227.046-.408.091-.635.091h-.544v1.675zm0-3.984v1.811h.68c.09 0 .182 0 .272-.045.09-.046.182-.09.227-.136a.947.947 0 0 0 .181-.272c.046-.09.046-.271.046-.453 0-.09 0-.18-.046-.271 0-.09-.045-.181-.136-.272a.464.464 0 0 0-.272-.226c-.136-.045-.272-.09-.453-.09l-.499-.046zM12.29 22.099c0 .362-.044.679-.135.95-.09.272-.181.498-.317.68a1.73 1.73 0 0 1-.409.407c-.136.09-.317.181-.453.226-.136.046-.272.09-.408.09H8.573v-4.527h1.36c.363 0 .726.046.998.182.272.135.544.271.725.498.182.226.318.452.454.679.136.271.18.543.18.815zm-2.175 1.856c.498 0 .861-.181 1.088-.498.226-.317.317-.77.317-1.404 0-.18 0-.362-.045-.543a1.079 1.079 0 0 0-.272-.498 1.63 1.63 0 0 0-.544-.362c-.227-.09-.499-.136-.862-.136h-.453v3.44h.77zM14.15 20.514v1.449h1.904v.498H14.15v2.037h-.771v-4.573h2.856v.544H14.15z"
                                                             fill="#FFF"></path></g></svg></span>
                                                 </div>
-                                                <div class="documentSection-name js-download-attachments"
+                                                <div class="documentSection-name js-download-attachments cursor-pointer"
                                                      data-attachments-object="${element.objectId}"
-                                                     data-attachments-file="${element.documentID}"
-                                                     style="cursor: pointer">${element.fileName}
+                                                     data-attachments-file="${element.documentID}">${element.fileName}
                                                 </div>
                                             </div>
                                         </div>

@@ -358,8 +358,17 @@
 								<div class="col-md-9 mx-0 px-0">															
 									<label class="register-terms uncased mb-0" for="termsAndConditionsRegister">
 										<spring:theme code="investor.registration.read.agree.label"/>
-										<a class="register-terms-link" target="_blank" href="/en/cms/sagia-cms-TandC-registration"><spring:theme code="investor.registration.tearm.label"/></a>
+										<a class="register-terms-link" data-toggle="modal" data-target="#termsAndConditionsModal" href=""><spring:theme code="investor.registration.tearm.label"/></a>
 									</label>
+									<div id="termsAndConditionsModal" class="modal fade" tabindex="-1" role="dialog">
+										<div class="modal-dialog">
+											<div class="modal-content">
+											<div class="modal-body terms-conditions-content">
+												<iframe width="100%" height="100%" src="/en/cms/sagia-cms-TandC-registration" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+											</div>
+											</div>
+										</div>
+									</div>
 								</div>
 								<div class="help-block"></div>
 							</div>

@@ -245,7 +245,7 @@
                 </li>
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
-                        <div class="tab-pane fade service_tab_pane_show show active pb-5 m-auto" id="govt-service1" role="tabpanel" aria-labelledby="pills-govt-tab">
+                        <div class="tab-pane fade service_tab_pane_show show pb-5 m-auto" id="govt-service1" role="tabpanel" aria-labelledby="pills-govt-tab">
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
@@ -276,7 +276,7 @@
                 </li>
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
-                        <div class="tab-pane fade service_tab_pane_show show active pb-5 m-auto" id="sagia-services1" role="tabpanel" aria-labelledby="pills-misa-tab">
+                        <div class="tab-pane fade service_tab_pane_show show pb-5 m-auto" id="sagia-services1" role="tabpanel" aria-labelledby="pills-misa-tab">
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">

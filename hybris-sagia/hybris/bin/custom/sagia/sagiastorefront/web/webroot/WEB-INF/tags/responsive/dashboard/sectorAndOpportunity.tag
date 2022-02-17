@@ -56,10 +56,10 @@
 		                                 	</div>
 		                           		</div>
 		                                <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}">
-		                                 	<div class="col-md-12 col-lg-5 section-counts sect-right-panel">
+		                                 	<div class="col-md-12 col-lg-5 section-counts sect-right-panel d-facts-figures">
 		                                       	<c:forEach var="sectorFactsFigures" items="${customerSectorCategory.sectorFactsFigures}">  
 		                                        	<div class="count-item">
-		                                             	<h5><span class="unit">${sectorFactsFigures.figures}${sectorFactsFigures.unit}</span></h5>
+		                                             	<h5><span class="unit headline-golden">${sectorFactsFigures.figures}${sectorFactsFigures.unit}</span></h5>
 		                                             	<p class="description">${sectorFactsFigures.facts}</p>
 		                                          	</div>  
 		                                       	</c:forEach>

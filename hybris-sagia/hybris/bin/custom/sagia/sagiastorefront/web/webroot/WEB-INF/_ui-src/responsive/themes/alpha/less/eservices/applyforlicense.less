@@ -178,3 +178,41 @@ a.btn:not([href]):not([tabindex]) {
     font-size: var(--content-big-font);  
     color: #707070;
 }
+
+.termsAndConditionsModal {
+	.modal-content {
+		width: 1000px;
+		height: 600px;
+		left: 50%;
+		transform: translateX(-50%);
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.termsAndConditionsModal {
+		.modal-content {
+			width: 650px;
+			height: 500px;
+		}
+	}
+}
+
+@media (min-width: 1025px) {
+	.termsAndConditionsModal {
+		.modal-content {
+			width: 950px;
+			height: 600px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.termsAndConditionsModal {
+		.modal-content {
+			width: 90%;
+			height: 90%;
+		}
+	}
+}

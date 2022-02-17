@@ -424,7 +424,7 @@
                                                 <button class="paginationModule-control paginationModule-control_left" disabled>
                                                     <!-- <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
                                                     <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;"> -->
-                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
+                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
                                                 </button>
                                                 <div class="paginationModule-items">
                                                     <div class="loadingModule">
@@ -434,7 +434,7 @@
                                                 </div>
                                                 <button class="paginationModule-control paginationModule-control_right">
                                                     <!-- <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive" id="ss_right_arrow"> -->
-                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" id="ss_right_arrow">
+                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" id="ss_right_arrow">
                                                 </button>
                                             </div>
                                             <div class="tableModule-headline">

@@ -1001,5 +1001,6 @@
     variableEditable = false;
     $(document).ready(function(){
         getAccordionWithLicense("#tabsDasboard",768);
+        $(window).resize(function () { getAccordionWithLicense("#tabsDasboard",768);});
     });
 </script>

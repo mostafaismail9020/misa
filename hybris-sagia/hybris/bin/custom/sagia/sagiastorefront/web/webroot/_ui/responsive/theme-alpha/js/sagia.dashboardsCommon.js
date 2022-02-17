@@ -558,7 +558,6 @@ function biddingCertificate(e){
 
 function getAccordion(element_id,screen) 
 {
-    $(window).resize(function () { location.reload(); });
 
 	if ($(window).width() < screen) 
 	{
@@ -577,18 +576,23 @@ function getAccordion(element_id,screen)
 			concat += '</div>';
 			concat += '</div>';
 		});
-		$("#accordion").html(concat);
+		$("#accordion").empty().append(concat);
 		$("#accordion").find('.panel-collapse:first').addClass("in");
 		$("#accordion").find('.panel-title a').attr("aria-expanded","true");
 		$("#accordion").find('.panel-title a').removeClass("collapsed");
-		$(element_id).remove();
-		$(".tab-content").remove();
+		$(element_id).hide();
+		$(".tab-content").hide();
 	}	
+    else{
+        $("#accordion").empty();
+        $(element_id).show();
+		$(".tab-content").show();
+    }
 }
+
 
 function getAccordionWithLicense(element_id,screen) 
 {
-    $(window).resize(function () { location.reload(); });
 
 	if ($(window).width() < screen) 
 	{
@@ -598,7 +602,7 @@ function getAccordionWithLicense(element_id,screen)
 		jQuery.each( obj_tabs, function( n, val ) 
 		{
 			concat += '<div id="' + n + '" class="panel panel-default">';
-			concat += '<div class="panel-heading  dashboardWidget-headline js-dashboardWidget-headline" role="tab" id="heading' + n + '">';
+			concat += '<div class="panel-heading  dashboardWidget-headline js-dashboardWidget-headline text-upercase" role="tab" id="heading' + n + '">';
 			concat += '<h5 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h5>';
 			concat += '</div>';
 			concat += '<div id="collapse' + n + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading' + n + '">';
@@ -606,11 +610,16 @@ function getAccordionWithLicense(element_id,screen)
 			concat += '</div>';
 			concat += '</div>';
 		});
-		$("#accordionDashboard").html(concat);
+		$("#accordionDashboard").empty().append(concat);
 		$("#accordionDashboard").find('.panel-collapse:first').addClass("in");
 		$("#accordionDashboard").find('.panel-title a').attr("aria-expanded","true");
 		$("#accordionDashboard").find('.panel-title a').removeClass("collapsed");
-		$(element_id).remove();
-		$(".tab-content").remove();
-	}	
+		$(element_id).hide();
+		$(".tab-content").hide();
+	}
+    else{
+        $("#accordionDashboard").empty();
+        $(element_id).show();
+		$(".tab-content").show();
+    }	
 }

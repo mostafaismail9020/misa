@@ -225,7 +225,7 @@
                 <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
                     <c:if test="${category.key=='Licensing Services'}">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5 m-auto" id="FIRST" role="tabpanel" aria-labelledby="pills-licensing-tab">
-                            <div class="p-4 serviceModule-detail mt-5 mx-2">
+                            <div class="p-4 serviceModule-detail mt-5 mx-2 border-top-0">
                                 <p class="INS_letter_set_para pb-3 mb-3 text-center">${category.value[0].category.description}</p>
                                 <c:forEach items="${category.value}" var="service">
                                     <div id="serviceModule" class="serviceModule serviceModule_list mr-5">
@@ -252,7 +252,7 @@
                 </c:forEach>
                 
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="GOVERNMENTAL SERVICES" role="tabpanel" aria-labelledby="pills-govt-tab" role="tablist">
-                        <div class="p-4 serviceModule-detail mt-5 mx-2">
+                        <div class="p-4 serviceModule-detail mt-5 mx-2 border-top-0">
                             <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>
@@ -301,7 +301,7 @@
                    
 
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
-                        <div class="p-4 serviceModule-detail mt-5 mx-2">
+                        <div class="p-4 serviceModule-detail mt-5 mx-2 border-top-0">
                             <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>

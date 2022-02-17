@@ -454,20 +454,20 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated">
-                                        <dt data-name="street"><spring:theme code="address.streetorunitno"/></dt>
-                                        <dd class="register-user-details"><span name="street">${license.address.street} / ${license.address.houseNo}</span></dd>
-                                        <dt><spring:theme code="general.country"/></dt>
-                                        <dd class="register-user-details"><span name="country">${license.address.country}</span></dd>
-                                        <dt><spring:theme code="address.postalcodeorcity"/></dt>
-                                        <dd class="register-user-details"><span name="zipCode">${license.address.zipCode}</span></dd>
+                                        <dt class="headline-golden" data-name="street"><spring:theme code="address.streetorunitno"/></dt>
+                                        <dd class=""><span name="street">${license.address.street} / ${license.address.houseNo}</span></dd>
+                                        <dt class="headline-golden"><spring:theme code="general.country"/></dt>
+                                        <dd class=""><span name="country">${license.address.country}</span></dd>
+                                        <dt class="headline-golden"><spring:theme code="address.postalcodeorcity"/></dt>
+                                        <dd class=""><span name="zipCode">${license.address.zipCode}</span></dd>
                                     </dl>
                                 </div>
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated">
-                                        <dt><spring:theme code="license.additionalnumber"/></dt>
-                                        <dd class="register-user-details"><span name="additNo">${license.address.additionalNotes}</span></dd>
-                                        <dt><spring:theme code="address.buildingno"/></dt>
-                                        <dd class="register-user-details"><span name="building">${license.address.building}</span></dd>
+                                        <dt class="headline-golden"><spring:theme code="license.additionalnumber"/></dt>
+                                        <dd class=""><span name="additNo">${license.address.additionalNotes}</span></dd>
+                                        <dt class="headline-golden"><spring:theme code="address.buildingno"/></dt>
+                                        <dd class=""><span name="building">${license.address.building}</span></dd>
                                     </dl>
                                 </div>
                             </div>

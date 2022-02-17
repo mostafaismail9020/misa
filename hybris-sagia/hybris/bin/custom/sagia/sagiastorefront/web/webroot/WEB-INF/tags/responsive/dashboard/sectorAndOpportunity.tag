@@ -29,7 +29,7 @@
                      		<div class="dashboardWidget-body">                        
                         		<div class="dashboardWidgetBanner">
 	                           		<div class="dashboardWidgetBanner-tabs js-dashboardWidgetBanner-tabs ">
-	                           			<div class="dashboardWidgetBanner-tabs-body col-12 d-invest-with-us">
+										<div class="dashboardWidgetBanner-tabs-body d-invest-with-us <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}"> col-xl-7 </c:if> col-md-12" >
 	                              			<div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header clr_gld">
                                  				<!-- ${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/> -->
                               				</div>
@@ -37,7 +37,7 @@
 		                                            <p class="invest-with-us-description">${customerSectorCategory.overview} </p>
 		                                       	</c:if>
 		                                    <!-- <p class="invest-with-us-description">${sector.sectorDetails}</p> -->
-		                                    <div class="row m-auto justify-content-center">	
+		                                    <div class="row m-auto justify-content-center d-d-invest-actions">	
 		                                       	<c:if test="${sector.sectorCode ne 'Others'}">
 		                                   			<div class="dashboardWidgetBanner-action">
 		                                   				<a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn-dashboard">
@@ -64,7 +64,24 @@
 		                                          	</div>  
 		                                       	</c:forEach>
 		                                    </div>
-		                				</c:if>                              
+		                				</c:if> 
+										<div class="row m-auto justify-content-center d-m-invest-actions">	
+											<c:if test="${sector.sectorCode ne 'Others'}">
+												<div class="dashboardWidgetBanner-action">
+													<a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn-dashboard">
+														<spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/>
+														<img class="pl-3 transform-180-degree"  src="${commonResourcePath}/images/arow_btn.png"/>
+													</a>
+												</div>
+											</c:if>
+											<c:if test="${sector.sectorCode eq 'Others'}">
+											 <div class="dashboardWidgetBanner-action">
+												  <a href="https://investsaudi.sa/en/sectors-opportunities/opportunities/" class="btn btn_round btn_outline">
+													  <spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>
+												  </a>
+											 </div>
+											</c:if>
+									  </div>                              
                            			</div>
 		                           <%--<div class="row">	
 		                              <c:if test="${sector.sectorCode ne 'Others'}">

@@ -469,22 +469,25 @@ $(document).ready(function () {
 $(document).ready(function(){
     // Floating Button 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > 100) {
-		  $('#header').addClass('header-scrolled');
-		  $('#topbar').addClass('topbar-scrolled');
-		  $('#login-Navigation').addClass('login-scrolled');
-		} else {
-		  $('#header').removeClass('header-scrolled');
-		  $('#topbar').removeClass('topbar-scrolled');
-		  $('#login-Navigation').removeClass('login-scrolled');
-		}
-	  });
-	
-	  if ($(window).scrollTop() > 100) {
-		$('#header').addClass('header-scrolled');
-		$('#topbar').addClass('topbar-scrolled');
-		$('#login-Navigation').addClass('login-scrolled');
-	  }
+        if ($(this).scrollTop() > 100) {
+            $('#header').addClass('header-scrolled');
+            $('#topbar').addClass('topbar-scrolled');
+            $('#user-icons').addClass('d-flex top-scrolled d-sm-none').find('d-none').removeClass('d-none');
+            $('#login-Navigation').addClass('login-scrolled');
+          } else {
+            $('#header').removeClass('header-scrolled');
+            $('#topbar').removeClass('topbar-scrolled');
+            $('#user-icons').removeClass('d-flex top-scrolled d-sm-none').find('user-icons-header').addClass('d-none');
+            $('#login-Navigation').removeClass('login-scrolled');
+          }
+        });
+      
+        if ($(window).scrollTop() > 100) {
+          $('#header').addClass('header-scrolled');
+          $('#topbar').addClass('topbar-scrolled');
+          $('#user-icons').addClass('top-scrolled');
+          $('#login-Navigation').addClass('login-scrolled');
+        }
 
    // Video Modal Popup
 	var url = $("#cartoonVideo").attr('src');

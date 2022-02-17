@@ -1,3 +1,5 @@
+#To update similar products in hybris from commerce
+
 INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
 ; InboundSimilarProduct; INBOUND 
  

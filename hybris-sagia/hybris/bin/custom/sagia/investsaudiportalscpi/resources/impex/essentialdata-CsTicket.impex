@@ -1,3 +1,4 @@
+#To update ticket status from cpi to commerce
 INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
 ; InboundOpportunity; INBOUND 
  

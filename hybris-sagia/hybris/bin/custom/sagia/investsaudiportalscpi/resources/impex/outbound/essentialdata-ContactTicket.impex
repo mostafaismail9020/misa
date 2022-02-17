@@ -1,0 +1,24 @@
+#To send ContactTicket from commerce to CPI
+
+INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
+; LeadTicket; INBOUND 
+ 
+INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code) 
+; LeadTicket	; ContactTicket	; ContactTicket	; true	; ALL_SUB_AND_SUPER_TYPES	;  
+ 
+INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
+; LeadTicket:ContactTicket	; jobTitle          	; ContactTicket:jobTitle          	;            	; 	;  
+; LeadTicket:ContactTicket	; c4CAccountID      	; ContactTicket:c4CAccountID      	;            	; 	;  
+; LeadTicket:ContactTicket	; sectorCategory    	; ContactTicket:sectorCategory    	;            	; 	;  
+; LeadTicket:ContactTicket	; sectorCategoryName	; ContactTicket:sectorCategoryName	;            	; 	;  
+; LeadTicket:ContactTicket	; sourceCode        	; ContactTicket:sourceCode        	;            	; 	;  
+; LeadTicket:ContactTicket	; email             	; ContactTicket:email             	;            	; 	;  
+; LeadTicket:ContactTicket	; mobile            	; ContactTicket:mobile            	;            	; 	;  
+; LeadTicket:ContactTicket	; ticketID          	; ContactTicket:ticketID          	;            	; true	;  
+; LeadTicket:ContactTicket	; message           	; ContactTicket:message           	;            	; 	;  
+; LeadTicket:ContactTicket	; commerceUserID    	; ContactTicket:commerceUserID    	;            	; 	;  
+; LeadTicket:ContactTicket	; company           	; ContactTicket:company           	;            	; 	;  
+; LeadTicket:ContactTicket	; sectorCategoryCode	; ContactTicket:sectorCategoryCode	;            	; 	;  
+; LeadTicket:ContactTicket	; contactSubject    	; ContactTicket:contactSubject    	;            	; 	;  
+; LeadTicket:ContactTicket	; opportunityCode   	; ContactTicket:opportunityCode   	;            	; 	;  
+; LeadTicket:ContactTicket	; name              	; ContactTicket:name              	;            	; 	;  

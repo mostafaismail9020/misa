@@ -49,7 +49,7 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_grey">
+<div class="mainSection mainSection_grey  scale-on-resize">
     <div class="container">
         <div class="col-xs-12 col-md-12 services-category-list p-0 p-md-2">
             <ul class="nav nav-pills sagiaNavigation-services" id="pills-tab" role="tablist">

@@ -1,3 +1,5 @@
+#To create customer from cpi to commerce
+
 INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
 ; InboundAccount; INBOUND 
  

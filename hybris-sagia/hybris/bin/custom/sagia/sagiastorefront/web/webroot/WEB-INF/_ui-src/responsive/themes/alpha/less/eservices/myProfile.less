@@ -2753,62 +2753,6 @@ button:focus {
 .btn{
     height: 50px;
 }
-@media (min-width:1500px) and (max-width:1669px) and (max-height:800px) {/*125%*/
-    .formInputBox .form-control,.formSelectBox .form-group .select2-container--default,.formInputFile .form-control
-    ,.page-sagia-profile .myAccount-profilImage-change,.register-contry-info,.register-user-details.validate-mobile
-    ,.uploadFile,.formInputFile .form-icon{
-        height: 50px !important;
-    }
-    .formInputBox .form-control:placeholder-shown+.control-label{
-        top: 20px !important;
-    }
-    .formInputBox .control-label{
-        left: 20px !important;
-    }
-    .form-control, .formInputBox .form-control{
-        font-size: var(--textfield-font) !important;
-    }
-    .formInputBox .form-control:placeholder-shown+.control-label, .formInputFile .form-control+.control-label, .formSelectBox .control-label, .formSelectBox .select2.select2-container--disabled+.control-label{
-        font-size: var(--label-font) !important;
-    }
-    .formSelectBox .control-label{
-		top: 20px;
-	}
-	.formSelectBox .form-group label{
-		left: 17px!important;
-	}
-    .select2.select2-container .select2-selection:after{
-        top: 0px !important;
-    }
-    .btn{
-        height: 45px;
-    }
-}
-@media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150% resolution*/
-    .formInputBox .form-control,.formSelectBox .form-group .select2-container--default,.formInputFile .form-control
-    ,.page-sagia-profile .myAccount-profilImage-change,.register-contry-info,.register-user-details.validate-mobile
-    ,.uploadFile,.formInputFile .form-icon{
-        height: 45px !important;
-    }
-    .formInputBox .form-control:placeholder-shown+.control-label,.formSelectBox .control-label{
-        top: 20px !important;
-    }
-    .formInputBox .control-label{
-        left: 20px !important;
-    }
-    .form-control, .formInputBox .form-control{
-        font-size: var(--textfield-font) !important;
-    }
-    .formInputBox .form-control:placeholder-shown+.control-label, .formInputFile .form-control+.control-label, .formSelectBox .control-label, .formSelectBox .select2.select2-container--disabled+.control-label{
-        font-size: var(--label-font) !important;
-    }
-    .select2.select2-container .select2-selection:after{
-        top: 0px !important;
-    }
-    .btn{
-        height: 40px;
-    }
-}
 .mobile-code-wrapper{
 	.mobile-code-label{
 		left: 30% !important;
@@ -2867,6 +2811,9 @@ button:focus {
     }
 }
 
+.page-appointments .contentModule-filter .select2.select2-container .select2-selection:after{
+    top:7px !important;
+}
 @media  (max-width:767px) {
     .page-new-apply-contactperson .panelTabs_separated, .page-new-license-apply .panelTabs_separated,
     .page-shareholder-apply .panelTabs_separated, .page-new-apply-review .panelTabs_separated{
@@ -2904,4 +2851,198 @@ button:focus {
          }
        }
      }
+     .page-appointment-create #requestSubmittedApply .js-close-btn{
+        padding-top: 15px;
+    }
+    .page-appointment-create #appointmentModel .appointmentDetails_forms .formSelectBox .select2-container .select2-selection__rendered{
+        overflow: hidden;
+        width: 75% !important;
+    }
+    .page-appointment-create #appointmentModel .appointmentDetails_forms .formSelectBox {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .page-appointment-create #appointmentModel .formInputBox{
+        margin-bottom: 0;
+    }
+    .page-appointment-create .appointmentDetails .contentModule-actions .btn,
+    .page-appointment-create  .mainSection-linkActions + div, .page-appointment-create .appointments_create{
+        width: 100% !important;
+    }
+    .page-appointment-create .mw0, .page-appointment-create .mw2,
+    .page-appointment-create .mw3,
+    .page-appointment-details .contentModule-section .mw0 {
+        max-width: 100% !important;
+    }
+    .page-appointment-create #requestSubmittedApply .modal-description{
+        margin-bottom: 15px !important;
+    }
+     .page-appointments{
+        .mainSection{
+            margin-top: 0 !important;
+            .searchInputBox{
+                margin-top: 20px;
+            }
+            .contentModule-filter{
+                width: 100% !important;
+            }
+        }
+        .panelModule{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .paginationModule{
+            margin-top: 50px;
+            .paginationModule-items_middleNumbers .paginationModule-item:nth-child(1) {
+                    margin-right: 5px;
+            }
+        }
+        .appointmentControl-calendar{
+            margin-top: 50px;
+            #appointmentCalendar{
+                padding: 30px 10px;
+                .calendar-legend{
+                    border-radius: 30px;
+                    li{
+                        font-size: 20px !important;
+                        margin: 5px 17px;
+                        &::before{
+                            margin-right: 8px;
+                        }
+                    }
+                }
+                .calendar-control-bar{
+                    .calendar-control-widget{
+                        .control-bar-title{
+                            font-size: 16px !important;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+     }
+     .page-appointment-details{
+        .appointmentDetails{
+            .dlList{
+                dt{
+                    width: 37%;
+                }
+            }
+        }
+        .page-content-position{
+            .mainSection-linkActions{
+                div.w-25{
+                    width: 100% !important;
+                }
+
+            }
+        }
+     }
+
+    .page-license-bidding .achievement_header .banner-container, .page-appointment-create .achievement_header .banner-container,
+    .page-appointment-details .achievement_header .banner-container, .page-appointments .banner-container{
+        top:15% !important;
+    }
+    .page-license-bidding .achievement_header .banner-container h1, .page-appointment-details .achievement_header .banner-container h1,
+    .page-appointment-create .achievement_header .banner-container h1, .page-appointments .achievement_header .banner-container h1{
+        font-size: 40px;
+    }
+}
+@media (min-width: 576px) and (max-width:767px) {
+    .page-appointment-details .appointmentDetails .dlList dt{
+        width: 100%;
+    }
+    .page-appointment-details .appointmentDetails .service-main-div .service-hr-line .dlList_separated dd{
+        margin-top: 30px;
+    }
+    .page-appointment-details .appointmentDetails .service-main-div .service-hr-line .dlList_separated dt{
+        line-height: normal;
+    }
+    .page-appointment-details  .print_btn{
+        width: 50% !important;
+    }
+}
+@media (min-width: 768px) and (max-width:991px) {
+    .page-appointment-create #requestSubmittedApply .js-close-btn{
+        padding-top: 15px;
+    }
+    .page-appointment-create  .mainSection-linkActions + div, .page-appointment-create #appointmentModel .select2-container .select2-selection--single .select2-selection__rendered{
+        width: 75% !important;
+    }
+
+    .page-appointment-create .mw0, .page-appointment-create .mw2,
+    .page-appointment-create .mw3, .page-appointment-details .contentModule-section .mw0 {
+        max-width: 30% !important;
+        width: 30% !important;
+    }
+
+    #companyRepresentativeSection #companyRepresentativeForm1 .contentModule-headline,
+    #companyRepresentativeSection #companyRepresentativeForm2 .contentModule-headline,
+    #companyRepresentativeSection #companyRepresentativeForm3 .contentModule-headline {
+        width: 75% !important;
+    }
+    .notifyCount{
+        top: 0;;
+    }
+    .page-appointment-details .appointmentDetails .dlList dt{
+        width: 35%;
+    }
+    .page-appointment-details .appointmentDetails .service-main-div .service-hr-line .dlList_separated dd{
+        margin-top: 30px;
+    }
+    .page-appointment-details .appointmentDetails .service-main-div .service-hr-line .dlList_separated dt{
+        line-height: normal;
+    }
+    .page-appointment-details  .print_btn, .page-appointment-details .page-content-position .mainSection-linkActions div.w-25,
+    .page-appointment-create .appointments_create,  .page-appointment-create .appointmentDetails .contentModule-actions .btn{
+        width: 50% !important;
+    }
+
+    .page-appointments{
+        .mainSection{
+            .contentModule-filter{
+                width: 50%;
+            }
+            .appointmentList_hasTopBoder{
+                .appointmentList-entry{
+                    &:first-child{
+                        padding-top: 25px;
+                    }
+                    .appointmentList-locationBtn{
+                       width: 100% !important;
+                    }
+                    .appointmentList-status{
+                        position: relative;
+                        .appointmentList-status-value{
+                            span{
+                                line-height: 40px;
+                            }
+                            &::after{
+                                position: absolute;
+                                top:20%;
+                                right: 0;
+                            }
+                        }
+                    }
+                    .appointmentList-view{
+                        span{
+                            line-height: normal;
+                        }
+                    }
+                }
+            }
+        }
+        .appointmentControl-calendar{
+            #appointmentCalendar{
+                .calendar-control-bar{
+                    .calendar-control-widget{
+                        .control-bar-title{
+                            font-size: 16px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

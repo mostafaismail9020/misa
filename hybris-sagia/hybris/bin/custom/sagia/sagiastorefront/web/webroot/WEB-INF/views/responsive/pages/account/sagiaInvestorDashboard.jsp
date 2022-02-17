@@ -98,25 +98,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="dashboardUser-right col-md-6 px-0">
-                    <div class="col-6 p-0 px-md-3">
+                <div class="dashboardUser-right d-block d-sm-flex col-md-6 px-0">
+                    <div class="col-12 col-md-6 p-0 px-md-3">
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
                         	<!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
                             <div class="account-manager"><h4 class="clr_gld"><spring:theme code="dashboard.license.account.manager.title"/></h4></div>
                             <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-value h5"><c:out value='${user.name}'/></span></div>
-                            <div class="dashboardUser-label profile-detail"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
-                            <div class="dashboardUser-label profile-detail"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
+                            <div class="dashboardUser-label profile-detail pt-3"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
+                            <div class="dashboardUser-label profile-detail pt-3"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
                             <!--  <button class="btn-dashboard text-uppercase">service request</button> -->
                         </div>
                     </div>
-                    <div class="col-6 d-flex p-0">
-                        <div class=" user-icon mr-1 mr-md-3">
+                    <div class="col-12 col-md-6 d-flex p-0 user-icons-block">
+                        <div class=" user-icon mr-3">
                             <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
                             <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
                                 <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/>
                             </a>
                         </div>
-                        <div class=" user-icon mr-1 mr-md-3">
+                        <div class=" user-icon mr-3">
                             <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/> -->
                             
 
@@ -178,7 +178,7 @@
     </div>
 </div>
 
-<section class="mainSection mainSection_noPadding bg-white">
+<section class="mainSection mainSection_noPadding bg-white scale-on-resize">
     <div class="container">
         <h1 class="dashboard-headline services-headline js-dashboardWidget-headline text-center py-md-5 py-3">
             <spring:theme code="dashboard.license.services.title"/>
@@ -339,7 +339,7 @@
     </div>
 </section>
 
-<section class="container mainSection_noPaddingTop js-dashboard">
+<section class="container mainSection_noPaddingTop js-dashboard scale-on-resize">
     <div class="container row">
         <div class="Inc-title-header pt-5 col-12">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
@@ -354,9 +354,9 @@
     </div>
 </section>
 
-<section class="container mainSection mainSection_noPadding bg-white">
+<section class="container mainSection mainSection_noPadding bg-white p-0">
     <div class="">
-            <div class="container dashboardUser dashboardUser_slim dashboardUser_noBorder">
+            <div class="container dashboardUser dashboardUser_slim dashboardUser_noBorder p-0">
                 <div class="dashboard-tabs">
                     <ul class="nav nav-tabs mb-0 dashboard-licenses-navs" role="tablist" id="tabsDasboard">
                         <li class="nav-item" id="js-myLicense"> <a class="nav-link active" href="#myLicense" role="tab" data-toggle="tab"><spring:theme code="myLicense.title"/></a>
@@ -531,7 +531,7 @@
     </div>
 </section>
 
-<section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
+<section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard scale-on-resize">
     <div class="container">
         <dashboard:opportunityTickets></dashboard:opportunityTickets>
     </div>

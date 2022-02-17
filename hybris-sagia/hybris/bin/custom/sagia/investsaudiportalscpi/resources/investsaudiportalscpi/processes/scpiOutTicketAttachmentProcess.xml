@@ -1,0 +1,13 @@
+
+<process xmlns="http://www.hybris.de/xsd/processdefinition" start="sendTicketAttachment" name="scpiOutTicketAttachmentProcess"
+         processClass="com.sap.ibso.eservices.core.model.ScpiOutTicketAttachmentProcessModel" onError="error">
+
+    <action id="sendTicketAttachment" bean="sendTicketAttachmentToScpiAction">
+        <transition name="OK" to="success"/>
+        <transition name="NOK" to="error"/>
+    </action>
+
+    <end id="error" state="ERROR">Something went wrong while sending ticket attachment to SCPI.</end>
+    <end id="failed" state="FAILED">Process failed while sending ticket attachment to SCPI.</end>
+    <end id="success" state="SUCCEEDED">ticket attachment sent successfully to SCPI.</end>
+</process>

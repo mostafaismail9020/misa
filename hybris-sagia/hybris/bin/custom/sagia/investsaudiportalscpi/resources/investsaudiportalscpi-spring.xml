@@ -100,7 +100,7 @@
 		
 
 	<bean id="scpiOutTicketAttachmentProcessDefResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
-		<property name="resource" value="classpath:/investsaudiportalscpi/processes/scpiOutTicketAttachmentprocess.xml"/>
+		<property name="resource" value="classpath:/investsaudiportalscpi/processes/scpiOutTicketAttachmentProcess.xml"/>
 	</bean>
 
 	<bean id="sendTicketAttachmentToScpiAction" class="com.investsaudiportal.scpi.outbound.actions.SendServiceRequestToScpiAction" parent="abstractAction"/>

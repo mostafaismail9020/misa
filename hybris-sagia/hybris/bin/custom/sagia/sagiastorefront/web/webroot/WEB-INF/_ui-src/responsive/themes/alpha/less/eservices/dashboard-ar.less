@@ -1,0 +1,118 @@
+[dir="rtl"]{
+    /***desktop arabic css***/
+	.profile-icons{
+		position: relative ;
+		bottom: 30px;
+		left: 0 ;
+		float: left ;
+	}
+	.mr-ar-5{
+		margin-right: 0 ;
+		margin-left: 3rem;
+	}
+	.potentialOpportunityServiceReq{
+		float: left;
+	}
+	// .page-potential-opportunity .potential_svg_arrow{
+	// 	transform: rotate(180deg)!important;
+	// }
+	.line-after::after{
+		border-left: 2px solid #ededed;
+	}
+	.license-simulator-modal-close{
+		right: 0 ;
+		position: initial;
+		cursor: pointer;
+	   border: none ;
+	   background: none;
+	}
+	.text-ar-left{
+		text-align: left !important;
+	}
+	.pl-ar-3{
+		padding-left: 0 !important;
+		padding-right: 1rem !important;
+	}
+    .explore-all-btn{
+        float: left ;
+    }
+     .waring-text-ar{
+        padding-right: 20px;
+    }
+    .btn-simulator{
+        margin-left: 20px !important;
+    }
+    .text-right-ar{
+        text-align: right;
+        float: right ;
+    }
+    .transform-180-degree{
+        transform: rotate(180deg);
+    }
+    .license-customize-align{
+        float: left;
+    }
+    .modal-content{  
+        border-radius: 25px;
+    }
+    .dashboardUser-image-add{
+        background: none;
+        border: none;
+    }
+    .page-dashboard-without-license .dashboardUser-right.user-icon{
+        justify-content: left;
+    }
+    .page-dashboard-without-license .btn-simulator img{
+        padding-right: 1rem;
+        transform: rotate(180deg);
+    }
+    .process-arrow-icon img{
+        transform: rotate(180deg);
+    }
+    .owl-prev img, .owl-nav img{
+        transform: rotate(180deg);
+    }
+    /******* mobile Responsive *****/
+    @media (max-width: 767px){
+        #eServiceTour .modal-dialog{
+			right: calc(0%) !important;
+		}
+       
+		.dashboardUser-image-add{
+			background: none;
+			border: none;
+		}
+		.page-dashboard-without-license{
+            .btn-simulator{
+                margin-right:  0 !important;
+            }
+        } 
+		.page-dashboard {
+            .dashboardUser{
+                &-entry{
+                    text-align: right;
+                }
+            }
+            .globalMessage{
+                &-msg{
+                    padding-right: 80px !important;
+                    padding-left: 0;
+                    line-height: 25px;
+                }
+                &-icon{
+                    right: 20px;
+                    left: auto;
+                }
+            }
+        }
+			
+        .line-after::after{
+            border-left: none !important;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .line-after::after{
+            border-left: none !important;
+        }
+    }
+}

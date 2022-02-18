@@ -245,7 +245,7 @@
                 </li>
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
-                        <div class="tab-pane fade service_tab_pane_show show active pb-5 m-auto" id="govt-service1" role="tabpanel" aria-labelledby="pills-govt-tab">
+                        <div class="tab-pane fade service_tab_pane_show show pb-5 m-auto" id="govt-service1" role="tabpanel" aria-labelledby="pills-govt-tab">
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
@@ -276,7 +276,7 @@
                 </li>
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
-                        <div class="tab-pane fade service_tab_pane_show show active pb-5 m-auto" id="sagia-services1" role="tabpanel" aria-labelledby="pills-misa-tab">
+                        <div class="tab-pane fade service_tab_pane_show show pb-5 m-auto" id="sagia-services1" role="tabpanel" aria-labelledby="pills-misa-tab">
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
@@ -424,7 +424,7 @@
                                                 <button class="paginationModule-control paginationModule-control_left" disabled>
                                                     <!-- <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
                                                     <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;"> -->
-                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
+                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
                                                 </button>
                                                 <div class="paginationModule-items">
                                                     <div class="loadingModule">
@@ -434,7 +434,7 @@
                                                 </div>
                                                 <button class="paginationModule-control paginationModule-control_right">
                                                     <!-- <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive" id="ss_right_arrow"> -->
-                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" id="ss_right_arrow">
+                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" id="ss_right_arrow">
                                                 </button>
                                             </div>
                                             <div class="tableModule-headline">
@@ -492,7 +492,7 @@
                                                 <tbody class="tableModule-body" id="ticketsTable"></tbody>
                                             </table>
                                         </div>
-                                        <div class="paginationModule paginationModule_loading">
+                                        <div class="paginationModule paginationModule_loading  mytickets-view-pagination">
                                             <c:if test="${!pageIsDashboard}">
                                                 <div style="width: 150px; position: absolute">
                                                     <select class="paginationPicker js-select2-oneColumn form-control"></select>
@@ -500,7 +500,7 @@
                                             </c:if>
                                             <div class="paginationModule-wrapper">
                                                 <button class="paginationModule-control paginationModule-control_left" disabled>
-                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
+                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
                                                 </button>
                                                 <div class="paginationModule-items">
                                                     <div class="loadingModule">
@@ -509,7 +509,7 @@
                                                     </div>
                                                 </div>
                                                 <button class="paginationModule-control paginationModule-control_right">
-                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" >
+                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" >
                                                 </button>
                                             </div>
                                             <c:if test="${pageIsDashboard}">
@@ -649,7 +649,7 @@
                     <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
                 </div>
                 <div class="mr-md-5">
-                    <a class="btn make-an-enquiry  d-flex align-items-center" href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
+                    <a class="btn make-an-enquiry  d-flex align-items-center justify-content-center" href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
                 </div>
             </div>
         </div>

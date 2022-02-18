@@ -27,7 +27,7 @@
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" style="margin-top: -3px;margin-left: -3px;"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
                         </c:if>
                     </div>
@@ -41,7 +41,7 @@
         </div>
     </div>
 </div>
-<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup" style="top:55%;right:10%">
+<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
     <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
     <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
     <div class="sagiaNavigation-subPane-actions">
@@ -225,7 +225,7 @@
                 <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
                     <c:if test="${category.key=='Licensing Services'}">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5 m-auto" id="FIRST" role="tabpanel" aria-labelledby="pills-licensing-tab">
-                            <div class="p-4 serviceModule-detail mt-5 mx-2">
+                            <div class="p-4 serviceModule-detail mt-5 mx-2 border-top-0">
                                 <p class="INS_letter_set_para pb-3 mb-3 text-center">${category.value[0].category.description}</p>
                                 <c:forEach items="${category.value}" var="service">
                                     <div id="serviceModule" class="serviceModule serviceModule_list mr-5">
@@ -252,7 +252,7 @@
                 </c:forEach>
                 
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="GOVERNMENTAL SERVICES" role="tabpanel" aria-labelledby="pills-govt-tab" role="tablist">
-                        <div class="p-4 serviceModule-detail mt-5 mx-2">
+                        <div class="p-4 serviceModule-detail mt-5 mx-2 border-top-0">
                             <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>
@@ -301,7 +301,7 @@
                    
 
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
-                        <div class="p-4 serviceModule-detail mt-5 mx-2">
+                        <div class="p-4 serviceModule-detail mt-5 mx-2 border-top-0">
                             <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>

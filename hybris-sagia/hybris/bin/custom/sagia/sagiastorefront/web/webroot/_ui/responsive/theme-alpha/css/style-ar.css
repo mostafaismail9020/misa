@@ -22490,3 +22490,33 @@ div#contactusformModal .modal-body{
 		font-size: 10px;
 	}
 }
+
+
+label.lang-btn{
+	margin-bottom: 2px;
+}
+.page-dashboard #dashboard-carousel .owl-nav .owl-prev {
+	left: 9% !important;
+}
+.page-dashboard #dashboard-carousel .owl-nav .owl-next {
+	right: 8% !important;
+}
+#logoutModal .js-formInputFileBox .modal-close.bttn_close{
+	border-radius: 25px!important;
+	border: 0px solid #00a6be!important;
+	top: 5px;
+	right: 10px;
+}
+@media screen and (max-width:640px) {
+	.header-user-name{
+		display: none;
+	}
+	.sagiaNavigation-user{
+		margin-right: 0;
+	}
+}
+@media screen and (min-width:1200px) {
+	.header-user-icon{
+		padding-right: 1rem;
+	}
+}

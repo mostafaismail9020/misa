@@ -22,12 +22,12 @@
             </a> -->
         </div>
     </div>
-    <div class="text-right my-md-5 d-none d-sm-block">
+    <div class="text-right my-md-5 d-none d-sm-block text-ar-left">
         <a href="${encodedContextPath}/my-sagia/license/convert" class="btn-outline dashboardWidget-headline-action-link">
             <spring:theme code="convertlicense.converttonational"/><icon:convert-to-national/>
         </a>
         <a href="${encodedContextPath}/my-sagia/license/print" class="btn-outline dashboardWidget-headline-action-link download-payment" download>
-            <spring:theme code="text.account.followup.download"/><img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Download.png" alt=""/>
+            <spring:theme code="text.account.followup.download"/><img class="pl-3  pl-ar-3" src="${commonResourcePath}/images/dashboard-media/Download.png" alt=""/>
         </a>
     </div>
     <div class="dashboardWidget-body myLicenseBody">
@@ -217,7 +217,7 @@
                 <button type="button" class="btn" onclick="window.location.href='${encodedContextPath}/my-sagia/license/amend'">
                     <spring:theme code='dashboard.myLicense.amend'/><icon:edit/>
                 </button>
-                <button type="button" class="btn" onclick="window.location.href='${encodedContextPath}/my-sagia/license/renew'">
+                <button type="button" class="btn pt-3 pt-sm-0" onclick="window.location.href='${encodedContextPath}/my-sagia/license/renew'">
                     <spring:theme code='dashboard.myLicense.renew'/><icon:renew/>
                 </button>
             </div>

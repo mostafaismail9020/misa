@@ -24,7 +24,7 @@
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" style="margin-top: -3px;margin-left: -3px;"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
                         </c:if>
                     </div>
@@ -38,7 +38,7 @@
         </div>
     </div>
 </div>
-<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup" style="top:55%;right:10%">
+<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
     <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
     <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
     <div class="sagiaNavigation-subPane-actions">
@@ -259,10 +259,10 @@
                                                     <div class="documentSection-img">
                                                         <span class="iconElement iconElement_pdf02"><icon:pdf02/></span>
                                                     </div>
-                                                    <div class="documentSection-name js-attach-file-download"
+                                                    <div class="documentSection-name js-attach-file-download cursor-pointer"
                                                          data-object-id="${first.attachedDocuments[attachmentIndex].objectId}"
                                                          data-document-id="${first.attachedDocuments[attachmentIndex].documentID}"
-                                                         style="cursor: pointer"><spring:theme code="company.representativenationalid"/>
+                                                         ><spring:theme code="company.representativenationalid"/>
                                                     </div>
                                                     <c:set var="attachmentIndex" value="${attachmentIndex + 1}"/>
                                                 </div>
@@ -273,10 +273,9 @@
                                                         <div class="documentSection-img">
                                                             <span class="iconElement iconElement_pdf02"><icon:pdf02/></span>
                                                         </div>
-                                                        <div class="documentSection-name js-attach-file-download"
+                                                        <div class="documentSection-name js-attach-file-download cursor-pointer"
                                                              data-object-id="${first.attachedDocuments[0].objectId}"
-                                                             data-document-id="${first.attachedDocuments[0].documentID}"
-                                                             style="cursor: pointer"><spring:theme code="company.gosicertificate"/>
+                                                             data-document-id="${first.attachedDocuments[0].documentID}"><spring:theme code="company.gosicertificate"/>
                                                         </div>
                                                         <c:set var="attachmentIndex" value="${attachmentIndex + 1}"/>
                                                     </div>

@@ -39,7 +39,7 @@
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" style="margin-top: -3px;margin-left: -3px;"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
                         </c:if>
                     </div>
@@ -53,7 +53,7 @@
         </div>
     </div>
 </div>
-<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup" style="top:55%;right:10%">
+<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
     <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
     <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
     <div class="sagiaNavigation-subPane-actions">
@@ -273,7 +273,7 @@
                                 </div>
                                 <ul id="history-list" class="historyList">
                                     <c:forEach items="${convertToNationals_list}" var="convertToNationals" varStatus="convertToNationalsStatus">
-                                        <li style="cursor: pointer;" data-expand-target="expand01" class="historyList-item
+                                        <li data-expand-target="expand01" class="historyList-item cursor-pointer 
                                             <c:choose>
                                                 <c:when test="${fromServiceRequestOverview}">
                                                     <c:if test="${convertToNationals.srID == latestConvToNationals.srID}">historyList-item_current</c:if>
@@ -389,7 +389,7 @@
                                 <ul id="attachmentList" class="downloadList">
                                     <c:forEach items="${attachedFiles}" var="attachment">
                                         <li class="downloadList-item">
-                                            <div style="cursor: pointer;" class="downloadList-description"
+                                            <div class="downloadList-description cursor-pointer"
                                                     data-view-attachment-target data-object-id = "${attachment.objectId}"
                                                     data-file-name="${attachment.filename}"
                                                     data-document-id = "${attachment.documentID}">

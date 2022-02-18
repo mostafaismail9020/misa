@@ -907,6 +907,60 @@ label.btn.lang-btn.active {
 		font-size: 32px;
 	}
 	p{
-		font-size: var(--content-big-font);
+		font-size: var(--content-font);
+	}
+	h3{
+		font-size: var(--heading-font);
+	}	
+}
+.d-facts-figures{
+	p{
+		color: @color-white;
+		font-size: var(--content-font);
+	}
+}
+
+@media screen and (min-width:1200px) {
+	.d-facts-figures{
+		margin-top: 16vh;
+	}
+	.d-m-invest-actions{
+		display: none !important;
+	}
+	.d-d-invest-actions{
+		display: block;
+	}
+}
+@media screen and (max-width:1000px) {
+	.sectorAndOpportunitiesSection{
+		.dashboardWidgetBanner-tabs-content{
+			display: block;
+		}
+	}
+	
+	.d-m-invest-actions{
+		display: block;
+	}
+	.d-d-invest-actions{
+		display: none !important;
+	}
+}
+@media screen and (min-width:641px) and (max-width:1000px){
+	.d-facts-figures{
+		padding-left: 46px;
+		padding-right: 46px;
+	}
+}
+
+@media (max-width:767px) {
+	.sectorAndOpportunitiesSection {
+		.dashboardWidget-body{
+			display: block;
+			border-top: none;
+			border-bottom: none;
+		}
+		.invest-us-header{
+			display: none;
+		}
 	}
 }

@@ -12,11 +12,6 @@
 .service-time{
     justify-content: flex-end;
 }
-// .btn:hover:not([disabled]), .btn[hover]:not([disabled]) {
-//     color: @color-white !important;
-//     background-color: @color-primary !important;
-//     border-color: @color-primary !important;
-//   }
 .btn{
     text-transform: uppercase !important;
     cursor: pointer;
@@ -115,10 +110,7 @@
         min-height: 3rem;
     }
     .serviceModule-detail{
-        border-top: solid 1px @color-golden !important;
-        margin-top: initial !important;
         width: 95%;
-        // margin: 3%;
     }
     .serviceModule-request a.request-service{
         font-size: 16px;
@@ -164,12 +156,12 @@
     }
     ol{
         padding-left: 1.5rem;
+    }    
+    .service-para{
+        text-align: center;
+        margin-top: 30px;
+        font-size: var(--content-h-font);
     }
-}
-.service-para{
-    text-align: center !important;
-    margin-top: 30px !important;
-    font-size: var(--content-h-font) !important;
 }
 .serviceModule-request{
 	display: flex;
@@ -181,13 +173,8 @@
 .btn{
     height: 50px;
     width: 195px;
-    // svg path{
-    //     fill: @color-primary;
-    // }
 }
-.btn_greenLink{
-    color:@color-primary !important;
-}
+
 .btn.btn-secondary:hover,.btn-outline.btn-simulator:hover{
     color: @color-primary !important;
 }
@@ -196,8 +183,6 @@
     background-color: @color-primary;
 }
 .btn_slim{
-    // font-size: 16px !important;
-    // font-weight: 500 !important;
     cursor: pointer;
     display: flex !important;
     justify-content: center !important;
@@ -209,8 +194,6 @@
 }
 .service-wrapper-info{
     width: 90%;
-    // margin: auto;
-
     .mainSection_narrow{
         max-width: 100% !important;
     }
@@ -274,7 +257,6 @@
         }
         .historyList-date,.dlList.dlList_separated dt{
             font-size: 14px;
-            // padding-left: 50px;
             padding-bottom: 10px !important; 
             color: @color-text;
         }
@@ -288,9 +270,6 @@
     
     .renewal-services{
         display: flex;
-        // a{
-        //     width: 300px !important;
-        // }
         #renewalButtons{
             display: contents;
             font-size: var(--content-big-font) !important;
@@ -324,9 +303,6 @@
     text-transform: uppercase;
     width: 100%;
 }
-// .contentModule-headline{        
-//     background: none;       
-// }
 .contentModule-headline-history{
     color: @color-golden !important;
     text-align: left;
@@ -345,11 +321,6 @@
 .cursor-pointer{
     cursor: pointer;
 }
-.bg-white{
-    background-color: @color-white !important;
-}
-
-
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
 	background-color: initial;
 }
@@ -413,16 +384,6 @@
         margin-right: 4%;
     }
 }
-
-// .contentModule-headline{
-//     background: @color-golden 0% 0% no-repeat padding-box;
-//     color: @color-white;
-//     padding: 1%;
-//     margin-top: initial;
-//     font-size: var(--content-big-font);
-//     min-height: 3rem;
-// }
-
 .mainSection_dark{
     background-color: @color-white;
 }
@@ -430,14 +391,6 @@
 .dataTables_wrapper{
     margin-top: 20px;
 }
-
-// .stepModule-icon.stepModule-icon_normal,.headline-text{
-//     svg {
-//         path{
-//             fill: @color-primary;
-//         }
-//     }
-// }
 .stepModule-item.active{
     background-image: radial-gradient(circle at 44% 41%,@color-primary,@color-primary 74%,@color-primary) !important;
     box-shadow: 0 15px 20px 0 #9fdce5;
@@ -457,7 +410,6 @@
     }
 }
 .headline-text{
-    // color: @color-white !important;
     color: @color-text !important;
     text-align: left !important;
     background:none !important;
@@ -677,12 +629,7 @@
 .full-width{
     width: 100% !important;
     max-width: 100% !important;
-    // margin: auto !important;
-    // padding: initial !important;
 }
-
-
-
 .tableModule{
     .tableModule-head{
         th{
@@ -743,9 +690,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     font-size: 15px !important;
 }
 .tooltip.show{
-    // >.tooltip-inner.delegateToolTip{
         z-index: 99999;
-    // }
     p{
         margin: 10px;
         color: @color-text;
@@ -809,18 +754,18 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     }
 }
 .statusBox-description{
-    font-size: var(--content-big-font) !important;
+    font-size: var(--content-big-font);
 }
 .service-info-anchor{
     >a{
-        border-radius: 25px!important;
-        border: 1px solid #00a6be!important;
-        padding: 10px 60px!important;
+        border-radius: 25px;
+        border: 1px solid #00a6be;
+        padding: 10px 60px;
         cursor: pointer;
-        background-color: #fff;
+        background-color: @color-white;
         display: inline-block;
         font-size: var(--content-big-font) !important;
-        color: @color-primary !important;
+        color: @color-primary;
         text-decoration: none;
     }
 }
@@ -893,7 +838,6 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
         width: 100%;
     }
     .renewal-services{
-        // display: block;
         >div{
             margin-bottom: 10px;
         }
@@ -949,7 +893,6 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     
 }
 .btn_slim{
-    // font-size: var(--content-big-font)!important;
     font-weight: 600!important;
 }
 
@@ -1070,7 +1013,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
         .tableModule-body{
             &::-webkit-scrollbar {
                 width: 6px;
-                background: #fff;
+                background: @color-white;
                 border-radius: 12px;
             }
             
@@ -1133,16 +1076,7 @@ ul.footer-menu{
 .dashboardWidget-pictureSet{
     display: none;
 }
-
-
-
-
-
-
-
-
 .contentModule-headline,  .page-shareholder-apply #addShareholderQM1NewPersonSection #attachmentSection .mw0 {
-    // padding: 0 30px !important;//chk
 	width:auto !important;
 	display: inline-block;
 }
@@ -1158,8 +1092,6 @@ a.btn:not([href]):not([tabindex]) {
 label~#registerQuickSelectLanguageDiv label {
     left: 10px!important;
 }
-
-
 body ::-webkit-scrollbar-thumb {
     background-color: darkgray;
 }
@@ -1188,7 +1120,23 @@ body ::-webkit-scrollbar-thumb {
         width: 600px;
     }
 }
-
+.services-action-btns{
+    .btn_action_width{
+        width: 195px;
+    }
+}
+.service-content-history{
+    font-size: 15px;
+}
+.service-share-holder-table{
+    .service_action_btn{
+        width: 30px;
+    }
+}
+.tool-tip-info{
+    position: relative; 
+    z-index: 1000;
+}
 #businessActivitiesTable .tableModule-head th {
     background: #f7f7f7 0 0 no-repeat padding-box;
     text-align: left;
@@ -1196,7 +1144,14 @@ body ::-webkit-scrollbar-thumb {
 .contentModule-headline{
     padding: 0 2%;
 }
-
+.license-business-activities{
+    .temp-license-content{
+        width: 100%;
+        font-size: 14px;
+        font-family: MyriadPro; 
+        height: 250px;
+    }
+}
 @media (min-width:1200px) {
     .sagiaNavigation-services{
         margin: auto 6rem;

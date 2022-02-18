@@ -563,7 +563,7 @@ function getAccordion(element_id,screen)
 	{
 		var concat = '';
 		obj_tabs = $( element_id + " li" ).toArray();
-		obj_cont = $( ".tab-content .tab-pane" ).toArray();
+		obj_cont = $( ".tab-content .tab-pane" ).not('.services-container-tabcontent').toArray();
         
 		jQuery.each( obj_tabs, function( n, val ) 
 		{
@@ -580,8 +580,8 @@ function getAccordion(element_id,screen)
 		$("#accordion").find('.panel-collapse:first').addClass("in");
 		$("#accordion").find('.panel-title a').attr("aria-expanded","true");
 		$("#accordion").find('.panel-title a').removeClass("collapsed");
-		$(element_id).hide();
-		$(".tab-content").hide();
+		$(element_id).not('.services-container-tabcontent').hide();
+		$(".tab-content").not('.services-container-tabcontent').hide();
 	}	
     else{
         $("#accordion").empty();
@@ -614,8 +614,8 @@ function getAccordionWithLicense(element_id,screen)
 		$("#accordionDashboard").find('.panel-collapse:first').addClass("in");
 		$("#accordionDashboard").find('.panel-title a').attr("aria-expanded","true");
 		$("#accordionDashboard").find('.panel-title a').removeClass("collapsed");
-		$(element_id).hide();
-		$(".tab-content").hide();
+		$(element_id).not('.services-container-tabcontent').hide();
+		$(".tab-content").not('.services-container-tabcontent').hide();
 	}
     else{
         $("#accordionDashboard").empty();

@@ -95,7 +95,7 @@
 							- ${opportunityDetails.name}
 						</c:if>
 					</span></h5>
-					<hr style="width:96%;margin: 25px auto;border-width: 2px;"></hr>
+					<hr class="mypotentialOpp_hr_hor"></hr>
 				</div>
 				
 				<c:if test="${not empty contactTicketDetails.investorlead and contactTicketDetails.investorlead ne 'NA'}">
@@ -399,26 +399,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	
-	<style>
-		.mypotentialpp_showdow{
-			background: #FFFFFF 0% 0% no-repeat padding-box;
-			box-shadow: 0px 13px 20px #00000029;
-			border-radius: 10px;
-			padding: 20px 10px;
-			text-align: center;
-			margin: 10px 0px;
-		}
-		.mypotentialpp_showdow a{
-			color: #00a6be;
-			font-weight: 600;
-		}
-		.mypotentialpp_showdow a:hover{
-			color: #00a6be;
-		}
-	</style>
-	
+	</div> 
 	<div class="serviceModule serviceModule_list mx-5">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">

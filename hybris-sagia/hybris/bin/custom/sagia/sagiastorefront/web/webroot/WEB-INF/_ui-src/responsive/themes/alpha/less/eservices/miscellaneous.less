@@ -290,48 +290,68 @@ ul.notificationList{
     left: 50px;
 }
 #licenseApplicationPayment .modal-dialog, #creditCardPayment .modal-dialog{
-	max-width: 827px !important;
+	max-width: 827px;
 	width: 827px;
 	padding: 0;
 }
-#licenseApplicationPayment  .modal-secondaryContent{
-	border: none !important;
-}
-#licenseApplicationPayment .modal-footer_iconButton{
-	width: auto !important;
-}
-
-#licenseApplicationPayment .pay-with-salad{
-	width: 100px;
-	display: block;
-}
-#licenseApplicationPayment .modal-dialog .payment-btn{
-	padding: 22px 40px !important;
-    display: flex;
-	height: 50px !important;
-    border-radius: 46px;
-
-	align-items: center;
-    display: inline-flex;
-	svg{
-		align-items: center;
-		display: inherit;
+#licenseApplicationPayment{
+	.modal-secondaryContent{
+		border: none;
 	}
-} 
-#licenseApplicationPayment .modal-dialog .payment-btn:hover{
-	background: #00a6be !important;
-    color: #fff !important;
+	.modal-footer_iconButton{
+		width: auto;
+	}
+	.pay-with-salad{
+		width: 100px;
+		display: block;
+	}
+	.modal-dialog .payment-btn{
+		padding: 22px 40px;
+		display: flex;
+		height: 50px !important;
+		border-radius: 46px;
+	
+		align-items: center;
+		display: inline-flex;
+		svg{
+			align-items: center;
+			display: inherit;
+		}
+
+		&:hover{
+			background: #00a6be !important;
+			color: #fff !important;
+		}
+	} 
+
+}  
+
+#creditCardPayment{
+	.formInputBox .form-group iframe{
+		height: 64px !important;
+		border-radius: 50px !important;
+		box-shadow: none !important;
+	}
+	.formRadioPayment .modal-footer .credit-card-btn{
+		width: 100%;
+		background: #00a6be !important;
+		color: #fff !important;
+	}
+	.formInputBox .form-group .control-label{
+		font-size: var(--content-big-font);
+		color: #707070;
+		text-transform: none;
+	}
+	.formInputBox .form-group iframe, #creditCardPayment .formInputBox .form-group input{
+		height: 64px !important;
+		border-radius: 50px !important;
+		box-shadow: none !important;
+		margin-top: 20px !important;
+		border: 1px solid #0489A3 !important;
+	}
 }
-#creditCardPayment .formInputBox .form-group iframe{
-	height: 64px !important;
-	border-radius: 50px !important;
-	box-shadow: none !important;
-}
-#creditCardPayment .formRadioPayment .modal-footer .credit-card-btn{
-	width: 100%;
-    background: #00a6be !important;
-    color: #fff !important;
-}
+ 
+#creditCardPayment 
 /***** Payments Page css ends***/
 /*****dashboard-edit ***/
 .page-dashboard-edit .dashboardWidget{
@@ -366,18 +386,6 @@ ul.notificationList{
 .btn-view-all{
 	margin: 0 auto !important;
     width: fit-content;
-}
-#creditCardPayment .formInputBox .form-group .control-label{
-	font-size: var(--content-big-font);
-	color: #707070;
-	text-transform: none;
-}
-#creditCardPayment .formInputBox .form-group iframe, #creditCardPayment .formInputBox .form-group input{
-	height: 64px !important;
-	border-radius: 50px !important;
-	box-shadow: none !important;
-	margin-top: 20px !important;
-	border: 1px solid #0489A3 !important;
 }
 
 .dashboardWidgetPayments-title a ,.dashboardWidgetPayments-title a span{

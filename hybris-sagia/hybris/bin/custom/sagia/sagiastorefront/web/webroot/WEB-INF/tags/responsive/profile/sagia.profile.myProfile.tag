@@ -112,7 +112,7 @@
                                                 <div class="form-icon form-icon_browse"><icon:upload/></div>
                                                 <input id="fileBoxModalPicture" class="form-control js-inputFile" type="file" name="file" accept="image/jpeg,image/png" value="" placeholder="."/>
                                                 <label class="control-label" for="fileBoxModalPicture">
-                                                    <spring:theme code="company.choseapicture"/><span class="formInputFileBox-dragndrop"> <spring:theme code ="company.dragpicture"/></span>.
+                                                    <spring:theme code="company.choseapicture"/><!--<span class="formInputFileBox-dragndrop"> <spring:theme code ="company.dragpicture"/></span>-->.
                                                 </label>
                                             </div>
                                             <div class="formInputFileBox-uploading"><spring:theme code="company.uploading"/></div>

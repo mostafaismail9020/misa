@@ -915,8 +915,6 @@ var original = 16;
 var increment = 0, decrement = 3;
 
 setFont();
-
-setFont();
 function setFont() {
 	var inc = getCookie("f_increment");
 	// $("#font-decrement").hide();

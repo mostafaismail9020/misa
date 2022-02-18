@@ -85,7 +85,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="row renewal-services w-100">
                 <div class="col-xl-3 col-12">
-                   <a href="${returnUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="specialservices.back.to.service.details"/></a>
+                   <a href="${returnUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="specialservices.back.to.service.details"/></a>
                 </div>
                 <div class="col-xl-9 col-12 btn-drafts_list amend-service-link">
                     <button class="btn btn_round btn_slim js-save-draft"

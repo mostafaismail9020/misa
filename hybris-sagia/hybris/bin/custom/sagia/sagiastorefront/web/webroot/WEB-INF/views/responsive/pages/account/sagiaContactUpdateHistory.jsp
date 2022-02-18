@@ -81,7 +81,7 @@
             <c:url value="/my-sagia/sagia-profile" var="profileUrl"/>
             <div class="row w-100 renewal-services">
                 <div class="col-xl-3 col-12 px-0">
-                    <a href="${profileUrl}" class="btn btn_leftIconLink btn_darkLink back_to_profile"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="profileCompany.button.back.text"/></a>
+                    <a href="${profileUrl}" class="btn btn_leftIconLink btn_darkLink back_to_profile"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="profileCompany.button.back.text"/></a>
                 </div>
             </div>            
         </div>
@@ -93,7 +93,7 @@
         <c:if test="${fn:length(contactUpdateHistory) gt 1}">
             <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand02">
                 <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
-                <div><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+                <div><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
             </c:if>
         <div class="expandableContent expanded" id="expand02">

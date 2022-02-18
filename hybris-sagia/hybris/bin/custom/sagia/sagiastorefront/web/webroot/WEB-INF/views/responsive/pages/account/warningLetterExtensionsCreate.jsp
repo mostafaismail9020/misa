@@ -63,7 +63,7 @@
         <div class="d-flex row renewal-services w-100">
             <div class="col-md-4">
                 <a href="./" class="btn btn_leftIconLink btn_darkLink  w-100">
-                    <span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>
+                    <span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>
                     <spring:theme code="text.account.followup.backWarningLetters"/>
                 </a>
             </div>

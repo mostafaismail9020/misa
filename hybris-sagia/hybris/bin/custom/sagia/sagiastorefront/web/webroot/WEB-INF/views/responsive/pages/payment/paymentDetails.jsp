@@ -53,7 +53,7 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <c:url value="/dashboard" var="dashboardUrl"></c:url>
-            <a href="${dashboardUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service payment-detail-overview-btn"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="payments.details.back"/></a>
+            <a href="${dashboardUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service payment-detail-overview-btn"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="payments.details.back"/></a>
         </div>
     </div>
 </div>

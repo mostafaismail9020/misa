@@ -22,7 +22,7 @@
                 <div class="row">
                     
 				<div class="col-md-3 col-12 px-0">
-                    <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="general.participate.backtoallquestionaires"/></a>
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack" id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="general.participate.backtoallquestionaires"/></a>
                 </div>
             </div>
         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap mt-3 ">

@@ -904,22 +904,23 @@ label.btn.lang-btn.active {
 
 
 
+
 .d-invest-with-us {
 	h3{
 		color: @color-golden !important;
 		border-bottom: 0;
-		text-align: center;
+		text-align: left;
 		text-shadow: 0 2px 2px rgba(0, 0, 0,0.10);
 		margin-bottom: 0;
 		padding-bottom: 44px;
-		font-size: 32px;
+		font-size: 40px;
+		text-transform: uppercase;
+		font-weight: 500;
 	}
 	p{
 		font-size: var(--content-font);
 	}
-	h3{
-		font-size: var(--heading-font);
-	}	
+		
 }
 .d-facts-figures{
 	p{
@@ -927,11 +928,33 @@ label.btn.lang-btn.active {
 		font-size: var(--content-font);
 	}
 }
-
+.section-counts h5 {
+    font-size: 43px;
+    color: #bf9b2e;
+    line-height: 48px;
+    text-transform: uppercase;
+    padding-bottom: 13px;
+    margin: 0;
+    text-align: center;
+}
+.sect-right-panel {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sect-left-panel, .sect-right-panel {
+    z-index: 9;
+    padding: 30px 0;
+}
+.headline-facts{
+	padding-bottom: 6px;
+	font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #bf9b2e;
+    line-height: 1.5;
+}
 @media screen and (min-width:1200px) {
-	.d-facts-figures{
-		margin-top: 16vh;
-	}
 	.d-m-invest-actions{
 		display: none !important;
 	}
@@ -959,6 +982,41 @@ label.btn.lang-btn.active {
 		padding-right: 46px;
 	}
 }
+@media screen and (min-width:768px) {	
+	.section-counts .count-item {
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+		border-right: 2px solid #fff;
+		margin-bottom: 42px;
+		word-break: break-word;
+		padding: 0 15px;
+	}
+	.sector-box-inner {
+		position: relative;
+		margin: 0px 30px 48px 30px;
+		padding: 0px 38px 53px 38px;
+		z-index: 9;
+	}
+
+	.section-counts p.description {
+		font-size: 16px;
+		color: #fff;
+		line-height: 19px;
+		text-align: center;
+		margin: 0;
+		padding: 0 20px;
+	}
+	.sectors-content p, .grid-section p {
+		color: #7B838C;
+		font-size: 16px;
+		line-height: 25px;
+		font-weight: 400;
+		width: 96%;
+		font-variant: proportional-width;
+	}
+	
+}
 
 @media (max-width:767px) {
 	.sectorAndOpportunitiesSection {
@@ -970,5 +1028,8 @@ label.btn.lang-btn.active {
 		.invest-us-header{
 			display: none;
 		}
+	}
+	.section-counts h5{
+		text-align: left;
 	}
 }

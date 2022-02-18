@@ -6,27 +6,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<style>
-	/* #topbar span{
-		font-size: 12px !important;
-	} */
-	label.lang-btn{
-		margin-bottom: 2px;
-	}
-	.page-dashboard #dashboard-carousel .owl-nav .owl-prev {
-		left: 9% !important;
-	}
-	.page-dashboard #dashboard-carousel .owl-nav .owl-next {
-		right: 8% !important;
-	}
-	#logoutModal .js-formInputFileBox .modal-close.bttn_close{
-		border-radius: 25px!important;
-    	border: 0px solid #00a6be!important;
-		top: 5px;
-    	right: 10px;
-	}
-</style>
-
 <c:url value="false" var="userLoggedIn"/>
 <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
     <c:url value="true" var="userLoggedIn"/>
@@ -59,7 +38,7 @@
 				<c:choose>
 					<c:when test="${userLoggedIn}">
 						<a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user">
-					      	<img class="pr-3" src="${commonResourcePath}/images/User-icon.svg" /><span class="header-user-name">${user.name}</span>
+					      	<img class="" src="${commonResourcePath}/images/User-icon.svg" /><span class="header-user-name">${user.name}</span>
 					    </a>
 	                    <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer">
 	                    	<span><spring:theme code="dashboard.logout.label"/></span>

@@ -24,22 +24,11 @@
 <div class="panelTabs-head" id="register-quick">
 	<icon:register/><span class="panelTabs-label"><spring:theme code="quickRegistration.label"/></span> 
 </div>
- 
-<style>
-.right_arrowdd .select2.select2-container .select2-selection:after{
-	right: -8px;
-}
-[dir='rtl'] .right_arrowdd .select2.select2-container .select2-selection:after{
-	left: 0 !important;
-	right: auto;
-}
-[dir='rtl'] .select2.select2-container .select2-selection:after { left: 0 !important;right: auto; }
-</style>
 
 <c:url value="/register/ajax" var="registerAction" />
 <c:url value="/register/apply" var="applyAction" />
-<div class="row">
-	<div class="col-md-5">
+<div class="row register_tab_container">
+	<div class="col-md-5 register_tab_view">
 		<div class="login-logo">
 			<a href="/${language}">
 				<img src="${commonResourcePath}/images/B2C/Login-logo.svg" alt="logo" class="img-fluid w-100" />
@@ -48,9 +37,10 @@
 		<div id="sagia-cms-help-quick-registration-helper"></div>
 	</div>
 	
-	<div class="col-md-7">
+	<div class="col-md-7 register_tab_view">
 		<form:form method="post" id="sagiaRegisterFormQuickRegistration" name="sagiaRegisterFormQuickRegistration"  modelAttribute="sagiaRegisterForm" action="${registerAction}#register-quick" onsubmit="return validateRegisterForm()">
-			<div class="row col-lg-12 col-xl-12 col-12 register-account-screen r-sn ">
+			<div class=" register-account-screen r-sn ">
+				
 				<div class="login-right-wrapper">
 					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
 					<div class="register-progress">
@@ -99,7 +89,7 @@
 				</div>
 			</div>
 
-			<div class="row col-lg-12 col-xl-12 col-12 register-account-investor-screen2 r-sn next-hide">
+			<div class="register-account-investor-screen2 r-sn next-hide">
 				<div class="login-right-wrapper">
 					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
 					<div class="register-role-selection">

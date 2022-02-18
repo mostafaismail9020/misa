@@ -210,12 +210,50 @@ a.btn:not([href]):not([tabindex]) {
 	}
 }
 
+.investsaudiHeader,
+    .sagiaNavigation,
+    .investsaudiFooter,
+    .sagiaHead-paddingHelper,
+    .sagiaHead,.accountLogin-headline {
+        display: none;
+    }
+
+.right_arrowdd .select2.select2-container .select2-selection:after{
+	right: -8px;
+}
+[dir='rtl'] .right_arrowdd .select2.select2-container .select2-selection:after{
+	left: 0 !important;
+	right: auto;
+}
+[dir='rtl'] .select2.select2-container .select2-selection:after { left: 0 !important;right: auto; }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	#termsAndConditionsModal {
 		.modal-content {
 			width: 650px;
 			height: 500px;
 		}
+	}
+	.forgotPassword-container {
+		position: relative;
+		height: 96vh;
+	}
+	.forgotPassword-wrapper {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.login-right-wrapper, .login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper {
+		width: 90%;
+	}
+	.register_tab_container .register_tab_view {
+		max-width: 100%;
+		width: 100%;
+	}
+	.register_tab_container h1{
+		width: 100%;
+		text-align: center;
 	}
 }
 
@@ -234,5 +272,27 @@ a.btn:not([href]):not([tabindex]) {
 			width: 90%;
 			height: 90%;
 		}
+	}
+}
+
+@media (max-width: 640px) {
+	.g-recaptcha {
+		text-align: center !important;
+	}
+	.login-register {
+		margin-bottom: 20px !important;
+	}
+	.login-buttons div:nth-child(2) {
+		margin-bottom: 20px !important;
+	}
+	.forgotPassword-container {
+		position: relative;
+		height: 96vh;
+	}
+	.forgotPassword-wrapper {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 }

@@ -150,7 +150,7 @@
     </div>
 </div>
 
-<div class="globalMessage-holder pt-5" id="awaitingPaymentDiv" style="display: none;">
+<div class="globalMessage-holder pt-5 payment-pending-block" id="awaitingPaymentDiv" style="display: none;">
     <div class="container">
         <div class="globalMessage">
             <div class="globalMessage-action">

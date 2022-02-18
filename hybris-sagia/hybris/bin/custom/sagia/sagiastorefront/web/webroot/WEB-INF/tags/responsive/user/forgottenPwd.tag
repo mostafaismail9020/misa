@@ -7,28 +7,16 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<style type="text/css">
-    .investsaudiHeader,
-    .sagiaNavigation,
-    .investsaudiFooter,
-    .sagiaHead-paddingHelper,
-    .sagiaHead,.accountLogin-headline {
-        display: none;
-    }
-</style>
-
-
-
 <div class="accountLogin">
     <div class="accountLogin-background">
-        <div class="container">
+        <div class="container forgotPassword-container">
             <div class="accountLogin-headline">
                 <a href="${encodedContextPath}/" class="accountLogin-headline-logo">
                     <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png">
                 </a>
             </div>
 
-            <div class="panelModule panelModule_halfRadius accountLogin-content accountLogin-content_small">
+            <div class="panelModule panelModule_halfRadius accountLogin-content accountLogin-content_small forgotPassword-wrapper">
                 <div class="login-section">
                     <h1 class="accountLogin-title headline login-page__headline text-center text-uppercase headline-golden"><spring:theme code="password.forgottenpassword"/></h1>
 

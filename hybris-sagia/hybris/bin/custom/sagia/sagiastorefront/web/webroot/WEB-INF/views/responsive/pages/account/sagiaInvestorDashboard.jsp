@@ -149,8 +149,7 @@
         <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
     </div>
 </div>
-
-<div class="globalMessage-holder pt-5 payment-pending-block" id="awaitingPaymentDiv" style="display: none;">
+<div class="globalMessageHolder globalMessage- d-none" id="globalMessageDivHeader" >
     <div class="container">
         <div class="globalMessage">
             <div class="globalMessage-action">

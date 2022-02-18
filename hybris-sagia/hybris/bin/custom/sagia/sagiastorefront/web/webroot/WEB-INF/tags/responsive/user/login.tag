@@ -14,8 +14,8 @@
 <spring:htmlEscape defaultHtmlEscape="true"/>
 <c:set var="hideDescription" value="checkout.login.loginAndCheckout"/>
 
-<div class="row">
-	<div class="col-xs-12 col-sm-12 col-md-5 m_login_title">
+<div class="row m_login_container">
+	<div class="col-md-5 m_login_title">
 		<div class="login-logo">
 			<a href="/${language}">
 				<img src="${commonResourcePath}/images/B2C/Login-logo.svg" alt="logo" class="img-fluid w-100" />
@@ -23,7 +23,7 @@
 		</div>
 		<div id="sagia-cms-help-quick-login-helper"></div>
 	</div>
-    <div class="col-xs-12 col-sm-12 col-md-7 m_login_section">
+    <div class="col-md-7 m_login_section">
         <form:form action="${action}" method="post" modelAttribute="loginForm" name="sagiaLoginForm" id="sagiaLoginForm" onsubmit="return validateLoginForm()">
             <c:if test="${not empty message}">
                 <span class="has-error"><spring:theme code="${message}"/></span>

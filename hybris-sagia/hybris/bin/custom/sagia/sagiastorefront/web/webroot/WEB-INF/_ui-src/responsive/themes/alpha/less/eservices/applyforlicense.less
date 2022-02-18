@@ -227,7 +227,7 @@ a.btn:not([href]):not([tabindex]) {
 }
 [dir='rtl'] .select2.select2-container .select2-selection:after { left: 0 !important;right: auto; }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023.9px) {
 	#termsAndConditionsModal {
 		.modal-content {
 			width: 650px;
@@ -247,7 +247,7 @@ a.btn:not([href]):not([tabindex]) {
 	.login-right-wrapper, .login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper {
 		width: 90%;
 	}
-	.register_tab_container .register_tab_view {
+	.register_tab_container .register_tab_view, .m_login_title, .m_login_section {
 		max-width: 100%;
 		width: 100%;
 	}
@@ -257,7 +257,43 @@ a.btn:not([href]):not([tabindex]) {
 	}
 }
 
-@media (min-width: 1025px) {
+@media screen and (min-width: 768px) and (max-width: 1023.9px) {
+	#termsAndConditionsModal {
+		.modal-content {
+			width: 650px;
+			height: 500px;
+		}
+	}
+	.forgotPassword-container {
+		position: relative;
+		height: 96vh;
+	}
+	.forgotPassword-wrapper {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.login-right-wrapper, .login-screen .login-right-wrapper, .login-screen-verify-mobile .login-right-wrapper {
+		width: 90%;
+	}
+	.register_tab_container .register_tab_view, .m_login_title, .m_login_section {
+		max-width: 100%;
+		width: 100%;
+	}
+	.m_login_container {
+		display: block;
+	}
+	.register_tab_container h1, .m_login_container h1{
+		width: 100%;
+		text-align: center;
+	}
+	.register-account-investor-screen3 .login-right-wrapper {
+		width: 100%;
+	}
+}
+
+@media (min-width: 1024px) {
 	#termsAndConditionsModal {
 		.modal-content {
 			width: 950px;
@@ -267,15 +303,6 @@ a.btn:not([href]):not([tabindex]) {
 }
 
 @media (max-width: 767px) {
-	#termsAndConditionsModal {
-		.modal-content {
-			width: 90%;
-			height: 90%;
-		}
-	}
-}
-
-@media (max-width: 640px) {
 	.g-recaptcha {
 		text-align: center !important;
 	}
@@ -294,5 +321,8 @@ a.btn:not([href]):not([tabindex]) {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+	}
+	.country-code-mobile div:nth-child(1){
+		padding:15px 0;
 	}
 }

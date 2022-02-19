@@ -12,7 +12,7 @@ $langen = en
  
 INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $langen]               							  											; description[lang = $langen]																																																																																																																																								 
 #Licensing Service
-#								  ; ZSR6               			 ; "Voluntary Cancellation of License"                         											    ; "<p>Notification for The Purpose of Voluntary Cancellation of the License:This service is for any entity that wants to end its status with Ministry of Investment with the exit of the foreign shareholders and conversion of the entity into a 100% national owned business.</p><p>Apply of voluntary cancellation of the license:This service is for all the entities that seek a decision for a voluntary cancellation of license. Such entities will have revoked all the records, licenses and certificates that are connected with such license at Ministry of Investment</p>"      
+								  ; ZSR6               			 ; "Voluntary Cancellation of License"                         											    ; "Ministry of Investment provides the Licensed entities a license cancellation service as per the need of the entity  "   
 								  ; ZSR5               			 ; "Amendment of License"                           			  											; "<p>User can submit a request to amend the license for entity that has a valid investment license and don't has any violations in the system. The system accept applying for the service 90 days before the investment license expires.</p>" 																																																																																			 
 								  ; ZSR7						 ; "Conversion of a Foreign Entity to a 100% National Entity"							  					; "This service is for any entity that wants toend its status with Ministry of Investment with the exit of the foreign shareholders and conversion of the entity into a 100% national owned business."																																																																																													  	 
 								  ; ZSR4               			 ; "Renewal of License"                           			  											    ; "This service is for all the entities licensed by Ministry of Investment and want to renew their investment licenses."																																																																																																																	 
@@ -63,7 +63,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $
 								  ; ZSPLJAWA04					 ; "Final Exit of the Investor whose Licens is Cancelled"													; "The final exit is granted to foreign investor for whom a cancellation decision was issued (punitive / withdrawal of license / non-renewal/ conversion to national / voluntary)."																																																																																																		 
 
 #Government Data Update Service								  
-#								  ; ZS14						 ; "Government Documents"																					; "It is a service that aims to reach the 'Integrated e-service' through updating government data of investment entity licensed by the Ministry of Investment to reach reliable and updated government database by direct linkage to 'YESSER' system without the need to attach government documents from the entity"
+								  ; ZS14						 ; "Government Documents"															                         ;"This service aims to the Integrated E-service by updating the governmental data of the entity licensed by MISA to reach a reliable and updated governmental database through a direct linkage to YESSER system."
 				  
 #Rules & Regulation Advisory 								  
 								  ; ZS20               			 ; "Rules & Regulation"    							  											            ; "This service aims to provide the relevant consultations to the investment regulations in Saudi Arabia."                         							 				  
@@ -73,7 +73,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $
 
 #Follow Up Services
 
-#								  ; ZFLUP_02					 ; "Reply to the Written Notification" 																		; "This service is provided to reply to the written notification through which the entity was informed about the existence of irregularities and grant it a corrective grace period. The entity, through this service, can respond to the said irregularities through providing the reasons and justifications and prove its removal (if any)."
+								  ; ZFLUP_02					 ; "Reply to the Written Notification" 																		;"<p>This service is provided to reply to the written notification through which the entity was informed about the existence of irregularities and grant it a corrective grace period. The entity, through this service, can respond to the said irregularities through providing the reasons and justifications and prove its removal.</p>"
 								  ; ZSVR						 ; "Support Visits"																							; "The ministry of invesment represented by the follow-up and supporting department that provides field visit to provide all aspects of support and facilites."
 								  ; ZFLUP_03					 ; "Extention of the Written Notification Deadline"															; "This service provided to extend the grace period issued by Ministry of Investment in the written notification through which the entity informed about the existence of irregularities and granting a grace period to the entity to take corrective actions."
                                
@@ -411,14 +411,14 @@ UPDATE SagiaService              ; code[unique = true]           ; rulesRestrict
 																	     <li>The application shall be submitted during the grace period given in the written notification stating justification for the request in the designated box</li>
 																	     <li>If there is a request from the entity under study, it cannot submit a new application until deciding on the pending application.</li>
 																	     <li>The request to extend the grace period given in the written notification shall not be accepted except for one time only.</li>
-																	     </ol>"
+																	     </ol>";
 
 																																																																																															
 						;ZFLUP_03										;"<ol start= '1'>																																						
 																		 <li>The application shall be submitted during the grace period given in the written notification stating justification for the request in the designated box</li>
 																		 <li> If there is a request from the entity under study, it cannot submit a new application until deciding on the pending application.</li>
 																		 <li> The request to extend the grace period given in the written notification shall not be accepted except for one time only</li>
-																		 </ol>"
+																		 </ol>";
 																		 
 					
 						;ZRES											;"<p>Property Ownership Service:</p>
@@ -448,7 +448,7 @@ UPDATE SagiaService              ; code[unique = true]           ; rulesRestrict
 																		  <ol start= '1'>
 																		  <li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</li>
 																		  <li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
-																		  </ol>"
+																		  </ol>";
 
 
 

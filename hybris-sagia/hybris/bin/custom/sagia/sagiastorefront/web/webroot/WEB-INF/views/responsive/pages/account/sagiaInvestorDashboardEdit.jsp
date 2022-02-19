@@ -217,7 +217,7 @@
 
             <li class="dashboardWidgetListComponent js-component">
 	            <div class="drag col col-12 p-0" id="payments">
-	                <div class="dashboardWidget js-dashboardWidget">
+	                <div class="dashboardWidget js-dashboardWidget no-border">
 	                    <dashboard:addAndRemoveComponent checkboxIndex="5"/>
 	                    <div class="dashboardWidget-headline js-dashboardWidget-headline">
 							<spring:theme code="dashboard.payments"/>
@@ -266,7 +266,7 @@
 
             <li class="dashboardWidgetListComponent js-component">
 	            <div class="drag col col-12 p-0" id="yourTickets">
-	                <div class="dashboardWidget js-dashboardWidget" >
+	                <div class="dashboardWidget js-dashboardWidget no-border" >
 	                    <dashboard:addAndRemoveComponent checkboxIndex="6"/>
 	                    <div class="dashboardWidget-headline js-dashboardWidget-headline">
 							<spring:theme code="dashboard.ticket.yourtickets"/>

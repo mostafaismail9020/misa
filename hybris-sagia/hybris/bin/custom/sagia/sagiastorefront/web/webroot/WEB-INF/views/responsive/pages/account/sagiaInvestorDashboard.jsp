@@ -103,9 +103,9 @@
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
                         	<!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
                             <div class="account-manager"><h4 class="clr_gld"><spring:theme code="dashboard.license.account.manager.title"/></h4></div>
-                            <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-name"><b><c:out value='${user.name}'/></b></span></div>
-                            <div class="dashboardUser-label profile-detail pt-3"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
-                            <div class="dashboardUser-label profile-detail pt-3"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
+                            <div class="dashboardUser-label profile-detail dashboardUser-label-xs pt-1"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-name"><b><c:out value='${user.name}'/></b></span></div>
+                            <div class="dashboardUser-label profile-detail pt-1"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
+                            <div class="dashboardUser-label profile-detail pt-1"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
                             <!--  <button class="btn-dashboard text-uppercase">service request</button> -->
                         </div>
                     </div>
@@ -297,8 +297,7 @@
                     <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
                         <div class="content-wrapper">
                             <p class="INS_letter_set_para pb-3 mb-3">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
+                                <spring:theme code="sagia.licenses.catagory.description"/>
                             </p>
                             <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
                                <spring:theme code="portal.sector.opportunity.know.more.label"/>
@@ -311,8 +310,7 @@
                     <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
                         <div class="content-wrapper">
                             <p class="INS_letter_set_para pb-3 mb-3">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
+                              <spring:theme code="sagia.governmental.catagory.description"/>
                             </p>
                             <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
                             	<spring:theme code="portal.sector.opportunity.know.more.label"/>
@@ -324,8 +322,7 @@
                     <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
                         <div class="content-wrapper">
                             <p class="INS_letter_set_para pb-3 mb-3">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
+                               <spring:theme code="sagia.misa.services.catagory.descriptions"/>
                             </p>
                             <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
                             	<spring:theme code="portal.sector.opportunity.know.more.label"/>
@@ -338,14 +335,14 @@
     </div>
 </section>
 
-<section class="container mainSection_noPaddingTop js-dashboard scale-on-resize">
-    <div class="container row">
+<section class="container mainSection_noPaddingTop js-dashboard scale-on-resize p-0">
+    <div class="container row p-0 m-0">
         <div class="Inc-title-header pt-5 col-12">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
                <spring:theme code="sagia.services.licenses.label"/>
             </h1>
 		</div>
-        <div class="col-12">
+        <div class="col-12 p-0">
             <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
             	<spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/>
             </a>
@@ -456,7 +453,7 @@
                             <div class="dashboardWidget js-dashboardWidget no-border">
                                 <div class="dashboardWidget-headline js-dashboardWidget-headline d-none d-sm-block">
                                     <span>
-                                        <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"
+                                        <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="myTicketsHeader js-page-redirect"
                                            style="text-decoration: inherit;color: inherit">
                                         <spring:theme code="dashboard.ticket.yourtickets"/>
                                         </a>
@@ -531,19 +528,19 @@
 </section>
 
 <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard scale-on-resize">
-    <div class="container">
+    <div class="container px-0">
         <dashboard:opportunityTickets></dashboard:opportunityTickets>
     </div>
 </section>
 
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard">
-    <div class="container">
+    <div class="container px-0">
         <dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>
     </div>
 </section>
 
 <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
-    <div class="container">
+    <div class="container px-0">
     <!--News Section Start-->
         <div id="newsandupdates" class="newsAndUpdateContainer">
             <div class="dashboard-container">

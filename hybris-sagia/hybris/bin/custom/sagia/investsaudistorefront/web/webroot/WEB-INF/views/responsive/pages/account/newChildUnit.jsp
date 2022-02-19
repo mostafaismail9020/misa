@@ -59,7 +59,7 @@
          </div> 
         <div class="col-md-12 pt-5">
             <div class="form-group text-center addNewUser_group">
-                <button class="btn btn-sagia btn-sagia-green cancel" type="button" id="cancelAddChild">
+                <button class="btn btn-sagia btn-sagia-green cancel" type="reset" id="cancelAddChild">
                 Cancel
                 </button>
                 <button class="btn btn-sagia btn-sagia-green Submit" type="button" id="addChildUnit">

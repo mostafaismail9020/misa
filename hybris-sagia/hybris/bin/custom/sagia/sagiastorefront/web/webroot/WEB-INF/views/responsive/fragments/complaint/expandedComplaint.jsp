@@ -78,13 +78,13 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <ul id="messagesList " class="messageList ">
-                                <c:forEach items="${messages} " var="message">
-                                    <li class="messageList-item ">
-                                        <div class="messageList-content ">
-                                            <h2 class="messageList-name ">${message.commentBy}</h2>
-                                            <h3 class="messageList-date ">${message.commentDate.dateFormatted}</h3>
-                                            <div class="messageList-message ">
+                            <ul id="messagesList" class="messageList">
+                                <c:forEach items="${messages}" var="message">
+                                    <li class="messageList-item">
+                                        <div class="messageList-content">
+                                            <h2 class="messageList-name">${message.commentBy}</h2>
+                                            <h3 class="messageList-date">${message.commentDate.dateFormatted}</h3>
+                                            <div class="messageList-message">
                                                 <p>${message.comments}</p>
                                             </div>
                                         </div>

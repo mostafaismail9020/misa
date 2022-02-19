@@ -93,6 +93,20 @@
 		</advanced-search:advanced-search>
 	</context>
 
+	<context type="FinancialSurvey" component="advanced-search" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+			 merge-by="type">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="user"
+									   selected="true" />
+				<advanced-search:field name="quarter"
+									   selected="true" />
+				<advanced-search:field name="surveyStatus"
+									   selected="true" />
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
 
 	<context component="explorer-tree" merge-by="module">
 		<explorer-tree:explorer-tree>
@@ -166,11 +180,12 @@
 		</list:list-view>
 	</context>
 
-	<context type="FinancialSurvey" component="listview"
+	<context type="FinancialSurvey" component="listview" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 merge-by="type">
 		<list:list-view>
 			<list:column qualifier="quarter" />
 			<list:column qualifier="user" />
+			<list:column qualifier="surveyStatus" />
 		</list:list-view>
 	</context>
 
@@ -539,7 +554,7 @@
 		</y:base>
 	</context>
 
-	<context type="FinancialSurveyQuarter" component="base" merge-by="type"
+	<context type="FinancialSurveyQuarter" component="base" merge-by="type" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 parent="GenericItem">
 		<y:base>
 			<y:labels>
@@ -548,7 +563,7 @@
 		</y:base>
 	</context>
 
-	<context type="FinancialSurvey" component="base" merge-by="type"
+	<context type="FinancialSurvey" component="base" merge-by="type" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 parent="GenericItem">
 		<y:base>
 			<y:labels>
@@ -592,7 +607,7 @@
 	</context>
 
 
-	<context type="FinancialSurveyQuarter" component="editor-area"
+	<context type="FinancialSurveyQuarter" component="editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 merge-by="type">
 		<editorArea:editorArea>
 			<editorArea:tab name="FinancialSurveyQuarterTab">
@@ -604,7 +619,7 @@
 		</editorArea:editorArea>
 	</context>
 
-	<context type="FinancialSurvey" component="editor-area"
+	<context type="FinancialSurvey" component="editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 merge-by="type">
 		<editorArea:editorArea>
 			<editorArea:tab name="FinancialSurveyTab">
@@ -1503,7 +1518,10 @@
 						 id="customersupport_backoffice_explorerTree_servicerequests"
 						 merge-mode="add" />
 
+
 		</n:explorer-tree>
+
+
 	</context>
 
 	<context component="cs-explorer-tree"
@@ -1521,6 +1539,23 @@
 		</n:explorer-tree>
 	</context>
 
+	<context component="cs-explorer-tree"
+			 module="customersupportbackoffice"
+			 principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+			 merge-by="principal" merge-mode="add">
+		<n:explorer-tree
+				xmlns:n="http://www.hybris.com/cockpitng/config/explorertree"
+				title="financial_survey">
+
+			<n:type-node code="FinancialSurveyQuarter"
+						 id="FinancialSurveyQuarter"
+						 merge-mode="add" />
+			<n:type-node code="FinancialSurvey"
+						 id="FinancialSurvey"
+						 merge-mode="add" />
+
+		</n:explorer-tree>
+	</context>
 
 	<!-- <context merge-by="type" parent="GenericItem" type="CsTicket" component="cs-editor-area"
 		principal="customersupportadministratorrole" module="customersupportbackoffice"

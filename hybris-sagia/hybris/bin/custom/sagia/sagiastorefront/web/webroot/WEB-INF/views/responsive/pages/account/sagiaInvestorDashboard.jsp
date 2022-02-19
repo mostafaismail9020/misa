@@ -297,8 +297,7 @@
                     <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
                         <div class="content-wrapper">
                             <p class="INS_letter_set_para pb-3 mb-3">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
+                                <spring:theme code="sagia.licenses.catagory.description"/>
                             </p>
                             <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
                                <spring:theme code="portal.sector.opportunity.know.more.label"/>
@@ -311,8 +310,7 @@
                     <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
                         <div class="content-wrapper">
                             <p class="INS_letter_set_para pb-3 mb-3">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
+                              <spring:theme code="sagia.governmental.catagory.description"/>
                             </p>
                             <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
                             	<spring:theme code="portal.sector.opportunity.know.more.label"/>
@@ -324,8 +322,7 @@
                     <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
                         <div class="content-wrapper">
                             <p class="INS_letter_set_para pb-3 mb-3">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
+                               <spring:theme code="sagia.misa.services.catagory.descriptions"/>
                             </p>
                             <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
                             	<spring:theme code="portal.sector.opportunity.know.more.label"/>

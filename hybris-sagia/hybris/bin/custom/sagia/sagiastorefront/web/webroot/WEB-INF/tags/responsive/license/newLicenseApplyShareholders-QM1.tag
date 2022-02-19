@@ -81,7 +81,8 @@
                         <th><spring:theme code="license.apply.review.legalstatus"/></th>
                         <th><spring:theme code="license.apply.review.delegate"/></th>
                         <th><spring:theme code="license.apply.review.delegateId"/></th>
-                        <th class="tableModule-headItem tableModule-headItem_actionsCount_2"></th>
+                        <th>Delete</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody class="tableModule-body">

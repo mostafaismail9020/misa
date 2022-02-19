@@ -104,7 +104,9 @@
 				<advanced-search:field name="surveyStatus"
 									   selected="true" />
 			</advanced-search:field-list>
+
 		</advanced-search:advanced-search>
+
 	</context>
 
 
@@ -180,8 +182,16 @@
 		</list:list-view>
 	</context>
 
-	<context module="customersupportbackoffice" type="FinancialSurvey" component="listview" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+	<context  type="FinancialSurvey" component="listview"
 			 merge-by="type">
+		<list:list-view>
+			<list:column qualifier="quarter" />
+			<list:column qualifier="user" />
+			<list:column qualifier="surveyStatus" />
+		</list:list-view>
+	</context>
+
+	<context component="cs-listview" type="FinancialSurvey" module="customersupportbackoffice" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole" >
 		<list:list-view>
 			<list:column qualifier="quarter" />
 			<list:column qualifier="user" />

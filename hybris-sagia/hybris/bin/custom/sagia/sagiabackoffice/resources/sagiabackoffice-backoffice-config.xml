@@ -617,7 +617,7 @@
 	</context>
 
 
-	<context type="FinancialSurveyQuarter"  component="editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+	<context type="FinancialSurveyQuarter"  component="editor-area"
 			 merge-by="type">
 		<editorArea:editorArea>
 			<editorArea:tab name="FinancialSurveyQuarterTab">
@@ -629,7 +629,103 @@
 		</editorArea:editorArea>
 	</context>
 
-	<context module="customersupportbackoffice" type="FinancialSurvey" component="editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+	<context type="FinancialSurveyQuarter"  component="cs-editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="FinancialSurveyQuarterTab">
+				<editorArea:section name="FinancialSurveyQuarterSection">
+					<editorArea:attribute qualifier="code" />
+					<editorArea:attribute qualifier="name" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context module="customersupportbackoffice" type="FinancialSurvey" component="cs-editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+			 merge-by="type">
+		<editorArea:editorArea >
+			<editorArea:tab name="FinancialSurveyTab" >
+				<editorArea:section name="FinancialSurveyStatusSection">
+					<editorArea:attribute qualifier="surveyStatus" />
+				</editorArea:section>
+				<editorArea:section name="FinancialSurveySection">
+					<editorArea:attribute qualifier="user" />
+					<editorArea:attribute qualifier="quarter" />
+					<editorArea:attribute qualifier="businessActivityId" />
+					<editorArea:attribute qualifier="businessActivityDescription" />
+					<editorArea:attribute qualifier="companyStatus" />
+					<editorArea:attribute qualifier="isConsolidated" />
+					<editorArea:attribute qualifier="disclosureCurrency" />
+				</editorArea:section>
+			</editorArea:tab>
+			<editorArea:tab name="FinancialSurveyEquityTab" position="10">
+				<editorArea:section name="FinancialSurveyEquitySection">
+					<editorArea:attribute qualifier="paidUpCapitalCurrentQuarter" />
+					<editorArea:attribute qualifier="additionalPaidUpCapitalCurrentQuarter" />
+					<editorArea:attribute qualifier="retainedEarningsIncludeCurrentQuarter" />
+					<editorArea:attribute qualifier="profitLossQuarterCurrentQuarter" />
+					<editorArea:attribute qualifier="totalReservesCurrentQuarter" />
+					<editorArea:attribute qualifier="treasurySharesCurrentQuarter" />
+					<editorArea:attribute qualifier="headOfficeAccountInBranchCurrentQuarter" />
+					<editorArea:attribute qualifier="shareholderEquityOthersCurrentQuarter" />
+					<editorArea:attribute qualifier="minorityRightsCurrentQuarter" />
+					<editorArea:attribute qualifier="totalShareholderEquityCurrentQuarter" />
+				</editorArea:section>
+			</editorArea:tab>
+			<editorArea:tab name="ShareholdersTab"
+							position="22">
+				<editorArea:section
+						name="FinancialSurveyShareholdersSection">
+					<editorArea:panel
+							name="hmc.tab.question.questions.panel1">
+						<editorArea:attribute qualifier="shareholders"
+											  editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor">
+							<editorArea:editor-parameter>
+								<editorArea:name>listConfigContext</editorArea:name>
+								<editorArea:value>myConfigFinancialSurveyShareholder</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>inlineEditing</editorArea:name>
+								<editorArea:value>false</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>pageSize</editorArea:name>
+								<editorArea:value>10</editorArea:value>
+							</editorArea:editor-parameter>
+						</editorArea:attribute>
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+
+			<editorArea:tab name="AffiliatesTab"
+							position="23">
+				<editorArea:section
+						name="FinancialSurveyAffiliatesSection">
+					<editorArea:panel
+							name="hmc.tab.question.questions.panel1">
+						<editorArea:attribute qualifier="affiliates"
+											  editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor">
+							<editorArea:editor-parameter>
+								<editorArea:name>listConfigContext</editorArea:name>
+								<editorArea:value>myConfigFinancialSurveyAffiliate</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>inlineEditing</editorArea:name>
+								<editorArea:value>false</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>pageSize</editorArea:name>
+								<editorArea:value>10</editorArea:value>
+							</editorArea:editor-parameter>
+						</editorArea:attribute>
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+
+		</editorArea:editorArea>
+	</context>
+
+	<context  type="FinancialSurvey" component="editor-area"
 			 merge-by="type">
 		<editorArea:editorArea >
 			<editorArea:tab name="FinancialSurveyTab" >

@@ -438,7 +438,8 @@ $(function () {
                         var attachmentURL = ACC.config.encodedContextPath + "/attachment/pdf/";
                         attachmentsHTML += "<li  style=\"cursor: pointer\" class=\"downloadList-item js-download-service-attachment\">"
                             + " <div class=\"downloadList-description\"> <span class=\"iconElement iconElement_pdf\">"
-                            + icon + "</span>" + value.fileName + " </div> <div class=\"downloadList-actions\"> <a href='"
+                            //+ icon 
+                            + "</span>" + value.fileName + " </div> <div class=\"downloadList-actions\"> <a href='"
                             + attachmentURL + value.objectId + "/" + value.documentID
                             + "' class=\"link link_nowrap\" download='" + value.fullFileName + "'" + "> <span class=\"iconElement iconElement_cloud\"><icon:download/></span>Download </a> </div> </li> ";
                     }

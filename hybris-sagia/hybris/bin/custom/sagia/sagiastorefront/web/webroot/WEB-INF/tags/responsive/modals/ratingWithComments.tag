@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="feedbackDashboardButtonId" type="button" class="btn btn_slim back_to_service" data-dismiss="modal" onclick="window.location.href='${encodedContextPath}/dashboard'"><spring:theme code="feedback.modal.goto.dashboard"/></button>
+                <button id="feedbackDashboardButtonId" type="button" class="btn btn_slim back_to_service" data-dismiss="modal"><spring:theme code="feedback.modal.goto.dashboard"/></button>
             </div>
             <div class="modal-secondaryContent modal-secondaryContent_wide">
                 <div class="modal-headline"><spring:theme code="feedback.modal.experience"/></div>
@@ -49,3 +49,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).on('click',"#feedbackDashboardButtonId",function(){
+        window.location ='${encodedContextPath}/dashboard';
+    })
+</script>

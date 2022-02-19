@@ -12,7 +12,7 @@
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
 
 <script>
-    // var configuredFileSize = ${maxUploadSize};
+    var configuredFileSize = ${maxUploadSize};
     var autoRenewal = "${autoRenewal}";
     var autoRenewalClearance = "${autoRenewalClearance}";
 </script>
@@ -69,7 +69,7 @@
 </div> -->
 
 <div class="container mainSection mainSection_dark mainSection_noPadding">
-	<div class="m-0 m-xl-5">
+	<div class="m-0 ml-custom-35">
 		<div class="row w-100">
             <div class="col-md-6 col-12 px-0">
 				<a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
@@ -106,242 +106,238 @@
 		<form:form id="renewLicenceId"  method="post" action="${actionUrl}" modelAttribute="licenseRenewalForm" enctype="multipart/form-data">
 			<div class="panelModule panelModule_halfRadius mt-3">
 				<div class="contentModule contentModule-wrap">
-					<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap ">
+					<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
 						<span class="contentModule-headline"><spring:theme code="renewlicense.wasseladdress"/></span>
 						<div class="contentModule-headline-border"></div>
 					</div>
-					<hr class="contentModule-separator">
-					<div class="contentModule-section contentModule-section_paddingSide">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="formInputBox-split">
-									<div class="formInputBox formInputBox_big">
-										<div class="form-group">
-											<form:input path="street" cssClass="form-control form-control_preNumber" placeholder="."/>
-											<label class="control-label control-label_mandatory" for="street">
-												<spring:theme code="license.street"/>
-											</label>
-										</div>
-										<div class="help-block"></div>
-									</div>
-									<div class="formInputBox">
-										<div class="form-group">
-											<form:input path="houseNo" cssClass="form-control form-control_preNumber" placeholder="."/>
-											<label class="control-label control-label_mandatory" for="houseNo">
-												<spring:theme code="license.number"/>.
-											</label>
-										</div>
-										<div class="help-block"></div>
-									</div>
-								</div>
-								<div class="formInputBox">
+				</div>
+				<div class="contentModule-section contentModule-section_paddingSide">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="formInputBox-split">
+								<div class="formInputBox formInputBox_big">
 									<div class="form-group">
-										<form:input path="city" cssClass="form-control form-control_preNumber" placeholder="."/>
-										<label class="control-label control-label_mandatory" for="city"><spring:theme code="general.city"/></label>
-										<div class="help-block"></div>
-									</div>
-								</div>
-								<div class="formInputBox">
-									<div class="form-group">
-										<form:input path="additNo" cssClass="form-control form-control_preNumber" placeholder="."/>
-										<label class="control-label control-label_mandatory" for="additNo"><spring:theme code="license.additionalnumber"/></label>
-										<div class="help-block"></div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="formSelectBox">
-									<div class="form-group">
-										<form:select path="country" cssClass="js-select2-oneColumn">
-											<option></option>
-											<form:options items="${countries}" itemValue="${not empty itemValue ? itemValue :'code'}" itemLabel="${not empty itemLabel ? itemLabel :'name'}" htmlEscape="true"/>
-										</form:select>
-										<label class="control-label control-label_mandatory" for="country"><spring:theme code="general.country"/></label>
+										<form:input path="street" cssClass="form-control form-control_preNumber" placeholder="."/>
+										<label class="control-label control-label_mandatory" for="street">
+											<spring:theme code="license.street"/>
+										</label>
 									</div>
 									<div class="help-block"></div>
 								</div>
 								<div class="formInputBox">
 									<div class="form-group">
-										<form:input path="zipCode" cssClass="form-control form-control_preNumber" placeholder="."/>
-										<label class="control-label control-label_mandatory" for="zipCode"><spring:theme code="address.postalcode"/></label>
-										<div class="help-block"></div>
-									</div>
-								</div>
-								<div class="formInputBox">
-									<div class="form-group">
-										<form:input path="buildingNo" cssClass="form-control form-control_preNumber" placeholder="."/>
-										<label class="control-label control-label_mandatory" for="buildingNo"><spring:theme code="address.buildingno"/></label>
-										<div class="help-block"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<%-- <div class="contentModule-section contentModule-section_paddingSide">
-						<span class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="general.images"/></span>
-                        <div class="documentModule js-upload-files-list" data-files-name="img">
-
-
-                            <ul class="downloadList downloadList_secondary js-confirmed-files">
-                                <c:forEach items="${resubmittedImages}" var="image" varStatus="count">
-                                    <li class="downloadList-item js-loaded-file" data-file-code="${image.documentID}">
-                                        <div class="downloadList-description">
-                                            <span class="iconElement iconElement_pdf"><icon:document></icon:document></span>
-                                            <span class="js-file-name">image-${count.index+1}</span>
-                                            <input name="img" class="js-file-code-inpjs-remove-fileut" type="hidden" file-name="${image.documentID}" value="${image.documentID}">
-                                        </div>
-                                        <div class="downloadList-actions">
-                                            <a class="link link_nowrap" onclick="removeImage(this)">
-                                                    <span class="iconElement iconElement_cloud02"><icon:remove></icon:remove></span>
-                                                Remove
-                                            </a>
-                                        </div>
-                                    </li>
-                                </c:forEach>
-                            </ul>
-
-                            <div class="contentModule-actions contentModule-actions_centered">
-                                <button class="btn js-upload-files"><spring:theme code="general.add"/></button>
-                            </div>
-
-                            <div class="modal fade js-upload-list-modal" tabindex="-1" role="dialog" aria-labelledby="uploadListModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <div class="modal-title"><spring:theme code="uploaddocuments.uploadyourfiles"/></div>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="formInputFileBox js-form-input-file-box">
-                                                <div class="form-group">
-                                                    <div class="form-icon form-icon_browse">
-                                                        <icon:upload/>
-                                                    </div>
-                                                    <input class="form-control js-input-file" type="file" accept="image/jpg" multiple name="" id="fileBoxModalimg"/>
-                                                    <label class="control-label js-file-label" for="fileBoxModalimg"><spring:theme code="uploaddocuments.chooseafile"/> <span class="formInputFileBox-dragndrop"><spring:theme code="uploaddocuments.draghere"/></span></label>
-                                                </div>
-                                            </div>
-
-                                            <div class="modal-description modal-description_largeMargin">
-                                                <ul class="downloadList downloadList_secondary js-file-list"></ul>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary btn_slim btn_round js-close-modal-btn"><spring:theme code="general.cancel"/></button>
-                                            <button type="button" class="btn btn_slim btn_round js-confirm-modal-btn"><spring:theme code="general.confirm"/></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="display: none">
-                                <ul>
-                                    <li class="downloadList-item js-append-file js-loaded-file">
-                                        <div class="downloadList-description">
-                                            <span class="iconElement iconElement_pdf"><icon:document/></span>
-                                            <span class="js-file-name"><spring:theme code="general.name"/></span>
-                                            <input name="img" class="js-file-code-input" type="hidden"/>
-                                        </div>
-                                        <div class="downloadList-actions">
-                                            <a href="#" class="link link_nowrap js-remove-file" style="display:none;">
-                                                <span class="iconElement iconElement_cloud02"><icon:remove/></span>
-                                                <spring:theme code="general.remove"/>
-                                            </a>
-                                            <img class="js-loading-spinner" src="${commonResourcePath}/images/spinner.gif"/>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-					</div> --%>
-
-					<div class="contentModule-section contentModule-section_paddingSide">
-						<span class="contentModule-headline contentModule-headline_smallMargin "><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></span>
-                        <div class="documentModule contentModule-headline-border js-upload-files-list" data-files-name="img">
-
-
-
-                               <div class="formSelectBox">
-
-									<div class="form-group">
-
-										<form:select path="duration" cssClass="js-select2-oneColumn" onChange="updateExpiryDate(this, event)">
-											<option></option>
-											<form:options items="${durations}" itemValue="${not empty itemValue ? itemValue :'code'}" itemLabel="${not empty itemLabel ? itemLabel :'name'}"  htmlEscape="true"/>
-										</form:select>
-										<label class="control-label control-label_mandatory" for="duration"><spring:theme code="license.apply.entity.licenseYear"/></label>
+										<form:input path="houseNo" cssClass="form-control form-control_preNumber" placeholder="."/>
+										<label class="control-label control-label_mandatory" for="houseNo">
+											<spring:theme code="license.number"/>.
+										</label>
 									</div>
 									<div class="help-block"></div>
-
-									 <span class="renewMessage" id="expDateTag" style="display: none"></span>
-									 <input class="renewMessage" id="expDate" style="display: none" value="${licExDateData.date}"/>
-									 <input class="renewMessage" id="dateUIPattern" style="display: none" value="${licExDateData.dateUIPattern}"/>
-									 <br/>
-									 <span class="renewMessage" > <spring:theme code="license.apply.licenseYear.warning"/> </span>
-									 <br/><br/>
-									 <span> <spring:theme code="license.apply.licenseYear.note"/> </span>
-									 <br/>
-									 <span> <spring:theme code="license.apply.licenseYear.example"/> </span>
 								</div>
-                        </div>
-					</div>
-
-
-
-
-
-					<div class="contentModule-section contentModule-section_paddingSide">
-						<span class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="text.account.followup.supportDocuments"/></span>
-						<div class="row contentModule-headline-border">
-							<div class="col-md-6">
-								<c:choose>
-									<c:when test="${reapply}">
-										<c:forEach items="${resubmittedDocuments}" var="attachment" varStatus="counter">
-											<c:set var="noExtensionFileName" value="${fn:replace(attachment.fullFileName,'.pdf' ,'')}"/>
-											<div class="formInputFile active">
-												<div class="form-group">
-													<input id="fileId_${counter.index}" name="multipartFile[${counter.index}]" class="form-control js-inputFile" type="file" accept="application/pdf,image/jpeg" value="">
-													<input id="fileTextId_${counter.index}" name="fileText[${counter.index}]" class="form-control" type="text" value="" placeholder="${attachment.fullFileName}" readonly tabindex="-1">
-													<label class="control-label control-label_mandatory" for="fileTextId_${counter.index}">${noExtensionFileName}</label>
-													<div class="form-icon form-icon_browse">
-														<icon:upload/>
-													</div>
-													<div class="form-icon form-icon_reset js-inputFile-reset">
-														<icon:cross/>
-													</div>
-													<div class="help-block"></div>
-													<input type="hidden" name="dockeyID[${counter.index}]" value="${attachment.keyID}" />
-													<input name="draftFiles[${counter.index}]" type="hidden" class="js-mock-input">
-												</div>
-											</div>
-										</c:forEach>
-									</c:when>
-									<c:otherwise>
-										<c:forEach items="${attachments}" var="attachment" varStatus="counter">
-											<div class="formInputFile">
-												<div class="form-group">
-													<input class="form-control js-inputFile" type="file" accept="application/pdf,image/jpeg" value="" name="multipartFile[${counter.index}]">
-													<input id="labelPlaceholder1" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1">
-													<label class="control-label control-label_mandatory" for="labelPlaceholder1">${attachment.description}</label>
-													<div class="form-icon form-icon_browse">
-														<icon:upload/>
-													</div>
-													<div class="form-icon form-icon_reset js-inputFile-reset">
-														<icon:cross/>
-													</div>
-													<div class="help-block"></div>
-													<input type="hidden" name="dockeyID[${counter.index}]" value="${attachment.dockeyID}" />
-													<input name="draftFiles[${counter.index}]" type="hidden" class="js-mock-input">
-												</div>
-											</div>
-										</c:forEach>
-									</c:otherwise>
-								</c:choose>
+							</div>
+							<div class="formInputBox">
+								<div class="form-group">
+									<form:input path="city" cssClass="form-control form-control_preNumber" placeholder="."/>
+									<label class="control-label control-label_mandatory" for="city"><spring:theme code="general.city"/></label>
+									<div class="help-block"></div>
+								</div>
+							</div>
+							<div class="formInputBox">
+								<div class="form-group">
+									<form:input path="additNo" cssClass="form-control form-control_preNumber" placeholder="."/>
+									<label class="control-label control-label_mandatory" for="additNo"><spring:theme code="license.additionalnumber"/></label>
+									<div class="help-block"></div>
+								</div>
 							</div>
 						</div>
-						<div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
+						<div class="col-md-6">
+							<div class="formSelectBox">
+								<div class="form-group">
+									<form:select path="country" cssClass="js-select2-oneColumn">
+										<option></option>
+										<form:options items="${countries}" itemValue="${not empty itemValue ? itemValue :'code'}" itemLabel="${not empty itemLabel ? itemLabel :'name'}" htmlEscape="true"/>
+									</form:select>
+									<label class="control-label control-label_mandatory" for="country"><spring:theme code="general.country"/></label>
+								</div>
+								<div class="help-block"></div>
+							</div>
+							<div class="formInputBox">
+								<div class="form-group">
+									<form:input path="zipCode" cssClass="form-control form-control_preNumber" placeholder="."/>
+									<label class="control-label control-label_mandatory" for="zipCode"><spring:theme code="address.postalcode"/></label>
+									<div class="help-block"></div>
+								</div>
+							</div>
+							<div class="formInputBox">
+								<div class="form-group">
+									<form:input path="buildingNo" cssClass="form-control form-control_preNumber" placeholder="."/>
+									<label class="control-label control-label_mandatory" for="buildingNo"><spring:theme code="address.buildingno"/></label>
+									<div class="help-block"></div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<%-- <div class="contentModule-section contentModule-section_paddingSide">
+					<span class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="general.images"/></span>
+					<div class="documentModule js-upload-files-list" data-files-name="img">
+
+
+						<ul class="downloadList downloadList_secondary js-confirmed-files">
+							<c:forEach items="${resubmittedImages}" var="image" varStatus="count">
+								<li class="downloadList-item js-loaded-file" data-file-code="${image.documentID}">
+									<div class="downloadList-description">
+										<span class="iconElement iconElement_pdf"><icon:document></icon:document></span>
+										<span class="js-file-name">image-${count.index+1}</span>
+										<input name="img" class="js-file-code-inpjs-remove-fileut" type="hidden" file-name="${image.documentID}" value="${image.documentID}">
+									</div>
+									<div class="downloadList-actions">
+										<a class="link link_nowrap" onclick="removeImage(this)">
+												<span class="iconElement iconElement_cloud02"><icon:remove></icon:remove></span>
+											Remove
+										</a>
+									</div>
+								</li>
+							</c:forEach>
+						</ul>
+
+						<div class="contentModule-actions contentModule-actions_centered">
+							<button class="btn js-upload-files"><spring:theme code="general.add"/></button>
+						</div>
+
+						<div class="modal fade js-upload-list-modal" tabindex="-1" role="dialog" aria-labelledby="uploadListModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<div class="modal-title"><spring:theme code="uploaddocuments.uploadyourfiles"/></div>
+									</div>
+									<div class="modal-body">
+										<div class="formInputFileBox js-form-input-file-box">
+											<div class="form-group">
+												<div class="form-icon form-icon_browse">
+													<icon:upload/>
+												</div>
+												<input class="form-control js-input-file" type="file" accept="image/jpg" multiple name="" id="fileBoxModalimg"/>
+												<label class="control-label js-file-label" for="fileBoxModalimg"><spring:theme code="uploaddocuments.chooseafile"/> <span class="formInputFileBox-dragndrop"><spring:theme code="uploaddocuments.draghere"/></span></label>
+											</div>
+										</div>
+
+										<div class="modal-description modal-description_largeMargin">
+											<ul class="downloadList downloadList_secondary js-file-list"></ul>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary btn_slim btn_round js-close-modal-btn"><spring:theme code="general.cancel"/></button>
+										<button type="button" class="btn btn_slim btn_round js-confirm-modal-btn"><spring:theme code="general.confirm"/></button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div style="display: none">
+							<ul>
+								<li class="downloadList-item js-append-file js-loaded-file">
+									<div class="downloadList-description">
+										<span class="iconElement iconElement_pdf"><icon:document/></span>
+										<span class="js-file-name"><spring:theme code="general.name"/></span>
+										<input name="img" class="js-file-code-input" type="hidden"/>
+									</div>
+									<div class="downloadList-actions">
+										<a href="#" class="link link_nowrap js-remove-file" style="display:none;">
+											<span class="iconElement iconElement_cloud02"><icon:remove/></span>
+											<spring:theme code="general.remove"/>
+										</a>
+										<img class="js-loading-spinner" src="${commonResourcePath}/images/spinner.gif"/>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div> --%>
+
+				<div class="contentModule-section contentModule-section_paddingSide">
+					<span class="contentModule-headline contentModule-headline_smallMargin "><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></span>
+					<div class="documentModule contentModule-headline-border js-upload-files-list" data-files-name="img">
+							<div class="formSelectBox">
+								<div class="form-group">
+									<form:select path="duration" cssClass="js-select2-oneColumn" onChange="updateExpiryDate(this, event)">
+										<option></option>
+										<form:options items="${durations}" itemValue="${not empty itemValue ? itemValue :'code'}" itemLabel="${not empty itemLabel ? itemLabel :'name'}"  htmlEscape="true"/>
+									</form:select>
+									<label class="control-label control-label_mandatory" for="duration"><spring:theme code="license.apply.entity.licenseYear"/></label>
+								</div>
+								<div class="help-block"></div>
+
+									<span class="renewMessage" id="expDateTag" style="display: none"></span>
+									<input class="renewMessage" id="expDate" style="display: none" value="${licExDateData.date}"/>
+									<input class="renewMessage" id="dateUIPattern" style="display: none" value="${licExDateData.dateUIPattern}"/>
+									<br/>
+									<span class="renewMessage" > <spring:theme code="license.apply.licenseYear.warning"/> </span>
+									<br/><br/>
+									<span> <spring:theme code="license.apply.licenseYear.note"/> </span>
+									<br/>
+									<span> <spring:theme code="license.apply.licenseYear.example"/> </span>
+							</div>
+					</div>
+				</div>
+				<div class="contentModule-section contentModule-section_paddingSide">
+					<!-- <span class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="text.account.followup.supportDocuments"/></span> -->
+					<div class="contentModule contentModule-wrap">
+						<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+							<span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+							<div class="contentModule-headline-border"></div>
+						</div>
+					</div>
+					<div class="row contentModule-headline-border">
+						<div class="attachment-division-wrap">
+							<c:choose>
+								<c:when test="${reapply}">
+									<c:forEach items="${resubmittedDocuments}" var="attachment" varStatus="counter">
+										<c:set var="noExtensionFileName" value="${fn:replace(attachment.fullFileName,'.pdf' ,'')}"/>
+										<div class="formInputFile active">
+											<div class="form-group">
+												<input id="fileId_${counter.index}" name="multipartFile[${counter.index}]" class="form-control js-inputFile" type="file" accept="application/pdf,image/jpeg" value="">
+												<input id="fileTextId_${counter.index}" name="fileText[${counter.index}]" class="form-control" type="text" value="" placeholder="${attachment.fullFileName}" readonly tabindex="-1">
+												<label class="control-label control-label_mandatory" for="fileTextId_${counter.index}">${noExtensionFileName}</label>
+												<div class="form-icon form-icon_browse">
+													<icon:upload/>
+												</div>
+												<div class="form-icon form-icon_reset js-inputFile-reset">
+													<icon:cross/>
+												</div>
+												<div class="help-block"></div>
+												<input type="hidden" name="dockeyID[${counter.index}]" value="${attachment.keyID}" />
+												<input name="draftFiles[${counter.index}]" type="hidden" class="js-mock-input">
+											</div>
+										</div>
+									</c:forEach>
+								</c:when>
+								<c:otherwise>
+									<c:forEach items="${attachments}" var="attachment" varStatus="counter">
+										<div class="formInputFile">
+											<div class="form-group">
+												<input class="form-control js-inputFile" type="file" accept="application/pdf,image/jpeg" value="" name="multipartFile[${counter.index}]">
+												<input id="labelPlaceholder1" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1">
+												<label class="control-label control-label_mandatory" for="labelPlaceholder1">${attachment.description}</label>
+												<div class="form-icon form-icon_browse">
+													<icon:upload/>
+												</div>
+												<div class="form-icon form-icon_reset js-inputFile-reset">
+													<icon:cross/>
+												</div>
+												<div class="help-block"></div>
+												<input type="hidden" name="dockeyID[${counter.index}]" value="${attachment.dockeyID}" />
+												<input name="draftFiles[${counter.index}]" type="hidden" class="js-mock-input">
+											</div>
+										</div>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</div>
+					</div>
+					<div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
+				</div>
+				<!-- </div> -->
 			</div>
 
 			<div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">

@@ -93,7 +93,7 @@
 </div>
 
 <div class="container mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
-    <div class="m-5">
+    <div class="m-0 ml-custom-35">
         <div class="row w-100 renewal-services">
             <div class="col-md-3 col-12 px-0">
                 <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
@@ -244,20 +244,16 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16 mt-5 mb-3 service-main">
-    <div class="container">
-        <div class="container mainSection mainSection_dark mainSection_noPadding">
-            <div class="container">
-                <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-                    <c:if test="${fn:length(convertToNationals_list) gt 1}">
-                        <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
-                            <div class=""><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
-                            <div class="hidden "><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
-                        </button>
-                    </c:if>
-                </div>
-            </div>
-        </div>
+<div class="container mainSection mainSection_dark mainSection_pdt16 mb-3 service-main">
+    <div class="">
+			<div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
+                <c:if test="${fn:length(convertToNationals_list) gt 1}">
+                    <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
+                        <div class=""><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                        <div class="hidden "><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+                    </button>
+                </c:if>
+			</div>
 
         <div class="expandableContent" id="expand01">
             <c:if test="${fn:length(convertToNationals_list) gt 1}">
@@ -371,12 +367,25 @@
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section" id="attachedFilesDivContent">
-                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered">
-                                    <div class="contentModule-headline serviceModule">
+                                <!-- <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered"> -->
+                                    <!-- <div class="contentModule-headline serviceModule">
                                         <span class="iconElement iconElement_documents"><icon:documents/></span>
                                         <span class="serviceModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                    </div> -->
+                                    <div class="contentModule contentModule-wrap">
+                                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                            <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                            <button type="submit" value="SUBMIT" class="btn btn_outline btn_slim" id="resubmitButton" data-toggle="modal"
+                                                <c:choose>
+                                                    <c:when test = "${fn:toUpperCase(latestConvToNationals.srStDesc) == 'REJECTED' && latestConvToNationals.reApply}"></c:when>
+                                                        <c:otherwise>disabled="true" style="display: none;"</c:otherwise>
+                                                    </c:choose>>
+                                                <spring:theme code="text.account.followup.resubmit"/>
+                                            </button>
+                                            <div class="contentModule-headline-border"></div>
+                                        </div>
                                     </div>
-                                    <div>
+                                    <!-- <div>
                                         <button type="submit" value="SUBMIT" class="btn btn_outline btn_slim" id="resubmitButton" data-toggle="modal"
                                                 <c:choose>
                                                     <c:when test = "${fn:toUpperCase(latestConvToNationals.srStDesc) == 'REJECTED' && latestConvToNationals.reApply}"></c:when>
@@ -384,8 +393,8 @@
                                                 </c:choose>>
                                             <spring:theme code="text.account.followup.resubmit"/>
                                         </button>
-                                    </div>
-                                </div>
+                                    </div> -->
+                                <!-- </div> -->
                                 <ul id="attachmentList" class="downloadList">
                                     <c:forEach items="${attachedFiles}" var="attachment">
                                         <li class="downloadList-item">
@@ -487,7 +496,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn js-close-btn btn_slim" href="${encodedContextPath}/dashboard">Close</a>
+                <a class="btn js-close-btn btn_a" href="${encodedContextPath}/dashboard">Close</a>
             </div>
         </div>
     </div>

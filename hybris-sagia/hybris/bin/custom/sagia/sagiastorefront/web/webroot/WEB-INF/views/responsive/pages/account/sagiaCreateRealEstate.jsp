@@ -37,7 +37,7 @@
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png notification_b2b_img"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
                         </c:if>
                     </div>
@@ -268,7 +268,7 @@
                                 </div>
                             </div>
 
-                            <div class="row ">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo2" hidden>
                                         <div class="form-group">
@@ -278,7 +278,7 @@
                                 </div>
                             </div>
 
-                            <div class="row ">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo3" hidden>
                                         <div class="form-group">
@@ -288,7 +288,7 @@
                                 </div>
                             </div>
 
-                            <div class="row ">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo4" hidden>
                                         <div class="form-group">
@@ -298,7 +298,7 @@
                                 </div>
                             </div>
 
-                            <div class="row ">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo5" hidden>
                                         <div class="form-group">
@@ -308,7 +308,7 @@
                                 </div>
                             </div>
 
-                            <div class="row ">
+                            <div class="row w-100">
                                 <div class="col-md-6" id="plotArea">
                                     <formElement:formInputBox idKey="realEstate.plotArea" labelKey="realEstate.plotArea" labelCSS="control-label_mandatory" path="plotArea"/>
                                 </div>
@@ -322,7 +322,7 @@
                                                                       labelCSS="control-label_mandatory"
                                                                       path="purchaseDate"/>
                                         </div>
-                                        <div class="formInputBox-append iconClass">
+                                        <div class="formInputBox-append iconClass right-50">
                                             <span class="formInputBox-text"><icon:calendar-gray/></span>
                                         </div>
                                     </div>
@@ -330,9 +330,8 @@
                                 <div class="col-md-6" id="mojDeedDate" hidden="true">
 	                                <div class="formInputBox">
 										<div class="form-group">
-											<form:input path="mojDeedDate" name="mojDeedDate" class="form-control"
-												placeholder="." value="" type="text" />
-												<label class="control-label" for="purchaseDate" idKey="realEstate.deedDate" labelKey="realEstate.deedDate"><spring:theme code="realEstate.deedDate"/></label>
+											<form:input path="mojDeedDate" name="mojDeedDate" class="form-control" placeholder="." value="" type="text" />
+											<label class="control-label" for="purchaseDate" idKey="realEstate.deedDate" labelKey="realEstate.deedDate"><spring:theme code="realEstate.deedDate"/></label>
 										</div>
 										<div class="help-block"></div>
 									</div>
@@ -498,9 +497,9 @@
                             </span> -->
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
                                 <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
                                 <div class="contentModule-headline-border"></div>
                             </div>
-                            <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
 
                             <div id="realEstateupload_placeholder" class="js-inputFile w-100">
                                 <c:if test="${not empty realEstate.documentsToUpload}">

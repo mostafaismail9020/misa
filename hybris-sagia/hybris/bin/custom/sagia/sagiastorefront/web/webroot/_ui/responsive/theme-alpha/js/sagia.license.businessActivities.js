@@ -966,7 +966,7 @@ $(function() {
                 'data-splrequirement-id="' + activity.splrequirementId + '"' +
                 'data-qeemah-channel="' + activity.qeemahChannel + '"' +
                 'data-class-id="' + activity.classId + '"' +
-                'data-branch-id="' + activity.branchId + '"' + 'style="background:#f5fdf4">' +
+                'data-branch-id="' + activity.branchId + '"' + 'style="background:#fff">' +
                 '   <td class="activityId"><span class="activityId text-bold">' + activity.activityId + '</span></td>' +
                 '   <td class="activityDescription">' + activity.description + '</td>' +
                 (!isShowAttachments ? '' :
@@ -1188,6 +1188,7 @@ $(function() {
             $(".modal-backdrop").remove();
             $('#businessActivitiesSection #businessActivitiesModal').modal('toggle');
             $("#businessActivitiesSection").scrollIntoView();
+            $("#businessActivitiesTable").scrollIntoView();
         }
     });
 

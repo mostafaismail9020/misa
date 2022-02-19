@@ -19,7 +19,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn_slim" data-dismiss="modal"><spring:message code="general.close"/></button>
+                <button type="button" class="d-none"></button>
+                <button type="button" class="btn" data-dismiss="modal"><spring:message code="general.close"/></button>
             </div>
         </div>
     </div>

@@ -160,18 +160,12 @@
                                 <span class="contentModule-headline">
                                     <spring:theme code="text.account.followup.info"/>: ${selectedItem.srId}
                                 </span>
-                                
-<!--
-                                <a href="warning-letters/create" type="submit" class="btn btn_slim js-create-warning-letter">
-                                    <spring:theme code="text.account.followup.create"/>
-                                </a>
--->
                                 <c:if test="${fn:length(warningLetters) > 0}">
                                     <div class="statusIndicator
-                                    <c:if test="${selectedItem.srStCode == 'E0001'}">statusIndicator_process</c:if>
-                                    <c:if test="${selectedItem.srStCode == 'E0002'}">statusIndicator_accepted</c:if>
-                                    <c:if test="${selectedItem.srStCode == 'E0003'}">statusIndicator_rejected</c:if>
-                                ">
+                                            <c:if test="${selectedItem.srStCode == 'E0001'}">statusIndicator_process</c:if>
+                                            <c:if test="${selectedItem.srStCode == 'E0002'}">statusIndicator_accepted</c:if>
+                                            <c:if test="${selectedItem.srStCode == 'E0003'}">statusIndicator_rejected</c:if>
+                                        ">
                                         <spring:theme code="text.account.followup.status"/>: <span>${selectedItem.srStDesc}</span>
                                     </div>
                                 </c:if>
@@ -209,8 +203,14 @@
 
                         <c:if test="${fn:length(warningLetters) > 0}">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline contentModule-headline_small">
+                                <!-- <div class="contentModule-headline contentModule-headline_small">
                                     <spring:theme code="text.account.followup.comments"/>
+                                </div> -->
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:theme code="text.account.followup.comments"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
                                 </div>
                                 <div class="commentModule">
                                     <div class="commentModule-window">
@@ -250,9 +250,11 @@
                                     <spring:theme code="text.account.followup.supportDocuments"/>
                                 </div>
                             </div> -->
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
-                                <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
-                                <div class="contentModule-headline-border"></div>
+                            <div class="contentModule contentModule-wrap">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                    <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                    <div class="contentModule-headline-border"></div>
+                                </div>
                             </div>
 
                             <ul class="downloadList downloadList_maxHeight">

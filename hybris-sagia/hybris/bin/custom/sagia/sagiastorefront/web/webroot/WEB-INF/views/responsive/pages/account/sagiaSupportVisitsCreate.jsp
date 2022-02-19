@@ -88,7 +88,7 @@
                     <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
                 </div>
             </div>
-            <div class="row renewal-services w-100">
+            <div class="row renewal-services w-100 d-none">
                 <div class="col-xl-12 col-12 btn-drafts_list amend-service-link amend-btns-list">
                     <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="supportVisitForm"

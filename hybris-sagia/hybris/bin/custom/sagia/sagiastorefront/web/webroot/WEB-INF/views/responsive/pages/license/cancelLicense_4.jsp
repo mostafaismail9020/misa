@@ -85,7 +85,7 @@
                 </div>
             </c:if>
         </div>	
-        <div class="row w-100 mt-4">
+        <div class="row w-100 mt-4 d-none">
             <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link amend-btns-list">
                 <div class="btn-drafts_list">
                     <button class="btn btn_round"><spring:theme code="licenseCancellation.save.draft"/>
@@ -165,7 +165,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn js-close-btn btn js-close-btn" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
+                <a class="btn js-close-btn btn_a" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
             </div>
         </div>
     </div>

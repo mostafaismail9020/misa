@@ -91,7 +91,7 @@
                     <a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
                 </div>
             </div>
-            <div class="row w-100 mt-4">
+            <div class="row w-100 mt-4 d-none">
                 <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
                     <button class="btn btn_round btn_slim js-save-draft" data-target-form="formNewConvertToNationals" data-service-id="${serviceId}">
                         <spring:theme code="general.savedraft"/>
@@ -131,9 +131,14 @@
                 </c:when>
                	<c:otherwise>
                     <div class="contentModule-section">
-                        <div class="contentModule-headline">
-                            <!-- <span class="iconElement iconElement_documents"><icon:documents/></span> -->
+                        <!-- <div class="contentModule-headline">
                             <spring:theme code="text.account.followup.supportDocuments"/>
+                        </div> -->
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
                         <div class="row">
                             <c:forEach items="${attachments}" var="attachment" varStatus="attachmentStatus">

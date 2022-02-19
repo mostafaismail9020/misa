@@ -162,10 +162,16 @@
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule">
                         <div class="contentModule-section">
-                            <div class="contentModule-headline contentModule-headline-service-info">
-                                <!-- <icon:documents/> -->
+                            <!-- <div class="contentModule-headline contentModule-headline-service-info">
                                 <spring:theme code="text.account.followup.supportDocuments"/>
                                 <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="<spring:theme code="text.account.followup.supportDocuments.mandatory"/>" data-original-title="" title=""><icon:tipInfo/></span>
+                            </div> -->
+                            <div class="contentModule contentModule-wrap">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                    <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                    <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="<spring:theme code="text.account.followup.supportDocuments.mandatory"/>" data-original-title="" title=""><icon:tipInfo/></span>
+                                    <div class="contentModule-headline-border"></div>
+                                </div>
                             </div>
 
                             <div class="row mt-5">

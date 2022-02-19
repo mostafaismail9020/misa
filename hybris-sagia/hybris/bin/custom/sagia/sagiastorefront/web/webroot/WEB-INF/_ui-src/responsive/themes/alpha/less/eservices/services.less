@@ -340,13 +340,17 @@
 .back_to_service:hover,.back_to_profile:hover{
     background-color: @color-white !important;
 }
-::-webkit-scrollbar {
-    width: 5px;
-}
-::-webkit-scrollbar-thumb{
-    background-color: #0097A9;
-}
 
+*{
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: darkgrey;
+    }
+    scrollbar-width: thin; 
+    scrollbar-color: darkgrey;
+}
 .historyList-status_E0012, .historyList-status_inprocess, .historyList-status_process{
     font-size: var(--content-font);
 }
@@ -683,10 +687,6 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     margin-left: 10px !important;
 }
 
-.btn-tooltip,.btn-tooltip:hover{
-    background-color: @color-primary !important;
-    color: @color-white !important;
-}
 .btn-tooltip{
     display: inline-table !important;
     width: 400px;
@@ -864,8 +864,10 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
         }
     }
     .full-width-responsive{
-        width: 100% !important;
-        max-width: 100% !important;
+        @media screen and (min-width:1000px) {
+            width: 100% !important;
+            max-width: 100% !important;            
+        }
     }
     .govt-doc-edit.modal-dialog{
         max-width: 100% !important;
@@ -930,7 +932,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
 .payment-detail-overview-btn{
     width: 375px !important;
 }
-.editProductBtn:hover,.deleteDropdown-btn:hover,.viewBranchBtn:hover{
+.editProductBtn:hover,.deleteDropdown-btn:hover,.viewBranchBtn:hover,.btn#btn_editBranchBtn:hover{
     background: none !important;
 }
 .dataTables_filter.searchInputBox{
@@ -1128,9 +1130,6 @@ body ::-webkit-scrollbar-thumb {
         width: 195px;
     }
 }
-.service-content-history{
-    font-size: 15px;
-}
 .service-share-holder-table{
     .service_action_btn{
         width: 30px;
@@ -1181,6 +1180,9 @@ body ::-webkit-scrollbar-thumb {
 	#header,#topbar,.mainSection.mainSection_noPadding.userDetail-block{
 		zoom: 1.25;
 	}
+    .tooltip.fade.show.bs-tooltip-top{
+        transform: translate3d(780px, 865px, 0px) !important;
+    }
   }
 @media (-webkit-device-pixel-ratio: 1.50) {
     body {
@@ -1189,13 +1191,123 @@ body ::-webkit-scrollbar-thumb {
 	#header,#topbar,.mainSection.mainSection_noPadding.userDetail-block{
 		zoom: 1.24;
 	}
+    .tooltip.fade.show.bs-tooltip-top{
+        transform: translate3d(780px, 905px, 0px) !important;
+    }
 }
 .notification_b2b_img{
-    margin-top: -3px;
-    margin-left: -3px;
+    margin-top: -3px;margin-left: -3px;
 }
 .notification_b2b_content{
     top:40%;
     right:10%;
     background: @color-white;
+}
+.ml-custom-35{
+    margin-left: 35px !important;
+    [dir="rtl"] &{
+        text-align: right;
+        margin-right:0px;
+    }
+}
+
+.service-history-link{
+    @media screen and (max-width:768px) {
+        text-align: left;
+        [dir="rtl"] &{
+            text-align: right;
+        }
+    }
+}
+.modal-dialog_businessActivities {
+    input.searchInputBox-input[type="text"] { 
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            margin-right:10px;
+          }
+          ::-moz-placeholder { /* Firefox 19+ */
+            margin-right:10px;
+          }
+          :-ms-input-placeholder { /* IE 10+ */
+            margin-right:10px;
+          }
+          :-moz-placeholder { /* Firefox 18- */
+            margin-right:10px;
+          }
+    }
+}
+.contentModule-actions,.deleteDropdown-actions{
+    .btn.btn_outline{
+        color: #00a6be ;
+        border: 1px solid #00a6be;
+        background-color: #fff;
+    }
+}
+
+.form-control + .control-label + .formInputBox-append{
+    @media screen and (min-width:1200px) {        
+        margin-left: -65px;
+    }
+}
+.formInputBox_group .formInputBox-text{
+    padding: 20px;
+}
+
+
+#delegateDivSection{
+    .btn-tooltip{
+        background: none;
+        color: @color-primary;
+    }
+}
+
+#entityHistoryTabId{
+    .service-content-history{
+        font-size: 20px;
+        line-height: 40px;
+    }
+}
+
+.right-50{
+    right:50px !important;
+}
+.renew-license-btns {
+    width: 400px!important;
+}
+
+.formInputFile .form-control{
+    border-top-left-radius: 113px;
+    border-bottom-left-radius: 113px;
+}
+.formInputFile .form-icon{
+    border-top-right-radius: 113px;
+    border-bottom-right-radius: 113px;
+}
+.formInputFile.formInputFile.active .control-label{
+    left: 15px;
+    [dir="rtl"] &{
+        right: 15px;
+        left: initial;
+    }
+}
+.attachment-division-wrap{
+   display: flex;
+   flex-wrap: wrap;
+   .formInputFile{
+       width: 50%;
+       padding: 20px;
+   }
+   .help-block{
+       margin-right: 25px;
+       [dir = "rtl"] &{
+           margin-left: 25px;
+           margin-right: initial;
+       }
+   }
+}
+.btn_a{
+    padding: 10px 20px;
+}
+
+.btn:hover{
+    box-shadow:none !important;
 }

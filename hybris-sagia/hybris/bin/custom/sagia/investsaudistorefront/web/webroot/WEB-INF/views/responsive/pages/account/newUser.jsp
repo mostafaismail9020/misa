@@ -134,7 +134,7 @@
         <div class="col-md-6"></div>
         <div class="col-md-12 pt-5 text-center">
           <div class="form-group addNewUser_group">
-              <button class="btn btn-sagia btn-sagia-green cancel" type="button" id="addNewUserCancel">
+              <button class="btn btn-sagia btn-sagia-green cancel" type="reset" id="addNewUserCancel">
               Cancel
               </button>
               <button class="btn btn-sagia btn-sagia-green Submit" type="button" id="addNewUserSubmit">

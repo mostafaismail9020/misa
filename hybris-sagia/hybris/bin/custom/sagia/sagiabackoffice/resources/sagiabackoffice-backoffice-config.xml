@@ -172,7 +172,7 @@
 		</list:list-view>
 	</context>
 
-	<context type="FinancialSurveyQuarter" component="listview"
+	<context module="customersupportbackoffice" type="FinancialSurveyQuarter" component="listview" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 merge-by="type">
 		<list:list-view>
 			<list:column qualifier="code" />
@@ -180,7 +180,7 @@
 		</list:list-view>
 	</context>
 
-	<context type="FinancialSurvey" component="listview" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+	<context module="customersupportbackoffice" type="FinancialSurvey" component="listview" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 merge-by="type">
 		<list:list-view>
 			<list:column qualifier="quarter" />
@@ -563,7 +563,7 @@
 		</y:base>
 	</context>
 
-	<context type="FinancialSurvey" component="base" merge-by="type" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+	<context module="customersupportbackoffice" type="FinancialSurvey" component="base" merge-by="type" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 parent="GenericItem">
 		<y:base>
 			<y:labels>
@@ -607,7 +607,7 @@
 	</context>
 
 
-	<context type="FinancialSurveyQuarter" component="editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+	<context type="FinancialSurveyQuarter"  component="editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 merge-by="type">
 		<editorArea:editorArea>
 			<editorArea:tab name="FinancialSurveyQuarterTab">
@@ -619,10 +619,10 @@
 		</editorArea:editorArea>
 	</context>
 
-	<context type="FinancialSurvey" component="editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+	<context module="customersupportbackoffice" type="FinancialSurvey" component="editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 merge-by="type">
-		<editorArea:editorArea>
-			<editorArea:tab name="FinancialSurveyTab">
+		<editorArea:editorArea >
+			<editorArea:tab name="FinancialSurveyTab" >
 				<editorArea:section name="FinancialSurveyStatusSection">
 					<editorArea:attribute qualifier="surveyStatus" />
 				</editorArea:section>
@@ -1538,6 +1538,7 @@
 
 		</n:explorer-tree>
 	</context>
+
 
 	<context component="cs-explorer-tree"
 			 module="customersupportbackoffice"

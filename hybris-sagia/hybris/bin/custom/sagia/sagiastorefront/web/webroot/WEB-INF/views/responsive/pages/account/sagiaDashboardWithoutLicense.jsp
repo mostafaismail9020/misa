@@ -128,7 +128,7 @@
                         </c:when>
                         <c:otherwise>
                         	<div class="globalMessage-action d-flex">
-                        		<button data-target="#license-application-simulator" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 btn-simulator">
+                        		<button data-target="#license-application-simulator" data-toggle="modal" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 btn-simulator">
                         			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
                         			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/>
                         		</button> 
@@ -148,7 +148,7 @@
     </div>
 </div>
 
-<div id="license-application-simulator" class="container" style="display:none;">
+<!-- <div id="license-application-simulator" class="container" style="display:none;">
     <div class="row">
         <div class="col-md-10 ">
             <div class="embed-responsive embed-responsive-16by9">
@@ -159,6 +159,25 @@
             <button type="button" id="simulator-close" class="license-simulator-modal-close right-close  top-0 end-0">
                 <img class="" src="${commonResourcePath}/images/Close.png"/>
             </button>
+        </div>
+    </div>
+</div> -->
+
+<div class="modal fade licenseSimulatorPopup" id="license-application-simulator"  tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">
+        <div class="modal-content dashboard-pop-up">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" id="simulator-close" class="license-simulator-modal-close right-close  top-0 end-0">
+                    <img class="" src="${commonResourcePath}/images/Close.png"/>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class=" ">
+                    <div class="embed-responsive embed-responsive-16by9 mb-3">
+                        <iframe id="simulator-video" class="embed-responsive-item" src="https://www.youtube.com/embed/u3sQ7TDFUWs" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

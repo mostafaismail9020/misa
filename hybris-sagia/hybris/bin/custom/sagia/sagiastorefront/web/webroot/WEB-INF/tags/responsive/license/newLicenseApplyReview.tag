@@ -267,71 +267,63 @@
                 <c:url value="/my-sagia/license/entity" var="entityInfoLink"/>
                 <a id="editEntityInformationButton" type="button" class="btn btn_link iconElement iconElement_edit03" href="${entityInfoLink}"><icon:edit/></a>
             </div>
-
-            <div id="reviewLicenseTypeSection">
-                <div class="row">
-                    <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="reviewLicenseTypeSection">
+                                <dl class="dlList">
+                                    <dt><spring:theme code="license.apply.review.licence.type"/></dt>
+                                    <dd>${entityInformation.licenseTypeText}</dd>
+                                    <input type="hidden" value="entityInformation.licenseType" id="licenseType" />
+                                </dl>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="reviewLicenseYearSection">
                         <dl class="dlList">
-                            <dt><spring:theme code="license.apply.review.licence.type"/></dt>
-                            <dd>${entityInformation.licenseTypeText}</dd>
-                            <input type="hidden" value="entityInformation.licenseType" id="licenseType" />
+                                <dt><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></dt>
+                                <c:choose>
+                                    <c:when test="${entityInformation.licenseType eq '11'}">
+                                    <dd><spring:theme code="license.entity.rhq.year.${entityInformation.licenseDuration}"/></dd>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <dd><spring:theme code="license.entity.year.${entityInformation.licenseDuration}"/></dd>
+                                    </c:otherwise>
+                                </c:choose>
                         </dl>
                     </div>
                 </div>
-            </div>
-            <div id="reviewLicenseYearSection">
-                <div class="row">
-                    <div class="col-md-6">
-                        <dl class="dlList">
-                            <dt><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></dt>
-                            <c:choose>
-                                <c:when test="${entityInformation.licenseType eq '11'}">
-                                   <dd><spring:theme code="license.entity.rhq.year.${entityInformation.licenseDuration}"/></dd>
-                                </c:when>
-                                <c:otherwise>
-                                	<dd><spring:theme code="license.entity.year.${entityInformation.licenseDuration}"/></dd>
-                                </c:otherwise>
-                             </c:choose>
-                       </dl>
-                    </div>
+                <div class="col-md-4">
+                        <div id="reviewAdvanceLicenseNrSection" style="display: ${entityInformation.hasAdvanceLicenseNr?'block':'none'};">
+                            <dl class="dlList">
+                                        <dt><spring:theme code="licenseApplyEntityInformation.advanceLicenseNumberSection.text"/></dt>
+                                        <dd>${entityInformation.advanceLicenseNr}</dd>
+                            </dl>
+                        </div>
                 </div>
-
-                <hr class="contentModule-separator"/>
             </div>
-
-            <div id="reviewAdvanceLicenseNrSection" style="display: ${entityInformation.hasAdvanceLicenseNr?'block':'none'};">
-                <div class="row">
-                    <div class="col-md-6">
-                        <dl class="dlList">
-                            <dt><spring:theme code="licenseApplyEntityInformation.advanceLicenseNumberSection.text"/></dt>
-                            <dd>${entityInformation.advanceLicenseNr}</dd>
-                        </dl>
-                    </div>
-                </div>
-				<hr class="contentModule-separator"/>
-            </div>
+             <hr class="contentModule-separator"/>
 
             <div id="reviewBasicInformationExtendedSection">
                 <div class="row">
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="license.apply.entity.name"/></dt>
                             <dd id="reviewBasicInformationExtendedEntityName">${entityInformation.entityName}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="license.apply.entity.name.arabic"/></dt>
                             <dd id="reviewBasicInformationExtendedEntityNameInArabic">${entityInformation.entityNameArabic}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.legalstatus"/></dt>
                             <dd id="reviewBasicInformationExtendedStatus">${entityInformation.legalStatusText}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="license.multinational"/></dt>
                             <dd id="reviewBasicInformationExtendedMultinationalCompany">
@@ -344,73 +336,73 @@
                             </dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.capital"/></dt>
                             <dd id="reviewBasicInformationExtendedCapital">${entityInformation.capital} SAR</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.email"/></dt>
                             <dd id="reviewBasicInformationExtendedEmail">${entityInformation.email}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.telephone"/></dt>
                             <dd id="reviewBasicInformationExtendedTelephone">${entityInformation.countryCodeForTelephone} ${entityInformation.telephone}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.mobilenumber"/></dt>
                             <dd id="reviewBasicInformationExtendedMobilePhone">${entityInformation.countryCodeForMobilePhone} ${entityInformation.mobilePhone}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="licence.apply.website"/></dt>
                             <dd id="reviewBasicInformationExtendedWebsite">${entityInformation.website}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.country"/></dt>
                             <dd id="reviewBasicInformationExtendedCountry">${entityInformation.countryText}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="licence.apply.region"/></dt>
                             <dd id="reviewBasicInformationExtendedRegion">${entityInformation.regionText}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.city"/></dt>
                             <dd id="reviewBasicInformationExtendedCity">${entityInformation.cityText}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.address"/></dt>
                             <dd id="reviewBasicInformationExtendedAddress">${entityInformation.address}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.postalcode"/></dt>
                             <dd id="reviewBasicInformationExtendedPostalCode">${entityInformation.postalCode}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.pobox"/></dt>
                             <dd id="reviewBasicInformationExtendedPoBox">${entityInformation.poBox}</dd>
                         </dl>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <dl class="dlList">
                             <dt><spring:theme code="general.expectedinvestment"/></dt>
                             <dd id="reviewBasicInformationExtendedInvestment"><spring:theme code="license.apply.expectedinvestment.${entityInformation.investment}"/></dd>
@@ -495,7 +487,7 @@
                                     </c:if>
                                 </dl>
                             </div>
-                            <div class="col-12">
+                             <div class="col-sm-6 col-md-4">
                                 <dl class="dlList" id="reviewActivities">
                                     <dt><spring:theme code="license.apply.business.activities"/></dt>
                                     <c:if test="${not empty selectedISICDetails['activities']}">
@@ -562,7 +554,7 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-4">
                     <dl class="dlList">
                         <dt><spring:theme code="license.apply.review.name"/></dt>
                         <dd><c:out value="${contactPerson.firstName} ${contactPerson.lastName}"/></dd>
@@ -572,7 +564,7 @@
                         <dd><c:out value="${contactPerson.education}"/></dd>
                     </dl>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-4">
                     <dl class="dlList">
                         <dt><spring:theme code="license.apply.review.passport.number"/></dt>
                         <dd><c:out value="${contactPerson.passportNumber}"/></dd>
@@ -582,7 +574,7 @@
                         <dd><c:out value="${contactPerson.passportExpiryDate}"/></dd>
                     </dl>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-4">
                     <dl class="dlList">
                         <dt><spring:theme code="license.apply.review.country"/></dt>
                         <dd><c:out value="${contactPerson.countryText}"/></dd>
@@ -592,7 +584,7 @@
                         <dd><c:out value="${contactPerson.address}"/></dd>
                     </dl>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-4">
                     <dl class="dlList">
                         <dt><spring:theme code="license.apply.review.telephonenumber"/></dt>
                         <dd><c:out value="${contactPerson.telephoneNumber}"/></dd>
@@ -630,15 +622,16 @@
                     </div>
 
                 </div>
-            </div>
+                <div class="contentModule-actions contentModule-actions_spaceBetween">
+                <span>
+                    <button id="requirementSubmitButton" type="button" class="btn" disabled="disabled"><spring:theme code="text.consent.button.accept"/></button>
 
-            <div class="contentModule-actions contentModule-actions_spaceBetween">
-            <span>
-                <button id="requirementSubmitButton" type="button" class="btn" disabled="disabled"><spring:theme code="text.consent.button.accept"/></button>
-
-            </span>
+                </span>
 
             </div>
+            </div>
+
+            
 
         </div>
 

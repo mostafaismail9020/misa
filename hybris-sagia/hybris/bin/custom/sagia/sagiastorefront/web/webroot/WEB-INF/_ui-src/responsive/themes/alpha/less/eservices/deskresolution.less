@@ -3,7 +3,7 @@
     font-size: 24px;
 }
 .page-login .accountLogin-content p{
-    font-size: 20px;
+    font-size: 20px !important;
 }
 .page-login .dottedList-item{
     font-size: 18px;
@@ -113,6 +113,7 @@ padding-bottom:0;
 
   }
 }
+
 .page-login .formInputBox .register-user-details:focus~.register-user-info-label.control-label {
   transform: translate3d(-6px,0px,0) scale(1);
 
@@ -140,7 +141,7 @@ margin-bottom: 25px;
   padding-top: 0;
 }
 .page-login .register-form .slider:before, .page-login .register-form .slider:after{
-height: 33px;
+height: 33px !important;
 }
 .page-homepage .accountLogin-background{
 display: flex ;
@@ -152,16 +153,17 @@ align-items: center;
 .page-login .register-account-investor-screen3 .error{
 position: relative;
 top: -6px;
+margin-bottom: 15px;
 }
 @media (min-width: 1201px) and (max-width: 1499px) and (max-height: 700px){
   .page-login .register-form .slider:after {
-      left: 74%;
+      left: 74% !important;
   }
   .page-login .select2.select2-container .select2-selection {
 line-height: 0;
   }
   .page-login .register-form .slider:before, .page-login .register-form .slider:after{
-      height: 32px;
+      height: 32px !important;
       }
 .register-account-investor-screen3 .login-right-wrapper{
   width: 800px;
@@ -178,12 +180,12 @@ justify-content: center;
 }
 @media (min-width: 1201px) and (max-width: 1499px) and (max-height: 700px){
 .register-form .slider {
-  width: 80px;
-  height: 34px;
+  width: 80px !important;
+  height: 34px !important;
 }
 .register-form .slider:after, .register-form .slider:before {
-  height: 26px;
-  width: 40px;
+  height: 26px !important;
+  width: 40px !important;
 }
 .page-login .formInputBox .form-control, .page-login .r-sn .form-control {
   padding-left: 32px!important;
@@ -196,6 +198,9 @@ justify-content: center;
 }
 .page-login  .register-language{
   justify-content: flex-start;
+}
+.page-login label[for="quickregistration.register.title"]{
+	transform: translateX(-11px) !important;
 }
 }
 .page-login .row.login-error-form{
@@ -218,10 +223,68 @@ margin-bottom: 10px;
   margin-top: 2%;
   margin-bottom: 20px;
 }
+.page-login .ddl-countrycode-label.focused{
+	transform: translateY(-129%) !important;
+    text-overflow: initial;
+    width: 100px;
+}
 @media (min-width:792px) and (max-width:2800px) {
 	
 	iframe[title="recaptcha challenge expires in two minutes"] {
 		zoom: 1.5;	
 	}
 	
+}
+.page-login #password-strength-meter{
+	margin-bottom: 17px;
+	margin-bottom: 17px;
+    width: 84%;
+    margin-left: 20px;
+}
+.page-login .register-account-investor-screen4 .register-progress{
+	margin-top: 1%;
+}
+
+@media (-webkit-device-pixel-ratio: 1.5){
+	.page-login .ddl-countrycode-label.focused{
+		transform: translateY(-100%) !important;
+		text-overflow: initial;
+		width: 100px;
+	}
+  
+.page-homepage.pageType-ContentPage.template-pages-layout-landingLayout2Page.pageLabel-homepage{
+  
+    zoom:unset;
+  
+}
+.template-pages-layout-landingLayout2Page .panelModule.panelModule_halfRadius.accountLogin-content.accountLogin-content_small.forgotPassword-wrapper{
+  zoom:.7;
+}
+}
+	@media (-webkit-device-pixel-ratio: 1.25){
+	.page-login label[for="quickregistration.register.title"]{
+		transform: translateX(-11px) !important;
+	}
+	.page-login label[for="quickregistration.register.title"] .mandatory{
+		padding-left: 0;
+	}
+	.page-login .register-form .slider{
+		height: 35px;
+	}
+	.page-login .ddl-countrycode-label.focused{
+		transform: translateY(-100%) !important;
+		text-overflow: initial;
+		width: 100px;
+	}
+}
+@media (min-width: 1500px) and (max-width: 1669px) and (max-height: 800px){
+	.page-login .formInputBox .form-control, [dir=ltr] .r-sn .form-control {
+    padding-left: 35px!important;
+}}
+.page-login .register-account-investor-screen4 .login-register-role {
+    margin-top: 2%;
+    margin-bottom: 15px;
+}
+.page-login .register-account-investor-screen4 .error{
+	margin-bottom: 17px;
 }

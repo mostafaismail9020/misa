@@ -71,12 +71,12 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="hasProfessionalLicenseCr" id="hasProfessionalLicenseCrYES" value="yes" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.hasProfessionalLicenseCr == true ? 'checked' : ''}/>
-                            <label for="hasProfessionalLicenseCrYES" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.hasProfessionalLicense.yes"/></label>
+                            <label for="hasProfessionalLicenseCrYES" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.hasProfessionalLicense.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="hasProfessionalLicenseCr" id="hasProfessionalLicenseCrNO" value="no" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.hasProfessionalLicenseCr == false ? 'checked' : ''}/>
-                            <label for="hasProfessionalLicenseCrNO" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.hasProfessionalLicense.no"/></label>
+                            <label for="hasProfessionalLicenseCrNO" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.hasProfessionalLicense.no"/></label>
                         </div>
                     </div>
                 </div>

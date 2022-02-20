@@ -616,7 +616,7 @@
             </h3>
         </div>
 
-        <div   id="typeRequirementSection" style="display: none;">
+        <div class="tearms_and_conditions" id="typeRequirementSection" style="display: none;">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
             		<div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.typeRequirement"/></div>
         	</div>

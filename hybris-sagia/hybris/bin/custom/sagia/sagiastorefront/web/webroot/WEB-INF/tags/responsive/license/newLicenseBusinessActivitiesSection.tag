@@ -11,7 +11,8 @@
 
 <div class="contentModule-section license-business-activities" id="temporaryLicenseTextBox" style="display: none;">
     <div class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary.title"/></div>
-    <div class="formInputBox" >
+    <hr class="hr"></hr>
+    <div class="formInputBox mt-5 textarea-box" >
         <div class="form-group">
             <%--      	<div class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary"/></div> --%>
 

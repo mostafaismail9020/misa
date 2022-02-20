@@ -169,13 +169,13 @@
 						</div>
 						--%>
 						<div class="col-md-12 register-form register-form-names ">
-							<div class="col-xl-2 col-md-12 col-12 register-form focus-on-change register-forms-select px-0 right_arrowdd">
+							<div class="col-2 register-form focus-on-change register-forms-select px-0 right_arrowdd">
 								<formElement:formSelectBox idKey="quickregistration.register.title"
 										labelKey="register.title" selectCSSClass="form-control jqTitle js-select-required register-user-details"
 										path="titleCode" mandatory="true" skipBlank="false" labelCSS="register-user-info-label select-label-mandatory"
 										skipBlankMessageKey="form.select.empty" items="${titles}"/>	
 							</div>
-							<div class="col-xl-5 col-md-12 col-12 focus-on-change ">
+							<div class="col-5 focus-on-change ">
 								<%--
 								<label class="register-user-info-label" for="reg-fName">First Name<span class="mandatory">*</span></label>
 								<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-fName" name="FName" />
@@ -184,7 +184,7 @@
 										labelKey="register.firstName" path="firstName" inputCSS="js-quickregister-firstname register-user-details" labelCSS="control-label_mandatory register-user-info-label"
 										mandatory="true"/>
 							</div>
-							<div class="col-xl-5 col-md-12 col-12 focus-on-change">
+							<div class="col-5 focus-on-change">
 								<%--
 								<label class="register-user-info-label" for="reg-lName">Last Name<span class="mandatory">*</span></label>
 								<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-lName" name="LName" />
@@ -228,8 +228,8 @@
 									   path="countryCode" mandatory="true" skipBlank="false"
 									   skipBlankMessageKey="form.select.empty" items="${countries}" itemValue="code"/>	
 						</div>
-						<div class="col-md-12 register-form form-floating country-code-mobile">
-							<div class="col-xl-8 col-12 ml-0 pl-0 d-flex">
+						<div class="row col-12 reg-country-code-div register-form form-floating country-code-mobile">
+							<div class="col-8  ml-0 pl-0 d-flex">
 								<%--
 								<input type="text" class="ddl-countryCode register-user-details register-contry-info" placeholder=" " autocomplete="off" id="reg-country">
 								<div class="input-wrapper focus-on-change">
@@ -249,7 +249,7 @@
 												mandatory="true"/>
 								</div>								
 							</div>
-							<div class="col-xl-4 col-12 mx-0 px-0 register-language" id="registerQuickSelectLanguageDiv">
+							<div class="col-4 mx-0 px-0 register-language" id="registerQuickSelectLanguageDiv">
 								<span><spring:theme code="general.language"/></span>
 								<label class="switch">
 									<input type="checkbox" id="registerQuickSelectLanguageSelect">
@@ -345,7 +345,7 @@
 										</svg>
 									</span>
 								</div>
-								<div class="col-md-9 mx-0 px-0">															
+								<div class="col-md-11 mx-0 px-0">															
 									<label class="register-terms uncased mb-0" for="termsAndConditionsRegister">
 										<spring:theme code="investor.registration.read.agree.label"/>
 										<a class="register-terms-link" data-toggle="modal" data-target="#termsAndConditionsModal" href=""><spring:theme code="investor.registration.tearm.label"/></a>

@@ -147,7 +147,8 @@ SAGIA.payment = {
     },
     displayPaymentError: function(error){
         $("#payment-formError").hide();
-        $("#payment-formError span").html(getI18nText(error));
+        // $("#payment-formError span").html(getI18nText(error));
+        $("#payment-formError span").append(getI18nText(error)+' ').css({"color": "#d0021b", "font-size": "16px","margin-bottom": "35px"});
         $("#payment-formError").show();
     },
     pay: function () {
@@ -203,6 +204,7 @@ $(function(){
                                     data : JSON.stringify(map),
                                     success : function(data) {
                                         var jsonData = JSON.parse(data);
+                                        $("#payment-formError span").html('');
                                         if (jsonData.success == "true") {
                                             window.location.assign(ACC.config.encodedContextPath + "/payment/success");
                                         } else if(jsonData.success == "secure3DForm"){
@@ -232,11 +234,12 @@ $(function(){
                             } else if ("fields_in_error" == response.status)  {
 
                                 //console.log("Session update failed with field errors.");
+                                $("#payment-formError span").html('');
                                 if (response.errors.cardNumber) {
                                     SAGIA.payment.displayPaymentError("payments.cardNumberInvalid");
                                 }
                                 if (response.errors.expiryYear) {
-                                    SAGIA.payment.displayPaymentError("payments.yearError");
+                                    SAGIA.payment.displayPaymentError("payments.yearMissing");
                                 }
                                 if (response.errors.expiryMonth) {
                                     SAGIA.payment.displayPaymentError("payments.monthError");
@@ -252,11 +255,13 @@ $(function(){
 
                             } else if ("system_error" == response.status)  {
                                 //console.log("Session update failed with system error: " + response.errors.message);
+                                $("#payment-formError span").html('');
                                 SAGIA.payment.displayPaymentError("payments.sessionUpdateError");
 
                             }
                         } else {
                             //console.log("Session update failed: " + response);
+                            $("#payment-formError span").html('');
                             SAGIA.payment.displayPaymentError("payments.sessionUpdateFailed");
                         }
                     }

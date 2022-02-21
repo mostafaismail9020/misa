@@ -107,7 +107,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="d-flex row renewal-services w-100">
                 <div class="col-md-3">
-                    <a href="/service-search/GOVERNMENTAL SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>Back to All Services</a>
+                    <a href="/service-search/GOVERNMENTAL SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
                     <div class="col-xl-3 col-12">

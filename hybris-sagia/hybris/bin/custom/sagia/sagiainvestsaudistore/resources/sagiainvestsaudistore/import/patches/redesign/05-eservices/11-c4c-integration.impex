@@ -1,5 +1,5 @@
 
-INSERT_UPDATE Governmentlead; code[unique=true]	; name	;
+INSERT_UPDATE Governmentlead; code[unique=true]	; name		;
 							; Z08				; Identify Opportunity & Proposal;
 							; Z02				; Pre-feasibility Study;
 							; Z06				; Opportunity Finalization;
@@ -7,7 +7,7 @@ INSERT_UPDATE Governmentlead; code[unique=true]	; name	;
 							; NA				; Not Available;
 
 
-INSERT_UPDATE Investorlead  ; code[unique=true] ; name	;
+INSERT_UPDATE Investorlead  ; code[unique=true] ; name		;
 							; Z08				; Identify Opportunity & Proposal;
 							; Z02				; Pre-feasibility Study;
 							; Z06				; Opportunity Finalization;
@@ -20,20 +20,20 @@ INSERT_UPDATE PartnerType   ; code[unique=true]	; name			;
 							; Incubator			; Incubator		;
 
 
-INSERT_UPDATE CsInterventionType; code[unique=true]	; name				;
-								; NotesForCustomer	; Note For Customer;
+INSERT_UPDATE CsInterventionType; code[unique=true]	; name		;
+								; NotesForCustomer	; Note For Customer	;
 
 
-INSERT_UPDATE IncidentCategory ;code[unique=true];name	;
-;CA_2;Request Site visits	;
-;CA_3;Request Meetings		;
-;CA_4;Request Matchmaking	;
-;CA_5;Request Information (Cost);
-;CA_6;Sign Deal				;
-;CA_7;General Enquiries		;
+INSERT_UPDATE ServiceCategory 	; code[unique=true] ; name		;
+								; CA_1				; Service Request Categorization;
 
 
-INSERT_UPDATE ServiceCategory ;code[unique=true];name	;
-;CA_1;Service Request Categorization	;
+INSERT_UPDATE IncidentCategory 	; code[unique=true]	; name		;
+								; CA_2				; Request Site visits		;
+								; CA_3				; Request Meetings			;
+								; CA_4				; Request Matchmaking		;
+								; CA_5				; Request Information (Cost);
+								; CA_6				; Sign Deal					;
+								; CA_7				; General Enquiries			;
 
 

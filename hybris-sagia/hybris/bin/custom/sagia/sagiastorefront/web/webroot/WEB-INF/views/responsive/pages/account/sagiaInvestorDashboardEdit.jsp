@@ -160,7 +160,7 @@
     <div class="container">
         <div class="globalMessage">
             <div class="globalMessage-action">
-                <button class="btn btn_round" onclick="location.href='${encodedContextPath}/my-sagia/notifications'">Action</button>
+                <button class="btn btn_round" onclick="location.href='${encodedContextPath}/my-sagia/notifications'"><spring:theme code="dashboard.edit.action.name"/></button>
             </div>
             <div class="globalMessage-msg">
                 <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/></div>
@@ -176,7 +176,7 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <a href="${editUrl}" class="btn-outline d-block">
-    			<span class="iconElement iconElement_check_green"><icon:check/></span> Done
+    			<span class="iconElement iconElement_check_green"><icon:check/></span> <spring:theme code="dashboard.edit.button.name"/>
 			</a>
         </div>
     </div>

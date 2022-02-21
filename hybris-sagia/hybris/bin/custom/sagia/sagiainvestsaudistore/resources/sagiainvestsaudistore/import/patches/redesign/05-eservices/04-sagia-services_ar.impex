@@ -12,7 +12,7 @@ $langar = ar
 
 INSERT_UPDATE SagiaService        ; code[unique = true]          	; name[lang = $langar]               							  											; description[lang = $langar]
 #Licensing Service																																																																																																																																										
-								  ; ZSR6               			 	;" إلغاء الترخيص الاختياري "																					;"تقدم وزارة الاستثمار للجهاتالمرخصة خدمة إلغاء الترخيص حسب الحاجة "
+								  ; ZSR6               			 	;" إلغاء الترخيص الاختياري "																				;"تقدم وزارة الاستثمار للجهاتالمرخصة خدمة إلغاء الترخيص حسب الحاجة "
 								  ; ZSR5  						 	;"  تعديل التراخيص	"																						;"يمكن للمستخدم تقديم طلب تعديل الترخيص للمنشآت التي لديها ترخيص استثماري ساري المفعول ولا توجد عليها أي مخالفات بالنظام. يقبل النظام التقديم على الخدمة قبل ٩٠ يوم من انتهاء الترخيص الاستثماري. "             			
 								  ; ZSR4 						 	;" تجديد   "           																						;" تقدم هذه الخدمة لجميع التراخيص الصادرة من وزارة الاستثمار وترغب في تجديد ترخيصها الاستثماري"
 								  ; ZSR7						 	;"التحويل إلى مشروع وطني	"																				;"تقدم هذه الخدمة لأي منشأه قائمة ترغب بإنهاء وضعهامع وزارة الاستثمار وذلك بخروج الشركاء الأجانب وتحويل المنشأة إلى منشأة وطنية 100%." 						
@@ -27,7 +27,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true]          	; name[lang = 
 								; ZMOIP_02                          ;"  تجديد الاقامة "																						    ;" تقدم هذه الخدمة لأصحاب الشركات الذين يرغبون في اصدار اقامة جديدة للملاك أو العاملين.	 "					
 								; ZMOIP_18	           				;" الغاء الاقامة لمن غادر ولم يعد "																			;"تقدم هذه الخدمة للمنشآت التي ترغب بإلغاء الإقامة لعامليها ممن غادر خارج المملكة ولم يعد خلال مهلة التأشيرة."						
 								; ZMOIP_09							;" إصدار بدل فاقد للإقامة "																					;"تقدم هذه الخدمة لأصحاب الشركات والعاملين الذينيرغبون في اصدار بدل فاقد للإقامة. "							
-								;  ZMOIP_08							;"  إضافة تابع لرب الأسرة"																					;"تقدم هذه الخدمة لأصحاب الشركات الذين يرغبون في إضافة تابع لرب الأسرة. "						
+								; ZMOIP_08							;"  إضافة تابع لرب الأسرة"																					;"تقدم هذه الخدمة لأصحاب الشركات الذين يرغبون في إضافة تابع لرب الأسرة. "						
 								; ZMOIP_17							;" طلب بدل فاقد لجواز السفر "																				;"تقدم هذه الخدمة لأصحاب الشركات والعاملين الذين يرغبون في اصدار بدل فاقد لجواز السفر. "					
 								; ZMOIP_13							; "  تعديل بيانات جواز السفر "																				;"تقدم هذه الخدمة لأصحاب الشركات والعاملين الذينيرغبون في تعديل بيانات جواز السفر. "							
 								; ZMOIP_05 							; "  نقل معلومات "																							;"تقدم هذه الخدمة لأصحاب الشركات الذين يرغبون فينقل معلومات جواز السفر. "
@@ -287,7 +287,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true]					;serviceFinancialFee
 								  ; ZSR6								; لا يوجد.																			; خدمة إفادة لغرض الغاء الترخيص اختياريا:يومان عملخدمة اصدار قرار الغاء الترخيص اختياريا:فوري
 								  ; ZSR7								; لا يوجد.																			; فوري/يوم عمل واحد						
 								  ; ZSR5 						 	    ; لا يوجد.                                 											; فوري/يوم عمل واحد																																	
-								  ; ZSPLJAWA03								; لا يوجد.																			; 3 أيام عمل				
+								  ; ZSPLJAWA03							; لا يوجد.																			; 3 أيام عمل				
 								  ; ZSR4 							    ;"<ul>														  						; فوري.																																		
                                                                          <li> المقابل المالي لتجديد الترخيص (2,000) ريال سعودي عن كل سنة بحد أقصى 5 سنوات.</li>
 																		 <li>المقابل المالي (60000) ريال سعودي عن كل سنة.</li>
@@ -600,3 +600,86 @@ INSERT_UPDATE SagiaCategory	; code[unique = true]	; label 				; services(code)		
 							; 5						; SAGIA SERVICES		;ZFLUP_02,ZSVR,ZFLUP_03;
 
 
+#Production Data
+
+UPDATE SagiaCategory       ; code[unique = true]  ; name[lang = $langar]                              						; categoryUrl ;
+                           ; 7                    ; إستشارات اللوائح والإنظمة                       	  						; caturl      ;
+                           ; 6                    ; خدمة تحديث البيانات الحكومية                      						; caturl      ;
+                           ; 4                    ; تملك وبيع العقار                       			  						; caturl      ;
+                           ; 2                    ; خدمات الوزارة الخاصة                              						; caturl      ;
+                           ; 5                    ; خدمات متابعة الإستثمارات                           						; caturl      ;
+                           ; 3                    ; القوائم المالية                              							; caturl      ;
+                           ; labour               ; وزارة الموارد البشرية والتنمية الاجتماعية 								; ZMOL        ;
+                           ; commerceAndIndustry  ; وزارة التجارة                              								; ZMOCI       ;
+                           ; interiorAndPassport  ; المديرية العامة للجوازات                  								; ZMOIP       ;
+                           ; 1                    ; خدمات التراخيص                                							; caturl      ;
+
+							
+
+INSERT_UPDATE SagiaServiceTab; code[unique = true] ; content[lang = $langar]                                                                                                                                                                       ; largeContent[lang = $langar]                                                                                                                                                                      ; title[lang = $langar]          ;
+                             ; 20                  ; "<h2> النماذج </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831421841438&attachment=true"" style=""font-size: 14px""> تحميل النماذج </a>"                                                                ; "<h2> Conversion of company of one person from sole establishment to company </h2> <a target=""_blank"" href=""https://eservices.sagia.gov.sa/medias/Attachment-1.doc?context=bWFzdGVyfHJvb3R8ODI0MzJ8YXBwbGljYXRpb24vbXN3b3JkfGgyMS9oZmYvODg4OTAyNTkyMTA1NC5kb2N8ZWNiZjliYTVkZGE2MjhkZjE1NzdhOTE1MWFjNTc4OTFiZDA2YTVkMDE1NGJhYjg4ZjMyYjNlMDE4NWYwYmRhYQ&attachment=true"" style=""font-size: 14px""> تحميل النماذج </a>   <h2> Limited Liability company </h2> <a target=""_blank"" href=""https://eservices.sagia.gov.sa/medias/Attachment-2.docx?context=bWFzdGVyfHJvb3R8MzI1MTN8YXBwbGljYXRpb24vdm5kLm9wZW54bWxmb3JtYXRzLW9mZmljZWRvY3VtZW50LndvcmRwcm9jZXNzaW5nbWwuZG9jdW1lbnR8aDQ2L2gxYS84ODg5MDI2NTEwODc4LmJpbnw1YTNhMDA0NGMwYWRmM2UxNzdjM2NhMGQ5YWFjNDBjNWNlMDFiNTc3NmQ4ZGEzYzZiNDI2MjA5YWE3ODAxZDk1&attachment=true"" style=""font-size: 14px""> تحميل النماذج </a>   <h2> Company of one person </h2> <a target=""_blank"" href=""https://eservices.sagia.gov.sa/medias/Attachment-3.doc?context=bWFzdGVyfHJvb3R8ODI5NDR8YXBwbGljYXRpb24vbXN3b3JkfGhhMi9oZDUvODg4OTAyNjgzODU1OC5kb2N8YWYzMDQ0N2FkYWJhYzRmZjkwNjM4MjZkMGY0ZTVlMDEyMmE4NGJjODNiYTVkZWQ4OTg4NDE5MjJhMDc5NTdkYw&attachment=true"" style=""font-size: 14px"">تحميل النماذج </a> ";النماذج;
+                             ; 52                  ; "<iframe width=""560"" height=""315"" src=""https://www.youtube.com/embed/9nucPYIuAwE"" frameborder=""0"" allow=""accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"" allowfullscreen></iframe>"                 ; "<iframe width=""560"" height=""315"" src=""https://www.youtube.com/embed/9nucPYIuAwE"" frameborder=""0"" allow=""accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"" allowfullscreen></iframe>"                                                           ;  فيديو الخدمة                  ;
+							 ; 16                  ; "<h2> Trade name reservation </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831422627870&attachment=true"" style=""font-size: 14px""> الضغط هنا </a>"         ; "<h2> Trade name reservation </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831422627870&attachment=true"" style=""font-size: 14px""> الضغط هنا</a>"             ; Trade name reservation         ;
+                             ; 18                  ; "<h2>النماذج طلب خدمة</h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831421841438&attachment=true"" style=""font-size: 14px""> الضغط هنا </a>"           ; "<h2>النماذج طلب خدمة </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831421841438&attachment=true"" style=""font-size: 14px""> تحميل النماذج </a>"            ; النماذج طلب خدمة           ;
+                             ; 13                  ;                                                                                                                                                                                                                                        ;                                                                                                                                                                                                                                                                                  ;  المرفقات                    ;
+                             ; 12                  ; "<h2> Assigning account manager form </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831301091358&attachment=true"" style=""font-size: 14px""> Click Here </a>"                                          ; "<h2> Assigning account manager form </h2> <a target=""_blank"" href=""/sagiastorefront/medias/__secure__?mediaPK=8831301091358&attachment=true"" style=""font-size: 14px""> الضغط هنا </a>"                                                                                    ;  المرفقات                    ;
+                             ; 11                  ; "<h2> لمعرفة المزيد عن المستندات المطلوبة يرجى مراجعة دليل الخدمات عبر   تحميله هنا </h2> <a target=""_blank"" href=""https://misa.gov.sa/media/1279/misa-service-manual-v2-8th-edition-en-v6.pdf"" style=""font-size: 14px""> الضغط هنا </a> "    ; "<h2> لمعرفة المزيد عن المستندات المطلوبة يرجى مراجعة دليل الخدمات عبر   تحميله هنا</h2> <a target=""_blank"" href=""https://misa.gov.sa/media/1279/misa-service-manual-v2-8th-edition-en-v6.pdf"" style=""font-size: 14px""> الضغط هنا </a>"                       ;  تفاصيل الخدمة               ;
+
+
+UPDATE SagiaService         ; code[unique = true]							; name[lang = $langar]	                                                           ; tabs(code)	;
+							; ZMOCI_22										;نماذج وزارة التجارة;	
+							; ZMOIP_23										; نقل كفالة المدير العام لفرع شركة اجنبية;	
+							; ZMOIP_21										; فصل الإبن والإبنة;	
+							; ZMOIP_18										; الغاء الاقامة لمن غادر ولم يعد;	
+							; ZMOIP_17										; طلب بدل فاقد لجواز السفر;	
+							; ZMOIP_15										; فصل تابع بإقامة مستقلة;	
+							; ZMOIP_14										; تعديل مسمى المنشأة;	
+							; ZMOIP_13										; تعديل بيانات جواز السفر;	
+							; ZMOIP_12										; تمديد تأشيرات السفر;	
+							; ZMOIP_10										;  تأشيرة الخروج والعودة للمرافقين;	
+							; ZMOIP_11										; الغاء تأشيرة الخروج والعودة ;	
+							; ZMOIP_09										;  إصدار بدل فاقد للإقامة;	
+							; ZMOIP_08										; إضافة تابع لرب الأسرة;	                                        					11, 52	;
+							; ZMOIP_07										;  اصدار اقامة للسائق الخاص أو الخادمة;	
+							; ZMOIP_06										; نقل كفالة وتعديل المهنة للمدير العام لفرع الشركات الأجنبية;	
+							; ZMOIP_02										; تجديد الاقامة ;	
+							; ZMOIP_05										; نقل معلومات;	
+							; ZMOIP_03										; تأشيرة خروج وعودة;	
+							; ZMOIP_01										; اصدار اقامة جديدة;	
+							; ZMOIR_02										; استقدام عوائل المهن العليا;	
+							; ZMOIR_01										; استقدام عوائل المستثمرين;	
+							; ZMOL_03										; نقل الخدمات للسائق الخاص أو الخادمة;	
+							; ZMOL_11										; تحديث بيانات;	
+							; ZMOCI_21										;  تسجيل فرع شركة;	
+							; ZMOCI_20										; تحويل سجل تجاري من مؤسسة فردية إلى شركة;	
+							; ZMOCI_19										; تجديد السجل التجاري للمؤسسات الفردية;	
+							; ZMOCI_18										; تجديد السجل التجاري للشركات;	
+							; ZMOCI_17										;  إصدار سجل تجاري لشركة;	
+							; ZMOCI_15										; دراسة عقد تأسيس شركة جديدة;	
+							; ZMOCI_11										;  تعديل عنوان مؤسسة فردية;	
+							; ZMOCI_09										; تعديل السجل التجاري لمؤسسة فردية;	
+							; ZMOCI_10										; تعديل عنوان شركة;	
+							; ZMOCI_08										; تعديل السجل التجاري للشركات;	
+							; ZMOCI_07										; تسجيل فرع مؤسسة فردية ;	
+							; ZMOCI_03										; إصدار بدل تالف سجل تجاري لشركة ;	
+							; ZMOCI_04										; إصدار بدل تالف سجل تجاري لمؤسسة;	
+							; ZMOCI_05										; إصدار بدل فاقد سجل تجاري لشركة;	
+							; ZMOCI_02										; إصدار سجل تجاري لمؤسسة;	
+							; ZS20											; الشروط والأحكام;	
+							; ZSR5											; تعديل التراخيص;	
+							; ZSVR											; زيارات الدعم;	
+							; ZS14											; المستندات الحكومية;	
+							; ZFLUP_03										; تمديد مهلة التبليغ الكتابي;	
+							; ZFLUP_02										;الرد على التبليغ الكتابي;	
+							; ZRES											; بيع وتملك العقار;	
+							; ZSR6											; إلغاء اختياري للترخيص;	
+							; ZS11											; القوائم المالية;	
+							; ZSR9											; إلغاء خطاب تأييد لمهنة المستثمر;	
+							; ZSR1											; تحديث معلومات المستثمر;	
+							; ZSR7											; تحويل الترخيص إلى وطني 100%;	
+							; ZSR4											; تجديد الترخيص;	
+							; ZSPLJAWA03									; نقل كفالة المستثمر الأجنبي;	
+							; ZSPLJAWA01									;  تأشيرة الخروج والعودة للمستثمر الملغي ترخيصه (الحاصل على ترخيص تحت التصفية) ;	
+							; ZSPLJAWA04									;الخروج النهائي للمستثمر الملغي ترخيصه;	
+							; ZSPLJAWA02									;  تجديد الإقامة للمستثمر الملغي ترخيصه;	
+							   							   

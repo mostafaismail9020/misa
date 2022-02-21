@@ -161,6 +161,25 @@
 				</c:if>
 			</div>
 			
+<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
+<form:form action="${encodedContextPath}/potentialOpportunity/${ticketId}/uploadAttachment" modelAttribute="contactTicketForm" method="POST" enctype="multipart/form-data">
+<div class="form-group">
+<div class="custom-file mb-3">
+       <input type="file" accept="application/pdf" class="custom-file-input" id="pdfAttachment" name="pdfAttachment"/>
+       <%-- <input type="text" name="comment" class="js-quick-tialoppor_newcomment form-control reply_here" placeholder="<spring:theme code="my.potential.opportunity.enter.reply"/>"/> --%>
+       
+       <label class="custom-file-label" for="pdfAttachment" id="contact-ticket-upload-file">
+                 <spring:theme code="portal.contactus.form.drag.file.label" /> 
+           <span class="pvcy-policy">
+                 <spring:theme code="portal.contactus.form.browse.label" />
+           </span>
+       </label>
+	
+       <button type="submit" id="submit" class="btn btn_submit_whitess" value="Upload" />
+</div>
+</div>
+</form:form>
+			
 			<%-- 
 			<div class="showdowbox_potential col-12 text_potential mt-5 mb-2">
 				<!-- Tab panes -->

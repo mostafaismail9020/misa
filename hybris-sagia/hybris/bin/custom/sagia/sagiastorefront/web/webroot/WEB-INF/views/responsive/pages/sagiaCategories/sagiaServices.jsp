@@ -298,7 +298,7 @@
                     </div>
                 </div>
             </c:if>
-            <div class="expandableContent-main mt-3" id="expandedContentParent" style="${serviceList.size() == 0 ? 'visibility:hidden;' : ''}">
+            <div class="expandableContent-main" id="expandedContentParent" style="${serviceList.size() == 0 ? 'visibility:hidden;' : ''}">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div id="detailedConvertToNationalsContent" class="contentModule">
                         <div class="contentModule-section">

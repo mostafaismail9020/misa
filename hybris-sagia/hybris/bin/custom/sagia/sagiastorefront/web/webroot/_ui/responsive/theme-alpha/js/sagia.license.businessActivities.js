@@ -1187,8 +1187,8 @@ $(function() {
             SAGIA.license.apply.updateIsicTable();
             $(".modal-backdrop").remove();
             $('#businessActivitiesSection #businessActivitiesModal').modal('toggle');
-            $("#businessActivitiesSection").scrollIntoView();
-            $("#businessActivitiesTable").scrollIntoView();
+            var elmnt = document.getElementById("service-business-activities");
+            elmnt.scrollIntoView();
         }
     });
 

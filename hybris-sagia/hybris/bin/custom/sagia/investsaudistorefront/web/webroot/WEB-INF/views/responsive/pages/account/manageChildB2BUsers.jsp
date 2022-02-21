@@ -104,3 +104,4 @@
     <%-- End of manager user page --%>
 </form:form>
 <common:globalMessagesTemplates/>
+</div>

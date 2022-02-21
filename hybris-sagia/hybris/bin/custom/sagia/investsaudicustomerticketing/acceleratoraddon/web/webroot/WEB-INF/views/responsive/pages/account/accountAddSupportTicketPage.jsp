@@ -325,15 +325,15 @@
           class="form-actions">
           <div class="accountActions">
             <div class="d-flex space-around align-center flex-wrap">
-              <div class="col-md-3 accountButtons">
-                <a href="support-tickets" class="btn btn-sagia btn-block width-350">
+              <div class="col-md-6 accountButtons">
+                <a href="support-tickets" class="btn btn-sagia btn-block"><!-- width-350 -->
                   <spring:theme code="text.account.supporttickets.createTicket.back" text="Cancel" />
                 </a>
               </div>
-              <div class="col-md-3 accountButtons">
+              <div class="col-md-6 accountButtons">
                 <ycommerce:testId
                   code="supportTicket_create_button">
-                  <button class="btn btn-sagia btn-sagia-green btn-block width-350" type="button" id="addTicket">
+                  <button class="btn btn-sagia btn-sagia-green btn-block" type="button" id="addTicket"><!-- width-350 -->
                     <spring:theme code="text.account.supporttickets.createTicket.submit" text="Submit" />
                   </button>
                 </ycommerce:testId>

@@ -16,9 +16,88 @@
     <spring:theme code="text.secureportal.register.new.customer"/>
 </div>
 --%>
+<script>
+function validateRegisterForm(){
+    
+    var name            = $("input[id='text.secureportal.BDUserGroup.register.firstAndLastName']"); 
+    var select_entity   = $("input[id='user.BDUserGroup.entity_del']");
+    var department      = $("input[id='text.secureportal.BDUserGroup.register.department']");
+    var position        = $("input[id='text.secureportal.BDUserGroup.register.position']");
+    var telephone       = $("input[id='storeDetails.BDUserGroup.table.telephone']");
+    var email           = $("input[id='register.BDUserGroup.email']");
+    var confirm_email   = $("input[id='register.BDUserGroup.confirm.email']");
+    
+    name.removeClass('hasError');
+    select_entity.removeClass('hasError');
+    department.removeClass('hasError');
+    position.removeClass('hasError');
+    telephone.removeClass('hasError');
+    email.removeClass('hasError');
+    confirm_email.removeClass('hasError');
+
+    var recaptcha = "";
+    if( document.forms["registerForm-MarCommUserGroup"]){
+    	recaptcha = document.forms["registerForm-MarCommUserGroup"]["g-recaptcha-response"].value;
+    }else{
+    	recaptcha =document.forms["registerForm-BDUserGroup"]["g-recaptcha-response"].value;
+    }
+    
+   var valid = true;
+ 
+    if(recaptcha === ""){
+        $("#lblErrorCaptcha").text("Please fill reCAPTCHA");
+        valid = false;
+    }
+    if (name.val() === "" ){       
+        name.addClass('hasError');
+        valid = false;
+    }
+    if (select_entity.val() === "" ){       
+        select_entity.addClass('hasError');
+        valid = false;
+    }
+    if (department.val() === "" ){       
+        department.addClass('hasError');
+        valid = false;
+    }
+    if (position.val() === "" ){       
+        position.addClass('hasError');
+        valid = false;
+    }
+    if (telephone.val() === "" ){       
+        telephone.addClass('hasError');
+        valid = false;
+    }
+    if (email.val() === "" ){       
+        email.addClass('hasError');
+        valid = false;
+    }
+    if (confirm_email.val() === "" ){       
+        confirm_email.addClass('hasError');
+        valid = false;
+    }
+   
+    return valid;
+}
+
+function recaptchaCallback(){
+    $(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');           
+}
+
+</script>
+<style>
+.mandatory{
+color:#ff0000;
+font-size:12px;
+}
+.hasError{
+background:#fec3c3;
+border-color:#fd7b7b;
+}
+</style>
 
 <div class="row register-user-info">
-    <form:form method="post" id="registerForm-${userGroup}" modelAttribute="registrationForm" action="${action}" cssClass="registerForm">
+    <form:form method="post" id="registerForm-${userGroup}" modelAttribute="registrationForm" action="${action}" cssClass="registerForm" onsubmit="return validateRegisterForm()">
 
         <formElement:formInputBox idKey="text.secureportal.${userGroup}.register.firstAndLastName"
                                   labelKey="text.secureportal.register.firstAndLastName" path="name"
@@ -114,6 +193,7 @@
                  <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}"/>
 
         <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
+        <span id="lblErrorCaptcha" class="mandatory d-flex"></span>
                  </div>
             </div>
             <div class="col-xs-12 col-md-4 col-md-offset-4">

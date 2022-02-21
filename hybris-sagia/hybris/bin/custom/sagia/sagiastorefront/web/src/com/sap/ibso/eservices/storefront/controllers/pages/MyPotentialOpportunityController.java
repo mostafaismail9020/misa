@@ -17,17 +17,19 @@ import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.ticket.strategies.TicketEventStrategy;
 import de.hybris.platform.enumeration.EnumerationService;
 import de.hybris.platform.core.Registry;
-
+import de.hybris.platform.servicelayer.media.MediaService;
 import org.apache.log4j.Logger;
 import org.codehaus.plexus.util.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
+import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.servicelayer.i18n.I18NService;
 
@@ -45,6 +47,19 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.multipart.MultipartFile;
+import java.io.InputStream;
+import de.hybris.platform.core.model.media.MediaModel;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.lang.IllegalStateException;
+import org.springframework.http.MediaType;
+import de.hybris.platform.catalog.CatalogVersionService;
+import java.io.File;
+import org.apache.commons.io.FilenameUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import de.hybris.platform.ticket.model.CsTicketModel;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -70,10 +85,33 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 	@Resource(name = "contactTicketEventStrategy")
 	private TicketEventStrategy ticketEventStrategy;
 
-	@Resource(name = "modelService")
+	@Autowired
+    private MediaService mediaService;
+	
 	private ModelService modelService;
+	
+	public ModelService getModelService() {
+		return modelService;
+	}
 
+	public void setModelService(ModelService modelService) {
+		this.modelService = modelService;
+	}
 
+	public MediaService getMediaService() {
+		return mediaService;
+	}
+
+	public void setMediaService(MediaService mediaService) {
+		this.mediaService = mediaService;
+	}
+
+	@Resource
+    private CatalogVersionService catalogVersionService;
+
+	private static final String CATALOG_ID = "sagiaContentCatalog";
+	private static final String VERSION_ONLINE = "Online";
+		
 	@RequestMapping(value = PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	@RequireHardLogIn
 	public String getMyPotentialOpportunityPage(@PathVariable("ticketId") final String ticketId, final Model model)
@@ -162,5 +200,73 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 		}
 		return "redirect:" + THIS_CONTROLLER_REDIRECTION_URL + ticketId;
 	}
+	
+	 
+	 
+	@RequestMapping(value = "/{ticketId}/uploadAttachment",method = RequestMethod.POST,consumes = { MediaType.MULTIPART_FORM_DATA_VALUE,MediaType.APPLICATION_FORM_URLENCODED_VALUE,MediaType.TEXT_PLAIN_VALUE})
+    public String uploadAttachment(final Model model, @ModelAttribute("contactTicketForm") final ContactTicketForm contactTicketForm,
+    		final BindingResult bindingResult, @PathVariable("ticketId") final String ticketId, final HttpServletRequest request, final HttpServletResponse response) throws CMSItemNotFoundException {
+		
+    	final CatalogVersionModel catalogVersion = catalogVersionService.getCatalogVersion(CATALOG_ID, VERSION_ONLINE);
+		final MediaModel mediaModel = new MediaModel();
+          LOG.info("calling uploadAttachment controller");
 
+        if(null != contactTicketForm && null != contactTicketForm.getComment()) {
+            LOG.info("receieved the file");
+        }
+        try
+        {
+        final byte[] bytes = contactTicketForm.getPdfAttachment().getBytes();
+
+        if (null != bytes) {
+        	LOG.info("Entered into bytes != null");
+            final InputStream inputStream = new ByteArrayInputStream(bytes);
+            LOG.info("inputStream is: "+inputStream);
+            mediaModel.setCode("ticket_"+ticketId);
+            mediaModel.setCatalogVersion(catalogVersion); // use catalogVersionService to get the online version
+            mediaModel.setRealFileName("ticket_"+ticketId+".pdf");
+            LOG.info("before saving media model");
+            getModelService().saveAll(mediaModel);
+            LOG.info("mediaModel "+mediaModel);
+            LOG.info("after saving media model");
+            getMediaService().setStreamForMedia(mediaModel, inputStream);
+
+             inputStream.close();
+            }	
+        }
+            catch (final IOException ex)
+            {
+                LOG.error(ex.getMessage());
+                ex.printStackTrace();
+            }
+        ContactTicketModel contactTicketModel = sagiaUserService.getContactTicketForTicketId(ticketId);
+        LOG.info("contactTicketModel is " +contactTicketModel);
+        CsTicketModel ticket = (CsTicketModel)contactTicketModel;
+		if (!CollectionUtils.isEmpty(ticket.getAttachments()))
+		{
+			ticket.getAttachments().add(mediaModel);
+		}else {
+			final ArrayList<MediaModel> list = new ArrayList<MediaModel>();
+			list.add(mediaModel);
+			ticket.setAttachments(list);
+		}
+            return null;
+        // set the media model to attachments attribute in contact ticket model
+        }
+
+        private File createFile(MultipartFile multipartFile)
+        {
+        	try {
+        		
+        		   File file = File.createTempFile(multipartFile.getOriginalFilename(), FilenameUtils.getExtension(multipartFile.getOriginalFilename()));
+        		   file.deleteOnExit();
+        		   multipartFile.transferTo(file);
+        		   return file;
+        	}
+        	catch(IOException | IllegalStateException ex)
+        	{
+        		LOG.error("Exception in createFile: "+ex);
+        	}
+        	return null;
+        }             
 }

@@ -393,7 +393,7 @@
 							<span class="panelTabs-label"><spring:theme
 									code="license.isicactivity" /></span>
 						</div>
-						<div class="panelTabs-body">
+						<div class="panelTabs-body" id="service-business-activities">
 							<p id="oldActivitiesId"></p>
 							<license:licenseBusinessActivitiesSection />
 							<div

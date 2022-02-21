@@ -70,7 +70,7 @@
     <div class="container">
         <div class="d-flex row renewal-services w-100 mb--4">
             <div class="col-md-3">
-                <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink back_to_service">
+                <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink " style="width: 325px;">
                     <span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="legalConsultationCreate.backToAccountOverview.text"/>
                 </a>
             </div>
@@ -92,7 +92,7 @@
 <div class="mainSection mainSection_dark mainSection_pdt16">
     <div class="container">
         <form:form id="${serviceId}" action="${encodedContextPath}/legalconsultations/create" enctype="multipart/form-data" method="post" modelAttribute="legalConsultationFormData" class="js-legalconsultation-create">
-            <div class="panelModule panelModule_halfRadius">
+            <div class="panelModule panelModule_halfRadius mt-5">
                 <div class="contentModule contentModule-wrap">
                     <div class="contentModule-section">
                         <!-- <div class="contentModule-headline headline-text">

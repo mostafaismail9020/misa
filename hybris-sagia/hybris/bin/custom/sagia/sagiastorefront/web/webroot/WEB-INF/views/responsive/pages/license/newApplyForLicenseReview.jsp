@@ -24,11 +24,11 @@
 
 <div class="mainSection mainSection">
     <div class="achievement_header">
-        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <img class="achievement_header_icon  page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
         <div class="container">
             <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
                 <h1 data-aos="fade-up">
-                    <spring:theme code="average.service.time" />
+                    <spring:theme code="license.apply.sagialicenseapplication"/>
                 </h1>
             </div>
             <div class="profile-icons float-right">
@@ -60,7 +60,7 @@
     <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
     <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
     <div class="sagiaNavigation-subPane-actions">
-        <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+        <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
     </div>
 </div>
 
@@ -68,8 +68,9 @@
 <div class="mainSection mainSection_narrow mainSection_white">
     <div class="container">
         <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="license.apply.sagialicenseapplication"/></h1>
+            <!-- <h1 class="mainSection-headline"><spring:theme code="license.apply.sagialicenseapplication"/></h1> -->
         </div>
+        
         <c:if test="${not empty processingTime}">
             <div class="serviceTime">
                 <!-- <div class="serviceTime-label"><spring:theme code="average.service.time" /></div> -->

@@ -36,9 +36,9 @@
                         <tbody>
                             <c:forEach items="${existingChildUnits}" var="childUnit">
                                 <tr class="responsive-table-item">
-                                    <td class="hidden-sm hidden-md">${childUnit.id}</td>
-                                    <td class="hidden-sm hidden-md">${childUnit.name}</td>
-                                    <td class="hidden-sm hidden-md">${childUnit.parentUnitId} [${childUnit.parentUnitName}]</td>
+                                    <td class="">${childUnit.id}</td>
+                                    <td class="">${childUnit.name}</td>
+                                    <td class="">${childUnit.parentUnitId} [${childUnit.parentUnitName}]</td>
                                     </tr>
                             </c:forEach>
                             </tbody>

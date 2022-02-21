@@ -67,7 +67,6 @@
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
                         <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
-                            <c:if test="${category.key=='Licensing Services'}">
                                 <div class="tab-pane fade service-wrapper service_tab_pane_show show active pb-5 m-auto" id="FIRST1" role="tabpanel" aria-labelledby="pills-licensing-tab">
                                     <div class="p-4 serviceModule-detail">
                                         <p class="INS_letter_set_para pb-3 mb-3 text-center">${category.value[0].category.description}</p>
@@ -92,7 +91,6 @@
                                         </c:forEach>
                                     </div>
                                 </div>
-                            </c:if>
                         </c:forEach>
                     </div>
                 </li>
@@ -223,7 +221,6 @@
             <!--Desktop-->
             <div class="tab-content desktop_services services-container-tabcontent" id="pills-tabContent">
                 <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
-                    <c:if test="${category.key=='Licensing Services'}">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5 m-auto" id="FIRST" role="tabpanel" aria-labelledby="pills-licensing-tab">
                             <div class="p-4 serviceModule-detail mt-5 mx-2 border-top-0">
                                 <p class="INS_letter_set_para pb-3 mb-3 text-center">${category.value[0].category.description}</p>
@@ -248,7 +245,6 @@
                                 </c:forEach>
                             </div>
                         </div>
-                    </c:if>
                 </c:forEach>
                 
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="GOVERNMENTAL SERVICES" role="tabpanel" aria-labelledby="pills-govt-tab" role="tablist">

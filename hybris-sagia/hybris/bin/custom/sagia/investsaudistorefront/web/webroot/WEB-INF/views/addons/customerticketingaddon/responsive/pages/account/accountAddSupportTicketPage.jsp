@@ -223,7 +223,7 @@
                         </c:choose>
                         
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <form:hidden path="message"/>
                                     <%--<formElement:formTextArea idKey="createTicket-message" labelKey="text.account.supporttickets.createTicket.message" path="message" mandatory="true" areaCSS="form-control" labelCSS="control-label"/>--%>
                                 <div id="NotEmpty-BDSupportTicketForm-message" class="help-block" style="display: none;"></div>

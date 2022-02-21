@@ -1064,3 +1064,24 @@ label.btn.lang-btn.active {
 		 z-index: 99999;
 	 }
 }
+
+.select2-dropdown_oneColumn{
+	.select2-results__options{
+		display: block;
+		max-height: 200px;
+		height: 200px;
+		overflow: scroll;
+
+		&::-webkit-scrollbar {
+			-webkit-appearance: none;
+			width: 5px;
+
+			&-thumb {
+				border-radius: 4px;
+				background-color: rgba(0,0,0,.5);
+				-webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+			}
+		}
+	}
+}
+ 

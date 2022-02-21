@@ -31,7 +31,6 @@
                     <div class="calendar notification p-0">
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
-                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
                                 <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
                         </c:if>
@@ -101,27 +100,26 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="row">
                 <div class="searchInputBox searchInputBox_inline searchInputBox_inline_aside">
-                    <input class="searchInputBox-input  text-right" onkeyup="filterHistory(this)" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
+                    <input class="searchInputBox-input" onkeyup="filterHistory(this)" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="mainSection mainSection_noPaddingTop">
-    <div class="container contentModule d-flex">
+    <div class="container contentModule d-flex pt-10">
         <hr class="contentModule-separator contentModule-separator_green"/>
         <div class="expandableContent expanded col-4 p-0">
             <div class="expandableContent-aside d-block">
                 <div class="panelModule sagia-subPane">
-                    <div class="contentModule m--30">
+                    <div class="contentModule">
                         <div class="contentModule-section_noDivider contentModule-section_noMargin m-0">
-                            <h2 class=" contentModule-headline_noMargin clr_gld text-uppercase px-5 pb-3"><spring:theme code="account.notifications.yourMessages"/></div>
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_right contentModule-actions_noMargin px-5">
+                            <h2 class=" contentModule-headline_noMargin clr_gld text-uppercase pb-3"><spring:theme code="account.notifications.yourMessages"/></div>
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_right contentModule-actions_noMargin px-5 mr--50">
                                 <a id="readAllNotificationsButton" class=" btn_link_text"><spring:theme code="account.notifications.markAll"/></a>
                             </div>
 
-                            <ul id="history-list" class="notificationList notificationList_smallMarginTop m-0">
+                            <ul id="history-list" class="notificationList notificationList_smallMarginTop">
                                 <c:forEach items="${notifications}" var="notifItem" varStatus="item">
                                     <c:choose>
                                         <c:when test="${empty notifItem.readDate}">
@@ -150,7 +148,7 @@
                                         </div>
                                         <div class="notificationList-note">
                                             <div class="notificationList-details">
-                                                <h5 class="notificationList-name">${notifItem.createdBy}</h5>
+                                                <h5 class="notificationList-name fs-20">${notifItem.createdBy}</h5>
                                                 <div class="notificationList-date">
                                                     <c:if test="${not empty notifItem.createdOn}">
                                                         ${notifItem.createdOn.dateFormatted}
@@ -158,12 +156,16 @@
                                                 </div>
                                             </div>
                                             <div class="notificationList-details">
-                                                <span class="notificationList-title font-14">
+                                                <div class="notificationList-title fs-12">
                                                   Request ID:&nbsp; <span class="clr_gld font-14">${notifItem.notificationText.replaceAll("\\D+","")}</span>
-                                                </span>
-                                                Service Name: &nbsp;<span class="notificationList-status text-uppercase clr_gld font-14"> ${notifItem.notificationText.replaceAll("\\d","")}</span>
+                                                </div>
+                                                
+                                                <div class="fs-12">
+                                                    Service Name:
+                                                </div>
+                                                <div class="notificationList-status text-uppercase clr_gld font-14"> ${notifItem.notificationText.replaceAll("\\d","")}
 
-                                                </span>
+                                                </div>
                                             </div>
                                         </div>
                                         <img class="message-right-arrow ml-3" alt="" src="${commonResourcePath}/images/arrow-left.png"/>
@@ -284,24 +286,23 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="messageList-content messageList-content_standalone">
+                                    <div class="messageList-content notification-messageList-content">
                                         <div class="messageList-message">
                                             <p id="notificationTextParagraph">
                                                 <c:choose>
-                                                <c:when test="${not empty notification}">
-                                            <p>${notification.notificationText}</p><br>
-
-                                            <c:if test="${notification.notificationType eq 'PY'}">
-                                                <c:forEach var="entry" items="${notification.paymentItems}">
-                                                    <p style="font-weight: 700">${entry.key}</p>
-                                                    <p>Items</p>
-                                                    <c:forEach var="item" items="${entry.value}">
-                                                        <p style="margin-left:5em">${item.description} : ${item.currency}&nbsp;${item.value}</p>
-                                                    </c:forEach>
-                                                </c:forEach>
-                                            </c:if>
-                                            </c:when>
-                                            </c:choose>
+                                                    <c:when test="${not empty notification}">
+                                                        <p>${notification.notificationText}</p><br>
+                                                        <c:if test="${notification.notificationType eq 'PY'}">
+                                                            <c:forEach var="entry" items="${notification.paymentItems}">
+                                                                <p style="font-weight: 700">${entry.key}</p>
+                                                                <p>Items</p>
+                                                                <c:forEach var="item" items="${entry.value}">
+                                                                    <p style="margin-left:5em">${item.description} : ${item.currency}&nbsp;${item.value}</p>
+                                                                </c:forEach>
+                                                            </c:forEach>
+                                                        </c:if>
+                                                    </c:when>
+                                                </c:choose>
                                             </p>
                                         </div>
                                     </div>

@@ -72,9 +72,9 @@
 </section> --%>
 
 
-<section class="mainSection mainSection_noPadding userDetail-block">
+<section class="mainSection mainSection_noPadding userDetail-block" style="overflow: visible;">
     <div class="container">
-        <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
+        <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder" style="overflow: visible;">
             <div class="dashboardUser-wrapper col-md-12 mr-0 pt-md-3 px-0">
                 <div class="dashboardUser-left col-md-6 pr-0">
                     <div class="col">
@@ -128,6 +128,13 @@
                                     </button>
                                 </c:if>
                                 <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                                <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup">
+                                    <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                                    <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                                    <div class="sagiaNavigation-subPane-actions">
+                                        <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class=" user-icon mr-1">
@@ -142,13 +149,6 @@
     </div>
 </section>
 
-<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup">
-    <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
-    <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
-    <div class="sagiaNavigation-subPane-actions">
-        <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
-    </div>
-</div>
 <div class="globalMessageHolder globalMessage- d-none" id="globalMessageDivHeader" >
     <div class="container">
         <div class="globalMessage">

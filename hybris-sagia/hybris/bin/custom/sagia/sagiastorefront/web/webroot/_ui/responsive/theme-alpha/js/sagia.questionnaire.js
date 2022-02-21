@@ -14,6 +14,43 @@
 
     });
 
+    
+    var $surveyFormRadio = $(".js-survey");
+    $('.send-feedback-btn').prop('disabled', true);
+    $surveyFormRadio.find("input[type=radio]").change(function() {
+        var data = {
+            answers: []
+        };
+        $surveyFormRadio.find("input[type=radio]:checked").each(
+            function() {
+                var $input = $(this);
+                var quest = $input.data("question");
+                var answer = $input.data("answer");
+                var control = $input.data("control");
+                var value = $input.val();
+                var answType = $input.data("question-type");
+
+                if (value) {
+                    data.answers.push({
+                        QuestID: quest,
+                        AnswerID: answer,
+                        Txtlg: control,
+                        AnswType: answType
+                    })
+                }
+            }
+        );
+        if(data.answers.length == 0)
+        {
+            $('.send-feedback-btn').prop('disabled', true);
+            return;
+            
+        }
+        else {
+            $('.send-feedback-btn').prop('disabled', false);
+            return;
+        }
+    });
 
     $(".js-survey").submit(function(event){
         event.preventDefault();
@@ -93,7 +130,10 @@
                 }
             }
         );
-
+        // console.log("Survey");
+        // console.log(data);
+        // return;
+        
         $.postJsonData(ACC.config.encodedContextPath + "/my-sagia/questionnaires/send-survey-data", data)
             .done(function(response){
                 $('#successResponseModal').find('.modal-description').text(getI18nText("general.request.submitted"));

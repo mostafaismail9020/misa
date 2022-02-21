@@ -536,6 +536,10 @@ SAGIA.profile = {
                     if (profileData.profilePicture) {
 //                        myProfileTabData.find(".profilePicture").attr("src", profileData.profilePicture);
                         myProfileTabData.find(".js-profilePicture").css("background-image", 'url(' + profileData.profilePicture + ')');
+                        myProfileTabData.find(".myAccount-profilImage-img").css("height", '170px');
+                    }
+                    else {
+                        myProfileTabData.find(".myAccount-profilImage-img").css("height", '0px');
                     }
                     $('#sagia_companyLogo_picture_title').text('Company Logo');
 

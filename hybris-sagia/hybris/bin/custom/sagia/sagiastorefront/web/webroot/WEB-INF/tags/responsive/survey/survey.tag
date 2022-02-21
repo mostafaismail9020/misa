@@ -21,8 +21,13 @@
                data-isFetchedFromNotificationService="${surveyData.isFetchedFromNotificationService}">
                 <div class="row">
                     
-				<div class="col-md-3 col-12 px-0">
-                    <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack" id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="general.participate.backtoallquestionaires"/></a>
+				<div class="">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab" class="btn btn_leftIconLink btn_darkLink back_to_service">
+                    <span class="iconElement iconElement_closeBack" id="image-pos" style="margin-right:10px">
+                        <img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/>
+                    </span>
+                    <spring:theme code="general.participate.backtoallquestionaires"/>
+                    </a>
                 </div>
             </div>
         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap mt-3 ">
@@ -229,7 +234,7 @@
         </c:forEach>
 
         <div class="contentModule-actions contentModule-actions_centered">
-            <button class="btn btn_bold btn-bg btn-normal w-25 pl-2 pr-2"><spring:theme code="text.account.questionnaries.send.feedback"/></button>
+            <button class="btn btn_bold btn-bg btn-normal w-25 pl-2 pr-2 send-feedback-btn"><spring:theme code="text.account.questionnaries.send.feedback"/></button>
         </div>
     </form:form>
 </div>

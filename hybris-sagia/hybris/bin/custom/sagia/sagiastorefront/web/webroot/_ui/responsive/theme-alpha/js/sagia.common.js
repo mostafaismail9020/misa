@@ -1030,3 +1030,16 @@ $('body').on('shown.bs.modal', '.modal', function() {
 $(".flatpickr-input").flatpickr({
     static:true
 })
+$(document).on('click',".js-myAccount-edit",function(){
+    $("#myProfileTabData").find('select').each(function() {
+        var dropdownParent = $(this).parent();           
+        $(this).select2({
+          dropdownParent: dropdownParent,
+          minimumResultsForSearch:-1,
+          dropdownCssClass:'ddl-wrap select2-dropdown--below'
+        })  
+        if($("#myProfileTabData").find('.select2-selection__rendered').html().length > 0){
+            $(".select2.select2-container.select2-container--default").addClass('select2Container_selected');
+        }
+    });  
+})

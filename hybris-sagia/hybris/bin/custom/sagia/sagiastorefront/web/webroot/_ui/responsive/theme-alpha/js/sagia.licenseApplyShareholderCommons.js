@@ -2416,7 +2416,8 @@ SAGIA.licenseApplyShareholderCommons = {
         });
     }
 };
-$(document).on('click', '#delegateSectionQuestion .formRadioBox .form-item input', function(event) {
-    $("#delegateSectionQuestion .formRadioBox .form-item input").removeClass('selected');
-          $(this).addClass('selected');       
+$(document).on('click', '#delegateSectionQuestion .formRadioBox .form-item label', function(event) {
+    $("#delegateSectionQuestion .formRadioBox .form-item label").removeClass('btn-bg');
+          $(this).toggleClass('btn-bg');  
+         
 });

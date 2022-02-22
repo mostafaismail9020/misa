@@ -915,18 +915,18 @@ label.btn.lang-btn.active {
 		font-weight: 500;
 	}
 	p{
-		font-size: var(--content-font);
+		font-size: var(--content-big-font);
 	}
 		
 }
 .d-facts-figures{
 	p{
 		color: @color-white;
-		font-size: var(--content-font);
+		font-size: var(--content-big-font);
 	}
 }
-.section-counts h5 {
-    font-size: 43px;
+.section-counts h5,.section-counts h5 span.headline-golden {
+    font-size: 43px !important;
     color: #bf9b2e;
     line-height: 48px;
     text-transform: uppercase;
@@ -997,11 +997,12 @@ label.btn.lang-btn.active {
 	}
 
 	.section-counts p.description {
-		font-size: 16px;
+		font-size: var(--content-big-font);
 		color: #fff;
 		line-height: 19px;
 		text-align: center;
 		margin: 0;
+		line-height: 1.5;
 		padding: 0 20px;
 	}
 	.sectors-content p, .grid-section p {
@@ -1012,7 +1013,9 @@ label.btn.lang-btn.active {
 		width: 96%;
 		font-variant: proportional-width;
 	}
-	
+	.d-facts-figures.sect-right-panel{
+		padding: 15px 0;
+	}
 }
 
 @media (max-width:767px) {

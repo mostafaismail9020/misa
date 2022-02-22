@@ -89,7 +89,7 @@
                         <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
                     </div>
                 </c:if>
-                <div class="col-md-6 col-xl-3 col-12">
+                <div class="col-md-6 col-xl-3 col-12 btn_align-center">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
                         <div>
                             <a id="realEstateCreateBtn" data-entity-status="${entityStatus}" href="${encodedContextPath}/real-estate/create" class="btn btn_slim back_to_service"><spring:theme code="text.realEstate.create"/></a>

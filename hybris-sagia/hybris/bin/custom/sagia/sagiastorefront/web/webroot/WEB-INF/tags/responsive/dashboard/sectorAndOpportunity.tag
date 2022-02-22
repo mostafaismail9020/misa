@@ -30,9 +30,7 @@
                         		<div class="dashboardWidgetBanner">
 	                           		<div class="dashboardWidgetBanner-tabs js-dashboardWidgetBanner-tabs ">
 										<div class="dashboardWidgetBanner-tabs-body d-invest-with-us <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}"> col-xl-7 </c:if> col-md-12" >
-	                              			<div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header clr_gld">
-                                 				<!-- ${sector.sectorName} <spring:theme code="text.dashboard.without.license.opportunities"/> -->
-                              				</div>
+	                              			<div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header clr_gld"></div>
 											  <c:if test="${not empty customerSectorCategory}">
 		                                            <p class="invest-with-us-description">${customerSectorCategory.overview} </p>
 		                                       	</c:if>

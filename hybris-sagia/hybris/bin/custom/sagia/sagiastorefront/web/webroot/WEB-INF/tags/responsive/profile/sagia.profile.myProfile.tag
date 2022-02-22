@@ -108,9 +108,9 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="formInputFileBox">
-                                            <div class="form-group">
+                                            <div class="form-group file-area">
                                                 <div class="form-icon form-icon_browse"><icon:upload/></div>
-                                                <input id="fileBoxModalPicture" class="form-control js-inputFile" type="file" name="file" accept="image/jpeg,image/png" value="" placeholder="."/>
+                                                <input id="fileBoxModalPicture" class="form-control js-inputFile" type="file" name="file" accept="image/jpeg,image/png" placeholder="."/>
                                                 <label class="control-label" for="fileBoxModalPicture">
                                                     <spring:theme code="company.choseapicture"/><!--<span class="formInputFileBox-dragndrop"> <spring:theme code ="company.dragpicture"/></span>-->.
                                                 </label>
@@ -219,7 +219,7 @@
                             <div class="col-md-6">
                                 <div class="formInputBox">
                                     <div class="form-group">
-                                        <input id="sagiaProfilePersonalFormSelectMobileNumber" title="mobileNumber" name="mobileNumber" class="form-control" type="number" value="" placeholder="."/>
+                                        <input id="sagiaProfilePersonalFormSelectMobileNumber" oninput="limitChar(this)" title="mobileNumber" name="mobileNumber" class="form-control" type="number" value="" placeholder="."/>
                                         <label class="control-label control-label_mandatory" for="sagiaProfilePersonalFormSelectMobileNumber">
                                             <spring:theme code="profile.personal.mobileNumber"/>
                                         </label>

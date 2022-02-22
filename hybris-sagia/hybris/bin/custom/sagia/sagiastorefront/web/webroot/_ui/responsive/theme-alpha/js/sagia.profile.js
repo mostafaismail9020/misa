@@ -2,7 +2,15 @@
 
 var SAGIA = SAGIA || {};
 
-
+let limitChar = (element) => {
+    const maxChar = 10;
+    let ele = document.getElementById(element.id);
+    let charLen = ele.value.length;
+    if (charLen > maxChar) 
+    {
+        ele.value = ele.value.substring(0, maxChar);
+    }
+}
 SAGIA.profile = {
     init: function init() {
         $(document).on("click", "#infoModalClose", function (e) {
@@ -1392,7 +1400,7 @@ $(function () {
 $(document).on("click", ".myAccount-profilImage-change", function () {
      var actionUrl = $(this).data('action');
      $('#modalPictureUploadForm').attr('action',actionUrl);
-console.log(actionUrl);
+// console.log(actionUrl);
       $('#uploadFilePicture').modal('show');
 });
 

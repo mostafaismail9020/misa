@@ -38,23 +38,20 @@ SAGIA.dashboard = {
             e.preventDefault();
             let idAttr = $(this).attr("id");
             if (!$(this).parent().hasClass("dashboardWidget_open")) {
-                console.log( $(this)
-                .parents(".js-dashboard")
-                .find(".panel.dashboardWidget_open"),idAttr)
                 $(this)
-                    .parents(".js-dashboard")
+                    .parents()
+                    // .parents(".js-dashboard")
                     .find(".panel.dashboardWidget_open")
                     .removeClass("dashboardWidget_open");
                     $(this)
-                    .parents(".js-dashboard").find(".panel-collapse.show").removeClass('show');
+                    .parents().find(".panel-collapse.show").removeClass('show');
+                    // .parents(".js-dashboard").find(".panel-collapse.show").removeClass('show');
                 $(this)
                     .parent()
                     .addClass("dashboardWidget_open");
                     $('.'+idAttr).addClass('show');
             } else {
-                console.log( $(this)
-                .parents(".js-dashboard")
-                .find(".panel.dashboardWidget_open"))
+           
                 $(this)
                     .parent()
                     .removeClass("dashboardWidget_open");
@@ -631,10 +628,10 @@ function getAccordionWithLicense(element_id,screen)
 		jQuery.each( obj_tabs, function( n, val ) 
 		{
 			concat += '<div id="' + n + '" class="panel panel-default">';
-			concat += '<div class="panel-heading  dashboardWidget-headline js-dashboardWidget-headline text-upercase" role="tab" id="heading' + n + '">';
+			concat += '<div class="panel-heading  dashboardWidget-headline js-dashboardWidget-headline-icon text-upercase" role="tab" id="heading' + n + '">';
 			concat += '<h5 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h5>';
 			concat += '</div>';
-			concat += '<div id="collapse' + n + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading' + n + '">';
+			concat += '<div id="collapse' + n + '" class="panel-collapse collapse heading' + n + '" role="tabpanel" aria-labelledby="heading' + n + '">';
 			concat += '<div class="panel-body">' + obj_cont[n].innerHTML + '</div>';
 			concat += '</div>';
 			concat += '</div>';

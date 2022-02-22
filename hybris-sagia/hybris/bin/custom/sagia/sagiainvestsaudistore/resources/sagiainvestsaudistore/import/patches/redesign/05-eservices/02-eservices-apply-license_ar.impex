@@ -97,6 +97,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                             </div>
                           </div>
                       </div>
+                       <div class=""text-center mt-5""><button onclick=""biddingCertificate(event);"" class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">تقدم بطلب<img class=""pl-3 transform-180-degree""  src=""/_ui/responsive/common/images/arow_btn.png""/></button></div>
                   </div>
                   <div class=""tab-pane"" id=""2a"">
                       <div class=""text-center"">
@@ -143,8 +144,9 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                             </div>
                           </div>                          
                       </div>
+					  <div class=""text-center mt-5""><button onclick=""biddingCertificate(event);"" class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">تقدم بطلب<img class=""pl-3 transform-180-degree""  src=""/_ui/responsive/common/images/arow_btn.png""/></button></div>
                   </div>
-                  <div class=""text-center mt-5""><button onclick=""biddingCertificate(event);"" class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">تقدم بطلب<img class=""pl-3""  src=""/_ui/responsive/common/images/arow_btn.png""/></button></div>
               </div>
+              <div class=""panel-group"" id=""accordion"" role=""tablist"" aria-multiselectable=""true""></div>
         </div>
     </div>";

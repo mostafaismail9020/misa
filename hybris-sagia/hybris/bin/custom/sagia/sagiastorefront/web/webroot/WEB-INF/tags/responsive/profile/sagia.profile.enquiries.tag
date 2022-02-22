@@ -57,7 +57,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="formSelectBox pb-3">
+                                <div class="formSelectBox">
                                     <spring:bind path="details.Category2">
                                         <div class="form-group <c:if test="${status.error}">has-error</c:if>">
                                             <form:select class="js-select2-oneColumn" id="categoriesTwoList" path="details.Category2" mandatory = "true">
@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="formSelectBox pb-3">
+                                <div class="formSelectBox">
                                     <div class="form-group">
                                         <form:select class="js-select2-oneColumn" path="details.Branch" mandatory = "true">
                                              <!-- population is making in sagia.profile.js - reason for which I cut itemValue="description" itemLabel="description" -->
@@ -86,7 +86,7 @@
 
                         <formElement:formInputBox idKey="details.Subject" labelKey="profile.enquiry.subject" path="details.Subject" inputCSS="text" labelCSS="control-label_mandatory" mandatory="true"/>
                         <formElement:formTextArea idKey="details.TextMsg" labelKey="profile.enquiry.message" path="details.TextMsg" labelCSS="control-label_mandatory"  areaCSS="form-control" mandatory="true"/>
-                        <div class="row enquiryFiles pt-5 mt-4 pb-4 mb-5">
+                        <div class="row enquiryFiles pt-2 mt-4 pb-4 mb-5">
                             <div class="col-md-6">
                                 <!-- todo: formInputFile tag needs to be added -->
                                 <div class="formInputFile mb-5">
@@ -229,7 +229,7 @@
                                 </div>
                             </div>
                         </c:if>
-                        <div class="paginationModule-wrapper">
+                        <div class="paginationModule-wrapper" style="display: none">
                             <button class="paginationModule-control paginationModule-control_left" disabled><!--<icon:arrow_green_right/>-->
                                     <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
                                 </button>

@@ -160,7 +160,7 @@
 					</div>
 				</c:if>
 			</div>
-			
+<!--			
 <c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
 <form:form action="${encodedContextPath}/potentialOpportunity/${ticketId}/uploadAttachment" modelAttribute="contactTicketForm" method="POST" enctype="multipart/form-data">
 <div class="form-group">
@@ -178,6 +178,7 @@
        <button type="submit" id="submit" class="btn btn_submit_whitess" value="Upload" />
 </div>
 </div>
+-->
 </form:form>
 			
 			<%-- 
@@ -271,6 +272,57 @@
 	</div>
 </div>
 
+<!---Documents start-->
+<div class="container  service-wrapper-info pt-5 pb-5">
+	<div class="row serviceModule serviceModule_list ">
+		<div class="pull-left col-12 showdowbox_potential">
+			<div class="mx-5 potentialOpportunityChatBox">
+				<div class="serviceModule serviceModule_list mx-5 pt-4">
+					<div class="serviceModule-section">
+						<div class="serviceModule-content">
+							<div class="serviceModule-description">
+								<span class="serviceModule-headline">Documents</span> 
+								<div class="serviceModule-detail serviceList-description">
+									<form:form action="${encodedContextPath}/potentialOpportunity/${ticketId}/uploadAttachment" modelAttribute="contactTicketForm" method="POST" enctype="multipart/form-data">
+										<div class="form-group mt-2 pt-2">
+											<div class="form-row">
+												<div class="form-inline" style="width: 100%;">
+													<!--<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>-->
+													<input  accept="application/pdf"  type="file" name="pdfAttachment" class="form-control" id="pdfAttachment" style="border: 0px solid;width: 400px;"><br>
+													<input type="button" class="btn" value="Upload Documents" onclick="uploadFile()">
+													 
+													<!--<input type="button" class="btn" value="Upload Documents" class="btn btn_submit_whitess">-->
+												</div>
+												<div style="width: 30%;">
+													<progress id="progressBar" value="0" max="100" style="width:300px;display: none;"></progress>
+													<h3 id="status" style="color: green;"></h3>
+													<p id="loaded_n_total"></p>
+												</div>
+											</div>
+										<!--<div class="custom-file mb-3">
+											<input type="file" accept="application/pdf" class="custom-file-input form-control" id="pdfAttachment" name="pdfAttachment"/>
+											  
+											<label class="custom-file-label" for="pdfAttachment" id="contact-ticket-upload-file">
+														<spring:theme code="portal.contactus.form.drag.file.label" /> 
+												<span class="pvcy-policy">
+														<spring:theme code="portal.contactus.form.browse.label" />
+												</span>
+											</label>
+											
+											<button type="submit" id="submit" class="btn btn_submit_whitess" value="Upload" />
+										</div>-->
+										</div>
+										</form:form>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+<!---Documents end--> 
 <div class="container  service-wrapper-info pt-5 pb-5">
 	<div class="row serviceModule serviceModule_list ">
 		<div class="pull-left col-12 showdowbox_potential">

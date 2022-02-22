@@ -10,7 +10,8 @@ INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; cod
 ; InboundOpportunityProduct	; Category          	; Category          	; 	; ALL_SUB_AND_SUPER_TYPES	;  
 ; InboundOpportunityProduct	; CatalogVersion    	; CatalogVersion    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
 ; InboundOpportunityProduct	; Catalog           	; Catalog           	; 	; ALL_SUB_AND_SUPER_TYPES	;  
- 
+; InboundOpportunityProduct	; ArticleApprovalStatus	; ArticleApprovalStatus	; 	; ALL_SUBTYPES           	;  
+
 INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
 ; InboundOpportunityProduct:OpportunityProduct	; systemOrigin    	; OpportunityProduct:systemOrigin    	;                                         	; 	;  
 ; InboundOpportunityProduct:OpportunityProduct	; code            	; OpportunityProduct:code            	;                                         	; true	;  
@@ -31,3 +32,4 @@ INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationO
 ; InboundOpportunityProduct:CatalogVersion    	; catalog         	; CatalogVersion:catalog             	; InboundOpportunityProduct:Catalog       	; true	;  
 ; InboundOpportunityProduct:CatalogVersion    	; version         	; CatalogVersion:version             	;                                         	; true	;  
 ; InboundOpportunityProduct:Catalog           	; id              	; Catalog:id                         	;                                         	; true	;  
+; InboundOpportunityProduct:OpportunityProduct   	; approvalStatus  	; OpportunityProduct:approvalStatus  	; InboundOpportunityProduct:ArticleApprovalStatus	; 	;  

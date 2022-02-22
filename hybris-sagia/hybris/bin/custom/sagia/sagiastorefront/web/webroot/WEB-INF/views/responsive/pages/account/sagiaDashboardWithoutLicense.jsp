@@ -163,24 +163,7 @@
     </div>
 </div> -->
 
-<div class="modal fade licenseSimulatorPopup" id="license-application-simulator"  tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">
-        <div class="modal-content dashboard-pop-up">
-            <div class="modal-header">
-                <button type="button" data-dismiss="modal" id="simulator-close" class="license-simulator-modal-close right-close  top-0 end-0">
-                    <img class="" src="${commonResourcePath}/images/Close.png"/>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class=" ">
-                    <div class="embed-responsive embed-responsive-16by9 mb-3">
-                        <iframe id="simulator-video" class="embed-responsive-item" src="https://www.youtube.com/embed/u3sQ7TDFUWs" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard scale-on-resize">
     <div class="container">
@@ -432,7 +415,24 @@
     </div>
 </section>
 
-
+<div class="modal fade licenseSimulatorPopup" id="license-application-simulator"  tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">
+        <div class="modal-content dashboard-pop-up">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" id="simulator-close" class="license-simulator-modal-close right-close  top-0 end-0">
+                    <img class="" src="${commonResourcePath}/images/Close.png"/>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class=" ">
+                    <div class="embed-responsive embed-responsive-16by9 mb-3">
+                        <iframe id="simulator-video" class="embed-responsive-item" src="https://www.youtube.com/embed/u3sQ7TDFUWs" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <%--Modal: Use (data-toggle="modal" data-target="#eServiceTour") on link or button to call it--%>
 <%--<div class="modal fade" id="eServiceTour"  tabindex="-1" role="dialog" aria-labelledby="eServiceTour" aria-hidden="true">
     <!-- <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">

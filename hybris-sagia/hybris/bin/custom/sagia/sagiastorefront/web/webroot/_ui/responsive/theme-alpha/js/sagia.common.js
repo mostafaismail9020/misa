@@ -1043,3 +1043,10 @@ $(document).on('click',".js-myAccount-edit",function(){
         }
     });  
 })
+
+$( document ).ready(function() {
+    $("#delegateSectionQuestion .formRadioBox .form-item input").click(function() {
+        $("#delegateSectionQuestion .formRadioBox .form-item input").removeClass('selected');
+          $(this).addClass('selected');
+      });
+});

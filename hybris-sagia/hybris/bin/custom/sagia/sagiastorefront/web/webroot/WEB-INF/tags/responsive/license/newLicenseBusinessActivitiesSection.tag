@@ -240,7 +240,7 @@
                     </div>
                     <div class="modal-footer modal-footer_centered">
                         <button type="button" type="submit" class="btn btn_outline btn_slim" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
-                        <button id="nextButton" type="button" type="submit" class="btn btn_slim"><spring:theme code="general.next"/></button>
+                        <button id="nextButton" type="button" type="submit" class="btn btn_slim btn-bg"><spring:theme code="general.next"/></button>
                     </div>
                 </form>
             </div>

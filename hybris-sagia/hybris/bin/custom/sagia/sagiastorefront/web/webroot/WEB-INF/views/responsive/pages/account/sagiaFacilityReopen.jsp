@@ -309,6 +309,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title"><spring:theme code="facilityReopen.modal.warning.title"/></div>
+                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+						<icon:close/>
+					</button>
                 </div>
                 <div class="modal-body">
                     <div class="modal-description">

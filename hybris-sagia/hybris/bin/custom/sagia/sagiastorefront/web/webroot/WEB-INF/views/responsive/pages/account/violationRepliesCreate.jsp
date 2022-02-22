@@ -238,6 +238,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title js-message"><spring:theme code="text.account.followup.error"/></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
             </div>
             <div class="modal-body modal-body-center">
                 <div class="modal-heroImage image-medium">
@@ -256,6 +259,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title"><spring:theme code="general.requestsubmitted"/></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
             </div>
             <div class="modal-body">
                 <div class="modal-heroImage">

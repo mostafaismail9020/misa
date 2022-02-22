@@ -991,3 +991,42 @@ function getCookie(cname) {
   }
   return "";
 }
+
+var viewportmeta = document.querySelector('meta[name="viewport"]');
+    viewportmeta.content = 'user-scalable=NO, width=device-width, initial-scale=1.0'
+
+$(document).ready(function () {
+    $(this).find('select').each(function() {
+        var dropdownParent = $(this).parent();           
+        $(this).select2({
+            dropdownParent: dropdownParent,
+            minimumResultsForSearch:-1,
+            dropdownCssClass:'ddl-wrap select2-dropdown--below'
+        })  
+    });  
+
+    $('input.flatpickr-input').flatpickr({
+        beforeShow: function(input, inst) {
+            inst.dpDiv.css({
+                marginTop: -input.offsetHeight + 'px', 
+                marginLeft: input.offsetWidth + 'px'
+            });
+        }
+    });
+})
+
+$('body').on('shown.bs.modal', '.modal', function() {
+    $(this).find('select').each(function() {
+      var dropdownParent = $(this).parent();
+      if ($(this).parents('.modal.in:first').length !== 0)
+        dropdownParent = $(this).parents('.modal.in:first');
+      $(this).select2({
+        dropdownParent: dropdownParent,
+        minimumResultsForSearch:-1,
+        dropdownCssClass:'ddl-wrap select2-dropdown--below'
+      })
+    });
+});
+$(".flatpickr-input").flatpickr({
+    static:true
+})

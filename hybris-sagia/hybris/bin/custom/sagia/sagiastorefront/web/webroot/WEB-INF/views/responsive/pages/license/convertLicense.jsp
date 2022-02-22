@@ -444,6 +444,9 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <div class="modal-title"><spring:theme code="convertlicense.uploadyourdocument"/></div>
+                                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                                        <icon:close/>
+                                    </button>
                                 </div>
                                 <div class="modal-body">
                                     <ul id="inputFilesList" class="formInputFileBox-list">

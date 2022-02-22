@@ -210,6 +210,9 @@
 								<div class="modal-content">
 									<div class="modal-header">
 										<div class="modal-title"><spring:theme code="uploaddocuments.uploadyourfiles"/></div>
+										<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+											<icon:close/>
+										</button>
 									</div>
 									<div class="modal-body">
 										<div class="formInputFileBox js-form-input-file-box">
@@ -362,6 +365,9 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"><spring:theme code="general.requestsubmitted"/></div>
+				<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+					<icon:close/>
+				</button>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">

@@ -360,6 +360,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title" id="specialServicesWarningTitle"><spring:theme code="special.services.validation.entityStatus.error"/></div>
+                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+						<icon:close/>
+					</button>
                 </div>
                 <div class="modal-body">
                     <div class="modal-description">

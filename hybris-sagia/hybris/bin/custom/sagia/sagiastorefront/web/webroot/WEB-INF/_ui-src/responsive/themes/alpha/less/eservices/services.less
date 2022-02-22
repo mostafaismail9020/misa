@@ -1313,7 +1313,7 @@ body ::-webkit-scrollbar-thumb {
 }
 
 
-.contentModule-actions_wrap{
+.contentModule-actions_wrap,.contentModule .contentModule-wrap{
     .contentModule-headline{
         padding-top: 10px !important;
         padding-bottom: 10px !important;
@@ -1344,9 +1344,53 @@ body ::-webkit-scrollbar-thumb {
 .btn.btn_leftIconLink:focus, .btn.btn_leftIconLink:hover {
     background-color: transparent !important;
 }
-.btn.btn_link.js-tip.btn-tooltip{
+.btn.btn_link.js-tip.btn-tooltip,.btn.btn_link.js-tip.btn-tooltip:hover{
     color:@color-primary !important;
+    background-color: transparent !important;
 }
 .select2.select2-container.select2.select2-container--disabled{
     background-color: #ededed !important;
+}
+
+#delegateDivSection {
+    .contentModule-section{
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+.contentModule.contentModule-wrap{
+    .contentModule-headline{
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+}
+
+.ddl-wrap{
+	text-align: left;
+    top: 0;
+	display: flex;
+}
+
+.flatpickr-wrapper{
+	display: contents;
+}
+.modal-content{
+	overflow-y: scroll;
+}
+#calendar-icon-pos{
+	position: absolute;
+	right: 0;
+	[dir="rtl"] &{
+        right: initial;
+        left: 0;
+    }
+}
+
+
+#failInformationModal,#sessionExpiresModal{
+    .modal-content{
+        position: absolute;
+        top: calc(45% - 50px);
+    }
 }

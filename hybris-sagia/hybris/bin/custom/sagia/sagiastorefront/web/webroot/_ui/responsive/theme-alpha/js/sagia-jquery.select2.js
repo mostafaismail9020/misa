@@ -947,6 +947,8 @@
             Results.prototype.option = function (data) {
                 var option = document.createElement('li');
                 option.className = 'select2-results__option';
+                var c_width = $('.ddl-wrap').width();
+                option.setAttribute('style', 'width:'+c_width +"px");
 
                 var attrs = {
                     'role': 'treeitem',

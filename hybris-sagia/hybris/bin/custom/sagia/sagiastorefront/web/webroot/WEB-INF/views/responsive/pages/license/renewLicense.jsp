@@ -102,66 +102,6 @@
     </div>
 </div>
 
-<!-- <div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
-    <div class="container">
-        <div class="mainSection-linkActions mainSection-linkActions_right">
-            <div id="renewalButtons" style="display: none;">
-                <c:choose>
-                    <c:when test ="${autoRenewal}">
-                        <a class="btn btn_slim jqInstantRenewal" href="javascript:void(0);">
-                            <spring:theme code="renewlicense.instantrenew"/>
-                        </a>&nbsp;
-                    </c:when>
-                    <c:otherwise>
-                        <a class="btn btn_slim jqInstantRenewal" href="javascript:void(0);" style="display: none;">
-                            <spring:theme code="renewlicense.instantrenew"/>
-                        </a>&nbsp;
-                    </c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test ="${autoRenewalClearance}">
-                        <a class="btn btn_slim btn-warning btn_outline jqInstantClearanceRenewal" href="javascript:void(0);">
-                            <spring:theme code="renewlicense.instantrenew.clearance"/>
-                        </a>
-                    </c:when>
-                    <c:otherwise>
-                        <a class="btn btn_slim btn-warning btn_outline jqInstantClearanceRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
-                            <spring:theme code="renewlicense.instantrenew.clearance"/>
-                        </a>
-                    </c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test ="${governmentDocumentsCheck}">
-                        <a class="btn btn_slim btn-warning btn_outline jqGovDocsCheck" href="javascript:void(0);">
-                            <spring:theme code="renewlicense.govDocsCheck"/>
-                        </a>&nbsp;
-                    </c:when>
-                    <c:otherwise>
-                        <a class="btn btn_slim btn-warning btn_outline jqGovDocsCheck" href="javascript:void(0);" style="display: none;">
-                            <spring:theme code="renewlicense.govDocsCheck"/>
-                        </a>&nbsp;
-                    </c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test ="${clearanceCheck}">
-                        <a class="btn btn_slim btn-warning btn_outline jqClearanceCheck" href="javascript:void(0);">
-                            <spring:theme code="renewlicense.clearanceCheck"/>
-                        </a>&nbsp;
-                    </c:when>
-                    <c:otherwise>
-                        <a class="btn btn_slim btn-warning btn_outline jqClearanceCheck" href="javascript:void(0);" style="display: none;">
-                            <spring:theme code="renewlicense.clearanceCheck"/>
-                        </a>&nbsp;
-                    </c:otherwise>
-                </c:choose>
-                <a class="btn btn_slim jqCreateRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
-                    <spring:theme code="dashboard.myLicense.renew"/>
-                </a>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <div class="mainSection mainSection_dark mainSection_noPadding bg-white">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
@@ -175,67 +115,84 @@
                     </div>
                 </c:if>           
                 <div id="renewalButtons" style="display: none;">
-                    <div class="col-md-6 col-lg-4 col-12">
+                    <!-- <div class="col-md-6 col-lg-4 col-12"> -->
                         <c:choose>
                             <c:when test ="${autoRenewal}">
-                                <a class="btn btn_slim btn_outline back_to_service jqInstantRenewal" href="javascript:void(0);">
+                                <div class="col-md-6 col-lg-4 col-12 jqInstantRenewal">
+                                <a class="btn btn_outline btn_slim a_btn back_to_service" href="javascript:void(0);">
                                     <spring:theme code="renewlicense.instantrenew"/>
                                 </a>&nbsp;
+                                </div>
                             </c:when>
                             <c:otherwise>
-                                <a class="btn btn_slim btn_outline back_to_service jqInstantRenewal" href="javascript:void(0);" style="display: none;">
+                                <div class="col-md-6 col-lg-4 col-12 jqInstantRenewal" style="display: none;">
+                                <a class="btn btn_outline btn_slim a_btn back_to_service" href="javascript:void(0);" >
                                     <spring:theme code="renewlicense.instantrenew"/>
                                 </a>&nbsp;
+                                </div>
                             </c:otherwise>
                         </c:choose>
-                    </div>
+                    <!-- </div> -->
                     <div class="col-md-6 col-lg-4 col-12">
-                        <a class="btn btn_slim btn_outline back_to_service jqCreateRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
+                        <a class="btn btn_outline btn_slim a_btn back_to_service jqCreateRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
                             <spring:theme code="dashboard.myLicense.renew"/>
                         </a>
                     </div>
-                    <div class="col-md-6 col-12">
+                    <!-- <div class="col-md-6 col-12"> -->
                         <c:choose>
                             <c:when test ="${autoRenewalClearance}">
-                                <a class="btn btn_slim btn-warning btn_outline renew-license-btns jqInstantClearanceRenewal" href="javascript:void(0);">
+                                <div class="col-md-6 col-12 jqInstantClearanceRenewal">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);">
                                     <spring:theme code="renewlicense.instantrenew.clearance"/>
                                 </a>
+                                </div>
                             </c:when>
                             <c:otherwise>
-                                <a class="btn btn_slim btn-warning btn_outline renew-license-btns jqInstantClearanceRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
+                                <div class="col-md-6 col-12 jqInstantClearanceRenewal" style="display: none;">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="${encodedContextPath}/my-sagia/license/renew/edit" >
                                     <spring:theme code="renewlicense.instantrenew.clearance"/>
                                 </a>
+                                </div>
                             </c:otherwise>
                         </c:choose>
-                    </div>
-                    <div class="col-md-6 col-12">
+                    <!-- </div> -->
+                    <!-- <div class="col-md-6 col-12"> -->
                         <c:choose>
                             <c:when test ="${governmentDocumentsCheck}">
-                                <a class="btn btn_slim btn-warning btn_outline renew-license-btns jqGovDocsCheck" href="javascript:void(0);">
+                                <div class="col-md-6 col-12 jqGovDocsCheck">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);">
                                     <spring:theme code="renewlicense.govDocsCheck"/>
                                 </a>&nbsp;
+                                </div>
                             </c:when>
                             <c:otherwise>
-                                <a class="btn btn_slim btn-warning btn_outline renew-license-btns jqGovDocsCheck" href="javascript:void(0);" style="display: none;">
+                                <div class="col-md-6 col-12 jqGovDocsCheck" style="display: none;">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns " href="javascript:void(0);" >
                                     <spring:theme code="renewlicense.govDocsCheck"/>
                                 </a>&nbsp;
+                                </div>
                             </c:otherwise>
                         </c:choose>
-                    </div>
-                    <div class="col-md-6 col-12">
+                    <!-- </div> -->
+                    <!-- <div class="col-md-6 col-12"> -->
                         <c:choose>
                             <c:when test ="${clearanceCheck}">
-                                <a class="btn btn_slim btn-warning btn_outline renew-license-btns jqClearanceCheck" href="javascript:void(0);">
+                                <div class="col-md-6 col-12 jqClearanceCheck">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);">
                                     <spring:theme code="renewlicense.clearanceCheck"/>
                                 </a>&nbsp;
+                                </div>
                             </c:when>
                             <c:otherwise>
-                                <a class="btn btn_slim btn-warning btn_outline renew-license-btns jqClearanceCheck" href="javascript:void(0);" style="display: none;">
+                                <div class="col-md-6 col-12 jqClearanceCheck" style="display: none;">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);" >
                                     <spring:theme code="renewlicense.clearanceCheck"/>
                                 </a>&nbsp;
+                                </div>
                             </c:otherwise>
                         </c:choose>
-                    </div>
+                    <!-- </div> -->
+                    
                 </div>
             </div>
         </div>
@@ -504,8 +461,8 @@
                     <div class="contentModule contentModule-wrap">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
                             <span class="contentModule-headline contentModule-headline_bordered"><spring:theme code="general.pictures"/></span>
-                            <div id="documents-container1 contentModule-headline-border"></div>
-                            <ul class="pictureGrid" id="images-container">
+                            <div id="documents-container1 "></div>
+                            <ul class="pictureGrid contentModule-headline-border mx-0" id="images-container">
                                 <c:forEach items="${license.attachedImages}" var="image">
                                     <li><img id="image" src="${encodedContextPath}/my-sagia/license/image/${image.objectID}/${image.documentID}"/></li>
                                 </c:forEach>
@@ -547,6 +504,9 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
 			</div>
 		 	<div class="modal-body">
 			 <div class="contentModule-section contentModule-section_paddingSide">
@@ -610,6 +570,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <%-- <div class="modal-title"><spring:theme code="services.government.create.disclaimer.title"/></div> --%>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
             </div>
             <div class="modal-body">
                 <div class="modal-description js-description-text">

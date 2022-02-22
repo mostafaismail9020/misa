@@ -238,7 +238,7 @@
 		<div class="">
 			<div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
 				<button id="expandAmendmentHistoryBtnId" class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent service-history-link" data-expand-target="expand01">
-					<div ><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+					<div class="" ><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
 					<div class="hidden"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
 				</button>
 			</div>
@@ -856,7 +856,7 @@
 											name="shareholderValidation.shareholderDateofBirth"
 											class="form-control " placeholder="." value="" type="text" />
 										<label class="control-label control-label_mandatory" for="shareholderDateofBirth"><spring:theme code="license.apply.shareholder.dateOfBirth" /></label>
-										<div class="formInputBox-append"><span class="formInputBox-text"><icon:calendar-gray /></span></div>
+										<div class="formInputBox-append" id="calendar-icon-pos"><span class="formInputBox-text"><icon:calendar-gray /></span></div>
 									</div>
 									<div class="help-block"></div>
 								</div>
@@ -2153,10 +2153,10 @@
 			<div class="modal-content panelModule panelModule_halfRadius">
 				<div class="contentModule">
 					<form:form id="docsFormId">
-						<div class="contentModule contentModule-wrap">
-							<div id="amendmentTypeId" class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100 contentModule-headline">
+						<div class="contentModule">
+							<div id="amendmentTypeId" class="contentModule-actions">
 								<span class="contentModule-headline"><spring:theme code="license.amend.documents" /></span>
-								<div class="contentModule-headline-border"></div>
+								<!-- <div class="contentModule-headline-border"></div> -->
 							</div>
 						</div>
 
@@ -2247,6 +2247,9 @@
 					<div class="modal-title">
 						<spring:theme code="license.licenseamendment" />
 					</div>
+					<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+						<icon:close/>
+					</button>
 				</div>
 				<div class="modal-body">
 					<div class="modal-description">
@@ -2273,6 +2276,9 @@
 					<div class="modal-title">
 						<spring:theme code="license.licenseamendment" />
 					</div>
+					<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+						<icon:close/>
+					</button>
 				</div>
 				<div class="modal-body">
 					<div class="modal-description">
@@ -2300,6 +2306,9 @@
 					<div class="modal-title">
 						<spring:theme code="license.errorvalidatingamendment" />
 					</div>
+					<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+						<icon:close/>
+					</button>
 				</div>
 				<div class="modal-body">
 					<div class="modal-description">
@@ -2326,6 +2335,9 @@
 					<div class="modal-title">
 						<spring:theme code="license.amendment.noChanges" />
 					</div>
+					<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+						<icon:close/>
+					</button>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn_slim" data-dismiss="modal">

@@ -33,12 +33,7 @@ function validateLoginForm(){
     if(recaptcha === ""){
         $("#lblErrorCaptcha").text("Please fill reCAPTCHA");
         valid = false;
-       }
-    if(valid === false){
-    	 $(this).find('button[type=submit]').prop("disabled", false);
-    }else{
-    	 $(this).find('button[type=submit]').prop("disabled", true);
-    }
+       } 
     return valid;
 }
 

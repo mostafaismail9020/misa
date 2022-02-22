@@ -85,7 +85,7 @@
                                                     <label class="control-label" for="${answer.controlID}">
                                                         ${question.questTXT}<c:if test="${question.mandquest}">*</c:if>
                                                     </label>
-                                                    <div class="formInputBox-append">
+                                                    <div class="formInputBox-append" id="calendar-icon-pos">
                                                         <span class="formInputBox-text"><icon:calendar-gray/></span>
                                                     </div>
                                                 </div>

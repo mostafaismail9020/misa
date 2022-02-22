@@ -146,6 +146,7 @@
                         </div>
                     </div>
                 </div>
+                <hr class="hr">
                 <div class="row">
                     <div class="col-md-6">
                         <formElement:formInputBox path="delegateInfo.delegateFirstNameArabic"
@@ -352,6 +353,7 @@
                         </div>
                     </div>
                 </div>
+                <hr class="hr">
                 <div class="row">
                     <div class="col-md-6" id="loaFileDiv" style="display: none;">
                         <div class="formInputFile ${not empty data.delegateInfo.authorisationLetter ? "active" : ""}">

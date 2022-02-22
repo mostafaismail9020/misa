@@ -30,3 +30,4 @@ INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationO
 ; InboundContactTicket:ContactTicket   	; sectorCategoryName	; ContactTicket:sectorCategoryName	;                                      	; 	;  
 ; InboundContactTicket:ContactTicket   	; contactSubject    	; ContactTicket:contactSubject    	;                                      	; 	;  
 ; InboundContactTicket:ContactTicket   	; email             	; ContactTicket:email             	;                                      	; 	;  
+; InboundContactTicket:ContactTicket	; systemOrigin    	    ; ContactTicket:systemOrigin    	;                                       ; 	;  

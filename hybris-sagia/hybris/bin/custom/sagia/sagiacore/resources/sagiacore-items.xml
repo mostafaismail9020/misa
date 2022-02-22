@@ -3711,8 +3711,13 @@
                     <attribute qualifier="c4CAccountID" type="java.lang.String">
                         <persistence type="property"/>
                         <modifiers/>
-                    </attribute>
-                </attributes>
+                    </attribute>                
+					<attribute qualifier="systemOrigin" type="java.lang.String">
+						<persistence type="property"/>
+						<description>To identify the source system</description>
+						<modifiers read="true" write="true" search="true" optional="true"/>
+					</attribute>
+				</attributes>
             </itemtype> 
                         
 			<itemtype code="OpportunityPartner" generate="true" autocreate="true">

@@ -371,7 +371,7 @@ class="btn btn_link appointmentList-viewBtn appointmentList-icon_view">
                                                         <label class="control-label" for="profile.enquiry.type">
         <spring:theme code="appointments.from"/>
     </label>
-                                                        <div class="formInputBox-append">
+                                                        <div class="formInputBox-append" id="calendar-icon-pos">
                                                             <span class="formInputBox-text"><icon:calendar-gray/></span>
                                                         </div>
                                                     </div>
@@ -384,7 +384,7 @@ class="btn btn_link appointmentList-viewBtn appointmentList-icon_view">
                                                         <label class="control-label" for="profile.enquiry.type">
         <spring:theme code="appointments.to"/>
     </label>
-                                                        <div class="formInputBox-append">
+                                                        <div class="formInputBox-append" id="calendar-icon-pos">
                                                             <span class="formInputBox-text"><icon:calendar-gray/></span>
                                                         </div>
                                                     </div>

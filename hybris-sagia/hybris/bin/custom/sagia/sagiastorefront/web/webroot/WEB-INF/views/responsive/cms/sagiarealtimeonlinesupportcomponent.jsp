@@ -101,7 +101,7 @@
                         <%--<input class="form-control js-form-control_date" placeholder="." value="" type="text">--%>
                     <label class="control-label" for="dateStart"><spring:theme
                             code="realTimeOnlineSupportCall.start"/></label>
-                    <div class="formInputBox-append"><span class="formInputBox-text"><icon:calendar-gray/></span></div>
+                    <div class="formInputBox-append" id="calendar-icon-pos"><span class="formInputBox-text"><icon:calendar-gray/></span></div>
                 </div>
             </div>
             <div class="formInputBox formInputBox_group">
@@ -110,7 +110,7 @@
                         <%--<input class="form-control js-form-control_timeslot" placeholder="." value="" type="text">--%>
                     <label class="control-label" for="timeStart"><spring:theme
                             code="realTimeOnlineSupportCall.available.slot.v2"/></label>
-                    <div class="formInputBox-append">
+                    <div class="formInputBox-append" id="calendar-icon-pos">
                         <span class="formInputBox-text"><icon:calendar-gray/></span>
                     </div>
                 </div>

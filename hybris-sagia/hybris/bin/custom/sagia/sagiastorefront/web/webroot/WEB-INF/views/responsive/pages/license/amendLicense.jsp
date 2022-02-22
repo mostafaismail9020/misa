@@ -1105,7 +1105,7 @@
 												for="birthDateId"> <spring:theme
 													code="license.dateofbirth" />
 											</label>
-											<div class="formInputBox-append">
+											<div class="formInputBox-append" id="calendar-icon-pos">
 												<span class="formInputBox-text"> <icon:calendar-gray />
 												</span>
 											</div>
@@ -1532,7 +1532,7 @@
 																class="control-label control-label_mandatory"
 																for="delegateDateofBirth"><spring:theme
 																	code="license.apply.shareholder.dateOfBirth" /></label>
-															<div class="formInputBox-append">
+															<div class="formInputBox-append" id="calendar-icon-pos">
 																<span class="formInputBox-text"><icon:calendar-gray /></span>
 															</div>
 														</div>
@@ -1619,7 +1619,7 @@
 																	for="delegateBirthDateId"> <spring:theme
 																		code="license.dateofbirth" />
 																</label>
-																<div class="formInputBox-append">
+																<div class="formInputBox-append" id="calendar-icon-pos">
 																	<span class="formInputBox-text"> <icon:calendar-gray />
 																	</span>
 																</div>
@@ -1653,7 +1653,7 @@
 																	class="control-label control-label_mandatory"
 																	for="delegateIssueDate"><spring:theme
 																		code="license.apply.shareholder.issueDate" /></label>
-																<div class="formInputBox-append">
+																<div class="formInputBox-append" id="calendar-icon-pos">
 																	<span class="formInputBox-text"><icon:calendar-gray /></span>
 																</div>
 															</div>
@@ -1673,7 +1673,7 @@
 																	class="control-label control-label_mandatory"
 																	for="delegateIssueDate"><spring:theme
 																		code="license.apply.shareholder.expiryDate" /></label>
-																<div class="formInputBox-append">
+																<div class="formInputBox-append" id="calendar-icon-pos">
 																	<span class="formInputBox-text"><icon:calendar-gray /></span>
 																</div>
 															</div>

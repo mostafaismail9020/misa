@@ -195,12 +195,12 @@
     	<dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>
 
 	    <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard newsSection">
-	        <div class="container">
+	        <div class="container px-0">
 	        <!--News Section Start-->
 	            <div id="newsandupdates" class="newsAndUpdateContainer">
 	                <div class="dashboard-container">
 	                    <div class="row titleContainer">
-	                        <div class="col-md-12 title-heading p-0 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
+	                        <div class="col-md-12 title-heading aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
 	                            <h1 class="section-title text-center clr_gld pt-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
 		                        <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5  explore-all-btn">
 		                        	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
@@ -218,7 +218,7 @@
 		                                    <div class="card-img">
 		                                        <img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
 		                                    </div>
-		                                    <div class="card-box p-3 pr-5 home-news-updates-content">
+		                                    <div class="card-box p-3 home-news-updates-content">
 		                                        <!-- <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong> -->
 		                                        <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMM" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /></span>
                                                 <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,70)} ...</h3>

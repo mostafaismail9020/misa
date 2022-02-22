@@ -3713,6 +3713,11 @@
                         <modifiers/>
                     </attribute>
                 </attributes>
+				<attribute qualifier="systemOrigin" type="java.lang.String">
+					<persistence type="property"/>
+					<description>To identify the source system</description>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
             </itemtype> 
                         
 			<itemtype code="OpportunityPartner" generate="true" autocreate="true">

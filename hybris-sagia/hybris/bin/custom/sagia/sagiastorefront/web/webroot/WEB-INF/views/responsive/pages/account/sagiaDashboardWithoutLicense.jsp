@@ -194,7 +194,7 @@
     	<!-- <div id="dashboardNoLicenseHelper"></div> -->
     	<dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>
 
-	    <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard">
+	    <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard newsSection">
 	        <div class="container">
 	        <!--News Section Start-->
 	            <div id="newsandupdates" class="newsAndUpdateContainer">

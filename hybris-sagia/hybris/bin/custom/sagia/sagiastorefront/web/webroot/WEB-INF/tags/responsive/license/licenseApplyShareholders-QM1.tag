@@ -277,7 +277,7 @@
                         <div class="form-group">
                             <input id="dateOfBirth" name="dateOfBirth" class="form-control js-form-control_date" placeholder="." value="" type="text"/>
                             <label class="control-label control-label_mandatory" for="dateOfBirth"><spring:theme code="general.dateofbirth"/></label>
-                            <div class="formInputBox-append">
+                            <div class="formInputBox-append" id="calendar-icon-pos">
                                 <span class="formInputBox-text"><icon:calendar-gray/></span>
                             </div>
                         </div>
@@ -300,7 +300,7 @@
                         <div class="form-group">
                             <input id="passportIssueDate" name="passportIssueDate" class="form-control js-form-control_date" placeholder="." value="" type="text"/>
                             <label class="control-label control-label_mandatory" for="passportIssueDate"><spring:theme code="general.passport.issuedate"/></label>
-                            <div class="formInputBox-append">
+                            <div class="formInputBox-append" id="calendar-icon-pos">
                                 <span class="formInputBox-text"><icon:calendar-gray/></span>
                             </div>
                         </div>
@@ -313,7 +313,7 @@
                         <div class="form-group">
                             <input id="passportExpiryDate" name="passportExpiryDate" class="form-control js-form-control_date" placeholder="." value="" type="text"/>
                             <label class="control-label control-label_mandatory" for="passportExpiryDate"><spring:theme code="general.passport.expirydate"/></label>
-                            <div class="formInputBox-append">
+                            <div class="formInputBox-append" id="calendar-icon-pos">
                                 <span class="formInputBox-text"><icon:calendar-gray/></span>
                             </div>
                         </div>

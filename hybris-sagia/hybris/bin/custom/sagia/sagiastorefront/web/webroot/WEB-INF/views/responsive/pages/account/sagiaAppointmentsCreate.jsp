@@ -253,7 +253,7 @@
                                                                                             <div class="form-group">
                                                                                                 <form:input path="dateString" cssClass="form-control js-form-control_date flatpickr-input" placeholder="." />
                                                                                                 <label class="control-label control-label_mandatory" for="dateString"><spring:theme code="appointments.date"/></label>
-                                                                                                <div class="formInputBox-append">
+                                                                                                <div class="formInputBox-append" id="calendar-icon-pos">
                                                                                                     <span class="formInputBox-text"><icon:calendar-gray/></span>
                                                                                                 </div>
                                                                                             </div>
@@ -266,7 +266,7 @@
                                                                                                 <form:input path="timeStartString" cssClass="form-control js-form-control_timeslot" placeholder="." data-dates-enabled="10:00#17:30" />
                                                                                                 <%--<input  id="profile.enquiry.type" name="enquiryType" class="form-control js-form-control_timeslot" placeholder="." value="" type="text"  data-dates-enabled="10:00#17:30">--%>
                                                                                                     <label class="control-label control-label_mandatory" for="timeStartString"><spring:theme code="appointments.start"/></label>
-                                                                                                    <div class="formInputBox-append">
+                                                                                                    <div class="formInputBox-append" id="calendar-icon-pos">
                                                                                                         <span class="formInputBox-text"><icon:calendar-gray/></span>
                                                                                                     </div>
                                                                                             </div>

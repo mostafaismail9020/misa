@@ -77,7 +77,7 @@
                     <div class="form-group">
                         <input id="qm1DateOfBirth" name="dateOfBirth" class="form-control js-form-control_date" placeholder="." value="" type="text"/>
                         <label class="control-label control-label_mandatory" for="qm1DateOfBirth"><spring:theme code="licenseApply.contactPerson.qm1.dateOfBirth"/></label>
-                        <div class="formInputBox-append">
+                        <div class="formInputBox-append" id="calendar-icon-pos">
                             <span class="formInputBox-text"><icon:calendar-gray/></span>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                     <div class="form-group">
                         <input id="qm1PassportIssueDate" name="passportIssueDate" class="form-control js-form-control_date" placeholder="." value="" type="text"/>
                         <label class="control-label control-label_mandatory" for="qm1PassportIssueDate"><spring:theme code="licenseApply.contactPerson.qm1.passportIssueDate"/></label>
-                        <div class="formInputBox-append">
+                        <div class="formInputBox-append" id="calendar-icon-pos">
                             <span class="formInputBox-text"><icon:calendar-gray/></span>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                     <div class="form-group">
                         <input id="qm1PassportExpiryDate" name="passportExpiryDate" class="form-control js-form-control_date" placeholder="." value="" type="text"/>
                         <label class="control-label control-label_mandatory" for="qm1PassportExpiryDate"><spring:theme code="licenseApply.contactPerson.qm1.passportExpiryDate"/></label>
-                        <div class="formInputBox-append"><span class="formInputBox-text"><icon:calendar-gray/></span></div>
+                        <div class="formInputBox-append" id="calendar-icon-pos"><span class="formInputBox-text"><icon:calendar-gray/></span></div>
                     </div>
                     <div class="help-block"></div>
                 </div>

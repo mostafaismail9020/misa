@@ -204,7 +204,7 @@
                                         <label class="control-label" for="iqmaExpiryDate">
                                             <spring:theme code="text.specialservices.iqmaExpiryDate"/>
                                         </label>
-                                        <div class="formInputBox-append">
+                                        <div class="formInputBox-append" id="calendar-icon-pos">
                                             <span class="formInputBox-text"><icon:calendar-gray/></span>
                                         </div>
                                     </div>

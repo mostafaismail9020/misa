@@ -322,7 +322,7 @@
                                                                       labelCSS="control-label_mandatory"
                                                                       path="purchaseDate"/>
                                         </div>
-                                        <div class="formInputBox-append iconClass right-50">
+                                        <div class="formInputBox-append iconClass right-50" id="calendar-icon-pos">
                                             <span class="formInputBox-text"><icon:calendar-gray/></span>
                                         </div>
                                     </div>

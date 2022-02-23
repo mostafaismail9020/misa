@@ -142,3 +142,16 @@ z-index: 0;
 	color: #FF0000;
 	padding-left: 5px;
   }
+/* Amenda license page */
+[dir="ltr"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-left: -65px;}
+[dir="rtl"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-right: -114px;}
+.page-license-amend .formSelectBox .form-group label{top: -20px;}
+@media (max-width: 640px) and (min-width: 100px){
+	.page-license-amend .contentModule-mob-btns button.btn{width: 44%;}
+	.page-license-amend #businessActivitiesModal .modal-header .modal-title{font-size: 22px;}
+	[dir="rtl"] .page-license-amend #shareholderAddressId .form-control+.control-label+.formInputBox-append {margin-right: -65px;}
+	[dir="rtl"] .page-license-amend #branchModalId .form-control+.control-label+.formInputBox-append {margin-right: -65px;}
+	
+}
+
+/* End  */

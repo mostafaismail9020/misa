@@ -82,7 +82,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="row renewal-services w-100">
                 <div class="col-md-6 col-xl-3 col-12">
-                    <a href="/service-search/SAGIA SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                    <a href="/service-search/SAGIA SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
                     <div class="col-md-6 col-xl-3 col-12">
@@ -368,7 +368,7 @@
                                         <c:forEach items="${firstElement.attachmentsSet}" var="attachment">
                                             <li class="downloadList-item">
                                                 <div id="realEstateAttachment_${attachment.filename}" class="downloadList-description">
-                                                    <span class="iconElement iconElement_pdf"><icon:pdf/></span>${attachment.filename}
+                                                    <span class="iconElement iconElement_pdf 111"><icon:pdf/></span>${attachment.filename}
                                                 </div>
                                                 <div class="downloadList-actions">
                                                     <a href="${encodedContextPath}/real-estate/pdf/${attachment.objectId}/${attachment.docGuid}" class="link link_nowrap" download="${attachment.fullFileName}">

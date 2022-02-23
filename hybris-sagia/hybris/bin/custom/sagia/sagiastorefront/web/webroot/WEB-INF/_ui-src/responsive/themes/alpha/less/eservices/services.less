@@ -22,8 +22,12 @@
 }
 
 #image-pos{
-    margin-right: 20px;
+    margin-right: 40px;
     margin-top: -20px;
+    &-arrow{
+        margin-right: 20px;
+        margin-top: -20px;
+    }
 }
 .btn.btn_slim.btn_outline{
     background-color: @color-primary;
@@ -674,7 +678,7 @@
 .formTextArea .control-label,
 .formSelectBox .select2.select2-container.select2Container_selected+.control-label{
     top: -18px;
-    font-weight: 500;
+    font-weight: 400;
 }
 .formInputBox .form-control ~.register-form label.focused,.formTextArea .form-control,.formRadioButton .control-label{
     letter-spacing: 0px;
@@ -1179,30 +1183,6 @@ body ::-webkit-scrollbar-thumb {
         width: 500px;
     }
 }
-
-  
-@media (-webkit-device-pixel-ratio: 1.25) {
-    body {
-            zoom: 0.8;
-        }
-	#header,#topbar,.mainSection.mainSection_noPadding.userDetail-block{
-		zoom: 1.25;
-	}
-    .tooltip.fade.show.bs-tooltip-top{
-        transform: translate3d(780px, 865px, 0px) !important;
-    }
-  }
-@media (-webkit-device-pixel-ratio: 1.50) {
-    body {
-      zoom: 0.7;
-    }
-	#header,#topbar,.mainSection.mainSection_noPadding.userDetail-block{
-		zoom: 1.24;
-	}
-    .tooltip.fade.show.bs-tooltip-top{
-        transform: translate3d(780px, 905px, 0px) !important;
-    }
-}
 .notification_b2b_img{
     margin-top: -3px;margin-left: -3px;
 }
@@ -1342,7 +1322,7 @@ body ::-webkit-scrollbar-thumb {
 }
 
 [dir=rtl] .expandableContent.expanded .expandableContent-aside {
-    padding-left: 20px;
+    // padding-left: 20px;
     padding-right: 0px;
 }
 [dir=rtl] .formInputFile .form-control{
@@ -1374,45 +1354,12 @@ body ::-webkit-scrollbar-thumb {
     }
 }
 
-.ddl-wrap{
-	text-align: left;
-    top: 0;
-	display: flex;
-}
-
-.flatpickr-wrapper{
-	display: contents;
-}
-.modal-content{
-	overflow-y: scroll;
-}
-#calendar-icon-pos{
-	position: absolute;
-	right: 0;
-	[dir="rtl"] &{
-        right: initial;
-        left: 0;
-    }
-}
-
-
-#failInformationModal,#sessionExpiresModal{
-    .modal-content{
-        position: absolute;
-        top: calc(45% - 50px);
-    }
-}
 
 @media (max-width: 1000px){
     [dir=rtl] ul#pills-tab {
         padding-left: 0;
         padding-right:0;
-    }    
-    .page-realestate-create{
-        .iconClass {
-            padding-top: 11.5%;
-        }
-    }
+    }   
 }
 
 @media screen and (max-width:640px) {
@@ -1448,15 +1395,31 @@ body ::-webkit-scrollbar-thumb {
             position: relative;
         }
     }
+    .plot-add-on{
+        margin-bottom: 1rem;
+    }
 }
 
 div.invest-us-header:empty{
     display: none;
 }
 
+
 #globalMessageModal{
     .modal-heroImage svg{
         width: 50px;
         height: 50px;
+    }
+}
+[dir ="rtl"] .dlList dd {
+    padding-right: 20px;
+}
+.modal-content{
+    margin: auto;
+}
+
+@media screen and (min-width:641px) and (max-width:1000px) {
+    .expandableContent.expanded .expandableContent-aside{
+        padding-right:0px;
     }
 }

@@ -152,7 +152,7 @@
                 </div>
             </c:if>
             <div class="expandableContent-main js-warning-letters">
-                <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
+                <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-1">
                     <div class="contentModule contentModule-wrap">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
 

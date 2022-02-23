@@ -134,7 +134,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container ml-4">
+	<div class="container ml-0 ml-md-4">
 		<button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
 			<div class=" "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
 			<div class="hidden"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
@@ -339,7 +339,7 @@
 									</div>
 								</form:form>
 								<div
-									class="contentModule-actions contentModule-actions_spaceBetween">
+									class="contentModule-actions contentModule-actions_spaceBetween contentModule-mob-btns">
 									<button type="button"
 										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
@@ -397,7 +397,7 @@
 							<p id="oldActivitiesId"></p>
 							<license:licenseBusinessActivitiesSection />
 							<div
-								class="contentModule-actions contentModule-actions_spaceBetween">
+								class="contentModule-actions contentModule-actions_spaceBetween contentModule-mob-btns">
 								<button type="button"
 									class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 									<spring:theme code="general.cancel" />
@@ -479,7 +479,7 @@
 									</div>
 									<div
 										class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-										<button type="button" class="btn btn-primary newShareholderBtn w-25"
+										<button type="button" class="btn btn-primary newShareholderBtn"
 											data-toggle="modal" data-target="#shareholderModalId"
 											data-backdrop="static" data-keyboard="false">
 											<spring:theme
@@ -489,7 +489,7 @@
 								</div>
 
 								<div
-									class="contentModule-actions contentModule-actions_spaceBetween">
+									class="contentModule-actions contentModule-actions_spaceBetween contentModule-mob-btns">
 									<button type="button"
 										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
@@ -579,7 +579,7 @@
 									</div>
 								</div>
 								<div
-									class="contentModule-actions contentModule-actions_spaceBetween">
+									class="contentModule-actions contentModule-actions_spaceBetween contentModule-mob-btns">
 									<button type="button"
 										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
@@ -661,7 +661,7 @@
 									</div>
 								</div>
 								<div
-									class="contentModule-actions contentModule-actions_spaceBetween">
+									class="contentModule-actions contentModule-actions_spaceBetween contentModule-mob-btns">
 									<button type="button"
 										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />

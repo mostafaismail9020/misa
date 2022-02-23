@@ -11,6 +11,12 @@ SAGIA.globalAlerts = {
 			currentMsg.addClass('globalMessage_closeing').one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
 				$(this).addClass('hidden');
 			});
-		})
+		})		
 	}
 };
+
+
+$(document).on('click','.closeAccAlertModal', function(e){
+	$("#globalMessageModal").remove();
+	$("#globalModalBackDrop").remove();
+})

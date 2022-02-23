@@ -199,6 +199,7 @@
 		<entry key="/financial-statement/create" value-ref="importMultipartFilter"/>
 		<entry key="/support-visits/create" value-ref="importMultipartFilter"/>
 		<entry key="/draft/save" value-ref="importMultipartFilter"/>
+		<entry key="/potentialOpportunity/{ticketId}/uploadAttachment" value-ref="importMultipartFilter"/>
 	</util:map>
 
 	<bean id="fileUploadFilter" class="com.sap.ibso.eservices.storefront.filters.FileUploadFilter" >

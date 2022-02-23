@@ -93,7 +93,7 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="row renewal-services w-100">
-                <div class="col-md-3 col-12 px-0">
+                <div class="col-xl-3 col-md-6 col-12 px-0">
                     <a href="/service-search/SAGIA SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
@@ -101,7 +101,7 @@
                         <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
                     </div>
                 </c:if>
-                <div class="col-xl-3 col-12">
+                <div class="col-xl-3 col-md-6 col-12">
                     <div class="mainSection-linkActions mainSection-linkActions_right">
                             <a href="violation-replies/create" class="btn btn_slim js-create-violation-reply back_to_service">
                                 <spring:theme code="text.account.followup.create"/>

@@ -22,7 +22,7 @@
 }
 
 #image-pos{
-    margin-right: 40px;
+    margin-right: 20px;
     margin-top: -20px;
 }
 .btn.btn_slim.btn_outline{
@@ -1407,6 +1407,11 @@ body ::-webkit-scrollbar-thumb {
     [dir=rtl] ul#pills-tab {
         padding-left: 0;
         padding-right:0;
+    }    
+    .page-realestate-create{
+        .iconClass {
+            padding-top: 11.5%;
+        }
     }
 }
 
@@ -1414,10 +1419,34 @@ body ::-webkit-scrollbar-thumb {
     .btn_align-center{
         display: flex;
         justify-content: center;
+        margin-top: 1rem;
     }
-    .contentModule-headline.mob-heading-responsive{
-        padding-left: 0px;
-        padding-right: 0px;
+    #expand01{
+        .contentModule-headline.mob-heading-responsive{
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+    }
+    .page-realestate-create{
+        .action_res_view{
+            flex-direction: row;
+            button{
+                &:nth-of-type(1){
+                    order: 2;
+                    margin-top: 10px;
+                }
+                &:nth-of-type(2){
+                    order: 1;
+                }
+            }
+        }
+    }
+    #failInformationModal, #sessionExpiresModal {
+        .modal-content{
+            margin:auto;
+            top:initial;
+            position: relative;
+        }
     }
 }
 

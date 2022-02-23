@@ -232,12 +232,12 @@
                         <div class="contentModule-section">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
                                 <span class="contentModule-headline" id="realEstateTypeTitle" style="display:inline-block;"></span>
+                                <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
                                 <div class="contentModule-headline-border"></div>
                             </div>
                             <!-- <div class="contentModule-headline headline-text">
                                 <div id="realEstateTypeTitle" style="display:inline-block;"></div>
                             </div> -->
-                            <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
 							<!-- <input type="hidden" name="isMojVerified" id="isMojVerified" /> -->
 							<form:hidden id="isMojVerified" path="mojVerified"/>
                             <div class="row w-100">
@@ -542,7 +542,7 @@
                 </div>
             </div>
 
-            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions action_res_view">
                 <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
                         <div class="form-group">
@@ -550,7 +550,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn_leftIconLink btn_outline js-cancel-create-realEstate">
+                <button type="button" class="btn btn_outline js-cancel-create-realEstate">
                     <spring:theme code="general.cancel"/>
                 </button>
 

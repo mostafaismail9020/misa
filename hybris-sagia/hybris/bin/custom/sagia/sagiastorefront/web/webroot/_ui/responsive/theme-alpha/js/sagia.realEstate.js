@@ -37,7 +37,7 @@ var getAttachmentList = function (requestType, realEstateType, files) {
                     var file = findFileData(element.attachmentName, window['uploadedFiles']);
                     if (file) {
                         filesHtml +=
-                            '<div class="col-md-6" data-real-index="' + index + '">' +
+                            '<div class="col-lg-6 col-md-12" data-real-index="' + index + '">' +
                             '<div class="formInputFile">' +
                             '<div class="form-group ">' +
                             '<input id="fileId_[' + index + ']" name="files[' + index + ']" class="form-control js-inputFile" data-attachment-name="' + element.attachmentName + '" value="" type="file" accept="image/jpeg,application/pdf">' +
@@ -59,7 +59,7 @@ var getAttachmentList = function (requestType, realEstateType, files) {
                             '</div>';
                     } else {
                         filesHtml +=
-                            '<div class="col-md-6">' +
+                            '<div class="col-lg-6 col-md-12">' +
                             '<div class="formInputFile">' +
                             '<div class="form-group ">' +
                             '<input id="fileId_[' + index + ']" name="files[' + index + ']" class="form-control js-inputFile" data-attachment-name="' + element.attachmentName + '" value="" type="file" accept="image/jpeg,application/pdf">' +

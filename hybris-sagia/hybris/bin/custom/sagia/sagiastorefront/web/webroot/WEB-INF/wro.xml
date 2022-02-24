@@ -63,6 +63,8 @@
 		<js>/_ui/responsive/theme-alpha/js/Chart.js</js>
 		<js>/_ui/responsive/theme-alpha/js/bootstrap/tooltip.js</js>
 		<js>/_ui/responsive/theme-alpha/js/js-calendar/js-calendar.js</js>
+		<js>/_ui/responsive/common/js/popup-multiselect.js</js>
+
 		<js>/_ui/responsive/theme-alpha/js/flatpickr.min.js</js>
 		<js>/_ui/responsive/theme-alpha/js/i10n/ar.js</js>
 		<js>/_ui/responsive/theme-alpha/js/jquery.qrcode.js</js>

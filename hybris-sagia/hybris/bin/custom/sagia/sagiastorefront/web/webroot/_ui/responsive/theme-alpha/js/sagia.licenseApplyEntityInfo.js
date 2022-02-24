@@ -194,7 +194,7 @@ SAGIA.licenseApplyEntityInfo = {
                     branchInformationRhqRegionsSection.append(new Option(currentValue.regionText, currentValue.region, false, false));
                 });
 
-                self.updateSelectValues($("#branchInformationRhqRegionsSection"));
+                // self.updateSelectValues($("#branchInformationRhqRegionsSection"));
             }
         });
     },
@@ -207,17 +207,13 @@ bindRhqCountryInformationEvents: function () {
             cache: false,
             success: function (data) {
                 var jsonData = JSON.parse(data);
-
                 var countries = self.branchInformationSection.find("#branchInformationRhqCountry");
                 countries.find("option").remove();
                // countries.append(new Option("", "", false, false));
                 jsonData.countries.forEach(function (currentValue) {
                     countries.append(new Option(currentValue.countryText, currentValue.country, false, false));
                 });
-              //  self.updateSelectValues($("#branchInformationRhqCountry"));
-         //       self.CountryUpdateSelectValues($("#branchInformationRhqCountry"));
-                //countries.attr("disabled", true);
-                //countries.val("SA").trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
+
 
 			}
 		});
@@ -1365,6 +1361,11 @@ bindRhqCountryInformationEvents: function () {
 
 
             });
+
+            $("#branchInformationRhqCountry").multiselect({
+                title: getI18nText("validation.rhq.countries.minimum"),
+                modalSize: "md"
+            });
           //  self.updateSelectValues($("#branchInformationRhqCountry"));
           //  self.CountryUpdateSelectValues($("#branchInformationRhqCountry"));
              addBranchCountry.val(null);
@@ -1375,6 +1376,8 @@ bindRhqCountryInformationEvents: function () {
      // /dropdownsQeemah1/corporateActivities
     setCorporateActivities: function () {
         var self = this;
+
+
         $.ajax(ACC.config.encodedContextPath + controllerUrl + "/dropdownsQeemah1/corporateActivities",
             {
                 type: "GET",
@@ -1383,17 +1386,26 @@ bindRhqCountryInformationEvents: function () {
                 cache: false,
                 success: function (data) {
                     var jsonData = JSON.parse(data);
-                    var corporateActivities = self.basicInformationExtendedSection.find("#rhqCheckbox");
-                    corporateActivities.find("option").remove();
-                    corporateActivities.append(new Option("", "", false, false));
+                    $('rhqCheckbox').append(new Option("", "", false, false));
                     jsonData.forEach(function (currentValue) {
-                        $('#rhqCheckbox').append('<option value='+currentValue.id+'>'+currentValue.details+'</option>');
+                        $('#rhqCheckbox').append('<option value=' + currentValue.id + '>' + currentValue.details + '</option>');
                     });
-                    self.updateSelectValues($("#rhqCheckbox"));
-                    $('#rhqCheckbox').trigger({
-                        type: 'select2:select',
 
-                    });
+                    if ($("#rhqCheckbox").data('value') != "" && $("#rhqCheckbox").data('value') != undefined && $("#rhqCheckbox").data('value')) {
+                     //   console.log("received data.." + $("#rhqCheckbox").data('value'));
+                        var selectedDataString = String($("#rhqCheckbox").data('value'));
+                        var selectedData = selectedDataString.split(',');
+                        selectedData.forEach(function (currentValue) {
+                            console.log('inside loop..' + currentValue);
+                            $("#rhqCheckbox").multiselect("selectOption", currentValue);
+                        });
+                    }
+                    setTimeout(function () {
+                    $("#rhqCheckbox").multiselect({
+                        title: "Optional/Functions/Corporate Activities",
+                        modalSize: "md"
+                    });},500);
+
                 }
             });
     },
@@ -1414,11 +1426,21 @@ bindRhqCountryInformationEvents: function () {
                     jsonData.forEach(function (currentValue) {
                         $('#branchInformationRhqRegionsSection').append('<option value='+currentValue.region+'>'+currentValue.regionText+'</option>');
                     });
-                    self.updateSelectValues($("#branchInformationRhqRegionsSection"));
-                    $('#branchInformationRhqRegionsSection').trigger({
-                        type: 'select2:select',
 
-                    });
+                    if ($("#branchInformationRhqRegionsSection").data('value') != "" && $("#branchInformationRhqRegionsSection").data('value') != undefined && $("#branchInformationRhqRegionsSection").data('value')) {
+                        //   console.log("received data.." + $("#rhqCheckbox").data('value'));
+                           var selectedDataString = String($("#branchInformationRhqRegionsSection").data('value'));
+                           var selectedData = selectedDataString.split(',');
+                           selectedData.forEach(function (currentValue) {
+                               console.log('inside loop..' + currentValue);
+                               $("#branchInformationRhqRegionsSection").multiselect("selectOption", currentValue);
+                           });
+                       }
+                       $("#branchInformationRhqRegionsSection").multiselect({
+                           title: "Select Options",
+                           modalSize: "md"
+                       });
+
                 }
             });
     },
@@ -1442,11 +1464,22 @@ bindRhqCountryInformationEvents: function () {
                         jsonData.forEach(function (currentValue) {
                             $('#rhqStrategicCheckbox').append('<option value='+currentValue.id+'>'+currentValue.details+'</option>');
                         });
-                        self.updateSelectValues($("#rhqStrategicCheckbox"));
-                        $('#rhqStrategicCheckbox').trigger({
-                            type: 'select2:select',
 
+                        if ($("#rhqStrategicCheckbox").data('value') != "" && $("#rhqStrategicCheckbox").data('value') != undefined && $("#rhqStrategicCheckbox").data('value')) {
+                            //   console.log("received data.." + $("#rhqCheckbox").data('value'));
+                               var selectedDataString = String($("#rhqStrategicCheckbox").data('value'));
+                               var selectedData = selectedDataString.split(',');
+                               selectedData.forEach(function (currentValue) {
+                               //    console.log('inside rhqStrategicCheckbox loop..' + currentValue);
+                                   $("#rhqStrategicCheckbox").multiselect("selectOption", currentValue);
+                               });
+                           }
+
+                        $("#rhqStrategicCheckbox").multiselect({
+                            title:getI18nText("rhq.strategic.activity.validation"),
+                            modalSize: "md"
                         });
+
 
                     }
                 });
@@ -1467,6 +1500,7 @@ bindRhqCountryInformationEvents: function () {
                             managementActivities.find("option").remove();
                             managementActivities.append(new Option("", "", false, false));
                             jsonData.forEach(function (currentValue) {
+                                console.log("managementActivitiesParsedList currentValue"+currentValue.id);
                                 $('#rhqManagementFunCheckbox').append('<option value='+currentValue.id+'>'+currentValue.details+'</option>');
                             });
                          //   self.updateSelectValues($("#rhqManagementFunCheckbox"));
@@ -1484,14 +1518,24 @@ bindRhqCountryInformationEvents: function () {
 
             });
 
-            console.log(managementActivitiesParsedList);
-            setTimeout(function () {
-                $('#rhqManagementFunCheckbox').select2().val(managementActivitiesParsedList).trigger('change');
-                $('#rhqManagementFunCheckbox').trigger({
-                    type: 'select2:select',
+            console.log("managementActivitiesParsedList"+managementActivitiesParsedList);
 
+
+
+
+
+            setTimeout(function () {
+                managementActivitiesParsedList.forEach(function (currentValue) {
+                    console.log('inside rhqManagementFunCheckbox loop..' + currentValue);
+                    $("#rhqManagementFunCheckbox").multiselect("selectOption", currentValue);
                 });
-            },2500);
+
+
+                $("#rhqManagementFunCheckbox").multiselect({
+                    title: "Select Options",
+                    modalSize: "md"
+                });
+            },1500);
 
         }
         catch (err) {
@@ -1509,12 +1553,21 @@ bindRhqCountryInformationEvents: function () {
 
             });
 
-            console.log(RHQCenterfinalParsedList);
-            $('#rhqCenterAdmin').select2().val(RHQCenterfinalParsedList).trigger('change')
-            $('#rhqCenterAdmin').trigger({
-                type: 'select2:select',
 
-            });
+
+            setTimeout(function () {
+                RHQCenterfinalParsedList.forEach(function (currentValue) {
+                    console.log('inside rhqManagementFunCheckbox loop..' + currentValue);
+                    $("#rhqCenterAdmin").multiselect("selectOption", currentValue);
+                });
+
+
+                $("#rhqCenterAdmin").multiselect({
+                    title: "Select Options",
+                    modalSize: "md"
+                });
+            },1500);
+
         }
         catch (err) {
             console.log(err);
@@ -1554,13 +1607,14 @@ bindRhqCountryInformationEvents: function () {
 
                           });
                           console.log(selectedRhqCountrieseList);
-                          if (selectedRhqCountrieseList?.length > 0) {
-                              $('#branchInformationRhqCountry').select2().val(selectedRhqCountrieseList).trigger('change');
-                          }
-                          $('#branchInformationRhqCountry').trigger({
-                            type: 'select2:select',
 
-                        });
+                          if (selectedRhqCountrieseList?.length > 0) {
+                            selectedRhqCountrieseList.forEach(function (currentValue) {
+                                $("#branchInformationRhqCountry").multiselect("selectOption", currentValue);
+                            });
+
+                          }
+
 
                       }
                       catch (err) {
@@ -1593,10 +1647,11 @@ bindRhqCountryInformationEvents: function () {
         $('.rqh-tables').css("display", "none");
         $('.rhqSelectBoxes').css("display", "none");
         self.setRHQLegalStatus("resetRHQLegalStatusValues");
-        $('#rhqCheckbox').html('');
-        $('#rhqStrategicCheckbox').html('');
-        $('#rhqManagementFunCheckbox').html('');
-        $('#branchInformationRhqRegionsSection').html('');
+        // $('#rhqCheckbox').html('');
+        // $('#rhqStrategicCheckbox').html('');
+        // $('#rhqManagementFunCheckbox').html('');
+        // $('#branchInformationRhqRegionsSection').html('');
+        $
 
 
 
@@ -2092,6 +2147,13 @@ if($("#licenseTypes").val() === "11"){
             element.val(element.data('value')).trigger('change');
         }
     },
+    updateSelectValuesnewUI: function (element) {
+        if (element.data('value') != "" && element.data('value') != undefined && element.data('value')) {
+
+            element.siblings('.select2.select2-container').addClass("select2Container_selected");
+            element.val(element.data('value')).trigger('change');
+        }
+    },
     CountryUpdateSelectValues: function (element) {
         if (element.data('value') != "" && element.data('value') != undefined && element.data('value')) {
             // element.find('option[value='+element.data('value')+']').prop('selected', true).trigger('change');
@@ -2282,19 +2344,11 @@ if($("#licenseTypes").val() === "11"){
 
         //onchanges validation start
 
-        $(document.body).on('change', '#rhqCheckbox', function () {
-            if ($('#rhqCheckbox').val().length < 3) {
-                $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.corporate.activity.validation"));
-                $('#rhqCheckbox').parents('.form-group').addClass('has-error');
-            } else {
-                $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
-                $('#rhqCheckbox').parents('.form-group').removeClass('has-error');
-            }
 
-        });
 
 
         $(document.body).on('change', '#rhqCheckbox', function () {
+            console.log('changes detected...');
             if ($('#rhqCheckbox').val().length < 3) {
                 $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.corporate.activity.validation"));
                 $('#rhqCheckbox').parents('.form-group').addClass('has-error');
@@ -2306,6 +2360,7 @@ if($("#licenseTypes").val() === "11"){
         });
 
         $(document.body).on('change', '#rhqStrategicCheckbox', function () {
+            console.log('changes detected...');
             if ($('#rhqStrategicCheckbox').val().length < 5) {
                 $('#rhqStrategicCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.strategic.activity.validation"));
                 $('#rhqStrategicCheckbox').parents('.form-group').addClass('has-error');

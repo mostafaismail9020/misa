@@ -1182,7 +1182,11 @@ body ::-webkit-scrollbar-thumb {
     .select2-dropdown_oneColumn .select2-results__option{
         width: 500px;
     }
+    .btn_auto{
+        width: 25% !important;
+    }
 }
+
 .notification_b2b_img{
     margin-top: -3px;margin-left: -3px;
 }
@@ -1232,9 +1236,9 @@ body ::-webkit-scrollbar-thumb {
 }
 
 .form-control + .control-label + .formInputBox-append{
-    @media screen and (min-width:1200px) {        
+    // @media screen and (min-width:1200px) {        
         margin-left: -65px;
-    }
+    // }
 }
 .formInputBox_group .formInputBox-text{
     padding: 20px;
@@ -1277,20 +1281,22 @@ body ::-webkit-scrollbar-thumb {
         left: initial;
     }
 }
-.attachment-division-wrap{
-   display: flex;
-   flex-wrap: wrap;
-   .formInputFile{
-       width: 50%;
-       padding: 20px;
-   }
-   .help-block{
-       margin-right: 25px;
-       [dir = "rtl"] &{
-           margin-left: 25px;
-           margin-right: initial;
+@media screen and (min-width:768px) {    
+    .attachment-division-wrap{
+       display: flex;
+       flex-wrap: wrap;
+       .formInputFile{
+           width: 50%;
+           padding: 20px;
        }
-   }
+       .help-block{
+           margin-right: 25px;
+           [dir = "rtl"] &{
+               margin-left: 25px;
+               margin-right: initial;
+           }
+       }
+    }
 }
 .btn_a{
     padding: 10px 20px;
@@ -1353,13 +1359,16 @@ body ::-webkit-scrollbar-thumb {
         padding-bottom: 10px !important;
     }
 }
-
-
 @media (max-width: 1000px){
     [dir=rtl] ul#pills-tab {
         padding-left: 0;
         padding-right:0;
     }   
+    .page-government-documents{
+        .branchData-mainSection{
+            overflow-x: hidden;
+        }
+    }
 }
 
 @media screen and (max-width:640px) {
@@ -1374,7 +1383,7 @@ body ::-webkit-scrollbar-thumb {
             padding-right: 0px !important;
         }
     }
-    .page-realestate-create{
+    .page-realestate-create,.page-government-documents,.page-legal-consultation-create,.page-government-documents,.page-sagia-createGovtServices{
         .action_res_view{
             flex-direction: row;
             button{
@@ -1388,6 +1397,13 @@ body ::-webkit-scrollbar-thumb {
             }
         }
     }
+    .action_res_view-renew{
+        flex-direction: row;
+        a.btn{
+            order: 3;
+            margin-top: 10px;
+        }
+    }
     #failInformationModal, #sessionExpiresModal {
         .modal-content{
             margin:auto;
@@ -1398,9 +1414,45 @@ body ::-webkit-scrollbar-thumb {
     .plot-add-on{
         margin-bottom: 1rem;
     }
+    [dir=rtl] .expandableContent.expanded .expandableContent-aside{
+        padding-left: 0px;
+    }
+    .btn_auto{
+        width: 100% !important;
+    }
+    .page-financial{
+        .tabamount3{
+            display: none;
+        }
+    }
+    .page-financial .panelTabs_withHistory .panelTabs-content .tabhead{
+        padding: 20px;
+        box-shadow: none!important;
+        border-radius: 0!important;
+        border-top: 1px solid #707070;
+        border-bottom: 1px solid #707070;
+        background-color: #ededed;
+    }
+    .attachment-division-wrap{
+        width: 100%;
+        margin: 15px;
+        .formInputFile{
+            padding-top:0px;
+        }
+    }
+    .special-services-info{
+        font-size: 24px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        margin-right: 0px !important;
+        padding-bottom: 60px !important;
+    }
+    .special-services-info + .statusIndicator.process{
+        padding: 0 0px 20px;
+    }
 }
 
-div.invest-us-header:empty{
+div.invest-us-header:empty,.no-data-remove:empty{
     display: none;
 }
 
@@ -1412,7 +1464,7 @@ div.invest-us-header:empty{
     }
 }
 [dir ="rtl"] .dlList dd {
-    padding-right: 20px;
+    padding-right: 0px;
 }
 .modal-content{
     margin: auto;
@@ -1421,5 +1473,23 @@ div.invest-us-header:empty{
 @media screen and (min-width:641px) and (max-width:1000px) {
     .expandableContent.expanded .expandableContent-aside{
         padding-right:0px;
+    }
+    .btn_auto{
+        width: 50% !important;
+    }
+}
+.stepModule-item.active{
+    box-shadow: none;
+}
+
+.financial-statement-wrapper{
+    .panelTabs-navigation ul{
+        max-width: initial;
+    }
+    .panelTabs_separated .panelTabs-navigation .tabs-list{
+        margin: 0px 0px !important;
+    }
+    .panelTabs-body{
+        margin: 2px;
     }
 }

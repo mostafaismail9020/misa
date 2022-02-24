@@ -191,12 +191,16 @@
                     </div>
                 </div>
             </div>
-            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions services-action-btns">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions services-action-btns action_res_view">
                 <div class="formCheckBox formCheckBox_belowPanel w-100">
-                    <formElement:termsAndConditionsCheckbox event="LEGAL_CONSULTATION" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <formElement:termsAndConditionsCheckbox event="LEGAL_CONSULTATION" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
+                        </div>
+                    </div>
                 </div>
 
-                <button type="reset" class="btn btn_leftIconLink btn_outline btn_action_width" onclick="window.location.href='${encodedContextPath}">
+                <button type="reset" class="btn btn_outline btn_action_width" onclick="window.location.href='${encodedContextPath}">
                     <spring:theme code="general.cancel"/>
                 </button>
 

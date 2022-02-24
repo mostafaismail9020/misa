@@ -110,13 +110,13 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 d-flex p-0 user-icons-block">
-                        <div class=" user-icon mr-3">
+                        <div class=" user-icon mr-1 mr-sm-3 ">
                             <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
                             <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
                                 <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/>
                             </a>
                         </div>
-                        <div class=" user-icon mr-3">
+                        <div class=" user-icon mr-1 mr-sm-3">
                             <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/> -->
                             
 
@@ -137,7 +137,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class=" user-icon mr-1">
+                        <div class=" user-icon mr-1 mr-sm-3">
                             <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
                             	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
                             </a>

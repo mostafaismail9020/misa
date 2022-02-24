@@ -134,7 +134,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container ml-4">
+	<div class="container ml-0 ml-md-4">
 		<button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
 			<div class=" "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
 			<div class="hidden"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
@@ -339,7 +339,7 @@
 									</div>
 								</form:form>
 								<div
-									class="contentModule-actions contentModule-actions_spaceBetween">
+									class="contentModule-actions contentModule-actions_spaceBetween contentModule-mob-btns">
 									<button type="button"
 										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
@@ -397,7 +397,7 @@
 							<p id="oldActivitiesId"></p>
 							<license:licenseBusinessActivitiesSection />
 							<div
-								class="contentModule-actions contentModule-actions_spaceBetween">
+								class="contentModule-actions contentModule-actions_spaceBetween contentModule-mob-btns">
 								<button type="button"
 									class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 									<spring:theme code="general.cancel" />
@@ -479,7 +479,7 @@
 									</div>
 									<div
 										class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-										<button type="button" class="btn btn-primary newShareholderBtn w-25"
+										<button type="button" class="btn btn-primary newShareholderBtn"
 											data-toggle="modal" data-target="#shareholderModalId"
 											data-backdrop="static" data-keyboard="false">
 											<spring:theme
@@ -489,7 +489,7 @@
 								</div>
 
 								<div
-									class="contentModule-actions contentModule-actions_spaceBetween">
+									class="contentModule-actions contentModule-actions_spaceBetween contentModule-mob-btns">
 									<button type="button"
 										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
@@ -579,7 +579,7 @@
 									</div>
 								</div>
 								<div
-									class="contentModule-actions contentModule-actions_spaceBetween">
+									class="contentModule-actions contentModule-actions_spaceBetween contentModule-mob-btns">
 									<button type="button"
 										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
@@ -661,7 +661,7 @@
 									</div>
 								</div>
 								<div
-									class="contentModule-actions contentModule-actions_spaceBetween">
+									class="contentModule-actions contentModule-actions_spaceBetween contentModule-mob-btns">
 									<button type="button"
 										class="btn btn-outline cancelAmendmentBtn newAmendmentBtn full-width-responsive">
 										<spring:theme code="general.cancel" />
@@ -1055,7 +1055,7 @@
 
 							<%--Individual shareholder--%>
 							<div id="individualShareholderId" class="row mt-3">
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderFirstNameId" name="shareholderFirstName"
@@ -1068,7 +1068,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderLastNameId" name="shareholderLastName"
@@ -1082,7 +1082,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderAcademicTitleId"
@@ -1095,7 +1095,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox formInputBox_group ">
 										<div class="form-group">
 											<input id="birthDateId" name="enquiryType"
@@ -1114,7 +1114,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderGenderId" name="shareholderGender"
@@ -1126,7 +1126,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderMaritalStatusId"
@@ -1140,7 +1140,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderPremiumResidentId"
@@ -1154,7 +1154,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderNationalityCurrentId"
@@ -1167,7 +1167,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderNationalityPreviousId"
@@ -1183,7 +1183,7 @@
 							</div>
 
 							<div id="entityBasicInformation2" class="row">
-								<div class="col-sm-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderPercentageId"
@@ -1197,7 +1197,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formCheckBox">
 										<div class="form-group">
 											<div class="form-item">
@@ -1288,7 +1288,7 @@
 
 							<div class="border-top-line">
 							<div id="shareholderAddressId" class="row">
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderCountryId" name="shareholderCountry"
@@ -1300,7 +1300,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox-split">
 										<div class="formInputBox formInputBox_big">
 											<div class="form-group">
@@ -1326,7 +1326,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderCityId" name="shareholderCity"
@@ -1338,7 +1338,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderZipCodeId" name="shareholderZipCode"
@@ -1350,7 +1350,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderTelephoneId" name="shareholderTelephone"
@@ -1362,7 +1362,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderEmailId" name="shareholderEmail"
@@ -1374,7 +1374,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox formInputBox_group">
 										<div class="form-group">
 											<input id="shareholderWebsiteId" name="shareholderWebsite"
@@ -1383,7 +1383,7 @@
 												class="control-label control-label_mandatory" for="">
 												<spring:theme code="license.website" />
 											</label>
-											<div class="formInputBox-append">
+											<div class="formInputBox-append d-none">
 												<span class="formInputBox-text formInputBox-text_tip js-tip tool-tip-info"
 													data-tip-title="Tooltip Information to be shown to the user."
 													data-original-title="" title=""> <icon:tipInfo />
@@ -1407,7 +1407,7 @@
 											</div>
 										</div>
 
-										<div class="row mt-3">
+										<div class="row">
 											<a class="btn btn_link js-tip btn-tooltip" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip" data-tip-class="delegateToolTip" data-trigger="click">
 												<spring:theme code="text.account.profile.license.shareholders.tooltip.heading" />
 											</a>
@@ -1424,14 +1424,14 @@
 									</div>
 
 									<div id="delegateSection">
-										<div class="formRadioBox-wrapper" id="showDelegateQuestion"
+										<div class="formRadioBox-wrapper my-0 py-0" id="showDelegateQuestion"
 											${shareholderType eq "Organization" ? 'style="display: none"' : ''}>
 											<div class="row">
-												<div class="col-md-12">
+												<div class="col-md-8 col-12">
 													<span><spring:theme
 															code="text.account.profile.license.shareholders.isDelegate" /></span>
 												</div>
-												<div class="col-md-12">
+												<div class="col-md-4 col-12">
 													<div class="formRadioBox deligate-info-form">
 														<div class="form-group">
 															<div class="form-item">
@@ -1991,7 +1991,7 @@
 										for="branchWebsiteId"> <spring:theme
 											code="license.website" />
 									</label>
-									<div class="formInputBox-append">
+									<div class="formInputBox-append d-none">
 										<span class="formInputBox-text formInputBox-text_tip js-tip tool-tip-info"
 											data-tip-title="Tooltip Information to be shown to the user."
 											data-original-title="" title=""><icon:tipInfo /> </span>

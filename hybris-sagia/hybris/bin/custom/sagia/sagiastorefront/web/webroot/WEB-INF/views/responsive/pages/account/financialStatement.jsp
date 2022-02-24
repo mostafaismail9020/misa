@@ -251,7 +251,7 @@
 
 
             <div class="expandableContent-main">
-                <div class="js-panelTabs panelTabs panelTabs_withHistory panelTabs_iconsAndLabel panelTabs_separated panelTabs_tip_right financialStatement">
+                <div class="js-panelTabs panelTabs panelTabs_withHistory panelTabs_iconsAndLabel panelTabs_separated panelTabs_tip_right financialStatement financial-statement-wrapper">
                     <div class="panelTabs-head">
                         <!-- <icon:financialStatement-income/> -->
                         <span class="panelTabs-label"><spring:theme code="fiancial.incomeStatement.title"/></span>

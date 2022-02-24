@@ -72,14 +72,13 @@ INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $
 								  ; ZRES						 ; "Buy and Sell Real Estate"																				; "This service is provided for the user who wish to buy or sell real state registed in the entity's name."
 
 #Follow Up Services
-
-								  ; ZFLUP_02					 ; "Reply to the Written Notification" 																		;"<p>This service is provided to reply to the written notification through which the entity was informed about the existence of irregularities and grant it a corrective grace period. The entity, through this service, can respond to the said irregularities through providing the reasons and justifications and prove its removal.</p>"
+								  ; ZFLUP_02					 ; "Reply to the Written Notification" 																		; "This service is provided to reply to the written notification through which the entity was informed about the existence of irregularities and grant it a corrective grace period. The entity can respond to irregularities by providing reasons."
 								  ; ZSVR						 ; "Support Visits"																							; "The ministry of invesment represented by the follow-up and supporting department that provides field visit to provide all aspects of support and facilites."
 								  ; ZFLUP_03					 ; "Extention of the Written Notification Deadline"															; "This service provided to extend the grace period issued by Ministry of Investment in the written notification through which the entity informed about the existence of irregularities and granting a grace period to the entity to take corrective actions."
                                
 
 INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lang = $langen]                                                                        ;
-#								  ; ZSR6  						;									                                                                      ;
+								  ; ZSR6  						;									                                                                      ;
 								  ; ZSR7						;									                                                                      ;
 								  ; ZSR5						;								                                                                          ;
 								  ; ZSPLJAWA03					; <p>1.A letter from the entity that requires transfer of sponsorship of the investor, indicating the profession to be held by the investor authenticated by the Chamber of Commerce.</p>;
@@ -114,7 +113,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 
 								  ;	ZMOCI_21					; "<ol start= '1'>
                                                                    <li>A copy or number of the main commercial registration.</li>
-                                                                   <li>Submit a letter to the partner's decision to open the branch and appoint the branch manager certified by the Chamber of Commerce.</li>
+                                                                   <li>Submit a letter to the partners decision to open the branch and appoint the branch manager certified by the Chamber of Commerce.</li>
                                                                    <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
 								                                   </ol>";
 								
@@ -281,7 +280,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 								  ; ZMOIP_14					; "<ol start= '1'>
 																   <li>A copy or number of the commercial registration or Municipality License. </li>
 																   <li>Submission of the Articles of Association if the amendment is for a company.</li>
-																   <li>Submission of the original copies of employees' passport for comparison or a commitment written on the entity's publications regarding data integrity and a statement of employees or a commitment of data integrity authenticated by the Commerce Chamber.</li>
+																   <li>Submission of the original copies of employees passport for comparison or a commitment written on the entity publications regarding data integrity and a statement of employees or a commitment of data integrity authenticated by the Commerce Chamber.</li>
 																   <li>Submission of a commitment that the transformed entity does not have any visas that have not entered Saudi Arabia and that all employees have Iqama.</li>
 																   <li>Submission of a copy of the delegation authenticated by the Commerce Chamber or the power of attorney. </li>
 																   <li>Delegation approved for the applicant with a proof of delegating person identity, power of attorney or Taqeeb Card of Labor Office. </li>
@@ -639,7 +638,7 @@ INSERT_UPDATE SagiaServiceTab; code[unique = true] ; content[lang = $langen]    
 
 
 UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	                                                           ; tabs(code)	;
-							; ZMOCI_22										; Ministry of commerce service forms;	
+#							; ZMOCI_22										; Ministry of commerce service forms;	
 							; ZMOIP_23										; Transfer KAFALA for GM of Branch of foreigner comp;	
 							; ZMOIP_21										; Wavier of Son or daughter;	
 							; ZMOIP_18										; Cancellation of Iqama for Person who has leaved and has not returned;	

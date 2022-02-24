@@ -175,11 +175,10 @@
            </span>
        </label>
 	
-       <button type="submit" id="submit" class="btn btn_submit_whitess" value="Upload" />
+       <button type="submit" id="submit" class="btn btn_submit_whitess" value="Upload" >Upload Documents</button>
 </div>
-</div>
--->
-</form:form>
+</div> 
+</form:form>-->
 			
 			<%-- 
 			<div class="showdowbox_potential col-12 text_potential mt-5 mb-2">
@@ -277,21 +276,24 @@
 	<div class="row serviceModule serviceModule_list ">
 		<div class="pull-left col-12 showdowbox_potential">
 			<div class="mx-5 potentialOpportunityChatBox">
-				<div class="serviceModule serviceModule_list mx-5 pt-4">
+				<div class="serviceModule serviceModule_list pt-4">
 					<div class="serviceModule-section">
 						<div class="serviceModule-content">
 							<div class="serviceModule-description">
 								<span class="serviceModule-headline">Documents</span> 
 								<div class="serviceModule-detail serviceList-description">
+									<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
 									<form:form action="${encodedContextPath}/potentialOpportunity/${ticketId}/uploadAttachment" modelAttribute="contactTicketForm" method="POST" enctype="multipart/form-data">
 										<div class="form-group mt-2 pt-2">
 											<div class="form-row">
 												<div class="form-inline" style="width: 100%;">
 													<!--<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>-->
 													<input  accept="application/pdf"  type="file" name="pdfAttachment" class="form-control" id="pdfAttachment" style="border: 0px solid;width: 400px;"><br>
-													<input type="button" class="btn" value="Upload Documents" onclick="uploadFile()">
+													<button type="submit" id="submit" class="btn" value="Upload">Upload Documents</button>
+
+													<!--<input type="button" class="btn" value="Upload Documents" onclick="uploadFile()">
 													 
-													<!--<input type="button" class="btn" value="Upload Documents" class="btn btn_submit_whitess">-->
+													<input type="button" class="btn" value="Upload Documents" class="btn btn_submit_whitess">-->
 												</div>
 												<div style="width: 30%;">
 													<progress id="progressBar" value="0" max="100" style="width:300px;display: none;"></progress>

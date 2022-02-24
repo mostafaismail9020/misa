@@ -58,7 +58,7 @@
 		                                       	<c:forEach var="sectorFactsFigures" items="${customerSectorCategory.sectorFactsFigures}">  
 		                                        	<div class="count-item">
 		                                             	<h5><span class="unit headline-golden">${sectorFactsFigures.figures}${sectorFactsFigures.unit}</span></h5>
-		                                             	<p class="description">${sectorFactsFigures.facts}</p>
+		                                             	<p class="description" title="${sectorFactsFigures.facts}">${sectorFactsFigures.facts}</p>
 		                                          	</div>  
 		                                       	</c:forEach>
 		                                    </div>

@@ -171,7 +171,7 @@ body.modal-open {
   display: block;
   overflow-x: scroll;
   overflow-y: auto;
-  max-height: (10 * 39px); //6 Elements displayed in dropdown
+  max-height: (300px); //6 Elements displayed in dropdown
   -webkit-overflow-scrolling: touch;
 }
 
@@ -272,7 +272,7 @@ body.modal-open {
   display: block;
   width: 100% !important;
   line-height: 1.5;
-  background: #fff;
+  background: #00a6be;
   background-clip: padding-box;
   border: 1px solid #d9d9d9;
   padding: 10px;
@@ -364,9 +364,10 @@ body.modal-open {
 }
 
 .select2-dropdown {
-  border-color: #a1a1a1;
-  border-top: 1px solid #a1a1a1 !important;
   margin-top: -1px;
+  border-color: #fff;
+  box-shadow: 0 2px 30px 0 rgba(29, 36, 44, 0.12);
+  border-top: 1px solid #fff !important;
 
   padding: 20px;
   // width: 200%;
@@ -508,7 +509,7 @@ body.modal-open {
 
   &_hasSearch {
     padding: 0;
-    padding: 24px 12px 36px 14px;
+    padding: 24px 12px 5px 14px;
     border-radius: 0 0 0 40px;
     border-color: #fff;
     box-shadow: 0 2px 30px 0 rgba(29, 36, 44, 0.12);
@@ -526,7 +527,7 @@ body.modal-open {
       padding-bottom: 10px;
       font-size: 14px;
       line-height: 1.3571428571428572;
-      margin-right: 18px;
+      margin-right: 0px;
       &:last-child {
         border-bottom: solid 1px @pale-grey;
       }

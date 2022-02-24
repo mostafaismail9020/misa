@@ -754,13 +754,14 @@ SAGIA.profile = {
                         },
                         checkPwd: {
                             required: true,
+                            regex: securityData.backendRegex,
                             equalTo: "#pwd"
                         }
                     },
                     messages: {
                         oldPwd: {
                             required: getI18nText("profile.password.enterOld"),
-                            validateExisting: getI18nText("password.incorrect")
+                            validateExisting: getI18nText("profile.password.incorrect")
                         },
                         pwd: {
                             required: getI18nText("profile.password.enterNew"),
@@ -769,7 +770,8 @@ SAGIA.profile = {
                         },
                         checkPwd: {
                             required: getI18nText("profile.password.confirmNew"),
-                            equalTo: getI18nText("password.equals")
+                            regex: securityData.backendRegexErrorMessage,
+                            equalTo: getI18nText("profile.password.equals")
                         }
                     }
                 });
@@ -833,6 +835,10 @@ SAGIA.profile = {
                 });
                 $('#cancelUpdateUsernameButton').click(function () {
                     $('#changeUsername').trigger("reset");
+                    $("#username-error").remove();
+                    $("#checkUsername-error").remove();
+                    $("#passwordForChangeUsername-error").remove();
+                    $("#changeUsername .form-group").removeClass('has-error');
                 });
                 $("#updateUsername").on("click", function () {
                     updateUsernameForm.validate().form();
@@ -876,6 +882,7 @@ SAGIA.profile = {
                         },
                         chkEmail: {
                             required: true,
+                            regex: /^([A-Za-z0-9._%+-])+@([A-Za-z0-9.-])+\.([A-Za-z]{2,4})$/,
                             equalTo: "#email"
                         },
                         passwordForChangeEmail: {
@@ -888,7 +895,8 @@ SAGIA.profile = {
                             regex: getI18nText("validation.valid.email")
                         },
                         chkEmail: {
-                            required: getI18nText("validation.confirm.new.email")
+                            required: getI18nText("validation.confirm.new.email"),
+                            regex: getI18nText("validation.valid.email")
                         },
                         passwordForChangeEmail: {
                             required: getI18nText("validation.password")
@@ -900,6 +908,7 @@ SAGIA.profile = {
                     $("#chkEmail-error").attr("style", "display: none");
                     $("#email-error").attr("style", "display: none");
                     $("#changeEmail .form-group").removeClass("has-error");
+                    $("#passwordForChangeEmail-error").remove();
                 });
                 $('.cancelPasswordUpdateButton').click(function () {
                     $('#updatePwdForm').trigger("reset");
@@ -1580,3 +1589,10 @@ $(document).on("change", "#file3", function(e) {
         
     }
 });
+
+$("#resetPassword").on('click',function(){
+    $("#oldPwd-error").remove();
+    $("#pwd-error").remove();
+    $("#checkPwd-error").remove();
+    $("#updatePwdForm .form-group").removeClass('has-error');
+})

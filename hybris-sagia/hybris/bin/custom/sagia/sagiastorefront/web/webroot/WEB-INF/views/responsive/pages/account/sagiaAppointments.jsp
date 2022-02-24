@@ -10,7 +10,18 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
-
+<style>
+    .searchInputBox-input {
+        font-size: 12px;
+    }
+    .select2.select2-container { 
+        width: 170px !important;
+    }
+	[dir=rtl] .page-appointments .banner-container, 
+	[dir=rtl] .page-license-bidding .banner-container {
+		top: 30%!important;
+	}
+</style>
 <div class="mainSection mainSection">
     <div class="achievement_header">
         <img class="achievement_header_icon  page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>

@@ -384,7 +384,8 @@
     </div>
     <!--  Attachment  -->
     <div class="contentModule-section" id="dataSectionAttachment" style="display: none">
-        <div class="contentModule-headline contentModule-headline_smallMargin" id="orgAttachmentTitle"><spring:theme code="general.attachments"/></div>
+        <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="general.attachments"/></div>
+        <!--<div class="contentModule-headline contentModule-headline_smallMargin" id="orgAttachmentTitle"><spring:theme code="general.attachments"/></div>-->
         <hr class="hr">
         <div class="row">
             <div class="col-md-6" id="companyRegistrationFileSection"  style="display:none">
@@ -448,6 +449,7 @@
                 </div>
             </div>
         </div>
+        <span class="spl-notes">Note - The Maximum File Size should not exceed 2 MB</span>
     </div>
     <div id="dataSectionDelegate" style="display: none">
     <license:newLicenseApplyShareholders-delegate shareholderType="Organization" organizationData="${sagiaApplyOrganizationShareholderForm}"/>

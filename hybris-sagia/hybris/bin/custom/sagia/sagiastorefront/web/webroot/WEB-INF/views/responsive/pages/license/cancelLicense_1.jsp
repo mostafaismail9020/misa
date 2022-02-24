@@ -152,8 +152,15 @@
             <input type="hidden" id="isInstant" name="isInstant" value="${isInstant}" />
             <div class="contentModule">
             <div class="contentModule-section contentModule-section_paddingSide">
-            	<div class="contentModule-headline">
+            	<!-- <div class="contentModule-headline">
                         <spring:theme code="licenseCancellation.basic.section"/>
+                    </div> -->
+                    
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="licenseCancellation.basic.section"/></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
                     </div>
 				<div class="row">
 					<div class="col-md-6">
@@ -179,14 +186,10 @@
 			</div>
             <c:choose>
             <c:when test ="${isInstant}">
-               		<div class="contentModule-section">
-                    	<!-- <div class="contentModule-headline"> -->
-                    	${licenseCancellationMessage}
-                    	<!-- </div> -->
-                    </div>
+               		<div class="contentModule-section no-data-remove">${licenseCancellationMessage}</div>
                 </c:when>
                	<c:otherwise>
-                <div class="contentModule-section">
+                <div class="contentModule-section no-data-remove">
                     <div class="contentModule-headline">
                         <spring:theme code="licenseCancellation.support.documents"/>
                     </div>
@@ -215,15 +218,16 @@
                 </c:otherwise>
                 </c:choose>
 
-                <div class="contentModule-actions contentModule-actions_spaceBetween">
-                    <button type="button" class="btn btn-secondary btn-back">
-                        <spring:theme code="licenseCancellation.back"/>
-                    </button>
-                    <div class="formCheckBox formCheckBox_belowPanel">
+                <div class="contentModule-actions mainSection-linkActions_flexend px-4 contentModule-actions">
+                    <div class="formCheckBox formCheckBox_belowPanel w-100">
                         <div class="form-group">
                             <formElement:termsAndConditionsCheckbox event="LICENSE_SERVICES" id="termsAndConditions1" path="termsAndConditionsChecked"/>
                         </div>
-                    </div>                    
+                    </div> 
+                    <button type="button" class="btn btn-outline btn-back">
+                        <spring:theme code="licenseCancellation.back"/>
+                    </button>
+                                       
                     <button type="submit" class="btn" <c:if test="${!allowCancellationLetter}">disabled</c:if>>
                         <spring:theme code="licenseCancellation.submit"/>
                     </button>

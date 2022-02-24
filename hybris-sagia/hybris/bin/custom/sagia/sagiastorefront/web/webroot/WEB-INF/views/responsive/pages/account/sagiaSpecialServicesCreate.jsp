@@ -87,7 +87,7 @@
                 <div class="col-xl-3 col-12">
                    <a href="${returnUrl}" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="specialservices.back.to.service.details"/></a>
                 </div>
-                <div class="col-xl-9 col-12 btn-drafts_list amend-service-link">
+                <div class="col-xl-9 col-12 btn-drafts_list amend-service-link d-none">
                     <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="specialServiceHeaderId"
                         data-service-id="${serviceId}">
@@ -450,12 +450,12 @@
 								 <div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="undertakingLetter">
+                                <div class="undertakingLetter contentModule-actions">
                                     <div class="undertakingLetter-text">
                                         <p><spring:theme code="specialservices.upload.required.documents.download"/><a href="javascript:;" class="downloadUndertakingLetterButton"><spring:theme code="specialservices.undertaking.letter"/></a> </p>
                                         <p><spring:theme code="specialservices.upload.required.documents"/></p>
                                     </div>
-                                    <button type="button" id="downloadUndertakingLetterButton" class="btn btn_leftIconLink btn_outline downloadUndertakingLetterButton">
+                                    <button type="button" id="downloadUndertakingLetterButton" class="btn btn_outline downloadUndertakingLetterButton">
                                         <spring:theme code="text.account.followup.download"/> <icon:download/>
                                     </button>
                                 </div>
@@ -464,13 +464,13 @@
                     </div>
                 </div>
             </div>
-            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions ">
                 <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
                         <formElement:termsAndConditionsCheckbox event="SPECIAL_SERVICES" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
                     </div>
                 </div>
-                <button type="button" class="btn btn_leftIconLink btn_outline full-width-responsive"><spring:theme code="general.cancel"/></button>
+                <button type="button" class="btn btn_outline full-width-responsive"><spring:theme code="general.cancel"/></button>
                
                 <button type="submit" class="btn full-width-responsive ${serviceType}"><spring:theme code="general.submit"/></button>
             </div>

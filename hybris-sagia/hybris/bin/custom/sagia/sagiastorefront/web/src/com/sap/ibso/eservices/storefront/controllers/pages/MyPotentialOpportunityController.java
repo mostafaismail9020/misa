@@ -60,6 +60,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import de.hybris.platform.ticket.model.CsTicketModel;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.investsaudi.portal.core.service.ContactTicketBusinessService;
 
 
 @Controller
@@ -88,23 +89,12 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 	@Autowired
     private MediaService mediaService;
 	
+	@Autowired
 	private ModelService modelService;
 	
-	public ModelService getModelService() {
-		return modelService;
-	}
-
-	public void setModelService(ModelService modelService) {
-		this.modelService = modelService;
-	}
-
-	public MediaService getMediaService() {
-		return mediaService;
-	}
-
-	public void setMediaService(MediaService mediaService) {
-		this.mediaService = mediaService;
-	}
+	
+	@Autowired
+	private ContactTicketBusinessService contactTicketBusinessService;
 
 	@Resource
     private CatalogVersionService catalogVersionService;
@@ -208,7 +198,7 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
     		final BindingResult bindingResult, @PathVariable("ticketId") final String ticketId, final HttpServletRequest request, final HttpServletResponse response) throws CMSItemNotFoundException {
 		
     	final CatalogVersionModel catalogVersion = catalogVersionService.getCatalogVersion(CATALOG_ID, VERSION_ONLINE);
-		final MediaModel mediaModel = new MediaModel();
+		final MediaModel mediaModel = modelService.create(MediaModel.class);
           LOG.info("calling uploadAttachment controller");
 
         if(null != contactTicketForm && null != contactTicketForm.getComment()) {
@@ -219,17 +209,17 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
         final byte[] bytes = contactTicketForm.getPdfAttachment().getBytes();
 
         if (null != bytes) {
-        	LOG.info("Entered into bytes != null");
+        	LOG.info("Entered into bytes != null :"+bytes.length);
             final InputStream inputStream = new ByteArrayInputStream(bytes);
             LOG.info("inputStream is: "+inputStream);
-            mediaModel.setCode("ticket_"+ticketId);
+            mediaModel.setCode("ticket_"+ticketId+"_"+System.currentTimeMillis());
             mediaModel.setCatalogVersion(catalogVersion); // use catalogVersionService to get the online version
             mediaModel.setRealFileName("ticket_"+ticketId+".pdf");
             LOG.info("before saving media model");
-            getModelService().saveAll(mediaModel);
+            modelService.save(mediaModel);
             LOG.info("mediaModel "+mediaModel);
             LOG.info("after saving media model");
-            getMediaService().setStreamForMedia(mediaModel, inputStream);
+            mediaService.setStreamForMedia(mediaModel, inputStream);
 
              inputStream.close();
             }	
@@ -242,15 +232,19 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
         ContactTicketModel contactTicketModel = sagiaUserService.getContactTicketForTicketId(ticketId);
         LOG.info("contactTicketModel is " +contactTicketModel);
         CsTicketModel ticket = (CsTicketModel)contactTicketModel;
-		if (!CollectionUtils.isEmpty(ticket.getAttachments()))
-		{
-			ticket.getAttachments().add(mediaModel);
-		}else {
-			final ArrayList<MediaModel> list = new ArrayList<MediaModel>();
+        //in ticketmodel attachments is unmodifiable so , we need to always create new list and add both old and new attachments
+		final ArrayList<MediaModel> list = new ArrayList<MediaModel>();
+	    if (!CollectionUtils.isEmpty(ticket.getAttachments()))
+			{
+			list.addAll(ticket.getAttachments());
+			}
 			list.add(mediaModel);
 			ticket.setAttachments(list);
-		}
-            return null;
+		
+		modelService.save(ticket);
+		contactTicketBusinessService.ticketAttachment2SCPI(contactTicketModel);
+		
+         return  "redirect:" + THIS_CONTROLLER_REDIRECTION_URL + ticketId;
         // set the media model to attachments attribute in contact ticket model
         }
 

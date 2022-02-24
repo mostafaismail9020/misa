@@ -95,36 +95,35 @@
 <div class="container mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
     <div class="m-0 ml-custom-35">
         <div class="row w-100 renewal-services">
-            <div class="col-md-3 col-12 px-0">
+            <div class="col-xl-3 col-md-6 col-12 px-0">
                 <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
             </div>
             <c:if test="${fn:length(sagiaService.tabs) > 0}">
-					<div class="col-xl-3 col-12 ml-1">
-						<button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
-					</div>
-				</c:if>
-        </div>
-        <div class="row w-100 mt-4">
-            <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
-                <div>
-                <c:choose>
-                <c:when test ="${isInstant}">
-                    <a class="btn btn_slim btn-warning btn_outline back_to_service " href="${encodedContextPath}/my-sagia/license/convert/new">
-                        <spring:theme code="convertlicense.instant.convert"/>
-                    </a>
-                </c:when>
-                <c:otherwise>
-                    <button class="btn btn_slim back_to_service" onclick="window.location.href='${encodedContextPath}/my-sagia/license/convert/new'">
-                        <spring:theme code="convertlicense.convert"/>
-                    </button>
-                </c:otherwise>
-                </c:choose>
+                <div class="col-xl-3 col-md-6 col-12 ml-1">
+                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
                 </div>
-                <%-- <div>
-                    <button class="btn btn_slim" onclick="window.location.href='${encodedContextPath}/my-sagia/license/convert/new'">
-                        <spring:theme code="convertlicense.convert"/>
-                    </button>
-                </div> --%>
+            </c:if>
+            <div class="col-xl-3 col-md-6 col-12">
+                <div class="mainSection-linkActions mainSection-linkActions_right">                   
+                    <c:choose>
+                    <c:when test ="${isInstant}">
+                        <a class="btn btn_slim btn-warning btn_outline back_to_service " href="${encodedContextPath}/my-sagia/license/convert/new">
+                            <spring:theme code="convertlicense.instant.convert"/>
+                        </a>
+                    </c:when>
+                    <c:otherwise>
+                        <button class="btn btn_slim back_to_service" onclick="window.location.href='${encodedContextPath}/my-sagia/license/convert/new'">
+                            <spring:theme code="convertlicense.convert"/>
+                        </button>
+                    </c:otherwise>
+                    </c:choose>
+                    
+                    <%-- <div>
+                        <button class="btn btn_slim" onclick="window.location.href='${encodedContextPath}/my-sagia/license/convert/new'">
+                            <spring:theme code="convertlicense.convert"/>
+                        </button>
+                    </div> --%>
+                </div>
             </div>
         </div>
     </div>
@@ -294,7 +293,7 @@
                 </div>
             </c:if>
             <div class="expandableContent-main" id="expandedContentParent">
-                <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
+                <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-3">
                     <div class="contentModule">
                         <div class="contentModule-section" id = "detailedConvertToNationalsContent">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
@@ -375,16 +374,18 @@
                                     <div class="contentModule contentModule-wrap">
                                         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
                                             <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
-                                            <button type="submit" value="SUBMIT" class="btn btn_outline btn_slim" id="resubmitButton" data-toggle="modal"
-                                                <c:choose>
-                                                    <c:when test = "${fn:toUpperCase(latestConvToNationals.srStDesc) == 'REJECTED' && latestConvToNationals.reApply}"></c:when>
-                                                        <c:otherwise>disabled="true" style="display: none;"</c:otherwise>
-                                                    </c:choose>>
-                                                <spring:theme code="text.account.followup.resubmit"/>
-                                            </button>
+                                            
                                             <div class="contentModule-headline-border"></div>
                                         </div>
+                                        <button type="submit" value="SUBMIT" class="btn btn_outline btn_auto" id="resubmitButton" data-toggle="modal"
+                                            <c:choose>
+                                                <c:when test = "${fn:toUpperCase(latestConvToNationals.srStDesc) == 'REJECTED' && latestConvToNationals.reApply}"></c:when>
+                                                <c:otherwise>disabled="true" style="display: none;"</c:otherwise>
+                                            </c:choose>>
+                                            <spring:theme code="text.account.followup.resubmit"/>
+                                        </button>
                                     </div>
+                                    
                                     <!-- <div>
                                         <button type="submit" value="SUBMIT" class="btn btn_outline btn_slim" id="resubmitButton" data-toggle="modal"
                                                 <c:choose>

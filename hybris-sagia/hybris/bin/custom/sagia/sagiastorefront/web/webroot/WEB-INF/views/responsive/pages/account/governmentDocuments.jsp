@@ -106,7 +106,7 @@
         </div>
     </div>
 </div>
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 branchData-mainSection">
     <div class="container mt-3">
         <form:form method="post" modelAttribute="branchData"
             action="${encodedContextPath}/governmentDocuments/branches">
@@ -230,13 +230,13 @@
             </div>
 
 
-            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions action_res_view">
                 <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
                         <formElement:termsAndConditionsCheckbox event="GOVERNMENT_DOCUMENTS" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition" disabled="${disabledTnC}" />
                     </div>
                 </div>
-                <button type="reset" class="btn btn_leftIconLink btn_outline full-width-responsive">Cancel</button>
+                <button type="reset" class="btn btn_outline full-width-responsive">Cancel</button>
                 
                 <ycommerce:testId code="nextButton">
                     <button type="submit" class="btn btn-bg btn_bold btn-normal full-width-responsive"><spring:theme code="govDocs.nextButton" /></button>

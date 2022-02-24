@@ -112,28 +112,26 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween d-flex">
             <div class="row renewal-services w-100">
-                <div class="col-xl-3 col-12">
+                <div class="col-xl-3 col-md-6 col-12">
                     <!-- <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">
                         <span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="general.backtodashboard"/></a> -->
                         <a href="/service-search/SAGIA SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                     </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
-                    <div class="col-xl-3 col-12">
+                    <div class="col-xl-3 col-md-6 col-12">
                         <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
                     </div>
                 </c:if>
-                <div class="col-xl-3 col-12">
-                    <div class="mainSection-linkActions mainSection-linkActions_right">
-                        <div>                                
-                            <a id="specialServiceCreateBtn" data-entity-status="${entityStatus}"
-                                data-cancel-letter="${cancelLetter}"
-                                type="submit"
-                                href="${currentUrl}/create" class="btn btn_slim back_to_service " style="display:none;">
-                                <spring:theme code="text.specialservices.create"/>
-                            </a>
-                            <input type="hidden" id="specialServiceErrorMsg" value="${specialServiceErrorMsg}"/>
-                        </div>
-                    </div>
+                <div class="col-xl-3 col-md-6 col-12">
+                    <div class="mainSection-linkActions mainSection-linkActions_right">                              
+                        <a id="specialServiceCreateBtn" data-entity-status="${entityStatus}"
+                            data-cancel-letter="${cancelLetter}"
+                            type="submit"
+                            href="${currentUrl}/create" class="btn btn_slim back_to_service " style="display:none;">
+                            <spring:theme code="text.specialservices.create"/>
+                        </a>
+                        <input type="hidden" id="specialServiceErrorMsg" value="${specialServiceErrorMsg}"/>
+                    </div>                    
                 </div>
                 </div>
             </div>                        
@@ -151,11 +149,11 @@
     <div class="container">
         <c:if test="${fn:length(specialServices) > 0}">
             <button class="btn_rightIconLink btn_bold btn_greenLink js-expandContent btn_history" data-expand-target="expand01">
-                <div ><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
-                <div class="hidden"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+                <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div class=""><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
         </c:if>
-        <div class="expandableContent" id="expand01">
+        <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(specialServices) > 0}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
@@ -199,7 +197,7 @@
                     <div class="contentModule">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline applicantList headline-text text-golden">
+                                <div class="contentModule-headline applicantList headline-text text-golden special-services-info">
                                     <!-- <icon:info/> -->
                                     <img src="${commonResourcePath}/images/dashboard-media/Setting.png" alt="setting" class="mr-2"/>
                                     <spring:theme
@@ -207,7 +205,7 @@
                                 </div>
 
                                 <c:if test="${fn:length(specialServices) > 0}">
-                                    <div class="statusIndicator statusIndicator_${fn:toLowerCase(specialServiceHeader.status)}" id="currentStatus">
+                                    <div class="statusIndicator pb-0 statusIndicator_${fn:toLowerCase(specialServiceHeader.status)}" id="currentStatus">
                                         <spring:theme code="text.account.followup.status"/> :
                                         <span id="statusText" class="text-golden">${specialServiceHeader.status}</span>
                                     </div>
@@ -282,7 +280,7 @@
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                    <div class="contentModule-headline headline-text text-golden">
+                                    <div class="contentModule-headline headline-text text-golden special-services-info">
                                         <!-- <icon:contactPerson/> -->
                                         <img src="${commonResourcePath}/images/dashboard-media/services/Contact Details.png" alt="Contact Details" class="mr-2"/>
                                         <spring:theme code="text.specialservices.contact.details"/>

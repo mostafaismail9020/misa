@@ -6,7 +6,6 @@ ACC.calendarcommons = {
             enable: element.data('dates-disabled') ? [] : ACC.calendarcommons.getFormDatesObject(element.data('dates-enabled')),
             disableMobile: "true",
             locale: SAGIA.locale,
-            static:true,
             onChangeBegin: function(selectedDates, dateStr, instance) {
                 //changeBegin
                 //function can be present on instance or (like this one is) on instance.config object

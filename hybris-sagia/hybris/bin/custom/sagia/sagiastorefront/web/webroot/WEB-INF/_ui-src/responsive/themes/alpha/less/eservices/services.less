@@ -24,6 +24,10 @@
 #image-pos{
     margin-right: 40px;
     margin-top: -20px;
+    &-arrow{
+        margin-right: 20px;
+        margin-top: -20px;
+    }
 }
 .btn.btn_slim.btn_outline{
     background-color: @color-primary;
@@ -674,7 +678,7 @@
 .formTextArea .control-label,
 .formSelectBox .select2.select2-container.select2Container_selected+.control-label{
     top: -18px;
-    font-weight: 500;
+    font-weight: 400;
 }
 .formInputBox .form-control ~.register-form label.focused,.formTextArea .form-control,.formRadioButton .control-label{
     letter-spacing: 0px;
@@ -751,9 +755,9 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
 .btn_darkLink:focus, .btn_darkLink:hover{
     color: @color-primary !important;
 }
-.select2-results__options{
-    display: table-row;
-}
+// .select2-results__options{
+//     display: table-row;
+// }
 .stepModule{
     .stepModule-item{
         border-radius: 8px 8px 0 0;
@@ -766,6 +770,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     font-size: var(--content-big-font);
 }
 .service-info-anchor{
+    width: 75%;
     >a{
         border-radius: 25px;
         border: 1px solid #00a6be;
@@ -851,13 +856,14 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
             margin-bottom: 10px;
         }
         .mainSection-linkActions_right{
-            justify-content:flex-start;
+            @media screen and (min-width:641px){                
+                justify-content:flex-start;
+            }
         }
     }
     .amend-service-link{
         display: block !important;
         button{
-            width: 300px;
             margin-bottom: 10px;
         }
     }
@@ -932,6 +938,12 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     }
     .dashboard-service-wrapper{
         height: 500px;
+    }
+    .service-info-anchor{
+        width: auto;
+        iframe{
+            width: auto;
+        }
     }
     
 }
@@ -1178,31 +1190,11 @@ body ::-webkit-scrollbar-thumb {
     .select2-dropdown_oneColumn .select2-results__option{
         width: 500px;
     }
+    .btn_auto{
+        width: 25% !important;
+    }
 }
 
-  
-@media (-webkit-device-pixel-ratio: 1.25) {
-    body {
-            zoom: 0.8;
-        }
-	#header,#topbar,.mainSection.mainSection_noPadding.userDetail-block{
-		zoom: 1.25;
-	}
-    .tooltip.fade.show.bs-tooltip-top{
-        transform: translate3d(780px, 865px, 0px) !important;
-    }
-  }
-@media (-webkit-device-pixel-ratio: 1.50) {
-    body {
-      zoom: 0.7;
-    }
-	#header,#topbar,.mainSection.mainSection_noPadding.userDetail-block{
-		zoom: 1.24;
-	}
-    .tooltip.fade.show.bs-tooltip-top{
-        transform: translate3d(780px, 905px, 0px) !important;
-    }
-}
 .notification_b2b_img{
     margin-top: -3px;margin-left: -3px;
 }
@@ -1252,9 +1244,9 @@ body ::-webkit-scrollbar-thumb {
 }
 
 .form-control + .control-label + .formInputBox-append{
-    @media screen and (min-width:1200px) {        
+    // @media screen and (min-width:1200px) {        
         margin-left: -65px;
-    }
+    // }
 }
 .formInputBox_group .formInputBox-text{
     padding: 20px;
@@ -1297,20 +1289,22 @@ body ::-webkit-scrollbar-thumb {
         left: initial;
     }
 }
-.attachment-division-wrap{
-   display: flex;
-   flex-wrap: wrap;
-   .formInputFile{
-       width: 50%;
-       padding: 20px;
-   }
-   .help-block{
-       margin-right: 25px;
-       [dir = "rtl"] &{
-           margin-left: 25px;
-           margin-right: initial;
+@media screen and (min-width:768px) {    
+    .attachment-division-wrap{
+       display: flex;
+       flex-wrap: wrap;
+       .formInputFile{
+           width: 50%;
+           padding: 20px;
        }
-   }
+       .help-block{
+           margin-right: 25px;
+           [dir = "rtl"] &{
+               margin-left: 25px;
+               margin-right: initial;
+           }
+       }
+    }
 }
 .btn_a{
     padding: 10px 20px;
@@ -1321,7 +1315,7 @@ body ::-webkit-scrollbar-thumb {
 }
 
 
-.contentModule-actions_wrap,.contentModule .contentModule-wrap{
+body:not('.page-new-apply-review') .contentModule-actions_wrap,.contentModule .contentModule-wrap{
     .contentModule-headline{
         padding-top: 10px !important;
         padding-bottom: 10px !important;
@@ -1373,40 +1367,15 @@ body ::-webkit-scrollbar-thumb {
         padding-bottom: 10px !important;
     }
 }
-
-.ddl-wrap{
-	text-align: left;
-    top: 0;
-	display: flex;
-}
-
-.flatpickr-wrapper{
-	display: contents;
-}
-.modal-content{
-	overflow-y: scroll;
-}
-#calendar-icon-pos{
-	position: absolute;
-	right: 0;
-	[dir="rtl"] &{
-        right: initial;
-        left: 0;
-    }
-}
-
-
-#failInformationModal,#sessionExpiresModal{
-    .modal-content{
-        position: absolute;
-        top: calc(45% - 50px);
-    }
-}
-
 @media (max-width: 1000px){
     [dir=rtl] ul#pills-tab {
         padding-left: 0;
         padding-right:0;
+    }   
+    .page-government-documents{
+        .branchData-mainSection{
+            overflow-x: hidden;
+        }
     }
 }
 
@@ -1414,13 +1383,138 @@ body ::-webkit-scrollbar-thumb {
     .btn_align-center{
         display: flex;
         justify-content: center;
+        margin-top: 1rem;
     }
-    .contentModule-headline.mob-heading-responsive{
+    #expand01{
+        .contentModule-headline.mob-heading-responsive{
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+    }
+    .page-realestate-create,.page-government-documents,.page-legal-consultation-create,.page-government-documents,.page-sagia-createGovtServices{
+        .action_res_view{
+            flex-direction: row;
+            button{
+                &:nth-of-type(1){
+                    order: 2;
+                    margin-top: 10px;
+                }
+                &:nth-of-type(2){
+                    order: 1;
+                }
+            }
+        }
+    }
+    .action_res_view-renew{
+        flex-direction: row;
+        a.btn{
+            order: 3;
+            margin-top: 10px;
+        }
+    }
+    #failInformationModal, #sessionExpiresModal {
+        .modal-content{
+            margin:auto;
+            top:initial;
+            position: relative;
+        }
+    }
+    .plot-add-on{
+        margin-bottom: 1rem;
+    }
+    [dir=rtl] .expandableContent.expanded .expandableContent-aside{
         padding-left: 0px;
-        padding-right: 0px;
+    }
+    .btn_auto{
+        width: 100% !important;
+    }
+    .page-financial{
+        .tabamount3{
+            display: none;
+        }
+    }
+    .page-financial .panelTabs_withHistory .panelTabs-content .tabhead{
+        padding: 20px;
+        box-shadow: none!important;
+        border-radius: 0!important;
+        border-top: 1px solid #707070;
+        border-bottom: 1px solid #707070;
+        background-color: #ededed;
+    }
+    .attachment-division-wrap{
+        width: 100%;
+        margin: 15px;
+        .formInputFile{
+            padding-top:0px;
+        }
+    }
+    .special-services-info{
+        font-size: 24px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        margin-right: 0px !important;
+        padding-bottom: 60px !important;
+    }
+    .special-services-info + .statusIndicator.process{
+        padding: 0 0px 20px;
+    }
+    .govt-service-btn{
+        justify-content: center;
+        display: flex !important;
+    }
+    .renewal-services .mainSection-linkActions_right{
+        display: flex !important;
     }
 }
 
-div.invest-us-header:empty{
+div.invest-us-header:empty,.no-data-remove:empty{
     display: none;
+}
+
+
+#globalMessageModal{
+    .modal-heroImage svg{
+        width: 50px;
+        height: 50px;
+    }
+}
+[dir ="rtl"] .dlList dd {
+    padding-right: 0px;
+}
+.modal-content{
+    margin: auto;
+}
+
+@media screen and (min-width:641px) and (max-width:1000px) {
+    .expandableContent.expanded .expandableContent-aside{
+        padding-right:0px;
+    }
+    .btn_auto{
+        width: 50% !important;
+    }
+}
+.stepModule-item.active{
+    box-shadow: none;
+}
+
+.financial-statement-wrapper{
+    .panelTabs-navigation ul{
+        max-width: initial;
+    }
+    .panelTabs_separated .panelTabs-navigation .tabs-list{
+        margin: 0px 0px !important;
+    }
+    .panelTabs-body{
+        margin: 2px;
+    }
+}
+
+.select2-dropdown.select2-dropdown_oneColumn,.select2-dropdown_oneColumn .select2-results__options{
+    overflow-x: hidden;
+}
+.select2-dropdown_hasSearch .select2-results__option{
+	border-top: none;
+}
+.calendars-popup,.select2-dropdown_hasSearch,.select2-dropdown_hasSearch.select2-dropdown--above{
+	border-radius: 0;
 }

@@ -73,7 +73,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="d-flex row renewal-services w-100">
                 <div class="col-xl-3">
-                    <a href="${request.contextPath}/real-estate" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack" id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span></span>
+                    <a href="${request.contextPath}/real-estate" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack" id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span></span>
                         <spring:theme code="text.specialservices.backToServiceDetails"/>
                     </a>
                 </div>
@@ -232,15 +232,15 @@
                         <div class="contentModule-section">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
                                 <span class="contentModule-headline" id="realEstateTypeTitle" style="display:inline-block;"></span>
+                                <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
                                 <div class="contentModule-headline-border"></div>
                             </div>
                             <!-- <div class="contentModule-headline headline-text">
                                 <div id="realEstateTypeTitle" style="display:inline-block;"></div>
                             </div> -->
-                            <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
 							<!-- <input type="hidden" name="isMojVerified" id="isMojVerified" /> -->
 							<form:hidden id="isMojVerified" path="mojVerified"/>
-                            <div class="row w-100">
+                            <div class="row w-100 plot-add-on">
                                 <div class="col-md-6">
                                     <div id="plotNo1">
                                         <div class="form-group" style="position: relative;">
@@ -501,10 +501,10 @@
                                 <div class="contentModule-headline-border"></div>
                             </div>
 
-                            <div id="realEstateupload_placeholder" class="js-inputFile w-100">
+                            <div id="realEstateupload_placeholder" class="js-inputFile w-100 row">
                                 <c:if test="${not empty realEstate.documentsToUpload}">
                                     <c:forEach items="${realEstate.documentsToUpload}" var="document" varStatus="count">
-                                        <div class="col-md-12">
+                                        <div class="col-lg-6 col-md-12">
                                             <div class="formInputFile <c:if test="${not empty document.resubmittedFileName}">active</c:if>">
                                                 <div class="form-group <c:if test="${hasErrors && empty document.fileText}">has-error</c:if>">
                                                     <input id="fileId_${count.index}" name="files[${count.index}]" class="form-control js-inputFile" value="" type="file" accept="image/jpeg,application/pdf">
@@ -542,7 +542,7 @@
                 </div>
             </div>
 
-            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions action_res_view">
                 <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
                         <div class="form-group">
@@ -550,7 +550,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn_leftIconLink btn_outline js-cancel-create-realEstate">
+                <button type="button" class="btn btn_outline js-cancel-create-realEstate">
                     <spring:theme code="general.cancel"/>
                 </button>
 

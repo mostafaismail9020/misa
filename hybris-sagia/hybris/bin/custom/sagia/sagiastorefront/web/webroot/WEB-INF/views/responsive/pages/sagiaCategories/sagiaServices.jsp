@@ -106,16 +106,16 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="d-flex row renewal-services w-100">
-                <div class="col-md-3">
+                <div class="col-xl-3 col-md-6 col-12">
                     <a href="/service-search/GOVERNMENTAL SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
-                    <div class="col-xl-3 col-12">
+                    <div class="col-xl-3 col-md-6 col-12">
                         <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
                     </div>
                 </c:if>
-                <div class="col-md-6">
-                    <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link">
+                <div class="col-xl-3 col-md-6 col-12">
+                    <div class=" mainSection-linkActions_right amend-service-link govt-service-btn">
                         <div id="serviceUrl">
                             <c:url value="/services/government/${categoryUrl}/${serviceUrl}/create" var="url">
                                 <c:param name="serviceName" value="${serviceName}"/>
@@ -235,7 +235,7 @@
 	</div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16 ">
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
     <div class="container">
         <c:if test="${fn:length(serviceList) gt 1}">
             <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">

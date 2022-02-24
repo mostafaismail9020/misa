@@ -343,7 +343,7 @@
 				<!-- </div> -->
 			</div>
 
-			<div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+			<div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions action_res_view-renew">
 				<c:url var="back" value="/my-sagia/license/renew"/>
 				<div class="formCheckBox formCheckBox_belowPanel w-100">
 					<div class="form-group">

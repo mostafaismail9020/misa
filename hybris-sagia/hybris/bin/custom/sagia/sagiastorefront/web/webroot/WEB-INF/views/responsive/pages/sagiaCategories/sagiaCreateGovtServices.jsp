@@ -68,7 +68,7 @@
         <div class="row w-100 renewal-services">
             <div class="col-md-3">
                 <a href="${request.contextPath}/services/government/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}" class="btn btn_leftIconLink btn_darkLink back_to_service">
-                    <span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>
+                    <span class="iconElement iconElement_closeBack  " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>
                     <spring:theme code="createGovtServices.backToServiceDetails.text"/>
                 </a>
             </div>
@@ -211,7 +211,7 @@
                 </div>
             </c:if>
 
-            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions action_res_view">
                 <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
                         <formElement:termsAndConditionsCheckbox event="LABOUR" id="termsAndConditions" path="termsAndConditionsChecked"/>

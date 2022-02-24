@@ -1407,7 +1407,7 @@
 											</div>
 										</div>
 
-										<div class="row mt-3">
+										<div class="row">
 											<a class="btn btn_link js-tip btn-tooltip" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip" data-tip-class="delegateToolTip" data-trigger="click">
 												<spring:theme code="text.account.profile.license.shareholders.tooltip.heading" />
 											</a>
@@ -1424,14 +1424,14 @@
 									</div>
 
 									<div id="delegateSection">
-										<div class="formRadioBox-wrapper" id="showDelegateQuestion"
+										<div class="formRadioBox-wrapper my-0 py-0" id="showDelegateQuestion"
 											${shareholderType eq "Organization" ? 'style="display: none"' : ''}>
 											<div class="row">
-												<div class="col-md-12">
+												<div class="col-md-8 col-12">
 													<span><spring:theme
 															code="text.account.profile.license.shareholders.isDelegate" /></span>
 												</div>
-												<div class="col-md-12">
+												<div class="col-md-4 col-12">
 													<div class="formRadioBox deligate-info-form">
 														<div class="form-group">
 															<div class="form-item">

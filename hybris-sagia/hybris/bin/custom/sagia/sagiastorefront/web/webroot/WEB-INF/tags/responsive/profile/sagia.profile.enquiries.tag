@@ -85,7 +85,7 @@
                         </div>
 
                         <formElement:formInputBox idKey="details.Subject" labelKey="profile.enquiry.subject" path="details.Subject" inputCSS="text" labelCSS="control-label_mandatory" mandatory="true"/>
-                        <formElement:formTextArea idKey="details.TextMsg" labelKey="profile.enquiry.message" path="details.TextMsg" labelCSS="control-label_mandatory"  areaCSS="form-control" mandatory="true" spanClass="d-none"/>
+                        <formElement:formTextArea idKey="details.TextMsg" labelKey="profile.enquiry.message" path="details.TextMsg" labelCSS="control-label_mandatory textAreaLabel"  areaCSS="form-control" mandatory="true"/>
                         <div class="row enquiryFiles pt-2 mt-4 pb-4 mb-5">
                             <div class="col-md-6">
                                 <!-- todo: formInputFile tag needs to be added -->
@@ -160,6 +160,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-12"> NOTE: The file size must be under 2 MB </div>
                         </div>
 
                         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">

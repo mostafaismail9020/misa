@@ -44,7 +44,7 @@
     <div class="myAccount-passwordInfo mt-0"></div>
 
     <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection mt-5">
-        <button type="reset" id="resetPassword" class="btn btn_bold btn-outline pt-2 pb-2 w-25 text-uppercase"><spring:theme code="text.button.cancel"/></button>
+        <button id="resetPassword" type="reset" class="btn btn_bold btn-outline pt-2 pb-2 w-25 text-uppercase cancelPasswordUpdateButton"><spring:theme code="text.button.cancel"/></button>
         <button type="button" id="updatePassword" class="btn btn-bg  pt-2 pb-2 btn_bold w-25 text-uppercase"><spring:theme code="updatePwd.submit"/></button>
     </div>
 </form>

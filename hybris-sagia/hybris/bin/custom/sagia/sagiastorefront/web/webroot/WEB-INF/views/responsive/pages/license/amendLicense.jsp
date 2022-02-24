@@ -1055,7 +1055,7 @@
 
 							<%--Individual shareholder--%>
 							<div id="individualShareholderId" class="row mt-3">
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderFirstNameId" name="shareholderFirstName"
@@ -1068,7 +1068,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderLastNameId" name="shareholderLastName"
@@ -1082,7 +1082,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderAcademicTitleId"
@@ -1095,7 +1095,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox formInputBox_group ">
 										<div class="form-group">
 											<input id="birthDateId" name="enquiryType"
@@ -1114,7 +1114,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderGenderId" name="shareholderGender"
@@ -1126,7 +1126,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderMaritalStatusId"
@@ -1140,7 +1140,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderPremiumResidentId"
@@ -1154,7 +1154,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderNationalityCurrentId"
@@ -1167,7 +1167,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderNationalityPreviousId"
@@ -1183,7 +1183,7 @@
 							</div>
 
 							<div id="entityBasicInformation2" class="row">
-								<div class="col-sm-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderPercentageId"
@@ -1197,7 +1197,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formCheckBox">
 										<div class="form-group">
 											<div class="form-item">
@@ -1288,7 +1288,7 @@
 
 							<div class="border-top-line">
 							<div id="shareholderAddressId" class="row">
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
 											<select id="shareholderCountryId" name="shareholderCountry"
@@ -1300,7 +1300,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox-split">
 										<div class="formInputBox formInputBox_big">
 											<div class="form-group">
@@ -1326,7 +1326,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderCityId" name="shareholderCity"
@@ -1338,7 +1338,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderZipCodeId" name="shareholderZipCode"
@@ -1350,7 +1350,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderTelephoneId" name="shareholderTelephone"
@@ -1362,7 +1362,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox">
 										<div class="form-group">
 											<input id="shareholderEmailId" name="shareholderEmail"
@@ -1374,7 +1374,7 @@
 										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 col-lg-6">
 									<div class="formInputBox formInputBox_group">
 										<div class="form-group">
 											<input id="shareholderWebsiteId" name="shareholderWebsite"

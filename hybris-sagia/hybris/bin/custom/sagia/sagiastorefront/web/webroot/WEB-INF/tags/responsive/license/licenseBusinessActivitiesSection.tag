@@ -36,7 +36,7 @@
         <div class="tableModule tableModule_striped">
 
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection justify-content-lg-end">
-            <button type="button" class="btn btn-bg btn_bold w-25 btn-normal" data-toggle="modal" data-target="#businessActivitiesModal"><spring:theme code="licence.apply.addedit.activities"/></button>
+            <button type="button" class="btn btn-bg btn_bold btn-normal" data-toggle="modal" data-target="#businessActivitiesModal"><spring:theme code="licence.apply.addedit.activities"/></button>
         </div>
             <table class="tableModule-table">
                 <thead class="tableModule-head">

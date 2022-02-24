@@ -438,10 +438,11 @@
 		<!--  Attachment  -->
 		<div class="contentModule-section" id="attachmentSection"
 			style="display: none">
-			<div
+			<div class="contentModule-headline contentModule-headline_smallMargin mw0"><spring:theme code="general.attachments" /></div>
+			<!--<div
 				class="contentModule-headline contentModule-headline_smallMargin mw0" id="personAttachmentTitle">
 				<spring:theme code="general.attachments" />
-			</div>
+			</div>-->
 			<hr class="hr">
 			<div class="row">
 				<div class="col-md-6" id="passportFileAttachment">

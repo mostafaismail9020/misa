@@ -770,6 +770,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     font-size: var(--content-big-font);
 }
 .service-info-anchor{
+    width: 75%;
     >a{
         border-radius: 25px;
         border: 1px solid #00a6be;
@@ -855,7 +856,9 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
             margin-bottom: 10px;
         }
         .mainSection-linkActions_right{
-            justify-content:flex-start;
+            @media screen and (min-width:641px){                
+                justify-content:flex-start;
+            }
         }
     }
     .amend-service-link{
@@ -936,6 +939,12 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
     }
     .dashboard-service-wrapper{
         height: 500px;
+    }
+    .service-info-anchor{
+        width: auto;
+        iframe{
+            width: auto;
+        }
     }
     
 }
@@ -1450,6 +1459,13 @@ body ::-webkit-scrollbar-thumb {
     .special-services-info + .statusIndicator.process{
         padding: 0 0px 20px;
     }
+    .govt-service-btn{
+        justify-content: center;
+        display: flex !important;
+    }
+    .renewal-services .mainSection-linkActions_right{
+        display: flex !important;
+    }
 }
 
 div.invest-us-header:empty,.no-data-remove:empty{
@@ -1492,4 +1508,14 @@ div.invest-us-header:empty,.no-data-remove:empty{
     .panelTabs-body{
         margin: 2px;
     }
+}
+
+.select2-dropdown.select2-dropdown_oneColumn{
+    overflow-x: hidden;
+}
+.select2-dropdown_hasSearch .select2-results__option{
+	border-top: none;
+}
+.calendars-popup,.select2-dropdown_hasSearch{
+	border-radius: 0;
 }

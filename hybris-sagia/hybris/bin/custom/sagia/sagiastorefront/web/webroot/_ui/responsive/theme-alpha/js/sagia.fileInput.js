@@ -79,10 +79,7 @@ SAGIA.fileInput = {
 
         });
 
-       
-
         $(document).on("change", "#fileBoxModalPicture", function(e) {
-
               var ext = $('#fileBoxModalPicture').val().split('.').pop().toLowerCase();
 
               var fileSize = e.target.files[0].size;
@@ -101,7 +98,7 @@ SAGIA.fileInput = {
 
                             return;
 
-               }else if(uploadedFileSize > 10){
+               }else if(uploadedFileSize > 2){
 
                               alert("Please select a file less than 10MB. (يرجى تحديد ملف أقل من 10 ميغابايت)");
 

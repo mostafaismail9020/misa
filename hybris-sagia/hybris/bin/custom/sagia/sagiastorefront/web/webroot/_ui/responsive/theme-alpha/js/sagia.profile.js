@@ -11,6 +11,8 @@ let limitChar = (element) => {
         ele.value = ele.value.substring(0, maxChar);
     }
 }
+$(".textAreaLabel").find(".skip").remove();
+$(".textAreaLabel").parent().find(".help-block").addClass(".error-text-alignment");
 SAGIA.profile = {
     init: function init() {
         $(document).on("click", "#infoModalClose", function (e) {
@@ -895,6 +897,15 @@ SAGIA.profile = {
                 });
                 $('#cancelUpdateEmailButton').click(function () {
                     $('#changeEmail').trigger("reset");
+                    $("#chkEmail-error").attr("style", "display: none");
+                    $("#email-error").attr("style", "display: none");
+                    $("#changeEmail .form-group").removeClass("has-error");
+                });
+                $('.cancelPasswordUpdateButton').click(function () {
+                    $('#updatePwdForm').trigger("reset");
+                    $("#pwd-error").attr("style", "display: none");
+                    $("#checkPwd-error").attr("style", "display: none");
+                    $("#updatePwdForm .form-group").removeClass("has-error");
                 });
                 $("#updateEmail").on("click", function () {
                     updateEmailForm.validate().form();
@@ -1404,3 +1415,168 @@ $(document).on("click", ".myAccount-profilImage-change", function () {
       $('#uploadFilePicture').modal('show');
 });
 
+$(document).on("change", "#fileBoxModalProfilePicture", function(e) {
+    var fuData = document.getElementById('fileBoxModalProfilePicture');
+    var FileUploadPath = fuData.value;
+
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+
+    } else {
+        const fileSize = fuData.files[0].size / 1024 / 1024; // in MiB
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $("#updateProfilePicBtn").attr("disabled", true);
+            return;
+            // $(file).val(''); //for clearing with Jquery
+        }
+        var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //The file uploaded is an image
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+            // To Display
+            if (fuData.files && fuData.files[0]) {
+                $("#updateProfilePicBtn").attr("disabled", false);
+            }
+        } 
+        //The file upload is NOT an image
+        else {
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            $("#updateProfilePicBtn").attr("disabled", true);
+            return;
+        }
+        
+    }
+});
+
+$(document).on("change", "#file0", function(e) {
+    var fuData = document.getElementById('file0');
+    var FileUploadPath = fuData.value;
+
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+
+    } else {
+        const fileSize = fuData.files[0].size / 1024 / 1024; // in MiB
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $("#file0").val('');
+            return;
+            // $(file).val(''); //for clearing with Jquery
+        }
+        var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //The file uploaded is an image
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+            // To Display
+            if (fuData.files && fuData.files[0]) {
+            }
+        } 
+        //The file upload is NOT an image
+        else {
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            $("#file0").val('');
+            return;
+        }
+        
+    }
+});
+
+$(document).on("change", "#file1", function(e) {
+    var fuData = document.getElementById('file1');
+    var FileUploadPath = fuData.value;
+
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+
+    } else {
+        const fileSize = fuData.files[0].size / 1024 / 1024; // in MiB
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $("#file1").val('');
+            return;
+            // $(file).val(''); //for clearing with Jquery
+        }
+        var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //The file uploaded is an image
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+            // To Display
+            if (fuData.files && fuData.files[0]) {
+            }
+        } 
+        //The file upload is NOT an image
+        else {
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            $("#file1").val('');
+            return;
+        }
+        
+    }
+});
+
+$(document).on("change", "#file2", function(e) {
+    var fuData = document.getElementById('file2');
+    var FileUploadPath = fuData.value;
+
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+
+    } else {
+        const fileSize = fuData.files[0].size / 1024 / 1024; // in MiB
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $("#file2").val('');
+            return;
+            // $(file).val(''); //for clearing with Jquery
+        }
+        var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //The file uploaded is an image
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+            // To Display
+            if (fuData.files && fuData.files[0]) {
+            }
+        } 
+        //The file upload is NOT an image
+        else {
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            $("#file2").val('');
+            return;
+        }
+        
+    }
+});
+
+$(document).on("change", "#file3", function(e) {
+    var fuData = document.getElementById('file3');
+    var FileUploadPath = fuData.value;
+
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+
+    } else {
+        const fileSize = fuData.files[0].size / 1024 / 1024; // in MiB
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $("#file3").val('');
+            return;
+            // $(file).val(''); //for clearing with Jquery
+        }
+        var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //The file uploaded is an image
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+            // To Display
+            if (fuData.files && fuData.files[0]) {
+            }
+        } 
+        //The file upload is NOT an image
+        else {
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            $("#file3").val('');
+            return;
+        }
+        
+    }
+});

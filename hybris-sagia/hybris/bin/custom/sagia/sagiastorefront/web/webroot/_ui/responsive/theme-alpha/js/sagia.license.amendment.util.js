@@ -7,11 +7,11 @@ function setColorForDraftRow($row, action) {
 }
 
 function setColorForNewRow($row) {
-    $row.css('background-color', '#daecde');
+    $row.css('background-color', '#e4e4e4');
 }
 
 function setColorForModifiedRow($row) {
-    $row.css('background-color', '#f5fdf4');
+    $row.css('background-color', '#ebedee');
 }
 
 function removeBase64prefix(mimeType,content) {

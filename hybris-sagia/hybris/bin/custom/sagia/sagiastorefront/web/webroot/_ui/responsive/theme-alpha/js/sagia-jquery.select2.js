@@ -4290,7 +4290,7 @@
 
                 var css = {
                     left: offset.left,
-                    top: container.bottom
+                    top: container.bottom + 1
                 };
 
                 // Determine what the parent element is to use for calciulating the offset
@@ -4336,7 +4336,8 @@
 
             AttachBody.prototype._resizeDropdown = function () {
                 var css = {
-                    width: this.$container.outerWidth(false) + 'px'
+                    width: this.$container.outerWidth(false)-35 + 'px',
+                    marginLeft:"20px"
                 };
 
                 if (this.options.get('dropdownAutoWidth')) {

@@ -1991,7 +1991,7 @@
 										for="branchWebsiteId"> <spring:theme
 											code="license.website" />
 									</label>
-									<div class="formInputBox-append">
+									<div class="formInputBox-append d-none">
 										<span class="formInputBox-text formInputBox-text_tip js-tip tool-tip-info"
 											data-tip-title="Tooltip Information to be shown to the user."
 											data-original-title="" title=""><icon:tipInfo /> </span>

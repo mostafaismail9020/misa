@@ -249,6 +249,10 @@ var saveBranch = function () {
     }
 
     $("#branchModalId").modal('hide');
+    $("#branchModalId").modal('toggle');
+    var elmnt = document.getElementById("branchesTableId_wrapper");
+    elmnt.scrollIntoView();
+
     clearBranchForm();
 };
 

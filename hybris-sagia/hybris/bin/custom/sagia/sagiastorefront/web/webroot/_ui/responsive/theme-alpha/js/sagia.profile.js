@@ -752,6 +752,7 @@ SAGIA.profile = {
                         },
                         checkPwd: {
                             required: true,
+                            regex: securityData.backendRegex,
                             equalTo: "#pwd"
                         }
                     },
@@ -767,6 +768,7 @@ SAGIA.profile = {
                         },
                         checkPwd: {
                             required: getI18nText("profile.password.confirmNew"),
+                            regex: securityData.backendRegexErrorMessage,
                             equalTo: getI18nText("profile.password.equals")
                         }
                     }
@@ -878,6 +880,7 @@ SAGIA.profile = {
                         },
                         chkEmail: {
                             required: true,
+                            regex: /^([A-Za-z0-9._%+-])+@([A-Za-z0-9.-])+\.([A-Za-z]{2,4})$/,
                             equalTo: "#email"
                         },
                         passwordForChangeEmail: {
@@ -890,7 +893,8 @@ SAGIA.profile = {
                             regex: getI18nText("validation.valid.email")
                         },
                         chkEmail: {
-                            required: getI18nText("validation.confirm.new.email")
+                            required: getI18nText("validation.confirm.new.email"),
+                            regex: getI18nText("validation.valid.email")
                         },
                         passwordForChangeEmail: {
                             required: getI18nText("validation.password")

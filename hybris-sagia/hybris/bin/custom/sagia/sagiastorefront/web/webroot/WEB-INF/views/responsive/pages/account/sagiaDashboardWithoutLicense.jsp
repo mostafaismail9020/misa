@@ -128,7 +128,7 @@
                         </c:when>
                         <c:otherwise>
                         	<div class="globalMessage-action d-flex">
-                        		<button data-target="#license-application-simulator" data-toggle="modal" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 btn-simulator">
+                        		<button data-target="#license-application-simulator" data-toggle="modal" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 mr-sm-3 btn-simulator">
                         			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
                         			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/>
                         		</button> 

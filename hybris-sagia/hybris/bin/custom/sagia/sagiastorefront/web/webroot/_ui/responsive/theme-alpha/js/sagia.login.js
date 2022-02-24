@@ -234,52 +234,6 @@ $(document).ready(function(){
     }
 })
 
-
-// $(document).on('focus blur change click', '.formSelectBox', function (e) {
-//     var $currEl = $(this).find('.register-user-details');
-//     $currEl.parent().addClass('focus-on-change');
-//     if ($currEl.is('select')) {
-//         if($($currEl)[0].value !== undefined && $($currEl)[0].value.trim() !== ""){
-//             $currEl.parents('.focus-on-change').children('label').addClass('focused');
-//        }
-//        else if (e.type === "focusin") {
-//             $currEl.parents('.focus-on-change').children('label').addClass('focused');
-//         }
-//         else{ 
-// 			if ($(".select2-results__options").is(':visible')) {
-// 				$currEl.parents('.focus-on-change').children('label').addClass('focused');
-// 			}
-// 			else {
-// 				$currEl.parents('.focus-on-change').children('label').removeClass('focused');
-// 			}
-//         }
-// 	}
-// })
-
-
-// $(document).on('focus blur change keyup', '.formInputBox .register-user-details', function (e) {
-// 	var $currEl = $(this);
-//     $currEl.parent().addClass('focus-on-change');
-// 	if (e.type === "keyup") {
-// 		$(this).removeClass('required');
-// 	}    
-// 	if ($($currEl)[0].value !== undefined && $($currEl)[0].value.trim() !== "") {
-// 		$currEl.parents('.focus-on-change').children('label').addClass('focused');
-// 	}
-// 	else if (e.type === "focusin") {
-// 		$currEl.parents('.focus-on-change').children('label').addClass('focused');
-// 	}
-// 	else {
-// 		$currEl.parents('.focus-on-change').children('label').toggleClass('focused');
-// 	}
-
-
-//     if($currEl.val() !== ""){
-//         $(this).removeClass('hasError');
-//     }
-    
-// }).trigger('blur');
-
 $(".countriesselect").on('change',function(){
 	$(".ddl-countrycode-label").addClass('focused')
 })
@@ -502,3 +456,21 @@ $("#backtoLogin").on('click',function(){
 })
 
 $("#sagia-cms-help-quick-login-helper").load(ACC.config.encodedContextPath + '/cms/sagia-cms-help-quick-registration main');
+
+
+$(document).ready(function() {
+	$("#sagiaLoginForm input").keyup(function (event) {
+		if (event.keyCode == 13) {
+		  event.preventDefault();
+		  validateLoginForm();
+	  }
+	});
+
+	$("#sagiaLoginForm").keydown(function(event){
+		if(event.keyCode == 13) {
+		  event.preventDefault();
+		  return false;
+		}
+	  });
+
+});

@@ -103,6 +103,6 @@
 		<property name="resource" value="classpath:/investsaudiportalscpi/processes/scpiOutTicketAttachmentProcess.xml"/>
 	</bean>
 
-	<bean id="sendTicketAttachmentToScpiAction" class="com.investsaudiportal.scpi.outbound.actions.SendServiceRequestToScpiAction" parent="abstractAction"/>
+	<bean id="sendTicketAttachmentToScpiAction" class="com.investsaudiportal.scpi.outbound.actions.SendTicketAttachmentToScpiAction" parent="abstractAction"/>
 
 </beans>

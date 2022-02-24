@@ -831,6 +831,10 @@ SAGIA.profile = {
                 });
                 $('#cancelUpdateUsernameButton').click(function () {
                     $('#changeUsername').trigger("reset");
+                    $("#username-error").remove();
+                    $("#checkUsername-error").remove();
+                    $("#passwordForChangeUsername-error").remove();
+                    $("#changeUsername .form-group").removeClass('has-error');
                 });
                 $("#updateUsername").on("click", function () {
                     updateUsernameForm.validate().form();
@@ -895,6 +899,10 @@ SAGIA.profile = {
                 });
                 $('#cancelUpdateEmailButton').click(function () {
                     $('#changeEmail').trigger("reset");
+                    $("#email-error").remove();
+                    $("#chkEmail-error").remove();
+                    $("#passwordForChangeEmail-error").remove();
+                    $("#changeEmail .form-group").removeClass('has-error');
                 });
                 $("#updateEmail").on("click", function () {
                     updateEmailForm.validate().form();

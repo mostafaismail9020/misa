@@ -85,7 +85,7 @@
                         </div>
 
                         <formElement:formInputBox idKey="details.Subject" labelKey="profile.enquiry.subject" path="details.Subject" inputCSS="text" labelCSS="control-label_mandatory" mandatory="true"/>
-                        <formElement:formTextArea idKey="details.TextMsg" labelKey="profile.enquiry.message" path="details.TextMsg" labelCSS="control-label_mandatory"  areaCSS="form-control" mandatory="true"/>
+                        <formElement:formTextArea idKey="details.TextMsg" labelKey="profile.enquiry.message" path="details.TextMsg" labelCSS="control-label_mandatory"  areaCSS="form-control" mandatory="true" spanClass="d-none"/>
                         <div class="row enquiryFiles pt-2 mt-4 pb-4 mb-5">
                             <div class="col-md-6">
                                 <!-- todo: formInputFile tag needs to be added -->
@@ -95,12 +95,12 @@
                                         <input id="text05" name="text05" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
                                         <label class="control-label"><spring:theme code="general.labelforfile"/></label>
                                         <div class="form-icon form-icon_browse"><svg xmlns="http://www.w3.org/2000/svg" class="mt-4" width="29" height="29" viewBox="0 0 29 29">
-  <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
-    <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-    <path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-    <path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-  </g>
-</svg></div>
+                                            <g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
+                                                <path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                <path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                <path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                            </g>
+                                            </svg></div>
 
                                         <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
                                     </div>

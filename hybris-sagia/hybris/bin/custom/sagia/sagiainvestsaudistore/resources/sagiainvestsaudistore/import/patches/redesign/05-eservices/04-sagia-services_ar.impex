@@ -627,7 +627,7 @@ INSERT_UPDATE SagiaServiceTab; code[unique = true] ; content[lang = $langar]    
 
 
 UPDATE SagiaService         ; code[unique = true]							; name[lang = $langar]	                                                           ; tabs(code)	;
-							; ZMOCI_22										;نماذج وزارة التجارة;	
+#							; ZMOCI_22										;نماذج وزارة التجارة;	
 							; ZMOIP_23										; نقل كفالة المدير العام لفرع شركة اجنبية;	
 							; ZMOIP_21										; فصل الإبن والإبنة;	
 							; ZMOIP_18										; الغاء الاقامة لمن غادر ولم يعد;	

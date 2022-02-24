@@ -12,7 +12,7 @@
            <span class="clr_gld">${category.name}</span>&nbsp;<spring:theme code="dashboard.myopportunity.section"/>
        </c:if>
        <c:if test="${language eq 'ar'}">
-           <span class="clr_gld"> <spring:theme code="dashboard.myopportunity.section"/>&nbsp;${category.name}</span>
+           <spring:theme code="dashboard.myopportunity.section"/><span class="clr_gld"> &nbsp;${category.name}</span>
        </c:if>
    </h1>
 </div>

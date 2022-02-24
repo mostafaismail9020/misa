@@ -504,7 +504,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	            sagiaZqeemahFacade.uploadEntrepreneurFiles(entrepreneurFiles);
 	        }
         }
-        
+ /*
         if(map.get("isMoreThan2Branch") != null)
         {
             Boolean isMoreThan2Branch = (Boolean)map.get("isMoreThan2Branch");
@@ -554,8 +554,17 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	            sagiaZqeemahFacade.uploadEntrepreneurFiles(entrepreneurFiles);
 	        }
         }
-        
-        
+        */
+
+ //New RHQ Requirement Start
+        if(licenseTypeCode.equals("11"))
+        {
+            Collection<ShareholderAttachment> entrepreneurFiles = loadRHQCRFiles(map);
+            sagiaZqeemahFacade.uploadEntrepreneurFiles(entrepreneurFiles);
+        }
+//New RHQ Requirement End
+
+
         if(map.get("isPreApprovalNumber") != null)
         {
             Boolean isPreApprovalNumber = (Boolean)map.get("isPreApprovalNumber");
@@ -648,10 +657,59 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
     }
     
     private Collection<ShareholderAttachment> loadRHQCRFiles(Map<String, Object> map) {
-        Collection<ShareholderAttachment> branchCRFiles = new ArrayList<>();
+        Collection<ShareholderAttachment> rhqAttachmentFiles = new ArrayList<>();
         Map attachmentsData = (Map) map.get("attachments");
-        ShareholderAttachment mainBranchCR = new ShareholderAttachment();
 
+        ShareholderAttachment entityFinancialStatementFile = new ShareholderAttachment();
+        if(attachmentsData.get("entityFinancialStatementFileName") != null && attachmentsData.get("entityFinancialStatementFile") != null){
+            String fileName = attachmentsData.get("entityFinancialStatementFileName").toString();
+            if(fileName.contains("\\")){
+                fileName = StringUtils.substringAfterLast(fileName, "\\");
+            }
+            entityFinancialStatementFile.setFileName(fileName);
+            entityFinancialStatementFile.setFileContent(attachmentsData.get("entityFinancialStatementFile").toString());
+            entityFinancialStatementFile.setFileType("ENRHQFS");
+            rhqAttachmentFiles.add(entityFinancialStatementFile);
+        }
+
+        ShareholderAttachment commercialRegMainEntryFile = new ShareholderAttachment();
+        if(attachmentsData.get("commercialRegMainEntryFileName") != null && attachmentsData.get("commercialRegMainEntryFile") != null){
+            String fileName = attachmentsData.get("commercialRegMainEntryFileName").toString();
+            if(fileName.contains("\\")){
+                fileName = StringUtils.substringAfterLast(fileName, "\\");
+            }
+            commercialRegMainEntryFile.setFileName(fileName);
+            commercialRegMainEntryFile.setFileContent(attachmentsData.get("commercialRegMainEntryFile").toString());
+            commercialRegMainEntryFile.setFileType("ENCRME");
+            rhqAttachmentFiles.add(commercialRegMainEntryFile);
+        }
+
+        ShareholderAttachment commercialRegBranch1File = new ShareholderAttachment();
+        if(attachmentsData.get("commercialRegBranch1FileName") != null && attachmentsData.get("commercialRegBranch1File") != null){
+            String fileName = attachmentsData.get("commercialRegBranch1FileName").toString();
+            if(fileName.contains("\\")){
+                fileName = StringUtils.substringAfterLast(fileName, "\\");
+            }
+            commercialRegBranch1File.setFileName(fileName);
+            commercialRegBranch1File.setFileContent(attachmentsData.get("commercialRegBranch1File").toString());
+            commercialRegBranch1File.setFileType("ENCRBR1");
+            rhqAttachmentFiles.add(commercialRegBranch1File);
+        }
+
+        ShareholderAttachment commercialRegBranch2File = new ShareholderAttachment();
+        if(attachmentsData.get("commercialRegBranch2FileName") != null && attachmentsData.get("commercialRegBranch2File") != null){
+            String fileName = attachmentsData.get("commercialRegBranch2FileName").toString();
+            if(fileName.contains("\\")){
+                fileName = StringUtils.substringAfterLast(fileName, "\\");
+            }
+            commercialRegBranch2File.setFileName(fileName);
+            commercialRegBranch2File.setFileContent(attachmentsData.get("commercialRegBranch2File").toString());
+            commercialRegBranch2File.setFileType("ENCRBR2");
+            rhqAttachmentFiles.add(commercialRegBranch2File);
+        }
+
+
+        /*ShareholderAttachment mainBranchCR = new ShareholderAttachment();
         if(attachmentsData.get("mainBranchCRFileName") != null && attachmentsData.get("mainBranchCRFile") != null){
             String fileName = attachmentsData.get("mainBranchCRFileName").toString();
             if(fileName.contains("\\")){
@@ -766,9 +824,9 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             branchCR4.setFileContent(attachmentsData.get("branchCR4File").toString());
             branchCR4.setFileType("ENBCR4");
             branchCRFiles.add(branchCR4);
-        }       
+        }      */
 
-        return branchCRFiles;
+        return rhqAttachmentFiles;
     }
     
     private Collection<ShareholderAttachment> loadPreApprovalNumberFiles(Map<String, Object> map) {
@@ -2089,14 +2147,43 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         model.addAttribute("temporaryLicenseConstant", temporaryLicenseConstant);
         model.addAttribute("regularQeemahChannel", regularQeemahChannel);
         model.addAttribute("immediateQeemahChannel", immediateQeemahChannel);
-        model.addAttribute("entitiesManagedByRhq", new Gson().toJson(sagiaLicenseApplyFacade.prepareEntitiesManagedByRhqHashMap(sagiaLicenseApplyFacade.prepareEntitiesManagedByRhq())));
-        model.addAttribute("brandPresenceInMENARegion", new Gson().toJson(sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegionHashMap(sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegion())));
-        model.addAttribute("estimatedOperatingCostForRhq", new Gson().toJson(sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhqHashMap(sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhq())));
-        model.addAttribute("selectedListOfCorporateActivities", sagiaLicenseApplyFacade.getSelectedListOfCorporateActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfCorporateActivities()));
-        model.addAttribute("selectedListOfStrategicActivities", sagiaLicenseApplyFacade.getSelectedListOfStrategicActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfStrategicActivities()));
-        model.addAttribute("selectedListOfManagementActivities", sagiaLicenseApplyFacade.getSelectedListOfManagementActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfManagementActivities()));
-        model.addAttribute("selectedListOfRegions", sagiaLicenseApplyFacade.getSelectedListOfRegions(sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqRegions()));
-        model.addAttribute("selectedListOfCountries", sagiaLicenseApplyFacade.getSelectedListOfCountries(sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqCountries()));
+
+        if (null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfEntitiesManagedByRhq())
+        {
+            List<String> entitiesManagedByRhq = sagiaLicenseApplyFacade.prepareEntitiesManagedByRhqHashMap( sagiaLicenseApplyFacade.getEntityInformationData().getListOfEntitiesManagedByRhq());
+            model.addAttribute("entitiesManagedByRhq", new Gson().toJson(entitiesManagedByRhq));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfBrandPresenceInMENARegion())
+        {
+            List<String> brandPresenceInMENARegion = sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegionHashMap( sagiaLicenseApplyFacade.getEntityInformationData().getListOfBrandPresenceInMENARegion());
+            model.addAttribute("brandPresenceInMENARegion", new Gson().toJson(brandPresenceInMENARegion));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfEstimatedOperatingCostForRhq())
+        {
+            List<String> estimatedOperatingCostForRhq = sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhqHashMap( sagiaLicenseApplyFacade.getEntityInformationData().getListOfEstimatedOperatingCostForRhq());
+            model.addAttribute("estimatedOperatingCostForRhq", new Gson().toJson(estimatedOperatingCostForRhq));
+        }
+
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfCorporateActivities())
+        {
+            model.addAttribute("selectedListOfCorporateActivities", sagiaLicenseApplyFacade.getSelectedListOfCorporateActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfCorporateActivities()));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfStrategicActivities())
+        {
+            model.addAttribute("selectedListOfStrategicActivities", sagiaLicenseApplyFacade.getSelectedListOfStrategicActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfStrategicActivities()));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfManagementActivities())
+        {
+            model.addAttribute("selectedListOfManagementActivities", sagiaLicenseApplyFacade.getSelectedListOfManagementActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfManagementActivities()));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqRegions())
+        {
+            model.addAttribute("selectedListOfRegions", sagiaLicenseApplyFacade.getSelectedListOfRegions(sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqRegions()));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqCountries())
+        {
+            model.addAttribute("selectedListOfCountries", sagiaLicenseApplyFacade.getSelectedListOfCountries(sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqCountries()));
+        }
 
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_LICENSE_REVIEW_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_LICENSE_REVIEW_CMS_PAGE));

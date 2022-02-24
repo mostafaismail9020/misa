@@ -2,6 +2,7 @@ package com.sap.ibso.eservices.facades.populators.odata;
 
 import javax.annotation.Resource;
 
+import com.sap.ibso.eservices.core.sagia.dao.LicenseApplyDAO;
 import org.apache.commons.lang3.StringUtils;
 
 import com.sap.ibso.eservices.core.model.EntityInformationModel;
@@ -23,6 +24,9 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 
 	@Resource
 	private SagiaRegionDAO sagiaRegionDAO;
+
+	@Resource
+	private LicenseApplyDAO licenseApplyDAO;
 	
 	@Override
 	public void populate(EntityInformationModel source, EntityInformationData target) throws ConversionException {
@@ -36,12 +40,47 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 		    	target.setAdvlicno(source.getAdvanceLicenseNr());
 		    }
 		    target.setLicenseType(source.getLicenseType().getCode());
-		    target.setIsEntrepreneur(sagiaFormatProvider.formatBooleanForODATA(source.isIsEntrepreneur())); 
-		    //target.setIsMoreThan2Branch(sagiaFormatProvider.formatBooleanForODATA(source.isIsMoreThan2Branch()));
+		    /*target.setIsEntrepreneur(sagiaFormatProvider.formatBooleanForODATA(source.isIsEntrepreneur()));
+		    target.setIsMoreThan2Branch(sagiaFormatProvider.formatBooleanForODATA(source.isIsMoreThan2Branch()));
 		    target.setIsMoreThan6Branch(sagiaFormatProvider.formatBooleanForODATA(source.isIsMoreThan6Branch()));
 		    target.setIsEntityAssetMoreThanThreshold(sagiaFormatProvider.formatBooleanForODATA(source.isIsEntityAssetMoreThanThreshold()));
 		    target.setIsEntityRevenueMoreThanThreshold(sagiaFormatProvider.formatBooleanForODATA(source.isIsEntityRevenueMoreThanThreshold()));
-		    target.setIsEntityListedInStockMarket(sagiaFormatProvider.formatBooleanForODATA(source.isIsEntityListedInStockMarket()));
+		    target.setIsEntityListedInStockMarket(sagiaFormatProvider.formatBooleanForODATA(source.isIsEntityListedInStockMarket()));*/
+
+
+// New RHQ Requirement Starts
+		if(!source.getListOfCorporateActivties().isEmpty()) {
+			final StringBuilder listOfCorporateActivities = new StringBuilder();
+			for (final String corporateActivities : source.getListOfCorporateActivties()) {
+				listOfCorporateActivities.append(licenseApplyDAO.getActivityDetailsCodeForName(corporateActivities).getId());
+				listOfCorporateActivities.append(",");
+			}
+			target.setListOfCorporateActivities(listOfCorporateActivities.deleteCharAt(listOfCorporateActivities.length() - 1).toString());
+		}
+		if(!source.getListOfStrategicActivties().isEmpty()) {
+			final StringBuilder listOfStrategicActivities = new StringBuilder();
+			for (final String strategicActivities : source.getListOfStrategicActivties()) {
+				listOfStrategicActivities.append(licenseApplyDAO.getActivityDetailsCodeForName(strategicActivities).getId());
+				listOfStrategicActivities.append(",");
+			}
+			target.setListOfStrategicActivities(listOfStrategicActivities.deleteCharAt(listOfStrategicActivities.length() - 1).toString());
+		}
+		if(!source.getListOfManagementActivties().isEmpty()) {
+			final StringBuilder listOfManagementActivities = new StringBuilder();
+			for (final String managementActivities : source.getListOfManagementActivties()) {
+				listOfManagementActivities.append(licenseApplyDAO.getActivityDetailsCodeForName(managementActivities).getId());
+				listOfManagementActivities.append(",");
+			}
+			target.setListOfManagementActivities(listOfManagementActivities.deleteCharAt(listOfManagementActivities.length() - 1).toString());
+		}
+		if(!source.getRhqCenterAdmin().isEmpty()) {
+			final StringBuilder listOfAdminCenter = new StringBuilder();
+			for (final String centerOfAdminList : source.getRhqCenterAdmin()) {
+				listOfAdminCenter.append(centerOfAdminList);
+				listOfAdminCenter.append(",");
+			}
+			target.setRhqCenterAdmin(listOfAdminCenter.deleteCharAt(listOfAdminCenter.length() - 1).toString());
+		}
 		if(!source.getListOfRhqRegions().isEmpty()) {
 			final StringBuilder listOfRhqRegions = new StringBuilder();
 			for (final String region : source.getListOfRhqRegions()) {
@@ -57,7 +96,9 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 				listOfRhqCountries.append(",");
 			}
 			target.setListOfRhqCountries(listOfRhqCountries.deleteCharAt(listOfRhqCountries.length() - 1).toString());
+			target.setRhqSubsidiaryPresence(source.getRhqSubsidiaryPresence());
 		}
+
 		    target.setLicenseDuration(source.getLicenseDuration());
 		    target.setEntityName(source.getEntityName());
 		    target.setEntityNameArabic(source.getEntityNameArabic());

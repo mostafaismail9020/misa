@@ -108,6 +108,7 @@ public class SagiaCreateShareholders extends AbstractAction<SagiaPublishLicenseP
 		MediaModel noObjectionCertificateFile = entityInformation.getNoObjectionCertificateFile();
 		sagiaODataFacade.uploadAttachmentOData(noObjectionCertificateFile, "E",refId,guid,"ENNC",objectid,null);
 		
+/*
 		MediaModel mainBranchCRFile = entityInformation.getMainBranchCR();
 		sagiaODataFacade.uploadAttachmentOData(mainBranchCRFile, "E",refId,guid,"ENMBCR",objectid,null);
 		MediaModel otherBranchCR1File = entityInformation.getOtherBranchCR1();
@@ -132,6 +133,17 @@ public class SagiaCreateShareholders extends AbstractAction<SagiaPublishLicenseP
 		sagiaODataFacade.uploadAttachmentOData(branchCR3File, "E",refId,guid,"ENBCR3",objectid,null);
 		MediaModel branchCR4File = entityInformation.getRhqCR4();
 		sagiaODataFacade.uploadAttachmentOData(branchCR4File, "E",refId,guid,"ENBCR4",objectid,null);
+*/
+
+		//NEW RHQ Requirements
+		MediaModel entityFinancialStatementFile = entityInformation.getEntityFinancialStatementFile();
+		sagiaODataFacade.uploadAttachmentOData(entityFinancialStatementFile, "E",refId,guid,"ENRHQFS",objectid,null);
+		MediaModel commercialRegMainEntryFile = entityInformation.getCommercialRegMainEntryFile();
+		sagiaODataFacade.uploadAttachmentOData(commercialRegMainEntryFile, "E",refId,guid,"ENCRME",objectid,null);
+		MediaModel commercialRegBranch1File = entityInformation.getCommercialRegBranch1File();
+		sagiaODataFacade.uploadAttachmentOData(commercialRegBranch1File, "E",refId,guid,"ENCRBR1",objectid,null);
+		MediaModel commercialRegBranch2File = entityInformation.getCommercialRegBranch2File();
+		sagiaODataFacade.uploadAttachmentOData(commercialRegBranch2File, "E",refId,guid,"ENCRBR2",objectid,null);
 	}
 
 	private void uploadAttachments(ShareHolderModel shareHolderModel) {

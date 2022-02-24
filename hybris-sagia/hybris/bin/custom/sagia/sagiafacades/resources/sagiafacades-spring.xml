@@ -1643,8 +1643,33 @@
 			</list>
 		</property>
 	</bean>
-	
-	
+																															<!--Table -->
+	<alias name="entitiesManagedByRhqODataPopulatorConverter" alias="entitiesManagedByRhqODataPopulatorConverter"/>
+	<bean id="entitiesManagedByRhqODataPopulatorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.odata.EntitiesManagedByRhq"/>
+		<property name="populators">
+			<list>
+				<ref bean="entitiesManagedByRhqODataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<alias name="brandPresenceInMENARegionODataPopulatorConverter" alias="brandPresenceInMENARegionODataPopulatorConverter"/>
+	<bean id="brandPresenceInMENARegionODataPopulatorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.odata.BrandPresenceInMENARegion"/>
+		<property name="populators">
+			<list>
+				<ref bean="brandPresenceInMENARegionODataPopulator"/>
+			</list>
+		</property>
+	</bean>	<alias name="estimatedOperatingCostForRhqODataPopulatorConverter" alias="estimatedOperatingCostForRhqODataPopulatorConverter"/>
+	<bean id="estimatedOperatingCostForRhqODataPopulatorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.sagiaservices.data.odata.EstimatedOperatingCostForRhq"/>
+		<property name="populators">
+			<list>
+				<ref bean="estimatedOperatingCostForRhqODataPopulator"/>
+			</list>
+		</property>
+	</bean>
 	
 	<alias name="defaultContactPersonODataPopulator" alias="contactPersonODataPopulator"/>
 	<bean id="defaultContactPersonODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.ContactPersonODataPopulator"/>
@@ -1658,9 +1683,12 @@
 	<bean id="isicInfoODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.IsicInfoODataPopulator"/>
 	
 	<bean id="attachmentODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.AttachmentODataPopulator"/>
-	 
-	 
-	 
+	<bean id="entitiesManagedByRhqODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.EntityManagedByRhqODataPopulator"/>
+	<bean id="brandPresenceInMENARegionODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.BrandPresenceODataPopulator"/>
+	<bean id="estimatedOperatingCostForRhqODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.EstimatedOperatingCostODataPopulator"/>
+
+
+
 	<alias name="defaultLicenseContactPersonPopulator" alias="licenseContactPersonPopulator"/>
 	<bean id="defaultLicenseContactPersonPopulator" class="com.sap.ibso.eservices.facades.populators.LicenseContactPersonPopulator"/>
 	
@@ -1685,10 +1713,11 @@
 	 
     <bean id="sagiaSaveEntityInfo" class="com.sap.ibso.eservices.facade.actions.SagiaSaveEntityInfo" parent="abstractAction">
     </bean>
-    
-   
-    
-    <bean id="sagiaCreateShareholders" class="com.sap.ibso.eservices.facade.actions.SagiaCreateShareholders" parent="abstractAction">
+
+	<bean id="sagiaSendRhqTables" class="com.sap.ibso.eservices.facade.actions.SagiaSendRhqTables" parent="abstractAction">
+	</bean>
+
+	<bean id="sagiaCreateShareholders" class="com.sap.ibso.eservices.facade.actions.SagiaCreateShareholders" parent="abstractAction">
     </bean>
     
 
@@ -2647,9 +2676,9 @@
             </list>
         </property>
     </bean>
-	
+
 	<!-- SiteMap Changes Ends -->
-	
-	
-	
+
+
+
 </beans>

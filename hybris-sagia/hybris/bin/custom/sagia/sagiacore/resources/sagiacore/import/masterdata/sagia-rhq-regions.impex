@@ -1,13 +1,13 @@
 INSERT_UPDATE SagiaRhqRegion; code[unique = true]; name[lang = en]        ; name[lang = ar]
-                            ; 1                  ; North America          ; شمال امريكا
-                            ; 2                  ; Central America        ; أمريكا الوسطى
-                            ; 3                  ; South America          ; جنوب امريكا
-                            ; 4                  ; Europe                 ; أوروبا
-                            ; 5                  ; North Africa           ; شمال أفريقيا
-                            ; 6                  ; Central & South Africa ; وسط وجنوب أفريقيا
-                            ; 7                  ; Middle East            ; الشرق الأوسط
-                            ; 8                  ; Indian Subcontinent    ; شبه القارة الهندية
-                            ; 9                  ; CIS                    ; رابطة الدول المستقلة
-                            ; 10                 ; East Asia              ; شرق اسيا
-                            ; 11                 ; Southeast Asia         ; جنوب شرق آسيا
-                            ; 12                 ; Oceania                ; أوقيانوسيا
+                            ; 10                  ; North America          ; شمال امريكا
+                            ; 11                  ; Central America        ; أمريكا الوسطى
+                            ; 12                  ; South America          ; جنوب امريكا
+                            ; 13                  ; Europe                 ; أوروبا
+                            ; 14                  ; North Africa           ; شمال أفريقيا
+                            ; 15                  ; Central & South Africa ; وسط وجنوب أفريقيا
+                            ; 16                  ; Middle East            ; الشرق الأوسط
+                            ; 17                  ; Indian Subcontinent    ; شبه القارة الهندية
+                            ; 18                  ; CIS                    ; رابطة الدول المستقلة
+                            ; 19                 ; East Asia              ; شرق اسيا
+                            ; 20                 ; Southeast Asia         ; جنوب شرق آسيا
+                            ; 21                 ; Oceania                ; أوقيانوسيا

@@ -253,7 +253,7 @@
 						<tbody>
 						</tbody>
 			        </table>
-					                    
+
 					<%-- <h2 style="color: red;"><spring:theme code="license.apply.payment.entrepreneur.certificate.title"/></h2>
 					<ul>
 					  <li><spring:theme code="license.apply.payment.entrepreneur.line1"/></li>

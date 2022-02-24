@@ -172,15 +172,8 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 			}
 			target.setRhqCenterAdmin(rhqCenterAdmin);
 		}
-		if(!source.getRhqSubsidiaryPresence().isEmpty())
-		{
-			final List<String> rhqSubsidiaryPresence = new ArrayList<String>();
-			for (String subsidiary : source.getRhqSubsidiaryPresence())
-			{
-				rhqSubsidiaryPresence.add(subsidiary);
-			}
-			target.setRhqSubsidiaryPresence(rhqSubsidiaryPresence);
-		}
+
+			target.setRhqSubsidiaryPresence(source.getRhqSubsidiaryPresence());
 
 		if (source.getEntityFinancialStatementFile() != null) {
 			target.setEntityFinancialStatementFile(getMediaConverter().convert(source.getEntityFinancialStatementFile()));

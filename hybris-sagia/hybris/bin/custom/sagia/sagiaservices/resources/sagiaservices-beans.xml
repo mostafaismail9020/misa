@@ -2576,6 +2576,11 @@
 		<property name="ProfessionalLicenseCrVerified" type="java.lang.String"/>
 		<property name="IsPreApprovalNumber" type="java.lang.String"/>
 		<property name="PreApprovalNumber" type="java.lang.String"/>
+		<property name="listOfCorporateActivities"  type="java.lang.String" />
+		<property name="listOfStrategicActivities" type="java.lang.String" />
+		<property name="listOfManagementActivities" type="java.lang.String" />
+		<property name="rhqCenterAdmin"  type="java.lang.String" />
+		<property name="rhqSubsidiaryPresence" type="java.lang.String" />
 		
 	</bean>
 	
@@ -3616,5 +3621,40 @@
 		<property name="ErrorMsg" type="String" />
 	</bean>
 
+	<bean class="com.sap.ibso.eservices.sagiaservices.data.odata.EntitiesManagedByRhq">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Objectid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+		<property name="companyName" type="java.lang.String"/>
+		<property name="country" type="java.lang.String"/>
+		<property name="businessRelationshipType" type="java.lang.String"/>
+		<property name="industry" type="java.lang.String"/>
+		<property name="operations" type="java.lang.String"/>
+		<property name="RhqActivityProvided" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.sagiaservices.data.odata.BrandPresenceInMENARegion">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Objectid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+		<property name="brandName" type="java.lang.String"/>
+		<property name="country" type="java.lang.String"/>
+		<property name="industry" type="java.lang.String"/>
+		<property name="companyOwningBrandInMENA" type="java.lang.String"/>
+		<property name="RhqActivityProvided" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.sagiaservices.data.odata.EstimatedOperatingCostForRhq">
+		<property name="Refid" type="java.lang.String" />
+		<property name="Objectid" type="java.lang.String" />
+		<property name="Guid" type="java.lang.String" />
+		<property name="item" type="java.lang.String"/>
+		<property name="unitCost" type="java.lang.String"/>
+		<property name="noOfUnits" type="java.lang.String"/>
+		<property name="costFrequency" type="java.lang.String"/>
+		<property name="year2022" type="java.lang.String"/>
+		<property name="year2023" type="java.lang.String"/>
+		<property name="year2024" type="java.lang.String"/>
+	</bean>
 	<!--ZQEEMAH 2 -->
 </beans>

@@ -24,9 +24,8 @@
 <div class="formSelectBox">
 		<div class="form-group optionalActivity">
 			<select id="rhqCheckbox" name="listOfCorporateActivities"
-				class="js-select2-multi form-control select2-hidden-accessible"
-				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfCorporateActivities}">
-
+				class="form-control"
+				multiple  data-value="${sagiaApplyEntityInfoForm.listOfCorporateActivities}">
 			</select>
 			<label class="control-label" for="rhqCheckbox"><spring:theme code="rhq.investor.activities.corporate.label"/></label>
 		</div>
@@ -38,9 +37,8 @@
 <div class="formSelectBox">
 		<div class="form-group optionalActivity">
 			<select id="rhqStrategicCheckbox" name="listOfStrategicActivities"
-				class="js-select2-multi form-control select2-hidden-accessible"
-				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfStrategicActivities}">
-
+				class="form-control"
+				multiple tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfStrategicActivities}">
 			</select>
 			<label class="control-label" for="rhqStrategicCheckbox"><spring:theme code="rhq.investor.activities.strategic.label"/></label>
 		</div>
@@ -52,8 +50,8 @@
 <div class="formSelectBox">
 		<div class="form-group optionalActivity">
 			<select id="rhqManagementFunCheckbox" name="listOfManagementActivities"
-				class="js-select2-multi form-control select2-hidden-accessible"
-				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfManagementActivities}">
+				class="form-control"
+				multiple data-value="${sagiaApplyEntityInfoForm.listOfManagementActivities}">
 			</select>
 			<label class="control-label" for="rhqManagementFunCheckbox"><spring:theme code="rhq.investor.activities.management.label"/></label>
 		</div>
@@ -66,7 +64,7 @@
 
 	<div class="formSelectBox">
 			<div class="form-group">
-				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="js-select2-multi form-control" multiple="" tabindex="-1" aria-hidden="true" data-value="">
+				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="form-control" multiple data-value="">
 					 <option value="GCC">GCC</option>
                      <option value="MENA">MENA</option>
                      <option value="Middle East (ME)">Middle East (ME)</option>
@@ -79,8 +77,8 @@
         <div class="formSelectBox">
                 <div class="form-group">
                     <select id="branchInformationRhqCountry" name="listOfRhqCountries"
-                        class="js-select2-multi form-control select2-hidden-accessible"
-                        multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfRhqCountries}">
+                        class="form-control"
+                        multiple data-value="${sagiaApplyEntityInfoForm.listOfRhqCountries}">
                     </select> <label class="control-label" for="branchInformationRhqCountry"><spring:theme code="profile.rhq.countries" /></label>
                 </div>
                 <div class="help-block"></div>
@@ -89,8 +87,8 @@
 		<div class="formSelectBox" id="rhqCountryRegion" >
 		<div class="form-group">
 			<select id="branchInformationRhqRegionsSection" name="listOfRhqRegions"
-				class="js-select2-multi form-control select2-hidden-accessible"
-				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfRhqRegions}">
+				class="form-control"
+				multiple data-value="${sagiaApplyEntityInfoForm.listOfRhqRegions}">
 			</select> <label class="control-label" for="branchInformationRhqRegionsSection"><spring:theme code="profile.rhq.regions" /></label>
 		</div>
 		<div class="help-block"></div>
@@ -1122,6 +1120,19 @@
 	padding: 15px 10px 15px;
 }
 
+.page-new-license-apply .select.modal.in.fade.show{z-index:9999999999 !important;}
+.page-new-license-apply .fade.show{}
+.page-new-license-apply .modal-dialog.modal-sm{min-width:500px;}
+.page-new-license-apply label[for=rhqCheckbox],.page-new-license-apply label[for=rhqStrategicCheckbox],.page-new-license-apply label[for=rhqManagementFunCheckbox],
+.page-new-license-apply label[for=rhqCenterAdmin],.page-new-license-apply label[for=branchInformationRhqCountry],.page-new-license-apply label[for=branchInformationRhqRegionsSection]{
+	top: -17px;
+}
+
+.page-new-license-apply .selectWrap > .select-content > .addedOption{border: 1px solid #5cc83b;}
+.page-new-license-apply .selectWrap > .select-content > .addedOption > .removeOption,
+.page-new-license-apply .select.modal .modal-body > .option.selected{color:#5cc83b;}
+
+.page-new-license-apply .select .modal-dialog .modal-body{padding: 0 22px;}
 </style>
 
 
@@ -1158,6 +1169,6 @@
 	var rhqSubsidiaryPresenceInJS =  '${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}';
 	var listOfManagementActivitiesInJS = ' ${sagiaApplyEntityInfoForm.listOfManagementActivities}';
 
-
+    console.log(${sagiaApplyEntityInfoForm.rhqCenterAdmin});
 
 </script>

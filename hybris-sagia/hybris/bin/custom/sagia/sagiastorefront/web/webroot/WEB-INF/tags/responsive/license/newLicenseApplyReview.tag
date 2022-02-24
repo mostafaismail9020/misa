@@ -303,6 +303,7 @@
                 </div>
 				<hr class="contentModule-separator"/>
             </div>
+            <c:if test="${entityInformation.licenseType eq '11'}">
             <div id="rhq-review-section">
             <div id="reviewLicenseYearSection" class="rhq-review-items">
                 <div class="row">
@@ -659,7 +660,7 @@
                 </c:otherwise>
             </c:choose>
         </div>
-
+       </c:if>
         <div class="contentModule-section contentModule-section_noDivider" id="reviewShareholdersSection">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
                 <div class="contentModule-headline"><spring:theme code="license.apply.review.shareholders"/></div>
@@ -989,7 +990,7 @@
 	  console.log(objectCost);
 
       subsidiaryString ='';
-      subsidiaryString =  '${entityInformation.rhqSubsidiaryPresence[0]}';
+      subsidiaryString =  '${entityInformation.rhqSubsidiaryPresence}';
 
     }
         catch(error){

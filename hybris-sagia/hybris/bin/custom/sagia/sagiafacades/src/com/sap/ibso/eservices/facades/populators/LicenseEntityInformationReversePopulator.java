@@ -219,19 +219,8 @@ public class LicenseEntityInformationReversePopulator
 		{
 			target.setRhqCenterAdmin(null);
 		}
-		if(null!=source.getRhqSubsidiaryPresence())
-		{
-			final List<String> rhqSubsidiaryPresence = new ArrayList<String>();
-			for (String subsidiary : source.getRhqSubsidiaryPresence())
-			{
-				rhqSubsidiaryPresence.add(subsidiary);
-			}
-			target.setRhqSubsidiaryPresence(rhqSubsidiaryPresence);
-		}
-		else
-		{
-			target.setRhqSubsidiaryPresence(null);
-		}
+			target.setRhqSubsidiaryPresence(source.getRhqSubsidiaryPresence());
+
 //New RHQ end
 		
 		//TODO: need to create more file attribute to get file stream, file name etc. also change below logic in a way so if it's new file then only update it.

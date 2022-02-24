@@ -2695,7 +2695,7 @@
                         <persistence type="property"/>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                     </attribute>
-                    <attribute qualifier="rhqSubsidiaryPresence" type="StringsList">
+                    <attribute qualifier="rhqSubsidiaryPresence" type="java.lang.String">
                         <persistence type="property"/>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                     </attribute>

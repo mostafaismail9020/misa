@@ -13,10 +13,16 @@
 		processClass="de.hybris.platform.commerceservices.model.process.SagiaPublishLicenseProcessProcessModel" onError="error">
 
 	<action id="sagiaSaveEntityInfo" bean="sagiaSaveEntityInfo">
-		<transition name="OK" to="sagiaCreateShareholders"/>
+		<transition name="OK" to="sagiaSendRhqTables"/>
 		<transition name="NOK" to="error"/>
 	</action>
-	
+
+	<action id="sagiaSendRhqTables" bean="sagiaSendRhqTables">
+		<transition name="OK" to="sagiaCreateShareholders"/>
+		<transition name="BYPASS" to="sagiaCreateShareholders"/>
+		<transition name="NOK" to="error"/>
+	</action>
+
 	<action id="sagiaCreateShareholders" bean="sagiaCreateShareholders">
 		<transition name="OK" to="sagiaSaveContactPerson"/>
 		<transition name="NOK" to="error"/>

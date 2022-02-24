@@ -3012,7 +3012,7 @@
 		<property name="listOfStrategicActivities" type="java.util.List&lt;String>"/>
 		<property name="listOfManagementActivities" type="java.util.List&lt;String>"/>
 		<property name="rhqCenterAdmin" type="java.util.List&lt;String>"/>
-		<property name="rhqSubsidiaryPresence" type="java.util.List&lt;String>"/>
+		<property name="rhqSubsidiaryPresence" type="String"/>
 		<property name="listOfRhqRegions" type="java.util.List&lt;String>"/>
 		<property name="entityFinancialStatementFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="commercialRegMainEntryFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>

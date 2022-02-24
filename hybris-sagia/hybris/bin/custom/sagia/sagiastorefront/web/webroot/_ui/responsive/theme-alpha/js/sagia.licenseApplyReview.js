@@ -437,21 +437,6 @@ SAGIA.licenseApplyReview = {
 					"<td width='40%'><span style='font-weight:bold'>" + getI18nText("license.apply.payment.entrepreneur.total."+sagiaData.licenseYear) + "</span></td>" +
 					"</tr>");
 
-			}else if(sagiaData.licenseType=='11'){
-				$("#tblGrid").find("tbody").append("<tr>" +
-					"<th width='50%'>" + getI18nText("license.apply.payment.service") + "</th>" +
-					"<th width='20%'>" + getI18nText("license.apply.payment.duration") + "</th>" +
-					"<th width='30%'>" + getI18nText("license.apply.payment.price") + "</th>" +
-					"</tr>" +
-					"<tr>" +
-					"<td width='40%' >" + getI18nText("license.apply.payment.license.fee") + "</td>" +
-					"<td width='20%' >" + getI18nText("license.apply.payment.license.fee.duration."+sagiaData.licenseYear) + "</td>" +
-					"<td width='40%' >" + getI18nText("license.apply.payment.license.fee.price."+sagiaData.licenseYear) + "</td>" +
-					"</tr>" +
-					"<td width='40%'><span style='font-weight:bold'>" + getI18nText("license.apply.payment.total") + "</span></td>" +
-					"<td width='20%'>" +  "</td>" +
-					"<td width='40%'><span style='font-weight:bold'>" + getI18nText("license.apply.payment.license.fee.price."+sagiaData.licenseYear) + "</span></td>" +
-					"</tr>");
 			}
 			else{
             				$("#tblGrid").find("tbody").append("<tr>" +

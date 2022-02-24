@@ -758,7 +758,7 @@ SAGIA.profile = {
                     messages: {
                         oldPwd: {
                             required: getI18nText("profile.password.enterOld"),
-                            validateExisting: getI18nText("password.incorrect")
+                            validateExisting: getI18nText("profile.password.incorrect")
                         },
                         pwd: {
                             required: getI18nText("profile.password.enterNew"),
@@ -767,7 +767,7 @@ SAGIA.profile = {
                         },
                         checkPwd: {
                             required: getI18nText("profile.password.confirmNew"),
-                            equalTo: getI18nText("password.equals")
+                            equalTo: getI18nText("profile.password.equals")
                         }
                     }
                 });
@@ -1404,3 +1404,10 @@ $(document).on("click", ".myAccount-profilImage-change", function () {
       $('#uploadFilePicture').modal('show');
 });
 
+
+$("#resetPassword").on('click',function(){
+    $("#oldPwd-error").remove();
+    $("#pwd-error").remove();
+    $("#checkPwd-error").remove();
+    $("#updatePwdForm .form-group").removeClass('has-error');
+})

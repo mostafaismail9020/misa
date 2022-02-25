@@ -46,6 +46,7 @@ SAGIA.payment = {
         $("#licenseApplicationPayment").find('.apply').hide();
         $("#licenseApplicationPayment").find('.pay-buttons').show();
         $("#paymentModal").find("tbody").html("");
+        $("#paymentModal").find(".js-wrapper").html("");
         
         var amount = Math.round(payableAmount * 100) / 100;
         SAGIA.payment.salesOrders.push(amount);

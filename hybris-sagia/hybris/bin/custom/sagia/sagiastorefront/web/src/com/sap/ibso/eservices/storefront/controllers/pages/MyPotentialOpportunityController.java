@@ -37,6 +37,7 @@ import javax.annotation.Resource;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.Objects;
 import java.util.ArrayList;
@@ -204,9 +205,10 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
         if(null != contactTicketForm && null != contactTicketForm.getComment()) {
             LOG.info("receieved the file");
         }
+		byte[] bytes = null;
         try
         {
-        final byte[] bytes = contactTicketForm.getPdfAttachment().getBytes();
+        bytes = contactTicketForm.getPdfAttachment().getBytes();
 
         if (null != bytes) {
         	LOG.info("Entered into bytes != null :"+bytes.length);
@@ -230,6 +232,7 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
                 ex.printStackTrace();
             }
         ContactTicketModel contactTicketModel = sagiaUserService.getContactTicketForTicketId(ticketId);
+		contactTicketModel.setAttachmentStream(new String(bytes, StandardCharsets.UTF_8));
         LOG.info("contactTicketModel is " +contactTicketModel);
         CsTicketModel ticket = (CsTicketModel)contactTicketModel;
         //in ticketmodel attachments is unmodifiable so , we need to always create new list and add both old and new attachments
@@ -240,7 +243,6 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 			}
 			list.add(mediaModel);
 			ticket.setAttachments(list);
-		
 		modelService.save(ticket);
 		contactTicketBusinessService.ticketAttachment2SCPI(contactTicketModel);
 		

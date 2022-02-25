@@ -823,7 +823,7 @@
 
 					<div id="shareholderValidationSection">
 						<div class="row" id="shareholderValidationDetails">
-							<div id="shareholderIdTypeSection" class="col-md-6">
+							<div id="shareholderIdTypeSection" class="col-md-12 col-lg-6">
 								<div class="formSelectBox">
 									<div class="form-group">
 										<select id="shareholderIdType"
@@ -836,7 +836,7 @@
 									<div class="help-block"></div>
 								</div>
 							</div>
-							<div id="shareholderIdNumberSection" class="col-md-6">
+							<div id="shareholderIdNumberSection" class="col-md-12 col-lg-6">
 								<div class="formInputBox">
 									<div class="form-group">
 										<input id="shareholderIdNumber"
@@ -849,7 +849,7 @@
 									<div class="help-block"></div>
 								</div>
 							</div>
-							<div id="shareholderDateofBirthSection" class="col-md-6">
+							<div id="shareholderDateofBirthSection" class="col-md-12 col-lg-6">
 								<div class="formInputBox formInputBox_group ">
 									<div class="form-group">
 										<input id="shareholderDateofBirth"
@@ -1853,7 +1853,7 @@
 					</div>
 					<div class="border-top-line">
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-12 col-lg-6">
 							<div class="formSelectBox">
 								<div class="form-group">
 									<select id="branchTypeId" name="branchType"
@@ -1865,7 +1865,7 @@
 								<div class="help-block"></div>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-12 col-lg-6">
 							<div class="formInputBox">
 								<div class="form-group">
 									<input id="branchNameId" name="branchName" class="form-control"
@@ -1892,7 +1892,7 @@
 					</div>
 					<div class="border-top-line">
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-12 col-lg-6">
 							<div class="formSelectBox">
 								<div class="form-group">
 									<select id="branchCountryId" name="branchCountry"
@@ -1905,7 +1905,7 @@
 								<div class="help-block"></div>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-12 col-lg-6">
 							<div class="formInputBox-split">
 								<div class="formInputBox formInputBox_big">
 									<div class="form-group">
@@ -1933,7 +1933,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-12 col-lg-6">
 							<div class="formSelectBox">
 								<div class="form-group">
 									<select id="branchRegionId" name="branchRegion"
@@ -1945,7 +1945,7 @@
 								<div class="help-block"></div>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-12 col-lg-6">
 							<div class="formSelectBox">
 								<div class="form-group">
 									<select id="branchCityId" name="branchCity"
@@ -1956,7 +1956,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-12 col-lg-6">
 							<div class="formInputBox">
 								<div class="form-group">
 									<input id="branchTelephoneId" name="branchTelephone"
@@ -1969,7 +1969,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-12 col-lg-6">
 							<div class="formInputBox">
 								<div class="form-group">
 									<input id="branchEmailId" name="branchEmail"
@@ -1981,7 +1981,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-12 col-lg-6">
 							<div class="formInputBox formInputBox_group">
 								<div class="form-group">
 									<input id="branchWebsiteId" name="branchWebsite"
@@ -2149,11 +2149,10 @@
 	</div>
 
 	<div class="modal fade" id="docsmodalId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content panelModule panelModule_halfRadius">
-				<div class="contentModule">
 					<form:form id="docsFormId">
-						<div class="contentModule">
+						<div class="modal-title">
 							<div id="amendmentTypeId" class="contentModule-actions">
 								<span class="contentModule-headline"><spring:theme code="license.amend.documents" /></span>
 								<!-- <div class="contentModule-headline-border"></div> -->
@@ -2230,7 +2229,6 @@
 							</button>
 						</div>
 					</form:form>
-				</div>
 			</div>
 		</div>
 	</div>

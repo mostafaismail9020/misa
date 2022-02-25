@@ -107,7 +107,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="renewal-services w-100 row">
                 <div class="col-xl-3 col-md-6 col-12 ">
-                    <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                    <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
                     <div class="col-xl-3 col-md-6 col-12">
@@ -295,11 +295,11 @@
     <div class="container">
         <c:if test="${fn:length(licenseRenew) > 1}">
             <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" id="historyList" data-expand-target="expand01">
-                <div class=""><span ><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
-                <div class="hidden"><span class="iconElement iconElement_closeBack ml-2" id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+                <div class="hidden"><span ><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div class=""><span class="iconElement iconElement_closeBack" id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
         </c:if>
-        <div class="expandableContent" id="expand01">
+        <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(licenseRenew) > 0}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
@@ -355,7 +355,7 @@
                         <div class="contentModule-section ">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
                                 <input type="hidden" name="csrfToken" value="${_csrf.token}"/>
-                                <div class="contentModule-headline contentModule-headline-service-info">
+                                <div class="contentModule-headline contentModule-headline-service-info heightServiceInfo">
                                     <!-- <icon:info/> -->
                                     <spring:theme code="renewlicense.serviceinfo"/><span id="srID"> ${license.srID}</span></div>
                                 <c:if test="${fn:length(licenseRenew) gt 0}">

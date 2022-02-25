@@ -991,3 +991,16 @@ function getCookie(cname) {
   }
   return "";
 }
+
+
+
+$(document).ready(function(){
+    calheightServiceInfo();
+})
+window.addEventListener("resize", calheightServiceInfo);
+function calheightServiceInfo(){
+    var cal = $(".heightServiceInfo").height();
+    if(window.matchMedia("(max-width:640px)").matches){
+        $('.statusIndicator').css({ paddingTop : cal + 'px' });
+    }
+}

@@ -90,9 +90,8 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<!-- <div class="mainSection mainSection_dark mainSection_pdt16">
 <div class="container">
-<!-- <div style="padding: 15px 67px 15px;"> -->
 <div class="contentModule">
 <div class="contentModule-section" >
 	<div class="statusBox-description">
@@ -103,7 +102,7 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 <!-- </div> -->
 
 <!-- <div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">

@@ -299,7 +299,7 @@
                 </div>
             </c:if>
             <div class="expandableContent-main" id="expandedContentParent" style="${serviceList.size() == 0 ? 'visibility:hidden;' : ''}">
-                <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
+                <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-3">
                     <div id="detailedConvertToNationalsContent" class="contentModule">
                         <div class="contentModule-section">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">

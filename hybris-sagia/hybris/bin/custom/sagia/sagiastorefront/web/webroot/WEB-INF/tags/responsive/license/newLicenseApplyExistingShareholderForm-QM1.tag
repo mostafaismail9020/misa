@@ -15,8 +15,8 @@
 
 <form:form id="existingShareholderForm" action="${existingShareholderFormAction}" method="post" modelAttribute="sagiaApplyExistingShareholderForm" enctype="multipart/form-data">
     <input type="hidden" name="code" value="${sagiaApplyExistingShareholderForm.code}">
-    <div class="row">
-        <div class="col-md-6 pb-4">
+    <div class="row" id="existing-Shareholder-Form">
+        <div class="col-md-6 pb-0 pb-md-4">
             <formElement:formInputBox idKey="existingShareholderEntityNumber"
                                       labelKey="licence.apply.entershareholderentitynumber"
                                       path="shareHolderEntityNumber" inputCSS="validate__mandatory validate__numbers-only"/>
@@ -27,7 +27,7 @@
 <%--                </div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6 pb-4">
+        <div class="col-md-6 pb-2 pb-md-4">
             <formElement:formInputBox idKey="existingShareholderName" labelKey="license.apply.review.name"
                                       path="shareHolderName" disabled="true" inputCSS="validate__mandatory" />
 <%--            <div class="formInputBox">--%>
@@ -49,7 +49,7 @@
 <%--                </div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6 pb-5">
+        <div class="col-md-6 pb-4 pb-md-5">
             <formElement:formInputBoxCustom idKey="existingShareholderSharesPercentage"
                                             labelKey="license.apply.review.shares.percentage" path="sharesPercentage"
                                             inputBoxAppendKey="%" inputBoxCSS="formInputBox_group" inputCSS="validate__mandatory validate__float-numbers-only-sharespercentage"/>
@@ -64,7 +64,7 @@
 <%--                <div class="help-block"></div>--%>
 <%--            </div>--%>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 pb-1 pb-md-5">
             <formElement:formSelectBoxCustom idKey="existingProfessionalLicense" labelKey="license.professionalLicense"
                                              path="professionalLicense" selectCSSClass="js-select2-oneColumn validate__mandatory"
                                              labelCSS="control-label_mandatory"
@@ -100,7 +100,7 @@
                 </div>
             </div>
         </div> --%>
-        <div class="col-md-6" id="existingProfessionalLicenseFileAttachment" style="display: none">
+        <div class="col-md-6 " id="existingProfessionalLicenseFileAttachment" style="display: none">
              <div class="formInputFile ${not empty sagiaApplyExistingShareholderForm.professionalLicenseCertificate ? "active" : ""}">
                  <c:set var="existingProfessionalLicenseErrors">
                      <form:errors path="professionalLicenseCertificate"/>

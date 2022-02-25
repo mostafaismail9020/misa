@@ -141,7 +141,7 @@ z-index: 0;
 .mandatory {
 	color: #FF0000;
 	padding-left: 5px;
-  }
+}
 /* Amenda license page */
 [dir="ltr"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-left: -65px;}
 [dir="rtl"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-right: -114px;}
@@ -199,3 +199,25 @@ z-index: 0;
 	.page-license-amend #branchesTableId_filter .searchInputBox-input::placeholder{font-size: 16px;text-align: left;}
 }
 /* End  */
+
+/* Licesing page  */
+[dir="ltr"] .formInputFile input{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;padding-right: 50px !important;}
+[dir="rtl"] .formInputFile input{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;padding-left: 50px !important;}
+[dir=rtl] .page-new-license-apply .form-control+.control-label+.formInputBox-append {margin-right: -114px;}
+@media (max-width: 640px) and (min-width: 100px){
+	.page-new-license-apply .mainSection{padding-bottom: 0;}
+	.mainSection .achievement_header .banner-container h1{font-size: 25px;line-height: 1.5;}
+	#entityForm #licenseTypeSection .select2-container .select2-selection--single .select2-selection__rendered {width: 85%;overflow: hidden;}
+	.page-shareholder-apply #addShareholderQM1ExistingSection #existing-Shareholder-Form .formSelectBox{margin-bottom: 0;}
+	.page-shareholder-apply #addShareholderQM1ExistingSection #existing-Shareholder-Form .formInputBox .formInputBox-append{margin-left: -50px;}
+	.page-shareholder-apply #addShareholderQM1ExistingSection .contentModule-actions button.cancelButton + button.addButton{margin-top: 10px;}
+	.page-shareholder-apply #addShareholderQM1NewSection .contentModule-actions_insideSection button.cancelButton {width: 50%!important;}
+	
+}
+@media (max-width: 1024px) and (min-width: 768px){
+	.page-shareholder-apply #shareholderType .form-item {width: 30%;}
+}
+@media (max-width: 1180px) and (min-width: 768px){
+	.page-shareholder-apply #shareholderType .form-item {width: 30%;}
+}
+/* End */

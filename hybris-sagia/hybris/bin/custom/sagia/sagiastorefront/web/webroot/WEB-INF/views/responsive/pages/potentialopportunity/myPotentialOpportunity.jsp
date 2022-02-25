@@ -271,6 +271,7 @@
 	</div>
 </div>
 
+
 <!---Documents start-->
 <div class="container  service-wrapper-info pt-5 pb-5">
 	<div class="row serviceModule serviceModule_list ">
@@ -285,20 +286,31 @@
 									<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
 									<form:form action="${encodedContextPath}/potentialOpportunity/${ticketId}/uploadAttachment" modelAttribute="contactTicketForm" method="POST" enctype="multipart/form-data">
 										<div class="form-group mt-2 pt-2">
-											<div class="form-row">
-												<div class="form-inline" style="width: 100%;">
+											<div class="formInputFile">
+												<div class="form-group">
+													<div class="row">
+													<div class="col-sm-6">
 													<!--<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>-->
-													<input  accept="application/pdf"  type="file" name="pdfAttachment" class="form-control" id="pdfAttachment" style="border: 0px solid;width: 400px;"><br>
-													<button type="submit" id="submit" class="btn" value="Upload">Upload Documents</button>
-
-													<!--<input type="button" class="btn" value="Upload Documents" onclick="uploadFile()">
-													 
-													<input type="button" class="btn" value="Upload Documents" class="btn btn_submit_whitess">-->
-												</div>
-												<div style="width: 30%;">
-													<progress id="progressBar" value="0" max="100" style="width:300px;display: none;"></progress>
-													<h3 id="status" style="color: green;"></h3>
-													<p id="loaded_n_total"></p>
+													<input  id="pdfAttachment" name="pdfAttachment" class="form-control js-inputFile" type="file" accept="application/pdf" value=""/>
+													<input id="text08" name="text08" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
+													<label class="control-label document_padd_wid100" for="">Choose File</label>
+													<div class="form-icon form-icon_browse">
+														<svg xmlns="http://www.w3.org/2000/svg" class="" width="29" height="29" viewBox="0 0 29 29">
+														<g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
+															<path id="Path_2191" data-name="Path 2191" d="M31.5,22.5v6a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3v-6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+															<path id="Path_2192" data-name="Path 2192" d="M25.5,12,18,4.5,10.5,12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+															<path id="Path_2193" data-name="Path 2193" d="M18,4.5v18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+														</g>
+														</svg>
+													</div>
+													<div class="form-icon form-icon_reset js-inputFile-reset">
+														<icon:cross/>
+													</div> 
+													</div>
+													<div class="col-sm-6">
+														<button type="submit" id="submit" class="btn btn_Upload_Documents_height" value="Upload">Upload Documents</button>  
+													</div>
+													</div>
 												</div>
 											</div>
 										<!--<div class="custom-file mb-3">

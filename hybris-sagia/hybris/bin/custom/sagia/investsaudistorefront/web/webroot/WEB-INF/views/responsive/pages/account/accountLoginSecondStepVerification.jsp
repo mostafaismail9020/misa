@@ -168,7 +168,7 @@ img.accountLogin-headline-logo {
 }
 
 [dir] .contentModule-actions {
-    margin-bottom: 32px;
+    margin-bottom: 2px;
 }
 .contentModule-actions_centered {
     -webkit-box-pack: center;

@@ -12,13 +12,7 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
-
-<style>
-	.page-appointment-create .formInputBox .formInputBox-append {
-		position: relative;
-		top: 0px;
-	}
-</style>
+ 
                                                         <div class="mainSection mainSection">
                                                             <div class="achievement_header">
                                                                 <img class="achievement_header_icon  page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>

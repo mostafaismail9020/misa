@@ -147,9 +147,8 @@ z-index: 0;
 [dir="rtl"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-right: -114px;}
 .page-license-amend .formSelectBox .form-group label{top: -20px;}
 [dir="ltr"] .page-license-amend #shareholderModalId .modal-content .modal-title{text-align: left;}
-.page-license-amend #docsmodalId .modal-dialog.modal-dialog-centered{
-	min-width:40%;
-}
+.page-license-amend #docsmodalId .modal-dialog.modal-dialog-centered{min-width:40%;}
+.page-license-amend #docsmodalId  .modal-title{color: #bf9b2e;text-transform: uppercase;}
 @media (max-width: 640px) and (min-width: 100px){
 	.page-license-amend .contentModule-mob-btns button.btn{width: 44%;}
 	.page-license-amend #businessActivitiesModal .modal-header .modal-title{font-size: 22px;}
@@ -170,8 +169,7 @@ z-index: 0;
 	[dir="ltr"] .page-license-amend #shareholderModalId #entityBasicInformation2 .formCheckBox{text-align: left;}
 	[dir="rtl"] .page-license-amend #shareholderModalId #entityBasicInformation2 .formCheckBox{text-align: right;}
 	.page-license-amend #shareholderModalId #delegateDivSection .btn-tooltip{white-space: initial;}
-	
-	
+	.page-license-amend #docsmodalId  .modal-title{font-size: 25px;}
 }
 @media (max-width: 991px) and (min-width: 641px){
 	.page-license-amend #shareholderModalId .panelModule,

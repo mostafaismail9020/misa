@@ -2153,7 +2153,7 @@
 			<div class="modal-content panelModule panelModule_halfRadius">
 					<form:form id="docsFormId">
 						<div class="modal-title">
-							<div id="amendmentTypeId" class="contentModule-actions">
+							<div id="amendmentTypeId" class="">
 								<span class="contentModule-headline"><spring:theme code="license.amend.documents" /></span>
 								<!-- <div class="contentModule-headline-border"></div> -->
 							</div>

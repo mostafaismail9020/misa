@@ -89,7 +89,7 @@ z-index: 0;
 	min-width:65%;
 }
 
-#branchModalId{
+#branchModalId,#docsmodalId{
 	z-index:99999;
 }
 
@@ -145,11 +145,57 @@ z-index: 0;
 /* Amenda license page */
 [dir="ltr"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-left: -65px;}
 [dir="rtl"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-right: -114px;}
-/* .page-license-amend .formSelectBox .form-group label{top: -20px;} */
+.page-license-amend .formSelectBox .form-group label{top: -20px;}
+[dir="ltr"] .page-license-amend #shareholderModalId .modal-content .modal-title{text-align: left;}
+.page-license-amend #docsmodalId .modal-dialog.modal-dialog-centered{min-width:40%;}
+.page-license-amend #docsmodalId  .modal-title{color: #bf9b2e;text-transform: uppercase;}
 @media (max-width: 640px) and (min-width: 100px){
 	.page-license-amend .contentModule-mob-btns button.btn{width: 44%;}
 	.page-license-amend #businessActivitiesModal .modal-header .modal-title{font-size: 22px;}
 	[dir="rtl"] .page-license-amend #shareholderAddressId .form-control+.control-label+.formInputBox-append {margin-right: -65px;}
 	[dir="rtl"] .page-license-amend #branchModalId .form-control+.control-label+.formInputBox-append {margin-right: -65px;}	
+	[dir="rtl"] .page-license-amend #shareholderModalId .form-control+.control-label+.formInputBox-append {margin-right: -65px;}
+	.page-license-amend #shareholderModalId #shareholderNewExistingTypeId .formRadioBox .form-item,
+	.page-license-amend #shareholderModalId #shareholderPersonEntityTypeId .formRadioBox .form-item
+	{padding: 0;display: block;width: 50%;height: 35px;}
+	.page-license-amend .amend-shareholder-wrapper .formRadioBox .control-label {width: 150px;font-size: 12px !important;}
+	.page-license-amend #shareholderModalId .contentModule-actions button.btn,
+	.page-license-amend #branchModalId .contentModule-actions button.btn,
+	.page-license-amend #productModalId .contentModule-actions button.btn,
+	.page-license-amend #docsmodalId .contentModule-actions button.btn
+	{ 	height: 50px;
+		width: 150px
+	}
+	[dir="ltr"] .page-license-amend #shareholderModalId #entityBasicInformation2 .formCheckBox{text-align: left;}
+	[dir="rtl"] .page-license-amend #shareholderModalId #entityBasicInformation2 .formCheckBox{text-align: right;}
+	.page-license-amend #shareholderModalId #delegateDivSection .btn-tooltip{white-space: initial;}
+	.page-license-amend #docsmodalId  .modal-title{font-size: 25px;}
+}
+@media (max-width: 991px) and (min-width: 641px){
+	.page-license-amend #shareholderModalId .panelModule,
+	.page-license-amend #branchModalId .panelModule,
+	.page-license-amend #productModalId .panelModule,
+	.page-license-amend #docsmodalId .panelModule
+	{padding: 30px}
+	.page-license-amend .amend-shareholder-wrapper .formRadioBox .control-label {width: 170px}
+	[dir="ltr"] .page-license-amend #shareholderModalId #entityBasicInformation2 .formCheckBox{text-align: left;}
+	[dir="rtl"] .page-license-amend #shareholderModalId #entityBasicInformation2 .formCheckBox{text-align: right;}
+	.page-license-amend #shareholderModalId .contentModule-actions button.btn,
+	.page-license-amend #branchModalId .contentModule-actions button.btn,
+	.page-license-amend #productModalId .contentModule-actions button.btn,
+	.page-license-amend #docsmodalId .contentModule-actions button.btn
+	{ 	height: 50px;
+		width: 178px
+	}
+}
+@media (max-width: 1024px) and (min-width: 768px){
+	.page-license-amend .amend-shareholder-wrapper .formRadioBox .control-label {width: 170px}
+	.page-license-amend #branchesTableId_filter .searchInputBox-input{width: 100%}
+	.page-license-amend #branchesTableId_filter .searchInputBox-input::placeholder{font-size: 16px;text-align: left;}
+}
+@media (max-width: 1180px) and (min-width: 768px){
+	.page-license-amend #shareholderModalId .panelModule,.page-license-amend #branchModalId .panelModule,.page-license-amend #productModalId .panelModule,.page-license-amend #docsmodalId .panelModule{padding: 30px}
+	.page-license-amend #branchesTableId_filter .searchInputBox-input{width: 100%}
+	.page-license-amend #branchesTableId_filter .searchInputBox-input::placeholder{font-size: 16px;text-align: left;}
 }
 /* End  */

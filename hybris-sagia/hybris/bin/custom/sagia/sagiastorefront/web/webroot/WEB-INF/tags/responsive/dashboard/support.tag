@@ -21,9 +21,9 @@
                 <dashboard:addAndRemoveComponent checkboxIndex="4"/>
             </c:if>
             <div class="dashboardWidget-headline js-dashboardWidget-headline">
-              <span class="clr_gld">
+              
                     <spring:theme code="dashboard.support.title"/>
-                </span>
+          
                 <div class="dashboardWidget-headline-icon"><icon:ask-our-expert/></div>
             </div>
             <div class="dashboardWidget-body ">

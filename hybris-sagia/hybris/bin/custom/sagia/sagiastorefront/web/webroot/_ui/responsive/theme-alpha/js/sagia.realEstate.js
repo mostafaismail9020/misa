@@ -501,7 +501,8 @@ $(function () {
         if(!$('#plotNo2').is(":visible")){ $('#plotNo2').attr("hidden", false); $('#plotNo2').show(); return;}
         if(!$('#plotNo3').is(":visible")){ $('#plotNo3').attr("hidden", false); $('#plotNo3').show(); return;}
         if(!$('#plotNo4').is(":visible")){ $('#plotNo4').attr("hidden", false); $('#plotNo4').show(); return;}
-        if(!$('#plotNo5').is(":visible")){ $('#plotNo5').attr("hidden", false); $('#plotNo5').show(); return;}
+        if(!$('#plotNo5').is(":visible")){ $('#plotNo5').attr("hidden", false); $('#plotNo5').show(); $("#addPlotNo").addClass('disabled'); return;}
+        
     });
 
     //when an element is no longer selected, remove historyList-item_current class

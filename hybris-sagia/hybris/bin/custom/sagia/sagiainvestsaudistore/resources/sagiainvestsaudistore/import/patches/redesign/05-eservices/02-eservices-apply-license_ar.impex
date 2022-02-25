@@ -1,7 +1,7 @@
 #################### Apply License ###################
 
 $contentCatalog = sagiaContentCatalog
-$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 
 
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]            ; name                             	; masterTemplate(uid, $contentCV); label				      ; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']; previewImage(code, $contentCV)[default = 'ContentPageModel__function_preview'];
@@ -30,7 +30,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                   <div class=""tab-pane active"" id=""1a"">
                       <div class=""text-center"">
                         <h4 class=""apply-license-header pt-5 dashboard-heading-title-color"">طريق التقديم على الترخيص الاستثماري</h4>
-                        <h5 class=""pt-5 dashboard-paragraph-color"">يجب على المستثمرين أولاً الحصول على ترخيص استثماري من الوزارة قبل البدء بالأعمال التجارية في المملكة العربية السعودية، وهي الجهة المعنية بتقديم جميع الخدمات للمستثمرين. وهناك أنواع مختلفة من التراخيص الاستثمارية ولكل منها متطلباته الخاصة ، مثل الحد الأدنى والحد الأقصى لرأس المال الأجنبي. يمكن للمستثمرين التقدم بطلب للحصول على ترخيص عبر البوابة الإلكترونية www.misa.gov.sa
+                        <h5 class=""pt-5 dashboard-paragraph-color"">حتى تبدأ نشاطك الاستثماري داخل المملكة، يجب عليك استخراج رخصة استثمارية. وتعد وزارة الاستثمار الجهة المسؤولة عن تقديم كافة الخدمات للمستثمرين. مع الأخذ بالاعتبار بأن التراخيص الاستثمارية تختلف باختلاف متطلباتها.
                         </h5>
                       </div>
                       <div class=""d-flex justify-content-around pt-5"">
@@ -102,7 +102,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                   <div class=""tab-pane"" id=""2a"">
                       <div class=""text-center"">
                         <h4 class=""apply-license-header pt-5 dashboard-heading-title-color"">طريقة التقدم بطلب شهادة مؤقتة للتقديم على عطاءات المشاريع الحكومية</h4>
-                        <h5 class=""pt-5 dashboard-paragraph-color"">المنشآت التي ترغب بتأهيلها من قبل الوزارة للتقديم على منافسات المشاريع الحكومية، بإمكانها التقدم بطلب الحصول على شهادة مؤقتة تمكنها من التقديم على عطاءات لمشاريع حكومية وفقا لقرار مجلس الوزراء رقم (405) الصادر بتاريخ 22/10/1435هـ.
+                        <h5 class=""pt-5 dashboard-paragraph-color"">تُمنح شهادة العطاءات الحكومية للمنشآت التي ترغب بالتقديم على منافسات المشاريع الحكومية حسب الاشترطات الموضحة في دليل خدمات المستثمرين.
                         </h5>
                       </div>
                       <div class=""d-flex justify-content-around pt-5"">

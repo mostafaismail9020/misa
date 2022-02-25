@@ -30,9 +30,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                   <div class=""tab-pane active"" id=""1a"">
                       <div class=""text-center py-3 py-md-0"">
                         <h4 class=""apply-license-header pt-5 dashboard-heading-title-color"">How to Apply for a New License</h4>
-                        <h5 class=""pt-md-5 dashboard-paragraph-color""> In order to start in saudi arabia, investors must first obtain an investor license, MISA is the autority
-                            concerned with providing all seervices to  investors, Types of investment license vary each with its own requirement
-                            such as minimum acceptable capital and maximum capital. Investors can apply for a license online on a MISA e-portal
+                        <h5 class=""pt-md-5 dashboard-paragraph-color""> To start your investment activity in Saudi Arabia, you must obtain an investment license. MISA is the authority responsible for providing all services to investors. Investment licenses vary according to their requirements.
                         </h5>
                       </div>
                       <div class=""d-flex justify-content-around pt-md-5"">
@@ -104,7 +102,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                   <div class=""tab-pane"" id=""2a"">
                       <div class=""text-center"">
                         <h4 class=""apply-license-header pt-5 dashboard-heading-title-color"">How to apply for a Bidding Certificate</h4>
-                        <h5 class=""pt-5 dashboard-paragraph-color"">Entities that need to bid for government projects or a contract activity, for which a government or semi-government co contract is awarded providing the possibility to apply for a temporary license to execute a government or semi-government contract. this license expires at the end of the contract.
+                        <h5 class=""pt-5 dashboard-paragraph-color"">The Bidding Certificate granted to entities that wishing to submit bids for governmental projects according to the terms on investment services manual
                         </h5>
                       </div>
                       <div class=""d-flex justify-content-around pt-5"">

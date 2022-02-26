@@ -4,8 +4,10 @@ import static com.sap.ibso.eservices.storefront.forms.validation.SagiaValidation
 
 import javax.annotation.Resource;
 
+import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
 import com.sap.ibso.eservices.facades.data.EntityInformationData;
 import com.sap.ibso.eservices.storefront.util.SagiaLicenseFieldsUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -25,7 +27,10 @@ public class EntityInfoValidator implements Validator {
 
     @Resource(name= "sagiaLicenseFieldsUtils")
     private SagiaLicenseFieldsUtils sagiaLicenseFieldsUtils;
-    
+
+    @Resource
+    private LicenseApplyService licenseApplyService;
+
     @Override
     public boolean supports(Class<?> aClass) {
         return OrganizationInformation.class.equals(aClass);
@@ -200,6 +205,34 @@ public class EntityInfoValidator implements Validator {
             }
         }
         if(entityInformationData.getLicenseType() != null && entityInformationData.getLicenseType().equals("11")) {
+
+            if(CollectionUtils.isEmpty(entityInformationData.getListOfRhqRegions())) {
+                errors.rejectValue("listOfRhqRegions", "rhq.region.validation");
+            }
+            if(CollectionUtils.isEmpty(entityInformationData.getListOfEntitiesManagedByRhq())) {
+                errors.rejectValue("listOfEntitiesManagedByRhq", "rhq.entities.managed.by.rhq.validation");
+            }
+            if(CollectionUtils.isEmpty(entityInformationData.getListOfBrandPresenceInMENARegion())) {
+                errors.rejectValue("listOfBrandPresenceInMENARegion", "rhq.brand.presence.validation");
+            }
+            if(CollectionUtils.isEmpty(entityInformationData.getListOfEstimatedOperatingCostForRhq())) {
+                errors.rejectValue("listOfEstimatedOperatingCostForRhq", "rhq.estimatied.operating.cost.validation");
+            }
+            if((entityInformationData.getListOfCorporateActivities().size()<3)) {
+                errors.rejectValue("listOfCorporateActivities", "rhq.corporate.activity.validation");
+            }
+            if(!(licenseApplyService.getStrategicActivities().size()==(entityInformationData.getListOfStrategicActivities().size()))) {
+                errors.rejectValue("listOfStrategicActivities", "rhq.strategic.activity.validation");
+            }
+            if(!(licenseApplyService.getManagementActivities().size()==(entityInformationData.getListOfManagementActivities().size()))) {
+                errors.rejectValue("listOfManagementActivities", "rhq.management.activity.validation");
+            }
+            if(CollectionUtils.isEmpty(entityInformationData.getRhqCenterAdmin())) {
+                errors.rejectValue("rhqCenterAdmin", "rhq.center.of.administration.validation");
+            }
+            if(StringUtils.isEmpty(entityInformationData.getRhqSubsidiaryPresence())) {
+                errors.rejectValue("rhqSubsidiaryPresence", "rhq.subsidiary.presence.validation");
+            }
             if (!entityFinancialFileAdded) {
                 errors.rejectValue("entityFinancialStatementFileAdded", "validation.basicinformation.file");
             }

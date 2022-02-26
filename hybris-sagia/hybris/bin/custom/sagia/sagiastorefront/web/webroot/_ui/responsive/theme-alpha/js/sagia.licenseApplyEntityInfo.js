@@ -208,7 +208,7 @@ bindRhqCountryInformationEvents: function () {
             success: function (data) {
                 var jsonData = JSON.parse(data);
                 var countries = self.branchInformationSection.find("#branchInformationRhqCountry");
-                countries.find("option").remove();
+              //  countries.find("option").remove();
                // countries.append(new Option("", "", false, false));
                 jsonData.countries.forEach(function (currentValue) {
                     countries.append(new Option(currentValue.countryText, currentValue.country, false, false));
@@ -328,12 +328,17 @@ bindRhqCountryInformationEvents: function () {
                 // MNC Branches - Start
                  // objectBranches = [];
                  $("#mncBranchTable tbody").html('');
-                if (objectBranches?.length > 0) {
-                    for (var idx = 0; idx < objectBranches.length; idx++) {
-                        $("#mncBranchTable tbody").append('<tr><td>' + objectBranches[idx]['companyName'] + '</td><td>' + objectBranches[idx]['country'] + '</td><td>' + objectBranches[idx]['businessRelationshipType'] + '</td><td>' + objectBranches[idx]['industry'] + '</td><td>' + objectBranches[idx]['operations'] + '</td><td>' + objectBranches[idx]['RhqActivityProvided'] + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBranchBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
+                 try{
+                    if (objectBranches.length > 0) {
+                        for (var idx = 0; idx < objectBranches.length; idx++) {
+                            $("#mncBranchTable tbody").append('<tr><td>' + objectBranches[idx]['companyName'] + '</td><td>' + objectBranches[idx]['country'] + '</td><td>' + objectBranches[idx]['businessRelationshipType'] + '</td><td>' + objectBranches[idx]['industry'] + '</td><td>' + objectBranches[idx]['operations'] + '</td><td>' + objectBranches[idx]['RhqActivityProvided'] + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBranchBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
+                        }
+
+                    }
+                 }catch(e){
+                     console.log(e)
                     }
 
-                }
                 editBranchIndex = 0;
                 BranchCurrentRow = null;
 
@@ -560,17 +565,19 @@ bindRhqCountryInformationEvents: function () {
                 // MNC Brand - Start
                //  objectBrands = [];
                 $("#mncBrandTable tbody").html('');
-               try {
-                        if (objectBrands?.length > 0) {
-                           for (var idx = 0; idx < objectBrands.length; idx++) {
-                               $("#mncBrandTable tbody").append('<tr><td>' + objectBrands[idx]['brandName'] + '</td><td>' + objectBrands[idx]['country'] + '</td><td>' + objectBrands[idx]['industry'] + '</td><td>' + objectBrands[idx]['companyOwningBrandInMENA'] + '</td><td>' + objectBrands[idx]['RhqActivityProvided'] + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBrandBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
+                try {
+                    if (typeof objectBrands !== "undefined") {
+                        if (objectBrands.length > 0) {
+                            for (var idx = 0; idx < objectBrands.length; idx++) {
+                                $("#mncBrandTable tbody").append('<tr><td>' + objectBrands[idx]['brandName'] + '</td><td>' + objectBrands[idx]['country'] + '</td><td>' + objectBrands[idx]['industry'] + '</td><td>' + objectBrands[idx]['companyOwningBrandInMENA'] + '</td><td>' + objectBrands[idx]['RhqActivityProvided'] + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditBrandBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
 
-                           }
-                       }
+                            }
+                        }
                     }
-               catch (err) {
-                   console.log(err);
-               }
+                }
+                catch (err) {
+                    console.log(err);
+                }
                 editBrandIndex = 0;
                 BrandCurrentRow = null;
 
@@ -790,24 +797,26 @@ bindRhqCountryInformationEvents: function () {
                 // objectCost = [];
                 $("#rhqCostTable tbody").html('');
                 try {
-                if (objectCost?.length > 0) {
-                                    for (var idx = 0; idx < objectCost.length; idx++) {
-                                        $("#rhqCostTable tbody").append('<tr><td>' + objectCost[idx]['item'] + '</td><td>' + objectCost[idx]['unitCost'] + '</td><td>' + objectCost[idx]['noOfUnits'] + '</td><td>' + objectCost[idx]['costFrequency'] + '</td><td>' + objectCost[idx]['year2022'] + '</td><td>' + objectCost[idx]['year2023'] + '</td><td>' + objectCost[idx]['year2024'] + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditCostBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
+                    if (typeof objectCost !== "undefined") {
+                        if (objectCost.length > 0) {
+                            for (var idx = 0; idx < objectCost.length; idx++) {
+                                $("#rhqCostTable tbody").append('<tr><td>' + objectCost[idx]['item'] + '</td><td>' + objectCost[idx]['unitCost'] + '</td><td>' + objectCost[idx]['noOfUnits'] + '</td><td>' + objectCost[idx]['costFrequency'] + '</td><td>' + objectCost[idx]['year2022'] + '</td><td>' + objectCost[idx]['year2023'] + '</td><td>' + objectCost[idx]['year2024'] + '</td><td><span type="" class="btn btn_link iconElement iconElement_edit02 edit_btn_click"  id="EditCostBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"></path></svg></span><span  class="btn btn_link iconElement iconElement_edit02 delete_btn_click"><svg class="icon icon-delete" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path fill="#d0021b" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></span></td></tr>');
 
-                                    }
-                                    Array.prototype.sum = function (prop) {
-                                        var total = 0
-                                        for (var i = 0, _len = this.length; i < _len; i++) {
-                                            total += parseInt(this[i][prop]);
-                                        }
-                                        return total
-                                    }
-                                    $('#rhqCostTable-totalText').text('Total');
-                                    $('#rhqCostTable-sum1').text(objectCost.sum("year2022"));
-                                    $('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
-                                    $('#rhqCostTable-sum3').text(objectCost.sum("year2024"));
+                            }
+                            Array.prototype.sum = function (prop) {
+                                var total = 0
+                                for (var i = 0, _len = this.length; i < _len; i++) {
+                                    total += parseInt(this[i][prop]);
                                 }
+                                return total
+                            }
+                            $('#rhqCostTable-totalText').text('Total');
+                            $('#rhqCostTable-sum1').text(objectCost.sum("year2022"));
+                            $('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
+                            $('#rhqCostTable-sum3').text(objectCost.sum("year2024"));
                         }
+                    }
+                }
                 catch (err) {
                     console.log(err);
                 }
@@ -1348,7 +1357,7 @@ bindRhqCountryInformationEvents: function () {
               editBranchCountry.append(new Option("", "", false, false));
 
               var branchInformationRhqCountry = $("#branchInformationRhqCountry");
-              branchInformationRhqCountry.find("option").remove();
+              //branchInformationRhqCountry.find("option").remove();
 
 
 
@@ -1363,7 +1372,7 @@ bindRhqCountryInformationEvents: function () {
             });
 
             $("#branchInformationRhqCountry").multiselect({
-                title: getI18nText("validation.rhq.countries.minimum"),
+                title: "Select Options",
                 modalSize: "md"
             });
           //  self.updateSelectValues($("#branchInformationRhqCountry"));
@@ -1396,13 +1405,12 @@ bindRhqCountryInformationEvents: function () {
                         var selectedDataString = String($("#rhqCheckbox").data('value'));
                         var selectedData = selectedDataString.split(',');
                         selectedData.forEach(function (currentValue) {
-                            console.log('inside loop..' + currentValue);
                             $("#rhqCheckbox").multiselect("selectOption", currentValue);
                         });
                     }
                     setTimeout(function () {
                     $("#rhqCheckbox").multiselect({
-                        title: "Optional/Functions/Corporate Activities",
+                        title: "Select Options",
                         modalSize: "md"
                     });},500);
 
@@ -1432,7 +1440,6 @@ bindRhqCountryInformationEvents: function () {
                            var selectedDataString = String($("#branchInformationRhqRegionsSection").data('value'));
                            var selectedData = selectedDataString.split(',');
                            selectedData.forEach(function (currentValue) {
-                               console.log('inside loop..' + currentValue);
                                $("#branchInformationRhqRegionsSection").multiselect("selectOption", currentValue);
                            });
                        }
@@ -1476,7 +1483,7 @@ bindRhqCountryInformationEvents: function () {
                            }
 
                         $("#rhqStrategicCheckbox").multiselect({
-                            title:getI18nText("rhq.strategic.activity.validation"),
+                            title: "Select Options",
                             modalSize: "md"
                         });
 
@@ -1500,7 +1507,6 @@ bindRhqCountryInformationEvents: function () {
                             managementActivities.find("option").remove();
                             managementActivities.append(new Option("", "", false, false));
                             jsonData.forEach(function (currentValue) {
-                                console.log("managementActivitiesParsedList currentValue"+currentValue.id);
                                 $('#rhqManagementFunCheckbox').append('<option value='+currentValue.id+'>'+currentValue.details+'</option>');
                             });
                          //   self.updateSelectValues($("#rhqManagementFunCheckbox"));
@@ -1518,15 +1524,9 @@ bindRhqCountryInformationEvents: function () {
 
             });
 
-            console.log("managementActivitiesParsedList"+managementActivitiesParsedList);
-
-
-
-
 
             setTimeout(function () {
                 managementActivitiesParsedList.forEach(function (currentValue) {
-                    console.log('inside rhqManagementFunCheckbox loop..' + currentValue);
                     $("#rhqManagementFunCheckbox").multiselect("selectOption", currentValue);
                 });
 
@@ -1553,14 +1553,21 @@ bindRhqCountryInformationEvents: function () {
 
             });
 
-
-
             setTimeout(function () {
-                RHQCenterfinalParsedList.forEach(function (currentValue) {
-                    console.log('inside rhqManagementFunCheckbox loop..' + currentValue);
-                    $("#rhqCenterAdmin").multiselect("selectOption", currentValue);
-                });
+                try{
+                    RHQCenterfinalParsedList.forEach(function (currentValue) {
+                        console.log("Middle_East_ME");
+                        if(currentValue == "Middle_East_ME" || currentValue == "Middle East (ME)"){
+                            $("#rhqCenterAdmin").multiselect("selectOption", "Middle_East_ME");
+                        }
+                        else{
+                            console.log("currentValue");
+                            $("#rhqCenterAdmin").multiselect("selectOption", currentValue);
+                        }
 
+                    });
+                }
+                catch(e){console.log(e);}
 
                 $("#rhqCenterAdmin").multiselect({
                     title: "Select Options",
@@ -1576,19 +1583,9 @@ bindRhqCountryInformationEvents: function () {
       },setRhqSubsidiaryPresence: function () {
         var self = this;
         try {
-            rhqSubsidiaryPresenceList = []
-            var rhqSubsidiaryPresenceInJSSplit1 = rhqSubsidiaryPresenceInJS.split("[");
-            var rhqSubsidiaryPresenceInJSSplit2 = rhqSubsidiaryPresenceInJSSplit1[1].split("]");
-            var selectedRhqSubsidiaryPresence = rhqSubsidiaryPresenceInJSSplit2[0];
-            $.each(selectedRhqSubsidiaryPresence.split(","), function (i, e) {
-                rhqSubsidiaryPresenceList.push(e.trimLeft())
-
-            });
-            console.log(rhqSubsidiaryPresenceList);
-            if(rhqSubsidiaryPresenceList?.length > 0){
-                $("input[type=radio][name=rhqSubsidiaryPresence][value=" + rhqSubsidiaryPresenceList[0] + "]").prop('checked', true);
+            if(rhqSubsidiaryPresenceInJS != "" &&  rhqSubsidiaryPresenceInJS != undefined){
+                $("input[type=radio][name=rhqSubsidiaryPresence][value=" + rhqSubsidiaryPresenceInJS + "]").prop('checked', true);
             }
-
         }
         catch (err) {
             console.log(err);
@@ -1607,12 +1604,13 @@ bindRhqCountryInformationEvents: function () {
 
                           });
                           console.log(selectedRhqCountrieseList);
+                          if (typeof selectedRhqCountrieseList !== "undefined") {
+                              if (selectedRhqCountrieseList.length > 0) {
+                                  selectedRhqCountrieseList.forEach(function (currentValue) {
+                                      $("#branchInformationRhqCountry").multiselect("selectOption", currentValue);
+                                  });
 
-                          if (selectedRhqCountrieseList?.length > 0) {
-                            selectedRhqCountrieseList.forEach(function (currentValue) {
-                                $("#branchInformationRhqCountry").multiselect("selectOption", currentValue);
-                            });
-
+                              }
                           }
 
 
@@ -1651,7 +1649,47 @@ bindRhqCountryInformationEvents: function () {
         // $('#rhqStrategicCheckbox').html('');
         // $('#rhqManagementFunCheckbox').html('');
         // $('#branchInformationRhqRegionsSection').html('');
-        $
+        try{
+           var existingItems_rhqCheckbox =  $("#rhqCheckbox").val();
+           existingItems_rhqCheckbox.forEach(function (currentValue) {
+            $("#rhqCheckbox").multiselect("deselectOption", currentValue);
+           });
+
+        }catch(e){console.log(e)}
+
+        try{
+            var existingItems_rhqStrategicCheckbox =  $("#rhqStrategicCheckbox").val();
+            existingItems_rhqStrategicCheckbox.forEach(function (currentValue) {
+             $("#rhqStrategicCheckbox").multiselect("deselectOption", currentValue);
+            });
+
+         }catch(e){console.log(e)}
+
+         try{
+            var existingItems_rhqManagementFunCheckbox =  $("#rhqManagementFunCheckbox").val();
+            existingItems_rhqManagementFunCheckbox.forEach(function (currentValue) {
+             $("#rhqManagementFunCheckbox").multiselect("deselectOption", currentValue);
+            });
+
+         }catch(e){console.log(e)}
+
+         try{
+            var existingItems_branchInformationRhqRegionsSection =  $("#branchInformationRhqRegionsSection").val();
+            existingItems_branchInformationRhqRegionsSection.forEach(function (currentValue) {
+             $("#branchInformationRhqRegionsSection").multiselect("deselectOption", currentValue);
+            });
+
+         }catch(e){console.log(e)}
+
+         try{
+            var existingItems_branchInformationRhqCountry =  $("#branchInformationRhqCountry").val();
+            existingItems_branchInformationRhqCountry.forEach(function (currentValue) {
+             $("#branchInformationRhqCountry").multiselect("deselectOption", currentValue);
+            });
+
+         }catch(e){console.log(e)}
+
+         $('input[name="rhqSubsidiaryPresence"]').prop('checked', false);
 
 
 
@@ -2281,7 +2319,7 @@ if($("#licenseTypes").val() === "11"){
 
 
         if(objectBranches.length <1){
-            hasErrors = false;
+            hasErrors = true;
             $('#mncBranchTable-error').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.entities.managed.by.rhq.validation"));
             $('#mncBranchTable-error').parents('.form-group').addClass('has-error');
         } else {
@@ -2290,7 +2328,7 @@ if($("#licenseTypes").val() === "11"){
         }
 
         if(objectBrands.length <1){
-             hasErrors = false;
+             hasErrors = true;
              $('#mncBrandTable-error').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.brand.presence.validation"));
              $('#mncBrandTable-error').parents('.form-group').addClass('has-error');
          } else {
@@ -2299,7 +2337,7 @@ if($("#licenseTypes").val() === "11"){
          }
 
          if(objectCost.length <1){
-             hasErrors = false;
+             hasErrors = true;
              $('#rhqCostTable-error').parents('.formInputBox').find('.help-block').text(getI18nText("rhq.estimatied.operating.cost.validation"));
              $('#rhqCostTable-error').parents('.form-group').addClass('has-error');
          } else {
@@ -2342,9 +2380,7 @@ if($("#licenseTypes").val() === "11"){
         }
 
 
-        //onchanges validation start
-
-
+        //onchanges validation start on document select , multi select and multi delsect event
 
 
         $(document.body).on('change', '#rhqCheckbox', function () {
@@ -2359,6 +2395,30 @@ if($("#licenseTypes").val() === "11"){
 
         });
 
+        $("#rhqCheckbox").on("deselectiondone.bs.multiselect", function(event) {
+            console.log('changes detected...');
+            if ($('#rhqCheckbox').val().length < 3) {
+                $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.corporate.activity.validation"));
+                $('#rhqCheckbox').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqCheckbox').parents('.form-group').removeClass('has-error');
+            }
+          });
+
+          $("#rhqCheckbox").on("selectiondone.bs.multiselect", function(event) {
+            console.log('changes detected...');
+            if ($('#rhqCheckbox').val().length < 3) {
+                $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.corporate.activity.validation"));
+                $('#rhqCheckbox').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqCheckbox').parents('.form-group').removeClass('has-error');
+            }
+          });
+
+
+
         $(document.body).on('change', '#rhqStrategicCheckbox', function () {
             console.log('changes detected...');
             if ($('#rhqStrategicCheckbox').val().length < 5) {
@@ -2370,6 +2430,30 @@ if($("#licenseTypes").val() === "11"){
             }
 
         });
+
+        $("#rhqStrategicCheckbox").on("deselectiondone.bs.multiselect", function(event) {
+            console.log('changes detected...');
+            if ($('#rhqStrategicCheckbox').val().length < 5) {
+                $('#rhqStrategicCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.strategic.activity.validation"));
+                $('#rhqStrategicCheckbox').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqStrategicCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqStrategicCheckbox').parents('.form-group').removeClass('has-error');
+            }
+          });
+
+          $("#rhqStrategicCheckbox").on("selectiondone.bs.multiselect", function(event) {
+            console.log('changes detected...');
+            if ($('#rhqStrategicCheckbox').val().length < 5) {
+                $('#rhqStrategicCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.strategic.activity.validation"));
+                $('#rhqStrategicCheckbox').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqStrategicCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqStrategicCheckbox').parents('.form-group').removeClass('has-error');
+            }
+          });
+
+
         $(document.body).on('change', '#rhqManagementFunCheckbox', function () {
 
         if($('#rhqManagementFunCheckbox').val().length <7){
@@ -2382,6 +2466,28 @@ if($("#licenseTypes").val() === "11"){
 
         });
 
+        $("#rhqManagementFunCheckbox").on("deselectiondone.bs.multiselect", function(event) {
+            if($('#rhqManagementFunCheckbox').val().length <7){
+                $('#rhqManagementFunCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.management.activity.validation"));
+                $('#rhqManagementFunCheckbox').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqManagementFunCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqManagementFunCheckbox').parents('.form-group').removeClass('has-error');
+            }
+          });
+
+          $("#rhqManagementFunCheckbox").on("selectiondone.bs.multiselect", function(event) {
+            if($('#rhqManagementFunCheckbox').val().length <7){
+                $('#rhqManagementFunCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.management.activity.validation"));
+                $('#rhqManagementFunCheckbox').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqManagementFunCheckbox').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqManagementFunCheckbox').parents('.form-group').removeClass('has-error');
+            }
+          });
+
+
+
         $(document.body).on('change', '#branchInformationRhqRegionsSection', function () {
             if($('#branchInformationRhqRegionsSection').val().length <1){
                 $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.global.presence.validation"));
@@ -2393,6 +2499,27 @@ if($("#licenseTypes").val() === "11"){
 
 
         });
+
+        $("#branchInformationRhqRegionsSection").on("deselectiondone.bs.multiselect", function(event) {
+            if($('#branchInformationRhqRegionsSection').val().length <1){
+                $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.global.presence.validation"));
+                $('#branchInformationRhqRegionsSection').parents('.form-group').addClass('has-error');
+            } else {
+                $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#branchInformationRhqRegionsSection').parents('.form-group').removeClass('has-error');
+            }
+          });
+
+          $("#branchInformationRhqRegionsSection").on("selectiondone.bs.multiselect", function(event) {
+            if($('#branchInformationRhqRegionsSection').val().length <1){
+                $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.global.presence.validation"));
+                $('#branchInformationRhqRegionsSection').parents('.form-group').addClass('has-error');
+            } else {
+                $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#branchInformationRhqRegionsSection').parents('.form-group').removeClass('has-error');
+            }
+          });
+
 
 
 
@@ -2416,6 +2543,26 @@ if($("#licenseTypes").val() === "11"){
             }
 
         });
+
+        $("#rhqCenterAdmin").on("deselectiondone.bs.multiselect", function(event) {
+            if($('#rhqCenterAdmin').val().length <1){
+                $('#rhqCenterAdmin').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.center.of.administration.validation"));
+                $('#rhqCenterAdmin').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqCenterAdmin').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqCenterAdmin').parents('.form-group').removeClass('has-error');
+            }
+          });
+
+          $("#rhqCenterAdmin").on("selectiondone.bs.multiselect", function(event) {
+            if($('#rhqCenterAdmin').val().length <1){
+                $('#rhqCenterAdmin').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.center.of.administration.validation"));
+                $('#rhqCenterAdmin').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqCenterAdmin').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
+                $('#rhqCenterAdmin').parents('.form-group').removeClass('has-error');
+            }
+          });
 
 
         //onchanges validation End

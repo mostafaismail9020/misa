@@ -319,11 +319,12 @@ SAGIA.licenseApplyReview = {
 
 		$("#reviewRHQBranchesTable tbody").html('');
 		try {
-			if (objectBranches?.length > 0) {
+			if(typeof objectBranches !== "undefined"){
+			if (objectBranches.length > 0) {
 				for (var idx = 0; idx < objectBranches.length; idx++) {
 					$("#reviewRHQBranchesTable tbody").append('<tr><td>' + objectBranches[idx]['companyName'] + '</td><td>' + objectBranches[idx]['country'] + '</td><td>' + objectBranches[idx]['businessRelationshipType'] + '</td><td>' + objectBranches[idx]['industry'] + '</td><td>' + objectBranches[idx]['operations'] + '</td><td>' + objectBranches[idx]['RhqActivityProvided'] + '</td></tr>');
 				}
-			}
+			}}
 		}
 		catch (error) {
 			console.log(error)
@@ -333,12 +334,13 @@ SAGIA.licenseApplyReview = {
 
 		$("#reviewMncBrandTable tbody").html('');
 		try {
-			if (objectBrands?.length > 0) {
+			if(typeof objectBrands !== "undefined"){
+			if (objectBrands.length > 0) {
 				for (var idx = 0; idx < objectBrands.length; idx++) {
 					$("#reviewMncBrandTable tbody").append('<tr><td>' + objectBrands[idx]['brandName'] + '</td><td>' + objectBrands[idx]['country'] + '</td><td>' + objectBrands[idx]['industry'] + '</td><td>' + objectBrands[idx]['companyOwningBrandInMENA'] + '</td><td>' + objectBrands[idx]['RhqActivityProvided'] + '</td></tr>');
 
 				}
-			}
+			}}
 		}
 		catch (err) {
 			console.log(err);
@@ -347,7 +349,8 @@ SAGIA.licenseApplyReview = {
 
 		$("#reviewMncCostTable tbody").html('');
 		try {
-			if (objectCost?.length > 0) {
+			if(typeof objectCost !== "undefined"){
+			if (objectCost.length > 0) {
 				for (var idx = 0; idx < objectCost.length; idx++) {
 					$("#reviewMncCostTable tbody").append('<tr><td>' + objectCost[idx]['item'] + '</td><td>' + objectCost[idx]['unitCost'] + '</td><td>' + objectCost[idx]['noOfUnits'] + '</td><td>' + objectCost[idx]['costFrequency'] + '</td><td>' + objectCost[idx]['year2022'] + '</td><td>' + objectCost[idx]['year2023'] + '</td><td>' + objectCost[idx]['year2024'] + '</td></tr>');
 
@@ -364,6 +367,7 @@ SAGIA.licenseApplyReview = {
 				$('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
 				$('#rhqCostTable-sum3').text(objectCost.sum("year2024"));
 			}
+		}
 		}
 		catch (err) {
 			console.log(err);
@@ -394,6 +398,13 @@ SAGIA.licenseApplyReview = {
 		catch (err) {
 			console.log(err);
 		}
+
+		try{$(".centre-of-admin").each(function() {
+			var text = $(this).text();
+			text = text.replace("Middle_East_ME", "Middle East (ME)");
+			$(this).text(text);
+		});}
+		catch(e){console.log(e);}
 
 	}
 	else{

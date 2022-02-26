@@ -211,7 +211,14 @@ public class LicenseEntityInformationReversePopulator
 			final List<String> rhqCenterAdmin = new ArrayList<String>();
 			for (String center : source.getRhqCenterAdmin())
 			{
-				rhqCenterAdmin.add(center);
+				if(center.equals("Middle_East_ME"))
+				{
+					rhqCenterAdmin.add("Middle East (ME)");
+				}
+				else
+				{
+					rhqCenterAdmin.add(center);
+				}
 			}
 			target.setRhqCenterAdmin(rhqCenterAdmin);
 		}

@@ -194,17 +194,26 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				entityInformationModel.setNoObjectionCertificateFile(null);
 			}
 
-			/*if(entityInformationModel.getLicenseType().getCode().equals("11"))
+/*			if(entityInformationModel.getLicenseType().getCode().equals("11"))
 			{
 				List<ShareHolderModel> shareHolders=licenseApplyService.getShareHolders();
 				modelService.removeAll(shareHolders);
 			}*/
+
+			//Removing Saved Shareholder section as in case of RHQ Financial statement file is optional and in other case it's mandatory
+			//If user selects RHQ first and saves the Shareholder section and again come back to Entity page and selects any other license type then
+			// The financial statement file which is mandatory in CRM will be causing data issue in new License
+			//Also Professional License also needs to be enabled which will not be case if user have already saved shareholder section.
+			List<ShareHolderModel> shareHolders=licenseApplyService.getShareHolders();
+			modelService.removeAll(shareHolders);
+
 			if(entityInformationModel.getLicenseType().getCode().equals("11"))
 			{
 				saveEntityFinancialStatementEntityInfo(request, entityInformationModel);
 				saveCommercialRegMainEntryEntityInfo(request, entityInformationModel);
 				saveCommercialRegBranch1EntryEntityInfo(request, entityInformationModel);
-				saveCommercialRegBranch2EntryEntityInfo(request, entityInformationModel);			}
+				saveCommercialRegBranch2EntryEntityInfo(request, entityInformationModel);
+			}
 			else
 			{
 				entityInformationModel.setEntityFinancialStatementFile(null);

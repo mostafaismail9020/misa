@@ -168,7 +168,14 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 			final List<String> rhqCenterAdmin = new ArrayList<String>();
 			for (String center : source.getRhqCenterAdmin())
 			{
-				rhqCenterAdmin.add(center);
+				if(center.equals("Middle East (ME)"))
+				{
+					rhqCenterAdmin.add("Middle_East_ME");
+				}
+				else
+				{
+					rhqCenterAdmin.add(center);
+				}
 			}
 			target.setRhqCenterAdmin(rhqCenterAdmin);
 		}

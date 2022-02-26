@@ -335,7 +335,7 @@
                         <dl class="dlList">
                             <dt><spring:theme code="review.rhq.investor.activities.center.of.administrative.label"/></dt>
                             <c:forEach items="${entityInformation.rhqCenterAdmin}" var="centerOfAdmin">
-                                <dd class="rhqListItems">${centerOfAdmin}</dd>
+                                <dd class="rhqListItems centre-of-admin" >${centerOfAdmin}</dd>
                             </c:forEach>
                        </dl>
                     </div>

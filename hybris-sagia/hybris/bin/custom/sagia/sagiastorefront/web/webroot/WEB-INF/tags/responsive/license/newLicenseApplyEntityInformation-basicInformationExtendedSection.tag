@@ -67,7 +67,7 @@
 				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="form-control" multiple data-value="">
 					 <option value="GCC">GCC</option>
                      <option value="MENA">MENA</option>
-                     <option value="Middle East (ME)">Middle East (ME)</option>
+                     <option value="Middle_East_ME">Middle East (ME)</option>
 				</select>
 				<label class="control-label" for="rhqCenterAdmin"><spring:theme code="rhq.investor.activities.center.of.administrative.label"/></label>
 				<div id="rhqCenterAdmin-error" class="help-block"></div>
@@ -1133,6 +1133,10 @@
 .page-new-license-apply .select.modal .modal-body > .option.selected{color:#5cc83b;}
 
 .page-new-license-apply .select .modal-dialog .modal-body{padding: 0 22px;}
+.page-new-license-apply .tooltip-listItem_expanded .tooltip-listItem-body {color:#000;}
+.page-new-license-apply  .tooltip.show {
+       z-index: 999999999;
+}
 </style>
 
 
@@ -1144,7 +1148,6 @@
   	  console.log(objectBranchesString2);
 	  objectBranches = [];
       objectBranches =  JSON.parse(objectBranchesString2);
-	  console.log(objectBranches);
 
 	  objectBrandString =  ('${brandPresenceInMENARegion}');
       objectBrandString1 = objectBrandString.replace(/("{)/g, '{');
@@ -1153,7 +1156,6 @@
 	  console.log(objectBrandString2);
 	  objectBrands = [];
       objectBrands =  JSON.parse(objectBrandString2);
-	  console.log(objectBrands);
 
 	  objectCostsString =  ('${estimatedOperatingCostForRhq}');
       objectCostsString1 = objectCostsString.replace(/("{)/g, '{');
@@ -1161,14 +1163,18 @@
 
 	  console.log(objectCostsString2);
 	  objectCost = [];
-      objectCost =  JSON.parse(objectCostsString2);
-	  console.log(objectCost);
+	  if(objectCostsString2!= "" &&  objectCostsString2 != undefined){
+ 	 objectCost =  JSON.parse(objectCostsString2);
+	  }
 
-	var listOfRhqCountriesInJS =  '${sagiaApplyEntityInfoForm.listOfRhqCountries}';
-	var rhqCenterAdminInJS =  '${sagiaApplyEntityInfoForm.rhqCenterAdmin}';
-	var rhqSubsidiaryPresenceInJS =  '${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}';
-	var listOfManagementActivitiesInJS = ' ${sagiaApplyEntityInfoForm.listOfManagementActivities}';
 
-    console.log(${sagiaApplyEntityInfoForm.rhqCenterAdmin});
+	var listOfRhqCountriesInJS =  ('${sagiaApplyEntityInfoForm.listOfRhqCountries}');
+	var rhqCenterAdminInJS =  ('${sagiaApplyEntityInfoForm.rhqCenterAdmin}');
+	var rhqSubsidiaryPresenceInJS =  ('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}');
+	var listOfManagementActivitiesInJS = ('${sagiaApplyEntityInfoForm.listOfManagementActivities}');
+
+	console.log('rhqSubsidiaryPresenceInJS'+('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}'));
+
+
 
 </script>

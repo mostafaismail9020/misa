@@ -5,6 +5,10 @@ SAGIA = SAGIA || {};
 SAGIA.financialSurvey = SAGIA.financialSurvey || {};
 SAGIA.financialSurvey.data = SAGIA.financialSurvey.data || {};
 SAGIA.financialSurvey.dirtyAmendment = false;
+SAGIA.financialSurvey.isCompanyProfileSectionFilled = false;
+SAGIA.financialSurvey.isBranchSectionFilled = false;
+SAGIA.financialSurvey.isEquitySectionFilled = false;
+SAGIA.financialSurvey.isShareholdersSectionFilled = false;
 SAGIA.financialSurvey.data.letterOfSupportFile = {};
 
 
@@ -1242,6 +1246,8 @@ var submitFinancialSurveyShareholders = function () {
                 });
             } else {
                 $('a[href="#accessibletabscontent0-4"]').click();
+
+                SAGIA.financialSurvey.isShareholdersSectionFilled = true;
                 return
             }
         },
@@ -1311,6 +1317,7 @@ var submitFinancialSurveyBrnachesAndSubsidiaries = function () {
                 });
             } else {
                 $('a[href="#accessibletabscontent0-2"]').click();
+                SAGIA.financialSurvey.isBranchSectionFilled = true ;
                 return
             }
         },
@@ -1371,6 +1378,8 @@ var submitFinancialSurveyCompanyProfile = function () {
                     });
                 } else {
                     $('a[href="#accessibletabscontent0-1"]').click();
+
+                    SAGIA.financialSurvey.isCompanyProfileSectionFilled = true;
                     return
                 }
             },
@@ -1413,6 +1422,7 @@ var submitFinancialSurveyEquity = function () {
                 });
             } else {
                 $('a[href="#accessibletabscontent0-3"]').click();
+                SAGIA.financialSurvey.isEquitySectionFilled = true ;
                 return
             }
         },
@@ -1431,6 +1441,12 @@ var submitFinancialSurveyEquity = function () {
 
 function setLicenseData(data, history) {
     financialSurvey = data;
+
+
+    SAGIA.financialSurvey.isCompanyProfileSectionFilled = financialSurvey.isCompanyProfileSectionFilled;
+    SAGIA.financialSurvey.isBranchSectionFilled = financialSurvey.isBranchSectionFilled ;
+    SAGIA.financialSurvey.isEquitySectionFilled = financialSurvey.isEquitySectionFilled ;
+    SAGIA.financialSurvey.isShareholdersSectionFilled = financialSurvey.isShareholdersSectionFilled;
 
     // companyProfile
     var companyProfile = financialSurvey.companyProfile;

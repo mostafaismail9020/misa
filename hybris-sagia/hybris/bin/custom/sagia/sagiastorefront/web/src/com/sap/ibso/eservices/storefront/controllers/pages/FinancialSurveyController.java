@@ -87,6 +87,7 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
 
     private static final String SERVICE_ID = "ZS11";
     private static final String FORM_GLOBAL_ERROR = "form.global.error";
+    private static final String FORM_SURVEY_GLOBAL_ERROR = "financial.survey.global.error";
 
     @RequestMapping(value = {"", "/display/{quarterCode}"}, method = RequestMethod.GET)
     @LicenseRequired
@@ -290,6 +291,24 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     public String submit(final Model model,  @ModelAttribute("financialStatementForm") final FinancialStatementForm financialStatementForm,
                          final BindingResult result, RedirectAttributes redirectModel)  throws JSONException {
         //financialStatementValidator.validate(financialStatementForm, result);
+
+        FinancialSurvey financialSurvey = sagiaFinancialSurveyFacade.getFinancialSurvey(financialStatementForm.getSrId());
+        if (! ( financialSurvey.getIsCompanyProfileSectionFilled() && financialSurvey.getIsEquitySectionFilled()
+                && financialSurvey.getIsShareholdersSectionFilled() && financialSurvey.getIsBranchSectionFilled() ))  {
+            GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER, Localization.getLocalizedString(FORM_SURVEY_GLOBAL_ERROR));
+            getSessionService().setAttribute("financialStatementForm", financialStatementForm);
+            if(!financialSurvey.getIsCompanyProfileSectionFilled()){
+                return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab1";
+            }else if (!financialSurvey.getIsBranchSectionFilled()) {
+                return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab2";
+            }else if (!financialSurvey.getIsEquitySectionFilled()) {
+                return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab3";
+            }else if (!financialSurvey.getIsShareholdersSectionFilled()) {
+                return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab4";
+            }
+            return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab5";
+        }
+
         if (financialStatementForm.getFiles().size() <= 0) {
             GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER, Localization.getLocalizedString(FORM_GLOBAL_ERROR));
             //throw new IllegalArgumentException("Please upload only the requested files");

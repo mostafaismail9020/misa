@@ -103,6 +103,12 @@
 									   selected="true" />
 				<advanced-search:field name="surveyStatus"
 									   selected="true" />
+
+				<advanced-search:field name="isCompanyProfileSectionFilled" />
+				<advanced-search:field name="isBranchSectionFilled" />
+				<advanced-search:field name="isEquitySectionFilled" />
+				<advanced-search:field name="isShareholdersSectionFilled" />
+
 			</advanced-search:field-list>
 
 		</advanced-search:advanced-search>
@@ -656,6 +662,10 @@
 					<editorArea:attribute qualifier="companyStatus" />
 					<editorArea:attribute qualifier="isConsolidated" />
 					<editorArea:attribute qualifier="disclosureCurrency" />
+					<editorArea:attribute qualifier="isCompanyProfileSectionFilled" />
+					<editorArea:attribute qualifier="isBranchSectionFilled" />
+					<editorArea:attribute qualifier="isEquitySectionFilled" />
+					<editorArea:attribute qualifier="isShareholdersSectionFilled" />
 				</editorArea:section>
 			</editorArea:tab>
 			<editorArea:tab name="FinancialSurveyEquityTab" position="10">
@@ -740,6 +750,10 @@
 					<editorArea:attribute qualifier="companyStatus" />
 					<editorArea:attribute qualifier="isConsolidated" />
 					<editorArea:attribute qualifier="disclosureCurrency" />
+					<editorArea:attribute qualifier="isCompanyProfileSectionFilled" />
+					<editorArea:attribute qualifier="isBranchSectionFilled" />
+					<editorArea:attribute qualifier="isEquitySectionFilled" />
+					<editorArea:attribute qualifier="isShareholdersSectionFilled" />
 				</editorArea:section>
 			</editorArea:tab>
 			<editorArea:tab name="FinancialSurveyEquityTab" position="10">

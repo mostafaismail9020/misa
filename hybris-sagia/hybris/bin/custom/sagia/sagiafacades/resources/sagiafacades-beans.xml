@@ -85,6 +85,10 @@
 		<property name="letterOfSupportFileName" type="java.lang.String"/>
 		<property name="letterOfSupportFileMimeType" type="java.lang.String"/>
 		<property name="isConsolidated" type="Boolean"/>
+		<property name="isCompanyProfileSectionFilled" type="Boolean"/>
+		<property name="isBranchSectionFilled" type="Boolean"/>
+		<property name="isEquitySectionFilled" type="Boolean"/>
+		<property name="isShareholdersSectionFilled" type="Boolean"/>
 
 	</bean>
 

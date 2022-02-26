@@ -521,12 +521,13 @@ SAGIA.dashboardWithLicense = {
                                 //template.find(".lastUpdate").html(ticket.lastUpdateData.dateFormatted);
                                 template.find(".quarter").html(survey.quarter);
                                 template.find(".lastUpdate").html(survey.lastUpdate);
-                                template.find(".dashboardWidgetTickets-status-open").html(survey.status);
+                                template.find(".dashboardWidgetTickets-status-open").html(getI18nText(survey.status));
                                 template.find(".dashboardWidgetTickets-status-open").addClass(function () {
                                     switch (survey.status) {
-                                        case 'Resolved':
+                                        case 'PROCESSED':
                                             return 'dashboardWidgetTickets-status_code01';
                                         case 'OPEN':
+                                        case 'IN_PROGRESS':
                                         case 'SUBMITTED':
                                             return 'dashboardWidgetTickets-status_code02';
                                         case 'WAITING_FOR_CUSTOMER_ACTION':
@@ -535,7 +536,7 @@ SAGIA.dashboardWithLicense = {
                                     }
                                 });
 
-                                if (survey.status == 'OPEN') {
+                                if (survey.status == 'OPEN' || survey.status == 'WAITING_FOR_CUSTOMER_ACTION' || survey.status == 'IN_PROGRESS') {
                                     //template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text(getI18nText("financial.survey.button.fill.survey"));
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text(getI18nText("financial.survey.button.fill.survey"));
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("class","btn btn_slim draftContinueBtn");

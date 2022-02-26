@@ -3232,7 +3232,6 @@
 		<property name="gosiCertificateFileAdded" type="boolean"/>
 		<property name="noObjectionCertificateFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="noObjectionCertificateFileAdded" type="boolean"/>
-		<property name="noObjectionCertificateFileAdded" type="boolean"/>
 		<!-- New RHQ Requirement -->
 		<property name="listOfEntitiesManagedByRhq" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.EntitiesManagedByRhq&gt;"/>
 		<property name="listOfBrandPresenceInMENARegion" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.BrandPresenceInMENARegion&gt;"/>

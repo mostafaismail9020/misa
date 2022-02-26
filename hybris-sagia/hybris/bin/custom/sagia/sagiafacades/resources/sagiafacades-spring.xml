@@ -1758,16 +1758,11 @@
     <bean id="sagiaSaveEntityInfo" class="com.sap.ibso.eservices.facade.actions.SagiaSaveEntityInfo" parent="abstractAction">
     </bean>
 
-
-
-    <bean id="sagiaCreateShareholders" class="com.sap.ibso.eservices.facade.actions.SagiaCreateShareholders" parent="abstractAction">
-
 	<bean id="sagiaSendRhqTables" class="com.sap.ibso.eservices.facade.actions.SagiaSendRhqTables" parent="abstractAction">
 	</bean>
 
 	<bean id="sagiaCreateShareholders" class="com.sap.ibso.eservices.facade.actions.SagiaCreateShareholders" parent="abstractAction">
     </bean>
-
 
     <bean id="sagiaSaveContactPerson" class="com.sap.ibso.eservices.facade.actions.SagiaSaveContactPerson" parent="abstractAction">
     </bean>

@@ -1516,13 +1516,16 @@ bindRhqCountryInformationEvents: function () {
         var self = this;
         try {
             managementActivitiesParsedList = []
-            var selectedManagementListSplit1 = listOfManagementActivitiesInJS.split("[");
-            var selectedManagementListSplit2 = selectedManagementListSplit1[1].split("]");
-            var selectedManagementList = selectedManagementListSplit2[0];
-            $.each(selectedManagementList.split(","), function (i, e) {
-                managementActivitiesParsedList.push(e.trimLeft())
+            if(typeof listOfManagementActivitiesInJS !== "undefined" && listOfManagementActivitiesInJS !== "")
+             {
+                var selectedManagementListSplit1 = listOfManagementActivitiesInJS.split("[");
+                var selectedManagementListSplit2 = selectedManagementListSplit1[1].split("]");
+                var selectedManagementList = selectedManagementListSplit2[0];
+                $.each(selectedManagementList.split(","), function (i, e) {
+                    managementActivitiesParsedList.push(e.trimLeft())
 
-            });
+                });
+            }
 
 
             setTimeout(function () {
@@ -1545,13 +1548,17 @@ bindRhqCountryInformationEvents: function () {
         var self = this;
         try {
             RHQCenterfinalParsedList = []
-            var selectedrhqCenterAdminSplit1 = rhqCenterAdminInJS.split("[");
-            var selectedrhqCenterAdminSplit2 = selectedrhqCenterAdminSplit1[1].split("]");
-            var selectedRhqCenterAdmin = selectedrhqCenterAdminSplit2[0];
-            $.each(selectedRhqCenterAdmin.split(","), function (i, e) {
-                RHQCenterfinalParsedList.push(e.trimLeft())
+            if(typeof rhqCenterAdminInJS !== "undefined" && rhqCenterAdminInJS !== "")
+            {
+                        var selectedrhqCenterAdminSplit1 = rhqCenterAdminInJS.split("[");
+                        var selectedrhqCenterAdminSplit2 = selectedrhqCenterAdminSplit1[1].split("]");
+                        var selectedRhqCenterAdmin = selectedrhqCenterAdminSplit2[0];
+                        $.each(selectedRhqCenterAdmin.split(","), function (i, e) {
+                            RHQCenterfinalParsedList.push(e.trimLeft())
 
-            });
+                        });
+            }
+
 
             setTimeout(function () {
                 try{

@@ -1139,7 +1139,6 @@
 }
 </style>
 
-
 <script>
 	  objectBranchesString =  ('${entitiesManagedByRhq}');
       objectBranchesString1 = objectBranchesString.replace(/("{)/g, '{');
@@ -1172,7 +1171,6 @@
 	var rhqCenterAdminInJS =  ('${sagiaApplyEntityInfoForm.rhqCenterAdmin}');
 	var rhqSubsidiaryPresenceInJS =  ('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}');
 	var listOfManagementActivitiesInJS = ('${sagiaApplyEntityInfoForm.listOfManagementActivities}');
-
 	console.log('rhqSubsidiaryPresenceInJS'+('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}'));
 
 

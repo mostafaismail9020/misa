@@ -120,6 +120,13 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
         shareholderEquity.setShareholderEquityOthersCurrentQuarter(financialSurveyModel.getShareholderEquityOthersCurrentQuarter());
         shareholderEquity.setMinorityRightsCurrentQuarter(financialSurveyModel.getMinorityRightsCurrentQuarter());
         shareholderEquity.setTotalShareholderEquityCurrentQuarter(financialSurveyModel.getTotalShareholderEquityCurrentQuarter());
+
+
+        financialSurvey.setIsBranchSectionFilled(financialSurveyModel.isIsBranchSectionFilled());
+        financialSurvey.setIsCompanyProfileSectionFilled(financialSurveyModel.isIsCompanyProfileSectionFilled());
+        financialSurvey.setIsEquitySectionFilled(financialSurveyModel.isIsEquitySectionFilled());
+        financialSurvey.setIsShareholdersSectionFilled(financialSurveyModel.isIsShareholdersSectionFilled());
+
         financialSurvey.setShareholderEquity(shareholderEquity);
     }
 

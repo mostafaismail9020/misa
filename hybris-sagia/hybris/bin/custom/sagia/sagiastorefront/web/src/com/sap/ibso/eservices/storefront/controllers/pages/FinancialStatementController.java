@@ -4,6 +4,8 @@ package com.sap.ibso.eservices.storefront.controllers.pages;
 import atg.taglib.json.util.JSONException;
 import atg.taglib.json.util.JSONObject;
 import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
+import com.sap.ibso.eservices.core.model.SagiaServiceModel;
+import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
 import com.sap.ibso.eservices.facades.data.zesrvEnhOData.FinancialStatementHDR;
 import com.sap.ibso.eservices.facades.sagia.AverageProcessingTimeFacade;
 import com.sap.ibso.eservices.facades.sagia.SagiaDraftFacade;
@@ -19,9 +21,11 @@ import com.sap.ibso.eservices.storefront.forms.validation.SagiaFinancialStatemen
 import com.sap.ibso.eservices.storefront.interceptors.beforecontroller.LicenseRequired;
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.ThirdPartyConstants;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.user.UserService;
+import de.hybris.platform.util.localization.Localization;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.core.io.InputStreamResource;
@@ -37,15 +41,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
-import com.sap.ibso.eservices.core.model.SagiaServiceModel;
-import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
-import de.hybris.platform.util.localization.Localization;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.InputStream;
-import java.util.Collection;
 import java.util.List;
 
 
@@ -62,9 +61,12 @@ public class FinancialStatementController extends SagiaAbstractPageController {
     private static final String SAGIA_FINANCIAL_STATEMENT_CMS_PAGE = "financial-statement";
     private static final String SERVICE_ID = "ZS11";
     private static final String CREATE_FINANCE_SERVICE = "createFinanceService";
-    
+
     private static final String FORM_GLOBAL_ERROR = "form.global.error";
-    
+    private static final String FORM_GLOBAL_SURVEY = "financial.survey.global.error";
+
+
+
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
 
@@ -82,18 +84,18 @@ public class FinancialStatementController extends SagiaAbstractPageController {
 
     @Resource(name = "sagiaDraftFacade")
     private SagiaDraftFacade sagiaDraftFacade;
-	
+
 	@Resource(name = "sagiaSearchService")
-    private SagiaSearchService searchService;	
-    
+    private SagiaSearchService searchService;
+
     @Resource(name = "sagiaFinancialStatementFacade")
     private SagiaFinancialStatementFacade sagiaFinancialStatementFacade;
- 	
+
     @Resource(name = "financialStatementValidator")
     SagiaFinancialStatementValidator financialStatementValidator;
-    
 
-    
+
+
     /**
      * read  Financial Statement by srID
      * @return details for a specific Financial Statement entity
@@ -109,7 +111,7 @@ public class FinancialStatementController extends SagiaAbstractPageController {
     	}
         return new ResponseEntity<>(financialStatementHDR, HttpStatus.OK);
     }
-    
+
     /**
      * read Financial Statement list
      * @param model
@@ -141,7 +143,7 @@ public class FinancialStatementController extends SagiaAbstractPageController {
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);
         return getViewForPage(model);
     }
-    
+
     /**
      * @return page for creating a new Financial Statement request
      */
@@ -166,7 +168,7 @@ public class FinancialStatementController extends SagiaAbstractPageController {
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);
         return getViewForPage(model);
     }
-    
+
     /**
      * Create a Financial Statement request
      * @param model
@@ -180,7 +182,7 @@ public class FinancialStatementController extends SagiaAbstractPageController {
                          final BindingResult result, RedirectAttributes redirectModel)  throws JSONException {
     	financialStatementValidator.validate(financialStatementForm, result);
     	if (financialStatementForm.getFiles().size() <= 0) {
-    		GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER, Localization.getLocalizedString(FORM_GLOBAL_ERROR));
+    		GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER, Localization.getLocalizedString(FORM_GLOBAL_SURVEY));
             //throw new IllegalArgumentException("Please upload only the requested files");
     		getSessionService().setAttribute("financialStatementForm", financialStatementForm);
             redirectModel.addFlashAttribute("org.springframework.validation.BindingResult.financialStatementForm", result);
@@ -213,7 +215,7 @@ public class FinancialStatementController extends SagiaAbstractPageController {
         }
         return REDIRECT_PREFIX + "/financial-statement";
     }
-    
+
     /**
      * Displays a Financial Statement based on its id
      * @param srId
@@ -232,8 +234,8 @@ public class FinancialStatementController extends SagiaAbstractPageController {
         }
         return "fragments/legalConsultation/expandedFinancialStatement";
     }
-    
-    
+
+
     @RequestMapping(method = RequestMethod.GET, path = "/attachment/{objectId}/{documentID}")
     @RequireHardLogIn
     @LicenseRequired
@@ -255,5 +257,5 @@ public class FinancialStatementController extends SagiaAbstractPageController {
     public FinancialStatementForm getFinancialStatementForm() {
         return new FinancialStatementForm();
     }
-    
+
 }

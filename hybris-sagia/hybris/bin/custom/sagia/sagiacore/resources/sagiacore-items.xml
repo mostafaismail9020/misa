@@ -184,6 +184,7 @@
 
         <enumtype code="FinancialSurveyStatus" dynamic="true">
             <value code="OPEN"/>
+            <value code="IN_PROGRESS"/>
             <value code="SUBMITTED"/>
             <value code="WAITING_FOR_CUSTOMER_ACTION"/>
             <value code="PROCESSED"/>
@@ -10924,6 +10925,37 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+                    <attribute qualifier="isCompanyProfileSectionFilled" type="boolean">
+                        <description>Is Company Profile Section Filled</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="false" />
+                        <persistence type="property"/>
+                        <defaultvalue>false</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="isBranchSectionFilled" type="boolean">
+                        <description>Is Branch Section Filled</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="false" />
+                        <persistence type="property"/>
+                        <defaultvalue>false</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="isEquitySectionFilled" type="boolean">
+                        <description>Is Equity Section Filled</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="false" />
+                        <persistence type="property"/>
+                        <defaultvalue>false</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="isShareholdersSectionFilled" type="boolean">
+                        <description>Is Shareholders Section Filled</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="false" />
+                        <persistence type="property"/>
+                        <defaultvalue>false</defaultvalue>
+                    </attribute>
+
+
+
 
                 </attributes>
             </itemtype>

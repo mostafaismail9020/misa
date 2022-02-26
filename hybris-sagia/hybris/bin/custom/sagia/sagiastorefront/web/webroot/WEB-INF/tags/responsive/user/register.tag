@@ -72,7 +72,7 @@
 					<div class="formInputBox-split">
 						<formElement:formInputBox idKey="quickregistration.register.mobileCountryCode"
 												  labelKey="register.mobileCountryCode" path="mobileCountryCode"
-												  inputCSS="form-control_preNumber js-mobile-coutry-code"/>
+												  inputCSS="form-control_preNumber js-mobile-coutry-code" readonly="true" />
 						<formElement:formInputBox idKey="quickregistration.register.mobileNumber"
 												  labelKey="register.mobileNumber" path="mobileNumber"
 												  helpBlockSuccessCSS="js-help-block-success"

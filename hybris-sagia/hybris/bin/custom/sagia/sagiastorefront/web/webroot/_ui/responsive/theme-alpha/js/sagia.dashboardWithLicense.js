@@ -413,7 +413,7 @@ SAGIA.dashboardWithLicense = {
                                 	template.find(".dashboardWidgetPayments-pay").find("a").attr("style","float: left;");
                                 	template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+payment.serviceId+",'"+payment.name+"',"+payment.amount+",'"+payment.currency+"')");
                                 	isAwaitingPayment = true;
-                                }                                
+                                }
                                 paymentsTable.append(template.html());
                             }
                         }
@@ -422,7 +422,7 @@ SAGIA.dashboardWithLicense = {
                         }else {
                         	$("#awaitingPaymentDiv").css("display", "none");
                         }
-                        
+
                         var paginationHtml = '<div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link payment active">1</a></div>';
                         for (var i = 2; i <= payments.PaymentsPagesNumber; i++) {
                             paginationHtml += '<div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link payment">' + i + '</a></div>';
@@ -495,6 +495,60 @@ SAGIA.dashboardWithLicense = {
                 error: function () {
                     //ticketsTable.empty();
                     //$(".dashboardWidgetTickets .paginationModule-items").empty();
+                    var errorModal = $('#errorResponseModal');
+                    errorModal.find('.modal-description').html(getI18nText("general.couldnot.load.tickets"));
+                    errorModal.modal('show');
+                    $('.dashboardWidgetTickets .loadingModule .loadingModule-icon').hide();
+                    $('.dashboardWidgetTickets .loadingModule .loadingModule-msg').html("<svg width=\"68\" height=\"60\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 68 60\"><g transform=\"translate(2 2)\" fill=\"none\" fill-rule=\"evenodd\"><path stroke=\"#5CC83B\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M63.173 55.36H.8l10.077-17.845h.003L31.987.134l21.109 37.381h.002z\"></path><path d=\"M32 17c-1.104 0-2 .902-2 2.018v18.146c0 1.116.896 2.018 2 2.018s2-.902 2-2.018V19.018A2.009 2.009 0 0 0 32 17z\" fill=\"#32465A\" fill-rule=\"nonzero\"></path><circle fill=\"#32465A\" cx=\"32\" cy=\"46\" r=\"2\"></circle></g></svg>&nbsp;<span>"+getI18nText('general.couldnot.load.tickets')+"</span>");
+                }
+            });
+        }
+
+
+        var financialSurveysTable = $("#financialSurveysTable");
+        var financialSurveysSection = $("#yourFinancialSurveys");
+        if(financialSurveysSection.closest('.js-component').css('display') !== 'none') {
+            $.ajax({
+                url: ACC.config.encodedContextPath + "/dashboard/financialSurveys",
+                method: 'GET',
+                ajaxHideLoadingIndicator: true,
+                success: function (financialSurveys) {
+                    if (financialSurveys && financialSurveys.surveys ) {
+                        for (var index in financialSurveys.surveys) {
+                            if (financialSurveys.surveys.hasOwnProperty(index)) {
+                                var survey = financialSurveys.surveys[index];
+                                var template = $(".financialSurveyTemplateWrapper").find("tbody").clone();
+                                //template.find(".lastUpdate").html(ticket.lastUpdateData.dateFormatted);
+                                template.find(".quarter").html(survey.quarter);
+                                template.find(".lastUpdate").html(survey.lastUpdate);
+                                template.find(".dashboardWidgetTickets-status-open").html(survey.status);
+                                template.find(".dashboardWidgetTickets-status-open").addClass(function () {
+                                    switch (survey.status) {
+                                        case 'Resolved':
+                                            return 'dashboardWidgetTickets-status_code01';
+                                        case 'OPEN':
+                                        case 'SUBMITTED':
+                                            return 'dashboardWidgetTickets-status_code02';
+                                        case 'WAITING_FOR_CUSTOMER_ACTION':
+                                        default:
+                                            return 'dashboardWidgetTickets-status_code03';
+                                    }
+                                });
+
+                                if (survey.status == 'OPEN') {
+                                    //template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text(getI18nText("financial.survey.button.fill.survey"));
+                                    template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text(getI18nText("financial.survey.button.fill.survey"));
+                                    template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("class","btn btn_slim draftContinueBtn");
+                                    template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("style","float: left;");
+                                    template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr('href', ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/display/" + survey.quarterCode);
+                                }
+                                template.find(".dashboardWidgetFinancialSurveys-btn").attr("data-complaint-Id", survey.quarterCode);
+                                financialSurveysTable.append(template.html());
+                            }
+                        }
+                    }
+                },
+                error: function () {
                     var errorModal = $('#errorResponseModal');
                     errorModal.find('.modal-description').html(getI18nText("general.couldnot.load.tickets"));
                     errorModal.modal('show');
@@ -662,10 +716,10 @@ SAGIA.dashboardWithLicense = {
                 if (accountManager.general) {
                     var askYourAccountManagerSection = $("#askYourAccountManagerSection");
                     var askYourExpertList = $("#askYourAccountManagerSection > .dashboardWidgetAskOurExpert-list");
-                    
+
                     askYourExpertList.hide();
                     askYourAccountManagerSection.show();
-                    
+
                     askYourAccountManagerSection.find(".dashboardWidgetAskOurExpert-manager-name").text(
                         accountManager.title + ' ' + accountManager.firstName + ' ' + accountManager.lastName);
 

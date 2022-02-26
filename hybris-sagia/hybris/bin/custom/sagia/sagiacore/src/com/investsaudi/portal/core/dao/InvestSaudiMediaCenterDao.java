@@ -48,5 +48,11 @@ public interface InvestSaudiMediaCenterDao {
     List<InvestSaudiResourceComponentModel> getrecentResourceDetails(Date resourceDate);
     
     List<InvestSaudiEventsComponentModel> getrecentEventDetails(Date eventStartDate);
+    
+    SearchPageData<InvestSaudiNewsComponentModel> getRegionNews(PaginationData paginationData, String provinceId);
+    
+    SearchPageData<InvestSaudiResourceComponentModel> getRegionResources(PaginationData paginationData, String provinceId);
+    
+    SearchPageData<InvestSaudiEventsComponentModel> getRegionEvents(PaginationData paginationData, String provinceId);
 
 }

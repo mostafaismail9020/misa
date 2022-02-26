@@ -12,6 +12,8 @@ import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commercefacades.product.data.SuccessStoryData;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
 
+import de.hybris.platform.core.servicelayer.data.PaginationData;
+
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
@@ -155,6 +157,26 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
         }
 
         return populateSuccessStorySearchPageData(successStoryProductModelSearchPageData, successStoryDataList);
+    }
+    
+    @Override
+    public SearchPageData<OpportunityData> searchOpportunityByRegion(PaginationData paginationData, String regionId) {
+
+        SearchPageData<OpportunityProductModel> opportunityProductModelSearchPageData = investSaudiProductService.searchOpportunityByRegion(paginationData, regionId);
+        List<ProductData> productDataList = new ArrayList<>();
+        List<OpportunityData> opportunityDataList = new ArrayList<>();
+
+        for (OpportunityProductModel opportunityProductModel : emptyIfNull(opportunityProductModelSearchPageData.getResults())) {
+            ProductData productData = new ProductData();
+            investSaudiOpportunityPopulator.populate(productData, opportunityProductModel);
+            productDataList.add(productData);
+        }
+
+        for (ProductData productData : productDataList) {
+            opportunityDataList.add(createOpportunityData(productData));
+        }
+
+        return populateOpportunitySearchPageData(opportunityProductModelSearchPageData, opportunityDataList);
     }
 
 

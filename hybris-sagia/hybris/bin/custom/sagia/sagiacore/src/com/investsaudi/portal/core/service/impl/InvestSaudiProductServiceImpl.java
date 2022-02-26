@@ -103,4 +103,10 @@ public class InvestSaudiProductServiceImpl implements InvestSaudiProductService
 
         return investSaudiSuccessStoryDao.searchSuccessStoriesByNameAndSectors(text, categories, paginationData);
     }
+    
+    @Override
+    public SearchPageData<OpportunityProductModel> searchOpportunityByRegion(PaginationData paginationData, String regionId) {
+
+        return investSaudiOpportunityDao.searchOpportunityByRegion(paginationData, regionId);
+    }
 }

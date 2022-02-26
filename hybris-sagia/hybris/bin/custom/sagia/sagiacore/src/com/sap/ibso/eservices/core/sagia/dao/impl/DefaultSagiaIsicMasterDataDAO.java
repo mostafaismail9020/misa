@@ -2,10 +2,7 @@ package com.sap.ibso.eservices.core.sagia.dao.impl;
 
 import com.sap.ibso.eservices.core.model.IsicMasterModel;
 import com.sap.ibso.eservices.core.model.IsicTextsModel;
-import com.sap.ibso.eservices.core.model.SagiaCityModel;
-import com.sap.ibso.eservices.core.model.SagiaLicenseTypeModel;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaIsicMasterDataDAO;
-import de.hybris.platform.search.restriction.SearchRestrictionService;
 import de.hybris.platform.servicelayer.internal.dao.DefaultGenericDao;
 import de.hybris.platform.servicelayer.search.SearchResult;
 import org.apache.commons.collections.CollectionUtils;
@@ -30,6 +27,20 @@ public class DefaultSagiaIsicMasterDataDAO extends DefaultGenericDao<IsicMasterM
 
         final Map parameters = new HashMap();
         parameters.put(IsicMasterModel.LICENSETYPE, licenseType);
+        parameters.put(IsicMasterModel.ACTIVE, Boolean.TRUE);
+        List parameterList = find(parameters);
+        if(CollectionUtils.isNotEmpty(parameterList)){
+            return parameterList;
+        } else {
+            return null;
+        }
+
+    }
+
+    @Override
+    public Collection<IsicMasterModel> getAllIsicMasterForAllLicenseType() {
+
+        final Map parameters = new HashMap();
         parameters.put(IsicMasterModel.ACTIVE, Boolean.TRUE);
         List parameterList = find(parameters);
         if(CollectionUtils.isNotEmpty(parameterList)){
@@ -67,7 +78,7 @@ public class DefaultSagiaIsicMasterDataDAO extends DefaultGenericDao<IsicMasterM
         query.append(" FROM {" + IsicMasterModel._TYPECODE + " as m }");
         query.append(" WHERE {m: " + IsicMasterModel.ACTIVE + "} = ?active ");
         query.append(" AND {m: " + IsicMasterModel.ISICACTIVITY + "} in (?isicActivityCodes) ");
-        
+
         final Map<String, Object> parameters = new HashMap<String, Object>();
         parameters.put("active", Boolean.TRUE);
         parameters.put("isicActivityCodes", isicActivityCodes);
@@ -85,7 +96,7 @@ public class DefaultSagiaIsicMasterDataDAO extends DefaultGenericDao<IsicMasterM
         query.append(" FROM {" + IsicTextsModel._TYPECODE + " as m }");
         query.append(" WHERE {m: " + IsicTextsModel.ISICCOLUMNTYPE + " } = 'SECTION'");
         query.append(" AND {m: " + IsicTextsModel.CODE + "} in ({{ select {ISICSECTION} from {IsicMaster} WHERE {ACTIVE} = 1 GROUP BY {ISICSECTION} }})");
-        
+
         final SearchResult<IsicTextsModel> result = getFlexibleSearchService().search(query.toString());
 
         return result.getResult();
@@ -101,13 +112,13 @@ public class DefaultSagiaIsicMasterDataDAO extends DefaultGenericDao<IsicMasterM
         query.append(" FROM {" + IsicTextsModel._TYPECODE + " as m }");
         query.append(" WHERE {m: " + IsicTextsModel.ISICCOLUMNTYPE + " } = 'DIVISION'");
         query.append(" AND {m: " + IsicTextsModel.CODE + "} in ({{ select {ISICDIVISION} from {IsicMaster} WHERE {ACTIVE} = 1 AND {ISICSECTION} = ?sectionID GROUP BY {ISICDIVISION}  }})");
-        
+
         final Map<String, Object> parameters = new HashMap<String, Object>();
         parameters.put("sectionID", sectionID);
-        
+
         final SearchResult<IsicTextsModel> result = getFlexibleSearchService().search(query.toString(),parameters);
 
         return result.getResult();
 	}
-	
+
 }

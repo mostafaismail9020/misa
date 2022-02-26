@@ -171,7 +171,8 @@ SAGIA.licenseApplyEntityInfo = {
     },
 
     preApprovalNumberYesEvent: function () {
-    	this.attachmentSection.show();
+    	//this.attachmentSection.show();
+    	this.attachmentSection.hide();
         this.isPreApprovalNumberSection.show();
         this.isPreApprovalNumberSection.find("input").focus();
         this.preApprovalNrAttachment.show();
@@ -1635,6 +1636,7 @@ bindRhqCountryInformationEvents: function () {
     	var isEntrepreneur = $('[name=isEntrepreneur]').filter(':checked').val();
     	var isPreApprovalNumber = $('[name=isPreApprovalNumber]').filter(':checked').val();
     	var self = this;
+        $('#branchAttachmentNewRhq').css("display", "none");
 
     	if(isEntrepreneur === 'yes'){
     		self.loadYearsDropDownForEntrepreneur();

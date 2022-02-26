@@ -1798,7 +1798,7 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			MultipartFile companyMemoAssociationFile = ((MultipartHttpServletRequest) request).getFile("companyMemoAssociationFile");
 			MultipartFile companyProfessionalLicenseFile = ((MultipartHttpServletRequest) request).getFile("companyProfessionalLicenseFile");
 
-			MultipartFile authorizationLetterFile = ((MultipartHttpServletRequest) request).getFile("companyFinancialStatementFile");
+			MultipartFile authorizationLetterFile = ((MultipartHttpServletRequest) request).getFile("authorizationLetterFile");
 			MultipartFile idCopyFile = ((MultipartHttpServletRequest) request).getFile("saudiIdCopy");
 
 			boolean isShareHolderEdition = StringUtils.isNotEmpty(form.getCode());

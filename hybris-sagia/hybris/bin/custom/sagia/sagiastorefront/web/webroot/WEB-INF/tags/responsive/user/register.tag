@@ -72,7 +72,7 @@
 					<div class="formInputBox-split">
 						<formElement:formInputBox idKey="quickregistration.register.mobileCountryCode"
 												  labelKey="register.mobileCountryCode" path="mobileCountryCode"
-												  inputCSS="form-control_preNumber js-mobile-coutry-code"/>
+												  inputCSS="form-control_preNumber js-mobile-coutry-code" readonly="true" />
 						<formElement:formInputBox idKey="quickregistration.register.mobileNumber"
 												  labelKey="register.mobileNumber" path="mobileNumber"
 												  helpBlockSuccessCSS="js-help-block-success"
@@ -128,6 +128,7 @@
 						<input type="hidden" id="recaptchaChallangeAnswered"
 							value="${requestScope.recaptchaChallangeAnswered}" />
 						<div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
+						<span id="lblErrorCaptcha" class="mandatory"></span>
 						<div class="form-actions clearfix">
 							<ycommerce:testId code="register_Register_button">
 								<button type="submit" class="btn btn-default quick-register js-quick-register-btn font-weight-bold"><spring:theme code='${actionNameKey}'/></button>

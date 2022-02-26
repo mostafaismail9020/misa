@@ -4,6 +4,7 @@ import com.investsaudi.portal.core.service.utils.PaginationUtils;
 import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.impl.ContentPageBreadcrumbBuilder;
 import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractPageController;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
@@ -96,6 +97,17 @@ public class AboutSaudiPageController extends DefaultPageController {
 			
 	{
 		LOG.info("Hit Successfully POST Contact Controller");
+		
+		
+		if (bindingResult.hasErrors()) {
+			model.addAttribute("contactUsForm",contactUsFormData);
+			GlobalMessages.addFlashMessage(
+			          redirectModel,
+			          GlobalMessages.ERROR_MESSAGES_HOLDER,
+			          "invalid captcha." );
+			return "redirect:/contactUs";
+
+        }
 		
 		if(Objects.nonNull(contactUsFormData)) {
 			LOG.debug("First Name "+contactUsFormData.getFirstName());

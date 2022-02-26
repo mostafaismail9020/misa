@@ -18,6 +18,9 @@ import de.hybris.platform.cms2.model.pages.ContentPageModel;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
 import de.hybris.platform.util.Config;
 
+import com.investsaudi.portal.facades.product.InvestSaudiProductFacade;
+import de.hybris.platform.commercefacades.product.data.OpportunityData;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,6 +40,13 @@ import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.impl.ContentPa
 import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
 
 import com.sap.ibso.eservices.storefront.controllers.pages.portal.DefaultPageController;
+
+import com.investsaudi.portal.core.model.InvestSaudiNewsComponentModel;
+import com.investsaudi.portal.core.model.InvestSaudiEventsComponentModel;
+import com.investsaudi.portal.core.model.InvestSaudiResourceComponentModel;
+import com.investsaudi.portal.core.service.InvestSaudiMediaCenterService;
+import com.investsaudi.portal.core.service.utils.PaginationUtils;
+import de.hybris.platform.core.servicelayer.data.SearchPageData;
 
 
 @Controller
@@ -61,6 +71,11 @@ public class MeetTheKingdomController extends DefaultPageController {
     @Resource
     private InvestSaudiProvinceRegionService investSaudiProvinceRegionService;
     
+    @Resource
+    private InvestSaudiMediaCenterService investSaudiMediaCenterService;
+    
+    @Resource
+    private InvestSaudiProductFacade investSaudiProductFacade;    
     
     
     @RequestMapping(value = "/aboutKingdom", method = {RequestMethod.GET})
@@ -132,6 +147,18 @@ public class MeetTheKingdomController extends DefaultPageController {
         	List<ProvinceInvestmentOpportunitiesComponentModel> investmentOpportunities = provinceDetails.getInvestmentOpportunities();
         	model.addAttribute("investmentOpportunities", investmentOpportunities);
         }
+        
+        SearchPageData<InvestSaudiNewsComponentModel> regionNewsData = investSaudiMediaCenterService.getRegionNews(PaginationUtils.createPaginationData(0, 3), provinceId);
+        model.addAttribute("regionNewsData", regionNewsData);
+        
+        SearchPageData<InvestSaudiResourceComponentModel> regionResourcesData = investSaudiMediaCenterService.getRegionResources(PaginationUtils.createPaginationData(0, 3), provinceId);
+        model.addAttribute("regionResourcesData", regionResourcesData);
+        
+        SearchPageData<InvestSaudiEventsComponentModel> regionEventsData = investSaudiMediaCenterService.getRegionEvents(PaginationUtils.createPaginationData(0, 3), provinceId);
+        model.addAttribute("regionEventsData", regionEventsData);
+        
+        SearchPageData<OpportunityData> regionProductsData = investSaudiProductFacade.searchOpportunityByRegion(PaginationUtils.createPaginationData(0, 3), provinceId);
+        model.addAttribute("regionProductsData", regionProductsData);
         
         ContentPageModel contentPageModel = getContentPageForLabelOrId(PROVINCE_DETAILS_PAGE);
         storeCmsPageInModel(model, contentPageModel);

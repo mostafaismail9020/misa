@@ -5,6 +5,8 @@ import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commercefacades.product.data.SuccessStoryData;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
 
+import de.hybris.platform.core.servicelayer.data.PaginationData;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -74,4 +76,5 @@ public interface InvestSaudiProductFacade extends Serializable {
      */
     SearchPageData<SuccessStoryData> searchSuccessStoriesByNameAndSectors(String text, List<String> categories, int currentPage, int pageSize);
 
+    SearchPageData<OpportunityData> searchOpportunityByRegion(PaginationData paginationData, String regionId);
 }

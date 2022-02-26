@@ -103,8 +103,17 @@
                             id="crMessage" name="Message" rows="5" style="padding: 20px; padding-left: 35px; padding-top: 25px;"></textarea>
                             <div class="error-msg"></div>
                         </div>
+                        
+                         <div class="form-group form-floating col-md-12 form-normal-item">
+                            <input type="hidden" id="recaptchaChallangeAnswered"
+							value="${requestScope.recaptchaChallangeAnswered}" />
+                         <div class="form_field-elements control-group js-recaptcha-captchaaddon sector-page-captcha"></div>
+                         <span id="lblSectorPageErrorCaptcha" class="mandatory"></span>
+                        </div>
+                         
+                            
                         <div class="row form-action-btn my-4" style="padding-left: 15px; padding-right: 15px;">
-                            <div class="col-md-3">
+                       <div class="col-md-3">
                             	<button type="button" id="contact-clear" class="btn btn-primary-fill btn-form-outline w-100">
                             		<spring:theme code="portal.sector.download.clear.button"/></button></div>
                             <div class="col-md-3"><button id="btn-contact" type="submit" class="responsive-contact-btn btn btn-primary-fill btn-form-fill  w-100">

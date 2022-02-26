@@ -3,26 +3,20 @@ package com.sap.ibso.eservices.facades.sagia.impl;
 import com.sap.ibso.eservices.core.model.IsicMasterModel;
 import com.sap.ibso.eservices.core.model.IsicTextsModel;
 import com.sap.ibso.eservices.facades.data.zesrvEnhOData.*;
-import com.sap.ibso.eservices.facades.data.zqeemah.IsicDetails;
 import com.sap.ibso.eservices.facades.data.zqeemah2.ISICDetails;
 import com.sap.ibso.eservices.facades.populators.isic.*;
 import com.sap.ibso.eservices.facades.sagia.SagiaIsicFacade;
-import com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.*;
 import com.sap.ibso.eservices.sagiaservices.exception.SagiaODataException;
 import com.sap.ibso.eservices.sagiaservices.services.isic.*;
 import de.hybris.platform.servicelayer.i18n.I18NService;
 import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.collections4.ListUtils;
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.log4j.Logger;
 
-import java.time.Clock;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * DefaultSagiaIsicFacade
@@ -57,7 +51,16 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
 
         return getIsicDetails(isicMasterModels);
     }
-    
+
+    @Override
+    public Map<String, List> getAllIsic() {
+
+        Collection<IsicMasterModel> isicMasterModels =  isicMasterDataService.getAllIsicMasterForAllLicenseType();
+
+        return getIsicDetails(isicMasterModels);
+    }
+
+
     @Override
 	public Map<String, List> getIsicDetails(Collection<IsicMasterModel> isicMasterModels) {
 		Map<String, List> result = new HashMap<>();
@@ -87,7 +90,7 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
         }
     	return sectionsView;
     }
-    	
+
     @Override
  	public List<ISICDetails> getActiveISICDivision(String sectionID) {
      	List<IsicTextsModel> divisions = isicMasterDataService.getActiveISICDivision(sectionID);
@@ -102,7 +105,7 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
         }
      	return divisionsView;
      }
-    
+
     private void addSections(Map<String, List> result, Collection<IsicMasterModel> sectionsData) {
         try {
 
@@ -130,7 +133,7 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
                         .orElse("");
             	section.setDescription(description);
             });
-            
+
             result.put("sections", sections);
 
         } catch (SagiaODataException e) {
@@ -166,7 +169,7 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
                         .orElse("");
             	division.setDescription(description);
             });
-            
+
             result.put("divisions", divisions);
 
         } catch (SagiaODataException e) {
@@ -231,7 +234,7 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
                         .orElse("");
             	classobj.setDescription(description);
             });
-            
+
             //IntStream.range(0,classes.size()).forEach(i -> classes.get(i).setDescription(isicTextsList.get(i).getDescription()));
 
             result.put("classes", classes);
@@ -267,7 +270,7 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
                         .orElse("");
             	branch.setDescription(description);
             });
-            
+
             result.put("branches", branches);
 
         } catch (SagiaODataException e) {
@@ -289,7 +292,7 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
             });
 
             List<IsicTextsModel> isicTextsList = isicMasterDataService.getTextsDataFromType("ACTIVITY", activityCodes);
-            
+
             activities.forEach(activity -> {
             	String description = isicTextsList.stream()
                         .filter(x -> activity.getActivityId().equals(x.getCode()))

@@ -18,7 +18,9 @@ public interface SagiaIsicFacade {
      */
     Map<String, List> getIsic(String licenseType);
 
-	Map<String, List> getIsicDetails(Collection<IsicMasterModel> isicMasterModels);
+    Map<String, List> getAllIsic();
+
+    Map<String, List> getIsicDetails(Collection<IsicMasterModel> isicMasterModels);
 
 	List<ISICDetails> getActiveISICSection();
 

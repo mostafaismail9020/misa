@@ -11,6 +11,12 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.util.StringUtils;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import org.apache.commons.lang3.BooleanUtils;
+import javax.servlet.http.HttpServletRequest;
+import java.lang.Boolean;
+
 
 import java.util.Locale;
 
@@ -20,7 +26,11 @@ import java.util.Locale;
  */
 public class SagiaAuthenticationProvider extends AcceleratorAuthenticationProvider
 {
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final String J_SPRING_SECURITY_CHECK = "j_spring_security_check";
+
+	private static final String RECAPTCHA_CHALLANGE_ANSWERED = "recaptchaChallangeAnswered";
+
+	private static final Logger LOGGER = LogManager.getLogger();
 
     private CredentialVerificationService credentialVerificationService;
 
@@ -40,6 +50,7 @@ public class SagiaAuthenticationProvider extends AcceleratorAuthenticationProvid
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException
     {
+    	handleInvalidCaptcha();
 
         LOGGER.info("Before login for user: " + authentication.getName());
         if (!(authentication instanceof UsernamePasswordAuthenticationToken) ||
@@ -113,6 +124,22 @@ public class SagiaAuthenticationProvider extends AcceleratorAuthenticationProvid
 
         return auth;
     }
+
+	private void handleInvalidCaptcha() throws SagiaAuthenticationException {
+		if (RequestContextHolder.getRequestAttributes() instanceof ServletRequestAttributes)
+		{
+			final ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder
+					.getRequestAttributes();
+			HttpServletRequest request = requestAttributes.getRequest();
+			
+			//This check for J_SPRING_SECURITY_CHECK is added, so that the captcha is checked only for login and not for 2-factor authentication
+			if(request.getServletPath().contains(J_SPRING_SECURITY_CHECK) && request.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED) != null && BooleanUtils.isFalse((Boolean)request.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED))) {
+				LOGGER.info("Invalid captcha, Please Try Again");
+	            throw new SagiaAuthenticationException("Invalid captcha, Please Try Again"); // technical issue occurred
+
+			}
+		}
+	}
 
     /**
      * Set a credential verification service used for external authentication

@@ -19,9 +19,9 @@ public class ExploreSaudiCarouselComponentController
 	@Override
 	protected void fillModel(final HttpServletRequest request, final Model model, final ExploreSaudiCarouselComponentModel component)
 	{
-		LOGGER.info(" Entered into ExploreSaudiCarouselComponentController ");
+		LOGGER.debug(" Entered into ExploreSaudiCarouselComponentController ");
 		model.addAttribute("ExploreSaudi", component.getExploreSaudi());
-		LOGGER.info(" Exit into ExploreSaudiCarouselComponentController ");
+		LOGGER.debug(" Exit into ExploreSaudiCarouselComponentController ");
 	}
 		
 }

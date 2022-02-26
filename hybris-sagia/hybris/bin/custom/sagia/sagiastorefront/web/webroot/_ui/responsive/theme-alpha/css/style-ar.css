@@ -22340,3 +22340,40 @@ table,th,tr,td{
 .grid-section{
 	text-align: right;
 }
+
+#g-recaptcha_incorrect {
+	display: none;
+}
+
+#errorResponseModal .modal-content {
+	display: flex;
+	width: 50%;
+	margin: auto;
+	border-radius: 30px;
+	border: 1px solid #f2f2f2;
+}
+
+#errorResponseModal .modal-header button {
+	background: none;
+	border: 1px solid #FFF;
+	cursor: pointer;
+}
+
+#errorResponseModal .modal-body button {
+	margin: auto;
+	justify-content: center; 
+	width: auto;
+}
+
+#errorResponseModal .modal-body .modal-heroImage svg path {
+	stroke: #0097a9;
+}
+
+#errorResponseModal .modal-footer button {
+	background: #00A6BE 0% 0% no-repeat padding-box !important;
+	border: none !important;
+	color: #fff;
+	width: 120px !important; 
+	cursor: pointer !important; 
+	border-radius: 30px;
+}

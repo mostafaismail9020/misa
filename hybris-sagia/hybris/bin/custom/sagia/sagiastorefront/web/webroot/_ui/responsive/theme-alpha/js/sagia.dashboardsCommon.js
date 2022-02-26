@@ -34,7 +34,7 @@ SAGIA.dashboard = {
                     .removeClass("dashboardWidget_open");
             }
         });
-        
+
         //small match click on tabhead
 		$(document).on("click",".js-dashboardWidgetNoLicense-tabs .tabhead", function(e){
 			e.preventDefault();
@@ -48,12 +48,12 @@ SAGIA.dashboard = {
 			} else {
                 //reset heads
                 tabHeads.removeClass('dashboardWidgetNoLicense-current');
-                
+
 				var id = $(this).attr("id");
 				self.parents(".js-dashboardWidgetNoLicense-tabs").find("a[href='#" + id + "']").click();
 			}
 		});
-        
+
 		$(document).on("click",".js-dashboardTabs .tabhead", function(e){
 			e.preventDefault();
 			var self = $(this),
@@ -65,7 +65,7 @@ SAGIA.dashboard = {
 			} else {
                 //reset heads
                 tabHeads.removeClass('current');
-                
+
 				var id = $(this).attr("id");
 				self.parents(".js-dashboardTabs").find("a[href='#" + id + "']").click();
 			}
@@ -76,13 +76,13 @@ SAGIA.dashboard = {
         $(document).off("click", ".js-dashboardWidget-headline");
         $(document).off("click", ".js-dashboardWidgetNoLicense-tabs .tabhead");
         $(document).off("click", ".js-dashboardTabs .tabhead");
-        
+
         $(".js-dashboardWidgetNoLicense-tabs .tabs-list li.dashboardWidgetNoLicense-current a").click();
         $(".js-dashboardTabs .tabs-list li.dashboardTabs-current a").click();
     },
-    
+
     dashboardWidgetChartInfo: function(){
-        $(document).on('click', '.js-toggleChartInfo', function(e){            
+        $(document).on('click', '.js-toggleChartInfo', function(e){
 			e.preventDefault();
 
 			$(this).closest(".dashboardWidgetCharts-info")
@@ -191,7 +191,7 @@ SAGIA.dashboard = {
                         scaleLabel: {
                             display: true,
                             labelString: 'Salary (SAR)'
-                        }                   
+                        }
                     }]
                 }
             },
@@ -208,7 +208,7 @@ SAGIA.dashboard = {
             }
         });
     },
-    
+
     dashboardTabs: function () {
         $(".js-dashboardTabs").accessibleTabs({
             wrapperClass: 'dashboardTabs-content',
@@ -234,7 +234,7 @@ SAGIA.dashboard = {
                 .removeClass("current")
                 .prevAll()
                 .removeClass("current");
-            
+
             //add current state
             $(this).closest('.js-dashboardTabs')
                 .find('.dashboardTabs-content')
@@ -242,7 +242,7 @@ SAGIA.dashboard = {
                 .addClass('current');
         });
     },
-    
+
     dashboardWidgetNoLicense: function () {
         $(".js-dashboardWidgetNoLicense-tabs").accessibleTabs({
             wrapperClass: 'dashboardWidgetNoLicense-content',
@@ -259,12 +259,12 @@ SAGIA.dashboard = {
                     .parents('.js-dashboardWidgetNoLicense-tabs')
                     .find('dashboardWidgetNoLicense-body')
                     .css('display','none');
-			
+
 				$($(this).children('a').attr('href'))
                     .addClass('dashboardWidgetNoLicense-current')
                     .next('.dashboardWidgetNoLicense-body')
-                    .removeAttr('style');		
-		}); 
+                    .removeAttr('style');
+		});
 
         //click on list in md view
         $(document).on("click", ".js-dashboardWidgetNoLicense-tabs .tabs-list a", function (e) {
@@ -279,7 +279,7 @@ SAGIA.dashboard = {
                 .removeClass("dashboardWidgetNoLicense-current")
                 .prevAll()
                 .removeClass("dashboardWidgetNoLicense-current");
-            
+
             //add current state
             $(this).closest('.js-dashboardWidgetNoLicense-tabs')
                 .find('.dashboardWidgetNoLicense-content')
@@ -287,7 +287,7 @@ SAGIA.dashboard = {
                 .addClass("dashboardWidgetNoLicense-current");
         });
     },
-    
+
     dashboardWidgetBannerTabs: function () {
         $(".js-dashboardWidgetBanner-tabs").accessibleTabs({
             wrapperClass: 'dashboardWidgetBanner-tabs-content',
@@ -350,6 +350,15 @@ $(function () {
         var $modalBody = $modal.find('.modal-dialog');
         var complaintId = $(this).attr('data-complaint-id');
         $modalBody.load(ACC.config.encodedContextPath + "/complaints/" + complaintId, function() {
+            $modal.modal();
+        });
+    });
+
+    $(document).on("click", ".dashboardWidgetFinancialSurveys-btn", function() {
+        var $modal = $('#errorResponseModal');
+        var $modalBody = $modal.find('.modal-dialog');
+        var complaintId = $(this).attr('data-complaint-id');
+        $modalBody.load(ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/messages/" + complaintId, function() {
             $modal.modal();
         });
     });

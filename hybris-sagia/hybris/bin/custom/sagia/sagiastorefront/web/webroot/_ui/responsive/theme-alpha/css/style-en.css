@@ -8436,6 +8436,7 @@ a.pvcy-policy:focus {
 
 .mandatory {
 	color: #ff0000;
+	float: left;
 }
 
 .custom-file {
@@ -16481,6 +16482,12 @@ padding-left: 40px;
 		right: 0;
 		margin: auto;
 	}
+	.page-province .Inc-mediaCenter-sectionwrapper .title.service-title .explore-btn {
+		top: 83%;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
 	.page-media-center .Inc-mediaCenter-sectionwrapper h1 a.webinar-service-btn {
 		bottom: unset;
 	}
@@ -19564,6 +19571,12 @@ padding-left: 40px;
 		right: 0;
 		margin: auto;
 	}
+	.page-province .Inc-mediaCenter-sectionwrapper .title.service-title .explore-btn {
+		top: 83%;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
 	.page-media-center .Inc-mediaCenter-sectionwrapper h1 a.webinar-service-btn {
 		bottom: unset;
 	}
@@ -20993,3 +21006,42 @@ table,th,tr,td{
 		top: 5px;
 	}
 }
+
+
+#g-recaptcha_incorrect {
+	display: none;
+}
+
+#errorResponseModal .modal-content {
+	display: flex;
+	width: 50%;
+	margin: auto;
+	border-radius: 30px;
+	border: 1px solid #f2f2f2;
+}
+
+#errorResponseModal .modal-header button {
+	background: none;
+	border: 1px solid #FFF;
+	cursor: pointer;
+}
+
+#errorResponseModal .modal-body button {
+	margin: auto;
+	justify-content: center;
+	width: auto;
+}
+
+#errorResponseModal .modal-body .modal-heroImage svg path {
+	stroke: #0097a9;
+}
+
+#errorResponseModal .modal-footer button {
+	background: #00A6BE 0% 0% no-repeat padding-box !important;
+	border: none !important;
+	color: #fff;
+	width: 120px !important; 
+	cursor: pointer !important;
+	border-radius: 30px;
+}
+​​​​​​

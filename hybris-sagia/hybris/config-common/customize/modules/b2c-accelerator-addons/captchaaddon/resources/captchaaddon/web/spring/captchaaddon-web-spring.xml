@@ -29,8 +29,52 @@
 		</aop:aspect>
 		<aop:aspect id="registratonReCaptchaAspect" ref="reCaptchaAspect">
 			<aop:around method="advise"
+			            pointcut="execution(* com.sap.ibso.eservices.storefront.security.SagiaAuthenticationProvider.authenticate(..))"/>
+		</aop:aspect>
+		
+		
+		<aop:aspect id="registratonReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="advise"
 			            pointcut="execution(* com.sap.ibso.eservices.storefront..controllers.pages..*.doRegisterAjax(..))"/>
 		</aop:aspect>
+		
+		
+		<aop:aspect id="prepTwoFactorAuthReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="prepare" pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.twoFactorAuth(..))"/>
+		</aop:aspect>
+		<aop:aspect id="prepTwoFactorAuthReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="prepare" pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.getVerification(..))"/>
+		</aop:aspect>
+		<aop:aspect id="TwoFactorAuthReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="advise" pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.authenticate(..))"/>
+		</aop:aspect>
+		
+		
+		<aop:aspect id="prepSectorReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="prepare"
+			            pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages.portal.SectorPageController.sector(..))"/>
+		</aop:aspect>
+		
+		
+		<aop:aspect id="prepContactUsReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="prepare"
+			            pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.misc.ContactUsController.contactus(..))"/>
+		</aop:aspect>
+		<aop:aspect id="contactUsReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="advise"
+			            pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.misc.ContactUsController.contactus(..))"/>
+		</aop:aspect>
+		
+		<aop:aspect id="prepAboutContactUsReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="prepare"
+			            pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages.portal.AboutSaudiPageController.contactUsPage(..))"/>
+		</aop:aspect>
+		<aop:aspect id="aboutContactUsReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="advise"
+			            pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages.portal.AboutSaudiPageController.submitForm(..))"/>
+		</aop:aspect>
+		
+		
 		<aop:aspect id="prepCheckoutRegistratonReCaptchaAspect" ref="reCaptchaAspect">
 			<aop:around method="prepare"
 			            pointcut="execution(* de.hybris.platform..controllers.pages..*.doCheckoutLogin(..))"/>
@@ -42,18 +86,6 @@
 		<aop:aspect id="accountEmailUpdateReCaptchaAspect" ref="reCaptchaAspect">
 			<aop:around method="advise"
 			            pointcut="execution(* de.hybris.platform..controllers.pages..*.updateEmail(..))"/>
-		</aop:aspect>
-		<aop:aspect id="prepTwoFactorAuthReCaptchaAspect" ref="reCaptchaAspect">
-			<aop:around method="prepare"
-						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.twoFactorAuth(..))"/>
-		</aop:aspect>
-		<aop:aspect id="prepTwoFactorAuthReCaptchaAspect" ref="reCaptchaAspect">
-			<aop:around method="prepare"
-						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.getVerification(..))"/>
-		</aop:aspect>
-		<aop:aspect id="TwoFactorAuthReCaptchaAspect" ref="reCaptchaAspect">
-			<aop:around method="advise"
-						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.authenticate(..))"/>
 		</aop:aspect>
 	</aop:config>
 	<alias name="defaultReCaptchaAspect" alias="reCaptchaAspect"/>

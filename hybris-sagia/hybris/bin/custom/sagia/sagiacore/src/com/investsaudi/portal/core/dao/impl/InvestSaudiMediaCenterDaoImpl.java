@@ -72,8 +72,14 @@ public class InvestSaudiMediaCenterDaoImpl extends DefaultGenericDao<InvestSaudi
     private static final String QUERY_RECENT_EVENTS_COMPONENT = "SELECT {e:pk} FROM {InvestSaudiEventsComponent AS e} "
     		+ "WHERE {e.eventStartDate} < ?eventStartDate AND {e.catalogVersion} = ?catalogVersion ORDER BY {e.eventStartDate} DESC LIMIT 2";
     
-
+    private static final String QUERY_REGION_NEWS_COMPONENT = "SELECT {p.PK} FROM {InvestSaudiNewsComponent AS p JOIN ProvinceNewsRel as rel ON {p:PK} = {rel:target} JOIN ProvinceComponent AS c ON {rel:source} = {c:PK} } WHERE {c.uid} =?uid AND {p.catalogVersion} = ?catalogVersion AND {p:regionSpecific} =?regionSpecific ORDER BY {p.newsDate} DESC";
     
+    private static final String QUERY_REGION_RESOURCES_COMPONENT = "SELECT {p.PK} FROM {InvestSaudiResourceComponent AS p JOIN ProvinceResourcesRel as rel ON {p:PK} = {rel:target} JOIN ProvinceComponent AS c ON {rel:source} = {c:PK} } WHERE {c.uid} =?uid AND {p.catalogVersion} = ?catalogVersion AND {p:regionSpecific} =?regionSpecific ORDER BY {p.resourceDate} DESC";
+	
+	private static final String QUERY_REGION_EVENTS_COMPONENT = "SELECT {p.PK} FROM {InvestSaudiEventsComponent AS p JOIN ProvinceEventsRel as rel ON {p:PK} = {rel:target} JOIN ProvinceComponent AS c ON {rel:source} = {c:PK} } WHERE {c.uid} =?uid AND {p.catalogVersion} = ?catalogVersion AND {p:regionSpecific} =?regionSpecific ORDER BY {p.eventStartDate} DESC";
+
+	private static final String QUERY_REGION_OPPORTUNITIES = "SELECT {p.PK} FROM {OpportunityProduct AS p JOIN ProvinceProductsRel as rel ON {p:PK} = {rel:target} JOIN ProvinceComponent AS c ON {rel:source} = {c:PK} } WHERE {c.uid} =?uid AND {p.catalogVersion} = ?catalogVersion AND {p:regionSpecific} =?regionSpecific ORDER BY {p.creationtime} DESC";
+	
     public InvestSaudiMediaCenterDaoImpl(String typecode) {
         super(typecode);
     }
@@ -341,4 +347,64 @@ public class InvestSaudiMediaCenterDaoImpl extends DefaultGenericDao<InvestSaudi
 	   Date date = new Date();
     	return  date;    	
    }
+	 
+	@Override
+    public SearchPageData<InvestSaudiNewsComponentModel> getRegionNews(PaginationData paginationData, String provinceId){
+		
+		StringBuilder query = new StringBuilder(QUERY_REGION_NEWS_COMPONENT);
+		SearchPageData<InvestSaudiNewsComponentModel> searchPageData = new SearchPageData<>();
+        searchPageData.setPagination(paginationData);
+        
+        final FlexibleSearchQuery  searchQuery = new FlexibleSearchQuery(query.toString());
+        searchQuery.addQueryParameter("uid", provinceId);
+        searchQuery.addQueryParameter("regionSpecific", Boolean.TRUE);
+     	searchQuery.addQueryParameter("catalogVersion", catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));
+     	
+     	LOG.info("catalogVersion :"+catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));
+     	PaginatedFlexibleSearchParameter parameter = new PaginatedFlexibleSearchParameter();     	
+        parameter.setFlexibleSearchQuery(searchQuery);	
+        parameter.setSearchPageData(searchPageData);
+
+        return paginatedFlexibleSearchService.search(parameter);
+    }
+	
+	@Override
+    public SearchPageData<InvestSaudiResourceComponentModel> getRegionResources(PaginationData paginationData, String provinceId){
+		
+		StringBuilder query = new StringBuilder(QUERY_REGION_RESOURCES_COMPONENT);
+		SearchPageData<InvestSaudiResourceComponentModel> searchPageData = new SearchPageData<>();
+        searchPageData.setPagination(paginationData);
+        
+        final FlexibleSearchQuery  searchQuery = new FlexibleSearchQuery(query.toString());
+        searchQuery.addQueryParameter("uid", provinceId);
+        searchQuery.addQueryParameter("regionSpecific", Boolean.TRUE);
+     	searchQuery.addQueryParameter("catalogVersion", catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));
+     	
+     	LOG.info("catalogVersion :"+catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));
+     	PaginatedFlexibleSearchParameter parameter = new PaginatedFlexibleSearchParameter();     	
+        parameter.setFlexibleSearchQuery(searchQuery);	
+        parameter.setSearchPageData(searchPageData);
+
+        return paginatedFlexibleSearchService.search(parameter);
+    }
+	
+	@Override
+    public SearchPageData<InvestSaudiEventsComponentModel> getRegionEvents(PaginationData paginationData, String provinceId){
+		
+		StringBuilder query = new StringBuilder(QUERY_REGION_EVENTS_COMPONENT);
+		SearchPageData<InvestSaudiEventsComponentModel> searchPageData = new SearchPageData<>();
+        searchPageData.setPagination(paginationData);
+        
+        final FlexibleSearchQuery  searchQuery = new FlexibleSearchQuery(query.toString());
+        searchQuery.addQueryParameter("uid", provinceId);
+        searchQuery.addQueryParameter("regionSpecific", Boolean.TRUE);
+     	searchQuery.addQueryParameter("catalogVersion", catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));
+     	
+     	LOG.info("catalogVersion :"+catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));
+     	PaginatedFlexibleSearchParameter parameter = new PaginatedFlexibleSearchParameter();     	
+        parameter.setFlexibleSearchQuery(searchQuery);	
+        parameter.setSearchPageData(searchPageData);
+
+        return paginatedFlexibleSearchService.search(parameter);
+    }
 }

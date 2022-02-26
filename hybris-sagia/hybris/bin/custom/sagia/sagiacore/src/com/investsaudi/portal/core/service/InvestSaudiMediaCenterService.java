@@ -48,4 +48,10 @@ public interface InvestSaudiMediaCenterService {
    List<InvestSaudiResourceComponentModel> getrecentResourceDetails(Date resourceDate);
    
    List<InvestSaudiEventsComponentModel> getrecentEventDetails(Date eventStartDate);
+   
+   SearchPageData<InvestSaudiNewsComponentModel> getRegionNews(PaginationData paginationData, String regionId);
+   
+   SearchPageData<InvestSaudiResourceComponentModel> getRegionResources(PaginationData paginationData, String regionId);
+   
+   SearchPageData<InvestSaudiEventsComponentModel> getRegionEvents(PaginationData paginationData, String regionId);
 }

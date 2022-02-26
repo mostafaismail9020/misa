@@ -36,6 +36,8 @@ public class InvestSaudiOpportunityDaoImpl extends DefaultGenericDao<Opportunity
 
     private static final String BASE_QUERY = " SELECT {p:PK}, {c:code} FROM {OpportunityProduct AS p JOIN CategoryProductRelation as rel ON {p:PK} = {rel:target} JOIN Category AS c ON {rel:source} = {c:PK} } WHERE {c:code} IN (?list) AND";
 
+    private static final String QUERY_REGION_OPPORTUNITIES = "SELECT {p.PK} FROM {OpportunityProduct AS p JOIN ProvinceProductsRel as rel ON {p:PK} = {rel:target} JOIN ProvinceComponent AS c ON {rel:source} = {c:PK} } WHERE {c.uid} =?uid AND {p:regionSpecific} =?regionSpecific ORDER BY {p.creationtime} DESC";
+    
     public InvestSaudiOpportunityDaoImpl(String typecode) {
         super(typecode);
     }
@@ -107,6 +109,26 @@ public class InvestSaudiOpportunityDaoImpl extends DefaultGenericDao<Opportunity
         parameter.setFlexibleSearchQuery(searchQuery);
         parameter.setSearchPageData(searchPageData);
 
+        return paginatedFlexibleSearchService.search(parameter);
+    }
+    
+    @Override
+    public SearchPageData<OpportunityProductModel> searchOpportunityByRegion(PaginationData paginationData, String provinceId) {
+
+    	StringBuilder query = new StringBuilder(QUERY_REGION_OPPORTUNITIES);
+		SearchPageData<OpportunityProductModel> searchPageData = new SearchPageData<>();
+        searchPageData.setPagination(paginationData);
+        
+        final FlexibleSearchQuery  searchQuery = new FlexibleSearchQuery(query.toString());
+        searchQuery.addQueryParameter("uid", provinceId);
+        searchQuery.addQueryParameter("regionSpecific", Boolean.TRUE);
+     	//searchQuery.addQueryParameter("catalogVersion", catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));
+     	
+     	//LOG.info("catalogVersion :"+catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));
+     	PaginatedFlexibleSearchParameter parameter = new PaginatedFlexibleSearchParameter();     	
+        parameter.setFlexibleSearchQuery(searchQuery);	
+        parameter.setSearchPageData(searchPageData);
+    	
         return paginatedFlexibleSearchService.search(parameter);
     }
 

@@ -14,6 +14,12 @@
 	if(window.location.pathname === "/" || window.location.pathname === ""){
 		window.location.href = window.location.href + lang;
 	}
+	
+	if(window.location.href.indexOf('recaptchaChallangeAnswered=false') >= 0){
+		 var errorModal = $('#errorResponseModal');
+         errorModal.find('.modal-description').text('Invalid Captcha, Please try again');
+         errorModal.modal('show');	
+	}
 
 	// Smooth scroll for the navigation menu and links with .scrollto classes
 	var scrolltoOffset = $('#header').outerHeight() - 1;
@@ -1265,6 +1271,25 @@ $(document).ready(function () {
 			}
 		}
 
+		if(ctrl[0].id === "popup-contact-form"){
+			var recaptcha = $(".sector-page-download-captcha .g-recaptcha-response").val();		
+			var lblSectorErrorCaptcha = document.getElementById("lblSectorErrorCaptcha");
+			lblSectorErrorCaptcha.innerHTML = "";
+			if (recaptcha == "") {
+				lblSectorErrorCaptcha.innerHTML = "Please fill reCAPTCHA";
+				valid = false;
+			}
+		}
+		else if(ctrl[0].id === "corForm"){
+			var recaptcha = $(".sector-page-captcha .g-recaptcha-response").val();		
+			var lblSectorErrorCaptcha = document.getElementById("lblSectorPageErrorCaptcha");
+			lblSectorErrorCaptcha.innerHTML = "";
+			if (recaptcha == "") {
+				lblSectorErrorCaptcha.innerHTML = "Please fill reCAPTCHA";
+				valid = false;
+			}
+		}
+		
 		return valid;
 	}
 	var element = document.getElementsByClassName('btn-contact');
@@ -3579,6 +3604,7 @@ $(document).ready(function () {
 		$("#opp-contact-form input").val('').change();
 		$("#opp-contact-form textarea").val('').change();
 		$('#opp-contact-form select option:first').prop('selected',true);
+		grecaptcha.reset(1);
 	});
 	// Vidopop up - Meet the kingdom 7 key reasons
 
@@ -3603,6 +3629,7 @@ $(document).ready(function () {
 			type: "POST",
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
+			headers : {"g-recaptcha-response": grecaptcha.getResponse(1)},
 			data: JSON.stringify({
 				name: $.trim($("#crName").val()),
 				email: $.trim($("#crEmail").val()),
@@ -3650,6 +3677,10 @@ $(document).ready(function () {
 				if (data.indexOf('error') >= 0 || data.indexOf('Error') >= 0) {
 					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().formSubmissionFailed + "</span></em>");
 				}
+				
+				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
+					$('#opp-contact-form').find('#g-recaptcha_incorrect').show();
+				}
 
 				// element[0].disabled = false;
 				// element[0].textContent = btnText;
@@ -3688,6 +3719,7 @@ $(document).ready(function () {
 	$("#popup-btn-contact-cancel").on("click", function () {
 		// alert(1);
         $("#popup-contact-form input").val('').change();
+		grecaptcha.reset(0);
     });
 	
 	
@@ -3722,6 +3754,7 @@ function onPopupContactSubmit() {
 			type: "POST",
 			contentType: "application/json",
 			dataType: "json",
+			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
 			data: JSON.stringify({
 				name: $.trim($("#popup_crFirstName").val())+" "+$.trim($("#popup_crLastName").val()),
 				email: $.trim($("#popup_crEmail").val()),
@@ -3735,9 +3768,13 @@ function onPopupContactSubmit() {
 			}),
 			success: function (data) {
 				console.log(data);
+				if(data.indexOf('captcha')>= 0){
+					$("#downloadModal").css("z-index","1300");
+					 $('#g-recaptcha_incorrect').show();					
+				}else{
 				$("#downloadModal").modal("toggle");
 				$("#popup-contact-form input").val('').change();
-				$("#pdfDownloadTrigerrer")[0].click();
+				$("#pdfDownloadTrigerrer")[0].click();}
 			// if( buttonId === 'download' &&  $("#pdfDownloadTrigerrer").length > 0 ){
 					
 			// 	}
@@ -4119,16 +4156,7 @@ var script = document.createElement('script');
         });
     }
 
-// function ScreenResize
-window.addEventListener("resize", ScreenResize);
-function ScreenResize(){
-	setTimeout(function () {
-		KeyReasonCarousel();
-		ManageKeyReasonHeight();
-	}, 100);
-}
 
-//----code End-----
 
 //sectors-opportunities  ----- 
 	
@@ -4589,3 +4617,17 @@ $("#contact-us-form-cancel").on('click',function(e){
   .prop('checked', false)
   .prop('selected', false);
 })
+
+
+
+$('#downloadModal').on('hidden.bs.modal', function (e) {
+	$("#popup-contact-form input").val('').change();
+	$("#popup-contact-form input").prop('checked', false);
+	grecaptcha.reset(0);
+})
+
+
+function recaptchaCallback(){
+	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorPageErrorCaptcha').text('')
+	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorErrorCaptcha').text('');		
+}

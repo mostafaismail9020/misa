@@ -16,7 +16,7 @@
           
         
         
-        
+        <requires-extension name="captchaaddon"/>
         <requires-extension name="sagiasecchat"/>
         <requires-extension name="smarteditaddon"/>
         <requires-extension name="acceleratorstorefrontcommons"/>

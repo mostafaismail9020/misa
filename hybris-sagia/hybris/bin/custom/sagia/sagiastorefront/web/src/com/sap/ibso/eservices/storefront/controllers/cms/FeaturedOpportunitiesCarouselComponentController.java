@@ -18,9 +18,9 @@ public class FeaturedOpportunitiesCarouselComponentController
 	@Override
 	protected void fillModel(final HttpServletRequest request, final Model model, final FeaturedOpportunitiesCarouselComponentModel component)
 	{
-		LOGGER.info(" Entered into FeaturedOpportunitiesCarouselComponentController ");
+		LOGGER.debug(" Entered into FeaturedOpportunitiesCarouselComponentController ");
 		model.addAttribute("featuredProducts", component.getProducts());
-		LOGGER.info(" Exit into FeaturedOpportunitiesCarouselComponentController ");
+		LOGGER.debug(" Exit into FeaturedOpportunitiesCarouselComponentController ");
 	}
 		
 }

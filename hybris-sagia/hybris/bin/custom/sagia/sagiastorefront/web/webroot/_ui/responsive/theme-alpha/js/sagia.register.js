@@ -1366,6 +1366,13 @@ $(function () {
         $("#sagiaRegisterFormQuickRegistration").ajaxForm({
             beforeSubmit: function (arr, $form, options) {
                 var valid = $form.valid();
+                var recaptcha = $("#sagiaRegisterFormQuickRegistration .g-recaptcha-response").val();	
+                var lblErrorCaptcha = document.getElementById("lblErrorCaptcha");
+                lblErrorCaptcha.innerHTML = "";
+                if (recaptcha == "") {
+                    lblErrorCaptcha.innerHTML = "Please fill reCAPTCHA";
+                    valid = false;
+                }	
                 if (!valid) {
                     return false;
                 }
@@ -1500,3 +1507,8 @@ var _updateSlot = function (picker, data) {
 //     _updateSlot(picker, dataAttr);
 // };
 // -- END Remove-Content --
+
+
+function recaptchaCallback(){
+	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');	
+}

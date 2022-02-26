@@ -357,22 +357,22 @@ $(function() {
 
                     if (notification.notificationType === 'WL' || notification.notificationType === 'NO') {
                         notificationsForPopupHtml +=
-                            '           <span class="iconElement iconElement_expertProfile_green">' +
+                            '           <div class="iconElement iconElement_expertProfile_green">' +
                             '               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="iconElement-colorPrimary_fill" d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12-12-5.373-12-12 5.373-12 12-12z"/><path class="iconElement-colorSecondary_fill" d="M21.086 19.824c-2.201 2.553-5.451 4.176-9.086 4.176-3.567 0-6.761-1.565-8.959-4.036.846-.884 3.309-2.132 6.244-3.323v-1.8c-.166-.118-.343-.292-.512-.533-.39-.555-.63-1.336-.674-2.375-.441-.247-.715-.847-.765-1.503-.051-.676.158-1.267.616-1.538l-.174-.42c-.093-.231-.167-.44-.227-.642-.186-.62-.011-1.034.186-1.436.226-.459.395-.961 1.033-.912 1.205-2.449 6.619-2.044 7.297.671.204.815.776 1.56.44 2.416l-.125.296c.424.312.615.901.56 1.568-.056.656-.329 1.252-.769 1.499-.043 1.04-.284 1.821-.674 2.375-.168.241-.346.415-.512.533v1.8c2.786 1.131 5.143 2.311 6.101 3.184z"/></svg>' +
-                            '           </span>';
+                            '           </div>';
                         } else if (notification.notificationType === 'SY' || notification.notificationType === 'Rest') {
                             notificationsForPopupHtml +=
-                                '           <span class="iconElement">' +
+                                '           <div class="iconElement">' +
                                 '               <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">' +
                                 '                   <g id="Icon_feather-settings" data-name="Icon feather-settings" transform="translate(-0.5 -0.5)">' +
                                 '                   <path id="Path_2154" data-name="Path 2154" d="M22.5,18A4.5,4.5,0,1,1,18,13.5,4.5,4.5,0,0,1,22.5,18Z" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>' +
                                 '                   <path id="Path_2155" data-name="Path 2155" d="M29.1,22.5a2.475,2.475,0,0,0,.495,2.73l.09.09a3,3,0,1,1-4.245,4.245l-.09-.09a2.5,2.5,0,0,0-4.23,1.77V31.5a3,3,0,1,1-6,0v-.135A2.475,2.475,0,0,0,13.5,29.1a2.475,2.475,0,0,0-2.73.495l-.09.09A3,3,0,1,1,6.435,25.44l.09-.09a2.5,2.5,0,0,0-1.77-4.23H4.5a3,3,0,1,1,0-6h.135A2.475,2.475,0,0,0,6.9,13.5a2.475,2.475,0,0,0-.5-2.73l-.09-.09A3,3,0,1,1,10.56,6.435l.09.09a2.475,2.475,0,0,0,2.73.495h.12A2.475,2.475,0,0,0,15,4.755V4.5a3,3,0,0,1,6,0v.135a2.5,2.5,0,0,0,4.23,1.77l.09-.09a3,3,0,1,1,4.245,4.245l-.09.09a2.475,2.475,0,0,0-.5,2.73v.12A2.475,2.475,0,0,0,31.245,15H31.5a3,3,0,0,1,0,6h-.135A2.475,2.475,0,0,0,29.1,22.5Z" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>' +
                                 '                   </g> '+
                                 '               </svg>' +
-                                '           </span>';
+                                '           </div>';
                         } else if (notification.notificationType === 'VI') {
                             notificationsForPopupHtml +=
-                                '           <span class="iconElement">' +
+                                '           <div class="iconElement">' +
                                 '               <svg xmlns="http://www.w3.org/2000/svg" width="35.856" height="35.5" viewBox="0 0 35.856 35.5">' +
                                 '                   <g id="Appointment_Details" data-name="Appointment Details" transform="translate(0.364 0)">' +
                                 '                   <g id="Group_1707" data-name="Group 1707" transform="translate(0.136 0)">' +
@@ -394,11 +394,11 @@ $(function() {
                                 '                   </g>' +
                                 '                   </g>' +
                                 '               </svg>' +
-                                '           </span>';
+                                '           </div>';
                         }
                         else if (notification.notificationType === 'PY') {
                             notificationsForPopupHtml +=
-                                '           <span class="iconElement">' +
+                                '           <div class="iconElement">' +
                                 '               <svg xmlns="http://www.w3.org/2000/svg" width="36.022" height="36.004" viewBox="0 0 36.022 36.004">'+
                                 '                   <g id="My_Payments" data-name="My Payments" transform="translate(0.188 0.191)">'+
                                  '                   <g id="Group_1691" data-name="Group 1691" transform="translate(0.312 0.313)">'+
@@ -413,7 +413,7 @@ $(function() {
                                  '                  </g>'+
                                  '              </g>'+
                                  '              </svg> '+
-                                '           </span>';
+                                '           </div>';
                         }
 
                     var createdBy = replaceWithEmptyIfNotPresent(notification.createdBy);

@@ -11,7 +11,6 @@
 <script>
     var notificationJs = ${notificationJson};
 </script>
-
 <div class="mainSection mainSection">
     <div class="achievement_header">
         <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
@@ -34,6 +33,13 @@
                                 <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
                         </c:if>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
                     </div>
                     <!--<div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
                         <c:if test="${hasLicense or hasAwaitingPayment}">
@@ -52,13 +58,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
-    <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
-    <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
-    <div class="sagiaNavigation-subPane-actions">
-        <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
     </div>
 </div>
 
@@ -133,16 +132,16 @@
                                         <div class="notificationList-thumb">
                                             <c:choose>
                                                 <c:when test="${notifItem.notificationType eq 'WL' ||  notifItem.notificationType eq 'NO'}">
-                                                    <span class="iconElement iconElement_expertProfile_green"><icon:expertProfile/></span>
+                                                    <div class="iconElement iconElement_expertProfile_green"><icon:expertProfile/></div>
                                                 </c:when>
                                                 <c:when test="${notifItem.notificationType eq 'SY' || notifItem.notificationType eq 'Rest'}">
-                                                    <span class="iconElement"> <img alt="" src="${commonResourcePath}/images/Survey-list-icon.png"/></span>
+                                                    <div class="iconElement"> <img alt="" src="${commonResourcePath}/images/Survey-list-icon.png"/></div>
                                                 </c:when>
                                                 <c:when test="${notifItem.notificationType eq 'VI'}">
-                                                    <span class="iconElement"><img alt="" src="${commonResourcePath}/images/Appointment-list-icon.png"/></span>
+                                                    <div class="iconElement"><img alt="" src="${commonResourcePath}/images/Appointment-list-icon.png"/></div>
                                                 </c:when>
                                                 <c:when test="${notifItem.notificationType eq 'PY'}">
-                                                    <span class="iconElement"><icon:payments/></span>
+                                                    <div class="iconElement"><icon:payments/></div>
                                                 </c:when>
                                             </c:choose>
                                         </div>

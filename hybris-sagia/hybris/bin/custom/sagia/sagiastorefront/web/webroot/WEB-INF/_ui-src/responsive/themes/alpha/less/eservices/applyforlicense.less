@@ -38,6 +38,9 @@ label,
 [dir] .page-new-apply-contactperson .formRadioBox .form-group {
 	padding-top: 25px; 
 }
+[dir='rtl'] .message-right-arrow {
+	transform: rotate(180deg);
+}
 .formInputBox_group .form-control[disabled]+.control-label+.formInputBox-append:before {
 	border-color: #ffffff !important;
 	background: #ffffff !important;
@@ -282,6 +285,17 @@ a.btn:not([href]):not([tabindex]) {
 .notificationList-status {
 	white-space: normal;
 }
+.my-msg-popup {
+	max-width: 365px;
+	width: 350px;
+	top: 90px;
+}
+.mainSection {
+    overflow: visible;
+}
+#sagiaProfilePersonalForm {
+	margin-top: 25px;
+}
 @media screen and (min-width: 768px) and (max-width: 1023.9px) {
 	#termsAndConditionsModal {
 		.modal-content {
@@ -376,5 +390,8 @@ a.btn:not([href]):not([tabindex]) {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+	}
+	.page-sagia-profile .formInputBox .form-control {
+		margin-bottom: 10px !important;
 	}
 }

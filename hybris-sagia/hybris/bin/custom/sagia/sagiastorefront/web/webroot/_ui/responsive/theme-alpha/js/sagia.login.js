@@ -462,7 +462,10 @@ $(document).ready(function() {
 	$("#sagiaLoginForm input").keyup(function (event) {
 		if (event.keyCode == 13) {
 		  event.preventDefault();
-		  validateLoginForm();
+		  if(validateLoginForm()){
+			$('form#sagiaLoginForm').submit();
+			return false;
+		}
 	  }
 	});
 

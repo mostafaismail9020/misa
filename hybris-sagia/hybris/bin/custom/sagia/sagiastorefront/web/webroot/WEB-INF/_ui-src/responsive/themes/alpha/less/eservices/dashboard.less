@@ -6,7 +6,7 @@
 	border-radius: 22px;
     padding: 30px 20px;
 }
-.page-dashboard-without-license .dashboardWidget_inner.noLicenseBody{
+.page-dashboard-without-license .dashboardWidget_inner.d-facts-figures,.page-dashboard .dashboardWidget_inner.d-facts-figures{
 	background: #000000;
     opacity: 0.65;
 }
@@ -283,7 +283,7 @@
 	flex-direction: column;
 	border-radius: 30px;
     &-headtitle{
-        font-size: var(--heading-font);
+        font-size: 20px;
         color: #646464;
         overflow: hidden;
         max-height: 14rem;
@@ -301,7 +301,7 @@
         min-height: 4.5rem;
     }
     &-type{
-        font-size: var(--content-h-font);
+        font-size: 20px;
         color: #BF9B2E;
         text-align: center;
         margin-bottom: 12px;
@@ -1002,7 +1002,7 @@ margin-right: 0;
 	border-radius: 22px;
     padding: 30px 20px;
 }
-.page-dashboard-without-license .dashboardWidget_inner.noLicenseBody{
+.page-dashboard-without-license .dashboardWidget_inner.d-facts-figures,.page-dashboard .dashboardWidget_inner.d-facts-figures{
 	background: #000000;
     opacity: 0.65;
 }
@@ -1279,7 +1279,7 @@ margin-right: 0;
 	flex-direction: column;
 	border-radius: 30px;
     &-headtitle{
-        font-size: var(--heading-font);
+        font-size: 20px;
         color: #646464;
         overflow: hidden;
         max-height: 14rem;
@@ -1297,7 +1297,7 @@ margin-right: 0;
         min-height: 4.5rem;
     }
     &-type{
-        font-size: var(--content-h-font);
+        font-size: 20px;
         color: #BF9B2E;
         text-align: center;
         margin-bottom: 12px;
@@ -1998,7 +1998,7 @@ margin-right: 0;
 	border-radius: 22px;
     padding: 30px 20px;
 }
-.page-dashboard-without-license .dashboardWidget_inner.noLicenseBody{
+.page-dashboard-without-license .dashboardWidget_inner.d-facts-figures,.page-dashboard .dashboardWidget_inner.d-facts-figures{
 	background: #000000;
     opacity: 0.65;
 }
@@ -2275,7 +2275,7 @@ margin-right: 0;
 	flex-direction: column;
 	border-radius: 30px;
     &-headtitle{
-        font-size: var(--heading-font);
+        font-size: 20px;
         color: #646464;
         overflow: hidden;
         max-height: 14rem;
@@ -2293,7 +2293,7 @@ margin-right: 0;
         min-height: 4.5rem;
     }
     &-type{
-        font-size: var(--content-h-font);
+        font-size: 20px;
         color: #BF9B2E;
         text-align: center;
         margin-bottom: 12px;
@@ -2994,7 +2994,7 @@ margin-right: 0;
 	border-radius: 22px;
     padding: 30px 20px;
 }
-.page-dashboard-without-license .dashboardWidget_inner.noLicenseBody{
+.page-dashboard-without-license .dashboardWidget_inner.d-facts-figures,.page-dashboard .dashboardWidget_inner.d-facts-figures{
 	background: #000000;
     opacity: 0.65;
 }
@@ -3271,7 +3271,7 @@ margin-right: 0;
 	flex-direction: column;
 	border-radius: 30px;
     &-headtitle{
-        font-size: var(--heading-font);
+        font-size: 20px;
         color: #646464;
         overflow: hidden;
         max-height: 14rem;
@@ -3289,7 +3289,7 @@ margin-right: 0;
         min-height: 4.5rem;
     }
     &-type{
-        font-size: var(--content-h-font);
+        font-size: 20px;
         color: #BF9B2E;
         text-align: center;
         margin-bottom: 12px;
@@ -3993,4 +3993,56 @@ margin-right: 0;
 }
 .page-dashboard .dashboard-service-wrapper .content-wrapper{
 	    transform:none; 
+}
+
+.d-news-update-date{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.page-dashboard,.page-dashboard-without-license
+{
+    .newsAndUpdateContainer .d-news-update-content{
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0px;
+        color: #025635;
+        text-transform: uppercase;
+    }
+    .home-news-updates-content{
+        min-height: 25rem;
+    }
+    .home-news-updates-content-p{
+        font-size: 20px;
+        color: #1c1c1c;
+        letter-spacing: 0.4px;
+        line-height: 26px;
+        @media screen and (min-width:763px) {
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 11;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            padding-bottom: initial !important;
+            min-height: 14rem;
+        }
+    }
+    .firstBlock-text,.firstBlock-contact-local-label,.firstBlock-contact-local-number{
+        font-size: 20px;
+    }
+    @media screen and (max-width:640px) {
+        .dm-my-license-view{
+            justify-content: space-around;
+            &a{
+                border: 1px solid #00a6be;
+                background-color: transparent;
+                border-radius: 27px;
+                margin: 0;
+                text-align: center;
+                padding: 10px 24px 14px;
+                cursor: pointer;
+            }
+        }
+    }
 }

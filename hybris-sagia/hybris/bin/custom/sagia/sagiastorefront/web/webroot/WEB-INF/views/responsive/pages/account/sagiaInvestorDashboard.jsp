@@ -92,7 +92,7 @@
                             <div class="dashboardUser-col">
                                 <div class="dashboardUser-entry ml-md-3">
                                     <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/><span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
+                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>&nbsp;<span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy, hh:mm a"/></span></span>
                                 </div>
                             </div>
                         </div>
@@ -337,15 +337,16 @@
 
 <section class="container mainSection_noPaddingTop js-dashboard  p-0">
     <div class="container row p-0 m-0">
-        <div class="Inc-title-header pt-5 col-12">
+        <div class="Inc-title-header col-12">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
                <spring:theme code="sagia.services.licenses.label"/>
             </h1>
 		</div>
         <div class="col-12 p-0">
-            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
+            <a class="float-right text-uppercase mb-3 mb-md-5"></a>
+            <!-- <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
             	<spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/>
-            </a>
+            </a> -->
         </div>
     </div>
 </section>
@@ -566,9 +567,11 @@
 	                                </div>
 	                                <div class="card-box p-3 pr-5 home-news-updates-content">
 	                                    <!-- <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong> -->
-	                                    <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMM" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /></span>
-	                                    <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,70)} ...</h3>
-	                                    <!-- <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p> -->
+	                                    <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" />
+                                            <!-- &nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /> -->
+                                        </span>
+	                                    <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,30)} ...</h3>
+	                                    <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
 	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
 	                                </div>
 	                            </div>

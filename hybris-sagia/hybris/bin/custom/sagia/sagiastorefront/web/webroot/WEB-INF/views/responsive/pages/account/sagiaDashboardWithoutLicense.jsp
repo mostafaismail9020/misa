@@ -203,9 +203,11 @@
 		                                    </div>
 		                                    <div class="card-box p-3 home-news-updates-content">
 		                                        <!-- <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong> -->
-		                                        <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMM" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /></span>
-                                                <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,70)} ...</h3>
-		                                        <!-- <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p> -->
+		                                        <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" />
+                                                    <!-- &nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /> -->
+                                                </span>
+                                                <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,30)} ...</h3>
+		                                        <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
 		                                        <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
 		                                    </div>
 		                                </div>

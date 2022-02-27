@@ -72,7 +72,7 @@
 	<div class="m-0 ml-custom-35">
 		<div class="row w-100">
             <div class="col-md-6 col-12 px-0">
-				<a href="/service-search" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+				<a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
 			</div>
         </div>
 		<div class="row w-100 d-none mt-4 lg-btn">
@@ -210,9 +210,6 @@
 								<div class="modal-content">
 									<div class="modal-header">
 										<div class="modal-title"><spring:theme code="uploaddocuments.uploadyourfiles"/></div>
-										<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-											<icon:close/>
-										</button>
 									</div>
 									<div class="modal-body">
 										<div class="formInputFileBox js-form-input-file-box">
@@ -365,9 +362,6 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"><spring:theme code="general.requestsubmitted"/></div>
-				<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-					<icon:close/>
-				</button>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">

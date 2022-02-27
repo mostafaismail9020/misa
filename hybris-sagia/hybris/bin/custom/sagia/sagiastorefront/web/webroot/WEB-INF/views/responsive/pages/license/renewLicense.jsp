@@ -495,9 +495,6 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></div>
-                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-                    <icon:close/>
-                </button>
 			</div>
 		 	<div class="modal-body">
 			 <div class="contentModule-section contentModule-section_paddingSide">
@@ -561,9 +558,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <%-- <div class="modal-title"><spring:theme code="services.government.create.disclaimer.title"/></div> --%>
-                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-                    <icon:close/>
-                </button>
             </div>
             <div class="modal-body">
                 <div class="modal-description js-description-text">

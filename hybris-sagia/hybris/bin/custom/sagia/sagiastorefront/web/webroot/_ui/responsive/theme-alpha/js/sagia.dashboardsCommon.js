@@ -50,6 +50,8 @@ SAGIA.dashboard = {
                     .parent()
                     .addClass("dashboardWidget_open");
                     $('.'+idAttr).addClass('show');
+
+                
             } else {
            
                 $(this)
@@ -57,6 +59,7 @@ SAGIA.dashboard = {
                     .removeClass("dashboardWidget_open");
                     $('.'+idAttr).removeClass('show');
             }
+            
         });
         
         //small match click on tabhead
@@ -263,8 +266,15 @@ SAGIA.dashboard = {
             //add current state
             $(this).closest('.js-dashboardTabs')
                 .find('.dashboardTabs-content')
-                .find($(currentID))
+                .find('#'+$(currentID)[0].id)
+                // .find($(currentID))
                 .addClass('current');
+
+                $(".dashboardTabs .js-dashboardTabs .dashboardTabs-body").hide();
+
+                $(this).closest('.js-dashboardTabs')
+                .find('.dashboardTabs-content')
+                .find('#'+$(currentID)[0].id).next().show();
         });
     },
     
@@ -612,40 +622,28 @@ function getAccordion(element_id,screen)
     else{
         $("#accordion").empty();
         $(element_id).show();
-		$(".tab-content").show();
+		$(".tab-content").not('.services-container-tabcontent').show();
     }
 }
 
 
 function getAccordionWithLicense(element_id,screen) 
-{
-
+{    
 	if ($(window).width() < screen) 
 	{
-		var concat = '';
-		obj_tabs = $( element_id + " li" ).toArray();
-		obj_cont = $( ".dashboard-tabs .tab-content .tab-pane" ).toArray();
-		jQuery.each( obj_tabs, function( n, val ) 
-		{
-			concat += '<div id="' + n + '" class="panel panel-default">';
-			concat += '<div class="panel-heading  dashboardWidget-headline js-dashboardWidget-headline-icon text-upercase" role="tab" id="heading' + n + '">';
-			concat += '<h5 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h5>';
-			concat += '</div>';
-			concat += '<div id="collapse' + n + '" class="panel-collapse collapse heading' + n + '" role="tabpanel" aria-labelledby="heading' + n + '">';
-			concat += '<div class="panel-body">' + obj_cont[n].innerHTML + '</div>';
-			concat += '</div>';
-			concat += '</div>';
-		});
-		$("#accordionDashboard").empty().append(concat);
-		$("#accordionDashboard").find('.panel-collapse:first').addClass("in");
-		$("#accordionDashboard").find('.panel-title a').attr("aria-expanded","true");
-		$("#accordionDashboard").find('.panel-title a').removeClass("collapsed");
-		$(element_id).not('.services-container-tabcontent').hide();
+        $(element_id).hide();
+        $("#accordionDashboard").show();
 		$(".tab-content").not('.services-container-tabcontent').hide();
 	}
     else{
-        $("#accordionDashboard").empty();
         $(element_id).show();
-		$(".tab-content").show();
+        $("#accordionDashboard").hide();
+		$(".tab-content").not('.services-container-tabcontent').show();
     }	
 }
+
+$(".sagiaNavigation-services .nav-link").on('click',function(){
+    $(this).toggleClass('show active');
+    var tab = $(this)[0].id;
+    $(".service_tab_pane_show[aria-labelledby='"+ tab + "']").toggleClass('show active');
+})

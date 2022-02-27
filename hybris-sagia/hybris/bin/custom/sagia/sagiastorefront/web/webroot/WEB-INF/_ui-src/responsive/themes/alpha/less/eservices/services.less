@@ -1531,3 +1531,43 @@ div.invest-us-header:empty,.no-data-remove:empty{
         margin-top: 10vh;
     }
 }
+
+#shareholderFormId,#branchFormId,#branchEditModal{
+    .modal-content{
+        height: 70vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin: auto;
+        margin-top: 10vh;
+    }
+}
+#branchEditModal{
+    .modal-footer{
+        justify-content: center;
+        @media screen and (max-width:640px) {
+            button:first-child{
+                order: 2;
+            }
+        }        
+    }
+}
+
+// .custom-modal{
+//     display: none; 
+//     position: fixed; 
+//     z-index: 1;
+//     left: 0;
+//     top: 0;
+//     width: 100%; 
+//     height: 100%; 
+//     overflow: auto; 
+//     background-color: rgb(0,0,0); 
+//     background-color: rgba(0,0,0,0.4);
+//     .custom-modal-content{
+//         background-color: #fefefe;
+//         margin: 15% auto; 
+//         padding: 20px;
+//         border: 1px solid #888;
+//         width: 80%;
+//     }
+// }

@@ -2,6 +2,7 @@
 <%@ attribute name="sector" required="false" type="com.sap.ibso.eservices.facades.data.SagiaSectorData"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <div class="Inc-title-header  py-3 py-sm-5 mt-3 mt-sm-0 Inc-title-header-mobile">
@@ -24,7 +25,7 @@
     	<div class="dashboardWidgetNoLicense">
         	<div class="dashboardWidgetNoLicense-tabs">
             	<div class="dashboardWidgetNoLicense-body">
-               		<div class="dashboardWidget js-dashboardWidget dashboardWidget_dark no-border">
+               		<div class="dashboardWidget js-dashboardWidget dashboardWidget_dark no-border" style="background-image: url(${customerSectorCategory.banner.url});">
                   		<div class="dashboardWidget_inner noLicenseBody">
                      		<div class="dashboardWidget-body">                        
                         		<div class="dashboardWidgetBanner">
@@ -32,6 +33,7 @@
 										<div class="dashboardWidgetBanner-tabs-body d-invest-with-us <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}"> col-xl-7 </c:if> col-md-12" >
 	                              			<div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header clr_gld"></div>
 											  <c:if test="${not empty customerSectorCategory}">
+												<img class="sector-item-icon" id="customer-sector-icon"  src="${fn:escapeXml(customerSectorCategory.logo.url)}" data-norm="${fn:escapeXml(customerSectorCategory.logo.url)}" data-alt="${fn:escapeXml(customerSectorCategory.logo.url)}" alt=""/>
 		                                            <p class="invest-with-us-description">${customerSectorCategory.overview} </p>
 		                                       	</c:if>
 		                                    <!-- <p class="invest-with-us-description">${sector.sectorDetails}</p> -->
@@ -140,7 +142,7 @@
 		        <div class="page-main-content mt-0">
 		            <div class="row">                                   
 		                 <c:forEach var="featuredOpportunity" items="${featuredOpportunities}" varStatus="status">
-		                     <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+		                     <div class="col-lg-4 col-md-6 col-sm-12 col-10 mx-auto my-4">
 		                         <!-- <a href="${encodedContextPath}${featuredOpportunity.opportunity.url}"> -->
 		                             <div class=" Inc-fearured-opp d-opportunities">
 		                                 <h2 class="Inc-fearured-opp-headtitle" title="${featuredOpportunity.opportunity.name}">${featuredOpportunity.opportunity.name}</h2>

@@ -984,10 +984,14 @@ label.btn.lang-btn.active {
 		display: inline-block;
 		vertical-align: top;
 		width: 50%;
-		border-right: 2px solid #fff;
-		margin-bottom: 70px;
+		height: 22vh;
+		// border-right: 2px solid #fff;
+		// margin-bottom: 70px;
 		word-break: break-word;
 		padding: 0 15px;
+	}
+	.section-counts .count-item:nth-of-type(even){	
+		border-left: 2px solid #fff;	
 	}
 	.sector-box-inner {
 		position: relative;
@@ -1004,12 +1008,12 @@ label.btn.lang-btn.active {
 		margin: 0;
 		line-height: 1.5;
 		padding: 0 20px;
-		min-height: 4rem;
-		-webkit-box-orient: vertical;
-		display: -webkit-box;
-		overflow: hidden !important;
-		text-overflow: ellipsis;
-		-webkit-line-clamp: 5;
+		// min-height: 4rem;
+		// -webkit-box-orient: vertical;
+		// display: -webkit-box;
+		// overflow: hidden !important;
+		// text-overflow: ellipsis;
+		// -webkit-line-clamp: 5;
 	}
 	.sectors-content p, .grid-section p {
 		color: #7B838C;
@@ -1039,7 +1043,13 @@ label.btn.lang-btn.active {
 		text-align: left;
 	}
 }
-
+#customer-sector-icon{	
+	float: left;	
+}	
+.d-invest-with-us h3{	
+	padding-left: 70px;	
+	font-size: 30px;	
+}
 
 //page appointments
 .page-appointments .appointmentList .appointmentList-entry td{
@@ -1091,4 +1101,8 @@ label.btn.lang-btn.active {
 		}
 	}
 }
- 
+@media screen and (max-width:640px){	
+	.page-dashboard .js-dashboard{	
+		overflow-x: hidden;	
+	}		
+}

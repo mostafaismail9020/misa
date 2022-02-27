@@ -21158,3 +21158,7 @@ label.lang-btn{
 		padding-right: 1rem;
 	}
 }
+
+body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
+    display: none !important;
+}

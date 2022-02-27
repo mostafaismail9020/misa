@@ -2245,9 +2245,6 @@
 					<div class="modal-title">
 						<spring:theme code="license.licenseamendment" />
 					</div>
-					<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-						<icon:close/>
-					</button>
 				</div>
 				<div class="modal-body">
 					<div class="modal-description">
@@ -2274,9 +2271,6 @@
 					<div class="modal-title">
 						<spring:theme code="license.licenseamendment" />
 					</div>
-					<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-						<icon:close/>
-					</button>
 				</div>
 				<div class="modal-body">
 					<div class="modal-description">
@@ -2304,9 +2298,6 @@
 					<div class="modal-title">
 						<spring:theme code="license.errorvalidatingamendment" />
 					</div>
-					<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-						<icon:close/>
-					</button>
 				</div>
 				<div class="modal-body">
 					<div class="modal-description">
@@ -2333,9 +2324,6 @@
 					<div class="modal-title">
 						<spring:theme code="license.amendment.noChanges" />
 					</div>
-					<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-						<icon:close/>
-					</button>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn_slim" data-dismiss="modal">

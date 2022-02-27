@@ -177,7 +177,7 @@
     </div>
 </div>
 
-<section class="mainSection mainSection_noPadding bg-white scale-on-resize">
+<section class="mainSection mainSection_noPadding bg-white ">
     <div class="container">
         <h1 class="dashboard-headline services-headline js-dashboardWidget-headline text-center py-md-5 py-3">
             <spring:theme code="dashboard.license.services.title"/>
@@ -214,7 +214,7 @@
                 </li>
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
-                        <div class="tab-pane fade service_tab_pane_show show active pb-5 m-auto" id="licensing1" role="tabpanel" aria-labelledby="pills-licensing-tab">
+                        <div class="tab-pane fade service_tab_pane_show pb-5 m-auto" id="licensing1" role="tabpanel" aria-labelledby="pills-licensing-tab">
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
@@ -244,7 +244,7 @@
                 </li>
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
-                        <div class="tab-pane fade service_tab_pane_show show pb-5 m-auto" id="govt-service1" role="tabpanel" aria-labelledby="pills-govt-tab">
+                        <div class="tab-pane fade service_tab_pane_show pb-5 m-auto" id="govt-service1" role="tabpanel" aria-labelledby="pills-govt-tab">
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
@@ -275,7 +275,7 @@
                 </li>
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
-                        <div class="tab-pane fade service_tab_pane_show show pb-5 m-auto" id="sagia-services1" role="tabpanel" aria-labelledby="pills-misa-tab">
+                        <div class="tab-pane fade service_tab_pane_show pb-5 m-auto" id="sagia-services1" role="tabpanel" aria-labelledby="pills-misa-tab">
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
@@ -335,7 +335,7 @@
     </div>
 </section>
 
-<section class="container mainSection_noPaddingTop js-dashboard scale-on-resize p-0">
+<section class="container mainSection_noPaddingTop js-dashboard  p-0">
     <div class="container row p-0 m-0">
         <div class="Inc-title-header pt-5 col-12">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
@@ -527,7 +527,7 @@
     </div>
 </section>
 
-<section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard scale-on-resize">
+<section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard ">
     <div class="container px-0">
         <dashboard:opportunityTickets></dashboard:opportunityTickets>
     </div>

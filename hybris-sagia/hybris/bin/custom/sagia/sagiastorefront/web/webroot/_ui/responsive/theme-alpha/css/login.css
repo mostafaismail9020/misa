@@ -149,6 +149,44 @@ z-index: 0;
 [dir="ltr"] .page-license-amend #shareholderModalId .modal-content .modal-title{text-align: left;}
 .page-license-amend #docsmodalId .modal-dialog.modal-dialog-centered{min-width:40%;}
 .page-license-amend #docsmodalId  .modal-title{color: #bf9b2e;text-transform: uppercase;}
+.page-license-amend .deleteDropdown-drop{
+	margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+}
+.page-license-amend .select2-dropdown_oneColumn_hasFilter.select2-dropdown--above .select2-search,
+.page-license-amend .select2-dropdown_oneColumn_hasFilter.select2-dropdown--below .select2-search{
+border: 1px solid #f2f2f2;
+background-color: #fff;
+top: 0;
+bottom: initial;
+margin: 0;
+width: 100%;
+position: relative;
+}
+.page-license-amend .select2-dropdown_hasSearch.select2-dropdown--above .select2-search,
+.page-license-amend .select2-dropdown_hasSearch.select2-dropdown--below .select2-search{
+border: 1px solid #f2f2f2;
+background-color: #fff;
+color: red;
+top: 0;
+bottom: initial;
+margin: 0;
+width: 100%;
+position: relative;
+}
+.page-license-amend .select2-dropdown_hasSearch{
+	padding: 0 !important;
+}
+.page-license-amend .select2-dropdown_hasSearch .select2-search{height: 38px;}
+.page-license-amend .select2-dropdown_hasSearch .select2-results__option{padding: 10px;}
+.page-license-amend .select2-dropdown_hasSearch .select2-search:before,
+.page-license-amend .select2-dropdown_hasSearch .select2-search:after{
+	display: none;
+}
+[dir="ltr"] .page-license-amend .delegate-info-popover{text-align: left;}
+[dir="rtl"] .page-license-amend .delegate-info-popover{text-align: right;}
 @media (max-width: 640px) and (min-width: 100px){
 	.page-license-amend .contentModule-mob-btns button.btn{width: 44%;}
 	.page-license-amend #businessActivitiesModal .modal-header .modal-title{font-size: 22px;}
@@ -201,23 +239,40 @@ z-index: 0;
 /* End  */
 
 /* Licesing page  */
-[dir="ltr"] .formInputFile input{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;padding-right: 50px !important;}
-[dir="rtl"] .formInputFile input{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;padding-left: 50px !important;}
-[dir=rtl] .page-new-license-apply .form-control+.control-label+.formInputBox-append {margin-right: -114px;}
+/* .page-new-license-apply  .page-shareholder-apply  .page-new-apply-contactperson .page-new-apply-review  */
+.page-new-license-apply .mainSection.mainSection_loaded,
+.page-shareholder-apply .mainSection.mainSection_loaded,
+.page-new-apply-contactperson .mainSection.mainSection_loaded,
+.page-new-apply-review .mainSection.mainSection_loaded
+{padding-bottom: 0px;}
+.page-new-license-apply .mainSection.mainSection_narrow,
+.page-shareholder-apply .mainSection.mainSection_narrow,
+.page-new-apply-contactperson .mainSection.mainSection_narrow,
+.page-new-apply-review .mainSection.mainSection_narrow
+{display: none;}
+.page-new-license-apply .new-js-panelTabs,
+.page-shareholder-apply .new-js-panelTabs,
+.page-new-apply-contactperson .new-js-panelTabs,
+.page-new-apply-review .new-js-panelTabs
+{margin: 0 auto;}
+.page-new-license-apply .new-js-panelTabs .panelTabs-content,
+.page-shareholder-apply .new-js-panelTabs .panelTabs-content,
+.page-new-apply-contactperson .new-js-panelTabs .panelTabs-content,
+.page-new-apply-review .new-js-panelTabs .panelTabs-content
+{padding-top: 0;}
+.page-new-license-apply .banner-container h1,
+.page-shareholder-apply .banner-container h1,
+.page-new-apply-contactperson .banner-container h1,
+.page-new-apply-review .banner-container h1
+{font-size: 25;line-height: 1.5;}
+.page-new-license-apply .contentModule-headline,
+.page-shareholder-apply .contentModule-headline,
+.page-new-apply-contactperson .contentModule-headline,
+.page-new-apply-review .contentModule-headline{ padding: 0 20px !important;}
+.page-new-license-apply .formRadioBox-wrapper{padding: 15px 10px;}
+.page-new-license-apply #businessActivitiesModal .baList_columns{columns: 3;}
 @media (max-width: 640px) and (min-width: 100px){
-	.page-new-license-apply .mainSection{padding-bottom: 0;}
-	.mainSection .achievement_header .banner-container h1{font-size: 25px;line-height: 1.5;}
-	#entityForm #licenseTypeSection .select2-container .select2-selection--single .select2-selection__rendered {width: 85%;overflow: hidden;}
-	.page-shareholder-apply #addShareholderQM1ExistingSection #existing-Shareholder-Form .formSelectBox{margin-bottom: 0;}
-	.page-shareholder-apply #addShareholderQM1ExistingSection #existing-Shareholder-Form .formInputBox .formInputBox-append{margin-left: -50px;}
-	.page-shareholder-apply #addShareholderQM1ExistingSection .contentModule-actions button.cancelButton + button.addButton{margin-top: 10px;}
-	.page-shareholder-apply #addShareholderQM1NewSection .contentModule-actions_insideSection button.cancelButton {width: 50%!important;}
 	
 }
-@media (max-width: 1024px) and (min-width: 768px){
-	.page-shareholder-apply #shareholderType .form-item {width: 30%;}
-}
-@media (max-width: 1180px) and (min-width: 768px){
-	.page-shareholder-apply #shareholderType .form-item {width: 30%;}
-}
+
 /* End */

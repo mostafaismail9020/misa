@@ -800,6 +800,12 @@ var adjustNewItemIdVariable = function () {
     newItemId = parseInt($('.shareholderTemplate:last-child').attr('id')) + 1;
 }
 
+$(document).on('click', '#showDelegateQuestionOrganization .formRadioBox .form-item label', function(event) {
+    $("#showDelegateQuestionOrganization .formRadioBox .form-item label").removeClass('btn-bg');
+          $(this).toggleClass('btn-bg');  
+         
+});
+
 
 
 

@@ -131,7 +131,7 @@
             display: none;
         }
     </style>
-    <div class="panelTabs-navigation">
+    <div class="panelTabs-navigation container">
         <ul class="clearfix tabs-list tabamount4">
             <li id="accessibletabsnavigation0-0" class="active first last">
                 <a id="entityInformationTab" class="panelTabs-head active first last" style="cursor: default !important;" href="#">

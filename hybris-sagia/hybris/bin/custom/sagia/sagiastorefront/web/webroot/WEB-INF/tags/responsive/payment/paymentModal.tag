@@ -43,7 +43,7 @@
                             <div class="formInputBox formInputBox_group ">
                                 <div class="form-group">
                                     <label class="control-label" for="expiry-month"><spring:theme code="payment.expirymonth"/></label>
-                                    <input id="expiry-month" class="input-field form-control" placeholder="MM" value="" type="text">
+                                    <input id="expiry-month" class="input-field form-control" placeholder="MM" value="" type="number" max="2">
                                     <!-- <div class="formInputBox-append">
                                         <span class="formInputBox-text"><spring:theme code="payment.mm"/></span>
                                     </div> -->
@@ -54,7 +54,7 @@
                             <div class="formInputBox formInputBox_group ">
                                 <div class="form-group">
                                     <label class="control-label" for="expiry-year"><spring:theme code="payment.expiryyear"/></label>
-                                    <input id="expiry-year" class="input-field form-control" placeholder="YY" value="" type="text">
+                                    <input id="expiry-year" class="input-field form-control" placeholder="YY" value="" type="number">
                                     <!-- <div class="formInputBox-append">
                                         <span class="formInputBox-text"><spring:theme code="payment.yy"/></span>
                                     </div> -->

@@ -185,6 +185,7 @@ position: relative;
 .page-license-amend .select2-dropdown_hasSearch .select2-search:after{
 	display: none;
 }
+.page-license-amend .deligate-info-form .form-item{padding: 0;}
 [dir="ltr"] .page-license-amend .delegate-info-popover{text-align: left;}
 [dir="rtl"] .page-license-amend .delegate-info-popover{text-align: right;}
 @media (max-width: 640px) and (min-width: 100px){
@@ -208,6 +209,7 @@ position: relative;
 	[dir="rtl"] .page-license-amend #shareholderModalId #entityBasicInformation2 .formCheckBox{text-align: right;}
 	.page-license-amend #shareholderModalId #delegateDivSection .btn-tooltip{white-space: initial;}
 	.page-license-amend #docsmodalId  .modal-title{font-size: 25px;}
+	.page-license-amend .deligate-info-form .form-item .control-label{margin: 0 2px;}
 }
 @media (max-width: 991px) and (min-width: 641px){
 	.page-license-amend #shareholderModalId .panelModule,
@@ -225,6 +227,7 @@ position: relative;
 	{ 	height: 50px;
 		width: 178px
 	}
+	.page-license-amend .deligate-info-form .form-item .control-label{margin: 0 2px;}
 }
 @media (max-width: 1024px) and (min-width: 768px){
 	.page-license-amend .amend-shareholder-wrapper .formRadioBox .control-label {width: 170px}

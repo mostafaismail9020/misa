@@ -608,8 +608,43 @@
 		width: 100%;
 		max-width: 100%;
 	}
-	.page-dashboard .paginationModule-items{	
-		display: none;	
+	
+	.page-dashboard{ 
+		.paginationModule-items, .page-dashboard .paginationModule-control{	
+			display: none;	
+		}
+		.dashboardUser{
+			overflow: hidden;
+		}
+		.helpSection{
+			padding: 0px 25px;
+		}
+		.dashboardUser-right{
+			border-top: 1px dashed #707070;
+		}
+		.dashboardUser-entry{
+			padding-top: 10px;
+		}
+		.dashboardUser-image-add{
+			margin-top: -30px;
+		}
+
+		.dashboard-tabs::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0,0.30);
+			box-shadow: inset 0 0 6px rgba(0, 0, 0,0.30);
+		}
+		.dashboardWidgetNoLicense-body,.dashboardWidget-body{
+			border-bottom:none;
+			border-top: none;;
+		}
+		.dashboardUser-wrapper{
+			.dashboardUser-left{
+				.col{
+					padding-left: 0px;
+					padding-right: 0px;
+				}
+			}
+		}
 	}
 }
 

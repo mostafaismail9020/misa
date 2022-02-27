@@ -225,27 +225,24 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <script>
-                                                    var appointmentDate = '<fmt:formatDate value="${parsedDateAppt}" pattern="MMM dd, yyyy" dateStyle="medium"/>';
-                                                    var appointmentDate2 = '<fmt:formatDate value="${parsedDateAppt}" pattern="yyyy-MM-dd'
-                                                    T 'HH:mm:ss" dateStyle="medium"/>';
-                                                    var appointmentTime = '';
-                                                    var appointmentDepartment = '${appointmentData.departmentDescription}';
-                                                    var appointmentBranch = '${appointmentData.branchDescription}';
-                                                    var appointmentData = $ {
-                                                        appointmentDataJSON
-                                                    };
-                                                    var infoPath = window.location.protocol + '//' + window.location.host + '${infoPath}';
-                                                    infoPath += appointmentData.department + '/';
-                                                    infoPath += appointmentData.branch + '/';
-                                                    infoPath += appointmentDate2 + '/';
-                                                    infoPath += appointmentData.ministry1 != '' ? appointmentData.ministry1 + ':' : '-' + ':';
-                                                    infoPath += appointmentData.ministry2 != '' ? appointmentData.ministry2 + ':' : '-' + ':';
-                                                    infoPath += appointmentData.ministry3 != '' ? appointmentData.ministry3 + '/' : '-' + '/';
-                                                    infoPath += appointmentData.serviceType1 != '' ? appointmentData.serviceType1 + ':' : '-' + ':';
-                                                    infoPath += appointmentData.serviceType2 != '' ? appointmentData.serviceType2 + ':' : '-' + ':';
-                                                    infoPath += appointmentData.serviceType3 != '' ? appointmentData.serviceType3 + '/' : '-' + '/';
-                                                    infoPath += appointmentData.service1 != '' ? appointmentData.service1 + ':' : '-' + ':';
-                                                    infoPath += appointmentData.service2 != '' ? appointmentData.service2 + ':' : '-' + ':';
-                                                    infoPath += appointmentData.service3 != '' ? appointmentData.service3 + '/' : '-' + '/';
-                                                </script>
+    <script>
+    var appointmentDate = '<fmt:formatDate value="${parsedDateAppt}" pattern="MMM dd, yyyy" dateStyle="medium"/>';
+    var appointmentDate2 = '<fmt:formatDate value="${parsedDateAppt}" pattern="yyyy-MM-dd'T'HH:mm:ss" dateStyle="medium"/>';
+    var appointmentTime = '';
+    var appointmentDepartment = '${appointmentData.departmentDescription}';
+    var appointmentBranch = '${appointmentData.branchDescription}';
+    var appointmentData = ${appointmentDataJSON};
+    var infoPath = window.location.protocol + '//' + window.location.host + '${infoPath}';
+    infoPath += appointmentData.department + '/';
+    infoPath += appointmentData.branch + '/';
+    infoPath += appointmentDate2 + '/';
+    infoPath += appointmentData.ministry1 != '' ? appointmentData.ministry1 + ':' : '-' + ':';
+    infoPath += appointmentData.ministry2 != '' ? appointmentData.ministry2 + ':' : '-' + ':';
+    infoPath += appointmentData.ministry3 != '' ? appointmentData.ministry3 + '/' : '-' + '/';
+    infoPath += appointmentData.serviceType1 != '' ? appointmentData.serviceType1 + ':' : '-' + ':';
+    infoPath += appointmentData.serviceType2 != '' ? appointmentData.serviceType2 + ':' : '-' + ':';
+    infoPath += appointmentData.serviceType3 != '' ? appointmentData.serviceType3 + '/' : '-' + '/';
+    infoPath += appointmentData.service1 != '' ? appointmentData.service1 + ':' : '-' + ':';
+    infoPath += appointmentData.service2 != '' ? appointmentData.service2 + ':' : '-' + ':';
+    infoPath += appointmentData.service3 != '' ? appointmentData.service3 + '/': '-' + '/';
+</script>

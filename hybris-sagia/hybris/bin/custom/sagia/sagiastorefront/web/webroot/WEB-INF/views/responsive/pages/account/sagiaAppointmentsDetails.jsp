@@ -226,6 +226,7 @@
                                                     </div>
                                                 </div>
     <script>
+    var formOptionsJSON = [];
     var appointmentDate = '<fmt:formatDate value="${parsedDateAppt}" pattern="MMM dd, yyyy" dateStyle="medium"/>';
     var appointmentDate2 = '<fmt:formatDate value="${parsedDateAppt}" pattern="yyyy-MM-dd'T'HH:mm:ss" dateStyle="medium"/>';
     var appointmentTime = '';

@@ -84,11 +84,11 @@
 							            <div class="col-4 sub-items">
 							            <li>
 							            <c:if test="${hasLicense}">
-							            <a class="dropdown-item get_submenus" href="/dashboard"
+							            <a class="dropdown-item get_submenus" href="${encodedContextPath}/dashboard"
 																	title="My Dashboard"><spring:theme code="portal.header.mydashboard"/></a>
 									    </c:if>
 									    <c:if test="${!hasLicense}">
-									    <a class="dropdown-item get_submenus" href="/dashboard-without-license"
+									    <a class="dropdown-item get_submenus" href="${encodedContextPath}/dashboard-without-license"
 																	title="My Dashboard"><spring:theme code="portal.header.mydashboard"/></a>
 										</c:if>
 										</li>

@@ -274,5 +274,28 @@ position: relative;
 @media (max-width: 640px) and (min-width: 100px){
 	
 }
+.errorPage-div{
+    height: 100vh;
+    background-image: url(https://127.0.0.1:9002/_ui/responsive/theme-alpha/img/login-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
 
+.errorPage{
+width: 600px;
+background: #fff !important;
+border-radius: 15px !important;
+display: flex !important;
+justify-content: center !important;
+align-items: center !important;
+flex-direction: column !important;
+padding: 50px !important;
+margin-top: 150px !important;
+}
 /* End */

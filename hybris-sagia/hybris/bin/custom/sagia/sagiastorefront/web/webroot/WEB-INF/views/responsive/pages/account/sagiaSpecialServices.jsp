@@ -213,35 +213,40 @@
                             </div>
 
                             <div class="tableModule">
-                                <table class="tableModule-table">
-                                    <thead class="tableModule-head">
-                                    <tr>
-                                        <th><spring:theme code="text.specialservices.applicantName"/></th>
-                                        <th><spring:theme code="text.specialservices.iqmaNumber"/></th>
-                                        <th><spring:theme code="text.specialservices.iqmaExpiryDate"/></th>
-                                        <th><spring:theme code="text.specialservices.nationality"/></th>
-                                        <th><spring:theme code="text.specialservices.nationalityNote"/></th>
-                                        <th><spring:theme code="text.specialservices.applicantProfession"/></th>
-                                        <th><spring:theme code="text.specialservices.investorNumber"/></th>
-                                        <th><spring:theme code="text.specialservices.applicationCategory"/></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody class="tableModule-body">
-                                    <c:forEach items="${specialServiceHeader.applicants}" var="item"
-                                               varStatus="countme">
+                                <c:if test="${fn:length(specialServiceHeader.applicants) gt 0}">
+                                    <table class="tableModule-table">
+                                        <thead class="tableModule-head">
                                         <tr>
-                                            <td class="tableModule-bodyItem-right">${item.applicantName}</td>
-                                            <td>${item.iqmaNumber}</td>
-                                            <td>${item.iqmaExpiryDate}</td>
-                                            <td>${item.nationality}</td>
-                                            <td>${item.nationalityNote}</td>
-                                            <td>${item.applicantProfession}</td>
-                                            <td>${item.investorNumber}</td>
-                                            <td>${item.applicationCategory}</td>
+                                            <th><spring:theme code="text.specialservices.applicantName"/></th>
+                                            <th><spring:theme code="text.specialservices.iqmaNumber"/></th>
+                                            <th><spring:theme code="text.specialservices.iqmaExpiryDate"/></th>
+                                            <th><spring:theme code="text.specialservices.nationality"/></th>
+                                            <th><spring:theme code="text.specialservices.nationalityNote"/></th>
+                                            <th><spring:theme code="text.specialservices.applicantProfession"/></th>
+                                            <th><spring:theme code="text.specialservices.investorNumber"/></th>
+                                            <th><spring:theme code="text.specialservices.applicationCategory"/></th>
                                         </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody class="tableModule-body">
+                                        <c:forEach items="${specialServiceHeader.applicants}" var="item"
+                                                varStatus="countme">
+                                            <tr>
+                                                <td class="tableModule-bodyItem-right">${item.applicantName}</td>
+                                                <td>${item.iqmaNumber}</td>
+                                                <td>${item.iqmaExpiryDate}</td>
+                                                <td>${item.nationality}</td>
+                                                <td>${item.nationalityNote}</td>
+                                                <td>${item.applicantProfession}</td>
+                                                <td>${item.investorNumber}</td>
+                                                <td>${item.applicationCategory}</td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </c:if>
+                                <c:if test="${fn:length(specialServiceHeader.applicants) lt 0}">
+                                    <div class="text-center"><span class="h5 text-center">No Data Available</span></div>
+                                </c:if>
                             </div>
                             <c:choose>
                             <c:when test="${empty specialServiceHeader.comments}">

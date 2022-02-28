@@ -246,14 +246,21 @@ ul.notificationList{
 	color: #707070;
 	font-size: var(--content-big-font);
 }
-#eServiceTour  .modal-dialog{
-	max-width: 700px !important;
-	position:  fixed;
-	top: 70px;
-	left: calc(50% - 20px);
-	bottom: 40px;
-	z-index: 100;
+.licenseSimulatorPopup  {
+	@media screen and (min-width:1200px) and (max-width:2000px) {
+	   .modal-content{
+		   transform: translate(-25%,0);
+	   }	 
+	}
 }
+// #eServiceTour  .modal-dialog{
+// 	max-width: 700px !important;
+// 	position:  fixed;
+// 	top: 70px;
+// 	left: calc(50% - 20px);
+// 	bottom: 40px;
+// 	z-index: 100;
+// }
 #eServiceTour  .modal-dialog .modal-title{
    font-size: var(--heading-font);
 }

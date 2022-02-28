@@ -31,7 +31,7 @@
                             <div class="dashboardWidget-headline js-dashboardWidget-headline">
                                 <div class="dashboardWidget-filter">
                                     <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
-                                        <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
+                                        <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
                                         <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.ascending"/> </option>
                                         <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.descending"/> </option>
                                         <option value="amount_asc"><spring:theme code="sagia.sort.lowest"/> </option>

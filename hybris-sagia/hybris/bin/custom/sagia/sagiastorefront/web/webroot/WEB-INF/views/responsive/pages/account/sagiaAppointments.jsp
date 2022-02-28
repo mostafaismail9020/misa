@@ -88,7 +88,7 @@
                             </div>
                             <div class="contentModule-filter">
                                 <select id="appointmentSort" class="js-select2-oneColumn form-control" onchange="sortAppointments()">
-                                    <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
+                                    <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
                                     <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
                                     <option value="status_desc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
                                     <option value="date_asc" data-sort="asc"><spring:theme code="sagia.sort.date"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
